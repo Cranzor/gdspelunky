@@ -53,8 +53,9 @@ var shop = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	other()
-	levelGen()
+	generate_tiles()
+	#other()
+	#levelGen()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -407,6 +408,19 @@ func RoomGen():
 	var roomPathOfRoom = roomPath[[scrGetRoomX(x), scrGetRoomY(y)]] # --- Changed variable name as it's confusing
 	var roomPathAbove = -1
 	var shopType = "General"
+	get_room_seed()
+	add_obstacles()
+	generate_tiles()
+
+func get_room_seed():
+	#--- Added to make things work
+	var y
+	var x
+	var roomPathAbove
+	var strTemp
+	var shopType
+	var altar
+	
 	if (scrGetRoomY(y) != 0):
 		roomPathAbove = roomPath[[scrGetRoomX(x), scrGetRoomY(y-128)]]
 
@@ -593,7 +607,11 @@ func RoomGen():
 			10: strTemp = "11111111112222111111000002211100000002110000000000200000000000000000211120000211" 
 			11: strTemp = "11111111111111112222111220000011200000000000000000000000000012000000001120000211" 
 			12: strTemp = "11111111112111111112021111112000211112000002112000000022000002200002201111001111"
-	# Add obstacles
+
+func add_obstacles():
+#--- Added to make things work
+	var strTemp
+# Add obstacles
 
 	for i in range (0, 81):
 		var j = i
@@ -601,7 +619,7 @@ func RoomGen():
 		var strObs1 = "00000"
 		var strObs2 = "00000"
 		var strObs3 = "00000"
-		var tile = string_char_at(strTemp, i)
+		var tile = strTemp[i]
 		
 		if (tile == "8"):
 			match randi_range(1,8):
@@ -758,19 +776,73 @@ func RoomGen():
 			strTemp = string_delete(strTemp, j, 5)
 			strTemp = string_insert(strObs3, strTemp, j)
 
+func generate_tiles():
+	#--- Added to make things work
+	var x = 200
+	var y = 200
+	var altar
+	var idol
+	var damsel
+	var Solid
+	var Block = preload("res://test_block.tscn")
+	var Brick = preload("res://brick.tscn")
+	var LadderOrange = preload("res://ladder.tscn")
+	var LadderTop = preload("res://ladder_top.tscn")
+	var Spikes = preload("res://spikes.tscn")
+	var PushBlock
+	var Entrance = preload("res://entrance.tscn")
+	var Exit = preload("res://exit.tscn")
+	var AltarLeft = preload('res://altar_left.tscn')
+	var AltarRight = preload('res://altar_right.tscn')
+	var SacAltarLeft = preload('res://sac_altar_left.tscn')
+	var SacAltarRight = preload('res://sac_altar_right.tscn')
+	var bgKaliBody
+	var KaliHead
+	var Chest = preload("res://chest.tscn")
+	var GoldIdol = preload("res://gold_idol.tscn")
+	var GiantTikiHead = preload('res://giant_tiki_head.tscn')
+	var bgDiceSign
+	var bgTiki
+	var bgTikiArms
+	var inDiceHouse
+	var sIceBlock
+	var murderer
+	var thiefLevel
+	var isDamsel
+	var bgWanted
+	var isTunnelMan
+	var BrickSmooth
+	var LampRed
+	var Lamp
+	var Shopkeeper
+	var Sign
+	var sSignGeneral
+	var sSignBomb
+	var sSignWeapon
+	var sSignClothing
+	var sSignRare
+	var sSignCraps
+	var sSignKissing
+	var Dice
+	var Damsel
+	var Snake
+	var RubyBig
+	var Mattock
+	var strTemp = "00000000110060000L040000000P110000000L110000000L11000000001100000000111112222111" 
+	var shopType
 	# Generate the tiles
 	for j in range(0,8):
 		for i in range(0,11):
-			var tile = string_char_at(strTemp, i+j*10)
+			var tile = strTemp[i-1+j*10] #--- Added -1 to properly get string position
 			var xpos = x + (i-1)*16
 			var ypos = y + j*16
-			if (tile == "1" and not collision_point(xpos, ypos, Solid, 0, 0)):
+			if (tile == "1"):# and not collision_point(xpos, ypos, Solid, 0, 0)):
 				if (randi_range(1,10) == 1):
 					instance_create(xpos, ypos, Block)
 				else:
 					instance_create(xpos, ypos, Brick)
 
-			elif (tile == "2" and randi_range(1,2) == 1 and not collision_point(xpos, ypos, Solid, 0, 0)):
+			elif (tile == "2" and randi_range(1,2) == 1):#and not collision_point(xpos, ypos, Solid, 0, 0)):
 				if (randi_range(1,10) == 1):
 					instance_create(xpos, ypos, Block)
 				else:
@@ -783,7 +855,7 @@ func RoomGen():
 			elif (tile == "7" and randi_range(1,3) == 1):
 				instance_create(xpos, ypos, Spikes)
 			elif (tile == "4" and randi_range(1,4) == 1):
-				instance_create(xpos, ypos, PushBlock)
+				instance_create(xpos, ypos, Block) #---Actually is PushBlock but will do Block for now since sprite appears to be the smae
 			elif (tile == "9"):
 				var block = instance_create(xpos, ypos+16, Brick)
 				if (scrGetRoomX(x) == startRoomX and scrGetRoomY(y) == startRoomY):
@@ -910,9 +982,6 @@ func scrGetRoomY(y):
 func scrGetRoomX(x):
 	pass
 
-func string_char_at(strTemp, i):
-	pass
-
 func string_delete(x, y, z):
 	pass
 	
@@ -922,8 +991,13 @@ func string_insert(x, y, z):
 func collision_point(v, w, x, y, z):
 	pass
 
-func instance_create(x, y, z):
-	pass
+func instance_create(x, y, block_type):
+	var instance = block_type.instantiate()
+	print('hi')
+	add_child(instance)
+	instance.position.x = x
+	instance.position.y = y
+	print(instance.position.y)
 
 func tile_add(var1, var2, var3, var4, var5, var6, var7, var8):
 	pass

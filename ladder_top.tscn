@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://chyw47b1p4may"]
+
+[ext_resource type="Texture2D" uid="uid://dcel4blbhj4n1" path="res://ladder_top.png" id="1_04x1t"]
+
+[node name="LadderTop" type="Node2D"]
+position = Vector2(32, 112)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_04x1t")
+centered = false

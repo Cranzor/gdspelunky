@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvu5djd8ak8x5"]
+
+[ext_resource type="Texture2D" uid="uid://q286ygfhfycs" path="res://giant_tiki_head.png" id="1_p40p6"]
+
+[node name="GiantTikiHead" type="Node2D"]
+position = Vector2(96, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_p40p6")
+centered = false

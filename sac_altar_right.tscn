@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://ba6eifim7hhge"]
+
+[ext_resource type="Texture2D" uid="uid://cp2w554xuqb6l" path="res://sac_altar_right.png" id="1_5tbem"]
+
+[node name="SacAltarRight" type="Node2D"]
+position = Vector2(80, 96)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(8, 8)
+texture = ExtResource("1_5tbem")

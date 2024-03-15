@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://sr71uvxdd1xw"]
+
+[ext_resource type="Texture2D" uid="uid://db0tujko3o5fm" path="res://altar_right.png" id="1_trxjv"]
+
+[node name="AltarRight" type="Node2D"]
+position = Vector2(112, 80)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(8, 8)
+texture = ExtResource("1_trxjv")
