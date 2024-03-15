@@ -1,5 +1,6 @@
 # Godot 4+ specific ignores
 .godot/
+<<<<<<< HEAD
 
 # Godot-specific ignores
 .import/
@@ -13,3 +14,5 @@ export_presets.cfg
 .mono/
 data_*/
 mono_crash.*.json
+=======
+>>>>>>> 2970fa8 (First commit. Ported the LevelGen script to Godot)

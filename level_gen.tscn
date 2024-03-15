@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://ddr2l1k3vpjtb"]
+
+[ext_resource type="Script" path="res://LevelGen.gd" id="1_sryps"]
+[ext_resource type="Texture2D" uid="uid://rfkuntythjyq" path="res://image 0.png" id="2_00rdj"]
+[ext_resource type="Texture2D" uid="uid://c24vq1axjavoo" path="res://guy.png" id="3_wnv58"]
+
+[node name="LevelGen" type="Node2D"]
+script = ExtResource("1_sryps")
+
+[node name="Block" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Block"]
+position = Vector2(8, 8)
+texture = ExtResource("2_00rdj")
+
+[node name="Block2" type="Node2D" parent="."]
+position = Vector2(0, 112)
+
+[node name="Sprite2D" type="Sprite2D" parent="Block2"]
+position = Vector2(8, 8)
+texture = ExtResource("2_00rdj")
+
+[node name="Block3" type="Node2D" parent="."]
+position = Vector2(16, 112)
+
+[node name="Sprite2D" type="Sprite2D" parent="Block3"]
+position = Vector2(8, 8)
+texture = ExtResource("2_00rdj")
+
+[node name="Block4" type="Node2D" parent="."]
+position = Vector2(32, 112)
+
+[node name="Sprite2D" type="Sprite2D" parent="Block4"]
+position = Vector2(8, 8)
+texture = ExtResource("2_00rdj")
+
+[node name="Block5" type="Node2D" parent="."]
+position = Vector2(64, 112)
+
+[node name="Sprite2D" type="Sprite2D" parent="Block5"]
+position = Vector2(8, 8)
+texture = ExtResource("2_00rdj")
+
+[node name="Block6" type="Node2D" parent="."]
+position = Vector2(96, 112)
+
+[node name="Sprite2D" type="Sprite2D" parent="Block6"]
+position = Vector2(8, 8)
+texture = ExtResource("2_00rdj")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(48, 96)
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(-16, 0)
+texture = ExtResource("3_wnv58")
+centered = false
