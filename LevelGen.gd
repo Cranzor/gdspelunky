@@ -243,7 +243,7 @@ func levelGen():
 	elif (levelType == 2 and randi_range(1,probAlien) == 1): #alien craft
 		var k = randi_range(0,2)
 		var j = randi_range(1,2)
-		for i in range(0,4):
+		for i in range(k,4):
 			if (i == k):
 				roomPath[[i,j]] = 7
 			elif (i == 3):
@@ -430,22 +430,8 @@ func get_room_seed():
 		else:
 			n = randi_range(1,4)
 		match n:
-			1:   strTemp = "6000060000
-							0000000000
-							0000000000
-							0000000000
-							0008000000
-							0000000000
-							0000000000
-							1111111111"
-			2: strTemp = "1111111111
-							 2222222222
-							 0000000000
-							 0000000000
-							 0008000000
-							 0000000000
-							 0000000000
-							 1111111111"
+			1: strTemp = "60000600000000000000000000000000000000000008000000000000000000000000001111111111"
+			2: strTemp = "11111111112222222222000000000000000000000008000000000000000000000000001111111111"
 			3: strTemp = "00000000000008000000000000000000L000000000P111111000L111111000L00111111111111111"
 			4: strTemp = "0000000000008000000000000000000000000L000111111P000111111L001111100L001111111111"
 			# hole
@@ -828,7 +814,7 @@ func generate_tiles():
 	var Snake
 	var RubyBig
 	var Mattock
-	var strTemp = "00000000110060000L040000000P110000000L110000000L11000000001100000000111112222111" 
+	var strTemp = "0000000000008000000000000000000000000L000111111P000111111L001111000L001111011111"
 	var shopType
 	# Generate the tiles
 	for j in range(0,8):
@@ -864,7 +850,7 @@ func generate_tiles():
 					instance_create(xpos, ypos, Exit)
 					var exitX = xpos
 					var exitY = ypos
-					block.invincible = true
+					#block.invincible = true #--- Commented out for now
 
 			elif (tile == "A"):
 				instance_create(xpos, ypos, AltarLeft)
