@@ -11,6 +11,8 @@ import_directory = r'C:\Users\Jesse\Desktop\Dump\Scripts\Level Generation'
 
 #test_string = f.read()
 
+print('hello')
+
 def add_colon(text):
     return text + ":"
 
@@ -34,22 +36,23 @@ def conditional_closed_position(passed_string):
     string_position = -1
     left_paren = 0
     right_paren = 0
-    for char in passed_string:
-        string_position +=1
-        if char == "(":
-            left_paren += 1
-        elif char == ")":
-            right_paren += 1
-            
-        if right_paren != 0 and right_paren == left_paren:
-            return(string_position + 1)
-        elif right_paren == 0:
-            return(0)
+    if passed_string.count("(") == passed_string.count(")") and passed_string.count("(") != 0:
+        print(passed_string)
+        for char in passed_string:
+            string_position +=1
+            if char == "(":
+                left_paren += 1
+            elif char == ")":
+                right_paren += 1
+                
+            if right_paren != 0 and right_paren == left_paren:
+                return(string_position + 1)
+    else:
+        return 0
             
 def add_colon_to_statement(string, position):
     string_list = list(string)
     
-    print(position)
     string_list.insert(position, ":")
     
     new_string = ''.join(string_list)
@@ -61,14 +64,12 @@ def add_if_elif_colon(string, text):
     if all_statements != []:
         for statement in all_statements:
             string_pos = conditional_closed_position(statement)
-            print(statement)
-            print(string_pos)
             if string_pos > 0:
                 colon_added_string = add_colon_to_statement(statement, string_pos)
                 new_overall_string = re.sub(re.escape(statement), colon_added_string, text)
                 text = new_overall_string
             else:
-                return text
+                new_overall_string = text
         return new_overall_string
     else:
         return text
@@ -121,9 +122,7 @@ for filename in os.listdir(import_directory):
 
         if_string = "if .+"
         while_string = "while .+"
-        print(updated_string)
         updated_string = add_if_elif_colon(if_string, updated_string)
-        print(updated_string)
         updated_string = add_if_elif_colon(while_string, updated_string)
 
         updated_string = find_camel_case_variables_and_convert(updated_string)
@@ -132,17 +131,16 @@ for filename in os.listdir(import_directory):
 
         updated_string = simple_substitution("room_pathAbove", "room_path_above", updated_string)
         updated_string = delete_chars("game.", updated_string)
+        
+        updated_string = simple_substitution(":+", ":", updated_string)
             
         dest_folder = r'C:\Users\Jesse\Desktop\test folder'
         slash = '\\'
         txt_extension = '.txt'
         write_path = dest_folder + slash + file_name + txt_extension
 
-        print(write_path)
-
         with open(write_path, 'w') as file:
             file.write(updated_string)
-
 
 #for filename in os.listdir(import_directory):
 #   file = os.path.join(import_directory, filename)
