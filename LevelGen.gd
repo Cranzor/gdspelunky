@@ -61,7 +61,7 @@ func _ready():
 func _process(delta):
 	pass
 
-func other(): # --- From InitLevel. Swap this out later
+func other(): # --- From InitLevel. Swap this out later ---------------------------------------------
 	for i in range(0,4):
 		for j in range(0,4):
 			roomPath[[i,j]] = 0
@@ -396,14 +396,7 @@ func RoomGen():
 	var RubyBig
 	var Mattock
 	
-	var strTemp = "0000000000
-			   0000000000
-			   0000000000
-			   0000000000
-			   0000000000
-			   0000000000
-			   0000000000
-			   0000000000"
+	var strTemp = "00000000000000000000000000000000000000000000000000000000000000000000000000000000"
 
 	var roomPathOfRoom = roomPath[[scrGetRoomX(x), scrGetRoomY(y)]] # --- Changed variable name as it's confusing
 	var roomPathAbove = -1
@@ -979,7 +972,6 @@ func collision_point(v, w, x, y, z):
 
 func instance_create(x, y, block_type):
 	var instance = block_type.instantiate()
-	print('hi')
 	add_child(instance)
 	instance.position.x = x
 	instance.position.y = y
