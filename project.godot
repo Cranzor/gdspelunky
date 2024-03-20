@@ -15,6 +15,11 @@ run/main_scene="res://level_gen.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+global="*res://global.gd"
+gml="*res://gml.gd"
+
 [display]
 
 window/size/viewport_width=700

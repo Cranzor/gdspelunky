@@ -7,16 +7,16 @@ extends Node2D
 # route to the exit.
 # 
 
-var startRoomX
-var startRoomY = 0
-var roomX
-var roomY = 0
-var prevX
-var prevY = 0
+#--- All of this should be a child of oGame.event's ready() function
+
+var room_x = global.start_room_x
+var room_y = 0
+var prev_x = global.start_room_x
+var prev_y = 0
 var roomPath = {[0,0]:0, [0,1]:0, [0,2]:0, [0,3]:0,
-				[1,0]:0, [1,1]:0, [1,2]: 0, [1,3]:0,
-				[2,0]:0, [2,1]:0, [2,2]:0, [2,3]:0,
-				[3,0]:0, [3,1]: 0, [3,2]:0, [3,3]:0}
+	[1,0]:0, [1,1]:0, [1,2]: 0, [1,3]:0,
+	[2,0]:0, [2,1]:0, [2,2]:0, [2,3]:0,
+	[3,0]:0, [3,1]: 0, [3,2]:0, [3,3]:0}
 var noStartX = -1
 var n
 
@@ -41,9 +41,9 @@ var currLevel = 1 # --- Believe it's 1-12
 var probAlien = 0
 var probYetiLair = 0
 var roomPoss = {[0,0]:0, [0,1]:0, [0,2]:0, [0,3]:0,
-				[1,0]:0, [1,1]:0, [1,2]: 0, [1,3]:0,
-				[2,0]:0, [2,1]:0, [2,2]:0, [2,3]:0,
-				[3,0]:0, [3,1]: 0, [3,2]:0, [3,3]:0}
+	[1,0]:0, [1,1]:0, [1,2]: 0, [1,3]:0,
+	[2,0]:0, [2,1]:0, [2,2]:0, [2,3]:0,
+	[3,0]:0, [3,1]: 0, [3,2]:0, [3,3]:0}
 var endRoomX = 0
 var endRoomY = 0
 var idol = false
@@ -68,7 +68,8 @@ func other(): # --- From InitLevel. Swap this out later ------------------------
 
 func levelGen():
 	randomize()
-	startRoomX = randi_range(0,3)
+	global.start_room_x = randi_range(0,3)
+	global.start_room_y = 0
 	roomX = startRoomX
 	prevX = startRoomX
 	n = randi_range(0,3)
@@ -133,7 +134,7 @@ func levelGen():
 				if roomPath[[roomX-1, roomY]] == 0:
 					roomX -= 1
 			elif roomX < 3:
-				if roomPath[[roomX+1, roomY]] == 0: 
+				if roomPath[[roomX+1, roomY]] == 0:
 					roomX += 1
 			else:
 				n = 5
@@ -142,7 +143,7 @@ func levelGen():
 			if roomX < 3:
 				if roomPath[[roomX+1, roomY]] == 0: roomX += 1
 			elif (roomX > 0):
-				if (roomPath[[roomX-1, roomY]] == 0): 
+				if (roomPath[[roomX-1, roomY]] == 0):
 					roomX -= 1
 			else:
 				n = 5
@@ -297,7 +298,7 @@ func levelGen():
 	print(roomPath[[0,2]], roomPath[[1,2]], roomPath[[2,2]], roomPath[[3,2]])
 	print(roomPath[[0,3]], roomPath[[1,3]], roomPath[[2,3]], roomPath[[3,3]])
 
-func RoomGen():
+func room_gen():
 	#
 	# scrRoomGen1()
 	#
@@ -461,42 +462,42 @@ func get_room_seed():
 
 		match n:
 			# upper plats
-			1: strTemp = "00000000000010111100000000000000011010000050000000000000000000000000001111111111" 
+			1: strTemp = "00000000000010111100000000000000011010000050000000000000000000000000001111111111"
 			# high walls
-			2: strTemp = "110000000040L600000011P000000011L000000011L5000000110000000011000000001111111111" 
-			3: strTemp = "00000000110060000L040000000P110000000L110050000L11000000001100000000111111111111" 
-			4: strTemp = "110000000040L600000011P000000011L000000011L0000000110000000011000000001112222111" 
-			5: strTemp = "00000000110060000L040000000P110000000L110000000L11000000001100000000111112222111" 
-			6: strTemp = "11111111110221111220002111120000022220000002222000002111120002211112201111111111" 
-			7: strTemp = "11111111111112222111112000021111102201111120000211111022011111200002111112222111" 
-			8: strTemp = "11111111110000000000110000001111222222111111111111112222221122000000221100000011" 
-			9: strTemp = "121111112100L2112L0011P1111P1111L2112L1111L1111L1111L1221L1100L0000L001111221111" 
+			2: strTemp = "110000000040L600000011P000000011L000000011L5000000110000000011000000001111111111"
+			3: strTemp = "00000000110060000L040000000P110000000L110050000L11000000001100000000111111111111"
+			4: strTemp = "110000000040L600000011P000000011L000000011L0000000110000000011000000001112222111"
+			5: strTemp = "00000000110060000L040000000P110000000L110000000L11000000001100000000111112222111"
+			6: strTemp = "11111111110221111220002111120000022220000002222000002111120002211112201111111111"
+			7: strTemp = "11111111111112222111112000021111102201111120000211111022011111200002111112222111"
+			8: strTemp = "11111111110000000000110000001111222222111111111111112222221122000000221100000011"
+			9: strTemp = "121111112100L2112L0011P1111P1111L2112L1111L1111L1111L1221L1100L0000L001111221111"
 			# idols
-			10: strTemp = "22000000220000B0000000000000000000000000000000000000000000000000I000001111A01111" 
+			10: strTemp = "22000000220000B0000000000000000000000000000000000000000000000000I000001111A01111"
 			# altars
-			11: strTemp = "220000002200000000000000000000000000000000000000000000x0000002211112201111111111" 
+			11: strTemp = "220000002200000000000000000000000000000000000000000000x0000002211112201111111111"
 
 	elif (roomPath == 0 or roomPath == 1):
 		match randi_range(1,12):
 			# basic rooms
-			1: strTemp = "60000600000000000000000000000000000000000050000000000000000000000000001111111111" 
-			2: strTemp = "60000600000000000000000000000000000000005000050000000000000000000000001111111111" 
-			3: strTemp = "60000600000000000000000000000000050000000000000000000000000011111111111111111111" 
-			4: strTemp = "60000600000000000000000600000000000000000000000000000222220000111111001111111111" 
-			5: strTemp = "11111111112222222222000000000000000000000050000000000000000000000000001111111111" 
-			6: strTemp = "11111111112111111112022222222000000000000050000000000000000000000000001111111111" 
+			1: strTemp = "60000600000000000000000000000000000000000050000000000000000000000000001111111111"
+			2: strTemp = "60000600000000000000000000000000000000005000050000000000000000000000001111111111"
+			3: strTemp = "60000600000000000000000000000000050000000000000000000000000011111111111111111111"
+			4: strTemp = "60000600000000000000000600000000000000000000000000000222220000111111001111111111"
+			5: strTemp = "11111111112222222222000000000000000000000050000000000000000000000000001111111111"
+			6: strTemp = "11111111112111111112022222222000000000000050000000000000000000000000001111111111"
 			# low ceiling
-			7: strTemp = "11111111112111111112211111111221111111120111111110022222222000000000001111111111" 
+			7: strTemp = "11111111112111111112211111111221111111120111111110022222222000000000001111111111"
 			# ladders
-			8: 
+			8:
 				if (randi_range(1,2) == 1):
 					strTemp = "1111111111000000000L111111111P000000000L5000050000000000000000000000001111111111"
 				else:
 					strTemp = "1111111111L000000000P111111111L0000000005000050000000000000000000000001111111111"
-			9: strTemp = "000000000000L0000L0000P1111P0000L0000L0000P1111P0000L1111L0000L1111L001111111111" 
+			9: strTemp = "000000000000L0000L0000P1111P0000L0000L0000P1111P0000L1111L0000L1111L001111111111"
 			# upper plats
-			10: strTemp = "00000000000111111110001111110000000000005000050000000000000000000000001111111111" 
-			11: strTemp = "00000000000000000000000000000000000000000021111200021111112021111111121111111111" 
+			10: strTemp = "00000000000111111110001111110000000000005000050000000000000000000000001111111111"
+			11: strTemp = "00000000000000000000000000000000000000000021111200021111112021111111121111111111"
 			# treasure below
 			12:
 				if (randi_range(1,2) == 1):
@@ -507,14 +508,14 @@ func get_room_seed():
 	elif (roomPath == 3): # main room
 		match randi_range(1,8):
 			# basic rooms
-			1: strTemp = "00000000000000000000000000000000000000000050000000000000000000000000001111111111" 
-			2: strTemp = "00000000000000000000000000000000000000005000050000000000000000000000001111111111" 
-			3: strTemp = "00000000000000000000000000000050000500000000000000000000000011111111111111111111" 
-			4: strTemp = "00000000000000000000000600000000000000000000000000000111110000111111001111111111" 
+			1: strTemp = "00000000000000000000000000000000000000000050000000000000000000000000001111111111"
+			2: strTemp = "00000000000000000000000000000000000000005000050000000000000000000000001111111111"
+			3: strTemp = "00000000000000000000000000000050000500000000000000000000000011111111111111111111"
+			4: strTemp = "00000000000000000000000600000000000000000000000000000111110000111111001111111111"
 			# upper plats
-			5: strTemp = "00000000000111111110001111110000000000005000050000000000000000000000001111111111" 
-			6: strTemp = "00000000000000000000000000000000000000000021111200021111112021111111121111111111" 
-			7: strTemp = "10000000011112002111111200211100000000000022222000111111111111111111111111111111" 
+			5: strTemp = "00000000000111111110001111110000000000005000050000000000000000000000001111111111"
+			6: strTemp = "00000000000000000000000000000000000000000021111200021111112021111111121111111111"
+			7: strTemp = "10000000011112002111111200211100000000000022222000111111111111111111111111111111"
 			# treasure below
 			8:
 				if (randi_range(1,2) == 1):
@@ -527,44 +528,44 @@ func get_room_seed():
 		n = randi_range(1,7)
 		# n = 6
 		match n:
-			1: shopType = "General" 
-			2: shopType = "Bomb" 
-			3: shopType = "Weapon" 
-			4: shopType = "Rare" 
-			5: shopType = "Clothing" 
-			6: 
+			1: shopType = "General"
+			2: shopType = "Bomb"
+			3: shopType = "Weapon"
+			4: shopType = "Rare"
+			5: shopType = "Clothing"
+			6:
 				shopType = "Craps"
-				strTemp = "11111111111111111111111122111111Kl000211..bQ00W010.0+00000k0.q+dd00000bbbbbbbbbb" 
+				strTemp = "11111111111111111111111122111111Kl000211..bQ00W010.0+00000k0.q+dd00000bbbbbbbbbb"
 			7:
 				shopType = "Kissing"
 				strTemp = "111111111111111111111111221111111l000211...000W010...00000k0..K00D0000bbbbbbbbbb"
-				damsel = true 
+				damsel = true
 
 	elif (roomPath == 5): # shop
 		strTemp = "111111111111111111111111221111112000l11101W0000...0k00000...000iiiiK..bbbbbbbbbb"
 		n = randi_range(1,7)
 		# n = 6
 		match n:
-			1: shopType = "General" 
-			2: shopType = "Bomb" 
-			3: shopType = "Weapon" 
-			4: shopType = "Rare" 
-			5: shopType = "Clothing" 
+			1: shopType = "General"
+			2: shopType = "Bomb"
+			3: shopType = "Weapon"
+			4: shopType = "Rare"
+			5: shopType = "Clothing"
 			6:
 				shopType = "Craps"
-				strTemp = "111111111111111111111111221111112000lK1101W0Q00b..0k00000+0.00000dd+q.bbbbbbbbbb" 
+				strTemp = "111111111111111111111111221111112000lK1101W0Q00b..0k00000+0.00000dd+q.bbbbbbbbbb"
 			7:
 				shopType = "Kissing"
 				strTemp = "111111111111111111111111221111112000l11101W0000...0k00000...0000D00K..bbbbbbbbbb"
-				damsel = true 
+				damsel = true
 
 	elif (roomPath == 8): # snake pit
 		match randi_range(1,1):
-			1: strTemp = "111000011111s0000s11111200211111s0000s11111200211111s0000s11111200211111s0000s11" 
+			1: strTemp = "111000011111s0000s11111200211111s0000s11111200211111s0000s11111200211111s0000s11"
 
 	elif (roomPath == 9): # snake pit bottom
 		match randi_range(1,1):
-			1: strTemp = "111000011111s0000s1111100001111100S0001111S0110S11111STTS1111111M111111111111111" 
+			1: strTemp = "111000011111s0000s1111100001111100S0001111S0110S11111STTS1111111M111111111111111"
 
 	else: # drop
 		if (roomPath == 7):
@@ -574,17 +575,17 @@ func get_room_seed():
 		else:
 			n = randi_range(1,8)
 		match n:
-			1: strTemp = "00000000006000060000000000000000000000006000060000000000000000000000000000000000" 
-			2: strTemp = "00000000006000060000000000000000000000000000050000000000000000000000001202111111" 
-			3: strTemp = "00000000006000060000000000000000000000050000000000000000000000000000001111112021" 
-			4: strTemp = "00000000006000060000000000000000000000000000000000000000000002200002201112002111" 
-			5: strTemp = "00000000000000220000000000000000200002000112002110011100111012000000211111001111" 
-			6: strTemp = "00000000000060000000000000000000000000000000000000001112220002100000001110111111" 
-			7: strTemp = "00000000000060000000000000000000000000000000000000002221110000000001201111110111" 
-			8: strTemp = "00000000000060000000000000000000000000000000000000002022020000100001001111001111" 
-			9: strTemp = "11111111112222222222000000000000000000000000000000000000000000000000001120000211" 
-			10: strTemp = "11111111112222111111000002211100000002110000000000200000000000000000211120000211" 
-			11: strTemp = "11111111111111112222111220000011200000000000000000000000000012000000001120000211" 
+			1: strTemp = "00000000006000060000000000000000000000006000060000000000000000000000000000000000"
+			2: strTemp = "00000000006000060000000000000000000000000000050000000000000000000000001202111111"
+			3: strTemp = "00000000006000060000000000000000000000050000000000000000000000000000001111112021"
+			4: strTemp = "00000000006000060000000000000000000000000000000000000000000002200002201112002111"
+			5: strTemp = "00000000000000220000000000000000200002000112002110011100111012000000211111001111"
+			6: strTemp = "00000000000060000000000000000000000000000000000000001112220002100000001110111111"
+			7: strTemp = "00000000000060000000000000000000000000000000000000002221110000000001201111110111"
+			8: strTemp = "00000000000060000000000000000000000000000000000000002022020000100001001111001111"
+			9: strTemp = "11111111112222222222000000000000000000000000000000000000000000000000001120000211"
+			10: strTemp = "11111111112222111111000002211100000002110000000000200000000000000000211120000211"
+			11: strTemp = "11111111111111112222111220000011200000000000000000000000000012000000001120000211"
 			12: strTemp = "11111111112111111112021111112000211112000002112000000022000002200002201111001111"
 
 func add_obstacles():
@@ -605,145 +606,145 @@ func add_obstacles():
 				1:
 					strObs1 = "00900"
 					strObs2 = "01110"
-					strObs3 = "11111" 
+					strObs3 = "11111"
 				2:
 					strObs1 = "00900"
 					strObs2 = "02120"
-					strObs3 = "02120" 
+					strObs3 = "02120"
 				3:
 					strObs1 = "00000"
 					strObs2 = "00000"
-					strObs3 = "92222" 
+					strObs3 = "92222"
 				4:
 					strObs1 = "00000"
 					strObs2 = "00000"
-					strObs3 = "22229" 
+					strObs3 = "22229"
 				5:
 					strObs1 = "00000"
 					strObs2 = "11001"
-					strObs3 = "19001" 
+					strObs3 = "19001"
 				6:
 					strObs1 = "00000"
 					strObs2 = "10011"
-					strObs3 = "10091" 
+					strObs3 = "10091"
 				7:
 					strObs1 = "11111"
 					strObs2 = "10001"
-					strObs3 = "40094" 
+					strObs3 = "40094"
 				8:
 					strObs1 = "00000"
 					strObs2 = "12021"
-					strObs3 = "12921" 
+					strObs3 = "12921"
 
 		elif (tile == "5"): # ground
 			match randi_range(1,16):
 				1:
 					strObs1 = "11111"
 					strObs2 = "00000"
-					strObs3 = "00000" 
+					strObs3 = "00000"
 				2:
 					strObs1 = "00000"
 					strObs2 = "11110"
-					strObs3 = "00000" 
+					strObs3 = "00000"
 				3:
 					strObs1 = "00000"
 					strObs2 = "01111"
-					strObs3 = "00000" 
+					strObs3 = "00000"
 				4:
 					strObs1 = "00000"
 					strObs2 = "00000"
-					strObs3 = "11111" 
+					strObs3 = "11111"
 				5:
 					strObs1 = "00000"
 					strObs2 = "20200"
-					strObs3 = "17177" 
+					strObs3 = "17177"
 				6:
 					strObs1 = "00000"
 					strObs2 = "02020"
-					strObs3 = "71717" 
+					strObs3 = "71717"
 				7:
 					strObs1 = "00000"
 					strObs2 = "00202"
-					strObs3 = "77171" 
+					strObs3 = "77171"
 				8:
 					strObs1 = "00000"
 					strObs2 = "22200"
-					strObs3 = "11100" 
+					strObs3 = "11100"
 				9:
 					strObs1 = "00000"
 					strObs2 = "02220"
-					strObs3 = "01110" 
+					strObs3 = "01110"
 				10:
 					strObs1 = "00000"
 					strObs2 = "00222"
-					strObs3 = "00111" 
+					strObs3 = "00111"
 				11:
 					strObs1 = "11100"
 					strObs2 = "22200"
-					strObs3 = "00000" 
+					strObs3 = "00000"
 				12:
 					strObs1 = "01110"
 					strObs2 = "02220"
-					strObs3 = "00000" 
+					strObs3 = "00000"
 				13:
 					strObs1 = "00111"
 					strObs2 = "00222"
-					strObs3 = "00000" 
+					strObs3 = "00000"
 				14:
 					strObs1 = "00000"
 					strObs2 = "02220"
-					strObs3 = "21112" 
+					strObs3 = "21112"
 				15:
 					strObs1 = "00000"
 					strObs2 = "20100"
-					strObs3 = "77117" 
+					strObs3 = "77117"
 				16:
 					strObs1 = "00000"
 					strObs2 = "00102"
-					strObs3 = "71177" 
+					strObs3 = "71177"
 
 		elif (tile == "6"): # air
 			match randi_range(1,10):
 				1:
 					strObs1 = "11111"
 					strObs2 = "00000"
-					strObs3 = "00000" 
+					strObs3 = "00000"
 				2:
 					strObs1 = "22222"
 					strObs2 = "00000"
-					strObs3 = "00000" 
+					strObs3 = "00000"
 				3:
 					strObs1 = "11100"
 					strObs2 = "22200"
-					strObs3 = "00000" 
+					strObs3 = "00000"
 				4:
 					strObs1 ="01110"
 					strObs2 = "02220"
-					strObs3 = "00000" 
+					strObs3 = "00000"
 				5:
 					strObs1 = "00111"
 					strObs2 = "00222"
-					strObs3 = "00000" 
+					strObs3 = "00000"
 				6:
 					strObs1 = "00000"
 					strObs2 = "01110"
-					strObs3 = "00000" 
+					strObs3 = "00000"
 				7:
 					strObs1 = "00000"
 					strObs2 = "01110"
-					strObs3 = "02220" 
+					strObs3 = "02220"
 				8:
 					strObs1 = "00000"
 					strObs2 = "02220"
-					strObs3 = "01110" 
+					strObs3 = "01110"
 				9:
 					strObs1 = "00000"
 					strObs2 = "00220"
-					strObs3 = "01111" 
+					strObs3 = "01111"
 				10:
 					strObs1 = "00000"
 					strObs2 = "22200"
-					strObs3 = "11100" 
+					strObs3 = "11100"
 		
 		if (tile == "5" or tile == "6" or tile == "8"):
 			strTemp = string_delete(strTemp, j, 5)
@@ -961,7 +962,7 @@ func scrGetRoomY(y):
 func scrGetRoomX(x):
 	pass
 
-func string_delete(x, y, z):
+func string_delete(str,index,count):
 	pass
 	
 func string_insert(x, y, z):
@@ -985,3 +986,304 @@ func scrGenerateItem(x,y,z):
 
 func scrShopItemsGen():
 	pass
+
+func scrInitLevel():
+	#
+	# scr_init_level()
+	#
+	# Calls scr_level_gen(), scr_room_gen*(), and scr_entity_gen() to build level.
+	#
+
+	#/**********************************************************************************
+		#Copyright (c) 2008, 2009 Derek Yu and Mossmouth, LLC
+		#
+		#This file is part of Spelunky.
+	#
+		#You can redistribute and/or modify Spelunky, including its source code, under
+		#the terms of the Spelunky User License.
+	#
+		#Spelunky is distributed in the hope that it will be entertaining and useful,
+		#but WITHOUT WARRANTY.  Please see the Spelunky User License for more details.
+	#
+		#The Spelunky User License should be available in "Game Information", which
+		#can be found in the Resource Explorer, or as an external file called COPYING.
+		#If not, please obtain a new copy of Spelunky from <http:#spelunkyworld.com/>
+		#
+	#***********************************************************************************/
+
+	level_type = 0
+	#curr_level = 16
+	if (curr_level > 4 and curr_level < 9): level_type = 1
+	if (curr_level > 8 and curr_level < 13): level_type = 2
+	if (curr_level > 12 and curr_level < 16): level_type = 3
+	if (curr_level == 16): level_type = 4
+
+	if (curr_level <= 1 or
+		curr_level == 5 or
+			curr_level == 9 or
+			curr_level == 13):
+
+		had_dark_level = false
+
+
+	# level_type = 3 # debug
+
+	# DEBUG MODE #
+	#/*
+	#if (curr_level == 2): level_type = 4
+	#if (curr_level == 3): level_type = 2
+	#if (curr_level == 4): level_type = 3
+	#if (curr_level == 5): level_type = 4
+	#*/
+
+	# level_type = 0
+
+	global.start_room_x = 0
+	global.start_room_y = 0
+	end_room_x = 0
+	end_room_y = 0
+	level_gen = false
+
+	# this is used to determine the path to the exit (generally no bombs required)
+	for i in range(0, 4):
+
+		for j in range(0, 4):
+			room_path[[i,j]] = 0
+		
+
+
+	# side walls
+	if (level_type == 4):
+		k = 54
+	elif (level_type == 2):
+		k = 38
+	elif (lake):
+		k = 41
+	else:
+		k = 33
+	for i in range(0,42):
+
+		for j in range(0,k):
+		
+			if (not is_level()):
+			
+				i = 999
+				j = 999
+			
+			elif (level_type == 2):
+			
+				if (i*16 == 0 or
+					i*16 == 656 or
+					j*16 == 0):
+				
+					obj = instance_create(i*16, j*16, dark)
+					obj.invincible = true
+					obj.sprite_index = s_dark
+				
+			
+			elif (level_type == 4):
+			
+				if (i*16 == 0 or
+					i*16 == 656 or
+					j*16 == 0):
+				
+					obj = instance_create(i*16, j*16, temple)
+					obj.invincible = true
+					if (not city_of_gold): obj.sprite_index = s_temple
+				
+			
+			elif (lake):
+			
+				if (i*16 == 0 or
+					i*16 == 656 or
+					j*16 == 0 or
+					j*16 >= 656):
+				
+					obj = instance_create(i*16, j*16, lush) 
+					obj.sprite_index = s_lush
+					obj.invincible = true
+				
+			
+			elif (i*16 == 0 or
+				i*16 == 656 or
+				j*16 == 0 or
+				j*16 >= 528):
+			
+				if (level_type == 0):
+					obj = instance_create(i*16, j*16, brick)
+					obj.sprite_index = s_brick
+				elif (level_type == 1):
+					obj = instance_create(i*16, j*16, lush)
+					obj.sprite_index = s_lush
+				else:
+					obj = instance_create(i*16, j*16, temple)
+					if (not city_of_gold): obj.sprite_index = s_temple
+					obj.invincible = true
+			
+	if (level_type == 2):
+
+		for i in range(0,42):
+		
+			instance_create(i*16, 40*16, dark)
+			#instance_create(i*16, 35*16, spikes)
+		
+
+
+	if (level_type == 3):
+
+		background_index = bg_temple
+
+
+	temp1 = start
+	scr_level_gen()
+
+	cemetary = false
+	if (level_type == 1 and randi_range(1,prob_cemetary) == 1): cemetary = true
+
+	for room in get_tree.get_nodes_in_group("Room"):
+
+		if (level_type == 0): scr_room_gen()
+		elif (level_type == 1):
+		
+			if (black_market): scr_room_genMarket()
+			else: scr_room_gen2()
+		
+		elif (level_type == 2):
+		
+			if (yeti_lair): scr_room_genYeti()
+			else: scr_room_gen3()
+		
+		elif (level_type == 3): scr_room_gen4()
+		else: scr_room_gen5()
+
+
+	dark_level = false
+	#if (not had_dark_level and curr_level != 0 and level_type != 2 and curr_level != 16 and randi_range(1,1) == 1):
+	if (not had_dark_level and not ndark_level and curr_level != 0 and curr_level != 1 and level_type != 2 and curr_level != 16 and randi_range(1,prob_dark_level) == 1):
+
+		dark_level = true
+		had_dark_level = true
+		#instance_create(player1.x, player1.y, flare)
+
+
+	if (black_market): dark_level = false
+
+	gen_udjat_eye = false
+	if (not made_udjat_eye):
+
+		if (curr_level == 2 and randi_range(1,3) == 1): gen_udjat_eye = true
+		elif (curr_level == 3 and randi_range(1,2) == 1): gen_udjat_eye = true
+		elif (curr_level == 4): gen_udjat_eye = true
+
+
+	gen_market_entrance = false
+	if (not made_market_entrance):
+
+		if (curr_level == 5 and randi_range(1,3) == 1): gen_market_entrance = true
+		elif (curr_level == 6 and randi_range(1,2) == 1): gen_market_entrance = true
+		elif (curr_level == 7): gen_market_entrance = true
+
+
+	##############
+	# ENTITY / TREASURES
+	##############
+	temp2 = start
+	if (not is_room("r_tutorial") and not is_room("r_load_level")): scr_entity_gen()
+
+	if (instance_exists(entrance) and not custom_level):
+
+		player1.x = entrance.x+8
+		player1.y = entrance.y+8
+
+
+	if (dark_level or
+		black_market or
+		snake_pit or
+		cemetary or
+		lake or
+		yeti_lair or
+		alien_craft or
+		sacrifice_pit or
+		city_of_gold)
+
+		if (not is_room("r_load_level")):
+		
+			with player1  alarm[0] = 10
+		
+
+
+	if (level_type == 4): scr_setup_walls(864)
+	elif (lake): scr_setup_walls(656)
+	else: scr_setup_walls(528)
+
+	# add background details
+	if (graphics_high):
+
+		repeat(20)
+		
+			# bg = instance_create(16*randi_range(1,42), 16*randi_range(1,33), cave_bg)
+			if (level_type == 1 and randi_range(1,3) < 3):
+				tile_add(bg_extras_lush, 32*randi_range(0,1), 0, 32, 32, 16*randi_range(1,42), 16*randi_range(1,33), 10002)
+			elif (level_type == 2 and randi_range(1,3) < 3):
+				tile_add(bg_extras_ice, 32*randi_range(0,1), 0, 32, 32, 16*randi_range(1,42), 16*randi_range(1,33), 10002)
+			elif (level_type == 3 and randi_range(1,3) < 3):
+				tile_add(bg_extras_temple, 32*randi_range(0,1), 0, 32, 32, 16*randi_range(1,42), 16*randi_range(1,33), 10002)
+			else:
+				tile_add(bg_extras, 32*randi_range(0,1), 0, 32, 32, 16*randi_range(1,42), 16*randi_range(1,33), 10002)
+		
+
+
+	level_gen = true
+
+	# generate angry shopkeeper at exit if murderer or thief
+	if (murderer or thief_level > 0):
+
+		with exit
+		
+			if (type == "Exit"):
+			
+				obj = instance_create(x, y, shopkeeper)
+				obj.status = 4
+			
+		
+		# thief_level -= 1
+
+
+	with treasure
+
+		if (collision_point(x, y, solid, 0, 0)):
+		
+			obj = instance_place(x, y, solid)
+			if (obj.invincible): instance_destroy()
+		
+
+
+	with water
+
+		if (sprite_index == s_water_top or sprite_index == s_lava_top):
+		
+			scr_check_water_top()
+		
+		/*
+			obj = instance_place(x-16, y, water)
+			if (instance_exists(obj)):
+			
+				if (obj.sprite_index == s_water_top or obj.sprite_index == s_lava_top):
+				
+					if (type == "Lava"): sprite_index = s_lava_top
+					else: sprite_index = s_water_top
+				
+			
+			obj = instance_place(x+16, y, water)
+			if (instance_exists(obj)):
+			
+				if (obj.sprite_index == s_water_top or obj.sprite_index == s_lava_top):
+				
+					if (type == "Lava"): sprite_index = s_lava_top
+					else: sprite_index = s_water_top
+				
+			
+		*/
+
+
+	temp3 = start
