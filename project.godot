@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 global="*res://global.tscn"
 gml="*res://gml.tscn"
+LevelGeneration="*res://LevelGeneration.gd"
 
 [display]
 

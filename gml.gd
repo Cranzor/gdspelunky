@@ -34,6 +34,8 @@ func instance_create(x,y,obj): #should return the node as this is used in script
 	add_child(instance)
 	instance.position.x = x
 	instance.position.y = y
+	
+	return instance
 
 func collision_point(x, y, z, u, v): #temporary to resolve errors
 	pass
@@ -42,7 +44,7 @@ func collision_point(x, y, z, u, v): #temporary to resolve errors
 func tile_add(background,left,top,width,height,x,y,depth): #return value of tile as well. left: left to right value in pixels. top: top to bottom in pixels
 	var tile_set_name = str(background)
 	var tile_id = bg_dict[tile_set_name]
-	var coords = Vector2(0, 0)
+	var coords = Vector2(0, -1)
 	var size = Vector2(1, 1)
 	var coords_array = []
 	y = y / 16
@@ -56,7 +58,7 @@ func tile_add(background,left,top,width,height,x,y,depth): #return value of tile
 	if top == 0:
 		pass
 	else:
-		coords.y = top / 16
+		coords.y = top / 16 - 1
 		
 	if width == 16:
 		pass
@@ -71,24 +73,13 @@ func tile_add(background,left,top,width,height,x,y,depth): #return value of tile
 	var cur_scene = get_tree().current_scene
 	var bg_elements = cur_scene.get_node('BgElements')
 	
-	#bg_elements.set_cell(0, Vector2i(x / 16, y / 16), tile_id, Vector2i(coords.x, coords.y))
-	
-	#print(size.x)
-	#for i in range(0, size.x):
-		#bg_elements.set_cell(0, Vector2i(x / 16 + i, y / 16), tile_id, Vector2i(coords.x + i, coords.y))
-		#print(i)
-	coords.y -= 1
+	#coords.y -= 1
+	print(coords.y)
 	for i in range(0, size.y):
-		print("size y: ",size.y)
 		y = y + 1
 		coords.y += 1
-		print("y: ", y)
 		for j in range(0, size.x):
-			print("size x:", size.x)
 			bg_elements.set_cell(0, Vector2i(x + j, y), tile_id, Vector2i(coords.x + j, coords.y))
-			print(coords)
-	
-	
 	
 func scr_generate_item():
 	pass
