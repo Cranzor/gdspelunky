@@ -17,8 +17,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-global="*res://global.gd"
-gml="*res://gml.gd"
+global="*res://global.tscn"
+gml="*res://gml.tscn"
 
 [display]
 

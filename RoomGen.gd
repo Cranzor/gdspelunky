@@ -46,6 +46,10 @@ extends Node2D
 #The string representing a room or obstacle must be laid out unbroken:
 #*/
 
+func _ready(): # For testing
+	var bg_dice_sign = "bg_dice_sign"
+	gml.tile_add(bg_dice_sign, 0, 0, 48, 32, 64, 64, 9004)
+
 @onready var block
 @onready var brick
 @onready var solid
@@ -65,7 +69,7 @@ extends Node2D
 @onready var gold_idol
 @onready var giant_tiki_head
 @onready var bg_tiki
-@onready var bg_tikiArms
+@onready var bg_tiki_arms = "bg_tiki_arms"
 @onready var bg_dice_sign
 @onready var s_ice_block #sprite
 @onready var bg_wanted
@@ -538,8 +542,8 @@ func room_gen():
 			
 				gml.instance_create(xpos+16, ypos+12, giant_tiki_head)
 				gml.tile_add(bg_tiki, 0, 0, 32, 64, xpos, ypos+32, 10001)
-				gml.tile_add(bg_tikiArms, 16*randi_range(0,2), 0, 16, 16, xpos+32, ypos+32, 10001)
-				gml.tile_add(bg_tikiArms, 16*randi_range(0,2), 16, 16, 16, xpos-16, ypos+32, 10001)
+				gml.tile_add(bg_tiki_arms, 16*randi_range(0,2), 0, 16, 16, xpos+32, ypos+32, 10001)
+				gml.tile_add(bg_tiki_arms, 16*randi_range(0,2), 16, 16, 16, xpos-16, ypos+32, 10001)
 			
 			elif (tile == "Q"):
 			
