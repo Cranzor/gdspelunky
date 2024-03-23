@@ -47,51 +47,57 @@ extends Node2D
 #*/
 
 func _ready(): # For testing
-	var bg_kali_body = "bg_kali_body"
-	gml.tile_add(bg_kali_body, 0, 0, 64, 64, 64, 64, 10001)
+	#var bg_kali_body = "bg_kali_body"
+	#gml.tile_add(bg_kali_body, 0, 0, 64, 64, 64, 64, 10001)
+	
+	#LevelGeneration.scr_shop_items_gen(20, 20, "Bomb")
+	room_gen()
 
-@onready var block
-@onready var brick
+@onready var block = preload("res://Test Scenes/test_block.tscn")
+@onready var brick = preload("res://Test Scenes/brick.tscn")
 @onready var solid
-@onready var ladder_orange
-@onready var ladder_top
-@onready var spikes
-@onready var push_block
-@onready var entrance
-@onready var exit
-@onready var altar_left
-@onready var altar_right
-@onready var sac_altar_left
-@onready var sac_altar_right
-@onready var bg_kali_body
-@onready var kali_head
-@onready var chest
-@onready var gold_idol
-@onready var giant_tiki_head
-@onready var bg_tiki
-@onready var bg_tiki_arms = "bg_tiki_arms"
-@onready var bg_dice_sign
-@onready var s_ice_block #sprite
-@onready var bg_wanted
-@onready var brickSmooth
-@onready var lamp_red
-@onready var lamp
-@onready var shopkeeper
-@onready var sign
-@onready var s_sign_general
-@onready var s_sign_bomb
-@onready var s_sign_weapon
-@onready var s_sign_clothing
-@onready var s_sign_rare
-@onready var s_sign_craps
-@onready var s_sign_kissing
-@onready var dice
-@onready var snake
-@onready var ruby_big
-@onready var mattock
+@onready var ladder_orange = preload("res://Test Scenes/ladder.tscn")
+@onready var ladder_top = preload("res://Test Scenes/ladder_top.tscn")
+@onready var spikes = preload("res://Test Scenes/spikes.tscn")
+@onready var push_block = preload("res://Test Scenes/test_block.tscn")
+@onready var entrance = preload("res://Test Scenes/entrance.tscn")
+@onready var exit = preload("res://Test Scenes/exit.tscn")
+@onready var altar_left = preload("res://Test Scenes/altar_left.tscn")
+@onready var altar_right = preload("res://Test Scenes/altar_right.tscn")
+@onready var sac_altar_left = preload("res://Test Scenes/sac_altar_left.tscn")
+@onready var sac_altar_right = preload("res://Test Scenes/sac_altar_right.tscn")
+@onready var bg_kali_body = 'bg_kali_body'
+@onready var kali_head = preload("res://KaliHead.tscn")
+@onready var chest = preload("res://Test Scenes/chest.tscn")
+@onready var gold_idol = preload("res://Test Scenes/gold_idol.tscn")
+@onready var giant_tiki_head = preload("res://Test Scenes/giant_tiki_head.tscn")
+@onready var bg_tiki = 'bg_tiki'
+@onready var bg_tiki_arms = 'bg_tiki_arms'
+@onready var bg_dice_sign = 'bg_dice_sign'
+@onready var s_ice_block = preload("res://Test Scenes/ice_block.tscn")#sprite
+@onready var bg_wanted = 'bg_wanted'
+@onready var brickSmooth = preload("res://Test Scenes/brick_smooth.tscn")
+@onready var lamp_red = preload("res://Test Scenes/lamp_red.tscn")
+@onready var lamp = preload("res://Test Scenes/lamp.tscn")
+@onready var shopkeeper = preload("res://Test Scenes/shopkeeper.tscn")
+@onready var sign = preload("res://Test Scenes/sign.tscn")
+@onready var s_sign_general = preload("res://Test Scenes/sign.tscn")
+@onready var s_sign_bomb = preload("res://Test Scenes/sign.tscn")
+@onready var s_sign_weapon = preload("res://Test Scenes/sign.tscn")
+@onready var s_sign_clothing = preload("res://Test Scenes/sign.tscn")
+@onready var s_sign_rare = preload("res://Test Scenes/sign.tscn")
+@onready var s_sign_craps = preload("res://Test Scenes/sign.tscn")
+@onready var s_sign_kissing = preload("res://Test Scenes/sign.tscn")
+@onready var dice = preload("res://Test Scenes/dice.tscn")
+@onready var snake = preload("res://Test Scenes/snake.tscn")
+@onready var ruby_big = preload("res://Test Scenes/ruby_big.tscn")
+@onready var mattock = preload("res://Test Scenes/mattock.tscn")
 
 func room_gen():
+	randomize()
 	var str_temp = "00000000000000000000000000000000000000000000000000000000000000000000000000000000"
+	
+	
 
 	var room_path = global.room_path[[LevelGeneration.scr_get_room_x(position.x), LevelGeneration.scr_get_room_y(position.y)]]
 	var room_path_above = -1
@@ -610,7 +616,7 @@ func room_gen():
 			
 			elif (tile == "i"):
 			
-				LevelGeneration.scr_shop_items_gen()
+				LevelGeneration.scr_shop_items_gen(xpos, ypos, shop_type)
 			
 			elif (tile == "d"):
 			

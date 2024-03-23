@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cto175aft4ry7"]
+
+[ext_resource type="Texture2D" uid="uid://goyjujmg6gre" path="res://gold_idol.png" id="1_n3xtp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xg5by"]
+size = Vector2(16, 16)
+
+[node name="GoldIdol" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_n3xtp")
+offset = Vector2(0, -4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_xg5by")

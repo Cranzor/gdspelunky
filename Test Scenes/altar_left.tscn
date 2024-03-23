@@ -6,6 +6,5 @@
 position = Vector2(96, 112)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -16)
 texture = ExtResource("1_iko44")
 centered = false

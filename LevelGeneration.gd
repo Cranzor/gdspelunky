@@ -10,15 +10,18 @@ var spectacles
 var web_cannon
 var pistol
 var mitt
-var paste
+var paste = preload("res://Test Scenes/paste.tscn")
 var spring_shoes
 var spike_shoes
 var machete
-var bomb_box
+var bomb_box = preload("res://Test Scenes/bomb_box.tscn")
 var bow
 var compass
 var para_pickup
 var rope_pile
+
+var bomb_bag = preload("res://Test Scenes/bomb_bag.tscn")
+
 	
 func scr_get_room_x(x):
 #
@@ -57,7 +60,9 @@ func scr_generate_item(x, y, set_type):
 #
 # Generate an item at (x,y).
 #
+	randomize()
 	var obj
+	
 	if (set_type == 0): # Crate Set
 
 		if (randi_range(1,500) == 1): obj = gml.instance_create(x, y, jetpack)
@@ -131,22 +136,26 @@ func scr_shop_items_gen(xpos, ypos, shop_type): #--- original doesn't have these
 	#
 	# Generate shop items.  Must be called from scr_room_gen_x().
 	#
-
+	randomize()
+	
+	var obj
+	var m
+	var n
+	
 	if (shop_type == "Bomb"):
 
 		while (true):
 		
 			if (randi_range(1,5) == 1):
-			
-				if (not instance_exists(paste)):
-					obj = instance_create(xpos+8, ypos+10, paste)
+				if (not gml.instance_exists(paste)):
+					obj = gml.instance_create(xpos+8, ypos+10, paste)
 					break
 			
 			elif (randi_range(1,4) == 1):
-				obj = instance_create(xpos+8, ypos+8, bomb_box)
+				obj = gml.instance_create(xpos+8, ypos+8, bomb_box)
 				break
 			else:
-				obj = instance_create(xpos+8, ypos+10, bomb_bag)
+				obj = gml.instance_create(xpos+8, ypos+10, bomb_bag)
 				break
 		
 
@@ -157,42 +166,42 @@ func scr_shop_items_gen(xpos, ypos, shop_type): #--- original doesn't have these
 		
 			n = randi_range(1,4)
 			if (m <= 0):
-				obj = instance_create(xpos+8, ypos+10, bomb_bag)
+				obj = gml.instance_create(xpos+8, ypos+10, bomb_bag)
 				break
 			elif (randi_range(1,12)==1):
 			
-				if (not instance_exists(web_cannon)):
-					obj = instance_create(xpos+8, ypos+12, web_cannon)
+				if (not gml.instance_exists(web_cannon)):
+					obj = gml.instance_create(xpos+8, ypos+12, web_cannon)
 					break
 			
 			elif (randi_range(1,10)==1):
 			
-				if (not instance_exists(shotgun)):
-					obj = instance_create(xpos+8, ypos+12, shotgun)
+				if (not gml.instance_exists(shotgun)):
+					obj = gml.instance_create(xpos+8, ypos+12, shotgun)
 					break
 			
 			elif (randi_range(1,6)==1):
-				obj = instance_create(xpos+8, ypos+10, bomb_box)
+				obj = gml.instance_create(xpos+8, ypos+10, bomb_box)
 				break
 			elif (n == 1):
 			
-				if (not instance_exists(pistol)):
-					obj = instance_create(xpos+8, ypos+12, pistol)
+				if (not gml.instance_exists(pistol)):
+					obj = gml.instance_create(xpos+8, ypos+12, pistol)
 					break
 			
 			elif (n == 2):
 			
-				if (not instance_exists(machete)):
-					obj = instance_create(xpos+8, ypos+12, machete)
+				if (not gml.instance_exists(machete)):
+					obj = gml.instance_create(xpos+8, ypos+12, machete)
 					break
 			
 			elif (n == 3):
-				obj = instance_create(xpos+8, ypos+10, bomb_bag)
+				obj = gml.instance_create(xpos+8, ypos+10, bomb_bag)
 				break
 			elif (n == 4):
 			
-				if (not instance_exists(bow)):
-					obj = instance_create(xpos+8, ypos+12, bow)
+				if (not gml.instance_exists(bow)):
+					obj = gml.instance_create(xpos+8, ypos+12, bow)
 					break
 			
 			m -= 1
@@ -205,42 +214,42 @@ func scr_shop_items_gen(xpos, ypos, shop_type): #--- original doesn't have these
 		
 			n = randi_range(1,6)
 			if (randi_range(1,m) == 1):
-				obj = instance_create(xpos+8, ypos+11, rope_pile)
+				obj = gml.instance_create(xpos+8, ypos+11, rope_pile)
 				break
 			elif (n == 1):
 				
-				if (not instance_exists(spring_shoes)):
-					obj = instance_create(xpos+8, ypos+10, spring_shoes)
+				if (not gml.instance_exists(spring_shoes)):
+					obj = gml.instance_create(xpos+8, ypos+10, spring_shoes)
 					break
 				
 			elif (n == 2):
 				
-				if (not instance_exists(spectacles)):
-					obj = instance_create(xpos+8, ypos+10, spectacles)
+				if (not gml.instance_exists(spectacles)):
+					obj = gml.instance_create(xpos+8, ypos+10, spectacles)
 					break
 				
 			elif (n == 3):
 				
-				if (not instance_exists(gloves)):
-					obj = instance_create(xpos+8, ypos+8, gloves)
+				if (not gml.instance_exists(gloves)):
+					obj = gml.instance_create(xpos+8, ypos+8, gloves)
 					break
 				
 			elif (n == 4):
 				
-				if (not instance_exists(mitt)):
-					obj = instance_create(xpos+8, ypos+8, mitt)
+				if (not gml.instance_exists(mitt)):
+					obj = gml.instance_create(xpos+8, ypos+8, mitt)
 					break
 				
 			elif (n == 5):
 				
-				if (not instance_exists(cape_pickup)):
-					obj = instance_create(xpos+8, ypos+10, cape_pickup)
+				if (not gml.instance_exists(cape_pickup)):
+					obj = gml.instance_create(xpos+8, ypos+10, cape_pickup)
 					break
 				
 			elif (n == 6):
 				
-				if (not instance_exists(spike_shoes)):
-					obj = instance_create(xpos+8, ypos+10, spike_shoes)
+				if (not gml.instance_exists(spike_shoes)):
+					obj = gml.instance_create(xpos+8, ypos+10, spike_shoes)
 					break
 				
 			m -= 1
@@ -253,72 +262,72 @@ func scr_shop_items_gen(xpos, ypos, shop_type): #--- original doesn't have these
 		
 			n = randi_range(1,11)
 			if (randi_range(1,m) == 1):
-				obj = instance_create(xpos+8, ypos+8, bomb_box)
+				obj = gml.instance_create(xpos+8, ypos+8, bomb_box)
 				break
 			elif (n == 1):
 				
-				if (not instance_exists(spring_shoes)):
-					obj = instance_create(xpos+8, ypos+10, spring_shoes)
+				if (not gml.instance_exists(spring_shoes)):
+					obj = gml.instance_create(xpos+8, ypos+10, spring_shoes)
 					break
 				
 			elif (n == 2):
 				
-				if (not instance_exists(compass)):
-					obj = instance_create(xpos+8, ypos+10, compass)
+				if (not gml.instance_exists(compass)):
+					obj = gml.instance_create(xpos+8, ypos+10, compass)
 					break
 				
 			elif (n == 3):
 				
-				if (not instance_exists(mattock)):
-					obj = instance_create(xpos+8, ypos+10, mattock)
+				if (not gml.instance_exists(mattock)):
+					obj = gml.instance_create(xpos+8, ypos+10, mattock)
 					break
 				
 			elif (n == 4):
 				
-				if (not instance_exists(spectacles)):
-					obj = instance_create(xpos+8, ypos+10, spectacles)
+				if (not gml.instance_exists(spectacles)):
+					obj = gml.instance_create(xpos+8, ypos+10, spectacles)
 					break
 				
 			elif (n == 5):
 				
-				if (not instance_exists(jetpack)):
-					obj = instance_create(xpos+8, ypos+8, jetpack)
+				if (not gml.instance_exists(jetpack)):
+					obj = gml.instance_create(xpos+8, ypos+8, jetpack)
 					break
 				
 			elif (n == 6):
 				
-				if (not instance_exists(gloves)):
-					obj = instance_create(xpos+8, ypos+8, gloves)
+				if (not gml.instance_exists(gloves)):
+					obj = gml.instance_create(xpos+8, ypos+8, gloves)
 					break
 				
 			elif (n == 7):
 				
-				if (not instance_exists(mitt)):
-					obj = instance_create(xpos+8, ypos+8, mitt)
+				if (not gml.instance_exists(mitt)):
+					obj = gml.instance_create(xpos+8, ypos+8, mitt)
 					break
 				
 			elif (n == 8):
 				
-				if (not instance_exists(web_cannon)):
-					obj = instance_create(xpos+8, ypos+12, web_cannon)
+				if (not gml.instance_exists(web_cannon)):
+					obj = gml.instance_create(xpos+8, ypos+12, web_cannon)
 					break
 				
 			elif (n == 9):
 				
-				if (not instance_exists(cape_pickup)):
-					obj = instance_create(xpos+8, ypos+10, cape_pickup)
+				if (not gml.instance_exists(cape_pickup)):
+					obj = gml.instance_create(xpos+8, ypos+10, cape_pickup)
 					break
 				
 			elif (n == 10):
 				
-				if (not instance_exists(teleporter)):
-					obj = instance_create(xpos+8, ypos+12, teleporter)
+				if (not gml.instance_exists(teleporter)):
+					obj = gml.instance_create(xpos+8, ypos+12, teleporter)
 					break
 				
 			elif (n == 11):
 				
-				if (not instance_exists(spike_shoes)):
-					obj = instance_create(xpos+8, ypos+10, spike_shoes)
+				if (not gml.instance_exists(spike_shoes)):
+					obj = gml.instance_create(xpos+8, ypos+10, spike_shoes)
 					break
 				
 			m -= 1
@@ -331,41 +340,41 @@ func scr_shop_items_gen(xpos, ypos, shop_type): #--- original doesn't have these
 			n = randi_range(1,3)
 			if (randi_range(1,20) == 1):
 			
-				if (not instance_exists(mattock)):
-					obj = instance_create(xpos+8, ypos+10, mattock)
+				if (not gml.instance_exists(mattock)):
+					obj = gml.instance_create(xpos+8, ypos+10, mattock)
 					break
 			
 			elif (randi_range(1,10) == 1):
 				
-				if (not instance_exists(gloves)):
-					obj = instance_create(xpos+8, ypos+8, gloves)
+				if (not gml.instance_exists(gloves)):
+					obj = gml.instance_create(xpos+8, ypos+8, gloves)
 					break
 				
 			elif (randi_range(1,10) == 1):
 				
-				if (not instance_exists(compass)):
-					obj = instance_create(xpos+8, ypos+10, compass)
+				if (not gml.instance_exists(compass)):
+					obj = gml.instance_create(xpos+8, ypos+10, compass)
 					break
 				
 			elif (n == 1):
-				obj = instance_create(xpos+8, ypos+10, bomb_bag)
+				obj = gml.instance_create(xpos+8, ypos+10, bomb_bag)
 				break
 			elif (n == 2):
-				obj = instance_create(xpos+8, ypos+11, rope_pile)
+				obj = gml.instance_create(xpos+8, ypos+11, rope_pile)
 				break
 			elif (n == 3):
-				obj = instance_create(xpos+8, ypos+10, para_pickup)
+				obj = gml.instance_create(xpos+8, ypos+10, para_pickup)
 				break
 		
+	print(obj)
 
-
-	if (obj):
-
-		obj.for_sale = true
-		if (global.curr_level > 2):
-		
-			with obj
-			
-				cost += (cost/100)*10*(global.curr_level-2)
-				if (shop_desc == ""): buy_message = "A " + string_upper(type) + " FOR $" + string(cost) + "."
-				else: buy_message = shop_desc + " FOR $" + string(cost) + "."
+	#if (obj):
+#
+		#obj.for_sale = true
+		#if (global.curr_level > 2):
+		#
+			#with obj
+			#
+				#cost += (cost/100)*10*(global.curr_level-2)
+				#if (shop_desc == ""): buy_message = "A " + string_upper(type) + " FOR $" + string(cost) + "."
+				#else: buy_message = shop_desc + " FOR $" + string(cost) + "."

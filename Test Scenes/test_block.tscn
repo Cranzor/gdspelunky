@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://da63t3v4gi0j5"]
 
-[ext_resource type="Texture2D" uid="uid://rfkuntythjyq" path="res://image 0.png" id="1_d3syv"]
+[ext_resource type="Texture2D" uid="uid://rfkuntythjyq" path="res://brick_gold.png" id="1_6umdu"]
 
 [node name="Block" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(8, 8)
-texture = ExtResource("1_d3syv")
+texture = ExtResource("1_6umdu")

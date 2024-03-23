@@ -1,23 +1,37 @@
-[gd_scene load_steps=19 format=3 uid="uid://ddr2l1k3vpjtb"]
+[gd_scene load_steps=33 format=3 uid="uid://ddr2l1k3vpjtb"]
 
 [ext_resource type="Script" path="res://LevelGen.gd" id="1_sryps"]
-[ext_resource type="Texture2D" uid="uid://rfkuntythjyq" path="res://image 0.png" id="2_00rdj"]
-[ext_resource type="PackedScene" uid="uid://da63t3v4gi0j5" path="res://test_block.tscn" id="2_xfro3"]
-[ext_resource type="PackedScene" uid="uid://qkx8bdhgk7uv" path="res://brick.tscn" id="3_kyky1"]
+[ext_resource type="Texture2D" uid="uid://rfkuntythjyq" path="res://brick_gold.png" id="2_00rdj"]
+[ext_resource type="PackedScene" uid="uid://da63t3v4gi0j5" path="res://Test Scenes/test_block.tscn" id="2_xfro3"]
+[ext_resource type="PackedScene" uid="uid://qkx8bdhgk7uv" path="res://Test Scenes/brick.tscn" id="3_kyky1"]
 [ext_resource type="Texture2D" uid="uid://c24vq1axjavoo" path="res://guy.png" id="3_wnv58"]
-[ext_resource type="PackedScene" uid="uid://cyf00dnd3u6l" path="res://ladder.tscn" id="4_n7k62"]
-[ext_resource type="PackedScene" uid="uid://chyw47b1p4may" path="res://ladder_top.tscn" id="5_njm5n"]
-[ext_resource type="PackedScene" uid="uid://bfdawyb853jm8" path="res://spikes.tscn" id="6_y2ymj"]
-[ext_resource type="PackedScene" uid="uid://c87ugr4rv3qid" path="res://entrance.tscn" id="8_n2hao"]
-[ext_resource type="PackedScene" uid="uid://dxkvf0nwavwqf" path="res://exit.tscn" id="9_k5yjd"]
-[ext_resource type="PackedScene" uid="uid://b08bxf7uhdv6t" path="res://altar_left.tscn" id="10_jtgdk"]
-[ext_resource type="PackedScene" uid="uid://sr71uvxdd1xw" path="res://altar_right.tscn" id="11_n3v11"]
+[ext_resource type="PackedScene" uid="uid://cyf00dnd3u6l" path="res://Test Scenes/ladder.tscn" id="4_n7k62"]
+[ext_resource type="PackedScene" uid="uid://chyw47b1p4may" path="res://Test Scenes/ladder_top.tscn" id="5_njm5n"]
+[ext_resource type="PackedScene" uid="uid://bfdawyb853jm8" path="res://Test Scenes/spikes.tscn" id="6_y2ymj"]
+[ext_resource type="PackedScene" uid="uid://c87ugr4rv3qid" path="res://Test Scenes/entrance.tscn" id="8_n2hao"]
+[ext_resource type="PackedScene" uid="uid://dxkvf0nwavwqf" path="res://Test Scenes/exit.tscn" id="9_k5yjd"]
+[ext_resource type="PackedScene" uid="uid://b08bxf7uhdv6t" path="res://Test Scenes/altar_left.tscn" id="10_jtgdk"]
+[ext_resource type="PackedScene" uid="uid://sr71uvxdd1xw" path="res://Test Scenes/altar_right.tscn" id="11_n3v11"]
 [ext_resource type="Texture2D" uid="uid://db0tujko3o5fm" path="res://altar_right.png" id="11_o1dxx"]
-[ext_resource type="PackedScene" uid="uid://cmcy2hgwiojio" path="res://sac_altar_left.tscn" id="12_vtbrf"]
-[ext_resource type="PackedScene" uid="uid://ba6eifim7hhge" path="res://sac_altar_right.tscn" id="13_4e0dr"]
-[ext_resource type="PackedScene" uid="uid://pkv3o0qbsxb4" path="res://chest.tscn" id="14_jeq4p"]
-[ext_resource type="PackedScene" uid="uid://cto175aft4ry7" path="res://gold_idol.tscn" id="15_e7y0q"]
-[ext_resource type="PackedScene" uid="uid://bvu5djd8ak8x5" path="res://giant_tiki_head.tscn" id="16_58igv"]
+[ext_resource type="PackedScene" uid="uid://cmcy2hgwiojio" path="res://Test Scenes/sac_altar_left.tscn" id="12_vtbrf"]
+[ext_resource type="PackedScene" uid="uid://ba6eifim7hhge" path="res://Test Scenes/sac_altar_right.tscn" id="13_4e0dr"]
+[ext_resource type="PackedScene" uid="uid://pkv3o0qbsxb4" path="res://Test Scenes/chest.tscn" id="14_jeq4p"]
+[ext_resource type="PackedScene" uid="uid://cto175aft4ry7" path="res://Test Scenes/gold_idol.tscn" id="15_e7y0q"]
+[ext_resource type="PackedScene" uid="uid://bvu5djd8ak8x5" path="res://Test Scenes/giant_tiki_head.tscn" id="16_58igv"]
+[ext_resource type="PackedScene" uid="uid://353emip7dva7" path="res://Test Scenes/bomb_bag.tscn" id="17_xp22l"]
+[ext_resource type="PackedScene" uid="uid://dfwyepifhi3ob" path="res://Test Scenes/bomb_box.tscn" id="18_0hdxk"]
+[ext_resource type="PackedScene" uid="uid://b1mdnk4h885py" path="res://Test Scenes/paste.tscn" id="19_jao8y"]
+[ext_resource type="PackedScene" uid="uid://b8r8dk4iu61en" path="res://KaliHead.tscn" id="20_t10n0"]
+[ext_resource type="PackedScene" uid="uid://ddf02yuw4gfwf" path="res://Test Scenes/ice_block.tscn" id="21_y6t8x"]
+[ext_resource type="PackedScene" uid="uid://bxh42hswhlh8m" path="res://Test Scenes/brick_smooth.tscn" id="22_j4ld4"]
+[ext_resource type="PackedScene" uid="uid://806he1vl74pr" path="res://Test Scenes/lamp_red.tscn" id="23_8f5nx"]
+[ext_resource type="PackedScene" uid="uid://dqbdu5cssbf83" path="res://Test Scenes/lamp.tscn" id="24_3jwro"]
+[ext_resource type="PackedScene" uid="uid://culn7qedbutm7" path="res://Test Scenes/shopkeeper.tscn" id="25_2corm"]
+[ext_resource type="PackedScene" uid="uid://d0c5nemcuraky" path="res://Test Scenes/sign.tscn" id="26_7dacn"]
+[ext_resource type="PackedScene" uid="uid://etbwqbh2mrg8" path="res://Test Scenes/dice.tscn" id="27_v5fum"]
+[ext_resource type="PackedScene" uid="uid://6km4dhdu3dvj" path="res://Test Scenes/snake.tscn" id="28_6tss4"]
+[ext_resource type="PackedScene" uid="uid://u7hj2ttnnn2u" path="res://Test Scenes/ruby_big.tscn" id="29_e2v47"]
+[ext_resource type="PackedScene" uid="uid://if1bq128f54" path="res://Test Scenes/mattock.tscn" id="30_dbg1k"]
 
 [node name="LevelGen" type="Node2D"]
 script = ExtResource("1_sryps")
@@ -53,6 +67,7 @@ texture = ExtResource("2_00rdj")
 [node name="Exit" parent="." instance=ExtResource("9_k5yjd")]
 
 [node name="AltarLeft" parent="." instance=ExtResource("10_jtgdk")]
+position = Vector2(96, 96)
 
 [node name="AltarRight" parent="." instance=ExtResource("11_n3v11")]
 
@@ -66,10 +81,40 @@ texture = ExtResource("2_00rdj")
 
 [node name="GiantTikiHead" parent="." instance=ExtResource("16_58igv")]
 
-[node name="GiantTikiHead2" type="Node2D" parent="."]
-position = Vector2(112, 80)
+[node name="BombBag" parent="." instance=ExtResource("17_xp22l")]
 
-[node name="Sprite2D" type="Sprite2D" parent="GiantTikiHead2"]
+[node name="BombBox" parent="." instance=ExtResource("18_0hdxk")]
+position = Vector2(128, 64)
+
+[node name="Paste" parent="." instance=ExtResource("19_jao8y")]
+position = Vector2(128, 80)
+
+[node name="KaliHead" parent="." instance=ExtResource("20_t10n0")]
+
+[node name="IceBlock" parent="." instance=ExtResource("21_y6t8x")]
+
+[node name="BrickSmooth" parent="." instance=ExtResource("22_j4ld4")]
+
+[node name="LampRed" parent="." instance=ExtResource("23_8f5nx")]
+
+[node name="Lamp" parent="." instance=ExtResource("24_3jwro")]
+
+[node name="Shopkeeper" parent="." instance=ExtResource("25_2corm")]
+
+[node name="Sign" parent="." instance=ExtResource("26_7dacn")]
+
+[node name="Dice" parent="." instance=ExtResource("27_v5fum")]
+
+[node name="Snake" parent="." instance=ExtResource("28_6tss4")]
+
+[node name="RubyBig" parent="." instance=ExtResource("29_e2v47")]
+
+[node name="Mattock" parent="." instance=ExtResource("30_dbg1k")]
+
+[node name="GiantTikiHead16" type="Node2D" parent="."]
+position = Vector2(16, 64)
+
+[node name="Sprite2D" type="Sprite2D" parent="GiantTikiHead16"]
 position = Vector2(8, 8)
 texture = ExtResource("11_o1dxx")
 

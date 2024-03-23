@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://culn7qedbutm7"]
+
+[ext_resource type="Texture2D" uid="uid://d3usmugyb256q" path="res://shopkeeper.png" id="1_ngx1g"]
+
+[node name="Shopkeeper" type="Node2D"]
+position = Vector2(48, 96)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(8, 8)
+texture = ExtResource("1_ngx1g")

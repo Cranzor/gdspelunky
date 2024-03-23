@@ -733,10 +733,8 @@ sources/28 = SubResource("TileSetAtlasSource_rbnwk")
 [node name="Main" type="Node2D"]
 
 [node name="RoomGen" type="Node2D" parent="."]
-position = Vector2(80, 64)
 script = ExtResource("1_4piaa")
 
 [node name="BgElements" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_kjode")
 format = 2
-layer_0/z_index = -1

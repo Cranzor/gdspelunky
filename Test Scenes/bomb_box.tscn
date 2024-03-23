@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfwyepifhi3ob"]
+
+[ext_resource type="Texture2D" uid="uid://gjbmwc4rxinw" path="res://bomb_box.png" id="1_cjnn5"]
+
+[node name="BombBox" type="Node2D"]
+position = Vector2(112, 80)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_cjnn5")
+centered = false

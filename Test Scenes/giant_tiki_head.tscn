@@ -7,4 +7,3 @@ position = Vector2(96, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_p40p6")
-centered = false

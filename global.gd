@@ -23,7 +23,7 @@ var clean_solids
 var collect
 var collect_counter
 var craps_point
-var curr_level
+var curr_level = 1 #adjust later
 var custom_level
 var custom_level_author
 var custom_level_name
@@ -205,7 +205,10 @@ var prob_lake
 var prob_sac_pit
 var prob_snake_pit
 var prob_yeti_lair
-var room_path
+var room_path = {[0,0]:0, [0,1]:0, [0,2]:0, [0,3]:0, #adjust?
+	[1,0]:0, [1,1]:0, [1,2]: 0, [1,3]:0,
+	[2,0]:0, [2,1]:0, [2,2]:0, [2,3]:0,
+	[3,0]:0, [3,1]: 0, [3,2]:0, [3,3]:0}
 var room_poss
 var rope
 var rubies

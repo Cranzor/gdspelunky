@@ -3,10 +3,12 @@ extends Node
 #For tile_add
 @export_dir var bg_folder
 @export var bg_holder_path: String
-var bg_dict = {'background_clouds': 0 , 'background_night' : 1, 'bg_alien_ship' : 2, 'bg_alien_ship2' : 3, 'bg_alien_ship3' : 4, 'bg_cave' : 5, 'bg_cave_top' : 6, 
-			'bg_cave_top2' : 7, 'bg_cave_top3' : 8, 'bg_cave_top4' : 9, 'bg_clouds' : 10, 'bg_dice_sign' : 11, 'bg_extras' : 12, 'bg_extras_ice' : 13, 'bg_extras_lush' : 14, 
-			'bg_extras_temple' : 15, 'bg_hmm' : 16, 'bg_kali_body' : 17, 'bg_kali_heads' : 18, 'bg_lady_xoc' : 19, 'bg_sky' : 20, 'bg_statues' : 21, 'bg_temp' : 22, 'bg_temple' : 23, 
-			'bg_tiki' : 24, 'bg_tiki_arms' : 25, 'bg_title' : 26, 'bg_trees' : 27, 'bg_wanted' : 28}
+var bg_dict = {'background_clouds': 0 , 'background_night' : 1, 'bg_alien_ship' : 2, 'bg_alien_ship2' : 3, 'bg_alien_ship3' : 4, 'bg_cave' : 5, 'bg_cave_top' : 6,
+	'bg_cave_top2' : 7, 'bg_cave_top3' : 8, 'bg_cave_top4' : 9, 'bg_clouds' : 10, 'bg_dice_sign' : 11, 'bg_extras' : 12, 'bg_extras_ice' : 13, 'bg_extras_lush' : 14,
+	'bg_extras_temple' : 15, 'bg_hmm' : 16, 'bg_kali_body' : 17, 'bg_kali_heads' : 18, 'bg_lady_xoc' : 19, 'bg_sky' : 20, 'bg_statues' : 21, 'bg_temp' : 22, 'bg_temple' : 23,
+	'bg_tiki' : 24, 'bg_tiki_arms' : 25, 'bg_title' : 26, 'bg_trees' : 27, 'bg_wanted' : 28}
+	
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -18,7 +20,7 @@ func _process(delta):
 	pass
 
 func string_char_at(str,index):
-	var char = str[index]
+	var char = str[index - 1]
 	return char
 
 func string_delete(str,index,count):
@@ -26,15 +28,22 @@ func string_delete(str,index,count):
 	return str
 	
 func string_insert(substr,str,index):
-	str.insert(substr, index)
+	str.insert(index, substr)
 	return str
+	
+func instance_exists(obj):
+	var existence = get_tree().get_nodes_in_group(str(obj))
+	if existence == []:
+		return false
+	else:
+		return true
+
 #-----------------------Have to work on
 func instance_create(x,y,obj): #should return the node as this is used in scripts
 	var instance = obj.instantiate()
 	add_child(instance)
 	instance.position.x = x
 	instance.position.y = y
-	
 	return instance
 
 func collision_point(x, y, z, u, v): #temporary to resolve errors
@@ -79,7 +88,7 @@ func tile_add(background,left,top,width,height,x,y,depth): #return value of tile
 		y = y + 1
 		coords.y += 1
 		for j in range(0, size.x):
-			bg_elements.set_cell(0, Vector2i(x + j, y), tile_id, Vector2i(coords.x + j, coords.y))
+			bg_elements.set_cell(0, Vector2i(x + j, y - 1), tile_id, Vector2i(coords.x + j, coords.y))
 	
 func scr_generate_item():
 	pass
