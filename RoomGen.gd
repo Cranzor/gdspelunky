@@ -46,11 +46,18 @@ extends Node2D
 #The string representing a room or obstacle must be laid out unbroken:
 #*/
 
+#---------------------------------------------
+func _process(delta): # reload for testing. currently not working correctly
+	if Input.is_action_just_pressed("reroll"):
+		get_tree().reload_current_scene()
+#--------------------------------------------------
+
 func _ready(): # For testing
 	#var bg_kali_body = "bg_kali_body"
 	#gml.tile_add(bg_kali_body, 0, 0, 64, 64, 64, 64, 10001)
 	
 	#LevelGeneration.scr_shop_items_gen(20, 20, "Bomb")
+	LevelGeneration.scr_level_gen()
 	room_gen()
 
 @onready var block = preload("res://Test Scenes/test_block.tscn")

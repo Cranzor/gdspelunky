@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dff66n1u7ilk1"]
+
+[ext_resource type="Texture2D" uid="uid://civo7j5tey2cf" path="res://title.png" id="1_2cyvx"]
+
+[node name="TitleLogo" type="Node2D"]
+position = Vector2(0, 32)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(8, 8)
+texture = ExtResource("1_2cyvx")
+centered = false

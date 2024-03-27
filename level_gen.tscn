@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://ddr2l1k3vpjtb"]
+[gd_scene load_steps=35 format=3 uid="uid://ddr2l1k3vpjtb"]
 
 [ext_resource type="Script" path="res://LevelGen.gd" id="1_sryps"]
 [ext_resource type="Texture2D" uid="uid://rfkuntythjyq" path="res://brick_gold.png" id="2_00rdj"]
@@ -32,6 +32,8 @@
 [ext_resource type="PackedScene" uid="uid://6km4dhdu3dvj" path="res://Test Scenes/snake.tscn" id="28_6tss4"]
 [ext_resource type="PackedScene" uid="uid://u7hj2ttnnn2u" path="res://Test Scenes/ruby_big.tscn" id="29_e2v47"]
 [ext_resource type="PackedScene" uid="uid://if1bq128f54" path="res://Test Scenes/mattock.tscn" id="30_dbg1k"]
+[ext_resource type="PackedScene" uid="uid://bicqc5vj3u2gd" path="res://Test Scenes/rope.tscn" id="31_dt6vc"]
+[ext_resource type="PackedScene" uid="uid://dff66n1u7ilk1" path="res://Test Scenes/title_logo.tscn" id="32_lt34a"]
 
 [node name="LevelGen" type="Node2D"]
 script = ExtResource("1_sryps")
@@ -111,10 +113,14 @@ position = Vector2(128, 80)
 
 [node name="Mattock" parent="." instance=ExtResource("30_dbg1k")]
 
-[node name="GiantTikiHead16" type="Node2D" parent="."]
+[node name="Rope" parent="." instance=ExtResource("31_dt6vc")]
+
+[node name="TitleLogo" parent="." instance=ExtResource("32_lt34a")]
+
+[node name="GiantTikiHead18" type="Node2D" parent="."]
 position = Vector2(16, 64)
 
-[node name="Sprite2D" type="Sprite2D" parent="GiantTikiHead16"]
+[node name="Sprite2D" type="Sprite2D" parent="GiantTikiHead18"]
 position = Vector2(8, 8)
 texture = ExtResource("11_o1dxx")
 

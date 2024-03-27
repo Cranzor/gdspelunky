@@ -46,7 +46,7 @@ func instance_create(x,y,obj): #should return the node as this is used in script
 	instance.position.y = y
 	return instance
 
-func collision_point(x, y, z, u, v): #temporary to resolve errors
+func collision_point(x, y, z, u, v): #temporary to resolve errors. works fine for now since RoomGen checks that this is false. can't implement until objects have collision
 	pass
 
 #Always adds bg elements
@@ -89,10 +89,13 @@ func tile_add(background,left,top,width,height,x,y,depth): #return value of tile
 		coords.y += 1
 		for j in range(0, size.x):
 			bg_elements.set_cell(0, Vector2i(x + j, y - 1), tile_id, Vector2i(coords.x + j, coords.y))
-	
-func scr_generate_item():
-	pass
 
+func distance_tobject(obj, x, y):
+	if instance_exists(obj) == true:
+		get_tree().get_nodes_in_group(str(obj))
+		#var distance = 
+
+#------------------------
 func singleton_test():
 	var bg_holder_list = get_tree().get_nodes_in_group('BgHolder')
 	var bg_holder = bg_holder_list[0]
