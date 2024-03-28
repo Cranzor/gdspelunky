@@ -20,7 +20,6 @@ var title
 var bricks
 var copy
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	#gml.instance_create(384, 48, title_bg)
 	#gml.instance_create(384, 176, x_start)

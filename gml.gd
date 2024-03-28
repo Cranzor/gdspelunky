@@ -94,6 +94,18 @@ func distance_tobject(obj, x, y):
 	if instance_exists(obj) == true:
 		get_tree().get_nodes_in_group(str(obj))
 		#var distance = 
+		
+func instance_place(x,y,obj): #' Returns the id of the instance of type obj met when the current instance is placed at position (x,y). obj can be an object or the keyword all. If it does not exist, the special object noone is returned.'
+	pass
+	
+func instance_destroy(): #'Destroys current instance'
+	pass
+#---------------------------------------
+func background_index(background: String): #Changing this to a function
+	pass
+
+func get_all_instances(group: String): #Replacement for 'with' keyword
+	pass
 
 #------------------------
 func singleton_test():

@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://be14vogv2v7e1"]
+
+[ext_resource type="PackedScene" uid="uid://b2jlcu453ynaf" path="res://bg_elements.tscn" id="1_vle6y"]
+
+[node name="BaseRoom" type="Node2D"]
+
+[node name="Objects" type="Node2D" parent="."]
+
+[node name="BgElements" parent="." instance=ExtResource("1_vle6y")]
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
