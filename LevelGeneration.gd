@@ -89,6 +89,59 @@ var s_brick
 
 var s_water_top
 var s_lava_top
+var s_cave_up
+var s_cave_up2
+var s_brick_down
+var s_lush_up
+var s_lush_up2
+var s_lush_down
+var s_dark_up
+var s_dark_up2
+var s_dark_down
+var s_ice_up
+var s_ice_up2
+var s_ice_down
+var s_ice_udl
+var s_ice_ul
+var s_ice_dl
+var s_ice_left
+var s_ice_udr
+var s_ice_ur
+var s_ice_dr
+var s_ice_right
+var s_ice_ulr
+var s_ice_dlr
+var s_ice_lr
+var s_g_temple_up
+var s_g_temple_up6
+var s_g_temple_up5
+var s_g_temple_up7
+var s_g_temple_up3
+var s_g_temple_up8
+var s_g_temple_up4
+var s_g_temple_up2
+var s_g_temple_down
+var s_temple_up
+var s_temple_up6
+var s_temple_up5
+var s_temple_up7
+var s_temple_up3
+var s_temple_up8
+var s_temple_up4
+var s_temple_up2
+var s_temple_down
+var s_water_bottom_tall2
+var s_water_bottom_tall1
+var s_water_bottom
+var s_water_bottom2
+var s_water_bottom3
+var s_water_bottom4
+var s_vine_source
+var s_vine_bottom
+var s_tree_top_dead
+var s_tree_top
+var s_tree_branch_dead_l
+var s_tree_branch_left
 	
 func scr_get_room_x(x):
 #
@@ -1170,7 +1223,7 @@ func scr_init_level():
 		if (not InLevel.is_room("r_load_level")):
 			var alarm #---------------------fix this later
 			var all_player1s = gml.get_all_instances("player1")
-			for player1 in all_player1s:  alarm[0] = 10 
+			for player1 in all_player1s:  alarm[0] = 10
 		
 
 
@@ -1227,7 +1280,7 @@ func scr_init_level():
 
 		if (water.sprite_index == s_water_top or water.sprite_index == s_lava_top):
 		
-			scr_check_water_top()
+			scr_check_water_top(water.x, water.y)
 		
 		#/*
 			#obj = instance_place(x-16, y, water)
@@ -1697,7 +1750,7 @@ func scr_room_gen(x, y):
 			var xpos = x + (i-1)*16
 			var ypos = y + j*16
 			#--------------------------------------------------------------------------------------
-			if (tile == "1" and not gml.collision_point(xpos, ypos, 0, 0, 0)): #arguments were originally (xpos, ypos, solid, 0, 0). almost every other time seems to use 0 or -1 instead of "solid"
+			if (tile == "1" and not gml.collision_point(xpos, ypos, solid, 0, 0)): #arguments were originally (xpos, ypos, solid, 0, 0). almost every other time seems to use 0 or -1 instead of "solid" --- changed it back because not sure why I changed it in the first place
 			
 				if (randi_range(1,10) == 1): gml.instance_create(xpos, ypos, block)
 				else:
@@ -1876,7 +1929,580 @@ func scr_entity_gen():
 	pass
 
 func scr_setup_walls(placement):
-	pass
+	#
+	# scr_setup_walls()
+	#
+	# Adds decorations to walls, changes their sprites depending on placement.
+	# 
 
-func scr_check_water_top():
-	pass
+	#/**********************************************************************************
+		#Copyright (c) 2008, 2009 Derek Yu and Mossmouth, LLC
+		#
+		#This file is part of Spelunky.
+#
+		#You can redistribute and/or modify Spelunky, including its source code, under
+		#the terms of the Spelunky User License.
+#
+		#Spelunky is distributed in the hope that it will be entertaining and useful,
+		#but WITHOUT WARRANTY.  Please see the Spelunky User License for more details.
+#
+		#The Spelunky User License should be available in "Game Information", which
+		#can be found in the Resource Explorer, or as an external file called COPYING.
+		#If not, please obtain a new copy of Spelunky from <http:#spelunkyworld.com/>
+		#
+	#***********************************************************************************/
+
+	var all_bricks = gml.get_all_instances("brick")
+	for brick_instance in all_bricks:
+
+		brick_instance.up = false
+		brick_instance.down = false
+		brick_instance.left = false
+		brick_instance.right = false
+
+		if (brick_instance.position.y == 0 or gml.collision_point(brick_instance.position.x, brick_instance.position.y-16, 'brick', 0, 0) or gml.collision_point(brick_instance.position.x, brick_instance.position.y-16, 'hard_block', 0, 0)):  brick_instance.up = true
+		if (brick_instance.y >= placement or gml.collision_point(brick_instance.x, brick_instance.y+16, 'brick', 0, 0) or gml.collision_point(brick_instance.x, brick_instance.y+16, 'hard_block', 0, 0)):  brick_instance.down = true
+		if (gml.collision_point(brick_instance.x-16, brick_instance.y, 'brick', 0, 0) or gml.collision_point(brick_instance.x-16, brick_instance.y, 'hard_block', 0, 0)):  brick_instance.left = true
+		if (gml.collision_point(brick_instance.x+16, brick_instance.y, 'brick', 0, 0) or gml.collision_point(brick_instance.x+16, brick_instance.y, 'hard_block', 0, 0)):  brick_instance.right = true
+
+		if (not brick_instance.up):
+		
+			brick_instance.sprite_index = s_cave_up
+			if (global.graphics_high):
+			
+				if (randi_range(1,3) < 3): gml.tile_add('bg_cave_top', 0, 0, 16, 16, brick_instance.x, brick_instance.y-16, 3)
+				else: gml.tile_add('bg_cave_top', 16, 0, 16, 16, brick_instance.x, brick_instance.y-16, 3)
+			
+			# instance_create(x, y-16, cave_top)
+		
+		
+		if (not brick_instance.down):
+		
+			if (not brick_instance.up): brick_instance.sprite_index = s_cave_up2
+			else: brick_instance.sprite_index = s_brick_down
+			#instance_create(x, y+16, cave_bottom)
+		
+		
+		#/*
+		#if (not left):
+		#
+			#instance_create(x-16, y, cave_left)
+		#
+		#
+		#if (not right):
+		#
+			#instance_create(x+15, y, cave_right)
+		#
+		#*/
+		
+		
+
+
+	var all_lushes = gml.get_all_instances("lush")
+	for lush_instance in all_lushes:
+
+		lush_instance.up = false
+		lush_instance.down = false
+		lush_instance.left = false
+		lush_instance.right = false
+
+		if (lush_instance.y == 0 or gml.collision_point(lush_instance.x, lush_instance.y-16, 'lush', 0, 0)):  lush_instance.up = true
+		if (lush_instance.y >= placement or gml.collision_point(lush_instance.x, lush_instance.y+16, 'lush', 0, 0)):  lush_instance.down = true
+		if (gml.collision_point(lush_instance.x-16, lush_instance.y, 'lush', 0, 0)):  lush_instance.left = true
+		if (gml.collision_point(lush_instance.x+16, lush_instance.y, 'lush', 0, 0)):  lush_instance.right = true
+
+
+		if (not lush_instance.up):
+		
+			lush_instance.sprite_index = s_lush_up
+			if (global.graphics_high):
+			
+				if (randi_range(1,8) == 1): gml.tile_add("bg_cave_top2", 32, 0, 16, 16, lush_instance.x, lush_instance.y-16, 3)
+				elif (randi_range(1,3) < 3): gml.tile_add("bg_cave_top2", 0, 0, 16, 16, lush_instance.x, lush_instance.y-16, 3)
+				else: gml.tile_add("bg_cave_top2", 16, 0, 16, 16, lush_instance.x, lush_instance.y-16, 3)
+			
+		
+		
+		if (not lush_instance.down):
+		
+			if (not lush_instance.up): lush_instance.sprite_index = s_lush_up2
+			else: lush_instance.sprite_index = s_lush_down
+			
+			if (not gml.collision_point(lush_instance.x, lush_instance.y+16, 'solid', 0, 0) and global.graphics_high):
+			
+				if (randi_range(1,12) == 1): gml.tile_add('bg_cave_top2', 48, 0, 16, 16, lush_instance.x, lush_instance.y+16, 3)
+				elif (randi_range(1,12) == 1): gml.tile_add('bg_cave_top2', 64, 0, 16, 16, lush_instance.x, lush_instance.y+16, 3)
+			
+			#instance_create(x, y+16, lushBottom)
+		
+		
+
+
+	var all_darks = gml.get_all_instances("dark")
+	for dark_instance in all_darks:
+
+		dark_instance.up = false
+		dark_instance.down = false
+		dark_instance.left = false
+		dark_instance.right = false
+
+		if (dark_instance.y == 0 or gml.collision_point(dark_instance.x, dark_instance.y-16, 'dark', 0, 0)):  dark_instance.up = true
+		if (dark_instance.y >= placement or gml.collision_point(dark_instance.x, dark_instance.y+16, 'dark', 0, 0)):  dark_instance.down = true
+		if (gml.collision_point(dark_instance.x-16, dark_instance.y, 'dark', 0, 0)):  dark_instance.left = true
+		if (gml.collision_point(dark_instance.x+16, dark_instance.y, 'dark', 0, 0)):  dark_instance.right = true
+
+		if (not dark_instance.up):
+		
+			dark_instance.sprite_index = s_dark_up
+			if (global.graphics_high):
+			
+				if (randi_range(1,3) < 3): gml.tile_add("bg_cave_top3", 0, 0, 16, 16, dark_instance.x, dark_instance.y-16, 3)
+				else: gml.tile_add("bg_cave_top3", 16, 0, 16, 16, dark_instance.x, dark_instance.y-16, 3)
+			
+		
+
+		if (not dark_instance.down):
+		
+			if (not dark_instance.up): dark_instance.sprite_index = s_dark_up2
+			else: dark_instance.sprite_index = s_dark_down
+			#instance_create(x, y+16, darkBottom)
+		
+		
+		#/*
+		#if (not left):
+		#
+			#instance_create(x-16, y, darkLeft)
+		#
+		#
+		#if (not right):
+		#
+			#instance_create(x+15, y, darkRight)
+		#
+		#*/
+
+
+	var all_ice = gml.get_all_instances("ice")
+	for ice_instance in all_ice:
+
+		ice_instance.up = false
+		ice_instance.down = false
+		ice_instance.left = false
+		ice_instance.right = false
+
+		if (gml.collision_point(ice_instance.x, ice_instance.y-16, 'ice', 0, 0)):  ice_instance.up = true
+		if (gml.collision_point(ice_instance.x, ice_instance.y+16, 'ice', 0, 0)):  ice_instance.down = true
+		if (gml.collision_point(ice_instance.x-16, ice_instance.y, 'ice', 0, 0)):  ice_instance.left = true
+		if (gml.collision_point(ice_instance.x+16, ice_instance.y, 'ice', 0, 0)):  ice_instance.right = true
+
+		if (not ice_instance.up):
+		
+			ice_instance.sprite_index = s_ice_up
+		
+		if (not ice_instance.down):
+		
+			if (not ice_instance.up): ice_instance.sprite_index = s_ice_up2
+			else: ice_instance.sprite_index = s_ice_down
+			if (randi_range(1,20) == 1 and not gml.collision_point(ice_instance.x, ice_instance.y+16, 'solid', 0, 0)): gml.instance_create(ice_instance.x, ice_instance.y+16, 'ice_bottom')
+		
+		if (not ice_instance.left):
+		
+			if (not ice_instance.up and not ice_instance.down): ice_instance.sprite_index = s_ice_udl
+			elif (not ice_instance.up): ice_instance.sprite_index = s_ice_ul
+			elif (not ice_instance.down): ice_instance.sprite_index = s_ice_dl
+			else: ice_instance.sprite_index = s_ice_left
+		
+		if (not ice_instance.right):
+		
+			if (not ice_instance.up and not ice_instance.down): ice_instance.sprite_index = s_ice_udr
+			elif (not ice_instance.up): ice_instance.sprite_index = s_ice_ur
+			elif (not ice_instance.down): ice_instance.sprite_index = s_ice_dr
+			else: ice_instance.sprite_index = s_ice_right
+		
+		if (not ice_instance.up and not ice_instance.left and not ice_instance.right and ice_instance.down): ice_instance.sprite_index = s_ice_ulr
+		if (not ice_instance.down and not ice_instance.left and not ice_instance.right and ice_instance.up): ice_instance.sprite_index = s_ice_dlr
+		if (ice_instance.up and ice_instance.down and not ice_instance.left and not ice_instance.right): ice_instance.sprite_index = s_ice_lr
+		if (not ice_instance.up and not ice_instance.down and not ice_instance.left and not ice_instance.right):
+		
+			ice_instance.sprite_index = s_ice_block
+		
+
+
+	var all_temples = gml.get_all_instances("temple")
+	for temple_instance in all_temples:
+
+		temple_instance.up = false
+		temple_instance.down = false
+		temple_instance.left = false
+		temple_instance.right = false
+
+		if (temple_instance.y == 0 or gml.collision_point(temple_instance.x, temple_instance.y-16, 'temple', 0, 0) or gml.collision_point(temple_instance.x, temple_instance.y+16, 'temple_fake', 0, 0)):  temple_instance.up = true
+		if (temple_instance.y >= placement or gml.collision_point(temple_instance.x, temple_instance.y+16, 'temple', 0, 0) or gml.collision_point(temple_instance.x, temple_instance.y+16, 'temple_fake', 0, 0)):  temple_instance.down = true
+		if (gml.collision_point(temple_instance.x-16, temple_instance.y, temple, 0, 0) or gml.collision_point(temple_instance.x-16, temple_instance.y, 'temple_fake', 0, 0)):  temple_instance.left = true
+		if (gml.collision_point(temple_instance.x+16, temple_instance.y, temple, 0, 0) or gml.collision_point(temple_instance.x+16, temple_instance.y, 'temple_fake', 0, 0)):  temple_instance.right = true
+
+		if (global.city_of_gold):
+		
+		
+			if (not temple_instance.up):
+					
+				temple_instance.sprite_index = s_g_temple_up
+				if (global.graphics_high):
+				
+					if (randi_range(1,4) == 1): gml.tile_add('bg_cave_top4', 0, 0, 16, 16, temple_instance.x, temple_instance.y-16, 3)
+					elif (randi_range(1,4) == 1): gml.tile_add('bg_cave_top4', 16, 0, 16, 16, temple_instance.x, temple_instance.y-16, 3)
+				
+				if (not temple_instance.left and not temple_instance.right):
+				
+					if (not temple_instance.down): temple_instance.sprite_index = s_g_temple_up6
+					else: temple_instance.sprite_index = s_g_temple_up5
+				
+				elif (not temple_instance.left):
+				   
+					if (not temple_instance.down): temple_instance.sprite_index = s_g_temple_up7
+					else: temple_instance.sprite_index = s_g_temple_up3
+				
+				elif (not temple_instance.right):
+				   
+					if (not temple_instance.down): temple_instance.sprite_index = s_g_temple_up8
+					else: temple_instance.sprite_index = s_g_temple_up4
+				
+				elif (temple_instance.left and temple_instance.right and not temple_instance.down):
+				
+					temple_instance.sprite_index = s_g_temple_up2
+			
+		
+		elif (not temple_instance.down):
+		
+			temple_instance.sprite_index = s_g_temple_down
+		
+		
+		
+		else:
+			if (not temple_instance.up):
+			
+				temple_instance.sprite_index = s_temple_up
+				if (global.graphics_high):
+				
+					if (randi_range(1,4) == 1): gml.tile_add('bg_cave_top4', 0, 0, 16, 16, temple_instance.x, temple_instance.y-16, 3)
+					elif (randi_range(1,4) == 1): gml.tile_add('bg_cave_top4', 16, 0, 16, 16, temple_instance.x, temple_instance.y-16, 3)
+				
+				if (not temple_instance.left and not temple_instance.right):
+				
+					if (not temple_instance.down): temple_instance.sprite_index = s_temple_up6
+					else: temple_instance.sprite_index = s_temple_up5
+				
+				elif (not temple_instance.left):
+				   
+					if (not temple_instance.down): temple_instance.sprite_index = s_temple_up7
+					else: temple_instance.sprite_index = s_temple_up3
+				
+				elif (not temple_instance.right):
+				   
+					if (not temple_instance.down): temple_instance.sprite_index = s_temple_up8
+					else: temple_instance.sprite_index = s_temple_up4
+				
+				elif (temple_instance.left and temple_instance.right and not temple_instance.down):
+				
+					temple_instance.sprite_index = s_temple_up2
+			
+		
+			elif (not temple_instance.down):
+			
+				temple_instance.sprite_index = s_temple_down
+			
+
+
+	var all_fake_temples = gml.get_all_instances("temple_fake")
+	for temple_fake_instance in all_fake_temples:
+
+		temple_fake_instance.up = false
+		temple_fake_instance.down = false
+		temple_fake_instance.left = false
+		temple_fake_instance.right = false
+
+		if (temple_fake_instance.y == 0 or gml.collision_point(temple_fake_instance.x, temple_fake_instance.y-16, 'temple', 0, 0) or gml.collision_point(temple_fake_instance.x, temple_fake_instance.y-16, 'temple_fake', 0, 0)):  temple_fake_instance.up = true
+		if (gml.collision_point(temple_fake_instance.x, temple_fake_instance.y+16, 'temple', 0, 0) or gml.collision_point(temple_fake_instance.x, temple_fake_instance.y+16, 'temple_fake', 0, 0)):  temple_fake_instance.down = true
+		if (gml.collision_point(temple_fake_instance.x-16, temple_fake_instance.y, 'temple', 0, 0) or gml.collision_point(temple_fake_instance.x-16, temple_fake_instance.y, 'temple_fake', 0, 0)):  temple_fake_instance.left = true
+		if (gml.collision_point(temple_fake_instance.x+16, temple_fake_instance.y, 'temple', 0, 0) or gml.collision_point(temple_fake_instance.x+16, temple_fake_instance.y, 'temple_fake', 0, 0)):  temple_fake_instance.right = true
+
+		if (global.city_of_gold):
+		
+		
+			if (not temple_fake_instance.up):
+			
+				temple_fake_instance.sprite_index = s_g_temple_up
+				if (global.graphics_high):
+				
+					if (randi_range(1,4) == 1): gml.tile_add('bg_cave_top4', 0, 0, 16, 16, temple_fake_instance.x, temple_fake_instance.y-16, 3)
+					elif (randi_range(1,4) == 1): gml.tile_add('bg_cave_top4', 16, 0, 16, 16, temple_fake_instance.x, temple_fake_instance.y-16, 3)
+				
+				if (not temple_fake_instance.left and not temple_fake_instance.right):
+				
+					if (not temple_fake_instance.down): temple_fake_instance.sprite_index = s_g_temple_up6
+					else: temple_fake_instance.sprite_index = s_g_temple_up5
+				
+				elif (not temple_fake_instance.left):
+				   
+					if (not temple_fake_instance.down): temple_fake_instance.sprite_index = s_g_temple_up7
+					else: temple_fake_instance.sprite_index = s_g_temple_up3
+				
+				elif (not temple_fake_instance.right):
+				   
+					if (not temple_fake_instance.down): temple_fake_instance.sprite_index = s_g_temple_up8
+					else: temple_fake_instance.sprite_index = s_g_temple_up4
+				
+				elif (temple_fake_instance.left and temple_fake_instance.right and not temple_fake_instance.down):
+				
+					temple_fake_instance.sprite_index = s_g_temple_up2
+				
+			
+			elif (not temple_fake_instance.down):
+			
+				temple_fake_instance.sprite_index = s_g_temple_down
+			
+		
+		
+		else:
+
+			if (not temple_fake_instance.up):
+			
+				temple_fake_instance.sprite_index = s_temple_up
+				if (not temple_fake_instance.left and not temple_fake_instance.right):
+				
+					if (not temple_fake_instance.down): temple_fake_instance.sprite_index = s_temple_up6
+					else: temple_fake_instance.sprite_index = s_temple_up5
+				
+				elif (not temple_fake_instance.left):
+				   
+					if (not temple_fake_instance.down): temple_fake_instance.sprite_index = s_temple_up7
+					else: temple_fake_instance.sprite_index = s_temple_up3
+				
+				elif (not temple_fake_instance.right):
+				   
+					if (not temple_fake_instance.down): temple_fake_instance.sprite_index = s_temple_up8
+					else: temple_fake_instance.sprite_index = s_temple_up4
+				
+				elif (temple_fake_instance.left and temple_fake_instance.right and not temple_fake_instance.down):
+				
+					temple_fake_instance.sprite_index = s_temple_up2
+				
+			
+			elif (not temple_fake_instance.down):
+			
+				temple_fake_instance.sprite_index = s_temple_down
+		
+
+
+	var all_water = gml.get_all_instances("water")
+	for water_instance in all_water:
+
+		if (water_instance.type == "Water"):
+		 
+			water_instance.up = false
+			water_instance.up_water = false
+			water_instance.down = false
+			water_instance.left = false
+			water_instance.right = false
+
+			if (gml.collision_point(water_instance.x, water_instance.y-16, water, 0, 0)):  water_instance.up_water = true
+			if (gml.collision_point(water_instance.x, water_instance.y-16, solid, 0, 0)):  water_instance.up = true
+			if (gml.collision_point(water_instance.x, water_instance.y+16, solid, 0, 0) and not gml.collision_point(water_instance.x, water_instance.y+16, water, 0, 0)):  water_instance.down = true
+
+			if (not water_instance.up and not water_instance.up_water):
+			
+				water_instance.sprite_index = s_water_top
+			
+			
+			if (water_instance.up_water and gml.collision_point(water_instance.x, water_instance.y-32, 'water', 0, 0) and water_instance.down and randi_range(1,4) == 1):
+			
+				water_instance.sprite_index = s_water_bottom_tall2
+				var water = gml.instance_place(water_instance.x, water_instance.y-16, water) #-------- I imagine instance_place will be with a string for the object
+				if (water): water.sprite_index = s_water_bottom_tall1
+			
+			elif ((water_instance.up or water_instance.up_water) and water_instance.down):
+			
+				var n = randi_range(1,4)
+				match (n):
+					1:  water_instance.sprite_index = s_water_bottom
+					2:  water_instance.sprite_index = s_water_bottom2
+					3:  water_instance.sprite_index = s_water_bottom3
+					4:  water_instance.sprite_index = s_water_bottom4
+			
+		
+		
+
+
+	var all_lava = gml.get_all_instances("lava")
+	for lava_instance in all_lava:
+
+		lava_instance.up = false
+		lava_instance.up_water = false
+		lava_instance.down = false
+		lava_instance.left = false
+		lava_instance.right = false
+
+		if (gml.collision_point(lava_instance.x, lava_instance.y-16, water, 0, 0)):  lava_instance.up_water = true
+		if (gml.collision_point(lava_instance.x, lava_instance.y-16, solid, 0, 0)):  lava_instance.up = true
+		if (gml.collision_point(lava_instance.x, lava_instance.y+16, solid, 0, 0)):  lava_instance.down = true
+
+		if (not lava_instance.up and not lava_instance.up_water):
+		
+			lava_instance.sprite_index = s_lava_top
+			if (randi_range(1,4) == 1): lava_instance.spurt = true
+		
+		
+		#/*
+		#if (up_water and gml.collision_point(x, y-32, water, 0, 0) and down and randi_range(1,4) == 1):
+		#
+			#sprite_index = s_water_bottom_tall2
+			#water = instance_place(x, y-16, water)
+			#if (water): water.sprite_index = s_water_bottom_tall1
+		#
+		#elif ((up or up_water) and down):
+		#
+			#n = randi_range(1,4)
+			#match (n)
+			#
+			#1:  sprite_index = s_water_bottom
+			#2:  sprite_index = s_water_bottom2
+			#3:  sprite_index = s_water_bottom3
+			#4:  sprite_index = s_water_bottom4
+			#
+		#
+		#*/
+
+
+	var all_vines = gml.get_all_instances("vine")
+	for vine_instance in all_vines:
+
+		vine_instance.up = false
+		vine_instance.down = false
+		vine_instance.left = false
+		vine_instance.right = false
+
+		if (gml.collision_point(vine_instance.x+8, vine_instance.y-8, 'ladder', 0, 0)):  vine_instance.up = true
+		if (gml.collision_point(vine_instance.x+8, vine_instance.y+16, 'ladder', 0, 0)):  vine_instance.down = true
+
+		if (not vine_instance.up):
+		
+			vine_instance.sprite_index = s_vine_source
+		
+		elif (not vine_instance.down):
+		
+			vine_instance.sprite_index = s_vine_bottom
+		
+
+
+	var all_blocks = gml.get_all_instances("block")
+	for block_instance in all_blocks:
+
+		block_instance.down = false
+
+		if (gml.collision_point(block_instance.x, block_instance.y+16, 'brick', 0, 0) or gml.collision_point(block_instance.x, block_instance.y+16, 'temple', 0, 0) or gml.collision_point(block_instance.x, block_instance.y+16, 'hard_block', 0, 0)):  block_instance.down = true
+
+		# don't want push blocks next to lava until we tighten block_instance.up liquid draining
+		if (gml.collision_point(block_instance.x-16, block_instance.y, 'lava', 0, 0) or gml.collision_point(block_instance.x+16, block_instance.y, 'lava', 0, 0)): block_instance.down = false
+		
+		if (block_instance.down and randi_range(1,4) == 1):
+		
+			gml.instance_create(block_instance.x, block_instance.y, push_block)
+			gml.instance_destroy()
+		
+
+
+	var all_trees = gml.get_all_instances("tree")
+	for tree_instance in all_trees:
+
+		tree_instance.up = false
+		tree_instance.down = false
+		tree_instance.left = false
+		tree_instance.right = false
+
+		if (gml.collision_point(tree_instance.x, tree_instance.y-16, 'tree', 0, 0)):  tree_instance.up = true
+		if (gml.collision_point(tree_instance.x, tree_instance.y+16, 'tree', 0, 0)):  tree_instance.down = true
+		if (gml.collision_point(tree_instance.x-16, tree_instance.y, 'tree', 0, 0)):  tree_instance.left = true
+		if (gml.collision_point(tree_instance.x+16, tree_instance.y, 'tree', 0, 0)):  tree_instance.right = true
+		
+		if (not tree_instance.up):
+		
+			if (global.cemetary): tree_instance.sprite_index = s_tree_top_dead
+			else: tree_instance.sprite_index = s_tree_top
+			tree_instance.depth = 1
+		
+
+
+	var all_tree_branches = gml.get_all_instances("tree_branch")
+	for tree_branch_instance in all_tree_branches:
+
+		tree_branch_instance.up = false
+		tree_branch_instance.down = false
+		tree_branch_instance.left = false
+		tree_branch_instance.right = false
+
+		if (gml.collision_point(tree_branch_instance.x, tree_branch_instance.y-16, 'leaves', 0, 0)):  tree_branch_instance.up = true
+		if (gml.collision_point(tree_branch_instance.x, tree_branch_instance.y+16, 'tree_branch', 0, 0)):  tree_branch_instance.down = true
+		if (gml.collision_point(tree_branch_instance.x-16, tree_branch_instance.y, 'tree_branch', 0, 0)):  tree_branch_instance.left = true
+		if (gml.collision_point(tree_branch_instance.x+16, tree_branch_instance.y, 'tree', 0, 0)):  tree_branch_instance.right = true
+		
+		if (tree_branch_instance.up):
+		
+			tree_branch_instance.instance_destroy()
+		
+		if (tree_branch_instance.right):
+		
+			if (global.cemetary): tree_branch_instance.sprite_index = s_tree_branch_dead_l
+			else: tree_branch_instance.sprite_index = s_tree_branch_left
+	
+
+
+
+func scr_check_water_top(x, y):
+	#
+	# scr_check_water_top()
+	#
+	# recursive function called in scr_init_level() that checks for the surface of a
+	# pool of water or lava and sets the sprite accordingly
+	#
+
+	#/**********************************************************************************
+		#Copyright (c) 2008, 2009 Derek Yu and Mossmouth, LLC
+		#
+		#This file is part of Spelunky.
+#
+		#You can redistribute and/or modify Spelunky, including its source code, under
+		#the terms of the Spelunky User License.
+#
+		#Spelunky is distributed in the hope that it will be entertaining and useful,
+		#but WITHOUT WARRANTY.  Please see the Spelunky User License for more details.
+#
+		#The Spelunky User License should be available in "Game Information", which
+		#can be found in the Resource Explorer, or as an external file called COPYING.
+		#If not, please obtain a new copy of Spelunky from <http:#spelunkyworld.com/>
+		#
+	#***********************************************************************************/
+
+	var obj = gml.instance_place(x-16, y, water)
+	if (gml.instance_exists(obj)):
+
+		if (obj.sprite_index != s_water_top and obj.sprite_index != s_lava_top):
+		
+			var all_objects = gml.get_all_instances("obj") #--- This needs to be converted to the string name of the actual object
+			for object in all_objects:
+			
+				if (object.type == "Lava"): object.sprite_index = s_lava_top
+				else: object.sprite_index = s_water_top
+				scr_check_water_top(object.x, object.y)
+			
+		
+
+	obj = gml.instance_place(x+16, y, water)
+	if (gml.instance_exists(obj)):
+
+		if (obj.sprite_index != s_water_top and obj.sprite_index != s_lava_top):
+		
+			var all_objects = gml.get_all_instances("obj")
+			for object in all_objects:
+					
+				if (object.type == "Lava"): object.sprite_index = s_lava_top
+				else: object.sprite_index = s_water_top
+				scr_check_water_top(object.x, object.y)

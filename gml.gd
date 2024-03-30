@@ -46,7 +46,8 @@ func instance_create(x,y,obj): #should return the node as this is used in script
 	instance.position.y = y
 	return instance
 
-func collision_point(x, y, z, u, v): #temporary to resolve errors. works fine for now since RoomGen checks that this is false. can't implement until objects have collision
+func collision_point(x,y,obj: String,prec,notme): #temporary to resolve errors. works fine for now since RoomGen checks that this is false. can't implement until objects have collision
+	#"This function tests whether at point (x,y) there is a collision with entities of object obj."
 	pass
 
 #Always adds bg elements
