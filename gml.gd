@@ -106,7 +106,8 @@ func background_index(background: String): #Changing this to a function
 	pass
 
 func get_all_instances(group: String): #Replacement for 'with' keyword
-	pass
+	var all_instances = get_tree().get_nodes_in_group(group)
+	return all_instances
 
 func room_height(): #Changing this to function. Return the height of current scene
 	pass

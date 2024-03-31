@@ -1,7 +1,7 @@
 extends Node
 
 var key
-var locked_chest
+var locked_chest: bool
 var tomb_lord
 var alien_craft
 var alienbosses
@@ -174,7 +174,7 @@ var mini3
 var misc_deaths
 var money
 var monkeys
-var murderer
+var murderer = false
 var mus_boss
 var mus_cave
 var mus_credits
@@ -203,7 +203,7 @@ var prob_cemetary
 var prob_dark_level
 var prob_lake
 var prob_sac_pit
-var prob_snake_pit
+var prob_snake_pit = 8
 var prob_yeti_lair
 var room_path = {[0,0]:0, [0,1]:0, [0,2]:0, [0,3]:0, #adjust?
 	[1,0]:0, [1,1]:0, [1,2]: 0, [1,3]:0,
@@ -301,7 +301,7 @@ var temp1
 var temp2
 var temp3
 var test_level
-var thief_level
+var thief_level = 0
 var time
 var title_start
 var tofu

@@ -1184,7 +1184,7 @@ func scr_init_level():
 		gml.background_index("bg_temple")
 
 
-	global.temp1 = global.start
+	global.temp1 = global.game_start
 	scr_level_gen()
 
 	global.cemetary = false
@@ -1210,7 +1210,7 @@ func scr_init_level():
 
 	global.dark_level = false
 	#if (not global.had_dark_level and global.curr_level != 0 and global.level_type != 2 and global.curr_level != 16 and randi_range(1,1) == 1):
-	if (not global.had_dark_level and not global.ndark_level and global.curr_level != 0 and global.curr_level != 1 and global.level_type != 2 and global.curr_level != 16 and randi_range(1,global.prob_dark_level) == 1):
+	if (not global.had_dark_level and not global.no_dark_level and global.curr_level != 0 and global.curr_level != 1 and global.level_type != 2 and global.curr_level != 16 and randi_range(1,global.prob_dark_level) == 1):
 
 		global.dark_level = true
 		global.had_dark_level = true
@@ -1238,7 +1238,7 @@ func scr_init_level():
 	##############
 	# ENTITY / TREASURES
 	##############
-	global.temp2 = global.start
+	global.temp2 = global.game_start
 	if (not InLevel.is_room("r_tutorial") and not InLevel.is_room("r_load_level")): scr_entity_gen()
 
 	if (gml.instance_exists(entrance) and not global.custom_level):
@@ -1341,7 +1341,7 @@ func scr_init_level():
 		#*/
 
 
-	global.temp3 = global.start
+	global.temp3 = global.game_start
 
 func scr_room_gen(x, y):
 	#
@@ -1818,7 +1818,7 @@ func scr_room_gen(x, y):
 					global.exit_x = xpos
 					global.exit_y = ypos
 					print("xpos:" + str(xpos) + " ypos:" + str(ypos))
-					#block_instance.invincible = true --------------------------------------------------- change this back
+					#block_instance.invincible = true --------------------------------------------------- [FLAG] change this back
 				
 			
 			elif (tile == "A"):
@@ -1942,8 +1942,8 @@ func scr_room_gen(x, y):
 			
 				gml.instance_create(xpos, ypos, brick)
 				obj = gml.instance_create(xpos+8, ypos+8, mattock)
-				obj.cost = 0
-				obj.for_sale = false
+				#obj.cost = 0 ----------------------------------------------------------- [FLAG] change later
+				#obj.for_sale = false --------------------------------------------------- [FLAG] change later
 	#----------------- testing
 	print(str_temp)
 
@@ -1991,9 +1991,9 @@ func scr_entity_gen():
 
 	# Note: depth of trees, statues is 9005
 
-	global.Locked_chest = false
+	global.locked_chest = false
 	global.key = false
-	global.locked_chestChance = 8
+	global.locked_chest_chance = 8
 
 	if (global.level_type == 0):
 

@@ -3,12 +3,12 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	LevelGeneration.scr_level_gen()
+	#LevelGeneration.scr_level_gen()
 	$BaseRoom/Control/Background.texture = preload("res://Backgrounds/bg_cave.png")
-	var rooms = get_tree().get_nodes_in_group("room")
-	for room in rooms:
-		LevelGeneration.scr_room_gen(room.position.x, room.position.y)
-
+	#var rooms = get_tree().get_nodes_in_group("room")
+	#for room in rooms:
+		#LevelGeneration.scr_room_gen(room.position.x, room.position.y)
+	LevelGeneration.scr_init_level()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
