@@ -5,3 +5,6 @@ func is_level():
 
 func is_room(name):
 	pass
+
+func is_in_shop(x, y):
+	pass

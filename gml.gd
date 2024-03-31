@@ -91,7 +91,7 @@ func tile_add(background,left,top,width,height,x,y,depth): #return value of tile
 		for j in range(0, size.x):
 			bg_elements.set_cell(0, Vector2i(x + j, y - 1), tile_id, Vector2i(coords.x + j, coords.y))
 
-func distance_tobject(obj, x, y):
+func distance_tobject(obj):
 	if instance_exists(obj) == true:
 		get_tree().get_nodes_in_group(str(obj))
 		#var distance = 
@@ -99,13 +99,25 @@ func distance_tobject(obj, x, y):
 func instance_place(x,y,obj): #' Returns the id of the instance of type obj met when the current instance is placed at position (x,y). obj can be an object or the keyword all. If it does not exist, the special object noone is returned.'
 	pass
 	
-func instance_destroy(): #'Destroys current instance'
+func instance_destroy(): #'Destroys current instance' ---  Should probably start passing 'self' or other node reference as an argument. Go through and check
+	pass
+
+func collision_rectangle(x1,y1,x2,y2,obj,prec,notme): #"This function tests whether there is a collision between the (filled) rectangle with the indicated opposite corners and entities of object obj. For example, you can use this to test whether an area is free of obstacles."
+	pass
+
+func point_distance(x1,y1,x2,y2): #"Returns the distance between point (x1,y1) and point (x2,y2)."
+	pass
+
+func instance_nearest(x,y,obj): #"Returns the id of the instance of type obj nearest to (x,y). obj can be an object or the keyword all."
 	pass
 #---------------------------------------
 func background_index(background: String): #Changing this to a function
 	pass
 
 func get_all_instances(group: String): #Replacement for 'with' keyword
+	pass
+
+func room_height(): #Changing this to function. Return the height of current scene
 	pass
 
 #------------------------

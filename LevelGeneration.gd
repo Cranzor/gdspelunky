@@ -48,6 +48,7 @@ var lush
 var s_lush
 var s_brick
 
+
 @onready var block = preload("res://Test Scenes/test_block.tscn")
 @onready var brick = preload("res://Test Scenes/brick.tscn")
 @onready var ladder_orange = preload("res://Test Scenes/ladder.tscn")
@@ -142,6 +143,36 @@ var s_tree_top_dead
 var s_tree_top
 var s_tree_branch_dead_l
 var s_tree_branch_left
+var s_grave_ash
+
+var giant_spider_hang
+var scarab
+var bat
+var spider_hang
+var caveman
+var key
+var arrow_trap_left_lit
+var arrow_trap_left
+var arrow_trap_right_lit
+var arrow_trap_right
+var grave
+var ash_grave
+var gold_nugget
+var tiki_torch
+var spear_trap_bottom
+var spear_trap_lit
+var spear_trap_top
+var zombie
+var vampire
+var man_trap
+var fire_frog
+var frog
+var x_market
+var monkey
+var dead_fish
+var piranha
+var ufo
+var spring_trap
 	
 func scr_get_room_x(x):
 #
@@ -584,9 +615,9 @@ func scr_treasure_gen(bones_chance, x, y): #will pass in x and y as well since t
 	# argument0: bones
 	randomize()
 	# alcove
-	if (gml.distance_tobject('entrance', x, y) < 32): return 0 #seems simple to send these as strings and then have the function turn that into the appropriate group to search for
-	if (gml.distance_tobject('exit', x, y) < 32): return 0 #passing x and y as well since there is no other way to check
-	if (gml.distance_tobject('gold_idol', x, y) < 64): return 0
+	if (gml.distance_tobject(entrance) < 32): return 0 #seems simple to send these as strings and then have the function turn that into the appropriate group to search for
+	if (gml.distance_tobject(exit) < 32): return 0 #passing x and y as well since there is no other way to check
+	if (gml.distance_tobject(gold_idol) < 64): return 0 # --- changing these to just the object itself since there should only be one per level anyway. that way x and y can be gotten in the function
 
 	var col_stuff = true
 	if (not gml.collision_point(x, y-16, 'solid', 0, 0) and #same as above for here
@@ -614,7 +645,7 @@ func scr_treasure_gen(bones_chance, x, y): #will pass in x and y as well since t
 		(gml.collision_point(x-16, y-16, solid, 0, 0) or gml.collision_point(x+16, y-16, solid, 0, 0) or gml.collision_point(x-16, y-16, block, 0, 0) or gml.collision_point(x+16, y-16, block, 0, 0))):
 
 		var n = 60
-		if (gml.distance_tobject(giant_spider,x, y) < 100 ): n = 5 #adjusting the < 100 part since it was inside the argument. kinda weird
+		if (gml.distance_tobject(giant_spider) < 100 ): n = 5 #adjusting the < 100 part since it was inside the argument. kinda weird
 		
 		if (global.level_type != 2 and randi_range(1,n) == 1): gml.instance_create(x, y-16, web)
 		elif (global.gen_udjat_eye and not global.Locked_chest):
@@ -660,7 +691,7 @@ func scr_treasure_gen(bones_chance, x, y): #will pass in x and y as well since t
 		(gml.collision_point(x-16, y-16, solid, 0, 0) and gml.collision_point(x+16, y-16, solid, 0, 0))):
 
 		var n = 60
-		if (gml.distance_tobject(giant_spider, x, y) < 100): n = 10
+		if (gml.distance_tobject(giant_spider) < 100): n = 10
 		if (global.level_type != 2 and randi_range(1,n) == 1): gml.instance_create(x, y-16, web)
 		elif (randi_range(1,4) == 1): gml.instance_create(x+8, y-4, gold_bar)
 		elif (randi_range(1,8) == 1): gml.instance_create(x+8, y-8, gold_bars)
@@ -1926,7 +1957,578 @@ func scr_room_gen5():
 	pass
 
 func scr_entity_gen():
-	pass
+	#
+	# scr_entity_gen()
+	#
+	# Generates enemies, traps, and treasure.
+	#
+
+	#/**********************************************************************************
+		#Copyright (c) 2008, 2009 Derek Yu and Mossmouth, LLC
+		#
+		#This file is part of Spelunky.
+#
+		#You can redistribute and/or modify Spelunky, including its source code, under
+		#the terms of the Spelunky User License.
+#
+		#Spelunky is distributed in the hope that it will be entertaining and useful,
+		#but WITHOUT WARRANTY.  Please see the Spelunky User License for more details.
+#
+		#The Spelunky User License should be available in "Game Information", which
+		#can be found in the Resource Explorer, or as an external file called COPYING.
+		#If not, please obtain a new copy of Spelunky from <http:#spelunkyworld.com/>
+		#
+	#***********************************************************************************/
+
+	# Note: depth of trees, statues is 9005
+
+	global.Locked_chest = false
+	global.key = false
+	global.locked_chestChance = 8
+
+	if (global.level_type == 0):
+
+		global.giant_spider = false
+		global.gen_giant_spider = false
+		if (randi_range(1,6) == 1): global.gen_giant_spider = true
+		var all_solids = gml.get_all_instances("solid")
+		for solid_instance in all_solids:
+		
+			if (not InLevel.is_in_shop(solid_instance.x, solid_instance.y) and solid_instance.y > 16):
+			
+				if (solid_instance.type != "Altar"):
+				
+					scr_treasure_gen(0, solid_instance.x, solid_instance.y) #setting bones_chance to 0 since I'm not sure what default value is in GML when not passing an argument
+				
+			
+				# enemies
+				if (scr_get_room_x(solid_instance.x) != global.start_room_x or scr_get_room_y(solid_instance.y-16) != global.start_room_y):
+				
+					if (solid_instance.y < gml.room_height() - 64 and 
+						not gml.collision_point(solid_instance.x, solid_instance.y+16, 'solid', 0, 0) and not gml.collision_point(solid_instance.x, solid_instance.y+32, 'solid', 0, 0) and
+						not gml.collision_point(solid_instance.x, solid_instance.y+16, 'water', 0, 0) and not gml.collision_point(solid_instance.x, solid_instance.y+32, 'water', 0, 0) and
+						not gml.collision_point(solid_instance.x, solid_instance.y+16, 'enemy', 0, 0)):
+					
+						if (global.gen_giant_spider and
+							not global.giant_spider and
+							not gml.collision_point(solid_instance.x+16, solid_instance.y+16, solid, 0, 0) and
+							not gml.collision_point(solid_instance.x+16, solid_instance.y+32, solid, 0, 0) and
+							randi_range(1,40) == 1):
+						
+							gml.instance_create(solid_instance.x, solid_instance.y+16, giant_spider_hang)
+							global.giant_spider = true
+						
+						elif (global.dark_level and randi_range(1,60) == 1): gml.instance_create(solid_instance.x, solid_instance.y+16, lamp)
+						elif (global.dark_level and randi_range(1,40) == 1): gml.instance_create(solid_instance.x, solid_instance.y+16, scarab)
+						elif (randi_range(1,60) == 1): gml.instance_create(solid_instance.x, solid_instance.y+16, bat)
+						elif (randi_range(1,80) == 1): gml.instance_create(solid_instance.x, solid_instance.y+16, spider_hang)
+					
+				
+					if (not gml.collision_point(solid_instance.x, solid_instance.y-16, solid, 0, 0)):
+					
+						if (randi_range(1,60) == 1): gml.instance_create(solid_instance.x, solid_instance.y-16, snake)
+						elif (randi_range(1,800) == 1): gml.instance_create(solid_instance.x, solid_instance.y-16, caveman)
+					
+				
+			
+		
+		
+		# force generate chest
+		if (global.gen_udjat_eye and not global.Locked_chest):
+		
+			var all_exits = gml.get_all_instances("exit")
+			for exit_instance in all_exits:
+			
+				if (not gml.collision_point(exit_instance.x-8, exit_instance.y, 'solid', 0, 0) and
+					not gml.collision_point(exit_instance.x-8, exit_instance.y+15, 'treasure', 0, 0) and
+					not gml.collision_point(exit_instance.x-8, exit_instance.y+8, 'chest', 0, 0) and
+					not gml.collision_point(exit_instance.x-8, exit_instance.y+8, 'spikes', 0, 0)):
+				
+					gml.instance_create(exit_instance.x-8, exit_instance.y+8, locked_chest)
+					global.Locked_chest = true
+					break
+				
+				elif (not gml.collision_point(exit_instance.x+8, exit_instance.y, solid, 0, 0) and
+						 not gml.collision_point(exit_instance.x+8, exit_instance.y+15, 'treasure', 0, 0) and
+						 not gml.collision_point(exit_instance.x+8, exit_instance.y+8, 'chest', 0, 0) and
+						 not gml.collision_point(exit_instance.x+8, exit_instance.y+8, 'spikes', 0, 0)):
+				
+					gml.instance_create(exit_instance.x+16+8, exit_instance.y+8, locked_chest)
+					global.locked_chest = true
+					break
+				
+				else:
+				
+					gml.instance_create(exit_instance.x+8, exit_instance.y+8, locked_chest)
+					global.Locked_chest = true
+					break
+				
+			
+		
+		
+		# generate key if locked chest has been generated
+		if (gml.instance_exists('locked_chest')):
+		
+			var n = 1
+			while (n < 8 and global.key == false):
+			
+				var all_treasure = gml.get_all_instances("treasure")
+				for treasure_instance in all_treasure:
+				
+					if (randi_range(1,8) <= 1 and not gml.collision_point(treasure_instance.x, treasure_instance.y, solid, 0, 0) and global.key == false):
+					
+						if (treasure_instance.type == "Gold Bars"): gml.instance_create(treasure_instance.x, treasure_instance.y+4, key)
+						else: gml.instance_create(treasure_instance.x, treasure_instance.y, key)
+						global.key = true
+						gml.instance_destroy()
+						break
+					
+				
+				n += 1
+			
+			if (not global.key):
+			
+				var all_treasure = gml.get_all_instances("treasure")
+				for treasure_instance in all_treasure:
+				
+					if (not gml.collision_point(treasure_instance.x, treasure_instance.y, "solid", 0, 0)):
+					
+						if (treasure_instance.type == "Gold Bars"): gml.instance_create(treasure_instance.x, treasure_instance.y+4, key)
+						else: gml.instance_create(treasure_instance.x, treasure_instance.y, key)
+						global.key = true
+						gml.instance_destroy()
+						break
+					
+				
+			
+		
+		
+		if (global.key): global.made_udjat_eye = true
+		
+		var all_blocks = gml.get_all_instances("block")
+		for block_instance in all_blocks:
+		
+			if (not InLevel.is_in_shop(block_instance.x, block_instance.y)):
+			
+				var n = gml.point_distance(block_instance.x, block_instance.y, entrance.x, entrance.y)
+				if (not InLevel.is_in_shop(block_instance.x, block_instance.y) and
+					randi_range(1,4) == 1 and not
+					(block_instance.y == entrance.y and n < 144) and
+					n > 48):
+				
+					if (gml.collision_point(block_instance.x+16, block_instance.y, "solid", 0, 0) and not
+						gml.collision_rectangle(block_instance.x-32, block_instance.y, block_instance.x-1, block_instance.y+15, "solid", 0, 0)): #--- originally written as collision_point,
+								#but probably meant to be collision_rectangle? Assuming this always gives 'false' originally since it's not a valid construction for this function
+					
+						if (global.dark_level): gml.instance_create(block_instance.x, block_instance.y, arrow_trap_left_lit)
+						else: gml.instance_create(block_instance.x, block_instance.y, arrow_trap_left)
+						gml.instance_destroy()
+					
+					elif (gml.collision_point(block_instance.x-16, block_instance.y, "solid", 0, 0) and not
+						gml.collision_rectangle(block_instance.x+16, block_instance.y, block_instance.x+48, block_instance.y+15, "solid", 0, 0)): #--- same as above
+					
+						if (global.dark_level): gml.instance_create(block_instance.x, block_instance.y, arrow_trap_right_lit)
+						else: gml.instance_create(block_instance.x, block_instance.y, arrow_trap_right)
+						gml.instance_destroy()
+					
+				
+			
+		
+
+	elif (global.level_type == 1):
+
+		global.ash_grave = false
+		if (global.cemetary):
+		
+			var all_lushes = gml.get_all_instances("lush")
+			for lush_instance in all_lushes:
+			
+				# generate graves
+				if (not gml.collision_point(lush_instance.x, lush_instance.y-16, "solid", 0, 0) and
+					not gml.collision_point(lush_instance.x, lush_instance.y-16, "entrance", 0, 0) and
+					not gml.collision_point(lush_instance.x, lush_instance.y-16, "exit", 0, 0) and
+					randi_range(1,20) == 1 and
+					lush_instance.x != 160 and lush_instance.x != 176 and lush_instance.x != 320 and lush_instance.x != 336 and lush_instance.x != 480 and lush_instance.x != 496):
+				
+					var obj = gml.instance_create(lush_instance.x, lush_instance.y-16, grave)
+					if (not global.ash_grave and randi_range(1,40) == 1):
+					
+						obj.lush_instance.sprite_index = s_grave_ash
+						obj = gml.instance_create(lush_instance.x+8, lush_instance.y+8, shotgun)
+						obj.cost = 0
+						obj.for_sale = false
+						ash_grave = true                
+					
+					elif (not gml.collision_point(lush_instance.x+8, lush_instance.y+8, "treasure", 0, 0)):
+					
+						if (randi_range(1,2) == 1): gml.instance_create(lush_instance.x+8, lush_instance.y+8, gold_nugget)
+						elif (randi_range(1,4) == 1): gml.instance_create(lush_instance.x+8, lush_instance.y+8, sapphire_big)
+						elif (randi_range(1,6) == 1): gml.instance_create(lush_instance.x+8, lush_instance.y+8, emerald_big)
+						elif (randi_range(1,8) == 1): gml.instance_create(lush_instance.x+8, lush_instance.y+8, ruby_big)
+					
+				
+			
+		
+
+		var all_solids = gml.get_all_instances("solid")
+		for solid_instance in all_solids:
+		
+			# bg
+			if (randi_range(1,100) == 1 and not gml.collision_point(solid_instance.x, solid_instance.y-16, "solid", 0, 0)): gml.tile_add("bg_trees", 0, 0, 16, 48, solid_instance.x, solid_instance.y-32, 9005)
+			
+			if (not InLevel.is_in_shop(solid_instance.x, solid_instance.y)):
+			
+			
+				if (solid_instance.y > 32 and gml.collision_point(solid_instance.x, solid_instance.y-16, "solid", 0, 0) and global.gen_market_entrance and not global.made_market_entrance):
+				
+					var obj = gml.instance_place(solid_instance.x, solid_instance.y-16, solid)
+					if (obj.solid_instance.type != "Tree" and solid_instance.type != "Altar" and not obj.invincible and randi_range(1,global.market_chance) <= 1):
+					
+						gml.instance_create(solid_instance.x, solid_instance.y-16, solid_instance.x_market)
+						solid_instance.invincible = true
+						global.made_market_entrance = true
+					
+					else: global.market_chance -= 1
+				
+				elif (solid_instance.type != "Tree" and solid_instance.type != "Altar" and solid_instance.y != 0 and
+						 not gml.collision_rectangle(solid_instance.x, solid_instance.y-32, solid_instance.x+15, solid_instance.y-1, "solid", false, true) and #--- this and below seem to be same issue as above with wrong function being called. changed to collision_rectangle
+						 not gml.collision_rectangle(solid_instance.x, solid_instance.y-16, solid_instance.x+15, solid_instance.y-1, "enemy", 0, 0) and
+						 (not gml.collision_point(solid_instance.x-16, solid_instance.y, "solid", 0, 0) or not gml.collision_point(solid_instance.x+16, solid_instance.y, "solid", 0, 0)) and
+						 gml.collision_point(solid_instance.x, solid_instance.y+16, "solid", 0, 0) and
+						 not gml.collision_point(solid_instance.x, solid_instance.y, "solid_instance.x_market", 0, 0) and
+						 not InLevel.is_in_shop(solid_instance.x, solid_instance.y) and
+						 gml.point_distance(solid_instance.x, solid_instance.y, entrance.x, entrance.y) > 64):
+				
+					if (global.dark_level and not gml.collision_point(solid_instance.x, solid_instance.y-32, "water", 0, 0) and randi_range(1,20) == 1):
+					
+						gml.instance_create(solid_instance.x, solid_instance.y-32, tiki_torch)
+					
+					elif (randi_range(1,12) == 1 and
+							 solid_instance.x != 160 and solid_instance.x != 176 and solid_instance.x != 320 and solid_instance.x != 336 and solid_instance.x != 480 and solid_instance.x != 496):
+					
+						if (gml.collision_point(solid_instance.x, solid_instance.y-16, "solid", 0, 0)):
+						
+							var sol = gml.instance_nearest(solid_instance.x, solid_instance.y-16, solid)
+							var all_sols = gml.get_all_instances("sol")
+							for sol_instance in all_sols:
+								sol_instance.clean_death = true
+								sol_instance.gml.instance_destroy() 
+						
+						gml.instance_create(solid_instance.x, solid_instance.y, spear_trap_bottom)
+						if (global.dark_level): gml.instance_create(solid_instance.x, solid_instance.y-16, spear_trap_lit)
+						else: gml.instance_create(solid_instance.x, solid_instance.y-16, spear_trap_top)
+						solid_instance.clean_death = true
+						gml.instance_destroy()
+					
+				
+				
+				if (solid_instance.type != "Altar"):
+				
+					if (global.cemetary): scr_treasure_gen(10, solid_instance.x, solid_instance.y)
+					else: scr_treasure_gen(0, solid_instance.x, solid_instance.y)
+				
+			
+				# enemies
+				if (scr_get_room_x(solid_instance.x) != global.start_room_x or scr_get_room_y(solid_instance.y-16) != global.start_room_y):
+					var n
+					if (solid_instance.y < gml.room_height() - 64 and 
+						not gml.collision_point(solid_instance.x, solid_instance.y+16, "solid", 0, 0) and not gml.collision_point(solid_instance.x, solid_instance.y+32, "solid", 0, 0) and
+						not gml.collision_point(solid_instance.x, solid_instance.y+16, "water", 0, 0) and not gml.collision_point(solid_instance.x, solid_instance.y+32, "water", 0, 0)):
+						
+						if (global.cemetary): n = 60
+						else: n = 80
+						
+						if (global.dark_level and randi_range(1,40) == 1): gml.instance_create(solid_instance.x, solid_instance.y+16, scarab)
+						elif (randi_range(1,n) == 1): gml.instance_create(solid_instance.x, solid_instance.y+16, bat)
+						# elif (randi_range(1,40) == 1): gml.instance_create(solid_instance.x, solid_instance.y+16, spider_hang)
+					
+					
+					if (solid_instance.y > 16 and not gml.collision_point(solid_instance.x, solid_instance.y-16, "solid", 0, 0) and
+						not gml.collision_point(solid_instance.x, solid_instance.y, "enemy", 0, 0) and
+						not gml.collision_point(solid_instance.x, solid_instance.y, "spikes", 0, 0)):
+					
+						if (global.cemetary):
+						
+							if (randi_range(1,25) == 1): gml.instance_create(solid_instance.x, solid_instance.y-16, zombie)
+							elif (randi_range(1,160) == 1): gml.instance_create(solid_instance.x, solid_instance.y-16, vampire)
+						
+						elif (not gml.collision_point(solid_instance.x, solid_instance.y-16, "water", 0, 0)):
+						
+							if (global.black_market and (fmod(solid_instance.y, 128) == 0)): n = 0 # to prevent mantraps from spawning near shopkeepers in black market 
+							else: n = 1
+							if (randi_range(1,60) == n): gml.instance_create(solid_instance.x, solid_instance.y-16, man_trap)
+							elif (randi_range(1,60) == 1): gml.instance_create(solid_instance.x, solid_instance.y-16, caveman)
+							elif (randi_range(1,120) == 1): gml.instance_create(solid_instance.x, solid_instance.y-16, fire_frog)
+							elif (randi_range(1,30) == 1): gml.instance_create(solid_instance.x, solid_instance.y-16, frog)
+						
+						elif (randi_range(1,120) == 1): gml.instance_create(solid_instance.x, solid_instance.y-16, fire_frog)
+						elif (randi_range(1,30) == 1): gml.instance_create(solid_instance.x, solid_instance.y-16, frog)
+					
+				
+				
+				# rock
+			
+		
+
+		# force market entrance
+		if (global.gen_market_entrance and not global.made_market_entrance):
+		
+			all_solids = gml.get_all_instances("solid")
+			for solid_instance in all_solids:
+			
+				if (solid_instance.y > 32 and gml.collision_point(solid_instance.x, solid_instance.y-16, "solid", 0, 0)):
+				
+					var obj = gml.instance_place(solid_instance.x, solid_instance.y-16, solid)
+					if (obj.solid_instance.type != "Tree" and solid_instance.type != "Altar" and not obj.invincible):
+					
+						gml.instance_create(solid_instance.x, solid_instance.y-16, x_market)
+						solid_instance.invincible = true
+						global.made_market_entrance = true
+					
+				
+			
+		
+		
+		var all_vines = gml.get_all_instances("vine")
+		for vine_instance in all_vines:
+		
+			if (randi_range(1,15) == 1): gml.instance_create(vine_instance.x, vine_instance.y, monkey)
+		
+		
+		var all_water = gml.get_all_instances("water")
+		for water_instance in all_water:
+		
+			if (not gml.collision_point(water_instance.x, water_instance.y, "solid", 0, 0)):
+			
+				if (randi_range(1,30) == 1):
+				
+					if (global.cemetary): gml.instance_create(water_instance.x+4, water_instance.y+4, dead_fish)
+					else: gml.instance_create(water_instance.x+4, water_instance.y+4, piranha)
+				
+			
+		
+
+	elif (global.level_type == 2):
+
+		var all_solids = gml.get_all_instances("solid")
+		for solid_instance in all_solids:
+		
+			if (not InLevel.is_in_shop(solid_instance.x, solid_instance.y)):
+				
+				# enemies
+				var n = 30
+				if (global.yeti_lair): n = 90
+				
+				if (scr_get_room_x(solid_instance.x) != global.start_room_x or scr_get_room_y(solid_instance.y-16) != global.start_room_y):
+				
+					if (solid_instance.y < gml.room_height() - 64 and 
+						not gml.collision_point(solid_instance.x, solid_instance.y+16, "solid", 0, 0) and not gml.collision_point(solid_instance.x, solid_instance.y+32, "solid", 0, 0) and
+						not gml.collision_point(solid_instance.x, solid_instance.y+16, "water", 0, 0) and not gml.collision_point(solid_instance.x, solid_instance.y+32, "water", 0, 0)):
+					
+						if (global.dark_level and randi_range(1,40) == 1): gml.instance_create(solid_instance.x, solid_instance.y+16, scarab)
+					
+					elif (solid_instance.y > 16 and solid_instance.y < 592 and not gml.collision_point(solid_instance.x, solid_instance.y-16, "solid", 0, 0) and not InLevel.is_in_shop(solid_instance.x, solid_instance.y)):
+					
+						if (randi_range(1,n) == 1): gml.instance_create(solid_instance.x, solid_instance.y-16, ufo)
+					
+				
+				
+				if (solid_instance.y > 16 and solid_instance.y < 592 and
+					not gml.collision_point(solid_instance.x, solid_instance.y-16, "solid", 0, 0) and
+					not gml.collision_point(solid_instance.x+8, solid_instance.y-8, "enemy", 0, 0) and
+					not gml.collision_point(solid_instance.x+8, solid_instance.y-1, "spikes", 0, 0) and
+					gml.point_distance(solid_instance.x, solid_instance.y, entrance.x, entrance.y) > 64 and
+					not InLevel.is_in_shop(solid_instance.x, solid_instance.y)):
+				
+					if (randi_range(1,10) == 1 and solid_instance.sprite_index == s_dark and not gml.collision_rectangle(solid_instance.x, solid_instance.y-64, solid_instance.x+15, solid_instance.y-1, "solid", 0, 0) and gml.distance_tobject(exit) > 64): gml.instance_create(solid_instance.x, solid_instance.y-16, spring_trap) #--- same collision_rectangle issue
+					elif (randi_range(1,20) == 1 and gml.point_distance(solid_instance.x, solid_instance.y, entrance.x, entrance.y) > 64): gml.instance_create(solid_instance.x, solid_instance.y-16, solid_instance.yeti)
+				
+				
+				if (solid_instance.type != "Altar"):
+					
+					scr_treasure_gen(0, solid_instance.x, solid_instance.y)
+			
+			
+		
+
+	elif (global.level_type == 3):
+
+		global.Tomb_lord = false
+		global.genTomb_lord = false
+		if (global.curr_level == 13): global.genTomb_lord = true
+		elif (randi_range(1,4) == 1): global.genTomb_lord = true
+		
+		global.gen_gold_entrance = false
+		if (global.curr_level == 14): global.gen_gold_entrance = true
+		global.made_gold_entrance = false
+
+		var all_solids = gml.get_all_instances("solid")
+		for solid_instance in all_solids:
+		   
+			# bg
+			if (randi_range(1,100) == 1 and not gml.collision_point(x, y-16, solid, 0, 0)): tile_add("bg_statues", 0, 0, 16, 48, x, y-32, 9005)
+		
+			if (not is_in_shop(x, y)):
+			
+			
+				# traps
+				if (y > 32 and not gml.collision_point(x, y-16, solid, 0, 0) and global.gen_gold_entrance and not global.made_gold_entrance):
+				
+					if (randi_range(1,global.gold_chance) == 1):
+					
+						gml.instance_create(x, y-16, gold_door)
+						invincible = true
+						global.made_gold_entrance = true
+					
+					else: global.gold_chance -= 1
+				
+				elif (type != "Tree" and type != "Altar" and y != 0 and
+						 not gml.collision_point(x, y-16, solid, 0, 0) and
+						 not gml.collision_point(x, y-16, lava, 0, 0) and
+						 not collision_rectangle(x, y-16, x+15, y-1, enemy, 0, 0) and
+						 not gml.collision_point(x, y-32, solid, 0, 0) and
+						 (not gml.collision_point(x-16, y, solid, 0, 0) or not gml.collision_point(x+16, y, solid, 0, 0)) and
+						 gml.collision_point(x, y+16, solid, 0, 0) and
+						 not is_in_shop(x, y) and
+						 x != 160 and x != 176 and x != 320 and x != 336 and x != 480 and x != 496):
+				
+					if (randi_range(1,12) == 1 and point_distance(x, y, entrance.x, entrance.y) > 64):
+					
+						# to keep the spear trap from plugging up lava passage
+						if (gml.collision_point(x-16, y-32, solid, 0, 0) and gml.collision_point(x+16, y-32, solid, 0, 0) and
+							not gml.collision_point(x, y-32, solid, 0, 0)):
+								
+							pass
+							# do nothing
+						
+						else:
+						
+							if (gml.collision_point(x, y-16, solid, 0, 0)):
+							
+								sol = instance_nearest(x, y-16, solid)
+								var all_sols = gml.get_all_instances("sol")
+								for sol_instance in all_sols:
+									sol_instance.clean_death = true
+									gml.instance_destroy() 
+							
+							gml.instance_create(x, y, spear_trap_bottom)
+							if (global.dark_level): gml.instance_create(x, y-16, spear_trap_lit)
+							else: gml.instance_create(x, y-16, spear_trap_top)
+							clean_death = true
+							gml.instance_destroy()
+						
+					
+				
+			
+				# enemies
+				if (y < room_height - 64 and 
+						not gml.collision_point(x, y+16, solid, 0, 0) and not gml.collision_point(x, y+32, solid, 0, 0) and
+						not gml.collision_point(x, y+16, water, 0, 0) and not gml.collision_point(x, y+32, water, 0, 0)):
+				
+					if (global.dark_level and randi_range(1,40) == 1): gml.instance_create(x, y+16, scarab)
+				
+
+				if (scr_get_room_x(x) != global.start_room_x or scr_get_room_y(y-16) != global.start_room_y and
+					not gml.collision_point(x, y-16, enemy, 0, 0)):
+						 
+					if (y > 16 and not gml.collision_point(x, y-16, solid, 0, 0)):
+					
+						if (global.genTomb_lord and
+							not global.Tomb_lord and
+							not collision_rectangle(x, y-32, x+32, y-1, solid, 0, 0) and
+							randi_range(1,40) == 1):
+						
+							gml.instance_create(x, y-32, oTomb_lord)
+							global.Tomb_lord = true
+						
+						elif (randi_range(1,40) == 1): gml.instance_create(x, y-16, caveman)
+						elif (randi_range(1,40) == 1): gml.instance_create(x, y-16, hawkman)
+						elif (randi_range(1,60) == 1):
+						
+							if (global.dark_level): gml.instance_create(x, y-16, smash_trap_lit)
+							else: gml.instance_create(x, y-16, smash_trap)
+						
+					
+				
+				
+				if (type != "Altar"):
+					   
+					scr_treasure_gen()
+			
+			
+		
+		
+		# force generate gold door
+		if (global.gen_gold_entrance and not global.made_gold_entrance):
+		
+			all_solids = gml.get_all_instances("solid")
+			for solid_instance in all_solids:
+			
+				if (y > 32 and not gml.collision_point(x, y-16, solid, 0, 0)):
+				
+					gml.instance_create(x, y-16, gold_door)
+					invincible = true
+					global.made_gold_entrance = true
+					break
+				
+			
+		
+		
+		var all_blocks = gml.get_all_instances("block")
+	for block_instance in all_blocks:
+		   
+			clean_death = true
+			if (not is_in_shop(x, y)):
+			
+				n = point_distance(x, y, entrance.x, entrance.y)
+				if (not is_in_shop(x, y) and
+					randi_range(1,3) == 1 and not
+					(y == entrance.y and n < 144) and
+					n > 48):
+				
+					if (gml.collision_point(x+16, y, solid, 0, 0) and not
+						collision_rectangle(x-32, y, x-1, y+15, solid, 0, 0)):
+					
+						if (global.dark_level): gml.instance_create(x, y, arrow_trap_left_lit)
+						else: gml.instance_create(x, y, arrow_trap_left)
+						gml.instance_destroy()
+					
+					elif (gml.collision_point(x-16, y, solid, 0, 0) and not
+						collision_rectangle(x+16, y, x+48, y+15, solid, 0, 0)):
+					
+						if (global.dark_level): gml.instance_create(x, y, arrow_trap_right_lit)
+						else: gml.instance_create(x, y, arrow_trap_right)
+						gml.instance_destroy()
+					
+				
+			
+		
+
+
+	# add box of flares to dark level
+	if (global.dark_level):
+
+		var all_entrances = gml.get_all_instances("entrance")
+	for entrance_instance in all_entrances:
+		
+			if (not gml.collision_point(x-16, y, solid, 0, 0)):
+			
+				gml.instance_create(x-16+8, y+8, flare_crate)
+			
+			elif (not gml.collision_point(x+16, y, solid, 0, 0)):
+			
+				gml.instance_create(x+16+8, y+8, flare_crate)
+			
+			else:
+			
+				gml.instance_create(x+8, y+8, flare_crate)
+			
+		
+
+
+	global.clean_solids = false
+
+
 
 func scr_setup_walls(placement):
 	#
