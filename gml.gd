@@ -7,28 +7,18 @@ var bg_dict = {'background_clouds': 0 , 'background_night' : 1, 'bg_alien_ship' 
 	'bg_cave_top2' : 7, 'bg_cave_top3' : 8, 'bg_cave_top4' : 9, 'bg_clouds' : 10, 'bg_dice_sign' : 11, 'bg_extras' : 12, 'bg_extras_ice' : 13, 'bg_extras_lush' : 14,
 	'bg_extras_temple' : 15, 'bg_hmm' : 16, 'bg_kali_body' : 17, 'bg_kali_heads' : 18, 'bg_lady_xoc' : 19, 'bg_sky' : 20, 'bg_statues' : 21, 'bg_temp' : 22, 'bg_temple' : 23,
 	'bg_tiki' : 24, 'bg_tiki_arms' : 25, 'bg_title' : 26, 'bg_trees' : 27, 'bg_wanted' : 28}
-	
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 
 func string_char_at(str,index):
 	var char = str[index - 1]
 	return char
 
 func string_delete(str,index,count):
-	str.erase(index, count)
+	str = str.erase(index, count)
 	return str
 	
 func string_insert(substr,str,index):
-	str.insert(index, substr)
+	str = str.insert(index, substr)
 	return str
 	
 func instance_exists(obj):
@@ -41,7 +31,8 @@ func instance_exists(obj):
 #-----------------------Have to work on
 func instance_create(x,y,obj): #should return the node as this is used in scripts
 	var instance = obj.instantiate()
-	add_child(instance)
+	var objects_holder = get_tree().get_first_node_in_group("objects_holder")
+	objects_holder.add_child(instance)
 	instance.position.x = x
 	instance.position.y = y
 	return instance
@@ -80,8 +71,8 @@ func tile_add(background,left,top,width,height,x,y,depth): #return value of tile
 	else:
 		size.y = height / 16
 	
-	var cur_scene = get_tree().current_scene
-	var bg_elements = cur_scene.get_node('BgElements')
+	var cur_scene = get_tree()
+	var bg_elements = cur_scene.get_first_node_in_group("bg_elements")
 	
 	#coords.y -= 1
 	print(coords.y)
@@ -94,7 +85,7 @@ func tile_add(background,left,top,width,height,x,y,depth): #return value of tile
 func distance_tobject(obj):
 	if instance_exists(obj) == true:
 		get_tree().get_nodes_in_group(str(obj))
-		#var distance = 
+		#var distance =
 		
 func instance_place(x,y,obj): #' Returns the id of the instance of type obj met when the current instance is placed at position (x,y). obj can be an object or the keyword all. If it does not exist, the special object noone is returned.'
 	pass

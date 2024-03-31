@@ -154,7 +154,7 @@ var kisses_bought
 var lake
 var level_deaths
 var level_select
-var level_type
+var level_type = 1 #temp for testing
 var locked_chest_chance
 var made_black_market
 var made_gold_entrance

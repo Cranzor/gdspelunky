@@ -729,7 +729,7 @@ sources/26 = SubResource("TileSetAtlasSource_eea21")
 sources/27 = SubResource("TileSetAtlasSource_8uwuk")
 sources/28 = SubResource("TileSetAtlasSource_rbnwk")
 
-[node name="BgElements" type="TileMap"]
+[node name="BgElements" type="TileMap" groups=["bg_elements"]]
 tile_set = SubResource("TileSet_kjode")
 format = 2
 layer_0/z_index = -1

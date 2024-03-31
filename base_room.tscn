@@ -4,10 +4,69 @@
 
 [node name="BaseRoom" type="Node2D"]
 
-[node name="Objects" type="Node2D" parent="."]
+[node name="Objects" type="Node2D" parent="." groups=["objects_holder"]]
 
 [node name="BgElements" parent="." instance=ExtResource("1_vle6y")]
 
-[node name="Background" type="TextureRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Control" type="CanvasLayer" parent="."]
+layer = -2
+
+[node name="Background" type="TextureRect" parent="Control"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 1
+
+[node name="InnerRooms" type="Node2D" parent="." groups=["inner_rooms_container"]]
+
+[node name="Room1" type="Node2D" parent="InnerRooms" groups=["room"]]
+position = Vector2(16, 16)
+
+[node name="Room2" type="Node2D" parent="InnerRooms" groups=["room"]]
+position = Vector2(176, 16)
+
+[node name="Room3" type="Node2D" parent="InnerRooms" groups=["room"]]
+position = Vector2(336, 16)
+
+[node name="Room4" type="Node2D" parent="InnerRooms" groups=["room"]]
+position = Vector2(496, 16)
+
+[node name="Room5" type="Node2D" parent="InnerRooms" groups=["room"]]
+position = Vector2(16, 144)
+
+[node name="Room6" type="Node2D" parent="InnerRooms" groups=["room"]]
+position = Vector2(176, 144)
+
+[node name="Room7" type="Node2D" parent="InnerRooms" groups=["room"]]
+position = Vector2(336, 144)
+
+[node name="Room8" type="Node2D" parent="InnerRooms" groups=["room"]]
+position = Vector2(496, 144)
+
+[node name="Room9" type="Node2D" parent="InnerRooms" groups=["room"]]
+position = Vector2(16, 272)
+
+[node name="Room10" type="Node2D" parent="InnerRooms" groups=["room"]]
+position = Vector2(176, 272)
+
+[node name="Room11" type="Node2D" parent="InnerRooms" groups=["room"]]
+position = Vector2(336, 272)
+
+[node name="Room12" type="Node2D" parent="InnerRooms" groups=["room"]]
+position = Vector2(496, 272)
+
+[node name="Room13" type="Node2D" parent="InnerRooms" groups=["room"]]
+position = Vector2(16, 400)
+
+[node name="Room14" type="Node2D" parent="InnerRooms" groups=["room"]]
+position = Vector2(176, 400)
+
+[node name="Room15" type="Node2D" parent="InnerRooms" groups=["room"]]
+position = Vector2(336, 400)
+
+[node name="Room16" type="Node2D" parent="InnerRooms" groups=["room"]]
+position = Vector2(496, 400)

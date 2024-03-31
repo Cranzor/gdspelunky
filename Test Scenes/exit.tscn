@@ -3,9 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://1jodmebghasy" path="res://exit.png" id="1_qnmee"]
 
 [node name="Exit" type="Node2D"]
-position = Vector2(96, 112)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(16, -16)
 texture = ExtResource("1_qnmee")
 centered = false
