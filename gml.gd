@@ -30,6 +30,7 @@ func instance_exists(obj):
 
 #-----------------------Have to work on
 func instance_create(x,y,obj): #should return the node as this is used in scripts
+	print(obj)
 	var instance = obj.instantiate()
 	var objects_holder = get_tree().get_first_node_in_group("objects_holder")
 	objects_holder.add_child(instance)
@@ -39,7 +40,19 @@ func instance_create(x,y,obj): #should return the node as this is used in script
 
 func collision_point(x,y,obj: String,prec,notme): #temporary to resolve errors. works fine for now since RoomGen checks that this is false. can't implement until objects have collision
 	#"This function tests whether at point (x,y) there is a collision with entities of object obj."
-	pass
+	var collision_point: Area2D = get_tree().get_first_node_in_group("collision_point")
+	collision_point.position.x = x
+	collision_point.position.y = y
+	
+	var collision_shape = collision_point.get_child(0)
+	collision_shape.disabled = false
+	var overlapping_bodies = collision_point.get_overlapping_bodies()
+	collision_shape.disabled = true
+	print(overlapping_bodies)
+	if obj in overlapping_bodies:
+		return true
+	else:
+		return false
 
 #Always adds bg elements
 func tile_add(background,left,top,width,height,x,y,depth): #return value of tile as well. left: left to right value in pixels. top: top to bottom in pixels
@@ -82,9 +95,14 @@ func tile_add(background,left,top,width,height,x,y,depth): #return value of tile
 		for j in range(0, size.x):
 			bg_elements.set_cell(0, Vector2i(x + j, y - 1), tile_id, Vector2i(coords.x + j, coords.y))
 
-func distance_tobject(obj):
+func distance_tobject(obj: String, x, y): #Make this more accurate with this info https://manual.gamemaker.io/monthly/en/GameMaker_Language/GML_Reference/Maths_And_Numbers/Angles_And_Distance/distance_to_object.htm
 	if instance_exists(obj) == true:
-		get_tree().get_nodes_in_group(str(obj))
+		var comparison_obj = get_tree().get_first_node_in_group(obj)
+		var distance = Vector2(x, y).distance_to(Vector2(comparison_obj.position.x, comparison_obj.position.y))
+		return distance
+	else: #------------------ testing with this for now. not exactly sure how GML handles this
+		return -1
+		
 		#var distance =
 		
 func instance_place(x,y,obj): #' Returns the id of the instance of type obj met when the current instance is placed at position (x,y). obj can be an object or the keyword all. If it does not exist, the special object noone is returned.'
@@ -97,7 +115,8 @@ func collision_rectangle(x1,y1,x2,y2,obj,prec,notme): #"This function tests whet
 	pass
 
 func point_distance(x1,y1,x2,y2): #"Returns the distance between point (x1,y1) and point (x2,y2)."
-	pass
+	var distance = Vector2(x1, y1).distance_to(Vector2(x2, y2))
+	return distance
 
 func instance_nearest(x,y,obj): #"Returns the id of the instance of type obj nearest to (x,y). obj can be an object or the keyword all."
 	pass
@@ -110,7 +129,7 @@ func get_all_instances(group: String): #Replacement for 'with' keyword
 	return all_instances
 
 func room_height(): #Changing this to function. Return the height of current scene
-	pass
+	return 544 #-------------------------- temporary
 
 #------------------------
 func singleton_test():
@@ -122,3 +141,7 @@ func singleton_test():
 
 
 #-------Support functions
+func get_instance(obj: String): #Support function for when GML handles this by itself. Only should be used for objects that exist once per level
+	if instance_exists(obj):
+		var instance = get_tree().get_first_node_in_group(str(obj))
+		return instance

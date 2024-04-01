@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://ddr2l1k3vpjtb"]
+[gd_scene load_steps=40 format=3 uid="uid://ddr2l1k3vpjtb"]
 
 [ext_resource type="Script" path="res://LevelGen.gd" id="1_sryps"]
 [ext_resource type="Texture2D" uid="uid://rfkuntythjyq" path="res://brick_gold.png" id="2_00rdj"]
@@ -34,6 +34,11 @@
 [ext_resource type="PackedScene" uid="uid://if1bq128f54" path="res://Test Scenes/mattock.tscn" id="30_dbg1k"]
 [ext_resource type="PackedScene" uid="uid://bicqc5vj3u2gd" path="res://Test Scenes/rope.tscn" id="31_dt6vc"]
 [ext_resource type="PackedScene" uid="uid://dff66n1u7ilk1" path="res://Test Scenes/title_logo.tscn" id="32_lt34a"]
+[ext_resource type="PackedScene" uid="uid://bxlcvta06un1o" path="res://Test Scenes/jar.tscn" id="33_13igq"]
+[ext_resource type="PackedScene" uid="uid://dgo1ro2fi2jnj" path="res://Test Scenes/spider_hang.tscn" id="34_jtkji"]
+[ext_resource type="PackedScene" uid="uid://jwjou1wkwiu3" path="res://Test Scenes/bones.tscn" id="35_fvq6l"]
+[ext_resource type="PackedScene" uid="uid://dklqnk5k8cuxs" path="res://Test Scenes/bat.tscn" id="36_edb1f"]
+[ext_resource type="PackedScene" uid="uid://u2rhen6ffa4y" path="res://Test Scenes/skull.tscn" id="37_78u0j"]
 
 [node name="LevelGen" type="Node2D"]
 script = ExtResource("1_sryps")
@@ -117,10 +122,27 @@ position = Vector2(128, 80)
 
 [node name="TitleLogo" parent="." instance=ExtResource("32_lt34a")]
 
-[node name="GiantTikiHead18" type="Node2D" parent="."]
+[node name="Jar" parent="." instance=ExtResource("33_13igq")]
+
+[node name="SpiderHang" parent="." instance=ExtResource("34_jtkji")]
+
+[node name="Bones" parent="." instance=ExtResource("35_fvq6l")]
+
+[node name="Bat" parent="." instance=ExtResource("36_edb1f")]
+
+[node name="Skull" parent="." instance=ExtResource("37_78u0j")]
+
+[node name="GiantTikiHead23" type="Node2D" parent="."]
 position = Vector2(16, 64)
 
-[node name="Sprite2D" type="Sprite2D" parent="GiantTikiHead18"]
+[node name="Sprite2D" type="Sprite2D" parent="GiantTikiHead23"]
+position = Vector2(8, 8)
+texture = ExtResource("11_o1dxx")
+
+[node name="GiantTikiHead24" type="Node2D" parent="."]
+position = Vector2(16, 64)
+
+[node name="Sprite2D" type="Sprite2D" parent="GiantTikiHead24"]
 position = Vector2(8, 8)
 texture = ExtResource("11_o1dxx")
 

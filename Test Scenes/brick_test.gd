@@ -1,7 +1,14 @@
-extends Node2D
+extends Solid
+
+var type = "Brick"
 
 @export var brick_gold: Texture
 @export var brick_gold_big: Texture
+var up
+var down
+var left
+var right
+var sprite_index
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

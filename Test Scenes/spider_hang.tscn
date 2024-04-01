@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgo1ro2fi2jnj"]
+
+[ext_resource type="Texture2D" uid="uid://mq05i78lucxe" path="res://spider_hang.png" id="1_be4qc"]
+
+[node name="SpiderHang" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(8, 8)
+texture = ExtResource("1_be4qc")

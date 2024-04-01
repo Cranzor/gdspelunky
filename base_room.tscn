@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://be14vogv2v7e1"]
+[gd_scene load_steps=3 format=3 uid="uid://be14vogv2v7e1"]
 
 [ext_resource type="PackedScene" uid="uid://b2jlcu453ynaf" path="res://bg_elements.tscn" id="1_vle6y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n8f7s"]
 
 [node name="BaseRoom" type="Node2D"]
 
@@ -70,3 +72,11 @@ position = Vector2(336, 400)
 
 [node name="Room16" type="Node2D" parent="InnerRooms" groups=["room"]]
 position = Vector2(496, 400)
+
+[node name="CollisionPoint" type="Area2D" parent="." groups=["collision_point"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionPoint"]
+position = Vector2(8, 8)
+scale = Vector2(0.7, 0.7)
+shape = SubResource("RectangleShape2D_n8f7s")
+disabled = true

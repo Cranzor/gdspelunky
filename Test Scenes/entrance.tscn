@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dw2qtbdvj5a3l" path="res://entrance.png" id="1_oyoqu"]
 
-[node name="Entrance" type="Node2D"]
+[node name="Entrance" type="Node2D" groups=["entrance"]]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_oyoqu")
