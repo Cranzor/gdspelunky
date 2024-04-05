@@ -1,5 +1,7 @@
 extends Node
 
+var collision_point_node = preload("res://CollisionPoint.tscn")
+
 #For tile_add
 @export_dir var bg_folder
 @export var bg_holder_path: String
@@ -39,20 +41,19 @@ func instance_create(x,y,obj): #should return the node as this is used in script
 
 func collision_point(x,y,obj: String,prec,notme): #temporary to resolve errors. works fine for now since RoomGen checks that this is false. can't implement until objects have collision
 	#"This function tests whether at point (x,y) there is a collision with entities of object obj."
-	var collision_point: Area2D = get_tree().get_first_node_in_group("collision_point")
-	collision_point.position.x = x
-	collision_point.position.y = y
+	var collision_point = collision_point_node.instantiate()
+	var collision_point_area = collision_point.get_child(0)
+	get_tree().current_scene.call_deferred("add_child", collision_point)
+	collision_point_area.area_entered.connect(collision_point.test)
+	collision_point.position.x = x + 10
+	collision_point.position.y = y + 10
+	print(x)
+	print(y)
 	
-	var collision_shape = collision_point.get_child(0)
+	var collision_shape = collision_point_area.get_child(0)
 	collision_shape.disabled = false
-	var overlapping_bodies = collision_point.get_overlapping_bodies()
-	collision_shape.disabled = true
-	print(overlapping_bodies)
-	if obj in overlapping_bodies:
-		return true
-	else:
-		return false
-
+	#collision_point.queue_free()
+	
 #Always adds bg elements
 func tile_add(background,left,top,width,height,x,y,depth): #return value of tile as well. left: left to right value in pixels. top: top to bottom in pixels
 	var tile_set_name = str(background)

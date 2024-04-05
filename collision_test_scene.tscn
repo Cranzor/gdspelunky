@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4yxry1gi7stn"]
+
+[ext_resource type="PackedScene" uid="uid://6km4dhdu3dvj" path="res://Test Scenes/snake.tscn" id="1_i7aqm"]
+[ext_resource type="Script" path="res://Test Scenes/snake_collision_test.gd" id="2_kvb3s"]
+
+[node name="CollisionTestScene" type="Node2D"]
+
+[node name="Snake" parent="." instance=ExtResource("1_i7aqm")]
+script = ExtResource("2_kvb3s")

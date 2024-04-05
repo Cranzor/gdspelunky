@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_boafq"]
 size = Vector2(16, 16)
 
-[node name="Snake" type="Node2D"]
+[node name="Snake" type="Node2D" groups=["snake"]]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_0twbm")
@@ -16,3 +16,4 @@ centered = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_boafq")
+debug_color = Color(0.796078, 0.262745, 0.831373, 0.419608)

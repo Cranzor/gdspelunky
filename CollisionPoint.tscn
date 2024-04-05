@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dogsmb1bk1rdb"]
+
+[ext_resource type="Script" path="res://collision_point_test.gd" id="1_i4jic"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e1kpi"]
+size = Vector2(1, 1)
+
+[node name="CollisionPoint" type="Node2D"]
+script = ExtResource("1_i4jic")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_e1kpi")
+disabled = true
+debug_color = Color(0.0627451, 0.258824, 0.352941, 0.419608)

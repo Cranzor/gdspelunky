@@ -21,12 +21,30 @@ func can_push_moveable_solids(node):
 	if node_groups.has('character'):
 		return true
 		
-func get_id_collision_character():
+func get_id_collision_character(): # --- doesn't seem to be used anywhere
 	pass
-func is_collision_character():
+	
+func is_collision_character(): # --- doesn't seem to be used anywhere
 	pass
-func is_collision_ladder():
-	pass
+	
+func is_collision_ladder(node):
+	#/*
+	#Returns whether the object invoking this script is colliding with a ladder.
+	#return
+	#0:no collision
+	#1:collision
+	#*/
+	
+	var all_points_exact = calculate_collision_bounds(node)
+	var lb = all_points_exact.w
+	var tb = all_points_exact.x
+	var rb = all_points_exact.y
+	var bb = all_points_exact.z
+	
+	if (gml.collision_rectangle(lb+8,tb+8,rb-8,bb-8,'ladder_top',1,1) > 0):
+		return true
+	else: return gml.collision_rectangle(lb+8,tb+8,rb-8,bb-8,'ladder',1,1)>0
+	
 func is_collision_platform():
 	pass
 func is_collision_solid():
@@ -56,6 +74,15 @@ func set_collision_bounds(node, left_x, top_y, right_x, bottom_y):
 	collision_shape.shape = convex_polygon
 	
 #---Hidden---
-func calculate_collision_bounds(x, y, node):
-	pass
-	#get node, get collision shape, and then get the size and add that to x and y
+func calculate_collision_bounds(node):
+	var passed_node = node
+	var collision_shape = node.get_node("Area2D/CollisionShape2D")
+	var points = collision_shape.shape.points
+	
+	var lb = node.position.x + points[0][0]
+	var tb = node.position.y + points[0][1]
+	var rb = node.position.x + points[2][0]
+	var bb = node.position.y + points[1][1]
+	
+	var all_points_exact = Vector4(lb, tb, rb, bb)
+	return(all_points_exact)
