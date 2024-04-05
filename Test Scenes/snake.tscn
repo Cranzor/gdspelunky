@@ -1,10 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://6km4dhdu3dvj"]
+[gd_scene load_steps=3 format=3 uid="uid://6km4dhdu3dvj"]
 
 [ext_resource type="Texture2D" uid="uid://br1ansd6sm643" path="res://snake_left.png" id="1_0twbm"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_boafq"]
+size = Vector2(16, 16)
+
 [node name="Snake" type="Node2D"]
-position = Vector2(16, 80)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(8, 8)
 texture = ExtResource("1_0twbm")
+centered = false
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_boafq")

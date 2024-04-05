@@ -30,7 +30,6 @@ func instance_exists(obj):
 
 #-----------------------Have to work on
 func instance_create(x,y,obj): #should return the node as this is used in scripts
-	print(obj)
 	var instance = obj.instantiate()
 	var objects_holder = get_tree().get_first_node_in_group("objects_holder")
 	objects_holder.add_child(instance)
@@ -88,7 +87,6 @@ func tile_add(background,left,top,width,height,x,y,depth): #return value of tile
 	var bg_elements = cur_scene.get_first_node_in_group("bg_elements")
 	
 	#coords.y -= 1
-	print(coords.y)
 	for i in range(0, size.y):
 		y = y + 1
 		coords.y += 1
@@ -118,7 +116,7 @@ func point_distance(x1,y1,x2,y2): #"Returns the distance between point (x1,y1) a
 	var distance = Vector2(x1, y1).distance_to(Vector2(x2, y2))
 	return distance
 
-func instance_nearest(x,y,obj): #"Returns the id of the instance of type obj nearest to (x,y). obj can be an object or the keyword all."
+func instance_nearest(x,y,obj: String): #"Returns the id of the instance of type obj nearest to (x,y). obj can be an object or the keyword all."
 	pass
 #---------------------------------------
 func background_index(background: String): #Changing this to a function

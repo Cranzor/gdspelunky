@@ -24,6 +24,8 @@ InLevel="*res://in_level.gd"
 ControlScripts="*res://control_scripts.gd"
 PlatformEngine="*res://platform_engine.gd"
 MiscScripts="*res://misc_scripts.gd"
+SS="*res://supersound.gd"
+Collision="*res://collision.gd"
 
 [display]
 

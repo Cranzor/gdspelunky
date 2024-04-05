@@ -1087,7 +1087,7 @@ func scr_init_level():
 	global.start_room_y = 0
 	global.end_room_x = 0
 	global.end_room_y = 0
-	var level_gen = false #actually is oGame.level_gen. Seems to do nothing
+	var level_gen = false #---actually is oGame.level_gen. Seems to do nothing
 
 	# this is used to determine the path to the exit (generally no bombs required)
 	for i in range(0, 4):
@@ -1123,7 +1123,7 @@ func scr_init_level():
 					i*16 == 656 or
 					j*16 == 0):
 				
-					obj = LevelGeneration.instance_create(i*16, j*16, dark)
+					obj = gml.instance_create(i*16, j*16, dark)
 					obj.invincible = true
 					obj.sprite_index = s_dark
 				
@@ -1134,7 +1134,7 @@ func scr_init_level():
 					i*16 == 656 or
 					j*16 == 0):
 				
-					obj = LevelGeneration.instance_create(i*16, j*16, temple)
+					obj = gml.instance_create(i*16, j*16, temple)
 					obj.invincible = true
 					if (not global.city_of_gold): obj.sprite_index = s_temple
 				
@@ -1146,7 +1146,7 @@ func scr_init_level():
 					j*16 == 0 or
 					j*16 >= 656):
 				
-					obj = LevelGeneration.instance_create(i*16, j*16, lush)
+					obj = gml.instance_create(i*16, j*16, lush)
 					obj.sprite_index = s_lush
 					obj.invincible = true
 				
@@ -1157,15 +1157,15 @@ func scr_init_level():
 				j*16 >= 528):
 			
 				if (global.level_type == 0):
-					obj = LevelGeneration.instance_create(i*16, j*16, brick)
+					obj = gml.instance_create(i*16, j*16, brick)
 					obj.sprite_index = s_brick
 				elif (global.level_type == 1):
-					obj = LevelGeneration.instance_create(i*16, j*16, lush)
+					obj = gml.instance_create(i*16, j*16, lush)
 					obj.sprite_index = s_lush
 				else:
-					obj = LevelGeneration.instance_create(i*16, j*16, temple)
+					obj = gml.instance_create(i*16, j*16, temple)
 					if (not global.city_of_gold): obj.sprite_index = s_temple
-				obj.invincible = true
+				#obj.invincible = true ------------------------------------------- [FLAG] un-comment this later
 			
 		
 
@@ -1174,8 +1174,8 @@ func scr_init_level():
 
 		for i in range(0, 42):
 		
-			LevelGeneration.instance_create(i*16, 40*16, dark)
-			#LevelGeneration.instance_create(i*16, 35*16, spikes)
+			gml.instance_create(i*16, 40*16, dark)
+			#gml.instance_create(i*16, 35*16, spikes)
 		
 
 

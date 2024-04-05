@@ -7,4 +7,3 @@
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(8, 8)
 texture = ExtResource("1_8llti")
-offset = Vector2(0, 4)
