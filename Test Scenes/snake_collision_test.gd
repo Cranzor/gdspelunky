@@ -7,9 +7,8 @@ func _ready():
 	position.x = 150
 	position.y = 150
 	Collision.calculate_collision_bounds(self)
-	
-	gml.collision_point(position.x, position.y, 'snake', 0, 0)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if Input.is_action_just_pressed("bomb"):
+		gml.collision_point(position.x, position.y, 'snake', 0, 0)
