@@ -1,6 +1,7 @@
 extends Node
 
 var collision_point_node = preload("res://CollisionPoint.tscn")
+var collision_rectangle_node = preload("res://CollisionRectangle.tscn")
 
 #For tile_add
 @export_dir var bg_folder
@@ -39,13 +40,12 @@ func instance_create(x,y,obj): #should return the node as this is used in script
 	instance.position.y = y
 	return instance
 
-func collision_point(x,y,obj: String,prec,notme): #temporary to resolve errors. works fine for now since RoomGen checks that this is false. can't implement until objects have collision
-	#"This function tests whether at point (x,y) there is a collision with entities of object obj."
+func collision_point(x,y,obj: String,prec,notme): #"This function tests whether at point (x,y) there is a collision with entities of object obj."
 	var collision_point_area = collision_point_node.instantiate()
 	get_tree().current_scene.add_child(collision_point_area)
 	var collision_shape = collision_point_area.get_child(0)
 	
-	collision_point_area.position = Vector2(x + 10, y + 10)
+	collision_point_area.position = Vector2(x, y)
 	await get_tree().create_timer(0.05).timeout
 	var areas = collision_point_area.get_overlapping_areas()
 	
@@ -54,6 +54,8 @@ func collision_point(x,y,obj: String,prec,notme): #temporary to resolve errors. 
 		var node = area.get_parent()
 		var groups = node.get_groups()
 		group_names.append(groups)
+	
+	collision_point_area.queue_free()
 	
 	for group in group_names[0]:
 		if obj == group:
@@ -117,7 +119,29 @@ func instance_destroy(): #'Destroys current instance' ---  Should probably start
 	pass
 
 func collision_rectangle(x1,y1,x2,y2,obj,prec,notme): #"This function tests whether there is a collision between the (filled) rectangle with the indicated opposite corners and entities of object obj. For example, you can use this to test whether an area is free of obstacles."
-	pass
+	var collision_rectangle = collision_rectangle_node.instantiate()
+	get_tree().current_scene.add_child(collision_rectangle)
+	var collision_shape = collision_rectangle.get_child(0)
+	
+	var convex_polygon = ConvexPolygonShape2D.new()
+	convex_polygon.points = PackedVector2Array([Vector2(x1, y1), Vector2(x1, y2), Vector2(x2, y2), Vector2(x2, y1)])
+	collision_shape.shape = convex_polygon
+	
+	await get_tree().create_timer(0.05).timeout
+	var areas = collision_rectangle.get_overlapping_areas()
+
+	var group_names = []
+	for area in areas:
+		var node = area.get_parent()
+		var groups = node.get_groups()
+		group_names.append(groups)
+	
+	collision_rectangle.queue_free()
+	
+	for group in group_names[0]:
+		if obj == group:
+			return true
+	return false
 
 func point_distance(x1,y1,x2,y2): #"Returns the distance between point (x1,y1) and point (x2,y2)."
 	var distance = Vector2(x1, y1).distance_to(Vector2(x2, y2))

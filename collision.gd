@@ -41,9 +41,9 @@ func is_collision_ladder(node):
 	var rb = all_points_exact.y
 	var bb = all_points_exact.z
 	
-	if (gml.collision_rectangle(lb+8,tb+8,rb-8,bb-8,'ladder_top',1,1) > 0):
+	if (await gml.collision_rectangle(lb+8,tb+8,rb-8,bb-8,'ladder_top',1,1) > 0):
 		return true
-	else: return gml.collision_rectangle(lb+8,tb+8,rb-8,bb-8,'ladder',1,1)>0
+	else: return await gml.collision_rectangle(lb+8,tb+8,rb-8,bb-8,'ladder',1,1)>0
 	
 func is_collision_platform():
 	pass

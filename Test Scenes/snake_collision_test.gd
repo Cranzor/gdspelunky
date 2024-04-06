@@ -11,4 +11,4 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_just_pressed("bomb"):
-		gml.collision_point(position.x, position.y, 'snake', 0, 0)
+		gml.collision_rectangle(position.x + 2, position.y + 2, position.x + 14, position.y + 14, 'snake', 0, 0)

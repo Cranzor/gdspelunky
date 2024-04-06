@@ -2125,7 +2125,7 @@ func scr_entity_gen():
 					n > 48):
 				
 					if (await gml.collision_point(block_instance.position.x+16, block_instance.position.y, "solid", 0, 0) and not
-						gml.collision_rectangle(block_instance.position.x-32, block_instance.position.y, block_instance.position.x-1, block_instance.position.y+15, "solid", 0, 0)): #--- originally written as collision_point,
+						await gml.collision_rectangle(block_instance.position.x-32, block_instance.position.y, block_instance.position.x-1, block_instance.position.y+15, "solid", 0, 0)): #--- originally written as collision_point,
 								#but probably meant to be collision_rectangle? Assuming this always gives 'false' originally since it's not a valid construction for this function
 					
 						if (global.dark_level): gml.instance_create(block_instance.position.x, block_instance.position.y, arrow_trap_left_lit)
@@ -2133,7 +2133,7 @@ func scr_entity_gen():
 						gml.instance_destroy()
 					
 					elif (await gml.collision_point(block_instance.position.x-16, block_instance.position.y, "solid", 0, 0) and not
-						gml.collision_rectangle(block_instance.position.x+16, block_instance.position.y, block_instance.position.x+48, block_instance.position.y+15, "solid", 0, 0)): #--- same as above
+						await gml.collision_rectangle(block_instance.position.x+16, block_instance.position.y, block_instance.position.x+48, block_instance.position.y+15, "solid", 0, 0)): #--- same as above
 					
 						if (global.dark_level): gml.instance_create(block_instance.position.x, block_instance.position.y, arrow_trap_right_lit)
 						else: gml.instance_create(block_instance.position.x, block_instance.position.y, arrow_trap_right)
@@ -2200,8 +2200,8 @@ func scr_entity_gen():
 					else: global.market_chance -= 1
 
 				elif (solid_instance.type != "Tree" and solid_instance.type != "Altar" and solid_instance.position.y != 0 and
-						 not gml.collision_rectangle(solid_instance.position.x, solid_instance.position.y-32, solid_instance.position.x+15, solid_instance.position.y-1, "solid", false, true) and #--- this and below seem to be same issue as above with wrong function being called. changed to collision_rectangle
-						 not gml.collision_rectangle(solid_instance.position.x, solid_instance.position.y-16, solid_instance.position.x+15, solid_instance.position.y-1, "enemy", 0, 0) and
+						 not await gml.collision_rectangle(solid_instance.position.x, solid_instance.position.y-32, solid_instance.position.x+15, solid_instance.position.y-1, "solid", false, true) and #--- this and below seem to be same issue as above with wrong function being called. changed to collision_rectangle
+						 not await gml.collision_rectangle(solid_instance.position.x, solid_instance.position.y-16, solid_instance.position.x+15, solid_instance.position.y-1, "enemy", 0, 0) and
 						 (not await gml.collision_point(solid_instance.position.x-16, solid_instance.position.y, "solid", 0, 0) or not await gml.collision_point(solid_instance.position.x+16, solid_instance.position.y, "solid", 0, 0)) and
 						 await gml.collision_point(solid_instance.position.x, solid_instance.position.y+16, "solid", 0, 0) and
 						 not await gml.collision_point(solid_instance.position.x, solid_instance.position.y, "x_market", 0, 0) and
@@ -2351,7 +2351,7 @@ func scr_entity_gen():
 					gml.point_distance(solid_instance.position.x, solid_instance.position.y, entrance_instance.position.x, entrance_instance.position.y) > 64 and
 					not InLevel.is_in_shop(solid_instance.position.x, solid_instance.position.y)):
 				
-					if (randi_range(1,10) == 1 and solid_instance.sprite_index == s_dark and not gml.collision_rectangle(solid_instance.position.x, solid_instance.position.y-64, solid_instance.position.x+15, solid_instance.position.y-1, "solid", 0, 0) and gml.distance_tobject('exit', solid_instance.position.x, solid_instance.position.y) > 64): gml.instance_create(solid_instance.position.x, solid_instance.position.y-16, spring_trap) #--- same collision_rectangle issue
+					if (randi_range(1,10) == 1 and solid_instance.sprite_index == s_dark and not await gml.collision_rectangle(solid_instance.position.x, solid_instance.position.y-64, solid_instance.position.x+15, solid_instance.position.y-1, "solid", 0, 0) and gml.distance_tobject('exit', solid_instance.position.x, solid_instance.position.y) > 64): gml.instance_create(solid_instance.position.x, solid_instance.position.y-16, spring_trap) #--- same collision_rectangle issue
 					elif (randi_range(1,20) == 1 and gml.point_distance(solid_instance.position.x, solid_instance.position.y, entrance_instance.position.x, entrance_instance.position.y) > 64): gml.instance_create(solid_instance.position.x, solid_instance.position.y-16, solid_instance.position.yeti)
 				
 				
@@ -2397,7 +2397,7 @@ func scr_entity_gen():
 				elif (solid_instance.type != "Tree" and solid_instance.type != "Altar" and solid_instance.position.y != 0 and
 						 not await gml.collision_point(solid_instance.position.x, solid_instance.position.y-16, "solid", 0, 0) and
 						 not await gml.collision_point(solid_instance.position.x, solid_instance.position.y-16, "lava", 0, 0) and
-						 not gml.collision_rectangle(solid_instance.position.x, solid_instance.position.y-16, solid_instance.position.x+15, solid_instance.position.y-1, "enemy", 0, 0) and #--- collision_rectangle issue again
+						 not await gml.collision_rectangle(solid_instance.position.x, solid_instance.position.y-16, solid_instance.position.x+15, solid_instance.position.y-1, "enemy", 0, 0) and #--- collision_rectangle issue again
 						 not await gml.collision_point(solid_instance.position.x, solid_instance.position.y-32, "solid", 0, 0) and
 						 (not await gml.collision_point(solid_instance.position.x-16, solid_instance.position.y, "solid", 0, 0) or not await gml.collision_point(solid_instance.position.x+16, solid_instance.position.y, "solid", 0, 0)) and
 						 await gml.collision_point(solid_instance.position.x, solid_instance.position.y+16, "solid", 0, 0) and
@@ -2445,7 +2445,7 @@ func scr_entity_gen():
 					
 						if (global.genTomb_lord and
 							not global.Tomb_lord and
-							not gml.collision_rectangle(solid_instance.position.x, solid_instance.position.y-32, solid_instance.position.x+32, solid_instance.position.y-1, "solid", 0, 0) and #collision_rectangle issue again
+							not await gml.collision_rectangle(solid_instance.position.x, solid_instance.position.y-32, solid_instance.position.x+32, solid_instance.position.y-1, "solid", 0, 0) and #collision_rectangle issue again
 							randi_range(1,40) == 1):
 						
 							gml.instance_create(solid_instance.position.x, solid_instance.position.y-32, tomb_lord)
@@ -2497,14 +2497,14 @@ func scr_entity_gen():
 					n > 48):
 				
 					if (await gml.collision_point(block_instance.position.x+16, block_instance.position.y, "solid", 0, 0) and not
-						gml.collision_rectangle(block_instance.position.x-32, block_instance.position.y, block_instance.position.x-1, block_instance.position.y+15, "solid", 0, 0)): #--- collision_rectangle issue again
+						await gml.collision_rectangle(block_instance.position.x-32, block_instance.position.y, block_instance.position.x-1, block_instance.position.y+15, "solid", 0, 0)): #--- collision_rectangle issue again
 					
 						if (global.dark_level): gml.instance_create(block_instance.position.x, block_instance.position.y, arrow_trap_left_lit)
 						else: gml.instance_create(block_instance.position.x, block_instance.position.y, arrow_trap_left)
 						gml.instance_destroy()
 					
 					elif (await gml.collision_point(block_instance.position.x-16, block_instance.position.y, "solid", 0, 0) and not
-						gml.collision_rectangle(block_instance.position.x+16, block_instance.position.y, block_instance.position.x+48, block_instance.position.y+15, "solid", 0, 0)): #--- collision_rectangle issue again
+						await gml.collision_rectangle(block_instance.position.x+16, block_instance.position.y, block_instance.position.x+48, block_instance.position.y+15, "solid", 0, 0)): #--- collision_rectangle issue again
 					
 						if (global.dark_level): gml.instance_create(block_instance.position.x, block_instance.position.y, arrow_trap_right_lit)
 						else: gml.instance_create(block_instance.position.x, block_instance.position.y, arrow_trap_right)
