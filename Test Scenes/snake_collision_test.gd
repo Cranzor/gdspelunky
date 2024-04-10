@@ -7,6 +7,7 @@ func _ready():
 	position.x = 150
 	position.y = 150
 	Collision.calculate_collision_bounds(self)
+	print(gml.frac(2.4342))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

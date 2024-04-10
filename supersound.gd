@@ -20,3 +20,6 @@ func stop_sound():
 	pass
 func unload():
 	pass
+#--- Advanced
+func is_sound_playing(sound):
+	pass

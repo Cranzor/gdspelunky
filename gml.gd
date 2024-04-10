@@ -149,6 +149,16 @@ func point_distance(x1,y1,x2,y2): #"Returns the distance between point (x1,y1) a
 
 func instance_nearest(x,y,obj: String): #"Returns the id of the instance of type obj nearest to (x,y). obj can be an object or the keyword all."
 	pass
+	
+func frac(number):
+	return number - floor(number)
+
+func object_get_parent(ind):
+	pass
+
+func place_meeting(x,y,obj):
+	pass
+
 #---------------------------------------
 func background_index(background: String): #Changing this to a function
 	pass
