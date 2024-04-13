@@ -1,9 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://c4wdmp8r2eo7t"]
+[gd_scene load_steps=4 format=3 uid="uid://c4wdmp8r2eo7t"]
 
 [ext_resource type="Script" path="res://Test Scenes/room_test.gd" id="1_5hivt"]
 [ext_resource type="PackedScene" uid="uid://be14vogv2v7e1" path="res://base_room.tscn" id="2_6sl4e"]
+[ext_resource type="FontFile" uid="uid://cjfa4ea02s5yi" path="res://Font/main_font.png" id="3_l0bgv"]
 
 [node name="r_level" type="Node2D"]
 script = ExtResource("1_5hivt")
 
 [node name="BaseRoom" parent="." instance=ExtResource("2_6sl4e")]
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("3_l0bgv")
+text = " !\"#$%&'()
+*+,-./0123
+456789:;<=
+>?@ABCDEFG
+HIJKLMNOPQ
+RSTUVWXYZ
+
+
+THIS TOOK LONGER THAN
+I THOUGHT IT WOULD..."

@@ -20,8 +20,6 @@ func play_sound(sound):
 				SS_Set_sound_freq(global.mus_boss, SS_Get_sound_freq(global.mus_boss)-100)
 		
 		else: SS_Set_sound_freq(global.mus_cave, SS_Get_sound_freq(global.mus_cave)-100)
-
-
 	
 func scr_music_fade():
 	pass
