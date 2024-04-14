@@ -51,7 +51,7 @@ func instance_create(x,y,obj): #should return the node as this is used in script
 			else:
 				instanced_object_locations[group].append(Vector2(x, y))
 	
-	print(instanced_object_locations)
+	#print(instanced_object_locations['brick'])
 	
 	return instance
 
@@ -75,7 +75,7 @@ func collision_point(x,y,obj: String,prec,notme): #"This function tests whether 
 	
 	#collision_point_area.queue_free()
 	
-	print(group_names)
+	#print(group_names)
 	
 	if !group_names.is_empty():
 		for group in group_names[0]:
@@ -83,16 +83,57 @@ func collision_point(x,y,obj: String,prec,notme): #"This function tests whether 
 				return true
 	return false
 
-func collision_rectangle_test(x,y,x2, y2, obj: String, passed_rect: Rect2,notme): #"This function tests whether at point (x,y) there is a collision with entities of object obj."
+func collision_rectangle_test(x,y,x2, y2, obj: String, prec,notme): #"This function tests whether at point (x,y) there is a collision with entities of object obj."
+	var intersecting = false
 	var rect = Rect2(Vector2(x, y), Vector2(x2 - x, y2 - y))
-	var visible_rect = ColorRect.new()
-	visible_rect.position = Vector2(x, y)
-	visible_rect.size = Vector2(x2 - x, y2 - y)
-	visible_rect.color = Color(0.922, 0.518, 0.188, 0.784)
-	get_tree().current_scene.add_child(visible_rect)
+	#var visible_rect = ColorRect.new()
+	#visible_rect.position = Vector2(x, y)
+	#visible_rect.size = Vector2(x2 - x, y2 - y)
+	#visible_rect.color = Color(0.922, 0.518, 0.188, 0.784)
+	#get_tree().current_scene.add_child(visible_rect)
 	
-	var intersecting = rect.intersects(passed_rect)
-	print(intersecting)
+	if instanced_object_locations.has(obj):
+		for location in instanced_object_locations[obj]:
+			var obj_rect = Rect2(location, Vector2(16, 16))
+			
+			#var visible_obj_rect = ColorRect.new()
+			#visible_obj_rect.position = location
+			#visible_obj_rect.size = Vector2(16, 16)
+			#visible_obj_rect.color = Color(0.922, 0.518, 0.188, 0.784)
+			
+			intersecting = rect.intersects(obj_rect)
+			if intersecting == true:
+				break
+	
+	return intersecting
+	
+func collision_point_test(x,y,obj: String,prec,notme):
+	var intersecting = false
+	var rect = Rect2(Vector2(x, y), Vector2(1, 1))
+	#var visible_rect = ColorRect.new()
+	#visible_rect.position = Vector2(x, y)
+	#visible_rect.size = Vector2(1, 1)
+	#visible_rect.color = Color(0.922, 0.518, 0.188, 0.5)
+	#get_tree().current_scene.add_child(visible_rect)
+	
+	if instanced_object_locations.has(obj):
+		for location in instanced_object_locations[obj]:
+			var obj_rect = Rect2(location, Vector2(16, 16))
+			#var visible_obj_rect = ColorRect.new()
+			#visible_obj_rect.position = location
+			#visible_obj_rect.size = Vector2(location.x + 16, location.y + 16)
+			#visible_obj_rect.color = Color(0.922, 0.518, 0.188, 0.2)
+			#get_tree().current_scene.add_child(visible_obj_rect)
+			intersecting = rect.intersects(obj_rect)
+			if intersecting == true:
+				break
+	
+	if intersecting == true:
+		print(obj)
+		print(Vector2(x, y))
+		print("---------")
+	
+	return intersecting
 
 #Always adds bg elements
 func tile_add(background,left,top,width,height,x,y,depth): #return value of tile as well. left: left to right value in pixels. top: top to bottom in pixels
@@ -171,7 +212,7 @@ func collision_rectangle(x1,y1,x2,y2,obj,prec,notme): #"This function tests whet
 		var groups = node.get_groups()
 		group_names.append(groups)
 	
-	print(group_names)
+	#print(group_names)
 	
 	collision_rectangle.queue_free()
 	

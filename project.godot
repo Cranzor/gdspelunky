@@ -30,8 +30,8 @@ Audio="*res://audio.gd"
 
 [display]
 
-window/size/viewport_width=200
-window/size/viewport_height=200
+window/size/viewport_width=700
+window/size/viewport_height=700
 window/size/mode=2
 window/stretch/mode="viewport"
 
