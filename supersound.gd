@@ -10,7 +10,7 @@ func loop_sound(sound):
 	pass
 func play_sound(sound):
 	pass
-func set_sound_freq():
+func set_sound_freq(sound, frequency):
 	pass
 func set_sound_pan():
 	pass

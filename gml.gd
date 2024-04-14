@@ -3,6 +3,8 @@ extends Node
 var collision_point_node = preload("res://CollisionPoint.tscn")
 var collision_rectangle_node = preload("res://CollisionRectangle.tscn")
 
+var instanced_object_locations = {}
+
 #For tile_add
 @export_dir var bg_folder
 @export var bg_holder_path: String
@@ -38,15 +40,31 @@ func instance_create(x,y,obj): #should return the node as this is used in script
 	objects_holder.add_child(instance)
 	instance.position.x = x
 	instance.position.y = y
+	
+	#getting each location of each object spawned in. note that this only applies to stationary objects
+	var obj_groups = instance.get_groups()
+	
+	if !obj_groups.is_empty():
+		for group in obj_groups:
+			if !instanced_object_locations.has(group):
+				instanced_object_locations[str(group)] = [Vector2(x, y)]#.append(Vector2(x, y))
+			else:
+				instanced_object_locations[group].append(Vector2(x, y))
+	
+	print(instanced_object_locations)
+	
 	return instance
 
 func collision_point(x,y,obj: String,prec,notme): #"This function tests whether at point (x,y) there is a collision with entities of object obj."
-	var collision_point_area = collision_point_node.instantiate()
-	get_tree().current_scene.add_child(collision_point_area)
+	#var collision_point_area = collision_point_node.instantiate()
+	#get_tree().current_scene.add_child(collision_point_area)
+	var collision_point_area = get_tree().get_first_node_in_group('collision_point')
 	var collision_shape = collision_point_area.get_child(0)
 	
 	collision_point_area.position = Vector2(x, y)
-	await get_tree().create_timer(0.05).timeout
+	#await get_tree().create_timer(0.1).timeout
+	await get_tree().physics_frame
+
 	var areas = collision_point_area.get_overlapping_areas()
 	
 	var group_names = []
@@ -55,12 +73,26 @@ func collision_point(x,y,obj: String,prec,notme): #"This function tests whether 
 		var groups = node.get_groups()
 		group_names.append(groups)
 	
-	collision_point_area.queue_free()
+	#collision_point_area.queue_free()
 	
-	for group in group_names[0]:
-		if obj == group:
-			return true
+	print(group_names)
+	
+	if !group_names.is_empty():
+		for group in group_names[0]:
+			if obj == group:
+				return true
 	return false
+
+func collision_rectangle_test(x,y,x2, y2, obj: String, passed_rect: Rect2,notme): #"This function tests whether at point (x,y) there is a collision with entities of object obj."
+	var rect = Rect2(Vector2(x, y), Vector2(x2 - x, y2 - y))
+	var visible_rect = ColorRect.new()
+	visible_rect.position = Vector2(x, y)
+	visible_rect.size = Vector2(x2 - x, y2 - y)
+	visible_rect.color = Color(0.922, 0.518, 0.188, 0.784)
+	get_tree().current_scene.add_child(visible_rect)
+	
+	var intersecting = rect.intersects(passed_rect)
+	print(intersecting)
 
 #Always adds bg elements
 func tile_add(background,left,top,width,height,x,y,depth): #return value of tile as well. left: left to right value in pixels. top: top to bottom in pixels
@@ -127,7 +159,10 @@ func collision_rectangle(x1,y1,x2,y2,obj,prec,notme): #"This function tests whet
 	convex_polygon.points = PackedVector2Array([Vector2(x1, y1), Vector2(x1, y2), Vector2(x2, y2), Vector2(x2, y1)])
 	collision_shape.shape = convex_polygon
 	
-	await get_tree().create_timer(0.05).timeout
+	#await get_tree().create_timer(0.05).timeout
+	await get_tree().physics_frame
+	await get_tree().process_frame
+	
 	var areas = collision_rectangle.get_overlapping_areas()
 
 	var group_names = []
@@ -136,11 +171,14 @@ func collision_rectangle(x1,y1,x2,y2,obj,prec,notme): #"This function tests whet
 		var groups = node.get_groups()
 		group_names.append(groups)
 	
+	print(group_names)
+	
 	collision_rectangle.queue_free()
 	
-	for group in group_names[0]:
-		if obj == group:
-			return true
+	if !group_names.is_empty():
+		for group in group_names[0]:
+			if obj == group:
+				return true
 	return false
 
 func point_distance(x1,y1,x2,y2): #"Returns the distance between point (x1,y1) and point (x2,y2)."

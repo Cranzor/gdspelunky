@@ -9,20 +9,22 @@ func play_music(music_piece, loop: bool):
 			SS.play_sound(music_piece)
 	
 func play_sound(sound):
+	SS.play_sound(sound)
+	
+func scr_music_fade():
+	var player1 = null #---[FLAG] Get player here
+	
 	if (InLevel.is_level()):
 
 		if (global.level_type == 1): SS.set_sound_freq(global.mus_lush, SS.get_sound_freq(global.mus_lush)-100)
-		elif (global.level_type == 2): SS_Set_sound_freq(global.mus_ice, SS_Get_sound_freq(global.mus_ice)-100)
-		elif (global.level_type == 3): SS_Set_sound_freq(global.mus_temple, SS_Get_sound_freq(global.mus_temple)-100)
-		elif (is_room("r_olmec")):
+		elif (global.level_type == 2): SS.set_sound_freq(global.mus_ice, SS.get_sound_freq(global.mus_ice)-100)
+		elif (global.level_type == 3): SS.set_sound_freq(global.mus_temple, SS.get_sound_freq(global.mus_temple)-100)
+		elif (InLevel.is_room("r_olmec")):
 		
 			if (player1.active):
-				SS_Set_sound_freq(global.mus_boss, SS_Get_sound_freq(global.mus_boss)-100)
+				SS.set_sound_freq(global.mus_boss, SS.get_sound_freq(global.mus_boss)-100)
 		
-		else: SS_Set_sound_freq(global.mus_cave, SS_Get_sound_freq(global.mus_cave)-100)
-	
-func scr_music_fade():
-	pass
+		else: SS.set_sound_freq(global.mus_cave, SS.get_sound_freq(global.mus_cave)-100)
 	
 func start_music():
 	pass
