@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxk74orkbwm5u"]
+
+[ext_resource type="Script" path="res://Objects/Player1/player1.gd" id="1_xnwjf"]
+[ext_resource type="Texture2D" uid="uid://ddkqcbdbopkqm" path="res://Sprites/Character/Main Dude/StandLeft/stand_left.png" id="2_otshr"]
+
+[node name="Player1" type="CharacterBody2D"]
+script = ExtResource("1_xnwjf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_otshr")
+centered = false

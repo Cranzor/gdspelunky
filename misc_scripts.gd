@@ -169,3 +169,6 @@ func scr_clear_globals():
 	# cave
 	global.curr_level = 1
 	global.level_type = 0
+
+func scr_create_flame(x, y, num):
+	pass

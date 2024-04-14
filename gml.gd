@@ -26,7 +26,7 @@ func string_insert(substr,str,index):
 	str = str.insert(index, substr)
 	return str
 	
-func instance_exists(obj):
+func instance_exists(obj: String):
 	var existence = get_tree().get_nodes_in_group(str(obj))
 	if existence == []:
 		return false

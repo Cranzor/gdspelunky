@@ -37,7 +37,7 @@ var skull = preload("res://Test Scenes/skull.tscn")
 var gold_bar = preload("res://Test Scenes/jar.tscn")
 var gold_bars = preload('res://Test Scenes/jar.tscn')
 var emerald_big = preload("res://Test Scenes/lamp.tscn")
-var sapphire_big
+var sapphire_big = preload("res://Test Scenes/lamp.tscn")
 
 var idol: bool
 var dark
