@@ -26,7 +26,7 @@ func string_insert(substr,str,index):
 	str = str.insert(index, substr)
 	return str
 	
-func instance_exists(obj: String):
+func instance_exists(obj): #--- FLAG. if enforcing this as a string, it sometimes breaks
 	var existence = get_tree().get_nodes_in_group(str(obj))
 	if existence == []:
 		return false
@@ -51,63 +51,9 @@ func instance_create(x,y,obj): #should return the node as this is used in script
 			else:
 				instanced_object_locations[group].append(Vector2(x, y))
 	
-	#print(instanced_object_locations['brick'])
-	
 	return instance
 
 func collision_point(x,y,obj: String,prec,notme): #"This function tests whether at point (x,y) there is a collision with entities of object obj."
-	#var collision_point_area = collision_point_node.instantiate()
-	#get_tree().current_scene.add_child(collision_point_area)
-	var collision_point_area = get_tree().get_first_node_in_group('collision_point')
-	var collision_shape = collision_point_area.get_child(0)
-	
-	collision_point_area.position = Vector2(x, y)
-	#await get_tree().create_timer(0.1).timeout
-	await get_tree().physics_frame
-
-	var areas = collision_point_area.get_overlapping_areas()
-	
-	var group_names = []
-	for area in areas:
-		var node = area.get_parent()
-		var groups = node.get_groups()
-		group_names.append(groups)
-	
-	#collision_point_area.queue_free()
-	
-	#print(group_names)
-	
-	if !group_names.is_empty():
-		for group in group_names[0]:
-			if obj == group:
-				return true
-	return false
-
-func collision_rectangle_test(x,y,x2, y2, obj: String, prec,notme): #"This function tests whether at point (x,y) there is a collision with entities of object obj."
-	var intersecting = false
-	var rect = Rect2(Vector2(x, y), Vector2(x2 - x, y2 - y))
-	#var visible_rect = ColorRect.new()
-	#visible_rect.position = Vector2(x, y)
-	#visible_rect.size = Vector2(x2 - x, y2 - y)
-	#visible_rect.color = Color(0.922, 0.518, 0.188, 0.784)
-	#get_tree().current_scene.add_child(visible_rect)
-	
-	if instanced_object_locations.has(obj):
-		for location in instanced_object_locations[obj]:
-			var obj_rect = Rect2(location, Vector2(16, 16))
-			
-			#var visible_obj_rect = ColorRect.new()
-			#visible_obj_rect.position = location
-			#visible_obj_rect.size = Vector2(16, 16)
-			#visible_obj_rect.color = Color(0.922, 0.518, 0.188, 0.784)
-			
-			intersecting = rect.intersects(obj_rect)
-			if intersecting == true:
-				break
-	
-	return intersecting
-	
-func collision_point_test(x,y,obj: String,prec,notme):
 	var intersecting = false
 	var rect = Rect2(Vector2(x, y), Vector2(1, 1))
 	#var visible_rect = ColorRect.new()
@@ -127,11 +73,6 @@ func collision_point_test(x,y,obj: String,prec,notme):
 			intersecting = rect.intersects(obj_rect)
 			if intersecting == true:
 				break
-	
-	if intersecting == true:
-		print(obj)
-		print(Vector2(x, y))
-		print("---------")
 	
 	return intersecting
 
@@ -192,35 +133,28 @@ func instance_destroy(): #'Destroys current instance' ---  Should probably start
 	pass
 
 func collision_rectangle(x1,y1,x2,y2,obj,prec,notme): #"This function tests whether there is a collision between the (filled) rectangle with the indicated opposite corners and entities of object obj. For example, you can use this to test whether an area is free of obstacles."
-	var collision_rectangle = collision_rectangle_node.instantiate()
-	get_tree().current_scene.add_child(collision_rectangle)
-	var collision_shape = collision_rectangle.get_child(0)
+	var intersecting = false
+	var rect = Rect2(Vector2(x1, y1), Vector2(x2 - x1, y2 - y1))
+	#var visible_rect = ColorRect.new()
+	#visible_rect.position = Vector2(x, y)
+	#visible_rect.size = Vector2(x2 - x, y2 - y)
+	#visible_rect.color = Color(0.922, 0.518, 0.188, 0.784)
+	#get_tree().current_scene.add_child(visible_rect)
 	
-	var convex_polygon = ConvexPolygonShape2D.new()
-	convex_polygon.points = PackedVector2Array([Vector2(x1, y1), Vector2(x1, y2), Vector2(x2, y2), Vector2(x2, y1)])
-	collision_shape.shape = convex_polygon
+	if instanced_object_locations.has(obj):
+		for location in instanced_object_locations[obj]:
+			var obj_rect = Rect2(location, Vector2(16, 16))
+			
+			#var visible_obj_rect = ColorRect.new()
+			#visible_obj_rect.position = location
+			#visible_obj_rect.size = Vector2(16, 16)
+			#visible_obj_rect.color = Color(0.922, 0.518, 0.188, 0.784)
+			
+			intersecting = rect.intersects(obj_rect)
+			if intersecting == true:
+				break
 	
-	#await get_tree().create_timer(0.05).timeout
-	await get_tree().physics_frame
-	await get_tree().process_frame
-	
-	var areas = collision_rectangle.get_overlapping_areas()
-
-	var group_names = []
-	for area in areas:
-		var node = area.get_parent()
-		var groups = node.get_groups()
-		group_names.append(groups)
-	
-	#print(group_names)
-	
-	collision_rectangle.queue_free()
-	
-	if !group_names.is_empty():
-		for group in group_names[0]:
-			if obj == group:
-				return true
-	return false
+	return intersecting
 
 func point_distance(x1,y1,x2,y2): #"Returns the distance between point (x1,y1) and point (x2,y2)."
 	var distance = Vector2(x1, y1).distance_to(Vector2(x2, y2))

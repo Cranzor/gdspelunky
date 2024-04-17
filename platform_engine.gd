@@ -153,7 +153,7 @@ func move_to(x_vel, y_vel, node):
 				break
 	  
 	
-func platform_character_is():
+func platform_character_is(character_trait):
 	pass
 	
 func scr_moveable_solid_recurse_drop():
