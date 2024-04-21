@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://c4wdmp8r2eo7t"]
+[gd_scene load_steps=7 format=3 uid="uid://c4wdmp8r2eo7t"]
 
 [ext_resource type="Script" path="res://Test Scenes/room_test.gd" id="1_5hivt"]
 [ext_resource type="PackedScene" uid="uid://be14vogv2v7e1" path="res://base_room.tscn" id="2_6sl4e"]
 [ext_resource type="FontFile" uid="uid://cjfa4ea02s5yi" path="res://Font/main_font.png" id="3_l0bgv"]
 [ext_resource type="FontFile" uid="uid://dgd06bxddo4pq" path="res://Font/small_font.png" id="4_7kuce"]
 [ext_resource type="PackedScene" uid="uid://dogsmb1bk1rdb" path="res://CollisionPoint.tscn" id="5_psokd"]
+[ext_resource type="PackedScene" uid="uid://dxk74orkbwm5u" path="res://Objects/Player1/Player1.tscn" id="6_0bgfa"]
 
 [node name="r_level" type="Node2D"]
 script = ExtResource("1_5hivt")
@@ -36,3 +37,6 @@ theme_override_font_sizes/font_size = 0
 text = "SMALL FONT IS HERE TOO!"
 
 [node name="CollisionPoint" parent="." groups=["collision_point"] instance=ExtResource("5_psokd")]
+
+[node name="Player1" parent="." instance=ExtResource("6_0bgfa")]
+position = Vector2(240, 32)

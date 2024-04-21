@@ -118,7 +118,7 @@ func tile_add(background,left,top,width,height,x,y,depth): #return value of tile
 
 func distance_tobject(obj: String, x, y): #Make this more accurate with this info https://manual.gamemaker.io/monthly/en/GameMaker_Language/GML_Reference/Maths_And_Numbers/Angles_And_Distance/distance_to_object.htm
 	if instance_exists(obj) == true:
-		var comparison_obj = get_tree().get_first_node_in_group(obj)
+		var comparison_obj = instance_nearest(x, y, obj)
 		var distance = Vector2(x, y).distance_to(Vector2(comparison_obj.position.x, comparison_obj.position.y))
 		return distance
 	else: #------------------ testing with this for now. not exactly sure how GML handles this
@@ -126,10 +126,11 @@ func distance_tobject(obj: String, x, y): #Make this more accurate with this inf
 		
 		#var distance =
 		
-func instance_place(x,y,obj): #' Returns the id of the instance of type obj met when the current instance is placed at position (x,y). obj can be an object or the keyword all. If it does not exist, the special object noone is returned.'
+func instance_place(x,y,obj: String): #' Returns the id of the instance of type obj met when the current instance is placed at position (x,y). obj can be an object or the keyword all. If it does not exist, the special object noone is returned.'
+	#Should return node that is overlapped
 	pass
 	
-func instance_destroy(): #'Destroys current instance' ---  Should probably start passing 'self' or other node reference as an argument. Go through and check
+func instance_destroy(obj): #'Destroys current instance' ---  Should probably start passing 'self' or other node reference as an argument. Go through and check
 	pass
 
 func collision_rectangle(x1,y1,x2,y2,obj,prec,notme): #"This function tests whether there is a collision between the (filled) rectangle with the indicated opposite corners and entities of object obj. For example, you can use this to test whether an area is free of obstacles."
@@ -170,6 +171,15 @@ func object_get_parent(ind):
 	pass
 
 func place_meeting(x,y,obj):
+	pass
+	
+func move_snap(hsnap,vsnap, obj):
+	pass
+
+func sqr(number):
+	return number * number
+	
+func instance_number(obj: String):
 	pass
 
 #---------------------------------------
