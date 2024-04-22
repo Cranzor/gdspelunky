@@ -118,8 +118,8 @@ func tile_add(background,left,top,width,height,x,y,depth): #return value of tile
 
 func distance_tobject(obj: String, x, y): #Make this more accurate with this info https://manual.gamemaker.io/monthly/en/GameMaker_Language/GML_Reference/Maths_And_Numbers/Angles_And_Distance/distance_to_object.htm
 	if instance_exists(obj) == true:
-		var comparison_obj = instance_nearest(x, y, obj)
-		var distance = Vector2(x, y).distance_to(Vector2(comparison_obj.position.x, comparison_obj.position.y))
+		var comparison_obj_vector2 = instance_nearest(x, y, obj)
+		var distance = Vector2(x, y).distance_to(Vector2(comparison_obj_vector2.x, comparison_obj_vector2.y))
 		return distance
 	else: #------------------ testing with this for now. not exactly sure how GML handles this
 		return -1
@@ -162,7 +162,18 @@ func point_distance(x1,y1,x2,y2): #"Returns the distance between point (x1,y1) a
 	return distance
 
 func instance_nearest(x,y,obj: String): #"Returns the id of the instance of type obj nearest to (x,y). obj can be an object or the keyword all."
-	pass
+	if instanced_object_locations.has(obj):
+		var closest_point
+		var distance_digit
+		
+		for location in instanced_object_locations[obj]:
+			var new_distance_digit = pow(location.x, 2) + pow(location.y, 2)
+			print(new_distance_digit)
+			if distance_digit == null or new_distance_digit < distance_digit:
+				distance_digit = new_distance_digit
+				closest_point = location
+		print(closest_point)
+		return closest_point
 	
 func frac(number):
 	return number - floor(number)
@@ -192,6 +203,9 @@ func get_all_instances(group: String): #Replacement for 'with' keyword
 
 func room_height(): #Changing this to function. Return the height of current scene
 	return 544 #-------------------------- temporary
+
+func room_width():
+	pass
 
 #------------------------
 func singleton_test():

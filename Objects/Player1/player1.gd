@@ -7,10 +7,10 @@ var level_skip
 var sprite_index
 var s_damsel_left
 var s_tunnel_left
-var active
-var dead
+var active = true #--- Change this back
+var dead = false #--- Change this back
 var dead_counter
-var stunned
+var stunned = false #--- Change this back
 var bounced
 var my_grav
 var fall_timer
@@ -77,7 +77,7 @@ var x_change2
 
 var cape
 var explosion
-var state
+var state = 'RUNNING'
 var CLIMBING
 var p_dummy5
 var x_vel
@@ -133,6 +133,13 @@ var s_chest_open
 var s_bomb_armed
 var invincible
 var s_crystal_skull
+var s_bomb
+var s_rope_end
+var col_top
+var s_die_l_bounce
+var s_damsel_hold_l
+var s_p_kiss_l
+var s_damsel_kiss_l
 
 
 var k_left_pushed_steps
@@ -179,7 +186,7 @@ var state_prev_prev
 var state_prev
 var run_anim_speed
 var climb_anim_speed
-var image_index #--- This will need to be handled somehow
+var image_index = 0 #--- This will need to be handled somehow
 
 var alarm_1_active
 var alarm_2_active
@@ -199,8 +206,8 @@ func _ready():
 	first_level_skip = 1
 	level_skip = 1
 
-	if (global.is_damsel): $Sprite2D.texture = s_damsel_left
-	elif (global.is_tunnel_man): $Sprite2D.texture = s_tunnel_left
+	if (global.is_damsel): $AnimatedSprite2D.animation = 's_damsel_left'
+	elif (global.is_tunnel_man): $AnimatedSprite2D.animation = 's_tunnel_left'
 
 	# reset gamepad
 	#/*
@@ -301,6 +308,10 @@ func _physics_process(delta):
 	#--- Declaring certain variables unique to this function
 	var k_bomb_pressed
 	var k_rope_pressed
+	var in_game
+	print(state)
+	print(stunned)
+	print(dead)
 	
 	# prevent player from dying on title screen
 	if (InLevel.is_room("r_title") or InLevel.is_room("r_highscores")):
@@ -451,7 +462,7 @@ func _physics_process(delta):
 
 
 	# WHOA
-	if ($Sprite2D.texture == s_whoa_left or $Sprite2D.texture == s_damsel_whoa_l or $Sprite2D.texture == s_tunnel_whoa_l):
+	if ($AnimatedSprite2D.animation == 's_whoa_left' or $AnimatedSprite2D.animation == 's_damsel_whoa_l' or $AnimatedSprite2D.animation == 's_tunnel_whoa_l'):
 
 		if (whoa_timer > 0): whoa_timer -= 1
 		elif (hold_item):
@@ -543,13 +554,13 @@ func _physics_process(delta):
 
 	if (active):
 
-		if (stun_timer > 0 and ($Sprite2D.texture == s_stun_l or $Sprite2D.texture == s_damsel_stun_l or $Sprite2D.texture == s_tunnel_stun_l)):
+		if (stun_timer > 0 and ($AnimatedSprite2D.animation == 's_stun_l' or $AnimatedSprite2D.animation == 's_damsel_stun_l' or $AnimatedSprite2D.animation == 's_tunnel_stun_l')):
 		
 			image_speed = 0.4
 			stun_timer -= 1
 		
 		
-		if (stun_timer < 1 and ($Sprite2D.texture == s_stun_l or $Sprite2D.texture == s_damsel_stun_l or $Sprite2D.texture == s_tunnel_stun_l)):
+		if (stun_timer < 1 and ($AnimatedSprite2D.animation == 's_stun_l' or $AnimatedSprite2D.animation == 's_damsel_stun_l' or $AnimatedSprite2D.animation == 's_tunnel_stun_l')):
 			stunned = false
 			
 		if (gml.instance_exists('parachute')): fall_timer = 0
@@ -618,7 +629,7 @@ func _physics_process(delta):
 			bubble_timer = bubble_timer_max
 		
 		
-		if (state != DUCKTOHANG and not stunned and not dead and $Sprite2D.texture != s_p_exit and $Sprite2D.texture != s_damsel_exit and $Sprite2D.texture != s_tunnel_exit):
+		if (state != DUCKTOHANG and not stunned and not dead and $AnimatedSprite2D.animation != 's_p_exit' and $AnimatedSprite2D.animation != 's_damsel_exit' and $AnimatedSprite2D.animation != 's_tunnel_exit'):
 		
 			bounced = false
 			character_step_event()
@@ -1274,7 +1285,7 @@ func _physics_process(delta):
 					hold_item = gml.instance_create(position.x, position.y, "rope_throw")
 					hold_item.held = true
 					global.rope -= 1
-					whoa_timer = whoa_timerMax
+					whoa_timer = whoa_timer_max
 				
 				else:
 				
@@ -1309,14 +1320,14 @@ func _physics_process(delta):
 					if (global.has_sticky_bombs): hold_item.sticky = true
 					hold_item.held = true
 					global.bombs -= 1
-					whoa_timer = whoa_timerMax
+					whoa_timer = whoa_timer_max
 				
 				elif (global.rope > 0):
 				
 					hold_item = gml.instance_create(position.x, position.y, "rope_throw")
 					hold_item.held = true
 					global.rope -= 1
-					whoa_timer = whoa_timerMax
+					whoa_timer = whoa_timer_max
 				
 			
 		
@@ -1328,14 +1339,14 @@ func _physics_process(delta):
 				if (global.has_sticky_bombs): hold_item.sticky = true
 				hold_item.held = true
 				global.bombs -= 1
-				whoa_timer = whoa_timerMax
+				whoa_timer = whoa_timer_max
 			
 			elif (global.rope > 0):
 			
 				hold_item = gml.instance_create(position.x, position.y, "rope_throw")
 				hold_item.held = true
 				global.rope -= 1
-				whoa_timer = whoa_timerMax
+				whoa_timer = whoa_timer_max
 			
 		
 
@@ -1349,7 +1360,7 @@ func _physics_process(delta):
 		else:
 		
 			if (k_down):
-			
+				var obj
 				if (facing == LEFT):
 				
 					obj = gml.instance_create(position.x-16, position.y, "rope_throw")
@@ -1365,9 +1376,9 @@ func _physics_process(delta):
 				
 					if (not gml.collision_point(position.x+8, position.y, "solid", 0, 0)):
 					
-						if (not collision_rectangle(obj.position.x-8, obj.position.y, obj.position.x-7, obj.position.y+16, 'solid', 0, 0)):
+						if (not  gml.collision_rectangle(obj.position.x-8, obj.position.y, obj.position.x-7, obj.position.y+16, 'solid', 0, 0)):
 							position.x -= 8
-						elif (not collision_rectangle(obj.position.x+7, obj.position.y, obj.position.x+8, obj.position.y+16, 'solid', 0, 0)):
+						elif (not  gml.collision_rectangle(obj.position.x+7, obj.position.y, obj.position.x+8, obj.position.y+16, 'solid', 0, 0)):
 							obj.position.x += 8
 						else: obj.t = false
 					
@@ -1375,15 +1386,15 @@ func _physics_process(delta):
 				
 				elif (not gml.collision_point(position.x-8, position.y, "solid", 0, 0)):
 				
-					if (not collision_rectangle(obj.position.x+7, obj.position.y, obj.position.x+8, obj.position.y+16, 'solid', 0, 0)):
+					if (not  gml.collision_rectangle(obj.position.x+7, obj.position.y, obj.position.x+8, obj.position.y+16, 'solid', 0, 0)):
 						obj.position.x += 8
-					elif (not collision_rectangle(obj.position.x-8, obj.position.y, obj.position.x-7, obj.position.y+16, 'solid', 0, 0)):
+					elif (not  gml.collision_rectangle(obj.position.x-8, obj.position.y, obj.position.x-7, obj.position.y+16, 'solid', 0, 0)):
 						obj.position.x -= 8
 					else: obj.t = false
 				
 				else: obj.t = false
 						
-				if (not t):
+				if (not obj.t):
 				
 					#/*
 					#if (player1.facing == 18):
@@ -1414,7 +1425,7 @@ func _physics_process(delta):
 			
 			else:
 			
-				obj = gml.instance_create(position.x, position.y, "rope_throw")
+				var obj = gml.instance_create(position.x, position.y, "rope_throw")
 				obj.armed = true
 				obj.px = position.x
 				obj.py = position.y
@@ -1432,7 +1443,7 @@ func _physics_process(delta):
 
 	elif (in_game and k_bomb_pressed and global.bombs > 0 and not whipping):
 
-		obj = gml.instance_create(position.x, position.y, "bomb")
+		var obj = gml.instance_create(position.x, position.y, "bomb")
 		if (global.has_sticky_bombs): obj.sticky = true
 		obj.sprite_index = s_bomb_armed
 		obj.armed = true
@@ -1459,7 +1470,7 @@ func _physics_process(delta):
 		
 		if (k_down):
 		
-			if (platform_character_is(ON_GROUND)): obj.x_vel *= 0.1
+			if (PlatformEngine.platform_character_is(ON_GROUND)): obj.x_vel *= 0.1
 			obj.y_vel = 3
 		
 		
@@ -1474,7 +1485,7 @@ func _physics_process(delta):
 			image_speed = 0.6
 			if (global.is_tunnel_man):
 			
-				if (platform_character_is(ON_GROUND)):
+				if (PlatformEngine.platform_character_is(ON_GROUND)):
 				
 					sprite_index = s_tunnel_attack_l
 					image_index = 0
@@ -1497,14 +1508,14 @@ func _physics_process(delta):
 		elif (k_attack_pressed and k_down):
 		
 			# pick up item
-			if (collision_rectangle(position.x-8, position.y, position.x+8, position.y+8, item, 0, 0)):
+			if (gml.collision_rectangle(position.x-8, position.y, position.x+8, position.y+8, 'item', 0, 0)):
 			
-				obj = instance_nearest(position.x, position.y, item)
-				if (obj.canPick_up and not gml.collision_point(obj.position.x, obj.position.y, "solid", 0, 0)):
+				var obj = gml.instance_nearest(position.x, position.y, 'item') #---  [FLAG] might need to check this
+				if (obj.can_pick_up and not gml.collision_point(obj.position.x, obj.position.y, "solid", 0, 0)):
 				
 					hold_item = obj
 					hold_item.held = true
-					whoa_timer = whoa_timerMax
+					whoa_timer = whoa_timer_max
 					pickup_item_type = hold_item.type
 					
 					if (hold_item.type == "Bow" and hold_item.new):
@@ -1518,7 +1529,7 @@ func _physics_process(delta):
 						global.idols_grabbed += 1
 						if (global.level_type == 0):
 						
-							trap_instance = instance_nearest(position.x, position.y-64, giant_tiki_head)
+							var trap_instance = gml.instance_nearest(position.x, position.y-64, 'giant_tiki_head')
 							trap_instance.alarm_0(100)
 							InLevel.scr_shake(100)
 							hold_item.trigger = false
@@ -1526,15 +1537,17 @@ func _physics_process(delta):
 						elif (global.level_type == 1):
 						
 							if (global.cemetary and not global.ghost_exists):
-							  
-								if (player1.position.x > room_width / 2): gml.instance_create(view_xview[0]+view_wview[0]+8, view_yview[0]+floor(view_hview[0] / 2), "ghost")
+								var view_xview
+								var view_wview
+								var view_hview #----------------- [FLAG] change these to match camera
+								if (self.position.x > gml.room_width() / 2): gml.instance_create(view_xview[0]+view_wview[0]+8, view_yview[0]+floor(view_hview[0] / 2), "ghost")
 								else: gml.instance_create(view_xview[0]-32,  view_yview[0]+floor(view_hview[0] / 2), "ghost")
 								global.ghost_exists = true
 							
 							var all_trap_blocks = gml.get_all_instances("trap_block")
 							for trap_block_instance in all_trap_blocks:
 							
-								var dist = gml.distance_tobject(character, trap_block_instance.x, trap_block_instance.y)
+								var dist = gml.distance_tobject('character', trap_block_instance.x, trap_block_instance.y)
 								if (dist < 90):
 								
 									trap_block_instance.dying = true
@@ -1553,10 +1566,10 @@ func _physics_process(delta):
 									ceiling_trap_instance.y_vel = 0.5
 								
 								InLevel.scr_shake(20)
-								trap = instance_nearest(position.x-64, position.y-64, door)
+								var trap = gml.instance_nearest(position.x-64, position.y-64, 'door')
 								trap.status = 1
 								trap.y_vel = 1
-								trap = instance_nearest(position.x+64, position.y-64, door)
+								trap = gml.instance_nearest(position.x+64, position.y-64, 'door')
 								trap.status = 1
 								trap.y_vel = 1
 							
@@ -1564,7 +1577,7 @@ func _physics_process(delta):
 								var all_trap_blocks = gml.get_all_instances("trap_block")
 								for trap_block_instance in all_trap_blocks:
 								
-									var dist = gml.distance_tobject(character, trap_block_instance.x, trap_block_instance.y)
+									var dist = gml.distance_tobject('character', trap_block_instance.x, trap_block_instance.y)
 									if (dist < 90):
 									
 										gml.instance_destroy(trap_block_instance)
@@ -1590,17 +1603,17 @@ func _physics_process(delta):
 							else: hold_item.sprite_index = s_damsel_hold_l
 						
 					
-					elif (hold_item.cost == 0): scr_steal_item()
+					elif (hold_item.cost == 0): CharacterScripts.scr_steal_item()
 				
 			
-			elif (collision_rectangle(position.x-8, position.y, position.x+8, position.y+8, enemy, 0, 0)):
+			elif (gml.collision_rectangle(position.x-8, position.y, position.x+8, position.y+8, 'enemy', 0, 0)):
 			
-				obj = instance_nearest(position.x, position.y, enemy)
+				var obj = gml.instance_nearest(position.x, position.y, 'enemy')
 				if (obj.status >= 98 and obj.canPick_up):
 				
 					hold_item = obj
 					hold_item.held = true
-					whoa_timer = whoa_timerMax
+					whoa_timer = whoa_timer_max
 					pickup_item_type = hold_item.type
 				
 			
@@ -1610,7 +1623,7 @@ func _physics_process(delta):
 
 		if (hold_item):
 		
-			scr_use_item()
+			CharacterScripts.scr_use_item()
 		
 
 
@@ -1654,9 +1667,10 @@ func _physics_process(delta):
 	#*/
 	if (InLevel.is_level() and active and k_pay_pressed and not dead and not stunned):
 
-		if (is_in_shop(position.x, position.y) and gml.instance_exists("shopkeeper")):
+		if (InLevel.is_in_shop(position.x, position.y) and gml.instance_exists("shopkeeper")):
+			var shopkeeper #------ [FLAG] get reference to shopkeeper here
 		
-			n = 0
+			var n = 0
 			if (hold_item):
 			
 				if (hold_item.cost <= 0):
@@ -1678,7 +1692,7 @@ func _physics_process(delta):
 				
 					if (InLevel.is_real_level()): global.items_bought += 1
 					global.money -= hold_item.cost
-					scr_steal_item()
+					CharacterScripts.scr_steal_item()
 					#global.message = "THANK YOU!"
 					#global.message2 = ""
 					global.message_timer = 80
@@ -1686,7 +1700,7 @@ func _physics_process(delta):
 				
 			
 			
-			if ((global.black_market and global.room_path[[scr_get_room_x(position.x), scr_get_room_y(position.y)]] == 5) or
+			if ((global.black_market and global.room_path[[LevelGeneration.scr_get_room_x(position.x), LevelGeneration.scr_get_room_y(position.y)]] == 5) or
 				(not global.black_market and shopkeeper.style == "Craps")):
 			
 				if (global.thief_level > 0 or global.murderer):
@@ -1699,7 +1713,7 @@ func _physics_process(delta):
 					if (InLevel.is_real_level()): global.dice_games_played += 1
 					bet = 1000 + global.curr_level * 500
 					global.money -= 1000 + global.curr_level * 500
-					global.message = "YOU BET $" + string(1000 + global.curr_level * 500) + "!"
+					global.message = "YOU BET $" + str(1000 + global.curr_level * 500) + "!"
 					global.message2 = "NOW ROLL THE DICE!"
 					global.message_timer = 200
 				
@@ -1711,21 +1725,21 @@ func _physics_process(delta):
 				
 				else:
 				
-					global.message = "YOU NEED $" + string(1000 + global.curr_level * 500) + " TO BET!"
+					global.message = "YOU NEED $" + str(1000 + global.curr_level * 500) + " TO BET!"
 					global.message2 = ""
 					global.message_timer = 200
 				
 			
 			
-			if (shopkeeper.style == "Kissing" and gml.distance_tobject(damsel) < 16):
+			if (shopkeeper.style == "Kissing" and gml.distance_tobject('damsel', position.x, position.y) < 16):
 			
-				obj = instance_nearest(position.x, position.y, damsel)
+				var obj = gml.instance_nearest(position.x, position.y, 'damsel')
 				if (global.thief_level > 0 or global.murderer or not obj.for_sale):
 				
 					# do nothing
 					pass
 				
-				elif (n == 0 and global.money >= get_kiss_value()):
+				elif (n == 0 and global.money >= InLevel.get_kiss_value()):
 				
 					if (obj.for_sale and not obj.held):
 					
@@ -1739,7 +1753,7 @@ func _physics_process(delta):
 						
 							obj.sprite_index = s_damsel_kiss_l
 						
-						global.money -= get_kiss_value()
+						global.money -= InLevel.get_kiss_value()
 						global.plife += 1
 						if (global.is_damsel): global.message = "NOW AIN'T HE SWEET!"
 						else: global.message = "NOW AIN'T SHE SWEET!"
@@ -1749,8 +1763,8 @@ func _physics_process(delta):
 				
 				else:
 				
-					if (n == 0): global.message = "YOU NEED $" + string(get_kiss_value()) + "!"
-					else: global.message = "YOU NEED $" + string(obj.cost) + "!"
+					if (n == 0): global.message = "YOU NEED $" + str(InLevel.get_kiss_value()) + "!"
+					else: global.message = "YOU NEED $" + str(obj.cost) + "!"
 					global.message2 = "GET OUTTA HERE, DEADBEAT!"
 					global.message_timer = 200
 				
@@ -1771,7 +1785,7 @@ func _physics_process(delta):
 		hold_arrow = ARROW_NORM
 
 
-	if (k_attackReleased and bow_armed):
+	if (k_attack_released and bow_armed):
 
 		CharacterScripts.scr_fire_bow()
 
@@ -1837,7 +1851,7 @@ func character_step_event():
 	else:
 
 		if (global.is_tunnel_man and
-			$Sprite2D.texture == s_tunnel_attack_l and
+			$AnimatedSprite2D.animation == 's_tunnel_attack_l' and
 			!hold_item):
 		
 			k_jump = 0
@@ -2424,11 +2438,11 @@ func character_step_event():
 	#if (sprite_index == s_duck_thang_l or sprite_index == s_damsel_dt_hl):
 #
 		#ladder = 0
-		#if (facing == LEFT and collision_rectangle(position.x-8, position.y, position.x, position.y+16, ladder, 0, 0) and not gml.collision_point(position.x-4, position.y+16, solid, 0, 0)):
+		#if (facing == LEFT and  gml.collision_rectangle(position.x-8, position.y, position.x, position.y+16, ladder, 0, 0) and not gml.collision_point(position.x-4, position.y+16, solid, 0, 0)):
 		#
 			#ladder = instance_nearest(position.x-4, position.y+16, ladder)
 		#
-		#elif (facing == RIGHT and collision_rectangle(position.x, position.y, position.x+8, position.y+16, ladder, 0, 0) and not gml.collision_point(position.x+4, position.y+16, solid, 0, 0)):
+		#elif (facing == RIGHT and  gml.collision_rectangle(position.x, position.y, position.x+8, position.y+16, ladder, 0, 0) and not gml.collision_point(position.x+4, position.y+16, solid, 0, 0)):
 		#
 			#ladder = instance_nearest(position.x+4, position.y+16, ladder)
 		#

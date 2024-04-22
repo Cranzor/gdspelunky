@@ -39,4 +39,4 @@ text = "SMALL FONT IS HERE TOO!"
 [node name="CollisionPoint" parent="." groups=["collision_point"] instance=ExtResource("5_psokd")]
 
 [node name="Player1" parent="." instance=ExtResource("6_0bgfa")]
-position = Vector2(240, 32)
+position = Vector2(144, 112)

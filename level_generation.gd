@@ -1309,7 +1309,7 @@ func scr_init_level():
 		if (gml.collision_point(treasure.position.x, treasure.position.y, 'solid', 0, 0)):
 			var obj
 			obj = gml.instance_place(treasure.position.x, treasure.position.y, solid)
-			if (obj.invincible): gml.instance_destroy()
+			if (obj.invincible): gml.instance_destroy(treasure)
 		
 
 
@@ -2088,7 +2088,7 @@ func scr_entity_gen():
 						if (treasure_instance.type == "Gold Bars"): gml.instance_create(treasure_instance.position.x, treasure_instance.position.y+4, key)
 						else: gml.instance_create(treasure_instance.position.x, treasure_instance.position.y, key)
 						global.key = true
-						gml.instance_destroy()
+						gml.instance_destroy(treasure_instance)
 						break
 					
 				
@@ -2104,7 +2104,7 @@ func scr_entity_gen():
 						if (treasure_instance.type == "Gold Bars"): gml.instance_create(treasure_instance.position.x, treasure_instance.position.y+4, key)
 						else: gml.instance_create(treasure_instance.position.x, treasure_instance.position.y, key)
 						global.key = true
-						gml.instance_destroy()
+						gml.instance_destroy(treasure_instance)
 						break
 					
 				
@@ -2130,14 +2130,14 @@ func scr_entity_gen():
 					
 						if (global.dark_level): gml.instance_create(block_instance.position.x, block_instance.position.y, arrow_trap_left_lit)
 						else: gml.instance_create(block_instance.position.x, block_instance.position.y, arrow_trap_left)
-						gml.instance_destroy()
+						gml.instance_destroy(block_instance)
 					
 					elif (gml.collision_point(block_instance.position.x-16, block_instance.position.y, "solid", 0, 0) and not
 						gml.collision_rectangle(block_instance.position.x+16, block_instance.position.y, block_instance.position.x+48, block_instance.position.y+15, "solid", 0, 0)): #--- same as above
 					
 						if (global.dark_level): gml.instance_create(block_instance.position.x, block_instance.position.y, arrow_trap_right_lit)
 						else: gml.instance_create(block_instance.position.x, block_instance.position.y, arrow_trap_right)
-						gml.instance_destroy()
+						gml.instance_destroy(block_instance)
 					
 				
 			
@@ -2227,7 +2227,7 @@ func scr_entity_gen():
 						if (global.dark_level): gml.instance_create(solid_instance.position.x, solid_instance.position.y-16, spear_trap_lit)
 						else: gml.instance_create(solid_instance.position.x, solid_instance.position.y-16, spear_trap_top)
 						solid_instance.clean_death = true
-						gml.instance_destroy()
+						gml.instance_destroy(solid_instance)
 					
 				
 				
@@ -2425,7 +2425,7 @@ func scr_entity_gen():
 							if (global.dark_level): gml.instance_create(solid_instance.position.x, solid_instance.position.y-16, spear_trap_lit)
 							else: gml.instance_create(solid_instance.position.x, solid_instance.position.y-16, spear_trap_top)
 							solid_instance.clean_death = true
-							gml.instance_destroy()
+							gml.instance_destroy(solid_instance)
 						
 					
 				
@@ -2501,14 +2501,14 @@ func scr_entity_gen():
 					
 						if (global.dark_level): gml.instance_create(block_instance.position.x, block_instance.position.y, arrow_trap_left_lit)
 						else: gml.instance_create(block_instance.position.x, block_instance.position.y, arrow_trap_left)
-						gml.instance_destroy()
+						gml.instance_destroy(block_instance)
 					
 					elif (gml.collision_point(block_instance.position.x-16, block_instance.position.y, "solid", 0, 0) and not
 						gml.collision_rectangle(block_instance.position.x+16, block_instance.position.y, block_instance.position.x+48, block_instance.position.y+15, "solid", 0, 0)): #--- collision_rectangle issue again
 					
 						if (global.dark_level): gml.instance_create(block_instance.position.x, block_instance.position.y, arrow_trap_right_lit)
 						else: gml.instance_create(block_instance.position.x, block_instance.position.y, arrow_trap_right)
-						gml.instance_destroy()
+						gml.instance_destroy(block_instance)
 					
 				
 			
@@ -3018,7 +3018,7 @@ func scr_setup_walls(placement):
 		if (block_instance.down and randi_range(1,4) == 1):
 		
 			gml.instance_create(block_instance.position.x, block_instance.position.y, push_block)
-			gml.instance_destroy()
+			gml.instance_destroy(block_instance)
 		
 
 

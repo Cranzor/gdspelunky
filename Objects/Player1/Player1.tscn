@@ -1,11 +1,63 @@
-[gd_scene load_steps=3 format=3 uid="uid://dxk74orkbwm5u"]
+[gd_scene load_steps=14 format=3 uid="uid://dxk74orkbwm5u"]
 
 [ext_resource type="Script" path="res://Objects/Player1/player1.gd" id="1_xnwjf"]
-[ext_resource type="Texture2D" uid="uid://ddkqcbdbopkqm" path="res://Sprites/Character/Main Dude/StandLeft/stand_left.png" id="2_otshr"]
+[ext_resource type="Texture2D" uid="uid://c5jrx6ksmewxo" path="res://image 0.png" id="2_0vy0h"]
+[ext_resource type="Texture2D" uid="uid://7lqoft6ak137" path="res://image 1.png" id="3_pw5qo"]
+[ext_resource type="Texture2D" uid="uid://dns2yjuyv204y" path="res://image 2.png" id="4_fq1c2"]
+[ext_resource type="Texture2D" uid="uid://mnfydkyohtd4" path="res://image 3.png" id="5_g4dtk"]
+[ext_resource type="Texture2D" uid="uid://blbigrrhacah8" path="res://image 4.png" id="6_7o2ln"]
+[ext_resource type="Texture2D" uid="uid://kvjxwlx763kv" path="res://image 5.png" id="7_xw2lx"]
+[ext_resource type="Texture2D" uid="uid://34pewc07lsq3" path="res://image 6.png" id="8_ocflf"]
+[ext_resource type="Texture2D" uid="uid://catg8xqk8bn3i" path="res://image 7.png" id="9_dmsxm"]
+[ext_resource type="Texture2D" uid="uid://bf68iajq8kuas" path="res://image 8.png" id="10_0mkmy"]
+[ext_resource type="Texture2D" uid="uid://bc338v2t2okiq" path="res://image 9.png" id="11_erutk"]
+[ext_resource type="Texture2D" uid="uid://du3xw4e7sr3uu" path="res://image 10.png" id="12_2q3cm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_06flm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_0vy0h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_pw5qo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fq1c2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_g4dtk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_7o2ln")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_xw2lx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ocflf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_dmsxm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_0mkmy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_erutk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_2q3cm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
 
 [node name="Player1" type="CharacterBody2D"]
 script = ExtResource("1_xnwjf")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_otshr")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_06flm")
+frame_progress = 0.00290674
 centered = false

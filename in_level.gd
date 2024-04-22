@@ -45,7 +45,7 @@ func is_room(name):
 	else:
 		return false
 
-func scr_shake():
+func scr_shake(number):
 	pass
 
 func scr_shopkeeper_anger(message_number, x, y): #--- assuming XY is needed here
