@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dxk74orkbwm5u"]
+[gd_scene load_steps=15 format=3 uid="uid://dxk74orkbwm5u"]
 
 [ext_resource type="Script" path="res://Objects/Player1/player1.gd" id="1_xnwjf"]
 [ext_resource type="Texture2D" uid="uid://c5jrx6ksmewxo" path="res://image 0.png" id="2_0vy0h"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bf68iajq8kuas" path="res://image 8.png" id="10_0mkmy"]
 [ext_resource type="Texture2D" uid="uid://bc338v2t2okiq" path="res://image 9.png" id="11_erutk"]
 [ext_resource type="Texture2D" uid="uid://du3xw4e7sr3uu" path="res://image 10.png" id="12_2q3cm"]
+[ext_resource type="Texture2D" uid="uid://ddkqcbdbopkqm" path="res://Sprites/Character/Main Dude/StandLeft/stand_left.png" id="13_p5lpw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_06flm"]
 animations = [{
@@ -59,5 +60,10 @@ script = ExtResource("1_xnwjf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_06flm")
-frame_progress = 0.00290674
+frame_progress = 0.129146
+centered = false
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("13_p5lpw")
 centered = false

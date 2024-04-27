@@ -2,6 +2,14 @@ extends Character
 
 var game #--- Temporary to solve errors. Make this an autoload
 
+var DYING
+var ON_LADDER
+var DOWN
+var blink
+var blink_toggle
+var k_jump_pressed
+var player
+
 var first_level_skip
 var level_skip
 var sprite_index
@@ -95,7 +103,7 @@ var ON_GROUND
 var s_stun_l
 var s_damsel_stun_l
 var s_tunnel_stun_l
-var image_speed
+var image_speed = 1 #--- setting to 1 for now
 var parachute
 var poof
 var para_used
@@ -202,6 +210,8 @@ var alarm_11_active
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	character_create_event()
+	
 	# for debugging
 	first_level_skip = 1
 	level_skip = 1
@@ -309,9 +319,9 @@ func _physics_process(delta):
 	var k_bomb_pressed
 	var k_rope_pressed
 	var in_game
-	print(state)
-	print(stunned)
-	print(dead)
+	#print(state)
+	#print(stunned)
+	#print(dead)
 	
 	# prevent player from dying on title screen
 	if (InLevel.is_room("r_title") or InLevel.is_room("r_highscores")):
@@ -1609,7 +1619,7 @@ func _physics_process(delta):
 			elif (gml.collision_rectangle(position.x-8, position.y, position.x+8, position.y+8, 'enemy', 0, 0)):
 			
 				var obj = gml.instance_nearest(position.x, position.y, 'enemy')
-				if (obj.status >= 98 and obj.canPick_up):
+				if (obj.status >= 98 and obj.can_pick_up):
 				
 					hold_item = obj
 					hold_item.held = true
@@ -1789,6 +1799,120 @@ func _physics_process(delta):
 
 		CharacterScripts.scr_fire_bow()
 
+func character_create_event():
+	#/*
+	#This script should be placed in the "Create Event" of the platform character.
+	#It sets the variables needed for the platform character.
+	#*/
+
+	var debug = 1
+
+	#constant states that the platform character may be
+	STANDING = 10
+	RUNNING = 11
+	DUCKING = 12
+	LOOKING_UP = 13
+	CLIMBING = 14
+	JUMPING = 15
+	FALLING = 16
+	DYING = 17
+	LEFT = 18
+	RIGHT = 19
+	ON_GROUND = 20
+	IN_AIR = 21
+	ON_LADDER = 22
+	HANGING = 23
+	DUCKTOHANG = 24
+
+	hang_count = 0
+	run_held = 0
+
+	# look
+	UP = 101
+	DOWN = 102
+
+	# other
+	blink = 0
+	blink_toggle = -1
+	invincible = 0
+
+	swimming = false
+
+	#the keys that the platform character will use (don't edit)
+	k_left = false
+	k_right = false
+	k_up = false
+	k_down = false
+	k_jump = false
+	k_jump_pressed = false
+	k_run = false
+
+	k_attack = false
+	k_attack_pressed = false
+	var k_missile = 0 #--- doesn't appear to be used anywhere
+	var k_missile_pressed = 0 #--- doesn't appear to be used anywhere
+
+	#user variables (you can edit these)
+	player = 1                # player number (player 2 uses different keyboard keys than player 1)
+	state = FALLING           # the character state, must be one of the following: STANDING, RUNNING, DUCKING, LOOKING_UP, CLIMBING, JUMPING, or FALLING
+	facing = RIGHT            # which direction the character is facing, must be either LEFT or RIGHT
+
+	grav = 1                  # the gravity
+	grav_norm = 1
+
+	x_vel_limit = 16            # limits the x_vel: default 15
+	y_vel_limit = 10            # limits the y_vel
+	x_acc_limit = 9             # limits the x_acc
+	y_acc_limit = 6             # limits the y_acc
+	run_acc = 3                # the running acceleration
+
+	initial_jump_acc = -2       # relates to how high the character will jump
+	jump_time_total = 10        # how long the user must hold the jump button to get the maximum jump height
+
+	climb_acc = 0.6            # how fast the character will climb
+	climb_anim_speed = 0.4      # relates to how fast the climbing animation should go
+	depart_ladder_x_vel = 4      # how fast character should be moving horizontally when he leaves the ladder
+	depart_ladder_y_vel = -4     # how fast the character should be moving vertically when he leaves the ladder
+
+	max_slope = 4              # approximately how many pixels the character can climb UPWARDS per step (a value of 5 means the character can climb up a slope of 5)
+	max_down_slope = 5          # approximately how many pixels the character can climb DOWNWARDS per step (a value of 5 means the character can climb down a slope of 5)
+
+	can_run = 1                # when the user presses the shift button, should the character be allowed to run?
+	var can_fly = 0                # whether the character can do a fly jump when running at full speed #--- doesn't appear to be used anywhere
+	var can_fly_jump = 0            # whether the character can do continuous fly jumps (mid-air) #--- doesn't appear to be used anywhere
+	var fly_max_jumps = 5           # the maximum number of jumps the character can perform while flying: #--- doesn't appear to be used anywhere
+
+	friction_running_x = 0.6       # friction obtained while running:
+	friction_running_fast_x = 0.98  # friction obtained while holding the shift button for some time while running: 
+	friction_climbing_x = 0.6      # friction obtained while climbing:
+	friction_climbing_y = 0.6      # friction obtained while climbing:
+	var friction_ducking_x = 0.8       # friction obtained while ducking: #--- doesn't appear to be used anywhere
+	var friction_flying_x = 0.99       # friction obtained while "flying": #--- doesn't appear to be used anywhere
+
+	run_anim_speed = 0.1           #relates to the how fast the running animation should go
+
+	# sets the collision bounds to fit the default sprites (you can edit the arguments of the script)
+	Collision.set_collision_bounds(self, -5, -8, 5, 8)
+
+	# hidden variables (don't edit)
+	state_prev = state
+	state_prev_prev = state_prev
+	gravity_intensity = grav      #this variable describes the current force due to gravity (this variable is altered for variable jumping)
+	jump_time = jump_time_total     #current time of the jump (0=start of jump, jump_time_total=end of jump)
+	jump_button_released = 0       #whether the jump button was released. (Stops the user from pressing the jump button many times to get extra jumps)
+	ladder_timer = 0              #relates to whether the character can climb a ladder
+	jumps = 0
+	var fly_speed = 0                 #ranges between 0 and 100. When the fly_speed is approximately 100, the character can "fly." #--- doesn't appear to be used anywhere
+	var fly_speed_timer = 0 #--- doesn't appear to be used anywhere
+	var fly_acc_timer = 0 #--- doesn't appear to be used anywhere
+	var fly_acc2_timer = 0 #--- doesn't appear to be used anywhere
+	var fly_jumps_timer = 0 #--- doesn't appear to be used anywhere
+	var fly_jump_was_pressed = 0
+	k_left_pushed_steps = 0
+	k_right_pushed_steps = 0
+
+	# makes the object "active" (don't edit)
+	PlatformEngine.make_active(self)
 
 func character_step_event():
 	var looking #--- Declaring here since it's only in this script. Doesn't seem to be used anywhere
@@ -1905,16 +2029,16 @@ func character_step_event():
 	var col_water_top = false
 	var col_ice_bot = false
 	var run_key = false
-	if (Collision.is_collision_moveable_solid_left(1, null)): col_solid_left = true
-	if (Collision.is_collision_moveable_solid_right(1, null)): col_solid_right = true
-	if (Collision.is_collision_left(1, null)): col_left = true
-	if (Collision.is_collision_right(1, null)): col_right = true
-	if (Collision.is_collision_top(1, null)): col_top = true
-	if (Collision.is_collision_bottom(1, null)): col_bot = true
+	if (Collision.is_collision_moveable_solid_left(1, self)): col_solid_left = true
+	if (Collision.is_collision_moveable_solid_right(1, self)): col_solid_right = true
+	if (Collision.is_collision_left(1, self)): col_left = true
+	if (Collision.is_collision_right(1, self)): col_right = true
+	if (Collision.is_collision_top(1, self)): col_top = true
+	if (Collision.is_collision_bottom(1, self)): col_bot = true
 	if (Collision.is_collision_ladder(self)): col_ladder = true
-	if (Collision.is_collision_platform_bottom(1, null)): col_plat_bot = true
+	if (Collision.is_collision_platform_bottom(1, self)): col_plat_bot = true
 	if (Collision.is_collision_platform(self)): col_plat = true
-	if (Collision.is_collision_water_top(1, null)): col_water_top = true
+	if (Collision.is_collision_water_top(1, self)): col_water_top = true
 	if (gml.collision_point(position.x, position.y+8, 'ice', 0, 0)): col_ice_bot = true
 	if (ControlScripts.check_run()):
 
@@ -2057,7 +2181,7 @@ func character_step_event():
 	if ((col_bot or col_plat_bot) and not col_plat): y_vel = 0
 
 	# Player has just walked off of the edge of a solid
-	if (col_bot == 0 and (not col_plat_bot or col_plat) and PlatformEngine.platform_character_is(ON_GROUND)):
+	if (col_bot == false and (not col_plat_bot or col_plat) and PlatformEngine.platform_character_is(ON_GROUND)):
 
 		state = FALLING
 		y_acc += grav
@@ -2176,7 +2300,7 @@ func character_step_event():
 
 	if (jump_time < jump_time_total): jump_time += 1
 	#let the character continue to jump
-	if (k_jump == 0): jump_button_released = 1
+	if (k_jump == false): jump_button_released = 1 #--- putting 'or' here as a simple fix
 	if (jump_button_released): jump_time = jump_time_total
 
 	gravity_intensity = (jump_time/jump_time_total) * grav
@@ -2543,7 +2667,7 @@ func character_step_event():
 		
 		
 		# Stuck on web or underwater
-		if (gml.collision_point(position.x, position.y, web, 0, 0)):
+		if (gml.collision_point(position.x, position.y, 'web', 0, 0)):
 		
 			x_fric = 0.2
 			y_fric = 0.2
@@ -2785,7 +2909,7 @@ func character_step_event():
 	else:
 
 	  # we simply move x_vel and y_vel while in the air or on a ladder:
-		PlatformEngine.move_tomove_to(x_vel,y_vel, self)
+		PlatformEngine.move_to(x_vel,y_vel, self)
 
 	# move the character downhill if possible:
 	# we need to multiply max_down_slope by the absolute value of x_vel since the character normally runs at an x_vel larger than 1

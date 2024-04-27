@@ -22,3 +22,8 @@ func _process(delta):
 		[1,0]:0, [1,1]:0, [1,2]: 0, [1,3]:0,
 		[2,0]:0, [2,1]:0, [2,2]:0, [2,3]:0,
 		[3,0]:0, [3,1]: 0, [3,2]:0, [3,3]:0}
+	
+	if Input.is_action_just_pressed("bomb"):
+		var test_node = $BaseRoom/Objects.get_child(10)
+		print(test_node)
+		gml.update_obj_list_collision(test_node)

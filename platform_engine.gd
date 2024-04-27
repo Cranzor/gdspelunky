@@ -26,7 +26,9 @@ func make_active(node):
 	node.y_vel=0
 	node.x_acc=0
 	node.y_acc=0
-	
+
+var frame = 1
+var yes_counter = 0
 func move_to(x_vel, y_vel, node):
 	#/*
 	#Any object that has the collision bounds set can use this script.
@@ -44,19 +46,40 @@ func move_to(x_vel, y_vel, node):
 	#0: x distance to move
 	#1: y distance to move
 	#*/
-	var mt_x_prev=node.x
-	var mt_y_prev=node.y
+	x_vel = -2.5 #-------- delete this!!!
+	
+	var mt_x_prev=node.position.x
+	var mt_y_prev=node.position.y
 	#change the decimal arguments to integer variables with relation to time
 	var x_vel_frac=gml.frac(abs(x_vel))
 	var y_vel_frac=gml.frac(abs(y_vel))
 	var x_vel_integer=0
 	var y_vel_integer=0
 	if x_vel_frac!=0:
+		print(x_vel)
+		print(x_vel_frac)
+		#if round(1/x_vel_frac)!=0: #-------- temporary comment. bring this back
+			#if game.time % round(1/x_vel_frac)==0:
+				#x_vel_integer=1
+			#else:
+				#x_vel_integer=0
 		if round(1/x_vel_frac)!=0:
-			if game.time % round(1/x_vel_frac)==0:
+			print(round(1/x_vel_frac))
+			print(frame)
+			frame += 1
+			var rounded = round(1/x_vel_frac)
+			if frame % int(rounded) ==0:
+				print('yes')
+				yes_counter += 1
+				print(yes_counter)
 				x_vel_integer=1
 			else:
+				print('no')
 				x_vel_integer=0
+		
+		var movement_speed = (x_vel_frac * get_process_delta_time()) * 60 #---temporary for testing
+		print(movement_speed)
+		#print(movement_speed)
 	if y_vel_frac!=0:
 		if round(1/y_vel_frac)!=0:
 			if game.time % round(1/y_vel_frac)==0:
@@ -140,7 +163,7 @@ func move_to(x_vel, y_vel, node):
 		 
 				break
 			if Collision.can_land_on_platforms(node):
-				if await Collision.is_collision_platform(node)==0 and Collision.is_collision_platform_bottom(1, node) and node.k_down==0:
+				if Collision.is_collision_platform(node)==0 and Collision.is_collision_platform_bottom(1, node) and node.k_down==0:
 		   
 					break
 	  

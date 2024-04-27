@@ -19,8 +19,10 @@ var game
 var title
 var bricks
 var copy
+var player = preload("res://Objects/Player1/Player1.tscn")
 
 func _ready():
+	MiscScripts.scr_clear_globals()
 	#gml.instance_create(384, 48, title_bg)
 	#gml.instance_create(384, 176, x_start)
 	#gml.instance_create(432, 176, x_scores)
@@ -400,6 +402,8 @@ func _ready():
 	#gml.instance_create(96, 32, title)
 	#gml.instance_create(128, 32, bricks)
 	#gml.instance_create(408, 224, copy)
+	#------------------------------------------- adding this for testing
+	gml.instance_create(320+270, 175, player)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

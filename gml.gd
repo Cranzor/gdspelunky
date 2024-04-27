@@ -41,16 +41,22 @@ func instance_create(x,y,obj): #should return the node as this is used in script
 	instance.position.x = x
 	instance.position.y = y
 	
+	#for objects bigger than 16x16, get height and width of sprite texture and then add that as the size
+	
 	#getting each location of each object spawned in. note that this only applies to stationary objects
 	var obj_groups = instance.get_groups()
 	
 	if !obj_groups.is_empty():
 		for group in obj_groups:
+			var location = Vector2(x, y)
+			var default_size = Vector2(16, 16)
+			
+			var node_info: Array = [location, default_size, instance]
 			if !instanced_object_locations.has(group):
-				instanced_object_locations[str(group)] = [Vector2(x, y)]#.append(Vector2(x, y))
+				instanced_object_locations[str(group)] = [node_info]
 			else:
-				instanced_object_locations[group].append(Vector2(x, y))
-	
+				instanced_object_locations[group].append(node_info)
+			#print(instanced_object_locations[group])
 	return instance
 
 func collision_point(x,y,obj: String,prec,notme): #"This function tests whether at point (x,y) there is a collision with entities of object obj."
@@ -63,7 +69,8 @@ func collision_point(x,y,obj: String,prec,notme): #"This function tests whether 
 	#get_tree().current_scene.add_child(visible_rect)
 	
 	if instanced_object_locations.has(obj):
-		for location in instanced_object_locations[obj]:
+		for entry in instanced_object_locations[obj]:
+			var location = entry[0]
 			var obj_rect = Rect2(location, Vector2(16, 16))
 			#var visible_obj_rect = ColorRect.new()
 			#visible_obj_rect.position = location
@@ -143,7 +150,8 @@ func collision_rectangle(x1,y1,x2,y2,obj,prec,notme): #"This function tests whet
 	#get_tree().current_scene.add_child(visible_rect)
 	
 	if instanced_object_locations.has(obj):
-		for location in instanced_object_locations[obj]:
+		for entry in instanced_object_locations[obj]:
+			var location = entry[0]
 			var obj_rect = Rect2(location, Vector2(16, 16))
 			
 			#var visible_obj_rect = ColorRect.new()
@@ -166,7 +174,8 @@ func instance_nearest(x,y,obj: String): #"Returns the id of the instance of type
 		var closest_point
 		var distance_digit
 		
-		for location in instanced_object_locations[obj]:
+		for entry in instanced_object_locations[obj]:
+			var location = entry[0]
 			var new_distance_digit = pow(location.x, 2) + pow(location.y, 2)
 			print(new_distance_digit)
 			if distance_digit == null or new_distance_digit < distance_digit:
@@ -192,6 +201,10 @@ func sqr(number):
 	
 func instance_number(obj: String):
 	pass
+
+func collision_line(x1,y1,x2,y2,obj,prec,notme):
+	return 1
+	
 
 #---------------------------------------
 func background_index(background: String): #Changing this to a function
@@ -221,3 +234,19 @@ func get_instance(obj: String): #Support function for when GML handles this by i
 	if instance_exists(obj):
 		var instance = get_tree().get_first_node_in_group(str(obj))
 		return instance
+
+func update_obj_list_collision(node):
+	var obj_groups = node.get_groups()
+	
+	if !obj_groups.is_empty():
+		for group in obj_groups:
+			for entry in instanced_object_locations[group]:
+				if entry[2] == node:
+					print(group)
+					print("hi")
+			
+			#var node_info: Array = [location, default_size, instance]
+			#if !instanced_object_locations.has(group):
+				#instanced_object_locations[str(group)] = [node_info]
+			#else:
+				#instanced_object_locations[group].append(node_info)
