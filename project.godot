@@ -31,8 +31,8 @@ CharacterScripts="*res://character_scripts.gd"
 
 [display]
 
-window/size/viewport_width=700
-window/size/viewport_height=700
+window/size/viewport_width=320
+window/size/viewport_height=240
 window/size/mode=2
 window/stretch/mode="viewport"
 

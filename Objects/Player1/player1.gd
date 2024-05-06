@@ -6,20 +6,16 @@ var DYING
 var ON_LADDER
 var DOWN
 var blink
-var blink_toggle
 var k_jump_pressed
 var player
 
 var first_level_skip
 var level_skip
-var sprite_index
 var s_damsel_left
 var s_tunnel_left
 var active = true #--- Change this back
-var dead = false #--- Change this back
 var dead_counter
 var stunned = false #--- Change this back
-var bounced
 var my_grav
 var fall_timer
 var stun_timer
@@ -139,7 +135,6 @@ var s_whip_pre_r
 var s_chest
 var s_chest_open
 var s_bomb_armed
-var invincible
 var s_crystal_skull
 var s_bomb
 var s_rope_end
@@ -210,6 +205,8 @@ var alarm_11_active
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	MiscScripts.scr_clear_globals() #---[FLAG] delete this
+	
 	character_create_event()
 	
 	# for debugging

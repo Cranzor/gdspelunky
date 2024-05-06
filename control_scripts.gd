@@ -76,7 +76,9 @@ func check_left():
 		return false
 	
 func check_left_pressed():
-	if Input.is_action_just_pressed("left") == true:
+	#if Input.is_action_just_pressed("left") == true:
+	if Input.is_action_pressed("left") == true:
+		print('true')
 		return true
 	else:
 		return false

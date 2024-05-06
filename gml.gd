@@ -79,6 +79,13 @@ func collision_point(x,y,obj: String,prec,notme): #"This function tests whether 
 			#get_tree().current_scene.add_child(visible_obj_rect)
 			intersecting = rect.intersects(obj_rect)
 			if intersecting == true:
+				#var visible_obj_rect = ColorRect.new()
+				#visible_obj_rect.global_position = location
+				#visible_obj_rect.size = Vector2(1, 1)
+				#print(location)
+				#visible_obj_rect.color = Color(0.922, 0.518, 0.188, 0.2)
+				#get_tree().current_scene.add_child(visible_obj_rect)
+				#get_tree().paused = true
 				break
 	
 	return intersecting
@@ -142,7 +149,12 @@ func instance_destroy(obj): #'Destroys current instance' ---  Should probably st
 
 func collision_rectangle(x1,y1,x2,y2,obj,prec,notme): #"This function tests whether there is a collision between the (filled) rectangle with the indicated opposite corners and entities of object obj. For example, you can use this to test whether an area is free of obstacles."
 	var intersecting = false
-	var rect = Rect2(Vector2(x1, y1), Vector2(x2 - x1, y2 - y1))
+	var rect = Rect2(Vector2(x1, y1), Vector2(abs(x2 - x1), abs(y2 - y1)))
+	print('x1: ' + str(x1))
+	print('y1: ' + str(y1))
+	print('x2: ' + str(x2))
+	print('y2: ' + str(y2))
+	print(rect.size)
 	#var visible_rect = ColorRect.new()
 	#visible_rect.position = Vector2(x, y)
 	#visible_rect.size = Vector2(x2 - x, y2 - y)
@@ -203,8 +215,19 @@ func instance_number(obj: String):
 	pass
 
 func collision_line(x1,y1,x2,y2,obj,prec,notme):
-	return 1
+	var intersecting = false
+	var rect = Rect2(Vector2(x1, y1), Vector2(abs(x2 - x1), 1))
 	
+	if instanced_object_locations.has(obj):
+		for entry in instanced_object_locations[obj]:
+			var location = entry[0]
+			var obj_rect = Rect2(location, Vector2(16, 16))
+			
+			intersecting = rect.intersects(obj_rect)
+			if intersecting == true:
+				break
+	
+	return intersecting
 
 #---------------------------------------
 func background_index(background: String): #Changing this to a function
@@ -219,6 +242,21 @@ func room_height(): #Changing this to function. Return the height of current sce
 
 func room_width():
 	pass
+
+func view(view_value: String):
+	var view = get_tree().get_first_node_in_group("view")
+	
+	if view_value == 'xview':
+		pass
+		
+	elif view_value == 'yview':
+		pass
+		
+	elif view_value == 'wview':
+		pass
+		
+	elif view_value == 'hview':
+		pass
 
 #------------------------
 func singleton_test():

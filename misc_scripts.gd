@@ -172,3 +172,6 @@ func scr_clear_globals():
 
 func scr_create_flame(x, y, num):
 	pass
+
+func scr_create_blood(x, y, num):
+	pass

@@ -405,7 +405,9 @@ func _ready():
 	#------------------------------------------- adding this for testing
 	gml.instance_create(320+270, 175, player)
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	#var player = $Player1 #--- for testing
+	#var view = $View
+	#view.position.x = player.position.x
 	pass

@@ -10,5 +10,5 @@ script = ExtResource("1_86hpl")
 [node name="View" parent="." instance=ExtResource("2_ramxg")]
 position = Vector2(320, 0)
 
-[node name="SnakeTest" parent="." instance=ExtResource("3_uheeq")]
-position = Vector2(240, 96)
+[node name="SnakeTest" parent="View" instance=ExtResource("3_uheeq")]
+position = Vector2(224, 64)

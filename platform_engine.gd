@@ -46,134 +46,144 @@ func move_to(x_vel, y_vel, node):
 	#0: x distance to move
 	#1: y distance to move
 	#*/
-	x_vel = -2.5 #-------- delete this!!!
+	#x_vel = -0.3 #-------- delete this!!!
 	
-	var mt_x_prev=node.position.x
-	var mt_y_prev=node.position.y
-	#change the decimal arguments to integer variables with relation to time
-	var x_vel_frac=gml.frac(abs(x_vel))
-	var y_vel_frac=gml.frac(abs(y_vel))
-	var x_vel_integer=0
-	var y_vel_integer=0
-	if x_vel_frac!=0:
-		print(x_vel)
-		print(x_vel_frac)
-		#if round(1/x_vel_frac)!=0: #-------- temporary comment. bring this back
-			#if game.time % round(1/x_vel_frac)==0:
+	#var mt_x_prev=node.position.x
+	#var mt_y_prev=node.position.y
+	##change the decimal arguments to integer variables with relation to time
+	#var x_vel_frac=gml.frac(abs(x_vel))
+	#var y_vel_frac=gml.frac(abs(y_vel))
+	#var x_vel_integer=0
+	#var y_vel_integer=0
+	#if x_vel_frac!=0:
+		#print("x_vel:" + str(x_vel))
+		#print('x_vel_frac:' + str(x_vel_frac))
+		#print('round(1/x_vel_frac): ' + str(round(1/x_vel_frac)))
+		##if round(1/x_vel_frac)!=0: #-------- temporary comment. bring this back
+			##if game.time % round(1/x_vel_frac)==0:
+				##x_vel_integer=1
+			##else:
+				##x_vel_integer=0
+		#if round(1/x_vel_frac)!=0:
+			#print(round(1/x_vel_frac))
+			#print(frame)
+			#frame += 1
+			#var rounded = round(1/x_vel_frac)
+			#if frame % int(rounded) ==0:
+				#print('yes')
+				#yes_counter += 1
+				#print(yes_counter)
 				#x_vel_integer=1
 			#else:
+				#print('no')
 				#x_vel_integer=0
-		if round(1/x_vel_frac)!=0:
-			print(round(1/x_vel_frac))
-			print(frame)
-			frame += 1
-			var rounded = round(1/x_vel_frac)
-			if frame % int(rounded) ==0:
-				print('yes')
-				yes_counter += 1
-				print(yes_counter)
-				x_vel_integer=1
-			else:
-				print('no')
-				x_vel_integer=0
-		
-		var movement_speed = (x_vel_frac * get_process_delta_time()) * 60 #---temporary for testing
-		print(movement_speed)
+		#
+		#var movement_speed = (x_vel_frac * get_process_delta_time()) * 30 #---temporary for testing
 		#print(movement_speed)
-	if y_vel_frac!=0:
-		if round(1/y_vel_frac)!=0:
-			if game.time % round(1/y_vel_frac)==0:
-				y_vel_integer=1
-			else:
-				y_vel_integer=0
-	x_vel_integer+=floor(abs(x_vel))
-	y_vel_integer+=floor(abs(y_vel))
-	if x_vel<0:
-		x_vel_integer*=-1
-	if y_vel<0:
-		y_vel_integer*=-1
-	x_vel_integer=round(x_vel_integer)
-	y_vel_integer=round(y_vel_integer)
+		##print(movement_speed)
+	#if y_vel_frac!=0:
+		#if round(1/y_vel_frac)!=0:
+			#if game.time % round(1/y_vel_frac)==0:
+				#y_vel_integer=1
+			#else:
+				#y_vel_integer=0
+	#x_vel_integer+=floor(abs(x_vel))
+	#y_vel_integer+=floor(abs(y_vel))
+	#if x_vel<0:
+		#x_vel_integer*=-1
+	#if y_vel<0:
+		#y_vel_integer*=-1
+	#x_vel_integer=round(x_vel_integer)
+	#y_vel_integer=round(y_vel_integer)
+	
 	#object is moving to the right
-	if x_vel_integer>0:
-		for x in range(0, mt_x_prev+x_vel_integer):
-		  
-			var solid_id=Collision.get_id_collision_right(1, node)
-			#if there is a collision with a solid:
-			if solid_id>0:
-			
-				if gml.object_get_parent(solid_id.object_index) == 'moveable_solid' and Collision.can_push_moveable_solids(node):
-			  
-					#we must move the moveable solid, unless there is another solid (moveable or non-moveable) in it's way
-					var all_solids = gml.get_all_instances("solid")
-					for solid_instance in all_solids:
-				
-						if gml.place_meeting(solid_instance.x+1,solid_instance.y,'solid'):      #there will be a collision!
-							#--- is x here referring to the iterator or the node's x position? no idea. going with the position
-				  
-				   
-							break
-				  
-						else:
-				  
-							solid_instance.x += 1             #we're free to move the moveable solid
-							if (not SS.is_sound_playing(global.snd_push)): Audio.play_sound(global.snd_push)
-				  
-				
-			  
-				else:
-			   
-					break
+	if x_vel>0:
+		node.position.x+= x_vel * get_physics_process_delta_time() * 30
+		
+		#for x in range(0, mt_x_prev+x_vel_integer):
+		  #
+			#var solid_id=Collision.get_id_collision_right(1, node)
+			##if there is a collision with a solid:
+			#if solid_id>0:
+			#
+				#if gml.object_get_parent(solid_id.object_index) == 'moveable_solid' and Collision.can_push_moveable_solids(node):
+			  #
+					##we must move the moveable solid, unless there is another solid (moveable or non-moveable) in it's way
+					#var all_solids = gml.get_all_instances("solid")
+					#for solid_instance in all_solids:
+				#
+						#if gml.place_meeting(solid_instance.x+1,solid_instance.y,'solid'):      #there will be a collision!
+							##--- is x here referring to the iterator or the node's x position? no idea. going with the position
+				  #
+				   #
+							#break
+				  #
+						#else:
+				  #
+							#solid_instance.x += 1             #we're free to move the moveable solid
+							#if (not SS.is_sound_playing(global.snd_push)): Audio.play_sound(global.snd_push)
+				  #
+				#
+			  #
+				#else:
+			   #
+					#break
 				
 	  
 	#object is moving to the left
-	if x_vel_integer<0:
-		for x in range(0, mt_x_prev+x_vel_integer, -1):
-	  
-			var solid_id = Collision.get_id_collision_left(1, node) # --- [FLAG] assuming this returns a node
-			#if there is a collision with a solid:
-			if solid_id>0:
-			
-				if gml.object_get_parent(solid_id.object_index)== 'moveable_solid' and Collision.can_push_moveable_solids(node):
-			  
-				#we must move the moveable solid, unless there is another solid (moveable or non-moveable) in it's way
-				
-					if solid_id.gml.place_meeting(solid_id.x-1,solid_id.y,'solid'):      #there will be a collision!
-				  
-				   
-						break
-				  
-					else:
-				  
-						x-=1             #we're free to move the moveable solid
-						if (not SS.is_sound_playing(global.snd_push)): Audio.play_sound(global.snd_push)
-				  
-				
-			  
-				else:
-			   
-					break
+	#if x_vel_integer<0:
+	if x_vel<0:
+		node.position.x+= x_vel * get_physics_process_delta_time() * 30
+		#for x in range(0, mt_x_prev+x_vel_integer, -1):
+	  #
+			#var solid_id = Collision.get_id_collision_left(1, node) # --- [FLAG] assuming this returns a node
+			##if there is a collision with a solid:
+			#if solid_id>0:
+			#
+				#if gml.object_get_parent(solid_id.object_index)== 'moveable_solid' and Collision.can_push_moveable_solids(node):
+			  #
+				##we must move the moveable solid, unless there is another solid (moveable or non-moveable) in it's way
+				#
+					#if solid_id.gml.place_meeting(solid_id.x-1,solid_id.y,'solid'):      #there will be a collision!
+				  #
+				   #
+						#break
+				  #
+					#else:
+				  #
+						#x-=1             #we're free to move the moveable solid
+						#if (not SS.is_sound_playing(global.snd_push)): Audio.play_sound(global.snd_push)
+				  #
+				#
+			  #
+				#else:
+			   #
+					#break
 		 
 		
 	#object is moving down
-	if y_vel_integer>0:
-		for y in range(0, mt_y_prev+y_vel_integer):
-	  
-			if Collision.is_collision_bottom(1, node):
-		 
-				break
-			if Collision.can_land_on_platforms(node):
-				if Collision.is_collision_platform(node)==0 and Collision.is_collision_platform_bottom(1, node) and node.k_down==0:
-		   
-					break
+	if y_vel>0:
+		#print(node)
+		#print(y_vel)
+		node.position.y+= y_vel * get_physics_process_delta_time() * 30
+		#for y in range(0, mt_y_prev+y_vel_integer):
+	  #
+			#if Collision.is_collision_bottom(1, node):
+		 #
+				#break
+			#if Collision.can_land_on_platforms(node):
+				#if Collision.is_collision_platform(node)==0 and Collision.is_collision_platform_bottom(1, node) and node.k_down==0:
+		   #
+					#break
 	  
 	#object is moving up
-	if y_vel_integer<0:
-		for y in range(0, mt_y_prev+y_vel_integer, -1):
-	  
-			if Collision.is_collision_top(1, node):
-		 
-				break
+	if y_vel<0:
+		pass #--- delete
+		#for y in range(0, mt_y_prev+y_vel_integer, -1):
+	  #
+			#if Collision.is_collision_top(1, node):
+		 #
+				#break
 	  
 	
 func platform_character_is(character_trait):

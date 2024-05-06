@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://bft8urcdv7lh0"]
+
+[node name="View" type="Camera2D" groups=["view"]]
+anchor_mode = 0

@@ -71,12 +71,14 @@ func is_collision_solid(node):
 	#1:collision
 	#*/
 	var all_points_exact = calculate_collision_bounds(node)
+	print(all_points_exact)
 	var lb = all_points_exact.w
 	var tb = all_points_exact.x
 	var rb = all_points_exact.y
 	var bb = all_points_exact.z
 	
-	return gml.collision_rectangle(lb,tb,rb-1,bb-1,'solid',1,1)>0
+	if gml.collision_rectangle(lb,tb,rb-1,bb-1,'solid',1,1) == true:#>0
+		return true
 
 
 func set_collision_bounds(node, left_x, top_y, right_x, bottom_y):
@@ -247,7 +249,7 @@ func is_collision_left(number, node):
 	var rb = all_points_exact.y
 	var bb = all_points_exact.z
 	
-	if gml.collision_line(round(lb-number),round(tb),round(lb-number),round(bb-1),'solid',1,1)>0:
+	if gml.collision_line(round(lb-number),round(tb),round(lb-number),round(bb-1),'solid',1,1) == true:#>0:
 		return 1
 
 	return 0
@@ -264,7 +266,7 @@ func is_collision_moveable_solid_left(number, node):
 	var rb = all_points_exact.y
 	var bb = all_points_exact.z
 	
-	if gml.collision_line(round(lb-number),round(tb),round(lb-number),round(bb-1),'moveable_solid',1,1)>0:
+	if gml.collision_line(round(lb-number),round(tb),round(lb-number),round(bb-1),'moveable_solid',1,1) == true:#>0:
 		return 1
 
 	return 0
@@ -281,7 +283,7 @@ func is_collision_moveable_solid_right(number, node):
 	var rb = all_points_exact.y
 	var bb = all_points_exact.z
 	
-	if gml.collision_line(round(rb+number-1),round(tb),round(rb+number-1),round(bb-1),'moveable_solid',1,1)>0:
+	if gml.collision_line(round(rb+number-1),round(tb),round(rb+number-1),round(bb-1),'moveable_solid',1,1) == true:#>0:
 		return 1
 
 	return 0
@@ -298,7 +300,7 @@ func is_collision_right(number, node):
 	var rb = all_points_exact.y
 	var bb = all_points_exact.z
 	
-	if gml.collision_line(round(rb+number-1),round(tb),round(rb+number-1),round(bb-1),'solid',1,1)>0:
+	if gml.collision_line(round(rb+number-1),round(tb),round(rb+number-1),round(bb-1),'solid',1,1) == true:#>0:
 		return 1
 
 	return 0
@@ -320,7 +322,7 @@ func is_collision_bottom(number, node):
 	var rb = all_points_exact.y
 	var bb = all_points_exact.z
 	
-	if gml.collision_line(round(lb),round(bb+number-1),round(rb-1),round(bb+number-1),'solid',1,1)>0:
+	if gml.collision_line(round(lb),round(bb+number-1),round(rb-1),round(bb+number-1),'solid',1,1) == true:#>0:
 		return 1
 		
 	return 0
@@ -390,7 +392,7 @@ func is_collision_platform_bottom(number, node):
 	var rb = all_points_exact.y
 	var bb = all_points_exact.z
 	
-	if gml.collision_line(round(lb),round(bb+number-1),round(rb-1),round(bb+number-1),'platform',1,1)>0:
+	if gml.collision_line(round(lb),round(bb+number-1),round(rb-1),round(bb+number-1),'platform',1,1) == true:#>0:
 		return 1
 
 	return 0
@@ -407,7 +409,7 @@ func is_collision_top(number, node):
 	var rb = all_points_exact.y
 	var bb = all_points_exact.z
 	
-	if gml.collision_line(round(lb),round(tb-number),round(rb-1),round(tb-number),'solid',1,1)>0:
+	if gml.collision_line(round(lb),round(tb-number),round(rb-1),round(tb-number),'solid',1,1) == true:#>0:
 		return 1
 	return 0
 	
@@ -423,7 +425,7 @@ func is_collision_water_top(number, node):
 	var rb = all_points_exact.y
 	var bb = all_points_exact.z
 	
-	if gml.collision_line(round(lb),round(tb-number),round(rb-1),round(tb-number),'water',1,1)>0:
+	if gml.collision_line(round(lb),round(tb-number),round(rb-1),round(tb-number),'water',1,1) == true:#>0:
 		return 1
 		
 	return 0
