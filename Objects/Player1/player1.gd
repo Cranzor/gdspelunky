@@ -205,7 +205,7 @@ var alarm_11_active
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	MiscScripts.scr_clear_globals() #---[FLAG] delete this
+	#MiscScripts.scr_clear_globals() #---[FLAG] delete this
 	
 	character_create_event()
 	
@@ -312,6 +312,14 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
+	var visible_rect = ColorRect.new()
+	get_tree().current_scene.add_child(visible_rect)
+	visible_rect.global_position = Vector2(position.x, position.y)
+	#print(visible_rect.position.y)
+	#print(position.y)
+	visible_rect.size = Vector2(1, 1)
+	visible_rect.color = Color(0.322, 0.518, 0.188, 0.5)
+	
 	#--- Declaring certain variables unique to this function
 	var k_bomb_pressed
 	var k_rope_pressed
@@ -2362,8 +2370,8 @@ func character_step_event():
 			grav = 0
 
 		elif (hang_count == 0 and position.y > 16 and !PlatformEngine.platform_character_is(ON_GROUND) and k_right and col_right and
-			(gml.collision_point(position.x+9, position.y-5, solid, 0, 0) or gml.collision_point(position.x+9, position.y-6, solid, 0, 0)) and
-			not gml.collision_point(position.x+9, position.y-9, solid, 0, 0) and not gml.collision_point(position.x, position.y+9, solid, 0, 0)):
+			(gml.collision_point(position.x+9, position.y-5, 'solid', 0, 0) or gml.collision_point(position.x+9, position.y-6, 'solid', 0, 0)) and
+			not gml.collision_point(position.x+9, position.y-9, 'solid', 0, 0) and not gml.collision_point(position.x, position.y+9, 'solid', 0, 0)):
 
 				state = HANGING
 				gml.move_snap(1, 8, self)
@@ -2372,8 +2380,8 @@ func character_step_event():
 				grav = 0
 
 		elif (hang_count == 0 and position.y > 16 and !PlatformEngine.platform_character_is(ON_GROUND) and k_left and col_left and
-			(gml.collision_point(position.x-9, position.y-5, solid, 0, 0) or gml.collision_point(position.x-9, position.y-6, solid, 0, 0)) and
-			not gml.collision_point(position.x-9, position.y-9, solid, 0, 0) and not gml.collision_point(position.x, position.y+9, solid, 0, 0)):
+			(gml.collision_point(position.x-9, position.y-5, 'solid', 0, 0) or gml.collision_point(position.x-9, position.y-6, 'solid', 0, 0)) and
+			not gml.collision_point(position.x-9, position.y-9, 'solid', 0, 0) and not gml.collision_point(position.x, position.y+9, 'solid', 0, 0)):
 
 				state = HANGING
 				gml.move_snap(1, 8, self)

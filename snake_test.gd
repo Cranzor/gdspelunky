@@ -34,13 +34,12 @@ func _ready():
 	shake_toggle = 1
 
 func _physics_process(delta):
-	if position.y > 700:
-		print('oh')
+	#print("y_vel:" + str(y_vel))
 	var visible_rect = ColorRect.new()
 	get_tree().current_scene.add_child(visible_rect)
 	visible_rect.global_position = Vector2(position.x, position.y)
-	print(visible_rect.position.y)
-	print(position.y)
+	#print(visible_rect.position.y)
+	#print(position.y)
 	visible_rect.size = Vector2(1, 1)
 	visible_rect.color = Color(0.922, 0.518, 0.188, 0.5)
 	

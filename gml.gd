@@ -38,8 +38,8 @@ func instance_create(x,y,obj): #should return the node as this is used in script
 	var instance = obj.instantiate()
 	var objects_holder = get_tree().get_first_node_in_group("objects_holder")
 	objects_holder.add_child(instance)
-	instance.position.x = x
-	instance.position.y = y
+	instance.global_position.x = x
+	instance.global_position.y = y
 	
 	#for objects bigger than 16x16, get height and width of sprite texture and then add that as the size
 	
@@ -48,7 +48,7 @@ func instance_create(x,y,obj): #should return the node as this is used in script
 	
 	if !obj_groups.is_empty():
 		for group in obj_groups:
-			var location = Vector2(x, y)
+			var location = Vector2(x, y) #--- -16 seems to fix collision for some reason? might need to change later. [FLAG] important. seems to be an issue here
 			var default_size = Vector2(16, 16)
 			
 			var node_info: Array = [location, default_size, instance]
@@ -145,16 +145,12 @@ func instance_place(x,y,obj: String): #' Returns the id of the instance of type 
 	pass
 	
 func instance_destroy(obj): #'Destroys current instance' ---  Should probably start passing 'self' or other node reference as an argument. Go through and check
-	pass
+	obj.queue_free()
 
 func collision_rectangle(x1,y1,x2,y2,obj,prec,notme): #"This function tests whether there is a collision between the (filled) rectangle with the indicated opposite corners and entities of object obj. For example, you can use this to test whether an area is free of obstacles."
 	var intersecting = false
 	var rect = Rect2(Vector2(x1, y1), Vector2(abs(x2 - x1), abs(y2 - y1)))
-	print('x1: ' + str(x1))
-	print('y1: ' + str(y1))
-	print('x2: ' + str(x2))
-	print('y2: ' + str(y2))
-	print(rect.size)
+	#print(x1)
 	#var visible_rect = ColorRect.new()
 	#visible_rect.position = Vector2(x, y)
 	#visible_rect.size = Vector2(x2 - x, y2 - y)
@@ -173,6 +169,8 @@ func collision_rectangle(x1,y1,x2,y2,obj,prec,notme): #"This function tests whet
 			
 			intersecting = rect.intersects(obj_rect)
 			if intersecting == true:
+				print('obj_rect:' + str(obj_rect))
+				print('rect: ' + str(rect))
 				break
 	
 	return intersecting
@@ -183,27 +181,42 @@ func point_distance(x1,y1,x2,y2): #"Returns the distance between point (x1,y1) a
 
 func instance_nearest(x,y,obj: String): #"Returns the id of the instance of type obj nearest to (x,y). obj can be an object or the keyword all."
 	if instanced_object_locations.has(obj):
-		var closest_point
-		var distance_digit
+		var closest_point = null
+		var closest_node
 		
 		for entry in instanced_object_locations[obj]:
 			var location = entry[0]
-			var new_distance_digit = pow(location.x, 2) + pow(location.y, 2)
-			print(new_distance_digit)
-			if distance_digit == null or new_distance_digit < distance_digit:
-				distance_digit = new_distance_digit
-				closest_point = location
-		print(closest_point)
-		return closest_point
+			var distance = point_distance(x, y, location.x, location.y)
+			if closest_point == null or distance < closest_point:
+				closest_point = distance
+				closest_node = entry[2]
+		
+		return closest_node
+	
+	return null
 	
 func frac(number):
 	return number - floor(number)
 
 func object_get_parent(ind):
-	pass
+	return ind.parent
 
 func place_meeting(x,y,obj):
-	pass
+	var intersecting = false
+	var rect = Rect2(Vector2(x, y), Vector2(16, 16)) #---[FLAG] grab the size later so this can be different size
+	
+	if instanced_object_locations.has(obj):
+		for entry in instanced_object_locations[obj]:
+			var location = entry[0]
+			var obj_rect = Rect2(location, Vector2(16, 16))
+			
+			intersecting = rect.intersects(obj_rect)
+			if intersecting == true:
+				#print('obj_rect:' + str(obj_rect))
+				#print('rect: ' + str(rect))
+				break
+	
+	return intersecting
 	
 func move_snap(hsnap,vsnap, obj):
 	pass

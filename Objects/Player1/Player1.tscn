@@ -64,6 +64,5 @@ frame_progress = 0.129146
 centered = false
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
 texture = ExtResource("13_p5lpw")
 centered = false

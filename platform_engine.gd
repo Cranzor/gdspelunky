@@ -30,6 +30,8 @@ func make_active(node):
 var frame = 1
 var yes_counter = 0
 func move_to(x_vel, y_vel, node):
+	print(node)
+	print(y_vel)
 	#/*
 	#Any object that has the collision bounds set can use this script.
 	#(To set the collision bounds, call the script "set_collision_bounds.")
@@ -98,83 +100,81 @@ func move_to(x_vel, y_vel, node):
 	
 	#object is moving to the right
 	if x_vel>0:
-		node.position.x+= x_vel * get_physics_process_delta_time() * 30
+		  
+		var solid_id=Collision.get_id_collision_right(1, node)
+		#if there is a collision with a solid:
+		if solid_id!= null:
 		
-		#for x in range(0, mt_x_prev+x_vel_integer):
-		  #
-			#var solid_id=Collision.get_id_collision_right(1, node)
-			##if there is a collision with a solid:
-			#if solid_id>0:
-			#
-				#if gml.object_get_parent(solid_id.object_index) == 'moveable_solid' and Collision.can_push_moveable_solids(node):
-			  #
-					##we must move the moveable solid, unless there is another solid (moveable or non-moveable) in it's way
-					#var all_solids = gml.get_all_instances("solid")
-					#for solid_instance in all_solids:
-				#
-						#if gml.place_meeting(solid_instance.x+1,solid_instance.y,'solid'):      #there will be a collision!
-							##--- is x here referring to the iterator or the node's x position? no idea. going with the position
-				  #
-				   #
-							#break
-				  #
-						#else:
-				  #
-							#solid_instance.x += 1             #we're free to move the moveable solid
-							#if (not SS.is_sound_playing(global.snd_push)): Audio.play_sound(global.snd_push)
-				  #
-				#
-			  #
-				#else:
-			   #
-					#break
-				
+			if gml.object_get_parent(solid_id) == 'moveable_solid' and Collision.can_push_moveable_solids(node):
+		  
+				#we must move the moveable solid, unless there is another solid (moveable or non-moveable) in it's way
+				var all_solids = gml.get_all_instances("solid")
+				for solid_instance in all_solids:
+			
+					if gml.place_meeting(solid_instance.x+1,solid_instance.y,'solid'):      #there will be a collision!
+						#--- is x here referring to the iterator or the node's x position? no idea. going with the position
+			  
+			   
+						pass
+			  
+					else:
+			  
+						solid_instance.position.x += 1 * get_physics_process_delta_time()             #we're free to move the moveable solid
+						if (not SS.is_sound_playing(global.snd_push)): Audio.play_sound(global.snd_push)
+			  
+			
+		  
+			else:
+		   
+				pass
+		
+		else:
+			node.position.x+= x_vel * get_physics_process_delta_time() * 30		
 	  
 	#object is moving to the left
 	#if x_vel_integer<0:
 	if x_vel<0:
-		node.position.x+= x_vel * get_physics_process_delta_time() * 30
-		#for x in range(0, mt_x_prev+x_vel_integer, -1):
-	  #
-			#var solid_id = Collision.get_id_collision_left(1, node) # --- [FLAG] assuming this returns a node
-			##if there is a collision with a solid:
-			#if solid_id>0:
-			#
-				#if gml.object_get_parent(solid_id.object_index)== 'moveable_solid' and Collision.can_push_moveable_solids(node):
-			  #
-				##we must move the moveable solid, unless there is another solid (moveable or non-moveable) in it's way
-				#
-					#if solid_id.gml.place_meeting(solid_id.x-1,solid_id.y,'solid'):      #there will be a collision!
-				  #
-				   #
-						#break
-				  #
-					#else:
-				  #
-						#x-=1             #we're free to move the moveable solid
-						#if (not SS.is_sound_playing(global.snd_push)): Audio.play_sound(global.snd_push)
-				  #
-				#
-			  #
-				#else:
-			   #
-					#break
-		 
+	  
+		var solid_id = Collision.get_id_collision_left(1, node) # --- [FLAG] assuming this returns a node
+		#if there is a collision with a solid:
+		if solid_id!=null:
+		
+			if gml.object_get_parent(solid_id)== 'moveable_solid' and Collision.can_push_moveable_solids(node):
+		  
+			#we must move the moveable solid, unless there is another solid (moveable or non-moveable) in it's way
+				var all_solids = gml.get_all_instances("solid")
+				for solid_instance in all_solids:
+					
+					if solid_id.gml.place_meeting(solid_id.x-1,solid_id.y,'solid'):      #there will be a collision!
+				  
+				   
+						pass
+				  
+					else:
+				  
+						solid_instance.position.x += 1 * get_physics_process_delta_time()             #we're free to move the moveable solid
+						if (not SS.is_sound_playing(global.snd_push)): Audio.play_sound(global.snd_push)
+			  
+			
+		  
+			else:
+		   
+				pass
+		else:
+			node.position.x+= x_vel * get_physics_process_delta_time() * 30		
 		
 	#object is moving down
 	if y_vel>0:
-		#print(node)
-		#print(y_vel)
-		node.position.y+= y_vel * get_physics_process_delta_time() * 30
-		#for y in range(0, mt_y_prev+y_vel_integer):
-	  #
-			#if Collision.is_collision_bottom(1, node):
-		 #
-				#break
-			#if Collision.can_land_on_platforms(node):
-				#if Collision.is_collision_platform(node)==0 and Collision.is_collision_platform_bottom(1, node) and node.k_down==0:
-		   #
-					#break
+		
+		if Collision.is_collision_bottom(1, node):
+			pass
+			
+		elif Collision.can_land_on_platforms(node):
+			if Collision.is_collision_platform(node)==0 and Collision.is_collision_platform_bottom(1, node) and node.k_down==0:
+				pass
+				
+		else:
+			node.position.y+= y_vel * get_physics_process_delta_time() * 30
 	  
 	#object is moving up
 	if y_vel<0:
