@@ -410,4 +410,4 @@ func _process(delta):
 	#var player = $Player1 #--- for testing
 	#var view = $View
 	#view.position.x = player.position.x
-	pass
+	print(Engine.get_frames_per_second())

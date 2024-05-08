@@ -191,6 +191,24 @@ var run_anim_speed
 var climb_anim_speed
 var image_index = 0 #--- This will need to be handled somehow
 
+var rock
+var s_spears_left
+var s_spikes_blood
+var s_damsel_die_l
+var s_damsel_bounce_l
+var s_damsel_fall_l
+var s_damsel_die_l_l
+var s_damsel_die_l_r
+var s_tunnel_die_l
+var s_tunnel_l_bounce
+var s_tunnel_fall_l
+var s_tunnel_die_l_l
+var s_tunnel_die_l_r
+var s_die_l
+var s_die_l_fall
+var s_die_l_l
+var s_die_l_r
+
 var alarm_1_active
 var alarm_2_active
 var alarm_3_active
@@ -324,9 +342,7 @@ func _physics_process(delta):
 	var k_bomb_pressed
 	var k_rope_pressed
 	var in_game
-	#print(state)
-	#print(stunned)
-	#print(dead)
+	var col_spikes
 	
 	# prevent player from dying on title screen
 	if (InLevel.is_room("r_title") or InLevel.is_room("r_highscores")):
@@ -404,7 +420,7 @@ func _physics_process(delta):
 	dist_to_nearest_light_source = 999
 	if (gml.instance_exists(explosion)):
 
-		var source = gml.instance_nearest(position.x, position.y, explosion)
+		var source = gml.instance_nearest(position.x, position.y, 'explosion')
 		dist_to_nearest_light_source = gml.distance_tobject('source', position.x, position.y)
 		if (source.image_index <= 3): dist_to_nearest_light_source -= source.image_index*16
 		else: dist_to_nearest_light_source += (source.image_index-3)*16
@@ -1803,6 +1819,365 @@ func _physics_process(delta):
 	if (k_attack_released and bow_armed):
 
 		CharacterScripts.scr_fire_bow()
+
+	#Hurt
+	if (global.plife < -10000): global.plife = -10000
+
+	if (global.plife < -99 and visible):
+
+		MiscScripts.scr_create_blood(position.x, position.y, 3)
+		visible = false
+
+
+	if (global.plife >= -99 and visible and sprite_index != s_p_exit and sprite_index != s_damsel_exit and sprite_index != s_tunnel_exit):
+
+		# crushed
+		if (gml.collision_point(position.x, position.y, "solid", 0, 0)):
+
+			if (global.plife > 0):
+			
+				if (InLevel.is_real_level()):
+				
+					if (gml.is_room("r_olmec")): global.enemy_deaths[22] += 1
+					else: global.misc_deaths[2] += 1
+				
+			
+			global.plife -= 99
+			active = false
+			y_vel = -3
+			Audio.play_sound(global.snd_die)
+				
+			MiscScripts.scr_create_blood(position.x, position.y, 3)
+			
+			visible = false
+
+
+		if (gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "arrow", 0, 0)):
+
+			var obj = gml.instance_nearest(position.x, position.y, 'arrow')
+			if (obj and abs(obj.x_vel) > 3 and not obj.safe):
+			
+				if (global.plife > 0):
+				
+					global.plife -= 2
+					if (global.plife <= 0 and InLevel.is_real_level()): global.misc_deaths[6] += 1
+				
+				x_vel = obj.x_vel
+				y_vel = -4
+				
+				MiscScripts.scr_create_blood(position.x, position.y, 3)
+				
+				gml.instance_destroy(obj)
+				
+				Audio.play_sound(global.snd_hurt)
+				stunned = true
+				stun_timer = 20
+			
+
+
+		if (gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "rock", 0, 0)):
+
+			var obj = gml.instance_nearest(position.x, position.y, 'rock')
+			if (obj and abs(obj.x_vel) > 4 and not obj.safe and not stunned and not dead):
+			
+				if (global.has_mitt and !hold_item):
+				
+					hold_item = rock
+					hold_item.held = true
+					pickup_item_type = hold_item.type
+				
+				else: 
+					if (global.plife > 0):
+					
+						global.plife -= 2
+						if (global.plife <= 0 and InLevel.is_real_level()): global.misc_deaths[0] += 1
+					
+					x_vel = obj.x_vel
+					y_vel = -4
+					
+					MiscScripts.scr_create_blood(position.x, position.y, 3)
+					
+					Audio.play_sound(global.snd_hurt)
+					stunned = true
+					stun_timer = 20
+				
+			
+
+
+		if (gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "laser", 0, 0)):
+
+			var obj = gml.instance_nearest(position.x, position.y, 'laser')
+			if (obj):
+			
+				if (global.plife > 0):
+				
+					global.plife -= 3
+					if (global.plife <= 0 and InLevel.is_real_level()): global.enemy_deaths[16] += 1
+				
+				if (obj.position.x < position.x): x_vel = 2
+				else: x_vel = -2
+				y_vel = -4
+				
+				MiscScripts.scr_create_blood(position.x, position.y, 3)
+				
+				gml.instance_create(obj.position.x, obj.position.y, "laser_explode")
+				gml.instance_destroy(obj)
+				
+				Audio.play_sound(global.snd_hurt)
+				stunned = true
+				stun_timer = 20
+			
+
+
+		if (gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "psychic_wave", 0, 0) and not stunned and not dead):
+
+			var obj = gml.instance_nearest(position.x, position.y, 'psychic_wave')
+			if (obj):
+			
+				if (global.plife > 0):
+				
+					global.plife -= 1
+					if (global.plife <= 0 and InLevel.is_real_level()): global.enemy_deaths[17] += 1
+				
+				if (obj.position.x < position.x): x_vel = 2
+				else: x_vel = -2
+				y_vel = -4
+				
+				Audio.play_sound(global.snd_hurt)
+				stunned = true
+				stun_timer = 40
+			
+
+
+		if (gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "explosion", 0, 0)):
+
+			global.plife -= 10
+			if (global.plife > 0 and InLevel.is_real_level()): global.misc_deaths[1] += 1
+			explosion = gml.instance_nearest(position.x, position.y, explosion)
+			if (explosion.position.x < position.x): x_vel = randi_range(4,6)
+			else: x_vel = -randi_range(4,6)
+			y_vel = -6
+			burning = 50
+			stunned = true
+			stun_timer = 100
+				
+			MiscScripts.scr_create_blood(position.x, position.y, 1)
+
+
+		var obj = gml.collision_rectangle(position.x-6, position.y-6, position.x+6,  position.y+7, "spears_left", 0, 0) #instance_nearest(position.x, position.y, spears_left) ---[FLAG] doesn't seem to be used for anything but come back and check this
+		if (obj):
+
+			if (obj.image_index >= 20 and obj.image_index < 24):
+			
+				if (global.plife > 0 and InLevel.is_real_level()):  global.misc_deaths[7] += 1
+			
+				# stunned = true
+				# bounced  = false
+				global.plife -= 4
+				if (obj.sprite_index == s_spears_left): x_vel = -randi_range(4,6)
+				else: x_vel = randi_range(4,6)
+				y_vel = -6
+				position.y -= 1
+				# state = FALLING
+				
+				MiscScripts.scr_create_blood(position.x, position.y, 1)
+			
+
+
+		if (gml.collision_rectangle(position.x-6, position.y-6, position.x+6,  position.y+7, "smash_trap", 0, 0)):
+
+			if (global.plife > 0 and InLevel.is_real_level()): global.misc_deaths[8] += 1
+
+			obj = gml.instance_nearest(position.x, position.y, 'smash_trap')
+			global.plife -= 10
+			if (obj.position.x+8 < position.x): x_vel = -randi_range(4,6)
+			else: x_vel = randi_range(4,6)
+			y_vel = -6
+			if (obj):
+			
+				if (obj.dir == 1): y_vel = 4
+			
+			#RIGHT = 0
+			#DOWN = 1
+			#LEFT = 2
+			#UP = 3
+			MiscScripts.scr_create_blood(position.x, position.y, 1)
+			if (hold_item):
+				hold_item.held = false
+				hold_item = 0 
+
+
+		obj = gml.collision_rectangle(position.x-2, position.y-9, position.x+2,  position.y-7, "ceiling_trap", 0, 0) #instance_nearest(position.x, position.y-8, ceiling_trap)
+		if (obj):
+
+			if (obj.status > 0):
+			
+				if (global.plife > 0 and InLevel.is_real_level()): global.misc_deaths[9] += 1
+
+				global.plife -= 10
+				MiscScripts.scr_create_blood(position.x, position.y, 1)
+			
+
+
+		col_spikes = false
+		if (gml.collision_rectangle(position.x-4, position.y-4, position.x+4,  position.y+8, "spikes", 0, 0)): col_spikes = true
+
+		if (col_spikes and dead):
+
+			#grav = 0
+			if (not gml.collision_point(position.x, position.y+9, "solid", 0, 0)): position.y += 0.05
+			else: my_grav = 0.6
+
+		else: my_grav = 0.6
+
+		if (col_spikes and y_vel > 0 and (fall_timer > 4 or stunned)):
+
+			if (not dead):
+			
+				if (InLevel.is_real_level()): global.misc_deaths[4] += 1
+				MiscScripts.scr_create_blood(position.x, position.y, 3)
+				global.plife -= 99
+				x_vel = 0
+				y_vel = 0
+				my_grav = 0
+			
+
+			obj = gml.instance_place(position.x, position.y, 'spikes')
+			if (obj):
+			
+				obj.sprite_index = s_spikes_blood 
+		
+
+	#elif (not dead): my_grav = 0.6
+
+
+	if ((dead or stunned) and hold_item != 0):
+
+		hold_item.held = false
+		
+		hold_item.x_vel = x_vel
+		hold_item.y_vel = -6
+		hold_item.armed = true
+		if (hold_item.type == "Damsel"):
+		
+			hold_item.status = 2
+		
+		elif (hold_item.type == "Bow"):
+		
+			CharacterScripts.scr_fire_bow()
+		
+		
+		if (hold_item.type == pickup_item_type):
+		
+			hold_item = 0
+			pickup_item_type = ""
+		
+		else: CharacterScripts.scr_hold_item(pickup_item_type)
+
+
+	if (dead or stunned):
+
+		if (gml.instance_exists("parachute")):
+		
+			gml.instance_create(position.x-8, position.y-16-8, "para_used")
+			var all_parachutes = gml.get_all_instances("parachute")
+			for parachute_instance in all_parachutes: gml.instance_destroy(parachute_instance)
+		
+
+		if (whipping):
+		
+			whipping = false
+			var all_whips = gml.get_all_instances("whip")
+			for whip_instance in all_whips: gml.instance_destroy(whip_instance)
+			
+		
+		
+		if (global.is_damsel):
+		
+			if (x_vel == 0):
+			
+				if (dead): sprite_index = s_damsel_die_l
+				elif (stunned): sprite_index = s_damsel_stun_l
+			
+			elif (bounced):
+			
+				if (y_vel < 0): sprite_index = s_damsel_bounce_l
+				else: sprite_index = s_damsel_fall_l
+			
+			else:
+			
+				if (x_vel < 0): sprite_index = s_damsel_die_l_l
+				else: sprite_index = s_damsel_die_l_r
+			
+		
+		elif (global.is_tunnel_man):
+		
+			if (x_vel == 0):
+			
+				if (dead): sprite_index = s_tunnel_die_l
+				elif (stunned): sprite_index = s_tunnel_stun_l
+			
+			elif (bounced):
+			
+				if (y_vel < 0): sprite_index = s_tunnel_l_bounce
+				else: sprite_index = s_tunnel_fall_l
+			
+			else:
+			
+				if (x_vel < 0): sprite_index = s_tunnel_die_l_l
+				else: sprite_index = s_tunnel_die_l_r
+			
+		
+		else:
+		
+			if (x_vel == 0):
+			
+				if (dead): sprite_index = s_die_l
+				elif (stunned): sprite_index = s_stun_l
+			
+			elif (bounced):
+			
+				if (y_vel < 0): sprite_index = s_die_l_bounce
+				else: sprite_index = s_die_l_fall
+			
+			else:
+			
+				if (x_vel < 0): sprite_index = s_die_l_l
+				else: sprite_index = s_die_l_r
+			
+		
+		
+		if (gml.collision_point(position.x, position.y, "spikes", 0, 0) and dead and y_vel != 0):
+		
+			if (randi_range(1,8) == 1): MiscScripts.scr_create_blood(self.position.x, self.position.y, 1) #---[FLAG] changing 'other' to self, as this appears to be referring to the player
+																											#(as the other side of the collision)
+		
+		if (Collision.is_collision_right(1, self) or Collision.is_collision_left(1, self) or Collision.is_collision_bottom(1, self)):
+		
+			if (wall_hurt > 0):
+			
+				for i in range(0, 3):
+				
+					gml.instance_create(self.position.x, self.position.y, "blood") #--- same as above with changing 'other' to 'self'
+				
+				global.plife -= 1
+				wall_hurt -= 1
+				Audio.play_sound(global.snd_hurt)
+			
+		
+		
+		if (Collision._collision_bottom(1, self) and not bounced):
+		
+			bounced = true
+			for i in range(0, 3):
+			
+				MiscScripts.scr_create_blood(self.position.x, self.position.y, 1) #--- same as above with changing 'other' to 'self'
+			
+			
+			if (wall_hurt > 0):
+			
+				global.plife -= 1
+				wall_hurt -= 1
 
 func character_create_event():
 	#/*

@@ -102,7 +102,7 @@ func _init():
 	DEAD = 99
 	bomb_id = 0
 
-func _physics_process(delta):
+func enemy_step():
 	#/*
 	#if ((position.x > view_xview[0]-8 and position.x < view_xview[0]+view_wview[0]+8 and:
 		 #position.y > view_yview[0]-8 and position.y < view_yview[0]+view_hview[0]+8))
