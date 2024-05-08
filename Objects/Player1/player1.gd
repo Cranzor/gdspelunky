@@ -960,7 +960,7 @@ func _physics_process(delta):
 		var obj
 		if (InLevel.is_real_level()): global.total_crates += 1
 		var chest_instance = gml.instance_place(position.x, position.y, 'crate')
-		if (gml.is_room("r_tutorial")): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, "bomb_bag")
+		if (InLevel.is_room("r_tutorial")): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, "bomb_bag")
 		elif (randi_range(1,500) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, "jetpack")
 		elif (randi_range(1,200) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, "cape_pickup")
 		elif (randi_range(1,100) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, "shotgun")
@@ -1029,7 +1029,7 @@ func _physics_process(delta):
 		sprite_index != s_p_exit and sprite_index != s_damsel_exit and sprite_index != s_tunnel_exit):
 
 		# x_end is the child of x_start, for some reason, that's why this is here:
-		if (gml.is_room("r_olmec") and hold_item):
+		if (InLevel.is_room("r_olmec") and hold_item):
 		
 			if (hold_item.heavy):
 			
@@ -1066,7 +1066,7 @@ func _physics_process(delta):
 				
 			
 		
-		elif (gml.is_room("r_olmec")): global.pickup_item = ""
+		elif (InLevel.is_room("r_olmec")): global.pickup_item = ""
 		elif (hold_item): hold_item.held = false
 		hold_item = 0
 		pickup_item_type = ""
@@ -1276,9 +1276,9 @@ func _physics_process(delta):
 			else:
 			
 				MiscScripts.scr_clear_globals()
-				if (gml.is_room("r_sun")): global.scores_start = 1
-				if (gml.is_room("r_moon")): global.scores_start = 2
-				if (gml.is_room("r_stars")): global.scores_start = 3
+				if (InLevel.is_room("r_sun")): global.scores_start = 1
+				if (InLevel.is_room("r_moon")): global.scores_start = 2
+				if (InLevel.is_room("r_stars")): global.scores_start = 3
 				get_tree().change_scene("res://r_highscores.tscn")
 			
 			
@@ -1555,7 +1555,7 @@ func _physics_process(delta):
 						global.arrows += 6
 					
 					
-					if (hold_item.type == "Gold Idol" and hold_item.trigger and not gml.is_room("r_load_level")):
+					if (hold_item.type == "Gold Idol" and hold_item.trigger and not InLevel.is_room("r_load_level")):
 					
 						global.idols_grabbed += 1
 						if (global.level_type == 0):
@@ -1838,7 +1838,7 @@ func _physics_process(delta):
 			
 				if (InLevel.is_real_level()):
 				
-					if (gml.is_room("r_olmec")): global.enemy_deaths[22] += 1
+					if (InLevel.is_room("r_olmec")): global.enemy_deaths[22] += 1
 					else: global.misc_deaths[2] += 1
 				
 			
@@ -2178,6 +2178,92 @@ func _physics_process(delta):
 			
 				global.plife -= 1
 				wall_hurt -= 1
+				
+	# DIED
+
+	if (dead and dead_counter > 0): dead_counter -= 1
+
+	if (InLevel.is_level() or InLevel.is_room("r_sun") or InLevel.is_room("r_moon") or InLevel.is_room("r_stars")):
+
+		if (not dead and global.plife < 1):
+		
+			if (global.has_ankh):
+			
+				global.plife = 4
+				if (gml.instance_exists("moai")):
+					var moai = gml.instance_nearest(position.x, position.y, 'moai') #--- could also use the function for grabbing only one object if only one moai exists
+					var all_moai_inside = gml.get_all_instances("moai_inside")
+					for moai_inside_instance in all_moai_inside: gml.instance_destroy(moai_inside_instance)
+					position.x = moai.position.x+16+8
+					position.y = moai.position.y+16+8
+				
+				elif (InLevel.is_room("r_olmec")):
+				
+					position.x = 16+8
+					position.y = 544+8
+				
+				else:
+					var entrance = gml.instance_nearest(position.x, position.y, 'entrance')
+					gml.instance_activate_object('entrance')
+					position.x = entrance.position.x+8
+					position.y = entrance.position.y+8
+				
+				var all_balls = gml.get_all_instances("ball")
+				for ball_instance in all_balls:
+					ball_instance.position.x = self.position.x #--- changing player1 to be 'self' to make things easier
+					ball_instance.position.y = self.position.y
+					
+				var all_chains = gml.get_all_instances("chain")
+				for chain_instance in all_chains:
+					chain_instance.position.x = self.position.x #--- changing player1 to be 'self' to make things easier
+					chain_instance.position.y = self.position.y
+				
+				x_vel = 0
+				y_vel = 0
+				blink = 60
+				invincible = 60
+				fall_timer = 0
+				visible = true
+				active = true
+				dead = false
+				global.has_ankh = false
+				global.message = "THE ANKH SHATTERS!"
+				global.message2 = "YOU HAVE BEEN REVIVED!"
+				global.message_timer = 150
+				Audio.play_sound(global.snd_teleport)
+			
+			else:
+			
+				global.plife = 0
+				global.draw_hud = false
+				var sun_room = gml.get_instance('sun_room')
+				var moon_room = gml.get_instance('moon_room')
+				var stars_room = gml.get_instance('stars_room')
+				if (InLevel.is_room("r_sun")): global.mini1 = sun_room.points
+				if (InLevel.is_room("r_moon")):
+				
+					global.mini2 = moon_room.baskets
+					moon_room.timer = -1
+					moon_room.alarm_10(30)
+				
+				if (InLevel.is_room("r_stars")): global.mini3 = stars_room.kills
+				if (global.mini1 > 99): global.mini1 = 99
+				if (global.mini2 > 99): global.mini2 = 99
+				if (global.mini3 > 99): global.mini3 = 99
+				
+				if (InLevel.is_room("r_sun") or InLevel.is_room("r_moon") or InLevel.is_room("r_stars")): MiscScripts.scr_update_highscores(2)
+				else: MiscScripts.scr_update_highscores(0)
+		
+				dead = true
+				#active = false
+				Audio.play_sound(global.snd_die)
+			
+		
+
+		if (dead):
+		
+			Audio.stop_all_music()
+
 
 func character_create_event():
 	#/*

@@ -242,6 +242,9 @@ func collision_line(x1,y1,x2,y2,obj,prec,notme):
 	
 	return intersecting
 
+func instance_activate_object(obj: String):
+	pass
+
 #---------------------------------------
 func background_index(background: String): #Changing this to a function
 	pass

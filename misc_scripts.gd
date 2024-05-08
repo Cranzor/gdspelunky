@@ -175,3 +175,6 @@ func scr_create_flame(x, y, num):
 
 func scr_create_blood(x, y, num):
 	pass
+
+func scr_update_highscores(type):
+	pass
