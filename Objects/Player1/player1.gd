@@ -1886,7 +1886,7 @@ func _physics_process(delta):
 					hold_item.held = true
 					pickup_item_type = hold_item.type
 				
-				else: 
+				else:
 					if (global.plife > 0):
 					
 						global.plife -= 2
@@ -2004,7 +2004,7 @@ func _physics_process(delta):
 			MiscScripts.scr_create_blood(position.x, position.y, 1)
 			if (hold_item):
 				hold_item.held = false
-				hold_item = 0 
+				hold_item = 0
 
 
 		obj = gml.collision_rectangle(position.x-2, position.y-9, position.x+2,  position.y-7, "ceiling_trap", 0, 0) #instance_nearest(position.x, position.y-8, ceiling_trap)
@@ -2045,7 +2045,7 @@ func _physics_process(delta):
 			obj = gml.instance_place(position.x, position.y, 'spikes')
 			if (obj):
 			
-				obj.sprite_index = s_spikes_blood 
+				obj.sprite_index = s_spikes_blood
 		
 
 	#elif (not dead): my_grav = 0.6
@@ -2264,6 +2264,29 @@ func _physics_process(delta):
 		
 			Audio.stop_all_music()
 
+	#Fifth function
+	if (not dead and invincible > 0):
+		invincible -= 1
+	  
+	if (blink > 0):
+
+		blink_toggle *= -1
+		blink -= 1
+
+	else: blink_toggle = -1
+
+	#/*
+	#if (sprite_index == s_slide_right):
+#
+		#spark = gml.instance_create(position.x, position.y, "ground_spark")
+		#with spark  position.x += random(3)
+#
+	#elif (sprite_index == s_slide_left):
+#
+		#spark = gml.instance_create(position.x, position.y, "ground_spark")
+		#with spark  sprite_index = sSpark_left position.x += random(3)
+#
+	#*/
 
 func character_create_event():
 	#/*
@@ -2349,7 +2372,7 @@ func character_create_event():
 	var fly_max_jumps = 5           # the maximum number of jumps the character can perform while flying: #--- doesn't appear to be used anywhere
 
 	friction_running_x = 0.6       # friction obtained while running:
-	friction_running_fast_x = 0.98  # friction obtained while holding the shift button for some time while running: 
+	friction_running_fast_x = 0.98  # friction obtained while holding the shift button for some time while running:
 	friction_climbing_x = 0.6      # friction obtained while climbing:
 	friction_climbing_y = 0.6      # friction obtained while climbing:
 	var friction_ducking_x = 0.8       # friction obtained while ducking: #--- doesn't appear to be used anywhere
