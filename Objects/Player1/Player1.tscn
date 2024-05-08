@@ -60,7 +60,7 @@ script = ExtResource("1_xnwjf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_06flm")
-frame_progress = 0.539177
+frame_progress = 0.808497
 centered = false
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

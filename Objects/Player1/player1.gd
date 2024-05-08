@@ -2,9 +2,25 @@ extends Character
 
 var game #--- Temporary to solve errors. Make this an autoload
 
-var DYING
-var ON_LADDER
-var DOWN
+const STANDING = 10
+const RUNNING = 11
+const DUCKING = 12
+const LOOKING_UP = 13
+const CLIMBING = 14
+const JUMPING = 15
+const FALLING = 16
+const DYING = 17
+const LEFT = 18
+const RIGHT = 19
+const ON_GROUND = 20
+const IN_AIR = 21
+const ON_LADDER = 22
+const HANGING = 23
+const DUCKTOHANG = 24
+
+const UP = 101
+const DOWN = 102
+
 var blink
 var k_jump_pressed
 var player
@@ -81,21 +97,18 @@ var x_change2
 
 var cape
 var explosion
-var state = 'RUNNING'
-var CLIMBING
+var state
 var p_dummy5
 var x_vel
-var y_vel = 0 #--- setting to 0 for now
+var y_vel = 1 #--- setting to 0 for now
 var grav
 var s_whoa_left
 var s_damsel_whoa_l
 var s_tunnel_whoa_l
 var facing
-var LEFT
 var swimming
 var splash
 var burn
-var ON_GROUND
 var s_stun_l
 var s_damsel_stun_l
 var s_tunnel_stun_l
@@ -104,16 +117,12 @@ var parachute
 var poof
 var para_used
 var bubble
-var DUCKTOHANG
 var s_p_exit
 var s_damsel_exit
 var s_tunnel_exit
-var DUCKING
-var STANDING
 var x_vel_limit
 var y_vel_limit
 var k_down
-var HANGING
 var k_right
 var k_left
 var view_yview
@@ -154,19 +163,14 @@ var s_tunnel_attack_l
 var run_held
 var x_acc
 var run_acc
-var RIGHT
 var ladder_timer
 var y_acc
 var climb_acc
-var FALLING
 var depart_ladder_x_vel
 var depart_ladder_y_vel
-var JUMPING
 var jump_button_released
 var jump_time
-var IN_AIR
 var gravity_intensity
-var RUNNING
 var jumps
 var hang_count
 var web
@@ -174,16 +178,14 @@ var initial_jump_acc
 var grav_norm
 var y_acc_limit
 var jump_time_total
-var UP
-var LOOKING_UP
 var friction_climbing_x
 var friction_climbing_y
 var friction_running_fast_x
 var friction_running_x
 var x_acc_limit
 var max_slope
-var x_vel_integer
-var y_vel_integer
+var x_vel_integer = 0
+var y_vel_integer = 0
 var max_down_slope
 var state_prev_prev
 var state_prev
@@ -563,7 +565,7 @@ func _physics_process(delta):
 
 
 	# JETPACK
-	if (global.has_jetpack and PlatformEngine.platform_character_is(ON_GROUND)):
+	if (global.has_jetpack and platform_character_is(ON_GROUND)):
 
 		jetpack_fuel = 50
 
@@ -616,7 +618,7 @@ func _physics_process(delta):
 				
 			
 		
-		elif (PlatformEngine.platform_character_is(ON_GROUND) and fall_timer > 16 and not gml.collision_rectangle(position.x-8, position.y-8, position.x+8, position.y+8, 'spring_trap', 0, 0)): # LONG DROP
+		elif (platform_character_is(ON_GROUND) and fall_timer > 16 and not gml.collision_rectangle(position.x-8, position.y-8, position.x+8, position.y+8, 'spring_trap', 0, 0)): # LONG DROP
 		
 			# LONG DROP
 			stunned = true
@@ -736,12 +738,12 @@ func _physics_process(delta):
 
 	elif (InLevel.is_level()): # look up and down
 
-		if (k_down and (PlatformEngine.platform_character_is(ON_GROUND) or state == HANGING) and not k_right and not k_left):
+		if (k_down and (platform_character_is(ON_GROUND) or state == HANGING) and not k_right and not k_left):
 		
 			if (view_count <= 30): view_count += 1
 			else: view_yview[0] += 4 #--- [FLAG] GameMaker camera?
 		
-		elif (k_up and (PlatformEngine.platform_character_is(ON_GROUND) or state == HANGING) and not k_right and not k_left):
+		elif (k_up and (platform_character_is(ON_GROUND) or state == HANGING) and not k_right and not k_left):
 		
 			if (view_count <= 30): view_count += 1
 			else: view_yview[0] -= 4
@@ -1031,7 +1033,7 @@ func _physics_process(delta):
 		not whipping and
 		gml.collision_point(position.x, position.y, "x_start", 0, 0) and
 		k_up and
-		PlatformEngine.platform_character_is(ON_GROUND) and
+		platform_character_is(ON_GROUND) and
 		sprite_index != s_p_exit and sprite_index != s_damsel_exit and sprite_index != s_tunnel_exit):
 
 		# x_end is the child of x_start, for some reason, that's why this is here:
@@ -1114,7 +1116,7 @@ func _physics_process(delta):
 		not whipping and
 		gml.collision_point(position.x, position.y, "exit", 0, 0) and
 		k_up and
-		PlatformEngine.platform_character_is(ON_GROUND) and
+		platform_character_is(ON_GROUND) and
 		sprite_index != s_p_exit and sprite_index != s_damsel_exit and sprite_index != s_tunnel_exit):
 
 		hold_arrow = 0
@@ -1507,7 +1509,7 @@ func _physics_process(delta):
 		
 		if (k_down):
 		
-			if (PlatformEngine.platform_character_is(ON_GROUND)): obj.x_vel *= 0.1
+			if (platform_character_is(ON_GROUND)): obj.x_vel *= 0.1
 			obj.y_vel = 3
 		
 		
@@ -1522,7 +1524,7 @@ func _physics_process(delta):
 			image_speed = 0.6
 			if (global.is_tunnel_man):
 			
-				if (PlatformEngine.platform_character_is(ON_GROUND)):
+				if (platform_character_is(ON_GROUND)):
 				
 					sprite_index = s_tunnel_attack_l
 					image_index = 0
@@ -2304,7 +2306,7 @@ func _physics_process(delta):
 			global.money += 100
 			global.collect -= 100
 		
-		else: 
+		else:
 		
 			global.money += global.collect
 			global.collect -= global.collect
@@ -2326,7 +2328,7 @@ func _physics_process(delta):
 				
 					global.arrows += 1
 					Audio.play_sound(global.snd_pickup)
-					gml.instance_destroy(obj) 
+					gml.instance_destroy(obj)
 				
 			
 		
@@ -2346,16 +2348,16 @@ func _physics_process(delta):
 			#gml.instance_create(position.x, position.y-8, "small_collect")
 			if (gem.type == "Gold Chunk"):
 				global.gold += 1
-				coin = true 
+				coin = true
 			if (gem.type == "Gold Nugget"):
 				global.nuggets += 1
-				coin = true 
+				coin = true
 			if (gem.type == "Gold Bar"):
 				global.goldbar += 1
-				coin = true 
+				coin = true
 			if (gem.type == "Gold Bars"):
 				global.goldbars += 1
-				coin = true 
+				coin = true
 			if (gem.type == "Emerald"): global.emeralds += 1
 			if (gem.type == "Big Emerald"): global.bigemeralds += 1
 			if (gem.type == "Sapphire"): global.sapphires += 1
@@ -2366,7 +2368,7 @@ func _physics_process(delta):
 			if (coin): Audio.play_sound(global.snd_coin)
 			else: Audio.play_sound(global.snd_gem)
 
-			gml.instance_destroy(gem) 
+			gml.instance_destroy(gem)
 		
 
 
@@ -2378,7 +2380,7 @@ func _physics_process(delta):
 			global.bombs += 3
 			var disp = gml.instance_create(obj.position.x, obj.position.y-14, "items_get")
 			disp.sprite_index = s_bombs_get
-			gml.instance_destroy(obj) 
+			gml.instance_destroy(obj)
 			Audio.play_sound(global.snd_pickup)
 			global.message = "YOU GOT 3 MORE BOMBS!"
 			global.message2 = ""
@@ -2394,7 +2396,7 @@ func _physics_process(delta):
 			global.bombs += 12
 			var disp = gml.instance_create(obj.position.x, obj.position.y-14, "items_get")
 			disp.sprite_index = s_bombs_get
-			gml.instance_destroy(obj) 
+			gml.instance_destroy(obj)
 			Audio.play_sound(global.snd_pickup)
 			global.message = "YOU GOT 12 MORE BOMBS!"
 			global.message2 = ""
@@ -2410,7 +2412,7 @@ func _physics_process(delta):
 			global.rope += 3
 			var disp = gml.instance_create(obj.position.x, obj.position.y-15, "items_get")
 			disp.sprite_index = s_rope_get
-			gml.instance_destroy(obj) 
+			gml.instance_destroy(obj)
 			Audio.play_sound(global.snd_pickup)
 			global.message = "YOU GOT 3 MORE ROPES!"
 			global.message2 = ""
@@ -2433,7 +2435,7 @@ func _physics_process(delta):
 				else: global.idols += 1
 				Audio.play_sound(global.snd_coin)
 				gml.instance_create(position.x, position.y-8, "big_collect")
-				gml.instance_destroy(hold_item) #---[FLAG] hold_item should be set to the string of the item name 
+				gml.instance_destroy(hold_item) #---[FLAG] hold_item should be set to the string of the item name
 				hold_item = 0
 			
 			elif (hold_item.type == "Damsel"):
@@ -2477,29 +2479,29 @@ func character_create_event():
 
 	var debug = 1
 
-	#constant states that the platform character may be
-	STANDING = 10
-	RUNNING = 11
-	DUCKING = 12
-	LOOKING_UP = 13
-	CLIMBING = 14
-	JUMPING = 15
-	FALLING = 16
-	DYING = 17
-	LEFT = 18
-	RIGHT = 19
-	ON_GROUND = 20
-	IN_AIR = 21
-	ON_LADDER = 22
-	HANGING = 23
-	DUCKTOHANG = 24
+	#constant states that the platform character may be #--- declared these at the top
+	#STANDING = 10
+	#RUNNING = 11
+	#DUCKING = 12
+	#LOOKING_UP = 13
+	#CLIMBING = 14
+	#JUMPING = 15
+	#FALLING = 16
+	#DYING = 17
+	#LEFT = 18
+	#RIGHT = 19
+	#ON_GROUND = 20
+	#IN_AIR = 21
+	#ON_LADDER = 22
+	#HANGING = 23
+	#DUCKTOHANG = 24
 
 	hang_count = 0
 	run_held = 0
 
-	# look
-	UP = 101
-	DOWN = 102
+	# look #--- declared these at the top
+	#UP = 101
+	#DOWN = 102
 
 	# other
 	blink = 0
@@ -2736,7 +2738,7 @@ func character_step_event():
 			if (col_solid_left):
 			
 				# x_vel = 3
-				if (PlatformEngine.platform_character_is(ON_GROUND) and state != DUCKING):
+				if (platform_character_is(ON_GROUND) and state != DUCKING):
 				
 					x_acc -= 1
 					push_timer += 10
@@ -2748,7 +2750,7 @@ func character_step_event():
 				x_acc -= run_acc
 			
 			facing = LEFT
-			#if (PlatformEngine.platform_character_is(ON_GROUND) and abs(x_vel) > 0 and alarm[3] < 1): alarm[3] = floor(16/-x_vel)
+			#if (platform_character_is(ON_GROUND) and abs(x_vel) > 0 and alarm[3] < 1): alarm[3] = floor(16/-x_vel)
 		
 	  
 		if (k_right and not k_left):
@@ -2756,7 +2758,7 @@ func character_step_event():
 			if (col_solid_right):
 			
 				# x_vel = 3
-				if (PlatformEngine.platform_character_is(ON_GROUND) and state != DUCKING):
+				if (platform_character_is(ON_GROUND) and state != DUCKING):
 				
 					x_acc += 1
 					push_timer += 10
@@ -2768,7 +2770,7 @@ func character_step_event():
 				x_acc += run_acc
 			
 			facing = RIGHT
-			#if (PlatformEngine.platform_character_is(ON_GROUND) and abs(x_vel) > 0 and alarm[3] < 1): alarm[3] = floor(16/x_vel)
+			#if (platform_character_is(ON_GROUND) and abs(x_vel) > 0 and alarm[3] < 1): alarm[3] = floor(16/x_vel)
 		
 
 
@@ -2831,13 +2833,13 @@ func character_step_event():
 		if (ladder_timer > 0): ladder_timer -= 1
 
 
-	if (PlatformEngine.platform_character_is(IN_AIR) and state != HANGING):
+	if (platform_character_is(IN_AIR) and state != HANGING):
 
 		y_acc += gravity_intensity
 
 
 	# Player has landed
-	if ((col_bot or col_plat_bot) and PlatformEngine.platform_character_is(IN_AIR) and y_vel >= 0):
+	if ((col_bot or col_plat_bot) and platform_character_is(IN_AIR) and y_vel >= 0):
 
 		if (not col_plat or col_bot):
 		
@@ -2848,10 +2850,13 @@ func character_step_event():
 		
 		#play_sound(global.snd_land)
 
-	if ((col_bot or col_plat_bot) and not col_plat): y_vel = 0
+	#if ((col_bot or col_plat_bot) and not col_plat): y_vel = 0 #--- not sure why this is returning true
+	if (col_bot or col_plat_bot):
+		if not col_plat:
+			y_vel = 0
 
 	# Player has just walked off of the edge of a solid
-	if (col_bot == false and (not col_plat_bot or col_plat) and PlatformEngine.platform_character_is(ON_GROUND)):
+	if (col_bot == false and (not col_plat_bot or col_plat) and platform_character_is(ON_GROUND)):
 
 		state = FALLING
 		y_acc += grav
@@ -2877,13 +2882,15 @@ func character_step_event():
 	  #
 	#*******************************************/
 
-	if (k_jump_released and PlatformEngine.platform_character_is(IN_AIR)):
+	if (k_jump_released and platform_character_is(IN_AIR)):
 
 		k_jumped = true
 
-	elif (PlatformEngine.platform_character_is(ON_GROUND)):
-
-		cape.open = false
+	elif (platform_character_is(ON_GROUND)):
+		
+		if gml.instance_exists('cape'):
+			var cape = gml.instance_nearest(position.x, position.y, 'cape')
+			cape.open = false
 		k_jumped = false
 
 
@@ -2913,12 +2920,12 @@ func character_step_event():
 		
 		grav = grav_norm
 
-	elif (global.has_cape and k_jump_pressed and k_jumped and PlatformEngine.platform_character_is(IN_AIR)):
+	elif (global.has_cape and k_jump_pressed and k_jumped and platform_character_is(IN_AIR)):
 
 		if (not cape.open): cape.open = true
 		else: cape.open = false
 
-	elif (global.has_jetpack and k_jump and k_jumped and PlatformEngine.platform_character_is(IN_AIR) and jetpack_fuel > 0):
+	elif (global.has_jetpack and k_jump and k_jumped and platform_character_is(IN_AIR) and jetpack_fuel > 0):
 
 		y_acc += initial_jump_acc
 		y_vel = -1
@@ -2931,7 +2938,7 @@ func character_step_event():
 		
 		grav = 0
 
-	elif (PlatformEngine.platform_character_is(ON_GROUND) and k_jump_pressed and fall_timer == 0):
+	elif (platform_character_is(ON_GROUND) and k_jump_pressed and fall_timer == 0):
 
 		if (x_vel > 3 or x_vel < -3):
 		
@@ -2975,7 +2982,7 @@ func character_step_event():
 
 	gravity_intensity = (jump_time/jump_time_total) * grav
 
-	if (k_up and PlatformEngine.platform_character_is(ON_GROUND) and not col_ladder):
+	if (k_up and platform_character_is(ON_GROUND) and not col_ladder):
 
 		looking = UP
 		if (x_vel == 0 and x_acc == 0): state = LOOKING_UP
@@ -2997,7 +3004,7 @@ func character_step_event():
 
 		if (global.has_gloves and y_vel > 0):
 
-			if (hang_count == 0 and position.y > 16 and !PlatformEngine.platform_character_is(ON_GROUND) and k_right and col_right and
+			if (hang_count == 0 and position.y > 16 and !platform_character_is(ON_GROUND) and k_right and col_right and
 				(gml.collision_point(position.x+9, position.y-5, 'solid', 0, 0) or gml.collision_point(position.x+9, position.y-6, 'solid', 0, 0))):
 			
 				state = HANGING
@@ -3006,7 +3013,7 @@ func character_step_event():
 				y_acc = 0
 				grav = 0
 			
-			elif (hang_count == 0 and position.y > 16 and !PlatformEngine.platform_character_is(ON_GROUND) and k_left and col_left and
+			elif (hang_count == 0 and position.y > 16 and !platform_character_is(ON_GROUND) and k_left and col_left and
 				(gml.collision_point(position.x-9, position.y-5, solid, 0, 0) or gml.collision_point(position.x-9, position.y-6, solid, 0, 0))):
 			
 				state = HANGING
@@ -3016,7 +3023,7 @@ func character_step_event():
 				grav = 0
 			
 
-		elif (hang_count == 0 and position.y > 16 and !PlatformEngine.platform_character_is(ON_GROUND) and k_right and col_right and
+		elif (hang_count == 0 and position.y > 16 and !platform_character_is(ON_GROUND) and k_right and col_right and
 			(gml.collision_point(position.x+9, position.y-5, 'tree', 0, 0) or gml.collision_point(position.x+9, position.y-6, 'tree', 0, 0))):
 
 			state = HANGING
@@ -3025,7 +3032,7 @@ func character_step_event():
 			y_acc = 0
 			grav = 0
 
-		elif (hang_count == 0 and position.y > 16 and !PlatformEngine.platform_character_is(ON_GROUND) and k_left and col_left and
+		elif (hang_count == 0 and position.y > 16 and !platform_character_is(ON_GROUND) and k_left and col_left and
 			(gml.collision_point(position.x-9, position.y-5, 'tree', 0, 0) or gml.collision_point(position.x-9, position.y-6, 'tree', 0, 0))):
 
 			state = HANGING
@@ -3034,7 +3041,7 @@ func character_step_event():
 			y_acc = 0
 			grav = 0
 
-		elif (hang_count == 0 and position.y > 16 and !PlatformEngine.platform_character_is(ON_GROUND) and k_right and col_right and
+		elif (hang_count == 0 and position.y > 16 and !platform_character_is(ON_GROUND) and k_right and col_right and
 			(gml.collision_point(position.x+9, position.y-5, 'solid', 0, 0) or gml.collision_point(position.x+9, position.y-6, 'solid', 0, 0)) and
 			not gml.collision_point(position.x+9, position.y-9, 'solid', 0, 0) and not gml.collision_point(position.x, position.y+9, 'solid', 0, 0)):
 
@@ -3044,7 +3051,7 @@ func character_step_event():
 				y_acc = 0
 				grav = 0
 
-		elif (hang_count == 0 and position.y > 16 and !PlatformEngine.platform_character_is(ON_GROUND) and k_left and col_left and
+		elif (hang_count == 0 and position.y > 16 and !platform_character_is(ON_GROUND) and k_left and col_left and
 			(gml.collision_point(position.x-9, position.y-5, 'solid', 0, 0) or gml.collision_point(position.x-9, position.y-6, 'solid', 0, 0)) and
 			not gml.collision_point(position.x-9, position.y-9, 'solid', 0, 0) and not gml.collision_point(position.x, position.y+9, 'solid', 0, 0)):
 
@@ -3055,7 +3062,7 @@ func character_step_event():
 				grav = 0
 
 
-		if (hang_count == 0 and position.y > 16 and !PlatformEngine.platform_character_is(ON_GROUND) and state == FALLING and
+		if (hang_count == 0 and position.y > 16 and !platform_character_is(ON_GROUND) and state == FALLING and
 			(gml.collision_point(position.x, position.y-5, 'arrow', 0, 0) or gml.collision_point(position.x, position.y-6, 'arrow', 0, 0)) and
 			not gml.collision_point(position.x, position.y-9, 'arrow', 0, 0) and not gml.collision_point(position.x, position.y+9, 'arrow', 0, 0)):
 
@@ -3071,7 +3078,7 @@ func character_step_event():
 
 
 		#/*
-		#if (hang_count == 0 and position.y > 16 and !PlatformEngine.platform_character_is(ON_GROUND) and state == FALLING and:
+		#if (hang_count == 0 and position.y > 16 and !platform_character_is(ON_GROUND) and state == FALLING and:
 			#(gml.collision_point(position.x, position.y-5, treeBranch, 0, 0) or gml.collision_point(position.x, position.y-6, treeBranch, 0, 0)) and
 			#not gml.collision_point(position.x, position.y-9, treeBranch, 0, 0) and not gml.collision_point(position.x, position.y+9, treeBranch, 0, 0))
 	#
@@ -3133,7 +3140,7 @@ func character_step_event():
 
 
 	# pressing down while standing:
-	if (k_down and PlatformEngine.platform_character_is(ON_GROUND) and not whipping):
+	if (k_down and platform_character_is(ON_GROUND) and not whipping):
 
 		if (col_bot):
 		
@@ -3188,11 +3195,11 @@ func character_step_event():
 
 		state = RUNNING
 
-	if (y_vel < 0 and PlatformEngine.platform_character_is(IN_AIR) and state != HANGING):
+	if (y_vel < 0 and platform_character_is(IN_AIR) and state != HANGING):
 
 		state = JUMPING
 
-	if (y_vel > 0 and PlatformEngine.platform_character_is(IN_AIR) and state != HANGING):
+	if (y_vel > 0 and platform_character_is(IN_AIR) and state != HANGING):
 
 		state = FALLING
 		Collision.set_collision_bounds(self, -5, -6, 5, 8)
@@ -3202,9 +3209,9 @@ func character_step_event():
 	# CLIMB LADDER
 	var col_point_ladder = gml.collision_point(position.x, position.y, 'ladder', 0, 0) or gml.collision_point(position.x, position.y, 'ladderTop', 0, 0)
 
-	if ((k_up and PlatformEngine.platform_character_is(IN_AIR) and gml.collision_point(position.x, position.y-8, 'ladder', 0, 0) and ladder_timer == 0) or
+	if ((k_up and platform_character_is(IN_AIR) and gml.collision_point(position.x, position.y-8, 'ladder', 0, 0) and ladder_timer == 0) or
 		(k_up and col_point_ladder and ladder_timer == 0) or
-		(k_down and col_point_ladder and ladder_timer == 0 and PlatformEngine.platform_character_is(ON_GROUND) and gml.collision_point(position.x, position.y+9, 'ladder_top', 0, 0) and x_vel == 0)):
+		(k_down and col_point_ladder and ladder_timer == 0 and platform_character_is(ON_GROUND) and gml.collision_point(position.x, position.y+9, 'ladder_top', 0, 0) and x_vel == 0)):
 
 		#ladder = 0 #--- Setting to zero seems to do nothing, so commenting out
 		var ladder_instance = gml.instance_place(position.x, position.y-8, 'ladder')
@@ -3278,7 +3285,7 @@ func character_step_event():
 
 	else:
 
-		if (run_key and PlatformEngine.platform_character_is(ON_GROUND) and run_held >= 10):
+		if (run_key and platform_character_is(ON_GROUND) and run_held >= 10):
 		
 			if (k_left): # run
 			
@@ -3301,13 +3308,13 @@ func character_step_event():
 				x_vel_limit = 3
 				image_speed = 0.8
 			
-			elif (k_left and global.down_trun): # run
+			elif (k_left and global.down_to_run): # run
 			
 				x_vel -= 0.1
 				x_vel_limit = 6
 				x_fric = friction_running_fast_x
 			
-			elif (k_right and global.down_trun):
+			elif (k_right and global.down_to_run):
 			
 				x_vel += 0.1
 				x_vel_limit = 6
@@ -3325,7 +3332,7 @@ func character_step_event():
 		else:
 		
 			#decrease the friction when the character is "flying"
-			if (PlatformEngine.platform_character_is(IN_AIR)):
+			if (platform_character_is(IN_AIR)):
 			
 				if (dead or stunned): x_fric = 1.0
 				else: x_fric = 0.8
@@ -3375,7 +3382,7 @@ func character_step_event():
 
 	# RUNNING
 
-	if (PlatformEngine.platform_character_is(ON_GROUND)):
+	if (platform_character_is(ON_GROUND)):
 
 		if (state == RUNNING and k_left and col_left):
 		
@@ -3390,7 +3397,7 @@ func character_step_event():
 			push_timer = 0
 		
 		
-		if (PlatformEngine.platform_character_is(ON_GROUND) and not k_jump and not k_down and not run_key):
+		if (platform_character_is(ON_GROUND) and not k_jump and not k_down and not run_key):
 		   
 			x_vel_limit = 3
 		
@@ -3539,7 +3546,7 @@ func character_step_event():
 	# prepares the character to move up a hill
 	# we need to use the "slope_y_prev" variable later to know the "true" position.y previous value
 	# keep this condition the same
-	if max_slope>0 and PlatformEngine.platform_character_is(ON_GROUND) and x_vel!=0:
+	if max_slope>0 and platform_character_is(ON_GROUND) and x_vel!=0:
 
 		slope_y_prev=position.y #----- changing for loop for now
 		for y in range(0, slope_y_prev - max_slope, -1):
@@ -3552,7 +3559,7 @@ func character_step_event():
 
 	# moves the character, and balances out the effects caused by other processes
 	# keep this condition the same
-	if max_slope*abs(x_vel)>0 and PlatformEngine.platform_character_is(ON_GROUND):
+	if max_slope*abs(x_vel)>0 and platform_character_is(ON_GROUND):
 
 	  # we need to check if we should dampen out the speed as the character runs on upward slopes:
 		x_prev=position.x
@@ -3583,7 +3590,7 @@ func character_step_event():
 
 	# move the character downhill if possible:
 	# we need to multiply max_down_slope by the absolute value of x_vel since the character normally runs at an x_vel larger than 1
-	if not col_bot and max_down_slope>0 and x_vel_integer!=0 and PlatformEngine.platform_character_is(ON_GROUND):
+	if not col_bot and max_down_slope>0 and x_vel_integer!=0 and platform_character_is(ON_GROUND):
 
 	  #the character is floating just above the slope, so move the character down
 		var up_y_prev=position.y # --- Checking how this loop below is originally handled
@@ -3611,7 +3618,7 @@ func character_step_event():
 	if (x_vel >= 4 or x_vel <= -4):
 
 		image_speed = 1
-		if (PlatformEngine.platform_character_is(ON_GROUND)): Collision.set_collision_bounds(self, -8, -8, 8, 8)
+		if (platform_character_is(ON_GROUND)): Collision.set_collision_bounds(self, -8, -8, 8, 8)
 		else: Collision.set_collision_bounds(self, -5, -8, 5, 8)
 
 	else: Collision.set_collision_bounds(self, -5, -8, 5, 8)
@@ -3666,6 +3673,29 @@ func alarm_11(frames):
 
 func alarm_timeout(time):
 	await get_tree().create_timer(time).timeout
+
+func platform_character_is(character_trait): #--- putting this here instead of PlatformEngine to make things easier
+	#/*
+	#Returns whether a GENERAL trait about a character is true.
+	#Only the platform character should run this script. 
+#
+	#argument0 can be one of the following:
+	#ON_GROUND
+	#IN_AIR
+	#ON_LADDER
+#
+	#Example of usage:
+	#Event: character collides with goomba
+	#Action: if platform_character_is(ON_GROUND): gml.instance_destroy()
+	#*/
+
+	if (character_trait==ON_GROUND) and (state==RUNNING or state==STANDING or state==DUCKING or state==LOOKING_UP):
+		return 1
+	if (character_trait==IN_AIR) and (state==JUMPING or state==FALLING):
+		return 1
+	if (character_trait==ON_LADDER) and (state==CLIMBING):
+		return 1
+	return 0
 
 func character_sprite():
 	pass
