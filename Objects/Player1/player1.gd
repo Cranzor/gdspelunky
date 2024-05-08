@@ -209,6 +209,10 @@ var s_die_l_fall
 var s_die_l_l
 var s_die_l_r
 
+var s_bombs_get
+var s_rope_get
+var s_damsel_exit2
+
 var alarm_1_active
 var alarm_2_active
 var alarm_3_active
@@ -343,6 +347,8 @@ func _physics_process(delta):
 	var k_rope_pressed
 	var in_game
 	var col_spikes
+	var money
+	var collect
 	
 	# prevent player from dying on title screen
 	if (InLevel.is_room("r_title") or InLevel.is_room("r_highscores")):
@@ -2287,6 +2293,181 @@ func _physics_process(delta):
 		#with spark  sprite_index = sSpark_left position.x += random(3)
 #
 	#*/
+	
+	#Collect
+	money = global.money
+
+	if (global.collect_counter == 0):
+
+		if (global.collect > 100):
+		
+			global.money += 100
+			global.collect -= 100
+		
+		else: 
+		
+			global.money += global.collect
+			global.collect -= global.collect
+		
+
+	else:
+
+		global.collect_counter -= 1
+
+
+	if (hold_item):
+
+		if (hold_item.type == "Bow"):
+		
+			if (gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "arrow", 0, 0) and not dead and not stunned):
+			
+				var obj = gml.instance_nearest(position.x, position.y, 'arrow')
+				if (abs(obj.x_vel) < 1 and abs(obj.y_vel) < 1 and not obj.stuck):
+				
+					global.arrows += 1
+					Audio.play_sound(global.snd_pickup)
+					gml.instance_destroy(obj) 
+				
+			
+		
+
+
+	if (gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "treasure", 0, 0) and not dead and not stunned):
+
+		var gem = gml.instance_nearest(position.x, position.y, 'treasure')
+		if (gem.can_collect):
+		
+			# global.money += gem.value
+			global.collect += gem.value + ceil(gem.value / 4)*global.level_type
+			global.collect_counter += 20
+			if (global.collect_counter > 100): global.collect_counter = 100
+			
+			var coin = false
+			#gml.instance_create(position.x, position.y-8, "small_collect")
+			if (gem.type == "Gold Chunk"):
+				global.gold += 1
+				coin = true 
+			if (gem.type == "Gold Nugget"):
+				global.nuggets += 1
+				coin = true 
+			if (gem.type == "Gold Bar"):
+				global.goldbar += 1
+				coin = true 
+			if (gem.type == "Gold Bars"):
+				global.goldbars += 1
+				coin = true 
+			if (gem.type == "Emerald"): global.emeralds += 1
+			if (gem.type == "Big Emerald"): global.bigemeralds += 1
+			if (gem.type == "Sapphire"): global.sapphires += 1
+			if (gem.type == "Big Sapphire"): global.bigsapphires += 1
+			if (gem.type == "Ruby"): global.rubies += 1
+			if (gem.type == "Big Ruby"): global.bigrubies += 1
+			if (gem.type == "Diamond"): global.diamonds += 1
+			if (coin): Audio.play_sound(global.snd_coin)
+			else: Audio.play_sound(global.snd_gem)
+
+			gml.instance_destroy(gem) 
+		
+
+
+	if (gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "bomb_bag", 0, 0) and not dead and not stunned):
+
+		var obj = gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "bomb_bag", 0, 0)
+		if (not obj.held and obj.cost == 0 and not gml.collision_point(obj.position.x, obj.position.y, "solid", 0, 0)):
+		
+			global.bombs += 3
+			var disp = gml.instance_create(obj.position.x, obj.position.y-14, "items_get")
+			disp.sprite_index = s_bombs_get
+			gml.instance_destroy(obj) 
+			Audio.play_sound(global.snd_pickup)
+			global.message = "YOU GOT 3 MORE BOMBS!"
+			global.message2 = ""
+			global.message_timer = 120
+		
+
+
+	if (gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "bomb_box", 0, 0) and not dead and not stunned):
+
+		var obj = gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "bomb_box", 0, 0)
+		if (not obj.held and obj.cost == 0 and not gml.collision_point(obj.position.x, obj.position.y, "solid", 0, 0)):
+		
+			global.bombs += 12
+			var disp = gml.instance_create(obj.position.x, obj.position.y-14, "items_get")
+			disp.sprite_index = s_bombs_get
+			gml.instance_destroy(obj) 
+			Audio.play_sound(global.snd_pickup)
+			global.message = "YOU GOT 12 MORE BOMBS!"
+			global.message2 = ""
+			global.message_timer = 120
+		
+
+
+	if (gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "rope_pile", 0, 0) and not dead and not stunned):
+
+		var obj = gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "rope_pile", 0, 0)
+		if (not obj.held and obj.cost == 0 and not gml.collision_point(obj.position.x, obj.position.y, "solid", 0, 0)):
+		
+			global.rope += 3
+			var disp = gml.instance_create(obj.position.x, obj.position.y-15, "items_get")
+			disp.sprite_index = s_rope_get
+			gml.instance_destroy(obj) 
+			Audio.play_sound(global.snd_pickup)
+			global.message = "YOU GOT 3 MORE ROPES!"
+			global.message2 = ""
+			global.message_timer = 120
+		
+
+
+	if (gml.collision_point(position.x, position.y, "exit", 0, 0)):
+
+		if (hold_item != 0):
+		
+			collect = false
+			if (hold_item.type == "Gold Idol"):
+			
+				if (InLevel.is_real_level()): global.idols_converted += 1
+				global.collect += hold_item.value*(global.level_type+1)
+				global.collect_counter += 20
+				if (global.collect_counter > 100): global.collect_counter = 100
+				if (hold_item.sprite_index == s_crystal_skull): global.skulls += 1
+				else: global.idols += 1
+				Audio.play_sound(global.snd_coin)
+				gml.instance_create(position.x, position.y-8, "big_collect")
+				gml.instance_destroy(hold_item) #---[FLAG] hold_item should be set to the string of the item name 
+				hold_item = 0
+			
+			elif (hold_item.type == "Damsel"):
+			
+				if (hold_item.active and hold_item.hp > 0):
+				
+					if (InLevel.is_real_level()): global.damsels_saved_total += 1
+					global.damsels += 1
+					global.xdamsels += 1
+					var door = gml.instance_place(position.x, position.y, 'exit')
+					hold_item.position.x = door.position.x+8
+					hold_item.position.y = door.position.y+8
+
+					var hold_item_instance = gml.instance_nearest(position.x, position.y, hold_item)
+					
+					if (global.is_damsel): hold_item_instance.sprite_index = s_p_exit
+					else: hold_item_instance.sprite_index = s_damsel_exit2
+					hold_item_instance.status = 4
+					hold_item_instance.held = false
+					hold_item_instance.x_vel = 0
+					hold_item_instance.y_vel = 0
+					hold_item_instance.Audio.play_sound(global.snd_steps)
+					hold_item_instance.depth = 1000
+					hold_item_instance.active = false
+					hold_item_instance.can_pick_up = false
+					
+					hold_item = 0
+				
+			
+		
+
+
+	global.xmoney += global.money - money
+
 
 func character_create_event():
 	#/*
