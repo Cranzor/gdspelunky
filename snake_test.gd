@@ -34,6 +34,7 @@ func _ready():
 	shake_toggle = 1
 
 func _physics_process(delta):
+	character_size_test()
 	#print("y_vel:" + str(y_vel))
 	var visible_rect = ColorRect.new()
 	get_tree().current_scene.add_child(visible_rect)
@@ -139,3 +140,18 @@ func _physics_process(delta):
 	#
 		#*/
 
+#--------------------------------------------------------------------------- Test function
+func character_size_test():
+	var all_test_rects = get_tree().get_nodes_in_group('test_size2')
+	for test_rect in all_test_rects:
+		test_rect.queue_free()
+	
+	if collision_bounds_offset_left_x != null:
+		var visible_rect = ColorRect.new()
+		get_tree().current_scene.add_child(visible_rect)
+		visible_rect.global_position = Vector2(global_position.x + collision_bounds_offset_left_x, global_position.y + collision_bounds_offset_top_y)
+		#print(visible_rect.position.y)
+		#print(position.y)
+		visible_rect.size = Vector2(collision_bounds_offset_right_x, collision_bounds_offset_bottom_y)
+		visible_rect.color = Color(0.922, 0.518, 0.188, 0.5)
+		visible_rect.add_to_group('test_size2')

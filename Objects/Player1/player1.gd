@@ -336,6 +336,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
+	print(state)
+	character_size_test()
+	
 	var visible_rect = ColorRect.new()
 	get_tree().current_scene.add_child(visible_rect)
 	visible_rect.global_position = Vector2(position.x, position.y)
@@ -3699,3 +3702,19 @@ func platform_character_is(character_trait): #--- putting this here instead of P
 
 func character_sprite():
 	pass
+
+#---------------------------------------------------------------------------------------- Test functions
+func character_size_test():
+	var all_test_rects = get_tree().get_nodes_in_group('test_size')
+	for test_rect in all_test_rects:
+		test_rect.queue_free()
+	
+	if collision_bounds_offset_left_x != null:
+		var visible_rect = ColorRect.new()
+		get_tree().current_scene.add_child(visible_rect)
+		visible_rect.global_position = Vector2(global_position.x + collision_bounds_offset_left_x, global_position.y + collision_bounds_offset_top_y)
+		#print(visible_rect.position.y)
+		#print(position.y)
+		visible_rect.size = Vector2(abs(collision_bounds_offset_left_x - collision_bounds_offset_right_x), abs(collision_bounds_offset_bottom_y - collision_bounds_offset_top_y))
+		visible_rect.color = Color(0.922, 0.518, 0.188, 0.5)
+		visible_rect.add_to_group('test_size')

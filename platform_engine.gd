@@ -30,7 +30,6 @@ func make_active(node):
 var frame = 1
 var yes_counter = 0
 func move_to(x_vel, y_vel, node):
-	print(str(node) + ': ' + str(x_vel))
 	#/*
 	#Any object that has the collision bounds set can use this script.
 	#(To set the collision bounds, call the script "set_collision_bounds.")
@@ -177,12 +176,12 @@ func move_to(x_vel, y_vel, node):
 	  
 	#object is moving up
 	if y_vel<0:
-		pass #--- delete
-		#for y in range(0, mt_y_prev+y_vel_integer, -1):
-	  #
-			#if Collision.is_collision_top(1, node):
-		 #
-				#break
+
+		if Collision.is_collision_top(1, node):
+			pass
+			
+		else:
+			node.position.y+= y_vel * get_physics_process_delta_time() * 30
 	
 func scr_moveable_solid_recurse_drop():
 	pass

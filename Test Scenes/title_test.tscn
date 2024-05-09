@@ -11,4 +11,4 @@ script = ExtResource("1_86hpl")
 position = Vector2(320, 0)
 
 [node name="SnakeTest" parent="." instance=ExtResource("3_uheeq")]
-position = Vector2(400, 96)
+position = Vector2(448, 144)
