@@ -220,7 +220,7 @@ func is_collision_character_left(number, id: String): #--- id is just the group
 		var rb = all_points_exact.z
 		var bb = all_points_exact.w
 		  #if there is a collision with temp_id on the character's right side
-		if gml.collision_line(round(rb+number-1),round(tb),round(rb+number-1),round(bb-1),character_instance,1,1)>0:
+		if gml.collision_line(round(rb+number-1),round(tb),round(rb+number-1),round(bb-1),character_instance,1,1) == true:#0:
 			return 1
 	return 0
 	
@@ -244,7 +244,7 @@ func is_collision_character_right(number, id: String):
 		var rb = all_points_exact.z
 		var bb = all_points_exact.w
 	  #if there is a collision with temp_id on the character's left side
-		if gml.collision_line(round(lb-number),round(tb),round(lb-number),round(bb-1),'character',1,1)>0:
+		if gml.collision_line(round(lb-number),round(tb),round(lb-number),round(bb-1),'character',1,1) ==  true:#>0:
 			return 1
 	return 0
 	
@@ -333,6 +333,11 @@ func is_collision_bottom(number, node):
 	var rb = all_points_exact.z
 	var bb = all_points_exact.w
 	
+	print(lb)
+	print(tb)
+	print(rb)
+	print(bb)
+	
 	if gml.collision_line(round(lb),round(bb+number-1),round(rb-1),round(bb+number-1),'solid',1,1) == true:#>0:
 		return 1
 		
@@ -358,7 +363,7 @@ func is_collision_character_bottom(number, id: String):
 		var rb = all_points_exact.z
 		var bb = all_points_exact.w
 	  #if there is a collision with temp_id on the character's top side
-		if gml.collision_line(round(lb),round(tb-number),round(rb-1),round(tb-number),'character',1,1)>0:
+		if gml.collision_line(round(lb),round(tb-number),round(rb-1),round(tb-number),'character',1,1) == true:#>0:
 			return 1
 
 	return 0
@@ -383,7 +388,7 @@ func is_collision_character_top(number, id: String):
 		var rb = all_points_exact.z
 		var bb = all_points_exact.w
 	  #if there is a collision with temp_id on the character's bottom side
-		if gml.collision_line(round(lb),round(bb+number-1),round(rb-1),round(bb+number-1),'character',1,1)>0:
+		if gml.collision_line(round(lb),round(bb+number-1),round(rb-1),round(bb+number-1),'character',1,1) == true:#>0:
 			return 1
 
 	return 0

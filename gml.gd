@@ -229,16 +229,37 @@ func instance_number(obj: String):
 
 func collision_line(x1,y1,x2,y2,obj,prec,notme):
 	var intersecting = false
-	var rect = Rect2(Vector2(x1, y1), Vector2(abs(x2 - x1), 1))
+	var all_points = []	
 	
+	#--- Bresenham’s Line Generation Algorithm: https://www.geeksforgeeks.org/bresenhams-line-generation-algorithm/
+	var m_new = 2 * (y2 - y1)
+	var slope_error_new = m_new - (x2 - x1)
+	var y = y1
+	for x in range(x1, x2+1):
+		var point = Vector2(x, y)
+		all_points.append(point)
+		slope_error_new = slope_error_new + m_new
+		
+		if (slope_error_new >= 0): 
+			y = y+1
+			slope_error_new = slope_error_new - 2 * (x2 - x1) 
+
 	if instanced_object_locations.has(obj):
-		for entry in instanced_object_locations[obj]:
-			var location = entry[0]
-			var obj_rect = Rect2(location, Vector2(16, 16))
+		for point in all_points:
+			var point_rect = Rect2(Vector2(point.x, point.y), Vector2(1, 1))
+			var visible_rect2 = ColorRect.new()
+			get_tree().current_scene.add_child(visible_rect2)
+			visible_rect2.global_position = Vector2(point.x, point.y)
+			visible_rect2.size = Vector2(1, 1)
+			visible_rect2.color = Color(0.922, 0.518, 0.188, 0.5)
 			
-			intersecting = rect.intersects(obj_rect)
-			if intersecting == true:
-				break
+			for entry in instanced_object_locations[obj]:
+				var location = entry[0]
+				var obj_rect = Rect2(location, Vector2(16, 16))
+				
+				intersecting = point_rect.intersects(obj_rect)
+				if intersecting == true:
+					break
 	
 	return intersecting
 

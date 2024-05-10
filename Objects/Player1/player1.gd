@@ -343,8 +343,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	print(state)
-	character_size_test()
+	#character_size_test()
 	#------------------------
 	
 	step_function_1()
@@ -3695,12 +3694,24 @@ func platform_character_is(character_trait): #--- putting this here instead of P
 	#Action: if platform_character_is(ON_GROUND): gml.instance_destroy()
 	#*/
 
-	if (character_trait==ON_GROUND) and (state==RUNNING or state==STANDING or state==DUCKING or state==LOOKING_UP):
-		return 1
-	if (character_trait==IN_AIR) and (state==JUMPING or state==FALLING):
-		return 1
-	if (character_trait==ON_LADDER) and (state==CLIMBING):
-		return 1
+	#if (character_trait==ON_GROUND) and (state==RUNNING or state==STANDING or state==DUCKING or state==LOOKING_UP):
+		#return 1
+	#if (character_trait==IN_AIR) and (state==JUMPING or state==FALLING):
+		#return 1
+	#if (character_trait==ON_LADDER) and (state==CLIMBING):
+		#return 1
+	#return 0
+	
+	#--- changing this for now since 'and' and 'or' might work differently in GDScript
+	if (character_trait==ON_GROUND):
+		if (state==RUNNING or state==STANDING or state==DUCKING or state==LOOKING_UP):
+			return 1
+	if (character_trait==IN_AIR):
+		if (state==JUMPING or state==FALLING):
+			return 1
+	if (character_trait==ON_LADDER):
+		if (state==CLIMBING):
+			return 1
 	return 0
 
 func character_sprite():
