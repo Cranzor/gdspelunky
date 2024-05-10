@@ -30,7 +30,6 @@ func make_active(node):
 var frame = 1
 var yes_counter = 0
 func move_to(x_vel, y_vel, node):
-	print(y_vel)
 	#/*
 	#Any object that has the collision bounds set can use this script.
 	#(To set the collision bounds, call the script "set_collision_bounds.")
@@ -99,6 +98,7 @@ func move_to(x_vel, y_vel, node):
 	
 	#object is moving to the right
 	if x_vel>0:
+		var can_move = true
 		  
 		var solid_id=Collision.get_id_collision_right(1, node)
 		#if there is a collision with a solid:
@@ -114,7 +114,7 @@ func move_to(x_vel, y_vel, node):
 						#--- is x here referring to the iterator or the node's x position? no idea. going with the position
 			  
 			   
-						pass
+						can_move = false
 			  
 					else:
 			  
@@ -125,15 +125,16 @@ func move_to(x_vel, y_vel, node):
 		  
 			else:
 		   
-				pass
+				can_move = false
 		
-		else:
+		if can_move:
 			node.position.x+= x_vel * get_physics_process_delta_time() * 30
 	  
 	#object is moving to the left
 	#if x_vel_integer<0:
 	if x_vel<0:
-	  
+		var can_move = true
+		
 		var solid_id = Collision.get_id_collision_left(1, node) # --- [FLAG] assuming this returns a node
 		#if there is a collision with a solid:
 		if solid_id!=null:
@@ -147,7 +148,7 @@ func move_to(x_vel, y_vel, node):
 					if solid_id.gml.place_meeting(solid_id.x-1,solid_id.y,'solid'):      #there will be a collision!
 				  
 				   
-						pass
+						can_move = false
 				  
 					else:
 				  
@@ -158,24 +159,22 @@ func move_to(x_vel, y_vel, node):
 		  
 			else:
 		   
-				pass
-		else:
+				can_move = false
+		if can_move:
 			node.position.x+= x_vel * get_physics_process_delta_time() * 30
 		
 	#object is moving down
 	if y_vel>0:
 		var can_move = true
+		
 		if Collision.is_collision_bottom(1, node):
 			can_move = false
 			
 		elif Collision.can_land_on_platforms(node):
-			#if Collision.is_collision_platform(node)==false and Collision.is_collision_platform_bottom(1, node) and node.k_down==0:
-			if Collision.is_collision_platform(node)==false:
-				if Collision.is_collision_platform_bottom(1, node):
-					if node.k_down==0:
-						can_move = false
+			if Collision.is_collision_platform(node)==false and Collision.is_collision_platform_bottom(1, node) and node.k_down==0:
+				can_move = false
 				
-		if can_move == true:
+		if can_move:
 			node.position.y+= y_vel * get_physics_process_delta_time() * 30
 	  
 	#object is moving up
