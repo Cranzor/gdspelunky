@@ -169,8 +169,6 @@ func collision_rectangle(x1,y1,x2,y2,obj,prec,notme): #"This function tests whet
 			
 			intersecting = rect.intersects(obj_rect)
 			if intersecting == true:
-				print('obj_rect:' + str(obj_rect))
-				print('rect: ' + str(rect))
 				break
 	
 	return intersecting

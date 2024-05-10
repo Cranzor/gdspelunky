@@ -100,7 +100,7 @@ var explosion
 var state
 var p_dummy5
 var x_vel
-var y_vel = 1 #--- setting to 0 for now
+var y_vel = 0 #--- setting to 0 for now
 var grav
 var s_whoa_left
 var s_damsel_whoa_l

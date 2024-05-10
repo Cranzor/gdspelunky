@@ -30,6 +30,7 @@ func make_active(node):
 var frame = 1
 var yes_counter = 0
 func move_to(x_vel, y_vel, node):
+	print(y_vel)
 	#/*
 	#Any object that has the collision bounds set can use this script.
 	#(To set the collision bounds, call the script "set_collision_bounds.")
@@ -163,15 +164,18 @@ func move_to(x_vel, y_vel, node):
 		
 	#object is moving down
 	if y_vel>0:
-		
+		var can_move = true
 		if Collision.is_collision_bottom(1, node):
-			pass
+			can_move = false
 			
 		elif Collision.can_land_on_platforms(node):
-			if Collision.is_collision_platform(node)==0 and Collision.is_collision_platform_bottom(1, node) and node.k_down==0:
-				pass
+			#if Collision.is_collision_platform(node)==false and Collision.is_collision_platform_bottom(1, node) and node.k_down==0:
+			if Collision.is_collision_platform(node)==false:
+				if Collision.is_collision_platform_bottom(1, node):
+					if node.k_down==0:
+						can_move = false
 				
-		else:
+		if can_move == true:
 			node.position.y+= y_vel * get_physics_process_delta_time() * 30
 	  
 	#object is moving up

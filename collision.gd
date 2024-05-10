@@ -10,6 +10,7 @@ func can_land_on_platforms(node):
 	var node_groups = node.get_groups()
 	if node_groups.has('character'):
 		return true
+	return false
 
 func can_push_moveable_solids(node):
 	#/*
@@ -20,7 +21,8 @@ func can_push_moveable_solids(node):
 	var node_groups = node.get_groups()
 	if node_groups.has('character'):
 		return true
-		
+	return false
+	
 func get_id_collision_character(): # --- doesn't seem to be used anywhere
 	pass
 	
@@ -47,6 +49,8 @@ func is_collision_ladder(node):
 		if (gml.collision_rectangle(lb+8,tb+8,rb-8,bb-8,'ladder',1,1) == true):#>0:
 			return true
 	
+	return false
+	
 func is_collision_platform(node):
 	#/*
 	#Returns whether the object invoking this script is colliding with a jump-through platform.
@@ -62,7 +66,8 @@ func is_collision_platform(node):
 	
 	if gml.collision_rectangle(lb,tb,rb-1,bb-1,'platform',1,1) == true:#>0
 		return true
-
+	return false
+	
 func is_collision_solid(node):
 	#/*
 	#Returns whether the object invoking this script is colliding with a solid.
@@ -78,7 +83,7 @@ func is_collision_solid(node):
 	
 	if gml.collision_rectangle(lb,tb,rb-1,bb-1,'solid',1,1) == true:#>0
 		return true
-
+	return false
 
 func set_collision_bounds(node, left_x, top_y, right_x, bottom_y):
 	#/*
@@ -333,11 +338,6 @@ func is_collision_bottom(number, node):
 	var rb = all_points_exact.z
 	var bb = all_points_exact.w
 	
-	print(lb)
-	print(tb)
-	print(rb)
-	print(bb)
-	
 	if gml.collision_line(round(lb),round(bb+number-1),round(rb-1),round(bb+number-1),'solid',1,1) == true:#>0:
 		return 1
 		
@@ -409,9 +409,9 @@ func is_collision_platform_bottom(number, node):
 	var bb = all_points_exact.w
 	
 	if gml.collision_line(round(lb),round(bb+number-1),round(rb-1),round(bb+number-1),'platform',1,1) == true:#>0:
-		return 1
+		return true
 
-	return 0
+	return false
 	
 func is_collision_top(number, node):
 	#/*
