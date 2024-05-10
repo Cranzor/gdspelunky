@@ -215,6 +215,13 @@ var s_bombs_get
 var s_rope_get
 var s_damsel_exit2
 
+var k_bomb_pressed #--- only found in step
+var k_rope_pressed #--- only found in step
+var in_game #--- only found in step
+var col_spikes #--- only found in step
+var money #--- only found in step
+var collect #--- only found in step
+
 var alarm_1_active
 var alarm_2_active
 var alarm_3_active
@@ -338,23 +345,16 @@ func _ready():
 func _physics_process(delta):
 	print(state)
 	character_size_test()
+	#------------------------
 	
-	var visible_rect = ColorRect.new()
-	get_tree().current_scene.add_child(visible_rect)
-	visible_rect.global_position = Vector2(position.x, position.y)
-	#print(visible_rect.position.y)
-	#print(position.y)
-	visible_rect.size = Vector2(1, 1)
-	visible_rect.color = Color(0.322, 0.518, 0.188, 0.5)
-	
-	#--- Declaring certain variables unique to this function
-	var k_bomb_pressed
-	var k_rope_pressed
-	var in_game
-	var col_spikes
-	var money
-	var collect
-	
+	step_function_1()
+	step_function_2()
+	step_function_3()
+	step_function_4()
+	step_function_5()
+	step_function_6()
+
+func step_function_1():
 	# prevent player from dying on title screen
 	if (InLevel.is_room("r_title") or InLevel.is_room("r_highscores")):
 
@@ -753,7 +753,7 @@ func _physics_process(delta):
 		
 		else: view_count = 0
 
-#-------------------Start of second code segment
+func step_function_2():
 #Action
 	if (dead):
 
@@ -1831,6 +1831,7 @@ func _physics_process(delta):
 
 		CharacterScripts.scr_fire_bow()
 
+func step_function_3():
 	#Hurt
 	if (global.plife < -10000): global.plife = -10000
 
@@ -2190,6 +2191,8 @@ func _physics_process(delta):
 				global.plife -= 1
 				wall_hurt -= 1
 				
+
+func step_function_4():
 	# DIED
 
 	if (dead and dead_counter > 0): dead_counter -= 1
@@ -2275,7 +2278,7 @@ func _physics_process(delta):
 		
 			Audio.stop_all_music()
 
-	#Fifth function
+func step_function_5():
 	if (not dead and invincible > 0):
 		invincible -= 1
 	  
@@ -2299,6 +2302,7 @@ func _physics_process(delta):
 #
 	#*/
 	
+func step_function_6():
 	#Collect
 	money = global.money
 
@@ -2472,7 +2476,6 @@ func _physics_process(delta):
 
 
 	global.xmoney += global.money - money
-
 
 func character_create_event():
 	#/*

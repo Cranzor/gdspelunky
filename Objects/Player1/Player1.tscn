@@ -57,7 +57,7 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_imvos"]
 
-[node name="Player1" type="CharacterBody2D" groups=["player1"]]
+[node name="Player1" type="CharacterBody2D" groups=["character", "player1"]]
 script = ExtResource("1_xnwjf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
