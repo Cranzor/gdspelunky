@@ -737,7 +737,7 @@ func step_function_1():
 		if (y_vel > y_vel_limit): y_vel = y_vel_limit
 		elif (y_vel < -y_vel_limit): y_vel = -y_vel_limit
 		
-		PlatformEngine.move_to(x_vel, y_vel, self)
+		move_to(x_vel, y_vel)
 
 	elif (InLevel.is_level()): # look up and down
 
@@ -3571,7 +3571,7 @@ func character_step_event():
 		x_prev=position.x
 		y_prev=slope_y_prev       # we don't want to use position.y, because position.y is too high
 		y_prev_high=position.y            # we'll use the higher previous variable later
-		PlatformEngine.move_to(x_vel,y_vel+slope_change_in_y, self)
+		move_to(x_vel,y_vel+slope_change_in_y)
 		var dist=gml.point_distance(x_prev,y_prev,position.x,position.y)# overall distance that has been traveled
 	  # we should have only ran at x_vel
 		if dist>abs(x_vel_integer):
@@ -3586,13 +3586,13 @@ func character_step_event():
 			# this time we'll move the correct distance, but we need to shorten out the x_vel a little
 			# these lines can be changed for different types of slowing down when running up hills
 			var ratio=abs(x_vel_integer)/dist*0.9        #can be changed
-			PlatformEngine.move_to( round(x_vel_integer*ratio),round(y_vel_integer*ratio+slope_change_in_y), self )
+			move_to( round(x_vel_integer*ratio),round(y_vel_integer*ratio+slope_change_in_y))
 	  
 
 	else:
 
 	  # we simply move x_vel and y_vel while in the air or on a ladder:
-		PlatformEngine.move_to(x_vel,y_vel, self)
+		move_to(x_vel,y_vel)
 
 	# move the character downhill if possible:
 	# we need to multiply max_down_slope by the absolute value of x_vel since the character normally runs at an x_vel larger than 1
@@ -3733,3 +3733,160 @@ func character_size_test():
 		visible_rect.size = Vector2(abs(collision_bounds_offset_left_x - collision_bounds_offset_right_x), abs(collision_bounds_offset_bottom_y - collision_bounds_offset_top_y))
 		visible_rect.color = Color(0.922, 0.518, 0.188, 0.5)
 		visible_rect.add_to_group('test_size')
+
+func move_to(x_vel, y_vel):
+	#/*
+	#Any object that has the collision bounds set can use this script.
+	#(To set the collision bounds, call the script "set_collision_bounds.")
+	#If the object collides into a solid when moving the specified distance,
+	#the object will stop precisely at the solid.
+	#If the object collides into a "moveable solid," it will stop and push the
+	#moveable solid.
+	#This function also pushes moveable solids and allows the character to land on platforms.
+	#Note: First the script moves the object in the x direction, then in
+	#the y direction.
+	#Once the functin is finished, one can use the x_vel_integer and y_vel_integer variables for
+	#more precise calculations inside of the engine.
+#
+	#0: x distance to move
+	#1: y distance to move
+	#*/
+	#x_vel = -0.3 #-------- delete this!!!
+	
+	#var mt_x_prev=node.position.x
+	#var mt_y_prev=node.position.y
+	##change the decimal arguments to integer variables with relation to time
+	#var x_vel_frac=gml.frac(abs(x_vel))
+	#var y_vel_frac=gml.frac(abs(y_vel))
+	#var x_vel_integer=0
+	#var y_vel_integer=0
+	#if x_vel_frac!=0:
+		#print("x_vel:" + str(x_vel))
+		#print('x_vel_frac:' + str(x_vel_frac))
+		#print('round(1/x_vel_frac): ' + str(round(1/x_vel_frac)))
+		##if round(1/x_vel_frac)!=0: #-------- temporary comment. bring this back
+			##if game.time % round(1/x_vel_frac)==0:
+				##x_vel_integer=1
+			##else:
+				##x_vel_integer=0
+		#if round(1/x_vel_frac)!=0:
+			#print(round(1/x_vel_frac))
+			#print(frame)
+			#frame += 1
+			#var rounded = round(1/x_vel_frac)
+			#if frame % int(rounded) ==0:
+				#print('yes')
+				#yes_counter += 1
+				#print(yes_counter)
+				#x_vel_integer=1
+			#else:
+				#print('no')
+				#x_vel_integer=0
+		#
+		#var movement_speed = (x_vel_frac * get_process_delta_time()) * 30 #---temporary for testing
+		#print(movement_speed)
+		##print(movement_speed)
+	#if y_vel_frac!=0:
+		#if round(1/y_vel_frac)!=0:
+			#if game.time % round(1/y_vel_frac)==0:
+				#y_vel_integer=1
+			#else:
+				#y_vel_integer=0
+	#x_vel_integer+=floor(abs(x_vel))
+	#y_vel_integer+=floor(abs(y_vel))
+	#if x_vel<0:
+		#x_vel_integer*=-1
+	#if y_vel<0:
+		#y_vel_integer*=-1
+	#x_vel_integer=round(x_vel_integer)
+	#y_vel_integer=round(y_vel_integer)
+	
+	#object is moving to the right
+	if x_vel>0:
+		var can_move = true
+		  
+		var solid_id=Collision.get_id_collision_right(1, self)
+		#if there is a collision with a solid:
+		if solid_id!= null:
+		
+			if gml.object_get_parent(solid_id) == 'moveable_solid' and Collision.can_push_moveable_solids(self):
+		  
+				#we must move the moveable solid, unless there is another solid (moveable or non-moveable) in it's way
+				var all_solids = gml.get_all_instances("solid")
+				for solid_instance in all_solids:
+			
+					if gml.place_meeting(solid_instance.x+1,solid_instance.y,'solid'):      #there will be a collision!
+						#--- is x here referring to the iterator or the node's x position? no idea. going with the position
+			  
+			   
+						can_move = false
+			  
+					else:
+			  
+						solid_instance.position.x += 1 * get_physics_process_delta_time()             #we're free to move the moveable solid
+						if (not SS.is_sound_playing(global.snd_push)): Audio.play_sound(global.snd_push)
+			  
+			
+		  
+			else:
+		   
+				can_move = false
+		
+		if can_move:
+			position.x+= x_vel * get_physics_process_delta_time() * 30
+	  
+	#object is moving to the left
+	#if x_vel_integer<0:
+	if x_vel<0:
+		var can_move = true
+		
+		var solid_id = Collision.get_id_collision_left(1, self) # --- [FLAG] assuming this returns a node
+		#if there is a collision with a solid:
+		if solid_id!=null:
+		
+			if gml.object_get_parent(solid_id)== 'moveable_solid' and Collision.can_push_moveable_solids(self):
+		  
+			#we must move the moveable solid, unless there is another solid (moveable or non-moveable) in it's way
+				var all_solids = gml.get_all_instances("solid")
+				for solid_instance in all_solids:
+					
+					if solid_id.gml.place_meeting(solid_id.x-1,solid_id.y,'solid'):      #there will be a collision!
+				  
+				   
+						can_move = false
+				  
+					else:
+				  
+						solid_instance.position.x += 1 * get_physics_process_delta_time()             #we're free to move the moveable solid
+						if (not SS.is_sound_playing(global.snd_push)): Audio.play_sound(global.snd_push)
+			  
+			
+		  
+			else:
+		   
+				can_move = false
+		if can_move:
+			position.x+= x_vel * get_physics_process_delta_time() * 30
+		
+	#object is moving down
+	if y_vel>0:
+		var can_move = true
+		
+		if Collision.is_collision_bottom(1, self):
+			can_move = false
+			
+		elif Collision.can_land_on_platforms(self):
+			if Collision.is_collision_platform(self)==false and Collision.is_collision_platform_bottom(1, self) and k_down==0:
+				can_move = false
+				
+		if can_move:
+			position.y+= y_vel * get_physics_process_delta_time() * 30
+	  
+	#object is moving up
+	if y_vel<0:
+
+		if Collision.is_collision_top(1, self):
+			pass
+			
+		else:
+			position.y+= y_vel * get_physics_process_delta_time() * 30
