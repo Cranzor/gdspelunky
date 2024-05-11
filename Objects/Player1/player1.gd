@@ -343,7 +343,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	print(state)
+	every_second_timer()
 	#character_size_test()
 	#------------------------
 	
@@ -3718,22 +3718,6 @@ func platform_character_is(character_trait): #--- putting this here instead of P
 func character_sprite():
 	pass
 
-#---------------------------------------------------------------------------------------- Test functions
-func character_size_test():
-	var all_test_rects = get_tree().get_nodes_in_group('test_size')
-	for test_rect in all_test_rects:
-		test_rect.queue_free()
-	
-	if collision_bounds_offset_left_x != null:
-		var visible_rect = ColorRect.new()
-		get_tree().current_scene.add_child(visible_rect)
-		visible_rect.global_position = Vector2(global_position.x + collision_bounds_offset_left_x, global_position.y + collision_bounds_offset_top_y)
-		#print(visible_rect.position.y)
-		#print(position.y)
-		visible_rect.size = Vector2(abs(collision_bounds_offset_left_x - collision_bounds_offset_right_x), abs(collision_bounds_offset_bottom_y - collision_bounds_offset_top_y))
-		visible_rect.color = Color(0.922, 0.518, 0.188, 0.5)
-		visible_rect.add_to_group('test_size')
-
 func move_to(x_vel, y_vel):
 	#/*
 	#Any object that has the collision bounds set can use this script.
@@ -3751,55 +3735,35 @@ func move_to(x_vel, y_vel):
 	#0: x distance to move
 	#1: y distance to move
 	#*/
-	#x_vel = -0.3 #-------- delete this!!!
 	
-	#var mt_x_prev=node.position.x
-	#var mt_y_prev=node.position.y
+	var mt_x_prev=position.x
+	var mt_y_prev=position.y
 	##change the decimal arguments to integer variables with relation to time
-	#var x_vel_frac=gml.frac(abs(x_vel))
-	#var y_vel_frac=gml.frac(abs(y_vel))
-	#var x_vel_integer=0
-	#var y_vel_integer=0
-	#if x_vel_frac!=0:
-		#print("x_vel:" + str(x_vel))
-		#print('x_vel_frac:' + str(x_vel_frac))
-		#print('round(1/x_vel_frac): ' + str(round(1/x_vel_frac)))
-		##if round(1/x_vel_frac)!=0: #-------- temporary comment. bring this back
-			##if game.time % round(1/x_vel_frac)==0:
-				##x_vel_integer=1
-			##else:
-				##x_vel_integer=0
-		#if round(1/x_vel_frac)!=0:
-			#print(round(1/x_vel_frac))
-			#print(frame)
-			#frame += 1
-			#var rounded = round(1/x_vel_frac)
-			#if frame % int(rounded) ==0:
-				#print('yes')
-				#yes_counter += 1
-				#print(yes_counter)
-				#x_vel_integer=1
-			#else:
-				#print('no')
-				#x_vel_integer=0
-		#
-		#var movement_speed = (x_vel_frac * get_process_delta_time()) * 30 #---temporary for testing
-		#print(movement_speed)
-		##print(movement_speed)
-	#if y_vel_frac!=0:
-		#if round(1/y_vel_frac)!=0:
-			#if game.time % round(1/y_vel_frac)==0:
-				#y_vel_integer=1
-			#else:
-				#y_vel_integer=0
-	#x_vel_integer+=floor(abs(x_vel))
-	#y_vel_integer+=floor(abs(y_vel))
-	#if x_vel<0:
-		#x_vel_integer*=-1
-	#if y_vel<0:
-		#y_vel_integer*=-1
-	#x_vel_integer=round(x_vel_integer)
-	#y_vel_integer=round(y_vel_integer)
+	var x_vel_frac=gml.frac(abs(x_vel))
+	var y_vel_frac=gml.frac(abs(y_vel))
+	x_vel_integer=0
+	y_vel_integer=0
+	if x_vel_frac!=0:
+		if round(1/x_vel_frac)!=0:
+			if int(time) % int(round(1/x_vel_frac))==0:
+				x_vel_integer=1
+			else:
+				x_vel_integer=0
+
+	if y_vel_frac!=0:
+		if round(1/y_vel_frac)!=0:
+			if int(time) % int(round(1/y_vel_frac))==0:
+				y_vel_integer=1
+			else:
+				y_vel_integer=0
+	x_vel_integer+=floor(abs(x_vel))
+	y_vel_integer+=floor(abs(y_vel))
+	if x_vel<0:
+		x_vel_integer*=-1
+	if y_vel<0:
+		y_vel_integer*=-1
+	x_vel_integer=round(x_vel_integer)
+	y_vel_integer=round(y_vel_integer)
 	
 	#object is moving to the right
 	if x_vel>0:
@@ -3890,3 +3854,29 @@ func move_to(x_vel, y_vel):
 			
 		else:
 			position.y+= y_vel * get_physics_process_delta_time() * 30
+
+#---------------------------------------------------------------------------------------- Test functions
+func character_size_test():
+	var all_test_rects = get_tree().get_nodes_in_group('test_size')
+	for test_rect in all_test_rects:
+		test_rect.queue_free()
+	
+	if collision_bounds_offset_left_x != null:
+		var visible_rect = ColorRect.new()
+		get_tree().current_scene.add_child(visible_rect)
+		visible_rect.global_position = Vector2(global_position.x + collision_bounds_offset_left_x, global_position.y + collision_bounds_offset_top_y)
+		#print(visible_rect.position.y)
+		#print(position.y)
+		visible_rect.size = Vector2(abs(collision_bounds_offset_left_x - collision_bounds_offset_right_x), abs(collision_bounds_offset_bottom_y - collision_bounds_offset_top_y))
+		visible_rect.color = Color(0.922, 0.518, 0.188, 0.5)
+		visible_rect.add_to_group('test_size')
+
+var timer_started = false
+var time = 0
+func every_second_timer():
+	if timer_started == false:
+		timer_started = true
+		await get_tree().create_timer(1 / 30).timeout
+		time += 1
+		print(x_vel_integer)
+		timer_started = false
