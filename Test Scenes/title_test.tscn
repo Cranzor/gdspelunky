@@ -8,3 +8,10 @@ script = ExtResource("1_86hpl")
 
 [node name="View" parent="." instance=ExtResource("2_ramxg")]
 position = Vector2(320, 0)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 544.0
+offset_top = 128.0
+offset_right = 584.0
+offset_bottom = 151.0
+text = "Hi"

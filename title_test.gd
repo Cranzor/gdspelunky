@@ -407,7 +407,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	#var player = $Player1 #--- for testing
-	#var view = $View
-	#view.position.x = player.position.x
+	var player = get_tree().get_nodes_in_group("player1")
+	print(player)
+	if player:
+		$Label.text = str($Player1.state)
 	pass
