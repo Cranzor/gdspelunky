@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dl0xp055ss7si"]
+[gd_scene load_steps=4 format=3 uid="uid://dl0xp055ss7si"]
 
 [ext_resource type="Script" path="res://title_test.gd" id="1_86hpl"]
 [ext_resource type="PackedScene" uid="uid://bft8urcdv7lh0" path="res://view.tscn" id="2_ramxg"]
+[ext_resource type="PackedScene" uid="uid://cq1mffol3nnac" path="res://Test Scenes/snake_test.tscn" id="3_2rgn6"]
 
 [node name="TitleTest" type="Node2D" groups=["objects_holder"]]
 script = ExtResource("1_86hpl")
@@ -15,3 +16,6 @@ offset_top = 128.0
 offset_right = 584.0
 offset_bottom = 151.0
 text = "Hi"
+
+[node name="SnakeTest" parent="." instance=ExtResource("3_2rgn6")]
+position = Vector2(528, 96)

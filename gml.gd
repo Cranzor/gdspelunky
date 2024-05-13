@@ -257,6 +257,13 @@ func collision_line(x1,y1,x2,y2,obj,prec,notme):
 				
 				intersecting = point_rect.intersects(obj_rect)
 				if intersecting == true:
+					#var visible_rect = ColorRect.new()
+					#get_tree().current_scene.add_child(visible_rect)
+					#visible_rect.global_position = Vector2(location.x, location.y)
+					#visible_rect.size = Vector2(16, 16)
+					#visible_rect.color = Color(0.322, 0.518, 0.188, 0.5)
+					#visible_rect.add_to_group('test_size')
+					
 					break
 	
 	return intersecting

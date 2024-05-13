@@ -155,7 +155,7 @@ func is_collision_rectangle(x1_1, y1_1, x2_1, y2_1, x1_2, y1_2, x2_2, y2_2):
 	var w2=x2_2-x1_2
 	var h2=y2_2-y1_2
 	if(w2<=0 or h2<=0 or w1<=0 or h1<=0):
-		return 0
+		return false
 	w2+=x1_2
 	h2+=y1_2
 	w1+=x1_1
@@ -226,8 +226,8 @@ func is_collision_character_left(number, id: String): #--- id is just the group
 		var bb = all_points_exact.w
 		  #if there is a collision with temp_id on the character's right side
 		if gml.collision_line(round(rb+number-1),round(tb),round(rb+number-1),round(bb-1),character_instance,1,1) == true:#0:
-			return 1
-	return 0
+			return true
+	return false
 	
 func is_collision_character_right(number, id: String):
 	#/*
@@ -250,8 +250,8 @@ func is_collision_character_right(number, id: String):
 		var bb = all_points_exact.w
 	  #if there is a collision with temp_id on the character's left side
 		if gml.collision_line(round(lb-number),round(tb),round(lb-number),round(bb-1),'character',1,1) ==  true:#>0:
-			return 1
-	return 0
+			return true
+	return false
 	
 func is_collision_left(number, node):
 	#/*
@@ -266,9 +266,9 @@ func is_collision_left(number, node):
 	var bb = all_points_exact.w
 	
 	if gml.collision_line(round(lb-number),round(tb),round(lb-number),round(bb-1),'solid',1,1) == true:#>0:
-		return 1
+		return true
 
-	return 0
+	return false
 	
 func is_collision_moveable_solid_left(number, node):
 	#/*
@@ -283,9 +283,9 @@ func is_collision_moveable_solid_left(number, node):
 	var bb = all_points_exact.w
 	
 	if gml.collision_line(round(lb-number),round(tb),round(lb-number),round(bb-1),'moveable_solid',1,1) == true:#>0:
-		return 1
+		return true
 
-	return 0
+	return false
 	
 func is_collision_moveable_solid_right(number, node):
 	#/*
@@ -300,9 +300,9 @@ func is_collision_moveable_solid_right(number, node):
 	var bb = all_points_exact.w
 	
 	if gml.collision_line(round(rb+number-1),round(tb),round(rb+number-1),round(bb-1),'moveable_solid',1,1) == true:#>0:
-		return 1
+		return true
 
-	return 0
+	return false
 	
 func is_collision_right(number, node):
 	#/*
@@ -317,9 +317,9 @@ func is_collision_right(number, node):
 	var bb = all_points_exact.w
 	
 	if gml.collision_line(round(rb+number-1),round(tb),round(rb+number-1),round(bb-1),'solid',1,1) == true:#>0:
-		return 1
+		return true
 
-	return 0
+	return false
 
 #---Vertical---
 
@@ -339,9 +339,9 @@ func is_collision_bottom(number, node):
 	var bb = all_points_exact.w
 	
 	if gml.collision_line(round(lb),round(bb+number-1),round(rb-1),round(bb+number-1),'solid',1,1) == true:#>0:
-		return 1
+		return true
 		
-	return 0
+	return false
 	
 func is_collision_character_bottom(number, id: String):
 	#/*
@@ -364,9 +364,9 @@ func is_collision_character_bottom(number, id: String):
 		var bb = all_points_exact.w
 	  #if there is a collision with temp_id on the character's top side
 		if gml.collision_line(round(lb),round(tb-number),round(rb-1),round(tb-number),'character',1,1) == true:#>0:
-			return 1
+			return true
 
-	return 0
+	return false
 	
 func is_collision_character_top(number, id: String):
 	#/*
@@ -389,9 +389,9 @@ func is_collision_character_top(number, id: String):
 		var bb = all_points_exact.w
 	  #if there is a collision with temp_id on the character's bottom side
 		if gml.collision_line(round(lb),round(bb+number-1),round(rb-1),round(bb+number-1),'character',1,1) == true:#>0:
-			return 1
+			return true
 
-	return 0
+	return false
 	
 func is_collision_moving_solid_bottom(): # --- doesn't seem to be used anywhere
 	pass
@@ -426,8 +426,8 @@ func is_collision_top(number, node):
 	var bb = all_points_exact.w
 	
 	if gml.collision_line(round(lb),round(tb-number),round(rb-1),round(tb-number),'solid',1,1) == true:#>0:
-		return 1
-	return 0
+		return true
+	return false
 	
 func is_collision_water_top(number, node):
 	#/*
@@ -442,6 +442,6 @@ func is_collision_water_top(number, node):
 	var bb = all_points_exact.w
 	
 	if gml.collision_line(round(lb),round(tb-number),round(rb-1),round(tb-number),'water',1,1) == true:#>0:
-		return 1
+		return true
 		
-	return 0
+	return false

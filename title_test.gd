@@ -403,12 +403,11 @@ func _ready():
 	#gml.instance_create(128, 32, bricks)
 	#gml.instance_create(408, 224, copy)
 	#------------------------------------------- adding this for testing
-	gml.instance_create(320+270, 175, player)
+	gml.instance_create(320+270, 170, player)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var player = get_tree().get_nodes_in_group("player1")
-	print(player)
 	if player:
 		$Label.text = str($Player1.state)
 	pass

@@ -378,11 +378,11 @@ func _physics_process(delta):
 	#------------------------
 	
 	step_function_1() #--- Miscellaneous functions related to setting player values and handling some actions
-	step_function_2() #--- Related to player actions and setting relevant animations. Starting game and exiting game are also here 
-	step_function_3() #--- Functions for when the player takes damage
-	step_function_4() #--- Player death functions
-	step_function_5() #--- Caps values for when the player blinks when damaged
-	step_function_6() #--- Functions handling the player collecting various items
+	#step_function_2() #--- Related to player actions and setting relevant animations. Starting game and exiting game are also here 
+	#step_function_3() #--- Functions for when the player takes damage
+	#step_function_4() #--- Player death functions
+	#step_function_5() #--- Caps values for when the player blinks when damaged
+	#step_function_6() #--- Functions handling the player collecting various items
 
 func step_function_1():
 	prevent_player_death()
@@ -2660,7 +2660,7 @@ func character_create_event():
 	state_prev_prev = state_prev
 	gravity_intensity = grav      #this variable describes the current force due to gravity (this variable is altered for variable jumping)
 	jump_time = jump_time_total     #current time of the jump (0=start of jump, jump_time_total=end of jump)
-	jump_button_released = 0       #whether the jump button was released. (Stops the user from pressing the jump button many times to get extra jumps)
+	jump_button_released = false       #whether the jump button was released. (Stops the user from pressing the jump button many times to get extra jumps)
 	ladder_timer = 0              #relates to whether the character can climb a ladder
 	jumps = 0
 	var fly_speed = 0                 #ranges between 0 and 100. When the fly_speed is approximately 100, the character can "fly." #--- doesn't appear to be used anywhere
@@ -2855,8 +2855,8 @@ func set_x_acceleration(): #--- Used for running left and right
 	# if state!=DUCKING and state!=LOOKING_UP and state!=CLIMBING:
 	if (state != CLIMBING and state != HANGING):
 
-		if (k_left_released and Collision.approximately_zero(x_vel)): x_acc -= 0.5
-		if (k_right_released and Collision.approximately_zero(x_vel)): x_acc += 0.5
+		if (k_left_released and Collision.approximately_zero(x_vel)): x_acc -= 0.5  * get_physics_process_delta_time() * 30
+		if (k_right_released and Collision.approximately_zero(x_vel)): x_acc += 0.5  * get_physics_process_delta_time() * 30
 		
 		if (k_left and not k_right):
 		
@@ -2865,14 +2865,14 @@ func set_x_acceleration(): #--- Used for running left and right
 				# x_vel = 3
 				if (platform_character_is(ON_GROUND) and state != DUCKING):
 				
-					x_acc -= 1
-					push_timer += 10
+					x_acc -= 1 * get_physics_process_delta_time() * 30
+					push_timer += 10 * get_physics_process_delta_time() * 30
 					#if (not SS_Is_sound_playing(global.snd_push)): play_sound(global.snd_push)
 				
 			
 			elif (k_left_pushed_steps > 2) and (facing==LEFT or Collision.approximately_zero(x_vel)):
 			
-				x_acc -= run_acc
+				x_acc -= run_acc  * get_physics_process_delta_time() * 30
 			
 			facing = LEFT
 			#if (platform_character_is(ON_GROUND) and abs(x_vel) > 0 and alarm[3] < 1): alarm[3] = floor(16/-x_vel)
@@ -2885,14 +2885,14 @@ func set_x_acceleration(): #--- Used for running left and right
 				# x_vel = 3
 				if (platform_character_is(ON_GROUND) and state != DUCKING):
 				
-					x_acc += 1
-					push_timer += 10
+					x_acc += 1  * get_physics_process_delta_time() * 30
+					push_timer += 10  * get_physics_process_delta_time() * 30
 					#if (not SS_Is_sound_playing(global.snd_push)): play_sound(global.snd_push)
 				
 			
 			elif (k_right_pushed_steps > 2 or col_solid_left) and (facing==RIGHT or Collision.approximately_zero(x_vel)):
 			
-				x_acc += run_acc
+				x_acc += run_acc  * get_physics_process_delta_time() * 30
 			
 			facing = RIGHT
 			#if (platform_character_is(ON_GROUND) and abs(x_vel) > 0 and alarm[3] < 1): alarm[3] = floor(16/x_vel)
@@ -2947,7 +2947,7 @@ func handle_ladder_climbing():
 				x_vel = 0
 			y_acc += depart_ladder_y_vel
 			state = JUMPING
-			jump_button_released = 0
+			jump_button_released = false
 			jump_time = 0
 			ladder_timer = 5
 		
@@ -2959,7 +2959,7 @@ func handle_ladder_climbing():
 func set_y_acceleration():
 	if (platform_character_is(IN_AIR) and state != HANGING):
 
-		y_acc += gravity_intensity
+		y_acc += gravity_intensity * get_physics_process_delta_time() * 30
 		
 func handle_landing():
 	# Player has landed
@@ -3028,7 +3028,7 @@ func handle_jumping():
 		x_acc += x_vel/2
 		
 		state = JUMPING
-		jump_button_released = 0
+		jump_button_released = false
 		jump_time = 0
 		
 		grav = grav_norm
@@ -3040,7 +3040,7 @@ func handle_jumping():
 		x_acc += x_vel/2
 		
 		state = JUMPING
-		jump_button_released = 0
+		jump_button_released = false
 		jump_time = 0
 		
 		grav = grav_norm
@@ -3058,7 +3058,7 @@ func handle_jumping():
 		if (alarm_10_active == false): alarm_10(3)
 		
 		state = JUMPING
-		jump_button_released = 0
+		jump_button_released = false
 		jump_time = 0
 		
 		grav = 0
@@ -3096,13 +3096,13 @@ func handle_jumping():
 		# the "state" gets changed to JUMPING later on in the code
 		state = FALLING
 		# "variable jumping" states
-		jump_button_released = 0
+		jump_button_released = false
 		jump_time = 0
 
 
-	if (jump_time < jump_time_total): jump_time += 1
+	if (jump_time < jump_time_total): jump_time += 1 * get_physics_process_delta_time() * 30
 	#let the character continue to jump
-	if (k_jump == false): jump_button_released = 1 #--- putting 'or' here as a simple fix
+	if (k_jump == false): jump_button_released = true #--- putting 'or' here as a simple fix
 	if (jump_button_released): jump_time = jump_time_total
 
 	gravity_intensity = (jump_time/jump_time_total) * grav
@@ -3419,13 +3419,13 @@ func calculate_friction():
 		
 			if (k_left): # run
 			
-				x_vel -= 0.1
+				x_vel -= 0.1 * get_physics_process_delta_time() * 30
 				x_vel_limit = 6
 				x_fric = friction_running_fast_x
 			
 			elif (k_right):
 			
-				x_vel += 0.1
+				x_vel += 0.1  * get_physics_process_delta_time() * 30
 				x_vel_limit = 6
 				x_fric = friction_running_fast_x
 			
@@ -3440,19 +3440,19 @@ func calculate_friction():
 			
 			elif (k_left and global.down_to_run): # run
 			
-				x_vel -= 0.1
+				x_vel -= 0.1  * get_physics_process_delta_time() * 30
 				x_vel_limit = 6
 				x_fric = friction_running_fast_x
 			
 			elif (k_right and global.down_to_run):
 			
-				x_vel += 0.1
+				x_vel += 0.1  * get_physics_process_delta_time() * 30
 				x_vel_limit = 6
 				x_fric = friction_running_fast_x
 			
 			else:
 			
-				x_vel *= 0.8
+				x_vel *= 0.8  * get_physics_process_delta_time() * 30
 				if (x_vel < 0.5): x_vel = 0
 				x_fric = 0.2
 				x_vel_limit = 3
@@ -3617,9 +3617,9 @@ func limit_acceleration():
 
 func apply_acceleration():
 	# applies the acceleration
-	x_vel += x_acc
-	if (dead or stunned): y_vel += 0.6
-	else: y_vel += y_acc
+	x_vel += x_acc * get_physics_process_delta_time() * 30
+	if (dead or stunned): y_vel += 0.6 * get_physics_process_delta_time() * 30
+	else: y_vel += y_acc * get_physics_process_delta_time() * 30
 
 func nullify_acceleration_values():
 	# nullifies the acceleration
@@ -3968,17 +3968,27 @@ func move_to(x_vel, y_vel):
 		
 	#object is moving down
 	if y_vel>0:
-		var can_move = true
+		#var can_move = true
+		#
+		#if Collision.is_collision_bottom(1, self):
+			#can_move = false
+			#
+		#elif Collision.can_land_on_platforms(self):
+			#if Collision.is_collision_platform(self)==false and Collision.is_collision_platform_bottom(1, self) and k_down==0:
+				#can_move = false
+				#
+		#if can_move:
+			#if position.y < mt_y_prev + y_vel_integer:
+				#position.y+= round(y_vel * get_physics_process_delta_time() * 30)
+				#print(round(y_vel * get_physics_process_delta_time() * 30))
+		for y in range(position.y, mt_y_prev + y_vel_integer, 1):
+			if Collision.is_collision_bottom(1, self):
+				break
+			if Collision.can_land_on_platforms(self):
+				if Collision.is_collision_platform(self)==false and Collision.is_collision_platform_bottom(1, self) and k_down==0:
+					break
+			position.y = y
 		
-		if Collision.is_collision_bottom(1, self):
-			can_move = false
-			
-		elif Collision.can_land_on_platforms(self):
-			if Collision.is_collision_platform(self)==false and Collision.is_collision_platform_bottom(1, self) and k_down==0:
-				can_move = false
-				
-		if can_move:
-			position.y+= y_vel * get_physics_process_delta_time() * 30
 	  
 	#object is moving up
 	if y_vel<0:
