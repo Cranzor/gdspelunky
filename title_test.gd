@@ -404,6 +404,7 @@ func _ready():
 	#gml.instance_create(408, 224, copy)
 	#------------------------------------------- adding this for testing
 	gml.instance_create(320+270, 170, player)
+	gml.instance_create(510, 160, brick)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

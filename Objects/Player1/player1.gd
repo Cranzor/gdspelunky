@@ -170,7 +170,7 @@ var depart_ladder_x_vel
 var depart_ladder_y_vel
 var jump_button_released
 var jump_time
-var gravity_intensity
+var gravity_intensity: float
 var jumps
 var hang_count
 var web
@@ -266,6 +266,7 @@ var alarm_11_active
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	move_to_test()
 	#MiscScripts.scr_clear_globals() #---[FLAG] delete this
 	
 	character_create_event()
@@ -2750,10 +2751,10 @@ func check_keys():
 	  
 	#key "run"
 	if can_run:
-		k_run = 0
+		k_run = false
 	# k_run=run_key
 	else:
-		k_run=0
+		k_run=false
 	  
 	k_jump = ControlScripts.check_jump()
 	k_jump_pressed = ControlScripts.check_jump_pressed()
@@ -2761,9 +2762,9 @@ func check_keys():
 	  
 	if (cant_jump > 0):
 
-		k_jump = 0
-		k_jump_pressed = 0
-		k_jump_released = 0
+		k_jump = false
+		k_jump_pressed = false
+		k_jump_released = false
 		cant_jump -= 1
 
 	else:
@@ -2772,9 +2773,9 @@ func check_keys():
 			$AnimatedSprite2D.animation == 's_tunnel_attack_l' and
 			!hold_item):
 		
-			k_jump = 0
-			k_jump_pressed = 0
-			k_jump_released = 0
+			k_jump = false
+			k_jump_pressed = false
+			k_jump_released = false
 			cant_jump -= 1
 		
 
@@ -2855,8 +2856,8 @@ func set_x_acceleration(): #--- Used for running left and right
 	# if state!=DUCKING and state!=LOOKING_UP and state!=CLIMBING:
 	if (state != CLIMBING and state != HANGING):
 
-		if (k_left_released and Collision.approximately_zero(x_vel)): x_acc -= 0.5  * get_physics_process_delta_time() * 30
-		if (k_right_released and Collision.approximately_zero(x_vel)): x_acc += 0.5  * get_physics_process_delta_time() * 30
+		if k_left_released and Collision.approximately_zero(x_vel): x_acc -= 0.5
+		if (k_right_released and Collision.approximately_zero(x_vel)): x_acc += 0.5
 		
 		if (k_left and not k_right):
 		
@@ -2865,14 +2866,14 @@ func set_x_acceleration(): #--- Used for running left and right
 				# x_vel = 3
 				if (platform_character_is(ON_GROUND) and state != DUCKING):
 				
-					x_acc -= 1 * get_physics_process_delta_time() * 30
-					push_timer += 10 * get_physics_process_delta_time() * 30
+					x_acc -= 1
+					push_timer += 10
 					#if (not SS_Is_sound_playing(global.snd_push)): play_sound(global.snd_push)
 				
 			
 			elif (k_left_pushed_steps > 2) and (facing==LEFT or Collision.approximately_zero(x_vel)):
 			
-				x_acc -= run_acc  * get_physics_process_delta_time() * 30
+				x_acc -= run_acc
 			
 			facing = LEFT
 			#if (platform_character_is(ON_GROUND) and abs(x_vel) > 0 and alarm[3] < 1): alarm[3] = floor(16/-x_vel)
@@ -2885,14 +2886,14 @@ func set_x_acceleration(): #--- Used for running left and right
 				# x_vel = 3
 				if (platform_character_is(ON_GROUND) and state != DUCKING):
 				
-					x_acc += 1  * get_physics_process_delta_time() * 30
-					push_timer += 10  * get_physics_process_delta_time() * 30
+					x_acc += 1
+					push_timer += 10
 					#if (not SS_Is_sound_playing(global.snd_push)): play_sound(global.snd_push)
 				
 			
 			elif (k_right_pushed_steps > 2 or col_solid_left) and (facing==RIGHT or Collision.approximately_zero(x_vel)):
 			
-				x_acc += run_acc  * get_physics_process_delta_time() * 30
+				x_acc += run_acc
 			
 			facing = RIGHT
 			#if (platform_character_is(ON_GROUND) and abs(x_vel) > 0 and alarm[3] < 1): alarm[3] = floor(16/x_vel)
@@ -2959,7 +2960,7 @@ func handle_ladder_climbing():
 func set_y_acceleration():
 	if (platform_character_is(IN_AIR) and state != HANGING):
 
-		y_acc += gravity_intensity * get_physics_process_delta_time() * 30
+		y_acc += gravity_intensity
 		
 func handle_landing():
 	# Player has landed
@@ -3100,12 +3101,12 @@ func handle_jumping():
 		jump_time = 0
 
 
-	if (jump_time < jump_time_total): jump_time += 1 * get_physics_process_delta_time() * 30
+	if (jump_time < jump_time_total): jump_time += 1
 	#let the character continue to jump
 	if (k_jump == false): jump_button_released = true #--- putting 'or' here as a simple fix
 	if (jump_button_released): jump_time = jump_time_total
 
-	gravity_intensity = (jump_time/jump_time_total) * grav
+	gravity_intensity = (float(jump_time)/float(jump_time_total)) * grav #--- putting these as float to not get 0
 	
 func handle_looking_up():
 	if (k_up and platform_character_is(ON_GROUND) and not col_ladder):
@@ -3419,13 +3420,13 @@ func calculate_friction():
 		
 			if (k_left): # run
 			
-				x_vel -= 0.1 * get_physics_process_delta_time() * 30
+				x_vel -= 0.1
 				x_vel_limit = 6
 				x_fric = friction_running_fast_x
 			
 			elif (k_right):
 			
-				x_vel += 0.1  * get_physics_process_delta_time() * 30
+				x_vel += 0.1
 				x_vel_limit = 6
 				x_fric = friction_running_fast_x
 			
@@ -3440,19 +3441,19 @@ func calculate_friction():
 			
 			elif (k_left and global.down_to_run): # run
 			
-				x_vel -= 0.1  * get_physics_process_delta_time() * 30
+				x_vel -= 0.1
 				x_vel_limit = 6
 				x_fric = friction_running_fast_x
 			
 			elif (k_right and global.down_to_run):
 			
-				x_vel += 0.1  * get_physics_process_delta_time() * 30
+				x_vel += 0.1
 				x_vel_limit = 6
 				x_fric = friction_running_fast_x
 			
 			else:
 			
-				x_vel *= 0.8  * get_physics_process_delta_time() * 30
+				x_vel *= 0.8
 				if (x_vel < 0.5): x_vel = 0
 				x_fric = 0.2
 				x_vel_limit = 3
@@ -3617,9 +3618,9 @@ func limit_acceleration():
 
 func apply_acceleration():
 	# applies the acceleration
-	x_vel += x_acc * get_physics_process_delta_time() * 30
-	if (dead or stunned): y_vel += 0.6 * get_physics_process_delta_time() * 30
-	else: y_vel += y_acc * get_physics_process_delta_time() * 30
+	x_vel += x_acc
+	if (dead or stunned): y_vel += 0.6
+	else: y_vel += y_acc
 
 func nullify_acceleration_values():
 	# nullifies the acceleration
@@ -3685,10 +3686,10 @@ func slope_movement_preparation():
 	if max_slope>0 and platform_character_is(ON_GROUND) and x_vel!=0:
 
 		slope_y_prev=position.y #----- changing for loop for now
-		for y in range(0, slope_y_prev - max_slope, -1):
+		for y in range(position.y, slope_y_prev - max_slope - 1, -1):
 			if col_top:
 				break
-		slope_change_in_y=slope_y_prev-position.y
+			slope_change_in_y=slope_y_prev-y
 
 	else:
 		slope_change_in_y=0
@@ -3869,7 +3870,6 @@ func move_to(x_vel, y_vel):
 	#0: x distance to move
 	#1: y distance to move
 	#*/
-	
 	var mt_x_prev=position.x
 	var mt_y_prev=position.y
 	##change the decimal arguments to integer variables with relation to time
@@ -3880,10 +3880,10 @@ func move_to(x_vel, y_vel):
 	if x_vel_frac!=0:
 		if round(1/x_vel_frac)!=0:
 			if int(time) % int(round(1/x_vel_frac))==0:
+				print(time)
 				x_vel_integer=1
 			else:
 				x_vel_integer=0
-
 	if y_vel_frac!=0:
 		if round(1/y_vel_frac)!=0:
 			if int(time) % int(round(1/y_vel_frac))==0:
@@ -3900,104 +3900,77 @@ func move_to(x_vel, y_vel):
 	y_vel_integer=round(y_vel_integer)
 	
 	#object is moving to the right
-	if x_vel>0:
-		var can_move = true
-		  
-		var solid_id=Collision.get_id_collision_right(1, self)
-		#if there is a collision with a solid:
-		if solid_id!= null:
-		
-			if gml.object_get_parent(solid_id) == 'moveable_solid' and Collision.can_push_moveable_solids(self):
-		  
-				#we must move the moveable solid, unless there is another solid (moveable or non-moveable) in it's way
-				var all_solids = gml.get_all_instances("solid")
-				for solid_instance in all_solids:
-			
-					if gml.place_meeting(solid_instance.x+1,solid_instance.y,'solid'):      #there will be a collision!
-						#--- is x here referring to the iterator or the node's x position? no idea. going with the position
+	if x_vel_integer>0:
+		for x in range(position.x, mt_x_prev + x_vel_integer, 1):
 			  
-			   
-						can_move = false
+			var solid_id=Collision.get_id_collision_right(1, self)
+			#if there is a collision with a solid:
+			if solid_id!= null:
+				if gml.object_get_parent(solid_id) == 'moveable_solid' and Collision.can_push_moveable_solids(self):
 			  
-					else:
-			  
-						solid_instance.position.x += 1 * get_physics_process_delta_time()             #we're free to move the moveable solid
-						if (not SS.is_sound_playing(global.snd_push)): Audio.play_sound(global.snd_push)
-			  
-			
-		  
-			else:
-		   
-				can_move = false
-		
-		if can_move:
-			position.x+= x_vel * get_physics_process_delta_time() * 30
+					#we must move the moveable solid, unless there is another solid (moveable or non-moveable) in it's way
+					var all_solids = gml.get_all_instances("solid")
+					for solid_instance in all_solids:
+						if gml.place_meeting(solid_instance.x+1,solid_instance.y,'solid'):      #there will be a collision!
+							#--- is x here referring to the iterator or the node's x position? no idea. going with the position
+							break
+						else:  
+							solid_instance.position.x += 1 * get_physics_process_delta_time() * 30         #we're free to move the moveable solid
+							if (not SS.is_sound_playing(global.snd_push)): Audio.play_sound(global.snd_push)
+
+				else:
+					break
+					
+			position.x += 1
 	  
 	#object is moving to the left
 	#if x_vel_integer<0:
-	if x_vel<0:
-		var can_move = true
-		
-		var solid_id = Collision.get_id_collision_left(1, self) # --- [FLAG] assuming this returns a node
-		#if there is a collision with a solid:
-		if solid_id!=null:
-		
-			if gml.object_get_parent(solid_id)== 'moveable_solid' and Collision.can_push_moveable_solids(self):
-		  
-			#we must move the moveable solid, unless there is another solid (moveable or non-moveable) in it's way
-				var all_solids = gml.get_all_instances("solid")
-				for solid_instance in all_solids:
-					
-					if solid_id.gml.place_meeting(solid_id.x-1,solid_id.y,'solid'):      #there will be a collision!
-				  
-				   
-						can_move = false
-				  
-					else:
-				  
-						solid_instance.position.x += 1 * get_physics_process_delta_time()             #we're free to move the moveable solid
-						if (not SS.is_sound_playing(global.snd_push)): Audio.play_sound(global.snd_push)
-			  
+	if x_vel_integer<0:
+		for x in range(position.x, mt_x_prev + x_vel_integer, -1):
+			var can_move = true
 			
-		  
-			else:
-		   
-				can_move = false
-		if can_move:
-			position.x+= x_vel * get_physics_process_delta_time() * 30
+			var solid_id = Collision.get_id_collision_left(1, self) # --- [FLAG] assuming this returns a node
+			#if there is a collision with a solid:
+			if solid_id!=null:
+			
+				if gml.object_get_parent(solid_id)== 'moveable_solid' and Collision.can_push_moveable_solids(self):
+			  
+				#we must move the moveable solid, unless there is another solid (moveable or non-moveable) in it's way
+					var all_solids = gml.get_all_instances("solid")
+					for solid_instance in all_solids:
+						if solid_id.gml.place_meeting(solid_id.x-1,solid_id.y,'solid'):      #there will be a collision!
+							break
+						else: 
+							solid_instance.position.x += 1 * get_physics_process_delta_time() * 30             #we're free to move the moveable solid
+							if (not SS.is_sound_playing(global.snd_push)): Audio.play_sound(global.snd_push)
+
+				else:
+					break
+
+			position.x -= 1
+			#position.x += mt_x_prev + x_vel_integer - position.x
+		#position.x += mt_x_prev + x_vel_integer - position.x * get_physics_process_delta_time() * 30
+		
 		
 	#object is moving down
-	if y_vel>0:
-		#var can_move = true
-		#
-		#if Collision.is_collision_bottom(1, self):
-			#can_move = false
-			#
-		#elif Collision.can_land_on_platforms(self):
-			#if Collision.is_collision_platform(self)==false and Collision.is_collision_platform_bottom(1, self) and k_down==0:
-				#can_move = false
-				#
-		#if can_move:
-			#if position.y < mt_y_prev + y_vel_integer:
-				#position.y+= round(y_vel * get_physics_process_delta_time() * 30)
-				#print(round(y_vel * get_physics_process_delta_time() * 30))
+	if y_vel_integer>0:
 		for y in range(position.y, mt_y_prev + y_vel_integer, 1):
 			if Collision.is_collision_bottom(1, self):
 				break
 			if Collision.can_land_on_platforms(self):
 				if Collision.is_collision_platform(self)==false and Collision.is_collision_platform_bottom(1, self) and k_down==0:
 					break
-			position.y = y
+					
+			position.y += 1
 		
 	  
 	#object is moving up
-	if y_vel<0:
-
-		if Collision.is_collision_top(1, self):
-			pass
-			
-		else:
-			position.y+= y_vel * get_physics_process_delta_time() * 30
+	if y_vel_integer<0:
+		for y in range(position.y, mt_y_prev + y_vel_integer, -1):
+			if Collision.is_collision_top(1, self):
+				break
+				
+			position.y -= 1
 
 #---------------------------------------------------------------------------------------- Test functions
 func character_size_test():
@@ -4014,10 +3987,40 @@ func character_size_test():
 		visible_rect.add_to_group('test_size')
 
 var timer_started = false
-var time = 0
+var time = 1
 func every_second_timer():
 	if timer_started == false:
 		timer_started = true
 		await get_tree().create_timer(1 / 30).timeout
 		time += 1
 		timer_started = false
+
+func move_to_test():
+	var times_per_second = 0
+	for x in range(1, 31):
+		#print('X: ' + str(x))
+		var x_vel_test = 2.5
+		var mt_x_prev=position.x
+		var mt_y_prev=position.y
+		##change the decimal arguments to integer variables with relation to time
+		var x_vel_frac=gml.frac(abs(x_vel_test))
+		' x_vel_frac=gml.frac(abs(x_vel_test)): ' + str(gml.frac(abs(x_vel_test)))
+		var y_vel_frac=gml.frac(abs(y_vel))
+		x_vel_integer=0
+		y_vel_integer=0
+		if x_vel_frac!=0:
+			if round(1/x_vel_frac)!=0:
+				if int(x) % int(round(1/x_vel_frac))==0:
+					times_per_second += 1
+					x_vel_integer=1
+				else:
+					x_vel_integer=0
+		if y_vel_frac!=0:
+			if round(1/y_vel_frac)!=0:
+				if int(x) % int(round(1/y_vel_frac))==0:
+					y_vel_integer=1
+				else:
+					y_vel_integer=0
+		x_vel_integer+=floor(abs(x_vel_test))
+		y_vel_integer+=floor(abs(y_vel))
+	#print(times_per_second)
