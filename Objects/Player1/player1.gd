@@ -374,6 +374,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
+	test_collision_right()
 	every_second_timer()
 	#character_size_test()
 	#------------------------
@@ -3880,7 +3881,6 @@ func move_to(x_vel, y_vel):
 	if x_vel_frac!=0:
 		if round(1/x_vel_frac)!=0:
 			if int(time) % int(round(1/x_vel_frac))==0:
-				print(time)
 				x_vel_integer=1
 			else:
 				x_vel_integer=0
@@ -4024,3 +4024,9 @@ func move_to_test():
 		x_vel_integer+=floor(abs(x_vel_test))
 		y_vel_integer+=floor(abs(y_vel))
 	#print(times_per_second)
+
+func test_collision_right():
+	if Input.is_action_just_pressed("debug"):
+		#var collision = Collision.get_id_collision_right(1, self)
+		gml.collision_line(514,159,514,169,'solid',1,1)
+		#print(collision)

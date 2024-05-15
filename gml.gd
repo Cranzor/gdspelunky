@@ -233,14 +233,19 @@ func collision_line(x1,y1,x2,y2,obj,prec,notme):
 	var m_new = 2 * (y2 - y1)
 	var slope_error_new = m_new - (x2 - x1)
 	var y = y1
-	for x in range(x1, x2+1):
-		var point = Vector2(x, y)
-		all_points.append(point)
-		slope_error_new = slope_error_new + m_new
-		
-		if (slope_error_new >= 0): 
-			y = y+1
-			slope_error_new = slope_error_new - 2 * (x2 - x1) 
+	if x1 == x2:
+		for y_point in range(y1, y2 + 1):
+			var point = Vector2(x1, y_point)
+			all_points.append(point)
+	else:
+		for x in range(x1, x2+1):
+			var point = Vector2(x, y)
+			all_points.append(point)
+			slope_error_new = slope_error_new + m_new
+			
+			if (slope_error_new >= 0): 
+				y = y+1
+				slope_error_new = slope_error_new - 2 * (x2 - x1) 
 
 	if instanced_object_locations.has(obj):
 		for point in all_points:
@@ -259,8 +264,8 @@ func collision_line(x1,y1,x2,y2,obj,prec,notme):
 					intersecting = point_rect.intersects(obj_rect)
 					#-------------------
 					#print(location)
-					#if location == Vector2(510, 160):
-						#print('hi')
+					if location == Vector2(510, 160):
+						print('hi')
 					#-------------------
 					if intersecting == true:
 						#var visible_rect = ColorRect.new()
