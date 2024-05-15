@@ -215,6 +215,45 @@ var s_bombs_get
 var s_rope_get
 var s_damsel_exit2
 
+var s_tunnel_look_run_l
+var s_tunnel_run_l
+var s_tunnel_duck_l
+var s_tunnel_crawl_l
+var s_tunnel_look_l
+var s_tunnel_jump_l
+var s_tunnel_hang_l
+var s_tunnel_push_l
+var s_tunnel_dt_hl
+var s_tunnel_climb3
+var s_tunnel_climb2
+var s_tunnel_climb
+var s_damsel_run_l
+var s_damsel_duck_l
+var s_damsel_crawl_l
+var s_damsel_look_l
+var s_damsel_die_lr
+var s_damsel_hang_l
+var s_damsel_push_l
+var s_damsel_dt_hl
+var s_damsel_climb3
+var s_damsel_climb2
+var s_damsel_climb
+var s_stand_left
+var s_look_run_l
+var s_run_left
+var s_duck_left
+var s_crawl_left
+var s_look_left
+var s_jump_left
+var s_fall_left
+var s_hang_left
+var s_push_left
+var s_climb_up3
+var s_climb_up2
+var s_climb_up
+var s_duck_to_hang_l
+
+
 var k_bomb_pressed #--- only found in step
 var k_rope_pressed #--- only found in step
 var in_game #--- only found in step
@@ -370,7 +409,6 @@ func _ready():
 	x_change2 = 12
 
 	if (InLevel.is_room("r_olmec")): active = false
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
@@ -3537,7 +3575,7 @@ func running_and_duck_to_hang_behavior():
 		
 		# ledge flip
 		if (state == DUCKING and abs(x_vel) < 3 and facing == LEFT and
-			gml.collision_point(position.x, position.y+9, solid, 0, 0) and not gml.collision_point(position.x-1, position.y+9, solid, 0, 0) and k_left):
+			gml.collision_point(position.x, position.y+9, 'solid', 0, 0) and not gml.collision_point(position.x-1, position.y+9, 'solid', 0, 0) and k_left):
 		
 			state = DUCKTOHANG
 			
@@ -3561,7 +3599,7 @@ func running_and_duck_to_hang_behavior():
 			
 		
 		elif (state == DUCKING and abs(x_vel) < 3 and facing == RIGHT and
-			gml.collision_point(position.x, position.y+9, solid, 0, 0) and not gml.collision_point(position.x+1, position.y+9, solid, 0, 0) and k_right):
+			gml.collision_point(position.x, position.y+9, 'solid', 0, 0) and not gml.collision_point(position.x+1, position.y+9, 'solid', 0, 0) and k_right):
 		
 			state = DUCKTOHANG
 			
@@ -3852,7 +3890,199 @@ func platform_character_is(character_trait): #--- putting this here instead of P
 	return 0
 
 func character_sprite():
-	pass
+	#
+	# character_sprite()
+	#
+	# Sets the sprite of the character depending on his/her status
+	#
+
+	#/**********************************************************************************
+		#Copyright (c) 2008, 2009 Derek Yu and Mossmouth, LLC
+		#
+		#This file is part of Spelunky.
+#
+		#You can redistribute and/or %ify Spelunky, including its source code, under
+		#the terms of the Spelunky User License.
+#
+		#Spelunky is distributed in the hope that it will be entertaining and useful,
+		#but WITHOUT WARRANTY.  Please see the Spelunky User License for more details.
+#
+		#The Spelunky User License should be available in "Game Information", which
+		#can be found in the Resource Explorer, or as an external file called COPYING.
+		#If not, please obtain a new copy of Spelunky from <http:#spelunkyworld.com/>
+		#
+	#***********************************************************************************/
+
+	if (global.is_tunnel_man and not stunned and not whipping):
+
+		if (state == STANDING):
+		
+			if (not gml.collision_point(position.x-2, position.y+9, "solid", 0, 0)):
+			
+				image_speed = 0.6
+				sprite_index = s_tunnel_whoa_l
+			
+			else: sprite_index = s_tunnel_left
+		
+		if (state == RUNNING):
+		 
+			if (k_up): sprite_index = s_tunnel_look_run_l
+			else: sprite_index = s_tunnel_run_l
+		
+		if (state == DUCKING):
+		
+			if (x_vel == 0): sprite_index = s_tunnel_duck_l
+			elif (abs(x_vel) < 3): sprite_index = s_tunnel_crawl_l
+			else: sprite_index = s_tunnel_run_l
+		
+		if (state == LOOKING_UP):
+		
+			if (abs(x_vel)>0): sprite_index = s_tunnel_run_l
+			else: sprite_index = s_tunnel_look_l
+		
+		if (state == JUMPING):
+			sprite_index = s_tunnel_jump_l
+		if (state == FALLING and state_prev == FALLING and state_prev_prev == FALLING):
+			sprite_index = s_tunnel_fall_l
+		if (state == HANGING):
+			sprite_index = s_tunnel_hang_l
+		if (push_timer > 20):
+			sprite_index = s_tunnel_push_l
+		if (state == DUCKTOHANG):
+			sprite_index = s_tunnel_dt_hl
+		if (state == CLIMBING):
+		
+			if (gml.collision_point(position.x,position.y,'rope',0,0)):
+			
+				if (k_down): sprite_index = s_tunnel_climb3
+				else: sprite_index = s_tunnel_climb2
+			
+			else: sprite_index = s_tunnel_climb
+		
+
+	elif (global.is_damsel and not stunned and not whipping):
+
+		if (state == STANDING):
+		
+			if (not gml.collision_point(position.x-2, position.y+9, "solid", 0, 0)):
+			
+				image_speed = 0.6
+				sprite_index = s_damsel_whoa_l
+				#/*
+				#if (hold_item and whoa_timer < 1):
+				#
+					#hold_item.held = false
+					#if (facing == LEFT): hold_item.x_vel = -2
+					#else: hold_item.x_vel = 2
+					#if (hold_item.type == "Damsel"): Audio.play_sound(global.snd_damsel)
+					#if (hold_item.type == pickup_item_type):
+					#
+						#hold_item = 0
+						#pickup_item_type = ""
+					#
+					#else: CharacterScripts.scr_hold_item(pickup_item_type)
+				#
+				#*/
+			
+			else: sprite_index = s_damsel_left
+		
+		if (state == RUNNING):
+		 
+			if (k_up): sprite_index = s_damsel_run_l
+			else: sprite_index = s_damsel_run_l
+		
+		if (state == DUCKING):
+		
+			if (x_vel == 0): sprite_index = s_damsel_duck_l
+			elif (abs(x_vel) < 3): sprite_index = s_damsel_crawl_l
+			else: sprite_index = s_damsel_run_l
+		
+		if (state == LOOKING_UP):
+		
+			if (abs(x_vel)>0): sprite_index = s_damsel_run_l
+			else: sprite_index = s_damsel_look_l
+		
+		if (state == JUMPING):
+			sprite_index = s_damsel_die_lr
+		if (state == FALLING and state_prev == FALLING and state_prev_prev == FALLING):
+			sprite_index = s_damsel_fall_l
+		if (state == HANGING):
+			sprite_index = s_damsel_hang_l
+		if (push_timer > 20):
+			sprite_index = s_damsel_push_l
+		if (state == DUCKTOHANG):
+			sprite_index = s_damsel_dt_hl
+		if (state == CLIMBING):
+		
+			if (gml.collision_point(position.x,position.y,'rope',0,0)):
+			
+				if (k_down): sprite_index = s_damsel_climb3
+				else: sprite_index = s_damsel_climb2
+			
+			else: sprite_index = s_damsel_climb
+		
+
+	elif (not stunned and not whipping):
+		 
+		if (state == STANDING):
+		
+			if (not gml.collision_point(position.x-2, position.y+9, "solid", 0, 0)):
+			
+				image_speed = 0.6
+				sprite_index = s_whoa_left
+				#/*
+				#if (hold_item and whoa_timer < 1):
+				#
+					#hold_item.held = false
+					#if (facing == LEFT): hold_item.x_vel = -2
+					#else: hold_item.x_vel = 2
+					#if (hold_item.type == "Damsel"): Audio.play_sound(global.snd_damsel)
+					#if (hold_item.type == pickup_item_type):
+					#
+						#hold_item = 0
+						#pickup_item_type = ""
+					#
+					#else: CharacterScripts.scr_hold_item(pickup_item_type)
+				#
+				#*/
+			
+			else: gml.sprite_index('s_stand_left', self)
+		
+		if (state == RUNNING):
+		 
+			if (k_up): sprite_index = s_look_run_l
+			else: gml.sprite_index('s_run_left', self)
+		
+		if (state == DUCKING):
+		
+			if (x_vel == 0): gml.sprite_index('s_duck_left', self)
+			elif (abs(x_vel) < 3): gml.sprite_index('s_crawl_left', self)
+			else: sprite_index = s_run_left
+		
+		if (state == LOOKING_UP):
+		
+			if (abs(x_vel)>0): sprite_index = s_look_run_l
+			else: sprite_index = s_look_left
+		
+		if (state == JUMPING):
+			gml.sprite_index('s_jump_left', self)
+		if (state == FALLING and state_prev == FALLING and state_prev_prev == FALLING):
+			sprite_index = s_fall_left
+		if (state == HANGING):
+			gml.sprite_index('s_hang_left', self)
+		if (push_timer > 20):
+			sprite_index = s_push_left
+		if (state == CLIMBING):
+		
+			if (gml.collision_point(position.x,position.y,'rope',0,0)):
+			
+				if (k_down): sprite_index = s_climb_up3
+				else: sprite_index = s_climb_up2
+			
+			else: sprite_index = s_climb_up
+		
+		if (state == DUCKTOHANG):
+			sprite_index = s_duck_to_hang_l
 
 func move_to(x_vel, y_vel):
 	#/*
@@ -4028,5 +4258,6 @@ func move_to_test():
 func test_collision_right():
 	if Input.is_action_just_pressed("debug"):
 		#var collision = Collision.get_id_collision_right(1, self)
-		gml.collision_line(514,159,514,169,'solid',1,1)
+		#gml.collision_line(514,159,514,169,'solid',1,1)
 		#print(collision)
+		gml.sprite_index('default', self)

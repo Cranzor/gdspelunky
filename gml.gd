@@ -264,8 +264,8 @@ func collision_line(x1,y1,x2,y2,obj,prec,notme):
 					intersecting = point_rect.intersects(obj_rect)
 					#-------------------
 					#print(location)
-					if location == Vector2(510, 160):
-						print('hi')
+					#if location == Vector2(510, 160):
+						#print('hi')
 					#-------------------
 					if intersecting == true:
 						#var visible_rect = ColorRect.new()
@@ -281,6 +281,10 @@ func collision_line(x1,y1,x2,y2,obj,prec,notme):
 
 func instance_activate_object(obj: String):
 	pass
+	
+func sprite_index(sprite_name: String, node):
+	var sprite = node.get_node('AnimatedSprite2D')
+	sprite.play(sprite_name)
 
 #---------------------------------------
 func background_index(background: String): #Changing this to a function
