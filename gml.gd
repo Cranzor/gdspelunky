@@ -244,27 +244,33 @@ func collision_line(x1,y1,x2,y2,obj,prec,notme):
 
 	if instanced_object_locations.has(obj):
 		for point in all_points:
-			var point_rect = Rect2(Vector2(point.x, point.y), Vector2(1, 1))
-			#var visible_rect2 = ColorRect.new()
-			#get_tree().current_scene.add_child(visible_rect2)
-			#visible_rect2.global_position = Vector2(point.x, point.y)
-			#visible_rect2.size = Vector2(1, 1)
-			#visible_rect2.color = Color(0.922, 0.518, 0.188, 0.5)
-			
-			for entry in instanced_object_locations[obj]:
-				var location = entry[0]
-				var obj_rect = Rect2(location, Vector2(16, 16))
+			if intersecting == false:
+				var point_rect = Rect2(Vector2(point.x, point.y), Vector2(1, 1))
+				#var visible_rect2 = ColorRect.new()
+				#get_tree().current_scene.add_child(visible_rect2)
+				#visible_rect2.global_position = Vector2(point.x, point.y)
+				#visible_rect2.size = Vector2(1, 1)
+				#visible_rect2.color = Color(0.922, 0.518, 0.188, 0.5)
 				
-				intersecting = point_rect.intersects(obj_rect)
-				if intersecting == true:
-					#var visible_rect = ColorRect.new()
-					#get_tree().current_scene.add_child(visible_rect)
-					#visible_rect.global_position = Vector2(location.x, location.y)
-					#visible_rect.size = Vector2(16, 16)
-					#visible_rect.color = Color(0.322, 0.518, 0.188, 0.5)
-					#visible_rect.add_to_group('test_size')
+				for entry in instanced_object_locations[obj]:
+					var location = entry[0]
+					var obj_rect = Rect2(location, Vector2(16, 16))
 					
-					break
+					intersecting = point_rect.intersects(obj_rect)
+					#-------------------
+					#print(location)
+					#if location == Vector2(510, 160):
+						#print('hi')
+					#-------------------
+					if intersecting == true:
+						#var visible_rect = ColorRect.new()
+						#get_tree().current_scene.add_child(visible_rect)
+						#visible_rect.global_position = Vector2(location.x, location.y)
+						#visible_rect.size = Vector2(16, 16)
+						#visible_rect.color = Color(0.322, 0.518, 0.188, 0.5)
+						#visible_rect.add_to_group('test_size')
+						
+						break
 	
 	return intersecting
 
