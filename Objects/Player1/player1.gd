@@ -303,6 +303,23 @@ var alarm_9_active
 var alarm_10_active
 var alarm_11_active
 
+var test = false
+func _process(delta):
+	var sprite_distance = Vector2($AnimatedSprite2D.position.x, $AnimatedSprite2D.position.y).distance_to(Vector2(position.x, position.y))
+	var sprite_position = Vector2($AnimatedSprite2D.position.x, $AnimatedSprite2D.position.y)
+	var tween = create_tween()
+	
+	#if sprite_distance > 10:
+		#$AnimatedSprite2D.position = position
+	#else:
+		#tween.tween_property($AnimatedSprite2D, "position", position, 0.1)
+	tween.tween_property($AnimatedSprite2D, "position", position, 0.05).set_trans(Tween.TRANS_LINEAR)
+	#$AnimatedSprite2D.position = position
+	
+	#if test == true:
+		#$AnimatedSprite2D.position.x += (2.5 * 30) * delta
+	
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	move_to_test()
@@ -4260,4 +4277,5 @@ func test_collision_right():
 		#var collision = Collision.get_id_collision_right(1, self)
 		#gml.collision_line(514,159,514,169,'solid',1,1)
 		#print(collision)
-		gml.sprite_index('default', self)
+		#gml.sprite_index('default', self)
+		test = true

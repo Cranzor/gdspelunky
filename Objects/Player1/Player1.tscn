@@ -169,6 +169,7 @@ animations = [{
 script = ExtResource("1_xnwjf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+top_level = true
 sprite_frames = SubResource("SpriteFrames_06flm")
 animation = &"s_crawl_left"
 frame = 8
