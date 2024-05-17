@@ -303,17 +303,14 @@ var alarm_9_active
 var alarm_10_active
 var alarm_11_active
 
-var test = false
-var is_moving_x = false
-var is_moving_y = false
+var test = true
 var final_x_vel = 0
 var final_y_vel = 0
 
 func _process(delta):
 	var sprite_distance = Vector2($AnimatedSprite2D.position.x, $AnimatedSprite2D.position.y).distance_to(Vector2(position.x, position.y))
-	var sprite_position = Vector2($AnimatedSprite2D.position.x, $AnimatedSprite2D.position.y)
 	
-	var tween = create_tween()
+	#var tween = create_tween()
 	
 	#if sprite_distance > 10:
 		#$AnimatedSprite2D.position = position
@@ -325,10 +322,8 @@ func _process(delta):
 	$AnimatedSprite2D.position.x += (final_x_vel * 30) * delta
 	$AnimatedSprite2D.position.y += (final_y_vel * 30) * delta
 	
-	
-	print('node position: ' + str(position))
-	print('sprite position: ' + str($AnimatedSprite2D.position))
-	print(final_x_vel)
+	#if $AnimatedSprite2D.position.y > position.y:
+		#$AnimatedSprite2D.position.y = position.y
 	
 	#$AnimatedSprite2D.position.y = clamp($AnimatedSprite2D.position.y, position.y - 1, position.y + 1)
 	#$AnimatedSprite2D.position.x = clamp($AnimatedSprite2D.position.x, position.x - .9, position.x + .9)	
@@ -442,6 +437,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
+	print('node position: ' + str(position))
+	print('sprite position: ' + str($AnimatedSprite2D.position))
+	print("final x vel: " + str(final_x_vel), " final y vel: " + str(final_y_vel))
 	test_collision_right()
 	every_second_timer()
 	#character_size_test()
@@ -4176,21 +4174,16 @@ func move_to(x_vel, y_vel):
 					for solid_instance in all_solids:
 						if gml.place_meeting(solid_instance.x+1,solid_instance.y,'solid'):      #there will be a collision!
 							#--- is x here referring to the iterator or the node's x position? no idea. going with the position
-							is_moving_x = false
-							final_x_vel = 0
 							break
 						else:  
 							solid_instance.position.x += 1 * get_physics_process_delta_time() * 30         #we're free to move the moveable solid
 							if (not SS.is_sound_playing(global.snd_push)): Audio.play_sound(global.snd_push)
 
 				else:
-					is_moving_x = false
-					final_x_vel = 0
 					break
 					
 			position.x += 1
 			final_x_vel += 1
-			is_moving_x = true
 	  
 	#object is moving to the left
 	#if x_vel_integer<0:
@@ -4208,21 +4201,16 @@ func move_to(x_vel, y_vel):
 					var all_solids = gml.get_all_instances("solid")
 					for solid_instance in all_solids:
 						if solid_id.gml.place_meeting(solid_id.x-1,solid_id.y,'solid'):      #there will be a collision!
-							is_moving_x = false
-							final_x_vel = 0
 							break
 						else: 
 							solid_instance.position.x += 1 * get_physics_process_delta_time() * 30             #we're free to move the moveable solid
 							if (not SS.is_sound_playing(global.snd_push)): Audio.play_sound(global.snd_push)
 
 				else:
-					is_moving_x = false
-					final_x_vel = 0
 					break
 
 			position.x -= 1
 			final_x_vel -= 1
-			is_moving_x = true
 			#position.x += mt_x_prev + x_vel_integer - position.x
 		#position.x += mt_x_prev + x_vel_integer - position.x * get_physics_process_delta_time() * 30
 		
@@ -4231,32 +4219,32 @@ func move_to(x_vel, y_vel):
 	if y_vel_integer>0:
 		for y in range(position.y, mt_y_prev + y_vel_integer, 1):
 			if Collision.is_collision_bottom(1, self):
-				is_moving_y = false
-				final_y_vel = 0
 				break
 			if Collision.can_land_on_platforms(self):
 				if Collision.is_collision_platform(self)==false and Collision.is_collision_platform_bottom(1, self) and k_down==0:
-					is_moving_y = false
-					final_y_vel = 0
 					break
 					
 			position.y += 1
 			final_y_vel += 1
-			is_moving_y = true
+			
 		
 	  
 	#object is moving up
 	if y_vel_integer<0:
 		for y in range(position.y, mt_y_prev + y_vel_integer, -1):
 			if Collision.is_collision_top(1, self):
-				is_moving_y = false
-				final_y_vel = 0
 				break
 				
 			position.y -= 1
 			final_y_vel -= 1
-			is_moving_y = true
 
+	# --- sprite position exactly matches character position if character hasn't moved within the frame
+	if test:
+		if mt_x_prev == position.x:
+			$AnimatedSprite2D.position.x = position.x
+			print(true)
+		if mt_y_prev == position.y:
+			$AnimatedSprite2D.position.y = position.y
 #---------------------------------------------------------------------------------------- Test functions
 func character_size_test():
 	var all_test_rects = get_tree().get_nodes_in_group('test_size')
@@ -4317,4 +4305,5 @@ func test_collision_right():
 		#print(collision)
 		#gml.sprite_index('default', self)
 		$AnimatedSprite2D.position = position
+		test = !test
 		
