@@ -133,7 +133,7 @@ func tile_add(background,left,top,width,height,x,y,depth): #return value of tile
 func distance_tobject(obj: String, x, y): #Make this more accurate with this info https://manual.gamemaker.io/monthly/en/GameMaker_Language/GML_Reference/Maths_And_Numbers/Angles_And_Distance/distance_to_object.htm
 	if instance_exists(obj) == true:
 		var comparison_obj_vector2 = instance_nearest(x, y, obj)
-		var distance = Vector2(x, y).distance_to(Vector2(comparison_obj_vector2.x, comparison_obj_vector2.y))
+		var distance = Vector2(x, y).distance_to(Vector2(comparison_obj_vector2.position.x, comparison_obj_vector2.position.y))
 		return distance
 	else: #------------------ testing with this for now. not exactly sure how GML handles this
 		return -1
@@ -285,6 +285,9 @@ func instance_activate_object(obj: String):
 func sprite_index(sprite_name: String, node):
 	var sprite = node.get_node('AnimatedSprite2D')
 	sprite.play(sprite_name)
+
+func get_sprite_index(node):
+	pass
 
 #---------------------------------------
 func background_index(background: String): #Changing this to a function

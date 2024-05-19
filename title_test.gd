@@ -404,11 +404,11 @@ func _ready():
 	#gml.instance_create(408, 224, copy)
 	#------------------------------------------- adding this for testing
 	gml.instance_create(510, 80, player)
-	gml.instance_create(510, 160, brick)
+	gml.instance_create(480, 168, brick)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var player = get_tree().get_nodes_in_group("player1")
 	if player:
 		$Label.text = str($Player1.state)
-	pass
+	$FrameRate.text = str(Engine.get_frames_per_second())

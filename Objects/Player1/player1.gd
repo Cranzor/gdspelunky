@@ -291,15 +291,11 @@ var slope_change_in_y
 var y_prev_high
 #------------------------------------------------------------------
 
+var alarm_0_active
 var alarm_1_active
 var alarm_2_active
 var alarm_3_active
 var alarm_4_active
-var alarm_5_active
-var alarm_6_active
-var alarm_7_active
-var alarm_8_active
-var alarm_9_active
 var alarm_10_active
 var alarm_11_active
 
@@ -437,20 +433,23 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	print('node position: ' + str(position))
-	print('sprite position: ' + str($AnimatedSprite2D.position))
-	print("final x vel: " + str(final_x_vel), " final y vel: " + str(final_y_vel))
+	#print('node position: ' + str(position))
+	#print('sprite position: ' + str($AnimatedSprite2D.position))
+	#print("final x vel: " + str(final_x_vel), " final y vel: " + str(final_y_vel))
 	test_collision_right()
 	every_second_timer()
 	#character_size_test()
 	#------------------------
 	
 	step_function_1() #--- Miscellaneous functions related to setting player values and handling some actions
-	#step_function_2() #--- Related to player actions and setting relevant animations. Starting game and exiting game are also here 
-	#step_function_3() #--- Functions for when the player takes damage
-	#step_function_4() #--- Player death functions
-	#step_function_5() #--- Caps values for when the player blinks when damaged
-	#step_function_6() #--- Functions handling the player collecting various items
+	step_function_2() #--- Related to player actions and setting relevant animations. Starting game and exiting game are also here 
+	step_function_3() #--- Functions for when the player takes damage
+	step_function_4() #--- Player death functions
+	step_function_5() #--- Caps values for when the player blinks when damaged
+	step_function_6() #--- Functions handling the player collecting various items
+	
+	end_step()
+	draw()
 
 func step_function_1():
 	prevent_player_death()
@@ -3839,8 +3838,140 @@ func set_image_speed():
 	#limit the image_speed at 1 so the animation always looks good
 	if (image_speed > 1): image_speed = 1
 
+func alarm_0(frames):
+	if alarm_0_active == false:
+		if frames > 0:
+			alarm_0_active = true
+			var alarm_value = frames
+			var countdown_time = frames / 30
+			alarm_timeout(countdown_time)
+			
+			
+			if (gml.is_room("r_tutorial")):
+
+			# do nothing
+				pass
+				
+			elif (global.dark_level):
+
+				if (global.has_crown): global.message = "THE HEDJET SHINES BRIGHTLY."
+				else: global.message = "I CAN'T SEE A THING!"
+				if (global.has_crown): global.message2 = ""
+				else: global.message2 = "I'D BETTER USE THESE FLARES!"
+				global.message_timer = 200
+				alarm_1(210)
+
+			elif (global.black_market):
+
+				global.message = "WELCOME TO THE BLACK MARKET!"
+				global.message2 = ""
+				global.message_timer = 200
+				alarm_1(210)
+
+			elif (global.snake_pit):
+
+				global.message = "I HEAR SNAKES... I HATE SNAKES!"
+				global.message2 = ""
+				global.message_timer = 200
+
+			elif (global.cemetary):
+
+				global.message = "THE DEAD ARE RESTLESS!"
+				global.message2 = ""
+				global.message_timer = 200
+				if (global.lake): alarm_1(210)
+
+			elif (global.lake):
+
+				global.message = "I CAN HEAR RUSHING WATER..."
+				global.message2 = ""
+				global.message_timer = 200
+
+			elif (global.yeti_lair):
+
+				global.message = "IT SMELLS LIKE WET FUR IN HERE!"
+				global.message2 = ""
+				global.message_timer = 200
+
+			elif (global.alien_craft):
+
+				global.message = "THERE'S A PSYCHIC PRESENCE HERE!"
+				global.message2 = ""
+				global.message_timer = 200
+
+			elif (global.city_of_gold):
+
+				global.message = "IT'S THE LEGENDARY CITY OF GOLD!"
+				global.message2 = ""
+				global.message_timer = 200
+				if (global.sacrifice_pit): alarm_1(210)
+
+			elif (global.sacrifice_pit):
+
+				global.message = "I CAN HEAR PRAYERS TO KALI!"
+				global.message2 = ""
+				global.message_timer = 200
+
+			alarm_0_active = false
+
 func alarm_1(frames):
-	pass
+	if alarm_1_active == false:
+		if frames > 0:
+			alarm_1_active = true
+			var alarm_value = frames
+			var countdown_time = frames / 30
+			alarm_timeout(countdown_time)
+			
+			if (gml.is_room("r_tutorial")):
+
+				# do nothing
+				pass
+
+			elif (global.snake_pit):
+
+				global.message = "I HEAR SNAKES... I HATE SNAKES!"
+				global.message2 = ""
+				global.message_timer = 200
+
+			elif (global.cemetary and global.dark_level):
+
+				global.message = "THE DEAD ARE RESTLESS!"
+				global.message2 = ""
+				global.message_timer = 200
+				if (global.lake): alarm_4(210)
+
+			elif (global.lake):
+
+				global.message = "I CAN HEAR RUSHING WATER..."
+				global.message2 = ""
+				global.message_timer = 200
+
+			elif (global.yeti_lair):
+
+				global.message = "IT SMELLS LIKE WET FUR IN HERE!"
+				global.message2 = ""
+				global.message_timer = 200
+
+			elif (global.alien_craft):
+
+				global.message = "THERE'S A PSYCHIC PRESENCE HERE!"
+				global.message2 = ""
+				global.message_timer = 200
+
+			elif (global.city_of_gold):
+
+				global.message = "IT'S THE LEGENDARY CITY OF GOLD!"
+				global.message2 = ""
+				global.message_timer = 200
+				if (global.sacrifice_pit): alarm_4(210)
+
+			elif (global.sacrifice_pit):
+
+				global.message = "I CAN HEAR PRAYERS TO KALI!"
+				global.message2 = ""
+				global.message_timer = 200
+			
+			alarm_1_active = false
 
 func alarm_2(frames):
 	if alarm_2_active == false:
@@ -3849,35 +3980,78 @@ func alarm_2(frames):
 			var alarm_value = frames
 			var countdown_time = frames / 30
 			alarm_timeout(countdown_time)
-			#code here
+			
+			if (climb_snd_toggle): Audio.play_sound(global.snd_climb1)
+			else: Audio.play_sound(global.snd_climb2)
+			climb_snd_toggle = not climb_snd_toggle
+			
 			alarm_2_active = false
 			
 func alarm_3(frames):
-	pass
+	if alarm_3_active == false:
+		if frames > 0:
+			alarm_3_active = true
+			var alarm_value = frames
+			var countdown_time = frames / 30
+			alarm_timeout(countdown_time)
+			
+			if (walk_snd_toggle): Audio.play_sound(global.snd_step1)
+			else: Audio.play_sound(global.snd_step2)
+			walk_snd_toggle = not walk_snd_toggle
+			
+			alarm_3_active = false
 
 func alarm_4(frames):
-	pass
-	
-func alarm_5(frames):
-	pass
-	
-func alarm_6(frames):
-	pass
+	if alarm_4_active == false:
+		if frames > 0:
+			alarm_4_active = true
+			var alarm_value = frames
+			var countdown_time = frames / 30
+			alarm_timeout(countdown_time)
+			
+			if (global.lake):
 
-func alarm_7(frames):
-	pass
+				global.message = "YOU HEAR RUSHING WATER..."
+				global.message2 = ""
+				global.message_timer = 200
 
-func alarm_8(frames):
-	pass
+			elif (global.sacrifice_pit):
 
-func alarm_9(frames):
-	pass
+				global.message = "I CAN HEAR PRAYERS TO KALI!"
+				global.message2 = ""
+				global.message_timer = 200
+			
+			alarm_4_active = false
 
 func alarm_10(frames):
-	pass
+	if alarm_10_active == false:
+		if frames > 0:
+			alarm_10_active = true
+			var alarm_value = frames
+			var countdown_time = frames / 30
+			alarm_timeout(countdown_time)
+			
+			var obj = gml.instance_create(position.x+randi_range(0,3)-randi_range(0,3), position.y+randi_range(0,3)-randi_range(0,3), "flare_spark")
+			obj.y_vel = randi_range(1,3)
+			obj.x_vel = randi_range(0,3) - randi_range(0,3)
+			Audio.play_sound(global.snd_jetpack)
+			
+			alarm_10_active = false
 
 func alarm_11(frames):
-	pass
+	if alarm_11_active == false:
+		if frames > 0:
+			alarm_11_active = true
+			var alarm_value = frames
+			var countdown_time = frames / 30
+			alarm_timeout(countdown_time)
+			
+			if (hold_arrow > 0):
+
+				hold_arrow_toggle = not hold_arrow_toggle
+				alarm_11(1)
+			
+			alarm_11_active = false
 
 func alarm_timeout(time):
 	await get_tree().create_timer(time).timeout
@@ -4175,7 +4349,7 @@ func move_to(x_vel, y_vel):
 						if gml.place_meeting(solid_instance.x+1,solid_instance.y,'solid'):      #there will be a collision!
 							#--- is x here referring to the iterator or the node's x position? no idea. going with the position
 							break
-						else:  
+						else:
 							solid_instance.position.x += 1 * get_physics_process_delta_time() * 30         #we're free to move the moveable solid
 							if (not SS.is_sound_playing(global.snd_push)): Audio.play_sound(global.snd_push)
 
@@ -4202,7 +4376,7 @@ func move_to(x_vel, y_vel):
 					for solid_instance in all_solids:
 						if solid_id.gml.place_meeting(solid_id.x-1,solid_id.y,'solid'):      #there will be a collision!
 							break
-						else: 
+						else:
 							solid_instance.position.x += 1 * get_physics_process_delta_time() * 30             #we're free to move the moveable solid
 							if (not SS.is_sound_playing(global.snd_push)): Audio.play_sound(global.snd_push)
 
@@ -4242,7 +4416,7 @@ func move_to(x_vel, y_vel):
 	if test:
 		if mt_x_prev == position.x:
 			$AnimatedSprite2D.position.x = position.x
-			print(true)
+
 		if mt_y_prev == position.y:
 			$AnimatedSprite2D.position.y = position.y
 #---------------------------------------------------------------------------------------- Test functions
@@ -4306,4 +4480,334 @@ func test_collision_right():
 		#gml.sprite_index('default', self)
 		$AnimatedSprite2D.position = position
 		test = !test
+
+func end_step():
+	if (hold_item):
+
+		if (state == CLIMBING and (global.has_jetpack or global.has_cape)): hold_item.depth = 51
+		else: hold_item.depth = 0
+
+
+	if (state == DUCKTOHANG and sprite_index != s_duck_to_hang_l and sprite_index != s_damsel_dt_hl and sprite_index != s_tunnel_dt_hl):
+
+		state = STANDING
+
+func draw():
+	character_draw_event()
+	
+func key_backspace_pressed(): #--- debug function that is commented out
+	# debug
+
+	#/*
+	#Audio.stop_all_music()
+	#global.tofu = true
+	#global.game_start = true
+	#global.curr_level = 16
+	#get_tree().change_scene("res://r_olmec.tscn")
+	#*/
+	pass
+
+func key_enter_pressed(): #--- debug function that is commented out
+	# DEBUG
+
+	#/*
+	#global.money = 200000
+	#global.kills = 120
+	#global.damsels = 8
+	#*/
+
+	# global.murderer = 1
+	# gml.instance_create(position.x-32, position.y, "shotgun")
+	# gml.instance_create(position.x-32, position.y, "pistol")
+	# gml.instance_create(position.x, position.y, "magma_man")
+	# global.money += 100000
+	pass
+
+func character_draw_event():
+	#/*
+	#This event should be placed in the draw event of the platform character.
+	#*/
+	#draws the sprite
+	var draw = true
+	if (facing == RIGHT): $AnimatedSprite2D.flip_h = true
+	else: $AnimatedSprite2D.flip_h = false
+
+	#if (blink_toggle != 1):
+#
+		#if ((state == CLIMBING or (sprite_index == s_p_exit or sprite_index == s_damsel_exit or sprite_index == s_tunnel_exit)) and global.has_jetpack and not whipping):
+		#
+			#draw_sprite_ext(sprite_index, -1, position.x, position.y, image_xscale, image_yscale, image_angle, image_blend, image_alpha)
+			##draw_sprite(sprite_index,-1,position.x,position.y)
+			#draw_sprite(s_jetpack_back,-1,position.x,position.y)
+			#draw = false
+		#
+		#elif (global.has_jetpack and facing == RIGHT): draw_sprite(s_jetpack_right,-1,position.x-4,position.y-1)
+		#elif (global.has_jetpack): draw_sprite(s_jetpack_left,-1,position.x+4,position.y-1)
+		#if (draw):
+		#
+			#if (red_color > 0): draw_sprite_ext(sprite_index, -1, position.x, position.y, image_xscale, image_yscale, image_angle, make_color_rgb(200 + red_color,0,0), image_alpha)
+			#else: draw_sprite_ext(sprite_index, -1, position.x, position.y, image_xscale, image_yscale, image_angle, image_blend, image_alpha)
+		#
+		#if (facing == RIGHT):
+		#
+			#if (hold_arrow == ARROW_NORM):
+			#
+				#draw_sprite(s_arrow_right, -1, position.x+4, position.y+1)
+			#
+			#elif (hold_arrow == ARROW_BOMB):
+			#
+				#if (hold_arrowToggle): draw_sprite(s_bomb_arrow_right, 0, position.x+4, position.y+2)
+				#else: draw_sprite(s_bomb_arrow_right, 1, position.x+4, position.y+2)
+			#
+		#
+		#elif (facing == LEFT):
+		#
+			#if (hold_arrow == ARROW_NORM):
+			#
+				#draw_sprite(s_arrow_left, -1, position.x-4, position.y+1)
+			#
+			#elif (hold_arrow == ARROW_BOMB):
+			#
+				#if (hold_arrowToggle): draw_sprite(s_bomb_arrow_left, 0, position.x-4, position.y+2)
+				#else: draw_sprite(s_bomb_arrow_left, 1, position.x-4, position.y+2)
+			
 		
+
+	#/*
+	#if can_run:
+#
+	  #x_offset=80
+	  #if player=1:
+		#y_offset=120
+	  #else:
+		#y_offset=143
+	  ##draw the "fly_speed" bar, which shows how much speed the character has acquired while holding the "run" button:
+	  ##draw_healthbar(view_xview[0]+224+x_offset,view_yview[0]+432+y_offset,view_xview[0]+400+x_offset,view_yview[0]+450+y_offset,fly_speed,make_color_rgb(0,64,128),c_blue,c_aqua,0,1,1)
+#
+	#*/
+
+
+func _on_animated_sprite_2d_animation_finished():
+	#--- 'Animation end' event
+	var  obj
+	
+	if (sprite_index == s_attack_left or sprite_index == s_damsel_attack_l or sprite_index == s_tunnel_attack_l):
+
+		whipping = false
+		if (hold_item): hold_item.visible = true
+
+	elif (sprite_index == s_duck_to_hang_l or sprite_index == s_damsel_dt_hl or sprite_index == s_tunnel_dt_hl):
+
+		position.y = position.y + 16
+		gml.move_snap(1, 8, self)
+		x_vel = 0
+		y_vel = 0
+		x_acc = 0
+		y_acc = 0
+		grav = 0
+		if (facing == LEFT):
+		
+			obj = gml.collision_point(position.x-8, position.y, "ladder", 0, 0) #---[FLAG] this must return an object
+			if (!obj): obj = gml.collision_point(position.x-8, position.y, "ladder_top", 0, 0)
+		
+		else:
+		
+			obj = gml.collision_point(position.x+8, position.y, "ladder", 0, 0) #---[FLAG] this must return an object
+			if (!obj): obj = gml.collision_point(position.x+8, position.y, "ladder_top", 0, 0)
+		
+		if (gml.instance_exists(obj)):
+		
+			state = CLIMBING
+			position.x = obj.position.x + 8
+		
+		elif (facing == LEFT):
+		
+			state = HANGING
+			facing = RIGHT
+			position.x = position.x- 6
+			position.x += 1
+		
+		else:
+		
+			state = HANGING
+			facing = LEFT
+			position.x = position.x + 6
+		
+
+	elif (sprite_index == s_p_exit or sprite_index == s_damsel_exit or sprite_index == s_tunnel_exit):
+
+		if (global.collect > 0):
+		
+			global.money += global.collect
+			global.collect = 0
+		
+
+		if (p_exit == x_start and global.game_start):
+		
+			global.game_start = false
+			# MiscScripts.scr_clear_globals()
+			if (global.curr_level == 16): global.city_of_gold = false
+			
+			if (global.test_level != ""):
+			
+				MiscScripts.scr_clear_globals()
+				get_tree().change_scene("res://r_level_editor.tscn")
+			
+			elif (global.curr_level == 5): get_tree().change_scene("res://r_transition1x.tscn")
+			elif (global.curr_level == 9): get_tree().change_scene("res://r_transition2x.tscn")
+			elif (global.curr_level == 13): get_tree().change_scene("res://r_transition3x.tscn")
+			elif (global.level_type == 1): get_tree().change_scene("res://r_transition2.tscn")
+			elif (global.level_type == 2): get_tree().change_scene("res://r_transition3.tscn")
+			elif (global.level_type == 3): get_tree().change_scene("res://r_transition4.tscn")
+			elif (global.level_type == 4): get_tree().change_scene("res://r_transition4.tscn")
+			else: get_tree().change_scene("res://r_transition1.tscn")
+		
+		elif (p_exit == x_start):
+		
+			global.used_shortcut = false
+			global.game_start = true
+			if (global.first_time):
+			
+				global.curr_level = 0
+				global.bombs = 0
+				global.rope = 2
+				global.first_time = false
+				get_tree().change_scene("res://r_tutorial.tscn")
+			
+			elif (global.level_type == 2): get_tree().change_scene("res://r_level2.tscn")
+			else: get_tree().change_scene("res://r_level.tscn")
+		
+		elif (p_exit == x_tutorial):
+		
+			global.used_shortcut = false
+			global.game_start = true
+			global.curr_level = 0
+			global.bombs = 0
+			global.rope = 2
+			get_tree().change_scene("res://r_tutorial.tscn")
+		
+		elif (p_exit == x_scores):
+		
+			global.game_start = false
+			if (gml.is_room("r_title")):
+				global.scores_start = 0
+			elif (gml.is_room("r_sun")):
+				global.scores_start = 1
+			elif (gml.is_room("r_moon")):
+				global.scores_start = 2
+			elif (gml.is_room("r_stars")):
+				global.scores_start = 3
+			else: global.scores_start = 0
+			get_tree().change_scene("res://r_highscores.tscn")
+		
+		elif (p_exit == x_title):
+		
+			global.game_start = false
+			if (gml.is_room("r_highscores")):
+				global.title_start = 1
+			elif (gml.is_room("r_tutorial")):
+			
+				MiscScripts.scr_clear_globals()
+				global.title_start = 3
+				global.curr_level = 1
+				shake_toggle = false
+				global.dark_level = false
+				global.snake_pit = false
+				global.message_timer = 0
+				global.mini1 = 0
+				global.mini2 = 0
+				global.mini3 = 0
+				global.has_jordans = false
+				global.arrows = 0
+			
+			get_tree().change_scene("res://r_title.tscn")
+		
+		elif (p_exit == x_end):
+		
+			global.game_start = false
+			get_tree().change_scene("res://r_end.tscn")
+		
+		elif (p_exit == x_shortcut5):
+		
+			global.used_shortcut = true
+			global.curr_level = 5
+			global.game_start = true
+			get_tree().change_scene("res://r_level.tscn")
+		
+		elif (p_exit == x_shortcut9):
+		
+			global.used_shortcut = true
+			global.curr_level = 9
+			global.game_start = true
+			get_tree().change_scene("res://r_level2.tscn")
+		
+		elif (p_exit == x_shortcut13):
+		
+			global.used_shortcut = true
+			global.curr_level = 13
+			global.game_start = true
+			get_tree().change_scene("res://r_level.tscn")
+		
+		elif (p_exit == x_sun):
+		
+			global.game_start = false
+			get_tree().change_scene("res://r_sun.tscn")
+		
+		elif (p_exit == x_moon):
+		
+			global.game_start = false
+			get_tree().change_scene("res://r_moon.tscn")
+		
+		elif (p_exit == x_stars):
+		
+			global.game_start = false
+			get_tree().change_scene("res://r_stars.tscn")
+		
+		elif (p_exit == x_change):
+		
+			global.is_damsel = not global.is_damsel
+			active = true
+			depth = 50
+			invincible = 0
+			state = STANDING
+			facing = LEFT
+			if (global.is_damsel):
+			
+				global.is_tunnel_man = false
+				sprite_index = s_damsel_left
+			
+			else: sprite_index = s_stand_left
+			global.plife = 4
+			global.bombs = 4
+			global.rope = 4
+			x_vel = 0
+		
+		elif (p_exit == x_change2):
+		
+			global.is_tunnel_man = not global.is_tunnel_man
+			if (global.is_tunnel_man): global.is_damsel = false
+			active = true
+			depth = 50
+			invincible = 0
+			state = STANDING
+			facing = RIGHT
+			if (global.is_tunnel_man):
+			
+				global.is_damsel = false
+				sprite_index = s_tunnel_left
+				global.plife = 2
+				global.bombs = 0
+				global.rope = 0
+			
+			else:
+			
+				sprite_index = s_stand_left
+				global.plife = 4
+				global.bombs = 4
+				global.rope = 4
+			
+			x_vel = 0
+			# get_tree().change_scene("res://r_stars.tscn")
+		
+		
+		global.clean_solids = true

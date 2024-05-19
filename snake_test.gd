@@ -34,15 +34,15 @@ func _ready():
 	shake_toggle = 1
 
 func _physics_process(delta):
-	character_size_test()
+	#character_size_test()
 	#print("y_vel:" + str(y_vel))
-	var visible_rect = ColorRect.new()
-	get_tree().current_scene.add_child(visible_rect)
-	visible_rect.global_position = Vector2(position.x, position.y)
-	#print(visible_rect.position.y)
-	#print(position.y)
-	visible_rect.size = Vector2(1, 1)
-	visible_rect.color = Color(0.922, 0.518, 0.188, 0.5)
+	
+	
+	#var visible_rect = ColorRect.new()
+	#get_tree().current_scene.add_child(visible_rect)
+	#visible_rect.global_position = Vector2(position.x, position.y)
+	#visible_rect.size = Vector2(1, 1)
+	#visible_rect.color = Color(0.922, 0.518, 0.188, 0.5)
 	
 	#if ((position.x > gml.view('xview')-20 and position.x < gml.view('xview') + gml.view('wview')+4 and ---[FLAG] uncomment this and line below
 	#position.y > gml.view('yview')-20 and position.y < gml.view('yview') + gml.view('hview')+4)):

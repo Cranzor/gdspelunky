@@ -13,6 +13,7 @@ script = ExtResource("1_5hivt")
 [node name="BaseRoom" parent="." instance=ExtResource("2_6sl4e")]
 
 [node name="Label" type="Label" parent="."]
+visible = false
 offset_right = 40.0
 offset_bottom = 23.0
 theme_override_constants/line_spacing = 0
@@ -29,6 +30,7 @@ THIS TOOK LONGER THAN
 I THOUGHT IT WOULD..."
 
 [node name="Label2" type="Label" parent="."]
+visible = false
 offset_top = 176.0
 offset_right = 40.0
 offset_bottom = 199.0

@@ -18,6 +18,7 @@ animations = [{
 size = Vector2(16, 16)
 
 [node name="SnakeTest" type="CharacterBody2D"]
+rotation = -6.28319
 script = ExtResource("1_a1v20")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
