@@ -442,13 +442,13 @@ func _physics_process(delta):
 	#------------------------
 	
 	step_function_1() #--- Miscellaneous functions related to setting player values and handling some actions
-	step_function_2() #--- Related to player actions and setting relevant animations. Starting game and exiting game are also here 
-	step_function_3() #--- Functions for when the player takes damage
-	step_function_4() #--- Player death functions
-	step_function_5() #--- Caps values for when the player blinks when damaged
-	step_function_6() #--- Functions handling the player collecting various items
+	#step_function_2() #--- Related to player actions and setting relevant animations. Starting game and exiting game are also here 
+	#step_function_3() #--- Functions for when the player takes damage
+	#step_function_4() #--- Player death functions
+	#step_function_5() #--- Caps values for when the player blinks when damaged
+	#step_function_6() #--- Functions handling the player collecting various items
 	
-	end_step()
+	#end_step()
 	draw()
 
 func step_function_1():
@@ -3755,7 +3755,7 @@ func slope_movement_preparation():
 		for y in range(position.y, slope_y_prev - max_slope - 1, -1):
 			if col_top:
 				break
-			slope_change_in_y=slope_y_prev-y
+			slope_change_in_y=slope_y_prev-position.y
 
 	else:
 		slope_change_in_y=0
@@ -4303,6 +4303,7 @@ func move_to(x_vel, y_vel):
 	#0: x distance to move
 	#1: y distance to move
 	#*/
+	
 	final_x_vel = 0
 	final_y_vel = 0
 	
