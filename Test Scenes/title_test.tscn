@@ -8,6 +8,7 @@ script = ExtResource("1_86hpl")
 
 [node name="View" parent="." instance=ExtResource("2_ramxg")]
 position = Vector2(320, 0)
+enabled = false
 
 [node name="Label" type="Label" parent="."]
 offset_left = 544.0

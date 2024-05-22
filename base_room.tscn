@@ -13,15 +13,24 @@
 [node name="Control" type="CanvasLayer" parent="."]
 layer = -2
 
-[node name="Background" type="TextureRect" parent="Control"]
+[node name="CanvasLayer" type="CanvasLayer" parent="Control"]
+layer = -100
+follow_viewport_enabled = true
+
+[node name="Background" type="TextureRect" parent="Control/CanvasLayer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 4680.0
+offset_bottom = 4760.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 1
+
+[node name="TileMap" type="TileMap" parent="Control"]
+format = 2
 
 [node name="InnerRooms" type="Node2D" parent="." groups=["inner_rooms_container"]]
 

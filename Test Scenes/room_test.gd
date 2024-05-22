@@ -6,7 +6,7 @@ func _ready():
 	print(get_tree().current_scene.name)
 	MiscScripts.scr_clear_globals()
 	#LevelGeneration.scr_level_gen()
-	$BaseRoom/Control/Background.texture = preload("res://Backgrounds/bg_cave.png")
+	$BaseRoom/Control/CanvasLayer/Background.texture = preload("res://Backgrounds/bg_cave.png")
 	#var rooms = get_tree().get_nodes_in_group("room")
 	#for room in rooms:
 		#LevelGeneration.scr_room_gen(room.position.x, room.position.y)

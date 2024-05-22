@@ -173,6 +173,12 @@ top_level = true
 sprite_frames = SubResource("SpriteFrames_06flm")
 animation = &"s_stand_left"
 
+[node name="Camera2D" type="Camera2D" parent="AnimatedSprite2D"]
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+editor_draw_limits = true
+editor_draw_drag_margin = true
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
 texture = ExtResource("13_p5lpw")
