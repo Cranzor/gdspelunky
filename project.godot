@@ -13,7 +13,6 @@ config_version=5
 config/name="Spelunky Port"
 run/main_scene="res://level_gen.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
-run/max_fps=120
 config/icon="res://icon.svg"
 
 [autoload]

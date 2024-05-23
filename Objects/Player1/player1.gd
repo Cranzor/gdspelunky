@@ -304,6 +304,10 @@ var final_x_vel = 0
 var final_y_vel = 0
 
 func _process(delta):
+	if input_test:
+		check_keys()
+	#handle_jumping()
+	print(input_test)
 	var sprite_distance = Vector2($AnimatedSprite2D.position.x, $AnimatedSprite2D.position.y).distance_to(Vector2(position.x, position.y))
 	
 	#var tween = create_tween()
@@ -2743,13 +2747,15 @@ func character_create_event():
 	PlatformEngine.make_active(self)
 
 func character_step_event():
+	
 	#/*
 	#This script should be placed in the step event for the platform character.
 	#It updates the keys used by the character, moves all of the solids, moves the
 	#character, sets the sprite index, and sets the animation speed for the sprite.
 	#*/
 	hang_count_max = 3
-	check_keys()
+	if input_test == false:
+		check_keys()
 	check_collisions()
 	check_run()
 	set_x_acceleration() #--- Used for running left and right
@@ -2790,6 +2796,8 @@ func character_step_event():
 	get_character_sprite_index()
 	set_prev_and_prev_prev_states()
 	set_image_speed()
+	
+	k_jump_pressed = false
 
 func check_keys():
 	###################
@@ -2823,7 +2831,10 @@ func check_keys():
 		k_run=false
 	  
 	k_jump = ControlScripts.check_jump()
-	k_jump_pressed = ControlScripts.check_jump_pressed()
+	if k_jump_pressed == true:
+		pass
+	else:
+		k_jump_pressed = ControlScripts.check_jump_pressed()
 	k_jump_released = ControlScripts.check_jump_released()
 	  
 	if (cant_jump > 0):
@@ -4473,14 +4484,16 @@ func move_to_test():
 		y_vel_integer+=floor(abs(y_vel))
 	#print(times_per_second)
 
+var input_test = false
 func test_collision_right():
 	if Input.is_action_just_pressed("debug"):
 		#var collision = Collision.get_id_collision_right(1, self)
 		#gml.collision_line(514,159,514,169,'solid',1,1)
 		#print(collision)
 		#gml.sprite_index('default', self)
-		$AnimatedSprite2D.position = position
-		test = !test
+		#$AnimatedSprite2D.position = position
+		#test = !test
+		input_test = !input_test
 
 func end_step():
 	if (hold_item):
