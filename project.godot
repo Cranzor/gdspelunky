@@ -28,6 +28,7 @@ SS="*res://supersound.gd"
 Collision="*res://collision.gd"
 Audio="*res://audio.gd"
 CharacterScripts="*res://character_scripts.gd"
+StatTracking="*res://stat_tracking.gd"
 
 [display]
 

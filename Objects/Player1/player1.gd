@@ -304,10 +304,6 @@ var final_x_vel = 0
 var final_y_vel = 0
 
 func _process(delta):
-	if input_test:
-		check_keys()
-	#handle_jumping()
-	print(input_test)
 	var sprite_distance = Vector2($AnimatedSprite2D.position.x, $AnimatedSprite2D.position.y).distance_to(Vector2(position.x, position.y))
 	
 	#var tween = create_tween()
@@ -2754,8 +2750,7 @@ func character_step_event():
 	#character, sets the sprite index, and sets the animation speed for the sprite.
 	#*/
 	hang_count_max = 3
-	if input_test == false:
-		check_keys()
+	check_keys()
 	check_collisions()
 	check_run()
 	set_x_acceleration() #--- Used for running left and right
