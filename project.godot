@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Spelunky Port"
-run/main_scene="res://level_gen.tscn"
+run/main_scene="res://Test Scenes/title_test.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -29,6 +29,7 @@ Collision="*res://collision.gd"
 Audio="*res://audio.gd"
 CharacterScripts="*res://character_scripts.gd"
 StatTracking="*res://stat_tracking.gd"
+Music="*res://Objects/Music/Music.tscn"
 
 [display]
 

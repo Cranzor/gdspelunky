@@ -1,5 +1,10 @@
 extends Node
 
+var sounds = ['title.ogg', 'cave.ogg', 'lush.ogg', 'ice.ogg', 'temple.ogg', 'boss.ogg', 'victory.ogg', 'credits.ogg', 'ignite.wav', 'teleport.wav', 'jetpack.wav', 'whip.wav', 'jump.wav', 'throw.wav',
+				'climb1.wav', 'climb2.wav', 'shotgun.wav', 'bowpull.wav', 'steps.wav', 'blink1.wav', 'blink2.wav', 'hit.wav', 'hurt.wav', 'die.wav', 'coin.wav', 'gem.wav', 'pickup.wav', 'chestopen.wav',
+				'push.wav', 'mattockbreak.wav', 'trap.wav', 'click.wav', 'break.wav', 'thud.wav', 'thump.wav', 'crunch.wav', 'splash.wav', 'flame.wav', 'explosion.wav', 'arrowtrap.wav',
+				'boing.wav', 'damsel.wav', 'kiss.wav', 'ghost.wav', 'bat.wav', 'giantspider.wav', 'spiderjump.wav', 'frog.wav', 'zombie.wav', 'monkey.wav', 'alert.wav', 'cavemandie.wav', 'alien.wav',
+				'laser.wav', 'lasercharge.wav', 'smallexplode.wav', 'psychic.wav', 'yetiyell.wav', 'bigjump.wav', 'slam.wav', 'pfall.wav', 'tfall.wav']
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -7,69 +12,69 @@ func _ready():
 	
 	global.music = true
 
-	global.mus_title = "res://Sounds/titleogg"
-	global.mus_cave = "res://Sounds/caveogg"
-	global.mus_lush = "res://Sounds/lushogg"
-	global.mus_ice = "res://Sounds/iceogg"
-	global.mus_temple = "res://Sounds/templeogg"
-	global.mus_boss = "res://Sounds/bossogg"
-	global.mus_victory = "res://Sounds/victoryogg"
-	global.mus_credits = "res://Sounds/creditsogg"
+	global.mus_title = $title_ogg
+	global.mus_cave = $cave_ogg
+	global.mus_lush = $lush_ogg
+	global.mus_ice = $ice_ogg
+	global.mus_temple = $temple_ogg
+	global.mus_boss = $boss_ogg
+	global.mus_victory = $victory_ogg
+	global.mus_credits = $credits_ogg
 
-	global.snd_ignite = "res://Sounds/ignitewav"
-	global.snd_teleport = "res://Sounds/teleportwav"
-	global.snd_jetpack = "res://Sounds/jetpackwav"
-	global.snd_whip = "res://Sounds/whipwav"
-	global.snd_jump = "res://Sounds/jumpwav"
-	global.snd_throw = "res://Sounds/throwwav"
-	global.snd_climb1 = "res://Sounds/climb1wav"
-	global.snd_climb2 = "res://Sounds/climb2wav"
-	global.snd_shotgun = "res://Sounds/shotgunwav"
-	global.snd_bow_pull = "res://Sounds/bowpullwav"
-	global.snd_steps = "res://Sounds/stepswav"
-	global.snd_blink1 = "res://Sounds/blink1wav"
-	global.snd_blink2 = "res://Sounds/blink2wav"
-	global.snd_hit = "res://Sounds/hitwav"
-	global.snd_hurt = "res://Sounds/hurtwav"
-	global.snd_die = "res://Sounds/diewav"
-	global.snd_coin = "res://Sounds/coinwav"
-	global.snd_gem = "res://Sounds/gemwav"
-	global.snd_pickup = "res://Sounds/pickupwav"
-	global.snd_chest_open = "res://Sounds/chestopenwav"
-	global.snd_push = "res://Sounds/pushwav"
-	global.snd_mattock_break = "res://Sounds/mattockbreakwav"
-	global.snd_trap = "res://Sounds/trapwav"
-	global.snd_click = "res://Sounds/clickwav"
-	global.snd_break = "res://Sounds/breakwav"
-	global.snd_thud = "res://Sounds/thudwav"
-	global.snd_thump = "res://Sounds/thumpwav"
-	global.snd_crunch = "res://Sounds/crunchwav"
-	global.snd_splash = "res://Sounds/splashwav"
-	global.snd_flame = "res://Sounds/flamewav"
-	global.snd_explosion = "res://Sounds/explosionwav"
-	global.snd_arrow_trap = "res://Sounds/arrowtrapwav"
-	global.snd_boing = "res://Sounds/boingwav"
-	global.snd_damsel = "res://Sounds/damselwav"
-	global.snd_kiss = "res://Sounds/kisswav"
-	global.snd_ghost = "res://Sounds/ghostwav"
-	global.snd_bat = "res://Sounds/batwav"
-	global.snd_giant_spider = "res://Sounds/giantspiderwav"
-	global.snd_spider_jump = "res://Sounds/spiderjumpwav"
-	global.snd_frog = "res://Sounds/frogwav"
-	global.snd_zombie = "res://Sounds/zombiewav"
-	global.snd_monkey = "res://Sounds/monkeywav"
-	global.snd_alert = "res://Sounds/alertwav"
-	global.snd_caveman_die = "res://Sounds/cavemandiewav"
-	global.snd_alien = "res://Sounds/alienwav"
-	global.snd_laser = "res://Sounds/laserwav"
-	global.snd_laserCharge = "res://Sounds/laserchargewav"
-	global.snd_small_explode = "res://Sounds/smallexplodewav"
-	global.snd_psychic = "res://Sounds/psychicwav"
-	global.snd_yeti_yell = "res://Sounds/yetiyellwav"
-	global.snd_big_jump = "res://Sounds/bigjumpwav"
-	global.snd_slam = "res://Sounds/slamwav"
-	global.snd_p_fall = "res://Sounds/pfallwav"
-	global.snd_t_fall = "res://Sounds/tfallwav"
+	global.snd_ignite = $ignite_wav
+	global.snd_teleport = $teleport_wav
+	global.snd_jetpack = $jetpack_wav
+	global.snd_whip = $whip_wav
+	global.snd_jump = $jump_wav
+	global.snd_throw = $throw_wav
+	global.snd_climb1 = $climb1_wav
+	global.snd_climb2 = $climb2_wav
+	global.snd_shotgun = $shotgun_wav
+	global.snd_bow_pull = $bowpull_wav
+	global.snd_steps = $steps_wav
+	global.snd_blink1 = $blink1_wav
+	global.snd_blink2 = $blink2_wav
+	global.snd_hit = $hit_wav
+	global.snd_hurt = $hurt_wav
+	global.snd_die = $die_wav
+	global.snd_coin = $coin_wav
+	global.snd_gem = $gem_wav
+	global.snd_pickup = $pickup_wav
+	global.snd_chest_open = $chestopen_wav
+	global.snd_push = $push_wav
+	global.snd_mattock_break = $mattockbreak_wav
+	global.snd_trap = $trap_wav
+	global.snd_click = $click_wav
+	global.snd_break = $break_wav
+	global.snd_thud = $thud_wav
+	global.snd_thump = $thump_wav
+	global.snd_crunch = $crunch_wav
+	global.snd_splash = $splash_wav
+	global.snd_flame = $flame_wav
+	global.snd_explosion = $explosion_wav
+	global.snd_arrow_trap = $arrowtrap_wav
+	global.snd_boing = $boing_wav
+	global.snd_damsel = $damsel_wav
+	global.snd_kiss = $kiss_wav
+	global.snd_ghost = $ghost_wav
+	global.snd_bat = $bat_wav
+	global.snd_giant_spider = $giantspider_wav
+	global.snd_spider_jump = $spiderjump_wav
+	global.snd_frog = $frog_wav
+	global.snd_zombie = $zombie_wav
+	global.snd_monkey = $monkey_wav
+	global.snd_alert = $alert_wav
+	global.snd_caveman_die = $cavemandie_wav
+	global.snd_alien = $alien_wav
+	global.snd_laser = $laser_wav
+	global.snd_laser_charge = $lasercharge_wav
+	global.snd_small_explode = $smallexplode_wav
+	global.snd_psychic = $psychic_wav
+	global.snd_yeti_yell = $yetiyell_wav
+	global.snd_big_jump = $bigjump_wav
+	global.snd_slam = $slam_wav
+	global.snd_p_fall = $pfall_wav
+	global.snd_t_fall = $tfall_wav
 
 func game_end():
 	#SS_Unload --- called when game ends. not needed for Godot
@@ -78,3 +83,15 @@ func game_end():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+func script():
+	for sound in sounds:
+		var audio_node = AudioStreamPlayer.new()
+		audio_node.name = sound
+		audio_node.stream = load("res://Sounds/" + sound)
+		add_child(audio_node)
+		audio_node.owner = get_tree().edited_scene_root
+
+func _on_button_button_down():
+	script()
+	print('done')

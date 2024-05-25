@@ -1,13 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://dimbvflcml3em"]
 
-[ext_resource type="Script" path="res://Objects/Screen/Screen.gd" id="1_2m8tc"]
+[ext_resource type="Script" path="res://Objects/Screen/screen.gd" id="1_27kbe"]
 [ext_resource type="FontFile" uid="uid://dgd06bxddo4pq" path="res://Font/small_font.png" id="2_nrj7p"]
 [ext_resource type="FontFile" uid="uid://cjfa4ea02s5yi" path="res://Font/main_font.png" id="3_q6hrt"]
 
-[node name="Screen" type="Node2D"]
-script = ExtResource("1_2m8tc")
+[node name="Screen" type="CanvasLayer"]
+script = ExtResource("1_27kbe")
 
 [node name="PauseUI" type="Control" parent="."]
+z_index = 5
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -23,6 +24,7 @@ theme_override_fonts/font = ExtResource("2_nrj7p")
 text = "LEVEL "
 
 [node name="Depth" type="Label" parent="PauseUI"]
+layout_mode = 0
 offset_left = 40.0
 offset_top = 88.0
 offset_right = 96.0
@@ -31,6 +33,7 @@ theme_override_fonts/font = ExtResource("2_nrj7p")
 text = "DEPTH: "
 
 [node name="Money" type="Label" parent="PauseUI"]
+layout_mode = 0
 offset_left = 40.0
 offset_top = 104.0
 offset_right = 96.0
@@ -39,6 +42,7 @@ theme_override_fonts/font = ExtResource("2_nrj7p")
 text = "MONEY: "
 
 [node name="Kills" type="Label" parent="PauseUI"]
+layout_mode = 0
 offset_left = 40.0
 offset_top = 112.0
 offset_right = 96.0
@@ -47,6 +51,7 @@ theme_override_fonts/font = ExtResource("2_nrj7p")
 text = "KILLS: "
 
 [node name="Time" type="Label" parent="PauseUI"]
+layout_mode = 0
 offset_left = 40.0
 offset_top = 120.0
 offset_right = 96.0
@@ -55,6 +60,7 @@ theme_override_fonts/font = ExtResource("2_nrj7p")
 text = "TIME:  "
 
 [node name="Saves" type="Label" parent="PauseUI"]
+layout_mode = 0
 offset_left = 40.0
 offset_top = 128.0
 offset_right = 96.0
@@ -72,9 +78,45 @@ theme_override_fonts/font = ExtResource("3_q6hrt")
 text = "PAUSED"
 
 [node name="ReturnDieQuit" type="Label" parent="PauseUI"]
+layout_mode = 0
 offset_left = 24.0
 offset_top = 216.0
 offset_right = 288.0
 offset_bottom = 239.0
 theme_override_fonts/font = ExtResource("2_nrj7p")
 text = "START-RETURN  BOMB-DIE  ROPE-QUIT"
+
+[node name="Background" type="ColorRect" parent="PauseUI"]
+z_index = -1
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 240.0
+color = Color(0, 0, 0, 0.901961)
+
+[node name="TitleScreen" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Background" type="ColorRect" parent="TitleScreen"]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 240.0
+color = Color(0, 0, 0, 0.901961)
+
+[node name="DerekYuPresents" type="Label" parent="TitleScreen"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 48.0
+offset_right = 224.0
+offset_bottom = 71.0
+theme_override_fonts/font = ExtResource("2_nrj7p")
+text = "DEREK YU PRESENTS"
+
+[node name="Darkness" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
