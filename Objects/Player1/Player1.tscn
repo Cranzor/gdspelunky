@@ -14,7 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://du3xw4e7sr3uu" path="res://image 10.png" id="12_2q3cm"]
 [ext_resource type="Texture2D" uid="uid://cn66yb8hffdtv" path="res://Objects/Player1/Animations/s_duck_left/image 0.png" id="13_3nsx0"]
 [ext_resource type="Texture2D" uid="uid://6jqtc6xtayrf" path="res://Objects/Player1/Animations/s_run_left/image 0.png" id="13_g8aon"]
-[ext_resource type="Texture2D" uid="uid://ddkqcbdbopkqm" path="res://Sprites/Character/Main Dude/StandLeft/stand_left.png" id="13_p5lpw"]
 [ext_resource type="Texture2D" uid="uid://bba3srds8o7j7" path="res://Objects/Player1/Animations/s_hang_left/image 0.png" id="13_qtlpr"]
 [ext_resource type="Texture2D" uid="uid://balg8630wkw4n" path="res://Objects/Player1/Animations/s_crawl_left/image 0.png" id="13_tbb0u"]
 [ext_resource type="Texture2D" uid="uid://das2r1nsqupbp" path="res://Objects/Player1/Animations/s_jump_left/image 0.png" id="14_dx40i"]
@@ -165,6 +164,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xcccr"]
+load_path = "res://.godot/imported/stand_left.png-5a419e41be3f3857e40f5d18327530a3.ctex"
+
 [node name="Player1" type="CharacterBody2D" groups=["character", "player1"]]
 script = ExtResource("1_xnwjf")
 
@@ -181,7 +183,7 @@ editor_draw_drag_margin = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
-texture = ExtResource("13_p5lpw")
+texture = SubResource("CompressedTexture2D_xcccr")
 centered = false
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

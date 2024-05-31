@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dl0xp055ss7si"]
+[gd_scene load_steps=6 format=3 uid="uid://dl0xp055ss7si"]
 
 [ext_resource type="Script" path="res://title_test.gd" id="1_86hpl"]
 [ext_resource type="PackedScene" uid="uid://bft8urcdv7lh0" path="res://view.tscn" id="2_ramxg"]
+[ext_resource type="FontFile" uid="uid://dgd06bxddo4pq" path="res://Font/small_font.png" id="3_uaoei"]
 [ext_resource type="PackedScene" uid="uid://dimbvflcml3em" path="res://Objects/Screen/Screen.tscn" id="3_yiqyy"]
 [ext_resource type="PackedScene" uid="uid://b8sip2nv63phc" path="res://FPSCounter.tscn" id="4_ch23j"]
 
@@ -17,7 +18,8 @@ offset_left = 544.0
 offset_top = 128.0
 offset_right = 584.0
 offset_bottom = 151.0
-text = "Hi"
+theme_override_fonts/font = ExtResource("3_uaoei")
+text = "HI"
 
 [node name="FrameRate" type="Label" parent="."]
 visible = false

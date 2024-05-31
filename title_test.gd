@@ -23,6 +23,7 @@ var player = preload("res://Objects/Player1/Player1.tscn")
 
 func _ready():
 	MiscScripts.scr_clear_globals()
+	global.mus_title.play()
 	#gml.instance_create(384, 48, title_bg)
 	#gml.instance_create(384, 176, x_start)
 	#gml.instance_create(432, 176, x_scores)
