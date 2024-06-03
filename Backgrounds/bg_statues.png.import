@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bthvec1rc6oq8"
-path="res://.godot/imported/bg_statues.png-b9d573c8cf4be2ec8e1b971796a05d38.ctex"
+path="res://.godot/imported/bg_statues.png-96e36e286839b15425503f3dbc602c62.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Backgrounds/bg_statues.png"
-dest_files=["res://.godot/imported/bg_statues.png-b9d573c8cf4be2ec8e1b971796a05d38.ctex"]
+source_file="res://backgrounds/bg_statues.png"
+dest_files=["res://.godot/imported/bg_statues.png-96e36e286839b15425503f3dbc602c62.ctex"]
 
 [params]
 

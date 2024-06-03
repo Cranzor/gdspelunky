@@ -9,14 +9,14 @@ func _ready():
 	var animated_sprite = AnimatedSprite2D.new()
 	var sprite_frames = SpriteFrames.new()
 
-	var default_sprite_textures = ['image 0', 'image 1', 'image 2', 'image 3']
+	var default_sprite_textures = ['image 0']
 
-	sprite_frames.add_animation("alien")
+	sprite_frames.add_animation("olmec_start1")
 	sprite_frames.remove_animation("default")
 
 	for texture in default_sprite_textures:
-		var sprite_texture = load("res://Sprites/Enemies/alien.images" + "/" + texture + ".png")
-		sprite_frames.add_frame("alien", sprite_texture)
+		var sprite_texture = load("res://Sprites/Enemies/Olmec/olmec_start1.images" + "/" + texture + ".png")
+		sprite_frames.add_frame("olmec_start1", sprite_texture)
 
 	animated_sprite.sprite_frames = sprite_frames
 	await get_tree().create_timer(2).timeout
@@ -26,14 +26,14 @@ func _ready():
 
 	#--- add groups
 
-	var groups = ['alien', 'enemy', 'drawn_sprite']
+	var groups = ['olmec', 'moving_solid', 'solid', 'drawn_sprite']
 
 	for group in groups:
 		add_to_group(group, true)
 
 	#--- set size
-	object_size = Vector2(16, 16)
+	object_size = Vector2(64, 64)
 
 	#--- set depth
-	depth = 60
+	depth = 40
 	z_index = depth

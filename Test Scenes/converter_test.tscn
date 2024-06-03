@@ -1,37 +1,25 @@
-[gd_scene load_steps=7 format=3 uid="uid://xckn30r4l8ob"]
+[gd_scene load_steps=4 format=3 uid="uid://xckn30r4l8ob"]
 
 [ext_resource type="Script" path="res://Test Scenes/converter_test.gd" id="1_f62ey"]
-[ext_resource type="Texture2D" uid="uid://brvqhkcqxcg80" path="res://Sprites/Enemies/alien.images/image 0.png" id="2_bp1ri"]
-[ext_resource type="Texture2D" uid="uid://ddqoyv1v0tqur" path="res://Sprites/Enemies/alien.images/image 1.png" id="3_wp1gm"]
-[ext_resource type="Texture2D" uid="uid://bhq4s8xbeldq7" path="res://Sprites/Enemies/alien.images/image 2.png" id="4_wxsv1"]
-[ext_resource type="Texture2D" uid="uid://cvtcl5530kf56" path="res://Sprites/Enemies/alien.images/image 3.png" id="5_ofl22"]
+[ext_resource type="Texture2D" uid="uid://qkgm4j3sfass" path="res://Sprites/Enemies/Olmec/olmec_start1.images/image 0.png" id="2_t2hru"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_pxrh7"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_hrk2n"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_bp1ri")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_wp1gm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_wxsv1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_ofl22")
+"texture": ExtResource("2_t2hru")
 }],
 "loop": true,
-"name": &"alien",
+"name": &"olmec_start1",
 "speed": 5.0
 }]
 
-[node name="Converter" type="Node2D" groups=["alien", "drawn_sprite", "enemy"]]
-z_index = 60
+[node name="Converter" type="Node2D" groups=["drawn_sprite", "moving_solid", "olmec", "solid"]]
+z_index = 40
 script = ExtResource("1_f62ey")
-object_size = Vector2(16, 16)
-depth = 60
+object_size = Vector2(64, 64)
+depth = 40
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_pxrh7")
-animation = &"alien"
+sprite_frames = SubResource("SpriteFrames_hrk2n")
+animation = &"olmec_start1"

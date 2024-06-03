@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://co4ms1gj1w257"
-path="res://.godot/imported/bg_tiki_arms.png-2c1356affb50ee7ef5e19694f1e2f0e9.ctex"
+path="res://.godot/imported/bg_tiki_arms.png-b8f5e898ef10766317c17e569582966d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Backgrounds/bg_tiki_arms.png"
-dest_files=["res://.godot/imported/bg_tiki_arms.png-2c1356affb50ee7ef5e19694f1e2f0e9.ctex"]
+source_file="res://backgrounds/bg_tiki_arms.png"
+dest_files=["res://.godot/imported/bg_tiki_arms.png-b8f5e898ef10766317c17e569582966d.ctex"]
 
 [params]
 

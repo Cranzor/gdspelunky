@@ -29,7 +29,7 @@ Collision="*res://collision.gd"
 Audio="*res://audio.gd"
 CharacterScripts="*res://character_scripts.gd"
 StatTracking="*res://stat_tracking.gd"
-Music="*res://Objects/Music/Music.tscn"
+Music="*res://objects/music/Music.tscn"
 
 [display]
 

@@ -1,51 +1,51 @@
 [gd_scene load_steps=60 format=3 uid="uid://b2jlcu453ynaf"]
 
-[ext_resource type="Texture2D" uid="uid://ckpyu7xttjuxl" path="res://Backgrounds/background_clouds.png" id="1_wuww4"]
-[ext_resource type="Texture2D" uid="uid://c7mqbeksgioqi" path="res://Backgrounds/background_night.png" id="2_5v4eo"]
-[ext_resource type="Texture2D" uid="uid://8i0bl1ribpye" path="res://Backgrounds/bg_clouds.png" id="3_vq081"]
-[ext_resource type="Texture2D" uid="uid://ddi8rrtneyoed" path="res://Backgrounds/bg_dice_sign.png" id="4_ju8tk"]
-[ext_resource type="Texture2D" uid="uid://cgjgox1h3vv34" path="res://Backgrounds/bg_extras.png" id="5_ji00e"]
-[ext_resource type="Texture2D" uid="uid://bqau8slc0clka" path="res://Backgrounds/bg_extras_ice.png" id="6_i8ckg"]
-[ext_resource type="Texture2D" uid="uid://vw6kv0elxna3" path="res://Backgrounds/bg_extras_lush.png" id="7_0pbb6"]
-[ext_resource type="Texture2D" uid="uid://1r8y2cogxl83" path="res://Backgrounds/bg_extras_temple.png" id="8_rlsp1"]
-[ext_resource type="Texture2D" uid="uid://b6ovyrvvr03yy" path="res://Backgrounds/bg_hmm.png" id="9_rn4rv"]
-[ext_resource type="Texture2D" uid="uid://bptulnpvx7srv" path="res://Backgrounds/bg_kali_body.png" id="10_sd1ck"]
-[ext_resource type="Texture2D" uid="uid://b5ct1cl2blogx" path="res://Backgrounds/bg_kali_heads.png" id="11_kp6la"]
-[ext_resource type="Texture2D" uid="uid://bbayl1587kg03" path="res://Backgrounds/bg_lady_xoc.png" id="12_42446"]
-[ext_resource type="Texture2D" uid="uid://23jelm2jdgov" path="res://Backgrounds/bg_alien_ship.png" id="13_oahdn"]
-[ext_resource type="Texture2D" uid="uid://bfpdsbngi4yqt" path="res://Backgrounds/bg_sky.png" id="14_0nkds"]
-[ext_resource type="Texture2D" uid="uid://bthvec1rc6oq8" path="res://Backgrounds/bg_statues.png" id="15_fas7d"]
-[ext_resource type="Texture2D" uid="uid://6bdswy0yudw7" path="res://Backgrounds/bg_temp.png" id="16_tbu62"]
-[ext_resource type="Texture2D" uid="uid://bn41wftyy3ne1" path="res://Backgrounds/bg_temple.png" id="17_1cs1g"]
-[ext_resource type="Texture2D" uid="uid://vpdps85srovu" path="res://Backgrounds/bg_tiki.png" id="18_mghfh"]
-[ext_resource type="Texture2D" uid="uid://co4ms1gj1w257" path="res://Backgrounds/bg_tiki_arms.png" id="19_tw24y"]
-[ext_resource type="Texture2D" uid="uid://bwgpwkgiy3gsk" path="res://Backgrounds/bg_title.png" id="20_ac7cd"]
-[ext_resource type="Texture2D" uid="uid://c1ioclnjtophq" path="res://Backgrounds/bg_trees.png" id="21_41exw"]
-[ext_resource type="Texture2D" uid="uid://bmxk4b5ffhkg7" path="res://Backgrounds/bg_wanted.png" id="22_7jrqb"]
-[ext_resource type="Texture2D" uid="uid://cnu5a6nhsemfc" path="res://Backgrounds/bg_alien_ship2.png" id="23_qh4bi"]
-[ext_resource type="Texture2D" uid="uid://c5kl2288u7m0s" path="res://Backgrounds/bg_alien_ship3.png" id="24_s8o6f"]
-[ext_resource type="Texture2D" uid="uid://bg6n8u7t0o8dy" path="res://Backgrounds/bg_cave.png" id="25_6qjfi"]
-[ext_resource type="Texture2D" uid="uid://dklgx6kbf2enj" path="res://Backgrounds/bg_cave_top.png" id="26_d3oq3"]
-[ext_resource type="Texture2D" uid="uid://b3krne6bxxl8w" path="res://Backgrounds/bg_cave_top2.png" id="27_5nbi0"]
-[ext_resource type="Texture2D" uid="uid://bk8jqt0tc453q" path="res://Backgrounds/bg_cave_top3.png" id="28_ybmo6"]
-[ext_resource type="Texture2D" uid="uid://coruvqw80pybl" path="res://Backgrounds/bg_cave_top4.png" id="29_f5xpc"]
+[ext_resource type="Texture2D" uid="uid://ckpyu7xttjuxl" path="res://backgrounds/background_clouds.png" id="1_fdyb1"]
+[ext_resource type="Texture2D" uid="uid://c7mqbeksgioqi" path="res://backgrounds/background_night.png" id="2_ql584"]
+[ext_resource type="Texture2D" uid="uid://8i0bl1ribpye" path="res://backgrounds/bg_clouds.png" id="3_u750n"]
+[ext_resource type="Texture2D" uid="uid://ddi8rrtneyoed" path="res://backgrounds/bg_dice_sign.png" id="4_v6efg"]
+[ext_resource type="Texture2D" uid="uid://cgjgox1h3vv34" path="res://backgrounds/bg_extras.png" id="5_70767"]
+[ext_resource type="Texture2D" uid="uid://bqau8slc0clka" path="res://backgrounds/bg_extras_ice.png" id="6_gja4m"]
+[ext_resource type="Texture2D" uid="uid://vw6kv0elxna3" path="res://backgrounds/bg_extras_lush.png" id="7_7qlby"]
+[ext_resource type="Texture2D" uid="uid://1r8y2cogxl83" path="res://backgrounds/bg_extras_temple.png" id="8_yixo7"]
+[ext_resource type="Texture2D" uid="uid://b6ovyrvvr03yy" path="res://backgrounds/bg_hmm.png" id="9_4fkqg"]
+[ext_resource type="Texture2D" uid="uid://bptulnpvx7srv" path="res://backgrounds/bg_kali_body.png" id="10_j8lkg"]
+[ext_resource type="Texture2D" uid="uid://b5ct1cl2blogx" path="res://backgrounds/bg_kali_heads.png" id="11_uuhia"]
+[ext_resource type="Texture2D" uid="uid://bbayl1587kg03" path="res://backgrounds/bg_lady_xoc.png" id="12_ac6cl"]
+[ext_resource type="Texture2D" uid="uid://23jelm2jdgov" path="res://backgrounds/bg_alien_ship.png" id="13_2c1ip"]
+[ext_resource type="Texture2D" uid="uid://bfpdsbngi4yqt" path="res://backgrounds/bg_sky.png" id="14_ms5ux"]
+[ext_resource type="Texture2D" uid="uid://bthvec1rc6oq8" path="res://backgrounds/bg_statues.png" id="15_jkasp"]
+[ext_resource type="Texture2D" uid="uid://6bdswy0yudw7" path="res://backgrounds/bg_temp.png" id="16_lp4gl"]
+[ext_resource type="Texture2D" uid="uid://bn41wftyy3ne1" path="res://backgrounds/bg_temple.png" id="17_mm338"]
+[ext_resource type="Texture2D" uid="uid://vpdps85srovu" path="res://backgrounds/bg_tiki.png" id="18_5j5gv"]
+[ext_resource type="Texture2D" uid="uid://co4ms1gj1w257" path="res://backgrounds/bg_tiki_arms.png" id="19_msfx7"]
+[ext_resource type="Texture2D" uid="uid://bwgpwkgiy3gsk" path="res://backgrounds/bg_title.png" id="20_85rd7"]
+[ext_resource type="Texture2D" uid="uid://c1ioclnjtophq" path="res://backgrounds/bg_trees.png" id="21_fyvds"]
+[ext_resource type="Texture2D" uid="uid://bmxk4b5ffhkg7" path="res://backgrounds/bg_wanted.png" id="22_dr0c4"]
+[ext_resource type="Texture2D" uid="uid://cnu5a6nhsemfc" path="res://backgrounds/bg_alien_ship2.png" id="23_uuuvj"]
+[ext_resource type="Texture2D" uid="uid://c5kl2288u7m0s" path="res://backgrounds/bg_alien_ship3.png" id="24_ngsit"]
+[ext_resource type="Texture2D" uid="uid://bg6n8u7t0o8dy" path="res://backgrounds/bg_cave.png" id="25_pljle"]
+[ext_resource type="Texture2D" uid="uid://dklgx6kbf2enj" path="res://backgrounds/bg_cave_top.png" id="26_m624j"]
+[ext_resource type="Texture2D" uid="uid://b3krne6bxxl8w" path="res://backgrounds/bg_cave_top2.png" id="27_0kjg8"]
+[ext_resource type="Texture2D" uid="uid://bk8jqt0tc453q" path="res://backgrounds/bg_cave_top3.png" id="28_jq4hv"]
+[ext_resource type="Texture2D" uid="uid://coruvqw80pybl" path="res://backgrounds/bg_cave_top4.png" id="29_pfoei"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_odqgk"]
-texture = ExtResource("1_wuww4")
+texture = ExtResource("1_fdyb1")
 0:0/0 = 0
 1:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ke3pw"]
-texture = ExtResource("2_5v4eo")
+texture = ExtResource("2_ql584")
 0:0/0 = 0
 1:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y1jei"]
-texture = ExtResource("3_vq081")
+texture = ExtResource("3_u750n")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -408,7 +408,7 @@ texture = ExtResource("3_vq081")
 29:11/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o5la6"]
-texture = ExtResource("4_ju8tk")
+texture = ExtResource("4_v6efg")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -417,7 +417,7 @@ texture = ExtResource("4_ju8tk")
 2:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vg88c"]
-texture = ExtResource("5_ji00e")
+texture = ExtResource("5_70767")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -428,7 +428,7 @@ texture = ExtResource("5_ji00e")
 3:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6h1ei"]
-texture = ExtResource("6_i8ckg")
+texture = ExtResource("6_gja4m")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -441,7 +441,7 @@ texture = ExtResource("6_i8ckg")
 3:2/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1hfky"]
-texture = ExtResource("7_0pbb6")
+texture = ExtResource("7_7qlby")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -452,7 +452,7 @@ texture = ExtResource("7_0pbb6")
 3:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0euay"]
-texture = ExtResource("8_rlsp1")
+texture = ExtResource("8_yixo7")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -463,14 +463,14 @@ texture = ExtResource("8_rlsp1")
 3:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gvtrm"]
-texture = ExtResource("9_rn4rv")
+texture = ExtResource("9_4fkqg")
 0:0/0 = 0
 1:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0juqa"]
-texture = ExtResource("10_sd1ck")
+texture = ExtResource("10_j8lkg")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -487,7 +487,7 @@ texture = ExtResource("10_sd1ck")
 2:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n8bv8"]
-texture = ExtResource("11_kp6la")
+texture = ExtResource("11_uuhia")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -502,7 +502,7 @@ texture = ExtResource("11_kp6la")
 5:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_43fwy"]
-texture = ExtResource("12_42446")
+texture = ExtResource("12_ac6cl")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -535,7 +535,7 @@ texture = ExtResource("12_42446")
 4:5/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wgmee"]
-texture = ExtResource("13_oahdn")
+texture = ExtResource("13_2c1ip")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -554,7 +554,7 @@ texture = ExtResource("13_oahdn")
 3:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g2tvy"]
-texture = ExtResource("14_0nkds")
+texture = ExtResource("14_ms5ux")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -569,27 +569,27 @@ texture = ExtResource("14_0nkds")
 5:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2umya"]
-texture = ExtResource("15_fas7d")
+texture = ExtResource("15_jkasp")
 0:0/0 = 0
 0:1/0 = 0
 0:2/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0qot8"]
-texture = ExtResource("16_tbu62")
+texture = ExtResource("16_lp4gl")
 0:0/0 = 0
 1:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_glmu3"]
-texture = ExtResource("17_1cs1g")
+texture = ExtResource("17_mm338")
 0:0/0 = 0
 1:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yo2ft"]
-texture = ExtResource("18_mghfh")
+texture = ExtResource("18_5j5gv")
 0:0/0 = 0
 1:0/0 = 0
 0:1/0 = 0
@@ -600,7 +600,7 @@ texture = ExtResource("18_mghfh")
 1:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mg2q0"]
-texture = ExtResource("19_tw24y")
+texture = ExtResource("19_msfx7")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -609,7 +609,7 @@ texture = ExtResource("19_tw24y")
 2:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eea21"]
-texture = ExtResource("20_ac7cd")
+texture = ExtResource("20_85rd7")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -617,13 +617,13 @@ texture = ExtResource("20_ac7cd")
 4:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8uwuk"]
-texture = ExtResource("21_41exw")
+texture = ExtResource("21_fyvds")
 0:0/0 = 0
 0:1/0 = 0
 0:2/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rbnwk"]
-texture = ExtResource("22_7jrqb")
+texture = ExtResource("22_dr0c4")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -638,7 +638,7 @@ texture = ExtResource("22_7jrqb")
 5:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y1h3x"]
-texture = ExtResource("23_qh4bi")
+texture = ExtResource("23_uuuvj")
 0:0/0 = 0
 1:0/0 = 0
 0:1/0 = 0
@@ -647,11 +647,11 @@ texture = ExtResource("23_qh4bi")
 1:2/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qes1n"]
-texture = ExtResource("24_s8o6f")
+texture = ExtResource("24_ngsit")
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jkn2g"]
-texture = ExtResource("25_6qjfi")
+texture = ExtResource("25_pljle")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -670,7 +670,7 @@ texture = ExtResource("25_6qjfi")
 3:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c6ufm"]
-texture = ExtResource("26_d3oq3")
+texture = ExtResource("26_m624j")
 0:0/0 = 0
 1:0/0 = 0
 0:1/0 = 0
@@ -681,7 +681,7 @@ texture = ExtResource("26_d3oq3")
 1:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7rhoq"]
-texture = ExtResource("27_5nbi0")
+texture = ExtResource("27_0kjg8")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -689,12 +689,12 @@ texture = ExtResource("27_5nbi0")
 4:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gbp3k"]
-texture = ExtResource("28_ybmo6")
+texture = ExtResource("28_jq4hv")
 0:0/0 = 0
 1:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gta0b"]
-texture = ExtResource("29_f5xpc")
+texture = ExtResource("29_pfoei")
 0:0/0 = 0
 1:0/0 = 0
 

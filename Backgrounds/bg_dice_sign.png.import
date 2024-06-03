@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ddi8rrtneyoed"
-path="res://.godot/imported/bg_dice_sign.png-452cc462789099927d70353056b58622.ctex"
+path="res://.godot/imported/bg_dice_sign.png-35b467fe85d27303e0b3f6dd7b621280.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Backgrounds/bg_dice_sign.png"
-dest_files=["res://.godot/imported/bg_dice_sign.png-452cc462789099927d70353056b58622.ctex"]
+source_file="res://backgrounds/bg_dice_sign.png"
+dest_files=["res://.godot/imported/bg_dice_sign.png-35b467fe85d27303e0b3f6dd7b621280.ctex"]
 
 [params]
 

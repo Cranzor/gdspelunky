@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://23jelm2jdgov"
-path="res://.godot/imported/bg_alien_ship.png-c05d1eed0f6b1a61079a8a0beb3a8e72.ctex"
+path="res://.godot/imported/bg_alien_ship.png-b10c3b5699d65f504d9685eaa47af926.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Backgrounds/bg_alien_ship.png"
-dest_files=["res://.godot/imported/bg_alien_ship.png-c05d1eed0f6b1a61079a8a0beb3a8e72.ctex"]
+source_file="res://backgrounds/bg_alien_ship.png"
+dest_files=["res://.godot/imported/bg_alien_ship.png-b10c3b5699d65f504d9685eaa47af926.ctex"]
 
 [params]
 
