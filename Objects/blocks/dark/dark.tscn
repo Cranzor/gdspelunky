@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://fiv5q4nn2w03"]
+
+[ext_resource type="Script" path="res://objects/blocks/dark/dark.gd" id="1_epkk4"]
+[ext_resource type="Texture2D" uid="uid://dk7qncq1dyosr" path="res://sprites/blocks/dark/dark/dark_0.png" id="2_6slk5"]
+[ext_resource type="Texture2D" uid="uid://cgqa3s5t7j11x" path="res://sprites/blocks/dark/dark_gold/dark_gold_0.png" id="3_fio1o"]
+[ext_resource type="Texture2D" uid="uid://jcsunmkelqha" path="res://sprites/blocks/dark/dark_gold_big/dark_gold_big_0.png" id="4_51gpy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b8m63"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6slk5")
+}],
+"loop": true,
+"name": &"dark",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_fio1o")
+}],
+"loop": true,
+"name": &"dark_gold",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_51gpy")
+}],
+"loop": true,
+"name": &"dark_gold_big",
+"speed": 5.0
+}]
+
+[node name="Dark" type="Node2D" groups=["dark", "drawn_sprite", "solid"]]
+z_index = 100
+script = ExtResource("1_epkk4")
+depth = 100
+object_size = Vector2(16, 16)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_b8m63")
+animation = &"dark"
+centered = false

@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://nckn3en8rtlj"]
+
+[ext_resource type="Script" path="res://objects/other/intro/desert/desert.gd" id="1_88w6d"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bm1vf"]
+load_path = "res://.godot/imported/image 0.png-3c20910307c7815f99fad2a4ca013c24.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hq5cq"]
+load_path = "res://.godot/imported/image 0.png-05d657ff5e16c2a89ce19e0e8fc22f19.ctex"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3816k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_bm1vf")
+}],
+"loop": true,
+"name": &"desert",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_hq5cq")
+}],
+"loop": true,
+"name": &"desert_night",
+"speed": 5.0
+}]
+
+[node name="Desert" type="Node2D" groups=["desert", "drawn_sprite", "solid"]]
+z_index = 100
+script = ExtResource("1_88w6d")
+depth = 100
+object_size = Vector2(16, 16)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3816k")
+animation = &"desert"
+centered = false

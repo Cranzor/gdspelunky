@@ -145,6 +145,12 @@ func instance_place(x,y,obj: String): #' Returns the id of the instance of type 
 	pass
 	
 func instance_destroy(obj): #'Destroys current instance' ---  Should probably start passing 'self' or other node reference as an argument. Go through and check
+	if obj.has_method("destroy"):
+		obj.destroy()
+	
+	if obj.is_in_group("solid"):
+		obj.solid_destroy()
+		
 	obj.queue_free()
 
 func collision_rectangle(x1,y1,x2,y2,obj,prec,notme): #"This function tests whether there is a collision between the (filled) rectangle with the indicated opposite corners and entities of object obj. For example, you can use this to test whether an area is free of obstacles."
@@ -317,6 +323,9 @@ func view(view_value: String):
 		
 	elif view_value == 'hview':
 		pass
+
+func room_get_name():
+	pass
 
 #------------------------
 func singleton_test():

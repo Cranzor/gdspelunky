@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmapfp1bw4euu"]
+
+[ext_resource type="Script" path="res://objects/intro/intro.gd" id="1_km52s"]
+
+[node name="Intro" type="Node2D" groups=["intro"]]
+script = ExtResource("1_km52s")

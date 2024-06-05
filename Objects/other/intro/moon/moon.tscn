@@ -1,13 +1,15 @@
 [gd_scene load_steps=4 format=3 uid="uid://d1vbnjy2fiex3"]
 
 [ext_resource type="Script" path="res://objects/other/intro/moon/moon.gd" id="1_587ab"]
-[ext_resource type="Texture2D" uid="uid://dmqotebysav6i" path="res://sprites/other/intro/moon/image 0.png" id="2_pxrat"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cttft"]
+load_path = "res://.godot/imported/image 0.png-20b18783d7f7b063c91219c7e6c882b5.ctex"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sek0t"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_pxrat")
+"texture": SubResource("CompressedTexture2D_cttft")
 }],
 "loop": true,
 "name": &"moon",
@@ -20,6 +22,6 @@ object_size = Vector2(96, 96)
 depth = 99999
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-top_level = true
 sprite_frames = SubResource("SpriteFrames_sek0t")
 animation = &"moon"
+centered = false

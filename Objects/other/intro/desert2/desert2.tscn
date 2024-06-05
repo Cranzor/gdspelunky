@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://bd1b3xugpfga6"]
+
+[ext_resource type="Script" path="res://objects/other/intro/desert2/desert2.gd" id="1_bds77"]
+[ext_resource type="Texture2D" uid="uid://c7j1lhevpxqkb" path="res://sprites/other/intro/desert2/desert2_0.png" id="2_8028g"]
+[ext_resource type="Texture2D" uid="uid://cco2y6avwwh8i" path="res://sprites/other/intro/desert_night2/desert_night2_0.png" id="3_gbka3"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_46oqp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8028g")
+}],
+"loop": true,
+"name": &"desert2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_gbka3")
+}],
+"loop": true,
+"name": &"desert_night2",
+"speed": 5.0
+}]
+
+[node name="Desert2" type="Node2D" groups=["desert2", "drawn_sprite", "solid"]]
+z_index = 100
+script = ExtResource("1_bds77")
+depth = 100
+object_size = Vector2(16, 16)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_46oqp")
+animation = &"desert2"
+frame_progress = 0.0237781
+centered = false

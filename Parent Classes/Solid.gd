@@ -1,7 +1,12 @@
 extends DrawnSprite
 class_name Solid
 
+var shop_wall
+var treasure
+var clean_death
+
 func _ready():
+	drawn_sprite_create()
 	sprite
 	solid = false
 	visible = true
@@ -9,3 +14,14 @@ func _ready():
 	persistent = false
 	parent = 'DrawnSprite'
 	mask
+
+func solid_create():
+	drawn_sprite_create()
+	invincible = false
+	shop_wall = false
+	type = "None"
+	treasure = ""
+	clean_death = false
+
+func solid_destroy():
+	pass

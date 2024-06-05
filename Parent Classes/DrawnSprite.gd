@@ -3,7 +3,7 @@ class_name DrawnSprite
 
 var sprite
 var solid = false
-var depth = 0
+@export var depth = 0
 var persistent = false
 var parent
 var mask
@@ -26,7 +26,9 @@ var dead
 var shake_toggle
 var sprite_index
 
-func _ready():
+@export var object_size: Vector2 #--- created by me for collision purposes
+
+func drawn_sprite_create():
 	visible = true #--- believe I put this due to how Game Maker handles it
 	
 	type = ""
