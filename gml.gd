@@ -14,6 +14,26 @@ var bg_dict = {'background_clouds': 0 , 'background_night' : 1, 'bg_alien_ship' 
 	'bg_tiki' : 24, 'bg_tiki_arms' : 25, 'bg_title' : 26, 'bg_trees' : 27, 'bg_wanted' : 28}
 
 
+var c_aqua = Color(0, 255, 255)
+var c_black = Color(0, 0, 0)
+var c_blue = Color(0, 0, 255)
+var c_dkgray = Color(64, 64, 64)
+var c_fuchsia = Color(255, 0, 255)
+var c_gray = Color(128, 128, 128)
+var c_green = Color(0, 128, 0)
+var c_lime = Color(0, 255, 0)
+var c_ltgray = Color(192, 192, 192)
+var c_maroon = Color(128, 0, 0)
+var c_navy = Color(0, 0, 128)
+var c_olive = Color(128, 128, 0)
+var c_orange = Color(255, 160, 64)
+var c_purple = Color(128, 0, 128)
+var c_red = Color(255, 0, 0)
+var c_silver = Color(192, 192, 192) #--- same as light gray?
+var c_teal = Color(0, 128, 128)
+var c_white = Color(255, 255, 255)
+var c_yellow = Color(255, 255, 0)
+
 func string_char_at(str,index):
 	var char = str[index - 1]
 	return char
@@ -295,6 +315,16 @@ func sprite_index(sprite_name: String, node):
 func get_sprite_index(node):
 	pass
 
+func draw_text(x, y, string, font: String, color: Color): #--- added font and color values here
+		pass
+
+func string_length(str: String):
+	return str.length()
+	
+func keyboard_check_pressed(key):
+	var check = Input.is_key_pressed(key)
+	return check
+
 #---------------------------------------
 func background_index(background: String): #Changing this to a function
 	pass
@@ -357,3 +387,15 @@ func update_obj_list_collision(node):
 				#instanced_object_locations[str(group)] = [node_info]
 			#else:
 				#instanced_object_locations[group].append(node_info)
+
+func alarm_setup(frames, alarm_activity):
+	if alarm_activity == false:
+		if frames > 0:
+			alarm_activity = true
+			var alarm_value = frames
+			var countdown_time = frames / 30
+			gml.alarm_timeout(countdown_time)
+			alarm_activity = false
+
+func alarm_timeout(time):
+	await get_tree().create_timer(time).timeout

@@ -1,6 +1,65 @@
-[gd_scene load_steps=2 format=3 uid="uid://cmapfp1bw4euu"]
+[gd_scene load_steps=3 format=3 uid="uid://cmapfp1bw4euu"]
 
 [ext_resource type="Script" path="res://objects/intro/intro.gd" id="1_km52s"]
+[ext_resource type="FontFile" uid="uid://dgd06bxddo4pq" path="res://fonts/small_font.png" id="2_3dbqd"]
 
 [node name="Intro" type="Node2D" groups=["intro"]]
 script = ExtResource("1_km52s")
+
+[node name="TextBackground" type="ColorRect" parent="."]
+offset_right = 320.0
+offset_bottom = 240.0
+color = Color(0, 0, 0, 1)
+
+[node name="Str1" type="Label" parent="TextBackground"]
+visible = false
+layout_mode = 0
+offset_left = 32.0
+offset_top = 100.0
+offset_right = 288.0
+offset_bottom = 123.0
+theme_override_fonts/font = ExtResource("2_3dbqd")
+text = "AS THE MOON BURNED BRIGHT ABOVE,"
+
+[node name="Str2" type="Label" parent="TextBackground"]
+visible = false
+layout_mode = 0
+offset_left = 12.0
+offset_top = 116.0
+offset_right = 308.0
+offset_bottom = 139.0
+theme_override_fonts/font = ExtResource("2_3dbqd")
+text = "I STRODE VALIANTLY TOWARD MY DESTINY,"
+
+[node name="Str3" type="Label" parent="TextBackground"]
+visible = false
+layout_mode = 0
+offset_left = 28.0
+offset_top = 132.0
+offset_right = 292.0
+offset_bottom = 155.0
+theme_override_fonts/font = ExtResource("2_3dbqd")
+text = "AND THOUGHT OF HER ONE LAST TIME."
+
+[node name="Alarms" type="Node2D" parent="."]
+
+[node name="Alarm8" type="Timer" parent="Alarms"]
+wait_time = 2.0
+one_shot = true
+
+[node name="Alarm9" type="Timer" parent="Alarms"]
+wait_time = 2.0
+one_shot = true
+
+[node name="Alarm10" type="Timer" parent="Alarms"]
+wait_time = 2.0
+one_shot = true
+
+[node name="Alarm11" type="Timer" parent="Alarms"]
+wait_time = 0.001
+one_shot = true
+
+[connection signal="timeout" from="Alarms/Alarm8" to="." method="_on_alarm_8_timeout"]
+[connection signal="timeout" from="Alarms/Alarm9" to="." method="_on_alarm_9_timeout"]
+[connection signal="timeout" from="Alarms/Alarm10" to="." method="_on_alarm_10_timeout"]
+[connection signal="timeout" from="Alarms/Alarm11" to="." method="_on_alarm_11_timeout"]

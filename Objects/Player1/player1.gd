@@ -3850,7 +3850,7 @@ func alarm_0(frames):
 			alarm_0_active = true
 			var alarm_value = frames
 			var countdown_time = frames / 30
-			alarm_timeout(countdown_time)
+			gml.alarm_timeout(countdown_time)
 			
 			
 			if (gml.is_room("r_tutorial")):
@@ -3926,7 +3926,7 @@ func alarm_1(frames):
 			alarm_1_active = true
 			var alarm_value = frames
 			var countdown_time = frames / 30
-			alarm_timeout(countdown_time)
+			gml.alarm_timeout(countdown_time)
 			
 			if (gml.is_room("r_tutorial")):
 
@@ -3985,7 +3985,7 @@ func alarm_2(frames):
 			alarm_2_active = true
 			var alarm_value = frames
 			var countdown_time = frames / 30
-			alarm_timeout(countdown_time)
+			gml.alarm_timeout(countdown_time)
 			
 			if (climb_snd_toggle): Audio.play_sound(global.snd_climb1)
 			else: Audio.play_sound(global.snd_climb2)
@@ -3999,7 +3999,7 @@ func alarm_3(frames):
 			alarm_3_active = true
 			var alarm_value = frames
 			var countdown_time = frames / 30
-			alarm_timeout(countdown_time)
+			gml.alarm_timeout(countdown_time)
 			
 			if (walk_snd_toggle): Audio.play_sound(global.snd_step1)
 			else: Audio.play_sound(global.snd_step2)
@@ -4013,7 +4013,7 @@ func alarm_4(frames):
 			alarm_4_active = true
 			var alarm_value = frames
 			var countdown_time = frames / 30
-			alarm_timeout(countdown_time)
+			gml.alarm_timeout(countdown_time)
 			
 			if (global.lake):
 
@@ -4035,7 +4035,7 @@ func alarm_10(frames):
 			alarm_10_active = true
 			var alarm_value = frames
 			var countdown_time = frames / 30
-			alarm_timeout(countdown_time)
+			gml.alarm_timeout(countdown_time)
 			
 			var obj = gml.instance_create(position.x+randi_range(0,3)-randi_range(0,3), position.y+randi_range(0,3)-randi_range(0,3), "flare_spark")
 			obj.y_vel = randi_range(1,3)
@@ -4050,7 +4050,7 @@ func alarm_11(frames):
 			alarm_11_active = true
 			var alarm_value = frames
 			var countdown_time = frames / 30
-			alarm_timeout(countdown_time)
+			gml.alarm_timeout(countdown_time)
 			
 			if (hold_arrow > 0):
 
@@ -4058,9 +4058,6 @@ func alarm_11(frames):
 				alarm_11(1)
 			
 			alarm_11_active = false
-
-func alarm_timeout(time):
-	await get_tree().create_timer(time).timeout
 
 func platform_character_is(character_trait): #--- putting this here instead of PlatformEngine to make things easier
 	#/*
