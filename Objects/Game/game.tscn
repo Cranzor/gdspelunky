@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://3ui3v5o7nedx"]
+
+[ext_resource type="Script" path="res://objects/game/game.gd" id="1_aosp6"]
+
+[node name="Game" type="Node2D" groups=["game"]]
+script = ExtResource("1_aosp6")
+
+[node name="Alarms" type="Node2D" parent="."]
+
+[node name="Alarm 0" type="Timer" parent="Alarms"]
+one_shot = true
+
+[node name="Alarm 1" type="Timer" parent="Alarms"]
+one_shot = true
+
+[node name="Alarm 2" type="Timer" parent="Alarms"]
+one_shot = true
+
+[connection signal="timeout" from="Alarms/Alarm 0" to="." method="_on_alarm_0_timeout"]
+[connection signal="timeout" from="Alarms/Alarm 1" to="." method="_on_alarm_1_timeout"]
+[connection signal="timeout" from="Alarms/Alarm 2" to="." method="_on_alarm_2_timeout"]

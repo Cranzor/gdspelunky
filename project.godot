@@ -30,6 +30,7 @@ Audio="*res://audio.gd"
 CharacterScripts="*res://character_scripts.gd"
 StatTracking="*res://stat_tracking.gd"
 Music="*res://objects/music/Music.tscn"
+Globals="*res://objects/globals/globals.tscn"
 
 [display]
 

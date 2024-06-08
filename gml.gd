@@ -325,6 +325,9 @@ func keyboard_check_pressed(key):
 	var check = Input.is_key_pressed(key)
 	return check
 
+func highscore_value(place: int):
+	return 0 #--- [FLAG] temporary value
+
 #---------------------------------------
 func background_index(background: String): #Changing this to a function
 	pass

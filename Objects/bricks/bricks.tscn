@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0uyw0gvr57yu"]
+
+[ext_resource type="Script" path="res://objects/bricks/bricks.gd" id="1_55g5b"]
+
+[node name="Bricks" type="Node2D" groups=["bricks"]]
+script = ExtResource("1_55g5b")

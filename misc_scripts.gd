@@ -178,3 +178,6 @@ func scr_create_blood(x, y, num):
 
 func scr_update_highscores(type):
 	pass
+
+func scr_reset_highscores():
+	pass
