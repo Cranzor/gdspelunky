@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://3ui3v5o7nedx"]
+[gd_scene load_steps=4 format=3 uid="uid://3ui3v5o7nedx"]
 
 [ext_resource type="Script" path="res://objects/game/game.gd" id="1_aosp6"]
+[ext_resource type="FontFile" uid="uid://cjfa4ea02s5yi" path="res://fonts/main_font.png" id="2_jcdm3"]
+[ext_resource type="FontFile" uid="uid://dgd06bxddo4pq" path="res://fonts/small_font.png" id="3_7mteh"]
 
 [node name="Game" type="Node2D" groups=["game"]]
 script = ExtResource("1_aosp6")
@@ -15,6 +17,101 @@ one_shot = true
 
 [node name="Alarm 2" type="Timer" parent="Alarms"]
 one_shot = true
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Level" type="Control" parent="UI"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GameOver" type="Label" parent="UI/Level"]
+visible = false
+layout_mode = 0
+offset_left = 88.0
+offset_top = 48.0
+offset_right = 232.0
+offset_bottom = 71.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("2_jcdm3")
+text = "GAME OVER"
+
+[node name="FinalScore" type="Label" parent="UI/Level"]
+visible = false
+layout_mode = 0
+offset_left = 88.0
+offset_top = 80.0
+offset_right = 184.0
+offset_bottom = 103.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_7mteh")
+text = "FINAL SCORE:"
+
+[node name="Money" type="Label" parent="UI/Level"]
+visible = false
+layout_mode = 0
+offset_left = 88.0
+offset_top = 88.0
+offset_right = 168.0
+offset_bottom = 111.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_jcdm3")
+text = "$1000"
+
+[node name="CustomLevelText" type="Label" parent="UI/Level"]
+visible = false
+layout_mode = 0
+offset_left = 56.0
+offset_top = 120.0
+offset_right = 264.0
+offset_bottom = 143.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_7mteh")
+text = "PRESS ENTER TO EDIT LEVEL."
+
+[node name="HighScores" type="Label" parent="UI/Level"]
+visible = false
+layout_mode = 0
+offset_left = 48.0
+offset_top = 120.0
+offset_right = 272.0
+offset_bottom = 143.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_7mteh")
+text = "PRESS ENTER FOR HIGH SCORES."
+
+[node name="BonusRooms" type="Control" parent="UI"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Finished" type="Label" parent="UI/BonusRooms"]
+visible = false
+layout_mode = 0
+offset_left = 88.0
+offset_top = 48.0
+offset_right = 232.0
+offset_bottom = 71.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("2_jcdm3")
+text = "FINISHED!"
+
+[node name="RecordOrBetterLuck" type="Label" parent="UI/BonusRooms"]
+visible = false
+layout_mode = 0
+offset_left = 76.0
+offset_top = 80.0
+offset_right = 244.0
+offset_bottom = 103.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_7mteh")
+text = "YOU SET A NEW RECORD!"
 
 [connection signal="timeout" from="Alarms/Alarm 0" to="." method="_on_alarm_0_timeout"]
 [connection signal="timeout" from="Alarms/Alarm 1" to="." method="_on_alarm_1_timeout"]

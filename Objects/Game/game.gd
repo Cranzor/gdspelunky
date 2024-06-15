@@ -41,6 +41,7 @@ func _ready():
 func _physics_process(delta):
 	game_step_event()
 	step()
+	draw()
 
 func _on_alarm_0_timeout():
 	if (draw_status < 3): draw_status = 2
@@ -122,7 +123,7 @@ func game_step_event():
 				moving_solid_instance.y_vel=0
 			if Collision.approximately_zero(moving_solid_instance.x_acc):
 				moving_solid_instance.x_acc=0
-			if Collision.approximately_zero(moving_solid_instance.y_acc):
+
 				moving_solid_instance.y_acc=0
 	  		#moves the solid, pushes the character, carries the character, and stops if the character will be crushed by another solid:
 			moving_solid_instance.mst_x_prev=moving_solid_instance.position.x
@@ -242,7 +243,7 @@ func game_step_event():
 					  
 								self.players[i].collision=Collision.is_collision_bottom(1, self.players[i])
 								if self.players[i].collision:
-									moving_solid_instance.break_now = 1	 
+									moving_solid_instance.break_now = 1
 									break
 						
 								self.players[i].position.y+=1
@@ -328,7 +329,7 @@ func game_step_event():
 					if (gml.place_meeting(moveable_solid_instance.position.x, moveable_solid_instance.position.y+1, 'solid')): # or is_collision_character_bottom(2))
 					
 						if (moveable_solid_instance.y_vel > moveable_solid_instance.my_grav): Audio.play_sound(global.snd_thud)
-						moveable_solid_instance.y_vel = 0		   
+						moveable_solid_instance.y_vel = 0
 						break
 					
 					
@@ -508,3 +509,151 @@ func step():
 					money_count += 100
 				else:
 					money_count += money_diff
+
+func draw():
+	if (gml.instance_exists("player1")):
+		var player1 = gml.get_instance("player1") #--- [FLAG] may want to update this when implementing multiplayer
+		
+		var str
+		var str_len
+		var n
+		
+		if (player1.dead or gml.is_room("r_moon")):
+			
+			if (InLevel.is_level()):
+				$UI/Level.visible = true
+			
+				if (draw_status > 0):
+				
+					#draw_set_font(global.my_font)
+					#draw_set_color(c_yellow)
+					#draw_text(view_xview[0]+88, view_yview[0]+32+16, "GAME OVER")
+					$UI/Level/GameOver.visible = true
+				
+				if (draw_status > 1):
+				
+					#draw_set_font(global.my_fontSmall)
+					#draw_set_color(c_yellow)
+					#draw_text(view_xview[0]+88, view_yview[0]+64+16, "FINAL SCORE:")
+					$UI/Level/FinalScore.visible = true
+				
+				if (draw_status > 2):
+				
+					#draw_set_font(global.my_font)
+					#draw_set_color(c_white)
+					#draw_text(view_xview[0]+88, view_yview[0]+72+16, "$" + str(money_count))
+					$UI/Level/Money.text = "$" + str(money_count)
+					$UI/Level/Money.visible = true
+					
+					#draw_set_font(global.my_fontSmall)
+					#draw_set_color(c_yellow)
+					
+					if (global.custom_level):
+					
+						if (global.test_level != ""):
+							if (global.gamepad_on): str = "PRESS " + MiscScripts.scr_get_joy(global.joy_attack_val) + " TO EDIT LEVEL."
+							else: str = "PRESS " + MiscScripts.scr_get_key(global.key_attack_val) + " TO EDIT LEVEL."
+						
+						else:
+						
+							if (global.gamepad_on): str = "PRESS " + MiscScripts.scr_get_joy(global.joy_attack_val) + " TO LOAD ANOTHER LEVEL."
+							else: str = "PRESS " + MiscScripts.scr_get_key(global.key_attack_val) + " TO LOAD ANOTHER LEVEL."
+						
+						str_len = gml.string_length(str)*8
+						n = 320 - str_len
+						n = ceil(n / 2)
+						#draw_text(view_xview[0]+n, view_yview[0]+120, str)
+						$UI/Level/CustomLevelText.position.x = n
+						$UI/Level/CustomLevelText.text = str
+						$UI/Level/CustomLevelText.visible = true
+					
+					else:
+					
+						if (global.gamepad_on): str = "PRESS " + MiscScripts.scr_get_joy(global.joy_attack_val) + " FOR HIGH SCORES."
+						else: str = "PRESS " + MiscScripts.scr_get_key(global.key_attack_val) + " FOR HIGH SCORES."
+						str_len = gml.string_length(str)*8
+						n = 320 - str_len
+						n = ceil(n / 2)
+						#draw_text(view_xview[0]+n, view_yview[0]+120, str)
+						$UI/Level/HighScores.position.x = n
+						$UI/Level/HighScores.text = str
+						$UI/Level/HighScores.visible = true
+					
+				
+			
+			elif (gml.is_room("r_sun")):
+				var sun_room = gml.get_instance("sun_room")
+			
+				if (draw_status > 0):
+				
+					#draw_set_font(global.my_font)
+					#draw_set_color(c_yellow)
+					#draw_text(view_xview[0]+88, view_yview[0]+32+16, "FINISHED!")
+					$UI/BonusRooms/Finished.visible = true
+				
+				if (draw_status > 1):
+				
+					#draw_set_font(global.my_fontSmall)
+					#draw_set_color(c_yellow)
+					if (sun_room.highscore): str = "YOU SET A NEW RECORD!"
+					else: str = "BETTER LUCK NEXT TIME..."
+					str_len = gml.string_length(str)*8
+					n = 320 - str_len
+					n = ceil(n / 2)
+					#draw_text(n, view_yview[0]+64+16, str)
+					$UI/BonusRooms/RecordOrBetterLuck.position.x = n
+					$UI/BonusRooms/RecordOrBetterLuck.text = str
+					$UI/BonusRooms/RecordOrBetterLuck.visible = true
+				
+			
+			elif (gml.is_room("r_moon")):
+				var moon_room = gml.get_instance("moon_room")
+			
+				if (moon_room.timer < 0):
+				
+					if (draw_status > 0):
+					
+						#draw_set_font(global.my_font)
+						#draw_set_color(c_yellow)
+						#draw_text(view_xview[0]+88, view_yview[0]+32+16, "FINISHED!")
+						$UI/BonusRooms/Finished.visible = true
+					
+					if (draw_status > 1):
+					
+						#draw_set_font(global.my_fontSmall)
+						#draw_set_color(c_yellow)
+						if (moon_room.highscore): str = "YOU SET A NEW RECORD!"
+						else: str = "BETTER LUCK NEXT TIME..."
+						str_len = gml.string_length(str)*8
+						n = 320 - str_len
+						n = ceil(n / 2)
+						#draw_text(n, view_yview[0]+64+16, str)
+						$UI/BonusRooms/RecordOrBetterLuck.position.x = n
+						$UI/BonusRooms/RecordOrBetterLuck.text = str
+						$UI/BonusRooms/RecordOrBetterLuck.visible = true
+					
+				
+			
+			elif (gml.is_room("r_stars")):
+				var stars_room = gml.get_instance("stars_room")
+			
+				if (draw_status > 0):
+				
+					#draw_set_font(global.my_font)
+					#draw_set_color(c_yellow)
+					#draw_text(view_xview[0]+88, view_yview[0]+32+16, "FINISHED!")
+					$UI/BonusRooms/Finished.visible = true
+				
+				if (draw_status > 1):
+				
+					#draw_set_font(global.my_font_small)
+					#draw_set_color(c_yellow)
+					if (stars_room.highscore): str = "YOU SET A NEW RECORD!"
+					else: str = "BETTER LUCK NEXT TIME..."
+					str_len = gml.string_length(str)*8
+					n = 320 - str_len
+					n = ceil(n / 2)
+					#draw_text(n, view_yview[0]+64+16, str)
+					$UI/BonusRooms/RecordOrBetterLuck.position.x = n
+					$UI/BonusRooms/RecordOrBetterLuck.text = str
+					$UI/BonusRooms/RecordOrBetterLuck.visible = true

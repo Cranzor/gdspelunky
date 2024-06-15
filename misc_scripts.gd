@@ -181,3 +181,9 @@ func scr_update_highscores(type):
 
 func scr_reset_highscores():
 	pass
+
+func scr_get_joy(key):
+	pass
+	
+func scr_get_key(key):
+	pass
