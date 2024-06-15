@@ -30,7 +30,8 @@ var sprite_index:
 		set_animation(new_sprite)
 		
 	get:
-		return sprite_index
+		var current_animation = get_animation()
+		return current_animation
 
 @export var object_size: Vector2 #--- created by me for collision purposes
 
@@ -43,3 +44,8 @@ func drawn_sprite_create():
 func set_animation(new_sprite):
 	var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 	animated_sprite.play(new_sprite)
+
+func get_animation():
+	var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+	var current_animation = animated_sprite.animation
+	return current_animation
