@@ -2668,7 +2668,7 @@ func scr_setup_walls(placement):
 
 		if (not dark_instance.up):
 		
-			dark_instance.sprite_index = s_dark_up
+			dark_instance.sprite_index = "dark_up"
 			if (global.graphics_high):
 			
 				if (randi_range(1,3) < 3): gml.tile_add("bg_cave_top3", 0, 0, 16, 16, dark_instance.position.x, dark_instance.position.y-16, 3)
@@ -2678,8 +2678,8 @@ func scr_setup_walls(placement):
 
 		if (not dark_instance.down):
 		
-			if (not dark_instance.up): dark_instance.sprite_index = s_dark_up2
-			else: dark_instance.sprite_index = s_dark_down
+			if (not dark_instance.up): dark_instance.sprite_index = "dark_up2"
+			else: dark_instance.sprite_index = "dark_down"
 			#instance_create(x, y+16, darkBottom)
 		
 		

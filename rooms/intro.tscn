@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cp7345wvpbe1d"]
+
+[ext_resource type="Script" path="res://rooms/intro.gd" id="1_wpm2g"]
+[ext_resource type="Texture2D" uid="uid://c7mqbeksgioqi" path="res://backgrounds/background_night.png" id="2_pwq20"]
+
+[node name="Intro" type="Node2D" groups=["objects_holder"]]
+script = ExtResource("1_wpm2g")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -4096
+offset_right = 1328.0
+offset_bottom = 384.0
+texture = ExtResource("2_pwq20")

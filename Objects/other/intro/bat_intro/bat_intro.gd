@@ -15,6 +15,7 @@ func initial_setup():
 	#--- set depth
 	depth = 0
 	z_index = depth
+	$AnimatedSprite2D.play("bat_left")
 
 func _ready():
 	initial_setup()
@@ -32,7 +33,7 @@ func _physics_process(delta):
 
 	if (status == 0):
 
-		if (position.x < gml.view("xview") + 320 + 16):
+		#if (position.x < gml.view("xview") + 320 + 16):
 		
 			status = 1
 			x_vel = -randf_range(0, (3)) - 2

@@ -109,7 +109,7 @@ func _physics_process(delta):
 		else:
 		
 			fade_in = false
-			if (not gml.instance_exists("p_dummy3")): gml.instance_create(-32, 184, "p_dummy3")
+			#if (not gml.instance_exists("p_dummy3")): gml.instance_create(-32, 184, "p_dummy3") --- UNCOMMENT THIS
 		
 
 	elif (fade_out):
@@ -130,7 +130,7 @@ func draw():
 	
 	text_background.color = gml.c_black
 	text_background.color = Color(0, 0, 0, fade_level)
-	text_background.position = Vector2(gml.view("xview"), gml.view("y_view"))
+	text_background.position = Vector2(gml.view("xview"), gml.view("yview"))
 	text_background.position = Vector2(0, 0)
 	#draw_set_alpha(1) --- doesn't seem to be needed
 	

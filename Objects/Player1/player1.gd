@@ -3853,7 +3853,7 @@ func alarm_0(frames):
 			gml.alarm_timeout(countdown_time)
 			
 			
-			if (gml.is_room("r_tutorial")):
+			if (InLevel.is_room("r_tutorial")):
 
 			# do nothing
 				pass
@@ -3928,7 +3928,7 @@ func alarm_1(frames):
 			var countdown_time = frames / 30
 			gml.alarm_timeout(countdown_time)
 			
-			if (gml.is_room("r_tutorial")):
+			if (InLevel.is_room("r_tutorial")):
 
 				# do nothing
 				pass
@@ -4695,13 +4695,13 @@ func _on_animated_sprite_2d_animation_finished():
 		elif (p_exit == x_scores):
 		
 			global.game_start = false
-			if (gml.is_room("r_title")):
+			if (InLevel.is_room("r_title")):
 				global.scores_start = 0
-			elif (gml.is_room("r_sun")):
+			elif (InLevel.is_room("r_sun")):
 				global.scores_start = 1
-			elif (gml.is_room("r_moon")):
+			elif (InLevel.is_room("r_moon")):
 				global.scores_start = 2
-			elif (gml.is_room("r_stars")):
+			elif (InLevel.is_room("r_stars")):
 				global.scores_start = 3
 			else: global.scores_start = 0
 			get_tree().change_scene("res://r_highscores.tscn")
@@ -4709,9 +4709,9 @@ func _on_animated_sprite_2d_animation_finished():
 		elif (p_exit == x_title):
 		
 			global.game_start = false
-			if (gml.is_room("r_highscores")):
+			if (InLevel.is_room("r_highscores")):
 				global.title_start = 1
-			elif (gml.is_room("r_tutorial")):
+			elif (InLevel.is_room("r_tutorial")):
 			
 				MiscScripts.scr_clear_globals()
 				global.title_start = 3

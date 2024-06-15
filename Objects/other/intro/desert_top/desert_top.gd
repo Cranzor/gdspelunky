@@ -8,7 +8,7 @@ func initial_setup():
 	object_size = Vector2(16, 17)
 
 	#--- set depth
-	depth = 10
+	depth = -10
 	z_index = depth
 
 func _ready():

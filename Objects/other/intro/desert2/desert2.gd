@@ -5,7 +5,7 @@ func initial_setup():
 	object_size = Vector2(16, 16)
 
 	#--- set depth
-	depth = 100
+	depth = -100
 	z_index = depth
 
 	solid_create()

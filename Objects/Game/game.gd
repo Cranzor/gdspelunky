@@ -18,6 +18,9 @@ var moveable_solid_grav
 var time
 var money_diff
 
+var players: Array
+var players_length
+
 @onready var alarm_0_timer = $"Alarms/Alarm 0"
 @onready var alarm_1_timer = $"Alarms/Alarm 1"
 @onready var alarm_2_timer = $"Alarms/Alarm 2"
@@ -76,7 +79,7 @@ func key_m_pressed():
 				if (global.level_type == 1): Audio.play_music(global.mus_lush, true)
 				elif (global.level_type == 2): Audio.play_music(global.mus_ice, true)
 				elif (global.level_type == 3): Audio.play_music(global.mus_temple, true)
-				elif (gml.is_room("olmec")):
+				elif (InLevel.is_room("olmec")):
 					
 					var player1 = gml.get_instance("player1")
 					if (player1.active):
@@ -84,14 +87,15 @@ func key_m_pressed():
 				
 				else: Audio.play_music(global.mus_cave, true)
 			
-			elif (gml.is_room("title")): Audio.play_music(global.mus_title, true)
+			elif (InLevel.is_room("title")): Audio.play_music(global.mus_title, true)
 
 func game_step_event():
 	#/**
 	 #* The game's step event.
 	 #*/
 	if (true):
-		self.players[0] = null     #players (used when "with( )" structures will not work)
+		#self.players[0] = null     #players (used when "with( )" structures will not work)
+		self.players.clear() #--- should do the same thing
 		self.players_length = 0
 		var all_characters = gml.get_all_instances("character")
 		for character_instance in all_characters:
@@ -403,7 +407,7 @@ func step():
 	if (gml.instance_exists("player1")):
 		var player1 = gml.get_instance("player1") #--- [FLAG] may want to update this when implementing multiplayer
 
-		if (InLevel.is_level() and not gml.is_room("r_olmec") and not gml.is_room("r_load_level") and global.curr_level > 1 and
+		if (InLevel.is_level() and not InLevel.is_room("r_olmec") and not InLevel.is_room("r_load_level") and global.curr_level > 1 and
 			not global.has_crown and global.xtime > 120000 and
 			player1.sprite_index != "p_exit" and player1.sprite_index != "damsel_exit"):
 			
@@ -417,7 +421,7 @@ func step():
 			
 		
 		
-		if (InLevel.is_level() and not gml.is_room("r_olmec") and not gml.is_room("r_load_level") and global.curr_level > 1 and
+		if (InLevel.is_level() and not InLevel.is_room("r_olmec") and not InLevel.is_room("r_load_level") and global.curr_level > 1 and
 			not global.has_crown and global.xtime > 150000 and not global.ghost_exists and
 			player1.sprite_index != "p_exit" and player1.sprite_index != "damsel_exit"):
 		
@@ -433,10 +437,10 @@ func step():
 		var all_water = gml.get_all_instances("water")
 		for water_instance in all_water:
 		
-			# if (position.y > view_yview[0]-32 and position.y < view_yview[0] + view_hview[0]+32 and not gml.is_room("r_olmec")):
-			if (not gml.is_room("r_olmec")):
+			# if (position.y > view_yview[0]-32 and position.y < view_yview[0] + view_hview[0]+32 and not InLevel.is_room("r_olmec")):
+			if (not InLevel.is_room("r_olmec")):
 			
-				if ((!gml.is_room("r_load_level") and water_instance.position.y < 512) or gml.is_room("r_load_level")):
+				if ((!InLevel.is_room("r_load_level") and water_instance.position.y < 512) or InLevel.is_room("r_load_level")):
 				
 			
 					gml.instance_activate_region(water_instance.position.x-16, water_instance.position.y-16, 48, 48, true)
@@ -518,7 +522,7 @@ func draw():
 		var str_len
 		var n
 		
-		if (player1.dead or gml.is_room("r_moon")):
+		if (player1.dead or InLevel.is_room("r_moon")):
 			
 			if (InLevel.is_level()):
 				$UI/Level.visible = true
@@ -581,7 +585,7 @@ func draw():
 					
 				
 			
-			elif (gml.is_room("r_sun")):
+			elif (InLevel.is_room("r_sun")):
 				var sun_room = gml.get_instance("sun_room")
 			
 				if (draw_status > 0):
@@ -606,7 +610,7 @@ func draw():
 					$UI/BonusRooms/RecordOrBetterLuck.visible = true
 				
 			
-			elif (gml.is_room("r_moon")):
+			elif (InLevel.is_room("r_moon")):
 				var moon_room = gml.get_instance("moon_room")
 			
 				if (moon_room.timer < 0):
@@ -634,7 +638,7 @@ func draw():
 					
 				
 			
-			elif (gml.is_room("r_stars")):
+			elif (InLevel.is_room("r_stars")):
 				var stars_room = gml.get_instance("stars_room")
 			
 				if (draw_status > 0):

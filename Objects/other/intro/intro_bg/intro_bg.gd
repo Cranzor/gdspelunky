@@ -10,14 +10,16 @@ func initial_setup():
 	object_size = Vector2(480, 112)
 
 	#--- set depth
-	depth = 9999
+	#depth = -9999
+	depth = -4000
 	z_index = depth
 	
 func _ready():
+	initial_setup()
 	x_off = 0
 
 func _physics_process(delta):
-	if (gml.is_room("credits1") and gml.instance_exists("camel")):
+	if (InLevel.is_room("credits1") and gml.instance_exists("camel")):
 		position.x += 0.02
 
 	elif (gml.view("xview") != 0):

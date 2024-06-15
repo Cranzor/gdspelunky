@@ -253,8 +253,8 @@ func move_snap(hsnap,vsnap, obj):
 func sqr(number):
 	return number * number
 	
-func instance_number(obj: String):
-	pass
+func instance_number(obj: String): #--- finish this
+	return 0
 
 func collision_line(x1,y1,x2,y2,obj,prec,notme):
 	var intersecting = false
@@ -354,19 +354,21 @@ func view(view_value: String):
 	var view = get_tree().get_first_node_in_group("view")
 	
 	if view_value == 'xview':
-		pass
+		return 0
 		
 	elif view_value == 'yview':
-		pass
+		return 0
 		
 	elif view_value == 'wview':
-		pass
+		return 0
 		
 	elif view_value == 'hview':
-		pass
+		return 0
 
 func room_get_name():
-	pass
+	var root = get_tree().get_current_scene()
+	var room_name = root.room_name
+	return room_name
 
 #------------------------
 func singleton_test():

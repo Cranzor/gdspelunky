@@ -101,7 +101,7 @@ func _process(delta):
 		#
 			#var n = 128-24
 			#if (global.curr_level < 1): $PauseUI/Level.text = "TUTORIAL CAVE"
-			#elif (gml.is_room("r_load_level")): $PauseUI/Level.text = "LEVEL: " + global.custom_level_name + " BY " + global.custom_level_author
+			#elif (InLevel.is_room("r_load_level")): $PauseUI/Level.text = "LEVEL: " + global.custom_level_name + " BY " + global.custom_level_author
 			#else: $PauseUI/Level.text = "LEVEL " + str(global.curr_level)
 			#$PauseUI/Depth.text = "DEPTH: " + str((174.8*(global.curr_level-1)+(py+8)*0.34) + " FEET")
 			#$PauseUI/Money.text = "MONEY: " + str(global.money)
@@ -149,7 +149,7 @@ func _process(delta):
 #
 	#else:
 #
-		#if (gml.is_room("r_title")):
+		#if (InLevel.is_room("r_title")):
 		#
 			##surface_set_target(screen) #---not needed
 			##draw_set_alpha(title.darkness) --- [FLAG] check darkness variable of Title object
@@ -280,7 +280,7 @@ func _process(delta):
 				#n = ceil(n / 2)
 				#draw_text(n, 216, str\(global.message))
 #
-				#if (not gml.is_room("r_tutorial")): draw_set_color(c_yellow)
+				#if (not InLevel.is_room("r_tutorial")): draw_set_color(c_yellow)
 				#str_len = string_length(global.message2)*8
 				#n = 320 - str_len
 				#n = ceil(n / 2)

@@ -5,6 +5,11 @@ var shop_wall
 var treasure
 var clean_death
 
+var up
+var down
+var left
+var right
+
 func _ready():
 	drawn_sprite_create()
 	sprite
