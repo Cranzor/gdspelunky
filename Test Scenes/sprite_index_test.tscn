@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bn3bdhv1va5th"]
+
+[ext_resource type="Script" path="res://Test Scenes/sprite_index_test.gd" id="1_fddoo"]
+[ext_resource type="PackedScene" uid="uid://nckn3en8rtlj" path="res://objects/other/intro/desert/desert.tscn" id="2_un2ix"]
+
+[node name="SpriteIndexTest" type="Node2D"]
+script = ExtResource("1_fddoo")
+
+[node name="Desert" parent="." instance=ExtResource("2_un2ix")]

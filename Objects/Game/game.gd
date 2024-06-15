@@ -79,22 +79,24 @@ func _physics_process(delta):
 
 
 	if (global.game_start and gml.instance_exists("character") and InLevel.is_level()):
-		var character = gml.get_instance("character")
+		var character = gml.get_instance("character") #--- [FLAG] may want to update this when implementing multiplayer
 
 		if (not character.dead):
 		
-			global.time += room_speed
-			global.xtime += room_speed
+			global.time += gml.room_speed
+			global.xtime += gml.room_speed
 		
 
 
 	# GHOST
 	if (gml.instance_exists("player1")):
+		var player1 = gml.get_instance("player1") #--- [FLAG] may want to update this when implementing multiplayer
 
 		if (InLevel.is_level() and not gml.is_room("r_olmec") and not gml.is_room("r_load_level") and global.curr_level > 1 and
 			not global.has_crown and global.xtime > 120000 and
-			player1.sprite_index != s_p_exit and player1.sprite_index != s_damsel_exit):
-		
+			player1.sprite_index != "p_exit" and player1.sprite_index != "damsel_exit"):
+			
+			var level = gml.get_instance("level")
 			if (not level.music_fade):
 			
 				level.music_fade = true
@@ -106,10 +108,10 @@ func _physics_process(delta):
 		
 		if (InLevel.is_level() and not gml.is_room("r_olmec") and not gml.is_room("r_load_level") and global.curr_level > 1 and
 			not global.has_crown and global.xtime > 150000 and not global.ghost_exists and
-			player1.sprite_index != s_p_exit and player1.sprite_index != s_damsel_exit):
+			player1.sprite_index != "p_exit" and player1.sprite_index != "damsel_exit"):
 		
-			if (player1.position.x > room_width / 2): gml.instance_create(view_xview[0]+view_wview[0]+8, view_yview[0]+floor(view_hview[0] / 2), "ghost")
-			else: gml.instance_create(view_xview[0]-32,  view_yview[0]+floor(view_hview[0] / 2), "ghost")
+			if (player1.position.x > gml.room_width() / 2): gml.instance_create(gml.view('xview')+gml.view('wview')+8, gml.view('yview')+floor(gml.view('hview') / 2), "ghost")
+			else: gml.instance_create(gml.view('xview')-32,  gml.view('yview')+floor(gml.view('hview') / 2), "ghost")
 			global.ghost_exists = true
 		
 
@@ -130,7 +132,7 @@ func _physics_process(delta):
 			
 				if (not gml.collision_point(position.x, position.y-16, "solid", 0, 0) and not gml.collision_point(position.x, position.y-16, "water", 0, 0)):
 				
-					if (type == "Lava"): sprite_index = s_lava_top
+					if (water_instance.type == "lava"): water_instance.get_node("AnimatedSprite2D").play("lava_top")
 					else: sprite_index = s_water_top
 				
 				

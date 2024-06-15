@@ -24,7 +24,13 @@ var ATTACK
 var bounced
 var dead
 var shake_toggle
-var sprite_index
+var sprite_index:
+	set(new_sprite):
+		sprite_index = new_sprite
+		set_animation(new_sprite)
+		
+	get:
+		return sprite_index
 
 @export var object_size: Vector2 #--- created by me for collision purposes
 
@@ -33,3 +39,7 @@ func drawn_sprite_create():
 	
 	type = ""
 	blink_toggle = 0
+
+func set_animation(new_sprite):
+	var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+	animated_sprite.play(new_sprite)
