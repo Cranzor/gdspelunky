@@ -4,6 +4,8 @@
 
 [node name="Game" type="Node2D" groups=["game"]]
 script = ExtResource("1_aosp6")
+object_size = null
+depth = null
 
 [node name="Alarms" type="Node2D" parent="."]
 

@@ -186,7 +186,7 @@ func _process(delta):
 					#var all_player1s = gml.get_all_instances("player1")
 					#for player1_instance in all_player1s:
 					#
-						#dist_to_lamp = gml.distance_tobject(lamp_red)
+						#dist_to_lamp = gml.distance_to_object(lamp_red)
 						#if (dist_to_lamp <= 96):
 						#
 							##draw_set_color(make_color_rgb(255-dist_to_lamp,120-(96-dist_to_lamp),120-(96-dist_to_lamp))) #--- [FLAG] used this code for RGB calculation
@@ -198,7 +198,7 @@ func _process(delta):
 					#var all_player1s = gml.get_all_instances("player1")
 					#for player1_instance in all_player1s:
 					#
-						#dist_to_lamp = gml.distance_tobject(lamp_red_item)
+						#dist_to_lamp = gml.distance_to_object(lamp_red_item)
 						#if (dist_to_lamp <= 96):
 						#
 							##draw_set_color(make_color_rgb(255-dist_to_lamp,120-(96-dist_to_lamp),120-(96-dist_to_lamp)))  #--- [FLAG] used this code for RGB calculation

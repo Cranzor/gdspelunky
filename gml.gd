@@ -34,6 +34,8 @@ var c_teal = Color(0, 128, 128)
 var c_white = Color(255, 255, 255)
 var c_yellow = Color(255, 255, 0)
 
+var room_speed = 30
+
 func string_char_at(str,index):
 	var char = str[index - 1]
 	return char
@@ -150,7 +152,10 @@ func tile_add(background,left,top,width,height,x,y,depth): #return value of tile
 		for j in range(0, size.x):
 			bg_elements.set_cell(0, Vector2i(x + j, y - 1), tile_id, Vector2i(coords.x + j, coords.y))
 
-func distance_tobject(obj: String, x, y): #Make this more accurate with this info https://manual.gamemaker.io/monthly/en/GameMaker_Language/GML_Reference/Maths_And_Numbers/Angles_And_Distance/distance_to_object.htm
+func distance_to_object(obj: String, node): #Make this more accurate with this info https://manual.gamemaker.io/monthly/en/GameMaker_Language/GML_Reference/Maths_And_Numbers/Angles_And_Distance/distance_to_object.htm
+	var x = node.position.x
+	var y = node.position.y
+	
 	if instance_exists(obj) == true:
 		var comparison_obj_vector2 = instance_nearest(x, y, obj)
 		var distance = Vector2(x, y).distance_to(Vector2(comparison_obj_vector2.position.x, comparison_obj_vector2.position.y))
@@ -327,6 +332,9 @@ func keyboard_check_pressed(key):
 
 func highscore_value(place: int):
 	return 0 #--- [FLAG] temporary value
+	
+func instance_deactivate_region(left, top, width, height, inside, notme):
+	pass
 
 #---------------------------------------
 func background_index(background: String): #Changing this to a function

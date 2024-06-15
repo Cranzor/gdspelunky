@@ -64,6 +64,139 @@ func _ready():
 
 	if (global.game_start): LevelGeneration.scr_init_level()
 
+func _physics_process(delta):
+	game_step_event()
+	if (not gml.instance_exists("x_market")): global.udjat_blink = false
+	else:
+
+		var all_player1s = gml.get_all_instances("player1")
+		for player1_instance in all_player1s:
+		
+			player1_instance.dm = gml.distance_to_object('x_market', player1_instance)
+			if (player1_instance.dm < 4): player1_instance.dm = 4
+			if (round(alarm_2_timer.time_left * physics_frame_rate)) < 1 or player1_instance.dm < round(alarm_2_timer.time_left * physics_frame_rate): alarm_2_timer.start(player1_instance.dm / physics_frame_rate)
+		
+
+
+	if (global.game_start and gml.instance_exists("character") and InLevel.is_level()):
+		var character = gml.get_instance("character")
+
+		if (not character.dead):
+		
+			global.time += room_speed
+			global.xtime += room_speed
+		
+
+
+	# GHOST
+	if (gml.instance_exists("player1")):
+
+		if (InLevel.is_level() and not gml.is_room("r_olmec") and not gml.is_room("r_load_level") and global.curr_level > 1 and
+			not global.has_crown and global.xtime > 120000 and
+			player1.sprite_index != s_p_exit and player1.sprite_index != s_damsel_exit):
+		
+			if (not level.music_fade):
+			
+				level.music_fade = true
+				global.message = "A CHILL RUNS UP YOUR SPINE..."
+				global.message2 = "LET'S GET OUT OF HERE!"
+				global.message_timer = 200
+			
+		
+		
+		if (InLevel.is_level() and not gml.is_room("r_olmec") and not gml.is_room("r_load_level") and global.curr_level > 1 and
+			not global.has_crown and global.xtime > 150000 and not global.ghost_exists and
+			player1.sprite_index != s_p_exit and player1.sprite_index != s_damsel_exit):
+		
+			if (player1.position.x > room_width / 2): gml.instance_create(view_xview[0]+view_wview[0]+8, view_yview[0]+floor(view_hview[0] / 2), "ghost")
+			else: gml.instance_create(view_xview[0]-32,  view_yview[0]+floor(view_hview[0] / 2), "ghost")
+			global.ghost_exists = true
+		
+
+
+	if (global.check_water):
+
+		global.water_counter = 0
+		var all_water = gml.get_all_instances("water")
+		for water_instance in all_water:
+		
+			# if (position.y > view_yview[0]-32 and position.y < view_yview[0] + view_hview[0]+32 and not gml.is_room("r_olmec")):
+			if (not gml.is_room("r_olmec")):
+			
+				if ((!gml.is_room("r_load_level") and water_instance.position.y < 512) or gml.is_room("r_load_level")):
+				
+			
+					gml.instance_activate_region(water_instance.position.x-16, water_instance.position.y-16, 48, 48, true)
+			
+				if (not gml.collision_point(position.x, position.y-16, "solid", 0, 0) and not gml.collision_point(position.x, position.y-16, "water", 0, 0)):
+				
+					if (type == "Lava"): sprite_index = s_lava_top
+					else: sprite_index = s_water_top
+				
+				
+				obj = gml.instance_place(position.x-16, position.y, water)
+				if (gml.instance_exists("obj")):
+				
+					if (obj.sprite_index == s_water_top or obj.sprite_index == s_lava_top):
+					
+						if (type == "Lava"): sprite_index = s_lava_top
+						else: sprite_index = s_water_top
+					
+				
+				
+				obj = gml.instance_place(position.x+16, position.y, water)
+				if (gml.instance_exists("obj")):
+				
+					if (obj.sprite_index == s_water_top or obj.sprite_index == s_lava_top):
+					
+						if (type == "Lava"): sprite_index = s_lava_top
+						else: sprite_index = s_water_top
+					
+				
+				
+				if ((not gml.collision_point(position.x-16, position.y, "solid", 0, 0) and not gml.collision_point(position.x-16, position.y, "water", 0, 0)) or
+					(not gml.collision_point(position.x+16, position.y, "solid", 0, 0) and not gml.collision_point(position.x+16, position.y, "water", 0, 0)) or
+					(not gml.collision_point(position.x, position.y+16, "solid", 0, 0) and not gml.collision_point(position.x, position.y+16, "water", 0, 0))):
+				
+					gml.instance_destroy()
+					global.water_counter += 1
+				
+				
+				global.water_loop_safety += 1
+				if (global.water_loop_safety > 100000): global.check_water = false
+				
+				
+			
+		
+		
+		if (global.water_counter == 0): global.check_water = false
+
+	else:
+
+		global.water_loop_safety = 0
+
+
+	# game over
+	if (gml.instance_exists("player1")):
+
+		if (player1.dead):
+		
+			if (draw_status == 0):
+			
+				alarm_0(50)
+				draw_status += 1
+			
+			if (draw_status > 2):
+			
+				money_diff = global.money - money_count
+				if (money_diff > 1000):
+					money_count += 1000
+				elif (money_diff > 100):
+					money_count += 100
+				else:
+					money_count += money_diff
+
+	
 
 func _on_alarm_0_timeout():
 	if (draw_status < 3): draw_status = 2

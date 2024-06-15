@@ -549,75 +549,75 @@ func find_nearest_light_source():
 	if (gml.instance_exists(explosion)):
 
 		var source = gml.instance_nearest(position.x, position.y, 'explosion')
-		dist_to_nearest_light_source = gml.distance_tobject('source', position.x, position.y)
+		dist_to_nearest_light_source = gml.distance_to_object('source', self)
 		if (source.image_index <= 3): dist_to_nearest_light_source -= source.image_index*16
 		else: dist_to_nearest_light_source += (source.image_index-3)*16
 
 	if (gml.instance_exists('lava')):
 
 		var source = gml.instance_nearest(position.x, position.y, 'lava')
-		if (gml.distance_tobject(source, position.x, position.y) < dist_to_nearest_light_source):
-			dist_to_nearest_light_source = gml.distance_tobject(source, position.x, position.y)
+		if (gml.distance_to_object(source, self) < dist_to_nearest_light_source):
+			dist_to_nearest_light_source = gml.distance_to_object(source, self)
 
 	if (gml.instance_exists('lamp')):
 
 		var source = gml.instance_nearest(position.x, position.y, 'lamp')
-		if (gml.distance_tobject(source, position.x, position.y) < dist_to_nearest_light_source):
-			dist_to_nearest_light_source = gml.distance_tobject(source, position.x, position.y)
+		if (gml.distance_to_object(source, self) < dist_to_nearest_light_source):
+			dist_to_nearest_light_source = gml.distance_to_object(source, self)
 
 	if (gml.instance_exists('lamp_item')):
 
 		var source = gml.instance_nearest(position.x, position.y, 'lamp_item')
-		if (gml.distance_tobject(source, position.x, position.y) < dist_to_nearest_light_source):
-			dist_to_nearest_light_source = gml.distance_tobject(source, position.x, position.y)
+		if (gml.distance_to_object(source, self) < dist_to_nearest_light_source):
+			dist_to_nearest_light_source = gml.distance_to_object(source, self)
 
 	if (gml.instance_exists('flare_crate')):
 
 		var source = gml.instance_nearest(position.x, position.y, 'flare_crate')
-		if (gml.distance_tobject(source, position.x, position.y) < dist_to_nearest_light_source):
-			dist_to_nearest_light_source = gml.distance_tobject(source, position.x, position.y)
+		if (gml.distance_to_object(source, self) < dist_to_nearest_light_source):
+			dist_to_nearest_light_source = gml.distance_to_object(source, self)
 
 	if (gml.instance_exists('tiki_torch')):
 
 		var source = gml.instance_nearest(position.x, position.y, 'tiki_torch')
-		if (gml.distance_tobject(source, position.x, position.y)+48 < dist_to_nearest_light_source):
-			dist_to_nearest_light_source = gml.distance_tobject(source, position.x, position.y)+48
+		if (gml.distance_to_object(source, self)+48 < dist_to_nearest_light_source):
+			dist_to_nearest_light_source = gml.distance_to_object(source, self)+48
 
 	if (gml.instance_exists('arrow_trap_left_lit')):
 
 		var source = gml.instance_nearest(position.x, position.y, 'arrow_trap_left_lit')
-		if (gml.distance_tobject(source, position.x, position.y)+48 < dist_to_nearest_light_source):
-			dist_to_nearest_light_source = gml.distance_tobject(source, position.x, position.y)+48
+		if (gml.distance_to_object(source, self)+48 < dist_to_nearest_light_source):
+			dist_to_nearest_light_source = gml.distance_to_object(source, self)+48
 
 	if (gml.instance_exists('arrow_trap_right_lit')):
 
 		var source = gml.instance_nearest(position.x, position.y, 'arrow_trap_right_lit')
-		if (gml.distance_tobject(source, position.x, position.y)+48 < dist_to_nearest_light_source):
-			dist_to_nearest_light_source = gml.distance_tobject(source, position.x, position.y)+48
+		if (gml.distance_to_object(source, self)+48 < dist_to_nearest_light_source):
+			dist_to_nearest_light_source = gml.distance_to_object(source, self)+48
 
 	if (gml.instance_exists('spear_trap_lit')):
 
 		var source = gml.instance_nearest(position.x, position.y, 'spear_trap_lit')
-		if (gml.distance_tobject(source, position.x, position.y)+48 < dist_to_nearest_light_source):
-			dist_to_nearest_light_source = gml.distance_tobject(source, position.x, position.y)+48
+		if (gml.distance_to_object(source, self)+48 < dist_to_nearest_light_source):
+			dist_to_nearest_light_source = gml.distance_to_object(source, self)+48
 
 	if (gml.instance_exists('smash_trap_lit')):
 
 		var source = gml.instance_nearest(position.x, position.y, 'smash_trap_lit')
-		if (gml.distance_tobject(source, position.x, position.y)+48 < dist_to_nearest_light_source):
-			dist_to_nearest_light_source = gml.distance_tobject(source, position.x, position.y)+48
+		if (gml.distance_to_object(source, self)+48 < dist_to_nearest_light_source):
+			dist_to_nearest_light_source = gml.distance_to_object(source, self)+48
 
 	if (gml.instance_exists('shotgun_blast_left')):
 
 		var source = gml.instance_nearest(position.x, position.y, 'shotgun_blast_left')
-		if (gml.distance_tobject(source, position.x, position.y) < dist_to_nearest_light_source):
-			dist_to_nearest_light_source = gml.distance_tobject(source, position.x, position.y)
+		if (gml.distance_to_object(source, self) < dist_to_nearest_light_source):
+			dist_to_nearest_light_source = gml.distance_to_object(source, self)
 
 	if (gml.instance_exists('shotgun_blast_right')):
 
 		var source = gml.instance_nearest(position.x, position.y, 'shotgun_blast_right')
-		if (gml.distance_tobject(source, position.x, position.y) < dist_to_nearest_light_source):
-			dist_to_nearest_light_source = gml.distance_tobject(source, position.x, position.y)
+		if (gml.distance_to_object(source, self) < dist_to_nearest_light_source):
+			dist_to_nearest_light_source = gml.distance_to_object(source, self)
 	
 func handle_edge_leaning():
 	# WHOA
@@ -1717,7 +1717,7 @@ func bomb_rope_and_whipping_handling(): #--- Also handles picking up items and a
 							var all_trap_blocks = gml.get_all_instances("trap_block")
 							for trap_block_instance in all_trap_blocks:
 							
-								var dist = gml.distance_tobject('character', trap_block_instance.x, trap_block_instance.y)
+								var dist = gml.distance_to_object('character', trap_block_instance)
 								if (dist < 90):
 								
 									trap_block_instance.dying = true
@@ -1747,7 +1747,7 @@ func bomb_rope_and_whipping_handling(): #--- Also handles picking up items and a
 								var all_trap_blocks = gml.get_all_instances("trap_block")
 								for trap_block_instance in all_trap_blocks:
 								
-									var dist = gml.distance_tobject('character', trap_block_instance.x, trap_block_instance.y)
+									var dist = gml.distance_to_object('character', trap_block_instance)
 									if (dist < 90):
 									
 										gml.instance_destroy(trap_block_instance)
@@ -1903,7 +1903,7 @@ func handle_shop_behavior(): #--- Purchasing and games etc. (different shop type
 				
 			
 			
-			if (shopkeeper.style == "Kissing" and gml.distance_tobject('damsel', position.x, position.y) < 16):
+			if (shopkeeper.style == "Kissing" and gml.distance_to_object('damsel', self) < 16):
 			
 				var obj = gml.instance_nearest(position.x, position.y, 'damsel')
 				if (global.thief_level > 0 or global.murderer or not obj.for_sale):
@@ -3708,7 +3708,7 @@ func apply_ball_and_chain():
 	# apply ball and chain
 	if (gml.instance_exists('ball')):
 
-		if (gml.distance_tobject('ball', position.x, position.y) >= 24):
+		if (gml.distance_to_object('ball', self) >= 24):
 			var ball_instance = gml.instance_nearest(position.x, position.y, 'ball') #--- adding this so we have a reference to the object
 		
 			if (x_vel > 0 and ball_instance.position.x < position.x and abs(ball_instance.position.x-position.x) > 24): x_vel = 0

@@ -594,7 +594,7 @@ func scr_get_name():
 		32:  return "BROM"
 	return "AHKMED"
 
-func scr_treasure_gen(bones_chance, x, y): #will pass in x and y as well since there is no position for this to have an x and y
+func scr_treasure_gen(bones_chance, instance): #will pass in x and y as well since there is no position for this to have an x and y
 #
 # scr_treasure_gen(bones_chance)
 #
@@ -618,12 +618,15 @@ func scr_treasure_gen(bones_chance, x, y): #will pass in x and y as well since t
 	#
 #***********************************************************************************/
 
+	var x = instance.postiion.x
+	var y = instance.position.y
+	
 	# argument0: bones
 	randomize()
 	# alcove
-	if (gml.distance_tobject('entrance', x, y) < 32): return 0 #seems simple to send these as strings and then have the function turn that into the appropriate group to search for
-	if (gml.distance_tobject('exit', x, y) < 32): return 0 #passing x and y as well since there is no other way to check
-	if (gml.distance_tobject('gold_idol', x, y) < 64): return 0 # --- changing these to just the object itself since there should only be one per level anyway. that way x and y can be gotten in the function
+	if (gml.distance_to_object('entrance', instance) < 32): return 0 #seems simple to send these as strings and then have the function turn that into the appropriate group to search for
+	if (gml.distance_to_object('exit', instance) < 32): return 0 #passing x and y as well since there is no other way to check
+	if (gml.distance_to_object('gold_idol', instance) < 64): return 0 # --- changing these to just the object itself since there should only be one per level anyway. that way x and y can be gotten in the function
 
 	var col_stuff = true
 	if (not gml.collision_point(x, y-16, 'solid', 0, 0) and #same as above for here
@@ -651,12 +654,12 @@ func scr_treasure_gen(bones_chance, x, y): #will pass in x and y as well since t
 		(gml.collision_point(x-16, y-16, 'solid', 0, 0) or gml.collision_point(x+16, y-16, 'solid', 0, 0) or gml.collision_point(x-16, y-16, 'block', 0, 0) or gml.collision_point(x+16, y-16, 'block', 0, 0))):
 
 		var n = 60
-		if (gml.distance_tobject('giant_spider', x, y) < 100 ): n = 5 #adjusting the < 100 part since it was inside the argument. kinda weird
+		if (gml.distance_to_object('giant_spider', instance) < 100 ): n = 5 #adjusting the < 100 part since it was inside the argument. kinda weird
 		
 		if (global.level_type != 2 and randi_range(1,n) == 1): gml.instance_create(x, y-16, web)
-		elif (global.gen_udjat_eye and not global.Locked_chest):
+		elif (global.gen_udjat_eye and not global.locked_chest):
 		
-			if (randi_range(1,global.locked_chestChance) == 1):
+			if (randi_range(1,global.locked_chest_chance) == 1):
 			
 				gml.instance_create(x+8, y-8, locked_chest)
 				global.Locked_chest = true
@@ -697,7 +700,7 @@ func scr_treasure_gen(bones_chance, x, y): #will pass in x and y as well since t
 		(gml.collision_point(x-16, y-16, 'solid', 0, 0) and gml.collision_point(x+16, y-16, 'solid', 0, 0))):
 
 		var n = 60
-		if (gml.distance_tobject('giant_spider', x, y) < 100): n = 10
+		if (gml.distance_to_object('giant_spider', instance) < 100): n = 10
 		if (global.level_type != 2 and randi_range(1,n) == 1): gml.instance_create(x, y-16, web)
 		elif (randi_range(1,4) == 1): gml.instance_create(x+8, y-4, gold_bar)
 		elif (randi_range(1,8) == 1): gml.instance_create(x+8, y-8, gold_bars)
@@ -2006,7 +2009,7 @@ func scr_entity_gen():
 			
 				if (solid_instance.type != "Altar"):
 				
-					scr_treasure_gen(0, solid_instance.position.x, solid_instance.position.y) #setting bones_chance to 0 since I'm not sure what default value is in GML when not passing an argument
+					scr_treasure_gen(0, solid_instance) #setting bones_chance to 0 since I'm not sure what default value is in GML when not passing an argument
 				
 			
 				# enemies
@@ -2233,8 +2236,8 @@ func scr_entity_gen():
 				
 				if (solid_instance.type != "Altar"):
 				
-					if (global.cemetary): scr_treasure_gen(10, solid_instance.position.x, solid_instance.position.y)
-					else: scr_treasure_gen(0, solid_instance.position.x, solid_instance.position.y)
+					if (global.cemetary): scr_treasure_gen(10, solid_instance)
+					else: scr_treasure_gen(0, solid_instance)
 				
 			
 				# enemies
@@ -2351,13 +2354,13 @@ func scr_entity_gen():
 					gml.point_distance(solid_instance.position.x, solid_instance.position.y, entrance_instance.position.x, entrance_instance.position.y) > 64 and
 					not InLevel.is_in_shop(solid_instance.position.x, solid_instance.position.y)):
 				
-					if (randi_range(1,10) == 1 and solid_instance.sprite_index == s_dark and not gml.collision_rectangle(solid_instance.position.x, solid_instance.position.y-64, solid_instance.position.x+15, solid_instance.position.y-1, "solid", 0, 0) and gml.distance_tobject('exit', solid_instance.position.x, solid_instance.position.y) > 64): gml.instance_create(solid_instance.position.x, solid_instance.position.y-16, spring_trap) #--- same collision_rectangle issue
+					if (randi_range(1,10) == 1 and solid_instance.sprite_index == s_dark and not gml.collision_rectangle(solid_instance.position.x, solid_instance.position.y-64, solid_instance.position.x+15, solid_instance.position.y-1, "solid", 0, 0) and gml.distance_to_object('exit', solid_instance) > 64): gml.instance_create(solid_instance.position.x, solid_instance.position.y-16, spring_trap) #--- same collision_rectangle issue
 					elif (randi_range(1,20) == 1 and gml.point_distance(solid_instance.position.x, solid_instance.position.y, entrance_instance.position.x, entrance_instance.position.y) > 64): gml.instance_create(solid_instance.position.x, solid_instance.position.y-16, solid_instance.position.yeti)
 				
 				
 				if (solid_instance.type != "Altar"):
 					
-					scr_treasure_gen(0, solid_instance.position.x, solid_instance.position.y)
+					scr_treasure_gen(0, solid_instance)
 			
 			
 		
@@ -2463,7 +2466,7 @@ func scr_entity_gen():
 				
 				if (solid_instance.type != "Altar"):
 					   
-					scr_treasure_gen(0, solid_instance.position.x, solid_instance.position.y)
+					scr_treasure_gen(0, solid_instance)
 			
 			
 		
