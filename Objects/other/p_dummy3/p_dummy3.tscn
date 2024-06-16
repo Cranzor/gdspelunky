@@ -104,7 +104,7 @@ object_size = Vector2(16, 16)
 
 [node name="Node" type="Node" parent="."]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node" groups=["animated_sprite"]]
 show_behind_parent = true
 z_index = -40
 z_as_relative = false
@@ -113,7 +113,7 @@ animation = &"climb_up3"
 frame = 1
 frame_progress = 0.576651
 
-[node name="Camera2D" type="Camera2D" parent="Node/AnimatedSprite2D"]
+[node name="Camera2D" type="Camera2D" parent="Node/AnimatedSprite2D" groups=["view"]]
 limit_left = 0
 limit_right = 960
 limit_bottom = 240

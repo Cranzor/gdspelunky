@@ -54,28 +54,29 @@ func drawn_sprite_create():
 	blink_toggle = 0
 
 func set_animation(new_sprite):
-	var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+	var animated_sprite: AnimatedSprite2D = find_child("AnimatedSprite2D")
 	animated_sprite.play(new_sprite)
 
 func get_animation():
-	var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+	var animated_sprite: AnimatedSprite2D = find_child("AnimatedSprite2D")
 	var current_animation = animated_sprite.animation
 	return current_animation
 
 func set_animation_speed_scale(new_speed):
-	var animated_sprite: AnimatedSprite2D = $Node/AnimatedSprite2D
+	var animated_sprite: AnimatedSprite2D = find_child("AnimatedSprite2D")
 	animated_sprite.speed_scale = new_speed
 
 func get_animation_speed_scale():
-	var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+	var animated_sprite: AnimatedSprite2D = find_child("AnimatedSprite2D")
 	var current_speed_scale = animated_sprite.speed_scale
 	return current_speed_scale
 
 var sprite_initialized = false
 func smooth_animated_sprite_movement(x_velocity, y_velocity, delta):
+	var animated_sprite = find_child("AnimatedSprite2D")
 	if sprite_initialized == false:
 		sprite_initialized = true
-		$Node/AnimatedSprite2D.position = self.position
+		animated_sprite.position = self.position
 		
-	$Node/AnimatedSprite2D.position.x += (x_velocity * 30) * delta
-	$Node/AnimatedSprite2D.position.y += (y_velocity * 30) * delta
+	animated_sprite.position.x += (x_velocity * 30) * delta
+	animated_sprite.position.y += (y_velocity * 30) * delta

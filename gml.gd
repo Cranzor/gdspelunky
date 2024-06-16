@@ -353,16 +353,22 @@ func room_width():
 func view(view_value: String):
 	var view = get_tree().get_first_node_in_group("view")
 	
-	if view_value == 'xview':
-		return 0
+	if view != null:
+		print(round(view.get_screen_center_position().x))
 		
-	elif view_value == 'yview':
-		return 0
-		
-	elif view_value == 'wview':
-		return 0
-		
-	elif view_value == 'hview':
+		if view_value == 'xview':
+			return round(view.get_screen_center_position().x - 160)
+			
+		elif view_value == 'yview':
+			return round(view.get_screen_center_position().y - 120)
+			
+		elif view_value == 'wview':
+			return 320
+			
+		elif view_value == 'hview':
+			return 240
+	
+	else:
 		return 0
 
 func room_get_name():

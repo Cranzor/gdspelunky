@@ -64,8 +64,9 @@ func step():
 			status = 1
 			x_velocity = 0
 		
-		else: position.x += 2
-		x_velocity = 2
+		else:
+			position.x += 2
+			x_velocity = 2
 
 	elif (status == ROPEDROP):
 		if alarm_0_timer.is_stopped(): #--- [FLAG] check
