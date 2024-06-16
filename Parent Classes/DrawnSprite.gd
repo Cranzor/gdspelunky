@@ -32,6 +32,18 @@ var sprite_index:
 	get:
 		var current_animation = get_animation()
 		return current_animation
+		
+var image_speed:
+	set(new_speed):
+		image_speed = new_speed
+		set_animation_speed_scale(new_speed)
+	
+	get:
+		var current_speed_scale = get_animation_speed_scale()
+		return current_speed_scale
+		
+var status
+var facing
 
 @export var object_size: Vector2 #--- created by me for collision purposes
 
@@ -49,3 +61,12 @@ func get_animation():
 	var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 	var current_animation = animated_sprite.animation
 	return current_animation
+
+func set_animation_speed_scale(new_speed):
+	var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+	animated_sprite.speed_scale = new_speed
+
+func get_animation_speed_scale():
+	var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+	var current_speed_scale = animated_sprite.speed_scale
+	return current_speed_scale

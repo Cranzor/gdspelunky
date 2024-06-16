@@ -388,7 +388,7 @@ func step():
 		
 			player1_instance.dm = gml.distance_to_object('x_market', player1_instance)
 			if (player1_instance.dm < 4): player1_instance.dm = 4
-			if (round(alarm_2_timer.time_left * physics_frame_rate)) < 1 or player1_instance.dm < round(alarm_2_timer.time_left * physics_frame_rate): alarm_2_timer.start(player1_instance.dm / physics_frame_rate)
+			if (ceil(alarm_2_timer.time_left * physics_frame_rate)) < 1 or player1_instance.dm < ceil(alarm_2_timer.time_left * physics_frame_rate): alarm_2_timer.start(player1_instance.dm / physics_frame_rate)
 		
 
 

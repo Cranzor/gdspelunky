@@ -30,6 +30,8 @@ var physics_frame_rate = 30
 
 @onready var text_background = $TextBackground
 
+var p_dummy3 = preload("res://objects/other/p_dummy3/p_dummy3.tscn")
+
 func initial_setup():
 	#--- set size
 	object_size = Vector2(0, 0)
@@ -44,7 +46,7 @@ func _ready():
 	fade_in = false
 	fade_out = false
 	fade_level = 1
-	# gml.instance_create(-32, 184, "p_dummy3")
+	#gml.instance_create(-32, 184, p_dummy3)
 
 	draw_status = 0
 	
@@ -109,7 +111,7 @@ func _physics_process(delta):
 		else:
 		
 			fade_in = false
-			#if (not gml.instance_exists("p_dummy3")): gml.instance_create(-32, 184, "p_dummy3") --- UNCOMMENT THIS
+			if (not gml.instance_exists("p_dummy3")): gml.instance_create(-32, 184, p_dummy3)
 		
 
 	elif (fade_out):
