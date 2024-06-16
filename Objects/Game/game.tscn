@@ -19,6 +19,7 @@ one_shot = true
 one_shot = true
 
 [node name="UI" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0

@@ -1,4 +1,3 @@
-@tool
 extends Node2D
 
 @export var object_size = Vector2(0, 0)
@@ -586,6 +585,7 @@ func draw():
 				
 			
 			elif (InLevel.is_room("r_sun")):
+				$UI/BonusRooms.visible = true
 				var sun_room = gml.get_instance("sun_room")
 			
 				if (draw_status > 0):
@@ -611,6 +611,7 @@ func draw():
 				
 			
 			elif (InLevel.is_room("r_moon")):
+				$UI/BonusRooms.visible = true
 				var moon_room = gml.get_instance("moon_room")
 			
 				if (moon_room.timer < 0):
@@ -639,6 +640,7 @@ func draw():
 				
 			
 			elif (InLevel.is_room("r_stars")):
+				$UI/BonusRooms.visible = true
 				var stars_room = gml.get_instance("stars_room")
 			
 				if (draw_status > 0):
