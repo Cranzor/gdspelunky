@@ -7,9 +7,6 @@ var y_vel
 const LEFT = 0
 const RIGHT = 0
 
-var x_velocity = 0 #--- for smooth movement
-var y_velocity = 0
-
 @onready var alarm_0_timer = $Alarms/Alarm0
 @onready var alarm_2_timer = $Alarms/Alarm2
 

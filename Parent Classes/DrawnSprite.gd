@@ -71,6 +71,8 @@ func get_animation_speed_scale():
 	var current_speed_scale = animated_sprite.speed_scale
 	return current_speed_scale
 
+var x_velocity = 0
+var y_velocity = 0
 var sprite_initialized = false
 func smooth_animated_sprite_movement(x_velocity, y_velocity, delta):
 	var animated_sprite = find_child("AnimatedSprite2D")
