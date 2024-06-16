@@ -105,14 +105,12 @@ var grav
 var s_whoa_left
 var s_damsel_whoa_l
 var s_tunnel_whoa_l
-var facing
 var swimming
 var splash
 var burn
 var s_stun_l
 var s_damsel_stun_l
 var s_tunnel_stun_l
-var image_speed = 1 #--- setting to 1 for now
 var parachute
 var poof
 var para_used

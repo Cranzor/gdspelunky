@@ -102,10 +102,22 @@ script = ExtResource("1_sgunq")
 depth = -40
 object_size = Vector2(16, 16)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Node" type="Node" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node"]
+show_behind_parent = true
+z_index = -40
+z_as_relative = false
 sprite_frames = SubResource("SpriteFrames_g2y7a")
 animation = &"climb_up3"
-frame_progress = 0.384759
+frame = 1
+frame_progress = 0.576651
+
+[node name="Camera2D" type="Camera2D" parent="Node/AnimatedSprite2D"]
+limit_left = 0
+limit_right = 960
+limit_bottom = 240
+drag_horizontal_enabled = true
 
 [node name="Alarms" type="Node2D" parent="."]
 

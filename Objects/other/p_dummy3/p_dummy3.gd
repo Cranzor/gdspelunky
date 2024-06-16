@@ -7,8 +7,13 @@ var y_vel
 const LEFT = 0
 const RIGHT = 0
 
+var x_velocity = 0 #--- for smooth movement
+var y_velocity = 0
+
 @onready var alarm_0_timer = $Alarms/Alarm0
 @onready var alarm_2_timer = $Alarms/Alarm2
+
+@onready var animated_sprite = $Node/AnimatedSprite2D
 
 func initial_setup():
 	#--- set size
@@ -18,7 +23,7 @@ func initial_setup():
 	depth = -40
 	z_index = depth
 	
-	$AnimatedSprite2D.play("run_left")
+	animated_sprite.play("run_left")
 	drawn_sprite_create()
 
 func _ready():
@@ -28,6 +33,9 @@ func _ready():
 func _physics_process(delta):
 	step()
 	draw()
+
+func _process(delta):
+	smooth_animated_sprite_movement(x_velocity, y_velocity, delta)
 
 func create():
 	# dummy actor for intro
@@ -54,8 +62,10 @@ func step():
 		
 			sprite_index = "duck_left"
 			status = 1
+			x_velocity = 0
 		
 		else: position.x += 2
+		x_velocity = 2
 
 	elif (status == ROPEDROP):
 		if alarm_0_timer.is_stopped(): #--- [FLAG] check
@@ -71,6 +81,7 @@ func step():
 			status = 4
 		
 		else: position.x += 2
+		x_velocity = 2
 
 	elif (status == 4):
 
@@ -89,8 +100,8 @@ func step():
 func draw():
 	#if (facing == RIGHT): image_xscale = -1
 	#else: image_xscale = 1
-	if (facing == RIGHT): $AnimatedSprite2D.flip_h = true
-	else: $AnimatedSprite2D.flip_h = false
+	if (facing == RIGHT): animated_sprite.flip_h = true
+	else: animated_sprite.flip_h = false
 
 	#draw_sprite_ext(sprite_index, -1, position.x, position.y, image_xscale, image_yscale, image_angle, image_blend, image_alpha) #--- Not needed?
 
