@@ -44,6 +44,12 @@ var image_speed:
 		
 var status
 var facing
+var armed
+
+var x_vel = 0
+var y_vel = 0
+var x_acc = 0
+var y_acc = 0
 
 @export var object_size: Vector2 #--- created by me for collision purposes
 

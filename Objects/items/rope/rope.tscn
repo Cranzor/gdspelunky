@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://b56uhwt5w7ffm"]
+
+[ext_resource type="Script" path="res://objects/items/rope/rope.gd" id="1_75ulf"]
+[ext_resource type="Texture2D" uid="uid://cao1v2bm2nigg" path="res://sprites/items/weapons/rope/rope_0.png" id="2_ipeqx"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5bcux"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ipeqx")
+}],
+"loop": true,
+"name": &"rope",
+"speed": 30.0
+}]
+
+[node name="Rope" type="Node2D" groups=["drawn_sprite", "ladder", "rope"]]
+z_index = -200
+script = ExtResource("1_75ulf")
+depth = -200
+object_size = Vector2(16, 8)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = -200
+z_as_relative = false
+sprite_frames = SubResource("SpriteFrames_5bcux")
+animation = &"rope"
+centered = false
+offset = Vector2(4, 4)

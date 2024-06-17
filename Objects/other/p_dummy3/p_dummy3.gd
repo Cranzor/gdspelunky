@@ -3,7 +3,6 @@ extends DrawnSprite
 var climb_snd_toggle
 const TRANSITION = 0
 const ROPEDROP = 1
-var y_vel
 const LEFT = 0
 const RIGHT = 0
 
@@ -11,6 +10,8 @@ const RIGHT = 0
 @onready var alarm_2_timer = $Alarms/Alarm2
 
 @onready var animated_sprite = $Node/AnimatedSprite2D
+
+var rope_throw = preload("res://objects/items/rope_throw/rope_throw.tscn")
 
 func initial_setup():
 	#--- set size
@@ -51,6 +52,9 @@ func create():
 	facing = RIGHT
 
 func step():
+	x_velocity = 0
+	y_velocity = 0
+	
 	position.y += y_vel
 
 	if (status == TRANSITION):
@@ -59,7 +63,6 @@ func step():
 		
 			sprite_index = "duck_left"
 			status = 1
-			x_velocity = 0
 		
 		else:
 			position.x += 2
@@ -78,8 +81,9 @@ func step():
 			sprite_index = "climb_up3"
 			status = 4
 		
-		else: position.x += 2
-		x_velocity = 2
+		else:
+			position.x += 2
+			x_velocity = 2
 
 	elif (status == 4):
 
@@ -90,6 +94,7 @@ func step():
 		else:
 		
 			position.y += 2
+			y_velocity = 2
 		
 		if (ceil(alarm_2_timer.time_left) * gml.room_speed < 1):
 			if alarm_2_timer.is_stopped():
@@ -104,7 +109,7 @@ func draw():
 	#draw_sprite_ext(sprite_index, -1, position.x, position.y, image_xscale, image_yscale, image_angle, image_blend, image_alpha) #--- Not needed?
 
 func _on_alarm_0_timeout():
-	var rope = gml.instance_create(position.x+16, position.y, "rope_throw")
+	var rope = gml.instance_create(position.x+16, position.y, rope_throw)
 	rope.falling = true
 	rope.armed = true
 	#alarm_1(50) #--- Guess this was deleted?

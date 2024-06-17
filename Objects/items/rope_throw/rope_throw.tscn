@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://cemg03lulx62j"]
+
+[ext_resource type="Script" path="res://objects/items/rope_throw/rope_throw.gd" id="1_fslem"]
+[ext_resource type="Texture2D" uid="uid://dp3dhpu2bp7f8" path="res://sprites/items/weapons/rope_end/rope_end_0.png" id="2_el3p5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jqv2e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_el3p5")
+}],
+"loop": true,
+"name": &"rope_end",
+"speed": 30.0
+}]
+
+[node name="RopeThrow" type="Node2D" groups=["drawn_sprite", "item", "rope_throw"]]
+z_index = -100
+script = ExtResource("1_fslem")
+depth = -100
+object_size = Vector2(8, 8)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = -100
+z_as_relative = false
+sprite_frames = SubResource("SpriteFrames_jqv2e")
+animation = &"rope_end"
+centered = false

@@ -1,9 +1,5 @@
 extends DrawnSprite #--- no parent, but adding DrawnSprite to get smooth movement function
 
-var x_vel
-var y_vel
-var y_acc
-
 func initial_setup():
 	#--- set size
 	object_size = Vector2(16, 16)
