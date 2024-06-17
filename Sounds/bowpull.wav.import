@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://ccsyskn34hl15"
-path="res://.godot/imported/bowpull.wav-f38cb6d97e91cf12f59ddeff220ae549.sample"
+path="res://.godot/imported/bowpull.wav-8a18f240b825ce9fe3192a44771be477.sample"
 
 [deps]
 
-source_file="res://Sounds/bowpull.wav"
-dest_files=["res://.godot/imported/bowpull.wav-f38cb6d97e91cf12f59ddeff220ae549.sample"]
+source_file="res://sounds/bowpull.wav"
+dest_files=["res://.godot/imported/bowpull.wav-8a18f240b825ce9fe3192a44771be477.sample"]
 
 [params]
 

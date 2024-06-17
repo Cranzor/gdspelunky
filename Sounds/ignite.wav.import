@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dxn0po3ak8j57"
-path="res://.godot/imported/ignite.wav-8664beb96a0f48e333207750650796eb.sample"
+path="res://.godot/imported/ignite.wav-09441cca4553a1dc5e46f26371774aae.sample"
 
 [deps]
 
-source_file="res://Sounds/ignite.wav"
-dest_files=["res://.godot/imported/ignite.wav-8664beb96a0f48e333207750650796eb.sample"]
+source_file="res://sounds/ignite.wav"
+dest_files=["res://.godot/imported/ignite.wav-09441cca4553a1dc5e46f26371774aae.sample"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bkoxj4j71kcpk"
-path="res://.godot/imported/yetiyell.wav-970059fa73242ca5d9ece822c4df2f04.sample"
+path="res://.godot/imported/yetiyell.wav-97aa5cc5142097c492de2bbd38b060f3.sample"
 
 [deps]
 
-source_file="res://Sounds/yetiyell.wav"
-dest_files=["res://.godot/imported/yetiyell.wav-970059fa73242ca5d9ece822c4df2f04.sample"]
+source_file="res://sounds/yetiyell.wav"
+dest_files=["res://.godot/imported/yetiyell.wav-97aa5cc5142097c492de2bbd38b060f3.sample"]
 
 [params]
 

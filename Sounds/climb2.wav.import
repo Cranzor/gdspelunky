@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://di01vyfxa3a23"
-path="res://.godot/imported/climb2.wav-47823665d02bc627c6ca349af427ec92.sample"
+path="res://.godot/imported/climb2.wav-2de4faf27eba8e80246984248d08ecc0.sample"
 
 [deps]
 
-source_file="res://Sounds/climb2.wav"
-dest_files=["res://.godot/imported/climb2.wav-47823665d02bc627c6ca349af427ec92.sample"]
+source_file="res://sounds/climb2.wav"
+dest_files=["res://.godot/imported/climb2.wav-2de4faf27eba8e80246984248d08ecc0.sample"]
 
 [params]
 

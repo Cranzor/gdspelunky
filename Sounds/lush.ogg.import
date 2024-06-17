@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://3cyxsdplrlpd"
-path="res://.godot/imported/lush.ogg-b9a1f8f742147105312085034bd70011.oggvorbisstr"
+path="res://.godot/imported/lush.ogg-46eb8343bb7e1449bdf13ab0685310d4.oggvorbisstr"
 
 [deps]
 
-source_file="res://Sounds/lush.ogg"
-dest_files=["res://.godot/imported/lush.ogg-b9a1f8f742147105312085034bd70011.oggvorbisstr"]
+source_file="res://sounds/lush.ogg"
+dest_files=["res://.godot/imported/lush.ogg-46eb8343bb7e1449bdf13ab0685310d4.oggvorbisstr"]
 
 [params]
 

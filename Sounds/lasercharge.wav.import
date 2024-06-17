@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cikgou5rtshlu"
-path="res://.godot/imported/lasercharge.wav-c33b34a9e6c44df15416afc5ebedd1be.sample"
+path="res://.godot/imported/lasercharge.wav-53c1f238fa781632aa55899b604cda1a.sample"
 
 [deps]
 
-source_file="res://Sounds/lasercharge.wav"
-dest_files=["res://.godot/imported/lasercharge.wav-c33b34a9e6c44df15416afc5ebedd1be.sample"]
+source_file="res://sounds/lasercharge.wav"
+dest_files=["res://.godot/imported/lasercharge.wav-53c1f238fa781632aa55899b604cda1a.sample"]
 
 [params]
 

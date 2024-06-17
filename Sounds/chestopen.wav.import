@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://xa205j72ku8u"
-path="res://.godot/imported/chestopen.wav-679395e2210e623c8ad14200e60235bf.sample"
+path="res://.godot/imported/chestopen.wav-265243179c332c29c1f167424501495b.sample"
 
 [deps]
 
-source_file="res://Sounds/chestopen.wav"
-dest_files=["res://.godot/imported/chestopen.wav-679395e2210e623c8ad14200e60235bf.sample"]
+source_file="res://sounds/chestopen.wav"
+dest_files=["res://.godot/imported/chestopen.wav-265243179c332c29c1f167424501495b.sample"]
 
 [params]
 

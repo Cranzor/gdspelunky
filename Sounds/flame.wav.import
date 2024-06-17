@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://c0rft7ohdscio"
-path="res://.godot/imported/flame.wav-29b89bf3b174b0ab93d8b31815d3dccf.sample"
+path="res://.godot/imported/flame.wav-65955f8167b3bfbf6d8357f00201ae75.sample"
 
 [deps]
 
-source_file="res://Sounds/flame.wav"
-dest_files=["res://.godot/imported/flame.wav-29b89bf3b174b0ab93d8b31815d3dccf.sample"]
+source_file="res://sounds/flame.wav"
+dest_files=["res://.godot/imported/flame.wav-65955f8167b3bfbf6d8357f00201ae75.sample"]
 
 [params]
 

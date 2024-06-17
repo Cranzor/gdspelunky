@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://twy2gw0l3s48"
-path="res://.godot/imported/jetpack.wav-0d889cc7893ed914c10ced0c45afbe79.sample"
+path="res://.godot/imported/jetpack.wav-1847569e2387f941ac4903b54c04f865.sample"
 
 [deps]
 
-source_file="res://Sounds/jetpack.wav"
-dest_files=["res://.godot/imported/jetpack.wav-0d889cc7893ed914c10ced0c45afbe79.sample"]
+source_file="res://sounds/jetpack.wav"
+dest_files=["res://.godot/imported/jetpack.wav-1847569e2387f941ac4903b54c04f865.sample"]
 
 [params]
 

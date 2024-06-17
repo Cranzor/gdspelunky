@@ -125,6 +125,7 @@ drag_horizontal_enabled = true
 one_shot = true
 
 [node name="Alarm2" type="Timer" parent="Alarms"]
+wait_time = 0.267
 one_shot = true
 
 [connection signal="timeout" from="Alarms/Alarm0" to="." method="_on_alarm_0_timeout"]

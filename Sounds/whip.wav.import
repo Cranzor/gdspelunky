@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cihb8syn6kqlb"
-path="res://.godot/imported/whip.wav-88497b06daa565d9d062b26d7edef362.sample"
+path="res://.godot/imported/whip.wav-53b6351cb774ba63bf2176e3e7ca2c08.sample"
 
 [deps]
 
-source_file="res://Sounds/whip.wav"
-dest_files=["res://.godot/imported/whip.wav-88497b06daa565d9d062b26d7edef362.sample"]
+source_file="res://sounds/whip.wav"
+dest_files=["res://.godot/imported/whip.wav-53b6351cb774ba63bf2176e3e7ca2c08.sample"]
 
 [params]
 

@@ -354,7 +354,7 @@ func view(view_value: String):
 	var view = get_tree().get_first_node_in_group("view")
 	
 	if view != null:
-		print(round(view.get_screen_center_position().x))
+		#print(round(view.get_screen_center_position().x))
 		
 		if view_value == 'xview':
 			return round(view.get_screen_center_position().x - 160)

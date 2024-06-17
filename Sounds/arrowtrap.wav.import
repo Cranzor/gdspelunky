@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://0jhbuqnr0dpd"
-path="res://.godot/imported/arrowtrap.wav-7129f05b08e5d401e20c9c9fa25685ed.sample"
+path="res://.godot/imported/arrowtrap.wav-e34a4f0b6adcfe6ac3a2da57836896e4.sample"
 
 [deps]
 
-source_file="res://Sounds/arrowtrap.wav"
-dest_files=["res://.godot/imported/arrowtrap.wav-7129f05b08e5d401e20c9c9fa25685ed.sample"]
+source_file="res://sounds/arrowtrap.wav"
+dest_files=["res://.godot/imported/arrowtrap.wav-e34a4f0b6adcfe6ac3a2da57836896e4.sample"]
 
 [params]
 

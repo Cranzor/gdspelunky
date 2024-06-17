@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dni5iinuec5w7"
-path="res://.godot/imported/alien.wav-93ac3a07077d85817ba6460fbc1f96d0.sample"
+path="res://.godot/imported/alien.wav-319582c56387515273509fd748a6dad0.sample"
 
 [deps]
 
-source_file="res://Sounds/alien.wav"
-dest_files=["res://.godot/imported/alien.wav-93ac3a07077d85817ba6460fbc1f96d0.sample"]
+source_file="res://sounds/alien.wav"
+dest_files=["res://.godot/imported/alien.wav-319582c56387515273509fd748a6dad0.sample"]
 
 [params]
 

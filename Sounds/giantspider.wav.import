@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dexewhh8gfdi5"
-path="res://.godot/imported/giantspider.wav-b7abeae9077023b87a5bed870efeac95.sample"
+path="res://.godot/imported/giantspider.wav-c13f4060fe22dc5f8e3813db3de98f96.sample"
 
 [deps]
 
-source_file="res://Sounds/giantspider.wav"
-dest_files=["res://.godot/imported/giantspider.wav-b7abeae9077023b87a5bed870efeac95.sample"]
+source_file="res://sounds/giantspider.wav"
+dest_files=["res://.godot/imported/giantspider.wav-c13f4060fe22dc5f8e3813db3de98f96.sample"]
 
 [params]
 

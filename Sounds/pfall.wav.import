@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://y6frj1ps6f23"
-path="res://.godot/imported/pfall.wav-17ded4e9b2d3bfea62f1d88fe436e577.sample"
+path="res://.godot/imported/pfall.wav-b6d69149d53b31f598c70cda64da5161.sample"
 
 [deps]
 
-source_file="res://Sounds/pfall.wav"
-dest_files=["res://.godot/imported/pfall.wav-17ded4e9b2d3bfea62f1d88fe436e577.sample"]
+source_file="res://sounds/pfall.wav"
+dest_files=["res://.godot/imported/pfall.wav-b6d69149d53b31f598c70cda64da5161.sample"]
 
 [params]
 

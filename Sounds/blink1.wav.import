@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dmk05te3rwvet"
-path="res://.godot/imported/blink1.wav-99a41a2e08f6fc7991a6b58276f63379.sample"
+path="res://.godot/imported/blink1.wav-9394df75c6ccc1baf8866bdb6e82296c.sample"
 
 [deps]
 
-source_file="res://Sounds/blink1.wav"
-dest_files=["res://.godot/imported/blink1.wav-99a41a2e08f6fc7991a6b58276f63379.sample"]
+source_file="res://sounds/blink1.wav"
+dest_files=["res://.godot/imported/blink1.wav-9394df75c6ccc1baf8866bdb6e82296c.sample"]
 
 [params]
 

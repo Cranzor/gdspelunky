@@ -95,10 +95,9 @@ func step():
 		
 			position.y += 2
 			y_velocity = 2
-		
-		if (ceil(alarm_2_timer.time_left) * gml.room_speed < 1):
-			if alarm_2_timer.is_stopped():
-				alarm_2_timer.start(8/gml.room_speed)
+	
+		if alarm_2_timer.is_stopped():
+			alarm_2_timer.start(float(8)/float(gml.room_speed))
 
 func draw():
 	#if (facing == RIGHT): image_xscale = -1

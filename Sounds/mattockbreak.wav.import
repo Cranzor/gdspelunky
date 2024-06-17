@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://1vc2s7dbk4lo"
-path="res://.godot/imported/mattockbreak.wav-717642f7c43ec3f443de3199dfd7ad71.sample"
+path="res://.godot/imported/mattockbreak.wav-a8b99a1d8e82d9983aa2448eaa87478b.sample"
 
 [deps]
 
-source_file="res://Sounds/mattockbreak.wav"
-dest_files=["res://.godot/imported/mattockbreak.wav-717642f7c43ec3f443de3199dfd7ad71.sample"]
+source_file="res://sounds/mattockbreak.wav"
+dest_files=["res://.godot/imported/mattockbreak.wav-a8b99a1d8e82d9983aa2448eaa87478b.sample"]
 
 [params]
 

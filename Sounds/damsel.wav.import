@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://d3dh2p8phyq2f"
-path="res://.godot/imported/damsel.wav-4d144ce5998e5cafa5a4612013504a61.sample"
+path="res://.godot/imported/damsel.wav-4a595387f158b4be8e4659d769cd3ecd.sample"
 
 [deps]
 
-source_file="res://Sounds/damsel.wav"
-dest_files=["res://.godot/imported/damsel.wav-4d144ce5998e5cafa5a4612013504a61.sample"]
+source_file="res://sounds/damsel.wav"
+dest_files=["res://.godot/imported/damsel.wav-4a595387f158b4be8e4659d769cd3ecd.sample"]
 
 [params]
 
