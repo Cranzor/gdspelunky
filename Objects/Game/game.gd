@@ -48,7 +48,7 @@ func _physics_process(delta):
 func _on_alarm_0_timeout():
 	if (draw_status < 3): draw_status = 2
 	if alarm_1_timer.is_stopped():
-		alarm_1_timer.start(50/physics_frame_rate)
+		alarm_1_timer.start(float(50)/float(physics_frame_rate))
 
 func _on_alarm_1_timeout():
 	if (draw_status < 3): draw_status = 3
@@ -388,7 +388,7 @@ func step():
 		
 			player1_instance.dm = gml.distance_to_object('x_market', player1_instance)
 			if (player1_instance.dm < 4): player1_instance.dm = 4
-			if (ceil(alarm_2_timer.time_left * physics_frame_rate)) < 1 or player1_instance.dm < ceil(alarm_2_timer.time_left * physics_frame_rate): alarm_2_timer.start(player1_instance.dm / physics_frame_rate)
+			if (ceil(alarm_2_timer.time_left * physics_frame_rate)) < 1 or player1_instance.dm < ceil(alarm_2_timer.time_left * physics_frame_rate): alarm_2_timer.start(float(player1_instance.dm) / float(physics_frame_rate))
 		
 
 
@@ -500,7 +500,7 @@ func step():
 		
 			if (draw_status == 0):
 				if alarm_1_timer.is_stopped(): #--- [FLAG] may want to double check whether checking if the alarm is stopped is needed
-					alarm_0_timer.start(50/physics_frame_rate)
+					alarm_0_timer.start(float(50)/float(physics_frame_rate))
 				draw_status += 1
 			
 			if (draw_status > 2):

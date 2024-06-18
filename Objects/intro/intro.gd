@@ -51,7 +51,7 @@ func _ready():
 	draw_status = 0
 	
 	if alarm11_timer.is_stopped():
-		alarm11_timer.start(20/physics_frame_rate)
+		alarm11_timer.start(float(20)/float(physics_frame_rate))
 
 	var str = ""
 	var n = randi_range(1,8)
@@ -120,7 +120,8 @@ func _physics_process(delta):
 		else:
 		
 			global.game_start = false
-			get_tree().change_scene("res://title.tscn")
+			get_tree().change_scene_to_file("res://title.tscn")
+			
 	#----------
 	
 	draw()
@@ -189,7 +190,7 @@ func _on_alarm_11_timeout():
 			draw_status = 1
 		
 		if alarm10_timer.is_stopped():
-			alarm10_timer.start(80/physics_frame_rate)
+			alarm10_timer.start(float(80)/float(physics_frame_rate))
 
 func _on_alarm_10_timeout():
 	print("started 10")
@@ -199,7 +200,7 @@ func _on_alarm_10_timeout():
 			draw_status = 2
 		
 		if alarm10_timer.is_stopped():
-			alarm9_timer.start(80/physics_frame_rate)
+			alarm9_timer.start(float(80)/float(physics_frame_rate))
 
 func _on_alarm_9_timeout():
 	print("started 9")
@@ -209,7 +210,7 @@ func _on_alarm_9_timeout():
 			draw_status = 3
 			
 		if alarm8_timer.is_stopped():
-			alarm8_timer.start(80/physics_frame_rate)
+			alarm8_timer.start(float(80)/float(physics_frame_rate))
 
 func _on_alarm_8_timeout():
 	print("started 8")

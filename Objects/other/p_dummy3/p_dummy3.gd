@@ -70,7 +70,7 @@ func step():
 
 	elif (status == ROPEDROP):
 		if alarm_0_timer.is_stopped(): #--- [FLAG] check
-			alarm_0_timer.start(20/gml.room_speed)
+			alarm_0_timer.start(float(20)/float(gml.room_speed))
 		status += 1
 
 	elif (status == 3):

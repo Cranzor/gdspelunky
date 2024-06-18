@@ -13,7 +13,7 @@ func initial_setup():
 	depth = -100
 	z_index = depth
 	
-	$AnimatedSprite2D.play("rope_end")
+	$Node/AnimatedSprite2D.play("rope_end")
 	item_create()
 
 func _ready():
@@ -22,6 +22,7 @@ func _ready():
 
 func _physics_process(delta):
 	step()
+	smooth_animated_sprite_movement(x_velocity, y_velocity, delta)
 
 func create():
 	type = "rope"
@@ -34,6 +35,9 @@ func create():
 	py = 0
 
 func step():
+	x_velocity = 0
+	y_velocity = 0
+	
 	item_step()
 	if (armed and y_vel >= 0):
 
@@ -41,12 +45,16 @@ func step():
 		if (px < position.x):
 		
 			if (not gml.collision_point(position.x-8, position.y, "solid", 0, 0)): position.x -= 8
-			else: position.x += 8
+			else:
+				position.x += 8
+				x_velocity = 8
 		
 		else:
 		
 			if (not gml.collision_point(position.x+8, position.y, "solid", 0, 0)): position.x += 8
-			else: position.x -= 8
+			else:
+				position.x -= 8
+				x_velocity = -8
 		
 		gml.instance_create(position.x, position.y, rope_top)
 		armed = false
@@ -60,11 +68,13 @@ func step():
 		x_vel = 0
 		y_vel = 0
 		position.y += 8
+		y_velocity = 8
 		fall_count += 1
 		if (Collision.is_collision_bottom(1, self) or fall_count > 16):
 		
 			falling = false
 			position.y -= 8
+			y_velocity = -8
 			gml.instance_destroy(self)
 		
 		else: gml.instance_create(position.x-8, position.y, rope)

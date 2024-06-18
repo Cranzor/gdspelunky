@@ -99,8 +99,6 @@ var cape
 var explosion
 var state
 var p_dummy5
-var x_vel
-var y_vel = 0 #--- setting to 0 for now
 var grav
 var s_whoa_left
 var s_damsel_whoa_l
@@ -159,10 +157,8 @@ var k_run
 var k_jump
 var s_tunnel_attack_l
 var run_held
-var x_acc
 var run_acc
 var ladder_timer
-var y_acc
 var climb_acc
 var depart_ladder_x_vel
 var depart_ladder_y_vel

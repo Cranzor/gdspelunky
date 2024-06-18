@@ -20,7 +20,9 @@ script = ExtResource("1_fslem")
 depth = -100
 object_size = Vector2(8, 8)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Node" type="Node" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node"]
 z_index = -100
 z_as_relative = false
 sprite_frames = SubResource("SpriteFrames_jqv2e")

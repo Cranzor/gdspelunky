@@ -1,50 +1,50 @@
 [gd_scene load_steps=19 format=3 uid="uid://cp7345wvpbe1d"]
 
-[ext_resource type="Script" path="res://rooms/intro.gd" id="1_wpm2g"]
-[ext_resource type="PackedScene" uid="uid://d1vbnjy2fiex3" path="res://objects/other/intro/moon/moon.tscn" id="2_o68qg"]
-[ext_resource type="Texture2D" uid="uid://c7mqbeksgioqi" path="res://backgrounds/background_night.png" id="2_pwq20"]
-[ext_resource type="PackedScene" uid="uid://3vdxy1vbeyw3" path="res://objects/other/intro/bat_intro/bat_intro.tscn" id="3_a0hfs"]
-[ext_resource type="PackedScene" uid="uid://w046e4anhe7u" path="res://objects/other/intro/intro_bg/intro_bg.tscn" id="3_yy4gx"]
-[ext_resource type="PackedScene" uid="uid://j3x62ixf4hy5" path="res://objects/other/intro/palm_tree_dark/palm_tree_dark.tscn" id="4_wmx4o"]
-[ext_resource type="PackedScene" uid="uid://duy0bvbxq1dn2" path="res://objects/blocks/cave_bg2/cave_bg2.tscn" id="5_i2ajl"]
-[ext_resource type="PackedScene" uid="uid://gy38114xxpn0" path="res://objects/blocks/cave_bg_entrance/cave_bg_entrance.tscn" id="6_6xfp8"]
-[ext_resource type="PackedScene" uid="uid://d4kioh5dhxrr1" path="res://objects/other/intro/shrub_dark/shrub_dark.tscn" id="7_30qhd"]
-[ext_resource type="PackedScene" uid="uid://nckn3en8rtlj" path="res://objects/other/intro/desert/desert.tscn" id="8_1sfhg"]
-[ext_resource type="PackedScene" uid="uid://fiv5q4nn2w03" path="res://objects/blocks/dark/dark.tscn" id="9_voddj"]
-[ext_resource type="PackedScene" uid="uid://bd1b3xugpfga6" path="res://objects/other/intro/desert2/desert2.tscn" id="10_wn15v"]
-[ext_resource type="PackedScene" uid="uid://bpib0or50oftd" path="res://objects/other/intro/desert_top/desert_top.tscn" id="11_5siy1"]
-[ext_resource type="PackedScene" uid="uid://cmapfp1bw4euu" path="res://objects/intro/intro.tscn" id="12_wmfdt"]
-[ext_resource type="PackedScene" uid="uid://b0uyw0gvr57yu" path="res://objects/bricks/bricks.tscn" id="13_n8tcn"]
-[ext_resource type="PackedScene" uid="uid://3ui3v5o7nedx" path="res://objects/game/game.tscn" id="14_chbyt"]
+[ext_resource type="Script" path="res://rooms/intro/intro.gd" id="1_886e7"]
+[ext_resource type="PackedScene" uid="uid://d1vbnjy2fiex3" path="res://objects/other/intro/moon/moon.tscn" id="2_d2erf"]
+[ext_resource type="PackedScene" uid="uid://w046e4anhe7u" path="res://objects/other/intro/intro_bg/intro_bg.tscn" id="3_18cjd"]
+[ext_resource type="PackedScene" uid="uid://j3x62ixf4hy5" path="res://objects/other/intro/palm_tree_dark/palm_tree_dark.tscn" id="4_soomk"]
+[ext_resource type="PackedScene" uid="uid://duy0bvbxq1dn2" path="res://objects/blocks/cave_bg2/cave_bg2.tscn" id="5_sxvcg"]
+[ext_resource type="PackedScene" uid="uid://gy38114xxpn0" path="res://objects/blocks/cave_bg_entrance/cave_bg_entrance.tscn" id="6_3t1fi"]
+[ext_resource type="PackedScene" uid="uid://d4kioh5dhxrr1" path="res://objects/other/intro/shrub_dark/shrub_dark.tscn" id="7_j00ni"]
+[ext_resource type="PackedScene" uid="uid://nckn3en8rtlj" path="res://objects/other/intro/desert/desert.tscn" id="8_p2umd"]
+[ext_resource type="PackedScene" uid="uid://fiv5q4nn2w03" path="res://objects/blocks/dark/dark.tscn" id="9_dwc0h"]
+[ext_resource type="PackedScene" uid="uid://bd1b3xugpfga6" path="res://objects/other/intro/desert2/desert2.tscn" id="10_bxyhg"]
+[ext_resource type="PackedScene" uid="uid://bpib0or50oftd" path="res://objects/other/intro/desert_top/desert_top.tscn" id="11_ydqaj"]
+[ext_resource type="PackedScene" uid="uid://cmapfp1bw4euu" path="res://objects/intro/intro.tscn" id="12_ywykh"]
+[ext_resource type="PackedScene" uid="uid://b0uyw0gvr57yu" path="res://objects/bricks/bricks.tscn" id="13_hyx5l"]
+[ext_resource type="PackedScene" uid="uid://3ui3v5o7nedx" path="res://objects/game/game.tscn" id="14_5p4k5"]
+[ext_resource type="PackedScene" uid="uid://3vdxy1vbeyw3" path="res://objects/other/intro/bat_intro/bat_intro.tscn" id="15_5gp75"]
+[ext_resource type="Texture2D" uid="uid://c7mqbeksgioqi" path="res://backgrounds/background_night.png" id="16_pnhb5"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_jx6n4"]
-scenes/1/scene = ExtResource("2_o68qg")
-scenes/2/scene = ExtResource("3_yy4gx")
-scenes/3/scene = ExtResource("4_wmx4o")
-scenes/4/scene = ExtResource("5_i2ajl")
-scenes/5/scene = ExtResource("6_6xfp8")
-scenes/6/scene = ExtResource("7_30qhd")
-scenes/7/scene = ExtResource("8_1sfhg")
-scenes/8/scene = ExtResource("9_voddj")
-scenes/9/scene = ExtResource("10_wn15v")
-scenes/10/scene = ExtResource("11_5siy1")
-scenes/11/scene = ExtResource("12_wmfdt")
-scenes/12/scene = ExtResource("13_n8tcn")
-scenes/13/scene = ExtResource("14_chbyt")
-scenes/14/scene = ExtResource("3_a0hfs")
+scenes/1/scene = ExtResource("2_d2erf")
+scenes/2/scene = ExtResource("3_18cjd")
+scenes/3/scene = ExtResource("4_soomk")
+scenes/4/scene = ExtResource("5_sxvcg")
+scenes/5/scene = ExtResource("6_3t1fi")
+scenes/6/scene = ExtResource("7_j00ni")
+scenes/7/scene = ExtResource("8_p2umd")
+scenes/8/scene = ExtResource("9_dwc0h")
+scenes/9/scene = ExtResource("10_bxyhg")
+scenes/10/scene = ExtResource("11_ydqaj")
+scenes/11/scene = ExtResource("12_ywykh")
+scenes/12/scene = ExtResource("13_hyx5l")
+scenes/13/scene = ExtResource("14_5p4k5")
+scenes/14/scene = ExtResource("15_5gp75")
 
 [sub_resource type="TileSet" id="TileSet_bufat"]
 sources/0 = SubResource("TileSetScenesCollectionSource_jx6n4")
 
 [node name="Intro" type="Node2D" groups=["objects_holder"]]
-script = ExtResource("1_wpm2g")
-intro_scenes = Array[PackedScene]([ExtResource("2_o68qg"), ExtResource("3_yy4gx"), ExtResource("4_wmx4o"), ExtResource("5_i2ajl"), ExtResource("6_6xfp8"), ExtResource("7_30qhd"), ExtResource("8_1sfhg"), ExtResource("9_voddj"), ExtResource("10_wn15v"), ExtResource("11_5siy1"), ExtResource("12_wmfdt"), ExtResource("13_n8tcn"), ExtResource("14_chbyt"), ExtResource("3_a0hfs")])
+script = ExtResource("1_886e7")
+intro_scenes = Array[PackedScene]([ExtResource("2_d2erf"), ExtResource("3_18cjd"), ExtResource("4_soomk"), ExtResource("5_sxvcg"), ExtResource("6_3t1fi"), ExtResource("7_j00ni"), ExtResource("8_p2umd"), ExtResource("9_dwc0h"), ExtResource("10_bxyhg"), ExtResource("11_ydqaj"), ExtResource("12_ywykh"), ExtResource("13_hyx5l"), ExtResource("14_5p4k5"), ExtResource("15_5gp75")])
 
 [node name="TextureRect" type="TextureRect" parent="."]
 z_index = -4096
 offset_right = 1328.0
 offset_bottom = 384.0
-texture = ExtResource("2_pwq20")
+texture = ExtResource("16_pnhb5")
 
 [node name="Objects" type="TileMap" parent="."]
 position = Vector2(-8, -8)
