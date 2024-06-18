@@ -32,6 +32,19 @@ var physics_frame_rate = 30
 
 var p_dummy3 = preload("res://objects/other/p_dummy3/p_dummy3.tscn")
 
+var skip_button_just_pressed: bool = false
+
+func _input(event):
+	if (gml.keyboard_check_pressed(KEY_ENTER) or
+		gml.keyboard_check_pressed(KEY_ESCAPE) or
+		ControlScripts.check_attack_pressed() or
+		ControlScripts.check_start_pressed()):
+			skip_button_just_pressed = true
+			print("pressed")
+
+func reset_inputs():
+	skip_button_just_pressed = false
+
 func initial_setup():
 	#--- set size
 	object_size = Vector2(0, 0)
@@ -91,10 +104,11 @@ func _ready():
 		8:  str3 = "AND THAT'S WHEN IT ALL STARTED."
 
 func _physics_process(delta):
-	if (gml.keyboard_check_pressed(KEY_ENTER) or
-		gml.keyboard_check_pressed(KEY_ESCAPE) or
-		ControlScripts.check_attack_pressed() or
-		ControlScripts.check_start_pressed()):
+	#if (gml.keyboard_check_pressed(KEY_ENTER) or
+		#gml.keyboard_check_pressed(KEY_ESCAPE) or
+		#ControlScripts.check_attack_pressed() or
+		#ControlScripts.check_start_pressed()):
+	if skip_button_just_pressed:
 
 		if (not gml.instance_exists("p_dummy3")): fade_in = true
 		else:
@@ -125,7 +139,7 @@ func _physics_process(delta):
 	#----------
 	
 	draw()
-	print(fade_level)
+	reset_inputs()
 
 func draw():
 	var str_len
@@ -183,7 +197,6 @@ func alarm_timeout(time):
 
 
 func _on_alarm_11_timeout():
-	print("started 11")
 	if (not fade_in):
 
 		if (draw_status >= 0):
@@ -193,7 +206,6 @@ func _on_alarm_11_timeout():
 			alarm10_timer.start(float(80)/float(physics_frame_rate))
 
 func _on_alarm_10_timeout():
-	print("started 10")
 	if (not fade_in):
 
 		if (draw_status >= 0):
@@ -203,7 +215,6 @@ func _on_alarm_10_timeout():
 			alarm9_timer.start(float(80)/float(physics_frame_rate))
 
 func _on_alarm_9_timeout():
-	print("started 9")
 	if (not fade_in):
 
 		if (draw_status >= 0):
@@ -213,7 +224,6 @@ func _on_alarm_9_timeout():
 			alarm8_timer.start(float(80)/float(physics_frame_rate))
 
 func _on_alarm_8_timeout():
-	print("started 8")
 	if (not fade_in):
 		draw_status = -1
 		fade_in = true
