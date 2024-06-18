@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://dfw0l78jvgh8d"]
+
+[ext_resource type="Script" path="res://objects/other/title/title_bg/title_bg.gd" id="1_guo66"]
+[ext_resource type="Texture2D" uid="uid://yyk6tmlxpws" path="res://sprites/other/title/title_bg/title_bg_0.png" id="2_1mxls"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mg3m5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1mxls")
+}],
+"loop": true,
+"name": &"title_bg",
+"speed": 30.0
+}]
+
+[node name="TitleBg" type="Node2D" groups=["drawn_sprite", "title_bg"]]
+z_index = -4096
+script = ExtResource("1_guo66")
+depth = -4096
+object_size = Vector2(192, 80)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = -4095
+z_as_relative = false
+sprite_frames = SubResource("SpriteFrames_mg3m5")
+animation = &"title_bg"
+centered = false

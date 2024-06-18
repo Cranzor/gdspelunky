@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1g11v55hr8ij"]
+
+[ext_resource type="Script" path="res://objects/other/title/x_start/x_start.gd" id="1_jw30h"]
+[ext_resource type="Texture2D" uid="uid://dx1p2ru22timq" path="res://sprites/blocks/background/exit/exit_0.png" id="2_u620g"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yvgmw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_u620g")
+}],
+"loop": true,
+"name": &"exit",
+"speed": 30.0
+}]
+
+[node name="XStart" type="Node2D" groups=["drawn_sprite", "x_start"]]
+script = ExtResource("1_jw30h")
+depth = -999999
+object_size = Vector2(16, 16)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = -4095
+z_as_relative = false
+sprite_frames = SubResource("SpriteFrames_yvgmw")
+animation = &"exit"
+centered = false

@@ -45,6 +45,8 @@ var image_speed:
 var status
 var facing
 var armed
+var active
+var held #--- seems easier to put this here since both items and enemies use it
 
 var x_vel = 0
 var y_vel = 0

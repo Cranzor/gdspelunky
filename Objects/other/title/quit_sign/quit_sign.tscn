@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsy8sqawph7ei"]
+
+[ext_resource type="Script" path="res://objects/other/title/quit_sign/quit_sign.gd" id="1_cp6cu"]
+[ext_resource type="Texture2D" uid="uid://bsuhh6ybpxxko" path="res://sprites/other/title/quit_sign/quit_sign_0.png" id="2_ff8us"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uihww"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ff8us")
+}],
+"loop": true,
+"name": &"quit_sign",
+"speed": 30.0
+}]
+
+[node name="QuitSign" type="Node2D" groups=["drawn_sprite", "quit_sign", "solid"]]
+z_index = -999
+script = ExtResource("1_cp6cu")
+depth = -999
+object_size = Vector2(32, 16)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = -999
+z_as_relative = false
+sprite_frames = SubResource("SpriteFrames_uihww")
+animation = &"quit_sign"
+centered = false
