@@ -26,4 +26,4 @@ z_as_relative = false
 sprite_frames = SubResource("SpriteFrames_wb22h")
 animation = &"rope_top"
 centered = false
-offset = Vector2(4, 4)
+offset = Vector2(-4, -4)

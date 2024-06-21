@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dccnfhv6qaic4"]
+[gd_scene load_steps=23 format=3 uid="uid://dccnfhv6qaic4"]
 
 [ext_resource type="Script" path="res://rooms/title/title.gd" id="1_8aivo"]
 [ext_resource type="PackedScene" uid="uid://dfw0l78jvgh8d" path="res://objects/other/title/title_bg/title_bg.tscn" id="2_2puqs"]
@@ -20,10 +20,18 @@
 [ext_resource type="PackedScene" uid="uid://b0uyw0gvr57yu" path="res://objects/bricks/bricks.tscn" id="18_js7s5"]
 [ext_resource type="PackedScene" uid="uid://3ui3v5o7nedx" path="res://objects/game/game.tscn" id="19_f8pgg"]
 [ext_resource type="PackedScene" uid="uid://dgtujcc118c8d" path="res://objects/other/title/copy/copy.tscn" id="20_p23mh"]
+[ext_resource type="Texture2D" uid="uid://bg6n8u7t0o8dy" path="res://backgrounds/bg_cave.png" id="21_1wm2m"]
 [ext_resource type="PackedScene" uid="uid://bft8urcdv7lh0" path="res://view.tscn" id="21_4id85"]
 
 [node name="Title" type="Node2D" groups=["objects_holder"]]
 script = ExtResource("1_8aivo")
 title_scenes = Array[PackedScene]([ExtResource("2_2puqs"), ExtResource("3_0x7es"), ExtResource("4_af2da"), ExtResource("5_she7s"), ExtResource("6_adhcs"), ExtResource("7_2rkq0"), ExtResource("8_exmx0"), ExtResource("9_wumyp"), ExtResource("10_cduqo"), ExtResource("11_fsqjg"), ExtResource("12_xowxq"), ExtResource("13_v1wum"), ExtResource("14_m35pw"), ExtResource("15_64a41"), ExtResource("16_06dt3"), ExtResource("17_ak2p0"), ExtResource("18_js7s5"), ExtResource("19_f8pgg"), ExtResource("20_p23mh")])
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -4096
+offset_right = 768.0
+offset_bottom = 512.0
+texture = ExtResource("21_1wm2m")
+stretch_mode = 1
 
 [node name="View" parent="." instance=ExtResource("21_4id85")]

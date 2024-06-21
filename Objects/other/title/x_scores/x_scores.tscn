@@ -20,7 +20,7 @@ depth = -999999
 object_size = Vector2(16, 16)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-z_index = 4095
+z_index = -4095
 z_as_relative = false
 sprite_frames = SubResource("SpriteFrames_fuysw")
 animation = &"exit"

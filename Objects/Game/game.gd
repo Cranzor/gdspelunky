@@ -102,6 +102,7 @@ func game_step_event():
 		  #necessary to reset the "viscid" movement from a moving solid
 			character_instance.viscid_movement_ok=1
 		  #store the characters in the self.players variable
+			players.append(1) #--- adding this to avoid invalid set index error
 			self.players[self.players_length] = character_instance#.id
 			self.players_length+=1
 

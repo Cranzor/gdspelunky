@@ -29,7 +29,6 @@ var first_level_skip
 var level_skip
 var s_damsel_left
 var s_tunnel_left
-var active = true #--- Change this back
 var dead_counter
 var stunned = false #--- Change this back
 var my_grav
@@ -99,7 +98,6 @@ var cape
 var explosion
 var state
 var p_dummy5
-var grav
 var s_whoa_left
 var s_damsel_whoa_l
 var s_tunnel_whoa_l
@@ -256,6 +254,8 @@ var money #--- only found in step
 var collect #--- only found in step
 var k_pay_pressed  #--- only found in step
 
+var viscid_movement_ok #--- called by game_step_event. Seems to do nothing
+
 #------------------------------------------------------------------
  #--- only found in character_step_event
 var k_left_released #--- only found in character_step_event
@@ -320,6 +320,7 @@ func _process(delta):
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	disable_camera_on_title_screen()
 	move_to_test()
 	#MiscScripts.scr_clear_globals() #---[FLAG] delete this
 	
@@ -4266,7 +4267,7 @@ func character_sprite():
 		if (state == JUMPING):
 			gml.sprite_index('s_jump_left', self)
 		if (state == FALLING and state_prev == FALLING and state_prev_prev == FALLING):
-			sprite_index = s_fall_left
+			sprite_index = "fall_left"
 		if (state == HANGING):
 			gml.sprite_index('s_hang_left', self)
 		if (push_timer > 20):
@@ -4811,3 +4812,7 @@ func _on_animated_sprite_2d_animation_finished():
 		
 		
 		global.clean_solids = true
+
+func disable_camera_on_title_screen():
+	if gml.room_get_name() == "title":
+		$AnimatedSprite2D/Camera2D.enabled = false

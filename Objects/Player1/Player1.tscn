@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://dxk74orkbwm5u"]
+[gd_scene load_steps=36 format=3 uid="uid://dxk74orkbwm5u"]
 
 [ext_resource type="Script" path="res://objects/player1/player1.gd" id="1_df21t"]
 [ext_resource type="Texture2D" uid="uid://c5jrx6ksmewxo" path="res://image 0.png" id="2_pd4mc"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bc338v2t2okiq" path="res://image 9.png" id="11_1nmap"]
 [ext_resource type="Texture2D" uid="uid://du3xw4e7sr3uu" path="res://image 10.png" id="12_cs6jj"]
 [ext_resource type="Texture2D" uid="uid://balg8630wkw4n" path="res://Objects (old)/Player1/Animations/s_crawl_left/image 0.png" id="13_4iatu"]
+[ext_resource type="Texture2D" uid="uid://ks38eou4swb" path="res://sprites/character/main dude/fall_left/fall_left_0.png" id="13_7f5ok"]
 [ext_resource type="Texture2D" uid="uid://b7f6p177dxua7" path="res://Objects (old)/Player1/Animations/s_crawl_left/image 1.png" id="14_yh2hk"]
 [ext_resource type="Texture2D" uid="uid://dglxivtelmo64" path="res://Objects (old)/Player1/Animations/s_crawl_left/image 2.png" id="15_831f8"]
 [ext_resource type="Texture2D" uid="uid://cwhoirvnebf34" path="res://Objects (old)/Player1/Animations/s_crawl_left/image 3.png" id="16_8nofi"]
@@ -75,6 +76,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("13_7f5ok")
+}],
+"loop": true,
+"name": &"fall_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("13_4iatu")
 }, {
 "duration": 1.0,
@@ -106,7 +115,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"s_crawl_left",
-"speed": 20.0
+"speed": 30.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -153,7 +162,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"s_run_left",
-"speed": 12.0
+"speed": 30.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -161,7 +170,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"s_stand_left",
-"speed": 5.0
+"speed": 30.0
 }]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xcccr"]
@@ -172,10 +181,10 @@ script = ExtResource("1_df21t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 top_level = true
+z_index = -50
+z_as_relative = false
 sprite_frames = SubResource("SpriteFrames_06flm")
-animation = &"s_crawl_left"
-frame = 9
-frame_progress = 1.0
+animation = &"fall_left"
 
 [node name="Camera2D" type="Camera2D" parent="AnimatedSprite2D"]
 drag_horizontal_enabled = true

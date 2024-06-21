@@ -29,7 +29,6 @@ func create():
 	y_acc = 0.1
 	image_speed = 0.4
 
-
 func step():
 	position.y += y_vel
 

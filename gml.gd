@@ -60,25 +60,14 @@ func instance_create(x,y,obj): #should return the node as this is used in script
 	var instance = obj.instantiate()
 	var objects_holder = get_tree().get_first_node_in_group("objects_holder")
 	objects_holder.add_child(instance)
-	instance.global_position.x = x
-	instance.global_position.y = y
+	instance.position.x = x
+	instance.position.y = y
 	
 	#for objects bigger than 16x16, get height and width of sprite texture and then add that as the size
 	
 	#getting each location of each object spawned in. note that this only applies to stationary objects
-	var obj_groups = instance.get_groups()
+	set_up_object_collision(instance)
 	
-	if !obj_groups.is_empty():
-		for group in obj_groups:
-			var location = Vector2(x, y) #--- -16 seems to fix collision for some reason? might need to change later. [FLAG] important. seems to be an issue here
-			var default_size = Vector2(16, 16)
-			
-			var node_info: Array = [location, default_size, instance]
-			if !instanced_object_locations.has(group):
-				instanced_object_locations[str(group)] = [node_info]
-			else:
-				instanced_object_locations[group].append(node_info)
-			#print(instanced_object_locations[group])
 	return instance
 
 func collision_point(x,y,obj: String,prec,notme): #"This function tests whether at point (x,y) there is a collision with entities of object obj."
@@ -245,7 +234,13 @@ func place_meeting(x,y,obj):
 	return intersecting
 	
 func move_snap(hsnap,vsnap, obj):
-	pass
+	if hsnap != 1:
+		var new_x_target = get_nearest_multiple(obj.position.x, hsnap)
+		obj.position.x = new_x_target
+	
+	if vsnap != 1:
+		var new_y_target = get_nearest_multiple(obj.position.y, vsnap)
+		obj.position.y = new_y_target
 
 func sqr(number):
 	return number * number
@@ -418,3 +413,28 @@ func alarm_setup(frames, alarm_activity):
 
 func alarm_timeout(time):
 	await get_tree().create_timer(time).timeout
+
+func set_up_object_collision(instance):
+	var obj_groups = instance.get_groups()
+	
+	if !obj_groups.is_empty():
+		for group in obj_groups:
+			var location = Vector2(instance.position.x, instance.position.y) #--- -16 seems to fix collision for some reason? might need to change later. [FLAG] important. seems to be an issue here
+			var default_size = Vector2(16, 16)
+			if instance.object_size != default_size:
+				default_size = instance.object_size
+			
+			var node_info: Array = [location, default_size, instance]
+			if !instanced_object_locations.has(group):
+				instanced_object_locations[str(group)] = [node_info]
+			else:
+				instanced_object_locations[group].append(node_info)
+			#print(instanced_object_locations[group])
+
+func get_nearest_multiple(number, target_number):
+	if target_number > number:
+		return target_number
+	var z = int(target_number/2)
+	number = number + z
+	number = number - (int(number) % int(target_number))
+	return(number)

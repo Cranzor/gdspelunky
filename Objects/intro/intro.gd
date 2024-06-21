@@ -134,7 +134,7 @@ func _physics_process(delta):
 		else:
 		
 			global.game_start = false
-			get_tree().change_scene_to_file("res://title.tscn")
+			get_tree().change_scene_to_file("res://rooms/title/title.tscn")
 			
 	#----------
 	

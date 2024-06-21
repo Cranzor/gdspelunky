@@ -21,6 +21,7 @@ one_shot = true
 one_shot = true
 
 [node name="ShortcutHouse" type="Label" parent="."]
+visible = false
 offset_left = 40.0
 offset_top = 224.0
 offset_right = 280.0
