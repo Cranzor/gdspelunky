@@ -431,7 +431,7 @@ func set_up_object_collision(instance):
 				instanced_object_locations[group].append(node_info)
 			#print(instanced_object_locations[group])
 
-func get_nearest_multiple(number, target_number):
+func get_nearest_multiple(number, target_number): #--- Adapted from here: https://www.geeksforgeeks.org/multiple-of-x-closest-to-n/
 	if target_number > number:
 		return target_number
 	var z = int(target_number/2)

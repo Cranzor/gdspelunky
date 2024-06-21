@@ -3,7 +3,12 @@ class_name DrawnSprite
 
 var sprite
 var solid = false
-@export var depth = 0
+@export var depth: int = 0
+	#set(new_depth):
+		#depth = new_depth
+		#z_index = depth
+	#get:
+		#return z_index
 var persistent = false
 var parent
 var mask
@@ -49,6 +54,25 @@ var active
 var held #--- seems easier to put this here since both items and enemies use it
 var grav
 var bounce
+var my_grav
+var safe
+var heavy
+var value
+var col_bot
+var can_pick_up
+var bounce_factor
+var friction_factor
+var bloodless
+var cost
+var for_sale
+var cimg
+var sticky
+var enemy_id
+var col_left
+var col_right
+var col_top
+var STUNNED = 98 #--- making this a variable and not a constant because it is set to 1 in p_dummy2 (all other cases are 98)
+var stun_time
 
 var x_vel = 0
 var y_vel = 0

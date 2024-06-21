@@ -31,7 +31,6 @@ var s_damsel_left
 var s_tunnel_left
 var dead_counter
 var stunned = false #--- Change this back
-var my_grav
 var fall_timer
 var stun_timer
 var wall_hurt
@@ -58,7 +57,6 @@ var firing_shotgun_max
 var bow_armed
 var bow_strength
 var jetpack_fuel
-var bloodless
 var red_color
 var red_toggle
 var k_attack_released
@@ -141,7 +139,6 @@ var s_bomb_armed
 var s_crystal_skull
 var s_bomb
 var s_rope_end
-var col_top
 var s_die_l_bounce
 var s_damsel_hold_l
 var s_p_kiss_l
@@ -268,11 +265,8 @@ var k_right_pressed #--- only found in character_step_event
 var run_key
 var col_solid_left
 var col_solid_right
-var col_bot
 var col_plat_bot
 var col_plat
-var col_left
-var col_right
 var col_water_top
 var col_ladder
 var col_ice_bot
@@ -511,7 +505,7 @@ func handle_bomb_arrows():
 		
 		if (InLevel.is_in_shop(position.x, position.y)):
 		
-			InLevel.scr_shopkeeper_anger(position.x, position. y, 2)
+			InLevel.scr_shopkeeper_anger(2, self)
 	
 func exit_game_from_title():
 	# exit game from title screen
@@ -1039,7 +1033,7 @@ func handle_item_stealing():
 				CharacterScripts.scr_steal_item()
 				if (gml.instance_exists("shopkeeper")):
 				
-					InLevel.scr_shopkeeper_anger(0, position.x, position.y)
+					InLevel.scr_shopkeeper_anger(0, self)
 				
 			
 		
@@ -4250,7 +4244,7 @@ func character_sprite():
 		
 		if (state == RUNNING):
 		 
-			if (k_up): sprite_index = s_look_run_l
+			if (k_up): sprite_index = "look_run_l"
 			else: gml.sprite_index('s_run_left', self)
 		
 		if (state == DUCKING):
@@ -4262,7 +4256,7 @@ func character_sprite():
 		if (state == LOOKING_UP):
 		
 			if (abs(x_vel)>0): sprite_index = s_look_run_l
-			else: sprite_index = s_look_left
+			else: sprite_index = "look_left"
 		
 		if (state == JUMPING):
 			gml.sprite_index('s_jump_left', self)

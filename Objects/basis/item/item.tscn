@@ -4,8 +4,6 @@
 
 [node name="Item" type="Node2D"]
 script = ExtResource("1_3w3yd")
-depth = null
-object_size = null
 
 [node name="Alarm2" type="Timer" parent="."]
 

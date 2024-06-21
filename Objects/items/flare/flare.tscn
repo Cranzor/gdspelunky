@@ -33,6 +33,7 @@ animation = &"flare"
 frame = 1
 frame_progress = 0.72372
 centered = false
+offset = Vector2(-4, -4)
 
 [node name="Alarms" type="Node2D" parent="."]
 

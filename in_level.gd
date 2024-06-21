@@ -48,14 +48,14 @@ func is_room(name):
 func scr_shake(number):
 	pass
 
-func scr_shopkeeper_anger(message_number, x, y): #--- assuming XY is needed here
+func scr_shopkeeper_anger(message_number, obj): #--- assuming XY is needed here
 	#
 	# scr_shopkeeper_anger(message)
 	#
 	# Make the nearest shopkeeper angry.  RAWR! 
 	#
 
-	var shp = gml.instance_nearest(x, y, 'shopkeeper')
+	var shp = gml.instance_nearest(obj.x, obj.y, 'shopkeeper')
 	if (shp):
 
 		if (not shp.dead and not shp.angered):

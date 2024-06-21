@@ -32,6 +32,9 @@ func alarm_0():
 
 func create():
 	item_create()
+	
+	image_speed = 0.3
+	
 	type = "flare"
 	PlatformEngine.make_active(self)
 	Collision.set_collision_bounds(self, -4, -4, 4, 4)

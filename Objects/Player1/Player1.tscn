@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://dxk74orkbwm5u"]
+[gd_scene load_steps=43 format=3 uid="uid://dxk74orkbwm5u"]
 
 [ext_resource type="Script" path="res://objects/player1/player1.gd" id="1_df21t"]
 [ext_resource type="Texture2D" uid="uid://c5jrx6ksmewxo" path="res://image 0.png" id="2_pd4mc"]
@@ -14,13 +14,20 @@
 [ext_resource type="Texture2D" uid="uid://du3xw4e7sr3uu" path="res://image 10.png" id="12_cs6jj"]
 [ext_resource type="Texture2D" uid="uid://balg8630wkw4n" path="res://Objects (old)/Player1/Animations/s_crawl_left/image 0.png" id="13_4iatu"]
 [ext_resource type="Texture2D" uid="uid://ks38eou4swb" path="res://sprites/character/main dude/fall_left/fall_left_0.png" id="13_7f5ok"]
+[ext_resource type="Texture2D" uid="uid://bts78qrbja7v2" path="res://sprites/character/main dude/look_left/look_left_0.png" id="14_5d7cv"]
 [ext_resource type="Texture2D" uid="uid://b7f6p177dxua7" path="res://Objects (old)/Player1/Animations/s_crawl_left/image 1.png" id="14_yh2hk"]
 [ext_resource type="Texture2D" uid="uid://dglxivtelmo64" path="res://Objects (old)/Player1/Animations/s_crawl_left/image 2.png" id="15_831f8"]
+[ext_resource type="Texture2D" uid="uid://b0eqwdyx8rsum" path="res://sprites/character/main dude/look_run_l/look_run_l_0.png" id="15_e3thn"]
 [ext_resource type="Texture2D" uid="uid://cwhoirvnebf34" path="res://Objects (old)/Player1/Animations/s_crawl_left/image 3.png" id="16_8nofi"]
+[ext_resource type="Texture2D" uid="uid://bf8lftff71wix" path="res://sprites/character/main dude/look_run_l/look_run_l_1.png" id="16_20oec"]
 [ext_resource type="Texture2D" uid="uid://dhd7hl8man86a" path="res://Objects (old)/Player1/Animations/s_crawl_left/image 4.png" id="17_cc642"]
+[ext_resource type="Texture2D" uid="uid://dare2y1lltxp0" path="res://sprites/character/main dude/look_run_l/look_run_l_2.png" id="17_mne34"]
 [ext_resource type="Texture2D" uid="uid://hq2ibe5sc7p8" path="res://Objects (old)/Player1/Animations/s_crawl_left/image 5.png" id="18_rkfc0"]
+[ext_resource type="Texture2D" uid="uid://bt5jvfgci4iyg" path="res://sprites/character/main dude/look_run_l/look_run_l_3.png" id="18_vp6rr"]
+[ext_resource type="Texture2D" uid="uid://7h8yqsntpuf2" path="res://sprites/character/main dude/look_run_l/look_run_l_4.png" id="19_i45kc"]
 [ext_resource type="Texture2D" uid="uid://dgb4u30n4bqyw" path="res://Objects (old)/Player1/Animations/s_crawl_left/image 6.png" id="19_mhywf"]
 [ext_resource type="Texture2D" uid="uid://drwpqu8lei8g1" path="res://Objects (old)/Player1/Animations/s_crawl_left/image 7.png" id="20_7r7ef"]
+[ext_resource type="Texture2D" uid="uid://c4cvp6f8y83ww" path="res://sprites/character/main dude/look_run_l/look_run_l_5.png" id="20_m64as"]
 [ext_resource type="Texture2D" uid="uid://2f5601aik8l2" path="res://Objects (old)/Player1/Animations/s_crawl_left/image 8.png" id="21_v0rxc"]
 [ext_resource type="Texture2D" uid="uid://cl643f1abenk2" path="res://Objects (old)/Player1/Animations/s_crawl_left/image 9.png" id="22_lcexu"]
 [ext_resource type="Texture2D" uid="uid://cn66yb8hffdtv" path="res://Objects (old)/Player1/Animations/s_duck_left/image 0.png" id="23_u6nge"]
@@ -81,6 +88,37 @@ animations = [{
 "loop": true,
 "name": &"fall_left",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_5d7cv")
+}],
+"loop": true,
+"name": &"look_left",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_e3thn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_20oec")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_mne34")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_vp6rr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_i45kc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_m64as")
+}],
+"loop": true,
+"name": &"look_run_l",
+"speed": 30.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -184,7 +222,7 @@ top_level = true
 z_index = -50
 z_as_relative = false
 sprite_frames = SubResource("SpriteFrames_06flm")
-animation = &"fall_left"
+animation = &"look_run_l"
 
 [node name="Camera2D" type="Camera2D" parent="AnimatedSprite2D"]
 drag_horizontal_enabled = true
