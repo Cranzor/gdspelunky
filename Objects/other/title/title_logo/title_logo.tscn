@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://7xer5wdayt4e"]
+
+[ext_resource type="Script" path="res://objects/other/title/title_logo/title_logo.gd" id="1_gpqy7"]
+[ext_resource type="Texture2D" uid="uid://ctoslhjgnbvbb" path="res://sprites/other/title/title/title_0.png" id="2_yxl1g"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lfysc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_yxl1g")
+}],
+"loop": true,
+"name": &"title",
+"speed": 30.0
+}]
+
+[node name="TitleLogo" type="Node2D" groups=["drawn_sprite", "solid", "title_logo"]]
+z_index = -1
+script = ExtResource("1_gpqy7")
+depth = -1
+object_size = Vector2(128, 16)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = -1
+z_as_relative = false
+sprite_frames = SubResource("SpriteFrames_lfysc")
+animation = &"title"
+centered = false

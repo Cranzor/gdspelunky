@@ -172,9 +172,6 @@ func instance_place(x,y,obj: String): #' Returns the id of the instance of type 
 func instance_destroy(obj): #'Destroys current instance' ---  Should probably start passing 'self' or other node reference as an argument. Go through and check
 	if obj.has_method("destroy"):
 		obj.destroy()
-	
-	if obj.is_in_group("solid"):
-		obj.solid_destroy()
 		
 	obj.queue_free()
 
@@ -335,6 +332,9 @@ func highscore_value(place: int):
 	
 func instance_deactivate_region(left, top, width, height, inside, notme):
 	pass
+	
+func room_restart():
+	get_tree().reload_current_scene()
 
 #---------------------------------------
 func background_index(background: String): #Changing this to a function

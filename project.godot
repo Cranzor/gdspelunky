@@ -31,6 +31,8 @@ CharacterScripts="*res://character_scripts.gd"
 StatTracking="*res://stat_tracking.gd"
 Music="*res://objects/music/Music.tscn"
 Globals="*res://objects/globals/globals.tscn"
+Screen="*res://objects/screen/screen.tscn"
+Gamepad="*res://objects/gamepad/gamepad.tscn"
 
 [display]
 

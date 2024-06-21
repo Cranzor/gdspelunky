@@ -11,7 +11,7 @@ func initial_setup():
 	depth = -999
 	z_index = depth
 	
-	$AnimatedSprite2D.play("scores_sign")
+	$AnimatedSprite2D.play("level5_sign")
 
 func _ready():
 	initial_setup()

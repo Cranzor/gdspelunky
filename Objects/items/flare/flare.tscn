@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://bv00yotvshpk4"]
+
+[ext_resource type="Script" path="res://objects/items/flare/flare.gd" id="1_xxbaf"]
+[ext_resource type="Texture2D" uid="uid://xl22nkdn84is" path="res://sprites/other/intro/flare/flare_0.png" id="2_0shpx"]
+[ext_resource type="Texture2D" uid="uid://b35llggffeeax" path="res://sprites/other/intro/flare/flare_1.png" id="3_rv7yp"]
+[ext_resource type="PackedScene" uid="uid://dlliudu6mbm0t" path="res://alarm.tscn" id="4_lnf4u"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nhj8n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_0shpx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_rv7yp")
+}],
+"loop": true,
+"name": &"flare",
+"speed": 30.0
+}]
+
+[node name="Flare" type="Node2D" groups=["drawn_sprite", "flare", "item"]]
+z_index = -30
+script = ExtResource("1_xxbaf")
+depth = -30
+object_size = Vector2(8, 8)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = -30
+z_as_relative = false
+sprite_frames = SubResource("SpriteFrames_nhj8n")
+animation = &"flare"
+frame = 1
+frame_progress = 0.72372
+centered = false
+
+[node name="Alarms" type="Node2D" parent="."]
+
+[node name="Alarm0" parent="Alarms" instance=ExtResource("4_lnf4u")]
+
+[connection signal="timeout" from="Alarms/Alarm0" to="." method="_on_alarm_0_timeout"]

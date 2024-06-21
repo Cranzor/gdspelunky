@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://dlliudu6mbm0t"]
+
+[node name="Alarm" type="Timer"]
+one_shot = true

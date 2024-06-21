@@ -2582,7 +2582,7 @@ func scr_setup_walls(placement):
 
 		if (not brick_instance.up):
 		
-			brick_instance.sprite_index = s_cave_up
+			brick_instance.sprite_index = "cave_up"
 			if (global.graphics_high):
 			
 				if (randi_range(1,3) < 3): gml.tile_add('bg_cave_top', 0, 0, 16, 16, brick_instance.position.x, brick_instance.position.y-16, 3)
@@ -2593,8 +2593,8 @@ func scr_setup_walls(placement):
 		
 		if (not brick_instance.down):
 		
-			if (not brick_instance.up): brick_instance.sprite_index = s_cave_up2
-			else: brick_instance.sprite_index = s_brick_down
+			if (not brick_instance.up): brick_instance.sprite_index = "cave_up2"
+			else: brick_instance.sprite_index = "brick_down"
 			#instance_create(x, y+16, cave_bottom)
 		
 		

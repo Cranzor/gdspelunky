@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://biv6cnjcs3tsr"]
+
+[ext_resource type="Script" path="res://objects/other/title/start_sign/start_sign.gd" id="1_q1u4d"]
+[ext_resource type="Texture2D" uid="uid://s63me8seqrrr" path="res://sprites/other/title/start_sign/start_sign_0.png" id="2_s81qu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_67xmd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_s81qu")
+}],
+"loop": true,
+"name": &"start_sign",
+"speed": 30.0
+}]
+
+[node name="StartSign" type="Node2D" groups=["start_sign"]]
+z_index = -999
+script = ExtResource("1_q1u4d")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = -999
+z_as_relative = false
+sprite_frames = SubResource("SpriteFrames_67xmd")
+animation = &"start_sign"
+centered = false

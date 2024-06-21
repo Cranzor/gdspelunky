@@ -1,0 +1,29 @@
+[gd_scene load_steps=22 format=3 uid="uid://dccnfhv6qaic4"]
+
+[ext_resource type="Script" path="res://rooms/title/title.gd" id="1_8aivo"]
+[ext_resource type="PackedScene" uid="uid://dfw0l78jvgh8d" path="res://objects/other/title/title_bg/title_bg.tscn" id="2_2puqs"]
+[ext_resource type="PackedScene" uid="uid://d1g11v55hr8ij" path="res://objects/other/title/x_start/x_start.tscn" id="3_0x7es"]
+[ext_resource type="PackedScene" uid="uid://bfb1uptgph25g" path="res://objects/other/title/x_scores/x_scores.tscn" id="4_af2da"]
+[ext_resource type="PackedScene" uid="uid://bkekokatqd6sj" path="res://objects/other/title/x_shortcut5/x_shortcut5.tscn" id="5_she7s"]
+[ext_resource type="PackedScene" uid="uid://sn6tqbtc2v6h" path="res://objects/other/title/x_tutorial/x_tutorial.tscn" id="6_adhcs"]
+[ext_resource type="PackedScene" uid="uid://dsy8sqawph7ei" path="res://objects/other/title/quit_sign/quit_sign.tscn" id="7_2rkq0"]
+[ext_resource type="PackedScene" uid="uid://bceyr3nrnoofk" path="res://objects/other/title/scores_sign/scores_sign.tscn" id="8_exmx0"]
+[ext_resource type="PackedScene" uid="uid://biv6cnjcs3tsr" path="res://objects/other/title/start_sign/start_sign.tscn" id="9_wumyp"]
+[ext_resource type="PackedScene" uid="uid://c40w2xu4ycwym" path="res://objects/other/title/level5_sign/level5_sign.tscn" id="10_cduqo"]
+[ext_resource type="PackedScene" uid="uid://cs3d3feookfqs" path="res://objects/other/title/tutorial_sign/tutorial_sign.tscn" id="11_fsqjg"]
+[ext_resource type="PackedScene" uid="uid://b56uhwt5w7ffm" path="res://objects/items/rope/rope.tscn" id="12_xowxq"]
+[ext_resource type="PackedScene" uid="uid://t16tsipk7hyj" path="res://objects/blocks/brick_smooth/brick_smooth.tscn" id="13_v1wum"]
+[ext_resource type="PackedScene" uid="uid://boxc36fot75d7" path="res://objects/blocks/brick/brick.tscn" id="14_m35pw"]
+[ext_resource type="PackedScene" uid="uid://db1uwte520n15" path="res://objects/blocks/hard_block/hard_block.tscn" id="15_64a41"]
+[ext_resource type="PackedScene" uid="uid://7xer5wdayt4e" path="res://objects/other/title/title_logo/title_logo.tscn" id="16_06dt3"]
+[ext_resource type="PackedScene" uid="uid://vpxeuwqi1ujv" path="res://objects/title/title.tscn" id="17_ak2p0"]
+[ext_resource type="PackedScene" uid="uid://b0uyw0gvr57yu" path="res://objects/bricks/bricks.tscn" id="18_js7s5"]
+[ext_resource type="PackedScene" uid="uid://3ui3v5o7nedx" path="res://objects/game/game.tscn" id="19_f8pgg"]
+[ext_resource type="PackedScene" uid="uid://dgtujcc118c8d" path="res://objects/other/title/copy/copy.tscn" id="20_p23mh"]
+[ext_resource type="PackedScene" uid="uid://bft8urcdv7lh0" path="res://view.tscn" id="21_4id85"]
+
+[node name="Title" type="Node2D" groups=["objects_holder"]]
+script = ExtResource("1_8aivo")
+title_scenes = Array[PackedScene]([ExtResource("2_2puqs"), ExtResource("3_0x7es"), ExtResource("4_af2da"), ExtResource("5_she7s"), ExtResource("6_adhcs"), ExtResource("7_2rkq0"), ExtResource("8_exmx0"), ExtResource("9_wumyp"), ExtResource("10_cduqo"), ExtResource("11_fsqjg"), ExtResource("12_xowxq"), ExtResource("13_v1wum"), ExtResource("14_m35pw"), ExtResource("15_64a41"), ExtResource("16_06dt3"), ExtResource("17_ak2p0"), ExtResource("18_js7s5"), ExtResource("19_f8pgg"), ExtResource("20_p23mh")])
+
+[node name="View" parent="." instance=ExtResource("21_4id85")]

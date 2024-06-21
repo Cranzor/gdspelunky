@@ -6,7 +6,7 @@
 [ext_resource type="FontFile" uid="uid://dgd06bxddo4pq" path="res://fonts/small_font.png" id="4_7kuce"]
 [ext_resource type="PackedScene" uid="uid://dogsmb1bk1rdb" path="res://CollisionPoint.tscn" id="5_psokd"]
 [ext_resource type="PackedScene" uid="uid://dxk74orkbwm5u" path="res://objects/player1/Player1.tscn" id="6_0bgfa"]
-[ext_resource type="PackedScene" uid="uid://dimbvflcml3em" path="res://objects/screen/Screen.tscn" id="7_rcpk0"]
+[ext_resource type="PackedScene" uid="uid://dimbvflcml3em" path="res://objects/screen/screen.tscn" id="7_rcpk0"]
 
 [node name="r_level" type="Node2D"]
 script = ExtResource("1_5hivt")

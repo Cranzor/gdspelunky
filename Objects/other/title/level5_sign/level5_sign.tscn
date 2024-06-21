@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://c40w2xu4ycwym"]
+
+[ext_resource type="Script" path="res://objects/other/title/level5_sign/level5_sign.gd" id="1_l7rk8"]
+[ext_resource type="Texture2D" uid="uid://c2yxrpaebj3u1" path="res://sprites/other/title/level5_sign/level5_sign_0.png" id="2_o7tud"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ock25"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_o7tud")
+}],
+"loop": true,
+"name": &"level5_sign",
+"speed": 30.0
+}]
+
+[node name="Level5Sign" type="Node2D" groups=["level5_sign"]]
+z_index = -999
+script = ExtResource("1_l7rk8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = -999
+z_as_relative = false
+sprite_frames = SubResource("SpriteFrames_ock25")
+animation = &"level5_sign"
+centered = false
