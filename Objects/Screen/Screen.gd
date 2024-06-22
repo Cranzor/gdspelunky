@@ -5,17 +5,21 @@ var can_pause
 var paused
 var enabled
 
+@onready var derek_yu_presents = $TitleScreen/DerekYuPresents
+
 @onready var message = $GlobalMessages/Message
 @onready var message2 = $GlobalMessages/Message2
 
+@onready var title_screen = [$TitleScreen/Background, $TitleScreen/DerekYuPresents]
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	create()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func _physics_process(delta):
+	for node in title_screen:
+		node.hide()
+	begin_step()
 
 #--- most things in this script are GameMaker specific and therefore not necessary
 func create():
@@ -228,11 +232,11 @@ func begin_step():
 	else:
 
 		if (InLevel.is_room("title")):
-		
+			var title = gml.get_instance("title")
 			#surface_set_target(screen) #---not needed
+			$TitleScreen/Background.color = Color(0, 0, 0, title.darkness)
 			#draw_set_alpha(title.darkness) --- [FLAG] check darkness variable of Title object
 			#draw_set_color(c_black)
-			var title = gml.get_instance("title")
 			if (title.darkness > 0):
 				$TitleScreen/Background.visible = true
 			else:
@@ -242,7 +246,8 @@ func begin_step():
 			
 				#draw_set_font(global.my_font_small) #--- not needed
 				#draw_set_color(c_white)
-				$TitleScreen/DerekYuPresents.text = "DEREK YU PRESENTS"
+				derek_yu_presents.text = "DEREK YU PRESENTS"
+				derek_yu_presents.visible = true
 			
 			#draw_set_alpha(1) --- should not be needed for anything
 			#draw_set_blend_mode_ext(bm_src_color,bm_one)
