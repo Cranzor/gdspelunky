@@ -330,6 +330,12 @@ func instance_deactivate_region(left, top, width, height, inside, notme):
 	
 func room_restart():
 	get_tree().reload_current_scene()
+	
+func instance_activate_all():
+	pass
+
+func instance_deactivate_all(notme):
+	pass
 
 #---------------------------------------
 func background_index(background: String): #Changing this to a function
@@ -437,4 +443,4 @@ func get_nearest_multiple(number, target_number): #--- Adapted from here: https:
 	var z = int(target_number/2)
 	number = number + z
 	number = number - (int(number) % int(target_number))
-	return(number)
+	return number

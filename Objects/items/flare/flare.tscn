@@ -25,7 +25,9 @@ script = ExtResource("1_xxbaf")
 depth = -30
 object_size = Vector2(8, 8)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Node" type="Node" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node"]
 z_index = -30
 z_as_relative = false
 sprite_frames = SubResource("SpriteFrames_nhj8n")

@@ -14,13 +14,16 @@ func initial_setup():
 	depth = -50
 	z_index = depth
 	
-	$AnimatedSprite2D.play("run_left")
+	$Node/AnimatedSprite2D.play("run_left")
 	#drawn_sprite_create()
 	#drawn_sprite_step()
 
 func _ready():
 	initial_setup()
 	create()
+	
+func _process(delta):
+	smooth_animated_sprite_movement(x_velocity, y_velocity, delta)
 
 func _physics_process(delta):
 	step()
@@ -45,6 +48,8 @@ func create():
 	
 
 func step():
+	smooth_motion_step_begin()
+	
 	position.x += x_vel
 	position.y += y_vel
 
@@ -73,10 +78,11 @@ func step():
 	
 
 	else:
-
 		var player = gml.instance_create(position.x, position.y, player1)
 		player.facing = 18
 		gml.instance_destroy(self)
 
+	smooth_motion_step_end()
+	
 func _on_alarm_2_timeout():
 	alarm_2()

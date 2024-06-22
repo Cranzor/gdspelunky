@@ -14,7 +14,7 @@ func set_sound_freq(sound, frequency):
 	pass
 func set_sound_pan():
 	pass
-func set_sound_vol():
+func set_sound_vol(sound, volume):
 	pass
 func stop_sound(sound):
 	pass

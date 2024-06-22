@@ -122,3 +122,28 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="GlobalMessages" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Message" type="Label" parent="GlobalMessages"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 216.0
+offset_right = 268.0
+offset_bottom = 239.0
+theme_override_fonts/font = ExtResource("2_nrj7p")
+text = "I CAN HEAR PRAYERS TO KALI!"
+
+[node name="Message2" type="Label" parent="GlobalMessages"]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 224.0
+offset_right = 248.0
+offset_bottom = 247.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("2_nrj7p")
+text = "LET'S GET OUT OF HERE!"

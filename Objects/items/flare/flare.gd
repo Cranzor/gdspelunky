@@ -14,13 +14,16 @@ func initial_setup():
 	depth = -30
 	z_index = depth
 	
-	$AnimatedSprite2D.play("flare")
+	$Node/AnimatedSprite2D.play("flare")
 	#item_create()
 	#item_step()
 
 func _ready():
 	initial_setup()
 	create()
+
+func _process(delta):
+	smooth_animated_sprite_movement(x_velocity, y_velocity, delta)
 
 func _physics_process(delta):
 	step()
@@ -49,6 +52,8 @@ func create():
 		alarm_0_timer.start(1.0/30.0)
 
 func step():
+	smooth_motion_step_begin()
+	
 	item_step()
 	
 	if (gml.instance_exists("player1")):
@@ -68,6 +73,8 @@ func step():
 			held = false
 		
 		gml.instance_destroy(self)
+	
+	smooth_motion_step_end()
 	
 func _on_alarm_0_timeout():
 	alarm_0()

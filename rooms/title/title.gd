@@ -70,7 +70,7 @@ func _ready():
 	scenes_with_id["x_shortcut5"] = 4
 	scenes_with_id["level5_sign"] = 9
 	
-	await get_tree().create_timer(2).timeout
+	#await get_tree().create_timer(2).timeout
 	add_child(tile_map)
 	tile_map.owner = get_tree().edited_scene_root
 	print("for test")
