@@ -365,17 +365,9 @@ func view(view_value: String):
 	var view = get_tree().get_first_node_in_group("view")
 	
 	if view != null:
-		#print(round(view.get_screen_center_position().x))
 		
 		if view_value == 'xview':
-			var screen_center_position = view.get_screen_center_position().x
-			var diff_from_default = screen_center_position - 320
-			var corrected_position = screen_center_position - diff_from_default
-			#return round(view.get_screen_center_position().x - 160)
-			#print(round(view.get_screen_center_position().x - 160))
-			print(corrected_position)
-			return corrected_position
-			
+			return round(view.get_screen_center_position().x - 160)
 			
 		elif view_value == 'yview':
 			return round(view.get_screen_center_position().y - 120)

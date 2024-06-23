@@ -27,8 +27,8 @@ var player
 
 var first_level_skip
 var level_skip
-var s_damsel_left
-var s_tunnel_left
+
+
 var dead_counter
 var stunned = false #--- Change this back
 var fall_timer
@@ -96,22 +96,22 @@ var cape
 var explosion
 var state
 var p_dummy5
-var s_whoa_left
-var s_damsel_whoa_l
-var s_tunnel_whoa_l
+
+
+
 var swimming
 var splash
 var burn
-var s_stun_l
-var s_damsel_stun_l
-var s_tunnel_stun_l
+
+
+
 var parachute
 var poof
 var para_used
 var bubble
-var s_p_exit
-var s_damsel_exit
-var s_tunnel_exit
+
+
+
 var x_vel_limit
 var y_vel_limit
 var k_down
@@ -119,30 +119,30 @@ var k_right
 var k_left
 var view_yview
 var k_up
-var s_attack_left
-var s_damsel_attack_l
-var s_whip_left
-var s_slash_right
-var s_mattock_hit_r
-var s_slash_left
-var s_mattock_hit_l
-var s_whip_right
-var s_machete_pre_l
-var s_machete_pre_r
-var s_mattock_pre_l
-var s_mattock_pre_r
-var s_whip_pre_l
-var s_whip_pre_r
-var s_chest
-var s_chest_open
-var s_bomb_armed
-var s_crystal_skull
-var s_bomb
-var s_rope_end
-var s_die_l_bounce
-var s_damsel_hold_l
-var s_p_kiss_l
-var s_damsel_kiss_l
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 var k_left_pushed_steps
@@ -150,7 +150,7 @@ var k_right_pushed_steps
 var can_run
 var k_run
 var k_jump
-var s_tunnel_attack_l
+
 var run_held
 var run_acc
 var ladder_timer
@@ -183,64 +183,64 @@ var climb_anim_speed
 var image_index = 0 #--- This will need to be handled somehow
 
 var rock
-var s_spears_left
-var s_spikes_blood
-var s_damsel_die_l
-var s_damsel_bounce_l
-var s_damsel_fall_l
-var s_damsel_die_l_l
-var s_damsel_die_l_r
-var s_tunnel_die_l
-var s_tunnel_l_bounce
-var s_tunnel_fall_l
-var s_tunnel_die_l_l
-var s_tunnel_die_l_r
-var s_die_l
-var s_die_l_fall
-var s_die_l_l
-var s_die_l_r
 
-var s_bombs_get
-var s_rope_get
-var s_damsel_exit2
 
-var s_tunnel_look_run_l
-var s_tunnel_run_l
-var s_tunnel_duck_l
-var s_tunnel_crawl_l
-var s_tunnel_look_l
-var s_tunnel_jump_l
-var s_tunnel_hang_l
-var s_tunnel_push_l
-var s_tunnel_dt_hl
-var s_tunnel_climb3
-var s_tunnel_climb2
-var s_tunnel_climb
-var s_damsel_run_l
-var s_damsel_duck_l
-var s_damsel_crawl_l
-var s_damsel_look_l
-var s_damsel_die_lr
-var s_damsel_hang_l
-var s_damsel_push_l
-var s_damsel_dt_hl
-var s_damsel_climb3
-var s_damsel_climb2
-var s_damsel_climb
-var s_stand_left
-var s_look_run_l
-var s_run_left
-var s_duck_left
-var s_crawl_left
-var s_look_left
-var s_jump_left
-var s_fall_left
-var s_hang_left
-var s_push_left
-var s_climb_up3
-var s_climb_up2
-var s_climb_up
-var s_duck_to_hang_l
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 var k_bomb_pressed #--- only found in step
@@ -292,6 +292,7 @@ var final_x_vel = 0
 var final_y_vel = 0
 
 func _process(delta):
+	print(sprite_index)
 	var sprite_distance = Vector2($AnimatedSprite2D.position.x, $AnimatedSprite2D.position.y).distance_to(Vector2(position.x, position.y))
 	
 	#var tween = create_tween()
@@ -324,8 +325,8 @@ func _ready():
 	first_level_skip = 1
 	level_skip = 1
 
-	if (global.is_damsel): $AnimatedSprite2D.animation = 's_damsel_left'
-	elif (global.is_tunnel_man): $AnimatedSprite2D.animation = 's_tunnel_left'
+	if (global.is_damsel): sprite_index = 'damsel_left'
+	elif (global.is_tunnel_man): sprite_index = 'tunnel_left'
 
 	# reset gamepad
 	#/*
@@ -610,7 +611,7 @@ func find_nearest_light_source():
 	
 func handle_edge_leaning():
 	# WHOA
-	if ($AnimatedSprite2D.animation == 's_whoa_left' or $AnimatedSprite2D.animation == 's_damsel_whoa_l' or $AnimatedSprite2D.animation == 's_tunnel_whoa_l'):
+	if (sprite_index == 'whoa_left' or sprite_index == 'damsel_whoa_l' or sprite_index == 'tunnel_whoa_l'):
 
 		if (whoa_timer > 0): whoa_timer -= 1
 		elif (hold_item):
@@ -703,13 +704,13 @@ func fall_off_bottom_of_screen():
 func handle_player_active():
 	if (active):
 
-		if (stun_timer > 0 and ($AnimatedSprite2D.animation == 's_stun_l' or $AnimatedSprite2D.animation == 's_damsel_stun_l' or $AnimatedSprite2D.animation == 's_tunnel_stun_l')):
+		if (stun_timer > 0 and (sprite_index == 'stun_l' or sprite_index == 'damsel_stun_l' or sprite_index == 'tunnel_stun_l')):
 		
 			image_speed = 0.4
 			stun_timer -= 1
 		
 		
-		if (stun_timer < 1 and ($AnimatedSprite2D.animation == 's_stun_l' or $AnimatedSprite2D.animation == 's_damsel_stun_l' or $AnimatedSprite2D.animation == 's_tunnel_stun_l')):
+		if (stun_timer < 1 and (sprite_index == 'stun_l' or sprite_index == 'damsel_stun_l' or sprite_index == 'tunnel_stun_l')):
 			stunned = false
 			
 		if (gml.instance_exists('parachute')): fall_timer = 0
@@ -778,7 +779,7 @@ func handle_player_active():
 			bubble_timer = bubble_timer_max
 		
 		
-		if (state != DUCKTOHANG and not stunned and not dead and $AnimatedSprite2D.animation != 's_p_exit' and $AnimatedSprite2D.animation != 's_damsel_exit' and $AnimatedSprite2D.animation != 's_tunnel_exit'):
+		if (state != DUCKTOHANG and not stunned and not dead and sprite_index != 'p_exit' and sprite_index != 'damsel_exit' and sprite_index != 'tunnel_exit'):
 		
 			bounced = false
 			character_step_event()
@@ -897,20 +898,20 @@ func check_pay_pressed():
 	# k_flare_pressed = check_flare_pressed()
 	
 func start_weapon_animation():
-	if ((sprite_index == s_attack_left or sprite_index == s_damsel_attack_l or sprite_index == s_tunnel_attack_l) and facing == LEFT and image_index > 4 and gml.instance_number('whip') == 0):
+	if ((sprite_index == "attack_left" or sprite_index == "damsel_attack_l" or sprite_index == "tunnel_attack_l") and facing == LEFT and image_index > 4 and gml.instance_number('whip') == 0):
 
 		if (hold_item):
 		
 			if (hold_item.type == "Machete"):
 			
 				var obj = gml.instance_create(position.x-16, position.y, "slash")
-				obj.sprite_index = s_slash_left
+				obj.sprite_index = "slash_left"
 				Audio.play_sound(global.snd_whip)
 			
 			elif (hold_item.type == "Mattock"):
 			
 				var obj = gml.instance_create(position.x-16, position.y, "mattock_hit")
-				obj.sprite_index = s_mattock_hit_l
+				obj.sprite_index = "mattock_hit_l"
 				Audio.play_sound(global.snd_whip)
 			
 		
@@ -919,31 +920,31 @@ func start_weapon_animation():
 			if (global.is_tunnel_man):
 			
 				var obj = gml.instance_create(position.x-16, position.y, "mattock_hit")
-				obj.sprite_index = s_mattock_hit_l
+				obj.sprite_index = "mattock_hit_l"
 				Audio.play_sound(global.snd_whip)
 			
 			else:
 			
 				var obj = gml.instance_create(position.x-16, position.y, "whip")
-				obj.sprite_index = s_whip_left
+				obj.sprite_index = "whip_left"
 				Audio.play_sound(global.snd_whip)
 			
 		
 
-	elif ((sprite_index == s_attack_left or sprite_index == s_damsel_attack_l or sprite_index == s_tunnel_attack_l) and facing == RIGHT and image_index > 4 and gml.instance_number('whip') == 0):
+	elif ((sprite_index == "attack_left" or sprite_index == "damsel_attack_l" or sprite_index == "tunnel_attack_l") and facing == RIGHT and image_index > 4 and gml.instance_number('whip') == 0):
 
 		if (hold_item):
 		
 			if (hold_item.type == "Machete"):
 			
 				var obj = gml.instance_create(position.x+16, position.y, "slash")
-				obj.sprite_index = s_slash_right
+				obj.sprite_index = "slash_right"
 				Audio.play_sound(global.snd_whip)
 			
 			elif (hold_item.type == "Mattock"):
 			
 				var obj = gml.instance_create(position.x+16, position.y, "mattock_hit")
-				obj.sprite_index = s_mattock_hit_r
+				obj.sprite_index = "mattock_hit_r"
 				Audio.play_sound(global.snd_whip)
 			
 		
@@ -952,13 +953,13 @@ func start_weapon_animation():
 			if (global.is_tunnel_man):
 			
 				var obj = gml.instance_create(position.x+16, position.y, "mattock_hit")
-				obj.sprite_index = s_mattock_hit_r
+				obj.sprite_index = "mattock_hit_r"
 				Audio.play_sound(global.snd_whip)
 			
 			else:
 			
 				var obj = gml.instance_create(position.x+16, position.y, "whip")
-				obj.sprite_index = s_whip_right
+				obj.sprite_index = "whip_right"
 				Audio.play_sound(global.snd_whip)
 	
 func start_weapon_pre_animation():
@@ -966,53 +967,53 @@ func start_weapon_pre_animation():
 
 		if (hold_item.type == "Machete"):
 		
-			if ((sprite_index == s_attack_left or sprite_index == s_damsel_attack_l or sprite_index == s_tunnel_attack_l) and facing == LEFT and image_index < 2 and gml.instance_number('machete_pre') == 0):
+			if ((sprite_index == "attack_left" or sprite_index == "damsel_attack_l" or sprite_index == "tunnel_attack_l") and facing == LEFT and image_index < 2 and gml.instance_number('machete_pre') == 0):
 			
 				var obj = gml.instance_create(position.x+16, position.y, "machete_pre")
-				obj.sprite_index = s_machete_pre_l
+				obj.sprite_index = "machete_pre_l"
 			
-			elif ((sprite_index == s_attack_left or sprite_index == s_damsel_attack_l or sprite_index == s_tunnel_attack_l) and facing == RIGHT and image_index < 2 and gml.instance_number('machete_pre') == 0):
+			elif ((sprite_index == "attack_left" or sprite_index == "damsel_attack_l" or sprite_index == "tunnel_attack_l") and facing == RIGHT and image_index < 2 and gml.instance_number('machete_pre') == 0):
 			
 				var obj = gml.instance_create(position.x-16, position.y, "machete_pre")
-				obj.sprite_index = s_machete_pre_r
+				obj.sprite_index = "machete_pre_r"
 			
 		
 		elif (hold_item.type == "Mattock"):
 		
-			if ((sprite_index == s_attack_left or sprite_index == s_damsel_attack_l or sprite_index == s_tunnel_attack_l) and facing == LEFT and image_index < 2 and gml.instance_number('machete_pre') == 0):
+			if ((sprite_index == "attack_left" or sprite_index == "damsel_attack_l" or sprite_index == "tunnel_attack_l") and facing == LEFT and image_index < 2 and gml.instance_number('machete_pre') == 0):
 			
 				var obj = gml.instance_create(position.x+16, position.y, "mattock_pre")
-				obj.sprite_index = s_mattock_pre_l
+				obj.sprite_index = "mattock_pre_l"
 			
-			elif ((sprite_index == s_attack_left or sprite_index == s_damsel_attack_l or sprite_index == s_tunnel_attack_l) and facing == RIGHT and image_index < 2 and gml.instance_number('machete_pre') == 0):
+			elif ((sprite_index == "attack_left" or sprite_index == "damsel_attack_l" or sprite_index == "tunnel_attack_l") and facing == RIGHT and image_index < 2 and gml.instance_number('machete_pre') == 0):
 			
 				var obj = gml.instance_create(position.x-16, position.y, "mattock_pre")
-				obj.sprite_index = s_mattock_pre_r
+				obj.sprite_index = "mattock_pre_r"
 			
 		
 
-	elif (sprite_index == s_tunnel_attack_l and image_index < 2 and gml.instance_number('mattock_pre') == 0):
+	elif (sprite_index == "tunnel_attack_l" and image_index < 2 and gml.instance_number('mattock_pre') == 0):
 
 		if (facing == LEFT):
 		
 			var obj = gml.instance_create(position.x+16, position.y, "mattock_pre")
-			obj.sprite_index = s_mattock_pre_l
+			obj.sprite_index = "mattock_pre_l"
 		
 		else:
 		
 			var obj = gml.instance_create(position.x-16, position.y, "mattock_pre")
-			obj.sprite_index = s_mattock_pre_r
+			obj.sprite_index = "mattock_pre_r"
 		
 
-	elif ((sprite_index == s_attack_left or sprite_index == s_damsel_attack_l or sprite_index == s_tunnel_attack_l) and facing == LEFT and image_index < 2 and gml.instance_number('whip_pre') == 0):
+	elif ((sprite_index == "attack_left" or sprite_index == "damsel_attack_l" or sprite_index == "tunnel_attack_l") and facing == LEFT and image_index < 2 and gml.instance_number('whip_pre') == 0):
 
 		var obj = gml.instance_create(position.x+16, position.y, "whip_pre")
-		obj.sprite_index = s_whip_pre_l
+		obj.sprite_index = "whip_pre_l"
 
-	elif ((sprite_index == s_attack_left or sprite_index == s_damsel_attack_l or sprite_index == s_tunnel_attack_l) and facing == RIGHT  and image_index < 2 and gml.instance_number('whip_pre') == 0):
+	elif ((sprite_index == "attack_left" or sprite_index == "damsel_attack_l" or sprite_index == "tunnel_attack_l") and facing == RIGHT  and image_index < 2 and gml.instance_number('whip_pre') == 0):
 
 		var obj = gml.instance_create(position.x-16, position.y, "whip_pre")
-		obj.sprite_index = s_whip_pre_r
+		obj.sprite_index = "whip_pre_r"
 	
 func delete_whip_instances_when_not_whipping():
 	if (not whipping):
@@ -1047,15 +1048,15 @@ func handle_chest_opening():
 
 		if (InLevel.is_real_level()): global.total_chests += 1
 		var chest_instance = gml.instance_place(position.x, position.y, 'chest')
-		if (chest_instance.sprite_index == s_chest):
+		if (chest_instance.sprite_index == "chest"):
 		
-			chest_instance.sprite_index = s_chest_open
+			chest_instance.sprite_index = "chest_open"
 			if (randi_range(1,12) == 1 and global.curr_level > 0):
 			
 				var obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, "bomb")
 				obj.x_vel = randi_range(0,3) - randi_range(0,3)
 				obj.y_vel = -2
-				obj.sprite_index = s_bomb_armed
+				obj.sprite_index = "bomb_armed"
 				obj.alarm_1(40) #--- this may need to be checked (uses 'with' in original code. but this should work)
 				
 				Audio.play_sound(global.snd_trap)
@@ -1160,7 +1161,7 @@ func start_game():
 		gml.collision_point(position.x, position.y, "x_start", 0, 0) and
 		k_up and
 		platform_character_is(ON_GROUND) and
-		sprite_index != s_p_exit and sprite_index != s_damsel_exit and sprite_index != s_tunnel_exit):
+		sprite_index != "p_exit" and sprite_index != "damsel_exit" and sprite_index != "tunnel_exit"):
 
 		# x_end is the child of x_start, for some reason, that's why this is here:
 		if (InLevel.is_room("r_olmec") and hold_item):
@@ -1207,9 +1208,9 @@ func start_game():
 
 		var door = gml.instance_place(position.x, position.y, 'x_start')
 		if (door): position.x = door.position.x + 8
-		if (global.is_damsel): sprite_index = s_damsel_exit
-		elif (global.is_tunnel_man): sprite_index = s_tunnel_exit
-		else: sprite_index = s_p_exit
+		if (global.is_damsel): sprite_index = "damsel_exit"
+		elif (global.is_tunnel_man): sprite_index = "tunnel_exit"
+		else: sprite_index = "p_exit"
 		image_speed = 0.5
 		active = false
 		depth = 999
@@ -1242,7 +1243,7 @@ func exit_level():
 		gml.collision_point(position.x, position.y, "exit", 0, 0) and
 		k_up and
 		platform_character_is(ON_GROUND) and
-		sprite_index != s_p_exit and sprite_index != s_damsel_exit and sprite_index != s_tunnel_exit):
+		sprite_index != "p_exit" and sprite_index != "damsel_exit" and sprite_index != "tunnel_exit"):
 
 		hold_arrow = 0
 		global.pickup_item = ""
@@ -1252,7 +1253,7 @@ func exit_level():
 			
 				if (InLevel.is_real_level()): global.idols_converted += 1
 				global.money += hold_item.value*(global.level_type+1)
-				if (hold_item.sprite_index == s_crystal_skull): global.skulls += 1
+				if (hold_item.sprite_index == "crystal_skull"): global.skulls += 1
 				else: global.idols += 1
 				Audio.play_sound(global.snd_coin)
 				gml.instance_create(position.x, position.y-8, "big_collect")
@@ -1271,8 +1272,8 @@ func exit_level():
 					hold_item.position.x = door.position.x+8
 					hold_item.position.y = door.position.y+8
 					
-					if (global.is_damsel): hold_item.sprite_index = s_p_exit
-					else: hold_item.sprite_index = s_damsel_exit
+					if (global.is_damsel): hold_item.sprite_index = "p_exit"
+					else: hold_item.sprite_index = "damsel_exit"
 					hold_item.status = 4
 					hold_item.held = false
 					hold_item.x_vel = 0
@@ -1341,9 +1342,9 @@ func exit_level():
 		global.xmoney += global.collect
 		global.collect = 0
 		
-		if (global.is_damsel): sprite_index = s_damsel_exit
-		elif (global.is_tunnel_man): sprite_index = s_tunnel_exit
-		else: sprite_index = s_p_exit
+		if (global.is_damsel): sprite_index = "damsel_exit"
+		elif (global.is_tunnel_man): sprite_index = "tunnel_exit"
+		else: sprite_index = "p_exit"
 		image_speed = 0.5
 		active = false
 		invincible = 999
@@ -1428,12 +1429,12 @@ func bomb_rope_and_whipping_handling(): #--- Also handles picking up items and a
 		# match items
 		if (hold_item):
 		
-			if (hold_item.sprite_index == s_bomb_armed):
+			if (hold_item.sprite_index == "bomb_armed"):
 			
 				# do nothing
 				pass
 			
-			elif (hold_item.sprite_index == s_bomb):
+			elif (hold_item.sprite_index == "bomb"):
 				
 				hold_item.global.bombs += 1 #--- Double-check if this works
 				hold_item.gml.instance_destroy(hold_item)
@@ -1451,7 +1452,7 @@ func bomb_rope_and_whipping_handling(): #--- Also handles picking up items and a
 					CharacterScripts.scr_hold_item(pickup_item_type)
 				
 			
-			elif (hold_item.sprite_index == s_rope_end):
+			elif (hold_item.sprite_index == "rope_end"):
 				
 				hold_item.global.rope += 1
 				hold_item.gml.instance_destroy(hold_item)
@@ -1604,7 +1605,7 @@ func bomb_rope_and_whipping_handling(): #--- Also handles picking up items and a
 
 		var obj = gml.instance_create(position.x, position.y, "bomb")
 		if (global.has_sticky_bombs): obj.sticky = true
-		obj.sprite_index = s_bomb_armed
+		obj.sprite_index = "bomb_armed"
 		obj.armed = true
 		obj.alarm_0(80)
 		obj.image_speed = 0.2
@@ -1639,27 +1640,27 @@ func bomb_rope_and_whipping_handling(): #--- Also handles picking up items and a
 	elif (hold_item == 0):
 
 		if (k_attack_pressed and state != DUCKING and state != DUCKTOHANG and not whipping and
-			sprite_index != s_p_exit and sprite_index != s_damsel_exit):
+			sprite_index != "p_exit" and sprite_index != "damsel_exit"):
 		
 			image_speed = 0.6
 			if (global.is_tunnel_man):
 			
 				if (platform_character_is(ON_GROUND)):
 				
-					sprite_index = s_tunnel_attack_l
+					sprite_index = "tunnel_attack_l"
 					image_index = 0
 					whipping = true
 				
 			
 			elif (global.is_damsel):
 			
-				sprite_index = s_damsel_attack_l
+				sprite_index = "damsel_attack_l"
 				image_index = 0
 				whipping = true
 			
 			else:
 			
-				sprite_index = s_attack_left
+				sprite_index = "attack_left"
 				image_index = 0
 				whipping = true
 			
@@ -1758,8 +1759,8 @@ func bomb_rope_and_whipping_handling(): #--- Also handles picking up items and a
 						
 						else:
 						
-							if (global.is_damsel): hold_item.sprite_index = s_die_l_bounce
-							else: hold_item.sprite_index = s_damsel_hold_l
+							if (global.is_damsel): hold_item.sprite_index = "die_l_bounce"
+							else: hold_item.sprite_index = "damsel_hold_l"
 						
 					
 					elif (hold_item.cost == 0): CharacterScripts.scr_steal_item()
@@ -1908,11 +1909,11 @@ func handle_shop_behavior(): #--- Purchasing and games etc. (different shop type
 						obj.status = 6
 						if (global.is_damsel):
 						
-							obj.sprite_index = s_p_kiss_l
+							obj.sprite_index = "p_kiss_l"
 						
 						else:
 						
-							obj.sprite_index = s_damsel_kiss_l
+							obj.sprite_index = "damsel_kiss_l"
 						
 						global.money -= InLevel.get_kiss_value()
 						global.plife += 1
@@ -1964,7 +1965,7 @@ func create_blood_upon_very_low_player_life():
 		visible = false
 
 func handle_damage_by_various_objects():
-	if (global.plife >= -99 and visible and sprite_index != s_p_exit and sprite_index != s_damsel_exit and sprite_index != s_tunnel_exit):
+	if (global.plife >= -99 and visible and sprite_index != "p_exit" and sprite_index != "damsel_exit" and sprite_index != "tunnel_exit"):
 
 		kill_upon_being_crushed()
 		handle_hit_by_arrow()
@@ -2116,7 +2117,7 @@ func handle_hit_by_spears_left():
 			# stunned = true
 			# bounced  = false
 			global.plife -= 4
-			if (obj.sprite_index == s_spears_left): x_vel = -randi_range(4,6)
+			if (obj.sprite_index == "spears_left"): x_vel = -randi_range(4,6)
 			else: x_vel = randi_range(4,6)
 			y_vel = -6
 			position.y -= 1
@@ -2185,7 +2186,7 @@ func handle_spike_collision():
 		var obj = gml.instance_place(position.x, position.y, 'spikes')
 		if (obj):
 		
-			obj.sprite_index = s_spikes_blood
+			obj.sprite_index = "spikes_blood"
 	
 
 #elif (not dead): my_grav = 0.6
@@ -2236,54 +2237,54 @@ func handle_dead_or_stunned():
 		
 			if (x_vel == 0):
 			
-				if (dead): sprite_index = s_damsel_die_l
-				elif (stunned): sprite_index = s_damsel_stun_l
+				if (dead): sprite_index = "damsel_die_l"
+				elif (stunned): sprite_index = "damsel_stun_l"
 			
 			elif (bounced):
 			
-				if (y_vel < 0): sprite_index = s_damsel_bounce_l
-				else: sprite_index = s_damsel_fall_l
+				if (y_vel < 0): sprite_index = "damsel_bounce_l"
+				else: sprite_index = "damsel_fall_l"
 			
 			else:
 			
-				if (x_vel < 0): sprite_index = s_damsel_die_l_l
-				else: sprite_index = s_damsel_die_l_r
+				if (x_vel < 0): sprite_index = "damsel_die_l_l"
+				else: sprite_index = "damsel_die_l_r"
 			
 		
 		elif (global.is_tunnel_man):
 		
 			if (x_vel == 0):
 			
-				if (dead): sprite_index = s_tunnel_die_l
-				elif (stunned): sprite_index = s_tunnel_stun_l
+				if (dead): sprite_index = "tunnel_die_l"
+				elif (stunned): sprite_index = "tunnel_stun_l"
 			
 			elif (bounced):
 			
-				if (y_vel < 0): sprite_index = s_tunnel_l_bounce
-				else: sprite_index = s_tunnel_fall_l
+				if (y_vel < 0): sprite_index = "tunnel_l_bounce"
+				else: sprite_index = "tunnel_fall_l"
 			
 			else:
 			
-				if (x_vel < 0): sprite_index = s_tunnel_die_l_l
-				else: sprite_index = s_tunnel_die_l_r
+				if (x_vel < 0): sprite_index = "tunnel_die_l_l"
+				else: sprite_index = "tunnel_die_l_r"
 			
 		
 		else:
 		
 			if (x_vel == 0):
 			
-				if (dead): sprite_index = s_die_l
-				elif (stunned): sprite_index = s_stun_l
+				if (dead): sprite_index = "die_l"
+				elif (stunned): sprite_index = "stun_l"
 			
 			elif (bounced):
 			
-				if (y_vel < 0): sprite_index = s_die_l_bounce
-				else: sprite_index = s_die_l_fall
+				if (y_vel < 0): sprite_index = "die_l_bounce"
+				else: sprite_index = "die_l_fall"
 			
 			else:
 			
-				if (x_vel < 0): sprite_index = s_die_l_l
-				else: sprite_index = s_die_l_r
+				if (x_vel < 0): sprite_index = "die_l_l"
+				else: sprite_index = "die_l_r"
 			
 		
 		
@@ -2426,12 +2427,12 @@ func cap_blink():
 	else: blink_toggle = -1
 
 	#/*
-	#if (sprite_index == s_slide_right):
+	#if (sprite_index == "slide_right"):
 #
 		#spark = gml.instance_create(position.x, position.y, "ground_spark")
 		#with spark  position.x += random(3)
 #
-	#elif (sprite_index == s_slide_left):
+	#elif (sprite_index == "slide_left"):
 #
 		#spark = gml.instance_create(position.x, position.y, "ground_spark")
 		#with spark  sprite_index = sSpark_left position.x += random(3)
@@ -2531,7 +2532,7 @@ func collect_bomb_bag():
 		
 			global.bombs += 3
 			var disp = gml.instance_create(obj.position.x, obj.position.y-14, "items_get")
-			disp.sprite_index = s_bombs_get
+			disp.sprite_index = "bombs_get"
 			gml.instance_destroy(obj)
 			Audio.play_sound(global.snd_pickup)
 			global.message = "YOU GOT 3 MORE BOMBS!"
@@ -2546,7 +2547,7 @@ func collect_bomb_box():
 		
 			global.bombs += 12
 			var disp = gml.instance_create(obj.position.x, obj.position.y-14, "items_get")
-			disp.sprite_index = s_bombs_get
+			disp.sprite_index = "bombs_get"
 			gml.instance_destroy(obj)
 			Audio.play_sound(global.snd_pickup)
 			global.message = "YOU GOT 12 MORE BOMBS!"
@@ -2561,7 +2562,7 @@ func collect_rope_pile():
 		
 			global.rope += 3
 			var disp = gml.instance_create(obj.position.x, obj.position.y-15, "items_get")
-			disp.sprite_index = s_rope_get
+			disp.sprite_index = "rope_get"
 			gml.instance_destroy(obj)
 			Audio.play_sound(global.snd_pickup)
 			global.message = "YOU GOT 3 MORE ROPES!"
@@ -2580,7 +2581,7 @@ func collect_idol_and_damsel():
 				global.collect += hold_item.value*(global.level_type+1)
 				global.collect_counter += 20
 				if (global.collect_counter > 100): global.collect_counter = 100
-				if (hold_item.sprite_index == s_crystal_skull): global.skulls += 1
+				if (hold_item.sprite_index == "crystal_skull"): global.skulls += 1
 				else: global.idols += 1
 				Audio.play_sound(global.snd_coin)
 				gml.instance_create(position.x, position.y-8, "big_collect")
@@ -2600,8 +2601,8 @@ func collect_idol_and_damsel():
 
 					var hold_item_instance = gml.instance_nearest(position.x, position.y, hold_item)
 					
-					if (global.is_damsel): hold_item_instance.sprite_index = s_p_exit
-					else: hold_item_instance.sprite_index = s_damsel_exit2
+					if (global.is_damsel): hold_item_instance.sprite_index = "p_exit"
+					else: hold_item_instance.sprite_index = "damsel_exit2"
 					hold_item_instance.status = 4
 					hold_item_instance.held = false
 					hold_item_instance.x_vel = 0
@@ -2831,7 +2832,7 @@ func check_keys():
 	else:
 
 		if (global.is_tunnel_man and
-			$AnimatedSprite2D.animation == 's_tunnel_attack_l' and
+			sprite_index == 'tunnel_attack_l' and
 			!hold_item):
 		
 			k_jump = false
@@ -3427,7 +3428,7 @@ func handle_ladder_climbing2():
 
 
 	#/*
-	#if (sprite_index == s_duck_thang_l or sprite_index == s_damsel_dt_hl):
+	#if (sprite_index == "duck_thang_l" or sprite_index == "damsel_dt_hl"):
 #
 		#ladder = 0
 		#if (facing == LEFT and  gml.collision_rectangle(position.x-8, position.y, position.x, position.y+16, ladder, 0, 0) and not gml.collision_point(position.x-4, position.y+16, solid, 0, 0)):
@@ -4114,44 +4115,44 @@ func character_sprite():
 			if (not gml.collision_point(position.x-2, position.y+9, "solid", 0, 0)):
 			
 				image_speed = 0.6
-				sprite_index = s_tunnel_whoa_l
+				sprite_index = "tunnel_whoa_l"
 			
-			else: sprite_index = s_tunnel_left
+			else: sprite_index = "tunnel_left"
 		
 		if (state == RUNNING):
 		 
-			if (k_up): sprite_index = s_tunnel_look_run_l
-			else: sprite_index = s_tunnel_run_l
+			if (k_up): sprite_index = "tunnel_look_run_l"
+			else: sprite_index = "tunnel_run_l"
 		
 		if (state == DUCKING):
 		
-			if (x_vel == 0): sprite_index = s_tunnel_duck_l
-			elif (abs(x_vel) < 3): sprite_index = s_tunnel_crawl_l
-			else: sprite_index = s_tunnel_run_l
+			if (x_vel == 0): sprite_index = "tunnel_duck_l"
+			elif (abs(x_vel) < 3): sprite_index = "tunnel_crawl_l"
+			else: sprite_index = "tunnel_run_l"
 		
 		if (state == LOOKING_UP):
 		
-			if (abs(x_vel)>0): sprite_index = s_tunnel_run_l
-			else: sprite_index = s_tunnel_look_l
+			if (abs(x_vel)>0): sprite_index = "tunnel_run_l"
+			else: sprite_index = "tunnel_look_l"
 		
 		if (state == JUMPING):
-			sprite_index = s_tunnel_jump_l
+			sprite_index = "tunnel_jump_l"
 		if (state == FALLING and state_prev == FALLING and state_prev_prev == FALLING):
-			sprite_index = s_tunnel_fall_l
+			sprite_index = "tunnel_fall_l"
 		if (state == HANGING):
-			sprite_index = s_tunnel_hang_l
+			sprite_index = "tunnel_hang_l"
 		if (push_timer > 20):
-			sprite_index = s_tunnel_push_l
+			sprite_index = "tunnel_push_l"
 		if (state == DUCKTOHANG):
-			sprite_index = s_tunnel_dt_hl
+			sprite_index = "tunnel_dt_hl"
 		if (state == CLIMBING):
 		
 			if (gml.collision_point(position.x,position.y,'rope',0,0)):
 			
-				if (k_down): sprite_index = s_tunnel_climb3
-				else: sprite_index = s_tunnel_climb2
+				if (k_down): sprite_index = "tunnel_climb3"
+				else: sprite_index = "tunnel_climb2"
 			
-			else: sprite_index = s_tunnel_climb
+			else: sprite_index = "tunnel_climb"
 		
 
 	elif (global.is_damsel and not stunned and not whipping):
@@ -4161,7 +4162,7 @@ func character_sprite():
 			if (not gml.collision_point(position.x-2, position.y+9, "solid", 0, 0)):
 			
 				image_speed = 0.6
-				sprite_index = s_damsel_whoa_l
+				sprite_index = "damsel_whoa_l"
 				#/*
 				#if (hold_item and whoa_timer < 1):
 				#
@@ -4178,42 +4179,42 @@ func character_sprite():
 				#
 				#*/
 			
-			else: sprite_index = s_damsel_left
+			else: sprite_index = "damsel_left"
 		
 		if (state == RUNNING):
 		 
-			if (k_up): sprite_index = s_damsel_run_l
-			else: sprite_index = s_damsel_run_l
+			if (k_up): sprite_index = "damsel_run_l"
+			else: sprite_index = "damsel_run_l"
 		
 		if (state == DUCKING):
 		
-			if (x_vel == 0): sprite_index = s_damsel_duck_l
-			elif (abs(x_vel) < 3): sprite_index = s_damsel_crawl_l
-			else: sprite_index = s_damsel_run_l
+			if (x_vel == 0): sprite_index = "damsel_duck_l"
+			elif (abs(x_vel) < 3): sprite_index = "damsel_crawl_l"
+			else: sprite_index = "damsel_run_l"
 		
 		if (state == LOOKING_UP):
 		
-			if (abs(x_vel)>0): sprite_index = s_damsel_run_l
-			else: sprite_index = s_damsel_look_l
+			if (abs(x_vel)>0): sprite_index = "damsel_run_l"
+			else: sprite_index = "damsel_look_l"
 		
 		if (state == JUMPING):
-			sprite_index = s_damsel_die_lr
+			sprite_index = "damsel_die_lr"
 		if (state == FALLING and state_prev == FALLING and state_prev_prev == FALLING):
-			sprite_index = s_damsel_fall_l
+			sprite_index = "damsel_fall_l"
 		if (state == HANGING):
-			sprite_index = s_damsel_hang_l
+			sprite_index = "damsel_hang_l"
 		if (push_timer > 20):
-			sprite_index = s_damsel_push_l
+			sprite_index = "damsel_push_l"
 		if (state == DUCKTOHANG):
-			sprite_index = s_damsel_dt_hl
+			sprite_index = "damsel_dt_hl"
 		if (state == CLIMBING):
 		
 			if (gml.collision_point(position.x,position.y,'rope',0,0)):
 			
-				if (k_down): sprite_index = s_damsel_climb3
-				else: sprite_index = s_damsel_climb2
+				if (k_down): sprite_index = "damsel_climb3"
+				else: sprite_index = "damsel_climb2"
 			
-			else: sprite_index = s_damsel_climb
+			else: sprite_index = "damsel_climb"
 		
 
 	elif (not stunned and not whipping):
@@ -4223,7 +4224,7 @@ func character_sprite():
 			if (not gml.collision_point(position.x-2, position.y+9, "solid", 0, 0)):
 			
 				image_speed = 0.6
-				sprite_index = s_whoa_left
+				sprite_index = "whoa_left"
 				#/*
 				#if (hold_item and whoa_timer < 1):
 				#
@@ -4240,43 +4241,43 @@ func character_sprite():
 				#
 				#*/
 			
-			else: gml.sprite_index('s_stand_left', self)
+			else: gml.sprite_index('stand_left', self)
 		
 		if (state == RUNNING):
 		 
 			if (k_up): sprite_index = "look_run_l"
-			else: gml.sprite_index('s_run_left', self)
+			else: gml.sprite_index('run_left', self)
 		
 		if (state == DUCKING):
 		
-			if (x_vel == 0): gml.sprite_index('s_duck_left', self)
-			elif (abs(x_vel) < 3): gml.sprite_index('s_crawl_left', self)
-			else: sprite_index = s_run_left
+			if (x_vel == 0): gml.sprite_index('duck_left', self)
+			elif (abs(x_vel) < 3): gml.sprite_index('crawl_left', self)
+			else: sprite_index = "run_left"
 		
 		if (state == LOOKING_UP):
 		
-			if (abs(x_vel)>0): sprite_index = s_look_run_l
+			if (abs(x_vel)>0): sprite_index = "look_run_l"
 			else: sprite_index = "look_left"
 		
 		if (state == JUMPING):
-			gml.sprite_index('s_jump_left', self)
+			gml.sprite_index('jump_left', self)
 		if (state == FALLING and state_prev == FALLING and state_prev_prev == FALLING):
 			sprite_index = "fall_left"
 		if (state == HANGING):
-			gml.sprite_index('s_hang_left', self)
+			gml.sprite_index('hang_left', self)
 		if (push_timer > 20):
-			sprite_index = s_push_left
+			sprite_index = "push_left"
 		if (state == CLIMBING):
 		
 			if (gml.collision_point(position.x,position.y,'rope',0,0)):
 			
-				if (k_down): sprite_index = s_climb_up3
-				else: sprite_index = s_climb_up2
+				if (k_down): sprite_index = "climb_up3"
+				else: sprite_index = "climb_up2"
 			
-			else: sprite_index = s_climb_up
+			else: sprite_index = "climb_up"
 		
 		if (state == DUCKTOHANG):
-			sprite_index = s_duck_to_hang_l
+			sprite_index = "duck_to_hang_l"
 
 func move_to(x_vel, y_vel):
 	#/*
@@ -4483,7 +4484,7 @@ func end_step():
 		else: hold_item.depth = 0
 
 
-	if (state == DUCKTOHANG and sprite_index != s_duck_to_hang_l and sprite_index != s_damsel_dt_hl and sprite_index != s_tunnel_dt_hl):
+	if (state == DUCKTOHANG and sprite_index != "duck_to_hang_l" and sprite_index != "damsel_dt_hl" and sprite_index != "tunnel_dt_hl"):
 
 		state = STANDING
 
@@ -4529,15 +4530,15 @@ func character_draw_event():
 
 	#if (blink_toggle != 1):
 #
-		#if ((state == CLIMBING or (sprite_index == s_p_exit or sprite_index == s_damsel_exit or sprite_index == s_tunnel_exit)) and global.has_jetpack and not whipping):
+		#if ((state == CLIMBING or (sprite_index == "p_exit" or sprite_index == "damsel_exit" or sprite_index == "tunnel_exit")) and global.has_jetpack and not whipping):
 		#
 			#draw_sprite_ext(sprite_index, -1, position.x, position.y, image_xscale, image_yscale, image_angle, image_blend, image_alpha)
 			##draw_sprite(sprite_index,-1,position.x,position.y)
-			#draw_sprite(s_jetpack_back,-1,position.x,position.y)
+			#draw_sprite(jetpack_back,-1,position.x,position.y)
 			#draw = false
 		#
-		#elif (global.has_jetpack and facing == RIGHT): draw_sprite(s_jetpack_right,-1,position.x-4,position.y-1)
-		#elif (global.has_jetpack): draw_sprite(s_jetpack_left,-1,position.x+4,position.y-1)
+		#elif (global.has_jetpack and facing == RIGHT): draw_sprite(jetpack_right,-1,position.x-4,position.y-1)
+		#elif (global.has_jetpack): draw_sprite(jetpack_left,-1,position.x+4,position.y-1)
 		#if (draw):
 		#
 			#if (red_color > 0): draw_sprite_ext(sprite_index, -1, position.x, position.y, image_xscale, image_yscale, image_angle, make_color_rgb(200 + red_color,0,0), image_alpha)
@@ -4547,24 +4548,24 @@ func character_draw_event():
 		#
 			#if (hold_arrow == ARROW_NORM):
 			#
-				#draw_sprite(s_arrow_right, -1, position.x+4, position.y+1)
+				#draw_sprite(arrow_right, -1, position.x+4, position.y+1)
 			#
 			#elif (hold_arrow == ARROW_BOMB):
 			#
-				#if (hold_arrowToggle): draw_sprite(s_bomb_arrow_right, 0, position.x+4, position.y+2)
-				#else: draw_sprite(s_bomb_arrow_right, 1, position.x+4, position.y+2)
+				#if (hold_arrowToggle): draw_sprite(bomb_arrow_right, 0, position.x+4, position.y+2)
+				#else: draw_sprite(bomb_arrow_right, 1, position.x+4, position.y+2)
 			#
 		#
 		#elif (facing == LEFT):
 		#
 			#if (hold_arrow == ARROW_NORM):
 			#
-				#draw_sprite(s_arrow_left, -1, position.x-4, position.y+1)
+				#draw_sprite(arrow_left, -1, position.x-4, position.y+1)
 			#
 			#elif (hold_arrow == ARROW_BOMB):
 			#
-				#if (hold_arrowToggle): draw_sprite(s_bomb_arrow_left, 0, position.x-4, position.y+2)
-				#else: draw_sprite(s_bomb_arrow_left, 1, position.x-4, position.y+2)
+				#if (hold_arrowToggle): draw_sprite(bomb_arrow_left, 0, position.x-4, position.y+2)
+				#else: draw_sprite(bomb_arrow_left, 1, position.x-4, position.y+2)
 			
 		
 
@@ -4586,12 +4587,12 @@ func _on_animated_sprite_2d_animation_finished():
 	#--- 'Animation end' event
 	var  obj
 	
-	if (sprite_index == s_attack_left or sprite_index == s_damsel_attack_l or sprite_index == s_tunnel_attack_l):
+	if (sprite_index == "attack_left" or sprite_index == "damsel_attack_l" or sprite_index == "tunnel_attack_l"):
 
 		whipping = false
 		if (hold_item): hold_item.visible = true
 
-	elif (sprite_index == s_duck_to_hang_l or sprite_index == s_damsel_dt_hl or sprite_index == s_tunnel_dt_hl):
+	elif (sprite_index == "duck_to_hang_l" or sprite_index == "damsel_dt_hl" or sprite_index == "tunnel_dt_hl"):
 
 		position.y = position.y + 16
 		gml.move_snap(1, 8, self)
@@ -4629,7 +4630,7 @@ func _on_animated_sprite_2d_animation_finished():
 			position.x = position.x + 6
 		
 
-	elif (sprite_index == s_p_exit or sprite_index == s_damsel_exit or sprite_index == s_tunnel_exit):
+	elif (sprite_index == "p_exit" or sprite_index == "damsel_exit" or sprite_index == "tunnel_exit"):
 
 		if (global.collect > 0):
 		
@@ -4769,9 +4770,9 @@ func _on_animated_sprite_2d_animation_finished():
 			if (global.is_damsel):
 			
 				global.is_tunnel_man = false
-				sprite_index = s_damsel_left
+				sprite_index = "damsel_left"
 			
-			else: sprite_index = s_stand_left
+			else: sprite_index = "stand_left"
 			global.plife = 4
 			global.bombs = 4
 			global.rope = 4
@@ -4789,14 +4790,14 @@ func _on_animated_sprite_2d_animation_finished():
 			if (global.is_tunnel_man):
 			
 				global.is_damsel = false
-				sprite_index = s_tunnel_left
+				sprite_index = "tunnel_left"
 				global.plife = 2
 				global.bombs = 0
 				global.rope = 0
 			
 			else:
 			
-				sprite_index = s_stand_left
+				sprite_index = "stand_left"
 				global.plife = 4
 				global.bombs = 4
 				global.rope = 4
@@ -4810,3 +4811,7 @@ func _on_animated_sprite_2d_animation_finished():
 func disable_camera_on_title_screen():
 	if gml.room_get_name() == "title":
 		$AnimatedSprite2D/Camera2D.enabled = false
+
+
+func _on_new_animated_sprite_2d_animation_finished():
+	_on_animated_sprite_2d_animation_finished()
