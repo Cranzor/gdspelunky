@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cp7345wvpbe1d"]
+[gd_scene load_steps=20 format=3 uid="uid://cp7345wvpbe1d"]
 
 [ext_resource type="Script" path="res://rooms/intro/intro.gd" id="1_886e7"]
 [ext_resource type="PackedScene" uid="uid://d1vbnjy2fiex3" path="res://objects/other/intro/moon/moon.tscn" id="2_d2erf"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://3ui3v5o7nedx" path="res://objects/game/game.tscn" id="14_5p4k5"]
 [ext_resource type="PackedScene" uid="uid://3vdxy1vbeyw3" path="res://objects/other/intro/bat_intro/bat_intro.tscn" id="15_5gp75"]
 [ext_resource type="Texture2D" uid="uid://c7mqbeksgioqi" path="res://backgrounds/background_night.png" id="16_pnhb5"]
+[ext_resource type="PackedScene" uid="uid://b2jlcu453ynaf" path="res://bg_elements.tscn" id="17_txyc1"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_jx6n4"]
 scenes/1/scene = ExtResource("2_d2erf")
@@ -65,3 +66,5 @@ layer_11/tile_data = PackedInt32Array(1, 0, 786432)
 layer_12/tile_data = PackedInt32Array(3, 0, 851968)
 layer_13/tile_data = PackedInt32Array(589862, 0, 917504)
 layer_14/tile_data = PackedInt32Array(524325, 0, 917504, 655396, 0, 917504, 589858, 0, 917504)
+
+[node name="BgElements" parent="." instance=ExtResource("17_txyc1")]

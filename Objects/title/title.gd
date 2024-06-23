@@ -37,6 +37,7 @@ func _ready():
 	create()
 
 func _physics_process(delta):
+	print(darkness)
 	step()
 	draw()
 

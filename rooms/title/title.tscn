@@ -41,3 +41,5 @@ stretch_mode = 1
 [node name="FpsCounter" parent="." instance=ExtResource("23_57set")]
 
 [node name="BgElements" parent="." instance=ExtResource("24_c1f05")]
+z_as_relative = false
+layer_29/tile_data = PackedInt32Array()

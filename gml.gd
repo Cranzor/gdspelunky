@@ -105,6 +105,7 @@ func collision_point(x,y,obj: String,prec,notme): #"This function tests whether 
 func tile_add(background,left,top,width,height,x,y,depth): #return value of tile as well. left: left to right value in pixels. top: top to bottom in pixels
 	var tile_set_name = str(background)
 	var tile_id = bg_dict[tile_set_name]
+	var layer_number = tile_id
 	var coords = Vector2(0, -1)
 	var size = Vector2(1, 1)
 	var coords_array = []
@@ -133,15 +134,18 @@ func tile_add(background,left,top,width,height,x,y,depth): #return value of tile
 	
 	var cur_scene = get_tree()
 	var bg_elements: TileMap = cur_scene.get_first_node_in_group("bg_elements")
-	#if depth != 0:
-		#bg_elements.z_index = -depth
+	
+	if depth > 4095:
+		depth = 4095
+	
+	bg_elements.set_layer_z_index(layer_number, -depth)
 	
 	#coords.y -= 1
 	for i in range(0, size.y):
 		y = y + 1
 		coords.y += 1
 		for j in range(0, size.x):
-			bg_elements.set_cell(0, Vector2i(x + j, y - 1), tile_id, Vector2i(coords.x + j, coords.y))
+			bg_elements.set_cell(layer_number, Vector2i(x + j, y - 1), tile_id, Vector2i(coords.x + j, coords.y))
 
 func distance_to_object(obj: String, node): #Make this more accurate with this info https://manual.gamemaker.io/monthly/en/GameMaker_Language/GML_Reference/Maths_And_Numbers/Angles_And_Distance/distance_to_object.htm
 	var x = node.position.x
@@ -364,7 +368,14 @@ func view(view_value: String):
 		#print(round(view.get_screen_center_position().x))
 		
 		if view_value == 'xview':
-			return round(view.get_screen_center_position().x - 160)
+			var screen_center_position = view.get_screen_center_position().x
+			var diff_from_default = screen_center_position - 320
+			var corrected_position = screen_center_position - diff_from_default
+			#return round(view.get_screen_center_position().x - 160)
+			#print(round(view.get_screen_center_position().x - 160))
+			print(corrected_position)
+			return corrected_position
+			
 			
 		elif view_value == 'yview':
 			return round(view.get_screen_center_position().y - 120)

@@ -36,7 +36,7 @@ Gamepad="*res://objects/gamepad/gamepad.tscn"
 
 [display]
 
-window/size/viewport_width=320
+window/size/viewport_width=1000
 window/size/viewport_height=240
 window/size/window_width_override=960
 window/size/window_height_override=720
