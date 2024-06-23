@@ -188,8 +188,8 @@ func scr_get_joy(key):
 func scr_get_key(key):
 	pass
 
-func scr_init():
-	pass
+func scr_init(): #--- add the rest of this script later
+	global.graphics_high = true
 
 func scr_draw_hud():
 	pass

@@ -46,6 +46,11 @@ var layer = 0
 
 var last_object = ''
 
+func _input(event):
+	if Input.is_key_pressed(KEY_0):
+		gml.tile_add('bg_cave_top', 0, 0, 16, 16, 128, 128, 500)
+		print('add')
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 

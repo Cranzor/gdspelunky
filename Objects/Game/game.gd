@@ -39,6 +39,10 @@ func initial_setup():
 func _ready():
 	initial_setup()
 	create()
+	
+func _input(event):
+	if Input.is_key_pressed(KEY_M):
+		key_m_pressed()
 
 func _physics_process(delta):
 	game_step_event()
@@ -64,29 +68,28 @@ func _on_alarm_2_timeout():
 			Audio.play_sound(global.snd_blink2)
 
 func key_m_pressed():
-	if Input.is_key_pressed(KEY_M):
-		if (global.music):
+	if (global.music):
 
-			global.music = false
-			Audio.stop_all_music()
+		global.music = false
+		Audio.stop_all_music()
 
-		else:
+	else:
 
-			global.music = true
-			if (InLevel.is_level()):
-			
-				if (global.level_type == 1): Audio.play_music(global.mus_lush, true)
-				elif (global.level_type == 2): Audio.play_music(global.mus_ice, true)
-				elif (global.level_type == 3): Audio.play_music(global.mus_temple, true)
-				elif (InLevel.is_room("olmec")):
-					
-					var player1 = gml.get_instance("player1")
-					if (player1.active):
-						Audio.play_music(global.mus_boss, true)
+		global.music = true
+		if (InLevel.is_level()):
+		
+			if (global.level_type == 1): Audio.play_music(global.mus_lush, true)
+			elif (global.level_type == 2): Audio.play_music(global.mus_ice, true)
+			elif (global.level_type == 3): Audio.play_music(global.mus_temple, true)
+			elif (InLevel.is_room("olmec")):
 				
-				else: Audio.play_music(global.mus_cave, true)
+				var player1 = gml.get_instance("player1")
+				if (player1.active):
+					Audio.play_music(global.mus_boss, true)
 			
-			elif (InLevel.is_room("title")): Audio.play_music(global.mus_title, true)
+			else: Audio.play_music(global.mus_cave, true)
+		
+		elif (InLevel.is_room("title")): Audio.play_music(global.mus_title, true)
 
 func game_step_event():
 	#/**

@@ -132,7 +132,9 @@ func tile_add(background,left,top,width,height,x,y,depth): #return value of tile
 		size.y = height / 16
 	
 	var cur_scene = get_tree()
-	var bg_elements = cur_scene.get_first_node_in_group("bg_elements")
+	var bg_elements: TileMap = cur_scene.get_first_node_in_group("bg_elements")
+	#if depth != 0:
+		#bg_elements.z_index = -depth
 	
 	#coords.y -= 1
 	for i in range(0, size.y):
@@ -336,6 +338,10 @@ func instance_activate_all():
 
 func instance_deactivate_all(notme):
 	pass
+
+func game_end():
+	Screen.game_end()
+	get_tree().quit()
 
 #---------------------------------------
 func background_index(background: String): #Changing this to a function

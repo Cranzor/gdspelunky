@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://bh7kiskwq1kg2"]
+[gd_scene load_steps=3 format=3 uid="uid://bh7kiskwq1kg2"]
 
 [ext_resource type="Script" path="res://Test.gd" id="1_wxcvv"]
+[ext_resource type="PackedScene" uid="uid://b2jlcu453ynaf" path="res://bg_elements.tscn" id="2_5ad5r"]
 
 [node name="Test" type="Node2D"]
+script = ExtResource("1_wxcvv")
 
 [node name="Node2D" type="Node2D" parent="."]
-script = ExtResource("1_wxcvv")
+
+[node name="BgElements" parent="." instance=ExtResource("2_5ad5r")]

@@ -30,4 +30,4 @@ func start_music():
 	pass
 	
 func stop_all_music():
-	pass
+	print("mute")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dccnfhv6qaic4"]
+[gd_scene load_steps=25 format=3 uid="uid://dccnfhv6qaic4"]
 
 [ext_resource type="Script" path="res://rooms/title/title.gd" id="1_8aivo"]
 [ext_resource type="PackedScene" uid="uid://dfw0l78jvgh8d" path="res://objects/other/title/title_bg/title_bg.tscn" id="2_2puqs"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://bg6n8u7t0o8dy" path="res://backgrounds/bg_cave.png" id="21_1wm2m"]
 [ext_resource type="PackedScene" uid="uid://bft8urcdv7lh0" path="res://view.tscn" id="21_4id85"]
 [ext_resource type="PackedScene" uid="uid://b8sip2nv63phc" path="res://FPSCounter.tscn" id="23_57set"]
+[ext_resource type="PackedScene" uid="uid://b2jlcu453ynaf" path="res://bg_elements.tscn" id="24_c1f05"]
 
 [node name="Title" type="Node2D" groups=["objects_holder"]]
 script = ExtResource("1_8aivo")
@@ -38,3 +39,5 @@ stretch_mode = 1
 [node name="View" parent="." instance=ExtResource("21_4id85")]
 
 [node name="FpsCounter" parent="." instance=ExtResource("23_57set")]
+
+[node name="BgElements" parent="." instance=ExtResource("24_c1f05")]

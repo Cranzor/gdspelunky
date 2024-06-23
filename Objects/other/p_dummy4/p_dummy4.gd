@@ -26,8 +26,9 @@ func _process(delta):
 	smooth_animated_sprite_movement(x_velocity, y_velocity, delta)
 
 func _physics_process(delta):
+	smooth_motion_step_begin()
 	step()
-	print(position)
+	smooth_motion_step_end()
 
 func alarm_2():
 	if (climb_snd_toggle): Audio.play_sound(global.snd_climb1)
@@ -48,8 +49,6 @@ func create():
 	
 
 func step():
-	smooth_motion_step_begin()
-	
 	position.x += x_vel
 	position.y += y_vel
 
@@ -81,8 +80,6 @@ func step():
 		var player = gml.instance_create(position.x, position.y, player1)
 		player.facing = 18
 		gml.instance_destroy(self)
-
-	smooth_motion_step_end()
 	
 func _on_alarm_2_timeout():
 	alarm_2()

@@ -1,4 +1,5 @@
 extends CanvasLayer
+##---Handles title introduction screen, lights in dark levels, message displays, and pause menu
 
 var py
 var can_pause
@@ -16,7 +17,15 @@ var enabled
 func _ready():
 	create()
 
+func _input(event):
+	if Input.is_key_pressed(KEY_F1):
+		key_f1_pressed()
+	
+	if Input.is_key_pressed(KEY_F10):
+		key_f10_pressed()
+
 func _physics_process(delta):
+	
 	for node in title_screen:
 		node.hide()
 	begin_step()
@@ -31,7 +40,7 @@ func create():
 		
 	py = 0 # player Y coord
 
-	## screen base(view_wview and view_hview)
+	# screen base(view_wview and view_hview)
 	#screen_x = 0
 	#screen_y = 0
 	#screen_w = 320
@@ -55,7 +64,7 @@ func create():
 		#draw_clear(c_black)
 
 
-	## set up rooms
+	# set up rooms
 	#var w,h
 	#w = 320 * screen_scale
 	#h = 240 * screen_scale
@@ -123,7 +132,7 @@ func begin_step():
 	elif (ControlScripts.check_rope_pressed()):
 
 		if (paused):
-			get_tree().quit()
+			gml.game_end()
 
 	elif (ControlScripts.check_start_pressed()):
 
@@ -407,3 +416,63 @@ func begin_step():
 		#draw_set_blend_mode(bm_normal) # According to Chevy_ray, this should fix the black box glitch
 
 	#screen_refresh()
+
+#func close_button(): #--- not needed as this is what Godot does by default
+	#game_end()
+
+#func end_step(): #--- also not needed
+	# this sets surface 'screen' as the drawing target for everything in the game, so all drawing will be done on this surface and not on the game screen
+	#surface_set_target(screen)
+
+func game_end():
+	#if (surface_exists(screen)): #--- not needed
+#
+		#surface_set_target(screen)
+		#draw_clear(0)
+		#surface_free(screen)
+#
+	#if (surface_exists(p_surf)):
+#
+		#surface_set_target(p_surf)
+		#draw_clear(0)
+		#surface_free(p_surf)
+#
+	#if (surface_exists(dark_surf)):
+#
+		#surface_set_target(dark_surf)
+		#draw_clear(0)
+		#surface_free(dark_surf)
+
+	#Audio.stop_all_music()
+	#SS_Unload()
+	StatTracking.scr_write_stats()
+
+func key_f1_pressed():
+	if (paused and global.plife > 0 and InLevel.is_level()):
+
+		gml.instance_activate_all()
+		paused = false
+		#with player1
+		var all_player1s = gml.get_all_instances("player1")
+		for player1_instance in all_player1s:
+		
+			if (player1_instance.facing == 18): player1_instance.x_vel = -3
+			else: player1_instance.x_vel = 3
+			player1_instance.y_vel = -6
+			global.plife = -99
+		
+		
+		if (SS.is_sound_playing(global.mus_title)): SS.set_sound_vol(global.mus_title, 10000)
+		if (SS.is_sound_playing(global.mus_cave)): SS.set_sound_vol(global.mus_cave, 10000)
+		if (SS.is_sound_playing(global.mus_lush)): SS.set_sound_vol(global.mus_lush, 10000)
+		if (SS.is_sound_playing(global.mus_temple)): SS.set_sound_vol(global.mus_temple, 10000)
+		if (SS.is_sound_playing(global.mus_boss)): SS.set_sound_vol(global.mus_boss, 10000)
+		Audio.stop_all_music()
+
+func key_f10_pressed():
+	if (paused):
+		gml.game_end()
+
+#func room_end(): #--- not needed
+	#surface_set_target(screen)
+	#draw_clear(0)
