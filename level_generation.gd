@@ -2661,18 +2661,18 @@ func scr_setup_walls(placement):
 		dark_instance.left = false
 		dark_instance.right = false
 
-		if (dark_instance.position.y == 0 or gml.collision_point(dark_instance.position.x, dark_instance.position.y-16, 'dark', 0, 0)):  dark_instance.up = true
-		if (dark_instance.position.y >= placement or gml.collision_point(dark_instance.position.x, dark_instance.position.y+16, 'dark', 0, 0)):  dark_instance.down = true
-		if (gml.collision_point(dark_instance.position.x-16, dark_instance.position.y, 'dark', 0, 0)):  dark_instance.left = true
-		if (gml.collision_point(dark_instance.position.x+16, dark_instance.position.y, 'dark', 0, 0)):  dark_instance.right = true
+		if (dark_instance.global_position.y == 0 or gml.collision_point(dark_instance.global_position.x, dark_instance.global_position.y-16, 'dark', 0, 0)):  dark_instance.up = true
+		if (dark_instance.global_position.y >= placement or gml.collision_point(dark_instance.global_position.x, dark_instance.global_position.y+16, 'dark', 0, 0)):  dark_instance.down = true
+		if (gml.collision_point(dark_instance.global_position.x-16, dark_instance.global_position.y, 'dark', 0, 0)):  dark_instance.left = true
+		if (gml.collision_point(dark_instance.global_position.x+16, dark_instance.global_position.y, 'dark', 0, 0)):  dark_instance.right = true
 
 		if (not dark_instance.up):
 		
 			dark_instance.sprite_index = "dark_up"
 			if (global.graphics_high):
 			
-				if (randi_range(1,3) < 3): gml.tile_add("bg_cave_top3", 0, 0, 16, 16, dark_instance.position.x, dark_instance.position.y-16, 3)
-				else: gml.tile_add("bg_cave_top3", 16, 0, 16, 16, dark_instance.position.x, dark_instance.position.y-16, 3)
+				if (randi_range(1,3) < 3): gml.tile_add("bg_cave_top3", 0, 0, 16, 16, dark_instance.global_position.x, dark_instance.global_position.y-16, 3)
+				else: gml.tile_add("bg_cave_top3", 16, 0, 16, 16, dark_instance.global_position.x, dark_instance.global_position.y-16, 3)
 			
 		
 

@@ -89,6 +89,7 @@ func drawn_sprite_create():
 
 func set_animation(new_sprite):
 	var animated_sprite: AnimatedSprite2D = find_child("AnimatedSprite2D")
+	assert(animated_sprite.sprite_frames.has_animation(new_sprite))
 	animated_sprite.play(new_sprite)
 
 func get_animation():
