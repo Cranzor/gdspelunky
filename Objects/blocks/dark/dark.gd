@@ -8,6 +8,7 @@ func initial_setup():
 	depth = -100
 	z_index = depth
 
+	$AnimatedSprite2D.play("dark")
 	solid_create()
 
 func _ready():
