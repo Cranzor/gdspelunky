@@ -510,4 +510,4 @@ func _ready():
 		#layer += 1
 	
 func _process(delta):
-	pass
+	print(gml.get_all_instances("rope"))

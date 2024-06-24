@@ -28,3 +28,4 @@ z_as_relative = false
 sprite_frames = SubResource("SpriteFrames_jqv2e")
 animation = &"rope_end"
 centered = false
+offset = Vector2(-4, -4)

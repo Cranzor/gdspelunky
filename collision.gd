@@ -128,10 +128,15 @@ func approximately_zero(number):
 		return false
 
 func calculate_collision_bounds(node):
-	var lb = node.global_position.x + node.collision_bounds_offset_left_x
-	var tb = node.global_position.y + node.collision_bounds_offset_top_y
-	var rb = node.global_position.x + node.collision_bounds_offset_right_x
-	var bb = node.global_position.y + node.collision_bounds_offset_bottom_y
+	#var lb = node.global_position.x + node.collision_bounds_offset_left_x
+	#var tb = node.global_position.y + node.collision_bounds_offset_top_y
+	#var rb = node.global_position.x + node.collision_bounds_offset_right_x
+	#var bb = node.global_position.y + node.collision_bounds_offset_bottom_y
+	
+	var lb = node.position.x + node.collision_bounds_offset_left_x
+	var tb = node.position.y + node.collision_bounds_offset_top_y
+	var rb = node.position.x + node.collision_bounds_offset_right_x
+	var bb = node.position.y + node.collision_bounds_offset_bottom_y
 	
 	var all_points_exact = Vector4(lb, tb, rb, bb)
 	return(all_points_exact)

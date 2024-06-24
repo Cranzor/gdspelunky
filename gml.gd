@@ -434,7 +434,7 @@ func set_up_object_collision(instance):
 	
 	if !obj_groups.is_empty():
 		for group in obj_groups:
-			var location = Vector2(instance.position.x, instance.position.y) #--- -16 seems to fix collision for some reason? might need to change later. [FLAG] important. seems to be an issue here
+			var location = Vector2(instance.global_position.x, instance.global_position.y) #--- -16 seems to fix collision for some reason? might need to change later. [FLAG] important. seems to be an issue here
 			var default_size = Vector2(16, 16)
 			if instance.object_size != default_size:
 				default_size = instance.object_size

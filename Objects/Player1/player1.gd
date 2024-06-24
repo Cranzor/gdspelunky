@@ -292,7 +292,6 @@ var final_x_vel = 0
 var final_y_vel = 0
 
 func _process(delta):
-	print(sprite_index)
 	var sprite_distance = Vector2($AnimatedSprite2D.position.x, $AnimatedSprite2D.position.y).distance_to(Vector2(position.x, position.y))
 	
 	#var tween = create_tween()

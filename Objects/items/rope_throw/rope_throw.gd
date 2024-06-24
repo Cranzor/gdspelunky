@@ -14,17 +14,20 @@ func initial_setup():
 	z_index = depth
 	
 	$Node/AnimatedSprite2D.play("rope_end")
-	item_create()
 
 func _ready():
 	initial_setup()
 	create()
 
-func _physics_process(delta):
-	step()
+func _process(delta):
 	smooth_animated_sprite_movement(x_velocity, y_velocity, delta)
 
+func _physics_process(delta):
+	step()
+
 func create():
+	item_create()
+	
 	type = "rope"
 	PlatformEngine.make_active(self)
 	Collision.set_collision_bounds(self, -4, -4, 4, 4)
@@ -35,10 +38,11 @@ func create():
 	py = 0
 
 func step():
+	item_step()
+	
 	x_velocity = 0
 	y_velocity = 0
 	
-	item_step()
 	if (armed and y_vel >= 0):
 
 		gml.move_snap(16, 1, self)
