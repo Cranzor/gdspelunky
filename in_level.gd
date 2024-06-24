@@ -39,7 +39,7 @@ func is_real_level():
 	return false
 
 func is_room(name):
-	var current_room = str(get_tree().current_scene.room_name)
+	var current_room = str(get_tree().current_scene.get("room_name"))
 	if name == current_room:
 		return true
 	else:

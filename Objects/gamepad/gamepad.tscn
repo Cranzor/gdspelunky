@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" path="res://objects/gamepad/gamepad.gd" id="1_kv2fu"]
 
-[node name="Gamepad" type="Node2D"]
+[node name="Gamepad" type="Node2D" groups=["gamepad"]]
 script = ExtResource("1_kv2fu")
