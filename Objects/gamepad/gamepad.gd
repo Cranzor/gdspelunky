@@ -53,9 +53,8 @@ func _ready():
 	initial_setup()
 	create()
 
-#func _physics_process(delta):
-#    step()
-
+func _physics_process(delta):
+	step()
 
 func create():
 	start = false
@@ -109,42 +108,58 @@ func create():
 	pay_released = false
 
 func step():
-	if global.gamepad_on:
+	#if global.gamepad_on: #--- commenting this out as this script serves as the basis for all input methods
 		start_released = false
 		start_pressed = false
 		if (start):
-
-			if (global.joy_start_val > 0):
-				start = joystick_check_button(joyid,global.joy_start_val)
-			elif (global.joy_start_val == -1):
-		
-				if (joystick_zpos(joyid) > 0.1): start = true
-				else: start = false
-		
-			elif (global.joy_start_val == -2):
-		
-				if (joystick_zpos(joyid) < -0.1): start = true
-				else: start = false
-		
+			if Input.is_action_pressed("start") == true:
+				start = true
+			else:
+				start = false
 			
-			if (not start): start_released = true
-
+			if start != true:
+				start_released = true
+			
 		else:
+			if Input.is_action_pressed("start") == true:
+				start = true
+			else:
+				start = false
+			
+			if start == true:
+				start_pressed = true
 
-			if (global.joy_start_val > 0):
-				start = joystick_check_button(joyid,global.joy_start_val)
-			elif (global.joy_start_val == -1):
-		
-				if (joystick_zpos(joyid) > 0.1): start = true
-				else: start = false
-		
-			elif (global.joy_start_val == -2):
-		
-				if (joystick_zpos(joyid) < -0.1): start = true
-				else: start = false
-		
-		
-			if (start): start_pressed = true
+			#if (global.joy_start_val > 0):
+				#start = joystick_check_button(joyid,global.joy_start_val)
+			#elif (global.joy_start_val == -1):
+		#
+				#if (joystick_zpos(joyid) > 0.1): start = true
+				#else: start = false
+		#
+			#elif (global.joy_start_val == -2):
+		#
+				#if (joystick_zpos(joyid) < -0.1): start = true
+				#else: start = false
+		#
+			#
+			#if (not start): start_released = true
+#
+		#else:
+#
+			#if (global.joy_start_val > 0):
+				#start = joystick_check_button(joyid,global.joy_start_val)
+			#elif (global.joy_start_val == -1):
+		#
+				#if (joystick_zpos(joyid) > 0.1): start = true
+				#else: start = false
+		#
+			#elif (global.joy_start_val == -2):
+		#
+				#if (joystick_zpos(joyid) < -0.1): start = true
+				#else: start = false
+		#
+		#
+			#if (start): start_pressed = true
 
 
 		######/
@@ -154,16 +169,32 @@ func step():
 		left_released = false
 		left_pressed = false
 		if (left):
+			if Input.is_action_pressed("left") == true:
+				left = true
+			else:
+				left = false
 
-			if ((joystick_has_pov(joyid) == 1 and joystick_pov(joyid) == 270) or joystick_direction(joyid) == 100): left = true
-			else: left = false
-			if (not left): left_released = true
+			if left != true:
+				left_released = true
 
 		else:
+			if Input.is_action_pressed("left") == true:
+				left = true
+			else:
+				left = false
 
-			if ((joystick_has_pov(joyid) == 1 and joystick_pov(joyid) == 270) or joystick_direction(joyid) == 100): left = true
-			else: left = false
-			if (left): left_pressed = true
+			if left == true:
+				left_pressed = true
+
+			#if ((joystick_has_pov(joyid) == 1 and joystick_pov(joyid) == 270) or joystick_direction(joyid) == 100): left = true
+			#else: left = false
+			#if (not left): left_released = true
+#
+		#else:
+#
+			#if ((joystick_has_pov(joyid) == 1 and joystick_pov(joyid) == 270) or joystick_direction(joyid) == 100): left = true
+			#else: left = false
+			#if (left): left_pressed = true
 
 
 		######/
@@ -174,15 +205,33 @@ func step():
 		right_pressed = false
 		if (right):
 
-			if ((joystick_has_pov(joyid) == 1 and joystick_pov(joyid) == 90) or joystick_direction(joyid) == 102): right = true
-			else: right = false
-			if (not right): right_released = true
+			if Input.is_action_pressed("right") == true:
+				right = true
+			else:
+				right = false
+
+			if right != true:
+				right_released = true
 
 		else:
+			if Input.is_action_pressed("right") == true:
+				right = true
+			else:
+				right = false
 
-			if ((joystick_has_pov(joyid) == 1 and joystick_pov(joyid) == 90) or joystick_direction(joyid) == 102): right = true
-			else: right = false
-			if (right): right_pressed = true
+			if right == true:
+				right_pressed = true
+
+
+			#if ((joystick_has_pov(joyid) == 1 and joystick_pov(joyid) == 90) or joystick_direction(joyid) == 102): right = true
+			#else: right = false
+			#if (not right): right_released = true
+#
+		#else:
+#
+			#if ((joystick_has_pov(joyid) == 1 and joystick_pov(joyid) == 90) or joystick_direction(joyid) == 102): right = true
+			#else: right = false
+			#if (right): right_pressed = true
 
 
 		######/
@@ -193,15 +242,33 @@ func step():
 		up_pressed = false
 		if (up):
 
-			if ((joystick_has_pov(joyid) == 1 and joystick_pov(joyid) == 0) or joystick_direction(joyid) == 104): up = true
-			else: up = false
-			if (not up): up_released = true
+			if Input.is_action_pressed("up") == true:
+				up = true
+			else:
+				up = false
+
+			if up != true:
+				up_released = true
 
 		else:
+			if Input.is_action_pressed("up") == true:
+				up = true
+			else:
+				up = false
 
-			if ((joystick_has_pov(joyid) == 1 and joystick_pov(joyid) == 0) or joystick_direction(joyid) == 104): up = true
-			else: up = false
-			if (up): up_pressed = true
+			if up == true:
+				up_pressed = true
+
+#
+			#if ((joystick_has_pov(joyid) == 1 and joystick_pov(joyid) == 0) or joystick_direction(joyid) == 104): up = true
+			#else: up = false
+			#if (not up): up_released = true
+#
+		#else:
+#
+			#if ((joystick_has_pov(joyid) == 1 and joystick_pov(joyid) == 0) or joystick_direction(joyid) == 104): up = true
+			#else: up = false
+			#if (up): up_pressed = true
 
 
 		######/
@@ -212,43 +279,61 @@ func step():
 		down_pressed = false
 		if (down):
 
-			if ((joystick_has_pov(joyid) == 1 and joystick_pov(joyid) == 180) or joystick_direction(joyid) == 98): down = true
-			else: down = false
-			if (not down): down_released = true
+			if Input.is_action_pressed("down") == true:
+				down = true
+			else:
+				down = false
+
+			if down != true:
+				down_released = true
 
 		else:
+			if Input.is_action_pressed("down") == true:
+				down = true
+			else:
+				down = false
 
-			if ((joystick_has_pov(joyid) == 1 and joystick_pov(joyid) == 180) or joystick_direction(joyid) == 98): down = true
-			else: down = false
-			if (down): down_pressed = true
+			if down == true:
+				down_pressed = true
+
+			
+			#if ((joystick_has_pov(joyid) == 1 and joystick_pov(joyid) == 180) or joystick_direction(joyid) == 98): down = true
+			#else: down = false
+			#if (not down): down_released = true
+#
+		#else:
+#
+			#if ((joystick_has_pov(joyid) == 1 and joystick_pov(joyid) == 180) or joystick_direction(joyid) == 98): down = true
+			#else: down = false
+			#if (down): down_pressed = true
 
 
 		######/
 		# DIAGONAL
 		######/
 
-		if ((joystick_has_pov(joyid) == 1 and joystick_pov(joyid) == 45) or joystick_direction(joyid) == 105):
-
-			right = true
-			up = true
-
-
-		if ((joystick_has_pov(joyid) == 1 and joystick_pov(joyid) == 135) or joystick_direction(joyid) == 99):
-
-			right = true
-			down = true
-
-
-		if ((joystick_has_pov(joyid) == 1 and joystick_pov(joyid) == 225) or joystick_direction(joyid) == 97):
-
-			left = true
-			down = true
-
-
-		if ((joystick_has_pov(joyid) == 1 and joystick_pov(joyid) == 315) or joystick_direction(joyid) == 103):
-
-			left = true
-			up = true
+		#if ((joystick_has_pov(joyid) == 1 and joystick_pov(joyid) == 45) or joystick_direction(joyid) == 105):
+#
+			#right = true
+			#up = true
+#
+#
+		#if ((joystick_has_pov(joyid) == 1 and joystick_pov(joyid) == 135) or joystick_direction(joyid) == 99):
+#
+			#right = true
+			#down = true
+#
+#
+		#if ((joystick_has_pov(joyid) == 1 and joystick_pov(joyid) == 225) or joystick_direction(joyid) == 97):
+#
+			#left = true
+			#down = true
+#
+#
+		#if ((joystick_has_pov(joyid) == 1 and joystick_pov(joyid) == 315) or joystick_direction(joyid) == 103):
+#
+			#left = true
+			#up = true
 
 
 		######/
@@ -259,37 +344,55 @@ func step():
 		jump_pressed = false
 		if (jump):
 
-			if (global.joy_jump_val > 0):
-				jump = joystick_check_button(joyid,global.joy_jump_val)
-			elif (global.joy_jump_val == -1):
-		
-				if (joystick_zpos(joyid) > 0.1): jump = true
-				else: jump = false
-		
-			elif (global.joy_jump_val == -2):
-		
-				if (joystick_zpos(joyid) < -0.1): jump = true
-				else: jump = false
-		
-		
-			if (not jump): jump_released = true
+			if Input.is_action_pressed("jump") == true:
+				jump = true
+			else:
+				jump = false
+
+			if jump != true:
+				jump_released = true
 
 		else:
+			if Input.is_action_pressed("jump") == true:
+				jump = true
+			else:
+				jump = false
 
-			if (global.joy_jump_val > 0):
-				jump = joystick_check_button(joyid,global.joy_jump_val)
-			elif (global.joy_jump_val == -1):
-		
-				if (joystick_zpos(joyid) > 0.1): jump = true
-				else: jump = false
-		
-			elif (global.joy_jump_val == -2):
-		
-				if (joystick_zpos(joyid) < -0.1): jump = true
-				else: jump = false
-		
-		
-			if (jump): jump_pressed = true
+			if jump == true:
+				jump_pressed = true
+
+			
+			#if (global.joy_jump_val > 0):
+				#jump = joystick_check_button(joyid,global.joy_jump_val)
+			#elif (global.joy_jump_val == -1):
+		#
+				#if (joystick_zpos(joyid) > 0.1): jump = true
+				#else: jump = false
+		#
+			#elif (global.joy_jump_val == -2):
+		#
+				#if (joystick_zpos(joyid) < -0.1): jump = true
+				#else: jump = false
+		#
+		#
+			#if (not jump): jump_released = true
+#
+		#else:
+#
+			#if (global.joy_jump_val > 0):
+				#jump = joystick_check_button(joyid,global.joy_jump_val)
+			#elif (global.joy_jump_val == -1):
+		#
+				#if (joystick_zpos(joyid) > 0.1): jump = true
+				#else: jump = false
+		#
+			#elif (global.joy_jump_val == -2):
+		#
+				#if (joystick_zpos(joyid) < -0.1): jump = true
+				#else: jump = false
+		#
+		#
+			#if (jump): jump_pressed = true
 
 
 		######/
@@ -300,37 +403,55 @@ func step():
 		attack_pressed = false
 		if (attack):
 
-			if (global.joy_attack_val > 0):
-				attack = joystick_check_button(joyid,global.joy_attack_val)
-			elif (global.joy_attack_val == -1):
-		
-				if (joystick_zpos(joyid) > 0.1): attack = true
-				else: attack = false
-		
-			elif (global.joy_attack_val == -2):
-		
-				if (joystick_zpos(joyid) < -0.1): attack = true
-				else: attack = false
-		
-		
-			if (not attack): attack_released = true
+			if Input.is_action_pressed("attack") == true:
+				attack = true
+			else:
+				attack = false
+
+			if attack != true:
+				attack_released = true
 
 		else:
+			if Input.is_action_pressed("attack") == true:
+				attack = true
+			else:
+				attack = false
 
-			if (global.joy_attack_val > 0):
-				attack = joystick_check_button(joyid,global.joy_attack_val)
-			elif (global.joy_attack_val == -1):
-		
-				if (joystick_zpos(joyid) > 0.1): attack = true
-				else: attack = false
-		
-			elif (global.joy_attack_val == -2):
-		
-				if (joystick_zpos(joyid) < -0.1): attack = true
-				else: attack = false
-		
-		
-			if (attack): attack_pressed = true
+			if attack == true:
+				attack_pressed = true
+
+			
+			#if (global.joy_attack_val > 0):
+				#attack = joystick_check_button(joyid,global.joy_attack_val)
+			#elif (global.joy_attack_val == -1):
+		#
+				#if (joystick_zpos(joyid) > 0.1): attack = true
+				#else: attack = false
+		#
+			#elif (global.joy_attack_val == -2):
+		#
+				#if (joystick_zpos(joyid) < -0.1): attack = true
+				#else: attack = false
+		#
+		#
+			#if (not attack): attack_released = true
+#
+		#else:
+#
+			#if (global.joy_attack_val > 0):
+				#attack = joystick_check_button(joyid,global.joy_attack_val)
+			#elif (global.joy_attack_val == -1):
+		#
+				#if (joystick_zpos(joyid) > 0.1): attack = true
+				#else: attack = false
+		#
+			#elif (global.joy_attack_val == -2):
+		#
+				#if (joystick_zpos(joyid) < -0.1): attack = true
+				#else: attack = false
+		#
+		#
+			#if (attack): attack_pressed = true
 
 
 		######
@@ -341,54 +462,77 @@ func step():
 		item_pressed = false
 		if (item):
 
-			if (global.joy_item_val > 0):
-				item = joystick_check_button(joyid,global.joy_item_val)
-			elif (global.joy_item_val == -1):
-		
-				if (joystick_zpos(joyid) > 0.1): item = true
-				else: item = false
-		
-			elif (global.joy_item_val == -2):
-		
-				if (joystick_zpos(joyid) < -0.1): item = true
-				else: item = false
-		
-		
-			if (not item): item_released = true
+			if Input.is_action_pressed("item") == true:
+				item = true
+			else:
+				item = false
+
+			if item != true:
+				item_released = true
 
 		else:
+			if Input.is_action_pressed("item") == true:
+				item = true
+			else:
+				item = false
 
-			if (global.joy_item_val > 0):
-				item = joystick_check_button(joyid,global.joy_item_val)
-			elif (global.joy_item_val == -1):
-		
-				if (joystick_zpos(joyid) > 0.1): item = true
-				else: item = false
-		
-			elif (global.joy_item_val == -2):
-		
-				if (joystick_zpos(joyid) < -0.1): item = true
-				else: item = false
-		
-		
-			if (item): item_pressed = true
+			if item == true:
+				item_pressed = true
+
+
+			#if (global.joy_item_val > 0):
+				#item = joystick_check_button(joyid,global.joy_item_val)
+			#elif (global.joy_item_val == -1):
+		#
+				#if (joystick_zpos(joyid) > 0.1): item = true
+				#else: item = false
+		#
+			#elif (global.joy_item_val == -2):
+		#
+				#if (joystick_zpos(joyid) < -0.1): item = true
+				#else: item = false
+		#
+		#
+			#if (not item): item_released = true
+#
+		#else:
+#
+			#if (global.joy_item_val > 0):
+				#item = joystick_check_button(joyid,global.joy_item_val)
+			#elif (global.joy_item_val == -1):
+		#
+				#if (joystick_zpos(joyid) > 0.1): item = true
+				#else: item = false
+		#
+			#elif (global.joy_item_val == -2):
+		#
+				#if (joystick_zpos(joyid) < -0.1): item = true
+				#else: item = false
+		#
+		#
+			#if (item): item_pressed = true
 
 
 		######
 		# RUN
 		######
+		if Input.is_action_pressed("run") == true:
+			run = true
+		else:
+			run = false
+		
 
-		if (global.joy_run_val > 0):
-			run = joystick_check_button(joyid,global.joy_run_val)
-		elif (global.joy_run_val == -1):
-
-			if (joystick_zpos(joyid) > 0.1): run = true
-			else: run = false
-
-		elif (global.joy_run_val == -2):
-
-			if (joystick_zpos(joyid) < -0.1): run = true
-			else: run = false
+		#if (global.joy_run_val > 0):
+			#run = joystick_check_button(joyid,global.joy_run_val)
+		#elif (global.joy_run_val == -1):
+#
+			#if (joystick_zpos(joyid) > 0.1): run = true
+			#else: run = false
+#
+		#elif (global.joy_run_val == -2):
+#
+			#if (joystick_zpos(joyid) < -0.1): run = true
+			#else: run = false
 
 
 		######
@@ -399,37 +543,55 @@ func step():
 		bomb_pressed = false
 		if (bomb):
 
-			if (global.joy_bomb_val > 0):
-				bomb = joystick_check_button(joyid,global.joy_bomb_val)
-			elif (global.joy_bomb_val == -1):
-		
-				if (joystick_zpos(joyid) > 0.1): bomb = true
-				else: bomb = false
-		
-			elif (global.joy_bomb_val == -2):
-		
-				if (joystick_zpos(joyid) < -0.1): bomb = true
-				else: bomb = false
-		
-		
-			if (not bomb): bomb_released = true
+			if Input.is_action_pressed("bomb") == true:
+				bomb = true
+			else:
+				bomb = false
+
+			if bomb != true:
+				bomb_released = true
 
 		else:
+			if Input.is_action_pressed("bomb") == true:
+				bomb = true
+			else:
+				bomb = false
 
-			if (global.joy_bomb_val > 0):
-				bomb = joystick_check_button(joyid,global.joy_bomb_val)
-			elif (global.joy_bomb_val == -1):
-		
-				if (joystick_zpos(joyid) > 0.1): bomb = true
-				else: bomb = false
-		
-			elif (global.joy_bomb_val == -2):
-		
-				if (joystick_zpos(joyid) < -0.1): bomb = true
-				else: bomb = false
-		
-		
-			if (bomb): bomb_pressed = true
+			if bomb == true:
+				bomb_pressed = true
+
+
+			#if (global.joy_bomb_val > 0):
+				#bomb = joystick_check_button(joyid,global.joy_bomb_val)
+			#elif (global.joy_bomb_val == -1):
+		#
+				#if (joystick_zpos(joyid) > 0.1): bomb = true
+				#else: bomb = false
+		#
+			#elif (global.joy_bomb_val == -2):
+		#
+				#if (joystick_zpos(joyid) < -0.1): bomb = true
+				#else: bomb = false
+		#
+		#
+			#if (not bomb): bomb_released = true
+#
+		#else:
+#
+			#if (global.joy_bomb_val > 0):
+				#bomb = joystick_check_button(joyid,global.joy_bomb_val)
+			#elif (global.joy_bomb_val == -1):
+		#
+				#if (joystick_zpos(joyid) > 0.1): bomb = true
+				#else: bomb = false
+		#
+			#elif (global.joy_bomb_val == -2):
+		#
+				#if (joystick_zpos(joyid) < -0.1): bomb = true
+				#else: bomb = false
+		#
+		#
+			#if (bomb): bomb_pressed = true
 
 
 		######
@@ -440,37 +602,55 @@ func step():
 		rope_pressed = false
 		if (rope):
 
-			if (global.joy_rope_val > 0):
-				rope = joystick_check_button(joyid,global.joy_rope_val)
-			elif (global.joy_rope_val == -1):
-		
-				if (joystick_zpos(joyid) > 0.1): rope = true
-				else: rope = false
-		
-			elif (global.joy_rope_val == -2):
-		
-				if (joystick_zpos(joyid) < -0.1): rope = true
-				else: rope = false
-		
-		
-			if (not rope): rope_released = true
+			if Input.is_action_pressed("rope") == true:
+				rope = true
+			else:
+				rope = false
+
+			if rope != true:
+				rope_released = true
 
 		else:
+			if Input.is_action_pressed("rope") == true:
+				rope = true
+			else:
+				rope = false
 
-			if (global.joy_rope_val > 0):
-				rope = joystick_check_button(joyid,global.joy_rope_val)
-			elif (global.joy_rope_val == -1):
-		
-				if (joystick_zpos(joyid) > 0.1): rope = true
-				else: rope = false
-		
-			elif (global.joy_rope_val == -2):
-		
-				if (joystick_zpos(joyid) < -0.1): rope = true
-				else: rope = false
-		
-		
-			if (rope): rope_pressed = true
+			if rope == true:
+				rope_pressed = true
+
+
+			#if (global.joy_rope_val > 0):
+				#rope = joystick_check_button(joyid,global.joy_rope_val)
+			#elif (global.joy_rope_val == -1):
+		#
+				#if (joystick_zpos(joyid) > 0.1): rope = true
+				#else: rope = false
+		#
+			#elif (global.joy_rope_val == -2):
+		#
+				#if (joystick_zpos(joyid) < -0.1): rope = true
+				#else: rope = false
+		#
+		#
+			#if (not rope): rope_released = true
+#
+		#else:
+#
+			#if (global.joy_rope_val > 0):
+				#rope = joystick_check_button(joyid,global.joy_rope_val)
+			#elif (global.joy_rope_val == -1):
+		#
+				#if (joystick_zpos(joyid) > 0.1): rope = true
+				#else: rope = false
+		#
+			#elif (global.joy_rope_val == -2):
+		#
+				#if (joystick_zpos(joyid) < -0.1): rope = true
+				#else: rope = false
+		#
+		#
+			#if (rope): rope_pressed = true
 
 
 		######
@@ -481,37 +661,55 @@ func step():
 		flare_pressed = false
 		if (flare):
 
-			if (global.joy_flare_val > 0):
-				flare = joystick_check_button(joyid,global.joy_flare_val)
-			elif (global.joy_flare_val == -1):
-		
-				if (joystick_zpos(joyid) > 0.1): flare = true
-				else: flare = false
-		
-			elif (global.joy_flare_val == -2):
-		
-				if (joystick_zpos(joyid) < -0.1): flare = true
-				else: flare = false
-		
-		
-			if (not flare): flare_released = true
+			if Input.is_action_pressed("flare") == true:
+				flare = true
+			else:
+				flare = false
+
+			if flare != true:
+				flare_released = true
 
 		else:
+			if Input.is_action_pressed("flare") == true:
+				flare = true
+			else:
+				flare = false
 
-			if (global.joy_flare_val > 0):
-				flare = joystick_check_button(joyid,global.joy_flare_val)
-			elif (global.joy_flare_val == -1):
-		
-				if (joystick_zpos(joyid) > 0.1): flare = true
-				else: flare = false
-		
-			elif (global.joy_flare_val == -2):
-		
-				if (joystick_zpos(joyid) < -0.1): flare = true
-				else: flare = false
-		
-		
-			if (flare): flare_pressed = true
+			if flare == true:
+				flare_pressed = true
+
+
+			#if (global.joy_flare_val > 0):
+				#flare = joystick_check_button(joyid,global.joy_flare_val)
+			#elif (global.joy_flare_val == -1):
+		#
+				#if (joystick_zpos(joyid) > 0.1): flare = true
+				#else: flare = false
+		#
+			#elif (global.joy_flare_val == -2):
+		#
+				#if (joystick_zpos(joyid) < -0.1): flare = true
+				#else: flare = false
+		#
+		#
+			#if (not flare): flare_released = true
+#
+		#else:
+#
+			#if (global.joy_flare_val > 0):
+				#flare = joystick_check_button(joyid,global.joy_flare_val)
+			#elif (global.joy_flare_val == -1):
+		#
+				#if (joystick_zpos(joyid) > 0.1): flare = true
+				#else: flare = false
+		#
+			#elif (global.joy_flare_val == -2):
+		#
+				#if (joystick_zpos(joyid) < -0.1): flare = true
+				#else: flare = false
+		#
+		#
+			#if (flare): flare_pressed = true
 
 
 		######
@@ -522,35 +720,54 @@ func step():
 		pay_pressed = false
 		if (pay):
 
-			if (global.joy_pay_val > 0):
-				pay = joystick_check_button(joyid,global.joy_pay_val)
-			elif (global.joy_pay_val == -1):
-		
-				if (joystick_zpos(joyid) > 0.1): pay = true
-				else: pay = false
-		
-			elif (global.joy_pay_val == -2):
-		
-				if (joystick_zpos(joyid) < -0.1): pay = true
-				else: pay = false
-		
-		
-			if (not pay): pay_released = true
+
+			if Input.is_action_pressed("pay") == true:
+				pay = true
+			else:
+				pay = false
+
+			if pay != true:
+				pay_released = true
 
 		else:
+			if Input.is_action_pressed("pay") == true:
+				pay = true
+			else:
+				pay = false
 
-			if (global.joy_pay_val > 0):
-				pay = joystick_check_button(joyid,global.joy_pay_val)
-			elif (global.joy_pay_val == -1):
-	
-				if (joystick_zpos(joyid) > 0.1): pay = true
-				else: pay = false
-	
-			elif (global.joy_pay_val == -2):
-	
-				if (joystick_zpos(joyid) < -0.1): pay = true
-				else: pay = false
-		
-		
-			if (pay): pay_pressed = true
+			if pay == true:
+				pay_pressed = true
+
+
+			#if (global.joy_pay_val > 0):
+				#pay = joystick_check_button(joyid,global.joy_pay_val)
+			#elif (global.joy_pay_val == -1):
+		#
+				#if (joystick_zpos(joyid) > 0.1): pay = true
+				#else: pay = false
+		#
+			#elif (global.joy_pay_val == -2):
+		#
+				#if (joystick_zpos(joyid) < -0.1): pay = true
+				#else: pay = false
+		#
+		#
+			#if (not pay): pay_released = true
+#
+		#else:
+#
+			#if (global.joy_pay_val > 0):
+				#pay = joystick_check_button(joyid,global.joy_pay_val)
+			#elif (global.joy_pay_val == -1):
+	#
+				#if (joystick_zpos(joyid) > 0.1): pay = true
+				#else: pay = false
+	#
+			#elif (global.joy_pay_val == -2):
+	#
+				#if (joystick_zpos(joyid) < -0.1): pay = true
+				#else: pay = false
+		#
+		#
+			#if (pay): pay_pressed = true
 		

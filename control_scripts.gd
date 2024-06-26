@@ -1,142 +1,73 @@
 extends Node
 
 func check_attack():
-	if Input.is_action_pressed("attack") == true:
-		return true
-	else:
-		return false
-		
+	return Gamepad.attack
+
 func check_attack_pressed():
-	if Input.is_action_just_pressed("attack") == true:
-		return true
-	else:
-		return false
-	
+	return Gamepad.attack_pressed
+
 func check_attack_released():
-	if Input.is_action_just_released("attack") == true:
-		return true
-	else:
-		return false
+	return Gamepad.attack_released
 	
 func check_bomb_pressed():
-	if Input.is_action_just_pressed("bomb") == true:
-		return true
-	else:
-		return false
+	return Gamepad.bomb_pressed
 	
 func check_down():
-	if Input.is_action_pressed("down") == true:
-		return true
-	else:
-		return false
+	return Gamepad.down
 	
 func check_down_pressed():
-	if Input.is_action_just_pressed("down") == true:
-		return true
-	else:
-		return false
+	return Gamepad.down_pressed
 	
 func check_flare_pressed():
-	if Input.is_action_just_pressed("flare") == true:
-		return true
-	else:
-		return false
+	return Gamepad.flare_pressed
 	
 func check_item_pressed():
-	if Input.is_action_just_pressed("item") == true:
-		return true
-	else:
-		return false
+	return Gamepad.item_pressed
 	
 func check_joy_button(): #--- handle this later when needed
 	pass
 	
 func check_jump():
-	if Input.is_action_pressed("jump") == true:
-		return true
-	else:
-		return false
+	return Gamepad.jump
 	
 func check_jump_pressed():
-	if Input.is_action_just_pressed("jump") == true:
-		return true
-	else:
-		return false
+	return Gamepad.jump_pressed
 	
 func check_jump_released():
-	if Input.is_action_just_released("jump") == true:
-		return true
-	else:
-		return false
-	
+	return Gamepad.jump_released
+
 func check_left():
-	if Input.is_action_pressed("left") == true:
-		return true
-	else:
-		return false
+	return Gamepad.left
 	
 func check_left_pressed():
-	if Input.is_action_just_pressed("left") == true:
-		return true
-	else:
-		return false
+	return Gamepad.left_pressed
 	
 func check_left_released():
-	if Input.is_action_just_released("left") == true:
-		return true
-	else:
-		return false
+	return Gamepad.left_released
 	
 func check_pay_pressed():
-	if Input.is_action_just_pressed("pay") == true:
-		return true
-	else:
-		return false
-	
+	return Gamepad.pay_pressed
+
 func check_right():
-	if Input.is_action_pressed("right") == true:
-		return true
-	else:
-		return false
+	return Gamepad.right
 	
 func check_right_pressed():
-	if Input.is_action_just_pressed("right") == true:
-		return true
-	else:
-		return false
-	
+	return Gamepad.right_pressed
+
 func check_right_released():
-	if Input.is_action_just_released("right") == true:
-		return true
-	else:
-		return false
+	return Gamepad.right_released
 	
 func check_rope_pressed():
-	if Input.is_action_just_pressed("rope") == true:
-		return true
-	else:
-		return false
+	return Gamepad.rope_pressed
 	
 func check_run():
-	if Input.is_action_pressed("run") == true:
-		return true
-	else:
-		return false
+	return Gamepad.run
 	
 func check_start_pressed():
-	if Input.is_action_just_pressed("start") == true:
-		return true
-	else:
-		return false
+	return Gamepad.start_pressed
 	
 func check_up():
-	if Input.is_action_pressed("up") == true:
-		return true
-	else:
-		return false
-	
+	return Gamepad.up
+
 func check_up_pressed():
-	if Input.is_action_just_pressed("up") == true:
-		return true
-	else:
-		return false
+	return Gamepad.up_pressed
