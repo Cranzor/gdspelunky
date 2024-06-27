@@ -114,5 +114,6 @@ animation = &"run_left"
 [node name="Alarms" type="Node2D" parent="."]
 
 [node name="Alarm2" parent="Alarms" instance=ExtResource("21_v725m")]
+wait_time = 0.266
 
 [connection signal="timeout" from="Alarms/Alarm2" to="." method="_on_alarm_2_timeout"]

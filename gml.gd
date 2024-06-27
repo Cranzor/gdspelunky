@@ -162,7 +162,13 @@ func distance_to_object(obj: String, node): #Make this more accurate with this i
 		
 func instance_place(x,y,obj: String): #' Returns the id of the instance of type obj met when the current instance is placed at position (x,y). obj can be an object or the keyword all. If it does not exist, the special object noone is returned.'
 	#Should return node that is overlapped
-	pass
+	var instance = null
+	var intersecting = collision_point(x, y, obj, 0, 0)
+	if intersecting == true:
+		instance = instance_nearest(x, y, obj)
+		return instance
+	else:
+		return instance
 	
 func instance_destroy(obj): #'Destroys current instance' ---  Should probably start passing 'self' or other node reference as an argument. Go through and check
 	if obj.has_method("destroy"):
@@ -453,3 +459,12 @@ func get_nearest_multiple(number, target_number): #--- Adapted from here: https:
 	number = number + z
 	number = number - (int(number) % int(target_number))
 	return number
+
+func alarm_frames(frame_number):
+	frame_number = float(frame_number)
+	var frame_rate = 30.0
+	var time_truncated = int(frame_number/frame_rate * 100)/100.0
+	print("here")
+	print(time_truncated)
+	return time_truncated
+	

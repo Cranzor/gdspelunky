@@ -4,7 +4,7 @@ var climb_snd_toggle
 
 @onready var alarm_2_timer = $Alarms/Alarm2
 
-var player1 = preload("res://objects/player1/Player1.tscn")
+var player1 = preload("res://objects/player1/player1.tscn")
 
 func initial_setup():
 	#--- set size

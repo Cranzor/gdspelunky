@@ -2974,8 +2974,11 @@ func handle_ladder_climbing():
 		
 		k_jumped = false
 		ladder_timer = 10
-		var ladder_instance = gml.collision_point(position.x, position.y, 'ladder', 0, 0)
-		if (ladder_instance): position.x = ladder_instance.x + 8
+		#var ladder_instance = gml.collision_point(position.x, position.y, 'ladder', 0, 0) #--- adjusting this as collision_point in my implementation only returns a boolean
+		var ladder_instance
+		if gml.collision_point(position.x, position.y, 'ladder', 0, 0):
+			ladder_instance = gml.instance_nearest(position.x, position.y, 'ladder')
+		if (ladder_instance): position.x = ladder_instance.position.x + 8
 
 		if (k_left): facing = LEFT
 		elif (k_right): facing = RIGHT
@@ -4339,7 +4342,7 @@ func move_to(x_vel, y_vel):
 					#we must move the moveable solid, unless there is another solid (moveable or non-moveable) in it's way
 					var all_solids = gml.get_all_instances("solid")
 					for solid_instance in all_solids:
-						if gml.place_meeting(solid_instance.x+1,solid_instance.y,'solid'):      #there will be a collision!
+						if gml.place_meeting(solid_instance.position.x+1,solid_instance.position.y,'solid'):      #there will be a collision!
 							#--- is x here referring to the iterator or the node's x position? no idea. going with the position
 							break
 						else:
