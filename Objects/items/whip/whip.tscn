@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://crm2j0n1x230i"]
+
+[ext_resource type="Script" path="res://objects/items/whip/whip.gd" id="1_3nu70"]
+[ext_resource type="Texture2D" uid="uid://ch5t2bcthnnxg" path="res://sprites/items/weapons/whip_right/whip_right_0.png" id="2_troqi"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o3x2q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_troqi")
+}],
+"loop": true,
+"name": &"whip_right",
+"speed": 30.0
+}]
+
+[node name="Whip" type="Node2D" groups=["drawn_sprite", "whip"]]
+z_index = -1
+script = ExtResource("1_3nu70")
+depth = -1
+object_size = Vector2(16, 16)
+
+[node name="Node" type="Node" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node"]
+z_index = -1
+z_as_relative = false
+sprite_frames = SubResource("SpriteFrames_o3x2q")
+animation = &"whip_right"
+centered = false
+offset = Vector2(-8, -8)

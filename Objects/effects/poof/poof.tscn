@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=3 uid="uid://dw32lrcbmraye"]
+
+[ext_resource type="Script" path="res://objects/effects/poof/poof.gd" id="1_cjwki"]
+[ext_resource type="Texture2D" uid="uid://beoboar3hgf0o" path="res://sprites/effects/poof/poof_0.png" id="2_leuit"]
+[ext_resource type="Texture2D" uid="uid://cpisub83tj72k" path="res://sprites/effects/poof/poof_1.png" id="3_holkr"]
+[ext_resource type="Texture2D" uid="uid://dv4lc7i1kbjgx" path="res://sprites/effects/poof/poof_2.png" id="4_vpe0c"]
+[ext_resource type="Texture2D" uid="uid://d38uma2qc08pi" path="res://sprites/effects/poof/poof_3.png" id="5_ts33u"]
+[ext_resource type="Texture2D" uid="uid://3lobl62mp4do" path="res://sprites/effects/poof/poof_4.png" id="6_mgn5p"]
+[ext_resource type="Texture2D" uid="uid://wip7u2ol36f0" path="res://sprites/effects/poof/poof_5.png" id="7_ba475"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_erftb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_leuit")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_holkr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_vpe0c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ts33u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_mgn5p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ba475")
+}],
+"loop": true,
+"name": &"poof",
+"speed": 30.0
+}]
+
+[node name="Poof" type="Node2D" groups=["drawn_sprite", "poof"]]
+z_index = -1
+script = ExtResource("1_cjwki")
+depth = -1
+object_size = Vector2(8, 8)
+
+[node name="Node" type="Node" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node"]
+z_index = -1
+z_as_relative = false
+sprite_frames = SubResource("SpriteFrames_erftb")
+animation = &"poof"
+frame_progress = 0.91809
+centered = false
+offset = Vector2(-4, -4)
+
+[connection signal="animation_looped" from="Node/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]

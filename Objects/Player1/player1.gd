@@ -180,7 +180,6 @@ var state_prev_prev
 var state_prev
 var run_anim_speed
 var climb_anim_speed
-var image_index = 0 #--- This will need to be handled somehow
 
 var rock
 
@@ -292,27 +291,12 @@ var final_x_vel = 0
 var final_y_vel = 0
 
 func _process(delta):
-	var sprite_distance = Vector2($AnimatedSprite2D.position.x, $AnimatedSprite2D.position.y).distance_to(Vector2(position.x, position.y))
+	#var sprite_distance = Vector2($AnimatedSprite2D.position.x, $AnimatedSprite2D.position.y).distance_to(Vector2(position.x, position.y))
+	#
+	#$AnimatedSprite2D.position.x += (final_x_vel * 30) * delta
+	#$AnimatedSprite2D.position.y += (final_y_vel * 30) * delta
+	smooth_animated_sprite_movement(x_velocity, y_velocity, delta)
 	
-	#var tween = create_tween()
-	
-	#if sprite_distance > 10:
-		#$AnimatedSprite2D.position = position
-	#else:
-		#tween.tween_property($AnimatedSprite2D, "position", position, 0.1)
-	#tween.tween_property($AnimatedSprite2D, "position", position, 0.05).set_trans(Tween.TRANS_LINEAR)
-	#$AnimatedSprite2D.position = position
-	
-	$AnimatedSprite2D.position.x += (final_x_vel * 30) * delta
-	$AnimatedSprite2D.position.y += (final_y_vel * 30) * delta
-	
-	#if $AnimatedSprite2D.position.y > position.y:
-		#$AnimatedSprite2D.position.y = position.y
-	
-	#$AnimatedSprite2D.position.y = clamp($AnimatedSprite2D.position.y, position.y - 1, position.y + 1)
-	#$AnimatedSprite2D.position.x = clamp($AnimatedSprite2D.position.x, position.x - .9, position.x + .9)	
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	disable_camera_on_title_screen()
 	move_to_test()
@@ -422,6 +406,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
+	smooth_motion_step_begin()
 	#print('node position: ' + str(position))
 	#print('sprite position: ' + str($AnimatedSprite2D.position))
 	#print("final x vel: " + str(final_x_vel), " final y vel: " + str(final_y_vel))
@@ -431,14 +416,15 @@ func _physics_process(delta):
 	#------------------------
 	
 	step_function_1() #--- Miscellaneous functions related to setting player values and handling some actions
-	#step_function_2() #--- Related to player actions and setting relevant animations. Starting game and exiting game are also here 
-	#step_function_3() #--- Functions for when the player takes damage
-	#step_function_4() #--- Player death functions
-	#step_function_5() #--- Caps values for when the player blinks when damaged
-	#step_function_6() #--- Functions handling the player collecting various items
+	step_function_2() #--- Related to player actions and setting relevant animations. Starting game and exiting game are also here 
+	step_function_3() #--- Functions for when the player takes damage
+	step_function_4() #--- Player death functions
+	step_function_5() #--- Caps values for when the player blinks when damaged
+	step_function_6() #--- Functions handling the player collecting various items
 	
-	#end_step()
+	end_step()
 	draw()
+	smooth_motion_step_end()
 
 func step_function_1():
 	prevent_player_death()
@@ -957,7 +943,7 @@ func start_weapon_animation():
 			
 			else:
 			
-				var obj = gml.instance_create(position.x+16, position.y, "whip")
+				var obj = gml.instance_create(position.x+16, position.y, Objects.whip)
 				obj.sprite_index = "whip_right"
 				Audio.play_sound(global.snd_whip)
 	
@@ -1006,12 +992,12 @@ func start_weapon_pre_animation():
 
 	elif ((sprite_index == "attack_left" or sprite_index == "damsel_attack_l" or sprite_index == "tunnel_attack_l") and facing == LEFT and image_index < 2 and gml.instance_number('whip_pre') == 0):
 
-		var obj = gml.instance_create(position.x+16, position.y, "whip_pre")
+		var obj = gml.instance_create(position.x+16, position.y, Objects.whip_pre)
 		obj.sprite_index = "whip_pre_l"
 
 	elif ((sprite_index == "attack_left" or sprite_index == "damsel_attack_l" or sprite_index == "tunnel_attack_l") and facing == RIGHT  and image_index < 2 and gml.instance_number('whip_pre') == 0):
 
-		var obj = gml.instance_create(position.x-16, position.y, "whip_pre")
+		var obj = gml.instance_create(position.x-16, position.y, Objects.whip_pre)
 		obj.sprite_index = "whip_pre_r"
 	
 func delete_whip_instances_when_not_whipping():
@@ -2306,7 +2292,7 @@ func handle_dead_or_stunned():
 			
 		
 		
-		if (Collision._collision_bottom(1, self) and not bounced):
+		if (Collision.is_collision_bottom(1, self) and not bounced):
 		
 			bounced = true
 			for i in range(0, 3):
@@ -4816,4 +4802,8 @@ func disable_camera_on_title_screen():
 
 
 func _on_new_animated_sprite_2d_animation_finished():
+	_on_animated_sprite_2d_animation_finished()
+
+#--- animations loop by default, so animation finish never triggers
+func _on_animated_sprite_2d_animation_looped():
 	_on_animated_sprite_2d_animation_finished()

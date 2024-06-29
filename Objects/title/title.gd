@@ -162,7 +162,8 @@ func step():
 		ControlScripts.check_attack_pressed() or
 		ControlScripts.check_start_pressed()):
 
-		if (gml.instance_exists("screen")):
+		#if (gml.instance_exists("screen")):
+		if true: #--- the screen object is an autoload, so there is never a time it won't exist
 		
 			if (not Screen.can_pause):
 			

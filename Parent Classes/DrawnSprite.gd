@@ -47,6 +47,15 @@ var image_speed:
 		var current_speed_scale = get_animation_speed_scale()
 		return current_speed_scale
 		
+var image_index:
+	set(new_index):
+		image_index = new_index
+		set_image_index(new_index)
+	get:
+		var animated_sprite = get_animated_sprite_2d()
+		var index = animated_sprite.get_frame()
+		return index
+		
 var status
 var facing
 var armed
@@ -73,6 +82,8 @@ var col_right
 var col_top
 var STUNNED = 98 #--- making this a variable and not a constant because it is set to 1 in p_dummy2 (all other cases are 98)
 var stun_time
+var damage
+var puncture
 
 var x_vel = 0
 var y_vel = 0
@@ -87,24 +98,32 @@ func drawn_sprite_create():
 	type = ""
 	blink_toggle = 0
 
-func set_animation(new_sprite):
+func get_animated_sprite_2d():
 	var animated_sprite: AnimatedSprite2D = find_child("AnimatedSprite2D")
+	return animated_sprite
+
+func set_animation(new_sprite):
+	var animated_sprite: AnimatedSprite2D = get_animated_sprite_2d()
 	assert(animated_sprite.sprite_frames.has_animation(new_sprite))
 	animated_sprite.play(new_sprite)
 
 func get_animation():
-	var animated_sprite: AnimatedSprite2D = find_child("AnimatedSprite2D")
+	var animated_sprite: AnimatedSprite2D = get_animated_sprite_2d()
 	var current_animation = animated_sprite.animation
 	return current_animation
 
 func set_animation_speed_scale(new_speed):
-	var animated_sprite: AnimatedSprite2D = find_child("AnimatedSprite2D")
+	var animated_sprite: AnimatedSprite2D = get_animated_sprite_2d()
 	animated_sprite.speed_scale = new_speed
 
 func get_animation_speed_scale():
-	var animated_sprite: AnimatedSprite2D = find_child("AnimatedSprite2D")
+	var animated_sprite: AnimatedSprite2D = get_animated_sprite_2d()
 	var current_speed_scale = animated_sprite.speed_scale
 	return current_speed_scale
+	
+func set_image_index(new_index):
+	var animated_sprite = get_animated_sprite_2d()
+	animated_sprite.set_frame(new_index)
 
 var x_velocity = 0
 var y_velocity = 0

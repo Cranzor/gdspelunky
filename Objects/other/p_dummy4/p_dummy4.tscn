@@ -20,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://c2hb7cu86uopo" path="res://sprites/character/main dude/climb_up3/climb_up3_10.png" id="12_rh2yf"]
 [ext_resource type="Texture2D" uid="uid://bykl7jqfs8iil" path="res://sprites/character/main dude/climb_up3/climb_up3_11.png" id="13_7mlga"]
 [ext_resource type="Texture2D" uid="uid://ks38eou4swb" path="res://sprites/character/main dude/fall_left/fall_left_0.png" id="14_mx7y7"]
-[ext_resource type="PackedScene" uid="uid://dlliudu6mbm0t" path="res://alarm.tscn" id="21_v725m"]
+[ext_resource type="PackedScene" uid="uid://dlliudu6mbm0t" path="res://alarm_old.tscn" id="21_0irgu"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tq0hm"]
 animations = [{
@@ -113,7 +113,7 @@ animation = &"run_left"
 
 [node name="Alarms" type="Node2D" parent="."]
 
-[node name="Alarm2" parent="Alarms" instance=ExtResource("21_v725m")]
+[node name="Alarm2" parent="Alarms" instance=ExtResource("21_0irgu")]
 wait_time = 0.266
 
 [connection signal="timeout" from="Alarms/Alarm2" to="." method="_on_alarm_2_timeout"]

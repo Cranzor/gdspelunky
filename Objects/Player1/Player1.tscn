@@ -483,7 +483,7 @@
 [ext_resource type="Texture2D" uid="uid://c65vdnyg1kkx1" path="res://Objects (old)/Player1/Animations/s_run_left/image 4.png" id="481_2b1m1"]
 [ext_resource type="Texture2D" uid="uid://dalaw02rx7p6g" path="res://Objects (old)/Player1/Animations/s_run_left/image 5.png" id="482_dajne"]
 [ext_resource type="Texture2D" uid="uid://cn2vly6aaekia" path="res://Objects (old)/Player1/Animations/s_stand_left/image 0.png" id="483_ngqfx"]
-[ext_resource type="PackedScene" uid="uid://dlliudu6mbm0t" path="res://alarm.tscn" id="484_81h6r"]
+[ext_resource type="PackedScene" uid="uid://dlliudu6mbm0t" path="res://alarm_old.tscn" id="484_1gxhx"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_74kd5"]
 animations = [{
@@ -2512,7 +2512,7 @@ top_level = true
 z_index = -50
 z_as_relative = false
 sprite_frames = SubResource("SpriteFrames_74kd5")
-animation = &"arrow_left"
+animation = &"die_l"
 
 [node name="Camera2D" type="Camera2D" parent="AnimatedSprite2D"]
 drag_horizontal_enabled = true
@@ -2537,19 +2537,20 @@ centered = false
 
 [node name="Alarms" type="Node2D" parent="."]
 
-[node name="Alarm0" parent="Alarms" instance=ExtResource("484_81h6r")]
+[node name="Alarm0" parent="Alarms" instance=ExtResource("484_1gxhx")]
 
-[node name="Alarm1" parent="Alarms" instance=ExtResource("484_81h6r")]
+[node name="Alarm1" parent="Alarms" instance=ExtResource("484_1gxhx")]
 
-[node name="Alarm2" parent="Alarms" instance=ExtResource("484_81h6r")]
+[node name="Alarm2" parent="Alarms" instance=ExtResource("484_1gxhx")]
 
-[node name="Alarm3" parent="Alarms" instance=ExtResource("484_81h6r")]
+[node name="Alarm3" parent="Alarms" instance=ExtResource("484_1gxhx")]
 
-[node name="Alarm4" parent="Alarms" instance=ExtResource("484_81h6r")]
+[node name="Alarm4" parent="Alarms" instance=ExtResource("484_1gxhx")]
 
-[node name="Alarm10" parent="Alarms" instance=ExtResource("484_81h6r")]
+[node name="Alarm10" parent="Alarms" instance=ExtResource("484_1gxhx")]
 
-[node name="Alarm11" parent="Alarms" instance=ExtResource("484_81h6r")]
+[node name="Alarm11" parent="Alarms" instance=ExtResource("484_1gxhx")]
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_new_animated_sprite_2d_animation_finished"]
+[connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
 [connection signal="animation_finished" from="TempHolder/OldAnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

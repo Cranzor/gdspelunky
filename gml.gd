@@ -82,7 +82,8 @@ func collision_point(x,y,obj: String,prec,notme): #"This function tests whether 
 	if instanced_object_locations.has(obj):
 		for entry in instanced_object_locations[obj]:
 			var location = entry[0]
-			var obj_rect = Rect2(location, Vector2(16, 16))
+			var size = entry[1]
+			var obj_rect = Rect2(location, size)
 			#var visible_obj_rect = ColorRect.new()
 			#visible_obj_rect.position = location
 			#visible_obj_rect.size = Vector2(location.x + 16, location.y + 16)
@@ -173,7 +174,24 @@ func instance_place(x,y,obj: String): #' Returns the id of the instance of type 
 func instance_destroy(obj): #'Destroys current instance' ---  Should probably start passing 'self' or other node reference as an argument. Go through and check
 	if obj.has_method("destroy"):
 		obj.destroy()
-		
+	
+	var current_entry
+	var current_array
+	var objects_to_erase = {}
+	var index
+	
+	for entry in instanced_object_locations:
+		var iteration = 0
+		for array in instanced_object_locations[entry]:
+			var search_result = array.find(obj)
+			if search_result != -1:
+				index = search_result
+				current_entry = entry
+				current_array = array
+	
+				print(instanced_object_locations[current_entry][iteration])
+				iteration+=1
+	
 	obj.queue_free()
 
 func collision_rectangle(x1,y1,x2,y2,obj,prec,notme): #"This function tests whether there is a collision between the (filled) rectangle with the indicated opposite corners and entities of object obj. For example, you can use this to test whether an area is free of obstacles."
@@ -189,7 +207,8 @@ func collision_rectangle(x1,y1,x2,y2,obj,prec,notme): #"This function tests whet
 	if instanced_object_locations.has(obj):
 		for entry in instanced_object_locations[obj]:
 			var location = entry[0]
-			var obj_rect = Rect2(location, Vector2(16, 16))
+			var size = entry[1]
+			var obj_rect = Rect2(location, size)
 			
 			#var visible_obj_rect = ColorRect.new()
 			#visible_obj_rect.position = location
@@ -258,7 +277,11 @@ func sqr(number):
 	return number * number
 	
 func instance_number(obj: String): #--- finish this
-	return 0
+	if instanced_object_locations.has(obj):
+		var instance_number = instanced_object_locations[obj].size()
+		return instance_number
+	else:
+		return 0
 
 func collision_line(x1,y1,x2,y2,obj,prec,notme):
 	var intersecting = false
@@ -294,7 +317,8 @@ func collision_line(x1,y1,x2,y2,obj,prec,notme):
 				
 				for entry in instanced_object_locations[obj]:
 					var location = entry[0]
-					var obj_rect = Rect2(location, Vector2(16, 16))
+					var size = entry[1]
+					var obj_rect = Rect2(location, size)
 					
 					intersecting = point_rect.intersects(obj_rect)
 					#-------------------
@@ -442,10 +466,11 @@ func set_up_object_collision(instance):
 		for group in obj_groups:
 			var location = Vector2(instance.global_position.x, instance.global_position.y) #--- -16 seems to fix collision for some reason? might need to change later. [FLAG] important. seems to be an issue here
 			var default_size = Vector2(16, 16)
+			var size = default_size
 			if instance.object_size != default_size:
-				default_size = instance.object_size
+				size = instance.object_size
 			
-			var node_info: Array = [location, default_size, instance]
+			var node_info: Array = [location, size, instance]
 			if !instanced_object_locations.has(group):
 				instanced_object_locations[str(group)] = [node_info]
 			else:

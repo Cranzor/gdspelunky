@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://dlliudu6mbm0t"]
+[gd_scene load_steps=2 format=3 uid="uid://dpe37cc2sccby"]
 
-[node name="Alarm" type="Timer"]
-one_shot = true
+[ext_resource type="Script" path="res://alarm.gd" id="1_g3y4o"]
+
+[node name="Alarm" type="Node2D"]
+script = ExtResource("1_g3y4o")
