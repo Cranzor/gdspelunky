@@ -744,9 +744,9 @@ func handle_player_active():
 			stun_timer += 60
 			y_vel = -3
 			fall_timer = 0
-			var obj = gml.instance_create(position.x-4, position.y+6, poof)
+			var obj = gml.instance_create(position.x-4, position.y+6, Objects.poof)
 			obj.x_vel = -0.4 #--- changing this as it's only referring to one instance
-			obj = gml.instance_create(position.x+4, position.y+6, poof)
+			obj = gml.instance_create(position.x+4, position.y+6, Objects.poof)
 			obj.x_vel = 0.4
 			Audio.play_sound(global.snd_thud)
 		

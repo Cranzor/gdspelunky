@@ -33,6 +33,7 @@ Music="*res://objects/music/Music.tscn"
 Globals="*res://objects/globals/globals.tscn"
 Screen="*res://objects/screen/screen.tscn"
 Gamepad="*res://objects/gamepad/gamepad.tscn"
+Objects="*res://objects.gd"
 
 [display]
 

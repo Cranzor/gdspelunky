@@ -22,7 +22,7 @@ var t_saves
 var brick = preload("res://objects/blocks/brick/brick.tscn")
 var tunnel_man = preload("res://objects/characters/tunnel_man/tunnel_man.tscn")
 var flare = preload("res://objects/items/flare/flare.tscn")
-var p_dummy4 = preload("res://objects/other/p_dummy4/p_dummy4.tscn")
+#var p_dummy4 = preload("res://objects/other/p_dummy4/p_dummy4.tscn")
 
 func initial_setup():
 	#--- set size
@@ -269,6 +269,6 @@ func _on_alarm_2_timeout():
 
 
 func _on_alarm_3_timeout():
-	gml.instance_create(320+280, -32, p_dummy4)
+	gml.instance_create(320+280, -32, Objects.p_dummy4)
 	Screen.can_pause = true
 	Audio.play_sound(global.mus_title) #--- don't see why the "true" here is needed
