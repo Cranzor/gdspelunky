@@ -175,22 +175,13 @@ func instance_destroy(obj): #'Destroys current instance' ---  Should probably st
 	if obj.has_method("destroy"):
 		obj.destroy()
 	
-	var current_entry
-	var current_array
-	var objects_to_erase = {}
-	var index
-	
+	#--- clear array that holds object to destroy
 	for entry in instanced_object_locations:
-		var iteration = 0
+		var iterator = 0
 		for array in instanced_object_locations[entry]:
 			var search_result = array.find(obj)
 			if search_result != -1:
-				index = search_result
-				current_entry = entry
-				current_array = array
-	
-				print(instanced_object_locations[current_entry][iteration])
-				iteration+=1
+				array.clear()
 	
 	obj.queue_free()
 
@@ -279,7 +270,13 @@ func sqr(number):
 func instance_number(obj: String): #--- finish this
 	if instanced_object_locations.has(obj):
 		var instance_number = instanced_object_locations[obj].size()
-		return instance_number
+		
+		var empty_counter = 0
+		for array in instanced_object_locations[obj]:
+			if array == []:
+				empty_counter += 1
+		return instance_number - empty_counter
+		
 	else:
 		return 0
 

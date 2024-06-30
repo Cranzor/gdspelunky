@@ -910,7 +910,7 @@ func start_weapon_animation():
 			
 			else:
 			
-				var obj = gml.instance_create(position.x-16, position.y, "whip")
+				var obj = gml.instance_create(position.x-16, position.y, Objects.whip)
 				obj.sprite_index = "whip_left"
 				Audio.play_sound(global.snd_whip)
 			
