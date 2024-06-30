@@ -339,7 +339,7 @@ func instance_activate_object(obj: String):
 	pass
 	
 func sprite_index(sprite_name: String, node):
-	var sprite = node.get_node('AnimatedSprite2D')
+	var sprite = node.find_child("AnimatedSprite2D")
 	sprite.play(sprite_name)
 
 func get_sprite_index(node):
@@ -362,6 +362,7 @@ func instance_deactivate_region(left, top, width, height, inside, notme):
 	pass
 	
 func room_restart():
+	instanced_object_locations = {}
 	get_tree().reload_current_scene()
 	
 func instance_activate_all():

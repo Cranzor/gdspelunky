@@ -491,6 +491,6 @@ func add_tile(x, y, name):
 	if last_object != name:
 		last_object = name
 		layer += 1
-	
+
 func _process(delta):
 	pass

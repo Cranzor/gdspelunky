@@ -1,10 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://crm2j0n1x230i"]
+[gd_scene load_steps=5 format=3 uid="uid://crm2j0n1x230i"]
 
 [ext_resource type="Script" path="res://objects/items/whip/whip.gd" id="1_3nu70"]
 [ext_resource type="Texture2D" uid="uid://ch5t2bcthnnxg" path="res://sprites/items/weapons/whip_right/whip_right_0.png" id="2_troqi"]
+[ext_resource type="Texture2D" uid="uid://be4r5nmrcf0s7" path="res://sprites/items/weapons/whip_left/whip_left_0.png" id="2_tx6t4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_o3x2q"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_tx6t4")
+}],
+"loop": true,
+"name": &"whip_left",
+"speed": 30.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_troqi")
@@ -26,6 +35,6 @@ object_size = Vector2(16, 16)
 z_index = -1
 z_as_relative = false
 sprite_frames = SubResource("SpriteFrames_o3x2q")
-animation = &"whip_right"
+animation = &"whip_left"
 centered = false
 offset = Vector2(-8, -8)

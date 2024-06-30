@@ -1,5 +1,7 @@
 extends Character
 
+@onready var animated_sprite = $Node/AnimatedSprite2D
+
 var game #--- Temporary to solve errors. Make this an autoload
 
 const STANDING = 10
@@ -291,10 +293,10 @@ var final_x_vel = 0
 var final_y_vel = 0
 
 func _process(delta):
-	#var sprite_distance = Vector2($AnimatedSprite2D.position.x, $AnimatedSprite2D.position.y).distance_to(Vector2(position.x, position.y))
+	#var sprite_distance = Vector2(animated_sprite.position.x, animated_sprite.position.y).distance_to(Vector2(position.x, position.y))
 	#
-	#$AnimatedSprite2D.position.x += (final_x_vel * 30) * delta
-	#$AnimatedSprite2D.position.y += (final_y_vel * 30) * delta
+	#animated_sprite.position.x += (final_x_vel * 30) * delta
+	#animated_sprite.position.y += (final_y_vel * 30) * delta
 	smooth_animated_sprite_movement(x_velocity, y_velocity, delta)
 	
 func _ready():
@@ -408,7 +410,7 @@ func _ready():
 func _physics_process(delta):
 	smooth_motion_step_begin()
 	#print('node position: ' + str(position))
-	#print('sprite position: ' + str($AnimatedSprite2D.position))
+	#print('sprite position: ' + str(animated_sprite.position))
 	#print("final x vel: " + str(final_x_vel), " final y vel: " + str(final_y_vel))
 	test_collision_right()
 	every_second_timer()
@@ -4397,10 +4399,10 @@ func move_to(x_vel, y_vel):
 	# --- sprite position exactly matches character position if character hasn't moved within the frame
 	if test:
 		if mt_x_prev == position.x:
-			$AnimatedSprite2D.position.x = position.x
+			animated_sprite.position.x = position.x
 
 		if mt_y_prev == position.y:
-			$AnimatedSprite2D.position.y = position.y
+			animated_sprite.position.y = position.y
 #---------------------------------------------------------------------------------------- Test functions
 func character_size_test():
 	var all_test_rects = get_tree().get_nodes_in_group('test_size')
@@ -4461,7 +4463,7 @@ func test_collision_right():
 		#gml.collision_line(514,159,514,169,'solid',1,1)
 		#print(collision)
 		#gml.sprite_index('default', self)
-		#$AnimatedSprite2D.position = position
+		#animated_sprite.position = position
 		#test = !test
 		input_test = !input_test
 
@@ -4513,8 +4515,8 @@ func character_draw_event():
 	#*/
 	#draws the sprite
 	var draw = true
-	if (facing == RIGHT): $AnimatedSprite2D.flip_h = true
-	else: $AnimatedSprite2D.flip_h = false
+	if (facing == RIGHT): animated_sprite.flip_h = true
+	else: animated_sprite.flip_h = false
 
 	#if (blink_toggle != 1):
 #
@@ -4751,7 +4753,7 @@ func _on_animated_sprite_2d_animation_finished():
 		
 			global.is_damsel = not global.is_damsel
 			active = true
-			depth = 50
+			depth = -50 #--- changing to negative
 			invincible = 0
 			state = STANDING
 			facing = LEFT
@@ -4771,7 +4773,7 @@ func _on_animated_sprite_2d_animation_finished():
 			global.is_tunnel_man = not global.is_tunnel_man
 			if (global.is_tunnel_man): global.is_damsel = false
 			active = true
-			depth = 50
+			depth = -50 #--- changing to negative
 			invincible = 0
 			state = STANDING
 			facing = RIGHT
@@ -4798,7 +4800,7 @@ func _on_animated_sprite_2d_animation_finished():
 
 func disable_camera_on_title_screen():
 	if gml.room_get_name() == "title":
-		$AnimatedSprite2D/Camera2D.enabled = false
+		$Node/AnimatedSprite2D/Camera2D.enabled = false
 
 
 func _on_new_animated_sprite_2d_animation_finished():

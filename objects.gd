@@ -307,7 +307,7 @@ var whip_pre = preload('res://objects/items/whip_pre/whip_pre.tscn')
 
 
 #other
-#var hint_hand = preload('res://objects/other/hint_hand/hint_hand.tscn')
+var hint_hand = preload('res://objects/other/hint_hand/hint_hand.tscn')
 #var menu_sel = preload('res://objects/other/menu_sel/menu_sel.tscn')
 #var page_down = preload('res://objects/other/page_down/page_down.tscn')
 #var page_up = preload('res://objects/other/page_up/page_up.tscn')

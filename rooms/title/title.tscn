@@ -37,6 +37,7 @@ texture = ExtResource("21_1wm2m")
 stretch_mode = 1
 
 [node name="View" parent="." instance=ExtResource("21_4id85")]
+position = Vector2(320, 0)
 
 [node name="FpsCounter" parent="." instance=ExtResource("23_57set")]
 

@@ -2507,14 +2507,15 @@ load_path = "res://.godot/imported/stand_left.png-5a419e41be3f3857e40f5d18327530
 [node name="Player1" type="CharacterBody2D" groups=["character", "player1"]]
 script = ExtResource("1_e0vak")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-top_level = true
+[node name="Node" type="Node" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node"]
 z_index = -50
 z_as_relative = false
 sprite_frames = SubResource("SpriteFrames_74kd5")
 animation = &"die_l"
 
-[node name="Camera2D" type="Camera2D" parent="AnimatedSprite2D"]
+[node name="Camera2D" type="Camera2D" parent="Node/AnimatedSprite2D"]
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 editor_draw_limits = true
@@ -2551,6 +2552,6 @@ centered = false
 
 [node name="Alarm11" parent="Alarms" instance=ExtResource("484_1gxhx")]
 
-[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_new_animated_sprite_2d_animation_finished"]
-[connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
+[connection signal="animation_finished" from="Node/AnimatedSprite2D" to="." method="_on_new_animated_sprite_2d_animation_finished"]
+[connection signal="animation_looped" from="Node/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
 [connection signal="animation_finished" from="TempHolder/OldAnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
