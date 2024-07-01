@@ -3,12 +3,25 @@ class_name DrawnSprite
 
 var sprite
 var solid = false
-@export var depth: int = 0
-	#set(new_depth):
-		#depth = new_depth
-		#z_index = depth
-	#get:
-		#return z_index
+
+@export var depth: int = 0:
+	set(new_depth):
+		if new_depth > 0: #--- changing positive GML depth to negative in case it is not already changed
+			new_depth = -new_depth
+		
+		var animated_sprite = get_animated_sprite_2d()
+		if animated_sprite:
+			animated_sprite.z_index = new_depth
+		else:
+			z_index = new_depth
+		depth = new_depth
+	get:
+		var animated_sprite = get_animated_sprite_2d()
+		if animated_sprite:
+			return animated_sprite.z_index
+		else:
+			return z_index
+		
 var persistent = false
 var parent
 var mask
@@ -55,6 +68,8 @@ var image_index:
 		var animated_sprite = get_animated_sprite_2d()
 		var index = animated_sprite.get_frame()
 		return index
+
+
 		
 var status
 var facing

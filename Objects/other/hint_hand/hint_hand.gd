@@ -18,7 +18,7 @@ func _ready():
 
 func _physics_process(delta):
 	draw()
-	hide_labels()
+	#hide_labels()
 
 func create():
 	image_speed = 0.5

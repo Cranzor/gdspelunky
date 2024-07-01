@@ -17,7 +17,6 @@ animations = [{
 [node name="Rope" type="Node2D" groups=["drawn_sprite", "ladder", "rope"]]
 z_index = -200
 script = ExtResource("1_75ulf")
-depth = -200
 object_size = Vector2(16, 8)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

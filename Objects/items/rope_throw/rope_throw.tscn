@@ -17,7 +17,6 @@ animations = [{
 [node name="RopeThrow" type="Node2D" groups=["drawn_sprite", "item", "rope_throw"]]
 z_index = -100
 script = ExtResource("1_fslem")
-depth = -100
 object_size = Vector2(8, 8)
 
 [node name="Node" type="Node" parent="."]

@@ -17,7 +17,6 @@ animations = [{
 [node name="QuitSign" type="Node2D" groups=["drawn_sprite", "quit_sign", "solid"]]
 z_index = -999
 script = ExtResource("1_cp6cu")
-depth = -999
 object_size = Vector2(32, 16)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

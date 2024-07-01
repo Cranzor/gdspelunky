@@ -62,7 +62,6 @@ animations = [{
 [node name="Dark" type="Node2D" groups=["dark", "drawn_sprite", "solid"]]
 z_index = -100
 script = ExtResource("1_epkk4")
-depth = -100
 object_size = Vector2(16, 16)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

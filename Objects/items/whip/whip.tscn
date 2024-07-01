@@ -26,7 +26,6 @@ animations = [{
 [node name="Whip" type="Node2D" groups=["drawn_sprite", "whip"]]
 z_index = -1
 script = ExtResource("1_3nu70")
-depth = -1
 object_size = Vector2(16, 16)
 
 [node name="Node" type="Node" parent="."]

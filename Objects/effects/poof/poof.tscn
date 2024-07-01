@@ -37,7 +37,6 @@ animations = [{
 [node name="Poof" type="Node2D" groups=["drawn_sprite", "poof"]]
 z_index = -1
 script = ExtResource("1_cjwki")
-depth = -1
 object_size = Vector2(8, 8)
 
 [node name="Node" type="Node" parent="."]

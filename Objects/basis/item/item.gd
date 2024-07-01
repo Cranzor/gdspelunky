@@ -135,8 +135,8 @@ func item_step():
 				else: position.y = player1.position.y+2
 			
 			depth = 1
-		
-			if (player1.hold_item == 0):
+			#if (player1.hold_item == 0): #--- changing 0 to null
+			if (player1.hold_item == null):
 			
 				held = false
 			

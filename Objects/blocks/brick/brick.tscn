@@ -71,7 +71,6 @@ animations = [{
 [node name="Brick" type="Node2D" groups=["brick", "drawn_sprite", "solid"]]
 z_index = -100
 script = ExtResource("1_wetyu")
-depth = -100
 object_size = Vector2(16, 16)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

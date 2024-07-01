@@ -27,7 +27,6 @@ animations = [{
 [node name="WhipPre" type="Node2D" groups=["drawn_sprite", "whip_pre"]]
 z_index = -1
 script = ExtResource("1_sbivy")
-depth = -1
 object_size = Vector2(16, 16)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

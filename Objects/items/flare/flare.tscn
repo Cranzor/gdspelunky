@@ -22,7 +22,6 @@ animations = [{
 [node name="Flare" type="Node2D" groups=["drawn_sprite", "flare", "item"]]
 z_index = -30
 script = ExtResource("1_xxbaf")
-depth = -30
 object_size = Vector2(8, 8)
 
 [node name="Node" type="Node" parent="."]

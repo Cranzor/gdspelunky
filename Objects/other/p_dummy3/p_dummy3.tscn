@@ -99,7 +99,6 @@ animations = [{
 [node name="PDummy3" type="Node2D" groups=["drawn_sprite", "p_dummy3"]]
 z_index = -40
 script = ExtResource("1_sgunq")
-depth = -40
 object_size = Vector2(16, 16)
 
 [node name="Node" type="Node" parent="."]
