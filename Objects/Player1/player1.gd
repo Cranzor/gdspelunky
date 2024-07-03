@@ -2180,7 +2180,7 @@ func handle_spike_collision():
 #elif (not dead): my_grav = 0.6
 	
 func drop_item_when_dead_or_stunned():
-	if ((dead or stunned) and hold_item != 0):
+	if ((dead or stunned) and hold_item != null):
 
 		hold_item.held = false
 		
@@ -2560,7 +2560,7 @@ func collect_rope_pile():
 func collect_idol_and_damsel():
 	if (gml.collision_point(position.x, position.y, "exit", 0, 0)):
 
-		if (hold_item != 0):
+		if (hold_item != null):
 		
 			collect = false
 			if (hold_item.type == "Gold Idol"):
@@ -3596,7 +3596,7 @@ func running_and_duck_to_hang_behavior():
 			if (hold_item):
 			
 				hold_item.held = false
-				if (hold_item.type == "Gold Idol"): hold_item.position.y -= 8
+				if (hold_item.type == "gold idol"): hold_item.position.y -= 8
 				CharacterScripts.scr_drop_item(-1, -4, self)
 			
 			var all_monkeys = gml.get_all_instances("monkey")
@@ -3642,6 +3642,10 @@ func running_and_duck_to_hang_behavior():
 	if (state == DUCKTOHANG):
 
 		position.x = x_prev
+		##
+		animated_sprite.position.x = x_prev
+		animated_sprite.position.y = y_prev
+		##
 		position.y = y_prev
 		x_vel = 0
 		y_vel = 0
@@ -4232,17 +4236,17 @@ func character_sprite():
 				#
 				#*/
 			
-			else: gml.sprite_index('stand_left', self)
+			else: sprite_index = 'stand_left'
 		
 		if (state == RUNNING):
 		 
 			if (k_up): sprite_index = "look_run_l"
-			else: gml.sprite_index('run_left', self)
+			else: sprite_index = 'run_left'
 		
 		if (state == DUCKING):
 		
-			if (x_vel == 0): gml.sprite_index('duck_left', self)
-			elif (abs(x_vel) < 3): gml.sprite_index('crawl_left', self)
+			if (x_vel == 0): sprite_index = 'duck_left'
+			elif (abs(x_vel) < 3): sprite_index = 'crawl_left'
 			else: sprite_index = "run_left"
 		
 		if (state == LOOKING_UP):
@@ -4251,11 +4255,11 @@ func character_sprite():
 			else: sprite_index = "look_left"
 		
 		if (state == JUMPING):
-			gml.sprite_index('jump_left', self)
+			sprite_index = 'jump_left'
 		if (state == FALLING and state_prev == FALLING and state_prev_prev == FALLING):
 			sprite_index = "fall_left"
 		if (state == HANGING):
-			gml.sprite_index('hang_left', self)
+			sprite_index = 'hang_left'
 		if (push_timer > 20):
 			sprite_index = "push_left"
 		if (state == CLIMBING):

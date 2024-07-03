@@ -1,4 +1,4 @@
-[gd_scene load_steps=488 format=3 uid="uid://dxk74orkbwm5u"]
+[gd_scene load_steps=490 format=3 uid="uid://dxk74orkbwm5u"]
 
 [ext_resource type="Script" path="res://objects/player1/player1.gd" id="1_e0vak"]
 [ext_resource type="Texture2D" uid="uid://drcyi45tywirl" path="res://sprites/items/weapons/arrow_left/arrow_left_0.png" id="2_8fwvh"]
@@ -484,6 +484,8 @@
 [ext_resource type="Texture2D" uid="uid://dalaw02rx7p6g" path="res://Objects (old)/Player1/Animations/s_run_left/image 5.png" id="482_dajne"]
 [ext_resource type="Texture2D" uid="uid://cn2vly6aaekia" path="res://Objects (old)/Player1/Animations/s_stand_left/image 0.png" id="483_ngqfx"]
 [ext_resource type="PackedScene" uid="uid://dlliudu6mbm0t" path="res://alarm_old.tscn" id="484_1gxhx"]
+[ext_resource type="FontFile" uid="uid://dgd06bxddo4pq" path="res://fonts/small_font.png" id="485_i3dxl"]
+[ext_resource type="Script" path="res://debug_player_state.gd" id="486_8kwyl"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_74kd5"]
 animations = [{
@@ -2513,7 +2515,9 @@ script = ExtResource("1_e0vak")
 z_index = -50
 z_as_relative = false
 sprite_frames = SubResource("SpriteFrames_74kd5")
-animation = &"die_l"
+animation = &"stand_left"
+centered = false
+offset = Vector2(-8, -8)
 
 [node name="Camera2D" type="Camera2D" parent="Node/AnimatedSprite2D"]
 drag_horizontal_enabled = true
@@ -2534,7 +2538,6 @@ animation = &"stand_left"
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
 texture = SubResource("CompressedTexture2D_xcccr")
-centered = false
 
 [node name="Alarms" type="Node2D" parent="."]
 
@@ -2551,6 +2554,15 @@ centered = false
 [node name="Alarm10" parent="Alarms" instance=ExtResource("484_1gxhx")]
 
 [node name="Alarm11" parent="Alarms" instance=ExtResource("484_1gxhx")]
+
+[node name="DebugPlayerState" type="Label" parent="."]
+offset_left = -16.0
+offset_top = -32.0
+offset_right = 24.0
+offset_bottom = -9.0
+theme_override_fonts/font = ExtResource("485_i3dxl")
+text = "WALK"
+script = ExtResource("486_8kwyl")
 
 [connection signal="animation_finished" from="Node/AnimatedSprite2D" to="." method="_on_new_animated_sprite_2d_animation_finished"]
 [connection signal="animation_looped" from="Node/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]

@@ -77,5 +77,5 @@ object_size = Vector2(16, 16)
 z_index = -100
 z_as_relative = false
 sprite_frames = SubResource("SpriteFrames_8hgay")
-animation = &"brick_down"
+animation = &"brick"
 centered = false
