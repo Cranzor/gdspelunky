@@ -300,6 +300,7 @@ func _process(delta):
 	smooth_animated_sprite_movement(x_velocity, y_velocity, delta)
 	
 func _ready():
+	object_size = Vector2(16, 16)
 	disable_camera_on_title_screen()
 	move_to_test()
 	#MiscScripts.scr_clear_globals() #---[FLAG] delete this
@@ -1237,7 +1238,7 @@ func exit_level():
 		global.pickup_item = ""
 		if (hold_item):
 		
-			if (hold_item.type == "Gold Idol"):
+			if (hold_item.type == "gold idol"):
 			
 				if (InLevel.is_real_level()): global.idols_converted += 1
 				global.money += hold_item.value*(global.level_type+1)
@@ -3620,7 +3621,7 @@ func running_and_duck_to_hang_behavior():
 			if (hold_item):
 			
 				# hold_item.held = false
-				if (hold_item.type == "Gold Idol"): hold_item.position.y -= 8
+				if (hold_item.type == "gold idol"): hold_item.position.y -= 8
 				CharacterScripts.scr_drop_item(1, -4, self)
 			
 			
@@ -3643,8 +3644,8 @@ func running_and_duck_to_hang_behavior():
 
 		position.x = x_prev
 		##
-		animated_sprite.position.x = x_prev
-		animated_sprite.position.y = y_prev
+		#animated_sprite.position.x = x_prev
+		#animated_sprite.position.y = y_prev
 		##
 		position.y = y_prev
 		x_vel = 0

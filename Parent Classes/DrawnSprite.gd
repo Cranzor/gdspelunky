@@ -145,7 +145,21 @@ func set_image_index(new_index):
 
 func set_sprite_offset(new_sprite):
 	var animated_sprite = get_animated_sprite_2d()
-	animated_sprite.offset = sprites_and_offsets[new_sprite]
+	var offset = sprites_and_offsets[new_sprite]
+	if !animated_sprite.flip_h:
+		animated_sprite.offset = offset
+		#print(offset.x)
+	else:
+		var width = object_size.x
+		#print(offset.x)
+		if offset.x != -width / 2:
+			if offset.x < -width / 2:
+				offset.x = offset.x + width
+				if offset.x > 0:
+					offset.x = -offset.x
+			else:
+				offset.x = abs(offset.x) - width
+		animated_sprite.offset = offset
 
 var x_velocity = 0
 var y_velocity = 0

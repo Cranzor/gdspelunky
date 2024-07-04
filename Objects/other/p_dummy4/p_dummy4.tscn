@@ -108,7 +108,8 @@ object_size = Vector2(16, 16)
 z_index = -50
 z_as_relative = false
 sprite_frames = SubResource("SpriteFrames_tq0hm")
-animation = &"run_left"
+animation = &"climb_up3"
+centered = false
 
 [node name="Alarms" type="Node2D" parent="."]
 
