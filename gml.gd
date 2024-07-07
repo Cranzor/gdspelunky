@@ -374,6 +374,16 @@ func instance_deactivate_all(notme):
 func game_end():
 	Screen.game_end()
 	get_tree().quit()
+	
+func animation_end(object):
+	var animated_sprite: AnimatedSprite2D = object.find_child("AnimatedSprite2D")
+	var number_of_frames = animated_sprite.sprite_frames.get_frame_count(animated_sprite.animation)
+	var current_index = animated_sprite.get_frame()
+	
+	if current_index == number_of_frames - 1:
+		return true
+	else:
+		return false
 
 #---------------------------------------
 func background_index(background: String): #Changing this to a function

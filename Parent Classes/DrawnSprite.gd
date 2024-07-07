@@ -148,10 +148,9 @@ func set_sprite_offset(new_sprite):
 	var offset = sprites_and_offsets[new_sprite]
 	if !animated_sprite.flip_h:
 		animated_sprite.offset = offset
-		#print(offset.x)
+		
 	else:
 		var width = object_size.x
-		#print(offset.x)
 		if offset.x != -width / 2:
 			if offset.x < -width / 2:
 				offset.x = offset.x + width
@@ -160,6 +159,7 @@ func set_sprite_offset(new_sprite):
 			else:
 				offset.x = abs(offset.x) - width
 		animated_sprite.offset = offset
+	
 
 var x_velocity = 0
 var y_velocity = 0

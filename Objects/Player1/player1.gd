@@ -4579,7 +4579,7 @@ func character_draw_event():
 	#*/
 
 
-func _on_animated_sprite_2d_animation_finished():
+func animation_end():
 	#--- 'Animation end' event
 	var  obj
 	
@@ -4809,9 +4809,13 @@ func disable_camera_on_title_screen():
 		$Node/AnimatedSprite2D/Camera2D.enabled = false
 
 
-func _on_new_animated_sprite_2d_animation_finished():
-	_on_animated_sprite_2d_animation_finished()
+#func _on_new_animated_sprite_2d_animation_finished():
+	#_on_animated_sprite_2d_animation_finished()
 
-#--- animations loop by default, so animation finish never triggers
-func _on_animated_sprite_2d_animation_looped():
-	_on_animated_sprite_2d_animation_finished()
+##--- animations loop by default, so animation finish never triggers
+#func _on_animated_sprite_2d_animation_looped():
+	#_on_animated_sprite_2d_animation_finished()
+
+func _on_animated_sprite_2d_frame_changed():
+	if gml.animation_end(self) == true:
+		animation_end()
