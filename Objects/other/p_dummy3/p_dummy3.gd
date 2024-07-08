@@ -21,7 +21,7 @@ func initial_setup():
 	depth = -40
 	z_index = depth
 	
-	animated_sprite.play("run_left")
+	sprite_index = "run_left"
 	drawn_sprite_create()
 
 func _ready():

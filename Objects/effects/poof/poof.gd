@@ -37,5 +37,6 @@ func step():
 
 	smooth_motion_step_end()
 	
-func _on_animated_sprite_2d_animation_looped():
-	animation_end()
+func _on_animated_sprite_2d_frame_changed():
+	if gml.animation_end(self) == true:
+		animation_end()

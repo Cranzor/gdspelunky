@@ -42,7 +42,9 @@ animation = &"hint_point"
 centered = false
 
 [node name="PressUpToEnter" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 471.0
+offset_top = 216.0
+offset_right = 615.0
+offset_bottom = 239.0
 theme_override_fonts/font = ExtResource("7_3r5tb")
 text = "PRESS UP TO ENTER!"

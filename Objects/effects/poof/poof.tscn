@@ -50,4 +50,4 @@ frame_progress = 0.91809
 centered = false
 offset = Vector2(-4, -4)
 
-[connection signal="animation_looped" from="Node/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
+[connection signal="frame_changed" from="Node/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]

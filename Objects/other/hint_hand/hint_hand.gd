@@ -17,8 +17,8 @@ func _ready():
 	create()
 
 func _physics_process(delta):
+	hide_labels()
 	draw()
-	#hide_labels()
 
 func create():
 	image_speed = 0.5
@@ -26,6 +26,7 @@ func create():
 func draw():
 	if (gml.instance_exists("player1")):
 		var player1 = gml.get_instance("player1") #---[FLAG] may have to change this for multiplayer
+		print(abs(player1.position.x - (position.x+8)))
 
 		if (abs(player1.position.x - (position.x+8)) < 8):
 			
@@ -35,8 +36,8 @@ func draw():
 			var n = 320 - str_len
 			n = ceil(n / 2)
 			#draw_text(320+n, 216, str("PRESS UP TO ENTER!"))
-			press_up_to_enter.position = Vector2(320 + n, 216)
-			press_up_to_enter.show()
+			press_up_to_enter.global_position = Vector2(320 + n, 216)
+			press_up_to_enter.visible = true
 	
 	#draw_sprite(sprite_index, image_index, position.x, position.y)
 

@@ -36,5 +36,6 @@ func step():
 
 		gml.instance_destroy(self)
 
-func _on_animated_sprite_2d_animation_finished():
-	animation_end()
+func _on_animated_sprite_2d_frame_changed():
+	if gml.animation_end(self) == true:
+		animation_end()
