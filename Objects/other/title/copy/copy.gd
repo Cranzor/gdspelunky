@@ -1,7 +1,4 @@
-extends Node2D
-
-var object_size
-var depth
+extends DrawnSprite #--- changing this to get sprite_index
 
 func initial_setup():
 	#--- set size

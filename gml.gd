@@ -4,6 +4,7 @@ var collision_point_node = preload("res://CollisionPoint.tscn")
 var collision_rectangle_node = preload("res://CollisionRectangle.tscn")
 
 var instanced_object_locations = {}
+var instanced_objects = {}
 
 #For tile_add
 @export_dir var bg_folder
@@ -73,31 +74,15 @@ func instance_create(x,y,obj): #should return the node as this is used in script
 func collision_point(x,y,obj: String,prec,notme): #"This function tests whether at point (x,y) there is a collision with entities of object obj."
 	var intersecting = false
 	var rect = Rect2(Vector2(x, y), Vector2(1, 1))
-	#var visible_rect = ColorRect.new()
-	#visible_rect.position = Vector2(x, y)
-	#visible_rect.size = Vector2(1, 1)
-	#visible_rect.color = Color(0.922, 0.518, 0.188, 0.5)
-	#get_tree().current_scene.add_child(visible_rect)
 	
-	if instanced_object_locations.has(obj):
-		for entry in instanced_object_locations[obj]:
-			var location = entry[0]
-			var size = entry[1]
+	if instanced_objects.has(obj):
+		for entry in instanced_objects[obj]:
+			var location = instanced_objects[obj][entry]["collision_location"]
+			var size = instanced_objects[obj][entry]["size"]
 			var obj_rect = Rect2(location, size)
-			#var visible_obj_rect = ColorRect.new()
-			#visible_obj_rect.position = location
-			#visible_obj_rect.size = Vector2(location.x + 16, location.y + 16)
-			#visible_obj_rect.color = Color(0.922, 0.518, 0.188, 0.2)
-			#get_tree().current_scene.add_child(visible_obj_rect)
+
 			intersecting = rect.intersects(obj_rect)
 			if intersecting == true:
-				#var visible_obj_rect = ColorRect.new()
-				#visible_obj_rect.global_position = location
-				#visible_obj_rect.size = Vector2(1, 1)
-				#print(location)
-				#visible_obj_rect.color = Color(0.922, 0.518, 0.188, 0.2)
-				#get_tree().current_scene.add_child(visible_obj_rect)
-				#get_tree().paused = true
 				break
 	
 	return intersecting
@@ -188,24 +173,13 @@ func instance_destroy(obj): #'Destroys current instance' ---  Should probably st
 func collision_rectangle(x1,y1,x2,y2,obj,prec,notme): #"This function tests whether there is a collision between the (filled) rectangle with the indicated opposite corners and entities of object obj. For example, you can use this to test whether an area is free of obstacles."
 	var intersecting = false
 	var rect = Rect2(Vector2(x1, y1), Vector2(abs(x2 - x1), abs(y2 - y1)))
-	#print(x1)
-	#var visible_rect = ColorRect.new()
-	#visible_rect.position = Vector2(x, y)
-	#visible_rect.size = Vector2(x2 - x, y2 - y)
-	#visible_rect.color = Color(0.922, 0.518, 0.188, 0.784)
-	#get_tree().current_scene.add_child(visible_rect)
 	
-	if instanced_object_locations.has(obj):
-		for entry in instanced_object_locations[obj]:
-			var location = entry[0]
-			var size = entry[1]
+	if instanced_objects.has(obj):
+		for entry in instanced_objects[obj]:
+			var location = instanced_objects[obj][entry]["collision_location"]
+			var size = instanced_objects[obj][entry]["size"]
 			var obj_rect = Rect2(location, size)
-			
-			#var visible_obj_rect = ColorRect.new()
-			#visible_obj_rect.position = location
-			#visible_obj_rect.size = Vector2(16, 16)
-			#visible_obj_rect.color = Color(0.922, 0.518, 0.188, 0.784)
-			
+
 			intersecting = rect.intersects(obj_rect)
 			if intersecting == true:
 				break
@@ -478,12 +452,30 @@ func set_up_object_collision(instance):
 			if instance.object_size != default_size:
 				size = instance.object_size
 			
+			#--------------------------------
+			#if "object_name" in instance:
+				#if instance.object_name == "rope":
+					#location = Vector2(instance.global_position.x - 4, instance.global_position.y - 4)
+			#--------------------------------
+			
 			var node_info: Array = [location, size, instance]
 			if !instanced_object_locations.has(group):
 				instanced_object_locations[str(group)] = [node_info]
 			else:
 				instanced_object_locations[group].append(node_info)
-			#print(instanced_object_locations[group])
+			#------------------------------------------------------------------------------------------
+			
+			var sprite_offset = instance.sprite_offset
+			var adjusted_location = Vector2(instance.global_position.x + sprite_offset.x, instance.global_position.y + sprite_offset.y)
+			var node_name = instance.name
+			var new_node_info: Dictionary = {"collision_location" : adjusted_location, "size" : size}
+			
+			var name_with_info = {node_name : new_node_info}
+			
+			if !instanced_objects.has(str(group)):
+				instanced_objects[group] = name_with_info
+			else:
+				instanced_objects[str(group)].merge(name_with_info)
 
 func get_nearest_multiple(number, target_number): #--- Adapted from here: https://www.geeksforgeeks.org/multiple-of-x-closest-to-n/
 	if target_number > number:

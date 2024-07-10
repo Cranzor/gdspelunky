@@ -2515,7 +2515,7 @@ script = ExtResource("1_e0vak")
 z_index = -50
 z_as_relative = false
 sprite_frames = SubResource("SpriteFrames_74kd5")
-animation = &"crawl_left"
+animation = &"climb_up2"
 centered = false
 offset = Vector2(-8, -8)
 

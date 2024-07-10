@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dccnfhv6qaic4"]
+[gd_scene load_steps=26 format=3 uid="uid://dccnfhv6qaic4"]
 
 [ext_resource type="Script" path="res://rooms/title/title.gd" id="1_8aivo"]
 [ext_resource type="PackedScene" uid="uid://dfw0l78jvgh8d" path="res://objects/other/title/title_bg/title_bg.tscn" id="2_2puqs"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://bft8urcdv7lh0" path="res://view.tscn" id="21_4id85"]
 [ext_resource type="PackedScene" uid="uid://b8sip2nv63phc" path="res://FPSCounter.tscn" id="23_57set"]
 [ext_resource type="PackedScene" uid="uid://b2jlcu453ynaf" path="res://bg_elements.tscn" id="24_c1f05"]
+[ext_resource type="Script" path="res://Test.gd" id="25_1dc3y"]
 
 [node name="Title" type="Node2D" groups=["objects_holder"]]
 script = ExtResource("1_8aivo")
@@ -44,3 +45,13 @@ position = Vector2(320, 0)
 [node name="BgElements" parent="." instance=ExtResource("24_c1f05")]
 z_as_relative = false
 layer_29/tile_data = PackedInt32Array()
+
+[node name="Button" type="Button" parent="."]
+offset_left = 576.0
+offset_top = 176.0
+offset_right = 584.0
+offset_bottom = 184.0
+text = "Hi"
+script = ExtResource("25_1dc3y")
+
+[connection signal="button_down" from="Button" to="Button" method="_on_button_down"]

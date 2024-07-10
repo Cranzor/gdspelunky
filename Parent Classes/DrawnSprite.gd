@@ -108,6 +108,8 @@ var y_vel = 0
 var x_acc = 0
 var y_acc = 0
 
+var sprite_offset = Vector2(0, 0)
+
 @export var object_size: Vector2 #--- created by me for collision purposes
 
 func drawn_sprite_create():
@@ -145,20 +147,20 @@ func set_image_index(new_index):
 
 func set_sprite_offset(new_sprite):
 	var animated_sprite = get_animated_sprite_2d()
-	var offset = sprites_and_offsets[new_sprite]
+	sprite_offset = sprites_and_offsets[new_sprite]
 	if !animated_sprite.flip_h:
-		animated_sprite.offset = offset
+		animated_sprite.offset = sprite_offset
 		
 	else:
 		var width = object_size.x
-		if offset.x != -width / 2:
-			if offset.x < -width / 2:
-				offset.x = offset.x + width
-				if offset.x > 0:
-					offset.x = -offset.x
+		if sprite_offset.x != -width / 2:
+			if sprite_offset.x < -width / 2:
+				sprite_offset.x = sprite_offset.x + width
+				if sprite_offset.x > 0:
+					sprite_offset.x = -sprite_offset.x
 			else:
-				offset.x = abs(offset.x) - width
-		animated_sprite.offset = offset
+				sprite_offset.x = abs(sprite_offset.x) - width
+		animated_sprite.offset = sprite_offset
 	
 
 var x_velocity = 0

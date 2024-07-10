@@ -1,7 +1,4 @@
-extends Node2D
-
-var object_size
-var depth
+extends DrawnSprite #--- changing this to get sprite_index
 
 func initial_setup():
 	#--- set size
@@ -11,7 +8,7 @@ func initial_setup():
 	depth = -999
 	z_index = depth
 	
-	$AnimatedSprite2D.play("start_sign")
+	sprite_index = "start_sign"
 
 func _ready():
 	initial_setup()

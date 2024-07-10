@@ -498,7 +498,7 @@ func handle_bomb_arrows():
 	
 func exit_game_from_title():
 	# exit game from title screen
-	if (InLevel.is_room("r_title") and state == CLIMBING and position.y < 32):
+	if (InLevel.is_room("title") and state == CLIMBING and position.y < 32):
 
 		if (hold_item):
 		
@@ -3399,15 +3399,17 @@ func handle_ladder_climbing2():
 
 		#ladder = 0 #--- Setting to zero seems to do nothing, so commenting out
 		var ladder_instance = gml.instance_place(position.x, position.y-8, 'ladder')
-		if (gml.instance_exists('ladder')):
+		#if (gml.instance_exists('ladder')):
+		if ladder_instance != null: #--- changing this to more closely match the original code
 		
 			if (abs(position.x-(ladder_instance.position.x+8)) < 4):
 			
 				position.x = ladder_instance.position.x + 8
-				if (not gml.collision_point(position.x, position.y, 'ladder', 0, 0) and
-					not gml.collision_point(position.x, position.y, 'ladder_top', 0, 0)):
+				if (not gml.collision_point(position.x, position.y, 'ladder', 0, 0) and not gml.collision_point(position.x, position.y, 'ladder_top', 0, 0)):
 				
 					position.y = ladder_instance.position.y + 14
+					print(ladder_instance.position.y)
+					print(position.y)
 				
 
 				x_vel = 0

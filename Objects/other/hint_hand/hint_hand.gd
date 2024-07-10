@@ -26,7 +26,6 @@ func create():
 func draw():
 	if (gml.instance_exists("player1")):
 		var player1 = gml.get_instance("player1") #---[FLAG] may have to change this for multiplayer
-		print(abs(player1.position.x - (position.x+8)))
 
 		if (abs(player1.position.x - (position.x+8)) < 8):
 			

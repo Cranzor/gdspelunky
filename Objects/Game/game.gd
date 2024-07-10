@@ -1,7 +1,4 @@
-extends Node2D
-
-@export var object_size = Vector2(0, 0)
-@export var depth = 0
+extends DrawnSprite #--- changing this even though there is no parent
 
 var draw_status
 var money_count

@@ -1,5 +1,7 @@
 extends Ladder
 
+var object_name = "rope"
+
 var burn_timer
 
 func initial_setup():
@@ -10,7 +12,7 @@ func initial_setup():
 	depth = -200
 	z_index = depth
 	
-	$AnimatedSprite2D.play("rope")
+	sprite_index = "rope"
 	drawn_sprite_create()
 
 func _ready():

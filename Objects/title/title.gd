@@ -1,7 +1,4 @@
-extends Node2D
-
-var object_size
-var depth
+extends DrawnSprite #--- changing this even though there is no parent
 
 var darkness
 var need_dark
