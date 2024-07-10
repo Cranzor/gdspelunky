@@ -1311,7 +1311,7 @@ func scr_init_level():
 
 		if (gml.collision_point(treasure.position.x, treasure.position.y, 'solid', 0, 0)):
 			var obj
-			obj = gml.instance_place(treasure.position.x, treasure.position.y, solid)
+			obj = gml.instance_place(treasure.position.x, treasure.position.y, 'solid', treasure)
 			if (obj.invincible): gml.instance_destroy(treasure)
 		
 
@@ -1321,7 +1321,7 @@ func scr_init_level():
 
 		if (water.sprite_index == s_water_top or water.sprite_index == s_lava_top):
 		
-			scr_check_water_top(water.x, water.y)
+			scr_check_water_top(water.x, water.y, water)
 		
 		#/*
 			#obj = instance_place(x-16, y, water)
@@ -2193,7 +2193,7 @@ func scr_entity_gen():
 			
 				if (solid_instance.position.y > 32 and gml.collision_point(solid_instance.position.x, solid_instance.position.y-16, "solid", 0, 0) and global.gen_market_entrance and not global.made_market_entrance):
 				
-					var obj = gml.instance_place(solid_instance.position.x, solid_instance.position.y-16, solid)
+					var obj = gml.instance_place(solid_instance.position.x, solid_instance.position.y-16, 'solid', solid_instance)
 					if (obj.solid_instance.type != "Tree" and solid_instance.type != "Altar" and not obj.invincible and randi_range(1,global.market_chance) <= 1):
 					
 						gml.instance_create(solid_instance.position.x, solid_instance.position.y-16, x_market)
@@ -2290,7 +2290,7 @@ func scr_entity_gen():
 			
 				if (solid_instance.position.y > 32 and gml.collision_point(solid_instance.position.x, solid_instance.position.y-16, "solid", 0, 0)):
 				
-					var obj = gml.instance_place(solid_instance.position.x, solid_instance.position.y-16, solid)
+					var obj = gml.instance_place(solid_instance.position.x, solid_instance.position.y-16, 'solid', solid_instance)
 					if (obj.solid_instance.type != "Tree" and solid_instance.type != "Altar" and not obj.invincible):
 					
 						gml.instance_create(solid_instance.position.x, solid_instance.position.y-16, x_market)
@@ -2931,7 +2931,7 @@ func scr_setup_walls(placement):
 			if (water_instance.up_water and gml.collision_point(water_instance.position.x, water_instance.position.y-32, 'water', 0, 0) and water_instance.down and randi_range(1,4) == 1):
 			
 				water_instance.sprite_index = s_water_bottom_tall2
-				var water = gml.instance_place(water_instance.position.x, water_instance.position.y-16, water) #-------- I imagine instance_place will be with a string for the object
+				var water = gml.instance_place(water_instance.position.x, water_instance.position.y-16, 'water', water_instance) #-------- I imagine instance_place will be with a string for the object
 				if (water): water.sprite_index = s_water_bottom_tall1
 			
 			elif ((water_instance.up or water_instance.up_water) and water_instance.down):
@@ -3071,7 +3071,7 @@ func scr_setup_walls(placement):
 
 
 
-func scr_check_water_top(x, y):
+func scr_check_water_top(x, y, calling_object):
 	#
 	# scr_check_water_top()
 	#
@@ -3096,7 +3096,7 @@ func scr_check_water_top(x, y):
 		#
 	#***********************************************************************************/
 
-	var obj = gml.instance_place(x-16, y, water)
+	var obj = gml.instance_place(x-16, y, 'water', calling_object)
 	if (gml.instance_exists(obj)):
 
 		if (obj.sprite_index != s_water_top and obj.sprite_index != s_lava_top):
@@ -3106,11 +3106,11 @@ func scr_check_water_top(x, y):
 			
 				if (object.type == "Lava"): object.sprite_index = s_lava_top
 				else: object.sprite_index = s_water_top
-				scr_check_water_top(object.x, object.y)
+				scr_check_water_top(object.x, object.y, object)
 			
 		
 
-	obj = gml.instance_place(x+16, y, water)
+	obj = gml.instance_place(x+16, y, 'water', calling_object)
 	if (gml.instance_exists(obj)):
 
 		if (obj.sprite_index != s_water_top and obj.sprite_index != s_lava_top):
@@ -3120,4 +3120,4 @@ func scr_check_water_top(x, y):
 					
 				if (object.type == "Lava"): object.sprite_index = s_lava_top
 				else: object.sprite_index = s_water_top
-				scr_check_water_top(object.x, object.y)
+				scr_check_water_top(object.x, object.y, object)

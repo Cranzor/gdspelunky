@@ -109,6 +109,7 @@ var x_acc = 0
 var y_acc = 0
 
 var sprite_offset = Vector2(0, 0)
+var object_id = ''
 
 @export var object_size: Vector2 #--- created by me for collision purposes
 
@@ -167,6 +168,10 @@ var x_velocity = 0
 var y_velocity = 0
 var tick_start_position: Vector2
 var tick_end_position: Vector2
+
+var starting_animation
+var updated_animation
+
 var sprite_initialized = false
 func smooth_animated_sprite_movement(x_velocity, y_velocity, delta):
 	var animated_sprite = find_child("AnimatedSprite2D")
@@ -181,9 +186,21 @@ func smooth_motion_step_begin():
 	x_velocity = 0
 	y_velocity = 0
 	tick_start_position = position
+	
+	starting_animation = get_animation()
+	
 
 func smooth_motion_step_end():
 	tick_end_position = position
 	var position_diff = tick_end_position - tick_start_position
 	x_velocity = position_diff.x
 	y_velocity = position_diff.y
+	
+	if position_diff != Vector2(0, 0):
+		gml.update_obj_list_collision(self)
+		
+	
+	updated_animation = get_animation()
+	
+	if updated_animation != starting_animation:
+		gml.update_obj_list_collision(self)

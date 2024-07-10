@@ -451,7 +451,7 @@ func step():
 					else: water_instance.sprite_index = "water_top"
 				
 				
-				var obj = gml.instance_place(water_instance.position.x-16, water_instance.position.y, 'water')
+				var obj = gml.instance_place(water_instance.position.x-16, water_instance.position.y, 'water', water_instance)
 				if (gml.instance_exists("obj")):
 				
 					if (obj.sprite_index == "water_top" or obj.sprite_index == "lava_top"):
@@ -461,7 +461,7 @@ func step():
 					
 				
 				
-				obj = gml.instance_place(water_instance.position.x+16, water_instance.position.y, 'water')
+				obj = gml.instance_place(water_instance.position.x+16, water_instance.position.y, 'water', water_instance)
 				if (gml.instance_exists("obj")):
 				
 					if (obj.sprite_index == "water_top" or obj.sprite_index == "lava_top"):

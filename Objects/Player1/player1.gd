@@ -1036,7 +1036,7 @@ func handle_chest_opening():
 	if (k_up and k_attack_pressed and gml.collision_point(position.x, position.y, "chest", 0, 0)):
 
 		if (InLevel.is_real_level()): global.total_chests += 1
-		var chest_instance = gml.instance_place(position.x, position.y, 'chest')
+		var chest_instance = gml.instance_place(position.x, position.y, 'chest', self)
 		if (chest_instance.sprite_index == "chest"):
 		
 			chest_instance.sprite_index = "chest_open"
@@ -1084,7 +1084,7 @@ func handle_crate_opening():
 	if (k_up and k_attack_pressed and gml.collision_point(position.x, position.y, "crate", 0, 0)):
 		var obj
 		if (InLevel.is_real_level()): global.total_crates += 1
-		var chest_instance = gml.instance_place(position.x, position.y, 'crate')
+		var chest_instance = gml.instance_place(position.x, position.y, 'crate', self)
 		if (InLevel.is_room("r_tutorial")): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, "bomb_bag")
 		elif (randi_range(1,500) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, "jetpack")
 		elif (randi_range(1,200) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, "cape_pickup")
@@ -1123,7 +1123,7 @@ func handle_flare_crate_opening():
 
 	if (k_up and k_attack_pressed and gml.collision_point(position.x, position.y, "flare_crate", 0, 0)):
 
-		var chest_instance = gml.instance_place(position.x, position.y, 'flare_crate')
+		var chest_instance = gml.instance_place(position.x, position.y, 'flare_crate', self)
 		for i in range (0, 3):
 		
 			var obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, "flare")
@@ -1195,7 +1195,7 @@ func start_game():
 		hold_item = null
 		pickup_item_type = ""
 
-		var door = gml.instance_place(position.x, position.y, 'x_start')
+		var door = gml.instance_place(position.x, position.y, 'x_start', self)
 		if (door): position.x = door.position.x + 8
 		if (global.is_damsel): sprite_index = "damsel_exit"
 		elif (global.is_tunnel_man): sprite_index = "tunnel_exit"
@@ -1257,7 +1257,7 @@ func exit_level():
 					if (InLevel.is_real_level()): global.damsels_saved_total += 1
 					global.damsels += 1
 					global.xdamsels += 1
-					var door = gml.instance_place(position.x, position.y, 'exit')
+					var door = gml.instance_place(position.x, position.y, 'exit', self)
 					hold_item.position.x = door.position.x+8
 					hold_item.position.y = door.position.y+8
 					
@@ -1319,7 +1319,7 @@ func exit_level():
 			pickup_item_type = ""
 		
 
-		var door = gml.instance_place(position.x, position.y, 'exit')
+		var door = gml.instance_place(position.x, position.y, 'exit', self)
 		if (door):
 		
 			position.x = door.position.x + 8
@@ -2172,7 +2172,7 @@ func handle_spike_collision():
 			my_grav = 0
 		
 
-		var obj = gml.instance_place(position.x, position.y, 'spikes')
+		var obj = gml.instance_place(position.x, position.y, 'spikes', self)
 		if (obj):
 		
 			obj.sprite_index = "spikes_blood"
@@ -2577,14 +2577,14 @@ func collect_idol_and_damsel():
 				gml.instance_destroy(hold_item) #---[FLAG] hold_item should be set to the string of the item name
 				hold_item = null
 			
-			elif (hold_item.type == "Damsel"):
+			elif (hold_item.type == "damsel"):
 			
 				if (hold_item.active and hold_item.hp > 0):
 				
 					if (InLevel.is_real_level()): global.damsels_saved_total += 1
 					global.damsels += 1
 					global.xdamsels += 1
-					var door = gml.instance_place(position.x, position.y, 'exit')
+					var door = gml.instance_place(position.x, position.y, 'exit', self)
 					hold_item.position.x = door.position.x+8
 					hold_item.position.y = door.position.y+8
 
@@ -3076,7 +3076,7 @@ func end_jump_upon_button_release():
 func handle_jumping():
 	if (k_jump_pressed and gml.collision_point(position.x, position.y, 'web', 0, 0)):
 
-		var obj = gml.instance_place(position.x, position.y, web)
+		var obj = gml.instance_place(position.x, position.y, "web", self)
 		obj.life -= 1
 		y_acc += initial_jump_acc * 2
 		y_vel -= 3
@@ -3334,7 +3334,7 @@ func pressing_down_behavior():
 			if (not col_bot):
 			
 				#ladder_instance = 0 #--- Setting to zero seems to do nothing, so commenting out
-				var ladder_instance = gml.instance_place(position.x, position.y+16, 'ladder')
+				var ladder_instance = gml.instance_place(position.x, position.y+16, 'ladder', self)
 				if (gml.instance_exists('ladder')):
 				
 					if (abs(position.x-(ladder_instance.position.x+8)) < 4):
@@ -3398,7 +3398,7 @@ func handle_ladder_climbing2():
 		(k_down and col_point_ladder and ladder_timer == 0 and platform_character_is(ON_GROUND) and gml.collision_point(position.x, position.y+9, 'ladder_top', 0, 0) and x_vel == 0)):
 
 		#ladder = 0 #--- Setting to zero seems to do nothing, so commenting out
-		var ladder_instance = gml.instance_place(position.x, position.y-8, 'ladder')
+		var ladder_instance = gml.instance_place(position.x, position.y-8, 'ladder', self)
 		#if (gml.instance_exists('ladder')):
 		if ladder_instance != null: #--- changing this to more closely match the original code
 		
