@@ -22,9 +22,10 @@ func _input(event):
 		keyboard_check()
 
 func keyboard_check():
-	print(gml.instanced_objects["rope"])
+	#print(gml.instanced_objects["rope"])
 	#gml.tile_add('bg_cave_top', 0, 0, 16, 16, 54, 54-16, 3)
 	#gml.tile_add('bg_kali_body', 0, 0, 64, 64, 0-16, 0-48, 10001)
+	pass
 
 
 func _on_button_down():

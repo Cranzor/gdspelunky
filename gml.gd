@@ -161,21 +161,14 @@ func instance_place(x,y,obj: String, comparison_object): #' Returns the id of th
 	var comparison_rect = Rect2(comparison_location, comparison_size)
 	
 	for entry in instanced_objects[obj]:
-		#print(instanced_objects[obj])
 		var location = instanced_objects[obj][entry]["collision_location"]
 		var size = instanced_objects[obj][entry]["size"]
 		var rect = Rect2(location, size)
 		
 		var intersecting = rect.intersects(comparison_rect)
-		print(entry)
 		if intersecting == true:
-				print(entry)
-				print(get_tree().get_nodes_in_group(entry))
-				var return_object = get_tree().get_nodes_in_group(entry)
-				if return_object == []:
-					continue
-				else:
-					return return_object[0]
+				var return_object = get_node(entry)
+				return return_object
 	
 	return null
 	
@@ -360,6 +353,7 @@ func instance_deactivate_region(left, top, width, height, inside, notme):
 	
 func room_restart():
 	instanced_object_locations = {}
+	instanced_objects = {}
 	get_tree().reload_current_scene()
 	
 func instance_activate_all():
@@ -440,12 +434,12 @@ func update_obj_list_collision(node):
 	var obj_groups = node.get_groups()
 	var sprite_offset = node.sprite_offset
 	var adjusted_location = Vector2(node.global_position.x + sprite_offset.x, node.global_position.y + sprite_offset.y)
-	var node_id = node.object_id
+	var node_name = node.get_path()
 	
 	if !obj_groups.is_empty():
 		for group in obj_groups:
 			if group.begins_with("id_") == false:
-				instanced_objects[group][node_id]["collision_location"] = adjusted_location
+				instanced_objects[group][node_name]["collision_location"] = adjusted_location
 
 
 func alarm_setup(frames, alarm_activity):
@@ -463,11 +457,7 @@ func alarm_timeout(time):
 func set_up_object_collision(instance):
 	var obj_groups = instance.get_groups()
 	
-	var node_id = generate_random_hash()
-	
-	instance.object_id = node_id
-	instance.add_to_group(node_id)
-	#print(instance.get_groups())
+	var node_name = instance.get_path()
 	
 	if !obj_groups.is_empty():
 		for group in obj_groups:
@@ -494,7 +484,7 @@ func set_up_object_collision(instance):
 			var adjusted_location = Vector2(instance.global_position.x + sprite_offset.x, instance.global_position.y + sprite_offset.y)
 			var new_node_info: Dictionary = {"collision_location" : adjusted_location, "size" : size}
 			
-			var name_with_info = {node_id : new_node_info}
+			var name_with_info = {node_name : new_node_info}
 			
 			if !instanced_objects.has(str(group)):
 				instanced_objects[group] = name_with_info
