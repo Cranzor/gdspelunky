@@ -51,7 +51,11 @@ offset_left = 576.0
 offset_top = 176.0
 offset_right = 584.0
 offset_bottom = 184.0
+focus_mode = 0
 text = "Hi"
 script = ExtResource("25_1dc3y")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(496, 128)
 
 [connection signal="button_down" from="Button" to="Button" method="_on_button_down"]

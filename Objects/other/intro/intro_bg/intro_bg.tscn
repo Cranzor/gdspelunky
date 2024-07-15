@@ -18,8 +18,8 @@ animations = [{
 
 [node name="IntroBg" type="Node2D" groups=["intro_bg"]]
 script = ExtResource("1_qnpa4")
-object_size = Vector2(480, 112)
 depth = 9999
+object_size = Vector2(480, 112)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_xgvsi")

@@ -1,7 +1,4 @@
-extends Node2D
-
-@export var object_size: Vector2
-@export var depth: int
+extends DrawnSprite #---changing this to DrawnSprite
 
 var x_off
 

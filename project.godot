@@ -39,8 +39,8 @@ Objects="*res://objects.gd"
 
 window/size/viewport_width=320
 window/size/viewport_height=240
-window/size/window_width_override=960
-window/size/window_height_override=720
+window/size/window_width_override=1920
+window/size/window_height_override=1080
 window/stretch/mode="viewport"
 
 [input]

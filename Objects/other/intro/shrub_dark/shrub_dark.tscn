@@ -19,8 +19,8 @@ animations = [{
 [node name="ShrubDark" type="Node2D" groups=["shrub_dark"]]
 z_index = 998
 script = ExtResource("1_ydqq8")
-object_size = Vector2(16, 16)
 depth = 998
+object_size = Vector2(16, 16)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vmeba")
