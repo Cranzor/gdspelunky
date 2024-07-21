@@ -36,8 +36,8 @@ func keyboard_check():
 	#gml.tile_add('bg_kali_body', 0, 0, 64, 64, 0-16, 0-48, 10001)
 	bitmap = BitMap.new()
 	
-	#var texture = preload("res://sprites/enemies/ghost/ghost_left/ghost_left_0.png")
-	var texture = preload("res://sprites/character/main dude/crawl_left/crawl_left_0.png")
+	var texture = preload("res://sprites/enemies/ghost/ghost_left/ghost_left_0.png")
+	#var texture = preload("res://sprites/enemies/olmec/olmec/olmec_0.png")
 	var image = texture.get_image()
 
 	bitmap.create_from_image_alpha(image)
@@ -75,13 +75,13 @@ func keyboard_check():
 				rects.append(rect)
 				
 				#--- testing
-				var color_rect = ColorRect.new()
-				var random_color = Color(randf(), randf(), randf(), 1)
-				color_rect.color = random_color
-				color_rect.size = rect_size
-				color_rect.position = Vector2(320+290 + rect_position.x, 184 + rect_position.y)
-				var objects_holder = get_tree().get_first_node_in_group("objects_holder")
-				objects_holder.add_child(color_rect)
+				#var color_rect = ColorRect.new()
+				#var random_color = Color(randf(), randf(), randf(), 1)
+				#color_rect.color = random_color
+				#color_rect.size = rect_size
+				#color_rect.position = Vector2(320+290 + rect_position.x, 184 + rect_position.y)
+				#var objects_holder = get_tree().get_first_node_in_group("objects_holder")
+				#objects_holder.add_child(color_rect)
 	
 	print(rects.size())
 				
