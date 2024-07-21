@@ -1,0 +1,244 @@
+import re
+import inflection
+import os
+import pyperclip
+from PIL import Image
+import PIL
+import numpy
+from pathlib import Path
+
+lines = 0
+line_count_ended = False
+pixels_to_go_in_rect = []
+first_loop = True
+
+def camel_case_to_snake_case(string):
+    snake_case = inflection.underscore(string)
+    return snake_case
+
+sprite_folder = r'C:\Users\Jesse\Desktop\H&C2\game dev\Spelunky Port\sprites'
+
+animations_and_rects = {}
+
+def perfect_pixel_loop(file_path):
+    global pixel_alpha_status_tracker
+    pixel_alpha_status_tracker = {}
+    global pixel_in_rect_tracker
+    pixel_in_rect_tracker = {}
+    global pixels_to_go_in_rect
+    pixels_to_go_in_rect = []
+    global all_rects
+    all_rects = []
+    global lines
+    lines = 0
+    global first_loop
+    first_loop = True
+    global chain_started
+    chain_started = False
+    global chain_length
+    chain_length = False
+    global line_broken
+    line_broken = False
+
+    image = image_setup(file_path)
+    image_analysis(image)
+    rects = main_loop()
+    return rects
+
+def image_setup(file_path):
+    image = Image.open(file_path)
+
+    global columns
+    global rows
+    global alpha_value
+
+    columns, rows = image.size
+
+    numpydata = numpy.array(image)
+
+    #print(numpydata[11][4][3])
+
+    columns, rows = image.size
+    alpha_value = 3
+
+    return image
+
+def image_analysis(image):
+    global columns, rows
+    global alpha_value
+    numpydata = numpy.array(image)
+
+    #print(numpydata[11][4][3])
+
+    columns, rows = image.size
+    alpha_value = 3
+
+    global pixel_alpha_status_tracker
+    global pixel_in_rect_tracker
+
+    pixel_alpha_status_tracker = {}
+    pixel_in_rect_tracker = {}
+
+    for row in range(rows):
+        for column in range(columns):
+            alpha_status = numpydata[row][column][alpha_value]
+            #print(numpydata[row][column][alpha_value])
+            
+            entry = (column, row)
+
+            if alpha_status != 0:
+                pixel_alpha_status_tracker[entry] = 'opaque'
+
+            else:
+                pixel_alpha_status_tracker[entry] = 'alpha'
+            
+            pixel_in_rect_tracker[entry] = "out"
+
+def check_below_line(entry, length, line_broken_status):
+    global lines
+    global first_loop
+    column = entry[0]
+    row = entry[1]
+
+    initial_line_status = line_broken_status
+
+    starting_range_value = column - length
+
+    #if starting_range_value < 0:
+     #   starting_range_value = 0
+
+    global line_broken
+    if line_broken == True:
+        if first_loop:
+            first_loop = False
+            row -= 1
+    
+    if initial_line_status == True:
+        starting_range_value = columns - length
+
+    new_row = row + 1
+    chain_count = 0
+
+    global pixels_to_go_in_rect
+
+    global line_count_ended
+    if row != rows - 1:
+        #for column_to_test in range(starting_range_value, column + length):
+        for column_to_test in range(starting_range_value, starting_range_value + length):
+            if line_count_ended == False:
+                new_entry = (column_to_test, new_row)
+
+                if pixel_alpha_status_tracker[new_entry] == "opaque" and pixel_in_rect_tracker[new_entry] == "out":
+                    chain_count += 1
+                    pixels_to_go_in_rect.append(new_entry)
+                else:
+                    line_count_ended = True
+                    pixels_to_go_in_rect = []
+                    break
+                    
+                if chain_count == length:
+                    next_entry = (column, new_row)
+                    lines += 1
+
+                    for pixel_to_add in pixels_to_go_in_rect:
+                       pixel_in_rect_tracker[pixel_to_add] = "in"
+                    
+                    pixels_to_go_in_rect = []
+
+
+                    check_below_line(next_entry, length, line_broken)
+    
+    pixels_to_go_in_rect = []
+    return lines
+
+all_rects = []
+
+def create_rectangle(original_entry, chain_length, check_below_line_result, line_broken_status):
+   global all_rects
+   if line_broken_status:
+       column = columns
+   else:
+       column = original_entry[0]
+   
+   position_x = column - chain_length
+
+   
+   #if position_x < 0:
+    #   position_x = 0
+
+   position_y = original_entry[1]
+
+   if line_broken_status == True:
+       position_y -= 1
+
+   position = (position_x, position_y)
+   size = (chain_length, check_below_line_result + 1)
+
+   rect = (position, size)
+   #print("rect:" + str(rect))
+   all_rects.append(rect)
+
+chain_started = False
+chain_length = 0
+
+line_broken = False
+
+def main_loop():
+    global first_loop
+    global lines
+    global line_count_ended
+    global line_broken
+    global chain_length
+    global chain_started
+    global all_rects
+
+    for entry in pixel_alpha_status_tracker:
+        if pixel_alpha_status_tracker[entry] == "opaque" and pixel_in_rect_tracker[entry] == "out" and line_broken == False:
+            if entry[0] == columns - 1:
+                line_broken = True
+            pixel_in_rect_tracker[entry] = "in"
+            chain_started = True
+            chain_length += 1
+            pixel_in_rect_tracker[entry] = "in"
+        else:
+            if chain_started == True and line_broken == True:
+                chain_started = False
+
+                check_below_line_result = check_below_line(entry, chain_length, line_broken)
+                first_loop = True
+                line_broken = True
+                create_rectangle(entry, chain_length, check_below_line_result, line_broken)
+                line_broken = False
+                lines = 0
+                line_count_ended = False
+                chain_length = 0
+
+
+            elif chain_started == True:
+                line_broken = False
+
+                chain_started = False
+                check_below_line_result = check_below_line(entry, chain_length, line_broken)
+                first_loop = True
+                create_rectangle(entry, chain_length, check_below_line_result, line_broken)
+                lines = 0
+                line_count_ended = False
+                chain_length = 0
+
+    return all_rects
+
+for root, dirs, files in os.walk(sprite_folder):
+        for file in files:
+              counter = -1
+              if file.endswith('.png'):
+                    counter += 1
+
+                    image_file_path = os.path.join(root, file)
+                    #image_file_path = Path(file).resolve()
+
+                    #animation name
+                    image_folder_name = os.path.basename(root)
+
+                    print(image_file_path)
+                    print(str(image_folder_name) + str(counter))
+                    print(perfect_pixel_loop(image_file_path))
