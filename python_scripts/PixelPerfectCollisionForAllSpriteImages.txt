@@ -17,6 +17,7 @@ def camel_case_to_snake_case(string):
     return snake_case
 
 sprite_folder = r'C:\Users\Jesse\Desktop\H&C2\game dev\Spelunky Port\sprites'
+output_path = r'C:\Users\Jesse\Desktop\H&C2\programming\Spelunky Godot Porting Scripts\PixelPerfectRectsOutput.txt'
 
 animations_and_rects = {}
 
@@ -43,7 +44,11 @@ def perfect_pixel_loop(file_path):
     image = image_setup(file_path)
     image_analysis(image)
     rects = main_loop()
-    return rects
+
+    if rects != []:
+        return rects
+    else:
+        return ((0, 0), (0, 0))
 
 def image_setup(file_path):
     image = Image.open(file_path)
@@ -176,6 +181,7 @@ def create_rectangle(original_entry, chain_length, check_below_line_result, line
 
    rect = (position, size)
    #print("rect:" + str(rect))
+   rect = "Vector2" + str(rect)
    all_rects.append(rect)
 
 chain_started = False
@@ -227,9 +233,23 @@ def main_loop():
 
     return all_rects
 
+
+f = open(output_path, "a")
+f.write(r"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n")
+f.write("<sprites>")
+f.close()
+
+prev_image_folder_name = ""
 for root, dirs, files in os.walk(sprite_folder):
+        counter = -1
+        prev_dir = ""
         for file in files:
-              counter = -1
+              if dir != prev_dir:
+                counter = -1
+                f = open(output_path, "a")
+                f.write("   </" + prev_image_folder_name + ">")
+                f.write("\n")
+                f.close()
               if file.endswith('.png'):
                     counter += 1
 
@@ -239,6 +259,22 @@ for root, dirs, files in os.walk(sprite_folder):
                     #animation name
                     image_folder_name = os.path.basename(root)
 
+                    if dir != prev_dir:
+                        f = open(output_path, "a")
+                        f.write("   <" + image_folder_name + ">" + "\n")
+                        f.close()
+
+                    prev_dir = dir
+                    prev_image_folder_name = image_folder_name
+
+
                     print(image_file_path)
                     print(str(image_folder_name) + str(counter))
                     print(perfect_pixel_loop(image_file_path))
+                    f = open(output_path, "a")
+                    f.write("       " + "<sprite" + str(counter) + ">" + str(perfect_pixel_loop(image_file_path)) + "</sprite" + str(counter) + ">" + "\n")
+                    f.close()
+
+f = open(output_path, "a")
+f.write("</sprites>")
+f.close()
