@@ -1,4 +1,5 @@
 class_name Sprites
+extends Resource
 
 const sprite_database = {
 	"black" : {
@@ -10694,7 +10695,7 @@ const sprite_database = {
 		"smooth_edges" : false,
 		"transparent" : false
 	},
-	"_0" : {
+	"s_0" : {
 		"origin" : Vector2(0, 0),
 		"mask" : {
 			"separate" : true,
@@ -10706,7 +10707,7 @@ const sprite_database = {
 		"smooth_edges" : false,
 		"transparent" : false
 	},
-	"_1" : {
+	"s_1" : {
 		"origin" : Vector2(0, 0),
 		"mask" : {
 			"separate" : true,

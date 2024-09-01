@@ -6,6 +6,8 @@ var sprites_and_offsets = {'black': Vector2(0, 0), 'black_fade_up': Vector2(0, 0
 var sprite
 var solid = false
 
+@export var object_name: String
+
 @export var depth: int = 0:
 	set(new_depth):
 		if new_depth > 0: #--- changing positive GML depth to negative in case it is not already changed
