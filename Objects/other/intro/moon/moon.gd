@@ -8,16 +8,15 @@ func initial_setup():
 	#--- set size
 	object_size = Vector2(96, 96)
 
-	#--- set depth
-	#depth = -99999
-	depth = -4000 #--- around -4000 seems to be the negative max
-	z_index = depth
-
-func _ready():
+func _ready():	
+	object_setup(self)
+	
 	initial_setup()
 	x_off = 0
 	
 func _physics_process(delta):
+	object_tick(self)
+	
 	if (InLevel.is_room("credits1") and gml.instance_exists("camel")):
 		position.x += 0.01
 		x_velocity = 0.01
@@ -30,4 +29,6 @@ func _physics_process(delta):
 	last_position = position.x
 
 func _process(delta):
+	object_process(self)
+	
 	smooth_animated_sprite_movement(x_velocity, y_velocity, delta)

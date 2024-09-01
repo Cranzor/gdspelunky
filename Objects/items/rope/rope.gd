@@ -1,7 +1,5 @@
 extends Ladder
 
-var object_name = "rope"
-
 var burn_timer
 
 func initial_setup():

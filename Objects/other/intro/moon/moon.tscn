@@ -13,11 +13,12 @@ animations = [{
 }],
 "loop": true,
 "name": &"moon",
-"speed": 5.0
+"speed": 30.0
 }]
 
 [node name="Moon" type="Node2D" groups=["moon"]]
 script = ExtResource("1_587ab")
+object_name = "moon"
 depth = 99999
 object_size = Vector2(96, 96)
 
