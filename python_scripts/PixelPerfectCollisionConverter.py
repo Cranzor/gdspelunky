@@ -2,10 +2,11 @@ from PIL import Image
 import PIL
 import numpy
 
-image = Image.open(r'C:\Users\Jesse\Desktop\H&C2\programming\Spelunky Godot Porting Scripts\Dump\Sprites\Enemies\Ghost\sGhostLeft.images\image 0.png')
-#image = Image.open(r'C:\Users\Jesse\Desktop\H&C2\programming\Spelunky Godot Porting Scripts\Dump\Sprites\Blocks\Dark\sDarkDown.images\image 0.png')
+#image = Image.open(r'C:\Users\Jesse\Desktop\H&C2\programming\Spelunky Godot Porting Scripts\Dump\Sprites\Enemies\Ghost\sGhostLeft.images\image 0.png')
+image = Image.open(r'C:\Users\Jesse\Desktop\H&C2\programming\Spelunky Godot Porting Scripts\Dump\Sprites\Blocks\Dark\sDarkDown.images\image 0.png')
 #image = Image.open(r'C:\Users\Jesse\Desktop\H&C2\programming\Spelunky Godot Porting Scripts\Dump\Sprites\Enemies\sSnakeLeft.images\image 0.png')
 #image = Image.open(r'C:\Users\Jesse\Desktop\H&C2\programming\Spelunky Godot Porting Scripts\Dump\Sprites\Enemies\Olmec\sOlmec.images\image 0.png')
+#image = Image.open(r'C:\Users\Jesse\Desktop\H&C2\programming\Spelunky Godot Porting Scripts\Dump\Sprites\Items\Weapons\sWhipPreL.images\image 0.png')
 
 
 
@@ -103,7 +104,7 @@ def create_rectangle(original_entry, chain_length, check_below_line_result, line
    if line_broken_status:
        column = columns
    else:
-       column = entry[0]
+       column = original_entry[0]
    
    position_x = column - chain_length
 

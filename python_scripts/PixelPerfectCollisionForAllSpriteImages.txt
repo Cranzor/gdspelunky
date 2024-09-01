@@ -48,7 +48,8 @@ def perfect_pixel_loop(file_path):
     if rects != []:
         return rects
     else:
-        return ((0, 0), (0, 0))
+        #return ((0, 0), (0, 0))
+        return str("['[Vector2(0, 0), Vector2(0, 0)]']")
 
 def image_setup(file_path):
     image = Image.open(file_path)
@@ -182,6 +183,7 @@ def create_rectangle(original_entry, chain_length, check_below_line_result, line
    rect = (position, size)
    #print("rect:" + str(rect))
    rect = "Vector2" + str(rect)
+   rect = "[" + "Vector2" + str(position) + ", " + "Vector2" + str(size) + "]"
    all_rects.append(rect)
 
 chain_started = False

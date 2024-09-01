@@ -26,17 +26,44 @@ def handle_word(word, letter):
     word = camel_case_to_snake_case(word)
     return word
 
+def clean_up_string(string):
+    new_string = string.replace("'", "")
+    #new_string = new_string.replace("[", "")
+    #new_string = new_string.replace("]", "")
+    new_string = new_string.replace("Vector2", "")
+    new_string = new_string.replace("[[", "[[")
+    new_string = new_string.replace("]]", "]]")
+    new_string = new_string.replace("([", "[")
+
+    return new_string
+
 def generate_extents(list_of_points):
     raw_list = list_of_points
     length = len(raw_list)
-    #print(raw_list)
 
     left = 100000
     right = 0
     top = 100000
     bottom = 0
 
-    for number in range(0, length):
+
+    left_point = int(raw_list[0][0][0])
+    right_point = int(raw_list[0][0][0]) + int(raw_list[0][1][0]) - 1
+    top_point = int(raw_list[0][0][1])
+    bottom_point = int(raw_list[0][0][1]) + int(raw_list[0][1][1]) - 1
+
+    if left_point < left:
+        left = left_point
+    if right_point > right:
+        right = right_point
+    if top_point < top:
+        top = top_point
+    if bottom_point > bottom:
+        bottom = bottom_point
+
+    return left, right, top, bottom
+
+"""     for number in range(0, length):
         left_point = int(raw_list[number][0][0])
         right_point = int(raw_list[number][0][0]) + int(raw_list[number][1][0]) - 1
         top_point = int(raw_list[number][0][1])
@@ -51,7 +78,7 @@ def generate_extents(list_of_points):
         if bottom_point > bottom:
             bottom = bottom_point
     
-    return left, right, top, bottom
+    return left, right, top, bottom """
 
 def find_extents_of_multiple_entries(list):
     left = 100000
@@ -59,7 +86,8 @@ def find_extents_of_multiple_entries(list):
     top = 100000
     bottom = 0
 
-    for entry in list:
+    for entry in list[0]:
+        print(entry)
         left_return, right_return, top_return, bottom_return = generate_extents(entry)
 
         if left_return < left:
@@ -91,24 +119,42 @@ pixel_collision_info_text = pixel_collision_info_file.read()
 
 soup = BeautifulSoup(pixel_collision_info_text, 'xml')
 
-""" for sprite in rectangle_sprites:
+
+all_rectangle_sprites_info = ""
+for sprite in rectangle_sprites:
     formatted_sprite = handle_word(sprite, 's')
+    if formatted_sprite == "_0":
+        formatted_sprite = "s_0"
+    elif formatted_sprite == "_1":
+        formatted_sprite = "s_1"
+
+    if formatted_sprite == "ice_bottom2":
+        print("yes")
+
     result = soup.find(formatted_sprite)
 
+    dict = {}
     all_points = []
 
     if result != None:
         children = result.findChildren()
+        x = -1
         for child in children:
+            x+=1
             #child.text comes out as a string, so it must be converted to an actual list
-            test = eval(child.text)
+            test = clean_up_string(child.text)
+            test = eval(test)
+            test = list(test)
+            print(test)
             all_points.append(test)
+        #print(all_points)
+        multiple_entries = find_extents_of_multiple_entries(all_points)
+        #print(formatted_sprite)
+        #print(multiple_entries)
     
-    #print(handle_word(sprite, 's'))
-    if all_points!= []:
-        print(handle_word(sprite, 's') + " = " + "[" + str(find_extents_of_multiple_entries(all_points)) + "]") """
+    all_rectangle_sprites_info += "\"" + handle_word(sprite, 's') + "\"" + " : " + str(multiple_entries) + "\n"
 
-precise_sprites = ['sBlack.xml', 'sBlackFadeUp.xml', 'sFont.xml', 'sFontOld.xml', 'sFontSmall.xml', 'sLvl.xml', 'sRed.xml', 'sRoom.xml', 'sBarrier.xml', 'sBarrierEmitter.xml', 'sCaveBG.xml', 'sCaveBG1.xml', 'sCaveBG2.xml', 'sCaveBGEntrance.xml', 'sEntrance.xml', 'sExit.xml', 'sGoldDoor.xml', 'sMsgSign.xml', 'sDarkBottom.xml', 'sDarkFall.xml', 'sDarkLeft.xml', 'sDarkRight.xml', 'sDarkTop.xml', 'sDarkTop2.xml', 'sLeaves.xml', 'sLeavesDead.xml', 'sLeavesDeadR.xml', 'sLeavesRight.xml', 'sLeavesTop.xml', 'sTreeTop.xml', 'sTreeTopDead.xml', 'sYellHelp.xml', 'sTunnelAttackL.xml', 'sTunnelDuckL.xml', 'sBigCollect.xml', 'sBlood.xml', 'sBloodSpark.xml', 'sBloodTrail.xml', 'sBone.xml', 'sBubble.xml', 'sBullet.xml', 'sBurn.xml', 'sExplosion.xml', 'sFlame.xml', 'sFlameTrail.xml', 'sLaser.xml', 'sLaserExplode.xml', 'sLaserTrail.xml', 'sLavaDrip.xml', 'sLeaf.xml', 'sLeafStill.xml', 'sPoof.xml', 'sPsychicCreate.xml', 'sPsychicWave.xml', 'sPsychicWaveP.xml', 'sRubble.xml', 'sRubbleDark.xml', 'sRubbleDarkSmall.xml', 'sRubbleLush.xml', 'sRubbleLushSmall.xml', 'sRubbleSmall.xml', 'sRubbleTan.xml', 'sRubbleTanSmall.xml', 'sShotgunBlastLeft.xml', 'sShotgunBlastRight.xml', 'sSmallCollect.xml', 'sSmokePuff.xml', 'sSmoochHeart.xml', 'sYellowBall.xml', 'sYellowTrail.xml', 'sAlienBossDead.xml', 'sAlienBossDie.xml', 'sCaravan1.xml', 'sCaravan2.xml', 'sCaravan3.xml', 'sCaveManWorshipL.xml', 'sCavemanWorshipR.xml', 'sGhostDisappear.xml', 'sGhostLeft.xml', 'sGhostRight.xml', 'sGhostTurnLeft.xml', 'sGhostTurnRight.xml', 'sGiantSpiderDisp.xml', 'sWeb.xml', 'sWebBall.xml', 'sWebCreate.xml', 'sJawsBody1L.xml', 'sJawsBody1R.xml', 'sJawsBody2L.xml', 'sJawsBody2R.xml', 'sJawsBody3L.xml', 'sJawsBody3R.xml', 'sJawsLeft.xml', 'sJawsRight.xml', 'sJawsTurnL.xml', 'sJawsTurnR.xml', 'sMegaMouth.xml', 'sMagma.xml', 'sMagmaManCreate.xml', 'sMagmaTrail.xml', 'sManTrapEatShopkeeperL.xml', 'sManTrapEatTunnelL.xml', 'sManTrapTemp.xml', 'sMonkeyClimbL.xml', 'sMonkeyHangL.xml', 'sMonkeyJumpL.xml', 'sMonkeyLeft.xml', 'sMonkeyWalkL.xml', 'sOlmec.xml', 'sOlmecDebris.xml', 'sOlmecDebris2.xml', 'sOlmecDebris3.xml', 'sOlmecStart1.xml', 'sOlmecStart2.xml', 'sOlmecStart3.xml', 'sShopThrowL.xml', 'sFlyLeft.xml', 'sFlyRight.xml', 'sTombLordAttackL.xml', 'sTombLordAttackR.xml', 'sTombLordDisp.xml', 'sTombLordLeft.xml', 'sTombLordRight.xml', 'sTombLordTurnL.xml', 'sTombLordTurnR.xml', 'sTombLordWalkL.xml', 'sTombLordWalkR.xml', 'sArrowIcon.xml', 'sBombIcon.xml', 'sCapeIcon.xml', 'sCompassIcon.xml', 'sDamselIcon.xml', 'sDeathMask.xml', 'sDollarSign.xml', 'sGlovesIcon.xml', 'sHeart.xml', 'sHintPoint.xml', 'sHoldItemIcon.xml', 'sHoopsIcon.xml', 'sJetpackIcon.xml', 'sKapalaIcon.xml', 'sMittIcon.xml', 'sParachuteIcon.xml', 'sRopeIcon.xml', 'sShopkeeperIcon.xml', 'sSpectaclesIcon.xml', 'sSpikeShoesIcon.xml', 'sSpringShoesIcon.xml', 'sStickyBombIcon.xml', 'sTimerIcon.xml', 'sBombsGet.xml', 'sChest.xml', 'sChestOpen.xml', 'sCrate.xml', 'sCrateOpen.xml', 'sDice1.xml', 'sDice2.xml', 'sDice3.xml', 'sDice4.xml', 'sDice5.xml', 'sDice6.xml', 'sDiceRoll.xml', 'sFakeBonesLeft.xml', 'sFlareCrate.xml', 'sItemGet.xml', 'sLockedChest.xml', 'sLockedChestOpen.xml', 'sParaUsed.xml', 'sRedArrowDown.xml', 'sRopeGet.xml', 'sAnkh.xml', 'sAnkhIcon.xml', 'sBombBag.xml', 'sBombBox.xml', 'sBowDisp.xml', 'sBowLeft.xml', 'sBowRight.xml', 'sCape.xml', 'sCapeBack.xml', 'sCapeDL.xml', 'sCapeDR.xml', 'sCapeLeft.xml', 'sCapeRight.xml', 'sCapeUL.xml', 'sCapeUR.xml', 'sCompass.xml', 'sCompassDown.xml', 'sCompassLeft.xml', 'sCompassLL.xml', 'sCompassLR.xml', 'sCompassRight.xml', 'sCompassSmallDown.xml', 'sCompassSmallLeft.xml', 'sCompassSmallLL.xml', 'sCompassSmallLR.xml', 'sCompassSmallRight.xml', 'sCrown.xml', 'sCrownIcon.xml', 'sDeathMaskPickup.xml', 'sDeathMaskWear.xml', 'sGlove.xml', 'sJordans.xml', 'sKapala.xml', 'sKeyLeft.xml', 'sKeyRight.xml', 'sMacheteLeft.xml', 'sMacheteRight.xml', 'sMattockLeft.xml', 'sMattockRight.xml', 'sMitt.xml', 'sNinjaSuit.xml', 'sParachute.xml', 'sParaOpen.xml', 'sParaPickup.xml', 'sPaste.xml', 'sPistolLeft.xml', 'sPistolRight.xml', 'sRopePile.xml', 'sSceptreLeft.xml', 'sSceptreRight.xml', 'sSpectacles.xml', 'sSpikeShoes.xml', 'sSpringShoes.xml', 'sTeleporter.xml', 'sUdjatEye.xml', 'sUdjatEyeIcon.xml', 'sUdjatEyeIcon2.xml', 'sWebCannonL.xml', 'sWebCannonR.xml', 'sArrowLeft.xml', 'sArrowRight.xml', 'sBall.xml', 'sBasketball.xml', 'sBomb.xml', 'sBombArmed.xml', 'sBombArrowLeft.xml', 'sBombArrowRight.xml', 'sChain.xml', 'sDribble.xml', 'sEgg.xml', 'sFishBone.xml', 'sMachetePreL.xml', 'sMachetePreR.xml', 'sMattockHead.xml', 'sMattockHitL.xml', 'sMattockHitR.xml', 'sMattockPreL.xml', 'sMattockPreR.xml', 'sRock.xml', 'sRopeEnd.xml', 'sRopeTop.xml', 'sShotgunLeft.xml', 'sShotgunRight.xml', 'sSkull.xml', 'sSlashLeft.xml', 'sSlashRight.xml', 'sTarget.xml', 'sWhipLeft.xml', 'sWhipPreL.xml', 'sWhipPreR.xml', 'sWhipRight.xml', 'sBombBagTile.xml', 'sBombBoxTile.xml', 'sBombPasteTile.xml', 'sBowTile.xml', 'sCapeTile.xml', 'sChestTile.xml', 'sCompassTile.xml', 'sCrateTile.xml', 'sGlovesTile.xml', 'sMacheteTile.xml', 'sMattockTile.xml', 'sMegaMouthTile.xml', 'sMittTile.xml', 'sParachuteTile.xml', 'sPistolTile.xml', 'sRockTile.xml', 'sRopePileTile.xml', 'sShotgunTile.xml', 'sSpectaclesTile.xml', 'sSpikeShoesTile.xml', 'sSpringShoesTile.xml', 'sTeleporterTile.xml', 'sWebCannonTile.xml', 'sWebTile.xml', 'sMushroom1.xml', 'sMushroom2.xml', 'sMushroom3.xml', 'sMushroom4.xml', 'sMushroom5.xml', 'sMushroom6.xml', 'sMushroom7.xml', 'sMushroom8.xml', 'sBasket.xml', 'sBasketSwoosh.xml', 'sEditButton.xml', 'sEditButtonPressed.xml', 'sJoyConfigButton.xml', 'sJoyConfigButtonPressed.xml', 'sKeyConfigButton.xml', 'sKeyConfigButtonPressed.xml', 'sLoadButton.xml', 'sLoadButtonPressed.xml', 'sMenuBottom.xml', 'sMenuLeft.xml', 'sMenuLL.xml', 'sMenuLR.xml', 'sMenuRight.xml', 'sMenuSelOff.xml', 'sMenuSelOn.xml', 'sMenuTop.xml', 'sMenuUL.xml', 'sMenuUR.xml', 'sNewButton.xml', 'sNewButtonPressed.xml', 'sOKButton.xml', 'sOKButtonPressed.xml', 'sPageDown.xml', 'sPageUp.xml', 'sRimDeflect.xml', 'sTestButton.xml', 'sTestButtonPressed.xml', 'sBigChest.xml', 'sBigChestOpen.xml', 'sBigTreasure.xml', 'sEnd2BG.xml', 'sEndWall.xml', 'sLavaSpray.xml', 'sPlayerSil.xml', 'sprite1112.xml', 'sTreasureSil.xml', 'sVolcanoFlame.xml', 'sBGEnd3.xml', 'sCamel.xml', 'sCamelDamsel.xml', 'sCamelTunnel.xml', 'sDesert.xml', 'sDesert2.xml', 'sDesertNight.xml', 'sDesertNight2.xml', 'sDesertTop.xml', 'sDesertTopNight.xml', 'sFlare.xml', 'sFlareSpark.xml', 'sIntroBG.xml', 'sMoon.xml', 'sPalmTree.xml', 'sPalmTreeDark.xml', 'sShrub.xml', 'sShrubDark.xml', 'sBronzeTrophy.xml', 'sChangingDoor.xml', 'sGoldTrophy.xml', 'sLevel13Sign.xml', 'sLevel5Sign.xml', 'sLevel9Sign.xml', 'sMoonDoor.xml', 'sMultiGold.xml', 'sNew.xml', 'sScoresSign.xml', 'sSilverTrophy.xml', 'sStarDoor.xml', 'sStartSign.xml', 'sSunDoor.xml', 'sTitle.xml', 'sTitleBG.xml', 'sBoulderRotateL.xml', 'sBoulderRotateR.xml', 'sGiantTikiHead.xml', 'sGTHHole.xml', 'sKaliHead1.xml', 'sKaliHead2.xml', 'sKaliHead3.xml']
+""" precise_sprites = ['sBlack.xml', 'sBlackFadeUp.xml', 'sFont.xml', 'sFontOld.xml', 'sFontSmall.xml', 'sLvl.xml', 'sRed.xml', 'sRoom.xml', 'sBarrier.xml', 'sBarrierEmitter.xml', 'sCaveBG.xml', 'sCaveBG1.xml', 'sCaveBG2.xml', 'sCaveBGEntrance.xml', 'sEntrance.xml', 'sExit.xml', 'sGoldDoor.xml', 'sMsgSign.xml', 'sDarkBottom.xml', 'sDarkFall.xml', 'sDarkLeft.xml', 'sDarkRight.xml', 'sDarkTop.xml', 'sDarkTop2.xml', 'sLeaves.xml', 'sLeavesDead.xml', 'sLeavesDeadR.xml', 'sLeavesRight.xml', 'sLeavesTop.xml', 'sTreeTop.xml', 'sTreeTopDead.xml', 'sYellHelp.xml', 'sTunnelAttackL.xml', 'sTunnelDuckL.xml', 'sBigCollect.xml', 'sBlood.xml', 'sBloodSpark.xml', 'sBloodTrail.xml', 'sBone.xml', 'sBubble.xml', 'sBullet.xml', 'sBurn.xml', 'sExplosion.xml', 'sFlame.xml', 'sFlameTrail.xml', 'sLaser.xml', 'sLaserExplode.xml', 'sLaserTrail.xml', 'sLavaDrip.xml', 'sLeaf.xml', 'sLeafStill.xml', 'sPoof.xml', 'sPsychicCreate.xml', 'sPsychicWave.xml', 'sPsychicWaveP.xml', 'sRubble.xml', 'sRubbleDark.xml', 'sRubbleDarkSmall.xml', 'sRubbleLush.xml', 'sRubbleLushSmall.xml', 'sRubbleSmall.xml', 'sRubbleTan.xml', 'sRubbleTanSmall.xml', 'sShotgunBlastLeft.xml', 'sShotgunBlastRight.xml', 'sSmallCollect.xml', 'sSmokePuff.xml', 'sSmoochHeart.xml', 'sYellowBall.xml', 'sYellowTrail.xml', 'sAlienBossDead.xml', 'sAlienBossDie.xml', 'sCaravan1.xml', 'sCaravan2.xml', 'sCaravan3.xml', 'sCaveManWorshipL.xml', 'sCavemanWorshipR.xml', 'sGhostDisappear.xml', 'sGhostLeft.xml', 'sGhostRight.xml', 'sGhostTurnLeft.xml', 'sGhostTurnRight.xml', 'sGiantSpiderDisp.xml', 'sWeb.xml', 'sWebBall.xml', 'sWebCreate.xml', 'sJawsBody1L.xml', 'sJawsBody1R.xml', 'sJawsBody2L.xml', 'sJawsBody2R.xml', 'sJawsBody3L.xml', 'sJawsBody3R.xml', 'sJawsLeft.xml', 'sJawsRight.xml', 'sJawsTurnL.xml', 'sJawsTurnR.xml', 'sMegaMouth.xml', 'sMagma.xml', 'sMagmaManCreate.xml', 'sMagmaTrail.xml', 'sManTrapEatShopkeeperL.xml', 'sManTrapEatTunnelL.xml', 'sManTrapTemp.xml', 'sMonkeyClimbL.xml', 'sMonkeyHangL.xml', 'sMonkeyJumpL.xml', 'sMonkeyLeft.xml', 'sMonkeyWalkL.xml', 'sOlmec.xml', 'sOlmecDebris.xml', 'sOlmecDebris2.xml', 'sOlmecDebris3.xml', 'sOlmecStart1.xml', 'sOlmecStart2.xml', 'sOlmecStart3.xml', 'sShopThrowL.xml', 'sFlyLeft.xml', 'sFlyRight.xml', 'sTombLordAttackL.xml', 'sTombLordAttackR.xml', 'sTombLordDisp.xml', 'sTombLordLeft.xml', 'sTombLordRight.xml', 'sTombLordTurnL.xml', 'sTombLordTurnR.xml', 'sTombLordWalkL.xml', 'sTombLordWalkR.xml', 'sArrowIcon.xml', 'sBombIcon.xml', 'sCapeIcon.xml', 'sCompassIcon.xml', 'sDamselIcon.xml', 'sDeathMask.xml', 'sDollarSign.xml', 'sGlovesIcon.xml', 'sHeart.xml', 'sHintPoint.xml', 'sHoldItemIcon.xml', 'sHoopsIcon.xml', 'sJetpackIcon.xml', 'sKapalaIcon.xml', 'sMittIcon.xml', 'sParachuteIcon.xml', 'sRopeIcon.xml', 'sShopkeeperIcon.xml', 'sSpectaclesIcon.xml', 'sSpikeShoesIcon.xml', 'sSpringShoesIcon.xml', 'sStickyBombIcon.xml', 'sTimerIcon.xml', 'sBombsGet.xml', 'sChest.xml', 'sChestOpen.xml', 'sCrate.xml', 'sCrateOpen.xml', 'sDice1.xml', 'sDice2.xml', 'sDice3.xml', 'sDice4.xml', 'sDice5.xml', 'sDice6.xml', 'sDiceRoll.xml', 'sFakeBonesLeft.xml', 'sFlareCrate.xml', 'sItemGet.xml', 'sLockedChest.xml', 'sLockedChestOpen.xml', 'sParaUsed.xml', 'sRedArrowDown.xml', 'sRopeGet.xml', 'sAnkh.xml', 'sAnkhIcon.xml', 'sBombBag.xml', 'sBombBox.xml', 'sBowDisp.xml', 'sBowLeft.xml', 'sBowRight.xml', 'sCape.xml', 'sCapeBack.xml', 'sCapeDL.xml', 'sCapeDR.xml', 'sCapeLeft.xml', 'sCapeRight.xml', 'sCapeUL.xml', 'sCapeUR.xml', 'sCompass.xml', 'sCompassDown.xml', 'sCompassLeft.xml', 'sCompassLL.xml', 'sCompassLR.xml', 'sCompassRight.xml', 'sCompassSmallDown.xml', 'sCompassSmallLeft.xml', 'sCompassSmallLL.xml', 'sCompassSmallLR.xml', 'sCompassSmallRight.xml', 'sCrown.xml', 'sCrownIcon.xml', 'sDeathMaskPickup.xml', 'sDeathMaskWear.xml', 'sGlove.xml', 'sJordans.xml', 'sKapala.xml', 'sKeyLeft.xml', 'sKeyRight.xml', 'sMacheteLeft.xml', 'sMacheteRight.xml', 'sMattockLeft.xml', 'sMattockRight.xml', 'sMitt.xml', 'sNinjaSuit.xml', 'sParachute.xml', 'sParaOpen.xml', 'sParaPickup.xml', 'sPaste.xml', 'sPistolLeft.xml', 'sPistolRight.xml', 'sRopePile.xml', 'sSceptreLeft.xml', 'sSceptreRight.xml', 'sSpectacles.xml', 'sSpikeShoes.xml', 'sSpringShoes.xml', 'sTeleporter.xml', 'sUdjatEye.xml', 'sUdjatEyeIcon.xml', 'sUdjatEyeIcon2.xml', 'sWebCannonL.xml', 'sWebCannonR.xml', 'sArrowLeft.xml', 'sArrowRight.xml', 'sBall.xml', 'sBasketball.xml', 'sBomb.xml', 'sBombArmed.xml', 'sBombArrowLeft.xml', 'sBombArrowRight.xml', 'sChain.xml', 'sDribble.xml', 'sEgg.xml', 'sFishBone.xml', 'sMachetePreL.xml', 'sMachetePreR.xml', 'sMattockHead.xml', 'sMattockHitL.xml', 'sMattockHitR.xml', 'sMattockPreL.xml', 'sMattockPreR.xml', 'sRock.xml', 'sRopeEnd.xml', 'sRopeTop.xml', 'sShotgunLeft.xml', 'sShotgunRight.xml', 'sSkull.xml', 'sSlashLeft.xml', 'sSlashRight.xml', 'sTarget.xml', 'sWhipLeft.xml', 'sWhipPreL.xml', 'sWhipPreR.xml', 'sWhipRight.xml', 'sBombBagTile.xml', 'sBombBoxTile.xml', 'sBombPasteTile.xml', 'sBowTile.xml', 'sCapeTile.xml', 'sChestTile.xml', 'sCompassTile.xml', 'sCrateTile.xml', 'sGlovesTile.xml', 'sMacheteTile.xml', 'sMattockTile.xml', 'sMegaMouthTile.xml', 'sMittTile.xml', 'sParachuteTile.xml', 'sPistolTile.xml', 'sRockTile.xml', 'sRopePileTile.xml', 'sShotgunTile.xml', 'sSpectaclesTile.xml', 'sSpikeShoesTile.xml', 'sSpringShoesTile.xml', 'sTeleporterTile.xml', 'sWebCannonTile.xml', 'sWebTile.xml', 'sMushroom1.xml', 'sMushroom2.xml', 'sMushroom3.xml', 'sMushroom4.xml', 'sMushroom5.xml', 'sMushroom6.xml', 'sMushroom7.xml', 'sMushroom8.xml', 'sBasket.xml', 'sBasketSwoosh.xml', 'sEditButton.xml', 'sEditButtonPressed.xml', 'sJoyConfigButton.xml', 'sJoyConfigButtonPressed.xml', 'sKeyConfigButton.xml', 'sKeyConfigButtonPressed.xml', 'sLoadButton.xml', 'sLoadButtonPressed.xml', 'sMenuBottom.xml', 'sMenuLeft.xml', 'sMenuLL.xml', 'sMenuLR.xml', 'sMenuRight.xml', 'sMenuSelOff.xml', 'sMenuSelOn.xml', 'sMenuTop.xml', 'sMenuUL.xml', 'sMenuUR.xml', 'sNewButton.xml', 'sNewButtonPressed.xml', 'sOKButton.xml', 'sOKButtonPressed.xml', 'sPageDown.xml', 'sPageUp.xml', 'sRimDeflect.xml', 'sTestButton.xml', 'sTestButtonPressed.xml', 'sBigChest.xml', 'sBigChestOpen.xml', 'sBigTreasure.xml', 'sEnd2BG.xml', 'sEndWall.xml', 'sLavaSpray.xml', 'sPlayerSil.xml', 'sprite1112.xml', 'sTreasureSil.xml', 'sVolcanoFlame.xml', 'sBGEnd3.xml', 'sCamel.xml', 'sCamelDamsel.xml', 'sCamelTunnel.xml', 'sDesert.xml', 'sDesert2.xml', 'sDesertNight.xml', 'sDesertNight2.xml', 'sDesertTop.xml', 'sDesertTopNight.xml', 'sFlare.xml', 'sFlareSpark.xml', 'sIntroBG.xml', 'sMoon.xml', 'sPalmTree.xml', 'sPalmTreeDark.xml', 'sShrub.xml', 'sShrubDark.xml', 'sBronzeTrophy.xml', 'sChangingDoor.xml', 'sGoldTrophy.xml', 'sLevel13Sign.xml', 'sLevel5Sign.xml', 'sLevel9Sign.xml', 'sMoonDoor.xml', 'sMultiGold.xml', 'sNew.xml', 'sScoresSign.xml', 'sSilverTrophy.xml', 'sStarDoor.xml', 'sStartSign.xml', 'sSunDoor.xml', 'sTitle.xml', 'sTitleBG.xml', 'sBoulderRotateL.xml', 'sBoulderRotateR.xml', 'sGiantTikiHead.xml', 'sGTHHole.xml', 'sKaliHead1.xml', 'sKaliHead2.xml', 'sKaliHead3.xml']
 
 all_precise_sprites_info = ""
 for sprite in precise_sprites:
@@ -128,6 +174,7 @@ for sprite in precise_sprites:
     
     all_points += str(dict)
     print(handle_word(sprite, 's') + " = " + str(all_points))
-    all_precise_sprites_info += "\"" + handle_word(sprite, 's') + "\"" + " : " + str(all_points) + ",\n"
+    all_precise_sprites_info += "\"" + handle_word(sprite, 's') + "\"" + " : " + str(all_points) + ",\n" """
 
-pyperclip.copy(all_precise_sprites_info)
+#pyperclip.copy(all_precise_sprites_info)
+pyperclip.copy(all_rectangle_sprites_info)

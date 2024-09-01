@@ -1,0 +1,14 @@
+Things to go back and do
+
+- Finish snap? GML function ---DONE
+- Do parent scripts (like Item) and make sure they're running where they should
+- Make sure TileMap objects get collision
+- Have collision account for size properly
+- Make a global script for holding every object so they can be instanced in wherever
+- Check each object so far to see if it needs to run create or step events of parent
+- Finish debug functions that were there for an object (oGame?)
+- Implement instance_place
+- See if it's possible to get an error when setting an animation that doesn't exist
+- See if it's possible to set default AnimatedSprite2D animations to 30 fps
+- Finish screen object
+- Account for origin in sprite setup
