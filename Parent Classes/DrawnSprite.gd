@@ -214,6 +214,7 @@ func object_setup(node):
 	var object_entry = object_database[object_name]
 	
 	depth_setup(object_entry)
+	bounding_box_setup(object_entry)
 	
 func depth_setup(object_entry):
 	var object_depth = object_entry["depth"]
@@ -225,6 +226,9 @@ func depth_setup(object_entry):
 		converted_depth = -4000
 	
 	depth = converted_depth
+
+func bounding_box_setup(object_entry):
+	pass
 
 func object_tick(node):
 	pass
