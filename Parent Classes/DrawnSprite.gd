@@ -253,23 +253,24 @@ func sprite_setup(object_entry):
 			var sprite_frames = SpriteFrames.new()
 			sprite_frames.add_animation(sprite_to_add)
 			sprite_frames.set_animation_speed(sprite_to_add, 30)
-			sprite_frames.set_animation_loop(sprite_to_add, false)
+			sprite_frames.set_animation_loop(sprite_to_add, true)
 			sprite_frames.remove_animation("default")			
 		
 			var files = DirAccess.get_files_at(sprite_folder_path)
-			print(files)
 			for file in files:
 				if file.get_extension() == "png":
+					print(file)
 					var sprite_texture = load(sprite_folder_path + "/" + file)
 					sprite_frames.add_frame(sprite_to_add, sprite_texture)
 			
 			new_animated_sprite.sprite_frames = sprite_frames
-			add_child(new_animated_sprite)
 			new_animated_sprite.name = "AnimatedSprite2D"
 			new_animated_sprite.centered = false
 			new_animated_sprite.z_as_relative = false
 			new_animated_sprite.z_index = depth
 			new_animated_sprite.add_to_group("animated_sprite", true)
+			add_child(new_animated_sprite)
+			new_animated_sprite.play(sprite_to_add)
 
 func object_tick():
 	pass

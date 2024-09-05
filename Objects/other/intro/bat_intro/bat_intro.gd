@@ -7,10 +7,11 @@ func initial_setup():
 	#--- set depth
 	depth = 0
 	z_index = depth
-	$Node/AnimatedSprite2D.play("bat_left")
+	#$AnimatedSprite2D.play("bat_left")
 
 func _ready():
 	initial_setup()
+	object_setup()
 
 	status = 0
 	x_vel = 0
@@ -36,5 +37,5 @@ func _physics_process(delta):
 			y_acc = -randf_range(0, (1)) * 0.2
 			Audio.play_sound(global.snd_bat)
 
-func _process(delta):
-	smooth_animated_sprite_movement(x_velocity, y_velocity, delta)
+#func _process(delta):
+	#smooth_animated_sprite_movement(x_velocity, y_velocity, delta)

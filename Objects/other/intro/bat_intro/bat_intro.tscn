@@ -24,12 +24,14 @@ animations = [{
 
 [node name="BatIntro" type="Node2D" groups=["bat_intro"]]
 script = ExtResource("1_wsyfv")
+object_name = "bat_intro"
 
-[node name="Node" type="Node" parent="."]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node"]
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
+visible = false
 z_as_relative = false
 sprite_frames = SubResource("SpriteFrames_xyr5v")
 animation = &"bat_left"
 frame_progress = 0.430518
 centered = false
+
+[node name="Node" type="Node" parent="."]
