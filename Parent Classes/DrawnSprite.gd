@@ -228,7 +228,11 @@ func depth_setup(object_entry):
 	depth = converted_depth
 
 func bounding_box_setup(object_entry):
-	pass
+	object_size = object_entry["mask"]["bounding_box"][1]
+	
+	# --- Above code will not work. Base this on the sprite instead. Check to see if the node has an AnimatedSprite2D. (If not, set bounding box to Vector2(0, 0).)
+	#--- If it does, get the name of the current animation.
+	#--- Check this animation in the sprite database dictionary to get the size for the bounding box.
 
 func object_tick(node):
 	pass

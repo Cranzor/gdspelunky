@@ -1,5 +1,5 @@
-class_name Sprites
 extends Resource
+class_name Sprites
 
 const sprite_database = {
 	"black" : {
@@ -15,7 +15,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/black"
 	},
 	"black_fade_up" : {
 		"origin" : Vector2(0, 0),
@@ -30,7 +31,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/black_fade_up"
 	},
 	"font" : {
 		"origin" : Vector2(0, 0),
@@ -103,7 +105,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/font"
 	},
 	"font_old" : {
 		"origin" : Vector2(0, 0),
@@ -127,7 +130,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/font_old"
 	},
 	"font_small" : {
 		"origin" : Vector2(0, 0),
@@ -200,7 +204,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/font_small"
 	},
 	"lvl" : {
 		"origin" : Vector2(0, 0),
@@ -215,7 +220,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/lvl"
 	},
 	"red" : {
 		"origin" : Vector2(0, 0),
@@ -230,7 +236,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/red"
 	},
 	"room" : {
 		"origin" : Vector2(0, 0),
@@ -245,7 +252,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/room"
 	},
 	"metal_block" : {
 		"origin" : Vector2(0, 0),
@@ -258,7 +266,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/metal_block"
 	},
 	"metal_door" : {
 		"origin" : Vector2(0, 0),
@@ -271,7 +280,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/metal_door"
 	},
 	"alien_floor" : {
 		"origin" : Vector2(0, 0),
@@ -284,7 +294,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/alien/alien_floor"
 	},
 	"alien_front" : {
 		"origin" : Vector2(0, 0),
@@ -297,7 +308,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/alien/alien_front"
 	},
 	"alien_front2" : {
 		"origin" : Vector2(0, 0),
@@ -310,7 +322,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/alien/alien_front2"
 	},
 	"alien_front3" : {
 		"origin" : Vector2(0, 0),
@@ -323,7 +336,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/alien/alien_front3"
 	},
 	"alien_top" : {
 		"origin" : Vector2(0, 0),
@@ -336,7 +350,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/alien/alien_top"
 	},
 	"barrier" : {
 		"origin" : Vector2(0, 0),
@@ -353,7 +368,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/blocks/alien/barrier"
 	},
 	"barrier_emitter" : {
 		"origin" : Vector2(0, 0),
@@ -378,7 +394,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/blocks/alien/barrier_emitter"
 	},
 	"altar_left" : {
 		"origin" : Vector2(0, 0),
@@ -391,7 +408,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/altars/altar_left"
 	},
 	"altar_right" : {
 		"origin" : Vector2(0, 0),
@@ -404,7 +422,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/altars/altar_right"
 	},
 	"sac_altar" : {
 		"origin" : Vector2(0, 0),
@@ -417,7 +436,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/altars/sac_altar"
 	},
 	"sac_altar_left" : {
 		"origin" : Vector2(0, 0),
@@ -430,7 +450,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/altars/sac_altar_left"
 	},
 	"sac_altar_right" : {
 		"origin" : Vector2(0, 0),
@@ -443,7 +464,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/altars/sac_altar_right"
 	},
 	"skull_block" : {
 		"origin" : Vector2(0, 0),
@@ -456,7 +478,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/altars/skull_block"
 	},
 	"cave_bg" : {
 		"origin" : Vector2(0, 0),
@@ -471,7 +494,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/background/cave_bg"
 	},
 	"cave_bg1" : {
 		"origin" : Vector2(0, 0),
@@ -486,7 +510,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/background/cave_bg1"
 	},
 	"cave_bg2" : {
 		"origin" : Vector2(0, 0),
@@ -501,7 +526,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/background/cave_bg2"
 	},
 	"cave_bg_entrance" : {
 		"origin" : Vector2(0, 0),
@@ -516,7 +542,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/background/cave_bg_entrance"
 	},
 	"entrance" : {
 		"origin" : Vector2(0, 0),
@@ -531,7 +558,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/background/entrance"
 	},
 	"exit" : {
 		"origin" : Vector2(0, 0),
@@ -546,7 +574,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/background/exit"
 	},
 	"gold_door" : {
 		"origin" : Vector2(0, 0),
@@ -561,7 +590,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/background/gold_door"
 	},
 	"msg_sign" : {
 		"origin" : Vector2(0, 0),
@@ -576,7 +606,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/background/msg_sign"
 	},
 	"dark" : {
 		"origin" : Vector2(0, 0),
@@ -589,7 +620,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/dark/dark"
 	},
 	"dark_bottom" : {
 		"origin" : Vector2(0, 0),
@@ -604,7 +636,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/dark/dark_bottom"
 	},
 	"dark_down" : {
 		"origin" : Vector2(0, 0),
@@ -617,7 +650,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/dark/dark_down"
 	},
 	"dark_fall" : {
 		"origin" : Vector2(0, 0),
@@ -632,7 +666,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/dark/dark_fall"
 	},
 	"dark_gold" : {
 		"origin" : Vector2(0, 0),
@@ -645,7 +680,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/dark/dark_gold"
 	},
 	"dark_gold_big" : {
 		"origin" : Vector2(0, 0),
@@ -658,7 +694,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/dark/dark_gold_big"
 	},
 	"dark_left" : {
 		"origin" : Vector2(0, 0),
@@ -673,7 +710,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/dark/dark_left"
 	},
 	"dark_plat" : {
 		"origin" : Vector2(0, 0),
@@ -686,7 +724,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/dark/dark_plat"
 	},
 	"dark_right" : {
 		"origin" : Vector2(0, 0),
@@ -701,7 +740,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/dark/dark_right"
 	},
 	"dark_smooth" : {
 		"origin" : Vector2(0, 0),
@@ -714,7 +754,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/dark/dark_smooth"
 	},
 	"dark_top" : {
 		"origin" : Vector2(0, 0),
@@ -729,7 +770,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/dark/dark_top"
 	},
 	"dark_top2" : {
 		"origin" : Vector2(0, 0),
@@ -744,7 +786,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/dark/dark_top2"
 	},
 	"dark_up" : {
 		"origin" : Vector2(0, 0),
@@ -757,7 +800,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/dark/dark_up"
 	},
 	"dark_up2" : {
 		"origin" : Vector2(0, 0),
@@ -770,7 +814,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/dark/dark_up2"
 	},
 	"ice" : {
 		"origin" : Vector2(0, 0),
@@ -783,7 +828,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/dark/ice"
 	},
 	"ice_block" : {
 		"origin" : Vector2(0, 0),
@@ -796,7 +842,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/dark/ice_block"
 	},
 	"ice_bottom" : {
 		"origin" : Vector2(0, 0),
@@ -809,7 +856,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/dark/ice_bottom"
 	},
 	"ice_bottom2" : {
 		"origin" : Vector2(0, 0),
@@ -822,7 +870,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/dark/ice_bottom2"
 	},
 	"ice_caveman" : {
 		"origin" : Vector2(0, 0),
@@ -835,7 +884,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/dark/ice_caveman"
 	},
 	"ice_dl" : {
 		"origin" : Vector2(0, 0),
@@ -848,7 +898,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/dark/ice_dl"
 	},
 	"ice_dlr" : {
 		"origin" : Vector2(0, 0),
@@ -861,7 +912,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/dark/ice_dlr"
 	},
 	"ice_down" : {
 		"origin" : Vector2(0, 0),
@@ -874,7 +926,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/dark/ice_down"
 	},
 	"ice_dr" : {
 		"origin" : Vector2(0, 0),
@@ -887,7 +940,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/dark/ice_dr"
 	},
 	"ice_left" : {
 		"origin" : Vector2(0, 0),
@@ -900,7 +954,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/dark/ice_left"
 	},
 	"ice_lr" : {
 		"origin" : Vector2(0, 0),
@@ -913,7 +968,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/dark/ice_lr"
 	},
 	"ice_right" : {
 		"origin" : Vector2(0, 0),
@@ -926,7 +982,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/dark/ice_right"
 	},
 	"ice_udl" : {
 		"origin" : Vector2(0, 0),
@@ -939,7 +996,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/dark/ice_udl"
 	},
 	"ice_udr" : {
 		"origin" : Vector2(0, 0),
@@ -952,7 +1010,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/dark/ice_udr"
 	},
 	"ice_ul" : {
 		"origin" : Vector2(0, 0),
@@ -965,7 +1024,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/dark/ice_ul"
 	},
 	"ice_ulr" : {
 		"origin" : Vector2(0, 0),
@@ -978,7 +1038,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/dark/ice_ulr"
 	},
 	"ice_up" : {
 		"origin" : Vector2(0, 0),
@@ -991,7 +1052,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/dark/ice_up"
 	},
 	"ice_up2" : {
 		"origin" : Vector2(0, 0),
@@ -1004,7 +1066,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/dark/ice_up2"
 	},
 	"ice_ur" : {
 		"origin" : Vector2(0, 0),
@@ -1017,7 +1080,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/dark/ice_ur"
 	},
 	"moai" : {
 		"origin" : Vector2(0, 0),
@@ -1030,7 +1094,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/dark/moai"
 	},
 	"moai2" : {
 		"origin" : Vector2(0, 0),
@@ -1043,7 +1108,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/dark/moai2"
 	},
 	"moai3" : {
 		"origin" : Vector2(0, 0),
@@ -1056,7 +1122,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/dark/moai3"
 	},
 	"moai_inside" : {
 		"origin" : Vector2(0, 0),
@@ -1069,7 +1136,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/dark/moai_inside"
 	},
 	"thin_ice1" : {
 		"origin" : Vector2(0, 0),
@@ -1082,7 +1150,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/dark/thin_ice1"
 	},
 	"thin_ice2" : {
 		"origin" : Vector2(0, 0),
@@ -1095,7 +1164,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/dark/thin_ice2"
 	},
 	"thin_ice3" : {
 		"origin" : Vector2(0, 0),
@@ -1108,7 +1178,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/dark/thin_ice3"
 	},
 	"thin_ice4" : {
 		"origin" : Vector2(0, 0),
@@ -1121,7 +1192,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/dark/thin_ice4"
 	},
 	"thin_ice5" : {
 		"origin" : Vector2(0, 0),
@@ -1134,7 +1206,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/dark/thin_ice5"
 	},
 	"thin_ice6" : {
 		"origin" : Vector2(0, 0),
@@ -1147,7 +1220,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/dark/thin_ice6"
 	},
 	"gold" : {
 		"origin" : Vector2(0, 0),
@@ -1160,7 +1234,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/gold/gold"
 	},
 	"gold_big" : {
 		"origin" : Vector2(0, 0),
@@ -1173,7 +1248,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/gold/gold_big"
 	},
 	"gold_block" : {
 		"origin" : Vector2(0, 0),
@@ -1186,7 +1262,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/gold/gold_block"
 	},
 	"lady_xoc" : {
 		"origin" : Vector2(0, 0),
@@ -1199,7 +1276,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/gold/lady_xoc"
 	},
 	"grave" : {
 		"origin" : Vector2(0, 0),
@@ -1212,7 +1290,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/graves/grave"
 	},
 	"grave2" : {
 		"origin" : Vector2(0, 0),
@@ -1225,7 +1304,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/graves/grave2"
 	},
 	"grave3" : {
 		"origin" : Vector2(0, 0),
@@ -1238,7 +1318,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/graves/grave3"
 	},
 	"grave4" : {
 		"origin" : Vector2(0, 0),
@@ -1251,7 +1332,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/graves/grave4"
 	},
 	"grave5" : {
 		"origin" : Vector2(0, 0),
@@ -1264,7 +1346,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/graves/grave5"
 	},
 	"grave6" : {
 		"origin" : Vector2(0, 0),
@@ -1277,7 +1360,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/graves/grave6"
 	},
 	"grave_ash" : {
 		"origin" : Vector2(0, 0),
@@ -1290,7 +1374,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/graves/grave_ash"
 	},
 	"ladder" : {
 		"origin" : Vector2(0, 0),
@@ -1303,7 +1388,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/ladders/ladder"
 	},
 	"ladder_top" : {
 		"origin" : Vector2(0, 0),
@@ -1316,7 +1402,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/ladders/ladder_top"
 	},
 	"vine" : {
 		"origin" : Vector2(0, 0),
@@ -1329,7 +1416,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/ladders/vine"
 	},
 	"vine_bottom" : {
 		"origin" : Vector2(0, 0),
@@ -1342,7 +1430,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/ladders/vine_bottom"
 	},
 	"vine_source" : {
 		"origin" : Vector2(0, 0),
@@ -1355,7 +1444,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/ladders/vine_source"
 	},
 	"vine_top" : {
 		"origin" : Vector2(0, 0),
@@ -1368,7 +1458,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/ladders/vine_top"
 	},
 	"leaves" : {
 		"origin" : Vector2(0, 0),
@@ -1383,7 +1474,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/lush/leaves"
 	},
 	"leaves_dead" : {
 		"origin" : Vector2(0, 0),
@@ -1398,7 +1490,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/lush/leaves_dead"
 	},
 	"leaves_dead_r" : {
 		"origin" : Vector2(0, 0),
@@ -1413,7 +1506,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/lush/leaves_dead_r"
 	},
 	"leaves_right" : {
 		"origin" : Vector2(0, 0),
@@ -1428,7 +1522,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/lush/leaves_right"
 	},
 	"leaves_top" : {
 		"origin" : Vector2(0, 0),
@@ -1443,7 +1538,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/lush/leaves_top"
 	},
 	"lush" : {
 		"origin" : Vector2(0, 0),
@@ -1456,7 +1552,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/lush/lush"
 	},
 	"lush_bottom" : {
 		"origin" : Vector2(0, 0),
@@ -1469,7 +1566,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/lush/lush_bottom"
 	},
 	"lush_bottom2" : {
 		"origin" : Vector2(0, 0),
@@ -1482,7 +1580,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/lush/lush_bottom2"
 	},
 	"lush_down" : {
 		"origin" : Vector2(0, 0),
@@ -1495,7 +1594,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/lush/lush_down"
 	},
 	"lush_gold" : {
 		"origin" : Vector2(0, 0),
@@ -1508,7 +1608,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/lush/lush_gold"
 	},
 	"lush_gold_big" : {
 		"origin" : Vector2(0, 0),
@@ -1521,7 +1622,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/lush/lush_gold_big"
 	},
 	"lush_left" : {
 		"origin" : Vector2(0, 0),
@@ -1534,7 +1636,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/lush/lush_left"
 	},
 	"lush_right" : {
 		"origin" : Vector2(0, 0),
@@ -1547,7 +1650,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/lush/lush_right"
 	},
 	"lush_smooth" : {
 		"origin" : Vector2(0, 0),
@@ -1560,7 +1664,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/lush/lush_smooth"
 	},
 	"lush_top" : {
 		"origin" : Vector2(0, 0),
@@ -1573,7 +1678,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/lush/lush_top"
 	},
 	"lush_top2" : {
 		"origin" : Vector2(0, 0),
@@ -1586,7 +1692,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/lush/lush_top2"
 	},
 	"lush_up" : {
 		"origin" : Vector2(0, 0),
@@ -1599,7 +1706,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/lush/lush_up"
 	},
 	"lush_up2" : {
 		"origin" : Vector2(0, 0),
@@ -1612,7 +1720,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/lush/lush_up2"
 	},
 	"lush_up3" : {
 		"origin" : Vector2(0, 0),
@@ -1625,7 +1734,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/lush/lush_up3"
 	},
 	"tiki_torch" : {
 		"origin" : Vector2(0, 0),
@@ -1638,7 +1748,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/lush/tiki_torch"
 	},
 	"tree_branch_dead_l" : {
 		"origin" : Vector2(0, 0),
@@ -1651,7 +1762,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/lush/tree_branch_dead_l"
 	},
 	"tree_branch_dead_r" : {
 		"origin" : Vector2(0, 0),
@@ -1664,7 +1776,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/lush/tree_branch_dead_r"
 	},
 	"tree_branch_left" : {
 		"origin" : Vector2(0, 0),
@@ -1677,7 +1790,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/lush/tree_branch_left"
 	},
 	"tree_branch_right" : {
 		"origin" : Vector2(0, 0),
@@ -1690,7 +1804,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/lush/tree_branch_right"
 	},
 	"tree_top" : {
 		"origin" : Vector2(0, 0),
@@ -1705,7 +1820,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/lush/tree_top"
 	},
 	"tree_top_dead" : {
 		"origin" : Vector2(0, 0),
@@ -1720,7 +1836,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/lush/tree_top_dead"
 	},
 	"tree_trunk" : {
 		"origin" : Vector2(0, 0),
@@ -1733,7 +1850,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/lush/tree_trunk"
 	},
 	"block" : {
 		"origin" : Vector2(0, 0),
@@ -1746,7 +1864,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/mines/block"
 	},
 	"brick" : {
 		"origin" : Vector2(0, 0),
@@ -1759,7 +1878,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/mines/brick"
 	},
 	"brick2" : {
 		"origin" : Vector2(0, 0),
@@ -1772,7 +1892,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/mines/brick2"
 	},
 	"brick_down" : {
 		"origin" : Vector2(0, 0),
@@ -1785,7 +1906,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/mines/brick_down"
 	},
 	"brick_gold" : {
 		"origin" : Vector2(0, 0),
@@ -1798,7 +1920,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/mines/brick_gold"
 	},
 	"brick_gold_big" : {
 		"origin" : Vector2(0, 0),
@@ -1811,7 +1934,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/mines/brick_gold_big"
 	},
 	"cave_bottom" : {
 		"origin" : Vector2(0, 0),
@@ -1824,7 +1948,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/mines/cave_bottom"
 	},
 	"cave_bottom_l" : {
 		"origin" : Vector2(0, 0),
@@ -1837,7 +1962,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/mines/cave_bottom_l"
 	},
 	"cave_bottom_r" : {
 		"origin" : Vector2(0, 0),
@@ -1850,7 +1976,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/mines/cave_bottom_r"
 	},
 	"cave_left" : {
 		"origin" : Vector2(0, 0),
@@ -1863,7 +1990,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/mines/cave_left"
 	},
 	"cave_right" : {
 		"origin" : Vector2(0, 0),
@@ -1876,7 +2004,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/mines/cave_right"
 	},
 	"cave_smooth" : {
 		"origin" : Vector2(0, 0),
@@ -1889,7 +2018,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/mines/cave_smooth"
 	},
 	"cave_top" : {
 		"origin" : Vector2(0, 0),
@@ -1902,7 +2032,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/mines/cave_top"
 	},
 	"cave_top2" : {
 		"origin" : Vector2(0, 0),
@@ -1915,7 +2046,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/mines/cave_top2"
 	},
 	"cave_up" : {
 		"origin" : Vector2(0, 0),
@@ -1928,7 +2060,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/mines/cave_up"
 	},
 	"cave_up2" : {
 		"origin" : Vector2(0, 0),
@@ -1941,7 +2074,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/mines/cave_up2"
 	},
 	"lamp" : {
 		"origin" : Vector2(0, 0),
@@ -1954,7 +2088,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/shop/lamp"
 	},
 	"lamp_red" : {
 		"origin" : Vector2(0, 0),
@@ -1967,7 +2102,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/shop/lamp_red"
 	},
 	"sign" : {
 		"origin" : Vector2(0, 0),
@@ -1980,7 +2116,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/shop/sign"
 	},
 	"sign_bomb" : {
 		"origin" : Vector2(0, 0),
@@ -1993,7 +2130,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/shop/sign_bomb"
 	},
 	"sign_clothing" : {
 		"origin" : Vector2(0, 0),
@@ -2006,7 +2144,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/shop/sign_clothing"
 	},
 	"sign_craps" : {
 		"origin" : Vector2(0, 0),
@@ -2019,7 +2158,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/shop/sign_craps"
 	},
 	"sign_general" : {
 		"origin" : Vector2(0, 0),
@@ -2032,7 +2172,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/shop/sign_general"
 	},
 	"sign_kissing" : {
 		"origin" : Vector2(0, 0),
@@ -2045,7 +2186,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/shop/sign_kissing"
 	},
 	"sign_rare" : {
 		"origin" : Vector2(0, 0),
@@ -2058,7 +2200,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/shop/sign_rare"
 	},
 	"sign_weapon" : {
 		"origin" : Vector2(0, 0),
@@ -2071,7 +2214,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/shop/sign_weapon"
 	},
 	"button" : {
 		"origin" : Vector2(0, 0),
@@ -2084,7 +2228,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/temple/button"
 	},
 	"button_pushed" : {
 		"origin" : Vector2(0, 0),
@@ -2097,7 +2242,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/temple/button_pushed"
 	},
 	"g_temple" : {
 		"origin" : Vector2(0, 0),
@@ -2110,7 +2256,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/temple/g_temple"
 	},
 	"g_temple_down" : {
 		"origin" : Vector2(0, 0),
@@ -2123,7 +2270,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/temple/g_temple_down"
 	},
 	"g_temple_up" : {
 		"origin" : Vector2(0, 0),
@@ -2136,7 +2284,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/temple/g_temple_up"
 	},
 	"g_temple_up2" : {
 		"origin" : Vector2(0, 0),
@@ -2149,7 +2298,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/temple/g_temple_up2"
 	},
 	"g_temple_up3" : {
 		"origin" : Vector2(0, 0),
@@ -2162,7 +2312,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/temple/g_temple_up3"
 	},
 	"g_temple_up4" : {
 		"origin" : Vector2(0, 0),
@@ -2175,7 +2326,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/temple/g_temple_up4"
 	},
 	"g_temple_up5" : {
 		"origin" : Vector2(0, 0),
@@ -2188,7 +2340,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/temple/g_temple_up5"
 	},
 	"g_temple_up6" : {
 		"origin" : Vector2(0, 0),
@@ -2201,7 +2354,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/temple/g_temple_up6"
 	},
 	"g_temple_up7" : {
 		"origin" : Vector2(0, 0),
@@ -2214,7 +2368,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/temple/g_temple_up7"
 	},
 	"g_temple_up8" : {
 		"origin" : Vector2(0, 0),
@@ -2227,7 +2382,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/temple/g_temple_up8"
 	},
 	"temple" : {
 		"origin" : Vector2(0, 0),
@@ -2240,7 +2396,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/temple/temple"
 	},
 	"temple_bottom" : {
 		"origin" : Vector2(0, 0),
@@ -2253,7 +2410,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/temple/temple_bottom"
 	},
 	"temple_down" : {
 		"origin" : Vector2(0, 0),
@@ -2266,7 +2424,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/temple/temple_down"
 	},
 	"temple_gold" : {
 		"origin" : Vector2(0, 0),
@@ -2279,7 +2438,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/temple/temple_gold"
 	},
 	"temple_gold_big" : {
 		"origin" : Vector2(0, 0),
@@ -2292,7 +2452,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/temple/temple_gold_big"
 	},
 	"temple_left" : {
 		"origin" : Vector2(0, 0),
@@ -2305,7 +2466,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/temple/temple_left"
 	},
 	"temple_right" : {
 		"origin" : Vector2(0, 0),
@@ -2318,7 +2480,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/temple/temple_right"
 	},
 	"temple_top" : {
 		"origin" : Vector2(0, 0),
@@ -2331,7 +2494,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/temple/temple_top"
 	},
 	"temple_top2" : {
 		"origin" : Vector2(0, 0),
@@ -2344,7 +2508,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/temple/temple_top2"
 	},
 	"temple_up" : {
 		"origin" : Vector2(0, 0),
@@ -2357,7 +2522,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/temple/temple_up"
 	},
 	"temple_up2" : {
 		"origin" : Vector2(0, 0),
@@ -2370,7 +2536,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/temple/temple_up2"
 	},
 	"temple_up3" : {
 		"origin" : Vector2(0, 0),
@@ -2383,7 +2550,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/temple/temple_up3"
 	},
 	"temple_up4" : {
 		"origin" : Vector2(0, 0),
@@ -2396,7 +2564,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/temple/temple_up4"
 	},
 	"temple_up5" : {
 		"origin" : Vector2(0, 0),
@@ -2409,7 +2578,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/temple/temple_up5"
 	},
 	"temple_up6" : {
 		"origin" : Vector2(0, 0),
@@ -2422,7 +2592,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/temple/temple_up6"
 	},
 	"temple_up7" : {
 		"origin" : Vector2(0, 0),
@@ -2435,7 +2606,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/temple/temple_up7"
 	},
 	"temple_up8" : {
 		"origin" : Vector2(0, 0),
@@ -2448,7 +2620,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/temple/temple_up8"
 	},
 	"lava" : {
 		"origin" : Vector2(0, 0),
@@ -2461,7 +2634,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/water/lava"
 	},
 	"lava_top" : {
 		"origin" : Vector2(0, 0),
@@ -2474,7 +2648,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/water/lava_top"
 	},
 	"water" : {
 		"origin" : Vector2(0, 0),
@@ -2487,7 +2662,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/water/water"
 	},
 	"water_bottom" : {
 		"origin" : Vector2(0, 0),
@@ -2500,7 +2676,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/water/water_bottom"
 	},
 	"water_bottom2" : {
 		"origin" : Vector2(0, 0),
@@ -2513,7 +2690,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/water/water_bottom2"
 	},
 	"water_bottom3" : {
 		"origin" : Vector2(0, 0),
@@ -2526,7 +2704,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/water/water_bottom3"
 	},
 	"water_bottom4" : {
 		"origin" : Vector2(0, 0),
@@ -2539,7 +2718,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/water/water_bottom4"
 	},
 	"water_bottom_tall1" : {
 		"origin" : Vector2(0, 0),
@@ -2552,7 +2732,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/water/water_bottom_tall1"
 	},
 	"water_bottom_tall2" : {
 		"origin" : Vector2(0, 0),
@@ -2565,7 +2746,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/water/water_bottom_tall2"
 	},
 	"water_top" : {
 		"origin" : Vector2(0, 0),
@@ -2578,7 +2760,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/blocks/water/water_top"
 	},
 	"tunnel_man_left" : {
 		"origin" : Vector2(8, 8),
@@ -2591,7 +2774,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/tunnel_man_left"
 	},
 	"tunnel_man_right" : {
 		"origin" : Vector2(8, 8),
@@ -2604,7 +2788,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/tunnel_man_right"
 	},
 	"yell_help" : {
 		"origin" : Vector2(8, 8),
@@ -2619,7 +2804,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/yell_help"
 	},
 	"damsel_attack_l" : {
 		"origin" : Vector2(8, 8),
@@ -2632,7 +2818,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/damsel/damsel_attack_l"
 	},
 	"damsel_bounce_l" : {
 		"origin" : Vector2(8, 8),
@@ -2645,7 +2832,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/damsel/damsel_bounce_l"
 	},
 	"damsel_climb" : {
 		"origin" : Vector2(8, 8),
@@ -2658,7 +2846,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/damsel/damsel_climb"
 	},
 	"damsel_climb2" : {
 		"origin" : Vector2(8, 16),
@@ -2671,7 +2860,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/damsel/damsel_climb2"
 	},
 	"damsel_climb3" : {
 		"origin" : Vector2(8, 16),
@@ -2684,7 +2874,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/damsel/damsel_climb3"
 	},
 	"damsel_crawl_l" : {
 		"origin" : Vector2(8, 8),
@@ -2697,7 +2888,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/damsel/damsel_crawl_l"
 	},
 	"damsel_die_l" : {
 		"origin" : Vector2(8, 8),
@@ -2710,7 +2902,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/damsel/damsel_die_l"
 	},
 	"damsel_die_ll" : {
 		"origin" : Vector2(8, 8),
@@ -2723,7 +2916,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/damsel/damsel_die_ll"
 	},
 	"damsel_die_lr" : {
 		"origin" : Vector2(8, 8),
@@ -2736,7 +2930,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/damsel/damsel_die_lr"
 	},
 	"damsel_dt_hl" : {
 		"origin" : Vector2(24, 8),
@@ -2749,7 +2944,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/damsel/damsel_dt_hl"
 	},
 	"damsel_duck_l" : {
 		"origin" : Vector2(8, 8),
@@ -2762,7 +2958,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/damsel/damsel_duck_l"
 	},
 	"damsel_exit" : {
 		"origin" : Vector2(8, 8),
@@ -2775,7 +2972,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/damsel/damsel_exit"
 	},
 	"damsel_exit2" : {
 		"origin" : Vector2(8, 8),
@@ -2788,7 +2986,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/damsel/damsel_exit2"
 	},
 	"damsel_fall_l" : {
 		"origin" : Vector2(8, 8),
@@ -2801,7 +3000,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/damsel/damsel_fall_l"
 	},
 	"damsel_hang_l" : {
 		"origin" : Vector2(8, 8),
@@ -2814,7 +3014,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/damsel/damsel_hang_l"
 	},
 	"damsel_hold_l" : {
 		"origin" : Vector2(8, 8),
@@ -2827,7 +3028,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/damsel/damsel_hold_l"
 	},
 	"damsel_kiss_l" : {
 		"origin" : Vector2(8, 8),
@@ -2840,7 +3042,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/damsel/damsel_kiss_l"
 	},
 	"damsel_kiss_r" : {
 		"origin" : Vector2(8, 8),
@@ -2853,7 +3056,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/damsel/damsel_kiss_r"
 	},
 	"damsel_left" : {
 		"origin" : Vector2(8, 8),
@@ -2866,7 +3070,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/damsel/damsel_left"
 	},
 	"damsel_left_ico" : {
 		"origin" : Vector2(0, 0),
@@ -2879,7 +3084,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/damsel/damsel_left_ico"
 	},
 	"damsel_look_l" : {
 		"origin" : Vector2(8, 8),
@@ -2892,7 +3098,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/damsel/damsel_look_l"
 	},
 	"damsel_push_l" : {
 		"origin" : Vector2(8, 8),
@@ -2905,7 +3112,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/damsel/damsel_push_l"
 	},
 	"damsel_run_l" : {
 		"origin" : Vector2(8, 8),
@@ -2918,7 +3126,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/damsel/damsel_run_l"
 	},
 	"damsel_stun_l" : {
 		"origin" : Vector2(8, 8),
@@ -2931,7 +3140,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/damsel/damsel_stun_l"
 	},
 	"damsel_whoa_l" : {
 		"origin" : Vector2(8, 8),
@@ -2944,7 +3154,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/damsel/damsel_whoa_l"
 	},
 	"damsel_yell_l" : {
 		"origin" : Vector2(8, 8),
@@ -2957,7 +3168,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/damsel/damsel_yell_l"
 	},
 	"damsel_yell_r" : {
 		"origin" : Vector2(8, 8),
@@ -2970,7 +3182,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/damsel/damsel_yell_r"
 	},
 	"wal_damsel" : {
 		"origin" : Vector2(0, 0),
@@ -2983,7 +3196,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/damsel/wal_damsel"
 	},
 	"attack_left" : {
 		"origin" : Vector2(8, 8),
@@ -2996,7 +3210,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/main dude/attack_left"
 	},
 	"climb_up" : {
 		"origin" : Vector2(8, 8),
@@ -3009,7 +3224,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/main dude/climb_up"
 	},
 	"climb_up2" : {
 		"origin" : Vector2(8, 16),
@@ -3022,7 +3238,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/main dude/climb_up2"
 	},
 	"climb_up3" : {
 		"origin" : Vector2(8, 16),
@@ -3035,7 +3252,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/main dude/climb_up3"
 	},
 	"crawl_left" : {
 		"origin" : Vector2(9, 8),
@@ -3048,7 +3266,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/main dude/crawl_left"
 	},
 	"die_l" : {
 		"origin" : Vector2(8, 8),
@@ -3061,7 +3280,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/main dude/die_l"
 	},
 	"die_l_bounce" : {
 		"origin" : Vector2(8, 8),
@@ -3074,7 +3294,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/main dude/die_l_bounce"
 	},
 	"die_l_fall" : {
 		"origin" : Vector2(8, 8),
@@ -3087,7 +3308,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/main dude/die_l_fall"
 	},
 	"die_ll" : {
 		"origin" : Vector2(8, 8),
@@ -3100,7 +3322,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/main dude/die_ll"
 	},
 	"die_lr" : {
 		"origin" : Vector2(8, 8),
@@ -3113,7 +3336,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/main dude/die_lr"
 	},
 	"duck_left" : {
 		"origin" : Vector2(8, 8),
@@ -3126,7 +3350,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/main dude/duck_left"
 	},
 	"duck_to_hang_l" : {
 		"origin" : Vector2(24, 8),
@@ -3139,7 +3364,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/main dude/duck_to_hang_l"
 	},
 	"fall_left" : {
 		"origin" : Vector2(8, 8),
@@ -3152,7 +3378,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/main dude/fall_left"
 	},
 	"hang_left" : {
 		"origin" : Vector2(8, 8),
@@ -3165,7 +3392,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/main dude/hang_left"
 	},
 	"jump_left" : {
 		"origin" : Vector2(8, 8),
@@ -3178,7 +3406,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/main dude/jump_left"
 	},
 	"look_left" : {
 		"origin" : Vector2(8, 8),
@@ -3191,7 +3420,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/main dude/look_left"
 	},
 	"look_run_l" : {
 		"origin" : Vector2(8, 8),
@@ -3204,7 +3434,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/main dude/look_run_l"
 	},
 	"p_exit" : {
 		"origin" : Vector2(8, 8),
@@ -3217,7 +3448,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/main dude/p_exit"
 	},
 	"p_kiss_l" : {
 		"origin" : Vector2(8, 8),
@@ -3230,7 +3462,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/main dude/p_kiss_l"
 	},
 	"p_kiss_r" : {
 		"origin" : Vector2(8, 8),
@@ -3243,7 +3476,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/main dude/p_kiss_r"
 	},
 	"push_left" : {
 		"origin" : Vector2(8, 8),
@@ -3256,7 +3490,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/main dude/push_left"
 	},
 	"run_left" : {
 		"origin" : Vector2(8, 8),
@@ -3269,7 +3504,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/main dude/run_left"
 	},
 	"stand_left" : {
 		"origin" : Vector2(8, 8),
@@ -3282,7 +3518,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/main dude/stand_left"
 	},
 	"stand_left_ico" : {
 		"origin" : Vector2(0, 0),
@@ -3295,7 +3532,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/main dude/stand_left_ico"
 	},
 	"stun_l" : {
 		"origin" : Vector2(8, 8),
@@ -3308,7 +3546,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/main dude/stun_l"
 	},
 	"throw_left" : {
 		"origin" : Vector2(8, 8),
@@ -3321,7 +3560,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/main dude/throw_left"
 	},
 	"whoa_left" : {
 		"origin" : Vector2(12, 16),
@@ -3334,7 +3574,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/main dude/whoa_left"
 	},
 	"yell_left" : {
 		"origin" : Vector2(8, 8),
@@ -3347,7 +3588,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/main dude/yell_left"
 	},
 	"yell_right" : {
 		"origin" : Vector2(8, 8),
@@ -3360,7 +3602,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/main dude/yell_right"
 	},
 	"tunnel_attack_l" : {
 		"origin" : Vector2(8, 8),
@@ -3385,7 +3628,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/character/tunnel man/tunnel_attack_l"
 	},
 	"tunnel_climb" : {
 		"origin" : Vector2(8, 8),
@@ -3398,7 +3642,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/tunnel man/tunnel_climb"
 	},
 	"tunnel_climb2" : {
 		"origin" : Vector2(8, 16),
@@ -3411,7 +3656,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/tunnel man/tunnel_climb2"
 	},
 	"tunnel_climb3" : {
 		"origin" : Vector2(8, 16),
@@ -3424,7 +3670,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/tunnel man/tunnel_climb3"
 	},
 	"tunnel_crawl_l" : {
 		"origin" : Vector2(9, 8),
@@ -3437,7 +3684,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/tunnel man/tunnel_crawl_l"
 	},
 	"tunnel_die_l" : {
 		"origin" : Vector2(8, 8),
@@ -3450,7 +3698,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/tunnel man/tunnel_die_l"
 	},
 	"tunnel_die_ll" : {
 		"origin" : Vector2(8, 8),
@@ -3463,7 +3712,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/tunnel man/tunnel_die_ll"
 	},
 	"tunnel_die_lr" : {
 		"origin" : Vector2(8, 8),
@@ -3476,7 +3726,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/tunnel man/tunnel_die_lr"
 	},
 	"tunnel_dt_hl" : {
 		"origin" : Vector2(24, 8),
@@ -3489,7 +3740,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/tunnel man/tunnel_dt_hl"
 	},
 	"tunnel_duck_l" : {
 		"origin" : Vector2(9, 8),
@@ -3504,7 +3756,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/tunnel man/tunnel_duck_l"
 	},
 	"tunnel_exit" : {
 		"origin" : Vector2(8, 8),
@@ -3517,7 +3770,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/tunnel man/tunnel_exit"
 	},
 	"tunnel_fall_l" : {
 		"origin" : Vector2(8, 8),
@@ -3530,7 +3784,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/tunnel man/tunnel_fall_l"
 	},
 	"tunnel_hang_l" : {
 		"origin" : Vector2(8, 8),
@@ -3543,7 +3798,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/tunnel man/tunnel_hang_l"
 	},
 	"tunnel_jump_l" : {
 		"origin" : Vector2(8, 8),
@@ -3556,7 +3812,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/tunnel man/tunnel_jump_l"
 	},
 	"tunnel_l_bounce" : {
 		"origin" : Vector2(8, 8),
@@ -3569,7 +3826,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/tunnel man/tunnel_l_bounce"
 	},
 	"tunnel_left" : {
 		"origin" : Vector2(8, 8),
@@ -3582,7 +3840,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/tunnel man/tunnel_left"
 	},
 	"tunnel_l_fall" : {
 		"origin" : Vector2(8, 8),
@@ -3595,7 +3854,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/tunnel man/tunnel_l_fall"
 	},
 	"tunnel_look_l" : {
 		"origin" : Vector2(8, 8),
@@ -3608,7 +3868,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/tunnel man/tunnel_look_l"
 	},
 	"tunnel_look_run_l" : {
 		"origin" : Vector2(8, 8),
@@ -3621,7 +3882,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/tunnel man/tunnel_look_run_l"
 	},
 	"tunnel_push_l" : {
 		"origin" : Vector2(8, 8),
@@ -3634,7 +3896,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/tunnel man/tunnel_push_l"
 	},
 	"tunnel_run_l" : {
 		"origin" : Vector2(8, 8),
@@ -3647,7 +3910,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/tunnel man/tunnel_run_l"
 	},
 	"tunnel_stun_l" : {
 		"origin" : Vector2(8, 8),
@@ -3660,7 +3924,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/tunnel man/tunnel_stun_l"
 	},
 	"tunnel_whoa_l" : {
 		"origin" : Vector2(12, 16),
@@ -3673,7 +3938,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/character/tunnel man/tunnel_whoa_l"
 	},
 	"big_collect" : {
 		"origin" : Vector2(8, 8),
@@ -3688,7 +3954,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/effects/big_collect"
 	},
 	"blood" : {
 		"origin" : Vector2(4, 4),
@@ -3705,7 +3972,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/effects/blood"
 	},
 	"blood_spark" : {
 		"origin" : Vector2(4, 4),
@@ -3728,7 +3996,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/effects/blood_spark"
 	},
 	"blood_trail" : {
 		"origin" : Vector2(4, 4),
@@ -3749,7 +4018,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/effects/blood_trail"
 	},
 	"bone" : {
 		"origin" : Vector2(4, 4),
@@ -3771,7 +4041,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/effects/bone"
 	},
 	"bubble" : {
 		"origin" : Vector2(4, 4),
@@ -3794,7 +4065,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/effects/bubble"
 	},
 	"bullet" : {
 		"origin" : Vector2(4, 0),
@@ -3809,7 +4081,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/effects/bullet"
 	},
 	"burn" : {
 		"origin" : Vector2(4, 4),
@@ -3832,7 +4105,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/effects/burn"
 	},
 	"drip" : {
 		"origin" : Vector2(1, 1),
@@ -3845,7 +4119,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/effects/drip"
 	},
 	"explosion" : {
 		"origin" : Vector2(24, 24),
@@ -3869,7 +4144,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/effects/explosion"
 	},
 	"flame" : {
 		"origin" : Vector2(4, 4),
@@ -3884,7 +4160,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/effects/flame"
 	},
 	"flame_trail" : {
 		"origin" : Vector2(4, 4),
@@ -3903,7 +4180,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/effects/flame_trail"
 	},
 	"laser" : {
 		"origin" : Vector2(4, 4),
@@ -3918,7 +4196,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/effects/laser"
 	},
 	"laser_explode" : {
 		"origin" : Vector2(16, 16),
@@ -3940,7 +4219,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/effects/laser_explode"
 	},
 	"laser_trail" : {
 		"origin" : Vector2(4, 4),
@@ -3959,7 +4239,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/effects/laser_trail"
 	},
 	"lava_drip" : {
 		"origin" : Vector2(4, 4),
@@ -3978,7 +4259,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/effects/lava_drip"
 	},
 	"leaf" : {
 		"origin" : Vector2(4, 4),
@@ -4002,7 +4284,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/effects/leaf"
 	},
 	"leaf_still" : {
 		"origin" : Vector2(4, 4),
@@ -4017,7 +4300,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/effects/leaf_still"
 	},
 	"poof" : {
 		"origin" : Vector2(4, 4),
@@ -4037,7 +4321,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/effects/poof"
 	},
 	"psychic_create" : {
 		"origin" : Vector2(8, 8),
@@ -4057,7 +4342,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/effects/psychic_create"
 	},
 	"psychic_wave" : {
 		"origin" : Vector2(8, 8),
@@ -4088,7 +4374,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/effects/psychic_wave"
 	},
 	"psychic_wave_p" : {
 		"origin" : Vector2(8, 8),
@@ -4127,7 +4414,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/effects/psychic_wave_p"
 	},
 	"rubble" : {
 		"origin" : Vector2(4, 4),
@@ -4142,7 +4430,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/effects/rubble"
 	},
 	"rubble_dark" : {
 		"origin" : Vector2(4, 4),
@@ -4157,7 +4446,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/effects/rubble_dark"
 	},
 	"rubble_dark_small" : {
 		"origin" : Vector2(4, 4),
@@ -4172,7 +4462,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/effects/rubble_dark_small"
 	},
 	"rubble_lush" : {
 		"origin" : Vector2(4, 4),
@@ -4187,7 +4478,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/effects/rubble_lush"
 	},
 	"rubble_lush_small" : {
 		"origin" : Vector2(4, 4),
@@ -4202,7 +4494,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/effects/rubble_lush_small"
 	},
 	"rubble_small" : {
 		"origin" : Vector2(4, 4),
@@ -4217,7 +4510,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/effects/rubble_small"
 	},
 	"rubble_tan" : {
 		"origin" : Vector2(4, 4),
@@ -4232,7 +4526,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/effects/rubble_tan"
 	},
 	"rubble_tan_small" : {
 		"origin" : Vector2(4, 4),
@@ -4247,7 +4542,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/effects/rubble_tan_small"
 	},
 	"shotgun_blast_left" : {
 		"origin" : Vector2(8, 8),
@@ -4271,7 +4567,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/effects/shotgun_blast_left"
 	},
 	"shotgun_blast_right" : {
 		"origin" : Vector2(8, 8),
@@ -4295,7 +4592,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/effects/shotgun_blast_right"
 	},
 	"small_collect" : {
 		"origin" : Vector2(4, 4),
@@ -4329,7 +4627,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/effects/small_collect"
 	},
 	"smoke_puff" : {
 		"origin" : Vector2(4, 4),
@@ -4351,7 +4650,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/effects/smoke_puff"
 	},
 	"smooch_heart" : {
 		"origin" : Vector2(8, 8),
@@ -4367,7 +4667,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/effects/smooch_heart"
 	},
 	"splash" : {
 		"origin" : Vector2(8, 8),
@@ -4380,7 +4681,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/effects/splash"
 	},
 	"yellow_ball" : {
 		"origin" : Vector2(8, 8),
@@ -4396,7 +4698,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/effects/yellow_ball"
 	},
 	"yellow_trail" : {
 		"origin" : Vector2(8, 8),
@@ -4422,7 +4725,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/effects/yellow_trail"
 	},
 	"alien" : {
 		"origin" : Vector2(0, 0),
@@ -4435,7 +4739,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/alien"
 	},
 	"alien_boss" : {
 		"origin" : Vector2(0, 0),
@@ -4448,7 +4753,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/alien_boss"
 	},
 	"alien_boss_dead" : {
 		"origin" : Vector2(0, 0),
@@ -4463,7 +4769,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/alien_boss_dead"
 	},
 	"alien_boss_die" : {
 		"origin" : Vector2(0, 0),
@@ -4486,7 +4793,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/enemies/alien_boss_die"
 	},
 	"alien_boss_disp" : {
 		"origin" : Vector2(8, 8),
@@ -4499,7 +4807,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/alien_boss_disp"
 	},
 	"alien_boss_hurt" : {
 		"origin" : Vector2(0, 0),
@@ -4512,7 +4821,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/alien_boss_hurt"
 	},
 	"alien_boss_tile" : {
 		"origin" : Vector2(0, 0),
@@ -4525,7 +4835,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/alien_boss_tile"
 	},
 	"alien_deploy" : {
 		"origin" : Vector2(8, 12),
@@ -4538,7 +4849,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/alien_deploy"
 	},
 	"alien_eject" : {
 		"origin" : Vector2(8, 12),
@@ -4551,7 +4863,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/alien_eject"
 	},
 	"alien_parachute" : {
 		"origin" : Vector2(8, 12),
@@ -4564,7 +4877,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/alien_parachute"
 	},
 	"bat_hang" : {
 		"origin" : Vector2(0, 0),
@@ -4577,7 +4891,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/bat_hang"
 	},
 	"bat_left" : {
 		"origin" : Vector2(0, 0),
@@ -4590,7 +4905,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/bat_left"
 	},
 	"bat_right" : {
 		"origin" : Vector2(0, 0),
@@ -4603,7 +4919,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/bat_right"
 	},
 	"dead_fish_left" : {
 		"origin" : Vector2(0, 0),
@@ -4616,7 +4933,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/dead_fish_left"
 	},
 	"dead_fish_left_ico" : {
 		"origin" : Vector2(0, 0),
@@ -4629,7 +4947,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/dead_fish_left_ico"
 	},
 	"dead_fish_right" : {
 		"origin" : Vector2(0, 0),
@@ -4642,7 +4961,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/dead_fish_right"
 	},
 	"fire_frog_armed_l" : {
 		"origin" : Vector2(8, 8),
@@ -4655,7 +4975,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/fire_frog_armed_l"
 	},
 	"fire_frog_jump_l" : {
 		"origin" : Vector2(0, 0),
@@ -4668,7 +4989,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/fire_frog_jump_l"
 	},
 	"fire_frog_left" : {
 		"origin" : Vector2(0, 0),
@@ -4681,7 +5003,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/fire_frog_left"
 	},
 	"frog_jump_l" : {
 		"origin" : Vector2(0, 0),
@@ -4694,7 +5017,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/frog_jump_l"
 	},
 	"frog_left" : {
 		"origin" : Vector2(0, 0),
@@ -4707,7 +5031,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/frog_left"
 	},
 	"olmec_slam" : {
 		"origin" : Vector2(0, 0),
@@ -4720,7 +5045,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/olmec_slam"
 	},
 	"piranha_left" : {
 		"origin" : Vector2(0, 0),
@@ -4733,7 +5059,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/piranha_left"
 	},
 	"piranha_left_ico" : {
 		"origin" : Vector2(0, 0),
@@ -4746,7 +5073,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/piranha_left_ico"
 	},
 	"piranha_right" : {
 		"origin" : Vector2(0, 0),
@@ -4759,7 +5087,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/piranha_right"
 	},
 	"prite624" : {
 		"origin" : Vector2(0, 0),
@@ -4772,7 +5101,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/prite624"
 	},
 	"prite625" : {
 		"origin" : Vector2(0, 0),
@@ -4785,7 +5115,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/prite625"
 	},
 	"sight" : {
 		"origin" : Vector2(0, 0),
@@ -4798,7 +5129,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/sight"
 	},
 	"snake_left" : {
 		"origin" : Vector2(0, 0),
@@ -4811,7 +5143,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/snake_left"
 	},
 	"snake_walk_l" : {
 		"origin" : Vector2(0, 0),
@@ -4824,7 +5157,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/snake_walk_l"
 	},
 	"spider" : {
 		"origin" : Vector2(0, 0),
@@ -4837,7 +5171,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/spider"
 	},
 	"spider_drown" : {
 		"origin" : Vector2(0, 0),
@@ -4850,7 +5185,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/spider_drown"
 	},
 	"spider_drowning" : {
 		"origin" : Vector2(0, 0),
@@ -4863,7 +5199,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/spider_drowning"
 	},
 	"spider_flip" : {
 		"origin" : Vector2(0, 0),
@@ -4876,7 +5213,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/spider_flip"
 	},
 	"spider_hang" : {
 		"origin" : Vector2(0, 0),
@@ -4889,7 +5227,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/spider_hang"
 	},
 	"ufo" : {
 		"origin" : Vector2(0, 0),
@@ -4902,7 +5241,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/ufo"
 	},
 	"ufo_blast" : {
 		"origin" : Vector2(0, 0),
@@ -4915,7 +5255,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/ufo_blast"
 	},
 	"ufo_crash" : {
 		"origin" : Vector2(0, 0),
@@ -4928,7 +5269,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/ufo_crash"
 	},
 	"zombie_jump_l" : {
 		"origin" : Vector2(0, 0),
@@ -4941,7 +5283,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/zombie_jump_l"
 	},
 	"zombie_left" : {
 		"origin" : Vector2(0, 0),
@@ -4954,7 +5297,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/zombie_left"
 	},
 	"caravan1" : {
 		"origin" : Vector2(0, 0),
@@ -4972,7 +5316,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/enemies/caveman/caravan1"
 	},
 	"caravan2" : {
 		"origin" : Vector2(0, 0),
@@ -4990,7 +5335,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/enemies/caveman/caravan2"
 	},
 	"caravan3" : {
 		"origin" : Vector2(0, 0),
@@ -5008,7 +5354,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/enemies/caveman/caravan3"
 	},
 	"caveman_bounce_l" : {
 		"origin" : Vector2(0, 0),
@@ -5021,7 +5368,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/caveman/caveman_bounce_l"
 	},
 	"caveman_dead_l" : {
 		"origin" : Vector2(0, 0),
@@ -5034,7 +5382,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/caveman/caveman_dead_l"
 	},
 	"caveman_d_held_l" : {
 		"origin" : Vector2(0, 0),
@@ -5047,7 +5396,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/caveman/caveman_d_held_l"
 	},
 	"caveman_die_ll" : {
 		"origin" : Vector2(0, 0),
@@ -5060,7 +5410,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/caveman/caveman_die_ll"
 	},
 	"caveman_die_lr" : {
 		"origin" : Vector2(0, 0),
@@ -5073,7 +5424,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/caveman/caveman_die_lr"
 	},
 	"caveman_fall_l" : {
 		"origin" : Vector2(0, 0),
@@ -5086,7 +5438,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/caveman/caveman_fall_l"
 	},
 	"caveman_held_l" : {
 		"origin" : Vector2(0, 0),
@@ -5099,7 +5452,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/caveman/caveman_held_l"
 	},
 	"caveman_left" : {
 		"origin" : Vector2(0, 0),
@@ -5112,7 +5466,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/caveman/caveman_left"
 	},
 	"caveman_run_left" : {
 		"origin" : Vector2(0, 0),
@@ -5125,7 +5480,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/caveman/caveman_run_left"
 	},
 	"caveman_stun_l" : {
 		"origin" : Vector2(0, 0),
@@ -5138,7 +5494,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/caveman/caveman_stun_l"
 	},
 	"cave_man_worship_l" : {
 		"origin" : Vector2(0, 0),
@@ -5159,7 +5516,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/enemies/caveman/cave_man_worship_l"
 	},
 	"caveman_worship_r" : {
 		"origin" : Vector2(0, 0),
@@ -5182,7 +5540,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/enemies/caveman/caveman_worship_r"
 	},
 	"frozen_caveman" : {
 		"origin" : Vector2(0, 0),
@@ -5195,7 +5554,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/caveman/frozen_caveman"
 	},
 	"ghost_disappear" : {
 		"origin" : Vector2(0, 0),
@@ -5223,7 +5583,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/enemies/ghost/ghost_disappear"
 	},
 	"ghost_left" : {
 		"origin" : Vector2(0, 0),
@@ -5241,7 +5602,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/enemies/ghost/ghost_left"
 	},
 	"ghost_right" : {
 		"origin" : Vector2(0, 0),
@@ -5259,7 +5621,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/enemies/ghost/ghost_right"
 	},
 	"ghost_turn_left" : {
 		"origin" : Vector2(0, 0),
@@ -5280,7 +5643,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/enemies/ghost/ghost_turn_left"
 	},
 	"ghost_turn_right" : {
 		"origin" : Vector2(0, 0),
@@ -5301,7 +5665,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/enemies/ghost/ghost_turn_right"
 	},
 	"giant_spider" : {
 		"origin" : Vector2(0, 0),
@@ -5314,7 +5679,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/giant_spider/giant_spider"
 	},
 	"giant_spider_crawl" : {
 		"origin" : Vector2(0, 0),
@@ -5327,7 +5693,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/giant_spider/giant_spider_crawl"
 	},
 	"giant_spider_disp" : {
 		"origin" : Vector2(8, 8),
@@ -5342,7 +5709,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/giant_spider/giant_spider_disp"
 	},
 	"giant_spider_flip" : {
 		"origin" : Vector2(0, 0),
@@ -5355,7 +5723,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/giant_spider/giant_spider_flip"
 	},
 	"giant_spider_hang" : {
 		"origin" : Vector2(0, 0),
@@ -5368,7 +5737,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/giant_spider/giant_spider_hang"
 	},
 	"giant_spider_jump" : {
 		"origin" : Vector2(0, 0),
@@ -5381,7 +5751,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/giant_spider/giant_spider_jump"
 	},
 	"giant_spider_squirt" : {
 		"origin" : Vector2(0, 0),
@@ -5394,7 +5765,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/giant_spider/giant_spider_squirt"
 	},
 	"web" : {
 		"origin" : Vector2(0, 0),
@@ -5409,7 +5781,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/giant_spider/web"
 	},
 	"web_ball" : {
 		"origin" : Vector2(8, 8),
@@ -5424,7 +5797,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/giant_spider/web_ball"
 	},
 	"web_create" : {
 		"origin" : Vector2(8, 8),
@@ -5443,7 +5817,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/enemies/giant_spider/web_create"
 	},
 	"hawk_bounce_l" : {
 		"origin" : Vector2(0, 0),
@@ -5456,7 +5831,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/hawkman/hawk_bounce_l"
 	},
 	"hawk_dead_l" : {
 		"origin" : Vector2(4, 0),
@@ -5469,7 +5845,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/hawkman/hawk_dead_l"
 	},
 	"hawk_d_held_l" : {
 		"origin" : Vector2(4, 0),
@@ -5482,7 +5859,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/hawkman/hawk_d_held_l"
 	},
 	"hawk_die_ll" : {
 		"origin" : Vector2(0, 0),
@@ -5495,7 +5873,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/hawkman/hawk_die_ll"
 	},
 	"hawk_die_lr" : {
 		"origin" : Vector2(0, 0),
@@ -5508,7 +5887,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/hawkman/hawk_die_lr"
 	},
 	"hawk_fall_l" : {
 		"origin" : Vector2(0, 0),
@@ -5521,7 +5901,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/hawkman/hawk_fall_l"
 	},
 	"hawk_held_l" : {
 		"origin" : Vector2(4, 0),
@@ -5534,7 +5915,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/hawkman/hawk_held_l"
 	},
 	"hawk_left" : {
 		"origin" : Vector2(0, 0),
@@ -5547,7 +5929,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/hawkman/hawk_left"
 	},
 	"hawk_run_left" : {
 		"origin" : Vector2(0, 0),
@@ -5560,7 +5943,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/hawkman/hawk_run_left"
 	},
 	"hawk_stun_l" : {
 		"origin" : Vector2(4, 0),
@@ -5573,7 +5957,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/hawkman/hawk_stun_l"
 	},
 	"hawk_throw_l" : {
 		"origin" : Vector2(0, 0),
@@ -5586,7 +5971,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/hawkman/hawk_throw_l"
 	},
 	"jaws_body1_l" : {
 		"origin" : Vector2(0, 0),
@@ -5601,7 +5987,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/jaws/jaws_body1_l"
 	},
 	"jaws_body1_r" : {
 		"origin" : Vector2(0, 0),
@@ -5616,7 +6003,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/jaws/jaws_body1_r"
 	},
 	"jaws_body2_l" : {
 		"origin" : Vector2(0, 0),
@@ -5631,7 +6019,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/jaws/jaws_body2_l"
 	},
 	"jaws_body2_r" : {
 		"origin" : Vector2(0, 0),
@@ -5646,7 +6035,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/jaws/jaws_body2_r"
 	},
 	"jaws_body3_l" : {
 		"origin" : Vector2(0, 0),
@@ -5661,7 +6051,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/jaws/jaws_body3_l"
 	},
 	"jaws_body3_r" : {
 		"origin" : Vector2(0, 0),
@@ -5676,7 +6067,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/jaws/jaws_body3_r"
 	},
 	"jaws_left" : {
 		"origin" : Vector2(0, 0),
@@ -5699,7 +6091,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/enemies/jaws/jaws_left"
 	},
 	"jaws_right" : {
 		"origin" : Vector2(0, 0),
@@ -5722,7 +6115,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/enemies/jaws/jaws_right"
 	},
 	"jaws_turn_l" : {
 		"origin" : Vector2(0, 0),
@@ -5742,7 +6136,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/enemies/jaws/jaws_turn_l"
 	},
 	"jaws_turn_r" : {
 		"origin" : Vector2(0, 0),
@@ -5762,7 +6157,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/enemies/jaws/jaws_turn_r"
 	},
 	"mega_mouth" : {
 		"origin" : Vector2(8, 8),
@@ -5777,7 +6173,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/jaws/mega_mouth"
 	},
 	"magma" : {
 		"origin" : Vector2(8, 8),
@@ -5795,7 +6192,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/enemies/magma_man/magma"
 	},
 	"magma_man_create" : {
 		"origin" : Vector2(8, 8),
@@ -5816,7 +6214,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/enemies/magma_man/magma_man_create"
 	},
 	"magma_man_die" : {
 		"origin" : Vector2(0, 0),
@@ -5829,7 +6228,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/magma_man/magma_man_die"
 	},
 	"magma_man_left" : {
 		"origin" : Vector2(0, 0),
@@ -5842,7 +6242,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/magma_man/magma_man_left"
 	},
 	"magma_man_walk_l" : {
 		"origin" : Vector2(0, 0),
@@ -5855,7 +6256,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/magma_man/magma_man_walk_l"
 	},
 	"magma_trail" : {
 		"origin" : Vector2(8, 8),
@@ -5874,7 +6276,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/enemies/magma_man/magma_trail"
 	},
 	"man_trap_eat_caveman_l" : {
 		"origin" : Vector2(8, 16),
@@ -5887,7 +6290,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/man_trap/man_trap_eat_caveman_l"
 	},
 	"man_trap_eat_damsel_l" : {
 		"origin" : Vector2(8, 16),
@@ -5900,7 +6304,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/man_trap/man_trap_eat_damsel_l"
 	},
 	"man_trap_eat_l" : {
 		"origin" : Vector2(8, 16),
@@ -5913,7 +6318,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/man_trap/man_trap_eat_l"
 	},
 	"man_trap_eat_shopkeeper_l" : {
 		"origin" : Vector2(8, 16),
@@ -5941,7 +6347,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/enemies/man_trap/man_trap_eat_shopkeeper_l"
 	},
 	"man_trap_eat_tunnel_l" : {
 		"origin" : Vector2(8, 16),
@@ -5969,7 +6376,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/enemies/man_trap/man_trap_eat_tunnel_l"
 	},
 	"man_trap_left" : {
 		"origin" : Vector2(0, 0),
@@ -5982,7 +6390,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/man_trap/man_trap_left"
 	},
 	"man_trap_sleep_l" : {
 		"origin" : Vector2(0, 0),
@@ -5995,7 +6404,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/man_trap/man_trap_sleep_l"
 	},
 	"man_trap_stun_l" : {
 		"origin" : Vector2(0, 0),
@@ -6008,7 +6418,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/man_trap/man_trap_stun_l"
 	},
 	"man_trap_temp" : {
 		"origin" : Vector2(8, 16),
@@ -6033,7 +6444,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/enemies/man_trap/man_trap_temp"
 	},
 	"monkey_climb_l" : {
 		"origin" : Vector2(0, 0),
@@ -6050,7 +6462,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/enemies/monkey/monkey_climb_l"
 	},
 	"monkey_hang_l" : {
 		"origin" : Vector2(0, 0),
@@ -6065,7 +6478,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/monkey/monkey_hang_l"
 	},
 	"monkey_jump_l" : {
 		"origin" : Vector2(0, 0),
@@ -6080,7 +6494,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/monkey/monkey_jump_l"
 	},
 	"monkey_left" : {
 		"origin" : Vector2(0, 0),
@@ -6095,7 +6510,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/monkey/monkey_left"
 	},
 	"monkey_walk_l" : {
 		"origin" : Vector2(0, 0),
@@ -6115,7 +6531,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/enemies/monkey/monkey_walk_l"
 	},
 	"olmec" : {
 		"origin" : Vector2(0, 0),
@@ -6130,7 +6547,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/olmec/olmec"
 	},
 	"olmec_debris" : {
 		"origin" : Vector2(6, 6),
@@ -6148,7 +6566,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/enemies/olmec/olmec_debris"
 	},
 	"olmec_debris2" : {
 		"origin" : Vector2(6, 6),
@@ -6166,7 +6585,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/enemies/olmec/olmec_debris2"
 	},
 	"olmec_debris3" : {
 		"origin" : Vector2(6, 6),
@@ -6184,7 +6604,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/enemies/olmec/olmec_debris3"
 	},
 	"olmec_start1" : {
 		"origin" : Vector2(0, 0),
@@ -6199,7 +6620,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/olmec/olmec_start1"
 	},
 	"olmec_start2" : {
 		"origin" : Vector2(0, 0),
@@ -6214,7 +6636,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/olmec/olmec_start2"
 	},
 	"olmec_start3" : {
 		"origin" : Vector2(0, 0),
@@ -6229,7 +6652,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/olmec/olmec_start3"
 	},
 	"shop_bounce_l" : {
 		"origin" : Vector2(0, 0),
@@ -6242,7 +6666,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/shopkeeper/shop_bounce_l"
 	},
 	"shop_d_held_l" : {
 		"origin" : Vector2(0, 0),
@@ -6255,7 +6680,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/shopkeeper/shop_d_held_l"
 	},
 	"shop_die_l" : {
 		"origin" : Vector2(0, 0),
@@ -6268,7 +6694,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/shopkeeper/shop_die_l"
 	},
 	"shop_die_ll" : {
 		"origin" : Vector2(0, 0),
@@ -6281,7 +6708,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/shopkeeper/shop_die_ll"
 	},
 	"shop_die_lr" : {
 		"origin" : Vector2(0, 0),
@@ -6294,7 +6722,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/shopkeeper/shop_die_lr"
 	},
 	"shop_fall_l" : {
 		"origin" : Vector2(0, 0),
@@ -6307,7 +6736,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/shopkeeper/shop_fall_l"
 	},
 	"shop_held_l" : {
 		"origin" : Vector2(0, 0),
@@ -6320,7 +6750,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/shopkeeper/shop_held_l"
 	},
 	"shop_left" : {
 		"origin" : Vector2(0, 0),
@@ -6333,7 +6764,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/shopkeeper/shop_left"
 	},
 	"shop_left_ico" : {
 		"origin" : Vector2(0, 0),
@@ -6346,7 +6778,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/shopkeeper/shop_left_ico"
 	},
 	"shop_run_left" : {
 		"origin" : Vector2(0, 0),
@@ -6359,7 +6792,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/shopkeeper/shop_run_left"
 	},
 	"shop_stun_l" : {
 		"origin" : Vector2(0, 0),
@@ -6372,7 +6806,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/shopkeeper/shop_stun_l"
 	},
 	"shop_throw_l" : {
 		"origin" : Vector2(4, 0),
@@ -6393,7 +6828,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/enemies/shopkeeper/shop_throw_l"
 	},
 	"skeleton_create_l" : {
 		"origin" : Vector2(0, 0),
@@ -6406,7 +6842,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/skeleton/skeleton_create_l"
 	},
 	"skeleton_create_r" : {
 		"origin" : Vector2(0, 0),
@@ -6419,7 +6856,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/skeleton/skeleton_create_r"
 	},
 	"skeleton_left" : {
 		"origin" : Vector2(0, 0),
@@ -6432,7 +6870,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/skeleton/skeleton_left"
 	},
 	"skeleton_walk_left" : {
 		"origin" : Vector2(0, 0),
@@ -6445,7 +6884,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/skeleton/skeleton_walk_left"
 	},
 	"fly_left" : {
 		"origin" : Vector2(4, 4),
@@ -6463,7 +6903,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/enemies/tomb_lord/fly_left"
 	},
 	"fly_right" : {
 		"origin" : Vector2(4, 4),
@@ -6481,7 +6922,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/enemies/tomb_lord/fly_right"
 	},
 	"tomb_lord_attack_l" : {
 		"origin" : Vector2(0, 0),
@@ -6509,7 +6951,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/enemies/tomb_lord/tomb_lord_attack_l"
 	},
 	"tomb_lord_attack_r" : {
 		"origin" : Vector2(0, 0),
@@ -6537,7 +6980,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/enemies/tomb_lord/tomb_lord_attack_r"
 	},
 	"tomb_lord_disp" : {
 		"origin" : Vector2(8, 8),
@@ -6555,7 +6999,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/enemies/tomb_lord/tomb_lord_disp"
 	},
 	"tomb_lord_left" : {
 		"origin" : Vector2(0, 0),
@@ -6573,7 +7018,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/enemies/tomb_lord/tomb_lord_left"
 	},
 	"tomb_lord_right" : {
 		"origin" : Vector2(0, 0),
@@ -6591,7 +7037,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/enemies/tomb_lord/tomb_lord_right"
 	},
 	"tomb_lord_turn_l" : {
 		"origin" : Vector2(0, 0),
@@ -6612,7 +7059,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/enemies/tomb_lord/tomb_lord_turn_l"
 	},
 	"tomb_lord_turn_r" : {
 		"origin" : Vector2(0, 0),
@@ -6633,7 +7081,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/enemies/tomb_lord/tomb_lord_turn_r"
 	},
 	"tomb_lord_walk_l" : {
 		"origin" : Vector2(0, 0),
@@ -6653,7 +7102,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/enemies/tomb_lord/tomb_lord_walk_l"
 	},
 	"tomb_lord_walk_r" : {
 		"origin" : Vector2(0, 0),
@@ -6673,7 +7123,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/enemies/tomb_lord/tomb_lord_walk_r"
 	},
 	"vampire_bat_hang" : {
 		"origin" : Vector2(0, 0),
@@ -6686,7 +7137,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/vampire/vampire_bat_hang"
 	},
 	"vampire_bat_left" : {
 		"origin" : Vector2(0, 0),
@@ -6699,7 +7151,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/vampire/vampire_bat_left"
 	},
 	"vampire_bat_right" : {
 		"origin" : Vector2(0, 0),
@@ -6712,7 +7165,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/vampire/vampire_bat_right"
 	},
 	"vampire_bounce_l" : {
 		"origin" : Vector2(0, 0),
@@ -6725,7 +7179,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/vampire/vampire_bounce_l"
 	},
 	"vampire_dead_l" : {
 		"origin" : Vector2(0, 0),
@@ -6738,7 +7193,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/vampire/vampire_dead_l"
 	},
 	"vampire_d_held_l" : {
 		"origin" : Vector2(0, 0),
@@ -6751,7 +7207,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/vampire/vampire_d_held_l"
 	},
 	"vampire_die_ll" : {
 		"origin" : Vector2(0, 0),
@@ -6764,7 +7221,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/vampire/vampire_die_ll"
 	},
 	"vampire_die_lr" : {
 		"origin" : Vector2(0, 0),
@@ -6777,7 +7235,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/vampire/vampire_die_lr"
 	},
 	"vampire_fall_l" : {
 		"origin" : Vector2(0, 0),
@@ -6790,7 +7249,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/vampire/vampire_fall_l"
 	},
 	"vampire_held_l" : {
 		"origin" : Vector2(0, 0),
@@ -6803,7 +7263,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/vampire/vampire_held_l"
 	},
 	"vampire_jump_l" : {
 		"origin" : Vector2(0, 0),
@@ -6816,7 +7277,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/vampire/vampire_jump_l"
 	},
 	"vampire_left" : {
 		"origin" : Vector2(0, 0),
@@ -6829,7 +7291,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/vampire/vampire_left"
 	},
 	"vampire_run_l" : {
 		"origin" : Vector2(0, 0),
@@ -6842,7 +7305,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/vampire/vampire_run_l"
 	},
 	"vampire_stun_l" : {
 		"origin" : Vector2(0, 0),
@@ -6855,7 +7319,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/vampire/vampire_stun_l"
 	},
 	"yeti_bounce_l" : {
 		"origin" : Vector2(0, 0),
@@ -6868,7 +7333,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/yeti/yeti_bounce_l"
 	},
 	"yeti_dead_l" : {
 		"origin" : Vector2(4, 0),
@@ -6881,7 +7347,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/yeti/yeti_dead_l"
 	},
 	"yeti_d_held_l" : {
 		"origin" : Vector2(4, 0),
@@ -6894,7 +7361,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/yeti/yeti_d_held_l"
 	},
 	"yeti_die_ll" : {
 		"origin" : Vector2(0, 0),
@@ -6907,7 +7375,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/yeti/yeti_die_ll"
 	},
 	"yeti_die_lr" : {
 		"origin" : Vector2(0, 0),
@@ -6920,7 +7389,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/yeti/yeti_die_lr"
 	},
 	"yeti_fall_l" : {
 		"origin" : Vector2(0, 0),
@@ -6933,7 +7403,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/yeti/yeti_fall_l"
 	},
 	"yeti_held_l" : {
 		"origin" : Vector2(4, 0),
@@ -6946,7 +7417,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/yeti/yeti_held_l"
 	},
 	"yeti_left" : {
 		"origin" : Vector2(0, 0),
@@ -6959,7 +7431,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/yeti/yeti_left"
 	},
 	"yeti_run_left" : {
 		"origin" : Vector2(0, 0),
@@ -6972,7 +7445,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/yeti/yeti_run_left"
 	},
 	"yeti_stun_l" : {
 		"origin" : Vector2(4, 0),
@@ -6985,7 +7459,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/yeti/yeti_stun_l"
 	},
 	"yeti_throw_l" : {
 		"origin" : Vector2(4, 0),
@@ -6998,7 +7473,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/yeti/yeti_throw_l"
 	},
 	"yeti_king_disp" : {
 		"origin" : Vector2(8, 8),
@@ -7011,7 +7487,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/yeti_king/yeti_king_disp"
 	},
 	"yeti_king_left" : {
 		"origin" : Vector2(0, 0),
@@ -7024,7 +7501,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/yeti_king/yeti_king_left"
 	},
 	"yeti_king_right" : {
 		"origin" : Vector2(0, 0),
@@ -7037,7 +7515,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/yeti_king/yeti_king_right"
 	},
 	"yeti_king_turn_l" : {
 		"origin" : Vector2(0, 0),
@@ -7050,7 +7529,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/yeti_king/yeti_king_turn_l"
 	},
 	"yeti_king_turn_r" : {
 		"origin" : Vector2(0, 0),
@@ -7063,7 +7543,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/yeti_king/yeti_king_turn_r"
 	},
 	"yeti_king_walk_l" : {
 		"origin" : Vector2(0, 0),
@@ -7076,7 +7557,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/yeti_king/yeti_king_walk_l"
 	},
 	"yeti_king_walk_r" : {
 		"origin" : Vector2(0, 0),
@@ -7089,7 +7571,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/yeti_king/yeti_king_walk_r"
 	},
 	"yeti_king_yell_l" : {
 		"origin" : Vector2(0, 0),
@@ -7102,7 +7585,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/yeti_king/yeti_king_yell_l"
 	},
 	"yeti_king_yell_r" : {
 		"origin" : Vector2(0, 0),
@@ -7115,7 +7599,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/enemies/yeti_king/yeti_king_yell_r"
 	},
 	"arrow_icon" : {
 		"origin" : Vector2(0, 0),
@@ -7130,7 +7615,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/hud/arrow_icon"
 	},
 	"bomb_icon" : {
 		"origin" : Vector2(0, 0),
@@ -7145,7 +7631,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/hud/bomb_icon"
 	},
 	"cape_icon" : {
 		"origin" : Vector2(0, 0),
@@ -7160,7 +7647,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/hud/cape_icon"
 	},
 	"compass_icon" : {
 		"origin" : Vector2(0, 0),
@@ -7175,7 +7663,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/hud/compass_icon"
 	},
 	"damsel_icon" : {
 		"origin" : Vector2(0, 0),
@@ -7190,7 +7679,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/hud/damsel_icon"
 	},
 	"death_mask" : {
 		"origin" : Vector2(8, 8),
@@ -7205,7 +7695,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/hud/death_mask"
 	},
 	"dollar_sign" : {
 		"origin" : Vector2(0, 0),
@@ -7220,7 +7711,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/hud/dollar_sign"
 	},
 	"gloves_icon" : {
 		"origin" : Vector2(0, 0),
@@ -7235,7 +7727,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/hud/gloves_icon"
 	},
 	"heart" : {
 		"origin" : Vector2(0, 0),
@@ -7250,7 +7743,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/hud/heart"
 	},
 	"hint_point" : {
 		"origin" : Vector2(0, 0),
@@ -7269,7 +7763,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/hud/hint_point"
 	},
 	"hold_item_icon" : {
 		"origin" : Vector2(0, 0),
@@ -7284,7 +7779,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/hud/hold_item_icon"
 	},
 	"hoops_icon" : {
 		"origin" : Vector2(0, 0),
@@ -7299,7 +7795,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/hud/hoops_icon"
 	},
 	"jetpack_icon" : {
 		"origin" : Vector2(0, 0),
@@ -7314,7 +7811,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/hud/jetpack_icon"
 	},
 	"kapala_icon" : {
 		"origin" : Vector2(0, 0),
@@ -7333,7 +7831,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/hud/kapala_icon"
 	},
 	"mitt_icon" : {
 		"origin" : Vector2(0, 0),
@@ -7348,7 +7847,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/hud/mitt_icon"
 	},
 	"parachute_icon" : {
 		"origin" : Vector2(0, 0),
@@ -7363,7 +7863,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/hud/parachute_icon"
 	},
 	"rope_icon" : {
 		"origin" : Vector2(0, 0),
@@ -7378,7 +7879,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/hud/rope_icon"
 	},
 	"shopkeeper_icon" : {
 		"origin" : Vector2(0, 0),
@@ -7393,7 +7895,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/hud/shopkeeper_icon"
 	},
 	"spectacles_icon" : {
 		"origin" : Vector2(0, 0),
@@ -7408,7 +7911,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/hud/spectacles_icon"
 	},
 	"spike_shoes_icon" : {
 		"origin" : Vector2(0, 0),
@@ -7423,7 +7927,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/hud/spike_shoes_icon"
 	},
 	"spring_shoes_icon" : {
 		"origin" : Vector2(0, 0),
@@ -7438,7 +7943,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/hud/spring_shoes_icon"
 	},
 	"sticky_bomb_icon" : {
 		"origin" : Vector2(0, 0),
@@ -7453,7 +7959,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/hud/sticky_bomb_icon"
 	},
 	"timer_icon" : {
 		"origin" : Vector2(0, 0),
@@ -7468,7 +7975,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/hud/timer_icon"
 	},
 	"bombs_get" : {
 		"origin" : Vector2(4, 0),
@@ -7484,7 +7992,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/items/other/bombs_get"
 	},
 	"bones_left" : {
 		"origin" : Vector2(0, 0),
@@ -7497,7 +8006,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/other/bones_left"
 	},
 	"chest" : {
 		"origin" : Vector2(8, 8),
@@ -7512,7 +8022,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/other/chest"
 	},
 	"chest_open" : {
 		"origin" : Vector2(8, 8),
@@ -7527,7 +8038,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/other/chest_open"
 	},
 	"crate" : {
 		"origin" : Vector2(8, 8),
@@ -7542,7 +8054,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/other/crate"
 	},
 	"crate_open" : {
 		"origin" : Vector2(8, 8),
@@ -7557,7 +8070,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/other/crate_open"
 	},
 	"dice1" : {
 		"origin" : Vector2(8, 8),
@@ -7572,7 +8086,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/other/dice1"
 	},
 	"dice2" : {
 		"origin" : Vector2(8, 8),
@@ -7587,7 +8102,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/other/dice2"
 	},
 	"dice3" : {
 		"origin" : Vector2(8, 8),
@@ -7602,7 +8118,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/other/dice3"
 	},
 	"dice4" : {
 		"origin" : Vector2(8, 8),
@@ -7617,7 +8134,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/other/dice4"
 	},
 	"dice5" : {
 		"origin" : Vector2(8, 8),
@@ -7632,7 +8150,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/other/dice5"
 	},
 	"dice6" : {
 		"origin" : Vector2(8, 8),
@@ -7647,7 +8166,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/other/dice6"
 	},
 	"dice_roll" : {
 		"origin" : Vector2(8, 8),
@@ -7667,7 +8187,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/items/other/dice_roll"
 	},
 	"fake_bones_left" : {
 		"origin" : Vector2(0, 0),
@@ -7682,7 +8203,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/other/fake_bones_left"
 	},
 	"flare_crate" : {
 		"origin" : Vector2(8, 8),
@@ -7699,7 +8221,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/items/other/flare_crate"
 	},
 	"item_get" : {
 		"origin" : Vector2(4, 0),
@@ -7715,7 +8238,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/items/other/item_get"
 	},
 	"locked_chest" : {
 		"origin" : Vector2(8, 8),
@@ -7730,7 +8254,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/other/locked_chest"
 	},
 	"locked_chest_open" : {
 		"origin" : Vector2(8, 8),
@@ -7745,7 +8270,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/other/locked_chest_open"
 	},
 	"para_used" : {
 		"origin" : Vector2(0, 0),
@@ -7760,7 +8286,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/other/para_used"
 	},
 	"red_arrow_down" : {
 		"origin" : Vector2(8, 8),
@@ -7775,7 +8302,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/other/red_arrow_down"
 	},
 	"rope_get" : {
 		"origin" : Vector2(4, 0),
@@ -7791,7 +8319,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/items/other/rope_get"
 	},
 	"ankh" : {
 		"origin" : Vector2(8, 8),
@@ -7806,7 +8335,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/saleable/ankh"
 	},
 	"ankh_icon" : {
 		"origin" : Vector2(0, 0),
@@ -7821,7 +8351,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/saleable/ankh_icon"
 	},
 	"bomb_bag" : {
 		"origin" : Vector2(8, 6),
@@ -7836,7 +8367,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/saleable/bomb_bag"
 	},
 	"bomb_box" : {
 		"origin" : Vector2(8, 8),
@@ -7852,7 +8384,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/items/saleable/bomb_box"
 	},
 	"bow_disp" : {
 		"origin" : Vector2(8, 8),
@@ -7867,7 +8400,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/saleable/bow_disp"
 	},
 	"bow_left" : {
 		"origin" : Vector2(8, 8),
@@ -7885,7 +8419,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/items/saleable/bow_left"
 	},
 	"bow_right" : {
 		"origin" : Vector2(8, 8),
@@ -7903,7 +8438,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/items/saleable/bow_right"
 	},
 	"cape" : {
 		"origin" : Vector2(8, 8),
@@ -7918,7 +8454,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/saleable/cape"
 	},
 	"cape_back" : {
 		"origin" : Vector2(8, 8),
@@ -7933,7 +8470,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/saleable/cape_back"
 	},
 	"cape_dl" : {
 		"origin" : Vector2(8, 6),
@@ -7948,7 +8486,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/saleable/cape_dl"
 	},
 	"cape_dr" : {
 		"origin" : Vector2(8, 6),
@@ -7963,7 +8502,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/saleable/cape_dr"
 	},
 	"cape_left" : {
 		"origin" : Vector2(8, 8),
@@ -7982,7 +8522,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/items/saleable/cape_left"
 	},
 	"cape_right" : {
 		"origin" : Vector2(8, 8),
@@ -8001,7 +8542,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/items/saleable/cape_right"
 	},
 	"cape_ul" : {
 		"origin" : Vector2(8, 16),
@@ -8017,7 +8559,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/items/saleable/cape_ul"
 	},
 	"cape_ur" : {
 		"origin" : Vector2(8, 16),
@@ -8033,7 +8576,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/items/saleable/cape_ur"
 	},
 	"compass" : {
 		"origin" : Vector2(8, 6),
@@ -8048,7 +8592,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/saleable/compass"
 	},
 	"compass_down" : {
 		"origin" : Vector2(0, 0),
@@ -8063,7 +8608,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/saleable/compass_down"
 	},
 	"compass_left" : {
 		"origin" : Vector2(0, 0),
@@ -8078,7 +8624,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/saleable/compass_left"
 	},
 	"compass_ll" : {
 		"origin" : Vector2(0, 0),
@@ -8093,7 +8640,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/saleable/compass_ll"
 	},
 	"compass_lr" : {
 		"origin" : Vector2(0, 0),
@@ -8108,7 +8656,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/saleable/compass_lr"
 	},
 	"compass_right" : {
 		"origin" : Vector2(0, 0),
@@ -8123,7 +8672,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/saleable/compass_right"
 	},
 	"compass_small_down" : {
 		"origin" : Vector2(0, 0),
@@ -8138,7 +8688,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/saleable/compass_small_down"
 	},
 	"compass_small_left" : {
 		"origin" : Vector2(0, 0),
@@ -8153,7 +8704,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/saleable/compass_small_left"
 	},
 	"compass_small_ll" : {
 		"origin" : Vector2(0, 0),
@@ -8168,7 +8720,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/saleable/compass_small_ll"
 	},
 	"compass_small_lr" : {
 		"origin" : Vector2(0, 0),
@@ -8183,7 +8736,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/saleable/compass_small_lr"
 	},
 	"compass_small_right" : {
 		"origin" : Vector2(0, 0),
@@ -8198,7 +8752,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/saleable/compass_small_right"
 	},
 	"crown" : {
 		"origin" : Vector2(8, 8),
@@ -8213,7 +8768,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/saleable/crown"
 	},
 	"crown_icon" : {
 		"origin" : Vector2(0, 0),
@@ -8228,7 +8784,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/saleable/crown_icon"
 	},
 	"death_mask_pickup" : {
 		"origin" : Vector2(8, 8),
@@ -8243,7 +8800,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/saleable/death_mask_pickup"
 	},
 	"death_mask_wear" : {
 		"origin" : Vector2(8, 8),
@@ -8258,7 +8816,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/saleable/death_mask_wear"
 	},
 	"glove" : {
 		"origin" : Vector2(8, 8),
@@ -8273,7 +8832,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/saleable/glove"
 	},
 	"jetpack_back" : {
 		"origin" : Vector2(8, 8),
@@ -8286,7 +8846,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/saleable/jetpack_back"
 	},
 	"jetpack_left" : {
 		"origin" : Vector2(8, 8),
@@ -8299,7 +8860,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/saleable/jetpack_left"
 	},
 	"jetpack_right" : {
 		"origin" : Vector2(8, 8),
@@ -8312,7 +8874,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/saleable/jetpack_right"
 	},
 	"jordans" : {
 		"origin" : Vector2(8, 6),
@@ -8327,7 +8890,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/saleable/jordans"
 	},
 	"kapala" : {
 		"origin" : Vector2(8, 8),
@@ -8342,7 +8906,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/saleable/kapala"
 	},
 	"key_left" : {
 		"origin" : Vector2(8, 6),
@@ -8357,7 +8922,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/saleable/key_left"
 	},
 	"key_right" : {
 		"origin" : Vector2(8, 8),
@@ -8372,7 +8938,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/saleable/key_right"
 	},
 	"machete_left" : {
 		"origin" : Vector2(8, 6),
@@ -8387,7 +8954,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/saleable/machete_left"
 	},
 	"machete_right" : {
 		"origin" : Vector2(8, 6),
@@ -8402,7 +8970,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/saleable/machete_right"
 	},
 	"mattock_left" : {
 		"origin" : Vector2(8, 6),
@@ -8417,7 +8986,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/saleable/mattock_left"
 	},
 	"mattock_right" : {
 		"origin" : Vector2(8, 6),
@@ -8432,7 +9002,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/saleable/mattock_right"
 	},
 	"mitt" : {
 		"origin" : Vector2(8, 8),
@@ -8447,7 +9018,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/saleable/mitt"
 	},
 	"ninja_suit" : {
 		"origin" : Vector2(8, 8),
@@ -8462,7 +9034,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/saleable/ninja_suit"
 	},
 	"parachute" : {
 		"origin" : Vector2(0, 0),
@@ -8477,7 +9050,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/saleable/parachute"
 	},
 	"para_open" : {
 		"origin" : Vector2(0, 0),
@@ -8496,7 +9070,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/items/saleable/para_open"
 	},
 	"para_pickup" : {
 		"origin" : Vector2(8, 6),
@@ -8511,7 +9086,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/saleable/para_pickup"
 	},
 	"paste" : {
 		"origin" : Vector2(8, 6),
@@ -8526,7 +9102,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/saleable/paste"
 	},
 	"pistol_left" : {
 		"origin" : Vector2(8, 4),
@@ -8541,7 +9118,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/saleable/pistol_left"
 	},
 	"pistol_right" : {
 		"origin" : Vector2(8, 4),
@@ -8556,7 +9134,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/saleable/pistol_right"
 	},
 	"rope_pile" : {
 		"origin" : Vector2(8, 5),
@@ -8571,7 +9150,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/saleable/rope_pile"
 	},
 	"sceptre_left" : {
 		"origin" : Vector2(8, 6),
@@ -8586,7 +9166,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/saleable/sceptre_left"
 	},
 	"sceptre_right" : {
 		"origin" : Vector2(8, 6),
@@ -8601,7 +9182,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/saleable/sceptre_right"
 	},
 	"spectacles" : {
 		"origin" : Vector2(8, 6),
@@ -8616,7 +9198,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/saleable/spectacles"
 	},
 	"spike_shoes" : {
 		"origin" : Vector2(8, 6),
@@ -8631,7 +9214,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/saleable/spike_shoes"
 	},
 	"spring_shoes" : {
 		"origin" : Vector2(8, 6),
@@ -8646,7 +9230,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/saleable/spring_shoes"
 	},
 	"teleporter" : {
 		"origin" : Vector2(8, 12),
@@ -8676,7 +9261,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/items/saleable/teleporter"
 	},
 	"udjat_eye" : {
 		"origin" : Vector2(8, 6),
@@ -8691,7 +9277,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/saleable/udjat_eye"
 	},
 	"udjat_eye_icon" : {
 		"origin" : Vector2(0, 0),
@@ -8706,7 +9293,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/saleable/udjat_eye_icon"
 	},
 	"udjat_eye_icon2" : {
 		"origin" : Vector2(0, 0),
@@ -8721,7 +9309,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/saleable/udjat_eye_icon2"
 	},
 	"web_cannon_l" : {
 		"origin" : Vector2(8, 4),
@@ -8736,7 +9325,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/saleable/web_cannon_l"
 	},
 	"web_cannon_r" : {
 		"origin" : Vector2(8, 4),
@@ -8751,7 +9341,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/saleable/web_cannon_r"
 	},
 	"bell" : {
 		"origin" : Vector2(0, 0),
@@ -8764,7 +9355,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/treasures/bell"
 	},
 	"crystal_skull" : {
 		"origin" : Vector2(8, 12),
@@ -8777,7 +9369,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/treasures/crystal_skull"
 	},
 	"crystal_skull_ico" : {
 		"origin" : Vector2(8, 12),
@@ -8790,7 +9383,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/treasures/crystal_skull_ico"
 	},
 	"diamond" : {
 		"origin" : Vector2(4, 4),
@@ -8803,7 +9397,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/treasures/diamond"
 	},
 	"emerald" : {
 		"origin" : Vector2(2, 2),
@@ -8816,7 +9411,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/treasures/emerald"
 	},
 	"emerald_big" : {
 		"origin" : Vector2(4, 4),
@@ -8829,7 +9425,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/treasures/emerald_big"
 	},
 	"gold_bar" : {
 		"origin" : Vector2(4, 4),
@@ -8842,7 +9439,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/treasures/gold_bar"
 	},
 	"gold_bar_draw" : {
 		"origin" : Vector2(4, 4),
@@ -8855,7 +9453,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/treasures/gold_bar_draw"
 	},
 	"gold_bars" : {
 		"origin" : Vector2(8, 8),
@@ -8868,7 +9467,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/treasures/gold_bars"
 	},
 	"gold_bars_draw" : {
 		"origin" : Vector2(8, 8),
@@ -8881,7 +9481,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/treasures/gold_bars_draw"
 	},
 	"gold_chunk" : {
 		"origin" : Vector2(2, 2),
@@ -8894,7 +9495,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/treasures/gold_chunk"
 	},
 	"gold_egg" : {
 		"origin" : Vector2(4, 4),
@@ -8907,7 +9509,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/treasures/gold_egg"
 	},
 	"gold_idol" : {
 		"origin" : Vector2(8, 12),
@@ -8920,7 +9523,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/treasures/gold_idol"
 	},
 	"gold_idol_ico" : {
 		"origin" : Vector2(8, 8),
@@ -8933,7 +9537,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/treasures/gold_idol_ico"
 	},
 	"gold_nugget" : {
 		"origin" : Vector2(4, 4),
@@ -8946,7 +9551,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/treasures/gold_nugget"
 	},
 	"lamp_item" : {
 		"origin" : Vector2(8, 12),
@@ -8959,7 +9565,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/treasures/lamp_item"
 	},
 	"lamp_red_item" : {
 		"origin" : Vector2(8, 12),
@@ -8972,7 +9579,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/treasures/lamp_red_item"
 	},
 	"ruby" : {
 		"origin" : Vector2(2, 2),
@@ -8985,7 +9593,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/treasures/ruby"
 	},
 	"ruby_big" : {
 		"origin" : Vector2(4, 4),
@@ -8998,7 +9607,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/treasures/ruby_big"
 	},
 	"sapphire" : {
 		"origin" : Vector2(2, 2),
@@ -9011,7 +9621,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/treasures/sapphire"
 	},
 	"sapphire_big" : {
 		"origin" : Vector2(4, 4),
@@ -9024,7 +9635,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/treasures/sapphire_big"
 	},
 	"scarab" : {
 		"origin" : Vector2(0, 0),
@@ -9037,7 +9649,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/treasures/scarab"
 	},
 	"scarab_disp" : {
 		"origin" : Vector2(8, 8),
@@ -9050,7 +9663,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/treasures/scarab_disp"
 	},
 	"arrow_left" : {
 		"origin" : Vector2(4, 4),
@@ -9065,7 +9679,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/weapons/arrow_left"
 	},
 	"arrow_right" : {
 		"origin" : Vector2(4, 4),
@@ -9080,7 +9695,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/weapons/arrow_right"
 	},
 	"ball" : {
 		"origin" : Vector2(8, 10),
@@ -9095,7 +9711,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/weapons/ball"
 	},
 	"basketball" : {
 		"origin" : Vector2(4, 4),
@@ -9110,7 +9727,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/weapons/basketball"
 	},
 	"bomb" : {
 		"origin" : Vector2(4, 4),
@@ -9125,7 +9743,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/weapons/bomb"
 	},
 	"bomb_armed" : {
 		"origin" : Vector2(4, 4),
@@ -9141,7 +9760,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/items/weapons/bomb_armed"
 	},
 	"bomb_arrow_left" : {
 		"origin" : Vector2(8, 8),
@@ -9157,7 +9777,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/items/weapons/bomb_arrow_left"
 	},
 	"bomb_arrow_right" : {
 		"origin" : Vector2(8, 8),
@@ -9173,7 +9794,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/items/weapons/bomb_arrow_right"
 	},
 	"chain" : {
 		"origin" : Vector2(8, 8),
@@ -9188,7 +9810,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/weapons/chain"
 	},
 	"dribble" : {
 		"origin" : Vector2(4, 4),
@@ -9205,7 +9828,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/items/weapons/dribble"
 	},
 	"egg" : {
 		"origin" : Vector2(4, 4),
@@ -9220,7 +9844,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/weapons/egg"
 	},
 	"fish_bone" : {
 		"origin" : Vector2(4, 4),
@@ -9235,7 +9860,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/weapons/fish_bone"
 	},
 	"jar" : {
 		"origin" : Vector2(8, 8),
@@ -9248,7 +9874,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/weapons/jar"
 	},
 	"machete_pre_l" : {
 		"origin" : Vector2(8, 8),
@@ -9263,7 +9890,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/weapons/machete_pre_l"
 	},
 	"machete_pre_r" : {
 		"origin" : Vector2(8, 8),
@@ -9278,7 +9906,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/weapons/machete_pre_r"
 	},
 	"mattock_head" : {
 		"origin" : Vector2(8, 4),
@@ -9293,7 +9922,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/weapons/mattock_head"
 	},
 	"mattock_hit_l" : {
 		"origin" : Vector2(8, 8),
@@ -9310,7 +9940,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/items/weapons/mattock_hit_l"
 	},
 	"mattock_hit_r" : {
 		"origin" : Vector2(8, 8),
@@ -9327,7 +9958,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/items/weapons/mattock_hit_r"
 	},
 	"mattock_pre_l" : {
 		"origin" : Vector2(8, 8),
@@ -9342,7 +9974,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/weapons/mattock_pre_l"
 	},
 	"mattock_pre_r" : {
 		"origin" : Vector2(8, 8),
@@ -9357,7 +9990,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/weapons/mattock_pre_r"
 	},
 	"rock" : {
 		"origin" : Vector2(4, 4),
@@ -9372,7 +10006,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/weapons/rock"
 	},
 	"rope" : {
 		"origin" : Vector2(4, 4),
@@ -9385,7 +10020,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/weapons/rope"
 	},
 	"rope_end" : {
 		"origin" : Vector2(4, 4),
@@ -9400,7 +10036,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/weapons/rope_end"
 	},
 	"rope_top" : {
 		"origin" : Vector2(4, 4),
@@ -9415,7 +10052,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/weapons/rope_top"
 	},
 	"shotgun_left" : {
 		"origin" : Vector2(8, 4),
@@ -9430,7 +10068,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/weapons/shotgun_left"
 	},
 	"shotgun_right" : {
 		"origin" : Vector2(8, 4),
@@ -9445,7 +10084,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/weapons/shotgun_right"
 	},
 	"skull" : {
 		"origin" : Vector2(4, 4),
@@ -9460,7 +10100,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/weapons/skull"
 	},
 	"slash_left" : {
 		"origin" : Vector2(4, 24),
@@ -9477,7 +10118,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/items/weapons/slash_left"
 	},
 	"slash_right" : {
 		"origin" : Vector2(28, 24),
@@ -9494,7 +10136,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/items/weapons/slash_right"
 	},
 	"target" : {
 		"origin" : Vector2(0, 16),
@@ -9509,7 +10152,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/weapons/target"
 	},
 	"whip_left" : {
 		"origin" : Vector2(8, 8),
@@ -9524,7 +10168,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/weapons/whip_left"
 	},
 	"whip_pre_l" : {
 		"origin" : Vector2(8, 8),
@@ -9539,7 +10184,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/weapons/whip_pre_l"
 	},
 	"whip_pre_r" : {
 		"origin" : Vector2(8, 8),
@@ -9554,7 +10200,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/weapons/whip_pre_r"
 	},
 	"whip_right" : {
 		"origin" : Vector2(8, 8),
@@ -9569,7 +10216,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/items/weapons/whip_right"
 	},
 	"bomb_bag_tile" : {
 		"origin" : Vector2(0, 0),
@@ -9584,7 +10232,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/level editor/bomb_bag_tile"
 	},
 	"bomb_box_tile" : {
 		"origin" : Vector2(0, 0),
@@ -9599,7 +10248,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/level editor/bomb_box_tile"
 	},
 	"bomb_paste_tile" : {
 		"origin" : Vector2(0, 0),
@@ -9614,7 +10264,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/level editor/bomb_paste_tile"
 	},
 	"bow_tile" : {
 		"origin" : Vector2(0, 0),
@@ -9629,7 +10280,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/level editor/bow_tile"
 	},
 	"cape_tile" : {
 		"origin" : Vector2(0, 0),
@@ -9644,7 +10296,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/level editor/cape_tile"
 	},
 	"chest_tile" : {
 		"origin" : Vector2(0, 0),
@@ -9659,7 +10312,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/level editor/chest_tile"
 	},
 	"compass_tile" : {
 		"origin" : Vector2(0, 0),
@@ -9674,7 +10328,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/level editor/compass_tile"
 	},
 	"crate_tile" : {
 		"origin" : Vector2(0, 0),
@@ -9689,7 +10344,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/level editor/crate_tile"
 	},
 	"crystal_skull_tile" : {
 		"origin" : Vector2(0, 0),
@@ -9702,7 +10358,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/level editor/crystal_skull_tile"
 	},
 	"diamond_tile" : {
 		"origin" : Vector2(0, 0),
@@ -9715,7 +10372,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/level editor/diamond_tile"
 	},
 	"emerald_big_tile" : {
 		"origin" : Vector2(0, 0),
@@ -9728,7 +10386,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/level editor/emerald_big_tile"
 	},
 	"gloves_tile" : {
 		"origin" : Vector2(0, 0),
@@ -9743,7 +10402,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/level editor/gloves_tile"
 	},
 	"gold_bars_tile" : {
 		"origin" : Vector2(0, 0),
@@ -9756,7 +10416,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/level editor/gold_bars_tile"
 	},
 	"gold_bar_tile" : {
 		"origin" : Vector2(0, 0),
@@ -9769,7 +10430,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/level editor/gold_bar_tile"
 	},
 	"gold_idol_tile" : {
 		"origin" : Vector2(0, 0),
@@ -9782,7 +10444,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/level editor/gold_idol_tile"
 	},
 	"jar_tile" : {
 		"origin" : Vector2(0, 0),
@@ -9795,7 +10458,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/level editor/jar_tile"
 	},
 	"jetpack_tile" : {
 		"origin" : Vector2(0, 0),
@@ -9808,7 +10472,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/level editor/jetpack_tile"
 	},
 	"machete_tile" : {
 		"origin" : Vector2(0, 0),
@@ -9823,7 +10488,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/level editor/machete_tile"
 	},
 	"mattock_tile" : {
 		"origin" : Vector2(0, 0),
@@ -9838,7 +10504,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/level editor/mattock_tile"
 	},
 	"mega_mouth_tile" : {
 		"origin" : Vector2(0, 0),
@@ -9853,7 +10520,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/level editor/mega_mouth_tile"
 	},
 	"mitt_tile" : {
 		"origin" : Vector2(0, 0),
@@ -9868,7 +10536,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/level editor/mitt_tile"
 	},
 	"parachute_tile" : {
 		"origin" : Vector2(0, 0),
@@ -9883,7 +10552,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/level editor/parachute_tile"
 	},
 	"piranha_tile" : {
 		"origin" : Vector2(0, 0),
@@ -9896,7 +10566,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/level editor/piranha_tile"
 	},
 	"pistol_tile" : {
 		"origin" : Vector2(0, 0),
@@ -9911,7 +10582,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/level editor/pistol_tile"
 	},
 	"rock_tile" : {
 		"origin" : Vector2(0, 0),
@@ -9926,7 +10598,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/level editor/rock_tile"
 	},
 	"rope_pile_tile" : {
 		"origin" : Vector2(0, 0),
@@ -9941,7 +10614,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/level editor/rope_pile_tile"
 	},
 	"ruby_big_tile" : {
 		"origin" : Vector2(0, 0),
@@ -9954,7 +10628,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/level editor/ruby_big_tile"
 	},
 	"sapphire_big_tile" : {
 		"origin" : Vector2(0, 0),
@@ -9967,7 +10642,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/level editor/sapphire_big_tile"
 	},
 	"shotgun_tile" : {
 		"origin" : Vector2(0, 0),
@@ -9982,7 +10658,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/level editor/shotgun_tile"
 	},
 	"spectacles_tile" : {
 		"origin" : Vector2(0, 0),
@@ -9997,7 +10674,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/level editor/spectacles_tile"
 	},
 	"spike_shoes_tile" : {
 		"origin" : Vector2(0, 0),
@@ -10012,7 +10690,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/level editor/spike_shoes_tile"
 	},
 	"spring_shoes_tile" : {
 		"origin" : Vector2(0, 0),
@@ -10027,7 +10706,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/level editor/spring_shoes_tile"
 	},
 	"teleporter_tile" : {
 		"origin" : Vector2(0, 0),
@@ -10042,7 +10722,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/level editor/teleporter_tile"
 	},
 	"web_cannon_tile" : {
 		"origin" : Vector2(0, 0),
@@ -10057,7 +10738,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/level editor/web_cannon_tile"
 	},
 	"web_tile" : {
 		"origin" : Vector2(0, 0),
@@ -10072,7 +10754,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/level editor/web_tile"
 	},
 	"mushroom1" : {
 		"origin" : Vector2(0, 0),
@@ -10087,7 +10770,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/mushrooms/mushroom1"
 	},
 	"mushroom2" : {
 		"origin" : Vector2(0, 0),
@@ -10102,7 +10786,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/mushrooms/mushroom2"
 	},
 	"mushroom3" : {
 		"origin" : Vector2(0, 0),
@@ -10117,7 +10802,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/mushrooms/mushroom3"
 	},
 	"mushroom4" : {
 		"origin" : Vector2(0, 0),
@@ -10132,7 +10818,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/mushrooms/mushroom4"
 	},
 	"mushroom5" : {
 		"origin" : Vector2(0, 0),
@@ -10147,7 +10834,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/mushrooms/mushroom5"
 	},
 	"mushroom6" : {
 		"origin" : Vector2(0, 0),
@@ -10162,7 +10850,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/mushrooms/mushroom6"
 	},
 	"mushroom7" : {
 		"origin" : Vector2(0, 0),
@@ -10177,7 +10866,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/mushrooms/mushroom7"
 	},
 	"mushroom8" : {
 		"origin" : Vector2(0, 0),
@@ -10192,7 +10882,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/mushrooms/mushroom8"
 	},
 	"basket" : {
 		"origin" : Vector2(0, 0),
@@ -10207,7 +10898,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/basket"
 	},
 	"basket_swoosh" : {
 		"origin" : Vector2(0, 0),
@@ -10227,7 +10919,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/other/basket_swoosh"
 	},
 	"box" : {
 		"origin" : Vector2(0, 0),
@@ -10240,7 +10933,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/box"
 	},
 	"box_checked" : {
 		"origin" : Vector2(0, 0),
@@ -10253,7 +10947,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/box_checked"
 	},
 	"box_marked" : {
 		"origin" : Vector2(0, 0),
@@ -10266,7 +10961,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/box_marked"
 	},
 	"edit_button" : {
 		"origin" : Vector2(0, 0),
@@ -10281,7 +10977,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/edit_button"
 	},
 	"edit_button_pressed" : {
 		"origin" : Vector2(0, 0),
@@ -10296,7 +10993,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/edit_button_pressed"
 	},
 	"end_plat" : {
 		"origin" : Vector2(0, 0),
@@ -10309,7 +11007,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/end_plat"
 	},
 	"joy_config_button" : {
 		"origin" : Vector2(0, 0),
@@ -10324,7 +11023,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/joy_config_button"
 	},
 	"joy_config_button_pressed" : {
 		"origin" : Vector2(0, 0),
@@ -10339,7 +11039,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/joy_config_button_pressed"
 	},
 	"key_config_button" : {
 		"origin" : Vector2(0, 0),
@@ -10354,7 +11055,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/key_config_button"
 	},
 	"key_config_button_pressed" : {
 		"origin" : Vector2(0, 0),
@@ -10369,7 +11071,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/key_config_button_pressed"
 	},
 	"load_button" : {
 		"origin" : Vector2(0, 0),
@@ -10384,7 +11087,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/load_button"
 	},
 	"load_button_pressed" : {
 		"origin" : Vector2(0, 0),
@@ -10399,7 +11103,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/load_button_pressed"
 	},
 	"menu_bottom" : {
 		"origin" : Vector2(0, 0),
@@ -10414,7 +11119,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/menu_bottom"
 	},
 	"menu_left" : {
 		"origin" : Vector2(0, 0),
@@ -10429,7 +11135,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/menu_left"
 	},
 	"menu_ll" : {
 		"origin" : Vector2(0, 0),
@@ -10444,7 +11151,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/menu_ll"
 	},
 	"menu_lr" : {
 		"origin" : Vector2(0, 0),
@@ -10459,7 +11167,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/menu_lr"
 	},
 	"menu_right" : {
 		"origin" : Vector2(0, 0),
@@ -10474,7 +11183,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/menu_right"
 	},
 	"menu_sel_off" : {
 		"origin" : Vector2(0, 0),
@@ -10489,7 +11199,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/menu_sel_off"
 	},
 	"menu_sel_on" : {
 		"origin" : Vector2(0, 0),
@@ -10504,7 +11215,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/menu_sel_on"
 	},
 	"menu_top" : {
 		"origin" : Vector2(0, 0),
@@ -10519,7 +11231,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/menu_top"
 	},
 	"menu_ul" : {
 		"origin" : Vector2(0, 0),
@@ -10534,7 +11247,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/menu_ul"
 	},
 	"menu_ur" : {
 		"origin" : Vector2(0, 0),
@@ -10549,7 +11263,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/menu_ur"
 	},
 	"new_button" : {
 		"origin" : Vector2(0, 0),
@@ -10564,7 +11279,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/new_button"
 	},
 	"new_button_pressed" : {
 		"origin" : Vector2(0, 0),
@@ -10579,7 +11295,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/new_button_pressed"
 	},
 	"ok_button" : {
 		"origin" : Vector2(0, 0),
@@ -10594,7 +11311,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/ok_button"
 	},
 	"ok_button_pressed" : {
 		"origin" : Vector2(0, 0),
@@ -10609,7 +11327,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/ok_button_pressed"
 	},
 	"page_down" : {
 		"origin" : Vector2(0, 0),
@@ -10624,7 +11343,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/page_down"
 	},
 	"page_up" : {
 		"origin" : Vector2(0, 0),
@@ -10639,7 +11359,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/page_up"
 	},
 	"rim" : {
 		"origin" : Vector2(0, 0),
@@ -10652,7 +11373,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/rim"
 	},
 	"rim_deflect" : {
 		"origin" : Vector2(0, 0),
@@ -10667,7 +11389,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/rim_deflect"
 	},
 	"slider" : {
 		"origin" : Vector2(0, 0),
@@ -10680,7 +11403,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/slider"
 	},
 	"slider_bg" : {
 		"origin" : Vector2(0, 0),
@@ -10693,7 +11417,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/slider_bg"
 	},
 	"test_button" : {
 		"origin" : Vector2(0, 0),
@@ -10708,7 +11433,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/test_button"
 	},
 	"test_button_pressed" : {
 		"origin" : Vector2(0, 0),
@@ -10723,7 +11449,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/test_button_pressed"
 	},
 	"big_chest" : {
 		"origin" : Vector2(0, 0),
@@ -10738,7 +11465,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/end/big_chest"
 	},
 	"big_chest_open" : {
 		"origin" : Vector2(0, 0),
@@ -10753,7 +11481,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/end/big_chest_open"
 	},
 	"big_treasure" : {
 		"origin" : Vector2(0, 0),
@@ -10768,7 +11497,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/end/big_treasure"
 	},
 	"end2_bg" : {
 		"origin" : Vector2(0, 0),
@@ -10783,7 +11513,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/end/end2_bg"
 	},
 	"end_wall" : {
 		"origin" : Vector2(0, 0),
@@ -10798,7 +11529,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/end/end_wall"
 	},
 	"lava_spray" : {
 		"origin" : Vector2(0, 0),
@@ -10815,7 +11547,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/other/end/lava_spray"
 	},
 	"player_sil" : {
 		"origin" : Vector2(0, 0),
@@ -10837,7 +11570,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/other/end/player_sil"
 	},
 	"prite1112" : {
 		"origin" : Vector2(0, 0),
@@ -10852,7 +11586,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/end/prite1112"
 	},
 	"treasure_sil" : {
 		"origin" : Vector2(0, 0),
@@ -10867,7 +11602,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/end/treasure_sil"
 	},
 	"volcano_flame" : {
 		"origin" : Vector2(0, 0),
@@ -10886,7 +11622,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/other/end/volcano_flame"
 	},
 	"bg_end3" : {
 		"origin" : Vector2(0, 0),
@@ -10901,7 +11638,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/intro/bg_end3"
 	},
 	"camel" : {
 		"origin" : Vector2(0, 0),
@@ -10921,7 +11659,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/other/intro/camel"
 	},
 	"camel_damsel" : {
 		"origin" : Vector2(0, 0),
@@ -10941,7 +11680,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/other/intro/camel_damsel"
 	},
 	"camel_tunnel" : {
 		"origin" : Vector2(0, 0),
@@ -10961,7 +11701,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/other/intro/camel_tunnel"
 	},
 	"desert" : {
 		"origin" : Vector2(0, 0),
@@ -10976,7 +11717,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/intro/desert"
 	},
 	"desert2" : {
 		"origin" : Vector2(0, 0),
@@ -10991,7 +11733,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/intro/desert2"
 	},
 	"desert_night" : {
 		"origin" : Vector2(0, 0),
@@ -11006,7 +11749,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/intro/desert_night"
 	},
 	"desert_night2" : {
 		"origin" : Vector2(0, 0),
@@ -11021,7 +11765,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/intro/desert_night2"
 	},
 	"desert_top" : {
 		"origin" : Vector2(0, 0),
@@ -11036,7 +11781,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/intro/desert_top"
 	},
 	"desert_top_night" : {
 		"origin" : Vector2(0, 0),
@@ -11051,7 +11797,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/intro/desert_top_night"
 	},
 	"flare" : {
 		"origin" : Vector2(4, 4),
@@ -11067,7 +11814,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/other/intro/flare"
 	},
 	"flare_spark" : {
 		"origin" : Vector2(2, 2),
@@ -11086,7 +11834,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/other/intro/flare_spark"
 	},
 	"intro_bg" : {
 		"origin" : Vector2(0, 0),
@@ -11101,7 +11850,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/intro/intro_bg"
 	},
 	"moon" : {
 		"origin" : Vector2(0, 0),
@@ -11116,7 +11866,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/intro/moon"
 	},
 	"palm_tree" : {
 		"origin" : Vector2(0, 0),
@@ -11131,7 +11882,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/intro/palm_tree"
 	},
 	"palm_tree_dark" : {
 		"origin" : Vector2(0, 0),
@@ -11146,7 +11898,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/intro/palm_tree_dark"
 	},
 	"shrub" : {
 		"origin" : Vector2(0, 0),
@@ -11161,7 +11914,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/intro/shrub"
 	},
 	"shrub_dark" : {
 		"origin" : Vector2(0, 0),
@@ -11176,7 +11930,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/intro/shrub_dark"
 	},
 	"bronze_trophy" : {
 		"origin" : Vector2(0, 0),
@@ -11191,7 +11946,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/title/bronze_trophy"
 	},
 	"changing_door" : {
 		"origin" : Vector2(0, 0),
@@ -11206,7 +11962,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/title/changing_door"
 	},
 	"copy" : {
 		"origin" : Vector2(0, 0),
@@ -11219,7 +11976,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/title/copy"
 	},
 	"gold_trophy" : {
 		"origin" : Vector2(0, 0),
@@ -11234,7 +11992,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/title/gold_trophy"
 	},
 	"level13_sign" : {
 		"origin" : Vector2(0, 0),
@@ -11249,7 +12008,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/title/level13_sign"
 	},
 	"level5_sign" : {
 		"origin" : Vector2(0, 0),
@@ -11264,7 +12024,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/title/level5_sign"
 	},
 	"level9_sign" : {
 		"origin" : Vector2(0, 0),
@@ -11279,7 +12040,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/title/level9_sign"
 	},
 	"moon_door" : {
 		"origin" : Vector2(0, 0),
@@ -11294,7 +12056,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/title/moon_door"
 	},
 	"multi_gold" : {
 		"origin" : Vector2(0, 0),
@@ -11309,7 +12072,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/title/multi_gold"
 	},
 	"new" : {
 		"origin" : Vector2(0, 0),
@@ -11324,7 +12088,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/title/new"
 	},
 	"quit_sign" : {
 		"origin" : Vector2(0, 0),
@@ -11337,7 +12102,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/title/quit_sign"
 	},
 	"reset_sign" : {
 		"origin" : Vector2(0, 0),
@@ -11350,7 +12116,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/title/reset_sign"
 	},
 	"scores_sign" : {
 		"origin" : Vector2(0, 0),
@@ -11365,7 +12132,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/title/scores_sign"
 	},
 	"silver_trophy" : {
 		"origin" : Vector2(0, 0),
@@ -11380,7 +12148,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/title/silver_trophy"
 	},
 	"star_door" : {
 		"origin" : Vector2(0, 0),
@@ -11395,7 +12164,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/title/star_door"
 	},
 	"start_sign" : {
 		"origin" : Vector2(0, 0),
@@ -11410,7 +12180,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/title/start_sign"
 	},
 	"sun_door" : {
 		"origin" : Vector2(0, 0),
@@ -11425,7 +12196,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/title/sun_door"
 	},
 	"title" : {
 		"origin" : Vector2(0, 0),
@@ -11440,7 +12212,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/title/title"
 	},
 	"title_bg" : {
 		"origin" : Vector2(0, 0),
@@ -11455,7 +12228,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/title/title_bg"
 	},
 	"tutorial_sign" : {
 		"origin" : Vector2(0, 0),
@@ -11468,7 +12242,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/other/title/tutorial_sign"
 	},
 	"_0" : {
 		"origin" : Vector2(0, 0),
@@ -11481,7 +12256,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/supersound/_0"
 	},
 	"_1" : {
 		"origin" : Vector2(0, 0),
@@ -11494,7 +12270,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/supersound/_1"
 	},
 	"arrow_trap_left" : {
 		"origin" : Vector2(0, 0),
@@ -11507,7 +12284,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/traps/arrow_trap_left"
 	},
 	"arrow_trap_left_lit" : {
 		"origin" : Vector2(0, 0),
@@ -11520,7 +12298,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/traps/arrow_trap_left_lit"
 	},
 	"arrow_trap_right" : {
 		"origin" : Vector2(0, 0),
@@ -11533,7 +12312,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/traps/arrow_trap_right"
 	},
 	"arrow_trap_right_lit" : {
 		"origin" : Vector2(0, 0),
@@ -11546,7 +12326,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/traps/arrow_trap_right_lit"
 	},
 	"boulder" : {
 		"origin" : Vector2(16, 16),
@@ -11559,7 +12340,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/traps/boulder"
 	},
 	"boulder_rotate_l" : {
 		"origin" : Vector2(16, 16),
@@ -11577,7 +12359,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/traps/boulder_rotate_l"
 	},
 	"boulder_rotate_r" : {
 		"origin" : Vector2(16, 16),
@@ -11595,7 +12378,8 @@ const sprite_database = {
 			},
 			"preload" : true,
 			"smooth_edges" : false,
-			"transparent" : false
+			"transparent" : false,
+			"folder_path" : "res://sprites/traps/boulder_rotate_r"
 	},
 	"ceiling_trap" : {
 		"origin" : Vector2(0, 0),
@@ -11608,7 +12392,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/traps/ceiling_trap"
 	},
 	"ceiling_trap_s" : {
 		"origin" : Vector2(0, 0),
@@ -11621,7 +12406,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/traps/ceiling_trap_s"
 	},
 	"door" : {
 		"origin" : Vector2(0, 0),
@@ -11634,7 +12420,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/traps/door"
 	},
 	"giant_tiki_head" : {
 		"origin" : Vector2(16, 16),
@@ -11649,7 +12436,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/traps/giant_tiki_head"
 	},
 	"gth_hole" : {
 		"origin" : Vector2(16, 16),
@@ -11664,7 +12452,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/traps/gth_hole"
 	},
 	"kali_head1" : {
 		"origin" : Vector2(16, 16),
@@ -11679,7 +12468,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/traps/kali_head1"
 	},
 	"kali_head2" : {
 		"origin" : Vector2(16, 16),
@@ -11694,7 +12484,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/traps/kali_head2"
 	},
 	"kali_head3" : {
 		"origin" : Vector2(16, 16),
@@ -11709,7 +12500,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/traps/kali_head3"
 	},
 	"smash_trap" : {
 		"origin" : Vector2(0, 0),
@@ -11722,7 +12514,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/traps/smash_trap"
 	},
 	"smash_trap_lit" : {
 		"origin" : Vector2(0, 0),
@@ -11735,7 +12528,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/traps/smash_trap_lit"
 	},
 	"spears_left" : {
 		"origin" : Vector2(0, 0),
@@ -11748,7 +12542,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/traps/spears_left"
 	},
 	"spears_right" : {
 		"origin" : Vector2(0, 0),
@@ -11761,7 +12556,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/traps/spears_right"
 	},
 	"spear_trap1" : {
 		"origin" : Vector2(0, 0),
@@ -11774,7 +12570,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/traps/spear_trap1"
 	},
 	"spear_trap2" : {
 		"origin" : Vector2(0, 0),
@@ -11787,7 +12584,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/traps/spear_trap2"
 	},
 	"spear_trap_lit" : {
 		"origin" : Vector2(0, 0),
@@ -11800,7 +12598,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/traps/spear_trap_lit"
 	},
 	"spikes" : {
 		"origin" : Vector2(0, 0),
@@ -11813,7 +12612,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/traps/spikes"
 	},
 	"spikes_blood" : {
 		"origin" : Vector2(0, 0),
@@ -11826,7 +12626,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/traps/spikes_blood"
 	},
 	"spring_trap" : {
 		"origin" : Vector2(0, 0),
@@ -11839,7 +12640,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/traps/spring_trap"
 	},
 	"spring_trap_sprung" : {
 		"origin" : Vector2(0, 0),
@@ -11852,7 +12654,8 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/traps/spring_trap_sprung"
 	},
 	"thwomp_trap" : {
 		"origin" : Vector2(0, 0),
@@ -11865,6 +12668,7 @@ const sprite_database = {
 		},
 		"preload" : true,
 		"smooth_edges" : false,
-		"transparent" : false
+		"transparent" : false,
+		"folder_path" : "res://sprites/traps/thwomp_trap"
 	}
 }
