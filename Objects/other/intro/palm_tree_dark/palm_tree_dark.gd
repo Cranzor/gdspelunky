@@ -7,3 +7,5 @@ func _ready():
 	#--- set depth
 	depth = -999
 	z_index = depth
+
+	object_setup()

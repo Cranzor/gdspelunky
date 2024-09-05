@@ -6,10 +6,10 @@ extends DrawnSprite
 # meta-space-indent: 4
 
 func _ready():
-	object_setup(self)
+	object_setup()
 
 func _physics_process(delta):
-	object_tick(self)
+	object_tick()
 
 func _process(delta):
-	object_process(self)
+	object_process()

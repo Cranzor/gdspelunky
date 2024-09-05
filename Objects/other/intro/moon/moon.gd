@@ -4,18 +4,13 @@ var x_off
 
 @onready var last_position = position.x
 
-func initial_setup():
-	#--- set size
-	object_size = Vector2(96, 96)
-
 func _ready():	
-	object_setup(self)
+	object_setup()
 	
-	initial_setup()
 	x_off = 0
 	
 func _physics_process(delta):
-	object_tick(self)
+	object_tick()
 	
 	if (InLevel.is_room("credits1") and gml.instance_exists("camel")):
 		position.x += 0.01
@@ -29,6 +24,6 @@ func _physics_process(delta):
 	last_position = position.x
 
 func _process(delta):
-	object_process(self)
+	object_process()
 	
 	smooth_animated_sprite_movement(x_velocity, y_velocity, delta)

@@ -133,8 +133,12 @@ func set_animation(new_sprite):
 
 func get_animation():
 	var animated_sprite: AnimatedSprite2D = get_animated_sprite_2d()
-	var current_animation = animated_sprite.animation
-	return current_animation
+	
+	if animated_sprite != null:
+		var current_animation = animated_sprite.animation
+		return current_animation
+	else:
+		return null
 
 func set_animation_speed_scale(new_speed):
 	var animated_sprite: AnimatedSprite2D = get_animated_sprite_2d()
@@ -208,13 +212,14 @@ func smooth_motion_step_end():
 	if updated_animation != starting_animation:
 		gml.update_obj_list_collision(self)
 
-func object_setup(node):
-	var object_name = node.object_name
+#--------
+func object_setup():
 	var object_database = object_database.object_database
 	var object_entry = object_database[object_name]
 	
 	depth_setup(object_entry)
-	bounding_box_setup(object_entry)
+	bounding_box_setup()
+	sprite_setup(object_entry)
 	
 func depth_setup(object_entry):
 	var object_depth = object_entry["depth"]
@@ -227,15 +232,47 @@ func depth_setup(object_entry):
 	
 	depth = converted_depth
 
-func bounding_box_setup(object_entry):
-	object_size = object_entry["mask"]["bounding_box"][1]
+func bounding_box_setup():
+	var sprite = get_animation()
 	
-	# --- Above code will not work. Base this on the sprite instead. Check to see if the node has an AnimatedSprite2D. (If not, set bounding box to Vector2(0, 0).)
-	#--- If it does, get the name of the current animation.
-	#--- Check this animation in the sprite database dictionary to get the size for the bounding box.
+	if sprite != null:
+		object_size = Sprites.sprite_database[sprite]["mask"]["bounding_box"][1]
+	else:
+		var no_sprite_size = Vector2(0, 0)
+		object_size = no_sprite_size
 
-func object_tick(node):
+func sprite_setup(object_entry):
+	var animated_sprite = get_animated_sprite_2d()
+	
+	if animated_sprite == null:
+		var sprite_to_add = object_entry["sprite"]
+		if sprite_to_add != null:
+			var sprite_entry = Sprites.sprite_database[sprite_to_add]
+			var sprite_folder_path = sprite_entry["folder_path"]
+			var new_animated_sprite = AnimatedSprite2D.new()
+			var sprite_frames = SpriteFrames.new()
+			sprite_frames.add_animation(sprite_to_add)
+			sprite_frames.set_animation_speed(sprite_to_add, 30)
+			sprite_frames.set_animation_loop(sprite_to_add, false)
+			sprite_frames.remove_animation("default")			
+		
+			var files = DirAccess.get_files_at(sprite_folder_path)
+			print(files)
+			for file in files:
+				if file.get_extension() == "png":
+					var sprite_texture = load(sprite_folder_path + "/" + file)
+					sprite_frames.add_frame(sprite_to_add, sprite_texture)
+			
+			new_animated_sprite.sprite_frames = sprite_frames
+			add_child(new_animated_sprite)
+			new_animated_sprite.name = "AnimatedSprite2D"
+			new_animated_sprite.centered = false
+			new_animated_sprite.z_as_relative = false
+			new_animated_sprite.z_index = depth
+			new_animated_sprite.add_to_group("animated_sprite", true)
+
+func object_tick():
 	pass
 
-func object_process(node):
+func object_process():
 	pass

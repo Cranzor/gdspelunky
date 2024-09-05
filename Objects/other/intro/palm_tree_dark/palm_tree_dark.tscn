@@ -19,10 +19,12 @@ animations = [{
 [node name="PalmTreeDark" type="Node2D" groups=["palm_tree_dark"]]
 z_index = 999
 script = ExtResource("1_r1t2r")
+object_name = "palm_tree_dark"
 depth = 999
 object_size = Vector2(32, 128)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
+visible = false
 sprite_frames = SubResource("SpriteFrames_1cu0n")
 animation = &"palm_tree_dark"
 centered = false

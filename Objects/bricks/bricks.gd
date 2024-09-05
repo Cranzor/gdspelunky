@@ -11,15 +11,15 @@ func initial_setup():
 	#_create()
 
 func _ready():
-	object_setup(self)
+	object_setup()
 	
 	create()
 
 func _physics_process(delta):
-	object_tick(self)
+	object_tick()
 
 func _process(delta):
-	object_process(self)
+	object_process()
 
 #--- Object functions
 func create():
