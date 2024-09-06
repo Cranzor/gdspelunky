@@ -123,13 +123,19 @@ func drawn_sprite_create():
 	blink_toggle = 0
 
 func get_animated_sprite_2d():
-	var animated_sprite: AnimatedSprite2D = find_child("AnimatedSprite2D")
+	var animated_sprite: AnimatedSprite2D = find_child("AnimatedSprite2D", true, false)
 	return animated_sprite
 
 func set_animation(new_sprite):
 	var animated_sprite: AnimatedSprite2D = get_animated_sprite_2d()
-	assert(animated_sprite.sprite_frames.has_animation(new_sprite))
-	animated_sprite.play(new_sprite)
+	#assert(animated_sprite.sprite_frames.has_animation(new_sprite))
+	if animated_sprite.sprite_frames.has_animation(new_sprite):
+		animated_sprite.play(new_sprite)
+	else:
+		var sprite_folder = Sprites.sprite_database[new_sprite]["folder_path"]
+		animated_sprite.sprite_frames = sprite_animation_setup(new_sprite, animated_sprite.sprite_frames)
+		assert(animated_sprite.sprite_frames.has_animation(new_sprite))
+		animated_sprite.play(new_sprite)
 
 func get_animation():
 	var animated_sprite: AnimatedSprite2D = get_animated_sprite_2d()
@@ -250,18 +256,16 @@ func sprite_setup(object_entry):
 			var sprite_entry = Sprites.sprite_database[sprite_to_add]
 			var sprite_folder_path = sprite_entry["folder_path"]
 			var new_animated_sprite = AnimatedSprite2D.new()
-			var sprite_frames = SpriteFrames.new()
-			sprite_frames.add_animation(sprite_to_add)
-			sprite_frames.set_animation_speed(sprite_to_add, 30)
-			sprite_frames.set_animation_loop(sprite_to_add, true)
-			sprite_frames.remove_animation("default")			
+			var sprite_frames = SpriteFrames.new()		
 		
-			var files = DirAccess.get_files_at(sprite_folder_path)
-			for file in files:
-				if file.get_extension() == "png":
-					print(file)
-					var sprite_texture = load(sprite_folder_path + "/" + file)
-					sprite_frames.add_frame(sprite_to_add, sprite_texture)
+			#var files = DirAccess.get_files_at(sprite_folder_path)
+			#for file in files:
+				#if file.get_extension() == "png":
+					#print(file)
+					#var sprite_texture = load(sprite_folder_path + "/" + file)
+					#sprite_frames.add_frame(sprite_to_add, sprite_texture)
+			sprite_frames = sprite_animation_setup(sprite_to_add, sprite_frames)
+			sprite_frames.remove_animation("default")		
 			
 			new_animated_sprite.sprite_frames = sprite_frames
 			new_animated_sprite.name = "AnimatedSprite2D"
@@ -271,6 +275,21 @@ func sprite_setup(object_entry):
 			new_animated_sprite.add_to_group("animated_sprite", true)
 			add_child(new_animated_sprite)
 			new_animated_sprite.play(sprite_to_add)
+			
+#--- Helper function to set up a single animation for an AnimatedSprite2D
+func sprite_animation_setup(sprite_name, sprite_frames):
+	sprite_frames.add_animation(sprite_name)
+	sprite_frames.set_animation_speed(sprite_name, 30)
+	sprite_frames.set_animation_loop(sprite_name, true)
+	var sprite_folder_path = Sprites.sprite_database[sprite_name]["folder_path"]
+	var files = DirAccess.get_files_at(sprite_folder_path)
+	for file in files:
+		if file.get_extension() == "png":
+			print(file)
+			var sprite_texture = load(sprite_folder_path + "/" + file)
+			sprite_frames.add_frame(sprite_name, sprite_texture)
+	
+	return sprite_frames
 
 func object_tick():
 	pass

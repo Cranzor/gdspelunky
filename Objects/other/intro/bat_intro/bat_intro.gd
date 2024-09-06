@@ -39,3 +39,8 @@ func _physics_process(delta):
 
 #func _process(delta):
 	#smooth_animated_sprite_movement(x_velocity, y_velocity, delta)
+
+func _input(event):
+	if Input.is_key_pressed(KEY_G):
+		#print("G pressed")
+		sprite_index = "gold_idol"
