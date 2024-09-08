@@ -96,22 +96,22 @@ animations = [{
 "speed": 30.0
 }]
 
-[node name="PDummy3" type="Node2D" groups=["drawn_sprite", "p_dummy3"]]
+[node name="PDummy3" type="Node2D" node_paths=PackedStringArray("animated_sprite") groups=["drawn_sprite", "p_dummy3"]]
 z_index = -40
 script = ExtResource("1_sgunq")
+animated_sprite = NodePath("AnimatedSprite2D")
+object_name = "p_dummy3"
 object_size = Vector2(16, 16)
 
-[node name="Node" type="Node" parent="."]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node" groups=["animated_sprite"]]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
 show_behind_parent = true
 z_index = -40
 z_as_relative = false
 sprite_frames = SubResource("SpriteFrames_g2y7a")
-animation = &"run_left"
+animation = &"climb_up3"
 centered = false
 
-[node name="Camera2D" type="Camera2D" parent="Node/AnimatedSprite2D" groups=["view"]]
+[node name="Camera2D" type="Camera2D" parent="AnimatedSprite2D" groups=["view"]]
 limit_left = 0
 limit_right = 960
 limit_bottom = 240

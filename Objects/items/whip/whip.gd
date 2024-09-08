@@ -11,7 +11,7 @@ func initial_setup():
 	$Node/AnimatedSprite2D.play("whip_right")
 
 func _process(delta):
-	smooth_animated_sprite_movement(x_velocity, y_velocity, delta)
+	smooth_animated_sprite_movement(x_velocity, y_velocity)
 
 func _ready():
 	initial_setup()

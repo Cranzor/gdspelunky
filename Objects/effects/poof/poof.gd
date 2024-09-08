@@ -15,7 +15,7 @@ func _ready():
 	create()
 
 func _process(delta):
-	smooth_animated_sprite_movement(x_velocity, y_velocity, delta)
+	smooth_animated_sprite_movement(x_velocity, y_velocity)
 
 func _physics_process(delta):
 	step()

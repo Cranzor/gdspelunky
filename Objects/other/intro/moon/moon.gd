@@ -14,16 +14,11 @@ func _physics_process(delta):
 	
 	if (InLevel.is_room("credits1") and gml.instance_exists("camel")):
 		position.x += 0.01
-		x_velocity = 0.01
 		
 	elif (gml.view('xview') != 0):
 		x_off -= 0.01
 
 	position.x = gml.view('xview') + 208 + x_off
-	x_velocity = position.x - last_position
-	last_position = position.x
 
 func _process(delta):
 	object_process()
-	
-	smooth_animated_sprite_movement(x_velocity, y_velocity, delta)

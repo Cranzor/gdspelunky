@@ -297,7 +297,7 @@ func _process(delta):
 	#
 	#animated_sprite.position.x += (final_x_vel * 30) * delta
 	#animated_sprite.position.y += (final_y_vel * 30) * delta
-	smooth_animated_sprite_movement(x_velocity, y_velocity, delta)
+	smooth_animated_sprite_movement(x_velocity, y_velocity)
 	
 func _ready():
 	object_size = Vector2(16, 16)

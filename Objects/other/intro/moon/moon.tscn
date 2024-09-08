@@ -22,9 +22,8 @@ object_name = "moon"
 depth = 99999
 object_size = Vector2(96, 96)
 
-[node name="Node" type="Node" parent="."]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node"]
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
+visible = false
 z_index = -4000
 z_as_relative = false
 sprite_frames = SubResource("SpriteFrames_sek0t")

@@ -7,6 +7,8 @@ var object_database = ObjectDatabase.new()
 var sprite
 var solid = false
 
+var moving_object = false
+
 @export var object_name: String
 
 @export var depth: int = 0:
@@ -186,33 +188,37 @@ var starting_animation
 var updated_animation
 
 var sprite_initialized = false
-func smooth_animated_sprite_movement(x_velocity, y_velocity, delta):
+func smooth_animated_sprite_movement(x_velocity, y_velocity):
 	var animated_sprite = get_animated_sprite_2d()
-	var parent_node = find_child("Node", true, false)
-	if sprite_initialized == false and parent_node == null:
+	initialize_sprite_for_smooth_movement(animated_sprite)
+	update_sprite_position(animated_sprite)
+
+#--- Setting up arguments here so they don't have to be called every time
+
+func initialize_sprite_for_smooth_movement(animated_sprite):
+	if sprite_initialized == false:
 		if animated_sprite != null:
-			parent_node = Node.new()
-			add_child(parent_node)
-			animated_sprite.reparent(parent_node)
-			
-			animated_sprite.show_behind_parent = true
-			animated_sprite.z_as_relative = false
-			
+			set_up_sprite_parent_node(animated_sprite)
 			sprite_initialized = true
-			animated_sprite.position = self.position
-			
-			
-	elif sprite_initialized == false:
-		sprite_initialized = true
-		animated_sprite.position = self.position
-		tick_start_position = position
-	
+
+func update_sprite_position(animated_sprite):
+	animated_sprite.position.x += (x_velocity * 30) * get_process_delta_time()
+	animated_sprite.position.y += (y_velocity * 30) * get_process_delta_time()
+
+func find_specific_child(node_name):
+	var child = find_child(node_name, true, false)
+	return child
+
+func set_up_sprite_parent_node(animated_sprite):
 	if animated_sprite != null:
-		animated_sprite.position.x += (x_velocity * 30) * delta
-		animated_sprite.position.y += (y_velocity * 30) * delta
-	
-func test_smooth():
-	test_smooth_motion_step()
+		var parent_node = Node.new()
+		add_child(parent_node)
+		animated_sprite.reparent(parent_node)
+		
+		animated_sprite.show_behind_parent = true
+		animated_sprite.z_as_relative = false
+		
+		animated_sprite.position = global_position
 
 func smooth_motion_step_begin():
 	if tick_end_position == position:
@@ -241,19 +247,14 @@ func smooth_motion_step_end():
 		#gml.update_obj_list_collision(self)
 
 var test_prior_tick_position
-func test_smooth_motion_step():
-	var current_position = position
-	if current_position != test_prior_tick_position:
-		if test_prior_tick_position == null:
-			test_prior_tick_position = position
-		var position_diff = current_position - test_prior_tick_position
-		x_velocity = position_diff.x
-		y_velocity = position_diff.y
+func handle_smooth_motion_values():
+	if did_object_move():
+		initialize_prior_tick_position()
+		set_x_y_velocity()
 	else:
-		x_velocity = 0
-		y_velocity = 0
+		reset_x_y_velocity()
 	
-	test_prior_tick_position = position
+	update_prior_tick_position()
 
 #--------
 func object_setup():
@@ -329,9 +330,35 @@ func sprite_animation_setup(sprite_name, sprite_frames):
 	return sprite_frames
 
 func object_tick():
-	if object_name == "bat_intro":
-		test_smooth()
+	if object_name == "bat_intro" or object_name == "moon" or object_name == "p_dummy3":
+		handle_smooth_motion_values()
 
 func object_process():
-	if object_name == "bat_intro":
-		smooth_animated_sprite_movement(x_velocity, y_velocity, get_process_delta_time())
+	if position != test_prior_tick_position:
+		moving_object = true
+	
+	if object_name == "bat_intro" or object_name == "moon" or object_name == "p_dummy3":
+		if moving_object: smooth_animated_sprite_movement(x_velocity, y_velocity)
+
+func did_object_move():
+	var current_position = position
+	if current_position == test_prior_tick_position:
+		return false
+	else:
+		return true
+
+func initialize_prior_tick_position():
+	if test_prior_tick_position == null:
+		test_prior_tick_position = position
+
+func update_prior_tick_position():
+	test_prior_tick_position = position
+
+func set_x_y_velocity():
+	var position_diff = position - test_prior_tick_position
+	x_velocity = position_diff.x
+	y_velocity = position_diff.y
+
+func reset_x_y_velocity():
+	x_velocity = 0
+	y_velocity = 0

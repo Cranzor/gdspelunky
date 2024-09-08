@@ -9,7 +9,7 @@ const RIGHT = 0
 @onready var alarm_0_timer = $Alarms/Alarm0
 @onready var alarm_2_timer = $Alarms/Alarm2
 
-@onready var animated_sprite = $Node/AnimatedSprite2D
+@export var animated_sprite: AnimatedSprite2D
 
 var rope_throw = preload("res://objects/items/rope_throw/rope_throw.tscn")
 
@@ -29,11 +29,12 @@ func _ready():
 	create()
 
 func _physics_process(delta):
+	object_tick()
 	step()
 	draw()
 
 func _process(delta):
-	smooth_animated_sprite_movement(x_velocity, y_velocity, delta)
+	object_process()
 
 func create():
 	# dummy actor for intro
@@ -51,10 +52,7 @@ func create():
 	#RIGHT = 1
 	facing = RIGHT
 
-func step():
-	x_velocity = 0
-	y_velocity = 0
-	
+func step():	
 	position.y += y_vel
 
 	if (status == TRANSITION):
@@ -66,7 +64,6 @@ func step():
 		
 		else:
 			position.x += 2
-			x_velocity = 2
 
 	elif (status == ROPEDROP):
 		if alarm_0_timer.is_stopped(): #--- [FLAG] check
@@ -83,7 +80,6 @@ func step():
 		
 		else:
 			position.x += 2
-			x_velocity = 2
 
 	elif (status == 4):
 
@@ -94,7 +90,6 @@ func step():
 		else:
 		
 			position.y += 2
-			y_velocity = 2
 	
 		if alarm_2_timer.is_stopped():
 			alarm_2_timer.start(float(8)/float(gml.room_speed))
