@@ -108,7 +108,7 @@ show_behind_parent = true
 z_index = -40
 z_as_relative = false
 sprite_frames = SubResource("SpriteFrames_g2y7a")
-animation = &"climb_up3"
+animation = &"run_left"
 centered = false
 
 [node name="Camera2D" type="Camera2D" parent="Node/AnimatedSprite2D" groups=["view"]]

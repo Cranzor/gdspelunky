@@ -187,17 +187,37 @@ var updated_animation
 
 var sprite_initialized = false
 func smooth_animated_sprite_movement(x_velocity, y_velocity, delta):
-	var animated_sprite = find_child("AnimatedSprite2D")
-	if sprite_initialized == false:
+	var animated_sprite = get_animated_sprite_2d()
+	var parent_node = find_child("Node", true, false)
+	if sprite_initialized == false and parent_node == null:
+		if animated_sprite != null:
+			parent_node = Node.new()
+			add_child(parent_node)
+			animated_sprite.reparent(parent_node)
+			
+			animated_sprite.show_behind_parent = true
+			animated_sprite.z_as_relative = false
+			
+			sprite_initialized = true
+			animated_sprite.position = self.position
+			
+			
+	elif sprite_initialized == false:
 		sprite_initialized = true
 		animated_sprite.position = self.position
-		
-	animated_sprite.position.x += (x_velocity * 30) * delta
-	animated_sprite.position.y += (y_velocity * 30) * delta
+		tick_start_position = position
+	
+	if animated_sprite != null:
+		animated_sprite.position.x += (x_velocity * 30) * delta
+		animated_sprite.position.y += (y_velocity * 30) * delta
+	
+func test_smooth():
+	test_smooth_motion_step()
 
 func smooth_motion_step_begin():
-	x_velocity = 0
-	y_velocity = 0
+	if tick_end_position == position:
+		x_velocity = 0
+		y_velocity = 0
 	tick_start_position = position
 	
 	starting_animation = get_animation()
@@ -209,14 +229,31 @@ func smooth_motion_step_end():
 	x_velocity = position_diff.x
 	y_velocity = position_diff.y
 	
-	if position_diff != Vector2(0, 0):
-		gml.update_obj_list_collision(self)
+	#---uncomment this
+	#if position_diff != Vector2(0, 0):
+		#gml.update_obj_list_collision(self)
 		
 	
 	updated_animation = get_animation()
 	
-	if updated_animation != starting_animation:
-		gml.update_obj_list_collision(self)
+	#---uncomment this
+	#if updated_animation != starting_animation:
+		#gml.update_obj_list_collision(self)
+
+var test_prior_tick_position
+func test_smooth_motion_step():
+	var current_position = position
+	if current_position != test_prior_tick_position:
+		if test_prior_tick_position == null:
+			test_prior_tick_position = position
+		var position_diff = current_position - test_prior_tick_position
+		x_velocity = position_diff.x
+		y_velocity = position_diff.y
+	else:
+		x_velocity = 0
+		y_velocity = 0
+	
+	test_prior_tick_position = position
 
 #--------
 func object_setup():
@@ -292,7 +329,9 @@ func sprite_animation_setup(sprite_name, sprite_frames):
 	return sprite_frames
 
 func object_tick():
-	pass
+	if object_name == "bat_intro":
+		test_smooth()
 
 func object_process():
-	pass
+	if object_name == "bat_intro":
+		smooth_animated_sprite_movement(x_velocity, y_velocity, get_process_delta_time())

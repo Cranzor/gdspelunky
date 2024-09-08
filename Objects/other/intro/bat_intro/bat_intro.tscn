@@ -33,5 +33,3 @@ sprite_frames = SubResource("SpriteFrames_xyr5v")
 animation = &"bat_left"
 frame_progress = 0.430518
 centered = false
-
-[node name="Node" type="Node" parent="."]

@@ -430,16 +430,16 @@ func get_instance(obj: String): #Support function for when GML handles this by i
 		var instance = get_tree().get_first_node_in_group(str(obj))
 		return instance
 
-func update_obj_list_collision(node):
-	var obj_groups = node.get_groups()
-	var sprite_offset = node.sprite_offset
-	var adjusted_location = Vector2(node.global_position.x + sprite_offset.x, node.global_position.y + sprite_offset.y)
-	var node_name = node.get_path()
-	
-	if !obj_groups.is_empty():
-		for group in obj_groups:
-			if group.begins_with("id_") == false:
-				instanced_objects[group][node_name]["collision_location"] = adjusted_location
+#func update_obj_list_collision(node):
+	#var obj_groups = node.get_groups()
+	#var sprite_offset = node.sprite_offset
+	#var adjusted_location = Vector2(node.global_position.x + sprite_offset.x, node.global_position.y + sprite_offset.y)
+	#var node_name = node.get_path()
+	#
+	#if !obj_groups.is_empty():
+		#for group in obj_groups:
+			#if group.begins_with("id_") == false:
+				#instanced_objects[group][node_name]["collision_location"] = adjusted_location
 
 
 func alarm_setup(frames, alarm_activity):
