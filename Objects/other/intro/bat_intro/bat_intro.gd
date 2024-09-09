@@ -45,4 +45,4 @@ func _process(delta):
 func _input(event):
 	if Input.is_key_pressed(KEY_G):
 		#print("G pressed")
-		object_name = "bat_intro1"
+		sprite_index = "gold_idol"

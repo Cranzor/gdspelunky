@@ -71,11 +71,12 @@ animations = [{
 [node name="Brick" type="Node2D" groups=["brick", "drawn_sprite", "solid"]]
 z_index = -100
 script = ExtResource("1_wetyu")
+object_name = "brick"
 object_size = Vector2(16, 16)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = -100
 z_as_relative = false
 sprite_frames = SubResource("SpriteFrames_8hgay")
-animation = &"brick"
+animation = &"cave_up"
 centered = false

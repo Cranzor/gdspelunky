@@ -1,20 +1,16 @@
 extends Solid
 
-func initial_setup():
-	#--- set size
-	object_size = Vector2(16, 16)
-
-	#--- set depth
-	depth = -100
-	z_index = depth
-	
-	$AnimatedSprite2D.play("brick")
-	#solid_create()
-	#solid_step()
-
 func _ready():
-	initial_setup()
+	object_setup()
+	
 	create()
+
+func _physics_process(delta):
+	object_tick()
+
+func _process(delta):
+	object_process()
+
 
 func create():
 	solid_create()
@@ -39,8 +35,8 @@ func destroy():
 	if (not clean_death and not global.clean_solids):
 
 		gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), "rubble")
-		gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), "rubbleSmall")
-		gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), "rubbleSmall")
+		gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), "rubble_small")
+		gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), "rubble_small")
 
 		if (sprite_index == "brick_gold"):
 		
