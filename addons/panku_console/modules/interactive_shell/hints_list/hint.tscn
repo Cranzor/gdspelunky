@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://dbtn0x604fx5o"]
+
+[ext_resource type="Script" path="res://addons/panku_console/modules/interactive_shell/hints_list/hint.gd" id="1_sa53g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_56dbv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6xc2u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ganpp"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+
+[node name="Hint" type="PanelContainer" node_paths=PackedStringArray("label", "bg2")]
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_56dbv")
+script = ExtResource("1_sa53g")
+label = NodePath("RichTextLabel")
+bg2 = NodePath("Bg2")
+
+[node name="Blur" type="ColorRect" parent="."]
+layout_mode = 2
+color = Color(0.219608, 0.219608, 0.223529, 0.658824)
+
+[node name="Bg2" type="ColorRect" parent="."]
+visible = false
+layout_mode = 2
+color = Color(0.290196, 0.509804, 0.305882, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6xc2u")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ganpp")
+bbcode_enabled = true
+text = "[color=cyan]w_button[/color][color=gray]([/color]display_name:[color=green]String[/color], env:[color=green]String[/color], exp:[color=green]String[/color][color=gray])[/color]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0

@@ -1,0 +1,204 @@
+[gd_scene load_steps=19 format=3 uid="uid://s88loppa6gja"]
+
+[ext_resource type="Material" uid="uid://dyipeqsa8lcpc" path="res://addons/panku_console/common/lynx_window2/lynx_window_shader_material.tres" id="1_tvp6i"]
+[ext_resource type="Script" path="res://addons/panku_console/common/lynx_window2/lynx_window_2.gd" id="2_1ul5o"]
+[ext_resource type="Theme" uid="uid://bk18yfu0d77wk" path="res://addons/panku_console/res/panku_console_theme.tres" id="2_3fhqk"]
+[ext_resource type="Texture2D" uid="uid://dosm26riekruh" path="res://addons/panku_console/res/icons2/menu.svg" id="4_4dlyn"]
+[ext_resource type="PackedScene" uid="uid://drn5t13m088fb" path="res://addons/panku_console/common/panku_button.tscn" id="4_dnesi"]
+[ext_resource type="Texture2D" uid="uid://gav3m4qtvgje" path="res://addons/panku_console/res/icons2/pop-out-svgrepo-com.svg" id="4_im81u"]
+[ext_resource type="Texture2D" uid="uid://8g5afcuanbl6" path="res://addons/panku_console/res/icons2/close.svg" id="5_l4qpm"]
+[ext_resource type="Texture2D" uid="uid://dvr12fl5prm78" path="res://addons/panku_console/res/effect/square_shadow.png" id="6_mfp1h"]
+[ext_resource type="Texture2D" uid="uid://ciu5jiw4xmkq0" path="res://addons/panku_console/res/icons2/resize-svgrepo-com.svg" id="7_duwqn"]
+[ext_resource type="Script" path="res://addons/panku_console/common/lynx_window2/border.gd" id="8_gj3ji"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hv45g"]
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 0.25098)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6i67d"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+draw_center = false
+border_width_left = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 0.25098)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lct0k"]
+draw_center = false
+shadow_color = Color(0, 0, 0, 0.0627451)
+shadow_size = 16
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p3y6j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r0x7y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p7tml"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5muk4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uldta"]
+draw_center = false
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+
+[node name="LynxWindow2" type="ColorRect" node_paths=PackedStringArray("_window_title_container", "_title_btn", "_close_btn", "_options_btn", "_resize_btn", "_shadow_focus", "_shadow", "_container", "_pop_btn")]
+material = ExtResource("1_tvp6i")
+offset_right = 413.0
+offset_bottom = 305.0
+theme = ExtResource("2_3fhqk")
+script = ExtResource("2_1ul5o")
+_window_title_container = NodePath("MainBody/VBoxContainer/Up")
+_title_btn = NodePath("MainBody/VBoxContainer/Up/TitleButton")
+_close_btn = NodePath("MainBody/VBoxContainer/Up/CloseButton")
+_options_btn = NodePath("MainBody/VBoxContainer/Up/MenuButton")
+_resize_btn = NodePath("Button")
+_shadow_focus = NodePath("Shadow2")
+_shadow = NodePath("Shadow")
+_container = NodePath("MainBody/VBoxContainer/Down")
+_pop_btn = NodePath("MainBody/VBoxContainer/Up/PopupButton")
+
+[node name="MainBody" type="Control" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainBody"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="Up" type="HBoxContainer" parent="MainBody/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TitleButton" parent="MainBody/VBoxContainer/Up" instance=ExtResource("4_dnesi")]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_hv45g")
+
+[node name="TextureRect" parent="MainBody/VBoxContainer/Up/TitleButton/HBoxContainer" index="0"]
+texture = null
+
+[node name="Label" parent="MainBody/VBoxContainer/Up/TitleButton/HBoxContainer" index="1"]
+text = "Window Title"
+
+[node name="PopupButton" parent="MainBody/VBoxContainer/Up" instance=ExtResource("4_dnesi")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hv45g")
+
+[node name="TextureRect" parent="MainBody/VBoxContainer/Up/PopupButton/HBoxContainer" index="0"]
+texture = ExtResource("4_im81u")
+
+[node name="Label" parent="MainBody/VBoxContainer/Up/PopupButton/HBoxContainer" index="1"]
+visible = false
+
+[node name="MenuButton" parent="MainBody/VBoxContainer/Up" instance=ExtResource("4_dnesi")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hv45g")
+
+[node name="TextureRect" parent="MainBody/VBoxContainer/Up/MenuButton/HBoxContainer" index="0"]
+texture = ExtResource("4_4dlyn")
+
+[node name="Label" parent="MainBody/VBoxContainer/Up/MenuButton/HBoxContainer" index="1"]
+visible = false
+
+[node name="CloseButton" parent="MainBody/VBoxContainer/Up" instance=ExtResource("4_dnesi")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hv45g")
+
+[node name="TextureRect" parent="MainBody/VBoxContainer/Up/CloseButton/HBoxContainer" index="0"]
+texture = ExtResource("5_l4qpm")
+
+[node name="Label" parent="MainBody/VBoxContainer/Up/CloseButton/HBoxContainer" index="1"]
+visible = false
+
+[node name="Down" type="Panel" parent="MainBody/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_6i67d")
+
+[node name="Shadow" type="NinePatchRect" parent="."]
+modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -79.0
+offset_right = 63.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_mfp1h")
+draw_center = false
+region_rect = Rect2(0, 0, 512, 512)
+patch_margin_left = 64
+patch_margin_top = 80
+patch_margin_right = 64
+patch_margin_bottom = 48
+
+[node name="Shadow2" type="Panel" parent="."]
+visible = false
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lct0k")
+
+[node name="Button" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0.501961)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -12.0
+offset_top = -12.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_default_cursor_shape = 12
+theme_override_styles/focus = SubResource("StyleBoxEmpty_p3y6j")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_r0x7y")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_p7tml")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_5muk4")
+icon = ExtResource("7_duwqn")
+flat = true
+expand_icon = true
+
+[node name="Border" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_uldta")
+script = ExtResource("8_gj3ji")
+
+[editable path="MainBody/VBoxContainer/Up/TitleButton"]
+[editable path="MainBody/VBoxContainer/Up/PopupButton"]
+[editable path="MainBody/VBoxContainer/Up/MenuButton"]
+[editable path="MainBody/VBoxContainer/Up/CloseButton"]

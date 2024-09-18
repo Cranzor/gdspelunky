@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://clwb00tc8ogtr"]
+
+[ext_resource type="Theme" uid="uid://bk18yfu0d77wk" path="res://addons/panku_console/res/panku_console_theme.tres" id="1_2qqxo"]
+
+[node name="LogOverlay" type="RichTextLabel"]
+modulate = Color(1, 1, 1, 0.501961)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+theme = ExtResource("1_2qqxo")
+bbcode_enabled = true
+text = "Output Area"
+scroll_active = false
+scroll_following = true
+autowrap_mode = 0
+shortcut_keys_enabled = false

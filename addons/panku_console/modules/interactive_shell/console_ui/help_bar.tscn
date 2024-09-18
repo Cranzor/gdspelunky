@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbijhl1nhy64n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c7j4l"]
+bg_color = Color(0.180392, 0.32549, 0.403922, 1)
+
+[node name="HelpBar" type="PanelContainer"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -50.0
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_c7j4l")
+text = "[Help] This is hint!"
+vertical_alignment = 1
+clip_text = true
