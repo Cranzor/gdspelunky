@@ -6,6 +6,8 @@ var collision_rectangle_node = preload("res://CollisionRectangle.tscn")
 var instanced_object_locations = {}
 var instanced_objects = {}
 
+var rejuvenated_collision_objects = {}
+
 #For tile_add
 @export_dir var bg_folder
 @export var bg_holder_path: String

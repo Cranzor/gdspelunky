@@ -50,20 +50,7 @@ func calculate_grid_position(grid_position, spacing):
 	grid_position.x = (grid_position.x / spacing.x) - 1
 	grid_position.y = (grid_position.y / spacing.y) - 1
 	
-	#if object_name == "palm_tree_dark":
-		#print(global_position)
-		#print(grid_position)
-	
 	return grid_position
-
-func generate_random_hash():
-	var characters = '1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYS'
-	var length = 16
-	var word = ""
-	var n_char = len(characters)
-	for i in range(length):
-		word += characters[randi_range(0, n_char - 1)]
-	return word
 	
 func get_nearest_higher_multiple(input_number, multiple): #--- Adapted from here: https://www.geeksforgeeks.org/multiple-of-x-closest-to-n/
 	var original_number = input_number
