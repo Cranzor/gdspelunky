@@ -82,6 +82,7 @@ func step():
 func draw():
 	#if (facing == RIGHT): image_xscale = -1
 	#else: image_xscale = 1
+	
 	if has_sprite(): #--- adding this function due to how AnimatedSprite2D is set up. reference to the node has to be made after that process finishes
 		if (facing == RIGHT): animated_sprite.flip_h = true
 		else: animated_sprite.flip_h = false
@@ -102,8 +103,8 @@ func _on_alarm_2_timeout():
 	climb_snd_toggle = not climb_snd_toggle
 
 func has_sprite():
-	if get_node("AnimatedSprite2D") == null:
+	if find_child("AnimatedSprite2D", true, false) == null:
 		return false
 	else:
-		animated_sprite = get_node("AnimatedSprite2D")
+		animated_sprite = find_child("AnimatedSprite2D", true, false)
 		return true
