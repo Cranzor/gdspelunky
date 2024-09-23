@@ -1,15 +1,15 @@
 extends DrawnSprite #---changing this to DrawnSprite
 
-func initial_setup():
-	#--- set size
-	object_size = Vector2(16, 17)
-
-	#--- set depth
-	depth = -10
-	z_index = depth
-
 func _ready():
-	initial_setup()
+	object_setup()
 
+func _physics_process(delta):
+	object_tick()
+
+func _process(delta):
+	object_process()
+
+#--- Object functions
+func create():
 	if (gml.room_get_name() == "intro"):
-		$AnimatedSprite2D.play("desert_top_night")
+		sprite_index = "desert_top_night"

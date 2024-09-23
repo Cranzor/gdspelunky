@@ -1,29 +1,16 @@
 extends Item
 
-var fall_count
-
-var rope_top = preload("res://objects/items/rope_top/rope_top.tscn")
-var rope = preload("res://objects/items/rope/rope.tscn")
-
-func initial_setup():
-	#--- set size
-	object_size = Vector2(8, 8)
-
-	#--- set depth
-	depth = -100
-	z_index = depth
-	
-	$Node/AnimatedSprite2D.play("rope_end")
-
 func _ready():
-	initial_setup()
-	create()
-
-func _process(delta):
-	smooth_animated_sprite_movement(x_velocity, y_velocity)
+	object_setup()
 
 func _physics_process(delta):
-	step()
+	object_tick()
+
+func _process(delta):
+	object_process()
+
+#--- Object functions
+var fall_count
 
 func create():
 	item_create()
@@ -60,7 +47,7 @@ func step():
 				position.x -= 8
 				x_velocity = -8
 		
-		gml.instance_create(position.x, position.y, rope_top)
+		gml.instance_create(position.x, position.y, Objects.rope_top)
 		armed = false
 		falling = true
 		x_vel = 0
@@ -81,4 +68,4 @@ func step():
 			y_velocity = -8
 			gml.instance_destroy(self)
 		
-		else: gml.instance_create(position.x-8, position.y, rope)
+		else: gml.instance_create(position.x-8, position.y, Objects.rope)

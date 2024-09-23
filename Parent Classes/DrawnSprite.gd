@@ -130,9 +130,6 @@ func get_animated_sprite_2d():
 	return animated_sprite
 
 func set_animation(new_sprite):
-	if new_sprite == "brick_gold":
-		print("hi")
-	
 	var animated_sprite: AnimatedSprite2D = get_animated_sprite_2d()
 	#assert(animated_sprite.sprite_frames.has_animation(new_sprite))
 	if animated_sprite.sprite_frames.has_animation(new_sprite):
@@ -269,6 +266,11 @@ func object_setup():
 	sprite_setup(object_entry)
 	bounding_box_setup()
 	collision_setup()
+	run_create_function(self)
+	
+func run_create_function(obj):
+	if obj.has_method("create"):
+		obj.create()
 	
 func depth_setup(object_entry):
 	var object_depth = object_entry["depth"]
@@ -282,9 +284,6 @@ func depth_setup(object_entry):
 	depth = converted_depth
 
 func bounding_box_setup():
-	if object_name == "moon":
-		print("hi")
-	
 	var sprite = get_animation()
 	
 	if sprite != null:
@@ -354,6 +353,17 @@ func collision_setup():
 func object_tick():
 	if object_name == "bat_intro" or object_name == "moon" or object_name == "p_dummy3":
 		handle_smooth_motion_values()
+	
+	run_step_event(self)
+	run_draw_event(self)
+
+func run_step_event(obj):
+	if obj.has_method("step"):
+		obj.step()	
+
+func run_draw_event(obj):
+	if obj.has_method("draw"):
+		obj.draw()
 
 func object_process():
 	if position != test_prior_tick_position:

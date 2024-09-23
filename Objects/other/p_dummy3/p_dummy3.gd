@@ -1,5 +1,15 @@
 extends DrawnSprite
 
+func _ready():
+	object_setup()
+
+func _physics_process(delta):
+	object_tick()
+
+func _process(delta):
+	object_process()
+
+#--- Object functions
 var climb_snd_toggle
 const TRANSITION = 0
 const ROPEDROP = 1
@@ -10,31 +20,6 @@ const RIGHT = 0
 @onready var alarm_2_timer = $Alarms/Alarm2
 
 @export var animated_sprite: AnimatedSprite2D
-
-var rope_throw = preload("res://objects/items/rope_throw/rope_throw.tscn")
-
-func initial_setup():
-	#--- set size
-	object_size = Vector2(16, 16)
-
-	#--- set depth
-	depth = -40
-	z_index = depth
-	
-	sprite_index = "run_left"
-	drawn_sprite_create()
-
-func _ready():
-	initial_setup()
-	create()
-
-func _physics_process(delta):
-	object_tick()
-	step()
-	draw()
-
-func _process(delta):
-	object_process()
 
 func create():
 	# dummy actor for intro
@@ -97,13 +82,14 @@ func step():
 func draw():
 	#if (facing == RIGHT): image_xscale = -1
 	#else: image_xscale = 1
-	if (facing == RIGHT): animated_sprite.flip_h = true
-	else: animated_sprite.flip_h = false
+	if has_sprite(): #--- adding this function due to how AnimatedSprite2D is set up. reference to the node has to be made after that process finishes
+		if (facing == RIGHT): animated_sprite.flip_h = true
+		else: animated_sprite.flip_h = false
 
 	#draw_sprite_ext(sprite_index, -1, position.x, position.y, image_xscale, image_yscale, image_angle, image_blend, image_alpha) #--- Not needed?
 
 func _on_alarm_0_timeout():
-	var rope = gml.instance_create(position.x+16, position.y, rope_throw)
+	var rope = gml.instance_create(position.x+16, position.y, Objects.rope_throw)
 	rope.falling = true
 	rope.armed = true
 	#alarm_1(50) #--- Guess this was deleted?
@@ -114,3 +100,10 @@ func _on_alarm_2_timeout():
 	if (climb_snd_toggle): Audio.play_sound(global.snd_climb1)
 	else: Audio.play_sound(global.snd_climb2)
 	climb_snd_toggle = not climb_snd_toggle
+
+func has_sprite():
+	if get_node("AnimatedSprite2D") == null:
+		return false
+	else:
+		animated_sprite = get_node("AnimatedSprite2D")
+		return true

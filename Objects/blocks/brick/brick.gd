@@ -2,8 +2,6 @@ extends Solid
 
 func _ready():
 	object_setup()
-	
-	create()
 
 func _physics_process(delta):
 	object_tick()
@@ -11,7 +9,7 @@ func _physics_process(delta):
 func _process(delta):
 	object_process()
 
-
+#--- Object functions
 func create():
 	solid_create()
 	

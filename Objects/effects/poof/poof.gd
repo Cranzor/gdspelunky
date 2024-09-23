@@ -1,25 +1,15 @@
 extends DrawnSprite
 
-func initial_setup():
-	#--- set size
-	object_size = Vector2(8, 8)
-
-	#--- set depth
-	depth = -1
-	z_index = depth
-	
-	$Node/AnimatedSprite2D.play("poof")
-
 func _ready():
-	initial_setup()
-	create()
-
-func _process(delta):
-	smooth_animated_sprite_movement(x_velocity, y_velocity)
+	object_setup()
 
 func _physics_process(delta):
-	step()
+	object_tick()
 
+func _process(delta):
+	object_process()
+
+#--- Object functions
 func animation_end():
 	gml.instance_destroy(self)
 

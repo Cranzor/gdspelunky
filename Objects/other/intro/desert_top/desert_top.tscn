@@ -1,35 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bpib0or50oftd"]
+[gd_scene load_steps=2 format=3 uid="uid://bpib0or50oftd"]
 
 [ext_resource type="Script" path="res://objects/other/intro/desert_top/desert_top.gd" id="1_whi8f"]
-[ext_resource type="Texture2D" uid="uid://dit340p5nft6o" path="res://sprites/other/intro/desert_top/desert_top_0.png" id="2_w2cum"]
-[ext_resource type="Texture2D" uid="uid://cy5rk2bsfh0mk" path="res://sprites/other/intro/desert_top_night/desert_top_night_0.png" id="3_ityjn"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_b3117"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_w2cum")
-}],
-"loop": true,
-"name": &"desert_top",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_ityjn")
-}],
-"loop": true,
-"name": &"desert_top_night",
-"speed": 5.0
-}]
 
 [node name="DesertTop" type="Node2D" groups=["desert_top"]]
 z_index = 10
 script = ExtResource("1_whi8f")
-object_size = Vector2(16, 17)
+object_name = "desert_top"
 depth = 10
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_b3117")
-animation = &"desert_top"
-centered = false
+object_size = Vector2(16, 17)

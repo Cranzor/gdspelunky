@@ -9,22 +9,12 @@ func find_grid_position(global_position, object_size):
 	var bottom_left = Vector2(global_position.x, global_position.y + object_size.y)
 	var bottom_right = Vector2(global_position.x + object_size.x, global_position.y + object_size.y)
 	
-	print(top_left)
-	print(top_right)
-	print(bottom_left)
-	print(bottom_right)
-	
 	grid_position_in_pixels = get_grid_nearest_multiple_from_position(global_position, spacing)
 	
 	var top_left_multiple = get_grid_nearest_multiple_from_position(top_left, spacing)
 	var top_right_multiple = get_grid_nearest_multiple_from_position(top_right, spacing)
 	var bottom_left_multiple = get_grid_nearest_multiple_from_position(bottom_left, spacing)
 	var bottom_right_multiple = get_grid_nearest_multiple_from_position(bottom_right, spacing)
-	
-	print(top_left_multiple)
-	print(top_right_multiple)
-	print(bottom_left_multiple)
-	print(bottom_right_multiple)
 	
 	var all_points = [top_left_multiple, top_right_multiple, bottom_left_multiple, bottom_right_multiple]
 	

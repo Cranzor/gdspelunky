@@ -1,20 +1,16 @@
 extends Ladder
 
-var burn_timer
-
-func initial_setup():
-	#--- set size
-	object_size = Vector2(16, 8)
-
-	#--- set depth
-	depth = -200
-	z_index = depth
-	
-	sprite_index = "rope"
-	drawn_sprite_create()
-
 func _ready():
-	initial_setup()
+	object_setup()
+
+func _physics_process(delta):
+	object_tick()
+
+func _process(delta):
+	object_process()
+
+#--- Object functions
+var burn_timer
 
 func create():
 	type = "rope"

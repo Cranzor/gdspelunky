@@ -1,82 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://boxc36fot75d7"]
+[gd_scene load_steps=2 format=3 uid="uid://boxc36fot75d7"]
 
 [ext_resource type="Script" path="res://objects/blocks/brick/brick.gd" id="1_wetyu"]
-[ext_resource type="Texture2D" uid="uid://nkw6afdklf8m" path="res://sprites/blocks/mines/brick/brick_0.png" id="2_7klvd"]
-[ext_resource type="Texture2D" uid="uid://bof0pw63axkhs" path="res://sprites/blocks/mines/brick2/brick2_0.png" id="3_ubtjv"]
-[ext_resource type="Texture2D" uid="uid://bikhjyty6jnfv" path="res://sprites/blocks/mines/brick_gold/brick_gold_0.png" id="4_36ljk"]
-[ext_resource type="Texture2D" uid="uid://c8d8m55vk6ovd" path="res://sprites/blocks/mines/brick_down/brick_down_0.png" id="4_fr5ei"]
-[ext_resource type="Texture2D" uid="uid://ermhxd0l34ik" path="res://sprites/blocks/mines/brick_gold_big/brick_gold_big_0.png" id="5_e7bpv"]
-[ext_resource type="Texture2D" uid="uid://cbiru5kajsefr" path="res://sprites/blocks/mines/cave_up/cave_up_0.png" id="6_kkexo"]
-[ext_resource type="Texture2D" uid="uid://tvo4j0p6rcoq" path="res://sprites/blocks/mines/cave_up2/cave_up2_0.png" id="7_oqo5q"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_8hgay"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_7klvd")
-}],
-"loop": true,
-"name": &"brick",
-"speed": 30.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_ubtjv")
-}],
-"loop": true,
-"name": &"brick2",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_fr5ei")
-}],
-"loop": true,
-"name": &"brick_down",
-"speed": 30.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_36ljk")
-}],
-"loop": true,
-"name": &"brick_gold",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_e7bpv")
-}],
-"loop": true,
-"name": &"brick_gold_big",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("6_kkexo")
-}],
-"loop": true,
-"name": &"cave_up",
-"speed": 30.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("7_oqo5q")
-}],
-"loop": true,
-"name": &"cave_up2",
-"speed": 5.0
-}]
 
 [node name="Brick" type="Node2D" groups=["brick", "drawn_sprite", "solid"]]
 z_index = -100
 script = ExtResource("1_wetyu")
 object_name = "brick"
 object_size = Vector2(16, 16)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-z_index = -100
-z_as_relative = false
-sprite_frames = SubResource("SpriteFrames_8hgay")
-animation = &"cave_up"
-centered = false

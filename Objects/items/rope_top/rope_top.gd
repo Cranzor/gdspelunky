@@ -1,19 +1,15 @@
 extends DrawnSprite
 
-func initial_setup():
-	#--- set size
-	object_size = Vector2(8, 8)
-
-	#--- set depth
-	depth = -200
-	z_index = depth
-	
-	$AnimatedSprite2D.play("rope_top")
-	drawn_sprite_create()
-
 func _ready():
-	initial_setup()
+	object_setup()
 
+func _physics_process(delta):
+	object_tick()
+
+func _process(delta):
+	object_process()
+
+#--- Object functions
 func create():
 	type = "rope"
 	PlatformEngine.make_active(self)

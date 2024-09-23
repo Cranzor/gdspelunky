@@ -1,47 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://b1age0gvdr7f5"]
+[gd_scene load_steps=2 format=3 uid="uid://b1age0gvdr7f5"]
 
 [ext_resource type="Script" path="res://objects/effects/flare_spark/flare_spark.gd" id="1_0majo"]
-[ext_resource type="Texture2D" uid="uid://b2avn0ofxjhew" path="res://sprites/other/intro/flare_spark/flare_spark_0.png" id="2_umo3l"]
-[ext_resource type="Texture2D" uid="uid://c0doidnplmawd" path="res://sprites/other/intro/flare_spark/flare_spark_1.png" id="3_5n4i0"]
-[ext_resource type="Texture2D" uid="uid://ms4hqt43ukem" path="res://sprites/other/intro/flare_spark/flare_spark_2.png" id="4_bdd44"]
-[ext_resource type="Texture2D" uid="uid://cwvfu1u7bwslw" path="res://sprites/other/intro/flare_spark/flare_spark_3.png" id="5_n81ri"]
-[ext_resource type="Texture2D" uid="uid://cp8g264lmu2e3" path="res://sprites/other/intro/flare_spark/flare_spark_4.png" id="6_004rn"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_478u2"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_umo3l")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_5n4i0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_bdd44")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_n81ri")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_004rn")
-}],
-"loop": false,
-"name": &"flare_spark",
-"speed": 30.0
-}]
 
 [node name="FlareSpark" type="Node2D" groups=["drawn_sprite", "flare_spark"]]
 z_index = -150
 script = ExtResource("1_0majo")
+object_name = "flare_spark"
 depth = -150
 object_size = Vector2(4, 4)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-z_index = -150
-z_as_relative = false
-sprite_frames = SubResource("SpriteFrames_478u2")
-animation = &"flare_spark"
-centered = false
-offset = Vector2(-2, -2)
-
-[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]

@@ -1,25 +1,16 @@
 extends DrawnSprite
 
-@onready var alarm_0_node = $Alarm0
-
-func initial_setup():
-	#--- set size
-	object_size = Vector2(16, 16)
-
-	#--- set depth
-	depth = -1
-	z_index = depth
-	
-	$AnimatedSprite2D.play("whip_pre_r")
-	#drawn_sprite_create()
-	#drawn_sprite_step()
-
 func _ready():
-	initial_setup()
-	create()
+	object_setup()
 
 func _physics_process(delta):
-	step()
+	object_tick()
+
+func _process(delta):
+	object_process()
+
+#--- Object functions
+@onready var alarm_0_node = $Alarm0
 
 func alarm_0():
 	gml.instance_destroy(self)

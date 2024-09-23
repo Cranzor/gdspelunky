@@ -1,41 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://dc162titb5s1l"]
+[gd_scene load_steps=3 format=3 uid="uid://dc162titb5s1l"]
 
 [ext_resource type="Script" path="res://objects/items/whip_pre/whip_pre.gd" id="1_sbivy"]
-[ext_resource type="Texture2D" uid="uid://dem1fytr8uan5" path="res://sprites/items/weapons/whip_pre_r/whip_pre_r_0.png" id="2_6eekr"]
-[ext_resource type="Texture2D" uid="uid://s10ailun08cx" path="res://sprites/items/weapons/whip_pre_l/whip_pre_l_0.png" id="2_88jb5"]
 [ext_resource type="PackedScene" uid="uid://dpe37cc2sccby" path="res://alarm.tscn" id="3_plcrq"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_63lhp"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_88jb5")
-}],
-"loop": true,
-"name": &"whip_pre_l",
-"speed": 30.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_6eekr")
-}],
-"loop": true,
-"name": &"whip_pre_r",
-"speed": 30.0
-}]
 
 [node name="WhipPre" type="Node2D" groups=["drawn_sprite", "whip_pre"]]
 z_index = -1
 script = ExtResource("1_sbivy")
+object_name = "whip_pre"
 object_size = Vector2(16, 16)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-z_index = -1
-z_as_relative = false
-sprite_frames = SubResource("SpriteFrames_63lhp")
-animation = &"whip_pre_l"
-centered = false
-offset = Vector2(-8, -8)
 
 [node name="Alarm0" parent="." instance=ExtResource("3_plcrq")]
 

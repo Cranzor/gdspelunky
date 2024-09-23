@@ -1,25 +1,15 @@
 extends DrawnSprite
 
-func initial_setup():
-	#--- set size
-	object_size = Vector2(4, 4)
-
-	#--- set depth
-	depth = -150
-	z_index = depth
-	
-	$AnimatedSprite2D.play("flare_spark")
-	#drawn_sprite_create()
-	#drawn_sprite_step()
-
 func _ready():
-	initial_setup()
-	create()
+	object_setup()
 
 func _physics_process(delta):
-	pass
-	step()
+	object_tick()
 
+func _process(delta):
+	object_process()
+
+#--- Object functions
 func animation_end():
 	gml.instance_destroy(self)
 

@@ -1,29 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://b0e2spw8cbuik"]
+[gd_scene load_steps=2 format=3 uid="uid://b0e2spw8cbuik"]
 
 [ext_resource type="Script" path="res://objects/items/rope_top/rope_top.gd" id="1_a6mhc"]
-[ext_resource type="Texture2D" uid="uid://c2efthti27sc7" path="res://sprites/items/weapons/rope_top/rope_top_0.png" id="2_xhna1"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_wb22h"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_xhna1")
-}],
-"loop": true,
-"name": &"rope_top",
-"speed": 30.0
-}]
 
 [node name="RopeTop" type="Node2D" groups=["drawn_sprite", "rope_top"]]
 z_index = -200
 script = ExtResource("1_a6mhc")
+object_name = "rope_top"
 depth = -200
 object_size = Vector2(8, 8)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-z_index = -200
-z_as_relative = false
-sprite_frames = SubResource("SpriteFrames_wb22h")
-animation = &"rope_top"
-centered = false
-offset = Vector2(-4, -4)

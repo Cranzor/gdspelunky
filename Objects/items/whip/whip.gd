@@ -1,27 +1,15 @@
 extends DrawnSprite
 
-func initial_setup():
-	#--- set size
-	object_size = Vector2(16, 16)
-
-	#--- set depth
-	depth = -1
-	z_index = depth
-	
-	$Node/AnimatedSprite2D.play("whip_right")
-
-func _process(delta):
-	smooth_animated_sprite_movement(x_velocity, y_velocity)
-
 func _ready():
-	initial_setup()
-	create()
+	object_setup()
 
 func _physics_process(delta):
-	smooth_motion_step_begin()
-	step()
-	smooth_motion_step_end()
+	object_tick()
 
+func _process(delta):
+	object_process()
+
+#--- Object functions
 func create():
 	drawn_sprite_create()
 	type = "whip"

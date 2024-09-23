@@ -1,5 +1,16 @@
 extends DrawnSprite #--- adding DrawnSprite as parent to get access to sprite_index
 
+func _ready():
+	object_setup()
+
+func _physics_process(delta):
+	object_tick()
+	reset_inputs()
+
+func _process(delta):
+	object_process()
+
+#--- Object functions
 var talk
 var donate
 var up_counter
@@ -8,26 +19,6 @@ var up_held
 var down_held
 
 const TRANSITION = 0
-
-func initial_setup():
-	#--- set size
-	object_size = Vector2(16, 16)
-
-	#--- set depth
-	depth = -100
-	z_index = depth
-	
-	$AnimatedSprite2D.play("tunnel_man_left")
-	#_create()
-	#_step()
-
-func _ready():
-	initial_setup()
-	create()
-
-func _physics_process(delta):
-	step()
-	reset_inputs()
 
 var attack_pressed = false
 var check_up = false

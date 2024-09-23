@@ -1,21 +1,21 @@
 extends DrawnSprite #---changing this to DrawnSprite
 
-var x_off
-
-func initial_setup():
-	#--- set size
-	object_size = Vector2(480, 112)
-
-	#--- set depth
-	#depth = -9999
-	depth = -4000
-	z_index = depth
-	
 func _ready():
-	initial_setup()
-	x_off = 0
+	object_setup()
 
 func _physics_process(delta):
+	object_tick()
+
+func _process(delta):
+	object_process()
+
+#--- Object functions
+var x_off
+
+func create():
+	x_off = 0
+
+func step():
 	if (InLevel.is_room("credits1") and gml.instance_exists("camel")):
 		position.x += 0.02
 

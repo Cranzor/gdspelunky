@@ -1,117 +1,15 @@
-[gd_scene load_steps=22 format=3 uid="uid://gs3fuw48xstm"]
+[gd_scene load_steps=2 format=3 uid="uid://gs3fuw48xstm"]
 
 [ext_resource type="Script" path="res://objects/other/p_dummy3/p_dummy3.gd" id="1_sgunq"]
-[ext_resource type="Texture2D" uid="uid://cysrogqtsc1ro" path="res://sprites/character/main dude/climb_up3/climb_up3_0.png" id="2_s8je7"]
-[ext_resource type="Texture2D" uid="uid://c1sjye38k7j1o" path="res://sprites/character/main dude/run_left/run_left_0.png" id="2_yxm3n"]
-[ext_resource type="Texture2D" uid="uid://6upedmxmqrnl" path="res://sprites/character/main dude/run_left/run_left_1.png" id="3_8887t"]
-[ext_resource type="Texture2D" uid="uid://dyqwfn3p2bsp5" path="res://sprites/character/main dude/climb_up3/climb_up3_1.png" id="3_pn402"]
-[ext_resource type="Texture2D" uid="uid://d04goe7k0jvmn" path="res://sprites/character/main dude/run_left/run_left_2.png" id="4_gq4tl"]
-[ext_resource type="Texture2D" uid="uid://dty4dao4cuugl" path="res://sprites/character/main dude/climb_up3/climb_up3_2.png" id="4_qac78"]
-[ext_resource type="Texture2D" uid="uid://cr6p0f6tnk3h6" path="res://sprites/character/main dude/run_left/run_left_3.png" id="5_etfo0"]
-[ext_resource type="Texture2D" uid="uid://c1noivtjiju3u" path="res://sprites/character/main dude/climb_up3/climb_up3_3.png" id="5_i1mrn"]
-[ext_resource type="Texture2D" uid="uid://d1n0ivu5r1sr4" path="res://sprites/character/main dude/run_left/run_left_4.png" id="6_kl2v1"]
-[ext_resource type="Texture2D" uid="uid://cgb87i0j4mi1l" path="res://sprites/character/main dude/climb_up3/climb_up3_4.png" id="6_pqgpm"]
-[ext_resource type="Texture2D" uid="uid://b00w6nbl4fc6" path="res://sprites/character/main dude/run_left/run_left_5.png" id="7_85ug4"]
-[ext_resource type="Texture2D" uid="uid://kvmc816fbkuc" path="res://sprites/character/main dude/climb_up3/climb_up3_5.png" id="7_rjem5"]
-[ext_resource type="Texture2D" uid="uid://dq0uxh6a1job8" path="res://sprites/character/main dude/climb_up3/climb_up3_6.png" id="8_cmlcb"]
-[ext_resource type="Texture2D" uid="uid://0xn86fbhse7p" path="res://sprites/character/main dude/climb_up3/climb_up3_7.png" id="9_nmsfp"]
-[ext_resource type="Texture2D" uid="uid://bgdibkbehbimx" path="res://sprites/character/main dude/climb_up3/climb_up3_8.png" id="10_0pq3s"]
-[ext_resource type="Texture2D" uid="uid://cl7pa81hoxbwx" path="res://sprites/character/main dude/climb_up3/climb_up3_9.png" id="11_h0p7c"]
-[ext_resource type="Texture2D" uid="uid://c2hb7cu86uopo" path="res://sprites/character/main dude/climb_up3/climb_up3_10.png" id="12_tlt5h"]
-[ext_resource type="Texture2D" uid="uid://bykl7jqfs8iil" path="res://sprites/character/main dude/climb_up3/climb_up3_11.png" id="13_ff315"]
-[ext_resource type="Texture2D" uid="uid://b82st7vpyy78e" path="res://sprites/character/main dude/duck_left/duck_left_0.png" id="14_mlq6c"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_g2y7a"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_s8je7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_pn402")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_qac78")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_i1mrn")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_pqgpm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_rjem5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_cmlcb")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_nmsfp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_0pq3s")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_h0p7c")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_tlt5h")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_ff315")
-}],
-"loop": true,
-"name": &"climb_up3",
-"speed": 30.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("14_mlq6c")
-}],
-"loop": true,
-"name": &"duck_left",
-"speed": 30.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_yxm3n")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_8887t")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_gq4tl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_etfo0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_kl2v1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_85ug4")
-}],
-"loop": true,
-"name": &"run_left",
-"speed": 30.0
-}]
 
 [node name="PDummy3" type="Node2D" node_paths=PackedStringArray("animated_sprite") groups=["drawn_sprite", "p_dummy3"]]
 z_index = -40
 script = ExtResource("1_sgunq")
-animated_sprite = NodePath("AnimatedSprite2D")
+animated_sprite = NodePath("")
 object_name = "p_dummy3"
 object_size = Vector2(16, 16)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
-show_behind_parent = true
-z_index = -40
-z_as_relative = false
-sprite_frames = SubResource("SpriteFrames_g2y7a")
-animation = &"climb_up3"
-centered = false
-
-[node name="Camera2D" type="Camera2D" parent="AnimatedSprite2D" groups=["view"]]
+[node name="Camera2D" type="Camera2D" parent="." groups=["view"]]
 limit_left = 0
 limit_right = 960
 limit_bottom = 240

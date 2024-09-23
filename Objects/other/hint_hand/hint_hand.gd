@@ -1,25 +1,17 @@
 extends DrawnSprite #--- giving this DrawnSprite parent to get access to image_speed
 
-@onready var press_up_to_enter = $PressUpToEnter
-
-func initial_setup():
-	#--- set size
-	object_size = Vector2(16, 16)
-
-	#--- set depth
-	depth = 0
-	z_index = depth
-	
-	$AnimatedSprite2D.play("hint_point")
-
 func _ready():
-	initial_setup()
-	create()
+	object_setup()
 
 func _physics_process(delta):
+	object_tick()
 	hide_labels()
-	draw()
 
+func _process(delta):
+	object_process()
+
+#--- Object functions
+@onready var press_up_to_enter = $PressUpToEnter
 func create():
 	image_speed = 0.5
 

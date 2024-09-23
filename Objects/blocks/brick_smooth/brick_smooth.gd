@@ -1,18 +1,15 @@
 extends Solid
 
-func initial_setup():
-	#--- set size
-	object_size = Vector2(16, 16)
-
-	#--- set depth
-	depth = -110
-	z_index = depth
-	
-	$AnimatedSprite2D.play("cave_smooth")
-
 func _ready():
-	initial_setup()
+	object_setup()
 
+func _physics_process(delta):
+	object_tick()
+
+func _process(delta):
+	object_process()
+
+#--- Object functions
 func destroy():
 	solid_destroy()
 	if (not clean_death and not global.clean_solids):

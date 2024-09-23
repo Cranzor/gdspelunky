@@ -3,8 +3,6 @@ extends DrawnSprite #--- changing this to get sprite_index
 func _ready():
 	object_setup()
 	
-	create()
-
 func _physics_process(delta):
 	object_tick()
 

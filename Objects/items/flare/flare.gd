@@ -1,35 +1,21 @@
 extends Item
 
+func _ready():
+	object_setup()
+
+func _physics_process(delta):
+	object_tick()
+
+func _process(delta):
+	object_process()
+
+#--- Object functions
 @onready var alarm_0_timer = $Alarms/Alarm0
 
 var dist_to_player
 
-var flare_spark = preload("res://objects/effects/flare_spark/flare_spark.tscn")
-
-func initial_setup():
-	#--- set size
-	object_size = Vector2(8, 8)
-
-	#--- set depth
-	depth = -30
-	z_index = depth
-	
-	$Node/AnimatedSprite2D.play("flare")
-	#item_create()
-	#item_step()
-
-func _ready():
-	initial_setup()
-	create()
-
-func _process(delta):
-	smooth_animated_sprite_movement(x_velocity, y_velocity)
-
-func _physics_process(delta):
-	step()
-
 func alarm_0():
-	gml.instance_create(position.x+randi_range(0,3)-randi_range(0,3), position.y+randi_range(0,3)-randi_range(0,3), flare_spark)
+	gml.instance_create(position.x+randi_range(0,3)-randi_range(0,3), position.y+randi_range(0,3)-randi_range(0,3), Objects.flare_spark)
 	if alarm_0_timer.is_stopped:
 		alarm_0_timer.start(2.0/30.0)
 

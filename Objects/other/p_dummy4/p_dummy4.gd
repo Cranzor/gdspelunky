@@ -1,34 +1,18 @@
 extends DrawnSprite
 
+func _ready():
+	object_setup()
+
+func _physics_process(delta):
+	object_tick()
+
+func _process(delta):
+	object_process()
+
+#--- Object functions
 var climb_snd_toggle
 
 @onready var alarm_2_timer = $Alarms/Alarm2
-
-var player1 = preload("res://objects/player1/player1.tscn")
-
-func initial_setup():
-	#--- set size
-	object_size = Vector2(16, 16)
-
-	#--- set depth
-	depth = -50
-	z_index = depth
-	
-	$Node/AnimatedSprite2D.play("run_left")
-	#drawn_sprite_create()
-	#drawn_sprite_step()
-
-func _ready():
-	initial_setup()
-	create()
-	
-func _process(delta):
-	smooth_animated_sprite_movement(x_velocity, y_velocity)
-
-func _physics_process(delta):
-	smooth_motion_step_begin()
-	step()
-	smooth_motion_step_end()
 
 func alarm_2():
 	if (climb_snd_toggle): Audio.play_sound(global.snd_climb1)
@@ -45,8 +29,6 @@ func create():
 
 	x_vel = 0
 	y_vel = 0
-
-	
 
 func step():
 	position.x += x_vel
@@ -71,13 +53,13 @@ func step():
 		if (position.y >= 176 + 8):
 	
 			position.y = 176 + 8
-			var player = gml.instance_create(position.x, position.y, player1)
+			var player = gml.instance_create(position.x, position.y, Objects.player1)
 			player.facing = 18
 			gml.instance_destroy(self)
 	
 
 	else:
-		var player = gml.instance_create(position.x, position.y, player1)
+		var player = gml.instance_create(position.x, position.y, Objects.player1)
 		player.facing = 18
 		gml.instance_destroy(self)
 	
