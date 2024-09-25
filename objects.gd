@@ -344,6 +344,9 @@ const moon = preload('res://objects/other/intro/moon/moon.tscn') #\*************
 #const palm_tree_scroll = preload('res://objects/other/intro/palm_tree_scroll/palm_tree_scroll.tscn')
 #const shrub_scroll = preload('res://objects/other/intro/shrub_scroll/shrub_scroll.tscn')
 
+const shrub_dark = preload("res://objects/other/intro/shrub_dark/shrub_dark.tscn")
+const cave_bg_entrance = preload("res://objects/blocks/cave_bg_entrance/cave_bg_entrance.tscn")
+
 
 #other\title
 #const basket = preload('res://objects/other/title/basket/basket.tscn')
