@@ -1,5 +1,7 @@
 extends Node
 
+var room_generation = RoomGeneration.new()
+
 var room_name = "intro"
 
 @export var intro_scenes: Array[PackedScene]
@@ -27,7 +29,7 @@ var last_object = ''
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	room_generation.generate_room('intro')
 
 	#tile_map.position.x = -8
 	#tile_map.position.y = -8

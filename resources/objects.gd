@@ -10,6 +10,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/bricks/bricks.tscn",
 		},
 	"credits1" : {
 		"object_id" : 683,
@@ -20,6 +21,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/credits1/credits1.tscn",
 		},
 	"credits2" : {
 		"object_id" : 767,
@@ -30,6 +32,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/credits2/credits2.tscn",
 		},
 	"curs_obj" : {
 		"object_id" : 813,
@@ -40,6 +43,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/curs_obj/curs_obj.tscn",
 		},
 	"end" : {
 		"object_id" : 584,
@@ -50,6 +54,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/end/end.tscn",
 		},
 	"end2" : {
 		"object_id" : 605,
@@ -60,6 +65,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/end2/end2.tscn",
 		},
 	"end3" : {
 		"object_id" : 613,
@@ -70,6 +76,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/end3/end3.tscn",
 		},
 	"end_custom" : {
 		"object_id" : 897,
@@ -80,6 +87,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/end_custom/end_custom.tscn",
 		},
 	"final_boss" : {
 		"object_id" : 580,
@@ -90,6 +98,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/final_boss/final_boss.tscn",
 		},
 	"game" : {
 		"object_id" : 318,
@@ -100,6 +109,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/game/game.tscn",
 		},
 	"gamepad" : {
 		"object_id" : 801,
@@ -110,6 +120,7 @@ const object_database = {
 		"persistent" : true,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/gamepad/gamepad.tscn",
 		},
 	"globals" : {
 		"object_id" : 509,
@@ -120,6 +131,7 @@ const object_database = {
 		"persistent" : true,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/globals/globals.tscn",
 		},
 	"highscores" : {
 		"object_id" : 548,
@@ -130,6 +142,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/highscores/highscores.tscn",
 		},
 	"intro" : {
 		"object_id" : 615,
@@ -140,6 +153,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/intro/intro.tscn",
 		},
 	"joy_config" : {
 		"object_id" : 808,
@@ -150,6 +164,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/joy_config/joy_config.tscn",
 		},
 	"key_config" : {
 		"object_id" : 803,
@@ -160,6 +175,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/key_config/key_config.tscn",
 		},
 	"level" : {
 		"object_id" : 553,
@@ -170,6 +186,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/level/level.tscn",
 		},
 	"level_editor" : {
 		"object_id" : 812,
@@ -180,6 +197,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/level_editor/level_editor.tscn",
 		},
 	"load_level" : {
 		"object_id" : 825,
@@ -190,6 +208,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/load_level/load_level.tscn",
 		},
 	"moon_room" : {
 		"object_id" : 715,
@@ -200,6 +219,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/moon_room/moon_room.tscn",
 		},
 	"music" : {
 		"object_id" : 731,
@@ -210,6 +230,7 @@ const object_database = {
 		"persistent" : true,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/music/music.tscn",
 		},
 	"player1" : {
 		"object_id" : 319,
@@ -220,6 +241,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "character",
 		"mask" : null,
+		"folder_path" : "res://objects/player1/player1.tscn",
 		},
 	"room" : {
 		"object_id" : 442,
@@ -230,6 +252,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/room/room.tscn",
 		},
 	"screen" : {
 		"object_id" : 645,
@@ -240,6 +263,7 @@ const object_database = {
 		"persistent" : true,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/screen/screen.tscn",
 		},
 	"sprite" : {
 		"object_id" : 563,
@@ -250,6 +274,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/sprite/sprite.tscn",
 		},
 	"stars_room" : {
 		"object_id" : 701,
@@ -260,6 +285,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/stars_room/stars_room.tscn",
 		},
 	"sun_room" : {
 		"object_id" : 721,
@@ -270,6 +296,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/sun_room/sun_room.tscn",
 		},
 	"title" : {
 		"object_id" : 617,
@@ -280,6 +307,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/title/title.tscn",
 		},
 	"transition" : {
 		"object_id" : 562,
@@ -290,6 +318,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/transition/transition.tscn",
 		},
 	"backdrop" : {
 		"object_id" : 343,
@@ -300,6 +329,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/basis/backdrop/backdrop.tscn",
 		},
 	"character" : {
 		"object_id" : 271,
@@ -310,6 +340,7 @@ const object_database = {
 		"persistent" : true,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/basis/character/character.tscn",
 		},
 	"detritus" : {
 		"object_id" : 453,
@@ -320,6 +351,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/basis/detritus/detritus.tscn",
 		},
 	"drawn_sprite" : {
 		"object_id" : 598,
@@ -330,6 +362,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/basis/drawn_sprite/drawn_sprite.tscn",
 		},
 	"enemy" : {
 		"object_id" : 358,
@@ -340,6 +373,7 @@ const object_database = {
 		"persistent" : true,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/basis/enemy/enemy.tscn",
 		},
 	"foreground" : {
 		"object_id" : 348,
@@ -350,6 +384,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/basis/foreground/foreground.tscn",
 		},
 	"frill" : {
 		"object_id" : 455,
@@ -360,6 +395,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/basis/frill/frill.tscn",
 		},
 	"item" : {
 		"object_id" : 451,
@@ -370,6 +406,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/basis/item/item.tscn",
 		},
 	"ladder" : {
 		"object_id" : 129,
@@ -380,6 +417,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/basis/ladder/ladder.tscn",
 		},
 	"menu" : {
 		"object_id" : 614,
@@ -390,6 +428,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/basis/menu/menu.tscn",
 		},
 	"moveable_solid" : {
 		"object_id" : 145,
@@ -400,6 +439,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "solid",
 		"mask" : null,
+		"folder_path" : "res://objects/basis/moveable_solid/moveable_solid.tscn",
 		},
 	"moving_solid" : {
 		"object_id" : 127,
@@ -410,6 +450,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "solid",
 		"mask" : null,
+		"folder_path" : "res://objects/basis/moving_solid/moving_solid.tscn",
 		},
 	"platform" : {
 		"object_id" : 128,
@@ -420,6 +461,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/basis/platform/platform.tscn",
 		},
 	"rubble_piece" : {
 		"object_id" : 600,
@@ -430,6 +472,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/basis/rubble_piece/rubble_piece.tscn",
 		},
 	"solid" : {
 		"object_id" : 126,
@@ -440,6 +483,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/basis/solid/solid.tscn",
 		},
 	"treasure" : {
 		"object_id" : 590,
@@ -450,6 +494,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/basis/treasure/treasure.tscn",
 		},
 	"water" : {
 		"object_id" : 304,
@@ -460,6 +505,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/basis/water/water.tscn",
 		},
 	"alien_ship" : {
 		"object_id" : 646,
@@ -470,6 +516,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "solid",
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/alien_ship/alien_ship.tscn",
 		},
 	"alien_ship_floor" : {
 		"object_id" : 647,
@@ -480,6 +527,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "solid",
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/alien_ship_floor/alien_ship_floor.tscn",
 		},
 	"altar_left" : {
 		"object_id" : 643,
@@ -490,6 +538,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "solid",
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/altar_left/altar_left.tscn",
 		},
 	"altar_right" : {
 		"object_id" : 644,
@@ -500,6 +549,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "solid",
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/altar_right/altar_right.tscn",
 		},
 	"black_fade_up" : {
 		"object_id" : 638,
@@ -510,6 +560,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "menu",
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/black_fade_up/black_fade_up.tscn",
 		},
 	"block" : {
 		"object_id" : 448,
@@ -520,6 +571,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "solid",
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/block/block.tscn",
 		},
 	"brick" : {
 		"object_id" : 320,
@@ -530,6 +582,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "solid",
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/brick/brick.tscn",
 		},
 	"brick_smooth" : {
 		"object_id" : 671,
@@ -540,6 +593,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "solid",
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/brick_smooth/brick_smooth.tscn",
 		},
 	"cave_bg" : {
 		"object_id" : 510,
@@ -550,6 +604,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/cave_bg/cave_bg.tscn",
 		},
 	"cave_bg2" : {
 		"object_id" : 621,
@@ -560,6 +615,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/cave_bg2/cave_bg2.tscn",
 		},
 	"cave_bg_entrance" : {
 		"object_id" : 622,
@@ -570,6 +626,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/cave_bg_entrance/cave_bg_entrance.tscn",
 		},
 	"dark" : {
 		"object_id" : 491,
@@ -580,6 +637,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "solid",
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/dark/dark.tscn",
 		},
 	"dark_fall" : {
 		"object_id" : 516,
@@ -590,6 +648,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "moving_solid",
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/dark_fall/dark_fall.tscn",
 		},
 	"entrance" : {
 		"object_id" : 458,
@@ -600,6 +659,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/entrance/entrance.tscn",
 		},
 	"exit" : {
 		"object_id" : 459,
@@ -610,6 +670,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/exit/exit.tscn",
 		},
 	"frozen_caveman" : {
 		"object_id" : 517,
@@ -620,6 +681,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/frozen_caveman/frozen_caveman.tscn",
 		},
 	"gold" : {
 		"object_id" : 460,
@@ -630,6 +692,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/gold/gold.tscn",
 		},
 	"gold_big" : {
 		"object_id" : 468,
@@ -640,6 +703,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/gold_big/gold_big.tscn",
 		},
 	"gold_door" : {
 		"object_id" : 794,
@@ -650,6 +714,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/gold_door/gold_door.tscn",
 		},
 	"grave" : {
 		"object_id" : 743,
@@ -660,6 +725,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "solid",
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/grave/grave.tscn",
 		},
 	"hard_block" : {
 		"object_id" : 388,
@@ -670,6 +736,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "solid",
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/hard_block/hard_block.tscn",
 		},
 	"ice" : {
 		"object_id" : 496,
@@ -680,6 +747,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "solid",
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/ice/ice.tscn",
 		},
 	"ice_block" : {
 		"object_id" : 878,
@@ -690,6 +758,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "moveable_solid",
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/ice_block/ice_block.tscn",
 		},
 	"ice_bottom" : {
 		"object_id" : 722,
@@ -700,6 +769,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/ice_bottom/ice_bottom.tscn",
 		},
 	"kali_head" : {
 		"object_id" : 921,
@@ -710,6 +780,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/kali_head/kali_head.tscn",
 		},
 	"ladder_orange" : {
 		"object_id" : 322,
@@ -720,6 +791,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "ladder",
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/ladder_orange/ladder_orange.tscn",
 		},
 	"ladder_top" : {
 		"object_id" : 449,
@@ -730,6 +802,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "platform",
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/ladder_top/ladder_top.tscn",
 		},
 	"lamp" : {
 		"object_id" : 753,
@@ -740,6 +813,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/lamp/lamp.tscn",
 		},
 	"lamp_red" : {
 		"object_id" : 811,
@@ -750,6 +824,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "lamp",
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/lamp_red/lamp_red.tscn",
 		},
 	"lava" : {
 		"object_id" : 573,
@@ -760,6 +835,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "water",
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/lava/lava.tscn",
 		},
 	"lava_solid" : {
 		"object_id" : 575,
@@ -770,6 +846,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "solid",
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/lava_solid/lava_solid.tscn",
 		},
 	"leaves" : {
 		"object_id" : 586,
@@ -780,6 +857,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "platform",
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/leaves/leaves.tscn",
 		},
 	"leaves_tile" : {
 		"object_id" : 932,
@@ -790,6 +868,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "platform",
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/leaves_tile/leaves_tile.tscn",
 		},
 	"lush" : {
 		"object_id" : 473,
@@ -800,6 +879,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "solid",
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/lush/lush.tscn",
 		},
 	"moai" : {
 		"object_id" : 785,
@@ -810,6 +890,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "solid",
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/moai/moai.tscn",
 		},
 	"moai2" : {
 		"object_id" : 790,
@@ -820,6 +901,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "solid",
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/moai2/moai2.tscn",
 		},
 	"moai3" : {
 		"object_id" : 791,
@@ -830,6 +912,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "solid",
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/moai3/moai3.tscn",
 		},
 	"moai_inside" : {
 		"object_id" : 786,
@@ -840,6 +923,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "solid",
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/moai_inside/moai_inside.tscn",
 		},
 	"msg_sign" : {
 		"object_id" : 759,
@@ -850,6 +934,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/msg_sign/msg_sign.tscn",
 		},
 	"push_block" : {
 		"object_id" : 467,
@@ -860,6 +945,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "moveable_solid",
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/push_block/push_block.tscn",
 		},
 	"sac_altar_left" : {
 		"object_id" : 919,
@@ -870,6 +956,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "solid",
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/sac_altar_left/sac_altar_left.tscn",
 		},
 	"sac_altar_right" : {
 		"object_id" : 920,
@@ -880,6 +967,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "sac_altar_left",
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/sac_altar_right/sac_altar_right.tscn",
 		},
 	"sign" : {
 		"object_id" : 709,
@@ -890,6 +978,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "solid",
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/sign/sign.tscn",
 		},
 	"splash" : {
 		"object_id" : 480,
@@ -900,6 +989,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/splash/splash.tscn",
 		},
 	"temple" : {
 		"object_id" : 602,
@@ -910,6 +1000,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "solid",
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/temple/temple.tscn",
 		},
 	"temple_fake" : {
 		"object_id" : 545,
@@ -920,6 +1011,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/temple_fake/temple_fake.tscn",
 		},
 	"thin_ice" : {
 		"object_id" : 678,
@@ -930,6 +1022,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "solid",
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/thin_ice/thin_ice.tscn",
 		},
 	"tiki_torch" : {
 		"object_id" : 906,
@@ -940,6 +1033,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/tiki_torch/tiki_torch.tscn",
 		},
 	"tree" : {
 		"object_id" : 585,
@@ -950,6 +1044,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "solid",
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/tree/tree.tscn",
 		},
 	"tree_branch" : {
 		"object_id" : 587,
@@ -960,6 +1055,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "platform",
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/tree_branch/tree_branch.tscn",
 		},
 	"tree_branch_tile" : {
 		"object_id" : 933,
@@ -970,6 +1066,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "platform",
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/tree_branch_tile/tree_branch_tile.tscn",
 		},
 	"tree_tile" : {
 		"object_id" : 931,
@@ -980,6 +1077,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "solid",
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/tree_tile/tree_tile.tscn",
 		},
 	"vine" : {
 		"object_id" : 483,
@@ -990,6 +1088,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "ladder",
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/vine/vine.tscn",
 		},
 	"vine_top" : {
 		"object_id" : 503,
@@ -1000,6 +1099,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "ladder",
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/vine_top/vine_top.tscn",
 		},
 	"water_swim" : {
 		"object_id" : 478,
@@ -1010,6 +1110,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "water",
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/water_swim/water_swim.tscn",
 		},
 	"x_gold" : {
 		"object_id" : 795,
@@ -1020,6 +1121,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "exit",
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/x_gold/x_gold.tscn",
 		},
 	"x_market" : {
 		"object_id" : 782,
@@ -1030,6 +1132,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "exit",
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/x_market/x_market.tscn",
 		},
 	"xoc_block" : {
 		"object_id" : 916,
@@ -1040,6 +1143,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "solid",
 		"mask" : null,
+		"folder_path" : "res://objects/blocks/xoc_block/xoc_block.tscn",
 		},
 	"damsel" : {
 		"object_id" : 556,
@@ -1050,6 +1154,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "item",
 		"mask" : null,
+		"folder_path" : "res://objects/characters/damsel/damsel.tscn",
 		},
 	"damsel_kiss" : {
 		"object_id" : 623,
@@ -1060,6 +1165,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/characters/damsel_kiss/damsel_kiss.tscn",
 		},
 	"shopkeeper" : {
 		"object_id" : 666,
@@ -1070,6 +1176,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "enemy",
 		"mask" : null,
+		"folder_path" : "res://objects/characters/shopkeeper/shopkeeper.tscn",
 		},
 	"shopkeeper2" : {
 		"object_id" : 702,
@@ -1080,6 +1187,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "shopkeeper",
 		"mask" : null,
+		"folder_path" : "res://objects/characters/shopkeeper2/shopkeeper2.tscn",
 		},
 	"tunnel_man" : {
 		"object_id" : 673,
@@ -1090,6 +1198,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/characters/tunnel_man/tunnel_man.tscn",
 		},
 	"yell_help" : {
 		"object_id" : 601,
@@ -1100,6 +1209,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/characters/yell_help/yell_help.tscn",
 		},
 	"ankh" : {
 		"object_id" : 784,
@@ -1110,6 +1220,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "item",
 		"mask" : null,
+		"folder_path" : "res://objects/collectibles/ankh/ankh.tscn",
 		},
 	"bomb_bag" : {
 		"object_id" : 541,
@@ -1120,6 +1231,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "item",
 		"mask" : null,
+		"folder_path" : "res://objects/collectibles/bomb_bag/bomb_bag.tscn",
 		},
 	"bomb_box" : {
 		"object_id" : 710,
@@ -1130,6 +1242,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "item",
 		"mask" : null,
+		"folder_path" : "res://objects/collectibles/bomb_box/bomb_box.tscn",
 		},
 	"bones" : {
 		"object_id" : 662,
@@ -1140,6 +1253,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/collectibles/bones/bones.tscn",
 		},
 	"cape" : {
 		"object_id" : 741,
@@ -1150,6 +1264,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/collectibles/cape/cape.tscn",
 		},
 	"cape_pickup" : {
 		"object_id" : 740,
@@ -1160,6 +1275,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "item",
 		"mask" : null,
+		"folder_path" : "res://objects/collectibles/cape_pickup/cape_pickup.tscn",
 		},
 	"chest" : {
 		"object_id" : 472,
@@ -1170,6 +1286,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "item",
 		"mask" : null,
+		"folder_path" : "res://objects/collectibles/chest/chest.tscn",
 		},
 	"compass" : {
 		"object_id" : 732,
@@ -1180,6 +1297,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "item",
 		"mask" : null,
+		"folder_path" : "res://objects/collectibles/compass/compass.tscn",
 		},
 	"crate" : {
 		"object_id" : 594,
@@ -1190,6 +1308,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "item",
 		"mask" : null,
+		"folder_path" : "res://objects/collectibles/crate/crate.tscn",
 		},
 	"crown" : {
 		"object_id" : 789,
@@ -1200,6 +1319,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "item",
 		"mask" : null,
+		"folder_path" : "res://objects/collectibles/crown/crown.tscn",
 		},
 	"diamond" : {
 		"object_id" : 806,
@@ -1210,6 +1330,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "treasure",
 		"mask" : null,
+		"folder_path" : "res://objects/collectibles/diamond/diamond.tscn",
 		},
 	"emerald" : {
 		"object_id" : 489,
@@ -1220,6 +1341,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "treasure",
 		"mask" : null,
+		"folder_path" : "res://objects/collectibles/emerald/emerald.tscn",
 		},
 	"emerald_big" : {
 		"object_id" : 486,
@@ -1230,6 +1352,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "treasure",
 		"mask" : null,
+		"folder_path" : "res://objects/collectibles/emerald_big/emerald_big.tscn",
 		},
 	"fake_bones" : {
 		"object_id" : 657,
@@ -1240,6 +1363,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/collectibles/fake_bones/fake_bones.tscn",
 		},
 	"fire_frog_armed" : {
 		"object_id" : 881,
@@ -1250,6 +1374,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "item",
 		"mask" : null,
+		"folder_path" : "res://objects/collectibles/fire_frog_armed/fire_frog_armed.tscn",
 		},
 	"flare_crate" : {
 		"object_id" : 935,
@@ -1260,6 +1385,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "item",
 		"mask" : null,
+		"folder_path" : "res://objects/collectibles/flare_crate/flare_crate.tscn",
 		},
 	"gloves" : {
 		"object_id" : 746,
@@ -1270,6 +1396,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "item",
 		"mask" : null,
+		"folder_path" : "res://objects/collectibles/gloves/gloves.tscn",
 		},
 	"gold_bar" : {
 		"object_id" : 591,
@@ -1280,6 +1407,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "treasure",
 		"mask" : null,
+		"folder_path" : "res://objects/collectibles/gold_bar/gold_bar.tscn",
 		},
 	"gold_bars" : {
 		"object_id" : 592,
@@ -1290,6 +1418,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "treasure",
 		"mask" : null,
+		"folder_path" : "res://objects/collectibles/gold_bars/gold_bars.tscn",
 		},
 	"gold_chunk" : {
 		"object_id" : 462,
@@ -1300,6 +1429,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "treasure",
 		"mask" : null,
+		"folder_path" : "res://objects/collectibles/gold_chunk/gold_chunk.tscn",
 		},
 	"gold_nugget" : {
 		"object_id" : 461,
@@ -1310,6 +1440,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "treasure",
 		"mask" : null,
+		"folder_path" : "res://objects/collectibles/gold_nugget/gold_nugget.tscn",
 		},
 	"jetpack" : {
 		"object_id" : 738,
@@ -1320,6 +1451,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "item",
 		"mask" : null,
+		"folder_path" : "res://objects/collectibles/jetpack/jetpack.tscn",
 		},
 	"jordans" : {
 		"object_id" : 718,
@@ -1330,6 +1462,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "item",
 		"mask" : null,
+		"folder_path" : "res://objects/collectibles/jordans/jordans.tscn",
 		},
 	"kapala" : {
 		"object_id" : 936,
@@ -1340,6 +1473,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "item",
 		"mask" : null,
+		"folder_path" : "res://objects/collectibles/kapala/kapala.tscn",
 		},
 	"key" : {
 		"object_id" : 780,
@@ -1350,6 +1484,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "item",
 		"mask" : null,
+		"folder_path" : "res://objects/collectibles/key/key.tscn",
 		},
 	"locked_chest" : {
 		"object_id" : 779,
@@ -1360,6 +1495,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "item",
 		"mask" : null,
+		"folder_path" : "res://objects/collectibles/locked_chest/locked_chest.tscn",
 		},
 	"mitt" : {
 		"object_id" : 798,
@@ -1370,6 +1506,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "item",
 		"mask" : null,
+		"folder_path" : "res://objects/collectibles/mitt/mitt.tscn",
 		},
 	"para_pickup" : {
 		"object_id" : 712,
@@ -1380,6 +1517,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "item",
 		"mask" : null,
+		"folder_path" : "res://objects/collectibles/para_pickup/para_pickup.tscn",
 		},
 	"para_used" : {
 		"object_id" : 704,
@@ -1390,6 +1528,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/collectibles/para_used/para_used.tscn",
 		},
 	"paste" : {
 		"object_id" : 711,
@@ -1400,6 +1539,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "item",
 		"mask" : null,
+		"folder_path" : "res://objects/collectibles/paste/paste.tscn",
 		},
 	"rope_bag" : {
 		"object_id" : 593,
@@ -1410,6 +1550,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "item",
 		"mask" : null,
+		"folder_path" : "res://objects/collectibles/rope_bag/rope_bag.tscn",
 		},
 	"rope_pile" : {
 		"object_id" : 672,
@@ -1420,6 +1561,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "item",
 		"mask" : null,
+		"folder_path" : "res://objects/collectibles/rope_pile/rope_pile.tscn",
 		},
 	"ruby" : {
 		"object_id" : 487,
@@ -1430,6 +1572,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "treasure",
 		"mask" : null,
+		"folder_path" : "res://objects/collectibles/ruby/ruby.tscn",
 		},
 	"ruby_big" : {
 		"object_id" : 484,
@@ -1440,6 +1583,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "treasure",
 		"mask" : null,
+		"folder_path" : "res://objects/collectibles/ruby_big/ruby_big.tscn",
 		},
 	"sapphire" : {
 		"object_id" : 488,
@@ -1450,6 +1594,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "treasure",
 		"mask" : null,
+		"folder_path" : "res://objects/collectibles/sapphire/sapphire.tscn",
 		},
 	"sapphire_big" : {
 		"object_id" : 485,
@@ -1460,6 +1605,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "treasure",
 		"mask" : null,
+		"folder_path" : "res://objects/collectibles/sapphire_big/sapphire_big.tscn",
 		},
 	"spectacles" : {
 		"object_id" : 737,
@@ -1470,6 +1616,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "item",
 		"mask" : null,
+		"folder_path" : "res://objects/collectibles/spectacles/spectacles.tscn",
 		},
 	"spike_shoes" : {
 		"object_id" : 876,
@@ -1480,6 +1627,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "item",
 		"mask" : null,
+		"folder_path" : "res://objects/collectibles/spike_shoes/spike_shoes.tscn",
 		},
 	"spring_shoes" : {
 		"object_id" : 713,
@@ -1490,6 +1638,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "item",
 		"mask" : null,
+		"folder_path" : "res://objects/collectibles/spring_shoes/spring_shoes.tscn",
 		},
 	"udjat_eye" : {
 		"object_id" : 781,
@@ -1500,6 +1649,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "item",
 		"mask" : null,
+		"folder_path" : "res://objects/collectibles/udjat_eye/udjat_eye.tscn",
 		},
 	"big_collect" : {
 		"object_id" : 505,
@@ -1510,6 +1660,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/effects/big_collect/big_collect.tscn",
 		},
 	"blood" : {
 		"object_id" : 370,
@@ -1520,6 +1671,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "detritus",
 		"mask" : null,
+		"folder_path" : "res://objects/effects/blood/blood.tscn",
 		},
 	"blood_spark" : {
 		"object_id" : 937,
@@ -1530,6 +1682,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/effects/blood_spark/blood_spark.tscn",
 		},
 	"blood_trail" : {
 		"object_id" : 452,
@@ -1540,6 +1693,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/effects/blood_trail/blood_trail.tscn",
 		},
 	"bone" : {
 		"object_id" : 654,
@@ -1550,6 +1704,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "detritus",
 		"mask" : null,
+		"folder_path" : "res://objects/effects/bone/bone.tscn",
 		},
 	"bubble" : {
 		"object_id" : 504,
@@ -1560,6 +1715,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/effects/bubble/bubble.tscn",
 		},
 	"bullet" : {
 		"object_id" : 669,
@@ -1570,6 +1726,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/effects/bullet/bullet.tscn",
 		},
 	"burn" : {
 		"object_id" : 589,
@@ -1580,6 +1737,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/effects/burn/burn.tscn",
 		},
 	"drip" : {
 		"object_id" : 479,
@@ -1590,6 +1748,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "rubble_piece",
 		"mask" : null,
+		"folder_path" : "res://objects/effects/drip/drip.tscn",
 		},
 	"explosion" : {
 		"object_id" : 391,
@@ -1600,6 +1759,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/effects/explosion/explosion.tscn",
 		},
 	"flame" : {
 		"object_id" : 456,
@@ -1610,6 +1770,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "detritus",
 		"mask" : null,
+		"folder_path" : "res://objects/effects/flame/flame.tscn",
 		},
 	"flame_trail" : {
 		"object_id" : 457,
@@ -1620,6 +1781,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/effects/flame_trail/flame_trail.tscn",
 		},
 	"flare_spark" : {
 		"object_id" : 631,
@@ -1630,6 +1792,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/effects/flare_spark/flare_spark.tscn",
 		},
 	"fly" : {
 		"object_id" : 776,
@@ -1640,6 +1803,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/effects/fly/fly.tscn",
 		},
 	"heart" : {
 		"object_id" : 624,
@@ -1650,6 +1814,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/effects/heart/heart.tscn",
 		},
 	"items_get" : {
 		"object_id" : 595,
@@ -1660,6 +1825,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/effects/items_get/items_get.tscn",
 		},
 	"laser" : {
 		"object_id" : 534,
@@ -1670,6 +1836,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/effects/laser/laser.tscn",
 		},
 	"laser_explode" : {
 		"object_id" : 536,
@@ -1680,6 +1847,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/effects/laser_explode/laser_explode.tscn",
 		},
 	"laser_trail" : {
 		"object_id" : 535,
@@ -1690,6 +1858,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/effects/laser_trail/laser_trail.tscn",
 		},
 	"lava_drip" : {
 		"object_id" : 574,
@@ -1700,6 +1869,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "rubble_piece",
 		"mask" : null,
+		"folder_path" : "res://objects/effects/lava_drip/lava_drip.tscn",
 		},
 	"leaf" : {
 		"object_id" : 742,
@@ -1710,6 +1880,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "rubble_piece",
 		"mask" : null,
+		"folder_path" : "res://objects/effects/leaf/leaf.tscn",
 		},
 	"poof" : {
 		"object_id" : 691,
@@ -1720,6 +1891,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/effects/poof/poof.tscn",
 		},
 	"psychic_create" : {
 		"object_id" : 665,
@@ -1730,6 +1902,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/effects/psychic_create/psychic_create.tscn",
 		},
 	"psychic_create2" : {
 		"object_id" : 692,
@@ -1740,6 +1913,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/effects/psychic_create2/psychic_create2.tscn",
 		},
 	"psychic_create_p" : {
 		"object_id" : 793,
@@ -1750,6 +1924,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/effects/psychic_create_p/psychic_create_p.tscn",
 		},
 	"psychic_wave" : {
 		"object_id" : 664,
@@ -1760,6 +1935,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/effects/psychic_wave/psychic_wave.tscn",
 		},
 	"psychic_wave_p" : {
 		"object_id" : 792,
@@ -1770,6 +1946,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/effects/psychic_wave_p/psychic_wave_p.tscn",
 		},
 	"rope_burn" : {
 		"object_id" : 651,
@@ -1780,6 +1957,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/effects/rope_burn/rope_burn.tscn",
 		},
 	"rubble" : {
 		"object_id" : 525,
@@ -1790,6 +1968,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "rubble_piece",
 		"mask" : null,
+		"folder_path" : "res://objects/effects/rubble/rubble.tscn",
 		},
 	"rubble_dark" : {
 		"object_id" : 537,
@@ -1800,6 +1979,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/effects/rubble_dark/rubble_dark.tscn",
 		},
 	"rubble_dark_small" : {
 		"object_id" : 538,
@@ -1810,6 +1990,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "rubble_piece",
 		"mask" : null,
+		"folder_path" : "res://objects/effects/rubble_dark_small/rubble_dark_small.tscn",
 		},
 	"rubble_small" : {
 		"object_id" : 526,
@@ -1820,6 +2001,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "rubble_piece",
 		"mask" : null,
+		"folder_path" : "res://objects/effects/rubble_small/rubble_small.tscn",
 		},
 	"shotgun_blast_left" : {
 		"object_id" : 667,
@@ -1830,6 +2012,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/effects/shotgun_blast_left/shotgun_blast_left.tscn",
 		},
 	"shotgun_blast_right" : {
 		"object_id" : 668,
@@ -1840,6 +2023,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/effects/shotgun_blast_right/shotgun_blast_right.tscn",
 		},
 	"small_collect" : {
 		"object_id" : 502,
@@ -1850,6 +2034,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/effects/small_collect/small_collect.tscn",
 		},
 	"smoke_puff" : {
 		"object_id" : 490,
@@ -1860,6 +2045,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/effects/smoke_puff/smoke_puff.tscn",
 		},
 	"volcano_flame" : {
 		"object_id" : 679,
@@ -1870,6 +2056,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/effects/volcano_flame/volcano_flame.tscn",
 		},
 	"web" : {
 		"object_id" : 751,
@@ -1880,6 +2067,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/effects/web/web.tscn",
 		},
 	"web_ball" : {
 		"object_id" : 750,
@@ -1890,6 +2078,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/effects/web_ball/web_ball.tscn",
 		},
 	"yellow_ball" : {
 		"object_id" : 579,
@@ -1900,6 +2089,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/effects/yellow_ball/yellow_ball.tscn",
 		},
 	"yellow_trail" : {
 		"object_id" : 747,
@@ -1910,6 +2100,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/effects/yellow_trail/yellow_trail.tscn",
 		},
 	"alien" : {
 		"object_id" : 636,
@@ -1920,6 +2111,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "enemy",
 		"mask" : null,
+		"folder_path" : "res://objects/enemies/alien/alien.tscn",
 		},
 	"alien_boss" : {
 		"object_id" : 658,
@@ -1930,6 +2122,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "enemy",
 		"mask" : null,
+		"folder_path" : "res://objects/enemies/alien_boss/alien_boss.tscn",
 		},
 	"alien_eject" : {
 		"object_id" : 637,
@@ -1940,6 +2133,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/enemies/alien_eject/alien_eject.tscn",
 		},
 	"barrier" : {
 		"object_id" : 763,
@@ -1950,6 +2144,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/enemies/barrier/barrier.tscn",
 		},
 	"barrier_emitter" : {
 		"object_id" : 762,
@@ -1960,6 +2155,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/enemies/barrier_emitter/barrier_emitter.tscn",
 		},
 	"bat" : {
 		"object_id" : 352,
@@ -1970,6 +2166,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "enemy",
 		"mask" : null,
+		"folder_path" : "res://objects/enemies/bat/bat.tscn",
 		},
 	"caveman" : {
 		"object_id" : 325,
@@ -1980,6 +2177,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "enemy",
 		"mask" : null,
+		"folder_path" : "res://objects/enemies/caveman/caveman.tscn",
 		},
 	"caveman_worship" : {
 		"object_id" : 764,
@@ -1990,6 +2188,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/enemies/caveman_worship/caveman_worship.tscn",
 		},
 	"dead_fish" : {
 		"object_id" : 745,
@@ -2000,6 +2199,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "enemy",
 		"mask" : null,
+		"folder_path" : "res://objects/enemies/dead_fish/dead_fish.tscn",
 		},
 	"enemy_sight" : {
 		"object_id" : 558,
@@ -2010,6 +2210,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/enemies/enemy_sight/enemy_sight.tscn",
 		},
 	"entrance_check" : {
 		"object_id" : 625,
@@ -2020,6 +2221,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/enemies/entrance_check/entrance_check.tscn",
 		},
 	"fire_frog" : {
 		"object_id" : 882,
@@ -2030,6 +2232,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "enemy",
 		"mask" : null,
+		"folder_path" : "res://objects/enemies/fire_frog/fire_frog.tscn",
 		},
 	"frog" : {
 		"object_id" : 554,
@@ -2040,6 +2243,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "enemy",
 		"mask" : null,
+		"folder_path" : "res://objects/enemies/frog/frog.tscn",
 		},
 	"ghost" : {
 		"object_id" : 736,
@@ -2050,6 +2254,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/enemies/ghost/ghost.tscn",
 		},
 	"giant_spider" : {
 		"object_id" : 749,
@@ -2060,6 +2265,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "enemy",
 		"mask" : null,
+		"folder_path" : "res://objects/enemies/giant_spider/giant_spider.tscn",
 		},
 	"giant_spider_hang" : {
 		"object_id" : 748,
@@ -2070,6 +2276,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "enemy",
 		"mask" : null,
+		"folder_path" : "res://objects/enemies/giant_spider_hang/giant_spider_hang.tscn",
 		},
 	"hawkman" : {
 		"object_id" : 588,
@@ -2080,6 +2287,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "enemy",
 		"mask" : null,
+		"folder_path" : "res://objects/enemies/hawkman/hawkman.tscn",
 		},
 	"hawkman_worship" : {
 		"object_id" : 765,
@@ -2090,6 +2298,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/enemies/hawkman_worship/hawkman_worship.tscn",
 		},
 	"jaws" : {
 		"object_id" : 885,
@@ -2100,6 +2309,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "enemy",
 		"mask" : null,
+		"folder_path" : "res://objects/enemies/jaws/jaws.tscn",
 		},
 	"magma" : {
 		"object_id" : 649,
@@ -2110,6 +2320,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "detritus",
 		"mask" : null,
+		"folder_path" : "res://objects/enemies/magma/magma.tscn",
 		},
 	"magma_man" : {
 		"object_id" : 648,
@@ -2120,6 +2331,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "enemy",
 		"mask" : null,
+		"folder_path" : "res://objects/enemies/magma_man/magma_man.tscn",
 		},
 	"magma_trail" : {
 		"object_id" : 650,
@@ -2130,6 +2342,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/enemies/magma_trail/magma_trail.tscn",
 		},
 	"man_trap" : {
 		"object_id" : 532,
@@ -2140,6 +2353,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "enemy",
 		"mask" : null,
+		"folder_path" : "res://objects/enemies/man_trap/man_trap.tscn",
 		},
 	"monkey" : {
 		"object_id" : 778,
@@ -2150,6 +2364,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "enemy",
 		"mask" : null,
+		"folder_path" : "res://objects/enemies/monkey/monkey.tscn",
 		},
 	"olmec" : {
 		"object_id" : 559,
@@ -2160,6 +2375,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "moving_solid",
 		"mask" : null,
+		"folder_path" : "res://objects/enemies/olmec/olmec.tscn",
 		},
 	"olmec_debris" : {
 		"object_id" : 642,
@@ -2170,6 +2386,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/enemies/olmec_debris/olmec_debris.tscn",
 		},
 	"olmec_slam" : {
 		"object_id" : 560,
@@ -2180,6 +2397,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/enemies/olmec_slam/olmec_slam.tscn",
 		},
 	"piranha" : {
 		"object_id" : 481,
@@ -2190,6 +2408,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "enemy",
 		"mask" : null,
+		"folder_path" : "res://objects/enemies/piranha/piranha.tscn",
 		},
 	"scarab" : {
 		"object_id" : 772,
@@ -2200,6 +2419,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "enemy",
 		"mask" : null,
+		"folder_path" : "res://objects/enemies/scarab/scarab.tscn",
 		},
 	"skeleton" : {
 		"object_id" : 652,
@@ -2210,6 +2430,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "enemy",
 		"mask" : null,
+		"folder_path" : "res://objects/enemies/skeleton/skeleton.tscn",
 		},
 	"snake" : {
 		"object_id" : 552,
@@ -2220,6 +2441,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "enemy",
 		"mask" : null,
+		"folder_path" : "res://objects/enemies/snake/snake.tscn",
 		},
 	"spider" : {
 		"object_id" : 366,
@@ -2230,6 +2452,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "enemy",
 		"mask" : null,
+		"folder_path" : "res://objects/enemies/spider/spider.tscn",
 		},
 	"spider_hang" : {
 		"object_id" : 367,
@@ -2240,6 +2463,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "enemy",
 		"mask" : null,
+		"folder_path" : "res://objects/enemies/spider_hang/spider_hang.tscn",
 		},
 	"tomb_lord" : {
 		"object_id" : 775,
@@ -2250,6 +2474,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "enemy",
 		"mask" : null,
+		"folder_path" : "res://objects/enemies/tomb_lord/tomb_lord.tscn",
 		},
 	"ufo" : {
 		"object_id" : 518,
@@ -2260,6 +2485,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "enemy",
 		"mask" : null,
+		"folder_path" : "res://objects/enemies/ufo/ufo.tscn",
 		},
 	"ufo_crash" : {
 		"object_id" : 797,
@@ -2270,6 +2496,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/enemies/ufo_crash/ufo_crash.tscn",
 		},
 	"vampire" : {
 		"object_id" : 915,
@@ -2280,6 +2507,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "enemy",
 		"mask" : null,
+		"folder_path" : "res://objects/enemies/vampire/vampire.tscn",
 		},
 	"yeti" : {
 		"object_id" : 572,
@@ -2290,6 +2518,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "enemy",
 		"mask" : null,
+		"folder_path" : "res://objects/enemies/yeti/yeti.tscn",
 		},
 	"yeti_king" : {
 		"object_id" : 877,
@@ -2300,6 +2529,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "enemy",
 		"mask" : null,
+		"folder_path" : "res://objects/enemies/yeti_king/yeti_king.tscn",
 		},
 	"zombie" : {
 		"object_id" : 744,
@@ -2310,6 +2540,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "enemy",
 		"mask" : null,
+		"folder_path" : "res://objects/enemies/zombie/zombie.tscn",
 		},
 	"check_box" : {
 		"object_id" : 757,
@@ -2320,6 +2551,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/init/check_box/check_box.tscn",
 		},
 	"check_box2" : {
 		"object_id" : 777,
@@ -2330,6 +2562,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/init/check_box2/check_box2.tscn",
 		},
 	"check_box3" : {
 		"object_id" : 796,
@@ -2340,6 +2573,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/init/check_box3/check_box3.tscn",
 		},
 	"check_box4" : {
 		"object_id" : 802,
@@ -2350,6 +2584,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/init/check_box4/check_box4.tscn",
 		},
 	"joy_config_button" : {
 		"object_id" : 807,
@@ -2360,6 +2595,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/init/joy_config_button/joy_config_button.tscn",
 		},
 	"key_config_button" : {
 		"object_id" : 804,
@@ -2370,6 +2606,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/init/key_config_button/key_config_button.tscn",
 		},
 	"ok_button" : {
 		"object_id" : 758,
@@ -2380,6 +2617,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/init/ok_button/ok_button.tscn",
 		},
 	"radio_box" : {
 		"object_id" : 755,
@@ -2390,6 +2628,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/init/radio_box/radio_box.tscn",
 		},
 	"slider1" : {
 		"object_id" : 873,
@@ -2400,6 +2639,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/init/slider1/slider1.tscn",
 		},
 	"slider2" : {
 		"object_id" : 874,
@@ -2410,6 +2650,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/init/slider2/slider2.tscn",
 		},
 	"slider_bg" : {
 		"object_id" : 872,
@@ -2420,6 +2661,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/init/slider_bg/slider_bg.tscn",
 		},
 	"arrow" : {
 		"object_id" : 465,
@@ -2430,6 +2672,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "item",
 		"mask" : null,
+		"folder_path" : "res://objects/items/arrow/arrow.tscn",
 		},
 	"ball" : {
 		"object_id" : 922,
@@ -2440,6 +2683,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "item",
 		"mask" : null,
+		"folder_path" : "res://objects/items/ball/ball.tscn",
 		},
 	"ball2" : {
 		"object_id" : 926,
@@ -2450,6 +2694,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "item",
 		"mask" : null,
+		"folder_path" : "res://objects/items/ball2/ball2.tscn",
 		},
 	"basketball" : {
 		"object_id" : 719,
@@ -2460,6 +2705,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "item",
 		"mask" : null,
+		"folder_path" : "res://objects/items/basketball/basketball.tscn",
 		},
 	"bomb" : {
 		"object_id" : 454,
@@ -2470,6 +2716,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "item",
 		"mask" : null,
+		"folder_path" : "res://objects/items/bomb/bomb.tscn",
 		},
 	"bow" : {
 		"object_id" : 770,
@@ -2480,6 +2727,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "item",
 		"mask" : null,
+		"folder_path" : "res://objects/items/bow/bow.tscn",
 		},
 	"chain" : {
 		"object_id" : 923,
@@ -2490,6 +2738,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/items/chain/chain.tscn",
 		},
 	"chain2" : {
 		"object_id" : 927,
@@ -2500,6 +2749,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/items/chain2/chain2.tscn",
 		},
 	"crystal_skull" : {
 		"object_id" : 883,
@@ -2510,6 +2760,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "gold_idol",
 		"mask" : null,
+		"folder_path" : "res://objects/items/crystal_skull/crystal_skull.tscn",
 		},
 	"dice" : {
 		"object_id" : 773,
@@ -2520,6 +2771,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "item",
 		"mask" : null,
+		"folder_path" : "res://objects/items/dice/dice.tscn",
 		},
 	"fire_frog_bomb" : {
 		"object_id" : 887,
@@ -2530,6 +2782,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "item",
 		"mask" : null,
+		"folder_path" : "res://objects/items/fire_frog_bomb/fire_frog_bomb.tscn",
 		},
 	"fish_bone" : {
 		"object_id" : 482,
@@ -2540,6 +2793,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "item",
 		"mask" : null,
+		"folder_path" : "res://objects/items/fish_bone/fish_bone.tscn",
 		},
 	"flare" : {
 		"object_id" : 629,
@@ -2550,6 +2804,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "item",
 		"mask" : null,
+		"folder_path" : "res://objects/items/flare/flare.tscn",
 		},
 	"gold_idol" : {
 		"object_id" : 520,
@@ -2560,6 +2815,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "item",
 		"mask" : null,
+		"folder_path" : "res://objects/items/gold_idol/gold_idol.tscn",
 		},
 	"jar" : {
 		"object_id" : 635,
@@ -2570,6 +2826,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "item",
 		"mask" : null,
+		"folder_path" : "res://objects/items/jar/jar.tscn",
 		},
 	"lamp_item" : {
 		"object_id" : 928,
@@ -2580,6 +2837,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "item",
 		"mask" : null,
+		"folder_path" : "res://objects/items/lamp_item/lamp_item.tscn",
 		},
 	"lamp_red_item" : {
 		"object_id" : 929,
@@ -2590,6 +2848,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "item",
 		"mask" : null,
+		"folder_path" : "res://objects/items/lamp_red_item/lamp_red_item.tscn",
 		},
 	"machete" : {
 		"object_id" : 705,
@@ -2600,6 +2859,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "item",
 		"mask" : null,
+		"folder_path" : "res://objects/items/machete/machete.tscn",
 		},
 	"machete_pre" : {
 		"object_id" : 707,
@@ -2610,6 +2870,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "whip_pre",
 		"mask" : null,
+		"folder_path" : "res://objects/items/machete_pre/machete_pre.tscn",
 		},
 	"mattock" : {
 		"object_id" : 733,
@@ -2620,6 +2881,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "item",
 		"mask" : null,
+		"folder_path" : "res://objects/items/mattock/mattock.tscn",
 		},
 	"mattock_head" : {
 		"object_id" : 752,
@@ -2630,6 +2892,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "item",
 		"mask" : null,
+		"folder_path" : "res://objects/items/mattock_head/mattock_head.tscn",
 		},
 	"mattock_hit" : {
 		"object_id" : 735,
@@ -2640,6 +2903,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "whip",
 		"mask" : null,
+		"folder_path" : "res://objects/items/mattock_hit/mattock_hit.tscn",
 		},
 	"mattock_pre" : {
 		"object_id" : 734,
@@ -2650,6 +2914,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "whip_pre",
 		"mask" : null,
+		"folder_path" : "res://objects/items/mattock_pre/mattock_pre.tscn",
 		},
 	"parachute" : {
 		"object_id" : 703,
@@ -2660,6 +2925,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/items/parachute/parachute.tscn",
 		},
 	"pistol" : {
 		"object_id" : 708,
@@ -2670,6 +2936,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "item",
 		"mask" : null,
+		"folder_path" : "res://objects/items/pistol/pistol.tscn",
 		},
 	"rock" : {
 		"object_id" : 450,
@@ -2680,6 +2947,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "item",
 		"mask" : null,
+		"folder_path" : "res://objects/items/rock/rock.tscn",
 		},
 	"rope" : {
 		"object_id" : 470,
@@ -2690,6 +2958,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "ladder",
 		"mask" : null,
+		"folder_path" : "res://objects/items/rope/rope.tscn",
 		},
 	"rope_throw" : {
 		"object_id" : 469,
@@ -2700,6 +2969,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "item",
 		"mask" : null,
+		"folder_path" : "res://objects/items/rope_throw/rope_throw.tscn",
 		},
 	"rope_top" : {
 		"object_id" : 471,
@@ -2710,6 +2980,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/items/rope_top/rope_top.tscn",
 		},
 	"sceptre" : {
 		"object_id" : 788,
@@ -2720,6 +2991,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "item",
 		"mask" : null,
+		"folder_path" : "res://objects/items/sceptre/sceptre.tscn",
 		},
 	"shotgun" : {
 		"object_id" : 670,
@@ -2730,6 +3002,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "item",
 		"mask" : null,
+		"folder_path" : "res://objects/items/shotgun/shotgun.tscn",
 		},
 	"skull" : {
 		"object_id" : 663,
@@ -2740,6 +3013,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "item",
 		"mask" : null,
+		"folder_path" : "res://objects/items/skull/skull.tscn",
 		},
 	"slash" : {
 		"object_id" : 706,
@@ -2750,6 +3024,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "whip",
 		"mask" : null,
+		"folder_path" : "res://objects/items/slash/slash.tscn",
 		},
 	"teleporter" : {
 		"object_id" : 810,
@@ -2760,6 +3035,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "item",
 		"mask" : null,
+		"folder_path" : "res://objects/items/teleporter/teleporter.tscn",
 		},
 	"web_cannon" : {
 		"object_id" : 769,
@@ -2770,6 +3046,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "item",
 		"mask" : null,
+		"folder_path" : "res://objects/items/web_cannon/web_cannon.tscn",
 		},
 	"whip" : {
 		"object_id" : 576,
@@ -2780,6 +3057,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/items/whip/whip.tscn",
 		},
 	"whip_pre" : {
 		"object_id" : 596,
@@ -2790,6 +3068,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/items/whip_pre/whip_pre.tscn",
 		},
 	"alien_boss_tile" : {
 		"object_id" : 942,
@@ -2800,6 +3079,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/alien_boss_tile/alien_boss_tile.tscn",
 		},
 	"alien_tile" : {
 		"object_id" : 842,
@@ -2810,6 +3090,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/alien_tile/alien_tile.tscn",
 		},
 	"bat_tile" : {
 		"object_id" : 814,
@@ -2820,6 +3101,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/bat_tile/bat_tile.tscn",
 		},
 	"bomb_bag_tile" : {
 		"object_id" : 853,
@@ -2830,6 +3112,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/bomb_bag_tile/bomb_bag_tile.tscn",
 		},
 	"bomb_box_tile" : {
 		"object_id" : 854,
@@ -2840,6 +3123,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/bomb_box_tile/bomb_box_tile.tscn",
 		},
 	"bomb_paste_tile" : {
 		"object_id" : 855,
@@ -2850,6 +3134,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/bomb_paste_tile/bomb_paste_tile.tscn",
 		},
 	"bones_tile" : {
 		"object_id" : 848,
@@ -2860,6 +3145,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/bones_tile/bones_tile.tscn",
 		},
 	"bow_tile" : {
 		"object_id" : 869,
@@ -2870,6 +3156,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/bow_tile/bow_tile.tscn",
 		},
 	"cape_tile" : {
 		"object_id" : 859,
@@ -2880,6 +3167,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/cape_tile/cape_tile.tscn",
 		},
 	"caveman_tile" : {
 		"object_id" : 832,
@@ -2890,6 +3178,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/caveman_tile/caveman_tile.tscn",
 		},
 	"chest_tile" : {
 		"object_id" : 823,
@@ -2900,6 +3189,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/chest_tile/chest_tile.tscn",
 		},
 	"compass_tile" : {
 		"object_id" : 870,
@@ -2910,6 +3200,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/compass_tile/compass_tile.tscn",
 		},
 	"crate_tile" : {
 		"object_id" : 824,
@@ -2920,6 +3211,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/crate_tile/crate_tile.tscn",
 		},
 	"crystal_skull_tile" : {
 		"object_id" : 889,
@@ -2930,6 +3222,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/crystal_skull_tile/crystal_skull_tile.tscn",
 		},
 	"damsel_tile" : {
 		"object_id" : 826,
@@ -2940,6 +3233,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/damsel_tile/damsel_tile.tscn",
 		},
 	"diamond_tile" : {
 		"object_id" : 830,
@@ -2950,6 +3244,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/diamond_tile/diamond_tile.tscn",
 		},
 	"edit_button" : {
 		"object_id" : 847,
@@ -2960,6 +3255,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/edit_button/edit_button.tscn",
 		},
 	"emerald_big_tile" : {
 		"object_id" : 820,
@@ -2970,6 +3266,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/emerald_big_tile/emerald_big_tile.tscn",
 		},
 	"fire_frog_tile" : {
 		"object_id" : 892,
@@ -2980,6 +3277,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/fire_frog_tile/fire_frog_tile.tscn",
 		},
 	"frog_tile" : {
 		"object_id" : 839,
@@ -2990,6 +3288,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/frog_tile/frog_tile.tscn",
 		},
 	"giant_spider_tile" : {
 		"object_id" : 831,
@@ -3000,6 +3299,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/giant_spider_tile/giant_spider_tile.tscn",
 		},
 	"gloves_tile" : {
 		"object_id" : 858,
@@ -3010,6 +3310,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/gloves_tile/gloves_tile.tscn",
 		},
 	"gold_bars_tile" : {
 		"object_id" : 819,
@@ -3020,6 +3321,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/gold_bars_tile/gold_bars_tile.tscn",
 		},
 	"gold_bar_tile" : {
 		"object_id" : 818,
@@ -3030,6 +3332,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/gold_bar_tile/gold_bar_tile.tscn",
 		},
 	"gold_idol_tile" : {
 		"object_id" : 829,
@@ -3040,6 +3343,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/gold_idol_tile/gold_idol_tile.tscn",
 		},
 	"hawkman_tile" : {
 		"object_id" : 834,
@@ -3050,6 +3354,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/hawkman_tile/hawkman_tile.tscn",
 		},
 	"ice_tile" : {
 		"object_id" : 895,
@@ -3060,6 +3365,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/ice_tile/ice_tile.tscn",
 		},
 	"jar_tile" : {
 		"object_id" : 828,
@@ -3070,6 +3376,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/jar_tile/jar_tile.tscn",
 		},
 	"jetpack_tile" : {
 		"object_id" : 871,
@@ -3080,6 +3387,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/jetpack_tile/jetpack_tile.tscn",
 		},
 	"lava_tile" : {
 		"object_id" : 846,
@@ -3090,6 +3398,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/lava_tile/lava_tile.tscn",
 		},
 	"load_button" : {
 		"object_id" : 905,
@@ -3100,6 +3409,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/load_button/load_button.tscn",
 		},
 	"machete_tile" : {
 		"object_id" : 862,
@@ -3110,6 +3420,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/machete_tile/machete_tile.tscn",
 		},
 	"man_trap_tile" : {
 		"object_id" : 835,
@@ -3120,6 +3431,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/man_trap_tile/man_trap_tile.tscn",
 		},
 	"mattock_tile" : {
 		"object_id" : 864,
@@ -3130,6 +3442,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/mattock_tile/mattock_tile.tscn",
 		},
 	"mega_mouth_tile" : {
 		"object_id" : 891,
@@ -3140,6 +3453,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/mega_mouth_tile/mega_mouth_tile.tscn",
 		},
 	"mitt_tile" : {
 		"object_id" : 863,
@@ -3150,6 +3464,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/mitt_tile/mitt_tile.tscn",
 		},
 	"monkey_tile" : {
 		"object_id" : 838,
@@ -3160,6 +3475,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/monkey_tile/monkey_tile.tscn",
 		},
 	"new_button" : {
 		"object_id" : 912,
@@ -3170,6 +3486,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/new_button/new_button.tscn",
 		},
 	"parachute_tile" : {
 		"object_id" : 861,
@@ -3180,6 +3497,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/parachute_tile/parachute_tile.tscn",
 		},
 	"piranha_tile" : {
 		"object_id" : 843,
@@ -3190,6 +3508,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/piranha_tile/piranha_tile.tscn",
 		},
 	"pistol_tile" : {
 		"object_id" : 865,
@@ -3200,6 +3519,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/pistol_tile/pistol_tile.tscn",
 		},
 	"rock_tile" : {
 		"object_id" : 827,
@@ -3210,6 +3530,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/rock_tile/rock_tile.tscn",
 		},
 	"rope_pile_tile" : {
 		"object_id" : 856,
@@ -3220,6 +3541,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/rope_pile_tile/rope_pile_tile.tscn",
 		},
 	"ruby_big_tile" : {
 		"object_id" : 822,
@@ -3230,6 +3552,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/ruby_big_tile/ruby_big_tile.tscn",
 		},
 	"sapphire_big_tile" : {
 		"object_id" : 821,
@@ -3240,6 +3563,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/sapphire_big_tile/sapphire_big_tile.tscn",
 		},
 	"shopkeeper_tile" : {
 		"object_id" : 841,
@@ -3250,6 +3574,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/shopkeeper_tile/shopkeeper_tile.tscn",
 		},
 	"shotgun_tile" : {
 		"object_id" : 866,
@@ -3260,6 +3585,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/shotgun_tile/shotgun_tile.tscn",
 		},
 	"skeleton_tile" : {
 		"object_id" : 836,
@@ -3270,6 +3596,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/skeleton_tile/skeleton_tile.tscn",
 		},
 	"smash_trap_tile" : {
 		"object_id" : 850,
@@ -3280,6 +3607,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/smash_trap_tile/smash_trap_tile.tscn",
 		},
 	"snake_tile" : {
 		"object_id" : 815,
@@ -3290,6 +3618,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/snake_tile/snake_tile.tscn",
 		},
 	"spear_trap_tile_bot" : {
 		"object_id" : 852,
@@ -3300,6 +3629,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/spear_trap_tile_bot/spear_trap_tile_bot.tscn",
 		},
 	"spear_trap_tile_top" : {
 		"object_id" : 851,
@@ -3310,6 +3640,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/spear_trap_tile_top/spear_trap_tile_top.tscn",
 		},
 	"spectacles_tile" : {
 		"object_id" : 857,
@@ -3320,6 +3651,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/spectacles_tile/spectacles_tile.tscn",
 		},
 	"spider_tile" : {
 		"object_id" : 816,
@@ -3330,6 +3662,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/spider_tile/spider_tile.tscn",
 		},
 	"spike_shoes_tile" : {
 		"object_id" : 888,
@@ -3340,6 +3673,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/spike_shoes_tile/spike_shoes_tile.tscn",
 		},
 	"spring_shoes_tile" : {
 		"object_id" : 860,
@@ -3350,6 +3684,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/spring_shoes_tile/spring_shoes_tile.tscn",
 		},
 	"spring_trap_tile" : {
 		"object_id" : 893,
@@ -3360,6 +3695,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/spring_trap_tile/spring_trap_tile.tscn",
 		},
 	"teleporter_tile" : {
 		"object_id" : 868,
@@ -3370,6 +3706,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/teleporter_tile/teleporter_tile.tscn",
 		},
 	"test_button" : {
 		"object_id" : 911,
@@ -3380,6 +3717,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/test_button/test_button.tscn",
 		},
 	"tomb_lord_tile" : {
 		"object_id" : 837,
@@ -3390,6 +3728,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/tomb_lord_tile/tomb_lord_tile.tscn",
 		},
 	"ufo_tile" : {
 		"object_id" : 849,
@@ -3400,6 +3739,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/ufo_tile/ufo_tile.tscn",
 		},
 	"vampire_tile" : {
 		"object_id" : 925,
@@ -3410,6 +3750,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/vampire_tile/vampire_tile.tscn",
 		},
 	"water_tile" : {
 		"object_id" : 845,
@@ -3420,6 +3761,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/water_tile/water_tile.tscn",
 		},
 	"web_cannon_tile" : {
 		"object_id" : 867,
@@ -3430,6 +3772,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/web_cannon_tile/web_cannon_tile.tscn",
 		},
 	"web_tile" : {
 		"object_id" : 896,
@@ -3440,6 +3783,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/web_tile/web_tile.tscn",
 		},
 	"yeti_king_tile" : {
 		"object_id" : 890,
@@ -3450,6 +3794,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/yeti_king_tile/yeti_king_tile.tscn",
 		},
 	"yeti_tile" : {
 		"object_id" : 833,
@@ -3460,6 +3805,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/yeti_tile/yeti_tile.tscn",
 		},
 	"zombie_tile" : {
 		"object_id" : 840,
@@ -3470,6 +3816,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/level editor/zombie_tile/zombie_tile.tscn",
 		},
 	"black" : {
 		"object_id" : 561,
@@ -3480,6 +3827,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "menu",
 		"mask" : null,
+		"folder_path" : "res://objects/other/black/black.tscn",
 		},
 	"black_bg" : {
 		"object_id" : 639,
@@ -3490,6 +3838,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "menu",
 		"mask" : null,
+		"folder_path" : "res://objects/other/black_bg/black_bg.tscn",
 		},
 	"cave_up" : {
 		"object_id" : 506,
@@ -3500,6 +3849,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/other/cave_up/cave_up.tscn",
 		},
 	"hint_hand" : {
 		"object_id" : 760,
@@ -3510,6 +3860,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/other/hint_hand/hint_hand.tscn",
 		},
 	"menu_bottom" : {
 		"object_id" : 565,
@@ -3520,6 +3871,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "menu",
 		"mask" : null,
+		"folder_path" : "res://objects/other/menu_bottom/menu_bottom.tscn",
 		},
 	"menu_left" : {
 		"object_id" : 566,
@@ -3530,6 +3882,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "menu",
 		"mask" : null,
+		"folder_path" : "res://objects/other/menu_left/menu_left.tscn",
 		},
 	"menu_ll" : {
 		"object_id" : 570,
@@ -3540,6 +3893,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "menu",
 		"mask" : null,
+		"folder_path" : "res://objects/other/menu_ll/menu_ll.tscn",
 		},
 	"menu_lr" : {
 		"object_id" : 571,
@@ -3550,6 +3904,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "menu",
 		"mask" : null,
+		"folder_path" : "res://objects/other/menu_lr/menu_lr.tscn",
 		},
 	"menu_right" : {
 		"object_id" : 567,
@@ -3560,6 +3915,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "menu",
 		"mask" : null,
+		"folder_path" : "res://objects/other/menu_right/menu_right.tscn",
 		},
 	"menu_sel" : {
 		"object_id" : 902,
@@ -3570,6 +3926,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "menu",
 		"mask" : null,
+		"folder_path" : "res://objects/other/menu_sel/menu_sel.tscn",
 		},
 	"menu_top" : {
 		"object_id" : 564,
@@ -3580,6 +3937,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "menu",
 		"mask" : null,
+		"folder_path" : "res://objects/other/menu_top/menu_top.tscn",
 		},
 	"menu_ul" : {
 		"object_id" : 568,
@@ -3590,6 +3948,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "menu",
 		"mask" : null,
+		"folder_path" : "res://objects/other/menu_ul/menu_ul.tscn",
 		},
 	"menu_ur" : {
 		"object_id" : 569,
@@ -3600,6 +3959,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "menu",
 		"mask" : null,
+		"folder_path" : "res://objects/other/menu_ur/menu_ur.tscn",
 		},
 	"page_down" : {
 		"object_id" : 901,
@@ -3610,6 +3970,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/other/page_down/page_down.tscn",
 		},
 	"page_up" : {
 		"object_id" : 900,
@@ -3620,6 +3981,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/other/page_up/page_up.tscn",
 		},
 	"p_dummy" : {
 		"object_id" : 508,
@@ -3630,6 +3992,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/other/p_dummy/p_dummy.tscn",
 		},
 	"p_dummy2" : {
 		"object_id" : 612,
@@ -3640,6 +4003,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/other/p_dummy2/p_dummy2.tscn",
 		},
 	"p_dummy3" : {
 		"object_id" : 616,
@@ -3650,6 +4014,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/other/p_dummy3/p_dummy3.tscn",
 		},
 	"p_dummy4" : {
 		"object_id" : 618,
@@ -3660,6 +4025,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/other/p_dummy4/p_dummy4.tscn",
 		},
 	"p_dummy5" : {
 		"object_id" : 634,
@@ -3670,6 +4036,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/other/p_dummy5/p_dummy5.tscn",
 		},
 	"p_dummy6" : {
 		"object_id" : 898,
@@ -3680,6 +4047,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/other/p_dummy6/p_dummy6.tscn",
 		},
 	"wal_damsel" : {
 		"object_id" : 903,
@@ -3690,6 +4058,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/other/wal_damsel/wal_damsel.tscn",
 		},
 	"bg_end3" : {
 		"object_id" : 632,
@@ -3700,6 +4069,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/other/end/bg_end3/bg_end3.tscn",
 		},
 	"big_chest" : {
 		"object_id" : 583,
@@ -3710,6 +4080,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/other/end/big_chest/big_chest.tscn",
 		},
 	"big_treasure" : {
 		"object_id" : 603,
@@ -3720,6 +4091,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/other/end/big_treasure/big_treasure.tscn",
 		},
 	"end2_bg" : {
 		"object_id" : 606,
@@ -3730,6 +4102,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/other/end/end2_bg/end2_bg.tscn",
 		},
 	"end_plat" : {
 		"object_id" : 582,
@@ -3740,6 +4113,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "solid",
 		"mask" : null,
+		"folder_path" : "res://objects/other/end/end_plat/end_plat.tscn",
 		},
 	"end_wall" : {
 		"object_id" : 924,
@@ -3750,6 +4124,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/other/end/end_wall/end_wall.tscn",
 		},
 	"lava_spray" : {
 		"object_id" : 604,
@@ -3760,6 +4135,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/other/end/lava_spray/lava_spray.tscn",
 		},
 	"player_sil" : {
 		"object_id" : 608,
@@ -3770,6 +4146,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/other/end/player_sil/player_sil.tscn",
 		},
 	"treasure_sil" : {
 		"object_id" : 609,
@@ -3780,6 +4157,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/other/end/treasure_sil/treasure_sil.tscn",
 		},
 	"bat_intro" : {
 		"object_id" : 783,
@@ -3790,6 +4168,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/other/intro/bat_intro/bat_intro.tscn",
 		},
 	"camel" : {
 		"object_id" : 690,
@@ -3800,6 +4179,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/other/intro/camel/camel.tscn",
 		},
 	"caravan" : {
 		"object_id" : 768,
@@ -3810,6 +4190,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/other/intro/caravan/caravan.tscn",
 		},
 	"desert" : {
 		"object_id" : 610,
@@ -3820,6 +4201,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "solid",
 		"mask" : null,
+		"folder_path" : "res://objects/other/intro/desert/desert.tscn",
 		},
 	"desert2" : {
 		"object_id" : 917,
@@ -3830,6 +4212,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "solid",
 		"mask" : null,
+		"folder_path" : "res://objects/other/intro/desert2/desert2.tscn",
 		},
 	"desert_scroll" : {
 		"object_id" : 682,
@@ -3840,6 +4223,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/other/intro/desert_scroll/desert_scroll.tscn",
 		},
 	"desert_scroll2" : {
 		"object_id" : 918,
@@ -3850,6 +4234,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/other/intro/desert_scroll2/desert_scroll2.tscn",
 		},
 	"desert_top" : {
 		"object_id" : 611,
@@ -3860,6 +4245,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/other/intro/desert_top/desert_top.tscn",
 		},
 	"desert_top_scroll" : {
 		"object_id" : 684,
@@ -3870,6 +4256,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/other/intro/desert_top_scroll/desert_top_scroll.tscn",
 		},
 	"intro_bg" : {
 		"object_id" : 619,
@@ -3880,6 +4267,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/other/intro/intro_bg/intro_bg.tscn",
 		},
 	"moon" : {
 		"object_id" : 620,
@@ -3890,6 +4278,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/other/intro/moon/moon.tscn",
 		},
 	"palm_tree" : {
 		"object_id" : 681,
@@ -3900,6 +4289,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/other/intro/palm_tree/palm_tree.tscn",
 		},
 	"palm_tree_dark" : {
 		"object_id" : 627,
@@ -3910,6 +4300,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/other/intro/palm_tree_dark/palm_tree_dark.tscn",
 		},
 	"palm_tree_scroll" : {
 		"object_id" : 689,
@@ -3920,6 +4311,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/other/intro/palm_tree_scroll/palm_tree_scroll.tscn",
 		},
 	"shrub" : {
 		"object_id" : 680,
@@ -3930,6 +4322,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/other/intro/shrub/shrub.tscn",
 		},
 	"shrub_dark" : {
 		"object_id" : 628,
@@ -3940,6 +4333,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/other/intro/shrub_dark/shrub_dark.tscn",
 		},
 	"shrub_scroll" : {
 		"object_id" : 688,
@@ -3950,6 +4344,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/other/intro/shrub_scroll/shrub_scroll.tscn",
 		},
 	"basket" : {
 		"object_id" : 716,
@@ -3960,6 +4355,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/other/title/basket/basket.tscn",
 		},
 	"bat_target" : {
 		"object_id" : 940,
@@ -3970,6 +4366,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/other/title/bat_target/bat_target.tscn",
 		},
 	"button_highscore" : {
 		"object_id" : 641,
@@ -3980,6 +4377,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/other/title/button_highscore/button_highscore.tscn",
 		},
 	"copy" : {
 		"object_id" : 943,
@@ -3990,6 +4388,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/other/title/copy/copy.tscn",
 		},
 	"level13_sign" : {
 		"object_id" : 879,
@@ -4000,6 +4399,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/other/title/level13_sign/level13_sign.tscn",
 		},
 	"level5_sign" : {
 		"object_id" : 674,
@@ -4010,6 +4410,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/other/title/level5_sign/level5_sign.tscn",
 		},
 	"level9_sign" : {
 		"object_id" : 675,
@@ -4020,6 +4421,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/other/title/level9_sign/level9_sign.tscn",
 		},
 	"multi_trophy" : {
 		"object_id" : 939,
@@ -4030,6 +4432,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/other/title/multi_trophy/multi_trophy.tscn",
 		},
 	"new" : {
 		"object_id" : 761,
@@ -4040,6 +4443,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/other/title/new/new.tscn",
 		},
 	"quit_sign" : {
 		"object_id" : 626,
@@ -4050,6 +4454,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "solid",
 		"mask" : null,
+		"folder_path" : "res://objects/other/title/quit_sign/quit_sign.tscn",
 		},
 	"reset_sign" : {
 		"object_id" : 640,
@@ -4060,6 +4465,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "solid",
 		"mask" : null,
+		"folder_path" : "res://objects/other/title/reset_sign/reset_sign.tscn",
 		},
 	"rim" : {
 		"object_id" : 717,
@@ -4070,6 +4476,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/other/title/rim/rim.tscn",
 		},
 	"rim_deflect" : {
 		"object_id" : 720,
@@ -4080,6 +4487,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/other/title/rim_deflect/rim_deflect.tscn",
 		},
 	"scores_sign" : {
 		"object_id" : 660,
@@ -4090,6 +4498,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/other/title/scores_sign/scores_sign.tscn",
 		},
 	"start_sign" : {
 		"object_id" : 659,
@@ -4100,6 +4509,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/other/title/start_sign/start_sign.tscn",
 		},
 	"target" : {
 		"object_id" : 771,
@@ -4110,6 +4520,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/other/title/target/target.tscn",
 		},
 	"title_bg" : {
 		"object_id" : 547,
@@ -4120,6 +4531,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/other/title/title_bg/title_bg.tscn",
 		},
 	"title_logo" : {
 		"object_id" : 546,
@@ -4130,6 +4542,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "solid",
 		"mask" : null,
+		"folder_path" : "res://objects/other/title/title_logo/title_logo.tscn",
 		},
 	"trophy" : {
 		"object_id" : 699,
@@ -4140,6 +4553,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/other/title/trophy/trophy.tscn",
 		},
 	"tutorial_sign" : {
 		"object_id" : 799,
@@ -4150,6 +4564,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "solid",
 		"mask" : null,
+		"folder_path" : "res://objects/other/title/tutorial_sign/tutorial_sign.tscn",
 		},
 	"x_change" : {
 		"object_id" : 725,
@@ -4160,6 +4575,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "x_start",
 		"mask" : null,
+		"folder_path" : "res://objects/other/title/x_change/x_change.tscn",
 		},
 	"x_change2" : {
 		"object_id" : 938,
@@ -4170,6 +4586,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "x_start",
 		"mask" : null,
+		"folder_path" : "res://objects/other/title/x_change2/x_change2.tscn",
 		},
 	"x_end" : {
 		"object_id" : 581,
@@ -4180,6 +4597,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "x_start",
 		"mask" : null,
+		"folder_path" : "res://objects/other/title/x_end/x_end.tscn",
 		},
 	"x_moon" : {
 		"object_id" : 695,
@@ -4190,6 +4608,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "x_start",
 		"mask" : null,
+		"folder_path" : "res://objects/other/title/x_moon/x_moon.tscn",
 		},
 	"x_scores" : {
 		"object_id" : 550,
@@ -4200,6 +4619,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "x_start",
 		"mask" : null,
+		"folder_path" : "res://objects/other/title/x_scores/x_scores.tscn",
 		},
 	"x_shortcut13" : {
 		"object_id" : 880,
@@ -4210,6 +4630,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "x_start",
 		"mask" : null,
+		"folder_path" : "res://objects/other/title/x_shortcut13/x_shortcut13.tscn",
 		},
 	"x_shortcut5" : {
 		"object_id" : 676,
@@ -4220,6 +4641,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "x_start",
 		"mask" : null,
+		"folder_path" : "res://objects/other/title/x_shortcut5/x_shortcut5.tscn",
 		},
 	"x_shortcut9" : {
 		"object_id" : 677,
@@ -4230,6 +4652,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "x_start",
 		"mask" : null,
+		"folder_path" : "res://objects/other/title/x_shortcut9/x_shortcut9.tscn",
 		},
 	"x_stars" : {
 		"object_id" : 696,
@@ -4240,6 +4663,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "x_start",
 		"mask" : null,
+		"folder_path" : "res://objects/other/title/x_stars/x_stars.tscn",
 		},
 	"x_start" : {
 		"object_id" : 549,
@@ -4250,6 +4674,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/other/title/x_start/x_start.tscn",
 		},
 	"x_sun" : {
 		"object_id" : 694,
@@ -4260,6 +4685,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "x_start",
 		"mask" : null,
+		"folder_path" : "res://objects/other/title/x_sun/x_sun.tscn",
 		},
 	"x_title" : {
 		"object_id" : 551,
@@ -4270,6 +4696,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "x_start",
 		"mask" : null,
+		"folder_path" : "res://objects/other/title/x_title/x_title.tscn",
 		},
 	"x_tutorial" : {
 		"object_id" : 800,
@@ -4280,6 +4707,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "x_start",
 		"mask" : null,
+		"folder_path" : "res://objects/other/title/x_tutorial/x_tutorial.tscn",
 		},
 	"arrow_repeater_l" : {
 		"object_id" : 724,
@@ -4290,6 +4718,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "solid",
 		"mask" : null,
+		"folder_path" : "res://objects/traps/arrow_repeater_l/arrow_repeater_l.tscn",
 		},
 	"arrow_repeater_r" : {
 		"object_id" : 723,
@@ -4300,6 +4729,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "solid",
 		"mask" : null,
+		"folder_path" : "res://objects/traps/arrow_repeater_r/arrow_repeater_r.tscn",
 		},
 	"arrow_trap_left" : {
 		"object_id" : 693,
@@ -4310,6 +4740,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "solid",
 		"mask" : null,
+		"folder_path" : "res://objects/traps/arrow_trap_left/arrow_trap_left.tscn",
 		},
 	"arrow_trap_left_lit" : {
 		"object_id" : 909,
@@ -4320,6 +4751,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "arrow_trap_left",
 		"mask" : null,
+		"folder_path" : "res://objects/traps/arrow_trap_left_lit/arrow_trap_left_lit.tscn",
 		},
 	"arrow_trap_right" : {
 		"object_id" : 463,
@@ -4330,6 +4762,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "solid",
 		"mask" : null,
+		"folder_path" : "res://objects/traps/arrow_trap_right/arrow_trap_right.tscn",
 		},
 	"arrow_trap_right_lit" : {
 		"object_id" : 908,
@@ -4340,6 +4773,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "arrow_trap_right",
 		"mask" : null,
+		"folder_path" : "res://objects/traps/arrow_trap_right_lit/arrow_trap_right_lit.tscn",
 		},
 	"arrow_trap_test" : {
 		"object_id" : 934,
@@ -4350,6 +4784,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/traps/arrow_trap_test/arrow_trap_test.tscn",
 		},
 	"boulder" : {
 		"object_id" : 521,
@@ -4360,6 +4795,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "moving_solid",
 		"mask" : null,
+		"folder_path" : "res://objects/traps/boulder/boulder.tscn",
 		},
 	"ceiling_trap" : {
 		"object_id" : 542,
@@ -4370,6 +4806,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "moving_solid",
 		"mask" : null,
+		"folder_path" : "res://objects/traps/ceiling_trap/ceiling_trap.tscn",
 		},
 	"door" : {
 		"object_id" : 544,
@@ -4380,6 +4817,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "moving_solid",
 		"mask" : null,
+		"folder_path" : "res://objects/traps/door/door.tscn",
 		},
 	"giant_tiki_head" : {
 		"object_id" : 522,
@@ -4390,6 +4828,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/traps/giant_tiki_head/giant_tiki_head.tscn",
 		},
 	"smash_trap" : {
 		"object_id" : 540,
@@ -4400,6 +4839,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "moving_solid",
 		"mask" : null,
+		"folder_path" : "res://objects/traps/smash_trap/smash_trap.tscn",
 		},
 	"smash_trap_lit" : {
 		"object_id" : 914,
@@ -4410,6 +4850,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "moving_solid",
 		"mask" : null,
+		"folder_path" : "res://objects/traps/smash_trap_lit/smash_trap_lit.tscn",
 		},
 	"spears_left" : {
 		"object_id" : 528,
@@ -4420,6 +4861,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/traps/spears_left/spears_left.tscn",
 		},
 	"spear_trap_bottom" : {
 		"object_id" : 531,
@@ -4430,6 +4872,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "solid",
 		"mask" : null,
+		"folder_path" : "res://objects/traps/spear_trap_bottom/spear_trap_bottom.tscn",
 		},
 	"spear_trap_lit" : {
 		"object_id" : 907,
@@ -4440,6 +4883,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "spear_trap_top",
 		"mask" : null,
+		"folder_path" : "res://objects/traps/spear_trap_lit/spear_trap_lit.tscn",
 		},
 	"spear_trap_top" : {
 		"object_id" : 527,
@@ -4450,6 +4894,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "solid",
 		"mask" : null,
+		"folder_path" : "res://objects/traps/spear_trap_top/spear_trap_top.tscn",
 		},
 	"spikes" : {
 		"object_id" : 447,
@@ -4460,6 +4905,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "drawn_sprite",
 		"mask" : null,
+		"folder_path" : "res://objects/traps/spikes/spikes.tscn",
 		},
 	"spring_trap" : {
 		"object_id" : 875,
@@ -4470,6 +4916,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : null,
 		"mask" : null,
+		"folder_path" : "res://objects/traps/spring_trap/spring_trap.tscn",
 		},
 	"temp" : {
 		"object_id" : 466,
@@ -4480,6 +4927,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "solid",
 		"mask" : null,
+		"folder_path" : "res://objects/traps/temp/temp.tscn",
 		},
 	"thwomp_trap" : {
 		"object_id" : 539,
@@ -4490,6 +4938,7 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "moving_solid",
 		"mask" : null,
+		"folder_path" : "res://objects/traps/thwomp_trap/thwomp_trap.tscn",
 		},
 	"trap_block" : {
 		"object_id" : 555,
@@ -4500,5 +4949,6 @@ const object_database = {
 		"persistent" : false,
 		"parent" : "solid",
 		"mask" : null,
+		"folder_path" : "res://objects/traps/trap_block/trap_block.tscn",
 		}
 }

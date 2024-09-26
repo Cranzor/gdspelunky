@@ -44,7 +44,35 @@ position = Vector2(320, 0)
 
 [node name="BgElements" parent="." instance=ExtResource("24_c1f05")]
 z_as_relative = false
-layer_29/tile_data = PackedInt32Array()
+layer_1/name = "Layer1"
+layer_2/name = "Layer2"
+layer_3/name = "Layer3"
+layer_4/name = "Layer4"
+layer_5/name = "Layer5"
+layer_6/name = "Layer6"
+layer_7/name = "Layer7"
+layer_8/name = "Layer8"
+layer_9/name = "Layer9"
+layer_10/name = "Layer10"
+layer_11/name = "Layer11"
+layer_12/name = "Layer12"
+layer_13/name = "Layer13"
+layer_14/name = "Layer14"
+layer_15/name = "Layer15"
+layer_16/name = "Layer16"
+layer_17/name = "Layer17"
+layer_18/name = "Layer18"
+layer_19/name = "Layer19"
+layer_20/name = "Layer20"
+layer_21/name = "Layer21"
+layer_22/name = "Layer22"
+layer_23/name = "Layer23"
+layer_24/name = "Layer24"
+layer_25/name = "Layer25"
+layer_26/name = "Layer26"
+layer_27/name = "Layer27"
+layer_28/name = "Layer28"
+layer_29/name = "Layer29"
 
 [node name="Button" type="Button" parent="."]
 offset_left = 576.0

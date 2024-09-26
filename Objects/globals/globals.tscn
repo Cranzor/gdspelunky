@@ -4,3 +4,4 @@
 
 [node name="Globals" type="Node2D" groups=["globals"]]
 script = ExtResource("1_btbma")
+object_name = "globals"

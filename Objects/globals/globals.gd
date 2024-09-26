@@ -1,7 +1,4 @@
-extends Node2D
-
-@export var object_size = Vector2(0, 0)
-@export var depth = 0
+extends DrawnSprite #--- changing this to DrawnSprite
 
 func initial_setup():
 	#--- set size
@@ -14,6 +11,7 @@ func initial_setup():
 	#_create()
 
 func _ready():
+	object_setup()
 	initial_setup()
 
 	# gamepad

@@ -324,6 +324,8 @@ func sprite_setup(object_entry):
 			add_child(new_animated_sprite)
 			new_animated_sprite.play(sprite_to_add)
 			set_sprite_offset(sprite_to_add)
+	else:
+		sprite_offset = Vector2(0, 0)
 			
 #--- Helper function to set up a single animation for an AnimatedSprite2D
 func sprite_animation_setup(sprite_name, sprite_frames):
