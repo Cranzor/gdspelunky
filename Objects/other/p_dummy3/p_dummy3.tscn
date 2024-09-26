@@ -8,12 +8,6 @@ script = ExtResource("1_sgunq")
 object_name = "p_dummy3"
 object_size = Vector2(16, 16)
 
-[node name="Camera2D" type="Camera2D" parent="." groups=["view"]]
-limit_left = 0
-limit_right = 960
-limit_bottom = 240
-drag_horizontal_enabled = true
-
 [node name="Alarms" type="Node2D" parent="."]
 
 [node name="Alarm0" type="Timer" parent="Alarms"]

@@ -1,4 +1,7 @@
 [gd_scene format=3 uid="uid://bft8urcdv7lh0"]
 
-[node name="View" type="Camera2D" groups=["view"]]
-anchor_mode = 0
+[node name="IntroView" type="Camera2D" groups=["view"]]
+limit_left = 0
+limit_right = 960
+limit_bottom = 240
+drag_horizontal_enabled = true

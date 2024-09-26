@@ -326,6 +326,14 @@ func sprite_setup(object_entry):
 			set_sprite_offset(sprite_to_add)
 	else:
 		sprite_offset = Vector2(0, 0)
+	
+	camera_setup()
+
+func camera_setup():
+	const VIEW = preload("res://view.tscn")
+	if object_name == 'p_dummy3' or object_name == 'player1':
+		var animated_sprite = get_animated_sprite_2d()
+		animated_sprite.add_child(VIEW.instantiate())
 			
 #--- Helper function to set up a single animation for an AnimatedSprite2D
 func sprite_animation_setup(sprite_name, sprite_frames):
