@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://objects/other/p_dummy3/p_dummy3.gd" id="1_sgunq"]
 
-[node name="PDummy3" type="Node2D" groups=["drawn_sprite", "p_dummy3"]]
+[node name="PDummy3" type="Node2D"]
 z_index = -40
 script = ExtResource("1_sgunq")
 object_name = "p_dummy3"

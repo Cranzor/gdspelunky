@@ -264,6 +264,7 @@ func object_setup():
 	var object_database = object_database.object_database
 	var object_entry = object_database[object_name]
 	
+	groups_setup(object_entry)
 	depth_setup(object_entry)
 	sprite_setup(object_entry)
 	bounding_box_setup()
@@ -273,7 +274,14 @@ func object_setup():
 func run_create_function(obj):
 	if obj.has_method("create"):
 		obj.create()
+
+func groups_setup(object_entry):
+	var groups = object_entry['groups']
 	
+	for group in groups:
+		if !is_in_group(group):
+			add_to_group(group)
+
 func depth_setup(object_entry):
 	var object_depth = object_entry["depth"]
 	
