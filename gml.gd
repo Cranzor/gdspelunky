@@ -74,22 +74,6 @@ func instance_create(x,y,obj): #should return the node as this is used in script
 	set_up_object_collision(instance)
 	
 	return instance
-
-func collision_point2(x,y,obj: String,prec,notme): #"This function tests whether at point (x,y) there is a collision with entities of object obj."
-	var intersecting = false
-	var rect = Rect2(Vector2(x, y), Vector2(1, 1))
-	
-	if instanced_objects.has(obj):
-		for entry in instanced_objects[obj]:
-			var location = instanced_objects[obj][entry]["collision_location"]
-			var size = instanced_objects[obj][entry]["size"]
-			var obj_rect = Rect2(location, size)
-
-			intersecting = rect.intersects(obj_rect)
-			if intersecting == true:
-				break
-	
-	return intersecting
 	
 func collision_point(x,y,obj: String,prec,notme): #"This function tests whether at point (x,y) there is a collision with entities of object obj."
 	var intersecting = false
@@ -97,12 +81,7 @@ func collision_point(x,y,obj: String,prec,notme): #"This function tests whether 
 	
 	var nodes_to_check = collision_handling.get_nodes_to_check(obj)
 	var group_bounding_box = collision_handling.get_group_bounding_box(obj)
-	for object in nodes_to_check:
-		var position_with_offset = collision_handling.get_position_with_offset_applied(object.position, object.sprite_offset)
-		var object_rect = Rect2(position_with_offset, group_bounding_box)
-		intersecting = rect.intersects(object_rect)
-		if intersecting == true:
-			break
+	intersecting = collision_handling.check_collision(nodes_to_check, rect, group_bounding_box)
 	
 	return intersecting	
 
@@ -205,7 +184,7 @@ func instance_destroy(obj): #'Destroys current instance' ---  Should probably st
 	
 	obj.queue_free()
 
-func collision_rectangle(x1,y1,x2,y2,obj,prec,notme): #"This function tests whether there is a collision between the (filled) rectangle with the indicated opposite corners and entities of object obj. For example, you can use this to test whether an area is free of obstacles."
+func collision_rectangle2(x1,y1,x2,y2,obj,prec,notme): #"This function tests whether there is a collision between the (filled) rectangle with the indicated opposite corners and entities of object obj. For example, you can use this to test whether an area is free of obstacles."
 	var intersecting = false
 	var rect = Rect2(Vector2(x1, y1), Vector2(abs(x2 - x1), abs(y2 - y1)))
 	
@@ -220,6 +199,19 @@ func collision_rectangle(x1,y1,x2,y2,obj,prec,notme): #"This function tests whet
 				break
 	
 	return intersecting
+
+func collision_rectangle(x1,y1,x2,y2,obj,prec,notme): #"This function tests whether there is a collision between the (filled) rectangle with the indicated opposite corners and entities of object obj. For example, you can use this to test whether an area is free of obstacles."
+	var intersecting = false
+	var rect = Rect2(Vector2(x1, y1), Vector2(abs(x2 - x1), abs(y2 - y1)))
+	
+	var nodes_to_check = collision_handling.get_nodes_to_check(obj)
+	var group_bounding_box = collision_handling.get_group_bounding_box(obj)
+	intersecting = collision_handling.check_collision(nodes_to_check, rect, group_bounding_box)
+	
+	if intersecting == true:
+		print('got it')
+	
+	return intersecting	
 
 func point_distance(x1,y1,x2,y2): #"Returns the distance between point (x1,y1) and point (x2,y2)."
 	var distance = Vector2(x1, y1).distance_to(Vector2(x2, y2))
@@ -386,7 +378,7 @@ func game_end():
 	get_tree().quit()
 	
 func animation_end(object):
-	var animated_sprite: AnimatedSprite2D = object.find_child("AnimatedSprite2D")
+	var animated_sprite: AnimatedSprite2D = object.find_child("AnimatedSprite2D", true, false)
 	var number_of_frames = animated_sprite.sprite_frames.get_frame_count(animated_sprite.animation)
 	var current_index = animated_sprite.get_frame()
 	

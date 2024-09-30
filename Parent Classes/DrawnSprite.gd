@@ -338,10 +338,14 @@ func sprite_setup(object_entry):
 	camera_setup()
 
 func camera_setup():
-	const VIEW = preload("res://view.tscn")
-	if object_name == 'p_dummy3' or object_name == 'player1':
+	if object_name == 'p_dummy3':
+		var view = preload("res://view.tscn")
+		view = view.instantiate()
 		var animated_sprite = get_animated_sprite_2d()
-		animated_sprite.add_child(VIEW.instantiate())
+		view.limit_left = 0
+		view.limit_right = 960
+		view.limit_bottom = 240
+		animated_sprite.add_child(view)
 			
 #--- Helper function to set up a single animation for an AnimatedSprite2D
 func sprite_animation_setup(sprite_name, sprite_frames):
@@ -352,7 +356,7 @@ func sprite_animation_setup(sprite_name, sprite_frames):
 	var files = DirAccess.get_files_at(sprite_folder_path)
 	for file in files:
 		if file.get_extension() == "png":
-			print(file)
+			#print(file)
 			var sprite_texture = load(sprite_folder_path + "/" + file)
 			sprite_frames.add_frame(sprite_name, sprite_texture)
 	

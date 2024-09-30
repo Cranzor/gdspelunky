@@ -37,9 +37,6 @@ offset_bottom = 512.0
 texture = ExtResource("21_1wm2m")
 stretch_mode = 1
 
-[node name="View" parent="." instance=ExtResource("21_4id85")]
-position = Vector2(320, 0)
-
 [node name="FpsCounter" parent="." instance=ExtResource("23_57set")]
 
 [node name="BgElements" parent="." instance=ExtResource("24_c1f05")]
@@ -85,5 +82,8 @@ script = ExtResource("25_1dc3y")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(496, 128)
+
+[node name="View" parent="." instance=ExtResource("21_4id85")]
+anchor_mode = 0
 
 [connection signal="button_down" from="Button" to="Button" method="_on_button_down"]

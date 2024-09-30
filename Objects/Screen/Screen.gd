@@ -29,6 +29,7 @@ func _physics_process(delta):
 	for node in title_screen:
 		node.hide()
 	begin_step()
+	$TitleScreen.visible = false
 
 #--- most things in this script are GameMaker specific and therefore not necessary
 func create():

@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://bft8urcdv7lh0"]
+[gd_scene load_steps=2 format=3 uid="uid://bft8urcdv7lh0"]
 
-[node name="IntroView" type="Camera2D" groups=["view"]]
-limit_left = 0
-limit_right = 960
-limit_bottom = 240
+[ext_resource type="Script" path="res://view.gd" id="1_sfqbw"]
+
+[node name="View" type="Camera2D" groups=["view"]]
 drag_horizontal_enabled = true
+script = ExtResource("1_sfqbw")

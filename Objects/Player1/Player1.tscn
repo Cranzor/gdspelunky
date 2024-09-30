@@ -2520,6 +2520,7 @@ centered = false
 offset = Vector2(-8, -8)
 
 [node name="Camera2D" type="Camera2D" parent="Node/AnimatedSprite2D"]
+enabled = false
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 editor_draw_limits = true
