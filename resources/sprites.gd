@@ -11573,7 +11573,7 @@ const sprite_database = {
 			"transparent" : false,
 			"folder_path" : "res://sprites/other/end/player_sil"
 	},
-	"prite1112" : {
+	"sprite1112" : {
 		"origin" : Vector2(0, 0),
 		"mask" : {
 			"separate" : true,

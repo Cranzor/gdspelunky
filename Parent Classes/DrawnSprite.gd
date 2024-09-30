@@ -164,22 +164,22 @@ func set_image_index(new_index):
 
 func set_sprite_offset(new_sprite):
 	var animated_sprite = get_animated_sprite_2d()
-	var new_sprite_offset = sprites.sprite_database[new_sprite]["origin"]
+	var sprite_offset = sprites.sprite_database[new_sprite]["origin"]
 	
 	#sprite_offset = sprites_and_offsets[new_sprite] --- got rid of this variable so won't work. update this with new collision
 	if !animated_sprite.flip_h:
-		animated_sprite.offset = -new_sprite_offset
+		animated_sprite.offset = -sprite_offset
 		
 	else:
 		var width = object_size.x
-		if new_sprite_offset.x != -width / 2:
-			if new_sprite_offset.x < -width / 2:
-				new_sprite_offset.x = new_sprite_offset.x + width
-				if new_sprite_offset.x > 0:
-					new_sprite_offset.x = -new_sprite_offset.x
+		if sprite_offset.x != -width / 2:
+			if sprite_offset.x < -width / 2:
+				sprite_offset.x = sprite_offset.x + width
+				if sprite_offset.x > 0:
+					sprite_offset.x = -sprite_offset.x
 			else:
-				new_sprite_offset.x = abs(new_sprite_offset.x) - width
-		animated_sprite.offset = new_sprite_offset
+				sprite_offset.x = abs(sprite_offset.x) - width
+		animated_sprite.offset = sprite_offset
 	
 
 var x_velocity = 0

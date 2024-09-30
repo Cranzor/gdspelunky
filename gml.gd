@@ -8,6 +8,8 @@ var instanced_objects = {}
 
 var rejuvenated_collision_objects = {}
 
+var collision_handling = CollisionHandling.new()
+
 #For tile_add
 @export_dir var bg_folder
 @export var bg_holder_path: String
@@ -73,7 +75,7 @@ func instance_create(x,y,obj): #should return the node as this is used in script
 	
 	return instance
 
-func collision_point(x,y,obj: String,prec,notme): #"This function tests whether at point (x,y) there is a collision with entities of object obj."
+func collision_point2(x,y,obj: String,prec,notme): #"This function tests whether at point (x,y) there is a collision with entities of object obj."
 	var intersecting = false
 	var rect = Rect2(Vector2(x, y), Vector2(1, 1))
 	
@@ -88,6 +90,21 @@ func collision_point(x,y,obj: String,prec,notme): #"This function tests whether 
 				break
 	
 	return intersecting
+	
+func collision_point(x,y,obj: String,prec,notme): #"This function tests whether at point (x,y) there is a collision with entities of object obj."
+	var intersecting = false
+	var rect = Rect2(Vector2(x, y), Vector2(1, 1))
+	
+	var nodes_to_check = collision_handling.get_nodes_to_check(obj)
+	var group_bounding_box = collision_handling.get_group_bounding_box(obj)
+	for object in nodes_to_check:
+		var position_with_offset = collision_handling.get_position_with_offset_applied(object.position, object.sprite_offset)
+		var object_rect = Rect2(position_with_offset, group_bounding_box)
+		intersecting = rect.intersects(object_rect)
+		if intersecting == true:
+			break
+	
+	return intersecting	
 
 #Always adds bg elements
 func tile_add(background,left,top,width,height,x,y,depth): #return value of tile as well. left: left to right value in pixels. top: top to bottom in pixels
