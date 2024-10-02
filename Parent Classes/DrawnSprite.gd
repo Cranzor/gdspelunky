@@ -164,22 +164,23 @@ func set_image_index(new_index):
 
 func set_sprite_offset(new_sprite):
 	var animated_sprite = get_animated_sprite_2d()
-	var sprite_offset = sprites.sprite_database[new_sprite]["origin"]
+	sprite_offset = sprites.sprite_database[new_sprite]["origin"]
 	
 	#sprite_offset = sprites_and_offsets[new_sprite] --- got rid of this variable so won't work. update this with new collision
 	if !animated_sprite.flip_h:
 		animated_sprite.offset = -sprite_offset
 		
 	else:
-		var width = object_size.x
-		if sprite_offset.x != -width / 2:
-			if sprite_offset.x < -width / 2:
-				sprite_offset.x = sprite_offset.x + width
-				if sprite_offset.x > 0:
-					sprite_offset.x = -sprite_offset.x
-			else:
-				sprite_offset.x = abs(sprite_offset.x) - width
-		animated_sprite.offset = sprite_offset
+		animated_sprite.offset = -sprite_offset
+		#var width = object_size.x
+		#if sprite_offset.x != width / 2:
+			#if sprite_offset.x < width / 2:
+				#sprite_offset.x = sprite_offset.x + width
+				#if sprite_offset.x > 0:
+					#sprite_offset.x = -sprite_offset.x
+			#else:
+				#sprite_offset.x = abs(sprite_offset.x) - width
+		#animated_sprite.offset = sprite_offset
 	
 
 var x_velocity = 0
@@ -270,6 +271,12 @@ func object_setup():
 	bounding_box_setup()
 	collision_setup()
 	run_create_function(self)
+	
+	#--- for flare_spark
+	if has_method("_on_animated_sprite_2d_frame_changed"):
+		var callable = Callable(self, "_on_animated_sprite_2d_frame_changed")
+		var sprite = get_animated_sprite_2d()
+		sprite.frame_changed.connect(callable)
 	
 func run_create_function(obj):
 	if obj.has_method("create"):

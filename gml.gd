@@ -1,4 +1,5 @@
 extends Node
+class_name GML_Class
 
 var collision_point_node = preload("res://CollisionPoint.tscn")
 var collision_rectangle_node = preload("res://CollisionRectangle.tscn")
@@ -184,22 +185,6 @@ func instance_destroy(obj): #'Destroys current instance' ---  Should probably st
 	
 	obj.queue_free()
 
-func collision_rectangle2(x1,y1,x2,y2,obj,prec,notme): #"This function tests whether there is a collision between the (filled) rectangle with the indicated opposite corners and entities of object obj. For example, you can use this to test whether an area is free of obstacles."
-	var intersecting = false
-	var rect = Rect2(Vector2(x1, y1), Vector2(abs(x2 - x1), abs(y2 - y1)))
-	
-	if instanced_objects.has(obj):
-		for entry in instanced_objects[obj]:
-			var location = instanced_objects[obj][entry]["collision_location"]
-			var size = instanced_objects[obj][entry]["size"]
-			var obj_rect = Rect2(location, size)
-
-			intersecting = rect.intersects(obj_rect)
-			if intersecting == true:
-				break
-	
-	return intersecting
-
 func collision_rectangle(x1,y1,x2,y2,obj,prec,notme): #"This function tests whether there is a collision between the (filled) rectangle with the indicated opposite corners and entities of object obj. For example, you can use this to test whether an area is free of obstacles."
 	var intersecting = false
 	var rect = Rect2(Vector2(x1, y1), Vector2(abs(x2 - x1), abs(y2 - y1)))
@@ -217,7 +202,7 @@ func point_distance(x1,y1,x2,y2): #"Returns the distance between point (x1,y1) a
 	var distance = Vector2(x1, y1).distance_to(Vector2(x2, y2))
 	return distance
 
-func instance_nearest(x,y,obj: String): #"Returns the id of the instance of type obj nearest to (x,y). obj can be an object or the keyword all."
+func instance_nearest2(x,y,obj: String): #"Returns the id of the instance of type obj nearest to (x,y). obj can be an object or the keyword all."
 	if instanced_object_locations.has(obj):
 		var closest_point = null
 		var closest_node
@@ -232,6 +217,25 @@ func instance_nearest(x,y,obj: String): #"Returns the id of the instance of type
 		return closest_node
 	
 	return null
+
+func instance_nearest(x,y,obj: String): #"Returns the id of the instance of type obj nearest to (x,y). obj can be an object or the keyword all."
+	var nodes_to_check = collision_handling.get_nodes_to_check(obj)
+	var closest_distance
+	var closest_node
+	
+	if nodes_to_check == null:
+		return null
+	
+	for node in nodes_to_check:
+		if closest_distance == null:
+			closest_node = node
+		
+		var current_distance = point_distance(x, y, node.position.x, node.position.y)
+		if closest_distance == null or current_distance < closest_distance:
+			closest_distance = current_distance
+			closest_node = node
+	return closest_node
+	
 	
 func frac(number):
 	return number - floor(number)
@@ -281,7 +285,7 @@ func instance_number(obj: String): #--- finish this
 	else:
 		return 0
 
-func collision_line(x1,y1,x2,y2,obj,prec,notme):
+func collision_line2(x1,y1,x2,y2,obj,prec,notme):
 	var intersecting = false
 	var all_points = []
 	
@@ -335,6 +339,31 @@ func collision_line(x1,y1,x2,y2,obj,prec,notme):
 						break
 	
 	return intersecting
+
+func collision_line(x1,y1,x2,y2,obj,prec,notme):
+	var intersecting = false
+	var all_points = []
+	var vertical_rect: Rect2
+	
+	var nodes_to_check = collision_handling.get_nodes_to_check(obj)
+	
+	if nodes_to_check != null:
+		var group_bounding_box = collision_handling.get_group_bounding_box(obj)
+		
+		var y = y1
+		if x1 == x2:
+			vertical_rect = Rect2(Vector2(x1, y1), Vector2(1, abs(y2-y1) + 1))
+
+		else:
+			vertical_rect = Rect2(Vector2(x1, y1), Vector2(abs(x2 - x1) + 1, 1))
+		
+		#if x1 == 595 and y1 == 187:
+			#print("hi")
+		intersecting = collision_handling.check_collision(nodes_to_check, vertical_rect, group_bounding_box)
+		return intersecting
+		
+	else:
+		return false
 
 func instance_activate_object(obj: String):
 	pass

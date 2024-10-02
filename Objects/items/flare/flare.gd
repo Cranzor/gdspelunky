@@ -15,7 +15,7 @@ func _process(delta):
 var dist_to_player
 
 func alarm_0():
-	gml.instance_create(position.x+randi_range(0,3)-randi_range(0,3), position.y+randi_range(0,3)-randi_range(0,3), Objects.flare_spark)
+	#gml.instance_create(position.x+randi_range(0,3)-randi_range(0,3), position.y+randi_range(0,3)-randi_range(0,3), Objects.flare_spark)
 	if alarm_0_timer.is_stopped:
 		alarm_0_timer.start(2.0/30.0)
 
