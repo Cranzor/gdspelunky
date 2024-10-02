@@ -82,7 +82,7 @@ func collision_point(x,y,obj: String,prec,notme): #"This function tests whether 
 	
 	var nodes_to_check = collision_handling.get_nodes_to_check(obj)
 	var group_bounding_box = collision_handling.get_group_bounding_box(obj)
-	intersecting = collision_handling.check_collision(nodes_to_check, rect, group_bounding_box)
+	intersecting = collision_handling.check_collision(nodes_to_check, rect)
 	
 	return intersecting	
 
@@ -191,7 +191,7 @@ func collision_rectangle(x1,y1,x2,y2,obj,prec,notme): #"This function tests whet
 	
 	var nodes_to_check = collision_handling.get_nodes_to_check(obj)
 	var group_bounding_box = collision_handling.get_group_bounding_box(obj)
-	intersecting = collision_handling.check_collision(nodes_to_check, rect, group_bounding_box)
+	intersecting = collision_handling.check_collision(nodes_to_check, rect)
 	
 	if intersecting == true:
 		print('got it')
@@ -359,7 +359,7 @@ func collision_line(x1,y1,x2,y2,obj,prec,notme):
 		
 		#if x1 == 595 and y1 == 187:
 			#print("hi")
-		intersecting = collision_handling.check_collision(nodes_to_check, vertical_rect, group_bounding_box)
+		intersecting = collision_handling.check_collision(nodes_to_check, vertical_rect)
 		return intersecting
 		
 	else:

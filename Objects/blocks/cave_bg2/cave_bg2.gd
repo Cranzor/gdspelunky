@@ -1,9 +1,10 @@
 extends DrawnSprite #---changing this to DrawnSprite
 
 func _ready():
-	#--- set size
-	object_size = Vector2(32, 32)
+	object_setup()
 
-	#--- set depth
-	depth = -998
-	z_index = depth
+func _physics_process(delta):
+	object_tick()
+
+func _process(delta):
+	object_process()

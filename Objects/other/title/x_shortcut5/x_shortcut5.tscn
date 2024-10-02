@@ -1,28 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bkekokatqd6sj"]
+[gd_scene load_steps=2 format=3 uid="uid://bkekokatqd6sj"]
 
 [ext_resource type="Script" path="res://objects/other/title/x_shortcut5/x_shortcut5.gd" id="1_sgmfs"]
-[ext_resource type="Texture2D" uid="uid://dx1p2ru22timq" path="res://sprites/blocks/background/exit/exit_0.png" id="2_2dnao"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_wo8f0"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_2dnao")
-}],
-"loop": true,
-"name": &"exit",
-"speed": 30.0
-}]
 
 [node name="XShortcut5" type="Node2D" groups=["drawn_sprite", "x_shortcut5", "x_start"]]
 z_index = -4095
 script = ExtResource("1_sgmfs")
+object_name = "x_shortcut5"
 depth = -4095
 object_size = Vector2(16, 16)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-z_index = -4095
-z_as_relative = false
-sprite_frames = SubResource("SpriteFrames_wo8f0")
-animation = &"exit"
-centered = false

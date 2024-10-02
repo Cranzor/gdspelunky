@@ -9,6 +9,8 @@ var solid = false
 
 var moving_object = false
 
+var sprite_index_name
+
 @export var object_name: String
 var object_hash: String
 
@@ -55,6 +57,7 @@ var sprite_index:
 		sprite_index = new_sprite
 		set_animation(new_sprite)
 		set_sprite_offset(new_sprite)
+		sprite_index_name = new_sprite
 		
 	get:
 		var current_animation = get_animation()
@@ -339,6 +342,7 @@ func sprite_setup(object_entry):
 			add_child(new_animated_sprite)
 			new_animated_sprite.play(sprite_to_add)
 			set_sprite_offset(sprite_to_add)
+			sprite_index_name = sprite_to_add
 	else:
 		sprite_offset = Vector2(0, 0)
 	

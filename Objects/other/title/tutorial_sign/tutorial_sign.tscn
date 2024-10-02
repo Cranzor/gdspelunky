@@ -1,28 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cs3d3feookfqs"]
+[gd_scene load_steps=2 format=3 uid="uid://cs3d3feookfqs"]
 
 [ext_resource type="Script" path="res://objects/other/title/tutorial_sign/tutorial_sign.gd" id="1_8r4mc"]
-[ext_resource type="Texture2D" uid="uid://dj6uxphwy4qin" path="res://sprites/other/title/tutorial_sign/tutorial_sign_0.png" id="2_wj8ce"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_pw058"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_wj8ce")
-}],
-"loop": true,
-"name": &"tutorial_sign",
-"speed": 30.0
-}]
 
 [node name="TutorialSign" type="Node2D" groups=["drawn_sprite", "solid", "tutorial_sign"]]
 z_index = -999
 script = ExtResource("1_8r4mc")
+object_name = "tutorial_sign"
 depth = -999
 object_size = Vector2(32, 16)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-z_index = -999
-z_as_relative = false
-sprite_frames = SubResource("SpriteFrames_pw058")
-animation = &"tutorial_sign"
-centered = false

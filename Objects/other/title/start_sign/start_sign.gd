@@ -1,14 +1,10 @@
 extends DrawnSprite #--- changing this to get sprite_index
 
-func initial_setup():
-	#--- set size
-	object_size = Vector2(48, 32)
-
-	#--- set depth
-	depth = -999
-	z_index = depth
-	
-	sprite_index = "start_sign"
-
 func _ready():
-	initial_setup()
+	object_setup()
+
+func _physics_process(delta):
+	object_tick()
+
+func _process(delta):
+	object_process()

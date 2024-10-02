@@ -1,28 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://duy0bvbxq1dn2"]
+[gd_scene load_steps=2 format=3 uid="uid://duy0bvbxq1dn2"]
 
 [ext_resource type="Script" path="res://objects/blocks/cave_bg2/cave_bg2.gd" id="1_p1bhx"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_a2rn2"]
-load_path = "res://.godot/imported/image 0.png-8e3ae5fd102fe69c0af527b0cd02fb75.ctex"
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_asm3c"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("CompressedTexture2D_a2rn2")
-}],
-"loop": true,
-"name": &"cave_bg",
-"speed": 5.0
-}]
 
 [node name="CaveBg2" type="Node2D" groups=["cave_bg2"]]
 z_index = 998
 script = ExtResource("1_p1bhx")
-object_size = Vector2(32, 32)
+object_name = "cave_bg2"
 depth = 998
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_asm3c")
-animation = &"cave_bg"
-centered = false
+object_size = Vector2(32, 32)

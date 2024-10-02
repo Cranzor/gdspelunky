@@ -1,28 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://sn6tqbtc2v6h"]
+[gd_scene load_steps=2 format=3 uid="uid://sn6tqbtc2v6h"]
 
 [ext_resource type="Script" path="res://objects/other/title/x_tutorial/x_tutorial.gd" id="1_gjoy5"]
-[ext_resource type="Texture2D" uid="uid://dx1p2ru22timq" path="res://sprites/blocks/background/exit/exit_0.png" id="2_ii8qy"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_gxqsv"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_ii8qy")
-}],
-"loop": true,
-"name": &"exit",
-"speed": 30.0
-}]
 
 [node name="XTutorial" type="Node2D" groups=["drawn_sprite", "x_start", "x_tutorial"]]
 z_index = -4095
 script = ExtResource("1_gjoy5")
+object_name = "x_tutorial"
 depth = -4095
 object_size = Vector2(16, 16)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-z_index = -4095
-z_as_relative = false
-sprite_frames = SubResource("SpriteFrames_gxqsv")
-animation = &"exit"
-centered = false

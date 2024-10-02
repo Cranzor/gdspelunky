@@ -8,12 +8,12 @@ func get_nodes_to_check(group_name):
 	var nodes_to_check = Engine.get_main_loop().get_nodes_in_group(group_name)
 	return nodes_to_check
 
-func check_collision(nodes_to_check, tester_rect, group_bounding_box):
-	if group_bounding_box == Vector2(0,0):
-		group_bounding_box = Vector2(16, 16)
+func check_collision(nodes_to_check, tester_rect):
 	for object in nodes_to_check:
+		var object_sprite = object.sprite_index_name
+		var bounding_box = sprite_database.sprite_database[object_sprite]["mask"]["bounding_box"][1]
 		var position_with_offset = get_position_with_offset_applied(object.position, object.sprite_offset)
-		var object_rect = Rect2(position_with_offset, group_bounding_box)
+		var object_rect = Rect2(position_with_offset, bounding_box)
 		var intersecting = tester_rect.intersects(object_rect)
 		if intersecting == true:
 			return true

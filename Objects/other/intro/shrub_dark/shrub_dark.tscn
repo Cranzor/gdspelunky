@@ -1,28 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://d4kioh5dhxrr1"]
+[gd_scene load_steps=2 format=3 uid="uid://d4kioh5dhxrr1"]
 
 [ext_resource type="Script" path="res://objects/other/intro/shrub_dark/shrub_dark.gd" id="1_ydqq8"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_nkfxm"]
-load_path = "res://.godot/imported/image 0.png-bf3caac538b48c740a981ea4d71e0982.ctex"
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_vmeba"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("CompressedTexture2D_nkfxm")
-}],
-"loop": true,
-"name": &"shrub_dark",
-"speed": 5.0
-}]
 
 [node name="ShrubDark" type="Node2D" groups=["shrub_dark"]]
 z_index = 998
 script = ExtResource("1_ydqq8")
+object_name = "shrub_dark"
 depth = 998
 object_size = Vector2(16, 16)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_vmeba")
-animation = &"shrub_dark"
-centered = false

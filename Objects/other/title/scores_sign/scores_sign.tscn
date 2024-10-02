@@ -1,26 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bceyr3nrnoofk"]
+[gd_scene load_steps=2 format=3 uid="uid://bceyr3nrnoofk"]
 
 [ext_resource type="Script" path="res://objects/other/title/scores_sign/scores_sign.gd" id="1_s12rd"]
-[ext_resource type="Texture2D" uid="uid://qm7flgr4gls2" path="res://sprites/other/title/scores_sign/scores_sign_0.png" id="2_twigj"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_qhjbi"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_twigj")
-}],
-"loop": true,
-"name": &"scores_sign",
-"speed": 30.0
-}]
 
 [node name="ScoresSign" type="Node2D" groups=["scores_sign"]]
 z_index = -999
 script = ExtResource("1_s12rd")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-z_index = -999
-z_as_relative = false
-sprite_frames = SubResource("SpriteFrames_qhjbi")
-animation = &"scores_sign"
-centered = false
+object_name = "scores_sign"
