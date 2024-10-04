@@ -11,7 +11,8 @@ func _process(delta):
 
 #--- Object functions
 func animation_end():
-	gml.instance_destroy(self)
+	#gml.instance_destroy(self) #---
+	place_in_queue()
 
 func create():
 	drawn_sprite_create()
@@ -24,8 +25,21 @@ func step():
 
 	if (gml.collision_point(position.x, position.y, "solid", 0, 0)):
 
-		gml.instance_destroy(self)
+		#gml.instance_destroy(self) #---
+		place_in_queue()
 
+#--- Extra functions
 func _on_animated_sprite_2d_frame_changed():
 	if gml.animation_end(self) == true:
 		animation_end()
+
+#--- added a queueing system to prevent performance issues that come with deleting the object repeatedly
+var queued = false
+func place_in_queue():
+	queued = true
+	visible = false
+
+func remove_from_queue():
+	queued = false
+	visible = true
+	$AnimatedSprite2D.frame = 0

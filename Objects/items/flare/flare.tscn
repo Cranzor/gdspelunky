@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bv00yotvshpk4"]
 
 [ext_resource type="Script" path="res://objects/items/flare/flare.gd" id="1_xxbaf"]
-[ext_resource type="PackedScene" uid="uid://dlliudu6mbm0t" path="res://alarm_old.tscn" id="4_lnf4u"]
+[ext_resource type="PackedScene" uid="uid://dpe37cc2sccby" path="res://alarm.tscn" id="2_oirao"]
 
 [node name="Flare" type="Node2D" groups=["drawn_sprite", "flare", "item"]]
 z_index = -30
@@ -11,6 +11,6 @@ object_size = Vector2(8, 8)
 
 [node name="Alarms" type="Node2D" parent="."]
 
-[node name="Alarm0" parent="Alarms" instance=ExtResource("4_lnf4u")]
+[node name="Alarm0" parent="Alarms" instance=ExtResource("2_oirao")]
 
 [connection signal="timeout" from="Alarms/Alarm0" to="." method="_on_alarm_0_timeout"]

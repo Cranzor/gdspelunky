@@ -52,6 +52,7 @@ layer_28/name = "Layer28"
 layer_29/name = "Layer29"
 
 [node name="Button" type="Button" parent="."]
+visible = false
 offset_left = 576.0
 offset_top = 176.0
 offset_right = 584.0
@@ -61,6 +62,7 @@ text = "Hi"
 script = ExtResource("25_1dc3y")
 
 [node name="View" parent="." instance=ExtResource("21_4id85")]
+position = Vector2(320, 0)
 anchor_mode = 0
 
 [connection signal="button_down" from="Button" to="Button" method="_on_button_down"]

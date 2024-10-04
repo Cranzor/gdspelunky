@@ -193,9 +193,6 @@ func collision_rectangle(x1,y1,x2,y2,obj,prec,notme): #"This function tests whet
 	var group_bounding_box = collision_handling.get_group_bounding_box(obj)
 	intersecting = collision_handling.check_collision(nodes_to_check, rect)
 	
-	if intersecting == true:
-		print('got it')
-	
 	return intersecting	
 
 func point_distance(x1,y1,x2,y2): #"Returns the distance between point (x1,y1) and point (x2,y2)."
@@ -411,7 +408,8 @@ func animation_end(object):
 	var number_of_frames = animated_sprite.sprite_frames.get_frame_count(animated_sprite.animation)
 	var current_index = animated_sprite.get_frame()
 	
-	if current_index == number_of_frames - 1:
+	#if current_index == number_of_frames - 1:
+	if current_index == 0:
 		return true
 	else:
 		return false

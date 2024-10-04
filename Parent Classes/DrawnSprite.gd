@@ -60,8 +60,9 @@ var sprite_index:
 		sprite_index_name = new_sprite
 		
 	get:
-		var current_animation = get_animation()
-		return current_animation
+		#var current_animation = get_animation()
+		#return current_animation
+		return sprite_index
 		
 var image_speed:
 	set(new_speed):
