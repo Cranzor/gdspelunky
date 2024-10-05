@@ -47,6 +47,5 @@ func remove_from_queue():
 	visible = true
 	position = Vector2(flare.position.x+randi_range(0,3)-randi_range(0,3), flare.position.y+randi_range(0,3)-randi_range(0,3))
 
-
 func _on_animated_sprite_2d_animation_looped():
 	animation_end()

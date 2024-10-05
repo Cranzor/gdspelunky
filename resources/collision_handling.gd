@@ -19,8 +19,18 @@ func get_all_nodes_in_group(group_name):
 func check_collision(nodes_to_check, tester_rect):
 	for object in nodes_to_check:
 		var object_sprite = object.sprite_index_name
-		var bounding_box = sprite_database.sprite_database[object_sprite]["mask"]["bounding_box"][1]
-		var position_with_offset = get_position_with_offset_applied(object.position, object.sprite_offset)
+		var bounding_box
+		if sprite_database.sprite_database[object_sprite]["mask"]["shape"] == "RECTANGLE":
+			bounding_box = sprite_database.sprite_database[object_sprite]["mask"]["collision_rectangles"][1]
+		else:
+			bounding_box = sprite_database.sprite_database[object_sprite]["mask"]["bounding_box"][1]
+			
+		var position_with_offset
+		if sprite_database.sprite_database[object_sprite]["mask"]["shape"] == "RECTANGLE":
+			position_with_offset = get_position_with_offset_applied(object.position, object.sprite_offset - sprite_database.sprite_database[object_sprite]["mask"]["collision_rectangles"][0])
+		else:
+			position_with_offset = get_position_with_offset_applied(object.position, object.sprite_offset)
+			
 		var object_rect = Rect2(position_with_offset, bounding_box)
 		var intersecting = tester_rect.intersects(object_rect)
 		if intersecting == true:
@@ -31,7 +41,7 @@ func bounding_box_check(testing_box):
 	pass
 
 func get_position_with_offset_applied(position, offset):
-	var position_with_offset = position + offset
+	var position_with_offset = position - offset
 	return position_with_offset
 	
 func get_group_bounding_box(group_name):

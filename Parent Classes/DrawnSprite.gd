@@ -288,7 +288,7 @@ func object_setup():
 		sprite.frame_changed.connect(callable)
 	
 	if has_method("_on_animated_sprite_2d_animation_looped"):
-		var callable = Callable(self, "_on_animated_sprite_2d_frame_changed")
+		var callable = Callable(self, "_on_animated_sprite_2d_animation_looped")
 		var sprite = get_animated_sprite_2d()
 		sprite.animation_looped.connect(callable)
 	

@@ -96,4 +96,3 @@ func generate_flame_spark():
 		var flare_spark = gml.instance_create(position.x+randi_range(0,3)-randi_range(0,3), position.y+randi_range(0,3)-randi_range(0,3), Objects.flare_spark)
 		flare_sparks_number += 1
 		flare_spark.flare = self
-	pass
