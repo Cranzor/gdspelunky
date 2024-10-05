@@ -74,7 +74,7 @@ func instance_create(x,y,obj): #should return the node as this is used in script
 	#for objects bigger than 16x16, get height and width of sprite texture and then add that as the size
 	
 	#getting each location of each object spawned in. note that this only applies to stationary objects
-	set_up_object_collision(instance)
+	#set_up_object_collision(instance)
 	
 	return instance
 	
@@ -147,30 +147,16 @@ func distance_to_object(obj: String, node): #Make this more accurate with this i
 		#var distance =
 		
 func instance_place(x,y,obj: String, comparison_object): #' Returns the id of the instance of type obj met when the current instance is placed at position (x,y). obj can be an object or the keyword all. If it does not exist, the special object noone is returned.'
-	#Should return node that is overlapped
-	#var instance = null
-	#var intersecting = collision_point(x, y, obj, 0, 0)
-	#if intersecting == true:
-		#instance = instance_nearest(x, y, obj)
-		#return instance
-	#else:
-		#return instance
-
-	var comparison_location = Vector2(comparison_object.global_position.x + comparison_object.sprite_offset.x, comparison_object.global_position.y + comparison_object.sprite_offset.y)
+	var comparison_location = Vector2(comparison_object.global_position.x - comparison_object.sprite_offset.x, comparison_object.global_position.y - comparison_object.sprite_offset.y)
 	var comparison_size = comparison_object.object_size
 	var comparison_rect = Rect2(comparison_location, comparison_size)
 	
-	for entry in instanced_objects[obj]:
-		var location = instanced_objects[obj][entry]["collision_location"]
-		var size = instanced_objects[obj][entry]["size"]
-		var rect = Rect2(location, size)
-		
-		var intersecting = rect.intersects(comparison_rect)
-		if intersecting == true:
-			var return_object = get_node(entry)
-			return return_object
-	
-	return null
+	var nodes_to_check = collision_handling.get_nodes_to_check(obj, comparison_rect)
+	var intersecting = collision_handling.check_collision(nodes_to_check, comparison_rect)
+	if intersecting:
+		return instance_nearest(comparison_location.x, comparison_location.y, obj)
+	else:
+		return null
 	
 func instance_destroy(obj): #'Destroys current instance' ---  Should probably start passing 'self' or other node reference as an argument. Go through and check
 	if obj.has_method("destroy"):
@@ -191,13 +177,6 @@ func collision_rectangle(x1,y1,x2,y2,obj,prec,notme): #"This function tests whet
 	var rect = Rect2(Vector2(x1, y1), Vector2(abs(x2 - x1), abs(y2 - y1)))
 	
 	var nodes_to_check = collision_handling.get_nodes_to_check(obj, rect)
-	
-	if obj == "explosion":
-		for node in nodes_to_check:
-			print(node.object_name)
-			print(node.get_groups())
-			print("---")
-	
 	intersecting = collision_handling.check_collision(nodes_to_check, rect)
 	
 	return intersecting	
@@ -205,22 +184,6 @@ func collision_rectangle(x1,y1,x2,y2,obj,prec,notme): #"This function tests whet
 func point_distance(x1,y1,x2,y2): #"Returns the distance between point (x1,y1) and point (x2,y2)."
 	var distance = Vector2(x1, y1).distance_to(Vector2(x2, y2))
 	return distance
-
-func instance_nearest2(x,y,obj: String): #"Returns the id of the instance of type obj nearest to (x,y). obj can be an object or the keyword all."
-	if instanced_object_locations.has(obj):
-		var closest_point = null
-		var closest_node
-		
-		for entry in instanced_object_locations[obj]:
-			var location = entry[0]
-			var distance = point_distance(x, y, location.x, location.y)
-			if closest_point == null or distance < closest_point:
-				closest_point = distance
-				closest_node = entry[2]
-		
-		return closest_node
-	
-	return null
 
 func instance_nearest(x,y,obj: String): #"Returns the id of the instance of type obj nearest to (x,y). obj can be an object or the keyword all."
 	var tester_rect = Rect2(Vector2(x, y), Vector2(1, 1))

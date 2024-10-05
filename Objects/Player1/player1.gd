@@ -6,9 +6,6 @@ func _ready():
 	character_create_event()
 
 func _physics_process(delta):
-	print("player1")
-	print(position)
-	print(animated_sprite_node.position)
 	object_tick()
 	
 func _process(delta):
