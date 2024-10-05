@@ -34,7 +34,6 @@ Globals="*res://objects/globals/globals.tscn"
 Screen="*res://objects/screen/screen.tscn"
 Gamepad="*res://objects/gamepad/gamepad.tscn"
 Objects="*res://objects.gd"
-Panku="*res://addons/panku_console/console.tscn"
 
 [display]
 

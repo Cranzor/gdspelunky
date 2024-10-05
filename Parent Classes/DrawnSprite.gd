@@ -407,7 +407,7 @@ func collision_setup():
 		gml.rejuvenated_collision_objects[position] = main_entry
 
 func object_tick():
-	if moving_object:
+	if moving_object and object_name != "flare_spark":
 		handle_smooth_motion_values()
 
 	run_step_event(self)
