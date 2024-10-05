@@ -11,7 +11,9 @@ func generate_room(room_name: String):
 	var room_data = room_database[room_name]
 	var room_instances = room_data['instances']['instance']
 	
+	var x = 0
 	for instance in room_instances:
+		x+=1
 		var object = instance['object']
 		var position = instance['position']
 		var object_position = Vector2(int(position['x']), int(position['y']))
@@ -21,6 +23,7 @@ func generate_room(room_name: String):
 		gml.instance_create(object_position.x, object_position.y, loaded_object)
 	
 	#apply_camera(room_name)
+	print(x)
 
 func apply_camera(room_name):
 	var rooms_with_camera = ['intro', 'level', 'level2', 'level3', 'olmec', 'tutorial']

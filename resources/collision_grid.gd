@@ -2,7 +2,7 @@ class_name CollisionGrid
 
 func find_grid_position(global_position, object_size):
 	var grid_position_in_pixels: Vector2
-	var spacing = Vector2(12, 10)
+	var spacing = Vector2(8, 8)
 	
 	var top_left = global_position
 	var top_right = Vector2(global_position.x + object_size.x, global_position.y)

@@ -28,5 +28,5 @@ func step():
 	smooth_motion_step_end()
 	
 func _on_animated_sprite_2d_frame_changed():
-	if gml.animation_end(self) == true:
+	if gml.animation_end(self, animated_sprite_node) == true:
 		animation_end()

@@ -69,23 +69,31 @@ func _on_alarm_0_timeout():
 
 #--- Extra functions
 var flare_sparks = []
+var flare_sparks_number = 0
+var flare_sparks_maximum = 5
 
 func generate_flame_spark():
-	var random_position = Vector2(position.x+randi_range(0,3)-randi_range(0,3), position.y+randi_range(0,3)-randi_range(0,3))
-	
-	if flare_sparks == []:
+	#var random_position = Vector2(position.x+randi_range(0,3)-randi_range(0,3), position.y+randi_range(0,3)-randi_range(0,3))
+	#
+	#if flare_sparks == []:
+		#var flare_spark = gml.instance_create(position.x+randi_range(0,3)-randi_range(0,3), position.y+randi_range(0,3)-randi_range(0,3), Objects.flare_spark)
+		#flare_sparks.append(flare_spark)
+	#
+	#var available_flare_spark = null
+	#for flare_spark in flare_sparks:
+		#if flare_spark.queued == true:
+			#available_flare_spark = flare_spark
+			#break
+	#
+	#if available_flare_spark:
+		#available_flare_spark.remove_from_queue()
+		#available_flare_spark.position = random_position
+	#else:
+		#var flare_spark = gml.instance_create(position.x+randi_range(0,3)-randi_range(0,3), position.y+randi_range(0,3)-randi_range(0,3), Objects.flare_spark)
+		#flare_sparks.append(flare_spark)
+		
+	if flare_sparks_number <= flare_sparks_maximum:
 		var flare_spark = gml.instance_create(position.x+randi_range(0,3)-randi_range(0,3), position.y+randi_range(0,3)-randi_range(0,3), Objects.flare_spark)
-		flare_sparks.append(flare_spark)
-	
-	var available_flare_spark = null
-	for flare_spark in flare_sparks:
-		if flare_spark.queued == true:
-			available_flare_spark = flare_spark
-			break
-	
-	if available_flare_spark:
-		available_flare_spark.remove_from_queue()
-		available_flare_spark.position = random_position
-	else:
-		var flare_spark = gml.instance_create(position.x+randi_range(0,3)-randi_range(0,3), position.y+randi_range(0,3)-randi_range(0,3), Objects.flare_spark)
-		flare_sparks.append(flare_spark)
+		flare_sparks_number += 1
+		flare_spark.flare = self
+	pass

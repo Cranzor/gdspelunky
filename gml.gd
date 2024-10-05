@@ -64,10 +64,12 @@ func instance_exists(obj): #--- FLAG. if enforcing this as a string, it sometime
 #-----------------------Have to work on
 func instance_create(x,y,obj): #should return the node as this is used in scripts
 	var instance = obj.instantiate()
-	var objects_holder = get_tree().get_first_node_in_group("objects_holder")
-	objects_holder.add_child(instance)
 	instance.position.x = x
 	instance.position.y = y
+	var objects_holder = get_tree().get_first_node_in_group("objects_holder")
+	objects_holder.add_child(instance)
+	#instance.position.x = x
+	#instance.position.y = y
 	
 	#for objects bigger than 16x16, get height and width of sprite texture and then add that as the size
 	
@@ -80,8 +82,7 @@ func collision_point(x,y,obj: String,prec,notme): #"This function tests whether 
 	var intersecting = false
 	var rect = Rect2(Vector2(x, y), Vector2(1, 1))
 	
-	var nodes_to_check = collision_handling.get_nodes_to_check(obj)
-	var group_bounding_box = collision_handling.get_group_bounding_box(obj)
+	var nodes_to_check = collision_handling.get_nodes_to_check(obj, rect)
 	intersecting = collision_handling.check_collision(nodes_to_check, rect)
 	
 	return intersecting	
@@ -189,8 +190,14 @@ func collision_rectangle(x1,y1,x2,y2,obj,prec,notme): #"This function tests whet
 	var intersecting = false
 	var rect = Rect2(Vector2(x1, y1), Vector2(abs(x2 - x1), abs(y2 - y1)))
 	
-	var nodes_to_check = collision_handling.get_nodes_to_check(obj)
-	var group_bounding_box = collision_handling.get_group_bounding_box(obj)
+	var nodes_to_check = collision_handling.get_nodes_to_check(obj, rect)
+	
+	if obj == "explosion":
+		for node in nodes_to_check:
+			print(node.object_name)
+			print(node.get_groups())
+			print("---")
+	
 	intersecting = collision_handling.check_collision(nodes_to_check, rect)
 	
 	return intersecting	
@@ -216,7 +223,8 @@ func instance_nearest2(x,y,obj: String): #"Returns the id of the instance of typ
 	return null
 
 func instance_nearest(x,y,obj: String): #"Returns the id of the instance of type obj nearest to (x,y). obj can be an object or the keyword all."
-	var nodes_to_check = collision_handling.get_nodes_to_check(obj)
+	var tester_rect = Rect2(Vector2(x, y), Vector2(1, 1))
+	var nodes_to_check = collision_handling.get_all_nodes_in_group(obj)
 	var closest_distance
 	var closest_node
 	
@@ -341,12 +349,11 @@ func collision_line(x1,y1,x2,y2,obj,prec,notme):
 	var intersecting = false
 	var all_points = []
 	var vertical_rect: Rect2
+	var tester_rect = Rect2(Vector2(x1, y1), Vector2(x2, y2))
 	
-	var nodes_to_check = collision_handling.get_nodes_to_check(obj)
+	var nodes_to_check = collision_handling.get_nodes_to_check(obj, tester_rect)
 	
 	if nodes_to_check != null:
-		var group_bounding_box = collision_handling.get_group_bounding_box(obj)
-		
 		var y = y1
 		if x1 == x2:
 			vertical_rect = Rect2(Vector2(x1, y1), Vector2(1, abs(y2-y1) + 1))
@@ -403,13 +410,13 @@ func game_end():
 	Screen.game_end()
 	get_tree().quit()
 	
-func animation_end(object):
-	var animated_sprite: AnimatedSprite2D = object.find_child("AnimatedSprite2D", true, false)
-	var number_of_frames = animated_sprite.sprite_frames.get_frame_count(animated_sprite.animation)
-	var current_index = animated_sprite.get_frame()
+func animation_end(object, animated_sprite):
+	#var number_of_frames = animated_sprite.sprite_frames.get_frame_count(animated_sprite.animation)
+	#var current_index = animated_sprite.get_frame()
 	
 	#if current_index == number_of_frames - 1:
-	if current_index == 0:
+	
+	if animated_sprite.frame == 0:
 		return true
 	else:
 		return false

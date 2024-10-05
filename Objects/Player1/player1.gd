@@ -300,6 +300,7 @@ func _process(delta):
 	smooth_animated_sprite_movement(x_velocity, y_velocity)
 	
 func _ready():
+	animated_sprite_node = $Node/AnimatedSprite2D #--- adding this temporarily until player is put into new format
 	object_size = Vector2(16, 16)
 	disable_camera_on_title_screen()
 	move_to_test()
@@ -4819,5 +4820,5 @@ func disable_camera_on_title_screen():
 	#_on_animated_sprite_2d_animation_finished()
 
 func _on_animated_sprite_2d_frame_changed():
-	if gml.animation_end(self) == true:
+	if gml.animation_end(self, animated_sprite_node) == true:
 		animation_end()

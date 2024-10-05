@@ -4,7 +4,15 @@ var object_database = ObjectDatabase.new()
 var sprite_database = Sprites.new()
 var collision_grid = CollisionGrid.new()
 
-func get_nodes_to_check(group_name):
+func get_nodes_to_check(group_name, tester_rect):
+	var tester_rect_grid_position = collision_grid.find_grid_position(tester_rect.position, tester_rect.size)
+	Engine.get_main_loop().call_group(group_name, "compare_grid_position_with_tester", tester_rect_grid_position)
+	var nodes_to_check = Engine.get_main_loop().get_nodes_in_group("in_collision_grid")
+	Engine.get_main_loop().call_group("in_collision_grid", "remove_from_collision_grid")
+	#var nodes_to_check = Engine.get_main_loop().get_nodes_in_group(group_name)
+	return nodes_to_check
+
+func get_all_nodes_in_group(group_name):
 	var nodes_to_check = Engine.get_main_loop().get_nodes_in_group(group_name)
 	return nodes_to_check
 

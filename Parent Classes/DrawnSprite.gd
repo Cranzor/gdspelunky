@@ -4,12 +4,17 @@ class_name DrawnSprite
 var object_database = ObjectDatabase.new()
 var sprites = Sprites.new()
 
+var collision_grid = CollisionGrid.new()
+var grid_position
+
 var sprite
 var solid = false
 
 var moving_object = false
 
 var sprite_index_name
+
+var animated_sprite_node
 
 @export var object_name: String
 var object_hash: String
@@ -282,6 +287,14 @@ func object_setup():
 		var sprite = get_animated_sprite_2d()
 		sprite.frame_changed.connect(callable)
 	
+	if has_method("_on_animated_sprite_2d_animation_looped"):
+		var callable = Callable(self, "_on_animated_sprite_2d_frame_changed")
+		var sprite = get_animated_sprite_2d()
+		sprite.animation_looped.connect(callable)
+	
+	get_collision_grid_position()
+	last_collision_check_position = position
+	
 func run_create_function(obj):
 	if obj.has_method("create"):
 		obj.create()
@@ -290,6 +303,8 @@ func groups_setup(object_entry):
 	var groups = object_entry['groups']
 	
 	for group in groups:
+		if group == "explosion":
+			print('huh')
 		if !is_in_group(group):
 			add_to_group(group)
 
@@ -340,6 +355,7 @@ func sprite_setup(object_entry):
 			new_animated_sprite.z_as_relative = false
 			new_animated_sprite.z_index = depth
 			new_animated_sprite.add_to_group("animated_sprite", true)
+			animated_sprite_node = new_animated_sprite
 			add_child(new_animated_sprite)
 			new_animated_sprite.play(sprite_to_add)
 			set_sprite_offset(sprite_to_add)
@@ -442,4 +458,23 @@ func generate_random_hash():
 	for i in range(length):
 		word += characters[randi_range(0, n_char - 1)]
 	return word
-	
+
+var last_collision_check_position
+func get_collision_grid_position():
+	grid_position = collision_grid.find_grid_position(position, object_size)
+	#print(object_name)
+	#print(position)
+	#print(grid_position)
+	#print("--------")
+
+func compare_grid_position_with_tester(tester_position):
+	if position != last_collision_check_position:
+		get_collision_grid_position()
+		
+	for value in tester_position:
+		if value in grid_position:
+			add_to_group("in_collision_grid")
+			break
+
+func remove_from_collision_grid():
+	remove_from_group("in_collision_grid")
