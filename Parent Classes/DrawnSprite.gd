@@ -222,7 +222,7 @@ func find_specific_child(node_name):
 	var child = find_child(node_name, true, false)
 	return child
 
-func set_up_sprite_parent_node(animated_sprite):		
+func set_up_sprite_parent_node(animated_sprite):
 	if animated_sprite != null:
 		var parent_node = Node.new()
 		add_child(parent_node)
@@ -264,6 +264,11 @@ func handle_smooth_motion_values():
 	if did_object_move():
 		initialize_prior_tick_position()
 		set_x_y_velocity()
+		
+		if position.x == test_prior_tick_position.x:
+			x_velocity = 0
+		if position.y == test_prior_tick_position.y:
+			y_velocity = 0
 	else:
 		reset_x_y_velocity()
 		if animated_sprite_node:
@@ -340,7 +345,7 @@ func sprite_setup(object_entry):
 			var sprite_offset = sprite_entry["origin"]
 			var sprite_folder_path = sprite_entry["folder_path"]
 			var new_animated_sprite = AnimatedSprite2D.new()
-			var sprite_frames = SpriteFrames.new()		
+			var sprite_frames = SpriteFrames.new()
 		
 			#var files = DirAccess.get_files_at(sprite_folder_path)
 			#for file in files:
@@ -349,7 +354,7 @@ func sprite_setup(object_entry):
 					#var sprite_texture = load(sprite_folder_path + "/" + file)
 					#sprite_frames.add_frame(sprite_to_add, sprite_texture)
 			sprite_frames = sprite_animation_setup(sprite_to_add, sprite_frames)
-			sprite_frames.remove_animation("default")		
+			sprite_frames.remove_animation("default")
 			
 			new_animated_sprite.sprite_frames = sprite_frames
 			new_animated_sprite.name = "AnimatedSprite2D"
@@ -406,16 +411,33 @@ func collision_setup():
 	for position in grid_positions:
 		gml.rejuvenated_collision_objects[position] = main_entry
 
+var tick_start_position1
+var tick_end_position1: Vector2
 func object_tick():
 	if moving_object and object_name != "flare_spark":
-		handle_smooth_motion_values()
+		if tick_end_position1.x == position.x:
+			x_velocity = 0
+			animated_sprite_node.position.x = position.x
+		if tick_end_position1.y == position.y:
+			y_velocity = 0
+			animated_sprite_node.position.y = position.y
+		tick_start_position1 = position
+	
+	#if moving_object and object_name != "flare_spark":
+		#handle_smooth_motion_values()
 
 	run_step_event(self)
 	run_draw_event(self)
 
+	if moving_object and object_name != "flare_spark":
+		tick_end_position1 = position
+		var diff = tick_end_position1 - tick_start_position1
+		x_velocity = diff.x
+		y_velocity = diff.y
+	
 func run_step_event(obj):
 	if obj.has_method("step"):
-		obj.step()	
+		obj.step()
 
 func run_draw_event(obj):
 	if obj.has_method("draw"):
@@ -449,7 +471,7 @@ func set_x_y_velocity():
 
 func reset_x_y_velocity():
 	x_velocity = 0
-	y_velocity = 0	
+	y_velocity = 0
 
 func generate_random_hash():
 	var characters = '1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYS'
