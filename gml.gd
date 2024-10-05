@@ -3,12 +3,6 @@ class_name GML_Class
 
 var collision_point_node = preload("res://CollisionPoint.tscn")
 var collision_rectangle_node = preload("res://CollisionRectangle.tscn")
-
-var instanced_object_locations = {}
-var instanced_objects = {}
-
-var rejuvenated_collision_objects = {}
-
 var collision_handling = CollisionHandling.new()
 
 #For tile_add
@@ -18,7 +12,6 @@ var bg_dict = {'background_clouds': 0 , 'background_night' : 1, 'bg_alien_ship' 
 	'bg_cave_top2' : 7, 'bg_cave_top3' : 8, 'bg_cave_top4' : 9, 'bg_clouds' : 10, 'bg_dice_sign' : 11, 'bg_extras' : 12, 'bg_extras_ice' : 13, 'bg_extras_lush' : 14,
 	'bg_extras_temple' : 15, 'bg_hmm' : 16, 'bg_kali_body' : 17, 'bg_kali_heads' : 18, 'bg_lady_xoc' : 19, 'bg_sky' : 20, 'bg_statues' : 21, 'bg_temp' : 22, 'bg_temple' : 23,
 	'bg_tiki' : 24, 'bg_tiki_arms' : 25, 'bg_title' : 26, 'bg_trees' : 27, 'bg_wanted' : 28}
-
 
 var c_aqua = Color(0, 255, 255)
 var c_black = Color(0, 0, 0)
@@ -162,14 +155,6 @@ func instance_destroy(obj): #'Destroys current instance' ---  Should probably st
 	if obj.has_method("destroy"):
 		obj.destroy()
 	
-	#--- clear array that holds object to destroy
-	for entry in instanced_object_locations:
-		var iterator = 0
-		for array in instanced_object_locations[entry]:
-			var search_result = array.find(obj)
-			if search_result != -1:
-				array.clear()
-	
 	obj.queue_free()
 
 func collision_rectangle(x1,y1,x2,y2,obj,prec,notme): #"This function tests whether there is a collision between the (filled) rectangle with the indicated opposite corners and entities of object obj. For example, you can use this to test whether an area is free of obstacles."
@@ -211,20 +196,20 @@ func frac(number):
 func object_get_parent(ind):
 	return ind.parent
 
-func place_meeting(x,y,obj):
+func place_meeting(x,y,obj): #--- only used 4 times in the whole game 
 	var intersecting = false
 	var rect = Rect2(Vector2(x, y), Vector2(16, 16)) #---[FLAG] grab the size later so this can be different size
 	
-	if instanced_object_locations.has(obj):
-		for entry in instanced_object_locations[obj]:
-			var location = entry[0]
-			var obj_rect = Rect2(location, Vector2(16, 16))
-			
-			intersecting = rect.intersects(obj_rect)
-			if intersecting == true:
-				#print('obj_rect:' + str(obj_rect))
-				#print('rect: ' + str(rect))
-				break
+	#if instanced_object_locations.has(obj):
+		#for entry in instanced_object_locations[obj]:
+			#var location = entry[0]
+			#var obj_rect = Rect2(location, Vector2(16, 16))
+			#
+			#intersecting = rect.intersects(obj_rect)
+			#if intersecting == true:
+				##print('obj_rect:' + str(obj_rect))
+				##print('rect: ' + str(rect))
+				#break
 	
 	return intersecting
 	
@@ -240,73 +225,10 @@ func move_snap(hsnap,vsnap, obj):
 func sqr(number):
 	return number * number
 	
-func instance_number(obj: String): #--- finish this
-	if instanced_object_locations.has(obj):
-		var instance_number = instanced_object_locations[obj].size()
-		
-		var empty_counter = 0
-		for array in instanced_object_locations[obj]:
-			if array == []:
-				empty_counter += 1
-		return instance_number - empty_counter
-		
-	else:
-		return 0
-
-func collision_line2(x1,y1,x2,y2,obj,prec,notme):
-	var intersecting = false
-	var all_points = []
-	
-	#--- Bresenham’s Line Generation Algorithm: https://www.geeksforgeeks.org/bresenhams-line-generation-algorithm/
-	var m_new = 2 * (y2 - y1)
-	var slope_error_new = m_new - (x2 - x1)
-	var y = y1
-	if x1 == x2:
-		for y_point in range(y1, y2 + 1):
-			var point = Vector2(x1, y_point)
-			all_points.append(point)
-	else:
-		for x in range(x1, x2+1):
-			var point = Vector2(x, y)
-			all_points.append(point)
-			slope_error_new = slope_error_new + m_new
-			
-			if (slope_error_new >= 0):
-				y = y+1
-				slope_error_new = slope_error_new - 2 * (x2 - x1)
-
-	if instanced_object_locations.has(obj):
-		for point in all_points:
-			if intersecting == false:
-				var point_rect = Rect2(Vector2(point.x, point.y), Vector2(1, 1))
-				#var visible_rect2 = ColorRect.new()
-				#get_tree().current_scene.add_child(visible_rect2)
-				#visible_rect2.global_position = Vector2(point.x, point.y)
-				#visible_rect2.size = Vector2(1, 1)
-				#visible_rect2.color = Color(0.922, 0.518, 0.188, 0.5)
-				
-				for entry in instanced_object_locations[obj]:
-					var location = entry[0]
-					var size = entry[1]
-					var obj_rect = Rect2(location, size)
-					
-					intersecting = point_rect.intersects(obj_rect)
-					#-------------------
-					#print(location)
-					#if location == Vector2(510, 160):
-						#print('hi')
-					#-------------------
-					if intersecting == true:
-						#var visible_rect = ColorRect.new()
-						#get_tree().current_scene.add_child(visible_rect)
-						#visible_rect.global_position = Vector2(location.x, location.y)
-						#visible_rect.size = Vector2(16, 16)
-						#visible_rect.color = Color(0.322, 0.518, 0.188, 0.5)
-						#visible_rect.add_to_group('test_size')
-						
-						break
-	
-	return intersecting
+func instance_number(obj: String):
+	var all_instances = collision_handling.get_all_nodes_in_group(obj)
+	var number_of_instances = all_instances.size()
+	return number_of_instances
 
 func collision_line(x1,y1,x2,y2,obj,prec,notme):
 	var intersecting = false
@@ -359,8 +281,6 @@ func instance_deactivate_region(left, top, width, height, inside, notme):
 	pass
 	
 func room_restart():
-	instanced_object_locations = {}
-	instanced_objects = {}
 	get_tree().reload_current_scene()
 	
 func instance_activate_all():
@@ -438,18 +358,6 @@ func get_instance(obj: String): #Support function for when GML handles this by i
 		var instance = get_tree().get_first_node_in_group(str(obj))
 		return instance
 
-#func update_obj_list_collision(node):
-	#var obj_groups = node.get_groups()
-	#var sprite_offset = node.sprite_offset
-	#var adjusted_location = Vector2(node.global_position.x + sprite_offset.x, node.global_position.y + sprite_offset.y)
-	#var node_name = node.get_path()
-	#
-	#if !obj_groups.is_empty():
-		#for group in obj_groups:
-			#if group.begins_with("id_") == false:
-				#instanced_objects[group][node_name]["collision_location"] = adjusted_location
-
-
 func alarm_setup(frames, alarm_activity):
 	if alarm_activity == false:
 		if frames > 0:
@@ -461,43 +369,6 @@ func alarm_setup(frames, alarm_activity):
 
 func alarm_timeout(time):
 	await get_tree().create_timer(time).timeout
-
-func set_up_object_collision(instance):
-	var obj_groups = instance.get_groups()
-	
-	var node_name = instance.get_path()
-	
-	if !obj_groups.is_empty():
-		for group in obj_groups:
-			var location = Vector2(instance.global_position.x, instance.global_position.y) #--- -16 seems to fix collision for some reason? might need to change later. [FLAG] important. seems to be an issue here
-			var default_size = Vector2(16, 16)
-			var size = default_size
-			if instance.object_size != default_size:
-				size = instance.object_size
-			
-			#--------------------------------
-			#if "object_name" in instance:
-				#if instance.object_name == "rope":
-					#location = Vector2(instance.global_position.x - 4, instance.global_position.y - 4)
-			#--------------------------------
-			
-			var node_info: Array = [location, size, instance]
-			if !instanced_object_locations.has(group):
-				instanced_object_locations[str(group)] = [node_info]
-			else:
-				instanced_object_locations[group].append(node_info)
-			#------------------------------------------------------------------------------------------
-			
-			var sprite_offset = instance.sprite_offset
-			var adjusted_location = Vector2(instance.global_position.x + sprite_offset.x, instance.global_position.y + sprite_offset.y)
-			var new_node_info: Dictionary = {"collision_location" : adjusted_location, "size" : size}
-			
-			var name_with_info = {node_name : new_node_info}
-			
-			if !instanced_objects.has(str(group)):
-				instanced_objects[group] = name_with_info
-			else:
-				instanced_objects[str(group)].merge(name_with_info)
 
 func get_nearest_multiple(number, target_number): #--- Adapted from here: https://www.geeksforgeeks.org/multiple-of-x-closest-to-n/
 	if target_number > number:
