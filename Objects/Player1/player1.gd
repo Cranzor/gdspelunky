@@ -1,6 +1,20 @@
 extends Character
 
-@onready var animated_sprite = $Node/AnimatedSprite2D
+func _ready():
+	#move_to_test()
+	object_setup()
+	character_create_event()
+
+func _physics_process(delta):
+	print("player1")
+	print(position)
+	print(animated_sprite_node.position)
+	object_tick()
+	
+func _process(delta):
+	object_process()
+
+#--- Object functions
 
 var game #--- Temporary to solve errors. Make this an autoload
 
@@ -122,31 +136,6 @@ var k_left
 var view_yview
 var k_up
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 var k_left_pushed_steps
 var k_right_pushed_steps
 var can_run
@@ -184,65 +173,6 @@ var run_anim_speed
 var climb_anim_speed
 
 var rock
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 var k_bomb_pressed #--- only found in step
 var k_rope_pressed #--- only found in step
@@ -291,23 +221,8 @@ var alarm_11_active
 var test = true
 var final_x_vel = 0
 var final_y_vel = 0
-
-func _process(delta):
-	#var sprite_distance = Vector2(animated_sprite.position.x, animated_sprite.position.y).distance_to(Vector2(position.x, position.y))
-	#
-	#animated_sprite.position.x += (final_x_vel * 30) * delta
-	#animated_sprite.position.y += (final_y_vel * 30) * delta
-	smooth_animated_sprite_movement(x_velocity, y_velocity)
 	
-func _ready():
-	animated_sprite_node = $Node/AnimatedSprite2D #--- adding this temporarily until player is put into new format
-	object_size = Vector2(16, 16)
-	disable_camera_on_title_screen()
-	move_to_test()
-	#MiscScripts.scr_clear_globals() #---[FLAG] delete this
-	
-	character_create_event()
-	
+func create():
 	# for debugging
 	first_level_skip = 1
 	level_skip = 1
@@ -409,12 +324,10 @@ func _ready():
 	if (InLevel.is_room("r_olmec")): active = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta):
-	smooth_motion_step_begin()
+func step():
 	#print('node position: ' + str(position))
 	#print('sprite position: ' + str(animated_sprite.position))
 	#print("final x vel: " + str(final_x_vel), " final y vel: " + str(final_y_vel))
-	test_collision_right()
 	every_second_timer()
 	#character_size_test()
 	#------------------------
@@ -428,7 +341,6 @@ func _physics_process(delta):
 	
 	end_step()
 	draw()
-	smooth_motion_step_end()
 
 func step_function_1():
 	prevent_player_death()
@@ -4406,12 +4318,12 @@ func move_to(x_vel, y_vel):
 			final_y_vel -= 1
 
 	# --- sprite position exactly matches character position if character hasn't moved within the frame
-	if test:
-		if mt_x_prev == position.x:
-			animated_sprite.position.x = position.x
-
-		if mt_y_prev == position.y:
-			animated_sprite.position.y = position.y
+	#if test:
+		#if mt_x_prev == position.x:
+			#animated_sprite_node.position.x = position.x
+#
+		#if mt_y_prev == position.y:
+			#animated_sprite_node.position.y = position.y
 #---------------------------------------------------------------------------------------- Test functions
 func character_size_test():
 	var all_test_rects = get_tree().get_nodes_in_group('test_size')
@@ -4465,17 +4377,6 @@ func move_to_test():
 		y_vel_integer+=floor(abs(y_vel))
 	#print(times_per_second)
 
-var input_test = false
-func test_collision_right():
-	if Input.is_action_just_pressed("debug"):
-		#var collision = Collision.get_id_collision_right(1, self)
-		#gml.collision_line(514,159,514,169,'solid',1,1)
-		#print(collision)
-		#gml.sprite_index('default', self)
-		#animated_sprite.position = position
-		#test = !test
-		input_test = !input_test
-
 func end_step():
 	if (hold_item):
 
@@ -4524,8 +4425,8 @@ func character_draw_event():
 	#*/
 	#draws the sprite
 	var draw = true
-	if (facing == RIGHT): animated_sprite.flip_h = true
-	else: animated_sprite.flip_h = false
+	if (facing == RIGHT): animated_sprite_node.flip_h = true
+	else: animated_sprite_node.flip_h = false
 
 	#if (blink_toggle != 1):
 #
@@ -4806,11 +4707,6 @@ func animation_end():
 		
 		
 		global.clean_solids = true
-
-func disable_camera_on_title_screen():
-	if gml.room_get_name() == "title":
-		$Node/AnimatedSprite2D/Camera2D.enabled = false
-
 
 #func _on_new_animated_sprite_2d_animation_finished():
 	#_on_animated_sprite_2d_animation_finished()

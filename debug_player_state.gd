@@ -5,8 +5,8 @@ var animated_sprite: AnimatedSprite2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	animated_sprite = player.get_node("Node").get_node("AnimatedSprite2D")
-
+	#animated_sprite = player.get_node("Node").get_node("AnimatedSprite2D")
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

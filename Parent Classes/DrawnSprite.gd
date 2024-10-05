@@ -222,7 +222,7 @@ func find_specific_child(node_name):
 	var child = find_child(node_name, true, false)
 	return child
 
-func set_up_sprite_parent_node(animated_sprite):
+func set_up_sprite_parent_node(animated_sprite):		
 	if animated_sprite != null:
 		var parent_node = Node.new()
 		add_child(parent_node)
@@ -266,6 +266,8 @@ func handle_smooth_motion_values():
 		set_x_y_velocity()
 	else:
 		reset_x_y_velocity()
+		if animated_sprite_node:
+			animated_sprite_node.position = position
 	
 	update_prior_tick_position()
 
@@ -405,9 +407,9 @@ func collision_setup():
 		gml.rejuvenated_collision_objects[position] = main_entry
 
 func object_tick():
-	if object_name == "bat_intro" or object_name == "moon" or object_name == "p_dummy3":
+	if moving_object:
 		handle_smooth_motion_values()
-	
+
 	run_step_event(self)
 	run_draw_event(self)
 
@@ -423,8 +425,7 @@ func object_process():
 	if position != test_prior_tick_position:
 		moving_object = true
 	
-	if object_name == "bat_intro" or object_name == "moon" or object_name == "p_dummy3":
-		if moving_object: smooth_animated_sprite_movement(x_velocity, y_velocity)
+	if moving_object: smooth_animated_sprite_movement(x_velocity, y_velocity)
 
 func did_object_move():
 	var current_position = position
