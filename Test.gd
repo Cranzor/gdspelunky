@@ -193,5 +193,14 @@ func is_pixel_inside_rect(passed_pixel):
 
 
 func _on_button_down():
-	keyboard_check()
-	print("pressed for no reason")
+	var alarm = Alarm.new()
+	get_tree().current_scene.add_child(alarm)
+	alarm.set_physics_process(true)
+	alarm.timeout.connect(test_alarm)
+	alarm.start(10)
+	print('pressed')
+	#keyboard_check()
+	#print("pressed for no reason")
+
+func test_alarm():
+	print("worked!")

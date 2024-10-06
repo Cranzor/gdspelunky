@@ -1,3 +1,4 @@
+class_name Alarm
 extends Node2D
 
 var frames_to_count_down = -1

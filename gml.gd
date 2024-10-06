@@ -143,7 +143,6 @@ func distance_to_object(obj: String, node): #Make this more accurate with this i
 		
 func instance_place(x,y,obj: String, comparison_object): #' Returns the id of the instance of type obj met when the current instance is placed at position (x,y). obj can be an object or the keyword all. If it does not exist, the special object noone is returned.'
 	#--- think this function actually accounts for precise checking
-	#var comparison_current_sprite: String = comparison_object.sprite_index
 	var bounding_box: Vector2
 	var position_with_offset: Vector2
 	
@@ -158,12 +157,14 @@ func instance_place(x,y,obj: String, comparison_object): #' Returns the id of th
 	
 	var returned_node = null
 	var nodes_to_check = collision_handling.get_nodes_to_check(obj, comparison_rect)
-	nodes_to_check.reverse() #--- GM seems to check collision top to bottom and then return from within the loop once it's found. 
+
 	for node in nodes_to_check:
 		var intersecting: bool = collision_handling.check_individual_collision(node, comparison_rect)
 		if intersecting == true:
 			returned_node = node
-	return returned_node
+			return returned_node
+			
+	return null
 	
 func instance_destroy(obj): #'Destroys current instance' ---  Should probably start passing 'self' or other node reference as an argument. Go through and check
 	if obj.has_method("destroy"):

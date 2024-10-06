@@ -7,6 +7,7 @@
 z_index = -30
 script = ExtResource("1_xxbaf")
 object_name = "flare"
+depth = null
 object_size = Vector2(8, 8)
 
 [node name="Alarms" type="Node2D" parent="."]

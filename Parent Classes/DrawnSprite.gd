@@ -19,6 +19,21 @@ var animated_sprite_node
 @export var object_name: String
 var object_hash: String
 
+const ALARM = preload("res://alarm.tscn")
+
+var alarm_0_object: Node
+var alarm_1_object: Node
+var alarm_2_object: Node
+var alarm_3_object: Node
+var alarm_4_object: Node
+var alarm_5_object: Node
+var alarm_6_object: Node
+var alarm_7_object: Node
+var alarm_8_object: Node
+var alarm_9_object: Node
+var alarm_10_object: Node
+var alarm_11_object: Node
+
 @export var depth: int = 0:
 	set(new_depth):
 		if new_depth > 0: #--- changing positive GML depth to negative in case it is not already changed
@@ -286,6 +301,7 @@ func object_setup():
 	sprite_setup(object_entry)
 	bounding_box_setup()
 	collision_setup()
+	alarms_setup(object_entry)
 	run_create_function(self)
 	
 	#--- for flare_spark
@@ -409,7 +425,7 @@ func collision_setup():
 var tick_start_position1
 var tick_end_position1: Vector2
 func object_tick():
-	if moving_object and object_name != "flare_spark" and object_name != "player1":
+	if moving_object and object_name != "flare_spark":
 		if tick_end_position1.x == position.x:
 			x_velocity = 0
 			animated_sprite_node.position.x = position.x
@@ -424,11 +440,17 @@ func object_tick():
 	run_step_event(self)
 	run_draw_event(self)
 
-	if moving_object and object_name != "flare_spark" and object_name != "player1":
+	if moving_object and object_name != "flare_spark":
 		tick_end_position1 = position
 		var diff = tick_end_position1 - tick_start_position1
 		x_velocity = diff.x
 		y_velocity = diff.y
+
+func alarms_setup(object_entry):
+	var events: Array = object_entry["events"]
+	var alarms: Array = ['alarm_0', 'alarm_1', 'alarm_2', 'alarm_3', 'alarm_4', 'alarm_5', 'alarm_6', 'alarm_7', 'alarm_8', 'alarm_9', 'alarm_10', 'alarm_11']
+	
+	#for 
 	
 func run_step_event(obj):
 	if obj.has_method("step"):
@@ -442,7 +464,7 @@ func object_process():
 	if position != test_prior_tick_position:
 		moving_object = true
 	
-	if moving_object and object_name != "player1": smooth_animated_sprite_movement(x_velocity, y_velocity)
+	if moving_object: smooth_animated_sprite_movement(x_velocity, y_velocity)
 
 func did_object_move():
 	var current_position = position
