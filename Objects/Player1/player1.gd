@@ -7,6 +7,8 @@ func _ready():
 
 func _physics_process(delta):
 	object_tick()
+	#print(position)
+	#print(animated_sprite_node.position)
 	
 func _process(delta):
 	object_process()
@@ -318,7 +320,7 @@ func create():
 	x_shortcut13 = 11
 	x_change2 = 12
 
-	if (InLevel.is_room("r_olmec")): active = false
+	if (InLevel.is_room("olmec")): active = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func step():
@@ -360,7 +362,7 @@ func step_function_1():
 
 func prevent_player_death():
 	# prevent player from dying on title screen
-	if (InLevel.is_room("r_title") or InLevel.is_room("r_highscores")):
+	if (InLevel.is_room("title") or InLevel.is_room("highscores")):
 
 		if (global.is_tunnel_man): global.plife = 2
 		else: global.plife = 4
@@ -3315,12 +3317,10 @@ func handle_ladder_climbing2():
 			if (abs(position.x-(ladder_instance.position.x+8)) < 4):
 			
 				position.x = ladder_instance.position.x + 8
+				
 				if (not gml.collision_point(position.x, position.y, 'ladder', 0, 0) and not gml.collision_point(position.x, position.y, 'ladder_top', 0, 0)):
 				
-					position.y = ladder_instance.position.y + 14
-					print(ladder_instance.position.y)
-					print(position.y)
-				
+					global_position.y = ladder_instance.global_position.y + 14
 
 				x_vel = 0
 				y_vel = 0

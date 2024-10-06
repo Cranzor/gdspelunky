@@ -12,9 +12,9 @@ func _physics_process(delta):
 	if frames_to_count_down == 0:
 		emit_signal("timeout")
 	
-	if started == true:
-		if frames_to_count_down == -1:
-			frames_to_count_down = countdown_frames
+	#if started == true:
+		#if frames_to_count_down == -1:
+			#frames_to_count_down = countdown_frames
 
 func start(frames):
 	if is_stopped():

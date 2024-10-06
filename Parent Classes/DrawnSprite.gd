@@ -405,16 +405,11 @@ func collision_setup():
 	object_hash = generate_random_hash()
 	var collision_grid = CollisionGrid.new()
 	var grid_positions = collision_grid.find_grid_position(global_position, object_size)
-	var object_info = {"node" : self, "position" : global_position, "sprite" : sprite_index}
-	var main_entry = {object_hash : object_info}
-	
-	for position in grid_positions:
-		gml.rejuvenated_collision_objects[position] = main_entry
 
 var tick_start_position1
 var tick_end_position1: Vector2
 func object_tick():
-	if moving_object and object_name != "flare_spark":
+	if moving_object and object_name != "flare_spark" and object_name != "player1":
 		if tick_end_position1.x == position.x:
 			x_velocity = 0
 			animated_sprite_node.position.x = position.x
@@ -429,7 +424,7 @@ func object_tick():
 	run_step_event(self)
 	run_draw_event(self)
 
-	if moving_object and object_name != "flare_spark":
+	if moving_object and object_name != "flare_spark" and object_name != "player1":
 		tick_end_position1 = position
 		var diff = tick_end_position1 - tick_start_position1
 		x_velocity = diff.x
@@ -447,7 +442,7 @@ func object_process():
 	if position != test_prior_tick_position:
 		moving_object = true
 	
-	if moving_object: smooth_animated_sprite_movement(x_velocity, y_velocity)
+	if moving_object and object_name != "player1": smooth_animated_sprite_movement(x_velocity, y_velocity)
 
 func did_object_move():
 	var current_position = position

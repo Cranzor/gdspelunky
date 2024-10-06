@@ -4,6 +4,8 @@ class_name GML_Class
 var collision_point_node = preload("res://CollisionPoint.tscn")
 var collision_rectangle_node = preload("res://CollisionRectangle.tscn")
 var collision_handling = CollisionHandling.new()
+var sprite_database = Sprites.new()
+var object_database = ObjectDatabase.new()
 
 #For tile_add
 @export_dir var bg_folder
@@ -76,7 +78,7 @@ func collision_point(x,y,obj: String,prec,notme): #"This function tests whether 
 	var rect = Rect2(Vector2(x, y), Vector2(1, 1))
 	
 	var nodes_to_check = collision_handling.get_nodes_to_check(obj, rect)
-	intersecting = collision_handling.check_collision(nodes_to_check, rect)
+	intersecting = collision_handling.check_collision_group(nodes_to_check, rect)
 	
 	return intersecting	
 
@@ -140,16 +142,28 @@ func distance_to_object(obj: String, node): #Make this more accurate with this i
 		#var distance =
 		
 func instance_place(x,y,obj: String, comparison_object): #' Returns the id of the instance of type obj met when the current instance is placed at position (x,y). obj can be an object or the keyword all. If it does not exist, the special object noone is returned.'
-	var comparison_location = Vector2(comparison_object.global_position.x - comparison_object.sprite_offset.x, comparison_object.global_position.y - comparison_object.sprite_offset.y)
-	var comparison_size = comparison_object.object_size
-	var comparison_rect = Rect2(comparison_location, comparison_size)
+	#--- think this function actually accounts for precise checking
+	#var comparison_current_sprite: String = comparison_object.sprite_index
+	var bounding_box: Vector2
+	var position_with_offset: Vector2
 	
+	var comparison_current_sprite = comparison_object.sprite_index
+	var offset = sprite_database.sprite_database[comparison_current_sprite]["origin"]
+	
+	if sprite_database.sprite_database[comparison_current_sprite]["mask"]["shape"] == "RECTANGLE":
+		bounding_box = sprite_database.sprite_database[comparison_current_sprite]["mask"]["collision_rectangles"][1]
+		position_with_offset = collision_handling.get_position_with_offset_applied(Vector2(x, y), offset - sprite_database.sprite_database[obj]["mask"]["collision_rectangles"][0])
+	
+	var comparison_rect: Rect2 = Rect2(position_with_offset, bounding_box)
+	
+	var returned_node = null
 	var nodes_to_check = collision_handling.get_nodes_to_check(obj, comparison_rect)
-	var intersecting = collision_handling.check_collision(nodes_to_check, comparison_rect)
-	if intersecting:
-		return instance_nearest(comparison_location.x, comparison_location.y, obj)
-	else:
-		return null
+	nodes_to_check.reverse() #--- GM seems to check collision top to bottom and then return from within the loop once it's found. 
+	for node in nodes_to_check:
+		var intersecting: bool = collision_handling.check_individual_collision(node, comparison_rect)
+		if intersecting == true:
+			returned_node = node
+	return returned_node
 	
 func instance_destroy(obj): #'Destroys current instance' ---  Should probably start passing 'self' or other node reference as an argument. Go through and check
 	if obj.has_method("destroy"):
@@ -162,7 +176,7 @@ func collision_rectangle(x1,y1,x2,y2,obj,prec,notme): #"This function tests whet
 	var rect = Rect2(Vector2(x1, y1), Vector2(abs(x2 - x1), abs(y2 - y1)))
 	
 	var nodes_to_check = collision_handling.get_nodes_to_check(obj, rect)
-	intersecting = collision_handling.check_collision(nodes_to_check, rect)
+	intersecting = collision_handling.check_collision_group(nodes_to_check, rect)
 	
 	return intersecting	
 
@@ -248,7 +262,7 @@ func collision_line(x1,y1,x2,y2,obj,prec,notme):
 		
 		#if x1 == 595 and y1 == 187:
 			#print("hi")
-		intersecting = collision_handling.check_collision(nodes_to_check, vertical_rect)
+		intersecting = collision_handling.check_collision_group(nodes_to_check, vertical_rect)
 		return intersecting
 		
 	else:
