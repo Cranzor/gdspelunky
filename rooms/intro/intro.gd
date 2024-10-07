@@ -4,23 +4,6 @@ var room_generation = RoomGeneration.new()
 
 var room_name = "intro"
 
-@export var intro_scenes: Array[PackedScene]
-
-var moon = preload("res://objects/other/intro/moon/moon.tscn")
-var intro_bg = preload("res://objects/other/intro/intro_bg/intro_bg.tscn")
-var palm_tree_dark = preload("res://objects/other/intro/palm_tree_dark/palm_tree_dark.tscn")
-var cave_bg2 = preload("res://objects/blocks/cave_bg2/cave_bg2.tscn")
-var cave_bg_entrance = preload("res://objects/blocks/cave_bg_entrance/cave_bg_entrance.tscn")
-var shrub_dark = preload("res://objects/other/intro/shrub_dark/shrub_dark.tscn")
-var desert = preload("res://objects/other/intro/desert/desert.tscn")
-var dark = preload("res://objects/blocks/dark/dark.tscn")
-var desert2 = preload("res://objects/other/intro/desert2/desert2.tscn")
-var desert_top = preload("res://objects/other/intro/desert_top/desert_top.tscn")
-var intro = preload("res://objects/intro/intro.tscn")
-var bricks = preload("res://objects/bricks/bricks.tscn")
-var game = preload("res://objects/game/game.tscn")
-var bat_intro = preload("res://objects/other/intro/bat_intro/bat_intro.tscn")
-
 var scenes_with_id = {}
 var tile_map = TileMap.new()
 var layer = 0
@@ -510,7 +493,3 @@ func _ready():
 	#if last_object != name:
 		#last_object = name
 		#layer += 1
-	
-func _process(delta):
-	#print(gml.get_all_instances("rope"))
-	pass

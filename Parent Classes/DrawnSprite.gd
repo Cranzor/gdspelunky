@@ -21,18 +21,18 @@ var object_hash: String
 
 const ALARM = preload("res://alarm.tscn")
 
-var alarm_0_instance: Node
-var alarm_1_instance: Node
-var alarm_2_instance: Node
-var alarm_3_instance: Node
-var alarm_4_instance: Node
-var alarm_5_instance: Node
-var alarm_6_instance: Node
-var alarm_7_instance: Node
-var alarm_8_instance: Node
-var alarm_9_instance: Node
-var alarm_10_instance: Node
-var alarm_11_instance: Node
+var alarm_0_countdown: Node
+var alarm_1_countdown: Node
+var alarm_2_countdown: Node
+var alarm_3_countdown: Node
+var alarm_4_countdown: Node
+var alarm_5_countdown: Node
+var alarm_6_countdown: Node
+var alarm_7_countdown: Node
+var alarm_8_countdown: Node
+var alarm_9_countdown: Node
+var alarm_10_countdown: Node
+var alarm_11_countdown: Node
 
 @export var depth: int = 0:
 	set(new_depth):
@@ -74,7 +74,7 @@ var dead
 var shake_toggle
 var sprite_index:
 	set(new_sprite):
-		sprite_index = new_sprite
+		#sprite_index = new_sprite
 		set_animation(new_sprite)
 		set_sprite_offset(new_sprite)
 		sprite_index_name = new_sprite
@@ -218,8 +218,9 @@ var updated_animation
 var sprite_initialized = false
 func smooth_animated_sprite_movement(x_velocity, y_velocity):
 	var animated_sprite = get_animated_sprite_2d()
-	initialize_sprite_for_smooth_movement(animated_sprite)
-	update_sprite_position(animated_sprite)
+	if animated_sprite != null:
+		initialize_sprite_for_smooth_movement(animated_sprite)
+		update_sprite_position(animated_sprite)
 
 #--- Setting up arguments here so they don't have to be called every time
 
@@ -249,7 +250,7 @@ func set_up_sprite_parent_node(animated_sprite):
 		animated_sprite.show_behind_parent = true
 		animated_sprite.z_as_relative = false
 		
-		animated_sprite.position = global_position
+		animated_sprite.position = position
 
 func smooth_motion_step_begin():
 	if tick_end_position == position:
@@ -304,7 +305,7 @@ func object_setup():
 	sprite_setup(object_entry)
 	bounding_box_setup()
 	collision_setup()
-	if object_name == "flare":
+	if object_name == "flare" or object_name == "intro":
 		alarms_setup(object_entry)
 	run_create_function(self)
 	
@@ -428,52 +429,29 @@ func collision_setup():
 
 var tick_start_position1
 var tick_end_position1: Vector2
+
+var smooth_motion = SmoothMotion.new()
 func object_tick():
-	if moving_object and object_name != "flare_spark":
-		if tick_end_position1.x == position.x:
-			x_velocity = 0
-			animated_sprite_node.position.x = position.x
-		if tick_end_position1.y == position.y:
-			y_velocity = 0
-			animated_sprite_node.position.y = position.y
-		tick_start_position1 = position
-	
-	#if moving_object and object_name != "flare_spark":
-		#handle_smooth_motion_values()
+	smooth_motion.tick_start(position, animated_sprite_node)
 
 	run_step_event(self)
 	run_draw_event(self)
 
-	if moving_object and object_name != "flare_spark":
-		tick_end_position1 = position
-		var diff = tick_end_position1 - tick_start_position1
-		x_velocity = diff.x
-		y_velocity = diff.y
+	smooth_motion.tick_end(position, animated_sprite_node)
 
 func alarms_setup(object_entry):
 	var events: Array = object_entry["events"]
 	var alarms: Array = ['alarm_0', 'alarm_1', 'alarm_2', 'alarm_3', 'alarm_4', 'alarm_5', 'alarm_6', 'alarm_7', 'alarm_8', 'alarm_9', 'alarm_10', 'alarm_11']
-	var alarm_name_with_variable: Dictionary = {
-		"alarm_0" : alarm_0_instance, 
-		"alarm_1" : alarm_1_instance, 
-		"alarm_2" : alarm_2_instance, 
-		"alarm_3" : alarm_3_instance, 
-		"alarm_4" : alarm_4_instance, 
-		"alarm_5" : alarm_5_instance, 
-		"alarm_6" : alarm_6_instance, 
-		"alarm_7" : alarm_7_instance, 
-		"alarm_8" : alarm_8_instance, 
-		"alarm_9" : alarm_9_instance, 
-		"alarm_10" : alarm_10_instance, 
-		"alarm_11" : alarm_11_instance
-		}
+	
+	if object_name == "intro":
+		print('hi')
 	
 	for event in events:
 		if event in alarms:
-			var alarm_instance_name: String = event + "_instance"
+			var alarm_countdown_instance: String = event + "_countdown"
 			var alarm_function = Callable(self, event)
 			var new_alarm: Node = Alarm.new()
-			set(alarm_instance_name, new_alarm)
+			set(alarm_countdown_instance, new_alarm)
 			new_alarm.set_physics_process(true)
 			new_alarm.timeout.connect(alarm_function)
 			add_child(new_alarm)
@@ -490,7 +468,7 @@ func object_process():
 	if position != test_prior_tick_position:
 		moving_object = true
 	
-	if moving_object: smooth_animated_sprite_movement(x_velocity, y_velocity)
+	if moving_object and object_name != 'p_dummy3': smooth_animated_sprite_movement(x_velocity, y_velocity)
 
 func did_object_move():
 	var current_position = position

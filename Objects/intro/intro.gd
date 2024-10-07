@@ -1,5 +1,15 @@
 extends DrawnSprite #---changing this to DrawnSprite
 
+func _ready():
+	object_setup()
+
+func _physics_process(delta):
+	object_tick()
+
+func _process(delta):
+	object_process()
+
+#--- Object functions
 var fade_in
 var fade_out
 var fade_level
@@ -13,21 +23,7 @@ var str3
 @onready var str2_label = $TextBackground/Str2
 @onready var str3_label = $TextBackground/Str3
 
-@onready var alarm8_timer = $Alarms/Alarm8
-@onready var alarm9_timer = $Alarms/Alarm9
-@onready var alarm10_timer = $Alarms/Alarm10
-@onready var alarm11_timer = $Alarms/Alarm11
-
-var alarm_8_active = false
-var alarm_9_active = false
-var alarm_10_active = false
-var alarm_11_active = false
-
-var physics_frame_rate = 30
-
 @onready var text_background = $TextBackground
-
-var p_dummy3 = preload("res://objects/other/p_dummy3/p_dummy3.tscn")
 
 var skip_button_just_pressed: bool = false
 
@@ -42,17 +38,7 @@ func _input(event):
 func reset_inputs():
 	skip_button_just_pressed = false
 
-func initial_setup():
-	#--- set size
-	object_size = Vector2(0, 0)
-
-	#--- set depth
-	depth = 0
-	z_index = depth
-
-func _ready():
-	initial_setup()
-
+func create():
 	fade_in = false
 	fade_out = false
 	fade_level = 1
@@ -60,8 +46,7 @@ func _ready():
 
 	draw_status = 0
 	
-	if alarm11_timer.is_stopped():
-		alarm11_timer.start(float(20)/float(physics_frame_rate))
+	alarm_11_countdown.start(20)
 
 	var str = ""
 	var n = randi_range(1,8)
@@ -100,7 +85,7 @@ func _ready():
 		7:  str3 = "AND FELT THE GODS SMILING UPON ME."
 		8:  str3 = "AND THAT'S WHEN IT ALL STARTED."
 
-func _physics_process(delta):
+func step():
 	#if (gml.keyboard_check_pressed(KEY_ENTER) or
 		#gml.keyboard_check_pressed(KEY_ESCAPE) or
 		#ControlScripts.check_attack_pressed() or
@@ -122,7 +107,7 @@ func _physics_process(delta):
 		else:
 		
 			fade_in = false
-			if (not gml.instance_exists("p_dummy3")): gml.instance_create(-32, 184, p_dummy3)
+			if (not gml.instance_exists("p_dummy3")): gml.instance_create(-32, 184, Objects.p_dummy3)
 		
 
 	elif (fade_out):
@@ -135,7 +120,6 @@ func _physics_process(delta):
 			
 	#----------
 	
-	draw()
 	reset_inputs()
 
 func draw():
@@ -189,38 +173,31 @@ func draw():
 		str2_label.visible = false
 		str3_label.visible = false
 		
-func alarm_timeout(time):
-	await get_tree().create_timer(time).timeout
-
-
-func _on_alarm_11_timeout():
+func alarm_11():
 	if (not fade_in):
 
 		if (draw_status >= 0):
 			draw_status = 1
 		
-		if alarm10_timer.is_stopped():
-			alarm10_timer.start(float(80)/float(physics_frame_rate))
+		alarm_10_countdown.start(80)
 
-func _on_alarm_10_timeout():
+func alarm_10():
 	if (not fade_in):
 
 		if (draw_status >= 0):
 			draw_status = 2
 		
-		if alarm10_timer.is_stopped():
-			alarm9_timer.start(float(80)/float(physics_frame_rate))
+		alarm_9_countdown.start(80)
 
-func _on_alarm_9_timeout():
+func alarm_9():
 	if (not fade_in):
 
 		if (draw_status >= 0):
 			draw_status = 3
 			
-		if alarm8_timer.is_stopped():
-			alarm8_timer.start(float(80)/float(physics_frame_rate))
+		alarm_8_countdown.start(80)
 
-func _on_alarm_8_timeout():
+func alarm_8():
 	if (not fade_in):
 		draw_status = -1
 		fade_in = true

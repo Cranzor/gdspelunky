@@ -17,7 +17,7 @@ func alarm_0():
 	#--- utilizing a queueing system here rather than creating a new flame_spark every time to prevent performance issues
 	generate_flame_spark()
 	
-	alarm_0_instance.start(2)
+	alarm_0_countdown.start(2)
 
 func create():
 	item_create()
@@ -34,7 +34,7 @@ func create():
 	bounce = true
 	dist_to_player = 0
 
-	alarm_0_instance.start(1)
+	alarm_0_countdown.start(1)
 
 func step():
 	smooth_motion_step_begin()
