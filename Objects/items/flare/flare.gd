@@ -8,19 +8,16 @@ func _physics_process(delta):
 
 func _process(delta):
 	object_process()
-
+	
 #--- Object functions
-@onready var alarm_0_timer = $Alarms/Alarm0
-
 var dist_to_player
 
 func alarm_0():
 	#gml.instance_create(position.x+randi_range(0,3)-randi_range(0,3), position.y+randi_range(0,3)-randi_range(0,3), Objects.flare_spark) #---
-	
 	#--- utilizing a queueing system here rather than creating a new flame_spark every time to prevent performance issues
 	generate_flame_spark()
 	
-	alarm_0_timer.start(2)
+	alarm_0_instance.start(2)
 
 func create():
 	item_create()
@@ -37,7 +34,7 @@ func create():
 	bounce = true
 	dist_to_player = 0
 
-	alarm_0_timer.start(1)
+	alarm_0_instance.start(1)
 
 func step():
 	smooth_motion_step_begin()
@@ -64,13 +61,10 @@ func step():
 	
 	smooth_motion_step_end()
 	
-func _on_alarm_0_timeout():
-	alarm_0()
-
 #--- Extra functions
 var flare_sparks = []
 var flare_sparks_number = 0
-var flare_sparks_maximum = 1
+var flare_sparks_maximum = 5
 
 func generate_flame_spark():
 	#var random_position = Vector2(position.x+randi_range(0,3)-randi_range(0,3), position.y+randi_range(0,3)-randi_range(0,3))

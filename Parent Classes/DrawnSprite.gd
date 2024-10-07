@@ -21,18 +21,18 @@ var object_hash: String
 
 const ALARM = preload("res://alarm.tscn")
 
-var alarm_0_object: Node
-var alarm_1_object: Node
-var alarm_2_object: Node
-var alarm_3_object: Node
-var alarm_4_object: Node
-var alarm_5_object: Node
-var alarm_6_object: Node
-var alarm_7_object: Node
-var alarm_8_object: Node
-var alarm_9_object: Node
-var alarm_10_object: Node
-var alarm_11_object: Node
+var alarm_0_instance: Node
+var alarm_1_instance: Node
+var alarm_2_instance: Node
+var alarm_3_instance: Node
+var alarm_4_instance: Node
+var alarm_5_instance: Node
+var alarm_6_instance: Node
+var alarm_7_instance: Node
+var alarm_8_instance: Node
+var alarm_9_instance: Node
+var alarm_10_instance: Node
+var alarm_11_instance: Node
 
 @export var depth: int = 0:
 	set(new_depth):
@@ -232,6 +232,9 @@ func initialize_sprite_for_smooth_movement(animated_sprite):
 func update_sprite_position(animated_sprite):
 	animated_sprite.position.x += (x_velocity * 30) * get_process_delta_time()
 	animated_sprite.position.y += (y_velocity * 30) * get_process_delta_time()
+	
+	#animated_sprite.position.x += (x_velocity * int(get_physics_process_delta_time())) * get_process_delta_time()
+	#animated_sprite.position.y += (y_velocity * int(get_physics_process_delta_time())) * get_process_delta_time()
 
 func find_specific_child(node_name):
 	var child = find_child(node_name, true, false)
@@ -301,7 +304,8 @@ func object_setup():
 	sprite_setup(object_entry)
 	bounding_box_setup()
 	collision_setup()
-	alarms_setup(object_entry)
+	if object_name == "flare":
+		alarms_setup(object_entry)
 	run_create_function(self)
 	
 	#--- for flare_spark
@@ -449,8 +453,30 @@ func object_tick():
 func alarms_setup(object_entry):
 	var events: Array = object_entry["events"]
 	var alarms: Array = ['alarm_0', 'alarm_1', 'alarm_2', 'alarm_3', 'alarm_4', 'alarm_5', 'alarm_6', 'alarm_7', 'alarm_8', 'alarm_9', 'alarm_10', 'alarm_11']
+	var alarm_name_with_variable: Dictionary = {
+		"alarm_0" : alarm_0_instance, 
+		"alarm_1" : alarm_1_instance, 
+		"alarm_2" : alarm_2_instance, 
+		"alarm_3" : alarm_3_instance, 
+		"alarm_4" : alarm_4_instance, 
+		"alarm_5" : alarm_5_instance, 
+		"alarm_6" : alarm_6_instance, 
+		"alarm_7" : alarm_7_instance, 
+		"alarm_8" : alarm_8_instance, 
+		"alarm_9" : alarm_9_instance, 
+		"alarm_10" : alarm_10_instance, 
+		"alarm_11" : alarm_11_instance
+		}
 	
-	#for 
+	for event in events:
+		if event in alarms:
+			var alarm_instance_name: String = event + "_instance"
+			var alarm_function = Callable(self, event)
+			var new_alarm: Node = Alarm.new()
+			set(alarm_instance_name, new_alarm)
+			new_alarm.set_physics_process(true)
+			new_alarm.timeout.connect(alarm_function)
+			add_child(new_alarm)
 	
 func run_step_event(obj):
 	if obj.has_method("step"):
