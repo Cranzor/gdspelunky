@@ -1,3 +1,4 @@
+@icon("res://sprites/blocks/ladders/ladder/ladder_0.png")
 extends DrawnSprite
 class_name Ladder
 

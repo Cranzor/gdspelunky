@@ -8,6 +8,9 @@ func _physics_process(delta):
 
 func _process(delta):
 	object_process()
+	print(position)
+	print(animated_sprite_node.global_position)
+	print("---")
 
 #--- Object functions
 var climb_snd_toggle
@@ -18,8 +21,6 @@ const RIGHT = 0
 
 @onready var alarm_0_timer = $Alarms/Alarm0
 @onready var alarm_2_timer = $Alarms/Alarm2
-
-@export var animated_sprite: AnimatedSprite2D
 
 func create():
 	# dummy actor for intro
@@ -83,9 +84,9 @@ func draw():
 	#if (facing == RIGHT): image_xscale = -1
 	#else: image_xscale = 1
 	
-	if has_sprite(): #--- adding this function due to how AnimatedSprite2D is set up. reference to the node has to be made after that process finishes
-		if (facing == RIGHT): animated_sprite.flip_h = true
-		else: animated_sprite.flip_h = false
+
+	if (facing == RIGHT): animated_sprite_node.flip_h = true
+	else: animated_sprite_node.flip_h = false
 
 	#draw_sprite_ext(sprite_index, -1, position.x, position.y, image_xscale, image_yscale, image_angle, image_blend, image_alpha) #--- Not needed?
 
@@ -101,10 +102,3 @@ func _on_alarm_2_timeout():
 	if (climb_snd_toggle): Audio.play_sound(global.snd_climb1)
 	else: Audio.play_sound(global.snd_climb2)
 	climb_snd_toggle = not climb_snd_toggle
-
-func has_sprite():
-	if find_child("AnimatedSprite2D", true, false) == null:
-		return false
-	else:
-		animated_sprite = find_child("AnimatedSprite2D", true, false)
-		return true

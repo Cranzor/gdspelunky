@@ -18,7 +18,6 @@ texture = ExtResource("21_1wm2m")
 stretch_mode = 1
 
 [node name="FpsCounter" parent="." instance=ExtResource("23_57set")]
-visible = false
 
 [node name="BgElements" parent="." instance=ExtResource("24_c1f05")]
 z_as_relative = false

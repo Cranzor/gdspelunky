@@ -1,60 +1,75 @@
 class_name SmoothMotion
 extends Node
 
-var x_velocity
-var y_velocity
+var x_velocity = 0
+var y_velocity = 0
 
 var tick_start_position: Vector2
 var tick_end_position: Vector2
 
 var initialized: bool = false
+var moving_object: bool = false
 
-func tick_start(position, animated_sprite_node):	
-	if tick_end_position.x == position.x:
-		x_velocity = 0
-		animated_sprite_node.position.x = position.x
-	if tick_end_position.y == position.y:
-		y_velocity = 0
-		animated_sprite_node.position.y = position.y
+func tick_start(position, animated_sprite_node):
+	if animated_sprite_node != null:
+		if tick_end_position.x == position.x:
+			x_velocity = 0
+			animated_sprite_node.global_position.x = position.x
+		if tick_end_position.y == position.y:
+			y_velocity = 0
+			animated_sprite_node.global_position.y = position.y
 	tick_start_position = position
 
 
 func tick_end(position, animated_sprite_node):
 	tick_end_position = position
-	var diff = tick_end_position - tick_start_position
-	x_velocity = diff.x
-	y_velocity = diff.y
-
+	if animated_sprite_node != null:
+		var diff = tick_end_position - tick_start_position
+		x_velocity = diff.x
+		y_velocity = diff.y
 
 func handle_smooth_motion(node):
-	if check_if_moving_object(node.position, node.sprite_index_name) == true:
-		initialize_sprite_for_smooth_movement(node.animated_sprite, node.position)
-		update_animated_sprite_2d_position(x_velocity, y_velocity, node.animated_sprite)
+	check_if_moving_object(node.position, node.sprite_index_name)
+	if moving_object:
+		initialize_sprite_for_smooth_movement(node)
+		update_animated_sprite_2d_position(x_velocity, y_velocity, node.animated_sprite_node)
+		#else:
+			#reset_velocity(node)
+
+#func reset_velocity(node):
+	#node.x_velocity = 0
+	#node.y_velocity = 0
 
 
 func check_if_moving_object(position, sprite_index):
 	if position != tick_end_position and sprite_index != null:
+		moving_object = true
+
+func did_object_move(position):
+	var current_position = position
+	if current_position == tick_end_position:
+		return false
+	else:
 		return true
-	return false
-	
+
 	
 func update_animated_sprite_2d_position(x_velocity, y_velocity, animated_sprite):
-	animated_sprite.position.x += (x_velocity * 30) * get_process_delta_time()
-	animated_sprite.position.y += (y_velocity * 30) * get_process_delta_time()
+	animated_sprite.global_position.x += (x_velocity * 30) * get_process_delta_time()
+	animated_sprite.global_position.y += (y_velocity * 30) * get_process_delta_time()
 	
 	
-func initialize_sprite_for_smooth_movement(animated_sprite, position):
+func initialize_sprite_for_smooth_movement(node):
 	if initialized == false:
-		set_up_sprite_parent_node(animated_sprite, position)
+		set_up_sprite_parent_node(node)
 		initialized = true
 
 
-func set_up_sprite_parent_node(animated_sprite, position):
+func set_up_sprite_parent_node(node):
 	var parent_node = Node.new()
-	add_child(parent_node)
-	animated_sprite.reparent(parent_node)
+	node.add_child(parent_node)
+	node.animated_sprite_node.reparent(parent_node)
 	
-	animated_sprite.show_behind_parent = true
-	animated_sprite.z_as_relative = false
+	node.animated_sprite_node.show_behind_parent = true
+	node.animated_sprite_node.z_as_relative = false
 	
-	animated_sprite.position = position
+	node.animated_sprite_node.global_position = node.position

@@ -1,3 +1,4 @@
+@icon("res://sprites/blocks/mines/brick_gold/brick_gold_0.png")
 extends DrawnSprite
 class_name Solid
 

@@ -1,3 +1,4 @@
+@icon("res://sprites/hud/heart/heart_0.png")
 extends Node2D
 class_name DrawnSprite
 
@@ -80,9 +81,9 @@ var sprite_index:
 		sprite_index_name = new_sprite
 		
 	get:
-		#var current_animation = get_animation()
-		#return current_animation
-		return sprite_index
+		var current_animation = get_animation()
+		return current_animation
+		#return sprite_index
 		
 var image_speed:
 	set(new_speed):
@@ -432,6 +433,8 @@ var tick_end_position1: Vector2
 
 var smooth_motion = SmoothMotion.new()
 func object_tick():
+	if object_name == 'p_dummy3':
+		print("hi")
 	smooth_motion.tick_start(position, animated_sprite_node)
 
 	run_step_event(self)
@@ -465,10 +468,9 @@ func run_draw_event(obj):
 		obj.draw()
 
 func object_process():
-	if position != test_prior_tick_position:
-		moving_object = true
-	
-	if moving_object and object_name != 'p_dummy3': smooth_animated_sprite_movement(x_velocity, y_velocity)
+	if object_name == 'p_dummy3':
+		print("hi")
+	smooth_motion.handle_smooth_motion(self)
 
 func did_object_move():
 	var current_position = position
@@ -506,10 +508,6 @@ func generate_random_hash():
 var last_collision_check_position
 func get_collision_grid_position():
 	grid_position = collision_grid.find_grid_position(position, object_size)
-	#print(object_name)
-	#print(position)
-	#print(grid_position)
-	#print("--------")
 
 func compare_grid_position_with_tester(tester_position):
 	if position != last_collision_check_position:

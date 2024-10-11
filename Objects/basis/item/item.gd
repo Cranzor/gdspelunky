@@ -1,3 +1,4 @@
+@icon("res://sprites/items/weapons/jar/jar_0.png")
 extends DrawnSprite
 class_name Item
 
