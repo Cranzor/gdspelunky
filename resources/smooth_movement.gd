@@ -10,12 +10,15 @@ var tick_end_position: Vector2
 var initialized: bool = false
 var moving_object: bool = false
 
+const EPSILON = 0.00001
+#--- if a > b - EPSILON and a < b + EPSILON
+
 func tick_start(position, animated_sprite_node):
 	if animated_sprite_node != null:
-		if tick_end_position.x == position.x:
+		if abs(tick_end_position.x - tick_start_position.x) < EPSILON:
 			x_velocity = 0
 			animated_sprite_node.global_position.x = position.x
-		if tick_end_position.y == position.y:
+		if abs(tick_end_position.y - tick_start_position.y) < EPSILON:
 			y_velocity = 0
 			animated_sprite_node.global_position.y = position.y
 	tick_start_position = position
@@ -27,12 +30,15 @@ func tick_end(position, animated_sprite_node):
 		var diff = tick_end_position - tick_start_position
 		x_velocity = diff.x
 		y_velocity = diff.y
+		
+		
 
-func handle_smooth_motion(node):
-	check_if_moving_object(node.position, node.sprite_index_name)
+func handle_smooth_motion(node, delta, physics_delta):
+	if not moving_object:
+		check_if_moving_object(node.sprite_index_name)
 	if moving_object:
 		initialize_sprite_for_smooth_movement(node)
-		update_animated_sprite_2d_position(x_velocity, y_velocity, node.animated_sprite_node)
+		update_animated_sprite_2d_position(node.animated_sprite_node, delta, physics_delta)
 		#else:
 			#reset_velocity(node)
 
@@ -41,8 +47,8 @@ func handle_smooth_motion(node):
 	#node.y_velocity = 0
 
 
-func check_if_moving_object(position, sprite_index):
-	if position != tick_end_position and sprite_index != null:
+func check_if_moving_object(sprite_index):
+	if tick_start_position != tick_end_position and sprite_index != null:
 		moving_object = true
 
 func did_object_move(position):
@@ -53,9 +59,9 @@ func did_object_move(position):
 		return true
 
 	
-func update_animated_sprite_2d_position(x_velocity, y_velocity, animated_sprite):
-	animated_sprite.global_position.x += (x_velocity * 30) * get_process_delta_time()
-	animated_sprite.global_position.y += (y_velocity * 30) * get_process_delta_time()
+func update_animated_sprite_2d_position(animated_sprite, delta, physics_delta):
+	animated_sprite.global_position.x += (x_velocity * (physics_delta * 30 * 30)) * delta
+	animated_sprite.global_position.y += (y_velocity * (physics_delta * 30 * 30))  * delta
 	
 	
 func initialize_sprite_for_smooth_movement(node):

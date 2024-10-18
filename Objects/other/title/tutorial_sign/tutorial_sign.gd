@@ -7,4 +7,4 @@ func _physics_process(delta):
 	object_tick()
 
 func _process(delta):
-	object_process()
+	object_process(delta)

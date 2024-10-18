@@ -5,12 +5,12 @@ func _ready():
 
 func _physics_process(delta):
 	object_tick()
-
-func _process(delta):
-	object_process()
 	print(position)
 	print(animated_sprite_node.global_position)
 	print("---")
+
+func _process(delta):
+	object_process(delta)
 
 #--- Object functions
 var climb_snd_toggle

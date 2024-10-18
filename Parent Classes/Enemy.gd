@@ -2,48 +2,48 @@ extends DrawnSprite
 class_name Enemy
 
 var hp
-var active
+
 var shaking
 var shake_counter
-var bloodless
+
 var blood_left
 var flying
-var heavy
-var my_grav
+
+
 var my_grav_norm
 var my_grav_water
 var y_vel_limit
-var bounce_factor
-var friction_factor
-var held
-var armed
+
+
+
+
 var trigger
-var safe
-var sticky
-var can_pick_up
-var cost
-var for_sale
+
+
+
+
+
 var favor
 var sac_count
 var counts_as_kill
 var burning
 var swimming
-var stun_time
+
 var LEFT
 var RIGHT
-var facing
-var STUNNED
+
+
 var DEAD
 var bomb_id
 
-var x_vel
-var y_vel
-@onready var player1 = get_tree().get_first_node_in_group("player1")
-var status
+
+
+@onready var player1 = get_tree().get_first_node_in_group("player1") #--- FLAG change this
+
 var sprite_width
 var sprite_height
 var counter
-var image_speed
+
 var s_spikes_blood
 var s_alien_boss_hurt
 
@@ -216,7 +216,7 @@ func enemy_step():
 
 	if (gml.collision_point(position.x+8, position.y+16, "spikes", 0, 0) and y_vel > 2):
 
-		var spikes = gml.instance_place(position.x+8, position.y+14, 'spikes')
+		var spikes = gml.instance_place(position.x+8, position.y+14, 'spikes', self)
 		
 		if (not bloodless):
 		

@@ -11,7 +11,7 @@ func _physics_process(delta):
 	#print(animated_sprite_node.position)
 	
 func _process(delta):
-	object_process()
+	object_process(delta)
 
 #--- Object functions
 

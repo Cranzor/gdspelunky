@@ -8,7 +8,7 @@ func _physics_process(delta):
 	hide_labels()
 
 func _process(delta):
-	object_process()
+	object_process(delta)
 
 #--- Object functions
 @onready var press_up_to_enter = $PressUpToEnter

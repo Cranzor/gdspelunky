@@ -15,7 +15,7 @@ var moving_object = false
 
 var sprite_index_name
 
-var animated_sprite_node
+var animated_sprite_node = null
 
 @export var object_name: String
 var object_hash: String
@@ -433,8 +433,6 @@ var tick_end_position1: Vector2
 
 var smooth_motion = SmoothMotion.new()
 func object_tick():
-	if object_name == 'p_dummy3':
-		print("hi")
 	smooth_motion.tick_start(position, animated_sprite_node)
 
 	run_step_event(self)
@@ -467,10 +465,8 @@ func run_draw_event(obj):
 	if obj.has_method("draw"):
 		obj.draw()
 
-func object_process():
-	if object_name == 'p_dummy3':
-		print("hi")
-	smooth_motion.handle_smooth_motion(self)
+func object_process(delta):
+	smooth_motion.handle_smooth_motion(self, delta, get_physics_process_delta_time())
 
 func did_object_move():
 	var current_position = position
