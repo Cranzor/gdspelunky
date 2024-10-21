@@ -17,10 +17,6 @@ var money_diff
 var players: Array
 var players_length
 
-@onready var alarm_0_timer = $"Alarms/Alarm 0"
-@onready var alarm_1_timer = $"Alarms/Alarm 1"
-@onready var alarm_2_timer = $"Alarms/Alarm 2"
-
 var physics_frame_rate = 30
 
 func initial_setup():
@@ -46,15 +42,14 @@ func _physics_process(delta):
 	step()
 	draw()
 
-func _on_alarm_0_timeout():
+func alarm_0():
 	if (draw_status < 3): draw_status = 2
-	if alarm_1_timer.is_stopped():
-		alarm_1_timer.start(float(50)/float(physics_frame_rate))
+	alarm_1_countdown.start(50)
 
-func _on_alarm_1_timeout():
+func alarm_1():
 	if (draw_status < 3): draw_status = 3
 
-func _on_alarm_2_timeout():
+func alarm_2():
 	global.udjat_blink = not global.udjat_blink
 
 	if (global.has_udjat_eye):
@@ -389,7 +384,7 @@ func step():
 		
 			player1_instance.dm = gml.distance_to_object('x_market', player1_instance)
 			if (player1_instance.dm < 4): player1_instance.dm = 4
-			if (ceil(alarm_2_timer.time_left * physics_frame_rate)) < 1 or player1_instance.dm < ceil(alarm_2_timer.time_left * physics_frame_rate): alarm_2_timer.start(float(player1_instance.dm) / float(physics_frame_rate))
+			if (alarm_2_countdown.frames_to_count_down < 1 or player1_instance.dm < alarm_2_countdown.frames_to_count_down): alarm_2_countdown.start(player1_instance.dm)
 		
 
 
@@ -500,8 +495,7 @@ func step():
 		if (player1.dead):
 		
 			if (draw_status == 0):
-				if alarm_1_timer.is_stopped(): #--- [FLAG] may want to double check whether checking if the alarm is stopped is needed
-					alarm_0_timer.start(float(50)/float(physics_frame_rate))
+				alarm_0_countdown.start(50)
 				draw_status += 1
 			
 			if (draw_status > 2):

@@ -9,15 +9,6 @@ script = ExtResource("1_aosp6")
 
 [node name="Alarms" type="Node2D" parent="."]
 
-[node name="Alarm 0" type="Timer" parent="Alarms"]
-one_shot = true
-
-[node name="Alarm 1" type="Timer" parent="Alarms"]
-one_shot = true
-
-[node name="Alarm 2" type="Timer" parent="Alarms"]
-one_shot = true
-
 [node name="UI" type="Control" parent="."]
 visible = false
 layout_mode = 3
@@ -113,7 +104,3 @@ offset_bottom = 103.0
 theme_override_colors/font_color = Color(1, 1, 0, 1)
 theme_override_fonts/font = ExtResource("3_7mteh")
 text = "YOU SET A NEW RECORD!"
-
-[connection signal="timeout" from="Alarms/Alarm 0" to="." method="_on_alarm_0_timeout"]
-[connection signal="timeout" from="Alarms/Alarm 1" to="." method="_on_alarm_1_timeout"]
-[connection signal="timeout" from="Alarms/Alarm 2" to="." method="_on_alarm_2_timeout"]

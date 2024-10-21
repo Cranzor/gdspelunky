@@ -52,6 +52,7 @@ layer_28/name = "Layer28"
 layer_29/name = "Layer29"
 
 [node name="Button" type="Button" parent="."]
+visible = false
 offset_left = 576.0
 offset_top = 176.0
 offset_right = 584.0

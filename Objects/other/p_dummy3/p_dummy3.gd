@@ -5,9 +5,6 @@ func _ready():
 
 func _physics_process(delta):
 	object_tick()
-	print(position)
-	print(animated_sprite_node.global_position)
-	print("---")
 
 func _process(delta):
 	object_process(delta)
