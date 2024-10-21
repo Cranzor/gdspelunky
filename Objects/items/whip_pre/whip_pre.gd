@@ -10,8 +10,6 @@ func _process(delta):
 	object_process(delta)
 
 #--- Object functions
-@onready var alarm_0_node = $Alarm0
-
 func alarm_0():
 	gml.instance_destroy(self)
 
@@ -19,7 +17,7 @@ func create():
 	drawn_sprite_create()
 	type = "whip"
 	damage = 1
-	alarm_0_node.start(3)
+	alarm_0_countdown.start(3)
 
 func step():
 	var player1 = gml.get_instance("player1") #--- [FLAG] may need to be changed for multiplayer
@@ -37,6 +35,3 @@ func step():
 
 		position.x = player1.position.x+16
 		position.y = player1.position.y
-
-func _on_alarm_0_timeout():
-	alarm_0()

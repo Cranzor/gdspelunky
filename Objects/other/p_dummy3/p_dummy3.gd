@@ -16,9 +16,6 @@ const ROPEDROP = 1
 const LEFT = 0
 const RIGHT = 0
 
-@onready var alarm_0_timer = $Alarms/Alarm0
-@onready var alarm_2_timer = $Alarms/Alarm2
-
 func create():
 	# dummy actor for intro
 
@@ -49,8 +46,7 @@ func step():
 			position.x += 2
 
 	elif (status == ROPEDROP):
-		if alarm_0_timer.is_stopped(): #--- [FLAG] check
-			alarm_0_timer.start(float(20)/float(gml.room_speed))
+		alarm_0_countdown.start(20)
 		status += 1
 
 	elif (status == 3):
@@ -74,8 +70,7 @@ func step():
 		
 			position.y += 2
 	
-		if alarm_2_timer.is_stopped():
-			alarm_2_timer.start(float(8)/float(gml.room_speed))
+		if (alarm_2_countdown.frames_to_count_down < 1): alarm_2_countdown.start(8)
 
 func draw():
 	#if (facing == RIGHT): image_xscale = -1
@@ -87,7 +82,7 @@ func draw():
 
 	#draw_sprite_ext(sprite_index, -1, position.x, position.y, image_xscale, image_yscale, image_angle, image_blend, image_alpha) #--- Not needed?
 
-func _on_alarm_0_timeout():
+func alarm_0():
 	var rope = gml.instance_create(position.x+16, position.y, Objects.rope_throw)
 	rope.falling = true
 	rope.armed = true
@@ -95,7 +90,7 @@ func _on_alarm_0_timeout():
 	status = 3
 	Audio.play_sound(global.snd_throw)
 
-func _on_alarm_2_timeout():
+func alarm_2():
 	if (climb_snd_toggle): Audio.play_sound(global.snd_climb1)
 	else: Audio.play_sound(global.snd_climb2)
 	climb_snd_toggle = not climb_snd_toggle

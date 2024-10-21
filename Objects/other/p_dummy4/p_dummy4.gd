@@ -12,8 +12,6 @@ func _process(delta):
 #--- Object functions
 var climb_snd_toggle
 
-@onready var alarm_2_timer = $Alarms/Alarm2
-
 func alarm_2():
 	if (climb_snd_toggle): Audio.play_sound(global.snd_climb1)
 	else: Audio.play_sound(global.snd_climb2)
@@ -46,8 +44,7 @@ func step():
 	
 			sprite_index = "climb_up3"
 			y_vel = 2
-			if alarm_2_timer.is_stopped():
-				alarm_2_timer.start(8.0/30.0)
+			if (alarm_2_countdown.frames_to_count_down < 1): alarm_2_countdown.start(8)
 	
 	
 		if (position.y >= 176 + 8):
@@ -62,6 +59,3 @@ func step():
 		var player = gml.instance_create(position.x, position.y, Objects.player1)
 		player.facing = 18
 		gml.instance_destroy(self)
-	
-func _on_alarm_2_timeout():
-	alarm_2()

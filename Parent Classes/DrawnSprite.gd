@@ -44,7 +44,7 @@ var alarm_11_countdown: Node
 		if animated_sprite:
 			animated_sprite.z_index = new_depth
 		else:
-			z_index = new_depth
+			z_index = new_depth #--- FLAG seems to give an error for canvas items?
 		depth = new_depth
 	get:
 		var animated_sprite = get_animated_sprite_2d()
@@ -306,7 +306,7 @@ func object_setup():
 	sprite_setup(object_entry)
 	bounding_box_setup()
 	collision_setup()
-	if object_name == "flare" or object_name == "intro" or object_name == "game" or object_name == "player1":
+	if object_name == "flare" or object_name == "intro" or object_name == "game" or object_name == "player1" or object_name == "whip_pre" or object_name == "p_dummy3" or object_name == "p_dummy4":
 		alarms_setup(object_entry)
 	run_create_function(self)
 	

@@ -1,17 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://c4rd2pqgwc1m1"]
+[gd_scene load_steps=2 format=3 uid="uid://c4rd2pqgwc1m1"]
 
 [ext_resource type="Script" path="res://objects/other/p_dummy4/p_dummy4.gd" id="1_r4lg4"]
-[ext_resource type="PackedScene" uid="uid://dlliudu6mbm0t" path="res://alarm_old.tscn" id="21_0irgu"]
 
 [node name="PDummy4" type="Node2D" groups=["drawn_sprite", "p_dummy4"]]
 z_index = -50
 script = ExtResource("1_r4lg4")
 object_name = "p_dummy4"
 object_size = Vector2(16, 16)
-
-[node name="Alarms" type="Node2D" parent="."]
-
-[node name="Alarm2" parent="Alarms" instance=ExtResource("21_0irgu")]
-wait_time = 0.266
-
-[connection signal="timeout" from="Alarms/Alarm2" to="." method="_on_alarm_2_timeout"]
