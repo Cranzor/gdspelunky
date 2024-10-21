@@ -5,20 +5,7 @@
 
 [node name="Title" type="Node2D" groups=["title"]]
 script = ExtResource("1_s0op7")
-
-[node name="Alarms" type="Node2D" parent="."]
-
-[node name="Alarm0" type="Timer" parent="Alarms"]
-one_shot = true
-
-[node name="Alarm1" type="Timer" parent="Alarms"]
-one_shot = true
-
-[node name="Alarm2" type="Timer" parent="Alarms"]
-one_shot = true
-
-[node name="Alarm3" type="Timer" parent="Alarms"]
-one_shot = true
+object_name = "title"
 
 [node name="ShortcutHouse" type="Label" parent="."]
 visible = false
@@ -28,8 +15,3 @@ offset_right = 280.0
 offset_bottom = 247.0
 theme_override_fonts/font = ExtResource("2_wketc")
 text = "WELCOME TO THE SHORTCUT HOUSE!"
-
-[connection signal="timeout" from="Alarms/Alarm0" to="." method="_on_alarm_0_timeout"]
-[connection signal="timeout" from="Alarms/Alarm1" to="." method="_on_alarm_1_timeout"]
-[connection signal="timeout" from="Alarms/Alarm2" to="." method="_on_alarm_2_timeout"]
-[connection signal="timeout" from="Alarms/Alarm3" to="." method="_on_alarm_3_timeout"]

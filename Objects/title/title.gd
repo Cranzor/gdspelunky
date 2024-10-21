@@ -1,5 +1,15 @@
 extends DrawnSprite #--- changing this even though there is no parent
 
+func _ready():
+	object_setup()
+
+func _physics_process(delta):
+	object_tick()
+
+func _process(delta):
+	object_process(delta)
+
+#--- Object functions
 var darkness
 var need_dark
 var fade_out
@@ -9,33 +19,12 @@ var t_time
 var t_kills
 var t_saves
 
-@onready var alarm_0_timer = $Alarms/Alarm0
-@onready var alarm_1_timer = $Alarms/Alarm1
-@onready var alarm_2_timer = $Alarms/Alarm2
-@onready var alarm_3_timer = $Alarms/Alarm3
-
 @onready var shortcut_house = $ShortcutHouse
 
 var brick = preload("res://objects/blocks/brick/brick.tscn")
 var tunnel_man = preload("res://objects/characters/tunnel_man/tunnel_man.tscn")
 var flare = preload("res://objects/items/flare/flare.tscn")
 #var p_dummy4 = preload("res://objects/other/p_dummy4/p_dummy4.tscn")
-
-func initial_setup():
-	#--- set size
-	object_size = Vector2(0, 0)
-
-	#--- set depth
-	depth = 0
-	z_index = depth
-
-func _ready():
-	initial_setup()
-	create()
-
-func _physics_process(delta):
-	step()
-	draw()
 
 func _input(event):
 	if gml.keyboard_check_pressed(KEY_F2):
@@ -113,8 +102,7 @@ func create():
 	if (global.title_start == 0):
 
 		darkness = 1
-		if alarm_0_timer.is_stopped():
-			alarm_0_timer.start(50.0 / 30.0)
+		alarm_0_countdown.start(50)
 		Screen.can_pause = false
 		#gml.instance_create(280, -32, "p_dummy4")
 		#gml.instance_create(280, 32, "flare")
@@ -248,25 +236,21 @@ func key_f3_pressed():
 	global.test_level = ""
 	get_tree().change_scene_to_file("res://rooms/load_level/load_level.tscn")
 
-func _on_alarm_0_timeout():
+func alarm_0():
 	state = 1
-	if alarm_1_timer.is_stopped():
-		alarm_1_timer.start(100.0/30.0)
+	alarm_1_countdown.start(100)
 
-func _on_alarm_1_timeout():
+func alarm_1():
 	state = 2
-	if alarm_2_timer.is_stopped():
-		alarm_2_timer.start(70.0/30.0)
+	alarm_2_countdown.start(70)
 
-func _on_alarm_2_timeout():
+func alarm_2():
 	state = 3
 	gml.instance_create(320+280, -8, flare)
 	Audio.play_sound(global.snd_ignite)
-	if alarm_3_timer.is_stopped():
-		alarm_3_timer.start(50.0/30.0)
+	alarm_3_countdown.start(50)
 
-
-func _on_alarm_3_timeout():
+func alarm_3():
 	gml.instance_create(320+280, -32, Objects.p_dummy4)
 	Screen.can_pause = true
 	Audio.play_sound(global.mus_title) #--- don't see why the "true" here is needed
