@@ -6,8 +6,7 @@
 
 [node name="Game" type="Node2D" groups=["game"]]
 script = ExtResource("1_aosp6")
-
-[node name="Alarms" type="Node2D" parent="."]
+object_name = "game"
 
 [node name="UI" type="Control" parent="."]
 visible = false

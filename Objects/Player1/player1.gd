@@ -209,14 +209,6 @@ var slope_change_in_y
 var y_prev_high
 #------------------------------------------------------------------
 
-var alarm_0_active
-var alarm_1_active
-var alarm_2_active
-var alarm_3_active
-var alarm_4_active
-var alarm_10_active
-var alarm_11_active
-
 var test = true
 var final_x_vel = 0
 var final_y_vel = 0
@@ -958,7 +950,7 @@ func handle_chest_opening():
 				obj.x_vel = randi_range(0,3) - randi_range(0,3)
 				obj.y_vel = -2
 				obj.sprite_index = "bomb_armed"
-				obj.alarm_1(40) #--- this may need to be checked (uses 'with' in original code. but this should work)
+				obj.alarm_1_countdown.start(40) #--- this may need to be checked (uses 'with' in original code. but this should work)
 				
 				Audio.play_sound(global.snd_trap)
 			
@@ -1500,7 +1492,7 @@ func bomb_rope_and_whipping_handling(): #--- Also handles picking up items and a
 	elif (in_game and k_bomb_pressed and global.bombs > 0 and not whipping and bow_armed):
 
 		hold_arrow = ARROW_BOMB
-		alarm_11(1)
+		alarm_11_countdown.start(1)
 
 	elif (in_game and k_bomb_pressed and global.bombs > 0 and not whipping):
 
@@ -1508,11 +1500,11 @@ func bomb_rope_and_whipping_handling(): #--- Also handles picking up items and a
 		if (global.has_sticky_bombs): obj.sticky = true
 		obj.sprite_index = "bomb_armed"
 		obj.armed = true
-		obj.alarm_0(80)
+		obj.alarm_0_countdown.start(80)
 		obj.image_speed = 0.2
 			   
 		obj.safe = true
-		obj.alarm_2(10)
+		obj.alarm_2_countdown.start(10)
 				
 		if (facing == LEFT):
 		
@@ -1591,7 +1583,7 @@ func bomb_rope_and_whipping_handling(): #--- Also handles picking up items and a
 						if (global.level_type == 0):
 						
 							var trap_instance = gml.instance_nearest(position.x, position.y-64, 'giant_tiki_head')
-							trap_instance.alarm_0(100)
+							trap_instance.alarm_0_countdown.start(100)
 							InLevel.scr_shake(100)
 							hold_item.trigger = false
 						
@@ -2291,7 +2283,7 @@ func handle_ankh_revival():
 				
 					global.mini2 = moon_room.baskets
 					moon_room.timer = -1
-					moon_room.alarm_10(30)
+					moon_room.alarm_10_countdown.start(30)
 				
 				if (InLevel.is_room("r_stars")): global.mini3 = stars_room.kills
 				if (global.mini1 > 99): global.mini1 = 99
@@ -2889,7 +2881,7 @@ func handle_ladder_climbing():
 			if (gml.collision_point(position.x, position.y-8, 'ladder', 0, 0) or gml.collision_point(position.x, position.y-8, 'ladder_top', 0, 0)):
 			
 				y_acc -= climb_acc
-				if (alarm_2_active == false): alarm_2(8)
+				if (alarm_2_countdown.frames_to_count_down < 1): alarm_2_countdown.start(8)
 			
 		
 		elif (k_down):
@@ -2897,7 +2889,7 @@ func handle_ladder_climbing():
 			if (gml.collision_point(position.x, position.y+8, 'ladder', 0, 0) or gml.collision_point(position.x, position.y+8, 'ladder_top', 0, 0)):
 			
 				y_acc += climb_acc
-				if (alarm_2_active == false): alarm_2(8)
+				if (alarm_2_countdown.frames_to_count_down < 1): alarm_2_countdown.start(8)
 			
 			else:
 				state = FALLING
@@ -3022,7 +3014,7 @@ func handle_jumping():
 		y_acc += initial_jump_acc
 		y_vel = -1
 		jetpack_fuel -= 1
-		if (alarm_10_active == false): alarm_10(3)
+		if (alarm_10_countdown.frames_to_count_down < 1): alarm_10_countdown.start(3)
 		
 		state = JUMPING
 		jump_button_released = false
@@ -3742,221 +3734,161 @@ func set_image_speed():
 	#limit the image_speed at 1 so the animation always looks good
 	if (image_speed > 1): image_speed = 1
 
-func alarm_0(frames):
-	if alarm_0_active == false:
-		if frames > 0:
-			alarm_0_active = true
-			var alarm_value = frames
-			var countdown_time = frames / 30
-			gml.alarm_timeout(countdown_time)
+func alarm_0():
+
+	
+	
+	if (InLevel.is_room("r_tutorial")):
+
+	# do nothing
+		pass
+		
+	elif (global.dark_level):
+
+		if (global.has_crown): global.message = "THE HEDJET SHINES BRIGHTLY."
+		else: global.message = "I CAN'T SEE A THING!"
+		if (global.has_crown): global.message2 = ""
+		else: global.message2 = "I'D BETTER USE THESE FLARES!"
+		global.message_timer = 200
+		alarm_1_countdown.start(210)
+
+	elif (global.black_market):
+
+		global.message = "WELCOME TO THE BLACK MARKET!"
+		global.message2 = ""
+		global.message_timer = 200
+		alarm_1_countdown.start(210)
+
+	elif (global.snake_pit):
+
+		global.message = "I HEAR SNAKES... I HATE SNAKES!"
+		global.message2 = ""
+		global.message_timer = 200
+
+	elif (global.cemetary):
+
+		global.message = "THE DEAD ARE RESTLESS!"
+		global.message2 = ""
+		global.message_timer = 200
+		if (global.lake): alarm_1_countdown.start(210)
+
+	elif (global.lake):
+
+		global.message = "I CAN HEAR RUSHING WATER..."
+		global.message2 = ""
+		global.message_timer = 200
+
+	elif (global.yeti_lair):
+
+		global.message = "IT SMELLS LIKE WET FUR IN HERE!"
+		global.message2 = ""
+		global.message_timer = 200
+
+	elif (global.alien_craft):
+
+		global.message = "THERE'S A PSYCHIC PRESENCE HERE!"
+		global.message2 = ""
+		global.message_timer = 200
+
+	elif (global.city_of_gold):
+
+		global.message = "IT'S THE LEGENDARY CITY OF GOLD!"
+		global.message2 = ""
+		global.message_timer = 200
+		if (global.sacrifice_pit): alarm_1_countdown.start(210)
+
+	elif (global.sacrifice_pit):
+
+		global.message = "I CAN HEAR PRAYERS TO KALI!"
+		global.message2 = ""
+		global.message_timer = 200
+
+func alarm_1():
+	if (InLevel.is_room("r_tutorial")):
+
+		# do nothing
+		pass
+
+	elif (global.snake_pit):
+
+		global.message = "I HEAR SNAKES... I HATE SNAKES!"
+		global.message2 = ""
+		global.message_timer = 200
+
+	elif (global.cemetary and global.dark_level):
+
+		global.message = "THE DEAD ARE RESTLESS!"
+		global.message2 = ""
+		global.message_timer = 200
+		if (global.lake): alarm_4_countdown.start(210)
+
+	elif (global.lake):
+
+		global.message = "I CAN HEAR RUSHING WATER..."
+		global.message2 = ""
+		global.message_timer = 200
+
+	elif (global.yeti_lair):
+
+		global.message = "IT SMELLS LIKE WET FUR IN HERE!"
+		global.message2 = ""
+		global.message_timer = 200
+
+	elif (global.alien_craft):
+
+		global.message = "THERE'S A PSYCHIC PRESENCE HERE!"
+		global.message2 = ""
+		global.message_timer = 200
+
+	elif (global.city_of_gold):
+
+		global.message = "IT'S THE LEGENDARY CITY OF GOLD!"
+		global.message2 = ""
+		global.message_timer = 200
+		if (global.sacrifice_pit): alarm_4_countdown.start(210)
+
+	elif (global.sacrifice_pit):
+
+		global.message = "I CAN HEAR PRAYERS TO KALI!"
+		global.message2 = ""
+		global.message_timer = 200
+
+func alarm_2():
+	if (climb_snd_toggle): Audio.play_sound(global.snd_climb1)
+	else: Audio.play_sound(global.snd_climb2)
+	climb_snd_toggle = not climb_snd_toggle
 			
+func alarm_3():
+	if (walk_snd_toggle): Audio.play_sound(global.snd_step1)
+	else: Audio.play_sound(global.snd_step2)
+	walk_snd_toggle = not walk_snd_toggle
 			
-			if (InLevel.is_room("r_tutorial")):
 
-			# do nothing
-				pass
-				
-			elif (global.dark_level):
+func alarm_4():			
+	if (global.lake):
 
-				if (global.has_crown): global.message = "THE HEDJET SHINES BRIGHTLY."
-				else: global.message = "I CAN'T SEE A THING!"
-				if (global.has_crown): global.message2 = ""
-				else: global.message2 = "I'D BETTER USE THESE FLARES!"
-				global.message_timer = 200
-				alarm_1(210)
+		global.message = "YOU HEAR RUSHING WATER..."
+		global.message2 = ""
+		global.message_timer = 200
 
-			elif (global.black_market):
+	elif (global.sacrifice_pit):
 
-				global.message = "WELCOME TO THE BLACK MARKET!"
-				global.message2 = ""
-				global.message_timer = 200
-				alarm_1(210)
-
-			elif (global.snake_pit):
-
-				global.message = "I HEAR SNAKES... I HATE SNAKES!"
-				global.message2 = ""
-				global.message_timer = 200
-
-			elif (global.cemetary):
-
-				global.message = "THE DEAD ARE RESTLESS!"
-				global.message2 = ""
-				global.message_timer = 200
-				if (global.lake): alarm_1(210)
-
-			elif (global.lake):
-
-				global.message = "I CAN HEAR RUSHING WATER..."
-				global.message2 = ""
-				global.message_timer = 200
-
-			elif (global.yeti_lair):
-
-				global.message = "IT SMELLS LIKE WET FUR IN HERE!"
-				global.message2 = ""
-				global.message_timer = 200
-
-			elif (global.alien_craft):
-
-				global.message = "THERE'S A PSYCHIC PRESENCE HERE!"
-				global.message2 = ""
-				global.message_timer = 200
-
-			elif (global.city_of_gold):
-
-				global.message = "IT'S THE LEGENDARY CITY OF GOLD!"
-				global.message2 = ""
-				global.message_timer = 200
-				if (global.sacrifice_pit): alarm_1(210)
-
-			elif (global.sacrifice_pit):
-
-				global.message = "I CAN HEAR PRAYERS TO KALI!"
-				global.message2 = ""
-				global.message_timer = 200
-
-			alarm_0_active = false
-
-func alarm_1(frames):
-	if alarm_1_active == false:
-		if frames > 0:
-			alarm_1_active = true
-			var alarm_value = frames
-			var countdown_time = frames / 30
-			gml.alarm_timeout(countdown_time)
+		global.message = "I CAN HEAR PRAYERS TO KALI!"
+		global.message2 = ""
+		global.message_timer = 200
 			
-			if (InLevel.is_room("r_tutorial")):
-
-				# do nothing
-				pass
-
-			elif (global.snake_pit):
-
-				global.message = "I HEAR SNAKES... I HATE SNAKES!"
-				global.message2 = ""
-				global.message_timer = 200
-
-			elif (global.cemetary and global.dark_level):
-
-				global.message = "THE DEAD ARE RESTLESS!"
-				global.message2 = ""
-				global.message_timer = 200
-				if (global.lake): alarm_4(210)
-
-			elif (global.lake):
-
-				global.message = "I CAN HEAR RUSHING WATER..."
-				global.message2 = ""
-				global.message_timer = 200
-
-			elif (global.yeti_lair):
-
-				global.message = "IT SMELLS LIKE WET FUR IN HERE!"
-				global.message2 = ""
-				global.message_timer = 200
-
-			elif (global.alien_craft):
-
-				global.message = "THERE'S A PSYCHIC PRESENCE HERE!"
-				global.message2 = ""
-				global.message_timer = 200
-
-			elif (global.city_of_gold):
-
-				global.message = "IT'S THE LEGENDARY CITY OF GOLD!"
-				global.message2 = ""
-				global.message_timer = 200
-				if (global.sacrifice_pit): alarm_4(210)
-
-			elif (global.sacrifice_pit):
-
-				global.message = "I CAN HEAR PRAYERS TO KALI!"
-				global.message2 = ""
-				global.message_timer = 200
+func alarm_10():
+	var obj = gml.instance_create(position.x+randi_range(0,3)-randi_range(0,3), position.y+randi_range(0,3)-randi_range(0,3), "flare_spark")
+	obj.y_vel = randi_range(1,3)
+	obj.x_vel = randi_range(0,3) - randi_range(0,3)
+	Audio.play_sound(global.snd_jetpack)
 			
-			alarm_1_active = false
+func alarm_11():			
+	if (hold_arrow > 0):
 
-func alarm_2(frames):
-	if alarm_2_active == false:
-		if frames > 0:
-			alarm_2_active = true
-			var alarm_value = frames
-			var countdown_time = frames / 30
-			gml.alarm_timeout(countdown_time)
+		hold_arrow_toggle = not hold_arrow_toggle
+		alarm_11_countdown.start(1)
 			
-			if (climb_snd_toggle): Audio.play_sound(global.snd_climb1)
-			else: Audio.play_sound(global.snd_climb2)
-			climb_snd_toggle = not climb_snd_toggle
-			
-			alarm_2_active = false
-			
-func alarm_3(frames):
-	if alarm_3_active == false:
-		if frames > 0:
-			alarm_3_active = true
-			var alarm_value = frames
-			var countdown_time = frames / 30
-			gml.alarm_timeout(countdown_time)
-			
-			if (walk_snd_toggle): Audio.play_sound(global.snd_step1)
-			else: Audio.play_sound(global.snd_step2)
-			walk_snd_toggle = not walk_snd_toggle
-			
-			alarm_3_active = false
-
-func alarm_4(frames):
-	if alarm_4_active == false:
-		if frames > 0:
-			alarm_4_active = true
-			var alarm_value = frames
-			var countdown_time = frames / 30
-			gml.alarm_timeout(countdown_time)
-			
-			if (global.lake):
-
-				global.message = "YOU HEAR RUSHING WATER..."
-				global.message2 = ""
-				global.message_timer = 200
-
-			elif (global.sacrifice_pit):
-
-				global.message = "I CAN HEAR PRAYERS TO KALI!"
-				global.message2 = ""
-				global.message_timer = 200
-			
-			alarm_4_active = false
-
-func alarm_10(frames):
-	if alarm_10_active == false:
-		if frames > 0:
-			alarm_10_active = true
-			var alarm_value = frames
-			var countdown_time = frames / 30
-			gml.alarm_timeout(countdown_time)
-			
-			var obj = gml.instance_create(position.x+randi_range(0,3)-randi_range(0,3), position.y+randi_range(0,3)-randi_range(0,3), "flare_spark")
-			obj.y_vel = randi_range(1,3)
-			obj.x_vel = randi_range(0,3) - randi_range(0,3)
-			Audio.play_sound(global.snd_jetpack)
-			
-			alarm_10_active = false
-
-func alarm_11(frames):
-	if alarm_11_active == false:
-		if frames > 0:
-			alarm_11_active = true
-			var alarm_value = frames
-			var countdown_time = frames / 30
-			gml.alarm_timeout(countdown_time)
-			
-			if (hold_arrow > 0):
-
-				hold_arrow_toggle = not hold_arrow_toggle
-				alarm_11(1)
-			
-			alarm_11_active = false
-
 func platform_character_is(character_trait): #--- putting this here instead of PlatformEngine to make things easier
 	#/*
 	#Returns whether a GENERAL trait about a character is true.

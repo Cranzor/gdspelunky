@@ -306,7 +306,7 @@ func object_setup():
 	sprite_setup(object_entry)
 	bounding_box_setup()
 	collision_setup()
-	if object_name == "flare" or object_name == "intro":
+	if object_name == "flare" or object_name == "intro" or object_name == "game" or object_name == "player1":
 		alarms_setup(object_entry)
 	run_create_function(self)
 	
@@ -433,12 +433,12 @@ var tick_end_position1: Vector2
 
 var smooth_motion = SmoothMotion.new()
 func object_tick():
-	smooth_motion.tick_start(position, animated_sprite_node)
+	#smooth_motion.tick_start(position, animated_sprite_node)
 
 	run_step_event(self)
 	run_draw_event(self)
 
-	smooth_motion.tick_end(position, animated_sprite_node)
+	#smooth_motion.tick_end(position, animated_sprite_node)
 
 func alarms_setup(object_entry):
 	var events: Array = object_entry["events"]
@@ -466,8 +466,8 @@ func run_draw_event(obj):
 		obj.draw()
 
 func object_process(delta):
-	smooth_motion.handle_smooth_motion(self, delta, get_physics_process_delta_time())
-
+	#smooth_motion.handle_smooth_motion(self, delta, get_physics_process_delta_time())
+	pass
 func did_object_move():
 	var current_position = position
 	if current_position == test_prior_tick_position:

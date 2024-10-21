@@ -19,28 +19,9 @@ var players_length
 
 var physics_frame_rate = 30
 
-func initial_setup():
-	#--- set size
-	object_size = Vector2(0, 0)
-
-	#--- set depth
-	depth = 0
-	z_index = depth
-
-	#_create()
-
-func _ready():
-	initial_setup()
-	create()
-	
 func _input(event):
 	if Input.is_key_pressed(KEY_M):
 		key_m_pressed()
-
-func _physics_process(delta):
-	game_step_event()
-	step()
-	draw()
 
 func alarm_0():
 	if (draw_status < 3): draw_status = 2
@@ -376,6 +357,8 @@ func create():
 	if (global.game_start): LevelGeneration.scr_init_level()
 
 func step():
+	game_step_event()
+	
 	if (not gml.instance_exists("x_market")): global.udjat_blink = false
 	else:
 

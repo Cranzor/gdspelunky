@@ -1,29 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://dxk74orkbwm5u"]
+[gd_scene load_steps=4 format=3 uid="uid://dxk74orkbwm5u"]
 
 [ext_resource type="Script" path="res://objects/player1/player1.gd" id="1_e0vak"]
-[ext_resource type="PackedScene" uid="uid://dlliudu6mbm0t" path="res://alarm_old.tscn" id="484_1gxhx"]
 [ext_resource type="FontFile" uid="uid://dgd06bxddo4pq" path="res://fonts/small_font.png" id="485_i3dxl"]
 [ext_resource type="Script" path="res://debug_player_state.gd" id="486_8kwyl"]
 
 [node name="Player1" type="Node2D" groups=["character", "player1"]]
 script = ExtResource("1_e0vak")
 object_name = "player1"
-
-[node name="Alarms" type="Node2D" parent="."]
-
-[node name="Alarm0" parent="Alarms" instance=ExtResource("484_1gxhx")]
-
-[node name="Alarm1" parent="Alarms" instance=ExtResource("484_1gxhx")]
-
-[node name="Alarm2" parent="Alarms" instance=ExtResource("484_1gxhx")]
-
-[node name="Alarm3" parent="Alarms" instance=ExtResource("484_1gxhx")]
-
-[node name="Alarm4" parent="Alarms" instance=ExtResource("484_1gxhx")]
-
-[node name="Alarm10" parent="Alarms" instance=ExtResource("484_1gxhx")]
-
-[node name="Alarm11" parent="Alarms" instance=ExtResource("484_1gxhx")]
 
 [node name="DebugPlayerState" type="Label" parent="."]
 visible = false
