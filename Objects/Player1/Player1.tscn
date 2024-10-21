@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dxk74orkbwm5u"]
+[gd_scene load_steps=5 format=3 uid="uid://dxk74orkbwm5u"]
 
 [ext_resource type="Script" path="res://objects/player1/player1.gd" id="1_e0vak"]
+[ext_resource type="PackedScene" uid="uid://bft8urcdv7lh0" path="res://view.tscn" id="4_0a32v"]
 [ext_resource type="FontFile" uid="uid://dgd06bxddo4pq" path="res://fonts/small_font.png" id="485_i3dxl"]
 [ext_resource type="Script" path="res://debug_player_state.gd" id="486_8kwyl"]
 
@@ -17,3 +18,5 @@ offset_bottom = -9.0
 theme_override_fonts/font = ExtResource("485_i3dxl")
 text = "WALK"
 script = ExtResource("486_8kwyl")
+
+[node name="View" parent="." instance=ExtResource("4_0a32v")]

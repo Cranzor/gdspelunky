@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://chivya8n7oo3x"]
+
+[ext_resource type="Texture2D" uid="uid://bg6n8u7t0o8dy" path="res://backgrounds/bg_cave.png" id="1_fpwm1"]
+
+[node name="TextureRect" type="TextureRect"]
+z_index = -4096
+offset_right = 768.0
+offset_bottom = 512.0
+texture = ExtResource("1_fpwm1")
+stretch_mode = 1

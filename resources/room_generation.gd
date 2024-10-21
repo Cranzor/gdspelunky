@@ -15,6 +15,7 @@ func generate_room(room_name: String):
 	for instance in room_instances:
 		x+=1
 		var object = instance['object']
+		print(object)
 		var position = instance['position']
 		var object_position = Vector2(int(position['x']), int(position['y']))
 		var object_folder_path = objects.object_database[object]['folder_path']

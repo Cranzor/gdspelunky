@@ -151,7 +151,8 @@ func instance_place(x,y,obj: String, comparison_object): #' Returns the id of th
 	
 	if sprite_database.sprite_database[comparison_current_sprite]["mask"]["shape"] == "RECTANGLE":
 		bounding_box = sprite_database.sprite_database[comparison_current_sprite]["mask"]["collision_rectangles"][1]
-		position_with_offset = collision_handling.get_position_with_offset_applied(Vector2(x, y), offset - sprite_database.sprite_database[obj]["mask"]["collision_rectangles"][0])
+		#position_with_offset = collision_handling.get_position_with_offset_applied(Vector2(x, y), offset - sprite_database.sprite_database[obj]["mask"]["collision_rectangles"][0])
+		position_with_offset = collision_handling.get_position_with_offset_applied(Vector2(x, y), offset - sprite_database.sprite_database[comparison_current_sprite]["mask"]["collision_rectangles"][0])
 	
 	var comparison_rect: Rect2 = Rect2(position_with_offset, bounding_box)
 	

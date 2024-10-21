@@ -306,8 +306,7 @@ func object_setup():
 	sprite_setup(object_entry)
 	bounding_box_setup()
 	collision_setup()
-	if object_name == "flare" or object_name == "intro" or object_name == "game" or object_name == "player1" or object_name == "whip_pre" or object_name == "p_dummy3" or object_name == "p_dummy4" or object_name == "title":
-		alarms_setup(object_entry)
+	alarms_setup(object_entry)
 	run_create_function(self)
 	
 	#--- for flare_spark

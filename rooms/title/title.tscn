@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dccnfhv6qaic4"]
 
 [ext_resource type="Script" path="res://rooms/title/title.gd" id="1_8aivo"]
-[ext_resource type="Texture2D" uid="uid://bg6n8u7t0o8dy" path="res://backgrounds/bg_cave.png" id="21_1wm2m"]
+[ext_resource type="PackedScene" uid="uid://chivya8n7oo3x" path="res://texture_rect.tscn" id="2_82mmd"]
 [ext_resource type="PackedScene" uid="uid://bft8urcdv7lh0" path="res://view.tscn" id="21_4id85"]
 [ext_resource type="PackedScene" uid="uid://b8sip2nv63phc" path="res://FPSCounter.tscn" id="23_57set"]
 [ext_resource type="PackedScene" uid="uid://b2jlcu453ynaf" path="res://bg_elements.tscn" id="24_c1f05"]
@@ -10,12 +10,7 @@
 [node name="Title" type="Node2D" groups=["objects_holder"]]
 script = ExtResource("1_8aivo")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-z_index = -4096
-offset_right = 768.0
-offset_bottom = 512.0
-texture = ExtResource("21_1wm2m")
-stretch_mode = 1
+[node name="TextureRect" parent="." instance=ExtResource("2_82mmd")]
 
 [node name="FpsCounter" parent="." instance=ExtResource("23_57set")]
 

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxph7np7ruc8f"]
+
+[ext_resource type="Script" path="res://objects/blocks/msg_sign/msg_sign.gd" id="1_yjkoe"]
+
+[node name="MsgSign" type="Node2D"]
+script = ExtResource("1_yjkoe")
+object_name = "msg_sign"

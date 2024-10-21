@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvd8sg3ne6j16"]
+
+[ext_resource type="Script" path="res://objects/collectibles/gold_bars/gold_bars.gd" id="1_461j4"]
+
+[node name="GoldBars" type="Node2D"]
+script = ExtResource("1_461j4")
+object_name = "gold_bars"
