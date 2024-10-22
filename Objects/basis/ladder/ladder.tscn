@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://2dw4kkllo25q"]
+
+[ext_resource type="Script" path="res://objects/basis/ladder/ladder.gd" id="1_kjcut"]
+
+[node name="Ladder" type="Node2D"]
+script = ExtResource("1_kjcut")
+object_name = "ladder"
