@@ -1,6 +1,18 @@
 extends Node2D
 class_name GMObject
 
+func _ready():
+	if object_name == "p_dummy3":
+		object_setup()
+
+func _physics_process(delta):
+	if object_name == "p_dummy3":
+		object_tick()
+
+func _process(delta):
+	if object_name == "p_dummy3":
+		object_process(delta)
+
 var object_database = ObjectDatabase.new()
 var sprites = Sprites.new()
 
@@ -36,14 +48,18 @@ var alarm_11_countdown: Node
 
 @export var depth: int = 0:
 	set(new_depth):
+		var minimum_depth = -4096
+		
 		if new_depth > 0: #--- changing positive GML depth to negative in case it is not already changed
 			new_depth = -new_depth
+			if new_depth < minimum_depth:
+				new_depth = minimum_depth
 		
 		var animated_sprite = get_animated_sprite_2d()
 		if animated_sprite:
 			animated_sprite.z_index = new_depth
 		else:
-			z_index = new_depth #--- FLAG seems to give an error for canvas items?
+			z_index = new_depth #--- [FLAG] seems to give an error for canvas items?
 		depth = new_depth
 	get:
 		var animated_sprite = get_animated_sprite_2d()
