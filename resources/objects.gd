@@ -11,7 +11,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['bricks'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/bricks/bricks.tscn",
 		},
 	"credits1" : {
@@ -24,7 +24,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['credits1'],
-		"scripts" : ['alarm_0', 'alarm_1', 'alarm_11', 'alarm_2', 'alarm_3', 'alarm_4', 'alarm_5', 'alarm_6', 'alarm_7', 'alarm_8', 'create', 'draw', 'step'],
+		"events" : ['alarm_0', 'alarm_1', 'alarm_11', 'alarm_2', 'alarm_3', 'alarm_4', 'alarm_5', 'alarm_6', 'alarm_7', 'alarm_8', 'create', 'draw', 'step'],
 		"folder_path" : "res://objects/credits1/credits1.tscn",
 		},
 	"credits2" : {
@@ -37,7 +37,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['credits2'],
-		"scripts" : ['alarm_0', 'alarm_1', 'alarm_11', 'alarm_2', 'alarm_3', 'alarm_4', 'alarm_5', 'alarm_6', 'alarm_7', 'alarm_8', 'create', 'draw', 'step'],
+		"events" : ['alarm_0', 'alarm_1', 'alarm_11', 'alarm_2', 'alarm_3', 'alarm_4', 'alarm_5', 'alarm_6', 'alarm_7', 'alarm_8', 'create', 'draw', 'step'],
 		"folder_path" : "res://objects/credits2/credits2.tscn",
 		},
 	"curs_obj" : {
@@ -50,7 +50,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['curs_obj'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/curs_obj/curs_obj.tscn",
 		},
 	"end" : {
@@ -63,7 +63,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['end'],
-		"scripts" : ['create', 'room_end', 'step'],
+		"events" : ['create', 'room_end', 'step'],
 		"folder_path" : "res://objects/end/end.tscn",
 		},
 	"end2" : {
@@ -76,7 +76,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['end2'],
-		"scripts" : ['alarm_0', 'alarm_1', 'alarm_2', 'create', 'step'],
+		"events" : ['alarm_0', 'alarm_1', 'alarm_2', 'create', 'step'],
 		"folder_path" : "res://objects/end2/end2.tscn",
 		},
 	"end3" : {
@@ -89,7 +89,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['end3'],
-		"scripts" : ['alarm_0', 'alarm_1', 'alarm_11', 'alarm_2', 'alarm_3', 'alarm_4', 'alarm_5', 'create', 'draw', 'step'],
+		"events" : ['alarm_0', 'alarm_1', 'alarm_11', 'alarm_2', 'alarm_3', 'alarm_4', 'alarm_5', 'create', 'draw', 'step'],
 		"folder_path" : "res://objects/end3/end3.tscn",
 		},
 	"end_custom" : {
@@ -102,7 +102,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['end_custom'],
-		"scripts" : ['alarm_0', 'alarm_1', 'alarm_11', 'alarm_2', 'alarm_3', 'alarm_4', 'alarm_5', 'create', 'draw', 'step'],
+		"events" : ['alarm_0', 'alarm_1', 'alarm_11', 'alarm_2', 'alarm_3', 'alarm_4', 'alarm_5', 'create', 'draw', 'step'],
 		"folder_path" : "res://objects/end_custom/end_custom.tscn",
 		},
 	"final_boss" : {
@@ -115,7 +115,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['final_boss'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/final_boss/final_boss.tscn",
 		},
 	"game" : {
@@ -128,7 +128,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['game'],
-		"scripts" : ['alarm_0', 'alarm_1', 'alarm_2', 'create', 'draw', 'key_m_pressed', 'step'],
+		"events" : ['alarm_0', 'alarm_1', 'alarm_2', 'create', 'draw', 'key_m_pressed', 'step'],
 		"folder_path" : "res://objects/game/game.tscn",
 		},
 	"gamepad" : {
@@ -141,7 +141,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['gamepad'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/gamepad/gamepad.tscn",
 		},
 	"globals" : {
@@ -154,7 +154,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['globals'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/globals/globals.tscn",
 		},
 	"highscores" : {
@@ -167,7 +167,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['highscores'],
-		"scripts" : ['create', 'draw', 'key_q_pressed', 'step'],
+		"events" : ['create', 'draw', 'key_q_pressed', 'step'],
 		"folder_path" : "res://objects/highscores/highscores.tscn",
 		},
 	"intro" : {
@@ -180,7 +180,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['intro'],
-		"scripts" : ['alarm_10', 'alarm_11', 'alarm_8', 'alarm_9', 'create', 'draw', 'step'],
+		"events" : ['alarm_10', 'alarm_11', 'alarm_8', 'alarm_9', 'create', 'draw', 'step'],
 		"folder_path" : "res://objects/intro/intro.tscn",
 		},
 	"joy_config" : {
@@ -193,7 +193,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['joy_config'],
-		"scripts" : ['create', 'draw', 'room_end', 'step'],
+		"events" : ['create', 'draw', 'room_end', 'step'],
 		"folder_path" : "res://objects/joy_config/joy_config.tscn",
 		},
 	"key_config" : {
@@ -206,7 +206,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['key_config'],
-		"scripts" : ['create', 'draw', 'key_any_key_pressed', 'room_end'],
+		"events" : ['create', 'draw', 'key_any_key_pressed', 'room_end'],
 		"folder_path" : "res://objects/key_config/key_config.tscn",
 		},
 	"level" : {
@@ -219,7 +219,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['level'],
-		"scripts" : ['create', 'draw', 'room_end', 'step'],
+		"events" : ['create', 'draw', 'room_end', 'step'],
 		"folder_path" : "res://objects/level/level.tscn",
 		},
 	"level_editor" : {
@@ -232,7 +232,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['level_editor'],
-		"scripts" : ['create', 'draw', 'key_1_pressed', 'key_2_pressed', 'key_3_pressed', 'key_4_pressed', 'key_a_pressed', 'key_any_key_pressed', 'key_escape_pressed', 'key_n_pressed', 'key_s_pressed', 'key_y_pressed', 'mouse_wheel_down', 'mouse_wheel_up', 'step'],
+		"events" : ['create', 'draw', 'key_1_pressed', 'key_2_pressed', 'key_3_pressed', 'key_4_pressed', 'key_a_pressed', 'key_any_key_pressed', 'key_escape_pressed', 'key_n_pressed', 'key_s_pressed', 'key_y_pressed', 'mouse_wheel_down', 'mouse_wheel_up', 'step'],
 		"folder_path" : "res://objects/level_editor/level_editor.tscn",
 		},
 	"load_level" : {
@@ -245,7 +245,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['load_level'],
-		"scripts" : ['create', 'draw', 'key_any_key_pressed', 'step'],
+		"events" : ['create', 'draw', 'key_any_key_pressed', 'step'],
 		"folder_path" : "res://objects/load_level/load_level.tscn",
 		},
 	"moon_room" : {
@@ -258,7 +258,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['moon_room'],
-		"scripts" : ['alarm_0', 'alarm_1', 'alarm_10', 'alarm_11', 'alarm_2', 'alarm_3', 'alarm_9', 'create', 'draw'],
+		"events" : ['alarm_0', 'alarm_1', 'alarm_10', 'alarm_11', 'alarm_2', 'alarm_3', 'alarm_9', 'create', 'draw'],
 		"folder_path" : "res://objects/moon_room/moon_room.tscn",
 		},
 	"music" : {
@@ -271,7 +271,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['music'],
-		"scripts" : ['create', 'game_end'],
+		"events" : ['create', 'game_end'],
 		"folder_path" : "res://objects/music/music.tscn",
 		},
 	"player1" : {
@@ -284,7 +284,7 @@ const object_database = {
 		"parent" : "character",
 		"mask" : null,
 		"groups" : ['player1', 'character', 'drawn_sprite'],
-		"scripts" : ['alarm_0', 'alarm_1', 'alarm_10', 'alarm_11', 'alarm_2', 'alarm_3', 'alarm_4', 'animation_end', 'collision_with_blood', 'create', 'draw', 'end_step', 'key_backspace_pressed', 'key_enter_pressed', 'step'],
+		"events" : ['alarm_0', 'alarm_1', 'alarm_10', 'alarm_11', 'alarm_2', 'alarm_3', 'alarm_4', 'animation_end', 'collision_with_blood', 'create', 'draw', 'end_step', 'key_backspace_pressed', 'key_enter_pressed', 'step'],
 		"folder_path" : "res://objects/player1/player1.tscn",
 		},
 	"room" : {
@@ -297,7 +297,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['room'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/room/room.tscn",
 		},
 	"screen" : {
@@ -310,7 +310,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['screen'],
-		"scripts" : ['begin_step', 'close_button', 'create', 'end_step', 'game_end', 'key_f1_pressed', 'key_f10_pressed', 'room_end'],
+		"events" : ['begin_step', 'close_button', 'create', 'end_step', 'game_end', 'key_f1_pressed', 'key_f10_pressed', 'room_end'],
 		"folder_path" : "res://objects/screen/screen.tscn",
 		},
 	"sprite" : {
@@ -323,7 +323,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['sprite', 'drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/sprite/sprite.tscn",
 		},
 	"stars_room" : {
@@ -336,7 +336,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['stars_room'],
-		"scripts" : ['alarm_0', 'alarm_1', 'alarm_10', 'alarm_11', 'alarm_2', 'alarm_3', 'create', 'draw'],
+		"events" : ['alarm_0', 'alarm_1', 'alarm_10', 'alarm_11', 'alarm_2', 'alarm_3', 'create', 'draw'],
 		"folder_path" : "res://objects/stars_room/stars_room.tscn",
 		},
 	"sun_room" : {
@@ -349,7 +349,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['sun_room'],
-		"scripts" : ['alarm_0', 'alarm_1', 'alarm_10', 'alarm_11', 'alarm_2', 'alarm_3', 'create', 'draw', 'step'],
+		"events" : ['alarm_0', 'alarm_1', 'alarm_10', 'alarm_11', 'alarm_2', 'alarm_3', 'create', 'draw', 'step'],
 		"folder_path" : "res://objects/sun_room/sun_room.tscn",
 		},
 	"title" : {
@@ -362,7 +362,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['title'],
-		"scripts" : ['alarm_0', 'alarm_1', 'alarm_2', 'alarm_3', 'create', 'draw', 'key_f2_pressed', 'key_f3_pressed', 'step'],
+		"events" : ['alarm_0', 'alarm_1', 'alarm_2', 'alarm_3', 'create', 'draw', 'key_f2_pressed', 'key_f3_pressed', 'step'],
 		"folder_path" : "res://objects/title/title.tscn",
 		},
 	"transition" : {
@@ -375,7 +375,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['transition'],
-		"scripts" : ['alarm_0', 'alarm_1', 'create', 'draw', 'step'],
+		"events" : ['alarm_0', 'alarm_1', 'create', 'draw', 'step'],
 		"folder_path" : "res://objects/transition/transition.tscn",
 		},
 	"backdrop" : {
@@ -388,7 +388,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['backdrop'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/basis/backdrop/backdrop.tscn",
 		},
 	"character" : {
@@ -401,7 +401,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['character', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/basis/character/character.tscn",
 		},
 	"detritus" : {
@@ -414,7 +414,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['detritus', 'drawn_sprite'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/basis/detritus/detritus.tscn",
 		},
 	"drawn_sprite" : {
@@ -427,7 +427,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/basis/drawn_sprite/drawn_sprite.tscn",
 		},
 	"enemy" : {
@@ -440,7 +440,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['enemy', 'drawn_sprite'],
-		"scripts" : ['collision_with_character', 'collision_with_whip', 'collision_with_whip_pre', 'create', 'destroy', 'draw', 'outside_room', 'step'],
+		"events" : ['collision_with_character', 'collision_with_whip', 'collision_with_whip_pre', 'create', 'destroy', 'draw', 'outside_room', 'step'],
 		"folder_path" : "res://objects/basis/enemy/enemy.tscn",
 		},
 	"foreground" : {
@@ -453,7 +453,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['foreground'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/basis/foreground/foreground.tscn",
 		},
 	"frill" : {
@@ -466,7 +466,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['frill', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/basis/frill/frill.tscn",
 		},
 	"item" : {
@@ -479,7 +479,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['item', 'drawn_sprite'],
-		"scripts" : ['alarm_2', 'create', 'destroy', 'draw', 'step'],
+		"events" : ['alarm_2', 'create', 'destroy', 'draw', 'step'],
 		"folder_path" : "res://objects/basis/item/item.tscn",
 		},
 	"ladder" : {
@@ -492,7 +492,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['ladder', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/basis/ladder/ladder.tscn",
 		},
 	"menu" : {
@@ -505,7 +505,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['menu'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/basis/menu/menu.tscn",
 		},
 	"moveable_solid" : {
@@ -518,7 +518,7 @@ const object_database = {
 		"parent" : "solid",
 		"mask" : null,
 		"groups" : ['moveable_solid', 'solid', 'drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/basis/moveable_solid/moveable_solid.tscn",
 		},
 	"moving_solid" : {
@@ -531,7 +531,7 @@ const object_database = {
 		"parent" : "solid",
 		"mask" : null,
 		"groups" : ['moving_solid', 'solid', 'drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/basis/moving_solid/moving_solid.tscn",
 		},
 	"platform" : {
@@ -544,7 +544,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['platform', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/basis/platform/platform.tscn",
 		},
 	"rubble_piece" : {
@@ -557,7 +557,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['rubble_piece', 'drawn_sprite'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/basis/rubble_piece/rubble_piece.tscn",
 		},
 	"solid" : {
@@ -570,7 +570,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['solid', 'drawn_sprite'],
-		"scripts" : ['create', 'destroy'],
+		"events" : ['create', 'destroy'],
 		"folder_path" : "res://objects/basis/solid/solid.tscn",
 		},
 	"treasure" : {
@@ -583,7 +583,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['treasure', 'drawn_sprite'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/basis/treasure/treasure.tscn",
 		},
 	"water" : {
@@ -596,7 +596,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['water', 'drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/basis/water/water.tscn",
 		},
 	"alien_ship" : {
@@ -609,7 +609,7 @@ const object_database = {
 		"parent" : "solid",
 		"mask" : null,
 		"groups" : ['alien_ship', 'solid', 'drawn_sprite'],
-		"scripts" : ['create', 'destroy'],
+		"events" : ['create', 'destroy'],
 		"folder_path" : "res://objects/blocks/alien_ship/alien_ship.tscn",
 		},
 	"alien_ship_floor" : {
@@ -622,7 +622,7 @@ const object_database = {
 		"parent" : "solid",
 		"mask" : null,
 		"groups" : ['alien_ship_floor', 'solid', 'drawn_sprite'],
-		"scripts" : ['create', 'destroy'],
+		"events" : ['create', 'destroy'],
 		"folder_path" : "res://objects/blocks/alien_ship_floor/alien_ship_floor.tscn",
 		},
 	"altar_left" : {
@@ -635,7 +635,7 @@ const object_database = {
 		"parent" : "solid",
 		"mask" : null,
 		"groups" : ['altar_left', 'solid', 'drawn_sprite'],
-		"scripts" : ['destroy'],
+		"events" : ['destroy'],
 		"folder_path" : "res://objects/blocks/altar_left/altar_left.tscn",
 		},
 	"altar_right" : {
@@ -648,7 +648,7 @@ const object_database = {
 		"parent" : "solid",
 		"mask" : null,
 		"groups" : ['altar_right', 'solid', 'drawn_sprite'],
-		"scripts" : ['destroy'],
+		"events" : ['destroy'],
 		"folder_path" : "res://objects/blocks/altar_right/altar_right.tscn",
 		},
 	"black_fade_up" : {
@@ -661,7 +661,7 @@ const object_database = {
 		"parent" : "menu",
 		"mask" : null,
 		"groups" : ['black_fade_up', 'menu'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/blocks/black_fade_up/black_fade_up.tscn",
 		},
 	"block" : {
@@ -674,7 +674,7 @@ const object_database = {
 		"parent" : "solid",
 		"mask" : null,
 		"groups" : ['block', 'solid', 'drawn_sprite'],
-		"scripts" : ['create', 'destroy'],
+		"events" : ['create', 'destroy'],
 		"folder_path" : "res://objects/blocks/block/block.tscn",
 		},
 	"brick" : {
@@ -687,7 +687,7 @@ const object_database = {
 		"parent" : "solid",
 		"mask" : null,
 		"groups" : ['brick', 'solid', 'drawn_sprite'],
-		"scripts" : ['create', 'destroy'],
+		"events" : ['create', 'destroy'],
 		"folder_path" : "res://objects/blocks/brick/brick.tscn",
 		},
 	"brick_smooth" : {
@@ -700,7 +700,7 @@ const object_database = {
 		"parent" : "solid",
 		"mask" : null,
 		"groups" : ['brick_smooth', 'solid', 'drawn_sprite'],
-		"scripts" : ['destroy'],
+		"events" : ['destroy'],
 		"folder_path" : "res://objects/blocks/brick_smooth/brick_smooth.tscn",
 		},
 	"cave_bg" : {
@@ -713,7 +713,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['cave_bg'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/blocks/cave_bg/cave_bg.tscn",
 		},
 	"cave_bg2" : {
@@ -726,7 +726,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['cave_bg2'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/blocks/cave_bg2/cave_bg2.tscn",
 		},
 	"cave_bg_entrance" : {
@@ -739,7 +739,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['cave_bg_entrance'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/blocks/cave_bg_entrance/cave_bg_entrance.tscn",
 		},
 	"dark" : {
@@ -752,7 +752,7 @@ const object_database = {
 		"parent" : "solid",
 		"mask" : null,
 		"groups" : ['dark', 'solid', 'drawn_sprite'],
-		"scripts" : ['create', 'destroy'],
+		"events" : ['create', 'destroy'],
 		"folder_path" : "res://objects/blocks/dark/dark.tscn",
 		},
 	"dark_fall" : {
@@ -765,7 +765,7 @@ const object_database = {
 		"parent" : "moving_solid",
 		"mask" : null,
 		"groups" : ['dark_fall', 'moving_solid', 'solid', 'drawn_sprite'],
-		"scripts" : ['collision_with_solid', 'create', 'step'],
+		"events" : ['collision_with_solid', 'create', 'step'],
 		"folder_path" : "res://objects/blocks/dark_fall/dark_fall.tscn",
 		},
 	"entrance" : {
@@ -778,7 +778,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['entrance', 'drawn_sprite'],
-		"scripts" : ['create', 'draw'],
+		"events" : ['create', 'draw'],
 		"folder_path" : "res://objects/blocks/entrance/entrance.tscn",
 		},
 	"exit" : {
@@ -791,7 +791,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['exit', 'drawn_sprite'],
-		"scripts" : ['create', 'draw'],
+		"events" : ['create', 'draw'],
 		"folder_path" : "res://objects/blocks/exit/exit.tscn",
 		},
 	"frozen_caveman" : {
@@ -804,7 +804,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['frozen_caveman', 'drawn_sprite'],
-		"scripts" : ['destroy', 'step'],
+		"events" : ['destroy', 'step'],
 		"folder_path" : "res://objects/blocks/frozen_caveman/frozen_caveman.tscn",
 		},
 	"gold" : {
@@ -817,7 +817,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['gold', 'drawn_sprite'],
-		"scripts" : ['destroy'],
+		"events" : ['destroy'],
 		"folder_path" : "res://objects/blocks/gold/gold.tscn",
 		},
 	"gold_big" : {
@@ -830,7 +830,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['gold_big', 'drawn_sprite'],
-		"scripts" : ['destroy'],
+		"events" : ['destroy'],
 		"folder_path" : "res://objects/blocks/gold_big/gold_big.tscn",
 		},
 	"gold_door" : {
@@ -843,7 +843,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['gold_door', 'drawn_sprite'],
-		"scripts" : ['collision_with_sceptre'],
+		"events" : ['collision_with_sceptre'],
 		"folder_path" : "res://objects/blocks/gold_door/gold_door.tscn",
 		},
 	"grave" : {
@@ -856,7 +856,7 @@ const object_database = {
 		"parent" : "solid",
 		"mask" : null,
 		"groups" : ['grave', 'solid', 'drawn_sprite'],
-		"scripts" : ['create', 'destroy', 'step'],
+		"events" : ['create', 'destroy', 'step'],
 		"folder_path" : "res://objects/blocks/grave/grave.tscn",
 		},
 	"hard_block" : {
@@ -869,7 +869,7 @@ const object_database = {
 		"parent" : "solid",
 		"mask" : null,
 		"groups" : ['hard_block', 'solid', 'drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/blocks/hard_block/hard_block.tscn",
 		},
 	"ice" : {
@@ -882,7 +882,7 @@ const object_database = {
 		"parent" : "solid",
 		"mask" : null,
 		"groups" : ['ice', 'solid', 'drawn_sprite'],
-		"scripts" : ['create', 'destroy'],
+		"events" : ['create', 'destroy'],
 		"folder_path" : "res://objects/blocks/ice/ice.tscn",
 		},
 	"ice_block" : {
@@ -895,7 +895,7 @@ const object_database = {
 		"parent" : "moveable_solid",
 		"mask" : null,
 		"groups" : ['ice_block', 'moveable_solid', 'solid', 'drawn_sprite'],
-		"scripts" : ['create', 'destroy', 'step'],
+		"events" : ['create', 'destroy', 'step'],
 		"folder_path" : "res://objects/blocks/ice_block/ice_block.tscn",
 		},
 	"ice_bottom" : {
@@ -908,7 +908,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['ice_bottom', 'drawn_sprite'],
-		"scripts" : ['alarm_0', 'create', 'step'],
+		"events" : ['alarm_0', 'create', 'step'],
 		"folder_path" : "res://objects/blocks/ice_bottom/ice_bottom.tscn",
 		},
 	"kali_head" : {
@@ -921,7 +921,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['kali_head', 'drawn_sprite'],
-		"scripts" : ['alarm_0', 'create'],
+		"events" : ['alarm_0', 'create'],
 		"folder_path" : "res://objects/blocks/kali_head/kali_head.tscn",
 		},
 	"ladder_orange" : {
@@ -934,7 +934,7 @@ const object_database = {
 		"parent" : "ladder",
 		"mask" : null,
 		"groups" : ['ladder_orange', 'ladder', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/blocks/ladder_orange/ladder_orange.tscn",
 		},
 	"ladder_top" : {
@@ -947,7 +947,7 @@ const object_database = {
 		"parent" : "platform",
 		"mask" : null,
 		"groups" : ['ladder_top', 'platform', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/blocks/ladder_top/ladder_top.tscn",
 		},
 	"lamp" : {
@@ -960,7 +960,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['lamp'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/blocks/lamp/lamp.tscn",
 		},
 	"lamp_red" : {
@@ -973,7 +973,7 @@ const object_database = {
 		"parent" : "lamp",
 		"mask" : null,
 		"groups" : ['lamp_red', 'lamp'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/blocks/lamp_red/lamp_red.tscn",
 		},
 	"lava" : {
@@ -986,7 +986,7 @@ const object_database = {
 		"parent" : "water",
 		"mask" : null,
 		"groups" : ['lava', 'water', 'drawn_sprite'],
-		"scripts" : ['create', 'destroy', 'step'],
+		"events" : ['create', 'destroy', 'step'],
 		"folder_path" : "res://objects/blocks/lava/lava.tscn",
 		},
 	"lava_solid" : {
@@ -999,7 +999,7 @@ const object_database = {
 		"parent" : "solid",
 		"mask" : null,
 		"groups" : ['lava_solid', 'solid', 'drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/blocks/lava_solid/lava_solid.tscn",
 		},
 	"leaves" : {
@@ -1012,7 +1012,7 @@ const object_database = {
 		"parent" : "platform",
 		"mask" : null,
 		"groups" : ['leaves', 'platform', 'drawn_sprite'],
-		"scripts" : ['create', 'destroy', 'step'],
+		"events" : ['create', 'destroy', 'step'],
 		"folder_path" : "res://objects/blocks/leaves/leaves.tscn",
 		},
 	"leaves_tile" : {
@@ -1025,7 +1025,7 @@ const object_database = {
 		"parent" : "platform",
 		"mask" : null,
 		"groups" : ['leaves_tile', 'platform', 'drawn_sprite'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/blocks/leaves_tile/leaves_tile.tscn",
 		},
 	"lush" : {
@@ -1038,7 +1038,7 @@ const object_database = {
 		"parent" : "solid",
 		"mask" : null,
 		"groups" : ['lush', 'solid', 'drawn_sprite'],
-		"scripts" : ['create', 'destroy'],
+		"events" : ['create', 'destroy'],
 		"folder_path" : "res://objects/blocks/lush/lush.tscn",
 		},
 	"moai" : {
@@ -1051,7 +1051,7 @@ const object_database = {
 		"parent" : "solid",
 		"mask" : null,
 		"groups" : ['moai', 'solid', 'drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/blocks/moai/moai.tscn",
 		},
 	"moai2" : {
@@ -1064,7 +1064,7 @@ const object_database = {
 		"parent" : "solid",
 		"mask" : null,
 		"groups" : ['moai2', 'solid', 'drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/blocks/moai2/moai2.tscn",
 		},
 	"moai3" : {
@@ -1077,7 +1077,7 @@ const object_database = {
 		"parent" : "solid",
 		"mask" : null,
 		"groups" : ['moai3', 'solid', 'drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/blocks/moai3/moai3.tscn",
 		},
 	"moai_inside" : {
@@ -1090,7 +1090,7 @@ const object_database = {
 		"parent" : "solid",
 		"mask" : null,
 		"groups" : ['moai_inside', 'solid', 'drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/blocks/moai_inside/moai_inside.tscn",
 		},
 	"msg_sign" : {
@@ -1103,7 +1103,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['msg_sign', 'drawn_sprite'],
-		"scripts" : ['collision_with_character', 'create', 'draw'],
+		"events" : ['collision_with_character', 'create', 'draw'],
 		"folder_path" : "res://objects/blocks/msg_sign/msg_sign.tscn",
 		},
 	"push_block" : {
@@ -1116,7 +1116,7 @@ const object_database = {
 		"parent" : "moveable_solid",
 		"mask" : null,
 		"groups" : ['push_block', 'moveable_solid', 'solid', 'drawn_sprite'],
-		"scripts" : ['create', 'destroy', 'outside_room', 'step'],
+		"events" : ['create', 'destroy', 'outside_room', 'step'],
 		"folder_path" : "res://objects/blocks/push_block/push_block.tscn",
 		},
 	"sac_altar_left" : {
@@ -1129,7 +1129,7 @@ const object_database = {
 		"parent" : "solid",
 		"mask" : null,
 		"groups" : ['sac_altar_left', 'solid', 'drawn_sprite'],
-		"scripts" : ['create', 'destroy', 'step'],
+		"events" : ['create', 'destroy', 'step'],
 		"folder_path" : "res://objects/blocks/sac_altar_left/sac_altar_left.tscn",
 		},
 	"sac_altar_right" : {
@@ -1142,7 +1142,7 @@ const object_database = {
 		"parent" : "sac_altar_left",
 		"mask" : null,
 		"groups" : ['sac_altar_right', 'sac_altar_left', 'solid', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/blocks/sac_altar_right/sac_altar_right.tscn",
 		},
 	"sign" : {
@@ -1155,7 +1155,7 @@ const object_database = {
 		"parent" : "solid",
 		"mask" : null,
 		"groups" : ['sign', 'solid', 'drawn_sprite'],
-		"scripts" : ['destroy'],
+		"events" : ['destroy'],
 		"folder_path" : "res://objects/blocks/sign/sign.tscn",
 		},
 	"splash" : {
@@ -1168,7 +1168,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['splash', 'drawn_sprite'],
-		"scripts" : ['animation_end', 'create'],
+		"events" : ['animation_end', 'create'],
 		"folder_path" : "res://objects/blocks/splash/splash.tscn",
 		},
 	"temple" : {
@@ -1181,7 +1181,7 @@ const object_database = {
 		"parent" : "solid",
 		"mask" : null,
 		"groups" : ['temple', 'solid', 'drawn_sprite'],
-		"scripts" : ['create', 'destroy'],
+		"events" : ['create', 'destroy'],
 		"folder_path" : "res://objects/blocks/temple/temple.tscn",
 		},
 	"temple_fake" : {
@@ -1194,7 +1194,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['temple_fake'],
-		"scripts" : ['step'],
+		"events" : ['step'],
 		"folder_path" : "res://objects/blocks/temple_fake/temple_fake.tscn",
 		},
 	"thin_ice" : {
@@ -1207,7 +1207,7 @@ const object_database = {
 		"parent" : "solid",
 		"mask" : null,
 		"groups" : ['thin_ice', 'solid', 'drawn_sprite'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/blocks/thin_ice/thin_ice.tscn",
 		},
 	"tiki_torch" : {
@@ -1220,7 +1220,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['tiki_torch'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/blocks/tiki_torch/tiki_torch.tscn",
 		},
 	"tree" : {
@@ -1233,7 +1233,7 @@ const object_database = {
 		"parent" : "solid",
 		"mask" : null,
 		"groups" : ['tree', 'solid', 'drawn_sprite'],
-		"scripts" : ['create', 'destroy', 'step'],
+		"events" : ['create', 'destroy', 'step'],
 		"folder_path" : "res://objects/blocks/tree/tree.tscn",
 		},
 	"tree_branch" : {
@@ -1246,7 +1246,7 @@ const object_database = {
 		"parent" : "platform",
 		"mask" : null,
 		"groups" : ['tree_branch', 'platform', 'drawn_sprite'],
-		"scripts" : ['create', 'destroy', 'step'],
+		"events" : ['create', 'destroy', 'step'],
 		"folder_path" : "res://objects/blocks/tree_branch/tree_branch.tscn",
 		},
 	"tree_branch_tile" : {
@@ -1259,7 +1259,7 @@ const object_database = {
 		"parent" : "platform",
 		"mask" : null,
 		"groups" : ['tree_branch_tile', 'platform', 'drawn_sprite'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/blocks/tree_branch_tile/tree_branch_tile.tscn",
 		},
 	"tree_tile" : {
@@ -1272,7 +1272,7 @@ const object_database = {
 		"parent" : "solid",
 		"mask" : null,
 		"groups" : ['tree_tile', 'solid', 'drawn_sprite'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/blocks/tree_tile/tree_tile.tscn",
 		},
 	"vine" : {
@@ -1285,7 +1285,7 @@ const object_database = {
 		"parent" : "ladder",
 		"mask" : null,
 		"groups" : ['vine', 'ladder', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/blocks/vine/vine.tscn",
 		},
 	"vine_top" : {
@@ -1298,7 +1298,7 @@ const object_database = {
 		"parent" : "ladder",
 		"mask" : null,
 		"groups" : ['vine_top', 'ladder', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/blocks/vine_top/vine_top.tscn",
 		},
 	"water_swim" : {
@@ -1311,7 +1311,7 @@ const object_database = {
 		"parent" : "water",
 		"mask" : null,
 		"groups" : ['water_swim', 'water', 'drawn_sprite'],
-		"scripts" : ['destroy'],
+		"events" : ['destroy'],
 		"folder_path" : "res://objects/blocks/water_swim/water_swim.tscn",
 		},
 	"x_gold" : {
@@ -1324,7 +1324,7 @@ const object_database = {
 		"parent" : "exit",
 		"mask" : null,
 		"groups" : ['x_gold', 'exit', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/blocks/x_gold/x_gold.tscn",
 		},
 	"x_market" : {
@@ -1337,7 +1337,7 @@ const object_database = {
 		"parent" : "exit",
 		"mask" : null,
 		"groups" : ['x_market', 'exit', 'drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/blocks/x_market/x_market.tscn",
 		},
 	"xoc_block" : {
@@ -1350,7 +1350,7 @@ const object_database = {
 		"parent" : "solid",
 		"mask" : null,
 		"groups" : ['xoc_block', 'solid', 'drawn_sprite'],
-		"scripts" : ['create', 'destroy'],
+		"events" : ['create', 'destroy'],
 		"folder_path" : "res://objects/blocks/xoc_block/xoc_block.tscn",
 		},
 	"damsel" : {
@@ -1363,7 +1363,7 @@ const object_database = {
 		"parent" : "item",
 		"mask" : null,
 		"groups" : ['damsel', 'item', 'drawn_sprite'],
-		"scripts" : ['animation_end', 'collision_with_whip', 'collision_with_whip_pre', 'create', 'destroy', 'draw', 'step'],
+		"events" : ['animation_end', 'collision_with_whip', 'collision_with_whip_pre', 'create', 'destroy', 'draw', 'step'],
 		"folder_path" : "res://objects/characters/damsel/damsel.tscn",
 		},
 	"damsel_kiss" : {
@@ -1376,7 +1376,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['damsel_kiss', 'drawn_sprite'],
-		"scripts" : ['animation_end', 'create', 'room_end', 'step'],
+		"events" : ['animation_end', 'create', 'room_end', 'step'],
 		"folder_path" : "res://objects/characters/damsel_kiss/damsel_kiss.tscn",
 		},
 	"shopkeeper" : {
@@ -1389,7 +1389,7 @@ const object_database = {
 		"parent" : "enemy",
 		"mask" : null,
 		"groups" : ['shopkeeper', 'enemy', 'drawn_sprite'],
-		"scripts" : ['alarm_0', 'animation_end', 'collision_with_character', 'collision_with_shotgun', 'collision_with_whip', 'collision_with_whip_pre', 'create', 'draw', 'step'],
+		"events" : ['alarm_0', 'animation_end', 'collision_with_character', 'collision_with_shotgun', 'collision_with_whip', 'collision_with_whip_pre', 'create', 'draw', 'step'],
 		"folder_path" : "res://objects/characters/shopkeeper/shopkeeper.tscn",
 		},
 	"shopkeeper2" : {
@@ -1402,7 +1402,7 @@ const object_database = {
 		"parent" : "shopkeeper",
 		"mask" : null,
 		"groups" : ['shopkeeper2', 'shopkeeper', 'enemy', 'drawn_sprite'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/characters/shopkeeper2/shopkeeper2.tscn",
 		},
 	"tunnel_man" : {
@@ -1415,7 +1415,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['tunnel_man'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/characters/tunnel_man/tunnel_man.tscn",
 		},
 	"yell_help" : {
@@ -1428,7 +1428,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['yell_help', 'drawn_sprite'],
-		"scripts" : ['alarm_0', 'create', 'step'],
+		"events" : ['alarm_0', 'create', 'step'],
 		"folder_path" : "res://objects/characters/yell_help/yell_help.tscn",
 		},
 	"ankh" : {
@@ -1441,7 +1441,7 @@ const object_database = {
 		"parent" : "item",
 		"mask" : null,
 		"groups" : ['ankh', 'item', 'drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/collectibles/ankh/ankh.tscn",
 		},
 	"bomb_bag" : {
@@ -1454,7 +1454,7 @@ const object_database = {
 		"parent" : "item",
 		"mask" : null,
 		"groups" : ['bomb_bag', 'item', 'drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/collectibles/bomb_bag/bomb_bag.tscn",
 		},
 	"bomb_box" : {
@@ -1467,7 +1467,7 @@ const object_database = {
 		"parent" : "item",
 		"mask" : null,
 		"groups" : ['bomb_box', 'item', 'drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/collectibles/bomb_box/bomb_box.tscn",
 		},
 	"bones" : {
@@ -1480,7 +1480,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['bones', 'drawn_sprite'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/collectibles/bones/bones.tscn",
 		},
 	"cape" : {
@@ -1493,7 +1493,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['cape', 'drawn_sprite'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/collectibles/cape/cape.tscn",
 		},
 	"cape_pickup" : {
@@ -1506,7 +1506,7 @@ const object_database = {
 		"parent" : "item",
 		"mask" : null,
 		"groups" : ['cape_pickup', 'item', 'drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/collectibles/cape_pickup/cape_pickup.tscn",
 		},
 	"chest" : {
@@ -1519,7 +1519,7 @@ const object_database = {
 		"parent" : "item",
 		"mask" : null,
 		"groups" : ['chest', 'item', 'drawn_sprite'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/collectibles/chest/chest.tscn",
 		},
 	"compass" : {
@@ -1532,7 +1532,7 @@ const object_database = {
 		"parent" : "item",
 		"mask" : null,
 		"groups" : ['compass', 'item', 'drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/collectibles/compass/compass.tscn",
 		},
 	"crate" : {
@@ -1545,7 +1545,7 @@ const object_database = {
 		"parent" : "item",
 		"mask" : null,
 		"groups" : ['crate', 'item', 'drawn_sprite'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/collectibles/crate/crate.tscn",
 		},
 	"crown" : {
@@ -1558,7 +1558,7 @@ const object_database = {
 		"parent" : "item",
 		"mask" : null,
 		"groups" : ['crown', 'item', 'drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/collectibles/crown/crown.tscn",
 		},
 	"diamond" : {
@@ -1571,7 +1571,7 @@ const object_database = {
 		"parent" : "treasure",
 		"mask" : null,
 		"groups" : ['diamond', 'treasure', 'drawn_sprite'],
-		"scripts" : ['alarm_0', 'create'],
+		"events" : ['alarm_0', 'create'],
 		"folder_path" : "res://objects/collectibles/diamond/diamond.tscn",
 		},
 	"emerald" : {
@@ -1584,7 +1584,7 @@ const object_database = {
 		"parent" : "treasure",
 		"mask" : null,
 		"groups" : ['emerald', 'treasure', 'drawn_sprite'],
-		"scripts" : ['alarm_0', 'create'],
+		"events" : ['alarm_0', 'create'],
 		"folder_path" : "res://objects/collectibles/emerald/emerald.tscn",
 		},
 	"emerald_big" : {
@@ -1597,7 +1597,7 @@ const object_database = {
 		"parent" : "treasure",
 		"mask" : null,
 		"groups" : ['emerald_big', 'treasure', 'drawn_sprite'],
-		"scripts" : ['alarm_0', 'collision_with_ghost', 'create'],
+		"events" : ['alarm_0', 'collision_with_ghost', 'create'],
 		"folder_path" : "res://objects/collectibles/emerald_big/emerald_big.tscn",
 		},
 	"fake_bones" : {
@@ -1610,7 +1610,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['fake_bones', 'drawn_sprite'],
-		"scripts" : ['animation_end', 'create', 'step'],
+		"events" : ['animation_end', 'create', 'step'],
 		"folder_path" : "res://objects/collectibles/fake_bones/fake_bones.tscn",
 		},
 	"fire_frog_armed" : {
@@ -1623,7 +1623,7 @@ const object_database = {
 		"parent" : "item",
 		"mask" : null,
 		"groups" : ['fire_frog_armed', 'item', 'drawn_sprite'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/collectibles/fire_frog_armed/fire_frog_armed.tscn",
 		},
 	"flare_crate" : {
@@ -1636,7 +1636,7 @@ const object_database = {
 		"parent" : "item",
 		"mask" : null,
 		"groups" : ['flare_crate', 'item', 'drawn_sprite'],
-		"scripts" : ['alarm_0', 'create', 'step'],
+		"events" : ['alarm_0', 'create', 'step'],
 		"folder_path" : "res://objects/collectibles/flare_crate/flare_crate.tscn",
 		},
 	"gloves" : {
@@ -1649,7 +1649,7 @@ const object_database = {
 		"parent" : "item",
 		"mask" : null,
 		"groups" : ['gloves', 'item', 'drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/collectibles/gloves/gloves.tscn",
 		},
 	"gold_bar" : {
@@ -1662,7 +1662,7 @@ const object_database = {
 		"parent" : "treasure",
 		"mask" : null,
 		"groups" : ['gold_bar', 'treasure', 'drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/collectibles/gold_bar/gold_bar.tscn",
 		},
 	"gold_bars" : {
@@ -1675,7 +1675,7 @@ const object_database = {
 		"parent" : "treasure",
 		"mask" : null,
 		"groups" : ['gold_bars', 'treasure', 'drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/collectibles/gold_bars/gold_bars.tscn",
 		},
 	"gold_chunk" : {
@@ -1688,7 +1688,7 @@ const object_database = {
 		"parent" : "treasure",
 		"mask" : null,
 		"groups" : ['gold_chunk', 'treasure', 'drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/collectibles/gold_chunk/gold_chunk.tscn",
 		},
 	"gold_nugget" : {
@@ -1701,7 +1701,7 @@ const object_database = {
 		"parent" : "treasure",
 		"mask" : null,
 		"groups" : ['gold_nugget', 'treasure', 'drawn_sprite'],
-		"scripts" : ['alarm_0', 'create'],
+		"events" : ['alarm_0', 'create'],
 		"folder_path" : "res://objects/collectibles/gold_nugget/gold_nugget.tscn",
 		},
 	"jetpack" : {
@@ -1714,7 +1714,7 @@ const object_database = {
 		"parent" : "item",
 		"mask" : null,
 		"groups" : ['jetpack', 'item', 'drawn_sprite'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/collectibles/jetpack/jetpack.tscn",
 		},
 	"jordans" : {
@@ -1727,7 +1727,7 @@ const object_database = {
 		"parent" : "item",
 		"mask" : null,
 		"groups" : ['jordans', 'item', 'drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/collectibles/jordans/jordans.tscn",
 		},
 	"kapala" : {
@@ -1740,7 +1740,7 @@ const object_database = {
 		"parent" : "item",
 		"mask" : null,
 		"groups" : ['kapala', 'item', 'drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/collectibles/kapala/kapala.tscn",
 		},
 	"key" : {
@@ -1753,7 +1753,7 @@ const object_database = {
 		"parent" : "item",
 		"mask" : null,
 		"groups" : ['key', 'item', 'drawn_sprite'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/collectibles/key/key.tscn",
 		},
 	"locked_chest" : {
@@ -1766,7 +1766,7 @@ const object_database = {
 		"parent" : "item",
 		"mask" : null,
 		"groups" : ['locked_chest', 'item', 'drawn_sprite'],
-		"scripts" : ['collision_with_key', 'create', 'step'],
+		"events" : ['collision_with_key', 'create', 'step'],
 		"folder_path" : "res://objects/collectibles/locked_chest/locked_chest.tscn",
 		},
 	"mitt" : {
@@ -1779,7 +1779,7 @@ const object_database = {
 		"parent" : "item",
 		"mask" : null,
 		"groups" : ['mitt', 'item', 'drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/collectibles/mitt/mitt.tscn",
 		},
 	"para_pickup" : {
@@ -1792,7 +1792,7 @@ const object_database = {
 		"parent" : "item",
 		"mask" : null,
 		"groups" : ['para_pickup', 'item', 'drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/collectibles/para_pickup/para_pickup.tscn",
 		},
 	"para_used" : {
@@ -1805,7 +1805,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['para_used', 'drawn_sprite'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/collectibles/para_used/para_used.tscn",
 		},
 	"paste" : {
@@ -1818,7 +1818,7 @@ const object_database = {
 		"parent" : "item",
 		"mask" : null,
 		"groups" : ['paste', 'item', 'drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/collectibles/paste/paste.tscn",
 		},
 	"rope_bag" : {
@@ -1831,7 +1831,7 @@ const object_database = {
 		"parent" : "item",
 		"mask" : null,
 		"groups" : ['rope_bag', 'item', 'drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/collectibles/rope_bag/rope_bag.tscn",
 		},
 	"rope_pile" : {
@@ -1844,7 +1844,7 @@ const object_database = {
 		"parent" : "item",
 		"mask" : null,
 		"groups" : ['rope_pile', 'item', 'drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/collectibles/rope_pile/rope_pile.tscn",
 		},
 	"ruby" : {
@@ -1857,7 +1857,7 @@ const object_database = {
 		"parent" : "treasure",
 		"mask" : null,
 		"groups" : ['ruby', 'treasure', 'drawn_sprite'],
-		"scripts" : ['alarm_0', 'create'],
+		"events" : ['alarm_0', 'create'],
 		"folder_path" : "res://objects/collectibles/ruby/ruby.tscn",
 		},
 	"ruby_big" : {
@@ -1870,7 +1870,7 @@ const object_database = {
 		"parent" : "treasure",
 		"mask" : null,
 		"groups" : ['ruby_big', 'treasure', 'drawn_sprite'],
-		"scripts" : ['alarm_0', 'collision_with_ghost', 'create'],
+		"events" : ['alarm_0', 'collision_with_ghost', 'create'],
 		"folder_path" : "res://objects/collectibles/ruby_big/ruby_big.tscn",
 		},
 	"sapphire" : {
@@ -1883,7 +1883,7 @@ const object_database = {
 		"parent" : "treasure",
 		"mask" : null,
 		"groups" : ['sapphire', 'treasure', 'drawn_sprite'],
-		"scripts" : ['alarm_0', 'create'],
+		"events" : ['alarm_0', 'create'],
 		"folder_path" : "res://objects/collectibles/sapphire/sapphire.tscn",
 		},
 	"sapphire_big" : {
@@ -1896,7 +1896,7 @@ const object_database = {
 		"parent" : "treasure",
 		"mask" : null,
 		"groups" : ['sapphire_big', 'treasure', 'drawn_sprite'],
-		"scripts" : ['alarm_0', 'collision_with_ghost', 'create'],
+		"events" : ['alarm_0', 'collision_with_ghost', 'create'],
 		"folder_path" : "res://objects/collectibles/sapphire_big/sapphire_big.tscn",
 		},
 	"spectacles" : {
@@ -1909,7 +1909,7 @@ const object_database = {
 		"parent" : "item",
 		"mask" : null,
 		"groups" : ['spectacles', 'item', 'drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/collectibles/spectacles/spectacles.tscn",
 		},
 	"spike_shoes" : {
@@ -1922,7 +1922,7 @@ const object_database = {
 		"parent" : "item",
 		"mask" : null,
 		"groups" : ['spike_shoes', 'item', 'drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/collectibles/spike_shoes/spike_shoes.tscn",
 		},
 	"spring_shoes" : {
@@ -1935,7 +1935,7 @@ const object_database = {
 		"parent" : "item",
 		"mask" : null,
 		"groups" : ['spring_shoes', 'item', 'drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/collectibles/spring_shoes/spring_shoes.tscn",
 		},
 	"udjat_eye" : {
@@ -1948,7 +1948,7 @@ const object_database = {
 		"parent" : "item",
 		"mask" : null,
 		"groups" : ['udjat_eye', 'item', 'drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/collectibles/udjat_eye/udjat_eye.tscn",
 		},
 	"big_collect" : {
@@ -1961,7 +1961,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['big_collect', 'drawn_sprite'],
-		"scripts" : ['alarm_0', 'create', 'step'],
+		"events" : ['alarm_0', 'create', 'step'],
 		"folder_path" : "res://objects/effects/big_collect/big_collect.tscn",
 		},
 	"blood" : {
@@ -1974,7 +1974,7 @@ const object_database = {
 		"parent" : "detritus",
 		"mask" : null,
 		"groups" : ['blood', 'detritus', 'drawn_sprite'],
-		"scripts" : ['alarm_0', 'alarm_1', 'alarm_2', 'create', 'step'],
+		"events" : ['alarm_0', 'alarm_1', 'alarm_2', 'create', 'step'],
 		"folder_path" : "res://objects/effects/blood/blood.tscn",
 		},
 	"blood_spark" : {
@@ -1987,7 +1987,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['blood_spark', 'drawn_sprite'],
-		"scripts" : ['animation_end', 'create', 'step'],
+		"events" : ['animation_end', 'create', 'step'],
 		"folder_path" : "res://objects/effects/blood_spark/blood_spark.tscn",
 		},
 	"blood_trail" : {
@@ -2000,7 +2000,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['blood_trail', 'drawn_sprite'],
-		"scripts" : ['animation_end', 'create'],
+		"events" : ['animation_end', 'create'],
 		"folder_path" : "res://objects/effects/blood_trail/blood_trail.tscn",
 		},
 	"bone" : {
@@ -2013,7 +2013,7 @@ const object_database = {
 		"parent" : "detritus",
 		"mask" : null,
 		"groups" : ['bone', 'detritus', 'drawn_sprite'],
-		"scripts" : ['animation_end', 'create', 'step'],
+		"events" : ['animation_end', 'create', 'step'],
 		"folder_path" : "res://objects/effects/bone/bone.tscn",
 		},
 	"bubble" : {
@@ -2026,7 +2026,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['bubble', 'drawn_sprite'],
-		"scripts" : ['animation_end', 'create', 'step'],
+		"events" : ['animation_end', 'create', 'step'],
 		"folder_path" : "res://objects/effects/bubble/bubble.tscn",
 		},
 	"bullet" : {
@@ -2039,7 +2039,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['bullet'],
-		"scripts" : ['alarm_0', 'collision_with_character', 'collision_with_damsel', 'collision_with_enemy', 'collision_with_solid', 'create', 'step'],
+		"events" : ['alarm_0', 'collision_with_character', 'collision_with_damsel', 'collision_with_enemy', 'collision_with_solid', 'create', 'step'],
 		"folder_path" : "res://objects/effects/bullet/bullet.tscn",
 		},
 	"burn" : {
@@ -2052,7 +2052,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['burn', 'drawn_sprite'],
-		"scripts" : ['animation_end', 'create', 'step'],
+		"events" : ['animation_end', 'create', 'step'],
 		"folder_path" : "res://objects/effects/burn/burn.tscn",
 		},
 	"drip" : {
@@ -2065,7 +2065,7 @@ const object_database = {
 		"parent" : "rubble_piece",
 		"mask" : null,
 		"groups" : ['drip', 'rubble_piece', 'drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/effects/drip/drip.tscn",
 		},
 	"explosion" : {
@@ -2078,7 +2078,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['explosion', 'drawn_sprite'],
-		"scripts" : ['animation_end', 'collision_with_barrier_emitter', 'collision_with_boulder', 'collision_with_damsel', 'collision_with_enemy', 'collision_with_item', 'collision_with_solid', 'collision_with_web', 'create'],
+		"events" : ['animation_end', 'collision_with_barrier_emitter', 'collision_with_boulder', 'collision_with_damsel', 'collision_with_enemy', 'collision_with_item', 'collision_with_solid', 'collision_with_web', 'create'],
 		"folder_path" : "res://objects/effects/explosion/explosion.tscn",
 		},
 	"flame" : {
@@ -2091,7 +2091,7 @@ const object_database = {
 		"parent" : "detritus",
 		"mask" : null,
 		"groups" : ['flame', 'detritus', 'drawn_sprite'],
-		"scripts" : ['alarm_0', 'collision_with_water', 'create', 'destroy', 'step'],
+		"events" : ['alarm_0', 'collision_with_water', 'create', 'destroy', 'step'],
 		"folder_path" : "res://objects/effects/flame/flame.tscn",
 		},
 	"flame_trail" : {
@@ -2104,7 +2104,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['flame_trail', 'drawn_sprite'],
-		"scripts" : ['animation_end', 'create'],
+		"events" : ['animation_end', 'create'],
 		"folder_path" : "res://objects/effects/flame_trail/flame_trail.tscn",
 		},
 	"flare_spark" : {
@@ -2117,7 +2117,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['flare_spark', 'drawn_sprite'],
-		"scripts" : ['animation_end', 'create', 'step'],
+		"events" : ['animation_end', 'create', 'step'],
 		"folder_path" : "res://objects/effects/flare_spark/flare_spark.tscn",
 		},
 	"fly" : {
@@ -2130,7 +2130,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['fly'],
-		"scripts" : ['collision_with_character', 'collision_with_damsel', 'collision_with_enemy', 'collision_with_solid', 'create', 'step'],
+		"events" : ['collision_with_character', 'collision_with_damsel', 'collision_with_enemy', 'collision_with_solid', 'create', 'step'],
 		"folder_path" : "res://objects/effects/fly/fly.tscn",
 		},
 	"heart" : {
@@ -2143,7 +2143,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['heart', 'drawn_sprite'],
-		"scripts" : ['alarm_0', 'create', 'step'],
+		"events" : ['alarm_0', 'create', 'step'],
 		"folder_path" : "res://objects/effects/heart/heart.tscn",
 		},
 	"items_get" : {
@@ -2156,7 +2156,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['items_get', 'drawn_sprite'],
-		"scripts" : ['alarm_0', 'create', 'step'],
+		"events" : ['alarm_0', 'create', 'step'],
 		"folder_path" : "res://objects/effects/items_get/items_get.tscn",
 		},
 	"laser" : {
@@ -2169,7 +2169,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['laser', 'drawn_sprite'],
-		"scripts" : ['alarm_0', 'collision_with_damsel', 'collision_with_enemy', 'collision_with_solid', 'create', 'outside_room', 'step'],
+		"events" : ['alarm_0', 'collision_with_damsel', 'collision_with_enemy', 'collision_with_solid', 'create', 'outside_room', 'step'],
 		"folder_path" : "res://objects/effects/laser/laser.tscn",
 		},
 	"laser_explode" : {
@@ -2182,7 +2182,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['laser_explode', 'drawn_sprite'],
-		"scripts" : ['animation_end', 'create'],
+		"events" : ['animation_end', 'create'],
 		"folder_path" : "res://objects/effects/laser_explode/laser_explode.tscn",
 		},
 	"laser_trail" : {
@@ -2195,7 +2195,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['laser_trail', 'drawn_sprite'],
-		"scripts" : ['animation_end', 'create'],
+		"events" : ['animation_end', 'create'],
 		"folder_path" : "res://objects/effects/laser_trail/laser_trail.tscn",
 		},
 	"lava_drip" : {
@@ -2208,7 +2208,7 @@ const object_database = {
 		"parent" : "rubble_piece",
 		"mask" : null,
 		"groups" : ['lava_drip', 'rubble_piece', 'drawn_sprite'],
-		"scripts" : ['animation_end', 'create'],
+		"events" : ['animation_end', 'create'],
 		"folder_path" : "res://objects/effects/lava_drip/lava_drip.tscn",
 		},
 	"leaf" : {
@@ -2221,7 +2221,7 @@ const object_database = {
 		"parent" : "rubble_piece",
 		"mask" : null,
 		"groups" : ['leaf', 'rubble_piece', 'drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/effects/leaf/leaf.tscn",
 		},
 	"poof" : {
@@ -2234,7 +2234,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['poof', 'drawn_sprite'],
-		"scripts" : ['animation_end', 'create', 'step'],
+		"events" : ['animation_end', 'create', 'step'],
 		"folder_path" : "res://objects/effects/poof/poof.tscn",
 		},
 	"psychic_create" : {
@@ -2247,7 +2247,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['psychic_create', 'drawn_sprite'],
-		"scripts" : ['animation_end', 'create', 'step'],
+		"events" : ['animation_end', 'create', 'step'],
 		"folder_path" : "res://objects/effects/psychic_create/psychic_create.tscn",
 		},
 	"psychic_create2" : {
@@ -2260,7 +2260,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['psychic_create2', 'drawn_sprite'],
-		"scripts" : ['animation_end', 'create', 'step'],
+		"events" : ['animation_end', 'create', 'step'],
 		"folder_path" : "res://objects/effects/psychic_create2/psychic_create2.tscn",
 		},
 	"psychic_create_p" : {
@@ -2273,7 +2273,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['psychic_create_p', 'drawn_sprite'],
-		"scripts" : ['animation_end', 'collision_with_solid', 'create', 'step'],
+		"events" : ['animation_end', 'collision_with_solid', 'create', 'step'],
 		"folder_path" : "res://objects/effects/psychic_create_p/psychic_create_p.tscn",
 		},
 	"psychic_wave" : {
@@ -2286,7 +2286,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['psychic_wave', 'drawn_sprite'],
-		"scripts" : ['animation_end', 'collision_with_damsel', 'collision_with_enemy', 'create', 'outside_room', 'step'],
+		"events" : ['animation_end', 'collision_with_damsel', 'collision_with_enemy', 'create', 'outside_room', 'step'],
 		"folder_path" : "res://objects/effects/psychic_wave/psychic_wave.tscn",
 		},
 	"psychic_wave_p" : {
@@ -2299,7 +2299,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['psychic_wave_p', 'drawn_sprite'],
-		"scripts" : ['animation_end', 'collision_with_damsel', 'collision_with_enemy', 'create', 'outside_room', 'step'],
+		"events" : ['animation_end', 'collision_with_damsel', 'collision_with_enemy', 'create', 'outside_room', 'step'],
 		"folder_path" : "res://objects/effects/psychic_wave_p/psychic_wave_p.tscn",
 		},
 	"rope_burn" : {
@@ -2312,7 +2312,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['rope_burn', 'drawn_sprite'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/effects/rope_burn/rope_burn.tscn",
 		},
 	"rubble" : {
@@ -2325,7 +2325,7 @@ const object_database = {
 		"parent" : "rubble_piece",
 		"mask" : null,
 		"groups" : ['rubble', 'rubble_piece', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/effects/rubble/rubble.tscn",
 		},
 	"rubble_dark" : {
@@ -2338,7 +2338,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['rubble_dark', 'drawn_sprite'],
-		"scripts" : ['create', 'outside_room', 'step'],
+		"events" : ['create', 'outside_room', 'step'],
 		"folder_path" : "res://objects/effects/rubble_dark/rubble_dark.tscn",
 		},
 	"rubble_dark_small" : {
@@ -2351,7 +2351,7 @@ const object_database = {
 		"parent" : "rubble_piece",
 		"mask" : null,
 		"groups" : ['rubble_dark_small', 'rubble_piece', 'drawn_sprite'],
-		"scripts" : ['outside_room'],
+		"events" : ['outside_room'],
 		"folder_path" : "res://objects/effects/rubble_dark_small/rubble_dark_small.tscn",
 		},
 	"rubble_small" : {
@@ -2364,7 +2364,7 @@ const object_database = {
 		"parent" : "rubble_piece",
 		"mask" : null,
 		"groups" : ['rubble_small', 'rubble_piece', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/effects/rubble_small/rubble_small.tscn",
 		},
 	"shotgun_blast_left" : {
@@ -2377,7 +2377,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['shotgun_blast_left'],
-		"scripts" : ['animation_end', 'create'],
+		"events" : ['animation_end', 'create'],
 		"folder_path" : "res://objects/effects/shotgun_blast_left/shotgun_blast_left.tscn",
 		},
 	"shotgun_blast_right" : {
@@ -2390,7 +2390,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['shotgun_blast_right'],
-		"scripts" : ['animation_end', 'create'],
+		"events" : ['animation_end', 'create'],
 		"folder_path" : "res://objects/effects/shotgun_blast_right/shotgun_blast_right.tscn",
 		},
 	"small_collect" : {
@@ -2403,7 +2403,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['small_collect', 'drawn_sprite'],
-		"scripts" : ['alarm_0', 'create', 'step'],
+		"events" : ['alarm_0', 'create', 'step'],
 		"folder_path" : "res://objects/effects/small_collect/small_collect.tscn",
 		},
 	"smoke_puff" : {
@@ -2416,7 +2416,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['smoke_puff', 'drawn_sprite'],
-		"scripts" : ['animation_end', 'create', 'step'],
+		"events" : ['animation_end', 'create', 'step'],
 		"folder_path" : "res://objects/effects/smoke_puff/smoke_puff.tscn",
 		},
 	"volcano_flame" : {
@@ -2429,7 +2429,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['volcano_flame'],
-		"scripts" : ['alarm_0', 'create', 'outside_room', 'step'],
+		"events" : ['alarm_0', 'create', 'outside_room', 'step'],
 		"folder_path" : "res://objects/effects/volcano_flame/volcano_flame.tscn",
 		},
 	"web" : {
@@ -2442,7 +2442,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['web'],
-		"scripts" : ['collision_with_enemy', 'collision_with_item', 'collision_with_laser', 'collision_with_rubble_piece', 'collision_with_slash', 'collision_with_treasure', 'collision_with_water', 'create', 'step'],
+		"events" : ['collision_with_enemy', 'collision_with_item', 'collision_with_laser', 'collision_with_rubble_piece', 'collision_with_slash', 'collision_with_treasure', 'collision_with_water', 'create', 'step'],
 		"folder_path" : "res://objects/effects/web/web.tscn",
 		},
 	"web_ball" : {
@@ -2455,7 +2455,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['web_ball', 'drawn_sprite'],
-		"scripts" : ['alarm_0', 'alarm_1', 'animation_end', 'collision_with_enemy', 'collision_with_item', 'collision_with_solid', 'collision_with_water', 'collision_with_web', 'create', 'outside_room', 'step'],
+		"events" : ['alarm_0', 'alarm_1', 'animation_end', 'collision_with_enemy', 'collision_with_item', 'collision_with_solid', 'collision_with_water', 'collision_with_web', 'create', 'outside_room', 'step'],
 		"folder_path" : "res://objects/effects/web_ball/web_ball.tscn",
 		},
 	"yellow_ball" : {
@@ -2468,7 +2468,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['yellow_ball', 'drawn_sprite'],
-		"scripts" : ['alarm_0', 'alarm_1', 'collision_with_solid', 'create', 'outside_room', 'step'],
+		"events" : ['alarm_0', 'alarm_1', 'collision_with_solid', 'create', 'outside_room', 'step'],
 		"folder_path" : "res://objects/effects/yellow_ball/yellow_ball.tscn",
 		},
 	"yellow_trail" : {
@@ -2481,7 +2481,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['yellow_trail', 'drawn_sprite'],
-		"scripts" : ['animation_end', 'create'],
+		"events" : ['animation_end', 'create'],
 		"folder_path" : "res://objects/effects/yellow_trail/yellow_trail.tscn",
 		},
 	"alien" : {
@@ -2494,7 +2494,7 @@ const object_database = {
 		"parent" : "enemy",
 		"mask" : null,
 		"groups" : ['alien', 'enemy', 'drawn_sprite'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/enemies/alien/alien.tscn",
 		},
 	"alien_boss" : {
@@ -2507,7 +2507,7 @@ const object_database = {
 		"parent" : "enemy",
 		"mask" : null,
 		"groups" : ['alien_boss', 'enemy', 'drawn_sprite'],
-		"scripts" : ['animation_end', 'collision_with_character', 'create', 'step'],
+		"events" : ['animation_end', 'collision_with_character', 'create', 'step'],
 		"folder_path" : "res://objects/enemies/alien_boss/alien_boss.tscn",
 		},
 	"alien_eject" : {
@@ -2520,7 +2520,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['alien_eject', 'drawn_sprite'],
-		"scripts" : ['animation_end', 'collision_with_player1', 'collision_with_web', 'create', 'outside_room', 'step'],
+		"events" : ['animation_end', 'collision_with_player1', 'collision_with_web', 'create', 'outside_room', 'step'],
 		"folder_path" : "res://objects/enemies/alien_eject/alien_eject.tscn",
 		},
 	"barrier" : {
@@ -2533,7 +2533,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['barrier'],
-		"scripts" : ['collision_with_bullet', 'collision_with_character', 'collision_with_item', 'collision_with_web_ball'],
+		"events" : ['collision_with_bullet', 'collision_with_character', 'collision_with_item', 'collision_with_web_ball'],
 		"folder_path" : "res://objects/enemies/barrier/barrier.tscn",
 		},
 	"barrier_emitter" : {
@@ -2546,7 +2546,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['barrier_emitter'],
-		"scripts" : ['collision_with_bullet', 'collision_with_item', 'create', 'destroy', 'step'],
+		"events" : ['collision_with_bullet', 'collision_with_item', 'create', 'destroy', 'step'],
 		"folder_path" : "res://objects/enemies/barrier_emitter/barrier_emitter.tscn",
 		},
 	"bat" : {
@@ -2559,7 +2559,7 @@ const object_database = {
 		"parent" : "enemy",
 		"mask" : null,
 		"groups" : ['bat', 'enemy', 'drawn_sprite'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/enemies/bat/bat.tscn",
 		},
 	"caveman" : {
@@ -2572,7 +2572,7 @@ const object_database = {
 		"parent" : "enemy",
 		"mask" : null,
 		"groups" : ['caveman', 'enemy', 'drawn_sprite'],
-		"scripts" : ['collision_with_character', 'collision_with_whip', 'collision_with_whip_pre', 'create', 'step'],
+		"events" : ['collision_with_character', 'collision_with_whip', 'collision_with_whip_pre', 'create', 'step'],
 		"folder_path" : "res://objects/enemies/caveman/caveman.tscn",
 		},
 	"caveman_worship" : {
@@ -2585,7 +2585,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['caveman_worship'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/enemies/caveman_worship/caveman_worship.tscn",
 		},
 	"dead_fish" : {
@@ -2598,7 +2598,7 @@ const object_database = {
 		"parent" : "enemy",
 		"mask" : null,
 		"groups" : ['dead_fish', 'enemy', 'drawn_sprite'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/enemies/dead_fish/dead_fish.tscn",
 		},
 	"enemy_sight" : {
@@ -2611,7 +2611,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['enemy_sight'],
-		"scripts" : ['collision_with_character', 'collision_with_solid', 'create'],
+		"events" : ['collision_with_character', 'collision_with_solid', 'create'],
 		"folder_path" : "res://objects/enemies/enemy_sight/enemy_sight.tscn",
 		},
 	"entrance_check" : {
@@ -2624,7 +2624,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['entrance_check'],
-		"scripts" : ['collision_with_solid', 'step'],
+		"events" : ['collision_with_solid', 'step'],
 		"folder_path" : "res://objects/enemies/entrance_check/entrance_check.tscn",
 		},
 	"fire_frog" : {
@@ -2637,7 +2637,7 @@ const object_database = {
 		"parent" : "enemy",
 		"mask" : null,
 		"groups" : ['fire_frog', 'enemy', 'drawn_sprite'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/enemies/fire_frog/fire_frog.tscn",
 		},
 	"frog" : {
@@ -2650,7 +2650,7 @@ const object_database = {
 		"parent" : "enemy",
 		"mask" : null,
 		"groups" : ['frog', 'enemy', 'drawn_sprite'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/enemies/frog/frog.tscn",
 		},
 	"ghost" : {
@@ -2663,7 +2663,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['ghost', 'drawn_sprite'],
-		"scripts" : ['animation_end', 'collision_with_character', 'collision_with_whip', 'create', 'step'],
+		"events" : ['animation_end', 'collision_with_character', 'collision_with_whip', 'create', 'step'],
 		"folder_path" : "res://objects/enemies/ghost/ghost.tscn",
 		},
 	"giant_spider" : {
@@ -2676,7 +2676,7 @@ const object_database = {
 		"parent" : "enemy",
 		"mask" : null,
 		"groups" : ['giant_spider', 'enemy', 'drawn_sprite'],
-		"scripts" : ['alarm_0', 'alarm_1', 'animation_end', 'collision_with_character', 'collision_with_whip', 'create', 'step'],
+		"events" : ['alarm_0', 'alarm_1', 'animation_end', 'collision_with_character', 'collision_with_whip', 'create', 'step'],
 		"folder_path" : "res://objects/enemies/giant_spider/giant_spider.tscn",
 		},
 	"giant_spider_hang" : {
@@ -2689,7 +2689,7 @@ const object_database = {
 		"parent" : "enemy",
 		"mask" : null,
 		"groups" : ['giant_spider_hang', 'enemy', 'drawn_sprite'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/enemies/giant_spider_hang/giant_spider_hang.tscn",
 		},
 	"hawkman" : {
@@ -2702,7 +2702,7 @@ const object_database = {
 		"parent" : "enemy",
 		"mask" : null,
 		"groups" : ['hawkman', 'enemy', 'drawn_sprite'],
-		"scripts" : ['alarm_0', 'animation_end', 'collision_with_character', 'collision_with_whip', 'collision_with_whip_pre', 'create', 'step'],
+		"events" : ['alarm_0', 'animation_end', 'collision_with_character', 'collision_with_whip', 'collision_with_whip_pre', 'create', 'step'],
 		"folder_path" : "res://objects/enemies/hawkman/hawkman.tscn",
 		},
 	"hawkman_worship" : {
@@ -2715,7 +2715,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['hawkman_worship'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/enemies/hawkman_worship/hawkman_worship.tscn",
 		},
 	"jaws" : {
@@ -2728,7 +2728,7 @@ const object_database = {
 		"parent" : "enemy",
 		"mask" : null,
 		"groups" : ['jaws', 'enemy', 'drawn_sprite'],
-		"scripts" : ['animation_end', 'create', 'draw', 'step'],
+		"events" : ['animation_end', 'create', 'draw', 'step'],
 		"folder_path" : "res://objects/enemies/jaws/jaws.tscn",
 		},
 	"magma" : {
@@ -2741,7 +2741,7 @@ const object_database = {
 		"parent" : "detritus",
 		"mask" : null,
 		"groups" : ['magma', 'detritus', 'drawn_sprite'],
-		"scripts" : ['alarm_0', 'animation_end', 'collision_with_character', 'collision_with_enemy', 'collision_with_water', 'create', 'step'],
+		"events" : ['alarm_0', 'animation_end', 'collision_with_character', 'collision_with_enemy', 'collision_with_water', 'create', 'step'],
 		"folder_path" : "res://objects/enemies/magma/magma.tscn",
 		},
 	"magma_man" : {
@@ -2754,7 +2754,7 @@ const object_database = {
 		"parent" : "enemy",
 		"mask" : null,
 		"groups" : ['magma_man', 'enemy', 'drawn_sprite'],
-		"scripts" : ['alarm_0', 'animation_end', 'collision_with_bomb', 'collision_with_character', 'collision_with_enemy', 'collision_with_whip', 'create', 'step'],
+		"events" : ['alarm_0', 'animation_end', 'collision_with_bomb', 'collision_with_character', 'collision_with_enemy', 'collision_with_whip', 'create', 'step'],
 		"folder_path" : "res://objects/enemies/magma_man/magma_man.tscn",
 		},
 	"magma_trail" : {
@@ -2767,7 +2767,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['magma_trail', 'drawn_sprite'],
-		"scripts" : ['animation_end', 'create'],
+		"events" : ['animation_end', 'create'],
 		"folder_path" : "res://objects/enemies/magma_trail/magma_trail.tscn",
 		},
 	"man_trap" : {
@@ -2780,7 +2780,7 @@ const object_database = {
 		"parent" : "enemy",
 		"mask" : null,
 		"groups" : ['man_trap', 'enemy', 'drawn_sprite'],
-		"scripts" : ['animation_end', 'collision_with_caveman', 'collision_with_character', 'collision_with_damsel', 'collision_with_shopkeeper', 'collision_with_whip', 'collision_with_whip_pre', 'create', 'step'],
+		"events" : ['animation_end', 'collision_with_caveman', 'collision_with_character', 'collision_with_damsel', 'collision_with_shopkeeper', 'collision_with_whip', 'collision_with_whip_pre', 'create', 'step'],
 		"folder_path" : "res://objects/enemies/man_trap/man_trap.tscn",
 		},
 	"monkey" : {
@@ -2793,7 +2793,7 @@ const object_database = {
 		"parent" : "enemy",
 		"mask" : null,
 		"groups" : ['monkey', 'enemy', 'drawn_sprite'],
-		"scripts" : ['collision_with_character', 'collision_with_item', 'create', 'step'],
+		"events" : ['collision_with_character', 'collision_with_item', 'create', 'step'],
 		"folder_path" : "res://objects/enemies/monkey/monkey.tscn",
 		},
 	"olmec" : {
@@ -2806,7 +2806,7 @@ const object_database = {
 		"parent" : "moving_solid",
 		"mask" : null,
 		"groups" : ['olmec', 'moving_solid', 'solid', 'drawn_sprite'],
-		"scripts" : ['alarm_1', 'alarm_2', 'alarm_3', 'alarm_4', 'alarm_5', 'alarm_6', 'create', 'step'],
+		"events" : ['alarm_1', 'alarm_2', 'alarm_3', 'alarm_4', 'alarm_5', 'alarm_6', 'create', 'step'],
 		"folder_path" : "res://objects/enemies/olmec/olmec.tscn",
 		},
 	"olmec_debris" : {
@@ -2819,7 +2819,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['olmec_debris', 'drawn_sprite'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/enemies/olmec_debris/olmec_debris.tscn",
 		},
 	"olmec_slam" : {
@@ -2832,7 +2832,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['olmec_slam'],
-		"scripts" : ['alarm_0', 'collision_with_solid', 'create'],
+		"events" : ['alarm_0', 'collision_with_solid', 'create'],
 		"folder_path" : "res://objects/enemies/olmec_slam/olmec_slam.tscn",
 		},
 	"piranha" : {
@@ -2845,7 +2845,7 @@ const object_database = {
 		"parent" : "enemy",
 		"mask" : null,
 		"groups" : ['piranha', 'enemy', 'drawn_sprite'],
-		"scripts" : ['alarm_0', 'create', 'step'],
+		"events" : ['alarm_0', 'create', 'step'],
 		"folder_path" : "res://objects/enemies/piranha/piranha.tscn",
 		},
 	"scarab" : {
@@ -2858,7 +2858,7 @@ const object_database = {
 		"parent" : "enemy",
 		"mask" : null,
 		"groups" : ['scarab', 'enemy', 'drawn_sprite'],
-		"scripts" : ['collision_with_character', 'create', 'destroy', 'step'],
+		"events" : ['collision_with_character', 'create', 'destroy', 'step'],
 		"folder_path" : "res://objects/enemies/scarab/scarab.tscn",
 		},
 	"skeleton" : {
@@ -2871,7 +2871,7 @@ const object_database = {
 		"parent" : "enemy",
 		"mask" : null,
 		"groups" : ['skeleton', 'enemy', 'drawn_sprite'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/enemies/skeleton/skeleton.tscn",
 		},
 	"snake" : {
@@ -2884,7 +2884,7 @@ const object_database = {
 		"parent" : "enemy",
 		"mask" : null,
 		"groups" : ['snake', 'enemy', 'drawn_sprite'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/enemies/snake/snake.tscn",
 		},
 	"spider" : {
@@ -2897,7 +2897,7 @@ const object_database = {
 		"parent" : "enemy",
 		"mask" : null,
 		"groups" : ['spider', 'enemy', 'drawn_sprite'],
-		"scripts" : ['alarm_0', 'alarm_1', 'animation_end', 'create', 'step'],
+		"events" : ['alarm_0', 'alarm_1', 'animation_end', 'create', 'step'],
 		"folder_path" : "res://objects/enemies/spider/spider.tscn",
 		},
 	"spider_hang" : {
@@ -2910,7 +2910,7 @@ const object_database = {
 		"parent" : "enemy",
 		"mask" : null,
 		"groups" : ['spider_hang', 'enemy', 'drawn_sprite'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/enemies/spider_hang/spider_hang.tscn",
 		},
 	"tomb_lord" : {
@@ -2923,7 +2923,7 @@ const object_database = {
 		"parent" : "enemy",
 		"mask" : null,
 		"groups" : ['tomb_lord', 'enemy', 'drawn_sprite'],
-		"scripts" : ['animation_end', 'collision_with_character', 'collision_with_whip', 'create', 'draw', 'step'],
+		"events" : ['animation_end', 'collision_with_character', 'collision_with_whip', 'create', 'draw', 'step'],
 		"folder_path" : "res://objects/enemies/tomb_lord/tomb_lord.tscn",
 		},
 	"ufo" : {
@@ -2936,7 +2936,7 @@ const object_database = {
 		"parent" : "enemy",
 		"mask" : null,
 		"groups" : ['ufo', 'enemy', 'drawn_sprite'],
-		"scripts" : ['animation_end', 'create', 'step'],
+		"events" : ['animation_end', 'create', 'step'],
 		"folder_path" : "res://objects/enemies/ufo/ufo.tscn",
 		},
 	"ufo_crash" : {
@@ -2949,7 +2949,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['ufo_crash'],
-		"scripts" : ['alarm_0', 'collision_with_enemy', 'collision_with_solid', 'create', 'step'],
+		"events" : ['alarm_0', 'collision_with_enemy', 'collision_with_solid', 'create', 'step'],
 		"folder_path" : "res://objects/enemies/ufo_crash/ufo_crash.tscn",
 		},
 	"vampire" : {
@@ -2962,7 +2962,7 @@ const object_database = {
 		"parent" : "enemy",
 		"mask" : null,
 		"groups" : ['vampire', 'enemy', 'drawn_sprite'],
-		"scripts" : ['alarm_0', 'collision_with_blood', 'collision_with_character', 'collision_with_whip', 'collision_with_whip_pre', 'create', 'step'],
+		"events" : ['alarm_0', 'collision_with_blood', 'collision_with_character', 'collision_with_whip', 'collision_with_whip_pre', 'create', 'step'],
 		"folder_path" : "res://objects/enemies/vampire/vampire.tscn",
 		},
 	"yeti" : {
@@ -2975,7 +2975,7 @@ const object_database = {
 		"parent" : "enemy",
 		"mask" : null,
 		"groups" : ['yeti', 'enemy', 'drawn_sprite'],
-		"scripts" : ['alarm_0', 'animation_end', 'collision_with_character', 'collision_with_whip', 'collision_with_whip_pre', 'create', 'step'],
+		"events" : ['alarm_0', 'animation_end', 'collision_with_character', 'collision_with_whip', 'collision_with_whip_pre', 'create', 'step'],
 		"folder_path" : "res://objects/enemies/yeti/yeti.tscn",
 		},
 	"yeti_king" : {
@@ -2988,7 +2988,7 @@ const object_database = {
 		"parent" : "enemy",
 		"mask" : null,
 		"groups" : ['yeti_king', 'enemy', 'drawn_sprite'],
-		"scripts" : ['animation_end', 'collision_with_character', 'collision_with_whip', 'create', 'draw', 'step'],
+		"events" : ['animation_end', 'collision_with_character', 'collision_with_whip', 'create', 'draw', 'step'],
 		"folder_path" : "res://objects/enemies/yeti_king/yeti_king.tscn",
 		},
 	"zombie" : {
@@ -3001,7 +3001,7 @@ const object_database = {
 		"parent" : "enemy",
 		"mask" : null,
 		"groups" : ['zombie', 'enemy', 'drawn_sprite'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/enemies/zombie/zombie.tscn",
 		},
 	"check_box" : {
@@ -3014,7 +3014,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['check_box'],
-		"scripts" : ['create', 'mouse_left_button_pressed'],
+		"events" : ['create', 'mouse_left_button_pressed'],
 		"folder_path" : "res://objects/init/check_box/check_box.tscn",
 		},
 	"check_box2" : {
@@ -3027,7 +3027,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['check_box2'],
-		"scripts" : ['create', 'mouse_left_button_pressed'],
+		"events" : ['create', 'mouse_left_button_pressed'],
 		"folder_path" : "res://objects/init/check_box2/check_box2.tscn",
 		},
 	"check_box3" : {
@@ -3040,7 +3040,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['check_box3'],
-		"scripts" : ['create', 'mouse_left_button_pressed'],
+		"events" : ['create', 'mouse_left_button_pressed'],
 		"folder_path" : "res://objects/init/check_box3/check_box3.tscn",
 		},
 	"check_box4" : {
@@ -3053,7 +3053,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['check_box4'],
-		"scripts" : ['create', 'mouse_left_button_pressed'],
+		"events" : ['create', 'mouse_left_button_pressed'],
 		"folder_path" : "res://objects/init/check_box4/check_box4.tscn",
 		},
 	"joy_config_button" : {
@@ -3066,7 +3066,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['joy_config_button'],
-		"scripts" : ['mouse_leave', 'mouse_left_button_pressed', 'mouse_left_button_released'],
+		"events" : ['mouse_leave', 'mouse_left_button_pressed', 'mouse_left_button_released'],
 		"folder_path" : "res://objects/init/joy_config_button/joy_config_button.tscn",
 		},
 	"key_config_button" : {
@@ -3079,7 +3079,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['key_config_button'],
-		"scripts" : ['mouse_leave', 'mouse_left_button_pressed', 'mouse_left_button_released'],
+		"events" : ['mouse_leave', 'mouse_left_button_pressed', 'mouse_left_button_released'],
 		"folder_path" : "res://objects/init/key_config_button/key_config_button.tscn",
 		},
 	"ok_button" : {
@@ -3092,7 +3092,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['ok_button'],
-		"scripts" : ['mouse_leave', 'mouse_left_button_pressed', 'mouse_left_button_released'],
+		"events" : ['mouse_leave', 'mouse_left_button_pressed', 'mouse_left_button_released'],
 		"folder_path" : "res://objects/init/ok_button/ok_button.tscn",
 		},
 	"radio_box" : {
@@ -3105,7 +3105,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['radio_box'],
-		"scripts" : ['create', 'mouse_left_button_pressed'],
+		"events" : ['create', 'mouse_left_button_pressed'],
 		"folder_path" : "res://objects/init/radio_box/radio_box.tscn",
 		},
 	"slider1" : {
@@ -3118,7 +3118,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['slider1'],
-		"scripts" : ['create', 'mouse_left_button_pressed', 'step'],
+		"events" : ['create', 'mouse_left_button_pressed', 'step'],
 		"folder_path" : "res://objects/init/slider1/slider1.tscn",
 		},
 	"slider2" : {
@@ -3131,7 +3131,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['slider2'],
-		"scripts" : ['alarm_0', 'create', 'mouse_left_button_pressed', 'step'],
+		"events" : ['alarm_0', 'create', 'mouse_left_button_pressed', 'step'],
 		"folder_path" : "res://objects/init/slider2/slider2.tscn",
 		},
 	"slider_bg" : {
@@ -3144,7 +3144,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['slider_bg'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/init/slider_bg/slider_bg.tscn",
 		},
 	"arrow" : {
@@ -3157,7 +3157,7 @@ const object_database = {
 		"parent" : "item",
 		"mask" : null,
 		"groups" : ['arrow', 'item', 'drawn_sprite'],
-		"scripts" : ['alarm_1', 'alarm_2', 'create', 'draw', 'step'],
+		"events" : ['alarm_1', 'alarm_2', 'create', 'draw', 'step'],
 		"folder_path" : "res://objects/items/arrow/arrow.tscn",
 		},
 	"ball" : {
@@ -3170,7 +3170,7 @@ const object_database = {
 		"parent" : "item",
 		"mask" : null,
 		"groups" : ['ball', 'item', 'drawn_sprite'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/items/ball/ball.tscn",
 		},
 	"ball2" : {
@@ -3183,7 +3183,7 @@ const object_database = {
 		"parent" : "item",
 		"mask" : null,
 		"groups" : ['ball2', 'item', 'drawn_sprite'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/items/ball2/ball2.tscn",
 		},
 	"basketball" : {
@@ -3196,7 +3196,7 @@ const object_database = {
 		"parent" : "item",
 		"mask" : null,
 		"groups" : ['basketball', 'item', 'drawn_sprite'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/items/basketball/basketball.tscn",
 		},
 	"bomb" : {
@@ -3209,7 +3209,7 @@ const object_database = {
 		"parent" : "item",
 		"mask" : null,
 		"groups" : ['bomb', 'item', 'drawn_sprite'],
-		"scripts" : ['alarm_0', 'alarm_1', 'create', 'destroy', 'end_step', 'step'],
+		"events" : ['alarm_0', 'alarm_1', 'create', 'destroy', 'end_step', 'step'],
 		"folder_path" : "res://objects/items/bomb/bomb.tscn",
 		},
 	"bow" : {
@@ -3222,7 +3222,7 @@ const object_database = {
 		"parent" : "item",
 		"mask" : null,
 		"groups" : ['bow', 'item', 'drawn_sprite'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/items/bow/bow.tscn",
 		},
 	"chain" : {
@@ -3235,7 +3235,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['chain', 'drawn_sprite'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/items/chain/chain.tscn",
 		},
 	"chain2" : {
@@ -3248,7 +3248,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['chain2', 'drawn_sprite'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/items/chain2/chain2.tscn",
 		},
 	"crystal_skull" : {
@@ -3261,7 +3261,7 @@ const object_database = {
 		"parent" : "gold_idol",
 		"mask" : null,
 		"groups" : ['crystal_skull', 'gold_idol', 'item', 'drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/items/crystal_skull/crystal_skull.tscn",
 		},
 	"dice" : {
@@ -3274,7 +3274,7 @@ const object_database = {
 		"parent" : "item",
 		"mask" : null,
 		"groups" : ['dice', 'item', 'drawn_sprite'],
-		"scripts" : ['create', 'draw', 'step'],
+		"events" : ['create', 'draw', 'step'],
 		"folder_path" : "res://objects/items/dice/dice.tscn",
 		},
 	"fire_frog_bomb" : {
@@ -3287,7 +3287,7 @@ const object_database = {
 		"parent" : "item",
 		"mask" : null,
 		"groups" : ['fire_frog_bomb', 'item', 'drawn_sprite'],
-		"scripts" : ['alarm_1', 'create', 'step'],
+		"events" : ['alarm_1', 'create', 'step'],
 		"folder_path" : "res://objects/items/fire_frog_bomb/fire_frog_bomb.tscn",
 		},
 	"fish_bone" : {
@@ -3300,7 +3300,7 @@ const object_database = {
 		"parent" : "item",
 		"mask" : null,
 		"groups" : ['fish_bone', 'item', 'drawn_sprite'],
-		"scripts" : ['alarm_2', 'create', 'step'],
+		"events" : ['alarm_2', 'create', 'step'],
 		"folder_path" : "res://objects/items/fish_bone/fish_bone.tscn",
 		},
 	"flare" : {
@@ -3313,7 +3313,7 @@ const object_database = {
 		"parent" : "item",
 		"mask" : null,
 		"groups" : ['flare', 'item', 'drawn_sprite'],
-		"scripts" : ['alarm_0', 'create', 'step'],
+		"events" : ['alarm_0', 'create', 'step'],
 		"folder_path" : "res://objects/items/flare/flare.tscn",
 		},
 	"gold_idol" : {
@@ -3326,7 +3326,7 @@ const object_database = {
 		"parent" : "item",
 		"mask" : null,
 		"groups" : ['gold_idol', 'item', 'drawn_sprite'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/items/gold_idol/gold_idol.tscn",
 		},
 	"jar" : {
@@ -3339,7 +3339,7 @@ const object_database = {
 		"parent" : "item",
 		"mask" : null,
 		"groups" : ['jar', 'item', 'drawn_sprite'],
-		"scripts" : ['collision_with_bullet', 'collision_with_whip', 'create', 'destroy', 'step'],
+		"events" : ['collision_with_bullet', 'collision_with_whip', 'create', 'destroy', 'step'],
 		"folder_path" : "res://objects/items/jar/jar.tscn",
 		},
 	"lamp_item" : {
@@ -3352,7 +3352,7 @@ const object_database = {
 		"parent" : "item",
 		"mask" : null,
 		"groups" : ['lamp_item', 'item', 'drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/items/lamp_item/lamp_item.tscn",
 		},
 	"lamp_red_item" : {
@@ -3365,7 +3365,7 @@ const object_database = {
 		"parent" : "item",
 		"mask" : null,
 		"groups" : ['lamp_red_item', 'item', 'drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/items/lamp_red_item/lamp_red_item.tscn",
 		},
 	"machete" : {
@@ -3378,7 +3378,7 @@ const object_database = {
 		"parent" : "item",
 		"mask" : null,
 		"groups" : ['machete', 'item', 'drawn_sprite'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/items/machete/machete.tscn",
 		},
 	"machete_pre" : {
@@ -3391,7 +3391,7 @@ const object_database = {
 		"parent" : "whip_pre",
 		"mask" : null,
 		"groups" : ['machete_pre', 'whip_pre', 'drawn_sprite'],
-		"scripts" : ['alarm_0', 'create', 'step'],
+		"events" : ['alarm_0', 'create', 'step'],
 		"folder_path" : "res://objects/items/machete_pre/machete_pre.tscn",
 		},
 	"mattock" : {
@@ -3404,7 +3404,7 @@ const object_database = {
 		"parent" : "item",
 		"mask" : null,
 		"groups" : ['mattock', 'item', 'drawn_sprite'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/items/mattock/mattock.tscn",
 		},
 	"mattock_head" : {
@@ -3417,7 +3417,7 @@ const object_database = {
 		"parent" : "item",
 		"mask" : null,
 		"groups" : ['mattock_head', 'item', 'drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/items/mattock_head/mattock_head.tscn",
 		},
 	"mattock_hit" : {
@@ -3430,7 +3430,7 @@ const object_database = {
 		"parent" : "whip",
 		"mask" : null,
 		"groups" : ['mattock_hit', 'whip', 'drawn_sprite'],
-		"scripts" : ['animation_end', 'create', 'step'],
+		"events" : ['animation_end', 'create', 'step'],
 		"folder_path" : "res://objects/items/mattock_hit/mattock_hit.tscn",
 		},
 	"mattock_pre" : {
@@ -3443,7 +3443,7 @@ const object_database = {
 		"parent" : "whip_pre",
 		"mask" : null,
 		"groups" : ['mattock_pre', 'whip_pre', 'drawn_sprite'],
-		"scripts" : ['alarm_0', 'create', 'step'],
+		"events" : ['alarm_0', 'create', 'step'],
 		"folder_path" : "res://objects/items/mattock_pre/mattock_pre.tscn",
 		},
 	"parachute" : {
@@ -3456,7 +3456,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['parachute'],
-		"scripts" : ['animation_end', 'collision_with_item', 'step'],
+		"events" : ['animation_end', 'collision_with_item', 'step'],
 		"folder_path" : "res://objects/items/parachute/parachute.tscn",
 		},
 	"pistol" : {
@@ -3469,7 +3469,7 @@ const object_database = {
 		"parent" : "item",
 		"mask" : null,
 		"groups" : ['pistol', 'item', 'drawn_sprite'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/items/pistol/pistol.tscn",
 		},
 	"rock" : {
@@ -3482,7 +3482,7 @@ const object_database = {
 		"parent" : "item",
 		"mask" : null,
 		"groups" : ['rock', 'item', 'drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/items/rock/rock.tscn",
 		},
 	"rope" : {
@@ -3495,7 +3495,7 @@ const object_database = {
 		"parent" : "ladder",
 		"mask" : null,
 		"groups" : ['rope', 'ladder', 'drawn_sprite'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/items/rope/rope.tscn",
 		},
 	"rope_throw" : {
@@ -3508,7 +3508,7 @@ const object_database = {
 		"parent" : "item",
 		"mask" : null,
 		"groups" : ['rope_throw', 'item', 'drawn_sprite'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/items/rope_throw/rope_throw.tscn",
 		},
 	"rope_top" : {
@@ -3521,7 +3521,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['rope_top', 'drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/items/rope_top/rope_top.tscn",
 		},
 	"sceptre" : {
@@ -3534,7 +3534,7 @@ const object_database = {
 		"parent" : "item",
 		"mask" : null,
 		"groups" : ['sceptre', 'item', 'drawn_sprite'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/items/sceptre/sceptre.tscn",
 		},
 	"shotgun" : {
@@ -3547,7 +3547,7 @@ const object_database = {
 		"parent" : "item",
 		"mask" : null,
 		"groups" : ['shotgun', 'item', 'drawn_sprite'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/items/shotgun/shotgun.tscn",
 		},
 	"skull" : {
@@ -3560,7 +3560,7 @@ const object_database = {
 		"parent" : "item",
 		"mask" : null,
 		"groups" : ['skull', 'item', 'drawn_sprite'],
-		"scripts" : ['collision_with_bullet', 'create', 'destroy', 'step'],
+		"events" : ['collision_with_bullet', 'create', 'destroy', 'step'],
 		"folder_path" : "res://objects/items/skull/skull.tscn",
 		},
 	"slash" : {
@@ -3573,7 +3573,7 @@ const object_database = {
 		"parent" : "whip",
 		"mask" : null,
 		"groups" : ['slash', 'whip', 'drawn_sprite'],
-		"scripts" : ['animation_end', 'create', 'step'],
+		"events" : ['animation_end', 'create', 'step'],
 		"folder_path" : "res://objects/items/slash/slash.tscn",
 		},
 	"teleporter" : {
@@ -3586,7 +3586,7 @@ const object_database = {
 		"parent" : "item",
 		"mask" : null,
 		"groups" : ['teleporter', 'item', 'drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/items/teleporter/teleporter.tscn",
 		},
 	"web_cannon" : {
@@ -3599,7 +3599,7 @@ const object_database = {
 		"parent" : "item",
 		"mask" : null,
 		"groups" : ['web_cannon', 'item', 'drawn_sprite'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/items/web_cannon/web_cannon.tscn",
 		},
 	"whip" : {
@@ -3612,7 +3612,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['whip', 'drawn_sprite'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/items/whip/whip.tscn",
 		},
 	"whip_pre" : {
@@ -3625,7 +3625,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['whip_pre', 'drawn_sprite'],
-		"scripts" : ['alarm_0', 'create', 'step'],
+		"events" : ['alarm_0', 'create', 'step'],
 		"folder_path" : "res://objects/items/whip_pre/whip_pre.tscn",
 		},
 	"alien_boss_tile" : {
@@ -3638,7 +3638,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['alien_boss_tile', 'drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/level editor/alien_boss_tile/alien_boss_tile.tscn",
 		},
 	"alien_tile" : {
@@ -3651,7 +3651,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['alien_tile', 'drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/level editor/alien_tile/alien_tile.tscn",
 		},
 	"bat_tile" : {
@@ -3664,7 +3664,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['bat_tile', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/level editor/bat_tile/bat_tile.tscn",
 		},
 	"bomb_bag_tile" : {
@@ -3677,7 +3677,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['bomb_bag_tile', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/level editor/bomb_bag_tile/bomb_bag_tile.tscn",
 		},
 	"bomb_box_tile" : {
@@ -3690,7 +3690,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['bomb_box_tile', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/level editor/bomb_box_tile/bomb_box_tile.tscn",
 		},
 	"bomb_paste_tile" : {
@@ -3703,7 +3703,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['bomb_paste_tile', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/level editor/bomb_paste_tile/bomb_paste_tile.tscn",
 		},
 	"bones_tile" : {
@@ -3716,7 +3716,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['bones_tile', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/level editor/bones_tile/bones_tile.tscn",
 		},
 	"bow_tile" : {
@@ -3729,7 +3729,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['bow_tile', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/level editor/bow_tile/bow_tile.tscn",
 		},
 	"cape_tile" : {
@@ -3742,7 +3742,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['cape_tile', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/level editor/cape_tile/cape_tile.tscn",
 		},
 	"caveman_tile" : {
@@ -3755,7 +3755,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['caveman_tile', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/level editor/caveman_tile/caveman_tile.tscn",
 		},
 	"chest_tile" : {
@@ -3768,7 +3768,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['chest_tile', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/level editor/chest_tile/chest_tile.tscn",
 		},
 	"compass_tile" : {
@@ -3781,7 +3781,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['compass_tile', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/level editor/compass_tile/compass_tile.tscn",
 		},
 	"crate_tile" : {
@@ -3794,7 +3794,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['crate_tile', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/level editor/crate_tile/crate_tile.tscn",
 		},
 	"crystal_skull_tile" : {
@@ -3807,7 +3807,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['crystal_skull_tile', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/level editor/crystal_skull_tile/crystal_skull_tile.tscn",
 		},
 	"damsel_tile" : {
@@ -3820,7 +3820,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['damsel_tile', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/level editor/damsel_tile/damsel_tile.tscn",
 		},
 	"diamond_tile" : {
@@ -3833,7 +3833,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['diamond_tile', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/level editor/diamond_tile/diamond_tile.tscn",
 		},
 	"edit_button" : {
@@ -3846,7 +3846,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['edit_button'],
-		"scripts" : ['mouse_leave', 'mouse_left_button_pressed', 'mouse_left_button_released', 'step'],
+		"events" : ['mouse_leave', 'mouse_left_button_pressed', 'mouse_left_button_released', 'step'],
 		"folder_path" : "res://objects/level editor/edit_button/edit_button.tscn",
 		},
 	"emerald_big_tile" : {
@@ -3859,7 +3859,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['emerald_big_tile', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/level editor/emerald_big_tile/emerald_big_tile.tscn",
 		},
 	"fire_frog_tile" : {
@@ -3872,7 +3872,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['fire_frog_tile', 'drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/level editor/fire_frog_tile/fire_frog_tile.tscn",
 		},
 	"frog_tile" : {
@@ -3885,7 +3885,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['frog_tile', 'drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/level editor/frog_tile/frog_tile.tscn",
 		},
 	"giant_spider_tile" : {
@@ -3898,7 +3898,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['giant_spider_tile', 'drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/level editor/giant_spider_tile/giant_spider_tile.tscn",
 		},
 	"gloves_tile" : {
@@ -3911,7 +3911,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['gloves_tile', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/level editor/gloves_tile/gloves_tile.tscn",
 		},
 	"gold_bars_tile" : {
@@ -3924,7 +3924,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['gold_bars_tile', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/level editor/gold_bars_tile/gold_bars_tile.tscn",
 		},
 	"gold_bar_tile" : {
@@ -3937,7 +3937,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['gold_bar_tile', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/level editor/gold_bar_tile/gold_bar_tile.tscn",
 		},
 	"gold_idol_tile" : {
@@ -3950,7 +3950,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['gold_idol_tile', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/level editor/gold_idol_tile/gold_idol_tile.tscn",
 		},
 	"hawkman_tile" : {
@@ -3963,7 +3963,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['hawkman_tile', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/level editor/hawkman_tile/hawkman_tile.tscn",
 		},
 	"ice_tile" : {
@@ -3976,7 +3976,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['ice_tile', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/level editor/ice_tile/ice_tile.tscn",
 		},
 	"jar_tile" : {
@@ -3989,7 +3989,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['jar_tile', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/level editor/jar_tile/jar_tile.tscn",
 		},
 	"jetpack_tile" : {
@@ -4002,7 +4002,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['jetpack_tile', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/level editor/jetpack_tile/jetpack_tile.tscn",
 		},
 	"lava_tile" : {
@@ -4015,7 +4015,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['lava_tile', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/level editor/lava_tile/lava_tile.tscn",
 		},
 	"load_button" : {
@@ -4028,7 +4028,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['load_button'],
-		"scripts" : ['create', 'mouse_leave', 'mouse_left_button_pressed', 'mouse_left_button_released', 'step'],
+		"events" : ['create', 'mouse_leave', 'mouse_left_button_pressed', 'mouse_left_button_released', 'step'],
 		"folder_path" : "res://objects/level editor/load_button/load_button.tscn",
 		},
 	"machete_tile" : {
@@ -4041,7 +4041,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['machete_tile', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/level editor/machete_tile/machete_tile.tscn",
 		},
 	"man_trap_tile" : {
@@ -4054,7 +4054,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['man_trap_tile', 'drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/level editor/man_trap_tile/man_trap_tile.tscn",
 		},
 	"mattock_tile" : {
@@ -4067,7 +4067,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['mattock_tile', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/level editor/mattock_tile/mattock_tile.tscn",
 		},
 	"mega_mouth_tile" : {
@@ -4080,7 +4080,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['mega_mouth_tile', 'drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/level editor/mega_mouth_tile/mega_mouth_tile.tscn",
 		},
 	"mitt_tile" : {
@@ -4093,7 +4093,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['mitt_tile', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/level editor/mitt_tile/mitt_tile.tscn",
 		},
 	"monkey_tile" : {
@@ -4106,7 +4106,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['monkey_tile', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/level editor/monkey_tile/monkey_tile.tscn",
 		},
 	"new_button" : {
@@ -4119,7 +4119,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['new_button'],
-		"scripts" : ['mouse_leave', 'mouse_left_button_pressed', 'mouse_left_button_released', 'step'],
+		"events" : ['mouse_leave', 'mouse_left_button_pressed', 'mouse_left_button_released', 'step'],
 		"folder_path" : "res://objects/level editor/new_button/new_button.tscn",
 		},
 	"parachute_tile" : {
@@ -4132,7 +4132,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['parachute_tile', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/level editor/parachute_tile/parachute_tile.tscn",
 		},
 	"piranha_tile" : {
@@ -4145,7 +4145,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['piranha_tile', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/level editor/piranha_tile/piranha_tile.tscn",
 		},
 	"pistol_tile" : {
@@ -4158,7 +4158,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['pistol_tile', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/level editor/pistol_tile/pistol_tile.tscn",
 		},
 	"rock_tile" : {
@@ -4171,7 +4171,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['rock_tile', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/level editor/rock_tile/rock_tile.tscn",
 		},
 	"rope_pile_tile" : {
@@ -4184,7 +4184,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['rope_pile_tile', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/level editor/rope_pile_tile/rope_pile_tile.tscn",
 		},
 	"ruby_big_tile" : {
@@ -4197,7 +4197,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['ruby_big_tile', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/level editor/ruby_big_tile/ruby_big_tile.tscn",
 		},
 	"sapphire_big_tile" : {
@@ -4210,7 +4210,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['sapphire_big_tile', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/level editor/sapphire_big_tile/sapphire_big_tile.tscn",
 		},
 	"shopkeeper_tile" : {
@@ -4223,7 +4223,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['shopkeeper_tile', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/level editor/shopkeeper_tile/shopkeeper_tile.tscn",
 		},
 	"shotgun_tile" : {
@@ -4236,7 +4236,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['shotgun_tile', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/level editor/shotgun_tile/shotgun_tile.tscn",
 		},
 	"skeleton_tile" : {
@@ -4249,7 +4249,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['skeleton_tile', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/level editor/skeleton_tile/skeleton_tile.tscn",
 		},
 	"smash_trap_tile" : {
@@ -4262,7 +4262,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['smash_trap_tile', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/level editor/smash_trap_tile/smash_trap_tile.tscn",
 		},
 	"snake_tile" : {
@@ -4275,7 +4275,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['snake_tile', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/level editor/snake_tile/snake_tile.tscn",
 		},
 	"spear_trap_tile_bot" : {
@@ -4288,7 +4288,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['spear_trap_tile_bot', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/level editor/spear_trap_tile_bot/spear_trap_tile_bot.tscn",
 		},
 	"spear_trap_tile_top" : {
@@ -4301,7 +4301,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['spear_trap_tile_top', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/level editor/spear_trap_tile_top/spear_trap_tile_top.tscn",
 		},
 	"spectacles_tile" : {
@@ -4314,7 +4314,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['spectacles_tile', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/level editor/spectacles_tile/spectacles_tile.tscn",
 		},
 	"spider_tile" : {
@@ -4327,7 +4327,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['spider_tile', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/level editor/spider_tile/spider_tile.tscn",
 		},
 	"spike_shoes_tile" : {
@@ -4340,7 +4340,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['spike_shoes_tile', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/level editor/spike_shoes_tile/spike_shoes_tile.tscn",
 		},
 	"spring_shoes_tile" : {
@@ -4353,7 +4353,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['spring_shoes_tile', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/level editor/spring_shoes_tile/spring_shoes_tile.tscn",
 		},
 	"spring_trap_tile" : {
@@ -4366,7 +4366,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['spring_trap_tile', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/level editor/spring_trap_tile/spring_trap_tile.tscn",
 		},
 	"teleporter_tile" : {
@@ -4379,7 +4379,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['teleporter_tile', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/level editor/teleporter_tile/teleporter_tile.tscn",
 		},
 	"test_button" : {
@@ -4392,7 +4392,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['test_button'],
-		"scripts" : ['mouse_leave', 'mouse_left_button_pressed', 'mouse_left_button_released', 'step'],
+		"events" : ['mouse_leave', 'mouse_left_button_pressed', 'mouse_left_button_released', 'step'],
 		"folder_path" : "res://objects/level editor/test_button/test_button.tscn",
 		},
 	"tomb_lord_tile" : {
@@ -4405,7 +4405,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['tomb_lord_tile', 'drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/level editor/tomb_lord_tile/tomb_lord_tile.tscn",
 		},
 	"ufo_tile" : {
@@ -4418,7 +4418,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['ufo_tile', 'drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/level editor/ufo_tile/ufo_tile.tscn",
 		},
 	"vampire_tile" : {
@@ -4431,7 +4431,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['vampire_tile', 'drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/level editor/vampire_tile/vampire_tile.tscn",
 		},
 	"water_tile" : {
@@ -4444,7 +4444,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['water_tile', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/level editor/water_tile/water_tile.tscn",
 		},
 	"web_cannon_tile" : {
@@ -4457,7 +4457,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['web_cannon_tile', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/level editor/web_cannon_tile/web_cannon_tile.tscn",
 		},
 	"web_tile" : {
@@ -4470,7 +4470,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['web_tile', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/level editor/web_tile/web_tile.tscn",
 		},
 	"yeti_king_tile" : {
@@ -4483,7 +4483,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['yeti_king_tile', 'drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/level editor/yeti_king_tile/yeti_king_tile.tscn",
 		},
 	"yeti_tile" : {
@@ -4496,7 +4496,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['yeti_tile', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/level editor/yeti_tile/yeti_tile.tscn",
 		},
 	"zombie_tile" : {
@@ -4509,7 +4509,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['zombie_tile', 'drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/level editor/zombie_tile/zombie_tile.tscn",
 		},
 	"black" : {
@@ -4522,7 +4522,7 @@ const object_database = {
 		"parent" : "menu",
 		"mask" : null,
 		"groups" : ['black', 'menu'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/other/black/black.tscn",
 		},
 	"black_bg" : {
@@ -4535,7 +4535,7 @@ const object_database = {
 		"parent" : "menu",
 		"mask" : null,
 		"groups" : ['black_bg', 'menu'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/other/black_bg/black_bg.tscn",
 		},
 	"cave_up" : {
@@ -4548,7 +4548,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['cave_up', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/other/cave_up/cave_up.tscn",
 		},
 	"hint_hand" : {
@@ -4561,7 +4561,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['hint_hand'],
-		"scripts" : ['create', 'draw'],
+		"events" : ['create', 'draw'],
 		"folder_path" : "res://objects/other/hint_hand/hint_hand.tscn",
 		},
 	"menu_bottom" : {
@@ -4574,7 +4574,7 @@ const object_database = {
 		"parent" : "menu",
 		"mask" : null,
 		"groups" : ['menu_bottom', 'menu'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/other/menu_bottom/menu_bottom.tscn",
 		},
 	"menu_left" : {
@@ -4587,7 +4587,7 @@ const object_database = {
 		"parent" : "menu",
 		"mask" : null,
 		"groups" : ['menu_left', 'menu'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/other/menu_left/menu_left.tscn",
 		},
 	"menu_ll" : {
@@ -4600,7 +4600,7 @@ const object_database = {
 		"parent" : "menu",
 		"mask" : null,
 		"groups" : ['menu_ll', 'menu'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/other/menu_ll/menu_ll.tscn",
 		},
 	"menu_lr" : {
@@ -4613,7 +4613,7 @@ const object_database = {
 		"parent" : "menu",
 		"mask" : null,
 		"groups" : ['menu_lr', 'menu'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/other/menu_lr/menu_lr.tscn",
 		},
 	"menu_right" : {
@@ -4626,7 +4626,7 @@ const object_database = {
 		"parent" : "menu",
 		"mask" : null,
 		"groups" : ['menu_right', 'menu'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/other/menu_right/menu_right.tscn",
 		},
 	"menu_sel" : {
@@ -4639,7 +4639,7 @@ const object_database = {
 		"parent" : "menu",
 		"mask" : null,
 		"groups" : ['menu_sel', 'menu'],
-		"scripts" : ['mouse_left_button_released'],
+		"events" : ['mouse_left_button_released'],
 		"folder_path" : "res://objects/other/menu_sel/menu_sel.tscn",
 		},
 	"menu_top" : {
@@ -4652,7 +4652,7 @@ const object_database = {
 		"parent" : "menu",
 		"mask" : null,
 		"groups" : ['menu_top', 'menu'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/other/menu_top/menu_top.tscn",
 		},
 	"menu_ul" : {
@@ -4665,7 +4665,7 @@ const object_database = {
 		"parent" : "menu",
 		"mask" : null,
 		"groups" : ['menu_ul', 'menu'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/other/menu_ul/menu_ul.tscn",
 		},
 	"menu_ur" : {
@@ -4678,7 +4678,7 @@ const object_database = {
 		"parent" : "menu",
 		"mask" : null,
 		"groups" : ['menu_ur', 'menu'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/other/menu_ur/menu_ur.tscn",
 		},
 	"page_down" : {
@@ -4691,7 +4691,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['page_down'],
-		"scripts" : ['key_down_pressed', 'mouse_leave', 'mouse_left_button_pressed', 'mouse_left_button_released'],
+		"events" : ['key_down_pressed', 'mouse_leave', 'mouse_left_button_pressed', 'mouse_left_button_released'],
 		"folder_path" : "res://objects/other/page_down/page_down.tscn",
 		},
 	"page_up" : {
@@ -4704,7 +4704,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['page_up'],
-		"scripts" : ['key_up_pressed', 'mouse_leave', 'mouse_left_button_pressed', 'mouse_left_button_released'],
+		"events" : ['key_up_pressed', 'mouse_leave', 'mouse_left_button_pressed', 'mouse_left_button_released'],
 		"folder_path" : "res://objects/other/page_up/page_up.tscn",
 		},
 	"p_dummy" : {
@@ -4717,7 +4717,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['p_dummy', 'drawn_sprite'],
-		"scripts" : ['alarm_0', 'alarm_1', 'alarm_2', 'alarm_3', 'alarm_4', 'alarm_5', 'animation_end', 'create', 'draw', 'step'],
+		"events" : ['alarm_0', 'alarm_1', 'alarm_2', 'alarm_3', 'alarm_4', 'alarm_5', 'animation_end', 'create', 'draw', 'step'],
 		"folder_path" : "res://objects/other/p_dummy/p_dummy.tscn",
 		},
 	"p_dummy2" : {
@@ -4730,7 +4730,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['p_dummy2', 'drawn_sprite'],
-		"scripts" : ['alarm_0', 'alarm_1', 'alarm_2', 'create', 'draw', 'step'],
+		"events" : ['alarm_0', 'alarm_1', 'alarm_2', 'create', 'draw', 'step'],
 		"folder_path" : "res://objects/other/p_dummy2/p_dummy2.tscn",
 		},
 	"p_dummy3" : {
@@ -4743,7 +4743,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['p_dummy3', 'drawn_sprite'],
-		"scripts" : ['alarm_0', 'alarm_2', 'create', 'draw', 'step'],
+		"events" : ['alarm_0', 'alarm_2', 'create', 'draw', 'step'],
 		"folder_path" : "res://objects/other/p_dummy3/p_dummy3.tscn",
 		},
 	"p_dummy4" : {
@@ -4756,7 +4756,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['p_dummy4', 'drawn_sprite'],
-		"scripts" : ['alarm_2', 'create', 'step'],
+		"events" : ['alarm_2', 'create', 'step'],
 		"folder_path" : "res://objects/other/p_dummy4/p_dummy4.tscn",
 		},
 	"p_dummy5" : {
@@ -4769,7 +4769,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['p_dummy5', 'drawn_sprite'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/other/p_dummy5/p_dummy5.tscn",
 		},
 	"p_dummy6" : {
@@ -4782,7 +4782,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['p_dummy6', 'drawn_sprite'],
-		"scripts" : ['create', 'draw'],
+		"events" : ['create', 'draw'],
 		"folder_path" : "res://objects/other/p_dummy6/p_dummy6.tscn",
 		},
 	"wal_damsel" : {
@@ -4795,7 +4795,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['wal_damsel'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/other/wal_damsel/wal_damsel.tscn",
 		},
 	"bg_end3" : {
@@ -4808,7 +4808,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['bg_end3'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/other/end/bg_end3/bg_end3.tscn",
 		},
 	"big_chest" : {
@@ -4821,7 +4821,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['big_chest', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/other/end/big_chest/big_chest.tscn",
 		},
 	"big_treasure" : {
@@ -4834,7 +4834,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['big_treasure'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/other/end/big_treasure/big_treasure.tscn",
 		},
 	"end2_bg" : {
@@ -4847,7 +4847,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['end2_bg'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/other/end/end2_bg/end2_bg.tscn",
 		},
 	"end_plat" : {
@@ -4860,7 +4860,7 @@ const object_database = {
 		"parent" : "solid",
 		"mask" : null,
 		"groups" : ['end_plat', 'solid', 'drawn_sprite'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/other/end/end_plat/end_plat.tscn",
 		},
 	"end_wall" : {
@@ -4873,7 +4873,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['end_wall'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/other/end/end_wall/end_wall.tscn",
 		},
 	"lava_spray" : {
@@ -4886,7 +4886,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['lava_spray'],
-		"scripts" : ['alarm_0', 'create', 'step'],
+		"events" : ['alarm_0', 'create', 'step'],
 		"folder_path" : "res://objects/other/end/lava_spray/lava_spray.tscn",
 		},
 	"player_sil" : {
@@ -4899,7 +4899,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['player_sil', 'drawn_sprite'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/other/end/player_sil/player_sil.tscn",
 		},
 	"treasure_sil" : {
@@ -4912,7 +4912,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['treasure_sil', 'drawn_sprite'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/other/end/treasure_sil/treasure_sil.tscn",
 		},
 	"bat_intro" : {
@@ -4925,7 +4925,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['bat_intro'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/other/intro/bat_intro/bat_intro.tscn",
 		},
 	"camel" : {
@@ -4938,7 +4938,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['camel'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/other/intro/camel/camel.tscn",
 		},
 	"caravan" : {
@@ -4951,7 +4951,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['caravan'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/other/intro/caravan/caravan.tscn",
 		},
 	"desert" : {
@@ -4964,7 +4964,7 @@ const object_database = {
 		"parent" : "solid",
 		"mask" : null,
 		"groups" : ['desert', 'solid', 'drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/other/intro/desert/desert.tscn",
 		},
 	"desert2" : {
@@ -4977,7 +4977,7 @@ const object_database = {
 		"parent" : "solid",
 		"mask" : null,
 		"groups" : ['desert2', 'solid', 'drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/other/intro/desert2/desert2.tscn",
 		},
 	"desert_scroll" : {
@@ -4990,7 +4990,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['desert_scroll', 'drawn_sprite'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/other/intro/desert_scroll/desert_scroll.tscn",
 		},
 	"desert_scroll2" : {
@@ -5003,7 +5003,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['desert_scroll2', 'drawn_sprite'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/other/intro/desert_scroll2/desert_scroll2.tscn",
 		},
 	"desert_top" : {
@@ -5016,7 +5016,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['desert_top'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/other/intro/desert_top/desert_top.tscn",
 		},
 	"desert_top_scroll" : {
@@ -5029,7 +5029,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['desert_top_scroll'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/other/intro/desert_top_scroll/desert_top_scroll.tscn",
 		},
 	"intro_bg" : {
@@ -5042,7 +5042,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['intro_bg'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/other/intro/intro_bg/intro_bg.tscn",
 		},
 	"moon" : {
@@ -5055,7 +5055,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['moon'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/other/intro/moon/moon.tscn",
 		},
 	"palm_tree" : {
@@ -5068,7 +5068,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['palm_tree'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/other/intro/palm_tree/palm_tree.tscn",
 		},
 	"palm_tree_dark" : {
@@ -5081,7 +5081,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['palm_tree_dark'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/other/intro/palm_tree_dark/palm_tree_dark.tscn",
 		},
 	"palm_tree_scroll" : {
@@ -5094,7 +5094,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['palm_tree_scroll', 'drawn_sprite'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/other/intro/palm_tree_scroll/palm_tree_scroll.tscn",
 		},
 	"shrub" : {
@@ -5107,7 +5107,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['shrub'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/other/intro/shrub/shrub.tscn",
 		},
 	"shrub_dark" : {
@@ -5120,7 +5120,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['shrub_dark'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/other/intro/shrub_dark/shrub_dark.tscn",
 		},
 	"shrub_scroll" : {
@@ -5133,7 +5133,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['shrub_scroll', 'drawn_sprite'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/other/intro/shrub_scroll/shrub_scroll.tscn",
 		},
 	"basket" : {
@@ -5146,7 +5146,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['basket'],
-		"scripts" : ['animation_end'],
+		"events" : ['animation_end'],
 		"folder_path" : "res://objects/other/title/basket/basket.tscn",
 		},
 	"bat_target" : {
@@ -5159,7 +5159,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['bat_target'],
-		"scripts" : ['collision_with_arrow', 'collision_with_character', 'create', 'step'],
+		"events" : ['collision_with_arrow', 'collision_with_character', 'create', 'step'],
 		"folder_path" : "res://objects/other/title/bat_target/bat_target.tscn",
 		},
 	"button_highscore" : {
@@ -5172,7 +5172,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['button_highscore'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/other/title/button_highscore/button_highscore.tscn",
 		},
 	"copy" : {
@@ -5185,7 +5185,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['copy'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/other/title/copy/copy.tscn",
 		},
 	"level13_sign" : {
@@ -5198,7 +5198,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['level13_sign'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/other/title/level13_sign/level13_sign.tscn",
 		},
 	"level5_sign" : {
@@ -5211,7 +5211,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['level5_sign'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/other/title/level5_sign/level5_sign.tscn",
 		},
 	"level9_sign" : {
@@ -5224,7 +5224,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['level9_sign'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/other/title/level9_sign/level9_sign.tscn",
 		},
 	"multi_trophy" : {
@@ -5237,7 +5237,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['multi_trophy'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/other/title/multi_trophy/multi_trophy.tscn",
 		},
 	"new" : {
@@ -5250,7 +5250,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['new'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/other/title/new/new.tscn",
 		},
 	"quit_sign" : {
@@ -5263,7 +5263,7 @@ const object_database = {
 		"parent" : "solid",
 		"mask" : null,
 		"groups" : ['quit_sign', 'solid', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/other/title/quit_sign/quit_sign.tscn",
 		},
 	"reset_sign" : {
@@ -5276,7 +5276,7 @@ const object_database = {
 		"parent" : "solid",
 		"mask" : null,
 		"groups" : ['reset_sign', 'solid', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/other/title/reset_sign/reset_sign.tscn",
 		},
 	"rim" : {
@@ -5289,7 +5289,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['rim'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/other/title/rim/rim.tscn",
 		},
 	"rim_deflect" : {
@@ -5302,7 +5302,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['rim_deflect'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/other/title/rim_deflect/rim_deflect.tscn",
 		},
 	"scores_sign" : {
@@ -5315,7 +5315,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['scores_sign'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/other/title/scores_sign/scores_sign.tscn",
 		},
 	"start_sign" : {
@@ -5328,7 +5328,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['start_sign'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/other/title/start_sign/start_sign.tscn",
 		},
 	"target" : {
@@ -5341,7 +5341,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['target'],
-		"scripts" : ['collision_with_arrow', 'create', 'step'],
+		"events" : ['collision_with_arrow', 'create', 'step'],
 		"folder_path" : "res://objects/other/title/target/target.tscn",
 		},
 	"title_bg" : {
@@ -5354,7 +5354,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['title_bg', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/other/title/title_bg/title_bg.tscn",
 		},
 	"title_logo" : {
@@ -5367,7 +5367,7 @@ const object_database = {
 		"parent" : "solid",
 		"mask" : null,
 		"groups" : ['title_logo', 'solid', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/other/title/title_logo/title_logo.tscn",
 		},
 	"trophy" : {
@@ -5380,7 +5380,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['trophy'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/other/title/trophy/trophy.tscn",
 		},
 	"tutorial_sign" : {
@@ -5393,7 +5393,7 @@ const object_database = {
 		"parent" : "solid",
 		"mask" : null,
 		"groups" : ['tutorial_sign', 'solid', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/other/title/tutorial_sign/tutorial_sign.tscn",
 		},
 	"x_change" : {
@@ -5406,7 +5406,7 @@ const object_database = {
 		"parent" : "x_start",
 		"mask" : null,
 		"groups" : ['x_change', 'x_start', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/other/title/x_change/x_change.tscn",
 		},
 	"x_change2" : {
@@ -5419,7 +5419,7 @@ const object_database = {
 		"parent" : "x_start",
 		"mask" : null,
 		"groups" : ['x_change2', 'x_start', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/other/title/x_change2/x_change2.tscn",
 		},
 	"x_end" : {
@@ -5432,7 +5432,7 @@ const object_database = {
 		"parent" : "x_start",
 		"mask" : null,
 		"groups" : ['x_end', 'x_start', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/other/title/x_end/x_end.tscn",
 		},
 	"x_moon" : {
@@ -5445,7 +5445,7 @@ const object_database = {
 		"parent" : "x_start",
 		"mask" : null,
 		"groups" : ['x_moon', 'x_start', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/other/title/x_moon/x_moon.tscn",
 		},
 	"x_scores" : {
@@ -5458,7 +5458,7 @@ const object_database = {
 		"parent" : "x_start",
 		"mask" : null,
 		"groups" : ['x_scores', 'x_start', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/other/title/x_scores/x_scores.tscn",
 		},
 	"x_shortcut13" : {
@@ -5471,7 +5471,7 @@ const object_database = {
 		"parent" : "x_start",
 		"mask" : null,
 		"groups" : ['x_shortcut13', 'x_start', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/other/title/x_shortcut13/x_shortcut13.tscn",
 		},
 	"x_shortcut5" : {
@@ -5484,7 +5484,7 @@ const object_database = {
 		"parent" : "x_start",
 		"mask" : null,
 		"groups" : ['x_shortcut5', 'x_start', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/other/title/x_shortcut5/x_shortcut5.tscn",
 		},
 	"x_shortcut9" : {
@@ -5497,7 +5497,7 @@ const object_database = {
 		"parent" : "x_start",
 		"mask" : null,
 		"groups" : ['x_shortcut9', 'x_start', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/other/title/x_shortcut9/x_shortcut9.tscn",
 		},
 	"x_stars" : {
@@ -5510,7 +5510,7 @@ const object_database = {
 		"parent" : "x_start",
 		"mask" : null,
 		"groups" : ['x_stars', 'x_start', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/other/title/x_stars/x_stars.tscn",
 		},
 	"x_start" : {
@@ -5523,7 +5523,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['x_start', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/other/title/x_start/x_start.tscn",
 		},
 	"x_sun" : {
@@ -5536,7 +5536,7 @@ const object_database = {
 		"parent" : "x_start",
 		"mask" : null,
 		"groups" : ['x_sun', 'x_start', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/other/title/x_sun/x_sun.tscn",
 		},
 	"x_title" : {
@@ -5549,7 +5549,7 @@ const object_database = {
 		"parent" : "x_start",
 		"mask" : null,
 		"groups" : ['x_title', 'x_start', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/other/title/x_title/x_title.tscn",
 		},
 	"x_tutorial" : {
@@ -5562,7 +5562,7 @@ const object_database = {
 		"parent" : "x_start",
 		"mask" : null,
 		"groups" : ['x_tutorial', 'x_start', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/other/title/x_tutorial/x_tutorial.tscn",
 		},
 	"arrow_repeater_l" : {
@@ -5575,7 +5575,7 @@ const object_database = {
 		"parent" : "solid",
 		"mask" : null,
 		"groups" : ['arrow_repeater_l', 'solid', 'drawn_sprite'],
-		"scripts" : ['alarm_0', 'alarm_1', 'create', 'destroy', 'step'],
+		"events" : ['alarm_0', 'alarm_1', 'create', 'destroy', 'step'],
 		"folder_path" : "res://objects/traps/arrow_repeater_l/arrow_repeater_l.tscn",
 		},
 	"arrow_repeater_r" : {
@@ -5588,7 +5588,7 @@ const object_database = {
 		"parent" : "solid",
 		"mask" : null,
 		"groups" : ['arrow_repeater_r', 'solid', 'drawn_sprite'],
-		"scripts" : ['alarm_0', 'alarm_1', 'create', 'destroy', 'step'],
+		"events" : ['alarm_0', 'alarm_1', 'create', 'destroy', 'step'],
 		"folder_path" : "res://objects/traps/arrow_repeater_r/arrow_repeater_r.tscn",
 		},
 	"arrow_trap_left" : {
@@ -5601,7 +5601,7 @@ const object_database = {
 		"parent" : "solid",
 		"mask" : null,
 		"groups" : ['arrow_trap_left', 'solid', 'drawn_sprite'],
-		"scripts" : ['alarm_0', 'alarm_1', 'create', 'destroy', 'step'],
+		"events" : ['alarm_0', 'alarm_1', 'create', 'destroy', 'step'],
 		"folder_path" : "res://objects/traps/arrow_trap_left/arrow_trap_left.tscn",
 		},
 	"arrow_trap_left_lit" : {
@@ -5614,7 +5614,7 @@ const object_database = {
 		"parent" : "arrow_trap_left",
 		"mask" : null,
 		"groups" : ['arrow_trap_left_lit', 'arrow_trap_left', 'solid', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/traps/arrow_trap_left_lit/arrow_trap_left_lit.tscn",
 		},
 	"arrow_trap_right" : {
@@ -5627,7 +5627,7 @@ const object_database = {
 		"parent" : "solid",
 		"mask" : null,
 		"groups" : ['arrow_trap_right', 'solid', 'drawn_sprite'],
-		"scripts" : ['alarm_0', 'alarm_1', 'create', 'destroy', 'step'],
+		"events" : ['alarm_0', 'alarm_1', 'create', 'destroy', 'step'],
 		"folder_path" : "res://objects/traps/arrow_trap_right/arrow_trap_right.tscn",
 		},
 	"arrow_trap_right_lit" : {
@@ -5640,7 +5640,7 @@ const object_database = {
 		"parent" : "arrow_trap_right",
 		"mask" : null,
 		"groups" : ['arrow_trap_right_lit', 'arrow_trap_right', 'solid', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/traps/arrow_trap_right_lit/arrow_trap_right_lit.tscn",
 		},
 	"arrow_trap_test" : {
@@ -5653,7 +5653,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['arrow_trap_test'],
-		"scripts" : ['collision_with_boulder', 'collision_with_character', 'collision_with_enemy', 'collision_with_item', 'collision_with_moveable_solid', 'collision_with_treasure', 'create'],
+		"events" : ['collision_with_boulder', 'collision_with_character', 'collision_with_enemy', 'collision_with_item', 'collision_with_moveable_solid', 'collision_with_treasure', 'create'],
 		"folder_path" : "res://objects/traps/arrow_trap_test/arrow_trap_test.tscn",
 		},
 	"boulder" : {
@@ -5666,7 +5666,7 @@ const object_database = {
 		"parent" : "moving_solid",
 		"mask" : null,
 		"groups" : ['boulder', 'moving_solid', 'solid', 'drawn_sprite'],
-		"scripts" : ['collision_with_solid', 'create', 'step'],
+		"events" : ['collision_with_solid', 'create', 'step'],
 		"folder_path" : "res://objects/traps/boulder/boulder.tscn",
 		},
 	"ceiling_trap" : {
@@ -5679,7 +5679,7 @@ const object_database = {
 		"parent" : "moving_solid",
 		"mask" : null,
 		"groups" : ['ceiling_trap', 'moving_solid', 'solid', 'drawn_sprite'],
-		"scripts" : ['animation_end', 'create', 'destroy', 'step'],
+		"events" : ['animation_end', 'create', 'destroy', 'step'],
 		"folder_path" : "res://objects/traps/ceiling_trap/ceiling_trap.tscn",
 		},
 	"door" : {
@@ -5692,7 +5692,7 @@ const object_database = {
 		"parent" : "moving_solid",
 		"mask" : null,
 		"groups" : ['door', 'moving_solid', 'solid', 'drawn_sprite'],
-		"scripts" : ['create', 'destroy', 'step'],
+		"events" : ['create', 'destroy', 'step'],
 		"folder_path" : "res://objects/traps/door/door.tscn",
 		},
 	"giant_tiki_head" : {
@@ -5705,7 +5705,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['giant_tiki_head', 'drawn_sprite'],
-		"scripts" : ['alarm_0'],
+		"events" : ['alarm_0'],
 		"folder_path" : "res://objects/traps/giant_tiki_head/giant_tiki_head.tscn",
 		},
 	"smash_trap" : {
@@ -5718,7 +5718,7 @@ const object_database = {
 		"parent" : "moving_solid",
 		"mask" : null,
 		"groups" : ['smash_trap', 'moving_solid', 'solid', 'drawn_sprite'],
-		"scripts" : ['create', 'destroy', 'step'],
+		"events" : ['create', 'destroy', 'step'],
 		"folder_path" : "res://objects/traps/smash_trap/smash_trap.tscn",
 		},
 	"smash_trap_lit" : {
@@ -5731,7 +5731,7 @@ const object_database = {
 		"parent" : "moving_solid",
 		"mask" : null,
 		"groups" : ['smash_trap_lit', 'moving_solid', 'solid', 'drawn_sprite'],
-		"scripts" : ['create', 'destroy', 'step'],
+		"events" : ['create', 'destroy', 'step'],
 		"folder_path" : "res://objects/traps/smash_trap_lit/smash_trap_lit.tscn",
 		},
 	"spears_left" : {
@@ -5744,7 +5744,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['spears_left', 'drawn_sprite'],
-		"scripts" : ['animation_end', 'step'],
+		"events" : ['animation_end', 'step'],
 		"folder_path" : "res://objects/traps/spears_left/spears_left.tscn",
 		},
 	"spear_trap_bottom" : {
@@ -5757,7 +5757,7 @@ const object_database = {
 		"parent" : "solid",
 		"mask" : null,
 		"groups" : ['spear_trap_bottom', 'solid', 'drawn_sprite'],
-		"scripts" : ['alarm_0', 'create', 'destroy', 'step'],
+		"events" : ['alarm_0', 'create', 'destroy', 'step'],
 		"folder_path" : "res://objects/traps/spear_trap_bottom/spear_trap_bottom.tscn",
 		},
 	"spear_trap_lit" : {
@@ -5770,7 +5770,7 @@ const object_database = {
 		"parent" : "spear_trap_top",
 		"mask" : null,
 		"groups" : ['spear_trap_lit', 'spear_trap_top', 'solid', 'drawn_sprite'],
-		"scripts" : [],
+		"events" : [],
 		"folder_path" : "res://objects/traps/spear_trap_lit/spear_trap_lit.tscn",
 		},
 	"spear_trap_top" : {
@@ -5783,7 +5783,7 @@ const object_database = {
 		"parent" : "solid",
 		"mask" : null,
 		"groups" : ['spear_trap_top', 'solid', 'drawn_sprite'],
-		"scripts" : ['alarm_0', 'create', 'destroy', 'step'],
+		"events" : ['alarm_0', 'create', 'destroy', 'step'],
 		"folder_path" : "res://objects/traps/spear_trap_top/spear_trap_top.tscn",
 		},
 	"spikes" : {
@@ -5796,7 +5796,7 @@ const object_database = {
 		"parent" : "drawn_sprite",
 		"mask" : null,
 		"groups" : ['spikes', 'drawn_sprite'],
-		"scripts" : ['create'],
+		"events" : ['create'],
 		"folder_path" : "res://objects/traps/spikes/spikes.tscn",
 		},
 	"spring_trap" : {
@@ -5809,7 +5809,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['spring_trap'],
-		"scripts" : ['animation_end', 'collision_with_enemy', 'collision_with_item', 'collision_with_player1', 'create', 'step'],
+		"events" : ['animation_end', 'collision_with_enemy', 'collision_with_item', 'collision_with_player1', 'create', 'step'],
 		"folder_path" : "res://objects/traps/spring_trap/spring_trap.tscn",
 		},
 	"temp" : {
@@ -5822,7 +5822,7 @@ const object_database = {
 		"parent" : "solid",
 		"mask" : null,
 		"groups" : ['temp', 'solid', 'drawn_sprite'],
-		"scripts" : ['alarm_0', 'create', 'step'],
+		"events" : ['alarm_0', 'create', 'step'],
 		"folder_path" : "res://objects/traps/temp/temp.tscn",
 		},
 	"thwomp_trap" : {
@@ -5835,7 +5835,7 @@ const object_database = {
 		"parent" : "moving_solid",
 		"mask" : null,
 		"groups" : ['thwomp_trap', 'moving_solid', 'solid', 'drawn_sprite'],
-		"scripts" : ['create', 'step'],
+		"events" : ['create', 'step'],
 		"folder_path" : "res://objects/traps/thwomp_trap/thwomp_trap.tscn",
 		},
 	"trap_block" : {
@@ -5848,7 +5848,7 @@ const object_database = {
 		"parent" : "solid",
 		"mask" : null,
 		"groups" : ['trap_block', 'solid', 'drawn_sprite'],
-		"scripts" : ['create', 'destroy', 'step'],
+		"events" : ['create', 'destroy', 'step'],
 		"folder_path" : "res://objects/traps/trap_block/trap_block.tscn",
 		}
 }
