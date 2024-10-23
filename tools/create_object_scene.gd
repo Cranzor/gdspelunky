@@ -13,7 +13,8 @@ func _run():
 	#make_folder_with_scene(object_string)
 	for object in all_finished_objects:
 		var script_path = get_script_from_object_name(object)
-		get_post_function_deletion_script(script_path)
+		var new_content = get_post_function_deletion_script(script_path)
+		#write_new_content_to_file(script_path, new_content)
 
 func make_folder_with_scene(object_name):
 	var objects_script = "res://objects.gd"
@@ -107,6 +108,8 @@ func get_post_function_deletion_script(file):
 	regex.compile('(extends .+)(\\s+)(var )')
 	content = regex.sub(content, "$1\n\n$3")
 	
-	print(file)
-	print(content)
-	print("---")
+	return content
+
+func write_new_content_to_file(file, new_content):
+	var opened_file = FileAccess.open(file, FileAccess.WRITE)
+	opened_file.store_string(new_content)
