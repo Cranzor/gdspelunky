@@ -6,15 +6,18 @@ var all_remaining_objects = []
 var all_finished_objects = []
 
 func _run():
-	#get_all_uncompleted_objects()
-	get_all_completed_objects()
-	#print(all_finished_objects)
+	get_all_uncompleted_objects()
+	#get_all_completed_objects()
+	#print(all_remaining_objects)
 	
 	#make_folder_with_scene(object_string)
-	for object in all_finished_objects:
-		var script_path = get_script_from_object_name(object)
-		var new_content = get_post_function_deletion_script(script_path)
+	#for object in all_finished_objects:
+		#var script_path = get_script_from_object_name(object)
+		#var new_content = get_post_function_deletion_script(script_path)
 		#write_new_content_to_file(script_path, new_content)
+	
+	for object in all_remaining_objects:
+		make_folder_with_scene(object)
 
 func make_folder_with_scene(object_name):
 	var objects_script = "res://objects.gd"
@@ -34,13 +37,32 @@ func make_folder_with_scene(object_name):
 	
 	if !DirAccess.dir_exists_absolute(path):
 		DirAccess.make_dir_recursive_absolute(path)
-	
+		
+		var converted_name = get_pascal_case_object_name(object_name)
+		var output = []
+		OS.execute("python", ["C:/Users/Jesse/Desktop/H&C2/programming/Spelunky Godot Porting Scripts/ObjectToGDScriptConverter2.py", converted_name], output)
+		var script_content = output[0]
+		
+		var script_name = path + object_name + ".gd"
+		var gd_file = FileAccess.open(script_name, FileAccess.WRITE)
+		gd_file.store_string(script_content)
+		
 		var node2d = Node2D.new()
 		node2d.name = object_name.to_pascal_case()
 		var scene: PackedScene = PackedScene.new()
+		var gd_script = GDScript.new()
+		scene.set_script(gd_script)
+		#scene.set_script(ResourceLoader.load(script_name, "", 0))
 		var result = scene.pack(node2d)
 		if result == OK:
+			#scene.set_script(ResourceLoader.load(script_name, "", 0))
 			ResourceSaver.save(scene, full_path)
+		
+		#var opened_scene_file = FileAccess.open(full_path, FileAccess.READ)
+		#var scene_file_content = opened_scene_file.get_as_text()
+		#
+		#opened_scene_file = FileAccess.open(full_path, FileAccess.WRITE)
+		#opened_scene_file.store_string(scene_file_content + '\n' + 'object_name = "' + object_string +'"')
 		
 		print("Created scene at " + full_path)
 		
@@ -113,3 +135,8 @@ func get_post_function_deletion_script(file):
 func write_new_content_to_file(file, new_content):
 	var opened_file = FileAccess.open(file, FileAccess.WRITE)
 	opened_file.store_string(new_content)
+
+func get_pascal_case_object_name(object_name):
+	var converted_name = object_name.to_pascal_case()
+	converted_name = "o" + converted_name + ".xml"
+	return converted_name
