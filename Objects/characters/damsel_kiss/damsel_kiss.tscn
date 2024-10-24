@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxhjy7fggnujw"]
+
+[sub_resource type="GDScript" id="GDScript_ohkgy"]
+
+[node name="DamselKiss" type="Node2D"]

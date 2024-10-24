@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxlit38wrji2u"]
+
+[sub_resource type="GDScript" id="GDScript_2v3oc"]
+
+[node name="Tree" type="Node2D"]

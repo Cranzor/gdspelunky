@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dw8wmuyk5p6i1"]
+
+[sub_resource type="GDScript" id="GDScript_1sgrc"]
+
+[node name="AlienBossTile" type="Node2D"]

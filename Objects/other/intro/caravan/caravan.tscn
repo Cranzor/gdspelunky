@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://d180tni177eha"]
+
+[sub_resource type="GDScript" id="GDScript_mbi7f"]
+
+[node name="Caravan" type="Node2D"]

@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://qmeryt7qbdcc"]
+
+[sub_resource type="GDScript" id="GDScript_mg1w6"]
+
+[node name="MenuRight" type="Node2D"]

@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwv2306717tx6"]
+
+[sub_resource type="GDScript" id="GDScript_cigvs"]
+
+[node name="Gloves" type="Node2D"]

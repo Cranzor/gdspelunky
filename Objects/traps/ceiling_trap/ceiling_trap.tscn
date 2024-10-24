@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://5ccrugoe6x7c"]
+
+[sub_resource type="GDScript" id="GDScript_1fken"]
+
+[node name="CeilingTrap" type="Node2D"]

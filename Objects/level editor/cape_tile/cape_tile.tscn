@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://qnjegtvceimp"]
+
+[sub_resource type="GDScript" id="GDScript_2bmne"]
+
+[node name="CapeTile" type="Node2D"]

@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwy3u05qfgq8d"]
+
+[sub_resource type="GDScript" id="GDScript_n2nw6"]
+
+[node name="IceBlock" type="Node2D"]

@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4hvu73salrjk"]
+
+[sub_resource type="GDScript" id="GDScript_vj43j"]
+
+[node name="Ice" type="Node2D"]

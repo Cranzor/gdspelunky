@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpatucl8u68ji"]
+
+[sub_resource type="GDScript" id="GDScript_7027q"]
+
+[node name="ItemsGet" type="Node2D"]

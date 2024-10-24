@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://o5ekmshanjkj"]
+
+[sub_resource type="GDScript" id="GDScript_a4lkc"]
+
+[node name="WebBall" type="Node2D"]

@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://hbo7rg5pcwrr"]
+
+[sub_resource type="GDScript" id="GDScript_hl0lw"]
+
+[node name="Parachute" type="Node2D"]

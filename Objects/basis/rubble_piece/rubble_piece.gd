@@ -1,0 +1,110 @@
+extends DrawnSprite
+
+
+func _ready():
+	object_setup()
+
+
+func _physics_process(delta):
+	object_tick()
+
+
+func _process(delta):
+	object_process(delta)
+
+
+#--- Object functions
+
+
+#func create():
+    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+#    <event category="CREATE" id="0">
+#      <actions>
+#        <action id="604" library="1">
+#          <!--action name: Inherited-->
+#          <kind>NORMAL</kind>
+#          <allow_relative>false</allow_relative>
+#          <question>false</question>
+#          <can_apply_to>false</can_apply_to>
+#          <action_type>FUNCTION</action_type>
+#          <function_name>action_inherited</function_name>
+#          <relative>false</relative>
+#          <not>false</not>
+#          <applies_to>.self</applies_to>
+#          <arguments/>
+#        </action>
+#        <action id="603" library="1">
+#          <!--action name: Code-->
+#          <kind>CODE</kind>
+#          <allow_relative>false</allow_relative>
+#          <question>false</question>
+#          <can_apply_to>true</can_apply_to>
+#          <action_type>CODE</action_type>
+#          <function_name/>
+#          <relative>false</relative>
+#          <not>false</not>
+#          <applies_to>.self</applies_to>
+#          <arguments>
+#            <argument kind="STRING">type = "None"
+#    x_vel = 0
+#    y_vel = 0
+#    y_acc = 0.6</argument>
+#          </arguments>
+#        </action>
+#      </actions>
+#    </event>
+
+    
+
+#func step():
+    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+#    <event category="STEP" id="0">
+#      <actions>
+#        <action id="603" library="1">
+#          <!--action name: Code-->
+#          <kind>CODE</kind>
+#          <allow_relative>false</allow_relative>
+#          <question>false</question>
+#          <can_apply_to>true</can_apply_to>
+#          <action_type>CODE</action_type>
+#          <function_name/>
+#          <relative>false</relative>
+#          <not>false</not>
+#          <applies_to>.self</applies_to>
+#          <arguments>
+#            <argument kind="STRING">position.x += x_vel
+#    position.y += y_vel
+#    y_vel += y_acc
+
+#    if (gml.collision_point(position.x, position.y, "water_swim", 0, 0)):
+
+#        if (type == "Drip"): gml.instance_destroy()
+#        elif (type == "Leaf"):  y_vel = 0 sprite_index = s_leaf_still 
+#        else: y_vel = 0.2
+
+#    elif (gml.collision_point(position.x, position.y, "lava", 0, 0)):
+
+#        gml.instance_destroy()
+
+
+#    if (gml.collision_point(position.x, position.y, "solid", 0, 0)):
+
+#        gml.instance_destroy()
+
+
+#    if (view_enabled):
+
+#        if (position.x < view_xview[0] - 32 or:
+#            position.x > view_xview[0] + view_wview[0] + 32 or
+#            position.y < view_yview[0] - 32 or
+#            position.y > view_yview[0] + view_hview[0] + 32)
+    
+#            gml.instance_destroy()
+    
+#    </argument>
+#          </arguments>
+#        </action>
+#      </actions>
+#    </event>
+
+    

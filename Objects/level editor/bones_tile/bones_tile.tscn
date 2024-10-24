@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bknoeu4k1fo7p"]
+
+[sub_resource type="GDScript" id="GDScript_k1sk0"]
+
+[node name="BonesTile" type="Node2D"]

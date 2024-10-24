@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cil1x4wti8ivy"]
+
+[sub_resource type="GDScript" id="GDScript_71wpp"]
+
+[node name="CrateTile" type="Node2D"]

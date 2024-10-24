@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxugn2c2pj84"]
+
+[sub_resource type="GDScript" id="GDScript_mi4eg"]
+
+[node name="YellHelp" type="Node2D"]

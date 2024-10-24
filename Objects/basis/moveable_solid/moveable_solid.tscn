@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bl2r5257h8va3"]
+
+[sub_resource type="GDScript" id="GDScript_umg32"]
+
+[node name="MoveableSolid" type="Node2D"]

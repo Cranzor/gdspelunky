@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://tltqibdbjog1"]
+
+[sub_resource type="GDScript" id="GDScript_oyvlq"]
+
+[node name="OkButton" type="Node2D"]

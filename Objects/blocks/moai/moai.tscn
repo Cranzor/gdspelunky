@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://ck4q01a2vtjiq"]
+
+[sub_resource type="GDScript" id="GDScript_47x08"]
+
+[node name="Moai" type="Node2D"]

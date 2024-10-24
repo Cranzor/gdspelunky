@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://btd2fjfptj4ru"]
+
+[sub_resource type="GDScript" id="GDScript_7d4l7"]
+
+[node name="Jaws" type="Node2D"]

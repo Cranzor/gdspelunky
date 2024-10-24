@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dynaknevhnhvl"]
+
+[sub_resource type="GDScript" id="GDScript_5nl57"]
+
+[node name="LoadLevel" type="Node2D"]

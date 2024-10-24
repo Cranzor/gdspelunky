@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckdnm82bfuxa6"]
+
+[sub_resource type="GDScript" id="GDScript_fog14"]
+
+[node name="SpearTrapLit" type="Node2D"]

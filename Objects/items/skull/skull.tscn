@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dx0wu60ngofh4"]
+
+[sub_resource type="GDScript" id="GDScript_1b4eh"]
+
+[node name="Skull" type="Node2D"]

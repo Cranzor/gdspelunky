@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://qdua2ggdahaj"]
+
+[sub_resource type="GDScript" id="GDScript_406wh"]
+
+[node name="End2" type="Node2D"]

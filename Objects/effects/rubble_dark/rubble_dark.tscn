@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0bx6i5jnn8yk"]
+
+[sub_resource type="GDScript" id="GDScript_go58j"]
+
+[node name="RubbleDark" type="Node2D"]

@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bg5bb1pi5nw05"]
+
+[sub_resource type="GDScript" id="GDScript_snkyp"]
+
+[node name="CompassTile" type="Node2D"]

@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgsyevy78feec"]
+
+[sub_resource type="GDScript" id="GDScript_1v36g"]
+
+[node name="TreeBranchTile" type="Node2D"]

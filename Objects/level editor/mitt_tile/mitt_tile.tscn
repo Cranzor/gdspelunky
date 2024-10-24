@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cq7dx3fkvvree"]
+
+[sub_resource type="GDScript" id="GDScript_dljwc"]
+
+[node name="MittTile" type="Node2D"]

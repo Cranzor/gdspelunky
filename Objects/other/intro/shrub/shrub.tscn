@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkhc64o3ctn1w"]
+
+[sub_resource type="GDScript" id="GDScript_w0ij3"]
+
+[node name="Shrub" type="Node2D"]

@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://70b1ipc6q8t8"]
+
+[sub_resource type="GDScript" id="GDScript_8s1kg"]
+
+[node name="VineTop" type="Node2D"]

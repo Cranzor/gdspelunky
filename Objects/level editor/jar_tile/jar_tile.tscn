@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://csaw3ureavhu3"]
+
+[sub_resource type="GDScript" id="GDScript_mvbib"]
+
+[node name="JarTile" type="Node2D"]

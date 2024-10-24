@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dm5rtkkoy7ykh"]
+
+[sub_resource type="GDScript" id="GDScript_an14o"]
+
+[node name="Mitt" type="Node2D"]

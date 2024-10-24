@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cak8tovndif6v"]
+
+[sub_resource type="GDScript" id="GDScript_acl3n"]
+
+[node name="XShortcut9" type="Node2D"]

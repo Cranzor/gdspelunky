@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://ekhdkbbts830"]
+
+[sub_resource type="GDScript" id="GDScript_cdyxs"]
+
+[node name="CrystalSkull" type="Node2D"]

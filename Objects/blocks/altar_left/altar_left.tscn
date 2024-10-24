@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnpm2nrekmfld"]
+
+[sub_resource type="GDScript" id="GDScript_jhimk"]
+
+[node name="AltarLeft" type="Node2D"]

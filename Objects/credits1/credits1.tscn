@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://5bilr5h7dtda"]
+
+[sub_resource type="GDScript" id="GDScript_qb84v"]
+
+[node name="Credits1" type="Node2D"]

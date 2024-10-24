@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://unwwpn1qsk67"]
+
+[sub_resource type="GDScript" id="GDScript_6s3wx"]
+
+[node name="PistolTile" type="Node2D"]

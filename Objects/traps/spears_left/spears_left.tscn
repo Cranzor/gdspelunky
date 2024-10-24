@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://kib8fqk13upj"]
+
+[sub_resource type="GDScript" id="GDScript_mra0r"]
+
+[node name="SpearsLeft" type="Node2D"]

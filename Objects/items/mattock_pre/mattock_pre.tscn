@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://3o2a8digflkl"]
+
+[sub_resource type="GDScript" id="GDScript_8objc"]
+
+[node name="MattockPre" type="Node2D"]

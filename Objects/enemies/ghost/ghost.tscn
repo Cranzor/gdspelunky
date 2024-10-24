@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2n23kr3o74vn"]
+
+[sub_resource type="GDScript" id="GDScript_2caeo"]
+
+[node name="Ghost" type="Node2D"]

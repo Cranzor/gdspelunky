@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7yp6s3byj6be"]
+
+[sub_resource type="GDScript" id="GDScript_m3a0q"]
+
+[node name="HawkmanWorship" type="Node2D"]

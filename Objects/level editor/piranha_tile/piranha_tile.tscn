@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://rfgf17s832gb"]
+
+[sub_resource type="GDScript" id="GDScript_0enia"]
+
+[node name="PiranhaTile" type="Node2D"]

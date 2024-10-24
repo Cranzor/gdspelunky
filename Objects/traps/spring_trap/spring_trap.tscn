@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://d00dsfb1jl1n5"]
+
+[sub_resource type="GDScript" id="GDScript_j428l"]
+
+[node name="SpringTrap" type="Node2D"]

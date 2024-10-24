@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8ck60wqng207"]
+
+[sub_resource type="GDScript" id="GDScript_i1wkd"]
+
+[node name="Slash" type="Node2D"]

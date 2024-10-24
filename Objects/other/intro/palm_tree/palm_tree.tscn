@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://df4bdgergk5lo"]
+
+[sub_resource type="GDScript" id="GDScript_708jx"]
+
+[node name="PalmTree" type="Node2D"]

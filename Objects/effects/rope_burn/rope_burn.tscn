@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://tw7fgh8w1dtl"]
+
+[sub_resource type="GDScript" id="GDScript_tb8sk"]
+
+[node name="RopeBurn" type="Node2D"]

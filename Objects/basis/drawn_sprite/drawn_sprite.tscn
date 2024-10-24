@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3am7nxwmgv1q"]
+
+[sub_resource type="GDScript" id="GDScript_w01ag"]
+
+[node name="DrawnSprite" type="Node2D"]

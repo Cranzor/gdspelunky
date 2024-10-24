@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bf7j7e830gc6x"]
+
+[sub_resource type="GDScript" id="GDScript_52vly"]
+
+[node name="OlmecDebris" type="Node2D"]

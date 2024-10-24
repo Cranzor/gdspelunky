@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpki0wfufn3i2"]
+
+[sub_resource type="GDScript" id="GDScript_mrp3f"]
+
+[node name="LoadButton" type="Node2D"]

@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://5fhibg5rxhyg"]
+
+[sub_resource type="GDScript" id="GDScript_cr7v6"]
+
+[node name="Spectacles" type="Node2D"]

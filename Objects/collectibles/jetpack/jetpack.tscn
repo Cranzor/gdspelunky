@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://c87xq82wmtwl5"]
+
+[sub_resource type="GDScript" id="GDScript_aewhd"]
+
+[node name="Jetpack" type="Node2D"]

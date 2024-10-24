@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bw61lt6aoaabs"]
+
+[sub_resource type="GDScript" id="GDScript_cx7p5"]
+
+[node name="RopePile" type="Node2D"]

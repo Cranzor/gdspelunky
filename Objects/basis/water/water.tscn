@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbypvam7h8rhd"]
+
+[sub_resource type="GDScript" id="GDScript_of17i"]
+
+[node name="Water" type="Node2D"]

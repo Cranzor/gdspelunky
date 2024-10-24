@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cydb4xmtw5jxh"]
+
+[sub_resource type="GDScript" id="GDScript_ml701"]
+
+[node name="TeleporterTile" type="Node2D"]

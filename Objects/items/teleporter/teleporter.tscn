@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://ct4uwfoor3n2l"]
+
+[sub_resource type="GDScript" id="GDScript_fcs1o"]
+
+[node name="Teleporter" type="Node2D"]

@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://3rcjef6p2ce"]
+
+[sub_resource type="GDScript" id="GDScript_yjw0m"]
+
+[node name="MagmaMan" type="Node2D"]

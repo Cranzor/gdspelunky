@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2n6jbm6cxakc"]
+
+[sub_resource type="GDScript" id="GDScript_cf0cq"]
+
+[node name="Alien" type="Node2D"]

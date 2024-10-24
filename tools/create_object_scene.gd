@@ -16,8 +16,12 @@ func _run():
 		#var new_content = get_post_function_deletion_script(script_path)
 		#write_new_content_to_file(script_path, new_content)
 	
-	for object in all_remaining_objects:
-		make_folder_with_scene(object)
+	print(all_remaining_objects)
+	
+	#for object in all_remaining_objects:
+		#make_folder_with_scene(object)
+	#
+	#print("done")
 
 func make_folder_with_scene(object_name):
 	var objects_script = "res://objects.gd"

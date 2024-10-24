@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://chnpq8u6ovud7"]
+
+[sub_resource type="GDScript" id="GDScript_pv5dn"]
+
+[node name="DesertTopScroll" type="Node2D"]

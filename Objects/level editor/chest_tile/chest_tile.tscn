@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://nmn3pta6csha"]
+
+[sub_resource type="GDScript" id="GDScript_68os6"]
+
+[node name="ChestTile" type="Node2D"]

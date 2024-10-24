@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://blvqjgc8dse6m"]
+
+[sub_resource type="GDScript" id="GDScript_12sno"]
+
+[node name="Entrance" type="Node2D"]

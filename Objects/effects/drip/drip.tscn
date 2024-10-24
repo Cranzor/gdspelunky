@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cj37r83r78cmw"]
+
+[sub_resource type="GDScript" id="GDScript_5bpyr"]
+
+[node name="Drip" type="Node2D"]

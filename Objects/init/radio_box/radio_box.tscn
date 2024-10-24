@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0bji4vx3tykb"]
+
+[sub_resource type="GDScript" id="GDScript_apeko"]
+
+[node name="RadioBox" type="Node2D"]

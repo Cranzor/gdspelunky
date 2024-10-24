@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://oougsmtnxpqv"]
+
+[sub_resource type="GDScript" id="GDScript_ob16g"]
+
+[node name="SmokePuff" type="Node2D"]

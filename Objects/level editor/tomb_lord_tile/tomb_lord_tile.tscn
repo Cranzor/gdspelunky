@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5qsgnpmffn02"]
+
+[sub_resource type="GDScript" id="GDScript_2mbyh"]
+
+[node name="TombLordTile" type="Node2D"]

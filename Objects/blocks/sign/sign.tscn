@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dapkwwrjkevir"]
+
+[sub_resource type="GDScript" id="GDScript_77w0u"]
+
+[node name="Sign" type="Node2D"]

@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cta0fpknobkdr"]
+
+[sub_resource type="GDScript" id="GDScript_0ce65"]
+
+[node name="GoldBig" type="Node2D"]

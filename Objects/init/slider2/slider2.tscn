@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://7so8nh8m2wxs"]
+
+[sub_resource type="GDScript" id="GDScript_rrhsb"]
+
+[node name="Slider2" type="Node2D"]

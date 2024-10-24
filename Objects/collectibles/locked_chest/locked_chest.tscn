@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://c13uyi04qpg30"]
+
+[sub_resource type="GDScript" id="GDScript_66avs"]
+
+[node name="LockedChest" type="Node2D"]

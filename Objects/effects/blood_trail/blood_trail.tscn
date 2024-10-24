@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://n4f87aplw0yx"]
+
+[sub_resource type="GDScript" id="GDScript_ukxqq"]
+
+[node name="BloodTrail" type="Node2D"]

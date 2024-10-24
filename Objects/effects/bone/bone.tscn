@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bw3w3426ywpnv"]
+
+[sub_resource type="GDScript" id="GDScript_2evac"]
+
+[node name="Bone" type="Node2D"]

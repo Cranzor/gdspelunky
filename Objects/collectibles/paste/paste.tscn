@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://vfskfsvxoyqa"]
+
+[sub_resource type="GDScript" id="GDScript_vx8tj"]
+
+[node name="Paste" type="Node2D"]

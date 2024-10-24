@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://denhr2g78tcs7"]
+
+[sub_resource type="GDScript" id="GDScript_1lorm"]
+
+[node name="PDummy5" type="Node2D"]

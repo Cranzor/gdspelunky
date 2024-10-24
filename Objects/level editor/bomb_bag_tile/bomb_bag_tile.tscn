@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://c08alw42udsbo"]
+
+[sub_resource type="GDScript" id="GDScript_n4eph"]
+
+[node name="BombBagTile" type="Node2D"]

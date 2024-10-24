@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxcb8r5dcdjto"]
+
+[sub_resource type="GDScript" id="GDScript_qgg8j"]
+
+[node name="FireFrog" type="Node2D"]

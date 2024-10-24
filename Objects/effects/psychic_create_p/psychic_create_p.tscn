@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://w8dfjx1us3pc"]
+
+[sub_resource type="GDScript" id="GDScript_x3py3"]
+
+[node name="PsychicCreateP" type="Node2D"]

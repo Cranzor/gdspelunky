@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpmvk8vwcyopg"]
+
+[sub_resource type="GDScript" id="GDScript_soumd"]
+
+[node name="ManTrap" type="Node2D"]

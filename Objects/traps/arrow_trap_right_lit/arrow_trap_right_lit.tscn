@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://ci4o6thdcbhso"]
+
+[sub_resource type="GDScript" id="GDScript_sk2hi"]
+
+[node name="ArrowTrapRightLit" type="Node2D"]

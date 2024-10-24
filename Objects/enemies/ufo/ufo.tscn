@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://j4g74q5lh3d3"]
+
+[sub_resource type="GDScript" id="GDScript_vnbwh"]
+
+[node name="Ufo" type="Node2D"]
