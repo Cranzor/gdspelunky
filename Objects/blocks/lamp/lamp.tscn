@@ -1,5 +1,3 @@
-[gd_scene load_steps=2 format=3 uid="uid://c5w5dhjb7kcja"]
-
-[sub_resource type="GDScript" id="GDScript_gqs56"]
+[gd_scene format=3 uid="uid://c5w5dhjb7kcja"]
 
 [node name="Lamp" type="Node2D"]

@@ -17,7 +17,7 @@ func _process(delta):
 
 
 #func create():
-	#    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 #    <event category="CREATE" id="0">
 #      <actions>
 #        <action id="603" library="1">
@@ -38,4 +38,4 @@ func _process(delta):
 #      </actions>
 #    </event>
 
-	
+    

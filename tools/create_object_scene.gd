@@ -1,7 +1,7 @@
 @tool
 extends EditorScript
 
-var object_string = "lamp"
+var object_string = "vine"
 var all_remaining_objects = []
 var all_finished_objects = []
 
@@ -16,11 +16,11 @@ func _run():
 		#var new_content = get_post_function_deletion_script(script_path)
 		#write_new_content_to_file(script_path, new_content)
 	
-	print(all_remaining_objects)
+	#print(all_remaining_objects)
 	
-	#for object in all_remaining_objects:
+	for object in all_remaining_objects:
 		#make_folder_with_scene(object)
-	#
+		edit_script(object)
 	#print("done")
 
 func make_folder_with_scene(object_name):
@@ -69,7 +69,31 @@ func make_folder_with_scene(object_name):
 		#opened_scene_file.store_string(scene_file_content + '\n' + 'object_name = "' + object_string +'"')
 		
 		print("Created scene at " + full_path)
+
+func edit_script(object_name):
+	var objects_script = "res://objects.gd"
+	var opened_file = FileAccess.open(objects_script, FileAccess.READ)
+	var content = opened_file.get_as_text()
+	
+	var regex = RegEx.new()
+	regex.compile("var " + object_name + " = preload\\(.+")
+	var search = regex.search(content)
+	search = search.strings
+	
+	regex.compile('(res:.*)' + object_name + '\\.tscn')
+	search = regex.search(search[0])
+	var full_path = search.strings[0]
+	var path = search.strings[1]
+
+	var converted_name = get_pascal_case_object_name(object_name)
+	var output = []
+	OS.execute("python", ["C:/Users/Jesse/Desktop/H&C2/programming/Spelunky Godot Porting Scripts/ObjectToGDScriptConverter2.py", converted_name], output)
+	var script_content = output[0]
 		
+	var script_name = path + object_name + ".gd"
+	var gd_file = FileAccess.open(script_name, FileAccess.WRITE)
+	gd_file.store_string(script_content)
+	
 func get_all_uncompleted_objects():
 	var objects_script = "res://objects.gd"
 	var opened_file = FileAccess.open(objects_script, FileAccess.READ)
