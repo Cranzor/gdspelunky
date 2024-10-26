@@ -9,7 +9,7 @@ func _ready():
 	#var rooms = get_tree().get_nodes_in_group("room")
 	#for room in rooms:
 		#LevelGeneration.scr_room_gen(room.position.x, room.position.y)
-	LevelGeneration.scr_init_level()
+	#LevelGeneration.scr_init_level()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

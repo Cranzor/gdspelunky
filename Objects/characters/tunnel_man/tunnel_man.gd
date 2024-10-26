@@ -3,7 +3,7 @@ extends DrawnSprite #--- adding DrawnSprite as parent to get access to sprite_in
 func _ready():
 	object_setup()
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	object_tick()
 	reset_inputs()
 

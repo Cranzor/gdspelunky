@@ -5,7 +5,7 @@ var frames_to_count_down = -1
 var started = false
 signal timeout
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if frames_to_count_down != -1:
 		frames_to_count_down -= 1
 	

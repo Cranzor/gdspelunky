@@ -19,7 +19,6 @@ config/icon="res://icon.svg"
 
 global="*res://global.tscn"
 gml="*res://gml.tscn"
-LevelGeneration="*res://level_generation.gd"
 InLevel="*res://in_level.gd"
 ControlScripts="*res://control_scripts.gd"
 PlatformEngine="*res://platform_engine.gd"

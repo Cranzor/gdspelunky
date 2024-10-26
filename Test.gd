@@ -13,7 +13,7 @@ func _process(delta):
 	#keyboard_check(KEY_D)
 	pass
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	#print($AnimatedSprite2D.get_frame())
 	pass
 	

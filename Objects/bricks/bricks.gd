@@ -3,7 +3,7 @@ extends DrawnSprite #--- changing this to get sprite_index
 func _ready():
 	object_setup()
 	
-func _physics_process(delta):
+func _physics_process(_delta):
 	object_tick()
 
 func _process(delta):
@@ -11,5 +11,6 @@ func _process(delta):
 
 #--- Object functions
 func create():
-	LevelGeneration.scr_setup_walls(224)
+	var level_generation = LevelGeneration.new()
+	level_generation.scr_setup_walls(224)
 	gml.instance_destroy(self)	

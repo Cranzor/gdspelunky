@@ -5,7 +5,7 @@ func _ready():
 	if object_name == "p_dummy3":
 		object_setup()
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if object_name == "p_dummy3":
 		object_tick()
 

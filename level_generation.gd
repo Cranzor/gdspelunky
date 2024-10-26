@@ -1,4 +1,5 @@
 extends Node
+class_name LevelGeneration
 
 var jetpack
 var cape_pickup
@@ -1399,16 +1400,16 @@ func scr_room_gen(x, y):
 	
 	
 
-	var room_path = global.room_path[[LevelGeneration.scr_get_room_x(x), LevelGeneration.scr_get_room_y(y)]]
+	var room_path = global.room_path[[scr_get_room_x(x), scr_get_room_y(y)]]
 	var room_path_above = -1
 	var shop_type = "General"
 	var n
 	var altar
 	var damsel
 	
-	if (LevelGeneration.scr_get_room_y(y) != 0): room_path_above = global.room_path[[LevelGeneration.scr_get_room_x(x), LevelGeneration.scr_get_room_y(y-128)]]
+	if (scr_get_room_y(y) != 0): room_path_above = global.room_path[[scr_get_room_x(x), scr_get_room_y(y-128)]]
 
-	if (LevelGeneration.scr_get_room_x(x) == global.start_room_x and LevelGeneration.scr_get_room_y(y) == global.start_room_y): # start room
+	if (scr_get_room_x(x) == global.start_room_x and scr_get_room_y(y) == global.start_room_y): # start room
 		if (room_path == 2): n = randi_range(5,8)
 		else: n = randi_range(1,4)
 		match n:
@@ -1423,7 +1424,7 @@ func scr_room_gen(x, y):
 			8:  str_temp = "0000000000008000000000000000000000000L000111111P000111111L001111000L001111011111"
 		
 
-	elif (LevelGeneration.scr_get_room_x(x) == global.end_room_x and LevelGeneration.scr_get_room_y(y) == global.end_room_y): # end room
+	elif (scr_get_room_x(x) == global.end_room_x and scr_get_room_y(y) == global.end_room_y): # end room
 		if (room_path_above == 2): n = randi_range(2,4)
 		else: n = randi_range(3,6)
 		match n:
@@ -1444,7 +1445,7 @@ func scr_room_gen(x, y):
 			n = 11
 			altar = true
 		
-		elif (idol or LevelGeneration.scr_get_room_y(y) == 3):
+		elif (idol or scr_get_room_y(y) == 3):
 		
 			n = randi_range(1,9)
 		
@@ -1813,7 +1814,7 @@ func scr_room_gen(x, y):
 			elif (tile == "9"):
 			
 				var block_instance = gml.instance_create(xpos, ypos+16, brick)
-				if (LevelGeneration.scr_get_room_x(x) == global.start_room_x and LevelGeneration.scr_get_room_y(y) == global.start_room_y):
+				if (scr_get_room_x(x) == global.start_room_x and scr_get_room_y(y) == global.start_room_y):
 					gml.instance_create(xpos, ypos, entrance)
 
 				else:
@@ -1861,7 +1862,7 @@ func scr_room_gen(x, y):
 			elif (tile == "q"):
 			
 				n = randi_range(1,6)
-				LevelGeneration.scr_generate_item(xpos+8, ypos+8, 1)
+				scr_generate_item(xpos+8, ypos+8, 1)
 				obj.in_dice_house = true
 			
 			elif (tile == "+"):
@@ -1916,7 +1917,7 @@ func scr_room_gen(x, y):
 			
 			elif (tile == "i"):
 			
-				LevelGeneration.scr_shop_items_gen(xpos, ypos, shop_type)
+				scr_shop_items_gen(xpos, ypos, shop_type)
 			
 			elif (tile == "d"):
 			

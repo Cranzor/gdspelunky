@@ -52,12 +52,14 @@ func _process(delta): # reload for testing. currently not working correctly
 		get_tree().reload_current_scene()
 #--------------------------------------------------
 
+var level_generation = LevelGeneration.new()
+
 func _ready(): # For testing
 	#var bg_kali_body = "bg_kali_body"
 	#gml.tile_add(bg_kali_body, 0, 0, 64, 64, 64, 64, 10001)
 	
-	#LevelGeneration.scr_shop_items_gen(20, 20, "Bomb")
-	LevelGeneration.scr_level_gen()
+	#level_generation.scr_shop_items_gen(20, 20, "Bomb")
+	level_generation.scr_level_gen()
 	room_gen()
 
 @onready var block = preload("res://Test Scenes/test_block.tscn")
@@ -105,8 +107,7 @@ func room_gen():
 	var str_temp = "00000000000000000000000000000000000000000000000000000000000000000000000000000000"
 	
 	
-
-	var room_path = global.room_path[[LevelGeneration.scr_get_room_x(position.x), LevelGeneration.scr_get_room_y(position.y)]]
+	var room_path = global.room_path[[level_generation.scr_get_room_x(position.x), level_generation.scr_get_room_y(position.y)]]
 	var room_path_above = -1
 	var shop_type = "General"
 	var n
@@ -114,9 +115,9 @@ func room_gen():
 	var idol
 	var damsel
 	
-	if (LevelGeneration.scr_get_room_y(position.y) != 0): room_path_above = global.room_path[[LevelGeneration.scr_get_room_x(position.x), LevelGeneration.scr_get_room_y(position.y-128)]]
+	if (level_generation.scr_get_room_y(position.y) != 0): room_path_above = global.room_path[[level_generation.scr_get_room_x(position.x), level_generation.scr_get_room_y(position.y-128)]]
 
-	if (LevelGeneration.scr_get_room_x(position.x) == global.start_room_x and LevelGeneration.scr_get_room_y(position.y) == global.start_room_y): # start room
+	if (level_generation.scr_get_room_x(position.x) == global.start_room_x and level_generation.scr_get_room_y(position.y) == global.start_room_y): # start room
 		if (room_path == 2): n = randi_range(5,8)
 		else: n = randi_range(1,4)
 		match n:
@@ -131,7 +132,7 @@ func room_gen():
 			8:  str_temp = "0000000000008000000000000000000000000L000111111P000111111L001111000L001111011111"
 		
 
-	elif (LevelGeneration.scr_get_room_x(position.x) == global.end_room_x and LevelGeneration.scr_get_room_y(position.y) == global.end_room_y): # end room
+	elif (level_generation.scr_get_room_x(position.x) == global.end_room_x and level_generation.scr_get_room_y(position.y) == global.end_room_y): # end room
 		if (room_path_above == 2): n = randi_range(2,4)
 		else: n = randi_range(3,6)
 		match n:
@@ -152,7 +153,7 @@ func room_gen():
 			n = 11
 			altar = true
 		
-		elif (idol or LevelGeneration.scr_get_room_y(position.y) == 3):
+		elif (idol or level_generation.scr_get_room_y(position.y) == 3):
 		
 			n = randi_range(1,9)
 		
@@ -521,7 +522,7 @@ func room_gen():
 			elif (tile == "9"):
 			
 				block = gml.instance_create(xpos, ypos+16, brick)
-				if (LevelGeneration.scr_get_room_x(position.x) == global.start_room_x and LevelGeneration.scr_get_room_y(position.y) == global.start_room_y):
+				if (level_generation.scr_get_room_x(position.x) == global.start_room_x and level_generation.scr_get_room_y(position.y) == global.start_room_y):
 					gml.instance_create(xpos, ypos, entrance)
 				else:
 				
@@ -568,7 +569,7 @@ func room_gen():
 			elif (tile == "q"):
 			
 				n = randi_range(1,6)
-				LevelGeneration.scr_generate_item(xpos+8, ypos+8, 1)
+				level_generation.scr_generate_item(xpos+8, ypos+8, 1)
 				obj.in_dice_house = true
 			
 			elif (tile == "+"):
@@ -623,7 +624,7 @@ func room_gen():
 			
 			elif (tile == "i"):
 			
-				LevelGeneration.scr_shop_items_gen(xpos, ypos, shop_type)
+				level_generation.scr_shop_items_gen(xpos, ypos, shop_type)
 			
 			elif (tile == "d"):
 			

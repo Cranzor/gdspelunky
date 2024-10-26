@@ -24,7 +24,7 @@ func _input(event):
 	if Input.is_key_pressed(KEY_F10):
 		key_f10_pressed()
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	
 	for node in title_screen:
 		node.hide()

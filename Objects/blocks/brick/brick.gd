@@ -3,7 +3,7 @@ extends Solid
 func _ready():
 	object_setup()
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	object_tick()
 
 func _process(delta):
@@ -25,7 +25,9 @@ func create():
 		if (randi_range(1,100) == 1): gml.instance_create(position.x+8, position.y+8, "sapphire_big")
 		elif (randi_range(1,120) == 1): gml.instance_create(position.x+8, position.y+8, "emerald_big")
 		elif (randi_range(1,140) == 1): gml.instance_create(position.x+8, position.y+8, "ruby_big")
-		elif (randi_range(1,1200) == 1): LevelGeneration.scr_generate_item(position.x+8, position.y+8, 2)
+		elif (randi_range(1,1200) == 1):
+			var level_generation = LevelGeneration.new()
+			level_generation.scr_generate_item(position.x+8, position.y+8, 2)
 
 func destroy():
 	solid_destroy()

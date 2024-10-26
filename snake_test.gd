@@ -33,7 +33,7 @@ func _ready():
 	shake_counter = 0
 	shake_toggle = 1
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	#character_size_test()
 	#print("y_vel:" + str(y_vel))
 	

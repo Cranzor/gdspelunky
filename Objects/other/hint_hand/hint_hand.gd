@@ -3,7 +3,7 @@ extends DrawnSprite #--- giving this DrawnSprite parent to get access to image_s
 func _ready():
 	object_setup()
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	object_tick()
 	hide_labels()
 

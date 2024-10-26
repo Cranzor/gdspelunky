@@ -53,7 +53,7 @@ func _ready():
 	initial_setup()
 	create()
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	step()
 
 func create():
