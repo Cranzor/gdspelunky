@@ -7,9 +7,9 @@ func init():
 func load_sound():
 	pass
 func loop_sound(sound): #--- think this should work the same as play_sound(), as the music is set to loop
-	sound.play()
+	Music.play(sound)
 func play_sound(sound):
-	sound.play()
+	Music.play(sound)
 func set_sound_freq(sound, frequency):
 	pass
 func set_sound_pan():

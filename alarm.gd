@@ -14,7 +14,7 @@ func _physics_process(_delta):
 
 func start(frames):
 	if is_stopped():
-		frames_to_count_down = frames
+		frames_to_count_down = frames - 1
 		started = true
 
 func is_stopped():
