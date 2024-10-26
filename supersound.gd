@@ -17,7 +17,7 @@ func set_sound_pan():
 func set_sound_vol(sound, volume):
 	pass
 func stop_sound(sound):
-	sound.stop()
+	Music.stop(sound)
 func unload():
 	pass
 #--- Advanced

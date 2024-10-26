@@ -1,8 +1,6 @@
 extends Node
 class_name GML_Class
 
-var collision_point_node = preload("res://CollisionPoint.tscn")
-var collision_rectangle_node = preload("res://CollisionRectangle.tscn")
 var collision_handling = CollisionHandling.new()
 var sprite_database = Sprites.new()
 var object_database = ObjectDatabase.new()
@@ -58,6 +56,8 @@ func instance_exists(obj): #--- FLAG. if enforcing this as a string, it sometime
 
 #-----------------------Have to work on
 func instance_create(x,y,obj): #should return the node as this is used in scripts
+	if obj is String:
+		obj = load(obj)
 	var instance = obj.instantiate()
 	instance.position.x = x
 	instance.position.y = y

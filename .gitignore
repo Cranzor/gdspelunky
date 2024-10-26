@@ -16,3 +16,6 @@ data_*/
 mono_crash.*.json
 =======
 >>>>>>> 2970fa8 (First commit. Ported the LevelGen script to Godot)
+
+godot.exe.exe
+startup_benchmark.tscn

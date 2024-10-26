@@ -1,18 +1,8 @@
 extends DrawnSprite #--- changing this to DrawnSprite
 
-func initial_setup():
-	#--- set size
-	object_size = Vector2(0, 0)
-
-	#--- set depth
-	depth = 0
-	z_index = depth
-
-	#_create()
 
 func _ready():
 	object_setup()
-	initial_setup()
 
 	# gamepad
 

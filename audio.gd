@@ -19,7 +19,7 @@ func scr_music_fade():
 		if (global.level_type == 1): SS.set_sound_freq(global.mus_lush, SS.get_sound_freq(global.mus_lush)-100)
 		elif (global.level_type == 2): SS.set_sound_freq(global.mus_ice, SS.get_sound_freq(global.mus_ice)-100)
 		elif (global.level_type == 3): SS.set_sound_freq(global.mus_temple, SS.get_sound_freq(global.mus_temple)-100)
-		elif (InLevel.is_room("r_olmec")):
+		elif (InLevel.is_room("olmec")):
 		
 			if (player1.active):
 				SS.set_sound_freq(global.mus_boss, SS.get_sound_freq(global.mus_boss)-100)
