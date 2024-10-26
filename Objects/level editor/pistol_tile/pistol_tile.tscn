@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://unwwpn1qsk67"]
 
-[sub_resource type="GDScript" id="GDScript_6s3wx"]
+[ext_resource type="Script" path="res://objects/level editor/pistol_tile/pistol_tile.gd" id="1_m068i"]
 
 [node name="PistolTile" type="Node2D"]
+script = ExtResource("1_m068i")
+object_name = "pistol_tile"

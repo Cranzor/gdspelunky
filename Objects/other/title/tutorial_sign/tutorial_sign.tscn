@@ -3,8 +3,6 @@
 [ext_resource type="Script" path="res://objects/other/title/tutorial_sign/tutorial_sign.gd" id="1_8r4mc"]
 
 [node name="TutorialSign" type="Node2D" groups=["drawn_sprite", "solid", "tutorial_sign"]]
-z_index = -999
 script = ExtResource("1_8r4mc")
 object_name = "tutorial_sign"
-depth = -999
 object_size = Vector2(32, 16)

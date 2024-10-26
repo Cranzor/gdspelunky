@@ -17,7 +17,7 @@ func _process(delta):
 
 
 #func create():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	#    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 #    <event category="CREATE" id="0">
 #      <actions>
 #        <action id="604" library="1">
@@ -56,10 +56,10 @@ func _process(delta):
 #      </actions>
 #    </event>
 
-    
+	
 
 #func step():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	#    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 #    <event category="STEP" id="0">
 #      <actions>
 #        <action id="604" library="1">
@@ -97,9 +97,9 @@ func _process(delta):
 #            gml.collision_point(position.x, position.y+4, "brick_smooth", 0, 0) and
 #            gml.instance_exists("shopkeeper") and
 #            global.thief_level == 0 and not global.murderer)
-    
+	
 #            if (shopkeeper.status == 0 and abs(position.x - shopkeeper.position.x) < 80):
-        
+		
 #                global.collect += value*(global.level_type+1)
 #                global.collect_counter += 20
 #                if (global.collect_counter > 100): global.collect_counter = 100
@@ -110,8 +110,8 @@ func _process(delta):
 #                global.message2 = ""
 #                global.message_timer = 100
 #                gml.instance_destroy()
-        
-    
+		
+	
 
 #    if (not col_bot and trigger):
 
@@ -124,4 +124,4 @@ func _process(delta):
 #      </actions>
 #    </event>
 
-    
+	

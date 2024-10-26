@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://70b1ipc6q8t8"]
 
-[sub_resource type="GDScript" id="GDScript_8s1kg"]
+[ext_resource type="Script" path="res://objects/blocks/vine_top/vine_top.gd" id="1_mqs33"]
 
 [node name="VineTop" type="Node2D"]
+script = ExtResource("1_mqs33")
+object_name = "vine_top"

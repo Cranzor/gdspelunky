@@ -3,8 +3,5 @@
 [ext_resource type="Script" path="res://objects/other/intro/shrub_dark/shrub_dark.gd" id="1_ydqq8"]
 
 [node name="ShrubDark" type="Node2D" groups=["shrub_dark"]]
-z_index = 998
 script = ExtResource("1_ydqq8")
 object_name = "shrub_dark"
-depth = 998
-object_size = Vector2(16, 16)

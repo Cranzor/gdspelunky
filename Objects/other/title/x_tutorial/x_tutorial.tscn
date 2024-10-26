@@ -3,8 +3,5 @@
 [ext_resource type="Script" path="res://objects/other/title/x_tutorial/x_tutorial.gd" id="1_gjoy5"]
 
 [node name="XTutorial" type="Node2D" groups=["drawn_sprite", "x_start", "x_tutorial"]]
-z_index = -4095
 script = ExtResource("1_gjoy5")
 object_name = "x_tutorial"
-depth = -4095
-object_size = Vector2(16, 16)

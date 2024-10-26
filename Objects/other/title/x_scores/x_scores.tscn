@@ -5,5 +5,3 @@
 [node name="XScores" type="Node2D" groups=["drawn_sprite", "x_scores", "x_start"]]
 script = ExtResource("1_yrjq1")
 object_name = "x_scores"
-depth = -999999
-object_size = Vector2(16, 16)

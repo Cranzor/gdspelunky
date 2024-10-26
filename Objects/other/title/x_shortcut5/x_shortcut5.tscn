@@ -3,8 +3,5 @@
 [ext_resource type="Script" path="res://objects/other/title/x_shortcut5/x_shortcut5.gd" id="1_sgmfs"]
 
 [node name="XShortcut5" type="Node2D" groups=["drawn_sprite", "x_shortcut5", "x_start"]]
-z_index = -4095
 script = ExtResource("1_sgmfs")
 object_name = "x_shortcut5"
-depth = -4095
-object_size = Vector2(16, 16)

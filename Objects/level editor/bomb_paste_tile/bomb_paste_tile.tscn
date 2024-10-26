@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://de64oaoswxwwf"]
 
-[sub_resource type="GDScript" id="GDScript_nrf0k"]
+[ext_resource type="Script" path="res://objects/level editor/bomb_paste_tile/bomb_paste_tile.gd" id="1_c5f3x"]
 
 [node name="BombPasteTile" type="Node2D"]
+script = ExtResource("1_c5f3x")
+object_name = "bomb_paste_tile"

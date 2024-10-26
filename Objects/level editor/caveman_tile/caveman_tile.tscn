@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://dr0y4uit7vx8"]
 
-[sub_resource type="GDScript" id="GDScript_m777c"]
+[ext_resource type="Script" path="res://objects/level editor/caveman_tile/caveman_tile.gd" id="1_2fxnk"]
 
 [node name="CavemanTile" type="Node2D"]
+script = ExtResource("1_2fxnk")
+object_name = "caveman_tile"

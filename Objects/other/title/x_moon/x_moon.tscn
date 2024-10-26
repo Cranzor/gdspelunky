@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bg7800bj5q26k"]
 
-[sub_resource type="GDScript" id="GDScript_fv2sf"]
+[ext_resource type="Script" path="res://objects/other/title/x_moon/x_moon.gd" id="1_e3y4b"]
 
 [node name="XMoon" type="Node2D"]
+script = ExtResource("1_e3y4b")
+object_name = "x_moon"

@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://ddter4pmfqhjb"]
 
-[sub_resource type="GDScript" id="GDScript_hu6pb"]
+[ext_resource type="Script" path="res://objects/level editor/gold_idol_tile/gold_idol_tile.gd" id="1_c4cd5"]
 
 [node name="GoldIdolTile" type="Node2D"]
+script = ExtResource("1_c4cd5")
+object_name = "gold_idol_tile"

@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://66j4v0mx4bva"]
 
-[sub_resource type="GDScript" id="GDScript_vgd65"]
+[ext_resource type="Script" path="res://objects/other/black_bg/black_bg.gd" id="1_sbw03"]
 
 [node name="BlackBg" type="Node2D"]
+script = ExtResource("1_sbw03")
+object_name = "black_bg"

@@ -3,6 +3,5 @@
 [ext_resource type="Script" path="res://objects/other/title/scores_sign/scores_sign.gd" id="1_s12rd"]
 
 [node name="ScoresSign" type="Node2D" groups=["scores_sign"]]
-z_index = -999
 script = ExtResource("1_s12rd")
 object_name = "scores_sign"

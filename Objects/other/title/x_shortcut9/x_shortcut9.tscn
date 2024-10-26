@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cak8tovndif6v"]
 
-[sub_resource type="GDScript" id="GDScript_acl3n"]
+[ext_resource type="Script" path="res://objects/other/title/x_shortcut9/x_shortcut_9.gd" id="1_j2rp1"]
 
 [node name="XShortcut9" type="Node2D"]
+script = ExtResource("1_j2rp1")
+object_name = "x_shortcut9"

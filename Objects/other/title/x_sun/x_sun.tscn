@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bennr15rhgy7w"]
 
-[sub_resource type="GDScript" id="GDScript_4v6rh"]
+[ext_resource type="Script" path="res://objects/other/title/x_sun/x_sun.gd" id="1_qiwqj"]
 
 [node name="XSun" type="Node2D"]
+script = ExtResource("1_qiwqj")
+object_name = "x_sun"

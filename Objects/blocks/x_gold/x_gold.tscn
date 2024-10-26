@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://dcu266l5t6wa6"]
 
-[sub_resource type="GDScript" id="GDScript_ba1yu"]
+[ext_resource type="Script" path="res://objects/blocks/x_gold/x_gold.gd" id="1_slq83"]
 
 [node name="XGold" type="Node2D"]
+script = ExtResource("1_slq83")
+object_name = "x_gold"

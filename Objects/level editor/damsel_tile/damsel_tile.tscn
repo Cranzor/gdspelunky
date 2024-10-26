@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://b0kkrtj83blfp"]
 
-[sub_resource type="GDScript" id="GDScript_kcmxh"]
+[ext_resource type="Script" path="res://objects/level editor/damsel_tile/damsel_tile.gd" id="1_17sek"]
 
 [node name="DamselTile" type="Node2D"]
+script = ExtResource("1_17sek")
+object_name = "damsel_tile"

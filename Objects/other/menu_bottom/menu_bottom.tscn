@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://eg8vgsqm88pa"]
 
-[sub_resource type="GDScript" id="GDScript_xsehg"]
+[ext_resource type="Script" path="res://objects/other/menu_bottom/menu_bottom.gd" id="1_22u7j"]
 
 [node name="MenuBottom" type="Node2D"]
+script = ExtResource("1_22u7j")
+object_name = "menu_bottom"

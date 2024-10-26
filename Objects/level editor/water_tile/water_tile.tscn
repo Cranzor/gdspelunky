@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bhneg1ljjksyl"]
 
-[sub_resource type="GDScript" id="GDScript_37sik"]
+[ext_resource type="Script" path="res://objects/level editor/water_tile/water_tile.gd" id="1_7mt5l"]
 
 [node name="WaterTile" type="Node2D"]
+script = ExtResource("1_7mt5l")
+object_name = "water_tile"

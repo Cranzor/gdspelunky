@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://ua500q58c112"]
 
-[sub_resource type="GDScript" id="GDScript_n4cbb"]
+[ext_resource type="Script" path="res://objects/level editor/web_tile/web_tile.gd" id="1_ecve5"]
 
 [node name="WebTile" type="Node2D"]
+script = ExtResource("1_ecve5")
+object_name = "web_tile"

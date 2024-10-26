@@ -3,7 +3,5 @@
 [ext_resource type="Script" path="res://objects/other/title/quit_sign/quit_sign.gd" id="1_cp6cu"]
 
 [node name="QuitSign" type="Node2D" groups=["drawn_sprite", "quit_sign", "solid"]]
-z_index = -999
 script = ExtResource("1_cp6cu")
 object_name = "quit_sign"
-object_size = Vector2(32, 16)

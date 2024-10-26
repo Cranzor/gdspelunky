@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://b0yndb12kmp5h"]
 
-[sub_resource type="GDScript" id="GDScript_4ktqf"]
+[ext_resource type="Script" path="res://objects/level editor/spectacles_tile/spectacles_tile.gd" id="1_7e5xx"]
 
 [node name="SpectaclesTile" type="Node2D"]
+script = ExtResource("1_7e5xx")
+object_name = "spectacles_tile"

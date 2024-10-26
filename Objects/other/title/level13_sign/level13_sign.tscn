@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bx1mjxun7s5io"]
 
-[sub_resource type="GDScript" id="GDScript_eksog"]
+[ext_resource type="Script" path="res://objects/other/title/level13_sign/level_13_sign.gd" id="1_fo5gv"]
 
 [node name="Level13Sign" type="Node2D"]
+script = ExtResource("1_fo5gv")
+object_name = "level13_sign"

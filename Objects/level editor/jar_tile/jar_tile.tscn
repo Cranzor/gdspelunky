@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://csaw3ureavhu3"]
 
-[sub_resource type="GDScript" id="GDScript_mvbib"]
+[ext_resource type="Script" path="res://objects/level editor/jar_tile/jar_tile.gd" id="1_8c6x3"]
 
 [node name="JarTile" type="Node2D"]
+script = ExtResource("1_8c6x3")
+object_name = "jar_tile"

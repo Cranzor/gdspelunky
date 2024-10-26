@@ -3,8 +3,5 @@
 [ext_resource type="Script" path="res://objects/other/title/title_logo/title_logo.gd" id="1_gpqy7"]
 
 [node name="TitleLogo" type="Node2D" groups=["drawn_sprite", "solid", "title_logo"]]
-z_index = -1
 script = ExtResource("1_gpqy7")
 object_name = "title_logo"
-depth = -1
-object_size = Vector2(128, 16)

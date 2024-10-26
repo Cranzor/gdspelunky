@@ -17,7 +17,7 @@ func _process(delta):
 
 
 #func create():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	#    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 #    <event category="CREATE" id="0">
 #      <actions>
 #        <action id="603" library="1">
@@ -56,10 +56,10 @@ func _process(delta):
 #      </actions>
 #    </event>
 
-    
+	
 
 #func room end():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	#    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 #    <event category="OTHER" id="5">
 #      <actions>
 #        <action id="603" library="1">
@@ -80,10 +80,10 @@ func _process(delta):
 #      </actions>
 #    </event>
 
-    
+	
 
 #func step():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	#    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 #    <event category="STEP" id="0">
 #      <actions>
 #        <action id="603" library="1">
@@ -105,12 +105,12 @@ func _process(delta):
 #        ControlScripts.check_start_pressed())
 
 #        if (timer > 50):
-    
+	
 #            if (gamepad.attack_pressed): gamepad.attack_pressed = false
 #            if (gamepad.start_pressed): gamepad.start_pressed = false
 #            global.game_start = false
 #            get_tree().change_scene_to_file("res://r_end3.tscn")
-    
+	
 
 
 #    # DY:  shake the screen
@@ -136,4 +136,4 @@ func _process(delta):
 #      </actions>
 #    </event>
 
-    
+	

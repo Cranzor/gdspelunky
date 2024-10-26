@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://crm73cv6tfkxs"]
 
-[sub_resource type="GDScript" id="GDScript_ijc1k"]
+[ext_resource type="Script" path="res://objects/level editor/spear_trap_tile_bot/spear_trap_tile_bot.gd" id="1_4ot17"]
 
 [node name="SpearTrapTileBot" type="Node2D"]
+script = ExtResource("1_4ot17")
+object_name = "spear_trap_tile_bot"

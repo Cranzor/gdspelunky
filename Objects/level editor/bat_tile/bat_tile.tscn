@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cog1qowromcas"]
 
-[sub_resource type="GDScript" id="GDScript_06l5m"]
+[ext_resource type="Script" path="res://objects/level editor/bat_tile/bat_tile.gd" id="1_1tghe"]
 
 [node name="BatTile" type="Node2D"]
+script = ExtResource("1_1tghe")
+object_name = "bat_tile"

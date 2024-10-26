@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://b3pa5xkft8ix4"]
 
-[sub_resource type="GDScript" id="GDScript_45r0t"]
+[ext_resource type="Script" path="res://objects/other/title/multi_trophy/multi_trophy.gd" id="1_b0nll"]
 
 [node name="MultiTrophy" type="Node2D"]
+script = ExtResource("1_b0nll")
+object_name = "multi_trophy"

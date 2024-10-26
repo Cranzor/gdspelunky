@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://df4bdgergk5lo"]
 
-[sub_resource type="GDScript" id="GDScript_708jx"]
+[ext_resource type="Script" path="res://objects/other/intro/palm_tree/palm_tree.gd" id="1_plvli"]
 
 [node name="PalmTree" type="Node2D"]
+script = ExtResource("1_plvli")
+object_name = "palm_tree"

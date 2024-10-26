@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bknoeu4k1fo7p"]
 
-[sub_resource type="GDScript" id="GDScript_k1sk0"]
+[ext_resource type="Script" path="res://objects/level editor/bones_tile/bones_tile.gd" id="1_sveiv"]
 
 [node name="BonesTile" type="Node2D"]
+script = ExtResource("1_sveiv")
+object_name = "bones_tile"

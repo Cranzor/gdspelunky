@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://c7545x5tbxyj3"]
 
-[sub_resource type="GDScript" id="GDScript_kvti0"]
+[ext_resource type="Script" path="res://objects/level editor/monkey_tile/monkey_tile.gd" id="1_bfedh"]
 
 [node name="MonkeyTile" type="Node2D"]
+script = ExtResource("1_bfedh")
+object_name = "monkey_tile"

@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bcb8krpeqcorl"]
 
-[sub_resource type="GDScript" id="GDScript_brdxl"]
+[ext_resource type="Script" path="res://objects/level editor/machete_tile/machete_tile.gd" id="1_sle1a"]
 
 [node name="MacheteTile" type="Node2D"]
+script = ExtResource("1_sle1a")
+object_name = "machete_tile"

@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://w7c8sxrhdaun"]
 
-[sub_resource type="GDScript" id="GDScript_vxuht"]
+[ext_resource type="Script" path="res://objects/level editor/spear_trap_tile_top/spear_trap_tile_top.gd" id="1_3rhih"]
 
 [node name="SpearTrapTileTop" type="Node2D"]
+script = ExtResource("1_3rhih")
+object_name = "spear_trap_tile_top"

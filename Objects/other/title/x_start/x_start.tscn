@@ -5,5 +5,3 @@
 [node name="XStart" type="Node2D" groups=["drawn_sprite", "x_start"]]
 script = ExtResource("1_jw30h")
 object_name = "x_start"
-depth = -999999
-object_size = Vector2(16, 16)

@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cv158gvnomihx"]
 
-[sub_resource type="GDScript" id="GDScript_2ampf"]
+[ext_resource type="Script" path="res://objects/level editor/gold_bars_tile/gold_bars_tile.gd" id="1_gu5d4"]
 
 [node name="GoldBarsTile" type="Node2D"]
+script = ExtResource("1_gu5d4")
+object_name = "gold_bars_tile"

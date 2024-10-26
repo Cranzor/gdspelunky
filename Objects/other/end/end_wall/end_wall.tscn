@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://c4wym5ko5raoy"]
 
-[sub_resource type="GDScript" id="GDScript_jp6we"]
+[ext_resource type="Script" path="res://objects/other/end/end_wall/end_wall.gd" id="1_1mift"]
 
 [node name="EndWall" type="Node2D"]
+script = ExtResource("1_1mift")
+object_name = "end_wall"

@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://iykvwgp7rpey"]
 
-[sub_resource type="GDScript" id="GDScript_supbm"]
+[ext_resource type="Script" path="res://objects/level editor/bow_tile/bow_tile.gd" id="1_0s62c"]
 
 [node name="BowTile" type="Node2D"]
+script = ExtResource("1_0s62c")
+object_name = "bow_tile"

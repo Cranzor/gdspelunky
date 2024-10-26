@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cjermd7q563cp"]
 
-[sub_resource type="GDScript" id="GDScript_588xe"]
+[ext_resource type="Script" path="res://objects/other/cave_up/cave_up.gd" id="1_lx08b"]
 
 [node name="CaveUp" type="Node2D"]
+script = ExtResource("1_lx08b")
+object_name = "cave_up"

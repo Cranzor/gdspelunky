@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://ci4o6thdcbhso"]
 
-[sub_resource type="GDScript" id="GDScript_sk2hi"]
+[ext_resource type="Script" path="res://objects/traps/arrow_trap_right_lit/arrow_trap_right_lit.gd" id="1_0148k"]
 
 [node name="ArrowTrapRightLit" type="Node2D"]
+script = ExtResource("1_0148k")
+object_name = "arrow_trap_right_lit"

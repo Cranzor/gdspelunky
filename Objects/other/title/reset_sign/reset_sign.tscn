@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://b7aflfdqnuvhg"]
 
-[sub_resource type="GDScript" id="GDScript_22mfa"]
+[ext_resource type="Script" path="res://objects/other/title/reset_sign/reset_sign.gd" id="1_m4m5l"]
 
 [node name="ResetSign" type="Node2D"]
+script = ExtResource("1_m4m5l")
+object_name = "reset_sign"

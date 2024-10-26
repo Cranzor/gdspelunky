@@ -20,3 +20,5 @@ text = "WALK"
 script = ExtResource("486_8kwyl")
 
 [node name="View" parent="." instance=ExtResource("4_0a32v")]
+limit_left = 0
+limit_top = 0

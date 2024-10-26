@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://b8ffqdhyhr0fc"]
 
-[sub_resource type="GDScript" id="GDScript_7ytqb"]
+[ext_resource type="Script" path="res://objects/other/end/end2_bg/end_2_bg.gd" id="1_ai4o7"]
 
 [node name="End2Bg" type="Node2D"]
+script = ExtResource("1_ai4o7")
+object_name = "end2_bg"

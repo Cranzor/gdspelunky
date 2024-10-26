@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://dferqrf34bln3"]
 
-[sub_resource type="GDScript" id="GDScript_aar3d"]
+[ext_resource type="Script" path="res://objects/level editor/yeti_tile/yeti_tile.gd" id="1_louj4"]
 
 [node name="YetiTile" type="Node2D"]
+script = ExtResource("1_louj4")
+object_name = "yeti_tile"

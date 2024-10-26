@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://nmn3pta6csha"]
 
-[sub_resource type="GDScript" id="GDScript_68os6"]
+[ext_resource type="Script" path="res://objects/level editor/chest_tile/chest_tile.gd" id="1_5swc1"]
 
 [node name="ChestTile" type="Node2D"]
+script = ExtResource("1_5swc1")
+object_name = "chest_tile"

@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cydb4xmtw5jxh"]
 
-[sub_resource type="GDScript" id="GDScript_ml701"]
+[ext_resource type="Script" path="res://objects/level editor/teleporter_tile/teleporter_tile.gd" id="1_185ru"]
 
 [node name="TeleporterTile" type="Node2D"]
+script = ExtResource("1_185ru")
+object_name = "teleporter_tile"

@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://ufgk4gjepwjf"]
 
-[sub_resource type="GDScript" id="GDScript_s4tjr"]
+[ext_resource type="Script" path="res://objects/level editor/crystal_skull_tile/crystal_skull_tile.gd" id="1_7m2ch"]
 
 [node name="CrystalSkullTile" type="Node2D"]
+script = ExtResource("1_7m2ch")
+object_name = "crystal_skull_tile"

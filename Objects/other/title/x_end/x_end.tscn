@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://b1e50p5nehuc5"]
 
-[sub_resource type="GDScript" id="GDScript_s2hqj"]
+[ext_resource type="Script" path="res://objects/other/title/x_end/x_end.gd" id="1_ypk81"]
 
 [node name="XEnd" type="Node2D"]
+script = ExtResource("1_ypk81")
+object_name = "x_end"

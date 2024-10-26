@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://r60kgv3fo74a"]
 
-[sub_resource type="GDScript" id="GDScript_m8at0"]
+[ext_resource type="Script" path="res://objects/level editor/lava_tile/lava_tile.gd" id="1_l12bf"]
 
 [node name="LavaTile" type="Node2D"]
+script = ExtResource("1_l12bf")
+object_name = "lava_tile"

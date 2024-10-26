@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://we1i6vy4c88v"]
 
-[sub_resource type="GDScript" id="GDScript_th6i6"]
+[ext_resource type="Script" path="res://objects/level editor/mattock_tile/mattock_tile.gd" id="1_8ne8g"]
 
 [node name="MattockTile" type="Node2D"]
+script = ExtResource("1_8ne8g")
+object_name = "mattock_tile"

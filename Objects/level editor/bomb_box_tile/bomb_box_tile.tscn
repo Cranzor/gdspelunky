@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cc6lx3loc4lxr"]
 
-[sub_resource type="GDScript" id="GDScript_a4x05"]
+[ext_resource type="Script" path="res://objects/level editor/bomb_box_tile/bomb_box_tile.gd" id="1_yq17e"]
 
 [node name="BombBoxTile" type="Node2D"]
+script = ExtResource("1_yq17e")
+object_name = "bomb_box_tile"

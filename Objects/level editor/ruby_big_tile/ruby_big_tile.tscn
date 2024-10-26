@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://5nh330bgyxfm"]
 
-[sub_resource type="GDScript" id="GDScript_b6nab"]
+[ext_resource type="Script" path="res://objects/level editor/ruby_big_tile/ruby_big_tile.gd" id="1_msglb"]
 
 [node name="RubyBigTile" type="Node2D"]
+script = ExtResource("1_msglb")
+object_name = "ruby_big_tile"

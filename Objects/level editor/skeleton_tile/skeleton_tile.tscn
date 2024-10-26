@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://7ixg6lsp0eqd"]
 
-[sub_resource type="GDScript" id="GDScript_bmms8"]
+[ext_resource type="Script" path="res://objects/level editor/skeleton_tile/skeleton_tile.gd" id="1_ssj6c"]
 
 [node name="SkeletonTile" type="Node2D"]
+script = ExtResource("1_ssj6c")
+object_name = "skeleton_tile"

@@ -17,7 +17,7 @@ func _process(delta):
 
 
 #func create():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	#    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 #    <event category="CREATE" id="0">
 #      <actions>
 #        <action id="604" library="1">
@@ -52,10 +52,10 @@ func _process(delta):
 #      </actions>
 #    </event>
 
-    
+	
 
 #func destroy():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	#    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 #    <event category="DESTROY" id="0">
 #      <actions>
 #        <action id="603" library="1">
@@ -88,16 +88,16 @@ func _process(delta):
 #        global.message_timer = 200
 #        InLevel.scr_shake(10)
 #        global.favor -= 16
-    
+	
 #        if (global.kali_punish == 0):
-    
+	
 #            with kali_head
-        
+		
 #                alarm_0(1)
-        
-    
+		
+	
 #        elif (global.kali_punish == 1):
-    
+	
 #            gml.instance_create(player1.position.x, player1.position.y, "ball")
 #            obj = gml.instance_create(player1.position.x, player1.position.y, "chain")
 #            obj.link_val = 1
@@ -107,45 +107,45 @@ func _process(delta):
 #            obj.link_val = 3
 #            obj = gml.instance_create(player1.position.x, player1.position.y, "chain")
 #            obj.link_val = 4
-    
+	
 #        else:
-    
+	
 #            if (global.dark_level and global.ghost_exists):
-        
+		
 #                with kali_head
-            
+			
 #                    alarm_0(1)
-            
-        
+			
+		
 #            else:
-        
+		
 #                global.dark_level = true
 #                if (not global.ghost_exists):
-            
+			
 #                    if (player1.position.x > room_width / 2): gml.instance_create(view_xview[0]+view_wview[0]+8, view_yview[0]+floor(view_hview[0] / 2), "ghost")
 #                    else: gml.instance_create(view_xview[0]-32,  view_yview[0]+floor(view_hview[0] / 2), "ghost")
 #                    global.ghost_exists = true
-            
-        
-    
+			
+		
+	
 
 #        global.kali_punish += 1
 
 #        with sac_altar_left
-    
+	
 #            defile = false
 #            gml.instance_destroy()
-    
+	
 #    </argument>
 #          </arguments>
 #        </action>
 #      </actions>
 #    </event>
 
-    
+	
 
 #func step():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	#    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 #    <event category="STEP" id="0">
 #      <actions>
 #        <action id="603" library="1">
@@ -170,4 +170,4 @@ func _process(delta):
 #      </actions>
 #    </event>
 
-    
+	

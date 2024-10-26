@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://ckdnm82bfuxa6"]
 
-[sub_resource type="GDScript" id="GDScript_fog14"]
+[ext_resource type="Script" path="res://objects/traps/spear_trap_lit/spear_trap_lit.gd" id="1_5nqni"]
 
 [node name="SpearTrapLit" type="Node2D"]
+script = ExtResource("1_5nqni")
+object_name = "spear_trap_lit"
