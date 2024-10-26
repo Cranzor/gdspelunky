@@ -43,7 +43,7 @@ func check_individual_collision(node_to_check, tester_rect):
 			return true
 		return false
 
-func bounding_box_check(testing_box):
+func bounding_box_check(_testing_box):
 	pass
 
 func get_position_with_offset_applied(position, offset):

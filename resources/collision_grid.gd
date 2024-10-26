@@ -1,7 +1,7 @@
 class_name CollisionGrid
 
 func find_grid_position(global_position, object_size):
-	var grid_position_in_pixels: Vector2
+	#var grid_position_in_pixels: Vector2
 	var spacing: Vector2 = Vector2(8, 8)
 	
 	var top_left: Vector2 = global_position
@@ -9,7 +9,7 @@ func find_grid_position(global_position, object_size):
 	var bottom_left: Vector2 = Vector2(global_position.x, global_position.y + object_size.y)
 	var bottom_right: Vector2 = Vector2(global_position.x + object_size.x, global_position.y + object_size.y)
 	
-	grid_position_in_pixels = get_grid_nearest_multiple_from_position(global_position, spacing)
+	#grid_position_in_pixels = get_grid_nearest_multiple_from_position(global_position, spacing)
 	
 	var top_left_multiple: Vector2 = get_grid_nearest_multiple_from_position(top_left, spacing)
 	var top_right_multiple: Vector2 = get_grid_nearest_multiple_from_position(top_right, spacing)

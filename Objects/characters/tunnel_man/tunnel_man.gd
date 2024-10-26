@@ -23,7 +23,7 @@ const TRANSITION = 0
 var attack_pressed = false
 var check_up = false
 var check_down = false
-func _input(event):
+func _input(_event):
 	if ControlScripts.check_attack_pressed():
 		attack_pressed = true
 	

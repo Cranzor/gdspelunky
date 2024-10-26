@@ -175,7 +175,6 @@ func set_animation(new_sprite):
 	if animated_sprite.sprite_frames.has_animation(new_sprite):
 		animated_sprite.play(new_sprite)
 	else:
-		var sprite_folder = sprites.sprite_database[new_sprite]["folder_path"]
 		animated_sprite.sprite_frames = sprite_animation_setup(new_sprite, animated_sprite.sprite_frames)
 		assert(animated_sprite.sprite_frames.has_animation(new_sprite))
 		animated_sprite.play(new_sprite)

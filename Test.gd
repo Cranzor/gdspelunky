@@ -9,7 +9,7 @@ func _ready():
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	#keyboard_check(KEY_D)
 	pass
 
@@ -44,7 +44,7 @@ func keyboard_check():
 	#print(bitmap.get_bit(14, 0))
 	
 	#print(bitmap.opaque_to_polygons(Rect2(Vector2(), bitmap.get_size())))
-	var collision = get_parent().get_node("CollisionPolygon2D")
+	var _collision = get_parent().get_node("CollisionPolygon2D")
 	#print(bitmap.opaque_to_polygons(Rect2(Vector2(), bitmap.get_size())))
 	#var polygon_array = bitmap.opaque_to_polygons(Rect2(Vector2(), bitmap.get_size()))
 	#collision.polygon = polygon_array[0]
@@ -104,7 +104,7 @@ func right_search(passed_pixel, right_extent):
 	var current_column = passed_pixel.x
 	var current_row = passed_pixel.y
 	
-	var farthest_right_column = current_column
+	var _farthest_right_column = current_column
 	
 	#for new_column in range(current_column + 1, right_extent + 1):
 	for new_column in range(current_column, right_extent + 1):

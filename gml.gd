@@ -37,17 +37,17 @@ var c_yellow = Color(255, 255, 0)
 
 var room_speed = 30
 
-func string_char_at(str,index):
-	var char = str[index - 1]
-	return char
+func string_char_at(passed_string,index):
+	var character = passed_string[index - 1]
+	return character
 
-func string_delete(str,index,count):
-	str = str.erase(index, count)
-	return str
+func string_delete(passed_string,index,count):
+	passed_string = passed_string.erase(index, count)
+	return passed_string
 	
-func string_insert(substr,str,index):
-	str = str.insert(index, substr)
-	return str
+func string_insert(substr,passed_string,index):
+	passed_string = passed_string.insert(index, substr)
+	return passed_string
 	
 func instance_exists(obj): #--- FLAG. if enforcing this as a string, it sometimes breaks
 	var existence = get_tree().get_nodes_in_group(str(obj))
@@ -73,7 +73,7 @@ func instance_create(x,y,obj): #should return the node as this is used in script
 	
 	return instance
 	
-func collision_point(x,y,obj: String,prec,notme): #"This function tests whether at point (x,y) there is a collision with entities of object obj."
+func collision_point(x,y,obj: String,_prec,_notme): #"This function tests whether at point (x,y) there is a collision with entities of object obj."
 	var intersecting = false
 	var rect = Rect2(Vector2(x, y), Vector2(1, 1))
 	
@@ -89,7 +89,6 @@ func tile_add(background,left,top,width,height,x,y,depth): #return value of tile
 	var layer_number = tile_id
 	var coords = Vector2(0, -1)
 	var size = Vector2(1, 1)
-	var coords_array = []
 	y = y / 16
 	x = x / 16
 	
@@ -173,7 +172,7 @@ func instance_destroy(obj): #'Destroys current instance' ---  Should probably st
 	
 	obj.queue_free()
 
-func collision_rectangle(x1,y1,x2,y2,obj,prec,notme): #"This function tests whether there is a collision between the (filled) rectangle with the indicated opposite corners and entities of object obj. For example, you can use this to test whether an area is free of obstacles."
+func collision_rectangle(x1,y1,x2,y2,obj,_prec,_notme): #"This function tests whether there is a collision between the (filled) rectangle with the indicated opposite corners and entities of object obj. For example, you can use this to test whether an area is free of obstacles."
 	var intersecting = false
 	var rect = Rect2(Vector2(x1, y1), Vector2(abs(x2 - x1), abs(y2 - y1)))
 	
@@ -187,7 +186,7 @@ func point_distance(x1,y1,x2,y2): #"Returns the distance between point (x1,y1) a
 	return distance
 
 func instance_nearest(x,y,obj: String): #"Returns the id of the instance of type obj nearest to (x,y). obj can be an object or the keyword all."
-	var tester_rect = Rect2(Vector2(x, y), Vector2(1, 1))
+	#var tester_rect = Rect2(Vector2(x, y), Vector2(1, 1)) --- appears to be unnecessary
 	var nodes_to_check = collision_handling.get_all_nodes_in_group(obj)
 	var closest_distance
 	var closest_node
@@ -212,7 +211,7 @@ func frac(number):
 func object_get_parent(ind):
 	return ind.parent
 
-func place_meeting(x,y,obj): #--- only used 4 times in the whole game 
+func place_meeting(x,y,_obj): #--- only used 4 times in the whole game --- [FLAG] need to actually implement this
 	var intersecting = false
 	var rect = Rect2(Vector2(x, y), Vector2(16, 16)) #---[FLAG] grab the size later so this can be different size
 	
@@ -246,16 +245,14 @@ func instance_number(obj: String):
 	var number_of_instances = all_instances.size()
 	return number_of_instances
 
-func collision_line(x1,y1,x2,y2,obj,prec,notme):
+func collision_line(x1,y1,x2,y2,obj,_prec,_notme):
 	var intersecting = false
-	var all_points = []
 	var vertical_rect: Rect2
 	var tester_rect = Rect2(Vector2(x1, y1), Vector2(x2, y2))
 	
 	var nodes_to_check = collision_handling.get_nodes_to_check(obj, tester_rect)
 	
 	if nodes_to_check != null:
-		var y = y1
 		if x1 == x2:
 			vertical_rect = Rect2(Vector2(x1, y1), Vector2(1, abs(y2-y1) + 1))
 
@@ -283,8 +280,8 @@ func get_sprite_index(node):
 func draw_text(x, y, string, font: String, color: Color): #--- added font and color values here
 	pass
 
-func string_length(str: String):
-	return str.length()
+func string_length(passed_string: String):
+	return passed_string.length()
 	
 func keyboard_check_pressed(key):
 	var check = Input.is_key_pressed(key)
@@ -373,18 +370,6 @@ func get_instance(obj: String): #Support function for when GML handles this by i
 	if instance_exists(obj):
 		var instance = get_tree().get_first_node_in_group(str(obj))
 		return instance
-
-func alarm_setup(frames, alarm_activity):
-	if alarm_activity == false:
-		if frames > 0:
-			alarm_activity = true
-			var alarm_value = frames
-			var countdown_time = frames / 30
-			gml.alarm_timeout(countdown_time)
-			alarm_activity = false
-
-func alarm_timeout(time):
-	await get_tree().create_timer(time).timeout
 
 func get_nearest_multiple(number, target_number): #--- Adapted from here: https://www.geeksforgeeks.org/multiple-of-x-closest-to-n/
 	if target_number > number:

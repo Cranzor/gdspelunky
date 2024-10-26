@@ -768,7 +768,7 @@ func scr_level_gen():
 	var prev_x = global.start_room_x
 	var prev_y = 0
 	global.room_path[[room_x, room_y]] = 1
-	var nstart_x = -1
+	var _nstart_x = -1
 	var n = randi_range(0,3)
 
 	global.sacrifice_pit = false
@@ -875,8 +875,8 @@ func scr_level_gen():
 	if (global.city_of_gold): global.room_path[[randi_range(0,3), 2]] = 6
 
 	# snake pit
-	var s_x1 = 0
-	var s_x2 = 0
+	var _s_x1 = 0
+	var _s_x2 = 0
 	# global.prob_snake_pit = 1
 	if (global.level_type == 0):
 
@@ -1091,7 +1091,7 @@ func scr_init_level():
 	global.start_room_y = 0
 	global.end_room_x = 0
 	global.end_room_y = 0
-	var level_gen = false #---actually is oGame.level_gen. Seems to do nothing
+	var _level_gen = false #---actually is oGame.level_gen. Seems to do nothing [FLAG] double check this
 
 	# this is used to determine the path to the exit (generally no bombs required)
 	for i in range(0, 4):
@@ -1290,7 +1290,7 @@ func scr_init_level():
 		
 
 
-	level_gen = true
+	_level_gen = true
 
 	# generate angry shopkeeper at exit if murderer or thief
 	if (global.murderer or global.thief_level > 0):

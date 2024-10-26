@@ -1,7 +1,6 @@
 extends Character
 
 func _ready():
-	#move_to_test()
 	object_setup()
 	character_create_event()
 
@@ -319,7 +318,7 @@ func step():
 	#print('node position: ' + str(position))
 	#print('sprite position: ' + str(animated_sprite.position))
 	#print("final x vel: " + str(final_x_vel), " final y vel: " + str(final_y_vel))
-	every_second_timer()
+	every_second_timer() #--- [FLAG] what is this
 	#character_size_test()
 	#------------------------
 	
@@ -2517,7 +2516,7 @@ func character_create_event():
 	#It sets the variables needed for the platform character.
 	#*/
 
-	var debug = 1
+	var _debug = 1
 
 	#constant states that the platform character may be #--- declared these at the top
 	#STANDING = 10
@@ -2561,8 +2560,8 @@ func character_create_event():
 
 	k_attack = false
 	k_attack_pressed = false
-	var k_missile = 0 #--- doesn't appear to be used anywhere
-	var k_missile_pressed = 0 #--- doesn't appear to be used anywhere
+	var _k_missile = 0 #--- doesn't appear to be used anywhere
+	var _k_missile_pressed = 0 #--- doesn't appear to be used anywhere
 
 	#user variables (you can edit these)
 	player = 1                # player number (player 2 uses different keyboard keys than player 1)
@@ -2590,16 +2589,16 @@ func character_create_event():
 	max_down_slope = 5          # approximately how many pixels the character can climb DOWNWARDS per step (a value of 5 means the character can climb down a slope of 5)
 
 	can_run = 1                # when the user presses the shift button, should the character be allowed to run?
-	var can_fly = 0                # whether the character can do a fly jump when running at full speed #--- doesn't appear to be used anywhere
-	var can_fly_jump = 0            # whether the character can do continuous fly jumps (mid-air) #--- doesn't appear to be used anywhere
-	var fly_max_jumps = 5           # the maximum number of jumps the character can perform while flying: #--- doesn't appear to be used anywhere
+	var _can_fly = 0                # whether the character can do a fly jump when running at full speed #--- doesn't appear to be used anywhere
+	var _can_fly_jump = 0            # whether the character can do continuous fly jumps (mid-air) #--- doesn't appear to be used anywhere
+	var _fly_max_jumps = 5           # the maximum number of jumps the character can perform while flying: #--- doesn't appear to be used anywhere
 
 	friction_running_x = 0.6       # friction obtained while running:
 	friction_running_fast_x = 0.98  # friction obtained while holding the shift button for some time while running:
 	friction_climbing_x = 0.6      # friction obtained while climbing:
 	friction_climbing_y = 0.6      # friction obtained while climbing:
-	var friction_ducking_x = 0.8       # friction obtained while ducking: #--- doesn't appear to be used anywhere
-	var friction_flying_x = 0.99       # friction obtained while "flying": #--- doesn't appear to be used anywhere
+	var _friction_ducking_x = 0.8       # friction obtained while ducking: #--- doesn't appear to be used anywhere
+	var _friction_flying_x = 0.99       # friction obtained while "flying": #--- doesn't appear to be used anywhere
 
 	run_anim_speed = 0.1           #relates to the how fast the running animation should go
 
@@ -2614,12 +2613,12 @@ func character_create_event():
 	jump_button_released = false       #whether the jump button was released. (Stops the user from pressing the jump button many times to get extra jumps)
 	ladder_timer = 0              #relates to whether the character can climb a ladder
 	jumps = 0
-	var fly_speed = 0                 #ranges between 0 and 100. When the fly_speed is approximately 100, the character can "fly." #--- doesn't appear to be used anywhere
-	var fly_speed_timer = 0 #--- doesn't appear to be used anywhere
-	var fly_acc_timer = 0 #--- doesn't appear to be used anywhere
-	var fly_acc2_timer = 0 #--- doesn't appear to be used anywhere
-	var fly_jumps_timer = 0 #--- doesn't appear to be used anywhere
-	var fly_jump_was_pressed = 0
+	var _fly_speed = 0                 #ranges between 0 and 100. When the fly_speed is approximately 100, the character can "fly." #--- doesn't appear to be used anywhere
+	var _fly_speed_timer = 0 #--- doesn't appear to be used anywhere
+	var _fly_acc_timer = 0 #--- doesn't appear to be used anywhere
+	var _fly_acc2_timer = 0 #--- doesn't appear to be used anywhere
+	var _fly_jumps_timer = 0 #--- doesn't appear to be used anywhere
+	var _fly_jump_was_pressed = 0
 	k_left_pushed_steps = 0
 	k_right_pushed_steps = 0
 
@@ -4276,36 +4275,6 @@ func every_second_timer():
 		await get_tree().create_timer(1 / 30).timeout
 		time += 1
 		timer_started = false
-
-func move_to_test():
-	var times_per_second = 0
-	for x in range(1, 31):
-		#print('X: ' + str(x))
-		var x_vel_test = 2.5
-		var mt_x_prev=position.x
-		var mt_y_prev=position.y
-		##change the decimal arguments to integer variables with relation to time
-		var x_vel_frac=gml.frac(abs(x_vel_test))
-		' x_vel_frac=gml.frac(abs(x_vel_test)): ' + str(gml.frac(abs(x_vel_test)))
-		var y_vel_frac=gml.frac(abs(y_vel))
-		x_vel_integer=0
-		y_vel_integer=0
-		if x_vel_frac!=0:
-			if round(1/x_vel_frac)!=0:
-				if int(x) % int(round(1/x_vel_frac))==0:
-					times_per_second += 1
-					x_vel_integer=1
-				else:
-					x_vel_integer=0
-		if y_vel_frac!=0:
-			if round(1/y_vel_frac)!=0:
-				if int(x) % int(round(1/y_vel_frac))==0:
-					y_vel_integer=1
-				else:
-					y_vel_integer=0
-		x_vel_integer+=floor(abs(x_vel_test))
-		y_vel_integer+=floor(abs(y_vel))
-	#print(times_per_second)
 
 func end_step():
 	if (hold_item):
