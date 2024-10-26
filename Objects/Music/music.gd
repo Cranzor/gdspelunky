@@ -7,6 +7,7 @@ var bus = "master"
 
 var available = []  # The available players.
 var queue = []  # The queue of sounds to play.
+var sound_and_node = {}
 
 
 func create_audio_stream_player_nodes():
@@ -28,13 +29,22 @@ func play(sound_path):
 	queue.append(sound_path)
 
 
+func stop(sound_path):
+	if sound_and_node.has(sound_path):
+		var node = sound_and_node[sound_path]
+		node.stop()
+		_on_stream_finished(node)
+
+
 func _process(_delta):
 	# Play a queued sound if any players are available.
 	if not queue.is_empty() and not available.is_empty():
+		sound_and_node[queue[0]] = available[0]
 		available[0].stream = load(queue.pop_front())
 		available[0].play()
 		available.pop_front()
 
+		print(sound_and_node)
 
 func _ready():
 	#SS.init() --- should not be needed for anything
