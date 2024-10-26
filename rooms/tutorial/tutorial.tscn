@@ -1,8 +1,48 @@
-[gd_scene load_steps=4 format=3 uid="uid://dpevsukwrfdu"]
+[gd_scene load_steps=44 format=3 uid="uid://dpevsukwrfdu"]
 
 [ext_resource type="Script" path="res://rooms/tutorial/tutorial.gd" id="1_8s7xq"]
 [ext_resource type="PackedScene" uid="uid://b2jlcu453ynaf" path="res://bg_elements.tscn" id="1_73yn2"]
 [ext_resource type="PackedScene" uid="uid://chivya8n7oo3x" path="res://texture_rect.tscn" id="3_kyms1"]
+[ext_resource type="PackedScene" uid="uid://coxndfvre2ld2" path="res://objects/other/title/x_title/x_title.tscn" id="4_k8blw"]
+[ext_resource type="Script" path="res://objects/other/title/x_title/x_title.gd" id="5_5jjo4"]
+[ext_resource type="PackedScene" uid="uid://dfd7rj0f01nci" path="res://objects/blocks/exit/exit.tscn" id="6_b6kqg"]
+[ext_resource type="Script" path="res://objects/blocks/exit/exit.gd" id="7_yux1y"]
+[ext_resource type="PackedScene" uid="uid://cv3pd1bt26k5v" path="res://objects/blocks/ladder_orange/ladder_orange.tscn" id="8_cu6se"]
+[ext_resource type="Script" path="res://objects/blocks/ladder_orange/ladder_orange.gd" id="9_jb6ka"]
+[ext_resource type="PackedScene" uid="uid://c3y7x7kf3135e" path="res://objects/blocks/ladder_top/ladder_top.tscn" id="10_2g4q2"]
+[ext_resource type="Script" path="res://objects/blocks/ladder_top/ladder_top.gd" id="11_3cjcv"]
+[ext_resource type="PackedScene" uid="uid://cxph7np7ruc8f" path="res://objects/blocks/msg_sign/msg_sign.tscn" id="12_k3wvp"]
+[ext_resource type="Script" path="res://objects/blocks/msg_sign/msg_sign.gd" id="13_h1hho"]
+[ext_resource type="PackedScene" uid="uid://cccbc4sui07d8" path="res://objects/collectibles/crate/crate.tscn" id="14_j7c3r"]
+[ext_resource type="Script" path="res://objects/collectibles/crate/crate.gd" id="15_pqxwl"]
+[ext_resource type="PackedScene" uid="uid://cajmbi8trva6o" path="res://objects/collectibles/chest/chest.tscn" id="16_clfgj"]
+[ext_resource type="Script" path="res://objects/collectibles/chest/chest.gd" id="17_on3dw"]
+[ext_resource type="PackedScene" uid="uid://c05msw61s8n5s" path="res://objects/collectibles/emerald_big/emerald_big.tscn" id="18_dm4cq"]
+[ext_resource type="Script" path="res://objects/collectibles/emerald_big/emerald_big.gd" id="19_6dpvm"]
+[ext_resource type="PackedScene" uid="uid://ces2p206w2pl4" path="res://objects/collectibles/sapphire_big/sapphire_big.tscn" id="20_dic51"]
+[ext_resource type="Script" path="res://objects/collectibles/sapphire_big/sapphire_big.gd" id="21_4nw15"]
+[ext_resource type="PackedScene" uid="uid://73n83hbh1qdu" path="res://objects/collectibles/ruby_big/ruby_big.tscn" id="22_efc73"]
+[ext_resource type="Script" path="res://objects/collectibles/ruby_big/ruby_big.gd" id="23_ixwu3"]
+[ext_resource type="PackedScene" uid="uid://boxc36fot75d7" path="res://objects/blocks/brick/brick.tscn" id="24_o1tv0"]
+[ext_resource type="Script" path="res://objects/blocks/brick/brick.gd" id="25_xst1d"]
+[ext_resource type="PackedScene" uid="uid://37vfyoa0wyxb" path="res://objects/items/rock/rock.tscn" id="26_enp18"]
+[ext_resource type="Script" path="res://objects/items/rock/rock.gd" id="27_d83jg"]
+[ext_resource type="PackedScene" uid="uid://dllqpxosvn6dg" path="res://objects/collectibles/gold_bar/gold_bar.tscn" id="28_vx81m"]
+[ext_resource type="Script" path="res://objects/collectibles/gold_bar/gold_bar.gd" id="29_s87nn"]
+[ext_resource type="PackedScene" uid="uid://bvd8sg3ne6j16" path="res://objects/collectibles/gold_bars/gold_bars.tscn" id="30_tc6qx"]
+[ext_resource type="Script" path="res://objects/collectibles/gold_bars/gold_bars.gd" id="31_vhy4c"]
+[ext_resource type="PackedScene" uid="uid://db1uwte520n15" path="res://objects/blocks/hard_block/hard_block.tscn" id="32_yq38n"]
+[ext_resource type="Script" path="res://objects/blocks/hard_block/hard_block.gd" id="33_mrbax"]
+[ext_resource type="PackedScene" uid="uid://b4mivj5bs8uo0" path="res://objects/enemies/snake/snake.tscn" id="34_qyyc6"]
+[ext_resource type="Script" path="res://objects/enemies/snake/snake.gd" id="35_ujqa4"]
+[ext_resource type="PackedScene" uid="uid://dxk74orkbwm5u" path="res://objects/player1/player1.tscn" id="36_qkdjn"]
+[ext_resource type="Script" path="res://objects/player1/player1.gd" id="37_vgmpm"]
+[ext_resource type="PackedScene" uid="uid://yrv4vb3tbgls" path="res://objects/enemies/bat/bat.tscn" id="38_50y4q"]
+[ext_resource type="Script" path="res://objects/enemies/bat/bat.gd" id="39_4afmd"]
+[ext_resource type="PackedScene" uid="uid://bdsireklvyldb" path="res://objects/level/level.tscn" id="40_rfytk"]
+[ext_resource type="Script" path="res://objects/level/level.gd" id="41_x3xdq"]
+[ext_resource type="PackedScene" uid="uid://3ui3v5o7nedx" path="res://objects/game/game.tscn" id="42_inn1d"]
+[ext_resource type="Script" path="res://objects/game/game.gd" id="43_5s6qj"]
 
 [node name="Tutorial" type="Node2D" groups=["objects_holder"]]
 script = ExtResource("1_8s7xq")
@@ -38,3 +78,2867 @@ layer_27/name = "Layer27"
 layer_28/name = "Layer28"
 
 [node name="TextureRect" parent="." instance=ExtResource("3_kyms1")]
+
+[node name="ObjectsHolder" type="Node2D" parent="."]
+
+[node name="XTitle" type="Node2D" parent="ObjectsHolder" instance=ExtResource("4_k8blw")]
+position = Vector2(16, 64)
+script = ExtResource("5_5jjo4")
+object_name = "x_title"
+
+[node name="Exit" type="Node2D" parent="ObjectsHolder" instance=ExtResource("6_b6kqg")]
+position = Vector2(48, 240)
+script = ExtResource("7_yux1y")
+object_name = "exit"
+
+[node name="LadderOrange" type="Node2D" parent="ObjectsHolder" instance=ExtResource("8_cu6se")]
+position = Vector2(640, 80)
+script = ExtResource("9_jb6ka")
+object_name = "ladder_orange"
+
+[node name="@Node2D@30166" type="Node2D" parent="ObjectsHolder" instance=ExtResource("8_cu6se")]
+position = Vector2(640, 64)
+script = ExtResource("9_jb6ka")
+object_name = "ladder_orange"
+
+[node name="@Node2D@30167" type="Node2D" parent="ObjectsHolder" instance=ExtResource("8_cu6se")]
+position = Vector2(640, 32)
+script = ExtResource("9_jb6ka")
+object_name = "ladder_orange"
+
+[node name="LadderTop" type="Node2D" parent="ObjectsHolder" instance=ExtResource("10_2g4q2")]
+position = Vector2(640, 48)
+script = ExtResource("11_3cjcv")
+object_name = "ladder_top"
+
+[node name="MsgSign" type="Node2D" parent="ObjectsHolder" instance=ExtResource("12_k3wvp")]
+position = Vector2(80, 96)
+script = ExtResource("13_h1hho")
+object_name = "msg_sign"
+
+[node name="@Node2D@30168" type="Node2D" parent="ObjectsHolder" instance=ExtResource("12_k3wvp")]
+position = Vector2(176, 96)
+script = ExtResource("13_h1hho")
+object_name = "msg_sign"
+
+[node name="@Node2D@30169" type="Node2D" parent="ObjectsHolder" instance=ExtResource("12_k3wvp")]
+position = Vector2(576, 128)
+script = ExtResource("13_h1hho")
+object_name = "msg_sign"
+
+[node name="@Node2D@30170" type="Node2D" parent="ObjectsHolder" instance=ExtResource("12_k3wvp")]
+position = Vector2(640, 96)
+script = ExtResource("13_h1hho")
+object_name = "msg_sign"
+
+[node name="@Node2D@30171" type="Node2D" parent="ObjectsHolder" instance=ExtResource("12_k3wvp")]
+position = Vector2(608, 256)
+script = ExtResource("13_h1hho")
+object_name = "msg_sign"
+
+[node name="@Node2D@30172" type="Node2D" parent="ObjectsHolder" instance=ExtResource("12_k3wvp")]
+position = Vector2(496, 256)
+script = ExtResource("13_h1hho")
+object_name = "msg_sign"
+
+[node name="@Node2D@30173" type="Node2D" parent="ObjectsHolder" instance=ExtResource("12_k3wvp")]
+position = Vector2(384, 208)
+script = ExtResource("13_h1hho")
+object_name = "msg_sign"
+
+[node name="@Node2D@30174" type="Node2D" parent="ObjectsHolder" instance=ExtResource("12_k3wvp")]
+position = Vector2(256, 208)
+script = ExtResource("13_h1hho")
+object_name = "msg_sign"
+
+[node name="@Node2D@30175" type="Node2D" parent="ObjectsHolder" instance=ExtResource("12_k3wvp")]
+position = Vector2(96, 256)
+script = ExtResource("13_h1hho")
+object_name = "msg_sign"
+
+[node name="@Node2D@30176" type="Node2D" parent="ObjectsHolder" instance=ExtResource("12_k3wvp")]
+position = Vector2(384, 96)
+script = ExtResource("13_h1hho")
+object_name = "msg_sign"
+
+[node name="@Node2D@30177" type="Node2D" parent="ObjectsHolder" instance=ExtResource("12_k3wvp")]
+position = Vector2(240, 64)
+script = ExtResource("13_h1hho")
+object_name = "msg_sign"
+
+[node name="@Node2D@30178" type="Node2D" parent="ObjectsHolder" instance=ExtResource("12_k3wvp")]
+position = Vector2(32, 64)
+script = ExtResource("13_h1hho")
+object_name = "msg_sign"
+
+[node name="@Node2D@30179" type="Node2D" parent="ObjectsHolder" instance=ExtResource("12_k3wvp")]
+position = Vector2(512, 32)
+script = ExtResource("13_h1hho")
+object_name = "msg_sign"
+
+[node name="@Node2D@30180" type="Node2D" parent="ObjectsHolder" instance=ExtResource("12_k3wvp")]
+position = Vector2(544, 112)
+script = ExtResource("13_h1hho")
+object_name = "msg_sign"
+
+[node name="@Node2D@30181" type="Node2D" parent="ObjectsHolder" instance=ExtResource("12_k3wvp")]
+position = Vector2(576, 256)
+script = ExtResource("13_h1hho")
+object_name = "msg_sign"
+
+[node name="@Node2D@30182" type="Node2D" parent="ObjectsHolder" instance=ExtResource("12_k3wvp")]
+position = Vector2(432, 176)
+script = ExtResource("13_h1hho")
+object_name = "msg_sign"
+
+[node name="@Node2D@30183" type="Node2D" parent="ObjectsHolder" instance=ExtResource("12_k3wvp")]
+position = Vector2(224, 208)
+script = ExtResource("13_h1hho")
+object_name = "msg_sign"
+
+[node name="Crate" type="Node2D" parent="ObjectsHolder" instance=ExtResource("14_j7c3r")]
+position = Vector2(216, 216)
+script = ExtResource("15_pqxwl")
+object_name = "crate"
+
+[node name="Chest" type="Node2D" parent="ObjectsHolder" instance=ExtResource("16_clfgj")]
+position = Vector2(504, 40)
+script = ExtResource("17_on3dw")
+object_name = "chest"
+
+[node name="EmeraldBig" type="Node2D" parent="ObjectsHolder" instance=ExtResource("18_dm4cq")]
+position = Vector2(568, 44)
+script = ExtResource("19_6dpvm")
+object_name = "emerald_big"
+
+[node name="SapphireBig" type="Node2D" parent="ObjectsHolder" instance=ExtResource("20_dic51")]
+position = Vector2(552, 44)
+script = ExtResource("21_4nw15")
+object_name = "sapphire_big"
+
+[node name="RubyBig" type="Node2D" parent="ObjectsHolder" instance=ExtResource("22_efc73")]
+position = Vector2(536, 44)
+script = ExtResource("23_ixwu3")
+object_name = "ruby_big"
+
+[node name="Brick" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(80, 144)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30184" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(96, 144)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30185" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(112, 144)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30186" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(128, 144)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30187" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(144, 144)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30188" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(160, 144)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30189" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(176, 144)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30190" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(192, 144)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30191" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(208, 144)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30192" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(224, 144)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30193" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(240, 144)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30194" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(256, 144)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30195" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(272, 144)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30196" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(288, 144)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30197" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(304, 144)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30198" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(320, 144)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30199" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(336, 144)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30200" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(352, 144)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30201" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(368, 144)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30202" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(384, 144)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30203" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(400, 144)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30204" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(416, 144)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30205" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(432, 144)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30206" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(448, 144)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30207" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(464, 144)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30208" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(480, 144)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30209" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(496, 144)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30210" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(512, 144)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30211" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(528, 144)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30212" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(80, 112)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30213" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(96, 112)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30214" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(112, 112)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30215" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(128, 112)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30216" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(144, 112)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30217" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(160, 112)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30218" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(176, 112)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30219" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(192, 112)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30220" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(208, 112)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30221" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(224, 112)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30222" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(240, 112)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30223" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(256, 112)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30224" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(272, 112)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30225" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(288, 112)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30226" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(304, 112)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30227" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(320, 112)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30228" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(384, 128)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30229" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(400, 128)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30230" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(416, 128)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30231" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(432, 128)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30232" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(448, 128)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30233" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(464, 128)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30234" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(480, 128)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30235" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(496, 128)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30236" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(512, 128)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30237" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(528, 128)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30238" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(528, 112)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30239" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(512, 112)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30240" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(496, 112)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30241" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(480, 112)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30242" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(464, 112)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30243" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(448, 112)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30244" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(432, 112)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30245" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(416, 112)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30246" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(400, 112)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30247" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(384, 112)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30248" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(368, 112)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30249" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(352, 112)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30250" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(336, 112)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30251" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(192, 128)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30252" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(176, 128)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30253" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(128, 128)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30254" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(96, 128)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30255" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(80, 128)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30256" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(112, 128)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30257" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(144, 128)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30258" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(160, 128)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30259" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(208, 128)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30260" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(224, 128)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30261" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(240, 128)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30262" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(256, 128)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30263" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(272, 128)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30264" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(288, 128)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30265" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(304, 128)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30266" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(320, 128)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30267" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(336, 128)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30268" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(352, 128)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30269" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(368, 128)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30270" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(32, 80)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30271" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(16, 80)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30272" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(128, 96)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30273" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(224, 96)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30274" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(224, 80)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30275" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(240, 80)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30276" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(256, 80)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30277" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(272, 80)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30278" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(288, 80)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30279" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(304, 80)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30280" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(320, 80)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30281" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(336, 80)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30282" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(352, 80)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30283" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(352, 96)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30284" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(336, 96)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30285" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(320, 96)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30286" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(304, 96)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30287" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(288, 96)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30288" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(272, 96)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30289" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(256, 96)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30290" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(240, 96)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30291" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(544, 128)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30292" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(560, 128)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30293" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(592, 144)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30294" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(576, 144)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30295" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(560, 144)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30296" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(544, 144)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30297" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(640, 144)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30298" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(640, 128)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30299" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(640, 112)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30300" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(640, 272)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30301" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(624, 272)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30302" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(608, 272)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30303" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(592, 272)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30304" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(576, 272)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30305" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(560, 272)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30306" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(544, 272)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30307" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(528, 272)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30308" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(512, 272)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30309" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(496, 272)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30310" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(480, 272)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30311" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(464, 272)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30312" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(448, 272)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30313" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(432, 272)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30314" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(416, 272)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30315" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(400, 272)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30316" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(384, 272)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30317" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(368, 272)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30318" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(352, 272)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30319" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(336, 272)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30320" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(320, 272)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30321" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(304, 272)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30322" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(288, 272)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30323" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(272, 272)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30324" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(16, 272)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30325" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(32, 272)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30326" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(48, 272)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30327" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(64, 272)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30328" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(80, 272)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30329" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(96, 272)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30330" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(112, 272)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30331" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(128, 272)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30332" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(144, 272)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30333" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(160, 272)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30334" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(176, 272)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30335" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(192, 272)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30336" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(208, 272)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30337" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(224, 272)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30338" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(240, 272)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30339" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(256, 272)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30340" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(448, 192)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30341" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(464, 192)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30342" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(464, 208)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30343" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(448, 208)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30344" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(448, 224)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30345" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(464, 224)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30346" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(464, 240)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30347" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(448, 240)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30348" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(448, 256)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30349" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(464, 256)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30350" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(208, 224)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30351" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(208, 240)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30352" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(208, 256)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30353" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(16, 176)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30354" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(32, 176)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30355" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(16, 192)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30356" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(32, 256)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30357" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(64, 256)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30358" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(624, 48)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30359" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(608, 48)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30360" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(592, 48)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30361" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(576, 48)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30362" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(560, 48)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30363" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(544, 48)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30364" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(528, 48)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30365" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(512, 48)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30366" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(496, 48)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30367" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(432, 256)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30368" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(432, 240)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30369" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(432, 224)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30370" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(432, 208)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30371" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(432, 192)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30372" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(384, 224)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30373" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(368, 224)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30374" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(256, 224)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30375" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(240, 224)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30376" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(224, 224)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30377" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(224, 240)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30378" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(224, 256)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30379" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(240, 256)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30380" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(240, 240)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30381" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(256, 240)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30382" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(256, 256)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30383" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(192, 224)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30384" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(192, 240)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30385" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(192, 256)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30386" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(176, 240)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30387" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(176, 256)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30388" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(160, 256)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="Rock" type="Node2D" parent="ObjectsHolder" instance=ExtResource("26_enp18")]
+position = Vector2(648, 264)
+script = ExtResource("27_d83jg")
+object_name = "rock"
+
+[node name="@Node2D@30389" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(352, 224)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="GoldBar" type="Node2D" parent="ObjectsHolder" instance=ExtResource("28_vx81m")]
+position = Vector2(416, 108)
+script = ExtResource("29_s87nn")
+object_name = "gold_bar"
+
+[node name="@Node2D@30390" type="Node2D" parent="ObjectsHolder" instance=ExtResource("28_vx81m")]
+position = Vector2(432, 108)
+script = ExtResource("29_s87nn")
+object_name = "gold_bar"
+
+[node name="@Node2D@30391" type="Node2D" parent="ObjectsHolder" instance=ExtResource("28_vx81m")]
+position = Vector2(448, 108)
+script = ExtResource("29_s87nn")
+object_name = "gold_bar"
+
+[node name="@Node2D@30392" type="Node2D" parent="ObjectsHolder" instance=ExtResource("28_vx81m")]
+position = Vector2(464, 108)
+script = ExtResource("29_s87nn")
+object_name = "gold_bar"
+
+[node name="@Node2D@30393" type="Node2D" parent="ObjectsHolder" instance=ExtResource("28_vx81m")]
+position = Vector2(480, 108)
+script = ExtResource("29_s87nn")
+object_name = "gold_bar"
+
+[node name="@Node2D@30394" type="Node2D" parent="ObjectsHolder" instance=ExtResource("28_vx81m")]
+position = Vector2(496, 108)
+script = ExtResource("29_s87nn")
+object_name = "gold_bar"
+
+[node name="GoldBars" type="Node2D" parent="ObjectsHolder" instance=ExtResource("30_tc6qx")]
+position = Vector2(512, 104)
+script = ExtResource("31_vhy4c")
+object_name = "gold_bars"
+
+[node name="@Node2D@30395" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(624, 112)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30396" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(608, 112)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30397" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(496, 160)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30398" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(480, 160)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30399" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(464, 160)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30400" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(448, 160)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30401" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(432, 160)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30402" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(416, 160)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30403" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(400, 160)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="HardBlock" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30404" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(0, 16)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30405" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(0, 32)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30406" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(0, 48)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30407" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(0, 64)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30408" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(0, 80)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30409" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(0, 128)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30410" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(0, 144)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30411" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(0, 160)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30412" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(0, 176)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30413" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(0, 192)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30414" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(0, 208)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30415" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(0, 224)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30416" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(0, 240)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30417" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(0, 256)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30418" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(0, 272)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30419" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(0, 288)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30420" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(16, 288)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30421" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(32, 288)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30422" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(48, 288)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30423" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(64, 288)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30424" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(80, 288)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30425" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(96, 288)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30426" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(112, 288)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30427" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(128, 288)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30428" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(144, 288)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30429" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(160, 288)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30430" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(176, 288)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30431" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(192, 288)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30432" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(208, 288)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30433" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(224, 288)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30434" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(240, 288)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30435" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(256, 288)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30436" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(272, 288)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30437" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(288, 288)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30438" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(304, 288)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30439" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(320, 288)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30440" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(336, 288)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30441" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(352, 288)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30442" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(368, 288)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30443" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(384, 288)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30444" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(400, 288)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30445" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(416, 288)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30446" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(432, 288)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30447" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(448, 288)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30448" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(464, 288)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30449" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(480, 288)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30450" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(496, 288)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30451" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(512, 288)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30452" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(528, 288)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30453" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(544, 288)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30454" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(560, 288)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30455" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(576, 288)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30456" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(592, 288)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30457" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(608, 288)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30458" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(624, 288)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30459" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(640, 288)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30460" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(656, 288)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30461" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(16, 0)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30462" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(32, 0)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30463" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(48, 0)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30464" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(64, 0)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30465" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(80, 0)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30466" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(96, 0)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30467" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(112, 0)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30468" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(128, 0)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30469" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(144, 0)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30470" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(160, 0)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30471" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(176, 0)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30472" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(192, 0)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30473" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(208, 0)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30474" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(224, 0)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30475" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(240, 0)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30476" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(256, 0)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30477" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(272, 0)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30478" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(288, 0)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30479" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(304, 0)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30480" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(320, 0)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30481" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(336, 0)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30482" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(352, 0)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30483" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(368, 0)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30484" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(384, 0)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30485" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(400, 0)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30486" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(416, 0)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30487" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(432, 0)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30488" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(448, 0)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30489" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(464, 0)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30490" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(480, 0)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30491" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(496, 0)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30492" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(512, 0)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30493" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(528, 0)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30494" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(544, 0)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30495" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(560, 0)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30496" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(576, 0)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30497" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(592, 0)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30498" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(608, 0)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30499" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(624, 0)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30500" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(640, 0)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30501" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(656, 0)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30502" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(656, 16)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30503" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(656, 32)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30504" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(656, 48)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30505" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(656, 64)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30506" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(656, 80)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30507" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(656, 96)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30508" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(656, 112)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30509" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(656, 128)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30510" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(656, 144)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30511" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(656, 160)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30512" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(656, 176)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30513" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(656, 192)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30514" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(656, 208)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30515" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(656, 224)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30516" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(656, 240)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30517" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(656, 256)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30518" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(656, 272)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30519" type="Node2D" parent="ObjectsHolder" groups=["drawn_sprite", "hard_block", "solid"] instance=ExtResource("32_yq38n")]
+z_index = -100
+position = Vector2(48, 256)
+script = ExtResource("33_mrbax")
+object_name = "hard_block"
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30520" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(336, 224)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30521" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(416, 256)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30522" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(416, 192)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30523" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(416, 208)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30524" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(416, 224)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30525" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(416, 240)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30526" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(400, 256)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30527" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(192, 208)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30528" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(192, 192)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30529" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(192, 176)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30530" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(192, 160)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30531" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(0, 112)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30532" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(0, 96)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30533" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(16, 160)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30534" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(32, 160)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30535" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(48, 160)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30536" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(64, 144)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30537" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(48, 144)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30538" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(32, 144)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30539" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(16, 144)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30540" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(16, 128)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30541" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(32, 128)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30542" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(48, 128)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30543" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(64, 128)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30544" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(64, 112)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30545" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(48, 112)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30546" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(32, 112)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30547" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(16, 112)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30548" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(16, 96)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="@Node2D@30549" type="Node2D" parent="ObjectsHolder" groups=["brick", "drawn_sprite", "solid"] instance=ExtResource("24_o1tv0")]
+z_index = -100
+position = Vector2(32, 96)
+script = ExtResource("25_xst1d")
+object_name = "brick"
+object_size = Vector2(16, 16)
+
+[node name="Snake" type="Node2D" parent="ObjectsHolder" instance=ExtResource("34_qyyc6")]
+position = Vector2(352, 64)
+script = ExtResource("35_ujqa4")
+object_name = "snake"
+
+[node name="Player1" type="Node2D" parent="ObjectsHolder" groups=["character", "player1"] instance=ExtResource("36_qkdjn")]
+position = Vector2(24, 72)
+script = ExtResource("37_vgmpm")
+object_name = "player1"
+
+[node name="Bat" type="Node2D" parent="ObjectsHolder" instance=ExtResource("38_50y4q")]
+position = Vector2(480, 176)
+script = ExtResource("39_4afmd")
+object_name = "bat"
+
+[node name="Level" type="Node2D" parent="ObjectsHolder" instance=ExtResource("40_rfytk")]
+position = Vector2(48, 16)
+script = ExtResource("41_x3xdq")
+object_name = "level"
+
+[node name="Game" type="Node2D" parent="ObjectsHolder" groups=["game"] instance=ExtResource("42_inn1d")]
+position = Vector2(16, 16)
+script = ExtResource("43_5s6qj")
+object_name = "game"

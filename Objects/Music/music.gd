@@ -44,7 +44,6 @@ func _process(_delta):
 		available[0].play()
 		available.pop_front()
 
-		print(sound_and_node)
 
 func _ready():
 	#SS.init() --- should not be needed for anything

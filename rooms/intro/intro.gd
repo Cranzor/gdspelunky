@@ -1,18 +1,17 @@
 extends Node
 
-var room_generation = RoomGeneration.new()
-
 var room_name = "intro"
 
 var scenes_with_id = {}
-var tile_map = TileMap.new()
+
 var layer = 0
 
 var last_object = ''
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	room_generation.generate_room('intro')
+	pass
+	#room_generation.generate_room('intro')
 
 	#tile_map.position.x = -8
 	#tile_map.position.y = -8

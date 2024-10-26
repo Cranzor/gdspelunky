@@ -1,3 +1,4 @@
+@tool
 extends Node
 class_name RoomGeneration
 
@@ -6,7 +7,7 @@ var objects = ObjectDatabase.new()
 
 const VIEW = preload("res://view.tscn")
 
-func generate_room(room_name: String):
+func generate_room(room_name: String, holder):
 	var room_database = rooms.room_database
 	var room_data = room_database[room_name]
 	var room_instances = room_data['instances']['instance']
@@ -20,7 +21,12 @@ func generate_room(room_name: String):
 		var object_folder_path = objects.object_database[object]['folder_path']
 		var loaded_object = load(object_folder_path)
 		
-		gml.instance_create(object_position.x, object_position.y, loaded_object)
+		loaded_object = loaded_object.instantiate()
+		loaded_object.position = object_position
+		holder.add_child(loaded_object)
+		loaded_object.owner = EditorInterface.get_edited_scene_root()
+		
+		#gml.instance_create(object_position.x, object_position.y, loaded_object)
 	
 	#apply_camera(room_name)
 	print(x)
