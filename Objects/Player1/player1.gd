@@ -4467,7 +4467,8 @@ func animation_end():
 				global.bombs = 0
 				global.rope = 2
 				global.first_time = false
-				get_tree().change_scene_to_file("res://rooms/tutorial/tutorial.tscn")
+				var tutorial_room = load("res://rooms/tutorial/tutorial.tscn")
+				get_tree().change_scene_to_packed(tutorial_room)
 			
 			elif (global.level_type == 2): get_tree().change_scene("res://level2.tscn")
 			else: get_tree().change_scene("res://level.tscn")

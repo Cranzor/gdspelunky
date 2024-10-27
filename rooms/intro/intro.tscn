@@ -1,38 +1,23 @@
-[gd_scene load_steps=36 format=3 uid="uid://cp7345wvpbe1d"]
+[gd_scene load_steps=21 format=3 uid="uid://cp7345wvpbe1d"]
 
 [ext_resource type="Script" path="res://rooms/intro/intro.gd" id="1_886e7"]
 [ext_resource type="PackedScene" uid="uid://d1vbnjy2fiex3" path="res://objects/other/intro/moon/moon.tscn" id="4_t7kxc"]
-[ext_resource type="Script" path="res://objects/other/intro/moon/moon.gd" id="5_o4x5b"]
 [ext_resource type="PackedScene" uid="uid://w046e4anhe7u" path="res://objects/other/intro/intro_bg/intro_bg.tscn" id="6_cviea"]
-[ext_resource type="Script" path="res://objects/other/intro/intro_bg/intro_bg.gd" id="7_js7b6"]
 [ext_resource type="PackedScene" uid="uid://j3x62ixf4hy5" path="res://objects/other/intro/palm_tree_dark/palm_tree_dark.tscn" id="8_rn57d"]
-[ext_resource type="Script" path="res://objects/other/intro/palm_tree_dark/palm_tree_dark.gd" id="9_57gql"]
 [ext_resource type="PackedScene" uid="uid://duy0bvbxq1dn2" path="res://objects/blocks/cave_bg2/cave_bg2.tscn" id="10_35yln"]
-[ext_resource type="Script" path="res://objects/blocks/cave_bg2/cave_bg2.gd" id="11_dd02s"]
 [ext_resource type="PackedScene" uid="uid://gy38114xxpn0" path="res://objects/blocks/cave_bg_entrance/cave_bg_entrance.tscn" id="12_76fto"]
-[ext_resource type="Script" path="res://objects/blocks/cave_bg_entrance/cave_bg_entrance.gd" id="13_aydrn"]
 [ext_resource type="PackedScene" uid="uid://d4kioh5dhxrr1" path="res://objects/other/intro/shrub_dark/shrub_dark.tscn" id="14_g03fs"]
-[ext_resource type="Script" path="res://objects/other/intro/shrub_dark/shrub_dark.gd" id="15_6pjls"]
 [ext_resource type="PackedScene" uid="uid://nckn3en8rtlj" path="res://objects/other/intro/desert/desert.tscn" id="16_pb6aj"]
 [ext_resource type="Texture2D" uid="uid://c7mqbeksgioqi" path="res://backgrounds/background_night.png" id="16_pnhb5"]
 [ext_resource type="PackedScene" uid="uid://b2jlcu453ynaf" path="res://bg_elements.tscn" id="17_txyc1"]
-[ext_resource type="Script" path="res://objects/other/intro/desert/desert.gd" id="17_u5puu"]
 [ext_resource type="PackedScene" uid="uid://fiv5q4nn2w03" path="res://objects/blocks/dark/dark.tscn" id="18_hqs0y"]
-[ext_resource type="Script" path="res://objects/blocks/dark/dark.gd" id="19_fl13c"]
 [ext_resource type="PackedScene" uid="uid://bd1b3xugpfga6" path="res://objects/other/intro/desert2/desert2.tscn" id="20_w3fm7"]
-[ext_resource type="Script" path="res://objects/other/intro/desert2/desert2.gd" id="21_qdyy1"]
 [ext_resource type="PackedScene" uid="uid://bpib0or50oftd" path="res://objects/other/intro/desert_top/desert_top.tscn" id="22_l0j5t"]
-[ext_resource type="Script" path="res://objects/other/intro/desert_top/desert_top.gd" id="23_pcues"]
 [ext_resource type="PackedScene" uid="uid://cmapfp1bw4euu" path="res://objects/intro/intro.tscn" id="24_eenbg"]
-[ext_resource type="Script" path="res://objects/intro/intro.gd" id="25_y5t2t"]
 [ext_resource type="PackedScene" uid="uid://b0uyw0gvr57yu" path="res://objects/bricks/bricks.tscn" id="26_26x7s"]
-[ext_resource type="Script" path="res://objects/bricks/bricks.gd" id="27_fpn76"]
 [ext_resource type="PackedScene" uid="uid://c17tm8oukj13" path="res://objects/globals/globals.tscn" id="28_o75lm"]
-[ext_resource type="Script" path="res://objects/globals/globals.gd" id="29_2uh6t"]
 [ext_resource type="PackedScene" uid="uid://3ui3v5o7nedx" path="res://objects/game/game.tscn" id="30_nqbhm"]
-[ext_resource type="Script" path="res://objects/game/game.gd" id="31_7fky0"]
 [ext_resource type="PackedScene" uid="uid://3vdxy1vbeyw3" path="res://objects/other/intro/bat_intro/bat_intro.tscn" id="32_dubih"]
-[ext_resource type="Script" path="res://objects/other/intro/bat_intro/bat_intro.gd" id="33_yo6st"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_ou686"]
 
@@ -49,34 +34,6 @@ offset_bottom = 384.0
 texture = ExtResource("16_pnhb5")
 
 [node name="BgElements" parent="." instance=ExtResource("17_txyc1")]
-layer_1/name = "Layer1"
-layer_2/name = "Layer2"
-layer_3/name = "Layer3"
-layer_4/name = "Layer4"
-layer_5/name = "Layer5"
-layer_6/name = "Layer6"
-layer_7/name = "Layer7"
-layer_8/name = "Layer8"
-layer_9/name = "Layer9"
-layer_10/name = "Layer10"
-layer_11/name = "Layer11"
-layer_12/name = "Layer12"
-layer_13/name = "Layer13"
-layer_14/name = "Layer14"
-layer_15/name = "Layer15"
-layer_16/name = "Layer16"
-layer_17/name = "Layer17"
-layer_18/name = "Layer18"
-layer_19/name = "Layer19"
-layer_20/name = "Layer20"
-layer_21/name = "Layer21"
-layer_22/name = "Layer22"
-layer_23/name = "Layer23"
-layer_24/name = "Layer24"
-layer_25/name = "Layer25"
-layer_26/name = "Layer26"
-layer_27/name = "Layer27"
-layer_28/name = "Layer28"
 
 [node name="Layers" type="Node" parent="."]
 
@@ -85,3164 +42,1288 @@ tile_set = SubResource("TileSet_n3hse")
 
 [node name="ObjectsHolder" type="Node2D" parent="."]
 
-[node name="Moon" type="Node2D" parent="ObjectsHolder" groups=["moon"] instance=ExtResource("4_t7kxc")]
+[node name="Moon" parent="ObjectsHolder" instance=ExtResource("4_t7kxc")]
 position = Vector2(208, 16)
-script = ExtResource("5_o4x5b")
-object_name = "moon"
-depth = 99999
-object_size = Vector2(96, 96)
 
-[node name="IntroBg" type="Node2D" parent="ObjectsHolder" groups=["intro_bg"] instance=ExtResource("6_cviea")]
+[node name="IntroBg" parent="ObjectsHolder" instance=ExtResource("6_cviea")]
 position = Vector2(0, 112)
-script = ExtResource("7_js7b6")
-object_name = "intro_bg"
-depth = 9999
-object_size = Vector2(480, 112)
 
-[node name="PalmTreeDark" type="Node2D" parent="ObjectsHolder" groups=["palm_tree_dark"] instance=ExtResource("8_rn57d")]
+[node name="PalmTreeDark" parent="ObjectsHolder" instance=ExtResource("8_rn57d")]
 position = Vector2(80, 64)
-script = ExtResource("9_57gql")
-object_name = "palm_tree_dark"
 
-[node name="@Node2D@32679" type="Node2D" parent="ObjectsHolder" groups=["palm_tree_dark"] instance=ExtResource("8_rn57d")]
+[node name="@Node2D@32679" parent="ObjectsHolder" instance=ExtResource("8_rn57d")]
 position = Vector2(224, 64)
-script = ExtResource("9_57gql")
-object_name = "palm_tree_dark"
 
-[node name="@Node2D@32680" type="Node2D" parent="ObjectsHolder" groups=["palm_tree_dark"] instance=ExtResource("8_rn57d")]
+[node name="@Node2D@32680" parent="ObjectsHolder" instance=ExtResource("8_rn57d")]
 position = Vector2(272, 64)
-script = ExtResource("9_57gql")
-object_name = "palm_tree_dark"
 
-[node name="@Node2D@32681" type="Node2D" parent="ObjectsHolder" groups=["palm_tree_dark"] instance=ExtResource("8_rn57d")]
+[node name="@Node2D@32681" parent="ObjectsHolder" instance=ExtResource("8_rn57d")]
 position = Vector2(416, 64)
-script = ExtResource("9_57gql")
-object_name = "palm_tree_dark"
 
-[node name="@Node2D@32682" type="Node2D" parent="ObjectsHolder" groups=["palm_tree_dark"] instance=ExtResource("8_rn57d")]
+[node name="@Node2D@32682" parent="ObjectsHolder" instance=ExtResource("8_rn57d")]
 position = Vector2(512, 64)
-script = ExtResource("9_57gql")
-object_name = "palm_tree_dark"
 
-[node name="@Node2D@32683" type="Node2D" parent="ObjectsHolder" groups=["palm_tree_dark"] instance=ExtResource("8_rn57d")]
+[node name="@Node2D@32683" parent="ObjectsHolder" instance=ExtResource("8_rn57d")]
 position = Vector2(640, 64)
-script = ExtResource("9_57gql")
-object_name = "palm_tree_dark"
 
-[node name="CaveBg2" type="Node2D" parent="ObjectsHolder" groups=["cave_bg2"] instance=ExtResource("10_35yln")]
-z_index = 998
+[node name="CaveBg2" parent="ObjectsHolder" instance=ExtResource("10_35yln")]
 position = Vector2(752, 144)
-script = ExtResource("11_dd02s")
-object_name = "cave_bg2"
-depth = 998
-object_size = Vector2(32, 32)
 
-[node name="@Node2D@32684" type="Node2D" parent="ObjectsHolder" groups=["cave_bg2"] instance=ExtResource("10_35yln")]
-z_index = 998
+[node name="@Node2D@32684" parent="ObjectsHolder" instance=ExtResource("10_35yln")]
 position = Vector2(720, 144)
-script = ExtResource("11_dd02s")
-object_name = "cave_bg2"
-depth = 998
-object_size = Vector2(32, 32)
 
-[node name="@Node2D@32685" type="Node2D" parent="ObjectsHolder" groups=["cave_bg2"] instance=ExtResource("10_35yln")]
-z_index = 998
+[node name="@Node2D@32685" parent="ObjectsHolder" instance=ExtResource("10_35yln")]
 position = Vector2(784, 144)
-script = ExtResource("11_dd02s")
-object_name = "cave_bg2"
-depth = 998
-object_size = Vector2(32, 32)
 
-[node name="@Node2D@32686" type="Node2D" parent="ObjectsHolder" groups=["cave_bg2"] instance=ExtResource("10_35yln")]
-z_index = 998
+[node name="@Node2D@32686" parent="ObjectsHolder" instance=ExtResource("10_35yln")]
 position = Vector2(816, 144)
-script = ExtResource("11_dd02s")
-object_name = "cave_bg2"
-depth = 998
-object_size = Vector2(32, 32)
 
-[node name="@Node2D@32687" type="Node2D" parent="ObjectsHolder" groups=["cave_bg2"] instance=ExtResource("10_35yln")]
-z_index = 998
+[node name="@Node2D@32687" parent="ObjectsHolder" instance=ExtResource("10_35yln")]
 position = Vector2(848, 144)
-script = ExtResource("11_dd02s")
-object_name = "cave_bg2"
-depth = 998
-object_size = Vector2(32, 32)
 
-[node name="@Node2D@32688" type="Node2D" parent="ObjectsHolder" groups=["cave_bg2"] instance=ExtResource("10_35yln")]
-z_index = 998
+[node name="@Node2D@32688" parent="ObjectsHolder" instance=ExtResource("10_35yln")]
 position = Vector2(880, 144)
-script = ExtResource("11_dd02s")
-object_name = "cave_bg2"
-depth = 998
-object_size = Vector2(32, 32)
 
-[node name="@Node2D@32689" type="Node2D" parent="ObjectsHolder" groups=["cave_bg2"] instance=ExtResource("10_35yln")]
-z_index = 998
+[node name="@Node2D@32689" parent="ObjectsHolder" instance=ExtResource("10_35yln")]
 position = Vector2(912, 144)
-script = ExtResource("11_dd02s")
-object_name = "cave_bg2"
-depth = 998
-object_size = Vector2(32, 32)
 
-[node name="@Node2D@32690" type="Node2D" parent="ObjectsHolder" groups=["cave_bg2"] instance=ExtResource("10_35yln")]
-z_index = 998
+[node name="@Node2D@32690" parent="ObjectsHolder" instance=ExtResource("10_35yln")]
 position = Vector2(720, 176)
-script = ExtResource("11_dd02s")
-object_name = "cave_bg2"
-depth = 998
-object_size = Vector2(32, 32)
 
-[node name="@Node2D@32691" type="Node2D" parent="ObjectsHolder" groups=["cave_bg2"] instance=ExtResource("10_35yln")]
-z_index = 998
+[node name="@Node2D@32691" parent="ObjectsHolder" instance=ExtResource("10_35yln")]
 position = Vector2(752, 176)
-script = ExtResource("11_dd02s")
-object_name = "cave_bg2"
-depth = 998
-object_size = Vector2(32, 32)
 
-[node name="@Node2D@32692" type="Node2D" parent="ObjectsHolder" groups=["cave_bg2"] instance=ExtResource("10_35yln")]
-z_index = 998
+[node name="@Node2D@32692" parent="ObjectsHolder" instance=ExtResource("10_35yln")]
 position = Vector2(784, 176)
-script = ExtResource("11_dd02s")
-object_name = "cave_bg2"
-depth = 998
-object_size = Vector2(32, 32)
 
-[node name="@Node2D@32693" type="Node2D" parent="ObjectsHolder" groups=["cave_bg2"] instance=ExtResource("10_35yln")]
-z_index = 998
+[node name="@Node2D@32693" parent="ObjectsHolder" instance=ExtResource("10_35yln")]
 position = Vector2(816, 176)
-script = ExtResource("11_dd02s")
-object_name = "cave_bg2"
-depth = 998
-object_size = Vector2(32, 32)
 
-[node name="@Node2D@32694" type="Node2D" parent="ObjectsHolder" groups=["cave_bg2"] instance=ExtResource("10_35yln")]
-z_index = 998
+[node name="@Node2D@32694" parent="ObjectsHolder" instance=ExtResource("10_35yln")]
 position = Vector2(848, 176)
-script = ExtResource("11_dd02s")
-object_name = "cave_bg2"
-depth = 998
-object_size = Vector2(32, 32)
 
-[node name="@Node2D@32695" type="Node2D" parent="ObjectsHolder" groups=["cave_bg2"] instance=ExtResource("10_35yln")]
-z_index = 998
+[node name="@Node2D@32695" parent="ObjectsHolder" instance=ExtResource("10_35yln")]
 position = Vector2(880, 176)
-script = ExtResource("11_dd02s")
-object_name = "cave_bg2"
-depth = 998
-object_size = Vector2(32, 32)
 
-[node name="@Node2D@32696" type="Node2D" parent="ObjectsHolder" groups=["cave_bg2"] instance=ExtResource("10_35yln")]
-z_index = 998
+[node name="@Node2D@32696" parent="ObjectsHolder" instance=ExtResource("10_35yln")]
 position = Vector2(912, 176)
-script = ExtResource("11_dd02s")
-object_name = "cave_bg2"
-depth = 998
-object_size = Vector2(32, 32)
 
-[node name="@Node2D@32697" type="Node2D" parent="ObjectsHolder" groups=["cave_bg2"] instance=ExtResource("10_35yln")]
-z_index = 998
+[node name="@Node2D@32697" parent="ObjectsHolder" instance=ExtResource("10_35yln")]
 position = Vector2(912, 208)
-script = ExtResource("11_dd02s")
-object_name = "cave_bg2"
-depth = 998
-object_size = Vector2(32, 32)
 
-[node name="CaveBgEntrance" type="Node2D" parent="ObjectsHolder" groups=["cave_bg_entrance"] instance=ExtResource("12_76fto")]
-z_index = 998
+[node name="CaveBgEntrance" parent="ObjectsHolder" instance=ExtResource("12_76fto")]
 position = Vector2(704, 176)
-script = ExtResource("13_aydrn")
-depth = 998
-object_size = Vector2(16, 16)
 
-[node name="ShrubDark" type="Node2D" parent="ObjectsHolder" groups=["shrub_dark"] instance=ExtResource("14_g03fs")]
+[node name="ShrubDark" parent="ObjectsHolder" instance=ExtResource("14_g03fs")]
 position = Vector2(192, 176)
-script = ExtResource("15_6pjls")
-object_name = "shrub_dark"
 
-[node name="@Node2D@32698" type="Node2D" parent="ObjectsHolder" groups=["shrub_dark"] instance=ExtResource("14_g03fs")]
+[node name="@Node2D@32698" parent="ObjectsHolder" instance=ExtResource("14_g03fs")]
 position = Vector2(336, 176)
-script = ExtResource("15_6pjls")
-object_name = "shrub_dark"
 
-[node name="@Node2D@32699" type="Node2D" parent="ObjectsHolder" groups=["shrub_dark"] instance=ExtResource("14_g03fs")]
+[node name="@Node2D@32699" parent="ObjectsHolder" instance=ExtResource("14_g03fs")]
 position = Vector2(384, 176)
-script = ExtResource("15_6pjls")
-object_name = "shrub_dark"
 
-[node name="@Node2D@32700" type="Node2D" parent="ObjectsHolder" groups=["shrub_dark"] instance=ExtResource("14_g03fs")]
+[node name="@Node2D@32700" parent="ObjectsHolder" instance=ExtResource("14_g03fs")]
 position = Vector2(464, 176)
-script = ExtResource("15_6pjls")
-object_name = "shrub_dark"
 
-[node name="@Node2D@32701" type="Node2D" parent="ObjectsHolder" groups=["shrub_dark"] instance=ExtResource("14_g03fs")]
+[node name="@Node2D@32701" parent="ObjectsHolder" instance=ExtResource("14_g03fs")]
 position = Vector2(560, 176)
-script = ExtResource("15_6pjls")
-object_name = "shrub_dark"
 
-[node name="@Node2D@32702" type="Node2D" parent="ObjectsHolder" groups=["shrub_dark"] instance=ExtResource("14_g03fs")]
+[node name="@Node2D@32702" parent="ObjectsHolder" instance=ExtResource("14_g03fs")]
 position = Vector2(640, 176)
-script = ExtResource("15_6pjls")
-object_name = "shrub_dark"
 
-[node name="@Node2D@32703" type="Node2D" parent="ObjectsHolder" groups=["shrub_dark"] instance=ExtResource("14_g03fs")]
+[node name="@Node2D@32703" parent="ObjectsHolder" instance=ExtResource("14_g03fs")]
 position = Vector2(672, 176)
-script = ExtResource("15_6pjls")
-object_name = "shrub_dark"
 
-[node name="Desert" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="Desert" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(0, 224)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32704" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32704" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(16, 224)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32705" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32705" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(32, 224)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32706" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32706" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(48, 224)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32707" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32707" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(64, 224)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32708" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32708" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(48, 208)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32709" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32709" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(32, 208)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32710" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32710" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(16, 208)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32711" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32711" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(0, 208)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32712" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32712" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(224, 208)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32713" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32713" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(208, 208)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32714" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32714" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(192, 208)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32715" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32715" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(176, 208)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32716" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32716" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(160, 208)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32717" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32717" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(144, 208)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32718" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32718" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(128, 208)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32719" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32719" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(64, 208)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32720" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32720" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(80, 208)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32721" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32721" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(96, 208)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32722" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32722" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(112, 208)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32723" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32723" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(80, 224)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32724" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32724" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(96, 224)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32725" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32725" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(112, 224)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32726" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32726" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(128, 224)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32727" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32727" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(144, 224)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32728" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32728" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(160, 224)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32729" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32729" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(176, 224)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32730" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32730" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(192, 224)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32731" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32731" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(208, 224)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32732" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32732" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(432, 208)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32733" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32733" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(416, 208)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32734" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32734" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(400, 208)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32735" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32735" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(336, 208)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32736" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32736" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(320, 208)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32737" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32737" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(304, 208)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32738" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32738" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(288, 208)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32739" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32739" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(272, 208)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32740" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32740" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(240, 208)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32741" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32741" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(256, 208)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32742" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32742" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(384, 208)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32743" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32743" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(368, 208)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32744" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32744" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(352, 208)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32745" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32745" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(224, 224)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32746" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32746" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(240, 224)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32747" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32747" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(256, 224)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32748" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32748" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(272, 224)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32749" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32749" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(288, 224)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32750" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32750" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(304, 224)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32751" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32751" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(320, 224)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32752" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32752" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(336, 224)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32753" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32753" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(352, 224)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32754" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32754" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(368, 224)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32755" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32755" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(384, 224)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32756" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32756" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(400, 224)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32757" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32757" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(416, 224)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32758" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32758" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(624, 208)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32759" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32759" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(608, 208)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32760" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32760" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(592, 208)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32761" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32761" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(576, 208)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32762" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32762" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(560, 208)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32763" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32763" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(544, 208)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32764" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32764" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(528, 208)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32765" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32765" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(512, 208)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32766" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32766" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(496, 208)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32767" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32767" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(480, 208)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32768" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32768" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(464, 208)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32769" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32769" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(448, 208)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32770" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32770" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(432, 224)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32771" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32771" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(448, 224)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32772" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32772" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(464, 224)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32773" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32773" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(480, 224)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32774" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32774" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(496, 224)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32775" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32775" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(512, 224)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32776" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32776" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(528, 224)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32777" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32777" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(544, 224)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32778" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32778" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(560, 224)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32779" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32779" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(576, 224)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32780" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32780" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(592, 224)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32781" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32781" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(640, 208)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32782" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32782" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(656, 208)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32783" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32783" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(672, 208)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32784" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32784" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(608, 224)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32785" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32785" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(624, 224)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32786" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32786" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(640, 224)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32787" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32787" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(656, 224)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32788" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32788" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(672, 224)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32789" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32789" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(688, 224)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32790" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32790" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(704, 224)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32791" type="Node2D" parent="ObjectsHolder" groups=["desert", "drawn_sprite", "solid"] instance=ExtResource("16_pb6aj")]
-z_index = 100
+[node name="@Node2D@32791" parent="ObjectsHolder" instance=ExtResource("16_pb6aj")]
 position = Vector2(720, 224)
-script = ExtResource("17_u5puu")
-object_name = "desert"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="Dark" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="Dark" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(944, 192)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32792" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32792" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(944, 208)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32793" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32793" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(944, 224)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32794" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32794" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(928, 224)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32795" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32795" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(928, 208)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32796" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32796" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(928, 144)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32797" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32797" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(944, 144)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32798" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32798" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(944, 160)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32799" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32799" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(944, 176)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32800" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32800" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(896, 192)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32801" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32801" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(896, 208)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32802" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32802" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(896, 224)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32803" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32803" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(880, 224)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32804" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32804" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(880, 208)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32805" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32805" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(864, 208)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32806" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32806" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(880, 192)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32807" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32807" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(864, 192)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32808" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32808" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(848, 192)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32809" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32809" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(832, 192)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32810" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32810" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(816, 192)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32811" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32811" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(800, 192)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32812" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32812" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(784, 192)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32813" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32813" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(736, 192)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32814" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32814" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(752, 192)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32815" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32815" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(768, 192)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32816" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32816" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(800, 208)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32817" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32817" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(816, 208)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32818" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32818" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(832, 208)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32819" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32819" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(848, 208)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32820" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32820" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(864, 224)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32821" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32821" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(848, 224)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32822" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32822" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(832, 224)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32823" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32823" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(816, 224)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32824" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32824" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(800, 224)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32825" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32825" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(768, 224)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32826" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32826" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(784, 224)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32827" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32827" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(784, 208)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32828" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32828" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(768, 208)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32829" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32829" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(752, 208)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32830" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32830" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(736, 208)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32831" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32831" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(720, 192)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32832" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32832" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(704, 192)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32833" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32833" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(688, 192)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32834" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32834" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(896, 128)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32835" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32835" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(880, 128)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32836" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32836" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(864, 128)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32837" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32837" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(848, 128)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32838" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32838" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(832, 128)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32839" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32839" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(816, 128)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32840" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32840" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(800, 128)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32841" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32841" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(784, 128)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32842" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32842" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(768, 128)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32843" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32843" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(752, 128)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32844" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32844" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(736, 128)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32845" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32845" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(720, 128)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32846" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32846" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(704, 128)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32847" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32847" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(688, 128)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32848" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32848" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(672, 128)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32849" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32849" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(640, 128)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32850" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32850" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(656, 128)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32851" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32851" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(656, 112)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32852" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32852" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(672, 112)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32853" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32853" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(688, 112)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32854" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32854" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(704, 112)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32855" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32855" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(720, 112)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32856" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32856" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(736, 112)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32857" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32857" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(752, 112)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32858" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32858" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(768, 112)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32859" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32859" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(784, 112)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32860" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32860" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(800, 112)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32861" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32861" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(816, 112)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32862" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32862" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(832, 112)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32863" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32863" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(848, 112)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32864" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32864" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(864, 112)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32865" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32865" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(880, 112)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32866" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32866" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(896, 112)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32867" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32867" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(896, 96)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32868" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32868" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(880, 96)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32869" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32869" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(864, 96)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32870" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32870" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(848, 96)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32871" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32871" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(832, 96)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32872" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32872" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(816, 96)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32873" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32873" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(800, 96)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32874" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32874" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(784, 96)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32875" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32875" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(768, 96)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32876" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32876" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(752, 96)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32877" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32877" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(736, 96)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32878" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32878" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(720, 96)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32879" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32879" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(704, 96)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32880" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32880" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(688, 96)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32881" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32881" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(688, 64)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32882" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32882" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(704, 64)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32883" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32883" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(704, 48)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32884" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32884" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(720, 48)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32885" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32885" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(736, 48)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32886" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32886" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(736, 80)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32887" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32887" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(688, 80)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32888" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32888" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(704, 80)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32889" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32889" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(720, 80)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32890" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32890" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(720, 64)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32891" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32891" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(736, 64)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32892" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32892" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(768, 64)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32893" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32893" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(816, 64)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32894" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32894" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(880, 80)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32895" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32895" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(848, 80)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32896" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32896" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(816, 80)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32897" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32897" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(800, 80)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32898" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32898" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(784, 80)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32899" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32899" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(768, 80)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32900" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32900" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(752, 80)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32901" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32901" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(752, 64)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32902" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32902" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(752, 0)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32903" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32903" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(736, 0)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32904" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32904" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(736, 16)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32905" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32905" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(736, 32)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32906" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32906" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(752, 48)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32907" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32907" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(752, 32)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32908" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32908" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(752, 16)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32909" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32909" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(768, 16)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32910" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32910" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(768, 0)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32911" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32911" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(784, 0)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32912" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32912" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(800, 0)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32913" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32913" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(800, 32)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32914" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32914" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(800, 48)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32915" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32915" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(800, 64)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32916" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32916" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(784, 64)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32917" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32917" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(784, 48)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32918" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32918" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(784, 16)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32919" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32919" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(768, 48)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32920" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32920" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(768, 32)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32921" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32921" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(784, 32)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32922" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32922" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(800, 16)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32923" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32923" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(832, 0)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32924" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32924" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(816, 48)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32925" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32925" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(816, 32)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32926" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32926" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(816, 16)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32927" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32927" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(816, 0)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32928" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32928" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(832, 16)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32929" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32929" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(832, 80)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32930" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32930" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(832, 64)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32931" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32931" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(832, 48)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32932" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32932" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(832, 32)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32933" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32933" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(848, 0)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32934" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32934" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(864, 80)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32935" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32935" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(864, 64)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32936" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32936" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(864, 48)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32937" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32937" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(864, 32)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32938" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32938" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(848, 64)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32939" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32939" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(848, 48)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32940" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32940" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(848, 32)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32941" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32941" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(848, 16)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32942" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32942" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(864, 16)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32943" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32943" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(864, 0)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32944" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32944" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(880, 0)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32945" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32945" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(880, 64)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32946" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32946" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(880, 48)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32947" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32947" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(880, 32)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32948" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32948" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(880, 16)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32949" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32949" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(896, 32)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32950" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32950" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(896, 16)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32951" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32951" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(896, 0)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32952" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32952" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(912, 0)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32953" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32953" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(912, 16)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32954" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32954" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(912, 128)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32955" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32955" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(928, 128)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32956" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32956" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(944, 128)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32957" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32957" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(944, 112)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32958" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32958" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(912, 112)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32959" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32959" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(928, 80)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32960" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32960" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(944, 96)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32961" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32961" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(928, 112)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32962" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32962" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(928, 96)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32963" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32963" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(912, 96)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32964" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32964" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(912, 80)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32965" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32965" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(896, 80)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32966" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32966" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(896, 64)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32967" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32967" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(896, 48)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32968" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32968" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(928, 48)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32969" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32969" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(928, 32)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32970" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32970" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(928, 0)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32971" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32971" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(928, 16)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32972" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32972" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(912, 32)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32973" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32973" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(912, 48)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32974" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32974" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(912, 64)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32975" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32975" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(928, 64)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32976" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32976" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(944, 80)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32977" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32977" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(944, 64)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32978" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32978" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(944, 48)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32979" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32979" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(944, 32)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32980" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32980" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(944, 16)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32981" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32981" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(944, 0)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32982" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32982" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(912, 144)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32983" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32983" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(928, 192)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32984" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32984" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(928, 160)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32985" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32985" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(928, 176)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32986" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32986" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(896, 144)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32987" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32987" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(672, 144)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32988" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32988" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(688, 144)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32989" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32989" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(704, 144)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32990" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32990" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(720, 144)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32991" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32991" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(736, 144)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32992" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32992" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(704, 160)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32993" type="Node2D" parent="ObjectsHolder" groups=["dark", "drawn_sprite", "solid"] instance=ExtResource("18_hqs0y")]
-z_index = -100
+[node name="@Node2D@32993" parent="ObjectsHolder" instance=ExtResource("18_hqs0y")]
 position = Vector2(688, 160)
-script = ExtResource("19_fl13c")
-object_name = "dark"
-object_size = Vector2(16, 16)
 
-[node name="Desert2" type="Node2D" parent="ObjectsHolder" groups=["desert2", "drawn_sprite", "solid"] instance=ExtResource("20_w3fm7")]
-z_index = 100
+[node name="Desert2" parent="ObjectsHolder" instance=ExtResource("20_w3fm7")]
 position = Vector2(0, 192)
-script = ExtResource("21_qdyy1")
-object_name = "desert2"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32994" type="Node2D" parent="ObjectsHolder" groups=["desert2", "drawn_sprite", "solid"] instance=ExtResource("20_w3fm7")]
-z_index = 100
+[node name="@Node2D@32994" parent="ObjectsHolder" instance=ExtResource("20_w3fm7")]
 position = Vector2(16, 192)
-script = ExtResource("21_qdyy1")
-object_name = "desert2"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32995" type="Node2D" parent="ObjectsHolder" groups=["desert2", "drawn_sprite", "solid"] instance=ExtResource("20_w3fm7")]
-z_index = 100
+[node name="@Node2D@32995" parent="ObjectsHolder" instance=ExtResource("20_w3fm7")]
 position = Vector2(32, 192)
-script = ExtResource("21_qdyy1")
-object_name = "desert2"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32996" type="Node2D" parent="ObjectsHolder" groups=["desert2", "drawn_sprite", "solid"] instance=ExtResource("20_w3fm7")]
-z_index = 100
+[node name="@Node2D@32996" parent="ObjectsHolder" instance=ExtResource("20_w3fm7")]
 position = Vector2(48, 192)
-script = ExtResource("21_qdyy1")
-object_name = "desert2"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32997" type="Node2D" parent="ObjectsHolder" groups=["desert2", "drawn_sprite", "solid"] instance=ExtResource("20_w3fm7")]
-z_index = 100
+[node name="@Node2D@32997" parent="ObjectsHolder" instance=ExtResource("20_w3fm7")]
 position = Vector2(64, 192)
-script = ExtResource("21_qdyy1")
-object_name = "desert2"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32998" type="Node2D" parent="ObjectsHolder" groups=["desert2", "drawn_sprite", "solid"] instance=ExtResource("20_w3fm7")]
-z_index = 100
+[node name="@Node2D@32998" parent="ObjectsHolder" instance=ExtResource("20_w3fm7")]
 position = Vector2(80, 192)
-script = ExtResource("21_qdyy1")
-object_name = "desert2"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@32999" type="Node2D" parent="ObjectsHolder" groups=["desert2", "drawn_sprite", "solid"] instance=ExtResource("20_w3fm7")]
-z_index = 100
+[node name="@Node2D@32999" parent="ObjectsHolder" instance=ExtResource("20_w3fm7")]
 position = Vector2(752, 224)
-script = ExtResource("21_qdyy1")
-object_name = "desert2"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@33000" type="Node2D" parent="ObjectsHolder" groups=["desert2", "drawn_sprite", "solid"] instance=ExtResource("20_w3fm7")]
-z_index = 100
+[node name="@Node2D@33000" parent="ObjectsHolder" instance=ExtResource("20_w3fm7")]
 position = Vector2(736, 224)
-script = ExtResource("21_qdyy1")
-object_name = "desert2"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@33001" type="Node2D" parent="ObjectsHolder" groups=["desert2", "drawn_sprite", "solid"] instance=ExtResource("20_w3fm7")]
-z_index = 100
+[node name="@Node2D@33001" parent="ObjectsHolder" instance=ExtResource("20_w3fm7")]
 position = Vector2(720, 208)
-script = ExtResource("21_qdyy1")
-object_name = "desert2"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@33002" type="Node2D" parent="ObjectsHolder" groups=["desert2", "drawn_sprite", "solid"] instance=ExtResource("20_w3fm7")]
-z_index = 100
+[node name="@Node2D@33002" parent="ObjectsHolder" instance=ExtResource("20_w3fm7")]
 position = Vector2(704, 208)
-script = ExtResource("21_qdyy1")
-object_name = "desert2"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@33003" type="Node2D" parent="ObjectsHolder" groups=["desert2", "drawn_sprite", "solid"] instance=ExtResource("20_w3fm7")]
-z_index = 100
+[node name="@Node2D@33003" parent="ObjectsHolder" instance=ExtResource("20_w3fm7")]
 position = Vector2(688, 208)
-script = ExtResource("21_qdyy1")
-object_name = "desert2"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@33004" type="Node2D" parent="ObjectsHolder" groups=["desert2", "drawn_sprite", "solid"] instance=ExtResource("20_w3fm7")]
-z_index = 100
+[node name="@Node2D@33004" parent="ObjectsHolder" instance=ExtResource("20_w3fm7")]
 position = Vector2(672, 192)
-script = ExtResource("21_qdyy1")
-object_name = "desert2"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@33005" type="Node2D" parent="ObjectsHolder" groups=["desert2", "drawn_sprite", "solid"] instance=ExtResource("20_w3fm7")]
-z_index = 100
+[node name="@Node2D@33005" parent="ObjectsHolder" instance=ExtResource("20_w3fm7")]
 position = Vector2(656, 192)
-script = ExtResource("21_qdyy1")
-object_name = "desert2"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@33006" type="Node2D" parent="ObjectsHolder" groups=["desert2", "drawn_sprite", "solid"] instance=ExtResource("20_w3fm7")]
-z_index = 100
+[node name="@Node2D@33006" parent="ObjectsHolder" instance=ExtResource("20_w3fm7")]
 position = Vector2(640, 192)
-script = ExtResource("21_qdyy1")
-object_name = "desert2"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@33007" type="Node2D" parent="ObjectsHolder" groups=["desert2", "drawn_sprite", "solid"] instance=ExtResource("20_w3fm7")]
-z_index = 100
+[node name="@Node2D@33007" parent="ObjectsHolder" instance=ExtResource("20_w3fm7")]
 position = Vector2(624, 192)
-script = ExtResource("21_qdyy1")
-object_name = "desert2"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@33008" type="Node2D" parent="ObjectsHolder" groups=["desert2", "drawn_sprite", "solid"] instance=ExtResource("20_w3fm7")]
-z_index = 100
+[node name="@Node2D@33008" parent="ObjectsHolder" instance=ExtResource("20_w3fm7")]
 position = Vector2(608, 192)
-script = ExtResource("21_qdyy1")
-object_name = "desert2"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@33009" type="Node2D" parent="ObjectsHolder" groups=["desert2", "drawn_sprite", "solid"] instance=ExtResource("20_w3fm7")]
-z_index = 100
+[node name="@Node2D@33009" parent="ObjectsHolder" instance=ExtResource("20_w3fm7")]
 position = Vector2(592, 192)
-script = ExtResource("21_qdyy1")
-object_name = "desert2"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@33010" type="Node2D" parent="ObjectsHolder" groups=["desert2", "drawn_sprite", "solid"] instance=ExtResource("20_w3fm7")]
-z_index = 100
+[node name="@Node2D@33010" parent="ObjectsHolder" instance=ExtResource("20_w3fm7")]
 position = Vector2(576, 192)
-script = ExtResource("21_qdyy1")
-object_name = "desert2"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@33011" type="Node2D" parent="ObjectsHolder" groups=["desert2", "drawn_sprite", "solid"] instance=ExtResource("20_w3fm7")]
-z_index = 100
+[node name="@Node2D@33011" parent="ObjectsHolder" instance=ExtResource("20_w3fm7")]
 position = Vector2(560, 192)
-script = ExtResource("21_qdyy1")
-object_name = "desert2"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@33012" type="Node2D" parent="ObjectsHolder" groups=["desert2", "drawn_sprite", "solid"] instance=ExtResource("20_w3fm7")]
-z_index = 100
+[node name="@Node2D@33012" parent="ObjectsHolder" instance=ExtResource("20_w3fm7")]
 position = Vector2(544, 192)
-script = ExtResource("21_qdyy1")
-object_name = "desert2"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@33013" type="Node2D" parent="ObjectsHolder" groups=["desert2", "drawn_sprite", "solid"] instance=ExtResource("20_w3fm7")]
-z_index = 100
+[node name="@Node2D@33013" parent="ObjectsHolder" instance=ExtResource("20_w3fm7")]
 position = Vector2(528, 192)
-script = ExtResource("21_qdyy1")
-object_name = "desert2"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@33014" type="Node2D" parent="ObjectsHolder" groups=["desert2", "drawn_sprite", "solid"] instance=ExtResource("20_w3fm7")]
-z_index = 100
+[node name="@Node2D@33014" parent="ObjectsHolder" instance=ExtResource("20_w3fm7")]
 position = Vector2(512, 192)
-script = ExtResource("21_qdyy1")
-object_name = "desert2"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@33015" type="Node2D" parent="ObjectsHolder" groups=["desert2", "drawn_sprite", "solid"] instance=ExtResource("20_w3fm7")]
-z_index = 100
+[node name="@Node2D@33015" parent="ObjectsHolder" instance=ExtResource("20_w3fm7")]
 position = Vector2(496, 192)
-script = ExtResource("21_qdyy1")
-object_name = "desert2"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@33016" type="Node2D" parent="ObjectsHolder" groups=["desert2", "drawn_sprite", "solid"] instance=ExtResource("20_w3fm7")]
-z_index = 100
+[node name="@Node2D@33016" parent="ObjectsHolder" instance=ExtResource("20_w3fm7")]
 position = Vector2(480, 192)
-script = ExtResource("21_qdyy1")
-object_name = "desert2"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@33017" type="Node2D" parent="ObjectsHolder" groups=["desert2", "drawn_sprite", "solid"] instance=ExtResource("20_w3fm7")]
-z_index = 100
+[node name="@Node2D@33017" parent="ObjectsHolder" instance=ExtResource("20_w3fm7")]
 position = Vector2(464, 192)
-script = ExtResource("21_qdyy1")
-object_name = "desert2"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@33018" type="Node2D" parent="ObjectsHolder" groups=["desert2", "drawn_sprite", "solid"] instance=ExtResource("20_w3fm7")]
-z_index = 100
+[node name="@Node2D@33018" parent="ObjectsHolder" instance=ExtResource("20_w3fm7")]
 position = Vector2(448, 192)
-script = ExtResource("21_qdyy1")
-object_name = "desert2"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@33019" type="Node2D" parent="ObjectsHolder" groups=["desert2", "drawn_sprite", "solid"] instance=ExtResource("20_w3fm7")]
-z_index = 100
+[node name="@Node2D@33019" parent="ObjectsHolder" instance=ExtResource("20_w3fm7")]
 position = Vector2(432, 192)
-script = ExtResource("21_qdyy1")
-object_name = "desert2"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@33020" type="Node2D" parent="ObjectsHolder" groups=["desert2", "drawn_sprite", "solid"] instance=ExtResource("20_w3fm7")]
-z_index = 100
+[node name="@Node2D@33020" parent="ObjectsHolder" instance=ExtResource("20_w3fm7")]
 position = Vector2(416, 192)
-script = ExtResource("21_qdyy1")
-object_name = "desert2"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@33021" type="Node2D" parent="ObjectsHolder" groups=["desert2", "drawn_sprite", "solid"] instance=ExtResource("20_w3fm7")]
-z_index = 100
+[node name="@Node2D@33021" parent="ObjectsHolder" instance=ExtResource("20_w3fm7")]
 position = Vector2(400, 192)
-script = ExtResource("21_qdyy1")
-object_name = "desert2"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@33022" type="Node2D" parent="ObjectsHolder" groups=["desert2", "drawn_sprite", "solid"] instance=ExtResource("20_w3fm7")]
-z_index = 100
+[node name="@Node2D@33022" parent="ObjectsHolder" instance=ExtResource("20_w3fm7")]
 position = Vector2(384, 192)
-script = ExtResource("21_qdyy1")
-object_name = "desert2"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@33023" type="Node2D" parent="ObjectsHolder" groups=["desert2", "drawn_sprite", "solid"] instance=ExtResource("20_w3fm7")]
-z_index = 100
+[node name="@Node2D@33023" parent="ObjectsHolder" instance=ExtResource("20_w3fm7")]
 position = Vector2(368, 192)
-script = ExtResource("21_qdyy1")
-object_name = "desert2"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@33024" type="Node2D" parent="ObjectsHolder" groups=["desert2", "drawn_sprite", "solid"] instance=ExtResource("20_w3fm7")]
-z_index = 100
+[node name="@Node2D@33024" parent="ObjectsHolder" instance=ExtResource("20_w3fm7")]
 position = Vector2(352, 192)
-script = ExtResource("21_qdyy1")
-object_name = "desert2"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@33025" type="Node2D" parent="ObjectsHolder" groups=["desert2", "drawn_sprite", "solid"] instance=ExtResource("20_w3fm7")]
-z_index = 100
+[node name="@Node2D@33025" parent="ObjectsHolder" instance=ExtResource("20_w3fm7")]
 position = Vector2(336, 192)
-script = ExtResource("21_qdyy1")
-object_name = "desert2"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@33026" type="Node2D" parent="ObjectsHolder" groups=["desert2", "drawn_sprite", "solid"] instance=ExtResource("20_w3fm7")]
-z_index = 100
+[node name="@Node2D@33026" parent="ObjectsHolder" instance=ExtResource("20_w3fm7")]
 position = Vector2(304, 192)
-script = ExtResource("21_qdyy1")
-object_name = "desert2"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@33027" type="Node2D" parent="ObjectsHolder" groups=["desert2", "drawn_sprite", "solid"] instance=ExtResource("20_w3fm7")]
-z_index = 100
+[node name="@Node2D@33027" parent="ObjectsHolder" instance=ExtResource("20_w3fm7")]
 position = Vector2(320, 192)
-script = ExtResource("21_qdyy1")
-object_name = "desert2"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@33028" type="Node2D" parent="ObjectsHolder" groups=["desert2", "drawn_sprite", "solid"] instance=ExtResource("20_w3fm7")]
-z_index = 100
+[node name="@Node2D@33028" parent="ObjectsHolder" instance=ExtResource("20_w3fm7")]
 position = Vector2(288, 192)
-script = ExtResource("21_qdyy1")
-object_name = "desert2"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@33029" type="Node2D" parent="ObjectsHolder" groups=["desert2", "drawn_sprite", "solid"] instance=ExtResource("20_w3fm7")]
-z_index = 100
+[node name="@Node2D@33029" parent="ObjectsHolder" instance=ExtResource("20_w3fm7")]
 position = Vector2(272, 192)
-script = ExtResource("21_qdyy1")
-object_name = "desert2"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@33030" type="Node2D" parent="ObjectsHolder" groups=["desert2", "drawn_sprite", "solid"] instance=ExtResource("20_w3fm7")]
-z_index = 100
+[node name="@Node2D@33030" parent="ObjectsHolder" instance=ExtResource("20_w3fm7")]
 position = Vector2(256, 192)
-script = ExtResource("21_qdyy1")
-object_name = "desert2"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@33031" type="Node2D" parent="ObjectsHolder" groups=["desert2", "drawn_sprite", "solid"] instance=ExtResource("20_w3fm7")]
-z_index = 100
+[node name="@Node2D@33031" parent="ObjectsHolder" instance=ExtResource("20_w3fm7")]
 position = Vector2(240, 192)
-script = ExtResource("21_qdyy1")
-object_name = "desert2"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@33032" type="Node2D" parent="ObjectsHolder" groups=["desert2", "drawn_sprite", "solid"] instance=ExtResource("20_w3fm7")]
-z_index = 100
+[node name="@Node2D@33032" parent="ObjectsHolder" instance=ExtResource("20_w3fm7")]
 position = Vector2(224, 192)
-script = ExtResource("21_qdyy1")
-object_name = "desert2"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@33033" type="Node2D" parent="ObjectsHolder" groups=["desert2", "drawn_sprite", "solid"] instance=ExtResource("20_w3fm7")]
-z_index = 100
+[node name="@Node2D@33033" parent="ObjectsHolder" instance=ExtResource("20_w3fm7")]
 position = Vector2(208, 192)
-script = ExtResource("21_qdyy1")
-object_name = "desert2"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@33034" type="Node2D" parent="ObjectsHolder" groups=["desert2", "drawn_sprite", "solid"] instance=ExtResource("20_w3fm7")]
-z_index = 100
+[node name="@Node2D@33034" parent="ObjectsHolder" instance=ExtResource("20_w3fm7")]
 position = Vector2(192, 192)
-script = ExtResource("21_qdyy1")
-object_name = "desert2"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@33035" type="Node2D" parent="ObjectsHolder" groups=["desert2", "drawn_sprite", "solid"] instance=ExtResource("20_w3fm7")]
-z_index = 100
+[node name="@Node2D@33035" parent="ObjectsHolder" instance=ExtResource("20_w3fm7")]
 position = Vector2(176, 192)
-script = ExtResource("21_qdyy1")
-object_name = "desert2"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@33036" type="Node2D" parent="ObjectsHolder" groups=["desert2", "drawn_sprite", "solid"] instance=ExtResource("20_w3fm7")]
-z_index = 100
+[node name="@Node2D@33036" parent="ObjectsHolder" instance=ExtResource("20_w3fm7")]
 position = Vector2(160, 192)
-script = ExtResource("21_qdyy1")
-object_name = "desert2"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@33037" type="Node2D" parent="ObjectsHolder" groups=["desert2", "drawn_sprite", "solid"] instance=ExtResource("20_w3fm7")]
-z_index = 100
+[node name="@Node2D@33037" parent="ObjectsHolder" instance=ExtResource("20_w3fm7")]
 position = Vector2(144, 192)
-script = ExtResource("21_qdyy1")
-object_name = "desert2"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@33038" type="Node2D" parent="ObjectsHolder" groups=["desert2", "drawn_sprite", "solid"] instance=ExtResource("20_w3fm7")]
-z_index = 100
+[node name="@Node2D@33038" parent="ObjectsHolder" instance=ExtResource("20_w3fm7")]
 position = Vector2(128, 192)
-script = ExtResource("21_qdyy1")
-object_name = "desert2"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@33039" type="Node2D" parent="ObjectsHolder" groups=["desert2", "drawn_sprite", "solid"] instance=ExtResource("20_w3fm7")]
-z_index = 100
+[node name="@Node2D@33039" parent="ObjectsHolder" instance=ExtResource("20_w3fm7")]
 position = Vector2(112, 192)
-script = ExtResource("21_qdyy1")
-object_name = "desert2"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="@Node2D@33040" type="Node2D" parent="ObjectsHolder" groups=["desert2", "drawn_sprite", "solid"] instance=ExtResource("20_w3fm7")]
-z_index = 100
+[node name="@Node2D@33040" parent="ObjectsHolder" instance=ExtResource("20_w3fm7")]
 position = Vector2(96, 192)
-script = ExtResource("21_qdyy1")
-object_name = "desert2"
-depth = 100
-object_size = Vector2(16, 16)
 
-[node name="DesertTop" type="Node2D" parent="ObjectsHolder" groups=["desert_top"] instance=ExtResource("22_l0j5t")]
-z_index = 10
+[node name="DesertTop" parent="ObjectsHolder" instance=ExtResource("22_l0j5t")]
 position = Vector2(0, 176)
-script = ExtResource("23_pcues")
-object_name = "desert_top"
-depth = 10
-object_size = Vector2(16, 17)
 
-[node name="@Node2D@33041" type="Node2D" parent="ObjectsHolder" groups=["desert_top"] instance=ExtResource("22_l0j5t")]
-z_index = 10
+[node name="@Node2D@33041" parent="ObjectsHolder" instance=ExtResource("22_l0j5t")]
 position = Vector2(16, 176)
-script = ExtResource("23_pcues")
-object_name = "desert_top"
-depth = 10
-object_size = Vector2(16, 17)
 
-[node name="@Node2D@33042" type="Node2D" parent="ObjectsHolder" groups=["desert_top"] instance=ExtResource("22_l0j5t")]
-z_index = 10
+[node name="@Node2D@33042" parent="ObjectsHolder" instance=ExtResource("22_l0j5t")]
 position = Vector2(32, 176)
-script = ExtResource("23_pcues")
-object_name = "desert_top"
-depth = 10
-object_size = Vector2(16, 17)
 
-[node name="@Node2D@33043" type="Node2D" parent="ObjectsHolder" groups=["desert_top"] instance=ExtResource("22_l0j5t")]
-z_index = 10
+[node name="@Node2D@33043" parent="ObjectsHolder" instance=ExtResource("22_l0j5t")]
 position = Vector2(48, 176)
-script = ExtResource("23_pcues")
-object_name = "desert_top"
-depth = 10
-object_size = Vector2(16, 17)
 
-[node name="@Node2D@33044" type="Node2D" parent="ObjectsHolder" groups=["desert_top"] instance=ExtResource("22_l0j5t")]
-z_index = 10
+[node name="@Node2D@33044" parent="ObjectsHolder" instance=ExtResource("22_l0j5t")]
 position = Vector2(64, 176)
-script = ExtResource("23_pcues")
-object_name = "desert_top"
-depth = 10
-object_size = Vector2(16, 17)
 
-[node name="@Node2D@33045" type="Node2D" parent="ObjectsHolder" groups=["desert_top"] instance=ExtResource("22_l0j5t")]
-z_index = 10
+[node name="@Node2D@33045" parent="ObjectsHolder" instance=ExtResource("22_l0j5t")]
 position = Vector2(80, 176)
-script = ExtResource("23_pcues")
-object_name = "desert_top"
-depth = 10
-object_size = Vector2(16, 17)
 
-[node name="@Node2D@33046" type="Node2D" parent="ObjectsHolder" groups=["desert_top"] instance=ExtResource("22_l0j5t")]
-z_index = 10
+[node name="@Node2D@33046" parent="ObjectsHolder" instance=ExtResource("22_l0j5t")]
 position = Vector2(96, 176)
-script = ExtResource("23_pcues")
-object_name = "desert_top"
-depth = 10
-object_size = Vector2(16, 17)
 
-[node name="@Node2D@33047" type="Node2D" parent="ObjectsHolder" groups=["desert_top"] instance=ExtResource("22_l0j5t")]
-z_index = 10
+[node name="@Node2D@33047" parent="ObjectsHolder" instance=ExtResource("22_l0j5t")]
 position = Vector2(112, 176)
-script = ExtResource("23_pcues")
-object_name = "desert_top"
-depth = 10
-object_size = Vector2(16, 17)
 
-[node name="@Node2D@33048" type="Node2D" parent="ObjectsHolder" groups=["desert_top"] instance=ExtResource("22_l0j5t")]
-z_index = 10
+[node name="@Node2D@33048" parent="ObjectsHolder" instance=ExtResource("22_l0j5t")]
 position = Vector2(128, 176)
-script = ExtResource("23_pcues")
-object_name = "desert_top"
-depth = 10
-object_size = Vector2(16, 17)
 
-[node name="@Node2D@33049" type="Node2D" parent="ObjectsHolder" groups=["desert_top"] instance=ExtResource("22_l0j5t")]
-z_index = 10
+[node name="@Node2D@33049" parent="ObjectsHolder" instance=ExtResource("22_l0j5t")]
 position = Vector2(144, 176)
-script = ExtResource("23_pcues")
-object_name = "desert_top"
-depth = 10
-object_size = Vector2(16, 17)
 
-[node name="@Node2D@33050" type="Node2D" parent="ObjectsHolder" groups=["desert_top"] instance=ExtResource("22_l0j5t")]
-z_index = 10
+[node name="@Node2D@33050" parent="ObjectsHolder" instance=ExtResource("22_l0j5t")]
 position = Vector2(160, 176)
-script = ExtResource("23_pcues")
-object_name = "desert_top"
-depth = 10
-object_size = Vector2(16, 17)
 
-[node name="@Node2D@33051" type="Node2D" parent="ObjectsHolder" groups=["desert_top"] instance=ExtResource("22_l0j5t")]
-z_index = 10
+[node name="@Node2D@33051" parent="ObjectsHolder" instance=ExtResource("22_l0j5t")]
 position = Vector2(176, 176)
-script = ExtResource("23_pcues")
-object_name = "desert_top"
-depth = 10
-object_size = Vector2(16, 17)
 
-[node name="@Node2D@33052" type="Node2D" parent="ObjectsHolder" groups=["desert_top"] instance=ExtResource("22_l0j5t")]
-z_index = 10
+[node name="@Node2D@33052" parent="ObjectsHolder" instance=ExtResource("22_l0j5t")]
 position = Vector2(192, 176)
-script = ExtResource("23_pcues")
-object_name = "desert_top"
-depth = 10
-object_size = Vector2(16, 17)
 
-[node name="@Node2D@33053" type="Node2D" parent="ObjectsHolder" groups=["desert_top"] instance=ExtResource("22_l0j5t")]
-z_index = 10
+[node name="@Node2D@33053" parent="ObjectsHolder" instance=ExtResource("22_l0j5t")]
 position = Vector2(208, 176)
-script = ExtResource("23_pcues")
-object_name = "desert_top"
-depth = 10
-object_size = Vector2(16, 17)
 
-[node name="@Node2D@33054" type="Node2D" parent="ObjectsHolder" groups=["desert_top"] instance=ExtResource("22_l0j5t")]
-z_index = 10
+[node name="@Node2D@33054" parent="ObjectsHolder" instance=ExtResource("22_l0j5t")]
 position = Vector2(224, 176)
-script = ExtResource("23_pcues")
-object_name = "desert_top"
-depth = 10
-object_size = Vector2(16, 17)
 
-[node name="@Node2D@33055" type="Node2D" parent="ObjectsHolder" groups=["desert_top"] instance=ExtResource("22_l0j5t")]
-z_index = 10
+[node name="@Node2D@33055" parent="ObjectsHolder" instance=ExtResource("22_l0j5t")]
 position = Vector2(240, 176)
-script = ExtResource("23_pcues")
-object_name = "desert_top"
-depth = 10
-object_size = Vector2(16, 17)
 
-[node name="@Node2D@33056" type="Node2D" parent="ObjectsHolder" groups=["desert_top"] instance=ExtResource("22_l0j5t")]
-z_index = 10
+[node name="@Node2D@33056" parent="ObjectsHolder" instance=ExtResource("22_l0j5t")]
 position = Vector2(256, 176)
-script = ExtResource("23_pcues")
-object_name = "desert_top"
-depth = 10
-object_size = Vector2(16, 17)
 
-[node name="@Node2D@33057" type="Node2D" parent="ObjectsHolder" groups=["desert_top"] instance=ExtResource("22_l0j5t")]
-z_index = 10
+[node name="@Node2D@33057" parent="ObjectsHolder" instance=ExtResource("22_l0j5t")]
 position = Vector2(272, 176)
-script = ExtResource("23_pcues")
-object_name = "desert_top"
-depth = 10
-object_size = Vector2(16, 17)
 
-[node name="@Node2D@33058" type="Node2D" parent="ObjectsHolder" groups=["desert_top"] instance=ExtResource("22_l0j5t")]
-z_index = 10
+[node name="@Node2D@33058" parent="ObjectsHolder" instance=ExtResource("22_l0j5t")]
 position = Vector2(288, 176)
-script = ExtResource("23_pcues")
-object_name = "desert_top"
-depth = 10
-object_size = Vector2(16, 17)
 
-[node name="@Node2D@33059" type="Node2D" parent="ObjectsHolder" groups=["desert_top"] instance=ExtResource("22_l0j5t")]
-z_index = 10
+[node name="@Node2D@33059" parent="ObjectsHolder" instance=ExtResource("22_l0j5t")]
 position = Vector2(304, 176)
-script = ExtResource("23_pcues")
-object_name = "desert_top"
-depth = 10
-object_size = Vector2(16, 17)
 
-[node name="@Node2D@33060" type="Node2D" parent="ObjectsHolder" groups=["desert_top"] instance=ExtResource("22_l0j5t")]
-z_index = 10
+[node name="@Node2D@33060" parent="ObjectsHolder" instance=ExtResource("22_l0j5t")]
 position = Vector2(320, 176)
-script = ExtResource("23_pcues")
-object_name = "desert_top"
-depth = 10
-object_size = Vector2(16, 17)
 
-[node name="@Node2D@33061" type="Node2D" parent="ObjectsHolder" groups=["desert_top"] instance=ExtResource("22_l0j5t")]
-z_index = 10
+[node name="@Node2D@33061" parent="ObjectsHolder" instance=ExtResource("22_l0j5t")]
 position = Vector2(336, 176)
-script = ExtResource("23_pcues")
-object_name = "desert_top"
-depth = 10
-object_size = Vector2(16, 17)
 
-[node name="@Node2D@33062" type="Node2D" parent="ObjectsHolder" groups=["desert_top"] instance=ExtResource("22_l0j5t")]
-z_index = 10
+[node name="@Node2D@33062" parent="ObjectsHolder" instance=ExtResource("22_l0j5t")]
 position = Vector2(352, 176)
-script = ExtResource("23_pcues")
-object_name = "desert_top"
-depth = 10
-object_size = Vector2(16, 17)
 
-[node name="@Node2D@33063" type="Node2D" parent="ObjectsHolder" groups=["desert_top"] instance=ExtResource("22_l0j5t")]
-z_index = 10
+[node name="@Node2D@33063" parent="ObjectsHolder" instance=ExtResource("22_l0j5t")]
 position = Vector2(384, 176)
-script = ExtResource("23_pcues")
-object_name = "desert_top"
-depth = 10
-object_size = Vector2(16, 17)
 
-[node name="@Node2D@33064" type="Node2D" parent="ObjectsHolder" groups=["desert_top"] instance=ExtResource("22_l0j5t")]
-z_index = 10
+[node name="@Node2D@33064" parent="ObjectsHolder" instance=ExtResource("22_l0j5t")]
 position = Vector2(400, 176)
-script = ExtResource("23_pcues")
-object_name = "desert_top"
-depth = 10
-object_size = Vector2(16, 17)
 
-[node name="@Node2D@33065" type="Node2D" parent="ObjectsHolder" groups=["desert_top"] instance=ExtResource("22_l0j5t")]
-z_index = 10
+[node name="@Node2D@33065" parent="ObjectsHolder" instance=ExtResource("22_l0j5t")]
 position = Vector2(416, 176)
-script = ExtResource("23_pcues")
-object_name = "desert_top"
-depth = 10
-object_size = Vector2(16, 17)
 
-[node name="@Node2D@33066" type="Node2D" parent="ObjectsHolder" groups=["desert_top"] instance=ExtResource("22_l0j5t")]
-z_index = 10
+[node name="@Node2D@33066" parent="ObjectsHolder" instance=ExtResource("22_l0j5t")]
 position = Vector2(432, 176)
-script = ExtResource("23_pcues")
-object_name = "desert_top"
-depth = 10
-object_size = Vector2(16, 17)
 
-[node name="@Node2D@33067" type="Node2D" parent="ObjectsHolder" groups=["desert_top"] instance=ExtResource("22_l0j5t")]
-z_index = 10
+[node name="@Node2D@33067" parent="ObjectsHolder" instance=ExtResource("22_l0j5t")]
 position = Vector2(448, 176)
-script = ExtResource("23_pcues")
-object_name = "desert_top"
-depth = 10
-object_size = Vector2(16, 17)
 
-[node name="@Node2D@33068" type="Node2D" parent="ObjectsHolder" groups=["desert_top"] instance=ExtResource("22_l0j5t")]
-z_index = 10
+[node name="@Node2D@33068" parent="ObjectsHolder" instance=ExtResource("22_l0j5t")]
 position = Vector2(464, 176)
-script = ExtResource("23_pcues")
-object_name = "desert_top"
-depth = 10
-object_size = Vector2(16, 17)
 
-[node name="@Node2D@33069" type="Node2D" parent="ObjectsHolder" groups=["desert_top"] instance=ExtResource("22_l0j5t")]
-z_index = 10
+[node name="@Node2D@33069" parent="ObjectsHolder" instance=ExtResource("22_l0j5t")]
 position = Vector2(480, 176)
-script = ExtResource("23_pcues")
-object_name = "desert_top"
-depth = 10
-object_size = Vector2(16, 17)
 
-[node name="@Node2D@33070" type="Node2D" parent="ObjectsHolder" groups=["desert_top"] instance=ExtResource("22_l0j5t")]
-z_index = 10
+[node name="@Node2D@33070" parent="ObjectsHolder" instance=ExtResource("22_l0j5t")]
 position = Vector2(496, 176)
-script = ExtResource("23_pcues")
-object_name = "desert_top"
-depth = 10
-object_size = Vector2(16, 17)
 
-[node name="@Node2D@33071" type="Node2D" parent="ObjectsHolder" groups=["desert_top"] instance=ExtResource("22_l0j5t")]
-z_index = 10
+[node name="@Node2D@33071" parent="ObjectsHolder" instance=ExtResource("22_l0j5t")]
 position = Vector2(512, 176)
-script = ExtResource("23_pcues")
-object_name = "desert_top"
-depth = 10
-object_size = Vector2(16, 17)
 
-[node name="@Node2D@33072" type="Node2D" parent="ObjectsHolder" groups=["desert_top"] instance=ExtResource("22_l0j5t")]
-z_index = 10
+[node name="@Node2D@33072" parent="ObjectsHolder" instance=ExtResource("22_l0j5t")]
 position = Vector2(528, 176)
-script = ExtResource("23_pcues")
-object_name = "desert_top"
-depth = 10
-object_size = Vector2(16, 17)
 
-[node name="@Node2D@33073" type="Node2D" parent="ObjectsHolder" groups=["desert_top"] instance=ExtResource("22_l0j5t")]
-z_index = 10
+[node name="@Node2D@33073" parent="ObjectsHolder" instance=ExtResource("22_l0j5t")]
 position = Vector2(544, 176)
-script = ExtResource("23_pcues")
-object_name = "desert_top"
-depth = 10
-object_size = Vector2(16, 17)
 
-[node name="@Node2D@33074" type="Node2D" parent="ObjectsHolder" groups=["desert_top"] instance=ExtResource("22_l0j5t")]
-z_index = 10
+[node name="@Node2D@33074" parent="ObjectsHolder" instance=ExtResource("22_l0j5t")]
 position = Vector2(560, 176)
-script = ExtResource("23_pcues")
-object_name = "desert_top"
-depth = 10
-object_size = Vector2(16, 17)
 
-[node name="@Node2D@33075" type="Node2D" parent="ObjectsHolder" groups=["desert_top"] instance=ExtResource("22_l0j5t")]
-z_index = 10
+[node name="@Node2D@33075" parent="ObjectsHolder" instance=ExtResource("22_l0j5t")]
 position = Vector2(576, 176)
-script = ExtResource("23_pcues")
-object_name = "desert_top"
-depth = 10
-object_size = Vector2(16, 17)
 
-[node name="@Node2D@33076" type="Node2D" parent="ObjectsHolder" groups=["desert_top"] instance=ExtResource("22_l0j5t")]
-z_index = 10
+[node name="@Node2D@33076" parent="ObjectsHolder" instance=ExtResource("22_l0j5t")]
 position = Vector2(592, 176)
-script = ExtResource("23_pcues")
-object_name = "desert_top"
-depth = 10
-object_size = Vector2(16, 17)
 
-[node name="@Node2D@33077" type="Node2D" parent="ObjectsHolder" groups=["desert_top"] instance=ExtResource("22_l0j5t")]
-z_index = 10
+[node name="@Node2D@33077" parent="ObjectsHolder" instance=ExtResource("22_l0j5t")]
 position = Vector2(608, 176)
-script = ExtResource("23_pcues")
-object_name = "desert_top"
-depth = 10
-object_size = Vector2(16, 17)
 
-[node name="@Node2D@33078" type="Node2D" parent="ObjectsHolder" groups=["desert_top"] instance=ExtResource("22_l0j5t")]
-z_index = 10
+[node name="@Node2D@33078" parent="ObjectsHolder" instance=ExtResource("22_l0j5t")]
 position = Vector2(624, 176)
-script = ExtResource("23_pcues")
-object_name = "desert_top"
-depth = 10
-object_size = Vector2(16, 17)
 
-[node name="@Node2D@33079" type="Node2D" parent="ObjectsHolder" groups=["desert_top"] instance=ExtResource("22_l0j5t")]
-z_index = 10
+[node name="@Node2D@33079" parent="ObjectsHolder" instance=ExtResource("22_l0j5t")]
 position = Vector2(640, 176)
-script = ExtResource("23_pcues")
-object_name = "desert_top"
-depth = 10
-object_size = Vector2(16, 17)
 
-[node name="@Node2D@33080" type="Node2D" parent="ObjectsHolder" groups=["desert_top"] instance=ExtResource("22_l0j5t")]
-z_index = 10
+[node name="@Node2D@33080" parent="ObjectsHolder" instance=ExtResource("22_l0j5t")]
 position = Vector2(656, 176)
-script = ExtResource("23_pcues")
-object_name = "desert_top"
-depth = 10
-object_size = Vector2(16, 17)
 
-[node name="@Node2D@33081" type="Node2D" parent="ObjectsHolder" groups=["desert_top"] instance=ExtResource("22_l0j5t")]
-z_index = 10
+[node name="@Node2D@33081" parent="ObjectsHolder" instance=ExtResource("22_l0j5t")]
 position = Vector2(672, 176)
-script = ExtResource("23_pcues")
-object_name = "desert_top"
-depth = 10
-object_size = Vector2(16, 17)
 
-[node name="@Node2D@33082" type="Node2D" parent="ObjectsHolder" groups=["desert_top"] instance=ExtResource("22_l0j5t")]
-z_index = 10
+[node name="@Node2D@33082" parent="ObjectsHolder" instance=ExtResource("22_l0j5t")]
 position = Vector2(688, 192)
-script = ExtResource("23_pcues")
-object_name = "desert_top"
-depth = 10
-object_size = Vector2(16, 17)
 
-[node name="@Node2D@33083" type="Node2D" parent="ObjectsHolder" groups=["desert_top"] instance=ExtResource("22_l0j5t")]
-z_index = 10
+[node name="@Node2D@33083" parent="ObjectsHolder" instance=ExtResource("22_l0j5t")]
 position = Vector2(704, 192)
-script = ExtResource("23_pcues")
-object_name = "desert_top"
-depth = 10
-object_size = Vector2(16, 17)
 
-[node name="@Node2D@33084" type="Node2D" parent="ObjectsHolder" groups=["desert_top"] instance=ExtResource("22_l0j5t")]
-z_index = 10
+[node name="@Node2D@33084" parent="ObjectsHolder" instance=ExtResource("22_l0j5t")]
 position = Vector2(720, 192)
-script = ExtResource("23_pcues")
-object_name = "desert_top"
-depth = 10
-object_size = Vector2(16, 17)
 
-[node name="@Node2D@33085" type="Node2D" parent="ObjectsHolder" groups=["desert_top"] instance=ExtResource("22_l0j5t")]
-z_index = 10
+[node name="@Node2D@33085" parent="ObjectsHolder" instance=ExtResource("22_l0j5t")]
 position = Vector2(736, 208)
-script = ExtResource("23_pcues")
-object_name = "desert_top"
-depth = 10
-object_size = Vector2(16, 17)
 
-[node name="@Node2D@33086" type="Node2D" parent="ObjectsHolder" groups=["desert_top"] instance=ExtResource("22_l0j5t")]
-z_index = 10
+[node name="@Node2D@33086" parent="ObjectsHolder" instance=ExtResource("22_l0j5t")]
 position = Vector2(752, 208)
-script = ExtResource("23_pcues")
-object_name = "desert_top"
-depth = 10
-object_size = Vector2(16, 17)
 
-[node name="@Node2D@33087" type="Node2D" parent="ObjectsHolder" groups=["desert_top"] instance=ExtResource("22_l0j5t")]
-z_index = 10
+[node name="@Node2D@33087" parent="ObjectsHolder" instance=ExtResource("22_l0j5t")]
 position = Vector2(688, 176)
-script = ExtResource("23_pcues")
-object_name = "desert_top"
-depth = 10
-object_size = Vector2(16, 17)
 
-[node name="@Node2D@33088" type="Node2D" parent="ObjectsHolder" groups=["desert_top"] instance=ExtResource("22_l0j5t")]
-z_index = 10
+[node name="@Node2D@33088" parent="ObjectsHolder" instance=ExtResource("22_l0j5t")]
 position = Vector2(704, 176)
-script = ExtResource("23_pcues")
-object_name = "desert_top"
-depth = 10
-object_size = Vector2(16, 17)
 
-[node name="@Node2D@33089" type="Node2D" parent="ObjectsHolder" groups=["desert_top"] instance=ExtResource("22_l0j5t")]
-z_index = 10
+[node name="@Node2D@33089" parent="ObjectsHolder" instance=ExtResource("22_l0j5t")]
 position = Vector2(368, 176)
-script = ExtResource("23_pcues")
-object_name = "desert_top"
-depth = 10
-object_size = Vector2(16, 17)
 
-[node name="Intro" type="Node2D" parent="ObjectsHolder" groups=["intro"] instance=ExtResource("24_eenbg")]
-script = ExtResource("25_y5t2t")
-object_name = "intro"
+[node name="Intro" parent="ObjectsHolder" instance=ExtResource("24_eenbg")]
 
-[node name="Bricks" type="Node2D" parent="ObjectsHolder" groups=["bricks"] instance=ExtResource("26_26x7s")]
+[node name="Bricks" parent="ObjectsHolder" instance=ExtResource("26_26x7s")]
 position = Vector2(16, 0)
-script = ExtResource("27_fpn76")
-object_name = "bricks"
 
-[node name="Globals" type="Node2D" parent="ObjectsHolder" groups=["globals"] instance=ExtResource("28_o75lm")]
+[node name="Globals" parent="ObjectsHolder" instance=ExtResource("28_o75lm")]
 position = Vector2(32, 0)
-script = ExtResource("29_2uh6t")
-object_name = "globals"
 
-[node name="Game" type="Node2D" parent="ObjectsHolder" groups=["game"] instance=ExtResource("30_nqbhm")]
+[node name="Game" parent="ObjectsHolder" instance=ExtResource("30_nqbhm")]
 position = Vector2(48, 0)
-script = ExtResource("31_7fky0")
-object_name = "game"
 
-[node name="BatIntro" type="Node2D" parent="ObjectsHolder" groups=["bat_intro"] instance=ExtResource("32_dubih")]
+[node name="BatIntro" parent="ObjectsHolder" instance=ExtResource("32_dubih")]
 position = Vector2(608, 144)
-script = ExtResource("33_yo6st")
-object_name = "bat_intro"
 
-[node name="@Node2D@33090" type="Node2D" parent="ObjectsHolder" groups=["bat_intro"] instance=ExtResource("32_dubih")]
+[node name="@Node2D@33090" parent="ObjectsHolder" instance=ExtResource("32_dubih")]
 position = Vector2(592, 128)
-script = ExtResource("33_yo6st")
-object_name = "bat_intro"
 
-[node name="@Node2D@33091" type="Node2D" parent="ObjectsHolder" groups=["bat_intro"] instance=ExtResource("32_dubih")]
+[node name="@Node2D@33091" parent="ObjectsHolder" instance=ExtResource("32_dubih")]
 position = Vector2(576, 160)
-script = ExtResource("33_yo6st")
-object_name = "bat_intro"
 
-[node name="@Node2D@33092" type="Node2D" parent="ObjectsHolder" groups=["bat_intro"] instance=ExtResource("32_dubih")]
+[node name="@Node2D@33092" parent="ObjectsHolder" instance=ExtResource("32_dubih")]
 position = Vector2(544, 144)
-script = ExtResource("33_yo6st")
-object_name = "bat_intro"

@@ -17,7 +17,7 @@ func _process(delta):
 
 
 #func create():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	#    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 #    <event category="CREATE" id="0">
 #      <actions>
 #        <action id="604" library="1">
@@ -77,10 +77,10 @@ func _process(delta):
 #      </actions>
 #    </event>
 
-    
+	
 
 #func step():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	#    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 #    <event category="STEP" id="0">
 #      <actions>
 #        <action id="604" library="1">
@@ -125,11 +125,11 @@ func _process(delta):
 
 #        MiscScripts.scr_create_blood(position.x+8, position.y+8, 3)
 #        if (counts_as_kill):
-    
+	
 #            if (InLevel.is_real_level()): global.enemy_kills[1] += 1
 #            global.snakes += 1
 #            global.kills += 1
-    
+	
 #        gml.instance_destroy()
 
 
@@ -139,44 +139,44 @@ func _process(delta):
 
 #        if (counter > 0): counter -= 1    
 #        else:
-    
+	
 #            facing = randi_range(0,1)
 #            status = WALK
-    
+	
 
 #    elif (status == WALK):
 
 #        if (Collision.is_collision_left(1) or Collision.is_collision_right(1)):
-    
+	
 #            if (facing == LEFT): facing = RIGHT
 #            else: facing = LEFT
-    
-    
+	
+	
 #        if (facing == LEFT and not gml.collision_point(position.x-1, position.y+16, "solid", -1, -1)):
-    
+	
 #            facing = RIGHT
-    
+	
 #        elif (facing == RIGHT and not gml.collision_point(position.x+16, position.y+16, "solid", -1, -1)):
-    
+	
 #            facing = LEFT
-    
-    
+	
+	
 #        if ((not gml.collision_point(position.x-1, position.y+16, "solid", -1, -1) or gml.collision_point(position.x-1, position.y, "solid", -1, -1)) and:
 #            (not gml.collision_point(position.x+16, position.y+16, "solid", -1, -1) or gml.collision_point(position.x+16, position.y, "solid", -1, -1)))
-    
+	
 #            if (gml.collision_point(position.x-1, position.y, "solid", -1, -1)): facing = RIGHT
 #            else: facing = LEFT
 #            x_vel = 0
-    
+	
 #        elif (facing == LEFT): x_vel = -1
 #        else: x_vel = 1
-    
+	
 #        if (randi_range(1,100) == 1):
-    
+	
 #            status = IDLE
 #            counter = randi_range(20,50)
 #            x_vel = 0
-    
+	
 
 #    elif (status == ATTACK):
 
@@ -190,7 +190,7 @@ func _process(delta):
 
 #        if (x_vel == 0): image_speed = 0.2
 #        else: image_speed = 0.4
-    
+	
 #        sprite_index = s_snake_walk_l
 
 #    /*
@@ -198,7 +198,7 @@ func _process(delta):
 
 #        if (x_vel == 0): image_speed = 0.2
 #        else: image_speed = 0.4
-    
+	
 #        sprite_index = s_snake_walk_r
 
 #    */
@@ -208,4 +208,4 @@ func _process(delta):
 #      </actions>
 #    </event>
 
-    
+	

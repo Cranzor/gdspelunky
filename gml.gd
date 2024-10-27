@@ -62,7 +62,7 @@ func instance_create(x,y,obj): #should return the node as this is used in script
 	instance.position.x = x
 	instance.position.y = y
 	var objects_holder = get_tree().get_first_node_in_group("objects_holder")
-	objects_holder.add_child.call_deferred(instance)
+	objects_holder.add_child(instance)
 	#instance.position.x = x
 	#instance.position.y = y
 	

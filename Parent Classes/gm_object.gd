@@ -1,18 +1,6 @@
 extends Node2D
 class_name GMObject
 
-func _ready():
-	if object_name == "p_dummy3":
-		object_setup()
-
-func _physics_process(_delta):
-	if object_name == "p_dummy3":
-		object_tick()
-
-func _process(delta):
-	if object_name == "p_dummy3":
-		object_process(delta)
-
 var object_database = ObjectDatabase.new()
 var sprites = Sprites.new()
 
@@ -319,7 +307,7 @@ func object_setup():
 	depth_setup(object_entry)
 	sprite_setup(object_entry)
 	bounding_box_setup()
-	collision_setup()
+	#collision_setup()
 	alarms_setup(object_entry)
 	run_create_function(self)
 	
@@ -356,8 +344,8 @@ func depth_setup(object_entry):
 	#--- In Godot, the value must be negative to display properly
 	var converted_depth = -object_depth
 	#--- Making sure the value isn't lower than the minimum value
-	if converted_depth < -4000:
-		converted_depth = -4000
+	if converted_depth < -4096:
+		converted_depth = -4096
 	
 	depth = converted_depth
 
