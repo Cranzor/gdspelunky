@@ -12,9 +12,9 @@ var solid = false
 
 var moving_object = false
 
-var sprite_index_name
+@export var sprite_index_name: String
 
-var animated_sprite_node = null
+@export var animated_sprite_node: AnimatedSprite2D
 
 @export var object_name: String
 var object_hash: String
@@ -142,7 +142,7 @@ var y_vel = 0
 var x_acc = 0
 var y_acc = 0
 
-var sprite_offset = Vector2(0, 0)
+@export var sprite_offset = Vector2(0, 0)
 var object_id = ''
 
 @export var object_size: Vector2 #--- created by me for collision purposes
