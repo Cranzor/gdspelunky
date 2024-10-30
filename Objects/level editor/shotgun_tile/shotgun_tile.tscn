@@ -1,7 +1,31 @@
-[gd_scene load_steps=2 format=3 uid="uid://dnd8oo5pk7wj7"]
+[gd_scene load_steps=4 format=3 uid="uid://dnd8oo5pk7wj7"]
 
 [ext_resource type="Script" path="res://objects/level editor/shotgun_tile/shotgun_tile.gd" id="1_pkg4u"]
+[ext_resource type="Texture2D" uid="uid://x58dtqhg4uas" path="res://sprites/level editor/shotgun_tile/shotgun_tile_0.png" id="2_bngdo"]
 
-[node name="ShotgunTile" type="Node2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_qgwnr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_bngdo")
+}],
+"loop": true,
+"name": &"shotgun_tile",
+"speed": 30.0
+}]
+
+[node name="ShotgunTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node") groups=["drawn_sprite", "shotgun_tile"]]
 script = ExtResource("1_pkg4u")
+sprite_index_name = "shotgun_tile"
+animated_sprite_node = NodePath("AnimatedSprite2D")
 object_name = "shotgun_tile"
+editor_setup_finished = true
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
+z_as_relative = false
+sprite_frames = SubResource("SpriteFrames_qgwnr")
+animation = &"shotgun_tile"
+autoplay = "shotgun_tile"
+centered = false

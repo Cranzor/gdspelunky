@@ -1,7 +1,43 @@
-[gd_scene load_steps=2 format=3 uid="uid://ckdnm82bfuxa6"]
+[gd_scene load_steps=7 format=3 uid="uid://ckdnm82bfuxa6"]
 
 [ext_resource type="Script" path="res://objects/traps/spear_trap_lit/spear_trap_lit.gd" id="1_5nqni"]
+[ext_resource type="Texture2D" uid="uid://c4fl3sqkgn8v3" path="res://sprites/traps/spear_trap_lit/spear_trap_lit_0.png" id="2_3e5ul"]
+[ext_resource type="Texture2D" uid="uid://cycmogb88of5r" path="res://sprites/traps/spear_trap_lit/spear_trap_lit_1.png" id="3_t1nlj"]
+[ext_resource type="Texture2D" uid="uid://da0r2k0x8q62x" path="res://sprites/traps/spear_trap_lit/spear_trap_lit_2.png" id="4_dioss"]
+[ext_resource type="Texture2D" uid="uid://euqh6mr5lyf0" path="res://sprites/traps/spear_trap_lit/spear_trap_lit_3.png" id="5_cj671"]
 
-[node name="SpearTrapLit" type="Node2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_qhibn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3e5ul")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_t1nlj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dioss")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_cj671")
+}],
+"loop": true,
+"name": &"spear_trap_lit",
+"speed": 30.0
+}]
+
+[node name="SpearTrapLit" type="Node2D" node_paths=PackedStringArray("animated_sprite_node") groups=["drawn_sprite", "solid", "spear_trap_lit", "spear_trap_top"]]
 script = ExtResource("1_5nqni")
+sprite_index_name = "spear_trap_lit"
+animated_sprite_node = NodePath("AnimatedSprite2D")
 object_name = "spear_trap_lit"
+editor_setup_finished = true
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
+z_as_relative = false
+sprite_frames = SubResource("SpriteFrames_qhibn")
+animation = &"spear_trap_lit"
+autoplay = "spear_trap_lit"
+centered = false

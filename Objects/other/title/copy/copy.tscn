@@ -1,7 +1,30 @@
-[gd_scene load_steps=2 format=3 uid="uid://dgtujcc118c8d"]
+[gd_scene load_steps=4 format=3 uid="uid://dgtujcc118c8d"]
 
 [ext_resource type="Script" path="res://objects/other/title/copy/copy.gd" id="1_fs20y"]
+[ext_resource type="Texture2D" uid="uid://dc3uqe4lgklaj" path="res://sprites/other/title/copy/copy_0.png" id="2_xkgr2"]
 
-[node name="Copy" type="Node2D" groups=["copy"]]
+[sub_resource type="SpriteFrames" id="SpriteFrames_mbvf5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_xkgr2")
+}],
+"loop": true,
+"name": &"copy",
+"speed": 30.0
+}]
+
+[node name="Copy" type="Node2D" node_paths=PackedStringArray("animated_sprite_node") groups=["copy"]]
 script = ExtResource("1_fs20y")
+sprite_index_name = "copy"
+animated_sprite_node = NodePath("AnimatedSprite2D")
 object_name = "copy"
+editor_setup_finished = true
+object_size = Vector2(144, 16)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
+z_as_relative = false
+sprite_frames = SubResource("SpriteFrames_mbvf5")
+animation = &"copy"
+autoplay = "copy"
+centered = false

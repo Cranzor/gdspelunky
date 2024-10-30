@@ -1,7 +1,31 @@
-[gd_scene load_steps=2 format=3 uid="uid://bceyr3nrnoofk"]
+[gd_scene load_steps=4 format=3 uid="uid://bceyr3nrnoofk"]
 
 [ext_resource type="Script" path="res://objects/other/title/scores_sign/scores_sign.gd" id="1_s12rd"]
+[ext_resource type="Texture2D" uid="uid://qm7flgr4gls2" path="res://sprites/other/title/scores_sign/scores_sign_0.png" id="2_b0cx8"]
 
-[node name="ScoresSign" type="Node2D" groups=["scores_sign"]]
+[sub_resource type="SpriteFrames" id="SpriteFrames_s1bpx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_b0cx8")
+}],
+"loop": true,
+"name": &"scores_sign",
+"speed": 30.0
+}]
+
+[node name="ScoresSign" type="Node2D" node_paths=PackedStringArray("animated_sprite_node") groups=["scores_sign"]]
 script = ExtResource("1_s12rd")
+sprite_index_name = "scores_sign"
+animated_sprite_node = NodePath("AnimatedSprite2D")
 object_name = "scores_sign"
+editor_setup_finished = true
+depth = -999
+object_size = Vector2(48, 32)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
+z_as_relative = false
+sprite_frames = SubResource("SpriteFrames_s1bpx")
+animation = &"scores_sign"
+autoplay = "scores_sign"
+centered = false

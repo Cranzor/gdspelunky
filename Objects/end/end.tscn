@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" path="res://objects/end/end.gd" id="1_10s61"]
 
-[node name="End" type="Node2D"]
+[node name="End" type="Node2D" groups=["end"]]
 script = ExtResource("1_10s61")
 object_name = "end"
+editor_setup_finished = true

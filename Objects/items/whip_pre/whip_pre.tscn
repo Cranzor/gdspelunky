@@ -1,9 +1,41 @@
-[gd_scene load_steps=2 format=3 uid="uid://dc162titb5s1l"]
+[gd_scene load_steps=5 format=3 uid="uid://dc162titb5s1l"]
 
 [ext_resource type="Script" path="res://objects/items/whip_pre/whip_pre.gd" id="1_sbivy"]
+[ext_resource type="Texture2D" uid="uid://dem1fytr8uan5" path="res://sprites/items/weapons/whip_pre_r/whip_pre_r_0.png" id="2_1k0ai"]
+[ext_resource type="Script" path="res://alarm.gd" id="3_1wkxf"]
 
-[node name="WhipPre" type="Node2D" groups=["drawn_sprite", "whip_pre"]]
+[sub_resource type="SpriteFrames" id="SpriteFrames_6cnnp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1k0ai")
+}],
+"loop": true,
+"name": &"whip_pre_r",
+"speed": 30.0
+}]
+
+[node name="WhipPre" type="Node2D" node_paths=PackedStringArray("animated_sprite_node", "alarm_0_countdown") groups=["drawn_sprite", "whip_pre"]]
 z_index = -1
 script = ExtResource("1_sbivy")
+sprite_index_name = "whip_pre_r"
+animated_sprite_node = NodePath("AnimatedSprite2D")
+sprite_offset = Vector2(8, 8)
 object_name = "whip_pre"
+alarm_0_countdown = NodePath("Alarms/Alarm0")
+editor_setup_finished = true
+depth = -1
 object_size = Vector2(16, 16)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
+z_as_relative = false
+sprite_frames = SubResource("SpriteFrames_6cnnp")
+animation = &"whip_pre_r"
+autoplay = "whip_pre_r"
+centered = false
+offset = Vector2(-8, -8)
+
+[node name="Alarms" type="Node" parent="."]
+
+[node name="Alarm0" type="Node" parent="Alarms"]
+script = ExtResource("3_1wkxf")

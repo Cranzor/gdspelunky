@@ -1,7 +1,31 @@
-[gd_scene load_steps=2 format=3 uid="uid://dqgwphfmo7v23"]
+[gd_scene load_steps=4 format=3 uid="uid://dqgwphfmo7v23"]
 
 [ext_resource type="Script" path="res://objects/blocks/vine/vine.gd" id="1_otw6u"]
+[ext_resource type="Texture2D" uid="uid://du4dopynqmnwg" path="res://sprites/blocks/ladders/vine/vine_0.png" id="2_qhwe4"]
 
-[node name="Vine" type="Node2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_x5k6w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qhwe4")
+}],
+"loop": true,
+"name": &"vine",
+"speed": 30.0
+}]
+
+[node name="Vine" type="Node2D" node_paths=PackedStringArray("animated_sprite_node") groups=["drawn_sprite", "ladder", "vine"]]
 script = ExtResource("1_otw6u")
+sprite_index_name = "vine"
+animated_sprite_node = NodePath("AnimatedSprite2D")
 object_name = "vine"
+editor_setup_finished = true
+depth = -1000
+object_size = Vector2(16, 16)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
+z_as_relative = false
+sprite_frames = SubResource("SpriteFrames_x5k6w")
+animation = &"vine"
+autoplay = "vine"
+centered = false

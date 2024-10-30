@@ -1,9 +1,65 @@
-[gd_scene load_steps=2 format=3 uid="uid://gs3fuw48xstm"]
+[gd_scene load_steps=10 format=3 uid="uid://gs3fuw48xstm"]
 
 [ext_resource type="Script" path="res://objects/other/p_dummy3/p_dummy3.gd" id="1_sgunq"]
+[ext_resource type="Texture2D" uid="uid://c1sjye38k7j1o" path="res://sprites/character/main dude/run_left/run_left_0.png" id="2_ucocc"]
+[ext_resource type="Texture2D" uid="uid://6upedmxmqrnl" path="res://sprites/character/main dude/run_left/run_left_1.png" id="3_3jo8x"]
+[ext_resource type="Texture2D" uid="uid://d04goe7k0jvmn" path="res://sprites/character/main dude/run_left/run_left_2.png" id="4_uud1s"]
+[ext_resource type="Texture2D" uid="uid://cr6p0f6tnk3h6" path="res://sprites/character/main dude/run_left/run_left_3.png" id="5_71vcd"]
+[ext_resource type="Texture2D" uid="uid://d1n0ivu5r1sr4" path="res://sprites/character/main dude/run_left/run_left_4.png" id="6_igje1"]
+[ext_resource type="Texture2D" uid="uid://b00w6nbl4fc6" path="res://sprites/character/main dude/run_left/run_left_5.png" id="7_cob0p"]
+[ext_resource type="Script" path="res://alarm.gd" id="8_e04u6"]
 
-[node name="PDummy3" type="Node2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_0ld02"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ucocc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3jo8x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_uud1s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_71vcd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_igje1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_cob0p")
+}],
+"loop": true,
+"name": &"run_left",
+"speed": 30.0
+}]
+
+[node name="PDummy3" type="Node2D" node_paths=PackedStringArray("animated_sprite_node", "alarm_0_countdown", "alarm_2_countdown") groups=["drawn_sprite", "p_dummy3"]]
 z_index = -40
 script = ExtResource("1_sgunq")
+sprite_index_name = "run_left"
+animated_sprite_node = NodePath("AnimatedSprite2D")
+sprite_offset = Vector2(8, 8)
 object_name = "p_dummy3"
+alarm_0_countdown = NodePath("Alarms/Alarm0")
+alarm_2_countdown = NodePath("Alarms/Alarm2")
+editor_setup_finished = true
+depth = -40
 object_size = Vector2(16, 16)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
+z_as_relative = false
+sprite_frames = SubResource("SpriteFrames_0ld02")
+animation = &"run_left"
+autoplay = "run_left"
+centered = false
+offset = Vector2(-8, -8)
+
+[node name="Alarms" type="Node" parent="."]
+
+[node name="Alarm0" type="Node" parent="Alarms"]
+script = ExtResource("8_e04u6")
+
+[node name="Alarm2" type="Node" parent="Alarms"]
+script = ExtResource("8_e04u6")

@@ -1,9 +1,32 @@
-[gd_scene load_steps=2 format=3 uid="uid://boxc36fot75d7"]
+[gd_scene load_steps=4 format=3 uid="uid://boxc36fot75d7"]
 
 [ext_resource type="Script" path="res://objects/blocks/brick/brick.gd" id="1_wetyu"]
+[ext_resource type="Texture2D" uid="uid://nkw6afdklf8m" path="res://sprites/blocks/mines/brick/brick_0.png" id="2_w8ys4"]
 
-[node name="Brick" type="Node2D" groups=["brick", "drawn_sprite", "solid"]]
+[sub_resource type="SpriteFrames" id="SpriteFrames_kglxq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_w8ys4")
+}],
+"loop": true,
+"name": &"brick",
+"speed": 30.0
+}]
+
+[node name="Brick" type="Node2D" node_paths=PackedStringArray("animated_sprite_node") groups=["brick", "drawn_sprite", "solid"]]
 z_index = -100
 script = ExtResource("1_wetyu")
+sprite_index_name = "brick"
+animated_sprite_node = NodePath("AnimatedSprite2D")
 object_name = "brick"
+editor_setup_finished = true
+depth = -100
 object_size = Vector2(16, 16)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
+z_as_relative = false
+sprite_frames = SubResource("SpriteFrames_kglxq")
+animation = &"brick"
+autoplay = "brick"
+centered = false

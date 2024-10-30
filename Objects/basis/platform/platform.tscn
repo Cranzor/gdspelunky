@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" path="res://objects/basis/platform/platform.gd" id="1_gmcvt"]
 
-[node name="Platform" type="Node2D"]
+[node name="Platform" type="Node2D" groups=["drawn_sprite", "platform"]]
 script = ExtResource("1_gmcvt")
 object_name = "platform"
+editor_setup_finished = true

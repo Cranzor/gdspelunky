@@ -1,7 +1,33 @@
-[gd_scene load_steps=2 format=3 uid="uid://cccbc4sui07d8"]
+[gd_scene load_steps=4 format=3 uid="uid://cccbc4sui07d8"]
 
 [ext_resource type="Script" path="res://objects/collectibles/crate/crate.gd" id="1_udxly"]
+[ext_resource type="Texture2D" uid="uid://7c4ua78d37ae" path="res://sprites/items/other/crate/crate_0.png" id="2_4dtg5"]
 
-[node name="Crate" type="Node2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_0lxsg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_4dtg5")
+}],
+"loop": true,
+"name": &"crate",
+"speed": 30.0
+}]
+
+[node name="Crate" type="Node2D" node_paths=PackedStringArray("animated_sprite_node") groups=["crate", "drawn_sprite", "item"]]
 script = ExtResource("1_udxly")
+sprite_index_name = "crate"
+animated_sprite_node = NodePath("AnimatedSprite2D")
+sprite_offset = Vector2(8, 8)
 object_name = "crate"
+editor_setup_finished = true
+depth = -900
+object_size = Vector2(16, 16)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
+z_as_relative = false
+sprite_frames = SubResource("SpriteFrames_0lxsg")
+animation = &"crate"
+autoplay = "crate"
+centered = false
+offset = Vector2(-8, -8)

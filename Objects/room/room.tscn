@@ -1,7 +1,30 @@
-[gd_scene load_steps=2 format=3 uid="uid://dd17kqxvodrlv"]
+[gd_scene load_steps=4 format=3 uid="uid://dd17kqxvodrlv"]
 
 [ext_resource type="Script" path="res://objects/room/room.gd" id="1_m14id"]
+[ext_resource type="Texture2D" uid="uid://dq0cqaftuw35a" path="res://sprites/room/room_0.png" id="2_hwlhk"]
 
-[node name="Room" type="Node2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_0svjf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hwlhk")
+}],
+"loop": true,
+"name": &"room",
+"speed": 30.0
+}]
+
+[node name="Room" type="Node2D" node_paths=PackedStringArray("animated_sprite_node") groups=["room"]]
 script = ExtResource("1_m14id")
+sprite_index_name = "room"
+animated_sprite_node = NodePath("AnimatedSprite2D")
 object_name = "room"
+editor_setup_finished = true
+object_size = Vector2(160, 128)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
+z_as_relative = false
+sprite_frames = SubResource("SpriteFrames_0svjf")
+animation = &"room"
+autoplay = "room"
+centered = false

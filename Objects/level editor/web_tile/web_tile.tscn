@@ -1,7 +1,31 @@
-[gd_scene load_steps=2 format=3 uid="uid://ua500q58c112"]
+[gd_scene load_steps=4 format=3 uid="uid://ua500q58c112"]
 
 [ext_resource type="Script" path="res://objects/level editor/web_tile/web_tile.gd" id="1_ecve5"]
+[ext_resource type="Texture2D" uid="uid://titbs6wkbanu" path="res://sprites/level editor/web_tile/web_tile_0.png" id="2_r2mky"]
 
-[node name="WebTile" type="Node2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_yvvua"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_r2mky")
+}],
+"loop": true,
+"name": &"web_tile",
+"speed": 30.0
+}]
+
+[node name="WebTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node") groups=["drawn_sprite", "web_tile"]]
 script = ExtResource("1_ecve5")
+sprite_index_name = "web_tile"
+animated_sprite_node = NodePath("AnimatedSprite2D")
 object_name = "web_tile"
+editor_setup_finished = true
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
+z_as_relative = false
+sprite_frames = SubResource("SpriteFrames_yvvua")
+animation = &"web_tile"
+autoplay = "web_tile"
+centered = false

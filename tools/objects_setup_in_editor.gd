@@ -19,49 +19,40 @@ func objects_setup():
 		node = node.instantiate()
 		
 		if node is GMObject:
-			#--- get all object paths. open scene from path, get edited scene root, run needed things, and then save the scene
-			#get_all_object_paths()
-			#for path in all_object_paths:
-				#print(path)
-				#get_editor_interface().open_scene_from_path(path)
-				#print(get_editor_interface().get_edited_scene_root())
-				
-			#var node = get_editor_interface().get_selection().get_selected_nodes()[0]
-			#print(node.get_groups())
-			node.editor_setup_finished = true
-			print("hello")
 			var object_database = object_database.object_database
 			var object_entry = object_database[node.object_name]
-			#
-			#print(node.owner)
 			
-			#--- add to groups
+			##--- add to groups
 			#var groups = groups_setup(object_entry, node)
 			#for group in groups:
-				#node.add_to_group(group, true)
-			
-			#--- set depth
-			#node.depth = depth_setup(object_entry)
-			
-			#--- set up sprite
-			#var new_animated_sprite = sprite_setup(object_entry, node)
-			#print(new_animated_sprite)
-			#node.animated_sprite_node = new_animated_sprite
-			
+				#if !node.is_in_group(group):
+					#node.add_to_group(group, true)
 			#
-			##--- set up bounding box
+			##--- set depth
+			#node.depth = depth_setup(object_entry)
+			#
+			##--- set up sprite
+			##var new_animated_sprite = sprite_setup(object_entry, node)
+			##print(new_animated_sprite)
+			##node.animated_sprite_node = new_animated_sprite
+			#
+			##-- set up bounding box
 			#bounding_box_setup(node)
-			
+			#
 			#--- set up alarms
-			#alarms_setup(object_entry, node)
+			alarms_setup(object_entry, node)
+			#
+			#node.editor_setup_finished = true
+			
+			#--- remove a given node
+			#node.remove_child(node.get_node("Alarms"))
 			
 			var scene = PackedScene.new()
 			var result = scene.pack(node)
 			if result == OK:
 				print("saved")
 				ResourceSaver.save(scene, path)
-				
-				#EditorInterface.reload_scene_from_path(path)
+
 
 func groups_setup(object_entry, node):
 	var groups = object_entry['groups']
@@ -157,23 +148,26 @@ func alarms_setup(object_entry, node):
 	var alarms: Array = ['alarm_0', 'alarm_1', 'alarm_2', 'alarm_3', 'alarm_4', 'alarm_5', 'alarm_6', 'alarm_7', 'alarm_8', 'alarm_9', 'alarm_10', 'alarm_11']
 	
 	var alarms_holder
-	if events != []:
-		alarms_holder  = Node.new()
-		alarms_holder.name = "Alarms"
-		node.add_child(alarms_holder)
-		alarms_holder.owner = EditorInterface.get_edited_scene_root()
+	for event in events:
+		if event in alarms:
+			alarms_holder  = Node.new()
+			alarms_holder.name = "Alarms"
+			node.add_child(alarms_holder)
+			alarms_holder.owner = node
+			break
+		break
 	
 	for event in events:
 		if event in alarms:
 			var alarm_countdown_instance: String = event + "_countdown"
 			var alarm_function = Callable(self, event)
 			var new_alarm: Node = Alarm.new()
-			set(alarm_countdown_instance, new_alarm)
+			node.set(alarm_countdown_instance, new_alarm)
 			new_alarm.set_physics_process(true)
 			new_alarm.timeout.connect(alarm_function)
 			new_alarm.name = event.to_pascal_case()
 			alarms_holder.add_child(new_alarm)
-			new_alarm.owner = EditorInterface.get_edited_scene_root()
+			new_alarm.owner = node
 
 func get_all_object_paths():
 	var objects_script = "res://objects.gd"

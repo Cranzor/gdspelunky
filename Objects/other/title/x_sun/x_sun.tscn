@@ -1,7 +1,31 @@
-[gd_scene load_steps=2 format=3 uid="uid://bennr15rhgy7w"]
+[gd_scene load_steps=4 format=3 uid="uid://bennr15rhgy7w"]
 
 [ext_resource type="Script" path="res://objects/other/title/x_sun/x_sun.gd" id="1_qiwqj"]
+[ext_resource type="Texture2D" uid="uid://dx1p2ru22timq" path="res://sprites/blocks/background/exit/exit_0.png" id="2_5y10x"]
 
-[node name="XSun" type="Node2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_rnt6e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5y10x")
+}],
+"loop": true,
+"name": &"exit",
+"speed": 30.0
+}]
+
+[node name="XSun" type="Node2D" node_paths=PackedStringArray("animated_sprite_node") groups=["drawn_sprite", "x_start", "x_sun"]]
 script = ExtResource("1_qiwqj")
+sprite_index_name = "exit"
+animated_sprite_node = NodePath("AnimatedSprite2D")
 object_name = "x_sun"
+editor_setup_finished = true
+depth = -4096
+object_size = Vector2(16, 16)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
+z_as_relative = false
+sprite_frames = SubResource("SpriteFrames_rnt6e")
+animation = &"exit"
+autoplay = "exit"
+centered = false

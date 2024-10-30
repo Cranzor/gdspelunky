@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" path="res://objects/basis/ladder/ladder.gd" id="1_kjcut"]
 
-[node name="Ladder" type="Node2D"]
+[node name="Ladder" type="Node2D" groups=["drawn_sprite", "ladder"]]
 script = ExtResource("1_kjcut")
 object_name = "ladder"
+editor_setup_finished = true

@@ -5,3 +5,4 @@
 [node name="Bricks" type="Node2D" groups=["bricks"]]
 script = ExtResource("1_55g5b")
 object_name = "bricks"
+editor_setup_finished = true

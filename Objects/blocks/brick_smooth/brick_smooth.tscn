@@ -1,10 +1,37 @@
-[gd_scene load_steps=2 format=3 uid="uid://t16tsipk7hyj"]
+[gd_scene load_steps=5 format=3 uid="uid://t16tsipk7hyj"]
 
 [ext_resource type="Script" path="res://objects/blocks/brick_smooth/brick_smooth.gd" id="1_df582"]
+[ext_resource type="Texture2D" uid="uid://xai8r4vmmomr" path="res://sprites/blocks/mines/cave_smooth/cave_smooth_0.png" id="2_2ih6e"]
+[ext_resource type="Texture2D" uid="uid://ddhptoyx6eshy" path="res://sprites/blocks/mines/cave_smooth/cave_smooth_cave_smooth.png" id="3_on8xs"]
 
-[node name="BrickSmooth" type="Node2D" groups=["brick_smooth", "drawn_sprite", "solid"]]
+[sub_resource type="SpriteFrames" id="SpriteFrames_0ewmh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2ih6e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_on8xs")
+}],
+"loop": true,
+"name": &"cave_smooth",
+"speed": 30.0
+}]
+
+[node name="BrickSmooth" type="Node2D" node_paths=PackedStringArray("animated_sprite_node") groups=["brick_smooth", "drawn_sprite", "solid"]]
 z_index = -110
 script = ExtResource("1_df582")
+sprite_index_name = "cave_smooth"
+animated_sprite_node = NodePath("AnimatedSprite2D")
 object_name = "brick_smooth"
+editor_setup_finished = true
 depth = -110
 object_size = Vector2(16, 16)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
+z_index = -110
+z_as_relative = false
+sprite_frames = SubResource("SpriteFrames_0ewmh")
+animation = &"cave_smooth"
+autoplay = "cave_smooth"
+centered = false

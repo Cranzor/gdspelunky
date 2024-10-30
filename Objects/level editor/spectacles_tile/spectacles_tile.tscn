@@ -1,7 +1,31 @@
-[gd_scene load_steps=2 format=3 uid="uid://b0yndb12kmp5h"]
+[gd_scene load_steps=4 format=3 uid="uid://b0yndb12kmp5h"]
 
 [ext_resource type="Script" path="res://objects/level editor/spectacles_tile/spectacles_tile.gd" id="1_7e5xx"]
+[ext_resource type="Texture2D" uid="uid://wi8hnjxe0trt" path="res://sprites/level editor/spectacles_tile/spectacles_tile_0.png" id="2_n7h3e"]
 
-[node name="SpectaclesTile" type="Node2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_whjyw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_n7h3e")
+}],
+"loop": true,
+"name": &"spectacles_tile",
+"speed": 30.0
+}]
+
+[node name="SpectaclesTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node") groups=["drawn_sprite", "spectacles_tile"]]
 script = ExtResource("1_7e5xx")
+sprite_index_name = "spectacles_tile"
+animated_sprite_node = NodePath("AnimatedSprite2D")
 object_name = "spectacles_tile"
+editor_setup_finished = true
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
+z_as_relative = false
+sprite_frames = SubResource("SpriteFrames_whjyw")
+animation = &"spectacles_tile"
+autoplay = "spectacles_tile"
+centered = false

@@ -1,7 +1,40 @@
-[gd_scene load_steps=2 format=3 uid="uid://c05msw61s8n5s"]
+[gd_scene load_steps=5 format=3 uid="uid://c05msw61s8n5s"]
 
 [ext_resource type="Script" path="res://objects/collectibles/emerald_big/emerald_big.gd" id="1_pt4o7"]
+[ext_resource type="Texture2D" uid="uid://bj12ug8ihe6i7" path="res://sprites/items/treasures/emerald_big/emerald_big_0.png" id="2_ika8i"]
+[ext_resource type="Script" path="res://alarm.gd" id="3_yyr5i"]
 
-[node name="EmeraldBig" type="Node2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_1ydyk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ika8i")
+}],
+"loop": true,
+"name": &"emerald_big",
+"speed": 30.0
+}]
+
+[node name="EmeraldBig" type="Node2D" node_paths=PackedStringArray("animated_sprite_node", "alarm_0_countdown") groups=["drawn_sprite", "emerald_big", "treasure"]]
 script = ExtResource("1_pt4o7")
+sprite_index_name = "emerald_big"
+animated_sprite_node = NodePath("AnimatedSprite2D")
+sprite_offset = Vector2(4, 4)
 object_name = "emerald_big"
+alarm_0_countdown = NodePath("Alarms/Alarm0")
+editor_setup_finished = true
+depth = -101
+object_size = Vector2(8, 8)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
+z_as_relative = false
+sprite_frames = SubResource("SpriteFrames_1ydyk")
+animation = &"emerald_big"
+autoplay = "emerald_big"
+centered = false
+offset = Vector2(-4, -4)
+
+[node name="Alarms" type="Node" parent="."]
+
+[node name="Alarm0" type="Node" parent="Alarms"]
+script = ExtResource("3_yyr5i")

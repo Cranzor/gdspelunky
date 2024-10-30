@@ -1,7 +1,31 @@
-[gd_scene load_steps=2 format=3 uid="uid://b535suql4v5ca"]
+[gd_scene load_steps=4 format=3 uid="uid://b535suql4v5ca"]
 
 [ext_resource type="Script" path="res://objects/blocks/black_fade_up/black_fade_up.gd" id="1_v8281"]
+[ext_resource type="Texture2D" uid="uid://bybuadim0lauo" path="res://sprites/black_fade_up/black_fade_up_0.png" id="2_gifuk"]
 
-[node name="BlackFadeUp" type="Node2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_381rp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gifuk")
+}],
+"loop": true,
+"name": &"black_fade_up",
+"speed": 30.0
+}]
+
+[node name="BlackFadeUp" type="Node2D" node_paths=PackedStringArray("animated_sprite_node") groups=["black_fade_up", "menu"]]
 script = ExtResource("1_v8281")
+sprite_index_name = "black_fade_up"
+animated_sprite_node = NodePath("AnimatedSprite2D")
 object_name = "black_fade_up"
+editor_setup_finished = true
+depth = -4096
+object_size = Vector2(16, 17)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
+z_as_relative = false
+sprite_frames = SubResource("SpriteFrames_381rp")
+animation = &"black_fade_up"
+autoplay = "black_fade_up"
+centered = false

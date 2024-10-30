@@ -1,7 +1,31 @@
-[gd_scene load_steps=2 format=3 uid="uid://b3pa5xkft8ix4"]
+[gd_scene load_steps=4 format=3 uid="uid://b3pa5xkft8ix4"]
 
 [ext_resource type="Script" path="res://objects/other/title/multi_trophy/multi_trophy.gd" id="1_b0nll"]
+[ext_resource type="Texture2D" uid="uid://dj2dg7au6vtbr" path="res://sprites/other/title/multi_gold/multi_gold_0.png" id="2_1pgfo"]
 
-[node name="MultiTrophy" type="Node2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_gevfv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1pgfo")
+}],
+"loop": true,
+"name": &"multi_gold",
+"speed": 30.0
+}]
+
+[node name="MultiTrophy" type="Node2D" node_paths=PackedStringArray("animated_sprite_node") groups=["multi_trophy"]]
 script = ExtResource("1_b0nll")
+sprite_index_name = "multi_gold"
+animated_sprite_node = NodePath("AnimatedSprite2D")
 object_name = "multi_trophy"
+editor_setup_finished = true
+depth = -900
+object_size = Vector2(16, 16)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
+z_as_relative = false
+sprite_frames = SubResource("SpriteFrames_gevfv")
+animation = &"multi_gold"
+autoplay = "multi_gold"
+centered = false

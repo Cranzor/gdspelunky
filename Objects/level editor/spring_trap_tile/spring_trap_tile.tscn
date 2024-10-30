@@ -1,7 +1,31 @@
-[gd_scene load_steps=2 format=3 uid="uid://hckpahlspj8w"]
+[gd_scene load_steps=4 format=3 uid="uid://hckpahlspj8w"]
 
 [ext_resource type="Script" path="res://objects/level editor/spring_trap_tile/spring_trap_tile.gd" id="1_dpt1x"]
+[ext_resource type="Texture2D" uid="uid://cjt4er51iquoj" path="res://sprites/traps/spring_trap/spring_trap_0.png" id="2_m3o42"]
 
-[node name="SpringTrapTile" type="Node2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_0kk4b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_m3o42")
+}],
+"loop": true,
+"name": &"spring_trap",
+"speed": 30.0
+}]
+
+[node name="SpringTrapTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node") groups=["drawn_sprite", "spring_trap_tile"]]
 script = ExtResource("1_dpt1x")
+sprite_index_name = "spring_trap"
+animated_sprite_node = NodePath("AnimatedSprite2D")
 object_name = "spring_trap_tile"
+editor_setup_finished = true
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
+z_as_relative = false
+sprite_frames = SubResource("SpriteFrames_0kk4b")
+animation = &"spring_trap"
+autoplay = "spring_trap"
+centered = false

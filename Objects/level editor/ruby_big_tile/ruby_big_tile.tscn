@@ -1,7 +1,35 @@
-[gd_scene load_steps=2 format=3 uid="uid://5nh330bgyxfm"]
+[gd_scene load_steps=5 format=3 uid="uid://5nh330bgyxfm"]
 
 [ext_resource type="Script" path="res://objects/level editor/ruby_big_tile/ruby_big_tile.gd" id="1_msglb"]
+[ext_resource type="Texture2D" uid="uid://bchcc8rqss34r" path="res://sprites/level editor/ruby_big_tile/ruby_big_tile_0.png" id="2_to2ud"]
+[ext_resource type="Texture2D" uid="uid://c4qml2rtwdm4" path="res://sprites/level editor/ruby_big_tile/ruby_big_tile_ruby_big_tile.png" id="3_p80y1"]
 
-[node name="RubyBigTile" type="Node2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_rjlu8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_to2ud")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_p80y1")
+}],
+"loop": true,
+"name": &"ruby_big_tile",
+"speed": 30.0
+}]
+
+[node name="RubyBigTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node") groups=["drawn_sprite", "ruby_big_tile"]]
 script = ExtResource("1_msglb")
+sprite_index_name = "ruby_big_tile"
+animated_sprite_node = NodePath("AnimatedSprite2D")
 object_name = "ruby_big_tile"
+editor_setup_finished = true
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
+z_as_relative = false
+sprite_frames = SubResource("SpriteFrames_rjlu8")
+animation = &"ruby_big_tile"
+autoplay = "ruby_big_tile"
+centered = false

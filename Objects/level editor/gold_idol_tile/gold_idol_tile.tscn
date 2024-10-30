@@ -1,7 +1,31 @@
-[gd_scene load_steps=2 format=3 uid="uid://ddter4pmfqhjb"]
+[gd_scene load_steps=4 format=3 uid="uid://ddter4pmfqhjb"]
 
 [ext_resource type="Script" path="res://objects/level editor/gold_idol_tile/gold_idol_tile.gd" id="1_c4cd5"]
+[ext_resource type="Texture2D" uid="uid://be8io8c5nko5" path="res://sprites/level editor/gold_idol_tile/gold_idol_tile_0.png" id="2_hwroc"]
 
-[node name="GoldIdolTile" type="Node2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_fflg1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hwroc")
+}],
+"loop": true,
+"name": &"gold_idol_tile",
+"speed": 30.0
+}]
+
+[node name="GoldIdolTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node") groups=["drawn_sprite", "gold_idol_tile"]]
 script = ExtResource("1_c4cd5")
+sprite_index_name = "gold_idol_tile"
+animated_sprite_node = NodePath("AnimatedSprite2D")
 object_name = "gold_idol_tile"
+editor_setup_finished = true
+depth = -100
+object_size = Vector2(16, 16)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
+z_as_relative = false
+sprite_frames = SubResource("SpriteFrames_fflg1")
+animation = &"gold_idol_tile"
+autoplay = "gold_idol_tile"
+centered = false

@@ -1,12 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://3ui3v5o7nedx"]
+[gd_scene load_steps=5 format=3 uid="uid://3ui3v5o7nedx"]
 
 [ext_resource type="Script" path="res://objects/game/game.gd" id="1_aosp6"]
 [ext_resource type="FontFile" uid="uid://cjfa4ea02s5yi" path="res://fonts/main_font.png" id="2_jcdm3"]
 [ext_resource type="FontFile" uid="uid://dgd06bxddo4pq" path="res://fonts/small_font.png" id="3_7mteh"]
+[ext_resource type="Script" path="res://alarm.gd" id="4_mpdfx"]
 
-[node name="Game" type="Node2D" groups=["game"]]
+[node name="Game" type="Node2D" node_paths=PackedStringArray("alarm_0_countdown", "alarm_1_countdown", "alarm_2_countdown") groups=["game"]]
 script = ExtResource("1_aosp6")
 object_name = "game"
+alarm_0_countdown = NodePath("Alarms/Alarm0")
+alarm_1_countdown = NodePath("Alarms/Alarm1")
+alarm_2_countdown = NodePath("Alarms/Alarm2")
+editor_setup_finished = true
 
 [node name="UI" type="Control" parent="."]
 visible = false
@@ -103,3 +108,14 @@ offset_bottom = 103.0
 theme_override_colors/font_color = Color(1, 1, 0, 1)
 theme_override_fonts/font = ExtResource("3_7mteh")
 text = "YOU SET A NEW RECORD!"
+
+[node name="Alarms" type="Node" parent="."]
+
+[node name="Alarm0" type="Node" parent="Alarms"]
+script = ExtResource("4_mpdfx")
+
+[node name="Alarm1" type="Node" parent="Alarms"]
+script = ExtResource("4_mpdfx")
+
+[node name="Alarm2" type="Node" parent="Alarms"]
+script = ExtResource("4_mpdfx")

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" path="res://objects/basis/menu/menu.gd" id="1_2equn"]
 
-[node name="Menu" type="Node2D"]
+[node name="Menu" type="Node2D" groups=["menu"]]
 script = ExtResource("1_2equn")
 object_name = "menu"
+editor_setup_finished = true

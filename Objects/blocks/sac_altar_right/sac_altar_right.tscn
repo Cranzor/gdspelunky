@@ -1,7 +1,35 @@
-[gd_scene load_steps=2 format=3 uid="uid://coadut7itscio"]
+[gd_scene load_steps=5 format=3 uid="uid://coadut7itscio"]
 
 [ext_resource type="Script" path="res://objects/blocks/sac_altar_right/sac_altar_right.gd" id="1_s442o"]
+[ext_resource type="Texture2D" uid="uid://domf0ixtfx5n1" path="res://sprites/blocks/altars/sac_altar_right/sac_altar_right_0.png" id="2_mm7cb"]
+[ext_resource type="Texture2D" uid="uid://bmyqlmxxtc23y" path="res://sprites/blocks/altars/sac_altar_right/sac_altar_right_sac_altar_right.png" id="3_hcg11"]
 
-[node name="SacAltarRight" type="Node2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_uy2lv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_mm7cb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_hcg11")
+}],
+"loop": true,
+"name": &"sac_altar_right",
+"speed": 30.0
+}]
+
+[node name="SacAltarRight" type="Node2D" node_paths=PackedStringArray("animated_sprite_node") groups=["drawn_sprite", "sac_altar_left", "sac_altar_right", "solid"]]
 script = ExtResource("1_s442o")
+sprite_index_name = "sac_altar_right"
+animated_sprite_node = NodePath("AnimatedSprite2D")
 object_name = "sac_altar_right"
+editor_setup_finished = true
+depth = -110
+object_size = Vector2(16, 16)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
+z_as_relative = false
+sprite_frames = SubResource("SpriteFrames_uy2lv")
+animation = &"sac_altar_right"
+autoplay = "sac_altar_right"
+centered = false

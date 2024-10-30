@@ -1,7 +1,31 @@
-[gd_scene load_steps=2 format=3 uid="uid://dd35hg5lgor25"]
+[gd_scene load_steps=4 format=3 uid="uid://dd35hg5lgor25"]
 
 [ext_resource type="Script" path="res://objects/other/menu_top/menu_top.gd" id="1_yfkc1"]
+[ext_resource type="Texture2D" uid="uid://ffkg2jfpykal" path="res://sprites/other/menu_top/menu_top_0.png" id="2_54a4q"]
 
-[node name="MenuTop" type="Node2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_abu0r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_54a4q")
+}],
+"loop": true,
+"name": &"menu_top",
+"speed": 30.0
+}]
+
+[node name="MenuTop" type="Node2D" node_paths=PackedStringArray("animated_sprite_node") groups=["menu", "menu_top"]]
 script = ExtResource("1_yfkc1")
+sprite_index_name = "menu_top"
+animated_sprite_node = NodePath("AnimatedSprite2D")
 object_name = "menu_top"
+editor_setup_finished = true
+depth = -1
+object_size = Vector2(16, 17)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
+z_as_relative = false
+sprite_frames = SubResource("SpriteFrames_abu0r")
+animation = &"menu_top"
+autoplay = "menu_top"
+centered = false

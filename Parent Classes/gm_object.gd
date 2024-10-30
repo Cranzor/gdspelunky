@@ -12,27 +12,31 @@ var solid = false
 
 var moving_object = false
 
+@export_group("Sprite")
 @export var sprite_index_name: String
-
 @export var animated_sprite_node: AnimatedSprite2D
+@export var sprite_offset = Vector2(0, 0)
+@export_group("")
 
 @export var object_name: String
 var object_hash: String
 
 const ALARM = preload("res://alarm.tscn")
 
-var alarm_0_countdown: Node
-var alarm_1_countdown: Node
-var alarm_2_countdown: Node
-var alarm_3_countdown: Node
-var alarm_4_countdown: Node
-var alarm_5_countdown: Node
-var alarm_6_countdown: Node
-var alarm_7_countdown: Node
-var alarm_8_countdown: Node
-var alarm_9_countdown: Node
-var alarm_10_countdown: Node
-var alarm_11_countdown: Node
+@export_group("Alarms")
+@export var alarm_0_countdown: Node
+@export var alarm_1_countdown: Node
+@export var alarm_2_countdown: Node
+@export var alarm_3_countdown: Node
+@export var alarm_4_countdown: Node
+@export var alarm_5_countdown: Node
+@export var alarm_6_countdown: Node
+@export var alarm_7_countdown: Node
+@export var alarm_8_countdown: Node
+@export var alarm_9_countdown: Node
+@export var alarm_10_countdown: Node
+@export var alarm_11_countdown: Node
+@export_group("")
 
 @export var editor_setup_finished: bool = false
 
@@ -144,7 +148,6 @@ var y_vel = 0
 var x_acc = 0
 var y_acc = 0
 
-@export var sprite_offset = Vector2(0, 0)
 var object_id = ''
 
 @export var object_size: Vector2 #--- created by me for collision purposes
@@ -305,12 +308,14 @@ func object_setup():
 	var object_database = object_database.object_database
 	var object_entry = object_database[object_name]
 	
-	groups_setup(object_entry)
-	depth_setup(object_entry)
-	sprite_setup(object_entry)
-	bounding_box_setup()
-	#collision_setup()
-	alarms_setup(object_entry)
+	#groups_setup(object_entry)
+	#depth_setup(object_entry)
+	#sprite_setup(object_entry)
+	#bounding_box_setup()
+	##collision_setup()
+	#alarms_setup(object_entry)
+	connect_alarms(object_entry)
+	camera_setup()
 	run_create_function(self)
 	
 	#--- for flare_spark
@@ -459,7 +464,16 @@ func alarms_setup(object_entry):
 			new_alarm.set_physics_process(true)
 			new_alarm.timeout.connect(alarm_function)
 			add_child(new_alarm)
+
+func connect_alarms(object_entry):
+	var alarm_nodes = {alarm_0_countdown : "alarm_0", alarm_1_countdown : "alarm_1", alarm_2_countdown : "alarm_2", alarm_3_countdown : "alarm_3", alarm_4_countdown : "alarm_4", alarm_5_countdown : "alarm_5", \
+				alarm_6_countdown : "alarm_6", alarm_7_countdown : "alarm_7", alarm_8_countdown : "alarm_8", alarm_9_countdown : "alarm_9", alarm_10_countdown : "alarm_10", alarm_11_countdown : "alarm_11"}
 	
+	for alarm in alarm_nodes:
+		if alarm:
+			var alarm_function = Callable(self, alarm_nodes[alarm])
+			alarm.timeout.connect(alarm_function)
+
 func run_step_event(obj):
 	if obj.has_method("step"):
 		obj.step()
