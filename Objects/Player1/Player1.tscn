@@ -19,6 +19,7 @@ theme_override_fonts/font = ExtResource("485_i3dxl")
 text = "WALK"
 script = ExtResource("486_8kwyl")
 
-[node name="View" parent="." instance=ExtResource("4_0a32v")]
+[node name="View" type="Camera2D" parent="." groups=["view"] instance=ExtResource("4_0a32v")]
 limit_left = 0
 limit_top = 0
+drag_horizontal_enabled = true

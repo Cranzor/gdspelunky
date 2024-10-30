@@ -4,6 +4,7 @@
 
 [node name="Item" type="Node2D"]
 script = ExtResource("1_3w3yd")
+object_name = "item"
 
 [node name="Alarm2" type="Timer" parent="."]
 

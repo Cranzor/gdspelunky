@@ -4,3 +4,4 @@
 
 [node name="Gamepad" type="Node2D" groups=["gamepad"]]
 script = ExtResource("1_kv2fu")
+object_name = "gamepad"

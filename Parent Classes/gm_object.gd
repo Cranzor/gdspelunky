@@ -34,6 +34,8 @@ var alarm_9_countdown: Node
 var alarm_10_countdown: Node
 var alarm_11_countdown: Node
 
+@export var editor_setup_finished: bool = false
+
 @export var depth: int = 0:
 	set(new_depth):
 		var minimum_depth = -4096

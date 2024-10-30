@@ -2,8 +2,7 @@
 
 [ext_resource type="Script" path="res://objects/other/intro/bat_intro/bat_intro.gd" id="1_wsyfv"]
 
-[node name="BatIntro" type="Node2D" node_paths=PackedStringArray("animated_sprite_node") groups=["bat_intro"]]
+[node name="BatIntro" type="Node2D" groups=["bat_intro"]]
 script = ExtResource("1_wsyfv")
 sprite_index_name = "bat_left"
-animated_sprite_node = NodePath("")
 object_name = "bat_intro"

@@ -18,10 +18,7 @@ func objects_setup():
 		var node = ResourceLoader.load(path, "", 0)
 		node = node.instantiate()
 		
-		if node is Node2D or node is CanvasLayer: #--- meaning no script is attached yet or doesn't extend GMObject
-			pass
-		
-		else:
+		if node is GMObject:
 			#--- get all object paths. open scene from path, get edited scene root, run needed things, and then save the scene
 			#get_all_object_paths()
 			#for path in all_object_paths:
@@ -31,9 +28,8 @@ func objects_setup():
 				
 			#var node = get_editor_interface().get_selection().get_selected_nodes()[0]
 			#print(node.get_groups())
-			
-			print(node)
-			
+			node.editor_setup_finished = true
+			print("hello")
 			var object_database = object_database.object_database
 			var object_entry = object_database[node.object_name]
 			#
@@ -59,10 +55,12 @@ func objects_setup():
 			#--- set up alarms
 			#alarms_setup(object_entry, node)
 			
-			#var scene = PackedScene.new()
-			#var result = scene.pack(node)
-			#if result == OK:
-				#ResourceSaver.save(scene, path)
+			var scene = PackedScene.new()
+			var result = scene.pack(node)
+			if result == OK:
+				print("saved")
+				ResourceSaver.save(scene, path)
+				
 				#EditorInterface.reload_scene_from_path(path)
 
 func groups_setup(object_entry, node):

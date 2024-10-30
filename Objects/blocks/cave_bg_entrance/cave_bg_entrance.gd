@@ -1,9 +1,16 @@
-extends DrawnSprite #---changing this to DrawnSprite
+extends GMObject
+
 
 func _ready():
-	#--- set size
-	object_size = Vector2(16, 16)
+	object_setup()
 
-	#--- set depth
-	depth = -998
-	z_index = depth
+
+func _physics_process(_delta):
+	object_tick()
+
+
+func _process(delta):
+	object_process(delta)
+
+
+#--- Object functions
