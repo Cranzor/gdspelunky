@@ -1,7 +1,4 @@
-extends Node2D
-
-var object_size
-var depth
+extends GMObject #--- [FLAG] double check this
 
 var start
 var start_pressed

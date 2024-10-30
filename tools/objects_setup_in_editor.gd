@@ -12,54 +12,58 @@ func _run() -> void:
 
 func objects_setup():
 	get_all_object_paths()
+
 	for path in all_object_paths:
+		print(path)
 		var node = ResourceLoader.load(path, "", 0)
 		node = node.instantiate()
 		
-		#--- get all object paths. open scene from path, get edited scene root, run needed things, and then save the scene
-		#get_all_object_paths()
-		#for path in all_object_paths:
-			#print(path)
-			#get_editor_interface().open_scene_from_path(path)
-			#print(get_editor_interface().get_edited_scene_root())
+		if node is Node2D or node is CanvasLayer: #--- meaning no script is attached yet or doesn't extend GMObject
+			pass
+		
+		else:
+			#--- get all object paths. open scene from path, get edited scene root, run needed things, and then save the scene
+			#get_all_object_paths()
+			#for path in all_object_paths:
+				#print(path)
+				#get_editor_interface().open_scene_from_path(path)
+				#print(get_editor_interface().get_edited_scene_root())
+				
+			#var node = get_editor_interface().get_selection().get_selected_nodes()[0]
+			#print(node.get_groups())
 			
-		#var node = get_editor_interface().get_selection().get_selected_nodes()[0]
-		#print(node.get_groups())
-		
-		#print(node)
-		
-		var object_database = object_database.object_database
-		var object_entry = object_database[node.object_name]
-		#
-		#print(node.owner)
-		
-		#--- add to groups
-		#var groups = groups_setup(object_entry, node)
-		#for group in groups:
-			#node.add_to_group(group, true)
-		
-		#--- set depth
-		#node.depth = depth_setup(object_entry)
-		
-		#--- set up sprite
-		var new_animated_sprite = sprite_setup(object_entry, node)
-		print(new_animated_sprite)
-		node.animated_sprite_node = new_animated_sprite
-		
-		#
-		##--- set up bounding box
-		#bounding_box_setup(node)
-		
-		#--- set up alarms
-		#alarms_setup(object_entry, node)
-		
-		var scene = PackedScene.new()
-		var result = scene.pack(node)
-		if result == OK:
-			ResourceSaver.save(scene, path)
-			#EditorInterface.reload_scene_from_path(path)
-		
-		print("finished")	
+			print(node)
+			
+			var object_database = object_database.object_database
+			var object_entry = object_database[node.object_name]
+			#
+			#print(node.owner)
+			
+			#--- add to groups
+			#var groups = groups_setup(object_entry, node)
+			#for group in groups:
+				#node.add_to_group(group, true)
+			
+			#--- set depth
+			#node.depth = depth_setup(object_entry)
+			
+			#--- set up sprite
+			#var new_animated_sprite = sprite_setup(object_entry, node)
+			#print(new_animated_sprite)
+			#node.animated_sprite_node = new_animated_sprite
+			
+			#
+			##--- set up bounding box
+			#bounding_box_setup(node)
+			
+			#--- set up alarms
+			#alarms_setup(object_entry, node)
+			
+			#var scene = PackedScene.new()
+			#var result = scene.pack(node)
+			#if result == OK:
+				#ResourceSaver.save(scene, path)
+				#EditorInterface.reload_scene_from_path(path)
 
 func groups_setup(object_entry, node):
 	var groups = object_entry['groups']
