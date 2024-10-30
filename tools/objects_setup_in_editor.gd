@@ -8,46 +8,58 @@ var sprites = Sprites.new()
 var all_object_paths = []
 
 func _run() -> void:
-	#var node = get_editor_interface().get_selection().get_selected_nodes()[0]
-	#var node = ResourceLoader.load("res://objects/enemies/snake/snake.tscn", "", 0)
-	#node = node.instantiate()
-	
-	#--- get all object paths. open scene from path, get edited scene root, run needed things, and then save the scene
+	objects_setup()
+
+func objects_setup():
 	get_all_object_paths()
 	for path in all_object_paths:
-		get_editor_interface().open_scene_from_path("res://objects/effects/blood/blood.tscn")
-		print(get_editor_interface().get_edited_scene_root())
-	#var node = get_editor_interface().get_selection().get_selected_nodes()[0]
-	#print(node.get_groups())
-	
-	#print(node)
-	
-	#var object_database = object_database.object_database
-	#var object_entry = object_database[node.object_name]
-	#
-	#print(node.owner)
-	
-	#--- add to groups
-	#var groups = groups_setup(object_entry, node)
-	#for group in groups:
-		#node.add_to_group(group, true)
-	
-	#--- set depth
-	#node.depth = depth_setup(object_entry)
-	
-	#--- set up sprite
-	#var new_animated_sprite = sprite_setup(object_entry, node)
-	#print(new_animated_sprite)
-	#node.animated_sprite_node = new_animated_sprite
-	#
-	##--- set up bounding box
-	#bounding_box_setup(node)
-	
-	#--- set up alarms
-	#alarms_setup(object_entry, node)
-	
-	print("finished")
-	
+		var node = ResourceLoader.load(path, "", 0)
+		node = node.instantiate()
+		
+		#--- get all object paths. open scene from path, get edited scene root, run needed things, and then save the scene
+		#get_all_object_paths()
+		#for path in all_object_paths:
+			#print(path)
+			#get_editor_interface().open_scene_from_path(path)
+			#print(get_editor_interface().get_edited_scene_root())
+			
+		#var node = get_editor_interface().get_selection().get_selected_nodes()[0]
+		#print(node.get_groups())
+		
+		#print(node)
+		
+		var object_database = object_database.object_database
+		var object_entry = object_database[node.object_name]
+		#
+		#print(node.owner)
+		
+		#--- add to groups
+		#var groups = groups_setup(object_entry, node)
+		#for group in groups:
+			#node.add_to_group(group, true)
+		
+		#--- set depth
+		#node.depth = depth_setup(object_entry)
+		
+		#--- set up sprite
+		var new_animated_sprite = sprite_setup(object_entry, node)
+		print(new_animated_sprite)
+		node.animated_sprite_node = new_animated_sprite
+		
+		#
+		##--- set up bounding box
+		#bounding_box_setup(node)
+		
+		#--- set up alarms
+		#alarms_setup(object_entry, node)
+		
+		var scene = PackedScene.new()
+		var result = scene.pack(node)
+		if result == OK:
+			ResourceSaver.save(scene, path)
+			#EditorInterface.reload_scene_from_path(path)
+		
+		print("finished")	
 
 func groups_setup(object_entry, node):
 	var groups = object_entry['groups']
@@ -78,7 +90,7 @@ func sprite_setup(object_entry, node):
 		var sprite_folder_path = sprite_entry["folder_path"]
 		var new_animated_sprite = AnimatedSprite2D.new()
 		var sprite_frames = SpriteFrames.new()
-	
+		node.animated_sprite_node = new_animated_sprite
 		sprite_frames = sprite_animation_setup(sprite_to_add, sprite_frames)
 		sprite_frames.remove_animation("default")
 		
@@ -92,7 +104,7 @@ func sprite_setup(object_entry, node):
 		new_animated_sprite.autoplay = sprite_to_add
 		set_sprite_offset(sprite_to_add, node)
 		node.sprite_index_name = sprite_to_add
-		new_animated_sprite.owner = EditorInterface.get_edited_scene_root()
+		new_animated_sprite.owner = node
 		return new_animated_sprite
 		
 func sprite_animation_setup(sprite_name, sprite_frames):
