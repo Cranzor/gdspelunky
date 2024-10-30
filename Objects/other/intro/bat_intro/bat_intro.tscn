@@ -2,9 +2,8 @@
 
 [ext_resource type="Script" path="res://objects/other/intro/bat_intro/bat_intro.gd" id="1_wsyfv"]
 
-[node name="BatIntro" type="Node2D" groups=["bat_intro"]]
+[node name="BatIntro" type="Node2D" node_paths=PackedStringArray("animated_sprite_node") groups=["bat_intro"]]
 script = ExtResource("1_wsyfv")
 sprite_index_name = "bat_left"
-animated_sprite_node = Object(AnimatedSprite2D,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"physics_interpolation_mode":0,"auto_translate_mode":0,"editor_description":"","visible":true,"modulate":Color(1, 1, 1, 1),"self_modulate":Color(1, 1, 1, 1),"show_behind_parent":false,"top_level":false,"clip_children":0,"light_mask":1,"visibility_layer":1,"z_index":0,"z_as_relative":false,"y_sort_enabled":false,"texture_filter":0,"texture_repeat":0,"material":null,"use_parent_material":false,"position":Vector2(0, 0),"rotation":0.0,"scale":Vector2(1, 1),"skew":0.0,"sprite_frames":null,"animation":&"bat_left","autoplay":"bat_left","frame_progress":0.433598,"speed_scale":1.0,"centered":false,"offset":Vector2(0, 0),"flip_h":false,"flip_v":false,"script":null)
-
+animated_sprite_node = NodePath("")
 object_name = "bat_intro"

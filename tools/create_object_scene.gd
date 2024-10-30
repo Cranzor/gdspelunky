@@ -4,10 +4,11 @@ extends EditorScript
 var object_string = "vine"
 var all_remaining_objects = []
 var all_finished_objects = []
+var all_object_paths = []
 
 func _run():
 	get_all_uncompleted_objects()
-	#get_all_completed_objects()
+	get_all_completed_objects()
 	#print(all_remaining_objects)
 	
 	#make_folder_with_scene(object_string)
@@ -18,9 +19,11 @@ func _run():
 	
 	#print(all_remaining_objects)
 	
-	for object in all_remaining_objects:
-		#make_folder_with_scene(object)
-		edit_script(object)
+	get_all_object_paths()
+	print(all_object_paths)
+	#for object in all_remaining_objects:
+		##make_folder_with_scene(object)
+		#edit_script(object)
 	#print("done")
 
 func make_folder_with_scene(object_name):
@@ -115,6 +118,17 @@ func get_all_completed_objects():
 	var search = regex.search_all(content)
 	for result in search:
 		all_finished_objects.append(result.strings[1])
+
+func get_all_object_paths():
+	var objects_script = "res://objects.gd"
+	var opened_file = FileAccess.open(objects_script, FileAccess.READ)
+	var content = opened_file.get_as_text()
+	
+	var regex = RegEx.new()
+	regex.compile("res://.+tscn")
+	var search = regex.search_all(content)
+	for result in search:
+		all_object_paths.append(result.strings[0])
 
 func get_script_from_object_name(object_name):
 	var objects_script = "res://objects.gd"

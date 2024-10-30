@@ -5,12 +5,27 @@ var object_database = ObjectDatabase.new()
 var gm_object = GMObject.new()
 var sprites = Sprites.new()
 
+var all_object_paths = []
+
 func _run() -> void:
-	var node = get_editor_interface().get_selection().get_selected_nodes()[0]
+	#var node = get_editor_interface().get_selection().get_selected_nodes()[0]
+	#var node = ResourceLoader.load("res://objects/enemies/snake/snake.tscn", "", 0)
+	#node = node.instantiate()
+	
+	#--- get all object paths. open scene from path, get edited scene root, run needed things, and then save the scene
+	get_all_object_paths()
+	for path in all_object_paths:
+		get_editor_interface().open_scene_from_path("res://objects/effects/blood/blood.tscn")
+		print(get_editor_interface().get_edited_scene_root())
+	#var node = get_editor_interface().get_selection().get_selected_nodes()[0]
 	#print(node.get_groups())
 	
-	var object_database = object_database.object_database
-	var object_entry = object_database[node.object_name]
+	#print(node)
+	
+	#var object_database = object_database.object_database
+	#var object_entry = object_database[node.object_name]
+	#
+	#print(node.owner)
 	
 	#--- add to groups
 	#var groups = groups_setup(object_entry, node)
@@ -29,7 +44,7 @@ func _run() -> void:
 	#bounding_box_setup(node)
 	
 	#--- set up alarms
-	alarms_setup(object_entry, node)
+	#alarms_setup(object_entry, node)
 	
 	print("finished")
 	
@@ -129,7 +144,7 @@ func alarms_setup(object_entry, node):
 	
 	var alarms_holder
 	if events != []:
-		alarms_holder = Node.new()
+		alarms_holder  = Node.new()
 		alarms_holder.name = "Alarms"
 		node.add_child(alarms_holder)
 		alarms_holder.owner = EditorInterface.get_edited_scene_root()
@@ -145,3 +160,14 @@ func alarms_setup(object_entry, node):
 			new_alarm.name = event.to_pascal_case()
 			alarms_holder.add_child(new_alarm)
 			new_alarm.owner = EditorInterface.get_edited_scene_root()
+
+func get_all_object_paths():
+	var objects_script = "res://objects.gd"
+	var opened_file = FileAccess.open(objects_script, FileAccess.READ)
+	var content = opened_file.get_as_text()
+	
+	var regex = RegEx.new()
+	regex.compile("res://.+tscn")
+	var search = regex.search_all(content)
+	for result in search:
+		all_object_paths.append(result.strings[0])
