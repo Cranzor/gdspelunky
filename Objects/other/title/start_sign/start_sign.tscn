@@ -1,31 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://biv6cnjcs3tsr"]
+[gd_scene load_steps=2 format=3 uid="uid://biv6cnjcs3tsr"]
 
 [ext_resource type="Script" path="res://objects/other/title/start_sign/start_sign.gd" id="1_q1u4d"]
-[ext_resource type="Texture2D" uid="uid://s63me8seqrrr" path="res://sprites/other/title/start_sign/start_sign_0.png" id="2_iros7"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ij6ah"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_iros7")
-}],
-"loop": true,
-"name": &"start_sign",
-"speed": 30.0
-}]
-
-[node name="StartSign" type="Node2D" node_paths=PackedStringArray("animated_sprite_node") groups=["start_sign"]]
+[node name="StartSign" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_q1u4d")
 sprite_index_name = "start_sign"
-animated_sprite_node = NodePath("AnimatedSprite2D")
+animated_sprite_node = NodePath("")
 object_name = "start_sign"
-editor_setup_finished = true
-depth = -999
-object_size = Vector2(48, 32)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
-z_as_relative = false
-sprite_frames = SubResource("SpriteFrames_ij6ah")
-animation = &"start_sign"
-autoplay = "start_sign"
-centered = false

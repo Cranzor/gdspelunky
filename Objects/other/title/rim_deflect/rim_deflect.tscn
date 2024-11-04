@@ -1,31 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cokh6e8hnq6ms"]
+[gd_scene load_steps=2 format=3 uid="uid://cokh6e8hnq6ms"]
 
 [ext_resource type="Script" path="res://objects/other/title/rim_deflect/rim_deflect.gd" id="1_6v28t"]
-[ext_resource type="Texture2D" uid="uid://cr5o8n50tx4k5" path="res://sprites/other/rim_deflect/rim_deflect_0.png" id="2_nm6y5"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_5gdfd"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_nm6y5")
-}],
-"loop": true,
-"name": &"rim_deflect",
-"speed": 30.0
-}]
-
-[node name="RimDeflect" type="Node2D" node_paths=PackedStringArray("animated_sprite_node") groups=["rim_deflect"]]
+[node name="RimDeflect" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_6v28t")
 sprite_index_name = "rim_deflect"
-animated_sprite_node = NodePath("AnimatedSprite2D")
+animated_sprite_node = NodePath("")
 object_name = "rim_deflect"
-editor_setup_finished = true
-depth = -99
-object_size = Vector2(16, 16)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
-z_as_relative = false
-sprite_frames = SubResource("SpriteFrames_5gdfd")
-animation = &"rim_deflect"
-autoplay = "rim_deflect"
-centered = false

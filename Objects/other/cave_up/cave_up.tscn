@@ -1,30 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cjermd7q563cp"]
+[gd_scene load_steps=2 format=3 uid="uid://cjermd7q563cp"]
 
 [ext_resource type="Script" path="res://objects/other/cave_up/cave_up.gd" id="1_lx08b"]
-[ext_resource type="Texture2D" uid="uid://cbiru5kajsefr" path="res://sprites/blocks/mines/cave_up/cave_up_0.png" id="2_mor6b"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_xwnpg"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_mor6b")
-}],
-"loop": true,
-"name": &"cave_up",
-"speed": 30.0
-}]
-
-[node name="CaveUp" type="Node2D" node_paths=PackedStringArray("animated_sprite_node") groups=["cave_up", "drawn_sprite"]]
+[node name="CaveUp" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_lx08b")
 sprite_index_name = "cave_up"
-animated_sprite_node = NodePath("AnimatedSprite2D")
+animated_sprite_node = NodePath("")
 object_name = "cave_up"
-editor_setup_finished = true
-object_size = Vector2(16, 16)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
-z_as_relative = false
-sprite_frames = SubResource("SpriteFrames_xwnpg")
-animation = &"cave_up"
-autoplay = "cave_up"
-centered = false

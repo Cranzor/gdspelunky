@@ -1,31 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://csvacajjnt5hw"]
+[gd_scene load_steps=2 format=3 uid="uid://csvacajjnt5hw"]
 
 [ext_resource type="Script" path="res://objects/level editor/web_cannon_tile/web_cannon_tile.gd" id="1_h3asm"]
-[ext_resource type="Texture2D" uid="uid://biyjqaqohsgdh" path="res://sprites/level editor/web_cannon_tile/web_cannon_tile_0.png" id="2_tr80b"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_0yuyd"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_tr80b")
-}],
-"loop": true,
-"name": &"web_cannon_tile",
-"speed": 30.0
-}]
-
-[node name="WebCannonTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node") groups=["drawn_sprite", "web_cannon_tile"]]
+[node name="WebCannonTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_h3asm")
 sprite_index_name = "web_cannon_tile"
-animated_sprite_node = NodePath("AnimatedSprite2D")
+animated_sprite_node = NodePath("")
 object_name = "web_cannon_tile"
-editor_setup_finished = true
-depth = -100
-object_size = Vector2(16, 16)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
-z_as_relative = false
-sprite_frames = SubResource("SpriteFrames_0yuyd")
-animation = &"web_cannon_tile"
-autoplay = "web_cannon_tile"
-centered = false

@@ -1,31 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://r60kgv3fo74a"]
+[gd_scene load_steps=2 format=3 uid="uid://r60kgv3fo74a"]
 
 [ext_resource type="Script" path="res://objects/level editor/lava_tile/lava_tile.gd" id="1_l12bf"]
-[ext_resource type="Texture2D" uid="uid://dkwc10xfss8q0" path="res://sprites/blocks/water/lava/lava_0.png" id="2_bmpmn"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ro0k8"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_bmpmn")
-}],
-"loop": true,
-"name": &"lava",
-"speed": 30.0
-}]
-
-[node name="LavaTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node") groups=["drawn_sprite", "lava_tile"]]
+[node name="LavaTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_l12bf")
 sprite_index_name = "lava"
-animated_sprite_node = NodePath("AnimatedSprite2D")
+animated_sprite_node = NodePath("")
 object_name = "lava_tile"
-editor_setup_finished = true
-depth = -100
-object_size = Vector2(16, 16)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
-z_as_relative = false
-sprite_frames = SubResource("SpriteFrames_ro0k8")
-animation = &"lava"
-autoplay = "lava"
-centered = false

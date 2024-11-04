@@ -1,31 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://w046e4anhe7u"]
+[gd_scene load_steps=2 format=3 uid="uid://w046e4anhe7u"]
 
 [ext_resource type="Script" path="res://objects/other/intro/intro_bg/intro_bg.gd" id="1_qnpa4"]
-[ext_resource type="Texture2D" uid="uid://b0820mpyv75kh" path="res://sprites/other/intro/intro_bg/intro_bg_0.png" id="2_df7qw"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_d0dhe"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_df7qw")
-}],
-"loop": true,
-"name": &"intro_bg",
-"speed": 30.0
-}]
-
-[node name="IntroBg" type="Node2D" node_paths=PackedStringArray("animated_sprite_node") groups=["intro_bg"]]
+[node name="IntroBg" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_qnpa4")
 sprite_index_name = "intro_bg"
-animated_sprite_node = NodePath("AnimatedSprite2D")
+animated_sprite_node = NodePath("")
 object_name = "intro_bg"
-editor_setup_finished = true
-depth = -4096
-object_size = Vector2(480, 112)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
-z_as_relative = false
-sprite_frames = SubResource("SpriteFrames_d0dhe")
-animation = &"intro_bg"
-autoplay = "intro_bg"
-centered = false

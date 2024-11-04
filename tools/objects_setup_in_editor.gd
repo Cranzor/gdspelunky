@@ -8,7 +8,7 @@ var sprites = Sprites.new()
 var all_object_paths = []
 
 func _run() -> void:
-	objects_setup()
+	objects_reset()
 
 func objects_setup():
 	get_all_object_paths()
@@ -73,10 +73,13 @@ func objects_reset():
 			##--- reset depth
 			node.depth = 0
 			#
-			##--- delete all children (sprites and alarms)
+			##--- delete sprite and alarms
 			var node_children = node.get_children()
 			for child in node_children:
-				node.remove_child(child)
+				if child.name == "AnimatedSprite2D":
+					node.remove_child(child)
+				elif child.name == "Alarms":
+					node.remove_child(child)
 			#
 			##-- reset bounding box
 			node.object_size = Vector2(0, 0)

@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" path="res://objects/basis/frill/frill.gd" id="1_oilre"]
 
-[node name="Frill" type="Node2D" groups=["drawn_sprite", "frill"]]
+[node name="Frill" type="Node2D"]
 script = ExtResource("1_oilre")
 object_name = "frill"
-editor_setup_finished = true

@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" path="res://objects/basis/character/character.gd" id="1_8lhf6"]
 
-[node name="Character" type="Node2D" groups=["character", "drawn_sprite"]]
+[node name="Character" type="Node2D"]
 script = ExtResource("1_8lhf6")
 object_name = "character"
-editor_setup_finished = true

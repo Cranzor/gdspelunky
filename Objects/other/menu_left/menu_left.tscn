@@ -1,31 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://jlo67gkaninn"]
+[gd_scene load_steps=2 format=3 uid="uid://jlo67gkaninn"]
 
 [ext_resource type="Script" path="res://objects/other/menu_left/menu_left.gd" id="1_menco"]
-[ext_resource type="Texture2D" uid="uid://bwi32v3nj532j" path="res://sprites/other/menu_left/menu_left_0.png" id="2_rnm45"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_f72f4"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_rnm45")
-}],
-"loop": true,
-"name": &"menu_left",
-"speed": 30.0
-}]
-
-[node name="MenuLeft" type="Node2D" node_paths=PackedStringArray("animated_sprite_node") groups=["menu", "menu_left"]]
+[node name="MenuLeft" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_menco")
 sprite_index_name = "menu_left"
-animated_sprite_node = NodePath("AnimatedSprite2D")
+animated_sprite_node = NodePath("")
 object_name = "menu_left"
-editor_setup_finished = true
-depth = -1
-object_size = Vector2(16, 16)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
-z_as_relative = false
-sprite_frames = SubResource("SpriteFrames_f72f4")
-animation = &"menu_left"
-autoplay = "menu_left"
-centered = false

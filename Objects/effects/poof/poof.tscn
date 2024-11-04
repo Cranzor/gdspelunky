@@ -1,54 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dw32lrcbmraye"]
+[gd_scene load_steps=2 format=3 uid="uid://dw32lrcbmraye"]
 
 [ext_resource type="Script" path="res://objects/effects/poof/poof.gd" id="1_cjwki"]
-[ext_resource type="Texture2D" uid="uid://beoboar3hgf0o" path="res://sprites/effects/poof/poof_0.png" id="2_d1r5k"]
-[ext_resource type="Texture2D" uid="uid://cpisub83tj72k" path="res://sprites/effects/poof/poof_1.png" id="3_86wlb"]
-[ext_resource type="Texture2D" uid="uid://dv4lc7i1kbjgx" path="res://sprites/effects/poof/poof_2.png" id="4_edanm"]
-[ext_resource type="Texture2D" uid="uid://d38uma2qc08pi" path="res://sprites/effects/poof/poof_3.png" id="5_0mqpp"]
-[ext_resource type="Texture2D" uid="uid://3lobl62mp4do" path="res://sprites/effects/poof/poof_4.png" id="6_rtcvh"]
-[ext_resource type="Texture2D" uid="uid://wip7u2ol36f0" path="res://sprites/effects/poof/poof_5.png" id="7_qe4ec"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_8xnut"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_d1r5k")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_86wlb")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_edanm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_0mqpp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_rtcvh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_qe4ec")
-}],
-"loop": true,
-"name": &"poof",
-"speed": 30.0
-}]
-
-[node name="Poof" type="Node2D" node_paths=PackedStringArray("animated_sprite_node") groups=["drawn_sprite", "poof"]]
+[node name="Poof" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -1
 script = ExtResource("1_cjwki")
 sprite_index_name = "poof"
-animated_sprite_node = NodePath("AnimatedSprite2D")
+animated_sprite_node = NodePath("")
 sprite_offset = Vector2(4, 4)
 object_name = "poof"
-editor_setup_finished = true
-depth = -1
-object_size = Vector2(8, 8)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
-z_as_relative = false
-sprite_frames = SubResource("SpriteFrames_8xnut")
-animation = &"poof"
-autoplay = "poof"
-centered = false
-offset = Vector2(-4, -4)

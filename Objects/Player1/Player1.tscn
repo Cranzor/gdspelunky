@@ -1,39 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://dxk74orkbwm5u"]
+[gd_scene load_steps=5 format=3 uid="uid://dxk74orkbwm5u"]
 
 [ext_resource type="Script" path="res://objects/player1/player1.gd" id="1_e0vak"]
 [ext_resource type="PackedScene" uid="uid://bft8urcdv7lh0" path="res://view.tscn" id="4_0a32v"]
-[ext_resource type="Texture2D" uid="uid://dbfljnxxluub6" path="res://sprites/character/main dude/stand_left/stand_left_0.png" id="5_iulog"]
-[ext_resource type="Script" path="res://alarm.gd" id="6_kqt6y"]
 [ext_resource type="FontFile" uid="uid://dgd06bxddo4pq" path="res://fonts/small_font.png" id="485_i3dxl"]
 [ext_resource type="Script" path="res://debug_player_state.gd" id="486_8kwyl"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_d3eak"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_iulog")
-}],
-"loop": true,
-"name": &"stand_left",
-"speed": 30.0
-}]
-
-[node name="Player1" type="Node2D" node_paths=PackedStringArray("animated_sprite_node", "alarm_0_countdown", "alarm_1_countdown", "alarm_2_countdown", "alarm_3_countdown", "alarm_4_countdown", "alarm_10_countdown", "alarm_11_countdown") groups=["character", "drawn_sprite", "player1"]]
+[node name="Player1" type="Node2D"]
 script = ExtResource("1_e0vak")
 sprite_index_name = "stand_left"
-animated_sprite_node = NodePath("AnimatedSprite2D")
 sprite_offset = Vector2(8, 8)
 object_name = "player1"
-alarm_0_countdown = NodePath("Alarms/Alarm0")
-alarm_1_countdown = NodePath("Alarms/Alarm1")
-alarm_2_countdown = NodePath("Alarms/Alarm2")
-alarm_3_countdown = NodePath("Alarms/Alarm3")
-alarm_4_countdown = NodePath("Alarms/Alarm4")
-alarm_10_countdown = NodePath("Alarms/Alarm10")
-alarm_11_countdown = NodePath("Alarms/Alarm11")
-editor_setup_finished = true
-depth = -50
-object_size = Vector2(16, 16)
 
 [node name="DebugPlayerState" type="Label" parent="."]
 visible = false
@@ -48,34 +24,3 @@ script = ExtResource("486_8kwyl")
 [node name="View" parent="." instance=ExtResource("4_0a32v")]
 limit_left = 0
 limit_top = 0
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
-z_as_relative = false
-sprite_frames = SubResource("SpriteFrames_d3eak")
-animation = &"stand_left"
-autoplay = "stand_left"
-centered = false
-offset = Vector2(-8, -8)
-
-[node name="Alarms" type="Node" parent="."]
-
-[node name="Alarm0" type="Node" parent="Alarms"]
-script = ExtResource("6_kqt6y")
-
-[node name="Alarm1" type="Node" parent="Alarms"]
-script = ExtResource("6_kqt6y")
-
-[node name="Alarm10" type="Node" parent="Alarms"]
-script = ExtResource("6_kqt6y")
-
-[node name="Alarm11" type="Node" parent="Alarms"]
-script = ExtResource("6_kqt6y")
-
-[node name="Alarm2" type="Node" parent="Alarms"]
-script = ExtResource("6_kqt6y")
-
-[node name="Alarm3" type="Node" parent="Alarms"]
-script = ExtResource("6_kqt6y")
-
-[node name="Alarm4" type="Node" parent="Alarms"]
-script = ExtResource("6_kqt6y")

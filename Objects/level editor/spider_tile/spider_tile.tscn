@@ -1,31 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://ct7cog44eb7hl"]
+[gd_scene load_steps=2 format=3 uid="uid://ct7cog44eb7hl"]
 
 [ext_resource type="Script" path="res://objects/level editor/spider_tile/spider_tile.gd" id="1_56fvs"]
-[ext_resource type="Texture2D" uid="uid://c4s4m6lg3j7q3" path="res://sprites/enemies/spider_hang/spider_hang_0.png" id="2_ej03n"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ji186"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_ej03n")
-}],
-"loop": true,
-"name": &"spider_hang",
-"speed": 30.0
-}]
-
-[node name="SpiderTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node") groups=["drawn_sprite", "spider_tile"]]
+[node name="SpiderTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_56fvs")
 sprite_index_name = "spider_hang"
-animated_sprite_node = NodePath("AnimatedSprite2D")
+animated_sprite_node = NodePath("")
 object_name = "spider_tile"
-editor_setup_finished = true
-depth = -100
-object_size = Vector2(16, 16)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
-z_as_relative = false
-sprite_frames = SubResource("SpriteFrames_ji186")
-animation = &"spider_hang"
-autoplay = "spider_hang"
-centered = false

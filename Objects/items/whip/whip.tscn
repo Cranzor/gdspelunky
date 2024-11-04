@@ -1,34 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://crm2j0n1x230i"]
+[gd_scene load_steps=2 format=3 uid="uid://crm2j0n1x230i"]
 
 [ext_resource type="Script" path="res://objects/items/whip/whip.gd" id="1_3nu70"]
-[ext_resource type="Texture2D" uid="uid://ch5t2bcthnnxg" path="res://sprites/items/weapons/whip_right/whip_right_0.png" id="2_e0lw3"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ogect"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_e0lw3")
-}],
-"loop": true,
-"name": &"whip_right",
-"speed": 30.0
-}]
-
-[node name="Whip" type="Node2D" node_paths=PackedStringArray("animated_sprite_node") groups=["drawn_sprite", "whip"]]
+[node name="Whip" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -1
 script = ExtResource("1_3nu70")
 sprite_index_name = "whip_right"
-animated_sprite_node = NodePath("AnimatedSprite2D")
+animated_sprite_node = NodePath("")
 sprite_offset = Vector2(8, 8)
 object_name = "whip"
-editor_setup_finished = true
-depth = -1
-object_size = Vector2(16, 16)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
-z_as_relative = false
-sprite_frames = SubResource("SpriteFrames_ogect")
-animation = &"whip_right"
-autoplay = "whip_right"
-centered = false
-offset = Vector2(-8, -8)

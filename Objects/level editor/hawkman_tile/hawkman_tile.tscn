@@ -1,31 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bxjq0si0wbcu8"]
+[gd_scene load_steps=2 format=3 uid="uid://bxjq0si0wbcu8"]
 
 [ext_resource type="Script" path="res://objects/level editor/hawkman_tile/hawkman_tile.gd" id="1_2ljr7"]
-[ext_resource type="Texture2D" uid="uid://bb3ymf3wtaywf" path="res://sprites/enemies/hawkman/hawk_left/hawk_left_0.png" id="2_dmyid"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_afqy0"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_dmyid")
-}],
-"loop": true,
-"name": &"hawk_left",
-"speed": 30.0
-}]
-
-[node name="HawkmanTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node") groups=["drawn_sprite", "hawkman_tile"]]
+[node name="HawkmanTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_2ljr7")
 sprite_index_name = "hawk_left"
-animated_sprite_node = NodePath("AnimatedSprite2D")
+animated_sprite_node = NodePath("")
 object_name = "hawkman_tile"
-editor_setup_finished = true
-depth = -100
-object_size = Vector2(16, 16)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
-z_as_relative = false
-sprite_frames = SubResource("SpriteFrames_afqy0")
-animation = &"hawk_left"
-autoplay = "hawk_left"
-centered = false

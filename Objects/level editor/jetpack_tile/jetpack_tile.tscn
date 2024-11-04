@@ -1,31 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://j0s83y7lm5uf"]
+[gd_scene load_steps=2 format=3 uid="uid://j0s83y7lm5uf"]
 
 [ext_resource type="Script" path="res://objects/level editor/jetpack_tile/jetpack_tile.gd" id="1_346i5"]
-[ext_resource type="Texture2D" uid="uid://c6gxd60p24gr7" path="res://sprites/level editor/jetpack_tile/jetpack_tile_0.png" id="2_gcf4l"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_34m6h"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_gcf4l")
-}],
-"loop": true,
-"name": &"jetpack_tile",
-"speed": 30.0
-}]
-
-[node name="JetpackTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node") groups=["drawn_sprite", "jetpack_tile"]]
+[node name="JetpackTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_346i5")
 sprite_index_name = "jetpack_tile"
-animated_sprite_node = NodePath("AnimatedSprite2D")
+animated_sprite_node = NodePath("")
 object_name = "jetpack_tile"
-editor_setup_finished = true
-depth = -100
-object_size = Vector2(16, 16)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
-z_as_relative = false
-sprite_frames = SubResource("SpriteFrames_34m6h")
-animation = &"jetpack_tile"
-autoplay = "jetpack_tile"
-centered = false

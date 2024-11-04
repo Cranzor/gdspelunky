@@ -1,31 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://we1i6vy4c88v"]
+[gd_scene load_steps=2 format=3 uid="uid://we1i6vy4c88v"]
 
 [ext_resource type="Script" path="res://objects/level editor/mattock_tile/mattock_tile.gd" id="1_8ne8g"]
-[ext_resource type="Texture2D" uid="uid://1o0vaoj84wkg" path="res://sprites/level editor/mattock_tile/mattock_tile_0.png" id="2_x8a56"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_xng6q"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_x8a56")
-}],
-"loop": true,
-"name": &"mattock_tile",
-"speed": 30.0
-}]
-
-[node name="MattockTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node") groups=["drawn_sprite", "mattock_tile"]]
+[node name="MattockTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_8ne8g")
 sprite_index_name = "mattock_tile"
-animated_sprite_node = NodePath("AnimatedSprite2D")
+animated_sprite_node = NodePath("")
 object_name = "mattock_tile"
-editor_setup_finished = true
-depth = -100
-object_size = Vector2(16, 16)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
-z_as_relative = false
-sprite_frames = SubResource("SpriteFrames_xng6q")
-animation = &"mattock_tile"
-autoplay = "mattock_tile"
-centered = false

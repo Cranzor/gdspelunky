@@ -1,33 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://b22od4hdfla4b"]
+[gd_scene load_steps=2 format=3 uid="uid://b22od4hdfla4b"]
 
 [ext_resource type="Script" path="res://objects/effects/rubble_small/rubble_small.gd" id="1_hf81c"]
-[ext_resource type="Texture2D" uid="uid://b574w74t4mv7l" path="res://sprites/effects/rubble_small/rubble_small_0.png" id="2_mesqa"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_86sfa"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_mesqa")
-}],
-"loop": true,
-"name": &"rubble_small",
-"speed": 30.0
-}]
-
-[node name="RubbleSmall" type="Node2D" node_paths=PackedStringArray("animated_sprite_node") groups=["drawn_sprite", "rubble_piece", "rubble_small"]]
+[node name="RubbleSmall" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_hf81c")
 sprite_index_name = "rubble_small"
-animated_sprite_node = NodePath("AnimatedSprite2D")
+animated_sprite_node = NodePath("")
 sprite_offset = Vector2(4, 4)
 object_name = "rubble_small"
-editor_setup_finished = true
-depth = -1
-object_size = Vector2(4, 4)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
-z_as_relative = false
-sprite_frames = SubResource("SpriteFrames_86sfa")
-animation = &"rubble_small"
-autoplay = "rubble_small"
-centered = false
-offset = Vector2(-4, -4)

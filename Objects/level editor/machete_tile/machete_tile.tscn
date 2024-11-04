@@ -1,31 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bcb8krpeqcorl"]
+[gd_scene load_steps=2 format=3 uid="uid://bcb8krpeqcorl"]
 
 [ext_resource type="Script" path="res://objects/level editor/machete_tile/machete_tile.gd" id="1_sle1a"]
-[ext_resource type="Texture2D" uid="uid://bfkopfvqgmj8e" path="res://sprites/level editor/machete_tile/machete_tile_0.png" id="2_bwdlc"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_esk22"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_bwdlc")
-}],
-"loop": true,
-"name": &"machete_tile",
-"speed": 30.0
-}]
-
-[node name="MacheteTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node") groups=["drawn_sprite", "machete_tile"]]
+[node name="MacheteTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_sle1a")
 sprite_index_name = "machete_tile"
-animated_sprite_node = NodePath("AnimatedSprite2D")
+animated_sprite_node = NodePath("")
 object_name = "machete_tile"
-editor_setup_finished = true
-depth = -100
-object_size = Vector2(16, 16)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
-z_as_relative = false
-sprite_frames = SubResource("SpriteFrames_esk22")
-animation = &"machete_tile"
-autoplay = "machete_tile"
-centered = false

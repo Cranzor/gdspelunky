@@ -1,31 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b6f0sg5u8ix0j"]
+[gd_scene load_steps=2 format=3 uid="uid://b6f0sg5u8ix0j"]
 
 [ext_resource type="Script" path="res://objects/level editor/spring_shoes_tile/spring_shoes_tile.gd" id="1_cvswd"]
-[ext_resource type="Texture2D" uid="uid://dxgvrq4xt6ynx" path="res://sprites/level editor/spring_shoes_tile/spring_shoes_tile_0.png" id="2_oqgw2"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_hin6v"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_oqgw2")
-}],
-"loop": true,
-"name": &"spring_shoes_tile",
-"speed": 30.0
-}]
-
-[node name="SpringShoesTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node") groups=["drawn_sprite", "spring_shoes_tile"]]
+[node name="SpringShoesTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_cvswd")
 sprite_index_name = "spring_shoes_tile"
-animated_sprite_node = NodePath("AnimatedSprite2D")
+animated_sprite_node = NodePath("")
 object_name = "spring_shoes_tile"
-editor_setup_finished = true
-depth = -100
-object_size = Vector2(16, 16)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
-z_as_relative = false
-sprite_frames = SubResource("SpriteFrames_hin6v")
-animation = &"spring_shoes_tile"
-autoplay = "spring_shoes_tile"
-centered = false

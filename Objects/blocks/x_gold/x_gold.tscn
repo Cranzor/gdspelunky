@@ -1,31 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dcu266l5t6wa6"]
+[gd_scene load_steps=2 format=3 uid="uid://dcu266l5t6wa6"]
 
 [ext_resource type="Script" path="res://objects/blocks/x_gold/x_gold.gd" id="1_slq83"]
-[ext_resource type="Texture2D" uid="uid://dx1p2ru22timq" path="res://sprites/blocks/background/exit/exit_0.png" id="2_wrpko"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_6s4rk"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_wrpko")
-}],
-"loop": true,
-"name": &"exit",
-"speed": 30.0
-}]
-
-[node name="XGold" type="Node2D" node_paths=PackedStringArray("animated_sprite_node") groups=["drawn_sprite", "exit", "x_gold"]]
+[node name="XGold" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_slq83")
 sprite_index_name = "exit"
-animated_sprite_node = NodePath("AnimatedSprite2D")
+animated_sprite_node = NodePath("")
 object_name = "x_gold"
-editor_setup_finished = true
-depth = -4096
-object_size = Vector2(16, 16)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
-z_as_relative = false
-sprite_frames = SubResource("SpriteFrames_6s4rk")
-animation = &"exit"
-autoplay = "exit"
-centered = false

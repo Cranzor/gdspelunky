@@ -1,33 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://db1uwte520n15"]
+[gd_scene load_steps=2 format=3 uid="uid://db1uwte520n15"]
 
 [ext_resource type="Script" path="res://objects/blocks/hard_block/hard_block.gd" id="1_t575k"]
-[ext_resource type="Texture2D" uid="uid://nkw6afdklf8m" path="res://sprites/blocks/mines/brick/brick_0.png" id="2_p16nk"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ltg72"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_p16nk")
-}],
-"loop": true,
-"name": &"brick",
-"speed": 30.0
-}]
-
-[node name="HardBlock" type="Node2D" node_paths=PackedStringArray("animated_sprite_node") groups=["drawn_sprite", "hard_block", "solid"]]
+[node name="HardBlock" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -100
 script = ExtResource("1_t575k")
 sprite_index_name = "brick"
-animated_sprite_node = NodePath("AnimatedSprite2D")
+animated_sprite_node = NodePath("")
 object_name = "hard_block"
-editor_setup_finished = true
-depth = -100
-object_size = Vector2(16, 16)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
-z_index = -100
-z_as_relative = false
-sprite_frames = SubResource("SpriteFrames_ltg72")
-animation = &"brick"
-autoplay = "brick"
-centered = false

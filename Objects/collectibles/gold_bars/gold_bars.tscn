@@ -1,33 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bvd8sg3ne6j16"]
+[gd_scene load_steps=2 format=3 uid="uid://bvd8sg3ne6j16"]
 
 [ext_resource type="Script" path="res://objects/collectibles/gold_bars/gold_bars.gd" id="1_461j4"]
-[ext_resource type="Texture2D" uid="uid://d23rtolbsmmnq" path="res://sprites/items/treasures/gold_bars/gold_bars_0.png" id="2_7daxv"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_pxh3l"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_7daxv")
-}],
-"loop": true,
-"name": &"gold_bars",
-"speed": 30.0
-}]
-
-[node name="GoldBars" type="Node2D" node_paths=PackedStringArray("animated_sprite_node") groups=["drawn_sprite", "gold_bars", "treasure"]]
+[node name="GoldBars" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_461j4")
 sprite_index_name = "gold_bars"
-animated_sprite_node = NodePath("AnimatedSprite2D")
+animated_sprite_node = NodePath("")
 sprite_offset = Vector2(8, 8)
 object_name = "gold_bars"
-editor_setup_finished = true
-depth = -100
-object_size = Vector2(16, 16)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
-z_as_relative = false
-sprite_frames = SubResource("SpriteFrames_pxh3l")
-animation = &"gold_bars"
-autoplay = "gold_bars"
-centered = false
-offset = Vector2(-8, -8)

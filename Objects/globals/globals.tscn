@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" path="res://objects/globals/globals.gd" id="1_btbma"]
 
-[node name="Globals" type="Node2D" groups=["globals"]]
+[node name="Globals" type="Node2D"]
 script = ExtResource("1_btbma")
 object_name = "globals"
-editor_setup_finished = true

@@ -1,31 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c08alw42udsbo"]
+[gd_scene load_steps=2 format=3 uid="uid://c08alw42udsbo"]
 
 [ext_resource type="Script" path="res://objects/level editor/bomb_bag_tile/bomb_bag_tile.gd" id="1_wgflc"]
-[ext_resource type="Texture2D" uid="uid://d4nr0nngqwkfx" path="res://sprites/level editor/bomb_bag_tile/bomb_bag_tile_0.png" id="2_7e3vx"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ak543"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_7e3vx")
-}],
-"loop": true,
-"name": &"bomb_bag_tile",
-"speed": 30.0
-}]
-
-[node name="BombBagTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node") groups=["bomb_bag_tile", "drawn_sprite"]]
+[node name="BombBagTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_wgflc")
 sprite_index_name = "bomb_bag_tile"
-animated_sprite_node = NodePath("AnimatedSprite2D")
+animated_sprite_node = NodePath("")
 object_name = "bomb_bag_tile"
-editor_setup_finished = true
-depth = -100
-object_size = Vector2(16, 16)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
-z_as_relative = false
-sprite_frames = SubResource("SpriteFrames_ak543")
-animation = &"bomb_bag_tile"
-autoplay = "bomb_bag_tile"
-centered = false

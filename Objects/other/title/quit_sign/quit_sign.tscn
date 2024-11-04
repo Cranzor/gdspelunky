@@ -1,31 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dsy8sqawph7ei"]
+[gd_scene load_steps=2 format=3 uid="uid://dsy8sqawph7ei"]
 
 [ext_resource type="Script" path="res://objects/other/title/quit_sign/quit_sign.gd" id="1_cp6cu"]
-[ext_resource type="Texture2D" uid="uid://bsuhh6ybpxxko" path="res://sprites/other/title/quit_sign/quit_sign_0.png" id="2_ssou7"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_56uwq"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_ssou7")
-}],
-"loop": true,
-"name": &"quit_sign",
-"speed": 30.0
-}]
-
-[node name="QuitSign" type="Node2D" node_paths=PackedStringArray("animated_sprite_node") groups=["drawn_sprite", "quit_sign", "solid"]]
+[node name="QuitSign" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_cp6cu")
 sprite_index_name = "quit_sign"
-animated_sprite_node = NodePath("AnimatedSprite2D")
+animated_sprite_node = NodePath("")
 object_name = "quit_sign"
-editor_setup_finished = true
-depth = -999
-object_size = Vector2(32, 16)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
-z_as_relative = false
-sprite_frames = SubResource("SpriteFrames_56uwq")
-animation = &"quit_sign"
-autoplay = "quit_sign"
-centered = false

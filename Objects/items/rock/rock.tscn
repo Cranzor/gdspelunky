@@ -1,33 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://37vfyoa0wyxb"]
+[gd_scene load_steps=2 format=3 uid="uid://37vfyoa0wyxb"]
 
 [ext_resource type="Script" path="res://objects/items/rock/rock.gd" id="1_cgns2"]
-[ext_resource type="Texture2D" uid="uid://cx8s88xgpqfxc" path="res://sprites/items/weapons/rock/rock_0.png" id="2_5fnmh"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_owp0i"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_5fnmh")
-}],
-"loop": true,
-"name": &"rock",
-"speed": 30.0
-}]
-
-[node name="Rock" type="Node2D" node_paths=PackedStringArray("animated_sprite_node") groups=["drawn_sprite", "item", "rock"]]
+[node name="Rock" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_cgns2")
 sprite_index_name = "rock"
-animated_sprite_node = NodePath("AnimatedSprite2D")
+animated_sprite_node = NodePath("")
 sprite_offset = Vector2(4, 4)
 object_name = "rock"
-editor_setup_finished = true
-depth = -100
-object_size = Vector2(8, 8)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
-z_as_relative = false
-sprite_frames = SubResource("SpriteFrames_owp0i")
-animation = &"rock"
-autoplay = "rock"
-centered = false
-offset = Vector2(-4, -4)

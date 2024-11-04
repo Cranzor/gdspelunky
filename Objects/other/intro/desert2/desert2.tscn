@@ -1,33 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bd1b3xugpfga6"]
+[gd_scene load_steps=2 format=3 uid="uid://bd1b3xugpfga6"]
 
 [ext_resource type="Script" path="res://objects/other/intro/desert2/desert2.gd" id="1_bds77"]
-[ext_resource type="Texture2D" uid="uid://c7j1lhevpxqkb" path="res://sprites/other/intro/desert2/desert2_0.png" id="2_0xd7s"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ang8m"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_0xd7s")
-}],
-"loop": true,
-"name": &"desert2",
-"speed": 30.0
-}]
-
-[node name="Desert2" type="Node2D" node_paths=PackedStringArray("animated_sprite_node") groups=["desert2", "drawn_sprite", "solid"]]
+[node name="Desert2" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = 100
 script = ExtResource("1_bds77")
 sprite_index_name = "desert2"
-animated_sprite_node = NodePath("AnimatedSprite2D")
+animated_sprite_node = NodePath("")
 object_name = "desert2"
-editor_setup_finished = true
-depth = -100
-object_size = Vector2(16, 16)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
-z_index = 100
-z_as_relative = false
-sprite_frames = SubResource("SpriteFrames_ang8m")
-animation = &"desert2"
-autoplay = "desert2"
-centered = false

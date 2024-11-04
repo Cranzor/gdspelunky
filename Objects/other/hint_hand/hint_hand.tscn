@@ -1,43 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://cg1p7emtoarge"]
+[gd_scene load_steps=3 format=3 uid="uid://cg1p7emtoarge"]
 
 [ext_resource type="Script" path="res://objects/other/hint_hand/hint_hand.gd" id="1_qkv0d"]
-[ext_resource type="Texture2D" uid="uid://bj5ooio37b4ga" path="res://sprites/hud/hint_point/hint_point_0.png" id="3_gy8jp"]
-[ext_resource type="Texture2D" uid="uid://cuedlacpy4xs6" path="res://sprites/hud/hint_point/hint_point_1.png" id="4_36xar"]
-[ext_resource type="Texture2D" uid="uid://27iehp7itde1" path="res://sprites/hud/hint_point/hint_point_2.png" id="5_ne2o1"]
-[ext_resource type="Texture2D" uid="uid://call5h120c212" path="res://sprites/hud/hint_point/hint_point_3.png" id="6_8lqer"]
 [ext_resource type="FontFile" uid="uid://dgd06bxddo4pq" path="res://fonts/small_font.png" id="7_3r5tb"]
-[ext_resource type="Texture2D" uid="uid://dfixltbhwga22" path="res://sprites/hud/hint_point/hint_point_4.png" id="7_xympg"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_reuym"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_gy8jp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_36xar")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_ne2o1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_8lqer")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_xympg")
-}],
-"loop": true,
-"name": &"hint_point",
-"speed": 30.0
-}]
-
-[node name="HintHand" type="Node2D" node_paths=PackedStringArray("animated_sprite_node") groups=["hint_hand"]]
+[node name="HintHand" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_qkv0d")
 sprite_index_name = "hint_point"
-animated_sprite_node = NodePath("AnimatedSprite2D")
+animated_sprite_node = NodePath("")
 object_name = "hint_hand"
-editor_setup_finished = true
-object_size = Vector2(16, 16)
 
 [node name="PressUpToEnter" type="Label" parent="."]
 offset_left = 471.0
@@ -46,10 +16,3 @@ offset_right = 615.0
 offset_bottom = 239.0
 theme_override_fonts/font = ExtResource("7_3r5tb")
 text = "PRESS UP TO ENTER!"
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
-z_as_relative = false
-sprite_frames = SubResource("SpriteFrames_reuym")
-animation = &"hint_point"
-autoplay = "hint_point"
-centered = false

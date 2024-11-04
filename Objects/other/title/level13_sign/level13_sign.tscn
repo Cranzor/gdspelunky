@@ -1,31 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bx1mjxun7s5io"]
+[gd_scene load_steps=2 format=3 uid="uid://bx1mjxun7s5io"]
 
 [ext_resource type="Script" path="res://objects/other/title/level13_sign/level_13_sign.gd" id="1_fo5gv"]
-[ext_resource type="Texture2D" uid="uid://bk6ikv1fsgykr" path="res://sprites/other/title/level13_sign/level13_sign_0.png" id="2_ohh3k"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_yv766"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_ohh3k")
-}],
-"loop": true,
-"name": &"level13_sign",
-"speed": 30.0
-}]
-
-[node name="Level13Sign" type="Node2D" node_paths=PackedStringArray("animated_sprite_node") groups=["level13_sign"]]
+[node name="Level13Sign" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_fo5gv")
 sprite_index_name = "level13_sign"
-animated_sprite_node = NodePath("AnimatedSprite2D")
+animated_sprite_node = NodePath("")
 object_name = "level13_sign"
-editor_setup_finished = true
-depth = -999
-object_size = Vector2(48, 32)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
-z_as_relative = false
-sprite_frames = SubResource("SpriteFrames_yv766")
-animation = &"level13_sign"
-autoplay = "level13_sign"
-centered = false

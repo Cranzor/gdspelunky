@@ -308,12 +308,14 @@ func object_setup():
 	var object_database = object_database.object_database
 	var object_entry = object_database[object_name]
 	
-	#groups_setup(object_entry)
-	#depth_setup(object_entry)
-	#sprite_setup(object_entry)
-	#bounding_box_setup()
+	groups_setup(object_entry)
+	depth_setup(object_entry)
+	sprite_setup(object_entry)
+	bounding_box_setup()
 	##collision_setup()
-	#alarms_setup(object_entry)
+	alarms_setup(object_entry)
+	
+	#--- keep the below enabled even if objects are set up in the editor
 	connect_alarms(object_entry)
 	camera_setup()
 	run_create_function(self)

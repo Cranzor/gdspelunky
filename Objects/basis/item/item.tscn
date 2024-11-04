@@ -1,19 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://34pwip2uvju6"]
+[gd_scene load_steps=2 format=3 uid="uid://34pwip2uvju6"]
 
 [ext_resource type="Script" path="res://objects/basis/item/item.gd" id="1_3w3yd"]
-[ext_resource type="Script" path="res://alarm.gd" id="2_hvse5"]
 
-[node name="Item" type="Node2D" node_paths=PackedStringArray("alarm_2_countdown") groups=["drawn_sprite", "item"]]
+[node name="Item" type="Node2D"]
 script = ExtResource("1_3w3yd")
 object_name = "item"
-alarm_2_countdown = NodePath("Alarms/Alarm2")
-editor_setup_finished = true
 
 [node name="Alarm2" type="Timer" parent="."]
-
-[node name="Alarms" type="Node" parent="."]
-
-[node name="Alarm2" type="Node" parent="Alarms"]
-script = ExtResource("2_hvse5")
 
 [connection signal="timeout" from="Alarm2" to="." method="_on_alarm_2_timeout"]

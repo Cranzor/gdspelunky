@@ -1,33 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cajmbi8trva6o"]
+[gd_scene load_steps=2 format=3 uid="uid://cajmbi8trva6o"]
 
 [ext_resource type="Script" path="res://objects/collectibles/chest/chest.gd" id="1_rgiqq"]
-[ext_resource type="Texture2D" uid="uid://dx1vw0i1cq622" path="res://sprites/items/other/chest/chest_0.png" id="2_4kq27"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_5r584"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_4kq27")
-}],
-"loop": true,
-"name": &"chest",
-"speed": 30.0
-}]
-
-[node name="Chest" type="Node2D" node_paths=PackedStringArray("animated_sprite_node") groups=["chest", "drawn_sprite", "item"]]
+[node name="Chest" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_rgiqq")
 sprite_index_name = "chest"
-animated_sprite_node = NodePath("AnimatedSprite2D")
+animated_sprite_node = NodePath("")
 sprite_offset = Vector2(8, 8)
 object_name = "chest"
-editor_setup_finished = true
-depth = -900
-object_size = Vector2(16, 16)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
-z_as_relative = false
-sprite_frames = SubResource("SpriteFrames_5r584")
-animation = &"chest"
-autoplay = "chest"
-centered = false
-offset = Vector2(-8, -8)

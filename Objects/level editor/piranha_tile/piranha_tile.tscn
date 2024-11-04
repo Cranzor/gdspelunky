@@ -1,31 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://rfgf17s832gb"]
+[gd_scene load_steps=2 format=3 uid="uid://rfgf17s832gb"]
 
 [ext_resource type="Script" path="res://objects/level editor/piranha_tile/piranha_tile.gd" id="1_k2nh1"]
-[ext_resource type="Texture2D" uid="uid://bpnysogm2mmwt" path="res://sprites/level editor/piranha_tile/piranha_tile_0.png" id="2_lw6mj"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_i7ne2"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_lw6mj")
-}],
-"loop": true,
-"name": &"piranha_tile",
-"speed": 30.0
-}]
-
-[node name="PiranhaTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node") groups=["drawn_sprite", "piranha_tile"]]
+[node name="PiranhaTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_k2nh1")
 sprite_index_name = "piranha_tile"
-animated_sprite_node = NodePath("AnimatedSprite2D")
+animated_sprite_node = NodePath("")
 object_name = "piranha_tile"
-editor_setup_finished = true
-depth = -100
-object_size = Vector2(16, 16)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
-z_as_relative = false
-sprite_frames = SubResource("SpriteFrames_i7ne2")
-animation = &"piranha_tile"
-autoplay = "piranha_tile"
-centered = false

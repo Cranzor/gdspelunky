@@ -1,31 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cil1x4wti8ivy"]
+[gd_scene load_steps=2 format=3 uid="uid://cil1x4wti8ivy"]
 
 [ext_resource type="Script" path="res://objects/level editor/crate_tile/crate_tile.gd" id="1_sgs4k"]
-[ext_resource type="Texture2D" uid="uid://dom8m2gp41hla" path="res://sprites/level editor/crate_tile/crate_tile_0.png" id="2_lwp43"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_xjdyy"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_lwp43")
-}],
-"loop": true,
-"name": &"crate_tile",
-"speed": 30.0
-}]
-
-[node name="CrateTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node") groups=["crate_tile", "drawn_sprite"]]
+[node name="CrateTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_sgs4k")
 sprite_index_name = "crate_tile"
-animated_sprite_node = NodePath("AnimatedSprite2D")
+animated_sprite_node = NodePath("")
 object_name = "crate_tile"
-editor_setup_finished = true
-depth = -100
-object_size = Vector2(16, 16)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
-z_as_relative = false
-sprite_frames = SubResource("SpriteFrames_xjdyy")
-animation = &"crate_tile"
-autoplay = "crate_tile"
-centered = false

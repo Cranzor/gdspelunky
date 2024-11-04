@@ -1,31 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cv158gvnomihx"]
+[gd_scene load_steps=2 format=3 uid="uid://cv158gvnomihx"]
 
 [ext_resource type="Script" path="res://objects/level editor/gold_bars_tile/gold_bars_tile.gd" id="1_gu5d4"]
-[ext_resource type="Texture2D" uid="uid://ck7nlyd54h2q4" path="res://sprites/level editor/gold_bars_tile/gold_bars_tile_0.png" id="2_x5nfw"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_fxsve"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_x5nfw")
-}],
-"loop": true,
-"name": &"gold_bars_tile",
-"speed": 30.0
-}]
-
-[node name="GoldBarsTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node") groups=["drawn_sprite", "gold_bars_tile"]]
+[node name="GoldBarsTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_gu5d4")
 sprite_index_name = "gold_bars_tile"
-animated_sprite_node = NodePath("AnimatedSprite2D")
+animated_sprite_node = NodePath("")
 object_name = "gold_bars_tile"
-editor_setup_finished = true
-depth = -100
-object_size = Vector2(16, 16)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
-z_as_relative = false
-sprite_frames = SubResource("SpriteFrames_fxsve")
-animation = &"gold_bars_tile"
-autoplay = "gold_bars_tile"
-centered = false

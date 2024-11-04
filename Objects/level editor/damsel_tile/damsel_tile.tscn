@@ -1,31 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b0kkrtj83blfp"]
+[gd_scene load_steps=2 format=3 uid="uid://b0kkrtj83blfp"]
 
 [ext_resource type="Script" path="res://objects/level editor/damsel_tile/damsel_tile.gd" id="1_17sek"]
-[ext_resource type="Texture2D" uid="uid://qppdxyc0kqpx" path="res://sprites/character/damsel/damsel_left_ico/damsel_left_ico_0.png" id="2_jl5tb"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_xxb6e"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_jl5tb")
-}],
-"loop": true,
-"name": &"damsel_left_ico",
-"speed": 30.0
-}]
-
-[node name="DamselTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node") groups=["damsel_tile", "drawn_sprite"]]
+[node name="DamselTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_17sek")
 sprite_index_name = "damsel_left_ico"
-animated_sprite_node = NodePath("AnimatedSprite2D")
+animated_sprite_node = NodePath("")
 object_name = "damsel_tile"
-editor_setup_finished = true
-depth = -100
-object_size = Vector2(16, 16)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
-z_as_relative = false
-sprite_frames = SubResource("SpriteFrames_xxb6e")
-animation = &"damsel_left_ico"
-autoplay = "damsel_left_ico"
-centered = false

@@ -1,47 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://ci4o6thdcbhso"]
+[gd_scene load_steps=2 format=3 uid="uid://ci4o6thdcbhso"]
 
 [ext_resource type="Script" path="res://objects/traps/arrow_trap_right_lit/arrow_trap_right_lit.gd" id="1_0148k"]
-[ext_resource type="Texture2D" uid="uid://cu613gknewdi6" path="res://sprites/traps/arrow_trap_right_lit/arrow_trap_right_lit_0.png" id="2_6qeii"]
-[ext_resource type="Texture2D" uid="uid://bumheo8bny25w" path="res://sprites/traps/arrow_trap_right_lit/arrow_trap_right_lit_1.png" id="3_r3t7j"]
-[ext_resource type="Texture2D" uid="uid://talog8xne2rl" path="res://sprites/traps/arrow_trap_right_lit/arrow_trap_right_lit_2.png" id="4_j44nv"]
-[ext_resource type="Texture2D" uid="uid://ds8vkd13oml2p" path="res://sprites/traps/arrow_trap_right_lit/arrow_trap_right_lit_3.png" id="5_1w0sc"]
-[ext_resource type="Texture2D" uid="uid://bjgg66sfjtg7r" path="res://sprites/traps/arrow_trap_right_lit/arrow_trap_right_lit_4.png" id="6_m2nrh"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_x4502"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_6qeii")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_r3t7j")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_j44nv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_1w0sc")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_m2nrh")
-}],
-"loop": true,
-"name": &"arrow_trap_right_lit",
-"speed": 30.0
-}]
-
-[node name="ArrowTrapRightLit" type="Node2D" node_paths=PackedStringArray("animated_sprite_node") groups=["arrow_trap_right", "arrow_trap_right_lit", "drawn_sprite", "solid"]]
+[node name="ArrowTrapRightLit" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_0148k")
 sprite_index_name = "arrow_trap_right_lit"
-animated_sprite_node = NodePath("AnimatedSprite2D")
+animated_sprite_node = NodePath("")
 object_name = "arrow_trap_right_lit"
-editor_setup_finished = true
-depth = -110
-object_size = Vector2(16, 16)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
-z_as_relative = false
-sprite_frames = SubResource("SpriteFrames_x4502")
-animation = &"arrow_trap_right_lit"
-autoplay = "arrow_trap_right_lit"
-centered = false

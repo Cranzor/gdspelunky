@@ -1,31 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://d4kioh5dhxrr1"]
+[gd_scene load_steps=2 format=3 uid="uid://d4kioh5dhxrr1"]
 
 [ext_resource type="Script" path="res://objects/other/intro/shrub_dark/shrub_dark.gd" id="1_ydqq8"]
-[ext_resource type="Texture2D" uid="uid://c881cmrd4qok3" path="res://sprites/other/intro/shrub_dark/shrub_dark_0.png" id="2_1o3ye"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_xjh0y"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_1o3ye")
-}],
-"loop": true,
-"name": &"shrub_dark",
-"speed": 30.0
-}]
-
-[node name="ShrubDark" type="Node2D" node_paths=PackedStringArray("animated_sprite_node") groups=["shrub_dark"]]
+[node name="ShrubDark" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_ydqq8")
 sprite_index_name = "shrub_dark"
-animated_sprite_node = NodePath("AnimatedSprite2D")
+animated_sprite_node = NodePath("")
 object_name = "shrub_dark"
-editor_setup_finished = true
-depth = -998
-object_size = Vector2(16, 16)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["animated_sprite"]]
-z_as_relative = false
-sprite_frames = SubResource("SpriteFrames_xjh0y")
-animation = &"shrub_dark"
-autoplay = "shrub_dark"
-centered = false
