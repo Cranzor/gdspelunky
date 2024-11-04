@@ -53,6 +53,41 @@ func objects_setup():
 				print("saved")
 				ResourceSaver.save(scene, path)
 
+func objects_reset():
+	get_all_object_paths()
+
+	for path in all_object_paths:
+		print(path)
+		var node = ResourceLoader.load(path, "", 0)
+		node = node.instantiate()
+		
+		if node is GMObject:
+			var object_database = object_database.object_database
+			var object_entry = object_database[node.object_name]
+
+			##--- remove groups
+			var groups = node.get_groups()
+			for group in groups:
+				node.remove_from_group(group)
+			#
+			##--- reset depth
+			node.depth = 0
+			#
+			##--- delete all children (sprites and alarms)
+			var node_children = node.get_children()
+			for child in node_children:
+				node.remove_child(child)
+			#
+			##-- reset bounding box
+			node.object_size = Vector2(0, 0)
+
+			node.editor_setup_finished = false
+			
+			var scene = PackedScene.new()
+			var result = scene.pack(node)
+			if result == OK:
+				print("saved")
+				ResourceSaver.save(scene, path)
 
 func groups_setup(object_entry, node):
 	var groups = object_entry['groups']
