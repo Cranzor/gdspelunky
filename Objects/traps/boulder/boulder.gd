@@ -29,7 +29,7 @@ func _process(delta):
 #            if (abs(x_vel) < 1 or other.position.y > position.y+13):
         
 #                position.y -= 1
-#                # DY:  nothing
+#                # dy:  nothing
         
 #            else:
         
@@ -61,8 +61,8 @@ func _process(delta):
 #    Collision.set_collision_bounds(-14, -16, 14, 16)
 #    my_grav = 0.6
 #    dir = 0
-#    LEFT = 100
-#    RIGHT = 101
+#    left = 100
+#    right = 101
 #    invincible = true
 #    bounced = false
 #    viscid_top = 1
@@ -79,8 +79,8 @@ func _process(delta):
 #        col_left = false
 #        col_right = false
 #        PlatformEngine.move_to(x_vel, y_vel)
-#        # DY: position.x += x_vel
-#        # DY: position.y += y_vel
+#        # dy: position.x += x_vel
+#        # dy: position.y += y_vel
     
 #        if (y_vel < 8):
     
@@ -99,18 +99,18 @@ func _process(delta):
 #            x_vel = -x_vel
     
     
-#        if (Collision.is_collision_top(1) and y_vel < 0):
+#        if (Collision.i"collision_top(1) and y_vel < 0):"
     
 #            y_vel = -y_vel * 0.8
     
     
-#        if (Collision.is_collision_bottom(1)):
+#        if (Collision.i"collision_bottom(1)):"
     
-#            # DY:  bounce
+#            # dy:  bounce
 #            if (y_vel > 3): y_vel = -y_vel * 0.3
 #            else: y_vel = 0
         
-#            # DY:  friction
+#            # dy:  friction
 #            if (abs(x_vel) != 0): x_vel *= 0.99
         
 #            if (not bounced and x_vel == 0):
@@ -141,25 +141,21 @@ func _process(delta):
     
 #        if (x_vel < 0):
     
-#            sprite_index = s_boulder_rotate_l
+#            sprite_index = "boulder_rotate_l"
     
 #        elif (x_vel > 0):
     
-#            sprite_index = s_boulder_rotate_r
+#            sprite_index = "boulder_rotate_r"
     
 #        else:
     
-#            sprite_index = s_boulder
+#            sprite_index = "boulder"
     
 
 #        /*
 #        if (x_vel == 0 and y_vel == 0):
     
-#            gml.instance_create(position.x, position.y, "boulder_static")
+#            gml.instance_create(position.x, position.y, Objects.boulder_static)
 #            gml.instance_destroy()
     
 #        */
-
-
-
-    

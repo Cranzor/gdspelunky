@@ -20,8 +20,8 @@ func _process(delta):
 #func create():
     #    image_speed = 0.5
 #    status = 0
-#    if (global.is_damsel): sprite_index = s_camel_damsel
-#    elif (global.is_tunnel_man): sprite_index = s_camel_tunnel
+#    if (global.i"damsel): sprite_index = s_camel_damsel"
+#    elif (global.i"tunnel_man): sprite_index = s_camel_tunnel"
 
     
 
@@ -31,7 +31,7 @@ func _process(delta):
 #        position.x -= 1
 #        if (position.x <= 160):
     
-#            play_music(global.mus_credits, false)
+#            play_music(global.mu"credits, false)"
 #            status = 1
     
 
@@ -44,6 +44,4 @@ func _process(delta):
 #        position.x -= 2
 
 
-#    if (InLevel.is_room("r_credits1") and position.x < -64): credits1.fade_out = true
-
-    
+#    if (InLevel.i"room("r_credits1") and position.x < -64): credits1.fade_out = true"

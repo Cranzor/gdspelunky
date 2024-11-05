@@ -19,7 +19,7 @@ func _process(delta):
 
 #func animation_end():
     #    # action_kill_object
-#    # Need to implement this action
+#    # need to implement this action
     
 
 #func create():
@@ -38,5 +38,3 @@ func _process(delta):
 #func step():
     #    position.x += 2 * cos(degtorad(dir))
 #    position.y += -2 * sin(degtorad(dir))
-
-    

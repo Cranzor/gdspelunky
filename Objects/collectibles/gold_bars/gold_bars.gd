@@ -22,11 +22,9 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "Gold Bars"
+#    type = "gold bars"
 #    PlatformEngine.make_active()
 #    Collision.set_collision_bounds(-7, -8, 7, 8)
 #    value = 1000
 #    can_collect = true
 #    y_off = 8
-
-    

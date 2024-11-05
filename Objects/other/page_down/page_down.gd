@@ -19,26 +19,24 @@ func _process(delta):
 
 #func key down pressed():
     #    load_level.page += 1
-#    with menu_sel  sprite_index = s_menu_sel_off 
+#    with menu_sel  sprite_index = "menu_sel_off "
 #    instance_activate_object(page_up)
 #    if (load_level.page >= load_level.num_pages): instance_deactivate_object(page_down)
 
     
 
 #func mouse leave():
-    #    # DY: sprite_index = s_ok_button
+    #    # dy: sprite_index = "ok_button"
 
     
 
 #func mouse left button pressed():
-    #    # DY: sprite_index = s_ok_button_pressed
+    #    # dy: sprite_index = "ok_button_pressed"
 
     
 
 #func mouse left button released():
     #    load_level.page += 1
-#    with menu_sel  sprite_index = s_menu_sel_off 
+#    with menu_sel  sprite_index = "menu_sel_off "
 #    instance_activate_object(page_up)
 #    if (load_level.page >= load_level.num_pages): instance_deactivate_object(page_down)
-
-    

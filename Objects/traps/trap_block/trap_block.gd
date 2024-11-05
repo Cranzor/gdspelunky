@@ -30,12 +30,12 @@ func _process(delta):
 #func destroy():
     #    if (not clean_death and not global.clean_solids):
 
-#        rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), "rubble")
-#        rubble.sprite_index = s_rubble_tan
-#        rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), "rubbleSmall")
-#        rubble.sprite_index = s_rubble_tanSmall
-#        rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), "rubbleSmall")
-#        rubble.sprite_index = s_rubble_tanSmall
+#        rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), Objects.rubble)
+#        rubble.sprite_index = "rubble_tan"
+#        rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), Objects.rubble_small)
+#        rubble.sprite_index = "rubble_tan_small"
+#        rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), Objects.rubble_small)
+#        rubble.sprite_index = "rubble_tan_small"
 #        if (dying):
     
 #            Audio.play_sound(global.snd_thump)
@@ -54,6 +54,3 @@ func _process(delta):
 
 #        if (death_timer > 0): death_timer -= 1
 #        else: gml.instance_destroy()
-
-
-    

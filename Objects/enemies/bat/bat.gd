@@ -24,23 +24,23 @@ func _process(delta):
 #    # main_code
 #    image_speed = 0.5
 #    Collision.set_collision_bounds(2, 2, 14, 14)
-#    orig_x = 0
-#    orig_y = 0
+#    origX = 0
+#    origY = 0
 #    x_vel = 0
 #    y_vel = 0
 #    x_acc = 0.2
 #    y_acc = 0.2
 
-#    # DY:  stats
+#    # dy:  stats
 #    hp = 1
 #    invincible = 0
 #    flying = true
 
-#    # DY:  status
-#    HANG = 0
-#    ATTACK = 1
+#    # dy:  status
+#    hang = 0
+#    attack = 1
 
-#    status = HANG
+#    status = hang
 
 #    shake_counter = 0
 #    shake_toggle = 1
@@ -58,9 +58,9 @@ func _process(delta):
 #    if (hp < 1):
 
 #        MiscScripts.scr_create_blood(position.x+8, position.y+8, 3)
-#        if (counts_as_kill):
+#        if (count"as_kill):"
     
-#            if (InLevel.is_real_level()): global.enemy_kills[0] += 1
+#            if (InLevel.i"real_level()): global.enemy_kills[0] += 1"
 #            global.bats += 1
 #            global.kills += 1
     
@@ -70,38 +70,38 @@ func _process(delta):
 #    dir = 0
 #    dist = point_distance(position.x+8, position.y+8, player1.position.x, player1.position.y)
 
-#    if (status == HANG):
+#    if (status == hang):
 
 #      if (not player1.swimming and not player1.dead and:
 #          ((dist < 90 and player1.position.y > position.y + 16) or not gml.collision_point(position.x+8, position.y-1, "solid", 0, 0)))
   
-#        status = ATTACK
+#        status = attack
 #        Audio.play_sound(global.snd_bat)
   
   
-#      sprite_index = s_bat_hang
+#      sprite_index = "bat_hang"
 
 #    elif (gml.instance_exists("player1") and not player1.swimming and not player1.dead):
 
 #        if (dist < 160):
     
 #            dir = point_direction(position.x+8, position.y+8, player1.position.x, player1.position.y)
-#            if (Collision.is_collision_right(1) and player1.position.x > position.x+8):
+#            if (Collision.i"collision_right(1) and player1.position.x > position.x+8):"
         
 #                if (player1.position.y < position.y+8): dir = 90
 #                else: dir = 270
         
-#            if (Collision.is_collision_left(1) and player1.position.x < position.x+8):
+#            if (Collision.i"collision_left(1) and player1.position.x < position.x+8):"
         
 #                if (player1.position.y < position.y+8): dir = 90
 #                else: dir = 270
         
-#            if (Collision.is_collision_top(1) and player1.position.y < position.y+8 and abs(player1.position.x - position.x) > 8):
+#            if (Collision.i"collision_top(1) and player1.position.y < position.y+8 and abs(player1.position.x - position.x) > 8):"
         
 #                if (player1.position.x < position.x+8): dir = 180
 #                else: dir = 0
         
-#            if (Collision.is_collision_bottom(1) and player1.position.y > position.y+8 and abs(player1.position.x - position.x) > 8):
+#            if (Collision.i"collision_bottom(1) and player1.position.y > position.y+8 and abs(player1.position.x - position.x) > 8):"
         
 #                if (player1.position.x < position.x+8): dir = 180
 #                else: dir = 0
@@ -120,7 +120,7 @@ func _process(delta):
     
 #        else:
     
-#            if (gml.collision_point(position.x+8, position.y-1, "solid", 0, 0)): status = HANG
+#            if (gml.collision_point(position.x+8, position.y-1, "solid", 0, 0)): status = hang
 #            else:
         
 #                dir = 90
@@ -130,19 +130,15 @@ func _process(delta):
     
   
 #        if (player1.position.x < position.x+8):
-#            sprite_index = s_bat_left
+#            sprite_index = "bat_left"
 #        else:
-#            sprite_index = s_bat_right
+#            sprite_index = "bat_right"
 
 #    else:
 
-#        if (gml.collision_point(position.x+8, position.y-1, "solid", 0, 0)): status = HANG
+#        if (gml.collision_point(position.x+8, position.y-1, "solid", 0, 0)): status = hang
 #        else:
     
 #            dir = 90
 #            x_vel = 1 * cos(degtorad(dir))
-#            y_vel = -1 * sin(degtorad(dir))  
-    
-
-
-    
+#            y_vel = -1 * sin(degtorad(dir))

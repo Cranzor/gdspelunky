@@ -30,8 +30,8 @@ func _ready():
 	parent = DrawnSprite
 	mask
 
-func item_create():
-	drawn_sprite_create()
+func create():
+	super()
 	active = true
 	type = "None"
 	shop_desc = ""

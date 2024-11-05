@@ -19,7 +19,7 @@ func _process(delta):
 
 #func animation_end():
     #    # action_kill_object
-#    # Need to implement this action
+#    # need to implement this action
     
 
 #func create():
@@ -31,5 +31,3 @@ func _process(delta):
 #    0.8
 #    # main_code
 #    Audio.play_sound(global.snd_small_explode)
-
-    

@@ -18,9 +18,9 @@ func _process(delta):
 
 
 #func alarm 0():
-    #    if (global.graphics_high):
+    #    if (global.graphic"high):"
 
-#        if (gml.instance_number(blood_trail) < 12): gml.instance_create(position.x, position.y, "blood_trail")
+#        if (gml.instance_number(blood_trail) < 12): gml.instance_create(position.x, position.y, Objects.blood_trail)
 #        alarm_0(4)
 
 
@@ -65,9 +65,6 @@ func _process(delta):
 #    # main_code
 #    if (y_vel > 6): gml.instance_destroy()
 
-#    if (Collision.is_collision_bottom(1)):
+#    if (Collision.i"collision_bottom(1)):"
 
 #        if (life > 20): life = 20
-
-
-    

@@ -22,7 +22,7 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "Dice"
+#    type = "dice"
 #    PlatformEngine.make_active()
 #    Collision.set_collision_bounds(-6, 0, 6, 8)
 #    heavy = true
@@ -37,7 +37,7 @@ func _process(delta):
 
 #    if (!rolled and player1.bet > 0):
 
-#        draw_sprite_ext(s_red_arrow_down, 0, position.x, position.y-12, 1, 1, 0, c_white, 1)
+#        draw_sprite_ext("red_arrow_down, 0, position.x, position.y-12, 1, 1, 0, c_white, 1)"
 
 
     
@@ -52,10 +52,10 @@ func _process(delta):
 #            cost = 0
     
 
-#        # DY:  stealing makes shopkeeper angry
-#        if (InLevel.is_level()):
+#        # dy:  stealing makes shopkeeper angry
+#        if (InLevel.i"level()):"
     
-#            if (not InLevel.is_in_shop(position.x, position.y)):
+#            if (not InLevel.i"in_shop(position.x, position.y)):"
         
 #                InLevel.scr_shopkeeper_anger(0)
         
@@ -63,17 +63,17 @@ func _process(delta):
 
 #        if (held):
     
-#            if (character.facing == LEFT): position.x = character.position.x - 4  
-#            elif (character.facing == RIGHT): position.x = character.position.x + 4  
+#            if (character.facing == left): position.x = character.position.x - 4  
+#            elif (character.facing == right): position.x = character.position.x + 4  
 	    
 #            if (heavy):
         
-#                if (character.state == DUCKING and abs(character.x_vel) < 2): position.y = character.position.y
+#                if (character.state == ducking and abs(character.x_vel) < 2): position.y = character.position.y
 #                else: position.y = character.position.y-2  
         
 #            else:
         
-#                if (character.state == DUCKING and abs(character.x_vel) < 2): position.y = character.position.y + 4
+#                if (character.state == ducking and abs(character.x_vel) < 2): position.y = character.position.y + 4
 #                else: position.y = character.position.y+2  
         
 #            depth = 1
@@ -91,10 +91,10 @@ func _process(delta):
 #            col_right = false
 #            col_bot = false
 #            col_top = false
-#            if (Collision.is_collision_left(1)): col_left = true
-#            if (Collision.is_collision_right(1)): col_right = true
-#            if (Collision.is_collision_bottom(1)): col_bot = true
-#            if (Collision.is_collision_top(1)): col_top = true
+#            if (Collision.i"collision_left(1)): col_left = true"
+#            if (Collision.i"collision_right(1)): col_right = true"
+#            if (Collision.i"collision_bottom(1)): col_bot = true"
+#            if (Collision.i"collision_top(1)): col_top = true"
 
 #            if (not col_bot and y_vel < 6): y_vel += my_grav
 	    
@@ -102,18 +102,18 @@ func _process(delta):
 	    
 #            if (col_bot):
         
-#                # DY:  bounce
+#                # dy:  bounce
 #                if (y_vel > 1): y_vel = -y_vel * bounce_factor
 #                else: y_vel = 0
 	        
-#                # DY:  friction
+#                # dy:  friction
 #                if (abs(x_vel) < 0.1): x_vel = 0
 #                elif (abs(x_vel) != 0): x_vel *= friction_factor
 	        
 #                if (abs(y_vel) < 1):
             
 #                    position.y -= 1
-#                    if (not Collision.is_collision_bottom(1)): position.y += 1
+#                    if (not Collision.i"collision_bottom(1)): position.y += 1"
 #                    y_vel = 0
             
         
@@ -121,21 +121,21 @@ func _process(delta):
 #            if (col_left):
         
 #                if (not col_right): position.x += 1
-#                # DY: y_vel = 0
+#                # dy: y_vel = 0
         
 #            elif (col_right):
         
 #                position.x -= 1
-#                # DY: y_vel = 0
+#                # dy: y_vel = 0
         
 	    
-#            if (Collision.is_collision_top(1)):
+#            if (Collision.i"collision_top(1)):"
         
 #                if (y_vel < 0): y_vel = -y_vel * 0.8
 #                else: position.y += 1
         
 
-#            if (global.has_spectacles): depth = 0
+#            if (global.ha"spectacles): depth = 0"
 #            else: depth = 101
 	    
 #            if (gml.collision_rectangle(position.x-3, position.y-3, position.x+3,  position.y+3, "lava", 0, 0)):
@@ -157,68 +157,68 @@ func _process(delta):
 #            if (gml.collision_rectangle(position.x-2, position.y-2, position.x+2,  position.y+2, "enemy", 0, 0)):
         
 #                obj = instance_nearest(position.x, position.y, enemy)
-#                if (not obj.invincible and obj.type != "Magma Man"):
+#                if (not obj.invincible and obj.type != "magma man"):
             
 #                    obj.x_vel = x_vel
 #                    with obj
                 
-#                        if (type == "Caveman" or type == "Man_trap" or type == "Yeti" or type == "Hawkman"):
+#                        if (type == "caveman" or type == "man_trap" or type == "yeti" or type == "hawkman"):
                     
-#                            if (status != STUNNED):
+#                            if (status != stunned):
                         
-#                                if (type == "Caveman" or type == "Yeti" or type == "Hawkman"):
+#                                if (type == "caveman" or type == "yeti" or type == "hawkman"):
                             
-#                                    gml.instance_create(position.x, position.y, "blood")
+#                                    gml.instance_create(position.x, position.y, Objects.blood)
                             
-#                                elif (type == "Man_trap"):
+#                                elif (type == "man_trap"):
                             
-#                                    gml.instance_create(position.x+randi_range(0,16), position.y-8+randi_range(0,16), "leaf")
+#                                    gml.instance_create(position.x+randi_range(0,16), position.y-8+randi_range(0,16), Objects.leaf)
                             
 #                                hp -= 1
-#                                status = STUNNED
+#                                status = stunned
 #                                counter = stun_time
 #                                y_vel = -6
 #                                Audio.play_sound(global.snd_hit)
                         
                     
-#                        elif (type == "Shopkeeper"):
+#                        elif (type == "shopkeeper"):
                     
 #                            if (status < 98):
                         
-#                                gml.instance_create(position.x, position.y, "blood")
+#                                gml.instance_create(position.x, position.y, Objects.blood)
 #                                hp -= 1
 #                                y_vel = -6
 #                                status = 2
 #                                Audio.play_sound(global.snd_hit)
                         
                     
-#                        elif (type == "Giant Spider"):
+#                        elif (type == "giant spider"):
                     
 #                            if (whipped == 0):
                         
-#                                gml.instance_create(position.x+16, position.y+24, "blood")
+#                                gml.instance_create(position.x+16, position.y+24, Objects.blood)
 #                                hp -= 1
 #                                whipped = 10
 #                                Audio.play_sound(global.snd_hit)
                         
                     
-#                        elif (type == "Alien Boss"):
+#                        elif (type == "alien boss"):
                     
-#                            if (status != 99 and sprite_index != s_alien_boss_hurt):
+#                            if (status != 99 and sprite_index != "alien_boss_hurt):"
                         
-#                                gml.instance_create(position.x+8, position.y+8, "blood")
+#                                gml.instance_create(position.x+8, position.y+8, Objects.blood)
 #                                hp -= 1
-#                                sprite_index = s_alien_boss_hurt
+#                                sprite_index = "alien_boss_hurt"
 #                                image_speed = 0.8
 #                                Audio.play_sound(global.snd_hit)
                         
                     
 #                        else:
                     
-#                            gml.instance_create(position.x+8, position.y+8, "blood")
+#                            gml.instance_create(position.x+8, position.y+8, Objects.blood)
 #                            hp -= 1
-#                            orig_x = position.x
-#                            orig_y = position.y
+#                            origX = position.x
+#                            origY = position.y
 #                            Audio.play_sound(global.snd_hit)
                     
                     
@@ -232,7 +232,7 @@ func _process(delta):
 #                obj = instance_nearest(position.x, position.y, damsel)
 #                if (not obj.invincible and obj.status != 2 and obj.status != 99):
             
-#                    gml.instance_create(position.x, position.y, "blood")
+#                    gml.instance_create(position.x, position.y, Objects.blood)
 #                    with obj
                 
 #                        if (held):
@@ -255,24 +255,21 @@ func _process(delta):
 
 #    if (abs(y_vel) > 2 or abs(x_vel) > 2):
 
-#        sprite_index = s_dice_roll
+#        sprite_index = "dice_roll"
 #        value = randi_range(1,6)
 #        if (player1.bet > 0): rolling = true
 
-#    elif (Collision.is_collision_bottom(1)):
+#    elif (Collision.i"collision_bottom(1)):"
 
 #        if (rolling and y_vel == 0):
     
-#            if (rolled): InLevel.scr_shopkeeper_anger(0) # DY:  NO CHEATING!
+#            if (rolled): InLevel.scr_shopkeeper_anger(0) # dy:  no cheating!
 #            rolled = true
 #            rolling = false
     
-#        if (value == 1): sprite_index = s_dice1
-#        elif (value == 2): sprite_index = s_dice2
-#        elif (value == 3): sprite_index = s_dice3
-#        elif (value == 4): sprite_index = s_dice4
-#        elif (value == 5): sprite_index = s_dice5
-#        else: sprite_index = s_dice6
-
-
-    
+#        if (value == 1): sprite_index = "dice1"
+#        elif (value == 2): sprite_index = "dice2"
+#        elif (value == 3): sprite_index = "dice3"
+#        elif (value == 4): sprite_index = "dice4"
+#        elif (value == 5): sprite_index = "dice5"
+#        else: sprite_index = "dice6"

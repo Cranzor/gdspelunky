@@ -19,5 +19,4 @@ func _process(delta):
 
 #func outside room():
 	#    # action_kill_object
-#    # Need to implement this action
-	
+#    # need to implement this action

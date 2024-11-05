@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bq3f0yg7apkfa"]
 
-[sub_resource type="GDScript" id="GDScript_qcsm0"]
+[ext_resource type="Script" path="res://objects/level editor/zombie_tile/zombie_tile.gd" id="1_ikubh"]
 
 [node name="ZombieTile" type="Node2D"]
+script = ExtResource("1_ikubh")
+object_name = "zombie_tile"

@@ -27,16 +27,16 @@ func _process(delta):
 #    x_vel = 0
 #    image_speed = 0.5
 
-#    # DY:  stats
-#    type = "Skeleton"
+#    # dy:  stats
+#    type = "skeleton"
 #    hp = 1
 #    invincible = 0
 
-#    IDLE = 0
-#    WALK = 1
-#    ATTACK = 2
-#    STUNNED = 98
-#    DEAD = 99
+#    idle = 0
+#    walk = 1
+#    attack = 2
+#    stunned = 98
+#    dead = 99
 #    status = 0
 
 #    bloodless = true
@@ -44,12 +44,12 @@ func _process(delta):
 #    dead = false
 #    counter = 20
 
-#    LEFT = 0
-#    RIGHT = 1
-#    facing = RIGHT
+#    left = 0
+#    right = 1
+#    facing = right
 #    if (gml.instance_exists("player1")):
 
-#        if (player1.position.x < position.x+8): facing = LEFT
+#        if (player1.position.x < position.x+8): facing = left
 
 
 #    shake_counter = 0
@@ -68,7 +68,7 @@ func _process(delta):
 #    PlatformEngine.move_to(x_vel,y_vel)
 
 #    y_vel += my_grav
-#    if (y_vel > y_velLimit): y_vel = y_velLimit
+#    if (y_vel > y_vel_limit): y_vel = y_vel_limit
 
 #    if (gml.collision_point(position.x+8, position.y+8, "solid", 0, 0)):
 
@@ -79,82 +79,78 @@ func _process(delta):
 
 #        for i in range(0, 3):
     
-#            gml.instance_create(other.position.x+8, other.position.y+8, "bone")
+#            gml.instance_create(other.position.x+8, other.position.y+8, Objects.bone)
     
-#        skull = gml.instance_create(other.position.x+8, other.position.y+8, "skull")
+#        skull = gml.instance_create(other.position.x+8, other.position.y+8, Objects.skull)
 #        skull.y_vel = -randi_range(1,3)
 #        skull.x_vel = randi_range(0,3)-randi_range(0,3)
-#        if (counts_as_kill):
+#        if (count"as_kill):"
     
-#            if (InLevel.is_real_level()): global.enemy_kills[5] += 1
+#            if (InLevel.i"real_level()): global.enemy_kills[5] += 1"
 #            global.skeletons += 1
 #            global.kills += 1
     
 #        gml.instance_destroy()
 
 
-#    if (Collision.is_collision_bottom(1) and status != STUNNED):
+#    if (Collision.i"collision_bottom(1) and status != stunned):"
 #        y_vel = 0
 
-#    if (status == IDLE):
+#    if (status == idle):
 
 #        if (counter > 0): counter -= 1    
 #        if (counter == 0):
     
-#            # DY:  facing = randi_range(0,1)
-#            status = WALK
+#            # dy:  facing = randi_range(0,1)
+#            status = walk
     
 
-#    elif (status == WALK):
+#    elif (status == walk):
 
 #        col_left = false
 #        col_right = false
-#        if (Collision.is_collision_left(1)): col_left = true
-#        if (Collision.is_collision_right(1)): col_right = true
+#        if (Collision.i"collision_left(1)): col_left = true"
+#        if (Collision.i"collision_right(1)): col_right = true"
     
-#        if (Collision.is_collision_left(4) and Collision.is_collision_right(4)):
+#        if (Collision.i"collision_left(4) and Collision.is_collision_right(4)):"
     
-#            # DY:  do nothing
+#            # dy:  do nothing
     
 #        elif (col_left or col_right):
     
-#            if (facing == LEFT): facing = RIGHT
-#            else: facing = LEFT
+#            if (facing == left): facing = right
+#            else: facing = left
     
 #        /*
-#        if (facing == LEFT and not gml.collision_point(position.x-1, position.y, "solid", -1, -1) and:
+#        if (facing == left and not gml.collision_point(position.x-1, position.y, "solid", -1, -1) and:
 #            not gml.collision_point(position.x-1, position.y+16, "solid", -1, -1))
     
-#            facing = RIGHT
+#            facing = right
     
-#        elif (facing == RIGHT and not gml.collision_point(position.x+16, position.y, "solid", -1, -1) and:
+#        elif (facing == right and not gml.collision_point(position.x+16, position.y, "solid", -1, -1) and:
 #                 not gml.collision_point(position.x+16, position.y+16, "solid", -1, -1))
     
-#            facing = LEFT
+#            facing = left
     
 #        */
     
-#        if (facing == LEFT): x_vel = -1
+#        if (facing == left): x_vel = -1
 #        else: x_vel = 1
     
 #        /*
 #        if (randi_range(1,100) == 1):
     
-#            status = IDLE
+#            status = idle
 #            counter = randi_range(20,50)
 #            x_vel = 0
     
 #        */
 
 
-#    if (Collision.is_collision_solid()):
+#    if (Collision.i"collision_solid()):"
 #        position.y -= 2
 
-#    if (status != STUNNED):
+#    if (status != stunned):
 
-#        if (status == WALK): sprite_index = s_skeleton_walk_left
-#        else: sprite_index = s_skeleton_left
-
-
-
-    
+#        if (status == walk): sprite_index = "skeleton_walk_left"
+#        else: sprite_index = "skeleton_left"

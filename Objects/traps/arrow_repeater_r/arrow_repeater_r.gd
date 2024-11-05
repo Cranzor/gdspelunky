@@ -18,7 +18,7 @@ func _process(delta):
 
 
 #func alarm 0():
-    #    arrow = gml.instance_create(position.x+16, position.y+4, "arrow")
+    #    arrow = gml.instance_create(position.x+16, position.y+4, Objects.arrow)
 #    arrow.x_vel = 5
 
     
@@ -40,24 +40,24 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "Arrow Trap"
+#    type = "arrow trap"
 #    fired = 100+randi_range(100)
 #    invincible = false
-#    x_act = 0 # DY:  activate distance
-#    # DY: alarm_0(50)
-#    # DY: alarm_1(1)
+#    x_act = 0 # dy:  activate distance
+#    # dy: alarm_0(50)
+#    # dy: alarm_1(1)
 
     
 
 #func destroy():
     #    if (not clean_death and not global.clean_solids):
 
-#        rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), "rubble")
-#        rubble.sprite_index = s_rubble_tan
-#        rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), "rubbleSmall")
-#        rubble.sprite_index = s_rubble_tanSmall
-#        rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), "rubbleSmall")
-#        rubble.sprite_index = s_rubble_tanSmall
+#        rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), Objects.rubble)
+#        rubble.sprite_index = "rubble_tan"
+#        rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), Objects.rubble_small)
+#        rubble.sprite_index = "rubble_tan_small"
+#        rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), Objects.rubble_small)
+#        rubble.sprite_index = "rubble_tan_small"
 
 
     
@@ -67,10 +67,7 @@ func _process(delta):
 #    if (fired > 0): fired -= 1
 #    elif (not player1.dead):
     
-#            arrow = gml.instance_create(position.x+18, position.y+4, "arrow")
+#            arrow = gml.instance_create(position.x+18, position.y+4, Objects.arrow)
 #            arrow.x_vel = 8
 #            fired = randi_range(100,200)
 #            Audio.play_sound(global.snd_arrow_trap)
-
-
-    

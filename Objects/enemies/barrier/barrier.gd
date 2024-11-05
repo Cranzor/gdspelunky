@@ -20,7 +20,7 @@ func _process(delta):
 #func collision with o_bullet():
     #    with other
 
-#        gml.instance_create(position.x, position.y, "smoke_puff")
+#        gml.instance_create(position.x, position.y, Objects.smoke_puff)
 #        Audio.play_sound(global.snd_hit)
 #        gml.instance_destroy()
 
@@ -46,11 +46,11 @@ func _process(delta):
     
 
 #func collision with o_item():
-    #    if (other.type == "Bomb"):
+    #    if (other.type == "bomb"):
 
 #        with other
     
-#            sprite_index = s_bomb_armed
+#            sprite_index = "bomb_armed"
 #            image_speed = 1
 #            alarm_1()randi_range(4,8)
     
@@ -70,6 +70,3 @@ func _process(delta):
     #    with other
 
 #        gml.instance_destroy()
-
-
-    

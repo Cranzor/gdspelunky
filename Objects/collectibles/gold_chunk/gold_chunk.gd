@@ -22,11 +22,9 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "Gold Chunk"
+#    type = "gold chunk"
 #    PlatformEngine.make_active()
 #    Collision.set_collision_bounds(-2, -2, 2, 2)
 #    y_off = 2
 #    value = 100
 #    can_collect = true
-
-    

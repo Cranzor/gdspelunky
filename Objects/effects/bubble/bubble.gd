@@ -39,6 +39,3 @@ func _process(delta):
 #    if (not gml.collision_point(position.x, position.y, "water", 0, 0)):
 
 #        gml.instance_destroy()
-
-
-    

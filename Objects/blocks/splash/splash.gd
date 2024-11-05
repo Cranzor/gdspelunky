@@ -28,5 +28,3 @@ func _process(delta):
 
 #    # main_code
 #    image_speed = 0.6
-
-    

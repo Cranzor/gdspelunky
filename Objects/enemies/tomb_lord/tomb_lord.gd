@@ -18,19 +18,19 @@ func _process(delta):
 
 
 #func animation_end():
-    #    if (sprite_index == s_tomb_lord_turn_r):
+    #    if (sprite_index == "tomb_lord_turn_r):"
 
-#        facing = RIGHT
-#        status = WALK
+#        facing = right
+#        status = walk
 
-#    if (sprite_index == s_tomb_lord_turn_l):
+#    if (sprite_index == "tomb_lord_turn_l):"
 
-#        facing = LEFT
-#        status = WALK
+#        facing = left
+#        status = walk
 
-#    if (sprite_index == s_tomb_lord_attack_l or sprite_index == s_tomb_lord_attack_r):
+#    if (sprite_index == "tomb_lord_attack_l or sprite_index == s_tomb_lord_attack_r):"
 
-#        status = IDLE
+#        status = idle
 #        counter = 30
 #        image_speed = 0.25
 
@@ -38,22 +38,22 @@ func _process(delta):
     
 
 #func collision with o_character():
-    #    # DY:  jumped on - caveman, man_trap replaces this script with its own
+    #    # dy:  jumped on - caveman, man_trap replaces this script with its own
 #    if (abs(other.position.x-(position.x+16)) > 16):
 
-#        # DY:  do nothing
+#        # dy:  do nothing
 
 #    elif (not other.dead and (other.state == 15 or other.state == 16) and other.position.y < position.y+8 and not other.swimming):
 
 #        other.y_vel = -6 - 0.2 * other.y_vel
-#        if (global.has_spike_shoes):
+#        if (global.ha"spike_shoes):"
     
 #            hp -= (3 * (floor(other.fall_timer/16)+1))
     
 #        else: hp -= (1 * (floor(other.fall_timer/16)+1))
 #        other.fall_timer = 0
-#        counts_as_kill = true
-#        gml.instance_create(position.x+16, position.y, "bone")
+#        count"as_kill = true"
+#        gml.instance_create(position.x+16, position.y, Objects.bone)
 #        Audio.play_sound(global.snd_hit)
 
 #    elif (other.invincible == 0):
@@ -70,7 +70,7 @@ func _process(delta):
 #        if (global.plife > 0):
     
 #            global.plife -= 2
-#            if (global.plife <= 0 and InLevel.is_real_level()): global.enemy_deaths[20] += 1
+#            if (global.plife <= 0 and InLevel.i"real_level()): global.enemy_deaths[20] += 1"
     
 #        Audio.play_sound(global.snd_hurt)
 
@@ -82,8 +82,8 @@ func _process(delta):
     #    if (whipped == 0 and other.position.y < position.y+12):
 
 #        hp -= other.damage
-#        counts_as_kill = true
-#        gml.instance_create(position.x+16, position.y+24, "blood")
+#        count"as_kill = true"
+#        gml.instance_create(position.x+16, position.y+24, Objects.blood)
 #        Audio.play_sound(global.snd_hit)
 #        whipped = 10
 
@@ -101,20 +101,20 @@ func _process(delta):
 #    x_vel = 2.5
 #    image_speed = 0.25
 
-#    # DY:  stats
-#    type = "Tomb Lord"
+#    # dy:  stats
+#    type = "tomb lord"
 #    hp = 20
 #    invincible = 0
 #    heavy = true
 #    bloodless = true
 
-#    IDLE = 0
-#    WALK = 1
-#    TURN = 2
-#    ATTACK = 3
-#    STUNNED = 98
-#    DEAD = 99
-#    status = IDLE
+#    idle = 0
+#    walk = 1
+#    turn = 2
+#    attack = 3
+#    stunned = 98
+#    dead = 99
+#    status = idle
 
 #    can_pick_up = false
 #    bounced = false
@@ -123,9 +123,9 @@ func _process(delta):
 #    counter = 0
 #    attack_timer = 0
 
-#    LEFT = 0
-#    RIGHT = 1
-#    facing = RIGHT
+#    left = 0
+#    right = 1
+#    facing = right
 
 #    shake_counter = 0
 #    shake_toggle = 1
@@ -148,7 +148,7 @@ func _process(delta):
 #    PlatformEngine.move_to(x_vel,y_vel)
 
 #    y_vel += my_grav
-#    if (y_vel > y_velLimit): y_vel = y_velLimit
+#    if (y_vel > y_vel_limit): y_vel = y_vel_limit
 
 #    if (gml.collision_point(position.x+16, position.y+16, "solid", 0, 0)):
 
@@ -160,111 +160,107 @@ func _process(delta):
 #        MiscScripts.scr_create_blood(position.x+14+randi_range(0,4), position.y+14+randi_range(0,4), 4)
 #        for repetition in range(1, 4):
     
-#            gml.instance_create(position.x+14+randi_range(0,4), position.y+12+randi_range(0,6), "bone")
+#            gml.instance_create(position.x+14+randi_range(0,4), position.y+12+randi_range(0,6), Objects.bone)
     
-#        if (global.curr_level == 13): gml.instance_create(position.x+16, position.y+16, "sceptre")
-#        if (counts_as_kill):
+#        if (global.curr_level == 13): gml.instance_create(position.x+16, position.y+16, Objects.sceptre)
+#        if (count"as_kill):"
     
-#            if (InLevel.is_real_level()): global.enemy_kills[20] += 1
+#            if (InLevel.i"real_level()): global.enemy_kills[20] += 1"
 #            global.tomblords += 1
 #            global.kills += 1
     
 #        gml.instance_destroy()
 
 
-#    if (Collision.is_collision_bottom(1) and status != STUNNED):
+#    if (Collision.i"collision_bottom(1) and status != stunned):"
 #        y_vel = 0
 
 #    if (attack_timer > 0): attack_timer -= 1
 #    if (whipped > 0): whipped -= 1
     
-#    if (status == IDLE):
+#    if (status == idle):
 
 #        if (counter > 0): counter -= 1    
 #        if (counter <= 0):
     
-#            status = WALK
+#            status = walk
     
 
-#    elif (status == WALK):
+#    elif (status == walk):
 
 #        if (counter > 0): counter -= 1
     
-#        if (facing == LEFT):
+#        if (facing == left):
     
-#            if (Collision.is_collision_left(1) or:
+#            if (Collision.i"collision_left(1) or:"
 #                (player1.position.x > position.x+16 and abs(player1.position.y-(position.y+32)) < 16 and counter == 0))
         
-#                sprite_index = s_tomb_lord_turn_r
-#                status = TURN
+#                sprite_index = "tomb_lord_turn_r"
+#                status = turn
 #                counter = 30
         
 #            elif (player1.position.x < position.x+16 and abs(player1.position.y-(position.y+16)) < 32 and attack_timer == 0):
         
-#                status = ATTACK
-#                sprite_index = s_tomb_lord_attack_l
+#                status = attack
+#                sprite_index = "tomb_lord_attack_l"
 #                image_index = 0
 #                x_vel = 0
         
 #            else: x_vel = -1
     
-#        elif (facing == RIGHT):
+#        elif (facing == right):
     
-#            if (Collision.is_collision_right(1) or:
+#            if (Collision.i"collision_right(1) or:"
 #                (player1.position.x < position.x+16 and abs(player1.position.y-(position.y+32)) < 16 and counter == 0))
         
-#                sprite_index = s_tomb_lord_turn_l
-#                status = TURN
+#                sprite_index = "tomb_lord_turn_l"
+#                status = turn
 #                counter = 30
         
 #            elif (player1.position.x > position.x+16 and abs(player1.position.y-(position.y+16)) < 32 and attack_timer == 0):
         
-#                status = ATTACK
-#                sprite_index = s_tomb_lord_attack_r
+#                status = attack
+#                sprite_index = "tomb_lord_attack_r"
 #                image_index = 0
 #                x_vel = 0
         
 #            else: x_vel = 1
     
 
-#    elif (status == TURN):
+#    elif (status == turn):
 
 #        x_vel = 0
 
-#    elif (status == ATTACK):
+#    elif (status == attack):
 
 #        x_vel = 0
 #        image_speed = 0.5
 #        attack_timer = 100
 #        if (image_index >= 7 and image_index <= 12):
     
-#            if (facing == LEFT):
+#            if (facing == left):
         
-#                obj = gml.instance_create(position.x+8, position.y+12+randi_range(0,4), "fly")
+#                obj = gml.instance_create(position.x+8, position.y+12+randi_range(0,4), Objects.fly)
 #                obj.x_vel = -randi_range(3,5)
         
 #            else:
         
-#                obj = gml.instance_create(position.x+24, position.y+12+randi_range(0,4), "fly")
+#                obj = gml.instance_create(position.x+24, position.y+12+randi_range(0,4), Objects.fly)
 #                obj.x_vel = randi_range(3,5)
         
     
 
-#    elif (status >= STUNNED): status = WALK
+#    elif (status >= stunned): status = walk
 
-#    if (Collision.is_collision_solid()):
+#    if (Collision.i"collision_solid()):"
 #        position.y -= 2
 
-#    if (facing == LEFT):
+#    if (facing == left):
    
-#        if (status == WALK): sprite_index = s_tomb_lord_walk_l
-#        elif (status == IDLE): sprite_index = s_tomb_lord_left
+#        if (status == walk): sprite_index = "tomb_lord_walk_l"
+#        elif (status == idle): sprite_index = "tomb_lord_left"
 
-#    if (facing == RIGHT):
+#    if (facing == right):
    
-#        if (status == WALK): sprite_index = s_tomb_lord_walk_r
-#        elif (status == IDLE): sprite_index = s_tomb_lord_right
-
-
-
-    
+#        if (status == walk): sprite_index = "tomb_lord_walk_r"
+#        elif (status == idle): sprite_index = "tomb_lord_right"

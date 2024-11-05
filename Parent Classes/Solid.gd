@@ -11,23 +11,13 @@ var down
 var left
 var right
 
-func _ready():
-	drawn_sprite_create()
-	sprite
-	solid = false
-	visible = true
-	depth = 100
-	persistent = false
-	parent = 'DrawnSprite'
-	mask
-
-func solid_create():
-	drawn_sprite_create()
+func create():
+	super()
 	invincible = false
 	shop_wall = false
 	type = "None"
 	treasure = ""
 	clean_death = false
 
-func solid_destroy():
+func destroy(): #--- have to implement
 	pass

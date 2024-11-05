@@ -19,7 +19,7 @@ func _process(delta):
 
 #func animation_end():
     #    # action_kill_object
-#    # Need to implement this action
+#    # need to implement this action
     
 
 #func collision with o_damsel():
@@ -32,16 +32,16 @@ func _process(delta):
 #        status = 2
 
 
-#    # DY:  gml.instance_create(position.x, position.y, "laser_explode")
+#    # dy:  gml.instance_create(position.x, position.y, Objects.laser_explode)
 
-#    # DY:  global.check_water = true
+#    # dy:  global.check_water = true
 
 #    gml.instance_destroy()
 
     
 
 #func collision with o_enemy():
-    #    if (other.type != "Alien Boss" and other.invincible == 0):
+    #    if (other.type != "alien boss" and other.invincible == 0):
 
 #        other.hp -= 3
 #        other.x_vel = randi_range(0,2)-randi_range(1,2)
@@ -64,12 +64,10 @@ func _process(delta):
 
 #func outside room():
     #    # action_kill_object
-#    # Need to implement this action
+#    # need to implement this action
     
 
 #func step():
     #    dir = point_direction(position.x, position.y, character.position.x, character.position.y)
 #    position.x += 2 * cos(degtorad(dir))
 #    position.y += -2 * sin(degtorad(dir))
-
-    

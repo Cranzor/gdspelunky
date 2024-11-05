@@ -19,7 +19,7 @@ func _process(delta):
 
 #func alarm 0():
     #    # action_kill_object
-#    # Need to implement this action
+#    # need to implement this action
     
 
 #func create():
@@ -35,5 +35,3 @@ func _process(delta):
 
 #func step():
     #    position.y -= 0.1
-
-    

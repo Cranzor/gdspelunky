@@ -22,7 +22,7 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "Tree Branch"
+#    type = "tree branch"
 
     
 
@@ -37,5 +37,3 @@ func _process(delta):
 
 
 #    */
-
-    

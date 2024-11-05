@@ -18,8 +18,8 @@ func _process(delta):
 
 
 #func alarm 0():
-    #    status = BOUNCE
-#    if (Collision.is_collision_bottom(1)):
+    #    status = bounce
+#    if (Collision.i"collision_bottom(1)):"
 
 #        y_vel = -1 * randi_range(2,5)
 #        if (character.position.x < position.x):
@@ -40,7 +40,7 @@ func _process(delta):
     
 
 #func animation_end():
-    #    if (sprite_index == s_spider_flip): sprite_index = s_spider
+    #    if (sprite_index == "spider_flip): sprite_index = s_spider"
 
     
 
@@ -49,26 +49,26 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "Spider"
+#    type = "spider"
 #    PlatformEngine.make_active()
 #    Collision.set_collision_bounds(1, 5, 15, 16)
 #    x_vel = 0
 #    y_vel = 0
 #    y_delta = -0.4
 #    my_grav = 0.2
-#    my_gravNorm = 0.2
+#    my_grav_norm = 0.2
 #    image_speed = 0.4
 
-#    # DY:  stats
+#    # dy:  stats
 #    hp = 1
 #    invincible = 0
 
-#    # DY:  status
-#    IDLE = 0
-#    BOUNCE = 1
-#    RECOVER = 2
-#    WALK = 3
-#    DROWNED = 4
+#    # dy:  status
+#    idle = 0
+#    bounce = 1
+#    recover = 2
+#    walk = 3
+#    drowned = 4
 
 #    status = 0
 #    bounce_counter = 0
@@ -89,7 +89,7 @@ func _process(delta):
 #    PlatformEngine.move_to(x_vel,y_vel)
 
 #    y_vel += my_grav
-#    if (y_vel > y_velLimit): y_vel = y_velLimit
+#    if (y_vel > y_vel_limit): y_vel = y_vel_limit
 
 #    if (gml.collision_point(position.x+8, position.y+8, "solid", 0, 0)):
 
@@ -99,39 +99,39 @@ func _process(delta):
 #    if (hp < 1):
 
 #        MiscScripts.scr_create_blood(position.x+8, position.y+8, 3)
-#        if (counts_as_kill):
+#        if (count"as_kill):"
     
-#            if (InLevel.is_real_level()): global.enemy_kills[2] += 1
+#            if (InLevel.i"real_level()): global.enemy_kills[2] += 1"
 #            global.spiders += 1
 #            global.kills += 1
     
 #        gml.instance_destroy()
 
 
-#    if (Collision.is_collision_right(1)):
+#    if (Collision.i"collision_right(1)):"
 
 #        x_vel = 1
 
 
-#    if (Collision.is_collision_left(1)):
+#    if (Collision.i"collision_left(1)):"
 
 #        x_vel = -1
 
 
 #    dist = gml.distance_to_object(character)
 
-#    if (status == IDLE):
+#    if (status == idle):
 
 #        alarm_0()randi_range(5,20)
-#        status = RECOVER
+#        status = recover
 
-#    elif (status == RECOVER):
+#    elif (status == recover):
 
-#        if (Collision.is_collision_bottom(1)): x_vel = 0
+#        if (Collision.i"collision_bottom(1)): x_vel = 0"
 
-#    elif (status == BOUNCE and dist < 90):
+#    elif (status == bounce and dist < 90):
 
-#        if (Collision.is_collision_bottom(1)):
+#        if (Collision.i"collision_bottom(1)):"
     
 #            y_vel = -1 * randi_range(2,5)
 #            if (character.position.x < position.x+8):
@@ -143,37 +143,34 @@ func _process(delta):
 #                x_vel = 2.5
         
         
-#            if (randi_range(1,4) == 1):  status = IDLE x_vel = 0 y_vel = 0 
+#            if (randi_range(1,4) == 1):  status = idle x_vel = 0 y_vel = 0 
     
 
-#    elif (status != DROWNED):
+#    elif (status != drowned):
 
-#        status = IDLE
-#        # DY: x_vel = 0
+#        status = idle
+#        # dy: x_vel = 0
 
 
-#    if (Collision.is_collision_top(1)):
+#    if (Collision.i"collision_top(1)):"
 #        y_vel = 1
 #    /*
-#    if (Collision.is_collision_left(1) or Collision.is_collision_right(1)):
+#    if (Collision.i"collision_left(1) or Collision.is_collision_right(1)):"
 
 #        x_vel = -x_vel
 
 #    */
 
-#    # DY: if (Collision.is_collision_solid()):
-#    # DY:   position.y -= 2
+#    # dy: if (Collision.i"collision_solid()):"
+#    # dy:   position.y -= 2
 
 #    # main_code
-#    if (gml.collision_point(position.x+8, position.y+8, "water", 0, 0) and status != DROWNED):
+#    if (gml.collision_point(position.x+8, position.y+8, "water", 0, 0) and status != drowned):
 
-#        status = DROWNED
-#        sprite_index = s_spider_drowning
+#        status = drowned
+#        sprite_index = "spider_drowning"
 #        alarm_1(30)
 #        x_vel = 0
 #        y_vel = 0.2
-#        gml.instance_create(position.x+8, position.y, "splash")
+#        gml.instance_create(position.x+8, position.y, Objects.splash)
 #        Audio.play_sound(global.snd_splash)
-
-
-    

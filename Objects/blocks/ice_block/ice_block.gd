@@ -24,7 +24,7 @@ func _process(delta):
 #    # main_code
 #    invincible = false
 #    Collision.set_collision_bounds(0, 0, 16, 16)
-#    if (global.city_of_gold): sprite_index = s_gold_block
+#    if (global.city_of_gold): sprite_index = "gold_block"
 #    clean_death = false
 
     
@@ -34,7 +34,7 @@ func _process(delta):
 
 #        for repetition in range(1, 3):
     
-#            gml.instance_create(position.x+randi_range(0,16), position.y+randi_range(0,16), "drip")
+#            gml.instance_create(position.x+randi_range(0,16), position.y+randi_range(0,16), Objects.drip)
     
 
 
@@ -52,5 +52,3 @@ func _process(delta):
 #        position.y += 0.05
 
 #    if (position.y > 576): gml.instance_destroy()
-
-    

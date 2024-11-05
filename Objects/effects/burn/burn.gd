@@ -39,6 +39,3 @@ func _process(delta):
 #    if (gml.collision_point(position.x, position.y, "solid", 0, 0)):
 
 #        gml.instance_destroy()
-
-
-    

@@ -19,7 +19,7 @@ func _process(delta):
 
 #func animation_end():
     #    # action_kill_object
-#    # Need to implement this action
+#    # need to implement this action
     
 
 #func collision with o_solid():
@@ -42,5 +42,3 @@ func _process(delta):
     #    position.x += x_vel
 #    position.y += y_vel
 #    if (y_vel < 6): y_vel += 0.6
-
-    

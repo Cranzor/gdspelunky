@@ -27,25 +27,25 @@ func _process(delta):
 #    x_vel = 2.5
 #    image_speed = 0.5
 
-#    # DY:  stats
-#    type = "Alien"
+#    # dy:  stats
+#    type = "alien"
 #    hp = 1
 #    invincible = 0
 
-#    IDLE = 0
-#    WALK = 1
-#    ATTACK = 2
-#    STUNNED = 98
-#    DEAD = 99
-#    status = IDLE
+#    idle = 0
+#    walk = 1
+#    attack = 2
+#    stunned = 98
+#    dead = 99
+#    status = idle
 
 #    bounced = false
 #    dead = false
 #    counter = 0
 
-#    LEFT = 0
-#    RIGHT = 1
-#    facing = RIGHT
+#    left = 0
+#    right = 1
+#    facing = right
 
 #    shake_counter = 0
 #    shake_toggle = 1
@@ -70,9 +70,9 @@ func _process(delta):
 #    if (hp < 1):
 
 #        MiscScripts.scr_create_blood(position.x+8, position.y+8, 3)
-#        if (counts_as_kill):
+#        if (count"as_kill):"
     
-#            if (InLevel.is_real_level()): global.enemy_kills[15] += 1
+#            if (InLevel.i"real_level()): global.enemy_kills[15] += 1"
 #            global.aliens += 1
 #            global.kills += 1
     
@@ -81,57 +81,55 @@ func _process(delta):
 
 #    y_vel += 0.6
 
-#    if (Collision.is_collision_bottom(1) and status != STUNNED):
+#    if (Collision.i"collision_bottom(1) and status != stunned):"
 #        y_vel = 0
 
-#    if (status == IDLE):
+#    if (status == idle):
 
 #        if (counter > 0): counter -= 1    
 #        if (counter == 0):
     
 #            facing = randi_range(0,1)
-#            status = WALK
+#            status = walk
     
 
-#    elif (status == WALK):
+#    elif (status == walk):
 
-#        if (Collision.is_collision_right(1)):
+#        if (Collision.i"collision_right(1)):"
     
-#            facing = LEFT
+#            facing = left
     
-#        if (Collision.is_collision_left(1)):
+#        if (Collision.i"collision_left(1)):"
     
-#            facing = RIGHT
+#            facing = right
     
-#        if (facing == LEFT and not gml.collision_point(position.x-1, position.y, "solid", -1, -1) and:
+#        if (facing == left and not gml.collision_point(position.x-1, position.y, "solid", -1, -1) and:
 #            not gml.collision_point(position.x-1, position.y+16, "solid", -1, -1))
     
-#            facing = RIGHT
+#            facing = right
     
-#        elif (facing == RIGHT and not gml.collision_point(position.x+16, position.y, "solid", -1, -1) and:
+#        elif (facing == right and not gml.collision_point(position.x+16, position.y, "solid", -1, -1) and:
 #                 not gml.collision_point(position.x+16, position.y+16, "solid", -1, -1))
     
-#            facing = LEFT
+#            facing = left
     
 #        if ((not gml.collision_point(position.x-1, position.y+16, "solid", -1, -1) or gml.collision_point(position.x-1, position.y, "solid", -1, -1)) and:
 #            (not gml.collision_point(position.x+16, position.y+16, "solid", -1, -1) or gml.collision_point(position.x+16, position.y, "solid", -1, -1)))
     
-#            if (gml.collision_point(position.x-1, position.y, "solid", -1, -1)): facing = RIGHT
-#            else: facing = LEFT
+#            if (gml.collision_point(position.x-1, position.y, "solid", -1, -1)): facing = right
+#            else: facing = left
 #            x_vel = 0
     
-#        elif (facing == LEFT): x_vel = -1
+#        elif (facing == left): x_vel = -1
 #        else: x_vel = 1
     
 #        if (randi_range(1,100) == 1):
     
-#            status = IDLE
+#            status = idle
 #            counter = randi_range(20,50)
 #            x_vel = 0
     
 
 
-#    # DY: if (Collision.is_collision_solid()):
-#    # DY:     position.y -= 2
-
-    
+#    # dy: if (Collision.i"collision_solid()):"
+#    # dy:     position.y -= 2

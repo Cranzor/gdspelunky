@@ -22,7 +22,5 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "Tomb Lord"
+#    type = "tomb lord"
 #    image_speed = 0
-
-    

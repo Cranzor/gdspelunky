@@ -22,7 +22,7 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "Gold Idol"
+#    type = "gold idol"
 #    PlatformEngine.make_active()
 #    Collision.set_collision_bounds(-4, -4, 4, 4)
 #    trigger = true
@@ -39,8 +39,8 @@ func _process(delta):
 #    if ((position.x > view_xview[0]-8 and position.x < view_xview[0] + view_wview[0]+8 and:
 #            position.y > view_yview[0]-8 and position.y < view_yview[0] + view_hview[0]+8))
 
-#    # DY:  get money for idols at shops
-#    if (InLevel.is_level()):
+#    # dy:  get money for idols at shops
+#    if (InLevel.i"level()):"
 
 #        if (not held and:
 #            gml.collision_point(position.x, position.y+4, "brick_smooth", 0, 0) and
@@ -54,8 +54,8 @@ func _process(delta):
 #                if (global.collect_counter > 100): global.collect_counter = 100
 #                global.idols += 1
 #                Audio.play_sound(global.snd_coin)
-#                gml.instance_create(position.x, position.y-8, "big_collect")
-#                global.message = "PLEASURE DOING BUSINESS!"
+#                gml.instance_create(position.x, position.y-8, Objects.big_collect)
+#                global.message = "pleasure doing business!"
 #                global.message2 = ""
 #                global.message_timer = 100
 #                gml.instance_destroy()
@@ -65,8 +65,4 @@ func _process(delta):
 #    if (not col_bot and trigger):
 
 #        trigger = false
-#        global.idols_grabbed += 1
-
-
-
-    
+#        global.idol"grabbed += 1"

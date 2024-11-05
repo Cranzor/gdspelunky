@@ -20,7 +20,7 @@ func _process(delta):
 #func alarm 0():
     #    draw_status = 1
 #    alarm_1(50)
-#    play_music(global.mus_victory, false)
+#    play_music(global.mu"victory, false)"
 #    with menu
 
 #        visible = true
@@ -87,13 +87,13 @@ func _process(delta):
 
 #        draw_set_font(global.my_font)
 #        draw_set_color(c_yellow)
-#        draw_text(64, 32, "YOU MADE IT!")
+#        draw_text(64, 32, "you made it!")
 
 #    if (draw_status > 1):
 
-#        draw_set_font(global.my_fontSmall)
+#        draw_set_font(global.my_font_small)
 #        draw_set_color(c_yellow)
-#        draw_text(64, 64, "FINAL SCORE:")
+#        draw_text(64, 64, "final score:")
 
 #    if (draw_status > 2):
 
@@ -112,26 +112,26 @@ func _process(delta):
 #            m += 1
     
 
-#        draw_set_font(global.my_fontSmall)
+#        draw_set_font(global.my_font_small)
 #        draw_set_color(c_yellow)
-#        draw_text(64, 96, "TIME: ")
+#        draw_text(64, 96, "time: ")
 #        draw_set_color(c_white)
 #        if (s < 10): draw_text(96+24, 96, str\(m) + ":0" + str\(s))
 #        else: draw_text(96+24, 96, str\(m) + ":" + str\(s))
 
 #    if (draw_status > 5):
 
-#        draw_set_font(global.my_fontSmall)
+#        draw_set_font(global.my_font_small)
 #        draw_set_color(c_yellow)
-#        draw_text(64, 96+8, "KILLS: ")
+#        draw_text(64, 96+8, "kills: ")
 #        draw_set_color(c_white)
 #        draw_text(96+24, 96+8, global.kills)
 
 #    if (draw_status > 6):
 
-#        draw_set_font(global.my_fontSmall)
+#        draw_set_font(global.my_font_small)
 #        draw_set_color(c_yellow)
-#        draw_text(64, 96+16, "SAVES: ")
+#        draw_text(64, 96+16, "saves: ")
 #        draw_set_color(c_white)
 #        draw_text(96+24, 96+16, global.damsels)
 
@@ -146,12 +146,12 @@ func _process(delta):
 
 #    if (draw_status == 8):
 
-#        draw_set_font(global.my_fontSmall)
+#        draw_set_font(global.my_font_small)
 #        draw_set_color(c_white)
-#        str_len = string_length("YOU SHALL BE REMEMBERED AS A HERO.")*8
+#        str_len = string_length("you shall be remembered as A hero.")*8
 #        n = 320 - str_len
 #        n = ceil(n / 2)
-#        draw_text(n, 116, str\("YOU SHALL BE REMEMBERED AS A HERO."))
+#        draw_text(n, 116, str\("you shall be remembered as A hero."))
 
 
     
@@ -203,6 +203,3 @@ func _process(delta):
 
 #        if (fade_level < 1): fade_level += 0.1
 #        else: draw_status = 8
-
-
-    

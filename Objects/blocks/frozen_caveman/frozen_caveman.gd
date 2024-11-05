@@ -20,7 +20,7 @@ func _process(delta):
 #func destroy():
     #    if (not global.clean_solids):
 
-#        enemy = gml.instance_create(position.x, position.y, "caveman")
+#        enemy = gml.instance_create(position.x, position.y, Objects.caveman)
 #        enemy.invincible = 20
 #        enemy.status = 98
 #        enemy.counter = enemy.stun_time
@@ -30,5 +30,3 @@ func _process(delta):
 
 #func step():
     #    if (not gml.collision_point(position.x, position.y, "ice", 0, 0)): gml.instance_destroy()
-
-    

@@ -19,7 +19,7 @@ func _process(delta):
 
 #func alarm 0():
     #    # action_kill_object
-#    # Need to implement this action
+#    # need to implement this action
     
 
 #func create():
@@ -36,5 +36,3 @@ func _process(delta):
     #    position.y -= 1
 #    position.x = ceil(position.x)
 #    position.y = ceil(position.y)
-
-    

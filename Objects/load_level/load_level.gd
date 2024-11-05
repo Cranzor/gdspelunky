@@ -26,7 +26,7 @@ func _process(delta):
 #    global.curr_level = 1
 #    level_loaded = false
 
-#    msg = "PRESS ESCAPE TO RETURN TO TITLE."
+#    msg = "press escape to return to title."
 #    msg_timer = 0
 
 #    GET_FILE_NAME = 0
@@ -42,13 +42,13 @@ func _process(delta):
 #        life_start = "4"
 #        bomb_start = "4"
 #        rope_start = "4"
-#        gml.instance_create(256, 64, "load_button")
+#        gml.instance_create(256, 64, Objects.load_button)
 #        global.prev_custom_level = ""
 
 
 #    level_name = global.first_custom_level
-#    author = "ANONYMOUS"
-#    music = "CAVE"
+#    author = "anonymous"
+#    music = "cave"
 #    next_level = ""
 
 #    for j in range(0, 32):
@@ -59,7 +59,7 @@ func _process(delta):
     
 
 
-#    # DY:  load level list
+#    # dy:  load level list
 #    if (not global.custom_level):
 
 #        temp_file = file_find_first("levels\*.lvl", 0)
@@ -118,16 +118,16 @@ func _process(delta):
 
 #    if (status == GET_FILE_NAME):
 
-#        draw_text(view_xview[0]+32, view_yview[0]+64, "LOAD LEVEL: " + level_name)
+#        draw_text(view_xview[0]+32, view_yview[0]+64, "load level: " + level_name)
 #        draw_set_color(c_yellow)
-#        draw_text(view_xview[0]+40, view_yview[0]+96, "LEVELS")
+#        draw_text(view_xview[0]+40, view_yview[0]+96, "levels")
 #        draw_text(view_xview[0]+224, view_yview[0]+96, str\(page) + "/" + str\(num_pages))
 #        if (msg_timer > 0):
     
 #            draw_set_color(c_red)
-#            draw_text(view_xview[0]+32, view_yview[0]+224, "NO SUCH LEVEL EXISTS!")
+#            draw_text(view_xview[0]+32, view_yview[0]+224, "no such level exists!")
     
-#        else: draw_text(view_xview[0]+32, view_yview[0]+224, "PRESS ESCAPE TO RETURN TO TITLE.")
+#        else: draw_text(view_xview[0]+32, view_yview[0]+224, "press escape to return to title.")
 #        draw_set_color(c_white)
 #        n = 112
 #        m = 0
@@ -164,14 +164,14 @@ func _process(delta):
     
 #        elif (keyboard_key == vk_backspace or keyboard_key == vk_delete):
     
-#            # DY: level_name += "DEL"
+#            # dy: level_name += "del"
 #            level_name = string_delete(level_name, string_length(level_name), 1)
-#            with menu_sel  sprite_index = s_menu_sel_off 
+#            with menu_sel  sprite_index = "menu_sel_off "
     
 #        else:
     
 #            level_name += scr_get_char(keyboard_key)
-#            with menu_sel  sprite_index = s_menu_sel_off 
+#            with menu_sel  sprite_index = "menu_sel_off "
     
 
 
@@ -179,7 +179,7 @@ func _process(delta):
 
 #func step():
     #    if (msg_timer > 0): msg_timer -= 1
-#    else: msg = "PRESS ESCAPE TO RETURN TO TITLE."
+#    else: msg = "press escape to return to title."
 
 #    /*
 #    if (status == GET_FILE_NAME):
@@ -194,5 +194,3 @@ func _process(delta):
     
 
 #    */
-
-    

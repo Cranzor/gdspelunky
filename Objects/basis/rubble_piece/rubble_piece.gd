@@ -22,7 +22,7 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "None"
+#    type = "none"
 #    x_vel = 0
 #    y_vel = 0
 #    y_acc = 0.6
@@ -36,8 +36,8 @@ func _process(delta):
 
 #    if (gml.collision_point(position.x, position.y, "water_swim", 0, 0)):
 
-#        if (type == "Drip"): gml.instance_destroy()
-#        elif (type == "Leaf"):  y_vel = 0 sprite_index = s_leaf_still 
+#        if (type == "drip"): gml.instance_destroy()
+#        elif (type == "leaf"):  y_vel = 0 sprite_index = "leaf_still "
 #        else: y_vel = 0.2
 
 #    elif (gml.collision_point(position.x, position.y, "lava", 0, 0)):
@@ -58,7 +58,3 @@ func _process(delta):
 #            position.y > view_yview[0] + view_hview[0] + 32)
     
 #            gml.instance_destroy()
-    
-
-
-    

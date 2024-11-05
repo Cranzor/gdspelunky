@@ -21,7 +21,7 @@ func _process(delta):
     #    if (not player1.dead):
 
 #        n = randi_range(0,3)
-#        gml.instance_create(32 + n*80, 0, "shopkeeper2")
+#        gml.instance_create(32 + n*80, 0, Objects.shopkeeper2)
 #        if (kills >= 40):
     
 #            alarm_0(100)
@@ -58,7 +58,7 @@ func _process(delta):
     #    if (not player1.dead and randi_range(1, 100) < kills):
 
 #        n = randi_range(0,3)
-#        gml.instance_create(32 + n*80, 0, "spider")
+#        gml.instance_create(32 + n*80, 0, Objects.spider)
 
 
 #    if (not player1.dead): alarm_11(20)
@@ -86,7 +86,7 @@ func _process(delta):
 #    alarm_10(100)
 #    alarm_11(110)
 
-#    # DY:  To prevent the Tunnel Man from tearing up the whole level.
+#    # dy:  to prevent the tunnel man from tearing up the whole level.
 #    with brick
 
 #        if (position.x <= 16 or position.x >= 288 or position.y <= 16 or position.y >= 208):
@@ -102,18 +102,15 @@ func _process(delta):
 #    if (life < 0): life = 0
 #    draw_set_font(global.my_font)
 #    draw_set_color(c_white)
-#    draw_sprite(s_heart, -1, view_xview[0]+8, view_yview[0]+8)
+#    draw_sprite("heart, -1, view_xview[0]+8, view_yview[0]+8)"
 #    draw_text(view_xview[0]+24, view_yview[0]+8, life)
-#    draw_sprite(s_shopkeeper_icon, -1, view_xview[0]+64, view_yview[0]+8)
+#    draw_sprite("shopkeeper_icon, -1, view_xview[0]+64, view_yview[0]+8)"
 #    draw_text(view_xview[0]+64+16, view_yview[0]+8, kills)
 #    if (draw_status < 3):
 
-#        draw_set_font(global.my_fontSmall)
+#        draw_set_font(global.my_font_small)
 #        draw_set_color(c_yellow)
-#        str_len = string_length("SHOTGUN CHALLENGE BEGINS IN 3...")*8
+#        str_len = string_length("shotgun challenge begins in 3...")*8
 #        n = 320 - str_len
 #        n = ceil(n / 2)
-#        draw_text(n, 216, "SHOTGUN CHALLENGE BEGINS IN " + str\(3-draw_status) + "...")
-
-
-    
+#        draw_text(n, 216, "shotgun challenge begins in " + str\(3-draw_status) + "...")

@@ -30,7 +30,7 @@ func _process(delta):
 #        if (not obj.invincible): hit = true
 
 
-#    if (hit and not InLevel.is_room("r_title") and not InLevel.is_room("r_highscores")):
+#    if (hit and not InLevel.i"room("r_title") and not InLevel.is_room("r_highscores")):"
 
 #        with obj
       
@@ -55,9 +55,9 @@ func _process(delta):
         
     
     
-#        # DY: 
+#        # dy: 
 #    break mattock
-#        if (randi_range(1,20) == 1 and not global.is_tunnel_man):
+#        if (randi_range(1,20) == 1 and not global.i"tunnel_man):"
     
 #            with player1
         
@@ -65,7 +65,7 @@ func _process(delta):
 #                pickup_item_type = ""
 #                global.pickup_item = ""
         
-#            obj = gml.instance_create(position.x, position.y, "mattock_head")
+#            obj = gml.instance_create(position.x, position.y, Objects.mattock_head)
 #            obj.y_vel = -2
 #            Audio.play_sound(global.snd_mattock_break)
 #            with mattock
@@ -86,7 +86,7 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "Mattock"
+#    type = "mattock"
 #    image_speed = 0.5
 #    damage = 2
 #    puncture = true
@@ -98,16 +98,12 @@ func _process(delta):
 
 #        gml.instance_destroy()
 
-#    if (sprite_index = s_mattock_hit_r):
+#    if (sprite_index = "mattock_hit_r):"
 
 #        position.x = character.position.x+16
 #        position.y = character.position.y
 
-#    elif (sprite_index = s_mattock_hit_l):
+#    elif (sprite_index = "mattock_hit_l):"
 
 #        position.x = character.position.x-16
 #        position.y = character.position.y
-
-
-
-    

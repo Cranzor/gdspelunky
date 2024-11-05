@@ -24,8 +24,8 @@ func _process(delta):
     
 
 #func alarm 1():
-    #    gml.instance_create(position.x, position.y, "explosion")
-#    if (global.graphics_high):
+    #    gml.instance_create(position.x, position.y, Objects.explosion)
+#    if (global.graphic"high):"
 
 #        MiscScripts.scr_create_flame(position.x, position.y, 3)
 
@@ -43,7 +43,7 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "Bomb"
+#    type = "bomb"
 #    PlatformEngine.make_active()
 #    Collision.set_collision_bounds(-4, -4, 4, 4)
 
@@ -80,7 +80,7 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    if (sprite_index = s_bomb_armed): depth = 49
+#    if (sprite_index = "bomb_armed): depth = 49"
 #    if (sticky): depth = 1
 
 #    if (armed and gml.instance_exists("shopkeeper")):
@@ -92,8 +92,3 @@ func _process(delta):
 #            with shopkeeper
         
 #                InLevel.scr_shopkeeper_anger(2)
-        
-    
-
-
-    

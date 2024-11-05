@@ -17,7 +17,7 @@ func animation_end():
 	remove_from_queue()
 
 func create():
-	drawn_sprite_create()
+	super()
 	y_vel = -0.1
 	y_acc = 0.1
 	image_speed = 0.4

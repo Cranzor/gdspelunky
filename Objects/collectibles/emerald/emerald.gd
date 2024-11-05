@@ -27,11 +27,9 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "Emerald"
+#    type = "emerald"
 #    PlatformEngine.make_active()
 #    Collision.set_collision_bounds(-2, -2, 2, 2)
 #    y_off = 2
 #    alarm_0(20)
 #    value = 200
-
-    

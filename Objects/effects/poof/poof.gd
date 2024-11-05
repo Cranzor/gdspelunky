@@ -14,7 +14,7 @@ func animation_end():
 	gml.instance_destroy(self)
 
 func create():
-	drawn_sprite_create()
+	super()
 	x_vel = 0
 	y_vel = 0
 	image_speed = 0.4

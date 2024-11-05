@@ -18,7 +18,7 @@ func _process(delta):
 
 
 #func alarm 0():
-    #    gml.instance_create(position.x, position.y, "magma_trail")
+    #    gml.instance_create(position.x, position.y, Objects.magma_trail)
 #    alarm_0(2)
 
     
@@ -26,7 +26,7 @@ func _process(delta):
 #func animation_end():
     #    if (dying):
 
-#        magma = gml.instance_create(position.x-8, position.y-8, "magma_man")
+#        magma = gml.instance_create(position.x-8, position.y-8, Objects.magma_man)
 #        magma.hp = hp
 #        gml.instance_destroy()
 
@@ -46,7 +46,7 @@ func _process(delta):
 #            other.x_vel = -6
 #        else:
 #            other.x_vel = 6
-#        gml.instance_create(other.position.x, other.position.y, "blood")
+#        gml.instance_create(other.position.x, other.position.y, Objects.blood)
     
 #        if (global.plife > 0): global.plife -= 2
 #        Audio.play_sound(global.snd_hurt)
@@ -56,7 +56,7 @@ func _process(delta):
     
 
 #func collision with o_enemy():
-    #    if (other.type != "Magma Man"):
+    #    if (other.type != "magma man"):
 
 #        other.y_vel = -4
 #        if (position.x < other.position.x):
@@ -76,7 +76,7 @@ func _process(delta):
     
 
 #func collision with o_water():
-    #    gml.instance_create(position.x, position.y, "smoke_puff")
+    #    gml.instance_create(position.x, position.y, Objects.smoke_puff)
 #    gml.instance_destroy()
 
     
@@ -107,12 +107,9 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    if (Collision.is_collision_bottom(1)):
+#    if (Collision.i"collision_bottom(1)):"
 
-#        sprite_index = s_magma_man_create
+#        sprite_index = "magma_man_create"
 #        x_vel = 0
 #        y_vel = 0
 #        dying = true
-
-
-    

@@ -27,11 +27,11 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "Piranha"
+#    type = "piranha"
 #    image_speed = 0.5
 #    Collision.set_collision_bounds(0, 0, 8, 8)
-#    orig_x = 0
-#    orig_y = 0
+#    origX = 0
+#    origY = 0
 #    x_vel = 0
 #    y_vel = 0
 #    x_acc = 0.2
@@ -39,17 +39,17 @@ func _process(delta):
 #    dir = 0
 #    if (randi_range(1,2) == 1): dir = 180
 
-#    # DY:  stats
+#    # dy:  stats
 #    hp = 1
 #    invincible = 0
 
 #    bubble_timer = 0
-#    bubble_timerMax = 40
+#    bubble_timer_max = 40
 
-#    # DY:  status
-#    IDLE = 0
-#    ATTACK = 1
-#    PAUSE = 2
+#    # dy:  status
+#    idle = 0
+#    attack = 1
+#    pause = 2
 #    ATTACK_ENEMY = 3
 
 #    can_bite = true
@@ -68,9 +68,9 @@ func _process(delta):
 #    if (hp < 1):
 
 #        MiscScripts.scr_create_blood(position.x+4, position.y+4, 3)
-#        if (counts_as_kill):
+#        if (count"as_kill):"
     
-#            if (InLevel.is_real_level()): global.enemy_kills[11] += 1
+#            if (InLevel.i"real_level()): global.enemy_kills[11] += 1"
 #            global.piranhas += 1
 #            global.kills += 1
     
@@ -79,7 +79,7 @@ func _process(delta):
 
 #    dist = point_distance(position.x+4, position.y+4, character.position.x, character.position.y)
 
-#    if (status == IDLE):
+#    if (status == idle):
 
 #        if (dir == 0):
     
@@ -96,7 +96,7 @@ func _process(delta):
 
 #        if (dist < 90 and character.swimming and not character.dead):
     
-#            status = ATTACK
+#            status = attack
     
     
 #        obj = instance_nearest(position.x, position.y, caveman)
@@ -115,17 +115,17 @@ func _process(delta):
         
     
 
-#    elif (status == PAUSE):
+#    elif (status == pause):
 
 #        can_bite = true
 #        if (counter > 0): counter -= 1
 #        else:
     
-#            status = IDLE
+#            status = idle
 #            dir = randi_range(0,1)*180
     
 
-#    elif (status == ATTACK && gml.instance_exists("character")):
+#    elif (status == attack && gml.instance_exists("character")):
 
 #        if (dist < 90 and character.swimming and not character.dead):
     
@@ -135,7 +135,7 @@ func _process(delta):
     
 #        else:
     
-#            status = PAUSE
+#            status = pause
 #            counter = randi_range(20,40)
     
 
@@ -153,19 +153,19 @@ func _process(delta):
     
 #            if (!obj.swimming || obj.hp <= 0):
         
-#                status = PAUSE
+#                status = pause
         
     
-#        else: status = PAUSE
+#        else: status = pause
     
-#        if (status != PAUSE):
+#        if (status != pause):
     
 #            dir = point_direction(position.x+4, position.y+4, obj.position.x+8, obj.position.y+8)+randi_range(0,1)-randi_range(0,1)
 #            if (gml.collision_point(position.x + cos(degtorad(dir)), position.y - sin(degtorad(dir)), "water", 0, 0)):
 #                PlatformEngine.move_to(1 * cos(degtorad(dir)), -1 * sin(degtorad(dir)))
 #            else:
         
-#                status = PAUSE
+#                status = pause
 #                counter = randi_range(20,40)
         
         
@@ -188,21 +188,17 @@ func _process(delta):
 #    if (bubble_timer > 0): bubble_timer -= 1
 #    else:
 
-#        gml.instance_create(position.x, position.y, "bubble")
-#        bubble_timer = (randi_range(bubble_timerMax-10, bubble_timerMax+10))
+#        gml.instance_create(position.x, position.y, Objects.bubble)
+#        bubble_timer = (randi_range(bubble_timer_max-10, bubble_timer_max+10))
 
 
 
 #    if (dir > 90 and dir < 270):
-#        sprite_index = s_piranha_left
+#        sprite_index = "piranha_left"
 #    else:
-#        sprite_index = s_piranha_right
+#        sprite_index = "piranha_right"
     
 #    if (not gml.collision_point(position.x+4, position.y+4, "water", 0, 0)):
 
-#        gml.instance_create(position.x, position.y, "fish_bone")
+#        gml.instance_create(position.x, position.y, Objects.fish_bone)
 #        gml.instance_destroy()
-
-
-
-    

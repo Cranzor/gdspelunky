@@ -29,40 +29,40 @@ func _process(delta):
 #            if (points >= 80):
         
 #                if (gml.instance_exists("ghost")):  /* do nothing */ 
-#                elif (player1.position.x > room_width/2): gml.instance_create(-32, 120-16, "ghost")
-#                else: gml.instance_create(320, 120-16, "ghost")
+#                elif (player1.position.x > room_width/2): gml.instance_create(-32, 120-16, Objects.ghost)
+#                else: gml.instance_create(320, 120-16, Objects.ghost)
         
 #            elif (points >= 50):
         
-#                obj = gml.instance_create(152, 32, "vampire")
+#                obj = gml.instance_create(152, 32, Objects.vampire)
 #                obj.status = 7
 #                with obj
             
-#                    obj = gml.instance_create(position.x+8, position.y+8, "poof")
+#                    obj = gml.instance_create(position.x+8, position.y+8, Objects.poof)
 #                    obj.x_vel = -1
 #                    obj.y_vel = 0
-#                    obj = gml.instance_create(position.x+8, position.y+8, "poof")
+#                    obj = gml.instance_create(position.x+8, position.y+8, Objects.poof)
 #                    obj.x_vel = 1
 #                    obj.y_vel = 0
             
         
 #            else:
         
-#                obj = gml.instance_create(i, j, "bomb")
-#                obj.sprite_index = s_bomb_armed
+#                obj = gml.instance_create(i, j, Objects.bomb)
+#                obj.sprite_index = "bomb_armed"
 #                obj.armed = true
 #                with obj
             
 #                    alarm_0(80)
 #                    image_speed = 0.2
-#                    obj = gml.instance_create(position.x, position.y, "poof")
+#                    obj = gml.instance_create(position.x, position.y, Objects.poof)
 #                    obj.x_vel = -1
 #                    obj.y_vel = 0
-#                    obj = gml.instance_create(position.x, position.y, "poof")
+#                    obj = gml.instance_create(position.x, position.y, Objects.poof)
 #                    obj.x_vel = 1
 #                    obj.y_vel = 0
                    
-#                # DY: obj.safe = true
+#                # dy: obj.safe = true
 #                obj.alarm_2(10)
         
 #            alarm_0()randi_range(100,200)
@@ -114,7 +114,7 @@ func _process(delta):
 #    alarm_10(100)
 #    alarm_11(100)
 
-#    # DY:  To prevent the Tunnel Man from tearing up the whole level.
+#    # dy:  to prevent the tunnel man from tearing up the whole level.
 #    with brick
 
 #        if (position.x <= 16 or position.x >= 288 or position.y <= 16 or position.y >= 208):
@@ -130,18 +130,18 @@ func _process(delta):
 #    if (life < 0): life = 0
 #    draw_set_font(global.my_font)
 #    draw_set_color(c_white)
-#    draw_sprite(s_heart, -1, view_xview[0]+8, view_yview[0]+8)
+#    draw_sprite("heart, -1, view_xview[0]+8, view_yview[0]+8)"
 #    draw_text(view_xview[0]+24, view_yview[0]+8, life)
-#    draw_sprite(s_damsel_icon, -1, view_xview[0]+64, view_yview[0]+8)
+#    draw_sprite("damsel_icon, -1, view_xview[0]+64, view_yview[0]+8)"
 #    draw_text(view_xview[0]+64+16, view_yview[0]+8, points)
 #    if (draw_status < 3):
 
-#        draw_set_font(global.my_fontSmall)
+#        draw_set_font(global.my_font_small)
 #        draw_set_color(c_yellow)
-#        str_len = string_length("DAMSEL CHALLENGE BEGINS IN 3...")*8
+#        str_len = string_length("damsel challenge begins in 3...")*8
 #        n = 320 - str_len
 #        n = ceil(n / 2)
-#        draw_text(n, 216, "DAMSEL CHALLENGE BEGINS IN " + str\(3-draw_status) + "...")
+#        draw_text(n, 216, "damsel challenge begins in " + str\(3-draw_status) + "...")
 
 
     
@@ -159,7 +159,3 @@ func _process(delta):
 #        else:
     
 #            global.plife = 0
-    
-
-
-    

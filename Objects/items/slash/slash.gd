@@ -27,7 +27,7 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "Machete"
+#    type = "machete"
 #    damage = 2
 #    image_speed = 1
 #    puncture = true
@@ -39,16 +39,12 @@ func _process(delta):
 
 #        gml.instance_destroy()
 
-#    if (sprite_index = s_slash_right):
+#    if (sprite_index = "slash_right):"
 
 #        position.x = character.position.x+16
 #        position.y = character.position.y
 
-#    elif (sprite_index = s_slash_left):
+#    elif (sprite_index = "slash_left):"
 
 #        position.x = character.position.x-16
 #        position.y = character.position.y
-
-
-
-    

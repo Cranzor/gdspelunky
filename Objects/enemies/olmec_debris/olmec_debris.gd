@@ -35,8 +35,8 @@ func _process(delta):
 
 #    n = randi_range(1,3)
 
-#    if (n == 1): sprite_index = s_olmec_debris2
-#    elif (n == 2): sprite_index = s_olmec_debris3
+#    if (n == 1): sprite_index = "olmec_debris2"
+#    elif (n == 2): sprite_index = "olmec_debris3"
 
     
 
@@ -57,18 +57,14 @@ func _process(delta):
     
 #        if (gml.collision_point(position.x, position.y+4, "temple", 0, 0)):
     
-#            # DY:  bounce
+#            # dy:  bounce
 #            if (y_vel > 1): y_vel = -y_vel * 0.4
 #            else:
         
-#                gml.instance_create(position.x, position.y, "smoke_puff")
+#                gml.instance_create(position.x, position.y, Objects.smoke_puff)
 #                gml.instance_destroy()
         
         
-#            # DY:  friction
+#            # dy:  friction
 #            if (abs(x_vel) < 0.1): x_vel = 0
 #            elif (abs(x_vel) != 0): x_vel *= 0.3
-    
-
-
-    

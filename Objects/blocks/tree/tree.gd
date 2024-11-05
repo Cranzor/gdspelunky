@@ -22,7 +22,7 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "Tree"
+#    type = "tree"
 #    burning = false
 
     
@@ -34,9 +34,9 @@ func _process(delta):
 #    # main_code
 #    if (not clean_death and not global.clean_solids):
 
-#        gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), "rubble")
-#        gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), "rubbleSmall")
-#        gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), "rubbleSmall")
+#        gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), Objects.rubble)
+#        gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), Objects.rubble_small)
+#        gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), Objects.rubble_small)
 
 
     
@@ -48,7 +48,3 @@ func _process(delta):
 #    if (not gml.collision_point(position.x, position.y+16, "solid", 0, 0)):
 
 #        gml.instance_destroy()
-
-
-
-    

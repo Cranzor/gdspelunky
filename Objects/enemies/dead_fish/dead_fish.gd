@@ -24,25 +24,25 @@ func _process(delta):
 #    # main_code
 #    image_speed = 0.5
 #    Collision.set_collision_bounds(0, 0, 8, 8)
-#    orig_x = 0
-#    orig_y = 0
+#    origX = 0
+#    origY = 0
 #    x_vel = 0
 #    y_vel = 0
 #    x_acc = 0.2
 #    y_acc = 0.2
 #    dir = 0
 
-#    # DY:  stats
+#    # dy:  stats
 #    hp = 1
 #    invincible = 0
 
 #    bubble_timer = 0
-#    bubble_timerMax = 40
+#    bubble_timer_max = 40
 
-#    # DY:  status
-#    IDLE = 0
-#    ATTACK = 1
-#    PAUSE = 2
+#    # dy:  status
+#    idle = 0
+#    attack = 1
+#    pause = 2
 
 #    status = 0
 #    counter = 0
@@ -61,11 +61,11 @@ func _process(delta):
 
 #        for repetition in range(1, 3):
     
-#            gml.instance_create(position.x+4, position.y+4, "bone")
+#            gml.instance_create(position.x+4, position.y+4, Objects.bone)
     
-#        if (counts_as_kill):
+#        if (count"as_kill):"
     
-#            if (InLevel.is_real_level()): global.enemy_kills[11] += 1
+#            if (InLevel.i"real_level()): global.enemy_kills[11] += 1"
 #            global.deadfish += 1
 #            global.kills += 1
     
@@ -74,7 +74,7 @@ func _process(delta):
 
 #    dist = point_distance(position.x, position.y, character.position.x, character.position.y)
 
-#    if (status == IDLE):
+#    if (status == idle):
 
 #        if (dir == 0):
     
@@ -91,15 +91,15 @@ func _process(delta):
 
 #        if (dist < 90 and character.swimming):
     
-#            status = ATTACK
+#            status = attack
     
 
-#    elif (status == PAUSE):
+#    elif (status == pause):
 
 #        if (counter > 0): counter -= 1
 #        else:
     
-#            status = IDLE
+#            status = idle
 #            dir = randi_range(0,1)*180
     
 
@@ -113,21 +113,17 @@ func _process(delta):
     
 #        else:
     
-#            status = PAUSE
+#            status = pause
 #            counter = randi_range(20,40)
     
 
 
 #    if (dir > 90 and dir < 270):
-#        sprite_index = s_dead_fish_left
+#        sprite_index = "dead_fish_left"
 #    else:
-#        sprite_index = s_dead_fish_right
+#        sprite_index = "dead_fish_right"
     
 #    if (not gml.collision_point(position.x+4, position.y+4, "water", 0, 0)):
 
-#        gml.instance_create(position.x, position.y, "fish_bone")
+#        gml.instance_create(position.x, position.y, Objects.fish_bone)
 #        gml.instance_destroy()
-
-
-
-    

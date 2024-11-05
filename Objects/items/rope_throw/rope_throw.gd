@@ -13,7 +13,7 @@ func _process(delta):
 var fall_count
 
 func create():
-	item_create()
+	super()
 	
 	type = "rope"
 	PlatformEngine.make_active(self)

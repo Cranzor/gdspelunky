@@ -23,15 +23,15 @@ func _process(delta):
     
 
 #func alarm 1():
-    #    if (gml.instance_number(yellow_trail) < 12): gml.instance_create(position.x, position.y, "yellow_trail")
+    #    if (gml.instance_number(yellow_trail) < 12): gml.instance_create(position.x, position.y, Objects.yellow_trail)
 #    alarm_1(4)
 
     
 
 #func animation_end():
-    #    if (sprite_index == s_web_create):
+    #    if (sprite_index == "web_create):"
 
-#        obj = gml.instance_create(position.x-8, position.y-8, "web")
+#        obj = gml.instance_create(position.x-8, position.y-8, Objects.web)
 #        obj.dying = true
 #        gml.instance_destroy()
 
@@ -39,9 +39,9 @@ func _process(delta):
     
 
 #func collision with o_enemy():
-    #    if (other.type != "Giant Spider"):
+    #    if (other.type != "giant spider"):
 
-#        sprite_index = s_web_create
+#        sprite_index = "web_create"
 #        x_vel = 0
 #        y_vel = 0
 
@@ -49,28 +49,28 @@ func _process(delta):
     
 
 #func collision with o_item():
-    #    sprite_index = s_web_create
+    #    sprite_index = "web_create"
 #    x_vel = 0
 #    y_vel = 0
 
     
 
 #func collision with o_solid():
-    #    sprite_index = s_web_create
+    #    sprite_index = "web_create"
 #    x_vel = 0
 #    y_vel = 0
 
     
 
 #func collision with o_water():
-    #    sprite_index = s_web_create
+    #    sprite_index = "web_create"
 #    x_vel = 0
 #    y_vel = 0
 
     
 
 #func collision with o_web():
-    #    sprite_index = s_web_create
+    #    sprite_index = "web_create"
 #    x_vel = 0
 #    y_vel = 0
 
@@ -86,14 +86,14 @@ func _process(delta):
 #    if (randi_range(1,2) == 1): x_vel *= -1
 #    life = randi_range(20,100)
 #    invincible = true
-#    # DY: alarm_0(40)
-#    # DY: alarm_1(1)
+#    # dy: alarm_0(40)
+#    # dy: alarm_1(1)
 
     
 
 #func outside room():
     #    # action_kill_object
-#    # Need to implement this action
+#    # need to implement this action
     
 
 #func step():
@@ -101,19 +101,17 @@ func _process(delta):
 #    position.y += y_vel
 
 #    if (y_vel < 6): y_vel += 0.2
-#    # DY:  if (y_vel > 0): y_vel = 0
+#    # dy:  if (y_vel > 0): y_vel = 0
 
 #    if (life > 0): life -= 1
 #    else:
 
-#        sprite_index = s_web_create
+#        sprite_index = "web_create"
 
 
 #    /*if (gml.collision_point(position.x, position.y, "dark", 0, 0) or:
-#        gml.collision_point(position.x, position.y, "darkFall", 0, 0) or
+#        gml.collision_point(position.x, position.y, "dark_fall", 0, 0) or
 #        gml.collision_point(position.x, position.y, "ice", 0, 0))
 
 #        gml.instance_destroy()
 #    */
-
-    

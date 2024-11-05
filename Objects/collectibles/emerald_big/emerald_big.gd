@@ -23,7 +23,7 @@ func _process(delta):
     
 
 #func collision with o_ghost():
-    #    gml.instance_create(position.x, position.y, "diamond")
+    #    gml.instance_create(position.x, position.y, Objects.diamond)
 #    gml.instance_destroy()
 
     
@@ -33,11 +33,9 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "Big Emerald"
+#    type = "big emerald"
 #    PlatformEngine.make_active()
 #    Collision.set_collision_bounds(-4, -4, 4, 4)
 #    can_collect = false
 #    alarm_0(20)
 #    value = 800
-
-    

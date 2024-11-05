@@ -25,22 +25,22 @@ func _process(delta):
 #    n = randi_range(1,5)
 #    match (n)
 
-#        1:  sprite_index = s_grave2  
-#        2:  sprite_index = s_grave3  
-#        3:  sprite_index = s_grave4  
-#        4:  sprite_index = s_grave5  
-#        5:  sprite_index = s_grave6  
+#        1:  sprite_index = "grave2  "
+#        2:  sprite_index = "grave3  "
+#        3:  sprite_index = "grave4  "
+#        4:  sprite_index = "grave5  "
+#        5:  sprite_index = "grave6  "
 
 
     
 
 #func destroy():
-    #    rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), "rubble")
-#    rubble.sprite_index = s_rubble_tan
-#    rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), "rubbleSmall")
-#    rubble.sprite_index = s_rubble_tanSmall
-#    rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), "rubbleSmall")
-#    rubble.sprite_index = s_rubble_tanSmall
+    #    rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), Objects.rubble)
+#    rubble.sprite_index = "rubble_tan"
+#    rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), Objects.rubble_small)
+#    rubble.sprite_index = "rubble_tan_small"
+#    rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), Objects.rubble_small)
+#    rubble.sprite_index = "rubble_tan_small"
 
     
 
@@ -49,6 +49,3 @@ func _process(delta):
 #            position.y > view_yview[0]-20 and position.y < view_yview[0] + view_hview[0]+4))
 
 #        if (not gml.collision_point(position.x, position.y+16, "solid", 0, 0)): gml.instance_destroy()
-
-
-    

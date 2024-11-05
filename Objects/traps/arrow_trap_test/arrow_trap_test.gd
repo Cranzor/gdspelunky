@@ -30,12 +30,12 @@ func _process(delta):
         
 #                if (facing == 0):
             
-#                    arrow = gml.instance_create(position.x-2, position.y+4, "arrow")
+#                    arrow = gml.instance_create(position.x-2, position.y+4, Objects.arrow)
 #                    arrow.x_vel = -8
             
 #                else:
             
-#                    arrow = gml.instance_create(position.x+18, position.y+4, "arrow")
+#                    arrow = gml.instance_create(position.x+18, position.y+4, Objects.arrow)
 #                    arrow.x_vel = 8
             
 #                fired += 1
@@ -53,9 +53,9 @@ func _process(delta):
 #        gml.instance_destroy()
 
 #    elif (abs(other.x_vel) > 0 or abs(other.y_vel) > 0 or:
-#             (player1.sprite_index = s_duck_thang_l and player1.image_index > 6) or
-#             (player1.sprite_index = s_damsel_dt_hl and player1.image_index > 6) or
-#             (player1.sprite_index = s_tunnel_dt_hl and player1.image_index > 6))
+#             (player1.sprite_index = "duck_thang_l and player1.image_index > 6) or"
+#             (player1.sprite_index = "damsel_dt_hl and player1.image_index > 6) or"
+#             (player1.sprite_index = "tunnel_dt_hl and player1.image_index > 6))"
 
 #        with trap_id
     
@@ -63,12 +63,12 @@ func _process(delta):
         
 #                if (facing == 0):
             
-#                    arrow = gml.instance_create(position.x-2, position.y+4, "arrow")
+#                    arrow = gml.instance_create(position.x-2, position.y+4, Objects.arrow)
 #                    arrow.x_vel = -8
             
 #                else:
             
-#                    arrow = gml.instance_create(position.x+18, position.y+4, "arrow")
+#                    arrow = gml.instance_create(position.x+18, position.y+4, Objects.arrow)
 #                    arrow.x_vel = 8
             
 #                fired += 1
@@ -93,12 +93,12 @@ func _process(delta):
         
 #                if (facing == 0):
             
-#                    arrow = gml.instance_create(position.x-2, position.y+4, "arrow")
+#                    arrow = gml.instance_create(position.x-2, position.y+4, Objects.arrow)
 #                    arrow.x_vel = -8
             
 #                else:
             
-#                    arrow = gml.instance_create(position.x+18, position.y+4, "arrow")
+#                    arrow = gml.instance_create(position.x+18, position.y+4, Objects.arrow)
 #                    arrow.x_vel = 8
             
 #                fired += 1
@@ -123,12 +123,12 @@ func _process(delta):
         
 #                if (facing == 0):
             
-#                    arrow = gml.instance_create(position.x-2, position.y+4, "arrow")
+#                    arrow = gml.instance_create(position.x-2, position.y+4, Objects.arrow)
 #                    arrow.x_vel = -8
             
 #                else:
             
-#                    arrow = gml.instance_create(position.x+18, position.y+4, "arrow")
+#                    arrow = gml.instance_create(position.x+18, position.y+4, Objects.arrow)
 #                    arrow.x_vel = 8
             
 #                fired += 1
@@ -153,12 +153,12 @@ func _process(delta):
         
 #                if (facing == 0):
             
-#                    arrow = gml.instance_create(position.x-2, position.y+4, "arrow")
+#                    arrow = gml.instance_create(position.x-2, position.y+4, Objects.arrow)
 #                    arrow.x_vel = -8
             
 #                else:
             
-#                    arrow = gml.instance_create(position.x+18, position.y+4, "arrow")
+#                    arrow = gml.instance_create(position.x+18, position.y+4, Objects.arrow)
 #                    arrow.x_vel = 8
             
 #                fired += 1
@@ -183,12 +183,12 @@ func _process(delta):
         
 #                if (facing == 0):
             
-#                    arrow = gml.instance_create(position.x-2, position.y+4, "arrow")
+#                    arrow = gml.instance_create(position.x-2, position.y+4, Objects.arrow)
 #                    arrow.x_vel = -8
             
 #                else:
             
-#                    arrow = gml.instance_create(position.x+18, position.y+4, "arrow")
+#                    arrow = gml.instance_create(position.x+18, position.y+4, Objects.arrow)
 #                    arrow.x_vel = 8
             
 #                fired += 1
@@ -202,5 +202,3 @@ func _process(delta):
 
 #func create():
     #    trap_id = 0
-
-    

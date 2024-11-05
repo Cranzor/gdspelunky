@@ -18,7 +18,7 @@ func _process(delta):
 
 
 #func animation_end():
-    #    if (sprite_index = s_ceiling_trap_s): sprite_index = s_ceiling_trap
+    #    if (sprite_index = "ceiling_trap_s): sprite_index = s_ceiling_trap"
 
     
 
@@ -40,32 +40,32 @@ func _process(delta):
 #    counter = 3
 
 #    status = 0
-#    IDLE = 0
-#    DROP = 1
-#    WAIT = 2
-#    RETURN = 3
+#    idle = 0
+#    drop = 1
+#    wait = 2
+#    return = 3
 
     
 
 #func destroy():
     #    if (not clean_death and not global.clean_solids):
 
-#        rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), "rubble")
-#        rubble.sprite_index = s_rubble_tan
-#        rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), "rubbleSmall")
-#        rubble.sprite_index = s_rubble_tanSmall
-#        rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), "rubbleSmall")
-#        rubble.sprite_index = s_rubble_tanSmall
+#        rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), Objects.rubble)
+#        rubble.sprite_index = "rubble_tan"
+#        rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), Objects.rubble_small)
+#        rubble.sprite_index = "rubble_tan_small"
+#        rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), Objects.rubble_small)
+#        rubble.sprite_index = "rubble_tan_small"
 
 
     
 
 #func step():
-    #    if (status == IDLE):
+    #    if (status == idle):
 
-#        # DY:  nothing
+#        # dy:  nothing
 
-#    elif (status == DROP):
+#    elif (status == drop):
 
 #        if (counter > 0): counter -= 1
 #        else:
@@ -74,13 +74,10 @@ func _process(delta):
 #            position.y += 1
     
 #        y_vel = 0
-#        if (gml.collision_point(position.x+8, position.y+17, "solid", 0, 0)): status = WAIT
-#        if (sprite_index = s_block): sprite_index = s_ceiling_trap_s
+#        if (gml.collision_point(position.x+8, position.y+17, "solid", 0, 0)): status = wait
+#        if (sprite_index = "block): sprite_index = s_ceiling_trap_s"
 
-#    elif (status == WAIT):
+#    elif (status == wait):
 
 #        y_vel = 0
-#        if (Collision.is_collision_bottom(1)): position.y -= 1
-
-
-    
+#        if (Collision.i"collision_bottom(1)): position.y -= 1"

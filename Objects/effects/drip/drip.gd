@@ -1,4 +1,3 @@
-
 extends RubblePiece
 
 
@@ -17,11 +16,9 @@ func _process(delta):
 #--- Object functions
 
 
-#func create():
-    #    # action_inherited
-#    super()
+func create():
+	# action_inherited
+	super()
 
-#    # main_code
-#    type = "Drip"
-
-    
+	# main_code
+	type = "drip"

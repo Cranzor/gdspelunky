@@ -14,7 +14,7 @@ func alarm_0():
 	gml.instance_destroy(self)
 
 func create():
-	drawn_sprite_create()
+	super()
 	type = "whip"
 	damage = 1
 	alarm_0_countdown.start(3)

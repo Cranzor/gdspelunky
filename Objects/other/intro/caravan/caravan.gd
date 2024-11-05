@@ -20,8 +20,8 @@ func _process(delta):
 #func create():
     #    if (global.damsels > 0):
 
-#        if (global.is_damsel): sprite_index = s_caravan3
-#        else: sprite_index = s_caravan2
+#        if (global.i"damsel): sprite_index = s_caravan3"
+#        else: sprite_index = "caravan2"
 
 #    image_speed = 0.5
 #    status = 0
@@ -49,6 +49,3 @@ func _process(delta):
 #    if (position.x < -64):
 
 #        credits2.fade_out = true
-
-
-    

@@ -34,50 +34,46 @@ func _process(delta):
 #    counter = 0
 
 #    status = 0
-#    IDLE = 0
-#    DROP = 1
-#    WAIT = 2
-#    RETURN = 3
+#    idle = 0
+#    drop = 1
+#    wait = 2
+#    return = 3
 
     
 
 #func step():
     #    dist = gml.distance_to_object(character)
-#    if (status == IDLE):
+#    if (status == idle):
 
 #        if (player1.position.y > position.y and dist < 96 and abs(player1.position.x - position.x) < 8):
     
-#            status = DROP
+#            status = drop
     
 
-#    elif (status == DROP):
+#    elif (status == drop):
 
 #        y_vel += my_grav
 #        if (y_vel > 6): y_vel = 6
-#        if (Collision.is_collision_bottom(1)):
+#        if (Collision.i"collision_bottom(1)):"
     
-#            status = WAIT
+#            status = wait
 #            y_vel = 0
 #            counter = 100
     
 
-#    elif (status == WAIT):
+#    elif (status == wait):
 
-#        if (Collision.is_collision_bottom(1)): position.y -= 1
+#        if (Collision.i"collision_bottom(1)): position.y -= 1"
 #        if (counter > 0): counter -= 1
 #        else:
     
-#            status = RETURN
+#            status = return
 #            y_vel = -1
     
 
-#    elif (status == RETURN):
+#    elif (status == return):
 
-#        if (Collision.is_collision_top(1)):
+#        if (Collision.i"collision_top(1)):"
     
 #            y_vel = 0
-#            status = IDLE
-    
-
-
-    
+#            status = idle

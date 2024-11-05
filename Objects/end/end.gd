@@ -25,14 +25,14 @@ func _process(delta):
 
 #    if (global.kali_punish >= 2):
 
-#        gml.instance_create(p_dummy.position.x, p_dummy.position.y+2, "ball2")
-#        obj = gml.instance_create(p_dummy.position.x, p_dummy.position.y, "chain2")
+#        gml.instance_create(p_dummy.position.x, p_dummy.position.y+2, Objects.ball2)
+#        obj = gml.instance_create(p_dummy.position.x, p_dummy.position.y, Objects.chain2)
 #        obj.link_val = 1
-#        obj = gml.instance_create(p_dummy.position.x, p_dummy.position.y, "chain2")
+#        obj = gml.instance_create(p_dummy.position.x, p_dummy.position.y, Objects.chain2)
 #        obj.link_val = 2
-#        obj = gml.instance_create(p_dummy.position.x, p_dummy.position.y, "chain2")
+#        obj = gml.instance_create(p_dummy.position.x, p_dummy.position.y, Objects.chain2)
 #        obj.link_val = 3
-#        obj = gml.instance_create(p_dummy.position.x, p_dummy.position.y, "chain2")
+#        obj = gml.instance_create(p_dummy.position.x, p_dummy.position.y, Objects.chain2)
 #        obj.link_val = 4
 
 
@@ -61,13 +61,13 @@ func _process(delta):
     
 
 
-#    # DY:  shake the screen
+#    # dy:  shake the screen
 #    if (global.shake > 0):
 
-#        # DY: view_xview[0] = view_xview[0] + randi_range(0,3) - randi_range(0,3)
-#        # DY: view_yview[0] = view_yview[0] + randi_range(0,3) - randi_range(0,3)
-#        # DY: if (view_yview[0] > 16): view_yview[0] = 16 - randi_range(0,8)
-#        # DY: if (view_yview[0] < 0): view_yview[0] = 0 + randi_range(0,8)
+#        # dy: view_xview[0] = view_xview[0] + randi_range(0,3) - randi_range(0,3)
+#        # dy: view_yview[0] = view_yview[0] + randi_range(0,3) - randi_range(0,3)
+#        # dy: if (view_yview[0] > 16): view_yview[0] = 16 - randi_range(0,8)
+#        # dy: if (view_yview[0] < 0): view_yview[0] = 0 + randi_range(0,8)
 #        if (shake_toggle): view_yview[0] = view_yview[0] + randi_range(1,8)
 #        else: view_yview[0] = 0
 #        shake_toggle = not shake_toggle
@@ -79,5 +79,3 @@ func _process(delta):
 
 
 #    if (view_xview[0] < room_width - 320): view_xview[0] += 1
-
-    

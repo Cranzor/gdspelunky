@@ -23,7 +23,7 @@ func _process(delta):
     
 
 #func alarm 1():
-    #    if (gml.instance_number(yellow_trail) < 12): gml.instance_create(position.x, position.y, "yellow_trail")
+    #    if (gml.instance_number(yellow_trail) < 12): gml.instance_create(position.x, position.y, Objects.yellow_trail)
 #    alarm_1(4)
 
     
@@ -36,11 +36,11 @@ func _process(delta):
 #        else: n = randi_range(1,5)
 #        match (n)
     
-#            1:  gml.instance_create(position.x-8, position.y-8, "bat")  
-#            2:  gml.instance_create(position.x-8, position.y-8, "spider")  
-#            3:  gml.instance_create(position.x-8, position.y-8, "snake")  
-#            4:  gml.instance_create(position.x-8, position.y-8, "frog")  
-#            5:  gml.instance_create(position.x-8, position.y-8, "fire_frog")  
+#            1:  gml.instance_create(position.x-8, position.y-8, Objects.bat)  
+#            2:  gml.instance_create(position.x-8, position.y-8, Objects.spider)  
+#            3:  gml.instance_create(position.x-8, position.y-8, Objects.snake)  
+#            4:  gml.instance_create(position.x-8, position.y-8, Objects.frog)  
+#            5:  gml.instance_create(position.x-8, position.y-8, Objects.fire_frog)  
     
 #        gml.instance_destroy()
 
@@ -56,15 +56,15 @@ func _process(delta):
 #    y_vel = -1 * (random(3)+4)
 #    x_vel = randi_range(2,5)
 #    if (randi_range(1,2) == 1): x_vel *= -1
-#    # DY: invincible = true
-#    # DY: alarm_0(40)
+#    # dy: invincible = true
+#    # dy: alarm_0(40)
 #    alarm_1(1)
 
     
 
 #func outside room():
     #    # action_kill_object
-#    # Need to implement this action
+#    # need to implement this action
     
 
 #func step():
@@ -80,11 +80,11 @@ func _process(delta):
 #        else: n = randi_range(1,5)
 #        match (n)
     
-#            1:  gml.instance_create(position.x-8, position.y-8, "bat")  
-#            2:  gml.instance_create(position.x-8, position.y-8, "spider")  
-#            3:  gml.instance_create(position.x-8, position.y-8, "snake")  
-#            4:  gml.instance_create(position.x-8, position.y-8, "frog")  
-#            5:  gml.instance_create(position.x-8, position.y-8, "fire_frog")  
+#            1:  gml.instance_create(position.x-8, position.y-8, Objects.bat)  
+#            2:  gml.instance_create(position.x-8, position.y-8, Objects.spider)  
+#            3:  gml.instance_create(position.x-8, position.y-8, Objects.snake)  
+#            4:  gml.instance_create(position.x-8, position.y-8, Objects.frog)  
+#            5:  gml.instance_create(position.x-8, position.y-8, Objects.fire_frog)  
     
 #        gml.instance_destroy()
 
@@ -92,10 +92,8 @@ func _process(delta):
 #    if (y_vel < 6): y_vel += 0.15
 
 #    /*if (gml.collision_point(position.x, position.y, "dark", 0, 0) or:
-#        gml.collision_point(position.x, position.y, "darkFall", 0, 0) or
+#        gml.collision_point(position.x, position.y, "dark_fall", 0, 0) or
 #        gml.collision_point(position.x, position.y, "ice", 0, 0))
 
 #        gml.instance_destroy()
 #    */
-
-    

@@ -27,7 +27,7 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "Machete"
+#    type = "machete"
 #    damage = 2
 
     
@@ -37,16 +37,12 @@ func _process(delta):
 
 #        gml.instance_destroy()
 
-#    elif (sprite_index = s_machete_pre_r):
+#    elif (sprite_index = "machete_pre_r):"
 
 #        position.x = player1.position.x-16
 #        position.y = player1.position.y
 
-#    elif (sprite_index = s_machete_pre_l):
+#    elif (sprite_index = "machete_pre_l):"
 
 #        position.x = player1.position.x+16
 #        position.y = player1.position.y
-
-
-
-    

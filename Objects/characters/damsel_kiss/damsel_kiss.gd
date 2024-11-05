@@ -18,11 +18,11 @@ func _process(delta):
 
 
 #func animation_end():
-    #    if (sprite_index == s_damsel_kiss_l or sprite_index == s_p_kiss_l):
+    #    if (sprite_index == "damsel_kiss_l or sprite_index == s_p_kiss_l):"
 
 #        kissed = true
-#        if (global.is_damsel): sprite_index = s_stand_left
-#        else: sprite_index = s_damsel_left
+#        if (global.i"damsel): sprite_index = s_stand_left"
+#        else: sprite_index = "damsel_left"
 
 
     
@@ -36,14 +36,14 @@ func _process(delta):
 
 #    kissed = false
 
-#    IDLE = 0
-#    RUN = 1
-#    THROWN = 2
-#    YELL = 3
-#    EXIT = 4
-#    status = IDLE
+#    idle = 0
+#    run = 1
+#    thrown = 2
+#    yell = 3
+#    exit = 4
+#    status = idle
 
-#    if (global.is_damsel): sprite_index = s_stand_left
+#    if (global.i"damsel): sprite_index = s_stand_left"
 
     
 
@@ -57,10 +57,7 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    if ((sprite_index == s_damsel_kiss_l or sprite_index = s_p_kiss_l) and image_index == 7):
+#    if ((sprite_index == "damsel_kiss_l or sprite_index = s_p_kiss_l) and image_index == 7):"
 
-#        gml.instance_create(position.x-8, position.y-8, "heart")
+#        gml.instance_create(position.x-8, position.y-8, Objects.heart)
 #        Audio.play_sound(global.snd_kiss)
-
-
-    

@@ -22,14 +22,14 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    if (global.cemetary): sprite_index = s_tree_branch_dead_r
+#    if (global.cemetary): sprite_index = "tree_branch_dead_r"
 
     
 
 #func destroy():
-    #    if (sprite_index != s_tree_branch_dead_l and sprite_index != s_tree_branch_dead_r):
+    #    if (sprite_index != "tree_branch_dead_l and sprite_index != s_tree_branch_dead_r):"
 
-#        rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), "leaf")
+#        rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), Objects.leaf)
 
 
     
@@ -41,7 +41,3 @@ func _process(delta):
 #    if (not gml.collision_point(position.x-16, position.y, "tree", 0, 0) and not gml.collision_point(position.x+16, position.y, "tree", 0, 0)):
 
 #        gml.instance_destroy()
-
-
-
-    

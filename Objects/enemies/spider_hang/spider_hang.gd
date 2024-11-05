@@ -29,15 +29,15 @@ func _process(delta):
 #    y_delta = -0.4
 #    image_speed = 0.4
 
-#    # DY:  stats
+#    # dy:  stats
 #    hp = 1
 #    invincible = 0
 
-#    # DY:  status
-#    IDLE = 0
-#    BOUNCE = 1
-#    RECOVER = 2
-#    WALK = 3
+#    # dy:  status
+#    idle = 0
+#    bounce = 1
+#    recover = 2
+#    walk = 3
 
 #    status = 0
 #    bounce_counter = 0
@@ -59,17 +59,13 @@ func _process(delta):
 #    if (hp < 1):
 
 #        MiscScripts.scr_create_blood(position.x+8, position.y+8, 3)
-#        if (InLevel.is_real_level()): global.enemy_kills[2] += 1
+#        if (InLevel.i"real_level()): global.enemy_kills[2] += 1"
 #        global.spiders += 1
 #        global.kills += 1
 #        gml.instance_destroy()
 
 #    elif (not gml.collision_point(position.x, position.y-16, "solid", 0, 0) or (dist < 90 and character.position.y > position.y and abs(character.position.x - (position.x+8)) < 8)):
 
-#      spider = gml.instance_create(position.x, position.y, "spider")
+#      spider = gml.instance_create(position.x, position.y, Objects.spider)
 #      spider.hp = hp
 #      gml.instance_destroy()
-
-
-
-    

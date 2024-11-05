@@ -22,11 +22,9 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "Cape"
+#    type = "cape"
 #    PlatformEngine.make_active()
 #    Collision.set_collision_bounds(-6, -6, 6, 6)
 
 #    cost = 12000
-#    buy_message = "A CAPE FOR $" + str\(cost) + "."
-
-    
+#    buy_message = "A cape for $" + str\(cost) + "."

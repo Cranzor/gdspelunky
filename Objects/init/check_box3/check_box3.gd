@@ -22,7 +22,7 @@ func _process(delta):
 #    else:
 
 #        on = false
-#        sprite_index = s_box
+#        sprite_index = "box"
 
 
     
@@ -31,14 +31,11 @@ func _process(delta):
     #    if (not on):
 
 #        on = true
-#        sprite_index = s_box_checked
+#        sprite_index = "box_checked"
 #        global.down_trun = true
 
 #    else:
 
 #        on = false
-#        sprite_index = s_box
+#        sprite_index = "box"
 #        global.down_trun = false
-
-
-    

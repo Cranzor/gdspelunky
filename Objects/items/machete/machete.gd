@@ -22,11 +22,11 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "Machete"
+#    type = "machete"
 #    PlatformEngine.make_active()
 #    Collision.set_collision_bounds(-4, -4, 4, 4)
 #    cost = 7000
-#    buy_message = "A MACHETE FOR $" + str\(cost) + "."
+#    buy_message = "A machete for $" + str\(cost) + "."
 
     
 
@@ -37,8 +37,5 @@ func _process(delta):
 #    # main_code
 #    if (held):
 
-#        if (player1.facing == 18): sprite_index = s_machete_left
-#        else: sprite_index = s_machete_right
-
-
-    
+#        if (player1.facing == 18): sprite_index = "machete_left"
+#        else: sprite_index = "machete_right"

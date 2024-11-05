@@ -18,7 +18,7 @@ func _process(delta):
 
 
 #func collision with o_key():
-    #    if (other.held and sprite_index == s_locked_chest):
+    #    if (other.held and sprite_index == "locked_chest):"
 
 #        other.held = false
 #        with player1
@@ -28,14 +28,14 @@ func _process(delta):
     
 #        with other  gml.instance_destroy() 
     
-#        sprite_index = s_locked_chestOpen
+#        sprite_index = "locked_chest_open"
 #        Audio.play_sound(global.snd_chest_open)
-#        obj = gml.instance_create(position.x, position.y, "udjat_eye")
+#        obj = gml.instance_create(position.x, position.y, Objects.udjat_eye)
 #        obj.x_vel = randi_range(0,3) - randi_range(0,3)
 #        obj.y_vel = -2
-#        obj = gml.instance_create(position.x, position.y, "poof")
+#        obj = gml.instance_create(position.x, position.y, Objects.poof)
 #        with obj  x_vel = -0.4 
-#        obj = gml.instance_create(position.x, position.y, "poof")
+#        obj = gml.instance_create(position.x, position.y, Objects.poof)
 #        with obj  x_vel = 0.4 
 #        gml.instance_destroy()
 
@@ -47,7 +47,7 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "Locked Chest"
+#    type = "locked chest"
 #    PlatformEngine.make_active()
 #    Collision.set_collision_bounds(-6, -2, 6, 8)
 
@@ -61,6 +61,3 @@ func _process(delta):
 #func step():
     #    # action_inherited
 #    super()
-
-
-    

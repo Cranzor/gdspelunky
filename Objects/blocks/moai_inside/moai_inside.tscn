@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://3b2d3htdvhas"]
 
-[sub_resource type="GDScript" id="GDScript_wwjud"]
+[ext_resource type="Script" path="res://objects/blocks/moai_inside/moai_inside.gd" id="1_371pu"]
 
 [node name="MoaiInside" type="Node2D"]
+script = ExtResource("1_371pu")
+object_name = "moai_inside"

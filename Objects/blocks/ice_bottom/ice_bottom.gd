@@ -18,7 +18,7 @@ func _process(delta):
 
 
 #func alarm 0():
-    #    gml.instance_create(position.x+8, position.y+4, "drip")
+    #    gml.instance_create(position.x+8, position.y+4, Objects.drip)
 #    alarm_0()randi_range(20,400)
 
     
@@ -38,5 +38,3 @@ func _process(delta):
 
 #    # main_code
 #    if (not gml.collision_point(position.x+8, position.y-1, "solid", 0, 0)): gml.instance_destroy()
-
-    

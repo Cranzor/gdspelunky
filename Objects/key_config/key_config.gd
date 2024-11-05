@@ -25,154 +25,154 @@ func _process(delta):
 #func draw():
     #    draw_set_font(global.my_font_small)
 #    draw_set_color(c_yellow)
-#    str_len = string_length("PRESS KEY FOR")*8
+#    str_len = string_length("press key for")*8
 #    n = 160 - str_len
 #    n = ceil(n / 2)
-#    draw_text(n, 32, "PRESS KEY FOR")
-#    draw_text(8, 96, "ESC TO KEEP SAME.")
-#    draw_text(8, 104, "CURRENT: ")
+#    draw_text(n, 32, "press key for")
+#    draw_text(8, 96, "esc to keep same.")
+#    draw_text(8, 104, "current: ")
 
 #    if (status == 0):
 
 #        draw_set_font(global.my_font)
 #        draw_set_color(c_white)
-#        str_len = string_length("UP")*16
+#        str_len = string_length("up")*16
 #        n = 160 - str_len
 #        n = ceil(n / 2)
-#        draw_text(n, 40, "UP")
+#        draw_text(n, 40, "up")
 #        curr_val = global.key_up_val
 
 #    elif (status == 1):
 
 #        draw_set_font(global.my_font)
 #        draw_set_color(c_white)
-#        str_len = string_length("DOWN")*16
+#        str_len = string_length("down")*16
 #        n = 160 - str_len
 #        n = ceil(n / 2)
-#        draw_text(n, 40, "DOWN")
+#        draw_text(n, 40, "down")
 #        curr_val = global.key_down_val
 
 #    elif (status == 2):
 
 #        draw_set_font(global.my_font)
 #        draw_set_color(c_white)
-#        str_len = string_length("LEFT")*16
+#        str_len = string_length("left")*16
 #        n = 160 - str_len
 #        n = ceil(n / 2)
-#        draw_text(n, 40, "LEFT")
+#        draw_text(n, 40, "left")
 #        curr_val = global.key_left_val
 
 #    elif (status == 3):
 
 #        draw_set_font(global.my_font)
 #        draw_set_color(c_white)
-#        str_len = string_length("RIGHT")*16
+#        str_len = string_length("right")*16
 #        n = 160 - str_len
 #        n = ceil(n / 2)
-#        draw_text(n, 40, "RIGHT")
+#        draw_text(n, 40, "right")
 #        curr_val = global.key_right_val
 
 #    elif (status == 4):
 
 #        draw_set_font(global.my_font)
 #        draw_set_color(c_white)
-#        str_len = string_length("JUMP")*16
+#        str_len = string_length("jump")*16
 #        n = 160 - str_len
 #        n = ceil(n / 2)
-#        draw_text(n, 40, "JUMP")
+#        draw_text(n, 40, "jump")
 #        curr_val = global.key_jump_val
 
 #    elif (status == 5):
 
 #        draw_set_font(global.my_font)
 #        draw_set_color(c_white)
-#        str_len = string_length("ACTION")*16
+#        str_len = string_length("action")*16
 #        n = 160 - str_len
 #        n = ceil(n / 2)
-#        draw_text(n, 40, "ACTION")
+#        draw_text(n, 40, "action")
 #        curr_val = global.key_attack_val
 
 #    elif (status == 6):
 
 #        draw_set_font(global.my_font)
 #        draw_set_color(c_white)
-#        str_len = string_length("SWITCH")*16
+#        str_len = string_length("switch")*16
 #        n = 160 - str_len
 #        n = ceil(n / 2)
-#        draw_text(n, 40, "SWITCH")
+#        draw_text(n, 40, "switch")
 #        curr_val = global.key_item_val
 
 #    elif (status == 7):
 
 #        draw_set_font(global.my_font)
 #        draw_set_color(c_white)
-#        str_len = string_length("RUN")*16
+#        str_len = string_length("run")*16
 #        n = 160 - str_len
 #        n = ceil(n / 2)
-#        draw_text(n, 40, "RUN")
+#        draw_text(n, 40, "run")
 #        curr_val = global.key_run_val
 
 #    elif (status == 8):
 
 #        draw_set_font(global.my_font)
 #        draw_set_color(c_white)
-#        str_len = string_length("BOMB")*16
+#        str_len = string_length("bomb")*16
 #        n = 160 - str_len
 #        n = ceil(n / 2)
-#        draw_text(n, 40, "BOMB")
+#        draw_text(n, 40, "bomb")
 #        curr_val = global.key_bomb_val
 
 #    elif (status == 9):
 
 #        draw_set_font(global.my_font)
 #        draw_set_color(c_white)
-#        str_len = string_length("ROPE")*16
+#        str_len = string_length("rope")*16
 #        n = 160 - str_len
 #        n = ceil(n / 2)
-#        draw_text(n, 40, "ROPE")
+#        draw_text(n, 40, "rope")
 #        curr_val = global.key_rope_val
 
 #    elif (status == 10):
 
 #        draw_set_font(global.my_font)
 #        draw_set_color(c_white)
-#        str_len = string_length("FLARE")*16
+#        str_len = string_length("flare")*16
 #        n = 160 - str_len
 #        n = ceil(n / 2)
-#        draw_text(n, 40, "FLARE")
+#        draw_text(n, 40, "flare")
 #        curr_val = global.key_flare_val
 
 #    elif (status == 11):
 
 #        draw_set_font(global.my_font)
 #        draw_set_color(c_white)
-#        str_len = string_length("PURCHASE")*16
+#        str_len = string_length("purchase")*16
 #        n = 160 - str_len
 #        n = ceil(n / 2)
-#        draw_text(n, 40, "PURCHASE")
+#        draw_text(n, 40, "purchase")
 #        curr_val = global.key_pay_val
 
 
 #    draw_set_font(global.my_font_small)
 #    match (curr_val)
 
-#        vk_up:  draw_text(80, 104, "UP ARR")
+#        vk_up:  draw_text(80, 104, "up arr")
 #    break 
-#        vk_down:  draw_text(80, 104, "DOWN ARR")
+#        vk_down:  draw_text(80, 104, "down arr")
 #    break 
-#        vk_left:  draw_text(80, 104, "LEFT ARR")
+#        vk_left:  draw_text(80, 104, "left arr")
 #    break 
-#        vk_right:  draw_text(80, 104, "RIGHT ARR")
+#        vk_right:  draw_text(80, 104, "right arr")
 #    break 
-#        vk_shift:  draw_text(80, 104, "SHIFT")
+#        vk_shift:  draw_text(80, 104, "shift")
 #    break 
-#        vk_control:  draw_text(80, 104, "CTRL")
+#        vk_control:  draw_text(80, 104, "ctrl")
 #    break 
-#        vk_alt:  draw_text(80, 104, "ALT")
+#        vk_alt:  draw_text(80, 104, "alt")
 #    break 
-#        vk_space:  draw_text(80, 104, "SPACE")
+#        vk_space:  draw_text(80, 104, "space")
 #    break 
-#        vk_enter:  draw_text(80, 104, "ENTER")
+#        vk_enter:  draw_text(80, 104, "enter")
 #    break 
 #        ord("A"):  draw_text(80, 104, "A")
 #    break 
@@ -226,7 +226,7 @@ func _process(delta):
 #    break 
 #        ord("Z"):  draw_text(80, 104, "Z")
 #    break 
-#        default:  draw_text(80, 104, "KEY " + str\(curr_val))
+#        default:  draw_text(80, 104, "key " + str\(curr_val))
 #    break 
 
 
@@ -318,5 +318,3 @@ func _process(delta):
 #    file_text_writeln(file)
 #    file_text_write_str\(file, str\(global.key_pay_val))
 #    file_text_close(file)
-
-    

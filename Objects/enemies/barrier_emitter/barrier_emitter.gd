@@ -34,7 +34,7 @@ func _process(delta):
     #    image_speed = 0.5
 #    if (not gml.instance_exists("barrier")):
 
-#        gml.instance_create(position.x, position.y+16, "barrier")
+#        gml.instance_create(position.x, position.y+16, Objects.barrier)
 
 
     
@@ -42,7 +42,7 @@ func _process(delta):
 #func destroy():
     #    for repetition in range(1, 6):
 
-#        obj = gml.instance_create(position.x+2+randi_range(0,14), position.y+2+randi_range(0,14), "flare_spark")
+#        obj = gml.instance_create(position.x+2+randi_range(0,14), position.y+2+randi_range(0,14), Objects.flare_spark)
 #        obj.y_vel = randi_range(1,3)
 
 #    InLevel.scr_shake(10)
@@ -59,6 +59,3 @@ func _process(delta):
 #            position.y > view_yview[0]-8 and position.y < view_yview[0] + view_hview[0]+8))
 
 #        if (not gml.collision_point(position.x, position.y-16, "solid", 0, 0)): gml.instance_destroy()
-
-
-    

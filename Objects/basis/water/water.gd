@@ -22,7 +22,5 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "Water"
+#    type = "water"
 #    checked = false
-
-    

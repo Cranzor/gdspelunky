@@ -34,42 +34,39 @@ func _process(delta):
 #    counter = 0
 
 #    status = 0
-#    IDLE = 0
-#    DROP = 1
-#    WAIT = 2
-#    RETURN = 3
+#    idle = 0
+#    drop = 1
+#    wait = 2
+#    return = 3
 
     
 
 #func destroy():
-    #    rubble = gml.instance_create(position.x+8+randi_range(0,4)-randi_range(0,4), position.y+8+randi_range(0,8)-randi_range(0,8), "rubble_small")
-#        rubble.sprite_index = s_rubble_tan_small
-#        rubble = gml.instance_create(position.x+8+randi_range(0,4)-randi_range(0,4), position.y+8+randi_range(0,8)-randi_range(0,8), "rubble_small")
-#        rubble.sprite_index = s_rubble_tan_small
+    #    rubble = gml.instance_create(position.x+8+randi_range(0,4)-randi_range(0,4), position.y+8+randi_range(0,8)-randi_range(0,8), Objects.rubble_small)
+#        rubble.sprite_index = "rubble_tan_small"
+#        rubble = gml.instance_create(position.x+8+randi_range(0,4)-randi_range(0,4), position.y+8+randi_range(0,8)-randi_range(0,8), Objects.rubble_small)
+#        rubble.sprite_index = "rubble_tan_small"
 
     
 
 #func step():
     #    dist = gml.distance_to_object(character)
-#    if (status == IDLE):
+#    if (status == idle):
 
-#        # DY:  nothing
+#        # dy:  nothing
 
-#    elif (status == DROP):
+#    elif (status == drop):
 
 #        y_vel += my_grav
 #        if (y_vel > 6): y_vel = 6
-#        if (Collision.is_collision_bottom(1)):
+#        if (Collision.i"collision_bottom(1)):"
     
-#            status = WAIT
+#            status = wait
 #            y_vel = 0
 #            counter = 100
 #            depth = 100
     
 
-#    elif (status == WAIT):
+#    elif (status == wait):
 
-#        if (Collision.is_collision_bottom(1)): position.y -= 1
-
-
-    
+#        if (Collision.i"collision_bottom(1)): position.y -= 1"

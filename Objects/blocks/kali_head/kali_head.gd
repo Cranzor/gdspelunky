@@ -18,10 +18,10 @@ func _process(delta):
 
 
 #func alarm 0():
-    #    sprite_index = s_gth_hole
+    #    sprite_index = "gth_hole"
 #    for repetition in range(1, 6):
 
-#        obj = gml.instance_create(position.x, position.y, "spider")
+#        obj = gml.instance_create(position.x, position.y, Objects.spider)
 #        obj.x_vel = randi_range(0,3)-randi_range(0,3)
 #        obj.y_vel = -randi_range(1,3)
 
@@ -32,9 +32,6 @@ func _process(delta):
 #func create():
     #    match (randi_range(1,3))
 
-#        1:  sprite_index = s_kali_head1  
-#        2:  sprite_index = s_kali_head2  
-#        3:  sprite_index = s_kali_head3  
-
-
-    
+#        1:  sprite_index = "kali_head1  "
+#        2:  sprite_index = "kali_head2  "
+#        3:  sprite_index = "kali_head3  "

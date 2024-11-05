@@ -25,5 +25,3 @@ func _process(delta):
 #    x_vel = 0
 #    y_vel = 0
 #    my_grav = 0.6
-
-    

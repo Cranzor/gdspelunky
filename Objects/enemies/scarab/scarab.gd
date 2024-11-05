@@ -34,8 +34,8 @@ func _process(delta):
 #    # main_code
 #    image_speed = 0.5
 #    Collision.set_collision_bounds(4, 4, 12, 12)
-#    orig_x = 0
-#    orig_y = 0
+#    origX = 0
+#    origY = 0
 #    x_vel = 0
 #    y_vel = 0
 #    x_acc = 0.2
@@ -45,16 +45,16 @@ func _process(delta):
 #    elif (global.level_type == 1): value = 8000
 #    elif (global.level_type == 3): value = 12000
 
-#    # DY:  stats
+#    # dy:  stats
 #    hp = 1
 #    invincible = 0
 #    bloodless = true
 
-#    # DY:  status
-#    IDLE = 0
-#    ATTACK = 1
+#    # dy:  status
+#    idle = 0
+#    attack = 1
 
-#    status = IDLE
+#    status = idle
 
 #    shake_counter = 0
 #    shake_toggle = 1
@@ -64,7 +64,7 @@ func _process(delta):
 #func destroy():
     #    for repetition in range(1, 3):
 
-#        gml.instance_create(other.position.x+6+randi_range(0,4), other.position.y+6+randi_range(0,4), "flare_spark")
+#        gml.instance_create(other.position.x+6+randi_range(0,4), other.position.y+6+randi_range(0,4), Objects.flare_spark)
 
 
     
@@ -81,7 +81,7 @@ func _process(delta):
 
 #        for repetition in range(1, 3):
     
-#            obj = gml.instance_create(position.x+2+randi_range(0,14), position.y+2+randi_range(0,14), "flare_spark")
+#            obj = gml.instance_create(position.x+2+randi_range(0,14), position.y+2+randi_range(0,14), Objects.flare_spark)
 #            obj.y_vel = randi_range(1,3)
     
 #        gml.instance_destroy()
@@ -90,7 +90,7 @@ func _process(delta):
 #    dir = 0
 #    dist = point_distance(position.x+8, position.y+8, character.position.x, character.position.y)
 
-#    if (status == IDLE):
+#    if (status == idle):
 
 #        if (x_vel > 0): x_vel -= 0.5
 #        if (y_vel > 0): y_vel -= 0.5
@@ -116,23 +116,18 @@ func _process(delta):
 #            counter = randi_range(10,30)
     
     
-#        if (Collision.is_collision_right(1) and x_vel > 0):
+#        if (Collision.i"collision_right(1) and x_vel > 0):"
     
 #            x_vel = -x_vel
     
-#        if (Collision.is_collision_left(1) and x_vel < 0):
+#        if (Collision.i"collision_left(1) and x_vel < 0):"
     
 #            x_vel = -x_vel
     
-#        if (Collision.is_collision_top(1) and y_vel < 0):
+#        if (Collision.i"collision_top(1) and y_vel < 0):"
     
 #            y_vel = -y_vel
     
-#        if (Collision.is_collision_bottom(1) and y_vel > 0):
+#        if (Collision.i"collision_bottom(1) and y_vel > 0):"
     
 #            y_vel = -y_vel
-    
-
-
-
-    

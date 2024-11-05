@@ -25,8 +25,5 @@ func _process(delta):
 #func step():
     #    if (image_index == 11):
 
-#        gml.instance_create(position.x, position.y+16, "heart")
+#        gml.instance_create(position.x, position.y+16, Objects.heart)
 #        if (not end_custom.fade_out): Audio.play_sound(global.snd_kiss)
-
-
-    

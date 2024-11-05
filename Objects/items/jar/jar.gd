@@ -24,20 +24,20 @@ func _process(delta):
 
 #func collision with o_whip():
     #    Audio.play_sound(global.snd_break)
-#    gml.instance_create(position.x, position.y, "smoke_puff")
+#    gml.instance_create(position.x, position.y, Objects.smoke_puff)
 #    for i in range(0, 3):
 
-#        piece = gml.instance_create(position.x-2, position.y-2, "rubble_small")
+#        piece = gml.instance_create(position.x-2, position.y-2, Objects.rubble_small)
 #        piece.x_vel = randi_range(1,3)-randi_range(1,3)
 
     
-#    if (randi_range(1,3) == 1): gml.instance_create(position.x, position.y, "gold_chunk")
-#    elif (randi_range(1,6) == 1): gml.instance_create(position.x, position.y, "gold_nugget")
-#    elif (randi_range(1,12) == 1): gml.instance_create(position.x, position.y, "emerald_big")
-#    elif (randi_range(1,12) == 1): gml.instance_create(position.x, position.y, "sapphire_big")
-#    elif (randi_range(1,12) == 1): gml.instance_create(position.x, position.y, "ruby_big")
-#    elif (randi_range(1,6) == 1): gml.instance_create(position.x-8, position.y-8, "spider")
-#    elif (randi_range(1,12) == 1): gml.instance_create(position.x-8, position.y-8, "snake")
+#    if (randi_range(1,3) == 1): gml.instance_create(position.x, position.y, Objects.gold_chunk)
+#    elif (randi_range(1,6) == 1): gml.instance_create(position.x, position.y, Objects.gold_nugget)
+#    elif (randi_range(1,12) == 1): gml.instance_create(position.x, position.y, Objects.emerald_big)
+#    elif (randi_range(1,12) == 1): gml.instance_create(position.x, position.y, Objects.sapphire_big)
+#    elif (randi_range(1,12) == 1): gml.instance_create(position.x, position.y, Objects.ruby_big)
+#    elif (randi_range(1,6) == 1): gml.instance_create(position.x-8, position.y-8, Objects.spider)
+#    elif (randi_range(1,12) == 1): gml.instance_create(position.x-8, position.y-8, Objects.snake)
 #    if (held):
 
 #        player1.hold_item = 0
@@ -52,7 +52,7 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "Jar"
+#    type = "jar"
 #    PlatformEngine.make_active()
 #    Collision.set_collision_bounds(-4, -6, 4, 6)
 #    break_pieces = true
@@ -67,10 +67,10 @@ func _process(delta):
 #    if (break_pieces):
 
 #        Audio.play_sound(global.snd_break)
-#        gml.instance_create(position.x, position.y, "smoke_puff")
+#        gml.instance_create(position.x, position.y, Objects.smoke_puff)
 #        for i in range(0, 3):
     
-#            piece = gml.instance_create(position.x-2, position.y-2, "rubble_small")
+#            piece = gml.instance_create(position.x-2, position.y-2, Objects.rubble_small)
 #            if (col_left): piece.x_vel = randi_range(1,3)
 #            elif (col_right): piece.x_vel = -randi_range(1,3)
 #            else: piece.x_vel = randi_range(1,3)-randi_range(1,3)
@@ -78,17 +78,17 @@ func _process(delta):
 #            else: piece.y_vel = -randi_range(0,3)
     
     
-#        if (randi_range(1,3) == 1): gml.instance_create(position.x, position.y, "gold_chunk")
-#        elif (randi_range(1,6) == 1): gml.instance_create(position.x, position.y, "gold_nugget")
-#        elif (randi_range(1,12) == 1): gml.instance_create(position.x, position.y, "emerald_big")
-#        elif (randi_range(1,12) == 1): gml.instance_create(position.x, position.y, "sapphire_big")
-#        elif (randi_range(1,12) == 1): gml.instance_create(position.x, position.y, "ruby_big")
-#        elif (randi_range(1,6) == 1): gml.instance_create(position.x-8, position.y-8, "spider")
+#        if (randi_range(1,3) == 1): gml.instance_create(position.x, position.y, Objects.gold_chunk)
+#        elif (randi_range(1,6) == 1): gml.instance_create(position.x, position.y, Objects.gold_nugget)
+#        elif (randi_range(1,12) == 1): gml.instance_create(position.x, position.y, Objects.emerald_big)
+#        elif (randi_range(1,12) == 1): gml.instance_create(position.x, position.y, Objects.sapphire_big)
+#        elif (randi_range(1,12) == 1): gml.instance_create(position.x, position.y, Objects.ruby_big)
+#        elif (randi_range(1,6) == 1): gml.instance_create(position.x-8, position.y-8, Objects.spider)
 #        elif (randi_range(1,12) == 1):
     
-#            if (col_left): gml.instance_create(position.x, position.y-8, "snake")
-#            elif (col_right): gml.instance_create(position.x-16, position.y-8, "snake")
-#            else: gml.instance_create(position.x-8, position.y-8, "snake")
+#            if (col_left): gml.instance_create(position.x, position.y-8, Objects.snake)
+#            elif (col_right): gml.instance_create(position.x-16, position.y-8, Objects.snake)
+#            else: gml.instance_create(position.x-8, position.y-8, Objects.snake)
     
     
 #        if (held):
@@ -111,16 +111,16 @@ func _process(delta):
 #    col_bot = false
 #    if (held):
 
-#        if (character.facing == LEFT):
+#        if (character.facing == left):
     
 #            position.x = character.position.x - 4  
     
-#        elif (character.facing == RIGHT):
+#        elif (character.facing == right):
     
 #            position.x = character.position.x + 4  
     
     
-#        if (character.state == DUCKING and abs(character.x_vel) < 2): position.y = character.position.y + 4
+#        if (character.state == ducking and abs(character.x_vel) < 2): position.y = character.position.y + 4
 #        else: position.y = character.position.y  
 #        depth = 1
 
@@ -133,10 +133,10 @@ func _process(delta):
 #            y_vel += my_grav
     
     
-#        if (Collision.is_collision_top(1)): col_top = true    
-#        if (Collision.is_collision_left(1)): col_left = true
-#        if (Collision.is_collision_right(1)): col_right = true
-#        if (Collision.is_collision_bottom(1)): col_bot = true
+#        if (Collision.i"collision_top(1)): col_top = true    "
+#        if (Collision.i"collision_left(1)): col_left = true"
+#        if (Collision.i"collision_right(1)): col_right = true"
+#        if (Collision.i"collision_bottom(1)): col_bot = true"
 
 #        if (col_top and y_vel < 0):
     
@@ -156,11 +156,11 @@ func _process(delta):
     
 #            if (y_vel > 3): destroy = true
     
-#            # DY:  bounce
+#            # dy:  bounce
 #            if (y_vel > 1): y_vel = -y_vel * 0.5
 #            else: y_vel = 0
         
-#            # DY:  friction
+#            # dy:  friction
 #            if (abs(x_vel) < 0.1): x_vel = 0
 #            elif (abs(x_vel) != 0): x_vel *= 0.3
     
@@ -176,7 +176,7 @@ func _process(delta):
 #            y_vel = 0
     
     
-#        if (Collision.is_collision_bottom(0) and abs(y_vel) < 1):
+#        if (Collision.i"collision_bottom(0) and abs(y_vel) < 1):"
     
 #            position.y -= 1
 #            y_vel = 0
@@ -193,12 +193,12 @@ func _process(delta):
     
 #        if (gml.collision_point(position.x, position.y-5, "lava", 0, 0)):
     
-#            if (type == "Bomb"):
+#            if (type == "bomb"):
         
-#                gml.instance_create(position.x, position.y, "explosion")
+#                gml.instance_create(position.x, position.y, Objects.explosion)
 #                for i in range(0, 3):
             
-#                    gml.instance_create(position.x, position.y, "flame")
+#                    gml.instance_create(position.x, position.y, Objects.flame)
             
 
 #                Audio.play_sound(global.snd_explosion)
@@ -215,18 +215,18 @@ func _process(delta):
 #            enemy.x_vel = x_vel
 #            with enemy
         
-#                if (type == "Caveman" or type == "Man_trap" or type == "Yeti" or type == "Hawkman" or type == "Shopkeeper"):
+#                if (type == "caveman" or type == "man_trap" or type == "yeti" or type == "hawkman" or type == "shopkeeper"):
             
 #                    if (status != 98):
                 
-#                        if (type == "Caveman" or type == "Yeti" or type == "Hawkman" or type == "Shopkeeper"):
+#                        if (type == "caveman" or type == "yeti" or type == "hawkman" or type == "shopkeeper"):
                     
 #                            for i in range(0, 1):
                         
-#                                gml.instance_create(position.x, position.y, "blood")
+#                                gml.instance_create(position.x, position.y, Objects.blood)
                         
                     
-#                        status = STUNNED
+#                        status = stunned
 #                        counter = stun_time
 #                        y_vel = -6
 #                        Audio.play_sound(global.snd_hit)
@@ -234,31 +234,31 @@ func _process(delta):
             
 #                else:
             
-#                    gml.instance_create(position.x+8, position.y+8, "blood")
+#                    gml.instance_create(position.x+8, position.y+8, Objects.blood)
 #                    hp -= 1
-#                    orig_x = position.x
-#                    orig_y = position.y
+#                    origX = position.x
+#                    origY = position.y
 #                    shake_counter = 10
 #                    Audio.play_sound(global.snd_hit)
             
         
 #            enemy.x_vel = x_vel * 0.3
         
-#            if (type == "Arrow" or type == "Fish Bone"):
+#            if (type == "arrow" or type == "fish bone"):
 #                gml.instance_destroy()
     
     
 #        destroy = true
 
 
-#    if (type != "Damsel" and gml.collision_rectangle(position.x-3, position.y-3, position.x+3,  position.y+3, "damsel", 0, 0) and (abs(x_vel) > 2 or abs(y_vel) > 2)):
+#    if (type != "damsel" and gml.collision_rectangle(position.x-3, position.y-3, position.x+3,  position.y+3, "damsel", 0, 0) and (abs(x_vel) > 2 or abs(y_vel) > 2)):
 
 #        enemy = instance_nearest(position.x, position.y, damsel)
 #        if (not enemy.invincible and (abs(x_vel) > 1 or abs(y_vel) > 1)):
     
 #            for i in range(0, 1):
         
-#                gml.instance_create(position.x, position.y, "blood")
+#                gml.instance_create(position.x, position.y, Objects.blood)
         
     
 #        with enemy
@@ -283,6 +283,3 @@ func _process(delta):
 #            player1.pickup_item_type = ""
     
 #        gml.instance_destroy()
-
-
-    

@@ -22,11 +22,11 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "Mattock"
+#    type = "mattock"
 #    PlatformEngine.make_active()
 #    Collision.set_collision_bounds(-4, -6, 4, 6)
 #    cost = 8000
-#    buy_message = "A MATTOCK FOR $" + str\(cost) + "."
+#    buy_message = "A mattock for $" + str\(cost) + "."
 
     
 
@@ -37,8 +37,5 @@ func _process(delta):
 #    # main_code
 #    if (held):
 
-#        if (player1.facing == 18): sprite_index = s_mattock_left
-#        else: sprite_index = s_mattock_right
-
-
-    
+#        if (player1.facing == 18): sprite_index = "mattock_left"
+#        else: sprite_index = "mattock_right"

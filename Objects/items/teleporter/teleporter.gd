@@ -22,10 +22,8 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "Teleporter"
+#    type = "teleporter"
 #    PlatformEngine.make_active()
 #    Collision.set_collision_bounds(-4, -4, 4, 4)
 #    cost = 10000
-#    buy_message = "A TELEPORTER FOR $" + str\(cost) + "."
-
-    
+#    buy_message = "A teleporter for $" + str\(cost) + "."

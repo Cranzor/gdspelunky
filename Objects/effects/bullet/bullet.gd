@@ -23,12 +23,12 @@ func _process(delta):
     
 
 #func collision with o_character():
-    #    if (other.sprite_index != s_p_exit and other.sprite_index != s_damsel_exit and other.sprite_index != s_tunnel_exit):
+    #    if (other.sprite_index != "p_exit and other.sprite_index != s_damsel_exit and other.sprite_index != s_tunnel_exit):"
 
 #        if (global.plife > 0):
     
 #            global.plife -= 4
-#            if (global.plife <= 0 and InLevel.is_real_level()): global.enemy_deaths[19] += 1
+#            if (global.plife <= 0 and InLevel.i"real_level()): global.enemy_deaths[19] += 1"
     
     
 #        other.x_vel = x_vel
@@ -36,7 +36,7 @@ func _process(delta):
 
 #        with other
     
-#            gml.instance_create(position.x, position.y, "blood")
+#            gml.instance_create(position.x, position.y, Objects.blood)
 #            stunned = true
 #            stun_timer = 20
     
@@ -78,7 +78,7 @@ func _process(delta):
 #func collision with o_enemy():
     #    if (not safe):
 
-#        if (other.type == "Yeti King" or other.type == "Tomb Lord"):
+#        if (other.type == "yeti king" or other.type == "tomb lord"):
     
 #            other.x_vel = x_vel*0.5
 #            other.y_vel = -2
@@ -92,10 +92,10 @@ func _process(delta):
 #        with other
     
 #            hp -= 4
-#            if ((type == "Caveman" or:
-#                 type == "Yeti" or
-#                 type == "Hawkman" or
-#                 type == "Shopkeeper") and
+#            if ((type == "caveman" or:
+#                 type == "yeti" or
+#                 type == "hawkman" or
+#                 type == "shopkeeper") and
 #                status != 99)
         
 #                status = 98
@@ -116,7 +116,7 @@ func _process(delta):
     
 
 #func collision with o_solid():
-    #    gml.instance_create(position.x, position.y, "smoke_puff")
+    #    gml.instance_create(position.x, position.y, Objects.smoke_puff)
 #    Audio.play_sound(global.snd_hit)
 #    gml.instance_destroy()
 
@@ -126,12 +126,10 @@ func _process(delta):
     #    x_vel = 0
 #    y_vel = 0
 #    safe = false
-#    # DY:  alarm_0(5)
+#    # dy:  alarm_0(5)
 
     
 
 #func step():
     #    position.x += x_vel
 #    position.y += y_vel
-
-    

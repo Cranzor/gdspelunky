@@ -152,12 +152,6 @@ var object_id = ''
 
 @export var object_size: Vector2 #--- created by me for collision purposes
 
-#func drawn_sprite_create():
-	#visible = true #--- believe I put this due to how Game Maker handles it
-	#
-	#type = ""
-	#blink_toggle = 0
-
 func get_animated_sprite_2d():
 	var animated_sprite: AnimatedSprite2D = find_child("AnimatedSprite2D", true, false)
 	return animated_sprite
@@ -183,7 +177,8 @@ func get_animation():
 
 func set_animation_speed_scale(new_speed):
 	var animated_sprite: AnimatedSprite2D = get_animated_sprite_2d()
-	animated_sprite.speed_scale = new_speed
+	if animated_sprite != null:
+		animated_sprite.speed_scale = new_speed
 
 func get_animation_speed_scale():
 	var animated_sprite: AnimatedSprite2D = get_animated_sprite_2d()

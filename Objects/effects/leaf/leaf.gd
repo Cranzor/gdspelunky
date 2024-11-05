@@ -22,9 +22,7 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "Leaf"
+#    type = "leaf"
 #    y_vel = 0.4
 #    y_acc = 0.01
 #    image_speed = 0.2
-
-    

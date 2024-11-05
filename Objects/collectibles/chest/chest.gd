@@ -22,7 +22,7 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "Chest"
+#    type = "chest"
 #    PlatformEngine.make_active()
 #    Collision.set_collision_bounds(-6, 0, 6, 8)
 
@@ -36,6 +36,3 @@ func _process(delta):
 #func step():
     #    # action_inherited
 #    super()
-
-
-    

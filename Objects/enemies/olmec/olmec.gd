@@ -18,17 +18,17 @@ func _process(delta):
 
 
 #func alarm 1():
-    #    sprite_index = s_olmec_start2
+    #    sprite_index = "olmec_start2"
 #    for i in range(0, 6):
 
-#        debris = gml.instance_create(position.x+32+randi_range(0,32), position.y+randi_range(0,32), "olmec_debris")
+#        debris = gml.instance_create(position.x+32+randi_range(0,32), position.y+randi_range(0,32), Objects.olmec_debris)
 #        debris.x_vel = randi_range(1,4)
 #        debris.y_vel = -randi_range(1,3)
 
 #    Audio.play_sound(global.snd_thump)
 #    with hawkman_worship
 
-#        obj = gml.instance_create(position.x, position.y, "hawkman")
+#        obj = gml.instance_create(position.x, position.y, Objects.hawkman)
 #        with obj
     
 #            status = 98
@@ -49,11 +49,11 @@ func _process(delta):
     
 
 #func alarm 2():
-    #    sprite_index = s_olmec_start3
+    #    sprite_index = "olmec_start3"
 #    alarm_3(50)
 #    for i in range(0, 6):
 
-#        debris = gml.instance_create(position.x+randi_range(0,32), position.y+randi_range(0,32), "olmec_debris")
+#        debris = gml.instance_create(position.x+randi_range(0,32), position.y+randi_range(0,32), Objects.olmec_debris)
 #        debris.x_vel = -randi_range(1,4)
 #        debris.y_vel = -randi_range(1,3)
 
@@ -62,10 +62,10 @@ func _process(delta):
     
 
 #func alarm 3():
-    #    sprite_index = s_olmec
+    #    sprite_index = "olmec"
 #    for i in range(0, 12):
 
-#        debris = gml.instance_create(position.x+randi_range(0,64), position.y+32+randi_range(0,32), "olmec_debris")
+#        debris = gml.instance_create(position.x+randi_range(0,64), position.y+32+randi_range(0,32), Objects.olmec_debris)
 #        debris.x_vel = randi_range(1,4)-randi_range(1,4)
 #        debris.y_vel = -randi_range(1,3)
 
@@ -76,7 +76,7 @@ func _process(delta):
 
 #func alarm 4():
     #    toggle = true
-#    status = BOUNCE
+#    status = bounce
 #    Audio.play_sound(global.snd_big_jump)
 #    Audio.play_sound(global.snd_alert)
 #    alarm_6(20)
@@ -91,15 +91,15 @@ func _process(delta):
 #    player1.active = true
 #    status = 0
 #    counter = 100
-#    play_music(global.mus_boss, true)
-#    # DY: Audio.play_sound(global.snd_boss)
+#    play_music(global.mu"boss, true)"
+#    # dy: Audio.play_sound(global.snd_boss)
 
     
 
 #func alarm 6():
     #    with caveman_worship
 
-#        obj = gml.instance_create(position.x, position.y, "caveman")
+#        obj = gml.instance_create(position.x, position.y, Objects.caveman)
 #        obj.facing = 1
 #        obj.status = 2
 #        gml.instance_destroy()
@@ -120,22 +120,22 @@ func _process(delta):
 #    carry_player = false
 #    image_speed = 0.4
 
-#    LEFT = 0
-#    RIGHT = 1
+#    left = 0
+#    right = 1
 #    facing = randi_range(0,1)
 
-#    # DY:  status
-#    START2 = -2
-#    START1 = -1
-#    IDLE = 0
-#    BOUNCE = 1
-#    RECOVER = 2
-#    WALK = 3
-#    DROWNING = 4
-#    PREPARE = 5
-#    SLAM = 6
-#    CREATE = 7
-#    DEAD = 99
+#    # dy:  status
+#    start2 = -2
+#    start1 = -1
+#    idle = 0
+#    bounce = 1
+#    recover = 2
+#    walk = 3
+#    drowning = 4
+#    prepare = 5
+#    slam = 6
+#    create = 7
+#    dead = 99
 #    status = -1
 
 #    counter = 0
@@ -167,27 +167,27 @@ func _process(delta):
 #        y_vel += my_grav
 
     
-#    if (Collision.is_collision_top(1)):
+#    if (Collision.i"collision_top(1)):"
 
-#        gml.instance_create(position.x, position.y-16, "olmec_slam")
+#        gml.instance_create(position.x, position.y-16, Objects.olmec_slam)
 #        position.y += 1
 #        if (y_vel < 0): y_vel = -y_vel * 0.8
 
 
-#    if (Collision.is_collision_left(1)):
+#    if (Collision.i"collision_left(1)):"
 
 #        position.x += 1
 #        x_vel = 0
-#        # DY: if (x_vel < 0): x_vel = -x_vel * 0.8
+#        # dy: if (x_vel < 0): x_vel = -x_vel * 0.8
 
-#    if (Collision.is_collision_right(1)):
+#    if (Collision.i"collision_right(1)):"
 
 #        position.x -= 1
 #        x_vel = 0
-#        # DY: if (x_vel > 0): x_vel = -x_vel * 0.8
+#        # dy: if (x_vel > 0): x_vel = -x_vel * 0.8
 
 
-#    if (gml.collision_point(position.x, position.y+64, "lava", 0, 0)): status = DROWNING
+#    if (gml.collision_point(position.x, position.y+64, "lava", 0, 0)): status = drowning
 
 #    if (gml.collision_point(position.x, position.y-2, "lava", 0, 0)):
 
@@ -203,53 +203,53 @@ func _process(delta):
 #    if (gml.collision_rectangle(position.x, position.y-2, position.x+64,  position.y+64, "player1", 0, 0)): carry_player = true
 #    else: carry_player = false
 
-#    if (status == START1):
+#    if (status == start1):
 
 #        if (view_xview[0] < 176): view_xview[0] += 2
 #        else:
     
 #            alarm_1(100)
-#            status = START2
+#            status = start2
     
     
-#        if (Collision.is_collision_bottom(1)):
+#        if (Collision.i"collision_bottom(1)):"
 #            y_vel = 0
 
-#    elif (status == START2):
+#    elif (status == start2):
    
-#        if (Collision.is_collision_bottom(1)):
+#        if (Collision.i"collision_bottom(1)):"
 #            y_vel = 0
 
-#    elif (status == IDLE):
+#    elif (status == idle):
 
 #        if (counter > 0): counter -= 1
-#        if (counter == 0): status = BOUNCE
+#        if (counter == 0): status = bounce
     
-#        if (Collision.is_collision_bottom(1)):
+#        if (Collision.i"collision_bottom(1)):"
     
 #            y_vel = 0
     
     
 #        toggle = true
 
-#    elif (status == CREATE):
+#    elif (status == create):
 
 #        for repetition in range(1, 6):
     
-#            gml.instance_create(position.x+32+randi_range(0,32)-randi_range(0,32), position.y+14+randi_range(0,32)-randi_range(0,32), "psychic_create2")
+#            gml.instance_create(position.x+32+randi_range(0,32)-randi_range(0,32), position.y+14+randi_range(0,32)-randi_range(0,32), Objects.psychic_create2)
     
-#        gml.instance_create(position.x+32, position.y+16, "yellow_ball")
-#        gml.instance_create(position.x+32, position.y+16, "yellow_ball")
-#        gml.instance_create(position.x+32, position.y+16, "yellow_ball")
+#        gml.instance_create(position.x+32, position.y+16, Objects.yellow_ball)
+#        gml.instance_create(position.x+32, position.y+16, Objects.yellow_ball)
+#        gml.instance_create(position.x+32, position.y+16, Objects.yellow_ball)
 #        Audio.play_sound(global.snd_psychic)
-#        status = IDLE
+#        status = idle
 
-#    elif (status == RECOVER):
+#    elif (status == recover):
 
-#        if (Collision.is_collision_bottom(1)):
+#        if (Collision.i"collision_bottom(1)):"
     
 #            Audio.play_sound(global.snd_thump)
-#            status = IDLE
+#            status = idle
 #            x_vel = 0
 #            y_vel = 0
 #            counter = randi_range(40,100)
@@ -276,7 +276,7 @@ func _process(delta):
 #            if ((not player1.active and y_vel >= 0) or:
 #                (player1.position.y > position.y and abs(player1.position.x - (position.x+32)) < 32 and x_vel > -1))
         
-#                status = PREPARE
+#                status = prepare
 #                y_vel = 0
 #                x_vel = 0
 #                my_grav = 0
@@ -284,45 +284,45 @@ func _process(delta):
         
     
 
-#    elif (status == BOUNCE):
+#    elif (status == bounce):
 
-#        if (Collision.is_collision_bottom(1)):
+#        if (Collision.i"collision_bottom(1)):"
     
 #            y_vel = -4
     
 #        else:
     
 #            counter = 10
-#            status = RECOVER
+#            status = recover
 #            Audio.play_sound(global.snd_big_jump)
     
 
-#    elif (status == PREPARE):
+#    elif (status == prepare):
 
 #        if (counter > 0): counter -= 1
 #        else:
     
 #            y_vel = 5
 #            my_grav = 0.2
-#            status = SLAM
+#            status = slam
 #            slammed = false
     
 
-#    elif (status == SLAM):
+#    elif (status == slam):
 
 #        carry_player = false
-#        if (Collision.is_collision_bottom(1)):
+#        if (Collision.i"collision_bottom(1)):"
     
 #            if (not slammed):
         
-#                gml.instance_create(position.x, position.y+64, "olmec_slam")
+#                gml.instance_create(position.x, position.y+64, Objects.olmec_slam)
 #                slammed = true
 #                InLevel.scr_shake(5)
         
 #            else:
         
-#                if (randi_range(1,2) == 1 or not player1.active): status = IDLE
-#                else: status = CREATE
+#                if (randi_range(1,2) == 1 or not player1.active): status = idle
+#                else: status = create
 #                x_vel = 0
 #                y_vel = 0
 #                counter = 60
@@ -330,24 +330,21 @@ func _process(delta):
         
     
 
-#    elif (status == DROWNING):
+#    elif (status == drowning):
 
 #        x_vel = 0
 #        y_vel = 0.1
 #        my_grav = 0
 #        InLevel.scr_shake(10)
-#        if (not SS.is_sound_playing(global.snd_flame)): Audio.play_sound(global.snd_flame)
+#        if (not SS_IsSoundPlaying(global.snd_flame)): Audio.play_sound(global.snd_flame)
 
 
-#    if (Collision.is_collision_top(1)):
+#    if (Collision.i"collision_top(1)):"
 #        y_vel = 1
-#    if (Collision.is_collision_left(1) or Collision.is_collision_right(1)):
+#    if (Collision.i"collision_left(1) or Collision.is_collision_right(1)):"
 
 #        x_vel = -x_vel
 
 
-#    if (Collision.is_collision_solid()):
+#    if (Collision.i"collision_solid()):"
 #      position.y -= 2
-
-
-    

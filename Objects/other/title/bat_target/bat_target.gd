@@ -24,19 +24,19 @@ func _process(delta):
 
 #    with other  gml.instance_destroy() 
 
-#    gml.instance_create(x_mid, -64, "bat_target")
+#    gml.instance_create(x_mid, -64, Objects.bat_target)
 
-#    if (sprite_index = s_ufo): gml.instance_create(position.x, position.y, "ufcrash")
+#    if (sprite_index = "ufo): gml.instance_create(position.x, position.y, Objects.ufcrash)"
 #    else: MiscScripts.scr_create_blood(position.x+8, position.y+8, 3)
 #    gml.instance_destroy()
 
     
 
 #func collision with o_character():
-    #    # DY:  jumped on - caveman, man_trap replaces this script with its own
+    #    # dy:  jumped on - caveman, man_trap replaces this script with its own
 #    if (abs(other.position.x-(position.x+8)) > 12):
 
-#        # DY:  do nothing
+#        # dy:  do nothing
 
 #    elif (not other.dead and (other.state == 15 or other.state == 16) and other.position.y < position.y+8 and not other.swimming):
 
@@ -45,7 +45,7 @@ func _process(delta):
 #        Audio.play_sound(global.snd_coin)
 #        moon_room.baskets += difficulty
 
-#        gml.instance_create(position.x, -64, "bat_target")
+#        gml.instance_create(position.x, -64, Objects.bat_target)
 
 #        MiscScripts.scr_create_blood(position.x+8, position.y+8, 3)
 #        gml.instance_destroy()
@@ -68,8 +68,8 @@ func _process(delta):
 
 #func create():
     #    bloodless = false
-#    UP = 0
-#    DOWN = 1
+#    up = 0
+#    down = 1
 #    dir = 1
 #    if (position.x == 208): difficulty = 2
 #    elif (position.x == 256): difficulty = 4
@@ -79,26 +79,26 @@ func _process(delta):
 #    if (moon_room.timer <= 20):
 
 #        difficulty += 2
-#        sprite_index = s_ufo
+#        sprite_index = "ufo"
 
 
     
 
 #func step():
-    #    if (dir == UP):
+    #    if (dir == up):
 
 #        position.y -= difficulty
 #        if (position.y <= 64):
     
-#            dir = DOWN
+#            dir = down
     
 
-#    elif (dir == DOWN):
+#    elif (dir == down):
 
 #        position.y += difficulty
 #        if (position.y >= 160):
     
-#            dir = UP
+#            dir = up
     
 
     
@@ -106,6 +106,3 @@ func _process(delta):
 
 #        position.x = x_mid - abs(sin(x_diff)*32)
 #        x_diff += 0.01
-
-
-    

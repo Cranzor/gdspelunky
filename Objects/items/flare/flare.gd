@@ -20,7 +20,7 @@ func alarm_0():
 	alarm_0_countdown.start(2)
 
 func create():
-	item_create()
+	super()
 	
 	image_speed = 0.3
 	

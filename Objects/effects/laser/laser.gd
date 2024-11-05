@@ -18,7 +18,7 @@ func _process(delta):
 
 
 #func alarm 0():
-    #    gml.instance_create(position.x, position.y, "laser_trail")
+    #    gml.instance_create(position.x, position.y, Objects.laser_trail)
 #    alarm_0(1)
 
     
@@ -32,7 +32,7 @@ func _process(delta):
 #        other.y_vel = -6
 #        status = 2
 
-#        gml.instance_create(position.x, position.y, "laser_explode")
+#        gml.instance_create(position.x, position.y, Objects.laser_explode)
 #        gml.instance_destroy()
 
 
@@ -40,14 +40,14 @@ func _process(delta):
     
 
 #func collision with o_enemy():
-    #    if (other.type != "UFO" and other.invincible == 0):
+    #    if (other.type != "ufo" and other.invincible == 0):
 
 #        other.hp -= 3
 #        other.x_vel = randi_range(0,2)-randi_range(1,2)
 #        other.x_vel = -1
 #        other.y_vel = -6
-#        gml.instance_create(position.x, position.y, "laser_explode")
-#        # DY:  global.check_water = true
+#        gml.instance_create(position.x, position.y, Objects.laser_explode)
+#        # dy:  global.check_water = true
 #        gml.instance_destroy()
 
 
@@ -63,9 +63,9 @@ func _process(delta):
 #                gold = gml.instance_place(position.x, position.y, gold)
 #                with gold  gml.instance_destroy() 
         
-#            if (gml.collision_point(position.x, position.y, "goldBig", 0, 0)):
+#            if (gml.collision_point(position.x, position.y, "gold_big", 0, 0)):
         
-#                gold = gml.instance_place(position.x, position.y, goldBig)
+#                gold = gml.instance_place(position.x, position.y, gold_big)
 #                with gold  gml.instance_destroy() 
         
 #            gml.instance_destroy()
@@ -75,8 +75,8 @@ func _process(delta):
 #        if (tile): tile_delete(tile)
 
 
-#    gml.instance_create(position.x, position.y, "laser_explode")
-#    # DY:  global.check_water = true
+#    gml.instance_create(position.x, position.y, Objects.laser_explode)
+#    # dy:  global.check_water = true
 #    gml.instance_destroy()
 
     
@@ -94,7 +94,7 @@ func _process(delta):
 
 #func outside room():
     #    # action_kill_object
-#    # Need to implement this action
+#    # need to implement this action
     
 
 #func step():
@@ -103,10 +103,8 @@ func _process(delta):
 #    if (y_vel > 4): y_vel = 0
 
 #    /*if (gml.collision_point(position.x, position.y, "dark", 0, 0) or:
-#        gml.collision_point(position.x, position.y, "darkFall", 0, 0) or
+#        gml.collision_point(position.x, position.y, "dark_fall", 0, 0) or
 #        gml.collision_point(position.x, position.y, "ice", 0, 0))
 
 #        gml.instance_destroy()
 #    */
-
-    

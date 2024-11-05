@@ -31,8 +31,6 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0-8), position.y+8+randi_range(0,8)-randi_range(0-8), "rubble_dark")
-#    gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0-8), position.y+8+randi_range(0,8)-randi_range(0-8), "rubble_darkSmall")
-#    gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0-8), position.y+8+randi_range(0,8)-randi_range(0-8), "rubble_darkSmall")
-
-    
+#    gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0-8), position.y+8+randi_range(0,8)-randi_range(0-8), Objects.rubble_dark)
+#    gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0-8), position.y+8+randi_range(0,8)-randi_range(0-8), Objects.rubble_dark_small)
+#    gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0-8), position.y+8+randi_range(0,8)-randi_range(0-8), Objects.rubble_dark_small)

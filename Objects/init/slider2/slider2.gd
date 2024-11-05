@@ -46,7 +46,7 @@ func _process(delta):
 #        if (position.x < 8): position.x = 8
 #        position.y = 184
 #        global.sound_vol = floor(position.x / 8)
-#        SS_Set_sound_vol(global.snd_jump, 2000 + 8000 * (global.sound_vol/18))
+#        SS_SetSoundVol(global.snd_jump, 2000 + 8000 * (global.sound_vol/18))
 
 #    else:
 
@@ -54,6 +54,3 @@ func _process(delta):
 #        gml.move_snap(8, 8)
 #        position.y = 184
 #        global.sound_vol = position.x / 8
-
-
-    

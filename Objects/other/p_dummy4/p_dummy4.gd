@@ -18,7 +18,7 @@ func alarm_2():
 	climb_snd_toggle = not climb_snd_toggle
 
 func create():
-	drawn_sprite_create()
+	super()
 	# dummy actor for title screen
 
 	image_speed = 0.6

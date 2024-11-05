@@ -24,6 +24,3 @@ func _process(delta):
 
 #func step():
     #    position.y += y_vel
-
-
-    

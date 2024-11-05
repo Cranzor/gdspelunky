@@ -39,6 +39,3 @@ func _process(delta):
     
 #        if (position.y > 240):
 #            get_tree().change_scene_to_file("res://r_end3.tscn")
-
-
-    

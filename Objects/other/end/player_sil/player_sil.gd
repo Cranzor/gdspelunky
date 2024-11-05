@@ -35,7 +35,3 @@ func _process(delta):
 #        if (y_vel < 6):
     
 #            y_vel += my_grav
-    
-
-
-    

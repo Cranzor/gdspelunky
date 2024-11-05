@@ -18,8 +18,8 @@ func _process(delta):
 
 
 #func alarm 0():
-    #    # DY: gml.instance_create(position.x, position.y, "flame_trail")
-#    # DY: alarm_0(2)
+    #    # dy: gml.instance_create(position.x, position.y, Objects.flame_trail)
+#    # dy: alarm_0(2)
 
     
 
@@ -48,5 +48,3 @@ func _process(delta):
 #    position.y += y_vel
 
 #    if (y_vel < 6): y_vel += grav
-
-    

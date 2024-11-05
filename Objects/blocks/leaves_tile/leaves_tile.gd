@@ -18,10 +18,10 @@ func _process(delta):
 
 
 #func create():
-    #    type = "Tree Leaves"
+    #    type = "tree leaves"
 #    if (gml.collision_point(position.x-16, position.y, "tree", 0, 0)):
 
-#        sprite_index = s_leaves_right
+#        sprite_index = "leaves_right"
 
 
     
@@ -37,5 +37,3 @@ func _process(delta):
 
 
 #    */
-
-    

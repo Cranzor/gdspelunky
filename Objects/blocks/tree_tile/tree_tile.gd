@@ -22,11 +22,9 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "Tree"
+#    type = "tree"
 #    burning = false
 
     
 
 #func step():
-    
-    

@@ -23,22 +23,22 @@ func _process(delta):
 #    if (position.y == 24 and global.screen_scale == 1):
 
 #        on = true
-#        sprite_index = s_box_marked
+#        sprite_index = "box_marked"
 
 #    elif (position.y == 32 and global.screen_scale == 2):
 
 #        on = true
-#        sprite_index = s_box_marked
+#        sprite_index = "box_marked"
 
 #    elif (position.y == 40 and global.screen_scale == 3):
 
 #        on = true
-#        sprite_index = s_box_marked
+#        sprite_index = "box_marked"
 
 #    elif (position.y == 48 and global.screen_scale == 4):
 
 #        on = true
-#        sprite_index = s_box_marked
+#        sprite_index = "box_marked"
 
 
 
@@ -50,16 +50,13 @@ func _process(delta):
 #        with radibox
     
 #            on = false
-#            sprite_index = s_box
+#            sprite_index = "box"
     
 
 #        on = true
-#        sprite_index = s_boxMarked
+#        sprite_index = "box_marked"
     
 #        if (position.y == 24): global.screen_scale = 1
 #        elif (position.y == 32): global.screen_scale = 2
 #        elif (position.y == 40): global.screen_scale = 3
 #        elif (position.y == 48): global.screen_scale = 4
-
-
-    

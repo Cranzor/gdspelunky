@@ -42,5 +42,3 @@ func _process(delta):
 #        gml.instance_destroy()
 
 #    */
-
-    

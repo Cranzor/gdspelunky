@@ -33,6 +33,3 @@ func _process(delta):
 #        if (position.x > room_width-16): position.x = room_width-16
 #        if (position.y < 0): position.y = 0
 #        if (position.y > room_height-16): position.y = room_height-16
-
-
-    

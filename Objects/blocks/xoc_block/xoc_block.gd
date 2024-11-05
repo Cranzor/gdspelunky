@@ -32,33 +32,31 @@ func _process(delta):
 
 #        if (not global.city_of_gold):
     
-#            rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), "rubble")
-#            rubble.sprite_index = s_rubble_lush
-#            rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), "rubbleSmall")
-#            rubble.sprite_index = s_rubble_lushSmall
-#            rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), "rubbleSmall")
-#            rubble.sprite_index = s_rubble_lushSmall
+#            rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), Objects.rubble)
+#            rubble.sprite_index = "rubble_lush"
+#            rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), Objects.rubble_small)
+#            rubble.sprite_index = "rubble_lush_small"
+#            rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), Objects.rubble_small)
+#            rubble.sprite_index = "rubble_lush_small"
     
 #        else:
     
 #            for i in range(0, 3):
         
-#                gold = gml.instance_create(position.x+8+randi_range(0,4)-randi_range(0,4), position.y+8+randi_range(0,4)-randi_range(0,4), "gold_chunk")
+#                gold = gml.instance_create(position.x+8+randi_range(0,4)-randi_range(0,4), position.y+8+randi_range(0,4)-randi_range(0,4), Objects.gold_chunk)
 #                gold.x_vel = randi_range(0,3) - randi_range(0,3)
 #                gold.y_vel = randi_range(2,4) * 1
         
-#            gold = gml.instance_create(position.x+8+randi_range(0,4)-randi_range(0,4), position.y+8+randi_range(0,4)-randi_range(0,4), "gold_nugget")
+#            gold = gml.instance_create(position.x+8+randi_range(0,4)-randi_range(0,4), position.y+8+randi_range(0,4)-randi_range(0,4), Objects.gold_nugget)
 #            gold.x_vel = randi_range(0,3) - randi_range(0,3)
 #            gold.y_vel = randi_range(2,4) * 1
     
-#            if (treasure == "Diamond"): for repetition in range(1, 2):  gml.instance_create(position.x+8, position.y+8, "diamond") 
-#            if (treasure == "Ruby"): for repetition in range(1, 2):  gml.instance_create(position.x+8, position.y+8, "ruby_big") 
-#            if (treasure == "Sapphire"): for repetition in range(1, 2):  gml.instance_create(position.x+8, position.y+8, "sapphire_big") 
-#            if (treasure == "Emerald"): for repetition in range(1, 2):  gml.instance_create(position.x+8, position.y+8, "emerald_big") 
+#            if (treasure == "diamond"): for repetition in range(1, 2):  gml.instance_create(position.x+8, position.y+8, Objects.diamond) 
+#            if (treasure == "ruby"): for repetition in range(1, 2):  gml.instance_create(position.x+8, position.y+8, Objects.ruby_big) 
+#            if (treasure == "sapphire"): for repetition in range(1, 2):  gml.instance_create(position.x+8, position.y+8, Objects.sapphire_big) 
+#            if (treasure == "emerald"): for repetition in range(1, 2):  gml.instance_create(position.x+8, position.y+8, Objects.emerald_big) 
     
 
 
 #    tile = tile_layer_find(99, position.x, position.y)
 #    if (tile): tile_delete(tile)
-
-    

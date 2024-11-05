@@ -41,7 +41,3 @@ func _process(delta):
 #        with rope
     
 #            burn_timer = 1
-    
-
-
-    

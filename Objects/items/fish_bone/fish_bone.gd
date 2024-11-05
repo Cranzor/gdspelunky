@@ -27,7 +27,7 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "Fish Bone"
+#    type = "fish bone"
 #    PlatformEngine.make_active()
 #    Collision.set_collision_bounds(-4, -4, 4, 4)
 #    my_grav = 0.2
@@ -43,7 +43,7 @@ func _process(delta):
 #    if (x_vel > 0 and y_vel < 0):
 
 #        direction = radtodeg(arctan(-y_vel/x_vel))
-#        # DY:  direction = 45
+#        # dy:  direction = 45
 
 #    elif (x_vel < 0 and y_vel < 0):
 
@@ -63,5 +63,3 @@ func _process(delta):
 #    else: direction = 0
 
 #    image_angle = direction
-
-    

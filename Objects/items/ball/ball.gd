@@ -22,7 +22,7 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "Ball"
+#    type = "ball"
 #    PlatformEngine.make_active()
 #    Collision.set_collision_bounds(-5, -5, 5, 5)
 #    heavy = true
@@ -72,6 +72,3 @@ func _process(delta):
 #    elif (col_bot):
 
 #        x_vel = 0
-
-
-    

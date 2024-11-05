@@ -19,7 +19,7 @@ func _process(delta):
 
 #func animation_end():
     #    # action_kill_object
-#    # Need to implement this action
+#    # need to implement this action
     
 
 #func create():
@@ -28,5 +28,3 @@ func _process(delta):
 
 #    # main_code
 #    image_speed = 0.4
-
-    

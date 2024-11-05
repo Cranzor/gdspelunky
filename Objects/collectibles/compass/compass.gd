@@ -22,11 +22,9 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "Compass"
+#    type = "compass"
 #    PlatformEngine.make_active()
 #    Collision.set_collision_bounds(-6, -6, 6, 6)
 
 #    cost = 3000
-#    buy_message = "A COMPASS FOR $" + str\(cost) + "."
-
-    
+#    buy_message = "A compass for $" + str\(cost) + "."

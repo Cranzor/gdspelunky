@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://clxx5ltmypdf4"]
 
-[sub_resource type="GDScript" id="GDScript_l5d8j"]
+[ext_resource type="Script" path="res://objects/sprite/sprite.gd" id="1_gaty6"]
 
 [node name="Sprite" type="Node2D"]
+script = ExtResource("1_gaty6")
+object_name = "sprite"

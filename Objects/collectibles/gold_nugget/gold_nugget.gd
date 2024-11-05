@@ -27,10 +27,8 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "Gold Nugget"
+#    type = "gold nugget"
 #    PlatformEngine.make_active()
 #    Collision.set_collision_bounds(-4, -4, 4, 4)
 #    value = 500
 #    can_collect = true
-
-    

@@ -22,7 +22,5 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "Gold Idol"
+#    type = "gold idol"
 #    value = 15000
-
-    

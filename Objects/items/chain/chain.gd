@@ -18,7 +18,7 @@ func _process(delta):
 
 
 #func create():
-    #    type = "Chain"
+    #    type = "chain"
 #    link_val = 2
 
     
@@ -32,6 +32,3 @@ func _process(delta):
 
 #        position.x = ball.position.x + ((player1.position.x-ball.position.x)/4)*link_val
 #        position.y = ball.position.y + ((player1.position.y-ball.position.y)/4)*link_val
-
-
-    

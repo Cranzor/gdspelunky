@@ -37,6 +37,3 @@ func _process(delta):
 #    if (gml.collision_point(position.x+8, position.y+15, "solid", 0, 0)):
 
 #        position.y -= 1
-
-
-    

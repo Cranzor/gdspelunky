@@ -18,7 +18,7 @@ func _process(delta):
 
 
 #func collision with o_solid():
-    #    if (other.type == "Arrow Trap"): with other  gml.instance_destroy() 
+    #    if (other.type == "arrow trap"): with other  gml.instance_destroy() 
 #    gml.instance_destroy()
 
     
@@ -28,5 +28,3 @@ func _process(delta):
 #        position.x -= 16
 #    else:
 #        position.x += 16
-
-    

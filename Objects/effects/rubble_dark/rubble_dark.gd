@@ -29,7 +29,7 @@ func _process(delta):
 
 #func outside room():
     #    # action_kill_object
-#    # Need to implement this action
+#    # need to implement this action
     
 
 #func step():
@@ -40,6 +40,3 @@ func _process(delta):
 #        gml.collision_point(position.x, position.y, "block", 0, 0))
 
 #        gml.instance_destroy()
-
-
-    

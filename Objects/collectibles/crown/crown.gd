@@ -22,11 +22,9 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "Crown"
+#    type = "crown"
 #    PlatformEngine.make_active()
 #    Collision.set_collision_bounds(-6, -6, 6, 8)
 
 #    cost = 999999
-#    buy_message = "I SHOULDN'T BE SELLING THIS!"
-
-    
+#    buy_message = "I shouldn'T be selling this!"

@@ -22,7 +22,7 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "Basketball"
+#    type = "basketball"
 #    PlatformEngine.make_active()
 #    Collision.set_collision_bounds(-4, -4, 4, 4)
 #    bounce_factor = 0.7
@@ -75,7 +75,7 @@ func _process(delta):
 #            y_vel = 0
 #            going_in = true
 #            obj = instance_nearest(position.x, position.y, basket)
-#            obj.sprite_index = s_basket_swoosh
+#            obj.sprite_index = "basket_swoosh"
 #            obj.image_index = 0
 #            if (held):
         
@@ -93,7 +93,5 @@ func _process(delta):
 
 #    else: going_in = false
 
-#    if (held and gml.collision_point(position.x, position.y+6, "solid", 0, 0)): sprite_index = s_dribble
-#    else: sprite_index = s_basketball
-
-    
+#    if (held and gml.collision_point(position.x, position.y+6, "solid", 0, 0)): sprite_index = "dribble"
+#    else: sprite_index = "basketball"

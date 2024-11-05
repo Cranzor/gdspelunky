@@ -22,11 +22,9 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "Ankh"
+#    type = "ankh"
 #    PlatformEngine.make_active()
 #    Collision.set_collision_bounds(-4, -6, 4, 8)
 
 #    cost = 50000
-#    buy_message = "AN ANKH FOR $" + str\(cost) + "."
-
-    
+#    buy_message = "an ankh for $" + str\(cost) + "."

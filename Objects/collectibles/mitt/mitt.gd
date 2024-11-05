@@ -22,12 +22,10 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "Mitt"
+#    type = "mitt"
 #    PlatformEngine.make_active()
 #    Collision.set_collision_bounds(-6, -6, 6, 8)
 
 #    cost = 4000
-#    shop_desc = "PITCHER'S MITT"
-#    buy_message = "PITCHER'S MITT FOR $" + str\(cost) + "."
-
-    
+#    shop_desc = "pitcher'S mitt"
+#    buy_message = "pitcher'S mitt for $" + str\(cost) + "."

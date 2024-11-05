@@ -18,13 +18,13 @@ func _process(delta):
 
 
 #func alarm 0():
-    #    if (sprite_index != s_giant_spider_squirt):
+    #    if (sprite_index != "giant_spider_squirt):"
 
-#        status = BOUNCE
-#        sprite_index = s_giant_spider_jump
-#        if (Collision.is_collision_bottom(1)):
+#        status = bounce
+#        sprite_index = "giant_spider_jump"
+#        if (Collision.i"collision_bottom(1)):"
     
-#            sprite_index = s_giant_spider
+#            sprite_index = "giant_spider"
 #            y_vel = -1 * randi_range(2,5)
 #            if (character.position.x < position.x+16):
         
@@ -40,37 +40,37 @@ func _process(delta):
     
 
 #func alarm 1():
-    #    # DY: sprite_index = s_spider_drown
+    #    # dy: sprite_index = "spider_drown"
 
     
 
 #func animation_end():
-    #    if (sprite_index == s_giant_spider_flip):
+    #    if (sprite_index == "giant_spider_flip):"
 
-#        sprite_index = s_giant_spider
+#        sprite_index = "giant_spider"
 #        image_speed = 0.4
 
-#    elif (sprite_index == s_giant_spiderSquirt):
+#    elif (sprite_index == "giant_spider_squirt):"
 
-#        status = IDLE
+#        status = idle
 #        image_speed = 0.4
 
 
     
 
 #func collision with o_character():
-    #    # DY:  jumped on - caveman, man_trap replaces this script with its own
+    #    # dy:  jumped on - caveman, man_trap replaces this script with its own
 #    if (abs(other.position.x-(position.x+16)) > 16):
 
-#        # DY:  do nothing
+#        # dy:  do nothing
 
 #    elif (not other.dead and (other.state == 15 or other.state == 16) and other.position.y < position.y+16 and not other.swimming):
 
 #        other.y_vel = -6 - 0.2 * other.y_vel
-#        if (global.has_spike_shoes):  hp -= (3 * (floor(other.fall_timer/16)+1)) if (not bloodless) gml.instance_create(other.position.x, other.position.y+8, "blood") 
+#        if (global.ha"spike_shoes):  hp -= (3 * (floor(other.fall_timer/16)+1)) if (not bloodless) gml.instance_create(other.position.x, other.position.y+8, Objects.blood) "
 #        else: hp -= (1 * (floor(other.fall_timer/16)+1))
 #        other.fall_timer = 0
-#        gml.instance_create(position.x+16, position.y+24, "blood")
+#        gml.instance_create(position.x+16, position.y+24, Objects.blood)
 #        Audio.play_sound(global.snd_hit)
 
 #    elif (other.invincible == 0):
@@ -89,7 +89,7 @@ func _process(delta):
 #            if (global.plife > 0):
         
 #                global.plife -= 2
-#                if (global.plife <= 0 and InLevel.is_real_level()): global.enemy_deaths[3] += 1
+#                if (global.plife <= 0 and InLevel.i"real_level()): global.enemy_deaths[3] += 1"
         
 #            Audio.play_sound(global.snd_hurt)
     
@@ -102,7 +102,7 @@ func _process(delta):
     #    if (whipped == 0):
 
 #        hp -= 1
-#        gml.instance_create(position.x+16, position.y+24, "blood")
+#        gml.instance_create(position.x+16, position.y+24, Objects.blood)
 #        Audio.play_sound(global.snd_hit)
 #        whipped = 10
 
@@ -115,29 +115,29 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "Giant Spider"
+#    type = "giant spider"
 #    PlatformEngine.make_active()
 #    Collision.set_collision_bounds(2, 16, 30, 32)
 #    x_vel = 0
 #    y_vel = 0
 #    y_delta = -0.4
 #    my_grav = 0.3
-#    my_gravNorm = 0.3
+#    my_grav_norm = 0.3
 #    image_speed = 0.8
 
-#    # DY:  stats
+#    # dy:  stats
 #    hp = 1
 #    invincible = 0
 #    whipped = 10
 #    squirt_timer = randi_range(100,1000)
 
-#    # DY:  status
-#    IDLE = 0
-#    BOUNCE = 1
-#    RECOVER = 2
-#    CRAWL = 3
-#    DROWNED = 4
-#    SQUIRT = 5
+#    # dy:  status
+#    idle = 0
+#    bounce = 1
+#    recover = 2
+#    crawl = 3
+#    drowned = 4
+#    squirt = 5
 
 #    status = 0
 #    bounce_counter = 0
@@ -156,7 +156,7 @@ func _process(delta):
 #    PlatformEngine.move_to(x_vel,y_vel)
 
 #    y_vel += my_grav
-#    if (y_vel > y_velLimit): y_vel = y_velLimit
+#    if (y_vel > y_vel_limit): y_vel = y_vel_limit
 
 #    if (whipped > 0): whipped -= 1
 
@@ -172,39 +172,39 @@ func _process(delta):
 #            n = randi_range(1,3)
 #            match (n)
         
-#                1:  gem = gml.instance_create(position.x+16, position.y+24, "emerald_big")  
-#                2:  gem = gml.instance_create(position.x+16, position.y+24, "sapphire_big")  
-#                3:  gem = gml.instance_create(position.x+16, position.y+24, "ruby_big")  
+#                1:  gem = gml.instance_create(position.x+16, position.y+24, Objects.emerald_big)  
+#                2:  gem = gml.instance_create(position.x+16, position.y+24, Objects.sapphire_big)  
+#                3:  gem = gml.instance_create(position.x+16, position.y+24, Objects.ruby_big)  
         
 #            gem.x_vel = randi_range(0,3) - randi_range(0,3)
 #            gem.y_vel = -2
     
-#        obj = gml.instance_create(position.x+16, position.y+24, "paste")
+#        obj = gml.instance_create(position.x+16, position.y+24, Objects.paste)
 #        obj.cost = 0
 #        obj.for_sale = false
 #        MiscScripts.scr_create_blood(position.x+16, position.y+24, 4)
-#        if (counts_as_kill):
+#        if (count"as_kill):"
     
-#            if (InLevel.is_real_level()): global.enemy_kills[3] += 1
+#            if (InLevel.i"real_level()): global.enemy_kills[3] += 1"
 #            global.giantspiders += 1
 #            global.kills += 1
     
 #        gml.instance_destroy()
 
 
-#    if (Collision.is_collision_right(1)):
+#    if (Collision.i"collision_right(1)):"
 
 #        x_vel = 1
 
 
-#    if (Collision.is_collision_left(1)):
+#    if (Collision.i"collision_left(1)):"
 
 #        x_vel = -1
 
 
-#    if (Collision.is_collision_top(1) and Collision.is_collision_bottom(1) and status != CRAWL):
+#    if (Collision.i"collision_top(1) and Collision.is_collision_bottom(1) and status != crawl):"
 
-#        status = CRAWL
+#        status = crawl
 #        if (character.position.x < position.x+16):
 #            x_vel = -1
 #        else:
@@ -215,39 +215,39 @@ func _process(delta):
 
 #    if (squirt_timer > 0): squirt_timer -= 1
 
-#    if (status == IDLE):
+#    if (status == idle):
 
-#        if (sprite_index != s_giant_spider_flip): sprite_index = s_giant_spider
+#        if (sprite_index != "giant_spider_flip): sprite_index = s_giant_spider"
 #        alarm_0()randi_range(5,20)
-#        if (squirt_timer == 0): status = SQUIRT
-#        else: status = RECOVER
+#        if (squirt_timer == 0): status = squirt
+#        else: status = recover
 
-#    elif (status == CRAWL):
+#    elif (status == crawl):
 
-#        sprite_index = s_giant_spiderCrawl
-#        if (not Collision.is_collision_top(1) or not Collision.is_collision_bottom(1)): status = IDLE
-#        elif (Collision.is_collision_right(1)): x_vel = -1
-#        elif (Collision.is_collision_left(1)): x_vel = 1
+#        sprite_index = "giant_spider_crawl"
+#        if (not Collision.i"collision_top(1) or not Collision.is_collision_bottom(1)): status = idle"
+#        elif (Collision.i"collision_right(1)): x_vel = -1"
+#        elif (Collision.i"collision_left(1)): x_vel = 1"
 
-#    elif (status == SQUIRT):
+#    elif (status == squirt):
 
-#        sprite_index = s_giant_spiderSquirt
+#        sprite_index = "giant_spider_squirt"
 #        if (image_index >= 5 and squirt_timer == 0):
     
-#            gml.instance_create(position.x+16, position.y+16, "web_ball")
+#            gml.instance_create(position.x+16, position.y+16, Objects.web_ball)
 #            squirt_timer = randi_range(100,1000)
     
 
-#    elif (status == RECOVER):
+#    elif (status == recover):
 
-#        if (Collision.is_collision_bottom(1)): x_vel = 0
+#        if (Collision.i"collision_bottom(1)): x_vel = 0"
 
-#    elif (status == BOUNCE and dist < 120):
+#    elif (status == bounce and dist < 120):
 
-#        sprite_index = s_giant_spiderJump
-#        if (Collision.is_collision_bottom(1)):
+#        sprite_index = "giant_spider_jump"
+#        if (Collision.i"collision_bottom(1)):"
     
-#            sprite_index = s_giant_spider
+#            sprite_index = "giant_spider"
 #            y_vel = -1 * randi_range(3,6)
 #            if (character.position.x < position.x+16):
         
@@ -259,26 +259,23 @@ func _process(delta):
         
 #            Audio.play_sound(global.snd_spider_jump)
         
-#            if (randi_range(1,4) == 1):  status = IDLE x_vel = 0 y_vel = 0 
+#            if (randi_range(1,4) == 1):  status = idle x_vel = 0 y_vel = 0 
     
 
-#    elif (status != DROWNED):
+#    elif (status != drowned):
 
-#        status = IDLE
-#        # DY: x_vel = 0
+#        status = idle
+#        # dy: x_vel = 0
 
 
-#    if (Collision.is_collision_top(1)):
+#    if (Collision.i"collision_top(1)):"
 #        y_vel = 1
 #    /*
-#    if (Collision.is_collision_left(1) or Collision.is_collision_right(1)):
+#    if (Collision.i"collision_left(1) or Collision.is_collision_right(1)):"
 
 #        x_vel = -x_vel
 
 #    */
 
-#    # DY: if (Collision.is_collision_solid()):
-#    # DY:   position.y -= 2
-
-
-    
+#    # dy: if (Collision.i"collision_solid()):"
+#    # dy:   position.y -= 2

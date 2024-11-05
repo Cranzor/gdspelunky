@@ -22,11 +22,9 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "Bomb Bag"
+#    type = "bomb bag"
 #    PlatformEngine.make_active()
 #    Collision.set_collision_bounds(-6, -2, 6, 6)
 #    cost = 2500
-#    shop_desc = "A BAG OF 3 BOMBS"
-#    buy_message = "A BAG OF 3 BOMBS FOR $" + str\(cost) + "."
-
-    
+#    shop_desc = "A bag of 3 bombs"
+#    buy_message = "A bag of 3 bombs for $" + str\(cost) + "."

@@ -23,26 +23,26 @@ func _process(delta):
 
 #    # main_code
 #    defile = true
-#    type = "Altar"
+#    type = "altar"
 
     
 
 #func destroy():
     #    if (not clean_death and not global.clean_solids):
 
-#        rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), "rubble")
-#        rubble.sprite_index = s_rubble_tan
-#        rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), "rubbleSmall")
-#        rubble.sprite_index = s_rubble_tanSmall
-#        rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), "rubbleSmall")
-#        rubble.sprite_index = s_rubble_tanSmall
+#        rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), Objects.rubble)
+#        rubble.sprite_index = "rubble_tan"
+#        rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), Objects.rubble_small)
+#        rubble.sprite_index = "rubble_tan_small"
+#        rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), Objects.rubble_small)
+#        rubble.sprite_index = "rubble_tan_small"
 
 
 #    if (defile):
 
 
-#        global.message = "YOU DARE DEFILE MY ALTAR?"
-#        global.message2 = "I WILL PUNISH YOU!"
+#        global.message = "you dare defile my altar?"
+#        global.message2 = "I will punish you!"
 #        global.message_timer = 200
 #        InLevel.scr_shake(10)
 #        global.favor -= 16
@@ -56,14 +56,14 @@ func _process(delta):
     
 #        elif (global.kali_punish == 1):
     
-#            gml.instance_create(player1.position.x, player1.position.y, "ball")
-#            obj = gml.instance_create(player1.position.x, player1.position.y, "chain")
+#            gml.instance_create(player1.position.x, player1.position.y, Objects.ball)
+#            obj = gml.instance_create(player1.position.x, player1.position.y, Objects.chain)
 #            obj.link_val = 1
-#            obj = gml.instance_create(player1.position.x, player1.position.y, "chain")
+#            obj = gml.instance_create(player1.position.x, player1.position.y, Objects.chain)
 #            obj.link_val = 2
-#            obj = gml.instance_create(player1.position.x, player1.position.y, "chain")
+#            obj = gml.instance_create(player1.position.x, player1.position.y, Objects.chain)
 #            obj.link_val = 3
-#            obj = gml.instance_create(player1.position.x, player1.position.y, "chain")
+#            obj = gml.instance_create(player1.position.x, player1.position.y, Objects.chain)
 #            obj.link_val = 4
     
 #        else:
@@ -80,8 +80,8 @@ func _process(delta):
 #                global.dark_level = true
 #                if (not global.ghost_exists):
             
-#                    if (player1.position.x > room_width / 2): gml.instance_create(view_xview[0]+view_wview[0]+8, view_yview[0]+floor(view_hview[0] / 2), "ghost")
-#                    else: gml.instance_create(view_xview[0]-32,  view_yview[0]+floor(view_hview[0] / 2), "ghost")
+#                    if (player1.position.x > room_width / 2): gml.instance_create(view_xview[0]+view_wview[0]+8, view_yview[0]+floor(view_hview[0] / 2), Objects.ghost)
+#                    else: gml.instance_create(view_xview[0]-32,  view_yview[0]+floor(view_hview[0] / 2), Objects.ghost)
 #                    global.ghost_exists = true
             
         
@@ -103,6 +103,3 @@ func _process(delta):
 #            position.y > view_yview[0]-20 and position.y < view_yview[0] + view_hview[0]+4))
 
 #        if (not gml.collision_point(position.x, position.y+16, "solid", 0, 0)): gml.instance_destroy()
-
-
-    

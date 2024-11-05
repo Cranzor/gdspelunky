@@ -18,13 +18,13 @@ func _process(delta):
 
 
 #func alarm 0():
-    #    if (gml.instance_number(flame_trail) < 12): gml.instance_create(position.x, position.y, "flame_trail")
+    #    if (gml.instance_number(flame_trail) < 12): gml.instance_create(position.x, position.y, Objects.flame_trail)
 #    alarm_0(2)
 
     
 
 #func collision with o_water():
-    #    gml.instance_create(position.x, position.y, "smoke_puff")
+    #    gml.instance_create(position.x, position.y, Objects.smoke_puff)
 #    gml.instance_destroy()
 
     
@@ -48,7 +48,7 @@ func _process(delta):
     
 
 #func destroy():
-    #    gml.instance_create(position.x, position.y, "smoke_puff")
+    #    gml.instance_create(position.x, position.y, Objects.smoke_puff)
 
     
 
@@ -59,9 +59,6 @@ func _process(delta):
 #    # main_code
 #    if (y_vel > 6): gml.instance_destroy()
 
-#    if (Collision.is_collision_bottom(1)):
+#    if (Collision.i"collision_bottom(1)):"
 
 #        if (life > 20): life = 20
-
-
-    

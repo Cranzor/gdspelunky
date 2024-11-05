@@ -22,12 +22,12 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "Bow"
+#    type = "bow"
 #    PlatformEngine.make_active()
 #    Collision.set_collision_bounds(-4, -4, 4, 4)
 #    cost = 1000
-#    shop_desc = "BOW AND ARROWS"
-#    buy_message = "BOW AND ARROWS FOR $" + str\(cost) + "."
+#    shop_desc = "bow and arrows"
+#    buy_message = "bow and arrows for $" + str\(cost) + "."
 #    image_speed = 0
 
     
@@ -39,11 +39,11 @@ func _process(delta):
 #    # main_code
 #    if (held):
 
-#        if (player1.facing == 18): sprite_index = s_bow_left
-#        else: sprite_index = s_bow_right
+#        if (player1.facing == 18): sprite_index = "bow_left"
+#        else: sprite_index = "bow_right"
 #    /*
-#        if (check_left() and not check_right()): sprite_index = s_bow_left
-#        if (check_right() and not check_left()): sprite_index = s_bow_right
+#        if (check_left() and not check_right()): sprite_index = "bow_left"
+#        if (check_right() and not check_left()): sprite_index = "bow_right"
 #    */    
 #        if (player1.bow_strength >= 10): image_index = 3
 #        elif (player1.bow_strength > 6): image_index = 2
@@ -53,7 +53,3 @@ func _process(delta):
 #    else:
 
 #        image_index = 0
-
-
-
-    

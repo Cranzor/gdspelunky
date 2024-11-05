@@ -49,6 +49,4 @@ func _process(delta):
 #        status += 1
 
 
-#    if (not SS.is_sound_playing(global.snd_flame)): Audio.play_sound(global.snd_flame)
-
-    
+#    if (not SS_IsSoundPlaying(global.snd_flame)): Audio.play_sound(global.snd_flame)

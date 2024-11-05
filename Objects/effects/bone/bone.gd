@@ -44,10 +44,7 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    if (Collision.is_collision_bottom(1)):
+#    if (Collision.i"collision_bottom(1)):"
 
-#        sprite_index = s_smoke_puff
+#        sprite_index = "smoke_puff"
 #        dying = true
-
-
-    

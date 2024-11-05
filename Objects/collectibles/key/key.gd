@@ -22,7 +22,7 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "Key"
+#    type = "key"
 #    PlatformEngine.make_active()
 #    Collision.set_collision_bounds(-4, -4, 4, 4)
 #    cost = 0
@@ -36,8 +36,5 @@ func _process(delta):
 #    # main_code
 #    if (held):
 
-#        if (player1.facing == 18): sprite_index = s_key_left
-#        else: sprite_index = s_key_right
-
-
-    
+#        if (player1.facing == 18): sprite_index = "key_left"
+#        else: sprite_index = "key_right"

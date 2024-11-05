@@ -19,7 +19,7 @@ func _process(delta):
 
 #func create():
     #    # main_code
-#    type = "Lava"
+#    type = "lava"
 #    spurt = false
 #    spurt_time = randi_range(100,300)
 #    spurt_counter = spurt_time
@@ -32,11 +32,11 @@ func _process(delta):
 #func destroy():
     #    for i in range(0, 3):
 
-#        gml.instance_create(position.x+randi_range(0,16), position.y+randi_range(0,16), "lava_drip")
+#        gml.instance_create(position.x+randi_range(0,16), position.y+randi_range(0,16), Objects.lava_drip)
 
 #    if (randi_range(1,6) == 1):
 
-#        flame = gml.instance_create(position.x+8, position.y+8, "flame")
+#        flame = gml.instance_create(position.x+8, position.y+8, Objects.flame)
 #        flame.y_vel = 4
 
 
@@ -44,7 +44,7 @@ func _process(delta):
 
 #func step():
     #    dist = 0
-#    if (InLevel.is_level()):
+#    if (InLevel.i"level()):"
 
 #        dist = point_distance(position.x, position.y, player1.position.x, player1.position.y)
 
@@ -54,10 +54,6 @@ func _process(delta):
 #        else:
     
 #            spurt_counter = spurt_time
-#            if (randi_range(1,8) == 1): flame = gml.instance_create(position.x+8, position.y-4, "magma")
-#            else: flame = gml.instance_create(position.x+8, position.y-4, "flame")
+#            if (randi_range(1,8) == 1): flame = gml.instance_create(position.x+8, position.y-4, Objects.magma)
+#            else: flame = gml.instance_create(position.x+8, position.y-4, Objects.flame)
 #            flame.y_vel = -randi_range(1,4)
-    
-
-
-    

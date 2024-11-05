@@ -17,11 +17,9 @@ func _process(delta):
 #--- Object functions
 
 
-#func create():
-    #    # action_inherited
-#    super()
+func create():
+	# action_inherited
+	super()
 
-#    # main_code
-#    type = "Market Exit"
-
-    
+	# main_code
+	type = "market exit"

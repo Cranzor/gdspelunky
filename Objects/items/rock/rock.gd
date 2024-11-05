@@ -22,8 +22,6 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "Rock"
+#    type = "rock"
 #    PlatformEngine.make_active()
 #    Collision.set_collision_bounds(-4, -4, 4, 4)
-
-    

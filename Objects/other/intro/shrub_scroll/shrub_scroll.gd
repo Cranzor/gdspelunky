@@ -19,8 +19,8 @@ func _process(delta):
 
 #func create():
     #    scroll = false
-#    if (InLevel.is_room("r_credits1")):
-#        sprite_index = s_shrub_dark
+#    if (InLevel.i"room("r_credits1")):"
+#        sprite_index = "shrub_dark"
 
     
 
@@ -28,5 +28,3 @@ func _process(delta):
     #    if (scroll): position.x += 1
 
 #    if (position.x > 320): gml.instance_destroy()
-
-    

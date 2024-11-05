@@ -22,8 +22,6 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "Bomb Bag"
+#    type = "bomb bag"
 #    PlatformEngine.make_active()
 #    Collision.set_collision_bounds(-4, -6, 4, 6)
-
-    

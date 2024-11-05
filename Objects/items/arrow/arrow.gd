@@ -18,8 +18,8 @@ func _process(delta):
 
 
 #func alarm 1():
-    #    gml.instance_create(position.x, position.y, "explosion")
-#    if (global.graphics_high):
+    #    gml.instance_create(position.x, position.y, Objects.explosion)
+#    if (global.graphic"high):"
 
 #        MiscScripts.scr_create_flame(position.x, position.y, 3)
 
@@ -42,7 +42,7 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "Arrow"
+#    type = "arrow"
 #    PlatformEngine.make_active()
 #    Collision.set_collision_bounds(-4, -4, 4, 4)
 #    my_grav = 0.2
@@ -80,8 +80,8 @@ func _process(delta):
 
 #    image_angle = direction
 
-#    # DY:  ensure the arrow does not shoot through the target in the Moon challenge
-#    if (InLevel.is_room("r_moon")):
+#    # dy:  ensure the arrow does not shoot through the target in the moon challenge
+#    if (InLevel.i"room("r_moon")):"
 
 #        if (gml.instance_exists("target")):
     
@@ -91,8 +91,3 @@ func _process(delta):
 #                position.x = target.position.x+4
 #                x_vel = 0
 #                y_vel = 0
-        
-    
-
-
-    

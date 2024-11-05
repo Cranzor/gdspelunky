@@ -11,7 +11,7 @@ func _process(delta):
 
 #--- Object functions
 func create():
-	drawn_sprite_create()
+	super()
 	type = "whip"
 	damage = 1
 	puncture = false

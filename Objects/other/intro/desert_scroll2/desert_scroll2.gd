@@ -24,7 +24,7 @@ func _process(delta):
 #    # main_code
 #    scroll = false
 
-#    if (InLevel.is_room("r_credits1")): sprite_index = s_desert_night2
+#    if (InLevel.i"room("r_credits1")): sprite_index = s_desert_night2"
 
     
 
@@ -32,5 +32,3 @@ func _process(delta):
     #    if (scroll): position.x += 1
 
 #    if (position.x > 320): gml.instance_destroy()
-
-    

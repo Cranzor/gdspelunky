@@ -48,13 +48,11 @@ func _process(delta):
 #        with x_moon  gml.instance_destroy() 
 #        with x_stars  gml.instance_destroy() 
 #        with x_change  gml.instance_destroy() 
-#        sprite_index = s_button_pushed
+#        sprite_index = "button_pushed"
     
 #        highscores.t_money = 0
 #        highscores.t_time = 0
 #        highscores.t_kills = 0
 #        highscores.t_saves = 0
 
-#    else: sprite_index = s_button
-
-    
+#    else: sprite_index = "button"

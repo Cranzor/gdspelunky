@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://b5i5wa0fgjk5v"]
 
-[sub_resource type="GDScript" id="GDScript_s3s30"]
+[ext_resource type="Script" path="res://objects/level editor/fire_frog_tile/fire_frog_tile.gd" id="1_3s3yy"]
 
 [node name="FireFrogTile" type="Node2D"]
+script = ExtResource("1_3s3yy")
+object_name = "fire_frog_tile"

@@ -1,4 +1,3 @@
-
 extends DrawnSprite
 
 
@@ -17,11 +16,9 @@ func _process(delta):
 #--- Object functions
 
 
-#func create():
-    #    # action_inherited
-#    super()
+func create():
+	# action_inherited
+	super()
 
-#    # main_code
-#    type = "Giant Spider"
-
-    
+	# main_code
+	type = "giant spider"

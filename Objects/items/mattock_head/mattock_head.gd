@@ -22,8 +22,6 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "Mattock Head"
+#    type = "mattock head"
 #    PlatformEngine.make_active()
 #    Collision.set_collision_bounds(-6, -4, 6, 4)
-
-    

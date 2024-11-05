@@ -51,7 +51,7 @@ var stun_time
 var damage
 var puncture
 
-func drawn_sprite_create():
+func create():
 	visible = true #--- believe I put this due to how Game Maker handles it
 	
 	type = ""

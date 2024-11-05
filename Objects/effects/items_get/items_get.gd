@@ -38,5 +38,3 @@ func _process(delta):
     #    position.y -= y_vel
 #    position.x = ceil(position.x)
 #    position.y = ceil(position.y)
-
-    

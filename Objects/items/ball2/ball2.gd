@@ -22,7 +22,7 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "Ball"
+#    type = "ball"
 #    PlatformEngine.make_active()
 #    Collision.set_collision_bounds(-5, -5, 5, 5)
 #    heavy = true
@@ -40,7 +40,3 @@ func _process(delta):
 #        if (gml.distance_to_object(p_dummy) >= 24):
     
 #            position.x = p_dummy.position.x - 24
-    
-
-
-    

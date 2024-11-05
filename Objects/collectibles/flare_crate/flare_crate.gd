@@ -18,7 +18,7 @@ func _process(delta):
 
 
 #func alarm 0():
-    #    gml.instance_create(position.x+randi_range(0,3)-randi_range(0,3), position.y-4+randi_range(0,3)-randi_range(0,3), "flare_spark")
+    #    gml.instance_create(position.x+randi_range(0,3)-randi_range(0,3), position.y-4+randi_range(0,3)-randi_range(0,3), Objects.flare_spark)
 #    alarm_0(2)
 
     
@@ -28,7 +28,7 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "Flare Crate"
+#    type = "flare crate"
 #    PlatformEngine.make_active()
 #    Collision.set_collision_bounds(-6, 0, 6, 8)
 
@@ -48,7 +48,7 @@ func _process(delta):
 #    # main_code
 #    if (gml.collision_point(position.x, position.y, "water", -1, -1)):
 
-#        gml.instance_create(position.x, position.y, "splash")
+#        gml.instance_create(position.x, position.y, Objects.splash)
 #        Audio.play_sound(global.snd_splash)
 #        if (held):
     
@@ -59,8 +59,5 @@ func _process(delta):
         
 #            held = false
     
-#        gml.instance_create(position.x, position.y, "poof")
+#        gml.instance_create(position.x, position.y, Objects.poof)
 #        gml.instance_destroy()
-
-
-    

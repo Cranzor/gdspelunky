@@ -23,7 +23,7 @@ func _process(delta):
     
 
 #func animation_end():
-    #    if (sprite_index == s_magma_man_die):
+    #    if (sprite_index == "magma_man_die):"
 
 #        gml.instance_destroy()
 
@@ -31,11 +31,11 @@ func _process(delta):
     
 
 #func collision with o_bomb():
-    #    if (other.sprite_index != s_bomb_armed):
+    #    if (other.sprite_index != "bomb_armed):"
 
 #        with other
     
-#            sprite_index = s_bomb_armed
+#            sprite_index = "bomb_armed"
 #            image_speed = 1
 #            alarm_1()randi_range(8,12)
     
@@ -65,12 +65,12 @@ func _process(delta):
 #            other.x_vel = -6
 #        else:
 #            other.x_vel = 6
-#        gml.instance_create(other.position.x, other.position.y, "blood")
+#        gml.instance_create(other.position.x, other.position.y, Objects.blood)
     
 #        if (global.plife > 0):
     
 #            global.plife -= 2
-#            if (global.plife <= 0 and InLevel.is_real_level()): global.enemy_deaths[21] += 1
+#            if (global.plife <= 0 and InLevel.i"real_level()): global.enemy_deaths[21] += 1"
     
 #        Audio.play_sound(global.snd_hurt)
 #        Audio.play_sound(global.snd_flame)
@@ -79,7 +79,7 @@ func _process(delta):
     
 
 #func collision with o_enemy():
-    #    if (other.type != "Magma Man"):
+    #    if (other.type != "magma man"):
 
 #        other.y_vel = -4
 #        if (position.x < other.position.x):
@@ -91,7 +91,7 @@ func _process(delta):
     
 #            burning = 100
 #            hp -= 2
-#            if (type != "Tomb Lord" and type != "Yeti King"):
+#            if (type != "tomb lord" and type != "yeti king"):
         
 #                status = 98
 #                counter = 50
@@ -121,18 +121,18 @@ func _process(delta):
 #    x_vel = 2.5
 #    image_speed = 0.5
 
-#    # DY:  stats
-#    type = "Magma Man"
+#    # dy:  stats
+#    type = "magma man"
 #    hp = 200
 #    invincible = 0
 
-#    IDLE = 0
-#    WALK = 1
-#    ATTACK = 2
-#    THROW = 3
-#    STUNNED = 98
-#    DEAD = 99
-#    status = IDLE
+#    idle = 0
+#    walk = 1
+#    attack = 2
+#    throw = 3
+#    stunned = 98
+#    dead = 99
+#    status = idle
 
 #    whipped = false
 
@@ -141,9 +141,9 @@ func _process(delta):
 #    counter = 0
 #    sight_counter = 0
 
-#    LEFT = 0
-#    RIGHT = 1
-#    facing = RIGHT
+#    left = 0
+#    right = 1
+#    facing = right
 
 #    shake_counter = 0
 #    shake_toggle = 1
@@ -156,64 +156,64 @@ func _process(delta):
 
 #        x_vel = 0
 #        y_vel = 0
-#        status = DEAD
-#        sprite_index = s_magma_man_die
+#        status = dead
+#        sprite_index = "magma_man_die"
 
 
 #    y_vel += my_grav
-#    if (y_vel > y_velLimit): y_vel = y_velLimit
+#    if (y_vel > y_vel_limit): y_vel = y_vel_limit
 
-#    if (Collision.is_collision_bottom(1)):
+#    if (Collision.i"collision_bottom(1)):"
 #        y_vel = 0
 #    else:
 
-#        gml.instance_create(position.x+8, position.y+8, "magma")
+#        gml.instance_create(position.x+8, position.y+8, Objects.magma)
 #        gml.instance_destroy()
 
 #    /*
-#    if (status != DEAD and hp < 1):
+#    if (status != dead and hp < 1):
 
-#        status = DEAD
+#        status = dead
 #    )
 #    */
 
-#    if (randi_range(1,20) == 1): gml.instance_create(position.x+randi_range(4,12), position.y+randi_range(4,12), "burn")
+#    if (randi_range(1,20) == 1): gml.instance_create(position.x+randi_range(4,12), position.y+randi_range(4,12), Objects.burn)
 #    burning -= 1
     
-#    if (status == IDLE):
+#    if (status == idle):
 
-#        if (y_vel < 0 and Collision.is_collision_top(1)):
+#        if (y_vel < 0 and Collision.i"collision_top(1)):"
     
 #            y_vel = 0
     
 
-#        if (Collision.is_collision_bottom(1) and counter > 0): counter -= 1    
+#        if (Collision.i"collision_bottom(1) and counter > 0): counter -= 1    "
 #        if (counter < 1):
     
 #            facing = randi_range(0,1)
-#            status = WALK
+#            status = walk
 #            if (randi_range(1,6) == 1):
         
-#                magma = gml.instance_create(position.x+8, position.y+8, "magma")
+#                magma = gml.instance_create(position.x+8, position.y+8, Objects.magma)
 #                magma.hp = hp
 #                gml.instance_destroy()
         
     
 
-#    elif (status == WALK):
+#    elif (status == walk):
 
-#        if (Collision.is_collision_left(1) or Collision.is_collision_right(1)):
+#        if (Collision.i"collision_left(1) or Collision.is_collision_right(1)):"
     
-#            if (facing == LEFT): facing = RIGHT
-#            else: facing = LEFT
+#            if (facing == left): facing = right
+#            else: facing = left
     
     
-#        if (facing == LEFT):
+#        if (facing == left):
     
 #            x_vel = -1.5
 #            if (not gml.collision_point(position.x-1, position.y+16, "solid", -1, -1)):
         
-#                status = IDLE
+#                status = idle
 #                counter = randi_range(20,50)
 #                x_vel = 0
         
@@ -223,7 +223,7 @@ func _process(delta):
 #            x_vel = 1.5
 #            if (not gml.collision_point(position.x+16, position.y+16, "solid", -1, -1)):
         
-#                status = IDLE
+#                status = idle
 #                counter = randi_range(20,50)
 #                x_vel = 0
          
@@ -231,20 +231,17 @@ func _process(delta):
     
 #        if (randi_range(1,100) == 1):
     
-#            status = IDLE
+#            status = idle
 #            counter = randi_range(20,50)
 #            x_vel = 0
     
 
 
 #    PlatformEngine.move_to(x_vel,y_vel)
-#    if (Collision.is_collision_solid()):
+#    if (Collision.i"collision_solid()):"
 #        position.y -= 2
 
-#    if (status < STUNNED and status != THROW):
+#    if (status < stunned and status != throw):
 
-#        if (abs(x_vel) > 0): sprite_index = s_magma_man_walk_l
-#        else: sprite_index = s_magma_man_left
-
-
-    
+#        if (abs(x_vel) > 0): sprite_index = "magma_man_walk_l"
+#        else: sprite_index = "magma_man_left"

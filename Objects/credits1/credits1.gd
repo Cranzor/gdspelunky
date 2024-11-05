@@ -18,20 +18,20 @@ func _process(delta):
 
 
 #func alarm 0():
-    #    gml.instance_create(320, 144, "camel")
+    #    gml.instance_create(320, 144, Objects.camel)
 
     
 
 #func alarm 1():
     #    if (scrolling):
 
-#    if (randi_range(1,8) == 1): gml.instance_create(-16, 176, "shrub_scroll")
-#    elif (randi_range(1,12) == 1): gml.instance_create(-32, 176-112, "palm_tree_scroll")
+#    if (randi_range(1,8) == 1): gml.instance_create(-16, 176, Objects.shrub_scroll)
+#    elif (randi_range(1,12) == 1): gml.instance_create(-32, 176-112, Objects.palm_tree_scroll)
 
-#    gml.instance_create(-16, 176, "desert_top_scroll")
-#    gml.instance_create(-16, 192, "desert_scroll2")
-#    gml.instance_create(-16, 208, "desert_scroll")
-#    gml.instance_create(-16, 224, "desert_scroll")
+#    gml.instance_create(-16, 176, Objects.desert_top_scroll)
+#    gml.instance_create(-16, 192, Objects.desert_scroll2)
+#    gml.instance_create(-16, 208, Objects.desert_scroll)
+#    gml.instance_create(-16, 224, Objects.desert_scroll)
 #    with desert_scroll  scroll = true 
 #    with desert_scroll2  scroll = true 
 #    with desert_top_scroll  scroll = true 
@@ -105,8 +105,8 @@ func _process(delta):
 #    fade_out = false
 #    fade_level = 1
 
-#    gml.instance_create(-120, 112, "intrbg")
-#    # DY:  alarm_0(20)
+#    gml.instance_create(-120, 112, Objects.intrbg)
+#    # dy:  alarm_0(20)
 
 #    draw_status = 0
 #    scroll_start = false
@@ -123,79 +123,79 @@ func _process(delta):
 
 #        draw_set_font(global.my_font)
 #        draw_set_color(c_yellow)
-#        draw_text(16, 16, "SPELUNKY")
+#        draw_text(16, 16, "spelunky")
 
 #    elif (draw_status == 2):
 
-#        draw_set_font(global.my_fontSmall)
+#        draw_set_font(global.my_font_small)
 #        draw_set_color(c_yellow)
-#        draw_text(16, 16, "A GAME BY")
-#        # DY:  draw_set_font(global.my_fontSmall)
+#        draw_text(16, 16, "A game by")
+#        # dy:  draw_set_font(global.my_font_small)
 #        draw_set_color(c_white)
-#        draw_text(64, 32, "DEREK YU")
+#        draw_text(64, 32, "derek yu")
 
 #    elif (draw_status == 3):
 
-#        draw_set_font(global.my_fontSmall)
+#        draw_set_font(global.my_font_small)
 #        draw_set_color(c_yellow)
-#        draw_text(16, 16, "PLATFORM ENGINE")
+#        draw_text(16, 16, "platform engine")
 #        draw_set_color(c_white)
-#        draw_text(16, 24, "MARTIN PIECYK")
+#        draw_text(16, 24, "martin piecyk")
 #        draw_set_color(c_yellow)
-#        draw_text(16, 40, "SOUND EFFECTS MADE USING")
+#        draw_text(16, 40, "sound effects made using")
 #        draw_set_color(c_white)
-#        draw_text(16, 48, "DR PETTER'S SFXR")
+#        draw_text(16, 48, "dr petter'S sfxr")
 #        draw_set_color(c_yellow)
-#        draw_text(16, 64, "SCREEN SCALING CODE")
+#        draw_text(16, 64, "screen scaling code")
 #        draw_set_color(c_white)
-#        draw_text(16, 72, "CHEVYRAY")
+#        draw_text(16, 72, "chevyray")
 
 #    elif (draw_status == 4):
 
-#        draw_set_font(global.my_fontSmall)
+#        draw_set_font(global.my_font_small)
 #        draw_set_color(c_yellow)
-#        draw_text(16, 16, "MUSIC BY")
+#        draw_text(16, 16, "music by")
 #        draw_set_color(c_white)
-#        draw_text(32, 32, "GEORGE BUZINKAI")
-#        draw_text(32, 48, "JONATHAN PERRY")
+#        draw_text(32, 32, "george buzinkai")
+#        draw_text(32, 48, "jonathan perry")
 
 #    elif (draw_status == 5):
 
-#        draw_set_font(global.my_fontSmall)
+#        draw_set_font(global.my_font_small)
 #        draw_set_color(c_yellow)
-#        draw_text(16, 16, "BETA TESTING BY")
+#        draw_text(16, 16, "beta testing by")
 #        draw_set_color(c_white)
-#        draw_text(16, 24, "ANNABELLE K.")
-#        draw_text(16, 32, "BENZIDO")
-#        draw_text(16, 40, "CHUTUP")
-#        draw_text(16, 48, "CORPUS")
-#        draw_text(16, 56, "GENERALVALTER")
-#        draw_text(16, 64, "GUERT")
-#        draw_text(16, 72, "GRAHAM GORING")
-#        draw_text(16, 80, "HAOWAN")
-#        draw_text(16, 88, "HIDEOUS")
-#        draw_text(16, 96, "INANE")
-#        # DY: 
-#        draw_text(128, 24, "INCREPARE")
-#        draw_text(128, 32, "KAO")
-#        draw_text(128, 40, "MARK JOHNS")
-#        draw_text(128, 48, "MELLY")
-#        draw_text(128, 56, "PAUL ERES")
-#        draw_text(128, 64, "SUPER JOE")
-#        draw_text(128, 72, "TANTAN")
-#        draw_text(128, 80, "TEAM QUIGGAN")
-#        draw_text(128, 88, "TERRY")
-#        draw_text(128, 96, "XION")
-#        draw_text(128, 104, "ZAPHOS")
+#        draw_text(16, 24, "annabelle K.")
+#        draw_text(16, 32, "benzido")
+#        draw_text(16, 40, "chutup")
+#        draw_text(16, 48, "corpus")
+#        draw_text(16, 56, "generalvalter")
+#        draw_text(16, 64, "guert")
+#        draw_text(16, 72, "graham goring")
+#        draw_text(16, 80, "haowan")
+#        draw_text(16, 88, "hideous")
+#        draw_text(16, 96, "inane")
+#        # dy: 
+#        draw_text(128, 24, "increpare")
+#        draw_text(128, 32, "kao")
+#        draw_text(128, 40, "mark johns")
+#        draw_text(128, 48, "melly")
+#        draw_text(128, 56, "paul eres")
+#        draw_text(128, 64, "super joe")
+#        draw_text(128, 72, "tantan")
+#        draw_text(128, 80, "team quiggan")
+#        draw_text(128, 88, "terry")
+#        draw_text(128, 96, "xion")
+#        draw_text(128, 104, "zaphos")
 
 #    elif (draw_status == 6):
 
-#        draw_set_font(global.my_fontSmall)
+#        draw_set_font(global.my_font_small)
 #        draw_set_color(c_yellow)
-#        draw_text(16, 16, "THANKS FOR PLAYING!")
-#        # DY:  draw_set_font(global.my_fontSmall)
+#        draw_text(16, 16, "thanks for playing!")
+#        # dy:  draw_set_font(global.my_font_small)
 #        draw_set_color(c_white)
-#        draw_text(32, 32, "SEE YOU NEXT ADVENTURE!")
+#        draw_text(32, 32, "see you next adventure!")
 
 
 #    if (fade_in or fade_out):
@@ -257,7 +257,3 @@ func _process(delta):
 #        else:
     
 #            game_end()
-    
-
-
-    

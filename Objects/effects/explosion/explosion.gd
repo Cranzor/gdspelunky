@@ -19,7 +19,7 @@ func _process(delta):
 
 #func animation_end():
     #    # action_kill_object
-#    # Need to implement this action
+#    # need to implement this action
     
 
 #func collision with o_barrier_emitter():
@@ -30,14 +30,14 @@ func _process(delta):
 #func collision with o_boulder():
     #    for i in range(0, 3):
 
-#        rubble = gml.instance_create(other.position.x+randi_range(0,15)-randi_range(0,15), other.position.y+randi_range(0,15)-randi_range(0,15), "rubble")
-#        rubble.sprite_index = s_rubble_tan
-#        if (randi_range(1,3) == 1): gml.instance_create(other.position.x+randi_range(0,15)-randi_range(0,15), other.position.y+randi_range(0,15)-randi_range(0,15), "rock")
+#        rubble = gml.instance_create(other.position.x+randi_range(0,15)-randi_range(0,15), other.position.y+randi_range(0,15)-randi_range(0,15), Objects.rubble)
+#        rubble.sprite_index = "rubble_tan"
+#        if (randi_range(1,3) == 1): gml.instance_create(other.position.x+randi_range(0,15)-randi_range(0,15), other.position.y+randi_range(0,15)-randi_range(0,15), Objects.rock)
 
 #    for i in range(0, 6):
 
-#        rubble = gml.instance_create(other.position.x+randi_range(0,15)-randi_range(0,15), other.position.y+randi_range(0,15)-randi_range(0,15), "rubbleSmall")
-#        rubble.sprite_index = s_rubble_tanSmall
+#        rubble = gml.instance_create(other.position.x+randi_range(0,15)-randi_range(0,15), other.position.y+randi_range(0,15)-randi_range(0,15), Objects.rubble_small)
+#        rubble.sprite_index = "rubble_tan_small"
 
 
 #    with other  gml.instance_destroy() 
@@ -58,13 +58,13 @@ func _process(delta):
     
 
 #func collision with o_enemy():
-    #    if (other.type == "Magma Man"):
+    #    if (other.type == "magma man"):
 
 #        with other
     
-#            flame = gml.instance_create(position.x+8, position.y-4, "magma")
+#            flame = gml.instance_create(position.x+8, position.y-4, Objects.magma)
 #            flame.y_vel = -randi_range(1,3)
-#            flame = gml.instance_create(position.x+8, position.y-4, "magma")
+#            flame = gml.instance_create(position.x+8, position.y-4, Objects.magma)
 #            flame.y_vel = -randi_range(1,3)
 #            gml.instance_destroy()
     
@@ -81,16 +81,16 @@ func _process(delta):
     
 
 #func collision with o_item():
-    #    if (other.type == "Arrow" or other.type == "Fish Bone" or:
-#        other.type == "Jar" or other.type == "Skull")
+    #    if (other.type == "arrow" or other.type == "fish bone" or:
+#        other.type == "jar" or other.type == "skull")
 
 #        with other  gml.instance_destroy() 
 
-#    elif (other.type == "Bomb"):
+#    elif (other.type == "bomb"):
 
 #        with other
     
-#            sprite_index = s_bomb_armed
+#            sprite_index = "bomb_armed"
 #            image_speed = 1
 #            alarm_1()randi_range(4,8)
 #            enemy_id = 0
@@ -100,7 +100,7 @@ func _process(delta):
 #        if (other.position.x < position.x): other.x_vel = -randi_range(2,4)
 #        else: other.x_vel = randi_range(2,4)
 
-#    elif (other.type == "Rope"):
+#    elif (other.type == "rope"):
 
 #        if (not other.falling):
     
@@ -131,7 +131,7 @@ func _process(delta):
     
 
 #func collision with o_solid():
-    #    if (InLevel.is_level("r_tutorial") or (position.x > view_xview[0]-16 and position.x < view_xview[0] + view_wview[0]+16 and:
+    #    if (InLevel.i"level("r_tutorial") or (position.x > view_xview[0]-16 and position.x < view_xview[0] + view_wview[0]+16 and:"
 #         position.y > view_yview[0]-16 and position.y < view_yview[0] + view_hview[0]+16))
 
 #        with other
@@ -160,7 +160,7 @@ func _process(delta):
         
     
 
-#    # DY: global.check_water = true
+#    # dy: global.check_water = true
 
 
     
@@ -180,5 +180,3 @@ func _process(delta):
 #    # main_code
 #    Audio.play_sound(global.snd_explosion)
 #    InLevel.scr_shake(5)
-
-    

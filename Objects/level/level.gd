@@ -24,7 +24,7 @@ func _process(delta):
 #    global.shake = 0
 #    shake_switch = false
 #    music_fade = false
-#    music_fadeTimer = 0
+#    music_fade_timer = 0
 #    global.xview_prev = 0
 #    global.yview_prev = 0
 
@@ -35,7 +35,7 @@ func _process(delta):
 
 #    if (global.dark_level): darkness = 1
 #    else: darkness = 0
-#    global.darkness_lerp = 0
+#    global.darknes"lerp = 0"
 
 #    if (global.music):
 
@@ -50,14 +50,14 @@ func _process(delta):
 #            hold_item.cost = 0
 #            if (global.kali_punish >= 2):
         
-#                gml.instance_create(position.x, position.y, "ball")
-#                obj = gml.instance_create(position.x, position.y, "chain")
+#                gml.instance_create(position.x, position.y, Objects.ball)
+#                obj = gml.instance_create(position.x, position.y, Objects.chain)
 #                obj.link_val = 1
-#                obj = gml.instance_create(position.x, position.y, "chain")
+#                obj = gml.instance_create(position.x, position.y, Objects.chain)
 #                obj.link_val = 2
-#                obj = gml.instance_create(position.x, position.y, "chain")
+#                obj = gml.instance_create(position.x, position.y, Objects.chain)
 #                obj.link_val = 3
-#                obj = gml.instance_create(position.x, position.y, "chain")
+#                obj = gml.instance_create(position.x, position.y, Objects.chain)
 #                obj.link_val = 4
         
     
@@ -85,7 +85,7 @@ func _process(delta):
 #        n = ceil(n / 2)
 #        draw_text(view_xview[0]+n, view_yview[0]+216, str\(global.message))
     
-#        if (not InLevel.is_level("r_tutorial")): draw_set_color(c_yellow)
+#        if (not InLevel.i"level("r_tutorial")): draw_set_color(c_yellow)"
 #        str_len = string_length(global.message2)*8
 #        n = 320 - str_len
 #        n = ceil(n / 2)
@@ -97,20 +97,20 @@ func _process(delta):
     
 
 #func room end():
-    #    # DY: sound_stop(snd_music_test2)
+    #    # dy: sound_stop(snd_music_test2)
 
     
 
 #func step():
-    #    if (music_fade and music_fadeTimer < 100):
+    #    if (music_fade and music_fade_timer < 100):
 
 #        scr_music_fade()
-#        music_fadeTimer += 1
+#        music_fade_timer += 1
 
 
 #    if (view_enabled):
 
-#        # DY:  shake the screen
+#        # dy:  shake the screen
 #        if (global.shake > 0):
     
 #            if (player1.position.y < 96 or player1.position.y > room_height-96): view_vborder[0] = 0
@@ -136,11 +136,11 @@ func _process(delta):
     
 #            if (player1.position.y < 240-96 or player1.position.y > room_height-144): view_vborder[0] = 0
 #            else: view_vborder[0] = 96
-#            # DY: view_xview[0] = view_xview[0] + randi_range(0,3) - randi_range(0,3)
+#            # dy: view_xview[0] = view_xview[0] + randi_range(0,3) - randi_range(0,3)
 #            if (global.shake_toggle):
         
-#                # DY:  if (view_yview[0] >= room_height - view_hview[0]): view_yview[0] = 304
-#                # DY:  global.yview_prev = view_yview[0]
+#                # dy:  if (view_yview[0] >= room_height - view_hview[0]): view_yview[0] = 304
+#                # dy:  global.yview_prev = view_yview[0]
 #                global.y_shake_diff = randi_range(1,3)
 #                view_yview[0] = view_yview[0] + global.y_shake_diff
         
@@ -166,9 +166,9 @@ func _process(delta):
 #        */
 
 #        offset = 96
-#        # DY:  deactivate all instances outside the region
+#        # dy:  deactivate all instances outside the region
     
-#        # DY:  this is to prevent water from only getting drained partway
+#        # dy:  this is to prevent water from only getting drained partway
 #        with water
     
 #            if (position.x+8 < view_xview[0]-96 or position.x+8 > view_xview[0]+view_wview[0]+96 or position.y+8 < view_yview[0]-96 or position.y+8 > view_yview[0]+view_hview[0]+96):
@@ -177,16 +177,16 @@ func _process(delta):
         
     
 #        instance_deactivate_region(view_xview[0]-offset, view_yview[0]-offset, view_wview[0]+offset*2, view_hview[0]+offset*2, false, true)
-#        # DY:  activate all instances inside the region
+#        # dy:  activate all instances inside the region
 #        instance_activate_region(view_xview[0]-offset, view_yview[0]-offset, view_wview[0]+offset*2, view_hview[0]+offset*2, true)
-#        # DY:  activate all important instances
-#        # DY:  instance_activate_object(solid)
-#        # DY:  instance_activate_object(water)
+#        # dy:  activate all important instances
+#        # dy:  instance_activate_object(solid)
+#        # dy:  instance_activate_object(water)
 #        instance_activate_object(character)
 #        instance_activate_object(rope)
-#        instance_activate_object(ropeThrow)
-#        instance_activate_object(ropeTop)
-#        # DY:  instance_activate_object(olmec)
+#        instance_activate_object(rope_throw)
+#        instance_activate_object(rope_top)
+#        # dy:  instance_activate_object(olmec)
 #        instance_activate_object(game)
 #        instance_activate_object(globals)
 #        instance_activate_object(screen)
@@ -211,17 +211,17 @@ func _process(delta):
 #        */
 
 
-#    # DY:  darkness
+#    # dy:  darkness
 #    if (global.dark_level):
 
-#        # DY:  darkness = 0 : lightest
-#        # DY:  darkness = 1 : darkest
+#        # dy:  darkness = 0 : lightest
+#        # dy:  darkness = 1 : darkest
 #        dist = 160
-#        if (global.has_crown): dist = 0
+#        if (global.ha"crown): dist = 0"
 #        elif (gml.instance_exists("flare")):
     
 #            flare = instance_nearest(player1.position.x, player1.position.y, flare)
-#            dist = flare.distTplayer
+#            dist = flare.dist_to_player
     
         
 #        if (player1.dist_to_nearest_light_source < 200 and player1.dist_to_nearest_light_source < dist):
@@ -231,14 +231,10 @@ func _process(delta):
 #        if (dist == 0): darkness = 0
 #        else: darkness = dist / 160
        
-#        if (global.darkness_lerp > 0):
+#        if (global.darknes"lerp > 0):"
     
-#            darkness = global.darkness_lerp
-#            global.darkness_lerp -= 0.1
+#            darkness = global.darknes"lerp"
+#            global.darknes"lerp -= 0.1"
     
     
 #        if (darkness > 0.9): darkness = 0.9
-
-
-
-    

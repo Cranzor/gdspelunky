@@ -37,30 +37,30 @@ func _process(delta):
 #    x_acc = 0
 #    y_acc = 0
 
-#    IDLE = 0
-#    ATTACK = 1
+#    idle = 0
+#    attack = 1
 #    status = 0
 
 #    hit = false
 #    counter = 0
 
 #    dir = randi_range(0,3)
-#    RIGHT = 0
-#    DOWN = 1
-#    LEFT = 2
-#    UP = 3
+#    right = 0
+#    down = 1
+#    left = 2
+#    up = 3
 
     
 
 #func destroy():
     #    if (not clean_death and not global.clean_solids):
 
-#        rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), "rubble")
-#        rubble.sprite_index = s_rubble_tan
-#        rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), "rubbleSmall")
-#        rubble.sprite_index = s_rubble_tanSmall
-#        rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), "rubbleSmall")
-#        rubble.sprite_index = s_rubble_tanSmall
+#        rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), Objects.rubble)
+#        rubble.sprite_index = "rubble_tan"
+#        rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), Objects.rubble_small)
+#        rubble.sprite_index = "rubble_tan_small"
+#        rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), Objects.rubble_small)
+#        rubble.sprite_index = "rubble_tan_small"
 
 
     
@@ -69,57 +69,57 @@ func _process(delta):
     #    if (position.x > view_xview[0]-16 and position.x < view_xview[0] + view_wview[0]+16 and:
 #            position.y > view_yview[0]-16 and position.y < view_yview[0] + view_hview[0]+16)
 
-#    if (status == IDLE):
+#    if (status == idle):
 
 #        dist = point_distance(position.x, position.y, character.position.x, character.position.y)
 #        if (counter > 0): counter -= 1
         
 #        if (dist < 90 and counter < 1):
     
-#            if (abs(character.position.y - (position.y+8)) < 8 and character.position.x > position.x+8 and not Collision.is_collision_right(2)):
+#            if (abs(character.position.y - (position.y+8)) < 8 and character.position.x > position.x+8 and not Collision.i"collision_right(2)):"
         
-#                status = ATTACK
-#                dir = RIGHT
+#                status = attack
+#                dir = right
 #                xa = 0.5
         
-#            elif (abs(character.position.x - (position.x+8)) < 8 and character.position.y > position.y+8 and not Collision.is_collision_bottom(2)):
+#            elif (abs(character.position.x - (position.x+8)) < 8 and character.position.y > position.y+8 and not Collision.i"collision_bottom(2)):"
         
-#                status = ATTACK
-#                dir = DOWN
+#                status = attack
+#                dir = down
 #                ya = 0.5
         
-#            elif (abs(character.position.y - (position.y+8)) < 8 and character.position.x < position.x+8 and not Collision.is_collision_left(2)):
+#            elif (abs(character.position.y - (position.y+8)) < 8 and character.position.x < position.x+8 and not Collision.i"collision_left(2)):"
         
-#                status = ATTACK
-#                dir = LEFT
+#                status = attack
+#                dir = left
 #                xa = -0.5
         
-#            elif (abs(character.position.x - (position.x+8)) < 8 and character.position.y < position.y+8 and not Collision.is_collision_top(2)):
+#            elif (abs(character.position.x - (position.x+8)) < 8 and character.position.y < position.y+8 and not Collision.i"collision_top(2)):"
         
-#                status = ATTACK
-#                dir = UP
+#                status = attack
+#                dir = up
 #                ya = -0.5
         
     
 
-#    elif (status == ATTACK):
+#    elif (status == attack):
 
 #        col_left = false
 #        col_right = false
 #        col_top = false
 #        col_bot = false
-#        if (Collision.is_collision_left(1)): col_left = true
-#        if (Collision.is_collision_right(1)): col_right = true
-#        if (Collision.is_collision_top(1)): col_top = true
-#        if (Collision.is_collision_bottom(1)): col_bot = true
+#        if (Collision.i"collision_left(1)): col_left = true"
+#        if (Collision.i"collision_right(1)): col_right = true"
+#        if (Collision.i"collision_top(1)): col_top = true"
+#        if (Collision.i"collision_bottom(1)): col_bot = true"
 
 #        if (abs(xv) < 4): xv += xa
 #        if (abs(yv) < 4): yv += ya
 #        position.x += xv
 #        position.y += yv
-#        if (dir == RIGHT):
+#        if (dir == right):
     
-#            if (Collision.is_collision_right(2) and col_right):
+#            if (Collision.i"collision_right(2) and col_right):"
         
 #                position.x -= 2
 #                hit = true
@@ -130,9 +130,9 @@ func _process(delta):
 #                hit = true
         
     
-#        elif (dir == DOWN):
+#        elif (dir == down):
     
-#            if (Collision.is_collision_bottom(2) and col_bot):
+#            if (Collision.i"collision_bottom(2) and col_bot):"
         
 #                position.y -= 2
 #                hit = true
@@ -143,9 +143,9 @@ func _process(delta):
 #                hit = true
         
     
-#        elif (dir == LEFT):
+#        elif (dir == left):
     
-#            if (Collision.is_collision_left(2) and col_left):
+#            if (Collision.i"collision_left(2) and col_left):"
         
 #                position.x += 2
 #                hit = true
@@ -156,9 +156,9 @@ func _process(delta):
 #                hit = true
         
     
-#        elif (dir == UP):
+#        elif (dir == up):
     
-#            if (Collision.is_collision_top(2) and col_top):
+#            if (Collision.i"collision_top(2) and col_top):"
         
 #                position.y += 2
 #                hit = true
@@ -184,7 +184,7 @@ func _process(delta):
 #            not col_top and
 #            not col_bot)
     
-#            status = IDLE
+#            status = idle
 #            hit = false
 #            counter = 50
     
@@ -202,6 +202,3 @@ func _process(delta):
 #    if (gml.collision_rectangle(position.x+1, position.y+1, position.x+15,  position.y+15, "lava", 0, 0)):
 
 #        status = 99
-
-
-    

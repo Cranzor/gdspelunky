@@ -22,11 +22,11 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "Sceptre"
+#    type = "sceptre"
 #    PlatformEngine.make_active()
 #    Collision.set_collision_bounds(-4, -4, 4, 4)
 #    cost = 0
-#    buy_message = "I SHOULDN'T BE SELLING THIS!"
+#    buy_message = "I shouldn'T be selling this!"
 
     
 
@@ -37,8 +37,5 @@ func _process(delta):
 #    # main_code
 #    if (held):
 
-#        if (player1.facing == 18): sprite_index = s_sceptre_left
-#        else: sprite_index = s_sceptre_right
-
-
-    
+#        if (player1.facing == 18): sprite_index = "sceptre_left"
+#        else: sprite_index = "sceptre_right"

@@ -22,11 +22,11 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "Web Cannon"
+#    type = "web cannon"
 #    PlatformEngine.make_active()
 #    Collision.set_collision_bounds(-4, -4, 4, 4)
 #    cost = 2000
-#    buy_message = "A WEB CANNON FOR $" + str\(cost) + "."
+#    buy_message = "A web cannon for $" + str\(cost) + "."
 
     
 
@@ -37,8 +37,5 @@ func _process(delta):
 #    # main_code
 #    if (held):
 
-#        if (player1.facing == 18): sprite_index = s_web_cannon_l
-#        else: sprite_index = s_web_cannon_r
-
-
-    
+#        if (player1.facing == 18): sprite_index = "web_cannon_l"
+#        else: sprite_index = "web_cannon_r"

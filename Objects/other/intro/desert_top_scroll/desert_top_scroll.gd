@@ -20,7 +20,7 @@ func _process(delta):
 #func create():
     #    scroll = false
 #    if (room_get_name(room) == "r_credits1"):
-#        sprite_index = s_desert_top_night
+#        sprite_index = "desert_top_night"
 
     
 
@@ -28,5 +28,3 @@ func _process(delta):
     #    if (scroll): position.x += 1
 
 #    if (position.x > 320): gml.instance_destroy()
-
-    

@@ -29,15 +29,15 @@ func _process(delta):
 #    y_delta = -0.4
 #    image_speed = 0.4
 
-#    # DY:  stats
+#    # dy:  stats
 #    hp = 10
 #    invincible = 0
 
-#    # DY:  status
-#    IDLE = 0
-#    BOUNCE = 1
-#    RECOVER = 2
-#    WALK = 3
+#    # dy:  status
+#    idle = 0
+#    bounce = 1
+#    recover = 2
+#    walk = 3
 
 #    status = 0
 #    bounce_counter = 0
@@ -45,8 +45,8 @@ func _process(delta):
 #    shake_counter = 0
 #    shake_toggle = 1
 
-#    gml.instance_create(position.x, position.y+16, "web")
-#    gml.instance_create(position.x+16, position.y+16, "web")
+#    gml.instance_create(position.x, position.y+16, Objects.web)
+#    gml.instance_create(position.x+16, position.y+16, Objects.web)
 
     
 
@@ -66,20 +66,20 @@ func _process(delta):
 #            n = randi_range(1,3)
 #            match (n)
         
-#                1:  gem = gml.instance_create(position.x+16, position.y+24, "emerald_big")  
-#                2:  gem = gml.instance_create(position.x+16, position.y+24, "sapphire_big")  
-#                3:  gem = gml.instance_create(position.x+16, position.y+24, "ruby_big")  
+#                1:  gem = gml.instance_create(position.x+16, position.y+24, Objects.emerald_big)  
+#                2:  gem = gml.instance_create(position.x+16, position.y+24, Objects.sapphire_big)  
+#                3:  gem = gml.instance_create(position.x+16, position.y+24, Objects.ruby_big)  
         
 #            gem.x_vel = randi_range(0,3) - randi_range(0,3)
 #            gem.y_vel = -2
     
-#        obj = gml.instance_create(position.x+16, position.y+24, "paste")
+#        obj = gml.instance_create(position.x+16, position.y+24, Objects.paste)
 #        obj.cost = 0
 #        obj.for_sale = false
 #        MiscScripts.scr_create_blood(position.x+16, position.y+24, 4)
-#        if (counts_as_kill):
+#        if (count"as_kill):"
     
-#            if (InLevel.is_real_level()): global.enemy_kills[3] += 1
+#            if (InLevel.i"real_level()): global.enemy_kills[3] += 1"
 #            global.giantspiders += 1
 #            global.kills += 1
     
@@ -87,10 +87,6 @@ func _process(delta):
 
 #    elif (hp < 10 or not gml.collision_point(position.x, position.y-16, "solid", 0, 0) or (dist < 90 and character.position.y > position.y and abs(character.position.x - (position.x+16)) < 8)):
 
-#      spider = gml.instance_create(position.x, position.y, "giant_spider")
+#      spider = gml.instance_create(position.x, position.y, Objects.giant_spider)
 #      spider.hp = hp
 #      gml.instance_destroy()
-
-
-
-    

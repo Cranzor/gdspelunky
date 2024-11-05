@@ -7,7 +7,7 @@ var all_finished_objects = []
 var all_object_paths = []
 
 func _run():
-	#get_all_uncompleted_objects()
+	get_all_uncompleted_objects()
 	#get_all_completed_objects()
 	#print(all_remaining_objects)
 	
@@ -22,9 +22,9 @@ func _run():
 	#get_all_object_paths()
 	#print(all_object_paths)
 	
-	#for object in all_remaining_objects:
+	for object in all_remaining_objects:
 		##make_folder_with_scene(object)
-		#edit_script(object)
+		edit_script(object)
 		
 	#print("done")
 	pass
@@ -95,9 +95,11 @@ func edit_script(object_name):
 	var output = []
 	OS.execute("python", ["C:/Users/Jesse/Desktop/H&C2/programming/Spelunky Godot Porting Scripts/ObjectToGDScriptConverter2.py", converted_name], output)
 	var script_content = output[0]
+	script_content.strip_edges(true, false)
 		
 	var script_name = path + object_name + ".gd"
 	var gd_file = FileAccess.open(script_name, FileAccess.WRITE)
+	gd_file.seek(0)
 	gd_file.store_string(script_content)	
 	
 func get_all_uncompleted_objects():

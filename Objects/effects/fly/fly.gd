@@ -18,19 +18,19 @@ func _process(delta):
 
 
 #func collision with o_character():
-    #    if (other.sprite_index != s_p_exit and other.sprite_index != s_damsel_exit and other.sprite_index != s_tunnel_exit):
+    #    if (other.sprite_index != "p_exit and other.sprite_index != s_damsel_exit and other.sprite_index != s_tunnel_exit):"
 
 #        if (global.plife > 0):
     
 #            global.plife -= 2
-#            if (global.plife <= 0 and InLevel.is_real_level()): global.enemy_deaths[20] += 1
+#            if (global.plife <= 0 and InLevel.i"real_level()): global.enemy_deaths[20] += 1"
     
 #        other.x_vel = x_vel
 #        other.y_vel = -4
 
 #        with other
     
-#            gml.instance_create(position.x, position.y, "blood")
+#            gml.instance_create(position.x, position.y, Objects.blood)
 #            stunned = true
 #            stun_timer = 20
     
@@ -73,7 +73,7 @@ func _process(delta):
     
 
 #func collision with o_enemy():
-    #    if (other.type != "Tomb Lord"):
+    #    if (other.type != "tomb lord"):
 
 #        if (other.heavy):
     
@@ -107,7 +107,7 @@ func _process(delta):
     
 
 #func collision with o_solid():
-    #    gml.instance_create(position.x, position.y, "smoke_puff")
+    #    gml.instance_create(position.x, position.y, Objects.smoke_puff)
 #    Audio.play_sound(global.snd_hit)
 #    gml.instance_destroy()
 
@@ -123,7 +123,5 @@ func _process(delta):
     #    position.x += x_vel
 #    position.y += y_vel
 
-#    if (x_vel < 0): sprite_index = s_fly_left
-#    else: sprite_index = s_fly_right
-
-    
+#    if (x_vel < 0): sprite_index = "fly_left"
+#    else: sprite_index = "fly_right"

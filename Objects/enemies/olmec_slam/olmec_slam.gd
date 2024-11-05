@@ -19,7 +19,7 @@ func _process(delta):
 
 #func alarm 0():
     #    # action_kill_object
-#    # Need to implement this action
+#    # need to implement this action
     
 
 #func collision with o_solid():
@@ -36,5 +36,3 @@ func _process(delta):
 #func create():
     #    alarm_0(1)
 #    Audio.play_sound(global.snd_slam)
-
-    

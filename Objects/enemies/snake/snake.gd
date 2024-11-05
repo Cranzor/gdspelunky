@@ -18,7 +18,7 @@ func _process(delta):
 
 
 #func create():
-	#    # action_inherited
+    #    # action_inherited
 #    super()
 
 #    # main_code
@@ -27,33 +27,33 @@ func _process(delta):
 #    x_vel = 2.5
 #    image_speed = 0.4
 
-#    # DY:  stats
-#    type = "Snake"
+#    # dy:  stats
+#    type = "snake"
 #    hp = 1
 #    invincible = 0
 
-#    IDLE = 0
-#    WALK = 1
-#    ATTACK = 2
-#    STUNNED = 98
-#    DEAD = 99
-#    status = IDLE
+#    idle = 0
+#    walk = 1
+#    attack = 2
+#    stunned = 98
+#    dead = 99
+#    status = idle
 
 #    bounced = false
 #    dead = false
 #    counter = 0
 
-#    LEFT = 0
-#    RIGHT = 1
-#    facing = RIGHT
+#    left = 0
+#    right = 1
+#    facing = right
 
 #    shake_counter = 0
 #    shake_toggle = 1
 
-	
+    
 
 #func step():
-	#    # action_inherited
+    #    # action_inherited
 #    super()
 
 #    # main_code
@@ -63,7 +63,7 @@ func _process(delta):
 #    PlatformEngine.move_to(x_vel,y_vel)
 
 #    y_vel += my_grav
-#    if (y_vel > y_velLimit): y_vel = y_velLimit
+#    if (y_vel > y_vel_limit): y_vel = y_vel_limit
 
 #    if (gml.collision_point(position.x+8, position.y+8, "solid", 0, 0)):
 
@@ -73,84 +73,81 @@ func _process(delta):
 #    if (hp < 1):
 
 #        MiscScripts.scr_create_blood(position.x+8, position.y+8, 3)
-#        if (counts_as_kill):
-	
-#            if (InLevel.is_real_level()): global.enemy_kills[1] += 1
+#        if (count"as_kill):"
+    
+#            if (InLevel.i"real_level()): global.enemy_kills[1] += 1"
 #            global.snakes += 1
 #            global.kills += 1
-	
+    
 #        gml.instance_destroy()
 
 
-#    if (Collision.is_collision_bottom(1) and status != STUNNED): y_vel = 0
+#    if (Collision.i"collision_bottom(1) and status != stunned): y_vel = 0"
 
-#    if (status == IDLE):
+#    if (status == idle):
 
 #        if (counter > 0): counter -= 1    
 #        else:
-	
+    
 #            facing = randi_range(0,1)
-#            status = WALK
-	
+#            status = walk
+    
 
-#    elif (status == WALK):
+#    elif (status == walk):
 
-#        if (Collision.is_collision_left(1) or Collision.is_collision_right(1)):
-	
-#            if (facing == LEFT): facing = RIGHT
-#            else: facing = LEFT
-	
-	
-#        if (facing == LEFT and not gml.collision_point(position.x-1, position.y+16, "solid", -1, -1)):
-	
-#            facing = RIGHT
-	
-#        elif (facing == RIGHT and not gml.collision_point(position.x+16, position.y+16, "solid", -1, -1)):
-	
-#            facing = LEFT
-	
-	
+#        if (Collision.i"collision_left(1) or Collision.is_collision_right(1)):"
+    
+#            if (facing == left): facing = right
+#            else: facing = left
+    
+    
+#        if (facing == left and not gml.collision_point(position.x-1, position.y+16, "solid", -1, -1)):
+    
+#            facing = right
+    
+#        elif (facing == right and not gml.collision_point(position.x+16, position.y+16, "solid", -1, -1)):
+    
+#            facing = left
+    
+    
 #        if ((not gml.collision_point(position.x-1, position.y+16, "solid", -1, -1) or gml.collision_point(position.x-1, position.y, "solid", -1, -1)) and:
 #            (not gml.collision_point(position.x+16, position.y+16, "solid", -1, -1) or gml.collision_point(position.x+16, position.y, "solid", -1, -1)))
-	
-#            if (gml.collision_point(position.x-1, position.y, "solid", -1, -1)): facing = RIGHT
-#            else: facing = LEFT
+    
+#            if (gml.collision_point(position.x-1, position.y, "solid", -1, -1)): facing = right
+#            else: facing = left
 #            x_vel = 0
-	
-#        elif (facing == LEFT): x_vel = -1
+    
+#        elif (facing == left): x_vel = -1
 #        else: x_vel = 1
-	
+    
 #        if (randi_range(1,100) == 1):
-	
-#            status = IDLE
+    
+#            status = idle
 #            counter = randi_range(20,50)
 #            x_vel = 0
-	
+    
 
-#    elif (status == ATTACK):
+#    elif (status == attack):
 
-#        # DY:  ?
+#        # dy:  ?
 
 
-#    if (Collision.is_collision_solid()):
+#    if (Collision.i"collision_solid()):"
 #        position.y -= 2
 
-#    if (status != STUNNED):
+#    if (status != stunned):
 
 #        if (x_vel == 0): image_speed = 0.2
 #        else: image_speed = 0.4
-	
-#        sprite_index = s_snake_walk_l
+    
+#        sprite_index = "snake_walk_l"
 
 #    /*
-#    if (status != STUNNED and facing == RIGHT):
+#    if (status != stunned and facing == right):
 
 #        if (x_vel == 0): image_speed = 0.2
 #        else: image_speed = 0.4
-	
-#        sprite_index = s_snake_walk_r
+    
+#        sprite_index = "snake_walk_r"
 
 #    */
-
-
-	

@@ -11,6 +11,6 @@ func _process(delta):
 
 #--- Object functions
 func create():
-	solid_create()
+	super()
 	
 	invincible = true

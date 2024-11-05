@@ -19,18 +19,16 @@ func _process(delta):
 
 #func animation_end():
     #    # action_kill_object
-#    # Need to implement this action
+#    # need to implement this action
     
 
 #func step():
-    #    if (sprite_index = s_spears_left and not gml.collision_point(position.x+16, position.y, "spear_trap_top", 0, 0) and not gml.collision_point(position.x+16, position.y, "spear_trap_bottom", 0, 0)):
+    #    if (sprite_index = "spears_left and not gml.collision_point(position.x+16, position.y, "spear_trap_top", 0, 0) and not gml.collision_point(position.x+16, position.y, "spear_trap_bottom", 0, 0)):"
 
 #        gml.instance_destroy()
 
-#    if (sprite_index = s_spears_right and not gml.collision_point(position.x-16, position.y, "spear_trap_top", 0, 0) and not gml.collision_point(position.x-16, position.y, "spear_trap_bottom", 0, 0)):
+#    if (sprite_index = "spears_right and not gml.collision_point(position.x-16, position.y, "spear_trap_top", 0, 0) and not gml.collision_point(position.x-16, position.y, "spear_trap_bottom", 0, 0)):"
 
 #        gml.instance_destroy()
 
 #    depth = 995
-
-    

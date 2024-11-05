@@ -22,11 +22,9 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "Parachute"
+#    type = "parachute"
 #    PlatformEngine.make_active()
 #    Collision.set_collision_bounds(-6, -6, 6, 6)
 
 #    cost = 2000
-#    buy_message = "A PARACHUTE FOR $" + str\(cost) + "."
-
-    
+#    buy_message = "A parachute for $" + str\(cost) + "."
