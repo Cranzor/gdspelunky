@@ -1,3 +1,4 @@
+
 extends Solid
 
 
@@ -5,7 +6,7 @@ func _ready():
 	object_setup()
 
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	object_tick()
 
 
@@ -17,89 +18,27 @@ func _process(delta):
 
 
 #func alarm 0():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="ALARM" id="0">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">arrow = gml.instance_create(position.x-16, position.y+4, "arrow")
-#    arrow.x_vel = -5</argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+    #    arrow = gml.instance_create(position.x-16, position.y+4, "arrow")
+#    arrow.x_vel = -5
 
     
 
 #func create():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="CREATE" id="0">
-#      <actions>
-#        <action id="604" library="1">
-#          <!--action name: Inherited-->
-#          <kind>NORMAL</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>false</can_apply_to>
-#          <action_type>FUNCTION</action_type>
-#          <function_name>action_inherited</function_name>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments/>
-#        </action>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">fired = 0
+    #    # action_inherited
+#    super()
+
+#    # main_code
+#    fired = 0
 #    fired_max = 50
 #    prox = 4
 #    invincible = false
 #    image_speed = 0.5
-#    # DY:  alarm_0(50)</argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+#    # DY:  alarm_0(50)
 
     
 
 #func destroy():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="DESTROY" id="0">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (not clean_death and not global.clean_solids):
+    #    if (not clean_death and not global.clean_solids):
 
 #        rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), "rubble")
 #        rubble.sprite_index = s_rubble_tan
@@ -109,31 +48,12 @@ func _process(delta):
 #        rubble.sprite_index = s_rubble_tanSmall
 
 
-#    global.check_water = true</argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+#    global.check_water = true
 
     
 
 #func step():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="STEP" id="0">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (fired > 0): fired -= 1
+    #    if (fired > 0): fired -= 1
 
 #    range = 64
 
@@ -218,10 +138,6 @@ func _process(delta):
 
 #        gml.instance_destroy()
 
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     

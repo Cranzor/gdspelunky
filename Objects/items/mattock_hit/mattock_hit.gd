@@ -1,3 +1,4 @@
+
 extends Whip
 
 
@@ -5,7 +6,7 @@ func _ready():
 	object_setup()
 
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	object_tick()
 
 
@@ -16,23 +17,8 @@ func _process(delta):
 #--- Object functions
 
 
-#func animation end():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="OTHER" id="7">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">hit = false
+#func animation_end():
+    #    hit = false
 #    if (gml.collision_point(position.x, position.y, "solid", 0, 0)):
 
 #        obj = gml.instance_place(position.x, position.y, solid)
@@ -91,71 +77,24 @@ func _process(delta):
 #            Audio.play_sound(global.snd_crunch)
 
 
-#    gml.instance_destroy()</argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+#    gml.instance_destroy()
 
     
 
 #func create():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="CREATE" id="0">
-#      <actions>
-#        <action id="604" library="1">
-#          <!--action name: Inherited-->
-#          <kind>NORMAL</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>false</can_apply_to>
-#          <action_type>FUNCTION</action_type>
-#          <function_name>action_inherited</function_name>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments/>
-#        </action>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">type = "Mattock"
+    #    # action_inherited
+#    super()
+
+#    # main_code
+#    type = "Mattock"
 #    image_speed = 0.5
 #    damage = 2
-#    puncture = true</argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+#    puncture = true
 
     
 
 #func step():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="STEP" id="0">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (gml.instance_number(character) == 0):
+    #    if (gml.instance_number(character) == 0):
 
 #        gml.instance_destroy()
 
@@ -169,10 +108,6 @@ func _process(delta):
 #        position.x = character.position.x-16
 #        position.y = character.position.y
 
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     

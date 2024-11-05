@@ -1,3 +1,4 @@
+
 extends Enemy
 
 
@@ -5,7 +6,7 @@ func _ready():
 	object_setup()
 
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	object_tick()
 
 
@@ -17,59 +18,16 @@ func _process(delta):
 
 
 #func alarm 0():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="ALARM" id="0">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">can_bite = true</argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+    #    can_bite = true
 
     
 
 #func create():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="CREATE" id="0">
-#      <actions>
-#        <action id="604" library="1">
-#          <!--action name: Inherited-->
-#          <kind>NORMAL</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>false</can_apply_to>
-#          <action_type>FUNCTION</action_type>
-#          <function_name>action_inherited</function_name>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments/>
-#        </action>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">type = "Piranha"
+    #    # action_inherited
+#    super()
+
+#    # main_code
+#    type = "Piranha"
 #    image_speed = 0.5
 #    Collision.set_collision_bounds(0, 0, 8, 8)
 #    orig_x = 0
@@ -100,31 +58,12 @@ func _process(delta):
 #    counter = 0
 
 #    shake_counter = 0
-#    shake_toggle = 1</argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+#    shake_toggle = 1
 
     
 
 #func step():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="STEP" id="0">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (active):
+    #    if (active):
 
 #    if (hp < 1):
 
@@ -170,7 +109,7 @@ func _process(delta):
 #        if (obj): if (obj.hp <= 0) obj = 0
 #        if (obj):
     
-#            if (obj.swimming &amp&amp obj.hp > 0):
+#            if (obj.swimming && obj.hp > 0):
         
 #                status = ATTACK_ENEMY
         
@@ -186,7 +125,7 @@ func _process(delta):
 #            dir = randi_range(0,1)*180
     
 
-#    elif (status == ATTACK &amp&amp gml.instance_exists("character")):
+#    elif (status == ATTACK && gml.instance_exists("character")):
 
 #        if (dist < 90 and character.swimming and not character.dead):
     
@@ -264,10 +203,6 @@ func _process(delta):
 #        gml.instance_create(position.x, position.y, "fish_bone")
 #        gml.instance_destroy()
 
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     

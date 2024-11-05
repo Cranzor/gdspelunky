@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cnpm2nrekmfld"]
 
-[sub_resource type="GDScript" id="GDScript_jhimk"]
+[ext_resource type="Script" path="res://objects/blocks/altar_left/altar_left.gd" id="1_5eh5a"]
 
 [node name="AltarLeft" type="Node2D"]
+script = ExtResource("1_5eh5a")
+object_name = "altar_left"

@@ -1,3 +1,4 @@
+
 extends Enemy
 
 
@@ -5,7 +6,7 @@ func _ready():
 	object_setup()
 
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	object_tick()
 
 
@@ -17,73 +18,20 @@ func _process(delta):
 
 
 #func alarm 0():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="ALARM" id="0">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">whipped = false</argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+    #    whipped = false
 
     
 
-#func animation end():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="OTHER" id="7">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (sprite_index == s_magma_man_die):
+#func animation_end():
+    #    if (sprite_index == s_magma_man_die):
 
 #        gml.instance_destroy()
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func collision with o_bomb():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="COLLISION" with="bomb">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (other.sprite_index != s_bomb_armed):
+    #    if (other.sprite_index != s_bomb_armed):
 
 #        with other
     
@@ -100,31 +48,12 @@ func _process(delta):
 #    if (other.held):
 
 #        if (character): character.hold_item = 0
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func collision with o_character():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="COLLISION" with="character">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (other.invincible == 0):
+    #    if (other.invincible == 0):
 
 #        other.blink = 30
 #        other.invincible = 30
@@ -145,31 +74,12 @@ func _process(delta):
     
 #        Audio.play_sound(global.snd_hurt)
 #        Audio.play_sound(global.snd_flame)
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func collision with o_enemy():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="COLLISION" with="enemy">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (other.type != "Magma Man"):
+    #    if (other.type != "Magma Man"):
 
 #        other.y_vel = -4
 #        if (position.x < other.position.x):
@@ -187,73 +97,26 @@ func _process(delta):
 #                counter = 50
         
     
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func collision with o_whip():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="COLLISION" with="whip">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (not whipped):
+    #    if (not whipped):
 
 #        Audio.play_sound(global.snd_hit)
 #        whipped = true
 #        alarm_0(10)
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func create():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="CREATE" id="0">
-#      <actions>
-#        <action id="604" library="1">
-#          <!--action name: Inherited-->
-#          <kind>NORMAL</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>false</can_apply_to>
-#          <action_type>FUNCTION</action_type>
-#          <function_name>action_inherited</function_name>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments/>
-#        </action>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">PlatformEngine.make_active()
+    #    # action_inherited
+#    super()
+
+#    # main_code
+#    PlatformEngine.make_active()
 #    Collision.set_collision_bounds(2, 0, sprite_width-2, sprite_height)
 #    x_vel = 2.5
 #    image_speed = 0.5
@@ -283,31 +146,12 @@ func _process(delta):
 #    facing = RIGHT
 
 #    shake_counter = 0
-#    shake_toggle = 1</argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+#    shake_toggle = 1
 
     
 
 #func step():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="STEP" id="0">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (hp > 0): hp -= 1
+    #    if (hp > 0): hp -= 1
 #    if (gml.collision_point(position.x+8, position.y+8, "solid", 0, 0) or hp < 1):
 
 #        x_vel = 0
@@ -401,10 +245,6 @@ func _process(delta):
 
 #        if (abs(x_vel) > 0): sprite_index = s_magma_man_walk_l
 #        else: sprite_index = s_magma_man_left
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     

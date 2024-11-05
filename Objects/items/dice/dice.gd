@@ -1,3 +1,4 @@
+
 extends Item
 
 
@@ -5,7 +6,7 @@ func _ready():
 	object_setup()
 
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	object_tick()
 
 
@@ -17,94 +18,32 @@ func _process(delta):
 
 
 #func create():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="CREATE" id="0">
-#      <actions>
-#        <action id="604" library="1">
-#          <!--action name: Inherited-->
-#          <kind>NORMAL</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>false</can_apply_to>
-#          <action_type>FUNCTION</action_type>
-#          <function_name>action_inherited</function_name>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments/>
-#        </action>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">type = "Dice"
+    #    # action_inherited
+#    super()
+
+#    # main_code
+#    type = "Dice"
 #    PlatformEngine.make_active()
 #    Collision.set_collision_bounds(-6, 0, 6, 8)
 #    heavy = true
 #    rolled = false
 #    rolling = false
-#    value = randi_range(1,6)</argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+#    value = randi_range(1,6)
 
     
 
 #func draw():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="DRAW" id="0">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">draw_sprite_ext(sprite_index, -1, position.x, position.y, image_xscale, image_yscale, image_angle, image_blend, image_alpha)
+    #    draw_sprite_ext(sprite_index, -1, position.x, position.y, image_xscale, image_yscale, image_angle, image_blend, image_alpha)
 
 #    if (!rolled and player1.bet > 0):
 
 #        draw_sprite_ext(s_red_arrow_down, 0, position.x, position.y-12, 1, 1, 0, c_white, 1)
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func step():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="STEP" id="0">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if ((position.x > view_xview[0]-16 and position.x < view_xview[0] + view_wview[0]+16 and:
+    #    if ((position.x > view_xview[0]-16 and position.x < view_xview[0] + view_wview[0]+16 and:
 #            position.y > view_yview[0]-16 and position.y < view_yview[0] + view_hview[0]+16))
 
 #        if (cost > 0 and:
@@ -334,10 +273,6 @@ func _process(delta):
 #        elif (value == 4): sprite_index = s_dice4
 #        elif (value == 5): sprite_index = s_dice5
 #        else: sprite_index = s_dice6
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     

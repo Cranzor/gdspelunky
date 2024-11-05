@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://7qltvrfh1u0m"]
 
-[sub_resource type="GDScript" id="GDScript_6x8vg"]
+[ext_resource type="Script" path="res://objects/other/menu_sel/menu_sel.gd" id="1_0h7wj"]
 
 [node name="MenuSel" type="Node2D"]
+script = ExtResource("1_0h7wj")
+object_name = "menu_sel"

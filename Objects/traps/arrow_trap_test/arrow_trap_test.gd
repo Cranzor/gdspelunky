@@ -1,3 +1,4 @@
+
 extends GMObject
 
 
@@ -5,7 +6,7 @@ func _ready():
 	object_setup()
 
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	object_tick()
 
 
@@ -17,22 +18,7 @@ func _process(delta):
 
 
 #func collision with o_boulder():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="COLLISION" with="boulder">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (trap_id == 0):
+    #    if (trap_id == 0):
 
 #        gml.instance_destroy()
 
@@ -57,31 +43,12 @@ func _process(delta):
         
     
 #        gml.instance_destroy()
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func collision with o_character():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="COLLISION" with="character">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (trap_id == 0):
+    #    if (trap_id == 0):
 
 #        gml.instance_destroy()
 
@@ -109,31 +76,12 @@ func _process(delta):
         
     
 #        gml.instance_destroy()
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func collision with o_enemy():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="COLLISION" with="enemy">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (trap_id == 0):
+    #    if (trap_id == 0):
 
 #        gml.instance_destroy()
 
@@ -158,31 +106,12 @@ func _process(delta):
         
     
 #        gml.instance_destroy()
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func collision with o_item():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="COLLISION" with="item">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (trap_id == 0):
+    #    if (trap_id == 0):
 
 #        gml.instance_destroy()
 
@@ -207,31 +136,12 @@ func _process(delta):
         
     
 #        gml.instance_destroy()
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func collision with o_moveable_solid():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="COLLISION" with="moveable_solid">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (trap_id == 0):
+    #    if (trap_id == 0):
 
 #        gml.instance_destroy()
 
@@ -256,31 +166,12 @@ func _process(delta):
         
     
 #        gml.instance_destroy()
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func collision with o_treasure():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="COLLISION" with="treasure">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (trap_id == 0):
+    #    if (trap_id == 0):
 
 #        gml.instance_destroy()
 
@@ -305,34 +196,11 @@ func _process(delta):
         
     
 #        gml.instance_destroy()
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func create():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="CREATE" id="0">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">trap_id = 0</argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+    #    trap_id = 0
 
     

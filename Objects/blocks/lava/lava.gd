@@ -1,3 +1,4 @@
+
 extends Water
 
 
@@ -5,7 +6,7 @@ func _ready():
 	object_setup()
 
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	object_tick()
 
 
@@ -17,65 +18,19 @@ func _process(delta):
 
 
 #func create():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="CREATE" id="0">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">type = "Lava"
+    #    # main_code
+#    type = "Lava"
 #    spurt = false
 #    spurt_time = randi_range(100,300)
-#    spurt_counter = spurt_time</argument>
-#          </arguments>
-#        </action>
-#        <action id="611" library="1">
-#          <!--action name: Variable-->
-#          <kind>VARIABLE</kind>
-#          <allow_relative>true</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">image_speed</argument>
-#            <argument kind="EXPRESSION">0.4</argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+#    spurt_counter = spurt_time
+#    # main_code
+#    image_speed
+#    0.4
 
     
 
 #func destroy():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="DESTROY" id="0">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">for (i = 0 i < 3 i += 1)
+    #    for i in range(0, 3):
 
 #        gml.instance_create(position.x+randi_range(0,16), position.y+randi_range(0,16), "lava_drip")
 
@@ -83,31 +38,12 @@ func _process(delta):
 
 #        flame = gml.instance_create(position.x+8, position.y+8, "flame")
 #        flame.y_vel = 4
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func step():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="STEP" id="0">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">dist = 0
+    #    dist = 0
 #    if (InLevel.is_level()):
 
 #        dist = point_distance(position.x, position.y, player1.position.x, player1.position.y)
@@ -122,10 +58,6 @@ func _process(delta):
 #            else: flame = gml.instance_create(position.x+8, position.y-4, "flame")
 #            flame.y_vel = -randi_range(1,4)
     
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     

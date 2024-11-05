@@ -1,3 +1,4 @@
+
 extends GMObject
 
 
@@ -5,7 +6,7 @@ func _ready():
 	object_setup()
 
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	object_tick()
 
 
@@ -17,22 +18,7 @@ func _process(delta):
 
 
 #func alarm 0():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="ALARM" id="0">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (draw_loot == 0):
+    #    if (draw_loot == 0):
 
 #        if (draw_pos_x > 272):
     
@@ -322,61 +308,23 @@ func _process(delta):
 #        # DY:  nothing
 
 #    elif (hurryup): alarm_0(1)
-#    else: alarm_0(3)</argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+#    else: alarm_0(3)
 
     
 
 #func alarm 1():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="ALARM" id="1">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">draw_loot += 1
+    #    draw_loot += 1
 
 #    if (draw_loot < 0):
 
 #        if (hurryup): alarm_1(1)
 #        else: alarm_1(30)
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func create():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="CREATE" id="0">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">debug_counter = 0
+    #    debug_counter = 0
 
 #    global.message = ""
 #    global.message2 = ""
@@ -441,31 +389,12 @@ func _process(delta):
 #    up_held = 0
 #    down_held = 0
 
-#    Audio.stop_all_music()</argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+#    Audio.stop_all_music()
 
     
 
 #func draw():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="DRAW" id="0">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">draw_set_font(global.my_font_small)
+    #    draw_set_font(global.my_font_small)
 #    draw_set_color(c_white)
 #    if (gml.instance_exists("tunnel_man")):
 
@@ -590,31 +519,12 @@ func _process(delta):
 #            draw_text(96, 96, "NONE")
     
 #        draw_text(96, 112, "$" + str\(money_count) + " / $" + str\(global.money))
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func step():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="STEP" id="0">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (ControlScripts.check_attack_pressed() or ControlScripts.check_start_pressed()):
+    #    if (ControlScripts.check_attack_pressed() or ControlScripts.check_start_pressed()):
 
 #        n = 0
 
@@ -698,10 +608,6 @@ func _process(delta):
     
 
 
-#    debug_counter += 1</argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+#    debug_counter += 1
 
     

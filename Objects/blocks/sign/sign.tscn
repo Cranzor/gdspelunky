@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://dapkwwrjkevir"]
 
-[sub_resource type="GDScript" id="GDScript_77w0u"]
+[ext_resource type="Script" path="res://objects/blocks/sign/sign.gd" id="1_ux1pa"]
 
 [node name="Sign" type="Node2D"]
+script = ExtResource("1_ux1pa")
+object_name = "sign"

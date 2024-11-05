@@ -1,3 +1,4 @@
+
 extends DrawnSprite
 
 
@@ -5,7 +6,7 @@ func _ready():
 	object_setup()
 
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	object_tick()
 
 
@@ -17,176 +18,47 @@ func _process(delta):
 
 
 #func alarm 0():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="ALARM" id="0">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">alarm_1(100)</argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+    #    alarm_1(100)
 
     
 
 #func alarm 1():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="ALARM" id="1">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">big_chest.sprite_index = s_big_chest_open
+    #    big_chest.sprite_index = s_big_chest_open
 #    treasure = gml.instance_create(big_chest.position.x, big_chest.position.y, "big_treasure")
 #    treasure.y_vel = -4
 #    treasure.x_vel = -3
 #    Audio.play_sound(global.snd_click)
-#    alarm_2(20)</argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+#    alarm_2(20)
 
     
 
 #func alarm 2():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="ALARM" id="2">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">status = LAVA</argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+    #    status = LAVA
 
     
 
 #func alarm 3():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="ALARM" id="3">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">gml.instance_create(end_plat.position.x, end_plat.position.y+30, "lava_spray")
+    #    gml.instance_create(end_plat.position.x, end_plat.position.y+30, "lava_spray")
 #    global.shake = 9999
-#    alarm_4(10)</argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+#    alarm_4(10)
 
     
 
 #func alarm 4():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="ALARM" id="4">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (lava_spray): lava_spray.y_acc = -0.1</argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+    #    if (lava_spray): lava_spray.y_acc = -0.1
 
     
 
 #func alarm 5():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="ALARM" id="5">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">status = TRANSITION
+    #    status = TRANSITION
 #    if (global.is_damsel): sprite_index = s_damsel_run_l
 #    elif (global.is_tunnel_man): sprite_index = s_tunnel_run_l
-#    else: sprite_index = s_run_left</argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+#    else: sprite_index = s_run_left
 
     
 
-#func animation end():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="OTHER" id="7">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (sprite_index == s_p_exit or sprite_index == s_damsel_exit or sprite_index == s_tunnel_exit):
+#func animation_end():
+    #    if (sprite_index == s_p_exit or sprite_index == s_damsel_exit or sprite_index == s_tunnel_exit):
 
 #        gml.instance_destroy()
 
@@ -198,44 +70,16 @@ func _process(delta):
 #        elif (global.curr_level == 2): get_tree().change_scene_to_file("res://r_olmec.tscn")
 #        else: get_tree().change_scene_to_file("res://r_level.tscn")
 
-#    */</argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+#    */
 
     
 
 #func create():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="CREATE" id="0">
-#      <actions>
-#        <action id="604" library="1">
-#          <!--action name: Inherited-->
-#          <kind>NORMAL</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>false</can_apply_to>
-#          <action_type>FUNCTION</action_type>
-#          <function_name>action_inherited</function_name>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments/>
-#        </action>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING"># DY:  dummy actor for transitions and ending
+    #    # action_inherited
+#    super()
+
+#    # main_code
+#    # DY:  dummy actor for transitions and ending
 
 #    TRANSITION = 0
 #    START = 1
@@ -252,31 +96,12 @@ func _process(delta):
 
 #    LEFT = 0
 #    RIGHT = 1
-#    facing = RIGHT</argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+#    facing = RIGHT
 
     
 
 #func draw():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="DRAW" id="0">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (facing == RIGHT): image_xscale = -1
+    #    if (facing == RIGHT): image_xscale = -1
 #    else: image_xscale = 1
 
 #    if ((sprite_index == s_p_exit or sprite_index == s_damsel_exit or sprite_index == s_tunnel_exit) and global.has_jetpack):
@@ -313,31 +138,12 @@ func _process(delta):
 #        elif (global.pickup_item == "Flare"): hold_item = draw_sprite(s_flare,-1,position.x+4,position.y+2)
 #        elif (global.pickup_item == "Sceptre"): hold_item = draw_sprite(s_sceptre_right,-1,position.x+4,position.y+2)
 #        elif (global.pickup_item == "Key"): hold_item = draw_sprite(s_key_right,-1,position.x+4,position.y+2)
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func step():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="STEP" id="0">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">position.y += y_vel
+    #    position.y += y_vel
 
 #    if (status != STOPPED and gml.collision_point(position.x+8, position.y, "damsel_kiss", 0, 0)):
 
@@ -413,10 +219,6 @@ func _process(delta):
 #    elif (status == LAVA+1):
 
 #        gml.instance_create(end_plat.position.x+randi_range(0,80), 192+32, "burn")
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     

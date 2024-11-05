@@ -1,3 +1,4 @@
+
 extends GMObject
 
 
@@ -5,7 +6,7 @@ func _ready():
 	object_setup()
 
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	object_tick()
 
 
@@ -17,46 +18,12 @@ func _process(delta):
 
 
 #func create():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="CREATE" id="0">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">status = 0</argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+    #    status = 0
 
     
 
 #func draw():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="DRAW" id="0">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">draw_set_font(global.my_font_small)
+    #    draw_set_font(global.my_font_small)
 #    draw_set_color(c_yellow)
 #    str_len = string_length("PRESS KEY FOR")*8
 #    n = 160 - str_len
@@ -263,31 +230,12 @@ func _process(delta):
 #    break 
 
 
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func key any key pressed():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="KEYPRESS" id="1">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (keyboard_key != vk_escape):
+    #    if (keyboard_key != vk_escape):
 
 #    if (status == 0):
 
@@ -340,31 +288,12 @@ func _process(delta):
 
 
 #    status += 1
-#    if (status > 11): get_tree().change_scene_to_file("res://r_init.tscn")</argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+#    if (status > 11): get_tree().change_scene_to_file("res://r_init.tscn")
 
     
 
 #func room end():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="OTHER" id="5">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">file = file_text_open_write("keys.cfg")
+    #    file = file_text_open_write("keys.cfg")
 #    file_text_write_str\(file, str\(global.key_up_val))
 #    file_text_writeln(file)
 #    file_text_write_str\(file, str\(global.key_down_val))
@@ -388,10 +317,6 @@ func _process(delta):
 #    file_text_write_str\(file, str\(global.key_flare_val))
 #    file_text_writeln(file)
 #    file_text_write_str\(file, str\(global.key_pay_val))
-#    file_text_close(file)</argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+#    file_text_close(file)
 
     

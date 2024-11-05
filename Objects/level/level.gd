@@ -1,3 +1,4 @@
+
 extends GMObject
 
 
@@ -5,7 +6,7 @@ func _ready():
 	object_setup()
 
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	object_tick()
 
 
@@ -17,22 +18,7 @@ func _process(delta):
 
 
 #func create():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="CREATE" id="0">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">screen.enabled = true
+    #    screen.enabled = true
 #    global.draw_hud = true
 #    global.game_start = true
 #    global.shake = 0
@@ -75,31 +61,12 @@ func _process(delta):
 #                obj.link_val = 4
         
     
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func draw():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="DRAW" id="0">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">/*
+    #    /*
 #    if (global.dark_level):
 
 #        draw_set_alpha(darkness)
@@ -125,55 +92,17 @@ func _process(delta):
 #        draw_text(view_xview[0]+n, view_yview[0]+224, str\(global.message2))
     
 #        global.message_timer -= 1
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func room end():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="OTHER" id="5">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING"># DY: sound_stop(snd_music_test2)</argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+    #    # DY: sound_stop(snd_music_test2)
 
     
 
 #func step():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="STEP" id="0">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (music_fade and music_fadeTimer < 100):
+    #    if (music_fade and music_fadeTimer < 100):
 
 #        scr_music_fade()
 #        music_fadeTimer += 1
@@ -310,10 +239,6 @@ func _process(delta):
     
 #        if (darkness > 0.9): darkness = 0.9
 
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     

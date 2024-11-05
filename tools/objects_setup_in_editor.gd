@@ -8,8 +8,9 @@ var sprites = Sprites.new()
 var all_object_paths = []
 
 func _run() -> void:
-	objects_reset()
-
+	#objects_reset()
+	pass
+	
 func objects_setup():
 	get_all_object_paths()
 

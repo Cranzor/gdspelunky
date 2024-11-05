@@ -1,42 +1,58 @@
+@icon("res://sprites/hud/heart/heart_0.png")
 extends GMObject
+class_name DrawnSprite
+		
+var persistent = false
+var parent
+var mask
 
+var type
+var blink_toggle
 
-func _ready():
-	object_setup()
+#--- want access to these for all objects, so defining here
+var collision_bounds_offset_left_x
+var collision_bounds_offset_top_y
+var collision_bounds_offset_right_x
+var collision_bounds_offset_bottom_y
 
+var invincible
+var IDLE
+var WALK
+var ATTACK
+var bounced
+var dead
+var shake_toggle
+var status
+var facing
+var armed
+var active
+var held #--- seems easier to put this here since both items and enemies use it
+var grav
+var bounce
+var my_grav
+var safe
+var heavy
+var value
+var col_bot
+var can_pick_up
+var bounce_factor
+var friction_factor
+var bloodless
+var cost
+var for_sale
+var cimg
+var sticky
+var enemy_id
+var col_left
+var col_right
+var col_top
+var STUNNED = 98 #--- making this a variable and not a constant because it is set to 1 in p_dummy2 (all other cases are 98)
+var stun_time
+var damage
+var puncture
 
-func _physics_process(_delta):
-	object_tick()
-
-
-func _process(delta):
-	object_process(delta)
-
-
-#--- Object functions
-
-
-#func create():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="CREATE" id="0">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">type = ""
-#    blink_toggle = 0</argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
-
-    
+func drawn_sprite_create():
+	visible = true #--- believe I put this due to how Game Maker handles it
+	
+	type = ""
+	blink_toggle = 0

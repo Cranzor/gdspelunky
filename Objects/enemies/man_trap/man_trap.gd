@@ -1,3 +1,4 @@
+
 extends Enemy
 
 
@@ -5,7 +6,7 @@ func _ready():
 	object_setup()
 
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	object_tick()
 
 
@@ -16,23 +17,8 @@ func _process(delta):
 #--- Object functions
 
 
-#func animation end():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="OTHER" id="7">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (status == EATING):
+#func animation_end():
+    #    if (status == EATING):
 
 #        sprite_index = s_man_trap_sleep_l
 #        status = SLEEPY
@@ -43,31 +29,12 @@ func _process(delta):
 #        status = STUNNED
 #        counter = stun_time*2
 
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func collision with o_caveman():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="COLLISION" with="caveman">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (status != STUNNED and status != EATING):
+    #    if (status != STUNNED and status != EATING):
 
 #        x_vel = 0
 #        status = EATING
@@ -76,31 +43,12 @@ func _process(delta):
 #        sprite_index = s_man_trap_eat_caveman_l
         
 #        with other  gml.instance_destroy() 
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func collision with o_character():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="COLLISION" with="character">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (abs(other.position.x-(position.x+8)) > 8):
+    #    if (abs(other.position.x-(position.x+8)) > 8):
 
 #        # DY:  do nothing
 
@@ -163,31 +111,12 @@ func _process(delta):
         
     
 
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func collision with o_damsel():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="COLLISION" with="damsel">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (status != STUNNED and status != EATING):
+    #    if (status != STUNNED and status != EATING):
 
 #        x_vel = 0
 #        status = EATING
@@ -204,31 +133,12 @@ func _process(delta):
         
 #            gml.instance_destroy()
     
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func collision with o_shopkeeper():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="COLLISION" with="shopkeeper">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (status != STUNNED and status != EATING):
+    #    if (status != STUNNED and status != EATING):
 
 #        x_vel = 0
 #        status = EATING
@@ -252,31 +162,12 @@ func _process(delta):
 #            gml.instance_destroy()
     
 
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func collision with o_whip():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="COLLISION" with="whip">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (status != STUNNED):
+    #    if (status != STUNNED):
 
 #        if (other.type == "Machete"):
     
@@ -295,31 +186,12 @@ func _process(delta):
 #        image_speed = 0.5
 #        gml.instance_create(position.x+randi_range(0,16), position.y-8+randi_range(0,16), "leaf")
 #        Audio.play_sound(global.snd_hit)
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func collision with o_whip_pre():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="COLLISION" with="whip_pre">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (status != STUNNED):
+    #    if (status != STUNNED):
 
 #        if (other.type == "Machete"):
     
@@ -338,44 +210,16 @@ func _process(delta):
 #        image_speed = 0.5
 #        gml.instance_create(position.x+randi_range(0,16), position.y-8+randi_range(0,16), "leaf")
 #        Audio.play_sound(global.snd_hit)
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func create():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="CREATE" id="0">
-#      <actions>
-#        <action id="604" library="1">
-#          <!--action name: Inherited-->
-#          <kind>NORMAL</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>false</can_apply_to>
-#          <action_type>FUNCTION</action_type>
-#          <function_name>action_inherited</function_name>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments/>
-#        </action>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">PlatformEngine.make_active()
+    #    # action_inherited
+#    super()
+
+#    # main_code
+#    PlatformEngine.make_active()
 #    Collision.set_collision_bounds(2, 0, sprite_width-2, sprite_height)
 #    x_vel = 2.5
 #    image_speed = 0.5
@@ -406,44 +250,16 @@ func _process(delta):
 #    facing = RIGHT
 
 #    shake_counter = 0
-#    shake_toggle = 1</argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+#    shake_toggle = 1
 
     
 
 #func step():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="STEP" id="0">
-#      <actions>
-#        <action id="604" library="1">
-#          <!--action name: Inherited-->
-#          <kind>NORMAL</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>false</can_apply_to>
-#          <action_type>FUNCTION</action_type>
-#          <function_name>action_inherited</function_name>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments/>
-#        </action>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if ((position.x > view_xview[0]-20 and position.x < view_xview[0] + view_wview[0]+4 and:
+    #    # action_inherited
+#    super()
+
+#    # main_code
+#    if ((position.x > view_xview[0]-20 and position.x < view_xview[0] + view_wview[0]+4 and:
 #            position.y > view_yview[0]-20 and position.y < view_yview[0] + view_hview[0]+4))
 
 #    PlatformEngine.move_to(x_vel,y_vel)
@@ -617,10 +433,6 @@ func _process(delta):
 #        sprite_index = s_man_trap_left
 
 
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     

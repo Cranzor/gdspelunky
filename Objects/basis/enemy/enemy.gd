@@ -1,3 +1,4 @@
+
 extends DrawnSprite
 
 
@@ -5,7 +6,7 @@ func _ready():
 	object_setup()
 
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	object_tick()
 
 
@@ -17,22 +18,7 @@ func _process(delta):
 
 
 #func collision with o_character():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="COLLISION" with="character">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING"># DY:  jumped on - caveman, man_trap replaces this script with its own
+    #    # DY:  jumped on - caveman, man_trap replaces this script with its own
 #    if (abs(other.position.x-(position.x+8)) > 12):
 
 #        # DY:  do nothing
@@ -90,31 +76,12 @@ func _process(delta):
     
 #        Audio.play_sound(global.snd_hurt)
 
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func collision with o_whip():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="COLLISION" with="whip">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">hp -= other.damage
+    #    hp -= other.damage
 #    counts_as_kill = true
 #    if (blood_left > 0):
 
@@ -122,31 +89,12 @@ func _process(delta):
 #        if (hp < 0): blood_left -= 1
 
 #    Audio.play_sound(global.snd_hit)
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func collision with o_whip_pre():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="COLLISION" with="whip_pre">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">hp -= other.damage
+    #    hp -= other.damage
 #    counts_as_kill = true
 #    if (blood_left > 0):
 
@@ -154,44 +102,16 @@ func _process(delta):
 #        if (hp < 0): blood_left -= 1
 
 #    Audio.play_sound(global.snd_hit)
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func create():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="CREATE" id="0">
-#      <actions>
-#        <action id="604" library="1">
-#          <!--action name: Inherited-->
-#          <kind>NORMAL</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>false</can_apply_to>
-#          <action_type>FUNCTION</action_type>
-#          <function_name>action_inherited</function_name>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments/>
-#        </action>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">hp = 1
+    #    # action_inherited
+#    super()
+
+#    # main_code
+#    hp = 1
 #    type = "None"
 
 #    active = true
@@ -233,31 +153,12 @@ func _process(delta):
 
 #    STUNNED = 98
 #    DEAD = 99
-#    bomb_id = 0</argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+#    bomb_id = 0
 
     
 
 #func destroy():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="DESTROY" id="0">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (bomb_id):
+    #    if (bomb_id):
 
 #        bomb_id.enemy_id = 0
 
@@ -266,80 +167,23 @@ func _process(delta):
 
 #        player1.hold_item = 0
 #        player1.pickup_item = ""
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func draw():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="DRAW" id="0">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (facing == RIGHT): draw_sprite_ext(sprite_index, image_index, position.x+16, position.y, -1, image_yscale, image_angle, image_blend, image_alpha)
-#    else: draw_sprite_ext(sprite_index, image_index, position.x, position.y, 1, image_yscale, image_angle, image_blend, image_alpha)</argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+    #    if (facing == RIGHT): draw_sprite_ext(sprite_index, image_index, position.x+16, position.y, -1, image_yscale, image_angle, image_blend, image_alpha)
+#    else: draw_sprite_ext(sprite_index, image_index, position.x, position.y, 1, image_yscale, image_angle, image_blend, image_alpha)
 
     
 
 #func outside room():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="OTHER" id="0">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">gml.instance_destroy()</argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+    #    gml.instance_destroy()
 
     
 
 #func step():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="STEP" id="0">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">/*
+    #    /*
 #    if ((position.x > view_xview[0]-8 and position.x < view_xview[0]+view_wview[0]+8 and:
 #         position.y > view_yview[0]-8 and position.y < view_yview[0]+view_hview[0]+8))
 
@@ -608,10 +452,6 @@ func _process(delta):
     
 
 
-#    else: active = false</argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+#    else: active = false
 
     

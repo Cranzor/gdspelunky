@@ -1,3 +1,4 @@
+
 extends GMObject
 
 
@@ -5,7 +6,7 @@ func _ready():
 	object_setup()
 
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	object_tick()
 
 
@@ -17,22 +18,7 @@ func _process(delta):
 
 
 #func collision with o_arrow():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="COLLISION" with="arrow">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">Audio.play_sound(global.snd_hit)
+    #    Audio.play_sound(global.snd_hit)
 #    Audio.play_sound(global.snd_coin)
 #    moon_room.baskets += difficulty
 
@@ -42,31 +28,12 @@ func _process(delta):
 
 #    if (sprite_index = s_ufo): gml.instance_create(position.x, position.y, "ufcrash")
 #    else: MiscScripts.scr_create_blood(position.x+8, position.y+8, 3)
-#    gml.instance_destroy()</argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+#    gml.instance_destroy()
 
     
 
 #func collision with o_character():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="COLLISION" with="character">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING"># DY:  jumped on - caveman, man_trap replaces this script with its own
+    #    # DY:  jumped on - caveman, man_trap replaces this script with its own
 #    if (abs(other.position.x-(position.x+8)) > 12):
 
 #        # DY:  do nothing
@@ -95,31 +62,12 @@ func _process(delta):
 #        if (global.plife > 0): global.plife -= 1
 #        MiscScripts.scr_create_blood(position.x+4, position.y+4, 1)
 #        Audio.play_sound(global.snd_hurt)
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func create():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="CREATE" id="0">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">bloodless = false
+    #    bloodless = false
 #    UP = 0
 #    DOWN = 1
 #    dir = 1
@@ -132,31 +80,12 @@ func _process(delta):
 
 #        difficulty += 2
 #        sprite_index = s_ufo
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func step():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="STEP" id="0">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (dir == UP):
+    #    if (dir == UP):
 
 #        position.y -= difficulty
 #        if (position.y <= 64):
@@ -177,10 +106,6 @@ func _process(delta):
 
 #        position.x = x_mid - abs(sin(x_diff)*32)
 #        x_diff += 0.01
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     

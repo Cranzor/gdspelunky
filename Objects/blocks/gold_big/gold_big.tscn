@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cta0fpknobkdr"]
 
-[sub_resource type="GDScript" id="GDScript_0ce65"]
+[ext_resource type="Script" path="res://objects/blocks/gold_big/gold_big.gd" id="1_sosib"]
 
 [node name="GoldBig" type="Node2D"]
+script = ExtResource("1_sosib")
+object_name = "gold_big"

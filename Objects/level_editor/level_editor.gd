@@ -1,3 +1,4 @@
+
 extends GMObject
 
 
@@ -5,7 +6,7 @@ func _ready():
 	object_setup()
 
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	object_tick()
 
 
@@ -17,22 +18,7 @@ func _process(delta):
 
 
 #func create():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="CREATE" id="0">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">global.clean_solids = true
+    #    global.clean_solids = true
 #    window_set_cursor(cr_none)
 #    drop_val = 0
 
@@ -60,9 +46,9 @@ func _process(delta):
 #    next_level = "NONE"
 #    text_edit = ""
 
-#    for (j = 0 j < 32 j += 1)
+#    for j in range(0, 32):
 
-#        for (i = 0 i < 40 i += 1)
+#        for i in range(0, 40):
     
 #            level_array[i, j] = "0"
     
@@ -88,7 +74,7 @@ func _process(delta):
 #    block_array[4] = "L" # DY:  Ladder
 #    block_array[5] = "P" # DY:  Ladder Platform
 #    block_array[6] = "B" # DY:  Push Block
-#    block_array[7] = "&amp" # DY:  Web
+#    block_array[7] = "&" # DY:  Web
 #    block_array[8] = "r" # DY:  Rock
 #    block_array[9] = "j" # DY:  Jar
 #    block_array[10] = "k" # DY:  Bones
@@ -177,10 +163,10 @@ func _process(delta):
 #        file = file_text_open_read("levels/" + string_lower(level_name)+".lvl")
 #        if (file):
     
-#            for (j = 0 j < 32 j += 1)
+#            for j in range(0, 32):
         
 #                str = file_text_read_str\(file)
-#                for (i = 0 i < 40 i += 1)
+#                for i in range(0, 40):
             
 #                    level_array[i, j] = string_char_at(str, i+1)
 #                    scr_create_tile(level_array[i, j], 16+i*16, 16+j*16)
@@ -208,10 +194,10 @@ func _process(delta):
 #                # DY:  file = file_text_open_read("levels/" + string_lower(level_name)+".lvl")
 #                if (file):
             
-#                    for (j = 0 j < 32 j += 1)
+#                    for j in range(0, 32):
                 
 #                        str = file_text_read_str\(file)
-#                        for (i = 0 i < 40 i += 1)
+#                        for i in range(0, 40):
                     
 #                            level_array[i, j] = string_char_at(str, i+1)
 #                            # DY: scr_create_tile(level_array[i, j], 16+i*16, 16+j*16)
@@ -264,9 +250,9 @@ func _process(delta):
 #                    # DY:  build level
 #                    exit_namesID = 0
 #                    sign_namesID = 0
-#                    for (j = 0 j < 32 j += 1)
+#                    for j in range(0, 32):
                 
-#                        for (i = 0 i < 40 i += 1)
+#                        for i in range(0, 40):
                     
 #                            scr_create_tile(level_array[i, j], 16+i*16, 16+j*16)
 #                            if (level_array[i, j] == "X"):
@@ -314,31 +300,12 @@ func _process(delta):
 #        gml.instance_create(position.x, position.y, "edit_button")
 #        gml.instance_create(position.x+320-32, position.y, "new_button")
 #        gml.instance_create(position.x+320-32, position.y, "test_button")
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func draw():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="DRAW" id="0">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">draw_set_font(global.my_font_small)
+    #    draw_set_font(global.my_font_small)
 #    draw_set_color(c_white)
 
 #    if (status == GET_FILE_NAME):
@@ -422,31 +389,12 @@ func _process(delta):
 #            draw_text(view_xview[0]+40, view_yview[0]+16, level_name + " BY " + author)
 #            draw_text(view_xview[0]+40, view_yview[0]+24, str\(curs_obj.position.x) + ", " + str\(curs_obj.position.y))
     
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func key 1 pressed():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="KEYPRESS" id="49">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING"># DY:  Blocks
+    #    # DY:  Blocks
 #    if (status == 1):
 
 #        drop_select = 0
@@ -456,31 +404,12 @@ func _process(delta):
 #        else: drop_max = 10
 #        drop_val = 0
 #        curs_obj.sprite_index = s_entrance
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func key 2 pressed():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="KEYPRESS" id="50">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING"># DY:  Monsters
+    #    # DY:  Monsters
 #    if (status == 1):
 
 #        drop_select = 1
@@ -490,31 +419,12 @@ func _process(delta):
 #        else: drop_max = 6
 #        drop_val = 0
 #        curs_obj.sprite_index = s_bat_left
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func key 3 pressed():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="KEYPRESS" id="51">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING"># DY:  Traps
+    #    # DY:  Traps
 #    if (status == 1):
 
 #        drop_select = 2
@@ -524,92 +434,35 @@ func _process(delta):
 #        else: drop_max = 2
 #        drop_val = 0
 #        curs_obj.sprite_index = s_spikes
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func key 4 pressed():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="KEYPRESS" id="52">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING"># DY:  Items
+    #    # DY:  Items
 #    if (status == 1):
 
 #        drop_select = 3
 #        drop_max = 30
 #        drop_val = 0
 #        curs_obj.sprite_index = s_gold_bar_tile
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func key a pressed():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="KEYPRESS" id="65">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (status == 1):
+    #    if (status == 1):
 
 #        drop_val -= 1
 #        if (drop_val < 0): drop_val = drop_max
 
 #        scr_set_cursor_tile()
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func key any key pressed():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="KEYPRESS" id="1">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (status == GET_FILE_NAME):
+    #    if (status == GET_FILE_NAME):
 
 #        if (keyboard_key == vk_enter):
     
@@ -619,10 +472,10 @@ func _process(delta):
 #                file = file_text_open_read("levels/" + string_lower(level_name)+".lvl")
 #                if (file):
             
-#                    for (j = 0 j < 32 j += 1)
+#                    for j in range(0, 32):
                 
 #                        str = file_text_read_str\(file)
-#                        for (i = 0 i < 40 i += 1)
+#                        for i in range(0, 40):
                     
 #                            level_array[i, j] = string_char_at(str, i+1)
 #                            # DY: scr_create_tile(level_array[i, j], 16+i*16, 16+j*16)
@@ -675,9 +528,9 @@ func _process(delta):
 #                    # DY:  build level
 #                    exit_namesID = 0
 #                    sign_namesID = 0
-#                    for (j = 0 j < 32 j += 1)
+#                    for j in range(0, 32):
                 
-#                        for (i = 0 i < 40 i += 1)
+#                        for i in range(0, 40):
                     
 #                            scr_create_tile(level_array[i, j], 16+i*16, 16+j*16)
 #                            if (level_array[i, j] == "X"):
@@ -930,31 +783,12 @@ func _process(delta):
 #            next_level = string_delete(next_level , string_length(next_level), 1)
     
 #        else: next_level += scr_get_char(keyboard_key)
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func key escape pressed():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="KEYPRESS" id="27">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (status == EDIT):
+    #    if (status == EDIT):
 
 #        status = EXIT
 
@@ -969,31 +803,12 @@ func _process(delta):
 
 #        global.title_start = 2
 #        get_tree().change_scene_to_file("res://r_title.tscn")
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func key n pressed():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="KEYPRESS" id="78">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (status == EXIT):
+    #    if (status == EXIT):
 
 #        global.title_start = 2
 #        if (file_exists("levels/test.tmp")): file_delete("levels/test.tmp")
@@ -1003,61 +818,23 @@ func _process(delta):
 
 #        global.test_level = ""
 #        room_restart()
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func key s pressed():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="KEYPRESS" id="83">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (status == 1):
+    #    if (status == 1):
 
 #        drop_val += 1
 #        if (drop_val > drop_max): drop_val = 0
 
 #        scr_set_cursor_tile()
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func key y pressed():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="KEYPRESS" id="89">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (status == EXIT or status == NEW):
+    #    if (status == EXIT or status == NEW):
 
 #        file_delete(level_name)
 #        exit_names[0] = ""
@@ -1065,9 +842,9 @@ func _process(delta):
 #        sign_names[0] = ""
 #        sign_namesID = 0
 #        file = file_text_open_write("levels/" + string_lower(level_name)+".lvl")
-#        for (j = 0 j < 32 j += 1)
+#        for j in range(0, 32):
     
-#            for (i = 0 i < 40 i += 1)
+#            for i in range(0, 40):
         
 #                file_text_write_str\(file, level_array[i, j])
 #                if (level_array[i, j] == "X" or level_array[i, j] == "@"):
@@ -1131,91 +908,34 @@ func _process(delta):
 
 #        global.test_level = ""
 #        room_restart()
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func mouse wheel down():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="MOUSE" id="61">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (status == 1):
+    #    if (status == 1):
 
 #        drop_val -= 1
 #        if (drop_val < 0): drop_val = drop_max
 
 #        scr_set_cursor_tile()
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func mouse wheel up():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="MOUSE" id="60">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (status == 1):
+    #    if (status == 1):
 
 #        drop_val += 1
 #        if (drop_val > drop_max): drop_val = 0
 
 #        scr_set_cursor_tile()
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func step():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="STEP" id="0">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (status == EDIT):  curs_obj.visible = true window_set_cursor(cr_default) 
+    #    if (status == EDIT):  curs_obj.visible = true window_set_cursor(cr_default) 
 #    else:  curs_obj.visible = false window_set_cursor(cr_none) 
 
 #    if (status == EDIT and mouse_x > view_xview[0] and mouse_x < view_xview[0]+320 and:
@@ -1289,10 +1009,6 @@ func _process(delta):
     
 
 
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     

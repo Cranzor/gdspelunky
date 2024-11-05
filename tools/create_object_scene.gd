@@ -7,8 +7,8 @@ var all_finished_objects = []
 var all_object_paths = []
 
 func _run():
-	get_all_uncompleted_objects()
-	get_all_completed_objects()
+	#get_all_uncompleted_objects()
+	#get_all_completed_objects()
 	#print(all_remaining_objects)
 	
 	#make_folder_with_scene(object_string)
@@ -19,12 +19,15 @@ func _run():
 	
 	#print(all_remaining_objects)
 	
-	get_all_object_paths()
-	print(all_object_paths)
+	#get_all_object_paths()
+	#print(all_object_paths)
+	
 	#for object in all_remaining_objects:
 		##make_folder_with_scene(object)
 		#edit_script(object)
+		
 	#print("done")
+	pass
 
 func make_folder_with_scene(object_name):
 	var objects_script = "res://objects.gd"
@@ -79,7 +82,7 @@ func edit_script(object_name):
 	var content = opened_file.get_as_text()
 	
 	var regex = RegEx.new()
-	regex.compile("var " + object_name + " = preload\\(.+")
+	regex.compile("var " + object_name + " = \\'.+")
 	var search = regex.search(content)
 	search = search.strings
 	
@@ -95,7 +98,7 @@ func edit_script(object_name):
 		
 	var script_name = path + object_name + ".gd"
 	var gd_file = FileAccess.open(script_name, FileAccess.WRITE)
-	gd_file.store_string(script_content)
+	gd_file.store_string(script_content)	
 	
 func get_all_uncompleted_objects():
 	var objects_script = "res://objects.gd"

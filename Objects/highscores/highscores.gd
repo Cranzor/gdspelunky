@@ -1,3 +1,4 @@
+
 extends GMObject
 
 
@@ -5,7 +6,7 @@ func _ready():
 	object_setup()
 
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	object_tick()
 
 
@@ -17,22 +18,7 @@ func _process(delta):
 
 
 #func create():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="CREATE" id="0">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">with screen  can_pause = true 
+    #    with screen  can_pause = true 
 
 #    global.curr_level = 1
 
@@ -154,31 +140,12 @@ func _process(delta):
 #    if (global.new_money): gml.instance_create(272, 48, "new")
 #    if (global.new_kills): gml.instance_create(272, 64, "new")
 #    if (global.new_saves): gml.instance_create(272, 80, "new")
-#    if (global.new_time): gml.instance_create(272, 96, "new")</argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+#    if (global.new_time): gml.instance_create(272, 96, "new")
 
     
 
 #func draw():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="DRAW" id="0">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (player1.position.y < 156):
+    #    if (player1.position.y < 156):
 
 #    draw_set_font(global.my_font_small)
 #    draw_set_color(c_yellow)
@@ -336,62 +303,24 @@ func _process(delta):
 #        n = 320 - str_len
 #        n = ceil(n / 2)
 #        draw_text(n, 216, str\("THIS WILL CLEAR EVERYTHING!"))
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func key q pressed():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="KEYPRESS" id="81">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">/*highscore_clear()
+    #    /*highscore_clear()
 #    highscore_add("MONEY", 9000000)
 #    highscore_add("TIME", 8000000)
 #    highscore_add("KILLS", 7000000)
 #    highscore_add("SAVES", 6000000)
 #    highscore_add("PLAYS", 5000000)
 #    highscore_add("WINS", 4000000)
-#    highscore_add("DEATHS", 3000000)*/</argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+#    highscore_add("DEATHS", 3000000)*/
 
     
 
 #func step():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="STEP" id="0">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING"># DY:  shake the screen
+    #    # DY:  shake the screen
 #    if (global.shake > 0):
 
 #        # DY: view_xview[0] = view_xview[0] + randi_range(0,3) - randi_range(0,3)
@@ -407,10 +336,6 @@ func _process(delta):
 
 #        view_xview[0] = 0
 #        view_yview[0] = 0
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     

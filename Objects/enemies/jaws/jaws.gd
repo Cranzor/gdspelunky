@@ -1,3 +1,4 @@
+
 extends Enemy
 
 
@@ -5,7 +6,7 @@ func _ready():
 	object_setup()
 
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	object_tick()
 
 
@@ -16,23 +17,8 @@ func _process(delta):
 #--- Object functions
 
 
-#func animation end():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="OTHER" id="7">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (sprite_index == s_jaws_turn_l):
+#func animation_end():
+    #    if (sprite_index == s_jaws_turn_l):
 
 #        # DY: dir = 180
 #        sprite_index = s_jaws_left
@@ -46,44 +32,16 @@ func _process(delta):
 #        status = PAUSE
 #        counter = 40
 #        position.x = position.x + 48
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func create():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="CREATE" id="0">
-#      <actions>
-#        <action id="604" library="1">
-#          <!--action name: Inherited-->
-#          <kind>NORMAL</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>false</can_apply_to>
-#          <action_type>FUNCTION</action_type>
-#          <function_name>action_inherited</function_name>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments/>
-#        </action>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">type = "Mega Mouth"
+    #    # action_inherited
+#    super()
+
+#    # main_code
+#    type = "Mega Mouth"
 #    image_speed = 0.5
 #    Collision.set_collision_bounds(0, 0, 48, 32)
 #    orig_x = 0
@@ -113,31 +71,12 @@ func _process(delta):
 #    counter = 0
 
 #    shake_counter = 0
-#    shake_toggle = 1</argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+#    shake_toggle = 1
 
     
 
 #func draw():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="DRAW" id="0">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">draw_sprite(sprite_index, -1, position.x, position.y)
+    #    draw_sprite(sprite_index, -1, position.x, position.y)
 #    if (sprite_index == s_jaws_left):
 
 #        if (hp < 10): draw_sprite(s_jaws_body3L, 0, position.x+16, position.y)
@@ -154,31 +93,12 @@ func _process(delta):
 #    draw_set_font(global.my_font_small)
 #    draw_set_color(c_white)
 #    draw_text(position.x, position.y-16, str\(status) + ":" + str\(counter))
-#    */</argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+#    */
 
     
 
 #func step():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="STEP" id="0">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if ((position.x > view_xview[0]-48 and position.x < view_xview[0] + view_wview[0]+48 and:
+    #    if ((position.x > view_xview[0]-48 and position.x < view_xview[0] + view_wview[0]+48 and:
 #            position.y > view_yview[0]-48 and position.y < view_yview[0] + view_hview[0]+48))
 
 
@@ -328,10 +248,6 @@ func _process(delta):
 #        Collision.set_collision_bounds(-48, 0, 16, 32)
 
 
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     

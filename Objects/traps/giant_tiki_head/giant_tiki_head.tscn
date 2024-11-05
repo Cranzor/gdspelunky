@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://fkuug1e4o4gh"]
 
-[sub_resource type="GDScript" id="GDScript_urq7k"]
+[ext_resource type="Script" path="res://objects/traps/giant_tiki_head/giant_tiki_head.gd" id="1_xgboa"]
 
 [node name="GiantTikiHead" type="Node2D"]
+script = ExtResource("1_xgboa")
+object_name = "giant_tiki_head"

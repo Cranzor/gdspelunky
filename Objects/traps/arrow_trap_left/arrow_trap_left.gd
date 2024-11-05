@@ -1,3 +1,4 @@
+
 extends Solid
 
 
@@ -5,7 +6,7 @@ func _ready():
 	object_setup()
 
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	object_tick()
 
 
@@ -17,47 +18,13 @@ func _process(delta):
 
 
 #func alarm 0():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="ALARM" id="0">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">arrow = gml.instance_create(position.x+16, position.y+4, "arrow")
-#    arrow.x_vel = 5</argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+    #    arrow = gml.instance_create(position.x+16, position.y+4, "arrow")
+#    arrow.x_vel = 5
 
     
 
 #func alarm 1():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="ALARM" id="1">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (not InLevel.is_room("r_level_editor")):
+    #    if (not InLevel.is_room("r_level_editor")):
 
 #        x_act = position.x-1
 #        while (not gml.collision_point(x_act, position.y+8, "solid", 0, 0)):
@@ -70,74 +37,27 @@ func _process(delta):
 #        obj = gml.instance_create(x_act, position.y, "arrow_trap_test")
 #        obj.image_xscale = ceil(((position.x-1)-x_act)/16)
 #        obj.trap_id = id
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func create():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="CREATE" id="0">
-#      <actions>
-#        <action id="604" library="1">
-#          <!--action name: Inherited-->
-#          <kind>NORMAL</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>false</can_apply_to>
-#          <action_type>FUNCTION</action_type>
-#          <function_name>action_inherited</function_name>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments/>
-#        </action>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">type = "Arrow Trap"
+    #    # action_inherited
+#    super()
+
+#    # main_code
+#    type = "Arrow Trap"
 #    facing = 0
 #    fired = 0
 #    invincible = false
 #    x_act = 0 # DY:  activate distance
 #    # DY: alarm_0(50)
-#    alarm_1(1)</argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+#    alarm_1(1)
 
     
 
 #func destroy():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="DESTROY" id="0">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (not clean_death and not global.clean_solids):
+    #    if (not clean_death and not global.clean_solids):
 
 #        rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), "rubble")
 #        rubble.sprite_index = s_rubble_tan
@@ -146,31 +66,12 @@ func _process(delta):
 #        rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), "rubbleSmall")
 #        rubble.sprite_index = s_rubble_tanSmall
 #        if (fired == 0): gml.instance_create(position.x+8, position.y+8, "arrow")
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func step():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="STEP" id="0">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">firing = false
+    #    firing = false
 #    if (fired == 0):
 
 #        /*
@@ -213,10 +114,6 @@ func _process(delta):
 #            Audio.play_sound(global.snd_arrow_trap)
     
 #        */
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     

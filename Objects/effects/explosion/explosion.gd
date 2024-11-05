@@ -1,3 +1,4 @@
+
 extends DrawnSprite
 
 
@@ -5,7 +6,7 @@ func _ready():
 	object_setup()
 
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	object_tick()
 
 
@@ -16,105 +17,35 @@ func _process(delta):
 #--- Object functions
 
 
-#func animation end():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="OTHER" id="7">
-#      <actions>
-#        <action id="203" library="1">
-#          <!--action name: Kill_Object-->
-#          <kind>NORMAL</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>FUNCTION</action_type>
-#          <function_name>action_kill_object</function_name>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments/>
-#        </action>
-#      </actions>
-#    </event>
-
+#func animation_end():
+    #    # action_kill_object
+#    # Need to implement this action
     
 
 #func collision with o_barrier_emitter():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="COLLISION" with="barrier_emitter">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">with other  gml.instance_destroy() </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+    #    with other  gml.instance_destroy() 
 
     
 
 #func collision with o_boulder():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="COLLISION" with="boulder">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">for (i = 0 i < 3 i += 1)
+    #    for i in range(0, 3):
 
 #        rubble = gml.instance_create(other.position.x+randi_range(0,15)-randi_range(0,15), other.position.y+randi_range(0,15)-randi_range(0,15), "rubble")
 #        rubble.sprite_index = s_rubble_tan
 #        if (randi_range(1,3) == 1): gml.instance_create(other.position.x+randi_range(0,15)-randi_range(0,15), other.position.y+randi_range(0,15)-randi_range(0,15), "rock")
 
-#    for (i = 0 i < 6 i += 1)
+#    for i in range(0, 6):
 
 #        rubble = gml.instance_create(other.position.x+randi_range(0,15)-randi_range(0,15), other.position.y+randi_range(0,15)-randi_range(0,15), "rubbleSmall")
 #        rubble.sprite_index = s_rubble_tanSmall
 
 
-#    with other  gml.instance_destroy() </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+#    with other  gml.instance_destroy() 
 
     
 
 #func collision with o_damsel():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="COLLISION" with="damsel">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (not other.invincible):
+    #    if (not other.invincible):
 
 #        other.hp -= 100
 #        if (position.x < other.position.x): other.x_vel = randi_range(4,6)
@@ -122,31 +53,12 @@ func _process(delta):
 #        other.y_vel = -6
 #        other.burning = 50
 #        other.status = 2
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func collision with o_enemy():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="COLLISION" with="enemy">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (other.type == "Magma Man"):
+    #    if (other.type == "Magma Man"):
 
 #        with other
     
@@ -164,31 +76,12 @@ func _process(delta):
 #        else: other.x_vel = -randi_range(4,6)
 #        other.y_vel = -6
 #        other.burning = 50
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func collision with o_item():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="COLLISION" with="item">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (other.type == "Arrow" or other.type == "Fish Bone" or:
+    #    if (other.type == "Arrow" or other.type == "Fish Bone" or:
 #        other.type == "Jar" or other.type == "Skull")
 
 #        with other  gml.instance_destroy() 
@@ -233,31 +126,12 @@ func _process(delta):
 #            pickup_item_type = ""
     
 #        other.held = false
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func collision with o_solid():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="COLLISION" with="solid">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (InLevel.is_level("r_tutorial") or (position.x > view_xview[0]-16 and position.x < view_xview[0] + view_wview[0]+16 and:
+    #    if (InLevel.is_level("r_tutorial") or (position.x > view_xview[0]-16 and position.x < view_xview[0] + view_wview[0]+16 and:
 #         position.y > view_yview[0]-16 and position.y < view_yview[0] + view_hview[0]+16))
 
 #        with other
@@ -287,88 +161,24 @@ func _process(delta):
     
 
 #    # DY: global.check_water = true
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func collision with o_web():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="COLLISION" with="web">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">with other  gml.instance_destroy() </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+    #    with other  gml.instance_destroy() 
 
     
 
 #func create():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="CREATE" id="0">
-#      <actions>
-#        <action id="604" library="1">
-#          <!--action name: Inherited-->
-#          <kind>NORMAL</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>false</can_apply_to>
-#          <action_type>FUNCTION</action_type>
-#          <function_name>action_inherited</function_name>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments/>
-#        </action>
-#        <action id="611" library="1">
-#          <!--action name: Variable-->
-#          <kind>VARIABLE</kind>
-#          <allow_relative>true</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">image_speed</argument>
-#            <argument kind="EXPRESSION">0.8</argument>
-#          </arguments>
-#        </action>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">Audio.play_sound(global.snd_explosion)
-#    InLevel.scr_shake(5)</argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+    #    # action_inherited
+#    super()
+
+#    # main_code
+#    image_speed
+#    0.8
+#    # main_code
+#    Audio.play_sound(global.snd_explosion)
+#    InLevel.scr_shake(5)
 
     

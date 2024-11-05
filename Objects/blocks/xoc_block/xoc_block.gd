@@ -1,3 +1,4 @@
+
 extends Solid
 
 
@@ -5,7 +6,7 @@ func _ready():
 	object_setup()
 
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	object_tick()
 
 
@@ -17,60 +18,17 @@ func _process(delta):
 
 
 #func create():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="CREATE" id="0">
-#      <actions>
-#        <action id="604" library="1">
-#          <!--action name: Inherited-->
-#          <kind>NORMAL</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>false</can_apply_to>
-#          <action_type>FUNCTION</action_type>
-#          <function_name>action_inherited</function_name>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments/>
-#        </action>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">clean_death = false
-#    treasure = ""</argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+    #    # action_inherited
+#    super()
+
+#    # main_code
+#    clean_death = false
+#    treasure = ""
 
     
 
 #func destroy():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="DESTROY" id="0">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (not clean_death):
+    #    if (not clean_death):
 
 #        if (not global.city_of_gold):
     
@@ -83,7 +41,7 @@ func _process(delta):
     
 #        else:
     
-#            for (i = 0 i < 3 i += 1)
+#            for i in range(0, 3):
         
 #                gold = gml.instance_create(position.x+8+randi_range(0,4)-randi_range(0,4), position.y+8+randi_range(0,4)-randi_range(0,4), "gold_chunk")
 #                gold.x_vel = randi_range(0,3) - randi_range(0,3)
@@ -101,10 +59,6 @@ func _process(delta):
 
 
 #    tile = tile_layer_find(99, position.x, position.y)
-#    if (tile): tile_delete(tile)</argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+#    if (tile): tile_delete(tile)
 
     

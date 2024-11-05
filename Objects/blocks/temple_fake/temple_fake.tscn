@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://b3ird0fcn0nef"]
 
-[sub_resource type="GDScript" id="GDScript_piiok"]
+[ext_resource type="Script" path="res://objects/blocks/temple_fake/temple_fake.gd" id="1_xu80y"]
 
 [node name="TempleFake" type="Node2D"]
+script = ExtResource("1_xu80y")
+object_name = "temple_fake"

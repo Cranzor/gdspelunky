@@ -1,3 +1,4 @@
+
 extends MovingSolid
 
 
@@ -5,7 +6,7 @@ func _ready():
 	object_setup()
 
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	object_tick()
 
 
@@ -17,23 +18,8 @@ func _process(delta):
 
 
 #func alarm 1():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="ALARM" id="1">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">sprite_index = s_olmec_start2
-#    for (i = 0 i < 6 i += 1)
+    #    sprite_index = s_olmec_start2
+#    for i in range(0, 6):
 
 #        debris = gml.instance_create(position.x+32+randi_range(0,32), position.y+randi_range(0,32), "olmec_debris")
 #        debris.x_vel = randi_range(1,4)
@@ -58,123 +44,47 @@ func _process(delta):
 #        image_index = 0
 #        image_speed = 0
 
-#    alarm_2(50)</argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+#    alarm_2(50)
 
     
 
 #func alarm 2():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="ALARM" id="2">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">sprite_index = s_olmec_start3
+    #    sprite_index = s_olmec_start3
 #    alarm_3(50)
-#    for (i = 0 i < 6 i += 1)
+#    for i in range(0, 6):
 
 #        debris = gml.instance_create(position.x+randi_range(0,32), position.y+randi_range(0,32), "olmec_debris")
 #        debris.x_vel = -randi_range(1,4)
 #        debris.y_vel = -randi_range(1,3)
 
-#    Audio.play_sound(global.snd_thump)</argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+#    Audio.play_sound(global.snd_thump)
 
     
 
 #func alarm 3():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="ALARM" id="3">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">sprite_index = s_olmec
-#    for (i = 0 i < 12 i += 1)
+    #    sprite_index = s_olmec
+#    for i in range(0, 12):
 
 #        debris = gml.instance_create(position.x+randi_range(0,64), position.y+32+randi_range(0,32), "olmec_debris")
 #        debris.x_vel = randi_range(1,4)-randi_range(1,4)
 #        debris.y_vel = -randi_range(1,3)
 
 #    Audio.play_sound(global.snd_thump)
-#    alarm_4(50)</argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+#    alarm_4(50)
 
     
 
 #func alarm 4():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="ALARM" id="4">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">toggle = true
+    #    toggle = true
 #    status = BOUNCE
 #    Audio.play_sound(global.snd_big_jump)
 #    Audio.play_sound(global.snd_alert)
-#    alarm_6(20)</argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+#    alarm_6(20)
 
     
 
 #func alarm 5():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="ALARM" id="5">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">view_hborder[0] = 128
+    #    view_hborder[0] = 128
 #    view_vborder[0] = 64
 #    view_xview[0] = 0
 #    view_object[0] = player1
@@ -182,61 +92,23 @@ func _process(delta):
 #    status = 0
 #    counter = 100
 #    play_music(global.mus_boss, true)
-#    # DY: Audio.play_sound(global.snd_boss)</argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+#    # DY: Audio.play_sound(global.snd_boss)
 
     
 
 #func alarm 6():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="ALARM" id="6">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">with caveman_worship
+    #    with caveman_worship
 
 #        obj = gml.instance_create(position.x, position.y, "caveman")
 #        obj.facing = 1
 #        obj.status = 2
 #        gml.instance_destroy()
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func create():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="CREATE" id="0">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">shop_wall = false
+    #    shop_wall = false
 #    PlatformEngine.make_active()
 #    Collision.set_collision_bounds(2, 0, 62, 64)
 #    x_vel = 0
@@ -274,44 +146,16 @@ func _process(delta):
 #    view_vborder[0] = 0
 #    view_yview[0] = 400
 #    view_object[0] = olmec
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func step():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="STEP" id="0">
-#      <actions>
-#        <action id="604" library="1">
-#          <!--action name: Inherited-->
-#          <kind>NORMAL</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>false</can_apply_to>
-#          <action_type>FUNCTION</action_type>
-#          <function_name>action_inherited</function_name>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments/>
-#        </action>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (carry_player or gml.collision_rectangle(position.x-1, position.y, position.x+66,  position.y+62, "player1", 0, 0)):
+    #    # action_inherited
+#    super()
+
+#    # main_code
+#    if (carry_player or gml.collision_rectangle(position.x-1, position.y, position.x+66,  position.y+62, "player1", 0, 0)):
 
 #        player1.position.x += x_vel
 #        player1.position.y += y_vel
@@ -504,10 +348,6 @@ func _process(delta):
 
 #    if (Collision.is_collision_solid()):
 #      position.y -= 2
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     

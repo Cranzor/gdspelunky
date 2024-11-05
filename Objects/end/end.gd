@@ -1,3 +1,4 @@
+
 extends GMObject
 
 
@@ -5,7 +6,7 @@ func _ready():
 	object_setup()
 
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	object_tick()
 
 
@@ -17,22 +18,7 @@ func _process(delta):
 
 
 #func create():
-	#    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="CREATE" id="0">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">shake_toggle = false
+    #    shake_toggle = false
 #    p_dummy.status = 2
 
 #    timer = 0
@@ -50,67 +36,29 @@ func _process(delta):
 #        obj.link_val = 4
 
 
-#    Audio.stop_all_music()</argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+#    Audio.stop_all_music()
 
-	
+    
 
 #func room end():
-	#    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="OTHER" id="5">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">global.shake = 0</argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+    #    global.shake = 0
 
-	
+    
 
 #func step():
-	#    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="STEP" id="0">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">timer += 1
+    #    timer += 1
 #    if (keyboard_check_pressed(vk_enter) or:
 #        keyboard_check_pressed(vk_escape) or
 #        ControlScripts.check_attack_pressed() or
 #        ControlScripts.check_start_pressed())
 
 #        if (timer > 50):
-	
+    
 #            if (gamepad.attack_pressed): gamepad.attack_pressed = false
 #            if (gamepad.start_pressed): gamepad.start_pressed = false
 #            global.game_start = false
 #            get_tree().change_scene_to_file("res://r_end3.tscn")
-	
+    
 
 
 #    # DY:  shake the screen
@@ -130,10 +78,6 @@ func _process(delta):
 #        view_yview[0] = 0
 
 
-#    if (view_xview[0] < room_width - 320): view_xview[0] += 1</argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+#    if (view_xview[0] < room_width - 320): view_xview[0] += 1
 
-	
+    

@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://dws312c3h0bdm"]
 
-[sub_resource type="GDScript" id="GDScript_dmm1q"]
+[ext_resource type="Script" path="res://objects/blocks/gold/gold.gd" id="1_nlbxv"]
 
 [node name="Gold" type="Node2D"]
+script = ExtResource("1_nlbxv")
+object_name = "gold"

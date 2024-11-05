@@ -1,3 +1,4 @@
+
 extends Item
 
 
@@ -5,7 +6,7 @@ func _ready():
 	object_setup()
 
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	object_tick()
 
 
@@ -17,48 +18,14 @@ func _process(delta):
 
 
 #func collision with o_bullet():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="COLLISION" with="bullet">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">gml.instance_destroy()</argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+    #    gml.instance_destroy()
 
     
 
 #func collision with o_whip():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="COLLISION" with="whip">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">Audio.play_sound(global.snd_break)
+    #    Audio.play_sound(global.snd_break)
 #    gml.instance_create(position.x, position.y, "smoke_puff")
-#    for (i = 0 i < 3 i += 1)
+#    for i in range(0, 3):
 
 #        piece = gml.instance_create(position.x-2, position.y-2, "rubble_small")
 #        piece.x_vel = randi_range(1,3)-randi_range(1,3)
@@ -76,88 +43,32 @@ func _process(delta):
 #        player1.hold_item = 0
 #        player1.pickup_item_type = ""
 
-#    gml.instance_destroy()</argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+#    gml.instance_destroy()
 
     
 
 #func create():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="CREATE" id="0">
-#      <actions>
-#        <action id="604" library="1">
-#          <!--action name: Inherited-->
-#          <kind>NORMAL</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>false</can_apply_to>
-#          <action_type>FUNCTION</action_type>
-#          <function_name>action_inherited</function_name>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments/>
-#        </action>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">type = "Jar"
+    #    # action_inherited
+#    super()
+
+#    # main_code
+#    type = "Jar"
 #    PlatformEngine.make_active()
 #    Collision.set_collision_bounds(-4, -6, 4, 6)
-#    break_pieces = true</argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+#    break_pieces = true
 
     
 
 #func destroy():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="DESTROY" id="0">
-#      <actions>
-#        <action id="604" library="1">
-#          <!--action name: Inherited-->
-#          <kind>NORMAL</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>false</can_apply_to>
-#          <action_type>FUNCTION</action_type>
-#          <function_name>action_inherited</function_name>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments/>
-#        </action>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (break_pieces):
+    #    # action_inherited
+#    super()
+
+#    # main_code
+#    if (break_pieces):
 
 #        Audio.play_sound(global.snd_break)
 #        gml.instance_create(position.x, position.y, "smoke_puff")
-#        for (i = 0 i < 3 i += 1)
+#        for i in range(0, 3):
     
 #            piece = gml.instance_create(position.x-2, position.y-2, "rubble_small")
 #            if (col_left): piece.x_vel = randi_range(1,3)
@@ -185,46 +96,15 @@ func _process(delta):
 #            player1.hold_item = 0
 #            player1.pickup_item = ""
     
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func step():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="STEP" id="0">
-#      <actions>
-#        <action id="605" library="1">
-#          <!--action name: Comment-->
-#          <kind>NORMAL</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>false</can_apply_to>
-#          <action_type>NONE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">overrides parent step</argument>
-#          </arguments>
-#        </action>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">destroy = false
+    #    # main_code
+#    overrides parent step
+#    # main_code
+#    destroy = false
 #    col_top = false
 #    col_left = false
 #    col_right = false
@@ -316,7 +196,7 @@ func _process(delta):
 #            if (type == "Bomb"):
         
 #                gml.instance_create(position.x, position.y, "explosion")
-#                for (i = 0 i < 3 i += 1)
+#                for i in range(0, 3):
             
 #                    gml.instance_create(position.x, position.y, "flame")
             
@@ -341,7 +221,7 @@ func _process(delta):
                 
 #                        if (type == "Caveman" or type == "Yeti" or type == "Hawkman" or type == "Shopkeeper"):
                     
-#                            for (i = 0 i < 1 i += 1)
+#                            for i in range(0, 1):
                         
 #                                gml.instance_create(position.x, position.y, "blood")
                         
@@ -376,7 +256,7 @@ func _process(delta):
 #        enemy = instance_nearest(position.x, position.y, damsel)
 #        if (not enemy.invincible and (abs(x_vel) > 1 or abs(y_vel) > 1)):
     
-#            for (i = 0 i < 1 i += 1)
+#            for i in range(0, 1):
         
 #                gml.instance_create(position.x, position.y, "blood")
         
@@ -403,10 +283,6 @@ func _process(delta):
 #            player1.pickup_item_type = ""
     
 #        gml.instance_destroy()
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     

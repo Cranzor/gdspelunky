@@ -2,9 +2,8 @@
 
 [ext_resource type="Script" path="res://objects/other/intro/desert_top/desert_top.gd" id="1_whi8f"]
 
-[node name="DesertTop" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
+[node name="DesertTop" type="Node2D"]
 z_index = 10
 script = ExtResource("1_whi8f")
 sprite_index_name = "desert_top"
-animated_sprite_node = NodePath("")
 object_name = "desert_top"

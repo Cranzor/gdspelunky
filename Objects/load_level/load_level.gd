@@ -1,3 +1,4 @@
+
 extends GMObject
 
 
@@ -5,7 +6,7 @@ func _ready():
 	object_setup()
 
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	object_tick()
 
 
@@ -17,22 +18,7 @@ func _process(delta):
 
 
 #func create():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="CREATE" id="0">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">global.clean_solids = false
+    #    global.clean_solids = false
 #    global.message = ""
 #    global.message2 = ""
 #    window_set_cursor(cr_default)
@@ -65,9 +51,9 @@ func _process(delta):
 #    music = "CAVE"
 #    next_level = ""
 
-#    for (j = 0 j < 32 j += 1)
+#    for j in range(0, 32):
 
-#        for (i = 0 i < 40 i += 1)
+#        for i in range(0, 40):
     
 #            level_array[i, j] = "0"
     
@@ -122,31 +108,12 @@ func _process(delta):
 #        scr_load_level(-1)
 
 #    else: screen.enabled = false
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func draw():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="DRAW" id="0">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">draw_set_font(global.my_font_small)
+    #    draw_set_font(global.my_font_small)
 #    draw_set_color(c_white)
 
 #    if (status == GET_FILE_NAME):
@@ -177,31 +144,12 @@ func _process(delta):
 
 #        draw_set_color(c_black)
 #        draw_rectangle(0, 0, 320, 240, false)
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func key any key pressed():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="KEYPRESS" id="1">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (status == GET_FILE_NAME):
+    #    if (status == GET_FILE_NAME):
 
 #        if (keyboard_key == vk_escape):
     
@@ -225,31 +173,12 @@ func _process(delta):
 #            level_name += scr_get_char(keyboard_key)
 #            with menu_sel  sprite_index = s_menu_sel_off 
     
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func step():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="STEP" id="0">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (msg_timer > 0): msg_timer -= 1
+    #    if (msg_timer > 0): msg_timer -= 1
 #    else: msg = "PRESS ESCAPE TO RETURN TO TITLE."
 
 #    /*
@@ -264,10 +193,6 @@ func _process(delta):
         
     
 
-#    */</argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+#    */
 
     

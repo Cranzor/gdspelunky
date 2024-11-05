@@ -1,3 +1,4 @@
+
 extends Enemy
 
 
@@ -5,7 +6,7 @@ func _ready():
 	object_setup()
 
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	object_tick()
 
 
@@ -16,23 +17,8 @@ func _process(delta):
 #--- Object functions
 
 
-#func animation end():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="OTHER" id="7">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (sprite_index == s_alien_boss_die):
+#func animation_end():
+    #    if (sprite_index == s_alien_boss_die):
 
 #        sprite_index = s_alien_boss_dead
 #        with barrier_emitter  gml.instance_destroy() 
@@ -40,31 +26,12 @@ func _process(delta):
 #    if (sprite_index == s_alien_boss_hurt):
 
 #        sprite_index = s_alien_boss
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func collision with o_character():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="COLLISION" with="character">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (not other.dead and (other.state == 15 or other.state == 16) and other.position.y < position.y+8 and not other.swimming):
+    #    if (not other.dead and (other.state == 15 or other.state == 16) and other.position.y < position.y+8 and not other.swimming):
 
 #        other.y_vel = -6 - 0.2 * other.y_vel
 #        if (global.has_spike_shoes):  hp -= (3 * (floor(other.fall_timer/16)+1)) if (not bloodless) gml.instance_create(other.position.x, other.position.y+8, "blood") 
@@ -91,44 +58,16 @@ func _process(delta):
 #            if (global.plife <= 0 and InLevel.is_real_level()): global.enemy_deaths[17] += 1
     
 #        Audio.play_sound(global.snd_hurt)
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
 
 #func create():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="CREATE" id="0">
-#      <actions>
-#        <action id="604" library="1">
-#          <!--action name: Inherited-->
-#          <kind>NORMAL</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>false</can_apply_to>
-#          <action_type>FUNCTION</action_type>
-#          <function_name>action_inherited</function_name>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments/>
-#        </action>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">PlatformEngine.make_active()
+    #    # action_inherited
+#    super()
+
+#    # main_code
+#    PlatformEngine.make_active()
 #    Collision.set_collision_bounds(0, 0, 32, 32)
 #    x_vel = 2.5
 #    image_speed = 0.25
@@ -154,31 +93,12 @@ func _process(delta):
 #    shake_counter = 0
 #    shake_toggle = 1
 
-#    psychic_recover = 100</argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+#    psychic_recover = 100
 
     
 
 #func step():
-    #    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-#    <event category="STEP" id="0">
-#      <actions>
-#        <action id="603" library="1">
-#          <!--action name: Code-->
-#          <kind>CODE</kind>
-#          <allow_relative>false</allow_relative>
-#          <question>false</question>
-#          <can_apply_to>true</can_apply_to>
-#          <action_type>CODE</action_type>
-#          <function_name/>
-#          <relative>false</relative>
-#          <not>false</not>
-#          <applies_to>.self</applies_to>
-#          <arguments>
-#            <argument kind="STRING">if (position.x > view_xview[0]-36 and position.x < view_xview[0] + view_wview[0] and:
+    #    if (position.x > view_xview[0]-36 and position.x < view_xview[0] + view_wview[0] and:
 #            position.y > view_yview[0]-36 and position.y < view_yview[0] + view_hview[0])
 
 #    if (gml.collision_point(position.x+8, position.y+8, "solid", 0, 0)):
@@ -245,7 +165,7 @@ func _process(delta):
 #    if (psychic_recover > 0): psychic_recover -= 1
 #    elif (dist < 96 and status != DEAD and not player1.dead and not player1.stunned and player1.invincible == 0):
 
-#        for (i = 0 i < 6 i += 1)
+#        for i in range(0, 6):
     
 #            gml.instance_create(position.x+16+randi_range(0,32)-randi_range(0,32), position.y+16+randi_range(0,32)-randi_range(0,32), "psychic_create")
     
@@ -264,10 +184,6 @@ func _process(delta):
 
 #        sprite_index = s_alien_boss
 
-#    </argument>
-#          </arguments>
-#        </action>
-#      </actions>
-#    </event>
+
 
     
