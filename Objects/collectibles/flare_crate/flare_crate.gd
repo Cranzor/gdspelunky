@@ -28,9 +28,9 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "flare crate"
-#    PlatformEngine.make_active()
-#    Collision.set_collision_bounds(-6, 0, 6, 8)
+#    type = "Flare Crate"
+#    PlatformEngine.make_active(self)
+#    Collision.set_collision_bounds(self, -6, 0, 6, 8)
 
 #    image_speed = 0.2
 #    alarm_0(1)

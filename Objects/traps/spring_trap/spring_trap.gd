@@ -18,20 +18,20 @@ func _process(delta):
 
 
 #func animation_end():
-    #    if (status == sprung):
+    #    if (status == SPRUNG):
 
-#        status = idle
+#        status = IDLE
 #        sprite_index = "spring_trap"
 
 
     
 
 #func collision with o_enemy():
-    #    if (status == idle and abs(other.position.x-position.x) < 6 and counter = 0 and not other.flying):
+    #    if (status == IDLE and abs(other.position.x-position.x) < 6 and counter = 0 and not other.flying):
 
 #        sprite_index = "spring_trap_sprung"
 #        Audio.play_sound(global.snd_boing)
-#        status = sprung
+#        status = SPRUNG
 #        with other
     
 #            position.y -= 16
@@ -45,17 +45,17 @@ func _process(delta):
     
 
 #func collision with o_item():
-    #    if (status == idle and abs(other.position.x-(position.x+8)) < 6 and not other.held and counter = 0 and:
+    #    if (status == IDLE and abs(other.position.x-(position.x+8)) < 6 and not other.held and counter = 0 and:
 #        other.active)
 
 #        sprite_index = "spring_trap_sprung"
 #        Audio.play_sound(global.snd_boing)
-#        status = sprung
+#        status = SPRUNG
 #        with other
     
 #            position.y -= 24
 #            y_vel = -8
-#            if (type == "damsel"):
+#            if (type == "Damsel"):
         
 #                if (facing == 18): x_vel -= 1
 #                else: x_vel += 1
@@ -68,13 +68,13 @@ func _process(delta):
     
 
 #func collision with o_player1():
-    #    if (status == idle and abs(other.position.x-(position.x+8)) < 6 and counter = 0):
+    #    if (status == IDLE and abs(other.position.x-(position.x+8)) < 6 and counter = 0):
 
 #        if (other.state <= 13 and other.sprite_index != "p_exit and other.sprite_index != s_damsel_exit):"
     
 #            sprite_index = "spring_trap_sprung"
 #            Audio.play_sound(global.snd_boing)
-#            status = sprung
+#            status = SPRUNG
 #            with other
         
 #                position.y -= 16
@@ -87,9 +87,9 @@ func _process(delta):
     
 
 #func create():
-    #    idle = 0
-#    sprung = 1
-#    status = idle
+    #    IDLE = 0
+#    SPRUNG = 1
+#    status = IDLE
 #    counter = 0
 
     

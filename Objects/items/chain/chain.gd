@@ -18,7 +18,7 @@ func _process(delta):
 
 
 #func create():
-    #    type = "chain"
+    #    type = "Chain"
 #    link_val = 2
 
     

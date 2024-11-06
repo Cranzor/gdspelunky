@@ -22,22 +22,22 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    PlatformEngine.make_active()
-#    Collision.set_collision_bounds(4, 0, 12, 12)
+#    PlatformEngine.make_active(self)
+#    Collision.set_collision_bounds(self, 4, 0, 12, 12)
 #    x_vel = 0
 #    y_vel = 0
 #    y_delta = -0.4
 #    image_speed = 0.4
 
-#    # dy:  stats
+#    # DY:  stats
 #    hp = 1
 #    invincible = 0
 
-#    # dy:  status
-#    idle = 0
-#    bounce = 1
-#    recover = 2
-#    walk = 3
+#    # DY:  status
+#    IDLE = 0
+#    BOUNCE = 1
+#    RECOVER = 2
+#    WALK = 3
 
 #    status = 0
 #    bounce_counter = 0

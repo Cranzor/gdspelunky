@@ -42,9 +42,9 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "arrow"
-#    PlatformEngine.make_active()
-#    Collision.set_collision_bounds(-4, -4, 4, 4)
+#    type = "Arrow"
+#    PlatformEngine.make_active(self)
+#    Collision.set_collision_bounds(self, -4, -4, 4, 4)
 #    my_grav = 0.2
 
     
@@ -80,7 +80,7 @@ func _process(delta):
 
 #    image_angle = direction
 
-#    # dy:  ensure the arrow does not shoot through the target in the moon challenge
+#    # DY:  ensure the arrow does not shoot through the target in the Moon challenge
 #    if (InLevel.i"room("r_moon")):"
 
 #        if (gml.instance_exists("target")):

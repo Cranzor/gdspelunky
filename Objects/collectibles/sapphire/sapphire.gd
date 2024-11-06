@@ -27,9 +27,9 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "sapphire"
-#    PlatformEngine.make_active()
-#    Collision.set_collision_bounds(-2, -2, 2, 2)
+#    type = "Sapphire"
+#    PlatformEngine.make_active(self)
+#    Collision.set_collision_bounds(self, -2, -2, 2, 2)
 #    y_off = 2
 #    alarm_0(20)
 #    value = 400

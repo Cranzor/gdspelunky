@@ -46,7 +46,7 @@ func _process(delta):
     
 
 #func collision with o_item():
-    #    if (other.type == "bomb"):
+    #    if (other.type == "Bomb"):
 
 #        with other
     

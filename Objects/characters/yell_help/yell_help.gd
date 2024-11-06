@@ -19,7 +19,7 @@ func _process(delta):
 
 #func alarm 0():
     #    # action_kill_object
-#    # need to implement this action
+#    # Need to implement this action
     
 
 #func create():

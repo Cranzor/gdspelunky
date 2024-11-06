@@ -38,7 +38,7 @@ func _process(delta):
 
 #    if (draw_loot < 0):
 
-#        # dy:  nothing
+#        # DY:  nothing
 
 #    elif (global.gold > 0):
 
@@ -296,7 +296,7 @@ func _process(delta):
 
 #    if (draw_loot < 0):
 
-#        # dy:  nothing
+#        # DY:  nothing
 
 #    elif (draw_loot == 0):
 #        draw_po"x += 4"
@@ -305,7 +305,7 @@ func _process(delta):
 
 #    if (draw_loot == 2):
 
-#        # dy:  nothing
+#        # DY:  nothing
 
 #    elif (hurryup): alarm_0(1)
 #    else: alarm_0(3)
@@ -401,51 +401,51 @@ func _process(delta):
 #        person = instance_nearest(176, 176, tunnel_man)
 #        if (person.talk == 1):
     
-#            str_len = string_length("hey there! I'M the tunnel man!")*8
+#            str_len = string_length("HEY THERE! I'M THE TUNNEL MAN!")*8
 #            n = 320 - str_len
 #            n = ceil(n / 2)
-#            draw_text(n, 208, "hey there! I'M the tunnel man!")
-#            str_len = string_length("I dig shortcuts.")*8
+#            draw_text(n, 208, "HEY THERE! I'M THE TUNNEL MAN!")
+#            str_len = string_length("I DIG SHORTCUTS.")*8
 #            n = 320 - str_len
 #            n = ceil(n / 2)
-#            draw_text(n, 216, "I dig shortcuts.")
+#            draw_text(n, 216, "I DIG SHORTCUTS.")
     
 #        elif (person.talk == 2):
     
-#            str_len = string_length("can you lend me A little money?")*8
+#            str_len = string_length("CAN YOU LEND ME A LITTLE MONEY?")*8
 #            n = 320 - str_len
 #            n = ceil(n / 2)
-#            draw_text(n, 208, "can you lend me A little money?")
-#            if (InLevel.i"room("r_transition1x") or InLevel.is_room("r_transition3x")): str_len = string_length("I need $" + str\(global.tunnel1) + " for A new shortcut.")*8"
-#            else: str_len = string_length("I need $" + str\(global.tunnel2) + " for A new shortcut.")*8
+#            draw_text(n, 208, "CAN YOU LEND ME A LITTLE MONEY?")
+#            if (InLevel.i"room("r_transition1x") or InLevel.is_room("r_transition3x")): str_len = string_length("I NEED $" + str(global.tunnel1) + " FOR A NEW SHORTCUT.")*8"
+#            else: str_len = string_length("I NEED $" + str(global.tunnel2) + " FOR A NEW SHORTCUT.")*8
 #            n = 320 - str_len
 #            n = ceil(n / 2)
-#            if (InLevel.i"room("r_transition1x") or InLevel.is_room("r_transition3x")): draw_text(n, 216, "I need $" + str\(global.tunnel1) + " for A new shortcut.")"
-#            else: draw_text(n, 216, "I need $" + str\(global.tunnel2) + " for A new shortcut.")
+#            if (InLevel.i"room("r_transition1x") or InLevel.is_room("r_transition3x")): draw_text(n, 216, "I NEED $" + str(global.tunnel1) + " FOR A NEW SHORTCUT.")"
+#            else: draw_text(n, 216, "I NEED $" + str(global.tunnel2) + " FOR A NEW SHORTCUT.")
 #            draw_set_color(c_yellow)
-#            draw_text(n, 224, "donate: " + str\(tunnel_man.donate))
+#            draw_text(n, 224, "DONATE: " + str(tunnel_man.donate))
 #            draw_set_color(c_white)
     
 #        elif (person.talk == 3):
     
-#            str_len = string_length("thanks! you won'T regret it!")*8
+#            str_len = string_length("THANKS! YOU WON'T REGRET IT!")*8
 #            n = 320 - str_len
 #            n = ceil(n / 2)
-#            draw_text(n, 216, "thanks! you won'T regret it!")
+#            draw_text(n, 216, "THANKS! YOU WON'T REGRET IT!")
     
 #        elif (person.talk == 4):
     
-#            str_len = string_length("I'll never get this shortcut built!")*8
+#            str_len = string_length("I'LL NEVER GET THIS SHORTCUT BUILT!")*8
 #            n = 320 - str_len
 #            n = ceil(n / 2)
-#            draw_text(n, 216, "I'll never get this shortcut built!")
+#            draw_text(n, 216, "I'LL NEVER GET THIS SHORTCUT BUILT!")
     
 #        elif (person.talk == 5):
     
-#            str_len = string_length("one shortcut, coming up!")*8
+#            str_len = string_length("ONE SHORTCUT, COMING UP!")*8
 #            n = 320 - str_len
 #            n = ceil(n / 2)
-#            draw_text(n, 216, "one shortcut, coming up!")
+#            draw_text(n, 216, "ONE SHORTCUT, COMING UP!")
     
 
 #    elif (gml.instance_exists("damsel_kiss")):
@@ -453,33 +453,33 @@ func _process(delta):
 #        person = instance_nearest(176, 176, damsel_kiss)
 #        if (person.kissed):
     
-#            str_len = string_length("my hero!")*8
+#            str_len = string_length("MY HERO!")*8
 #            n = 320 - str_len
 #            n = ceil(n / 2)
-#            draw_text(n, 216, "my hero!")
+#            draw_text(n, 216, "MY HERO!")
     
 
 #    /* debug
 #    else:
 
-#            draw_text(8, 208, str\(debug_counter))
-#            if (global.gen_black_market): draw_text(8, 216, "market : " + str\(draw_loot) + " :$ " + str\(money_count) + " :$ " + str\(global.xmoney) + " :A " + str\(alarm[0]) + " :A " + str\(alarm[1]))
+#            draw_text(8, 208, str(debug_counter))
+#            if (global.gen_black_market): draw_text(8, 216, "MARKET : " + str(draw_loot) + " :$ " + str(money_count) + " :$ " + str(global.xmoney) + " :A " + str(alarm[0]) + " :A " + str(alarm[1]))
 
 #    */
 
 #    draw_set_color(c_yellow)
-#    if (global.custom_level): draw_text(32, 48, global.custom_level_name + " completed!")
-#    elif (global.curr_level-1 < 1): draw_text(32, 48, "tutorial cave completed!")
-#    else: draw_text(32, 48, "level " + str\(global.curr_level-1) + " completed!")
+#    if (global.custom_level): draw_text(32, 48, global.custom_level_name + " COMPLETED!")
+#    elif (global.curr_level-1 < 1): draw_text(32, 48, "TUTORIAL CAVE COMPLETED!")
+#    else: draw_text(32, 48, "LEVEL " + str(global.curr_level-1) + " COMPLETED!")
 #    draw_set_color(c_white)
-#    draw_text(32, 64, "time  = ")
-#    draw_text(32, 80, "loot  = ")
-#    draw_text(32, 96, "kills = ")
-#    draw_text(32, 112, "money = ")
+#    draw_text(32, 64, "TIME  = ")
+#    draw_text(32, 80, "LOOT  = ")
+#    draw_text(32, 96, "KILLS = ")
+#    draw_text(32, 112, "MONEY = ")
 
 #    if (draw_loot >= 1 and not i"loot):"
 
-#        draw_text(96, 80, "none")
+#        draw_text(96, 80, "NONE")
 
 
 #    if (draw_loot > -2):
@@ -493,7 +493,7 @@ func _process(delta):
 #            m += 1
     
     
-#        # dy:  don't create a dark level if player is attempting a speed run:
+#        # DY:  don't create a dark level if player is attempting a speed run:
 #        if (s <= 20): global.ndark_level = true
 #        else: global.ndark_level = false
     
@@ -506,19 +506,19 @@ func _process(delta):
 #            m2 += 1
     
     
-#        if (s < 10 and s2 < 10): draw_text(96, 64, str\(m) + ":0" + str\(s) + " / " + str\(m2) + ":0" + str\(s2))
-#        elif (s < 10): draw_text(96, 64, str\(m) + ":0" + str\(s) + " / " + str\(m2) + ":" + str\(s2))
-#        elif (s2 < 10): draw_text(96, 64, str\(m) + ":" + str\(s) + " / " + str\(m2) + ":0" + str\(s2))
-#        else: draw_text(96, 64, str\(m) + ":" + str\(s) + " / " + str\(m2) + ":" + str\(s2))
+#        if (s < 10 and s2 < 10): draw_text(96, 64, str(m) + ":0" + str(s) + " / " + str(m2) + ":0" + str(s2))
+#        elif (s < 10): draw_text(96, 64, str(m) + ":0" + str(s) + " / " + str(m2) + ":" + str(s2))
+#        elif (s2 < 10): draw_text(96, 64, str(m) + ":" + str(s) + " / " + str(m2) + ":0" + str(s2))
+#        else: draw_text(96, 64, str(m) + ":" + str(s) + " / " + str(m2) + ":" + str(s2))
 
 
 #    if (draw_loot == 2):
 
 #        if (not i"kills):"
     
-#            draw_text(96, 96, "none")
+#            draw_text(96, 96, "NONE")
     
-#        draw_text(96, 112, "$" + str\(money_count) + " / $" + str\(global.money))
+#        draw_text(96, 112, "$" + str(money_count) + " / $" + str(global.money))
 
 
     

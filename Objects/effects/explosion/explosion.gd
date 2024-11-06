@@ -19,7 +19,7 @@ func _process(delta):
 
 #func animation_end():
     #    # action_kill_object
-#    # need to implement this action
+#    # Need to implement this action
     
 
 #func collision with o_barrier_emitter():
@@ -58,7 +58,7 @@ func _process(delta):
     
 
 #func collision with o_enemy():
-    #    if (other.type == "magma man"):
+    #    if (other.type == "Magma Man"):
 
 #        with other
     
@@ -81,12 +81,12 @@ func _process(delta):
     
 
 #func collision with o_item():
-    #    if (other.type == "arrow" or other.type == "fish bone" or:
-#        other.type == "jar" or other.type == "skull")
+    #    if (other.type == "Arrow" or other.type == "Fish Bone" or:
+#        other.type == "Jar" or other.type == "Skull")
 
 #        with other  gml.instance_destroy() 
 
-#    elif (other.type == "bomb"):
+#    elif (other.type == "Bomb"):
 
 #        with other
     
@@ -100,7 +100,7 @@ func _process(delta):
 #        if (other.position.x < position.x): other.x_vel = -randi_range(2,4)
 #        else: other.x_vel = randi_range(2,4)
 
-#    elif (other.type == "rope"):
+#    elif (other.type == "Rope"):
 
 #        if (not other.falling):
     
@@ -160,7 +160,7 @@ func _process(delta):
         
     
 
-#    # dy: global.check_water = true
+#    # DY: global.check_water = true
 
 
     

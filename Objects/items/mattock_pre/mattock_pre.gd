@@ -27,7 +27,7 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "mattock"
+#    type = "Mattock"
 #    damage = 2
 
     

@@ -19,7 +19,7 @@ func _process(delta):
 
 #func create():
     #    # main_code
-#    type = "lava"
+#    type = "Lava"
 #    spurt = false
 #    spurt_time = randi_range(100,300)
 #    spurt_counter = spurt_time

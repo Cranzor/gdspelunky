@@ -28,10 +28,10 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "arrow trap"
+#    type = "Arrow Trap"
 #    fired = 0
 #    invincible = false
-#    # dy:  alarm_0(50)
+#    # DY:  alarm_0(50)
 
     
 

@@ -16,14 +16,14 @@ func _process(delta):
 #--- Object functions
 
 
-#func create():
-	#    # action_inherited
-#    super()
+func create():
+	# action_inherited
+	super()
 
-#    # main_code
-#    type = "ankh"
-#    PlatformEngine.make_active()
-#    Collision.set_collision_bounds(-4, -6, 4, 8)
+	# main_code
+	type = "Ankh"
+	PlatformEngine.make_active(self)
+	Collision.set_collision_bounds(self, -4, -6, 4, 8)
 
-#    cost = 50000
-#    buy_message = "an ankh for $" + str\(cost) + "."
+	cost = 50000
+	buy_message = "AN ANKH FOR $" + str(cost) + "."

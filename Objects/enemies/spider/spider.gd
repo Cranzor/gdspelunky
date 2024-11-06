@@ -18,7 +18,7 @@ func _process(delta):
 
 
 #func alarm 0():
-    #    status = bounce
+    #    status = BOUNCE
 #    if (Collision.i"collision_bottom(1)):"
 
 #        y_vel = -1 * randi_range(2,5)
@@ -49,9 +49,9 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "spider"
-#    PlatformEngine.make_active()
-#    Collision.set_collision_bounds(1, 5, 15, 16)
+#    type = "Spider"
+#    PlatformEngine.make_active(self)
+#    Collision.set_collision_bounds(self, 1, 5, 15, 16)
 #    x_vel = 0
 #    y_vel = 0
 #    y_delta = -0.4
@@ -59,16 +59,16 @@ func _process(delta):
 #    my_grav_norm = 0.2
 #    image_speed = 0.4
 
-#    # dy:  stats
+#    # DY:  stats
 #    hp = 1
 #    invincible = 0
 
-#    # dy:  status
-#    idle = 0
-#    bounce = 1
-#    recover = 2
-#    walk = 3
-#    drowned = 4
+#    # DY:  status
+#    IDLE = 0
+#    BOUNCE = 1
+#    RECOVER = 2
+#    WALK = 3
+#    DROWNED = 4
 
 #    status = 0
 #    bounce_counter = 0
@@ -120,16 +120,16 @@ func _process(delta):
 
 #    dist = gml.distance_to_object(character)
 
-#    if (status == idle):
+#    if (status == IDLE):
 
 #        alarm_0()randi_range(5,20)
-#        status = recover
+#        status = RECOVER
 
-#    elif (status == recover):
+#    elif (status == RECOVER):
 
 #        if (Collision.i"collision_bottom(1)): x_vel = 0"
 
-#    elif (status == bounce and dist < 90):
+#    elif (status == BOUNCE and dist < 90):
 
 #        if (Collision.i"collision_bottom(1)):"
     
@@ -143,13 +143,13 @@ func _process(delta):
 #                x_vel = 2.5
         
         
-#            if (randi_range(1,4) == 1):  status = idle x_vel = 0 y_vel = 0 
+#            if (randi_range(1,4) == 1):  status = IDLE x_vel = 0 y_vel = 0 
     
 
-#    elif (status != drowned):
+#    elif (status != DROWNED):
 
-#        status = idle
-#        # dy: x_vel = 0
+#        status = IDLE
+#        # DY: x_vel = 0
 
 
 #    if (Collision.i"collision_top(1)):"
@@ -161,13 +161,13 @@ func _process(delta):
 
 #    */
 
-#    # dy: if (Collision.i"collision_solid()):"
-#    # dy:   position.y -= 2
+#    # DY: if (Collision.i"collision_solid()):"
+#    # DY:   position.y -= 2
 
 #    # main_code
-#    if (gml.collision_point(position.x+8, position.y+8, "water", 0, 0) and status != drowned):
+#    if (gml.collision_point(position.x+8, position.y+8, "water", 0, 0) and status != DROWNED):
 
-#        status = drowned
+#        status = DROWNED
 #        sprite_index = "spider_drowning"
 #        alarm_1(30)
 #        x_vel = 0

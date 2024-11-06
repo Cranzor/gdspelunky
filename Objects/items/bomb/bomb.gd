@@ -43,9 +43,9 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "bomb"
-#    PlatformEngine.make_active()
-#    Collision.set_collision_bounds(-4, -4, 4, 4)
+#    type = "Bomb"
+#    PlatformEngine.make_active(self)
+#    Collision.set_collision_bounds(self, -4, -4, 4, 4)
 
     
 

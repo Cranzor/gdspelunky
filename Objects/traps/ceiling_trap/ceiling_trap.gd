@@ -27,8 +27,8 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    PlatformEngine.make_active()
-#    Collision.set_collision_bounds(0, 0, 16, 16)
+#    PlatformEngine.make_active(self)
+#    Collision.set_collision_bounds(self, 0, 0, 16, 16)
 #    invincible = false
 #    viscid_top = 1
 #    image_speed = 0.4
@@ -40,10 +40,10 @@ func _process(delta):
 #    counter = 3
 
 #    status = 0
-#    idle = 0
-#    drop = 1
-#    wait = 2
-#    return = 3
+#    IDLE = 0
+#    DROP = 1
+#    WAIT = 2
+#    RETURN = 3
 
     
 
@@ -61,11 +61,11 @@ func _process(delta):
     
 
 #func step():
-    #    if (status == idle):
+    #    if (status == IDLE):
 
-#        # dy:  nothing
+#        # DY:  nothing
 
-#    elif (status == drop):
+#    elif (status == DROP):
 
 #        if (counter > 0): counter -= 1
 #        else:
@@ -74,10 +74,10 @@ func _process(delta):
 #            position.y += 1
     
 #        y_vel = 0
-#        if (gml.collision_point(position.x+8, position.y+17, "solid", 0, 0)): status = wait
+#        if (gml.collision_point(position.x+8, position.y+17, "solid", 0, 0)): status = WAIT
 #        if (sprite_index = "block): sprite_index = s_ceiling_trap_s"
 
-#    elif (status == wait):
+#    elif (status == WAIT):
 
 #        y_vel = 0
 #        if (Collision.i"collision_bottom(1)): position.y -= 1"

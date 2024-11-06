@@ -22,9 +22,9 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "ball"
-#    PlatformEngine.make_active()
-#    Collision.set_collision_bounds(-5, -5, 5, 5)
+#    type = "Ball"
+#    PlatformEngine.make_active(self)
+#    Collision.set_collision_bounds(self, -5, -5, 5, 5)
 #    heavy = true
 #    my_grav = 1
 

@@ -39,7 +39,7 @@ func _process(delta):
     
 
 #func collision with o_enemy():
-    #    if (other.type != "giant spider"):
+    #    if (other.type != "Giant Spider"):
 
 #        sprite_index = "web_create"
 #        x_vel = 0
@@ -86,14 +86,14 @@ func _process(delta):
 #    if (randi_range(1,2) == 1): x_vel *= -1
 #    life = randi_range(20,100)
 #    invincible = true
-#    # dy: alarm_0(40)
-#    # dy: alarm_1(1)
+#    # DY: alarm_0(40)
+#    # DY: alarm_1(1)
 
     
 
 #func outside room():
     #    # action_kill_object
-#    # need to implement this action
+#    # Need to implement this action
     
 
 #func step():
@@ -101,7 +101,7 @@ func _process(delta):
 #    position.y += y_vel
 
 #    if (y_vel < 6): y_vel += 0.2
-#    # dy:  if (y_vel > 0): y_vel = 0
+#    # DY:  if (y_vel > 0): y_vel = 0
 
 #    if (life > 0): life -= 1
 #    else:

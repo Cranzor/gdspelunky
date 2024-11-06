@@ -23,7 +23,7 @@ func _process(delta):
 
 #    # main_code
 #    image_speed = 0.5
-#    Collision.set_collision_bounds(0, 0, 8, 8)
+#    Collision.set_collision_bounds(self, 0, 0, 8, 8)
 #    origX = 0
 #    origY = 0
 #    x_vel = 0
@@ -32,17 +32,17 @@ func _process(delta):
 #    y_acc = 0.2
 #    dir = 0
 
-#    # dy:  stats
+#    # DY:  stats
 #    hp = 1
 #    invincible = 0
 
 #    bubble_timer = 0
 #    bubble_timer_max = 40
 
-#    # dy:  status
-#    idle = 0
-#    attack = 1
-#    pause = 2
+#    # DY:  status
+#    IDLE = 0
+#    ATTACK = 1
+#    PAUSE = 2
 
 #    status = 0
 #    counter = 0
@@ -74,7 +74,7 @@ func _process(delta):
 
 #    dist = point_distance(position.x, position.y, character.position.x, character.position.y)
 
-#    if (status == idle):
+#    if (status == IDLE):
 
 #        if (dir == 0):
     
@@ -91,15 +91,15 @@ func _process(delta):
 
 #        if (dist < 90 and character.swimming):
     
-#            status = attack
+#            status = ATTACK
     
 
-#    elif (status == pause):
+#    elif (status == PAUSE):
 
 #        if (counter > 0): counter -= 1
 #        else:
     
-#            status = idle
+#            status = IDLE
 #            dir = randi_range(0,1)*180
     
 
@@ -113,7 +113,7 @@ func _process(delta):
     
 #        else:
     
-#            status = pause
+#            status = PAUSE
 #            counter = randi_range(20,40)
     
 

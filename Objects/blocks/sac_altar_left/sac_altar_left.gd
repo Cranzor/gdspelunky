@@ -23,7 +23,7 @@ func _process(delta):
 
 #    # main_code
 #    defile = true
-#    type = "altar"
+#    type = "Altar"
 
     
 
@@ -41,8 +41,8 @@ func _process(delta):
 #    if (defile):
 
 
-#        global.message = "you dare defile my altar?"
-#        global.message2 = "I will punish you!"
+#        global.message = "YOU DARE DEFILE MY ALTAR?"
+#        global.message2 = "I WILL PUNISH YOU!"
 #        global.message_timer = 200
 #        InLevel.scr_shake(10)
 #        global.favor -= 16

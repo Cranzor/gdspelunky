@@ -56,13 +56,13 @@ func _process(delta):
 #            if (other.hold_item):
         
 #                other.hold_item.held = false
-#                if (facing == left): other.hold_item.x_vel = -2
+#                if (facing == LEFT): other.hold_item.x_vel = -2
 #                else: other.hold_item.x_vel = 2
 #                other.hold_item.y_vel = -4
 #                other.hold_item = 0
         
         
-#            status = idle
+#            status = IDLE
 #            image_speed = 0.2
 #            sprite_index = "ghost_disappear"
 #            Audio.play_sound(global.snd_ghost)
@@ -73,7 +73,7 @@ func _process(delta):
     
 
 #func collision with o_whip():
-    #    # dy: 
+    #    # DY: 
 
     
 
@@ -83,7 +83,7 @@ func _process(delta):
 
 #    # main_code
 #    image_speed = 0.5
-#    Collision.set_collision_bounds(4, 0, 12, 16)
+#    Collision.set_collision_bounds(self, 4, 0, 12, 16)
 #    origX = 0
 #    origY = 0
 #    x_vel = 0
@@ -91,19 +91,19 @@ func _process(delta):
 #    x_acc = 0.2
 #    y_acc = 0.2
 
-#    # dy:  stats
+#    # DY:  stats
 #    hp = 1
 #    invincible = 1
 
-#    # dy:  status
-#    idle = 0
-#    attack = 1
+#    # DY:  status
+#    IDLE = 0
+#    ATTACK = 1
 
 #    status = 1
 
-#    left = 0
-#    right = 1
-#    facing = right
+#    LEFT = 0
+#    RIGHT = 1
+#    facing = RIGHT
 
 #    shake_counter = 0
 #    shake_toggle = 1
@@ -115,7 +115,7 @@ func _process(delta):
 #func step():
     #    if (hp < 1):
 
-#        # dy: global.bats += 1
+#        # DY: global.bats += 1
 #        global.kills += 1
 #        gml.instance_destroy()
 
@@ -123,11 +123,11 @@ func _process(delta):
 #    dir = 0
 #    dist = point_distance(position.x+8, position.y+8, character.position.x, character.position.y)
 
-#    if (status == idle):
+#    if (status == IDLE):
 
-#        # dy:  do nothing
+#        # DY:  do nothing
 
-#    elif (status == attack):
+#    elif (status == ATTACK):
 
 #        dir = point_direction(position.x+8, position.y+8, character.position.x, character.position.y)
 #        position.x += 1 * cos(degtorad(dir))

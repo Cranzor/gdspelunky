@@ -29,7 +29,7 @@ func _process(delta):
 
 #func outside room():
     #    # action_kill_object
-#    # need to implement this action
+#    # Need to implement this action
     
 
 #func step():

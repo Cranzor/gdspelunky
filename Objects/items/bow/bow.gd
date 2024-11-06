@@ -22,12 +22,12 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "bow"
-#    PlatformEngine.make_active()
-#    Collision.set_collision_bounds(-4, -4, 4, 4)
+#    type = "Bow"
+#    PlatformEngine.make_active(self)
+#    Collision.set_collision_bounds(self, -4, -4, 4, 4)
 #    cost = 1000
-#    shop_desc = "bow and arrows"
-#    buy_message = "bow and arrows for $" + str\(cost) + "."
+#    shop_desc = "BOW AND ARROWS"
+#    buy_message = "BOW AND ARROWS FOR $" + str(cost) + "."
 #    image_speed = 0
 
     

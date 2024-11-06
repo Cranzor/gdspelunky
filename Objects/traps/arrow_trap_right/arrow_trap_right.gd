@@ -26,7 +26,7 @@ func _process(delta):
 #func alarm 1():
     #    if (not InLevel.i"room("r_level_editor")):"
 
-#        # dy:  calculate how far to motion detect
+#        # DY:  calculate how far to motion detect
 #        x_act = position.x+16
 #        n = 100
 #        while (not gml.collision_point(x_act, position.y+8, "solid", 0, 0) && n > 0):
@@ -50,12 +50,12 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "arrow trap"
+#    type = "Arrow Trap"
 #    facing = 1
 #    fired = 0
 #    invincible = false
-#    x_act = 0 # dy:  activate distance
-#    # dy: alarm_0(50)
+#    x_act = 0 # DY:  activate distance
+#    # DY: alarm_0(50)
 #    alarm_1(1)
 
     
@@ -83,7 +83,7 @@ func _process(delta):
     
 #            obj = collision_line(position.x+8, position.y+8, position.x+8+x_act, position.y+8, item, 0, 0)
 #            if (abs(obj.x_vel) > 0 or abs(obj.y_vel) > 0): firing = true
-#            if (obj.type == "rope"): firing = true
+#            if (obj.type == "Rope"): firing = true
     
     
 #        if (collision_line(position.x+8, position.y+8, position.x+8+x_act, position.y+8, treasure, 0, 0)):

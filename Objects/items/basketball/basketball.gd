@@ -22,9 +22,9 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "basketball"
-#    PlatformEngine.make_active()
-#    Collision.set_collision_bounds(-4, -4, 4, 4)
+#    type = "Basketball"
+#    PlatformEngine.make_active(self)
+#    Collision.set_collision_bounds(self, -4, -4, 4, 4)
 #    bounce_factor = 0.7
 #    bounces = 0
 #    wall_bounce = false

@@ -17,14 +17,14 @@ func _process(delta):
 #--- Object functions
 
 
-#func create():
-    #    # action_inherited
-#    super()
+func create():
+	# action_inherited
+	super()
 
-#    # main_code
-#    type = "bomb bag"
-#    PlatformEngine.make_active()
-#    Collision.set_collision_bounds(-6, -2, 6, 6)
-#    cost = 2500
-#    shop_desc = "A bag of 3 bombs"
-#    buy_message = "A bag of 3 bombs for $" + str\(cost) + "."
+	# main_code
+	type = "bomb bag"
+	PlatformEngine.make_active(self)
+	Collision.set_collision_bounds(self, -6, -2, 6, 6)
+	cost = 2500
+	shop_desc = "A BAG OF 3 BOMBS"
+	buy_message = "A BAG OF 3 BOMBS FOR $" + str(cost) + "."

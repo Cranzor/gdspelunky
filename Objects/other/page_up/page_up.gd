@@ -26,12 +26,12 @@ func _process(delta):
     
 
 #func mouse leave():
-    #    # dy: sprite_index = "ok_button"
+    #    # DY: sprite_index = "ok_button"
 
     
 
 #func mouse left button pressed():
-    #    # dy: sprite_index = "ok_button_pressed"
+    #    # DY: sprite_index = "ok_button_pressed"
 
     
 

@@ -22,9 +22,9 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "key"
-#    PlatformEngine.make_active()
-#    Collision.set_collision_bounds(-4, -4, 4, 4)
+#    type = "Key"
+#    PlatformEngine.make_active(self)
+#    Collision.set_collision_bounds(self, -4, -4, 4, 4)
 #    cost = 0
 
     

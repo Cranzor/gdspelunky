@@ -83,13 +83,13 @@ func _process(delta):
 #        str_len = string_length(global.message)*8
 #        n = 320 - str_len
 #        n = ceil(n / 2)
-#        draw_text(view_xview[0]+n, view_yview[0]+216, str\(global.message))
+#        draw_text(view_xview[0]+n, view_yview[0]+216, str(global.message))
     
 #        if (not InLevel.i"level("r_tutorial")): draw_set_color(c_yellow)"
 #        str_len = string_length(global.message2)*8
 #        n = 320 - str_len
 #        n = ceil(n / 2)
-#        draw_text(view_xview[0]+n, view_yview[0]+224, str\(global.message2))
+#        draw_text(view_xview[0]+n, view_yview[0]+224, str(global.message2))
     
 #        global.message_timer -= 1
 
@@ -97,7 +97,7 @@ func _process(delta):
     
 
 #func room end():
-    #    # dy: sound_stop(snd_music_test2)
+    #    # DY: sound_stop(snd_music_test2)
 
     
 
@@ -110,7 +110,7 @@ func _process(delta):
 
 #    if (view_enabled):
 
-#        # dy:  shake the screen
+#        # DY:  shake the screen
 #        if (global.shake > 0):
     
 #            if (player1.position.y < 96 or player1.position.y > room_height-96): view_vborder[0] = 0
@@ -136,11 +136,11 @@ func _process(delta):
     
 #            if (player1.position.y < 240-96 or player1.position.y > room_height-144): view_vborder[0] = 0
 #            else: view_vborder[0] = 96
-#            # dy: view_xview[0] = view_xview[0] + randi_range(0,3) - randi_range(0,3)
+#            # DY: view_xview[0] = view_xview[0] + randi_range(0,3) - randi_range(0,3)
 #            if (global.shake_toggle):
         
-#                # dy:  if (view_yview[0] >= room_height - view_hview[0]): view_yview[0] = 304
-#                # dy:  global.yview_prev = view_yview[0]
+#                # DY:  if (view_yview[0] >= room_height - view_hview[0]): view_yview[0] = 304
+#                # DY:  global.yview_prev = view_yview[0]
 #                global.y_shake_diff = randi_range(1,3)
 #                view_yview[0] = view_yview[0] + global.y_shake_diff
         
@@ -166,9 +166,9 @@ func _process(delta):
 #        */
 
 #        offset = 96
-#        # dy:  deactivate all instances outside the region
+#        # DY:  deactivate all instances outside the region
     
-#        # dy:  this is to prevent water from only getting drained partway
+#        # DY:  this is to prevent water from only getting drained partway
 #        with water
     
 #            if (position.x+8 < view_xview[0]-96 or position.x+8 > view_xview[0]+view_wview[0]+96 or position.y+8 < view_yview[0]-96 or position.y+8 > view_yview[0]+view_hview[0]+96):
@@ -177,16 +177,16 @@ func _process(delta):
         
     
 #        instance_deactivate_region(view_xview[0]-offset, view_yview[0]-offset, view_wview[0]+offset*2, view_hview[0]+offset*2, false, true)
-#        # dy:  activate all instances inside the region
+#        # DY:  activate all instances inside the region
 #        instance_activate_region(view_xview[0]-offset, view_yview[0]-offset, view_wview[0]+offset*2, view_hview[0]+offset*2, true)
-#        # dy:  activate all important instances
-#        # dy:  instance_activate_object(solid)
-#        # dy:  instance_activate_object(water)
+#        # DY:  activate all important instances
+#        # DY:  instance_activate_object(solid)
+#        # DY:  instance_activate_object(water)
 #        instance_activate_object(character)
 #        instance_activate_object(rope)
 #        instance_activate_object(rope_throw)
 #        instance_activate_object(rope_top)
-#        # dy:  instance_activate_object(olmec)
+#        # DY:  instance_activate_object(olmec)
 #        instance_activate_object(game)
 #        instance_activate_object(globals)
 #        instance_activate_object(screen)
@@ -211,11 +211,11 @@ func _process(delta):
 #        */
 
 
-#    # dy:  darkness
+#    # DY:  darkness
 #    if (global.dark_level):
 
-#        # dy:  darkness = 0 : lightest
-#        # dy:  darkness = 1 : darkest
+#        # DY:  darkness = 0 : lightest
+#        # DY:  darkness = 1 : darkest
 #        dist = 160
 #        if (global.ha"crown): dist = 0"
 #        elif (gml.instance_exists("flare")):

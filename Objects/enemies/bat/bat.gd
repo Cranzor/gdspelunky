@@ -23,7 +23,7 @@ func _process(delta):
 
 #    # main_code
 #    image_speed = 0.5
-#    Collision.set_collision_bounds(2, 2, 14, 14)
+#    Collision.set_collision_bounds(self, 2, 2, 14, 14)
 #    origX = 0
 #    origY = 0
 #    x_vel = 0
@@ -31,16 +31,16 @@ func _process(delta):
 #    x_acc = 0.2
 #    y_acc = 0.2
 
-#    # dy:  stats
+#    # DY:  stats
 #    hp = 1
 #    invincible = 0
 #    flying = true
 
-#    # dy:  status
-#    hang = 0
-#    attack = 1
+#    # DY:  status
+#    HANG = 0
+#    ATTACK = 1
 
-#    status = hang
+#    status = HANG
 
 #    shake_counter = 0
 #    shake_toggle = 1
@@ -70,12 +70,12 @@ func _process(delta):
 #    dir = 0
 #    dist = point_distance(position.x+8, position.y+8, player1.position.x, player1.position.y)
 
-#    if (status == hang):
+#    if (status == HANG):
 
 #      if (not player1.swimming and not player1.dead and:
 #          ((dist < 90 and player1.position.y > position.y + 16) or not gml.collision_point(position.x+8, position.y-1, "solid", 0, 0)))
   
-#        status = attack
+#        status = ATTACK
 #        Audio.play_sound(global.snd_bat)
   
   
@@ -120,7 +120,7 @@ func _process(delta):
     
 #        else:
     
-#            if (gml.collision_point(position.x+8, position.y-1, "solid", 0, 0)): status = hang
+#            if (gml.collision_point(position.x+8, position.y-1, "solid", 0, 0)): status = HANG
 #            else:
         
 #                dir = 90
@@ -136,7 +136,7 @@ func _process(delta):
 
 #    else:
 
-#        if (gml.collision_point(position.x+8, position.y-1, "solid", 0, 0)): status = hang
+#        if (gml.collision_point(position.x+8, position.y-1, "solid", 0, 0)): status = HANG
 #        else:
     
 #            dir = 90

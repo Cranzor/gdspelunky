@@ -33,10 +33,10 @@ func _process(delta):
     
 
 #func collision with o_character():
-    #    # dy:  jumped on - caveman, man_trap replaces this script with its own
+    #    # DY:  jumped on - caveman, man_trap replaces this script with its own
 #    if (abs(other.position.x-(position.x+8)) > 12):
 
-#        # dy:  do nothing
+#        # DY:  do nothing
 
 #    elif (not other.dead and (other.state == 15 or other.state == 16) and other.position.y < position.y+8 and not other.swimming):
 
@@ -68,8 +68,8 @@ func _process(delta):
 
 #func create():
     #    bloodless = false
-#    up = 0
-#    down = 1
+#    UP = 0
+#    DOWN = 1
 #    dir = 1
 #    if (position.x == 208): difficulty = 2
 #    elif (position.x == 256): difficulty = 4
@@ -85,20 +85,20 @@ func _process(delta):
     
 
 #func step():
-    #    if (dir == up):
+    #    if (dir == UP):
 
 #        position.y -= difficulty
 #        if (position.y <= 64):
     
-#            dir = down
+#            dir = DOWN
     
 
-#    elif (dir == down):
+#    elif (dir == DOWN):
 
 #        position.y += difficulty
 #        if (position.y >= 160):
     
-#            dir = up
+#            dir = UP
     
 
     

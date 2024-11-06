@@ -22,8 +22,8 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    PlatformEngine.make_active()
-#    Collision.set_collision_bounds(4, 4, 12, 16)
+#    PlatformEngine.make_active(self)
+#    Collision.set_collision_bounds(self, 4, 4, 12, 16)
 #    x_vel = 0
 #    y_vel = 0
 #    y_delta = -0.4
@@ -31,22 +31,22 @@ func _process(delta):
 #    my_grav_norm = 0.2
 #    image_speed = 0.4
 
-#    type = "frog"
+#    type = "Frog"
 
-#    # dy:  stats
+#    # DY:  stats
 #    hp = 1
 #    invincible = 0
 
-#    left = 0
-#    right = 1
+#    LEFT = 0
+#    RIGHT = 1
 #    facing = randi_range(0,1)
 
-#    # dy:  status
-#    idle = 0
-#    bounce = 1
-#    recover = 2
-#    walk = 3
-#    drowned = 4
+#    # DY:  status
+#    IDLE = 0
+#    BOUNCE = 1
+#    RECOVER = 2
+#    WALK = 3
+#    DROWNED = 4
 #    status = 0
 
 #    counter = 0
@@ -101,56 +101,56 @@ func _process(delta):
 
 #    dist = gml.distance_to_object(character)
 
-#    if (status == idle):
+#    if (status == IDLE):
 
 #        x_vel = 0
 #        if (counter > 0): counter -= 1
-#        elif (dist < 64): status = bounce
-#        # dy: if (dist < 48): status = bounce
-#        if (status == bounce): Audio.play_sound(global.snd_frog)
+#        elif (dist < 64): status = BOUNCE
+#        # DY: if (dist < 48): status = BOUNCE
+#        if (status == BOUNCE): Audio.play_sound(global.snd_frog)
 
-#    elif (status == recover):
+#    elif (status == RECOVER):
 
 #        if (col_bot):
     
-#            status = idle
+#            status = IDLE
 #            x_vel = 0
 #            y_vel = 0
 #            counter = randi_range(10,40)
     
 
-#    elif (status == bounce):
+#    elif (status == BOUNCE):
 
 #        if (col_bot):
     
 #            y_vel = -1 * randi_range(2,4)
 #            if (character.position.x < position.x):
         
-#                facing = left
+#                facing = LEFT
 #                x_vel = -3
         
 #            else:
         
-#                facing = right
+#                facing = RIGHT
 #                x_vel = 3
         
     
 #        else:
     
-#            status = recover
+#            status = RECOVER
     
 
-#    elif (status != drowned):
+#    elif (status != DROWNED):
 
-#        status = idle
+#        status = IDLE
 #        x_vel = 0
 
 
 #    if (Collision.i"collision_top(1)):"
 #        y_vel = 1
 
-#    # dy: if (Collision.i"collision_solid()):"
-#    # dy:   position.y -= 2
+#    # DY: if (Collision.i"collision_solid()):"
+#    # DY:   position.y -= 2
   
 #    if (not col_bot): sprite_index = "frog_jump_l"
 #    else: sprite_index = "frog_left"

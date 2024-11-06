@@ -47,9 +47,9 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "locked chest"
-#    PlatformEngine.make_active()
-#    Collision.set_collision_bounds(-6, -2, 6, 8)
+#    type = "Locked Chest"
+#    PlatformEngine.make_active(self)
+#    Collision.set_collision_bounds(self, -6, -2, 6, 8)
 
 #    heavy = true
 

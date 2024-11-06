@@ -36,6 +36,6 @@ func _process(delta):
     
 #        else:
     
-#            global.message = "the sceptre fits..."
-#            global.message2 = "but nothing is happening!"
+#            global.message = "THE SCEPTRE FITS..."
+#            global.message2 = "BUT NOTHING IS HAPPENING!"
 #            global.message_timer = 100

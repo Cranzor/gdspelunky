@@ -25,9 +25,9 @@ func _process(delta):
     
 
 #func create():
-    #    type = "message sign"
+    #    type = "Message Sign"
 
-#    # dy:  tutorial cave init
+#    # DY:  tutorial cave init
 #    if (InLevel.i"room("r_level_editor") or InLevel.is_room("r_load_level")):"
 
 #        message = ""
@@ -35,114 +35,114 @@ func _process(delta):
 
 #    elif (position.x == 32 and position.y == 64):
 
-#        message = "welcome to the tutorial cave!"
-#        message2 = "this might be your first time playing."
+#        message = "WELCOME TO THE TUTORIAL CAVE!"
+#        message2 = "THIS MIGHT BE YOUR FIRST TIME PLAYING."
 
 
 #    elif (position.x == 80 and position.y == 96):
 
-#        if (global.gamepad_on): message = "press " + scr_get_joy(global.joy_jump_val) + " to jump."
-#        else: message = "press " + scr_get_key(global.key_jump_val) + " to jump."
+#        if (global.gamepad_on): message = "PRESS " + scr_get_joy(global.joy_jump_val) + " TO JUMP."
+#        else: message = "PRESS " + scr_get_key(global.key_jump_val) + " TO JUMP."
 #        message2 = ""
 
 
 #    elif (position.x == 176 and position.y == 96):
 
-#        message = "you can hang on ledges, too!"
+#        message = "YOU CAN HANG ON LEDGES, TOO!"
 #        message2 = ""
 
 
 #    elif (position.x == 240 and position.y == 64):
 
-#        if (global.gamepad_on): message = "press " + scr_get_joy(global.joy_attack_val) + " to use your whip."
-#        else: message = "press " + scr_get_key(global.key_attack_val) + " to use your whip."
+#        if (global.gamepad_on): message = "PRESS " + scr_get_joy(global.joy_attack_val) + " TO USE YOUR WHIP."
+#        else: message = "PRESS " + scr_get_key(global.key_attack_val) + " TO USE YOUR WHIP."
 #        message2 = ""
 
 
 #    elif (position.x == 384 and position.y == 96):
 
-#        message = "collect the treasure!"
+#        message = "COLLECT THE TREASURE!"
 #        message2 = ""
 
 
 #    elif (position.x == 512 and position.y == 32):
 
-#        if (global.gamepad_on): message = "hold up and press " + scr_get_joy(global.joy_attack_val) + " to open chests."
-#        else: message = "hold up and press " + scr_get_key(global.key_attack_val) + " to open chests."
+#        if (global.gamepad_on): message = "HOLD UP AND PRESS " + scr_get_joy(global.joy_attack_val) + " TO OPEN CHESTS."
+#        else: message = "HOLD UP AND PRESS " + scr_get_key(global.key_attack_val) + " TO OPEN CHESTS."
 #        message2 = ""
 
 
 #    elif (position.x == 544 and position.y == 112):
 
-#        message = "hold down to duck and crawl."
+#        message = "HOLD DOWN TO DUCK AND CRAWL."
 #        message2 = ""
 
 
 #    elif (position.x == 576 and position.y == 128):
 
-#        message = "crawl over the edge to do A flip hang."
-#        message2 = "falling too far can really hurt!"
+#        message = "CRAWL OVER THE EDGE TO DO A FLIP HANG."
+#        message2 = "FALLING TOO FAR CAN REALLY HURT!"
 
 
 #    elif (position.x == 640 and position.y == 96):
 
-#        message = "hold up to climb the ladder."
+#        message = "HOLD UP TO CLIMB THE LADDER."
 #        message2 = ""
 
 
 #    elif (position.x == 608 and position.y == 256):
 
-#        if (global.gamepad_on): message = "duck and press " + scr_get_joy(global.joy_attack_val) + " to pick up items."
-#        else: message = "duck and press " + scr_get_key(global.key_attack_val) + " to pick up items."
+#        if (global.gamepad_on): message = "DUCK AND PRESS " + scr_get_joy(global.joy_attack_val) + " TO PICK UP ITEMS."
+#        else: message = "DUCK AND PRESS " + scr_get_key(global.key_attack_val) + " TO PICK UP ITEMS."
 #        message2 = ""
 
 
 #    elif (position.x == 576 and position.y == 256):
 
-#        if (global.gamepad_on): message = "press " + scr_get_joy(global.joy_attack_val) + " to throw or use items."
-#        else: message = "press " + scr_get_key(global.key_attack_val) + " to throw or use items."
-#        message2 = "hold up to throw high and down to drop."
+#        if (global.gamepad_on): message = "PRESS " + scr_get_joy(global.joy_attack_val) + " TO THROW OR USE ITEMS."
+#        else: message = "PRESS " + scr_get_key(global.key_attack_val) + " TO THROW OR USE ITEMS."
+#        message2 = "HOLD UP TO THROW HIGH AND DOWN TO DROP."
 
 
 #    elif (position.x == 496 and position.y == 256):
 
-#        if (global.gamepad_on): message = "press " + scr_get_joy(global.joy_item_val) + " to select your rope and"
-#        else: message = "press " + scr_get_key(global.key_item_val) + " to select your rope and"
-#        if (global.gamepad_on): message2 = scr_get_joy(global.joy_attack_val) + " to use it."
-#        else: message2 = scr_get_key(global.key_attack_val) + " to use it."
+#        if (global.gamepad_on): message = "PRESS " + scr_get_joy(global.joy_item_val) + " TO SELECT YOUR ROPE AND"
+#        else: message = "PRESS " + scr_get_key(global.key_item_val) + " TO SELECT YOUR ROPE AND"
+#        if (global.gamepad_on): message2 = scr_get_joy(global.joy_attack_val) + " TO USE IT."
+#        else: message2 = scr_get_key(global.key_attack_val) + " TO USE IT."
 
 
 #    elif (position.x == 432 and position.y == 176):
 
-#        if (global.gamepad_on): message = "crouch and press " + scr_get_joy(global.joy_attack_val)
-#        else: message = "crouch and press " + scr_get_key(global.key_attack_val)
-#        message2 = "to throw A rope down A ledge."
+#        if (global.gamepad_on): message = "CROUCH AND PRESS " + scr_get_joy(global.joy_attack_val)
+#        else: message = "CROUCH AND PRESS " + scr_get_key(global.key_attack_val)
+#        message2 = "TO THROW A ROPE DOWN A LEDGE."
 
 
 #    elif (position.x == 384 and position.y == 208):
 
-#        if (global.gamepad_on): message = "to run, hold down " + scr_get_joy(global.joy_attack_val) + " or " + scr_get_joy(global.joy_run_val) + "."
-#        else: message = "to run, hold down " + scr_get_key(global.key_attack_val) + " or " + scr_get_key(global.key_run_val) + "."
+#        if (global.gamepad_on): message = "TO RUN, HOLD DOWN " + scr_get_joy(global.joy_attack_val) + " OR " + scr_get_joy(global.joy_run_val) + "."
+#        else: message = "TO RUN, HOLD DOWN " + scr_get_key(global.key_attack_val) + " OR " + scr_get_key(global.key_run_val) + "."
 #        message2 = ""
 
 #    elif (position.x == 256 and position.y == 208):
 
-#        message = "open this crate for A bag of bombs."
+#        message = "OPEN THIS CRATE FOR A BAG OF BOMBS."
 #        message2 = ""
 
 
 #    elif (position.x == 224 and position.y == 208):
 
-#        if (global.gamepad_on): message = "press " + scr_get_joy(global.joy_item_val) + " to select bombs and "
-#        else: message = "press " + scr_get_key(global.key_item_val) + " to select bombs and "
-#        if (global.gamepad_on): message2 =  "press " + scr_get_joy(global.joy_attack_val) + " to use it."
-#        else: message2 =  "press " + scr_get_key(global.key_attack_val) + " to use it."
+#        if (global.gamepad_on): message = "PRESS " + scr_get_joy(global.joy_item_val) + " TO SELECT BOMBS AND "
+#        else: message = "PRESS " + scr_get_key(global.key_item_val) + " TO SELECT BOMBS AND "
+#        if (global.gamepad_on): message2 =  "PRESS " + scr_get_joy(global.joy_attack_val) + " TO USE IT."
+#        else: message2 =  "PRESS " + scr_get_key(global.key_attack_val) + " TO USE IT."
 
 
 #    elif (position.x == 96 and position.y == 256):
 
-#        message = "there'S lots more ahead!"
-#        message2 = "use your wits and beware of traps!"
+#        message = "THERE'S LOTS MORE AHEAD!"
+#        message2 = "USE YOUR WITS AND BEWARE OF TRAPS!"
 
 
 

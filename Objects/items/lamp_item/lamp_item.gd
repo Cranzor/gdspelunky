@@ -22,9 +22,9 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "lamp"
-#    PlatformEngine.make_active()
-#    Collision.set_collision_bounds(-4, -4, 4, 4)
+#    type = "Lamp"
+#    PlatformEngine.make_active(self)
+#    Collision.set_collision_bounds(self, -4, -4, 4, 4)
 #    trigger = true
 #    heavy = true
 #    value = 1000

@@ -26,126 +26,126 @@ func _process(delta):
 #func draw():
     #    draw_set_font(global.my_font_small)
 #    draw_set_color(c_yellow)
-#    str_len = string_length("press button for")*8
+#    str_len = string_length("PRESS BUTTON FOR")*8
 #    n = 160 - str_len
 #    n = ceil(n / 2)
-#    draw_text(n, 32, "press button for")
-#    draw_text(8, 96, "esc to keep same.")
-#    draw_text(8, 104, "current: ")
+#    draw_text(n, 32, "PRESS BUTTON FOR")
+#    draw_text(8, 96, "ESC TO KEEP SAME.")
+#    draw_text(8, 104, "CURRENT: ")
 
 #    if (not joystick_exists(1)):
 
 #        draw_set_color(c_red)
-#        draw_text(8, 88, "no gamepad found!")
+#        draw_text(8, 88, "NO GAMEPAD FOUND!")
 
 
 #    if (status == 0):
 
 #        draw_set_font(global.my_font)
 #        draw_set_color(c_white)
-#        str_len = string_length("jump")*16
+#        str_len = string_length("JUMP")*16
 #        n = 160 - str_len
 #        n = ceil(n / 2)
-#        draw_text(n, 40, "jump")
+#        draw_text(n, 40, "JUMP")
 #        curr_val = global.joy_jump_val
 
 #    elif (status == 1):
 
 #        draw_set_font(global.my_font)
 #        draw_set_color(c_white)
-#        str_len = string_length("action")*16
+#        str_len = string_length("ACTION")*16
 #        n = 160 - str_len
 #        n = ceil(n / 2)
-#        draw_text(n, 40, "action")
+#        draw_text(n, 40, "ACTION")
 #        curr_val = global.joy_attack_val
 
 #    elif (status == 2):
 
 #        draw_set_font(global.my_font)
 #        draw_set_color(c_white)
-#        str_len = string_length("switch")*16
+#        str_len = string_length("SWITCH")*16
 #        n = 160 - str_len
 #        n = ceil(n / 2)
-#        draw_text(n, 40, "switch")
+#        draw_text(n, 40, "SWITCH")
 #        curr_val = global.joy_item_val
 
 #    elif (status == 3):
 
 #        draw_set_font(global.my_font)
 #        draw_set_color(c_white)
-#        str_len = string_length("run")*16
+#        str_len = string_length("RUN")*16
 #        n = 160 - str_len
 #        n = ceil(n / 2)
-#        draw_text(n, 40, "run")
+#        draw_text(n, 40, "RUN")
 #        curr_val = global.joy_run_val
 
 #    elif (status == 4):
 
 #        draw_set_font(global.my_font)
 #        draw_set_color(c_white)
-#        str_len = string_length("bomb")*16
+#        str_len = string_length("BOMB")*16
 #        n = 160 - str_len
 #        n = ceil(n / 2)
-#        draw_text(n, 40, "bomb")
+#        draw_text(n, 40, "BOMB")
 #        curr_val = global.joy_bomb_val
 
 #    elif (status == 5):
 
 #        draw_set_font(global.my_font)
 #        draw_set_color(c_white)
-#        str_len = string_length("rope")*16
+#        str_len = string_length("ROPE")*16
 #        n = 160 - str_len
 #        n = ceil(n / 2)
-#        draw_text(n, 40, "rope")
+#        draw_text(n, 40, "ROPE")
 #        curr_val = global.joy_rope_val
 
 #    elif (status == 6):
 
 #        draw_set_font(global.my_font)
 #        draw_set_color(c_white)
-#        str_len = string_length("flare")*16
+#        str_len = string_length("FLARE")*16
 #        n = 160 - str_len
 #        n = ceil(n / 2)
-#        draw_text(n, 40, "flare")
+#        draw_text(n, 40, "FLARE")
 #        curr_val = global.joy_flare_val
 
 #    elif (status == 7):
 
 #        draw_set_font(global.my_font)
 #        draw_set_color(c_white)
-#        str_len = string_length("purchase")*16
+#        str_len = string_length("PURCHASE")*16
 #        n = 160 - str_len
 #        n = ceil(n / 2)
-#        draw_text(n, 40, "purchase")
+#        draw_text(n, 40, "PURCHASE")
 #        curr_val = global.joy_pay_val
 
 #    elif (status == 8):
 
 #        draw_set_font(global.my_font)
 #        draw_set_color(c_white)
-#        str_len = string_length("start")*16
+#        str_len = string_length("START")*16
 #        n = 160 - str_len
 #        n = ceil(n / 2)
-#        draw_text(n, 40, "start")
+#        draw_text(n, 40, "START")
 #        curr_val = global.joy_start_val
 
 
 #    draw_set_font(global.my_font_small)
 #    match (curr_val)
 
-#        1:  draw_text(80, 104, "b1")  
-#        2:  draw_text(80, 104, "b2")  
-#        3:  draw_text(80, 104, "b3")  
-#        4:  draw_text(80, 104, "b4")  
-#        5:  draw_text(80, 104, "b5")  
-#        6:  draw_text(80, 104, "b6")  
-#        7:  draw_text(80, 104, "b7")  
-#        8:  draw_text(80, 104, "b8")  
-#        9:  draw_text(80, 104, "b9")  
-#        10:  draw_text(80, 104, "b10")  
-#        -1:  draw_text(80, 104, "lt (xb)")  
-#        -2:  draw_text(80, 104, "rt (xb)")  
-#        default:  draw_text(80, 104, "B" + str\(curr_val))
+#        1:  draw_text(80, 104, "B1")  
+#        2:  draw_text(80, 104, "B2")  
+#        3:  draw_text(80, 104, "B3")  
+#        4:  draw_text(80, 104, "B4")  
+#        5:  draw_text(80, 104, "B5")  
+#        6:  draw_text(80, 104, "B6")  
+#        7:  draw_text(80, 104, "B7")  
+#        8:  draw_text(80, 104, "B8")  
+#        9:  draw_text(80, 104, "B9")  
+#        10:  draw_text(80, 104, "B10")  
+#        -1:  draw_text(80, 104, "LT (XB)")  
+#        -2:  draw_text(80, 104, "RT (XB)")  
+#        default:  draw_text(80, 104, "B" + str(curr_val))
 #    break 
 
 
@@ -155,23 +155,23 @@ func _process(delta):
 
 #func room end():
     #    file = file_text_open_write("gamepad.cfg")
-#    file_text_write_str\(file, str\(global.joy_jump_val))
+#    file_text_write_str(file, str(global.joy_jump_val))
 #    file_text_writeln(file)
-#    file_text_write_str\(file, str\(global.joy_attack_val))
+#    file_text_write_str(file, str(global.joy_attack_val))
 #    file_text_writeln(file)
-#    file_text_write_str\(file, str\(global.joy_item_val))
+#    file_text_write_str(file, str(global.joy_item_val))
 #    file_text_writeln(file)
-#    file_text_write_str\(file, str\(global.joy_run_val))
+#    file_text_write_str(file, str(global.joy_run_val))
 #    file_text_writeln(file)
-#    file_text_write_str\(file, str\(global.joy_bomb_val))
+#    file_text_write_str(file, str(global.joy_bomb_val))
 #    file_text_writeln(file)
-#    file_text_write_str\(file, str\(global.joy_rope_val))
+#    file_text_write_str(file, str(global.joy_rope_val))
 #    file_text_writeln(file)
-#    file_text_write_str\(file, str\(global.joy_flare_val))
+#    file_text_write_str(file, str(global.joy_flare_val))
 #    file_text_writeln(file)
-#    file_text_write_str\(file, str\(global.joy_pay_val))
+#    file_text_write_str(file, str(global.joy_pay_val))
 #    file_text_writeln(file)
-#    file_text_write_str\(file, str\(global.joy_start_val))
+#    file_text_write_str(file, str(global.joy_start_val))
 #    file_text_close(file)
 
     

@@ -22,7 +22,7 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    # dy:  dummy actor for title
+#    # DY:  dummy actor for title
 
 #    image_speed = 0.6
 #    if (global.i"damsel): sprite_index = s_damsel_climb2"
@@ -42,4 +42,4 @@ func _process(delta):
 #    if (position.y < -32):
 
 #        title.fade_out = true
-#        # dy: get_tree().change_scene_to_file("res://r_credits1.tscn")
+#        # DY: get_tree().change_scene_to_file("res://r_credits1.tscn")

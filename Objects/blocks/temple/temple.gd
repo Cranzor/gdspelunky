@@ -75,6 +75,6 @@ func _process(delta):
 #            gold.y_vel = randi_range(2,4) * 1
     
 
-#        if (treasure == "big ruby"):
+#        if (treasure == "Big Ruby"):
     
 #            gml.instance_create(position.x+8, position.y+8, Objects.ruby_big)

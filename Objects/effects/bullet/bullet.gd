@@ -78,7 +78,7 @@ func _process(delta):
 #func collision with o_enemy():
     #    if (not safe):
 
-#        if (other.type == "yeti king" or other.type == "tomb lord"):
+#        if (other.type == "Yeti King" or other.type == "Tomb Lord"):
     
 #            other.x_vel = x_vel*0.5
 #            other.y_vel = -2
@@ -92,10 +92,10 @@ func _process(delta):
 #        with other
     
 #            hp -= 4
-#            if ((type == "caveman" or:
-#                 type == "yeti" or
-#                 type == "hawkman" or
-#                 type == "shopkeeper") and
+#            if ((type == "Caveman" or:
+#                 type == "Yeti" or
+#                 type == "Hawkman" or
+#                 type == "Shopkeeper") and
 #                status != 99)
         
 #                status = 98
@@ -126,7 +126,7 @@ func _process(delta):
     #    x_vel = 0
 #    y_vel = 0
 #    safe = false
-#    # dy:  alarm_0(5)
+#    # DY:  alarm_0(5)
 
     
 

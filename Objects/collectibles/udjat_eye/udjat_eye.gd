@@ -22,9 +22,9 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "udjat eye"
-#    PlatformEngine.make_active()
-#    Collision.set_collision_bounds(-6, -6, 6, 6)
+#    type = "Udjat Eye"
+#    PlatformEngine.make_active(self)
+#    Collision.set_collision_bounds(self, -6, -6, 6, 6)
 
 #    cost = 0
-#    buy_message = "I shouldn'T be selling this!"
+#    buy_message = "I SHOULDN'T BE SELLING THIS!"

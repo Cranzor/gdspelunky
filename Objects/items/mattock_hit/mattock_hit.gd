@@ -55,7 +55,7 @@ func _process(delta):
         
     
     
-#        # dy: 
+#        # DY: 
 #    break mattock
 #        if (randi_range(1,20) == 1 and not global.i"tunnel_man):"
     
@@ -86,7 +86,7 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "mattock"
+#    type = "Mattock"
 #    image_speed = 0.5
 #    damage = 2
 #    puncture = true

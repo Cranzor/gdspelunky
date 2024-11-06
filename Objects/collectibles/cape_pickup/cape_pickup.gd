@@ -1,4 +1,3 @@
-
 extends Item
 
 
@@ -17,14 +16,14 @@ func _process(delta):
 #--- Object functions
 
 
-#func create():
-    #    # action_inherited
-#    super()
+func create():
+	# action_inherited
+	super()
 
-#    # main_code
-#    type = "cape"
-#    PlatformEngine.make_active()
-#    Collision.set_collision_bounds(-6, -6, 6, 6)
+	# main_code
+	type = "cape"
+	PlatformEngine.make_active(self)
+	Collision.set_collision_bounds(self, -6, -6, 6, 6)
 
-#    cost = 12000
-#    buy_message = "A cape for $" + str\(cost) + "."
+	cost = 12000
+	buy_message = "A CAPE FOR $" + str(cost) + "."

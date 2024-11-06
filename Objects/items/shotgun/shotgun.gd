@@ -22,11 +22,11 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "shotgun"
-#    PlatformEngine.make_active()
-#    Collision.set_collision_bounds(-4, -4, 4, 4)
+#    type = "Shotgun"
+#    PlatformEngine.make_active(self)
+#    Collision.set_collision_bounds(self, -4, -4, 4, 4)
 #    cost = 15000
-#    buy_message = "A shotgun for $" + str\(cost) + "."
+#    buy_message = "A SHOTGUN FOR $" + str(cost) + "."
 
     
 

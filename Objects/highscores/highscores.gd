@@ -41,7 +41,7 @@ func _process(delta):
 #    t_kills = highscore_value(3) - 7000000
 #    t_saves = highscore_value(4)-6000000
 
-#    # dy:  debug
+#    # DY:  debug
 #    /*
 #    t_money = 200000
 #    t_time = 1
@@ -149,106 +149,106 @@ func _process(delta):
 
 #    draw_set_font(global.my_font_small)
 #    draw_set_color(c_yellow)
-#    draw_text(128+16, 32, "secret challenges")
+#    draw_text(128+16, 32, "SECRET CHALLENGES")
 #    draw_set_color(c_white)
 #    t_mini1 = floor(highscore_value(10) / 10000)
 #    t_mini2 = floor((highscore_value(10)-(t_mini1*10000)) / 100)
 #    t_mini3 = floor(highscore_value(10)-(t_mini1*10000)-(t_mini2*100))
-#    draw_text(128, 48, "sun:   " + str\(t_mini1))
-#    draw_text(128, 64, "moon:  " + str\(t_mini2))
-#    draw_text(128, 80, "stars: " + str\(t_mini3))
+#    draw_text(128, 48, "SUN:   " + str(t_mini1))
+#    draw_text(128, 64, "MOON:  " + str(t_mini2))
+#    draw_text(128, 80, "STARS: " + str(t_mini3))
 
 #    if (player1.position.y < 48+16):
 
 #        draw_set_color(c_yellow)
-#        draw_text(168, 96, "sun room")
+#        draw_text(168, 96, "SUN ROOM")
 #        draw_set_color(c_white)
 #        if (t_money >= sun_gold):
     
-#            if (false): # dy:  (global.i"tunnel_man)"
+#            if (false): # DY:  (global.i"tunnel_man)"
         
-#                draw_text(128, 112, "no mattocks allowed!")
-#                draw_text(128, 128, "this means you!")
+#                draw_text(128, 112, "NO MATTOCKS ALLOWED!")
+#                draw_text(128, 128, "THIS MEANS YOU!")
 #                draw_text(128, 144, "")
 #                draw_text(128, 160, "")
         
 #            else:
         
-#                draw_text(128, 112, "keep yourself and")
-#                draw_text(128, 128, "the damsel alive")
-#                draw_text(128, 144, "for as long as")
-#                draw_text(128, 160, "possible!")
+#                draw_text(128, 112, "KEEP YOURSELF AND")
+#                draw_text(128, 128, "THE DAMSEL ALIVE")
+#                draw_text(128, 144, "FOR AS LONG AS")
+#                draw_text(128, 160, "POSSIBLE!")
         
     
 #        else:
     
-#            draw_text(128, 112, "locked.")
+#            draw_text(128, 112, "LOCKED.")
     
 
 #    elif (player1.position.y < 80+16):
 
 #        draw_set_color(c_yellow)
-#        draw_text(168, 96, "moon room")
+#        draw_text(168, 96, "MOON ROOM")
 #        draw_set_color(c_white)
 #        if (t_time > 0 and t_time <= moon_gold):
     
-#            if (false): # dy:  (global.i"tunnel_man)"
+#            if (false): # DY:  (global.i"tunnel_man)"
         
-#                draw_text(128, 112, "no mattocks allowed!")
-#                draw_text(128, 128, "this means you!")
+#                draw_text(128, 112, "NO MATTOCKS ALLOWED!")
+#                draw_text(128, 128, "THIS MEANS YOU!")
 #                draw_text(128, 144, "")
 #                draw_text(128, 160, "")
         
 #            else:
         
-#                draw_text(128, 112, "shoot the moving")
-#                draw_text(128, 128, "targets with your")
-#                draw_text(128, 144, "bow and arrows!")
+#                draw_text(128, 112, "SHOOT THE MOVING")
+#                draw_text(128, 128, "TARGETS WITH YOUR")
+#                draw_text(128, 144, "BOW AND ARROWS!")
         
     
 #        else:
     
-#            draw_text(128, 112, "locked.")
+#            draw_text(128, 112, "LOCKED.")
     
 
 #    elif (player1.position.y < 112+16):
 
 #        draw_set_color(c_yellow)
-#        draw_text(168, 96, "stars room")
+#        draw_text(168, 96, "STARS ROOM")
 #        draw_set_color(c_white)
 #        if (t_kills >= star"gold):"
     
-#            if (false): # dy:  (global.i"tunnel_man)"
+#            if (false): # DY:  (global.i"tunnel_man)"
         
-#                draw_text(128, 112, "no mattocks allowed!")
-#                draw_text(128, 128, "this means you!")
+#                draw_text(128, 112, "NO MATTOCKS ALLOWED!")
+#                draw_text(128, 128, "THIS MEANS YOU!")
 #                draw_text(128, 144, "")
 #                draw_text(128, 160, "")
         
 #            else:
         
-#                draw_text(128, 112, "kill as many angry")
-#                draw_text(128, 128, "shopkeeps as you can")
-#                draw_text(128, 144, "before they get you!")
+#                draw_text(128, 112, "KILL AS MANY ANGRY")
+#                draw_text(128, 128, "SHOPKEEPS AS YOU CAN")
+#                draw_text(128, 144, "BEFORE THEY GET YOU!")
         
     
 #        else:
     
-#            draw_text(128, 112, "locked.")
+#            draw_text(128, 112, "LOCKED.")
     
 
 #    elif (player1.position.y < 160):
 
 #        draw_set_color(c_yellow)
-#        draw_text(160, 96, "changing room")
+#        draw_text(160, 96, "CHANGING ROOM")
 #        draw_set_color(c_white)
 #        if (t_saves >= 8):
     
-#            draw_text(128, 112, "lady in red...")
+#            draw_text(128, 112, "LADY IN RED...")
     
 #        else:
     
-#            draw_text(128, 112, "locked.")
+#            draw_text(128, 112, "LOCKED.")
     
 #        with new
     
@@ -265,16 +265,16 @@ func _process(delta):
 
 #    draw_set_font(global.my_font_small)
 #    draw_set_color(c_yellow)
-#    draw_text(160, 32, "top defilers")
+#    draw_text(160, 32, "TOP DEFILERS")
 #    draw_set_color(c_white)
-#    draw_text(128, 48, "money:  " + str\(highscore_value(1)-9000000))
-#    draw_text(128, 64, "kills:  " + str\(highscore_value(3)-7000000))
-#    draw_text(128, 80, "saves:  " + str\(highscore_value(4)-6000000))
-#    # dy:  only display time if won:
+#    draw_text(128, 48, "MONEY:  " + str(highscore_value(1)-9000000))
+#    draw_text(128, 64, "KILLS:  " + str(highscore_value(3)-7000000))
+#    draw_text(128, 80, "SAVES:  " + str(highscore_value(4)-6000000))
+#    # DY:  only display time if won:
 #    if (highscore_value(6)-4000000 > 0):
 
 #        s = highscore_value(2)-8000000
-#        # dy:  s = floor(s / 1000)
+#        # DY:  s = floor(s / 1000)
 #        m = 0
 #        while (s > 59):
     
@@ -283,50 +283,50 @@ func _process(delta):
     
     
 #        draw_set_color(c_white)
-#        draw_text(128, 96, "time: ")
-#        if (s < 10): draw_text(128+64, 96, str\(m) + ":0" + str\(s))
-#        else: draw_text(128+64, 96, str\(m) + ":" + str\(s))
+#        draw_text(128, 96, "TIME: ")
+#        if (s < 10): draw_text(128+64, 96, str(m) + ":0" + str(s))
+#        else: draw_text(128+64, 96, str(m) + ":" + str(s))
 
 #    draw_set_color(c_yellow)
-#    draw_text(168, 112, "statistics")
+#    draw_text(168, 112, "STATISTICS")
 #    draw_set_color(c_white)
-#    draw_text(128, 128, "plays:  " + str\(highscore_value(5)-5000000))
-#    draw_text(128, 144, "deaths: " + str\(highscore_value(7)-3000000))
-#    draw_text(128, 160, "wins:   " + str\(highscore_value(6)-4000000))
+#    draw_text(128, 128, "PLAYS:  " + str(highscore_value(5)-5000000))
+#    draw_text(128, 144, "DEATHS: " + str(highscore_value(7)-3000000))
+#    draw_text(128, 160, "WINS:   " + str(highscore_value(6)-4000000))
 
 #    block = instance_nearest(160, 240, push_block)
 #    if (not button_highscore.pushed and block.position.x > 160):
 
 #        draw_set_font(global.my_font_small)
 #        draw_set_color(c_yellow)
-#        str_len = string_length("this will clear everything!")*8
+#        str_len = string_length("THIS WILL CLEAR EVERYTHING!")*8
 #        n = 320 - str_len
 #        n = ceil(n / 2)
-#        draw_text(n, 216, str\("this will clear everything!"))
+#        draw_text(n, 216, str("THIS WILL CLEAR EVERYTHING!"))
 
 
     
 
 #func key q pressed():
     #    /*highscore_clear()
-#    highscore_add("money", 9000000)
-#    highscore_add("time", 8000000)
-#    highscore_add("kills", 7000000)
-#    highscore_add("saves", 6000000)
-#    highscore_add("plays", 5000000)
-#    highscore_add("wins", 4000000)
-#    highscore_add("deaths", 3000000)*/
+#    highscore_add("MONEY", 9000000)
+#    highscore_add("TIME", 8000000)
+#    highscore_add("KILLS", 7000000)
+#    highscore_add("SAVES", 6000000)
+#    highscore_add("PLAYS", 5000000)
+#    highscore_add("WINS", 4000000)
+#    highscore_add("DEATHS", 3000000)*/
 
     
 
 #func step():
-    #    # dy:  shake the screen
+    #    # DY:  shake the screen
 #    if (global.shake > 0):
 
-#        # dy: view_xview[0] = view_xview[0] + randi_range(0,3) - randi_range(0,3)
-#        # dy: view_yview[0] = view_yview[0] + randi_range(0,3) - randi_range(0,3)
-#        # dy: if (view_yview[0] > 16): view_yview[0] = 16 - randi_range(0,8)
-#        # dy: if (view_yview[0] < 0): view_yview[0] = 0 + randi_range(0,8)
+#        # DY: view_xview[0] = view_xview[0] + randi_range(0,3) - randi_range(0,3)
+#        # DY: view_yview[0] = view_yview[0] + randi_range(0,3) - randi_range(0,3)
+#        # DY: if (view_yview[0] > 16): view_yview[0] = 16 - randi_range(0,8)
+#        # DY: if (view_yview[0] < 0): view_yview[0] = 0 + randi_range(0,8)
 #        if (shake_toggle): view_yview[0] = view_yview[0] + randi_range(1,8)
 #        else: view_yview[0] = 0
 #        shake_toggle = not shake_toggle

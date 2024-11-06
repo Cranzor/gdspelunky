@@ -1,4 +1,3 @@
-
 extends Item
 
 
@@ -17,14 +16,14 @@ func _process(delta):
 #--- Object functions
 
 
-#func create():
-    #    # action_inherited
-#    super()
+func create():
+	# action_inherited
+	super()
 
-#    # main_code
-#    type = "compass"
-#    PlatformEngine.make_active()
-#    Collision.set_collision_bounds(-6, -6, 6, 6)
+	# main_code
+	type = "compass"
+	PlatformEngine.make_active(self)
+	Collision.set_collision_bounds(self, -6, -6, 6, 6)
 
-#    cost = 3000
-#    buy_message = "A compass for $" + str\(cost) + "."
+	cost = 3000
+	buy_message = "A COMPASS FOR $" + str(cost) + "."

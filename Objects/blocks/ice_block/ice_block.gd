@@ -23,7 +23,7 @@ func _process(delta):
 
 #    # main_code
 #    invincible = false
-#    Collision.set_collision_bounds(0, 0, 16, 16)
+#    Collision.set_collision_bounds(self, 0, 0, 16, 16)
 #    if (global.city_of_gold): sprite_index = "gold_block"
 #    clean_death = false
 

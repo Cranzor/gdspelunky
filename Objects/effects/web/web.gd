@@ -18,18 +18,18 @@ func _process(delta):
 
 
 #func collision with o_enemy():
-    #    if (other.type != "spider" and other.type != "giant spider"):
+    #    if (other.type != "Spider" and other.type != "Giant Spider"):
 
 #        other.x_vel = 0
 #        other.y_vel = 0
 
 
-#    if (other.type == "magma man"):
+#    if (other.type == "Magma Man"):
 
 #        gml.instance_destroy()
 
 
-#    if (other.type == "shopkeeper" and other.hp > 0):
+#    if (other.type == "Shopkeeper" and other.hp > 0):
 
 #        other.status = 2
 
@@ -37,7 +37,7 @@ func _process(delta):
     
 
 #func collision with o_item():
-    #    if (not other.held and other.type != "rope"):
+    #    if (not other.held and other.type != "Rope"):
 
 #        other.x_vel = 0
 #        other.y_vel = 0
@@ -59,7 +59,7 @@ func _process(delta):
 
 #func collision with o_slash():
     #    # action_kill_object
-#    # need to implement this action
+#    # Need to implement this action
     
 
 #func collision with o_treasure():

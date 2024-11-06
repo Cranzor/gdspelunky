@@ -22,9 +22,9 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "rope pile"
-#    PlatformEngine.make_active()
-#    Collision.set_collision_bounds(-6, -5, 6, 5)
+#    type = "Rope Pile"
+#    PlatformEngine.make_active(self)
+#    Collision.set_collision_bounds(self, -6, -5, 6, 5)
 
 #    cost = 2500
-#    buy_message = "extra rope for $" + str\(cost) + "."
+#    buy_message = "EXTRA ROPE FOR $" + str(cost) + "."

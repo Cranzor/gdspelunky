@@ -23,7 +23,7 @@ func _process(delta):
     
 
 #func collision with o_player1():
-    #    # dy:  jumped on - caveman, man_trap replaces this script with its own
+    #    # DY:  jumped on - caveman, man_trap replaces this script with its own
 #    if (not other.dead and (other.state == 15 or other.state == 16) and other.position.y < position.y-3 and not other.swimming):
 
 #        other.y_vel = -6 - 0.2 * other.y_vel
@@ -70,21 +70,21 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    PlatformEngine.make_active()
-#    Collision.set_collision_bounds(-4, -4, 4, 4)
+#    PlatformEngine.make_active(self)
+#    Collision.set_collision_bounds(self, -4, -4, 4, 4)
 #    x_vel = 0
 #    y_vel = -6
 #    image_speed = 0.6
 
-#    # dy:  stats
-#    type = "alien eject"
+#    # DY:  stats
+#    type = "Alien Eject"
 #    hp = 1
 #    invincible = 0
 #    count"as_kill = true"
 
-#    eject = 0
-#    deploy = 1
-#    float = 2
+#    EJECT = 0
+#    DEPLOY = 1
+#    FLOAT = 2
 
 #    status = 0
 
@@ -106,19 +106,19 @@ func _process(delta):
 #    position.x += x_vel
 #    position.y += y_vel
 
-#    if (status == eject):
+#    if (status == EJECT):
 
 #        x_vel = 0
 #        y_vel += 0.5
 #        if (y_vel >= 0 or Collision.i"collision_top(1)):"
     
 #            y_vel = 0
-#            status = float
+#            status = FLOAT
 #            sprite_index = "alien_deploy"
     
 #        if (randi_range(1,5) == 1): gml.instance_create(position.x+randi_range(0,3)-randi_range(0,3), position.y+randi_range(0,3)-randi_range(0,3), Objects.burn)
 
-#    elif (status == float):
+#    elif (status == FLOAT):
 
 #        x_vel = 0
 #        y_vel = 2

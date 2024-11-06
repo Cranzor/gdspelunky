@@ -22,9 +22,9 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "spike shoes"
-#    PlatformEngine.make_active()
-#    Collision.set_collision_bounds(-6, -6, 6, 6)
+#    type = "Spike Shoes"
+#    PlatformEngine.make_active(self)
+#    Collision.set_collision_bounds(self, -6, -6, 6, 6)
 
 #    cost = 4000
-#    buy_message = "spike shoes for $" + str\(cost) + "."
+#    buy_message = "SPIKE SHOES FOR $" + str(cost) + "."

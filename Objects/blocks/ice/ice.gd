@@ -23,7 +23,7 @@ func _process(delta):
 
 #    # main_code
 #    if (randi_range(1,80) == 1): gml.instance_create(position.x, position.y, Objects.frozen_caveman)
-#    # dy:  elif (randi_range(1,800) == 1): scr_generate_item(position.x+8, position.y+8, 2)
+#    # DY:  elif (randi_range(1,800) == 1): scr_generate_item(position.x+8, position.y+8, 2)
 
     
 

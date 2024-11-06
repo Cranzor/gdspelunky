@@ -18,15 +18,15 @@ func _process(delta):
 
 
 #func animation_end():
-    #    if (status == yell):
+    #    if (status == YELL):
 
-#        status = idle
+#        status = IDLE
 #        counter = 200
 
 
-#    if (status == kiss):
+#    if (status == KISS):
 
-#        status = slave
+#        status = SLAVE
 
 
 #    if (sprite_index == "damsel_exit2 or sprite_index = s_p_exit):"
@@ -37,7 +37,7 @@ func _process(delta):
     
 
 #func collision with o_whip():
-    #    if (other.type == "machete" and hit == 0):
+    #    if (other.type == "Machete" and hit == 0):
 
 #         hp -= other.damage
 #         hit = 10
@@ -49,7 +49,7 @@ func _process(delta):
 #            if (hp < 0): blood_left -= 1
      
 
-#    elif (status != thrown and (status < exit or status == slave or status == kiss) and hit == 0):
+#    elif (status != THROWN and (status < EXIT or status == SLAVE or status == KISS) and hit == 0):
 
 #        y_vel = -2
 #        hit = 10
@@ -64,7 +64,7 @@ func _process(delta):
     
 
 #func collision with o_whip_pre():
-    #    if (other.type == "machete" and hit == 0):
+    #    if (other.type == "Machete" and hit == 0):
 
 #         hp -= other.damage
 #         hit = 10
@@ -76,7 +76,7 @@ func _process(delta):
 #            if (hp < 0): blood_left -= 1
      
 
-#    elif (status != thrown and (status < exit or status == slave or status == kiss) and hit == 0):
+#    elif (status != THROWN and (status < EXIT or status == SLAVE or status == KISS) and hit == 0):
 
 #        y_vel = -2
 #        hit = 10
@@ -95,9 +95,9 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "damsel"
-#    PlatformEngine.make_active()
-#    Collision.set_collision_bounds(-4, -4, 4, 8)
+#    type = "Damsel"
+#    PlatformEngine.make_active(self)
+#    Collision.set_collision_bounds(self, -4, -4, 4, 8)
 #    image_speed = 0.5
 #    trigger = true
 #    startled = false
@@ -105,27 +105,27 @@ func _process(delta):
 #    swimming = false
 #    heavy = true
 #    cost = InLevel.get_kis"value() * 3"
-#    if (global.i"damsel): buy_message = "I'll let you have him for $" + str\(cost) + "!""
-#    else: buy_message = "I'll let you have her for $" + str\(cost) + "!"
+#    if (global.i"damsel): buy_message = "I'LL LET YOU HAVE HIM FOR $" + str(cost) + "!""
+#    else: buy_message = "I'LL LET YOU HAVE HER FOR $" + str(cost) + "!"
 
 #    hp = 4
 #    blood_left = 4
 #    favor = 8
 #    sac_count = 20
 
-#    idle = 0
-#    run = 1
-#    thrown = 2
-#    yell = 3
-#    exit = 4
-#    slave = 5
-#    kiss = 6
-#    dead = 99
+#    IDLE = 0
+#    RUN = 1
+#    THROWN = 2
+#    YELL = 3
+#    EXIT = 4
+#    SLAVE = 5
+#    KISS = 6
+#    DEAD = 99
 #    dead = false
-#    status = idle
+#    status = IDLE
 #    hit = 0
 
-#    facing = left
+#    facing = LEFT
 
 #    bounced = false
 #    burning = false
@@ -150,7 +150,7 @@ func _process(delta):
     
 
 #func draw():
-    #    if (facing == right): image_xscale = -1
+    #    if (facing == RIGHT): image_xscale = -1
 #    else: image_xscale = 1
 
 #    draw_sprite_ext(sprite_index, -1, position.x, position.y, image_xscale, image_yscale, image_angle, image_blend, image_alpha)
@@ -173,7 +173,7 @@ func _process(delta):
 #        gml.collision_point(position.x, position.y, "exit", 0, 0) and
 #        hp > 0 and
 #        not held and
-#        status != thrown)
+#        status != THROWN)
 
 #        global.damsel"saved_total += 1"
 #        global.damsels += 1
@@ -216,7 +216,7 @@ func _process(delta):
 #        my_grav = 0.6
 
 
-#    # dy:  if damsel dies offscreen sometimes it won't trigger shopkeeper:
+#    # DY:  if damsel dies offscreen sometimes it won't trigger shopkeeper:
 #    if (cost > 0 and hp <= 0):
 
 #        InLevel.scr_shopkeeper_anger(3)
@@ -245,7 +245,7 @@ func _process(delta):
 
 #        if (gml.collision_point(position.x, position.y+6, "lava", 0, 0)):
     
-#            status = dead
+#            status = DEAD
 #            dead = true
 #            if (hp > 0):
         
@@ -275,7 +275,7 @@ func _process(delta):
         
 #                sprite_index = "damsel_die_l"
         
-#            status = dead
+#            status = DEAD
 #            dead = true
 #            if (hp > 0):
         
@@ -288,7 +288,7 @@ func _process(delta):
     
 
 #        if (gml.collision_rectangle(position.x-3, position.y-3, position.x+3,  position.y+3, "spear"left", 0, 0) and:"
-#            (status != thrown or Collision.i"collision_bottom(1)))"
+#            (status != THROWN or Collision.i"collision_bottom(1)))"
     
 #            obj = instance_nearest(position.x, position.y, spear"left)"
 #            if (obj.image_index >= 19 and obj.image_index < 28):
@@ -299,7 +299,7 @@ func _process(delta):
 #                    with player1  hold_item = 0 pickup_item_type = "" 
             
 #                hp -= 2
-#                status = thrown
+#                status = THROWN
 #                counter = stun_max
 #                y_vel = -6
 #                if (obj.position.x < position.x): x_vel = 4
@@ -311,9 +311,9 @@ func _process(delta):
     
 
 
-#    if (not held and y_vel > 2 and status != thrown):
+#    if (not held and y_vel > 2 and status != THROWN):
 
-#        status = thrown
+#        status = THROWN
 #        SS_SetSoundPan(global.snd_damsel, 0)
 #        Audio.play_sound(global.snd_damsel)
 
@@ -322,10 +322,10 @@ func _process(delta):
 
 #        facing = character.facing
 
-#    elif (status == slave):
+#    elif (status == SLAVE):
 
-#        if (player1.position.x < position.x): facing = left
-#        else: facing = right
+#        if (player1.position.x < position.x): facing = LEFT
+#        else: facing = RIGHT
 #        if (global.i"damsel):"
     
 #            sprite_index = "stand_left"
@@ -335,17 +335,17 @@ func _process(delta):
 #            sprite_index = "damsel_left"
     
 
-#    elif (status == kiss):
+#    elif (status == KISS):
 
 #        if ((sprite_index == "damsel_kiss_l or:"
 #             sprite_index == "p_kiss_l) and image_index == 7)"
     
-#            if (facing == left): gml.instance_create(position.x-8, position.y-8, Objects.heart)
+#            if (facing == LEFT): gml.instance_create(position.x-8, position.y-8, Objects.heart)
 #            else: gml.instance_create(position.x+8, position.y-8, Objects.heart)
 #            Audio.play_sound(global.snd_kiss)
     
 
-#    elif (status == idle):
+#    elif (status == IDLE):
 
 #        if (global.i"damsel):"
     
@@ -358,7 +358,7 @@ func _process(delta):
 #        if (counter > 0): counter -= 1
 #        else:
     
-#            status = yell
+#            status = YELL
 #            if (global.i"damsel):"
         
 #                sprite_index = "yell_left"
@@ -373,14 +373,14 @@ func _process(delta):
 #            Audio.play_sound(global.snd_damsel)
     
 
-#    elif (status == yell):
+#    elif (status == YELL):
 
 #        if (image_index == 4):
     
 #            gml.instance_create(position.x, position.y-16, Objects.yell_help)
     
 
-#    elif (status == run):
+#    elif (status == RUN):
 
 #        image_speed = 0.8
 #        if (global.i"damsel):"
@@ -391,10 +391,10 @@ func _process(delta):
     
 #            sprite_index = "damsel_run_l"
     
-#        if (facing == left and Collision.i"collision_left(2)): facing = right"
-#        if (facing == right and Collision.i"collision_right(2)): facing = left"
+#        if (facing == LEFT and Collision.i"collision_left(2)): facing = RIGHT"
+#        if (facing == RIGHT and Collision.i"collision_right(2)): facing = LEFT"
     
-#        if (facing == left):
+#        if (facing == LEFT):
     
 #            x_vel = -1.5
     
@@ -403,9 +403,9 @@ func _process(delta):
 #            x_vel = 1.5
     
 
-#    elif (status == thrown):
+#    elif (status == THROWN):
 
-#        # dy:  Collision.set_collision_bounds(-4, -2, 4, 2)
+#        # DY:  Collision.set_collision_bounds(self, -4, -2, 4, 2)
 
 #        if (!startled):
     
@@ -452,7 +452,7 @@ func _process(delta):
 #            if (!dead):
         
 #                if (counter > 0): counter -= 1
-#                else: status = run
+#                else: status = RUN
         
         
 #            if (hp <= 0):
@@ -465,7 +465,7 @@ func _process(delta):
             
 #                    sprite_index = "damsel_die_l"
             
-#                status = dead
+#                status = DEAD
 #                if (!dead):
             
 #                    dead = true
@@ -477,8 +477,8 @@ func _process(delta):
     
 
 
-#    # dy:  sacrifice
-#    if (status == thrown or status == dead):
+#    # DY:  sacrifice
+#    if (status == THROWN or status == DEAD):
 
 #        if (not held and x_vel == 0 and y_vel == 0):
     
@@ -490,10 +490,10 @@ func _process(delta):
 #                gml.instance_create(position.x, position.y, Objects.flame)
 #                Audio.play_sound(global.snd_small_explode)
 #                MiscScripts.scr_create_blood(position.x, position.y, 3)
-#                global.message = "kali accepts your sacrifice!"
+#                global.message = "KALI ACCEPTS YOUR SACRIFICE!"
 #                if (global.favor <= -8):
             
-#                    global.message = "kali devours your sacrifice!"
+#                    global.message = "KALI DEVOURS YOUR SACRIFICE!"
             
 #                elif (global.favor < 0):
             

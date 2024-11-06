@@ -36,12 +36,12 @@ func _process(delta):
 
 #    kissed = false
 
-#    idle = 0
-#    run = 1
-#    thrown = 2
-#    yell = 3
-#    exit = 4
-#    status = idle
+#    IDLE = 0
+#    RUN = 1
+#    THROWN = 2
+#    YELL = 3
+#    EXIT = 4
+#    status = IDLE
 
 #    if (global.i"damsel): sprite_index = s_stand_left"
 

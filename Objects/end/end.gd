@@ -61,13 +61,13 @@ func _process(delta):
     
 
 
-#    # dy:  shake the screen
+#    # DY:  shake the screen
 #    if (global.shake > 0):
 
-#        # dy: view_xview[0] = view_xview[0] + randi_range(0,3) - randi_range(0,3)
-#        # dy: view_yview[0] = view_yview[0] + randi_range(0,3) - randi_range(0,3)
-#        # dy: if (view_yview[0] > 16): view_yview[0] = 16 - randi_range(0,8)
-#        # dy: if (view_yview[0] < 0): view_yview[0] = 0 + randi_range(0,8)
+#        # DY: view_xview[0] = view_xview[0] + randi_range(0,3) - randi_range(0,3)
+#        # DY: view_yview[0] = view_yview[0] + randi_range(0,3) - randi_range(0,3)
+#        # DY: if (view_yview[0] > 16): view_yview[0] = 16 - randi_range(0,8)
+#        # DY: if (view_yview[0] < 0): view_yview[0] = 0 + randi_range(0,8)
 #        if (shake_toggle): view_yview[0] = view_yview[0] + randi_range(1,8)
 #        else: view_yview[0] = 0
 #        shake_toggle = not shake_toggle

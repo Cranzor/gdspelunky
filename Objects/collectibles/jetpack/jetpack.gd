@@ -22,12 +22,12 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "jetpack"
-#    PlatformEngine.make_active()
-#    Collision.set_collision_bounds(-5, -5, 5, 8)
+#    type = "Jetpack"
+#    PlatformEngine.make_active(self)
+#    Collision.set_collision_bounds(self, -5, -5, 5, 8)
 
 #    cost = 20000
-#    buy_message = "jetpack for $" + str\(cost) + "."
+#    buy_message = "JETPACK FOR $" + str(cost) + "."
 #    heavy = true
 
     

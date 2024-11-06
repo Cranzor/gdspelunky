@@ -56,7 +56,7 @@ func _process(delta):
     
 
 #func collision with o_enemy():
-    #    if (other.type != "magma man"):
+    #    if (other.type != "Magma Man"):
 
 #        other.y_vel = -4
 #        if (position.x < other.position.x):
@@ -89,8 +89,8 @@ func _process(delta):
 #    image_speed
 #    0.3
 #    # main_code
-#    PlatformEngine.make_active()
-#    Collision.set_collision_bounds(-8, -8, 8, 8)
+#    PlatformEngine.make_active(self)
+#    Collision.set_collision_bounds(self, -8, -8, 8, 8)
 #    x_vel = random(4) - random(4)
 #    y_vel = -1 - random(2)
 #    grav = randi_range(1,6) * 0.1

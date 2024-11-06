@@ -18,15 +18,15 @@ func _process(delta):
 
 
 #func animation_end():
-    #    if (status == eating):
+    #    if (status == EATING):
 
 #        sprite_index = "man_trap_sleep_l"
-#        status = sleepy
+#        status = SLEEPY
 
 #    elif (sprite_index == "man_trap_sleep_l):"
 
 #        sprite_index = "man_trap_stun_l"
-#        status = stunned
+#        status = STUNNED
 #        counter = stun_time*2
 
 
@@ -34,12 +34,12 @@ func _process(delta):
     
 
 #func collision with o_caveman():
-    #    if (status != stunned and status != eating):
+    #    if (status != STUNNED and status != EATING):
 
 #        x_vel = 0
-#        status = eating
-#        if (other.position.x > position.x): facing = right
-#        else: facing = left
+#        status = EATING
+#        if (other.position.x > position.x): facing = RIGHT
+#        else: facing = LEFT
 #        sprite_index = "man_trap_eat_caveman_l"
         
 #        with other  gml.instance_destroy() 
@@ -50,16 +50,16 @@ func _process(delta):
 #func collision with o_character():
     #    if (abs(other.position.x-(position.x+8)) > 8):
 
-#        # dy:  do nothing
+#        # DY:  do nothing
 
-#    elif ((global.ha"spike_shoes or status == eating) and not other.dead and not other.stunned and (other.state == 15 or other.state == 16) and other.position.y < position.y+5 and not other.swimming):"
+#    elif ((global.ha"spike_shoes or status == EATING) and not other.dead and not other.stunned and (other.state == 15 or other.state == 16) and other.position.y < position.y+5 and not other.swimming):"
 
 #        other.y_vel=-6-0.2*other.y_vel
 #        if (global.ha"spike_shoes):  hp -= (3 * (floor(other.fall_timer/16)+1)) if (not bloodless) gml.instance_create(other.position.x, other.position.y+8, Objects.blood) "
 #        else: hp -= (1 * (floor(other.fall_timer/16)+1))
 #        other.fall_timer = 0
 #        count"as_kill = true"
-#        status = stunned
+#        status = STUNNED
 #        counter = stun_time
 #        y_vel = -6
 #        if (other.position.x < position.x+8): x_vel += 1
@@ -69,12 +69,12 @@ func _process(delta):
 
 #    elif (other.visible and other.invincible == 0):
 
-#        if (status != stunned and status != eating):
+#        if (status != STUNNED and status != EATING):
     
 #            x_vel = 0
-#            status = eating
-#            if (other.position.x > position.x+8): facing = right
-#            else: facing = left
+#            status = EATING
+#            if (other.position.x > position.x+8): facing = RIGHT
+#            else: facing = LEFT
 #            if (global.i"damsel):"
         
 #                sprite_index = "man_trap_eat_damsel_l"
@@ -102,7 +102,7 @@ func _process(delta):
 #                else:
             
 #                    other.hold_item.held = false
-#                    if (facing == left): other.hold_item.x_vel = -2
+#                    if (facing == LEFT): other.hold_item.x_vel = -2
 #                    else: other.hold_item.x_vel = 2
 #                    other.hold_item.y_vel = -4
             
@@ -116,12 +116,12 @@ func _process(delta):
     
 
 #func collision with o_damsel():
-    #    if (status != stunned and status != eating):
+    #    if (status != STUNNED and status != EATING):
 
 #        x_vel = 0
-#        status = eating
-#        if (other.position.x > position.x): facing = right
-#        else: facing = left
+#        status = EATING
+#        if (other.position.x > position.x): facing = RIGHT
+#        else: facing = LEFT
 #        sprite_index = "man_trap_eat_damsel_l"
         
 #        with other
@@ -138,12 +138,12 @@ func _process(delta):
     
 
 #func collision with o_shopkeeper():
-    #    if (status != stunned and status != eating):
+    #    if (status != STUNNED and status != EATING):
 
 #        x_vel = 0
-#        status = eating
-#        if (other.position.x > position.x): facing = right
-#        else: facing = left
+#        status = EATING
+#        if (other.position.x > position.x): facing = RIGHT
+#        else: facing = LEFT
 #        sprite_index = "man_trap_eat_shopkeeper_l"
 #        if (other.hp > 0): ate_shopkeeper = true
     
@@ -167,9 +167,9 @@ func _process(delta):
     
 
 #func collision with o_whip():
-    #    if (status != stunned):
+    #    if (status != STUNNED):
 
-#        if (other.type == "machete"):
+#        if (other.type == "Machete"):
     
 #            hp -= other.damage*2
     
@@ -178,7 +178,7 @@ func _process(delta):
 #            hp -= other.damage
     
 #        count"as_kill = true"
-#        status = stunned
+#        status = STUNNED
 #        counter = stun_time
 #        y_vel = -3
 #        if (other.position.x < (position.x+8)): x_vel = 2
@@ -191,9 +191,9 @@ func _process(delta):
     
 
 #func collision with o_whip_pre():
-    #    if (status != stunned):
+    #    if (status != STUNNED):
 
-#        if (other.type == "machete"):
+#        if (other.type == "Machete"):
     
 #            hp -= other.damage*2
     
@@ -202,7 +202,7 @@ func _process(delta):
 #            hp -= other.damage
     
 #        count"as_kill = true"
-#        status = stunned
+#        status = STUNNED
 #        counter = stun_time
 #        y_vel = -3
 #        if (other.position.x < (position.x+8)): x_vel = 2
@@ -219,25 +219,25 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    PlatformEngine.make_active()
-#    Collision.set_collision_bounds(2, 0, sprite_width-2, sprite_height)
+#    PlatformEngine.make_active(self)
+#    Collision.set_collision_bounds(self, 2, 0, sprite_width-2, sprite_height)
 #    x_vel = 2.5
 #    image_speed = 0.5
 
-#    # dy:  stats
-#    type = "man_trap"
+#    # DY:  stats
+#    type = "ManTrap"
 #    hp = 3
 #    invincible = 0
 #    favor = 2
 
-#    idle = 0
-#    walk = 1
-#    attack = 2
-#    sleepy = 96
-#    eating = 97
-#    stunned = 98
-#    dead = 99
-#    status = idle
+#    IDLE = 0
+#    WALK = 1
+#    ATTACK = 2
+#    SLEEPY = 96
+#    EATING = 97
+#    STUNNED = 98
+#    DEAD = 99
+#    status = IDLE
 
 #    ate_shopkeeper = false
 
@@ -245,9 +245,9 @@ func _process(delta):
 #    dead = false
 #    counter = 0
 
-#    left = 0
-#    right = 1
-#    facing = right
+#    LEFT = 0
+#    RIGHT = 1
+#    facing = RIGHT
 
 #    shake_counter = 0
 #    shake_toggle = 1
@@ -298,59 +298,59 @@ func _process(delta):
 #        gml.instance_destroy()
 
 
-#    if (Collision.i"collision_bottom(1) and status != stunned): y_vel = 0"
+#    if (Collision.i"collision_bottom(1) and status != STUNNED): y_vel = 0"
 
-#    if (status == idle):
+#    if (status == IDLE):
 
 #        if (counter > 0): counter -= 1
 #        if (counter == 0):
     
 #            facing = randi_range(0,1)
-#            status = walk
+#            status = WALK
     
 
-#    elif (status == walk):
+#    elif (status == WALK):
 
 #        if (Collision.i"collision_left(1) or Collision.is_collision_right(1)):"
     
-#            if (facing == left): facing = right
-#            else: facing = left
+#            if (facing == LEFT): facing = RIGHT
+#            else: facing = LEFT
     
-#        if (facing == left and not gml.collision_point(position.x-1, position.y, "solid", -1, -1) and:
+#        if (facing == LEFT and not gml.collision_point(position.x-1, position.y, "solid", -1, -1) and:
 #            not gml.collision_point(position.x-1, position.y+16, "solid", -1, -1))
     
-#            facing = right
+#            facing = RIGHT
     
-#        elif (facing == right and not gml.collision_point(position.x+16, position.y, "solid", -1, -1) and:
+#        elif (facing == RIGHT and not gml.collision_point(position.x+16, position.y, "solid", -1, -1) and:
 #                 not gml.collision_point(position.x+16, position.y+16, "solid", -1, -1))
     
-#            facing = left
+#            facing = LEFT
     
 #        if ((not gml.collision_point(position.x-1, position.y+16, "solid", -1, -1) or gml.collision_point(position.x-1, position.y, "solid", -1, -1)) and:
 #            (not gml.collision_point(position.x+16, position.y+16, "solid", -1, -1) or gml.collision_point(position.x+16, position.y, "solid", -1, -1)))
     
-#            if (gml.collision_point(position.x-1, position.y, "solid", -1, -1)): facing = right
-#            else: facing = left
+#            if (gml.collision_point(position.x-1, position.y, "solid", -1, -1)): facing = RIGHT
+#            else: facing = LEFT
 #            x_vel = 0
     
-#        elif (facing == left): x_vel = -1
+#        elif (facing == LEFT): x_vel = -1
 #        else: x_vel = 1
     
 #        if (randi_range(1,100) == 1):
     
-#            status = idle
+#            status = IDLE
 #            counter = randi_range(20,50)
 #            x_vel = 0
     
 
-#    elif (status == stunned):
+#    elif (status == STUNNED):
 
-#        # dy:  x_vel = 0
+#        # DY:  x_vel = 0
 #        /*
 #        if (counter > 0): counter -= 1
 #        else:
     
-#            status = idle
+#            status = IDLE
 #            counter = randi_range(20,50)
     
 #        */
@@ -379,12 +379,12 @@ func _process(delta):
             
 #                elif (hp > 0):
             
-#                    status = idle
+#                    status = IDLE
 #                    counter = randi_range(20,50)
 #                    if (held):
                 
 #                        held = false
-#                        # dy:  trap can get stuck in wall at this point:
+#                        # DY:  trap can get stuck in wall at this point:
 #                        if (gml.collision_point(position.x+16, position.y+8, "solid", 0, 0)): position.x = player1.position.x - 12
 #                        elif (gml.collision_point(position.x, position.y+8, "solid", 0, 0)): position.x = player1.position.x - 4
 #                        position.y = player1.position.y - 8
@@ -395,12 +395,12 @@ func _process(delta):
     
 
 
-#    if (status >= stunned):
+#    if (status >= STUNNED):
 
 #        scr_check_collisions()
 
 
-#    # dy:  friction
+#    # DY:  friction
 #    if (col_bot):
 
 #        if (abs(x_vel) < 0.1): x_vel = 0
@@ -409,14 +409,14 @@ func _process(delta):
 
 #    if (Collision.i"collision_solid()): position.y -= 2"
 
-#    if (status == eating and image_index == 8):
+#    if (status == EATING and image_index == 8):
 
 #        MiscScripts.scr_create_blood(position.x+8, position.y, 1)
 
 
-#    if (status == sleepy and image_index == 6 and randi_range(1,8) == 1):
+#    if (status == SLEEPY and image_index == 6 and randi_range(1,8) == 1):
 
-#        if (facing == left):
+#        if (facing == LEFT):
     
 #            bone = gml.instance_create(position.x+2, position.y+4, Objects.bone)
 #            with bone  x_vel = -2 
@@ -428,6 +428,6 @@ func _process(delta):
     
 
 
-#    if (status < sleepy):
+#    if (status < SLEEPY):
 
 #        sprite_index = "man_trap_left"

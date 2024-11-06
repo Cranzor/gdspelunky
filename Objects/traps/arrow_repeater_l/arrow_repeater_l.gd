@@ -40,12 +40,12 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "arrow trap"
+#    type = "Arrow Trap"
 #    fired = 100+randi_range(100)
 #    invincible = false
-#    x_act = 0 # dy:  activate distance
-#    # dy: alarm_0(50)
-#    # dy: alarm_1(1)
+#    x_act = 0 # DY:  activate distance
+#    # DY: alarm_0(50)
+#    # DY: alarm_1(1)
 
     
 

@@ -19,16 +19,16 @@ func _process(delta):
 
 #func alarm 0():
     #    player = gml.instance_create(240, 132, Objects.player_sil)
-#    # dy: player.x_vel = -6
-#    # dy: player.y_vel = -8
+#    # DY: player.x_vel = -6
+#    # DY: player.y_vel = -8
 #    alarm_1(30)
 
     
 
 #func alarm 1():
     #    player = gml.instance_create(240, 132, Objects.treasure_sil)
-#    # dy: player.x_vel = -6
-#    # dy: player.y_vel = -8
+#    # DY: player.x_vel = -6
+#    # DY: player.y_vel = -8
 
     
 
@@ -40,7 +40,7 @@ func _process(delta):
 
 #func create():
     #    alarm_0(50)
-#    alarm_2(10) # dy: 
+#    alarm_2(10) # DY: 
 
     
 

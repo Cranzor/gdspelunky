@@ -29,7 +29,7 @@ func _process(delta):
 #            if (abs(x_vel) < 1 or other.position.y > position.y+13):
         
 #                position.y -= 1
-#                # dy:  nothing
+#                # DY:  nothing
         
 #            else:
         
@@ -57,12 +57,12 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    PlatformEngine.make_active()
-#    Collision.set_collision_bounds(-14, -16, 14, 16)
+#    PlatformEngine.make_active(self)
+#    Collision.set_collision_bounds(self, -14, -16, 14, 16)
 #    my_grav = 0.6
 #    dir = 0
-#    left = 100
-#    right = 101
+#    LEFT = 100
+#    RIGHT = 101
 #    invincible = true
 #    bounced = false
 #    viscid_top = 1
@@ -79,8 +79,8 @@ func _process(delta):
 #        col_left = false
 #        col_right = false
 #        PlatformEngine.move_to(x_vel, y_vel)
-#        # dy: position.x += x_vel
-#        # dy: position.y += y_vel
+#        # DY: position.x += x_vel
+#        # DY: position.y += y_vel
     
 #        if (y_vel < 8):
     
@@ -106,11 +106,11 @@ func _process(delta):
     
 #        if (Collision.i"collision_bottom(1)):"
     
-#            # dy:  bounce
+#            # DY:  bounce
 #            if (y_vel > 3): y_vel = -y_vel * 0.3
 #            else: y_vel = 0
         
-#            # dy:  friction
+#            # DY:  friction
 #            if (abs(x_vel) != 0): x_vel *= 0.99
         
 #            if (not bounced and x_vel == 0):

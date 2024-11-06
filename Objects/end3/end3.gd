@@ -82,19 +82,19 @@ func _process(delta):
 
 #        draw_set_font(global.my_font)
 #        draw_set_color(c_yellow)
-#        draw_text(64, 32, "you made it!")
+#        draw_text(64, 32, "YOU MADE IT!")
 
 #    if (draw_status > 1):
 
 #        draw_set_font(global.my_font_small)
 #        draw_set_color(c_yellow)
-#        draw_text(64, 64, "final score:")
+#        draw_text(64, 64, "FINAL SCORE:")
 
 #    if (draw_status > 2):
 
 #        draw_set_font(global.my_font)
 #        draw_set_color(c_white)
-#        draw_text(64, 72, "$" + str\(money_count))
+#        draw_text(64, 72, "$" + str(money_count))
 
 #    if (draw_status > 4):
 
@@ -109,16 +109,16 @@ func _process(delta):
 
 #        draw_set_font(global.my_font_small)
 #        draw_set_color(c_yellow)
-#        draw_text(64, 96, "time: ")
+#        draw_text(64, 96, "TIME: ")
 #        draw_set_color(c_white)
-#        if (s < 10): draw_text(96+24, 96, str\(m) + ":0" + str\(s))
-#        else: draw_text(96+24, 96, str\(m) + ":" + str\(s))
+#        if (s < 10): draw_text(96+24, 96, str(m) + ":0" + str(s))
+#        else: draw_text(96+24, 96, str(m) + ":" + str(s))
 
 #    if (draw_status > 5):
 
 #        draw_set_font(global.my_font_small)
 #        draw_set_color(c_yellow)
-#        draw_text(64, 96+8, "kills: ")
+#        draw_text(64, 96+8, "KILLS: ")
 #        draw_set_color(c_white)
 #        draw_text(96+24, 96+8, global.kills)
 
@@ -126,7 +126,7 @@ func _process(delta):
 
 #        draw_set_font(global.my_font_small)
 #        draw_set_color(c_yellow)
-#        draw_text(64, 96+16, "saves: ")
+#        draw_text(64, 96+16, "SAVES: ")
 #        draw_set_color(c_white)
 #        draw_text(96+24, 96+16, global.damsels)
 
@@ -143,10 +143,10 @@ func _process(delta):
 
 #        draw_set_font(global.my_font_small)
 #        draw_set_color(c_white)
-#        str_len = string_length("you shall be remembered as A hero.")*8
+#        str_len = string_length("YOU SHALL BE REMEMBERED AS A HERO.")*8
 #        n = 320 - str_len
 #        n = ceil(n / 2)
-#        draw_text(n, 116, str\("you shall be remembered as A hero."))
+#        draw_text(n, 116, str("YOU SHALL BE REMEMBERED AS A HERO."))
 
 
     

@@ -24,7 +24,7 @@ func _process(delta):
     
 
 #func step():
-    #    # dy: if (not olmec_dead and not door_open):
+    #    # DY: if (not olmec_dead and not door_open):
 #    if (olmec_dead and not door_open):
 
 #        door_open = true

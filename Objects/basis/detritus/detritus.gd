@@ -22,8 +22,8 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    PlatformEngine.make_active()
-#    Collision.set_collision_bounds(-4, -4, 4, 4)
+#    PlatformEngine.make_active(self)
+#    Collision.set_collision_bounds(self, -4, -4, 4, 4)
 #    life = 60
 #    grav = 0.6
 #    bounce = true
@@ -70,6 +70,6 @@ func _process(delta):
     
 #        if (Collision.i"collision_bottom(1)):"
     
-#            # dy:  bounce
+#            # DY:  bounce
 #            if (y_vel > 1): y_vel = -y_vel * 0.5
 #            else: y_vel = 0

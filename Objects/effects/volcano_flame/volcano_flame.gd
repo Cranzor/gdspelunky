@@ -18,8 +18,8 @@ func _process(delta):
 
 
 #func alarm 0():
-    #    # dy: gml.instance_create(position.x, position.y, Objects.flame_trail)
-#    # dy: alarm_0(2)
+    #    # DY: gml.instance_create(position.x, position.y, Objects.flame_trail)
+#    # DY: alarm_0(2)
 
     
 

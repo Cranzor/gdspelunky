@@ -18,10 +18,10 @@ func _process(delta):
 
 
 #func collision with o_character():
-    #    # dy:  jumped on - caveman, man_trap replaces this script with its own
+    #    # DY:  jumped on - caveman, man_trap replaces this script with its own
 #    if (abs(other.position.x-(position.x+8)) > 12):
 
-#        # dy:  do nothing
+#        # DY:  do nothing
 
 #    elif (not other.dead and (other.state == 15 or other.state == 16) and other.position.y < position.y+8 and not other.swimming):
 
@@ -46,33 +46,33 @@ func _process(delta):
         
 #            if (global.plife <= 0 and InLevel.i"real_level()):"
         
-#                if (type == "bat"): global.enemy_deaths[0] += 1
-#                elif (type == "snake"): global.enemy_deaths[1] += 1
-#                elif (type == "spider"): global.enemy_deaths[2] += 1
-#                elif (type == "giant spider"): global.enemy_deaths[3] += 1
-#                elif (type == "caveman"): global.enemy_deaths[4] += 1
-#                elif (type == "skeleton"): global.enemy_deaths[5] += 1
-#                elif (type == "zombie"): global.enemy_deaths[6] += 1
-#                elif (type == "vampire"): global.enemy_deaths[7] += 1
-#                elif (type == "frog"): global.enemy_deaths[8] += 1
-#                elif (type == "fire frog"): global.enemy_deaths[9] += 1
-#                elif (type == "mantrap"): global.enemy_deaths[10] += 1
-#                elif (type == "piranha"): global.enemy_deaths[11] += 1
-#                elif (type == "megamouth"): global.enemy_deaths[12] += 1
-#                elif (type == "yeti"): global.enemy_deaths[13] += 1
-#                elif (type == "yeti king"): global.enemy_deaths[14] += 1
-#                elif (type == "alien"): global.enemy_deaths[15] += 1
-#                elif (type == "ufo"): global.enemy_deaths[16] += 1
-#                elif (type == "alien boss"): global.enemy_deaths[17] += 1
-#                elif (type == "hawkman"): global.enemy_deaths[18] += 1
-#                elif (type == "shopkeeper"): global.enemy_deaths[19] += 1
-#                elif (type == "tomb lord"): global.enemy_deaths[20] += 1
-#                elif (type == "magma man"): global.enemy_deaths[21] += 1
-#                elif (type == "olmec"): global.enemy_deaths[22] += 1
+#                if (type == "Bat"): global.enemy_deaths[0] += 1
+#                elif (type == "Snake"): global.enemy_deaths[1] += 1
+#                elif (type == "Spider"): global.enemy_deaths[2] += 1
+#                elif (type == "Giant Spider"): global.enemy_deaths[3] += 1
+#                elif (type == "Caveman"): global.enemy_deaths[4] += 1
+#                elif (type == "Skeleton"): global.enemy_deaths[5] += 1
+#                elif (type == "Zombie"): global.enemy_deaths[6] += 1
+#                elif (type == "Vampire"): global.enemy_deaths[7] += 1
+#                elif (type == "Frog"): global.enemy_deaths[8] += 1
+#                elif (type == "Fire Frog"): global.enemy_deaths[9] += 1
+#                elif (type == "Mantrap"): global.enemy_deaths[10] += 1
+#                elif (type == "Piranha"): global.enemy_deaths[11] += 1
+#                elif (type == "Megamouth"): global.enemy_deaths[12] += 1
+#                elif (type == "Yeti"): global.enemy_deaths[13] += 1
+#                elif (type == "Yeti King"): global.enemy_deaths[14] += 1
+#                elif (type == "Alien"): global.enemy_deaths[15] += 1
+#                elif (type == "UFO"): global.enemy_deaths[16] += 1
+#                elif (type == "Alien Boss"): global.enemy_deaths[17] += 1
+#                elif (type == "Hawkman"): global.enemy_deaths[18] += 1
+#                elif (type == "Shopkeeper"): global.enemy_deaths[19] += 1
+#                elif (type == "Tomb Lord"): global.enemy_deaths[20] += 1
+#                elif (type == "Magma Man"): global.enemy_deaths[21] += 1
+#                elif (type == "Olmec"): global.enemy_deaths[22] += 1
         
     
        
-#        if (type == "bat" || type == "piranha" || type == "vampire"): MiscScripts.scr_create_blood(position.x+4, position.y+4, 1)
+#        if (type == "Bat" || type == "Piranha" || type == "Vampire"): MiscScripts.scr_create_blood(position.x+4, position.y+4, 1)
     
 #        Audio.play_sound(global.snd_hurt)
 
@@ -112,11 +112,11 @@ func _process(delta):
 
 #    # main_code
 #    hp = 1
-#    type = "none"
+#    type = "None"
 
 #    active = true
 
-#    # dy:  is this used?
+#    # DY:  is this used?
 #    shaking = 0
 #    shake_counter = 0
 
@@ -131,7 +131,7 @@ func _process(delta):
 #    bounce_factor = 0.5
 #    friction_factor = 0.3
 
-#    # dy:  added so enemies can be carried with same code as items
+#    # DY:  added so enemies can be carried with same code as items
 #    held = false
 #    armed = false
 #    trigger = false
@@ -143,16 +143,16 @@ func _process(delta):
 #    favor = 1
 #    sac_count = 20
 
-#    count"as_kill = true # dy:  sometimes it's not the player's fault!"
+#    count"as_kill = true # DY:  sometimes it's not the player's fault!"
 #    burning = 0
 #    swimming = false
 #    stun_time = 200
-#    left = 0
-#    right = 1
+#    LEFT = 0
+#    RIGHT = 1
 #    facing = 0
 
-#    stunned = 98
-#    dead = 99
+#    STUNNED = 98
+#    DEAD = 99
 #    bomb_id = 0
 
     
@@ -172,7 +172,7 @@ func _process(delta):
     
 
 #func draw():
-    #    if (facing == right): draw_sprite_ext(sprite_index, image_index, position.x+16, position.y, -1, image_yscale, image_angle, image_blend, image_alpha)
+    #    if (facing == RIGHT): draw_sprite_ext(sprite_index, image_index, position.x+16, position.y, -1, image_yscale, image_angle, image_blend, image_alpha)
 #    else: draw_sprite_ext(sprite_index, image_index, position.x, position.y, 1, image_yscale, image_angle, image_blend, image_alpha)
 
     
@@ -226,7 +226,7 @@ func _process(delta):
     
 #        my_grav = my_grav_water
     
-#        if (type == "fire frog"):
+#        if (type == "Fire Frog"):
     
 #            obj = gml.instance_create(position.x, position.y, Objects.frog)
 #            obj.status = status
@@ -263,9 +263,9 @@ func _process(delta):
 #        trap = instance_nearest(position.x, position.y, spear"left)"
 #        if (trap.image_index >= 20 and trap.image_index < 24):
     
-#            if (type == "caveman" or type == "man_trap" or type == "yeti" or type == "hawkman" or type == "shopkeeper"):
+#            if (type == "Caveman" or type == "ManTrap" or type == "Yeti" or type == "Hawkman" or type == "Shopkeeper"):
         
-#                # dy:  if (status < 98):
+#                # DY:  if (status < 98):
 #                if (hp > 0):
             
 #                    hp -= 2
@@ -304,7 +304,7 @@ func _process(delta):
 #            hp = 0
 #            count"as_kill = false"
 #            if (not bloodless): MiscScripts.scr_create_blood(position.x+sprite_width/2, position.y+sprite_height/2, 3)
-#            if (type == "caveman" or type == "man_trap" or type == "yeti" or type == "hawkman" or type == "shopkeeper"):
+#            if (type == "Caveman" or type == "ManTrap" or type == "Yeti" or type == "Hawkman" or type == "Shopkeeper"):
 #                status = 99
     
 #        my_grav = 0
@@ -312,7 +312,7 @@ func _process(delta):
 #        y_vel = 0.2
 
 
-#    # dy:  sacrifice
+#    # DY:  sacrifice
 #    if (status >= 98):
 
 #        if (not held and x_vel == 0 and y_vel == 0):
@@ -325,10 +325,10 @@ func _process(delta):
 #                gml.instance_create(position.x+8, position.y+8, Objects.flame)
 #                Audio.play_sound(global.snd_small_explode)
 #                MiscScripts.scr_create_blood(position.x+8, position.y+8, 3)
-#                global.message = "kali accepts the sacrifice!"
+#                global.message = "KALI ACCEPTS THE SACRIFICE!"
 #                if (global.favor <= -8):
             
-#                    global.message = "kali devours the sacrifice!"
+#                    global.message = "KALI DEVOURS THE SACRIFICE!"
             
 #                elif (global.favor < 0):
             
@@ -351,7 +351,7 @@ func _process(delta):
 #        else: sac_count = 20
 
 
-#    # dy:  moving projectile
+#    # DY:  moving projectile
 #    if (status == 98):
 
 #        if ((abs(x_vel) > 2 or abs(y_vel) > 2)):
@@ -359,31 +359,31 @@ func _process(delta):
 #            obj = gml.collision_rectangle(position.x, position.y, position.x+16,  position.y+16, "enemy", false, true)
 #            if (obj):
         
-#                if (not obj.invincible and obj.type != "magma man"):
+#                if (not obj.invincible and obj.type != "Magma Man"):
             
 #                    if (obj.status < 98): obj.x_vel = x_vel
 #                    with obj
                 
-#                        if (type == "caveman" or type == "man_trap" or type == "vampire" or type == "yeti" or type == "hawkman"):
+#                        if (type == "Caveman" or type == "ManTrap" or type == "Vampire" or type == "Yeti" or type == "Hawkman"):
                     
-#                            if (status < stunned):
+#                            if (status < STUNNED):
                         
-#                                if (type == "caveman" or type == "vampire" or type == "yeti" or type == "hawkman"):
+#                                if (type == "Caveman" or type == "Vampire" or type == "Yeti" or type == "Hawkman"):
                             
 #                                    MiscScripts.scr_create_blood(position.x+8, position.y+8, 1)
                             
-#                                elif (type == "man_trap"):
+#                                elif (type == "ManTrap"):
                             
 #                                    gml.instance_create(position.x+randi_range(0,16), position.y-8+randi_range(0,16), Objects.leaf)
                             
 #                                hp -= 1
-#                                status = stunned
+#                                status = STUNNED
 #                                counter = stun_time
 #                                y_vel = -6
 #                                Audio.play_sound(global.snd_hit)
                         
                     
-#                        elif (type == "shopkeeper"):
+#                        elif (type == "Shopkeeper"):
                     
 #                            if (status < 98):
                         
@@ -394,7 +394,7 @@ func _process(delta):
 #                                Audio.play_sound(global.snd_hit)
                         
                     
-#                        elif (type == "giant spider"):
+#                        elif (type == "Giant Spider"):
                     
 #                            if (whipped == 0):
                         
@@ -404,7 +404,7 @@ func _process(delta):
 #                                Audio.play_sound(global.snd_hit)
                         
                     
-#                        elif (type == "tomb lord"):
+#                        elif (type == "Tomb Lord"):
                     
 #                            if (whipped == 0):
                         
@@ -414,7 +414,7 @@ func _process(delta):
 #                                Audio.play_sound(global.snd_hit)
                         
                     
-#                        elif (type == "alien boss"):
+#                        elif (type == "Alien Boss"):
                     
 #                            if (status != 99 and sprite_index != "alien_boss_hurt):"
                         
@@ -425,7 +425,7 @@ func _process(delta):
 #                                Audio.play_sound(global.snd_hit)
                         
                     
-#                        elif (type == "ufo"):
+#                        elif (type == "UFO"):
                     
 #                            gml.instance_create(position.x+8, position.y+8, Objects.explosion)
 #                            Audio.play_sound(global.snd_explosion)
@@ -444,9 +444,9 @@ func _process(delta):
                     
                     
                 
-#                    # dy:  obj.x_vel = x_vel * 0.3
+#                    # DY:  obj.x_vel = x_vel * 0.3
                 
-#                    if (type == "arrow" or type == "fish bone"): gml.instance_destroy()
+#                    if (type == "Arrow" or type == "Fish Bone"): gml.instance_destroy()
             
         
     

@@ -33,9 +33,9 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "big ruby"
-#    PlatformEngine.make_active()
-#    Collision.set_collision_bounds(-4, -4, 4, 4)
+#    type = "Big Ruby"
+#    PlatformEngine.make_active(self)
+#    Collision.set_collision_bounds(self, -4, -4, 4, 4)
 #    can_collect = false
 #    alarm_0(20)
 #    value = 1600

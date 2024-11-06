@@ -20,17 +20,17 @@ func _process(delta):
 #func animation_end():
     #    if (sprite_index == "tomb_lord_turn_r):"
 
-#        facing = right
-#        status = walk
+#        facing = RIGHT
+#        status = WALK
 
 #    if (sprite_index == "tomb_lord_turn_l):"
 
-#        facing = left
-#        status = walk
+#        facing = LEFT
+#        status = WALK
 
 #    if (sprite_index == "tomb_lord_attack_l or sprite_index == s_tomb_lord_attack_r):"
 
-#        status = idle
+#        status = IDLE
 #        counter = 30
 #        image_speed = 0.25
 
@@ -38,10 +38,10 @@ func _process(delta):
     
 
 #func collision with o_character():
-    #    # dy:  jumped on - caveman, man_trap replaces this script with its own
+    #    # DY:  jumped on - caveman, man_trap replaces this script with its own
 #    if (abs(other.position.x-(position.x+16)) > 16):
 
-#        # dy:  do nothing
+#        # DY:  do nothing
 
 #    elif (not other.dead and (other.state == 15 or other.state == 16) and other.position.y < position.y+8 and not other.swimming):
 
@@ -96,25 +96,25 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    PlatformEngine.make_active()
-#    Collision.set_collision_bounds(6, 0, 26, 32)
+#    PlatformEngine.make_active(self)
+#    Collision.set_collision_bounds(self, 6, 0, 26, 32)
 #    x_vel = 2.5
 #    image_speed = 0.25
 
-#    # dy:  stats
-#    type = "tomb lord"
+#    # DY:  stats
+#    type = "Tomb Lord"
 #    hp = 20
 #    invincible = 0
 #    heavy = true
 #    bloodless = true
 
-#    idle = 0
-#    walk = 1
-#    turn = 2
-#    attack = 3
-#    stunned = 98
-#    dead = 99
-#    status = idle
+#    IDLE = 0
+#    WALK = 1
+#    TURN = 2
+#    ATTACK = 3
+#    STUNNED = 98
+#    DEAD = 99
+#    status = IDLE
 
 #    can_pick_up = false
 #    bounced = false
@@ -123,9 +123,9 @@ func _process(delta):
 #    counter = 0
 #    attack_timer = 0
 
-#    left = 0
-#    right = 1
-#    facing = right
+#    LEFT = 0
+#    RIGHT = 1
+#    facing = RIGHT
 
 #    shake_counter = 0
 #    shake_toggle = 1
@@ -172,54 +172,54 @@ func _process(delta):
 #        gml.instance_destroy()
 
 
-#    if (Collision.i"collision_bottom(1) and status != stunned):"
+#    if (Collision.i"collision_bottom(1) and status != STUNNED):"
 #        y_vel = 0
 
 #    if (attack_timer > 0): attack_timer -= 1
 #    if (whipped > 0): whipped -= 1
     
-#    if (status == idle):
+#    if (status == IDLE):
 
 #        if (counter > 0): counter -= 1    
 #        if (counter <= 0):
     
-#            status = walk
+#            status = WALK
     
 
-#    elif (status == walk):
+#    elif (status == WALK):
 
 #        if (counter > 0): counter -= 1
     
-#        if (facing == left):
+#        if (facing == LEFT):
     
 #            if (Collision.i"collision_left(1) or:"
 #                (player1.position.x > position.x+16 and abs(player1.position.y-(position.y+32)) < 16 and counter == 0))
         
 #                sprite_index = "tomb_lord_turn_r"
-#                status = turn
+#                status = TURN
 #                counter = 30
         
 #            elif (player1.position.x < position.x+16 and abs(player1.position.y-(position.y+16)) < 32 and attack_timer == 0):
         
-#                status = attack
+#                status = ATTACK
 #                sprite_index = "tomb_lord_attack_l"
 #                image_index = 0
 #                x_vel = 0
         
 #            else: x_vel = -1
     
-#        elif (facing == right):
+#        elif (facing == RIGHT):
     
 #            if (Collision.i"collision_right(1) or:"
 #                (player1.position.x < position.x+16 and abs(player1.position.y-(position.y+32)) < 16 and counter == 0))
         
 #                sprite_index = "tomb_lord_turn_l"
-#                status = turn
+#                status = TURN
 #                counter = 30
         
 #            elif (player1.position.x > position.x+16 and abs(player1.position.y-(position.y+16)) < 32 and attack_timer == 0):
         
-#                status = attack
+#                status = ATTACK
 #                sprite_index = "tomb_lord_attack_r"
 #                image_index = 0
 #                x_vel = 0
@@ -227,18 +227,18 @@ func _process(delta):
 #            else: x_vel = 1
     
 
-#    elif (status == turn):
+#    elif (status == TURN):
 
 #        x_vel = 0
 
-#    elif (status == attack):
+#    elif (status == ATTACK):
 
 #        x_vel = 0
 #        image_speed = 0.5
 #        attack_timer = 100
 #        if (image_index >= 7 and image_index <= 12):
     
-#            if (facing == left):
+#            if (facing == LEFT):
         
 #                obj = gml.instance_create(position.x+8, position.y+12+randi_range(0,4), Objects.fly)
 #                obj.x_vel = -randi_range(3,5)
@@ -250,17 +250,17 @@ func _process(delta):
         
     
 
-#    elif (status >= stunned): status = walk
+#    elif (status >= STUNNED): status = WALK
 
 #    if (Collision.i"collision_solid()):"
 #        position.y -= 2
 
-#    if (facing == left):
+#    if (facing == LEFT):
    
-#        if (status == walk): sprite_index = "tomb_lord_walk_l"
-#        elif (status == idle): sprite_index = "tomb_lord_left"
+#        if (status == WALK): sprite_index = "tomb_lord_walk_l"
+#        elif (status == IDLE): sprite_index = "tomb_lord_left"
 
-#    if (facing == right):
+#    if (facing == RIGHT):
    
-#        if (status == walk): sprite_index = "tomb_lord_walk_r"
-#        elif (status == idle): sprite_index = "tomb_lord_right"
+#        if (status == WALK): sprite_index = "tomb_lord_walk_r"
+#        elif (status == IDLE): sprite_index = "tomb_lord_right"

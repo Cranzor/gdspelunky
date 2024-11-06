@@ -22,8 +22,8 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    PlatformEngine.make_active()
-#    Collision.set_collision_bounds(1, 0, 15, 32)
+#    PlatformEngine.make_active(self)
+#    Collision.set_collision_bounds(self, 1, 0, 15, 32)
 #    invincible = false
 #    viscid_top = 1
 
@@ -34,10 +34,10 @@ func _process(delta):
 #    counter = 0
 
 #    status = 0
-#    idle = 0
-#    drop = 1
-#    wait = 2
-#    return = 3
+#    IDLE = 0
+#    DROP = 1
+#    WAIT = 2
+#    RETURN = 3
 
     
 
@@ -51,22 +51,22 @@ func _process(delta):
 
 #func step():
     #    dist = gml.distance_to_object(character)
-#    if (status == idle):
+#    if (status == IDLE):
 
-#        # dy:  nothing
+#        # DY:  nothing
 
-#    elif (status == drop):
+#    elif (status == DROP):
 
 #        y_vel += my_grav
 #        if (y_vel > 6): y_vel = 6
 #        if (Collision.i"collision_bottom(1)):"
     
-#            status = wait
+#            status = WAIT
 #            y_vel = 0
 #            counter = 100
 #            depth = 100
     
 
-#    elif (status == wait):
+#    elif (status == WAIT):
 
 #        if (Collision.i"collision_bottom(1)): position.y -= 1"

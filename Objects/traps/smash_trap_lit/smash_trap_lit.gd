@@ -22,8 +22,8 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    PlatformEngine.make_active()
-#    Collision.set_collision_bounds(1, 1, 15, 15)
+#    PlatformEngine.make_active(self)
+#    Collision.set_collision_bounds(self, 1, 1, 15, 15)
 #    invincible = false
 #    viscid_top = 1
 
@@ -37,18 +37,18 @@ func _process(delta):
 #    x_acc = 0
 #    y_acc = 0
 
-#    idle = 0
-#    attack = 1
+#    IDLE = 0
+#    ATTACK = 1
 #    status = 0
 
 #    hit = false
 #    counter = 0
 
 #    dir = randi_range(0,3)
-#    right = 0
-#    down = 1
-#    left = 2
-#    up = 3
+#    RIGHT = 0
+#    DOWN = 1
+#    LEFT = 2
+#    UP = 3
 
     
 
@@ -69,7 +69,7 @@ func _process(delta):
     #    if (position.x > view_xview[0]-16 and position.x < view_xview[0] + view_wview[0]+16 and:
 #            position.y > view_yview[0]-16 and position.y < view_yview[0] + view_hview[0]+16)
 
-#    if (status == idle):
+#    if (status == IDLE):
 
 #        dist = point_distance(position.x, position.y, character.position.x, character.position.y)
 #        if (counter > 0): counter -= 1
@@ -78,31 +78,31 @@ func _process(delta):
     
 #            if (abs(character.position.y - (position.y+8)) < 8 and character.position.x > position.x+8 and not Collision.i"collision_right(2)):"
         
-#                status = attack
-#                dir = right
+#                status = ATTACK
+#                dir = RIGHT
 #                xa = 0.5
         
 #            elif (abs(character.position.x - (position.x+8)) < 8 and character.position.y > position.y+8 and not Collision.i"collision_bottom(2)):"
         
-#                status = attack
-#                dir = down
+#                status = ATTACK
+#                dir = DOWN
 #                ya = 0.5
         
 #            elif (abs(character.position.y - (position.y+8)) < 8 and character.position.x < position.x+8 and not Collision.i"collision_left(2)):"
         
-#                status = attack
-#                dir = left
+#                status = ATTACK
+#                dir = LEFT
 #                xa = -0.5
         
 #            elif (abs(character.position.x - (position.x+8)) < 8 and character.position.y < position.y+8 and not Collision.i"collision_top(2)):"
         
-#                status = attack
-#                dir = up
+#                status = ATTACK
+#                dir = UP
 #                ya = -0.5
         
     
 
-#    elif (status == attack):
+#    elif (status == ATTACK):
 
 #        col_left = false
 #        col_right = false
@@ -117,7 +117,7 @@ func _process(delta):
 #        if (abs(yv) < 4): yv += ya
 #        position.x += xv
 #        position.y += yv
-#        if (dir == right):
+#        if (dir == RIGHT):
     
 #            if (Collision.i"collision_right(2) and col_right):"
         
@@ -130,7 +130,7 @@ func _process(delta):
 #                hit = true
         
     
-#        elif (dir == down):
+#        elif (dir == DOWN):
     
 #            if (Collision.i"collision_bottom(2) and col_bot):"
         
@@ -143,7 +143,7 @@ func _process(delta):
 #                hit = true
         
     
-#        elif (dir == left):
+#        elif (dir == LEFT):
     
 #            if (Collision.i"collision_left(2) and col_left):"
         
@@ -156,7 +156,7 @@ func _process(delta):
 #                hit = true
         
     
-#        elif (dir == up):
+#        elif (dir == UP):
     
 #            if (Collision.i"collision_top(2) and col_top):"
         
@@ -184,7 +184,7 @@ func _process(delta):
 #            not col_top and
 #            not col_bot)
     
-#            status = idle
+#            status = IDLE
 #            hit = false
 #            counter = 50
     

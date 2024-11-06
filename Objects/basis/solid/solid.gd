@@ -24,7 +24,7 @@ func _process(delta):
 #    # main_code
 #    invincible = false
 #    shop_wall = false
-#    type = "none"
+#    type = "None"
 #    treasure = ""
 #    clean_death = false
 

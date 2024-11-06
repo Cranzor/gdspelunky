@@ -76,7 +76,7 @@ func _process(delta):
 
 #func alarm 4():
     #    toggle = true
-#    status = bounce
+#    status = BOUNCE
 #    Audio.play_sound(global.snd_big_jump)
 #    Audio.play_sound(global.snd_alert)
 #    alarm_6(20)
@@ -92,7 +92,7 @@ func _process(delta):
 #    status = 0
 #    counter = 100
 #    play_music(global.mu"boss, true)"
-#    # dy: Audio.play_sound(global.snd_boss)
+#    # DY: Audio.play_sound(global.snd_boss)
 
     
 
@@ -109,8 +109,8 @@ func _process(delta):
 
 #func create():
     #    shop_wall = false
-#    PlatformEngine.make_active()
-#    Collision.set_collision_bounds(2, 0, 62, 64)
+#    PlatformEngine.make_active(self)
+#    Collision.set_collision_bounds(self, 2, 0, 62, 64)
 #    x_vel = 0
 #    y_vel = 0
 #    y_delta = -0.4
@@ -120,22 +120,22 @@ func _process(delta):
 #    carry_player = false
 #    image_speed = 0.4
 
-#    left = 0
-#    right = 1
+#    LEFT = 0
+#    RIGHT = 1
 #    facing = randi_range(0,1)
 
-#    # dy:  status
-#    start2 = -2
-#    start1 = -1
-#    idle = 0
-#    bounce = 1
-#    recover = 2
-#    walk = 3
-#    drowning = 4
-#    prepare = 5
-#    slam = 6
-#    create = 7
-#    dead = 99
+#    # DY:  status
+#    START2 = -2
+#    START1 = -1
+#    IDLE = 0
+#    BOUNCE = 1
+#    RECOVER = 2
+#    WALK = 3
+#    DROWNING = 4
+#    PREPARE = 5
+#    SLAM = 6
+#    CREATE = 7
+#    DEAD = 99
 #    status = -1
 
 #    counter = 0
@@ -178,16 +178,16 @@ func _process(delta):
 
 #        position.x += 1
 #        x_vel = 0
-#        # dy: if (x_vel < 0): x_vel = -x_vel * 0.8
+#        # DY: if (x_vel < 0): x_vel = -x_vel * 0.8
 
 #    if (Collision.i"collision_right(1)):"
 
 #        position.x -= 1
 #        x_vel = 0
-#        # dy: if (x_vel > 0): x_vel = -x_vel * 0.8
+#        # DY: if (x_vel > 0): x_vel = -x_vel * 0.8
 
 
-#    if (gml.collision_point(position.x, position.y+64, "lava", 0, 0)): status = drowning
+#    if (gml.collision_point(position.x, position.y+64, "lava", 0, 0)): status = DROWNING
 
 #    if (gml.collision_point(position.x, position.y-2, "lava", 0, 0)):
 
@@ -203,27 +203,27 @@ func _process(delta):
 #    if (gml.collision_rectangle(position.x, position.y-2, position.x+64,  position.y+64, "player1", 0, 0)): carry_player = true
 #    else: carry_player = false
 
-#    if (status == start1):
+#    if (status == START1):
 
 #        if (view_xview[0] < 176): view_xview[0] += 2
 #        else:
     
 #            alarm_1(100)
-#            status = start2
+#            status = START2
     
     
 #        if (Collision.i"collision_bottom(1)):"
 #            y_vel = 0
 
-#    elif (status == start2):
+#    elif (status == START2):
    
 #        if (Collision.i"collision_bottom(1)):"
 #            y_vel = 0
 
-#    elif (status == idle):
+#    elif (status == IDLE):
 
 #        if (counter > 0): counter -= 1
-#        if (counter == 0): status = bounce
+#        if (counter == 0): status = BOUNCE
     
 #        if (Collision.i"collision_bottom(1)):"
     
@@ -232,7 +232,7 @@ func _process(delta):
     
 #        toggle = true
 
-#    elif (status == create):
+#    elif (status == CREATE):
 
 #        for repetition in range(1, 6):
     
@@ -242,14 +242,14 @@ func _process(delta):
 #        gml.instance_create(position.x+32, position.y+16, Objects.yellow_ball)
 #        gml.instance_create(position.x+32, position.y+16, Objects.yellow_ball)
 #        Audio.play_sound(global.snd_psychic)
-#        status = idle
+#        status = IDLE
 
-#    elif (status == recover):
+#    elif (status == RECOVER):
 
 #        if (Collision.i"collision_bottom(1)):"
     
 #            Audio.play_sound(global.snd_thump)
-#            status = idle
+#            status = IDLE
 #            x_vel = 0
 #            y_vel = 0
 #            counter = randi_range(40,100)
@@ -276,7 +276,7 @@ func _process(delta):
 #            if ((not player1.active and y_vel >= 0) or:
 #                (player1.position.y > position.y and abs(player1.position.x - (position.x+32)) < 32 and x_vel > -1))
         
-#                status = prepare
+#                status = PREPARE
 #                y_vel = 0
 #                x_vel = 0
 #                my_grav = 0
@@ -284,7 +284,7 @@ func _process(delta):
         
     
 
-#    elif (status == bounce):
+#    elif (status == BOUNCE):
 
 #        if (Collision.i"collision_bottom(1)):"
     
@@ -293,22 +293,22 @@ func _process(delta):
 #        else:
     
 #            counter = 10
-#            status = recover
+#            status = RECOVER
 #            Audio.play_sound(global.snd_big_jump)
     
 
-#    elif (status == prepare):
+#    elif (status == PREPARE):
 
 #        if (counter > 0): counter -= 1
 #        else:
     
 #            y_vel = 5
 #            my_grav = 0.2
-#            status = slam
+#            status = SLAM
 #            slammed = false
     
 
-#    elif (status == slam):
+#    elif (status == SLAM):
 
 #        carry_player = false
 #        if (Collision.i"collision_bottom(1)):"
@@ -321,8 +321,8 @@ func _process(delta):
         
 #            else:
         
-#                if (randi_range(1,2) == 1 or not player1.active): status = idle
-#                else: status = create
+#                if (randi_range(1,2) == 1 or not player1.active): status = IDLE
+#                else: status = CREATE
 #                x_vel = 0
 #                y_vel = 0
 #                counter = 60
@@ -330,7 +330,7 @@ func _process(delta):
         
     
 
-#    elif (status == drowning):
+#    elif (status == DROWNING):
 
 #        x_vel = 0
 #        y_vel = 0.1

@@ -19,7 +19,7 @@ func _process(delta):
 
 #func animation_end():
     #    # action_kill_object
-#    # need to implement this action
+#    # Need to implement this action
     
 
 #func step():

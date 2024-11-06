@@ -22,7 +22,7 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    status = attack
+#    status = ATTACK
 #    ha"gun = false"
 #    death_timer = 200
 
@@ -33,7 +33,7 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    if (status == dead):
+#    if (status == DEAD):
 
 #        if (death_timer > 0): death_timer -= 1
 #        else:

@@ -22,21 +22,21 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    PlatformEngine.make_active()
-#    Collision.set_collision_bounds(2, 0, 14, 16)
+#    PlatformEngine.make_active(self)
+#    Collision.set_collision_bounds(self, 2, 0, 14, 16)
 #    x_vel = 0
 #    image_speed = 0.5
 
-#    # dy:  stats
-#    type = "skeleton"
+#    # DY:  stats
+#    type = "Skeleton"
 #    hp = 1
 #    invincible = 0
 
-#    idle = 0
-#    walk = 1
-#    attack = 2
-#    stunned = 98
-#    dead = 99
+#    IDLE = 0
+#    WALK = 1
+#    ATTACK = 2
+#    STUNNED = 98
+#    DEAD = 99
 #    status = 0
 
 #    bloodless = true
@@ -44,12 +44,12 @@ func _process(delta):
 #    dead = false
 #    counter = 20
 
-#    left = 0
-#    right = 1
-#    facing = right
+#    LEFT = 0
+#    RIGHT = 1
+#    facing = RIGHT
 #    if (gml.instance_exists("player1")):
 
-#        if (player1.position.x < position.x+8): facing = left
+#        if (player1.position.x < position.x+8): facing = LEFT
 
 
 #    shake_counter = 0
@@ -93,19 +93,19 @@ func _process(delta):
 #        gml.instance_destroy()
 
 
-#    if (Collision.i"collision_bottom(1) and status != stunned):"
+#    if (Collision.i"collision_bottom(1) and status != STUNNED):"
 #        y_vel = 0
 
-#    if (status == idle):
+#    if (status == IDLE):
 
 #        if (counter > 0): counter -= 1    
 #        if (counter == 0):
     
-#            # dy:  facing = randi_range(0,1)
-#            status = walk
+#            # DY:  facing = randi_range(0,1)
+#            status = WALK
     
 
-#    elif (status == walk):
+#    elif (status == WALK):
 
 #        col_left = false
 #        col_right = false
@@ -114,33 +114,33 @@ func _process(delta):
     
 #        if (Collision.i"collision_left(4) and Collision.is_collision_right(4)):"
     
-#            # dy:  do nothing
+#            # DY:  do nothing
     
 #        elif (col_left or col_right):
     
-#            if (facing == left): facing = right
-#            else: facing = left
+#            if (facing == LEFT): facing = RIGHT
+#            else: facing = LEFT
     
 #        /*
-#        if (facing == left and not gml.collision_point(position.x-1, position.y, "solid", -1, -1) and:
+#        if (facing == LEFT and not gml.collision_point(position.x-1, position.y, "solid", -1, -1) and:
 #            not gml.collision_point(position.x-1, position.y+16, "solid", -1, -1))
     
-#            facing = right
+#            facing = RIGHT
     
-#        elif (facing == right and not gml.collision_point(position.x+16, position.y, "solid", -1, -1) and:
+#        elif (facing == RIGHT and not gml.collision_point(position.x+16, position.y, "solid", -1, -1) and:
 #                 not gml.collision_point(position.x+16, position.y+16, "solid", -1, -1))
     
-#            facing = left
+#            facing = LEFT
     
 #        */
     
-#        if (facing == left): x_vel = -1
+#        if (facing == LEFT): x_vel = -1
 #        else: x_vel = 1
     
 #        /*
 #        if (randi_range(1,100) == 1):
     
-#            status = idle
+#            status = IDLE
 #            counter = randi_range(20,50)
 #            x_vel = 0
     
@@ -150,7 +150,7 @@ func _process(delta):
 #    if (Collision.i"collision_solid()):"
 #        position.y -= 2
 
-#    if (status != stunned):
+#    if (status != STUNNED):
 
-#        if (status == walk): sprite_index = "skeleton_walk_left"
+#        if (status == WALK): sprite_index = "skeleton_walk_left"
 #        else: sprite_index = "skeleton_left"

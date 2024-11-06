@@ -34,7 +34,7 @@ func _process(delta):
 #        elif (other.position.y >= position.y-10 and other.position.y <= position.y-7): n = 2
 #        elif (other.position.y >= position.y+7 and other.position.y <= position.y+10): n = 2
 #        else: n = 1
-#        # dy: if (hard): n *= 2
+#        # DY: if (hard): n *= 2
 #        moon_room.baskets += n
 #        Audio.play_sound(global.snd_hit)
 
@@ -46,8 +46,8 @@ func _process(delta):
 #func create():
     #    life = 20
 #    dying = false
-#    up = 0
-#    down = 1
+#    UP = 0
+#    DOWN = 1
 #    dir = randi_range(0,1)
 #    move_off = 32
 #    hard = false
@@ -68,25 +68,25 @@ func _process(delta):
 
 #    else:
 
-#        if (dir == up):
+#        if (dir == UP):
     
 #            if (hard): position.y -= 2
 #            else: position.y -= 1
 #            move_off += 1
 #            if (position.y <= 64 or move_off > 64):
         
-#                dir = down
+#                dir = DOWN
 #                move_off = 0
         
     
-#        elif (dir == down):
+#        elif (dir == DOWN):
     
 #            if (hard): position.y += 2
 #            else: position.y += 1
 #            move_off += 1
 #            if (position.y >= 160 or move_off > 64):
         
-#                dir = up
+#                dir = UP
 #                move_off = 0
         
     

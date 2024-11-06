@@ -52,9 +52,9 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "jar"
-#    PlatformEngine.make_active()
-#    Collision.set_collision_bounds(-4, -6, 4, 6)
+#    type = "Jar"
+#    PlatformEngine.make_active(self)
+#    Collision.set_collision_bounds(self, -4, -6, 4, 6)
 #    break_pieces = true
 
     
@@ -111,16 +111,16 @@ func _process(delta):
 #    col_bot = false
 #    if (held):
 
-#        if (character.facing == left):
+#        if (character.facing == LEFT):
     
 #            position.x = character.position.x - 4  
     
-#        elif (character.facing == right):
+#        elif (character.facing == RIGHT):
     
 #            position.x = character.position.x + 4  
     
     
-#        if (character.state == ducking and abs(character.x_vel) < 2): position.y = character.position.y + 4
+#        if (character.state == DUCKING and abs(character.x_vel) < 2): position.y = character.position.y + 4
 #        else: position.y = character.position.y  
 #        depth = 1
 
@@ -156,11 +156,11 @@ func _process(delta):
     
 #            if (y_vel > 3): destroy = true
     
-#            # dy:  bounce
+#            # DY:  bounce
 #            if (y_vel > 1): y_vel = -y_vel * 0.5
 #            else: y_vel = 0
         
-#            # dy:  friction
+#            # DY:  friction
 #            if (abs(x_vel) < 0.1): x_vel = 0
 #            elif (abs(x_vel) != 0): x_vel *= 0.3
     
@@ -193,7 +193,7 @@ func _process(delta):
     
 #        if (gml.collision_point(position.x, position.y-5, "lava", 0, 0)):
     
-#            if (type == "bomb"):
+#            if (type == "Bomb"):
         
 #                gml.instance_create(position.x, position.y, Objects.explosion)
 #                for i in range(0, 3):
@@ -215,18 +215,18 @@ func _process(delta):
 #            enemy.x_vel = x_vel
 #            with enemy
         
-#                if (type == "caveman" or type == "man_trap" or type == "yeti" or type == "hawkman" or type == "shopkeeper"):
+#                if (type == "Caveman" or type == "ManTrap" or type == "Yeti" or type == "Hawkman" or type == "Shopkeeper"):
             
 #                    if (status != 98):
                 
-#                        if (type == "caveman" or type == "yeti" or type == "hawkman" or type == "shopkeeper"):
+#                        if (type == "Caveman" or type == "Yeti" or type == "Hawkman" or type == "Shopkeeper"):
                     
 #                            for i in range(0, 1):
                         
 #                                gml.instance_create(position.x, position.y, Objects.blood)
                         
                     
-#                        status = stunned
+#                        status = STUNNED
 #                        counter = stun_time
 #                        y_vel = -6
 #                        Audio.play_sound(global.snd_hit)
@@ -244,14 +244,14 @@ func _process(delta):
         
 #            enemy.x_vel = x_vel * 0.3
         
-#            if (type == "arrow" or type == "fish bone"):
+#            if (type == "Arrow" or type == "Fish Bone"):
 #                gml.instance_destroy()
     
     
 #        destroy = true
 
 
-#    if (type != "damsel" and gml.collision_rectangle(position.x-3, position.y-3, position.x+3,  position.y+3, "damsel", 0, 0) and (abs(x_vel) > 2 or abs(y_vel) > 2)):
+#    if (type != "Damsel" and gml.collision_rectangle(position.x-3, position.y-3, position.x+3,  position.y+3, "damsel", 0, 0) and (abs(x_vel) > 2 or abs(y_vel) > 2)):
 
 #        enemy = instance_nearest(position.x, position.y, damsel)
 #        if (not enemy.invincible and (abs(x_vel) > 1 or abs(y_vel) > 1)):

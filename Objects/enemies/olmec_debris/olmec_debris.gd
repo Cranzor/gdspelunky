@@ -25,8 +25,8 @@ func _process(delta):
 #    image_speed
 #    0.3
 #    # main_code
-#    PlatformEngine.make_active()
-#    Collision.set_collision_bounds(-4, -4, 4, 4)
+#    PlatformEngine.make_active(self)
+#    Collision.set_collision_bounds(self, -4, -4, 4, 4)
 #    x_vel = random(4) - random(4)
 #    y_vel = -1 - random(2)
 #    grav = 0.6
@@ -57,7 +57,7 @@ func _process(delta):
     
 #        if (gml.collision_point(position.x, position.y+4, "temple", 0, 0)):
     
-#            # dy:  bounce
+#            # DY:  bounce
 #            if (y_vel > 1): y_vel = -y_vel * 0.4
 #            else:
         
@@ -65,6 +65,6 @@ func _process(delta):
 #                gml.instance_destroy()
         
         
-#            # dy:  friction
+#            # DY:  friction
 #            if (abs(x_vel) < 0.1): x_vel = 0
 #            elif (abs(x_vel) != 0): x_vel *= 0.3

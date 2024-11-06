@@ -30,8 +30,8 @@ func _process(delta):
 #    image_speed
 #    0.3
 #    # main_code
-#    PlatformEngine.make_active()
-#    Collision.set_collision_bounds(-4, -4, 4, 4)
+#    PlatformEngine.make_active(self)
+#    Collision.set_collision_bounds(self, -4, -4, 4, 4)
 #    x_vel = random(4) - random(4)
 #    y_vel = -1 - random(2)
 #    grav = randi_range(1,6) * 0.1

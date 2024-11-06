@@ -20,7 +20,7 @@ func _process(delta):
 #func alarm 0():
     #    if (sprite_index != "giant_spider_squirt):"
 
-#        status = bounce
+#        status = BOUNCE
 #        sprite_index = "giant_spider_jump"
 #        if (Collision.i"collision_bottom(1)):"
     
@@ -40,7 +40,7 @@ func _process(delta):
     
 
 #func alarm 1():
-    #    # dy: sprite_index = "spider_drown"
+    #    # DY: sprite_index = "spider_drown"
 
     
 
@@ -52,17 +52,17 @@ func _process(delta):
 
 #    elif (sprite_index == "giant_spider_squirt):"
 
-#        status = idle
+#        status = IDLE
 #        image_speed = 0.4
 
 
     
 
 #func collision with o_character():
-    #    # dy:  jumped on - caveman, man_trap replaces this script with its own
+    #    # DY:  jumped on - caveman, man_trap replaces this script with its own
 #    if (abs(other.position.x-(position.x+16)) > 16):
 
-#        # dy:  do nothing
+#        # DY:  do nothing
 
 #    elif (not other.dead and (other.state == 15 or other.state == 16) and other.position.y < position.y+16 and not other.swimming):
 
@@ -115,9 +115,9 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "giant spider"
-#    PlatformEngine.make_active()
-#    Collision.set_collision_bounds(2, 16, 30, 32)
+#    type = "Giant Spider"
+#    PlatformEngine.make_active(self)
+#    Collision.set_collision_bounds(self, 2, 16, 30, 32)
 #    x_vel = 0
 #    y_vel = 0
 #    y_delta = -0.4
@@ -125,19 +125,19 @@ func _process(delta):
 #    my_grav_norm = 0.3
 #    image_speed = 0.8
 
-#    # dy:  stats
+#    # DY:  stats
 #    hp = 1
 #    invincible = 0
 #    whipped = 10
 #    squirt_timer = randi_range(100,1000)
 
-#    # dy:  status
-#    idle = 0
-#    bounce = 1
-#    recover = 2
-#    crawl = 3
-#    drowned = 4
-#    squirt = 5
+#    # DY:  status
+#    IDLE = 0
+#    BOUNCE = 1
+#    RECOVER = 2
+#    CRAWL = 3
+#    DROWNED = 4
+#    SQUIRT = 5
 
 #    status = 0
 #    bounce_counter = 0
@@ -202,9 +202,9 @@ func _process(delta):
 #        x_vel = -1
 
 
-#    if (Collision.i"collision_top(1) and Collision.is_collision_bottom(1) and status != crawl):"
+#    if (Collision.i"collision_top(1) and Collision.is_collision_bottom(1) and status != CRAWL):"
 
-#        status = crawl
+#        status = CRAWL
 #        if (character.position.x < position.x+16):
 #            x_vel = -1
 #        else:
@@ -215,21 +215,21 @@ func _process(delta):
 
 #    if (squirt_timer > 0): squirt_timer -= 1
 
-#    if (status == idle):
+#    if (status == IDLE):
 
 #        if (sprite_index != "giant_spider_flip): sprite_index = s_giant_spider"
 #        alarm_0()randi_range(5,20)
-#        if (squirt_timer == 0): status = squirt
-#        else: status = recover
+#        if (squirt_timer == 0): status = SQUIRT
+#        else: status = RECOVER
 
-#    elif (status == crawl):
+#    elif (status == CRAWL):
 
 #        sprite_index = "giant_spider_crawl"
-#        if (not Collision.i"collision_top(1) or not Collision.is_collision_bottom(1)): status = idle"
+#        if (not Collision.i"collision_top(1) or not Collision.is_collision_bottom(1)): status = IDLE"
 #        elif (Collision.i"collision_right(1)): x_vel = -1"
 #        elif (Collision.i"collision_left(1)): x_vel = 1"
 
-#    elif (status == squirt):
+#    elif (status == SQUIRT):
 
 #        sprite_index = "giant_spider_squirt"
 #        if (image_index >= 5 and squirt_timer == 0):
@@ -238,11 +238,11 @@ func _process(delta):
 #            squirt_timer = randi_range(100,1000)
     
 
-#    elif (status == recover):
+#    elif (status == RECOVER):
 
 #        if (Collision.i"collision_bottom(1)): x_vel = 0"
 
-#    elif (status == bounce and dist < 120):
+#    elif (status == BOUNCE and dist < 120):
 
 #        sprite_index = "giant_spider_jump"
 #        if (Collision.i"collision_bottom(1)):"
@@ -259,13 +259,13 @@ func _process(delta):
         
 #            Audio.play_sound(global.snd_spider_jump)
         
-#            if (randi_range(1,4) == 1):  status = idle x_vel = 0 y_vel = 0 
+#            if (randi_range(1,4) == 1):  status = IDLE x_vel = 0 y_vel = 0 
     
 
-#    elif (status != drowned):
+#    elif (status != DROWNED):
 
-#        status = idle
-#        # dy: x_vel = 0
+#        status = IDLE
+#        # DY: x_vel = 0
 
 
 #    if (Collision.i"collision_top(1)):"
@@ -277,5 +277,5 @@ func _process(delta):
 
 #    */
 
-#    # dy: if (Collision.i"collision_solid()):"
-#    # dy:   position.y -= 2
+#    # DY: if (Collision.i"collision_solid()):"
+#    # DY:   position.y -= 2

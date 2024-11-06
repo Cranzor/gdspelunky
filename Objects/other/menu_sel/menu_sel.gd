@@ -18,7 +18,7 @@ func _process(delta):
 
 
 #func mouse left button released():
-	#    n = (position.y - 112) / 8
+    #    n = (position.y - 112) / 8
 #    if (n+1 <= (load_level.num_levels - (load_level.page-1)*10)):
 
 #        load_level.level_name = string_upper(load_level.level_list[(load_level.page-1)*10+n])

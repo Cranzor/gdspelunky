@@ -129,7 +129,7 @@ func _process(delta):
 #    alarm_9(100)
 #    global.arrows = 100
 
-#    # dy:  to prevent the tunnel man from tearing up the whole level.
+#    # DY:  To prevent the Tunnel Man from tearing up the whole level.
 #    with brick
 
 #        if (position.x <= 16 or position.x >= 288 or position.y <= 16 or position.y >= 208):
@@ -154,7 +154,7 @@ func _process(delta):
 
 #        draw_set_font(global.my_font_small)
 #        draw_set_color(c_yellow)
-#        str_len = string_length("archery challenge begins in 3...")*8
+#        str_len = string_length("ARCHERY CHALLENGE BEGINS IN 3...")*8
 #        n = 320 - str_len
 #        n = ceil(n / 2)
-#        draw_text(n, 216, "archery challenge begins in " + str\(3-draw_status) + "...")
+#        draw_text(n, 216, "ARCHERY CHALLENGE BEGINS IN " + str(3-draw_status) + "...")

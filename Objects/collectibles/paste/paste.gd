@@ -22,10 +22,10 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "paste"
-#    PlatformEngine.make_active()
-#    Collision.set_collision_bounds(-6, -2, 6, 6)
+#    type = "Paste"
+#    PlatformEngine.make_active(self)
+#    Collision.set_collision_bounds(self, -6, -2, 6, 6)
 
 #    cost = 3000
-#    shop_desc = "bomb paste"
-#    buy_message = "bomb paste for $" + str\(cost) + "."
+#    shop_desc = "BOMB PASTE"
+#    buy_message = "BOMB PASTE FOR $" + str(cost) + "."

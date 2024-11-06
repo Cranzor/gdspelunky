@@ -37,8 +37,8 @@ func _process(delta):
 
 #    # main_code
 #    viscid_top = 1
-#    PlatformEngine.make_active()
-#    Collision.set_collision_bounds(0, 0, 16, 8)
+#    PlatformEngine.make_active(self)
+#    Collision.set_collision_bounds(self, 0, 0, 16, 8)
 
 #    invincible = false
 #    grav = 1

@@ -40,7 +40,7 @@ func _process(delta):
 
 #func collision with o_solid():
     #    # action_kill_object
-#    # need to implement this action
+#    # Need to implement this action
     
 
 #func create():

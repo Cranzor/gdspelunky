@@ -17,7 +17,6 @@ var y_vel_limit
 
 
 
-var trigger
 
 
 

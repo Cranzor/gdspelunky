@@ -73,7 +73,7 @@ func _process(delta):
     
 
 #func collision with o_enemy():
-    #    if (other.type != "tomb lord"):
+    #    if (other.type != "Tomb Lord"):
 
 #        if (other.heavy):
     

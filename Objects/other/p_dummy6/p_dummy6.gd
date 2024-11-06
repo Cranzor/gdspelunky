@@ -18,7 +18,7 @@ func _process(delta):
 
 
 #func create():
-    #    # dy:  dummy actor for end
+    #    # DY:  dummy actor for end
 
 #    if (global.i"damsel): sprite_index = s_damsel_left"
 #    elif (global.i"tunnel_man): sprite_index = s_tunnel_left"

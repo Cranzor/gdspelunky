@@ -22,11 +22,11 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "web cannon"
-#    PlatformEngine.make_active()
-#    Collision.set_collision_bounds(-4, -4, 4, 4)
+#    type = "Web Cannon"
+#    PlatformEngine.make_active(self)
+#    Collision.set_collision_bounds(self, -4, -4, 4, 4)
 #    cost = 2000
-#    buy_message = "A web cannon for $" + str\(cost) + "."
+#    buy_message = "A WEB CANNON FOR $" + str(cost) + "."
 
     
 

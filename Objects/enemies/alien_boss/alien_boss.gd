@@ -41,7 +41,7 @@ func _process(delta):
 #        gml.instance_create(position.x+16, position.y+8, Objects.blood)
 #        Audio.play_sound(global.snd_hit)
 
-#    elif (other.invincible == 0 and status != dead):
+#    elif (other.invincible == 0 and status != DEAD):
 
 #        other.blink = 30
 #        other.invincible = 30
@@ -67,28 +67,28 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    PlatformEngine.make_active()
-#    Collision.set_collision_bounds(0, 0, 32, 32)
+#    PlatformEngine.make_active(self)
+#    Collision.set_collision_bounds(self, 0, 0, 32, 32)
 #    x_vel = 2.5
 #    image_speed = 0.25
 
-#    # dy:  stats
-#    type = "alien boss"
+#    # DY:  stats
+#    type = "Alien Boss"
 #    hp = 10
 #    invincible = 0
 
-#    idle = 0
-#    dead = 99
-#    status = idle
+#    IDLE = 0
+#    DEAD = 99
+#    status = IDLE
 
 #    can_pick_up = false
 #    bounced = false
 #    dead = false
 #    counter = 0
 
-#    left = 0
-#    right = 1
-#    facing = left
+#    LEFT = 0
+#    RIGHT = 1
+#    facing = LEFT
 
 #    shake_counter = 0
 #    shake_toggle = 1
@@ -106,9 +106,9 @@ func _process(delta):
 #        hp = 0
 
 
-#    if (hp < 1 and status != dead):
+#    if (hp < 1 and status != DEAD):
 
-#        status = dead
+#        status = DEAD
 #        sprite_index = "alien_boss_die"
 #        depth = 101
 #        for repetition in range(1, 4):
@@ -147,10 +147,10 @@ func _process(delta):
 #    if (x_vel < 0): x_vel += 0.1
 #    if (abs(x_vel) < 0.5): x_vel = 0
 
-#    if (Collision.i"collision_bottom(1) and status != stunned):"
+#    if (Collision.i"collision_bottom(1) and status != STUNNED):"
 #        y_vel = 0
 
-#    if (status == idle):
+#    if (status == IDLE):
 
 #        x_vel = 0
 
@@ -163,7 +163,7 @@ func _process(delta):
 #    dist = gml.distance_to_object(player1)
 
 #    if (psychic_recover > 0): psychic_recover -= 1
-#    elif (dist < 96 and status != dead and not player1.dead and not player1.stunned and player1.invincible == 0):
+#    elif (dist < 96 and status != DEAD and not player1.dead and not player1.stunned and player1.invincible == 0):
 
 #        for i in range(0, 6):
     
@@ -176,10 +176,10 @@ func _process(delta):
 
 #    if (sprite_index != "alien_boss_hurt): image_speed = 0.25    "
     
-#    if (status != dead and sprite_index != "alien_boss_hurt and facing == left):"
+#    if (status != DEAD and sprite_index != "alien_boss_hurt and facing == LEFT):"
 
 #        sprite_index = "alien_boss"
 
-#    if (status != dead and sprite_index != "alien_boss_hurt and facing == right):"
+#    if (status != DEAD and sprite_index != "alien_boss_hurt and facing == RIGHT):"
 
 #        sprite_index = "alien_boss"

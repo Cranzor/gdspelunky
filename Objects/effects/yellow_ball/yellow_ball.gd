@@ -56,15 +56,15 @@ func _process(delta):
 #    y_vel = -1 * (random(3)+4)
 #    x_vel = randi_range(2,5)
 #    if (randi_range(1,2) == 1): x_vel *= -1
-#    # dy: invincible = true
-#    # dy: alarm_0(40)
+#    # DY: invincible = true
+#    # DY: alarm_0(40)
 #    alarm_1(1)
 
     
 
 #func outside room():
     #    # action_kill_object
-#    # need to implement this action
+#    # Need to implement this action
     
 
 #func step():

@@ -18,9 +18,9 @@ func _process(delta):
 
 
 #func create():
-    #    type = "big treasure"
-#    PlatformEngine.make_active()
-#    Collision.set_collision_bounds(0, 0, 32, 32)
+    #    type = "Big Treasure"
+#    PlatformEngine.make_active(self)
+#    Collision.set_collision_bounds(self, 0, 0, 32, 32)
 #    x_vel = 0
 #    y_vel = 0
 #    my_grav = 0.6
@@ -60,14 +60,14 @@ func _process(delta):
 #                Audio.play_sound(global.snd_thump)
         
     
-#            # dy:  bounce
+#            # DY:  bounce
 #            if (y_vel > 1): y_vel = -y_vel * 0.5
 #            else:
         
 #                y_vel = 0
         
         
-#            # dy:  friction
+#            # DY:  friction
 #            if (abs(x_vel) < 0.1): x_vel = 0
 #            elif (abs(x_vel) != 0): x_vel *= 0.3
     

@@ -40,14 +40,14 @@ func _process(delta):
     
 
 #func collision with o_enemy():
-    #    if (other.type != "ufo" and other.invincible == 0):
+    #    if (other.type != "UFO" and other.invincible == 0):
 
 #        other.hp -= 3
 #        other.x_vel = randi_range(0,2)-randi_range(1,2)
 #        other.x_vel = -1
 #        other.y_vel = -6
 #        gml.instance_create(position.x, position.y, Objects.laser_explode)
-#        # dy:  global.check_water = true
+#        # DY:  global.check_water = true
 #        gml.instance_destroy()
 
 
@@ -76,7 +76,7 @@ func _process(delta):
 
 
 #    gml.instance_create(position.x, position.y, Objects.laser_explode)
-#    # dy:  global.check_water = true
+#    # DY:  global.check_water = true
 #    gml.instance_destroy()
 
     
@@ -94,7 +94,7 @@ func _process(delta):
 
 #func outside room():
     #    # action_kill_object
-#    # need to implement this action
+#    # Need to implement this action
     
 
 #func step():

@@ -25,19 +25,19 @@ func _process(delta):
 #func animation_end():
     #    if (sprite_index == "hawk_throw_l):"
 
-#        status = idle
+#        status = IDLE
 #        sprite_index = "hawk_left"
 
 
     
 
 #func collision with o_character():
-    #    # dy:  jumped on
-#    if (status != dead and status != stunned):
+    #    # DY:  jumped on
+#    if (status != DEAD and status != STUNNED):
 
 #    if (abs(other.position.x-(position.x+8)) > 8):
 
-#        # dy:  do nothing
+#        # DY:  do nothing
 
 #    elif (not other.dead and not other.stunned and (other.state == 15 or other.state == 16) and other.position.y < position.y+5 and not other.swimming):
 
@@ -46,7 +46,7 @@ func _process(delta):
 #        else: hp -= (1 * (floor(other.fall_timer/16)+1))
 #        other.fall_timer = 0
 #        count"as_kill = true"
-#        status = stunned
+#        status = STUNNED
 #        counter = stun_time
 #        y_vel = -6
 #        if (other.position.x < position.x+8): x_vel += 1
@@ -54,7 +54,7 @@ func _process(delta):
 #        image_speed = 0.5
 #        Audio.play_sound(global.snd_hit)
 
-#    elif (other.invincible == 0 and status < stunned):
+#    elif (other.invincible == 0 and status < STUNNED):
 
 #        if (gml.collision_point(position.x+8, position.y-4, "solid", 0, 0)):
     
@@ -73,13 +73,13 @@ func _process(delta):
         
 #            Audio.play_sound(global.snd_hurt)
     
-#        elif (status != throw):
+#        elif (status != THROW):
     
-#            status = throw
+#            status = THROW
 #            x_vel = 0
 #            if (other.position.x > position.x+8):
         
-#                facing = right
+#                facing = RIGHT
 #                sprite_index = "hawk_throw_l"
 #                other.position.x = position.x
 #                other.position.y = position.y
@@ -88,7 +88,7 @@ func _process(delta):
         
 #            else:
         
-#                facing = left
+#                facing = LEFT
 #                sprite_index = "hawk_throw_l"
 #                other.position.x = position.x + 16
 #                other.position.y = position.y
@@ -104,7 +104,7 @@ func _process(delta):
         
 #                if (hold_item):
             
-#                    if (hold_item.type == "gold idol"): hold_item.position.y -= 8
+#                    if (hold_item.type == "Gold Idol"): hold_item.position.y -= 8
 #                    scr_drop_item(x_vel, y_vel)
             
           
@@ -116,7 +116,7 @@ func _process(delta):
     
 
 #func collision with o_whip():
-    #    if (status < stunned or other.type == "machete"):
+    #    if (status < STUNNED or other.type == "Machete"):
 
 #        hp -= other.damage
 #        if (blood_left > 0):
@@ -125,7 +125,7 @@ func _process(delta):
 #            if (hp < 0): blood_left -= 1
     
 #        count"as_kill = true"
-#        status = stunned
+#        status = STUNNED
 #        counter = stun_time
 #        y_vel = -3
 #        if (other.position.x < (position.x+8)): x_vel = 2
@@ -137,7 +137,7 @@ func _process(delta):
     
 
 #func collision with o_whip_pre():
-    #    if (status < stunned or other.type == "machete"):
+    #    if (status < STUNNED or other.type == "Machete"):
 
 #        hp -= other.damage
 #        if (blood_left > 0):
@@ -146,7 +146,7 @@ func _process(delta):
 #            if (hp < 0): blood_left -= 1
     
 #        count"as_kill = true"
-#        status = stunned
+#        status = STUNNED
 #        counter = stun_time
 #        y_vel = -3
 #        if (other.position.x < (position.x+8)): x_vel = 2
@@ -162,25 +162,25 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    PlatformEngine.make_active()
-#    Collision.set_collision_bounds(2, 0, sprite_width-2, sprite_height)
+#    PlatformEngine.make_active(self)
+#    Collision.set_collision_bounds(self, 2, 0, sprite_width-2, sprite_height)
 #    x_vel = 2.5
 #    image_speed = 0.5
 #    my_grav = 0.6
 
-#    # dy:  stats
-#    type = "yeti"
+#    # DY:  stats
+#    type = "Yeti"
 #    hp = 4
 #    invincible = 0
 #    favor = 6
 
-#    idle = 0
-#    walk = 1
-#    attack = 2
-#    throw = 3
-#    stunned = 98
-#    dead = 99
-#    status = idle
+#    IDLE = 0
+#    WALK = 1
+#    ATTACK = 2
+#    THROW = 3
+#    STUNNED = 98
+#    DEAD = 99
+#    status = IDLE
 
 #    whipped = false
 #    burning = 0
@@ -190,9 +190,9 @@ func _process(delta):
 #    counter = 0
 #    sight_counter = 0
 
-#    left = 0
-#    right = 1
-#    facing = right
+#    LEFT = 0
+#    RIGHT = 1
+#    facing = RIGHT
 
 #    shake_counter = 0
 #    shake_toggle = 1
@@ -221,7 +221,7 @@ func _process(delta):
 #    if (Collision.i"collision_bottom(1)): col_bot = true"
 #    if (Collision.i"collision_top(1)): col_top = true"
 
-#    if (status >= stunned):
+#    if (status >= STUNNED):
 
 #        if (gml.collision_point(position.x+8, position.y+12, "solid", 0, 0)):
     
@@ -240,20 +240,20 @@ func _process(delta):
     
 
 
-#    if (status != dead and status != stunned and hp < 1):
+#    if (status != DEAD and status != STUNNED and hp < 1):
 
-#        status = dead
+#        status = DEAD
 
 
-#    if (Collision.i"collision_bottom(1) and: status != stunned): y_vel = 0"
+#    if (Collision.i"collision_bottom(1) and: status != STUNNED): y_vel = 0"
 
-#    if (status == idle):
+#    if (status == IDLE):
 
 #        if (Collision.i"collision_bottom(1) and:"
 #            (gml.collision_point(position.x-1, position.y, "solid", -1, -1) or gml.collision_point(position.x+16, position.y, "solid", -1, -1)))
     
 #            y_vel = -6
-#            if (facing == left): x_vel = -1
+#            if (facing == LEFT): x_vel = -1
 #            else: x_vel = 1
 #            counter -= 10
     
@@ -267,33 +267,33 @@ func _process(delta):
 #        if (counter < 1):
     
 #            facing = randi_range(0,1)
-#            status = walk
+#            status = WALK
     
 #        if (sight_counter > 0): sight_counter -= 1
 #        else:
     
 #            sight = gml.instance_create(position.x, position.y, Objects.enemy_sight)
-#            if (facing == left): sight.direction = 180
+#            if (facing == LEFT): sight.direction = 180
 #            else: sight.direction = 0
 #            sight.speed = 10
 #            sight.owner = gml.instance_place(position.x, position.y, hawkman)
 #            sight_counter = 5
     
 
-#    elif (status == walk):
+#    elif (status == WALK):
 
 #        if (Collision.i"collision_left(1) or Collision.is_collision_right(1)):"
     
-#            if (facing == left): facing = right
-#            else: facing = left
+#            if (facing == LEFT): facing = RIGHT
+#            else: facing = LEFT
     
     
-#        if (facing == left):
+#        if (facing == LEFT):
     
 #            x_vel = -1.5
 #            if (not gml.collision_point(position.x-1, position.y+16, "solid", -1, -1)):
         
-#                status = idle
+#                status = IDLE
 #                counter = randi_range(20,50)
 #                x_vel = 0
         
@@ -303,7 +303,7 @@ func _process(delta):
 #            x_vel = 1.5
 #            if (not gml.collision_point(position.x+16, position.y+16, "solid", -1, -1)):
         
-#                status = idle
+#                status = IDLE
 #                counter = randi_range(20,50)
 #                x_vel = 0
          
@@ -311,7 +311,7 @@ func _process(delta):
     
 #        if (randi_range(1,100) == 1):
     
-#            status = idle
+#            status = IDLE
 #            counter = randi_range(20,50)
 #            x_vel = 0
     
@@ -320,22 +320,22 @@ func _process(delta):
 #        else:
     
 #            sight = gml.instance_create(position.x, position.y, Objects.enemy_sight)
-#            if (facing == left): sight.direction = 180
+#            if (facing == LEFT): sight.direction = 180
 #            else: sight.direction = 0
 #            sight.speed = 10
 #            sight.owner = gml.instance_place(position.x, position.y, hawkman)
 #            sight_counter = 5
     
 
-#    elif (status == attack):
+#    elif (status == ATTACK):
 
 #        image_speed = 1
 #        if (Collision.i"collision_left(1) or Collision.is_collision_right(1)):"
     
-#            if (facing == left): facing = right
-#            else: facing = left
+#            if (facing == LEFT): facing = RIGHT
+#            else: facing = LEFT
     
-#        if (facing == left): x_vel = -3
+#        if (facing == LEFT): x_vel = -3
 #        else: x_vel = 3
     
 #        if (Collision.i"collision_bottom(1) and: not gml.collision_point(position.x, position.y-16, "solid", 0, 0))"
@@ -343,7 +343,7 @@ func _process(delta):
 #            y_vel = -6
     
 
-#    elif (status == stunned):
+#    elif (status == STUNNED):
 
 #        if (x_vel == 0 and hp > 0): sprite_index = "hawk_stun_l"
 #        elif (bounced):
@@ -368,7 +368,7 @@ func _process(delta):
 #            if (counter > 0): counter -= 1
 #            elif (hp > 0):
         
-#                status = idle
+#                status = IDLE
 #                if (held):
             
 #                    held = false
@@ -377,7 +377,7 @@ func _process(delta):
         
     
 
-#    elif (status == dead):
+#    elif (status == DEAD):
 
 #        if (not dead):
     
@@ -393,23 +393,23 @@ func _process(delta):
 
 #        sprite_index = "hawk_dead_l"
     
-#        if (abs(x_vel) > 0 or abs(y_vel) > 0): status = stunned
+#        if (abs(x_vel) > 0 or abs(y_vel) > 0): status = STUNNED
 
 
-#    if (status >= stunned):
+#    if (status >= STUNNED):
 
 #        scr_check_collisions()
     
-#        if (x_vel == 0 and y_vel == 0 and hp < 1): status = dead
+#        if (x_vel == 0 and y_vel == 0 and hp < 1): status = DEAD
 
 
-#    # dy: if (Collision.i"collision_solid()): position.y -= 2"
+#    # DY: if (Collision.i"collision_solid()): position.y -= 2"
 
 #    if (x_vel > 0): x_vel -= 0.1
 #    if (x_vel < 0): x_vel += 0.1
 #    if (abs(x_vel) < 0.5): x_vel = 0
 
-#    if (status < stunned and status != throw):
+#    if (status < STUNNED and status != THROW):
 
 #        if (abs(x_vel) > 0): sprite_index = "hawk_run_left"
 #        else: sprite_index = "hawk_left"

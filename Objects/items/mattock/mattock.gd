@@ -22,11 +22,11 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "mattock"
-#    PlatformEngine.make_active()
-#    Collision.set_collision_bounds(-4, -6, 4, 6)
+#    type = "Mattock"
+#    PlatformEngine.make_active(self)
+#    Collision.set_collision_bounds(self, -4, -6, 4, 6)
 #    cost = 8000
-#    buy_message = "A mattock for $" + str\(cost) + "."
+#    buy_message = "A MATTOCK FOR $" + str(cost) + "."
 
     
 

@@ -18,8 +18,8 @@ func _process(delta):
 
 
 #func create():
-    #    type = "exit"
-#    lead"to = "" # dy:  used for level editor only"
+    #    type = "Exit"
+#    lead"to = "" # DY:  used for Level Editor only"
 
     
 

@@ -33,7 +33,7 @@ func _process(delta):
 #    prox = 4
 #    invincible = false
 #    image_speed = 0.5
-#    # dy:  alarm_0(50)
+#    # DY:  alarm_0(50)
 
     
 
@@ -91,7 +91,7 @@ func _process(delta):
 #        fired = fired_max
 
 
-#    # dy:  right
+#    # DY:  right
 
 #    if (fired == 0 and abs(player1.position.y-position.y-8) < prox and player1.position.x > position.x+8 and:
 #        point_distance(position.x+8, position.y+8, player1.position.x, player1.position.y) < range)

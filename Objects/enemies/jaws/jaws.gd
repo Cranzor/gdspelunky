@@ -20,16 +20,16 @@ func _process(delta):
 #func animation_end():
     #    if (sprite_index == "jaws_turn_l):"
 
-#        # dy: dir = 180
+#        # DY: dir = 180
 #        sprite_index = "jaws_left"
-#        status = pause
+#        status = PAUSE
 #        counter = 40
 
 #    elif (sprite_index == "jaws_turn_r):"
 
-#        # dy: dir = 0
+#        # DY: dir = 0
 #        sprite_index = "jaws_right"
-#        status = pause
+#        status = PAUSE
 #        counter = 40
 #        position.x = position.x + 48
 
@@ -41,9 +41,9 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    type = "mega mouth"
+#    type = "Mega Mouth"
 #    image_speed = 0.5
-#    Collision.set_collision_bounds(0, 0, 48, 32)
+#    Collision.set_collision_bounds(self, 0, 0, 48, 32)
 #    origX = 0
 #    origY = 0
 #    x_vel = 0
@@ -53,18 +53,18 @@ func _process(delta):
 #    dir = 180
 #    facing = 0
 
-#    # dy:  stats
+#    # DY:  stats
 #    hp = 40
 #    invincible = 0
 
 #    bubble_timer = 0
 #    bubble_timer_max = 40
 
-#    # dy:  status
-#    idle = 0
-#    attack = 1
-#    pause = 2
-#    turn = 3
+#    # DY:  status
+#    IDLE = 0
+#    ATTACK = 1
+#    PAUSE = 2
+#    TURN = 3
 
 #    can_pick_up = false
 #    status = 0
@@ -92,7 +92,7 @@ func _process(delta):
 #    /* debug
 #    draw_set_font(global.my_font_small)
 #    draw_set_color(c_white)
-#    draw_text(position.x, position.y-16, str\(status) + ":" + str\(counter))
+#    draw_text(position.x, position.y-16, str(status) + ":" + str(counter))
 #    */
 
     
@@ -131,9 +131,9 @@ func _process(delta):
 
 #    dist = point_distance(position.x, position.y, player1.position.x, player1.position.y)
 
-#    if (status == idle):
+#    if (status == IDLE):
 
-#        if (dir == 0): # dy:  right
+#        if (dir == 0): # DY:  right
     
 #            if (gml.collision_point(position.x+18, position.y+16, "water", 0, 0) and not (gml.collision_point(position.x+18, position.y+16, "solid", 0, 0))):
         
@@ -141,7 +141,7 @@ func _process(delta):
         
 #            elif (not gml.collision_rectangle(position.x-32, position.y, position.x,  position.y+32, "solid", 0, 0)):
         
-#                status = turn
+#                status = TURN
 #                dir = 180
 #                position.x = position.x-48
 #                sprite_index = "jaws_turn_l"
@@ -156,7 +156,7 @@ func _process(delta):
         
 #            elif (not gml.collision_rectangle(position.x+16, position.y, position.x+48,  position.y+32, "solid", 0, 0)):
         
-#                status = turn
+#                status = TURN
 #                dir = 0
 #                sprite_index = "jaws_turn_r"
 #                image_index = 0
@@ -170,20 +170,20 @@ func _process(delta):
 
 #        if (player1.swimming and not player1.dead):
     
-#            status = attack
+#            status = ATTACK
     
 
-#    elif (status == pause):
+#    elif (status == PAUSE):
 
 #        if (counter > 0): counter -= 1
 #        else:
     
-#            status = idle
+#            status = IDLE
 #            if (dir > 90 and dir < 270): dir = 180
 #            else: dir = 0
     
 
-#    elif (status == attack and gml.instance_exists("player1")):
+#    elif (status == ATTACK and gml.instance_exists("player1")):
 
 #        if (player1.swimming and not player1.dead):
     
@@ -195,7 +195,7 @@ func _process(delta):
         
 #                if (sprite_index == "jaws_right and not gml.collision_rectangle(position.x-32, position.y, position.x,  position.y+32, "solid", 0, 0)):"
             
-#                    status = turn
+#                    status = TURN
 #                    dir = 180
 #                    position.x = position.x-48
 #                    sprite_index = "jaws_turn_l"
@@ -207,7 +207,7 @@ func _process(delta):
         
 #                if (sprite_index == "jaws_left and not gml.collision_point(position.x-2, position.y+16, "solid", 0, 0)):"
             
-#                    status = turn
+#                    status = TURN
 #                    dir = 0
 #                    sprite_index = "jaws_turn_r"
 #                    image_index = 0
@@ -226,7 +226,7 @@ func _process(delta):
     
 #        else:
     
-#            status = idle
+#            status = IDLE
 #            if (dir > 90 and dir < 270): dir = 180
 #            else: dir = 0
     
@@ -241,8 +241,8 @@ func _process(delta):
 
 #    if (sprite_index == "jaws_left):"
 
-#        Collision.set_collision_bounds(0, 0, 64, 32)
+#        Collision.set_collision_bounds(self, 0, 0, 64, 32)
 
 #    elif (sprite_index == "jaws_right):"
 
-#        Collision.set_collision_bounds(-48, 0, 16, 32)
+#        Collision.set_collision_bounds(self, -48, 0, 16, 32)
