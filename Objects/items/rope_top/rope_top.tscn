@@ -2,10 +2,9 @@
 
 [ext_resource type="Script" path="res://objects/items/rope_top/rope_top.gd" id="1_a6mhc"]
 
-[node name="RopeTop" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
+[node name="RopeTop" type="Node2D"]
 z_index = -200
 script = ExtResource("1_a6mhc")
 sprite_index_name = "rope_top"
-animated_sprite_node = NodePath("")
 sprite_offset = Vector2(4, 4)
 object_name = "rope_top"

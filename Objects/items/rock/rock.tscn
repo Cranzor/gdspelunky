@@ -2,9 +2,8 @@
 
 [ext_resource type="Script" path="res://objects/items/rock/rock.gd" id="1_cgns2"]
 
-[node name="Rock" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
+[node name="Rock" type="Node2D"]
 script = ExtResource("1_cgns2")
 sprite_index_name = "rock"
-animated_sprite_node = NodePath("")
 sprite_offset = Vector2(4, 4)
 object_name = "rock"

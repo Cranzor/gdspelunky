@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bdusq23vl38ra"]
 
-[sub_resource type="GDScript" id="GDScript_villo"]
+[ext_resource type="Script" path="res://objects/effects/leaf/leaf.gd" id="1_4cnee"]
 
 [node name="Leaf" type="Node2D"]
+script = ExtResource("1_4cnee")
+object_name = "leaf"

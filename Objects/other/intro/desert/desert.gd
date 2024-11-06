@@ -11,7 +11,7 @@ func _process(delta):
 
 #--- Object functions
 func create():
-	solid_create()
+	super()
 	
 	if (gml.room_get_name() == "intro"):
 		sprite_index = "desert_night"

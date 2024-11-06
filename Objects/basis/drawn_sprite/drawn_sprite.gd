@@ -50,6 +50,9 @@ var STUNNED = 98 #--- making this a variable and not a constant because it is se
 var stun_time
 var damage
 var puncture
+var trigger
+var left
+var right
 
 func create():
 	visible = true #--- believe I put this due to how Game Maker handles it

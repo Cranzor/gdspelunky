@@ -1,4 +1,3 @@
-
 extends Item
 
 
@@ -17,11 +16,11 @@ func _process(delta):
 #--- Object functions
 
 
-#func create():
-    #    # action_inherited
-#    super()
+func create():
+	# action_inherited
+	super()
 
-#    # main_code
-#    type = "rock"
-#    PlatformEngine.make_active()
-#    Collision.set_collision_bounds(-4, -4, 4, 4)
+	# main_code
+	type = "rock"
+	PlatformEngine.make_active(self)
+	Collision.set_collision_bounds(self, -4, -4, 4, 4)

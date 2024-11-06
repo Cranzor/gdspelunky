@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://b6ej1ad6pv2mx"]
 
-[sub_resource type="GDScript" id="GDScript_hqjji"]
+[ext_resource type="Script" path="res://objects/collectibles/rope_bag/rope_bag.gd" id="1_8exb3"]
 
 [node name="RopeBag" type="Node2D"]
+script = ExtResource("1_8exb3")
+object_name = "rope_bag"

@@ -11,7 +11,7 @@ func _process(delta):
 
 #--- Object functions
 func create():
-	solid_create()
+	super()
 	
 	var n = randi_range(1,10)
 
@@ -30,7 +30,7 @@ func create():
 			level_generation.scr_generate_item(position.x+8, position.y+8, 2)
 
 func destroy():
-	solid_destroy()
+	super()
 	
 	if (not clean_death and not global.clean_solids):
 

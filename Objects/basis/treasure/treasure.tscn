@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bvbm5gxldt5up"]
 
-[sub_resource type="GDScript" id="GDScript_ljcit"]
+[ext_resource type="Script" path="res://objects/basis/treasure/treasure.gd" id="1_co3so"]
 
 [node name="Treasure" type="Node2D"]
+script = ExtResource("1_co3so")
+object_name = "treasure"

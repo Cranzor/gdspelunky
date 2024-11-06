@@ -14,12 +14,13 @@ const DUCKING = 12
 
 var break_pieces
 
-var trigger
 var stolen
 var in_dice_house
 var stuck
 var sticky_x_diff
 var sticky_y_diff
+
+var buy_message #--- may want to move this to drawn_sprite. check damsel script
 
 func _ready():
 	sprite

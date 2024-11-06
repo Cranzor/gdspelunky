@@ -1,5 +1,5 @@
-
 extends Solid
+class_name MoveableSolid
 
 
 func _ready():
@@ -17,11 +17,11 @@ func _process(delta):
 #--- Object functions
 
 
-#func create():
-    #    # action_inherited
-#    super()
+func create():
+	# action_inherited
+	super()
 
-#    # main_code
-#    x_vel = 0
-#    y_vel = 0
-#    my_grav = 0.6
+	# main_code
+	x_vel = 0
+	y_vel = 0
+	my_grav = 0.6

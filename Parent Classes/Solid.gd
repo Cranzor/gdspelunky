@@ -8,8 +8,6 @@ var clean_death
 
 var up
 var down
-var left
-var right
 
 func create():
 	super()

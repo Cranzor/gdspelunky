@@ -2,9 +2,11 @@
 
 [ext_resource type="Script" path="res://objects/collectibles/gold_bar/gold_bar.gd" id="1_g87dv"]
 
-[node name="GoldBar" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
+[node name="GoldBar" type="Node2D"]
 script = ExtResource("1_g87dv")
 sprite_index_name = "gold_bar"
-animated_sprite_node = NodePath("")
 sprite_offset = Vector2(4, 4)
 object_name = "gold_bar"
+editor_setup_finished = null
+depth = null
+object_size = null

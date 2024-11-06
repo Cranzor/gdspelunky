@@ -1,4 +1,3 @@
-
 extends DrawnSprite
 
 
@@ -17,10 +16,10 @@ func _process(delta):
 #--- Object functions
 
 
-#func create():
-    #    # action_inherited
-#    super()
+func create():
+	# action_inherited
+	super()
 
-#    # main_code
-#    type = "tomb lord"
-#    image_speed = 0
+	# main_code
+	type = "tomb lord"
+	image_speed = 0

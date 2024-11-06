@@ -1,4 +1,3 @@
-
 extends DrawnSprite
 
 
@@ -16,11 +15,12 @@ func _process(delta):
 
 #--- Object functions
 
+var checked #---  used in level object as well, but will declare here as they do not have a shared parent
 
-#func create():
-    #    # action_inherited
-#    super()
+func create():
+	# action_inherited
+	super()
 
-#    # main_code
-#    type = "water"
-#    checked = false
+	# main_code
+	type = "water"
+	checked = false

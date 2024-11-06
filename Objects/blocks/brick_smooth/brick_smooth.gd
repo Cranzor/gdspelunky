@@ -11,7 +11,7 @@ func _process(delta):
 
 #--- Object functions
 func destroy():
-	solid_destroy()
+	super()
 	if (not clean_death and not global.clean_solids):
 
 		var rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), "rubble")
