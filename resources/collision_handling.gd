@@ -35,7 +35,8 @@ func check_individual_collision(node_to_check, tester_rect):
 		if sprite_database.sprite_database[object_sprite]["mask"]["shape"] == "RECTANGLE":
 			position_with_offset = get_position_with_offset_applied(node_to_check.position, node_to_check.sprite_offset - sprite_database.sprite_database[object_sprite]["mask"]["collision_rectangles"][0])
 		else:
-			position_with_offset = get_position_with_offset_applied(node_to_check.position, node_to_check.sprite_offset)
+			#---[FLAG] need to actually account for precise checking
+			position_with_offset = get_position_with_offset_applied(node_to_check.position, node_to_check.sprite_offset - sprite_database.sprite_database[object_sprite]["mask"]["collision_rectangles"][0][0][0])
 			
 		var object_rect: Rect2 = Rect2(position_with_offset, bounding_box)
 		var intersecting: bool = tester_rect.intersects(object_rect)

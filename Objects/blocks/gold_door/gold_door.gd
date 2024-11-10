@@ -16,25 +16,28 @@ func _process(delta):
 #--- Object functions
 
 
-#func collision with o_sceptre():
-	#    if (other.held):
+func collision_with_sceptre():
+	print("worked")
+	var other = gml.instance_nearest(position.x, position.y, "sceptre")
+	if (other.held):
 
-#        if (global.ha"crown):"
+		if (global.has_crown):
 	
-#            other.held = false
-#            with player1
+			other.held = false
+			var all_player1s = gml.get_all_instances("player1")
+			for player1_instance in all_player1s:
 		
-#                hold_item = 0
-#                pickup_item_type = ""
+				player1_instance.hold_item = 0
+				player1_instance.pickup_item_type = ""
 		
-#            with other  gml.instance_destroy() 
+			gml.instance_destroy(other)
 	
-#            Audio.play_sound(global.snd_chest_open)
-#            gml.instance_create(position.x, position.y, Objects.x_gold)
-#            gml.instance_destroy()
+			Audio.play_sound(global.snd_chest_open)
+			gml.instance_create(position.x, position.y, Objects.x_gold)
+			gml.instance_destroy(self)
 	
-#        else:
+		else:
 	
-#            global.message = "THE SCEPTRE FITS..."
-#            global.message2 = "BUT NOTHING IS HAPPENING!"
-#            global.message_timer = 100
+			global.message = "THE SCEPTRE FITS..."
+			global.message2 = "BUT NOTHING IS HAPPENING!"
+			global.message_timer = 100

@@ -40,6 +40,8 @@ const ALARM = preload("res://alarm.tscn")
 
 @export var editor_setup_finished: bool = false
 
+@export var collision_with: Dictionary
+
 @export var depth: int = 0:
 	set(new_depth):
 		var minimum_depth = -4096
@@ -62,26 +64,6 @@ const ALARM = preload("res://alarm.tscn")
 		else:
 			return z_index
 		
-#var persistent = false
-#var parent
-#var mask
-#
-#var type
-#var blink_toggle
-
-##--- want access to these for all objects, so defining here
-#var collision_bounds_offset_left_x
-#var collision_bounds_offset_top_y
-#var collision_bounds_offset_right_x
-#var collision_bounds_offset_bottom_y
-#
-#var invincible
-#var IDLE
-#var WALK
-#var ATTACK
-#var bounced
-#var dead
-#var shake_toggle
 var sprite_index:
 	set(new_sprite):
 		#sprite_index = new_sprite
@@ -141,35 +123,6 @@ var image_blend: Color:
 var image_alpha: int:
 	get:
 		return animated_sprite_node.self_modulate.a
-		
-#var status
-#var facing
-#var armed
-#var active
-#var held #--- seems easier to put this here since both items and enemies use it
-#var grav
-#var bounce
-#var my_grav
-#var safe
-#var heavy
-#var value
-#var col_bot
-#var can_pick_up
-#var bounce_factor
-#var friction_factor
-#var bloodless
-#var cost
-#var for_sale
-#var cimg
-#var sticky
-#var enemy_id
-#var col_left
-#var col_right
-#var col_top
-#var STUNNED = 98 #--- making this a variable and not a constant because it is set to 1 in p_dummy2 (all other cases are 98)
-#var stun_time
-#var damage
-#var puncture
 
 var x_vel = 0
 var y_vel = 0
@@ -337,6 +290,7 @@ func object_setup():
 	bounding_box_setup()
 	##collision_setup()
 	alarms_setup(object_entry)
+	collision_with_setup(object_entry)
 	
 	#--- keep the below enabled even if objects are set up in the editor
 	connect_alarms(object_entry)
@@ -470,6 +424,7 @@ func object_tick():
 
 	run_step_event(self)
 	run_draw_event(self)
+	run_collision_with(self)
 
 	#smooth_motion.tick_end(position, animated_sprite_node)
 
@@ -499,6 +454,16 @@ func connect_alarms(object_entry):
 			var alarm_function = Callable(self, alarm_nodes[alarm])
 			alarm.timeout.connect(alarm_function)
 
+func collision_with_setup(object_entry):
+	var events: Array = object_entry["events"]
+	
+	for event in events:
+		var string_beginning = "collision_with_"
+		if event.begins_with(string_beginning):
+			var object = event.trim_prefix(string_beginning)
+			var collision_with_function = Callable(self, event)
+			collision_with[object] = collision_with_function
+
 func run_step_event(obj):
 	if obj.has_method("step"):
 		obj.step()
@@ -506,6 +471,12 @@ func run_step_event(obj):
 func run_draw_event(obj):
 	if obj.has_method("draw"):
 		obj.draw()
+
+func run_collision_with(obj):
+	for object in collision_with:
+		if gml.collision_rectangle(position.x, position.y, object_size.x, object_size.y, object, 0, 0):
+			var callable = collision_with[object]
+			callable.call()
 
 func object_process(delta):
 	#smooth_motion.handle_smooth_motion(self, delta, get_physics_process_delta_time())

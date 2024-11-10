@@ -1,12 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b4yxry1gi7stn"]
+[gd_scene load_steps=2 format=3 uid="uid://b4yxry1gi7stn"]
 
-[ext_resource type="PackedScene" uid="uid://6km4dhdu3dvj" path="res://Test Scenes/snake.tscn" id="1_i7aqm"]
-[ext_resource type="Script" path="res://Test Scenes/snake_collision_test.gd" id="2_kvb3s"]
-[ext_resource type="PackedScene" uid="uid://dogsmb1bk1rdb" path="res://CollisionPoint.tscn" id="3_ie4gl"]
+[ext_resource type="Script" path="res://collision_test_scene.gd" id="1_ebdfj"]
 
-[node name="CollisionTestScene" type="Node2D"]
+[node name="CollisionTestScene" type="Node2D" groups=["objects_holder"]]
+script = ExtResource("1_ebdfj")
 
-[node name="Snake" parent="." instance=ExtResource("1_i7aqm")]
-script = ExtResource("2_kvb3s")
-
-[node name="CollisionPoint" parent="." groups=["collision_point"] instance=ExtResource("3_ie4gl")]
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(-5, 5)
