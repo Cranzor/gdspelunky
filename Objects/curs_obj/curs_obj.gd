@@ -1,4 +1,3 @@
-
 extends GMObject
 
 
@@ -18,12 +17,12 @@ func _process(delta):
 
 
 #func create():
-    #    image_speed = 0
+	#    image_speed = 0
 
-    
+	
 
 #func step():
-    #    if (mouse_x > view_xview[0] and mouse_x < view_xview[0]+320 and:
+	#    if (mouse_x > view_xview[0] and mouse_x < view_xview[0]+320 and:
 #        mouse_y > view_yview[0] and mouse_y < view_yview[0]+240)
 
 #        position.x = mouse_x-8

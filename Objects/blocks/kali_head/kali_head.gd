@@ -1,4 +1,3 @@
-
 extends DrawnSprite
 
 
@@ -17,21 +16,19 @@ func _process(delta):
 #--- Object functions
 
 
-#func alarm 0():
-    #    sprite_index = "gth_hole"
-#    for repetition in range(1, 6):
+func alarm_0():
+	sprite_index = "gth_hole"
+	for repetition in range(1, 6):
 
-#        obj = gml.instance_create(position.x, position.y, Objects.spider)
-#        obj.x_vel = randi_range(0,3)-randi_range(0,3)
-#        obj.y_vel = -randi_range(1,3)
+		var obj = gml.instance_create(position.x, position.y, Objects.spider)
+		obj.x_vel = randi_range(0,3)-randi_range(0,3)
+		obj.y_vel = -randi_range(1,3)
 
-#    Audio.play_sound(global.snd_thump)
+	Audio.play_sound(global.snd_thump)
 
-    
 
-#func create():
-    #    match (randi_range(1,3))
-
-#        1:  sprite_index = "kali_head1  "
-#        2:  sprite_index = "kali_head2  "
-#        3:  sprite_index = "kali_head3  "
+func create():
+	match (randi_range(1,3)):
+		1:  sprite_index = "kali_head1"
+		2:  sprite_index = "kali_head2"
+		3:  sprite_index = "kali_head3"

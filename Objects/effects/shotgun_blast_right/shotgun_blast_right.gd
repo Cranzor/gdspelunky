@@ -1,4 +1,3 @@
-
 extends GMObject
 
 
@@ -17,10 +16,10 @@ func _process(delta):
 #--- Object functions
 
 
-#func animation_end():
-    #    # action_kill_object
-#    gml.instance_destroy(self)
-    
+func animation_end():
+	# action_kill_object
+	gml.instance_destroy(self)
+	
 
-#func create():
-    #    image_speed = 0.8
+func create():
+	image_speed = 0.8

@@ -1,4 +1,3 @@
-
 extends DrawnSprite
 
 
@@ -17,14 +16,13 @@ func _process(delta):
 #--- Object functions
 
 
-#func animation_end():
-    #    gml.instance_destroy()
+func animation_end():
+	gml.instance_destroy(self)
 
-    
 
-#func create():
-    #    # action_inherited
-#    super()
+func create():
+	# action_inherited
+	super()
 
-#    # main_code
-#    image_speed = 0.6
+	# main_code
+	image_speed = 0.6

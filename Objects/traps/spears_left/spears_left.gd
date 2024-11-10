@@ -1,4 +1,3 @@
-
 extends DrawnSprite
 
 
@@ -17,18 +16,18 @@ func _process(delta):
 #--- Object functions
 
 
-#func animation_end():
-    #    # action_kill_object
-#    gml.instance_destroy(self)
-    
+func animation_end():
+	# action_kill_object
+	gml.instance_destroy(self)
+	
 
-#func step():
-    #    if (sprite_index = "spears_left and not gml.collision_point(position.x+16, position.y, "spear_trap_top", 0, 0) and not gml.collision_point(position.x+16, position.y, "spear_trap_bottom", 0, 0)):"
+func step():
+	if (sprite_index == "spears_left" and not gml.collision_point(position.x+16, position.y, "spear_trap_top", 0, 0) and not gml.collision_point(position.x+16, position.y, "spear_trap_bottom", 0, 0)):
 
-#        gml.instance_destroy()
+		gml.instance_destroy(self)
 
-#    if (sprite_index = "spears_right and not gml.collision_point(position.x-16, position.y, "spear_trap_top", 0, 0) and not gml.collision_point(position.x-16, position.y, "spear_trap_bottom", 0, 0)):"
+	if (sprite_index == "spears_right" and not gml.collision_point(position.x-16, position.y, "spear_trap_top", 0, 0) and not gml.collision_point(position.x-16, position.y, "spear_trap_bottom", 0, 0)):
 
-#        gml.instance_destroy()
+		gml.instance_destroy(self)
 
-#    depth = 995
+	depth = 995

@@ -2,8 +2,7 @@
 
 [ext_resource type="Script" path="res://objects/blocks/exit/exit.gd" id="1_ctiun"]
 
-[node name="Exit" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
+[node name="Exit" type="Node2D"]
 script = ExtResource("1_ctiun")
 sprite_index_name = "exit"
-animated_sprite_node = NodePath("")
 object_name = "exit"

@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://b727jjsdj63g6"]
 
-[sub_resource type="GDScript" id="GDScript_ryxng"]
+[ext_resource type="Script" path="res://objects/effects/lava_drip/lava_drip.gd" id="1_85ant"]
 
 [node name="LavaDrip" type="Node2D"]
+script = ExtResource("1_85ant")
+object_name = "lava_drip"

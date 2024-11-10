@@ -4,3 +4,4 @@
 
 [node name="SpearsLeft" type="Node2D"]
 script = ExtResource("1_c1vcq")
+object_name = "spears_left"

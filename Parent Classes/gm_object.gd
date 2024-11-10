@@ -10,6 +10,8 @@ var grid_position
 var sprite
 var solid = false
 
+var dir #---[FLAG] not exactly sure what this does
+
 var moving_object = false
 
 @export_group("Sprite")
@@ -41,6 +43,7 @@ const ALARM = preload("res://alarm.tscn")
 @export var editor_setup_finished: bool = false
 
 @export var collision_with: Dictionary
+var other #--- most recent object collided with
 
 @export var depth: int = 0:
 	set(new_depth):
@@ -475,6 +478,7 @@ func run_draw_event(obj):
 func run_collision_with(obj):
 	for object in collision_with:
 		if gml.collision_rectangle(position.x, position.y, object_size.x, object_size.y, object, 0, 0):
+			other = gml.instance_nearest(position.x, position.y, object)
 			var callable = collision_with[object]
 			callable.call()
 

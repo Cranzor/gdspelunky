@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://d2uq1y13rkcye"]
 
-[sub_resource type="GDScript" id="GDScript_2dlyr"]
+[ext_resource type="Script" path="res://objects/collectibles/gold_nugget/gold_nugget.gd" id="1_axhcy"]
 
 [node name="GoldNugget" type="Node2D"]
+script = ExtResource("1_axhcy")
+object_name = "gold_nugget"

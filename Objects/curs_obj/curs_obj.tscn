@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://q5536filbkf1"]
 
-[sub_resource type="GDScript" id="GDScript_ie0qb"]
+[ext_resource type="Script" path="res://objects/curs_obj/curs_obj.gd" id="1_v5kbq"]
 
 [node name="CursObj" type="Node2D"]
+script = ExtResource("1_v5kbq")
+object_name = "curs_obj"

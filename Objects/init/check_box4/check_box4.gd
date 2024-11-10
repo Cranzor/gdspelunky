@@ -18,17 +18,17 @@ func _process(delta):
 
 
 #func create():
-    #    if (global.gamepad_on): on = true
+	#    if (global.gamepad_on): on = true
 #    else:
 
 #        on = false
 #        sprite_index = "box"
 
 
-    
+	
 
 #func mouse left button pressed():
-    #    if (not on):
+	#    if (not on):
 
 #        on = true
 #        sprite_index = "box_checked"

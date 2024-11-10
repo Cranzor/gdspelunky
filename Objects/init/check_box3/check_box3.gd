@@ -18,17 +18,17 @@ func _process(delta):
 
 
 #func create():
-    #    if (global.down_trun): on = true
+	#    if (global.down_trun): on = true
 #    else:
 
 #        on = false
 #        sprite_index = "box"
 
 
-    
+	
 
 #func mouse left button pressed():
-    #    if (not on):
+	#    if (not on):
 
 #        on = true
 #        sprite_index = "box_checked"

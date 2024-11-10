@@ -1,4 +1,3 @@
-
 extends DrawnSprite
 
 

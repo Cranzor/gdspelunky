@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://x8al3ajpuwv2"]
 
-[sub_resource type="GDScript" id="GDScript_lc61h"]
+[ext_resource type="Script" path="res://objects/blocks/kali_head/kali_head.gd" id="1_8ccce"]
 
 [node name="KaliHead" type="Node2D"]
+script = ExtResource("1_8ccce")
+object_name = "kali_head"
