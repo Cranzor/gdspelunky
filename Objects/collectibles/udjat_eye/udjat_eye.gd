@@ -1,4 +1,3 @@
-
 extends Item
 
 
@@ -17,14 +16,14 @@ func _process(delta):
 #--- Object functions
 
 
-#func create():
-    #    # action_inherited
-#    super()
+func create():
+	# action_inherited
+	super()
 
-#    # main_code
-#    type = "Udjat Eye"
-#    PlatformEngine.make_active(self)
-#    Collision.set_collision_bounds(self, -6, -6, 6, 6)
+	# main_code
+	type = "udjat eye"
+	PlatformEngine.make_active(self)
+	Collision.set_collision_bounds(self, -6, -6, 6, 6)
 
-#    cost = 0
-#    buy_message = "I SHOULDN'T BE SELLING THIS!"
+	cost = 0
+	buy_message = "I SHOULDN'T BE SELLING THIS!"

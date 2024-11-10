@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://b67kdmp5lt037"]
 
-[sub_resource type="GDScript" id="GDScript_p2csc"]
+[ext_resource type="Script" path="res://objects/other/intro/shrub_scroll/shrub_scroll.gd" id="1_em2jr"]
 
 [node name="ShrubScroll" type="Node2D"]
+script = ExtResource("1_em2jr")
+object_name = "shrub_scroll"

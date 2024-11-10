@@ -356,6 +356,9 @@ func room_get_name():
 	var room_name = root.room_name
 	return room_name
 
+func draw_sprite_ext(sprite, subimg, x, y, xscale, yscale, rot, color, alpha): #--- [FLAG] implement
+	pass
+
 #------------------------
 func singleton_test():
 	var bg_holder_list = get_tree().get_nodes_in_group('BgHolder')

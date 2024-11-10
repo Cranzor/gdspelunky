@@ -1,4 +1,3 @@
-
 extends GMObject
 
 
@@ -18,9 +17,9 @@ func _process(delta):
 
 
 #func animation_end():
-    #    # action_kill_object
+	#    # action_kill_object
 #    # Need to implement this action
-    
+	
 
 #func create():
-    #    image_speed = 0.8
+	#    image_speed = 0.8

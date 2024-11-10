@@ -2,9 +2,8 @@
 
 [ext_resource type="Script" path="res://objects/blocks/brick_smooth/brick_smooth.gd" id="1_df582"]
 
-[node name="BrickSmooth" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
+[node name="BrickSmooth" type="Node2D"]
 z_index = -110
 script = ExtResource("1_df582")
 sprite_index_name = "cave_smooth"
-animated_sprite_node = NodePath("")
 object_name = "brick_smooth"

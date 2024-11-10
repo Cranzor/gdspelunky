@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://ir3oc066en0b"]
 
-[sub_resource type="GDScript" id="GDScript_6x688"]
+[ext_resource type="Script" path="res://objects/collectibles/bomb_box/bomb_box.gd" id="1_q1t13"]
 
 [node name="BombBox" type="Node2D"]
+script = ExtResource("1_q1t13")
+object_name = "bomb_box"

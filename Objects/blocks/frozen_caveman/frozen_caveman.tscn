@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://c7p45aqfxeur3"]
 
-[sub_resource type="GDScript" id="GDScript_dybl2"]
+[ext_resource type="Script" path="res://objects/blocks/frozen_caveman/frozen_caveman.gd" id="1_ur4xw"]
 
 [node name="FrozenCaveman" type="Node2D"]
+script = ExtResource("1_ur4xw")
+object_name = "frozen_caveman"

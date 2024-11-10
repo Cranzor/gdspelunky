@@ -1,4 +1,3 @@
-
 extends Solid
 
 
@@ -17,10 +16,9 @@ func _process(delta):
 #--- Object functions
 
 
-#func create():
-    #    y_vel = 0
-
-    
-
-#func step():
-    #    position.y += y_vel
+func create():
+	y_vel = 0
+	
+	
+func step():
+	position.y += y_vel

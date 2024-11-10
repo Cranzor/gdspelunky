@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://blvqjgc8dse6m"]
 
-[sub_resource type="GDScript" id="GDScript_12sno"]
+[ext_resource type="Script" path="res://objects/blocks/entrance/entrance.gd" id="1_0ivmg"]
 
 [node name="Entrance" type="Node2D"]
+script = ExtResource("1_0ivmg")
+object_name = "entrance"

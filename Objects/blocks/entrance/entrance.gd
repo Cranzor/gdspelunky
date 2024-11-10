@@ -15,18 +15,18 @@ func _process(delta):
 
 
 #--- Object functions
+var leads_to
 
 
 #func create():
-    #    type = "Exit"
-#    lead"to = "" # DY:  used for Level Editor only"
-
-    
-
+	#type = "exit"
+	#leads_to = "" # DY:  used for Level Editor only"
+#
+#
 #func draw():
-    #    draw_sprite(sprite_index, -1, position.x, position.y)
-#    if (InLevel.i"room("r_level_editor")):"
-
-#        draw_set_font(global.my_font_small)
-#        draw_set_color(c_white)
-#        draw_text(position.x, position.y, lead"to)"
+	#gml.draw_sprite(sprite_index, -1, position.x, position.y)
+	#if (InLevel.is_room("level_editor")):
+#
+		#draw_set_font(global.my_font_small)
+		#draw_set_color(c_white)
+		#draw_text(position.x, position.y, leads_to)

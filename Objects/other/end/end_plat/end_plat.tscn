@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://tj136us5rvn1"]
 
-[sub_resource type="GDScript" id="GDScript_7ebdg"]
+[ext_resource type="Script" path="res://objects/other/end/end_plat/end_plat.gd" id="1_s0k3m"]
 
 [node name="EndPlat" type="Node2D"]
+script = ExtResource("1_s0k3m")
+object_name = "end_plat"

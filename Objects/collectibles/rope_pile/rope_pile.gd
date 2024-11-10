@@ -17,14 +17,14 @@ func _process(delta):
 #--- Object functions
 
 
-#func create():
-    #    # action_inherited
-#    super()
+func create():
+	# action_inherited
+	super()
 
-#    # main_code
-#    type = "Rope Pile"
-#    PlatformEngine.make_active(self)
-#    Collision.set_collision_bounds(self, -6, -5, 6, 5)
+	# main_code
+	type = "rope pile"
+	PlatformEngine.make_active(self)
+	Collision.set_collision_bounds(self, -6, -5, 6, 5)
 
-#    cost = 2500
-#    buy_message = "EXTRA ROPE FOR $" + str(cost) + "."
+	cost = 2500
+	buy_message = "EXTRA ROPE FOR $" + str(cost) + "."

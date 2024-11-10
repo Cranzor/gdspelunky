@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bgwd61prrntr8"]
 
-[sub_resource type="GDScript" id="GDScript_mmx1w"]
+[ext_resource type="Script" path="res://objects/effects/shotgun_blast_left/shotgun_blast_left.gd" id="1_sgj5f"]
 
 [node name="ShotgunBlastLeft" type="Node2D"]
+script = ExtResource("1_sgj5f")
+object_name = "shotgun_blast_left"

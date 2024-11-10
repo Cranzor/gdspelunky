@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://duvg50fjnh6ge"]
 
-[sub_resource type="GDScript" id="GDScript_yndcg"]
+[ext_resource type="Script" path="res://objects/enemies/entrance_check/entrance_check.gd" id="1_ggibg"]
 
 [node name="EntranceCheck" type="Node2D"]
+script = ExtResource("1_ggibg")
+object_name = "entrance_check"

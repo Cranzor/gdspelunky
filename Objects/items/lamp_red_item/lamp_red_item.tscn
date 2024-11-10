@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://s10htuh6hwl7"]
 
-[sub_resource type="GDScript" id="GDScript_scddu"]
+[ext_resource type="Script" path="res://objects/items/lamp_red_item/lamp_red_item.gd" id="1_k82bo"]
 
 [node name="LampRedItem" type="Node2D"]
+script = ExtResource("1_k82bo")
+object_name = "lamp_red_item"

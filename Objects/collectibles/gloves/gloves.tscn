@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://dwv2306717tx6"]
 
-[sub_resource type="GDScript" id="GDScript_cigvs"]
+[ext_resource type="Script" path="res://objects/collectibles/gloves/gloves.gd" id="1_yfko3"]
 
 [node name="Gloves" type="Node2D"]
+script = ExtResource("1_yfko3")
+object_name = "gloves"

@@ -1,4 +1,3 @@
-
 extends Item
 
 
@@ -17,15 +16,15 @@ func _process(delta):
 #--- Object functions
 
 
-#func create():
-    #    # action_inherited
-#    super()
+func create():
+	# action_inherited
+	super()
 
-#    # main_code
-#    type = "Mitt"
-#    PlatformEngine.make_active(self)
-#    Collision.set_collision_bounds(self, -6, -6, 6, 8)
+	# main_code
+	type = "mitt"
+	PlatformEngine.make_active(self)
+	Collision.set_collision_bounds(self, -6, -6, 6, 8)
 
-#    cost = 4000
-#    shop_desc = "PITCHER'S MITT"
-#    buy_message = "PITCHER'S MITT FOR $" + str(cost) + "."
+	cost = 4000
+	shop_desc = "PITCHER'S MITT"
+	buy_message = "PITCHER'S MITT FOR $" + str(cost) + "."

@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://c0we0kvbuenat"]
 
-[sub_resource type="GDScript" id="GDScript_kxpp8"]
+[ext_resource type="Script" path="res://objects/other/wal_damsel/wal_damsel.gd" id="1_v7fpp"]
 
 [node name="WalDamsel" type="Node2D"]
+script = ExtResource("1_v7fpp")
+object_name = "wal_damsel"

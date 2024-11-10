@@ -112,7 +112,11 @@ var image_index:
 		var index = animated_sprite.get_frame()
 		return index
 
-
+var image_xscale #--- [FLAG] change this to swap sprite direction
+var image_yscale #--- [FLAG] same as above
+var image_angle
+var image_blend
+var image_alpha
 		
 #var status
 #var facing
