@@ -112,11 +112,35 @@ var image_index:
 		var index = animated_sprite.get_frame()
 		return index
 
-var image_xscale #--- [FLAG] change this to swap sprite direction
-var image_yscale #--- [FLAG] same as above
-var image_angle
-var image_blend
-var image_alpha
+var image_xscale: float:
+	set(value):
+		if value == -1:
+			animated_sprite_node.flip_h = true
+		else:
+			animated_sprite_node.flip_h = false
+	get:
+		return animated_sprite_node.scale.x #--- [FLAG] may need to be adjusted
+		
+var image_yscale: float:
+	set(value):
+		if value == -1:
+			animated_sprite_node.flip_v = true
+		else:
+			animated_sprite_node.flip_v = false
+	get:
+		return animated_sprite_node.scale.y
+		
+var image_angle: float:
+	get:
+		return animated_sprite_node.rotation_degrees
+		
+var image_blend: Color:
+	get:
+		return animated_sprite_node.self_modulate
+		
+var image_alpha: int:
+	get:
+		return animated_sprite_node.self_modulate.a
 		
 #var status
 #var facing

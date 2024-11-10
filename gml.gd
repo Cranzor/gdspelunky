@@ -356,8 +356,14 @@ func room_get_name():
 	var room_name = root.room_name
 	return room_name
 
-func draw_sprite_ext(sprite, subimg, x, y, xscale, yscale, rot, color, alpha): #--- [FLAG] implement
-	pass
+func draw_sprite_ext(node, sprite, subimg, x, y, xscale, yscale, rot, color, alpha): #--- [FLAG] implement
+	node.sprite_index = sprite
+	node.image_index = subimg
+	node.animated_sprite_node.position = Vector2(x, y)
+	node.animated_sprite_node.scale = Vector2(xscale, yscale)
+	node.animated_sprite_node.rotation_degrees = -rot #--- appears to rotate counter-clockwise in GML
+	node.animated_sprite_node.self_modulate = color
+	node.animated_sprite_node.self_modulate.a = alpha
 
 #------------------------
 func singleton_test():

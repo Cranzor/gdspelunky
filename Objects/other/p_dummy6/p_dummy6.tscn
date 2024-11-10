@@ -5,3 +5,6 @@
 [node name="PDummy6" type="Node2D"]
 script = ExtResource("1_y47ma")
 object_name = "p_dummy6"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(-5, -5)
