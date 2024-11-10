@@ -24,7 +24,7 @@ func _process(delta):
 #    # main_code
 #    scroll = false
 
-#    if (InLevel.i"room("r_credits1")): sprite_index = s_desert_night"
+#    if (InLevel.is_room("r_credits1")): sprite_index = "desert_night"
 
     
 

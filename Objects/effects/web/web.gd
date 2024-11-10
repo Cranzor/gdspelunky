@@ -59,7 +59,7 @@ func _process(delta):
 
 #func collision with o_slash():
     #    # action_kill_object
-#    # Need to implement this action
+#    gml.instance_destroy(self)
     
 
 #func collision with o_treasure():

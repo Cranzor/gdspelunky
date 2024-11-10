@@ -20,7 +20,7 @@ func _process(delta):
 #func alarm 0():
     #    draw_status = 1
 #    alarm_1(50)
-#    play_music(global.mu"victory, false)"
+#    play_music(global.mus_victory, false)
 #    with menu
 
 #        visible = true

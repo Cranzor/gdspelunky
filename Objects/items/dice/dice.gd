@@ -37,7 +37,7 @@ func _process(delta):
 
 #    if (!rolled and player1.bet > 0):
 
-#        draw_sprite_ext("red_arrow_down, 0, position.x, position.y-12, 1, 1, 0, c_white, 1)"
+#        draw_sprite_ext(s_red_arrow_down, 0, position.x, position.y-12, 1, 1, 0, c_white, 1)
 
 
     
@@ -53,9 +53,9 @@ func _process(delta):
     
 
 #        # DY:  stealing makes shopkeeper angry
-#        if (InLevel.i"level()):"
+#        if (InLevel.is_level()):
     
-#            if (not InLevel.i"in_shop(position.x, position.y)):"
+#            if (not InLevel.is_in_shop(position.x, position.y)):
         
 #                InLevel.scr_shopkeeper_anger(0)
         
@@ -91,10 +91,10 @@ func _process(delta):
 #            col_right = false
 #            col_bot = false
 #            col_top = false
-#            if (Collision.i"collision_left(1)): col_left = true"
-#            if (Collision.i"collision_right(1)): col_right = true"
-#            if (Collision.i"collision_bottom(1)): col_bot = true"
-#            if (Collision.i"collision_top(1)): col_top = true"
+#            if (Collision.is_collision_left(1)): col_left = true
+#            if (Collision.is_collision_right(1)): col_right = true
+#            if (Collision.is_collision_bottom(1)): col_bot = true
+#            if (Collision.is_collision_top(1)): col_top = true
 
 #            if (not col_bot and y_vel < 6): y_vel += my_grav
 	    
@@ -113,7 +113,7 @@ func _process(delta):
 #                if (abs(y_vel) < 1):
             
 #                    position.y -= 1
-#                    if (not Collision.i"collision_bottom(1)): position.y += 1"
+#                    if (not Collision.is_collision_bottom(1)): position.y += 1
 #                    y_vel = 0
             
         
@@ -129,13 +129,13 @@ func _process(delta):
 #                # DY: y_vel = 0
         
 	    
-#            if (Collision.i"collision_top(1)):"
+#            if (Collision.is_collision_top(1)):
         
 #                if (y_vel < 0): y_vel = -y_vel * 0.8
 #                else: position.y += 1
         
 
-#            if (global.ha"spectacles): depth = 0"
+#            if (global.has_spectacles): depth = 0
 #            else: depth = 101
 	    
 #            if (gml.collision_rectangle(position.x-3, position.y-3, position.x+3,  position.y+3, "lava", 0, 0)):
@@ -259,7 +259,7 @@ func _process(delta):
 #        value = randi_range(1,6)
 #        if (player1.bet > 0): rolling = true
 
-#    elif (Collision.i"collision_bottom(1)):"
+#    elif (Collision.is_collision_bottom(1)):
 
 #        if (rolling and y_vel == 0):
     

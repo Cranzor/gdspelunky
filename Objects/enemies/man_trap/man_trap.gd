@@ -52,13 +52,13 @@ func _process(delta):
 
 #        # DY:  do nothing
 
-#    elif ((global.ha"spike_shoes or status == EATING) and not other.dead and not other.stunned and (other.state == 15 or other.state == 16) and other.position.y < position.y+5 and not other.swimming):"
+#    elif ((global.has_spike_shoes or status == EATING) and not other.dead and not other.stunned and (other.state == 15 or other.state == 16) and other.position.y < position.y+5 and not other.swimming):
 
 #        other.y_vel=-6-0.2*other.y_vel
-#        if (global.ha"spike_shoes):  hp -= (3 * (floor(other.fall_timer/16)+1)) if (not bloodless) gml.instance_create(other.position.x, other.position.y+8, Objects.blood) "
+#        if (global.has_spike_shoes):  hp -= (3 * (floor(other.fall_timer/16)+1)) if (not bloodless) gml.instance_create(other.position.x, other.position.y+8, Objects.blood) 
 #        else: hp -= (1 * (floor(other.fall_timer/16)+1))
 #        other.fall_timer = 0
-#        count"as_kill = true"
+#        counts_as_kill = true
 #        status = STUNNED
 #        counter = stun_time
 #        y_vel = -6
@@ -75,11 +75,11 @@ func _process(delta):
 #            status = EATING
 #            if (other.position.x > position.x+8): facing = RIGHT
 #            else: facing = LEFT
-#            if (global.i"damsel):"
+#            if (global.is_damsel):
         
 #                sprite_index = "man_trap_eat_damsel_l"
         
-#            elif (global.i"tunnel_man):"
+#            elif (global.is_tunnel_man):
         
 #                sprite_index = "man_trap_eat_tunnel_l"
         
@@ -94,7 +94,7 @@ func _process(delta):
 #            global.plife = -99
 #            Audio.play_sound(global.snd_die)
 #            global.draw_hud = false
-#            if (InLevel.i"real_level()): global.enemy_deaths[10] += 1"
+#            if (InLevel.is_real_level()): global.enemy_deaths[10] += 1
                 
 #            if (other.hold_item):
         
@@ -149,7 +149,7 @@ func _process(delta):
     
 #        with other
     
-#            if (ha"gun):"
+#            if (has_gun):
         
 #                obj = gml.instance_create(position.x+8, position.y+8, Objects.shotgun)
 #                obj.y_vel = randi_range(4,6)
@@ -157,7 +157,7 @@ func _process(delta):
 #                else: obj.x_vel = randi_range(4,6)
 #                obj.cost = 0
 #                obj.for_sale = false
-#                ha"gun = false"
+#                has_gun = false
         
 #            gml.instance_destroy()
     
@@ -177,7 +177,7 @@ func _process(delta):
     
 #            hp -= other.damage
     
-#        count"as_kill = true"
+#        counts_as_kill = true
 #        status = STUNNED
 #        counter = stun_time
 #        y_vel = -3
@@ -201,7 +201,7 @@ func _process(delta):
     
 #            hp -= other.damage
     
-#        count"as_kill = true"
+#        counts_as_kill = true
 #        status = STUNNED
 #        counter = stun_time
 #        y_vel = -3
@@ -271,16 +271,16 @@ func _process(delta):
 #    col_right = false
 #    col_bot = false
 #    col_top = false
-#    if (Collision.i"collision_left(1)): col_left = true"
-#    if (Collision.i"collision_right(1)): col_right = true"
-#    if (Collision.i"collision_bottom(1)): col_bot = true"
-#    if (Collision.i"collision_top(1)): col_top = true"
+#    if (Collision.is_collision_left(1)): col_left = true
+#    if (Collision.is_collision_right(1)): col_right = true
+#    if (Collision.is_collision_bottom(1)): col_bot = true
+#    if (Collision.is_collision_top(1)): col_top = true
 
 #    if (hp < 1):
 
-#        if (count"as_kill):"
+#        if (counts_as_kill):
     
-#            if (InLevel.i"real_level()): global.enemy_kills[10] += 1"
+#            if (InLevel.is_real_level()): global.enemy_kills[10] += 1
 #            global.mantraps += 1
 #            global.kills += 1
     
@@ -290,7 +290,7 @@ func _process(delta):
     
 #            obj = gml.instance_create(position.x, position.y, Objects.shopkeeper)
 #            obj.status = 2
-#            obj.ha"gun = false"
+#            obj.has_gun = false
 #            for repetition in range(1, 3):  gml.instance_create(position.x+randi_range(0,16), position.y-8+randi_range(0,16), Objects.leaf) 
 #            MiscScripts.scr_create_blood(position.x+8, position.y+8, 1)
 #            Audio.play_sound(global.snd_small_explode)
@@ -298,7 +298,7 @@ func _process(delta):
 #        gml.instance_destroy()
 
 
-#    if (Collision.i"collision_bottom(1) and status != STUNNED): y_vel = 0"
+#    if (Collision.is_collision_bottom(1) and status != STUNNED): y_vel = 0
 
 #    if (status == IDLE):
 
@@ -311,7 +311,7 @@ func _process(delta):
 
 #    elif (status == WALK):
 
-#        if (Collision.i"collision_left(1) or Collision.is_collision_right(1)):"
+#        if (Collision.is_collision_left(1) or Collision.is_collision_right(1)):
     
 #            if (facing == LEFT): facing = RIGHT
 #            else: facing = LEFT
@@ -371,7 +371,7 @@ func _process(delta):
             
 #                    obj = gml.instance_create(position.x, position.y, Objects.shopkeeper)
 #                    obj.status = 2
-#                    obj.ha"gun = false"
+#                    obj.has_gun = false
 #                    for repetition in range(1, 3):  gml.instance_create(position.x+randi_range(0,16), position.y-8+randi_range(0,16), Objects.leaf) 
 #                    MiscScripts.scr_create_blood(position.x+8, position.y+8, 1)
 #                    Audio.play_sound(global.snd_small_explode)
@@ -407,7 +407,7 @@ func _process(delta):
 #        elif (abs(x_vel) != 0): x_vel *= 0.3
 
 
-#    if (Collision.i"collision_solid()): position.y -= 2"
+#    if (Collision.is_collision_solid()): position.y -= 2
 
 #    if (status == EATING and image_index == 8):
 

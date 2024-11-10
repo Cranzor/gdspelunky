@@ -19,7 +19,7 @@ func _process(delta):
 
 #func alarm 0():
     #    status = BOUNCE
-#    if (Collision.i"collision_bottom(1)):"
+#    if (Collision.is_collision_bottom(1)):
 
 #        y_vel = -1 * randi_range(2,5)
 #        if (character.position.x < position.x):
@@ -99,21 +99,21 @@ func _process(delta):
 #    if (hp < 1):
 
 #        MiscScripts.scr_create_blood(position.x+8, position.y+8, 3)
-#        if (count"as_kill):"
+#        if (counts_as_kill):
     
-#            if (InLevel.i"real_level()): global.enemy_kills[2] += 1"
+#            if (InLevel.is_real_level()): global.enemy_kills[2] += 1
 #            global.spiders += 1
 #            global.kills += 1
     
 #        gml.instance_destroy()
 
 
-#    if (Collision.i"collision_right(1)):"
+#    if (Collision.is_collision_right(1)):
 
 #        x_vel = 1
 
 
-#    if (Collision.i"collision_left(1)):"
+#    if (Collision.is_collision_left(1)):
 
 #        x_vel = -1
 
@@ -127,11 +127,11 @@ func _process(delta):
 
 #    elif (status == RECOVER):
 
-#        if (Collision.i"collision_bottom(1)): x_vel = 0"
+#        if (Collision.is_collision_bottom(1)): x_vel = 0
 
 #    elif (status == BOUNCE and dist < 90):
 
-#        if (Collision.i"collision_bottom(1)):"
+#        if (Collision.is_collision_bottom(1)):
     
 #            y_vel = -1 * randi_range(2,5)
 #            if (character.position.x < position.x+8):
@@ -152,16 +152,16 @@ func _process(delta):
 #        # DY: x_vel = 0
 
 
-#    if (Collision.i"collision_top(1)):"
+#    if (Collision.is_collision_top(1)):
 #        y_vel = 1
 #    /*
-#    if (Collision.i"collision_left(1) or Collision.is_collision_right(1)):"
+#    if (Collision.is_collision_left(1) or Collision.is_collision_right(1)):
 
 #        x_vel = -x_vel
 
 #    */
 
-#    # DY: if (Collision.i"collision_solid()):"
+#    # DY: if (Collision.is_collision_solid()):
 #    # DY:   position.y -= 2
 
 #    # main_code

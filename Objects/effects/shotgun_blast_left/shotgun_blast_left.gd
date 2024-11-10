@@ -18,7 +18,7 @@ func _process(delta):
 
 #func animation_end():
 	#    # action_kill_object
-#    # Need to implement this action
+#    gml.instance_destroy(self)
 	
 
 #func create():

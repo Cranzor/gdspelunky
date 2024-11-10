@@ -53,7 +53,7 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    if Collision.i"collision_character_top(1):"
+#    if Collision.is_collision_character_top(1):
 
 #        time_fall -= 1
 #        if (time_fall <= 0): y_acc = grav

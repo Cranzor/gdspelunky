@@ -77,9 +77,9 @@ func _process(delta):
 #        obj.cost = 0
 #        obj.for_sale = false
 #        MiscScripts.scr_create_blood(position.x+16, position.y+24, 4)
-#        if (count"as_kill):"
+#        if (counts_as_kill):
     
-#            if (InLevel.i"real_level()): global.enemy_kills[3] += 1"
+#            if (InLevel.is_real_level()): global.enemy_kills[3] += 1
 #            global.giantspiders += 1
 #            global.kills += 1
     

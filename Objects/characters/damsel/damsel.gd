@@ -104,8 +104,8 @@ func _process(delta):
 #    invincible = false
 #    swimming = false
 #    heavy = true
-#    cost = InLevel.get_kis"value() * 3"
-#    if (global.i"damsel): buy_message = "I'LL LET YOU HAVE HIM FOR $" + str(cost) + "!""
+#    cost = InLevel.get_kiss_value() * 3
+#    if (global.is_damsel): buy_message = "I'LL LET YOU HAVE HIM FOR $" + str(cost) + "!"
 #    else: buy_message = "I'LL LET YOU HAVE HER FOR $" + str(cost) + "!"
 
 #    hp = 4
@@ -157,7 +157,7 @@ func _process(delta):
 
 #    if (cost > 0):
 
-#        draw_sprite_ext("small_collect, cimg, position.x, position.y-12, 1, 1, 0, c_white, 1)"
+#        draw_sprite_ext(s_small_collect, cimg, position.x, position.y-12, 1, 1, 0, c_white, 1)
 #        cimg += 1
 #        if (cimg > 9): cimg = 0
 
@@ -175,13 +175,13 @@ func _process(delta):
 #        not held and
 #        status != THROWN)
 
-#        global.damsel"saved_total += 1"
+#        global.damsels_saved_total += 1
 #        global.damsels += 1
 #        global.xdamsels += 1
 #        door = gml.instance_place(position.x, position.y, exit)
 #        position.x = door.position.x+8
 #        position.y = door.position.y+8
-#        if (global.i"damsel): sprite_index = s_p_exit"
+#        if (global.is_damsel): sprite_index = "p_exit"
 #        else: sprite_index = "damsel_exit2"
 #        status = 4
 #        x_vel = 0
@@ -229,8 +229,8 @@ func _process(delta):
 #            MiscScripts.scr_create_blood(position.x, position.y, 3)
 #            if (hp > 0):
         
-#                global.damsel"killed_total += 1"
-#                global.damsel"killed += 1"
+#                global.damsels_killed_total += 1
+#                global.damsels_killed += 1
 #                global.kills += 1
         
 #            Audio.play_sound(global.snd_damsel)
@@ -250,7 +250,7 @@ func _process(delta):
 #            if (hp > 0):
         
 #                hp = 0
-#                global.damsel"killed_total += 1"
+#                global.damsels_killed_total += 1
         
 #            burning = 1
 #            my_grav = 0
@@ -267,7 +267,7 @@ func _process(delta):
         
 #                MiscScripts.scr_create_blood(position.x, position.y, 3)
         
-#            if (global.i"damsel):"
+#            if (global.is_damsel):
         
 #                sprite_index = "die_l"
         
@@ -280,17 +280,17 @@ func _process(delta):
 #            if (hp > 0):
         
 #                hp = 0
-#                global.damsel"killed_total += 1"
+#                global.damsels_killed_total += 1
         
 #            my_grav = 0
 #            x_vel = 0
 #            y_vel = 0.2
     
 
-#        if (gml.collision_rectangle(position.x-3, position.y-3, position.x+3,  position.y+3, "spear"left", 0, 0) and:"
-#            (status != THROWN or Collision.i"collision_bottom(1)))"
+#        if (gml.collision_rectangle(position.x-3, position.y-3, position.x+3,  position.y+3, "spears_left", 0, 0) and:
+#            (status != THROWN or Collision.is_collision_bottom(1)))
     
-#            obj = instance_nearest(position.x, position.y, spear"left)"
+#            obj = instance_nearest(position.x, position.y, spears_left)
 #            if (obj.image_index >= 19 and obj.image_index < 28):
         
 #                if (held):
@@ -326,7 +326,7 @@ func _process(delta):
 
 #        if (player1.position.x < position.x): facing = LEFT
 #        else: facing = RIGHT
-#        if (global.i"damsel):"
+#        if (global.is_damsel):
     
 #            sprite_index = "stand_left"
     
@@ -347,7 +347,7 @@ func _process(delta):
 
 #    elif (status == IDLE):
 
-#        if (global.i"damsel):"
+#        if (global.is_damsel):
     
 #            sprite_index = "stand_left"
     
@@ -359,7 +359,7 @@ func _process(delta):
 #        else:
     
 #            status = YELL
-#            if (global.i"damsel):"
+#            if (global.is_damsel):
         
 #                sprite_index = "yell_left"
         
@@ -383,7 +383,7 @@ func _process(delta):
 #    elif (status == RUN):
 
 #        image_speed = 0.8
-#        if (global.i"damsel):"
+#        if (global.is_damsel):
     
 #            sprite_index = "run_left"
     
@@ -391,8 +391,8 @@ func _process(delta):
     
 #            sprite_index = "damsel_run_l"
     
-#        if (facing == LEFT and Collision.i"collision_left(2)): facing = RIGHT"
-#        if (facing == RIGHT and Collision.i"collision_right(2)): facing = LEFT"
+#        if (facing == LEFT and Collision.is_collision_left(2)): facing = RIGHT
+#        if (facing == RIGHT and Collision.is_collision_right(2)): facing = LEFT
     
 #        if (facing == LEFT):
     
@@ -409,11 +409,11 @@ func _process(delta):
 
 #        if (!startled):
     
-#            global.damsel"grabbed += 1"
+#            global.damsels_grabbed += 1
 #            startled = true
     
     
-#        if (global.i"damsel):"
+#        if (global.is_damsel):
     
 #            if (x_vel == 0): sprite_index = "stun_l"
 #            elif (bounced):
@@ -442,12 +442,12 @@ func _process(delta):
         
     
     
-#        if (Collision.i"collision_bottom(1) and not bounced):"
+#        if (Collision.is_collision_bottom(1) and not bounced):
     
 #            bounced = true
     
     
-#        if (Collision.i"collision_bottom(2) or gml.collision_rectangle(position.x-4, position.y-6, position.x+4,  position.y+8, "web", 0, 0)):"
+#        if (Collision.is_collision_bottom(2) or gml.collision_rectangle(position.x-4, position.y-6, position.x+4,  position.y+8, "web", 0, 0)):
     
 #            if (!dead):
         
@@ -457,7 +457,7 @@ func _process(delta):
         
 #            if (hp <= 0):
         
-#                if (global.i"damsel):"
+#                if (global.is_damsel):
             
 #                    sprite_index = "die_l"
             
@@ -469,8 +469,8 @@ func _process(delta):
 #                if (!dead):
             
 #                    dead = true
-#                    global.damsel"killed_total += 1"
-#                    global.damsel"killed += 1"
+#                    global.damsels_killed_total += 1
+#                    global.damsels_killed += 1
 #                    global.kills += 1
             
         

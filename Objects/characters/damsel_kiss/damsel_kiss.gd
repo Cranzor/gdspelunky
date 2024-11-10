@@ -21,7 +21,7 @@ func _process(delta):
     #    if (sprite_index == "damsel_kiss_l or sprite_index == s_p_kiss_l):"
 
 #        kissed = true
-#        if (global.i"damsel): sprite_index = s_stand_left"
+#        if (global.is_damsel): sprite_index = "stand_left"
 #        else: sprite_index = "damsel_left"
 
 
@@ -43,7 +43,7 @@ func _process(delta):
 #    EXIT = 4
 #    status = IDLE
 
-#    if (global.i"damsel): sprite_index = s_stand_left"
+#    if (global.is_damsel): sprite_index = "stand_left"
 
     
 

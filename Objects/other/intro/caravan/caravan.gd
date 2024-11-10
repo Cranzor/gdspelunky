@@ -20,7 +20,7 @@ func _process(delta):
 #func create():
     #    if (global.damsels > 0):
 
-#        if (global.i"damsel): sprite_index = s_caravan3"
+#        if (global.is_damsel): sprite_index = "caravan3"
 #        else: sprite_index = "caravan2"
 
 #    image_speed = 0.5

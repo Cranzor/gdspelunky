@@ -23,7 +23,7 @@ func _process(delta):
 #        if (global.plife > 0):
     
 #            global.plife -= 2
-#            if (global.plife <= 0 and InLevel.i"real_level()): global.enemy_deaths[20] += 1"
+#            if (global.plife <= 0 and InLevel.is_real_level()): global.enemy_deaths[20] += 1
     
 #        other.x_vel = x_vel
 #        other.y_vel = -4

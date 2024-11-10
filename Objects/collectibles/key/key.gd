@@ -1,3 +1,4 @@
+
 extends Item
 
 
@@ -17,7 +18,7 @@ func _process(delta):
 
 
 #func create():
-	#    # action_inherited
+    #    # action_inherited
 #    super()
 
 #    # main_code
@@ -26,10 +27,10 @@ func _process(delta):
 #    Collision.set_collision_bounds(self, -4, -4, 4, 4)
 #    cost = 0
 
-	
+    
 
 #func step():
-	#    # action_inherited
+    #    # action_inherited
 #    super()
 
 #    # main_code

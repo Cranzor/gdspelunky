@@ -35,7 +35,7 @@ func _process(delta):
 
 #    if (global.dark_level): darkness = 1
 #    else: darkness = 0
-#    global.darknes"lerp = 0"
+#    global.darkness_lerp = 0
 
 #    if (global.music):
 
@@ -85,7 +85,7 @@ func _process(delta):
 #        n = ceil(n / 2)
 #        draw_text(view_xview[0]+n, view_yview[0]+216, str(global.message))
     
-#        if (not InLevel.i"level("r_tutorial")): draw_set_color(c_yellow)"
+#        if (not InLevel.is_level("r_tutorial")): draw_set_color(c_yellow)
 #        str_len = string_length(global.message2)*8
 #        n = 320 - str_len
 #        n = ceil(n / 2)
@@ -217,7 +217,7 @@ func _process(delta):
 #        # DY:  darkness = 0 : lightest
 #        # DY:  darkness = 1 : darkest
 #        dist = 160
-#        if (global.ha"crown): dist = 0"
+#        if (global.has_crown): dist = 0
 #        elif (gml.instance_exists("flare")):
     
 #            flare = instance_nearest(player1.position.x, player1.position.y, flare)
@@ -231,10 +231,10 @@ func _process(delta):
 #        if (dist == 0): darkness = 0
 #        else: darkness = dist / 160
        
-#        if (global.darknes"lerp > 0):"
+#        if (global.darkness_lerp > 0):
     
-#            darkness = global.darknes"lerp"
-#            global.darknes"lerp -= 0.1"
+#            darkness = global.darkness_lerp
+#            global.darkness_lerp -= 0.1
     
     
 #        if (darkness > 0.9): darkness = 0.9

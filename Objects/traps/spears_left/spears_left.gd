@@ -18,12 +18,12 @@ func _process(delta):
 
 
 #func animation_end():
-	#    # action_kill_object
-#    # Need to implement this action
-	
+    #    # action_kill_object
+#    gml.instance_destroy(self)
+    
 
 #func step():
-	#    if (sprite_index = "spears_left and not gml.collision_point(position.x+16, position.y, "spear_trap_top", 0, 0) and not gml.collision_point(position.x+16, position.y, "spear_trap_bottom", 0, 0)):"
+    #    if (sprite_index = "spears_left and not gml.collision_point(position.x+16, position.y, "spear_trap_top", 0, 0) and not gml.collision_point(position.x+16, position.y, "spear_trap_bottom", 0, 0)):"
 
 #        gml.instance_destroy()
 

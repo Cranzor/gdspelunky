@@ -20,21 +20,21 @@ func _process(delta):
 #func alarm 0():
     #    if (draw_loot == 0):
 
-#        if (draw_po"x > 272):"
+#        if (draw_pos_x > 272):
     
-#            draw_po"x = 100"
-#            draw_po"y += 2"
-#            if (draw_po"y > 83 + 4): draw_pos_y = 83"
+#            draw_pos_x = 100
+#            draw_pos_y += 2
+#            if (draw_pos_y > 83 + 4): draw_pos_y = 83
     
 
-#    elif (draw_po"x > 232):"
+#    elif (draw_pos_x > 232):
 
-#        draw_po"x = 96"
-#        draw_po"y += 2"
-#        if (draw_po"y > 91 + 4): draw_pos_y = 91"
+#        draw_pos_x = 96
+#        draw_pos_y += 2
+#        if (draw_pos_y > 91 + 4): draw_pos_y = 91
 
 
-#    sprite = gml.instance_create(draw_po"x, draw_pos_y, Objects.sprite)"
+#    sprite = gml.instance_create(draw_pos_x, draw_pos_y, Objects.sprite)
 
 #    if (draw_loot < 0):
 
@@ -44,99 +44,99 @@ func _process(delta):
 
 #        sprite.sprite_index = "gold_chunk"
 #        global.gold -= 1
-#        i"loot = true"
+#        is_loot = true
 
 #    elif (global.emeralds > 0):
 
 #        sprite.sprite_index = "emerald"
 #        global.emeralds -= 1
-#        i"loot = true"
+#        is_loot = true
 
 #    elif (global.sapphires > 0):
 
 #        sprite.sprite_index = "sapphire"
 #        global.sapphires -= 1
-#        i"loot = true"
+#        is_loot = true
 
 #    elif (global.rubies > 0):
 
 #        sprite.sprite_index = "ruby"
 #        global.rubies -= 1
-#        i"loot = true"
+#        is_loot = true
 
 #    elif (global.nuggets > 0):
 
 #        sprite.sprite_index = "gold_nugget"
 #        global.nuggets -= 1
-#        i"loot = true"
+#        is_loot = true
 
 #    elif (global.goldbar > 0):
 
 #        sprite.sprite_index = "gold_bar_draw"
 #        global.goldbar -= 1
-#        i"loot = true"
+#        is_loot = true
 
 #    elif (global.goldbars > 0):
 
 #        sprite.sprite_index = "gold_bars_draw"
 #        global.goldbars -= 1
-#        i"loot = true"
+#        is_loot = true
 
 #    elif (global.bigemeralds > 0):
 
 #        sprite.sprite_index = "emerald_big"
 #        global.bigemeralds -= 1
-#        i"loot = true"
+#        is_loot = true
 
 #    elif (global.bigsapphires > 0):
 
 #        sprite.sprite_index = "sapphire_big"
 #        global.bigsapphires -= 1
-#        i"loot = true"
+#        is_loot = true
 
 #    elif (global.bigrubies > 0):
 
 #        sprite.sprite_index = "ruby_big"
 #        global.bigrubies -= 1
-#        i"loot = true"
+#        is_loot = true
 
 #    elif (global.diamonds > 0):
 
 #        sprite.sprite_index = "diamond"
 #        global.diamonds -= 1
-#        i"loot = true"
+#        is_loot = true
 
 #    elif (global.xdamsels > 0):
 
-#        if (global.i"damsel): sprite.sprite_index = s_stand_left"
+#        if (global.is_damsel): sprite.sprite_index = "stand_left"
 #        else: sprite.sprite_index = "damsel_left"
 #        global.xdamsels -= 1
-#        i"loot = true"
+#        is_loot = true
 
 #    elif (global.scarabs > 0):
 
 #        sprite.sprite_index = "scarab_disp"
 #        global.scarabs -= 1
-#        i"loot = true"
+#        is_loot = true
 
 #    elif (global.idols > 0):
 
 #        sprite.sprite_index = "gold_idol_ico"
 #        global.idols -= 1
-#        i"loot = true"
+#        is_loot = true
 
 #    elif (global.skulls > 0):
 
 #        sprite.sprite_index = "crystal_skull_ico"
 #        global.skulls -= 1
-#        i"loot = true"
+#        is_loot = true
 
 #    else:
 
 #        if (draw_loot == 0):
     
-#            draw_po"x = 96"
-#            draw_po"y = 91"
+#            draw_pos_x = 96
+#            draw_pos_y = 91
 #            sprite.position.x = 96
 #            sprite.position.y = 91
 #            draw_loot = 1
@@ -146,146 +146,146 @@ func _process(delta):
     
 #            sprite.sprite_index = "bat_left"
 #            global.bats -= 1
-#            i"kills = true"
+#            is_kills = true
     
 #        elif (global.snakes > 0):
     
 #            sprite.sprite_index = "snake_left"
 #            global.snakes -= 1
-#            i"kills = true"
+#            is_kills = true
     
 #        elif (global.spiders > 0):
     
 #            sprite.sprite_index = "spider"
 #            global.spiders -= 1
-#            i"kills = true"
+#            is_kills = true
     
 #        elif (global.deadfish > 0):
     
 #            sprite.sprite_index = "dead_fish_left_ico"
 #            global.deadfish -= 1
-#            i"kills = true"
+#            is_kills = true
     
 #        elif (global.piranhas > 0):
     
 #            sprite.sprite_index = "piranha_left_ico"
 #            global.piranhas -= 1
-#            i"kills = true"
+#            is_kills = true
     
 #        elif (global.skeletons > 0):
     
 #            sprite.sprite_index = "skeleton_left"
 #            global.skeletons -= 1
-#            i"kills = true"
+#            is_kills = true
     
 #        elif (global.zombies > 0):
     
 #            sprite.sprite_index = "zombie_left"
 #            global.zombies -= 1
-#            i"kills = true"
+#            is_kills = true
     
 #        elif (global.vampires > 0):
     
 #            sprite.sprite_index = "vampire_left"
 #            global.vampires -= 1
-#            i"kills = true"
+#            is_kills = true
     
 #        elif (global.frogs > 0):
     
 #            sprite.sprite_index = "frog_left"
 #            global.frogs -= 1
-#            i"kills = true"
+#            is_kills = true
     
 #        elif (global.firefrogs > 0):
     
 #            sprite.sprite_index = "fire_frog_left"
 #            global.firefrogs -= 1
-#            i"kills = true"
+#            is_kills = true
     
 #        elif (global.monkeys > 0):
     
 #            sprite.sprite_index = "monkey_left"
 #            global.monkeys -= 1
-#            i"kills = true"
+#            is_kills = true
     
 #        elif (global.mantraps > 0):
     
 #            sprite.sprite_index = "man_trap_left"
 #            global.mantraps -= 1
-#            i"kills = true"
+#            is_kills = true
     
 #        elif (global.yetis > 0):
     
 #            sprite.sprite_index = "yeti_left"
 #            global.yetis -= 1
-#            i"kills = true"
+#            is_kills = true
     
 #        elif (global.ufos > 0):
     
 #            sprite.sprite_index = "ufo"
 #            global.ufos -= 1
-#            i"kills = true"
+#            is_kills = true
     
 #        elif (global.aliens > 0):
     
 #            sprite.sprite_index = "alien"
 #            global.aliens -= 1
-#            i"kills = true"
+#            is_kills = true
     
 #        elif (global.alienbosses > 0):
     
 #            sprite.sprite_index = "alien_boss_disp"
 #            global.alienbosses -= 1
-#            i"kills = true"
+#            is_kills = true
     
 #        elif (global.cavemen > 0):
     
 #            sprite.sprite_index = "caveman_left"
 #            global.cavemen -= 1
-#            i"kills = true"
+#            is_kills = true
     
 #        elif (global.hawkmen > 0):
     
 #            sprite.sprite_index = "hawk_left"
 #            global.hawkmen -= 1
-#            i"kills = true"
+#            is_kills = true
     
 #        elif (global.giantspiders > 0):
     
 #            sprite.sprite_index = "giant_spider_disp"
 #            global.giantspiders -= 1
-#            i"kills = true"
+#            is_kills = true
     
 #        elif (global.megamouths > 0):
     
 #            sprite.sprite_index = "mega_mouth"
 #            global.megamouths -= 1
-#            i"kills = true"
+#            is_kills = true
     
 #        elif (global.yetikings > 0):
     
 #            sprite.sprite_index = "yeti_king_disp"
 #            global.yetikings -= 1
-#            i"kills = true"
+#            is_kills = true
     
 #        elif (global.tomblords > 0):
     
 #            sprite.sprite_index = "tomb_lord_disp"
 #            global.tomblords -= 1
-#            i"kills = true"
+#            is_kills = true
     
-#        elif (global.damsel"killed > 0):"
+#        elif (global.damsels_killed > 0):
     
-#            if (global.i"damsel): sprite.sprite_index = s_stand_left_ico"
+#            if (global.is_damsel): sprite.sprite_index = "stand_left_ico"
 #            else: sprite.sprite_index = "damsel_left_ico"
-#            global.damsel"killed -= 1"
-#            i"kills = true"
+#            global.damsels_killed -= 1
+#            is_kills = true
     
 #        elif (global.shopkeepers > 0):
     
 #            sprite.sprite_index = "shop_left_ico"
 #            global.shopkeepers -= 1
-#            i"kills = true"
+#            is_kills = true
     
 #        else:
     
@@ -299,9 +299,9 @@ func _process(delta):
 #        # DY:  nothing
 
 #    elif (draw_loot == 0):
-#        draw_po"x += 4"
+#        draw_pos_x += 4
 #    else:
-#        draw_po"x += 8"
+#        draw_pos_x += 8
 
 #    if (draw_loot == 2):
 
@@ -329,16 +329,16 @@ func _process(delta):
 #    global.message = ""
 #    global.message2 = ""
 
-#    draw_po"x = 100"
-#    draw_po"y = 83"
+#    draw_pos_x = 100
+#    draw_pos_y = 83
 #    draw_loot = -2
 #    money_count = 0
 #    hurryup = false
 
-#    i"loot = false"
-#    i"kills = false"
+#    is_loot = false
+#    is_kills = false
 
-#    if (global.ha"cape):"
+#    if (global.has_cape):
 
 #        gml.instance_create(0, 0, Objects.cape)
 
@@ -370,17 +370,17 @@ func _process(delta):
 #        gml.instance_create(176+8, 176+8, Objects.damsel_kiss)
 
 
-#    if (global.tunnel1 > 0 and global.tunnel2 > 0 and InLevel.i"room("r_transition1x")):"
+#    if (global.tunnel1 > 0 and global.tunnel2 > 0 and InLevel.is_room("r_transition1x")):
 
 #        if (global.tunnel1 > global.tunnel1_max): global.tunnel1 -= 1
 #        else: gml.instance_create(96+8, 176+8, Objects.tunnel_man)
 
-#    elif (global.tunnel1 == 0 and global.tunnel2 > 0 and InLevel.i"room("r_transition2x")):"
+#    elif (global.tunnel1 == 0 and global.tunnel2 > 0 and InLevel.is_room("r_transition2x")):
 
 #        if (global.tunnel2 > global.tunnel2_max): global.tunnel2 -= 1
 #        else: gml.instance_create(96+8, 176+8, Objects.tunnel_man)
 
-#    elif (global.tunnel1 > 0 and global.tunnel2 == 0 and InLevel.i"room("r_transition3x")):"
+#    elif (global.tunnel1 > 0 and global.tunnel2 == 0 and InLevel.is_room("r_transition3x")):
 
 #        if (global.tunnel1 > global.tunnel3_max): global.tunnel1 -= 1
 #        else: gml.instance_create(96+8, 176+8, Objects.tunnel_man)
@@ -416,11 +416,11 @@ func _process(delta):
 #            n = 320 - str_len
 #            n = ceil(n / 2)
 #            draw_text(n, 208, "CAN YOU LEND ME A LITTLE MONEY?")
-#            if (InLevel.i"room("r_transition1x") or InLevel.is_room("r_transition3x")): str_len = string_length("I NEED $" + str(global.tunnel1) + " FOR A NEW SHORTCUT.")*8"
+#            if (InLevel.is_room("r_transition1x") or InLevel.is_room("r_transition3x")): str_len = string_length("I NEED $" + str(global.tunnel1) + " FOR A NEW SHORTCUT.")*8
 #            else: str_len = string_length("I NEED $" + str(global.tunnel2) + " FOR A NEW SHORTCUT.")*8
 #            n = 320 - str_len
 #            n = ceil(n / 2)
-#            if (InLevel.i"room("r_transition1x") or InLevel.is_room("r_transition3x")): draw_text(n, 216, "I NEED $" + str(global.tunnel1) + " FOR A NEW SHORTCUT.")"
+#            if (InLevel.is_room("r_transition1x") or InLevel.is_room("r_transition3x")): draw_text(n, 216, "I NEED $" + str(global.tunnel1) + " FOR A NEW SHORTCUT.")
 #            else: draw_text(n, 216, "I NEED $" + str(global.tunnel2) + " FOR A NEW SHORTCUT.")
 #            draw_set_color(c_yellow)
 #            draw_text(n, 224, "DONATE: " + str(tunnel_man.donate))
@@ -477,7 +477,7 @@ func _process(delta):
 #    draw_text(32, 96, "KILLS = ")
 #    draw_text(32, 112, "MONEY = ")
 
-#    if (draw_loot >= 1 and not i"loot):"
+#    if (draw_loot >= 1 and not is_loot):
 
 #        draw_text(96, 80, "NONE")
 
@@ -514,7 +514,7 @@ func _process(delta):
 
 #    if (draw_loot == 2):
 
-#        if (not i"kills):"
+#        if (not is_kills):
     
 #            draw_text(96, 96, "NONE")
     
@@ -564,7 +564,7 @@ func _process(delta):
     
 #            person = instance_nearest(100, 100, tunnel_man)
 #            person.donate += 100
-#            if (InLevel.i"room("r_transition1x") or InLevel.is_room("r_transition3x")):"
+#            if (InLevel.is_room("r_transition1x") or InLevel.is_room("r_transition3x")):
         
 #                if (global.money > global.tunnel1):
             

@@ -163,27 +163,27 @@ func _process(delta):
 #    if (hp < 1):
 
 #        MiscScripts.scr_create_blood(position.x+8, position.y+8, 3)
-#        if (count"as_kill):"
+#        if (counts_as_kill):
     
-#            if (InLevel.i"real_level()): global.total_monkey_kills += 1 # DY:  this is for stats"
+#            if (InLevel.is_real_level()): global.total_monkey_kills += 1 # DY:  this is for stats
 #            global.monkeys += 1
 #            global.kills += 1
     
 #        gml.instance_destroy()
 
 
-#    if (Collision.i"collision_right(1)):"
+#    if (Collision.is_collision_right(1)):
 
 #        x_vel = -1
 
 
-#    if (Collision.i"collision_left(1)):"
+#    if (Collision.is_collision_left(1)):
 
 #        x_vel = 1
 
 
 #    col_bot = false
-#    if (Collision.i"collision_bottom(1)): col_bot = true"
+#    if (Collision.is_collision_bottom(1)): col_bot = true
 
 #    if (grab_counter > 0): grab_counter -= 1
 #    if (vine_counter > 0): vine_counter -= 1
@@ -201,7 +201,7 @@ func _process(delta):
 
 #    elif (status == WALK):
 
-#        if (Collision.i"collision_left(1) or Collision.is_collision_right(1)):"
+#        if (Collision.is_collision_left(1) or Collision.is_collision_right(1)):
     
 #            if (facing == LEFT): facing = RIGHT
 #            else: facing = LEFT
@@ -232,7 +232,7 @@ func _process(delta):
 #            y_vel = 0
 #            counter = randi_range(10,40)
     
-#        elif (Collision.i"collision_ladder()):"
+#        elif (Collision.is_collision_ladder()):
     
 #            if (vine_counter == 0):
         
@@ -428,7 +428,7 @@ func _process(delta):
 #        x_vel = 0
 
 
-#    if (status != GRAB and Collision.i"collision_top(1)):"
+#    if (status != GRAB and Collision.is_collision_top(1)):
 #        y_vel = 1
 
 #    if (status == HANG): sprite_index = "monkey_hang_l"

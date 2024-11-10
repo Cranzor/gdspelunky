@@ -60,7 +60,7 @@ func _process(delta):
 #    if (fired == 0 and abs(player1.position.y-position.y-8) < prox and player1.position.x < position.x and:
 #        point_distance(position.x+8, position.y+8, player1.position.x, player1.position.y) < range)
 
-#        gml.instance_create(position.x-16, position.y, Objects.spear"left)"
+#        gml.instance_create(position.x-16, position.y, Objects.spears_left)
 #        fired = fired_max
 
 
@@ -69,7 +69,7 @@ func _process(delta):
 #    if (fired == 0 and abs(obj.position.y-position.y) < prox and obj.position.x < position.x and:
 #        point_distance(position.x, position.y, obj.position.x, obj.position.y) < range)
 
-#        gml.instance_create(position.x-16, position.y, Objects.spear"left)"
+#        gml.instance_create(position.x-16, position.y, Objects.spears_left)
 #        fired = fired_max
 
 
@@ -78,7 +78,7 @@ func _process(delta):
 #    if (fired == 0 and abs(obj.position.y-position.y) < prox and obj.position.x < position.x and:
 #        point_distance(position.x, position.y, obj.position.x, obj.position.y) < range)
 
-#        gml.instance_create(position.x-16, position.y, Objects.spear"left)"
+#        gml.instance_create(position.x-16, position.y, Objects.spears_left)
 #        fired = fired_max
 
 
@@ -87,7 +87,7 @@ func _process(delta):
 #    if (fired == 0 and abs(obj.position.y-position.y-8) < prox and obj.position.x < position.x+8 and:
 #        point_distance(position.x+8, position.y+8, obj.position.x, obj.position.y) < range)
 
-#        gml.instance_create(position.x-16, position.y, Objects.spear"left)"
+#        gml.instance_create(position.x-16, position.y, Objects.spears_left)
 #        fired = fired_max
 
 
@@ -96,7 +96,7 @@ func _process(delta):
 #    if (fired == 0 and abs(player1.position.y-position.y-8) < prox and player1.position.x > position.x+8 and:
 #        point_distance(position.x+8, position.y+8, player1.position.x, player1.position.y) < range)
 
-#        spears = gml.instance_create(position.x+16, position.y, Objects.spear"left)"
+#        spears = gml.instance_create(position.x+16, position.y, Objects.spears_left)
 #        spears.sprite_index = "spears_right"
 #        fired = fired_max
 
@@ -106,7 +106,7 @@ func _process(delta):
 #    if (fired == 0 and abs(obj.position.y-position.y) < prox and obj.position.x > position.x and:
 #        point_distance(position.x, position.y, obj.position.x, obj.position.y) < range)
 
-#        spears = gml.instance_create(position.x+16, position.y, Objects.spear"left)"
+#        spears = gml.instance_create(position.x+16, position.y, Objects.spears_left)
 #        spears.sprite_index = "spears_right"
 #        fired = fired_max
 
@@ -116,7 +116,7 @@ func _process(delta):
 #    if (fired == 0 and abs(obj.position.y-position.y) < prox and obj.position.x > position.x and:
 #        point_distance(position.x, position.y, obj.position.x, obj.position.y) < range)
 
-#        spears = gml.instance_create(position.x+16, position.y, Objects.spear"left)"
+#        spears = gml.instance_create(position.x+16, position.y, Objects.spears_left)
 #        spears.sprite_index = "spears_right"
 #        fired = fired_max
 
@@ -126,7 +126,7 @@ func _process(delta):
 #    if (fired == 0 and abs(obj.position.y-position.y-8) < prox and obj.position.x > position.x+8 and:
 #        point_distance(position.x+8, position.y+8, obj.position.x, obj.position.y) < range)
 
-#        spears = gml.instance_create(position.x+16, position.y, Objects.spear"left)"
+#        spears = gml.instance_create(position.x+16, position.y, Objects.spears_left)
 #        spears.sprite_index = "spears_right"
 #        fired = fired_max
 

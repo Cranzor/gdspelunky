@@ -19,14 +19,14 @@ func _process(delta):
 
 #func create():
     #    type = "Exit"
-#    lead"to = "" # DY:  used for Level Editor only"
+#    leads_to = "" # DY:  used for Level Editor only
 
     
 
 #func draw():
     #    draw_sprite(sprite_index, -1, position.x, position.y)
-#    if (InLevel.i"room("r_level_editor")):"
+#    if (InLevel.is_room("r_level_editor")):
 
 #        draw_set_font(global.my_font_small)
 #        draw_set_color(c_white)
-#        draw_text(position.x, position.y, lead"to)"
+#        draw_text(position.x, position.y, leads_to)

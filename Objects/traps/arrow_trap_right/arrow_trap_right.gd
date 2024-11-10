@@ -24,7 +24,7 @@ func _process(delta):
     
 
 #func alarm 1():
-    #    if (not InLevel.i"room("r_level_editor")):"
+    #    if (not InLevel.is_room("r_level_editor")):
 
 #        # DY:  calculate how far to motion detect
 #        x_act = position.x+16

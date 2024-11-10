@@ -116,18 +116,18 @@ func _process(delta):
 #            counter = randi_range(10,30)
     
     
-#        if (Collision.i"collision_right(1) and x_vel > 0):"
+#        if (Collision.is_collision_right(1) and x_vel > 0):
     
 #            x_vel = -x_vel
     
-#        if (Collision.i"collision_left(1) and x_vel < 0):"
+#        if (Collision.is_collision_left(1) and x_vel < 0):
     
 #            x_vel = -x_vel
     
-#        if (Collision.i"collision_top(1) and y_vel < 0):"
+#        if (Collision.is_collision_top(1) and y_vel < 0):
     
 #            y_vel = -y_vel
     
-#        if (Collision.i"collision_bottom(1) and y_vel > 0):"
+#        if (Collision.is_collision_bottom(1) and y_vel > 0):
     
 #            y_vel = -y_vel

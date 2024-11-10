@@ -19,7 +19,7 @@ func _process(delta):
 
 #func alarm 0():
     #    # action_kill_object
-#    # Need to implement this action
+#    gml.instance_destroy(self)
     
 
 #func collision with o_solid():

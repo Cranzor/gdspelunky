@@ -29,7 +29,7 @@ func _process(delta):
 
 #func outside room():
     #    # action_kill_object
-#    # Need to implement this action
+#    gml.instance_destroy(self)
     
 
 #func step():

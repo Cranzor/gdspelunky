@@ -63,9 +63,9 @@ func _process(delta):
     
 #            gml.instance_create(position.x+4, position.y+4, Objects.bone)
     
-#        if (count"as_kill):"
+#        if (counts_as_kill):
     
-#            if (InLevel.i"real_level()): global.enemy_kills[11] += 1"
+#            if (InLevel.is_real_level()): global.enemy_kills[11] += 1
 #            global.deadfish += 1
 #            global.kills += 1
     

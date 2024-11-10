@@ -40,7 +40,7 @@ func _process(delta):
 #            position.y > view_yview[0]-8 and position.y < view_yview[0] + view_hview[0]+8))
 
 #    # DY:  get money for idols at shops
-#    if (InLevel.i"level()):"
+#    if (InLevel.is_level()):
 
 #        if (not held and:
 #            gml.collision_point(position.x, position.y+4, "brick_smooth", 0, 0) and
@@ -65,4 +65,4 @@ func _process(delta):
 #    if (not col_bot and trigger):
 
 #        trigger = false
-#        global.idol"grabbed += 1"
+#        global.idols_grabbed += 1

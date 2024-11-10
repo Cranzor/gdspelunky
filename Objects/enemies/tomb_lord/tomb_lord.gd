@@ -46,13 +46,13 @@ func _process(delta):
 #    elif (not other.dead and (other.state == 15 or other.state == 16) and other.position.y < position.y+8 and not other.swimming):
 
 #        other.y_vel = -6 - 0.2 * other.y_vel
-#        if (global.ha"spike_shoes):"
+#        if (global.has_spike_shoes):
     
 #            hp -= (3 * (floor(other.fall_timer/16)+1))
     
 #        else: hp -= (1 * (floor(other.fall_timer/16)+1))
 #        other.fall_timer = 0
-#        count"as_kill = true"
+#        counts_as_kill = true
 #        gml.instance_create(position.x+16, position.y, Objects.bone)
 #        Audio.play_sound(global.snd_hit)
 
@@ -70,7 +70,7 @@ func _process(delta):
 #        if (global.plife > 0):
     
 #            global.plife -= 2
-#            if (global.plife <= 0 and InLevel.i"real_level()): global.enemy_deaths[20] += 1"
+#            if (global.plife <= 0 and InLevel.is_real_level()): global.enemy_deaths[20] += 1
     
 #        Audio.play_sound(global.snd_hurt)
 
@@ -82,7 +82,7 @@ func _process(delta):
     #    if (whipped == 0 and other.position.y < position.y+12):
 
 #        hp -= other.damage
-#        count"as_kill = true"
+#        counts_as_kill = true
 #        gml.instance_create(position.x+16, position.y+24, Objects.blood)
 #        Audio.play_sound(global.snd_hit)
 #        whipped = 10
@@ -163,16 +163,16 @@ func _process(delta):
 #            gml.instance_create(position.x+14+randi_range(0,4), position.y+12+randi_range(0,6), Objects.bone)
     
 #        if (global.curr_level == 13): gml.instance_create(position.x+16, position.y+16, Objects.sceptre)
-#        if (count"as_kill):"
+#        if (counts_as_kill):
     
-#            if (InLevel.i"real_level()): global.enemy_kills[20] += 1"
+#            if (InLevel.is_real_level()): global.enemy_kills[20] += 1
 #            global.tomblords += 1
 #            global.kills += 1
     
 #        gml.instance_destroy()
 
 
-#    if (Collision.i"collision_bottom(1) and status != STUNNED):"
+#    if (Collision.is_collision_bottom(1) and status != STUNNED):
 #        y_vel = 0
 
 #    if (attack_timer > 0): attack_timer -= 1
@@ -192,7 +192,7 @@ func _process(delta):
     
 #        if (facing == LEFT):
     
-#            if (Collision.i"collision_left(1) or:"
+#            if (Collision.is_collision_left(1) or:
 #                (player1.position.x > position.x+16 and abs(player1.position.y-(position.y+32)) < 16 and counter == 0))
         
 #                sprite_index = "tomb_lord_turn_r"
@@ -210,7 +210,7 @@ func _process(delta):
     
 #        elif (facing == RIGHT):
     
-#            if (Collision.i"collision_right(1) or:"
+#            if (Collision.is_collision_right(1) or:
 #                (player1.position.x < position.x+16 and abs(player1.position.y-(position.y+32)) < 16 and counter == 0))
         
 #                sprite_index = "tomb_lord_turn_l"
@@ -252,7 +252,7 @@ func _process(delta):
 
 #    elif (status >= STUNNED): status = WALK
 
-#    if (Collision.i"collision_solid()):"
+#    if (Collision.is_collision_solid()):
 #        position.y -= 2
 
 #    if (facing == LEFT):

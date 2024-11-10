@@ -42,10 +42,10 @@ func _process(delta):
 #    elif (not other.dead and not other.stunned and (other.state == 15 or other.state == 16) and other.position.y < position.y+5 and not other.swimming):
 
 #        other.y_vel=-6-0.2*other.y_vel
-#        if (global.ha"spike_shoes):  hp -= (3 * (floor(other.fall_timer/16)+1)) if (not bloodless) gml.instance_create(other.position.x, other.position.y+8, Objects.blood) "
+#        if (global.has_spike_shoes):  hp -= (3 * (floor(other.fall_timer/16)+1)) if (not bloodless) gml.instance_create(other.position.x, other.position.y+8, Objects.blood) 
 #        else: hp -= (1 * (floor(other.fall_timer/16)+1))
 #        other.fall_timer = 0
-#        count"as_kill = true"
+#        counts_as_kill = true
 #        status = STUNNED
 #        counter = stun_time
 #        y_vel = -6
@@ -69,7 +69,7 @@ func _process(delta):
 #            if (global.plife > 0):
         
 #                global.plife -= 1
-#                if (global.plife <= 0 and InLevel.i"real_level()): global.enemy_deaths[18] += 1"
+#                if (global.plife <= 0 and InLevel.is_real_level()): global.enemy_deaths[18] += 1
         
 #            Audio.play_sound(global.snd_hurt)
     
@@ -124,7 +124,7 @@ func _process(delta):
 #            MiscScripts.scr_create_blood(position.x+sprite_width/2, position.y+sprite_height/2, 1)
 #            if (hp < 0): blood_left -= 1
     
-#        count"as_kill = true"
+#        counts_as_kill = true
 #        status = STUNNED
 #        counter = stun_time
 #        y_vel = -3
@@ -145,7 +145,7 @@ func _process(delta):
 #            MiscScripts.scr_create_blood(position.x+sprite_width/2, position.y+sprite_height/2, 1)
 #            if (hp < 0): blood_left -= 1
     
-#        count"as_kill = true"
+#        counts_as_kill = true
 #        status = STUNNED
 #        counter = stun_time
 #        y_vel = -3
@@ -216,10 +216,10 @@ func _process(delta):
 #    col_right = false
 #    col_bot = false
 #    col_top = false
-#    if (Collision.i"collision_left(1)): col_left = true"
-#    if (Collision.i"collision_right(1)): col_right = true"
-#    if (Collision.i"collision_bottom(1)): col_bot = true"
-#    if (Collision.i"collision_top(1)): col_top = true"
+#    if (Collision.is_collision_left(1)): col_left = true
+#    if (Collision.is_collision_right(1)): col_right = true
+#    if (Collision.is_collision_bottom(1)): col_bot = true
+#    if (Collision.is_collision_top(1)): col_top = true
 
 #    if (status >= STUNNED):
 
@@ -245,11 +245,11 @@ func _process(delta):
 #        status = DEAD
 
 
-#    if (Collision.i"collision_bottom(1) and: status != STUNNED): y_vel = 0"
+#    if (Collision.is_collision_bottom(1) and: status != STUNNED): y_vel = 0
 
 #    if (status == IDLE):
 
-#        if (Collision.i"collision_bottom(1) and:"
+#        if (Collision.is_collision_bottom(1) and:
 #            (gml.collision_point(position.x-1, position.y, "solid", -1, -1) or gml.collision_point(position.x+16, position.y, "solid", -1, -1)))
     
 #            y_vel = -6
@@ -258,12 +258,12 @@ func _process(delta):
 #            counter -= 10
     
     
-#        if (y_vel < 0 and Collision.i"collision_top(1)):"
+#        if (y_vel < 0 and Collision.is_collision_top(1)):
     
 #            y_vel = 0
     
 
-#        if (Collision.i"collision_bottom(1) and: counter > 0) counter -= 1    "
+#        if (Collision.is_collision_bottom(1) and: counter > 0) counter -= 1    
 #        if (counter < 1):
     
 #            facing = randi_range(0,1)
@@ -282,7 +282,7 @@ func _process(delta):
 
 #    elif (status == WALK):
 
-#        if (Collision.i"collision_left(1) or Collision.is_collision_right(1)):"
+#        if (Collision.is_collision_left(1) or Collision.is_collision_right(1)):
     
 #            if (facing == LEFT): facing = RIGHT
 #            else: facing = LEFT
@@ -330,7 +330,7 @@ func _process(delta):
 #    elif (status == ATTACK):
 
 #        image_speed = 1
-#        if (Collision.i"collision_left(1) or Collision.is_collision_right(1)):"
+#        if (Collision.is_collision_left(1) or Collision.is_collision_right(1)):
     
 #            if (facing == LEFT): facing = RIGHT
 #            else: facing = LEFT
@@ -338,7 +338,7 @@ func _process(delta):
 #        if (facing == LEFT): x_vel = -3
 #        else: x_vel = 3
     
-#        if (Collision.i"collision_bottom(1) and: not gml.collision_point(position.x, position.y-16, "solid", 0, 0))"
+#        if (Collision.is_collision_bottom(1) and: not gml.collision_point(position.x, position.y-16, "solid", 0, 0))
     
 #            y_vel = -6
     
@@ -381,9 +381,9 @@ func _process(delta):
 
 #        if (not dead):
     
-#            if (count"as_kill):"
+#            if (counts_as_kill):
         
-#                if (InLevel.i"real_level()): global.enemy_kills[18] += 1"
+#                if (InLevel.is_real_level()): global.enemy_kills[18] += 1
 #                global.hawkmen += 1
 #                global.kills += 1
         
@@ -403,7 +403,7 @@ func _process(delta):
 #        if (x_vel == 0 and y_vel == 0 and hp < 1): status = DEAD
 
 
-#    # DY: if (Collision.i"collision_solid()): position.y -= 2"
+#    # DY: if (Collision.is_collision_solid()): position.y -= 2
 
 #    if (x_vel > 0): x_vel -= 0.1
 #    if (x_vel < 0): x_vel += 0.1

@@ -24,8 +24,8 @@ func _process(delta):
     
 
 #func alarm 1():
-    #    if (global.i"damsel): sprite_index = s_damsel_left"
-#    elif (global.i"tunnel_man): sprite_index = s_tunnel_left"
+    #    if (global.is_damsel): sprite_index = "damsel_left"
+#    elif (global.is_tunnel_man): sprite_index = "tunnel_left"
 #    else: sprite_index = "stand_left"
 
     
@@ -35,7 +35,7 @@ func _process(delta):
 
 #        draw_status = 1
 #        alarm_1(50)
-#        play_music(global.mu"victory, false)"
+#        play_music(global.mus_victory, false)
 
 
     
@@ -61,8 +61,8 @@ func _process(delta):
 #    RIGHT = 1
 #    facing = LEFT
 
-#    if (global.i"damsel): sprite_index = s_damsel_run_l"
-#    elif (global.i"tunnel_man): sprite_index = s_tunnel_run_l"
+#    if (global.is_damsel): sprite_index = "damsel_run_l"
+#    elif (global.is_tunnel_man): sprite_index = "tunnel_run_l"
 
 
 
@@ -75,37 +75,37 @@ func _process(delta):
 #    if ((sprite_index == "p_exit or sprite_index == s_damsel_exit or sprite_index == s_tunnel_exit) and global.has_jetpack):"
 
 #        draw_sprite_ext(sprite_index, -1, position.x, position.y, image_xscale, image_yscale, image_angle, image_blend, image_alpha)
-#        draw_sprite("jetpack_back,-1,position.x,position.y)"
+#        draw_sprite(s_jetpack_back,-1,position.x,position.y)
 
 #    elif (sprite_index == "p_exit or sprite_index == s_damsel_exit or sprite_index == s_tunnel_exit):"
 
 #        draw_sprite_ext(sprite_index, -1, position.x, position.y, image_xscale, image_yscale, image_angle, image_blend, image_alpha)
 
-#    elif (global.ha"jetpack):"
+#    elif (global.has_jetpack):
 
-#        draw_sprite("jetpack_right,-1,position.x-4,position.y-1)"
+#        draw_sprite(s_jetpack_right,-1,position.x-4,position.y-1)
 
 
 #    if (sprite_index != "p_exit and sprite_index != s_damsel_exit and sprite_index != s_tunnel_exit):"
 
 #        draw_sprite_ext(sprite_index, -1, position.x, position.y, image_xscale, image_yscale, image_angle, image_blend, image_alpha)
-#        if (global.pickup_item == "Rock"): hold_item = draw_sprite("rock,-1,position.x+4,position.y+2)"
-#        elif (global.pickup_item == "Jar"): hold_item = draw_sprite("jar,-1,position.x+4,position.y+2)"
-#        elif (global.pickup_item == "Skull"): hold_item = draw_sprite("skull,-1,position.x+4,position.y+2)"
-#        elif (global.pickup_item == "Fish Bone"): hold_item = draw_sprite("fish_bone,-1,position.x+4,position.y+2)"
-#        elif (global.pickup_item == "Arrow"): hold_item = draw_sprite("arrow_right,-1,position.x+4,position.y+2)"
-#        elif (global.pickup_item == "Rock"): hold_item = draw_sprite("rock,-1,position.x+4,position.y+2)"
-#        elif (global.pickup_item == "Machete"): hold_item = draw_sprite("machete_right,-1,position.x+4,position.y+2)"
-#        elif (global.pickup_item == "Mattock"): hold_item = draw_sprite("mattock_right,-1,position.x+4,position.y+2)"
-#        elif (global.pickup_item == "Mattock Head"): hold_item = draw_sprite("mattock_head,-1,position.x+4,position.y+2)"
-#        elif (global.pickup_item == "Pistol"): hold_item = draw_sprite("pistol_right,-1,position.x+4,position.y+2)"
-#        elif (global.pickup_item == "Web Cannon"): hold_item = draw_sprite("web_cannon_r,-1,position.x+4,position.y+2)"
-#        elif (global.pickup_item == "Teleporter"): hold_item = draw_sprite("teleporter,-1,position.x+4,position.y+2)"
-#        elif (global.pickup_item == "Shotgun"): hold_item = draw_sprite("shotgun_right,-1,position.x+4,position.y+2)"
-#        elif (global.pickup_item == "Bow"): hold_item = draw_sprite("bow_right,-1,position.x+4,position.y+2)"
-#        elif (global.pickup_item == "Flare"): hold_item = draw_sprite("flare,-1,position.x+4,position.y+2)"
-#        elif (global.pickup_item == "Sceptre"): hold_item = draw_sprite("sceptre_right,-1,position.x+4,position.y+2)"
-#        elif (global.pickup_item == "Key"): hold_item = draw_sprite("key_right,-1,position.x+4,position.y+2)"
+#        if (global.pickup_item == "Rock"): hold_item = draw_sprite(s_rock,-1,position.x+4,position.y+2)
+#        elif (global.pickup_item == "Jar"): hold_item = draw_sprite(s_jar,-1,position.x+4,position.y+2)
+#        elif (global.pickup_item == "Skull"): hold_item = draw_sprite(s_skull,-1,position.x+4,position.y+2)
+#        elif (global.pickup_item == "Fish Bone"): hold_item = draw_sprite(s_fish_bone,-1,position.x+4,position.y+2)
+#        elif (global.pickup_item == "Arrow"): hold_item = draw_sprite(s_arrow_right,-1,position.x+4,position.y+2)
+#        elif (global.pickup_item == "Rock"): hold_item = draw_sprite(s_rock,-1,position.x+4,position.y+2)
+#        elif (global.pickup_item == "Machete"): hold_item = draw_sprite(s_machete_right,-1,position.x+4,position.y+2)
+#        elif (global.pickup_item == "Mattock"): hold_item = draw_sprite(s_mattock_right,-1,position.x+4,position.y+2)
+#        elif (global.pickup_item == "Mattock Head"): hold_item = draw_sprite(s_mattock_head,-1,position.x+4,position.y+2)
+#        elif (global.pickup_item == "Pistol"): hold_item = draw_sprite(s_pistol_right,-1,position.x+4,position.y+2)
+#        elif (global.pickup_item == "Web Cannon"): hold_item = draw_sprite(s_web_cannon_r,-1,position.x+4,position.y+2)
+#        elif (global.pickup_item == "Teleporter"): hold_item = draw_sprite(s_teleporter,-1,position.x+4,position.y+2)
+#        elif (global.pickup_item == "Shotgun"): hold_item = draw_sprite(s_shotgun_right,-1,position.x+4,position.y+2)
+#        elif (global.pickup_item == "Bow"): hold_item = draw_sprite(s_bow_right,-1,position.x+4,position.y+2)
+#        elif (global.pickup_item == "Flare"): hold_item = draw_sprite(s_flare,-1,position.x+4,position.y+2)
+#        elif (global.pickup_item == "Sceptre"): hold_item = draw_sprite(s_sceptre_right,-1,position.x+4,position.y+2)
+#        elif (global.pickup_item == "Key"): hold_item = draw_sprite(s_key_right,-1,position.x+4,position.y+2)
 
 
     
@@ -116,16 +116,16 @@ func _process(delta):
 
 #    if (status == DROP):
 
-#        if (global.i"damsel): sprite_index = s_damsel_fall_l"
-#        elif (global.i"tunnel_man): sprite_index = s_tunnel_fall_l"
+#        if (global.is_damsel): sprite_index = "damsel_fall_l"
+#        elif (global.is_tunnel_man): sprite_index = "tunnel_fall_l"
 #        else: sprite_index = "die_l_fall"
 #        y_vel = 6
 #        if (gml.collision_point(position.x, position.y+9, "desert2", 0, 0)):
     
 #            y_vel = 0
 #            status += 1
-#            if (global.i"damsel): sprite_index = s_damsel_stun_l"
-#            elif (global.i"tunnel_man): sprite_index = s_tunnel_stun_l"
+#            if (global.is_damsel): sprite_index = "damsel_stun_l"
+#            elif (global.is_tunnel_man): sprite_index = "tunnel_stun_l"
 #            else: sprite_index = "stun_l"
 #            poof = gml.instance_create(position.x-4, position.y+6, Objects.poof)
 #            with poof  x_vel = -0.4 
@@ -154,8 +154,8 @@ func _process(delta):
 
 #    elif (status == JUMPING):
 
-#        if (global.i"damsel): sprite_index = s_damsel_die_lr"
-#        elif (global.i"tunnel_man): sprite_index = s_tunnel_die_lr"
+#        if (global.is_damsel): sprite_index = "damsel_die_lr"
+#        elif (global.is_tunnel_man): sprite_index = "tunnel_die_lr"
 #        else: sprite_index = "jump_left"
 #        if (y_vel < 4): y_vel += 0.6
 #        if (gml.collision_point(position.x, position.y+6, "desert2", 0, 0)):
@@ -163,8 +163,8 @@ func _process(delta):
 #            y_vel = 0
 #            status += 1
 #            alarm_2(50)
-#            if (global.i"damsel): sprite_index = s_damsel_left"
-#            elif (global.i"tunnel_man): sprite_index = s_tunnel_left"
+#            if (global.is_damsel): sprite_index = "damsel_left"
+#            elif (global.is_tunnel_man): sprite_index = "tunnel_left"
 #            else: sprite_index = "stand_left"
 #            facing = RIGHT
 #            with menu

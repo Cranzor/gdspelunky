@@ -19,7 +19,7 @@ func _process(delta):
 
 #func alarm 1():
     #    gml.instance_create(position.x, position.y, Objects.explosion)
-#    if (global.graphic"high):"
+#    if (global.graphics_high):
 
 #        MiscScripts.scr_create_flame(position.x, position.y, 3)
 
@@ -81,7 +81,7 @@ func _process(delta):
 #    image_angle = direction
 
 #    # DY:  ensure the arrow does not shoot through the target in the Moon challenge
-#    if (InLevel.i"room("r_moon")):"
+#    if (InLevel.is_room("r_moon")):
 
 #        if (gml.instance_exists("target")):
     

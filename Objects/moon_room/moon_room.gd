@@ -145,9 +145,9 @@ func _process(delta):
 #    if (life < 0): life = 0
 #    draw_set_font(global.my_font)
 #    draw_set_color(c_white)
-#    draw_sprite("hoops_icon, -1, view_xview[0]+8, view_yview[0]+8)"
+#    draw_sprite(s_hoops_icon, -1, view_xview[0]+8, view_yview[0]+8)
 #    draw_text(view_xview[0]+24, view_yview[0]+8, baskets)
-#    draw_sprite("timer_icon, -1, view_xview[0]+64, view_yview[0]+8)"
+#    draw_sprite(s_timer_icon, -1, view_xview[0]+64, view_yview[0]+8)
 #    if (timer >= 0): draw_text(view_xview[0]+64+16, view_yview[0]+8, timer)
 #    else: draw_text(view_xview[0]+64+16, view_yview[0]+8, "0")
 #    if (draw_status < 3):

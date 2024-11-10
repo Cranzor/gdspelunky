@@ -33,9 +33,9 @@ func _process(delta):
     
 #            gml.instance_create(other.position.x+8, other.position.y+8, Objects.blood)
     
-#        if (count"as_kill):"
+#        if (counts_as_kill):
     
-#            if (InLevel.i"real_level()): global.enemy_kills[15] += 1"
+#            if (InLevel.is_real_level()): global.enemy_kills[15] += 1
 #            global.aliens += 1
 #            global.kills += 1
     
@@ -80,7 +80,7 @@ func _process(delta):
 #    type = "Alien Eject"
 #    hp = 1
 #    invincible = 0
-#    count"as_kill = true"
+#    counts_as_kill = true
 
 #    EJECT = 0
 #    DEPLOY = 1
@@ -110,7 +110,7 @@ func _process(delta):
 
 #        x_vel = 0
 #        y_vel += 0.5
-#        if (y_vel >= 0 or Collision.i"collision_top(1)):"
+#        if (y_vel >= 0 or Collision.is_collision_top(1)):
     
 #            y_vel = 0
 #            status = FLOAT

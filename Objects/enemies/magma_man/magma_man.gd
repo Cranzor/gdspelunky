@@ -70,7 +70,7 @@ func _process(delta):
 #        if (global.plife > 0):
     
 #            global.plife -= 2
-#            if (global.plife <= 0 and InLevel.i"real_level()): global.enemy_deaths[21] += 1"
+#            if (global.plife <= 0 and InLevel.is_real_level()): global.enemy_deaths[21] += 1
     
 #        Audio.play_sound(global.snd_hurt)
 #        Audio.play_sound(global.snd_flame)
@@ -163,7 +163,7 @@ func _process(delta):
 #    y_vel += my_grav
 #    if (y_vel > y_vel_limit): y_vel = y_vel_limit
 
-#    if (Collision.i"collision_bottom(1)):"
+#    if (Collision.is_collision_bottom(1)):
 #        y_vel = 0
 #    else:
 
@@ -182,12 +182,12 @@ func _process(delta):
     
 #    if (status == IDLE):
 
-#        if (y_vel < 0 and Collision.i"collision_top(1)):"
+#        if (y_vel < 0 and Collision.is_collision_top(1)):
     
 #            y_vel = 0
     
 
-#        if (Collision.i"collision_bottom(1) and counter > 0): counter -= 1    "
+#        if (Collision.is_collision_bottom(1) and counter > 0): counter -= 1    
 #        if (counter < 1):
     
 #            facing = randi_range(0,1)
@@ -202,7 +202,7 @@ func _process(delta):
 
 #    elif (status == WALK):
 
-#        if (Collision.i"collision_left(1) or Collision.is_collision_right(1)):"
+#        if (Collision.is_collision_left(1) or Collision.is_collision_right(1)):
     
 #            if (facing == LEFT): facing = RIGHT
 #            else: facing = LEFT
@@ -238,7 +238,7 @@ func _process(delta):
 
 
 #    PlatformEngine.move_to(x_vel,y_vel)
-#    if (Collision.i"collision_solid()):"
+#    if (Collision.is_collision_solid()):
 #        position.y -= 2
 
 #    if (status < STUNNED and status != THROW):

@@ -23,7 +23,7 @@ func _process(delta):
 
 #    # main_code
 #    status = ATTACK
-#    ha"gun = false"
+#    has_gun = false
 #    death_timer = 200
 
     

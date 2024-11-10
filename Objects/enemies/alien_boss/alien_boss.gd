@@ -34,10 +34,10 @@ func _process(delta):
     #    if (not other.dead and (other.state == 15 or other.state == 16) and other.position.y < position.y+8 and not other.swimming):
 
 #        other.y_vel = -6 - 0.2 * other.y_vel
-#        if (global.ha"spike_shoes):  hp -= (3 * (floor(other.fall_timer/16)+1)) if (not bloodless) gml.instance_create(other.position.x, other.position.y+8, Objects.blood) "
+#        if (global.has_spike_shoes):  hp -= (3 * (floor(other.fall_timer/16)+1)) if (not bloodless) gml.instance_create(other.position.x, other.position.y+8, Objects.blood) 
 #        else: hp -= (1 * (floor(other.fall_timer/16)+1))
 #        other.fall_timer = 0
-#        count"as_kill = true"
+#        counts_as_kill = true
 #        gml.instance_create(position.x+16, position.y+8, Objects.blood)
 #        Audio.play_sound(global.snd_hit)
 
@@ -55,7 +55,7 @@ func _process(delta):
 #        if (global.plife > 0):
     
 #            global.plife -= 1
-#            if (global.plife <= 0 and InLevel.i"real_level()): global.enemy_deaths[17] += 1"
+#            if (global.plife <= 0 and InLevel.is_real_level()): global.enemy_deaths[17] += 1
     
 #        Audio.play_sound(global.snd_hurt)
 
@@ -123,9 +123,9 @@ func _process(delta):
 #            gem.x_vel = randi_range(0,3) - randi_range(0,3)
 #            gem.y_vel = -2
     
-#        if (count"as_kill):"
+#        if (counts_as_kill):
     
-#            if (InLevel.i"real_level()): global.enemy_kills[17] += 1"
+#            if (InLevel.is_real_level()): global.enemy_kills[17] += 1
 #            global.alienbosses += 1
 #            global.kills += 1
     
@@ -147,7 +147,7 @@ func _process(delta):
 #    if (x_vel < 0): x_vel += 0.1
 #    if (abs(x_vel) < 0.5): x_vel = 0
 
-#    if (Collision.i"collision_bottom(1) and status != STUNNED):"
+#    if (Collision.is_collision_bottom(1) and status != STUNNED):
 #        y_vel = 0
 
 #    if (status == IDLE):
@@ -157,7 +157,7 @@ func _process(delta):
 
 #    PlatformEngine.move_to(x_vel,y_vel)
 
-#    if (Collision.i"collision_solid()):"
+#    if (Collision.is_collision_solid()):
 #        position.y -= 2
     
 #    dist = gml.distance_to_object(player1)

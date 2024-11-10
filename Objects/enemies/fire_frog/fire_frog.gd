@@ -76,9 +76,9 @@ func _process(delta):
 
 #    if (hp < 1):
 
-#        if (count"as_kill):"
+#        if (counts_as_kill):
     
-#            if (InLevel.i"real_level()): global.enemy_kills[9] += 1"
+#            if (InLevel.is_real_level()): global.enemy_kills[9] += 1
 #            global.firefrogs += 1
 #            global.kills += 1
     
@@ -86,18 +86,18 @@ func _process(delta):
 #        gml.instance_destroy()
 
 
-#    if (Collision.i"collision_right(1)):"
+#    if (Collision.is_collision_right(1)):
 
 #        x_vel = -1
 
 
-#    if (Collision.i"collision_left(1)):"
+#    if (Collision.is_collision_left(1)):
 
 #        x_vel = 1
 
 
 #    col_bot = false
-#    if (Collision.i"collision_bottom(1)): col_bot = true"
+#    if (Collision.is_collision_bottom(1)): col_bot = true
 
 #    dist = gml.distance_to_object(character)
 
@@ -146,10 +146,10 @@ func _process(delta):
 #        x_vel = 0
 
 
-#    if (Collision.i"collision_top(1)):"
+#    if (Collision.is_collision_top(1)):
 #        y_vel = 1
 
-#    # DY: if (Collision.i"collision_solid()):"
+#    # DY: if (Collision.is_collision_solid()):
 #    # DY:   position.y -= 2
 
 #    if (not col_bot): sprite_index = "fire_frog_jump_l"

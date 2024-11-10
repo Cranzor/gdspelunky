@@ -28,7 +28,7 @@ func _process(delta):
     #    type = "Message Sign"
 
 #    # DY:  tutorial cave init
-#    if (InLevel.i"room("r_level_editor") or InLevel.is_room("r_load_level")):"
+#    if (InLevel.is_room("r_level_editor") or InLevel.is_room("r_load_level")):
 
 #        message = ""
 #        message2 = ""
@@ -150,7 +150,7 @@ func _process(delta):
 
 #func draw():
     #    draw_sprite(sprite_index, -1, position.x, position.y)
-#    if (InLevel.i"room("r_level_editor")):"
+#    if (InLevel.is_room("r_level_editor")):
 
 #        draw_set_font(global.my_font_small)
 #        draw_set_color(c_white)

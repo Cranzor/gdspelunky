@@ -38,7 +38,7 @@ func _process(delta):
 
 #        if (true):
     
-#            if (InLevel.i"real_level()): global.enemy_deaths[23] += 1"
+#            if (InLevel.is_real_level()): global.enemy_deaths[23] += 1
 #            for repetition in range(1, 3):
         
 #                gml.instance_create(other.position.x, other.position.y, Objects.bone)

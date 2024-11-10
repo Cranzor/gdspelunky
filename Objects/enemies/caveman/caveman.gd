@@ -28,10 +28,10 @@ func _process(delta):
 #        if (status < STUNNED):
     
 #            other.y_vel=-6-0.2*other.y_vel
-#            if (global.ha"spike_shoes):  hp -= (3 * (floor(other.fall_timer/16)+1)) if (not bloodless) gml.instance_create(other.position.x, other.position.y+8, Objects.blood) "
+#            if (global.has_spike_shoes):  hp -= (3 * (floor(other.fall_timer/16)+1)) if (not bloodless) gml.instance_create(other.position.x, other.position.y+8, Objects.blood) 
 #            else: hp -= (1 * (floor(other.fall_timer/16)+1))
 #            other.fall_timer = 0
-#            count"as_kill = true"
+#            counts_as_kill = true
 #            status = STUNNED
 #            counter = stun_time
 #            y_vel = -6
@@ -58,7 +58,7 @@ func _process(delta):
 #            if (global.plife > 0):
         
 #                global.plife -= 1
-#                if (global.plife <= 0 and InLevel.i"real_level()): global.enemy_deaths[4] += 1"
+#                if (global.plife <= 0 and InLevel.is_real_level()): global.enemy_deaths[4] += 1
         
 #            Audio.play_sound(global.snd_hurt)
     
@@ -75,7 +75,7 @@ func _process(delta):
 #            MiscScripts.scr_create_blood(position.x+sprite_width/2, position.y+sprite_height/2, 1)
 #            if (hp < 0): blood_left -= 1
     
-#        count"as_kill = true"
+#        counts_as_kill = true
 #        status = STUNNED
 #        counter = stun_time
 #        y_vel = -3
@@ -96,7 +96,7 @@ func _process(delta):
 #            MiscScripts.scr_create_blood(position.x+sprite_width/2, position.y+sprite_height/2, 1)
 #            if (hp < 0): blood_left -= 1
     
-#        count"as_kill = true"
+#        counts_as_kill = true
 #        status = STUNNED
 #        counter = stun_time
 #        y_vel = -3
@@ -162,10 +162,10 @@ func _process(delta):
 #    col_right = false
 #    col_bot = false
 #    col_top = false
-#    if (Collision.i"collision_left(1)): col_left = true"
-#    if (Collision.i"collision_right(1)): col_right = true"
-#    if (Collision.i"collision_bottom(1)): col_bot = true"
-#    if (Collision.i"collision_top(1)): col_top = true"
+#    if (Collision.is_collision_left(1)): col_left = true
+#    if (Collision.is_collision_right(1)): col_right = true
+#    if (Collision.is_collision_bottom(1)): col_bot = true
+#    if (Collision.is_collision_top(1)): col_top = true
 
 #    if (status >= STUNNED):
 
@@ -324,9 +324,9 @@ func _process(delta):
 
 #        if (not dead):
     
-#            if (count"as_kill):"
+#            if (counts_as_kill):
         
-#                if (InLevel.i"real_level()): global.enemy_kills[4] += 1"
+#                if (InLevel.is_real_level()): global.enemy_kills[4] += 1
 #                global.cavemen += 1
 #                global.kills += 1
         

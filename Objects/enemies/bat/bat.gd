@@ -58,9 +58,9 @@ func _process(delta):
 #    if (hp < 1):
 
 #        MiscScripts.scr_create_blood(position.x+8, position.y+8, 3)
-#        if (count"as_kill):"
+#        if (counts_as_kill):
     
-#            if (InLevel.i"real_level()): global.enemy_kills[0] += 1"
+#            if (InLevel.is_real_level()): global.enemy_kills[0] += 1
 #            global.bats += 1
 #            global.kills += 1
     
@@ -86,22 +86,22 @@ func _process(delta):
 #        if (dist < 160):
     
 #            dir = point_direction(position.x+8, position.y+8, player1.position.x, player1.position.y)
-#            if (Collision.i"collision_right(1) and player1.position.x > position.x+8):"
+#            if (Collision.is_collision_right(1) and player1.position.x > position.x+8):
         
 #                if (player1.position.y < position.y+8): dir = 90
 #                else: dir = 270
         
-#            if (Collision.i"collision_left(1) and player1.position.x < position.x+8):"
+#            if (Collision.is_collision_left(1) and player1.position.x < position.x+8):
         
 #                if (player1.position.y < position.y+8): dir = 90
 #                else: dir = 270
         
-#            if (Collision.i"collision_top(1) and player1.position.y < position.y+8 and abs(player1.position.x - position.x) > 8):"
+#            if (Collision.is_collision_top(1) and player1.position.y < position.y+8 and abs(player1.position.x - position.x) > 8):
         
 #                if (player1.position.x < position.x+8): dir = 180
 #                else: dir = 0
         
-#            if (Collision.i"collision_bottom(1) and player1.position.y > position.y+8 and abs(player1.position.x - position.x) > 8):"
+#            if (Collision.is_collision_bottom(1) and player1.position.y > position.y+8 and abs(player1.position.x - position.x) > 8):
         
 #                if (player1.position.x < position.x+8): dir = 180
 #                else: dir = 0

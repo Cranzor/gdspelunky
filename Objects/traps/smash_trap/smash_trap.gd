@@ -76,25 +76,25 @@ func _process(delta):
         
 #        if (dist < 90 and counter < 1):
     
-#            if (abs(character.position.y - (position.y+8)) < 8 and character.position.x > position.x+8 and not Collision.i"collision_right(2)):"
+#            if (abs(character.position.y - (position.y+8)) < 8 and character.position.x > position.x+8 and not Collision.is_collision_right(2)):
         
 #                status = ATTACK
 #                dir = RIGHT
 #                xa = 0.5
         
-#            elif (abs(character.position.x - (position.x+8)) < 8 and character.position.y > position.y+8 and not Collision.i"collision_bottom(2)):"
+#            elif (abs(character.position.x - (position.x+8)) < 8 and character.position.y > position.y+8 and not Collision.is_collision_bottom(2)):
         
 #                status = ATTACK
 #                dir = DOWN
 #                ya = 0.5
         
-#            elif (abs(character.position.y - (position.y+8)) < 8 and character.position.x < position.x+8 and not Collision.i"collision_left(2)):"
+#            elif (abs(character.position.y - (position.y+8)) < 8 and character.position.x < position.x+8 and not Collision.is_collision_left(2)):
         
 #                status = ATTACK
 #                dir = LEFT
 #                xa = -0.5
         
-#            elif (abs(character.position.x - (position.x+8)) < 8 and character.position.y < position.y+8 and not Collision.i"collision_top(2)):"
+#            elif (abs(character.position.x - (position.x+8)) < 8 and character.position.y < position.y+8 and not Collision.is_collision_top(2)):
         
 #                status = ATTACK
 #                dir = UP
@@ -108,10 +108,10 @@ func _process(delta):
 #        col_right = false
 #        col_top = false
 #        col_bot = false
-#        if (Collision.i"collision_left(1)): col_left = true"
-#        if (Collision.i"collision_right(1)): col_right = true"
-#        if (Collision.i"collision_top(1)): col_top = true"
-#        if (Collision.i"collision_bottom(1)): col_bot = true"
+#        if (Collision.is_collision_left(1)): col_left = true
+#        if (Collision.is_collision_right(1)): col_right = true
+#        if (Collision.is_collision_top(1)): col_top = true
+#        if (Collision.is_collision_bottom(1)): col_bot = true
 
 #        if (abs(xv) < 4): xv += xa
 #        if (abs(yv) < 4): yv += ya
@@ -119,7 +119,7 @@ func _process(delta):
 #        position.y += yv
 #        if (dir == RIGHT):
     
-#            if (Collision.i"collision_right(2) and col_right):"
+#            if (Collision.is_collision_right(2) and col_right):
         
 #                position.x -= 2
 #                hit = true
@@ -132,7 +132,7 @@ func _process(delta):
     
 #        elif (dir == DOWN):
     
-#            if (Collision.i"collision_bottom(2) and col_bot):"
+#            if (Collision.is_collision_bottom(2) and col_bot):
         
 #                position.y -= 2
 #                hit = true
@@ -145,7 +145,7 @@ func _process(delta):
     
 #        elif (dir == LEFT):
     
-#            if (Collision.i"collision_left(2) and col_left):"
+#            if (Collision.is_collision_left(2) and col_left):
         
 #                position.x += 2
 #                hit = true
@@ -158,7 +158,7 @@ func _process(delta):
     
 #        elif (dir == UP):
     
-#            if (Collision.i"collision_top(2) and col_top):"
+#            if (Collision.is_collision_top(2) and col_top):
         
 #                position.y += 2
 #                hit = true

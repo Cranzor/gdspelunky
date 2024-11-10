@@ -26,7 +26,7 @@ func _process(delta):
 #    elif (not other.dead and (other.state == 15 or other.state == 16) and other.position.y < position.y+8 and not other.swimming):
 
 #        other.y_vel = -6 - 0.2 * other.y_vel
-#        if (global.ha"spike_shoes):  hp -= (3 * (floor(other.fall_timer/16)+1)) MiscScripts.scr_create_blood(other.position.x, other.position.y+8, 1) "
+#        if (global.has_spike_shoes):  hp -= (3 * (floor(other.fall_timer/16)+1)) MiscScripts.scr_create_blood(other.position.x, other.position.y+8, 1) 
 #        else: hp -= (1 * (floor(other.fall_timer/16)+1))
 #        other.fall_timer = 0
 #        Audio.play_sound(global.snd_hit)
@@ -44,7 +44,7 @@ func _process(delta):
     
 #            global.plife -= 1
         
-#            if (global.plife <= 0 and InLevel.i"real_level()):"
+#            if (global.plife <= 0 and InLevel.is_real_level()):
         
 #                if (type == "Bat"): global.enemy_deaths[0] += 1
 #                elif (type == "Snake"): global.enemy_deaths[1] += 1
@@ -82,7 +82,7 @@ func _process(delta):
 
 #func collision with o_whip():
     #    hp -= other.damage
-#    count"as_kill = true"
+#    counts_as_kill = true
 #    if (blood_left > 0):
 
 #        MiscScripts.scr_create_blood(position.x+sprite_width/2, position.y+sprite_height/2, 1)
@@ -95,7 +95,7 @@ func _process(delta):
 
 #func collision with o_whip_pre():
     #    hp -= other.damage
-#    count"as_kill = true"
+#    counts_as_kill = true
 #    if (blood_left > 0):
 
 #        MiscScripts.scr_create_blood(position.x+sprite_width/2, position.y+sprite_height/2, 1)
@@ -143,7 +143,7 @@ func _process(delta):
 #    favor = 1
 #    sac_count = 20
 
-#    count"as_kill = true # DY:  sometimes it's not the player's fault!"
+#    counts_as_kill = true # DY:  sometimes it's not the player's fault!
 #    burning = 0
 #    swimming = false
 #    stun_time = 200
@@ -250,7 +250,7 @@ func _process(delta):
 #    if (gml.collision_point(position.x+floor(sprite_width/2), position.y+sprite_height-2, "lava", 0, 0)):
 
 #        hp = 0
-#        count"as_kill = false"
+#        counts_as_kill = false
 #        burning = 1
 #        my_grav = 0
 #        x_vel = 0
@@ -258,9 +258,9 @@ func _process(delta):
 #        depth = 999
 
 
-#    if (gml.collision_rectangle(position.x+2, position.y+2, position.x+14,  position.y+14, "spear"left", 0, 0)):"
+#    if (gml.collision_rectangle(position.x+2, position.y+2, position.x+14,  position.y+14, "spears_left", 0, 0)):
 
-#        trap = instance_nearest(position.x, position.y, spear"left)"
+#        trap = instance_nearest(position.x, position.y, spears_left)
 #        if (trap.image_index >= 20 and trap.image_index < 24):
     
 #            if (type == "Caveman" or type == "ManTrap" or type == "Yeti" or type == "Hawkman" or type == "Shopkeeper"):
@@ -269,7 +269,7 @@ func _process(delta):
 #                if (hp > 0):
             
 #                    hp -= 2
-#                    count"as_kill = false"
+#                    counts_as_kill = false
 #                    status = 98
 #                    counter = stun_time
 #                    y_vel = -6
@@ -283,7 +283,7 @@ func _process(delta):
 #            else:
         
 #                hp -= 2
-#                count"as_kill = false"
+#                counts_as_kill = false
 #                Audio.play_sound(global.snd_hit)
 #                MiscScripts.scr_create_blood(position.x+sprite_width/2, position.y+sprite_height/2, 1)
         
@@ -302,7 +302,7 @@ func _process(delta):
 #        if (hp > 0):
     
 #            hp = 0
-#            count"as_kill = false"
+#            counts_as_kill = false
 #            if (not bloodless): MiscScripts.scr_create_blood(position.x+sprite_width/2, position.y+sprite_height/2, 3)
 #            if (type == "Caveman" or type == "ManTrap" or type == "Yeti" or type == "Hawkman" or type == "Shopkeeper"):
 #                status = 99

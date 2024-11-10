@@ -84,16 +84,16 @@ func _process(delta):
 #        skull = gml.instance_create(other.position.x+8, other.position.y+8, Objects.skull)
 #        skull.y_vel = -randi_range(1,3)
 #        skull.x_vel = randi_range(0,3)-randi_range(0,3)
-#        if (count"as_kill):"
+#        if (counts_as_kill):
     
-#            if (InLevel.i"real_level()): global.enemy_kills[5] += 1"
+#            if (InLevel.is_real_level()): global.enemy_kills[5] += 1
 #            global.skeletons += 1
 #            global.kills += 1
     
 #        gml.instance_destroy()
 
 
-#    if (Collision.i"collision_bottom(1) and status != STUNNED):"
+#    if (Collision.is_collision_bottom(1) and status != STUNNED):
 #        y_vel = 0
 
 #    if (status == IDLE):
@@ -109,10 +109,10 @@ func _process(delta):
 
 #        col_left = false
 #        col_right = false
-#        if (Collision.i"collision_left(1)): col_left = true"
-#        if (Collision.i"collision_right(1)): col_right = true"
+#        if (Collision.is_collision_left(1)): col_left = true
+#        if (Collision.is_collision_right(1)): col_right = true
     
-#        if (Collision.i"collision_left(4) and Collision.is_collision_right(4)):"
+#        if (Collision.is_collision_left(4) and Collision.is_collision_right(4)):
     
 #            # DY:  do nothing
     
@@ -147,7 +147,7 @@ func _process(delta):
 #        */
 
 
-#    if (Collision.i"collision_solid()):"
+#    if (Collision.is_collision_solid()):
 #        position.y -= 2
 
 #    if (status != STUNNED):

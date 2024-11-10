@@ -79,15 +79,15 @@ func _process(delta):
     #    draw_sprite(sprite_index, -1, position.x, position.y)
 #    if (sprite_index == "jaws_left):"
 
-#        if (hp < 10): draw_sprite("jaws_body3_l, 0, position.x+16, position.y)"
-#        elif (hp < 20): draw_sprite("jaws_body2_l, 0, position.x+16, position.y)"
-#        else: draw_sprite("jaws_body1_l, 0, position.x+16, position.y)"
+#        if (hp < 10): draw_sprite(s_jaws_body3_l, 0, position.x+16, position.y)
+#        elif (hp < 20): draw_sprite(s_jaws_body2_l, 0, position.x+16, position.y)
+#        else: draw_sprite(s_jaws_body1_l, 0, position.x+16, position.y)
 
 #    elif (sprite_index == "jaws_right):"
 
-#        if (hp < 10): draw_sprite("jaws_body3_r, 0, position.x-48, position.y)"
-#        elif (hp < 20): draw_sprite("jaws_body2_r, 0, position.x-48, position.y)"
-#        else: draw_sprite("jaws_body1_r, 0, position.x-48, position.y)"
+#        if (hp < 10): draw_sprite(s_jaws_body3_r, 0, position.x-48, position.y)
+#        elif (hp < 20): draw_sprite(s_jaws_body2_r, 0, position.x-48, position.y)
+#        else: draw_sprite(s_jaws_body1_r, 0, position.x-48, position.y)
 
 #    /* debug
 #    draw_set_font(global.my_font_small)
@@ -109,9 +109,9 @@ func _process(delta):
 
 #    if (hp < 1):
 
-#        if (count"as_kill):"
+#        if (counts_as_kill):
     
-#            if (InLevel.i"real_level()): global.enemy_kills[12] += 1"
+#            if (InLevel.is_real_level()): global.enemy_kills[12] += 1
 #            global.megamouths += 1
 #            global.kills += 1
     
@@ -163,7 +163,7 @@ func _process(delta):
         
     
     
-#        if (not Collision.i"collision_bottom(2)):"
+#        if (not Collision.is_collision_bottom(2)):
     
 #            position.y += 1
     

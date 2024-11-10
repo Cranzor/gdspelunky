@@ -22,7 +22,7 @@ func _process(delta):
 
 #        status = BOUNCE
 #        sprite_index = "giant_spider_jump"
-#        if (Collision.i"collision_bottom(1)):"
+#        if (Collision.is_collision_bottom(1)):
     
 #            sprite_index = "giant_spider"
 #            y_vel = -1 * randi_range(2,5)
@@ -67,7 +67,7 @@ func _process(delta):
 #    elif (not other.dead and (other.state == 15 or other.state == 16) and other.position.y < position.y+16 and not other.swimming):
 
 #        other.y_vel = -6 - 0.2 * other.y_vel
-#        if (global.ha"spike_shoes):  hp -= (3 * (floor(other.fall_timer/16)+1)) if (not bloodless) gml.instance_create(other.position.x, other.position.y+8, Objects.blood) "
+#        if (global.has_spike_shoes):  hp -= (3 * (floor(other.fall_timer/16)+1)) if (not bloodless) gml.instance_create(other.position.x, other.position.y+8, Objects.blood) 
 #        else: hp -= (1 * (floor(other.fall_timer/16)+1))
 #        other.fall_timer = 0
 #        gml.instance_create(position.x+16, position.y+24, Objects.blood)
@@ -89,7 +89,7 @@ func _process(delta):
 #            if (global.plife > 0):
         
 #                global.plife -= 2
-#                if (global.plife <= 0 and InLevel.i"real_level()): global.enemy_deaths[3] += 1"
+#                if (global.plife <= 0 and InLevel.is_real_level()): global.enemy_deaths[3] += 1
         
 #            Audio.play_sound(global.snd_hurt)
     
@@ -183,26 +183,26 @@ func _process(delta):
 #        obj.cost = 0
 #        obj.for_sale = false
 #        MiscScripts.scr_create_blood(position.x+16, position.y+24, 4)
-#        if (count"as_kill):"
+#        if (counts_as_kill):
     
-#            if (InLevel.i"real_level()): global.enemy_kills[3] += 1"
+#            if (InLevel.is_real_level()): global.enemy_kills[3] += 1
 #            global.giantspiders += 1
 #            global.kills += 1
     
 #        gml.instance_destroy()
 
 
-#    if (Collision.i"collision_right(1)):"
+#    if (Collision.is_collision_right(1)):
 
 #        x_vel = 1
 
 
-#    if (Collision.i"collision_left(1)):"
+#    if (Collision.is_collision_left(1)):
 
 #        x_vel = -1
 
 
-#    if (Collision.i"collision_top(1) and Collision.is_collision_bottom(1) and status != CRAWL):"
+#    if (Collision.is_collision_top(1) and Collision.is_collision_bottom(1) and status != CRAWL):
 
 #        status = CRAWL
 #        if (character.position.x < position.x+16):
@@ -225,9 +225,9 @@ func _process(delta):
 #    elif (status == CRAWL):
 
 #        sprite_index = "giant_spider_crawl"
-#        if (not Collision.i"collision_top(1) or not Collision.is_collision_bottom(1)): status = IDLE"
-#        elif (Collision.i"collision_right(1)): x_vel = -1"
-#        elif (Collision.i"collision_left(1)): x_vel = 1"
+#        if (not Collision.is_collision_top(1) or not Collision.is_collision_bottom(1)): status = IDLE
+#        elif (Collision.is_collision_right(1)): x_vel = -1
+#        elif (Collision.is_collision_left(1)): x_vel = 1
 
 #    elif (status == SQUIRT):
 
@@ -240,12 +240,12 @@ func _process(delta):
 
 #    elif (status == RECOVER):
 
-#        if (Collision.i"collision_bottom(1)): x_vel = 0"
+#        if (Collision.is_collision_bottom(1)): x_vel = 0
 
 #    elif (status == BOUNCE and dist < 120):
 
 #        sprite_index = "giant_spider_jump"
-#        if (Collision.i"collision_bottom(1)):"
+#        if (Collision.is_collision_bottom(1)):
     
 #            sprite_index = "giant_spider"
 #            y_vel = -1 * randi_range(3,6)
@@ -268,14 +268,14 @@ func _process(delta):
 #        # DY: x_vel = 0
 
 
-#    if (Collision.i"collision_top(1)):"
+#    if (Collision.is_collision_top(1)):
 #        y_vel = 1
 #    /*
-#    if (Collision.i"collision_left(1) or Collision.is_collision_right(1)):"
+#    if (Collision.is_collision_left(1) or Collision.is_collision_right(1)):
 
 #        x_vel = -x_vel
 
 #    */
 
-#    # DY: if (Collision.i"collision_solid()):"
+#    # DY: if (Collision.is_collision_solid()):
 #    # DY:   position.y -= 2

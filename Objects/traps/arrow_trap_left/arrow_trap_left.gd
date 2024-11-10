@@ -24,7 +24,7 @@ func _process(delta):
     
 
 #func alarm 1():
-    #    if (not InLevel.i"room("r_level_editor")):"
+    #    if (not InLevel.is_room("r_level_editor")):
 
 #        x_act = position.x-1
 #        while (not gml.collision_point(x_act, position.y+8, "solid", 0, 0)):

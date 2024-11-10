@@ -99,12 +99,12 @@ func _process(delta):
 #            x_vel = -x_vel
     
     
-#        if (Collision.i"collision_top(1) and y_vel < 0):"
+#        if (Collision.is_collision_top(1) and y_vel < 0):
     
 #            y_vel = -y_vel * 0.8
     
     
-#        if (Collision.i"collision_bottom(1)):"
+#        if (Collision.is_collision_bottom(1)):
     
 #            # DY:  bounce
 #            if (y_vel > 3): y_vel = -y_vel * 0.3

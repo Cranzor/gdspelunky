@@ -30,7 +30,7 @@ func _process(delta):
 #        if (not obj.invincible): hit = true
 
 
-#    if (hit and not InLevel.i"room("r_title") and not InLevel.is_room("r_highscores")):"
+#    if (hit and not InLevel.is_room("r_title") and not InLevel.is_room("r_highscores")):
 
 #        with obj
       
@@ -57,7 +57,7 @@ func _process(delta):
     
 #        # DY: 
 #    break mattock
-#        if (randi_range(1,20) == 1 and not global.i"tunnel_man):"
+#        if (randi_range(1,20) == 1 and not global.is_tunnel_man):
     
 #            with player1
         

@@ -25,8 +25,8 @@ func _process(delta):
 #    # DY:  dummy actor for title
 
 #    image_speed = 0.6
-#    if (global.i"damsel): sprite_index = s_damsel_climb2"
-#    if (global.i"tunnel_man): sprite_index = s_tunnel_climb2"
+#    if (global.is_damsel): sprite_index = "damsel_climb2"
+#    if (global.is_tunnel_man): sprite_index = "tunnel_climb2"
 #    else: sprite_index = "climb_up2"
 #    status = 0
 

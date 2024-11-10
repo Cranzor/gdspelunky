@@ -80,4 +80,4 @@ func _process(delta):
 #    elif (status == WAIT):
 
 #        y_vel = 0
-#        if (Collision.i"collision_bottom(1)): position.y -= 1"
+#        if (Collision.is_collision_bottom(1)): position.y -= 1

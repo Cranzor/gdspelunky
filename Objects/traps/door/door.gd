@@ -59,7 +59,7 @@ func _process(delta):
 
 #        y_vel += my_grav
 #        if (y_vel > 6): y_vel = 6
-#        if (Collision.i"collision_bottom(1)):"
+#        if (Collision.is_collision_bottom(1)):
     
 #            status = WAIT
 #            y_vel = 0
@@ -69,4 +69,4 @@ func _process(delta):
 
 #    elif (status == WAIT):
 
-#        if (Collision.i"collision_bottom(1)): position.y -= 1"
+#        if (Collision.is_collision_bottom(1)): position.y -= 1

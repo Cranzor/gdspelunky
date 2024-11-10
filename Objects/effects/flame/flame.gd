@@ -59,6 +59,6 @@ func _process(delta):
 #    # main_code
 #    if (y_vel > 6): gml.instance_destroy()
 
-#    if (Collision.i"collision_bottom(1)):"
+#    if (Collision.is_collision_bottom(1)):
 
 #        if (life > 20): life = 20

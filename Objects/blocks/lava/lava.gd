@@ -44,7 +44,7 @@ func _process(delta):
 
 #func step():
     #    dist = 0
-#    if (InLevel.i"level()):"
+#    if (InLevel.is_level()):
 
 #        dist = point_distance(position.x, position.y, player1.position.x, player1.position.y)
 

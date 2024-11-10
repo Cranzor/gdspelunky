@@ -91,7 +91,7 @@ func _process(delta):
 #    player1.active = true
 #    status = 0
 #    counter = 100
-#    play_music(global.mu"boss, true)"
+#    play_music(global.mus_boss, true)
 #    # DY: Audio.play_sound(global.snd_boss)
 
     
@@ -167,20 +167,20 @@ func _process(delta):
 #        y_vel += my_grav
 
     
-#    if (Collision.i"collision_top(1)):"
+#    if (Collision.is_collision_top(1)):
 
 #        gml.instance_create(position.x, position.y-16, Objects.olmec_slam)
 #        position.y += 1
 #        if (y_vel < 0): y_vel = -y_vel * 0.8
 
 
-#    if (Collision.i"collision_left(1)):"
+#    if (Collision.is_collision_left(1)):
 
 #        position.x += 1
 #        x_vel = 0
 #        # DY: if (x_vel < 0): x_vel = -x_vel * 0.8
 
-#    if (Collision.i"collision_right(1)):"
+#    if (Collision.is_collision_right(1)):
 
 #        position.x -= 1
 #        x_vel = 0
@@ -212,12 +212,12 @@ func _process(delta):
 #            status = START2
     
     
-#        if (Collision.i"collision_bottom(1)):"
+#        if (Collision.is_collision_bottom(1)):
 #            y_vel = 0
 
 #    elif (status == START2):
    
-#        if (Collision.i"collision_bottom(1)):"
+#        if (Collision.is_collision_bottom(1)):
 #            y_vel = 0
 
 #    elif (status == IDLE):
@@ -225,7 +225,7 @@ func _process(delta):
 #        if (counter > 0): counter -= 1
 #        if (counter == 0): status = BOUNCE
     
-#        if (Collision.i"collision_bottom(1)):"
+#        if (Collision.is_collision_bottom(1)):
     
 #            y_vel = 0
     
@@ -246,7 +246,7 @@ func _process(delta):
 
 #    elif (status == RECOVER):
 
-#        if (Collision.i"collision_bottom(1)):"
+#        if (Collision.is_collision_bottom(1)):
     
 #            Audio.play_sound(global.snd_thump)
 #            status = IDLE
@@ -286,7 +286,7 @@ func _process(delta):
 
 #    elif (status == BOUNCE):
 
-#        if (Collision.i"collision_bottom(1)):"
+#        if (Collision.is_collision_bottom(1)):
     
 #            y_vel = -4
     
@@ -311,7 +311,7 @@ func _process(delta):
 #    elif (status == SLAM):
 
 #        carry_player = false
-#        if (Collision.i"collision_bottom(1)):"
+#        if (Collision.is_collision_bottom(1)):
     
 #            if (not slammed):
         
@@ -339,12 +339,12 @@ func _process(delta):
 #        if (not SS_IsSoundPlaying(global.snd_flame)): Audio.play_sound(global.snd_flame)
 
 
-#    if (Collision.i"collision_top(1)):"
+#    if (Collision.is_collision_top(1)):
 #        y_vel = 1
-#    if (Collision.i"collision_left(1) or Collision.is_collision_right(1)):"
+#    if (Collision.is_collision_left(1) or Collision.is_collision_right(1)):
 
 #        x_vel = -x_vel
 
 
-#    if (Collision.i"collision_solid()):"
+#    if (Collision.is_collision_solid()):
 #      position.y -= 2

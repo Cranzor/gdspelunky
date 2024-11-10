@@ -19,7 +19,7 @@ func _process(delta):
 
 #func animation_end():
     #    # action_kill_object
-#    # Need to implement this action
+#    gml.instance_destroy(self)
     
 
 #func collision with o_barrier_emitter():
@@ -131,7 +131,7 @@ func _process(delta):
     
 
 #func collision with o_solid():
-    #    if (InLevel.i"level("r_tutorial") or (position.x > view_xview[0]-16 and position.x < view_xview[0] + view_wview[0]+16 and:"
+    #    if (InLevel.is_level("r_tutorial") or (position.x > view_xview[0]-16 and position.x < view_xview[0] + view_wview[0]+16 and:
 #         position.y > view_yview[0]-16 and position.y < view_yview[0] + view_hview[0]+16))
 
 #        with other

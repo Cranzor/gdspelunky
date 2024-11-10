@@ -25,7 +25,7 @@ func _process(delta):
 
 #func mouse left button pressed():
     #    focus = true
-#    play_music(global.mu"cave, true)"
+#    play_music(global.mus_cave, true)
 
     
 
@@ -37,7 +37,7 @@ func _process(delta):
 #        if (position.x < 8): position.x = 8
 #        position.y = 160
 #        global.music_vol = floor(position.x / 8)
-#        SS_SetSoundVol(global.mu"cave, 2000 + 8000 * (global.music_vol/18))"
+#        SS_SetSoundVol(global.mus_cave, 2000 + 8000 * (global.music_vol/18))
 
 #    else:
 

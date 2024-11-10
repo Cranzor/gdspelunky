@@ -215,41 +215,41 @@ func _process(delta):
 #                    rope_start = file_text_read_str(file)
 #                    file_text_readln(file)
 #                    next_level = file_text_read_str(file)
-#                    exit_name"num = 0"
+#                    exit_names_num = 0
 #                    if (not file_text_eof(file)):
                 
 #                        file_text_readln(file)
-#                        exit_name"num = real(file_text_read_str(file))"
+#                        exit_names_num = real(file_text_read_str(file))
                 
-#                    if (exit_name"num > 0):"
+#                    if (exit_names_num > 0):
                 
 #                        file_text_readln(file)
-#                        for (i = 0 i < exit_name"num i += 1)"
+#                        for (i = 0 i < exit_names_num i += 1)
                     
 #                            exit_names[i] = file_text_read_str(file)
-#                            if (i < exit_name"num-1): file_text_readln(file)"
+#                            if (i < exit_names_num-1): file_text_readln(file)
                     
                 
-#                    sign_name"num = 0"
+#                    sign_names_num = 0
 #                    if (not file_text_eof(file)):
                 
 #                        file_text_readln(file)
-#                        sign_name"num = real(file_text_read_str(file))"
+#                        sign_names_num = real(file_text_read_str(file))
                 
-#                    if (sign_name"num > 0):"
+#                    if (sign_names_num > 0):
                 
 #                        file_text_readln(file)
-#                        for (i = 0 i < sign_name"num i += 1)"
+#                        for (i = 0 i < sign_names_num i += 1)
                     
 #                            sign_names[i] = file_text_read_str(file)
-#    		          if (i < sign_name"num-1): file_text_readln(file)"
+#    		          if (i < sign_names_num-1): file_text_readln(file)
                     
                 
 #                    file_text_close(file)
                 
 #                    # DY:  build level
-#                    exit_name"id = 0"
-#                    sign_name"id = 0"
+#                    exit_names_id = 0
+#                    sign_names_id = 0
 #                    for j in range(0, 32):
                 
 #                        for i in range(0, 40):
@@ -260,10 +260,10 @@ func _process(delta):
 #                                obj = instance_position(16+i*16, 16+j*16, exit)
 #                                if (obj):
                             
-#                                    if (exit_name"num > 0):"
+#                                    if (exit_names_num > 0):
                                 
-#                                        obj.lead"to = exit_names[exit_names_id]"
-#                                        exit_name"id += 1"
+#                                        obj.leads_to = exit_names[exit_names_id]
+#                                        exit_names_id += 1
                                 
                             
                         
@@ -272,10 +272,10 @@ func _process(delta):
 #                                obj = instance_position(16+i*16, 16+j*16, entrance)
 #                                if (obj):
                             
-#                                    if (exit_name"num > 0):"
+#                                    if (exit_names_num > 0):
                                 
-#                                        obj.lead"to = exit_names[exit_names_id]"
-#                                        exit_name"id += 1"
+#                                        obj.leads_to = exit_names[exit_names_id]
+#                                        exit_names_id += 1
                                 
                             
                         
@@ -284,10 +284,10 @@ func _process(delta):
 #                                obj = instance_position(16+i*16, 16+j*16, msg_sign)
 #                                if (obj):
                             
-#                                    if (sign_name"num > 0):"
+#                                    if (sign_names_num > 0):
                                 
-#                                        obj.message = sign_names[sign_name"id]"
-#                                        sign_name"id += 1"
+#                                        obj.message = sign_names[sign_names_id]
+#                                        sign_names_id += 1
                                 
                             
                         
@@ -296,7 +296,7 @@ func _process(delta):
             
 
 #        window_set_cursor(cr_default)
-#        cur"obj.visible = true"
+#        curs_obj.visible = true
 #        gml.instance_create(position.x, position.y, Objects.edit_button)
 #        gml.instance_create(position.x+320-32, position.y, Objects.new_button)
 #        gml.instance_create(position.x+320-32, position.y, Objects.test_button)
@@ -382,12 +382,12 @@ func _process(delta):
 #        if (view_yview[0] == 0):
     
 #            draw_text(view_xview[0]+40, view_yview[0]+view_hview[0]-32, level_name + " BY " + author)
-#            draw_text(view_xview[0]+40, view_yview[0]+view_hview[0]-24, str(cur"obj.position.x) + ", " + str(curs_obj.position.y))"
+#            draw_text(view_xview[0]+40, view_yview[0]+view_hview[0]-24, str(curs_obj.position.x) + ", " + str(curs_obj.position.y))
     
 #        else:
     
 #            draw_text(view_xview[0]+40, view_yview[0]+16, level_name + " BY " + author)
-#            draw_text(view_xview[0]+40, view_yview[0]+24, str(cur"obj.position.x) + ", " + str(curs_obj.position.y))"
+#            draw_text(view_xview[0]+40, view_yview[0]+24, str(curs_obj.position.x) + ", " + str(curs_obj.position.y))
     
 
 
@@ -403,7 +403,7 @@ func _process(delta):
 #        elif (global.tunnel1 == 0 and global.tunnel2 == 0): drop_max = 23
 #        else: drop_max = 10
 #        drop_val = 0
-#        cur"obj.sprite_index = s_entrance"
+#        curs_obj.sprite_index = "entrance"
 
 
     
@@ -418,7 +418,7 @@ func _process(delta):
 #        elif (global.tunnel1 == 0 and global.tunnel2 == 0): drop_max = 21
 #        else: drop_max = 6
 #        drop_val = 0
-#        cur"obj.sprite_index = s_bat_left"
+#        curs_obj.sprite_index = "bat_left"
 
 
     
@@ -433,7 +433,7 @@ func _process(delta):
 #        elif (global.tunnel1 == 0 and global.tunnel2 == 0): drop_max = 6
 #        else: drop_max = 2
 #        drop_val = 0
-#        cur"obj.sprite_index = s_spikes"
+#        curs_obj.sprite_index = "spikes"
 
 
     
@@ -445,7 +445,7 @@ func _process(delta):
 #        drop_select = 3
 #        drop_max = 30
 #        drop_val = 0
-#        cur"obj.sprite_index = s_gold_bar_tile"
+#        curs_obj.sprite_index = "gold_bar_tile"
 
 
     
@@ -493,41 +493,41 @@ func _process(delta):
 #                    rope_start = file_text_read_str(file)
 #                    file_text_readln(file)
 #                    next_level = file_text_read_str(file)
-#                    exit_name"num = 0"
+#                    exit_names_num = 0
 #                    if (not file_text_eof(file)):
                 
 #                        file_text_readln(file)
-#                        exit_name"num = real(file_text_read_str(file))"
+#                        exit_names_num = real(file_text_read_str(file))
                 
-#                    if (exit_name"num > 0):"
+#                    if (exit_names_num > 0):
                 
 #                        file_text_readln(file)
-#                        for (i = 0 i < exit_name"num i += 1)"
+#                        for (i = 0 i < exit_names_num i += 1)
                     
 #                            exit_names[i] = file_text_read_str(file)
-#                            if (i < exit_name"num-1): file_text_readln(file)"
+#                            if (i < exit_names_num-1): file_text_readln(file)
                     
                 
-#                    sign_name"num = 0"
+#                    sign_names_num = 0
 #                    if (not file_text_eof(file)):
                 
 #                        file_text_readln(file)
-#                        sign_name"num = real(file_text_read_str(file))"
+#                        sign_names_num = real(file_text_read_str(file))
                 
-#                    if (sign_name"num > 0):"
+#                    if (sign_names_num > 0):
                 
 #                        file_text_readln(file)
-#                        for (i = 0 i < sign_name"num i += 1)"
+#                        for (i = 0 i < sign_names_num i += 1)
                     
 #                            sign_names[i] = file_text_read_str(file)
-#    		          if (i < sign_name"num-1): file_text_readln(file)"
+#    		          if (i < sign_names_num-1): file_text_readln(file)
                     
                 
 #                    file_text_close(file)
                 
 #                    # DY:  build level
-#                    exit_name"id = 0"
-#                    sign_name"id = 0"
+#                    exit_names_id = 0
+#                    sign_names_id = 0
 #                    for j in range(0, 32):
                 
 #                        for i in range(0, 40):
@@ -538,10 +538,10 @@ func _process(delta):
 #                                obj = instance_position(16+i*16, 16+j*16, exit)
 #                                if (obj):
                             
-#                                    if (exit_name"num > 0):"
+#                                    if (exit_names_num > 0):
                                 
-#                                        obj.lead"to = exit_names[exit_names_id]"
-#                                        exit_name"id += 1"
+#                                        obj.leads_to = exit_names[exit_names_id]
+#                                        exit_names_id += 1
                                 
                             
                         
@@ -550,10 +550,10 @@ func _process(delta):
 #                                obj = instance_position(16+i*16, 16+j*16, entrance)
 #                                if (obj):
                             
-#                                    if (exit_name"num > 0):"
+#                                    if (exit_names_num > 0):
                                 
-#                                        obj.lead"to = exit_names[exit_names_id]"
-#                                        exit_name"id += 1"
+#                                        obj.leads_to = exit_names[exit_names_id]
+#                                        exit_names_id += 1
                                 
                             
                         
@@ -562,10 +562,10 @@ func _process(delta):
 #                                obj = instance_position(16+i*16, 16+j*16, msg_sign)
 #                                if (obj):
                             
-#                                    if (sign_name"num > 0):"
+#                                    if (sign_names_num > 0):
                                 
-#                                        obj.message = sign_names[sign_name"id]"
-#                                        sign_name"id += 1"
+#                                        obj.message = sign_names[sign_names_id]
+#                                        sign_names_id += 1
                                 
                             
                         
@@ -573,7 +573,7 @@ func _process(delta):
                 
             
 #                window_set_cursor(cr_default)
-#                cur"obj.visible = true"
+#                curs_obj.visible = true
 #                gml.instance_create(position.x+16, position.y, Objects.edit_button)
 #                gml.instance_create(position.x+320-32, position.y, Objects.new_button)
 #                gml.instance_create(position.x+320-48, position.y, Objects.test_button)
@@ -595,22 +595,22 @@ func _process(delta):
 #                mouse_x < room_width-16 and
 #                mouse_y > 16 and
 #                mouse_y < room_height-16 and
-#                cur"obj.position.x >= 16 and"
-#                cur"obj.position.x < room_width-16 and"
-#                cur"obj.position.y >= 16 and"
-#                cur"obj.position.y < room_height-16)"
+#                curs_obj.position.x >= 16 and
+#                curs_obj.position.x < room_width-16 and
+#                curs_obj.position.y >= 16 and
+#                curs_obj.position.y < room_height-16)
         
-#                obj = instance_position(cur"obj.position.x+8, curs_obj.position.y+12, drawn_sprite)"
+#                obj = instance_position(curs_obj.position.x+8, curs_obj.position.y+12, drawn_sprite)
 #                if (obj):
             
 #                    if (obj.type == "Exit"):
                 
-#                        text_edit = obj.lead"to"
+#                        text_edit = obj.leads_to
 #                        level_editor.status = EDIT_DOOR
 #                        with new_button  gml.instance_destroy() 
 #                        with test_button  gml.instance_destroy() 
 #                        with edit_button  gml.instance_destroy() 
-#                        # DY: level_array[floor(cur"obj.position.x/16)-1, floor(curs_obj.position.y/16)-1] = "0""
+#                        # DY: level_array[floor(curs_obj.position.x/16)-1, floor(curs_obj.position.y/16)-1] = "0"
                 
 #                    elif (obj.type == "Message Sign"):
                 
@@ -619,7 +619,7 @@ func _process(delta):
 #                        with new_button  gml.instance_destroy() 
 #                        with test_button  gml.instance_destroy() 
 #                        with edit_button  gml.instance_destroy() 
-#                        # DY: level_array[floor(cur"obj.position.x/16)-1, floor(curs_obj.position.y/16)-1] = "0""
+#                        # DY: level_array[floor(curs_obj.position.x/16)-1, floor(curs_obj.position.y/16)-1] = "0"
                 
             
         
@@ -629,10 +629,10 @@ func _process(delta):
 
 #        if (keyboard_key == vk_enter):
     
-#            obj.lead"to = text_edit"
+#            obj.leads_to = text_edit
 #            status = EDIT
 #            window_set_cursor(cr_default)
-#            cur"obj.visible = true"
+#            curs_obj.visible = true
 #            gml.instance_create(position.x+16, position.y, Objects.edit_button)
 #            gml.instance_create(position.x+320-48, position.y, Objects.new_button)
 #            gml.instance_create(position.x+320-48, position.y, Objects.test_button)
@@ -650,7 +650,7 @@ func _process(delta):
 #            obj.message = text_edit
 #            status = EDIT
 #            window_set_cursor(cr_default)
-#            cur"obj.visible = true"
+#            curs_obj.visible = true
 #            gml.instance_create(position.x+16, position.y, Objects.edit_button)
 #            gml.instance_create(position.x+320-48, position.y, Objects.new_button)
 #            gml.instance_create(position.x+320-48, position.y, Objects.test_button)
@@ -670,7 +670,7 @@ func _process(delta):
         
 #                status = INFO_AUTHOR
 #                window_set_cursor(cr_default)
-#                cur"obj.visible = true"
+#                curs_obj.visible = true
         
     
 #        elif (keyboard_key == vk_backspace or keyboard_key == vk_delete):
@@ -687,7 +687,7 @@ func _process(delta):
         
 #                status = INFO_MUSIC
 #                window_set_cursor(cr_default)
-#                cur"obj.visible = true"
+#                curs_obj.visible = true
         
     
 #        elif (keyboard_key == vk_backspace or keyboard_key == vk_delete):
@@ -704,7 +704,7 @@ func _process(delta):
         
 #                status = INFO_LIFE
 #                window_set_cursor(cr_default)
-#                cur"obj.visible = true"
+#                curs_obj.visible = true
         
     
 #        elif (keyboard_key == vk_backspace or keyboard_key == vk_delete):
@@ -721,7 +721,7 @@ func _process(delta):
         
 #                status = INFO_BOMBS
 #                window_set_cursor(cr_default)
-#                cur"obj.visible = true"
+#                curs_obj.visible = true
         
     
 #        elif (keyboard_key == vk_backspace or keyboard_key == vk_delete):
@@ -738,7 +738,7 @@ func _process(delta):
         
 #                status = INFO_ROPE
 #                window_set_cursor(cr_default)
-#                cur"obj.visible = true"
+#                curs_obj.visible = true
         
     
 #        elif (keyboard_key == vk_backspace or keyboard_key == vk_delete):
@@ -755,7 +755,7 @@ func _process(delta):
         
 #                status = INFO_NEXT
 #                window_set_cursor(cr_default)
-#                cur"obj.visible = true"
+#                curs_obj.visible = true
         
     
 #        elif (keyboard_key == vk_backspace or keyboard_key == vk_delete):
@@ -772,7 +772,7 @@ func _process(delta):
         
 #                status = EDIT
 #                window_set_cursor(cr_default)
-#                cur"obj.visible = true"
+#                curs_obj.visible = true
 #                gml.instance_create(position.x+16, position.y, Objects.edit_button)
 #                gml.instance_create(position.x+320-48, position.y, Objects.new_button)
 #                gml.instance_create(position.x+320-48, position.y, Objects.test_button)
@@ -838,9 +838,9 @@ func _process(delta):
 
 #        file_delete(level_name)
 #        exit_names[0] = ""
-#        exit_name"id = 0"
+#        exit_names_id = 0
 #        sign_names[0] = ""
-#        sign_name"id = 0"
+#        sign_names_id = 0
 #        file = file_text_open_write("levels/" + string_lower(level_name)+".lvl")
 #        for j in range(0, 32):
     
@@ -853,8 +853,8 @@ func _process(delta):
 #                    if (not obj): obj = instance_position(16+i*16, 16+j*16, entrance)
 #                    if (obj):
                 
-#                        exit_names[exit_name"id] = obj.leads_to"
-#                        exit_name"id += 1"
+#                        exit_names[exit_names_id] = obj.leads_to
+#                        exit_names_id += 1
                 
             
 #                elif (level_array[i, j] == "I"):
@@ -862,8 +862,8 @@ func _process(delta):
 #                    obj = instance_position(16+i*16, 16+j*16, msg_sign)
 #                    if (obj):
                 
-#                        sign_names[sign_name"id] = obj.message"
-#                        sign_name"id += 1"
+#                        sign_names[sign_names_id] = obj.message
+#                        sign_names_id += 1
                 
             
         
@@ -881,19 +881,19 @@ func _process(delta):
 #        file_text_writeln(file)
 #        file_text_write_str(file, next_level)
 #        file_text_writeln(file)
-#        file_text_write_str(file, str(exit_name"id))"
-#        if (exit_name"id > 0): file_text_writeln(file)"
-#        for (i = 0 i < exit_name"id i += 1)"
+#        file_text_write_str(file, str(exit_names_id))
+#        if (exit_names_id > 0): file_text_writeln(file)
+#        for (i = 0 i < exit_names_id i += 1)
     
 #            file_text_write_str(file, exit_names[i])
-#            if (i < exit_name"id): file_text_writeln(file)"
+#            if (i < exit_names_id): file_text_writeln(file)
     
-#        file_text_write_str(file, str(sign_name"id))"
-#        if (sign_name"id > 0): file_text_writeln(file)"
-#        for (i = 0 i < sign_name"id i += 1)"
+#        file_text_write_str(file, str(sign_names_id))
+#        if (sign_names_id > 0): file_text_writeln(file)
+#        for (i = 0 i < sign_names_id i += 1)
     
 #            file_text_write_str(file, sign_names[i])
-#            if (i < sign_name"id-1): file_text_writeln(file)"
+#            if (i < sign_names_id-1): file_text_writeln(file)
     
 #        file_text_close(file)
 
@@ -935,8 +935,8 @@ func _process(delta):
     
 
 #func step():
-    #    if (status == EDIT):  cur"obj.visible = true window_set_cursor(cr_default) "
-#    else:  cur"obj.visible = false window_set_cursor(cr_none) "
+    #    if (status == EDIT):  curs_obj.visible = true window_set_cursor(cr_default) 
+#    else:  curs_obj.visible = false window_set_cursor(cr_none) 
 
 #    if (status == EDIT and mouse_x > view_xview[0] and mouse_x < view_xview[0]+320 and:
 #        mouse_y > view_yview[0] and mouse_y < view_yview[0]+240)
@@ -956,10 +956,10 @@ func _process(delta):
 #        mouse_x < room_width-16 and
 #        mouse_y > 16 and
 #        mouse_y < room_height-16 and
-#        cur"obj.position.x >= 16 and"
-#        cur"obj.position.x < room_width-16 and"
-#        cur"obj.position.y >= 16 and"
-#        cur"obj.position.y < room_height-16)"
+#        curs_obj.position.x >= 16 and
+#        curs_obj.position.x < room_width-16 and
+#        curs_obj.position.y >= 16 and
+#        curs_obj.position.y < room_height-16)
 
 #        if (mouse_check_button(mb_left) and:
 #            not gml.collision_point(mouse_x, mouse_y, "edit_button", 0, 0) and
@@ -968,36 +968,36 @@ func _process(delta):
     
 #            if (drop_select == BLOCKS):
         
-#                scr_create_tile(block_array[drop_val], cur"obj.position.x, curs_obj.position.y)"
-#                level_array[floor(cur"obj.position.x/16)-1, floor(curs_obj.position.y/16)-1] = block_array[drop_val]"
+#                scr_create_tile(block_array[drop_val], curs_obj.position.x, curs_obj.position.y)
+#                level_array[floor(curs_obj.position.x/16)-1, floor(curs_obj.position.y/16)-1] = block_array[drop_val]
         
 #            elif (drop_select == ENEMIES):
         
-#                scr_create_tile(enemy_array[drop_val], cur"obj.position.x, curs_obj.position.y)"
-#                level_array[floor(cur"obj.position.x/16)-1, floor(curs_obj.position.y/16)-1] = enemy_array[drop_val]"
+#                scr_create_tile(enemy_array[drop_val], curs_obj.position.x, curs_obj.position.y)
+#                level_array[floor(curs_obj.position.x/16)-1, floor(curs_obj.position.y/16)-1] = enemy_array[drop_val]
         
 #            elif (drop_select == TRAPS):
         
-#                scr_create_tile(trap_array[drop_val], cur"obj.position.x, curs_obj.position.y)"
-#                level_array[floor(cur"obj.position.x/16)-1, floor(curs_obj.position.y/16)-1] = trap_array[drop_val]"
+#                scr_create_tile(trap_array[drop_val], curs_obj.position.x, curs_obj.position.y)
+#                level_array[floor(curs_obj.position.x/16)-1, floor(curs_obj.position.y/16)-1] = trap_array[drop_val]
         
 #            elif (drop_select == ITEMS):
         
-#                scr_create_tile(loot_array[drop_val], cur"obj.position.x, curs_obj.position.y)"
-#                level_array[floor(cur"obj.position.x/16)-1, floor(curs_obj.position.y/16)-1] = loot_array[drop_val]"
+#                scr_create_tile(loot_array[drop_val], curs_obj.position.x, curs_obj.position.y)
+#                level_array[floor(curs_obj.position.x/16)-1, floor(curs_obj.position.y/16)-1] = loot_array[drop_val]
         
     
 #        elif (mouse_check_button(mb_right)):
     
-#            obj = gml.collision_rectangle(cur"obj.position.x, curs_obj.position.y, curs_obj.position.x+15,  curs_obj.position.y+15, "drawn_sprite", 0, 0) # DY:  instance_position(curs_obj.position.x+8, curs_obj.position.y+12, drawn_sprite)"
-#            # DY:  if (not obj): obj = instance_position(cur"obj.position.x+8, curs_obj.position.y+4, drawn_sprite)"
+#            obj = gml.collision_rectangle(curs_obj.position.x, curs_obj.position.y, curs_obj.position.x+15,  curs_obj.position.y+15, "drawn_sprite", 0, 0) # DY:  instance_position(curs_obj.position.x+8, curs_obj.position.y+12, drawn_sprite)
+#            # DY:  if (not obj): obj = instance_position(curs_obj.position.x+8, curs_obj.position.y+4, drawn_sprite)
 #            if (obj):
         
 #                with obj
             
 #                    if (type == "Giant Spider" or type == "Tomb Lord"):
                 
-#                        if (position.x == cur"obj.position.x and position.y == curs_obj.position.y):"
+#                        if (position.x == curs_obj.position.x and position.y == curs_obj.position.y):
                     
 #                            gml.instance_destroy()
                     
@@ -1005,4 +1005,4 @@ func _process(delta):
 #                    else: gml.instance_destroy()
             
         
-#            level_array[floor(cur"obj.position.x/16)-1, floor(curs_obj.position.y/16)-1] = "0""
+#            level_array[floor(curs_obj.position.x/16)-1, floor(curs_obj.position.y/16)-1] = "0"

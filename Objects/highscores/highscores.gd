@@ -29,12 +29,12 @@ func _process(delta):
 #    global.mini1 = 0
 #    global.mini2 = 0
 #    global.mini3 = 0
-#    global.ha"jordans = false"
+#    global.has_jordans = false
 #    global.arrows = 0
 
 #    sun_gold = 200000
 #    moon_gold = 600000
-#    star"gold = 120"
+#    stars_gold = 120
 
 #    t_money = highscore_value(1) - 9000000
 #    t_time = highscore_value(2) - 8000000
@@ -121,17 +121,17 @@ func _process(delta):
     
 
 
-#    if (global.score"start == 1):"
+#    if (global.scores_start == 1):
 
 #        player1.position.x = 32+8
 #        player1.position.y = 48+8
 
-#    elif (global.score"start == 2):"
+#    elif (global.scores_start == 2):
 
 #        player1.position.x = 64+8
 #        player1.position.y = 80+8
 
-#    elif (global.score"start == 3):"
+#    elif (global.scores_start == 3):
 
 #        player1.position.x = 32+8
 #        player1.position.y = 112+8
@@ -165,7 +165,7 @@ func _process(delta):
 #        draw_set_color(c_white)
 #        if (t_money >= sun_gold):
     
-#            if (false): # DY:  (global.i"tunnel_man)"
+#            if (false): # DY:  (global.is_tunnel_man)
         
 #                draw_text(128, 112, "NO MATTOCKS ALLOWED!")
 #                draw_text(128, 128, "THIS MEANS YOU!")
@@ -192,7 +192,7 @@ func _process(delta):
 #        draw_set_color(c_white)
 #        if (t_time > 0 and t_time <= moon_gold):
     
-#            if (false): # DY:  (global.i"tunnel_man)"
+#            if (false): # DY:  (global.is_tunnel_man)
         
 #                draw_text(128, 112, "NO MATTOCKS ALLOWED!")
 #                draw_text(128, 128, "THIS MEANS YOU!")
@@ -216,9 +216,9 @@ func _process(delta):
 #        draw_set_color(c_yellow)
 #        draw_text(168, 96, "STARS ROOM")
 #        draw_set_color(c_white)
-#        if (t_kills >= star"gold):"
+#        if (t_kills >= stars_gold):
     
-#            if (false): # DY:  (global.i"tunnel_man)"
+#            if (false): # DY:  (global.is_tunnel_man)
         
 #                draw_text(128, 112, "NO MATTOCKS ALLOWED!")
 #                draw_text(128, 128, "THIS MEANS YOU!")

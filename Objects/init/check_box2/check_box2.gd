@@ -18,7 +18,7 @@ func _process(delta):
 
 
 #func create():
-    #    if (global.graphic"high): on = true"
+    #    if (global.graphics_high): on = true
 #    else:
 
 #        on = false
@@ -32,10 +32,10 @@ func _process(delta):
 
 #        on = true
 #        sprite_index = "box_checked"
-#        global.graphic"high = true"
+#        global.graphics_high = true
 
 #    else:
 
 #        on = false
 #        sprite_index = "box"
-#        global.graphic"high = false"
+#        global.graphics_high = false

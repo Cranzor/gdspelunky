@@ -70,9 +70,9 @@ func _process(delta):
 #    if (hp < 1):
 
 #        MiscScripts.scr_create_blood(position.x+8, position.y+8, 3)
-#        if (count"as_kill):"
+#        if (counts_as_kill):
     
-#            if (InLevel.i"real_level()): global.enemy_kills[15] += 1"
+#            if (InLevel.is_real_level()): global.enemy_kills[15] += 1
 #            global.aliens += 1
 #            global.kills += 1
     
@@ -81,7 +81,7 @@ func _process(delta):
 
 #    y_vel += 0.6
 
-#    if (Collision.i"collision_bottom(1) and status != STUNNED):"
+#    if (Collision.is_collision_bottom(1) and status != STUNNED):
 #        y_vel = 0
 
 #    if (status == IDLE):
@@ -95,11 +95,11 @@ func _process(delta):
 
 #    elif (status == WALK):
 
-#        if (Collision.i"collision_right(1)):"
+#        if (Collision.is_collision_right(1)):
     
 #            facing = LEFT
     
-#        if (Collision.i"collision_left(1)):"
+#        if (Collision.is_collision_left(1)):
     
 #            facing = RIGHT
     
@@ -131,5 +131,5 @@ func _process(delta):
     
 
 
-#    # DY: if (Collision.i"collision_solid()):"
+#    # DY: if (Collision.is_collision_solid()):
 #    # DY:     position.y -= 2
