@@ -17,7 +17,6 @@ func _process(delta):
 
 
 func collision_with_sceptre():
-	print("worked")
 	var other = gml.instance_nearest(position.x, position.y, "sceptre")
 	if (other.held):
 
