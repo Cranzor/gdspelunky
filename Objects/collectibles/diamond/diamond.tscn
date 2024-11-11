@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bxf7r0icrs3o3"]
 
-[sub_resource type="GDScript" id="GDScript_ohhc3"]
+[ext_resource type="Script" path="res://objects/collectibles/diamond/diamond.gd" id="1_7d1cb"]
 
 [node name="Diamond" type="Node2D"]
+script = ExtResource("1_7d1cb")
+object_name = "diamond"

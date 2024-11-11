@@ -22,7 +22,6 @@ var ATTACK
 var bounced
 var dead
 var shake_toggle
-var status
 var facing
 var armed
 var active

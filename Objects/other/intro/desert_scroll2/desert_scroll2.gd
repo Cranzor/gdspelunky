@@ -1,4 +1,3 @@
-
 extends DrawnSprite
 
 
@@ -15,20 +14,20 @@ func _process(delta):
 
 
 #--- Object functions
+var scroll
 
 
-#func create():
-    #    # action_inherited
-#    super()
+func create():
+	# action_inherited
+	super()
 
-#    # main_code
-#    scroll = false
+	# main_code
+	scroll = false
 
-#    if (InLevel.is_room("r_credits1")): sprite_index = "desert_night2"
+	if (InLevel.is_room("credits1")): sprite_index = "desert_night2"
 
-    
 
-#func step():
-    #    if (scroll): position.x += 1
+func step():
+	if (scroll): position.x += 1
 
-#    if (position.x > 320): gml.instance_destroy()
+	if (position.x > 320): gml.instance_destroy(self)

@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://b874pb5artidw"]
 
-[sub_resource type="GDScript" id="GDScript_c7r0e"]
+[ext_resource type="Script" path="res://objects/other/intro/desert_scroll2/desert_scroll2.gd" id="1_t5uy8"]
 
 [node name="DesertScroll2" type="Node2D"]
+script = ExtResource("1_t5uy8")
+object_name = "desert_scroll2"

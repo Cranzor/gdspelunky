@@ -29,7 +29,7 @@ func create():
 func destroy():
 	if (not clean_death and not global.clean_solids):
 
-		gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0, -8), position.y+8+randi_range(0,8)-randi_range(0, -8), "rubble_dark") #--- looking at other scripts, "0-8" appears to be a mistake. will try to keep as is but may fix is behavior in Godot doesn't work correctly
+		gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0, -8), position.y+8+randi_range(0,8)-randi_range(0, -8), "rubble_dark") #--- [FLAG] looking at other scripts, "0-8" appears to be a mistake. will try to keep as is but may fix is behavior in Godot doesn't work correctly
 		gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0, -8), position.y+8+randi_range(0,8)-randi_range(0, -8), "rubble_dark_small")
 		gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0, -8), position.y+8+randi_range(0,8)-randi_range(0, -8), "rubble_dark_small")
 		

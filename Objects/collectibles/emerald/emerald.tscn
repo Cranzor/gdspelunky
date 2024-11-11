@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://c4d7q1dnted32"]
 
-[sub_resource type="GDScript" id="GDScript_cnk21"]
+[ext_resource type="Script" path="res://objects/collectibles/emerald/emerald.gd" id="1_rafxc"]
 
 [node name="Emerald" type="Node2D"]
+script = ExtResource("1_rafxc")
+object_name = "emerald"

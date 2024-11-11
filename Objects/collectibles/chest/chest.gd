@@ -1,4 +1,3 @@
-
 extends Item
 
 
@@ -17,22 +16,21 @@ func _process(delta):
 #--- Object functions
 
 
-#func create():
-    #    # action_inherited
-#    super()
+func create():
+	# action_inherited
+	super()
 
-#    # main_code
-#    type = "Chest"
-#    PlatformEngine.make_active(self)
-#    Collision.set_collision_bounds(self, -6, 0, 6, 8)
+	# main_code
+	type = "chest"
+	PlatformEngine.make_active(self)
+	Collision.set_collision_bounds(self, -6, 0, 6, 8)
 
-#    heavy = true
+	heavy = true
 
-#    y_vel = 0
-#    y_acc = 0.2
+	y_vel = 0
+	y_acc = 0.2
 
-    
 
-#func step():
-    #    # action_inherited
-#    super()
+func step():
+	# action_inherited
+	super()

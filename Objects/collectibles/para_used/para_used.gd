@@ -1,4 +1,3 @@
-
 extends DrawnSprite
 
 
@@ -17,23 +16,22 @@ func _process(delta):
 #--- Object functions
 
 
-#func create():
-    #    # action_inherited
-#    super()
+func create():
+	# action_inherited
+	super()
 
-#    # main_code
-#    y_vel = 0
-#    y_acc = 0.2
-
-    
-
-#func step():
-    #    if (not gml.collision_point(position.x+8, position.y+16, "solid", 0, 0)):
-
-#        position.y += y_vel
-#        y_vel += y_acc
+	# main_code
+	y_vel = 0
+	y_acc = 0.2
 
 
-#    if (gml.collision_point(position.x+8, position.y+15, "solid", 0, 0)):
+func step():
+	if (not gml.collision_point(position.x+8, position.y+16, "solid", 0, 0)):
 
-#        position.y -= 1
+		position.y += y_vel
+		y_vel += y_acc
+
+
+	if (gml.collision_point(position.x+8, position.y+15, "solid", 0, 0)):
+
+		position.y -= 1

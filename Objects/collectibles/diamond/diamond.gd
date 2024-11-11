@@ -1,4 +1,3 @@
-
 extends Treasure
 
 
@@ -17,19 +16,18 @@ func _process(delta):
 #--- Object functions
 
 
-#func alarm 0():
-    #    can_collect = true
+func alarm_0():
+	can_collect = true
 
-    
 
-#func create():
-    #    # action_inherited
-#    super()
+func create():
+	# action_inherited
+	super()
 
-#    # main_code
-#    type = "Diamond"
-#    PlatformEngine.make_active(self)
-#    Collision.set_collision_bounds(self, -4, -4, 4, 4)
-#    can_collect = false
-#    alarm_0(20)
-#    value = 5000
+	# main_code
+	type = "diamond"
+	PlatformEngine.make_active(self)
+	Collision.set_collision_bounds(self, -4, -4, 4, 4)
+	can_collect = false
+	alarm_0_countdown.start(20)
+	value = 5000

@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://ctonkbm667vhu"]
 
-[sub_resource type="GDScript" id="GDScript_1voop"]
+[ext_resource type="Script" path="res://objects/init/key_config_button/key_config_button.gd" id="1_y87q0"]
 
 [node name="KeyConfigButton" type="Node2D"]
+script = ExtResource("1_y87q0")
+object_name = "key_config_button"

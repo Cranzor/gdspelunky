@@ -22,15 +22,6 @@ var sticky_y_diff
 
 var buy_message #--- may want to move this to drawn_sprite. check damsel script
 
-func _ready():
-	sprite
-	solid = true
-	visible = true
-	depth = 0
-	persistent = false
-	parent = DrawnSprite
-	mask
-
 func create():
 	super()
 	active = true
@@ -72,7 +63,7 @@ func create():
 	if (global.has_spectacles): depth = -51
 	else: depth = -101
 
-func item_step():
+func step():
 	if ((position.x > gml.view('xview')-16 and position.x < gml.view('xview') + gml.view('wview')+16 and
 	position.y > gml.view('yview')-16 and position.y < gml.view('yview') + gml.view('hview')+16) or
 	type == "rope"):

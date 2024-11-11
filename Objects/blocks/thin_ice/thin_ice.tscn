@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://c5b4waufn8dyu"]
 
-[sub_resource type="GDScript" id="GDScript_brpki"]
+[ext_resource type="Script" path="res://objects/blocks/thin_ice/thin_ice.gd" id="1_mpxg3"]
 
 [node name="ThinIce" type="Node2D"]
+script = ExtResource("1_mpxg3")
+object_name = "thin_ice"

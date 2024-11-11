@@ -2,9 +2,8 @@
 
 [ext_resource type="Script" path="res://objects/collectibles/crate/crate.gd" id="1_udxly"]
 
-[node name="Crate" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
+[node name="Crate" type="Node2D"]
 script = ExtResource("1_udxly")
 sprite_index_name = "crate"
-animated_sprite_node = NodePath("")
 sprite_offset = Vector2(8, 8)
 object_name = "crate"

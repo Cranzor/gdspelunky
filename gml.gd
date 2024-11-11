@@ -165,7 +165,15 @@ func instance_place(x,y,obj: String, comparison_object): #' Returns the id of th
 			return returned_node
 			
 	return null
-	
+
+func instance_position(x, y, obj: String): #---[FLAG] this needs checked
+	var intersecting = collision_point(x, y, obj, 0, 0)
+	if intersecting:
+		var instance = instance_nearest(x, y, obj)
+		return instance
+	else:
+		return null
+
 func instance_destroy(obj): #'Destroys current instance' ---  Should probably start passing 'self' or other node reference as an argument. Go through and check
 	if obj.has_method("destroy"):
 		obj.destroy()
@@ -316,6 +324,12 @@ func animation_end(object, animated_sprite):
 		return true
 	else:
 		return false
+
+func tile_layer_find(depth, x, y): #---[FLAG] have to implement this. returns the given tile
+	pass
+
+func tile_delete(id): #---[FLAG] have to implement this
+	pass
 
 #---------------------------------------
 func background_index(background: String): #Changing this to a function

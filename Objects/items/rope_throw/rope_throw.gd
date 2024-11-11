@@ -25,7 +25,7 @@ func create():
 	py = 0
 
 func step():
-	item_step()
+	super()
 	
 	x_velocity = 0
 	y_velocity = 0

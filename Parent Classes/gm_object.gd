@@ -11,6 +11,7 @@ var sprite
 var solid = false
 
 var dir #---[FLAG] not exactly sure what this does
+var status #--- declaring this here for objects that use it but don't have drawn_sprite as their parent
 
 var moving_object = false
 

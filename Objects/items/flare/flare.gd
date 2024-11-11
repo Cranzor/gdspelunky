@@ -37,9 +37,7 @@ func create():
 	alarm_0_countdown.start(1)
 
 func step():
-	smooth_motion_step_begin()
-	
-	item_step()
+	super()
 	
 	if (gml.instance_exists("player1")):
 		var player1 = gml.get_instance("player1") #--- [FLAG] may need to change this for multiplayer
@@ -58,8 +56,6 @@ func step():
 			held = false
 		
 		gml.instance_destroy(self)
-	
-	smooth_motion_step_end()
 	
 #--- Extra functions
 var flare_sparks = []
