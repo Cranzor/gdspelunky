@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://crs7gfpgfwsru"]
 
-[sub_resource type="GDScript" id="GDScript_x8mb7"]
+[ext_resource type="Script" path="res://objects/collectibles/key/key.gd" id="1_nkuib"]
 
 [node name="Key" type="Node2D"]
+script = ExtResource("1_nkuib")
+object_name = "key"

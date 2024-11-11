@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cxugn2c2pj84"]
 
-[sub_resource type="GDScript" id="GDScript_mi4eg"]
+[ext_resource type="Script" path="res://objects/characters/yell_help/yell_help.gd" id="1_1mnkj"]
 
 [node name="YellHelp" type="Node2D"]
+script = ExtResource("1_1mnkj")
+object_name = "yell_help"

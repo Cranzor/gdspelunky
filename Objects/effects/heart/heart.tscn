@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://c5to1bs6rldy7"]
 
-[sub_resource type="GDScript" id="GDScript_4a8he"]
+[ext_resource type="Script" path="res://objects/effects/heart/heart.gd" id="1_8w3nk"]
 
 [node name="Heart" type="Node2D"]
+script = ExtResource("1_8w3nk")
+object_name = "heart"

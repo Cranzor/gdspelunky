@@ -1,4 +1,3 @@
-
 extends Item
 
 
@@ -17,24 +16,23 @@ func _process(delta):
 #--- Object functions
 
 
-#func create():
-    #    # action_inherited
-#    super()
+func create():
+	# action_inherited
+	super()
 
-#    # main_code
-#    type = "Key"
-#    PlatformEngine.make_active(self)
-#    Collision.set_collision_bounds(self, -4, -4, 4, 4)
-#    cost = 0
+	# main_code
+	type = "key"
+	PlatformEngine.make_active(self)
+	Collision.set_collision_bounds(self, -4, -4, 4, 4)
+	cost = 0
 
-    
 
-#func step():
-    #    # action_inherited
-#    super()
+func step():
+	# action_inherited
+	super()
 
-#    # main_code
-#    if (held):
-
-#        if (player1.facing == 18): sprite_index = "key_left"
-#        else: sprite_index = "key_right"
+	# main_code
+	if (held):
+		var player1 = gml.get_instance("player1") #---[FLAG] may need to change for multiplayer
+		if (player1.facing == 18): sprite_index = "key_left"
+		else: sprite_index = "key_right"

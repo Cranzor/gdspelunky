@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://xiivvt6qmij0"]
 
-[sub_resource type="GDScript" id="GDScript_vw06j"]
+[ext_resource type="Script" path="res://objects/effects/blood_spark/blood_spark.gd" id="1_0a0ep"]
 
 [node name="BloodSpark" type="Node2D"]
+script = ExtResource("1_0a0ep")
+object_name = "blood_spark"

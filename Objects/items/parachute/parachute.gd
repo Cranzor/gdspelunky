@@ -1,4 +1,3 @@
-
 extends GMObject
 
 
@@ -17,22 +16,19 @@ func _process(delta):
 #--- Object functions
 
 
-#func animation_end():
-    #    if (sprite_index == "para_open): sprite_index = s_parachute"
-
-    
-
-#func collision with o_item():
-    #    if (other.x_vel > 0 or other.y_vel > 0):
-
-#        gml.instance_create(position.x, position.y, Objects.para_used)
-#        gml.instance_destroy()
+func animation_end():
+	if (sprite_index == "para_open"): sprite_index = "parachute"
 
 
-    
+func collision_with_item():
+	if (other.x_vel > 0 or other.y_vel > 0):
 
-#func step():
-    #    if (gml.instance_exists("player1")):
+		gml.instance_create(position.x, position.y, Objects.para_used)
+		gml.instance_destroy(self)
 
-#        position.x = player1.position.x - 8
-#        position.y = player1.position.y - 16
+
+func step():
+	if (gml.instance_exists("player1")):
+		var player1 = gml.get_instance("player1") #---[FLAG] may need to update this for multiplayer
+		position.x = player1.position.x - 8
+		position.y = player1.position.y - 16

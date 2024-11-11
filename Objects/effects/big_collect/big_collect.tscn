@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://b6yebsnrbagij"]
 
-[sub_resource type="GDScript" id="GDScript_8ualn"]
+[ext_resource type="Script" path="res://objects/effects/big_collect/big_collect.gd" id="1_d0vfi"]
 
 [node name="BigCollect" type="Node2D"]
+script = ExtResource("1_d0vfi")
+object_name = "big_collect"

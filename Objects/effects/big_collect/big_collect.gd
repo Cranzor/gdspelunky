@@ -1,4 +1,3 @@
-
 extends DrawnSprite
 
 
@@ -17,19 +16,18 @@ func _process(delta):
 #--- Object functions
 
 
-#func alarm 0():
-    #    # action_kill_object
-#    gml.instance_destroy(self)
-    
+func alarm_0():
+	# action_kill_object
+	gml.instance_destroy(self)
+	
 
-#func create():
-    #    # action_inherited
-#    super()
+func create():
+	# action_inherited
+	super()
 
-#    # main_code
-#    alarm_0(30)
+	# main_code
+	alarm_0_countdown.start(30)
 
-    
 
-#func step():
-    #    position.y -= 1
+func step():
+	position.y -= 1
