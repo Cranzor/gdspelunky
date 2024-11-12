@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cp45v5q2jf4xx"]
 
-[sub_resource type="GDScript" id="GDScript_b2ba5"]
+[ext_resource type="Script" path="res://objects/items/mattock/mattock.gd" id="1_12gab"]
 
 [node name="Mattock" type="Node2D"]
+script = ExtResource("1_12gab")
+object_name = "mattock"

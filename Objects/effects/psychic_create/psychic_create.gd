@@ -1,4 +1,3 @@
-
 extends DrawnSprite
 
 
@@ -17,24 +16,24 @@ func _process(delta):
 #--- Object functions
 
 
-#func animation_end():
-    #    # action_kill_object
-#    gml.instance_destroy(self)
-    
+func animation_end():
+	# action_kill_object
+	gml.instance_destroy(self)
+	
 
-#func create():
-    #    # action_inherited
-#    super()
+func create():
+	# action_inherited
+	super()
 
-#    # main_code
-#    y_vel = 0
-#    y_acc = 0.6
-#    image_speed = 0.4
-#    grav = 0
-#    dir = point_direction(position.x, position.y, alien_boss.position.x+16, alien_boss.position.y+16)
+	# main_code
+	y_vel = 0
+	y_acc = 0.6
+	image_speed = 0.4
+	grav = 0
+	var alien_boss = gml.get_instance("alien_boss")
+	dir = gml.point_direction(position.x, position.y, alien_boss.position.x+16, alien_boss.position.y+16)
 
-    
 
-#func step():
-    #    position.x += 2 * cos(degtorad(dir))
-#    position.y += -2 * sin(degtorad(dir))
+func step():
+	position.x += 2 * cos(gml.degtorad(dir))
+	position.y += -2 * sin(gml.degtorad(dir))

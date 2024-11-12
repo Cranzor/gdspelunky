@@ -2,10 +2,9 @@
 
 [ext_resource type="Script" path="res://objects/effects/poof/poof.gd" id="1_cjwki"]
 
-[node name="Poof" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
+[node name="Poof" type="Node2D"]
 z_index = -1
 script = ExtResource("1_cjwki")
 sprite_index_name = "poof"
-animated_sprite_node = NodePath("")
 sprite_offset = Vector2(4, 4)
 object_name = "poof"

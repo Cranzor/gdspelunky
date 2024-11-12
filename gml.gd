@@ -137,8 +137,9 @@ func distance_to_object(obj: String, node): #Make this more accurate with this i
 		return distance
 	else: #------------------ testing with this for now. not exactly sure how GML handles this
 		return -1
-		
-		#var distance =
+
+func point_direction(x1, y1, x2, y2): #---[FLAG] have to implement
+	pass
 		
 func instance_place(x,y,obj: String, comparison_object): #' Returns the id of the instance of type obj met when the current instance is placed at position (x,y). obj can be an object or the keyword all. If it does not exist, the special object noone is returned.'
 	#--- think this function actually accounts for precise checking
@@ -370,7 +371,7 @@ func room_get_name():
 	var room_name = root.room_name
 	return room_name
 
-func draw_sprite_ext(node, sprite, subimg, x, y, xscale, yscale, rot, color, alpha): #--- [FLAG] implement
+func draw_sprite_ext(node, sprite, subimg, x, y, xscale, yscale, rot, color, alpha):
 	node.sprite_index = sprite
 	node.image_index = subimg
 	node.animated_sprite_node.position = Vector2(x, y)
@@ -379,6 +380,10 @@ func draw_sprite_ext(node, sprite, subimg, x, y, xscale, yscale, rot, color, alp
 	node.animated_sprite_node.self_modulate = color
 	node.animated_sprite_node.self_modulate.a = alpha
 
+func degtorad(deg): #---[FLAG] need to test
+	var angle_radians = deg * PI / 180
+	return angle_radians
+	
 #------------------------
 func singleton_test():
 	var bg_holder_list = get_tree().get_nodes_in_group('BgHolder')

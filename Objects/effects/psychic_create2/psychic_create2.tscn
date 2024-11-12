@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://b66a1bxfw73md"]
 
-[sub_resource type="GDScript" id="GDScript_ldh2m"]
+[ext_resource type="Script" path="res://objects/effects/psychic_create2/psychic_create2.gd" id="1_dnoae"]
 
 [node name="PsychicCreate2" type="Node2D"]
+script = ExtResource("1_dnoae")
+object_name = "psychic_create2"

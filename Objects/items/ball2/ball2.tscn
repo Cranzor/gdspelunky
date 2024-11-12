@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://8q3t7padhara"]
 
-[sub_resource type="GDScript" id="GDScript_orlav"]
+[ext_resource type="Script" path="res://objects/items/ball2/ball2.gd" id="1_d1yw4"]
 
 [node name="Ball2" type="Node2D"]
+script = ExtResource("1_d1yw4")
+object_name = "ball2"
