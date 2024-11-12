@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://dbwxjjlotidbg"]
 
-[sub_resource type="GDScript" id="GDScript_54ifj"]
+[ext_resource type="Script" path="res://objects/init/slider1/slider1.gd" id="1_554xg"]
 
 [node name="Slider1" type="Node2D"]
+script = ExtResource("1_554xg")
+object_name = "slider1"

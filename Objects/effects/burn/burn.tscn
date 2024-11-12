@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://biyu0hfkprx5n"]
 
-[sub_resource type="GDScript" id="GDScript_jobvi"]
+[ext_resource type="Script" path="res://objects/effects/burn/burn.gd" id="1_mnl06"]
 
 [node name="Burn" type="Node2D"]
+script = ExtResource("1_mnl06")
+object_name = "burn"

@@ -9,3 +9,6 @@ func _ready():
 	persistent = false
 	parent = Enemy
 	mask
+
+func step():
+	pass

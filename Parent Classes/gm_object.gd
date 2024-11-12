@@ -296,6 +296,7 @@ func object_setup():
 	##collision_setup()
 	alarms_setup(object_entry)
 	collision_with_setup(object_entry)
+	#---[FLAG] have to set up outside_room function
 	
 	#--- keep the below enabled even if objects are set up in the editor
 	connect_alarms(object_entry)

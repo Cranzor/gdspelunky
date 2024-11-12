@@ -25,7 +25,6 @@ var y_vel_limit
 var favor
 var sac_count
 var counts_as_kill
-var burning
 var swimming
 
 var LEFT
@@ -41,7 +40,6 @@ var bomb_id
 
 var sprite_width
 var sprite_height
-var counter
 
 var s_spikes_blood
 var s_alien_boss_hurt

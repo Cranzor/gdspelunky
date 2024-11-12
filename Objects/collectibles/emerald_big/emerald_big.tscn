@@ -2,10 +2,8 @@
 
 [ext_resource type="Script" path="res://objects/collectibles/emerald_big/emerald_big.gd" id="1_pt4o7"]
 
-[node name="EmeraldBig" type="Node2D" node_paths=PackedStringArray("animated_sprite_node", "alarm_0_countdown")]
+[node name="EmeraldBig" type="Node2D"]
 script = ExtResource("1_pt4o7")
 sprite_index_name = "emerald_big"
-animated_sprite_node = NodePath("")
 sprite_offset = Vector2(4, 4)
 object_name = "emerald_big"
-alarm_0_countdown = NodePath("")

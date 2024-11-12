@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://b5o1dxuta5ai8"]
 
-[sub_resource type="GDScript" id="GDScript_vxf0n"]
+[ext_resource type="Script" path="res://objects/blocks/tree_branch/tree_branch.gd" id="1_8wyud"]
 
 [node name="TreeBranch" type="Node2D"]
+script = ExtResource("1_8wyud")
+object_name = "tree_branch"

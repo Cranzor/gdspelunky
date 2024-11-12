@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bcajqtq8pigx5"]
 
-[sub_resource type="GDScript" id="GDScript_yqdpl"]
+[ext_resource type="Script" path="res://objects/characters/shopkeeper2/shopkeeper2.gd" id="1_ce27q"]
 
 [node name="Shopkeeper2" type="Node2D"]
+script = ExtResource("1_ce27q")
+object_name = "shopkeeper2"

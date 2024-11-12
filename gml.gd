@@ -34,6 +34,7 @@ var c_white = Color(255, 255, 255)
 var c_yellow = Color(255, 255, 0)
 
 var room_speed = 30
+var view_enabled = true #--- doesn't seem to be false in any instance within the game
 
 func string_char_at(passed_string,index):
 	var character = passed_string[index - 1]

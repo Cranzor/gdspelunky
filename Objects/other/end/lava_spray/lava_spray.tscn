@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://136pdxpg2yts"]
 
-[sub_resource type="GDScript" id="GDScript_n2og7"]
+[ext_resource type="Script" path="res://objects/other/end/lava_spray/lava_spray.gd" id="1_0ke1c"]
 
 [node name="LavaSpray" type="Node2D"]
+script = ExtResource("1_0ke1c")
+object_name = "lava_spray"
