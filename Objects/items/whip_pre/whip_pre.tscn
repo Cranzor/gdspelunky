@@ -2,11 +2,9 @@
 
 [ext_resource type="Script" path="res://objects/items/whip_pre/whip_pre.gd" id="1_sbivy"]
 
-[node name="WhipPre" type="Node2D" node_paths=PackedStringArray("animated_sprite_node", "alarm_0_countdown")]
+[node name="WhipPre" type="Node2D"]
 z_index = -1
 script = ExtResource("1_sbivy")
 sprite_index_name = "whip_pre_r"
-animated_sprite_node = NodePath("")
 sprite_offset = Vector2(8, 8)
 object_name = "whip_pre"
-alarm_0_countdown = NodePath("")

@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://c8ck60wqng207"]
 
-[sub_resource type="GDScript" id="GDScript_i1wkd"]
+[ext_resource type="Script" path="res://objects/items/slash/slash.gd" id="1_j26vj"]
 
 [node name="Slash" type="Node2D"]
+script = ExtResource("1_j26vj")
+object_name = "slash"

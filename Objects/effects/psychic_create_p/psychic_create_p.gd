@@ -1,4 +1,3 @@
-
 extends DrawnSprite
 
 
@@ -17,28 +16,26 @@ func _process(delta):
 #--- Object functions
 
 
-#func animation_end():
-    #    # action_kill_object
-#    gml.instance_destroy(self)
-    
+func animation_end():
+	# action_kill_object
+	gml.instance_destroy(self)
+	
 
-#func collision with o_solid():
-    #    gml.instance_destroy()
+func collision_with_solid():
+	gml.instance_destroy(self)
 
-    
 
-#func create():
-    #    # action_inherited
-#    super()
+func create():
+	# action_inherited
+	super()
 
-#    # main_code
-#    x_vel = 0
-#    y_vel = 0
-#    image_speed = 0.2
+	# main_code
+	x_vel = 0
+	y_vel = 0
+	image_speed = 0.2
 
-    
 
-#func step():
-    #    position.x += x_vel
-#    position.y += y_vel
-#    if (y_vel < 6): y_vel += 0.6
+func step():
+	position.x += x_vel
+	position.y += y_vel
+	if (y_vel < 6): y_vel += 0.6

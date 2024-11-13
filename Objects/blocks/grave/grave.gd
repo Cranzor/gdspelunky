@@ -1,4 +1,3 @@
-
 extends Solid
 
 
@@ -17,35 +16,32 @@ func _process(delta):
 #--- Object functions
 
 
-#func create():
-    #    # action_inherited
-#    super()
+func create():
+	# action_inherited
+	super()
 
-#    # main_code
-#    n = randi_range(1,5)
-#    match (n)
+	# main_code
+	var n = randi_range(1,5)
+	match (n):
 
-#        1:  sprite_index = "grave2  "
-#        2:  sprite_index = "grave3  "
-#        3:  sprite_index = "grave4  "
-#        4:  sprite_index = "grave5  "
-#        5:  sprite_index = "grave6  "
+		1:  sprite_index = "grave2"
+		2:  sprite_index = "grave3"
+		3:  sprite_index = "grave4"
+		4:  sprite_index = "grave5"
+		5:  sprite_index = "grave6"
 
 
-    
+func destroy():
+	var rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), Objects.rubble)
+	rubble.sprite_index = "rubble_tan"
+	rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), Objects.rubble_small)
+	rubble.sprite_index = "rubble_tan_small"
+	rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), Objects.rubble_small)
+	rubble.sprite_index = "rubble_tan_small"
+	
 
-#func destroy():
-    #    rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), Objects.rubble)
-#    rubble.sprite_index = "rubble_tan"
-#    rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), Objects.rubble_small)
-#    rubble.sprite_index = "rubble_tan_small"
-#    rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), Objects.rubble_small)
-#    rubble.sprite_index = "rubble_tan_small"
+func step():
+	if ((position.x > gml.view("xview")-20 and position.x < gml.view("xview") + gml.view("wview")+4 and
+		position.y > gml.view("yview")-20 and position.y < gml.view("yview") + gml.view("hview")+4)):
 
-    
-
-#func step():
-    #    if ((position.x > view_xview[0]-20 and position.x < view_xview[0] + view_wview[0]+4 and:
-#            position.y > view_yview[0]-20 and position.y < view_yview[0] + view_hview[0]+4))
-
-#        if (not gml.collision_point(position.x, position.y+16, "solid", 0, 0)): gml.instance_destroy()
+		if (not gml.collision_point(position.x, position.y+16, "solid", 0, 0)): gml.instance_destroy(self)

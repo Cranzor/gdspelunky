@@ -1,20 +1,33 @@
-extends DrawnSprite #--- changing this to DrawnSprite
+extends GMObject
 
 
 func _ready():
 	object_setup()
 
-	# gamepad
+
+func _physics_process(_delta):
+	object_tick()
+
+
+func _process(delta):
+	object_process(delta)
+
+
+#--- Object functions
+
+
+func create():
+	#DY: gamepad
 
 	var joyid
 
 	joyid = 1
 
-	#if (not joystick_exists(1) and joystick_exists(2)): joyid = 2 # --- shouldn't need this for anything
+	#if (not joystick_exists(1) and joystick_exists(2)): joyid = 2 #--- shouldn't need this for anything
 
 	#
 
-	global.level_select = 0 #DEBUG
+	global.level_select = 0 #DY: DEBUG
 
 	global.custom_level = false
 	global.test_level = ""
@@ -73,4 +86,4 @@ func _ready():
 		MiscScripts.scr_reset_highscores()
 		global.first_time = true
 
-	#get_tree().change_scene("res://r_level.tscn")
+	#DY: get_tree().change_scene("res://rooms/level/level.tscn")

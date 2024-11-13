@@ -13,6 +13,15 @@ var solid = false
 var dir #---[FLAG] not exactly sure what this does
 var status #--- declaring this here for objects that use it but don't have drawn_sprite as their parent
 var counter #--- same as above
+var type
+var my_grav
+var trigger
+
+#--- want access to these for all objects, so defining here
+var collision_bounds_offset_left_x
+var collision_bounds_offset_top_y
+var collision_bounds_offset_right_x
+var collision_bounds_offset_bottom_y
 
 var moving_object = false
 

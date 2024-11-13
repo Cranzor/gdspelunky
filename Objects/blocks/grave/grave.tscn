@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://6rlxrq2733fk"]
 
-[sub_resource type="GDScript" id="GDScript_5u0ua"]
+[ext_resource type="Script" path="res://objects/blocks/grave/grave.gd" id="1_pejtd"]
 
 [node name="Grave" type="Node2D"]
+script = ExtResource("1_pejtd")
+object_name = "grave"

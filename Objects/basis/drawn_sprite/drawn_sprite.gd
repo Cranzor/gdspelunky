@@ -6,14 +6,7 @@ var persistent = false
 var parent
 var mask
 
-var type
 var blink_toggle
-
-#--- want access to these for all objects, so defining here
-var collision_bounds_offset_left_x
-var collision_bounds_offset_top_y
-var collision_bounds_offset_right_x
-var collision_bounds_offset_bottom_y
 
 var invincible
 var IDLE
@@ -28,7 +21,6 @@ var active
 var held #--- seems easier to put this here since both items and enemies use it
 var grav
 var bounce
-var my_grav
 var safe
 var heavy
 var value
@@ -49,7 +41,6 @@ var STUNNED = 98 #--- making this a variable and not a constant because it is se
 var stun_time
 var damage
 var puncture
-var trigger
 var left
 var right
 var burning

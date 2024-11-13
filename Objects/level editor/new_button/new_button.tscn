@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://dygb6vwuiwwfh"]
 
-[sub_resource type="GDScript" id="GDScript_2varx"]
+[ext_resource type="Script" path="res://objects/level editor/new_button/new_button.gd" id="1_maxjh"]
 
 [node name="NewButton" type="Node2D"]
+script = ExtResource("1_maxjh")
+object_name = "new_button"

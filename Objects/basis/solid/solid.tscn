@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://csce7fyjeng8e"]
 
-[sub_resource type="GDScript" id="GDScript_ots3w"]
+[ext_resource type="Script" path="res://objects/basis/solid/solid.gd" id="1_f2mu1"]
 
 [node name="Solid" type="Node2D"]
+script = ExtResource("1_f2mu1")
+object_name = "solid"

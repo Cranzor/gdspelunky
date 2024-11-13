@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://c0hi2jdnsmqo4"]
 
-[sub_resource type="GDScript" id="GDScript_66p5x"]
+[ext_resource type="Script" path="res://objects/items/bow/bow.gd" id="1_abd7b"]
 
 [node name="Bow" type="Node2D"]
+script = ExtResource("1_abd7b")
+object_name = "bow"

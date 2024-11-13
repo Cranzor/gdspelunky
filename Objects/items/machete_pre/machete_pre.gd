@@ -1,4 +1,3 @@
-
 extends WhipPre
 
 
@@ -17,32 +16,30 @@ func _process(delta):
 #--- Object functions
 
 
-#func alarm 0():
-    #    gml.instance_destroy()
+func alarm_0():
+	gml.instance_destroy(self)
 
-    
 
-#func create():
-    #    # action_inherited
-#    super()
+func create():
+	# action_inherited
+	super()
 
-#    # main_code
-#    type = "Machete"
-#    damage = 2
+	# main_code
+	type = "machete"
+	damage = 2
 
-    
 
-#func step():
-    #    if (not gml.instance_exists("player1")):
+func step():
+	if (not gml.instance_exists("player1")):
 
-#        gml.instance_destroy()
+		gml.instance_destroy(self)
+	
+	elif (sprite_index == "machete_pre_r"):
+		var player1 = gml.get_instance("player1") #---[FLAG] may have to change for multiplayer
+		position.x = player1.position.x-16
+		position.y = player1.position.y
 
-#    elif (sprite_index = "machete_pre_r):"
-
-#        position.x = player1.position.x-16
-#        position.y = player1.position.y
-
-#    elif (sprite_index = "machete_pre_l):"
-
-#        position.x = player1.position.x+16
-#        position.y = player1.position.y
+	elif (sprite_index == "machete_pre_l"):
+		var player1 = gml.get_instance("player1") #---[FLAG] may have to change for multiplayer
+		position.x = player1.position.x+16
+		position.y = player1.position.y
