@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bu3vj8g7r5g0a"]
 
-[sub_resource type="GDScript" id="GDScript_lhc6o"]
+[ext_resource type="Script" path="res://objects/basis/detritus/detritus.gd" id="1_jwvpx"]
 
 [node name="Detritus" type="Node2D"]
+script = ExtResource("1_jwvpx")
+object_name = "detritus"

@@ -1,16 +1,21 @@
 extends Item
 
+
 func _ready():
 	object_setup()
+
 
 func _physics_process(_delta):
 	object_tick()
 
+
 func _process(delta):
 	object_process(delta)
 	
+	
 #--- Object functions
 var dist_to_player
+
 
 func alarm_0():
 	#gml.instance_create(position.x+randi_range(0,3)-randi_range(0,3), position.y+randi_range(0,3)-randi_range(0,3), Objects.flare_spark) #---

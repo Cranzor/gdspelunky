@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://c13uyi04qpg30"]
 
-[sub_resource type="GDScript" id="GDScript_66avs"]
+[ext_resource type="Script" path="res://objects/collectibles/locked_chest/locked_chest.gd" id="1_3xwdl"]
 
 [node name="LockedChest" type="Node2D"]
+script = ExtResource("1_3xwdl")
+object_name = "locked_chest"

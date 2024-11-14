@@ -1,4 +1,3 @@
-
 extends Enemy
 
 
@@ -17,55 +16,55 @@ func _process(delta):
 #--- Object functions
 
 
-#func create():
-    #    # action_inherited
-#    super()
+func create():
+	# action_inherited
+	super()
 
-#    # main_code
-#    PlatformEngine.make_active(self)
-#    Collision.set_collision_bounds(self, 4, 0, 12, 12)
-#    x_vel = 0
-#    y_vel = 0
-#    y_delta = -0.4
-#    image_speed = 0.4
+	# main_code
+	PlatformEngine.make_active(self)
+	Collision.set_collision_bounds(self, 4, 0, 12, 12)
+	x_vel = 0
+	y_vel = 0
+	y_delta = -0.4
+	image_speed = 0.4
 
-#    # DY:  stats
-#    hp = 1
-#    invincible = 0
+	# DY:  stats
+	hp = 1
+	invincible = 0
 
-#    # DY:  status
-#    IDLE = 0
-#    BOUNCE = 1
-#    RECOVER = 2
-#    WALK = 3
+	# DY:  status
+	IDLE = 0
+	BOUNCE = 1
+	RECOVER = 2
+	WALK = 3
 
-#    status = 0
-#    bounce_counter = 0
+	status = 0
+	bounce_counter = 0
 
-#    shake_counter = 0
-#    shake_toggle = 1
+	shake_counter = 0
+	shake_toggle = 1
 
-    
 
-#func step():
-    #    if ((position.x > view_xview[0]-20 and position.x < view_xview[0] + view_wview[0]+4 and:
-#            position.y > view_yview[0]-20 and position.y < view_yview[0] + view_hview[0]+4))
+func step():
+	if ((position.x > gml.view("xview")-20 and position.x < gml.view("xview") + gml.view("wview")+4 and
+		position.y > gml.view("yview")-20 and position.y < gml.view("yview") + gml.view("hview")+4)):
+		
+		var character = gml.get_instance("character") #---[FLAG] may need to change this for multiplayer
+		dist = gml.distance_to_object("character", self)
+		if (gml.collision_point(position.x+8, position.y+4, "solid", 0, 0)):
 
-#    dist = gml.distance_to_object(character)
-#    if (gml.collision_point(position.x+8, position.y+4, "solid", 0, 0)):
+			hp = 0
 
-#        hp = 0
+		if (hp < 1):
 
-#    if (hp < 1):
+			MiscScripts.scr_create_blood(position.x+8, position.y+8, 3)
+			if (InLevel.is_real_level()): global.enemy_kills[2] += 1
+			global.spiders += 1
+			global.kills += 1
+			gml.instance_destroy(self)
 
-#        MiscScripts.scr_create_blood(position.x+8, position.y+8, 3)
-#        if (InLevel.is_real_level()): global.enemy_kills[2] += 1
-#        global.spiders += 1
-#        global.kills += 1
-#        gml.instance_destroy()
+		elif (not gml.collision_point(position.x, position.y-16, "solid", 0, 0) or (dist < 90 and character.position.y > position.y and abs(character.position.x - (position.x+8)) < 8)):
 
-#    elif (not gml.collision_point(position.x, position.y-16, "solid", 0, 0) or (dist < 90 and character.position.y > position.y and abs(character.position.x - (position.x+8)) < 8)):
-
-#      spider = gml.instance_create(position.x, position.y, Objects.spider)
-#      spider.hp = hp
-#      gml.instance_destroy()
+			var spider = gml.instance_create(position.x, position.y, Objects.spider)
+			spider.hp = hp
+			gml.instance_destroy(self)

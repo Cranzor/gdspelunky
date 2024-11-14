@@ -32,14 +32,16 @@ var RIGHT
 
 
 var DEAD
+var BOUNCE
+var RECOVER
+var bounce_counter
 var bomb_id
-
-
 
 @onready var player1 = get_tree().get_first_node_in_group("player1") #--- FLAG change this
 
 var sprite_width
 var sprite_height
+var y_delta
 
 var s_spikes_blood
 var s_alien_boss_hurt

@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bj0i8v5p18sk8"]
 
-[sub_resource type="GDScript" id="GDScript_miwa0"]
+[ext_resource type="Script" path="res://objects/collectibles/cape/cape.gd" id="1_qaaer"]
 
 [node name="Cape" type="Node2D"]
+script = ExtResource("1_qaaer")
+object_name = "cape"

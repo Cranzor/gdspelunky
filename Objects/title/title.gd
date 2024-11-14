@@ -1,4 +1,4 @@
-extends DrawnSprite #--- changing this even though there is no parent
+extends GMObject
 
 func _ready():
 	object_setup()

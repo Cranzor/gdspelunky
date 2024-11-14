@@ -44,6 +44,9 @@ var puncture
 var left
 var right
 var burning
+var life
+var dying
+var dist
 
 func create():
 	visible = true #--- believe I put this due to how Game Maker handles it

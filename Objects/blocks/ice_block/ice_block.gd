@@ -1,4 +1,3 @@
-
 extends MoveableSolid
 
 
@@ -17,38 +16,34 @@ func _process(delta):
 #--- Object functions
 
 
-#func create():
-    #    # action_inherited
-#    super()
+func create():
+	# action_inherited
+	super()
 
-#    # main_code
-#    invincible = false
-#    Collision.set_collision_bounds(self, 0, 0, 16, 16)
-#    if (global.city_of_gold): sprite_index = "gold_block"
-#    clean_death = false
-
-    
-
-#func destroy():
-    #    if (not clean_death and not global.clean_solids):
-
-#        for repetition in range(1, 3):
-    
-#            gml.instance_create(position.x+randi_range(0,16), position.y+randi_range(0,16), Objects.drip)
-    
+	# main_code
+	invincible = false
+	Collision.set_collision_bounds(self, 0, 0, 16, 16)
+	if (global.city_of_gold): sprite_index = "gold_block"
+	clean_death = false
 
 
-    
+func destroy():
+	if (not clean_death and not global.clean_solids):
 
-#func step():
-    #    # action_inherited
-#    super()
+		for repetition in range(1, 3):
+	
+			gml.instance_create(position.x+randi_range(0,16), position.y+randi_range(0,16), Objects.drip)
+		
 
-#    # main_code
-#    if (gml.collision_point(position.x+8, position.y+16, "lava", 0, 0) and not gml.collision_point(position.x+8, position.y+17, "solid", 0, 0)):
+func step():
+	# action_inherited
+	#super() #--- commenting out as this seems to do nothing, since moveable_solid has no step function 
 
-#        y_vel = 0
-#        my_grav = 0
-#        position.y += 0.05
+	# main_code
+	if (gml.collision_point(position.x+8, position.y+16, "lava", 0, 0) and not gml.collision_point(position.x+8, position.y+17, "solid", 0, 0)):
 
-#    if (position.y > 576): gml.instance_destroy()
+		y_vel = 0
+		my_grav = 0
+		position.y += 0.05
+
+	if (position.y > 576): gml.instance_destroy(self)

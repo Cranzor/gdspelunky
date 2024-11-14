@@ -120,7 +120,7 @@ var has_udjat_eye
 var hawkmen
 var idols
 var idols_converted
-var idols_grabbed
+var idols_grabbed: int
 var is_damsel
 var is_tunnel_man
 var items_bought
