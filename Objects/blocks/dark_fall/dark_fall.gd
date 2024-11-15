@@ -27,7 +27,7 @@ func _process(delta):
 #        obj.y_vel = -randi_range(0,3)
 
 
-#    gml.instance_destroy()
+#    gml.instance_destroy(self)
 
     
 

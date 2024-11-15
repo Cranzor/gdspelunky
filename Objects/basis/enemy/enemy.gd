@@ -178,19 +178,19 @@ func _process(delta):
     
 
 #func outside room():
-    #    gml.instance_destroy()
+    #    gml.instance_destroy(self)
 
     
 
 #func step():
     #    /*
-#    if ((position.x > view_xview[0]-8 and position.x < view_xview[0]+view_wview[0]+8 and:
-#         position.y > view_yview[0]-8 and position.y < view_yview[0]+view_hview[0]+8))
+#    if ((position.x > gml.view("xview")-8 and position.x < gml.view("xview")+gml.view("wview")+8 and:
+#         position.y > gml.view("yview")-8 and position.y < gml.view("yview")+gml.view("hview")+8))
 
 #    */
 
-#    if ((position.x > view_xview[0]-20 and position.x < view_xview[0]+view_wview[0]+4 and:
-#         position.y > view_yview[0]-20 and position.y < view_yview[0]+view_hview[0]+4))
+#    if ((position.x > gml.view("xview")-20 and position.x < gml.view("xview")+gml.view("wview")+4 and:
+#         position.y > gml.view("yview")-20 and position.y < gml.view("yview")+gml.view("hview")+4))
 
 
 #    active = true
@@ -230,7 +230,7 @@ func _process(delta):
     
 #            obj = gml.instance_create(position.x, position.y, Objects.frog)
 #            obj.status = status
-#            gml.instance_destroy()
+#            gml.instance_destroy(self)
     
 
 #    else:
@@ -245,7 +245,7 @@ func _process(delta):
 #        burning -= 1
 
 
-#    if (gml.collision_point(position.x+floor(sprite_width/2), position.y-1, "lava", 0, 0)): gml.instance_destroy()
+#    if (gml.collision_point(position.x+floor(sprite_width/2), position.y-1, "lava", 0, 0)): gml.instance_destroy(self)
 
 #    if (gml.collision_point(position.x+floor(sprite_width/2), position.y+sprite_height-2, "lava", 0, 0)):
 
@@ -296,7 +296,7 @@ func _process(delta):
     
 #        if (not bloodless):
     
-#            with spikes  sprite_index = "spikes_blood "
+#            with spikes  sprite_index = "spikes_blood" 
     
     
 #        if (hp > 0):
@@ -344,7 +344,7 @@ func _process(delta):
 #                scr_get_favor_msg()
 #                global.message_timer = 200
 #                global.shake = 10
-#                gml.instance_destroy()
+#                gml.instance_destroy(self)
             
         
     
@@ -432,7 +432,7 @@ func _process(delta):
 #                            if (randi_range(1,3) == 1): gml.instance_create(position.x+8, position.y+8, Objects.alien_eject)
 #                            global.ufos += 1
 #                            global.kills += 1
-#                            gml.instance_destroy()
+#                            gml.instance_destroy(self)
                     
 #                        else:
                     
@@ -446,7 +446,7 @@ func _process(delta):
                 
 #                    # DY:  obj.x_vel = x_vel * 0.3
                 
-#                    if (type == "Arrow" or type == "Fish Bone"): gml.instance_destroy()
+#                    if (type == "Arrow" or type == "Fish Bone"): gml.instance_destroy(self)
             
         
     

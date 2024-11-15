@@ -25,7 +25,7 @@ func _process(delta):
 #func animation_end():
     #    if (sprite_index == "magma_man_die):"
 
-#        gml.instance_destroy()
+#        gml.instance_destroy(self)
 
 
     
@@ -168,7 +168,7 @@ func _process(delta):
 #    else:
 
 #        gml.instance_create(position.x+8, position.y+8, Objects.magma)
-#        gml.instance_destroy()
+#        gml.instance_destroy(self)
 
 #    /*
 #    if (status != DEAD and hp < 1):
@@ -196,7 +196,7 @@ func _process(delta):
         
 #                magma = gml.instance_create(position.x+8, position.y+8, Objects.magma)
 #                magma.hp = hp
-#                gml.instance_destroy()
+#                gml.instance_destroy(self)
         
     
 

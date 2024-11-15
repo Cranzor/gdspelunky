@@ -37,7 +37,7 @@ func _process(delta):
 #            y_vel = -5
 #            counter = 300
     
-#        gml.instance_destroy()
+#        gml.instance_destroy(self)
 
 #    with caveman_worship
 
@@ -86,7 +86,7 @@ func _process(delta):
 #func alarm 5():
     #    view_hborder[0] = 128
 #    view_vborder[0] = 64
-#    view_xview[0] = 0
+#    gml.view("xview") = 0
 #    view_object[0] = player1
 #    player1.active = true
 #    status = 0
@@ -102,7 +102,7 @@ func _process(delta):
 #        obj = gml.instance_create(position.x, position.y, Objects.caveman)
 #        obj.facing = 1
 #        obj.status = 2
-#        gml.instance_destroy()
+#        gml.instance_destroy(self)
 
 
     
@@ -144,7 +144,7 @@ func _process(delta):
 
 #    view_hborder[0] = 0
 #    view_vborder[0] = 0
-#    view_yview[0] = 400
+#    gml.view("yview") = 400
 #    view_object[0] = olmec
 
 
@@ -194,7 +194,7 @@ func _process(delta):
 #        global.enemy_kills[21] += 1
 #        final_boss.olmec_dead = true
 #        global.kills += 1
-#        gml.instance_destroy()
+#        gml.instance_destroy(self)
 
 
 #    dist = gml.distance_to_object(player1) + 32
@@ -205,7 +205,7 @@ func _process(delta):
 
 #    if (status == START1):
 
-#        if (view_xview[0] < 176): view_xview[0] += 2
+#        if (gml.view("xview") < 176): gml.view("xview") += 2
 #        else:
     
 #            alarm_1(100)

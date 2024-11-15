@@ -34,7 +34,7 @@ func _process(delta):
 
 #        if (character): character.hold_item = 0
 
-#    gml.instance_destroy()
+#    gml.instance_destroy(self)
 
     
 
@@ -80,7 +80,7 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    if (sprite_index = "bomb_armed): depth = 49"
+#    if (sprite_index = "bomb_armed):" depth = 49
 #    if (sticky): depth = 1
 
 #    if (armed and gml.instance_exists("shopkeeper")):

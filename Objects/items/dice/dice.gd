@@ -43,8 +43,8 @@ func _process(delta):
     
 
 #func step():
-    #    if ((position.x > view_xview[0]-16 and position.x < view_xview[0] + view_wview[0]+16 and:
-#            position.y > view_yview[0]-16 and position.y < view_yview[0] + view_hview[0]+16))
+    #    if ((position.x > gml.view("xview")-16 and position.x < gml.view("xview") + gml.view("wview")+16 and:
+#            position.y > gml.view("yview")-16 and position.y < gml.view("yview") + gml.view("hview")+16))
 
 #        if (cost > 0 and:
 #            not gml.instance_exists("shopkeeper"))
@@ -148,7 +148,7 @@ func _process(delta):
     
 #            if (gml.collision_point(position.x, position.y-5, "lava", 0, 0)):
         
-#                gml.instance_destroy()
+#                gml.instance_destroy(self)
         
     
 

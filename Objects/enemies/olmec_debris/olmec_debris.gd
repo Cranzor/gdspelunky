@@ -62,7 +62,7 @@ func _process(delta):
 #            else:
         
 #                gml.instance_create(position.x, position.y, Objects.smoke_puff)
-#                gml.instance_destroy()
+#                gml.instance_destroy(self)
         
         
 #            # DY:  friction

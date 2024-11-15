@@ -31,15 +31,15 @@ func _process(delta):
 	#    if (sprite_index == "edit_button_pressed):"
 
 #        level_editor.status = 2
-#        with new_button  gml.instance_destroy() 
-#        with test_button  gml.instance_destroy() 
-#        gml.instance_destroy()
+#        with new_button  gml.instance_destroy(self) 
+#        with test_button  gml.instance_destroy(self) 
+#        gml.instance_destroy(self)
 
 #    sprite_index = "edit_button"
 
 	
 
 #func step():
-	#    position.x = view_xview[0]+16
-#    if (view_yview[0] == 0): position.y = view_yview[0]+view_hview[0]-32
-#    else: position.y = view_yview[0]+16
+	#    position.x = gml.view("xview")+16
+#    if (gml.view("yview") == 0): position.y = gml.view("yview")+gml.view("hview")-32
+#    else: position.y = gml.view("yview")+16

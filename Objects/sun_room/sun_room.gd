@@ -130,10 +130,10 @@ func _process(delta):
 #    if (life < 0): life = 0
 #    draw_set_font(global.my_font)
 #    draw_set_color(c_white)
-#    draw_sprite(s_heart, -1, view_xview[0]+8, view_yview[0]+8)
-#    draw_text(view_xview[0]+24, view_yview[0]+8, life)
-#    draw_sprite(s_damsel_icon, -1, view_xview[0]+64, view_yview[0]+8)
-#    draw_text(view_xview[0]+64+16, view_yview[0]+8, points)
+#    draw_sprite(s_heart, -1, gml.view("xview")+8, gml.view("yview")+8)
+#    draw_text(gml.view("xview")+24, gml.view("yview")+8, life)
+#    draw_sprite(s_damsel_icon, -1, gml.view("xview")+64, gml.view("yview")+8)
+#    draw_text(gml.view("xview")+64+16, gml.view("yview")+8, points)
 #    if (draw_status < 3):
 
 #        draw_set_font(global.my_font_small)

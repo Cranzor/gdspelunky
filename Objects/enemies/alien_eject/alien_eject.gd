@@ -18,7 +18,7 @@ func _process(delta):
 
 
 #func animation_end():
-    #    if (sprite_index == "alien_deploy): sprite_index = s_alien_parachute"
+    #    if (sprite_index == "alien_deploy):" sprite_index = "alien_parachute"
 
     
 
@@ -39,7 +39,7 @@ func _process(delta):
 #            global.aliens += 1
 #            global.kills += 1
     
-#        gml.instance_destroy()
+#        gml.instance_destroy(self)
 
 #    elif (other.invincible == 0):
 
@@ -61,7 +61,7 @@ func _process(delta):
 
 #func collision with o_web():
     #    gml.instance_create(position.x-8, position.y-12, Objects.alien)
-#    gml.instance_destroy()
+#    gml.instance_destroy(self)
 
     
 
@@ -95,13 +95,13 @@ func _process(delta):
     
 
 #func outside room():
-    #    gml.instance_destroy()
+    #    gml.instance_destroy(self)
 
     
 
 #func step():
-    #    if ((position.x > view_xview[0]-20 and position.x < view_xview[0] + view_wview[0]+4 and:
-#            position.y > view_yview[0]-20 and position.y < view_yview[0] + view_hview[0]+16))
+    #    if ((position.x > gml.view("xview")-20 and position.x < gml.view("xview") + gml.view("wview")+4 and:
+#            position.y > gml.view("yview")-20 and position.y < gml.view("yview") + gml.view("hview")+16))
 
 #    position.x += x_vel
 #    position.y += y_vel
@@ -125,7 +125,7 @@ func _process(delta):
 #        if (gml.collision_point(position.x, position.y+6, "solid", 0, 0)):
     
 #            gml.instance_create(position.x-8, position.y-12, Objects.alien)
-#            gml.instance_destroy()
+#            gml.instance_destroy(self)
     
 #        elif (dir == 0):
     

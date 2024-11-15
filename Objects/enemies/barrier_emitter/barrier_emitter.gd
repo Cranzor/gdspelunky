@@ -18,14 +18,14 @@ func _process(delta):
 
 
 #func collision with o_bullet():
-    #    gml.instance_destroy()
+    #    gml.instance_destroy(self)
 
     
 
 #func collision with o_item():
     #    if (abs(other.x_vel) > 2 or abs(other.y_vel) > 2):
 
-#        gml.instance_destroy()
+#        gml.instance_destroy(self)
 
 
     
@@ -49,13 +49,13 @@ func _process(delta):
 #    Audio.play_sound(global.snd_small_explode)
 #    with barrier
 
-#        gml.instance_destroy()
+#        gml.instance_destroy(self)
 
 
     
 
 #func step():
-    #    if ((position.x > view_xview[0]-8 and position.x < view_xview[0] + view_wview[0]+8 and:
-#            position.y > view_yview[0]-8 and position.y < view_yview[0] + view_hview[0]+8))
+    #    if ((position.x > gml.view("xview")-8 and position.x < gml.view("xview") + gml.view("wview")+8 and:
+#            position.y > gml.view("yview")-8 and position.y < gml.view("yview") + gml.view("hview")+8))
 
-#        if (not gml.collision_point(position.x, position.y-16, "solid", 0, 0)): gml.instance_destroy()
+#        if (not gml.collision_point(position.x, position.y-16, "solid", 0, 0)): gml.instance_destroy(self)

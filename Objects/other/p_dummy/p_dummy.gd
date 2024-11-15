@@ -58,9 +58,9 @@ func _process(delta):
     
 
 #func animation_end():
-    #    if (sprite_index == "p_exit or sprite_index == s_damsel_exit or sprite_index == s_tunnel_exit):"
+    #    if (sprite_index == "p_exit" or sprite_index == "damsel_exit" or sprite_index == "tunnel_exit):"
 
-#        gml.instance_destroy()
+#        gml.instance_destroy(self)
 
 #    /*
 #    if (false and sprite_index == "p_exit):"
@@ -104,12 +104,12 @@ func _process(delta):
     #    if (facing == RIGHT): image_xscale = -1
 #    else: image_xscale = 1
 
-#    if ((sprite_index == "p_exit or sprite_index == s_damsel_exit or sprite_index == s_tunnel_exit) and global.has_jetpack):"
+#    if ((sprite_index == "p_exit" or sprite_index == "damsel_exit" or sprite_index == "tunnel_exit)" and global.has_jetpack):
 
 #        draw_sprite_ext(sprite_index, -1, position.x, position.y, image_xscale, image_yscale, image_angle, image_blend, image_alpha)
 #        draw_sprite(s_jetpack_back,-1,position.x,position.y)
 
-#    elif (sprite_index == "p_exit or sprite_index == s_damsel_exit or sprite_index == s_tunnel_exit):"
+#    elif (sprite_index == "p_exit" or sprite_index == "damsel_exit" or sprite_index == "tunnel_exit):"
 
 #        draw_sprite_ext(sprite_index, -1, position.x, position.y, image_xscale, image_yscale, image_angle, image_blend, image_alpha)
 
@@ -118,7 +118,7 @@ func _process(delta):
 #        draw_sprite(s_jetpack_right,-1,position.x-4,position.y-1)
 
 
-#    if (sprite_index != "p_exit and sprite_index != s_damsel_exit and sprite_index != s_tunnel_exit):"
+#    if (sprite_index != "p_exit" and sprite_index != "damsel_exit" and sprite_index != "tunnel_exit):"
 
 #        draw_sprite_ext(sprite_index, -1, position.x, position.y, image_xscale, image_yscale, image_angle, image_blend, image_alpha)
 #        if (global.pickup_item == "Rock"): hold_item = draw_sprite(s_rock,-1,position.x+4,position.y+2)
@@ -189,7 +189,7 @@ func _process(delta):
 
 #        if (position.x >= 280):
     
-#            if (sprite_index != "p_exit and sprite_index != s_damsel_exit and sprite_index != s_tunnel_exit):"
+#            if (sprite_index != "p_exit" and sprite_index != "damsel_exit" and sprite_index != "tunnel_exit):"
         
 #                Audio.play_sound(global.snd_steps)
 #                if (global.is_damsel): sprite_index = "damsel_exit"
@@ -199,7 +199,7 @@ func _process(delta):
     
 #        else: position.x += 2
 
-#    elif (status == END and sprite_index != "stand_left and sprite_index != s_damsel_left and sprite_index != s_tunnel_left):"
+#    elif (status == END and sprite_index != "stand_left" and sprite_index != "damsel_left" and sprite_index != "tunnel_left):"
 
 #        if (position.x >= 448 + 8):
     

@@ -22,13 +22,13 @@ func _process(delta):
 #    Audio.play_sound(global.snd_coin)
 #    moon_room.baskets += difficulty
 
-#    with other  gml.instance_destroy() 
+#    with other  gml.instance_destroy(self) 
 
 #    gml.instance_create(x_mid, -64, Objects.bat_target)
 
-#    if (sprite_index = "ufo): gml.instance_create(position.x, position.y, Objects.ufcrash)"
+#    if (sprite_index = "ufo):" gml.instance_create(position.x, position.y, Objects.ufcrash)
 #    else: MiscScripts.scr_create_blood(position.x+8, position.y+8, 3)
-#    gml.instance_destroy()
+#    gml.instance_destroy(self)
 
     
 
@@ -48,7 +48,7 @@ func _process(delta):
 #        gml.instance_create(position.x, -64, Objects.bat_target)
 
 #        MiscScripts.scr_create_blood(position.x+8, position.y+8, 3)
-#        gml.instance_destroy()
+#        gml.instance_destroy(self)
 
 #    elif (other.invincible == 0):
 

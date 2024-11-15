@@ -36,7 +36,7 @@ func _process(delta):
 
 #    # DY:  global.check_water = true
 
-#    gml.instance_destroy()
+#    gml.instance_destroy(self)
 
     
 

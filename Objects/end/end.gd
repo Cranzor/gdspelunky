@@ -64,18 +64,18 @@ func _process(delta):
 #    # DY:  shake the screen
 #    if (global.shake > 0):
 
-#        # DY: view_xview[0] = view_xview[0] + randi_range(0,3) - randi_range(0,3)
-#        # DY: view_yview[0] = view_yview[0] + randi_range(0,3) - randi_range(0,3)
-#        # DY: if (view_yview[0] > 16): view_yview[0] = 16 - randi_range(0,8)
-#        # DY: if (view_yview[0] < 0): view_yview[0] = 0 + randi_range(0,8)
-#        if (shake_toggle): view_yview[0] = view_yview[0] + randi_range(1,8)
-#        else: view_yview[0] = 0
+#        # DY: gml.view("xview") = gml.view("xview") + randi_range(0,3) - randi_range(0,3)
+#        # DY: gml.view("yview") = gml.view("yview") + randi_range(0,3) - randi_range(0,3)
+#        # DY: if (gml.view("yview") > 16): gml.view("yview") = 16 - randi_range(0,8)
+#        # DY: if (gml.view("yview") < 0): gml.view("yview") = 0 + randi_range(0,8)
+#        if (shake_toggle): gml.view("yview") = gml.view("yview") + randi_range(1,8)
+#        else: gml.view("yview") = 0
 #        shake_toggle = not shake_toggle
 #        global.shake -= 1
 
 #    else:
 
-#        view_yview[0] = 0
+#        gml.view("yview") = 0
 
 
-#    if (view_xview[0] < room_width - 320): view_xview[0] += 1
+#    if (gml.view("xview") < room_width - 320): gml.view("xview") += 1

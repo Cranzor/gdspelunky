@@ -29,7 +29,7 @@ func _process(delta):
 
 #        if (character): character.hold_item = 0
 
-#    gml.instance_destroy()
+#    gml.instance_destroy(self)
 
     
 

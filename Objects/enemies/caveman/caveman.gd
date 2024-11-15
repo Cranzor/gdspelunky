@@ -173,7 +173,7 @@ func _process(delta):
     
 #            MiscScripts.scr_create_blood(position.x+8, position.y+8, 3)
 #            Audio.play_sound(global.snd_caveman_die)
-#            gml.instance_destroy()
+#            gml.instance_destroy(self)
     
 
 #    elif (not held):
@@ -182,7 +182,7 @@ func _process(delta):
     
 #            MiscScripts.scr_create_blood(position.x+8, position.y+8, 3)
 #            Audio.play_sound(global.snd_caveman_die)
-#            gml.instance_destroy()
+#            gml.instance_destroy(self)
     
 
 
@@ -224,7 +224,7 @@ func _process(delta):
 #            if (facing == LEFT): sight.direction = 180
 #            else: sight.direction = 0
 #            sight.speed = 10
-#            sight.owner = gml.instance_place(position.x, position.y, caveman)
+#            sight.owner_object = gml.instance_place(position.x, position.y, caveman)
 #            sight_counter = 5
     
 
@@ -271,7 +271,7 @@ func _process(delta):
 #            if (facing == LEFT): sight.direction = 180
 #            else: sight.direction = 0
 #            sight.speed = 10
-#            sight.owner = gml.instance_place(position.x, position.y, caveman)
+#            sight.owner_object = gml.instance_place(position.x, position.y, caveman)
 #            sight_counter = 5
     
 

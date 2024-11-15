@@ -1,3 +1,4 @@
+
 extends GMObject
 
 
@@ -16,8 +17,8 @@ func _process(delta):
 #--- Object functions
 
 
-#func alarm_0():
-#    if (focus):
+#func alarm 0():
+	#    if (focus):
 
 #        Audio.play_sound(global.snd_jump)
 #        alarm_0(20)

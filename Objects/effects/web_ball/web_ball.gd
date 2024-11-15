@@ -33,7 +33,7 @@ func _process(delta):
 
 #        obj = gml.instance_create(position.x-8, position.y-8, Objects.web)
 #        obj.dying = true
-#        gml.instance_destroy()
+#        gml.instance_destroy(self)
 
 
     
@@ -113,5 +113,5 @@ func _process(delta):
 #        gml.collision_point(position.x, position.y, "dark_fall", 0, 0) or
 #        gml.collision_point(position.x, position.y, "ice", 0, 0))
 
-#        gml.instance_destroy()
+#        gml.instance_destroy(self)
 #    */

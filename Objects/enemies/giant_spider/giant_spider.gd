@@ -150,8 +150,8 @@ func _process(delta):
     
 
 #func step():
-    #    if ((position.x > view_xview[0]-32 and position.x < view_xview[0] + view_wview[0] and:
-#            position.y > view_yview[0]-32 and position.y < view_yview[0] + view_hview[0]))
+    #    if ((position.x > gml.view("xview")-32 and position.x < gml.view("xview") + gml.view("wview") and:
+#            position.y > gml.view("yview")-32 and position.y < gml.view("yview") + gml.view("hview")))
 
 #    PlatformEngine.move_to(x_vel,y_vel)
 
@@ -189,7 +189,7 @@ func _process(delta):
 #            global.giantspiders += 1
 #            global.kills += 1
     
-#        gml.instance_destroy()
+#        gml.instance_destroy(self)
 
 
 #    if (Collision.is_collision_right(1)):
@@ -217,7 +217,7 @@ func _process(delta):
 
 #    if (status == IDLE):
 
-#        if (sprite_index != "giant_spider_flip): sprite_index = s_giant_spider"
+#        if (sprite_index != "giant_spider_flip):" sprite_index = "giant_spider"
 #        alarm_0()randi_range(5,20)
 #        if (squirt_timer == 0): status = SQUIRT
 #        else: status = RECOVER

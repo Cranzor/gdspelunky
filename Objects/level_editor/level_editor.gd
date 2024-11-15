@@ -310,52 +310,52 @@ func _process(delta):
 
 #    if (status == GET_FILE_NAME):
 
-#        draw_text(view_xview[0]+9, view_yview[0]+116, "EDIT LEVEL: " + level_name)
+#        draw_text(gml.view("xview")+9, gml.view("yview")+116, "EDIT LEVEL: " + level_name)
 
 #    elif (status == EDIT_DOOR):
 
-#        draw_text(view_xview[0]+9, view_yview[0]+100, "LABEL:")
-#        draw_text(view_xview[0]+9, view_yview[0]+116, text_edit)
+#        draw_text(gml.view("xview")+9, gml.view("yview")+100, "LABEL:")
+#        draw_text(gml.view("xview")+9, gml.view("yview")+116, text_edit)
 
 #    elif (status == EDIT_MSG):
 
-#        draw_text(view_xview[0]+9, view_yview[0]+100, "MESSAGE:")
-#        draw_text(view_xview[0]+9, view_yview[0]+116, text_edit)
+#        draw_text(gml.view("xview")+9, gml.view("yview")+100, "MESSAGE:")
+#        draw_text(gml.view("xview")+9, gml.view("yview")+116, text_edit)
 
 #    elif (status == INFO_NAME):
 
-#        draw_text(view_xview[0]+9, view_yview[0]+116, "LEVEL NAME: " + level_name)
+#        draw_text(gml.view("xview")+9, gml.view("yview")+116, "LEVEL NAME: " + level_name)
 
 #    elif (status == INFO_AUTHOR):
 
-#        draw_text(view_xview[0]+9, view_yview[0]+116, "AUTHOR: " + author)
+#        draw_text(gml.view("xview")+9, gml.view("yview")+116, "AUTHOR: " + author)
 
 #    elif (status == INFO_MUSIC):
 
-#        draw_text(view_xview[0]+9, view_yview[0]+116, "MUSIC: " + music)
+#        draw_text(gml.view("xview")+9, gml.view("yview")+116, "MUSIC: " + music)
 
 #    elif (status == INFO_LIFE):
 
-#        draw_text(view_xview[0]+9, view_yview[0]+116, "START LIFE: " + life_start)
+#        draw_text(gml.view("xview")+9, gml.view("yview")+116, "START LIFE: " + life_start)
 
 #    elif (status == INFO_BOMBS):
 
-#        draw_text(view_xview[0]+9, view_yview[0]+116, "START BOMBS: " + bomb_start)
+#        draw_text(gml.view("xview")+9, gml.view("yview")+116, "START BOMBS: " + bomb_start)
 
 #    elif (status == INFO_ROPE):
 
-#        draw_text(view_xview[0]+9, view_yview[0]+116, "START ROPE: " + rope_start)
+#        draw_text(gml.view("xview")+9, gml.view("yview")+116, "START ROPE: " + rope_start)
 
 #    elif (status == INFO_NEXT):
 
-#        draw_text(view_xview[0]+9, view_yview[0]+116, "NEXT LEVEL: " + next_level)
+#        draw_text(gml.view("xview")+9, gml.view("yview")+116, "NEXT LEVEL: " + next_level)
 
 #    elif (status == EXIT or status == NEW):
 
 #        str_len = string_length("SAVE LEVEL? (Y/N)")*8
 #        n = 320 - str_len
 #        n = ceil(n / 2)
-#        draw_text(view_xview[0]+n, view_yview[0]+116, "SAVE LEVEL? (Y/N)")
+#        draw_text(gml.view("xview")+n, gml.view("yview")+116, "SAVE LEVEL? (Y/N)")
     
 #        m = 16
 #        draw_set_color(c_yellow)
@@ -364,7 +364,7 @@ func _process(delta):
 #            str_len = string_length("WARNING: NO ENTRANCE!")*8
 #            n = 320 - str_len
 #            n = ceil(n / 2)
-#            draw_text(view_xview[0]+n, view_yview[0]+116+m, "WARNING: NO ENTRANCE!")
+#            draw_text(gml.view("xview")+n, gml.view("yview")+116+m, "WARNING: NO ENTRANCE!")
 #            m += 8
     
     
@@ -373,21 +373,21 @@ func _process(delta):
 #            str_len = string_length("WARNING: NO EXIT!")*8
 #            n = 320 - str_len
 #            n = ceil(n / 2)
-#            draw_text(view_xview[0]+n, view_yview[0]+116+m, "WARNING: NO EXIT!")
+#            draw_text(gml.view("xview")+n, gml.view("yview")+116+m, "WARNING: NO EXIT!")
     
 
 #    else:
 
-#        # DY: draw_text(view_xview[0], view_yview[0], str(mouse_x) + ", " + str(mouse_y))
-#        if (view_yview[0] == 0):
+#        # DY: draw_text(gml.view("xview"), gml.view("yview"), str(mouse_x) + ", " + str(mouse_y))
+#        if (gml.view("yview") == 0):
     
-#            draw_text(view_xview[0]+40, view_yview[0]+view_hview[0]-32, level_name + " BY " + author)
-#            draw_text(view_xview[0]+40, view_yview[0]+view_hview[0]-24, str(curs_obj.position.x) + ", " + str(curs_obj.position.y))
+#            draw_text(gml.view("xview")+40, gml.view("yview")+gml.view("hview")-32, level_name + " BY " + author)
+#            draw_text(gml.view("xview")+40, gml.view("yview")+gml.view("hview")-24, str(curs_obj.position.x) + ", " + str(curs_obj.position.y))
     
 #        else:
     
-#            draw_text(view_xview[0]+40, view_yview[0]+16, level_name + " BY " + author)
-#            draw_text(view_xview[0]+40, view_yview[0]+24, str(curs_obj.position.x) + ", " + str(curs_obj.position.y))
+#            draw_text(gml.view("xview")+40, gml.view("yview")+16, level_name + " BY " + author)
+#            draw_text(gml.view("xview")+40, gml.view("yview")+24, str(curs_obj.position.x) + ", " + str(curs_obj.position.y))
     
 
 
@@ -607,18 +607,18 @@ func _process(delta):
                 
 #                        text_edit = obj.leads_to
 #                        level_editor.status = EDIT_DOOR
-#                        with new_button  gml.instance_destroy() 
-#                        with test_button  gml.instance_destroy() 
-#                        with edit_button  gml.instance_destroy() 
+#                        with new_button  gml.instance_destroy(self) 
+#                        with test_button  gml.instance_destroy(self) 
+#                        with edit_button  gml.instance_destroy(self) 
 #                        # DY: level_array[floor(curs_obj.position.x/16)-1, floor(curs_obj.position.y/16)-1] = "0"
                 
 #                    elif (obj.type == "Message Sign"):
                 
 #                        text_edit = obj.message
 #                        level_editor.status = EDIT_MSG
-#                        with new_button  gml.instance_destroy() 
-#                        with test_button  gml.instance_destroy() 
-#                        with edit_button  gml.instance_destroy() 
+#                        with new_button  gml.instance_destroy(self) 
+#                        with test_button  gml.instance_destroy(self) 
+#                        with edit_button  gml.instance_destroy(self) 
 #                        # DY: level_array[floor(curs_obj.position.x/16)-1, floor(curs_obj.position.y/16)-1] = "0"
                 
             
@@ -938,14 +938,14 @@ func _process(delta):
     #    if (status == EDIT):  curs_obj.visible = true window_set_cursor(cr_default) 
 #    else:  curs_obj.visible = false window_set_cursor(cr_none) 
 
-#    if (status == EDIT and mouse_x > view_xview[0] and mouse_x < view_xview[0]+320 and:
-#        mouse_y > view_yview[0] and mouse_y < view_yview[0]+240)
+#    if (status == EDIT and mouse_x > gml.view("xview") and mouse_x < gml.view("xview")+320 and:
+#        mouse_y > gml.view("yview") and mouse_y < gml.view("yview")+240)
 
-#        if (mouse_x > view_xview[0]+320-16 and view_xview[0] < room_width-320): view_xview[0] += 4
-#        elif (mouse_x < view_xview[0]+16 and view_xview[0] > 0): view_xview[0] -= 4
+#        if (mouse_x > gml.view("xview")+320-16 and gml.view("xview") < room_width-320): gml.view("xview") += 4
+#        elif (mouse_x < gml.view("xview")+16 and gml.view("xview") > 0): gml.view("xview") -= 4
 
-#        if (mouse_y > view_yview[0]+240-16 and view_yview[0] < room_height-240): view_yview[0] += 4
-#        elif (mouse_y < view_yview[0]+16 and view_yview[0] > 0): view_yview[0] -= 4
+#        if (mouse_y > gml.view("yview")+240-16 and gml.view("yview") < room_height-240): gml.view("yview") += 4
+#        elif (mouse_y < gml.view("yview")+16 and gml.view("yview") > 0): gml.view("yview") -= 4
 
 #    if (ControlScripts.check_attack_pressed()):
 
@@ -999,10 +999,10 @@ func _process(delta):
                 
 #                        if (position.x == curs_obj.position.x and position.y == curs_obj.position.y):
                     
-#                            gml.instance_destroy()
+#                            gml.instance_destroy(self)
                     
                 
-#                    else: gml.instance_destroy()
+#                    else: gml.instance_destroy(self)
             
         
 #            level_array[floor(curs_obj.position.x/16)-1, floor(curs_obj.position.y/16)-1] = "0"

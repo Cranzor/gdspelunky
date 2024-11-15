@@ -28,7 +28,7 @@ func _process(delta):
 #        facing = LEFT
 #        status = WALK
 
-#    if (sprite_index == "yeti_king_yell_l or sprite_index == s_yeti_king_yell_r):"
+#    if (sprite_index == "yeti_king_yell_l" or sprite_index == "yeti_king_yell_r):"
 
 #        status = IDLE
 #        counter = 30
@@ -146,8 +146,8 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    if ((position.x > view_xview[0]-36 and position.x < view_xview[0] + view_wview[0] and:
-#            position.y > view_yview[0]-36 and position.y < view_yview[0] + view_hview[0]))
+#    if ((position.x > gml.view("xview")-36 and position.x < gml.view("xview") + gml.view("wview") and:
+#            position.y > gml.view("yview")-36 and position.y < gml.view("yview") + gml.view("hview")))
 
 #    PlatformEngine.move_to(x_vel,y_vel)
 
@@ -190,7 +190,7 @@ func _process(delta):
 #            global.yetikings += 1
 #            global.kills += 1
     
-#        gml.instance_destroy()
+#        gml.instance_destroy(self)
 
 
 #    if (Collision.is_collision_bottom(1) and status != STUNNED): y_vel = 0
@@ -268,7 +268,7 @@ func _process(delta):
 #                        point_distance(position.x, position.y, yeti_king.position.x, yeti_king.position.y) < 96)
                 
 #                        gml.instance_create(position.x, position.y, Objects.ice_block)
-#                        gml.instance_destroy()
+#                        gml.instance_destroy(self)
                 
             
         

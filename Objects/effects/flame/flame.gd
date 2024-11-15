@@ -25,7 +25,7 @@ func _process(delta):
 
 #func collision with o_water():
     #    gml.instance_create(position.x, position.y, Objects.smoke_puff)
-#    gml.instance_destroy()
+#    gml.instance_destroy(self)
 
     
 
@@ -57,7 +57,7 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    if (y_vel > 6): gml.instance_destroy()
+#    if (y_vel > 6): gml.instance_destroy(self)
 
 #    if (Collision.is_collision_bottom(1)):
 

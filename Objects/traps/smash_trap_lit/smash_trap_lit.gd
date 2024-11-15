@@ -66,8 +66,8 @@ func _process(delta):
     
 
 #func step():
-    #    if (position.x > view_xview[0]-16 and position.x < view_xview[0] + view_wview[0]+16 and:
-#            position.y > view_yview[0]-16 and position.y < view_yview[0] + view_hview[0]+16)
+    #    if (position.x > gml.view("xview")-16 and position.x < gml.view("xview") + gml.view("wview")+16 and:
+#            position.y > gml.view("yview")-16 and position.y < gml.view("yview") + gml.view("hview")+16)
 
 #    if (status == IDLE):
 
@@ -196,7 +196,7 @@ func _process(delta):
 #        xa = 0
 #        ya = 0
 #        position.y += 0.05
-#        if (gml.collision_point(position.x, position.y-1, "lava", 0, 0)): gml.instance_destroy()
+#        if (gml.collision_point(position.x, position.y-1, "lava", 0, 0)): gml.instance_destroy(self)
 
 
 #    if (gml.collision_rectangle(position.x+1, position.y+1, position.x+15,  position.y+15, "lava", 0, 0)):

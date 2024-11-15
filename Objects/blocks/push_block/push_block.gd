@@ -58,7 +58,7 @@ func _process(delta):
     
 
 #func outside room():
-    #    gml.instance_destroy()
+    #    gml.instance_destroy(self)
 
     
 

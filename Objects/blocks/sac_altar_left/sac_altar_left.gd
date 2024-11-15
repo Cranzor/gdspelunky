@@ -80,8 +80,8 @@ func _process(delta):
 #                global.dark_level = true
 #                if (not global.ghost_exists):
             
-#                    if (player1.position.x > room_width / 2): gml.instance_create(view_xview[0]+view_wview[0]+8, view_yview[0]+floor(view_hview[0] / 2), Objects.ghost)
-#                    else: gml.instance_create(view_xview[0]-32,  view_yview[0]+floor(view_hview[0] / 2), Objects.ghost)
+#                    if (player1.position.x > room_width / 2): gml.instance_create(gml.view("xview")+gml.view("wview")+8, gml.view("yview")+floor(gml.view("hview") / 2), Objects.ghost)
+#                    else: gml.instance_create(gml.view("xview")-32,  gml.view("yview")+floor(gml.view("hview") / 2), Objects.ghost)
 #                    global.ghost_exists = true
             
         
@@ -92,14 +92,14 @@ func _process(delta):
 #        with sac_altar_left
     
 #            defile = false
-#            gml.instance_destroy()
+#            gml.instance_destroy(self)
     
 
 
     
 
 #func step():
-    #    if ((position.x > view_xview[0]-20 and position.x < view_xview[0] + view_wview[0]+4 and:
-#            position.y > view_yview[0]-20 and position.y < view_yview[0] + view_hview[0]+4))
+    #    if ((position.x > gml.view("xview")-20 and position.x < gml.view("xview") + gml.view("wview")+4 and:
+#            position.y > gml.view("yview")-20 and position.y < gml.view("yview") + gml.view("hview")+4))
 
-#        if (not gml.collision_point(position.x, position.y+16, "solid", 0, 0)): gml.instance_destroy()
+#        if (not gml.collision_point(position.x, position.y+16, "solid", 0, 0)): gml.instance_destroy(self)

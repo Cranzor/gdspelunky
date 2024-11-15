@@ -22,7 +22,7 @@ func _process(delta):
 
 #        gml.instance_create(position.x, position.y, Objects.smoke_puff)
 #        Audio.play_sound(global.snd_hit)
-#        gml.instance_destroy()
+#        gml.instance_destroy(self)
 
 
     
@@ -69,4 +69,4 @@ func _process(delta):
 #func collision with o_web_ball():
     #    with other
 
-#        gml.instance_destroy()
+#        gml.instance_destroy(self)

@@ -33,7 +33,7 @@ func _process(delta):
     
 
 #func mouse left button released():
-    #    if (sprite_index == "load_button_pressed and active):"
+    #    if (sprite_index == "load_button_pressed" and active):
 
 #        with load_level
     

@@ -20,7 +20,7 @@ func _process(delta):
 #func collision with o_boulder():
     #    if (trap_id == 0):
 
-#        gml.instance_destroy()
+#        gml.instance_destroy(self)
 
 #    elif (abs(other.x_vel) > 0 or abs(other.y_vel) > 0):
 
@@ -42,7 +42,7 @@ func _process(delta):
 #                Audio.play_sound(global.snd_arrow_trap)
         
     
-#        gml.instance_destroy()
+#        gml.instance_destroy(self)
 
 
     
@@ -50,12 +50,12 @@ func _process(delta):
 #func collision with o_character():
     #    if (trap_id == 0):
 
-#        gml.instance_destroy()
+#        gml.instance_destroy(self)
 
 #    elif (abs(other.x_vel) > 0 or abs(other.y_vel) > 0 or:
-#             (player1.sprite_index = "duck_thang_l and player1.image_index > 6) or"
-#             (player1.sprite_index = "damsel_dt_hl and player1.image_index > 6) or"
-#             (player1.sprite_index = "tunnel_dt_hl and player1.image_index > 6))"
+#             (player1.sprite_index = "duck_thang_l" and player1.image_index > 6) or
+#             (player1.sprite_index = "damsel_dt_hl" and player1.image_index > 6) or
+#             (player1.sprite_index = "tunnel_dt_hl" and player1.image_index > 6))
 
 #        with trap_id
     
@@ -75,7 +75,7 @@ func _process(delta):
 #                Audio.play_sound(global.snd_arrow_trap)
         
     
-#        gml.instance_destroy()
+#        gml.instance_destroy(self)
 
 
     
@@ -83,7 +83,7 @@ func _process(delta):
 #func collision with o_enemy():
     #    if (trap_id == 0):
 
-#        gml.instance_destroy()
+#        gml.instance_destroy(self)
 
 #    elif (abs(other.x_vel) > 0 or abs(other.y_vel) > 0):
 
@@ -105,7 +105,7 @@ func _process(delta):
 #                Audio.play_sound(global.snd_arrow_trap)
         
     
-#        gml.instance_destroy()
+#        gml.instance_destroy(self)
 
 
     
@@ -113,7 +113,7 @@ func _process(delta):
 #func collision with o_item():
     #    if (trap_id == 0):
 
-#        gml.instance_destroy()
+#        gml.instance_destroy(self)
 
 #    elif (abs(other.x_vel) > 0 or abs(other.y_vel) > 0):
 
@@ -135,7 +135,7 @@ func _process(delta):
 #                Audio.play_sound(global.snd_arrow_trap)
         
     
-#        gml.instance_destroy()
+#        gml.instance_destroy(self)
 
 
     
@@ -143,7 +143,7 @@ func _process(delta):
 #func collision with o_moveable_solid():
     #    if (trap_id == 0):
 
-#        gml.instance_destroy()
+#        gml.instance_destroy(self)
 
 #    elif (abs(other.x_vel) > 0 or abs(other.y_vel) > 0):
 
@@ -165,7 +165,7 @@ func _process(delta):
 #                Audio.play_sound(global.snd_arrow_trap)
         
     
-#        gml.instance_destroy()
+#        gml.instance_destroy(self)
 
 
     
@@ -173,7 +173,7 @@ func _process(delta):
 #func collision with o_treasure():
     #    if (trap_id == 0):
 
-#        gml.instance_destroy()
+#        gml.instance_destroy(self)
 
 #    elif (abs(other.x_vel) > 0 or abs(other.y_vel) > 0):
 
@@ -195,7 +195,7 @@ func _process(delta):
 #                Audio.play_sound(global.snd_arrow_trap)
         
     
-#        gml.instance_destroy()
+#        gml.instance_destroy(self)
 
 
     

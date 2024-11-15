@@ -24,7 +24,7 @@ func _process(delta):
 
 #func collision with o_blood():
     #    hp += 1
-#    with other  gml.instance_destroy() 
+#    with other  gml.instance_destroy(self) 
 
     
 
@@ -158,8 +158,8 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    if ((position.x > view_xview[0]-20 and position.x < view_xview[0] + view_wview[0]+4 and:
-#            position.y > view_yview[0]-20 and position.y < view_yview[0] + view_hview[0]+4))
+#    if ((position.x > gml.view("xview")-20 and position.x < gml.view("xview") + gml.view("wview")+4 and:
+#            position.y > gml.view("yview")-20 and position.y < gml.view("yview") + gml.view("hview")+4))
 
 #    if (status == STUNNED): my_grav = 0.6
 
@@ -183,7 +183,7 @@ func _process(delta):
     
 #            gml.instance_create(position.x+8, position.y+8, Objects.smoke_puff)
 #            Audio.play_sound(global.snd_caveman_die)
-#            gml.instance_destroy()
+#            gml.instance_destroy(self)
     
 
 #    elif (not held):
@@ -192,7 +192,7 @@ func _process(delta):
     
 #            gml.instance_create(position.x+8, position.y+8, Objects.smoke_puff)
 #            Audio.play_sound(global.snd_caveman_die)
-#            gml.instance_destroy()
+#            gml.instance_destroy(self)
     
 
 
@@ -415,7 +415,7 @@ func _process(delta):
 #        obj = gml.instance_create(position.x+8, position.y+8, Objects.cape_pickup)
 #        obj.cost = 0
 #        obj.for_sale = false
-#        gml.instance_destroy()
+#        gml.instance_destroy(self)
 
 #    elif (status == HANG):
 

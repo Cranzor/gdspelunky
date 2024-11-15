@@ -131,12 +131,12 @@ func _process(delta):
 #        fired = fired_max
 
 
-#    if ((position.x > view_xview[0]-8 and position.x < view_xview[0] + view_wview[0]+8 and:
-#            position.y > view_yview[0]-8 and position.y < view_yview[0] + view_hview[0]+8))
+#    if ((position.x > gml.view("xview")-8 and position.x < gml.view("xview") + gml.view("wview")+8 and:
+#            position.y > gml.view("yview")-8 and position.y < gml.view("yview") + gml.view("hview")+8))
 
 #    if (not gml.collision_point(position.x, position.y+16, "solid", 0, 0)):
 
-#        gml.instance_destroy()
+#        gml.instance_destroy(self)
 
 
 #    # main_code

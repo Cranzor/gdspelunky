@@ -51,8 +51,8 @@ func _process(delta):
     
 
 #func step():
-    #    if ((position.x > view_xview[0]-32 and position.x < view_xview[0] + view_wview[0] and:
-#            position.y > view_yview[0]-32 and position.y < view_yview[0] + view_hview[0]))
+    #    if ((position.x > gml.view("xview")-32 and position.x < gml.view("xview") + gml.view("wview") and:
+#            position.y > gml.view("yview")-32 and position.y < gml.view("yview") + gml.view("hview")))
 
 #    dist = gml.distance_to_object(character)
 #    if (gml.collision_point(position.x+16, position.y+8, "solid", 0, 0)):
@@ -83,10 +83,10 @@ func _process(delta):
 #            global.giantspiders += 1
 #            global.kills += 1
     
-#        gml.instance_destroy()
+#        gml.instance_destroy(self)
 
 #    elif (hp < 10 or not gml.collision_point(position.x, position.y-16, "solid", 0, 0) or (dist < 90 and character.position.y > position.y and abs(character.position.x - (position.x+16)) < 8)):
 
 #      spider = gml.instance_create(position.x, position.y, Objects.giant_spider)
 #      spider.hp = hp
-#      gml.instance_destroy()
+#      gml.instance_destroy(self)

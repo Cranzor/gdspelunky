@@ -118,23 +118,23 @@ func _process(delta):
 
 #    if (status == GET_FILE_NAME):
 
-#        draw_text(view_xview[0]+32, view_yview[0]+64, "LOAD LEVEL: " + level_name)
+#        draw_text(gml.view("xview")+32, gml.view("yview")+64, "LOAD LEVEL: " + level_name)
 #        draw_set_color(c_yellow)
-#        draw_text(view_xview[0]+40, view_yview[0]+96, "LEVELS")
-#        draw_text(view_xview[0]+224, view_yview[0]+96, str(page) + "/" + str(num_pages))
+#        draw_text(gml.view("xview")+40, gml.view("yview")+96, "LEVELS")
+#        draw_text(gml.view("xview")+224, gml.view("yview")+96, str(page) + "/" + str(num_pages))
 #        if (msg_timer > 0):
     
 #            draw_set_color(c_red)
-#            draw_text(view_xview[0]+32, view_yview[0]+224, "NO SUCH LEVEL EXISTS!")
+#            draw_text(gml.view("xview")+32, gml.view("yview")+224, "NO SUCH LEVEL EXISTS!")
     
-#        else: draw_text(view_xview[0]+32, view_yview[0]+224, "PRESS ESCAPE TO RETURN TO TITLE.")
+#        else: draw_text(gml.view("xview")+32, gml.view("yview")+224, "PRESS ESCAPE TO RETURN TO TITLE.")
 #        draw_set_color(c_white)
 #        n = 112
 #        m = 0
 #        i = (page-1)*10
 #        while (m < 10 and i+m < num_levels):
     
-#            draw_text(view_xview[0]+40, view_yview[0]+n, string_upper(level_list[i+m]))
+#            draw_text(gml.view("xview")+40, gml.view("yview")+n, string_upper(level_list[i+m]))
 #            n += 8
 #            m += 1
     
@@ -166,12 +166,12 @@ func _process(delta):
     
 #            # DY: level_name += "DEL"
 #            level_name = string_delete(level_name, string_length(level_name), 1)
-#            with menu_sel  sprite_index = "menu_sel_off "
+#            with menu_sel  sprite_index = "menu_sel_off" 
     
 #        else:
     
 #            level_name += scr_get_char(keyboard_key)
-#            with menu_sel  sprite_index = "menu_sel_off "
+#            with menu_sel  sprite_index = "menu_sel_off" 
     
 
 

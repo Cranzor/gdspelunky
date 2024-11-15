@@ -18,7 +18,7 @@ func _process(delta):
 
 
 #func collision with o_character():
-    #    if (other.sprite_index != "p_exit and other.sprite_index != s_damsel_exit and other.sprite_index != s_tunnel_exit):"
+    #    if (other.sprite_index != "p_exit" and other.sprite_index != "damsel_exit" and other.sprite_index != "tunnel_exit):"
 
 #        if (global.plife > 0):
     
@@ -36,7 +36,7 @@ func _process(delta):
     
 
 #        Audio.play_sound(global.snd_hurt)
-#        gml.instance_destroy()
+#        gml.instance_destroy(self)
 
 
 
@@ -67,7 +67,7 @@ func _process(delta):
     
 #        other.x_vel = x_vel * 0.3
 #        Audio.play_sound(global.snd_damsel)
-#        gml.instance_destroy()
+#        gml.instance_destroy(self)
 
 
     
@@ -101,7 +101,7 @@ func _process(delta):
     
 
 #        Audio.play_sound(global.snd_hit)
-#        gml.instance_destroy()
+#        gml.instance_destroy(self)
 
 
     
@@ -109,7 +109,7 @@ func _process(delta):
 #func collision with o_solid():
     #    gml.instance_create(position.x, position.y, Objects.smoke_puff)
 #    Audio.play_sound(global.snd_hit)
-#    gml.instance_destroy()
+#    gml.instance_destroy(self)
 
     
 

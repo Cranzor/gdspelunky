@@ -33,7 +33,7 @@ func _process(delta):
 #        status = 2
 
 #        gml.instance_create(position.x, position.y, Objects.laser_explode)
-#        gml.instance_destroy()
+#        gml.instance_destroy(self)
 
 
 
@@ -48,7 +48,7 @@ func _process(delta):
 #        other.y_vel = -6
 #        gml.instance_create(position.x, position.y, Objects.laser_explode)
 #        # DY:  global.check_water = true
-#        gml.instance_destroy()
+#        gml.instance_destroy(self)
 
 
     
@@ -61,14 +61,14 @@ func _process(delta):
 #            if (gml.collision_point(position.x, position.y, "gold", 0, 0)):
         
 #                gold = gml.instance_place(position.x, position.y, gold)
-#                with gold  gml.instance_destroy() 
+#                with gold  gml.instance_destroy(self) 
         
 #            if (gml.collision_point(position.x, position.y, "gold_big", 0, 0)):
         
 #                gold = gml.instance_place(position.x, position.y, gold_big)
-#                with gold  gml.instance_destroy() 
+#                with gold  gml.instance_destroy(self) 
         
-#            gml.instance_destroy()
+#            gml.instance_destroy(self)
     
     
 #        tile = tile_layer_find(3, position.x, position.y-16)
@@ -77,7 +77,7 @@ func _process(delta):
 
 #    gml.instance_create(position.x, position.y, Objects.laser_explode)
 #    # DY:  global.check_water = true
-#    gml.instance_destroy()
+#    gml.instance_destroy(self)
 
     
 
@@ -106,5 +106,5 @@ func _process(delta):
 #        gml.collision_point(position.x, position.y, "dark_fall", 0, 0) or
 #        gml.collision_point(position.x, position.y, "ice", 0, 0))
 
-#        gml.instance_destroy()
+#        gml.instance_destroy(self)
 #    */

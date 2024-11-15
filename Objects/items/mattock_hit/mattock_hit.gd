@@ -39,7 +39,7 @@ func _process(delta):
 #            tile = tile_layer_find(3, position.x, position.y+16)
 #            if (tile): tile_delete(tile)
         
-#            if (not invincible): gml.instance_destroy()
+#            if (not invincible): gml.instance_destroy(self)
     
 
 #        with treasure
@@ -51,7 +51,7 @@ func _process(delta):
     
 #            if (not gml.collision_point(position.x, position.y+16, "solid", 0, 0)):
         
-#                gml.instance_destroy()
+#                gml.instance_destroy(self)
         
     
     
@@ -70,14 +70,14 @@ func _process(delta):
 #            Audio.play_sound(global.snd_mattock_break)
 #            with mattock
         
-#                if (not visible): gml.instance_destroy()
+#                if (not visible): gml.instance_destroy(self)
         
     
 #        else:
 #            Audio.play_sound(global.snd_crunch)
 
 
-#    gml.instance_destroy()
+#    gml.instance_destroy(self)
 
     
 
@@ -96,7 +96,7 @@ func _process(delta):
 #func step():
     #    if (gml.instance_number(character) == 0):
 
-#        gml.instance_destroy()
+#        gml.instance_destroy(self)
 
 #    if (sprite_index = "mattock_hit_r):"
 

@@ -124,7 +124,7 @@ func _process(delta):
 #                player1.pickup_item_type = ""
 #                held = false
         
-#            gml.instance_destroy()
+#            gml.instance_destroy(self)
     
 #        has_gun = true
 
@@ -249,8 +249,8 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    if ((position.x > view_xview[0]-20 and position.x < view_xview[0]+view_wview[0]+4 and:
-#         position.y > view_yview[0]-20 and position.y < view_yview[0]+view_hview[0]+4))
+#    if ((position.x > gml.view("xview")-20 and position.x < gml.view("xview")+gml.view("wview")+4 and:
+#         position.y > gml.view("yview")-20 and position.y < gml.view("yview")+gml.view("hview")+4))
 
 #    PlatformEngine.move_to(x_vel,y_vel)
 
@@ -284,7 +284,7 @@ func _process(delta):
 #                global.kills += 1
         
 #            global.murderer = true
-#            gml.instance_destroy()
+#            gml.instance_destroy(self)
     
 
 #    elif (not held and gml.collision_point(position.x+8, position.y+8, "solid", 0, 0)):
@@ -308,7 +308,7 @@ func _process(delta):
 #            obj.for_sale = false
 #            has_gun = false
     
-#        gml.instance_destroy()
+#        gml.instance_destroy(self)
 
 
 #    if (status != DEAD and status != STUNNED and hp < 1):
@@ -629,7 +629,7 @@ func _process(delta):
 #                        if (obj.x_vel >= -6): obj.x_vel = -6
 #                        obj.y_vel = random(1) - random(1)
 #                        obj.safe = true
-#                        with obj  if (gml.collision_point(position.x, position.y, "solid", 0, 0)): gml.instance_destroy() 
+#                        with obj  if (gml.collision_point(position.x, position.y, "solid", 0, 0)): gml.instance_destroy(self) 
                 
 #                    y_vel -= 1
 #                    x_vel += 3
@@ -646,7 +646,7 @@ func _process(delta):
 #                        if (obj.x_vel < 6): obj.x_vel = 6
 #                        obj.y_vel = random(1) - random(1)
 #                        obj.safe = true
-#                        with obj  if (gml.collision_point(position.x, position.y, "solid", 0, 0)): gml.instance_destroy() 
+#                        with obj  if (gml.collision_point(position.x, position.y, "solid", 0, 0)): gml.instance_destroy(self) 
                 
 #                    y_vel -= 1
 #                    x_vel -= 3

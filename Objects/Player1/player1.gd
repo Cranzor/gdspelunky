@@ -63,7 +63,6 @@ var k_attack_pressed
 var whipping
 var cant_jump
 var k_jumped
-var burning
 var firing
 var firing_max
 var firing_pistol_max

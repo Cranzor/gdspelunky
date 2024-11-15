@@ -18,7 +18,7 @@ func _process(delta):
 
 
 #func animation_end():
-    #    if (dying): gml.instance_destroy()
+    #    if (dying): gml.instance_destroy(self)
 
     
 

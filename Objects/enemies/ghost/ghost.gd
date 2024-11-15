@@ -28,7 +28,7 @@ func _process(delta):
 
 #    elif (sprite_index == "ghost_disappear):"
 
-#        gml.instance_destroy()
+#        gml.instance_destroy(self)
 
 
     
@@ -117,7 +117,7 @@ func _process(delta):
 
 #        # DY: global.bats += 1
 #        global.kills += 1
-#        gml.instance_destroy()
+#        gml.instance_destroy(self)
 
 
 #    dir = 0
@@ -134,8 +134,8 @@ func _process(delta):
 #        position.y += -1 * sin(degtorad(dir))
 #        if (character.position.x < position.x+8):
     
-#            if (sprite_index == "ghost_right): sprite_index = s_ghost_turn_left"
+#            if (sprite_index == "ghost_right):" sprite_index = "ghost_turn_left"
     
 #        else:
     
-#            if (sprite_index == "ghost_left): sprite_index = s_ghost_turn_right"
+#            if (sprite_index == "ghost_left):" sprite_index = "ghost_turn_right"

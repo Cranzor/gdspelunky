@@ -57,8 +57,8 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    if ((position.x > view_xview[0]-20 and position.x < view_xview[0] + view_wview[0]+4 and:
-#            position.y > view_yview[0]-20 and position.y < view_yview[0] + view_hview[0]+4))
+#    if ((position.x > gml.view("xview")-20 and position.x < gml.view("xview") + gml.view("wview")+4 and:
+#            position.y > gml.view("yview")-20 and position.y < gml.view("yview") + gml.view("hview")+4))
 
 #    PlatformEngine.move_to(x_vel,y_vel)
 
@@ -76,7 +76,7 @@ func _process(delta):
 #            global.aliens += 1
 #            global.kills += 1
     
-#        gml.instance_destroy()
+#        gml.instance_destroy(self)
 
 
 #    y_vel += 0.6

@@ -60,4 +60,4 @@ func _process(delta):
 #            held = false
     
 #        gml.instance_create(position.x, position.y, Objects.poof)
-#        gml.instance_destroy()
+#        gml.instance_destroy(self)

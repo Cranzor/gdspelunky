@@ -39,7 +39,7 @@ func _process(delta):
 #        Audio.play_sound(global.snd_hit)
 
 
-#    if (life <= 2): with other  gml.instance_destroy() 
+#    if (life <= 2): with other  gml.instance_destroy(self) 
 
     
 

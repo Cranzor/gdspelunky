@@ -38,8 +38,8 @@ func _process(delta):
 #                    tile = tile_layer_find(3, position.x, position.y-16)
 #                    if (tile): tile_delete(tile)
 #                    tile = instance_position(position.x+8, position.y-1, spikes)
-#                    if (tile): with tile  gml.instance_destroy() 
-#                    gml.instance_destroy()
+#                    if (tile): with tile  gml.instance_destroy(self) 
+#                    gml.instance_destroy(self)
             
 #                Audio.play_sound(global.snd_crunch)
         
@@ -156,6 +156,6 @@ func _process(delta):
 #        if (x_vel == 0 and y_vel == 0):
     
 #            gml.instance_create(position.x, position.y, Objects.boulder_static)
-#            gml.instance_destroy()
+#            gml.instance_destroy(self)
     
 #        */

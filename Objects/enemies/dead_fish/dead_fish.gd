@@ -54,8 +54,8 @@ func _process(delta):
     
 
 #func step():
-    #    if ((position.x > view_xview[0]-16 and position.x < view_xview[0] + view_wview[0] and:
-#            position.y > view_yview[0]-16 and position.y < view_yview[0] + view_hview[0]))
+    #    if ((position.x > gml.view("xview")-16 and position.x < gml.view("xview") + gml.view("wview") and:
+#            position.y > gml.view("yview")-16 and position.y < gml.view("yview") + gml.view("hview")))
 
 #    if (hp < 1):
 
@@ -69,7 +69,7 @@ func _process(delta):
 #            global.deadfish += 1
 #            global.kills += 1
     
-#        gml.instance_destroy()
+#        gml.instance_destroy(self)
 
 
 #    dist = point_distance(position.x, position.y, character.position.x, character.position.y)
@@ -126,4 +126,4 @@ func _process(delta):
 #    if (not gml.collision_point(position.x+4, position.y+4, "water", 0, 0)):
 
 #        gml.instance_create(position.x, position.y, Objects.fish_bone)
-#        gml.instance_destroy()
+#        gml.instance_destroy(self)

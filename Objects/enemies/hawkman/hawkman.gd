@@ -204,8 +204,8 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    if ((position.x > view_xview[0]-20 and position.x < view_xview[0] + view_wview[0]+4 and:
-#            position.y > view_yview[0]-20 and position.y < view_yview[0] + view_hview[0]+4))
+#    if ((position.x > gml.view("xview")-20 and position.x < gml.view("xview") + gml.view("wview")+4 and:
+#            position.y > gml.view("yview")-20 and position.y < gml.view("yview") + gml.view("hview")+4))
 
 #    PlatformEngine.move_to(x_vel,y_vel)
 
@@ -227,7 +227,7 @@ func _process(delta):
     
 #            MiscScripts.scr_create_blood(position.x+8, position.y+8, 3)
 #            Audio.play_sound(global.snd_caveman_die)
-#            gml.instance_destroy()
+#            gml.instance_destroy(self)
     
 
 #    elif (not held):
@@ -236,7 +236,7 @@ func _process(delta):
     
 #            MiscScripts.scr_create_blood(position.x+8, position.y+8, 3)
 #            Audio.play_sound(global.snd_caveman_die)
-#            gml.instance_destroy()
+#            gml.instance_destroy(self)
     
 
 
@@ -276,7 +276,7 @@ func _process(delta):
 #            if (facing == LEFT): sight.direction = 180
 #            else: sight.direction = 0
 #            sight.speed = 10
-#            sight.owner = gml.instance_place(position.x, position.y, hawkman)
+#            sight.owner_object = gml.instance_place(position.x, position.y, hawkman)
 #            sight_counter = 5
     
 
@@ -323,7 +323,7 @@ func _process(delta):
 #            if (facing == LEFT): sight.direction = 180
 #            else: sight.direction = 0
 #            sight.speed = 10
-#            sight.owner = gml.instance_place(position.x, position.y, hawkman)
+#            sight.owner_object = gml.instance_place(position.x, position.y, hawkman)
 #            sight_counter = 5
     
 

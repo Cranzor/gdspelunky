@@ -18,7 +18,7 @@ func _process(delta):
 
 
 #func collision with o_bullet():
-    #    gml.instance_destroy()
+    #    gml.instance_destroy(self)
 
     
 
@@ -43,7 +43,7 @@ func _process(delta):
 #        player1.hold_item = 0
 #        player1.pickup_item_type = ""
 
-#    gml.instance_destroy()
+#    gml.instance_destroy(self)
 
     
 
@@ -203,7 +203,7 @@ func _process(delta):
 
 #                Audio.play_sound(global.snd_explosion)
         
-#            gml.instance_destroy()
+#            gml.instance_destroy(self)
     
 
 
@@ -245,7 +245,7 @@ func _process(delta):
 #            enemy.x_vel = x_vel * 0.3
         
 #            if (type == "Arrow" or type == "Fish Bone"):
-#                gml.instance_destroy()
+#                gml.instance_destroy(self)
     
     
 #        destroy = true
@@ -282,4 +282,4 @@ func _process(delta):
 #            player1.hold_item = 0
 #            player1.pickup_item_type = ""
     
-#        gml.instance_destroy()
+#        gml.instance_destroy(self)

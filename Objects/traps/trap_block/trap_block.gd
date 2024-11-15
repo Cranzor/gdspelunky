@@ -53,4 +53,4 @@ func _process(delta):
 #    if (dying):
 
 #        if (death_timer > 0): death_timer -= 1
-#        else: gml.instance_destroy()
+#        else: gml.instance_destroy(self)

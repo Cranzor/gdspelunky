@@ -290,7 +290,7 @@ func _process(delta):
 #        else:
     
 #            draw_loot = 2
-#            with sprite  gml.instance_destroy() 
+#            with sprite  gml.instance_destroy(self) 
     
 
 

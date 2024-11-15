@@ -26,7 +26,7 @@ func _process(delta):
 
 #    if (other.type == "Magma Man"):
 
-#        gml.instance_destroy()
+#        gml.instance_destroy(self)
 
 
 #    if (other.type == "Shopkeeper" and other.hp > 0):
@@ -46,7 +46,7 @@ func _process(delta):
     
 
 #func collision with o_laser():
-    #    gml.instance_destroy()
+    #    gml.instance_destroy(self)
 
     
 
@@ -69,7 +69,7 @@ func _process(delta):
     
 
 #func collision with o_water():
-    #    gml.instance_destroy()
+    #    gml.instance_destroy(self)
 
     
 
@@ -82,4 +82,4 @@ func _process(delta):
 #func step():
     #    image_alpha = life/12
 #    if (dying): life -= 0.02
-#    if (life <= 1): gml.instance_destroy()
+#    if (life <= 1): gml.instance_destroy(self)

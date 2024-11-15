@@ -42,7 +42,7 @@ func _process(delta):
 #            4:  gml.instance_create(position.x-8, position.y-8, Objects.frog)  
 #            5:  gml.instance_create(position.x-8, position.y-8, Objects.fire_frog)  
     
-#        gml.instance_destroy()
+#        gml.instance_destroy(self)
 
 #    */
 
@@ -86,7 +86,7 @@ func _process(delta):
 #            4:  gml.instance_create(position.x-8, position.y-8, Objects.frog)  
 #            5:  gml.instance_create(position.x-8, position.y-8, Objects.fire_frog)  
     
-#        gml.instance_destroy()
+#        gml.instance_destroy(self)
 
 
 #    if (y_vel < 6): y_vel += 0.15
@@ -95,5 +95,5 @@ func _process(delta):
 #        gml.collision_point(position.x, position.y, "dark_fall", 0, 0) or
 #        gml.collision_point(position.x, position.y, "ice", 0, 0))
 
-#        gml.instance_destroy()
+#        gml.instance_destroy(self)
 #    */

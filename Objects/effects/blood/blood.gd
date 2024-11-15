@@ -63,7 +63,7 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    if (y_vel > 6): gml.instance_destroy()
+#    if (y_vel > 6): gml.instance_destroy(self)
 
 #    if (Collision.is_collision_bottom(1)):
 

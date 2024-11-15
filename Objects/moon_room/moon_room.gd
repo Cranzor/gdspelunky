@@ -77,12 +77,12 @@ func _process(delta):
 #            obj.x_vel = 0
 #            obj.y_vel = 1
         
-#            gml.instance_destroy()
+#            gml.instance_destroy(self)
     
 #        with entrance
     
 #            gml.instance_create(position.x, position.y, Objects.x_scores)
-#            gml.instance_destroy()
+#            gml.instance_destroy(self)
     
 #        alarm_10(30)
 
@@ -145,11 +145,11 @@ func _process(delta):
 #    if (life < 0): life = 0
 #    draw_set_font(global.my_font)
 #    draw_set_color(c_white)
-#    draw_sprite(s_hoops_icon, -1, view_xview[0]+8, view_yview[0]+8)
-#    draw_text(view_xview[0]+24, view_yview[0]+8, baskets)
-#    draw_sprite(s_timer_icon, -1, view_xview[0]+64, view_yview[0]+8)
-#    if (timer >= 0): draw_text(view_xview[0]+64+16, view_yview[0]+8, timer)
-#    else: draw_text(view_xview[0]+64+16, view_yview[0]+8, "0")
+#    draw_sprite(s_hoops_icon, -1, gml.view("xview")+8, gml.view("yview")+8)
+#    draw_text(gml.view("xview")+24, gml.view("yview")+8, baskets)
+#    draw_sprite(s_timer_icon, -1, gml.view("xview")+64, gml.view("yview")+8)
+#    if (timer >= 0): draw_text(gml.view("xview")+64+16, gml.view("yview")+8, timer)
+#    else: draw_text(gml.view("xview")+64+16, gml.view("yview")+8, "0")
 #    if (draw_status < 3):
 
 #        draw_set_font(global.my_font_small)

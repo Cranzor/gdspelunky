@@ -18,7 +18,7 @@ func _process(delta):
 
 
 #func animation_end():
-    #    if (sprite_index == "damsel_kiss_l or sprite_index == s_p_kiss_l):"
+    #    if (sprite_index == "damsel_kiss_l" or sprite_index == "p_kiss_l):"
 
 #        kissed = true
 #        if (global.is_damsel): sprite_index = "stand_left"
@@ -57,7 +57,7 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    if ((sprite_index == "damsel_kiss_l or sprite_index = s_p_kiss_l) and image_index == 7):"
+#    if ((sprite_index == "damsel_kiss_l" or sprite_index = "p_kiss_l)" and image_index == 7):
 
 #        gml.instance_create(position.x-8, position.y-8, Objects.heart)
 #        Audio.play_sound(global.snd_kiss)

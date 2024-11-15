@@ -98,8 +98,8 @@ func _process(delta):
     
 
 #func step():
-    #    if ((position.x > view_xview[0]-48 and position.x < view_xview[0] + view_wview[0]+48 and:
-#            position.y > view_yview[0]-48 and position.y < view_yview[0] + view_hview[0]+48))
+    #    if ((position.x > gml.view("xview")-48 and position.x < gml.view("xview") + gml.view("wview")+48 and:
+#            position.y > gml.view("yview")-48 and position.y < gml.view("yview") + gml.view("hview")+48))
 
 
 #    if (not gml.collision_point(position.x+8, position.y+16, "water", 0, 0)):
@@ -126,7 +126,7 @@ func _process(delta):
 #            obj.x_vel = randi_range(0,3)-randi_range(0,3)
 #            obj.y_vel = -randi_range(1,2)
     
-#        gml.instance_destroy()
+#        gml.instance_destroy(self)
 
 
 #    dist = point_distance(position.x, position.y, player1.position.x, player1.position.y)
@@ -187,13 +187,13 @@ func _process(delta):
 
 #        if (player1.swimming and not player1.dead):
     
-#            if (sprite_index == "jaws_left or sprite_index == s_jaws_right):"
+#            if (sprite_index == "jaws_left" or sprite_index == "jaws_right):"
 #                dir = point_direction(position.x+8, position.y+16, player1.position.x, player1.position.y-8)
         
 #            turn = false
 #            if (player1.position.x < position.x+8):
         
-#                if (sprite_index == "jaws_right and not gml.collision_rectangle(position.x-32, position.y, position.x,  position.y+32, "solid", 0, 0)):"
+#                if (sprite_index == "jaws_right" and not gml.collision_rectangle(position.x-32, position.y, position.x,  position.y+32, "solid", 0, 0)):
             
 #                    status = TURN
 #                    dir = 180
@@ -205,7 +205,7 @@ func _process(delta):
         
 #            else:
         
-#                if (sprite_index == "jaws_left and not gml.collision_point(position.x-2, position.y+16, "solid", 0, 0)):"
+#                if (sprite_index == "jaws_left" and not gml.collision_point(position.x-2, position.y+16, "solid", 0, 0)):
             
 #                    status = TURN
 #                    dir = 0

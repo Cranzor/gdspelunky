@@ -70,7 +70,7 @@ func _process(delta):
 #func collision with o_player1():
     #    if (status == IDLE and abs(other.position.x-(position.x+8)) < 6 and counter = 0):
 
-#        if (other.state <= 13 and other.sprite_index != "p_exit and other.sprite_index != s_damsel_exit):"
+#        if (other.state <= 13 and other.sprite_index != "p_exit" and other.sprite_index != "damsel_exit):"
     
 #            sprite_index = "spring_trap_sprung"
 #            Audio.play_sound(global.snd_boing)
@@ -95,8 +95,8 @@ func _process(delta):
     
 
 #func step():
-    #    if ((position.x > view_xview[0]-16 and position.x < view_xview[0] + view_wview[0] and:
-#            position.y > view_yview[0]-16 and position.y < view_yview[0] + view_hview[0]))
+    #    if ((position.x > gml.view("xview")-16 and position.x < gml.view("xview") + gml.view("wview") and:
+#            position.y > gml.view("yview")-16 and position.y < gml.view("yview") + gml.view("hview")))
 
 #        if (counter > 0): counter -= 1
-#        if (not gml.collision_point(position.x, position.y+16, "solid", 0, 0)): gml.instance_destroy()
+#        if (not gml.collision_point(position.x, position.y+16, "solid", 0, 0)): gml.instance_destroy(self)

@@ -18,7 +18,7 @@ func _process(delta):
 
 
 #func animation_end():
-    #    if (sprite_index = "ceiling_trap_s): sprite_index = s_ceiling_trap"
+    #    if (sprite_index = "ceiling_trap_s):" sprite_index = "ceiling_trap"
 
     
 
@@ -75,7 +75,7 @@ func _process(delta):
     
 #        y_vel = 0
 #        if (gml.collision_point(position.x+8, position.y+17, "solid", 0, 0)): status = WAIT
-#        if (sprite_index = "block): sprite_index = s_ceiling_trap_s"
+#        if (sprite_index = "block):" sprite_index = "ceiling_trap_s"
 
 #    elif (status == WAIT):
 

@@ -23,7 +23,7 @@ func _process(delta):
 #    if (global.collect_counter > 100): global.collect_counter = 100
 #    global.scarabs += 1
 #    Audio.play_sound(global.snd_coin)
-#    gml.instance_destroy()
+#    gml.instance_destroy(self)
 
     
 
@@ -70,8 +70,8 @@ func _process(delta):
     
 
 #func step():
-    #    if ((position.x > view_xview[0]-20 and position.x < view_xview[0] + view_wview[0]+4 and:
-#            position.y > view_yview[0]-20 and position.y < view_yview[0] + view_hview[0]+4))
+    #    if ((position.x > gml.view("xview")-20 and position.x < gml.view("xview") + gml.view("wview")+4 and:
+#            position.y > gml.view("yview")-20 and position.y < gml.view("yview") + gml.view("hview")+4))
 
 #    PlatformEngine.move_to(x_vel, y_vel)
 
@@ -84,7 +84,7 @@ func _process(delta):
 #            obj = gml.instance_create(position.x+2+randi_range(0,14), position.y+2+randi_range(0,14), Objects.flare_spark)
 #            obj.y_vel = randi_range(1,3)
     
-#        gml.instance_destroy()
+#        gml.instance_destroy(self)
 
 
 #    dir = 0

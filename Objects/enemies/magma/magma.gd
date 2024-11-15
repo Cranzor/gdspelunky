@@ -28,7 +28,7 @@ func _process(delta):
 
 #        magma = gml.instance_create(position.x-8, position.y-8, Objects.magma_man)
 #        magma.hp = hp
-#        gml.instance_destroy()
+#        gml.instance_destroy(self)
 
 
     
@@ -77,7 +77,7 @@ func _process(delta):
 
 #func collision with o_water():
     #    gml.instance_create(position.x, position.y, Objects.smoke_puff)
-#    gml.instance_destroy()
+#    gml.instance_destroy(self)
 
     
 

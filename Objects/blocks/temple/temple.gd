@@ -62,7 +62,7 @@ func _process(delta):
 #                gold.y_vel = randi_range(2,4) * 1
         
     
-#        elif (sprite_index == "temple_gold_big or global.city_of_gold):"
+#        elif (sprite_index == "temple_gold_big" or global.city_of_gold):
     
 #            for i in range(0, 3):
         

@@ -29,9 +29,9 @@ func _process(delta):
 #        status = SLAVE
 
 
-#    if (sprite_index == "damsel_exit2 or sprite_index = s_p_exit):"
+#    if (sprite_index == "damsel_exit2" or sprite_index = "p_exit):"
 
-#        gml.instance_destroy()
+#        gml.instance_destroy(self)
 
 
     
@@ -192,7 +192,7 @@ func _process(delta):
 #        can_pick_up = false
 
 
-#    if (sprite_index = "damsel_exit2 or sprite_index = s_p_exit):"
+#    if (sprite_index = "damsel_exit2" or sprite_index = "p_exit):"
 
 #        depth = 1000
 #        invincible = true
@@ -234,7 +234,7 @@ func _process(delta):
 #                global.kills += 1
         
 #            Audio.play_sound(global.snd_damsel)
-#            gml.instance_destroy()
+#            gml.instance_destroy(self)
     
 
 #        if (burning > 0):
@@ -262,7 +262,7 @@ func _process(delta):
 #        if (gml.collision_point(position.x, position.y+6, "spikes", 0, 0) and y_vel > 2):
     
 #            obj = gml.instance_place(position.x, position.y+6, spikes)
-#            with obj  sprite_index = "spikes_blood "
+#            with obj  sprite_index = "spikes_blood" 
 #            if (hp > 0):
         
 #                MiscScripts.scr_create_blood(position.x, position.y, 3)
@@ -337,8 +337,8 @@ func _process(delta):
 
 #    elif (status == KISS):
 
-#        if ((sprite_index == "damsel_kiss_l or:"
-#             sprite_index == "p_kiss_l) and image_index == 7)"
+#        if ((sprite_index == "damsel_kiss_l" or:
+#             sprite_index == "p_kiss_l)" and image_index == 7)
     
 #            if (facing == LEFT): gml.instance_create(position.x-8, position.y-8, Objects.heart)
 #            else: gml.instance_create(position.x+8, position.y-8, Objects.heart)
@@ -509,7 +509,7 @@ func _process(delta):
 #                scr_get_favor_msg()
 #                global.message_timer = 200
 #                global.shake = 10
-#                gml.instance_destroy()
+#                gml.instance_destroy(self)
             
         
     

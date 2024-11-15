@@ -21,7 +21,7 @@ func _process(delta):
     #    if (sprite_index == "alien_boss_die):"
 
 #        sprite_index = "alien_boss_dead"
-#        with barrier_emitter  gml.instance_destroy() 
+#        with barrier_emitter  gml.instance_destroy(self) 
 
 #    if (sprite_index == "alien_boss_hurt):"
 
@@ -98,8 +98,8 @@ func _process(delta):
     
 
 #func step():
-    #    if (position.x > view_xview[0]-36 and position.x < view_xview[0] + view_wview[0] and:
-#            position.y > view_yview[0]-36 and position.y < view_yview[0] + view_hview[0])
+    #    if (position.x > gml.view("xview")-36 and position.x < gml.view("xview") + gml.view("wview") and:
+#            position.y > gml.view("yview")-36 and position.y < gml.view("yview") + gml.view("hview"))
 
 #    if (gml.collision_point(position.x+8, position.y+8, "solid", 0, 0)):
 
@@ -174,12 +174,12 @@ func _process(delta):
 #        Audio.play_sound(global.snd_psychic)
 
 
-#    if (sprite_index != "alien_boss_hurt): image_speed = 0.25    "
+#    if (sprite_index != "alien_boss_hurt):" image_speed = 0.25    
     
-#    if (status != DEAD and sprite_index != "alien_boss_hurt and facing == LEFT):"
+#    if (status != DEAD and sprite_index != "alien_boss_hurt" and facing == LEFT):
 
 #        sprite_index = "alien_boss"
 
-#    if (status != DEAD and sprite_index != "alien_boss_hurt and facing == RIGHT):"
+#    if (status != DEAD and sprite_index != "alien_boss_hurt" and facing == RIGHT):
 
 #        sprite_index = "alien_boss"

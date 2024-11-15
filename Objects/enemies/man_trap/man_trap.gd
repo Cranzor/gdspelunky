@@ -42,7 +42,7 @@ func _process(delta):
 #        else: facing = LEFT
 #        sprite_index = "man_trap_eat_caveman_l"
         
-#        with other  gml.instance_destroy() 
+#        with other  gml.instance_destroy(self) 
 
 
     
@@ -131,7 +131,7 @@ func _process(delta):
 #                player1.hold_item = 0
 #                player1.pickup_item_type = ""
         
-#            gml.instance_destroy()
+#            gml.instance_destroy(self)
     
 
 
@@ -159,7 +159,7 @@ func _process(delta):
 #                obj.for_sale = false
 #                has_gun = false
         
-#            gml.instance_destroy()
+#            gml.instance_destroy(self)
     
 
 
@@ -259,8 +259,8 @@ func _process(delta):
 #    super()
 
 #    # main_code
-#    if ((position.x > view_xview[0]-20 and position.x < view_xview[0] + view_wview[0]+4 and:
-#            position.y > view_yview[0]-20 and position.y < view_yview[0] + view_hview[0]+4))
+#    if ((position.x > gml.view("xview")-20 and position.x < gml.view("xview") + gml.view("wview")+4 and:
+#            position.y > gml.view("yview")-20 and position.y < gml.view("yview") + gml.view("hview")+4))
 
 #    PlatformEngine.move_to(x_vel,y_vel)
 
@@ -295,7 +295,7 @@ func _process(delta):
 #            MiscScripts.scr_create_blood(position.x+8, position.y+8, 1)
 #            Audio.play_sound(global.snd_small_explode)
     
-#        gml.instance_destroy()
+#        gml.instance_destroy(self)
 
 
 #    if (Collision.is_collision_bottom(1) and status != STUNNED): y_vel = 0
@@ -375,7 +375,7 @@ func _process(delta):
 #                    for repetition in range(1, 3):  gml.instance_create(position.x+randi_range(0,16), position.y-8+randi_range(0,16), Objects.leaf) 
 #                    MiscScripts.scr_create_blood(position.x+8, position.y+8, 1)
 #                    Audio.play_sound(global.snd_small_explode)
-#                    gml.instance_destroy()
+#                    gml.instance_destroy(self)
             
 #                elif (hp > 0):
             
