@@ -1,0 +1,46 @@
+extends GMObject
+
+
+func _ready():
+	object_setup()
+
+
+func _physics_process(delta):
+	object_tick()
+
+
+func _process(delta):
+	object_process(delta)
+
+
+#--- Object functions
+
+
+func alarm_0():
+	if (randi_range(1,2) == 1): gml.instance_create(position.x+randi_range(0,16), position.y+randi_range(0,16), Objects.flame_trail)
+	else: gml.instance_create(position.x+randi_range(0,16), position.y+randi_range(0,16), Objects.burn)
+	alarm_0_countdown.start(3)
+	
+
+func collision_with_enemy():
+	gml.instance_create(position.x+8, position.y+8, Objects.explosion)
+	Audio.play_sound(global.snd_explosion)
+	gml.instance_destroy(self)
+	
+
+func collision_with_solid():
+	gml.instance_create(position.x+8, position.y+8, Objects.explosion)
+	Audio.play_sound(global.snd_explosion)
+	gml.instance_destroy(self)
+
+
+func create():
+	x_vel = 0
+	y_vel = 0
+	alarm_0_countdown.start(3)
+
+
+func step():
+	position.x += x_vel
+	position.y += y_vel
+	if (y_vel < 6): y_vel += 0.6

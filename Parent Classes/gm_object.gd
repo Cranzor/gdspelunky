@@ -128,6 +128,8 @@ var image_yscale: float:
 		return animated_sprite_node.scale.y
 		
 var image_angle: float:
+	set(value):
+		animated_sprite_node.rotation_degrees = value
 	get:
 		return animated_sprite_node.rotation_degrees
 		

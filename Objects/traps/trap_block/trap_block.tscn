@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://ck7kb0ybiygm4"]
 
-[sub_resource type="GDScript" id="GDScript_axyqa"]
+[ext_resource type="Script" path="res://objects/traps/trap_block/trap_block.gd" id="1_tmifs"]
 
 [node name="TrapBlock" type="Node2D"]
+script = ExtResource("1_tmifs")
+object_name = "trap_block"

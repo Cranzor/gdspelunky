@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://c58gw45c8oveg"]
 
-[sub_resource type="GDScript" id="GDScript_cx67o"]
+[ext_resource type="Script" path="res://objects/items/fish_bone/fish_bone.gd" id="1_qeq57"]
 
 [node name="FishBone" type="Node2D"]
+script = ExtResource("1_qeq57")
+object_name = "fish_bone"

@@ -2,9 +2,8 @@
 
 [ext_resource type="Script" path="res://objects/blocks/brick/brick.gd" id="1_wetyu"]
 
-[node name="Brick" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
+[node name="Brick" type="Node2D"]
 z_index = -100
 script = ExtResource("1_wetyu")
 sprite_index_name = "brick"
-animated_sprite_node = NodePath("")
 object_name = "brick"

@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bk5eaesk1m2eo"]
 
-[sub_resource type="GDScript" id="GDScript_h1hu4"]
+[ext_resource type="Script" path="res://objects/traps/door/door.gd" id="1_ogtu8"]
 
 [node name="Door" type="Node2D"]
+script = ExtResource("1_ogtu8")
+object_name = "door"

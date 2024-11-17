@@ -2,9 +2,8 @@
 
 [ext_resource type="Script" path="res://objects/blocks/dark/dark.gd" id="1_epkk4"]
 
-[node name="Dark" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
+[node name="Dark" type="Node2D"]
 z_index = -100
 script = ExtResource("1_epkk4")
 sprite_index_name = "dark"
-animated_sprite_node = NodePath("")
 object_name = "dark"

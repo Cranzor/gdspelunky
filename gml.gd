@@ -387,6 +387,14 @@ func draw_sprite_ext(node, sprite, subimg, x, y, xscale, yscale, rot, color, alp
 func degtorad(deg): #---[FLAG] need to test
 	var angle_radians = deg * PI / 180
 	return angle_radians
+
+func radtodeg(rad): #---[FLAG] need to test
+	var angle_degrees = rad * 180 / PI
+	return angle_degrees
+	
+func arctan(x):
+	var inverse_tanget = atan(x) #---[FLAG] need to test
+	return inverse_tanget
 	
 #------------------------
 func singleton_test():

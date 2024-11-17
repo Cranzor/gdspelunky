@@ -2,10 +2,9 @@
 
 [ext_resource type="Script" path="res://objects/items/rope_throw/rope_throw.gd" id="1_fslem"]
 
-[node name="RopeThrow" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
+[node name="RopeThrow" type="Node2D"]
 z_index = -100
 script = ExtResource("1_fslem")
 sprite_index_name = "rope_end"
-animated_sprite_node = NodePath("")
 sprite_offset = Vector2(4, 4)
 object_name = "rope_throw"

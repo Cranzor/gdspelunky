@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bom8panq8vdhg"]
 
-[sub_resource type="GDScript" id="GDScript_dovvv"]
+[ext_resource type="Script" path="res://objects/effects/volcano_flame/volcano_flame.gd" id="1_mps3j"]
 
 [node name="VolcanoFlame" type="Node2D"]
+script = ExtResource("1_mps3j")
+object_name = "volcano_flame"
