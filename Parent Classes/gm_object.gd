@@ -16,6 +16,7 @@ var counter #--- same as above
 var type
 var my_grav
 var trigger
+var grav
 
 #--- want access to these for all objects, so defining here
 var collision_bounds_offset_left_x

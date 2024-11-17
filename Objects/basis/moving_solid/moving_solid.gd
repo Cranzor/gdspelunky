@@ -14,6 +14,8 @@ func _process(delta):
 
 
 #--- Object functions
+var WAIT
+var RETURN
 
 
 func create():

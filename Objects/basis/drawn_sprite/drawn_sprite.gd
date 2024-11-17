@@ -19,7 +19,6 @@ var facing
 var armed
 var active
 var held #--- seems easier to put this here since both items and enemies use it
-var grav
 var bounce
 var safe
 var heavy
@@ -47,6 +46,8 @@ var burning
 var life
 var dying
 var dist
+var viscid_top
+var DROP
 
 func create():
 	visible = true #--- believe I put this due to how Game Maker handles it

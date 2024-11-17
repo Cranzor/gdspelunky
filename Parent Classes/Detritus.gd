@@ -9,3 +9,6 @@ func _ready():
 	persistent = false
 	parent = DrawnSprite
 	mask
+
+func step(): #--- placeholder for now for children super() call
+	pass

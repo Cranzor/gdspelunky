@@ -333,6 +333,9 @@ func tile_layer_find(depth, x, y): #---[FLAG] have to implement this. returns th
 func tile_delete(id): #---[FLAG] have to implement this
 	pass
 
+func random(x):
+	pass
+
 #---------------------------------------
 func background_index(background: String): #Changing this to a function
 	pass

@@ -1,4 +1,3 @@
-
 extends Item
 
 
@@ -17,47 +16,43 @@ func _process(delta):
 #--- Object functions
 
 
-#func alarm 0():
-    #    gml.instance_create(position.x+randi_range(0,3)-randi_range(0,3), position.y-4+randi_range(0,3)-randi_range(0,3), Objects.flare_spark)
-#    alarm_0(2)
+func alarm_0():
+	gml.instance_create(position.x+randi_range(0,3)-randi_range(0,3), position.y-4+randi_range(0,3)-randi_range(0,3), Objects.flare_spark)
+	alarm_0_countdown.start(2)
 
-    
 
-#func create():
-    #    # action_inherited
-#    super()
+func create():
+	# action_inherited
+	super()
 
-#    # main_code
-#    type = "Flare Crate"
-#    PlatformEngine.make_active(self)
-#    Collision.set_collision_bounds(self, -6, 0, 6, 8)
+	# main_code
+	type = "flare crate"
+	PlatformEngine.make_active(self)
+	Collision.set_collision_bounds(self, -6, 0, 6, 8)
 
-#    image_speed = 0.2
-#    alarm_0(1)
-#    heavy = true
+	image_speed = 0.2
+	alarm_0_countdown.start(1)
+	heavy = true
 
-#    y_vel = 0
-#    y_acc = 0.2
+	y_vel = 0
+	y_acc = 0.2
 
-    
 
-#func step():
-    #    # action_inherited
-#    super()
+func step():
+	# action_inherited
+	super()
 
-#    # main_code
-#    if (gml.collision_point(position.x, position.y, "water", -1, -1)):
+	# main_code
+	if (gml.collision_point(position.x, position.y, "water", -1, -1)):
 
-#        gml.instance_create(position.x, position.y, Objects.splash)
-#        Audio.play_sound(global.snd_splash)
-#        if (held):
-    
-#            with player1
-        
-#                hold_item = 0
-#                pickup_item_type = ""
-        
-#            held = false
-    
-#        gml.instance_create(position.x, position.y, Objects.poof)
-#        gml.instance_destroy(self)
+		gml.instance_create(position.x, position.y, Objects.splash)
+		Audio.play_sound(global.snd_splash)
+		if (held):
+			var player1 = gml.get_instance("player1") #---[FLAG] may need to adjust for multiplayer
+			player1.hold_item = 0
+			player1.pickup_item_type = ""
+		
+			held = false
+	
+		gml.instance_create(position.x, position.y, Objects.poof)
+		gml.instance_destroy(self)

@@ -1,4 +1,3 @@
-
 extends Item
 
 
@@ -17,26 +16,25 @@ func _process(delta):
 #--- Object functions
 
 
-#func alarm 2():
-    #    safe = false
+#func alarm_2():
+#    safe = false
 
-    
+	
 
 #func create():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code
-#    type = "Fish Bone"
+#    type = "fish bone"
 #    PlatformEngine.make_active(self)
 #    Collision.set_collision_bounds(self, -4, -4, 4, 4)
 #    my_grav = 0.2
 #    safe = false
 
-    
 
 #func step():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code

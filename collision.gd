@@ -209,7 +209,7 @@ func get_id_collision_right(number, node): #--- Only used once in PlatformEngine
 	else:
 		return null
 	
-func is_collision_character_left(number, id: String): #--- id is just the group
+func is_collision_character_left(number, id = 0): #--- id is just the group
 	#/*
 	#0: Number of pixels left of the collision rectangle to check for a collision
 	#with the character.
@@ -218,7 +218,7 @@ func is_collision_character_left(number, id: String): #--- id is just the group
 	#the solid must be hitting the character's right side, so...
 
 	var w=id
-	if(id==null):
+	if(id==0):
 		w= "character"
 
 	var all_characters = gml.get_all_instances(w)
@@ -234,7 +234,7 @@ func is_collision_character_left(number, id: String): #--- id is just the group
 			return true
 	return false
 	
-func is_collision_character_right(number, id: String):
+func is_collision_character_right(number, id = 0):
 	#/*
 	#0: Number of pixels right of the collision rectangle to check for a collision
 	#with the character.
@@ -243,7 +243,7 @@ func is_collision_character_right(number, id: String):
 	#the solid must be hitting the character's left side, so...
 
 	var w=id
-	if(id==null):
+	if(id==0):
 		w= "character"
 	var all_characters = gml.get_all_instances(w)
 	for character_instance in all_characters:
@@ -348,7 +348,7 @@ func is_collision_bottom(number, node):
 		
 	return false
 	
-func is_collision_character_bottom(number, id: String):
+func is_collision_character_bottom(number, id = 0):
 	#/*
 	#0: Number of pixels to the bottom of the collision rectangle to check for a collision
 	#with the character.
@@ -356,7 +356,7 @@ func is_collision_character_bottom(number, id: String):
 	#*/
 	#the solid must be hitting the character's top side, so...
 	var w=id
-	if(id==null):
+	if(id==0):
 		w= "character"
 
 	var all_characters = gml.get_all_instances(w)
@@ -373,7 +373,7 @@ func is_collision_character_bottom(number, id: String):
 
 	return false
 	
-func is_collision_character_top(number, id: String):
+func is_collision_character_top(number, id = 0):
 	#/*
 	#0: Number of pixels above the collision rectangle to check for a collision
 	#with the character.
@@ -381,7 +381,7 @@ func is_collision_character_top(number, id: String):
 	#*/
 	#the solid must be hitting the character's bottom side, so...
 	var w=id
-	if(id==null):
+	if(id==0):
 		w= "character"
 
 	var all_characters = gml.get_all_instances(w)
