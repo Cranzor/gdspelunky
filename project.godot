@@ -33,6 +33,7 @@ Globals="*res://objects/globals/globals.tscn"
 Screen="*res://objects/screen/screen.tscn"
 Gamepad="*res://objects/gamepad/gamepad.tscn"
 Objects="*res://objects.gd"
+LottesCrtFilter="*res://filter/lottes_crt_filter.tscn"
 
 [display]
 
@@ -40,7 +41,7 @@ window/size/viewport_width=320
 window/size/viewport_height=240
 window/size/window_width_override=1920
 window/size/window_height_override=1080
-window/stretch/mode="viewport"
+window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
