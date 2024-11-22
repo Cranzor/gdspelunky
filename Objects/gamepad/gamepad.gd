@@ -1,5 +1,19 @@
 extends GMObject #--- [FLAG] double check this
 
+
+func _ready():
+	object_setup()
+
+
+func _physics_process(_delta):
+	object_tick()
+
+
+func _process(delta):
+	object_process(delta)
+
+
+#--- Object functions
 var start
 var start_pressed
 var start_released
@@ -38,20 +52,6 @@ var pay
 var pay_pressed
 var pay_released
 
-func initial_setup():
-	#--- set size
-	object_size = Vector2(0, 0)
-
-	#--- set depth
-	depth = 0
-	z_index = depth
-	
-func _ready():
-	initial_setup()
-	create()
-
-func _physics_process(_delta):
-	step()
 
 func create():
 	start = false
@@ -104,12 +104,13 @@ func create():
 	pay_pressed = false
 	pay_released = false
 
+
 func step():
 	#if global.gamepad_on: #--- commenting this out as this script serves as the basis for all input methods
 		start_released = false
 		start_pressed = false
 		if (start):
-			if Input.is_action_pressed("start") == true:
+			if GlobalInput.check_input("start") == true:
 				start = true
 			else:
 				start = false
@@ -118,7 +119,7 @@ func step():
 				start_released = true
 			
 		else:
-			if Input.is_action_pressed("start") == true:
+			if GlobalInput.check_input("start") == true:
 				start = true
 			else:
 				start = false
@@ -166,7 +167,7 @@ func step():
 		left_released = false
 		left_pressed = false
 		if (left):
-			if Input.is_action_pressed("left") == true:
+			if GlobalInput.check_input("left") == true:
 				left = true
 			else:
 				left = false
@@ -175,7 +176,7 @@ func step():
 				left_released = true
 
 		else:
-			if Input.is_action_pressed("left") == true:
+			if GlobalInput.check_input("left") == true:
 				left = true
 			else:
 				left = false
@@ -202,7 +203,7 @@ func step():
 		right_pressed = false
 		if (right):
 
-			if Input.is_action_pressed("right") == true:
+			if GlobalInput.check_input("right") == true:
 				right = true
 			else:
 				right = false
@@ -211,7 +212,7 @@ func step():
 				right_released = true
 
 		else:
-			if Input.is_action_pressed("right") == true:
+			if GlobalInput.check_input("right") == true:
 				right = true
 			else:
 				right = false
@@ -239,7 +240,7 @@ func step():
 		up_pressed = false
 		if (up):
 
-			if Input.is_action_pressed("up") == true:
+			if GlobalInput.check_input("up") == true:
 				up = true
 			else:
 				up = false
@@ -248,7 +249,7 @@ func step():
 				up_released = true
 
 		else:
-			if Input.is_action_pressed("up") == true:
+			if GlobalInput.check_input("up") == true:
 				up = true
 			else:
 				up = false
@@ -276,7 +277,7 @@ func step():
 		down_pressed = false
 		if (down):
 
-			if Input.is_action_pressed("down") == true:
+			if GlobalInput.check_input("down") == true:
 				down = true
 			else:
 				down = false
@@ -285,7 +286,7 @@ func step():
 				down_released = true
 
 		else:
-			if Input.is_action_pressed("down") == true:
+			if GlobalInput.check_input("down") == true:
 				down = true
 			else:
 				down = false
@@ -341,7 +342,7 @@ func step():
 		jump_pressed = false
 		if (jump):
 
-			if Input.is_action_pressed("jump") == true:
+			if GlobalInput.check_input("jump") == true:
 				jump = true
 			else:
 				jump = false
@@ -350,7 +351,7 @@ func step():
 				jump_released = true
 
 		else:
-			if Input.is_action_pressed("jump") == true:
+			if GlobalInput.check_input("jump") == true:
 				jump = true
 			else:
 				jump = false
@@ -400,7 +401,7 @@ func step():
 		attack_pressed = false
 		if (attack):
 
-			if Input.is_action_pressed("attack") == true:
+			if GlobalInput.check_input("attack") == true:
 				attack = true
 			else:
 				attack = false
@@ -409,7 +410,7 @@ func step():
 				attack_released = true
 
 		else:
-			if Input.is_action_pressed("attack") == true:
+			if GlobalInput.check_input("attack") == true:
 				attack = true
 			else:
 				attack = false
@@ -459,7 +460,7 @@ func step():
 		item_pressed = false
 		if (item):
 
-			if Input.is_action_pressed("item") == true:
+			if GlobalInput.check_input("item") == true:
 				item = true
 			else:
 				item = false
@@ -468,7 +469,7 @@ func step():
 				item_released = true
 
 		else:
-			if Input.is_action_pressed("item") == true:
+			if GlobalInput.check_input("item") == true:
 				item = true
 			else:
 				item = false
@@ -513,7 +514,7 @@ func step():
 		######
 		# RUN
 		######
-		if Input.is_action_pressed("run") == true:
+		if GlobalInput.check_input("run") == true:
 			run = true
 		else:
 			run = false
@@ -540,7 +541,7 @@ func step():
 		bomb_pressed = false
 		if (bomb):
 
-			if Input.is_action_pressed("bomb") == true:
+			if GlobalInput.check_input("bomb") == true:
 				bomb = true
 			else:
 				bomb = false
@@ -549,7 +550,7 @@ func step():
 				bomb_released = true
 
 		else:
-			if Input.is_action_pressed("bomb") == true:
+			if GlobalInput.check_input("bomb") == true:
 				bomb = true
 			else:
 				bomb = false
@@ -599,7 +600,7 @@ func step():
 		rope_pressed = false
 		if (rope):
 
-			if Input.is_action_pressed("rope") == true:
+			if GlobalInput.check_input("rope") == true:
 				rope = true
 			else:
 				rope = false
@@ -608,7 +609,7 @@ func step():
 				rope_released = true
 
 		else:
-			if Input.is_action_pressed("rope") == true:
+			if GlobalInput.check_input("rope") == true:
 				rope = true
 			else:
 				rope = false
@@ -658,7 +659,7 @@ func step():
 		flare_pressed = false
 		if (flare):
 
-			if Input.is_action_pressed("flare") == true:
+			if GlobalInput.check_input("flare") == true:
 				flare = true
 			else:
 				flare = false
@@ -667,7 +668,7 @@ func step():
 				flare_released = true
 
 		else:
-			if Input.is_action_pressed("flare") == true:
+			if GlobalInput.check_input("flare") == true:
 				flare = true
 			else:
 				flare = false
@@ -718,7 +719,7 @@ func step():
 		if (pay):
 
 
-			if Input.is_action_pressed("pay") == true:
+			if GlobalInput.check_input("pay") == true:
 				pay = true
 			else:
 				pay = false
@@ -727,7 +728,7 @@ func step():
 				pay_released = true
 
 		else:
-			if Input.is_action_pressed("pay") == true:
+			if GlobalInput.check_input("pay") == true:
 				pay = true
 			else:
 				pay = false

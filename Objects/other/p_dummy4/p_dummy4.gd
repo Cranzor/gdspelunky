@@ -1,25 +1,31 @@
 extends DrawnSprite
 
+
 func _ready():
 	object_setup()
+
 
 func _physics_process(_delta):
 	object_tick()
 
+
 func _process(delta):
 	object_process(delta)
 
+
 #--- Object functions
 var climb_snd_toggle
+
 
 func alarm_2():
 	if (climb_snd_toggle): Audio.play_sound(global.snd_climb1)
 	else: Audio.play_sound(global.snd_climb2)
 	climb_snd_toggle = not climb_snd_toggle
 
+
 func create():
 	super()
-	# dummy actor for title screen
+	#DY: dummy actor for title screen
 
 	image_speed = 0.6
 	status = 0
@@ -27,6 +33,7 @@ func create():
 
 	x_vel = 0
 	y_vel = 0
+
 
 func step():
 	position.x += x_vel

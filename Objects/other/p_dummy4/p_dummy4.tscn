@@ -2,11 +2,9 @@
 
 [ext_resource type="Script" path="res://objects/other/p_dummy4/p_dummy4.gd" id="1_r4lg4"]
 
-[node name="PDummy4" type="Node2D" node_paths=PackedStringArray("animated_sprite_node", "alarm_2_countdown")]
+[node name="PDummy4" type="Node2D"]
 z_index = -50
 script = ExtResource("1_r4lg4")
 sprite_index_name = "run_left"
-animated_sprite_node = NodePath("")
 sprite_offset = Vector2(8, 8)
 object_name = "p_dummy4"
-alarm_2_countdown = NodePath("")

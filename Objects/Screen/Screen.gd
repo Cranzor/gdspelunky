@@ -18,7 +18,7 @@ func _ready():
 	create()
 
 func _input(event):
-	if Input.is_key_pressed(KEY_F1):
+	if Input.is_key_pressed(KEY_F1): #---[FLAG] fix this
 		key_f1_pressed()
 	
 	if Input.is_key_pressed(KEY_F10):

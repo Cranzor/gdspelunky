@@ -20,7 +20,7 @@ var players_length
 var physics_frame_rate = 30
 
 func _input(event):
-	if Input.is_key_pressed(KEY_M):
+	if Input.is_key_pressed(KEY_M): #---[FLAG] fix this to be its own function
 		key_m_pressed()
 
 func alarm_0():

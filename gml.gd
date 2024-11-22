@@ -294,7 +294,7 @@ func string_length(passed_string: String):
 	return passed_string.length()
 	
 func keyboard_check_pressed(key):
-	var check = Input.is_key_pressed(key)
+	var check = Input.is_key_pressed(key) #--- fix this
 	return check
 
 func highscore_value(place: int):

@@ -1,4 +1,3 @@
-
 extends GMObject
 
 
@@ -17,35 +16,33 @@ func _process(delta):
 #--- Object functions
 
 
-#func alarm 0():
-    #    player = gml.instance_create(240, 132, Objects.player_sil)
+#func alarm_0():
+#    player = gml.instance_create(240, 132, Objects.player_sil)
 #    # DY: player.x_vel = -6
 #    # DY: player.y_vel = -8
-#    alarm_1(30)
+#    alarm_1_countdown.start(30)
 
-    
+	
 
-#func alarm 1():
-    #    player = gml.instance_create(240, 132, Objects.treasure_sil)
+#func alarm_1():
+#    player = gml.instance_create(240, 132, Objects.treasure_sil)
 #    # DY: player.x_vel = -6
 #    # DY: player.y_vel = -8
 
-    
+	
 
-#func alarm 2():
-    #    gml.instance_create(224+randi_range(0,48), 144+randi_range(0,8), Objects.volcanflame)
-#    alarm_2()randi_range(10,20)
+#func alarm_2():
+#    gml.instance_create(224+randi_range(0,48), 144+randi_range(0,8), Objects.volcanflame)
+#    alarm_2_countdown.start(randi_range(10,20))
 
-    
 
 #func create():
-    #    alarm_0(50)
-#    alarm_2(10) # DY: 
+#    alarm_0(50)
+#    alarm_2_countdown.start(10) # DY: 
 
-    
 
 #func step():
-    #    if (keyboard_check_pressed(vk_enter) or:
+#    if (keyboard_check_pressed(vk_enter) or:
 #        keyboard_check_pressed(vk_escape) or
 #        ControlScripts.check_attack_pressed() or
 #        ControlScripts.check_start_pressed())
