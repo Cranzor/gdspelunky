@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://dr2nr766xluvh"]
 
-[sub_resource type="GDScript" id="GDScript_cetar"]
+[ext_resource type="Script" path="res://objects/enemies/giant_spider_hang/giant_spider_hang.gd" id="1_ubxfa"]
 
 [node name="GiantSpiderHang" type="Node2D"]
+script = ExtResource("1_ubxfa")
+object_name = "giant_spider_hang"

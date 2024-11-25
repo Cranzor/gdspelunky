@@ -44,6 +44,15 @@ func _process(delta: float) -> void:
 
 	if Input.is_action_pressed("pay") == true:
 		all_inputs["pay"] = true
+		
+	if Input.is_key_pressed(KEY_ENTER):
+		all_inputs["enter"] = true
+	
+	if Input.is_key_pressed(KEY_ESCAPE):
+		all_inputs["escape"] = true
+	
+	
+		
 
 func check_input(input):
 	if all_inputs.has(input):

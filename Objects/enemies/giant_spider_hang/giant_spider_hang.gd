@@ -1,4 +1,3 @@
-
 extends Enemy
 
 
@@ -18,7 +17,7 @@ func _process(delta):
 
 
 #func create():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code
@@ -48,10 +47,10 @@ func _process(delta):
 #    gml.instance_create(position.x, position.y+16, Objects.web)
 #    gml.instance_create(position.x+16, position.y+16, Objects.web)
 
-    
+	
 
 #func step():
-    #    if ((position.x > gml.view("xview")-32 and position.x < gml.view("xview") + gml.view("wview") and:
+#    if ((position.x > gml.view("xview")-32 and position.x < gml.view("xview") + gml.view("wview") and:
 #            position.y > gml.view("yview")-32 and position.y < gml.view("yview") + gml.view("hview")))
 
 #    dist = gml.distance_to_object(character)
@@ -62,27 +61,27 @@ func _process(delta):
 #    if (hp < 1):
 
 #        repeat(randi_range(1,3))
-    
+	
 #            n = randi_range(1,3)
 #            match (n)
-        
+		
 #                1:  gem = gml.instance_create(position.x+16, position.y+24, Objects.emerald_big)  
 #                2:  gem = gml.instance_create(position.x+16, position.y+24, Objects.sapphire_big)  
 #                3:  gem = gml.instance_create(position.x+16, position.y+24, Objects.ruby_big)  
-        
+		
 #            gem.x_vel = randi_range(0,3) - randi_range(0,3)
 #            gem.y_vel = -2
-    
+	
 #        obj = gml.instance_create(position.x+16, position.y+24, Objects.paste)
 #        obj.cost = 0
 #        obj.for_sale = false
 #        MiscScripts.scr_create_blood(position.x+16, position.y+24, 4)
 #        if (counts_as_kill):
-    
+	
 #            if (InLevel.is_real_level()): global.enemy_kills[3] += 1
 #            global.giantspiders += 1
 #            global.kills += 1
-    
+	
 #        gml.instance_destroy(self)
 
 #    elif (hp < 10 or not gml.collision_point(position.x, position.y-16, "solid", 0, 0) or (dist < 90 and character.position.y > position.y and abs(character.position.x - (position.x+16)) < 8)):

@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bmfmujs71ivs1"]
 
-[sub_resource type="GDScript" id="GDScript_5jf1f"]
+[ext_resource type="Script" path="res://objects/enemies/barrier/barrier.gd" id="1_vq55p"]
 
 [node name="Barrier" type="Node2D"]
+script = ExtResource("1_vq55p")
+object_name = "barrier"

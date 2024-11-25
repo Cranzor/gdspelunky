@@ -336,6 +336,9 @@ func tile_delete(id): #---[FLAG] have to implement this
 func random(x):
 	pass
 
+func rand(x1, x2):
+	return randi_range(x1, x2)
+
 #---------------------------------------
 func background_index(background: String): #Changing this to a function
 	pass
