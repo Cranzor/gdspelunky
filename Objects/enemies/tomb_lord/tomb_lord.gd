@@ -157,10 +157,10 @@ func _process(delta):
 
 #    if (hp < 1):
 
-#        MiscScripts.scr_create_blood(position.x+14+randi_range(0,4), position.y+14+randi_range(0,4), 4)
-#        for repetition in range(1, 4):
+#        MiscScripts.scr_create_blood(position.x+14+gml.rand(0,4), position.y+14+gml.rand(0,4), 4)
+#        for repetition in range(4):
     
-#            gml.instance_create(position.x+14+randi_range(0,4), position.y+12+randi_range(0,6), Objects.bone)
+#            gml.instance_create(position.x+14+gml.rand(0,4), position.y+12+gml.rand(0,6), Objects.bone)
     
 #        if (global.curr_level == 13): gml.instance_create(position.x+16, position.y+16, Objects.sceptre)
 #        if (counts_as_kill):
@@ -240,13 +240,13 @@ func _process(delta):
     
 #            if (facing == LEFT):
         
-#                obj = gml.instance_create(position.x+8, position.y+12+randi_range(0,4), Objects.fly)
-#                obj.x_vel = -randi_range(3,5)
+#                obj = gml.instance_create(position.x+8, position.y+12+gml.rand(0,4), Objects.fly)
+#                obj.x_vel = -gml.rand(3,5)
         
 #            else:
         
-#                obj = gml.instance_create(position.x+24, position.y+12+randi_range(0,4), Objects.fly)
-#                obj.x_vel = randi_range(3,5)
+#                obj = gml.instance_create(position.x+24, position.y+12+gml.rand(0,4), Objects.fly)
+#                obj.x_vel = gml.rand(3,5)
         
     
 

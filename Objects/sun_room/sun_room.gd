@@ -65,7 +65,7 @@ func _process(delta):
 #                # DY: obj.safe = true
 #                obj.alarm_2(10)
         
-#            alarm_0()randi_range(100,200)
+#            alarm_0()gml.rand(100,200)
     
 #        else:
 #            alarm_0(1)
@@ -109,7 +109,7 @@ func _process(delta):
 #    highscore = false
 #    points = 0
 #    draw_status = 0
-#    alarm_0(100)+randi_range(100,200)
+#    alarm_0(100)+gml.rand(100,200)
 #    alarm_1(30)
 #    alarm_10(100)
 #    alarm_11(100)

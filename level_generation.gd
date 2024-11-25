@@ -1276,7 +1276,7 @@ func scr_init_level():
 	# add background details
 	if (global.graphics_high):
 
-		for repetition in range(1, 20):
+		for repetition in range(20):
 		
 			# bg = instance_create(16*randi_range(1,42), 16*randi_range(1,33), cave_bg)
 			if (global.level_type == 1 and randi_range(1,3) < 3):

@@ -59,7 +59,7 @@ func _process(delta):
 
 #    if (hp < 1):
 
-#        for repetition in range(1, 3):
+#        for repetition in range(3):
     
 #            gml.instance_create(position.x+4, position.y+4, Objects.bone)
     
@@ -100,21 +100,21 @@ func _process(delta):
 #        else:
     
 #            status = IDLE
-#            dir = randi_range(0,1)*180
+#            dir = gml.rand(0,1)*180
     
 
 #    elif (gml.instance_exists("character")):
 
 #        if (dist < 90 and character.swimming and not character.dead):
     
-#            dir = point_direction(position.x, position.y, character.position.x, character.position.y)+randi_range(0,1)-randi_range(0,1)
+#            dir = point_direction(position.x, position.y, character.position.x, character.position.y)+gml.rand(0,1)-gml.rand(0,1)
 #            if (gml.collision_point(position.x + cos(degtorad(dir)), position.y - sin(degtorad(dir)), "water", 0, 0)):
 #                PlatformEngine.move_to(1 * cos(degtorad(dir)), -1 * sin(degtorad(dir)))
     
 #        else:
     
 #            status = PAUSE
-#            counter = randi_range(20,40)
+#            counter = gml.rand(20,40)
     
 
 

@@ -161,28 +161,28 @@ func _process(delta):
 
 #    if (hp < 1):
 
-#        MiscScripts.scr_create_blood(position.x+14+randi_range(0,4), position.y+14+randi_range(0,4), 3)
-#        for repetition in range(1, 4):
+#        MiscScripts.scr_create_blood(position.x+14+gml.rand(0,4), position.y+14+gml.rand(0,4), 3)
+#        for repetition in range(4):
     
-#            gml.instance_create(position.x+14+randi_range(0,4), position.y+14+randi_range(0,6), Objects.bone)
+#            gml.instance_create(position.x+14+gml.rand(0,4), position.y+14+gml.rand(0,6), Objects.bone)
     
-#        for repetition in range(1, 4):
+#        for repetition in range(4):
     
-#            if (randi_range(1,12) == 1):
+#            if (gml.rand(1,12) == 1):
         
 #                obj = gml.instance_create(position.x+16, position.y+16, Objects.spike_shoes)
 #                obj.cost = 0
 #                obj.for_sale = false
         
-#            elif (randi_range(1,2) == 1): obj = gml.instance_create(position.x+16, position.y+16, Objects.sapphire_big)
+#            elif (gml.rand(1,2) == 1): obj = gml.instance_create(position.x+16, position.y+16, Objects.sapphire_big)
 #            else:
         
 #                obj = gml.instance_create(position.x+16, position.y+16, Objects.rope_pile)
 #                obj.cost = 0
 #                obj.for_sale = false
         
-#            obj.x_vel = randi_range(0,3)-randi_range(0,3)
-#            obj.y_vel = -randi_range(1,2)
+#            obj.x_vel = gml.rand(0,3)-gml.rand(0,3)
+#            obj.y_vel = -gml.rand(1,2)
     
 #        if (counts_as_kill):
     
@@ -263,7 +263,7 @@ func _process(delta):
         
 #                if (gml.instance_exists("yeti_king")):
             
-#                    if (randi_range(1,60) == 1 and:
+#                    if (gml.rand(1,60) == 1 and:
 #                        abs((yeti_king.position.x+16)-(position.x+8)) > 16 and
 #                        point_distance(position.x, position.y, yeti_king.position.x, yeti_king.position.y) < 96)
                 

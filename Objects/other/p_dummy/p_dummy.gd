@@ -218,4 +218,4 @@ func _process(delta):
 
 #    elif (status == LAVA+1):
 
-#        gml.instance_create(end_plat.position.x+randi_range(0,80), 192+32, Objects.burn)
+#        gml.instance_create(end_plat.position.x+gml.rand(0,80), 192+32, Objects.burn)

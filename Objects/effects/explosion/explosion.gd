@@ -30,13 +30,13 @@ func _process(delta):
 #func collision with o_boulder():
     #    for i in range(0, 3):
 
-#        rubble = gml.instance_create(other.position.x+randi_range(0,15)-randi_range(0,15), other.position.y+randi_range(0,15)-randi_range(0,15), Objects.rubble)
+#        rubble = gml.instance_create(other.position.x+gml.rand(0,15)-gml.rand(0,15), other.position.y+gml.rand(0,15)-gml.rand(0,15), Objects.rubble)
 #        rubble.sprite_index = "rubble_tan"
-#        if (randi_range(1,3) == 1): gml.instance_create(other.position.x+randi_range(0,15)-randi_range(0,15), other.position.y+randi_range(0,15)-randi_range(0,15), Objects.rock)
+#        if (gml.rand(1,3) == 1): gml.instance_create(other.position.x+gml.rand(0,15)-gml.rand(0,15), other.position.y+gml.rand(0,15)-gml.rand(0,15), Objects.rock)
 
 #    for i in range(0, 6):
 
-#        rubble = gml.instance_create(other.position.x+randi_range(0,15)-randi_range(0,15), other.position.y+randi_range(0,15)-randi_range(0,15), Objects.rubble_small)
+#        rubble = gml.instance_create(other.position.x+gml.rand(0,15)-gml.rand(0,15), other.position.y+gml.rand(0,15)-gml.rand(0,15), Objects.rubble_small)
 #        rubble.sprite_index = "rubble_tan_small"
 
 
@@ -48,8 +48,8 @@ func _process(delta):
     #    if (not other.invincible):
 
 #        other.hp -= 100
-#        if (position.x < other.position.x): other.x_vel = randi_range(4,6)
-#        else: other.x_vel = -randi_range(4,6)
+#        if (position.x < other.position.x): other.x_vel = gml.rand(4,6)
+#        else: other.x_vel = -gml.rand(4,6)
 #        other.y_vel = -6
 #        other.burning = 50
 #        other.status = 2
@@ -63,17 +63,17 @@ func _process(delta):
 #        with other
     
 #            flame = gml.instance_create(position.x+8, position.y-4, Objects.magma)
-#            flame.y_vel = -randi_range(1,3)
+#            flame.y_vel = -gml.rand(1,3)
 #            flame = gml.instance_create(position.x+8, position.y-4, Objects.magma)
-#            flame.y_vel = -randi_range(1,3)
+#            flame.y_vel = -gml.rand(1,3)
 #            gml.instance_destroy(self)
     
 
 #    elif (not other.invincible):
 
 #        other.hp -= 30
-#        if (position.x < other.position.x): other.x_vel = randi_range(4,6)
-#        else: other.x_vel = -randi_range(4,6)
+#        if (position.x < other.position.x): other.x_vel = gml.rand(4,6)
+#        else: other.x_vel = -gml.rand(4,6)
 #        other.y_vel = -6
 #        other.burning = 50
 
@@ -92,13 +92,13 @@ func _process(delta):
     
 #            sprite_index = "bomb_armed"
 #            image_speed = 1
-#            alarm_1()randi_range(4,8)
+#            alarm_1()gml.rand(4,8)
 #            enemy_id = 0
     
 
-#        if (other.position.y < position.y): other.y_vel = -randi_range(2,4)
-#        if (other.position.x < position.x): other.x_vel = -randi_range(2,4)
-#        else: other.x_vel = randi_range(2,4)
+#        if (other.position.y < position.y): other.y_vel = -gml.rand(2,4)
+#        if (other.position.x < position.x): other.x_vel = -gml.rand(2,4)
+#        else: other.x_vel = gml.rand(2,4)
 
 #    elif (other.type == "Rope"):
 
@@ -106,16 +106,16 @@ func _process(delta):
     
 #            if (other.position.y < position.y): other.y_vel -= 6
 #            else: other.y_vel += 6
-#            if (position.x > other.position.x): other.x_vel -= randi_range(4,6)
-#            else: other.x_vel += randi_range(4,6)
+#            if (position.x > other.position.x): other.x_vel -= gml.rand(4,6)
+#            else: other.x_vel += gml.rand(4,6)
     
 
 #    else:
 
 #        if (other.position.y < position.y): other.y_vel -= 6
 #        else: other.y_vel += 6
-#        if (position.x > other.position.x): other.x_vel -= randi_range(4,6)
-#        else: other.x_vel += randi_range(4,6)
+#        if (position.x > other.position.x): other.x_vel -= gml.rand(4,6)
+#        else: other.x_vel += gml.rand(4,6)
 
 
 #    if (other.held):

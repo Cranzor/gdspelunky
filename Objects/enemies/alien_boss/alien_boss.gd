@@ -111,16 +111,16 @@ func _process(delta):
 #        status = DEAD
 #        sprite_index = "alien_boss_die"
 #        depth = 101
-#        for repetition in range(1, 4):
+#        for repetition in range(4):
     
-#            n = randi_range(1,3)
+#            n = gml.rand(1,3)
 #            match (n)
         
 #                1:  gem = gml.instance_create(position.x+16, position.y+16, Objects.emerald_big)  
 #                2:  gem = gml.instance_create(position.x+16, position.y+16, Objects.sapphire_big)  
 #                3:  gem = gml.instance_create(position.x+16, position.y+16, Objects.ruby_big)  
         
-#            gem.x_vel = randi_range(0,3) - randi_range(0,3)
+#            gem.x_vel = gml.rand(0,3) - gml.rand(0,3)
 #            gem.y_vel = -2
     
 #        if (counts_as_kill):
@@ -133,10 +133,10 @@ func _process(delta):
 
 #    if (sprite_index == "alien_boss_die):"
 
-#        if (randi_range(1,2) == 1):
+#        if (gml.rand(1,2) == 1):
     
-#            MiscScripts.scr_create_blood(position.x+8, position.y+randi_range(14,18), 1)
-#            blood = gml.instance_create(position.x+8, position.y+randi_range(14,18), Objects.blood)
+#            MiscScripts.scr_create_blood(position.x+8, position.y+gml.rand(14,18), 1)
+#            blood = gml.instance_create(position.x+8, position.y+gml.rand(14,18), Objects.blood)
     
 
 
@@ -167,7 +167,7 @@ func _process(delta):
 
 #        for i in range(0, 6):
     
-#            gml.instance_create(position.x+16+randi_range(0,32)-randi_range(0,32), position.y+16+randi_range(0,32)-randi_range(0,32), Objects.psychic_create)
+#            gml.instance_create(position.x+16+gml.rand(0,32)-gml.rand(0,32), position.y+16+gml.rand(0,32)-gml.rand(0,32), Objects.psychic_create)
     
 #        gml.instance_create(position.x+16, position.y+16, Objects.psychic_wave)
 #        psychic_recover = 100

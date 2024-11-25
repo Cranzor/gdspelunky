@@ -39,13 +39,13 @@ func _process(delta):
 #        if (true):
     
 #            if (InLevel.is_real_level()): global.enemy_deaths[23] += 1
-#            for repetition in range(1, 3):
+#            for repetition in range(3):
         
 #                gml.instance_create(other.position.x, other.position.y, Objects.bone)
         
 #            skull = gml.instance_create(other.position.x, other.position.y-2, Objects.skull)
-#            skull.y_vel = -randi_range(1,3)
-#            skull.x_vel = randi_range(0,3)-randi_range(0,3)
+#            skull.y_vel = -gml.rand(1,3)
+#            skull.x_vel = gml.rand(0,3)-gml.rand(0,3)
 #            other.visible = false
 #            other.invincible = 9999
 #            other.bounced = true

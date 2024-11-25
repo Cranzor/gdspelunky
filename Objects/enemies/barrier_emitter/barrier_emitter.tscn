@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bswknh01l04ji"]
 
-[sub_resource type="GDScript" id="GDScript_fdtua"]
+[ext_resource type="Script" path="res://objects/enemies/barrier_emitter/barrier_emitter.gd" id="1_5wt6b"]
 
 [node name="BarrierEmitter" type="Node2D"]
+script = ExtResource("1_5wt6b")
+object_name = "barrier_emitter"

@@ -152,9 +152,9 @@ func _process(delta):
 #            if (has_gun):
         
 #                obj = gml.instance_create(position.x+8, position.y+8, Objects.shotgun)
-#                obj.y_vel = randi_range(4,6)
-#                if (x_vel < 0): obj.x_vel = -1 * randi_range(4,6)
-#                else: obj.x_vel = randi_range(4,6)
+#                obj.y_vel = gml.rand(4,6)
+#                if (x_vel < 0): obj.x_vel = -1 * gml.rand(4,6)
+#                else: obj.x_vel = gml.rand(4,6)
 #                obj.cost = 0
 #                obj.for_sale = false
 #                has_gun = false
@@ -184,7 +184,7 @@ func _process(delta):
 #        if (other.position.x < (position.x+8)): x_vel = 2
 #        else: x_vel = -2
 #        image_speed = 0.5
-#        gml.instance_create(position.x+randi_range(0,16), position.y-8+randi_range(0,16), Objects.leaf)
+#        gml.instance_create(position.x+gml.rand(0,16), position.y-8+gml.rand(0,16), Objects.leaf)
 #        Audio.play_sound(global.snd_hit)
 
 
@@ -208,7 +208,7 @@ func _process(delta):
 #        if (other.position.x < (position.x+8)): x_vel = 2
 #        else: x_vel = -2
 #        image_speed = 0.5
-#        gml.instance_create(position.x+randi_range(0,16), position.y-8+randi_range(0,16), Objects.leaf)
+#        gml.instance_create(position.x+gml.rand(0,16), position.y-8+gml.rand(0,16), Objects.leaf)
 #        Audio.play_sound(global.snd_hit)
 
 
@@ -284,14 +284,14 @@ func _process(delta):
 #            global.mantraps += 1
 #            global.kills += 1
     
-#        for repetition in range(1, 3):  gml.instance_create(position.x+randi_range(0,16), position.y-8+randi_range(0,16), Objects.leaf) 
+#        for repetition in range(3):  gml.instance_create(position.x+gml.rand(0,16), position.y-8+gml.rand(0,16), Objects.leaf) 
 #        MiscScripts.scr_create_blood(position.x+8, position.y+8, 1)
 #        if (ate_shopkeeper):
     
 #            obj = gml.instance_create(position.x, position.y, Objects.shopkeeper)
 #            obj.status = 2
 #            obj.has_gun = false
-#            for repetition in range(1, 3):  gml.instance_create(position.x+randi_range(0,16), position.y-8+randi_range(0,16), Objects.leaf) 
+#            for repetition in range(3):  gml.instance_create(position.x+gml.rand(0,16), position.y-8+gml.rand(0,16), Objects.leaf) 
 #            MiscScripts.scr_create_blood(position.x+8, position.y+8, 1)
 #            Audio.play_sound(global.snd_small_explode)
     
@@ -305,7 +305,7 @@ func _process(delta):
 #        if (counter > 0): counter -= 1
 #        if (counter == 0):
     
-#            facing = randi_range(0,1)
+#            facing = gml.rand(0,1)
 #            status = WALK
     
 
@@ -336,10 +336,10 @@ func _process(delta):
 #        elif (facing == LEFT): x_vel = -1
 #        else: x_vel = 1
     
-#        if (randi_range(1,100) == 1):
+#        if (gml.rand(1,100) == 1):
     
 #            status = IDLE
-#            counter = randi_range(20,50)
+#            counter = gml.rand(20,50)
 #            x_vel = 0
     
 
@@ -351,7 +351,7 @@ func _process(delta):
 #        else:
     
 #            status = IDLE
-#            counter = randi_range(20,50)
+#            counter = gml.rand(20,50)
     
 #        */
 #        sprite_index = "man_trap_stun_l"
@@ -372,7 +372,7 @@ func _process(delta):
 #                    obj = gml.instance_create(position.x, position.y, Objects.shopkeeper)
 #                    obj.status = 2
 #                    obj.has_gun = false
-#                    for repetition in range(1, 3):  gml.instance_create(position.x+randi_range(0,16), position.y-8+randi_range(0,16), Objects.leaf) 
+#                    for repetition in range(3):  gml.instance_create(position.x+gml.rand(0,16), position.y-8+gml.rand(0,16), Objects.leaf) 
 #                    MiscScripts.scr_create_blood(position.x+8, position.y+8, 1)
 #                    Audio.play_sound(global.snd_small_explode)
 #                    gml.instance_destroy(self)
@@ -380,7 +380,7 @@ func _process(delta):
 #                elif (hp > 0):
             
 #                    status = IDLE
-#                    counter = randi_range(20,50)
+#                    counter = gml.rand(20,50)
 #                    if (held):
                 
 #                        held = false
@@ -414,7 +414,7 @@ func _process(delta):
 #        MiscScripts.scr_create_blood(position.x+8, position.y, 1)
 
 
-#    if (status == SLEEPY and image_index == 6 and randi_range(1,8) == 1):
+#    if (status == SLEEPY and image_index == 6 and gml.rand(1,8) == 1):
 
 #        if (facing == LEFT):
     

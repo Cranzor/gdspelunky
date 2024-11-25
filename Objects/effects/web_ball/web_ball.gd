@@ -82,9 +82,9 @@ func _process(delta):
 
 #    # main_code
 #    y_vel = -1 * (random(3)+1)
-#    x_vel = randi_range(1,3)
-#    if (randi_range(1,2) == 1): x_vel *= -1
-#    life = randi_range(20,100)
+#    x_vel = gml.rand(1,3)
+#    if (gml.rand(1,2) == 1): x_vel *= -1
+#    life = gml.rand(20,100)
 #    invincible = true
 #    # DY: alarm_0(40)
 #    # DY: alarm_1(1)

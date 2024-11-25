@@ -39,7 +39,7 @@ func _process(delta):
 #        y_vel = 0
 #        grabX = position.x - player1.position.x
 #        grabY = position.y - player1.position.y
-#        counter = randi_range(40,80)
+#        counter = gml.rand(40,80)
 
 
 
@@ -58,7 +58,7 @@ func _process(delta):
 #                if (not gml.collision_point(other.position.x, other.position.y, "solid", 0, 0)): other.position.y = position.y-2
 #                throw_counter = 60
 #                status = IDLE
-#                counter = randi_range(20,60)
+#                counter = gml.rand(20,60)
         
     
 #        else:
@@ -69,7 +69,7 @@ func _process(delta):
 #            if (not gml.collision_point(other.position.x, other.position.y-2, "solid", 0, 0)): other.position.y -= 2
 #            throw_counter = 60
 #            status = IDLE
-#            counter = randi_range(20,60)
+#            counter = gml.rand(20,60)
     
 
 
@@ -95,7 +95,7 @@ func _process(delta):
 
 #    LEFT = 0
 #    RIGHT = 1
-#    facing = randi_range(0,1)
+#    facing = gml.rand(0,1)
 
 #    # DY:  status
 #    IDLE = 0
@@ -216,10 +216,10 @@ func _process(delta):
 #            x_vel = 2
     
     
-#        if (randi_range(1,100) == 1):
+#        if (gml.rand(1,100) == 1):
     
 #            status = IDLE
-#            counter = randi_range(20,50)
+#            counter = gml.rand(20,50)
 #            x_vel = 0
     
 
@@ -230,7 +230,7 @@ func _process(delta):
 #            status = IDLE
 #            x_vel = 0
 #            y_vel = 0
-#            counter = randi_range(10,40)
+#            counter = gml.rand(10,40)
     
 #        elif (Collision.is_collision_ladder()):
     
@@ -239,7 +239,7 @@ func _process(delta):
 #                status = HANG
 #                x_vel = 0
 #                y_vel = 0
-#                counter = randi_range(10,40)
+#                counter = gml.rand(10,40)
         
     
 
@@ -247,7 +247,7 @@ func _process(delta):
 
 #        if (col_bot):
     
-#            y_vel = -1 * randi_range(4,5)
+#            y_vel = -1 * gml.rand(4,5)
 #            if (character.position.x < (position.x+8)):
         
 #                facing = LEFT
@@ -273,7 +273,7 @@ func _process(delta):
 #        else:
     
 #            status = CLIMB
-#            # DY:  dir = randi_range(0,1)
+#            # DY:  dir = gml.rand(0,1)
     
 
 #    elif (status == CLIMB):
@@ -286,7 +286,7 @@ func _process(delta):
         
 #                dir = DOWN
 #                status = HANG
-#                counter = randi_range(10,40)
+#                counter = gml.rand(10,40)
         
     
 #        else:
@@ -296,7 +296,7 @@ func _process(delta):
         
 #                dir = UP
 #                status = HANG
-#                counter = randi_range(10,40)
+#                counter = gml.rand(10,40)
         
     
     
@@ -304,7 +304,7 @@ func _process(delta):
     
 #            status = BOUNCE
 #            vine_counter = 30
-#            y_vel = -1 * randi_range(2,4)
+#            y_vel = -1 * gml.rand(2,4)
 #            if (character.position.x < position.x):
         
 #                facing = LEFT
@@ -330,7 +330,7 @@ func _process(delta):
 #        else:
     
 #            n = 500+ceil(500 / 4)*global.level_type
-#            if (randi_range(1,4) == 1):
+#            if (gml.rand(1,4) == 1):
         
 #                # DY:  trip player
 #                with player1
@@ -360,7 +360,7 @@ func _process(delta):
             
 #                Audio.play_sound(global.snd_hit)
         
-#            elif (global.money >= n and randi_range(1,10) <= 8):
+#            elif (global.money >= n and gml.rand(1,10) <= 8):
         
 #                # DY:  throw out money
 #                global.money -= n
@@ -369,20 +369,20 @@ func _process(delta):
             
 #                    can_collect = false
 #                    alarm_0(20)
-#                    x_vel = randi_range(1,3)-randi_range(1,3)
-#                    y_vel = -randi_range(3,4)
+#                    x_vel = gml.rand(1,3)-gml.rand(1,3)
+#                    y_vel = -gml.rand(3,4)
             
 #                Audio.play_sound(global.snd_throw)
         
-#            elif (randi_range(1,2) == 1 and global.rope > 0):
+#            elif (gml.rand(1,2) == 1 and global.rope > 0):
         
 #                # DY:  throw out rope
 #                global.rope -= 1
 #                obj = gml.instance_create(position.x, position.y, Objects.rope_throw)
 #                with obj
             
-#                    x_vel = randi_range(1,3)-randi_range(1,3)
-#                    y_vel = -randi_range(3,4)
+#                    x_vel = gml.rand(1,3)-gml.rand(1,3)
+#                    y_vel = -gml.rand(3,4)
             
 #                Audio.play_sound(global.snd_throw)
         
@@ -391,7 +391,7 @@ func _process(delta):
 #                # DY:  throw out bomb
 #                global.bombs -= 1
 #                obj = gml.instance_create(position.x, position.y, Objects.bomb)
-#                if (randi_range(1,10) == 1):
+#                if (gml.rand(1,10) == 1):
             
 #                    obj.sprite_index = "bomb_armed"
 #                    obj.armed = true
@@ -400,15 +400,15 @@ func _process(delta):
             
 #                with obj
             
-#                    x_vel = randi_range(1,3)-randi_range(1,3)
-#                    y_vel = -randi_range(3,4)
+#                    x_vel = gml.rand(1,3)-gml.rand(1,3)
+#                    y_vel = -gml.rand(3,4)
             
 #                Audio.play_sound(global.snd_throw)
                 
         
 #            status = BOUNCE
 #            vine_counter = 20
-#            y_vel = -1 * randi_range(2,4)
+#            y_vel = -1 * gml.rand(2,4)
 #            if (character.position.x > (position.x+8)):
         
 #                facing = LEFT

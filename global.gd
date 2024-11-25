@@ -70,7 +70,7 @@ var emeralds
 var end_room_x
 var end_room_y
 var enemy_deaths
-var enemy_kills
+var enemy_kills = {}
 var entity_gen
 var exit_x
 var exit_y

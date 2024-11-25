@@ -301,9 +301,9 @@ func _process(delta):
 #        if (has_gun):
     
 #            obj = gml.instance_create(position.x+8, position.y+8, Objects.shotgun)
-#            obj.y_vel = randi_range(4,6)
-#            if (x_vel < 0): obj.x_vel = -1 * randi_range(4,6)
-#            else: obj.x_vel = randi_range(4,6)
+#            obj.y_vel = gml.rand(4,6)
+#            if (x_vel < 0): obj.x_vel = -1 * gml.rand(4,6)
+#            else: obj.x_vel = gml.rand(4,6)
 #            obj.cost = 0
 #            obj.for_sale = false
 #            has_gun = false
@@ -541,7 +541,7 @@ func _process(delta):
 #        if (col_bot and counter > 0): counter -= 1    
 #        if (counter < 1):
     
-#            facing = randi_range(0,1)
+#            facing = gml.rand(0,1)
 #            status = WALK
     
 
@@ -560,7 +560,7 @@ func _process(delta):
 #            if (not gml.collision_point(position.x-1, position.y, "solid", -1, -1)):
         
 #                status = PATROL
-#                counter = randi_range(20,50)
+#                counter = gml.rand(20,50)
 #                x_vel = 0
         
 #            x_vel = -1.5
@@ -570,16 +570,16 @@ func _process(delta):
 #            if (not gml.collision_point(position.x+16, position.y, "solid", -1, -1)):
         
 #                status = PATROL
-#                counter = randi_range(20,50)
+#                counter = gml.rand(20,50)
 #                x_vel = 0
         
 #            x_vel = 1.5
     
     
-#        if (randi_range(1,100) == 1):
+#        if (gml.rand(1,100) == 1):
     
 #            status = PATROL
-#            counter = randi_range(20,50)
+#            counter = gml.rand(20,50)
 #            x_vel = 0
     
 
@@ -625,7 +625,7 @@ func _process(delta):
 #                    for (i = 0 i < 6 i+= 1)
                 
 #                        obj = gml.instance_create(position.x+4, position.y+8, Objects.bullet)
-#                        obj.x_vel = (-1 * randi_range(6,8)) + x_vel
+#                        obj.x_vel = (-1 * gml.rand(6,8)) + x_vel
 #                        if (obj.x_vel >= -6): obj.x_vel = -6
 #                        obj.y_vel = random(1) - random(1)
 #                        obj.safe = true
@@ -642,7 +642,7 @@ func _process(delta):
 #                    for (i = 0 i < 6 i+= 1)
                 
 #                        obj = gml.instance_create(position.x+12, position.y+8, Objects.bullet)
-#                        obj.x_vel = randi_range(6,8) + x_vel
+#                        obj.x_vel = gml.rand(6,8) + x_vel
 #                        if (obj.x_vel < 6): obj.x_vel = 6
 #                        obj.y_vel = random(1) - random(1)
 #                        obj.safe = true
@@ -664,7 +664,7 @@ func _process(delta):
 #        elif ((facing == LEFT and gml.collision_point(position.x-16, position.y, "solid", -1, -1)) or:
 #            (facing == RIGHT and gml.collision_point(position.x+32, position.y, "solid", -1, -1)))
     
-#            if (col_bot and not Collision.is_collision_top(4)): y_vel = -1 * randi_range(7,8)
+#            if (col_bot and not Collision.is_collision_top(4)): y_vel = -1 * gml.rand(7,8)
 #            /*
 #            else:
         
@@ -677,7 +677,7 @@ func _process(delta):
 #                 ((facing == LEFT and not gml.collision_point(position.x-16, position.y+16, "solid", -1, -1)) or
 #                 (facing == RIGHT and not gml.collision_point(position.x+32, position.y+16, "solid", -1, -1))))
     
-#            if (col_bot and not Collision.is_collision_top(4)): y_vel = -1 * randi_range(7,8)
+#            if (col_bot and not Collision.is_collision_top(4)): y_vel = -1 * gml.rand(7,8)
     
     
 #        if (not col_bot and player1.position.y > position.y+8):
@@ -739,11 +739,11 @@ func _process(delta):
 #                global.shopkeepers += 1
 #                global.kills += 1
 #                global.murderer = true
-#                repeat(randi_range(1,4))
+#                repeat(gml.rand(1,4))
             
 #                    obj = gml.instance_create(position.x+8, position.y+8, Objects.gold_nugget)
 #                    obj.y_vel = -1
-#                    obj.x_vel = randi_range(1,3)-randi_range(1,3)
+#                    obj.x_vel = gml.rand(1,3)-gml.rand(1,3)
             
         
 #            Audio.play_sound(global.snd_caveman_die)
@@ -762,9 +762,9 @@ func _process(delta):
 #        if (has_gun):
     
 #            obj = gml.instance_create(position.x+8, position.y+8, Objects.shotgun)
-#            obj.y_vel = randi_range(4,6)
-#            if (x_vel < 0): obj.x_vel = -1 * randi_range(4,6)
-#            else: obj.x_vel = randi_range(4,6)
+#            obj.y_vel = gml.rand(4,6)
+#            if (x_vel < 0): obj.x_vel = -1 * gml.rand(4,6)
+#            else: obj.x_vel = gml.rand(4,6)
 #            obj.cost = 0
 #            obj.for_sale = false
 #            has_gun = false

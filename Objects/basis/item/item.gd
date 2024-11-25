@@ -243,7 +243,7 @@ func step():
 				if (type == "bomb"):
 				
 					gml.instance_create(position.x, position.y, "explosion")
-					for repetition in range(1, 3):
+					for repetition in range(3):
 					
 						gml.instance_create(position.x, position.y, "flame")
 					

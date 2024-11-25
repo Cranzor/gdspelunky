@@ -545,7 +545,7 @@ func _process(delta):
 #            if (global.custom_level): get_tree().change_scene_to_file("res://r_load_level.tscn")
 #            elif (global.curr_level >= 5 and global.curr_level <= 8 and not global.gen_black_market):
         
-#                if (randi_range(1,global.prob_lake) == 1):  global.lake = true get_tree().change_scene_to_file("res://r_level3.tscn") 
+#                if (gml.rand(1,global.prob_lake) == 1):  global.lake = true get_tree().change_scene_to_file("res://r_level3.tscn") 
 #                else: get_tree().change_scene_to_file("res://r_level.tscn")
         
 #            elif (global.curr_level >= 9 and global.curr_level <= 12): get_tree().change_scene_to_file("res://r_level2.tscn")

@@ -115,16 +115,16 @@ func _process(delta):
 #            global.megamouths += 1
 #            global.kills += 1
     
-#        MiscScripts.scr_create_blood(position.x+22+randi_range(0,4), position.y+14+randi_range(0,4), 4)
-#        for repetition in range(1, 4):
+#        MiscScripts.scr_create_blood(position.x+22+gml.rand(0,4), position.y+14+gml.rand(0,4), 4)
+#        for repetition in range(4):
     
-#            gml.instance_create(position.x+22+randi_range(0,4), position.y+14+randi_range(0,6), Objects.bone)
+#            gml.instance_create(position.x+22+gml.rand(0,4), position.y+14+gml.rand(0,6), Objects.bone)
     
-#        for repetition in range(1, 4):
+#        for repetition in range(4):
     
 #            obj = gml.instance_create(position.x+16, position.y+16, Objects.crate)
-#            obj.x_vel = randi_range(0,3)-randi_range(0,3)
-#            obj.y_vel = -randi_range(1,2)
+#            obj.x_vel = gml.rand(0,3)-gml.rand(0,3)
+#            obj.y_vel = -gml.rand(1,2)
     
 #        gml.instance_destroy(self)
 

@@ -82,8 +82,8 @@ func _process(delta):
 #            gml.instance_create(other.position.x+8, other.position.y+8, Objects.bone)
     
 #        skull = gml.instance_create(other.position.x+8, other.position.y+8, Objects.skull)
-#        skull.y_vel = -randi_range(1,3)
-#        skull.x_vel = randi_range(0,3)-randi_range(0,3)
+#        skull.y_vel = -gml.rand(1,3)
+#        skull.x_vel = gml.rand(0,3)-gml.rand(0,3)
 #        if (counts_as_kill):
     
 #            if (InLevel.is_real_level()): global.enemy_kills[5] += 1
@@ -101,7 +101,7 @@ func _process(delta):
 #        if (counter > 0): counter -= 1    
 #        if (counter == 0):
     
-#            # DY:  facing = randi_range(0,1)
+#            # DY:  facing = gml.rand(0,1)
 #            status = WALK
     
 
@@ -138,10 +138,10 @@ func _process(delta):
 #        else: x_vel = 1
     
 #        /*
-#        if (randi_range(1,100) == 1):
+#        if (gml.rand(1,100) == 1):
     
 #            status = IDLE
-#            counter = randi_range(20,50)
+#            counter = gml.rand(20,50)
 #            x_vel = 0
     
 #        */

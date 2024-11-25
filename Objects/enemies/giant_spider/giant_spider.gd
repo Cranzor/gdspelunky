@@ -25,7 +25,7 @@ func _process(delta):
 #        if (Collision.is_collision_bottom(1)):
     
 #            sprite_index = "giant_spider"
-#            y_vel = -1 * randi_range(2,5)
+#            y_vel = -1 * gml.rand(2,5)
 #            if (character.position.x < position.x+16):
         
 #                x_vel = -2.5
@@ -129,7 +129,7 @@ func _process(delta):
 #    hp = 1
 #    invincible = 0
 #    whipped = 10
-#    squirt_timer = randi_range(100,1000)
+#    squirt_timer = gml.rand(100,1000)
 
 #    # DY:  status
 #    IDLE = 0
@@ -167,16 +167,16 @@ func _process(delta):
 
 #    if (hp < 1):
 
-#        repeat(randi_range(1,3))
+#        repeat(gml.rand(1,3))
     
-#            n = randi_range(1,3)
+#            n = gml.rand(1,3)
 #            match (n)
         
 #                1:  gem = gml.instance_create(position.x+16, position.y+24, Objects.emerald_big)  
 #                2:  gem = gml.instance_create(position.x+16, position.y+24, Objects.sapphire_big)  
 #                3:  gem = gml.instance_create(position.x+16, position.y+24, Objects.ruby_big)  
         
-#            gem.x_vel = randi_range(0,3) - randi_range(0,3)
+#            gem.x_vel = gml.rand(0,3) - gml.rand(0,3)
 #            gem.y_vel = -2
     
 #        obj = gml.instance_create(position.x+16, position.y+24, Objects.paste)
@@ -218,7 +218,7 @@ func _process(delta):
 #    if (status == IDLE):
 
 #        if (sprite_index != "giant_spider_flip):" sprite_index = "giant_spider"
-#        alarm_0()randi_range(5,20)
+#        alarm_0()gml.rand(5,20)
 #        if (squirt_timer == 0): status = SQUIRT
 #        else: status = RECOVER
 
@@ -235,7 +235,7 @@ func _process(delta):
 #        if (image_index >= 5 and squirt_timer == 0):
     
 #            gml.instance_create(position.x+16, position.y+16, Objects.web_ball)
-#            squirt_timer = randi_range(100,1000)
+#            squirt_timer = gml.rand(100,1000)
     
 
 #    elif (status == RECOVER):
@@ -248,7 +248,7 @@ func _process(delta):
 #        if (Collision.is_collision_bottom(1)):
     
 #            sprite_index = "giant_spider"
-#            y_vel = -1 * randi_range(3,6)
+#            y_vel = -1 * gml.rand(3,6)
 #            if (character.position.x < position.x+16):
         
 #                x_vel = -2.5
@@ -259,7 +259,7 @@ func _process(delta):
         
 #            Audio.play_sound(global.snd_spider_jump)
         
-#            if (randi_range(1,4) == 1):  status = IDLE x_vel = 0 y_vel = 0 
+#            if (gml.rand(1,4) == 1):  status = IDLE x_vel = 0 y_vel = 0 
     
 
 #    elif (status != DROWNED):

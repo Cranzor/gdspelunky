@@ -27,7 +27,7 @@ func _process(delta):
     #    if (not other.invincible):
 
 #        other.hp -= 3
-#        other.x_vel = randi_range(0,2)-randi_range(1,2)
+#        other.x_vel = gml.rand(0,2)-gml.rand(1,2)
 #        other.x_vel = -1
 #        other.y_vel = -6
 #        status = 2
@@ -43,7 +43,7 @@ func _process(delta):
     #    if (other.type != "UFO" and other.invincible == 0):
 
 #        other.hp -= 3
-#        other.x_vel = randi_range(0,2)-randi_range(1,2)
+#        other.x_vel = gml.rand(0,2)-gml.rand(1,2)
 #        other.x_vel = -1
 #        other.y_vel = -6
 #        gml.instance_create(position.x, position.y, Objects.laser_explode)

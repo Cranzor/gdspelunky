@@ -89,7 +89,7 @@ func _process(delta):
 #        if (counter > 0): counter -= 1    
 #        if (counter == 0):
     
-#            facing = randi_range(0,1)
+#            facing = gml.rand(0,1)
 #            status = WALK
     
 
@@ -123,10 +123,10 @@ func _process(delta):
 #        elif (facing == LEFT): x_vel = -1
 #        else: x_vel = 1
     
-#        if (randi_range(1,100) == 1):
+#        if (gml.rand(1,100) == 1):
     
 #            status = IDLE
-#            counter = randi_range(20,50)
+#            counter = gml.rand(20,50)
 #            x_vel = 0
     
 

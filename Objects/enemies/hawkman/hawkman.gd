@@ -266,7 +266,7 @@ func _process(delta):
 #        if (Collision.is_collision_bottom(1) and: counter > 0) counter -= 1    
 #        if (counter < 1):
     
-#            facing = randi_range(0,1)
+#            facing = gml.rand(0,1)
 #            status = WALK
     
 #        if (sight_counter > 0): sight_counter -= 1
@@ -294,7 +294,7 @@ func _process(delta):
 #            if (not gml.collision_point(position.x-1, position.y+16, "solid", -1, -1)):
         
 #                status = IDLE
-#                counter = randi_range(20,50)
+#                counter = gml.rand(20,50)
 #                x_vel = 0
         
     
@@ -304,15 +304,15 @@ func _process(delta):
 #            if (not gml.collision_point(position.x+16, position.y+16, "solid", -1, -1)):
         
 #                status = IDLE
-#                counter = randi_range(20,50)
+#                counter = gml.rand(20,50)
 #                x_vel = 0
          
     
     
-#        if (randi_range(1,100) == 1):
+#        if (gml.rand(1,100) == 1):
     
 #            status = IDLE
-#            counter = randi_range(20,50)
+#            counter = gml.rand(20,50)
 #            x_vel = 0
     
     

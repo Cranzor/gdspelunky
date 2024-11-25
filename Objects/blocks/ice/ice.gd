@@ -28,7 +28,7 @@ func create():
 func destroy():
 	if (not clean_death and not global.clean_solids):
 
-		for repetition in range(1, 3):
+		for repetition in range(3):
 	
 			gml.instance_create(position.x+randi_range(0,16), position.y+randi_range(0,16), Objects.drip)
 	

@@ -28,16 +28,16 @@ func _process(delta):
 #    for i in range(0, 3):
 
 #        piece = gml.instance_create(position.x-2, position.y-2, Objects.rubble_small)
-#        piece.x_vel = randi_range(1,3)-randi_range(1,3)
+#        piece.x_vel = gml.rand(1,3)-gml.rand(1,3)
 
     
-#    if (randi_range(1,3) == 1): gml.instance_create(position.x, position.y, Objects.gold_chunk)
-#    elif (randi_range(1,6) == 1): gml.instance_create(position.x, position.y, Objects.gold_nugget)
-#    elif (randi_range(1,12) == 1): gml.instance_create(position.x, position.y, Objects.emerald_big)
-#    elif (randi_range(1,12) == 1): gml.instance_create(position.x, position.y, Objects.sapphire_big)
-#    elif (randi_range(1,12) == 1): gml.instance_create(position.x, position.y, Objects.ruby_big)
-#    elif (randi_range(1,6) == 1): gml.instance_create(position.x-8, position.y-8, Objects.spider)
-#    elif (randi_range(1,12) == 1): gml.instance_create(position.x-8, position.y-8, Objects.snake)
+#    if (gml.rand(1,3) == 1): gml.instance_create(position.x, position.y, Objects.gold_chunk)
+#    elif (gml.rand(1,6) == 1): gml.instance_create(position.x, position.y, Objects.gold_nugget)
+#    elif (gml.rand(1,12) == 1): gml.instance_create(position.x, position.y, Objects.emerald_big)
+#    elif (gml.rand(1,12) == 1): gml.instance_create(position.x, position.y, Objects.sapphire_big)
+#    elif (gml.rand(1,12) == 1): gml.instance_create(position.x, position.y, Objects.ruby_big)
+#    elif (gml.rand(1,6) == 1): gml.instance_create(position.x-8, position.y-8, Objects.spider)
+#    elif (gml.rand(1,12) == 1): gml.instance_create(position.x-8, position.y-8, Objects.snake)
 #    if (held):
 
 #        player1.hold_item = 0
@@ -71,20 +71,20 @@ func _process(delta):
 #        for i in range(0, 3):
     
 #            piece = gml.instance_create(position.x-2, position.y-2, Objects.rubble_small)
-#            if (col_left): piece.x_vel = randi_range(1,3)
-#            elif (col_right): piece.x_vel = -randi_range(1,3)
-#            else: piece.x_vel = randi_range(1,3)-randi_range(1,3)
-#            if (col_top): piece.y_vel = randi_range(0,3)
-#            else: piece.y_vel = -randi_range(0,3)
+#            if (col_left): piece.x_vel = gml.rand(1,3)
+#            elif (col_right): piece.x_vel = -gml.rand(1,3)
+#            else: piece.x_vel = gml.rand(1,3)-gml.rand(1,3)
+#            if (col_top): piece.y_vel = gml.rand(0,3)
+#            else: piece.y_vel = -gml.rand(0,3)
     
     
-#        if (randi_range(1,3) == 1): gml.instance_create(position.x, position.y, Objects.gold_chunk)
-#        elif (randi_range(1,6) == 1): gml.instance_create(position.x, position.y, Objects.gold_nugget)
-#        elif (randi_range(1,12) == 1): gml.instance_create(position.x, position.y, Objects.emerald_big)
-#        elif (randi_range(1,12) == 1): gml.instance_create(position.x, position.y, Objects.sapphire_big)
-#        elif (randi_range(1,12) == 1): gml.instance_create(position.x, position.y, Objects.ruby_big)
-#        elif (randi_range(1,6) == 1): gml.instance_create(position.x-8, position.y-8, Objects.spider)
-#        elif (randi_range(1,12) == 1):
+#        if (gml.rand(1,3) == 1): gml.instance_create(position.x, position.y, Objects.gold_chunk)
+#        elif (gml.rand(1,6) == 1): gml.instance_create(position.x, position.y, Objects.gold_nugget)
+#        elif (gml.rand(1,12) == 1): gml.instance_create(position.x, position.y, Objects.emerald_big)
+#        elif (gml.rand(1,12) == 1): gml.instance_create(position.x, position.y, Objects.sapphire_big)
+#        elif (gml.rand(1,12) == 1): gml.instance_create(position.x, position.y, Objects.ruby_big)
+#        elif (gml.rand(1,6) == 1): gml.instance_create(position.x-8, position.y-8, Objects.spider)
+#        elif (gml.rand(1,12) == 1):
     
 #            if (col_left): gml.instance_create(position.x, position.y-8, Objects.snake)
 #            elif (col_right): gml.instance_create(position.x-16, position.y-8, Objects.snake)

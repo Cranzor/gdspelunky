@@ -21,9 +21,9 @@ func _process(delta):
     #    sprite_index = "olmec_start2"
 #    for i in range(0, 6):
 
-#        debris = gml.instance_create(position.x+32+randi_range(0,32), position.y+randi_range(0,32), Objects.olmec_debris)
-#        debris.x_vel = randi_range(1,4)
-#        debris.y_vel = -randi_range(1,3)
+#        debris = gml.instance_create(position.x+32+gml.rand(0,32), position.y+gml.rand(0,32), Objects.olmec_debris)
+#        debris.x_vel = gml.rand(1,4)
+#        debris.y_vel = -gml.rand(1,3)
 
 #    Audio.play_sound(global.snd_thump)
 #    with hawkman_worship
@@ -53,9 +53,9 @@ func _process(delta):
 #    alarm_3(50)
 #    for i in range(0, 6):
 
-#        debris = gml.instance_create(position.x+randi_range(0,32), position.y+randi_range(0,32), Objects.olmec_debris)
-#        debris.x_vel = -randi_range(1,4)
-#        debris.y_vel = -randi_range(1,3)
+#        debris = gml.instance_create(position.x+gml.rand(0,32), position.y+gml.rand(0,32), Objects.olmec_debris)
+#        debris.x_vel = -gml.rand(1,4)
+#        debris.y_vel = -gml.rand(1,3)
 
 #    Audio.play_sound(global.snd_thump)
 
@@ -65,9 +65,9 @@ func _process(delta):
     #    sprite_index = "olmec"
 #    for i in range(0, 12):
 
-#        debris = gml.instance_create(position.x+randi_range(0,64), position.y+32+randi_range(0,32), Objects.olmec_debris)
-#        debris.x_vel = randi_range(1,4)-randi_range(1,4)
-#        debris.y_vel = -randi_range(1,3)
+#        debris = gml.instance_create(position.x+gml.rand(0,64), position.y+32+gml.rand(0,32), Objects.olmec_debris)
+#        debris.x_vel = gml.rand(1,4)-gml.rand(1,4)
+#        debris.y_vel = -gml.rand(1,3)
 
 #    Audio.play_sound(global.snd_thump)
 #    alarm_4(50)
@@ -122,7 +122,7 @@ func _process(delta):
 
 #    LEFT = 0
 #    RIGHT = 1
-#    facing = randi_range(0,1)
+#    facing = gml.rand(0,1)
 
 #    # DY:  status
 #    START2 = -2
@@ -234,9 +234,9 @@ func _process(delta):
 
 #    elif (status == CREATE):
 
-#        for repetition in range(1, 6):
+#        for repetition in range(6):
     
-#            gml.instance_create(position.x+32+randi_range(0,32)-randi_range(0,32), position.y+14+randi_range(0,32)-randi_range(0,32), Objects.psychic_create2)
+#            gml.instance_create(position.x+32+gml.rand(0,32)-gml.rand(0,32), position.y+14+gml.rand(0,32)-gml.rand(0,32), Objects.psychic_create2)
     
 #        gml.instance_create(position.x+32, position.y+16, Objects.yellow_ball)
 #        gml.instance_create(position.x+32, position.y+16, Objects.yellow_ball)
@@ -252,7 +252,7 @@ func _process(delta):
 #            status = IDLE
 #            x_vel = 0
 #            y_vel = 0
-#            counter = randi_range(40,100)
+#            counter = gml.rand(40,100)
     
 #        else:
     
@@ -321,7 +321,7 @@ func _process(delta):
         
 #            else:
         
-#                if (randi_range(1,2) == 1 or not player1.active): status = IDLE
+#                if (gml.rand(1,2) == 1 or not player1.active): status = IDLE
 #                else: status = CREATE
 #                x_vel = 0
 #                y_vel = 0

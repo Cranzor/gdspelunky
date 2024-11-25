@@ -37,7 +37,7 @@ func _process(delta):
 #    x_acc = 0.2
 #    y_acc = 0.2
 #    dir = 0
-#    if (randi_range(1,2) == 1): dir = 180
+#    if (gml.rand(1,2) == 1): dir = 180
 
 #    # DY:  stats
 #    hp = 1
@@ -122,21 +122,21 @@ func _process(delta):
 #        else:
     
 #            status = IDLE
-#            dir = randi_range(0,1)*180
+#            dir = gml.rand(0,1)*180
     
 
 #    elif (status == ATTACK && gml.instance_exists("character")):
 
 #        if (dist < 90 and character.swimming and not character.dead):
     
-#            dir = point_direction(position.x+4, position.y+4, character.position.x, character.position.y)+randi_range(0,1)-randi_range(0,1)
+#            dir = point_direction(position.x+4, position.y+4, character.position.x, character.position.y)+gml.rand(0,1)-gml.rand(0,1)
 #            if (gml.collision_point(position.x + cos(degtorad(dir)), position.y - sin(degtorad(dir)), "water", 0, 0)):
 #                PlatformEngine.move_to(1 * cos(degtorad(dir)), -1 * sin(degtorad(dir)))
     
 #        else:
     
 #            status = PAUSE
-#            counter = randi_range(20,40)
+#            counter = gml.rand(20,40)
     
 
 #    elif (status == ATTACK_ENEMY):
@@ -160,13 +160,13 @@ func _process(delta):
     
 #        if (status != PAUSE):
     
-#            dir = point_direction(position.x+4, position.y+4, obj.position.x+8, obj.position.y+8)+randi_range(0,1)-randi_range(0,1)
+#            dir = point_direction(position.x+4, position.y+4, obj.position.x+8, obj.position.y+8)+gml.rand(0,1)-gml.rand(0,1)
 #            if (gml.collision_point(position.x + cos(degtorad(dir)), position.y - sin(degtorad(dir)), "water", 0, 0)):
 #                PlatformEngine.move_to(1 * cos(degtorad(dir)), -1 * sin(degtorad(dir)))
 #            else:
         
 #                status = PAUSE
-#                counter = randi_range(20,40)
+#                counter = gml.rand(20,40)
         
         
 #            dist = point_distance(position.x+4, position.y+4, obj.position.x+8, obj.position.y+8)
@@ -182,14 +182,14 @@ func _process(delta):
             
         
     
-#        else: counter = randi_range(20,40)
+#        else: counter = gml.rand(20,40)
 
 
 #    if (bubble_timer > 0): bubble_timer -= 1
 #    else:
 
 #        gml.instance_create(position.x, position.y, Objects.bubble)
-#        bubble_timer = (randi_range(bubble_timer_max-10, bubble_timer_max+10))
+#        bubble_timer = (gml.rand(bubble_timer_max-10, bubble_timer_max+10))
 
 
 

@@ -41,7 +41,7 @@ func _process(delta):
 
 #    # main_code
 #    type = "Arrow Trap"
-#    fired = 100+randi_range(100)
+#    fired = 100+gml.rand(100)
 #    invincible = false
 #    x_act = 0 # DY:  activate distance
 #    # DY: alarm_0(50)
@@ -52,11 +52,11 @@ func _process(delta):
 #func destroy():
     #    if (not clean_death and not global.clean_solids):
 
-#        rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), Objects.rubble)
+#        rubble = gml.instance_create(position.x+8+gml.rand(0,8)-gml.rand(0,8), position.y+8+gml.rand(0,8)-gml.rand(0,8), Objects.rubble)
 #        rubble.sprite_index = "rubble_tan"
-#        rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), Objects.rubble_small)
+#        rubble = gml.instance_create(position.x+8+gml.rand(0,8)-gml.rand(0,8), position.y+8+gml.rand(0,8)-gml.rand(0,8), Objects.rubble_small)
 #        rubble.sprite_index = "rubble_tan_small"
-#        rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), Objects.rubble_small)
+#        rubble = gml.instance_create(position.x+8+gml.rand(0,8)-gml.rand(0,8), position.y+8+gml.rand(0,8)-gml.rand(0,8), Objects.rubble_small)
 #        rubble.sprite_index = "rubble_tan_small"
 
 
@@ -69,5 +69,5 @@ func _process(delta):
     
 #            arrow = gml.instance_create(position.x+18, position.y+4, Objects.arrow)
 #            arrow.x_vel = 8
-#            fired = randi_range(100,200)
+#            fired = gml.rand(100,200)
 #            Audio.play_sound(global.snd_arrow_trap)

@@ -20,7 +20,7 @@ func _process(delta):
 #func alarm 0():
     #    if (not player1.dead):
 
-#        n = randi_range(0,3)
+#        n = gml.rand(0,3)
 #        gml.instance_create(32 + n*80, 0, Objects.shopkeeper2)
 #        if (kills >= 40):
     
@@ -55,9 +55,9 @@ func _process(delta):
     
 
 #func alarm 11():
-    #    if (not player1.dead and randi_range(1, 100) < kills):
+    #    if (not player1.dead and gml.rand(1, 100) < kills):
 
-#        n = randi_range(0,3)
+#        n = gml.rand(0,3)
 #        gml.instance_create(32 + n*80, 0, Objects.spider)
 
 

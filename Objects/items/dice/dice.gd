@@ -28,7 +28,7 @@ func _process(delta):
 #    heavy = true
 #    rolled = false
 #    rolling = false
-#    value = randi_range(1,6)
+#    value = gml.rand(1,6)
 
     
 
@@ -172,7 +172,7 @@ func _process(delta):
                             
 #                                elif (type == "ManTrap"):
                             
-#                                    gml.instance_create(position.x+randi_range(0,16), position.y-8+randi_range(0,16), Objects.leaf)
+#                                    gml.instance_create(position.x+gml.rand(0,16), position.y-8+gml.rand(0,16), Objects.leaf)
                             
 #                                hp -= 1
 #                                status = STUNNED
@@ -256,7 +256,7 @@ func _process(delta):
 #    if (abs(y_vel) > 2 or abs(x_vel) > 2):
 
 #        sprite_index = "dice_roll"
-#        value = randi_range(1,6)
+#        value = gml.rand(1,6)
 #        if (player1.bet > 0): rolling = true
 
 #    elif (Collision.is_collision_bottom(1)):

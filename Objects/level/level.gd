@@ -136,12 +136,12 @@ func _process(delta):
     
 #            if (player1.position.y < 240-96 or player1.position.y > room_height-144): view_vborder[0] = 0
 #            else: view_vborder[0] = 96
-#            # DY: gml.view("xview") = gml.view("xview") + randi_range(0,3) - randi_range(0,3)
+#            # DY: gml.view("xview") = gml.view("xview") + gml.rand(0,3) - gml.rand(0,3)
 #            if (global.shake_toggle):
         
 #                # DY:  if (gml.view("yview") >= room_height - gml.view("hview")): gml.view("yview") = 304
 #                # DY:  global.yview_prev = gml.view("yview")
-#                global.y_shake_diff = randi_range(1,3)
+#                global.y_shake_diff = gml.rand(1,3)
 #                gml.view("yview") = gml.view("yview") + global.y_shake_diff
         
 #            else:

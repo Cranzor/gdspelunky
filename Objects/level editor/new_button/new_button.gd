@@ -18,17 +18,17 @@ func _process(delta):
 
 
 #func mouse leave():
-	#    sprite_index = "new_button"
+    #    sprite_index = "new_button"
 
-	
+    
 
 #func mouse left button pressed():
-	#    sprite_index = "new_button_pressed"
+    #    sprite_index = "new_button_pressed"
 
-	
+    
 
 #func mouse left button released():
-	#    if (sprite_index == "new_button_pressed):"
+    #    if (sprite_index == "new_button_pressed):"
 
 #        level_editor.status = 10
 #        with edit_button  gml.instance_destroy(self) 
@@ -37,9 +37,9 @@ func _process(delta):
 
 #    sprite_index = "new_button"
 
-	
+    
 
 #func step():
-	#    position.x = gml.view("xview")+gml.view("wview")-88
+    #    position.x = gml.view("xview")+gml.view("wview")-88
 #    if (gml.view("yview") == 0): position.y = gml.view("yview")+gml.view("hview")-32
 #    else: position.y = gml.view("yview")+16

@@ -37,7 +37,7 @@ func _process(delta):
 
 #    LEFT = 0
 #    RIGHT = 1
-#    facing = randi_range(0,1)
+#    facing = gml.rand(0,1)
 
 #    # DY:  status
 #    IDLE = 0
@@ -75,13 +75,13 @@ func _process(delta):
 #    if (hp < 1):
 
 #        MiscScripts.scr_create_blood(position.x+8, position.y+8, 1)
-#        for repetition in range(1, 3):
+#        for repetition in range(3):
     
 #            gml.instance_create(other.position.x+8, other.position.y+8, Objects.bone)
     
 #        skull = gml.instance_create(other.position.x+8, other.position.y+8, Objects.skull)
-#        skull.y_vel = -randi_range(1,3)
-#        skull.x_vel = randi_range(0,3)-randi_range(0,3)
+#        skull.y_vel = -gml.rand(1,3)
+#        skull.x_vel = gml.rand(0,3)-gml.rand(0,3)
 #        if (counts_as_kill):
     
 #            if (InLevel.is_real_level()): global.enemy_kills[6] += 1
@@ -122,16 +122,16 @@ func _process(delta):
 #            status = IDLE
 #            x_vel = 0
 #            y_vel = 0
-#            counter = randi_range(40,100)
+#            counter = gml.rand(40,100)
     
 
 #    elif (status == BOUNCE):
 
 #        if (col_bot):
     
-#            if (randi_range(1,4) == 1):
+#            if (gml.rand(1,4) == 1):
         
-#                y_vel = -1 * randi_range(2,4)
+#                y_vel = -1 * gml.rand(2,4)
 #                if (character.position.x < position.x):
             
 #                    facing = LEFT
@@ -145,7 +145,7 @@ func _process(delta):
         
 #            else:
         
-#                y_vel = -1 * randi_range(1,2)
+#                y_vel = -1 * gml.rand(1,2)
 #                if (character.position.x < position.x):
             
 #                    facing = LEFT

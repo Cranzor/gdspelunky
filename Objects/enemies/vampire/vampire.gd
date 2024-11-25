@@ -206,7 +206,7 @@ func _process(delta):
 
 #    if (burning > 0):
 
-#        if (randi_range(1,5) == 1): gml.instance_create(position.x+randi_range(4,12), position.y+randi_range(4,12), Objects.burn)
+#        if (gml.rand(1,5) == 1): gml.instance_create(position.x+gml.rand(4,12), position.y+gml.rand(4,12), Objects.burn)
 #        burning -= 1
 
 
@@ -232,7 +232,7 @@ func _process(delta):
 #        if (Collision.is_collision_bottom(1) and counter > 0): counter -= 1    
 #        if (counter < 1):
     
-#            facing = randi_range(0,1)
+#            facing = gml.rand(0,1)
 #            status = WALK
     
     
@@ -255,10 +255,10 @@ func _process(delta):
     
 #            # DY:  do nothing
     
-#        elif (randi_range(1,100) == 1):
+#        elif (gml.rand(1,100) == 1):
     
 #            status = IDLE
-#            counter = randi_range(20,50)
+#            counter = gml.rand(20,50)
 #            x_vel = 0
     
 #        elif (facing == LEFT):
@@ -267,7 +267,7 @@ func _process(delta):
 #            if (not gml.collision_point(position.x-1, position.y+16, "solid", -1, -1)):
         
 #                status = IDLE
-#                counter = randi_range(20,50)
+#                counter = gml.rand(20,50)
 #                x_vel = 0
 #                y_vel = 0
         
@@ -278,7 +278,7 @@ func _process(delta):
 #            if (not gml.collision_point(position.x+16, position.y+16, "solid", -1, -1)):
         
 #                status = IDLE
-#                counter = randi_range(20,50)
+#                counter = gml.rand(20,50)
 #                x_vel = 0
 #                y_vel = 0
          
@@ -336,11 +336,11 @@ func _process(delta):
 #            status = IDLE
 #            x_vel = 0
 #            y_vel = 0
-#            counter = randi_range(40,100)
+#            counter = gml.rand(40,100)
     
 #        elif (not gml.collision_point(position.x+8, position.y+8, "water", 0, 0)):
     
-#            if (randi_range(1,100) == 1): status = FLY
+#            if (gml.rand(1,100) == 1): status = FLY
 #            elif (gml.collision_point(position.x+8, position.y+24, "water", 0, 0)): status = FLY
     
 
@@ -348,7 +348,7 @@ func _process(delta):
 
 #        if (col_bot):
     
-#            y_vel = -1 * randi_range(3,6)
+#            y_vel = -1 * gml.rand(3,6)
     
 #        else:
     
@@ -398,13 +398,13 @@ func _process(delta):
 
 #    elif (status == DEAD):
 
-#        for repetition in range(1, 3):
+#        for repetition in range(3):
     
 #            gml.instance_create(other.position.x+8, other.position.y+8, Objects.bone)
     
 #        obj = gml.instance_create(other.position.x+8, other.position.y+8, Objects.skull)
-#        obj.y_vel = -randi_range(1,3)
-#        obj.x_vel = randi_range(0,3)-randi_range(0,3)
+#        obj.y_vel = -gml.rand(1,3)
+#        obj.x_vel = gml.rand(0,3)-gml.rand(0,3)
 #        if (counts_as_kill):
     
 #            if (InLevel.is_real_level()): global.enemy_kills[7] += 1

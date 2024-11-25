@@ -241,7 +241,7 @@ func _process(delta):
 
 #    if (burning > 0):
 
-#        if (randi_range(1,5) == 1): gml.instance_create(position.x+randi_range(0,sprite_width), position.y+randi_range(0,sprite_height), Objects.burn)
+#        if (gml.rand(1,5) == 1): gml.instance_create(position.x+gml.rand(0,sprite_width), position.y+gml.rand(0,sprite_height), Objects.burn)
 #        burning -= 1
 
 
@@ -374,7 +374,7 @@ func _process(delta):
                             
 #                                elif (type == "ManTrap"):
                             
-#                                    gml.instance_create(position.x+randi_range(0,16), position.y-8+randi_range(0,16), Objects.leaf)
+#                                    gml.instance_create(position.x+gml.rand(0,16), position.y-8+gml.rand(0,16), Objects.leaf)
                             
 #                                hp -= 1
 #                                status = STUNNED
@@ -429,7 +429,7 @@ func _process(delta):
                     
 #                            gml.instance_create(position.x+8, position.y+8, Objects.explosion)
 #                            Audio.play_sound(global.snd_explosion)
-#                            if (randi_range(1,3) == 1): gml.instance_create(position.x+8, position.y+8, Objects.alien_eject)
+#                            if (gml.rand(1,3) == 1): gml.instance_create(position.x+8, position.y+8, Objects.alien_eject)
 #                            global.ufos += 1
 #                            global.kills += 1
 #                            gml.instance_destroy(self)

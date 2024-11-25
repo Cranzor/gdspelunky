@@ -239,7 +239,7 @@ func _process(delta):
 
 #        if (burning > 0):
     
-#            if (randi_range(1,5) == 1): gml.instance_create(position.x+randi_range(4,12), position.y+randi_range(4,12), Objects.burn)
+#            if (gml.rand(1,5) == 1): gml.instance_create(position.x+gml.rand(4,12), position.y+gml.rand(4,12), Objects.burn)
 #            burning -= 1
     
 

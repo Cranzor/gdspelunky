@@ -47,14 +47,14 @@ func _process(delta):
 
 #        Audio.play_sound(global.snd_break)
 #        gml.instance_create(position.x, position.y, Objects.smoke_puff)
-#        for (i = 0 i < randi_range(1,2) i += 1)
+#        for (i = 0 i < gml.rand(1,2) i += 1)
     
 #            piece = gml.instance_create(position.x-2, position.y-2, Objects.bone)
-#            if (col_left): piece.x_vel = randi_range(1,3)
-#            elif (col_right): piece.x_vel = -randi_range(1,3)
-#            else: piece.x_vel = randi_range(1,3)-randi_range(1,3)
-#            if (col_top): piece.y_vel = randi_range(0,3)
-#            else: piece.y_vel = -randi_range(0,3)
+#            if (col_left): piece.x_vel = gml.rand(1,3)
+#            elif (col_right): piece.x_vel = -gml.rand(1,3)
+#            else: piece.x_vel = gml.rand(1,3)-gml.rand(1,3)
+#            if (col_top): piece.y_vel = gml.rand(0,3)
+#            else: piece.y_vel = -gml.rand(0,3)
     
 #        if (held):
     

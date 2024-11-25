@@ -39,7 +39,7 @@ func _process(delta):
 
 #    LEFT = 0
 #    RIGHT = 1
-#    facing = randi_range(0,1)
+#    facing = gml.rand(0,1)
 
 #    # DY:  status
 #    IDLE = 0
@@ -116,14 +116,14 @@ func _process(delta):
 #            status = IDLE
 #            x_vel = 0
 #            y_vel = 0
-#            counter = randi_range(10,40)
+#            counter = gml.rand(10,40)
     
 
 #    elif (status == BOUNCE):
 
 #        if (col_bot):
     
-#            y_vel = -1 * randi_range(2,4)
+#            y_vel = -1 * gml.rand(2,4)
 #            if (character.position.x < position.x):
         
 #                facing = LEFT

@@ -37,13 +37,13 @@ func _process(delta):
     
 #            sprite_index = "bomb_armed"
 #            image_speed = 1
-#            alarm_1()randi_range(8,12)
+#            alarm_1()gml.rand(8,12)
     
 
 
-#    if (other.position.x < position.x): other.x_vel = -randi_range(2,4)
-#    else: other.x_vel = randi_range(2,4)
-#    if (other.position.y < position.y): other.y_vel = -randi_range(2,4)
+#    if (other.position.x < position.x): other.x_vel = -gml.rand(2,4)
+#    else: other.x_vel = gml.rand(2,4)
+#    if (other.position.y < position.y): other.y_vel = -gml.rand(2,4)
 
 #    if (other.held):
 
@@ -177,7 +177,7 @@ func _process(delta):
 #    )
 #    */
 
-#    if (randi_range(1,20) == 1): gml.instance_create(position.x+randi_range(4,12), position.y+randi_range(4,12), Objects.burn)
+#    if (gml.rand(1,20) == 1): gml.instance_create(position.x+gml.rand(4,12), position.y+gml.rand(4,12), Objects.burn)
 #    burning -= 1
     
 #    if (status == IDLE):
@@ -190,9 +190,9 @@ func _process(delta):
 #        if (Collision.is_collision_bottom(1) and counter > 0): counter -= 1    
 #        if (counter < 1):
     
-#            facing = randi_range(0,1)
+#            facing = gml.rand(0,1)
 #            status = WALK
-#            if (randi_range(1,6) == 1):
+#            if (gml.rand(1,6) == 1):
         
 #                magma = gml.instance_create(position.x+8, position.y+8, Objects.magma)
 #                magma.hp = hp
@@ -214,7 +214,7 @@ func _process(delta):
 #            if (not gml.collision_point(position.x-1, position.y+16, "solid", -1, -1)):
         
 #                status = IDLE
-#                counter = randi_range(20,50)
+#                counter = gml.rand(20,50)
 #                x_vel = 0
         
     
@@ -224,15 +224,15 @@ func _process(delta):
 #            if (not gml.collision_point(position.x+16, position.y+16, "solid", -1, -1)):
         
 #                status = IDLE
-#                counter = randi_range(20,50)
+#                counter = gml.rand(20,50)
 #                x_vel = 0
          
     
     
-#        if (randi_range(1,100) == 1):
+#        if (gml.rand(1,100) == 1):
     
 #            status = IDLE
-#            counter = randi_range(20,50)
+#            counter = gml.rand(20,50)
 #            x_vel = 0
     
 

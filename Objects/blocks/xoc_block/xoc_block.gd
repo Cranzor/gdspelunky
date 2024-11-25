@@ -49,10 +49,10 @@ func destroy():
 			gold.x_vel = randi_range(0,3) - randi_range(0,3)
 			gold.y_vel = randi_range(2,4) * 1
 	
-			if (treasure == "diamond"): for repetition in range(1, 2):  gml.instance_create(position.x+8, position.y+8, Objects.diamond)
-			if (treasure == "ruby"): for repetition in range(1, 2):  gml.instance_create(position.x+8, position.y+8, Objects.ruby_big)
-			if (treasure == "sapphire"): for repetition in range(1, 2):  gml.instance_create(position.x+8, position.y+8, Objects.sapphire_big)
-			if (treasure == "emerald"): for repetition in range(1, 2):  gml.instance_create(position.x+8, position.y+8, Objects.emerald_big)
+			if (treasure == "diamond"): for repetition in range(2):  gml.instance_create(position.x+8, position.y+8, Objects.diamond)
+			if (treasure == "ruby"): for repetition in range(2):  gml.instance_create(position.x+8, position.y+8, Objects.ruby_big)
+			if (treasure == "sapphire"): for repetition in range(2):  gml.instance_create(position.x+8, position.y+8, Objects.sapphire_big)
+			if (treasure == "emerald"): for repetition in range(2):  gml.instance_create(position.x+8, position.y+8, Objects.emerald_big)
 	
 
 	var tile = gml.tile_layer_find(99, position.x, position.y)

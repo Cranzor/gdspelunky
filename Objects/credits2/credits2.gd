@@ -26,8 +26,8 @@ func _process(delta):
 #func alarm 1():
     #    if (scrolling):
 
-#    if (randi_range(1,8) == 1): gml.instance_create(-16, 176, Objects.shrub_scroll)
-#    elif (randi_range(1,12) == 1): gml.instance_create(-32, 176-112, Objects.palm_tree_scroll)
+#    if (gml.rand(1,8) == 1): gml.instance_create(-16, 176, Objects.shrub_scroll)
+#    elif (gml.rand(1,12) == 1): gml.instance_create(-32, 176-112, Objects.palm_tree_scroll)
 
 #    gml.instance_create(-16, 176, Objects.desert_top_scroll)
 #    gml.instance_create(-16, 192, Objects.desert_scroll2)

@@ -32,8 +32,8 @@ func _process(delta):
     #    /*
 #    if (not gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "olmec", 0, 0)):
 
-#        if (randi_range(1,2) == 1): n = randi_range(1,4)
-#        else: n = randi_range(1,5)
+#        if (gml.rand(1,2) == 1): n = gml.rand(1,4)
+#        else: n = gml.rand(1,5)
 #        match (n)
     
 #            1:  gml.instance_create(position.x-8, position.y-8, Objects.bat)  
@@ -54,8 +54,8 @@ func _process(delta):
 
 #    # main_code
 #    y_vel = -1 * (random(3)+4)
-#    x_vel = randi_range(2,5)
-#    if (randi_range(1,2) == 1): x_vel *= -1
+#    x_vel = gml.rand(2,5)
+#    if (gml.rand(1,2) == 1): x_vel *= -1
 #    # DY: invincible = true
 #    # DY: alarm_0(40)
 #    alarm_1(1)
@@ -76,8 +76,8 @@ func _process(delta):
 
 #        position.x -= x_vel
 #        position.y -= y_vel
-#        if (randi_range(1,2) == 1): n = randi_range(1,4)
-#        else: n = randi_range(1,5)
+#        if (gml.rand(1,2) == 1): n = gml.rand(1,4)
+#        else: n = gml.rand(1,5)
 #        match (n)
     
 #            1:  gml.instance_create(position.x-8, position.y-8, Objects.bat)  

@@ -323,11 +323,11 @@ func _process(delta):
     #    # DY:  shake the screen
 #    if (global.shake > 0):
 
-#        # DY: gml.view("xview") = gml.view("xview") + randi_range(0,3) - randi_range(0,3)
-#        # DY: gml.view("yview") = gml.view("yview") + randi_range(0,3) - randi_range(0,3)
-#        # DY: if (gml.view("yview") > 16): gml.view("yview") = 16 - randi_range(0,8)
-#        # DY: if (gml.view("yview") < 0): gml.view("yview") = 0 + randi_range(0,8)
-#        if (shake_toggle): gml.view("yview") = gml.view("yview") + randi_range(1,8)
+#        # DY: gml.view("xview") = gml.view("xview") + gml.rand(0,3) - gml.rand(0,3)
+#        # DY: gml.view("yview") = gml.view("yview") + gml.rand(0,3) - gml.rand(0,3)
+#        # DY: if (gml.view("yview") > 16): gml.view("yview") = 16 - gml.rand(0,8)
+#        # DY: if (gml.view("yview") < 0): gml.view("yview") = 0 + gml.rand(0,8)
+#        if (shake_toggle): gml.view("yview") = gml.view("yview") + gml.rand(1,8)
 #        else: gml.view("yview") = 0
 #        shake_toggle = not shake_toggle
 #        global.shake -= 1

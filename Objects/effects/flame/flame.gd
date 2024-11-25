@@ -39,7 +39,7 @@ func _process(delta):
 #    # main_code
 #    x_vel = random(4) - random(4)
 #    y_vel = -1 - random(2)
-#    grav = randi_range(1,6) * 0.1
+#    grav = gml.rand(1,6) * 0.1
 
 #    alarm_0(2)
 #    alarm_1(50)

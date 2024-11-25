@@ -57,7 +57,7 @@ func _process(delta):
     
 #        # DY: 
 #    break mattock
-#        if (randi_range(1,20) == 1 and not global.is_tunnel_man):
+#        if (gml.rand(1,20) == 1 and not global.is_tunnel_man):
     
 #            with player1
         

@@ -40,7 +40,7 @@ func _process(delta):
 #    y_vel = 0
 #    x_acc = 0.2
 #    y_acc = 0.2
-#    counter = randi_range(10,30)
+#    counter = gml.rand(10,30)
 #    if (global.level_type == 0): value = 4000
 #    elif (global.level_type == 1): value = 8000
 #    elif (global.level_type == 3): value = 12000
@@ -62,9 +62,9 @@ func _process(delta):
     
 
 #func destroy():
-    #    for repetition in range(1, 3):
+    #    for repetition in range(3):
 
-#        gml.instance_create(other.position.x+6+randi_range(0,4), other.position.y+6+randi_range(0,4), Objects.flare_spark)
+#        gml.instance_create(other.position.x+6+gml.rand(0,4), other.position.y+6+gml.rand(0,4), Objects.flare_spark)
 
 
     
@@ -79,10 +79,10 @@ func _process(delta):
 
 #    if (hp < 1):
 
-#        for repetition in range(1, 3):
+#        for repetition in range(3):
     
-#            obj = gml.instance_create(position.x+2+randi_range(0,14), position.y+2+randi_range(0,14), Objects.flare_spark)
-#            obj.y_vel = randi_range(1,3)
+#            obj = gml.instance_create(position.x+2+gml.rand(0,14), position.y+2+gml.rand(0,14), Objects.flare_spark)
+#            obj.y_vel = gml.rand(1,3)
     
 #        gml.instance_destroy(self)
 
@@ -109,11 +109,11 @@ func _process(delta):
         
 #            else:
         
-#                dir = randi_range(0,360)
+#                dir = gml.rand(0,360)
         
 #            x_vel = 4 * cos(degtorad(dir))
 #            y_vel = -4 * sin(degtorad(dir))
-#            counter = randi_range(10,30)
+#            counter = gml.rand(10,30)
     
     
 #        if (Collision.is_collision_right(1) and x_vel > 0):

@@ -21,7 +21,7 @@ func _process(delta):
     #    status = BOUNCE
 #    if (Collision.is_collision_bottom(1)):
 
-#        y_vel = -1 * randi_range(2,5)
+#        y_vel = -1 * gml.rand(2,5)
 #        if (character.position.x < position.x):
     
 #            x_vel = -2.5
@@ -122,7 +122,7 @@ func _process(delta):
 
 #    if (status == IDLE):
 
-#        alarm_0()randi_range(5,20)
+#        alarm_0()gml.rand(5,20)
 #        status = RECOVER
 
 #    elif (status == RECOVER):
@@ -133,7 +133,7 @@ func _process(delta):
 
 #        if (Collision.is_collision_bottom(1)):
     
-#            y_vel = -1 * randi_range(2,5)
+#            y_vel = -1 * gml.rand(2,5)
 #            if (character.position.x < position.x+8):
         
 #                x_vel = -2.5
@@ -143,7 +143,7 @@ func _process(delta):
 #                x_vel = 2.5
         
         
-#            if (randi_range(1,4) == 1):  status = IDLE x_vel = 0 y_vel = 0 
+#            if (gml.rand(1,4) == 1):  status = IDLE x_vel = 0 y_vel = 0 
     
 
 #    elif (status != DROWNED):

@@ -48,7 +48,7 @@ func _process(delta):
 #    dying = false
 #    UP = 0
 #    DOWN = 1
-#    dir = randi_range(0,1)
+#    dir = gml.rand(0,1)
 #    move_off = 32
 #    hard = false
 #    if (position.x > 208): hard = true
