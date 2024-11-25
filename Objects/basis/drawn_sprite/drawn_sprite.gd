@@ -10,6 +10,10 @@ var blink_toggle
 
 var invincible
 var IDLE
+var RUN
+var THROWN
+var YELL
+var EXIT
 var WALK
 var ATTACK
 var bounced
