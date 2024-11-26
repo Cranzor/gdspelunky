@@ -20,7 +20,7 @@ func _process(delta):
 #func animation_end():
 #    if (sprite_index == "alien_deploy):" sprite_index = "alien_parachute"
 
-    
+	
 
 #func collision_with_player1():
 #    # DY:  jumped on - caveman, man_trap replaces this script with its own
@@ -30,15 +30,15 @@ func _process(delta):
 #        other.fall_timer = 0
 #        Audio.play_sound(global.snd_hit)
 #        for repetition in range(3):
-    
+	
 #            gml.instance_create(other.position.x+8, other.position.y+8, Objects.blood)
-    
+	
 #        if (counts_as_kill):
-    
+	
 #            if (InLevel.is_real_level()): global.enemy_kills[15] += 1
 #            global.aliens += 1
 #            global.kills += 1
-    
+	
 #        gml.instance_destroy(self)
 
 #    elif (other.invincible == 0):
@@ -51,19 +51,19 @@ func _process(delta):
 #            other.x_vel = -6
 #        else:
 #            other.x_vel = 6
-    
+	
 #        if (global.plife > 0): global.plife -= 1
 #        Audio.play_sound(global.snd_hurt)
 
 
 
-    
+	
 
 #func collision_with_web():
 #    gml.instance_create(position.x-8, position.y-12, Objects.alien)
 #    gml.instance_destroy(self)
 
-    
+	
 
 #func create():
 #    # action_inherited
@@ -92,12 +92,12 @@ func _process(delta):
 #    counter = 0
 
 
-    
+	
 
 #func outside room():
 #    gml.instance_destroy(self)
 
-    
+	
 
 #func step():
 #    if ((position.x > gml.view("xview")-20 and position.x < gml.view("xview") + gml.view("wview")+4 and:
@@ -111,11 +111,11 @@ func _process(delta):
 #        x_vel = 0
 #        y_vel += 0.5
 #        if (y_vel >= 0 or Collision.is_collision_top(1)):
-    
+	
 #            y_vel = 0
 #            status = FLOAT
 #            sprite_index = "alien_deploy"
-    
+	
 #        if (gml.rand(1,5) == 1): gml.instance_create(position.x+gml.rand(0,3)-gml.rand(0,3), position.y+gml.rand(0,3)-gml.rand(0,3), Objects.burn)
 
 #    elif (status == FLOAT):
@@ -123,16 +123,16 @@ func _process(delta):
 #        x_vel = 0
 #        y_vel = 2
 #        if (gml.collision_point(position.x, position.y+6, "solid", 0, 0)):
-    
+	
 #            gml.instance_create(position.x-8, position.y-12, Objects.alien)
 #            gml.instance_destroy(self)
-    
+	
 #        elif (dir == 0):
-    
+	
 #            x_vel = -1
 #            if (gml.collision_point(position.x-8, position.y, "solid", 0, 0)): dir = 99
-    
+	
 #        elif (dir == 1):
-    
+	
 #            x_vel = 1
 #            if (gml.collision_point(position.x+8, position.y, "solid", 0, 0)): dir = 99

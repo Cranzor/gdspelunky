@@ -35,4 +35,3 @@ void fragment() {
 
     COLOR.rgb = signal * clamp(0.25 - eff_v_sharp * (src_y_fract * src_y_fract - radius * radius),0.0, 1.0);
 }
-

@@ -52,6 +52,7 @@ var dying
 var dist
 var viscid_top
 var DROP
+var swimming
 
 func create():
 	visible = true #--- believe I put this due to how Game Maker handles it

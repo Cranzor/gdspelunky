@@ -25,10 +25,10 @@ func _process(delta):
 #        dying = true
 #        n = 0
 #        if (other.position.y >= position.y-2 and other.position.y <= position.y+2):
-    
+	
 #            n = 5
 #            Audio.play_sound(global.snd_coin)
-    
+	
 #        elif (other.position.y >= position.y-6 and other.position.y <= position.y-3): n = 3
 #        elif (other.position.y >= position.y+3 and other.position.y <= position.y+6): n = 3
 #        elif (other.position.y >= position.y-10 and other.position.y <= position.y-7): n = 2
@@ -41,7 +41,7 @@ func _process(delta):
 
 #    if (life <= 2): with other  gml.instance_destroy(self) 
 
-    
+	
 
 #func create():
 #    life = 20
@@ -54,44 +54,44 @@ func _process(delta):
 #    if (position.x > 208): hard = true
 #    x_diff = 0
 
-    
+	
 
 #func step():
 #    if (dying):
 
 #        if (life > 0): life -= 1
 #        else:
-    
+	
 #            life = 20
 #            dying = false
-    
+	
 
 #    else:
 
 #        if (dir == UP):
-    
+	
 #            if (hard): position.y -= 2
 #            else: position.y -= 1
 #            move_off += 1
 #            if (position.y <= 64 or move_off > 64):
-        
+		
 #                dir = DOWN
 #                move_off = 0
-        
-    
+		
+	
 #        elif (dir == DOWN):
-    
+	
 #            if (hard): position.y += 2
 #            else: position.y += 1
 #            move_off += 1
 #            if (position.y >= 160 or move_off > 64):
-        
+		
 #                dir = UP
 #                move_off = 0
-        
-    
-    
+		
+	
+	
 #        if (moon_room.timer <= 30):
-    
+	
 #            position.x = 240 - abs(sin(x_diff)*64)
 #            x_diff += 0.01
