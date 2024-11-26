@@ -17,19 +17,19 @@ func _process(delta):
 #--- Object functions
 
 
-#func alarm 0():
-    #    whipped = false
+#func alarm_0():
+#    whipped = false
 
     
 
-#func collision with o_blood():
-    #    hp += 1
+#func collision_with_blood():
+#    hp += 1
 #    with other  gml.instance_destroy(self) 
 
     
 
-#func collision with o_character():
-    #    if (abs(other.position.x-(position.x+8)) > 8):
+#func collision_with_character():
+#    if (abs(other.position.x-(position.x+8)) > 8):
 
 #        # DY:  do nothing
 
@@ -73,8 +73,8 @@ func _process(delta):
 
     
 
-#func collision with o_whip():
-    #    if (status < STUNNED or other.type == "Machete"):
+#func collision_with_whip():
+#    if (status < STUNNED or other.type == "Machete"):
 
 #        hp -= other.damage
 #        MiscScripts.scr_create_blood(position.x+sprite_width/2, position.y+sprite_height/2, 1)
@@ -90,8 +90,8 @@ func _process(delta):
 
     
 
-#func collision with o_whip_pre():
-    #    if (status < STUNNED or other.type == "Machete"):
+#func collision_with_whip_pre():
+#    if (status < STUNNED or other.type == "Machete"):
 
 #        hp -= other.damage
 #        MiscScripts.scr_create_blood(position.x+sprite_width/2, position.y+sprite_height/2, 1)
@@ -108,7 +108,7 @@ func _process(delta):
     
 
 #func create():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code
@@ -118,7 +118,7 @@ func _process(delta):
 #    image_speed = 0.5
 
 #    # DY:  stats
-#    type = "Vampire"
+#    type = "vampire"
 #    hp = 6
 #    invincible = 0
 #    my_grav = 0.2
@@ -154,7 +154,7 @@ func _process(delta):
     
 
 #func step():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code

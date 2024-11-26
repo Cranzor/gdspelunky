@@ -17,8 +17,8 @@ func _process(delta):
 #--- Object functions
 
 
-#func collision with o_character():
-    #    # DY:  jumped on
+#func collision_with_character():
+#    # DY:  jumped on
 #    if (abs(other.position.x-(position.x+8)) > 8):
 
 #        # DY:  do nothing
@@ -66,8 +66,8 @@ func _process(delta):
 
     
 
-#func collision with o_whip():
-    #    if (status < STUNNED or other.type == "Machete"):
+#func collision_with_whip():
+#    if (status < STUNNED or other.type == "Machete"):
 
 #        hp -= other.damage
 #        if (blood_left > 0):
@@ -87,8 +87,8 @@ func _process(delta):
 
     
 
-#func collision with o_whip_pre():
-    #    if (status < STUNNED or other.type == "Machete"):
+#func collision_with_whip_pre():
+#    if (status < STUNNED or other.type == "Machete"):
 
 #        hp -= other.damage
 #        if (blood_left > 0):
@@ -109,7 +109,7 @@ func _process(delta):
     
 
 #func create():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code
@@ -120,7 +120,7 @@ func _process(delta):
 #    my_grav = 0.6
 
 #    # DY:  stats
-#    type = "Caveman"
+#    type = "caveman"
 #    hp = 3
 #    invincible = 0
 #    favor = 2
@@ -147,7 +147,7 @@ func _process(delta):
     
 
 #func step():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code

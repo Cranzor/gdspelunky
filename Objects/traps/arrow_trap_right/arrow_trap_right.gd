@@ -17,14 +17,14 @@ func _process(delta):
 #--- Object functions
 
 
-#func alarm 0():
-    #    arrow = gml.instance_create(position.x+16, position.y+4, Objects.arrow)
+#func alarm_0():
+#    arrow = gml.instance_create(position.x+16, position.y+4, Objects.arrow)
 #    arrow.x_vel = 5
 
     
 
-#func alarm 1():
-    #    if (not InLevel.is_room("r_level_editor")):
+#func alarm_1():
+#    if (not InLevel.is_room("r_level_editor")):
 
 #        # DY:  calculate how far to motion detect
 #        x_act = position.x+16
@@ -46,11 +46,11 @@ func _process(delta):
     
 
 #func create():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code
-#    type = "Arrow Trap"
+#    type = "arrow trap"
 #    facing = 1
 #    fired = 0
 #    invincible = false
@@ -61,7 +61,7 @@ func _process(delta):
     
 
 #func destroy():
-    #    if (not clean_death and not global.clean_solids):
+#    if (not clean_death and not global.clean_solids):
 
 #        rubble = gml.instance_create(position.x+8+gml.rand(0,8)-gml.rand(0,8), position.y+8+gml.rand(0,8)-gml.rand(0,8), Objects.rubble)
 #        rubble.sprite_index = "rubble_tan"
@@ -75,7 +75,7 @@ func _process(delta):
     
 
 #func step():
-    #    firing = false
+#    firing = false
 #    if (fired == 0):
 
 #        /*

@@ -18,7 +18,7 @@ func _process(delta):
 
 
 #func animation_end():
-    #    if (sprite_index == "alien_boss_die):"
+#    if (sprite_index == "alien_boss_die):"
 
 #        sprite_index = "alien_boss_dead"
 #        with barrier_emitter  gml.instance_destroy(self) 
@@ -30,8 +30,8 @@ func _process(delta):
 
     
 
-#func collision with o_character():
-    #    if (not other.dead and (other.state == 15 or other.state == 16) and other.position.y < position.y+8 and not other.swimming):
+#func collision_with_character():
+#    if (not other.dead and (other.state == 15 or other.state == 16) and other.position.y < position.y+8 and not other.swimming):
 
 #        other.y_vel = -6 - 0.2 * other.y_vel
 #        if (global.has_spike_shoes):  hp -= (3 * (floor(other.fall_timer/16)+1)) if (not bloodless) gml.instance_create(other.position.x, other.position.y+8, Objects.blood) 
@@ -63,7 +63,7 @@ func _process(delta):
     
 
 #func create():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code
@@ -73,7 +73,7 @@ func _process(delta):
 #    image_speed = 0.25
 
 #    # DY:  stats
-#    type = "Alien Boss"
+#    type = "alien boss"
 #    hp = 10
 #    invincible = 0
 
@@ -98,7 +98,7 @@ func _process(delta):
     
 
 #func step():
-    #    if (position.x > gml.view("xview")-36 and position.x < gml.view("xview") + gml.view("wview") and:
+#    if (position.x > gml.view("xview")-36 and position.x < gml.view("xview") + gml.view("wview") and:
 #            position.y > gml.view("yview")-36 and position.y < gml.view("yview") + gml.view("hview"))
 
 #    if (gml.collision_point(position.x+8, position.y+8, "solid", 0, 0)):

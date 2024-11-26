@@ -17,13 +17,13 @@ func _process(delta):
 #--- Object functions
 
 
-#func alarm 0():
-    #    whipped = false
+#func alarm_0():
+#    whipped = false
 
     
 
 #func animation_end():
-    #    if (sprite_index == "hawk_throw_l):"
+#    if (sprite_index == "hawk_throw_l):"
 
 #        status = IDLE
 #        sprite_index = "hawk_left"
@@ -31,8 +31,8 @@ func _process(delta):
 
     
 
-#func collision with o_character():
-    #    # DY:  jumped on
+#func collision_with_character():
+#    # DY:  jumped on
 #    if (status != DEAD and status != STUNNED):
 
 #    if (abs(other.position.x-(position.x+8)) > 8):
@@ -115,8 +115,8 @@ func _process(delta):
 
     
 
-#func collision with o_whip():
-    #    if (status < STUNNED or other.type == "Machete"):
+#func collision_with_whip():
+#    if (status < STUNNED or other.type == "Machete"):
 
 #        hp -= other.damage
 #        if (blood_left > 0):
@@ -136,8 +136,8 @@ func _process(delta):
 
     
 
-#func collision with o_whip_pre():
-    #    if (status < STUNNED or other.type == "Machete"):
+#func collision_with_whip_pre():
+#    if (status < STUNNED or other.type == "Machete"):
 
 #        hp -= other.damage
 #        if (blood_left > 0):
@@ -158,7 +158,7 @@ func _process(delta):
     
 
 #func create():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code
@@ -169,7 +169,7 @@ func _process(delta):
 #    my_grav = 0.6
 
 #    # DY:  stats
-#    type = "Yeti"
+#    type = "yeti"
 #    hp = 4
 #    invincible = 0
 #    favor = 6
@@ -200,7 +200,7 @@ func _process(delta):
     
 
 #func step():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code

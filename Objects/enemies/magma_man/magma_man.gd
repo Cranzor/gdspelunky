@@ -17,21 +17,21 @@ func _process(delta):
 #--- Object functions
 
 
-#func alarm 0():
-    #    whipped = false
+#func alarm_0():
+#    whipped = false
 
     
 
 #func animation_end():
-    #    if (sprite_index == "magma_man_die):"
+#    if (sprite_index == "magma_man_die):"
 
 #        gml.instance_destroy(self)
 
 
     
 
-#func collision with o_bomb():
-    #    if (other.sprite_index != "bomb_armed):"
+#func collision_with_bomb():
+#    if (other.sprite_index != "bomb_armed):"
 
 #        with other
     
@@ -52,8 +52,8 @@ func _process(delta):
 
     
 
-#func collision with o_character():
-    #    if (other.invincible == 0):
+#func collision_with_character():
+#    if (other.invincible == 0):
 
 #        other.blink = 30
 #        other.invincible = 30
@@ -78,8 +78,8 @@ func _process(delta):
 
     
 
-#func collision with o_enemy():
-    #    if (other.type != "Magma Man"):
+#func collision_with_enemy():
+#    if (other.type != "Magma Man"):
 
 #        other.y_vel = -4
 #        if (position.x < other.position.x):
@@ -101,8 +101,8 @@ func _process(delta):
 
     
 
-#func collision with o_whip():
-    #    if (not whipped):
+#func collision_with_whip():
+#    if (not whipped):
 
 #        Audio.play_sound(global.snd_hit)
 #        whipped = true
@@ -112,7 +112,7 @@ func _process(delta):
     
 
 #func create():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code
@@ -122,7 +122,7 @@ func _process(delta):
 #    image_speed = 0.5
 
 #    # DY:  stats
-#    type = "Magma Man"
+#    type = "magma man"
 #    hp = 200
 #    invincible = 0
 
@@ -151,7 +151,7 @@ func _process(delta):
     
 
 #func step():
-    #    if (hp > 0): hp -= 1
+#    if (hp > 0): hp -= 1
 #    if (gml.collision_point(position.x+8, position.y+8, "solid", 0, 0) or hp < 1):
 
 #        x_vel = 0

@@ -17,20 +17,20 @@ func _process(delta):
 #--- Object functions
 
 
-#func alarm 0():
-    #    if (gml.instance_number(flame_trail) < 12): gml.instance_create(position.x, position.y, Objects.flame_trail)
+#func alarm_0():
+#    if (gml.instance_number(flame_trail) < 12): gml.instance_create(position.x, position.y, Objects.flame_trail)
 #    alarm_0(2)
 
     
 
-#func collision with o_water():
-    #    gml.instance_create(position.x, position.y, Objects.smoke_puff)
+#func collision_with_water():
+#    gml.instance_create(position.x, position.y, Objects.smoke_puff)
 #    gml.instance_destroy(self)
 
     
 
 #func create():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code
@@ -48,12 +48,12 @@ func _process(delta):
     
 
 #func destroy():
-    #    gml.instance_create(position.x, position.y, Objects.smoke_puff)
+#    gml.instance_create(position.x, position.y, Objects.smoke_puff)
 
     
 
 #func step():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code

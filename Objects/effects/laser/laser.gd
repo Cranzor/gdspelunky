@@ -17,14 +17,14 @@ func _process(delta):
 #--- Object functions
 
 
-#func alarm 0():
-    #    gml.instance_create(position.x, position.y, Objects.laser_trail)
+#func alarm_0():
+#    gml.instance_create(position.x, position.y, Objects.laser_trail)
 #    alarm_0(1)
 
     
 
-#func collision with o_damsel():
-    #    if (not other.invincible):
+#func collision_with_damsel():
+#    if (not other.invincible):
 
 #        other.hp -= 3
 #        other.x_vel = gml.rand(0,2)-gml.rand(1,2)
@@ -39,8 +39,8 @@ func _process(delta):
 
     
 
-#func collision with o_enemy():
-    #    if (other.type != "UFO" and other.invincible == 0):
+#func collision_with_enemy():
+#    if (other.type != "UFO" and other.invincible == 0):
 
 #        other.hp -= 3
 #        other.x_vel = gml.rand(0,2)-gml.rand(1,2)
@@ -53,8 +53,8 @@ func _process(delta):
 
     
 
-#func collision with o_solid():
-    #    with other
+#func collision_with_solid():
+#    with other
 
 #        if (not invincible):
     
@@ -82,7 +82,7 @@ func _process(delta):
     
 
 #func create():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code
@@ -93,12 +93,12 @@ func _process(delta):
     
 
 #func outside room():
-    #    # action_kill_object
+#    # action_kill_object
 #    gml.instance_destroy(self)
     
 
 #func step():
-    #    position.y += y_vel
+#    position.y += y_vel
 #    y_vel += y_acc
 #    if (y_vel > 4): y_vel = 0
 

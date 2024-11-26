@@ -17,8 +17,8 @@ func _process(delta):
 #--- Object functions
 
 
-#func alarm 0():
-    #    draw_status = 1
+#func alarm_0():
+#    draw_status = 1
 #    alarm_1(50)
 #    play_music(global.mus_victory, false)
 #    with menu
@@ -28,14 +28,14 @@ func _process(delta):
 
     
 
-#func alarm 1():
-    #    draw_status = 2
+#func alarm_1():
+#    draw_status = 2
 #    alarm_2(50)
 
     
 
-#func alarm 11():
-    #    draw_status = 4
+#func alarm_11():
+#    draw_status = 4
 #    Audio.play_sound(global.snd_thump)
 #    global.money += 50000
 #    money_count += 50000
@@ -43,30 +43,30 @@ func _process(delta):
 
     
 
-#func alarm 2():
-    #    draw_status = 3
+#func alarm_2():
+#    draw_status = 3
 
     
 
-#func alarm 3():
-    #    draw_status = 5
+#func alarm_3():
+#    draw_status = 5
 #    alarm_4(10)
 
     
 
-#func alarm 4():
-    #    draw_status = 6
+#func alarm_4():
+#    draw_status = 6
 #    alarm_5(10)
 
     
 
-#func alarm 5():
-    #    draw_status = 7
+#func alarm_5():
+#    draw_status = 7
 
     
 
 #func create():
-    #    draw_status = 0
+#    draw_status = 0
 #    money_count = 0
 #    fade_out = false
 #    fade_level = 0
@@ -83,7 +83,7 @@ func _process(delta):
     
 
 #func draw():
-    #    if (draw_status > 0):
+#    if (draw_status > 0):
 
 #        draw_set_font(global.my_font)
 #        draw_set_color(c_yellow)
@@ -157,7 +157,7 @@ func _process(delta):
     
 
 #func step():
-    #    if (keyboard_check_pressed(vk_enter) or:
+#    if (keyboard_check_pressed(vk_enter) or:
 #        keyboard_check_pressed(vk_escape) or
 #        ControlScripts.check_attack_pressed() or
 #        ControlScripts.check_start_pressed())

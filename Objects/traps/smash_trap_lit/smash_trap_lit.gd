@@ -18,7 +18,7 @@ func _process(delta):
 
 
 #func create():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code
@@ -53,7 +53,7 @@ func _process(delta):
     
 
 #func destroy():
-    #    if (not clean_death and not global.clean_solids):
+#    if (not clean_death and not global.clean_solids):
 
 #        rubble = gml.instance_create(position.x+8+gml.rand(0,8)-gml.rand(0,8), position.y+8+gml.rand(0,8)-gml.rand(0,8), Objects.rubble)
 #        rubble.sprite_index = "rubble_tan"
@@ -66,7 +66,7 @@ func _process(delta):
     
 
 #func step():
-    #    if (position.x > gml.view("xview")-16 and position.x < gml.view("xview") + gml.view("wview")+16 and:
+#    if (position.x > gml.view("xview")-16 and position.x < gml.view("xview") + gml.view("wview")+16 and:
 #            position.y > gml.view("yview")-16 and position.y < gml.view("yview") + gml.view("hview")+16)
 
 #    if (status == IDLE):

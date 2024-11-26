@@ -17,13 +17,13 @@ func _process(delta):
 #--- Object functions
 
 
-#func alarm 0():
-    #    alarm_1(100)
+#func alarm_0():
+#    alarm_1(100)
 
     
 
-#func alarm 1():
-    #    big_chest.sprite_index = "big_chest_open"
+#func alarm_1():
+#    big_chest.sprite_index = "big_chest_open"
 #    treasure = gml.instance_create(big_chest.position.x, big_chest.position.y, Objects.big_treasure)
 #    treasure.y_vel = -4
 #    treasure.x_vel = -3
@@ -32,25 +32,25 @@ func _process(delta):
 
     
 
-#func alarm 2():
-    #    status = LAVA
+#func alarm_2():
+#    status = LAVA
 
     
 
-#func alarm 3():
-    #    gml.instance_create(end_plat.position.x, end_plat.position.y+30, Objects.lava_spray)
+#func alarm_3():
+#    gml.instance_create(end_plat.position.x, end_plat.position.y+30, Objects.lava_spray)
 #    global.shake = 9999
 #    alarm_4(10)
 
     
 
-#func alarm 4():
-    #    if (lava_spray): lava_spray.y_acc = -0.1
+#func alarm_4():
+#    if (lava_spray): lava_spray.y_acc = -0.1
 
     
 
-#func alarm 5():
-    #    status = TRANSITION
+#func alarm_5():
+#    status = TRANSITION
 #    if (global.is_damsel): sprite_index = "damsel_run_l"
 #    elif (global.is_tunnel_man): sprite_index = "tunnel_run_l"
 #    else: sprite_index = "run_left"
@@ -58,7 +58,7 @@ func _process(delta):
     
 
 #func animation_end():
-    #    if (sprite_index == "p_exit" or sprite_index == "damsel_exit" or sprite_index == "tunnel_exit):"
+#    if (sprite_index == "p_exit" or sprite_index == "damsel_exit" or sprite_index == "tunnel_exit):"
 
 #        gml.instance_destroy(self)
 
@@ -75,7 +75,7 @@ func _process(delta):
     
 
 #func create():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code
@@ -101,7 +101,7 @@ func _process(delta):
     
 
 #func draw():
-    #    if (facing == RIGHT): image_xscale = -1
+#    if (facing == RIGHT): image_xscale = -1
 #    else: image_xscale = 1
 
 #    if ((sprite_index == "p_exit" or sprite_index == "damsel_exit" or sprite_index == "tunnel_exit)" and global.has_jetpack):
@@ -143,7 +143,7 @@ func _process(delta):
     
 
 #func step():
-    #    position.y += y_vel
+#    position.y += y_vel
 
 #    if (status != STOPPED and gml.collision_point(position.x+8, position.y, "damsel_kiss", 0, 0)):
 

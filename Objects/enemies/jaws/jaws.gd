@@ -18,7 +18,7 @@ func _process(delta):
 
 
 #func animation_end():
-    #    if (sprite_index == "jaws_turn_l):"
+#    if (sprite_index == "jaws_turn_l):"
 
 #        # DY: dir = 180
 #        sprite_index = "jaws_left"
@@ -37,11 +37,11 @@ func _process(delta):
     
 
 #func create():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code
-#    type = "Mega Mouth"
+#    type = "mega mouth"
 #    image_speed = 0.5
 #    Collision.set_collision_bounds(self, 0, 0, 48, 32)
 #    origX = 0
@@ -76,7 +76,7 @@ func _process(delta):
     
 
 #func draw():
-    #    draw_sprite(sprite_index, -1, position.x, position.y)
+#    draw_sprite(sprite_index, -1, position.x, position.y)
 #    if (sprite_index == "jaws_left):"
 
 #        if (hp < 10): draw_sprite(s_jaws_body3_l, 0, position.x+16, position.y)
@@ -98,7 +98,7 @@ func _process(delta):
     
 
 #func step():
-    #    if ((position.x > gml.view("xview")-48 and position.x < gml.view("xview") + gml.view("wview")+48 and:
+#    if ((position.x > gml.view("xview")-48 and position.x < gml.view("xview") + gml.view("wview")+48 and:
 #            position.y > gml.view("yview")-48 and position.y < gml.view("yview") + gml.view("hview")+48))
 
 

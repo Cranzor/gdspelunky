@@ -17,8 +17,8 @@ func _process(delta):
 #--- Object functions
 
 
-#func alarm 1():
-    #    gml.instance_create(position.x, position.y, Objects.explosion)
+#func alarm_1():
+#    gml.instance_create(position.x, position.y, Objects.explosion)
 #    if (global.graphics_high):
 
 #        MiscScripts.scr_create_flame(position.x, position.y, 3)
@@ -32,17 +32,17 @@ func _process(delta):
 
     
 
-#func alarm 2():
-    #    safe = false
+#func alarm_2():
+#    safe = false
 
     
 
 #func create():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code
-#    type = "Arrow"
+#    type = "arrow"
 #    PlatformEngine.make_active(self)
 #    Collision.set_collision_bounds(self, -4, -4, 4, 4)
 #    my_grav = 0.2
@@ -50,12 +50,12 @@ func _process(delta):
     
 
 #func draw():
-    #    draw_sprite_ext(sprite_index, image_index, position.x, position.y, 1, 1, image_angle, c_white, 1)
+#    draw_sprite_ext(sprite_index, image_index, position.x, position.y, 1, 1, image_angle, c_white, 1)
 
     
 
 #func step():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code

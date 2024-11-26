@@ -18,7 +18,7 @@ func _process(delta):
 
 
 #func create():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code
@@ -58,7 +58,7 @@ func _process(delta):
     
 
 #func step():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code

@@ -18,11 +18,11 @@ func _process(delta):
 
 
 #func create():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code
-#    type = "Dice"
+#    type = "dice"
 #    PlatformEngine.make_active(self)
 #    Collision.set_collision_bounds(self, -6, 0, 6, 8)
 #    heavy = true
@@ -33,7 +33,7 @@ func _process(delta):
     
 
 #func draw():
-    #    draw_sprite_ext(sprite_index, -1, position.x, position.y, image_xscale, image_yscale, image_angle, image_blend, image_alpha)
+#    draw_sprite_ext(sprite_index, -1, position.x, position.y, image_xscale, image_yscale, image_angle, image_blend, image_alpha)
 
 #    if (!rolled and player1.bet > 0):
 
@@ -43,7 +43,7 @@ func _process(delta):
     
 
 #func step():
-    #    if ((position.x > gml.view("xview")-16 and position.x < gml.view("xview") + gml.view("wview")+16 and:
+#    if ((position.x > gml.view("xview")-16 and position.x < gml.view("xview") + gml.view("wview")+16 and:
 #            position.y > gml.view("yview")-16 and position.y < gml.view("yview") + gml.view("hview")+16))
 
 #        if (cost > 0 and:

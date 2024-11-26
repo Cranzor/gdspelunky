@@ -17,13 +17,13 @@ func _process(delta):
 #--- Object functions
 
 
-#func alarm 0():
-    #    whipped = false
+#func alarm_0():
+#    whipped = false
 
     
 
 #func animation_end():
-    #    if (sprite_index == "yeti_throw_l):"
+#    if (sprite_index == "yeti_throw_l):"
 
 #        status = IDLE
 #        sprite_index = "yeti_left"
@@ -31,8 +31,8 @@ func _process(delta):
 
     
 
-#func collision with o_character():
-    #    # DY:  jumped on
+#func collision_with_character():
+#    # DY:  jumped on
 #    if (abs(other.position.x-(position.x+8)) > 8):
 
 #        # DY:  do nothing
@@ -114,8 +114,8 @@ func _process(delta):
 
     
 
-#func collision with o_whip():
-    #    if (not whipped):
+#func collision_with_whip():
+#    if (not whipped):
 
 #        if (other.puncture):
     
@@ -149,8 +149,8 @@ func _process(delta):
 
     
 
-#func collision with o_whip_pre():
-    #    if (not whipped):
+#func collision_with_whip_pre():
+#    if (not whipped):
 
 #        if (other.type == "Machete"):
     
@@ -185,7 +185,7 @@ func _process(delta):
     
 
 #func create():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code
@@ -195,7 +195,7 @@ func _process(delta):
 #    image_speed = 0.5
 
 #    # DY:  stats
-#    type = "Yeti"
+#    type = "yeti"
 #    hp = 5
 #    invincible = 0
 #    favor = 4
@@ -225,7 +225,7 @@ func _process(delta):
     
 
 #func step():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code

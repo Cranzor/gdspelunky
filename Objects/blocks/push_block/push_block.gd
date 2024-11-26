@@ -18,7 +18,7 @@ func _process(delta):
 
 
 #func create():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code
@@ -30,7 +30,7 @@ func _process(delta):
     
 
 #func destroy():
-    #    if (not clean_death and not global.clean_solids):
+#    if (not clean_death and not global.clean_solids):
 
 #        if (not global.city_of_gold):
     
@@ -58,12 +58,12 @@ func _process(delta):
     
 
 #func outside room():
-    #    gml.instance_destroy(self)
+#    gml.instance_destroy(self)
 
     
 
 #func step():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code

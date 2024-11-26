@@ -17,8 +17,8 @@ func _process(delta):
 #--- Object functions
 
 
-#func collision with o_arrow():
-    #    other.x_vel = 0
+#func collision_with_arrow():
+#    other.x_vel = 0
 #    other.y_vel = 0
 #    if (not dying):
 
@@ -44,7 +44,7 @@ func _process(delta):
     
 
 #func create():
-    #    life = 20
+#    life = 20
 #    dying = false
 #    UP = 0
 #    DOWN = 1
@@ -57,7 +57,7 @@ func _process(delta):
     
 
 #func step():
-    #    if (dying):
+#    if (dying):
 
 #        if (life > 0): life -= 1
 #        else:

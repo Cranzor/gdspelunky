@@ -17,8 +17,8 @@ func _process(delta):
 #--- Object functions
 
 
-#func collision with o_character():
-    #    # DY:  jumped on - caveman, man_trap replaces this script with its own
+#func collision_with_character():
+#    # DY:  jumped on - caveman, man_trap replaces this script with its own
 #    if (abs(other.position.x-(position.x+8)) > 12):
 
 #        # DY:  do nothing
@@ -80,8 +80,8 @@ func _process(delta):
 
     
 
-#func collision with o_whip():
-    #    hp -= other.damage
+#func collision_with_whip():
+#    hp -= other.damage
 #    counts_as_kill = true
 #    if (blood_left > 0):
 
@@ -93,8 +93,8 @@ func _process(delta):
 
     
 
-#func collision with o_whip_pre():
-    #    hp -= other.damage
+#func collision_with_whip_pre():
+#    hp -= other.damage
 #    counts_as_kill = true
 #    if (blood_left > 0):
 
@@ -107,12 +107,12 @@ func _process(delta):
     
 
 #func create():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code
 #    hp = 1
-#    type = "None"
+#    type = "none"
 
 #    active = true
 
@@ -158,7 +158,7 @@ func _process(delta):
     
 
 #func destroy():
-    #    if (bomb_id):
+#    if (bomb_id):
 
 #        bomb_id.enemy_id = 0
 
@@ -172,18 +172,18 @@ func _process(delta):
     
 
 #func draw():
-    #    if (facing == RIGHT): draw_sprite_ext(sprite_index, image_index, position.x+16, position.y, -1, image_yscale, image_angle, image_blend, image_alpha)
+#    if (facing == RIGHT): draw_sprite_ext(sprite_index, image_index, position.x+16, position.y, -1, image_yscale, image_angle, image_blend, image_alpha)
 #    else: draw_sprite_ext(sprite_index, image_index, position.x, position.y, 1, image_yscale, image_angle, image_blend, image_alpha)
 
     
 
 #func outside room():
-    #    gml.instance_destroy(self)
+#    gml.instance_destroy(self)
 
     
 
 #func step():
-    #    /*
+#    /*
 #    if ((position.x > gml.view("xview")-8 and position.x < gml.view("xview")+gml.view("wview")+8 and:
 #         position.y > gml.view("yview")-8 and position.y < gml.view("yview")+gml.view("hview")+8))
 

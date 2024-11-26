@@ -18,7 +18,7 @@ func _process(delta):
 
 
 #func create():
-    #    if (global.fullscreen): on = true
+#    if (global.fullscreen): on = true
 #    else:
 
 #        on = false
@@ -28,7 +28,7 @@ func _process(delta):
     
 
 #func mouse left button pressed():
-    #    if (not on):
+#    if (not on):
 
 #        on = true
 #        sprite_index = "box_checked"

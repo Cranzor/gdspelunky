@@ -18,7 +18,7 @@ func _process(delta):
 
 
 #func create():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code
@@ -28,7 +28,7 @@ func _process(delta):
 #    image_speed = 0.5
 
 #    # DY:  stats
-#    type = "Skeleton"
+#    type = "skeleton"
 #    hp = 1
 #    invincible = 0
 
@@ -58,7 +58,7 @@ func _process(delta):
     
 
 #func step():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code

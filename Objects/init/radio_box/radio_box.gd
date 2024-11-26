@@ -18,7 +18,7 @@ func _process(delta):
 
 
 #func create():
-    #    on = false
+#    on = false
 
 #    if (position.y == 24 and global.screen_scale == 1):
 
@@ -45,7 +45,7 @@ func _process(delta):
     
 
 #func mouse left button pressed():
-    #    if (not on):
+#    if (not on):
 
 #        with radibox
     

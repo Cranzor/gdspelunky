@@ -17,8 +17,8 @@ func _process(delta):
 #--- Object functions
 
 
-#func collision with o_character():
-    #    # DY:  jumped on - caveman, man_trap replaces this script with its own
+#func collision_with_character():
+#    # DY:  jumped on - caveman, man_trap replaces this script with its own
 #    if (abs(other.position.x-(position.x+8)) > 4 or status == GRAB):
 
 #        # DY:  do nothing
@@ -45,8 +45,8 @@ func _process(delta):
 
     
 
-#func collision with o_item():
-    #    if (throw_counter == 0 and status != GRAB and other.active and not other.held):
+#func collision_with_item():
+#    if (throw_counter == 0 and status != GRAB and other.active and not other.held):
 
 #        if (other.type == "Rope"):
     
@@ -76,11 +76,11 @@ func _process(delta):
     
 
 #func create():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code
-#    type = "Monkey"
+#    type = "monkey"
 #    PlatformEngine.make_active(self)
 #    Collision.set_collision_bounds(self, 4, 6, 12, 16)
 #    x_vel = 0
@@ -129,7 +129,7 @@ func _process(delta):
     
 
 #func step():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code

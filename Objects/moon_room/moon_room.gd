@@ -17,8 +17,8 @@ func _process(delta):
 #--- Object functions
 
 
-#func alarm 0():
-    #    /*
+#func alarm_0():
+#    /*
 #    gml.instance_create(n, 128, Objects.basket)
 #    gml.instance_create(n, 128, Objects.rim)
 #    gml.instance_create(n, 128, Objects.rim_deflect)
@@ -40,14 +40,14 @@ func _process(delta):
 
     
 
-#func alarm 1():
-    #    draw_status = 1
+#func alarm_1():
+#    draw_status = 1
 #    alarm_2(30)
 
     
 
-#func alarm 10():
-    #    if (timer < 0):
+#func alarm_10():
+#    if (timer < 0):
 
 #        if (game.draw_status < 3):
     
@@ -59,8 +59,8 @@ func _process(delta):
 
     
 
-#func alarm 11():
-    #    timer -= 1
+#func alarm_11():
+#    timer -= 1
 #    if (timer == 0):
 
 #        global.mini2 = moon_room.baskets
@@ -91,14 +91,14 @@ func _process(delta):
 
     
 
-#func alarm 2():
-    #    draw_status = 2
+#func alarm_2():
+#    draw_status = 2
 #    alarm_3(10)
 
     
 
-#func alarm 3():
-    #    draw_status = 3
+#func alarm_3():
+#    draw_status = 3
 #    /*
 #    obj = gml.instance_create(160, 0, Objects.poof)
 #    obj.x_vel = 0
@@ -113,13 +113,13 @@ func _process(delta):
 
     
 
-#func alarm 9():
-    #    if (global.music): start_music()
+#func alarm_9():
+#    if (global.music): start_music()
 
     
 
 #func create():
-    #    global.plife = 8
+#    global.plife = 8
 #    highscore = false
 #    baskets = 0
 #    timer = 60
@@ -141,7 +141,7 @@ func _process(delta):
     
 
 #func draw():
-    #    life = global.plife
+#    life = global.plife
 #    if (life < 0): life = 0
 #    draw_set_font(global.my_font)
 #    draw_set_color(c_white)

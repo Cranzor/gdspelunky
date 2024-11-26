@@ -18,13 +18,13 @@ func _process(delta):
 
 
 #func create():
-    #    status = 0
+#    status = 0
 #    joy = false
 
     
 
 #func draw():
-    #    draw_set_font(global.my_font_small)
+#    draw_set_font(global.my_font_small)
 #    draw_set_color(c_yellow)
 #    str_len = string_length("PRESS BUTTON FOR")*8
 #    n = 160 - str_len
@@ -154,7 +154,7 @@ func _process(delta):
     
 
 #func room end():
-    #    file = file_text_open_write("gamepad.cfg")
+#    file = file_text_open_write("gamepad.cfg")
 #    file_text_write_str(file, str(global.joy_jump_val))
 #    file_text_writeln(file)
 #    file_text_write_str(file, str(global.joy_attack_val))
@@ -177,7 +177,7 @@ func _process(delta):
     
 
 #func step():
-    #    joy_released = false
+#    joy_released = false
 #    joy_pressed = false
 #    joy_key = check_joy_button()
 #    if (joy):

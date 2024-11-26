@@ -18,19 +18,19 @@ func _process(delta):
 
 
 #func create():
-    #    position.x = global.music_vol * 8
+#    position.x = global.music_vol * 8
 #    focus = false
 
     
 
 #func mouse left button pressed():
-    #    focus = true
+#    focus = true
 #    play_music(global.mus_cave, true)
 
     
 
 #func step():
-    #    if (mouse_check_button(mb_left) and focus):
+#    if (mouse_check_button(mb_left) and focus):
 
 #        position.x = mouse_x-4
 #        if (position.x > 144): position.x = 144

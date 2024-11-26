@@ -17,13 +17,13 @@ func _process(delta):
 #--- Object functions
 
 
-#func alarm 0():
-    #    gml.instance_create(320, 144, Objects.camel)
+#func alarm_0():
+#    gml.instance_create(320, 144, Objects.camel)
 
     
 
-#func alarm 1():
-    #    if (scrolling):
+#func alarm_1():
+#    if (scrolling):
 
 #    if (gml.rand(1,8) == 1): gml.instance_create(-16, 176, Objects.shrub_scroll)
 #    elif (gml.rand(1,12) == 1): gml.instance_create(-32, 176-112, Objects.palm_tree_scroll)
@@ -42,55 +42,55 @@ func _process(delta):
 
     
 
-#func alarm 11():
-    #    draw_status = 0
+#func alarm_11():
+#    draw_status = 0
 
     
 
-#func alarm 2():
-    #    draw_status = 1
+#func alarm_2():
+#    draw_status = 1
 #    alarm_11(140)
 #    alarm_3(180)
 
     
 
-#func alarm 3():
-    #    draw_status = 2
+#func alarm_3():
+#    draw_status = 2
 #    alarm_11(140)
 #    alarm_4(180)
 
     
 
-#func alarm 4():
-    #    draw_status = 3
+#func alarm_4():
+#    draw_status = 3
 #    alarm_11(140)
 #    alarm_5(180)
 
     
 
-#func alarm 5():
-    #    draw_status = 4
+#func alarm_5():
+#    draw_status = 4
 #    alarm_11(140)
 #    alarm_6(180)
 
     
 
-#func alarm 6():
-    #    draw_status = 5
+#func alarm_6():
+#    draw_status = 5
 #    alarm_11(240)
 #    alarm_7(280)
 
     
 
-#func alarm 7():
-    #    draw_status = 6
+#func alarm_7():
+#    draw_status = 6
 #    alarm_11(240)
 #    alarm_8(280)
 
     
 
-#func alarm 8():
-    #    scrolling = false
+#func alarm_8():
+#    scrolling = false
 #    with desert_scroll  scroll = false 
 #    with desert_scroll2  scroll = false 
 #    with desert_top_scroll  scroll = false 
@@ -101,7 +101,7 @@ func _process(delta):
     
 
 #func create():
-    #    fade_in = true
+#    fade_in = true
 #    fade_out = false
 #    fade_level = 1
 
@@ -119,7 +119,7 @@ func _process(delta):
     
 
 #func draw():
-    #    if (draw_status == 1):
+#    if (draw_status == 1):
 
 #        draw_set_font(global.my_font)
 #        draw_set_color(c_yellow)
@@ -209,7 +209,7 @@ func _process(delta):
     
 
 #func step():
-    #    if (keyboard_check_pressed(vk_enter) or:
+#    if (keyboard_check_pressed(vk_enter) or:
 #        keyboard_check_pressed(vk_escape) or
 #        check_attack())
 

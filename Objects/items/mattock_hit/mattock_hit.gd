@@ -18,7 +18,7 @@ func _process(delta):
 
 
 #func animation_end():
-    #    hit = false
+#    hit = false
 #    if (gml.collision_point(position.x, position.y, "solid", 0, 0)):
 
 #        obj = gml.instance_place(position.x, position.y, solid)
@@ -82,7 +82,7 @@ func _process(delta):
     
 
 #func create():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code
@@ -94,7 +94,7 @@ func _process(delta):
     
 
 #func step():
-    #    if (gml.instance_number(character) == 0):
+#    if (gml.instance_number(character) == 0):
 
 #        gml.instance_destroy(self)
 

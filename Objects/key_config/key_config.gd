@@ -18,12 +18,12 @@ func _process(delta):
 
 
 #func create():
-    #    status = 0
+#    status = 0
 
     
 
 #func draw():
-    #    draw_set_font(global.my_font_small)
+#    draw_set_font(global.my_font_small)
 #    draw_set_color(c_yellow)
 #    str_len = string_length("PRESS KEY FOR")*8
 #    n = 160 - str_len
@@ -235,7 +235,7 @@ func _process(delta):
     
 
 #func key any key pressed():
-    #    if (keyboard_key != vk_escape):
+#    if (keyboard_key != vk_escape):
 
 #    if (status == 0):
 
@@ -293,7 +293,7 @@ func _process(delta):
     
 
 #func room end():
-    #    file = file_text_open_write("keys.cfg")
+#    file = file_text_open_write("keys.cfg")
 #    file_text_write_str(file, str(global.key_up_val))
 #    file_text_writeln(file)
 #    file_text_write_str(file, str(global.key_down_val))

@@ -17,14 +17,14 @@ func _process(delta):
 #--- Object functions
 
 
-#func alarm 0():
-    #    arrow = gml.instance_create(position.x-16, position.y+4, Objects.arrow)
+#func alarm_0():
+#    arrow = gml.instance_create(position.x-16, position.y+4, Objects.arrow)
 #    arrow.x_vel = -5
 
     
 
 #func create():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code
@@ -36,7 +36,7 @@ func _process(delta):
     
 
 #func step():
-    #    # main_code
+#    # main_code
 #    if (fired == 0 and abs(player1.position.y-position.y-8) < 8 and player1.position.x < position.x+8 and:
 #        point_distance(position.x+8, position.y+8, player1.position.x, player1.position.y) < 128 and (abs(player1.x_vel) > 0 or abs(player1.y_vel) > 0))
 

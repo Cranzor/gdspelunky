@@ -17,14 +17,14 @@ func _process(delta):
 #--- Object functions
 
 
-#func alarm 0():
-    #    image_speed = 1
+#func alarm_0():
+#    image_speed = 1
 #    alarm_1(40)
 
     
 
-#func alarm 1():
-    #    gml.instance_create(position.x, position.y, Objects.explosion)
+#func alarm_1():
+#    gml.instance_create(position.x, position.y, Objects.explosion)
 #    if (global.graphics_high):
 
 #        MiscScripts.scr_create_flame(position.x, position.y, 3)
@@ -39,18 +39,18 @@ func _process(delta):
     
 
 #func create():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code
-#    type = "Bomb"
+#    type = "bomb"
 #    PlatformEngine.make_active(self)
 #    Collision.set_collision_bounds(self, -4, -4, 4, 4)
 
     
 
 #func destroy():
-    #    if (enemy_id):
+#    if (enemy_id):
 
 #        enemy_id.bomb_id = 0
 
@@ -58,7 +58,7 @@ func _process(delta):
     
 
 #func end step():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code
@@ -76,7 +76,7 @@ func _process(delta):
     
 
 #func step():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code

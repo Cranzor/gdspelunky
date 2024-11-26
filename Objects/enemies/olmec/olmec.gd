@@ -17,8 +17,8 @@ func _process(delta):
 #--- Object functions
 
 
-#func alarm 1():
-    #    sprite_index = "olmec_start2"
+#func alarm_1():
+#    sprite_index = "olmec_start2"
 #    for i in range(0, 6):
 
 #        debris = gml.instance_create(position.x+32+gml.rand(0,32), position.y+gml.rand(0,32), Objects.olmec_debris)
@@ -48,8 +48,8 @@ func _process(delta):
 
     
 
-#func alarm 2():
-    #    sprite_index = "olmec_start3"
+#func alarm_2():
+#    sprite_index = "olmec_start3"
 #    alarm_3(50)
 #    for i in range(0, 6):
 
@@ -61,8 +61,8 @@ func _process(delta):
 
     
 
-#func alarm 3():
-    #    sprite_index = "olmec"
+#func alarm_3():
+#    sprite_index = "olmec"
 #    for i in range(0, 12):
 
 #        debris = gml.instance_create(position.x+gml.rand(0,64), position.y+32+gml.rand(0,32), Objects.olmec_debris)
@@ -74,8 +74,8 @@ func _process(delta):
 
     
 
-#func alarm 4():
-    #    toggle = true
+#func alarm_4():
+#    toggle = true
 #    status = BOUNCE
 #    Audio.play_sound(global.snd_big_jump)
 #    Audio.play_sound(global.snd_alert)
@@ -83,8 +83,8 @@ func _process(delta):
 
     
 
-#func alarm 5():
-    #    view_hborder[0] = 128
+#func alarm_5():
+#    view_hborder[0] = 128
 #    view_vborder[0] = 64
 #    gml.view("xview") = 0
 #    view_object[0] = player1
@@ -96,8 +96,8 @@ func _process(delta):
 
     
 
-#func alarm 6():
-    #    with caveman_worship
+#func alarm_6():
+#    with caveman_worship
 
 #        obj = gml.instance_create(position.x, position.y, Objects.caveman)
 #        obj.facing = 1
@@ -108,7 +108,7 @@ func _process(delta):
     
 
 #func create():
-    #    shop_wall = false
+#    shop_wall = false
 #    PlatformEngine.make_active(self)
 #    Collision.set_collision_bounds(self, 2, 0, 62, 64)
 #    x_vel = 0
@@ -151,7 +151,7 @@ func _process(delta):
     
 
 #func step():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code

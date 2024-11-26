@@ -17,15 +17,15 @@ func _process(delta):
 #--- Object functions
 
 
-#func collision with o_character():
-    #    global.message = message
+#func collision_with_character():
+#    global.message = message
 #    global.message2 = message2
 #    global.message_timer = 200
 
     
 
 #func create():
-    #    type = "Message Sign"
+#    type = "message sign"
 
 #    # DY:  tutorial cave init
 #    if (InLevel.is_room("r_level_editor") or InLevel.is_room("r_load_level")):
@@ -149,7 +149,7 @@ func _process(delta):
     
 
 #func draw():
-    #    draw_sprite(sprite_index, -1, position.x, position.y)
+#    draw_sprite(sprite_index, -1, position.x, position.y)
 #    if (InLevel.is_room("r_level_editor")):
 
 #        draw_set_font(global.my_font_small)

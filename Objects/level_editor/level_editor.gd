@@ -18,7 +18,7 @@ func _process(delta):
 
 
 #func create():
-    #    global.clean_solids = true
+#    global.clean_solids = true
 #    window_set_cursor(cr_none)
 #    drop_val = 0
 
@@ -305,7 +305,7 @@ func _process(delta):
     
 
 #func draw():
-    #    draw_set_font(global.my_font_small)
+#    draw_set_font(global.my_font_small)
 #    draw_set_color(c_white)
 
 #    if (status == GET_FILE_NAME):
@@ -394,7 +394,7 @@ func _process(delta):
     
 
 #func key 1 pressed():
-    #    # DY:  Blocks
+#    # DY:  Blocks
 #    if (status == 1):
 
 #        drop_select = 0
@@ -409,7 +409,7 @@ func _process(delta):
     
 
 #func key 2 pressed():
-    #    # DY:  Monsters
+#    # DY:  Monsters
 #    if (status == 1):
 
 #        drop_select = 1
@@ -424,7 +424,7 @@ func _process(delta):
     
 
 #func key 3 pressed():
-    #    # DY:  Traps
+#    # DY:  Traps
 #    if (status == 1):
 
 #        drop_select = 2
@@ -439,7 +439,7 @@ func _process(delta):
     
 
 #func key 4 pressed():
-    #    # DY:  Items
+#    # DY:  Items
 #    if (status == 1):
 
 #        drop_select = 3
@@ -451,7 +451,7 @@ func _process(delta):
     
 
 #func key a pressed():
-    #    if (status == 1):
+#    if (status == 1):
 
 #        drop_val -= 1
 #        if (drop_val < 0): drop_val = drop_max
@@ -462,7 +462,7 @@ func _process(delta):
     
 
 #func key any key pressed():
-    #    if (status == GET_FILE_NAME):
+#    if (status == GET_FILE_NAME):
 
 #        if (keyboard_key == vk_enter):
     
@@ -788,7 +788,7 @@ func _process(delta):
     
 
 #func key escape pressed():
-    #    if (status == EDIT):
+#    if (status == EDIT):
 
 #        status = EXIT
 
@@ -808,7 +808,7 @@ func _process(delta):
     
 
 #func key n pressed():
-    #    if (status == EXIT):
+#    if (status == EXIT):
 
 #        global.title_start = 2
 #        if (file_exists("levels/test.tmp")): file_delete("levels/test.tmp")
@@ -823,7 +823,7 @@ func _process(delta):
     
 
 #func key s pressed():
-    #    if (status == 1):
+#    if (status == 1):
 
 #        drop_val += 1
 #        if (drop_val > drop_max): drop_val = 0
@@ -834,7 +834,7 @@ func _process(delta):
     
 
 #func key y pressed():
-    #    if (status == EXIT or status == NEW):
+#    if (status == EXIT or status == NEW):
 
 #        file_delete(level_name)
 #        exit_names[0] = ""
@@ -913,7 +913,7 @@ func _process(delta):
     
 
 #func mouse wheel down():
-    #    if (status == 1):
+#    if (status == 1):
 
 #        drop_val -= 1
 #        if (drop_val < 0): drop_val = drop_max
@@ -924,7 +924,7 @@ func _process(delta):
     
 
 #func mouse wheel up():
-    #    if (status == 1):
+#    if (status == 1):
 
 #        drop_val += 1
 #        if (drop_val > drop_max): drop_val = 0
@@ -935,7 +935,7 @@ func _process(delta):
     
 
 #func step():
-    #    if (status == EDIT):  curs_obj.visible = true window_set_cursor(cr_default) 
+#    if (status == EDIT):  curs_obj.visible = true window_set_cursor(cr_default) 
 #    else:  curs_obj.visible = false window_set_cursor(cr_none) 
 
 #    if (status == EDIT and mouse_x > gml.view("xview") and mouse_x < gml.view("xview")+320 and:

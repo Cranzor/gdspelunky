@@ -17,8 +17,8 @@ func _process(delta):
 #--- Object functions
 
 
-#func collision with o_enemy():
-    #    if (other.type != "Spider" and other.type != "Giant Spider"):
+#func collision_with_enemy():
+#    if (other.type != "Spider" and other.type != "Giant Spider"):
 
 #        other.x_vel = 0
 #        other.y_vel = 0
@@ -36,8 +36,8 @@ func _process(delta):
 
     
 
-#func collision with o_item():
-    #    if (not other.held and other.type != "Rope"):
+#func collision_with_item():
+#    if (not other.held and other.type != "Rope"):
 
 #        other.x_vel = 0
 #        other.y_vel = 0
@@ -45,41 +45,41 @@ func _process(delta):
 
     
 
-#func collision with o_laser():
-    #    gml.instance_destroy(self)
+#func collision_with_laser():
+#    gml.instance_destroy(self)
 
     
 
-#func collision with o_rubble_piece():
-    #    other.x_vel = 0
+#func collision_with_rubble_piece():
+#    other.x_vel = 0
 #    other.y_vel = 0
 #    other.image_speed = 0
 
     
 
-#func collision with o_slash():
-    #    # action_kill_object
+#func collision_with_slash():
+#    # action_kill_object
 #    gml.instance_destroy(self)
     
 
-#func collision with o_treasure():
-    #    other.x_vel = 0
+#func collision_with_treasure():
+#    other.x_vel = 0
 #    other.y_vel = 0
 
     
 
-#func collision with o_water():
-    #    gml.instance_destroy(self)
+#func collision_with_water():
+#    gml.instance_destroy(self)
 
     
 
 #func create():
-    #    life = 12
+#    life = 12
 #    dying = false
 
     
 
 #func step():
-    #    image_alpha = life/12
+#    image_alpha = life/12
 #    if (dying): life -= 0.02
 #    if (life <= 1): gml.instance_destroy(self)

@@ -17,21 +17,21 @@ func _process(delta):
 #--- Object functions
 
 
-#func alarm 0():
-    #    gml.instance_create(160, -32, Objects.big_treasure)
+#func alarm_0():
+#    gml.instance_create(160, -32, Objects.big_treasure)
 #    Audio.play_sound(global.snd_t_fall)
 
     
 
-#func alarm 1():
-    #    if (global.is_damsel): sprite_index = "damsel_left"
+#func alarm_1():
+#    if (global.is_damsel): sprite_index = "damsel_left"
 #    elif (global.is_tunnel_man): sprite_index = "tunnel_left"
 #    else: sprite_index = "stand_left"
 
     
 
-#func alarm 2():
-    #    with end3
+#func alarm_2():
+#    with end3
 
 #        draw_status = 1
 #        alarm_1(50)
@@ -41,7 +41,7 @@ func _process(delta):
     
 
 #func create():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code
@@ -69,7 +69,7 @@ func _process(delta):
     
 
 #func draw():
-    #    if (facing == RIGHT): image_xscale = -1
+#    if (facing == RIGHT): image_xscale = -1
 #    else: image_xscale = 1
 
 #    if ((sprite_index == "p_exit" or sprite_index == "damsel_exit" or sprite_index == "tunnel_exit)" and global.has_jetpack):
@@ -111,7 +111,7 @@ func _process(delta):
     
 
 #func step():
-    #    position.x += x_vel
+#    position.x += x_vel
 #    position.y += y_vel
 
 #    if (status == DROP):

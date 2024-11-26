@@ -17,13 +17,13 @@ func _process(delta):
 #--- Object functions
 
 
-#func alarm 0():
-    #    whipped = false
+#func alarm_0():
+#    whipped = false
 
     
 
 #func animation_end():
-    #    if (sprite_index == "shop_throw_l):"
+#    if (sprite_index == "shop_throw_l):"
 
 #        status = ATTACK
 #        sprite_index = "shop_left"
@@ -31,8 +31,8 @@ func _process(delta):
 
     
 
-#func collision with o_character():
-    #    if (status == IDLE or status == FOLLOW or status == STUNNED or status == DEAD or hp < 1 or other.dead or other.stunned or abs(other.position.x-(position.x+8)) > 8):
+#func collision_with_character():
+#    if (status == IDLE or status == FOLLOW or status == STUNNED or status == DEAD or hp < 1 or other.dead or other.stunned or abs(other.position.x-(position.x+8)) > 8):
 
 #        # DY:  do nothing
 
@@ -113,8 +113,8 @@ func _process(delta):
 
     
 
-#func collision with o_shotgun():
-    #    if (hp > 0 and status == ATTACK and not has_gun):
+#func collision_with_shotgun():
+#    if (hp > 0 and status == ATTACK and not has_gun):
 
 #        with other
     
@@ -131,8 +131,8 @@ func _process(delta):
 
     
 
-#func collision with o_whip():
-    #    if (not whipped):
+#func collision_with_whip():
+#    if (not whipped):
 
 #        if (other.type == "Machete"):
     
@@ -154,8 +154,8 @@ func _process(delta):
 
     
 
-#func collision with o_whip_pre():
-    #    if (not whipped):
+#func collision_with_whip_pre():
+#    if (not whipped):
 
 #        if (other.type == "Machete"):
     
@@ -178,7 +178,7 @@ func _process(delta):
     
 
 #func create():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code
@@ -189,7 +189,7 @@ func _process(delta):
 #    my_grav = 0.6
 
 #    # DY:  stats
-#    type = "Shopkeeper"
+#    type = "shopkeeper"
 #    style = "General"
 #    hp = 20
 #    invincible = 0
@@ -233,7 +233,7 @@ func _process(delta):
     
 
 #func draw():
-    #    if (facing == RIGHT): draw_sprite_ext(sprite_index, image_index, position.x+16, position.y, -1, image_yscale, image_angle, image_blend, image_alpha)
+#    if (facing == RIGHT): draw_sprite_ext(sprite_index, image_index, position.x+16, position.y, -1, image_yscale, image_angle, image_blend, image_alpha)
 #    else: draw_sprite_ext(sprite_index, image_index, position.x, position.y, 1, image_yscale, image_angle, image_blend, image_alpha)
 #    # DY:  draw_sprite_ext(sprite_index, image_index, position.x, position.y, 1, 1, 0, c_white, 1)
 #    if (has_gun and status != IDLE and status != FOLLOW):
@@ -245,7 +245,7 @@ func _process(delta):
     
 
 #func step():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code

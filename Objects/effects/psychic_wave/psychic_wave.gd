@@ -18,12 +18,12 @@ func _process(delta):
 
 
 #func animation_end():
-    #    # action_kill_object
+#    # action_kill_object
 #    gml.instance_destroy(self)
     
 
-#func collision with o_damsel():
-    #    if (not other.invincible):
+#func collision_with_damsel():
+#    if (not other.invincible):
 
 #        other.hp -= 3
 #        other.x_vel = gml.rand(0,2)-gml.rand(1,2)
@@ -40,8 +40,8 @@ func _process(delta):
 
     
 
-#func collision with o_enemy():
-    #    if (other.type != "Alien Boss" and other.invincible == 0):
+#func collision_with_enemy():
+#    if (other.type != "Alien Boss" and other.invincible == 0):
 
 #        other.hp -= 3
 #        other.x_vel = gml.rand(0,2)-gml.rand(1,2)
@@ -52,7 +52,7 @@ func _process(delta):
     
 
 #func create():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code
@@ -63,11 +63,11 @@ func _process(delta):
     
 
 #func outside room():
-    #    # action_kill_object
+#    # action_kill_object
 #    gml.instance_destroy(self)
     
 
 #func step():
-    #    dir = point_direction(position.x, position.y, character.position.x, character.position.y)
+#    dir = point_direction(position.x, position.y, character.position.x, character.position.y)
 #    position.x += 2 * cos(degtorad(dir))
 #    position.y += -2 * sin(degtorad(dir))

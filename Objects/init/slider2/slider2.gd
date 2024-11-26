@@ -17,8 +17,8 @@ func _process(delta):
 #--- Object functions
 
 
-#func alarm 0():
-    #    if (focus):
+#func alarm_0():
+#    if (focus):
 
 #        Audio.play_sound(global.snd_jump)
 #        alarm_0(20)
@@ -27,19 +27,19 @@ func _process(delta):
     
 
 #func create():
-    #    position.x = global.sound_vol * 8
+#    position.x = global.sound_vol * 8
 #    focus = false
 
     
 
 #func mouse left button pressed():
-    #    focus = true
+#    focus = true
 #    alarm_0(1)
 
     
 
 #func step():
-    #    if (mouse_check_button(mb_left) and focus):
+#    if (mouse_check_button(mb_left) and focus):
 
 #        position.x = mouse_x-4
 #        if (position.x > 144): position.x = 144

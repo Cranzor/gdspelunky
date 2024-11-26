@@ -17,17 +17,17 @@ func _process(delta):
 #--- Object functions
 
 
-#func alarm 0():
-    #    can_bite = true
+#func alarm_0():
+#    can_bite = true
 
     
 
 #func create():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code
-#    type = "Piranha"
+#    type = "piranha"
 #    image_speed = 0.5
 #    Collision.set_collision_bounds(self, 0, 0, 8, 8)
 #    origX = 0
@@ -63,7 +63,7 @@ func _process(delta):
     
 
 #func step():
-    #    if (active):
+#    if (active):
 
 #    if (hp < 1):
 

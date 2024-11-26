@@ -17,8 +17,8 @@ func _process(delta):
 #--- Object functions
 
 
-#func alarm 0():
-    #    if (global.graphics_high):
+#func alarm_0():
+#    if (global.graphics_high):
 
 #        if (gml.instance_number(blood_trail) < 12): gml.instance_create(position.x, position.y, Objects.blood_trail)
 #        alarm_0(4)
@@ -26,19 +26,19 @@ func _process(delta):
 
     
 
-#func alarm 1():
-    #    invincible = false
+#func alarm_1():
+#    invincible = false
 #    bounce = true
 
     
 
-#func alarm 2():
-    #    collectible = true
+#func alarm_2():
+#    collectible = true
 
     
 
 #func create():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code
@@ -59,7 +59,7 @@ func _process(delta):
     
 
 #func step():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code

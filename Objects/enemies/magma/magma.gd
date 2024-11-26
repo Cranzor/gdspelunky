@@ -17,14 +17,14 @@ func _process(delta):
 #--- Object functions
 
 
-#func alarm 0():
-    #    gml.instance_create(position.x, position.y, Objects.magma_trail)
+#func alarm_0():
+#    gml.instance_create(position.x, position.y, Objects.magma_trail)
 #    alarm_0(2)
 
     
 
 #func animation_end():
-    #    if (dying):
+#    if (dying):
 
 #        magma = gml.instance_create(position.x-8, position.y-8, Objects.magma_man)
 #        magma.hp = hp
@@ -33,8 +33,8 @@ func _process(delta):
 
     
 
-#func collision with o_character():
-    #    if (other.invincible == 0):
+#func collision_with_character():
+#    if (other.invincible == 0):
 
 #        other.blink = 30
 #        other.invincible = 30
@@ -55,8 +55,8 @@ func _process(delta):
 
     
 
-#func collision with o_enemy():
-    #    if (other.type != "Magma Man"):
+#func collision_with_enemy():
+#    if (other.type != "Magma Man"):
 
 #        other.y_vel = -4
 #        if (position.x < other.position.x):
@@ -75,14 +75,14 @@ func _process(delta):
 
     
 
-#func collision with o_water():
-    #    gml.instance_create(position.x, position.y, Objects.smoke_puff)
+#func collision_with_water():
+#    gml.instance_create(position.x, position.y, Objects.smoke_puff)
 #    gml.instance_destroy(self)
 
     
 
 #func create():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code
@@ -103,7 +103,7 @@ func _process(delta):
     
 
 #func step():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code

@@ -17,8 +17,8 @@ func _process(delta):
 #--- Object functions
 
 
-#func alarm 0():
-    #    if (sprite_index != "giant_spider_squirt):"
+#func alarm_0():
+#    if (sprite_index != "giant_spider_squirt):"
 
 #        status = BOUNCE
 #        sprite_index = "giant_spider_jump"
@@ -39,13 +39,13 @@ func _process(delta):
 
     
 
-#func alarm 1():
-    #    # DY: sprite_index = "spider_drown"
+#func alarm_1():
+#    # DY: sprite_index = "spider_drown"
 
     
 
 #func animation_end():
-    #    if (sprite_index == "giant_spider_flip):"
+#    if (sprite_index == "giant_spider_flip):"
 
 #        sprite_index = "giant_spider"
 #        image_speed = 0.4
@@ -58,8 +58,8 @@ func _process(delta):
 
     
 
-#func collision with o_character():
-    #    # DY:  jumped on - caveman, man_trap replaces this script with its own
+#func collision_with_character():
+#    # DY:  jumped on - caveman, man_trap replaces this script with its own
 #    if (abs(other.position.x-(position.x+16)) > 16):
 
 #        # DY:  do nothing
@@ -98,8 +98,8 @@ func _process(delta):
 
     
 
-#func collision with o_whip():
-    #    if (whipped == 0):
+#func collision_with_whip():
+#    if (whipped == 0):
 
 #        hp -= 1
 #        gml.instance_create(position.x+16, position.y+24, Objects.blood)
@@ -111,11 +111,11 @@ func _process(delta):
     
 
 #func create():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code
-#    type = "Giant Spider"
+#    type = "giant spider"
 #    PlatformEngine.make_active(self)
 #    Collision.set_collision_bounds(self, 2, 16, 30, 32)
 #    x_vel = 0
@@ -150,7 +150,7 @@ func _process(delta):
     
 
 #func step():
-    #    if ((position.x > gml.view("xview")-32 and position.x < gml.view("xview") + gml.view("wview") and:
+#    if ((position.x > gml.view("xview")-32 and position.x < gml.view("xview") + gml.view("wview") and:
 #            position.y > gml.view("yview")-32 and position.y < gml.view("yview") + gml.view("hview")))
 
 #    PlatformEngine.move_to(x_vel,y_vel)

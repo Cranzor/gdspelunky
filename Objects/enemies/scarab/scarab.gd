@@ -17,8 +17,8 @@ func _process(delta):
 #--- Object functions
 
 
-#func collision with o_character():
-    #    global.collect += value
+#func collision_with_character():
+#    global.collect += value
 #    global.collect_counter += 20
 #    if (global.collect_counter > 100): global.collect_counter = 100
 #    global.scarabs += 1
@@ -28,7 +28,7 @@ func _process(delta):
     
 
 #func create():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code
@@ -62,7 +62,7 @@ func _process(delta):
     
 
 #func destroy():
-    #    for repetition in range(3):
+#    for repetition in range(3):
 
 #        gml.instance_create(other.position.x+6+gml.rand(0,4), other.position.y+6+gml.rand(0,4), Objects.flare_spark)
 
@@ -70,7 +70,7 @@ func _process(delta):
     
 
 #func step():
-    #    if ((position.x > gml.view("xview")-20 and position.x < gml.view("xview") + gml.view("wview")+4 and:
+#    if ((position.x > gml.view("xview")-20 and position.x < gml.view("xview") + gml.view("wview")+4 and:
 #            position.y > gml.view("yview")-20 and position.y < gml.view("yview") + gml.view("hview")+4))
 
 #    PlatformEngine.move_to(x_vel, y_vel)

@@ -18,7 +18,7 @@ func _process(delta):
 
 
 #func create():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code
@@ -31,7 +31,7 @@ func _process(delta):
 #    my_grav_norm = 0.2
 #    image_speed = 0.4
 
-#    type = "Frog"
+#    type = "frog"
 
 #    # DY:  stats
 #    hp = 1
@@ -60,7 +60,7 @@ func _process(delta):
     
 
 #func step():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code

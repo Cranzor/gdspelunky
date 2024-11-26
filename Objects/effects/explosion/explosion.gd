@@ -18,17 +18,17 @@ func _process(delta):
 
 
 #func animation_end():
-    #    # action_kill_object
+#    # action_kill_object
 #    gml.instance_destroy(self)
     
 
-#func collision with o_barrier_emitter():
-    #    with other  gml.instance_destroy(self) 
+#func collision_with_barrier_emitter():
+#    with other  gml.instance_destroy(self) 
 
     
 
-#func collision with o_boulder():
-    #    for i in range(0, 3):
+#func collision_with_boulder():
+#    for i in range(0, 3):
 
 #        rubble = gml.instance_create(other.position.x+gml.rand(0,15)-gml.rand(0,15), other.position.y+gml.rand(0,15)-gml.rand(0,15), Objects.rubble)
 #        rubble.sprite_index = "rubble_tan"
@@ -44,8 +44,8 @@ func _process(delta):
 
     
 
-#func collision with o_damsel():
-    #    if (not other.invincible):
+#func collision_with_damsel():
+#    if (not other.invincible):
 
 #        other.hp -= 100
 #        if (position.x < other.position.x): other.x_vel = gml.rand(4,6)
@@ -57,8 +57,8 @@ func _process(delta):
 
     
 
-#func collision with o_enemy():
-    #    if (other.type == "Magma Man"):
+#func collision_with_enemy():
+#    if (other.type == "Magma Man"):
 
 #        with other
     
@@ -80,8 +80,8 @@ func _process(delta):
 
     
 
-#func collision with o_item():
-    #    if (other.type == "Arrow" or other.type == "Fish Bone" or:
+#func collision_with_item():
+#    if (other.type == "Arrow" or other.type == "Fish Bone" or:
 #        other.type == "Jar" or other.type == "Skull")
 
 #        with other  gml.instance_destroy(self) 
@@ -130,8 +130,8 @@ func _process(delta):
 
     
 
-#func collision with o_solid():
-    #    if (InLevel.is_level("r_tutorial") or (position.x > gml.view("xview")-16 and position.x < gml.view("xview") + gml.view("wview")+16 and:
+#func collision_with_solid():
+#    if (InLevel.is_level("r_tutorial") or (position.x > gml.view("xview")-16 and position.x < gml.view("xview") + gml.view("wview")+16 and:
 #         position.y > gml.view("yview")-16 and position.y < gml.view("yview") + gml.view("hview")+16))
 
 #        with other
@@ -165,13 +165,13 @@ func _process(delta):
 
     
 
-#func collision with o_web():
-    #    with other  gml.instance_destroy(self) 
+#func collision_with_web():
+#    with other  gml.instance_destroy(self) 
 
     
 
 #func create():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code

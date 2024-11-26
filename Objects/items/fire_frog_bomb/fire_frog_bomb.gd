@@ -17,8 +17,8 @@ func _process(delta):
 #--- Object functions
 
 
-#func alarm 1():
-    #    gml.instance_create(position.x, position.y, Objects.explosion)
+#func alarm_1():
+#    gml.instance_create(position.x, position.y, Objects.explosion)
 #    MiscScripts.scr_create_blood(position.x, position.y, 3)
 #    if (global.graphics_high):
 
@@ -34,11 +34,11 @@ func _process(delta):
     
 
 #func create():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code
-#    type = "Fire Frog Bomb"
+#    type = "fire frog bomb"
 #    PlatformEngine.make_active(self)
 #    Collision.set_collision_bounds(self, -6, -4, 6, 8)
 #    alarm_1(120)
@@ -49,7 +49,7 @@ func _process(delta):
     
 
 #func step():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code

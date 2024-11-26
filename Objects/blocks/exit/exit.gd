@@ -18,13 +18,13 @@ func _process(delta):
 
 
 #func create():
-    #    type = "Exit"
+#    type = "exit"
 #    leads_to = "" # DY:  used for Level Editor only
 
     
 
 #func draw():
-    #    draw_sprite(sprite_index, -1, position.x, position.y)
+#    draw_sprite(sprite_index, -1, position.x, position.y)
 #    if (InLevel.is_room("r_level_editor")):
 
 #        draw_set_font(global.my_font_small)

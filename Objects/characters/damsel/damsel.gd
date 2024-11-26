@@ -18,7 +18,7 @@ func _process(delta):
 
 
 #func animation_end():
-    #    if (status == YELL):
+#    if (status == YELL):
 
 #        status = IDLE
 #        counter = 200
@@ -36,8 +36,8 @@ func _process(delta):
 
     
 
-#func collision with o_whip():
-    #    if (other.type == "Machete" and hit == 0):
+#func collision_with_whip():
+#    if (other.type == "Machete" and hit == 0):
 
 #         hp -= other.damage
 #         hit = 10
@@ -63,8 +63,8 @@ func _process(delta):
 
     
 
-#func collision with o_whip_pre():
-    #    if (other.type == "Machete" and hit == 0):
+#func collision_with_whip_pre():
+#    if (other.type == "Machete" and hit == 0):
 
 #         hp -= other.damage
 #         hit = 10
@@ -91,11 +91,11 @@ func _process(delta):
     
 
 #func create():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code
-#    type = "Damsel"
+#    type = "damsel"
 #    PlatformEngine.make_active(self)
 #    Collision.set_collision_bounds(self, -4, -4, 4, 8)
 #    image_speed = 0.5
@@ -138,7 +138,7 @@ func _process(delta):
     
 
 #func destroy():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code
@@ -150,7 +150,7 @@ func _process(delta):
     
 
 #func draw():
-    #    if (facing == RIGHT): image_xscale = -1
+#    if (facing == RIGHT): image_xscale = -1
 #    else: image_xscale = 1
 
 #    draw_sprite_ext(sprite_index, -1, position.x, position.y, image_xscale, image_yscale, image_angle, image_blend, image_alpha)
@@ -165,7 +165,7 @@ func _process(delta):
     
 
 #func step():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code

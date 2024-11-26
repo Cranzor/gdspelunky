@@ -17,8 +17,8 @@ func _process(delta):
 #--- Object functions
 
 
-#func alarm 0():
-    #    if (draw_loot == 0):
+#func alarm_0():
+#    if (draw_loot == 0):
 
 #        if (draw_pos_x > 272):
     
@@ -312,8 +312,8 @@ func _process(delta):
 
     
 
-#func alarm 1():
-    #    draw_loot += 1
+#func alarm_1():
+#    draw_loot += 1
 
 #    if (draw_loot < 0):
 
@@ -324,7 +324,7 @@ func _process(delta):
     
 
 #func create():
-    #    debug_counter = 0
+#    debug_counter = 0
 
 #    global.message = ""
 #    global.message2 = ""
@@ -394,7 +394,7 @@ func _process(delta):
     
 
 #func draw():
-    #    draw_set_font(global.my_font_small)
+#    draw_set_font(global.my_font_small)
 #    draw_set_color(c_white)
 #    if (gml.instance_exists("tunnel_man")):
 
@@ -524,7 +524,7 @@ func _process(delta):
     
 
 #func step():
-    #    if (ControlScripts.check_attack_pressed() or ControlScripts.check_start_pressed()):
+#    if (ControlScripts.check_attack_pressed() or ControlScripts.check_start_pressed()):
 
 #        n = 0
 

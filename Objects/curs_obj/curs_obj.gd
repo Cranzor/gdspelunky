@@ -18,12 +18,12 @@ func _process(delta):
 
 
 #func create():
-    #    image_speed = 0
+#    image_speed = 0
 
     
 
 #func step():
-    #    if (mouse_x > gml.view("xview") and mouse_x < gml.view("xview")+320 and:
+#    if (mouse_x > gml.view("xview") and mouse_x < gml.view("xview")+320 and:
 #        mouse_y > gml.view("yview") and mouse_y < gml.view("yview")+240)
 
 #        position.x = mouse_x-8

@@ -17,8 +17,8 @@ func _process(delta):
 #--- Object functions
 
 
-#func alarm 0():
-    #    if (not player1.dead):
+#func alarm_0():
+#    if (not player1.dead):
 
 #        n = gml.rand(0,3)
 #        gml.instance_create(32 + n*80, 0, Objects.shopkeeper2)
@@ -43,19 +43,19 @@ func _process(delta):
 
     
 
-#func alarm 1():
-    #    draw_status = 1
+#func alarm_1():
+#    draw_status = 1
 #    alarm_2(30)
 
     
 
-#func alarm 10():
-    #    if (global.music): start_music()
+#func alarm_10():
+#    if (global.music): start_music()
 
     
 
-#func alarm 11():
-    #    if (not player1.dead and gml.rand(1, 100) < kills):
+#func alarm_11():
+#    if (not player1.dead and gml.rand(1, 100) < kills):
 
 #        n = gml.rand(0,3)
 #        gml.instance_create(32 + n*80, 0, Objects.spider)
@@ -65,19 +65,19 @@ func _process(delta):
 
     
 
-#func alarm 2():
-    #    draw_status = 2
+#func alarm_2():
+#    draw_status = 2
 #    alarm_3(10)
 
     
 
-#func alarm 3():
-    #    draw_status = 3
+#func alarm_3():
+#    draw_status = 3
 
     
 
 #func create():
-    #    global.plife = 8
+#    global.plife = 8
 #    highscore = false
 #    kills = 0
 #    draw_status = 0
@@ -98,7 +98,7 @@ func _process(delta):
     
 
 #func draw():
-    #    life = global.plife
+#    life = global.plife
 #    if (life < 0): life = 0
 #    draw_set_font(global.my_font)
 #    draw_set_color(c_white)

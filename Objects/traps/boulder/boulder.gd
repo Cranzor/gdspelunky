@@ -17,8 +17,8 @@ func _process(delta):
 #--- Object functions
 
 
-#func collision with o_solid():
-    #    if (true):
+#func collision_with_solid():
+#    if (true):
    
 #        if (other.invincible or abs(x_vel) < 1):
     
@@ -53,7 +53,7 @@ func _process(delta):
     
 
 #func create():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code
@@ -70,7 +70,7 @@ func _process(delta):
     
 
 #func step():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code

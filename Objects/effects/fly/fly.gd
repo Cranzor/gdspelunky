@@ -17,8 +17,8 @@ func _process(delta):
 #--- Object functions
 
 
-#func collision with o_character():
-    #    if (other.sprite_index != "p_exit" and other.sprite_index != "damsel_exit" and other.sprite_index != "tunnel_exit):"
+#func collision_with_character():
+#    if (other.sprite_index != "p_exit" and other.sprite_index != "damsel_exit" and other.sprite_index != "tunnel_exit):"
 
 #        if (global.plife > 0):
     
@@ -42,8 +42,8 @@ func _process(delta):
 
     
 
-#func collision with o_damsel():
-    #    if (not other.invincible):
+#func collision_with_damsel():
+#    if (not other.invincible):
 
 #        if (other.blood_left > 0):
     
@@ -72,8 +72,8 @@ func _process(delta):
 
     
 
-#func collision with o_enemy():
-    #    if (other.type != "Tomb Lord"):
+#func collision_with_enemy():
+#    if (other.type != "Tomb Lord"):
 
 #        if (other.heavy):
     
@@ -106,21 +106,21 @@ func _process(delta):
 
     
 
-#func collision with o_solid():
-    #    gml.instance_create(position.x, position.y, Objects.smoke_puff)
+#func collision_with_solid():
+#    gml.instance_create(position.x, position.y, Objects.smoke_puff)
 #    Audio.play_sound(global.snd_hit)
 #    gml.instance_destroy(self)
 
     
 
 #func create():
-    #    x_vel = 0
+#    x_vel = 0
 #    y_vel = -random(3)+0.5
 
     
 
 #func step():
-    #    position.x += x_vel
+#    position.x += x_vel
 #    position.y += y_vel
 
 #    if (x_vel < 0): sprite_index = "fly_left"

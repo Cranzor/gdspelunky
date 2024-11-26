@@ -17,8 +17,8 @@ func _process(delta):
 #--- Object functions
 
 
-#func alarm 0():
-    #    status = BOUNCE
+#func alarm_0():
+#    status = BOUNCE
 #    if (Collision.is_collision_bottom(1)):
 
 #        y_vel = -1 * gml.rand(2,5)
@@ -34,22 +34,22 @@ func _process(delta):
 
     
 
-#func alarm 1():
-    #    gml.instance_destroy(self)
+#func alarm_1():
+#    gml.instance_destroy(self)
 
     
 
 #func animation_end():
-    #    if (sprite_index == "spider_flip):" sprite_index = "spider"
+#    if (sprite_index == "spider_flip):" sprite_index = "spider"
 
     
 
 #func create():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code
-#    type = "Spider"
+#    type = "spider"
 #    PlatformEngine.make_active(self)
 #    Collision.set_collision_bounds(self, 1, 5, 15, 16)
 #    x_vel = 0
@@ -79,7 +79,7 @@ func _process(delta):
     
 
 #func step():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code

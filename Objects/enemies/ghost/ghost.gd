@@ -18,7 +18,7 @@ func _process(delta):
 
 
 #func animation_end():
-    #    if (sprite_index == "ghost_turn_right):"
+#    if (sprite_index == "ghost_turn_right):"
 
 #        sprite_index = "ghost_right"
 
@@ -33,8 +33,8 @@ func _process(delta):
 
     
 
-#func collision with o_character():
-    #    if (other.invincible == 0):
+#func collision_with_character():
+#    if (other.invincible == 0):
 
 #        if (true):
     
@@ -72,13 +72,13 @@ func _process(delta):
 
     
 
-#func collision with o_whip():
-    #    # DY: 
+#func collision_with_whip():
+#    # DY: 
 
     
 
 #func create():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code
@@ -113,7 +113,7 @@ func _process(delta):
     
 
 #func step():
-    #    if (hp < 1):
+#    if (hp < 1):
 
 #        # DY: global.bats += 1
 #        global.kills += 1

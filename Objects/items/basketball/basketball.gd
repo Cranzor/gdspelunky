@@ -18,11 +18,11 @@ func _process(delta):
 
 
 #func create():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code
-#    type = "Basketball"
+#    type = "basketball"
 #    PlatformEngine.make_active(self)
 #    Collision.set_collision_bounds(self, -4, -4, 4, 4)
 #    bounce_factor = 0.7
@@ -34,7 +34,7 @@ func _process(delta):
     
 
 #func step():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code

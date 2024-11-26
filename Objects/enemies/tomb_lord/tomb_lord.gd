@@ -18,7 +18,7 @@ func _process(delta):
 
 
 #func animation_end():
-    #    if (sprite_index == "tomb_lord_turn_r):"
+#    if (sprite_index == "tomb_lord_turn_r):"
 
 #        facing = RIGHT
 #        status = WALK
@@ -37,8 +37,8 @@ func _process(delta):
 
     
 
-#func collision with o_character():
-    #    # DY:  jumped on - caveman, man_trap replaces this script with its own
+#func collision_with_character():
+#    # DY:  jumped on - caveman, man_trap replaces this script with its own
 #    if (abs(other.position.x-(position.x+16)) > 16):
 
 #        # DY:  do nothing
@@ -78,8 +78,8 @@ func _process(delta):
 
     
 
-#func collision with o_whip():
-    #    if (whipped == 0 and other.position.y < position.y+12):
+#func collision_with_whip():
+#    if (whipped == 0 and other.position.y < position.y+12):
 
 #        hp -= other.damage
 #        counts_as_kill = true
@@ -92,7 +92,7 @@ func _process(delta):
     
 
 #func create():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code
@@ -102,7 +102,7 @@ func _process(delta):
 #    image_speed = 0.25
 
 #    # DY:  stats
-#    type = "Tomb Lord"
+#    type = "tomb lord"
 #    hp = 20
 #    invincible = 0
 #    heavy = true
@@ -133,12 +133,12 @@ func _process(delta):
     
 
 #func draw():
-    #    draw_sprite_ext(sprite_index, image_index, position.x, position.y, 1, image_yscale, image_angle, image_blend, image_alpha)
+#    draw_sprite_ext(sprite_index, image_index, position.x, position.y, 1, image_yscale, image_angle, image_blend, image_alpha)
 
     
 
 #func step():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code

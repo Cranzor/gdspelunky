@@ -17,8 +17,8 @@ func _process(delta):
 #--- Object functions
 
 
-#func collision with o_boulder():
-    #    if (trap_id == 0):
+#func collision_with_boulder():
+#    if (trap_id == 0):
 
 #        gml.instance_destroy(self)
 
@@ -47,8 +47,8 @@ func _process(delta):
 
     
 
-#func collision with o_character():
-    #    if (trap_id == 0):
+#func collision_with_character():
+#    if (trap_id == 0):
 
 #        gml.instance_destroy(self)
 
@@ -80,8 +80,8 @@ func _process(delta):
 
     
 
-#func collision with o_enemy():
-    #    if (trap_id == 0):
+#func collision_with_enemy():
+#    if (trap_id == 0):
 
 #        gml.instance_destroy(self)
 
@@ -110,8 +110,8 @@ func _process(delta):
 
     
 
-#func collision with o_item():
-    #    if (trap_id == 0):
+#func collision_with_item():
+#    if (trap_id == 0):
 
 #        gml.instance_destroy(self)
 
@@ -140,8 +140,8 @@ func _process(delta):
 
     
 
-#func collision with o_moveable_solid():
-    #    if (trap_id == 0):
+#func collision_with_moveable_solid():
+#    if (trap_id == 0):
 
 #        gml.instance_destroy(self)
 
@@ -170,8 +170,8 @@ func _process(delta):
 
     
 
-#func collision with o_treasure():
-    #    if (trap_id == 0):
+#func collision_with_treasure():
+#    if (trap_id == 0):
 
 #        gml.instance_destroy(self)
 
@@ -201,4 +201,4 @@ func _process(delta):
     
 
 #func create():
-    #    trap_id = 0
+#    trap_id = 0

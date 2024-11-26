@@ -18,7 +18,7 @@ func _process(delta):
 
 
 #func create():
-    #    with screen  can_pause = true 
+#    with screen  can_pause = true 
 
 #    global.curr_level = 1
 
@@ -145,7 +145,7 @@ func _process(delta):
     
 
 #func draw():
-    #    if (player1.position.y < 156):
+#    if (player1.position.y < 156):
 
 #    draw_set_font(global.my_font_small)
 #    draw_set_color(c_yellow)
@@ -308,7 +308,7 @@ func _process(delta):
     
 
 #func key q pressed():
-    #    /*highscore_clear()
+#    /*highscore_clear()
 #    highscore_add("MONEY", 9000000)
 #    highscore_add("TIME", 8000000)
 #    highscore_add("KILLS", 7000000)
@@ -320,7 +320,7 @@ func _process(delta):
     
 
 #func step():
-    #    # DY:  shake the screen
+#    # DY:  shake the screen
 #    if (global.shake > 0):
 
 #        # DY: gml.view("xview") = gml.view("xview") + gml.rand(0,3) - gml.rand(0,3)

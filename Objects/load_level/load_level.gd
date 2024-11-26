@@ -18,7 +18,7 @@ func _process(delta):
 
 
 #func create():
-    #    global.clean_solids = false
+#    global.clean_solids = false
 #    global.message = ""
 #    global.message2 = ""
 #    window_set_cursor(cr_default)
@@ -113,7 +113,7 @@ func _process(delta):
     
 
 #func draw():
-    #    draw_set_font(global.my_font_small)
+#    draw_set_font(global.my_font_small)
 #    draw_set_color(c_white)
 
 #    if (status == GET_FILE_NAME):
@@ -149,7 +149,7 @@ func _process(delta):
     
 
 #func key any key pressed():
-    #    if (status == GET_FILE_NAME):
+#    if (status == GET_FILE_NAME):
 
 #        if (keyboard_key == vk_escape):
     
@@ -178,7 +178,7 @@ func _process(delta):
     
 
 #func step():
-    #    if (msg_timer > 0): msg_timer -= 1
+#    if (msg_timer > 0): msg_timer -= 1
 #    else: msg = "PRESS ESCAPE TO RETURN TO TITLE."
 
 #    /*

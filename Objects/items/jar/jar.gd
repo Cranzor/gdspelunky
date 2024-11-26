@@ -17,13 +17,13 @@ func _process(delta):
 #--- Object functions
 
 
-#func collision with o_bullet():
-    #    gml.instance_destroy(self)
+#func collision_with_bullet():
+#    gml.instance_destroy(self)
 
     
 
-#func collision with o_whip():
-    #    Audio.play_sound(global.snd_break)
+#func collision_with_whip():
+#    Audio.play_sound(global.snd_break)
 #    gml.instance_create(position.x, position.y, Objects.smoke_puff)
 #    for i in range(0, 3):
 
@@ -48,11 +48,11 @@ func _process(delta):
     
 
 #func create():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code
-#    type = "Jar"
+#    type = "jar"
 #    PlatformEngine.make_active(self)
 #    Collision.set_collision_bounds(self, -4, -6, 4, 6)
 #    break_pieces = true
@@ -60,7 +60,7 @@ func _process(delta):
     
 
 #func destroy():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code
@@ -101,7 +101,7 @@ func _process(delta):
     
 
 #func step():
-    #    # main_code
+#    # main_code
 #    overrides parent step
 #    # main_code
 #    destroy = false

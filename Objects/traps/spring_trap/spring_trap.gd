@@ -18,7 +18,7 @@ func _process(delta):
 
 
 #func animation_end():
-    #    if (status == SPRUNG):
+#    if (status == SPRUNG):
 
 #        status = IDLE
 #        sprite_index = "spring_trap"
@@ -26,8 +26,8 @@ func _process(delta):
 
     
 
-#func collision with o_enemy():
-    #    if (status == IDLE and abs(other.position.x-position.x) < 6 and counter = 0 and not other.flying):
+#func collision_with_enemy():
+#    if (status == IDLE and abs(other.position.x-position.x) < 6 and counter = 0 and not other.flying):
 
 #        sprite_index = "spring_trap_sprung"
 #        Audio.play_sound(global.snd_boing)
@@ -44,8 +44,8 @@ func _process(delta):
 
     
 
-#func collision with o_item():
-    #    if (status == IDLE and abs(other.position.x-(position.x+8)) < 6 and not other.held and counter = 0 and:
+#func collision_with_item():
+#    if (status == IDLE and abs(other.position.x-(position.x+8)) < 6 and not other.held and counter = 0 and:
 #        other.active)
 
 #        sprite_index = "spring_trap_sprung"
@@ -67,8 +67,8 @@ func _process(delta):
 
     
 
-#func collision with o_player1():
-    #    if (status == IDLE and abs(other.position.x-(position.x+8)) < 6 and counter = 0):
+#func collision_with_player1():
+#    if (status == IDLE and abs(other.position.x-(position.x+8)) < 6 and counter = 0):
 
 #        if (other.state <= 13 and other.sprite_index != "p_exit" and other.sprite_index != "damsel_exit):"
     
@@ -87,7 +87,7 @@ func _process(delta):
     
 
 #func create():
-    #    IDLE = 0
+#    IDLE = 0
 #    SPRUNG = 1
 #    status = IDLE
 #    counter = 0
@@ -95,7 +95,7 @@ func _process(delta):
     
 
 #func step():
-    #    if ((position.x > gml.view("xview")-16 and position.x < gml.view("xview") + gml.view("wview") and:
+#    if ((position.x > gml.view("xview")-16 and position.x < gml.view("xview") + gml.view("wview") and:
 #            position.y > gml.view("yview")-16 and position.y < gml.view("yview") + gml.view("hview")))
 
 #        if (counter > 0): counter -= 1

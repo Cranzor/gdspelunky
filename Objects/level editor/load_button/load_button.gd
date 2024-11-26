@@ -18,22 +18,22 @@ func _process(delta):
 
 
 #func create():
-    #    active = true
+#    active = true
 
     
 
 #func mouse leave():
-    #    sprite_index = "load_button"
+#    sprite_index = "load_button"
 
     
 
 #func mouse left button pressed():
-    #    sprite_index = "load_button_pressed"
+#    sprite_index = "load_button_pressed"
 
     
 
 #func mouse left button released():
-    #    if (sprite_index == "load_button_pressed" and active):
+#    if (sprite_index == "load_button_pressed" and active):
 
 #        with load_level
     
@@ -46,7 +46,7 @@ func _process(delta):
     
 
 #func step():
-    #    if (ControlScripts.check_start_pressed() or gamepad.attack_pressed):
+#    if (ControlScripts.check_start_pressed() or gamepad.attack_pressed):
 
 #        with load_level
     

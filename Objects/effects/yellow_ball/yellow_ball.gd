@@ -17,19 +17,19 @@ func _process(delta):
 #--- Object functions
 
 
-#func alarm 0():
-    #    invincible = false
+#func alarm_0():
+#    invincible = false
 
     
 
-#func alarm 1():
-    #    if (gml.instance_number(yellow_trail) < 12): gml.instance_create(position.x, position.y, Objects.yellow_trail)
+#func alarm_1():
+#    if (gml.instance_number(yellow_trail) < 12): gml.instance_create(position.x, position.y, Objects.yellow_trail)
 #    alarm_1(4)
 
     
 
-#func collision with o_solid():
-    #    /*
+#func collision_with_solid():
+#    /*
 #    if (not gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "olmec", 0, 0)):
 
 #        if (gml.rand(1,2) == 1): n = gml.rand(1,4)
@@ -49,7 +49,7 @@ func _process(delta):
     
 
 #func create():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code
@@ -63,12 +63,12 @@ func _process(delta):
     
 
 #func outside room():
-    #    # action_kill_object
+#    # action_kill_object
 #    gml.instance_destroy(self)
     
 
 #func step():
-    #    position.x += x_vel
+#    position.x += x_vel
 #    position.y += y_vel
 
 #    if (gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "solid", 0, 0) and:

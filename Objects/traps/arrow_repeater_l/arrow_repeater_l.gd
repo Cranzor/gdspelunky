@@ -17,14 +17,14 @@ func _process(delta):
 #--- Object functions
 
 
-#func alarm 0():
-    #    arrow = gml.instance_create(position.x+16, position.y+4, Objects.arrow)
+#func alarm_0():
+#    arrow = gml.instance_create(position.x+16, position.y+4, Objects.arrow)
 #    arrow.x_vel = 5
 
     
 
-#func alarm 1():
-    #    x_act = position.x-1
+#func alarm_1():
+#    x_act = position.x-1
 #    while (not gml.collision_point(x_act, position.y+8, "solid", 0, 0)):
 
 #        if (position.x - x_act > 96):
@@ -36,11 +36,11 @@ func _process(delta):
     
 
 #func create():
-    #    # action_inherited
+#    # action_inherited
 #    super()
 
 #    # main_code
-#    type = "Arrow Trap"
+#    type = "arrow trap"
 #    fired = 100+gml.rand(100)
 #    invincible = false
 #    x_act = 0 # DY:  activate distance
@@ -50,7 +50,7 @@ func _process(delta):
     
 
 #func destroy():
-    #    if (not clean_death and not global.clean_solids):
+#    if (not clean_death and not global.clean_solids):
 
 #        rubble = gml.instance_create(position.x+8+gml.rand(0,8)-gml.rand(0,8), position.y+8+gml.rand(0,8)-gml.rand(0,8), Objects.rubble)
 #        rubble.sprite_index = "rubble_tan"
@@ -63,7 +63,7 @@ func _process(delta):
     
 
 #func step():
-    #    firing = false
+#    firing = false
 #    if (fired > 0): fired -= 1
 #    elif (not player1.dead):
 

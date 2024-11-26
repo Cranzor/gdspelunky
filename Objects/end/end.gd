@@ -18,7 +18,7 @@ func _process(delta):
 
 
 #func create():
-    #    shake_toggle = false
+#    shake_toggle = false
 #    p_dummy.status = 2
 
 #    timer = 0
@@ -41,12 +41,12 @@ func _process(delta):
     
 
 #func room end():
-    #    global.shake = 0
+#    global.shake = 0
 
     
 
 #func step():
-    #    timer += 1
+#    timer += 1
 #    if (keyboard_check_pressed(vk_enter) or:
 #        keyboard_check_pressed(vk_escape) or
 #        ControlScripts.check_attack_pressed() or

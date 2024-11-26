@@ -18,7 +18,7 @@ func _process(delta):
 
 
 #func create():
-    #    screen.enabled = true
+#    screen.enabled = true
 #    global.draw_hud = true
 #    global.game_start = true
 #    global.shake = 0
@@ -66,7 +66,7 @@ func _process(delta):
     
 
 #func draw():
-    #    /*
+#    /*
 #    if (global.dark_level):
 
 #        draw_set_alpha(darkness)
@@ -97,12 +97,12 @@ func _process(delta):
     
 
 #func room end():
-    #    # DY: sound_stop(snd_music_test2)
+#    # DY: sound_stop(snd_music_test2)
 
     
 
 #func step():
-    #    if (music_fade and music_fade_timer < 100):
+#    if (music_fade and music_fade_timer < 100):
 
 #        scr_music_fade()
 #        music_fade_timer += 1

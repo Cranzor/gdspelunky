@@ -17,8 +17,8 @@ func _process(delta):
 #--- Object functions
 
 
-#func collision with o_arrow():
-    #    Audio.play_sound(global.snd_hit)
+#func collision_with_arrow():
+#    Audio.play_sound(global.snd_hit)
 #    Audio.play_sound(global.snd_coin)
 #    moon_room.baskets += difficulty
 
@@ -32,8 +32,8 @@ func _process(delta):
 
     
 
-#func collision with o_character():
-    #    # DY:  jumped on - caveman, man_trap replaces this script with its own
+#func collision_with_character():
+#    # DY:  jumped on - caveman, man_trap replaces this script with its own
 #    if (abs(other.position.x-(position.x+8)) > 12):
 
 #        # DY:  do nothing
@@ -67,7 +67,7 @@ func _process(delta):
     
 
 #func create():
-    #    bloodless = false
+#    bloodless = false
 #    UP = 0
 #    DOWN = 1
 #    dir = 1
@@ -85,7 +85,7 @@ func _process(delta):
     
 
 #func step():
-    #    if (dir == UP):
+#    if (dir == UP):
 
 #        position.y -= difficulty
 #        if (position.y <= 64):
