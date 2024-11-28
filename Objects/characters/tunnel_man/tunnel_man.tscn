@@ -2,10 +2,9 @@
 
 [ext_resource type="Script" path="res://objects/characters/tunnel_man/tunnel_man.gd" id="1_2wyg8"]
 
-[node name="TunnelMan" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
+[node name="TunnelMan" type="Node2D"]
 z_index = -100
 script = ExtResource("1_2wyg8")
 sprite_index_name = "tunnel_man_left"
-animated_sprite_node = NodePath("")
 sprite_offset = Vector2(8, 8)
 object_name = "tunnel_man"

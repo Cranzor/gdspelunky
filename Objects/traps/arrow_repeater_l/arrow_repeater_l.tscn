@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bxvxyri3cpavt"]
 
-[sub_resource type="GDScript" id="GDScript_aa55t"]
+[ext_resource type="Script" path="res://objects/traps/arrow_repeater_l/arrow_repeater_l.gd" id="1_7v1xc"]
 
 [node name="ArrowRepeaterL" type="Node2D"]
+script = ExtResource("1_7v1xc")
+object_name = "arrow_repeater_l"

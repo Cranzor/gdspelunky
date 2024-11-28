@@ -17,6 +17,10 @@ var type
 var my_grav
 var trigger
 var grav
+var dying
+var life
+var UP
+var DOWN
 
 #--- want access to these for all objects, so defining here
 var collision_bounds_offset_left_x

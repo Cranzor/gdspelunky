@@ -47,12 +47,13 @@ var puncture
 var left
 var right
 var burning
-var life
-var dying
 var dist
 var viscid_top
 var DROP
 var swimming
+var fired
+var x_act
+var firing
 
 func create():
 	visible = true #--- believe I put this due to how Game Maker handles it

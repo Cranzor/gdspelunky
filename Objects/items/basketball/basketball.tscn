@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cntugcy04jbnj"]
 
-[sub_resource type="GDScript" id="GDScript_ewrdj"]
+[ext_resource type="Script" path="res://objects/items/basketball/basketball.gd" id="1_1rc2t"]
 
 [node name="Basketball" type="Node2D"]
+script = ExtResource("1_1rc2t")
+object_name = "basketball"
