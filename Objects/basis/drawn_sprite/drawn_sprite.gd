@@ -31,7 +31,6 @@ var col_bot
 var can_pick_up
 var bounce_factor
 var friction_factor
-var bloodless
 var cost
 var for_sale
 var cimg
@@ -54,6 +53,9 @@ var swimming
 var fired
 var x_act
 var firing
+var hit
+var orig_x
+var orig_y
 
 func create():
 	visible = true #--- believe I put this due to how Game Maker handles it

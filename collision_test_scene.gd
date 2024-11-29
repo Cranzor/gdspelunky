@@ -9,7 +9,7 @@ func _ready():
 	gml.instance_create(60, 0, Objects.yell_help)
 	gml.instance_create(72, 0, Objects.small_collect)
 	gml.instance_create(84, 0, Objects.barrier_emitter)
-	gml.instance_create(110, 0, Objects.damsel_kiss)
+	gml.instance_create(110, 0, Objects.alien)
 
 func _input(event: InputEvent) -> void:
 	if Input.is_key_pressed(KEY_0):

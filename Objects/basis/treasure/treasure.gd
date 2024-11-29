@@ -15,11 +15,11 @@ func _process(delta):
 
 
 #--- Object functions
-
 const STATIC = 0
 var can_collect
 var y_off
 var state
+
 
 func create():
 	# action_inherited

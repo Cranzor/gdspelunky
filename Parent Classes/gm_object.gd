@@ -21,6 +21,7 @@ var dying
 var life
 var UP
 var DOWN
+var bloodless
 
 #--- want access to these for all objects, so defining here
 var collision_bounds_offset_left_x

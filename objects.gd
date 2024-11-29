@@ -167,7 +167,7 @@ var udjat_eye = 'res://objects/collectibles/udjat_eye/udjat_eye.tscn' # DONE
 
 #effects
 var big_collect = 'res://objects/effects/big_collect/big_collect.tscn' # DONE
-#var blood = 'res://objects/effects/blood/blood.tscn'
+var blood = 'res://objects/effects/blood/blood.tscn' # DONE
 var blood_spark = 'res://objects/effects/blood_spark/blood_spark.tscn' # DONE
 var blood_trail = 'res://objects/effects/blood_trail/blood_trail.tscn' # DONE
 var bone = 'res://objects/effects/bone/bone.tscn' # DONE
@@ -176,7 +176,7 @@ var bubble = 'res://objects/effects/bubble/bubble.tscn' # DONE
 var burn = 'res://objects/effects/burn/burn.tscn' # DONE
 var drip = 'res://objects/effects/drip/drip.tscn' # DONE
 #var explosion = 'res://objects/effects/explosion/explosion.tscn'
-#var flame = 'res://objects/effects/flame/flame.tscn'
+var flame = 'res://objects/effects/flame/flame.tscn' # DONE
 var flame_trail = 'res://objects/effects/flame_trail/flame_trail.tscn' # DONE
 var flare_spark = 'res://objects/effects/flare_spark/flare_spark.tscn' # PROGRESS (fix animation)
 #var fly = 'res://objects/effects/fly/fly.tscn'
@@ -191,7 +191,7 @@ var poof = 'res://objects/effects/poof/poof.tscn' # DONE
 var psychic_create = 'res://objects/effects/psychic_create/psychic_create.tscn' # DONE
 var psychic_create2 = 'res://objects/effects/psychic_create2/psychic_create2.tscn' # DONE
 var psychic_create_p = 'res://objects/effects/psychic_create_p/psychic_create_p.tscn' # DONE
-#var psychic_wave = 'res://objects/effects/psychic_wave/psychic_wave.tscn'
+var psychic_wave = 'res://objects/effects/psychic_wave/psychic_wave.tscn' # DONE
 #var psychic_wave_p = 'res://objects/effects/psychic_wave_p/psychic_wave_p.tscn'
 var rope_burn = 'res://objects/effects/rope_burn/rope_burn.tscn' # DONE
 var rubble = 'res://objects/effects/rubble/rubble.tscn' # DONE
@@ -210,7 +210,7 @@ var yellow_trail = 'res://objects/effects/yellow_trail/yellow_trail.tscn' # DONE
 
 
 #enemies
-#var alien = 'res://objects/enemies/alien/alien.tscn'
+var alien = 'res://objects/enemies/alien/alien.tscn' # DONE
 #var alien_boss = 'res://objects/enemies/alien_boss/alien_boss.tscn'
 #var alien_eject = 'res://objects/enemies/alien_eject/alien_eject.tscn'
 var barrier = 'res://objects/enemies/barrier/barrier.tscn' # DONE
@@ -218,7 +218,7 @@ var barrier_emitter = 'res://objects/enemies/barrier_emitter/barrier_emitter.tsc
 #var bat = 'res://objects/enemies/bat/bat.tscn'
 #var caveman = 'res://objects/enemies/caveman/caveman.tscn'
 var caveman_worship = 'res://objects/enemies/caveman_worship/caveman_worship.tscn' # DONE
-#var dead_fish = 'res://objects/enemies/dead_fish/dead_fish.tscn'
+var dead_fish = 'res://objects/enemies/dead_fish/dead_fish.tscn' # DONE
 var enemy_sight = 'res://objects/enemies/enemy_sight/enemy_sight.tscn' # DONE
 var entrance_check = 'res://objects/enemies/entrance_check/entrance_check.tscn' # DONE
 #var fire_frog = 'res://objects/enemies/fire_frog/fire_frog.tscn'
@@ -288,7 +288,7 @@ var machete = 'res://objects/items/machete/machete.tscn' # DONE
 var machete_pre = 'res://objects/items/machete_pre/machete_pre.tscn' # DONE
 var mattock = 'res://objects/items/mattock/mattock.tscn' # DONE
 var mattock_head = 'res://objects/items/mattock_head/mattock_head.tscn' # DONE
-#var mattock_hit = 'res://objects/items/mattock_hit/mattock_hit.tscn'
+var mattock_hit = 'res://objects/items/mattock_hit/mattock_hit.tscn' # DONE
 var mattock_pre = 'res://objects/items/mattock_pre/mattock_pre.tscn' # DONE
 var parachute = 'res://objects/items/parachute/parachute.tscn' # DONE
 var pistol = 'res://objects/items/pistol/pistol.tscn' # DONE
@@ -436,7 +436,7 @@ var shrub_scroll = 'res://objects/other/intro/shrub_scroll/shrub_scroll.tscn' # 
 
 #other\title
 var basket = 'res://objects/other/title/basket/basket.tscn' # DONE
-#var bat_target = 'res://objects/other/title/bat_target/bat_target.tscn'
+var bat_target = 'res://objects/other/title/bat_target/bat_target.tscn' # DONE
 var button_highscore = 'res://objects/other/title/button_highscore/button_highscore.tscn' # DONE
 var copy = 'res://objects/other/title/copy/copy.tscn' # DONE
 var level13_sign = 'res://objects/other/title/level13_sign/level13_sign.tscn' # DONE

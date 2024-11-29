@@ -25,7 +25,6 @@ var y_vel_limit
 var favor
 var sac_count
 var counts_as_kill
-var swimming
 
 var LEFT
 var RIGHT
@@ -45,6 +44,13 @@ var y_delta
 
 var s_spikes_blood
 var s_alien_boss_hurt
+
+var bubble_timer
+var bubble_timer_max
+var PAUSE
+
+func step():
+	pass
 
 func _init():
 	#---XML basic attributes

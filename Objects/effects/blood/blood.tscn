@@ -1,3 +1,7 @@
-[gd_scene format=3 uid="uid://6opg1aewv85r"]
+[gd_scene load_steps=2 format=3 uid="uid://6opg1aewv85r"]
+
+[ext_resource type="Script" path="res://objects/effects/blood/blood.gd" id="1_uqbso"]
 
 [node name="Blood" type="Node2D"]
+script = ExtResource("1_uqbso")
+object_name = "blood"
