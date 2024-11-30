@@ -32,9 +32,6 @@ const ON_LADDER = 22
 const HANGING = 23
 const DUCKTOHANG = 24
 
-const UP = 101
-const DOWN = 102
-
 var blink
 var k_jump_pressed
 var player
@@ -63,7 +60,6 @@ var k_attack_pressed
 var whipping
 var cant_jump
 var k_jumped
-var firing
 var firing_max
 var firing_pistol_max
 var firing_shotgun_max
@@ -112,7 +108,6 @@ var p_dummy5
 
 
 
-var swimming
 var splash
 var burn
 
@@ -212,6 +207,12 @@ var final_x_vel = 0
 var final_y_vel = 0
 	
 func create():
+	# ---[FLAG] setting these here
+	UP = 101
+	DOWN = 102
+	# ---
+	
+	
 	# for debugging
 	first_level_skip = 1
 	level_skip = 1

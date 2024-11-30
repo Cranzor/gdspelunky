@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://balg8630wkw4n"
-path="res://.godot/imported/image 0.png-9e6fcbb292fc50ba23e2616daa44ebfa.ctex"
+path="res://.godot/imported/image 0.png-a2637532db405a28c043b3169efcc8ef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Objects (old)/Player1/Animations/s_crawl_left/image 0.png"
-dest_files=["res://.godot/imported/image 0.png-9e6fcbb292fc50ba23e2616daa44ebfa.ctex"]
+source_file="res://objects_old/Player1/Animations/s_crawl_left/image 0.png"
+dest_files=["res://.godot/imported/image 0.png-a2637532db405a28c043b3169efcc8ef.ctex"]
 
 [params]
 

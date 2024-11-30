@@ -10,35 +10,35 @@ var spectacles
 var web_cannon
 var pistol
 var mitt
-var paste = preload("res://Test Scenes/paste.tscn")
+var paste = preload("res://test_scenes/paste.tscn")
 var spring_shoes
 var spike_shoes
 var machete
-var bomb_box = preload("res://Test Scenes/bomb_box.tscn")
+var bomb_box = preload("res://test_scenes/bomb_box.tscn")
 var bow
 var compass
 var para_pickup
 var rope_pile
 
-var bomb_bag = preload("res://Test Scenes/bomb_bag.tscn")
+var bomb_bag = preload("res://test_scenes/bomb_bag.tscn")
 
-var rock = preload("res://Test Scenes/jar.tscn")
-var jar = preload("res://Test Scenes/jar.tscn")
+var rock = preload("res://test_scenes/jar.tscn")
+var jar = preload("res://test_scenes/jar.tscn")
 var solid
 var giant_spider
-var web = preload("res://Test Scenes/lamp.tscn")
+var web = preload("res://test_scenes/lamp.tscn")
 var locked_chest
-var crate = preload("res://Test Scenes/lamp.tscn")
+var crate = preload("res://test_scenes/lamp.tscn")
 var damsel: bool
-var damsel_object = preload("res://Test Scenes/lamp.tscn")
+var damsel_object = preload("res://test_scenes/lamp.tscn")
 var water
-var fake_bones = preload("res://Test Scenes/bones.tscn")
-var bones = preload("res://Test Scenes/bones.tscn")
-var skull = preload("res://Test Scenes/skull.tscn")
-var gold_bar = preload("res://Test Scenes/jar.tscn")
-var gold_bars = preload('res://Test Scenes/jar.tscn')
-var emerald_big = preload("res://Test Scenes/lamp.tscn")
-var sapphire_big = preload("res://Test Scenes/lamp.tscn")
+var fake_bones = preload("res://test_scenes/bones.tscn")
+var bones = preload("res://test_scenes/bones.tscn")
+var skull = preload("res://test_scenes/skull.tscn")
+var gold_bar = preload("res://test_scenes/jar.tscn")
+var gold_bars = preload('res://test_scenes/jar.tscn')
+var emerald_big = preload("res://test_scenes/lamp.tscn")
+var sapphire_big = preload("res://test_scenes/lamp.tscn")
 
 var idol: bool
 var dark
@@ -50,44 +50,44 @@ var s_lush
 var s_brick
 
 
-@onready var block = preload("res://Test Scenes/block.tscn")
-@onready var brick = preload("res://Test Scenes/brick.tscn")
-@onready var ladder_orange = preload("res://Test Scenes/ladder.tscn")
-@onready var ladder_top = preload("res://Test Scenes/ladder_top.tscn")
-@onready var spikes = preload("res://Test Scenes/spikes.tscn")
-@onready var push_block = preload("res://Test Scenes/test_block.tscn")
-@onready var entrance = preload("res://Test Scenes/entrance.tscn")
-@onready var exit = preload("res://Test Scenes/exit.tscn")
-@onready var altar_left = preload("res://Test Scenes/altar_left.tscn")
-@onready var altar_right = preload("res://Test Scenes/altar_right.tscn")
-@onready var sac_altar_left = preload("res://Test Scenes/sac_altar_left.tscn")
-@onready var sac_altar_right = preload("res://Test Scenes/sac_altar_right.tscn")
+@onready var block = preload("res://test_scenes/block.tscn")
+@onready var brick = preload("res://test_scenes/brick.tscn")
+@onready var ladder_orange = preload("res://test_scenes/ladder.tscn")
+@onready var ladder_top = preload("res://test_scenes/ladder_top.tscn")
+@onready var spikes = preload("res://test_scenes/spikes.tscn")
+@onready var push_block = preload("res://test_scenes/test_block.tscn")
+@onready var entrance = preload("res://test_scenes/entrance.tscn")
+@onready var exit = preload("res://test_scenes/exit.tscn")
+@onready var altar_left = preload("res://test_scenes/altar_left.tscn")
+@onready var altar_right = preload("res://test_scenes/altar_right.tscn")
+@onready var sac_altar_left = preload("res://test_scenes/sac_altar_left.tscn")
+@onready var sac_altar_right = preload("res://test_scenes/sac_altar_right.tscn")
 @onready var bg_kali_body = 'bg_kali_body'
 @onready var kali_head = preload("res://KaliHead.tscn")
-@onready var chest = preload("res://Test Scenes/chest.tscn")
-@onready var gold_idol = preload("res://Test Scenes/gold_idol.tscn")
-@onready var giant_tiki_head = preload("res://Test Scenes/giant_tiki_head.tscn")
+@onready var chest = preload("res://test_scenes/chest.tscn")
+@onready var gold_idol = preload("res://test_scenes/gold_idol.tscn")
+@onready var giant_tiki_head = preload("res://test_scenes/giant_tiki_head.tscn")
 @onready var bg_tiki = 'bg_tiki'
 @onready var bg_tiki_arms = 'bg_tiki_arms'
 @onready var bg_dice_sign = 'bg_dice_sign'
-@onready var s_ice_block = preload("res://Test Scenes/ice_block.tscn")#sprite
+@onready var s_ice_block = preload("res://test_scenes/ice_block.tscn")#sprite
 @onready var bg_wanted = 'bg_wanted'
-@onready var brickSmooth = preload("res://Test Scenes/brick_smooth.tscn")
-@onready var lamp_red = preload("res://Test Scenes/lamp_red.tscn")
-@onready var lamp = preload("res://Test Scenes/lamp.tscn")
-@onready var shopkeeper = preload("res://Test Scenes/shopkeeper.tscn")
-@onready var sign = preload("res://Test Scenes/sign.tscn")
-@onready var s_sign_general = preload("res://Test Scenes/sign.tscn")
-@onready var s_sign_bomb = preload("res://Test Scenes/sign.tscn")
-@onready var s_sign_weapon = preload("res://Test Scenes/sign.tscn")
-@onready var s_sign_clothing = preload("res://Test Scenes/sign.tscn")
-@onready var s_sign_rare = preload("res://Test Scenes/sign.tscn")
-@onready var s_sign_craps = preload("res://Test Scenes/sign.tscn")
-@onready var s_sign_kissing = preload("res://Test Scenes/sign.tscn")
-@onready var dice = preload("res://Test Scenes/dice.tscn")
-@onready var snake = preload("res://Test Scenes/snake.tscn")
-@onready var ruby_big = preload("res://Test Scenes/ruby_big.tscn")
-@onready var mattock = preload("res://Test Scenes/mattock.tscn")
+@onready var brickSmooth = preload("res://test_scenes/brick_smooth.tscn")
+@onready var lamp_red = preload("res://test_scenes/lamp_red.tscn")
+@onready var lamp = preload("res://test_scenes/lamp.tscn")
+@onready var shopkeeper = preload("res://test_scenes/shopkeeper.tscn")
+@onready var sign = preload("res://test_scenes/sign.tscn")
+@onready var s_sign_general = preload("res://test_scenes/sign.tscn")
+@onready var s_sign_bomb = preload("res://test_scenes/sign.tscn")
+@onready var s_sign_weapon = preload("res://test_scenes/sign.tscn")
+@onready var s_sign_clothing = preload("res://test_scenes/sign.tscn")
+@onready var s_sign_rare = preload("res://test_scenes/sign.tscn")
+@onready var s_sign_craps = preload("res://test_scenes/sign.tscn")
+@onready var s_sign_kissing = preload("res://test_scenes/sign.tscn")
+@onready var dice = preload("res://test_scenes/dice.tscn")
+@onready var snake = preload("res://test_scenes/snake.tscn")
+@onready var ruby_big = preload("res://test_scenes/ruby_big.tscn")
+@onready var mattock = preload("res://test_scenes/mattock.tscn")
 
 var s_water_top
 var s_lava_top
@@ -146,16 +146,16 @@ var s_tree_branch_dead_l
 var s_tree_branch_left
 var s_grave_ash
 
-var giant_spider_hang = preload("res://Test Scenes/bat.tscn")
+var giant_spider_hang = preload("res://test_scenes/bat.tscn")
 var scarab
-var bat = preload("res://Test Scenes/bat.tscn")
-var spider_hang = preload("res://Test Scenes/spider_hang.tscn")
-var caveman = preload("res://Test Scenes/snake.tscn")
+var bat = preload("res://test_scenes/bat.tscn")
+var spider_hang = preload("res://test_scenes/spider_hang.tscn")
+var caveman = preload("res://test_scenes/snake.tscn")
 var key
 var arrow_trap_left_lit
-var arrow_trap_left = preload("res://Test Scenes/lamp.tscn")
+var arrow_trap_left = preload("res://test_scenes/lamp.tscn")
 var arrow_trap_right_lit
-var arrow_trap_right = preload("res://Test Scenes/lamp.tscn")
+var arrow_trap_right = preload("res://test_scenes/lamp.tscn")
 var grave
 var ash_grave
 var gold_nugget

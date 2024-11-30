@@ -10,16 +10,16 @@ var scores_sign
 var start_sign
 var level5_sign
 var tutorial_sign
-var rope = preload("res://Test Scenes/rope.tscn")
-var brick_smooth = preload("res://Test Scenes/brick_smooth.tscn")
-var brick = preload("res://Test Scenes/brick.tscn")
-var hard_block = preload("res://Test Scenes/brick.tscn")
-var title_logo = preload("res://Test Scenes/title_logo.tscn")
+var rope = preload("res://test_scenes/rope.tscn")
+var brick_smooth = preload("res://test_scenes/brick_smooth.tscn")
+var brick = preload("res://test_scenes/brick.tscn")
+var hard_block = preload("res://test_scenes/brick.tscn")
+var title_logo = preload("res://test_scenes/title_logo.tscn")
 var game
 var title
 var bricks
 var copy
-var player = preload("res://Objects/Player1/Player1.tscn")
+var player = preload("res://objects/player1/player1.tscn")
 
 func _ready():
 	MiscScripts.scr_clear_globals()
