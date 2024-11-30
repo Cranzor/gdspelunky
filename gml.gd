@@ -378,7 +378,7 @@ func room_get_name():
 	var room_name = root.room_name
 	return room_name
 
-func draw_sprite_ext(node, sprite, subimg, x, y, xscale, yscale, rot, color, alpha):
+func draw_sprite_ext(sprite, subimg, x, y, xscale, yscale, rot, color, alpha, node):
 	node.sprite_index = sprite
 	node.image_index = subimg
 	node.animated_sprite_node.position = Vector2(x, y)

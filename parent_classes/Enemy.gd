@@ -48,6 +48,7 @@ var s_alien_boss_hurt
 var bubble_timer
 var bubble_timer_max
 var PAUSE
+var HANG
 
 func step():
 	pass

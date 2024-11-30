@@ -192,7 +192,7 @@ var psychic_create = 'res://objects/effects/psychic_create/psychic_create.tscn' 
 var psychic_create2 = 'res://objects/effects/psychic_create2/psychic_create2.tscn' # DONE
 var psychic_create_p = 'res://objects/effects/psychic_create_p/psychic_create_p.tscn' # DONE
 var psychic_wave = 'res://objects/effects/psychic_wave/psychic_wave.tscn' # DONE
-#var psychic_wave_p = 'res://objects/effects/psychic_wave_p/psychic_wave_p.tscn'
+var psychic_wave_p = 'res://objects/effects/psychic_wave_p/psychic_wave_p.tscn' # DONE
 var rope_burn = 'res://objects/effects/rope_burn/rope_burn.tscn' # DONE
 var rubble = 'res://objects/effects/rubble/rubble.tscn' # DONE
 var rubble_dark = 'res://objects/effects/rubble_dark/rubble_dark.tscn' # DONE
@@ -205,7 +205,7 @@ var smoke_puff = 'res://objects/effects/smoke_puff/smoke_puff.tscn' # DONE
 var volcano_flame = 'res://objects/effects/volcano_flame/volcano_flame.tscn' # DONE
 #var web = 'res://objects/effects/web/web.tscn'
 #var web_ball = 'res://objects/effects/web_ball/web_ball.tscn'
-#var yellow_ball = 'res://objects/effects/yellow_ball/yellow_ball.tscn'
+var yellow_ball = 'res://objects/effects/yellow_ball/yellow_ball.tscn' # DONE
 var yellow_trail = 'res://objects/effects/yellow_trail/yellow_trail.tscn' # DONE
 
 
@@ -215,7 +215,7 @@ var alien = 'res://objects/enemies/alien/alien.tscn' # DONE
 #var alien_eject = 'res://objects/enemies/alien_eject/alien_eject.tscn'
 var barrier = 'res://objects/enemies/barrier/barrier.tscn' # DONE
 var barrier_emitter = 'res://objects/enemies/barrier_emitter/barrier_emitter.tscn' # DONE
-#var bat = 'res://objects/enemies/bat/bat.tscn'
+var bat = 'res://objects/enemies/bat/bat.tscn' # DONE
 #var caveman = 'res://objects/enemies/caveman/caveman.tscn'
 var caveman_worship = 'res://objects/enemies/caveman_worship/caveman_worship.tscn' # DONE
 var dead_fish = 'res://objects/enemies/dead_fish/dead_fish.tscn' # DONE
@@ -267,7 +267,7 @@ var slider_bg = 'res://objects/init/slider_bg/slider_bg.tscn' # DONE
 
 
 #items
-#var arrow = 'res://objects/items/arrow/arrow.tscn'
+var arrow = 'res://objects/items/arrow/arrow.tscn' # DONE
 var ball = 'res://objects/items/ball/ball.tscn' # DONE
 var ball2 = 'res://objects/items/ball2/ball2.tscn' # DONE
 var basketball = 'res://objects/items/basketball/basketball.tscn' # DONE
@@ -489,7 +489,7 @@ var spears_left = 'res://objects/traps/spears_left/spears_left.tscn' # DONE
 var spear_trap_lit = 'res://objects/traps/spear_trap_lit/spear_trap_lit.tscn' # DONE
 #var spear_trap_top = 'res://objects/traps/spear_trap_top/spear_trap_top.tscn'
 var spikes = 'res://objects/traps/spikes/spikes.tscn' # DONE
-#var spring_trap = 'res://objects/traps/spring_trap/spring_trap.tscn'
+var spring_trap = 'res://objects/traps/spring_trap/spring_trap.tscn' # DONE
 var temp = 'res://objects/traps/temp/temp.tscn' # DONE
 var thwomp_trap = 'res://objects/traps/thwomp_trap/thwomp_trap.tscn' # DONE
 var trap_block = 'res://objects/traps/trap_block/trap_block.tscn' # DONE

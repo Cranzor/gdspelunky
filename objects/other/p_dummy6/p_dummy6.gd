@@ -1,4 +1,3 @@
-
 extends DrawnSprite
 
 
@@ -17,14 +16,13 @@ func _process(delta):
 #--- Object functions
 
 
-#func create():
-    #    # DY:  dummy actor for end
+func create():
+	# DY:  dummy actor for end
 
-#    if (global.i"damsel): sprite_index = s_damsel_left"
-#    elif (global.i"tunnel_man): sprite_index = s_tunnel_left"
+	if (global.is_damsel): sprite_index = "damsel_left"
+	elif (global.is_tunnel_man): sprite_index = "tunnel_left"
 
-    
 
-#func draw():
-    #    image_xscale = -1
-#    draw_sprite_ext(sprite_index, -1, position.x, position.y, image_xscale, image_yscale, image_angle, image_blend, image_alpha)
+func draw():
+	image_xscale = -1
+	gml.draw_sprite_ext(sprite_index, -1, position.x, position.y, image_xscale, image_yscale, image_angle, image_blend, image_alpha, self)

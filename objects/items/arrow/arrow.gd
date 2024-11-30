@@ -1,4 +1,3 @@
-
 extends Item
 
 
@@ -17,77 +16,74 @@ func _process(delta):
 #--- Object functions
 
 
-#func alarm_1():
-#    gml.instance_create(position.x, position.y, Objects.explosion)
-#    if (global.graphics_high):
+func alarm_1():
+	gml.instance_create(position.x, position.y, Objects.explosion)
+	if (global.graphics_high):
 
-#        MiscScripts.scr_create_flame(position.x, position.y, 3)
+		MiscScripts.scr_create_flame(position.x, position.y, 3)
 
 
-#    if (held):
+	if (held):
+		var character = gml.get_instance("character") #---[FLAG] may need to change this for multiplayer
+		if (character): character.hold_item = 0
 
-#        if (character): character.hold_item = 0
+	gml.instance_destroy(self)
 
-#    gml.instance_destroy(self)
 
-    
+func alarm_2():
+	safe = false
 
-#func alarm_2():
-#    safe = false
 
-    
+func create():
+	# action_inherited
+	super()
 
-#func create():
-#    # action_inherited
-#    super()
+	# main_code
+	type = "arrow"
+	PlatformEngine.make_active(self)
+	Collision.set_collision_bounds(self, -4, -4, 4, 4)
+	my_grav = 0.2
 
-#    # main_code
-#    type = "arrow"
-#    PlatformEngine.make_active(self)
-#    Collision.set_collision_bounds(self, -4, -4, 4, 4)
-#    my_grav = 0.2
 
-    
+func draw():
+	gml.draw_sprite_ext(sprite_index, image_index, position.x, position.y, 1, 1, image_angle, gml.c_white, 1, self)
+	
 
-#func draw():
-#    draw_sprite_ext(sprite_index, image_index, position.x, position.y, 1, 1, image_angle, c_white, 1)
+func step():
+	# action_inherited
+	super()
 
-    
+	# main_code
+	var direction #--- making declaration here
+	if (x_vel > 0 and y_vel < 0):
 
-#func step():
-#    # action_inherited
-#    super()
+		direction = gml.radtodeg(gml.arctan(-y_vel/x_vel))
 
-#    # main_code
-#    if (x_vel > 0 and y_vel < 0):
+	elif (x_vel < 0 and y_vel < 0):
 
-#        direction = radtodeg(arctan(-y_vel/x_vel))
+		direction = 180 - gml.radtodeg(gml.arctan(-y_vel/-x_vel))
 
-#    elif (x_vel < 0 and y_vel < 0):
+	elif (x_vel > 0 and y_vel > 0):
 
-#        direction = 180 - radtodeg(arctan(-y_vel/-x_vel))
+		direction = gml.radtodeg(gml.arctan(y_vel/x_vel))
 
-#    elif (x_vel > 0 and y_vel > 0):
+	elif (x_vel < 0 and y_vel > 0):
 
-#        direction = radtodeg(arctan(y_vel/x_vel))
+		direction = 180 + gml.radtodeg(gml.arctan(y_vel/-x_vel))
 
-#    elif (x_vel < 0 and y_vel > 0):
+	elif (x_vel < 0): direction = 180
+	elif (not stuck): direction = 0
 
-#        direction = 180 + radtodeg(arctan(y_vel/-x_vel))
+	image_angle = direction
 
-#    elif (x_vel < 0): direction = 180
-#    elif (not stuck): direction = 0
+	# DY:  ensure the arrow does not shoot through the target in the Moon challenge
+	if (InLevel.is_room("moon")):
 
-#    image_angle = direction
-
-#    # DY:  ensure the arrow does not shoot through the target in the Moon challenge
-#    if (InLevel.is_room("r_moon")):
-
-#        if (gml.instance_exists("target")):
-    
-#            if (position.x > target.position.x and position.y > target.position.y-16 and position.y < target.position.y+16 and:
-#                gml.distance_to_object(target) < 4)
-        
-#                position.x = target.position.x+4
-#                x_vel = 0
-#                y_vel = 0
+		if (gml.instance_exists("target")):
+			var target = gml.get_instance("target")
+			if (position.x > target.position.x and position.y > target.position.y-16 and position.y < target.position.y+16 and
+				gml.distance_to_object("target", self) < 4):
+		
+				position.x = target.position.x+4
+				x_vel = 0
+				y_vel = 0

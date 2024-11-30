@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://b1ly40lnxteor"]
 
-[sub_resource type="GDScript" id="GDScript_sd7ad"]
+[ext_resource type="Script" path="res://objects/items/arrow/arrow.gd" id="1_h5sk8"]
 
 [node name="Arrow" type="Node2D"]
+script = ExtResource("1_h5sk8")
+object_name = "arrow"

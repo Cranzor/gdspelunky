@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bwho3cnlfckf8"]
 
-[sub_resource type="GDScript" id="GDScript_5l3il"]
+[ext_resource type="Script" path="res://objects/effects/yellow_ball/yellow_ball.gd" id="1_451fl"]
 
 [node name="YellowBall" type="Node2D"]
+script = ExtResource("1_451fl")
+object_name = "yellow_ball"

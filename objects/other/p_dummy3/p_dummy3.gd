@@ -1,13 +1,17 @@
 extends DrawnSprite
 
+
 func _ready():
 	object_setup()
+
 
 func _physics_process(_delta):
 	object_tick()
 
+
 func _process(delta):
 	object_process(delta)
+
 
 #--- Object functions
 var climb_snd_toggle
@@ -16,8 +20,9 @@ const ROPEDROP = 1
 const LEFT = 0
 const RIGHT = 0
 
+
 func create():
-	# dummy actor for intro
+	#DY: dummy actor for intro
 
 	image_speed = 0.6
 	climb_snd_toggle = false
@@ -31,6 +36,7 @@ func create():
 	#LEFT = 0
 	#RIGHT = 1
 	facing = RIGHT
+
 
 func step():	
 	position.y += y_vel
@@ -70,25 +76,24 @@ func step():
 		
 			position.y += 2
 	
-		if (alarm_2_countdown.frames_to_count_down < 1): alarm_2_countdown.start(8)
+		if (alarm_2_countdown.frames_to_count_down < 1): alarm_2_countdown.start(8) #---[FLAG] check frames_to_count_down to make sure it's accurate
+
 
 func draw():
-	#if (facing == RIGHT): image_xscale = -1
-	#else: image_xscale = 1
-	
+	if (facing == RIGHT): image_xscale = -1
+	else: image_xscale = 1
 
-	if (facing == RIGHT): animated_sprite_node.flip_h = true
-	else: animated_sprite_node.flip_h = false
+	gml.draw_sprite_ext(sprite_index, -1, position.x, position.y, image_xscale, image_yscale, image_angle, image_blend, image_alpha, self)
 
-	#draw_sprite_ext(sprite_index, -1, position.x, position.y, image_xscale, image_yscale, image_angle, image_blend, image_alpha) #--- Not needed?
 
 func alarm_0():
 	var rope = gml.instance_create(position.x+16, position.y, Objects.rope_throw)
 	rope.falling = true
 	rope.armed = true
-	#alarm_1(50) #--- Guess this was deleted?
+	#alarm_1(50) #--- commenting out as alarm_1 doesn't exist
 	status = 3
 	Audio.play_sound(global.snd_throw)
+
 
 func alarm_2():
 	if (climb_snd_toggle): Audio.play_sound(global.snd_climb1)
