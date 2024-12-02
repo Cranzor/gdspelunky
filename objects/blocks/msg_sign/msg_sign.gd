@@ -19,7 +19,6 @@ var message2: String
 
 
 func collision_with_character():
-	print(self.position)
 	global.message = message
 	global.message2 = message2
 	global.message_timer = 200

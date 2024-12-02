@@ -363,7 +363,10 @@ func bounding_box_setup():
 	var sprite = get_animation()
 	
 	if sprite != null:
-		object_size = sprites.sprite_database[sprite]["mask"]["bounding_box"][1]
+		if sprites.sprite_database[sprite]["mask"]["shape"] == "RECTANGLE":
+			object_size = sprites.sprite_database[sprite]["mask"]["collision_rectangles"][1]
+		else:
+			object_size = sprites.sprite_database[sprite]["mask"]["bounding_box"][1]
 	else:
 		var no_sprite_size = Vector2(0, 0)
 		object_size = no_sprite_size
@@ -497,8 +500,12 @@ func run_draw_event(obj):
 		obj.draw()
 
 func run_collision_with(obj):
+	if position == Vector2(240, 64):
+		var oh = "oh"
+
 	for object in collision_with:
-		if gml.collision_rectangle(position.x, position.y, object_size.x, object_size.y, object, 0, 0):
+		#--- fixed an issue here in which object_size by itself was used. for collision_rectangle, object size + position must be passed in
+		if gml.collision_rectangle(position.x, position.y, position.x + object_size.x, position.y + object_size.y, object, 0, 0):
 			other = gml.instance_nearest(position.x, position.y, object)
 			var callable = collision_with[object]
 			callable.call()

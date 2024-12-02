@@ -186,6 +186,7 @@ func instance_destroy(obj): #'Destroys current instance' ---  Should probably st
 
 func collision_rectangle(x1,y1,x2,y2,obj,_prec,_notme): #"This function tests whether there is a collision between the (filled) rectangle with the indicated opposite corners and entities of object obj. For example, you can use this to test whether an area is free of obstacles."
 	var intersecting = false
+	
 	var rect = Rect2(Vector2(x1, y1), Vector2(abs(x2 - x1), abs(y2 - y1)))
 	
 	var nodes_to_check = collision_handling.get_nodes_to_check(obj, rect)
