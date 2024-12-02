@@ -186,7 +186,8 @@ func scr_get_joy(key):
 	pass
 	
 func scr_get_key(key):
-	pass
+	var returned_key = GlobalInput.get_keyboard_key_from_action(key)
+	return returned_key
 
 func scr_init(): #--- add the rest of this script later
 	global.graphics_high = true

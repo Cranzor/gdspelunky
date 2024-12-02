@@ -240,7 +240,7 @@ var olmec_slam = 'res://objects/enemies/olmec_slam/olmec_slam.tscn' # DONE
 #var piranha = 'res://objects/enemies/piranha/piranha.tscn'
 #var scarab = 'res://objects/enemies/scarab/scarab.tscn'
 #var skeleton = 'res://objects/enemies/skeleton/skeleton.tscn'
-#var snake = 'res://objects/enemies/snake/snake.tscn'
+var snake = 'res://objects/enemies/snake/snake.tscn' # DONE
 #var spider = 'res://objects/enemies/spider/spider.tscn'
 var spider_hang = 'res://objects/enemies/spider_hang/spider_hang.tscn' # DONE
 #var tomb_lord = 'res://objects/enemies/tomb_lord/tomb_lord.tscn'
@@ -473,7 +473,7 @@ var x_tutorial = 'res://objects/other/title/x_tutorial/x_tutorial.tscn' # DONE
 #traps
 var arrow_repeater_l = 'res://objects/traps/arrow_repeater_l/arrow_repeater_l.tscn' # DONE
 var arrow_repeater_r = 'res://objects/traps/arrow_repeater_r/arrow_repeater_r.tscn' # DONE
-#var arrow_trap_left = 'res://objects/traps/arrow_trap_left/arrow_trap_left.tscn'
+var arrow_trap_left = 'res://objects/traps/arrow_trap_left/arrow_trap_left.tscn' # DONE
 var arrow_trap_left_lit = 'res://objects/traps/arrow_trap_left_lit/arrow_trap_left_lit.tscn' # DONE
 #var arrow_trap_right = 'res://objects/traps/arrow_trap_right/arrow_trap_right.tscn'
 var arrow_trap_right_lit = 'res://objects/traps/arrow_trap_right_lit/arrow_trap_right_lit.tscn' # DONE

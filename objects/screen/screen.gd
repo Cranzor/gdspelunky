@@ -388,20 +388,14 @@ func begin_step():
 				var str_len = gml.string_length(global.message)*8
 				var n = 320 - str_len
 				n = ceil(n / 2)
-				#draw_text(n, 216, str(global.message))
-				message.position = Vector2(n, 216)
-				message.text = global.message
-				message.visible = true
+				gml.draw_text(n, 216, str(global.message), "small_font", gml.c_white, "global_message", self)
 
-				#if (not InLevel.is_room("tutorial")): message2.add_theme_color_override(gml.c_yellow)
-				if (InLevel.is_room("tutorial")): message2.add_theme_color_override(gml.c_white)
+				var text_color = gml.c_white
+				if (not InLevel.is_room("tutorial")): gml.c_yellow
 				str_len = gml.string_length(global.message2)*8
 				n = 320 - str_len
 				n = ceil(n / 2)
-				#draw_text(n, 224, str(global.message2))
-				message2.position = Vector2(n, 224)
-				message2.text = global.message2
-				message2.visible = true
+				gml.draw_text(n, 224, str(global.message2), "small_font", text_color, "global_message2", self)
 		
 				global.message_timer -= 1
 			

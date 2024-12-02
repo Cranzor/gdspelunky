@@ -83,8 +83,7 @@ var frogs
 var fullscreen
 var fullscreenargument
 var game_start
-var gamepad_on
-var gamepad_onargument
+var gamepad_on = false
 var gen_black_market
 var gen_giant_spider
 var gen_gold_entrance
@@ -125,30 +124,30 @@ var is_damsel
 var is_tunnel_man
 var items_bought
 var items_stolen
-var joy_attack_val
-var joy_bomb_val
-var joy_flare_val
-var joy_item_val
-var joy_jump_val
-var joy_pay_val
-var joy_rope_val
-var joy_run_val
-var joy_start_val
+var joy_attack_val = "attack"
+var joy_bomb_val = "bomb"
+var joy_flare_val = "flare"
+var joy_item_val = "item"
+var joy_jump_val = "jump"
+var joy_pay_val = "pay"
+var joy_rope_val = "rope"
+var joy_run_val = "run"
+var joy_start_val = "start"
 var kali_gift
 var kali_punish
 var keep_score
-var key_attack_val
-var key_bomb_val
-var key_down_val
-var key_flare_val
-var key_item_val
-var key_jump_val
-var key_left_val
-var key_pay_val
-var key_right_val
-var key_rope_val
-var key_run_val
-var key_up_val
+var key_attack_val = "attack"
+var key_bomb_val = "bomb"
+var key_down_val = "down"
+var key_flare_val = "flare"
+var key_item_val = "item"
+var key_jump_val = "jump"
+var key_left_val = "left"
+var key_pay_val = "pay"
+var key_right_val = "right"
+var key_rope_val = "rope"
+var key_run_val = "run"
+var key_up_val = "up"
 var kills
 var kisses_bought
 var lake

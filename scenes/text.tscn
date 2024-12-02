@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://dytv5sjfhlovf"]
+
+[ext_resource type="Script" path="res://scenes/text.gd" id="1_hsrfu"]
+[ext_resource type="FontFile" uid="uid://cjfa4ea02s5yi" path="res://fonts/main_font.png" id="2_snm5p"]
+[ext_resource type="FontFile" uid="uid://dgd06bxddo4pq" path="res://fonts/small_font.png" id="3_btxxi"]
+
+[node name="Text" type="Label"]
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_snm5p")
+script = ExtResource("1_hsrfu")
+main_font = ExtResource("2_snm5p")
+small_font = ExtResource("3_btxxi")

@@ -5,6 +5,41 @@ extends Node
 
 var all_inputs = {}
 
+var keyboard_in_use = true
+
+const XBOX_BUTTON_INDEX_WITH_BUTTON_NAME: Dictionary = {
+	0 : "A",
+	1 : "B",
+	2 : "X",
+	3 : "Y",
+	4 : "SELECT",
+	5 : "HOME",
+	6 : "START",
+	7 : "L3",
+	8 : "R3",
+	9 : "LB",
+	10 : "RB",
+	11 : "UP",
+	12 : "DOWN",
+	13 : "LEFT",
+	14 : "RIGHT",
+}
+
+var actions_with_keyboard_keys = {
+	"attack" : "",
+	"bomb" : "",
+	"flare" : "",
+	"item" : "",
+	"jump" : "",
+	"pay" : "",
+	"rope" : "",
+	"run" : "",
+	"start" : "",
+	"left" : "",
+	"right" : "",
+	"up" : "",
+}
+
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("start") == true:
 		all_inputs["start"] = true
@@ -50,9 +85,7 @@ func _process(delta: float) -> void:
 	
 	if Input.is_key_pressed(KEY_ESCAPE):
 		all_inputs["escape"] = true
-	
-	
-		
+
 
 func check_input(input):
 	if all_inputs.has(input):
@@ -61,3 +94,31 @@ func check_input(input):
 			return true
 
 	return false
+
+# switches between keyboard and gamepad modes globally
+func _input(event: InputEvent) -> void:
+	if event is InputEventKey:
+		keyboard_in_use = true
+	elif event is InputEventJoypadButton:
+		keyboard_in_use = false
+
+func get_keyboard_key_from_action(action):
+	if actions_with_keyboard_keys[action] == "":
+		var events = str(InputMap.action_get_events(action))
+		var regex = RegEx.new()
+		regex.compile("InputEventKey: keycode=\\d+ \\((.+)\\)")
+		var result = regex.search(events)
+		var key = result.get_string(1)
+		actions_with_keyboard_keys[action] = key
+		return key.to_upper()
+	else:
+		return actions_with_keyboard_keys[action]
+
+func get_gamepad_button_from_action(action):
+	var events = str(InputMap.action_get_events(action))
+	var regex = RegEx.new()
+	regex.compile("InputEventJoypadButton: button_index=(\\d+)")
+	var result = regex.search(events)
+	var index = int(result.get_string(1))
+	var button = XBOX_BUTTON_INDEX_WITH_BUTTON_NAME[index]
+	return button

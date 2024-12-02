@@ -28,9 +28,9 @@ func create():
 	elif (n < 30): sprite_index = "brick_gold_big"
 	elif (InLevel.is_level() and position.x > 1 and position.x < gml.room_width()-16 and position.y > 1 and position.y < gml.room_height()-16):
 
-		if (randi_range(1,100) == 1): gml.instance_create(position.x+8, position.y+8, "sapphire_big")
-		elif (randi_range(1,120) == 1): gml.instance_create(position.x+8, position.y+8, "emerald_big")
-		elif (randi_range(1,140) == 1): gml.instance_create(position.x+8, position.y+8, "ruby_big")
+		if (randi_range(1,100) == 1): gml.instance_create(position.x+8, position.y+8, Objects.sapphire_big)
+		elif (randi_range(1,120) == 1): gml.instance_create(position.x+8, position.y+8, Objects.emerald_big)
+		elif (randi_range(1,140) == 1): gml.instance_create(position.x+8, position.y+8, Objects.ruby_big)
 		elif (randi_range(1,1200) == 1):
 			var level_generation = LevelGeneration.new()
 			level_generation.scr_generate_item(position.x+8, position.y+8, 2)

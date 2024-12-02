@@ -26,7 +26,7 @@ func is_level():
 	# Checks if you are in a level.
 	#
 
-	if (is_room("r_tutorial") or is_room("r_load_level") or is_room("r_level") or is_room("r_level2") or is_room("r_level3") or is_room("r_olmec")): return true
+	if (is_room("tutorial") or is_room("load_level") or is_room("level") or is_room("level2") or is_room("level3") or is_room("olmec")): return true
 	return false
 
 func is_real_level():
@@ -36,7 +36,7 @@ func is_real_level():
 	# Checks if you are in a non-custom level.  (Only used for stat-checking atm.):
 	#
 
-	if (is_room("r_level") or is_room("r_level2") or is_room("r_level3") or is_room("r_olmec")): return true
+	if (is_room("level") or is_room("level2") or is_room("level3") or is_room("olmec")): return true
 	return false
 
 func is_room(name):

@@ -961,9 +961,9 @@ func handle_chest_opening():
 
 					var n = randi_range(1,3)
 					match (n):
-						1:  obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, "emerald")
-						2:  obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, "sapphire")
-						3:  obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, "ruby")
+						1:  obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.emerald)
+						2:  obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.sapphire)
+						3:  obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.ruby)
 					
 					obj.x_vel = randi_range(0,3) - randi_range(0,3)
 					obj.y_vel = -2
@@ -973,9 +973,9 @@ func handle_chest_opening():
 					var n = randi_range(1,3)
 					match (n):
 					
-						1:  obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, "emerald_big")
-						2:  obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, "sapphire_big")
-						3:  obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, "ruby_big")
+						1:  obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.emerald_big)
+						2:  obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.sapphire_big)
+						3:  obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.ruby_big)
 					
 					obj.x_vel = randi_range(0,3) - randi_range(0,3)
 					obj.y_vel = -2

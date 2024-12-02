@@ -5,6 +5,8 @@ var collision_handling = CollisionHandling.new()
 var sprite_database = Sprites.new()
 var object_database = ObjectDatabase.new()
 
+const TEXT = preload("res://scenes/text.tscn")
+
 #For tile_add
 @export_dir var bg_folder
 @export var bg_holder_path: String
@@ -287,8 +289,42 @@ func sprite_index(sprite_name: String, node):
 func get_sprite_index(node):
 	pass
 
-func draw_text(x, y, string, font: String, color: Color): #--- added font and color values here
-	pass
+
+#--- font represents draw_set_font, and color represents draw_set_color. name is used to identify the label node
+func draw_text(x, y, string: String, font: String, color: Color, name: String, node):
+	#--- capitalizing the full string as the fonts don't support lowercase letters
+	string = string.to_upper()
+	
+	#--- add a holder for text if it doesn't exist
+	var text_holder = node.get_node("Text")
+	if text_holder == null:
+		var default_node = Node.new()
+		default_node.name = "Text"
+		node.add_child(default_node)
+		text_holder = node.get_node("Text")
+	
+	#--- create label node for string if it doesn't exist
+	var string_node = node.get_node("Text/" + name.to_pascal_case())
+	if string_node == null:
+		var text_node: Label = TEXT.instantiate()
+		text_node.global_position = Vector2(x, y)
+		text_node.name = name.to_pascal_case()
+		text_node.text = string
+		text_node.add_theme_color_override("font_color", color)
+		
+		if font == "main_font":
+			text_node.add_theme_font_override("font", text_node.main_font)
+		elif font == "small_font":
+			text_node.add_theme_font_override("font", text_node.small_font)
+			
+		text_holder.add_child(text_node)
+		string_node = node.get_node("Text/" + name)
+	
+	#--- setting the text (in case of updates) and making the string node visible because it hides itself each frame
+	else:
+		string_node.text = string
+		string_node.text_displayed = true
+	
 
 func string_length(passed_string: String):
 	return passed_string.length()
@@ -351,7 +387,7 @@ func room_height(): #Changing this to function. Return the height of current sce
 	return 544 #-------------------------- temporary
 
 func room_width():
-	pass
+	return 400 #------ temporary
 
 func view(view_value: String):
 	var view = get_tree().get_first_node_in_group("view")
