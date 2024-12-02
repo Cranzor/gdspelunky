@@ -946,7 +946,7 @@ func handle_chest_opening():
 			chest_instance.sprite_index = "chest_open"
 			if (randi_range(1,12) == 1 and global.curr_level > 0):
 			
-				var obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, "bomb")
+				var obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.bomb)
 				obj.x_vel = randi_range(0,3) - randi_range(0,3)
 				obj.y_vel = -2
 				obj.sprite_index = "bomb_armed"

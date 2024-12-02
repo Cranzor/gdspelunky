@@ -323,6 +323,7 @@ func draw_text(x, y, string: String, font: String, color: Color, name: String, n
 	
 	#--- setting the text (in case of updates) and making the string node visible because it hides itself each frame
 	else:
+		string_node.position = Vector2(x, y)
 		string_node.text = string
 		string_node.text_displayed = true
 	
