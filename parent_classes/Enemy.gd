@@ -49,6 +49,7 @@ var bubble_timer
 var bubble_timer_max
 var PAUSE
 var HANG
+var DROWNED
 
 func step():
 	pass

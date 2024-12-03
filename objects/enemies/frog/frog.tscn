@@ -1,3 +1,7 @@
-[gd_scene format=3 uid="uid://bel6870plswvi"]
+[gd_scene load_steps=2 format=3 uid="uid://bel6870plswvi"]
+
+[ext_resource type="Script" path="res://objects/enemies/frog/frog.gd" id="1_yfysq"]
 
 [node name="Frog" type="Node2D"]
+script = ExtResource("1_yfysq")
+object_name = "frog"
