@@ -25,7 +25,7 @@ func _process(delta):
 #        sprite_index = "box"
 
 
-    
+	
 
 #func mouse left button pressed():
 #    if (not on):

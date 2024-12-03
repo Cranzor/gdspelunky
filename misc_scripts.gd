@@ -183,7 +183,8 @@ func scr_reset_highscores():
 	pass
 
 func scr_get_joy(key):
-	pass
+	var returned_key = GlobalInput.get_gamepad_button_from_action(key)
+	return returned_key
 	
 func scr_get_key(key):
 	var returned_key = GlobalInput.get_keyboard_key_from_action(key)

@@ -40,6 +40,21 @@ var actions_with_keyboard_keys = {
 	"up" : "",
 }
 
+var actions_with_gamepad_buttons = {
+	"attack" : "",
+	"bomb" : "",
+	"flare" : "",
+	"item" : "",
+	"jump" : "",
+	"pay" : "",
+	"rope" : "",
+	"run" : "",
+	"start" : "",
+	"left" : "",
+	"right" : "",
+	"up" : "",
+}
+
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("start") == true:
 		all_inputs["start"] = true
@@ -99,8 +114,11 @@ func check_input(input):
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey:
 		keyboard_in_use = true
+		global.gamepad_on = false
 	elif event is InputEventJoypadButton:
 		keyboard_in_use = false
+		global.gamepad_on = true
+
 
 func get_keyboard_key_from_action(action):
 	if actions_with_keyboard_keys[action] == "":
@@ -109,16 +127,21 @@ func get_keyboard_key_from_action(action):
 		regex.compile("InputEventKey: keycode=\\d+ \\((.+)\\)")
 		var result = regex.search(events)
 		var key = result.get_string(1)
-		actions_with_keyboard_keys[action] = key
+		actions_with_keyboard_keys[action] = key.to_upper()
 		return key.to_upper()
 	else:
 		return actions_with_keyboard_keys[action]
 
+#--- have to update this to account for "joypad axis" with shoulder buttons. and also support sticks too
 func get_gamepad_button_from_action(action):
-	var events = str(InputMap.action_get_events(action))
-	var regex = RegEx.new()
-	regex.compile("InputEventJoypadButton: button_index=(\\d+)")
-	var result = regex.search(events)
-	var index = int(result.get_string(1))
-	var button = XBOX_BUTTON_INDEX_WITH_BUTTON_NAME[index]
-	return button
+	if actions_with_gamepad_buttons[action] == "":
+		var events = str(InputMap.action_get_events(action))
+		var regex = RegEx.new()
+		regex.compile("InputEventJoypadButton: button_index=(\\d+)")
+		var result = regex.search(events)
+		var index = int(result.get_string(1))
+		var button = XBOX_BUTTON_INDEX_WITH_BUTTON_NAME[index]
+		actions_with_keyboard_keys[action] = button.to_upper()
+		return button.to_upper()
+	else:
+		return actions_with_keyboard_keys[action]
