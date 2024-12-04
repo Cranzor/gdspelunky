@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crlmkrx6jesc3"
-path="res://.godot/imported/prite625_0.png-76182cd8d8a376253c9f6487a4173fbb.ctex"
+uid="uid://uvb1nolbss7w"
+path="res://.godot/imported/sprite624_2.png-b7203d77cf50e430d2620400628d28bc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/enemies/prite625/prite625_0.png"
-dest_files=["res://.godot/imported/prite625_0.png-76182cd8d8a376253c9f6487a4173fbb.ctex"]
+source_file="res://sprites/enemies/sprite624/sprite624_2.png"
+dest_files=["res://.godot/imported/sprite624_2.png-b7203d77cf50e430d2620400628d28bc.ctex"]
 
 [params]
 

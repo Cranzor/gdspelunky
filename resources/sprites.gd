@@ -5090,7 +5090,7 @@ const sprite_database = {
 		"transparent" : false,
 		"folder_path" : "res://sprites/enemies/piranha_right"
 	},
-	"prite624" : {
+	"sprite624" : {
 		"origin" : Vector2(0, 0),
 		"mask" : {
 			"separate" : true,
@@ -5102,9 +5102,9 @@ const sprite_database = {
 		"preload" : true,
 		"smooth_edges" : false,
 		"transparent" : false,
-		"folder_path" : "res://sprites/enemies/prite624"
+		"folder_path" : "res://sprites/enemies/sprite624"
 	},
-	"prite625" : {
+	"sprite625" : {
 		"origin" : Vector2(0, 0),
 		"mask" : {
 			"separate" : true,
@@ -5116,7 +5116,7 @@ const sprite_database = {
 		"preload" : true,
 		"smooth_edges" : false,
 		"transparent" : false,
-		"folder_path" : "res://sprites/enemies/prite625"
+		"folder_path" : "res://sprites/enemies/sprite625"
 	},
 	"sight" : {
 		"origin" : Vector2(0, 0),

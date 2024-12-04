@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://d4ei24eu38lfi"]
 
-[sub_resource type="GDScript" id="GDScript_nhtmb"]
+[ext_resource type="Script" path="res://objects/enemies/skeleton/skeleton.gd" id="1_i28cb"]
 
 [node name="Skeleton" type="Node2D"]
+script = ExtResource("1_i28cb")
+object_name = "skeleton"

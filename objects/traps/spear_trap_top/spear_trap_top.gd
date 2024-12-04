@@ -1,4 +1,3 @@
-
 extends Solid
 
 
@@ -17,123 +16,120 @@ func _process(delta):
 #--- Object functions
 
 
-#func alarm_0():
-#    arrow = gml.instance_create(position.x-16, position.y+4, Objects.arrow)
-#    arrow.x_vel = -5
-
-    
-
-#func create():
-#    # action_inherited
-#    super()
-
-#    # main_code
-#    fired = 0
-#    fired_max = 50
-#    prox = 4
-#    invincible = false
-#    image_speed = 0.5
-#    # DY:  alarm_0(50)
-
-    
-
-#func destroy():
-#    if (not clean_death and not global.clean_solids):
-
-#        rubble = gml.instance_create(position.x+8+gml.rand(0,8)-gml.rand(0,8), position.y+8+gml.rand(0,8)-gml.rand(0,8), Objects.rubble)
-#        rubble.sprite_index = "rubble_tan"
-#        rubble = gml.instance_create(position.x+8+gml.rand(0,8)-gml.rand(0,8), position.y+8+gml.rand(0,8)-gml.rand(0,8), Objects.rubble_small)
-#        rubble.sprite_index = "rubble_tan_small"
-#        rubble = gml.instance_create(position.x+8+gml.rand(0,8)-gml.rand(0,8), position.y+8+gml.rand(0,8)-gml.rand(0,8), Objects.rubble_small)
-#        rubble.sprite_index = "rubble_tan_small"
+func alarm_0():
+	var arrow = gml.instance_create(position.x-16, position.y+4, Objects.arrow)
+	arrow.x_vel = -5
 
 
-#    global.check_water = true
+func create():
+	# action_inherited
+	super()
 
-    
-
-#func step():
-#    if (fired > 0): fired -= 1
-
-#    range = 64
-
-#    if (fired == 0 and abs(player1.position.y-position.y-8) < prox and player1.position.x < position.x and:
-#        point_distance(position.x+8, position.y+8, player1.position.x, player1.position.y) < range)
-
-#        gml.instance_create(position.x-16, position.y, Objects.spears_left)
-#        fired = fired_max
+	# main_code
+	fired = 0
+	fired_max = 50
+	prox = 4
+	invincible = false
+	image_speed = 0.5
+	# DY:  alarm_0(50)
 
 
-#    obj = instance_nearest(position.x, position.y, enemy)
-#    if (obj): 
-#    if (fired == 0 and abs(obj.position.y-position.y) < prox and obj.position.x < position.x and:
-#        point_distance(position.x, position.y, obj.position.x, obj.position.y) < range)
+func destroy():
+	if (not clean_death and not global.clean_solids):
 
-#        gml.instance_create(position.x-16, position.y, Objects.spears_left)
-#        fired = fired_max
-
-
-#    obj = instance_nearest(position.x, position.y, moveable_solid)
-#    if (obj): 
-#    if (fired == 0 and abs(obj.position.y-position.y) < prox and obj.position.x < position.x and:
-#        point_distance(position.x, position.y, obj.position.x, obj.position.y) < range)
-
-#        gml.instance_create(position.x-16, position.y, Objects.spears_left)
-#        fired = fired_max
+		var rubble = gml.instance_create(position.x+8+gml.rand(0,8)-gml.rand(0,8), position.y+8+gml.rand(0,8)-gml.rand(0,8), Objects.rubble)
+		rubble.sprite_index = "rubble_tan"
+		rubble = gml.instance_create(position.x+8+gml.rand(0,8)-gml.rand(0,8), position.y+8+gml.rand(0,8)-gml.rand(0,8), Objects.rubble_small)
+		rubble.sprite_index = "rubble_tan_small"
+		rubble = gml.instance_create(position.x+8+gml.rand(0,8)-gml.rand(0,8), position.y+8+gml.rand(0,8)-gml.rand(0,8), Objects.rubble_small)
+		rubble.sprite_index = "rubble_tan_small"
 
 
-#    obj = instance_nearest(position.x, position.y, item)
-#    if (obj): 
-#    if (fired == 0 and abs(obj.position.y-position.y-8) < prox and obj.position.x < position.x+8 and:
-#        point_distance(position.x+8, position.y+8, obj.position.x, obj.position.y) < range)
-
-#        gml.instance_create(position.x-16, position.y, Objects.spears_left)
-#        fired = fired_max
+	global.check_water = true
 
 
-#    # DY:  right
+func step():
+	if (fired > 0): fired -= 1
 
-#    if (fired == 0 and abs(player1.position.y-position.y-8) < prox and player1.position.x > position.x+8 and:
-#        point_distance(position.x+8, position.y+8, player1.position.x, player1.position.y) < range)
+	spear_range = 64
+	var player1 = gml.get_instance("player1") #---[FLAG] may have to change this for multiplayer
+	if (fired == 0 and abs(player1.position.y-position.y-8) < prox and player1.position.x < position.x and
+		gml.point_distance(position.x+8, position.y+8, player1.position.x, player1.position.y) < range):
 
-#        spears = gml.instance_create(position.x+16, position.y, Objects.spears_left)
-#        spears.sprite_index = "spears_right"
-#        fired = fired_max
-
-
-#    obj = instance_nearest(position.x, position.y, enemy)
-#    if (obj): 
-#    if (fired == 0 and abs(obj.position.y-position.y) < prox and obj.position.x > position.x and:
-#        point_distance(position.x, position.y, obj.position.x, obj.position.y) < range)
-
-#        spears = gml.instance_create(position.x+16, position.y, Objects.spears_left)
-#        spears.sprite_index = "spears_right"
-#        fired = fired_max
+		gml.instance_create(position.x-16, position.y, Objects.spears_left)
+		fired = fired_max
 
 
-#    obj = instance_nearest(position.x, position.y, moveable_solid)
-#    if (obj): 
-#    if (fired == 0 and abs(obj.position.y-position.y) < prox and obj.position.x > position.x and:
-#        point_distance(position.x, position.y, obj.position.x, obj.position.y) < range)
+	var obj = gml.instance_nearest(position.x, position.y, "enemy")
+	if (obj):
+		if (fired == 0 and abs(obj.position.y-position.y) < prox and obj.position.x < position.x and
+			gml.point_distance(position.x, position.y, obj.position.x, obj.position.y) < range):
 
-#        spears = gml.instance_create(position.x+16, position.y, Objects.spears_left)
-#        spears.sprite_index = "spears_right"
-#        fired = fired_max
-
-
-#    obj = instance_nearest(position.x, position.y, item)
-#    if (obj): 
-#    if (fired == 0 and abs(obj.position.y-position.y-8) < prox and obj.position.x > position.x+8 and:
-#        point_distance(position.x+8, position.y+8, obj.position.x, obj.position.y) < range)
-
-#        spears = gml.instance_create(position.x+16, position.y, Objects.spears_left)
-#        spears.sprite_index = "spears_right"
-#        fired = fired_max
+			gml.instance_create(position.x-16, position.y, Objects.spears_left)
+			fired = fired_max
 
 
-#    if ((position.x > gml.view("xview")-8 and position.x < gml.view("xview") + gml.view("wview")+8 and:
-#            position.y > gml.view("yview")-8 and position.y < gml.view("yview") + gml.view("hview")+8))
+	obj = gml.instance_nearest(position.x, position.y, "moveable_solid")
+	if (obj):
+		if (fired == 0 and abs(obj.position.y-position.y) < prox and obj.position.x < position.x and
+			gml.point_distance(position.x, position.y, obj.position.x, obj.position.y) < range):
 
-#    if (not gml.collision_point(position.x, position.y+16, "solid", 0, 0)):
+			gml.instance_create(position.x-16, position.y, Objects.spears_left)
+			fired = fired_max
 
-#        gml.instance_destroy(self)
+
+	obj = gml.instance_nearest(position.x, position.y, "item")
+	if (obj):
+		if (fired == 0 and abs(obj.position.y-position.y-8) < prox and obj.position.x < position.x+8 and
+			gml.point_distance(position.x+8, position.y+8, obj.position.x, obj.position.y) < range):
+
+			gml.instance_create(position.x-16, position.y, Objects.spears_left)
+			fired = fired_max
+
+
+	# DY:  right
+
+	if (fired == 0 and abs(player1.position.y-position.y-8) < prox and player1.position.x > position.x+8 and
+		gml.point_distance(position.x+8, position.y+8, player1.position.x, player1.position.y) < range):
+
+			var spears = gml.instance_create(position.x+16, position.y, Objects.spears_left)
+			spears.sprite_index = "spears_right"
+			fired = fired_max
+
+
+	obj = gml.instance_nearest(position.x, position.y, "enemy")
+	if (obj):
+		if (fired == 0 and abs(obj.position.y-position.y) < prox and obj.position.x > position.x and
+			gml.point_distance(position.x, position.y, obj.position.x, obj.position.y) < range):
+
+			var spears = gml.instance_create(position.x+16, position.y, Objects.spears_left)
+			spears.sprite_index = "spears_right"
+			fired = fired_max
+
+
+	obj = gml.instance_nearest(position.x, position.y, "moveable_solid")
+	if (obj):
+		if (fired == 0 and abs(obj.position.y-position.y) < prox and obj.position.x > position.x and
+			gml.point_distance(position.x, position.y, obj.position.x, obj.position.y) < range):
+
+			var spears = gml.instance_create(position.x+16, position.y, Objects.spears_left)
+			spears.sprite_index = "spears_right"
+			fired = fired_max
+
+
+	obj = gml.instance_nearest(position.x, position.y, "item")
+	if (obj):
+		if (fired == 0 and abs(obj.position.y-position.y-8) < prox and obj.position.x > position.x+8 and
+			gml.point_distance(position.x+8, position.y+8, obj.position.x, obj.position.y) < range):
+
+			var spears = gml.instance_create(position.x+16, position.y, Objects.spears_left)
+			spears.sprite_index = "spears_right"
+			fired = fired_max
+
+
+	if ((position.x > gml.view("xview")-8 and position.x < gml.view("xview") + gml.view("wview")+8 and
+		position.y > gml.view("yview")-8 and position.y < gml.view("yview") + gml.view("hview")+8)):
+
+		if (not gml.collision_point(position.x, position.y+16, "solid", 0, 0)):
+
+			gml.instance_destroy(self)

@@ -36,8 +36,6 @@ var RECOVER
 var bounce_counter
 var bomb_id
 
-@onready var player1 = get_tree().get_first_node_in_group("player1") #--- FLAG change this
-
 var sprite_width
 var sprite_height
 var y_delta
@@ -128,6 +126,7 @@ func enemy_step():
 		y_vel = 0
 		my_grav = 0
 		
+		var player1 = gml.get_instance("player1") #---[FLAG] may have to change this for multiplayer
 		if (player1.facing == 18):
 			position.x = player1.position.x-12
 			facing = 0 

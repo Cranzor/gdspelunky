@@ -25,7 +25,7 @@ var buy_message #--- may want to move this to drawn_sprite. check damsel script
 func create():
 	super()
 	active = true
-	type = "None"
+	type = "none"
 	shop_desc = ""
 	new = true # set to false once player has picked up, currently just used for bow
 	held = false
