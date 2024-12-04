@@ -321,7 +321,6 @@ func object_setup():
 	#---[FLAG] have to set up outside_room function
 	
 	#--- keep the below enabled even if objects are set up in the editor
-	connect_alarms(object_entry)
 	camera_setup()
 	run_create_function(self)
 	
@@ -476,14 +475,6 @@ func alarms_setup(object_entry):
 			new_alarm.timeout.connect(alarm_function)
 			add_child(new_alarm)
 
-func connect_alarms(object_entry):
-	var alarm_nodes = {alarm_0_countdown : "alarm_0", alarm_1_countdown : "alarm_1", alarm_2_countdown : "alarm_2", alarm_3_countdown : "alarm_3", alarm_4_countdown : "alarm_4", alarm_5_countdown : "alarm_5", \
-				alarm_6_countdown : "alarm_6", alarm_7_countdown : "alarm_7", alarm_8_countdown : "alarm_8", alarm_9_countdown : "alarm_9", alarm_10_countdown : "alarm_10", alarm_11_countdown : "alarm_11"}
-	
-	for alarm in alarm_nodes:
-		if alarm:
-			var alarm_function = Callable(self, alarm_nodes[alarm])
-			alarm.timeout.connect(alarm_function)
 
 func collision_with_setup(object_entry):
 	var events: Array = object_entry["events"]

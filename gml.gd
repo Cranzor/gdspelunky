@@ -297,16 +297,15 @@ func draw_text(x, y, string: String, font: String, color: Color, name: String, n
 	string = string.to_upper()
 	
 	#--- add a holder for text if it doesn't exist
-	var text_holder = node.get_node("Text")
-	if text_holder == null:
+	if !node.has_node("Text"):
 		var default_node = Node.new()
 		default_node.name = "Text"
 		node.add_child(default_node)
-		text_holder = node.get_node("Text")
+
+	var text_holder = node.get_node("Text")
 	
 	#--- create label node for string if it doesn't exist
-	var string_node = node.get_node("Text/" + name.to_pascal_case())
-	if string_node == null:
+	if !node.has_node("Text/" + name.to_pascal_case()):
 		var text_node: Label = TEXT.instantiate()
 		text_node.global_position = Vector2(x, y)
 		text_node.name = name.to_pascal_case()
@@ -319,13 +318,13 @@ func draw_text(x, y, string: String, font: String, color: Color, name: String, n
 			text_node.add_theme_font_override("font", text_node.small_font)
 			
 		text_holder.add_child(text_node)
-		string_node = node.get_node("Text/" + name)
+		
+	var string_node = node.get_node("Text/" + name.to_pascal_case())
 	
 	#--- setting the text (in case of updates) and making the string node visible because it hides itself each frame
-	else:
-		string_node.position = Vector2(x, y)
-		string_node.text = string
-		string_node.text_displayed = true
+	string_node.position = Vector2(x, y)
+	string_node.text = string
+	string_node.text_displayed = true
 	
 
 func string_length(passed_string: String):
