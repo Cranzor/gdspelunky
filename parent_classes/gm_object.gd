@@ -115,6 +115,10 @@ var image_index:
 		var index = animated_sprite.get_frame()
 		return index
 
+var subimg:
+	get:
+		return image_index
+
 var image_xscale: float:
 	set(value):
 		if value == -1:

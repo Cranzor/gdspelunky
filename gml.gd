@@ -418,8 +418,13 @@ func room_get_name():
 
 func draw_sprite_ext(sprite, subimg, x, y, xscale, yscale, rot, color, alpha, node):
 	node.sprite_index = sprite
-	node.image_index = subimg
-	node.animated_sprite_node.position = Vector2(x, y)
+	
+	#--- image_index being passed in results in the sprite playing normally. otherwise, a specific frame is set
+	var current_index = node.image_index
+	if subimg != current_index:
+		node.image_index = subimg
+
+	node.animated_sprite_node.global_position = Vector2(x, y)
 	node.animated_sprite_node.scale = Vector2(xscale, yscale)
 	node.animated_sprite_node.rotation_degrees = -rot #--- appears to rotate counter-clockwise in GML
 	node.animated_sprite_node.self_modulate = color
