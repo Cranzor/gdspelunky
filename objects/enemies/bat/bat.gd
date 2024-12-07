@@ -66,6 +66,7 @@ func step():
 
 
 		dir = 0
+		var player1 = gml.get_instance("player1") #---[FLAG] may have to fix this for multiplayer
 		dist = gml.point_distance(position.x+8, position.y+8, player1.position.x, player1.position.y)
 
 		if (status == HANG):

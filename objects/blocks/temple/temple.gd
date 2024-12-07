@@ -34,8 +34,8 @@ func create():
 		elif (randi_range(1,80) == 1): gml.instance_create(position.x+8, position.y+8, Objects.emerald_big)
 		elif (randi_range(1,100) == 1): gml.instance_create(position.x+8, position.y+8, Objects.ruby_big)
 		elif (randi_range(1,1200) == 1):
-			var level_generation = LevelGeneration.new()
-			level_generation.scr_generate_item(position.x+8, position.y+8, 2)
+
+			LevelGeneration.scr_generate_item(position.x+8, position.y+8, 2)
 	
 
 func destroy():

@@ -921,8 +921,8 @@ func handle_item_stealing():
 
 		if (hold_item.cost > 0 and InLevel.is_level()):
 			
-			var level_generation = LevelGeneration.new()
-			if (global.room_path[[level_generation.scr_get_room_x(position.x), level_generation.scr_get_room_y(position.y)]] != 4 and global.room_path[[level_generation.scr_get_room_x(position.x), level_generation.scr_get_room_y(position.y)]] != 5):
+
+			if (global.room_path[[LevelGeneration.scr_get_room_x(position.x), LevelGeneration.scr_get_room_y(position.y)]] != 4 and global.room_path[[LevelGeneration.scr_get_room_x(position.x), LevelGeneration.scr_get_room_y(position.y)]] != 5):
 			
 				CharacterScripts.scr_steal_item()
 				if (gml.instance_exists("shopkeeper")):
@@ -1754,8 +1754,7 @@ func handle_shop_behavior(): #--- Purchasing and games etc. (different shop type
 					# hold_item = null
 				
 			
-			var level_generation = LevelGeneration.new()
-			if ((global.black_market and global.room_path[[level_generation.scr_get_room_x(position.x), level_generation.scr_get_room_y(position.y)]] == 5) or
+			if ((global.black_market and global.room_path[[LevelGeneration.scr_get_room_x(position.x), LevelGeneration.scr_get_room_y(position.y)]] == 5) or
 				(not global.black_market and shopkeeper.style == "Craps")):
 			
 				if (global.thief_level > 0 or global.murderer):
@@ -4229,7 +4228,7 @@ func move_to(x_vel, y_vel):
 			if Collision.is_collision_bottom(1, self):
 				break
 			if Collision.can_land_on_platforms(self):
-				if Collision.is_collision_platform(self)==false and Collision.is_collision_platform_bottom(1, self) and k_down==0:
+				if Collision.is_collision_platform(self)==false and Collision.is_collision_platform_bottom(1, self) and k_down==0: #---TODO: got an error here. 'boot' and 'int' in operator ==
 					break
 					
 			position.y += 1

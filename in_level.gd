@@ -13,8 +13,7 @@ func is_in_shop(x, y):
 	var tx = x
 	var ty = y
 	
-	var level_generation = LevelGeneration.new()
-	if (global.room_path[[level_generation.scr_get_room_x(tx), level_generation.scr_get_room_y(ty)]] == 4 or global.room_path[[level_generation.scr_get_room_x(tx), level_generation.scr_get_room_y(ty)]] == 5):
+	if (global.room_path[[LevelGeneration.scr_get_room_x(tx), LevelGeneration.scr_get_room_y(ty)]] == 4 or global.room_path[[LevelGeneration.scr_get_room_x(tx), LevelGeneration.scr_get_room_y(ty)]] == 5):
 		return true
 
 	return false

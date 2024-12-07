@@ -1,5 +1,4 @@
 extends Node
-class_name LevelGeneration
 
 var jetpack
 var cape_pickup

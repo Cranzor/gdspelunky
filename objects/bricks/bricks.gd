@@ -11,6 +11,5 @@ func _process(delta):
 
 #--- Object functions
 func create():
-	var level_generation = LevelGeneration.new()
-	level_generation.scr_setup_walls(224)
+	LevelGeneration.scr_setup_walls(224)
 	gml.instance_destroy(self)	

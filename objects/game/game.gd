@@ -355,8 +355,8 @@ func create():
 	# sound_loop(snd_music_test)
 
 	if (global.game_start):
-		var level_generation = LevelGeneration.new()
-		level_generation.scr_init_level()
+
+		LevelGeneration.scr_init_level()
 
 func step():
 	game_step_event()
