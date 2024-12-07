@@ -36,8 +36,6 @@ var RECOVER
 var bounce_counter
 var bomb_id
 
-var sprite_width
-var sprite_height
 var y_delta
 
 var s_spikes_blood

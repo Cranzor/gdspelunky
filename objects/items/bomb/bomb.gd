@@ -46,7 +46,7 @@ func create():
 
 
 func destroy():
-	if (enemy_id):
+	if (enemy_id): #---[FLAG] have to check what's going on here. seems to be in item class
 
 		enemy_id.bomb_id = 0
 
@@ -56,7 +56,7 @@ func end_step():
 	#super() #--- commenting out as this seems to do nothing, since item has no end_step function
 
 	# main_code
-	if (!gml.instance_exists("enemy_id")):
+	if (!gml.instance_exists("enemy_id")): #---[FLAG] this need to be fixed to pass in a variable representing the string name of a given enemy. should probably solve this by doing enemy_id.object_name, since enemy_id will hold the node
 
 		enemy_id = 0
 

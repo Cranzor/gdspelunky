@@ -11,6 +11,12 @@ func _ready():
 	gml.instance_create(84, 0, Objects.barrier_emitter)
 	gml.instance_create(110, 0, Objects.alien)
 	gml.instance_create(110, 20, Objects.yellow_ball)
+	
+	var alien: GMObject = gml.get_instance("alien")
+	alien.image_xscale = 2
+	alien.image_yscale = 4
+	print(alien.sprite_width)
+	print(alien.sprite_height)
 
 func _input(event: InputEvent) -> void:
 	if Input.is_key_pressed(KEY_0):

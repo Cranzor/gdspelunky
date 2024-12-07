@@ -124,6 +124,7 @@ var image_xscale: float:
 		if value == -1:
 			animated_sprite_node.flip_h = true
 		else:
+			animated_sprite_node.scale.x = value
 			animated_sprite_node.flip_h = false
 	get:
 		return animated_sprite_node.scale.x #--- [FLAG] may need to be adjusted
@@ -133,6 +134,7 @@ var image_yscale: float:
 		if value == -1:
 			animated_sprite_node.flip_v = true
 		else:
+			animated_sprite_node.scale.y = value
 			animated_sprite_node.flip_v = false
 	get:
 		return animated_sprite_node.scale.y
@@ -150,6 +152,16 @@ var image_blend: Color:
 var image_alpha: int:
 	get:
 		return animated_sprite_node.self_modulate.a
+
+var sprite_width: int: #--- read-only variable that gives the width in pixels based on image_xscale.
+	get:
+		var width = animated_sprite_node.sprite_frames.get_frame_texture(animated_sprite_node.animation, animated_sprite_node.frame).get_width()
+		return abs(width * image_xscale)
+
+var sprite_height: int: #--- read-only variable that gives the width in pixels based on image_yscale.
+	get:
+		var height = animated_sprite_node.sprite_frames.get_frame_texture(animated_sprite_node.animation, animated_sprite_node.frame).get_height()
+		return abs(height * image_yscale)
 
 var x_vel = 0
 var y_vel = 0
