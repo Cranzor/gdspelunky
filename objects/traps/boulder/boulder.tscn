@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cv7qadn1s734b"]
 
-[sub_resource type="GDScript" id="GDScript_ihbpm"]
+[ext_resource type="Script" path="res://objects/traps/boulder/boulder.gd" id="1_k7fsc"]
 
 [node name="Boulder" type="Node2D"]
+script = ExtResource("1_k7fsc")
+object_name = "boulder"

@@ -55,6 +55,8 @@ var firing
 var hit
 var orig_x
 var orig_y
+var LEFT
+var RIGHT
 
 func create():
 	visible = true #--- believe I put this due to how Game Maker handles it

@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bm2fvi2eaoyia"]
 
-[sub_resource type="GDScript" id="GDScript_i1fbn"]
+[ext_resource type="Script" path="res://objects/effects/web/web.gd" id="1_6yhxe"]
 
 [node name="Web" type="Node2D"]
+script = ExtResource("1_6yhxe")
+object_name = "web"

@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://crpu54rn0bg4y"]
 
-[sub_resource type="GDScript" id="GDScript_kscpa"]
+[ext_resource type="Script" path="res://objects/traps/spear_trap_bottom/spear_trap_bottom.gd" id="1_as2fj"]
 
 [node name="SpearTrapBottom" type="Node2D"]
+script = ExtResource("1_as2fj")
+object_name = "spear_trap_bottom"

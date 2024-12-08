@@ -11,6 +11,7 @@ func _ready():
 	gml.instance_create(84, 0, Objects.barrier_emitter)
 	gml.instance_create(110, 0, Objects.alien)
 	gml.instance_create(110, 20, Objects.yellow_ball)
+	gml.instance_create(120, 20, Objects.laser)
 	
 	var alien: GMObject = gml.get_instance("alien")
 	alien.image_xscale = 2

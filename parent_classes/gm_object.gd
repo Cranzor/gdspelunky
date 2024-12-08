@@ -150,6 +150,8 @@ var image_blend: Color:
 		return animated_sprite_node.self_modulate
 		
 var image_alpha: int:
+	set(value):
+		animated_sprite_node.self_modulate.a = value
 	get:
 		return animated_sprite_node.self_modulate.a
 
