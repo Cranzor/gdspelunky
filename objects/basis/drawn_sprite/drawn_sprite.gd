@@ -57,6 +57,8 @@ var orig_x
 var orig_y
 var LEFT
 var RIGHT
+var hp
+var shake_counter
 
 func create():
 	visible = true #--- believe I put this due to how Game Maker handles it

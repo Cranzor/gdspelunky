@@ -14,7 +14,6 @@ var fade_in
 var fade_out
 var fade_level
 
-var draw_status
 var str1
 var str2
 var str3

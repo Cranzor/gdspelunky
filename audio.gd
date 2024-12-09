@@ -26,7 +26,7 @@ func scr_music_fade():
 		
 		else: SS.set_sound_freq(global.mus_cave, SS.get_sound_freq(global.mus_cave)-100)
 	
-func start_music():
+func start_music(): #---[FLAG] have to implement
 	pass
 	
 func stop_all_music():

@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://d1j2iebw7ullm"]
 
-[sub_resource type="GDScript" id="GDScript_ocg5g"]
+[ext_resource type="Script" path="res://objects/stars_room/stars_room.gd" id="1_ok00l"]
 
 [node name="StarsRoom" type="Node2D"]
+script = ExtResource("1_ok00l")
+object_name = "stars_room"

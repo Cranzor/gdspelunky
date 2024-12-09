@@ -12,12 +12,16 @@ func _ready():
 	gml.instance_create(110, 0, Objects.alien)
 	gml.instance_create(110, 20, Objects.yellow_ball)
 	gml.instance_create(120, 20, Objects.laser)
+	#gml.draw_sprite("shopkeeper_icon", -1, gml.view("xview")+64, gml.view("yview")+8, self)
 	
 	var alien: GMObject = gml.get_instance("alien")
 	alien.image_xscale = 2
 	alien.image_yscale = 4
 	print(alien.sprite_width)
 	print(alien.sprite_height)
+
+func _physics_process(delta: float) -> void:
+	gml.draw_sprite("shopkeeper_icon", -1, gml.view("xview")+64, gml.view("yview")+8, self)
 
 func _input(event: InputEvent) -> void:
 	if Input.is_key_pressed(KEY_0):

@@ -26,7 +26,7 @@ var player1 = 'res://objects/player1/player1.tscn' # PROGRESS (need to implement
 var room = 'res://objects/room/room.tscn' # DONE
 var screen = 'res://objects/screen/screen.tscn' # PROGRESS (need to finish begin step)
 var sprite = 'res://objects/sprite/sprite.tscn' # DONE
-#var stars_room = 'res://objects/stars_room/stars_room.tscn'
+var stars_room = 'res://objects/stars_room/stars_room.tscn' # DONE
 #var sun_room = 'res://objects/sun_room/sun_room.tscn'
 var title = 'res://objects/title/title.tscn' # DONE
 #var transition = 'res://objects/transition/transition.tscn'
@@ -223,7 +223,7 @@ var enemy_sight = 'res://objects/enemies/enemy_sight/enemy_sight.tscn' # DONE
 var entrance_check = 'res://objects/enemies/entrance_check/entrance_check.tscn' # DONE
 var fire_frog = 'res://objects/enemies/fire_frog/fire_frog.tscn' # DONE
 var frog = 'res://objects/enemies/frog/frog.tscn' # DONE
-#var ghost = 'res://objects/enemies/ghost/ghost.tscn'
+var ghost = 'res://objects/enemies/ghost/ghost.tscn' # DONE
 #var giant_spider = 'res://objects/enemies/giant_spider/giant_spider.tscn'
 var giant_spider_hang = 'res://objects/enemies/giant_spider_hang/giant_spider_hang.tscn' # DONE
 #var hawkman = 'res://objects/enemies/hawkman/hawkman.tscn'
@@ -249,7 +249,7 @@ var ufo_crash = 'res://objects/enemies/ufo_crash/ufo_crash.tscn' # DONE
 #var vampire = 'res://objects/enemies/vampire/vampire.tscn'
 #var yeti = 'res://objects/enemies/yeti/yeti.tscn'
 #var yeti_king = 'res://objects/enemies/yeti_king/yeti_king.tscn'
-#var zombie = 'res://objects/enemies/zombie/zombie.tscn'
+var zombie = 'res://objects/enemies/zombie/zombie.tscn' # DONE
 
 
 #init

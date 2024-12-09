@@ -326,6 +326,21 @@ func draw_text(x, y, string: String, font: String, color: Color, name: String, n
 	string_node.text = string
 	string_node.text_displayed = true
 	
+func draw_sprite(sprite: String, subimg: int, x, y, node):
+	if subimg == -1:
+		subimg = 0
+		
+	var node_name = sprite.to_pascal_case()
+	if !node.has_node(node_name):
+		var sprite_file_path = sprite_database.sprite_database[sprite]["folder_path"]
+		sprite_file_path += "/" + sprite + "_" + str(subimg) + ".png"
+		var sprite_2d: Sprite2D = Sprite2D.new()
+		sprite_2d.centered = false
+		sprite_2d.set_texture(load(sprite_file_path))
+		sprite_2d.global_position = Vector2(x, y)
+		sprite_2d.name = node_name
+		node.add_child(sprite_2d)
+
 
 func string_length(passed_string: String):
 	return passed_string.length()

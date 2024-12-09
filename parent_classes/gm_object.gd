@@ -1,3 +1,4 @@
+@icon("res://sprites/blocks/shop/sign_rare/sign_rare_0.png")
 extends Node2D
 class_name GMObject
 
@@ -23,6 +24,8 @@ var UP
 var DOWN
 var bloodless
 var IDLE
+var draw_status
+var highscore
 
 #--- want access to these for all objects, so defining here
 var collision_bounds_offset_left_x

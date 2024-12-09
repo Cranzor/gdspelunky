@@ -8,8 +8,6 @@ var py
 var shop_desc
 var new
 
-const LEFT = 18
-const RIGHT = 19
 const DUCKING = 12
 
 var break_pieces

@@ -1,10 +1,8 @@
+@icon("res://sprites/enemies/snake_left/snake_left_0.png")
 extends DrawnSprite
 class_name Enemy
 
-var hp
-
 var shaking
-var shake_counter
 
 var blood_left
 var flying
@@ -26,8 +24,7 @@ var favor
 var sac_count
 var counts_as_kill
 
-var LEFT
-var RIGHT
+
 
 
 var DEAD
