@@ -12,6 +12,7 @@ func _ready():
 	gml.instance_create(110, 0, Objects.alien)
 	gml.instance_create(110, 20, Objects.yellow_ball)
 	gml.instance_create(120, 20, Objects.laser)
+	gml.instance_create(120, 40, Objects.magma)
 	#gml.draw_sprite("shopkeeper_icon", -1, gml.view("xview")+64, gml.view("yview")+8, self)
 	
 	var alien: GMObject = gml.get_instance("alien")

@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://j4g74q5lh3d3"]
 
-[sub_resource type="GDScript" id="GDScript_vnbwh"]
+[ext_resource type="Script" path="res://objects/enemies/ufo/ufo.gd" id="1_ajkgo"]
 
 [node name="Ufo" type="Node2D"]
+script = ExtResource("1_ajkgo")
+object_name = "ufo"

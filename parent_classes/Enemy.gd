@@ -22,7 +22,6 @@ var y_vel_limit
 
 var favor
 var sac_count
-var counts_as_kill
 
 
 

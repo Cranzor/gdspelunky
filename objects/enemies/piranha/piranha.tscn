@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://b2uoty8cy7ltg"]
 
-[sub_resource type="GDScript" id="GDScript_76fps"]
+[ext_resource type="Script" path="res://objects/enemies/piranha/piranha.gd" id="1_n2v30"]
 
 [node name="Piranha" type="Node2D"]
+script = ExtResource("1_n2v30")
+object_name = "piranha"

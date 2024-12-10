@@ -1,4 +1,3 @@
-
 extends Enemy
 
 
@@ -15,190 +14,190 @@ func _process(delta):
 
 
 #--- Object functions
+var can_bite
+var ATTACK_ENEMY
 
 
-#func alarm_0():
-#    can_bite = true
-
-    
-
-#func create():
-#    # action_inherited
-#    super()
-
-#    # main_code
-#    type = "piranha"
-#    image_speed = 0.5
-#    Collision.set_collision_bounds(self, 0, 0, 8, 8)
-#    origX = 0
-#    origY = 0
-#    x_vel = 0
-#    y_vel = 0
-#    x_acc = 0.2
-#    y_acc = 0.2
-#    dir = 0
-#    if (gml.rand(1,2) == 1): dir = 180
-
-#    # DY:  stats
-#    hp = 1
-#    invincible = 0
-
-#    bubble_timer = 0
-#    bubble_timer_max = 40
-
-#    # DY:  status
-#    IDLE = 0
-#    ATTACK = 1
-#    PAUSE = 2
-#    ATTACK_ENEMY = 3
-
-#    can_bite = true
-
-#    status = 0
-#    counter = 0
-
-#    shake_counter = 0
-#    shake_toggle = 1
-
-    
-
-#func step():
-#    if (active):
-
-#    if (hp < 1):
-
-#        MiscScripts.scr_create_blood(position.x+4, position.y+4, 3)
-#        if (counts_as_kill):
-    
-#            if (InLevel.is_real_level()): global.enemy_kills[11] += 1
-#            global.piranhas += 1
-#            global.kills += 1
-    
-#        gml.instance_destroy(self)
+func alarm_0():
+	can_bite = true
 
 
-#    dist = point_distance(position.x+4, position.y+4, character.position.x, character.position.y)
+func create():
+	# action_inherited
+	super()
 
-#    if (status == IDLE):
+	# main_code
+	type = "piranha"
+	image_speed = 0.5
+	Collision.set_collision_bounds(self, 0, 0, 8, 8)
+	orig_x = 0
+	orig_y = 0
+	x_vel = 0
+	y_vel = 0
+	x_acc = 0.2
+	y_acc = 0.2
+	dir = 0
+	if (gml.rand(1,2) == 1): dir = 180
 
-#        if (dir == 0):
-    
-#            if (gml.collision_point(position.x+8+2, position.y, "water", 0, 0) and not (gml.collision_point(position.x+10, position.y, "solid", 0, 0))):
-#                PlatformEngine.move_to(1,0)
-#            else: dir = 180
-    
-#        else:
-    
-#            if (gml.collision_point(position.x-2, position.y, "water", 0, 0) and not (gml.collision_point(position.x-2, position.y, "solid", 0, 0))):
-#                PlatformEngine.move_to(-1,0)
-#            else: dir = 0
-    
+	# DY:  stats
+	hp = 1
+	invincible = 0
 
-#        if (dist < 90 and character.swimming and not character.dead):
-    
-#            status = ATTACK
-    
-    
-#        obj = instance_nearest(position.x, position.y, caveman)
-#        if (obj): if (obj.hp <= 0) obj = 0
-#        if (!obj): obj = instance_nearest(position.x, position.y, shopkeeper)
-#        if (obj): if (obj.hp <= 0) obj = 0
-#        if (!obj): obj = instance_nearest(position.x, position.y, hawkman)
-#        if (obj): if (obj.hp <= 0) obj = 0
-#        if (!obj): obj = instance_nearest(position.x, position.y, yeti)
-#        if (obj): if (obj.hp <= 0) obj = 0
-#        if (obj):
-    
-#            if (obj.swimming && obj.hp > 0):
-        
-#                status = ATTACK_ENEMY
-        
-    
+	bubble_timer = 0
+	bubble_timer_max = 40
 
-#    elif (status == PAUSE):
+	# DY:  status
+	IDLE = 0
+	ATTACK = 1
+	PAUSE = 2
+	ATTACK_ENEMY = 3
 
-#        can_bite = true
-#        if (counter > 0): counter -= 1
-#        else:
-    
-#            status = IDLE
-#            dir = gml.rand(0,1)*180
-    
+	can_bite = true
 
-#    elif (status == ATTACK && gml.instance_exists("character")):
+	status = 0
+	counter = 0
 
-#        if (dist < 90 and character.swimming and not character.dead):
-    
-#            dir = point_direction(position.x+4, position.y+4, character.position.x, character.position.y)+gml.rand(0,1)-gml.rand(0,1)
-#            if (gml.collision_point(position.x + cos(degtorad(dir)), position.y - sin(degtorad(dir)), "water", 0, 0)):
-#                PlatformEngine.move_to(1 * cos(degtorad(dir)), -1 * sin(degtorad(dir)))
-    
-#        else:
-    
-#            status = PAUSE
-#            counter = gml.rand(20,40)
-    
-
-#    elif (status == ATTACK_ENEMY):
-
-#        obj = instance_nearest(position.x, position.y, caveman)
-#        if (obj): if (obj.hp <= 0) obj = 0
-#        if (!obj): obj = instance_nearest(position.x, position.y, shopkeeper)
-#        if (obj): if (obj.hp <= 0) obj = 0
-#        if (!obj): obj = instance_nearest(position.x, position.y, hawkman)
-#        if (obj): if (obj.hp <= 0) obj = 0
-#        if (!obj): obj = instance_nearest(position.x, position.y, yeti)
-#        if (obj): if (obj.hp <= 0) obj = 0
-#        if (obj):
-    
-#            if (!obj.swimming || obj.hp <= 0):
-        
-#                status = PAUSE
-        
-    
-#        else: status = PAUSE
-    
-#        if (status != PAUSE):
-    
-#            dir = point_direction(position.x+4, position.y+4, obj.position.x+8, obj.position.y+8)+gml.rand(0,1)-gml.rand(0,1)
-#            if (gml.collision_point(position.x + cos(degtorad(dir)), position.y - sin(degtorad(dir)), "water", 0, 0)):
-#                PlatformEngine.move_to(1 * cos(degtorad(dir)), -1 * sin(degtorad(dir)))
-#            else:
-        
-#                status = PAUSE
-#                counter = gml.rand(20,40)
-        
-        
-#            dist = point_distance(position.x+4, position.y+4, obj.position.x+8, obj.position.y+8)
-#            if (dist < 4):
-        
-#                obj.status = 2
-#                if (can_bite):
-            
-#                    obj.hp -= 1
-#                    can_bite = false
-#                    alarm_0(10)
-#                    MiscScripts.scr_create_blood(position.x+4, position.y+4, 1)
-            
-        
-    
-#        else: counter = gml.rand(20,40)
+	shake_counter = 0
+	shake_toggle = 1
 
 
-#    if (bubble_timer > 0): bubble_timer -= 1
-#    else:
+func step():
+	if (active):
 
-#        gml.instance_create(position.x, position.y, Objects.bubble)
-#        bubble_timer = (gml.rand(bubble_timer_max-10, bubble_timer_max+10))
+		if (hp < 1):
+
+			MiscScripts.scr_create_blood(position.x+4, position.y+4, 3)
+			if (counts_as_kill):
+		
+				if (InLevel.is_real_level()): global.enemy_kills[11] += 1
+				global.piranhas += 1
+				global.kills += 1
+		
+			gml.instance_destroy(self)
+
+		var character = gml.get_instance("character") #---[FLAG] may have to change this for multiplayer
+		dist = gml.point_distance(position.x+4, position.y+4, character.position.x, character.position.y)
+
+		if (status == IDLE):
+
+			if (dir == 0):
+		
+				if (gml.collision_point(position.x+8+2, position.y, "water", 0, 0) and not (gml.collision_point(position.x+10, position.y, "solid", 0, 0))):
+					PlatformEngine.move_to(1,0,self)
+				else: dir = 180
+		
+			else:
+		
+				if (gml.collision_point(position.x-2, position.y, "water", 0, 0) and not (gml.collision_point(position.x-2, position.y, "solid", 0, 0))):
+					PlatformEngine.move_to(-1,0,self)
+				else: dir = 0
+		
+
+			if (dist < 90 and character.swimming and not character.dead):
+		
+				status = ATTACK
+		
+		
+			var obj = gml.instance_nearest(position.x, position.y, "caveman")
+			if (obj): if (obj.hp <= 0): obj = 0
+			if (!obj): obj = gml.instance_nearest(position.x, position.y, "shopkeeper")
+			if (obj): if (obj.hp <= 0): obj = 0
+			if (!obj): obj = gml.instance_nearest(position.x, position.y, "hawkman")
+			if (obj): if (obj.hp <= 0): obj = 0
+			if (!obj): obj = gml.instance_nearest(position.x, position.y, "yeti")
+			if (obj): if (obj.hp <= 0): obj = 0
+			if (obj):
+		
+				if (obj.swimming && obj.hp > 0):
+			
+					status = ATTACK_ENEMY
+			
+		
+
+		elif (status == PAUSE):
+
+			can_bite = true
+			if (counter > 0): counter -= 1
+			else:
+		
+				status = IDLE
+				dir = gml.rand(0,1)*180
+		
+
+		elif (status == ATTACK && gml.instance_exists("character")):
+
+			if (dist < 90 and character.swimming and not character.dead):
+		
+				dir = gml.point_direction(position.x+4, position.y+4, character.position.x, character.position.y)+gml.rand(0,1)-gml.rand(0,1)
+				if (gml.collision_point(position.x + cos(gml.degtorad(dir)), position.y - sin(gml.degtorad(dir)), "water", 0, 0)):
+					PlatformEngine.move_to(1 * cos(gml.degtorad(dir)), -1 * sin(gml.degtorad(dir)), self)
+		
+			else:
+		
+				status = PAUSE
+				counter = gml.rand(20,40)
+		
+
+		elif (status == ATTACK_ENEMY):
+
+			var obj = gml.instance_nearest(position.x, position.y, "caveman")
+			if (obj): if (obj.hp <= 0): obj = 0
+			if (!obj): obj = gml.instance_nearest(position.x, position.y, "shopkeeper")
+			if (obj): if (obj.hp <= 0): obj = 0
+			if (!obj): obj = gml.instance_nearest(position.x, position.y, "hawkman")
+			if (obj): if (obj.hp <= 0): obj = 0
+			if (!obj): obj = gml.instance_nearest(position.x, position.y, "yeti")
+			if (obj): if (obj.hp <= 0): obj = 0
+			if (obj):
+		
+				if (!obj.swimming || obj.hp <= 0):
+			
+					status = PAUSE
+			
+		
+			else: status = PAUSE
+		
+			if (status != PAUSE):
+		
+				dir = gml.point_direction(position.x+4, position.y+4, obj.position.x+8, obj.position.y+8)+gml.rand(0,1)-gml.rand(0,1)
+				if (gml.collision_point(position.x + cos(gml.degtorad(dir)), position.y - sin(gml.degtorad(dir)), "water", 0, 0)):
+					PlatformEngine.move_to(1 * cos(gml.degtorad(dir)), -1 * sin(gml.degtorad(dir)), self)
+				else:
+			
+					status = PAUSE
+					counter = gml.rand(20,40)
+			
+			
+				dist = gml.point_distance(position.x+4, position.y+4, obj.position.x+8, obj.position.y+8)
+				if (dist < 4):
+			
+					obj.status = 2
+					if (can_bite):
+				
+						obj.hp -= 1
+						can_bite = false
+						alarm_0_countdown.start(10)
+						MiscScripts.scr_create_blood(position.x+4, position.y+4, 1)
+				
+			
+		
+			else: counter = gml.rand(20,40)
+
+
+		if (bubble_timer > 0): bubble_timer -= 1
+		else:
+
+			gml.instance_create(position.x, position.y, Objects.bubble)
+			bubble_timer = (gml.rand(bubble_timer_max-10, bubble_timer_max+10))
 
 
 
-#    if (dir > 90 and dir < 270):
-#        sprite_index = "piranha_left"
-#    else:
-#        sprite_index = "piranha_right"
-    
-#    if (not gml.collision_point(position.x+4, position.y+4, "water", 0, 0)):
+		if (dir > 90 and dir < 270):
+			sprite_index = "piranha_left"
+		else:
+			sprite_index = "piranha_right"
+		
+		if (not gml.collision_point(position.x+4, position.y+4, "water", 0, 0)):
 
-#        gml.instance_create(position.x, position.y, Objects.fish_bone)
-#        gml.instance_destroy(self)
+			gml.instance_create(position.x, position.y, Objects.fish_bone)
+			gml.instance_destroy(self)

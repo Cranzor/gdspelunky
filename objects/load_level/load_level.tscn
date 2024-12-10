@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://dynaknevhnhvl"]
 
-[sub_resource type="GDScript" id="GDScript_5nl57"]
+[ext_resource type="Script" path="res://objects/load_level/load_level.gd" id="1_bcdoi"]
 
 [node name="LoadLevel" type="Node2D"]
+script = ExtResource("1_bcdoi")
+object_name = "load_level"

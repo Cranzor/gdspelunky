@@ -23,7 +23,6 @@ var armed
 var active
 var held #--- seems easier to put this here since both items and enemies use it
 var bounce
-var safe
 var heavy
 var value
 var col_bot
@@ -59,6 +58,7 @@ var LEFT
 var RIGHT
 var hp
 var shake_counter
+var counts_as_kill
 
 func create():
 	visible = true #--- believe I put this due to how Game Maker handles it

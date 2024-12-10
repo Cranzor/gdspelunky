@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://w6kx4ue8fl8e"]
 
-[sub_resource type="GDScript" id="GDScript_526sj"]
+[ext_resource type="Script" path="res://objects/enemies/alien_boss/alien_boss.gd" id="1_0epbh"]
 
 [node name="AlienBoss" type="Node2D"]
+script = ExtResource("1_0epbh")
+object_name = "alien_boss"

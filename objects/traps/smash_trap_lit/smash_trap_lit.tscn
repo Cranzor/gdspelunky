@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://utxug1o4cr87"]
 
-[sub_resource type="GDScript" id="GDScript_0tmj7"]
+[ext_resource type="Script" path="res://objects/traps/smash_trap_lit/smash_trap_lit.gd" id="1_yy4h6"]
 
 [node name="SmashTrapLit" type="Node2D"]
+script = ExtResource("1_yy4h6")
+object_name = "smash_trap_lit"

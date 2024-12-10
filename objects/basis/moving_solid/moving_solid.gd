@@ -1,6 +1,11 @@
 extends Solid
 class_name MovingSolid
 
+var xv
+var yv
+var xa
+var ya
+
 func _ready():
 	object_setup()
 
