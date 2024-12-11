@@ -93,17 +93,17 @@ func create():
 func draw():
 	life = global.plife
 	if (life < 0): life = 0
-	#draw_set_font(global.my_font)
-	#draw_set_color(c_white)
+	gml.draw_set_font(global.my_font)
+	gml.draw_set_color(gml.c_white)
 	gml.draw_sprite("heart", -1, gml.view("xview")+8, gml.view("yview")+8, self)
-	gml.draw_text(gml.view("xview")+24, gml.view("yview")+8, str(life), "main_font", gml.c_white, "life", self)
+	gml.draw_text(gml.view("xview")+24, gml.view("yview")+8, str(life), "life", self)
 	gml.draw_sprite("shopkeeper_icon", -1, gml.view("xview")+64, gml.view("yview")+8, self)
-	gml.draw_text(gml.view("xview")+64+16, gml.view("yview")+8, str(kills), "main_font", gml.c_white, "kills", self)
+	gml.draw_text(gml.view("xview")+64+16, gml.view("yview")+8, str(kills), "kills", self)
 	if (draw_status < 3):
 
-		#draw_set_font(global.my_font_small)
-		#draw_set_color(c_yellow)
+		gml.draw_set_font(global.my_font_small)
+		gml.draw_set_color(gml.c_yellow)
 		var str_len = gml.string_length("SHOTGUN CHALLENGE BEGINS IN 3...")*8
 		var n = 320 - str_len
 		n = ceil(n / 2)
-		gml.draw_text(n, 216, "SHOTGUN CHALLENGE BEGINS IN " + str(3-draw_status) + "...", "small_font", gml.c_yellow, "shotgun_challenge_message", self)
+		gml.draw_text(n, 216, "SHOTGUN CHALLENGE BEGINS IN " + str(3-draw_status) + "...", "shotgun_challenge_message", self)

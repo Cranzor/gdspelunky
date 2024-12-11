@@ -184,8 +184,8 @@ var mus_title
 var mus_victory
 var music
 var music_vol
-var my_font
-var my_font_small
+var my_font = "main_font"
+var my_font_small = "small_font"
 var new_kills
 var new_money
 var new_saves

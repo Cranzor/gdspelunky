@@ -383,19 +383,19 @@ func begin_step():
 			MiscScripts.scr_draw_hud()
 			if (global.message_timer > 0):
 			
-				#draw_set_font(global.my_fontSmall)
-				#draw_set_color(c_white)
+				gml.draw_set_font(global.my_font_small)
+				gml.draw_set_color(gml.c_white)
 				var str_len = gml.string_length(global.message)*8
 				var n = 320 - str_len
 				n = ceil(n / 2)
-				gml.draw_text(n, 216, str(global.message), "small_font", gml.c_white, "global_message", self)
+				gml.draw_text(n, 216, str(global.message), "global_message", self)
 
 				var text_color = gml.c_white
 				if (not InLevel.is_room("tutorial")): gml.c_yellow
 				str_len = gml.string_length(global.message2)*8
 				n = 320 - str_len
 				n = ceil(n / 2)
-				gml.draw_text(n, 224, str(global.message2), "small_font", text_color, "global_message2", self)
+				gml.draw_text(n, 224, str(global.message2), "global_message2", self)
 		
 				global.message_timer -= 1
 			

@@ -35,6 +35,9 @@ var c_teal = Color(0, 128, 128)
 var c_white = Color(255, 255, 255)
 var c_yellow = Color(255, 255, 0)
 
+var draw_font
+var draw_color
+
 var room_speed = 30
 var view_enabled = true #--- doesn't seem to be false in any instance within the game
 
@@ -290,9 +293,14 @@ func sprite_index(sprite_name: String, node):
 func get_sprite_index(node):
 	pass
 
+func draw_set_font(font: String):
+	draw_font = font
+
+func draw_set_color(color: Color):
+	draw_color = color
 
 #--- font represents draw_set_font, and color represents draw_set_color. name is used to identify the label node
-func draw_text(x, y, string: String, font: String, color: Color, name: String, node):
+func draw_text(x, y, string: String, name: String, node):
 	#--- capitalizing the full string as the fonts don't support lowercase letters
 	string = string.to_upper()
 	
@@ -310,11 +318,11 @@ func draw_text(x, y, string: String, font: String, color: Color, name: String, n
 		text_node.global_position = Vector2(x, y)
 		text_node.name = name.to_pascal_case()
 		text_node.text = string
-		text_node.add_theme_color_override("font_color", color)
+		text_node.add_theme_color_override("font_color", draw_color)
 		
-		if font == "main_font":
+		if draw_font == "main_font":
 			text_node.add_theme_font_override("font", text_node.main_font)
-		elif font == "small_font":
+		elif draw_font == "small_font":
 			text_node.add_theme_font_override("font", text_node.small_font)
 			
 		text_holder.add_child(text_node)
