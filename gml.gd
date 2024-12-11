@@ -285,7 +285,10 @@ func collision_line(x1,y1,x2,y2,obj,_prec,_notme):
 
 func instance_activate_object(obj: String):
 	pass
-	
+
+func instance_activate_region(left, top, width, height, inside):
+	pass
+
 func sprite_index(sprite_name: String, node):
 	var sprite = node.find_child("AnimatedSprite2D")
 	sprite.play(sprite_name)

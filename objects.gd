@@ -27,7 +27,7 @@ var room = 'res://objects/room/room.tscn' # DONE
 var screen = 'res://objects/screen/screen.tscn' # PROGRESS (need to finish begin step)
 var sprite = 'res://objects/sprite/sprite.tscn' # DONE
 var stars_room = 'res://objects/stars_room/stars_room.tscn' # DONE
-#var sun_room = 'res://objects/sun_room/sun_room.tscn'
+var sun_room = 'res://objects/sun_room/sun_room.tscn' # DONE
 var title = 'res://objects/title/title.tscn' # DONE
 #var transition = 'res://objects/transition/transition.tscn'
 
