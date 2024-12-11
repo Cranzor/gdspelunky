@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://oecxisyhmrax"]
 
-[sub_resource type="GDScript" id="GDScript_v1wh5"]
+[ext_resource type="Script" path="res://objects/other/p_dummy2/p_dummy2.gd" id="1_jnra0"]
 
 [node name="PDummy2" type="Node2D"]
+script = ExtResource("1_jnra0")
+object_name = "p_dummy2"

@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://o5ekmshanjkj"]
 
-[sub_resource type="GDScript" id="GDScript_a4lkc"]
+[ext_resource type="Script" path="res://objects/effects/web_ball/web_ball.gd" id="1_2nebp"]
 
 [node name="WebBall" type="Node2D"]
+script = ExtResource("1_2nebp")
+object_name = "web_ball"
