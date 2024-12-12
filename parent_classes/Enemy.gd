@@ -42,6 +42,7 @@ var bubble_timer_max
 var PAUSE
 var HANG
 var DROWNED
+var TURN
 
 func step():
 	pass

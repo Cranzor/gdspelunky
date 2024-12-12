@@ -4,10 +4,4 @@
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_g6deh")
-sprite_index_name = null
-sprite_offset = null
 object_name = "level"
-editor_setup_finished = null
-collision_with = null
-depth = null
-object_size = null

@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://2wxv706jgagk"]
 
-[sub_resource type="GDScript" id="GDScript_w33iy"]
+[ext_resource type="Script" path="res://objects/joy_config/joy_config.gd" id="1_2btr8"]
 
 [node name="JoyConfig" type="Node2D"]
+script = ExtResource("1_2btr8")
+object_name = "joy_config"

@@ -110,23 +110,23 @@ func step():
 		# DY:  shake the screen
 		if (global.shake > 0):
 			var player1 = gml.get_instance("player1") #---[FLAG] may need to change this for player
-			if (player1.position.y < 96 or player1.position.y > gml.room_height-96): view_vborder[0] = 0
-			else: view_vborder[0] = 96
+			if (player1.position.y < 96 or player1.position.y > gml.room_height-96): gml.view_vborder = 0
+			else: gml.view_vborder = 96
 			if (global.shake_toggle or gml.view("yview") <= 0):
 		
-				view_yview += 3
+				gml.view_yview += 3
 				global.shake_toggle = false
 		
-			elif (not global.shake_toggle or gml.view("yview") >= room_height - gml.view("hview")):
+			elif (not global.shake_toggle or gml.view("yview") >= gml.room_height - gml.view("hview")):
 		
-				view_yview -= 3
+				gml.view_yview -= 3
 				global.shake_toggle = true
 		
 			global.shake -= 1
 	
 		else:
 	
-			view_vborder[0] = 96
+			gml.view_vborder = 96
 	
 		#/*
 		#if (global.shake > 0):
@@ -162,7 +162,7 @@ func step():
 	#
 		#*/
 
-		offset = 96
+		var offset = 96
 		# DY:  deactivate all instances outside the region
 	
 		# DY:  this is to prevent water from only getting drained partway
@@ -173,33 +173,36 @@ func step():
 		
 				water_instance.checked = false
 		
-	
-		instance_deactivate_region(gml.view("xview")-offset, gml.view("yview")-offset, gml.view("wview")+offset*2, gml.view("hview")+offset*2, false, true)
+		#--- commenting out the following block due to deactivations only happening when pausing (with few exceptions)
+		#--- one exception is immediately below, but instance_activate_region immediately undoes it
+		#--- also no reason to activate individual objects since they are never deactivated
+		
+		#gml.instance_deactivate_region(gml.view("xview")-offset, gml.view("yview")-offset, gml.view("wview")+offset*2, gml.view("hview")+offset*2, false, true)
 		# DY:  activate all instances inside the region
-		instance_activate_region(gml.view("xview")-offset, gml.view("yview")-offset, gml.view("wview")+offset*2, gml.view("hview")+offset*2, true)
+		#instance_activate_region(gml.view("xview")-offset, gml.view("yview")-offset, gml.view("wview")+offset*2, gml.view("hview")+offset*2, true)
 		# DY:  activate all important instances
 		# DY:  instance_activate_object(solid)
 		# DY:  instance_activate_object(water)
-		instance_activate_object(character)
-		instance_activate_object(rope)
-		instance_activate_object(rope_throw)
-		instance_activate_object(rope_top)
+		#instance_activate_object(character)
+		#instance_activate_object(rope)
+		#instance_activate_object(rope_throw)
+		#instance_activate_object(rope_top)
 		# DY:  instance_activate_object(olmec)
-		instance_activate_object(game)
-		instance_activate_object(globals)
-		instance_activate_object(screen)
-		instance_activate_object(gamepad)
-		instance_activate_object(explosion)
-		instance_activate_object(ghost)
-		instance_activate_object(final_boss)
-		if (gml.instance_exists("player1")):
-			instance_activate_region(player1.position.x-16, player1.position.y-16, player1.position.x+16, player1.position.y+16, true)
-		instance_activate_object(boulder)
-		if (gml.instance_exists("boulder")):
-			instance_activate_region(boulder.position.x-32, boulder.position.y-32, 64, 64, true)
-		instance_activate_object(olmec)
-		if (gml.instance_exists("olmec")):
-			instance_activate_region(olmec.position.x-16, olmec.position.y-16, 96, 96, true)
+		#instance_activate_object(game)
+		#instance_activate_object(globals)
+		#instance_activate_object(screen)
+		#instance_activate_object(gamepad)
+		#instance_activate_object(explosion)
+		#instance_activate_object(ghost)
+		#instance_activate_object(final_boss)
+		#if (gml.instance_exists("player1")):
+		#	instance_activate_region(player1.position.x-16, player1.position.y-16, player1.position.x+16, player1.position.y+16, true)
+		#instance_activate_object(boulder)
+		#if (gml.instance_exists("boulder")):
+		#	instance_activate_region(boulder.position.x-32, boulder.position.y-32, 64, 64, true)
+		#instance_activate_object(olmec)
+		#if (gml.instance_exists("olmec")):
+		#	instance_activate_region(olmec.position.x-16, olmec.position.y-16, 96, 96, true)
 		#/*
 		#with cave_top  if (not gml.collision_point(position.x, position.y+16, "brick", 0, 0)): gml.instance_destroy(self)
 		#with lush_top  if (not gml.collision_point(position.x, position.y+16, "lush", 0, 0)): gml.instance_destroy(self)
@@ -211,14 +214,13 @@ func step():
 
 	# DY:  darkness
 	if (global.dark_level):
-
+		var player1 = gml.get_instance("player1") #---[FLAG] may have to change this for multiplayer
 		# DY:  darkness = 0 : lightest
 		# DY:  darkness = 1 : darkest
-		dist = 160
+		var dist = 160
 		if (global.has_crown): dist = 0
 		elif (gml.instance_exists("flare")):
-	
-			flare = instance_nearest(player1.position.x, player1.position.y, flare)
+			var flare = gml.instance_nearest(player1.position.x, player1.position.y, "flare")
 			dist = flare.dist_to_player
 	
 		

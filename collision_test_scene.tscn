@@ -5,5 +5,5 @@
 [node name="CollisionTestScene" type="Node2D" groups=["objects_holder"]]
 script = ExtResource("1_ebdfj")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." groups=["view"]]
 offset = Vector2(-5, 5)

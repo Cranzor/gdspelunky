@@ -6,6 +6,7 @@ var sprite_database = Sprites.new()
 var object_database = ObjectDatabase.new()
 
 const TEXT = preload("res://scenes/text.tscn")
+const SPRITE = preload("res://scenes/sprite.tscn")
 
 #For tile_add
 @export_dir var bg_folder
@@ -52,6 +53,30 @@ var room_width: int:
 		pass
 	get:
 		return 400 #--- placeholder value
+		
+var view_vborder: int: #--- vertical boundary of camera. original code always has it as view_vborder[0]
+	set(value):
+		view_node.limit_top = value
+	get:
+		return view_node.limit_top
+		
+var view_hborder: int:#--- horizontal boundary of camera. original code always has it as view_hborder[0]. only used in olmec scene
+	set(value):
+		view_node.limit_right = value
+	get:
+		return view_node.limit_right
+
+var view_node: Camera2D:
+	get:
+		return get_tree().get_first_node_in_group("view")
+		
+var view_yview: int:
+	set(value):
+		view_node.offset.y = value
+
+#var view_hview: int:
+	#set(value):
+		#view_node.offset.x = value
 
 func string_char_at(passed_string,index):
 	var character = passed_string[index - 1]
@@ -424,7 +449,7 @@ func get_all_instances(group: String): #Replacement for 'with' keyword
 
 
 func view(view_value: String):
-	var view = get_tree().get_first_node_in_group("view")
+	var view = view_node
 	
 	if view != null:
 		

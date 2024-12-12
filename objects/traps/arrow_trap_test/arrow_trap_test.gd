@@ -1,4 +1,3 @@
-
 extends GMObject
 
 
@@ -15,190 +14,169 @@ func _process(delta):
 
 
 #--- Object functions
+var trap_id
+var arrow
 
 
-#func collision_with_boulder():
-#    if (trap_id == 0):
+func collision_with_boulder():
+	if (trap_id == 0):
 
-#        gml.instance_destroy(self)
+		gml.instance_destroy(self)
 
-#    elif (abs(other.x_vel) > 0 or abs(other.y_vel) > 0):
-
-#        with trap_id
-    
-#            if (fired == 0):
-        
-#                if (facing == 0):
-            
-#                    arrow = gml.instance_create(position.x-2, position.y+4, Objects.arrow)
-#                    arrow.x_vel = -8
-            
-#                else:
-            
-#                    arrow = gml.instance_create(position.x+18, position.y+4, Objects.arrow)
-#                    arrow.x_vel = 8
-            
-#                fired += 1
-#                Audio.play_sound(global.snd_arrow_trap)
-        
-    
-#        gml.instance_destroy(self)
+	elif (abs(other.x_vel) > 0 or abs(other.y_vel) > 0):
+	
+		if (trap_id.fired == 0):
+	
+			if (trap_id.facing == 0):
+		
+				arrow = gml.instance_create(trap_id.position.x-2, trap_id.position.y+4, Objects.arrow)
+				arrow.x_vel = -8
+		
+			else:
+		
+				arrow = gml.instance_create(position.x+18, position.y+4, Objects.arrow)
+				arrow.x_vel = 8
+		
+			trap_id.fired += 1
+			Audio.play_sound(global.snd_arrow_trap)
+		
+	
+		gml.instance_destroy(self)
 
 
-    
+func collision_with_character():
+	var player1 = gml.get_instance("player1") #---[FLAG] may have to change this for multiplayer
+	if (trap_id == 0):
 
-#func collision_with_character():
-#    if (trap_id == 0):
+		gml.instance_destroy(self)
 
-#        gml.instance_destroy(self)
-
-#    elif (abs(other.x_vel) > 0 or abs(other.y_vel) > 0 or:
-#             (player1.sprite_index = "duck_thang_l" and player1.image_index > 6) or
-#             (player1.sprite_index = "damsel_dt_hl" and player1.image_index > 6) or
-#             (player1.sprite_index = "tunnel_dt_hl" and player1.image_index > 6))
-
-#        with trap_id
-    
-#            if (fired == 0):
-        
-#                if (facing == 0):
-            
-#                    arrow = gml.instance_create(position.x-2, position.y+4, Objects.arrow)
-#                    arrow.x_vel = -8
-            
-#                else:
-            
-#                    arrow = gml.instance_create(position.x+18, position.y+4, Objects.arrow)
-#                    arrow.x_vel = 8
-            
-#                fired += 1
-#                Audio.play_sound(global.snd_arrow_trap)
-        
-    
-#        gml.instance_destroy(self)
+	elif (abs(other.x_vel) > 0 or abs(other.y_vel) > 0 or
+		(player1.sprite_index == "duck_to_hang_l" and player1.image_index > 6) or
+		(player1.sprite_index == "damsel_dt_hl" and player1.image_index > 6) or
+		(player1.sprite_index == "tunnel_dt_hl" and player1.image_index > 6)):
+	
+			if (trap_id.fired == 0):
+		
+				if (trap_id.facing == 0):
+			
+					arrow = gml.instance_create(trap_id.position.x-2, trap_id.position.y+4, Objects.arrow)
+					arrow.x_vel = -8
+			
+				else:
+			
+					arrow = gml.instance_create(trap_id.position.x+18, trap_id.position.y+4, Objects.arrow)
+					arrow.x_vel = 8
+			
+				trap_id.fired += 1
+				Audio.play_sound(global.snd_arrow_trap)
+		
+	
+			gml.instance_destroy(self)
 
 
-    
+func collision_with_enemy():
+	if (trap_id == 0):
 
-#func collision_with_enemy():
-#    if (trap_id == 0):
+		gml.instance_destroy(self)
 
-#        gml.instance_destroy(self)
-
-#    elif (abs(other.x_vel) > 0 or abs(other.y_vel) > 0):
-
-#        with trap_id
-    
-#            if (fired == 0):
-        
-#                if (facing == 0):
-            
-#                    arrow = gml.instance_create(position.x-2, position.y+4, Objects.arrow)
-#                    arrow.x_vel = -8
-            
-#                else:
-            
-#                    arrow = gml.instance_create(position.x+18, position.y+4, Objects.arrow)
-#                    arrow.x_vel = 8
-            
-#                fired += 1
-#                Audio.play_sound(global.snd_arrow_trap)
-        
-    
-#        gml.instance_destroy(self)
+	elif (abs(other.x_vel) > 0 or abs(other.y_vel) > 0):
+	
+		if (trap_id.fired == 0):
+	
+			if (trap_id.facing == 0):
+		
+				arrow = gml.instance_create(trap_id.position.x-2, trap_id.position.y+4, Objects.arrow)
+				arrow.x_vel = -8
+		
+			else:
+		
+				arrow = gml.instance_create(trap_id.position.x+18, trap_id.position.y+4, Objects.arrow)
+				arrow.x_vel = 8
+		
+			trap_id.fired += 1
+			Audio.play_sound(global.snd_arrow_trap)
+		
+	
+		gml.instance_destroy(self)
 
 
-    
+func collision_with_item():
+	if (trap_id == 0):
 
-#func collision_with_item():
-#    if (trap_id == 0):
+		gml.instance_destroy(self)
 
-#        gml.instance_destroy(self)
-
-#    elif (abs(other.x_vel) > 0 or abs(other.y_vel) > 0):
-
-#        with trap_id
-    
-#            if (fired == 0):
-        
-#                if (facing == 0):
-            
-#                    arrow = gml.instance_create(position.x-2, position.y+4, Objects.arrow)
-#                    arrow.x_vel = -8
-            
-#                else:
-            
-#                    arrow = gml.instance_create(position.x+18, position.y+4, Objects.arrow)
-#                    arrow.x_vel = 8
-            
-#                fired += 1
-#                Audio.play_sound(global.snd_arrow_trap)
-        
-    
-#        gml.instance_destroy(self)
+	elif (abs(other.x_vel) > 0 or abs(other.y_vel) > 0):
+	
+		if (trap_id.fired == 0):
+	
+			if (trap_id.facing == 0):
+		
+				arrow = gml.instance_create(trap_id.position.x-2, trap_id.position.y+4, Objects.arrow)
+				arrow.x_vel = -8
+		
+			else:
+		
+				arrow = gml.instance_create(trap_id.position.x+18, trap_id.position.y+4, Objects.arrow)
+				arrow.x_vel = 8
+		
+			trap_id.fired += 1
+			Audio.play_sound(global.snd_arrow_trap)
+		
+	
+		gml.instance_destroy(self)
 
 
-    
+func collision_with_moveable_solid():
+	if (trap_id == 0):
 
-#func collision_with_moveable_solid():
-#    if (trap_id == 0):
+		gml.instance_destroy(self)
 
-#        gml.instance_destroy(self)
+	elif (abs(other.x_vel) > 0 or abs(other.y_vel) > 0):
+	
+		if (trap_id.fired == 0):
+	
+			if (trap_id.facing == 0):
+		
+				arrow = gml.instance_create(trap_id.position.x-2, trap_id.position.y+4, Objects.arrow)
+				arrow.x_vel = -8
+		
+			else:
+		
+				arrow = gml.instance_create(trap_id.position.x+18, trap_id.position.y+4, Objects.arrow)
+				arrow.x_vel = 8
+		
+			trap_id.fired += 1
+			Audio.play_sound(global.snd_arrow_trap)
+		
+	
+		gml.instance_destroy(self)
+	
 
-#    elif (abs(other.x_vel) > 0 or abs(other.y_vel) > 0):
+func collision_with_treasure():
+	if (trap_id == 0):
 
-#        with trap_id
-    
-#            if (fired == 0):
-        
-#                if (facing == 0):
-            
-#                    arrow = gml.instance_create(position.x-2, position.y+4, Objects.arrow)
-#                    arrow.x_vel = -8
-            
-#                else:
-            
-#                    arrow = gml.instance_create(position.x+18, position.y+4, Objects.arrow)
-#                    arrow.x_vel = 8
-            
-#                fired += 1
-#                Audio.play_sound(global.snd_arrow_trap)
-        
-    
-#        gml.instance_destroy(self)
+		gml.instance_destroy(self)
 
-
-    
-
-#func collision_with_treasure():
-#    if (trap_id == 0):
-
-#        gml.instance_destroy(self)
-
-#    elif (abs(other.x_vel) > 0 or abs(other.y_vel) > 0):
-
-#        with trap_id
-    
-#            if (fired == 0):
-        
-#                if (facing == 0):
-            
-#                    arrow = gml.instance_create(position.x-2, position.y+4, Objects.arrow)
-#                    arrow.x_vel = -8
-            
-#                else:
-            
-#                    arrow = gml.instance_create(position.x+18, position.y+4, Objects.arrow)
-#                    arrow.x_vel = 8
-            
-#                fired += 1
-#                Audio.play_sound(global.snd_arrow_trap)
-        
-    
-#        gml.instance_destroy(self)
+	elif (abs(other.x_vel) > 0 or abs(other.y_vel) > 0):
+	
+		if (trap_id.fired == 0):
+	
+			if (trap_id.facing == 0):
+		
+				arrow = gml.instance_create(trap_id.position.x-2, trap_id.position.y+4, Objects.arrow)
+				arrow.x_vel = -8
+		
+			else:
+		
+				arrow = gml.instance_create(trap_id.position.x+18, trap_id.position.y+4, Objects.arrow)
+				arrow.x_vel = 8
+		
+			trap_id.fired += 1
+			Audio.play_sound(global.snd_arrow_trap)
+		
+	
+		gml.instance_destroy(self)
 
 
-    
-
-#func create():
-#    trap_id = 0
+func create():
+	trap_id = 0

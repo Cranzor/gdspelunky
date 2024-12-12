@@ -53,4 +53,5 @@ func remove_from_queue():
 	y_velocity = 0
 
 func _on_animated_sprite_2d_animation_looped():
-	animation_end()
+	#animation_end()
+	pass
