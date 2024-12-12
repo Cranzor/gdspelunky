@@ -41,6 +41,18 @@ var draw_color
 var room_speed = 30
 var view_enabled = true #--- doesn't seem to be false in any instance within the game
 
+var room_height: int:
+	set(value):
+		pass
+	get:
+		return 544 #--- placeholder value
+
+var room_width: int:
+	set(value):
+		pass
+	get:
+		return 400 #--- placeholder value
+
 func string_char_at(passed_string,index):
 	var character = passed_string[index - 1]
 	return character
@@ -410,11 +422,6 @@ func get_all_instances(group: String): #Replacement for 'with' keyword
 	var all_instances = get_tree().get_nodes_in_group(group)
 	return all_instances
 
-func room_height(): #Changing this to function. Return the height of current scene
-	return 544 #-------------------------- temporary
-
-func room_width():
-	return 400 #------ temporary
 
 func view(view_value: String):
 	var view = get_tree().get_first_node_in_group("view")

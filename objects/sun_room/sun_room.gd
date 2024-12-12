@@ -30,7 +30,7 @@ func alarm_0():
 			if (points >= 80):
 		
 				if (gml.instance_exists("ghost")):  pass #DY: /* do nothing */
-				elif (player1.position.x > gml.room_width()/2): gml.instance_create(-32, 120-16, Objects.ghost)
+				elif (player1.position.x > gml.room_width/2): gml.instance_create(-32, 120-16, Objects.ghost)
 				else: gml.instance_create(320, 120-16, Objects.ghost)
 		
 			elif (points >= 50):

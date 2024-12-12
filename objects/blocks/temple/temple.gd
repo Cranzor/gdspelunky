@@ -28,7 +28,7 @@ func create():
 	if (global.city_of_gold): sprite_index = "g_temple"
 	elif (n < 20): sprite_index = "temple_gold"
 	elif (n < 30): sprite_index = "temple_gold_big"
-	elif (InLevel.is_level() and position.x > 1 and position.x < gml.room_width()-16 and position.y > 1 and position.y < gml.room_height()-16):
+	elif (InLevel.is_level() and position.x > 1 and position.x < gml.room_width-16 and position.y > 1 and position.y < gml.room_height-16):
 
 		if (randi_range(1,60) == 1): gml.instance_create(position.x+8, position.y+8, Objects.sapphire_big)
 		elif (randi_range(1,80) == 1): gml.instance_create(position.x+8, position.y+8, Objects.emerald_big)

@@ -110,7 +110,7 @@ func step():
 		# DY:  shake the screen
 		if (global.shake > 0):
 			var player1 = gml.get_instance("player1") #---[FLAG] may need to change this for player
-			if (player1.position.y < 96 or player1.position.y > gml.room_height()-96): view_vborder[0] = 0
+			if (player1.position.y < 96 or player1.position.y > gml.room_height-96): view_vborder[0] = 0
 			else: view_vborder[0] = 96
 			if (global.shake_toggle or gml.view("yview") <= 0):
 		

@@ -573,7 +573,7 @@ func set_jetpack_fuel():
 
 func fall_off_bottom_of_screen():
 	# fall off bottom of screen
-	if (position.y > gml.room_height() + 16 and not dead):
+	if (position.y > gml.room_height + 16 and not dead):
 
 		if (InLevel.is_real_level()): global.misc_deaths[10] += 1
 		global.plife -= 99
@@ -1593,7 +1593,7 @@ func bomb_rope_and_whipping_handling(): #--- Also handles picking up items and a
 								var view_xview
 								var view_wview
 								var view_hview #----------------- [FLAG] change these to match camera
-								if (self.position.x > gml.room_width() / 2): gml.instance_create(view_xview[0]+view_wview[0]+8, view_yview[0]+floor(view_hview[0] / 2), "ghost")
+								if (self.position.x > gml.room_width / 2): gml.instance_create(view_xview[0]+view_wview[0]+8, view_yview[0]+floor(view_hview[0] / 2), "ghost")
 								else: gml.instance_create(view_xview[0]-32,  view_yview[0]+floor(view_hview[0] / 2), "ghost")
 								global.ghost_exists = true
 							

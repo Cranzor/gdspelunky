@@ -82,7 +82,7 @@ func destroy():
 				global.dark_level = true
 				if (not global.ghost_exists):
 			
-					if (player1.position.x > gml.room_width() / 2): gml.instance_create(gml.view("xview")+gml.view("wview")+8, gml.view("yview")+floor(gml.view("hview") / 2), Objects.ghost)
+					if (player1.position.x > gml.room_width / 2): gml.instance_create(gml.view("xview")+gml.view("wview")+8, gml.view("yview")+floor(gml.view("hview") / 2), Objects.ghost)
 					else: gml.instance_create(gml.view("xview")-32,  gml.view("yview")+floor(gml.view("hview") / 2), Objects.ghost)
 					global.ghost_exists = true
 			

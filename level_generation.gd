@@ -2015,7 +2015,7 @@ func scr_entity_gen():
 				# enemies
 				if (scr_get_room_x(solid_instance.position.x) != global.start_room_x or scr_get_room_y(solid_instance.position.y-16) != global.start_room_y):
 				
-					if (solid_instance.position.y < gml.room_height() - 64 and 
+					if (solid_instance.position.y < gml.room_height - 64 and 
 						not gml.collision_point(solid_instance.position.x, solid_instance.position.y+16, 'solid', 0, 0) and not gml.collision_point(solid_instance.position.x, solid_instance.position.y+32, 'solid', 0, 0) and
 						not gml.collision_point(solid_instance.position.x, solid_instance.position.y+16, 'water', 0, 0) and not gml.collision_point(solid_instance.position.x, solid_instance.position.y+32, 'water', 0, 0) and
 						not gml.collision_point(solid_instance.position.x, solid_instance.position.y+16, 'enemy', 0, 0)):
@@ -2243,7 +2243,7 @@ func scr_entity_gen():
 				# enemies
 				if (scr_get_room_x(solid_instance.position.x) != global.start_room_x or scr_get_room_y(solid_instance.position.y-16) != global.start_room_y):
 					var n
-					if (solid_instance.position.y < gml.room_height() - 64 and 
+					if (solid_instance.position.y < gml.room_height - 64 and 
 						not gml.collision_point(solid_instance.position.x, solid_instance.position.y+16, "solid", 0, 0) and not gml.collision_point(solid_instance.position.x, solid_instance.position.y+32, "solid", 0, 0) and
 						not gml.collision_point(solid_instance.position.x, solid_instance.position.y+16, "water", 0, 0) and not gml.collision_point(solid_instance.position.x, solid_instance.position.y+32, "water", 0, 0)):
 						
@@ -2335,7 +2335,7 @@ func scr_entity_gen():
 				
 				if (scr_get_room_x(solid_instance.position.x) != global.start_room_x or scr_get_room_y(solid_instance.position.y-16) != global.start_room_y):
 				
-					if (solid_instance.position.y < gml.room_height() - 64 and 
+					if (solid_instance.position.y < gml.room_height - 64 and 
 						not gml.collision_point(solid_instance.position.x, solid_instance.position.y+16, "solid", 0, 0) and not gml.collision_point(solid_instance.position.x, solid_instance.position.y+32, "solid", 0, 0) and
 						not gml.collision_point(solid_instance.position.x, solid_instance.position.y+16, "water", 0, 0) and not gml.collision_point(solid_instance.position.x, solid_instance.position.y+32, "water", 0, 0)):
 					
@@ -2434,7 +2434,7 @@ func scr_entity_gen():
 				
 			
 				# enemies
-				if (solid_instance.position.y < gml.room_height() - 64 and 
+				if (solid_instance.position.y < gml.room_height - 64 and 
 						not gml.collision_point(solid_instance.position.x, solid_instance.position.y+16, "solid", 0, 0) and not gml.collision_point(solid_instance.position.x, solid_instance.position.y+32, "solid", 0, 0) and
 						not gml.collision_point(solid_instance.position.x, solid_instance.position.y+16, "water", 0, 0) and not gml.collision_point(solid_instance.position.x, solid_instance.position.y+32, "water", 0, 0)):
 				
