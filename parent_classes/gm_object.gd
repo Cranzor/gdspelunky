@@ -8,6 +8,9 @@ var sprites = Sprites.new()
 var collision_grid = CollisionGrid.new()
 var grid_position
 
+const SPRITE = preload("res://scenes/sprite.tscn")
+var draw_object: bool = true #--- "draw" in GML (keyword is taken in Godot). determines whether or not associated sprite for the object gets drawn
+
 var sprite
 var solid = false
 
@@ -39,6 +42,7 @@ var moving_object = false
 @export_group("Sprite")
 @export var sprite_index_name: String
 @export var animated_sprite_node: AnimatedSprite2D
+var sprites_holder: Node2D
 @export var sprite_offset = Vector2(0, 0)
 @export_group("")
 
@@ -92,7 +96,7 @@ var other #--- most recent object collided with
 var sprite_index:
 	set(new_sprite):
 		#sprite_index = new_sprite
-		set_animation(new_sprite)
+		set_animation(new_sprite, animated_sprite_node)
 		set_sprite_offset(new_sprite)
 		sprite_index_name = new_sprite
 		
@@ -179,11 +183,10 @@ var object_id = ''
 @export var object_size: Vector2 #--- created by me for collision purposes
 
 func get_animated_sprite_2d():
-	var animated_sprite: AnimatedSprite2D = find_child("AnimatedSprite2D", true, false)
-	return animated_sprite
+	return animated_sprite_node
 
-func set_animation(new_sprite):
-	var animated_sprite: AnimatedSprite2D = get_animated_sprite_2d()
+func set_animation(new_sprite, sprite_node):
+	var animated_sprite = sprite_node
 	#assert(animated_sprite.sprite_frames.has_animation(new_sprite))
 	if animated_sprite.sprite_frames.has_animation(new_sprite):
 		animated_sprite.play(new_sprite)
@@ -225,16 +228,6 @@ func set_sprite_offset(new_sprite):
 		
 	else:
 		animated_sprite.offset = -sprite_offset
-		#var width = object_size.x
-		#if sprite_offset.x != width / 2:
-			#if sprite_offset.x < width / 2:
-				#sprite_offset.x = sprite_offset.x + width
-				#if sprite_offset.x > 0:
-					#sprite_offset.x = -sprite_offset.x
-			#else:
-				#sprite_offset.x = abs(sprite_offset.x) - width
-		#animated_sprite.offset = sprite_offset
-	
 
 var x_velocity = 0
 var y_velocity = 0
@@ -401,26 +394,24 @@ func sprite_setup(object_entry):
 			var sprite_entry = sprites.sprite_database[sprite_to_add]
 			var sprite_offset = sprite_entry["origin"]
 			var sprite_folder_path = sprite_entry["folder_path"]
-			var new_animated_sprite = AnimatedSprite2D.new()
-			var sprite_frames = SpriteFrames.new()
+			var new_animated_sprite = SPRITE.instantiate()
+			#var sprite_frames = SpriteFrames.new()
+			var sprite_frames = new_animated_sprite.sprite_frames
 		
-			#var files = DirAccess.get_files_at(sprite_folder_path)
-			#for file in files:
-				#if file.get_extension() == "png":
-					#print(file)
-					#var sprite_texture = load(sprite_folder_path + "/" + file)
-					#sprite_frames.add_frame(sprite_to_add, sprite_texture)
 			sprite_frames = sprite_animation_setup(sprite_to_add, sprite_frames)
 			sprite_frames.remove_animation("default")
 			
 			new_animated_sprite.sprite_frames = sprite_frames
-			new_animated_sprite.name = "AnimatedSprite2D"
-			new_animated_sprite.centered = false
-			new_animated_sprite.z_as_relative = false
+			#new_animated_sprite.name = "AnimatedSprite2D"
+			new_animated_sprite.name = "MainAnimations"
 			new_animated_sprite.z_index = depth
 			new_animated_sprite.add_to_group("animated_sprite", true)
 			animated_sprite_node = new_animated_sprite
-			add_child(new_animated_sprite)
+			
+			sprites_holder = Node2D.new()
+			sprites_holder.name = "Sprites"
+			add_child(sprites_holder)
+			sprites_holder.add_child(new_animated_sprite)
 			new_animated_sprite.play(sprite_to_add)
 			set_sprite_offset(sprite_to_add)
 			sprite_index_name = sprite_to_add
@@ -509,9 +500,20 @@ func run_step_event(obj):
 		obj.step()
 
 func run_draw_event(obj):
+	#--- draw event overrides the default sprite trying, so draw_object is set to false
 	if obj.has_method("draw"):
+		draw_object = false
 		obj.draw()
-
+	else:
+		draw_object = true
+	
+	if animated_sprite_node != null:
+		#--- sprites automatically set themselves to not display every frame and must be manually set to show
+		if draw_object == false:
+			animated_sprite_node.sprite_displayed = false
+		else:
+			animated_sprite_node.sprite_displayed = true
+	
 func run_collision_with(obj):
 	if position == Vector2(240, 64):
 		var oh = "oh"

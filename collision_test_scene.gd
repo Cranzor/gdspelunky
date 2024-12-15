@@ -1,8 +1,9 @@
 extends Node2D
 
+var thingy
 
 func _ready():
-	gml.instance_create(0, 0, Objects.gold_door)
+	thingy = gml.instance_create(0, 0, Objects.gold_door)
 	gml.instance_create(16, 0, Objects.ice)
 	gml.instance_create(32, 0, Objects.big_collect)
 	gml.instance_create(48, 0, Objects.heart)
@@ -22,9 +23,9 @@ func _ready():
 	alien.image_yscale = 4
 	print(alien.sprite_width)
 	print(alien.sprite_height)
-
+	
 func _physics_process(delta: float) -> void:
-	gml.draw_sprite("shopkeeper_icon", -1, gml.view("xview")+64, gml.view("yview")+8, self)
+	gml.draw_sprite("shopkeeper_icon", -1, gml.view("xview")+64, gml.view("yview")+8, thingy)
 
 func _input(event: InputEvent) -> void:
 	if Input.is_key_pressed(KEY_0):

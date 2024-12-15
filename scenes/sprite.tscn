@@ -1,10 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://dicegcuj450ms"]
+[gd_scene load_steps=3 format=3 uid="uid://dicegcuj450ms"]
+
+[ext_resource type="Script" path="res://scenes/sprite.gd" id="1_wjvgk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_f4ket"]
-animations = []
+resource_local_to_scene = true
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
 
 [node name="Sprite" type="AnimatedSprite2D" groups=["animated_sprite"]]
 z_as_relative = false
 sprite_frames = SubResource("SpriteFrames_f4ket")
-animation = &""
 centered = false
+script = ExtResource("1_wjvgk")

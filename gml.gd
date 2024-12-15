@@ -327,7 +327,7 @@ func instance_activate_region(left, top, width, height, inside):
 	pass
 
 func sprite_index(sprite_name: String, node):
-	var sprite = node.find_child("AnimatedSprite2D")
+	var sprite = node.animated_sprite_node
 	sprite.play(sprite_name)
 
 func get_sprite_index(node):
@@ -374,20 +374,36 @@ func draw_text(x, y, string: String, name: String, node):
 	string_node.text = string
 	string_node.text_displayed = true
 	
-func draw_sprite(sprite: String, subimg: int, x, y, node):
-	if subimg == -1:
-		subimg = 0
+func draw_sprite(sprite: String, subimg: int, x, y, node, is_object_sprite: bool = false): #--- appears to typically be used for sprites with only 1 animation frame
+	#--- added "is_object_sprite" bool to indicate whether sprite is intended to override the main sprite or not
+	var sprite_pascal_case = sprite.to_pascal_case()
+	
+	if is_object_sprite:
+		node.sprite_index = sprite
 		
-	var node_name = sprite.to_pascal_case()
-	if !node.has_node(node_name):
-		var sprite_file_path = sprite_database.sprite_database[sprite]["folder_path"]
-		sprite_file_path += "/" + sprite + "_" + str(subimg) + ".png"
-		var sprite_2d: Sprite2D = Sprite2D.new()
-		sprite_2d.centered = false
-		sprite_2d.set_texture(load(sprite_file_path))
-		sprite_2d.global_position = Vector2(x, y)
-		sprite_2d.name = node_name
-		node.add_child(sprite_2d)
+		#--- image_index being passed in results in the sprite playing normally. otherwise, a specific frame is set
+		var current_index = node.image_index
+		if subimg != current_index:
+			node.image_index = subimg
+
+		node.animated_sprite_node.global_position = Vector2(x, y)
+	
+	else:
+		if !node.has_node("Sprites/" + sprite_pascal_case):
+			var new_sprite = SPRITE.instantiate()
+			new_sprite.name = sprite.to_pascal_case()
+			node.sprites_holder.add_child(new_sprite)
+			node.set_animation(sprite, new_sprite)
+		
+
+		var new_sprite = node.get_node("Sprites/" + sprite_pascal_case)
+		new_sprite.global_position = Vector2(x, y)
+		new_sprite.sprite_displayed = true
+		
+		var current_progress = new_sprite.get_frame_progress()
+		new_sprite.set_frame_and_progress(subimg, current_progress)
+		
+		node.draw_object = true
 
 
 func string_length(passed_string: String):
@@ -473,19 +489,44 @@ func room_get_name():
 	var room_name = root.room_name
 	return room_name
 
-func draw_sprite_ext(sprite, subimg, x, y, xscale, yscale, rot, color, alpha, node):
-	node.sprite_index = sprite
+func draw_sprite_ext(sprite, subimg, x, y, xscale, yscale, rot, color, alpha, node: GMObject, is_object_sprite: bool = true):
+	#--- added "is_object_sprite" bool to indicate whether sprite is intended to override the main sprite or not
+	var sprite_pascal_case = sprite.to_pascal_case()
 	
-	#--- image_index being passed in results in the sprite playing normally. otherwise, a specific frame is set
-	var current_index = node.image_index
-	if subimg != current_index:
-		node.image_index = subimg
+	if is_object_sprite:
+		node.sprite_index = sprite
+		
+		#--- image_index being passed in results in the sprite playing normally. otherwise, a specific frame is set
+		var current_index = node.image_index
+		if subimg != current_index:
+			node.image_index = subimg
 
-	node.animated_sprite_node.global_position = Vector2(x, y)
-	node.animated_sprite_node.scale = Vector2(xscale, yscale)
-	node.animated_sprite_node.rotation_degrees = -rot #--- appears to rotate counter-clockwise in GML
-	node.animated_sprite_node.self_modulate = color
-	node.animated_sprite_node.self_modulate.a = alpha
+		node.animated_sprite_node.global_position = Vector2(x, y)
+		node.animated_sprite_node.scale = Vector2(xscale, yscale)
+		node.animated_sprite_node.rotation_degrees = -rot #--- appears to rotate counter-clockwise in GML
+		node.animated_sprite_node.self_modulate = color
+		node.animated_sprite_node.self_modulate.a = alpha
+	
+	else:
+		if !node.has_node("Sprites/" + sprite_pascal_case):
+			var new_sprite = SPRITE.instantiate()
+			new_sprite.name = sprite.to_pascal_case()
+			node.sprites_holder.add_child(new_sprite)
+			node.set_animation(sprite, new_sprite)
+		
+
+		var new_sprite = node.get_node("Sprites/" + sprite_pascal_case)
+		new_sprite.global_position = Vector2(x, y)
+		new_sprite.scale = Vector2(xscale, yscale)
+		new_sprite.rotation_degrees = -rot #--- appears to rotate counter-clockwise in GML
+		new_sprite.self_modulate = color
+		new_sprite.self_modulate.a = alpha
+		new_sprite.sprite_displayed = true
+		
+		var current_progress = new_sprite.get_frame_progress()
+		new_sprite.set_frame_and_progress(subimg, current_progress)
+		
+		node.draw_object = true
 
 func degtorad(deg): #---[FLAG] need to test
 	var angle_radians = deg * PI / 180
