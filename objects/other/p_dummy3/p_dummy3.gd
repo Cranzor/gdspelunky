@@ -76,19 +76,12 @@ func step():
 	
 		if (alarm_2_countdown.frames_to_count_down < 1): alarm_2_countdown.start(8) #---[FLAG] check frames_to_count_down to make sure it's accurate
 
-var num = 0
+
 func draw():
 	if (facing == RIGHT): image_xscale = -1
 	else: image_xscale = 1
 
 	gml.draw_sprite_ext(sprite_index, image_index, position.x, position.y, image_xscale, image_yscale, image_angle, image_blend, image_alpha, self, true)
-	#--- above line doesn't actually do anything as the values are set to their defaults
-	#--- TEST. delete below lines
-	#gml.draw_sprite_ext("alien_deploy", num, position.x + 30, position.y, image_xscale, image_yscale, image_angle, image_blend, image_alpha, self, false)
-	gml.draw_sprite("jetpack_back", -1, position.x + 30, position.y, self, false)
-	num += 1
-	if num > 5:
-		num = 0
 
 
 func alarm_0():

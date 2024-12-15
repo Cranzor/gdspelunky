@@ -23,9 +23,12 @@ func _ready():
 	alien.image_yscale = 4
 	print(alien.sprite_width)
 	print(alien.sprite_height)
-	
+
+var test_num = 0
 func _physics_process(delta: float) -> void:
-	gml.draw_sprite("shopkeeper_icon", -1, gml.view("xview")+64, gml.view("yview")+8, thingy)
+	test_num += 1
+	if test_num < 100:
+		gml.draw_sprite("shopkeeper_icon", -1, gml.view("xview")+64, gml.view("yview")+8, thingy)
 
 func _input(event: InputEvent) -> void:
 	if Input.is_key_pressed(KEY_0):

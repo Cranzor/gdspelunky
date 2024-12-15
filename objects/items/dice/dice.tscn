@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bokig7o4aob6m"]
 
-[sub_resource type="GDScript" id="GDScript_tqsaw"]
+[ext_resource type="Script" path="res://objects/items/dice/dice.gd" id="1_skcwy"]
 
 [node name="Dice" type="Node2D"]
+script = ExtResource("1_skcwy")
+object_name = "dice"

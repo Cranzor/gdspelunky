@@ -471,3 +471,6 @@ func _on_alarm_2_timeout():
 
 func alarm_2():
 	pass
+
+func destroy():
+	pass

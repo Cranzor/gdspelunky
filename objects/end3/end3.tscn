@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://xnnh2syksk67"]
 
-[sub_resource type="GDScript" id="GDScript_eutee"]
+[ext_resource type="Script" path="res://objects/end3/end3.gd" id="1_5yvrg"]
 
 [node name="End3" type="Node2D"]
+script = ExtResource("1_5yvrg")
+object_name = "end3"

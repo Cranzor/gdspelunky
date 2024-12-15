@@ -339,6 +339,12 @@ func draw_set_font(font: String):
 func draw_set_color(color: Color):
 	draw_color = color
 
+func draw_set_alpha(alpha):
+	pass
+
+func draw_rectangle(x1, y1, x2, y2, outline):
+	pass
+
 #--- font represents draw_set_font, and color represents draw_set_color. name is used to identify the label node
 func draw_text(x, y, string: String, name: String, node):
 	#--- capitalizing the full string as the fonts don't support lowercase letters
@@ -387,6 +393,7 @@ func draw_sprite(sprite: String, subimg: int, x, y, node, is_object_sprite: bool
 			node.image_index = subimg
 
 		node.animated_sprite_node.global_position = Vector2(x, y)
+		node.draw_object = true
 	
 	else:
 		if !node.has_node("Sprites/" + sprite_pascal_case):
@@ -402,8 +409,6 @@ func draw_sprite(sprite: String, subimg: int, x, y, node, is_object_sprite: bool
 		
 		var current_progress = new_sprite.get_frame_progress()
 		new_sprite.set_frame_and_progress(subimg, current_progress)
-		
-		node.draw_object = true
 
 
 func string_length(passed_string: String):
@@ -506,6 +511,7 @@ func draw_sprite_ext(sprite, subimg, x, y, xscale, yscale, rot, color, alpha, no
 		node.animated_sprite_node.rotation_degrees = -rot #--- appears to rotate counter-clockwise in GML
 		node.animated_sprite_node.self_modulate = color
 		node.animated_sprite_node.self_modulate.a = alpha
+		node.draw_object = true
 	
 	else:
 		if !node.has_node("Sprites/" + sprite_pascal_case):
@@ -525,8 +531,6 @@ func draw_sprite_ext(sprite, subimg, x, y, xscale, yscale, rot, color, alpha, no
 		
 		var current_progress = new_sprite.get_frame_progress()
 		new_sprite.set_frame_and_progress(subimg, current_progress)
-		
-		node.draw_object = true
 
 func degtorad(deg): #---[FLAG] need to test
 	var angle_radians = deg * PI / 180

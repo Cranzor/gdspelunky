@@ -30,6 +30,11 @@ var IDLE
 var draw_status
 var highscore
 var safe
+var money_count
+var fade_out
+var fade_level
+var poop
+var money_diff
 
 #--- want access to these for all objects, so defining here
 var collision_bounds_offset_left_x

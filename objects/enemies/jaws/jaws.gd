@@ -73,18 +73,18 @@ func create():
 
 
 func draw():
-	gml.draw_sprite(sprite_index, -1, position.x, position.y, self)
+	gml.draw_sprite(sprite_index, -1, position.x, position.y, self, true)
 	if (sprite_index == "jaws_left"):
 
-		if (hp < 10): gml.draw_sprite("jaws_body3_l", 0, position.x+16, position.y, self)
-		elif (hp < 20): gml.draw_sprite("jaws_body2_l", 0, position.x+16, position.y, self)
-		else: gml.draw_sprite("jaws_body1_l", 0, position.x+16, position.y, self)
+		if (hp < 10): gml.draw_sprite("jaws_body3_l", 0, position.x+16, position.y, self, true)
+		elif (hp < 20): gml.draw_sprite("jaws_body2_l", 0, position.x+16, position.y, self, true)
+		else: gml.draw_sprite("jaws_body1_l", 0, position.x+16, position.y, self, true)
 
 	elif (sprite_index == "jaws_right"):
 
-		if (hp < 10): gml.draw_sprite("jaws_body3_r", 0, position.x-48, position.y, self)
-		elif (hp < 20): gml.draw_sprite("jaws_body2_r", 0, position.x-48, position.y, self)
-		else: gml.draw_sprite("jaws_body1_r", 0, position.x-48, position.y, self)
+		if (hp < 10): gml.draw_sprite("jaws_body3_r", 0, position.x-48, position.y, self, true)
+		elif (hp < 20): gml.draw_sprite("jaws_body2_r", 0, position.x-48, position.y, self, true)
+		else: gml.draw_sprite("jaws_body1_r", 0, position.x-48, position.y, self, true)
 
 	#/* debug
 	#draw_set_font(global.my_font_small)
