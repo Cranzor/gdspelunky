@@ -53,72 +53,72 @@ func _process(delta):
 
 #        trophy = gml.instance_create(32, 32, Objects.trophy)
 #        if (t_money >= 200000):
-    
+	
 #            trophy.sprite_index = "gold_trophy"
 #            gml.instance_create(32, 48, Objects.x_sun)
-    
+	
 #        elif (t_money >= 100000):
-    
+	
 #            trophy.sprite_index = "silver_trophy"
-    
+	
 #        else:
-    
+	
 #            trophy.sprite_index = "bronze_trophy"
-    
+	
 
 
 #    if (t_time > 0 and t_time < 960):
 
 #        trophy = gml.instance_create(64, 64, Objects.trophy)
 #        if (t_time <= 960):
-    
+	
 #            trophy.sprite_index = "bronze_trophy"
-    
+	
 #        if (t_time <= 720):
-    
+	
 #            trophy.sprite_index = "silver_trophy"
-    
+	
 #        if (t_time <= 600):
-    
+	
 #            trophy.sprite_index = "gold_trophy"
 #            gml.instance_create(64, 80, Objects.x_moon)
-    
+	
 
 
 #    if (t_kills >= 80):
 
 #        trophy = gml.instance_create(32, 96, Objects.trophy)
 #        if (t_kills >= 120):
-    
+	
 #            trophy.sprite_index = "gold_trophy"
 #            gml.instance_create(32, 112, Objects.x_stars)
-    
+	
 #        elif (t_kills >= 100):
-    
+	
 #            trophy.sprite_index = "silver_trophy"
-    
+	
 #        else:
-    
+	
 #            trophy.sprite_index = "bronze_trophy"
-    
+	
 
 
 #    if (t_saves >= 4):
 
 #        trophy = gml.instance_create(64, 128, Objects.trophy)
 #        if (t_saves >= 8):
-    
+	
 #            trophy.sprite_index = "gold_trophy"
 #            gml.instance_create(64, 144, Objects.x_change)
-    
+	
 #        elif (t_saves >= 6):
-    
+	
 #            trophy.sprite_index = "silver_trophy"
-    
+	
 #        else:
-    
+	
 #            trophy.sprite_index = "bronze_trophy"
-    
+	
 
 
 #    if (global.scores_start == 1):
@@ -142,7 +142,7 @@ func _process(delta):
 #    if (global.new_saves): gml.instance_create(272, 80, Objects.new)
 #    if (global.new_time): gml.instance_create(272, 96, Objects.new)
 
-    
+	
 
 #func draw():
 #    if (player1.position.y < 156):
@@ -164,26 +164,26 @@ func _process(delta):
 #        gml.draw_text(168, 96, "SUN ROOM")
 #        gml.draw_set_color(gml.c_white)
 #        if (t_money >= sun_gold):
-    
+	
 #            if (false): # DY:  (global.is_tunnel_man)
-        
+		
 #                gml.draw_text(128, 112, "NO MATTOCKS ALLOWED!")
 #                gml.draw_text(128, 128, "THIS MEANS YOU!")
 #                gml.draw_text(128, 144, "")
 #                gml.draw_text(128, 160, "")
-        
+		
 #            else:
-        
+		
 #                gml.draw_text(128, 112, "KEEP YOURSELF AND")
 #                gml.draw_text(128, 128, "THE DAMSEL ALIVE")
 #                gml.draw_text(128, 144, "FOR AS LONG AS")
 #                gml.draw_text(128, 160, "POSSIBLE!")
-        
-    
+		
+	
 #        else:
-    
+	
 #            gml.draw_text(128, 112, "LOCKED.")
-    
+	
 
 #    elif (player1.position.y < 80+16):
 
@@ -191,25 +191,25 @@ func _process(delta):
 #        gml.draw_text(168, 96, "MOON ROOM")
 #        gml.draw_set_color(gml.c_white)
 #        if (t_time > 0 and t_time <= moon_gold):
-    
+	
 #            if (false): # DY:  (global.is_tunnel_man)
-        
+		
 #                gml.draw_text(128, 112, "NO MATTOCKS ALLOWED!")
 #                gml.draw_text(128, 128, "THIS MEANS YOU!")
 #                gml.draw_text(128, 144, "")
 #                gml.draw_text(128, 160, "")
-        
+		
 #            else:
-        
+		
 #                gml.draw_text(128, 112, "SHOOT THE MOVING")
 #                gml.draw_text(128, 128, "TARGETS WITH YOUR")
 #                gml.draw_text(128, 144, "BOW AND ARROWS!")
-        
-    
+		
+	
 #        else:
-    
+	
 #            gml.draw_text(128, 112, "LOCKED.")
-    
+	
 
 #    elif (player1.position.y < 112+16):
 
@@ -217,25 +217,25 @@ func _process(delta):
 #        gml.draw_text(168, 96, "STARS ROOM")
 #        gml.draw_set_color(gml.c_white)
 #        if (t_kills >= stars_gold):
-    
+	
 #            if (false): # DY:  (global.is_tunnel_man)
-        
+		
 #                gml.draw_text(128, 112, "NO MATTOCKS ALLOWED!")
 #                gml.draw_text(128, 128, "THIS MEANS YOU!")
 #                gml.draw_text(128, 144, "")
 #                gml.draw_text(128, 160, "")
-        
+		
 #            else:
-        
+		
 #                gml.draw_text(128, 112, "KILL AS MANY ANGRY")
 #                gml.draw_text(128, 128, "SHOPKEEPS AS YOU CAN")
 #                gml.draw_text(128, 144, "BEFORE THEY GET YOU!")
-        
-    
+		
+	
 #        else:
-    
+	
 #            gml.draw_text(128, 112, "LOCKED.")
-    
+	
 
 #    elif (player1.position.y < 160):
 
@@ -243,17 +243,17 @@ func _process(delta):
 #        gml.draw_text(160, 96, "CHANGING ROOM")
 #        gml.draw_set_color(gml.c_white)
 #        if (t_saves >= 8):
-    
+	
 #            gml.draw_text(128, 112, "LADY IN RED...")
-    
+	
 #        else:
-    
+	
 #            gml.draw_text(128, 112, "LOCKED.")
-    
+	
 #        with new
-    
+	
 #            visible = false
-    
+	
 
 
 
@@ -277,11 +277,11 @@ func _process(delta):
 #        # DY:  s = floor(s / 1000)
 #        m = 0
 #        while (s > 59):
-    
+	
 #            s -= 60
 #            m += 1
-    
-    
+	
+	
 #        gml.draw_set_color(gml.c_white)
 #        gml.draw_text(128, 96, "TIME: ")
 #        if (s < 10): gml.draw_text(128+64, 96, str(m) + ":0" + str(s))
@@ -305,7 +305,7 @@ func _process(delta):
 #        gml.draw_text(n, 216, str("THIS WILL CLEAR EVERYTHING!"))
 
 
-    
+	
 
 #func key q pressed():
 #    /*highscore_clear()
@@ -317,7 +317,7 @@ func _process(delta):
 #    highscore_add("WINS", 4000000)
 #    highscore_add("DEATHS", 3000000)*/
 
-    
+	
 
 #func step():
 #    # DY:  shake the screen

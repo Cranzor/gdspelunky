@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bqkohht8fc1w8"]
 
-[sub_resource type="GDScript" id="GDScript_w6ill"]
+[ext_resource type="Script" path="res://objects/highscores/highscores.gd" id="1_lx3nb"]
 
 [node name="Highscores" type="Node2D"]
+script = ExtResource("1_lx3nb")
+object_name = "highscores"

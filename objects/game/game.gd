@@ -1,6 +1,5 @@
 extends DrawnSprite #--- changing this even though there is no parent
 
-var money_count
 var damsel
 var idol
 var altar
@@ -11,7 +10,6 @@ var gen_rare_shop
 var gen_weapon_shop
 var moveable_solid_grav
 var time
-var money_diff
 
 var players: Array
 var players_length

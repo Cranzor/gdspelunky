@@ -18,7 +18,9 @@ var stuck
 var sticky_x_diff
 var sticky_y_diff
 
-var buy_message #--- may want to move this to drawn_sprite. check damsel script
+var buy_message #---[FLAG] may want to move this to drawn_sprite. check damsel script
+
+var to_destroy
 
 func create():
 	super()

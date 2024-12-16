@@ -20,7 +20,7 @@ func _process(delta):
 #func alarm_0():
 #    whipped = false
 
-    
+	
 
 #func animation_end():
 #    if (sprite_index == "shop_throw_l"):
@@ -29,7 +29,7 @@ func _process(delta):
 #        sprite_index = "shop_left"
 
 
-    
+	
 
 #func collision_with_character():
 #    if (status == IDLE or status == FOLLOW or status == STUNNED or status == DEAD or hp < 1 or other.dead or other.stunned or abs(other.position.x-(position.x+8)) > 8):
@@ -39,7 +39,7 @@ func _process(delta):
 #    elif (not other.dead and not other.stunned and (other.state == 15 or other.state == 16) and other.position.y < position.y+5 and not other.swimming):
 
 #        if (status < STUNNED):
-    
+	
 #            other.y_vel=-6-0.2*other.y_vel
 #            if (global.has_spike_shoes):  hp -= (3 * ceil(other.fall_timer/16)) gml.instance_create(other.position.x, other.position.y+8, Objects.blood) 
 #            else: hp -= (1 * ceil(other.fall_timer/16))
@@ -51,12 +51,12 @@ func _process(delta):
 #            else: x_vel -= 1
 #            image_speed = 0.5
 #            Audio.play_sound(global.snd_hit)
-    
+	
 
 #    elif (other.invincible == 0 and status < STUNNED):
 
 #        if (gml.collision_point(position.x+8, position.y-4, "solid", 0, 0)):
-    
+	
 #            other.blink = 30
 #            other.invincible = 30
 #            if (other.position.x < position.x):
@@ -64,85 +64,85 @@ func _process(delta):
 #            else:
 #                other.x_vel = 6
 #            gml.instance_create(other.position.x, other.position.y, Objects.blood)
-    
+	
 #            if (global.plife > 0):
-        
+		
 #                global.plife -= 1
 #                if (global.plife <= 0 and InLevel.is_real_level()): global.enemy_deaths[19] += 1
-        
+		
 #            Audio.play_sound(global.snd_hurt)
-    
+	
 #        elif (status != THROW):
-    
+	
 #            status = THROW
 #            x_vel = 0
 #            if (other.position.x > position.x+8):
-        
+		
 #                facing = RIGHT
 #                sprite_index = "shop_throw_l"
 #                other.position.x = position.x
 #                other.position.y = position.y
 #                other.y_vel = -6
 #                other.x_vel = 6
-        
+		
 #            else:
-        
+		
 #                facing = LEFT
 #                sprite_index = "shop_throw_l"
 #                other.position.x = position.x + 16
 #                other.position.y = position.y
 #                other.y_vel = -6
 #                other.x_vel = -6
-        
-        
+		
+		
 #            other.stunned = true
 #            other.bounced = false
 #            other.wall_hurt = 1
-        
+		
 #            with other
-        
+		
 #                if (hold_item):
-            
+			
 #                    if (hold_item.type == "Gold Idol"): hold_item.position.y -= 8
 #                    scr_drop_item(x_vel, y_vel)
-            
-            
-    
+			
+			
+	
 
 
 
-    
+	
 
 #func collision_with_shotgun():
 #    if (hp > 0 and status == ATTACK and not has_gun):
 
 #        with other
-    
+	
 #            if (held):
-        
+		
 #                player1.hold_item = 0
 #                player1.pickup_item_type = ""
 #                held = false
-        
+		
 #            gml.instance_destroy(self)
-    
+	
 #        has_gun = true
 
 
-    
+	
 
 #func collision_with_whip():
 #    if (not whipped):
 
 #        if (other.type == "Machete"):
-    
+	
 #            hp -= other.damage
 #            if (blood_left > 0):
-        
+		
 #                MiscScripts.scr_create_blood(position.x+sprite_width/2, position.y+sprite_height/2, 1)
 #                if (hp < 0): blood_left -= 1
-        
-    
+		
+	
 #        y_vel = -2
 #        if (other.position.x < position.x): x_vel = 1
 #        else: x_vel = -1
@@ -152,20 +152,20 @@ func _process(delta):
 #        status = ATTACK
 
 
-    
+	
 
 #func collision_with_whip_pre():
 #    if (not whipped):
 
 #        if (other.type == "Machete"):
-    
+	
 #            hp -= other.damage
 #            if (blood_left > 0):
-        
+		
 #                MiscScripts.scr_create_blood(position.x+sprite_width/2, position.y+sprite_height/2, 1)
 #                if (hp < 0): blood_left -= 1
-        
-    
+		
+	
 #        y_vel = -2
 #        if (other.position.x < position.x): x_vel = 1
 #        else: x_vel = -1
@@ -175,7 +175,7 @@ func _process(delta):
 #        status = ATTACK
 
 
-    
+	
 
 #func create():
 #    # action_inherited
@@ -230,7 +230,7 @@ func _process(delta):
 #    firing = 0
 #    firing_max = 30
 
-    
+	
 
 #func draw():
 #    if (facing == RIGHT): draw_sprite_ext(sprite_index, image_index, position.x+16, position.y, -1, image_yscale, image_angle, image_blend, image_alpha)
@@ -242,7 +242,7 @@ func _process(delta):
 #        else: draw_sprite_ext(shotgun_right, 0, position.x+10, position.y+10, 1, 1, 0, c_white, 1)
 
 
-    
+	
 
 #func step():
 #    # action_inherited
@@ -274,32 +274,32 @@ func _process(delta):
 #    if (status >= STUNNED):
 
 #        if (gml.collision_point(position.x+8, position.y+12, "solid", 0, 0)):
-    
+	
 #            MiscScripts.scr_create_blood(position.x+8, position.y+8, 3)
 #            Audio.play_sound(global.snd_caveman_die)
 #            if (hp > 0):
-        
+		
 #                if (InLevel.is_real_level()): global.enemy_kills[19] += 1
 #                global.shopkeepers += 1
 #                global.kills += 1
-        
+		
 #            global.murderer = true
 #            gml.instance_destroy(self)
-    
+	
 
 #    elif (not held and gml.collision_point(position.x+8, position.y+8, "solid", 0, 0)):
 
 #        MiscScripts.scr_create_blood(position.x+8, position.y+8, 3)
 #        Audio.play_sound(global.snd_caveman_die)
 #        if (hp > 0):
-    
+	
 #            if (InLevel.is_real_level()): global.enemy_kills[19] += 1
 #            global.shopkeepers += 1
 #            global.kills += 1
-    
+	
 #        global.murderer = true
 #        if (has_gun):
-    
+	
 #            obj = gml.instance_create(position.x+8, position.y+8, Objects.shotgun)
 #            obj.y_vel = gml.rand(4,6)
 #            if (x_vel < 0): obj.x_vel = -1 * gml.rand(4,6)
@@ -307,7 +307,7 @@ func _process(delta):
 #            obj.cost = 0
 #            obj.for_sale = false
 #            has_gun = false
-    
+	
 #        gml.instance_destroy(self)
 
 
@@ -321,58 +321,58 @@ func _process(delta):
 #    if (status == IDLE or status == FOLLOW):
 
 #        if (player1.hold_item > 0):
-    
+	
 #            item = player1.hold_item
 #            if (item.cost > 0):
-        
+		
 #                global.message = item.buy_message
 #                if (global.gamepad_on): global.message2 = "PRESS " + scr_get_joy(global.joy_pay_val) + " TO PURCHASE."
 #                else: global.message2 = "PRESS " + scr_get_key(global.key_pay_val) + " TO PURCHASE."
 #                global.message_timer = 200
-        
-    
+		
+	
 
 
 #    if ((status == PATROL or status == WALK)):
 
 #        if (not player1.dead and gml.distance_to_object(player1) < 64 and player1.position.y - (position.y+8) < 16):
-    
+	
 #            status = ATTACK
-    
+	
 #        elif (abs(player1.position.x-(position.x+8)) < 4):
-    
+	
 #            status = ATTACK
-    
+	
 
 
 #    if (status == IDLE):
 
 #        bounced = false
-    
+	
 #        if (col_left):
-    
+	
 #            position.x += 1
-    
+	
 #        if (col_right):
-    
+	
 #            position.x -= 1
-    
+	
 #        if (col_left and col_right): status = ATTACK
-    
+	
 #        if (player1.position.x < position.x+8): facing = LEFT
 #        else: facing = RIGHT
-    
+	
 #        if (y_vel < 0 and col_top):
-    
+	
 #            y_vel = 0
-    
-    
+	
+	
 #        if (global.murderer or global.thief_level > 0):
-    
+	
 #            status = PATROL
-    
+	
 #        elif (not welcomed and (LevelGeneration.scr_get_room_x(player1.position.x) == LevelGeneration.scr_get_room_x(position.x) and LevelGeneration.scr_get_room_y(player1.position.y) == LevelGeneration.scr_get_room_y(position.y))):
-    
+	
 #            if (style == "Bomb"): global.message = "WELCOME TO " + scr_get_name() + "'S BOMB SHOP!"
 #            elif (style == "Weapon"): global.message = "WELCOME TO " + scr_get_name() + "'S ARMORY!"
 #            elif (style == "Clothing"): global.message = "WELCOME TO " + scr_get_name() + "'S CLOTHING SHOP!"
@@ -382,54 +382,54 @@ func _process(delta):
 #            elif (style == "Ankh"): global.message = "I HAVE SOMETHING SPECIAL..."
 #            else: global.message = "WELCOME TO " + scr_get_name() + "'S SUPPLY SHOP!"
 #            if (style == "Craps"):
-        
+		
 #                if (global.gamepad_on): global.message2 = "PRESS " + scr_get_joy(global.joy_pay_val) + " TO BET $" + str(bet_value) + "."
 #                else: global.message2 = "PRESS " + scr_get_key(global.key_pay_val) + " TO BET $" + str(bet_value) + "."
-        
+		
 #            elif (style == "Kissing"):
-        
+		
 #                if (global.gamepad_on): global.message2 = "$" + str(InLevel.get_kiss_value()) + " A KISS. PRESS " + scr_get_joy(global.joy_pay_val) + "."
 #                else: global.message2 = "$" + str(InLevel.get_kiss_value()) + " A KISS. PRESS " + scr_get_key(global.key_pay_val) + "."
-        
+		
 #            else: global.message2 = ""
 #            global.message_timer = 200
 #            welcomed = true
-    
-    
+	
+	
 #        # DY: # DY: # DY: # DY: # DY: # DY: # DY: /
 #        # DY:  CRAPS
 #        # DY: # DY: # DY: # DY: # DY: # DY: # DY: /
-    
+	
 #        if (style == "Craps"):
-    
+	
 #            global.dice_rolled = true
 #            global.dice_value = 0
 #            if (gml.instance_number(dice) == 2 and player1.bet > 0):
-        
+		
 #                with dice
-            
+			
 #                    if (not rolled): global.dice_rolled = false
 #                    global.dice_value += value
-            
-        
+			
+		
 #            else:
-        
+		
 #                global.dice_rolled = false
-        
-        
+		
+		
 #            if (global.dice_rolled):
-        
+		
 #                if (global.dice_value == 7):
-            
+			
 #                    if (InLevel.is_real_level()): global.dice_games_won += 1
 #                    global.message = "YOU ROLLED A SEVEN!"
 #                    global.message2 = "YOU WIN A PRIZE!"
 #                    global.message_timer = 200
 #                    player1.bet = 0
 #                    with item
-                
+				
 #                        if (in_dice_house):
-                    
+					
 #                            obj = gml.instance_create(position.x-4, position.y+6, Objects.poof)
 #                            obj.x_vel = -0.4
 #                            obj = gml.instance_create(position.x+4, position.y+6, Objects.poof)
@@ -445,11 +445,11 @@ func _process(delta):
 #                            cost = 0
 #                            for_sale = false
 #                            in_dice_house = false
-                    
-                
-            
+					
+				
+			
 #                elif (global.dice_value > 7):
-            
+			
 #                    if (InLevel.is_real_level()): global.dice_games_won += 1
 #                    global.message = "YOU ROLLED A " + str(global.dice_value) + "!"
 #                    global.message2 = "CONGRATULATIONS! YOU WIN!"
@@ -458,309 +458,309 @@ func _process(delta):
 #                    global.collect_counter += 20
 #                    if (global.collect_counter > 100): global.collect_counter = 100
 #                    player1.bet = 0
-            
+			
 #                elif (global.dice_value < 7):
-            
+			
 #                    if (InLevel.is_real_level()): global.dice_games_lost += 1
 #                    global.message = "YOU ROLLED A " + str(global.dice_value) + "!"
 #                    global.message2 = "I'M SORRY, BUT YOU LOSE!"
 #                    global.message_timer = 200
 #                    player1.bet = 0
-            
+			
 #                global.dice_rolled = false
 #                with dice  rolled = false 
-        
-    
+		
+	
 #        elif (player1.hold_item > 0):
-    
+	
 #            obj = player1.hold_item
 #            if (obj.cost > 0):
-        
+		
 #                if (LevelGeneration.scr_get_room_x(player1.position.x) == LevelGeneration.scr_get_room_x(position.x) and LevelGeneration.scr_get_room_y(player1.position.y) == LevelGeneration.scr_get_room_y(position.y)):
-            
+			
 #                    status = FOLLOW
-            
-        
-    
+			
+		
+	
 
 #    elif (status == FOLLOW):
 
 #        image_speed = 0.5
-    
+	
 #        if (Collision.is_collision_left(1, self) or Collision.is_collision_right(1, self)):
-    
+	
 #            if (facing == LEFT): facing = RIGHT
 #            else: facing = LEFT
-    
-    
+	
+	
 #        if (turn_timer > 0): turn_timer -= 1
 #        elif (abs(player1.position.y - (position.y+8)) < 8 and Collision.is_collision_bottom(1, self) and dist > 16):
-    
+	
 #            if (player1.position.x < position.x): facing = LEFT
 #            else: facing = RIGHT
 #            turn_timer = 10
-    
-    
+	
+	
 #        i = dist/16 * 1.5
 #        if (facing == LEFT):
-    
+	
 #            x_vel = -i
-    
+	
 #        else:
-    
+	
 #            x_vel = i
-    
+	
 
 #        if (x_vel < -3): x_vel = -3
 #        if (x_vel > 3): x_vel = 3
-    
+	
 #        if (dist < 12 or player1.position.y < position.y): x_vel = 0
-    
+	
 #        if (player1.hold_item != 0):
-    
+	
 #            obj = player1.hold_item
 #            if (obj == 0 or obj.cost == 0):
-        
+		
 #                status = IDLE
-        
-    
+		
+	
 #        else:
-    
+	
 #            status = IDLE
-    
+	
 
 #    elif (status == PATROL):
 
 #        bounced = false
-    
+	
 #        if (y_vel < 0 and Collision.is_collision_top(1, self)):
-    
+	
 #            y_vel = 0
-    
+	
 
 #        if (col_bot and counter > 0): counter -= 1    
 #        if (counter < 1):
-    
+	
 #            facing = gml.rand(0,1)
 #            status = WALK
-    
+	
 
 #    elif (status == WALK):
 
 #        image_speed = 0.5
 
 #        if (Collision.is_collision_left(1, self) or Collision.is_collision_right(1, self)):
-    
+	
 #            if (facing == LEFT): facing = RIGHT
 #            else: facing = LEFT
-    
-    
+	
+	
 #        if (facing == LEFT):
-    
+	
 #            if (not gml.collision_point(position.x-1, position.y, "solid", -1, -1)):
-        
+		
 #                status = PATROL
 #                counter = gml.rand(20,50)
 #                x_vel = 0
-        
+		
 #            x_vel = -1.5
-    
+	
 #        else:
-    
+	
 #            if (not gml.collision_point(position.x+16, position.y, "solid", -1, -1)):
-        
+		
 #                status = PATROL
 #                counter = gml.rand(20,50)
 #                x_vel = 0
-        
+		
 #            x_vel = 1.5
-    
-    
+	
+	
 #        if (gml.rand(1,100) == 1):
-    
+	
 #            status = PATROL
 #            counter = gml.rand(20,50)
 #            x_vel = 0
-    
+	
 
 #    elif (status == ATTACK):
 
 #        image_speed = 1
-    
+	
 #        if (not angered):
-    
+	
 #            with item
-        
+		
 #                cost = 0
 #                for_sale = false
-        
+		
 #            angered = true
-    
-    
+	
+	
 #        if (turn_timer > 0): turn_timer -= 1
 #        elif (abs(player1.position.y - (position.y+8)) < 8 and Collision.is_collision_bottom(1, self) and dist > 16):
-    
+	
 #            if (player1.position.x < position.x): facing = LEFT
 #            else: facing = RIGHT
 #            turn_timer = 20
-    
-    
+	
+	
 #        if (Collision.is_collision_left(1, self) or Collision.is_collision_right(1, self)):
-    
+	
 #            if (facing == LEFT): facing = RIGHT
 #            else: facing = LEFT
-    
-    
+	
+	
 #        if (facing == LEFT): x_vel = -3
 #        else: x_vel = 3
-    
+	
 #        if (has_gun):
-    
+	
 #            if (firing > 0): firing -= 1
 #            elif (abs(player1.position.y - (position.y+8)) < 32):
-        
+		
 #                if (facing == LEFT and player1.position.x < position.x+8 and dist < 96):
-            
+			
 #                    gml.instance_create(position.x, position.y+9, Objects.shotgun_blast_left)
 #                    for (i = 0 i < 6 i+= 1)
-                
+				
 #                        obj = gml.instance_create(position.x+4, position.y+8, Objects.bullet)
 #                        obj.x_vel = (-1 * gml.rand(6,8)) + x_vel
 #                        if (obj.x_vel >= -6): obj.x_vel = -6
 #                        obj.y_vel = random(1) - random(1)
 #                        obj.safe = true
 #                        with obj  if (gml.collision_point(position.x, position.y, "solid", 0, 0)): gml.instance_destroy(self) 
-                
+				
 #                    y_vel -= 1
 #                    x_vel += 3
 #                    Audio.play_sound(global.snd_shotgun)
 #                    firing = firing_max
-            
+			
 #                if (facing == RIGHT and player1.position.x > position.x+8 and dist < 96):
-            
+			
 #                    gml.instance_create(position.x+16, position.y+9, Objects.shotgun_blast_right)
 #                    for (i = 0 i < 6 i+= 1)
-                
+				
 #                        obj = gml.instance_create(position.x+12, position.y+8, Objects.bullet)
 #                        obj.x_vel = gml.rand(6,8) + x_vel
 #                        if (obj.x_vel < 6): obj.x_vel = 6
 #                        obj.y_vel = random(1) - random(1)
 #                        obj.safe = true
 #                        with obj  if (gml.collision_point(position.x, position.y, "solid", 0, 0)): gml.instance_destroy(self) 
-                
+				
 #                    y_vel -= 1
 #                    x_vel -= 3
 #                    Audio.play_sound(global.snd_shotgun)
 #                    firing = firing_max
-            
-        
-    
-    
+			
+		
+	
+	
 #        # DY:  jump
 #        if (player1.position.y > position.y and abs(player1.position.x - (position.x+8)) < 64):
-    
+	
 #            # DY:  do nothing
-    
+	
 #        elif ((facing == LEFT and gml.collision_point(position.x-16, position.y, "solid", -1, -1)) or:
 #            (facing == RIGHT and gml.collision_point(position.x+32, position.y, "solid", -1, -1)))
-    
+	
 #            if (col_bot and not Collision.is_collision_top(4, self)): y_vel = -1 * gml.rand(7,8)
 #            /*
 #            else:
-        
+		
 #                if (facing == LEFT): x_vel = -1.5
 #                else: x_vel = 1.5
-        
+		
 #            */
-    
+	
 #        elif (player1.position.y <= position.y+16 and :
 #                 ((facing == LEFT and not gml.collision_point(position.x-16, position.y+16, "solid", -1, -1)) or
 #                 (facing == RIGHT and not gml.collision_point(position.x+32, position.y+16, "solid", -1, -1))))
-    
+	
 #            if (col_bot and not Collision.is_collision_top(4, self)): y_vel = -1 * gml.rand(7,8)
-    
-    
+	
+	
 #        if (not col_bot and player1.position.y > position.y+8):
-    
+	
 #            if (facing == LEFT): x_vel = -1.5
 #            else: x_vel = 1.5
-    
-    
+	
+	
 #        if (player1.dead):
-    
+	
 #            status = WALK
-    
+	
 
 #    elif (status == STUNNED):
 
 #            if (col_bot): sprite_index = "shop_stun_l"
 #            elif (bounced):
-        
+		
 #                if (y_vel < 0): sprite_index = "shop_bounce_l"
 #                else: sprite_index = "shop_fall_l"
-        
+		
 #            else:
-        
+		
 #                if (x_vel < 0): sprite_index = "shop_die_ll"
 #                else: sprite_index = "shop_die_lr"
-        
-    
+		
+	
 #        if (col_bot and not bounced):
-    
+	
 #            bounced = true
 #            MiscScripts.scr_create_blood(position.x+8, position.y+8, 3)
-    
-    
+	
+	
 #        if (held or col_bot):
-          
+		  
 #            if (counter > 0): counter -= 1
 #            elif (hp > 0):
-        
+		
 #                status = ATTACK
 #                if (held):
-            
+			
 #                    held = false
 #                    with player1  hold_item = 0 pickup_item_type = "" 
-            
-        
-    
+			
+		
+	
 
 #    elif (status == DEAD):
 
 #        if (not dead):
-    
+	
 #            if (InLevel.is_room("r_stars")):
-        
+		
 #                if (stars_room.kills < 99): stars_room.kills += 1
-        
+		
 #            else:
-        
+		
 #                if (InLevel.is_real_level()): global.enemy_kills[19] += 1
 #                global.shopkeepers += 1
 #                global.kills += 1
 #                global.murderer = true
 #                repeat(gml.rand(1,4))
-            
+			
 #                    obj = gml.instance_create(position.x+8, position.y+8, Objects.gold_nugget)
 #                    obj.y_vel = -1
 #                    obj.x_vel = gml.rand(1,3)-gml.rand(1,3)
-            
-        
+			
+		
 #            Audio.play_sound(global.snd_caveman_die)
-        
+		
 #            dead = true
-    
+	
 
 #        sprite_index = "shop_die_l"
 
-    
+	
 #        if (abs(x_vel) > 0 or abs(y_vel) > 0): status = STUNNED
 
 
 #    if (status >= STUNNED):
 
 #        if (has_gun):
-    
+	
 #            obj = gml.instance_create(position.x+8, position.y+8, Objects.shotgun)
 #            obj.y_vel = gml.rand(4,6)
 #            if (x_vel < 0): obj.x_vel = -1 * gml.rand(4,6)
@@ -768,10 +768,10 @@ func _process(delta):
 #            obj.cost = 0
 #            obj.for_sale = false
 #            has_gun = false
-    
+	
 
 #        scr_check_collisions()
-    
+	
 #        if (x_vel == 0 and y_vel == 0 and hp < 1): status = DEAD
 
 

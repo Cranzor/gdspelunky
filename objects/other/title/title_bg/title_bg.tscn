@@ -2,8 +2,7 @@
 
 [ext_resource type="Script" path="res://objects/other/title/title_bg/title_bg.gd" id="1_guo66"]
 
-[node name="TitleBg" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
+[node name="TitleBg" type="Node2D"]
 script = ExtResource("1_guo66")
 sprite_index_name = "title_bg"
-animated_sprite_node = NodePath("")
 object_name = "title_bg"

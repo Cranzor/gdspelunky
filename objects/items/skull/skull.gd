@@ -14,7 +14,6 @@ func _process(delta):
 
 
 #--- Object functions
-var to_destroy
 
 
 func collision_with_bullet():

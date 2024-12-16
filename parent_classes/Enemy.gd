@@ -43,6 +43,10 @@ var PAUSE
 var HANG
 var DROWNED
 var TURN
+var whipped
+var attack_timer
+var THROW
+var sight_counter
 
 func step():
 	pass

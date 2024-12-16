@@ -15,6 +15,7 @@ func _ready():
 	gml.instance_create(120, 20, Objects.laser)
 	gml.instance_create(120, -200, Objects.p_dummy2)
 	gml.instance_create(120, -20, Objects.web_ball)
+	gml.instance_create(-150, -30, Objects.p_dummy)
 	#gml.instance_create(0, 0, Objects.level)
 	#gml.draw_sprite("shopkeeper_icon", -1, gml.view("xview")+64, gml.view("yview")+8, self)
 	

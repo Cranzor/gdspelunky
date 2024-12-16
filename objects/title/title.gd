@@ -1,10 +1,13 @@
 extends GMObject
 
+
 func _ready():
 	object_setup()
 
+
 func _physics_process(_delta):
 	object_tick()
+
 
 func _process(delta):
 	object_process(delta)
@@ -12,7 +15,6 @@ func _process(delta):
 #--- Object functions
 var darkness
 var need_dark
-var fade_out
 var state
 var t_money
 var t_time

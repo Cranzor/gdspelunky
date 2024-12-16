@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://3rcjef6p2ce"]
 
-[sub_resource type="GDScript" id="GDScript_yjw0m"]
+[ext_resource type="Script" path="res://objects/enemies/magma_man/magma_man.gd" id="1_3teqn"]
 
 [node name="MagmaMan" type="Node2D"]
+script = ExtResource("1_3teqn")
+object_name = "magma_man"

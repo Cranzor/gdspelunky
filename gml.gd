@@ -496,6 +496,9 @@ func room_get_name():
 
 func draw_sprite_ext(sprite, subimg, x, y, xscale, yscale, rot, color, alpha, node: GMObject, is_object_sprite: bool = true):
 	#--- added "is_object_sprite" bool to indicate whether sprite is intended to override the main sprite or not
+	if subimg == -1:
+		subimg = node.subimg
+
 	var sprite_pascal_case = sprite.to_pascal_case()
 	
 	if is_object_sprite:

@@ -111,8 +111,8 @@ func draw():
 		gml.draw_set_color(gml.c_yellow)
 		gml.draw_text(64, 96, "TIME: ", "time", self)
 		gml.draw_set_color(gml.c_white)
-		if (s < 10): gml.draw_text(96+24, 96, str(m) + ":0" + str(s), "colon_zero", self)
-		else: gml.draw_text(96+24, 96, str(m) + ":" + str(s), "colon", self)
+		if (s < 10): gml.draw_text(96+24, 96, str(m) + ":0" + str(s), "time_display1", self)
+		else: gml.draw_text(96+24, 96, str(m) + ":" + str(s), "time_display2", self)
 
 	if (draw_status > 5):
 
@@ -120,7 +120,7 @@ func draw():
 		gml.draw_set_color(gml.c_yellow)
 		gml.draw_text(64, 96+8, "KILLS: ", "kills", self)
 		gml.draw_set_color(gml.c_white)
-		gml.draw_text(96+24, 96+8, global.kills, "global_kills", self)
+		gml.draw_text(96+24, 96+8, str(global.kills), "global_kills", self)
 
 	if (draw_status > 6):
 
@@ -128,7 +128,7 @@ func draw():
 		gml.draw_set_color(gml.c_yellow)
 		gml.draw_text(64, 96+16, "SAVES: ", "saves", self)
 		gml.draw_set_color(gml.c_white)
-		gml.draw_text(96+24, 96+16, global.damsels, "global_damsels", self)
+		gml.draw_text(96+24, 96+16, str(global.damsels), "global_damsels", self)
 
 
 	if (fade_out):
