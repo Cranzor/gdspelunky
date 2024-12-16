@@ -23,210 +23,210 @@ func _process(delta):
     
 
 #func draw():
-#    draw_set_font(global.my_font_small)
-#    draw_set_color(c_yellow)
+#    gml.draw_set_font(global.my_font_small)
+#    gml.draw_set_color(gml.c_yellow)
 #    str_len = string_length("PRESS KEY FOR")*8
 #    n = 160 - str_len
 #    n = ceil(n / 2)
-#    draw_text(n, 32, "PRESS KEY FOR")
-#    draw_text(8, 96, "ESC TO KEEP SAME.")
-#    draw_text(8, 104, "CURRENT: ")
+#    gml.draw_text(n, 32, "PRESS KEY FOR")
+#    gml.draw_text(8, 96, "ESC TO KEEP SAME.")
+#    gml.draw_text(8, 104, "CURRENT: ")
 
 #    if (status == 0):
 
-#        draw_set_font(global.my_font)
-#        draw_set_color(c_white)
+#        gml.draw_set_font(global.my_font)
+#        gml.draw_set_color(gml.c_white)
 #        str_len = string_length("UP")*16
 #        n = 160 - str_len
 #        n = ceil(n / 2)
-#        draw_text(n, 40, "UP")
+#        gml.draw_text(n, 40, "UP")
 #        curr_val = global.key_up_val
 
 #    elif (status == 1):
 
-#        draw_set_font(global.my_font)
-#        draw_set_color(c_white)
+#        gml.draw_set_font(global.my_font)
+#        gml.draw_set_color(gml.c_white)
 #        str_len = string_length("DOWN")*16
 #        n = 160 - str_len
 #        n = ceil(n / 2)
-#        draw_text(n, 40, "DOWN")
+#        gml.draw_text(n, 40, "DOWN")
 #        curr_val = global.key_down_val
 
 #    elif (status == 2):
 
-#        draw_set_font(global.my_font)
-#        draw_set_color(c_white)
+#        gml.draw_set_font(global.my_font)
+#        gml.draw_set_color(gml.c_white)
 #        str_len = string_length("LEFT")*16
 #        n = 160 - str_len
 #        n = ceil(n / 2)
-#        draw_text(n, 40, "LEFT")
+#        gml.draw_text(n, 40, "LEFT")
 #        curr_val = global.key_left_val
 
 #    elif (status == 3):
 
-#        draw_set_font(global.my_font)
-#        draw_set_color(c_white)
+#        gml.draw_set_font(global.my_font)
+#        gml.draw_set_color(gml.c_white)
 #        str_len = string_length("RIGHT")*16
 #        n = 160 - str_len
 #        n = ceil(n / 2)
-#        draw_text(n, 40, "RIGHT")
+#        gml.draw_text(n, 40, "RIGHT")
 #        curr_val = global.key_right_val
 
 #    elif (status == 4):
 
-#        draw_set_font(global.my_font)
-#        draw_set_color(c_white)
+#        gml.draw_set_font(global.my_font)
+#        gml.draw_set_color(gml.c_white)
 #        str_len = string_length("JUMP")*16
 #        n = 160 - str_len
 #        n = ceil(n / 2)
-#        draw_text(n, 40, "JUMP")
+#        gml.draw_text(n, 40, "JUMP")
 #        curr_val = global.key_jump_val
 
 #    elif (status == 5):
 
-#        draw_set_font(global.my_font)
-#        draw_set_color(c_white)
+#        gml.draw_set_font(global.my_font)
+#        gml.draw_set_color(gml.c_white)
 #        str_len = string_length("ACTION")*16
 #        n = 160 - str_len
 #        n = ceil(n / 2)
-#        draw_text(n, 40, "ACTION")
+#        gml.draw_text(n, 40, "ACTION")
 #        curr_val = global.key_attack_val
 
 #    elif (status == 6):
 
-#        draw_set_font(global.my_font)
-#        draw_set_color(c_white)
+#        gml.draw_set_font(global.my_font)
+#        gml.draw_set_color(gml.c_white)
 #        str_len = string_length("SWITCH")*16
 #        n = 160 - str_len
 #        n = ceil(n / 2)
-#        draw_text(n, 40, "SWITCH")
+#        gml.draw_text(n, 40, "SWITCH")
 #        curr_val = global.key_item_val
 
 #    elif (status == 7):
 
-#        draw_set_font(global.my_font)
-#        draw_set_color(c_white)
+#        gml.draw_set_font(global.my_font)
+#        gml.draw_set_color(gml.c_white)
 #        str_len = string_length("RUN")*16
 #        n = 160 - str_len
 #        n = ceil(n / 2)
-#        draw_text(n, 40, "RUN")
+#        gml.draw_text(n, 40, "RUN")
 #        curr_val = global.key_run_val
 
 #    elif (status == 8):
 
-#        draw_set_font(global.my_font)
-#        draw_set_color(c_white)
+#        gml.draw_set_font(global.my_font)
+#        gml.draw_set_color(gml.c_white)
 #        str_len = string_length("BOMB")*16
 #        n = 160 - str_len
 #        n = ceil(n / 2)
-#        draw_text(n, 40, "BOMB")
+#        gml.draw_text(n, 40, "BOMB")
 #        curr_val = global.key_bomb_val
 
 #    elif (status == 9):
 
-#        draw_set_font(global.my_font)
-#        draw_set_color(c_white)
+#        gml.draw_set_font(global.my_font)
+#        gml.draw_set_color(gml.c_white)
 #        str_len = string_length("ROPE")*16
 #        n = 160 - str_len
 #        n = ceil(n / 2)
-#        draw_text(n, 40, "ROPE")
+#        gml.draw_text(n, 40, "ROPE")
 #        curr_val = global.key_rope_val
 
 #    elif (status == 10):
 
-#        draw_set_font(global.my_font)
-#        draw_set_color(c_white)
+#        gml.draw_set_font(global.my_font)
+#        gml.draw_set_color(gml.c_white)
 #        str_len = string_length("FLARE")*16
 #        n = 160 - str_len
 #        n = ceil(n / 2)
-#        draw_text(n, 40, "FLARE")
+#        gml.draw_text(n, 40, "FLARE")
 #        curr_val = global.key_flare_val
 
 #    elif (status == 11):
 
-#        draw_set_font(global.my_font)
-#        draw_set_color(c_white)
+#        gml.draw_set_font(global.my_font)
+#        gml.draw_set_color(gml.c_white)
 #        str_len = string_length("PURCHASE")*16
 #        n = 160 - str_len
 #        n = ceil(n / 2)
-#        draw_text(n, 40, "PURCHASE")
+#        gml.draw_text(n, 40, "PURCHASE")
 #        curr_val = global.key_pay_val
 
 
-#    draw_set_font(global.my_font_small)
+#    gml.draw_set_font(global.my_font_small)
 #    match (curr_val)
 
-#        vk_up:  draw_text(80, 104, "UP ARR")
+#        vk_up:  gml.draw_text(80, 104, "UP ARR")
 #    break 
-#        vk_down:  draw_text(80, 104, "DOWN ARR")
+#        vk_down:  gml.draw_text(80, 104, "DOWN ARR")
 #    break 
-#        vk_left:  draw_text(80, 104, "LEFT ARR")
+#        vk_left:  gml.draw_text(80, 104, "LEFT ARR")
 #    break 
-#        vk_right:  draw_text(80, 104, "RIGHT ARR")
+#        vk_right:  gml.draw_text(80, 104, "RIGHT ARR")
 #    break 
-#        vk_shift:  draw_text(80, 104, "SHIFT")
+#        vk_shift:  gml.draw_text(80, 104, "SHIFT")
 #    break 
-#        vk_control:  draw_text(80, 104, "CTRL")
+#        vk_control:  gml.draw_text(80, 104, "CTRL")
 #    break 
-#        vk_alt:  draw_text(80, 104, "ALT")
+#        vk_alt:  gml.draw_text(80, 104, "ALT")
 #    break 
-#        vk_space:  draw_text(80, 104, "SPACE")
+#        vk_space:  gml.draw_text(80, 104, "SPACE")
 #    break 
-#        vk_enter:  draw_text(80, 104, "ENTER")
+#        vk_enter:  gml.draw_text(80, 104, "ENTER")
 #    break 
-#        ord("A"):  draw_text(80, 104, "A")
+#        ord("A"):  gml.draw_text(80, 104, "A")
 #    break 
-#        ord("B"):  draw_text(80, 104, "B")
+#        ord("B"):  gml.draw_text(80, 104, "B")
 #    break 
-#        ord("C"):  draw_text(80, 104, "C")
+#        ord("C"):  gml.draw_text(80, 104, "C")
 #    break 
-#        ord("D"):  draw_text(80, 104, "D")
+#        ord("D"):  gml.draw_text(80, 104, "D")
 #    break 
-#        ord("E"):  draw_text(80, 104, "E")
+#        ord("E"):  gml.draw_text(80, 104, "E")
 #    break 
-#        ord("F"):  draw_text(80, 104, "F")
+#        ord("F"):  gml.draw_text(80, 104, "F")
 #    break 
-#        ord("G"):  draw_text(80, 104, "G")
+#        ord("G"):  gml.draw_text(80, 104, "G")
 #    break 
-#        ord("H"):  draw_text(80, 104, "H")
+#        ord("H"):  gml.draw_text(80, 104, "H")
 #    break 
-#        ord("I"):  draw_text(80, 104, "I")
+#        ord("I"):  gml.draw_text(80, 104, "I")
 #    break 
-#        ord("J"):  draw_text(80, 104, "J")
+#        ord("J"):  gml.draw_text(80, 104, "J")
 #    break 
-#        ord("K"):  draw_text(80, 104, "K")
+#        ord("K"):  gml.draw_text(80, 104, "K")
 #    break 
-#        ord("L"):  draw_text(80, 104, "L")
+#        ord("L"):  gml.draw_text(80, 104, "L")
 #    break 
-#        ord("M"):  draw_text(80, 104, "M")
+#        ord("M"):  gml.draw_text(80, 104, "M")
 #    break 
-#        ord("N"):  draw_text(80, 104, "N")
+#        ord("N"):  gml.draw_text(80, 104, "N")
 #    break 
-#        ord("O"):  draw_text(80, 104, "O")
+#        ord("O"):  gml.draw_text(80, 104, "O")
 #    break 
-#        ord("P"):  draw_text(80, 104, "P")
+#        ord("P"):  gml.draw_text(80, 104, "P")
 #    break 
-#        ord("Q"):  draw_text(80, 104, "Q")
+#        ord("Q"):  gml.draw_text(80, 104, "Q")
 #    break 
-#        ord("R"):  draw_text(80, 104, "R")
+#        ord("R"):  gml.draw_text(80, 104, "R")
 #    break 
-#        ord("S"):  draw_text(80, 104, "S")
+#        ord("S"):  gml.draw_text(80, 104, "S")
 #    break 
-#        ord("T"):  draw_text(80, 104, "T")
+#        ord("T"):  gml.draw_text(80, 104, "T")
 #    break 
-#        ord("U"):  draw_text(80, 104, "U")
+#        ord("U"):  gml.draw_text(80, 104, "U")
 #    break 
-#        ord("V"):  draw_text(80, 104, "V")
+#        ord("V"):  gml.draw_text(80, 104, "V")
 #    break 
-#        ord("W"):  draw_text(80, 104, "W")
+#        ord("W"):  gml.draw_text(80, 104, "W")
 #    break 
-#        ord("X"):  draw_text(80, 104, "X")
+#        ord("X"):  gml.draw_text(80, 104, "X")
 #    break 
-#        ord("Y"):  draw_text(80, 104, "Y")
+#        ord("Y"):  gml.draw_text(80, 104, "Y")
 #    break 
-#        ord("Z"):  draw_text(80, 104, "Z")
+#        ord("Z"):  gml.draw_text(80, 104, "Z")
 #    break 
-#        default:  draw_text(80, 104, "KEY " + str(curr_val))
+#        default:  gml.draw_text(80, 104, "KEY " + str(curr_val))
 #    break 
 
 

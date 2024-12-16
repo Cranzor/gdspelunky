@@ -1,3 +1,4 @@
+
 extends GMObject
 
 
@@ -20,11 +21,11 @@ func _process(delta):
 #    status = 0
 #    joy = false
 
-	
+    
 
 #func draw():
 #    gml.draw_set_font(global.my_font_small)
-#    gml.draw_set_color(c_yellow)
+#    gml.draw_set_color(gml.c_yellow)
 #    str_len = string_length("PRESS BUTTON FOR")*8
 #    n = 160 - str_len
 #    n = ceil(n / 2)
@@ -34,14 +35,14 @@ func _process(delta):
 
 #    if (not joystick_exists(1)):
 
-#        gml.draw_set_color(c_red)
+#        gml.draw_set_color(gml.c_red)
 #        gml.draw_text(8, 88, "NO GAMEPAD FOUND!")
 
 
 #    if (status == 0):
 
 #        gml.draw_set_font(global.my_font)
-#        gml.draw_set_color(c_white)
+#        gml.draw_set_color(gml.c_white)
 #        str_len = string_length("JUMP")*16
 #        n = 160 - str_len
 #        n = ceil(n / 2)
@@ -51,7 +52,7 @@ func _process(delta):
 #    elif (status == 1):
 
 #        gml.draw_set_font(global.my_font)
-#        gml.draw_set_color(c_white)
+#        gml.draw_set_color(gml.c_white)
 #        str_len = string_length("ACTION")*16
 #        n = 160 - str_len
 #        n = ceil(n / 2)
@@ -61,7 +62,7 @@ func _process(delta):
 #    elif (status == 2):
 
 #        gml.draw_set_font(global.my_font)
-#        gml.draw_set_color(c_white)
+#        gml.draw_set_color(gml.c_white)
 #        str_len = string_length("SWITCH")*16
 #        n = 160 - str_len
 #        n = ceil(n / 2)
@@ -71,7 +72,7 @@ func _process(delta):
 #    elif (status == 3):
 
 #        gml.draw_set_font(global.my_font)
-#        gml.draw_set_color(c_white)
+#        gml.draw_set_color(gml.c_white)
 #        str_len = string_length("RUN")*16
 #        n = 160 - str_len
 #        n = ceil(n / 2)
@@ -81,7 +82,7 @@ func _process(delta):
 #    elif (status == 4):
 
 #        gml.draw_set_font(global.my_font)
-#        gml.draw_set_color(c_white)
+#        gml.draw_set_color(gml.c_white)
 #        str_len = string_length("BOMB")*16
 #        n = 160 - str_len
 #        n = ceil(n / 2)
@@ -91,7 +92,7 @@ func _process(delta):
 #    elif (status == 5):
 
 #        gml.draw_set_font(global.my_font)
-#        gml.draw_set_color(c_white)
+#        gml.draw_set_color(gml.c_white)
 #        str_len = string_length("ROPE")*16
 #        n = 160 - str_len
 #        n = ceil(n / 2)
@@ -101,7 +102,7 @@ func _process(delta):
 #    elif (status == 6):
 
 #        gml.draw_set_font(global.my_font)
-#        gml.draw_set_color(c_white)
+#        gml.draw_set_color(gml.c_white)
 #        str_len = string_length("FLARE")*16
 #        n = 160 - str_len
 #        n = ceil(n / 2)
@@ -111,7 +112,7 @@ func _process(delta):
 #    elif (status == 7):
 
 #        gml.draw_set_font(global.my_font)
-#        gml.draw_set_color(c_white)
+#        gml.draw_set_color(gml.c_white)
 #        str_len = string_length("PURCHASE")*16
 #        n = 160 - str_len
 #        n = ceil(n / 2)
@@ -121,7 +122,7 @@ func _process(delta):
 #    elif (status == 8):
 
 #        gml.draw_set_font(global.my_font)
-#        gml.draw_set_color(c_white)
+#        gml.draw_set_color(gml.c_white)
 #        str_len = string_length("START")*16
 #        n = 160 - str_len
 #        n = ceil(n / 2)
@@ -150,9 +151,9 @@ func _process(delta):
 
 
 
-	
+    
 
-#func room_end():
+#func room end():
 #    file = file_text_open_write("gamepad.cfg")
 #    file_text_write_str(file, str(global.joy_jump_val))
 #    file_text_writeln(file)
@@ -173,6 +174,7 @@ func _process(delta):
 #    file_text_write_str(file, str(global.joy_start_val))
 #    file_text_close(file)
 
+    
 
 #func step():
 #    joy_released = false
@@ -182,18 +184,18 @@ func _process(delta):
 
 #        if (joy_key != 0): joy = true
 #        else:
-	
+    
 #            joy_released = true
 #            joy = false
-	
+    
 
 #    else:
 
 #        if (joy_key != 0):
-	
+    
 #            joy_pressed = true
 #            joy = true
-	
+    
 #        else: joy = false
 
 

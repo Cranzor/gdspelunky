@@ -28,7 +28,7 @@ func _process(delta):
     
 
 #func mouse left button released():
-#    if (sprite_index == "test_button_pressed):"
+#    if (sprite_index == "test_button_pressed"):
 
 #        with level_editor
     

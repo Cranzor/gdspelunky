@@ -23,7 +23,7 @@ func _process(delta):
     
 
 #func animation_end():
-#    if (sprite_index == "magma_man_die):"
+#    if (sprite_index == "magma_man_die"):
 
 #        gml.instance_destroy(self)
 
@@ -31,7 +31,7 @@ func _process(delta):
     
 
 #func collision_with_bomb():
-#    if (other.sprite_index != "bomb_armed):"
+#    if (other.sprite_index != "bomb_armed"):
 
 #        with other
     
@@ -106,7 +106,7 @@ func _process(delta):
 
 #        Audio.play_sound(global.snd_hit)
 #        whipped = true
-#        alarm_0(10)
+#        alarm_0_countdown.start(10)
 
 
     
@@ -163,7 +163,7 @@ func _process(delta):
 #    y_vel += my_grav
 #    if (y_vel > y_vel_limit): y_vel = y_vel_limit
 
-#    if (Collision.is_collision_bottom(1)):
+#    if (Collision.is_collision_bottom(1, self)):
 #        y_vel = 0
 #    else:
 
@@ -182,12 +182,12 @@ func _process(delta):
     
 #    if (status == IDLE):
 
-#        if (y_vel < 0 and Collision.is_collision_top(1)):
+#        if (y_vel < 0 and Collision.is_collision_top(1, self)):
     
 #            y_vel = 0
     
 
-#        if (Collision.is_collision_bottom(1) and counter > 0): counter -= 1    
+#        if (Collision.is_collision_bottom(1, self) and counter > 0): counter -= 1    
 #        if (counter < 1):
     
 #            facing = gml.rand(0,1)
@@ -202,7 +202,7 @@ func _process(delta):
 
 #    elif (status == WALK):
 
-#        if (Collision.is_collision_left(1) or Collision.is_collision_right(1)):
+#        if (Collision.is_collision_left(1, self) or Collision.is_collision_right(1, self)):
     
 #            if (facing == LEFT): facing = RIGHT
 #            else: facing = LEFT
@@ -238,7 +238,7 @@ func _process(delta):
 
 
 #    PlatformEngine.move_to(x_vel,y_vel)
-#    if (Collision.is_collision_solid()):
+#    if (Collision.is_collision_solid(self):
 #        position.y -= 2
 
 #    if (status < STUNNED and status != THROW):

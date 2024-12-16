@@ -23,7 +23,7 @@ func _process(delta):
 #        sprite_index = "man_trap_sleep_l"
 #        status = SLEEPY
 
-#    elif (sprite_index == "man_trap_sleep_l):"
+#    elif (sprite_index == "man_trap_sleep_l"):
 
 #        sprite_index = "man_trap_stun_l"
 #        status = STUNNED
@@ -271,10 +271,10 @@ func _process(delta):
 #    col_right = false
 #    col_bot = false
 #    col_top = false
-#    if (Collision.is_collision_left(1)): col_left = true
-#    if (Collision.is_collision_right(1)): col_right = true
-#    if (Collision.is_collision_bottom(1)): col_bot = true
-#    if (Collision.is_collision_top(1)): col_top = true
+#    if (Collision.is_collision_left(1, self)): col_left = true
+#    if (Collision.is_collision_right(1, self)): col_right = true
+#    if (Collision.is_collision_bottom(1, self)): col_bot = true
+#    if (Collision.is_collision_top(1, self)): col_top = true
 
 #    if (hp < 1):
 
@@ -298,7 +298,7 @@ func _process(delta):
 #        gml.instance_destroy(self)
 
 
-#    if (Collision.is_collision_bottom(1) and status != STUNNED): y_vel = 0
+#    if (Collision.is_collision_bottom(1, self) and status != STUNNED): y_vel = 0
 
 #    if (status == IDLE):
 
@@ -311,7 +311,7 @@ func _process(delta):
 
 #    elif (status == WALK):
 
-#        if (Collision.is_collision_left(1) or Collision.is_collision_right(1)):
+#        if (Collision.is_collision_left(1, self) or Collision.is_collision_right(1, self)):
     
 #            if (facing == LEFT): facing = RIGHT
 #            else: facing = LEFT
@@ -407,7 +407,7 @@ func _process(delta):
 #        elif (abs(x_vel) != 0): x_vel *= 0.3
 
 
-#    if (Collision.is_collision_solid()): position.y -= 2
+#    if (Collision.is_collision_solid(self): position.y -= 2
 
 #    if (status == EATING and image_index == 8):
 

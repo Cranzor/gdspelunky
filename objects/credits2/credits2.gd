@@ -38,7 +38,7 @@ func _process(delta):
 #    with desert_top_scroll  scroll = true 
 #    with shrub_scroll  scroll = true 
 #    with palm_tree_scroll  scroll = true 
-#    alarm_1(16)
+#    alarm_1_countdown.start(16)
 
 
     
@@ -51,42 +51,42 @@ func _process(delta):
 #func alarm_2():
 #    draw_status = 1
 #    alarm_11(140)
-#    alarm_3(180)
+#    alarm_3_countdown.start(180)
 
     
 
 #func alarm_3():
 #    draw_status = 2
 #    alarm_11(140)
-#    alarm_4(180)
+#    alarm_4_countdown.start(180)
 
     
 
 #func alarm_4():
 #    draw_status = 3
 #    alarm_11(140)
-#    alarm_5(180)
+#    alarm_5_countdown.start(180)
 
     
 
 #func alarm_5():
 #    draw_status = 4
 #    alarm_11(140)
-#    alarm_6(180)
+#    alarm_6_countdown.start(180)
 
     
 
 #func alarm_6():
 #    draw_status = 5
 #    alarm_11(240)
-#    alarm_7(280)
+#    alarm_7_countdown.start(280)
 
     
 
 #func alarm_7():
 #    draw_status = 6
 #    alarm_11(240)
-#    alarm_8(280)
+#    alarm_8_countdown.start(280)
 
     
 
@@ -120,89 +120,89 @@ func _process(delta):
 #func draw():
 #    if (draw_status == 1):
 
-#        draw_set_font(global.my_font)
-#        draw_set_color(c_yellow)
-#        draw_text(16, 16, "SPELUNKY")
+#        gml.draw_set_font(global.my_font)
+#        gml.draw_set_color(gml.c_yellow)
+#        gml.draw_text(16, 16, "SPELUNKY")
 
 #    elif (draw_status == 2):
 
-#        draw_set_font(global.my_font_small)
-#        draw_set_color(c_yellow)
-#        draw_text(16, 16, "A GAME BY")
-#        # DY:  draw_set_font(global.my_font_small)
-#        draw_set_color(c_white)
-#        draw_text(64, 32, "DEREK YU")
+#        gml.draw_set_font(global.my_font_small)
+#        gml.draw_set_color(gml.c_yellow)
+#        gml.draw_text(16, 16, "A GAME BY")
+#        # DY:  gml.draw_set_font(global.my_font_small)
+#        gml.draw_set_color(gml.c_white)
+#        gml.draw_text(64, 32, "DEREK YU")
 
 #    elif (draw_status == 3):
 
-#        draw_set_font(global.my_font_small)
-#        draw_set_color(c_yellow)
-#        draw_text(16, 16, "PLATFORM ENGINE")
-#        draw_set_color(c_white)
-#        draw_text(16, 24, "MARTIN PIECYK")
-#        draw_set_color(c_yellow)
-#        draw_text(16, 40, "SOUND EFFECTS MADE USING")
-#        draw_set_color(c_white)
-#        draw_text(16, 48, "DR PETTER'S SFXR")
-#        draw_set_color(c_yellow)
-#        draw_text(16, 64, "SCREEN SCALING CODE")
-#        draw_set_color(c_white)
-#        draw_text(16, 72, "CHEVYRAY")
+#        gml.draw_set_font(global.my_font_small)
+#        gml.draw_set_color(gml.c_yellow)
+#        gml.draw_text(16, 16, "PLATFORM ENGINE")
+#        gml.draw_set_color(gml.c_white)
+#        gml.draw_text(16, 24, "MARTIN PIECYK")
+#        gml.draw_set_color(gml.c_yellow)
+#        gml.draw_text(16, 40, "SOUND EFFECTS MADE USING")
+#        gml.draw_set_color(gml.c_white)
+#        gml.draw_text(16, 48, "DR PETTER'S SFXR")
+#        gml.draw_set_color(gml.c_yellow)
+#        gml.draw_text(16, 64, "SCREEN SCALING CODE")
+#        gml.draw_set_color(gml.c_white)
+#        gml.draw_text(16, 72, "CHEVYRAY")
 
 #    elif (draw_status == 4):
 
-#        draw_set_font(global.my_font_small)
-#        draw_set_color(c_yellow)
-#        draw_text(16, 16, "MUSIC BY")
-#        draw_set_color(c_white)
-#        draw_text(32, 32, "GEORGE BUZINKAI")
-#        draw_text(32, 48, "JONATHAN PERRY")
+#        gml.draw_set_font(global.my_font_small)
+#        gml.draw_set_color(gml.c_yellow)
+#        gml.draw_text(16, 16, "MUSIC BY")
+#        gml.draw_set_color(gml.c_white)
+#        gml.draw_text(32, 32, "GEORGE BUZINKAI")
+#        gml.draw_text(32, 48, "JONATHAN PERRY")
 
 #    elif (draw_status == 5):
 
-#        draw_set_font(global.my_font_small)
-#        draw_set_color(c_yellow)
-#        draw_text(16, 16, "BETA TESTING BY")
-#        draw_set_color(c_white)
-#        draw_text(16, 24, "ANNABELLE K.")
-#        draw_text(16, 32, "BENZIDO")
-#        draw_text(16, 40, "CHUTUP")
-#        draw_text(16, 48, "CORPUS")
-#        draw_text(16, 56, "GENERALVALTER")
-#        draw_text(16, 64, "GUERT")
-#        draw_text(16, 72, "GRAHAM GORING")
-#        draw_text(16, 80, "HAOWAN")
-#        draw_text(16, 88, "HIDEOUS")
-#        draw_text(16, 96, "INANE")
+#        gml.draw_set_font(global.my_font_small)
+#        gml.draw_set_color(gml.c_yellow)
+#        gml.draw_text(16, 16, "BETA TESTING BY")
+#        gml.draw_set_color(gml.c_white)
+#        gml.draw_text(16, 24, "ANNABELLE K.")
+#        gml.draw_text(16, 32, "BENZIDO")
+#        gml.draw_text(16, 40, "CHUTUP")
+#        gml.draw_text(16, 48, "CORPUS")
+#        gml.draw_text(16, 56, "GENERALVALTER")
+#        gml.draw_text(16, 64, "GUERT")
+#        gml.draw_text(16, 72, "GRAHAM GORING")
+#        gml.draw_text(16, 80, "HAOWAN")
+#        gml.draw_text(16, 88, "HIDEOUS")
+#        gml.draw_text(16, 96, "INANE")
 #        # DY: 
-#        draw_text(128, 24, "INCREPARE")
-#        draw_text(128, 32, "KAO")
-#        draw_text(128, 40, "MARK JOHNS")
-#        draw_text(128, 48, "MELLY")
-#        draw_text(128, 56, "PAUL ERES")
-#        draw_text(128, 64, "SUPER JOE")
-#        draw_text(128, 72, "TANTAN")
-#        draw_text(128, 80, "TEAM QUIGGAN")
-#        draw_text(128, 88, "TERRY")
-#        draw_text(128, 96, "XION")
-#        draw_text(128, 104, "ZAPHOS")
+#        gml.draw_text(128, 24, "INCREPARE")
+#        gml.draw_text(128, 32, "KAO")
+#        gml.draw_text(128, 40, "MARK JOHNS")
+#        gml.draw_text(128, 48, "MELLY")
+#        gml.draw_text(128, 56, "PAUL ERES")
+#        gml.draw_text(128, 64, "SUPER JOE")
+#        gml.draw_text(128, 72, "TANTAN")
+#        gml.draw_text(128, 80, "TEAM QUIGGAN")
+#        gml.draw_text(128, 88, "TERRY")
+#        gml.draw_text(128, 96, "XION")
+#        gml.draw_text(128, 104, "ZAPHOS")
 
 #    elif (draw_status == 6):
 
-#        draw_set_font(global.my_font_small)
-#        draw_set_color(c_yellow)
-#        draw_text(16, 16, "THANKS FOR PLAYING!")
-#        # DY:  draw_set_font(global.my_font_small)
-#        draw_set_color(c_white)
-#        draw_text(32, 32, "SEE YOU NEXT ADVENTURE!")
+#        gml.draw_set_font(global.my_font_small)
+#        gml.draw_set_color(gml.c_yellow)
+#        gml.draw_text(16, 16, "THANKS FOR PLAYING!")
+#        # DY:  gml.draw_set_font(global.my_font_small)
+#        gml.draw_set_color(gml.c_white)
+#        gml.draw_text(32, 32, "SEE YOU NEXT ADVENTURE!")
 
 
 #    if (fade_in or fade_out):
 
-#        draw_set_color(c_black)
-#        draw_set_alpha(fade_level)
+#        gml.draw_set_color(gml.c_black)
+#        gml.draw_set_alpha(fade_level)
 #        draw_rectangle(0, 0, 320, 240, false)
-#        draw_set_alpha(1)
+#        gml.draw_set_alpha(1)
 
 
 
@@ -237,8 +237,8 @@ func _process(delta):
         
 #                scroll = true
         
-#            alarm_1(1)
-#            alarm_2(20)
+#            alarm_1_countdown.start(1)
+#            alarm_2_countdown.start(20)
 #            scroll_start = true
 #            scrolling = true
     
@@ -250,7 +250,7 @@ func _process(delta):
 #        else:
     
 #            fade_in = false
-#            alarm_0(20)
+#            alarm_0_countdown.start(20)
     
 
 #    elif (fade_out):

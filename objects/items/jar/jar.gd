@@ -133,10 +133,10 @@ func _process(delta):
 #            y_vel += my_grav
     
     
-#        if (Collision.is_collision_top(1)): col_top = true    
-#        if (Collision.is_collision_left(1)): col_left = true
-#        if (Collision.is_collision_right(1)): col_right = true
-#        if (Collision.is_collision_bottom(1)): col_bot = true
+#        if (Collision.is_collision_top(1, self)): col_top = true    
+#        if (Collision.is_collision_left(1, self)): col_left = true
+#        if (Collision.is_collision_right(1, self)): col_right = true
+#        if (Collision.is_collision_bottom(1, self)): col_bot = true
 
 #        if (col_top and y_vel < 0):
     
@@ -176,7 +176,7 @@ func _process(delta):
 #            y_vel = 0
     
     
-#        if (Collision.is_collision_bottom(0) and abs(y_vel) < 1):
+#        if (Collision.is_collision_bottom(0, self) and abs(y_vel) < 1):
     
 #            position.y -= 1
 #            y_vel = 0

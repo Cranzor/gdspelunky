@@ -23,7 +23,7 @@ func _process(delta):
     
 
 #func animation_end():
-#    if (sprite_index == "yeti_throw_l):"
+#    if (sprite_index == "yeti_throw_l"):
 
 #        status = IDLE
 #        sprite_index = "yeti_left"
@@ -134,7 +134,7 @@ func _process(delta):
 #            image_speed = 0.5
 #            Audio.play_sound(global.snd_hit)
 #            whipped = true
-#            alarm_0(10)
+#            alarm_0_countdown.start(10)
     
 #        else:
     
@@ -143,7 +143,7 @@ func _process(delta):
 #            else: x_vel = -1
 #            Audio.play_sound(global.snd_hit)
 #            whipped = true
-#            alarm_0(10)
+#            alarm_0_countdown.start(10)
     
 
 
@@ -169,7 +169,7 @@ func _process(delta):
 #            image_speed = 0.5
 #            Audio.play_sound(global.snd_hit)
 #            whipped = true
-#            alarm_0(10)
+#            alarm_0_countdown.start(10)
     
 #        else:
     
@@ -178,7 +178,7 @@ func _process(delta):
 #            else: x_vel = -1
 #            Audio.play_sound(global.snd_hit)
 #            whipped = true
-#            alarm_0(10)
+#            alarm_0_countdown.start(10)
     
 
 
@@ -240,10 +240,10 @@ func _process(delta):
 #    col_right = false
 #    col_bot = false
 #    col_top = false
-#    if (Collision.is_collision_left(1)): col_left = true
-#    if (Collision.is_collision_right(1)): col_right = true
-#    if (Collision.is_collision_bottom(1)): col_bot = true
-#    if (Collision.is_collision_top(1)): col_top = true
+#    if (Collision.is_collision_left(1, self)): col_left = true
+#    if (Collision.is_collision_right(1, self)): col_right = true
+#    if (Collision.is_collision_bottom(1, self)): col_bot = true
+#    if (Collision.is_collision_top(1, self)): col_top = true
 
 #    if (col_bot and status != STUNNED): y_vel = 0
 
@@ -271,7 +271,7 @@ func _process(delta):
 #    if (status == IDLE):
 
 #        bounced = false
-#        if (Collision.is_collision_bottom(1) and:
+#        if (Collision.is_collision_bottom(1, self) and:
 #            (gml.collision_point(position.x-1, position.y, "solid", -1, -1) or gml.collision_point(position.x+16, position.y, "solid", -1, -1)))
     
 #            y_vel = -6
@@ -280,12 +280,12 @@ func _process(delta):
 #            counter -= 10
     
     
-#        if (y_vel < 0 and Collision.is_collision_top(1)):
+#        if (y_vel < 0 and Collision.is_collision_top(1, self)):
     
 #            y_vel = 0
     
 
-#        if (Collision.is_collision_bottom(1) and: counter > 0) counter -= 1    
+#        if (Collision.is_collision_bottom(1, self) and: counter > 0) counter -= 1    
 #        if (counter < 1):
     
 #            facing = gml.rand(0,1)
@@ -304,13 +304,13 @@ func _process(delta):
 
 #    elif (status == WALK):
 
-#        if (Collision.is_collision_left(1) or Collision.is_collision_right(1)):
+#        if (Collision.is_collision_left(1, self) or Collision.is_collision_right(1, self)):
     
 #            if (facing == LEFT): facing = RIGHT
 #            else: facing = LEFT
     
     
-#        if (not Collision.is_collision_bottom(1)):
+#        if (not Collision.is_collision_bottom(1, self)):
     
 #            # DY:  do nothing
     
@@ -355,7 +355,7 @@ func _process(delta):
 #    elif (status == ATTACK):
 
 #        image_speed = 1
-#        if (Collision.is_collision_left(1) or Collision.is_collision_right(1)):
+#        if (Collision.is_collision_left(1, self) or Collision.is_collision_right(1, self)):
     
 #            if (facing == LEFT): facing = RIGHT
 #            else: facing = LEFT
@@ -428,7 +428,7 @@ func _process(delta):
 #        if (x_vel == 0 and y_vel == 0 and hp < 1): status = DEAD
 
 
-#    # DY: if (Collision.is_collision_solid()): position.y -= 2
+#    # DY: if (Collision.is_collision_solid(self): position.y -= 2
 
 #    if (x_vel > 0): x_vel -= 0.1
 #    if (x_vel < 0): x_vel += 0.1

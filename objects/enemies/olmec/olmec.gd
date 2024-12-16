@@ -44,13 +44,13 @@ func _process(delta):
 #        image_index = 0
 #        image_speed = 0
 
-#    alarm_2(50)
+#    alarm_2_countdown.start(50)
 
     
 
 #func alarm_2():
 #    sprite_index = "olmec_start3"
-#    alarm_3(50)
+#    alarm_3_countdown.start(50)
 #    for i in range(0, 6):
 
 #        debris = gml.instance_create(position.x+gml.rand(0,32), position.y+gml.rand(0,32), Objects.olmec_debris)
@@ -70,7 +70,7 @@ func _process(delta):
 #        debris.y_vel = -gml.rand(1,3)
 
 #    Audio.play_sound(global.snd_thump)
-#    alarm_4(50)
+#    alarm_4_countdown.start(50)
 
     
 
@@ -79,7 +79,7 @@ func _process(delta):
 #    status = BOUNCE
 #    Audio.play_sound(global.snd_big_jump)
 #    Audio.play_sound(global.snd_alert)
-#    alarm_6(20)
+#    alarm_6_countdown.start(20)
 
     
 
@@ -167,20 +167,20 @@ func _process(delta):
 #        y_vel += my_grav
 
     
-#    if (Collision.is_collision_top(1)):
+#    if (Collision.is_collision_top(1, self)):
 
 #        gml.instance_create(position.x, position.y-16, Objects.olmec_slam)
 #        position.y += 1
 #        if (y_vel < 0): y_vel = -y_vel * 0.8
 
 
-#    if (Collision.is_collision_left(1)):
+#    if (Collision.is_collision_left(1, self)):
 
 #        position.x += 1
 #        x_vel = 0
 #        # DY: if (x_vel < 0): x_vel = -x_vel * 0.8
 
-#    if (Collision.is_collision_right(1)):
+#    if (Collision.is_collision_right(1, self)):
 
 #        position.x -= 1
 #        x_vel = 0
@@ -208,16 +208,16 @@ func _process(delta):
 #        if (gml.view("xview") < 176): gml.view("xview") += 2
 #        else:
     
-#            alarm_1(100)
+#            alarm_1_countdown.start(100)
 #            status = START2
     
     
-#        if (Collision.is_collision_bottom(1)):
+#        if (Collision.is_collision_bottom(1, self)):
 #            y_vel = 0
 
 #    elif (status == START2):
    
-#        if (Collision.is_collision_bottom(1)):
+#        if (Collision.is_collision_bottom(1, self)):
 #            y_vel = 0
 
 #    elif (status == IDLE):
@@ -225,7 +225,7 @@ func _process(delta):
 #        if (counter > 0): counter -= 1
 #        if (counter == 0): status = BOUNCE
     
-#        if (Collision.is_collision_bottom(1)):
+#        if (Collision.is_collision_bottom(1, self)):
     
 #            y_vel = 0
     
@@ -246,7 +246,7 @@ func _process(delta):
 
 #    elif (status == RECOVER):
 
-#        if (Collision.is_collision_bottom(1)):
+#        if (Collision.is_collision_bottom(1, self)):
     
 #            Audio.play_sound(global.snd_thump)
 #            status = IDLE
@@ -286,7 +286,7 @@ func _process(delta):
 
 #    elif (status == BOUNCE):
 
-#        if (Collision.is_collision_bottom(1)):
+#        if (Collision.is_collision_bottom(1, self)):
     
 #            y_vel = -4
     
@@ -311,7 +311,7 @@ func _process(delta):
 #    elif (status == SLAM):
 
 #        carry_player = false
-#        if (Collision.is_collision_bottom(1)):
+#        if (Collision.is_collision_bottom(1, self)):
     
 #            if (not slammed):
         
@@ -326,7 +326,7 @@ func _process(delta):
 #                x_vel = 0
 #                y_vel = 0
 #                counter = 60
-#                if (not player1.active): alarm_5(50)
+#                if (not player1.active): alarm_5_countdown.start(50)
         
     
 
@@ -339,12 +339,12 @@ func _process(delta):
 #        if (not SS_IsSoundPlaying(global.snd_flame)): Audio.play_sound(global.snd_flame)
 
 
-#    if (Collision.is_collision_top(1)):
+#    if (Collision.is_collision_top(1, self)):
 #        y_vel = 1
-#    if (Collision.is_collision_left(1) or Collision.is_collision_right(1)):
+#    if (Collision.is_collision_left(1, self) or Collision.is_collision_right(1, self)):
 
 #        x_vel = -x_vel
 
 
-#    if (Collision.is_collision_solid()):
+#    if (Collision.is_collision_solid(self):
 #      position.y -= 2

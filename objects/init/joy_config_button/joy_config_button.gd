@@ -28,5 +28,5 @@ func _process(delta):
     
 
 #func mouse left button released():
-#    if (sprite_index == "joy_config_button_pressed):" get_tree().change_scene_to_file("res://r_joy_config.tscn")
+#    if (sprite_index == "joy_config_button_pressed"): get_tree().change_scene_to_file("res://r_joy_config.tscn")
 #    sprite_index = "joy_config_button"

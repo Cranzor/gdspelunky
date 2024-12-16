@@ -21,7 +21,7 @@ func _process(delta):
 #    if (focus):
 
 #        Audio.play_sound(global.snd_jump)
-#        alarm_0(20)
+#        alarm_0_countdown.start(20)
 
 
     
@@ -34,7 +34,7 @@ func _process(delta):
 
 #func mouse left button pressed():
 #    focus = true
-#    alarm_0(1)
+#    alarm_0_countdown.start(1)
 
     
 

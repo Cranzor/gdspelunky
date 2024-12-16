@@ -162,10 +162,10 @@ func _process(delta):
 #    col_right = false
 #    col_bot = false
 #    col_top = false
-#    if (Collision.is_collision_left(1)): col_left = true
-#    if (Collision.is_collision_right(1)): col_right = true
-#    if (Collision.is_collision_bottom(1)): col_bot = true
-#    if (Collision.is_collision_top(1)): col_top = true
+#    if (Collision.is_collision_left(1, self)): col_left = true
+#    if (Collision.is_collision_right(1, self)): col_right = true
+#    if (Collision.is_collision_bottom(1, self)): col_bot = true
+#    if (Collision.is_collision_top(1, self)): col_top = true
 
 #    if (status >= STUNNED):
 

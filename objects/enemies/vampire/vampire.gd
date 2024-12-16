@@ -169,10 +169,10 @@ func _process(delta):
 #    col_right = false
 #    col_bot = false
 #    col_top = false
-#    if (Collision.is_collision_left(1)): col_left = true
-#    if (Collision.is_collision_right(1)): col_right = true
-#    if (Collision.is_collision_bottom(1)): col_bot = true
-#    if (Collision.is_collision_top(1)): col_top = true
+#    if (Collision.is_collision_left(1, self)): col_left = true
+#    if (Collision.is_collision_right(1, self)): col_right = true
+#    if (Collision.is_collision_bottom(1, self)): col_bot = true
+#    if (Collision.is_collision_top(1, self)): col_top = true
 
 #    if (not held and status != HANG and status != FLY): y_vel += my_grav
 #    if (y_vel > y_vel_limit): y_vel = y_vel_limit
@@ -196,7 +196,7 @@ func _process(delta):
     
 
 
-#    if (Collision.is_collision_bottom(1) and status != STUNNED):
+#    if (Collision.is_collision_bottom(1, self) and status != STUNNED):
 #        y_vel = 0
 
 #    if (status != DEAD and status != STUNNED and hp < 1):
@@ -224,12 +224,12 @@ func _process(delta):
 #            counter -= 10
     
     
-#        if (y_vel < 0 and Collision.is_collision_top(1)):
+#        if (y_vel < 0 and Collision.is_collision_top(1, self)):
     
 #            y_vel = 0
     
 
-#        if (Collision.is_collision_bottom(1) and counter > 0): counter -= 1    
+#        if (Collision.is_collision_bottom(1, self) and counter > 0): counter -= 1    
 #        if (counter < 1):
     
 #            facing = gml.rand(0,1)
@@ -245,7 +245,7 @@ func _process(delta):
 
 #    elif (status == WALK):
 
-#        if (Collision.is_collision_left(1) or Collision.is_collision_right(1)):
+#        if (Collision.is_collision_left(1, self) or Collision.is_collision_right(1, self)):
     
 #            if (facing == LEFT): facing = RIGHT
 #            else: facing = LEFT
@@ -289,14 +289,14 @@ func _process(delta):
 #    elif (status == ATTACK):
 
 #        image_speed = 1
-#        if (facing == LEFT and Collision.is_collision_left(4)):
+#        if (facing == LEFT and Collision.is_collision_left(4, self)):
     
-#            if (Collision.is_collision_top(1)): facing = RIGHT
+#            if (Collision.is_collision_top(1, self)): facing = RIGHT
 #            else: status = BOUNCE
     
-#        elif (facing == RIGHT and Collision.is_collision_right(4)):
+#        elif (facing == RIGHT and Collision.is_collision_right(4, self)):
     
-#            if (Collision.is_collision_top(1)): facing = LEFT
+#            if (Collision.is_collision_top(1, self)): facing = LEFT
 #            else: status = BOUNCE
     
 #        elif (facing == LEFT):
@@ -321,12 +321,12 @@ func _process(delta):
 
 #    elif (status == RECOVER):
 
-#        if (facing == LEFT and Collision.is_collision_left(1)):
+#        if (facing == LEFT and Collision.is_collision_left(1, self)):
     
 #            facing = RIGHT
 #            x_vel = -x_vel
     
-#        elif (facing == RIGHT and Collision.is_collision_right(1)):
+#        elif (facing == RIGHT and Collision.is_collision_right(1, self)):
     
 #            facing = LEFT
 #            x_vel = -x_vel
@@ -437,22 +437,22 @@ func _process(delta):
 #        if (dist < 160):
     
 #            dir = point_direction(position.x+8, position.y+8, player1.position.x, player1.position.y)
-#            if (Collision.is_collision_right(1) and player1.position.x > position.x+8):
+#            if (Collision.is_collision_right(1, self) and player1.position.x > position.x+8):
         
 #                if (player1.position.y < position.y+8): dir = 90
 #                else: dir = 270
         
-#            if (Collision.is_collision_left(1) and player1.position.x < position.x+8):
+#            if (Collision.is_collision_left(1, self) and player1.position.x < position.x+8):
         
 #                if (player1.position.y < position.y+8): dir = 90
 #                else: dir = 270
         
-#            if (Collision.is_collision_top(1) and player1.position.y < position.y+8 and abs(player1.position.x - position.x) > 8):
+#            if (Collision.is_collision_top(1, self) and player1.position.y < position.y+8 and abs(player1.position.x - position.x) > 8):
         
 #                if (player1.position.x < position.x+8): dir = 180
 #                else: dir = 0
         
-#            if (Collision.is_collision_bottom(1) and player1.position.y > position.y+8 and abs(player1.position.x - position.x) > 8):
+#            if (Collision.is_collision_bottom(1, self) and player1.position.y > position.y+8 and abs(player1.position.x - position.x) > 8):
         
 #                if (player1.position.x < position.x+8): dir = 180
 #                else: dir = 0
@@ -509,7 +509,7 @@ func _process(delta):
 #        if (x_vel == 0 and y_vel == 0 and hp < 1): status = DEAD
 
 
-#    # DY: if (Collision.is_collision_solid()): position.y -= 2
+#    # DY: if (Collision.is_collision_solid(self): position.y -= 2
 
 #    if (x_vel > 0): x_vel -= 0.1
 #    if (x_vel < 0): x_vel += 0.1

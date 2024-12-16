@@ -23,7 +23,7 @@ func _process(delta):
     
 
 #func animation_end():
-#    if (sprite_index == "shop_throw_l):"
+#    if (sprite_index == "shop_throw_l"):
 
 #        status = ATTACK
 #        sprite_index = "shop_left"
@@ -148,7 +148,7 @@ func _process(delta):
 #        else: x_vel = -1
 #        Audio.play_sound(global.snd_hit)
 #        whipped = true
-#        alarm_0(10)
+#        alarm_0_countdown.start(10)
 #        status = ATTACK
 
 
@@ -171,7 +171,7 @@ func _process(delta):
 #        else: x_vel = -1
 #        Audio.play_sound(global.snd_hit)
 #        whipped = true
-#        alarm_0(10)
+#        alarm_0_countdown.start(10)
 #        status = ATTACK
 
 
@@ -238,8 +238,8 @@ func _process(delta):
 #    # DY:  draw_sprite_ext(sprite_index, image_index, position.x, position.y, 1, 1, 0, c_white, 1)
 #    if (has_gun and status != IDLE and status != FOLLOW):
 
-#        if (facing == LEFT): draw_sprite_ext(s_shotgun_left, 0, position.x+6, position.y+10, 1, 1, 0, c_white, 1)
-#        else: draw_sprite_ext(s_shotgun_right, 0, position.x+10, position.y+10, 1, 1, 0, c_white, 1)
+#        if (facing == LEFT): draw_sprite_ext(shotgun_left, 0, position.x+6, position.y+10, 1, 1, 0, c_white, 1)
+#        else: draw_sprite_ext(shotgun_right, 0, position.x+10, position.y+10, 1, 1, 0, c_white, 1)
 
 
     
@@ -261,10 +261,10 @@ func _process(delta):
 #    col_right = false
 #    col_bot = false
 #    col_top = false
-#    if (Collision.is_collision_left(1)): col_left = true
-#    if (Collision.is_collision_right(1)): col_right = true
-#    if (Collision.is_collision_bottom(1)): col_bot = true
-#    if (Collision.is_collision_top(1)): col_top = true
+#    if (Collision.is_collision_left(1, self)): col_left = true
+#    if (Collision.is_collision_right(1, self)): col_right = true
+#    if (Collision.is_collision_bottom(1, self)): col_bot = true
+#    if (Collision.is_collision_top(1, self)): col_top = true
 
 #    if (col_bot and status != STUNNED): y_vel = 0
 
@@ -487,14 +487,14 @@ func _process(delta):
 
 #        image_speed = 0.5
     
-#        if (Collision.is_collision_left(1) or Collision.is_collision_right(1)):
+#        if (Collision.is_collision_left(1, self) or Collision.is_collision_right(1, self)):
     
 #            if (facing == LEFT): facing = RIGHT
 #            else: facing = LEFT
     
     
 #        if (turn_timer > 0): turn_timer -= 1
-#        elif (abs(player1.position.y - (position.y+8)) < 8 and Collision.is_collision_bottom(1) and dist > 16):
+#        elif (abs(player1.position.y - (position.y+8)) < 8 and Collision.is_collision_bottom(1, self) and dist > 16):
     
 #            if (player1.position.x < position.x): facing = LEFT
 #            else: facing = RIGHT
@@ -533,7 +533,7 @@ func _process(delta):
 
 #        bounced = false
     
-#        if (y_vel < 0 and Collision.is_collision_top(1)):
+#        if (y_vel < 0 and Collision.is_collision_top(1, self)):
     
 #            y_vel = 0
     
@@ -549,7 +549,7 @@ func _process(delta):
 
 #        image_speed = 0.5
 
-#        if (Collision.is_collision_left(1) or Collision.is_collision_right(1)):
+#        if (Collision.is_collision_left(1, self) or Collision.is_collision_right(1, self)):
     
 #            if (facing == LEFT): facing = RIGHT
 #            else: facing = LEFT
@@ -598,14 +598,14 @@ func _process(delta):
     
     
 #        if (turn_timer > 0): turn_timer -= 1
-#        elif (abs(player1.position.y - (position.y+8)) < 8 and Collision.is_collision_bottom(1) and dist > 16):
+#        elif (abs(player1.position.y - (position.y+8)) < 8 and Collision.is_collision_bottom(1, self) and dist > 16):
     
 #            if (player1.position.x < position.x): facing = LEFT
 #            else: facing = RIGHT
 #            turn_timer = 20
     
     
-#        if (Collision.is_collision_left(1) or Collision.is_collision_right(1)):
+#        if (Collision.is_collision_left(1, self) or Collision.is_collision_right(1, self)):
     
 #            if (facing == LEFT): facing = RIGHT
 #            else: facing = LEFT
@@ -664,7 +664,7 @@ func _process(delta):
 #        elif ((facing == LEFT and gml.collision_point(position.x-16, position.y, "solid", -1, -1)) or:
 #            (facing == RIGHT and gml.collision_point(position.x+32, position.y, "solid", -1, -1)))
     
-#            if (col_bot and not Collision.is_collision_top(4)): y_vel = -1 * gml.rand(7,8)
+#            if (col_bot and not Collision.is_collision_top(4, self)): y_vel = -1 * gml.rand(7,8)
 #            /*
 #            else:
         
@@ -677,7 +677,7 @@ func _process(delta):
 #                 ((facing == LEFT and not gml.collision_point(position.x-16, position.y+16, "solid", -1, -1)) or
 #                 (facing == RIGHT and not gml.collision_point(position.x+32, position.y+16, "solid", -1, -1))))
     
-#            if (col_bot and not Collision.is_collision_top(4)): y_vel = -1 * gml.rand(7,8)
+#            if (col_bot and not Collision.is_collision_top(4, self)): y_vel = -1 * gml.rand(7,8)
     
     
 #        if (not col_bot and player1.position.y > position.y+8):
@@ -775,7 +775,7 @@ func _process(delta):
 #        if (x_vel == 0 and y_vel == 0 and hp < 1): status = DEAD
 
 
-#    # DY: if (Collision.is_collision_solid()): position.y -= 2
+#    # DY: if (Collision.is_collision_solid(self): position.y -= 2
 
 #    if (x_vel > 0): x_vel -= 0.1
 #    if (x_vel < 0): x_vel += 0.1

@@ -307,8 +307,8 @@ func _process(delta):
 
 #        # DY:  nothing
 
-#    elif (hurryup): alarm_0(1)
-#    else: alarm_0(3)
+#    elif (hurryup): alarm_0_countdown.start(1)
+#    else: alarm_0_countdown.start(3)
 
     
 
@@ -317,8 +317,8 @@ func _process(delta):
 
 #    if (draw_loot < 0):
 
-#        if (hurryup): alarm_1(1)
-#        else: alarm_1(30)
+#        if (hurryup): alarm_1_countdown.start(1)
+#        else: alarm_1_countdown.start(30)
 
 
     
@@ -362,8 +362,8 @@ func _process(delta):
 #        obj.link_val = 4
 
 
-#    alarm_0(10)
-#    alarm_1(30)
+#    alarm_0_countdown.start(10)
+#    alarm_1_countdown.start(30)
 
 #    if (global.xdamsels > 0):
 
@@ -394,8 +394,8 @@ func _process(delta):
     
 
 #func draw():
-#    draw_set_font(global.my_font_small)
-#    draw_set_color(c_white)
+#    gml.draw_set_font(global.my_font_small)
+#    gml.draw_set_color(gml.c_white)
 #    if (gml.instance_exists("tunnel_man")):
 
 #        person = instance_nearest(176, 176, tunnel_man)
@@ -404,48 +404,48 @@ func _process(delta):
 #            str_len = string_length("HEY THERE! I'M THE TUNNEL MAN!")*8
 #            n = 320 - str_len
 #            n = ceil(n / 2)
-#            draw_text(n, 208, "HEY THERE! I'M THE TUNNEL MAN!")
+#            gml.draw_text(n, 208, "HEY THERE! I'M THE TUNNEL MAN!")
 #            str_len = string_length("I DIG SHORTCUTS.")*8
 #            n = 320 - str_len
 #            n = ceil(n / 2)
-#            draw_text(n, 216, "I DIG SHORTCUTS.")
+#            gml.draw_text(n, 216, "I DIG SHORTCUTS.")
     
 #        elif (person.talk == 2):
     
 #            str_len = string_length("CAN YOU LEND ME A LITTLE MONEY?")*8
 #            n = 320 - str_len
 #            n = ceil(n / 2)
-#            draw_text(n, 208, "CAN YOU LEND ME A LITTLE MONEY?")
+#            gml.draw_text(n, 208, "CAN YOU LEND ME A LITTLE MONEY?")
 #            if (InLevel.is_room("r_transition1x") or InLevel.is_room("r_transition3x")): str_len = string_length("I NEED $" + str(global.tunnel1) + " FOR A NEW SHORTCUT.")*8
 #            else: str_len = string_length("I NEED $" + str(global.tunnel2) + " FOR A NEW SHORTCUT.")*8
 #            n = 320 - str_len
 #            n = ceil(n / 2)
-#            if (InLevel.is_room("r_transition1x") or InLevel.is_room("r_transition3x")): draw_text(n, 216, "I NEED $" + str(global.tunnel1) + " FOR A NEW SHORTCUT.")
-#            else: draw_text(n, 216, "I NEED $" + str(global.tunnel2) + " FOR A NEW SHORTCUT.")
-#            draw_set_color(c_yellow)
-#            draw_text(n, 224, "DONATE: " + str(tunnel_man.donate))
-#            draw_set_color(c_white)
+#            if (InLevel.is_room("r_transition1x") or InLevel.is_room("r_transition3x")): gml.draw_text(n, 216, "I NEED $" + str(global.tunnel1) + " FOR A NEW SHORTCUT.")
+#            else: gml.draw_text(n, 216, "I NEED $" + str(global.tunnel2) + " FOR A NEW SHORTCUT.")
+#            gml.draw_set_color(gml.c_yellow)
+#            gml.draw_text(n, 224, "DONATE: " + str(tunnel_man.donate))
+#            gml.draw_set_color(gml.c_white)
     
 #        elif (person.talk == 3):
     
 #            str_len = string_length("THANKS! YOU WON'T REGRET IT!")*8
 #            n = 320 - str_len
 #            n = ceil(n / 2)
-#            draw_text(n, 216, "THANKS! YOU WON'T REGRET IT!")
+#            gml.draw_text(n, 216, "THANKS! YOU WON'T REGRET IT!")
     
 #        elif (person.talk == 4):
     
 #            str_len = string_length("I'LL NEVER GET THIS SHORTCUT BUILT!")*8
 #            n = 320 - str_len
 #            n = ceil(n / 2)
-#            draw_text(n, 216, "I'LL NEVER GET THIS SHORTCUT BUILT!")
+#            gml.draw_text(n, 216, "I'LL NEVER GET THIS SHORTCUT BUILT!")
     
 #        elif (person.talk == 5):
     
 #            str_len = string_length("ONE SHORTCUT, COMING UP!")*8
 #            n = 320 - str_len
 #            n = ceil(n / 2)
-#            draw_text(n, 216, "ONE SHORTCUT, COMING UP!")
+#            gml.draw_text(n, 216, "ONE SHORTCUT, COMING UP!")
     
 
 #    elif (gml.instance_exists("damsel_kiss")):
@@ -456,30 +456,30 @@ func _process(delta):
 #            str_len = string_length("MY HERO!")*8
 #            n = 320 - str_len
 #            n = ceil(n / 2)
-#            draw_text(n, 216, "MY HERO!")
+#            gml.draw_text(n, 216, "MY HERO!")
     
 
 #    /* debug
 #    else:
 
-#            draw_text(8, 208, str(debug_counter))
-#            if (global.gen_black_market): draw_text(8, 216, "MARKET : " + str(draw_loot) + " :$ " + str(money_count) + " :$ " + str(global.xmoney) + " :A " + str(alarm[0]) + " :A " + str(alarm[1]))
+#            gml.draw_text(8, 208, str(debug_counter))
+#            if (global.gen_black_market): gml.draw_text(8, 216, "MARKET : " + str(draw_loot) + " :$ " + str(money_count) + " :$ " + str(global.xmoney) + " :A " + str(alarm[0]) + " :A " + str(alarm[1]))
 
 #    */
 
-#    draw_set_color(c_yellow)
-#    if (global.custom_level): draw_text(32, 48, global.custom_level_name + " COMPLETED!")
-#    elif (global.curr_level-1 < 1): draw_text(32, 48, "TUTORIAL CAVE COMPLETED!")
-#    else: draw_text(32, 48, "LEVEL " + str(global.curr_level-1) + " COMPLETED!")
-#    draw_set_color(c_white)
-#    draw_text(32, 64, "TIME  = ")
-#    draw_text(32, 80, "LOOT  = ")
-#    draw_text(32, 96, "KILLS = ")
-#    draw_text(32, 112, "MONEY = ")
+#    gml.draw_set_color(gml.c_yellow)
+#    if (global.custom_level): gml.draw_text(32, 48, global.custom_level_name + " COMPLETED!")
+#    elif (global.curr_level-1 < 1): gml.draw_text(32, 48, "TUTORIAL CAVE COMPLETED!")
+#    else: gml.draw_text(32, 48, "LEVEL " + str(global.curr_level-1) + " COMPLETED!")
+#    gml.draw_set_color(gml.c_white)
+#    gml.draw_text(32, 64, "TIME  = ")
+#    gml.draw_text(32, 80, "LOOT  = ")
+#    gml.draw_text(32, 96, "KILLS = ")
+#    gml.draw_text(32, 112, "MONEY = ")
 
 #    if (draw_loot >= 1 and not is_loot):
 
-#        draw_text(96, 80, "NONE")
+#        gml.draw_text(96, 80, "NONE")
 
 
 #    if (draw_loot > -2):
@@ -506,19 +506,19 @@ func _process(delta):
 #            m2 += 1
     
     
-#        if (s < 10 and s2 < 10): draw_text(96, 64, str(m) + ":0" + str(s) + " / " + str(m2) + ":0" + str(s2))
-#        elif (s < 10): draw_text(96, 64, str(m) + ":0" + str(s) + " / " + str(m2) + ":" + str(s2))
-#        elif (s2 < 10): draw_text(96, 64, str(m) + ":" + str(s) + " / " + str(m2) + ":0" + str(s2))
-#        else: draw_text(96, 64, str(m) + ":" + str(s) + " / " + str(m2) + ":" + str(s2))
+#        if (s < 10 and s2 < 10): gml.draw_text(96, 64, str(m) + ":0" + str(s) + " / " + str(m2) + ":0" + str(s2))
+#        elif (s < 10): gml.draw_text(96, 64, str(m) + ":0" + str(s) + " / " + str(m2) + ":" + str(s2))
+#        elif (s2 < 10): gml.draw_text(96, 64, str(m) + ":" + str(s) + " / " + str(m2) + ":0" + str(s2))
+#        else: gml.draw_text(96, 64, str(m) + ":" + str(s) + " / " + str(m2) + ":" + str(s2))
 
 
 #    if (draw_loot == 2):
 
 #        if (not is_kills):
     
-#            draw_text(96, 96, "NONE")
+#            gml.draw_text(96, 96, "NONE")
     
-#        draw_text(96, 112, "$" + str(money_count) + " / $" + str(global.money))
+#        gml.draw_text(96, 112, "$" + str(money_count) + " / $" + str(global.money))
 
 
     
@@ -538,8 +538,8 @@ func _process(delta):
     
 #            if (gamepad.attack_pressed): gamepad.attack_pressed = false
 #            if (gamepad.start_pressed): gamepad.start_pressed = false
-#            if (alarm[0] > 1): alarm_0(1)
-#            if (alarm[1] > 1): alarm_1(1)
+#            if (alarm[0] > 1): alarm_0_countdown.start(1)
+#            if (alarm[1] > 1): alarm_1_countdown.start(1)
 #            global.game_start = true
 #            global.lake = false
 #            if (global.custom_level): get_tree().change_scene_to_file("res://r_load_level.tscn")

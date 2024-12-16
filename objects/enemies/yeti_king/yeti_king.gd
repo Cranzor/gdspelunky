@@ -18,17 +18,17 @@ func _process(delta):
 
 
 #func animation_end():
-#    if (sprite_index == "yeti_king_turn_r):"
+#    if (sprite_index == "yeti_king_turn_r"):
 
 #        facing = RIGHT
 #        status = WALK
 
-#    if (sprite_index == "yeti_king_turn_l):"
+#    if (sprite_index == "yeti_king_turn_l"):
 
 #        facing = LEFT
 #        status = WALK
 
-#    if (sprite_index == "yeti_king_yell_l" or sprite_index == "yeti_king_yell_r):"
+#    if (sprite_index == "yeti_king_yell_l" or sprite_index == "yeti_king_yell_r"):
 
 #        status = IDLE
 #        counter = 30
@@ -193,7 +193,7 @@ func _process(delta):
 #        gml.instance_destroy(self)
 
 
-#    if (Collision.is_collision_bottom(1) and status != STUNNED): y_vel = 0
+#    if (Collision.is_collision_bottom(1, self) and status != STUNNED): y_vel = 0
 
 #    if (attack_timer > 0): attack_timer -= 1
 #    if (whipped > 0): whipped -= 1
@@ -212,7 +212,7 @@ func _process(delta):
     
 #        if (facing == LEFT):
     
-#            if (Collision.is_collision_left(1) or:
+#            if (Collision.is_collision_left(1, self) or:
 #                (player1.position.x > position.x+16 and abs(player1.position.y-(position.y+32)) < 16 and counter == 0))
         
 #                sprite_index = "yeti_king_turn_r"
@@ -230,7 +230,7 @@ func _process(delta):
     
 #        elif (facing == RIGHT):
     
-#            if (Collision.is_collision_right(1) or:
+#            if (Collision.is_collision_right(1, self) or:
 #                (player1.position.x < position.x+16 and abs(player1.position.y-(position.y+32)) < 16 and counter == 0))
         
 #                sprite_index = "yeti_king_turn_l"
@@ -279,7 +279,7 @@ func _process(delta):
     
 
 
-#    if (Collision.is_collision_solid()):
+#    if (Collision.is_collision_solid(self):
 #        position.y -= 2
 
 #    if (facing == LEFT):

@@ -172,18 +172,18 @@ func _process(delta):
 #        gml.instance_destroy(self)
 
 
-#    if (Collision.is_collision_right(1)):
+#    if (Collision.is_collision_right(1, self)):
 
 #        x_vel = -1
 
 
-#    if (Collision.is_collision_left(1)):
+#    if (Collision.is_collision_left(1, self)):
 
 #        x_vel = 1
 
 
 #    col_bot = false
-#    if (Collision.is_collision_bottom(1)): col_bot = true
+#    if (Collision.is_collision_bottom(1, self)): col_bot = true
 
 #    if (grab_counter > 0): grab_counter -= 1
 #    if (vine_counter > 0): vine_counter -= 1
@@ -201,7 +201,7 @@ func _process(delta):
 
 #    elif (status == WALK):
 
-#        if (Collision.is_collision_left(1) or Collision.is_collision_right(1)):
+#        if (Collision.is_collision_left(1, self) or Collision.is_collision_right(1, self)):
     
 #            if (facing == LEFT): facing = RIGHT
 #            else: facing = LEFT
@@ -232,7 +232,7 @@ func _process(delta):
 #            y_vel = 0
 #            counter = gml.rand(10,40)
     
-#        elif (Collision.is_collision_ladder()):
+#        elif (Collision.is_collision_ladder(, self)):
     
 #            if (vine_counter == 0):
         
@@ -368,7 +368,7 @@ func _process(delta):
 #                with obj
             
 #                    can_collect = false
-#                    alarm_0(20)
+#                    alarm_0_countdown.start(20)
 #                    x_vel = gml.rand(1,3)-gml.rand(1,3)
 #                    y_vel = -gml.rand(3,4)
             
@@ -396,7 +396,7 @@ func _process(delta):
 #                    obj.sprite_index = "bomb_armed"
 #                    obj.armed = true
 #                    obj.image_speed = 1
-#                    obj.alarm_1(40)
+#                    obj.alarm_1_countdown.start(40)
             
 #                with obj
             
@@ -428,7 +428,7 @@ func _process(delta):
 #        x_vel = 0
 
 
-#    if (status != GRAB and Collision.is_collision_top(1)):
+#    if (status != GRAB and Collision.is_collision_top(1, self)):
 #        y_vel = 1
 
 #    if (status == HANG): sprite_index = "monkey_hang_l"

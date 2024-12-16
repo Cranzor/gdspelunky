@@ -147,108 +147,108 @@ func _process(delta):
 #func draw():
 #    if (player1.position.y < 156):
 
-#    draw_set_font(global.my_font_small)
-#    draw_set_color(c_yellow)
-#    draw_text(128+16, 32, "SECRET CHALLENGES")
-#    draw_set_color(c_white)
+#    gml.draw_set_font(global.my_font_small)
+#    gml.draw_set_color(gml.c_yellow)
+#    gml.draw_text(128+16, 32, "SECRET CHALLENGES")
+#    gml.draw_set_color(gml.c_white)
 #    t_mini1 = floor(highscore_value(10) / 10000)
 #    t_mini2 = floor((highscore_value(10)-(t_mini1*10000)) / 100)
 #    t_mini3 = floor(highscore_value(10)-(t_mini1*10000)-(t_mini2*100))
-#    draw_text(128, 48, "SUN:   " + str(t_mini1))
-#    draw_text(128, 64, "MOON:  " + str(t_mini2))
-#    draw_text(128, 80, "STARS: " + str(t_mini3))
+#    gml.draw_text(128, 48, "SUN:   " + str(t_mini1))
+#    gml.draw_text(128, 64, "MOON:  " + str(t_mini2))
+#    gml.draw_text(128, 80, "STARS: " + str(t_mini3))
 
 #    if (player1.position.y < 48+16):
 
-#        draw_set_color(c_yellow)
-#        draw_text(168, 96, "SUN ROOM")
-#        draw_set_color(c_white)
+#        gml.draw_set_color(gml.c_yellow)
+#        gml.draw_text(168, 96, "SUN ROOM")
+#        gml.draw_set_color(gml.c_white)
 #        if (t_money >= sun_gold):
     
 #            if (false): # DY:  (global.is_tunnel_man)
         
-#                draw_text(128, 112, "NO MATTOCKS ALLOWED!")
-#                draw_text(128, 128, "THIS MEANS YOU!")
-#                draw_text(128, 144, "")
-#                draw_text(128, 160, "")
+#                gml.draw_text(128, 112, "NO MATTOCKS ALLOWED!")
+#                gml.draw_text(128, 128, "THIS MEANS YOU!")
+#                gml.draw_text(128, 144, "")
+#                gml.draw_text(128, 160, "")
         
 #            else:
         
-#                draw_text(128, 112, "KEEP YOURSELF AND")
-#                draw_text(128, 128, "THE DAMSEL ALIVE")
-#                draw_text(128, 144, "FOR AS LONG AS")
-#                draw_text(128, 160, "POSSIBLE!")
+#                gml.draw_text(128, 112, "KEEP YOURSELF AND")
+#                gml.draw_text(128, 128, "THE DAMSEL ALIVE")
+#                gml.draw_text(128, 144, "FOR AS LONG AS")
+#                gml.draw_text(128, 160, "POSSIBLE!")
         
     
 #        else:
     
-#            draw_text(128, 112, "LOCKED.")
+#            gml.draw_text(128, 112, "LOCKED.")
     
 
 #    elif (player1.position.y < 80+16):
 
-#        draw_set_color(c_yellow)
-#        draw_text(168, 96, "MOON ROOM")
-#        draw_set_color(c_white)
+#        gml.draw_set_color(gml.c_yellow)
+#        gml.draw_text(168, 96, "MOON ROOM")
+#        gml.draw_set_color(gml.c_white)
 #        if (t_time > 0 and t_time <= moon_gold):
     
 #            if (false): # DY:  (global.is_tunnel_man)
         
-#                draw_text(128, 112, "NO MATTOCKS ALLOWED!")
-#                draw_text(128, 128, "THIS MEANS YOU!")
-#                draw_text(128, 144, "")
-#                draw_text(128, 160, "")
+#                gml.draw_text(128, 112, "NO MATTOCKS ALLOWED!")
+#                gml.draw_text(128, 128, "THIS MEANS YOU!")
+#                gml.draw_text(128, 144, "")
+#                gml.draw_text(128, 160, "")
         
 #            else:
         
-#                draw_text(128, 112, "SHOOT THE MOVING")
-#                draw_text(128, 128, "TARGETS WITH YOUR")
-#                draw_text(128, 144, "BOW AND ARROWS!")
+#                gml.draw_text(128, 112, "SHOOT THE MOVING")
+#                gml.draw_text(128, 128, "TARGETS WITH YOUR")
+#                gml.draw_text(128, 144, "BOW AND ARROWS!")
         
     
 #        else:
     
-#            draw_text(128, 112, "LOCKED.")
+#            gml.draw_text(128, 112, "LOCKED.")
     
 
 #    elif (player1.position.y < 112+16):
 
-#        draw_set_color(c_yellow)
-#        draw_text(168, 96, "STARS ROOM")
-#        draw_set_color(c_white)
+#        gml.draw_set_color(gml.c_yellow)
+#        gml.draw_text(168, 96, "STARS ROOM")
+#        gml.draw_set_color(gml.c_white)
 #        if (t_kills >= stars_gold):
     
 #            if (false): # DY:  (global.is_tunnel_man)
         
-#                draw_text(128, 112, "NO MATTOCKS ALLOWED!")
-#                draw_text(128, 128, "THIS MEANS YOU!")
-#                draw_text(128, 144, "")
-#                draw_text(128, 160, "")
+#                gml.draw_text(128, 112, "NO MATTOCKS ALLOWED!")
+#                gml.draw_text(128, 128, "THIS MEANS YOU!")
+#                gml.draw_text(128, 144, "")
+#                gml.draw_text(128, 160, "")
         
 #            else:
         
-#                draw_text(128, 112, "KILL AS MANY ANGRY")
-#                draw_text(128, 128, "SHOPKEEPS AS YOU CAN")
-#                draw_text(128, 144, "BEFORE THEY GET YOU!")
+#                gml.draw_text(128, 112, "KILL AS MANY ANGRY")
+#                gml.draw_text(128, 128, "SHOPKEEPS AS YOU CAN")
+#                gml.draw_text(128, 144, "BEFORE THEY GET YOU!")
         
     
 #        else:
     
-#            draw_text(128, 112, "LOCKED.")
+#            gml.draw_text(128, 112, "LOCKED.")
     
 
 #    elif (player1.position.y < 160):
 
-#        draw_set_color(c_yellow)
-#        draw_text(160, 96, "CHANGING ROOM")
-#        draw_set_color(c_white)
+#        gml.draw_set_color(gml.c_yellow)
+#        gml.draw_text(160, 96, "CHANGING ROOM")
+#        gml.draw_set_color(gml.c_white)
 #        if (t_saves >= 8):
     
-#            draw_text(128, 112, "LADY IN RED...")
+#            gml.draw_text(128, 112, "LADY IN RED...")
     
 #        else:
     
-#            draw_text(128, 112, "LOCKED.")
+#            gml.draw_text(128, 112, "LOCKED.")
     
 #        with new
     
@@ -263,13 +263,13 @@ func _process(delta):
 
 #        visible = true
 
-#    draw_set_font(global.my_font_small)
-#    draw_set_color(c_yellow)
-#    draw_text(160, 32, "TOP DEFILERS")
-#    draw_set_color(c_white)
-#    draw_text(128, 48, "MONEY:  " + str(highscore_value(1)-9000000))
-#    draw_text(128, 64, "KILLS:  " + str(highscore_value(3)-7000000))
-#    draw_text(128, 80, "SAVES:  " + str(highscore_value(4)-6000000))
+#    gml.draw_set_font(global.my_font_small)
+#    gml.draw_set_color(gml.c_yellow)
+#    gml.draw_text(160, 32, "TOP DEFILERS")
+#    gml.draw_set_color(gml.c_white)
+#    gml.draw_text(128, 48, "MONEY:  " + str(highscore_value(1)-9000000))
+#    gml.draw_text(128, 64, "KILLS:  " + str(highscore_value(3)-7000000))
+#    gml.draw_text(128, 80, "SAVES:  " + str(highscore_value(4)-6000000))
 #    # DY:  only display time if won:
 #    if (highscore_value(6)-4000000 > 0):
 
@@ -282,27 +282,27 @@ func _process(delta):
 #            m += 1
     
     
-#        draw_set_color(c_white)
-#        draw_text(128, 96, "TIME: ")
-#        if (s < 10): draw_text(128+64, 96, str(m) + ":0" + str(s))
-#        else: draw_text(128+64, 96, str(m) + ":" + str(s))
+#        gml.draw_set_color(gml.c_white)
+#        gml.draw_text(128, 96, "TIME: ")
+#        if (s < 10): gml.draw_text(128+64, 96, str(m) + ":0" + str(s))
+#        else: gml.draw_text(128+64, 96, str(m) + ":" + str(s))
 
-#    draw_set_color(c_yellow)
-#    draw_text(168, 112, "STATISTICS")
-#    draw_set_color(c_white)
-#    draw_text(128, 128, "PLAYS:  " + str(highscore_value(5)-5000000))
-#    draw_text(128, 144, "DEATHS: " + str(highscore_value(7)-3000000))
-#    draw_text(128, 160, "WINS:   " + str(highscore_value(6)-4000000))
+#    gml.draw_set_color(gml.c_yellow)
+#    gml.draw_text(168, 112, "STATISTICS")
+#    gml.draw_set_color(gml.c_white)
+#    gml.draw_text(128, 128, "PLAYS:  " + str(highscore_value(5)-5000000))
+#    gml.draw_text(128, 144, "DEATHS: " + str(highscore_value(7)-3000000))
+#    gml.draw_text(128, 160, "WINS:   " + str(highscore_value(6)-4000000))
 
 #    block = instance_nearest(160, 240, push_block)
 #    if (not button_highscore.pushed and block.position.x > 160):
 
-#        draw_set_font(global.my_font_small)
-#        draw_set_color(c_yellow)
+#        gml.draw_set_font(global.my_font_small)
+#        gml.draw_set_color(gml.c_yellow)
 #        str_len = string_length("THIS WILL CLEAR EVERYTHING!")*8
 #        n = 320 - str_len
 #        n = ceil(n / 2)
-#        draw_text(n, 216, str("THIS WILL CLEAR EVERYTHING!"))
+#        gml.draw_text(n, 216, str("THIS WILL CLEAR EVERYTHING!"))
 
 
     

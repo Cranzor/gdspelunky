@@ -18,11 +18,11 @@ func _process(delta):
 
 
 #func alarm_0():
-#    if (sprite_index != "giant_spider_squirt):"
+#    if (sprite_index != "giant_spider_squirt"):
 
 #        status = BOUNCE
 #        sprite_index = "giant_spider_jump"
-#        if (Collision.is_collision_bottom(1)):
+#        if (Collision.is_collision_bottom(1, self)):
     
 #            sprite_index = "giant_spider"
 #            y_vel = -1 * gml.rand(2,5)
@@ -45,12 +45,12 @@ func _process(delta):
     
 
 #func animation_end():
-#    if (sprite_index == "giant_spider_flip):"
+#    if (sprite_index == "giant_spider_flip"):
 
 #        sprite_index = "giant_spider"
 #        image_speed = 0.4
 
-#    elif (sprite_index == "giant_spider_squirt):"
+#    elif (sprite_index == "giant_spider_squirt"):
 
 #        status = IDLE
 #        image_speed = 0.4
@@ -192,17 +192,17 @@ func _process(delta):
 #        gml.instance_destroy(self)
 
 
-#    if (Collision.is_collision_right(1)):
+#    if (Collision.is_collision_right(1, self)):
 
 #        x_vel = 1
 
 
-#    if (Collision.is_collision_left(1)):
+#    if (Collision.is_collision_left(1, self)):
 
 #        x_vel = -1
 
 
-#    if (Collision.is_collision_top(1) and Collision.is_collision_bottom(1) and status != CRAWL):
+#    if (Collision.is_collision_top(1, self) and Collision.is_collision_bottom(1, self) and status != CRAWL):
 
 #        status = CRAWL
 #        if (character.position.x < position.x+16):
@@ -217,7 +217,7 @@ func _process(delta):
 
 #    if (status == IDLE):
 
-#        if (sprite_index != "giant_spider_flip):" sprite_index = "giant_spider"
+#        if (sprite_index != "giant_spider_flip"): sprite_index = "giant_spider"
 #        alarm_0()gml.rand(5,20)
 #        if (squirt_timer == 0): status = SQUIRT
 #        else: status = RECOVER
@@ -225,9 +225,9 @@ func _process(delta):
 #    elif (status == CRAWL):
 
 #        sprite_index = "giant_spider_crawl"
-#        if (not Collision.is_collision_top(1) or not Collision.is_collision_bottom(1)): status = IDLE
-#        elif (Collision.is_collision_right(1)): x_vel = -1
-#        elif (Collision.is_collision_left(1)): x_vel = 1
+#        if (not Collision.is_collision_top(1, self) or not Collision.is_collision_bottom(1, self)): status = IDLE
+#        elif (Collision.is_collision_right(1, self)): x_vel = -1
+#        elif (Collision.is_collision_left(1, self)): x_vel = 1
 
 #    elif (status == SQUIRT):
 
@@ -240,12 +240,12 @@ func _process(delta):
 
 #    elif (status == RECOVER):
 
-#        if (Collision.is_collision_bottom(1)): x_vel = 0
+#        if (Collision.is_collision_bottom(1, self)): x_vel = 0
 
 #    elif (status == BOUNCE and dist < 120):
 
 #        sprite_index = "giant_spider_jump"
-#        if (Collision.is_collision_bottom(1)):
+#        if (Collision.is_collision_bottom(1, self)):
     
 #            sprite_index = "giant_spider"
 #            y_vel = -1 * gml.rand(3,6)
@@ -268,14 +268,14 @@ func _process(delta):
 #        # DY: x_vel = 0
 
 
-#    if (Collision.is_collision_top(1)):
+#    if (Collision.is_collision_top(1, self)):
 #        y_vel = 1
 #    /*
-#    if (Collision.is_collision_left(1) or Collision.is_collision_right(1)):
+#    if (Collision.is_collision_left(1, self) or Collision.is_collision_right(1, self)):
 
 #        x_vel = -x_vel
 
 #    */
 
-#    # DY: if (Collision.is_collision_solid()):
+#    # DY: if (Collision.is_collision_solid(self):
 #    # DY:   position.y -= 2

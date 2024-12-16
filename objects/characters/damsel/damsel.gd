@@ -29,7 +29,7 @@ func _process(delta):
 #        status = SLAVE
 
 
-#    if (sprite_index == "damsel_exit2" or sprite_index = "p_exit):"
+#    if (sprite_index == "damsel_exit2" or sprite_index = "p_exit"):
 
 #        gml.instance_destroy(self)
 
@@ -157,7 +157,7 @@ func _process(delta):
 
 #    if (cost > 0):
 
-#        draw_sprite_ext(s_small_collect, cimg, position.x, position.y-12, 1, 1, 0, c_white, 1)
+#        draw_sprite_ext(small_collect, cimg, position.x, position.y-12, 1, 1, 0, c_white, 1)
 #        cimg += 1
 #        if (cimg > 9): cimg = 0
 
@@ -192,7 +192,7 @@ func _process(delta):
 #        can_pick_up = false
 
 
-#    if (sprite_index = "damsel_exit2" or sprite_index = "p_exit):"
+#    if (sprite_index = "damsel_exit2" or sprite_index = "p_exit"):
 
 #        depth = 1000
 #        invincible = true
@@ -288,7 +288,7 @@ func _process(delta):
     
 
 #        if (gml.collision_rectangle(position.x-3, position.y-3, position.x+3,  position.y+3, "spears_left", 0, 0) and:
-#            (status != THROWN or Collision.is_collision_bottom(1)))
+#            (status != THROWN or Collision.is_collision_bottom(1, self)))
     
 #            obj = instance_nearest(position.x, position.y, spears_left)
 #            if (obj.image_index >= 19 and obj.image_index < 28):
@@ -338,7 +338,7 @@ func _process(delta):
 #    elif (status == KISS):
 
 #        if ((sprite_index == "damsel_kiss_l" or:
-#             sprite_index == "p_kiss_l)" and image_index == 7)
+#             sprite_index == "p_kiss_l") and image_index == 7)
     
 #            if (facing == LEFT): gml.instance_create(position.x-8, position.y-8, Objects.heart)
 #            else: gml.instance_create(position.x+8, position.y-8, Objects.heart)
@@ -391,8 +391,8 @@ func _process(delta):
     
 #            sprite_index = "damsel_run_l"
     
-#        if (facing == LEFT and Collision.is_collision_left(2)): facing = RIGHT
-#        if (facing == RIGHT and Collision.is_collision_right(2)): facing = LEFT
+#        if (facing == LEFT and Collision.is_collision_left(2, self)): facing = RIGHT
+#        if (facing == RIGHT and Collision.is_collision_right(2, self)): facing = LEFT
     
 #        if (facing == LEFT):
     
@@ -442,12 +442,12 @@ func _process(delta):
         
     
     
-#        if (Collision.is_collision_bottom(1) and not bounced):
+#        if (Collision.is_collision_bottom(1, self) and not bounced):
     
 #            bounced = true
     
     
-#        if (Collision.is_collision_bottom(2) or gml.collision_rectangle(position.x-4, position.y-6, position.x+4,  position.y+8, "web", 0, 0)):
+#        if (Collision.is_collision_bottom(2, self) or gml.collision_rectangle(position.x-4, position.y-6, position.x+4,  position.y+8, "web", 0, 0)):
     
 #            if (!dead):
         

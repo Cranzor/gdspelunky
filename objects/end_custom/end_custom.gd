@@ -19,7 +19,7 @@ func _process(delta):
 
 #func alarm_0():
 #    draw_status = 1
-#    alarm_1(50)
+#    alarm_1_countdown.start(50)
 #    play_music(global.mus_victory, false)
 #    with menu
 
@@ -30,7 +30,7 @@ func _process(delta):
 
 #func alarm_1():
 #    draw_status = 2
-#    alarm_2(50)
+#    alarm_2_countdown.start(50)
 
     
 
@@ -39,7 +39,7 @@ func _process(delta):
 #    Audio.play_sound(global.snd_thump)
 #    global.money += 50000
 #    money_count += 50000
-#    alarm_3(50)
+#    alarm_3_countdown.start(50)
 
     
 
@@ -50,13 +50,13 @@ func _process(delta):
 
 #func alarm_3():
 #    draw_status = 5
-#    alarm_4(10)
+#    alarm_4_countdown.start(10)
 
     
 
 #func alarm_4():
 #    draw_status = 6
-#    alarm_5(10)
+#    alarm_5_countdown.start(10)
 
     
 
@@ -73,7 +73,7 @@ func _process(delta):
 
 #    poop = false
 
-#    alarm_0(50)
+#    alarm_0_countdown.start(50)
 
 #    with menu
 
@@ -85,21 +85,21 @@ func _process(delta):
 #func draw():
 #    if (draw_status > 0):
 
-#        draw_set_font(global.my_font)
-#        draw_set_color(c_yellow)
-#        draw_text(64, 32, "YOU MADE IT!")
+#        gml.draw_set_font(global.my_font)
+#        gml.draw_set_color(gml.c_yellow)
+#        gml.draw_text(64, 32, "YOU MADE IT!")
 
 #    if (draw_status > 1):
 
-#        draw_set_font(global.my_font_small)
-#        draw_set_color(c_yellow)
-#        draw_text(64, 64, "FINAL SCORE:")
+#        gml.draw_set_font(global.my_font_small)
+#        gml.draw_set_color(gml.c_yellow)
+#        gml.draw_text(64, 64, "FINAL SCORE:")
 
 #    if (draw_status > 2):
 
-#        draw_set_font(global.my_font)
-#        draw_set_color(c_white)
-#        draw_text(64, 72, "$" + str(money_count))
+#        gml.draw_set_font(global.my_font)
+#        gml.draw_set_color(gml.c_white)
+#        gml.draw_text(64, 72, "$" + str(money_count))
 
 #    if (draw_status > 4):
 
@@ -112,46 +112,46 @@ func _process(delta):
 #            m += 1
     
 
-#        draw_set_font(global.my_font_small)
-#        draw_set_color(c_yellow)
-#        draw_text(64, 96, "TIME: ")
-#        draw_set_color(c_white)
-#        if (s < 10): draw_text(96+24, 96, str(m) + ":0" + str(s))
-#        else: draw_text(96+24, 96, str(m) + ":" + str(s))
+#        gml.draw_set_font(global.my_font_small)
+#        gml.draw_set_color(gml.c_yellow)
+#        gml.draw_text(64, 96, "TIME: ")
+#        gml.draw_set_color(gml.c_white)
+#        if (s < 10): gml.draw_text(96+24, 96, str(m) + ":0" + str(s))
+#        else: gml.draw_text(96+24, 96, str(m) + ":" + str(s))
 
 #    if (draw_status > 5):
 
-#        draw_set_font(global.my_font_small)
-#        draw_set_color(c_yellow)
-#        draw_text(64, 96+8, "KILLS: ")
-#        draw_set_color(c_white)
-#        draw_text(96+24, 96+8, global.kills)
+#        gml.draw_set_font(global.my_font_small)
+#        gml.draw_set_color(gml.c_yellow)
+#        gml.draw_text(64, 96+8, "KILLS: ")
+#        gml.draw_set_color(gml.c_white)
+#        gml.draw_text(96+24, 96+8, global.kills)
 
 #    if (draw_status > 6):
 
-#        draw_set_font(global.my_font_small)
-#        draw_set_color(c_yellow)
-#        draw_text(64, 96+16, "SAVES: ")
-#        draw_set_color(c_white)
-#        draw_text(96+24, 96+16, global.damsels)
+#        gml.draw_set_font(global.my_font_small)
+#        gml.draw_set_color(gml.c_yellow)
+#        gml.draw_text(64, 96+16, "SAVES: ")
+#        gml.draw_set_color(gml.c_white)
+#        gml.draw_text(96+24, 96+16, global.damsels)
 
 
 #    if (fade_out):
 
-#        draw_set_color(c_black)
-#        draw_set_alpha(fade_level)
+#        gml.draw_set_color(gml.c_black)
+#        gml.draw_set_alpha(fade_level)
 #        draw_rectangle(0, 0, 320, 240, false)
-#        draw_set_alpha(1)
+#        gml.draw_set_alpha(1)
 
 
 #    if (draw_status == 8):
 
-#        draw_set_font(global.my_font_small)
-#        draw_set_color(c_white)
+#        gml.draw_set_font(global.my_font_small)
+#        gml.draw_set_color(gml.c_white)
 #        str_len = string_length("YOU SHALL BE REMEMBERED AS A HERO.")*8
 #        n = 320 - str_len
 #        n = ceil(n / 2)
-#        draw_text(n, 116, str("YOU SHALL BE REMEMBERED AS A HERO."))
+#        gml.draw_text(n, 116, str("YOU SHALL BE REMEMBERED AS A HERO."))
 
 
     

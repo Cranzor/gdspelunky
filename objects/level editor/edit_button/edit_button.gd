@@ -28,7 +28,7 @@ func _process(delta):
     
 
 #func mouse left button released():
-#    if (sprite_index == "edit_button_pressed):"
+#    if (sprite_index == "edit_button_pressed"):
 
 #        level_editor.status = 2
 #        with new_button  gml.instance_destroy(self) 
