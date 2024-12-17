@@ -13,7 +13,7 @@ var final_boss = 'res://objects/final_boss/final_boss.tscn' # DONE
 var game = 'res://objects/game/game.tscn' # DONE
 var gamepad = 'res://objects/gamepad/gamepad.tscn' # DONE
 var globals = 'res://objects/globals/globals.tscn' # DONE
-#var highscores = 'res://objects/highscores/highscores.tscn'
+var highscores = 'res://objects/highscores/highscores.tscn' # DONE
 var intro = 'res://objects/intro/intro.tscn' # DONE
 #var joy_config = 'res://objects/joy_config/joy_config.tscn'
 #var key_config = 'res://objects/key_config/key_config.tscn'
@@ -248,7 +248,7 @@ var ufo = 'res://objects/enemies/ufo/ufo.tscn' # DONE
 var ufo_crash = 'res://objects/enemies/ufo_crash/ufo_crash.tscn' # DONE
 #var vampire = 'res://objects/enemies/vampire/vampire.tscn'
 #var yeti = 'res://objects/enemies/yeti/yeti.tscn'
-#var yeti_king = 'res://objects/enemies/yeti_king/yeti_king.tscn'
+var yeti_king = 'res://objects/enemies/yeti_king/yeti_king.tscn' # DONE
 var zombie = 'res://objects/enemies/zombie/zombie.tscn' # DONE
 
 

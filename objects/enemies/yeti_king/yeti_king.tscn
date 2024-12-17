@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bpfeeu2i3ceey"]
 
-[sub_resource type="GDScript" id="GDScript_sv1hi"]
+[ext_resource type="Script" path="res://objects/enemies/yeti_king/yeti_king.gd" id="1_hmik0"]
 
 [node name="YetiKing" type="Node2D"]
+script = ExtResource("1_hmik0")
+object_name = "yeti_king"

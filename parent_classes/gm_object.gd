@@ -35,6 +35,11 @@ var fade_out
 var fade_level
 var poop
 var money_diff
+var shake_toggle
+var t_money
+var t_time
+var t_kills
+var t_saves
 
 #--- want access to these for all objects, so defining here
 var collision_bounds_offset_left_x
