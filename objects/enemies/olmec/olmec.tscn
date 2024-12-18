@@ -1,5 +1,13 @@
 [gd_scene load_steps=2 format=3 uid="uid://coqxja7e6iscn"]
 
-[sub_resource type="GDScript" id="GDScript_7rnpl"]
+[ext_resource type="Script" path="res://objects/enemies/olmec/olmec.gd" id="1_fsjk5"]
 
 [node name="Olmec" type="Node2D"]
+script = ExtResource("1_fsjk5")
+sprite_index_name = null
+sprite_offset = null
+object_name = "olmec"
+editor_setup_finished = null
+collision_with = null
+depth = null
+object_size = null

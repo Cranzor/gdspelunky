@@ -40,6 +40,9 @@ var t_money
 var t_time
 var t_kills
 var t_saves
+var scrolling
+var fade_in
+var scroll_start
 
 #--- want access to these for all objects, so defining here
 var collision_bounds_offset_left_x

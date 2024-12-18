@@ -4,10 +4,4 @@
 
 [node name="Credits1" type="Node2D"]
 script = ExtResource("1_4aqbw")
-sprite_index_name = null
-sprite_offset = null
 object_name = "credits1"
-editor_setup_finished = null
-collision_with = null
-depth = null
-object_size = null

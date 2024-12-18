@@ -195,3 +195,6 @@ func scr_init(): #--- add the rest of this script later
 
 func scr_draw_hud():
 	pass
+
+func scr_check_collisions():
+	pass

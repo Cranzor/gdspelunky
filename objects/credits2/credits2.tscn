@@ -1,3 +1,7 @@
-[gd_scene format=3 uid="uid://cl4bv3bwdn6lp"]
+[gd_scene load_steps=2 format=3 uid="uid://cl4bv3bwdn6lp"]
+
+[ext_resource type="Script" path="res://objects/credits2/credits2.gd" id="1_ukepk"]
 
 [node name="Credits2" type="Node2D"]
+script = ExtResource("1_ukepk")
+object_name = "credits2"

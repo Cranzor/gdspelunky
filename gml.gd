@@ -74,6 +74,10 @@ var view_yview: int:
 	set(value):
 		view_node.offset.y = value
 
+var view_xview: int:
+	set(value):
+		view_node.offset.x = value
+
 #var view_hview: int:
 	#set(value):
 		#view_node.offset.x = value

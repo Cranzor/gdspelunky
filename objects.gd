@@ -2,8 +2,8 @@ extends Node
 
 #objects
 var bricks = 'res://objects/bricks/bricks.tscn' # DONE
-#var credits1 = 'res://objects/credits1/credits1.tscn'
-#var credits2 = 'res://objects/credits2/credits2.tscn'
+var credits1 = 'res://objects/credits1/credits1.tscn' # DONE
+var credits2 = 'res://objects/credits2/credits2.tscn' # DONE
 #var curs_obj = 'res://objects/curs_obj/curs_obj.tscn'
 #var end = 'res://objects/end/end.tscn'
 var end2 = 'res://objects/end2/end2.tscn' # DONE
@@ -216,7 +216,7 @@ var alien_eject = 'res://objects/enemies/alien_eject/alien_eject.tscn' # DONE
 var barrier = 'res://objects/enemies/barrier/barrier.tscn' # DONE
 var barrier_emitter = 'res://objects/enemies/barrier_emitter/barrier_emitter.tscn' # DONE
 var bat = 'res://objects/enemies/bat/bat.tscn' # DONE
-#var caveman = 'res://objects/enemies/caveman/caveman.tscn'
+var caveman = 'res://objects/enemies/caveman/caveman.tscn' # DONE
 var caveman_worship = 'res://objects/enemies/caveman_worship/caveman_worship.tscn' # DONE
 var dead_fish = 'res://objects/enemies/dead_fish/dead_fish.tscn' # DONE
 var enemy_sight = 'res://objects/enemies/enemy_sight/enemy_sight.tscn' # DONE
