@@ -69,6 +69,8 @@ var view_hborder: int:#--- horizontal boundary of camera. original code always h
 var view_node: Camera2D:
 	get:
 		return get_tree().get_first_node_in_group("view")
+
+var view_object #---[FLAG] make this attach the camera to the node it's set equal to
 		
 var view_yview: int:
 	set(value):

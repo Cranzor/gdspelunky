@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://dus2ahbo5oq5k"]
 
-[sub_resource type="GDScript" id="GDScript_gq326"]
+[ext_resource type="Script" path="res://objects/enemies/monkey/monkey.gd" id="1_t6ith"]
 
 [node name="Monkey" type="Node2D"]
+script = ExtResource("1_t6ith")
+object_name = "monkey"

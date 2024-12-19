@@ -26,13 +26,9 @@ var sac_count
 
 
 
-var DEAD
 var BOUNCE
-var RECOVER
-var bounce_counter
 var bomb_id
 
-var y_delta
 
 var s_spikes_blood
 var s_alien_boss_hurt

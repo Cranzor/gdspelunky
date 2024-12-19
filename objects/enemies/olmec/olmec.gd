@@ -16,6 +16,14 @@ func _process(delta):
 #--- Object functions
 var toggle
 var BOUNCE #--- also in enemy class but will declare here since this appears to be the only non-enemy script with it
+var carry_player
+var START2
+var START1
+var DROWNING
+var PREPARE
+var SLAM
+var CREATE
+var slammed
 
 
 func alarm_1():
@@ -59,7 +67,6 @@ func alarm_2():
 
 	Audio.play_sound(global.snd_thump)
 
-	
 
 func alarm_3():
 	sprite_index = "olmec"
@@ -72,7 +79,6 @@ func alarm_3():
 	Audio.play_sound(global.snd_thump)
 	alarm_4_countdown.start(50)
 
-	
 
 func alarm_4():
 	toggle = true
@@ -81,26 +87,25 @@ func alarm_4():
 	Audio.play_sound(global.snd_alert)
 	alarm_6_countdown.start(20)
 
-	
 
 func alarm_5():
-	view_hborder[0] = 128 #--- size of camera spacing for player
-	view_vborder[0] = 64
+	gml.view_hborder = 128 #--- size of camera spacing for player
+	gml.view_vborder = 64
 	gml.view_xview = 0
-	view_object[0] = player1
+	var player1 = gml.get_instance("player1") #---[FLAG] may have to change this for multiplayer
+	gml.view_object = player1
 	player1.active = true
 	status = 0
 	counter = 100
-	play_music(global.mus_boss, true)
+	Audio.play_music(global.mus_boss, true)
 	# DY: Audio.play_sound(global.snd_boss)
 
-	
 
 func alarm_6():
 	var all_caveman_worships = gml.get_all_instances("caveman_worship")
 	for caveman_worship_instance in all_caveman_worships:
 
-		obj = gml.instance_create(caveman_worship_instance.position.x, caveman_worship_instance.position.y, Objects.caveman)
+		var obj = gml.instance_create(caveman_worship_instance.position.x, caveman_worship_instance.position.y, Objects.caveman)
 		obj.facing = 1
 		obj.status = 2
 		gml.instance_destroy(caveman_worship_instance)
@@ -141,23 +146,23 @@ func create():
 	bounce_counter = 0
 	slammed = false
 
-	view_hborder[0] = 0
-	view_vborder[0] = 0
+	gml.view_hborder = 0
+	gml.view_vborder = 0
 	gml.view_yview = 400
-	view_object[0] = olmec
+	gml.view_object = self #---changed "olmec" to "self"
 
 
 func step():
 	# action_inherited
-	super()
+	#super() #--- commenting out as this seems to do nothing, since moveable_solid has no step function 
 
 	# main_code
 	if (carry_player or gml.collision_rectangle(position.x-1, position.y, position.x+66,  position.y+62, "player1", 0, 0)):
-
+		var player1 = gml.get_instance("player1") #---[FLAG] may have to change this for multiplayer
 		player1.position.x += x_vel
 		player1.position.y += y_vel
 
-	PlatformEngine.move_to(x_vel,y_vel)
+	PlatformEngine.move_to(x_vel,y_vel, self)
 
 	if (y_vel < 6):
 
@@ -189,12 +194,13 @@ func step():
 	if (gml.collision_point(position.x, position.y-2, "lava", 0, 0)):
 
 		global.enemy_kills[21] += 1
+		var final_boss = gml.get_instance("final_boss") #---[FLAG] check to make sure there is only one
 		final_boss.olmec_dead = true
 		global.kills += 1
 		gml.instance_destroy(self)
 
 
-	dist = gml.distance_to_object(player1) + 32
+	dist = gml.distance_to_object("player1", self) + 32
 
 
 	if (gml.collision_rectangle(position.x, position.y-2, position.x+64,  position.y+64, "player1", 0, 0)): carry_player = true
@@ -255,7 +261,7 @@ func step():
 	
 			if (counter > 1): counter -= 1
 			elif (counter == 1):
-		
+				var player1 = gml.get_instance("player1") #---[FLAG] may need to change this for multiplayer
 				if (player1.position.x < position.x): x_vel = -0.25
 				elif (player1.position.x > position.x+64): x_vel = 0.25
 				else: x_vel = 0
@@ -269,7 +275,7 @@ func step():
 				elif (x_vel > 0 and not toggle): x_vel -= 0.25
 				if (x_vel <= -2 or x_vel >= 2): toggle = not toggle
 		
-
+			var player1 = gml.get_instance("player1") #---[FLAG] may need to change this for multiplayer
 			if ((not player1.active and y_vel >= 0) or
 				(player1.position.y > position.y and abs(player1.position.x - (position.x+32)) < 32 and x_vel > -1)):
 		
@@ -317,7 +323,7 @@ func step():
 				InLevel.scr_shake(5)
 		
 			else:
-		
+				var player1 = gml.get_instance("player1") #---[FLAG] may need to change this for multiplayer
 				if (gml.rand(1,2) == 1 or not player1.active): status = IDLE
 				else: status = CREATE
 				x_vel = 0
@@ -333,7 +339,7 @@ func step():
 		y_vel = 0.1
 		my_grav = 0
 		InLevel.scr_shake(10)
-		if (not SS_IsSoundPlaying(global.snd_flame)): Audio.play_sound(global.snd_flame)
+		if (not SS.is_sound_playing(global.snd_flame)): Audio.play_sound(global.snd_flame)
 
 
 	if (Collision.is_collision_top(1, self)):
