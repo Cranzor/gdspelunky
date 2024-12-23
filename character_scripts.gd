@@ -1,6 +1,6 @@
 extends Node
 
-func scr_drop_item(x_vel, y_vel, obj):
+func scr_drop_item(x_vel, y_vel):
 	pass
 	
 func scr_fire_bow():

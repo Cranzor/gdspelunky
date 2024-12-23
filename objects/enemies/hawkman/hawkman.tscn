@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://dx73w7fhadmlt"]
 
-[sub_resource type="GDScript" id="GDScript_tfdgm"]
+[ext_resource type="Script" path="res://objects/enemies/hawkman/hawkman.gd" id="1_g2d40"]
 
 [node name="Hawkman" type="Node2D"]
+script = ExtResource("1_g2d40")
+object_name = "hawkman"

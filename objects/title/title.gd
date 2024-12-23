@@ -16,10 +16,6 @@ func _process(delta):
 var darkness
 var need_dark
 var state
-var t_money
-var t_time
-var t_kills
-var t_saves
 
 @onready var shortcut_house = $ShortcutHouse
 

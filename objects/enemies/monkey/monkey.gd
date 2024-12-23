@@ -344,7 +344,7 @@ func step():
 					player1.status = 16
 					if (player1.hold_item):
 				
-						player1.scr_drop_item()
+						CharacterScripts.scr_drop_item(player1.x_vel, player1.y_vel) #---[FLAG] original script has no arguments. check this
 						#/*
 						#if (hold_item.type == "Bow" and bow_armed):
 					#

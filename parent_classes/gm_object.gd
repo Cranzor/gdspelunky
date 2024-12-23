@@ -190,6 +190,10 @@ var sprite_height: int: #--- read-only variable that gives the width in pixels b
 		var height = animated_sprite_node.sprite_frames.get_frame_texture(animated_sprite_node.animation, animated_sprite_node.frame).get_height()
 		return abs(height * image_yscale)
 
+var direction #---[FLAG] have to account for this
+var speed #---[FLAG] have to account for this
+var owner_object #---[FLAG] have to account for this
+
 var x_vel = 0
 var y_vel = 0
 var x_acc = 0

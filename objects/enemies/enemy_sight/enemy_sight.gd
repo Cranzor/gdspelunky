@@ -14,7 +14,6 @@ func _process(delta):
 
 
 #--- Object functions
-var owner_object
 
 
 func collision_with_character():
