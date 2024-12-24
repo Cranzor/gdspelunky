@@ -1,6 +1,6 @@
-@icon("res://sprites/enemies/snake_left/snake_left_0.png")
+#@icon("res://sprites/enemies/snake_left/snake_left_0.png")
 extends DrawnSprite
-class_name Enemy
+#class_name Enemy
 
 var shaking
 

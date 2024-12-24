@@ -198,3 +198,6 @@ func scr_draw_hud():
 
 func scr_check_collisions():
 	pass
+
+func scr_get_favor_msg():
+	pass
