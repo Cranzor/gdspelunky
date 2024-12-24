@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://ufmc1vcwjmp3"]
 
-[sub_resource type="GDScript" id="GDScript_tg1ol"]
+[ext_resource type="Script" path="res://objects/characters/damsel/damsel.gd" id="1_apoiw"]
 
 [node name="Damsel" type="Node2D"]
+script = ExtResource("1_apoiw")
+object_name = "damsel"

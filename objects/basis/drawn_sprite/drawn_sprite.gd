@@ -58,6 +58,10 @@ var RIGHT
 var hp
 var shake_counter
 var counts_as_kill
+var blood_left
+var favor
+var sac_count
+var bomb_id
 
 func create():
 	visible = true #--- believe I put this due to how Game Maker handles it

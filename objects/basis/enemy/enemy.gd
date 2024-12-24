@@ -17,15 +17,11 @@ func _process(delta):
 
 #--- Object functions
 var shaking
-var blood_left
 var flying
 var my_grav_norm
 var my_grav_water
 var y_vel_limit
-var favor
-var sac_count
 var BOUNCE
-var bomb_id
 var bubble_timer
 var bubble_timer_max
 var PAUSE

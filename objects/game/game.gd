@@ -384,7 +384,7 @@ func step():
 	if (gml.instance_exists("player1")):
 		var player1 = gml.get_instance("player1") #--- [FLAG] may want to update this when implementing multiplayer
 
-		if (InLevel.is_level() and not InLevel.is_room("r_olmec") and not InLevel.is_room("r_load_level") and global.curr_level > 1 and
+		if (InLevel.is_level() and not InLevel.is_room("olmec") and not InLevel.is_room("load_level") and global.curr_level > 1 and
 			not global.has_crown and global.xtime > 120000 and
 			player1.sprite_index != "p_exit" and player1.sprite_index != "damsel_exit"):
 			
@@ -398,7 +398,7 @@ func step():
 			
 		
 		
-		if (InLevel.is_level() and not InLevel.is_room("r_olmec") and not InLevel.is_room("r_load_level") and global.curr_level > 1 and
+		if (InLevel.is_level() and not InLevel.is_room("olmec") and not InLevel.is_room("load_level") and global.curr_level > 1 and
 			not global.has_crown and global.xtime > 150000 and not global.ghost_exists and
 			player1.sprite_index != "p_exit" and player1.sprite_index != "damsel_exit"):
 		
@@ -415,9 +415,9 @@ func step():
 		for water_instance in all_water:
 		
 			# if (position.y > view_yview[0]-32 and position.y < view_yview[0] + view_hview[0]+32 and not InLevel.is_room("r_olmec")):
-			if (not InLevel.is_room("r_olmec")):
+			if (not InLevel.is_room("olmec")):
 			
-				if ((!InLevel.is_room("r_load_level") and water_instance.position.y < 512) or InLevel.is_room("r_load_level")):
+				if ((!InLevel.is_room("load_level") and water_instance.position.y < 512) or InLevel.is_room("load_level")):
 				
 			
 					gml.instance_activate_region(water_instance.position.x-16, water_instance.position.y-16, 48, 48, true)
@@ -498,7 +498,7 @@ func draw():
 		var str_len
 		var n
 		
-		if (player1.dead or InLevel.is_room("r_moon")):
+		if (player1.dead or InLevel.is_room("moon")):
 			
 			if (InLevel.is_level()):
 				$UI/Level.visible = true
@@ -561,7 +561,7 @@ func draw():
 					
 				
 			
-			elif (InLevel.is_room("r_sun")):
+			elif (InLevel.is_room("sun")):
 				$UI/BonusRooms.visible = true
 				var sun_room = gml.get_instance("sun_room")
 			
@@ -587,7 +587,7 @@ func draw():
 					$UI/BonusRooms/RecordOrBetterLuck.visible = true
 				
 			
-			elif (InLevel.is_room("r_moon")):
+			elif (InLevel.is_room("moon")):
 				$UI/BonusRooms.visible = true
 				var moon_room = gml.get_instance("moon_room")
 			
@@ -616,7 +616,7 @@ func draw():
 					
 				
 			
-			elif (InLevel.is_room("r_stars")):
+			elif (InLevel.is_room("stars")):
 				$UI/BonusRooms.visible = true
 				var stars_room = gml.get_instance("stars_room")
 			

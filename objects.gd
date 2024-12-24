@@ -114,7 +114,7 @@ var xoc_block = 'res://objects/blocks/xoc_block/xoc_block.tscn' # DONE
 
 
 #characters
-#var damsel = 'res://objects/characters/damsel/damsel.tscn'
+var damsel = 'res://objects/characters/damsel/damsel.tscn' # DONE
 var damsel_kiss = 'res://objects/characters/damsel_kiss/damsel_kiss.tscn' # DONE
 #var shopkeeper = 'res://objects/characters/shopkeeper/shopkeeper.tscn'
 var shopkeeper2 = 'res://objects/characters/shopkeeper2/shopkeeper2.tscn' # DONE

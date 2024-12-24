@@ -25,7 +25,7 @@ func set_sound_freq(sound, frequency):
 	pass
 
 
-func set_sound_pan():
+func set_sound_pan(temp, temp2):
 	pass
 
 

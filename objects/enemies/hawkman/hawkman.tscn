@@ -4,10 +4,4 @@
 
 [node name="Hawkman" type="Node2D"]
 script = ExtResource("1_g2d40")
-sprite_index_name = null
-sprite_offset = null
 object_name = "hawkman"
-editor_setup_finished = null
-collision_with = null
-depth = null
-object_size = null
