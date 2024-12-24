@@ -2,6 +2,20 @@
 extends DrawnSprite
 class_name Item
 
+
+func _ready():
+	object_setup()
+
+
+func _physics_process(_delta):
+	object_tick()
+
+
+func _process(delta):
+	object_process(delta)
+
+
+#--- Object functions
 var falling
 var px
 var py
@@ -22,19 +36,20 @@ var buy_message #---[FLAG] may want to move this to drawn_sprite. check damsel s
 
 var to_destroy
 
+
 func create():
 	super()
 	active = true
 	type = "none"
 	shop_desc = ""
-	new = true # set to false once player has picked up, currently just used for bow
+	new = true #DY: set to false once player has picked up, currently just used for bow
 	held = false
 	#LEFT = 18
 	#RIGHT = 19
 	#DUCKING = 12
 	my_grav = 0.6
 	armed = false
-	trigger = false # for idols
+	trigger = false #DY: for idols
 	safe = false
 	heavy = false
 	value = 0
@@ -49,12 +64,12 @@ func create():
 	cost = 0
 	for_sale = false
 	stolen = false
-	in_dice_house = false # for dice house
+	in_dice_house = false #DY: for dice house
 	cimg = 0
 
 	stuck = false
 
-	# for sticky bombs
+	#DY: for sticky bombs
 	sticky = false
 	enemy_id = 0
 	sticky_x_diff = 0
@@ -80,7 +95,7 @@ func step():
 			for_sale = false
 		
 
-			# stealing makes shopkeeper angry
+			#DY: stealing makes shopkeeper angry
 		if (InLevel.is_real_level()):
 		
 			if (cost > 0 and for_sale and not InLevel.is_in_shop(position.x, position.y)):
@@ -111,7 +126,7 @@ func step():
 		
 			if (heavy):
 			
-				if (type == "Gold Idol" or type == "Crystal Skull" or type == "Lamp" or type == "Damsel"):
+				if (type == "gold idol" or type == "crystal skull" or type == "lamp" or type == "damsel"):
 				
 					if (player1.state == DUCKING and abs(player1.x_vel) < 2): position.y = player1.position.y+2
 					else: position.y = player1.position.y
@@ -128,8 +143,8 @@ func step():
 				else: position.y = player1.position.y+2
 			
 			depth = 1
-			#if (player1.hold_item == 0): #--- changing 0 to null
-			if (player1.hold_item == null):
+			if (player1.hold_item == 0): #---[FLAG] changing 0 to null. #--- changed this back for now. should make this consistent across project
+			#if (player1.hold_item == null):
 			
 				held = false
 			
@@ -217,7 +232,7 @@ func step():
 			if (sticky and type == "bomb" and sprite_index == "bomb_armed"):
 			
 					# do nothing
-					pass
+				pass
 			
 			elif (Collision.is_collision_top(1, self)):
 			
@@ -309,7 +324,7 @@ func step():
 				#/*
 				#if (enemy_id.bomb_id):
 				#
-						## Can only have one sticky bomb on someone at a time
+						##DY: Can only have one sticky bomb on someone at a time
 					#with enemy_id.bomb_id
 					#
 						#sticky = false
@@ -331,7 +346,7 @@ func step():
 				
 					obj.x_vel = x_vel
 					
-						# vampires are weak to "stakes"
+						#DY: vampires are weak to "stakes"
 					if (type == "arrow" and obj.status != 98 and obj.type == "vampire"): obj.hp -= 3
 					
 					#with obj
@@ -397,7 +412,7 @@ func step():
 							Audio.play_sound(global.snd_hit)
 						
 					
-					elif (obj.type == "UFO"):
+					elif (obj.type == "ufo"):
 					
 						gml.instance_create(obj.position.x+8, obj.position.y+8, "explosion")
 						Audio.play_sound(global.snd_explosion)
@@ -465,14 +480,21 @@ func step():
 						
 							InLevel.scr_shopkeeper_anger(3, self)
 
-func item_draw():
-	pass
 
-func _on_alarm_2_timeout():
-	alarm_2()
+func draw():
+	gml.draw_sprite_ext(sprite_index, image_index, position.x, position.y, 1, 1, 0, gml.c_white, 1, self)
+	if (cost > 0):
+	
+		gml.draw_sprite_ext("small_collect", cimg, position.x, position.y-12, 1, 1, 0, gml.c_white, 1, self, false)
+		cimg += 1
+		if (cimg > 9): cimg = 0
+
 
 func alarm_2():
-	pass
+	safe = false
+
 
 func destroy():
-	pass
+	if (held):
+		var player1 = gml.get_instance("player1") #---[FLAG] may have to change this for multiplayer
+		player1.hold_item = 0

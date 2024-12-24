@@ -1,4 +1,4 @@
-extends GMObject #--- [FLAG] double check this
+extends GMObject
 
 
 func _ready():

@@ -40,7 +40,7 @@ var drawn_sprite = 'res://objects/basis/drawn_sprite/drawn_sprite.tscn' # DONE
 #var enemy = 'res://objects/basis/enemy/enemy.tscn'
 var foreground = 'res://objects/basis/foreground/foreground.tscn' # DONE
 var frill = 'res://objects/basis/frill/frill.tscn' # DONE
-var item = 'res://objects/basis/item/item.tscn' # PROGRESS
+var item = 'res://objects/basis/item/item.tscn' # DONE
 var ladder = 'res://objects/basis/ladder/ladder.tscn' # DONE
 var menu = 'res://objects/basis/menu/menu.tscn' # DONE
 var moveable_solid = 'res://objects/basis/moveable_solid/moveable_solid.tscn' # DONE
@@ -247,7 +247,7 @@ var tomb_lord = 'res://objects/enemies/tomb_lord/tomb_lord.tscn' # DONE
 var ufo = 'res://objects/enemies/ufo/ufo.tscn' # DONE
 var ufo_crash = 'res://objects/enemies/ufo_crash/ufo_crash.tscn' # DONE
 #var vampire = 'res://objects/enemies/vampire/vampire.tscn'
-#var yeti = 'res://objects/enemies/yeti/yeti.tscn'
+var yeti = 'res://objects/enemies/yeti/yeti.tscn' # DONE
 var yeti_king = 'res://objects/enemies/yeti_king/yeti_king.tscn' # DONE
 var zombie = 'res://objects/enemies/zombie/zombie.tscn' # DONE
 

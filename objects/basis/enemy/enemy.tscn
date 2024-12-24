@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://db4aettp6impq"]
 
-[sub_resource type="GDScript" id="GDScript_w1atf"]
+[ext_resource type="Script" path="res://objects/basis/enemy/enemy.gd" id="1_lu7ay"]
 
 [node name="Enemy" type="Node2D"]
+script = ExtResource("1_lu7ay")
+object_name = "enemy"
