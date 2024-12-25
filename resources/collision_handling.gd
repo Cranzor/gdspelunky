@@ -20,8 +20,8 @@ func check_collision_group(nodes_to_check, tester_rect):
 	for object in nodes_to_check:
 		var intersecting: bool = check_individual_collision(object, tester_rect)
 		if intersecting == true:
-			return true
-	return false
+			return object
+	return null
 	
 func check_individual_collision(node_to_check, tester_rect):
 		var object_sprite: String = node_to_check.sprite_index_name

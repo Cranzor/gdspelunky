@@ -14,9 +14,6 @@ func _process(delta):
 
 
 #--- Object functions
-var fade_in
-var fade_out
-var fade_level
 
 var str1
 var str2
