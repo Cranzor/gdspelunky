@@ -187,6 +187,9 @@ func distance_to_object(obj: String, node): #Make this more accurate with this i
 	else: #------------------ testing with this for now. not exactly sure how GML handles this
 		return -1
 
+func distance_to_point(x, y, node): #--- used only once in the whole game (vampire step event)
+	pass
+
 func point_direction(x1, y1, x2, y2): #---[FLAG] have to implement
 	pass
 		

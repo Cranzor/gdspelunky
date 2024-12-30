@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://crsjto5gtqytq"]
 
-[sub_resource type="GDScript" id="GDScript_p1olp"]
+[ext_resource type="Script" path="res://objects/transition/transition.gd" id="1_kueu1"]
 
 [node name="Transition" type="Node2D"]
+script = ExtResource("1_kueu1")
+object_name = "transition"

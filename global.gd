@@ -29,7 +29,7 @@ var custom_level_author
 var custom_level_name
 var damsels
 var damsels_bought
-var damsels_grabbed
+var damsels_grabbed = 0 #---[FLAG] setting to 0
 var damsels_killed
 var damsels_killed_total
 var damsels_saved_total

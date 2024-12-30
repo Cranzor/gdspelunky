@@ -1,5 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cjqel1xvwlea4"]
 
-[sub_resource type="GDScript" id="GDScript_6oyxi"]
+[ext_resource type="Script" path="res://objects/enemies/vampire/vampire.gd" id="1_yjwxm"]
 
 [node name="Vampire" type="Node2D"]
+script = ExtResource("1_yjwxm")
+object_name = "vampire"

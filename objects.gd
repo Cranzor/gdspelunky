@@ -29,7 +29,7 @@ var sprite = 'res://objects/sprite/sprite.tscn' # DONE
 var stars_room = 'res://objects/stars_room/stars_room.tscn' # DONE
 var sun_room = 'res://objects/sun_room/sun_room.tscn' # DONE
 var title = 'res://objects/title/title.tscn' # PROGRESS
-#var transition = 'res://objects/transition/transition.tscn'
+var transition = 'res://objects/transition/transition.tscn' # DONE
 
 
 #basis
@@ -246,7 +246,7 @@ var spider_hang = 'res://objects/enemies/spider_hang/spider_hang.tscn' # DONE
 var tomb_lord = 'res://objects/enemies/tomb_lord/tomb_lord.tscn' # DONE
 var ufo = 'res://objects/enemies/ufo/ufo.tscn' # DONE
 var ufo_crash = 'res://objects/enemies/ufo_crash/ufo_crash.tscn' # DONE
-#var vampire = 'res://objects/enemies/vampire/vampire.tscn'
+var vampire = 'res://objects/enemies/vampire/vampire.tscn' # DONE
 var yeti = 'res://objects/enemies/yeti/yeti.tscn' # DONE
 var yeti_king = 'res://objects/enemies/yeti_king/yeti_king.tscn' # DONE
 var zombie = 'res://objects/enemies/zombie/zombie.tscn' # DONE
