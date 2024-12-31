@@ -50,7 +50,8 @@ func create():
 		var player1 = gml.get_instance("player1") #---[FLAG] may have to change this for multiplayer
 	
 		CharacterScripts.scr_hold_item(global.pickup_item)
-		player1.hold_item.cost = 0
+		if player1.hold_item != 0: #--- adding a check here because GML seems to not have issues setting sss"cost" when hold_item is 0
+			player1.hold_item.cost = 0
 		if (global.kali_punish >= 2):
 	
 			gml.instance_create(player1.position.x, player1.position.y, Objects.ball)

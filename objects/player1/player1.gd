@@ -67,7 +67,7 @@ var jetpack_fuel
 var red_color
 var red_toggle
 var k_attack_released
-var hold_item
+var hold_item = 0
 var hold_item_type
 var pickup_item_type
 var k_item
@@ -272,7 +272,7 @@ func create():
 	red_toggle = false
 
 	k_attack_released = 0
-	hold_item = null
+	hold_item = 0
 	hold_item_type = ""
 	pickup_item_type = ""
 	k_item = 0
@@ -404,7 +404,7 @@ func exit_game_from_title():
 		if (hold_item):
 		
 			hold_item.held = false
-			hold_item = null
+			hold_item = 0
 			pickup_item_type = ""
 		
 		gml.instance_create(position.x, position.y, p_dummy5)
@@ -515,7 +515,7 @@ func handle_edge_leaning():
 			
 			if (hold_item.type == pickup_item_type):
 			
-				hold_item = null
+				hold_item = 0
 				pickup_item_type = ""
 			
 			else: CharacterScripts.scr_hold_item(pickup_item_type)
@@ -584,7 +584,7 @@ func fall_off_bottom_of_screen():
 		
 			hold_item.visible = true
 			hold_item.held = false
-			hold_item = null
+			hold_item = 0
 			pickup_item_type = ""
 		
 		Audio.play_sound(global.snd_thud)
@@ -691,11 +691,11 @@ func handle_player_dead_or_stunned():
 			hold_item.held = false
 			if (hold_item.type == pickup_item_type):
 			
-				hold_item = null
+				hold_item = 0
 				pickup_item_type = ""
 			
 			else: CharacterScripts.scr_hold_item(pickup_item_type)
-			#hold_item = null
+			#hold_item = 0
 			#pickup_item_type = ""
 		
 
@@ -914,8 +914,7 @@ func delete_whip_instances_when_not_whipping():
 		for whip_pre_instance in all_whip_pres: gml.instance_destroy(whip_pre_instance)
 	
 func handle_item_stealing():
-	#if (hold_item > 0): #---changing 0 to null
-	if (hold_item != null):
+	if (hold_item > 0):
 
 		if (hold_item.cost > 0 and InLevel.is_level()):
 			
@@ -1012,7 +1011,7 @@ func handle_crate_opening():
 		Audio.play_sound(global.snd_pickup)
 		if (chest_instance == hold_item):
 			
-			hold_item = null
+			hold_item = 0
 			pickup_item_type = ""
 			
 		chest_instance.gml.instance_create(position.x, position.y, "poof")
@@ -1035,7 +1034,7 @@ func handle_flare_crate_opening():
 		Audio.play_sound(global.snd_pickup)
 		if (chest_instance == hold_item):
 		
-			hold_item = null
+			hold_item = 0
 			pickup_item_type = ""
 		
 		chest_instance.gml.instance_create(position.x, position.y, "poof")
@@ -1060,7 +1059,7 @@ func start_game():
 			if (hold_item.heavy):
 			
 				hold_item.held = false
-				hold_item = null
+				hold_item = 0
 				pickup_item_type = ""
 			
 			elif (hold_item.type == "Bomb"):
@@ -1094,7 +1093,7 @@ func start_game():
 		
 		elif (InLevel.is_room("r_olmec")): global.pickup_item = ""
 		elif (hold_item): hold_item.held = false
-		hold_item = null
+		hold_item = 0
 		pickup_item_type = ""
 
 		var door = gml.instance_place(position.x, position.y, 'x_start', self)
@@ -1149,7 +1148,7 @@ func exit_level():
 				Audio.play_sound(global.snd_coin)
 				gml.instance_create(position.x, position.y-8, "big_collect")
 				hold_item.gml.instance_destroy(hold_item)
-				hold_item = null
+				hold_item = 0
 			
 			elif (hold_item.type == "damsel"):
 			
@@ -1173,20 +1172,20 @@ func exit_level():
 					hold_item.depth = 1000
 					hold_item.active = false
 					
-					hold_item = null
+					hold_item = 0
 				
 				else:
 				
 					hold_item.status = 2
 					hold_item.held = false
-					hold_item = null
+					hold_item = 0
 					pickup_item_type = ""
 				
 			
 			elif (hold_item.heavy):
 			
 				hold_item.held = false
-				hold_item = null
+				hold_item = 0
 				pickup_item_type = ""
 			
 			elif (hold_item.type == "bomb"):
@@ -1217,7 +1216,7 @@ func exit_level():
 				hold_item.gml.instance_destroy()
 				
 			
-			hold_item = null
+			hold_item = 0
 			pickup_item_type = ""
 		
 
@@ -1645,7 +1644,7 @@ func bomb_rope_and_whipping_handling(): #--- Also handles picking up items and a
 					
 						if (hold_item.status == 4): # exiting
 						
-							hold_item = null
+							hold_item = 0
 							hold_item.held = false
 						
 						else:
@@ -1692,7 +1691,7 @@ func bomb_rope_and_whipping_handling(): #--- Also handles picking up items and a
 				#else: hold_item.x_vel = 1
 				#hold_item.y_yel = -2
 				#hold_item.held = false
-				#hold_item = null
+				#hold_item = 0
 				#pickup_item_type = ""
 			#
 #
@@ -1737,7 +1736,7 @@ func handle_shop_behavior(): #--- Purchasing and games etc. (different shop type
 					global.message2 = ""
 					global.message_timer = 80
 					hold_item.held = false
-					hold_item = null
+					hold_item = 0
 					pickup_item_type = ""
 					n = 1
 				
@@ -1749,7 +1748,7 @@ func handle_shop_behavior(): #--- Purchasing and games etc. (different shop type
 					#global.message = "THANK YOU!"
 					#global.message2 = ""
 					global.message_timer = 80
-					# hold_item = null
+					# hold_item = 0
 				
 			
 			if ((global.black_market and global.room_path[[LevelGeneration.scr_get_room_x(position.x), LevelGeneration.scr_get_room_y(position.y)]] == 5) or
@@ -2036,7 +2035,7 @@ func handle_hit_by_smash_trap():
 		MiscScripts.scr_create_blood(position.x, position.y, 1)
 		if (hold_item):
 			hold_item.held = false
-			hold_item = null
+			hold_item = 0
 	
 func handle_hit_by_ceiling_trap():
 	var obj = gml.collision_rectangle(position.x-2, position.y-9, position.x+2,  position.y-7, "ceiling_trap", 0, 0) #instance_nearest(position.x, position.y-8, ceiling_trap)
@@ -2082,7 +2081,7 @@ func handle_spike_collision():
 #elif (not dead): my_grav = 0.6
 	
 func drop_item_when_dead_or_stunned():
-	if ((dead or stunned) and hold_item != null):
+	if ((dead or stunned) and hold_item != 0):
 
 		hold_item.held = false
 		
@@ -2100,7 +2099,7 @@ func drop_item_when_dead_or_stunned():
 		
 		if (hold_item.type == pickup_item_type):
 		
-			hold_item = null
+			hold_item = 0
 			pickup_item_type = ""
 		
 		else: CharacterScripts.scr_hold_item(pickup_item_type)
@@ -2462,7 +2461,7 @@ func collect_rope_pile():
 func collect_idol_and_damsel():
 	if (gml.collision_point(position.x, position.y, "exit", 0, 0)):
 
-		if (hold_item != null):
+		if (hold_item != 0):
 		
 			collect = false
 			if (hold_item.type == "Gold Idol"):
@@ -2476,7 +2475,7 @@ func collect_idol_and_damsel():
 				Audio.play_sound(global.snd_coin)
 				gml.instance_create(position.x, position.y-8, "big_collect")
 				gml.instance_destroy(hold_item) #---[FLAG] hold_item should be set to the string of the item name
-				hold_item = null
+				hold_item = 0
 			
 			elif (hold_item.type == "damsel"):
 			
@@ -2502,7 +2501,7 @@ func collect_idol_and_damsel():
 					hold_item_instance.active = false
 					hold_item_instance.can_pick_up = false
 					
-					hold_item = null
+					hold_item = 0
 	
 func increase_global_xmoney_value():
 	global.xmoney += global.money - money
@@ -3499,7 +3498,7 @@ func running_and_duck_to_hang_behavior():
 			
 				hold_item.held = false
 				if (hold_item.type == "gold idol"): hold_item.position.y -= 8
-				CharacterScripts.scr_drop_item(-1, -4, self)
+				CharacterScripts.scr_drop_item(-1, -4)
 			
 			var all_monkeys = gml.get_all_instances("monkey")
 			for monkey_instance in all_monkeys:
@@ -3523,7 +3522,7 @@ func running_and_duck_to_hang_behavior():
 			
 				# hold_item.held = false
 				if (hold_item.type == "gold idol"): hold_item.position.y -= 8
-				CharacterScripts.scr_drop_item(1, -4, self)
+				CharacterScripts.scr_drop_item(1, -4)
 			
 			
 			var all_monkeys = gml.get_all_instances("monkey")
@@ -4009,7 +4008,7 @@ func character_sprite():
 					#if (hold_item.type == "Damsel"): Audio.play_sound(global.snd_damsel)
 					#if (hold_item.type == pickup_item_type):
 					#
-						#hold_item = null
+						#hold_item = 0
 						#pickup_item_type = ""
 					#
 					#else: CharacterScripts.scr_hold_item(pickup_item_type)
@@ -4071,7 +4070,7 @@ func character_sprite():
 					#if (hold_item.type == "Damsel"): Audio.play_sound(global.snd_damsel)
 					#if (hold_item.type == pickup_item_type):
 					#
-						#hold_item = null
+						#hold_item = 0
 						#pickup_item_type = ""
 					#
 					#else: CharacterScripts.scr_hold_item(pickup_item_type)

@@ -19,3 +19,4 @@ mono_crash.*.json
 
 godot.exe.exe
 startup_benchmark.tscn
+python_scripts/GMLtoGDScript.py
