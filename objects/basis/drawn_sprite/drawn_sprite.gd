@@ -53,8 +53,8 @@ var firing
 var hit
 var orig_x
 var orig_y
-var LEFT
-var RIGHT
+var LEFT = 1 #---setting LEFT and RIGHT to have default values as player1 doesn't set thems
+var RIGHT = 0
 var hp
 var shake_counter
 var counts_as_kill

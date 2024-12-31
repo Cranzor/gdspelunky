@@ -4321,47 +4321,47 @@ func character_draw_event():
 	#*/
 	#draws the sprite
 	var draw = true
-	if (facing == RIGHT): animated_sprite_node.flip_h = true
-	else: animated_sprite_node.flip_h = false
+	if (facing == RIGHT): image_xscale = -1
+	else: image_xscale = 1
 
-	#if (blink_toggle != 1):
-#
-		#if ((state == CLIMBING or (sprite_index == "p_exit" or sprite_index == "damsel_exit" or sprite_index == "tunnel_exit")) and global.has_jetpack and not whipping):
-		#
-			#draw_sprite_ext(sprite_index, -1, position.x, position.y, image_xscale, image_yscale, image_angle, image_blend, image_alpha)
-			##draw_sprite(sprite_index,-1,position.x,position.y)
-			#draw_sprite(jetpack_back,-1,position.x,position.y)
-			#draw = false
-		#
-		#elif (global.has_jetpack and facing == RIGHT): draw_sprite(jetpack_right,-1,position.x-4,position.y-1)
-		#elif (global.has_jetpack): draw_sprite(jetpack_left,-1,position.x+4,position.y-1)
-		#if (draw):
-		#
-			#if (red_color > 0): draw_sprite_ext(sprite_index, -1, position.x, position.y, image_xscale, image_yscale, image_angle, make_color_rgb(200 + red_color,0,0), image_alpha)
-			#else: draw_sprite_ext(sprite_index, -1, position.x, position.y, image_xscale, image_yscale, image_angle, image_blend, image_alpha)
-		#
-		#if (facing == RIGHT):
-		#
-			#if (hold_arrow == ARROW_NORM):
-			#
-				#draw_sprite(arrow_right, -1, position.x+4, position.y+1)
-			#
-			#elif (hold_arrow == ARROW_BOMB):
-			#
-				#if (hold_arrowToggle): draw_sprite(bomb_arrow_right, 0, position.x+4, position.y+2)
-				#else: draw_sprite(bomb_arrow_right, 1, position.x+4, position.y+2)
-			#
-		#
-		#elif (facing == LEFT):
-		#
-			#if (hold_arrow == ARROW_NORM):
-			#
-				#draw_sprite(arrow_left, -1, position.x-4, position.y+1)
-			#
-			#elif (hold_arrow == ARROW_BOMB):
-			#
-				#if (hold_arrowToggle): draw_sprite(bomb_arrow_left, 0, position.x-4, position.y+2)
-				#else: draw_sprite(bomb_arrow_left, 1, position.x-4, position.y+2)
+	if (blink_toggle != 1):
+
+		if ((state == CLIMBING or (sprite_index == "p_exit" or sprite_index == "damsel_exit" or sprite_index == "tunnel_exit")) and global.has_jetpack and not whipping):
+		
+			gml.draw_sprite_ext(sprite_index, -1, position.x, position.y, image_xscale, image_yscale, image_angle, image_blend, image_alpha, self)
+			#draw_sprite(sprite_index,-1,position.x,position.y)
+			gml.draw_sprite("jetpack_back",-1,position.x,position.y,self)
+			draw = false
+		
+		elif (global.has_jetpack and facing == RIGHT): gml.draw_sprite("jetpack_right",-1,position.x-4,position.y-1,self)
+		elif (global.has_jetpack): gml.draw_sprite("jetpack_left",-1,position.x+4,position.y-1,self)
+		if (draw):
+		
+			if (red_color > 0): gml.draw_sprite_ext(sprite_index, -1, position.x, position.y, image_xscale, image_yscale, image_angle, gml.make_color_rgb(200 + red_color,0,0), image_alpha, self)
+			else: gml.draw_sprite_ext(sprite_index, -1, position.x, position.y, image_xscale, image_yscale, image_angle, image_blend, image_alpha, self)
+		
+		if (facing == RIGHT):
+		
+			if (hold_arrow == ARROW_NORM):
+			
+				gml.draw_sprite("arrow_right", -1, position.x+4, position.y+1, self)
+			
+			elif (hold_arrow == ARROW_BOMB):
+			
+				if (hold_arrow_toggle): gml.draw_sprite("bomb_arrow_right", 0, position.x+4, position.y+2, self)
+				else: gml.draw_sprite("bomb_arrow_right", 1, position.x+4, position.y+2, self)
+			
+		
+		elif (facing == LEFT):
+		
+			if (hold_arrow == ARROW_NORM):
+			
+				gml.draw_sprite("arrow_left", -1, position.x-4, position.y+1, self)
+			
+			elif (hold_arrow == ARROW_BOMB):
+			
+				if (hold_arrow_toggle): gml.draw_sprite("bomb_arrow_left", 0, position.x-4, position.y+2, self)
+				else: gml.draw_sprite("bomb_arrow_left", 1, position.x-4, position.y+2, self)
 			
 		
 

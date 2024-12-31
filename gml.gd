@@ -555,7 +555,10 @@ func radtodeg(rad): #---[FLAG] need to test
 func arctan(x):
 	var inverse_tanget = atan(x) #---[FLAG] need to test
 	return inverse_tanget
-	
+
+func make_color_rgb(red, green, blue):
+	return Color(red, green, blue)
+
 #------------------------
 func singleton_test():
 	var bg_holder_list = get_tree().get_nodes_in_group('BgHolder')

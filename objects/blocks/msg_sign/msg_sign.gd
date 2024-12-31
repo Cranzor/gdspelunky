@@ -146,9 +146,9 @@ func create():
 
 
 func draw():
-	#draw_sprite(sprite_index, -1, position.x, position.y) #--- commenting this out as the sprite displays by default
+	gml.draw_sprite(sprite_index, -1, position.x, position.y, self, true)
 	if (InLevel.is_room("level_editor")):
 
-		#draw_set_font(global.my_font_small) #--- commenting out as draw_text takes care of these
-		#draw_set_color(c_white)
-		gml.draw_text(position.x, position.y, message, "small_font", gml.c_white, "level_editor_string", self)
+		gml.draw_set_font(global.my_font_small)
+		gml.draw_set_color(gml.c_white)
+		gml.draw_text(position.x, position.y, message, "message", self)
