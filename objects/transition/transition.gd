@@ -504,8 +504,8 @@ func draw():
 	
 	
 		# DY:  don't create a dark level if player is attempting a speed run:
-		if (s <= 20): global.ndark_level = true
-		else: global.ndark_level = false
+		if (s <= 20): global.no_dark_level = true
+		else: global.no_dark_level = false
 	
 		var s2 = global.time
 		s2 = floor(s2 / 1000)

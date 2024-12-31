@@ -1,5 +1,4 @@
 extends Enemy
-class_name Shopkeeper
 
 func _ready():
 	sprite = 'sShopLeft'
