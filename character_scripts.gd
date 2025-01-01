@@ -12,7 +12,7 @@ func scr_drop_item(x_vel, y_vel):
 		#
 		#This file is part of Spelunky.
 #
-		#You can redistribute and/or %ify Spelunky, including its source code, under
+		#You can redistribute and/or modify Spelunky, including its source code, under
 		#the terms of the Spelunky User License.
 #
 		#Spelunky is distributed in the hope that it will be entertaining and useful,
@@ -61,7 +61,7 @@ func scr_hold_item(passed_item_type):
 		#
 		#This file is part of Spelunky.
 #
-		#You can redistribute and/or %ify Spelunky, including its source code, under
+		#You can redistribute and/or modify Spelunky, including its source code, under
 		#the terms of the Spelunky User License.
 #
 		#Spelunky is distributed in the hope that it will be entertaining and useful,
@@ -69,7 +69,7 @@ func scr_hold_item(passed_item_type):
 #
 		#The Spelunky User License should be available in "Game Information", which
 		#can be found in the Resource Explorer, or as an external file called COPYING.
-		#If not, please obtain a new copy of Spelunky from <http:#spelunkyworld.com/>
+		#If not, please obtain a new copy of Spelunky from <http://spelunkyworld.com/>
 		#
 	#***********************************************************************************/
 	var player1 = gml.get_instance("player1") #---[FLAG] may have to change this for multiplayer

@@ -56,15 +56,17 @@ var room_width: int:
 		
 var view_vborder: int: #--- vertical boundary of camera. original code always has it as view_vborder[0]
 	set(value):
-		view_node.limit_top = value
+		view_node.drag_top_margin = value / 240
+		view_node.drag_bottom_margin = value / 240
 	get:
-		return view_node.limit_top
+		return view_node.drag_top_margin #--- can return only one as the top/bottom should always be the same
 		
 var view_hborder: int:#--- horizontal boundary of camera. original code always has it as view_hborder[0]. only used in olmec scene
 	set(value):
-		view_node.limit_right = value
+		view_node.drag_right_margin = value / 320
+		view_node.drag_left_margin = value / 320
 	get:
-		return view_node.limit_right
+		return view_node.drag_right_margin
 
 var view_node: Camera2D:
 	get:
