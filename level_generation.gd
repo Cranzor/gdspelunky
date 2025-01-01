@@ -555,7 +555,7 @@ func scr_get_name():
 #
 	#The Spelunky User License should be available in "Game Information", which
 	#can be found in the Resource Explorer, or as an external file called COPYING.
-	#If not, please obtain a new copy of Spelunky from <http:#spelunkyworld.com/>
+	#If not, please obtain a new copy of Spelunky from <http://spelunkyworld.com/>
 	#
 #***********************************************************************************/
 	randomize()
@@ -614,7 +614,7 @@ func scr_treasure_gen(bones_chance, instance): #will pass in x and y as well sin
 #
 	#The Spelunky User License should be available in "Game Information", which
 	#can be found in the Resource Explorer, or as an external file called COPYING.
-	#If not, please obtain a new copy of Spelunky from <http:#spelunkyworld.com/>
+	#If not, please obtain a new copy of Spelunky from <http://spelunkyworld.com/>
 	#
 #***********************************************************************************/
 
@@ -755,7 +755,7 @@ func scr_level_gen():
 #
 	#The Spelunky User License should be available in "Game Information", which
 	#can be found in the Resource Explorer, or as an external file called COPYING.
-	#If not, please obtain a new copy of Spelunky from <http:#spelunkyworld.com/>
+	#If not, please obtain a new copy of Spelunky from <http://spelunkyworld.com/>
 	#
 #***********************************************************************************/
 	randomize()
@@ -1055,7 +1055,7 @@ func scr_init_level():
 #
 	#The Spelunky User License should be available in "Game Information", which
 	#can be found in the Resource Explorer, or as an external file called COPYING.
-	#If not, please obtain a new copy of Spelunky from <http:#spelunkyworld.com/>
+	#If not, please obtain a new copy of Spelunky from <http://spelunkyworld.com/>
 	#
 #***********************************************************************************/
 
@@ -1367,7 +1367,7 @@ func scr_room_gen(x, y):
 	#
 		#The Spelunky User License should be available in "Game Information", which
 		#can be found in the Resource Explorer, or as an external file called COPYING.
-		#If not, please obtain a new copy of Spelunky from <http:#spelunkyworld.com/>
+		#If not, please obtain a new copy of Spelunky from <http://spelunkyworld.com/>
 		#
 	#***********************************************************************************/
 
@@ -1987,7 +1987,7 @@ func scr_entity_gen():
 #
 		#The Spelunky User License should be available in "Game Information", which
 		#can be found in the Resource Explorer, or as an external file called COPYING.
-		#If not, please obtain a new copy of Spelunky from <http:#spelunkyworld.com/>
+		#If not, please obtain a new copy of Spelunky from <http://spelunkyworld.com/>
 		#
 	#***********************************************************************************/
 
@@ -2563,7 +2563,7 @@ func scr_setup_walls(placement):
 #
 		#The Spelunky User License should be available in "Game Information", which
 		#can be found in the Resource Explorer, or as an external file called COPYING.
-		#If not, please obtain a new copy of Spelunky from <http:#spelunkyworld.com/>
+		#If not, please obtain a new copy of Spelunky from <http://spelunkyworld.com/>
 		#
 	#***********************************************************************************/
 
@@ -3092,7 +3092,7 @@ func scr_check_water_top(x, y, calling_object):
 #
 		#The Spelunky User License should be available in "Game Information", which
 		#can be found in the Resource Explorer, or as an external file called COPYING.
-		#If not, please obtain a new copy of Spelunky from <http:#spelunkyworld.com/>
+		#If not, please obtain a new copy of Spelunky from <http://spelunkyworld.com/>
 		#
 	#***********************************************************************************/
 

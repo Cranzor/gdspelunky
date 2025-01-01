@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dimbvflcml3em"]
+[gd_scene load_steps=5 format=3 uid="uid://dimbvflcml3em"]
 
 [ext_resource type="Script" path="res://objects/screen/screen.gd" id="1_27kbe"]
 [ext_resource type="FontFile" uid="uid://dgd06bxddo4pq" path="res://fonts/small_font.png" id="2_nrj7p"]
 [ext_resource type="FontFile" uid="uid://cjfa4ea02s5yi" path="res://fonts/main_font.png" id="3_q6hrt"]
+[ext_resource type="Script" path="res://objects/screen/sprites.gd" id="4_pk685"]
 
 [node name="Screen" type="CanvasLayer"]
 script = ExtResource("1_27kbe")
@@ -105,19 +106,15 @@ color = Color(0, 0, 0, 0.901961)
 [node name="TitleScreen" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
 
 [node name="Background" type="ColorRect" parent="TitleScreen"]
 visible = false
-layout_mode = 0
 offset_right = 320.0
 offset_bottom = 240.0
 color = Color(0, 0, 0, 1)
 
 [node name="DerekYuPresents" type="Label" parent="TitleScreen"]
 visible = false
-layout_mode = 0
 offset_left = 88.0
 offset_top = 48.0
 offset_right = 224.0
@@ -158,3 +155,7 @@ offset_bottom = 247.0
 theme_override_colors/font_color = Color(1, 1, 0, 1)
 theme_override_fonts/font = ExtResource("2_nrj7p")
 text = "LET'S GET OUT OF HERE!"
+
+[node name="SpritesHolder" type="Node2D" parent="."]
+script = ExtResource("4_pk685")
+object_name = "sprite"

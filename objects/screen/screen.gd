@@ -6,6 +6,9 @@ var can_pause
 var paused
 var enabled
 
+@onready var sprites_holder = $SpritesHolder #--- declaring this here since screen extends CanvasLayer and doesn't have this by default
+
+
 @onready var derek_yu_presents = $TitleScreen/DerekYuPresents
 
 @onready var message = $GlobalMessages/Message

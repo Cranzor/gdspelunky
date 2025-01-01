@@ -111,7 +111,7 @@ def camel_case_to_snake_case(string):
 			
 #def handle_file(test_string, file_name):
 #dest_folder = input("Enter the output folder: ")
-import_file = r"/home/jesse/Documents/Dump/Scripts/Character/scrHoldItem.gml"
+import_file = r"/home/jesse/Documents/Dump/Scripts/scrDrawHUD.gml"
 def main_process(file):		
 	if os.path.isfile(file):
 		f = open(file, 'r')

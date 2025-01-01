@@ -77,10 +77,13 @@ var view_object #---[FLAG] make this attach the camera to the node it's set equa
 var view_yview: int:
 	set(value):
 		view_node.offset.y = value
-
+	get:
+		return view_node.offset.y
 var view_xview: int:
 	set(value):
 		view_node.offset.x = value
+	get:
+		return view_node.offset.x
 
 #var view_hview: int:
 	#set(value):

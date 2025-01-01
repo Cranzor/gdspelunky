@@ -3940,7 +3940,7 @@ func character_sprite():
 #
 		#The Spelunky User License should be available in "Game Information", which
 		#can be found in the Resource Explorer, or as an external file called COPYING.
-		#If not, please obtain a new copy of Spelunky from <http:#spelunkyworld.com/>
+		#If not, please obtain a new copy of Spelunky from <http://spelunkyworld.com/>
 		#
 	#***********************************************************************************/
 
