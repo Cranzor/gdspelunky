@@ -418,6 +418,8 @@ func sprite_setup(object_entry):
 			var new_animated_sprite = SPRITE.instantiate()
 			#var sprite_frames = SpriteFrames.new()
 			var sprite_frames = new_animated_sprite.sprite_frames
+			
+			var shape = sprite_entry["mask"]["shape"]
 		
 			sprite_frames = sprite_animation_setup(sprite_to_add, sprite_frames)
 			sprite_frames.remove_animation("default")
@@ -429,6 +431,7 @@ func sprite_setup(object_entry):
 			new_animated_sprite.add_to_group("animated_sprite", true)
 			animated_sprite_node = new_animated_sprite
 			
+			
 			sprites_holder = Node2D.new()
 			sprites_holder.name = "Sprites"
 			add_child(sprites_holder)
@@ -436,6 +439,27 @@ func sprite_setup(object_entry):
 			new_animated_sprite.play(sprite_to_add)
 			set_sprite_offset(sprite_to_add)
 			sprite_index_name = sprite_to_add
+			
+			var collision_size
+			var collision_position
+			if shape == "RECTANGLE":
+				if object_name == "palm_tree_dark":
+					print("hi")
+				collision_size = sprite_entry["mask"]["collision_rectangles"][1]
+				collision_position = collision_size / 2 + sprite_entry["mask"]["collision_rectangles"][0]
+				collision_position -= sprite_entry["origin"]
+				var collision_shape = new_animated_sprite.get_node("Area2D/CollisionShape2D")
+				collision_shape.shape.size = collision_size
+				collision_shape.position = collision_position
+				
+			elif shape == "PRECISE":
+				collision_size = sprite_entry["mask"]["bounding_box"][1]
+				collision_position = collision_size / 2 + sprite_entry["mask"]["bounding_box"][0]
+				collision_position -= sprite_entry["origin"]
+				var collision_shape = new_animated_sprite.get_node("Area2D/CollisionShape2D")
+				collision_shape.shape.size = collision_size
+				collision_shape.position = collision_position
+				
 	else:
 		sprite_offset = Vector2(0, 0)
 	
