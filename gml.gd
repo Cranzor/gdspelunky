@@ -7,6 +7,7 @@ var object_database = ObjectDatabase.new()
 
 const TEXT = preload("res://scenes/text.tscn")
 const SPRITE = preload("res://scenes/sprite.tscn")
+const COLLISION_RECT_TESTER = preload("res://scenes/collision/collision_rect.tscn")
 
 #For tile_add
 @export_dir var bg_folder
@@ -246,7 +247,29 @@ func collision_rectangle(x1,y1,x2,y2,obj,_prec,_notme): #"This function tests wh
 	var nodes_to_check = collision_handling.get_nodes_to_check(obj, rect)
 	intersecting = collision_handling.check_collision_group(nodes_to_check, rect)
 	
-	return intersecting	
+	var collision_rect
+	if !get_tree().get_current_scene().has_node("CollisionRect"):
+		collision_rect = COLLISION_RECT_TESTER.instantiate()
+		get_tree().get_current_scene().add_child(collision_rect)
+	else:
+		collision_rect = get_tree().get_current_scene().get_node("CollisionRect")
+	var collision_shape: CollisionShape2D = collision_rect.get_node("Area2D/CollisionShape2D")
+	var collision_area: Area2D = collision_rect.get_node("Area2D")
+	collision_shape.shape.size = Vector2(abs(x2 - x1), abs(y2 - y1))
+	collision_shape.position = collision_shape.shape.size / 2
+	collision_rect.global_position = Vector2(x1, y1)
+	var overlapping_bodies = collision_area.get_overlapping_areas()
+	if overlapping_bodies != []:
+		for body in overlapping_bodies:
+			var groups = body.get_parent().get_parent().get_parent().get_groups()
+			if obj in groups:
+				print(obj)
+				return true
+	
+	if intersecting:
+		print("test")
+	return intersecting
+	return false
 
 func point_distance(x1,y1,x2,y2): #"Returns the distance between point (x1,y1) and point (x2,y2)."
 	var distance = Vector2(x1, y1).distance_to(Vector2(x2, y2))
