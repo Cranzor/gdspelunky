@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://8pect2ibgg6e"]
+
+[node name="CollisionRay" type="RayCast2D" groups=["collision_ray"]]
+enabled = false
+target_position = Vector2(150, 50)
+hit_from_inside = true
+collide_with_areas = true
+collide_with_bodies = false

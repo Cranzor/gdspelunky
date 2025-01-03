@@ -7,7 +7,7 @@ var object_database = ObjectDatabase.new()
 
 const TEXT = preload("res://scenes/text.tscn")
 const SPRITE = preload("res://scenes/sprite.tscn")
-const COLLISION_RECT_TESTER = preload("res://scenes/collision/collision_rect.tscn")
+const COLLISION_RAY = preload("res://scenes/collision/collision_ray.tscn")
 
 #For tile_add
 @export_dir var bg_folder
@@ -243,40 +243,47 @@ func collision_rectangle(x1,y1,x2,y2,obj,_prec,_notme): #"This function tests wh
 	var intersecting = false
 	
 	var rect = Rect2(Vector2(x1, y1), Vector2(abs(x2 - x1), abs(y2 - y1)))
-	print(rect)
 	
 	var nodes_to_check = collision_handling.get_nodes_to_check(obj, rect)
 	intersecting = collision_handling.check_collision_group(nodes_to_check, rect)
 	
-	var collision_rect
-	#if !get_tree().get_current_scene().has_node("CollisionRect"):
-	collision_rect = get_tree().get_current_scene().get_node("CollisionRect")
+	#-------------------------------------------------------------
+	var collision_ray: RayCast2D = get_tree().get_first_node_in_group("collision_ray")
+	var colliders = []
+	collision_ray.position = Vector2(x1, y1)
+	collision_ray.target_position = Vector2(abs(x2 - x1), abs(y2 - y1))
+	collision_ray.enabled = true
+	collision_ray.force_raycast_update()
+	while collision_ray.is_colliding():
+		collision_ray.force_update_transform()
+		var area = collision_ray.get_collider()
+		colliders.append(area)
+		collision_ray.add_exception(area)
+		collision_ray.force_raycast_update()
+	collision_ray.enabled = false
 	
-	#else:
-		#collision_rect = get_tree().get_current_scene().get_node("CollisionRect")
-	var collision_shape: CollisionShape2D = collision_rect.get_node("Area2D/CollisionShape2D")
-	collision_shape.disabled = true
-	var collision_area: Area2D = collision_rect.get_node("Area2D")
-	collision_shape.shape.size = Vector2(abs(x2 - x1), abs(y2 - y1))
-	var offset = collision_shape.shape.get_rect().position
-	#collision_shape.position = collision_shape.shape.size / 2
-	collision_shape.position = Vector2(x1, y1) - offset
-	print(Vector2(x1, y1) - offset)
-	#collision_rect.global_position = Vector2(x1, y1)
-	collision_shape.disabled = false
-	var overlapping_bodies = collision_area.get_overlapping_areas()
-	if overlapping_bodies != []:
-		for body in overlapping_bodies:
-			print(body.get_parent().get_parent().get_parent().object_name)
-			var groups = body.get_parent().get_parent().get_parent().get_groups()
-			if obj in groups:
-				print(obj)
-				return true
+	for collider in colliders:
+		collision_ray.remove_exception(collider)
 	
-	#print(collision_shape.position)
+	var already_got = false
+	var area_found
+	if colliders != []:
+		for collider in colliders:
+			if already_got == false:
+				var object_node = collider.get_parent().get_parent().get_parent()
+				area_found = object_node
+				var groups = object_node.get_groups()
+				if obj in groups:
+					print("1. " + str(obj))
+					already_got = true
+	#-------------------------------------------------------------
 	
 	if intersecting:
-		print("test")
+		print("2. " + str(obj))
+		if intersecting == area_found:
+			print("yep")
+		else:
+			print("nope")
 	return intersecting
 	return false
 
