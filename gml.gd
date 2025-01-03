@@ -495,7 +495,8 @@ func draw_sprite_ext(sprite, subimg, x, y, xscale, yscale, rot, color, alpha, no
 		node.animated_sprite_node.global_position = Vector2(x, y)
 		node.animated_sprite_node.scale = Vector2(xscale, yscale)
 		node.animated_sprite_node.rotation_degrees = -rot #--- appears to rotate counter-clockwise in GML
-		node.animated_sprite_node.self_modulate = color
+		if color != gml.c_white: #--- c_white is to display the default color
+			node.animated_sprite_node.self_modulate = color
 		node.animated_sprite_node.self_modulate.a = alpha
 		node.draw_object = true
 	
