@@ -129,13 +129,7 @@ func instance_create(x,y,obj): #should return the node as this is used in script
 	return instance
 	
 func collision_point(x,y,obj: String,_prec,_notme): #"This function tests whether at point (x,y) there is a collision with entities of object obj."
-	var intersecting = false
-	var rect = Rect2(Vector2(x, y), Vector2(1, 1))
-	
-	var nodes_to_check = collision_handling.get_nodes_to_check(obj, rect)
-	intersecting = collision_handling.check_collision_group(nodes_to_check, rect)
-	
-	return intersecting	
+	return handle_collision_ray(x, y, x + 1, y + 1, obj)
 
 #Always adds bg elements
 func tile_add(background,left,top,width,height,x,y,depth): #return value of tile as well. left: left to right value in pixels. top: top to bottom in pixels
@@ -240,52 +234,7 @@ func instance_destroy(obj): #'Destroys current instance' ---  Should probably st
 	obj.queue_free()
 
 func collision_rectangle(x1,y1,x2,y2,obj,_prec,_notme): #"This function tests whether there is a collision between the (filled) rectangle with the indicated opposite corners and entities of object obj. For example, you can use this to test whether an area is free of obstacles."
-	var intersecting = false
-	
-	var rect = Rect2(Vector2(x1, y1), Vector2(abs(x2 - x1), abs(y2 - y1)))
-	
-	var nodes_to_check = collision_handling.get_nodes_to_check(obj, rect)
-	intersecting = collision_handling.check_collision_group(nodes_to_check, rect)
-	
-	#-------------------------------------------------------------
-	var collision_ray: RayCast2D = get_tree().get_first_node_in_group("collision_ray")
-	var colliders = []
-	collision_ray.position = Vector2(x1, y1)
-	collision_ray.target_position = Vector2(abs(x2 - x1), abs(y2 - y1))
-	collision_ray.enabled = true
-	collision_ray.force_raycast_update()
-	while collision_ray.is_colliding():
-		collision_ray.force_update_transform()
-		var area = collision_ray.get_collider()
-		colliders.append(area)
-		collision_ray.add_exception(area)
-		collision_ray.force_raycast_update()
-	collision_ray.enabled = false
-	
-	for collider in colliders:
-		collision_ray.remove_exception(collider)
-	
-	var already_got = false
-	var area_found
-	if colliders != []:
-		for collider in colliders:
-			if already_got == false:
-				var object_node = collider.get_parent().get_parent().get_parent()
-				area_found = object_node
-				var groups = object_node.get_groups()
-				if obj in groups:
-					print("1. " + str(obj))
-					already_got = true
-	#-------------------------------------------------------------
-	
-	if intersecting:
-		print("2. " + str(obj))
-		if intersecting == area_found:
-			print("yep")
-		else:
-			print("nope")
-	return intersecting
-	return false
+	return handle_collision_ray(x1, y1, x2, y2, obj)
 
 func point_distance(x1,y1,x2,y2): #"Returns the distance between point (x1,y1) and point (x2,y2)."
 	var distance = Vector2(x1, y1).distance_to(Vector2(x2, y2))
@@ -352,26 +301,7 @@ func instance_number(obj: String):
 	return number_of_instances
 
 func collision_line(x1,y1,x2,y2,obj,_prec,_notme):
-	var intersecting = false
-	var vertical_rect: Rect2
-	var tester_rect = Rect2(Vector2(x1, y1), Vector2(x2, y2))
-	
-	var nodes_to_check = collision_handling.get_nodes_to_check(obj, tester_rect)
-	
-	if nodes_to_check != null:
-		if x1 == x2:
-			vertical_rect = Rect2(Vector2(x1, y1), Vector2(1, abs(y2-y1) + 1))
-
-		else:
-			vertical_rect = Rect2(Vector2(x1, y1), Vector2(abs(x2 - x1) + 1, 1))
-		
-		#if x1 == 595 and y1 == 187:
-			#print("hi")
-		intersecting = collision_handling.check_collision_group(nodes_to_check, vertical_rect)
-		return intersecting
-		
-	else:
-		return false
+	return handle_collision_ray(x1, y1, x2, y2, obj)
 
 func instance_activate_object(obj: String):
 	pass
@@ -642,3 +572,30 @@ func generate_random_hash():
 	for i in range(length):
 		word += characters[randi_range(0, n_char - 1)]
 	return word
+
+func handle_collision_ray(x1, y1, x2, y2, obj):
+	var collision_ray: RayCast2D = get_tree().get_first_node_in_group("collision_ray")
+	var colliders = []
+	collision_ray.position = Vector2(x1, y1)
+	collision_ray.target_position = Vector2(abs(x2 - x1), abs(y2 - y1))
+	collision_ray.enabled = true
+	collision_ray.force_raycast_update()
+	while collision_ray.is_colliding():
+		collision_ray.force_update_transform()
+		var area = collision_ray.get_collider()
+		colliders.append(area)
+		collision_ray.add_exception(area)
+		collision_ray.force_raycast_update()
+	collision_ray.enabled = false
+	
+	for collider in colliders:
+		collision_ray.remove_exception(collider)
+	
+	if colliders != []:
+		for collider in colliders:
+			var object_node = collider.get_parent().get_parent().get_parent()
+			var groups = object_node.get_groups()
+			if obj in groups:
+				return object_node
+
+	return false

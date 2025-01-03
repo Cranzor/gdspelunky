@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dpevsukwrfdu"]
+[gd_scene load_steps=6 format=3 uid="uid://dpevsukwrfdu"]
 
 [ext_resource type="Script" path="res://rooms/tutorial/tutorial.gd" id="1_8s7xq"]
 [ext_resource type="PackedScene" uid="uid://b2jlcu453ynaf" path="res://bg_elements.tscn" id="1_73yn2"]
 [ext_resource type="PackedScene" uid="uid://chivya8n7oo3x" path="res://texture_rect.tscn" id="3_kyms1"]
 [ext_resource type="PackedScene" uid="uid://b8sip2nv63phc" path="res://FPSCounter.tscn" id="4_00qvr"]
+[ext_resource type="PackedScene" uid="uid://8pect2ibgg6e" path="res://scenes/collision/collision_ray.tscn" id="5_53681"]
 
 [node name="Tutorial" type="Node2D" groups=["objects_holder"]]
 script = ExtResource("1_8s7xq")
@@ -15,3 +16,5 @@ script = ExtResource("1_8s7xq")
 [node name="ObjectsHolder" type="Node2D" parent="."]
 
 [node name="FpsCounter" parent="." instance=ExtResource("4_00qvr")]
+
+[node name="CollisionRay" parent="." instance=ExtResource("5_53681")]
