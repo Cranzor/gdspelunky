@@ -335,7 +335,7 @@ func draw_text(x, y, string: String, name: String, node):
 	
 	#--- add a holder for text if it doesn't exist
 	if !node.has_node("Text"):
-		var default_node = Node.new()
+		var default_node = Node2D.new()
 		default_node.name = "Text"
 		node.add_child(default_node)
 
@@ -344,7 +344,7 @@ func draw_text(x, y, string: String, name: String, node):
 	#--- create label node for string if it doesn't exist
 	if !node.has_node("Text/" + name.to_pascal_case()):
 		var text_node: Label = TEXT.instantiate()
-		text_node.global_position = Vector2(x, y)
+		#text_node.global_position = Vector2(x, y)
 		text_node.name = name.to_pascal_case()
 		text_node.text = string
 		text_node.add_theme_color_override("font_color", draw_color)
@@ -359,7 +359,7 @@ func draw_text(x, y, string: String, name: String, node):
 	var string_node = node.get_node("Text/" + name.to_pascal_case())
 	
 	#--- setting the text (in case of updates) and making the string node visible because it hides itself each frame
-	string_node.position = Vector2(x, y)
+	string_node.global_position = Vector2(x, y)
 	string_node.text = string
 	string_node.text_displayed = true
 	
@@ -454,6 +454,7 @@ func get_all_instances(group: String): #Replacement for 'with' keyword
 
 func view(view_value: String):
 	var view = view_node
+	view.force_update_scroll()
 	
 	if view != null:
 		
