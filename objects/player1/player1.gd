@@ -740,12 +740,12 @@ func handle_player_dead_or_stunned():
 		if (k_down and (platform_character_is(ON_GROUND) or state == HANGING) and not k_right and not k_left):
 		
 			if (view_count <= 30): view_count += 1
-			else: view_yview[0] += 4 #--- [FLAG] GameMaker camera?
+			else: gml.view_yview += 4 #--- [FLAG] GameMaker camera?
 		
 		elif (k_up and (platform_character_is(ON_GROUND) or state == HANGING) and not k_right and not k_left):
 		
 			if (view_count <= 30): view_count += 1
-			else: view_yview[0] -= 4
+			else: gml.view_yview -= 4
 		
 		else: view_count = 0
 

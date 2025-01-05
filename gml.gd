@@ -77,7 +77,13 @@ var view_object #---[FLAG] make this attach the camera to the node it's set equa
 		
 var view_yview: int:
 	set(value):
-		view_node.offset.y = value
+		print(global.graphics_high)
+		var magic_number = 24
+		print(view_node.offset.y)
+		if view_node.offset.y <= magic_number:
+			view_node.offset.y = value
+			if view_node.offset.y > magic_number:
+				view_node.offset.y = magic_number
 	get:
 		return view_node.offset.y
 var view_xview: int:

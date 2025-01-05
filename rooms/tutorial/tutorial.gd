@@ -1,6 +1,5 @@
 extends Node
 
-var brick = preload("res://objects/blocks/brick/brick.tscn")
 var room_generation = RoomGeneration.new()
 
 var room_name = "tutorial"

@@ -1242,7 +1242,7 @@ func scr_init_level():
 	# ENTITY / TREASURES
 	##############
 	global.temp2 = global.game_start
-	if (not InLevel.is_room("r_tutorial") and not InLevel.is_room("r_load_level")): scr_entity_gen()
+	if (not InLevel.is_room("tutorial") and not InLevel.is_room("load_level")): scr_entity_gen()
 
 	if (gml.instance_exists(entrance) and not global.custom_level):
 		var entrance_instance = gml.get_instance('entrance')
@@ -1261,8 +1261,8 @@ func scr_init_level():
 		global.sacrifice_pit or
 		global.city_of_gold):
 
-		if (not InLevel.is_room("r_load_level")):
-			var alarm #---------------------fix this later
+		if (not InLevel.is_room("load_level")):
+			var alarm #---------------------[FLAG] fix this later and lines below
 			var all_player1s = gml.get_all_instances("player1")
 			for player1 in all_player1s:  alarm[0] = 10
 		

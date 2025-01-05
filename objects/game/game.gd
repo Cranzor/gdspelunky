@@ -1,5 +1,18 @@
 extends DrawnSprite #--- changing this even though there is no parent
 
+func _ready():
+	object_setup()
+
+
+func _physics_process(_delta):
+	object_tick()
+
+
+func _process(delta):
+	object_process(delta)
+
+
+#--- Object functions
 var damsel
 var idol
 var altar
@@ -15,6 +28,8 @@ var players: Array
 var players_length
 
 var physics_frame_rate = 30
+
+
 
 func _input(event):
 	if Input.is_key_pressed(KEY_M): #---[FLAG] fix this to be its own function
