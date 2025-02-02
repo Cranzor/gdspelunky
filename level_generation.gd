@@ -1,190 +1,11 @@
 extends Node
 
-var jetpack
-var cape_pickup
-var shotgun
-var teleporter
-var gloves
-var spectacles
-var web_cannon
-var pistol
-var mitt
-var paste = preload("res://test_scenes/paste.tscn")
-var spring_shoes
-var spike_shoes
-var machete
-var bomb_box = preload("res://test_scenes/bomb_box.tscn")
-var bow
-var compass
-var para_pickup
-var rope_pile
-
-var bomb_bag = preload("res://test_scenes/bomb_bag.tscn")
-
-var rock = preload("res://test_scenes/jar.tscn")
-var jar = preload("res://test_scenes/jar.tscn")
-var solid
-var giant_spider
-var web = preload("res://test_scenes/lamp.tscn")
-var locked_chest
-var crate = preload("res://test_scenes/lamp.tscn")
-var damsel: bool
-var damsel_object = preload("res://test_scenes/lamp.tscn")
-var water
-var fake_bones = preload("res://test_scenes/bones.tscn")
-var bones = preload("res://test_scenes/bones.tscn")
-var skull = preload("res://test_scenes/skull.tscn")
-var gold_bar = preload("res://test_scenes/jar.tscn")
-var gold_bars = preload('res://test_scenes/jar.tscn')
-var emerald_big = preload("res://test_scenes/lamp.tscn")
-var sapphire_big = preload("res://test_scenes/lamp.tscn")
-
-var idol: bool
-var dark
-var s_dark
-var temple
-var s_temple
-var lush
-var s_lush
-var s_brick
-
-
-@onready var block = preload("res://test_scenes/block.tscn")
-@onready var brick = preload("res://test_scenes/brick.tscn")
-@onready var ladder_orange = preload("res://test_scenes/ladder.tscn")
-@onready var ladder_top = preload("res://test_scenes/ladder_top.tscn")
-@onready var spikes = preload("res://test_scenes/spikes.tscn")
-@onready var push_block = preload("res://test_scenes/test_block.tscn")
-@onready var entrance = preload("res://test_scenes/entrance.tscn")
-@onready var exit = preload("res://test_scenes/exit.tscn")
-@onready var altar_left = preload("res://test_scenes/altar_left.tscn")
-@onready var altar_right = preload("res://test_scenes/altar_right.tscn")
-@onready var sac_altar_left = preload("res://test_scenes/sac_altar_left.tscn")
-@onready var sac_altar_right = preload("res://test_scenes/sac_altar_right.tscn")
-@onready var bg_kali_body = 'bg_kali_body'
-@onready var kali_head = preload("res://KaliHead.tscn")
-@onready var chest = preload("res://test_scenes/chest.tscn")
-@onready var gold_idol = preload("res://test_scenes/gold_idol.tscn")
-@onready var giant_tiki_head = preload("res://test_scenes/giant_tiki_head.tscn")
-@onready var bg_tiki = 'bg_tiki'
-@onready var bg_tiki_arms = 'bg_tiki_arms'
-@onready var bg_dice_sign = 'bg_dice_sign'
-@onready var s_ice_block = preload("res://test_scenes/ice_block.tscn")#sprite
-@onready var bg_wanted = 'bg_wanted'
-@onready var brickSmooth = preload("res://test_scenes/brick_smooth.tscn")
-@onready var lamp_red = preload("res://test_scenes/lamp_red.tscn")
-@onready var lamp = preload("res://test_scenes/lamp.tscn")
-@onready var shopkeeper = preload("res://test_scenes/shopkeeper.tscn")
-@onready var sign = preload("res://test_scenes/sign.tscn")
-@onready var s_sign_general = preload("res://test_scenes/sign.tscn")
-@onready var s_sign_bomb = preload("res://test_scenes/sign.tscn")
-@onready var s_sign_weapon = preload("res://test_scenes/sign.tscn")
-@onready var s_sign_clothing = preload("res://test_scenes/sign.tscn")
-@onready var s_sign_rare = preload("res://test_scenes/sign.tscn")
-@onready var s_sign_craps = preload("res://test_scenes/sign.tscn")
-@onready var s_sign_kissing = preload("res://test_scenes/sign.tscn")
-@onready var dice = preload("res://test_scenes/dice.tscn")
-@onready var snake = preload("res://test_scenes/snake.tscn")
-@onready var ruby_big = preload("res://test_scenes/ruby_big.tscn")
-@onready var mattock = preload("res://test_scenes/mattock.tscn")
-
-var s_water_top
-var s_lava_top
-var s_cave_up
-var s_cave_up2
-var s_brick_down
-var s_lush_up
-var s_lush_up2
-var s_lush_down
-var s_dark_up
-var s_dark_up2
-var s_dark_down
-var s_ice_up
-var s_ice_up2
-var s_ice_down
-var s_ice_udl
-var s_ice_ul
-var s_ice_dl
-var s_ice_left
-var s_ice_udr
-var s_ice_ur
-var s_ice_dr
-var s_ice_right
-var s_ice_ulr
-var s_ice_dlr
-var s_ice_lr
-var s_g_temple_up
-var s_g_temple_up6
-var s_g_temple_up5
-var s_g_temple_up7
-var s_g_temple_up3
-var s_g_temple_up8
-var s_g_temple_up4
-var s_g_temple_up2
-var s_g_temple_down
-var s_temple_up
-var s_temple_up6
-var s_temple_up5
-var s_temple_up7
-var s_temple_up3
-var s_temple_up8
-var s_temple_up4
-var s_temple_up2
-var s_temple_down
-var s_water_bottom_tall2
-var s_water_bottom_tall1
-var s_water_bottom
-var s_water_bottom2
-var s_water_bottom3
-var s_water_bottom4
-var s_vine_source
-var s_vine_bottom
-var s_tree_top_dead
-var s_tree_top
-var s_tree_branch_dead_l
-var s_tree_branch_left
-var s_grave_ash
-
-var giant_spider_hang = preload("res://test_scenes/bat.tscn")
-var scarab
-var bat = preload("res://test_scenes/bat.tscn")
-var spider_hang = preload("res://test_scenes/spider_hang.tscn")
-var caveman = preload("res://test_scenes/snake.tscn")
-var key
-var arrow_trap_left_lit
-var arrow_trap_left = preload("res://test_scenes/lamp.tscn")
-var arrow_trap_right_lit
-var arrow_trap_right = preload("res://test_scenes/lamp.tscn")
-var grave
-var ash_grave
-var gold_nugget
-var tiki_torch
-var spear_trap_bottom
-var spear_trap_lit
-var spear_trap_top
-var zombie
-var vampire
-var man_trap
-var fire_frog
-var frog
-var x_market
-var monkey
-var dead_fish
-var piranha
-var ufo
-var spring_trap
-var gold_door
-var tomb_lord
-var hawkman
-var smash_trap_lit
-var smash_trap
-var flare_crate
 	
 func scr_get_room_x(x):
 #
-# scr_get_room_x(x)
+# DY: scr_get_room_x(x)
 #
-# Returns the horizontal room number of a room given the x-coord.
+# DY: Returns the horizontal room number of a room given the x-coord.
 #
 	var tx = x
 
@@ -197,9 +18,9 @@ func scr_get_room_x(x):
 
 func scr_get_room_y(y):
 #
-# scr_get_room_y(y)
+# DY: scr_get_room_y(y)
 #
-# Returns the vertical room number of a room given the y-coord.
+# DY: Returns the vertical room number of a room given the y-coord.
 #
 
 	var ty = y
@@ -213,56 +34,55 @@ func scr_get_room_y(y):
 	return -1
 
 func scr_generate_item(x, y, set_type):
-# scr_generate_item(x, y, set_type)
+# DY: scr_generate_item(x, y, set_type)
 #
-# Generate an item at (x,y).
-#
-	randomize()
+# DY: Generate an item at (x,y).
+
 	var obj
 	
-	if (set_type == 0): # Crate Set
+	if (set_type == 0): # DY: Crate Set
 
-		if (randi_range(1,500) == 1): obj = gml.instance_create(x, y, jetpack)
-		elif (randi_range(1,200) == 1): obj = gml.instance_create(x, y, cape_pickup)
-		elif (randi_range(1,100) == 1): obj = gml.instance_create(x, y, shotgun)
-		elif (randi_range(1,100) == 1): obj = gml.instance_create(x, y, mattock)
-		elif (randi_range(1,100) == 1): obj = gml.instance_create(x, y, teleporter)
-		elif (randi_range(1,90) == 1): obj = gml.instance_create(x, y, gloves)
-		elif (randi_range(1,90) == 1): obj = gml.instance_create(x, y, spectacles)
-		elif (randi_range(1,80) == 1): obj = gml.instance_create(x, y, web_cannon)
-		elif (randi_range(1,80) == 1): obj = gml.instance_create(x, y, pistol)
-		elif (randi_range(1,80) == 1): obj = gml.instance_create(x, y, mitt)
-		elif (randi_range(1,60) == 1): obj = gml.instance_create(x, y, paste)
-		elif (randi_range(1,60) == 1): obj = gml.instance_create(x, y, spring_shoes)
-		elif (randi_range(1,60) == 1): obj = gml.instance_create(x, y, spike_shoes)
-		elif (randi_range(1,60) == 1): obj = gml.instance_create(x, y, machete)
-		elif (randi_range(1,40) == 1): obj = gml.instance_create(x, y, bomb_box)
-		elif (randi_range(1,40) == 1): obj = gml.instance_create(x, y, bow)
-		elif (randi_range(1,20) == 1): obj = gml.instance_create(x, y, compass)
-		elif (randi_range(1,10) == 1): obj = gml.instance_create(x, y, para_pickup)
-		else: obj = gml.instance_create(x, y, rope_pile)
+		if (gml.rand(1,500) == 1): obj = gml.instance_create(x, y, Objects.jetpack)
+		elif (gml.rand(1,200) == 1): obj = gml.instance_create(x, y, Objects.cape_pickup)
+		elif (gml.rand(1,100) == 1): obj = gml.instance_create(x, y, Objects.shotgun)
+		elif (gml.rand(1,100) == 1): obj = gml.instance_create(x, y, Objects.mattock)
+		elif (gml.rand(1,100) == 1): obj = gml.instance_create(x, y, Objects.teleporter)
+		elif (gml.rand(1,90) == 1): obj = gml.instance_create(x, y, Objects.gloves)
+		elif (gml.rand(1,90) == 1): obj = gml.instance_create(x, y, Objects.spectacles)
+		elif (gml.rand(1,80) == 1): obj = gml.instance_create(x, y, Objects.web_cannon)
+		elif (gml.rand(1,80) == 1): obj = gml.instance_create(x, y, Objects.pistol)
+		elif (gml.rand(1,80) == 1): obj = gml.instance_create(x, y, Objects.mitt)
+		elif (gml.rand(1,60) == 1): obj = gml.instance_create(x, y, Objects.paste)
+		elif (gml.rand(1,60) == 1): obj = gml.instance_create(x, y, Objects.spring_shoes)
+		elif (gml.rand(1,60) == 1): obj = gml.instance_create(x, y, Objects.spike_shoes)
+		elif (gml.rand(1,60) == 1): obj = gml.instance_create(x, y, Objects.machete)
+		elif (gml.rand(1,40) == 1): obj = gml.instance_create(x, y, Objects.bomb_box)
+		elif (gml.rand(1,40) == 1): obj = gml.instance_create(x, y, Objects.bow)
+		elif (gml.rand(1,20) == 1): obj = gml.instance_create(x, y, Objects.compass)
+		elif (gml.rand(1,10) == 1): obj = gml.instance_create(x, y, Objects.para_pickup)
+		else: obj = gml.instance_create(x, y, Objects.rope_pile)
 		obj.cost = 0
 		obj.for_sale = false
 
-	elif (set_type == 1): # High End Set
+	elif (set_type == 1): # DY: High End Set
 
-		if (randi_range(1,40) == 1): obj = gml.instance_create(x, y, jetpack)
-		elif (randi_range(1,25) == 1): obj = gml.instance_create(x, y, cape_pickup)
-		elif (randi_range(1,20) == 1): obj = gml.instance_create(x, y, shotgun)
-		elif (randi_range(1,10) == 1): obj = gml.instance_create(x, y, gloves)
-		elif (randi_range(1,10) == 1): obj = gml.instance_create(x, y, teleporter)
-		elif (randi_range(1,8) == 1): obj = gml.instance_create(x, y, mattock)
-		elif (randi_range(1,8) == 1): obj = gml.instance_create(x, y, paste)
-		elif (randi_range(1,8) == 1): obj = gml.instance_create(x, y, spring_shoes)
-		elif (randi_range(1,8) == 1): obj = gml.instance_create(x, y, spike_shoes)
-		elif (randi_range(1,8) == 1): obj = gml.instance_create(x, y, compass)
-		elif (randi_range(1,8) == 1): obj = gml.instance_create(x, y, pistol)
-		elif (randi_range(1,8) == 1): obj = gml.instance_create(x, y, machete)
-		else: obj = gml.instance_create(x, y, bomb_box)
+		if (gml.rand(1,40) == 1): obj = gml.instance_create(x, y, Objects.jetpack)
+		elif (gml.rand(1,25) == 1): obj = gml.instance_create(x, y, Objects.cape_pickup)
+		elif (gml.rand(1,20) == 1): obj = gml.instance_create(x, y, Objects.shotgun)
+		elif (gml.rand(1,10) == 1): obj = gml.instance_create(x, y, Objects.gloves)
+		elif (gml.rand(1,10) == 1): obj = gml.instance_create(x, y, Objects.teleporter)
+		elif (gml.rand(1,8) == 1): obj = gml.instance_create(x, y, Objects.mattock)
+		elif (gml.rand(1,8) == 1): obj = gml.instance_create(x, y, Objects.paste)
+		elif (gml.rand(1,8) == 1): obj = gml.instance_create(x, y, Objects.spring_shoes)
+		elif (gml.rand(1,8) == 1): obj = gml.instance_create(x, y, Objects.spike_shoes)
+		elif (gml.rand(1,8) == 1): obj = gml.instance_create(x, y, Objects.compass)
+		elif (gml.rand(1,8) == 1): obj = gml.instance_create(x, y, Objects.pistol)
+		elif (gml.rand(1,8) == 1): obj = gml.instance_create(x, y, Objects.machete)
+		else: obj = gml.instance_create(x, y, Objects.bomb_box)
 
-	elif (set_type == 2): # Underground Set
+	elif (set_type == 2): # DY: Underground Set
 
-		match randi_range(0,18):
+		match gml.rand(0,18):
 	
 			0:  obj = gml.instance_create(x, y-2, Objects.jetpack)
 			1:  obj = gml.instance_create(x, y, Objects.cape_pickup)
@@ -284,209 +104,225 @@ func scr_generate_item(x, y, set_type):
 			17:  obj = gml.instance_create(x, y, Objects.para_pickup)
 			18:  obj = gml.instance_create(x, y, Objects.rope_pile)
 	
-		obj.cost = 0 #--- should test these to see if they are properly set after setting up the class so these exist for the object
+		obj.cost = 0
 		obj.for_sale = false
 
 func scr_shop_items_gen(xpos, ypos, shop_type): #--- original doesn't have these arguments but seems necessary
+# DY: 
+# DY:  scr_shop_items_gen()
+# DY: 
+# DY:  Generate shop items.  Must be called from scr_room_gen_x().
+# DY: 
+
+#/**********************************************************************************
+	#Copyright (c) 2008, 2009 Derek Yu and Mossmouth, LLC
+	#
+	#This file is part of Spelunky.
 #
-	# scr_shop_items_gen()
+	#You can redistribute and/or modify Spelunky, including its source code, under
+	#the terms of the Spelunky User License.
+#
+	#Spelunky is distributed in the hope that it will be entertaining and useful,
+	#but WITHOUT WARRANTY.  Please see the Spelunky User License for more details.
+#
+	#The Spelunky User License should be available in "Game Information", which
+	#can be found in the Resource Explorer, or as an external file called COPYING.
+	#If not, please obtain a new copy of Spelunky from <http://spelunkyworld.com/>
 	#
-	# Generate shop items.  Must be called from scr_room_gen_x().
-	#
-	randomize()
-	
+#***********************************************************************************/
 	var obj
 	var m
 	var n
 	
-	if (shop_type == "Bomb"):
+	if (shop_type == "bomb"):
 
 		while (true):
 		
-			if (randi_range(1,5) == 1):
-				if (not gml.instance_exists(paste)):
-					obj = gml.instance_create(xpos+8, ypos+10, paste)
+			if (gml.rand(1,5) == 1):
+			
+				if (not gml.instance_exists("paste")):
+					obj = gml.instance_create(xpos+8, ypos+10, Objects.paste)
 					break
 			
-			elif (randi_range(1,4) == 1):
-				obj = gml.instance_create(xpos+8, ypos+8, bomb_box)
+			elif (gml.rand(1,4) == 1):
+				obj = gml.instance_create(xpos+8, ypos+8, Objects.bomb_box)
 				break
 			else:
-				obj = gml.instance_create(xpos+8, ypos+10, bomb_bag)
+				obj = gml.instance_create(xpos+8, ypos+10, Objects.bomb_bag)
 				break
 		
 
-	elif (shop_type == "Weapon"):
+	elif (shop_type == "weapon"):
 
 		m = 20
 		while (true):
 		
-			n = randi_range(1,4)
+			n = gml.rand(1,4)
 			if (m <= 0):
-				obj = gml.instance_create(xpos+8, ypos+10, bomb_bag)
+				obj = gml.instance_create(xpos+8, ypos+10, Objects.bomb_bag)
 				break
-			elif (randi_range(1,12)==1):
+			elif (gml.rand(1,12)==1):
 			
-				if (not gml.instance_exists(web_cannon)):
-					obj = gml.instance_create(xpos+8, ypos+12, web_cannon)
+				if (not gml.instance_exists("web_cannon")):
+					obj = gml.instance_create(xpos+8, ypos+12, Objects.web_cannon)
 					break
 			
-			elif (randi_range(1,10)==1):
+			elif (gml.rand(1,10)==1):
 			
-				if (not gml.instance_exists(shotgun)):
-					obj = gml.instance_create(xpos+8, ypos+12, shotgun)
+				if (not gml.instance_exists("shotgun")):
+					obj = gml.instance_create(xpos+8, ypos+12, Objects.shotgun)
 					break
 			
-			elif (randi_range(1,6)==1):
-				obj = gml.instance_create(xpos+8, ypos+10, bomb_box)
+			elif (gml.rand(1,6)==1):
+				obj = gml.instance_create(xpos+8, ypos+10, Objects.bomb_box)
 				break
 			elif (n == 1):
 			
-				if (not gml.instance_exists(pistol)):
-					obj = gml.instance_create(xpos+8, ypos+12, pistol)
+				if (not gml.instance_exists("pistol")):
+					obj = gml.instance_create(xpos+8, ypos+12, Objects.pistol)
 					break
 			
 			elif (n == 2):
 			
-				if (not gml.instance_exists(machete)):
-					obj = gml.instance_create(xpos+8, ypos+12, machete)
+				if (not gml.instance_exists("machete")):
+					obj = gml.instance_create(xpos+8, ypos+12, Objects.machete)
 					break
 			
 			elif (n == 3):
-				obj = gml.instance_create(xpos+8, ypos+10, bomb_bag)
+				obj = gml.instance_create(xpos+8, ypos+10, Objects.bomb_bag)
 				break
 			elif (n == 4):
 			
-				if (not gml.instance_exists(bow)):
-					obj = gml.instance_create(xpos+8, ypos+12, bow)
+				if (not gml.instance_exists("bow")):
+					obj = gml.instance_create(xpos+8, ypos+12, Objects.bow)
 					break
 			
 			m -= 1
 		
 
-	elif (shop_type == "Clothing"):
+	elif (shop_type == "clothing"):
 
 		m = 20
 		while (true):
 		
-			n = randi_range(1,6)
-			if (randi_range(1,m) == 1):
-				obj = gml.instance_create(xpos+8, ypos+11, rope_pile)
+			n = gml.rand(1,6)
+			if (gml.rand(1,m) == 1):
+				obj = gml.instance_create(xpos+8, ypos+11, Objects.rope_pile)
 				break
 			elif (n == 1):
-				
-				if (not gml.instance_exists(spring_shoes)):
-					obj = gml.instance_create(xpos+8, ypos+10, spring_shoes)
+			
+				if (not gml.instance_exists("spring_shoes")):
+					obj = gml.instance_create(xpos+8, ypos+10, Objects.spring_shoes)
 					break
-				
+			
 			elif (n == 2):
-				
-				if (not gml.instance_exists(spectacles)):
-					obj = gml.instance_create(xpos+8, ypos+10, spectacles)
+			
+				if (not gml.instance_exists("spectacles")):
+					obj = gml.instance_create(xpos+8, ypos+10, Objects.spectacles)
 					break
-				
+			
 			elif (n == 3):
-				
-				if (not gml.instance_exists(gloves)):
-					obj = gml.instance_create(xpos+8, ypos+8, gloves)
+			
+				if (not gml.instance_exists("gloves")):
+					obj = gml.instance_create(xpos+8, ypos+8, Objects.gloves)
 					break
-				
+			
 			elif (n == 4):
-				
-				if (not gml.instance_exists(mitt)):
-					obj = gml.instance_create(xpos+8, ypos+8, mitt)
+			
+				if (not gml.instance_exists("mitt")):
+					obj = gml.instance_create(xpos+8, ypos+8, Objects.mitt)
 					break
-				
+			
 			elif (n == 5):
-				
-				if (not gml.instance_exists(cape_pickup)):
-					obj = gml.instance_create(xpos+8, ypos+10, cape_pickup)
+			
+				if (not gml.instance_exists("cape_pickup")):
+					obj = gml.instance_create(xpos+8, ypos+10, Objects.cape_pickup)
 					break
-				
+			
 			elif (n == 6):
-				
-				if (not gml.instance_exists(spike_shoes)):
-					obj = gml.instance_create(xpos+8, ypos+10, spike_shoes)
+			
+				if (not gml.instance_exists("spike_shoes")):
+					obj = gml.instance_create(xpos+8, ypos+10, Objects.spike_shoes)
 					break
-				
+			
 			m -= 1
 		
 
-	elif (shop_type == "Rare"):
+	elif (shop_type == "rare"):
 
 		m = 20
 		while (true):
 		
-			n = randi_range(1,11)
-			if (randi_range(1,m) == 1):
-				obj = gml.instance_create(xpos+8, ypos+8, bomb_box)
+			n = gml.rand(1,11)
+			if (gml.rand(1,m) == 1):
+				obj = gml.instance_create(xpos+8, ypos+8, Objects.bomb_box)
 				break
 			elif (n == 1):
-				
-				if (not gml.instance_exists(spring_shoes)):
-					obj = gml.instance_create(xpos+8, ypos+10, spring_shoes)
+			
+				if (not gml.instance_exists("spring_shoes")):
+					obj = gml.instance_create(xpos+8, ypos+10, Objects.spring_shoes)
 					break
-				
+			
 			elif (n == 2):
-				
-				if (not gml.instance_exists(compass)):
-					obj = gml.instance_create(xpos+8, ypos+10, compass)
+			
+				if (not gml.instance_exists("compass")):
+					obj = gml.instance_create(xpos+8, ypos+10, Objects.compass)
 					break
-				
+			
 			elif (n == 3):
-				
-				if (not gml.instance_exists(mattock)):
-					obj = gml.instance_create(xpos+8, ypos+10, mattock)
+			
+				if (not gml.instance_exists("mattock")):
+					obj = gml.instance_create(xpos+8, ypos+10, Objects.mattock)
 					break
-				
+			
 			elif (n == 4):
-				
-				if (not gml.instance_exists(spectacles)):
-					obj = gml.instance_create(xpos+8, ypos+10, spectacles)
+			
+				if (not gml.instance_exists("spectacles")):
+					obj = gml.instance_create(xpos+8, ypos+10, Objects.spectacles)
 					break
-				
+			
 			elif (n == 5):
-				
-				if (not gml.instance_exists(jetpack)):
-					obj = gml.instance_create(xpos+8, ypos+8, jetpack)
+			
+				if (not gml.instance_exists("jetpack")):
+					obj = gml.instance_create(xpos+8, ypos+8, Objects.jetpack)
 					break
-				
+			
 			elif (n == 6):
-				
-				if (not gml.instance_exists(gloves)):
-					obj = gml.instance_create(xpos+8, ypos+8, gloves)
+			
+				if (not gml.instance_exists("gloves")):
+					obj = gml.instance_create(xpos+8, ypos+8, Objects.gloves)
 					break
-				
+			
 			elif (n == 7):
-				
-				if (not gml.instance_exists(mitt)):
-					obj = gml.instance_create(xpos+8, ypos+8, mitt)
+			
+				if (not gml.instance_exists("mitt")):
+					obj = gml.instance_create(xpos+8, ypos+8, Objects.mitt)
 					break
-				
+			
 			elif (n == 8):
-				
-				if (not gml.instance_exists(web_cannon)):
-					obj = gml.instance_create(xpos+8, ypos+12, web_cannon)
+			
+				if (not gml.instance_exists("web_cannon")):
+					obj = gml.instance_create(xpos+8, ypos+12, Objects.web_cannon)
 					break
-				
+			
 			elif (n == 9):
-				
-				if (not gml.instance_exists(cape_pickup)):
-					obj = gml.instance_create(xpos+8, ypos+10, cape_pickup)
+			
+				if (not gml.instance_exists("cape_pickup")):
+					obj = gml.instance_create(xpos+8, ypos+10, Objects.cape_pickup)
 					break
-				
+			
 			elif (n == 10):
-				
-				if (not gml.instance_exists(teleporter)):
-					obj = gml.instance_create(xpos+8, ypos+12, teleporter)
+			
+				if (not gml.instance_exists("teleporter")):
+					obj = gml.instance_create(xpos+8, ypos+12, Objects.teleporter)
 					break
-				
+			
 			elif (n == 11):
-				
-				if (not gml.instance_exists(spike_shoes)):
-					obj = gml.instance_create(xpos+8, ypos+10, spike_shoes)
+			
+				if (not gml.instance_exists("spike_shoes")):
+					obj = gml.instance_create(xpos+8, ypos+10, Objects.spike_shoes)
 					break
-				
+			
 			m -= 1
 		
 
@@ -494,46 +330,48 @@ func scr_shop_items_gen(xpos, ypos, shop_type): #--- original doesn't have these
 
 		while (true):
 		
-			n = randi_range(1,3)
-			if (randi_range(1,20) == 1):
+			n = gml.rand(1,3)
+			if (gml.rand(1,20) == 1):
 			
-				if (not gml.instance_exists(mattock)):
-					obj = gml.instance_create(xpos+8, ypos+10, mattock)
+				if (not gml.instance_exists("mattock")):
+					obj = gml.instance_create(xpos+8, ypos+10, Objects.mattock)
 					break
 			
-			elif (randi_range(1,10) == 1):
-				
-				if (not gml.instance_exists(gloves)):
-					obj = gml.instance_create(xpos+8, ypos+8, gloves)
+			elif (gml.rand(1,10) == 1):
+			
+				if (not gml.instance_exists("gloves")):
+					obj = gml.instance_create(xpos+8, ypos+8, Objects.gloves)
 					break
-				
-			elif (randi_range(1,10) == 1):
-				
-				if (not gml.instance_exists(compass)):
-					obj = gml.instance_create(xpos+8, ypos+10, compass)
+			
+			elif (gml.rand(1,10) == 1):
+			
+				if (not gml.instance_exists("compass")):
+					obj = gml.instance_create(xpos+8, ypos+10, Objects.compass)
 					break
-				
+			
 			elif (n == 1):
-				obj = gml.instance_create(xpos+8, ypos+10, bomb_bag)
+				obj = gml.instance_create(xpos+8, ypos+10, Objects.bomb_bag)
 				break
 			elif (n == 2):
-				obj = gml.instance_create(xpos+8, ypos+11, rope_pile)
+				obj = gml.instance_create(xpos+8, ypos+11, Objects.rope_pile)
 				break
 			elif (n == 3):
-				obj = gml.instance_create(xpos+8, ypos+10, para_pickup)
+				obj = gml.instance_create(xpos+8, ypos+10, Objects.para_pickup)
 				break
+		
 
-#--- needs to be finished
-	#if (obj):
-#
-		#obj.for_sale = true
-		#if (global.curr_level > 2):
-		#
-			#with obj
-			#
-				#cost += (cost/100)*10*(global.curr_level-2)
-				#if (shop_desc == ""): buy_message = "A " + string_upper(type) + " FOR $" + string(cost) + "."
-				#else: buy_message = shop_desc + " FOR $" + string(cost) + "."
+
+	if (obj):
+
+		obj.for_sale = true
+		if (global.curr_level > 2):
+		
+			#with obj --- there will only be one obj so will set directly
+			
+			obj.cost += (obj.cost/100)*10*(global.curr_level-2)
+			if (obj.shop_desc == ""): obj.buy_message = "A " + gml.string_upper(obj.type) + " FOR $" + str(obj.cost) + "." #---[FLAG] should change string_upper part to also account for this variable being in snake_case now
+			else: obj.buy_message = obj.shop_desc + " FOR $" + str(obj.cost) + "."
+
 
 func scr_get_name():
 #
@@ -2015,7 +1853,7 @@ func scr_entity_gen():
 				# enemies
 				if (scr_get_room_x(solid_instance.position.x) != global.start_room_x or scr_get_room_y(solid_instance.position.y-16) != global.start_room_y):
 				
-					if (solid_instance.position.y < gml.room_height - 64 and 
+					if (solid_instance.position.y < gml.room_height - 64 and
 						not gml.collision_point(solid_instance.position.x, solid_instance.position.y+16, 'solid', 0, 0) and not gml.collision_point(solid_instance.position.x, solid_instance.position.y+32, 'solid', 0, 0) and
 						not gml.collision_point(solid_instance.position.x, solid_instance.position.y+16, 'water', 0, 0) and not gml.collision_point(solid_instance.position.x, solid_instance.position.y+32, 'water', 0, 0) and
 						not gml.collision_point(solid_instance.position.x, solid_instance.position.y+16, 'enemy', 0, 0)):
@@ -2060,9 +1898,9 @@ func scr_entity_gen():
 					break
 				
 				elif (not gml.collision_point(exit_instance.position.x+8, exit_instance.position.y, 'solid', 0, 0) and
-						 not gml.collision_point(exit_instance.position.x+8, exit_instance.position.y+15, 'treasure', 0, 0) and
-						 not gml.collision_point(exit_instance.position.x+8, exit_instance.position.y+8, 'chest', 0, 0) and
-						 not gml.collision_point(exit_instance.position.x+8, exit_instance.position.y+8, 'spikes', 0, 0)):
+					not gml.collision_point(exit_instance.position.x+8, exit_instance.position.y+15, 'treasure', 0, 0) and
+					not gml.collision_point(exit_instance.position.x+8, exit_instance.position.y+8, 'chest', 0, 0) and
+					not gml.collision_point(exit_instance.position.x+8, exit_instance.position.y+8, 'spikes', 0, 0)):
 				
 					gml.instance_create(exit_instance.position.x+16+8, exit_instance.position.y+8, locked_chest)
 					global.locked_chest = true
@@ -2168,7 +2006,7 @@ func scr_entity_gen():
 						obj = gml.instance_create(lush_instance.position.x+8, lush_instance.position.y+8, shotgun)
 						obj.cost = 0
 						obj.for_sale = false
-						ash_grave = true                
+						ash_grave = true
 					
 					elif (not gml.collision_point(lush_instance.position.x+8, lush_instance.position.y+8, "treasure", 0, 0)):
 					
@@ -2203,20 +2041,20 @@ func scr_entity_gen():
 					else: global.market_chance -= 1
 
 				elif (solid_instance.type != "Tree" and solid_instance.type != "Altar" and solid_instance.position.y != 0 and
-						 not gml.collision_rectangle(solid_instance.position.x, solid_instance.position.y-32, solid_instance.position.x+15, solid_instance.position.y-1, "solid", false, true) and #--- this and below seem to be same issue as above with wrong function being called. changed to collision_rectangle
-						 not gml.collision_rectangle(solid_instance.position.x, solid_instance.position.y-16, solid_instance.position.x+15, solid_instance.position.y-1, "enemy", 0, 0) and
-						 (not gml.collision_point(solid_instance.position.x-16, solid_instance.position.y, "solid", 0, 0) or not gml.collision_point(solid_instance.position.x+16, solid_instance.position.y, "solid", 0, 0)) and
-						 gml.collision_point(solid_instance.position.x, solid_instance.position.y+16, "solid", 0, 0) and
-						 not gml.collision_point(solid_instance.position.x, solid_instance.position.y, "x_market", 0, 0) and
-						 not InLevel.is_in_shop(solid_instance.position.x, solid_instance.position.y) and
-						 gml.point_distance(solid_instance.position.x, solid_instance.position.y, entrance_instance.position.x, entrance_instance.position.y) > 64):
+					not gml.collision_rectangle(solid_instance.position.x, solid_instance.position.y-32, solid_instance.position.x+15, solid_instance.position.y-1, "solid", false, true) and #--- this and below seem to be same issue as above with wrong function being called. changed to collision_rectangle
+					not gml.collision_rectangle(solid_instance.position.x, solid_instance.position.y-16, solid_instance.position.x+15, solid_instance.position.y-1, "enemy", 0, 0) and
+					(not gml.collision_point(solid_instance.position.x-16, solid_instance.position.y, "solid", 0, 0) or not gml.collision_point(solid_instance.position.x+16, solid_instance.position.y, "solid", 0, 0)) and
+					gml.collision_point(solid_instance.position.x, solid_instance.position.y+16, "solid", 0, 0) and
+					not gml.collision_point(solid_instance.position.x, solid_instance.position.y, "x_market", 0, 0) and
+					not InLevel.is_in_shop(solid_instance.position.x, solid_instance.position.y) and
+					gml.point_distance(solid_instance.position.x, solid_instance.position.y, entrance_instance.position.x, entrance_instance.position.y) > 64):
 				
 					if (global.dark_level and not gml.collision_point(solid_instance.position.x, solid_instance.position.y-32, "water", 0, 0) and randi_range(1,20) == 1):
 					
 						gml.instance_create(solid_instance.position.x, solid_instance.position.y-32, tiki_torch)
 					
 					elif (randi_range(1,12) == 1 and
-							 solid_instance.position.x != 160 and solid_instance.position.x != 176 and solid_instance.position.x != 320 and solid_instance.position.x != 336 and solid_instance.position.x != 480 and solid_instance.position.x != 496):
+						solid_instance.position.x != 160 and solid_instance.position.x != 176 and solid_instance.position.x != 320 and solid_instance.position.x != 336 and solid_instance.position.x != 480 and solid_instance.position.x != 496):
 					
 						if (gml.collision_point(solid_instance.position.x, solid_instance.position.y-16, "solid", 0, 0)):
 						
@@ -2224,7 +2062,7 @@ func scr_entity_gen():
 							var all_sols = gml.get_all_instances("sol")
 							for sol_instance in all_sols:
 								sol_instance.clean_death = true
-								sol_instance.gml.instance_destroy() 
+								sol_instance.gml.instance_destroy()
 						
 						gml.instance_create(solid_instance.position.x, solid_instance.position.y, spear_trap_bottom)
 						if (global.dark_level): gml.instance_create(solid_instance.position.x, solid_instance.position.y-16, spear_trap_lit)
@@ -2243,7 +2081,7 @@ func scr_entity_gen():
 				# enemies
 				if (scr_get_room_x(solid_instance.position.x) != global.start_room_x or scr_get_room_y(solid_instance.position.y-16) != global.start_room_y):
 					var n
-					if (solid_instance.position.y < gml.room_height - 64 and 
+					if (solid_instance.position.y < gml.room_height - 64 and
 						not gml.collision_point(solid_instance.position.x, solid_instance.position.y+16, "solid", 0, 0) and not gml.collision_point(solid_instance.position.x, solid_instance.position.y+32, "solid", 0, 0) and
 						not gml.collision_point(solid_instance.position.x, solid_instance.position.y+16, "water", 0, 0) and not gml.collision_point(solid_instance.position.x, solid_instance.position.y+32, "water", 0, 0)):
 						
@@ -2266,7 +2104,7 @@ func scr_entity_gen():
 						
 						elif (not gml.collision_point(solid_instance.position.x, solid_instance.position.y-16, "water", 0, 0)):
 						
-							if (global.black_market and (fmod(solid_instance.position.y, 128) == 0)): n = 0 # to prevent mantraps from spawning near shopkeepers in black market 
+							if (global.black_market and (fmod(solid_instance.position.y, 128) == 0)): n = 0 # to prevent mantraps from spawning near shopkeepers in black market
 							else: n = 1
 							if (randi_range(1,60) == n): gml.instance_create(solid_instance.position.x, solid_instance.position.y-16, man_trap)
 							elif (randi_range(1,60) == 1): gml.instance_create(solid_instance.position.x, solid_instance.position.y-16, caveman)
@@ -2335,7 +2173,7 @@ func scr_entity_gen():
 				
 				if (scr_get_room_x(solid_instance.position.x) != global.start_room_x or scr_get_room_y(solid_instance.position.y-16) != global.start_room_y):
 				
-					if (solid_instance.position.y < gml.room_height - 64 and 
+					if (solid_instance.position.y < gml.room_height - 64 and
 						not gml.collision_point(solid_instance.position.x, solid_instance.position.y+16, "solid", 0, 0) and not gml.collision_point(solid_instance.position.x, solid_instance.position.y+32, "solid", 0, 0) and
 						not gml.collision_point(solid_instance.position.x, solid_instance.position.y+16, "water", 0, 0) and not gml.collision_point(solid_instance.position.x, solid_instance.position.y+32, "water", 0, 0)):
 					
@@ -2398,14 +2236,14 @@ func scr_entity_gen():
 					else: global.gold_chance -= 1
 				
 				elif (solid_instance.type != "Tree" and solid_instance.type != "Altar" and solid_instance.position.y != 0 and
-						 not gml.collision_point(solid_instance.position.x, solid_instance.position.y-16, "solid", 0, 0) and
-						 not gml.collision_point(solid_instance.position.x, solid_instance.position.y-16, "lava", 0, 0) and
-						 not gml.collision_rectangle(solid_instance.position.x, solid_instance.position.y-16, solid_instance.position.x+15, solid_instance.position.y-1, "enemy", 0, 0) and #--- collision_rectangle issue again
-						 not gml.collision_point(solid_instance.position.x, solid_instance.position.y-32, "solid", 0, 0) and
-						 (not gml.collision_point(solid_instance.position.x-16, solid_instance.position.y, "solid", 0, 0) or not gml.collision_point(solid_instance.position.x+16, solid_instance.position.y, "solid", 0, 0)) and
-						 gml.collision_point(solid_instance.position.x, solid_instance.position.y+16, "solid", 0, 0) and
-						 not InLevel.is_in_shop(solid_instance.position.x, solid_instance.position.y) and
-						 solid_instance.position.x != 160 and solid_instance.position.x != 176 and solid_instance.position.x != 320 and solid_instance.position.x != 336 and solid_instance.position.x != 480 and solid_instance.position.x != 496):
+					not gml.collision_point(solid_instance.position.x, solid_instance.position.y-16, "solid", 0, 0) and
+					not gml.collision_point(solid_instance.position.x, solid_instance.position.y-16, "lava", 0, 0) and
+					not gml.collision_rectangle(solid_instance.position.x, solid_instance.position.y-16, solid_instance.position.x+15, solid_instance.position.y-1, "enemy", 0, 0) and #--- collision_rectangle issue again
+					not gml.collision_point(solid_instance.position.x, solid_instance.position.y-32, "solid", 0, 0) and
+					(not gml.collision_point(solid_instance.position.x-16, solid_instance.position.y, "solid", 0, 0) or not gml.collision_point(solid_instance.position.x+16, solid_instance.position.y, "solid", 0, 0)) and
+					gml.collision_point(solid_instance.position.x, solid_instance.position.y+16, "solid", 0, 0) and
+					not InLevel.is_in_shop(solid_instance.position.x, solid_instance.position.y) and
+					solid_instance.position.x != 160 and solid_instance.position.x != 176 and solid_instance.position.x != 320 and solid_instance.position.x != 336 and solid_instance.position.x != 480 and solid_instance.position.x != 496):
 				
 					if (randi_range(1,12) == 1 and gml.point_distance(solid_instance.position.x, solid_instance.position.y, entrance_instance.position.x, entrance_instance.position.y) > 64):
 					
@@ -2422,7 +2260,7 @@ func scr_entity_gen():
 							
 								var sol = gml.instance_nearest(solid_instance.position.x, solid_instance.position.y-16, solid)
 								sol.clean_death = true
-								sol.gml.instance_destroy() 
+								sol.gml.instance_destroy()
 							
 							gml.instance_create(solid_instance.position.x, solid_instance.position.y, spear_trap_bottom)
 							if (global.dark_level): gml.instance_create(solid_instance.position.x, solid_instance.position.y-16, spear_trap_lit)
@@ -2434,9 +2272,9 @@ func scr_entity_gen():
 				
 			
 				# enemies
-				if (solid_instance.position.y < gml.room_height - 64 and 
-						not gml.collision_point(solid_instance.position.x, solid_instance.position.y+16, "solid", 0, 0) and not gml.collision_point(solid_instance.position.x, solid_instance.position.y+32, "solid", 0, 0) and
-						not gml.collision_point(solid_instance.position.x, solid_instance.position.y+16, "water", 0, 0) and not gml.collision_point(solid_instance.position.x, solid_instance.position.y+32, "water", 0, 0)):
+				if (solid_instance.position.y < gml.room_height - 64 and
+					not gml.collision_point(solid_instance.position.x, solid_instance.position.y+16, "solid", 0, 0) and not gml.collision_point(solid_instance.position.x, solid_instance.position.y+32, "solid", 0, 0) and
+					not gml.collision_point(solid_instance.position.x, solid_instance.position.y+16, "water", 0, 0) and not gml.collision_point(solid_instance.position.x, solid_instance.position.y+32, "water", 0, 0)):
 				
 					if (global.dark_level and randi_range(1,40) == 1): gml.instance_create(solid_instance.position.x, solid_instance.position.y+16, scarab)
 				
