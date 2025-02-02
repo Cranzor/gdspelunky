@@ -374,11 +374,11 @@ func scr_shop_items_gen(xpos, ypos, shop_type): #--- original doesn't have these
 
 
 func scr_get_name():
-#
-# scr_get_name()
-#
-# Return a random name (for shopkeeper).
-#
+# DY: 
+# DY:  scr_get_name()
+# DY: 
+# DY:  Return a random name (for shopkeeper).
+# DY: 
 
 #/**********************************************************************************
 	#Copyright (c) 2008, 2009 Derek Yu and Mossmouth, LLC
@@ -396,8 +396,9 @@ func scr_get_name():
 	#If not, please obtain a new copy of Spelunky from <http://spelunkyworld.com/>
 	#
 #***********************************************************************************/
-	randomize()
-	match randi_range(1,32):
+
+	match gml.rand(1,32):
+
 		1:  return "AHKMED"
 		2:  return "TERRY"
 		3:  return "SMITHY"
@@ -430,21 +431,23 @@ func scr_get_name():
 		30:  return "TARN"
 		31:  return "SLASH"
 		32:  return "BROM"
+
 	return "AHKMED"
 
-func scr_treasure_gen(bones_chance, instance): #will pass in x and y as well since there is no position for this to have an x and y
-#
-# scr_treasure_gen(bones_chance)
-#
-# Generates crates, chests, gold, gems, and bones.
-#
+
+func scr_treasure_gen(bones_chance, instance): #--- will pass in x and y as well since there is no position for this to have an x and y
+# DY: 
+# DY:  scr_treasure_gen(bones_chance)
+# DY: 
+# DY:  Generates crates, chests, gold, gems, and bones.
+# DY: 
 
 #/**********************************************************************************
 	#Copyright (c) 2008, 2009 Derek Yu and Mossmouth, LLC
 	#
 	#This file is part of Spelunky.
 #
-	#You can redistribute and/or modify Spelunky, including its source code, under
+	#You can redistribute and/or %ify Spelunky, including its source code, under
 	#the terms of the Spelunky User License.
 #
 	#Spelunky is distributed in the hope that it will be entertaining and useful,
@@ -452,124 +455,131 @@ func scr_treasure_gen(bones_chance, instance): #will pass in x and y as well sin
 #
 	#The Spelunky User License should be available in "Game Information", which
 	#can be found in the Resource Explorer, or as an external file called COPYING.
-	#If not, please obtain a new copy of Spelunky from <http://spelunkyworld.com/>
+	#If not, please obtain a new copy of Spelunky from <http:# DY: spelunkyworld.com/>
 	#
 #***********************************************************************************/
 
-	var x = instance.postiion.x
+	# DY:  argument0: bones
+
+	# DY:  alcove
+	
+	var x = instance.position.x
 	var y = instance.position.y
 	
-	# argument0: bones
-	randomize()
-	# alcove
-	if (gml.distance_to_object('entrance', instance) < 32): return 0 #seems simple to send these as strings and then have the function turn that into the appropriate group to search for
-	if (gml.distance_to_object('exit', instance) < 32): return 0 #passing x and y as well since there is no other way to check
-	if (gml.distance_to_object('gold_idol', instance) < 64): return 0 # --- changing these to just the object itself since there should only be one per level anyway. that way x and y can be gotten in the function
+	var n
+	
+	if (gml.distance_to_object("entrance", instance) < 32): return 0
+	if (gml.distance_to_object("exit", instance) < 32): return 0
+	if (gml.distance_to_object("gold_idol", instance) < 64): return 0
 
 	var col_stuff = true
-	if (not gml.collision_point(x, y-16, 'solid', 0, 0) and #same as above for here
-		not gml.collision_point(x, y-1, 'treasure', 0, 0) and
-		not gml.collision_point(x, y-8, 'chest', 0, 0) and
-		not gml.collision_point(x, y-8, 'spikes', 0, 0) and
-		not gml.collision_point(x, y-8, 'entrance', 0, 0) and
-		not gml.collision_point(x, y-8, 'exit', 0, 0)):
+	if (not gml.collision_point(x, y-16, "solid", 0, 0) and
+		not gml.collision_point(x, y-1, "treasure", 0, 0) and
+		not gml.collision_point(x, y-8, "chest", 0, 0) and
+		not gml.collision_point(x, y-8, "spikes", 0, 0) and
+		not gml.collision_point(x, y-8, "entrance", 0, 0) and
+		not gml.collision_point(x, y-8, "exit", 0, 0)):
 
 		col_stuff = false
 
 
 	if (not col_stuff):
 
-		if (randi_range(1,100) == 1):
-			gml.instance_create(x+8, y-4, rock)
+		if (gml.rand(1,100) == 1):
+			gml.instance_create(x+8, y-4, Objects.rock)
 			return 0
-		elif (randi_range(1,40) == 1):
-			gml.instance_create(x+8, y-6, jar)
+		elif (gml.rand(1,40) == 1):
+			gml.instance_create(x+8, y-6, Objects.jar)
 			return 0
 
-	# alcove
+	# DY:  alcove
 	if (not col_stuff and
-		gml.collision_point(x, y-32, 'solid', 0, 0) and
-		(gml.collision_point(x-16, y-16, 'solid', 0, 0) or gml.collision_point(x+16, y-16, 'solid', 0, 0) or gml.collision_point(x-16, y-16, 'block', 0, 0) or gml.collision_point(x+16, y-16, 'block', 0, 0))):
-
-		var n = 60
-		if (gml.distance_to_object('giant_spider', instance) < 100 ): n = 5 #adjusting the < 100 part since it was inside the argument. kinda weird
+		gml.collision_point(x, y-32, "solid", 0, 0) and
+		(gml.collision_point(x-16, y-16, "solid", 0, 0) or gml.collision_point(x+16, y-16, "solid", 0, 0) or gml.collision_point(x-16, y-16, "block", 0, 0) or gml.collision_point(x+16, y-16, "block", 0, 0))):
 		
-		if (global.level_type != 2 and randi_range(1,n) == 1): gml.instance_create(x, y-16, web)
+		var obj
+		var game = gml.get_instance("game")
+		
+		n = 60
+		if (gml.distance_to_object("giant_spider", instance) < 100): n = 5 #---[FLAG] original code is distance_to_object(oGiantSpider < 100). this might return an unexpected value in the original as it seems to be an incorrect construction
+		
+		if (global.level_type != 2 and gml.rand(1,n) == 1): gml.instance_create(x, y-16, Objects.web)
 		elif (global.gen_udjat_eye and not global.locked_chest):
 		
-			if (randi_range(1,global.locked_chest_chance) == 1):
+			if (gml.rand(1,global.locked_chest_chance) == 1):
 			
-				gml.instance_create(x+8, y-8, locked_chest)
-				global.Locked_chest = true
+				gml.instance_create(x+8, y-8, Objects.locked_chest)
+				global.locked_chest = true
 			
-			else: global.locked_chestChance -= 1
+			else: global.locked_chest_chance -= 1
 		
-		elif (randi_range(1,10) == 1):
+		elif (gml.rand(1,10) == 1):
 		
-			gml.instance_create(x+8, y-8, crate)
+			gml.instance_create(x+8, y-8, Objects.crate)
 		
-		elif (randi_range(1,15) == 1):
+		elif (gml.rand(1,15) == 1):
 		
-			gml.instance_create(x+8, y-8, chest)
+			gml.instance_create(x+8, y-8, Objects.chest)
 		
-		elif (not damsel and randi_range(1,8) == 1 and not gml.collision_point(x+8, y-8, 'water', 0, 0)):
+		elif (not game.damsel and gml.rand(1,8) == 1 and not gml.collision_point(x+8, y-8, "water", 0, 0)):
 		
-			var obj = gml.instance_create(x+8, y-8, damsel_object) #changed from 'damsel' to 'damsel_object' as damsel here is a bool
+			obj = gml.instance_create(x+8, y-8, Objects.damsel)
 			obj.cost = 0
 			obj.for_sale = false
-			damsel = true
+			game.damsel = true
 		
-		elif (randi_range(1,40-2*global.curr_level) <= 1 + bones_chance):
+		elif (gml.rand(1,40-2*global.curr_level) <= 1 + bones_chance):
 		
-			if (randi_range(1,8) == 1): gml.instance_create(x, y-16, fake_bones)
+			if (gml.rand(1,8) == 1): gml.instance_create(x, y-16, Objects.fake_bones)
 			else:
 			
-				gml.instance_create(x, y-16, bones)
-				gml.instance_create(x+12, y-4, skull)
+				gml.instance_create(x, y-16, Objects.bones)
+				gml.instance_create(x+12, y-4, Objects.skull)
 			
 		
-		elif (randi_range(1,3) == 1): gml.instance_create(x+8, y-4, gold_bar)
-		elif (randi_range(1,6) == 1): gml.instance_create(x+8, y-8, gold_bars)
-		elif (randi_range(1,6) == 1): gml.instance_create(x+8, y-4, emerald_big)
-		elif (randi_range(1,8) == 1): gml.instance_create(x+8, y-4, sapphire_big)
-		elif (randi_range(1,10) == 1): gml.instance_create(x+8, y-4, ruby_big)
-	 # tunnel
+		elif (gml.rand(1,3) == 1): gml.instance_create(x+8, y-4, Objects.gold_bar)
+		elif (gml.rand(1,6) == 1): gml.instance_create(x+8, y-8, Objects.gold_bars)
+		elif (gml.rand(1,6) == 1): gml.instance_create(x+8, y-4, Objects.emerald_big)
+		elif (gml.rand(1,8) == 1): gml.instance_create(x+8, y-4, Objects.sapphire_big)
+		elif (gml.rand(1,10) == 1): gml.instance_create(x+8, y-4, Objects.ruby_big)
+	 # DY:  tunnel
 	elif (not col_stuff and
-		(gml.collision_point(x-16, y-16, 'solid', 0, 0) and gml.collision_point(x+16, y-16, 'solid', 0, 0))):
+		(gml.collision_point(x-16, y-16, "solid", 0, 0) and gml.collision_point(x+16, y-16, "solid", 0, 0))):
 
-		var n = 60
-		if (gml.distance_to_object('giant_spider', instance) < 100): n = 10
-		if (global.level_type != 2 and randi_range(1,n) == 1): gml.instance_create(x, y-16, web)
-		elif (randi_range(1,4) == 1): gml.instance_create(x+8, y-4, gold_bar)
-		elif (randi_range(1,8) == 1): gml.instance_create(x+8, y-8, gold_bars)
-		elif (randi_range(1,80-global.curr_level) <= 1 + bones_chance):
+		n = 60
+		if (gml.distance_to_object("giant_spider", instance) < 100): n = 10 #---[FLAG] original code is distance_to_object(oGiantSpider < 100). this might return an unexpected value in the original as it seems to be an incorrect construction
+		if (global.level_type != 2 and gml.rand(1,n) == 1): gml.instance_create(x, y-16, Objects.web)
+		elif (gml.rand(1,4) == 1): gml.instance_create(x+8, y-4, Objects.gold_bar)
+		elif (gml.rand(1,8) == 1): gml.instance_create(x+8, y-8, Objects.gold_bars)
+		elif (gml.rand(1,80-global.curr_level) <= 1 + bones_chance):
 		
-			if (randi_range(1,8) == 1): gml.instance_create(x, y-16, fake_bones)
+			if (gml.rand(1,8) == 1): gml.instance_create(x, y-16, Objects.fake_bones)
 			else:
 			
-				gml.instance_create(x, y-16, bones)
-				gml.instance_create(x+12, y-4, skull)
+				gml.instance_create(x, y-16, Objects.bones)
+				gml.instance_create(x+12, y-4, Objects.skull)
 			
 		
-		elif (randi_range(1,8) == 1): gml.instance_create(x+8, y-4, emerald_big)
-		elif (randi_range(1,9) == 1): gml.instance_create(x+8, y-4, sapphire_big)
-		elif (randi_range(1,10) == 1): gml.instance_create(x+8, y-4, ruby_big)
-	 # normal
-	elif (not gml.collision_point(x, y-16, 'solid', 0, 0) and
-		not gml.collision_point(x, y-8, 'chest', 0, 0) and
-		not gml.collision_point(x, y-8, 'spikes', 0, 0) and
-		not gml.collision_point(x, y-8, 'entrance', 0, 0) and
-		not gml.collision_point(x, y-8, 'exit', 0, 0)):
+		elif (gml.rand(1,8) == 1): gml.instance_create(x+8, y-4, Objects.emerald_big)
+		elif (gml.rand(1,9) == 1): gml.instance_create(x+8, y-4, Objects.sapphire_big)
+		elif (gml.rand(1,10) == 1): gml.instance_create(x+8, y-4, Objects.ruby_big)
+	 # DY:  normal
+	elif (not gml.collision_point(x, y-16, "solid", 0, 0) and
+		not gml.collision_point(x, y-8, "chest", 0, 0) and
+		not gml.collision_point(x, y-8, "spikes", 0, 0) and
+		not gml.collision_point(x, y-8, "entrance", 0, 0) and
+		not gml.collision_point(x, y-8, "exit", 0, 0)):
 
-		if (randi_range(1,40) == 1): gml.instance_create(x+8, y-4, gold_bar)
-		elif (randi_range(1,50) == 1): gml.instance_create(x+8, y-8, gold_bars)
-		elif (randi_range(1,140-2*global.curr_level) <= 1 + bones_chance):
+		if (gml.rand(1,40) == 1): gml.instance_create(x+8, y-4, Objects.gold_bar)
+		elif (gml.rand(1,50) == 1): gml.instance_create(x+8, y-8, Objects.gold_bars)
+		elif (gml.rand(1,140-2*global.curr_level) <= 1 + bones_chance):
 		
-			if (randi_range(1,8) == 1): gml.instance_create(x, y-16, fake_bones)
+			if (gml.rand(1,8) == 1): gml.instance_create(x, y-16, Objects.fake_bones)
 			else:
 			
-				gml.instance_create(x, y-16, bones)
-				gml.instance_create(x+12, y-4, skull)
+				gml.instance_create(x, y-16, Objects.bones)
+				gml.instance_create(x+12, y-4, Objects.skull)
+
 
 func scr_level_gen():
 
