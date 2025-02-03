@@ -880,31 +880,33 @@ func scr_level_gen():
 
 
 func scr_init_level():
-#
-# scr_init_level()
-#
-# Calls scr_level_gen(), scr_room_gen*(), and scr_entity_gen() to build level.
-#
+	# DY: 
+	# DY:  scr_init_level()
+	# DY: 
+	# DY:  Calls scr_level_gen(), scr_room_gen*(), and scr_entity_gen() to build level.
+	# DY: 
 
-#/**********************************************************************************
-	#Copyright (c) 2008, 2009 Derek Yu and Mossmouth, LLC
-	#
-	#This file is part of Spelunky.
+	#/**********************************************************************************
+		#Copyright (c) 2008, 2009 Derek Yu and Mossmouth, LLC
+		#
+		#This file is part of Spelunky.
 #
-	#You can redistribute and/or modify Spelunky, including its source code, under
-	#the terms of the Spelunky User License.
+		#You can redistribute and/or modify Spelunky, including its source code, under
+		#the terms of the Spelunky User License.
 #
-	#Spelunky is distributed in the hope that it will be entertaining and useful,
-	#but WITHOUT WARRANTY.  Please see the Spelunky User License for more details.
+		#Spelunky is distributed in the hope that it will be entertaining and useful,
+		#but WITHOUT WARRANTY.  Please see the Spelunky User License for more details.
 #
-	#The Spelunky User License should be available in "Game Information", which
-	#can be found in the Resource Explorer, or as an external file called COPYING.
-	#If not, please obtain a new copy of Spelunky from <http://spelunkyworld.com/>
-	#
-#***********************************************************************************/
+		#The Spelunky User License should be available in "Game Information", which
+		#can be found in the Resource Explorer, or as an external file called COPYING.
+		#If not, please obtain a new copy of Spelunky from <http://spelunkyworld.com/>
+		#
+	#***********************************************************************************/
 
+	var game = gml.get_instance("game")
+	
 	global.level_type = 0
-	#global.curr_level = 16
+	# DY: global.curr_level = 16
 	if (global.curr_level > 4 and global.curr_level < 9): global.level_type = 1
 	if (global.curr_level > 8 and global.curr_level < 13): global.level_type = 2
 	if (global.curr_level > 12 and global.curr_level < 16): global.level_type = 3
@@ -918,9 +920,9 @@ func scr_init_level():
 		global.had_dark_level = false
 
 
-	# global.level_type = 3 # debug
+	# DY:  global.level_type = 3 # DY:  debug
 
-	# DEBUG MODE #
+	# DY:  DEBUG MODE # DY: 
 	#/*
 	#if (global.curr_level == 2): global.level_type = 4
 	#if (global.curr_level == 3): global.level_type = 2
@@ -928,15 +930,15 @@ func scr_init_level():
 	#if (global.curr_level == 5): global.level_type = 4
 	#*/
 
-	# global.level_type = 0
+	# DY:  global.level_type = 0
 
 	global.start_room_x = 0
 	global.start_room_y = 0
 	global.end_room_x = 0
 	global.end_room_y = 0
-	var _level_gen = false #---actually is oGame.level_gen. Seems to do nothing [FLAG] double check this
+	game.level_gen = false
 
-	# this is used to determine the path to the exit (generally no bombs required)
+	# DY:  this is used to determine the path to the exit (generally no bombs required)
 	for i in range(0, 4):
 
 		for j in range(0, 4):
@@ -945,8 +947,9 @@ func scr_init_level():
 		
 
 
-	# side walls
+	# DY:  side walls
 	var k
+	var obj
 	if (global.level_type == 4):
 		k = 54
 	elif (global.level_type == 2):
@@ -957,8 +960,8 @@ func scr_init_level():
 		k = 33
 	for i in range(0, 42):
 
-		for j in range (0,k):
-			var obj #---adding this here
+		for j in range(0, k + 1): #---[FLAG] <= in original code is handled by doing value + 1. check other loops to make sure this is correct
+		
 			if (not InLevel.is_level()):
 			
 				i = 999
@@ -970,9 +973,9 @@ func scr_init_level():
 					i*16 == 656 or
 					j*16 == 0):
 				
-					obj = gml.instance_create(i*16, j*16, dark)
+					obj = gml.instance_create(i*16, j*16, Objects.dark)
 					obj.invincible = true
-					obj.sprite_index = s_dark
+					obj.sprite_index = "dark"
 				
 			
 			elif (global.level_type == 4):
@@ -981,9 +984,9 @@ func scr_init_level():
 					i*16 == 656 or
 					j*16 == 0):
 				
-					obj = gml.instance_create(i*16, j*16, temple)
+					obj = gml.instance_create(i*16, j*16, Objects.temple)
 					obj.invincible = true
-					if (not global.city_of_gold): obj.sprite_index = s_temple
+					if (not global.city_of_gold): obj.sprite_index = "temple"
 				
 			
 			elif (global.lake):
@@ -993,8 +996,8 @@ func scr_init_level():
 					j*16 == 0 or
 					j*16 >= 656):
 				
-					obj = gml.instance_create(i*16, j*16, lush)
-					obj.sprite_index = s_lush
+					obj = gml.instance_create(i*16, j*16, Objects.lush)
+					obj.sprite_index = "lush"
 					obj.invincible = true
 				
 			
@@ -1004,15 +1007,16 @@ func scr_init_level():
 				j*16 >= 528):
 			
 				if (global.level_type == 0):
-					obj = gml.instance_create(i*16, j*16, brick)
-					obj.sprite_index = s_brick
+					obj = gml.instance_create(i*16, j*16, Objects.brick)
+					obj.sprite_index = "brick" 
 				elif (global.level_type == 1):
-					obj = gml.instance_create(i*16, j*16, lush)
-					obj.sprite_index = s_lush
+					obj = gml.instance_create(i*16, j*16, Objects.lush)
+					obj.sprite_index = "lush" 
 				else:
-					obj = gml.instance_create(i*16, j*16, temple)
-					if (not global.city_of_gold): obj.sprite_index = s_temple
-				#obj.invincible = true ------------------------------------------- [FLAG] un-comment this later
+					obj = gml.instance_create(i*16, j*16, Objects.temple)
+					if (not global.city_of_gold):
+						obj.sprite_index = "temple" 
+				obj.invincible = true
 			
 		
 
@@ -1021,47 +1025,47 @@ func scr_init_level():
 
 		for i in range(0, 42):
 		
-			gml.instance_create(i*16, 40*16, dark)
-			#gml.instance_create(i*16, 35*16, spikes)
+			gml.instance_create(i*16, 40*16, Objects.dark)
+			# DY: gml.instance_create(i*16, 35*16, Objects.spikes)
 		
 
 
 	if (global.level_type == 3):
 
-		gml.background_index("bg_temple")
+		gml.background_index = "bg_temple"
 
 
 	global.temp1 = global.game_start
 	scr_level_gen()
 
 	global.cemetary = false
-	if (global.level_type == 1 and randi_range(1,global.prob_cemetary) == 1): global.cemetary = true
+	if (global.level_type == 1 and gml.rand(1,global.prob_cemetary) == 1): global.cemetary = true
 
 	var all_rooms = gml.get_all_instances("room")
-	for room in all_rooms:
-
-		if (global.level_type == 0): scr_room_gen(room.position.x, room.position.y)
+	for room_instance in all_rooms:
+		#---[FLAG] having each room instance calling generation functions but may not be needed
+		if (global.level_type == 0): room_instance.scr_room_gen()
 		elif (global.level_type == 1):
 		
-			if (global.black_market): scr_room_gen_market()
-			else: scr_room_gen2()
+			if (global.black_market): room_instance.scr_room_gen_market()
+			else: room_instance.scr_room_gen2()
 		
 		elif (global.level_type == 2):
 		
-			if (global.yeti_lair): scr_room_gen_yeti()
-			else: scr_room_gen3()
+			if (global.yeti_lair): room_instance.scr_room_gen_yeti()
+			else: room_instance.scr_room_gen3()
 		
-		elif (global.level_type == 3): scr_room_gen4()
-		else: scr_room_gen5()
+		elif (global.level_type == 3): room_instance.scr_room_gen4()
+		else: room_instance.scr_room_gen5()
 
 
 	global.dark_level = false
-	#if (not global.had_dark_level and global.curr_level != 0 and global.level_type != 2 and global.curr_level != 16 and randi_range(1,1) == 1):
-	if (not global.had_dark_level and not global.no_dark_level and global.curr_level != 0 and global.curr_level != 1 and global.level_type != 2 and global.curr_level != 16 and randi_range(1,global.prob_dark_level) == 1):
+	# DY: if (not global.had_dark_level and global.curr_level != 0 and global.level_type != 2 and global.curr_level != 16 and gml.rand(1,1) == 1):
+	if (not global.had_dark_level and not global.ndark_level and global.curr_level != 0 and global.curr_level != 1 and global.level_type != 2 and global.curr_level != 16 and gml.rand(1,global.prob_dark_level) == 1):
 
 		global.dark_level = true
 		global.had_dark_level = true
-		#instance_create(player1.x, player1.y, flare)
+		# DY: gml.instance_create(player1.position.x, player1.position.y, Objects.flare)
 
 
 	if (global.black_market): global.dark_level = false
@@ -1069,30 +1073,31 @@ func scr_init_level():
 	global.gen_udjat_eye = false
 	if (not global.made_udjat_eye):
 
-		if (global.curr_level == 2 and randi_range(1,3) == 1): global.gen_udjat_eye = true
-		elif (global.curr_level == 3 and randi_range(1,2) == 1): global.gen_udjat_eye = true
+		if (global.curr_level == 2 and gml.rand(1,3) == 1): global.gen_udjat_eye = true
+		elif (global.curr_level == 3 and gml.rand(1,2) == 1): global.gen_udjat_eye = true
 		elif (global.curr_level == 4): global.gen_udjat_eye = true
 
 
 	global.gen_market_entrance = false
 	if (not global.made_market_entrance):
 
-		if (global.curr_level == 5 and randi_range(1,3) == 1): global.gen_market_entrance = true
-		elif (global.curr_level == 6 and randi_range(1,2) == 1): global.gen_market_entrance = true
+		if (global.curr_level == 5 and gml.rand(1,3) == 1): global.gen_market_entrance = true
+		elif (global.curr_level == 6 and gml.rand(1,2) == 1): global.gen_market_entrance = true
 		elif (global.curr_level == 7): global.gen_market_entrance = true
 
 
-	##############
-	# ENTITY / TREASURES
-	##############
+	# DY: # DY: # DY: # DY: # DY: # DY: # DY: # DY: # DY: # DY: # DY: # DY: # DY: # DY: 
+	# DY:  ENTITY / TREASURES
+	# DY: # DY: # DY: # DY: # DY: # DY: # DY: # DY: # DY: # DY: # DY: # DY: # DY: # DY: 
 	global.temp2 = global.game_start
 	if (not InLevel.is_room("tutorial") and not InLevel.is_room("load_level")): scr_entity_gen()
 
-	if (gml.instance_exists(entrance) and not global.custom_level):
-		var entrance_instance = gml.get_instance('entrance')
-		var player1 #------------------------update this with getting player1 node
-		player1.x = entrance_instance.position.x+8
-		player1.y = entrance_instance.position.y+8
+	if (gml.instance_exists("entrance") and not global.custom_level):
+		var entrance = gml.get_instance("entrance")
+		var player1 = gml.get_instance("player1") #---[FLAG] may have to change this for multiplayer
+
+		player1.position.x = entrance.position.x+8
+		player1.position.y = entrance.position.y+8
 
 
 	if (global.dark_level or
@@ -1106,9 +1111,8 @@ func scr_init_level():
 		global.city_of_gold):
 
 		if (not InLevel.is_room("load_level")):
-			var alarm #---------------------[FLAG] fix this later and lines below
-			var all_player1s = gml.get_all_instances("player1")
-			for player1 in all_player1s:  alarm[0] = 10
+			var player1 = gml.get_instance("player1") #---[FLAG] may have to adjust this for multiplayer. check original code (uses "with" keyword)
+			player1.alarm_0_countdown.start(10) 
 		
 
 
@@ -1116,80 +1120,81 @@ func scr_init_level():
 	elif (global.lake): scr_setup_walls(656)
 	else: scr_setup_walls(528)
 
-	# add background details
+	# DY:  add background details
 	if (global.graphics_high):
 
 		for repetition in range(20):
 		
-			# bg = instance_create(16*randi_range(1,42), 16*randi_range(1,33), cave_bg)
-			if (global.level_type == 1 and randi_range(1,3) < 3):
-				gml.tile_add('bg_extras_lush', 32*randi_range(0,1), 0, 32, 32, 16*randi_range(1,42), 16*randi_range(1,33), 10002)
-			elif (global.level_type == 2 and randi_range(1,3) < 3):
-				gml.tile_add('bg_extras_ice', 32*randi_range(0,1), 0, 32, 32, 16*randi_range(1,42), 16*randi_range(1,33), 10002)
-			elif (global.level_type == 3 and randi_range(1,3) < 3):
-				gml.tile_add('bg_extras_temple', 32*randi_range(0,1), 0, 32, 32, 16*randi_range(1,42), 16*randi_range(1,33), 10002)
+			# DY:  bg = gml.instance_create(16*gml.rand(1,42), 16*gml.rand(1,33), Objects.cave_bg)
+			if (global.level_type == 1 and gml.rand(1,3) < 3):
+				gml.tile_add("bg_extras_lush", 32*gml.rand(0,1), 0, 32, 32, 16*gml.rand(1,42), 16*gml.rand(1,33), 10002)
+			elif (global.level_type == 2 and gml.rand(1,3) < 3):
+				gml.tile_add("bg_extras_ice", 32*gml.rand(0,1), 0, 32, 32, 16*gml.rand(1,42), 16*gml.rand(1,33), 10002)
+			elif (global.level_type == 3 and gml.rand(1,3) < 3):
+				gml.tile_add("bg_extras_temple", 32*gml.rand(0,1), 0, 32, 32, 16*gml.rand(1,42), 16*gml.rand(1,33), 10002)
 			else:
-				gml.tile_add('bg_extras', 32*randi_range(0,1), 0, 32, 32, 16*randi_range(1,42), 16*randi_range(1,33), 10002)
+				gml.tile_add("bg_extras", 32*gml.rand(0,1), 0, 32, 32, 16*gml.rand(1,42), 16*gml.rand(1,33), 10002)
 		
 
 
-	_level_gen = true
+	game.level_gen = true
 
-	# generate angry shopkeeper at exit if murderer or thief
+	# DY:  generate angry shopkeeper at exit if murderer or thief:
 	if (global.murderer or global.thief_level > 0):
-		var obj #------- adding this here
+
 		var all_exits = gml.get_all_instances("exit")
-		for exit in all_exits:
+		for exit_instance in all_exits:
 		
-			if (exit.type == "Exit"):
+			if (exit_instance.type == "exit"):
 			
-				obj = gml.instance_create(exit.position.x, exit.position.y, shopkeeper)
+				obj = gml.instance_create(exit_instance.position.x, exit_instance.position.y, Objects.shopkeeper)
 				obj.status = 4
 			
 		
-		# global.thief_level -= 1
+		# DY:  global.thief_level -= 1
 
 
 	var all_treasure = gml.get_all_instances("treasure")
-	for treasure in all_treasure:
+	for treasure_instance in all_treasure:
 
-		if (gml.collision_point(treasure.position.x, treasure.position.y, 'solid', 0, 0)):
-			var obj
-			obj = gml.instance_place(treasure.position.x, treasure.position.y, 'solid', treasure)
-			if (obj.invincible): gml.instance_destroy(treasure)
+		if (gml.collision_point(treasure_instance.position.x, treasure_instance.position.y, "solid", 0, 0)):
+		
+			obj = gml.instance_place(treasure_instance.position.x, treasure_instance.position.y, "solid", treasure_instance)
+			if (obj.invincible): gml.instance_destroy(treasure_instance)
 		
 
 
 	var all_water = gml.get_all_instances("water")
-	for water in all_water:
+	for water_instance in all_water:
 
-		if (water.sprite_index == s_water_top or water.sprite_index == s_lava_top):
+		if (water_instance.sprite_index == "water_top" or water_instance.sprite_index == "lava_top"):
 		
-			scr_check_water_top(water.x, water.y, water)
+			water_instance.scr_check_water_top()
 		
 		#/*
-			#obj = instance_place(x-16, y, water)
-			#if (instance_exists(obj)):
+			#obj = gml.instance_place(position.x-16, position.y, water)
+			#if (gml.instance_exists("obj")):
 			#
-				#if (obj.sprite_index == s_water_top or obj.sprite_index == s_lava_top):
+				#if (obj.sprite_index == "water_top" or obj.sprite_index == "lava_top"):
 				#
-					#if (type == "Lava"): sprite_index = s_lava_top
-					#else: sprite_index = s_water_top
+					#if (type == "Lava"): sprite_index = "lava_top"
+					#else: sprite_index = "water_top"
 				#
 			#
-			#obj = instance_place(x+16, y, water)
-			#if (instance_exists(obj)):
+			#obj = gml.instance_place(position.x+16, position.y, water)
+			#if (gml.instance_exists("obj")):
 			#
-				#if (obj.sprite_index == s_water_top or obj.sprite_index == s_lava_top):
+				#if (obj.sprite_index == "water_top" or obj.sprite_index == "lava_top"):
 				#
-					#if (type == "Lava"): sprite_index = s_lava_top
-					#else: sprite_index = s_water_top
+					#if (type == "Lava"): sprite_index = "lava_top"
+					#else: sprite_index = "water_top"
 				#
 			#
 		#*/
 
 
 	global.temp3 = global.game_start
+
 
 func scr_room_gen(x, y):
 	#

@@ -37,6 +37,8 @@ var c_teal = Color(0, 128, 128)
 var c_white = Color(255, 255, 255)
 var c_yellow = Color(255, 255, 0)
 
+var background_index #---[FLAG] have this set the background of the stage
+
 var draw_font
 var draw_color
 
@@ -450,9 +452,6 @@ func rand(x1, x2):
 	return randi_range(x1, x2 - 1)
 
 #---------------------------------------
-func background_index(background: String): #Changing this to a function
-	pass
-
 func get_all_instances(group: String): #Replacement for 'with' keyword
 	var all_instances = get_tree().get_nodes_in_group(group)
 	return all_instances
