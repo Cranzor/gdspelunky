@@ -583,49 +583,49 @@ func scr_treasure_gen(bones_chance, instance): #--- will pass in x and y as well
 
 func scr_level_gen():
 
-#
-# scr_level_gen()
-#
-# Sets the "room path" that Spelunky uses to determine the no-bombs/no-rope (in theory)
-# route to the exit.
-# 
+	# DY: 
+	# DY:  scr_level_gen()
+	# DY: 
+	# DY:  Sets the "room path" that Spelunky uses to determine the no-bombs/no-rope (in theory)
+	# DY:  route to the exit.
+	# DY:  
 
-#/**********************************************************************************
-	#Copyright (c) 2008, 2009 Derek Yu and Mossmouth, LLC
-	#
-	#This file is part of Spelunky.
+	#/**********************************************************************************
+		#Copyright (c) 2008, 2009 Derek Yu and Mossmouth, LLC
+		#
+		#This file is part of Spelunky.
 #
-	#You can redistribute and/or modify Spelunky, including its source code, under
-	#the terms of the Spelunky User License.
+		#You can redistribute and/or modify Spelunky, including its source code, under
+		#the terms of the Spelunky User License.
 #
-	#Spelunky is distributed in the hope that it will be entertaining and useful,
-	#but WITHOUT WARRANTY.  Please see the Spelunky User License for more details.
+		#Spelunky is distributed in the hope that it will be entertaining and useful,
+		#but WITHOUT WARRANTY.  Please see the Spelunky User License for more details.
 #
-	#The Spelunky User License should be available in "Game Information", which
-	#can be found in the Resource Explorer, or as an external file called COPYING.
-	#If not, please obtain a new copy of Spelunky from <http://spelunkyworld.com/>
-	#
-#***********************************************************************************/
-	randomize()
-	
-	global.start_room_x = randi_range(0,3)
+		#The Spelunky User License should be available in "Game Information", which
+		#can be found in the Resource Explorer, or as an external file called COPYING.
+		#If not, please obtain a new copy of Spelunky from <http://spelunkyworld.com/>
+		#
+	#***********************************************************************************/
+
+	global.start_room_x = gml.rand(0,3)
 	global.start_room_y = 0
 	var room_x = global.start_room_x
 	var room_y = 0
 	var prev_x = global.start_room_x
 	var prev_y = 0
 	global.room_path[[room_x, room_y]] = 1
-	var _nstart_x = -1
-	var n = randi_range(0,3)
+	var no_start_x = -1
+	var n = gml.rand(0,3)
+	var game = gml.get_instance("game")
 
 	global.sacrifice_pit = false
 	global.snake_pit = false
 	global.alien_craft = false
 	global.yeti_lair = false
 
-	# Black Market
+	# DY:  Black Market
 	global.black_market = false
-	#if (global.level_type == 1):
+	# DY: if (global.level_type == 1):
 
 	if (global.level_type == 1 and not global.made_black_market and global.gen_black_market):
 
@@ -654,11 +654,11 @@ func scr_level_gen():
 		return 0
 
 
-	if (global.level_type == 3 and randi_range(1,global.prob_sac_pit) == 1):
+	if (global.level_type == 3 and gml.rand(1,global.prob_sac_pit) == 1):
 
 		while (n == room_x):
 		
-			n = randi_range(0,3)
+			n = gml.rand(0,3)
 		
 		
 		for i in range(0, 4):
@@ -668,18 +668,18 @@ func scr_level_gen():
 			else: global.room_path[[n, i]] = 8
 		
 		global.sacrifice_pit = true
-		idol = true #--- This and damsel are both part of oGame. Should change
-		damsel = true
+		game.idol = true
+		game.damsel = true
 
 
 	while (room_y < 4):
 
 		var d = false
-		if (room_x == 0): n = randi_range(3,5) # right
-		elif (room_x == 3): n = randi_range(5,7) # left
-		else: n = randi_range(1,5)
+		if (room_x == 0): n = gml.rand(3,5) # DY:  right
+		elif (room_x == 3): n = gml.rand(5,7) # DY:  left
+		else: n = gml.rand(1,5)
 		
-		if (n < 3 or n > 5): # move left
+		if (n < 3 or n > 5): # DY:  move left
 		
 			if (room_x > 0):
 				if (global.room_path[[room_x-1, room_y]] == 0): room_x -= 1
@@ -687,7 +687,7 @@ func scr_level_gen():
 				if (global.room_path[[room_x+1, room_y]] == 0): room_x += 1
 			else: n = 5
 		
-		elif (n == 3 or n == 4): # move right
+		elif (n == 3 or n == 4): # DY:  move right
 		
 			if (room_x < 3):
 				if (global.room_path[[room_x+1, room_y]] == 0): room_x += 1
@@ -696,7 +696,7 @@ func scr_level_gen():
 			else: n = 5
 		
 		
-		if (n == 5): # move down
+		if (n == 5): # DY:  move down
 		
 			room_y += 1
 			d = true
@@ -718,22 +718,22 @@ func scr_level_gen():
 		prev_y = room_y
 
 
-	# City of Gold
-	if (global.city_of_gold): global.room_path[[randi_range(0,3), 2]] = 6
+	# DY:  City of Gold
+	if (global.city_of_gold): global.room_path[[gml.rand(0,3), 2]] = 6
 
-	# snake pit
-	var _s_x1 = 0
-	var _s_x2 = 0
-	# global.prob_snake_pit = 1
+	# DY:  snake pit
+	var s_x1 = 0
+	var s_x2 = 0
+	# DY:  global.prob_snake_pit = 1
 	if (global.level_type == 0):
 
 		for j in range(0, 2):
 		
 			for i in range(0, 4):
 			
-				if (global.room_path[[i,j]] == 0 and global.room_path[[i,j+1]] == 0 and global.room_path[[i,j+2]] == 0 and randi_range(1,global.prob_snake_pit) == 1):
+				if (global.room_path[[i,j]] == 0 and global.room_path[[i,j+1]] == 0 and global.room_path[[i,j+2]] == 0 and gml.rand(1,global.prob_snake_pit) == 1):
 				
-					global.room_path[[i,j]] = 7 # top of pit
+					global.room_path[[i,j]] = 7 # DY:  top of pit
 					if (true):
 					
 						if (global.room_path[[i,j+2]] == 0):
@@ -743,8 +743,8 @@ func scr_level_gen():
 							
 								if (global.room_path[[i,j+3]] == 0):
 								
-									global.room_path[[i,j+2]] = 8 # middle of pit
-									global.room_path[[i,j+3]] = 9 # bottom of pit
+									global.room_path[[i,j+2]] = 8 # DY:  middle of pit
+									global.room_path[[i,j+3]] = 9 # DY:  bottom of pit
 								
 								else:
 								
@@ -775,8 +775,8 @@ func scr_level_gen():
 	global.room_path[[2,4]] = 0
 	global.room_path[[3,4]] = 0
 
-	#  Lake
-	#global.lake = false
+	# DY:   Lake
+	# DY: global.lake = false
 	if (global.lake):
 
 		global.room_path[[0,3]] = 8
@@ -787,28 +787,28 @@ func scr_level_gen():
 		global.room_path[[1,4]] = 7
 		global.room_path[[2,4]] = 7
 		global.room_path[[3,4]] = 7
-		n = randi_range(0,3)
+		n = gml.rand(0,3)
 		while (n == global.end_room_x):
 		
-			n = randi_range(0,3)
+			n = gml.rand(0,3)
 		
 		global.room_path[[n,4]] = 9
 
 
-	# Moai
+	# DY:  Moai
 	if (not global.made_moai and global.level_type == 2):
 
-		if (global.curr_level == 9 and randi_range(1,4) == 1): global.made_moai = true
-		elif (global.curr_level == 10 and randi_range(1,3) == 1): global.made_moai = true
-		elif (global.curr_level == 11 and randi_range(1,2) == 1): global.made_moai = true
+		if (global.curr_level == 9 and gml.rand(1,4) == 1): global.made_moai = true
+		elif (global.curr_level == 10 and gml.rand(1,3) == 1): global.made_moai = true
+		elif (global.curr_level == 11 and gml.rand(1,2) == 1): global.made_moai = true
 		elif (global.curr_level == 12): global.made_moai = true
 		
-		if (global.made_moai): global.room_path[[randi_range(0,3), randi_range(1,2)]] = 6
+		if (global.made_moai): global.room_path[[gml.rand(0,3), gml.rand(1,2)]] = 6
 
-	elif (global.level_type == 2 and randi_range(1,global.prob_alien) == 1): # alien craft
+	elif (global.level_type == 2 and gml.rand(1,global.prob_alien) == 1): # DY:  alien craft
 
-		var k = randi_range(0,2)
-		var j = randi_range(1,2)
+		var k = gml.rand(0,2)
+		var j = gml.rand(1,2)
 		for i in range(k, 4):
 		
 			if (i == k): global.room_path[[i,j]] = 7
@@ -817,13 +817,13 @@ func scr_level_gen():
 		
 		global.alien_craft = true
 
-	elif (global.level_type == 2 and not global.alien_craft and randi_range(1,global.prob_yeti_lair) == 1): # yeti
+	elif (global.level_type == 2 and not global.alien_craft and gml.rand(1,global.prob_yeti_lair) == 1): # DY:  yeti
 
 		global.yeti_lair = true
 
 
-	# shop
-	if (randi_range(1,global.curr_level) <= 2 and global.curr_level > 1 and not global.made_black_market):
+	# DY:  shop
+	if (gml.rand(1,global.curr_level) <= 2 and global.curr_level > 1 and not global.made_black_market):
 
 		var i = 0
 		for k in range(0, 4):
@@ -831,37 +831,37 @@ func scr_level_gen():
 			for j in range(0, 4):
 			
 				global.room_poss[[j,k]] = 0
-				#j = randi_range(0,3)
-				#k = randi_range(0,3)
+				# DY: j = gml.rand(0,3)
+				# DY: k = gml.rand(0,3)
 				if (global.room_path[[j,k]] == 0):
 				
 					if (j < 3):
 					
 						if (global.room_path[[j+1,k]] == 1 or global.room_path[[j+1,k]] == 2):
 						
-							#global.room_path[[j,k]] = 4
+							# DY: global.room_path[[j,k]] = 4
 							global.room_poss[[j,k]] = 4
 							i += 1
-							#global.shop = true
-							#break
+							# DY: global.shop = true
+							# DY: break
 						
 					
 					elif (j > 0):
 					
 						if (global.room_path[[j-1,k]] == 1 or global.room_path[[j-1,k]] == 2):
 						
-							#global.room_path[[j,k]] = 5
+							# DY: global.room_path[[j,k]] = 5
 							global.room_poss[[j,k]] = 5
 							i += 1
-							#global.shop = true
-							#break
+							# DY: global.shop = true
+							# DY: break
 					
 				
 			
 		
 		
-		if (i > 0):
-			n = randi_range(0,i-1)
+		if (i > 0): 
+			n = gml.rand(0,i-1)
 			for k in range(0, 4):
 			
 				for j in range(0, 4):
@@ -877,11 +877,7 @@ func scr_level_gen():
 							break
 						
 						else: n -= 1
-	#Testing output					
-	#print(str(global.room_path[[0,0]]) + str(global.room_path[[1,0]]) + str(global.room_path[[2,0]]) + str(global.room_path[[3,0]]))
-	#print(str(global.room_path[[0,1]]) + str(global.room_path[[1,1]]) + str(global.room_path[[2,1]]) + str(global.room_path[[3,1]]))
-	#print(str(global.room_path[[0,2]]) + str(global.room_path[[1,2]]) + str(global.room_path[[2,2]]) + str(global.room_path[[3,2]]))
-	#print(str(global.room_path[[0,3]]) + str(global.room_path[[1,3]]) + str(global.room_path[[2,3]]) + str(global.room_path[[3,3]]))
+
 
 func scr_init_level():
 #
