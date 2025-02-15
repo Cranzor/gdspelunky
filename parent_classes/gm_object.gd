@@ -541,6 +541,16 @@ func collision_with_setup(object_entry):
 			var object = event.trim_prefix(string_beginning)
 			var collision_with_function = Callable(self, event)
 			collision_with[object] = collision_with_function
+	
+	#--- adding this for enemies as collision_with is in the parent class. should make a cleaner way to handle this.
+	#--- any other parent class that checks collision_with would need separate handling too
+	var groups = get_groups()
+	if get_groups().has("enemy"):
+		var objects = ["character", "whip", "whip_pre"]
+		for object in objects:
+			var function = "collision_with_" + object
+			var collision_with_function = Callable(self, function)
+			collision_with[object] = collision_with_function
 
 func run_step_event(obj):
 	if obj.has_method("step"):
@@ -562,9 +572,6 @@ func run_draw_event(obj):
 			animated_sprite_node.sprite_displayed = true
 	
 func run_collision_with(obj):
-	if position == Vector2(240, 64):
-		var oh = "oh"
-
 	for object in collision_with:
 		#--- fixed an issue here in which object_size by itself was used. for collision_rectangle, object size + position must be passed in
 		if gml.collision_rectangle(position.x, position.y, position.x + object_size.x, position.y + object_size.y, object, 0, 0):

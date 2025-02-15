@@ -173,8 +173,40 @@ func scr_clear_globals():
 func scr_create_flame(x, y, num):
 	pass
 
-func scr_create_blood(x, y, num):
-	pass
+func scr_create_blood(x, y, num, object):
+	# DY: 
+	# DY:  MiscScripts.scr_create_blood(position.x, position.y, num)
+	# DY: 
+	# DY:  Create blood.
+	# DY: 
+
+	#/**********************************************************************************
+		#Copyright (c) 2008, 2009 Derek Yu and Mossmouth, LLC
+		#
+		#This file is part of Spelunky.
+#
+		#You can redistribute and/or modify Spelunky, including its source code, under
+		#the terms of the Spelunky User License.
+#
+		#Spelunky is distributed in the hope that it will be entertaining and useful,
+		#but WITHOUT WARRANTY.  Please see the Spelunky User License for more details.
+#
+		#The Spelunky User License should be available in "Game Information", which
+		#can be found in the Resource Explorer, or as an external file called COPYING.
+		#If not, please obtain a new copy of Spelunky from <http://spelunkyworld.com/>
+		#
+	#***********************************************************************************/
+
+	if (object.bloodless): return 0
+
+	for repetition in num:
+
+		if (gml.instance_number("detritus") < 16):
+		
+			gml.instance_create(x, y, Objects.blood)
+		
+
+
 
 func scr_update_highscores(type):
 	pass

@@ -627,7 +627,7 @@ func handle_player_active():
 			else: global.plife -= 1
 			if (global.plife < 1):
 			
-				MiscScripts.scr_create_blood(position.x, position.y, 3)
+				MiscScripts.scr_create_blood(position.x, position.y, 3, self)
 				if (InLevel.is_real_level()): global.misc_deaths[3] += 1
 			
 			bounced = true
@@ -1850,7 +1850,7 @@ func cap_negative_player_life():
 func create_blood_upon_very_low_player_life():
 	if (global.plife < -99 and visible):
 
-		MiscScripts.scr_create_blood(position.x, position.y, 3)
+		MiscScripts.scr_create_blood(position.x, position.y, 3, self)
 		visible = false
 
 func handle_damage_by_various_objects():
@@ -1884,7 +1884,7 @@ func kill_upon_being_crushed():
 		y_vel = -3
 		Audio.play_sound(global.snd_die)
 			
-		MiscScripts.scr_create_blood(position.x, position.y, 3)
+		MiscScripts.scr_create_blood(position.x, position.y, 3, self)
 		
 		visible = false
 	
@@ -1902,7 +1902,7 @@ func handle_hit_by_arrow():
 			x_vel = obj.x_vel
 			y_vel = -4
 			
-			MiscScripts.scr_create_blood(position.x, position.y, 3)
+			MiscScripts.scr_create_blood(position.x, position.y, 3, self)
 			
 			gml.instance_destroy(obj)
 			
@@ -1931,7 +1931,7 @@ func handle_hit_by_rock():
 				x_vel = obj.x_vel
 				y_vel = -4
 				
-				MiscScripts.scr_create_blood(position.x, position.y, 3)
+				MiscScripts.scr_create_blood(position.x, position.y, 3, self)
 				
 				Audio.play_sound(global.snd_hurt)
 				stunned = true
@@ -1952,7 +1952,7 @@ func handle_hit_by_laser():
 			else: x_vel = -2
 			y_vel = -4
 			
-			MiscScripts.scr_create_blood(position.x, position.y, 3)
+			MiscScripts.scr_create_blood(position.x, position.y, 3, self)
 			
 			gml.instance_create(obj.position.x, obj.position.y, "laser_explode")
 			gml.instance_destroy(obj)
@@ -1993,7 +1993,7 @@ func handle_hit_by_explosion():
 		stunned = true
 		stun_timer = 100
 			
-		MiscScripts.scr_create_blood(position.x, position.y, 1)
+		MiscScripts.scr_create_blood(position.x, position.y, 1, self)
 	
 func handle_hit_by_spears_left():
 	var obj = gml.collision_rectangle(position.x-6, position.y-6, position.x+6,  position.y+7, "spears_left", 0, 0) #instance_nearest(position.x, position.y, spears_left) ---[FLAG] doesn't seem to be used for anything but come back and check this
@@ -2012,7 +2012,7 @@ func handle_hit_by_spears_left():
 			position.y -= 1
 			# state = FALLING
 			
-			MiscScripts.scr_create_blood(position.x, position.y, 1)
+			MiscScripts.scr_create_blood(position.x, position.y, 1, self)
 	
 func handle_hit_by_smash_trap():
 	if (gml.collision_rectangle(position.x-6, position.y-6, position.x+6,  position.y+7, "smash_trap", 0, 0)):
@@ -2032,7 +2032,7 @@ func handle_hit_by_smash_trap():
 		#DOWN = 1
 		#LEFT = 2
 		#UP = 3
-		MiscScripts.scr_create_blood(position.x, position.y, 1)
+		MiscScripts.scr_create_blood(position.x, position.y, 1, self)
 		if (hold_item):
 			hold_item.held = false
 			hold_item = 0
@@ -2046,7 +2046,7 @@ func handle_hit_by_ceiling_trap():
 			if (global.plife > 0 and InLevel.is_real_level()): global.misc_deaths[9] += 1
 
 			global.plife -= 10
-			MiscScripts.scr_create_blood(position.x, position.y, 1)
+			MiscScripts.scr_create_blood(position.x, position.y, 1, self)
 	
 func handle_spike_collision():
 	col_spikes = false
@@ -2065,7 +2065,7 @@ func handle_spike_collision():
 		if (not dead):
 		
 			if (InLevel.is_real_level()): global.misc_deaths[4] += 1
-			MiscScripts.scr_create_blood(position.x, position.y, 3)
+			MiscScripts.scr_create_blood(position.x, position.y, 3, self)
 			global.plife -= 99
 			x_vel = 0
 			y_vel = 0
@@ -2179,7 +2179,7 @@ func handle_dead_or_stunned():
 		
 		if (gml.collision_point(position.x, position.y, "spikes", 0, 0) and dead and y_vel != 0):
 		
-			if (randi_range(1,8) == 1): MiscScripts.scr_create_blood(self.position.x, self.position.y, 1) #---[FLAG] changing 'other' to self, as this appears to be referring to the player
+			if (randi_range(1,8) == 1): MiscScripts.scr_create_blood(self.position.x, self.position.y, 1, self) #---[FLAG] changing 'other' to self, as this appears to be referring to the player
 																											#(as the other side of the collision)
 		
 		if (Collision.is_collision_right(1, self) or Collision.is_collision_left(1, self) or Collision.is_collision_bottom(1, self)):
@@ -2201,7 +2201,7 @@ func handle_dead_or_stunned():
 			bounced = true
 			for i in range(0, 3):
 			
-				MiscScripts.scr_create_blood(self.position.x, self.position.y, 1) #--- same as above with changing 'other' to 'self'
+				MiscScripts.scr_create_blood(self.position.x, self.position.y, 1, self) #--- same as above with changing 'other' to 'self'
 			
 			
 			if (wall_hurt > 0):
@@ -4614,3 +4614,6 @@ func animation_end():
 func _on_animated_sprite_2d_frame_changed():
 	if gml.animation_end(self, animated_sprite_node) == true:
 		animation_end()
+
+func collision_with_blood(): #---[FLAG] have to implement
+	pass

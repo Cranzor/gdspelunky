@@ -1,5 +1,5 @@
 extends DrawnSprite
-
+class_name Detritus
 
 func _ready():
 	object_setup()

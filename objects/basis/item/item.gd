@@ -357,7 +357,7 @@ func step():
 						
 							if (obj.type == "caveman" or obj.type == "vampire" or obj.type == "yeti" or obj.type == "hawkman"):
 							
-								MiscScripts.scr_create_blood(obj.position.x+8, obj.position.y+8, 1)
+								MiscScripts.scr_create_blood(obj.position.x+8, obj.position.y+8, 1, self)
 							
 							elif (obj.type == "man_trap"):
 							
@@ -374,7 +374,7 @@ func step():
 					
 						if (obj.status < 98):
 						
-							MiscScripts.scr_create_blood(obj.position.x, obj.position.y, 1)
+							MiscScripts.scr_create_blood(obj.position.x, obj.position.y, 1, obj)
 							obj.hp -= 1
 							obj.y_vel = -6
 							obj.status = 2
@@ -385,7 +385,7 @@ func step():
 					
 						if (obj.whipped == 0):
 						
-							MiscScripts.scr_create_blood(obj.position.x+16, obj.position.y+24, 1)
+							MiscScripts.scr_create_blood(obj.position.x+16, obj.position.y+24, 1, obj)
 							obj.hp -= 1
 							obj.whipped = 10
 							Audio.play_sound(global.snd_hit)
@@ -395,7 +395,7 @@ func step():
 					
 						if (obj.whipped == 0):
 						
-							MiscScripts.scr_create_blood(obj.position.x+16, obj.position.y+16, 1)
+							MiscScripts.scr_create_blood(obj.position.x+16, obj.position.y+16, 1, obj)
 							obj.hp -= 1
 							obj.whipped = 20
 							Audio.play_sound(global.snd_hit)
@@ -405,7 +405,7 @@ func step():
 					
 						if (obj.status != 99 and obj.sprite_index != "alien_boss_hurt"): #---[FLAG] make sure this sprite is set for relevant object
 						
-							MiscScripts.scr_create_blood(obj.position.x+8, obj.position.y+8, 1)
+							MiscScripts.scr_create_blood(obj.position.x+8, obj.position.y+8, 1, obj)
 							obj.hp -= 1
 							obj.sprite_index = "alien_boss_hurt"
 							obj.image_speed = 0.8
@@ -424,7 +424,7 @@ func step():
 					
 					else:
 					
-						MiscScripts.scr_create_blood(obj.position.x+8, obj.position.y+8, 1)
+						MiscScripts.scr_create_blood(obj.position.x+8, obj.position.y+8, 1, obj)
 						obj.hp -= 1
 						obj.orig_x = position.x
 						obj.orig_y = position.y
@@ -453,7 +453,7 @@ func step():
 				
 					if (not (obj.held and safe)):
 					
-						MiscScripts.scr_create_blood(obj.position.x, obj.position.y, 1)
+						MiscScripts.scr_create_blood(obj.position.x, obj.position.y, 1, obj)
 						#with obj
 						
 						if (obj.held):

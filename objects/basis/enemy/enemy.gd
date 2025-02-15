@@ -46,7 +46,7 @@ func collision_with_character():
 		other.y_vel = -6 - 0.2 * other.y_vel
 		if (global.has_spike_shoes):
 			hp -= (3 * (floor(other.fall_timer/16)+1))
-			MiscScripts.scr_create_blood(other.position.x, other.position.y+8, 1)
+			MiscScripts.scr_create_blood(other.position.x, other.position.y+8, 1, self)
 		else: hp -= (1 * (floor(other.fall_timer/16)+1))
 		other.fall_timer = 0
 		Audio.play_sound(global.snd_hit)
@@ -92,7 +92,7 @@ func collision_with_character():
 		
 	
 	   
-		if (type == "bat" || type == "piranha" || type == "vampire"): MiscScripts.scr_create_blood(position.x+4, position.y+4, 1)
+		if (type == "bat" || type == "piranha" || type == "vampire"): MiscScripts.scr_create_blood(position.x+4, position.y+4, 1, self)
 	
 		Audio.play_sound(global.snd_hurt)
 
@@ -102,7 +102,7 @@ func collision_with_whip():
 	counts_as_kill = true
 	if (blood_left > 0):
 
-		MiscScripts.scr_create_blood(position.x+sprite_width/2, position.y+sprite_height/2, 1)
+		MiscScripts.scr_create_blood(position.x+sprite_width/2, position.y+sprite_height/2, 1, self)
 		if (hp < 0): blood_left -= 1
 
 	Audio.play_sound(global.snd_hit)
@@ -113,7 +113,7 @@ func collision_with_whip_pre():
 	counts_as_kill = true
 	if (blood_left > 0):
 
-		MiscScripts.scr_create_blood(position.x+sprite_width/2, position.y+sprite_height/2, 1)
+		MiscScripts.scr_create_blood(position.x+sprite_width/2, position.y+sprite_height/2, 1, self)
 		if (hp < 0): blood_left -= 1
 
 	Audio.play_sound(global.snd_hit)
@@ -290,7 +290,7 @@ func step():
 						else: x_vel = -4
 						image_speed = 0.5
 						Audio.play_sound(global.snd_hit)
-						MiscScripts.scr_create_blood(position.x+sprite_width/2, position.y+sprite_height/2, 2)
+						MiscScripts.scr_create_blood(position.x+sprite_width/2, position.y+sprite_height/2, 2, self)
 				
 			
 				else:
@@ -298,7 +298,7 @@ func step():
 					hp -= 2
 					counts_as_kill = false
 					Audio.play_sound(global.snd_hit)
-					MiscScripts.scr_create_blood(position.x+sprite_width/2, position.y+sprite_height/2, 1)
+					MiscScripts.scr_create_blood(position.x+sprite_width/2, position.y+sprite_height/2, 1, self)
 			
 		
 
@@ -316,7 +316,7 @@ func step():
 		
 				hp = 0
 				counts_as_kill = false
-				if (not bloodless): MiscScripts.scr_create_blood(position.x+sprite_width/2, position.y+sprite_height/2, 3)
+				if (not bloodless): MiscScripts.scr_create_blood(position.x+sprite_width/2, position.y+sprite_height/2, 3, self)
 				if (type == "caveman" or type == "mantrap" or type == "yeti" or type == "hawkman" or type == "shopkeeper"):
 					status = 99
 		
@@ -337,7 +337,7 @@ func step():
 				
 						gml.instance_create(position.x+8, position.y+8, Objects.flame)
 						Audio.play_sound(global.snd_small_explode)
-						MiscScripts.scr_create_blood(position.x+8, position.y+8, 3)
+						MiscScripts.scr_create_blood(position.x+8, position.y+8, 3, self)
 						global.message = "KALI ACCEPTS THE SACRIFICE!"
 						if (global.favor <= -8):
 					
@@ -382,7 +382,7 @@ func step():
 						
 								if (obj.type == "caveman" or obj.type == "vampire" or obj.type == "yeti" or obj.type == "hawkman"):
 							
-									MiscScripts.scr_create_blood(obj.position.x+8, obj.position.y+8, 1)
+									MiscScripts.scr_create_blood(obj.position.x+8, obj.position.y+8, 1, self)
 							
 								elif (type == "mantrap"):
 							
@@ -399,7 +399,7 @@ func step():
 					
 							if (obj.status < 98):
 						
-								MiscScripts.scr_create_blood(obj.position.x, obj.position.y, 1)
+								MiscScripts.scr_create_blood(obj.position.x, obj.position.y, 1, self)
 								obj.hp -= 1
 								obj.y_vel = -6
 								obj.status = 2
@@ -410,7 +410,7 @@ func step():
 					
 							if (obj.whipped == 0):
 						
-								MiscScripts.scr_create_blood(obj.position.x+16, obj.position.y+24, 1)
+								MiscScripts.scr_create_blood(obj.position.x+16, obj.position.y+24, 1, self)
 								obj.hp -= 1
 								obj.whipped = 10
 								Audio.play_sound(global.snd_hit)
@@ -420,7 +420,7 @@ func step():
 					
 							if (obj.whipped == 0):
 						
-								MiscScripts.scr_create_blood(position.x+16, position.y+16, 1)
+								MiscScripts.scr_create_blood(position.x+16, position.y+16, 1, self)
 								obj.hp -= 1
 								obj.whipped = 20
 								Audio.play_sound(global.snd_hit)
@@ -430,7 +430,7 @@ func step():
 					
 							if (obj.status != 99 and obj.sprite_index != "alien_boss_hurt"):
 						
-								MiscScripts.scr_create_blood(position.x+8, position.y+8, 1)
+								MiscScripts.scr_create_blood(position.x+8, position.y+8, 1, self)
 								obj.hp -= 1
 								obj.sprite_index = "alien_boss_hurt"
 								obj.image_speed = 0.8
@@ -448,7 +448,7 @@ func step():
 					
 						else:
 					
-							MiscScripts.scr_create_blood(obj.position.x+8, obj.position.y+8, 1)
+							MiscScripts.scr_create_blood(obj.position.x+8, obj.position.y+8, 1, self)
 							obj.hp -= 1
 							obj.orig_x = position.x
 							obj.orig_y = position.y
