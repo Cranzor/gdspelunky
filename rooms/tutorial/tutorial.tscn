@@ -13,7 +13,7 @@ script = ExtResource("1_8s7xq")
 
 [node name="TextureRect" parent="." instance=ExtResource("3_kyms1")]
 
-[node name="ObjectsHolder" type="Node2D" parent="."]
+[node name="ObjectsHolder" type="Node" parent="."]
 
 [node name="FpsCounter" parent="." instance=ExtResource("4_00qvr")]
 

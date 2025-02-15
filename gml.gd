@@ -445,11 +445,11 @@ func tile_layer_find(depth, x, y): #---[FLAG] have to implement this. returns th
 func tile_delete(id): #---[FLAG] have to implement this
 	pass
 
-func random(x):
-	return randi_range(0, x - 1)
+func random(x): #---[FLAG] may be a float?
+	return randi_range(0, x)
 
 func rand(x1, x2):
-	return randi_range(x1, x2 - 1)
+	return randi_range(x1, x2)
 
 #---------------------------------------
 func get_all_instances(group: String): #Replacement for 'with' keyword
@@ -459,9 +459,10 @@ func get_all_instances(group: String): #Replacement for 'with' keyword
 
 func view(view_value: String):
 	var view = view_node
-	view.force_update_scroll()
+	#view.force_update_scroll()
 	
 	if view != null:
+		view.force_update_scroll()
 		
 		if view_value == 'xview':
 			return round(view.get_screen_center_position().x - 160)

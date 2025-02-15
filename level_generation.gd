@@ -936,7 +936,7 @@ func scr_init_level():
 	global.start_room_y = 0
 	global.end_room_x = 0
 	global.end_room_y = 0
-	game.level_gen = false
+	#game.level_gen = false #--- commenting out because this is not used for anything
 
 	# DY:  this is used to determine the path to the exit (generally no bombs required)
 	for i in range(0, 4):
@@ -1061,7 +1061,7 @@ func scr_init_level():
 
 	global.dark_level = false
 	# DY: if (not global.had_dark_level and global.curr_level != 0 and global.level_type != 2 and global.curr_level != 16 and gml.rand(1,1) == 1):
-	if (not global.had_dark_level and not global.ndark_level and global.curr_level != 0 and global.curr_level != 1 and global.level_type != 2 and global.curr_level != 16 and gml.rand(1,global.prob_dark_level) == 1):
+	if (not global.had_dark_level and not global.no_dark_level and global.curr_level != 0 and global.curr_level != 1 and global.level_type != 2 and global.curr_level != 16 and gml.rand(1,global.prob_dark_level) == 1):
 
 		global.dark_level = true
 		global.had_dark_level = true
@@ -1137,7 +1137,7 @@ func scr_init_level():
 		
 
 
-	game.level_gen = true
+	#game.level_gen = true #--- commenting out because this is not used for anything
 
 	# DY:  generate angry shopkeeper at exit if murderer or thief:
 	if (global.murderer or global.thief_level > 0):
@@ -1169,7 +1169,7 @@ func scr_init_level():
 
 		if (water_instance.sprite_index == "water_top" or water_instance.sprite_index == "lava_top"):
 		
-			water_instance.scr_check_water_top()
+			scr_check_water_top(water_instance)
 		
 		#/*
 			#obj = gml.instance_place(position.x-16, position.y, water)
@@ -2581,7 +2581,7 @@ func scr_setup_walls(placement):
 			ice_instance.sprite_index = "ice_block"
 		
 
-	var all_temples = gml.get_instance("temple")
+	var all_temples = gml.get_all_instances("temple")
 	for temple_instance in all_temples:
 
 		temple_instance.up = false
@@ -2665,7 +2665,7 @@ func scr_setup_walls(placement):
 				temple_instance.sprite_index = "temple_down"
 		
 
-	var all_temple_fakes = gml.get_instance("temple_fake")
+	var all_temple_fakes = gml.get_all_instances("temple_fake")
 	for temple_fake_instance in all_temple_fakes:
 
 		temple_fake_instance.up = false
@@ -2784,7 +2784,7 @@ func scr_setup_walls(placement):
 		
 		
 
-	var all_lava = gml.get_instance("lava")
+	var all_lava = gml.get_all_instances("lava")
 	for lava_instance in all_lava:
 
 		lava_instance.up = false
