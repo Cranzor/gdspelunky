@@ -198,8 +198,13 @@ func distance_to_object(obj: String, node): #Make this more accurate with this i
 func distance_to_point(x, y, node): #--- used only once in the whole game (vampire step event)
 	pass
 
-func point_direction(x1, y1, x2, y2): #---[FLAG] have to implement
-	pass
+func point_direction(x1, y1, x2, y2): #---[FLAG] may need to adjust angle to be more like GML (uses different orientation)
+	var point1 = Vector2(x1, y1)
+	var point2 = Vector2(x2, y2)
+	
+	var angle = point1.angle_to_point(point2)
+	angle = radtodeg(angle)
+	return -angle
 		
 func instance_place(x,y,obj: String, comparison_object): #' Returns the id of the instance of type obj met when the current instance is placed at position (x,y). obj can be an object or the keyword all. If it does not exist, the special object noone is returned.'
 	#--- think this function actually accounts for precise checking
