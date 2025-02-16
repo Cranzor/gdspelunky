@@ -66559,3 +66559,35 @@ const room_database = {
 		}
 	}	
 }
+
+const rooms_extents = {
+ "credits1" : Vector2(336, 224),
+ "credits2" : Vector2(336, 224),
+ "end" : Vector2(656, 240),
+ "end2" : Vector2(0, 0),
+ "end3" : Vector2(304, 224),
+ "end_custom" : Vector2(304, 224),
+ "highscores" : Vector2(320, 240),
+ "intro" : Vector2(976, 224),
+ "joy_config" : Vector2(0, 0),
+ "key_config" : Vector2(0, 0),
+ "level" : Vector2(528, 400),
+ "level2" : Vector2(672, 592),
+ "level3" : Vector2(528, 528),
+ "level_editor" : Vector2(672, 528),
+ "load_level" : Vector2(672, 528),
+ "moon" : Vector2(304, 240),
+ "olmec" : Vector2(672, 864),
+ "screen_init" : Vector2(48, 0),
+ "stars" : Vector2(320, 240),
+ "sun" : Vector2(320, 240),
+ "title" : Vector2(640, 224),
+ "transition1" : Vector2(304, 224),
+ "transition1x" : Vector2(304, 224),
+ "transition2" : Vector2(304, 224),
+ "transition2x" : Vector2(304, 224),
+ "transition3" : Vector2(304, 224),
+ "transition3x" : Vector2(304, 224),
+ "transition4" : Vector2(304, 224),
+ "tutorial" : Vector2(672, 288),
+}
