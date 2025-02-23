@@ -472,9 +472,9 @@ func camera_setup():
 		var view = preload("res://view.tscn")
 		view = view.instantiate()
 		var animated_sprite = get_animated_sprite_2d()
-		view.limit_left = 0
-		view.limit_right = 960
-		view.limit_bottom = 240
+		#view.limit_left = 0
+		#view.limit_right = 960
+		#view.limit_bottom = 240
 		animated_sprite.add_child(view)
 			
 #--- Helper function to set up a single animation for an AnimatedSprite2D
