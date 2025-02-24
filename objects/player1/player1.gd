@@ -4512,7 +4512,7 @@ func animation_end():
 				global.has_jordans = false
 				global.arrows = 0
 			
-			get_tree().change_scene("res://title.tscn")
+			get_tree().change_scene_to_file("res://rooms/title/title.tscn")
 		
 		elif (p_exit == x_end):
 		

@@ -4,4 +4,5 @@
 
 [node name="View" type="Camera2D" groups=["view"]]
 drag_horizontal_enabled = true
+drag_vertical_enabled = true
 script = ExtResource("1_4fpx2")

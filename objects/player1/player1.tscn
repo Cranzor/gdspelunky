@@ -24,3 +24,5 @@ script = ExtResource("486_8kwyl")
 [node name="View" parent="." instance=ExtResource("4_0a32v")]
 limit_left = 0
 limit_top = 0
+drag_top_margin = 0.4
+drag_bottom_margin = 0.4

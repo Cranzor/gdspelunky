@@ -26,14 +26,12 @@ func _process(delta: float) -> void:
 
 
 func _physics_process(delta: float) -> void:
-	#var offset_limit = limit_bottom - 240
-	#offset.y = clamp(offset.y, 0, offset_limit)
-	pass
-	
-	#var pixel_position = get_screen_center_position().y + 120
-	#var pos_with_offset = pixel_position + offset.y
-	#if pixel_position > limit_bottom:
-		#offset.y -= 4
+		var bottom_view = get_screen_center_position().y + 120
+		var player1 = gml.get_instance("player1")
+		var bottom_diff = bottom_view - player1.position.y
+		
+		if bottom_diff > 144: #--- reason for 144 is bottom of the screen is 240, and vborder is 96. 240 - 96 = 144.
+			offset.y -= bottom_diff - 144 #diff being at 144 means player y position is at the top of the border, resulting in one pixel down + one pixel up cancelling out
 
 func set_camera_limits() -> void:
 	var rooms = Rooms.new()
@@ -44,6 +42,9 @@ func set_camera_limits() -> void:
 	limit_top = 0
 	limit_right = camera_extents.x
 	limit_bottom = camera_extents.y
+	
+	drag_top_margin = 0.25
+	drag_bottom_margin = 0.25
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_pressed("debug"):
@@ -58,12 +59,14 @@ func _input(event: InputEvent) -> void:
 		#else:
 			#print("no")
 		
-		var bottom_view = get_screen_center_position().y + 120
-		var player1 = gml.get_instance("player1")
-		var diff = bottom_view - player1.position.y
-		print(diff)
+		#var bottom_view = get_screen_center_position().y + 120
+		#var player1 = gml.get_instance("player1")
+		#var diff = bottom_view - player1.position.y
+		#print(diff)
+		print(offset.y)
+		print(drag_bottom_margin)
 		
 	
 	if Input.is_action_pressed("debug2"):
-		offset.y -= 1
+		offset.y += 1
 	
