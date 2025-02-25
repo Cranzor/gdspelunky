@@ -59,8 +59,8 @@ var room_width: int:
 		
 var view_vborder: int: #--- vertical boundary of camera. original code always has it as view_vborder[0]
 	set(value):
-		view_node.drag_top_margin = (float(value) / 2) / 240
-		view_node.drag_bottom_margin = (float(value) / 2) / 240
+		view_node.drag_top_margin = ((float(value) / 2) + view_node.offset.y) / 240
+		view_node.drag_bottom_margin = ((float(value) / 2) + view_node.offset.y) / 240
 		
 	get:
 		return view_node.drag_top_margin #--- can return only one as the top/bottom should always be the same

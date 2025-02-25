@@ -23,6 +23,9 @@ func _process(delta: float) -> void:
 	
 	if offset.y < 0:
 		offset.y = 0
+	
+	#if offset.y > 0:
+		#drag_bottom_margin = (48 + offset.y) / 240
 
 
 func _physics_process(delta: float) -> void:
@@ -43,8 +46,8 @@ func set_camera_limits() -> void:
 	limit_right = camera_extents.x
 	limit_bottom = camera_extents.y
 	
-	drag_top_margin = 0.25
-	drag_bottom_margin = 0.25
+	drag_top_margin = 0.2
+	drag_bottom_margin = 0.2
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_pressed("debug"):
