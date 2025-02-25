@@ -791,13 +791,13 @@ func start_weapon_animation():
 
 		if (hold_item):
 		
-			if (hold_item.type == "Machete"):
+			if (hold_item.type == "machete"):
 			
 				var obj = gml.instance_create(position.x-16, position.y, "slash")
 				obj.sprite_index = "slash_left"
 				Audio.play_sound(global.snd_whip)
 			
-			elif (hold_item.type == "Mattock"):
+			elif (hold_item.type == "mattock"):
 			
 				var obj = gml.instance_create(position.x-16, position.y, "mattock_hit")
 				obj.sprite_index = "mattock_hit_l"
@@ -824,13 +824,13 @@ func start_weapon_animation():
 
 		if (hold_item):
 		
-			if (hold_item.type == "Machete"):
+			if (hold_item.type == "machete"):
 			
 				var obj = gml.instance_create(position.x+16, position.y, "slash")
 				obj.sprite_index = "slash_right"
 				Audio.play_sound(global.snd_whip)
 			
-			elif (hold_item.type == "Mattock"):
+			elif (hold_item.type == "mattock"):
 			
 				var obj = gml.instance_create(position.x+16, position.y, "mattock_hit")
 				obj.sprite_index = "mattock_hit_r"
@@ -1475,7 +1475,7 @@ func bomb_rope_and_whipping_handling(): #--- Also handles picking up items and a
 			
 			else:
 			
-				var obj = gml.instance_create(position.x, position.y, "rope_throw")
+				var obj = gml.instance_create(position.x, position.y, Objects.rope_throw)
 				obj.armed = true
 				obj.px = position.x
 				obj.py = position.y
@@ -1527,7 +1527,7 @@ func bomb_rope_and_whipping_handling(): #--- Also handles picking up items and a
 		global.bombs -= 1
 		Audio.play_sound(global.snd_throw)
 
-	elif (hold_item == null):
+	elif (hold_item == 0):
 
 		if (k_attack_pressed and state != DUCKING and state != DUCKTOHANG and not whipping and
 			sprite_index != "p_exit" and sprite_index != "damsel_exit"):
