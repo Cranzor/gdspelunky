@@ -426,9 +426,7 @@ func sprite_setup(object_entry):
 			
 			new_animated_sprite.sprite_frames = sprite_frames
 			#new_animated_sprite.name = "AnimatedSprite2D"
-			new_animated_sprite.name = "
-			
-			MainAnimations"
+			new_animated_sprite.name = "MainAnimations"
 			new_animated_sprite.z_index = depth
 			new_animated_sprite.add_to_group("animated_sprite", true)
 			animated_sprite_node = new_animated_sprite
@@ -445,8 +443,6 @@ func sprite_setup(object_entry):
 			var collision_size
 			var collision_position
 			if shape == "RECTANGLE":
-				if object_name == "palm_tree_dark":
-					print("hi")
 				collision_size = sprite_entry["mask"]["collision_rectangles"][1]
 				collision_position = collision_size / 2 + sprite_entry["mask"]["collision_rectangles"][0]
 				collision_position -= sprite_entry["origin"]

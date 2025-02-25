@@ -1493,7 +1493,7 @@ func bomb_rope_and_whipping_handling(): #--- Also handles picking up items and a
 
 	elif (in_game and k_bomb_pressed and global.bombs > 0 and not whipping):
 
-		var obj = gml.instance_create(position.x, position.y, "bomb")
+		var obj = gml.instance_create(position.x, position.y, Objects.bomb)
 		if (global.has_sticky_bombs): obj.sticky = true
 		obj.sprite_index = "bomb_armed"
 		obj.armed = true

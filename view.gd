@@ -51,23 +51,8 @@ func set_camera_limits() -> void:
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_pressed("debug"):
-		#var normal_view = get_screen_center_position().y - offset.y		
-		#print("----")
-		#print("screen center: " + str(normal_view))
-		#print("offset: " + str(offset.y))
-		#print("total: " + str(normal_view + offset.y + 120))
-		#print("limit bottom: " + str(limit_bottom))
-		#if normal_view + offset.y + 120 > limit_bottom:
-			#print("yes")
-		#else:
-			#print("no")
-		
-		#var bottom_view = get_screen_center_position().y + 120
-		#var player1 = gml.get_instance("player1")
-		#var diff = bottom_view - player1.position.y
-		#print(diff)
-		print(offset.y)
-		print(drag_bottom_margin)
+		var player1 = gml.get_instance("player1")
+		player1.sprite_index = "gold_idol"
 		
 	
 	if Input.is_action_pressed("debug2"):

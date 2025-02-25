@@ -25,3 +25,5 @@ script = ExtResource("1_wjvgk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_7pdo1")
+
+[connection signal="animation_changed" from="." to="." method="_on_animation_changed"]
