@@ -209,29 +209,31 @@ func point_direction(x1, y1, x2, y2): #---[FLAG] may need to adjust angle to be 
 		
 func instance_place(x,y,obj: String, comparison_object): #' Returns the id of the instance of type obj met when the current instance is placed at position (x,y). obj can be an object or the keyword all. If it does not exist, the special object noone is returned.'
 	#--- think this function actually accounts for precise checking
-	var bounding_box: Vector2
-	var position_with_offset: Vector2
-	
-	var comparison_current_sprite = comparison_object.sprite_index
-	var offset = sprite_database.sprite_database[comparison_current_sprite]["origin"]
-	
-	if sprite_database.sprite_database[comparison_current_sprite]["mask"]["shape"] == "RECTANGLE":
-		bounding_box = sprite_database.sprite_database[comparison_current_sprite]["mask"]["collision_rectangles"][1]
-		#position_with_offset = collision_handling.get_position_with_offset_applied(Vector2(x, y), offset - sprite_database.sprite_database[obj]["mask"]["collision_rectangles"][0])
-		position_with_offset = collision_handling.get_position_with_offset_applied(Vector2(x, y), offset - sprite_database.sprite_database[comparison_current_sprite]["mask"]["collision_rectangles"][0])
-	
-	var comparison_rect: Rect2 = Rect2(position_with_offset, bounding_box)
-	
-	var returned_node = null
-	var nodes_to_check = collision_handling.get_nodes_to_check(obj, comparison_rect)
-
-	for node in nodes_to_check:
-		var intersecting: bool = collision_handling.check_individual_collision(node, comparison_rect)
-		if intersecting == true:
-			returned_node = node
-			return returned_node
-			
-	return null
+	#var bounding_box: Vector2
+	#var position_with_offset: Vector2
+	#
+	#var comparison_current_sprite = comparison_object.sprite_index
+	#var offset = sprite_database.sprite_database[comparison_current_sprite]["origin"]
+	#
+	#if sprite_database.sprite_database[comparison_current_sprite]["mask"]["shape"] == "RECTANGLE":
+		#bounding_box = sprite_database.sprite_database[comparison_current_sprite]["mask"]["collision_rectangles"][1]
+		##position_with_offset = collision_handling.get_position_with_offset_applied(Vector2(x, y), offset - sprite_database.sprite_database[obj]["mask"]["collision_rectangles"][0])
+		#position_with_offset = collision_handling.get_position_with_offset_applied(Vector2(x, y), offset - sprite_database.sprite_database[comparison_current_sprite]["mask"]["collision_rectangles"][0])
+	#
+	#var comparison_rect: Rect2 = Rect2(position_with_offset, bounding_box)
+	#
+	#var returned_node = null
+	#var nodes_to_check = collision_handling.get_nodes_to_check(obj, comparison_rect)
+#
+	#for node in nodes_to_check:
+		#var intersecting: bool = collision_handling.check_individual_collision(node, comparison_rect)
+		#if intersecting == true:
+			#returned_node = node
+			#return returned_node
+			#
+	#return null
+	var comparison_object_collision_shape_size = comparison_object.get_node("Sprites/MainAnimations/Area2D/CollisionShape2D").shape.get_rect().size
+	return handle_collision_ray(x, y, comparison_object_collision_shape_size.x, comparison_object_collision_shape_size.y, obj)
 
 func instance_position(x, y, obj: String): #---[FLAG] this needs checked
 	var intersecting = collision_point(x, y, obj, 0, 0)

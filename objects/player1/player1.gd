@@ -3300,7 +3300,7 @@ func handle_ladder_climbing2():
 		#ladder = 0 #--- Setting to zero seems to do nothing, so commenting out
 		var ladder_instance = gml.instance_place(position.x, position.y-8, 'ladder', self)
 		#if (gml.instance_exists('ladder')):
-		if ladder_instance != null: #--- changing this to more closely match the original code
+		if ladder_instance: #--- changing this to more closely match the original code
 		
 			if (abs(position.x-(ladder_instance.position.x+8)) < 4):
 			
