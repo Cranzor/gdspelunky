@@ -3235,7 +3235,8 @@ func pressing_down_behavior():
 			
 				#ladder_instance = 0 #--- Setting to zero seems to do nothing, so commenting out
 				var ladder_instance = gml.instance_place(position.x, position.y+16, 'ladder', self)
-				if (gml.instance_exists('ladder')):
+				#if (gml.instance_exists('ladder')):
+				if ladder_instance: #--- changing this to more closely match the original code
 				
 					if (abs(position.x-(ladder_instance.position.x+8)) < 4):
 					
