@@ -507,6 +507,7 @@ func object_tick():
 	run_step_event(self)
 	run_draw_event(self)
 	run_collision_with(self)
+	run_animation_end(self)
 
 	#smooth_motion.tick_end(position, animated_sprite_node)
 
@@ -574,6 +575,15 @@ func run_collision_with(obj):
 			other = gml.instance_nearest(position.x, position.y, object)
 			var callable = collision_with[object]
 			callable.call()
+
+func run_animation_end(obj):
+	if obj.has_method("animation_end"):
+		var animated_sprite = get_animated_sprite_2d()
+		var animation = animated_sprite.animation
+		var sprite_frames = animated_sprite.sprite_frames
+		var amount_of_frames = sprite_frames.get_frame_count(animation)
+		if image_index + 1 == amount_of_frames:
+			obj.animation_end()
 
 func object_process(delta):
 	#smooth_motion.handle_smooth_motion(self, delta, get_physics_process_delta_time())

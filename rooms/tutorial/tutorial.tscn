@@ -18,3 +18,6 @@ script = ExtResource("1_8s7xq")
 [node name="FpsCounter" parent="." instance=ExtResource("4_00qvr")]
 
 [node name="CollisionRay" parent="." instance=ExtResource("5_53681")]
+
+[node name="Line2D" type="Line2D" parent="." groups=["debug_line"]]
+width = 1.0

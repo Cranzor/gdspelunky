@@ -4605,16 +4605,5 @@ func animation_end():
 		
 		global.clean_solids = true
 
-#func _on_new_animated_sprite_2d_animation_finished():
-	#_on_animated_sprite_2d_animation_finished()
-
-##--- animations loop by default, so animation finish never triggers
-#func _on_animated_sprite_2d_animation_looped():
-	#_on_animated_sprite_2d_animation_finished()
-
-func _on_animated_sprite_2d_frame_changed():
-	if gml.animation_end(self, animated_sprite_node) == true:
-		animation_end()
-
 func collision_with_blood(): #---[FLAG] have to implement
 	pass

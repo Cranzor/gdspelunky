@@ -257,7 +257,8 @@ func is_collision_character_right(number, id = 0):
 		if gml.collision_line(round(lb-number),round(tb),round(lb-number),round(bb-1),'character',1,1):#>0:
 			return true
 	return false
-	
+
+@onready var debug_line: Line2D = get_tree().get_first_node_in_group("debug_line")
 func is_collision_left(number, node):
 	#/*
 	#An object can only use this script after calling "set_collision_bounds."
@@ -271,8 +272,21 @@ func is_collision_left(number, node):
 	var bb = all_points_exact.w
 	
 	if gml.collision_line(round(lb-number),round(tb),round(lb-number),round(bb-1),'solid',1,1):#>0:
+		#####----
+		debug_line.clear_points()
+		var x1 = (round(lb-number))
+		var y1 = round(tb)
+		var x2 = round(lb-number)
+		var y2 = round(bb-1)
+		#debug_line.add_point(Vector2(x1, y1))
+		#debug_line.add_point(Vector2((abs(x2 - x1)), abs(y2 - y1)))
+		debug_line.add_point(Vector2(x1, y1))
+		debug_line.add_point(Vector2(x2, y2))
+		debug_line.width = 1
+		debug_line.default_color = Color.RED
+		#####----
 		return true
-
+	debug_line.clear_points()
 	return false
 	
 func is_collision_moveable_solid_left(number, node):
