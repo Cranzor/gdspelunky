@@ -27,7 +27,89 @@ func scr_music_fade():
 		else: SS.set_sound_freq(global.mus_cave, SS.get_sound_freq(global.mus_cave)-100)
 	
 func start_music(): #---[FLAG] have to implement
-	pass
+	var player1 = gml.get_instance("player1") #---[FLAG] may have to change this for multiplayer
+	
+	if (gml.instance_exists("load_level")):
+		var load_level = gml.get_instance("load_level")
+
+		if (load_level.music == "LUSH"):
+		
+			play_music(global.mus_lush, true)
+			SS.set_sound_vol(global.mus_lush, 2000 + 8000 * (global.music_vol/18))
+			SS.set_sound_freq(global.mus_lush, 44100)
+		
+		elif (load_level.music == "ICE"):
+		
+			play_music(global.mus_ice, true)
+			SS.set_sound_vol(global.mus_ice, 2000 + 8000 * (global.music_vol/18))
+			SS.set_sound_freq(global.mus_ice, 44100)
+		
+		elif (load_level.music == "TEMPLE"):
+		
+			play_music(global.mus_temple, true)
+			SS.set_sound_vol(global.mus_temple, 2000 + 8000 * (global.music_vol/18))
+			SS.set_sound_freq(global.mus_temple, 44100)
+		
+		elif (load_level.music == "BOSS"):
+		
+			if (player1.active):
+			
+				play_music(global.mus_boss, true)
+				SS.set_sound_vol(global.mus_boss, 2000 + 8000 * (global.music_vol/18))
+				SS.set_sound_freq(global.mus_boss, 44100)
+			
+		
+		else:
+		
+			play_music(global.mus_cave, true)
+			SS.set_sound_vol(global.mus_cave, 2000 + 8000 * (global.music_vol/18))
+			SS.set_sound_freq(global.mus_cave, 44100)
+		
+		
+
+	elif (InLevel.is_level()):
+
+		if (InLevel.is_room("olmec")):
+		
+			if (player1.active):
+			
+				play_music(global.mus_boss, true)
+				SS.set_sound_vol(global.mus_boss, 2000 + 8000 * (global.music_vol/18))
+				SS.set_sound_freq(global.mus_boss, 44100)
+			
+		
+		elif (global.level_type == 1):
+		
+			play_music(global.mus_lush, true)
+			SS.set_sound_vol(global.mus_lush, 2000 + 8000 * (global.music_vol/18))
+			SS.set_sound_freq(global.mus_lush, 44100)
+		
+		elif (global.level_type == 2):
+		
+			play_music(global.mus_ice, true)
+			SS.set_sound_vol(global.mus_ice, 2000 + 8000 * (global.music_vol/18))
+			SS.set_sound_freq(global.mus_ice, 44100)
+		
+		elif (global.level_type == 3):
+		
+			play_music(global.mus_temple, true)
+			SS.set_sound_vol(global.mus_temple, 2000 + 8000 * (global.music_vol/18))
+			SS.set_sound_freq(global.mus_temple, 44100)
+		
+		else:
+		
+			play_music(global.mus_cave, true)
+			SS.set_sound_vol(global.mus_cave, 2000 + 8000 * (global.music_vol/18))
+			SS.set_sound_freq(global.mus_cave, 44100)
+		
+
+	elif (InLevel.is_room("title")): SS.stop_sound(global.mus_title)
+	elif (InLevel.is_room("sun") or InLevel.is_room("moon") or InLevel.is_room("stars")):
+
+		play_music(global.mus_boss, true)
+		SS.set_sound_vol(global.mus_boss, 2000 + 8000 * (global.music_vol/18))
+		SS.set_sound_freq(global.mus_boss, 44100)
+
 	
 func stop_all_music():
 	SS.stop_sound(global.mus_title)

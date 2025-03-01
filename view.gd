@@ -30,11 +30,13 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 		var bottom_view = get_screen_center_position().y + 120
+		var bottom_diff
 		var player1 = gml.get_instance("player1")
-		var bottom_diff = bottom_view - player1.position.y
+		if player1:
+			bottom_diff = bottom_view - player1.position.y
 		
-		if bottom_diff > 144: #--- reason for 144 is bottom of the screen is 240, and vborder is 96. 240 - 96 = 144.
-			offset.y -= bottom_diff - 144 #diff being at 144 means player y position is at the top of the border, resulting in one pixel down + one pixel up cancelling out
+			if bottom_diff > 144: #--- reason for 144 is bottom of the screen is 240, and vborder is 96. 240 - 96 = 144.
+				offset.y -= bottom_diff - 144 #diff being at 144 means player y position is at the top of the border, resulting in one pixel down + one pixel up cancelling out
 
 func set_camera_limits() -> void:
 	var rooms = Rooms.new()

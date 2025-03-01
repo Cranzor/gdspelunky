@@ -224,6 +224,7 @@ func scr_get_key(key):
 
 func scr_init(): #--- add the rest of this script later
 	global.graphics_high = true
+	global.music_vol = 15 #--- adding this temporarily
 
 func scr_draw_hud():
 	#

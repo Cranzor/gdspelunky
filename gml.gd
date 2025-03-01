@@ -138,7 +138,7 @@ func instance_create(x,y,obj): #should return the node as this is used in script
 	return instance
 	
 func collision_point(x,y,obj: String,_prec,_notme): #"This function tests whether at point (x,y) there is a collision with entities of object obj."
-	return handle_collision_ray(x, y, x + 1, y + 1, obj)
+	return handle_collision_ray(x, y, x, y, obj)
 
 #Always adds bg elements
 func tile_add(background,left,top,width,height,x,y,depth): #return value of tile as well. left: left to right value in pixels. top: top to bottom in pixels
