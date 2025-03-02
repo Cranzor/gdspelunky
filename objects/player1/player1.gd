@@ -3677,7 +3677,7 @@ func handle_basic_movement():
 			# this time we'll move the correct distance, but we need to shorten out the x_vel a little
 			# these lines can be changed for different types of slowing down when running up hills
 			var ratio=abs(x_vel_integer)/dist*0.9        #can be changed
-			move_to( round(x_vel_integer*ratio),round(y_vel_integer*ratio+slope_change_in_y))
+			move_to( gml.gm_round(x_vel_integer*ratio),gml.gm_round(y_vel_integer*ratio+slope_change_in_y))
 	  
 
 	else:
@@ -4145,14 +4145,14 @@ func move_to(x_vel, y_vel):
 	x_vel_integer=0
 	y_vel_integer=0
 	if x_vel_frac!=0:
-		if round(1/x_vel_frac)!=0:
-			if int(time) % int(round(1/x_vel_frac))==0:
+		if gml.gm_round(1/x_vel_frac)!=0:
+			if int(time) % int(gml.gm_round(1/x_vel_frac))==0:
 				x_vel_integer=1
 			else:
 				x_vel_integer=0
 	if y_vel_frac!=0:
-		if round(1/y_vel_frac)!=0:
-			if int(time) % int(round(1/y_vel_frac))==0:
+		if gml.gm_round(1/y_vel_frac)!=0:
+			if int(time) % int(gml.gm_round(1/y_vel_frac))==0:
 				y_vel_integer=1
 			else:
 				y_vel_integer=0
@@ -4162,8 +4162,8 @@ func move_to(x_vel, y_vel):
 		x_vel_integer*=-1
 	if y_vel<0:
 		y_vel_integer*=-1
-	x_vel_integer=round(x_vel_integer)
-	y_vel_integer=round(y_vel_integer)
+	x_vel_integer=gml.gm_round(x_vel_integer)
+	y_vel_integer=gml.gm_round(y_vel_integer)
 	
 	#object is moving to the right
 	if x_vel_integer>0:

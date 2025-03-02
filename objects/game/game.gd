@@ -126,14 +126,14 @@ func game_step_event():
 			moving_solid_instance.x_vel_integer=0
 			moving_solid_instance.y_vel_integer=0
 			if moving_solid_instance.x_vel_frac!=0:
-				if round(1/moving_solid_instance.x_vel_frac)!=0:
-					if self.time % round(1/moving_solid_instance.x_vel_frac)==0:
+				if gml.gm_round(1/moving_solid_instance.x_vel_frac)!=0:
+					if self.time % gml.gm_round(1/moving_solid_instance.x_vel_frac)==0:
 						moving_solid_instance.x_vel_integer = 1
 					else:
 						moving_solid_instance.x_vel_integer = 0
 			if moving_solid_instance.y_vel_frac!=0:
-				if round(1/moving_solid_instance.y_vel_frac)!=0:
-					if self.time % round(1/moving_solid_instance.y_vel_frac) == 0:
+				if gml.gm_round(1/moving_solid_instance.y_vel_frac)!=0:
+					if self.time % gml.gm_round(1/moving_solid_instance.y_vel_frac) == 0:
 						moving_solid_instance.y_vel_integer = 1
 					else:
 						moving_solid_instance.y_vel_integer = 0
@@ -143,8 +143,8 @@ func game_step_event():
 				moving_solid_instance.x_vel_integer*=-1
 			if moving_solid_instance.y_vel<0:
 				moving_solid_instance.y_vel_integer*=-1
-			moving_solid_instance.x_vel_integer=round(moving_solid_instance.x_vel_integer)
-			moving_solid_instance.y_vel_integer=round(moving_solid_instance.y_vel_integer)
+			moving_solid_instance.x_vel_integer=gml.gm_round(moving_solid_instance.x_vel_integer)
+			moving_solid_instance.y_vel_integer=gml.gm_round(moving_solid_instance.y_vel_integer)
 	 		 #calculate the collision bounds of the character -- we'll need it later
 			for character_instance in all_characters:
 				character_instance.calculate_collision_bounds()

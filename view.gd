@@ -58,10 +58,4 @@ func _input(event: InputEvent) -> void:
 		
 	
 	if Input.is_action_pressed("debug2"):
-		gml.gm_round(1)
-		gml.gm_round(1.555)
-		gml.gm_round(1.5)
-		gml.gm_round(-1045.5)
-		gml.gm_round(1022.5)
-		gml.gm_round(-1034.5)
-	
+		pass
