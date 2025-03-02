@@ -11,6 +11,7 @@ func _physics_process(_delta):
 	
 func _process(delta):
 	object_process(delta)
+	#print(x_fric)
 
 #--- Object functions
 
@@ -193,7 +194,10 @@ var col_ladder
 var col_ice_bot
 var looking
 var hang_count_max
-var x_fric
+var x_fric:
+	set(value):
+		x_fric = value
+		
 var y_fric
 var slope_y_prev
 var slope_change_in_y

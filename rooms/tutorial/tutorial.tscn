@@ -20,9 +20,11 @@ script = ExtResource("1_8s7xq")
 [node name="CollisionRay" parent="." instance=ExtResource("5_53681")]
 
 [node name="Line2D" type="Line2D" parent="." groups=["debug_line"]]
+visible = false
 width = 1.0
 
-[node name="DebugGlow" type="ColorRect" parent="." groups=["debug_glow"]]
+[node name="DebugGlow" type="ColorRect" parent="."]
+visible = false
 offset_right = 40.0
 offset_bottom = 40.0
 color = Color(0.713462, 0.000400352, 0.716327, 0.188235)

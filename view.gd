@@ -58,4 +58,5 @@ func _input(event: InputEvent) -> void:
 		
 	
 	if Input.is_action_pressed("debug2"):
-		pass
+		var player1 = gml.get_instance("player1")
+		print(player1.x_vel)

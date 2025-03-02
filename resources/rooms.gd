@@ -66351,15 +66351,15 @@ const room_database = {
 						"y": "72"
 					}
 				},
-				#{
-					#"creation_code": null,
-					#"locked": "false",
-					#"object": "bat",
-					#"position": {
-						#"x": "480",
-						#"y": "176"
-					#}
-				#},
+				{
+					"creation_code": null,
+					"locked": "false",
+					"object": "bat",
+					"position": {
+						"x": "480",
+						"y": "176"
+					}
+				},
 				{
 					"creation_code": null,
 					"locked": "false",

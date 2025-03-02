@@ -194,7 +194,13 @@ var direction #---[FLAG] have to account for this
 var speed #---[FLAG] have to account for this
 var owner_object #---[FLAG] have to account for this
 
-var x_vel = 0
+var x_vel = 0:
+	set(value):
+		x_vel = value
+		if object_name == "player1":
+			if value == 3.038:
+				#print("hm")
+				pass
 var y_vel = 0
 var x_acc = 0
 var y_acc = 0
@@ -638,10 +644,11 @@ func remove_from_collision_grid():
 	remove_from_group("in_collision_grid")
 
 func debug_glow(on_or_off: bool):
-	var debug_glow = get_tree().get_first_node_in_group("debug_glow")
-	if on_or_off == true:
-		debug_glow.position = position
-		debug_glow.size = object_size
-		debug_glow.show()
-	else:
-		debug_glow.hide()
+	#var debug_glow = get_tree().get_first_node_in_group("debug_glow")
+	#if on_or_off == true:
+		#debug_glow.position = position
+		#debug_glow.size = object_size
+		#debug_glow.show()
+	#else:
+		#debug_glow.hide()
+	pass
