@@ -30,7 +30,7 @@ func alarm_1():
 
 	if (held):
 		var character = gml.get_instance("character") #---[FLAG] may have to change this for multiplayer
-		if (character): character.hold_item = 0
+		if (character): character.hold_item = null
 
 	gml.instance_destroy(self)
 

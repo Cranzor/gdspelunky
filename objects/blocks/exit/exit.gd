@@ -1,4 +1,3 @@
-
 extends DrawnSprite
 
 
@@ -21,7 +20,7 @@ func _process(delta):
 #    type = "exit"
 #    leads_to = "" # DY:  used for Level Editor only
 
-    
+	
 
 #func draw():
 #    draw_sprite(sprite_index, -1, position.x, position.y)

@@ -121,7 +121,7 @@ func collision_with_shotgun():
 		if (other.held):
 	
 			var player1 = gml.get_instance("player1") #---[FLAG] may need to change this for multiplayer
-			player1.hold_item = 0
+			player1.hold_item = null
 			player1.pickup_item_type = ""
 			other.held = false
 	
@@ -313,7 +313,8 @@ func step():
 
 		if (status == IDLE or status == FOLLOW):
 
-			if (player1.hold_item > 0):
+			#if (player1.hold_item > 0): --- adjusting this line
+			if (player1.hold_item != null):
 		
 				var item = player1.hold_item
 				if (item.cost > 0):
@@ -514,7 +515,8 @@ func step():
 		
 			if (dist < 12 or player1.position.y < position.y): x_vel = 0
 		
-			if (player1.hold_item != 0):
+			#if (player1.hold_item != 0):
+			if (player1.hold_item != null):
 		
 				var obj = player1.hold_item
 				if (obj == 0 or obj.cost == 0):
@@ -720,7 +722,7 @@ func step():
 					if (held):
 				
 						held = false
-						player1.hold_item = 0
+						player1.hold_item = null
 						player1.pickup_item_type = ""
 				
 			

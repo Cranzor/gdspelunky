@@ -77,7 +77,8 @@ func step():
 		
 			depth = 1
 		
-			if (character.hold_item == 0):
+			#if (character.hold_item == 0):
+			if (character.hold_item == null):
 		
 				held = false
 		
@@ -236,7 +237,7 @@ func step():
 				
 						obj.held = false
 						var player1 = gml.get_instance("player1") #---[FLAG] may need to change this for multiplayer
-						player1.hold_item = 0
+						player1.hold_item = null
 						player1.pickup_item_type = ""
 				
 					obj.hp -= 1

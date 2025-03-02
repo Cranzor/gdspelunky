@@ -56,7 +56,7 @@ func collision_with_character():
 				if (facing == LEFT): other.hold_item.x_vel = -2
 				else: other.hold_item.x_vel = 2
 				other.hold_item.y_vel = -4
-				other.hold_item = 0
+				other.hold_item = null
 		
 		
 			status = IDLE

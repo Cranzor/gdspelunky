@@ -106,7 +106,7 @@ func collision_with_character():
 					else: other.hold_item.x_vel = 2
 					other.hold_item.y_vel = -4
 			
-				other.hold_item = 0
+				other.hold_item = null
 				other.pickup_item_type = ""
 
 
@@ -121,7 +121,7 @@ func collision_with_damsel():
 	
 		if (other.held):
 			var player1 = gml.get_instance("player1") #---[FLAG] may have to change this for multiplayer
-			player1.hold_item = 0
+			player1.hold_item = null
 			player1.pickup_item_type = ""
 	
 		gml.instance_destroy(other)
@@ -368,7 +368,7 @@ func step():
 							if (gml.collision_point(position.x+16, position.y+8, "solid", 0, 0)): position.x = player1.position.x - 12
 							elif (gml.collision_point(position.x, position.y+8, "solid", 0, 0)): position.x = player1.position.x - 4
 							position.y = player1.position.y - 8
-							player1.hold_item = 0
+							player1.hold_item = null
 							player1.pickup_item_type = ""
 					
 				

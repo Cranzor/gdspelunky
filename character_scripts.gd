@@ -43,7 +43,7 @@ func scr_drop_item(x_vel, y_vel):
 
 	else:
 
-		player1.hold_item = 0
+		player1.hold_item = null
 		player1.pickup_item_type = ""
 	
 func scr_fire_bow():
@@ -79,7 +79,7 @@ func scr_hold_item(passed_item_type):
 
 	if (item_type == ""):
 
-		player1.hold_item = 0
+		player1.hold_item = null
 		player1.pickup_item_type = ""
 
 	else:
@@ -112,7 +112,7 @@ func scr_hold_item(passed_item_type):
 		
 		else:
 		
-			player1.hold_item = 0
+			player1.hold_item = null
 			player1.pickup_item_type = ""
 
 

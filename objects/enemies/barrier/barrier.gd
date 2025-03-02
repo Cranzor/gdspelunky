@@ -50,7 +50,7 @@ func collision_with_item():
 
 	if (other.held):
 		var character = gml.get_instance("character") #---[FLAG] may have to change for multiplayer
-		if (character): character.hold_item = 0
+		if (character): character.hold_item = null
 
 
 func collision_with_web_ball():

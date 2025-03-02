@@ -49,7 +49,7 @@ func step():
 		Audio.play_sound(global.snd_splash)
 		if (held):
 			var player1 = gml.get_instance("player1") #---[FLAG] may need to adjust for multiplayer
-			player1.hold_item = 0
+			player1.hold_item = null
 			player1.pickup_item_type = ""
 		
 			held = false

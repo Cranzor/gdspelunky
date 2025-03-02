@@ -353,7 +353,7 @@ func step():
 						#else:
 					#
 							#hold_item.held = false
-							#hold_item = 0
+							#hold_item = null
 							#pickup_item_type = ""
 					#
 						#*/

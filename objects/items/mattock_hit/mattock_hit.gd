@@ -60,7 +60,7 @@ func animation_end():
 		if (gml.rand(1,20) == 1 and not global.is_tunnel_man):
 	
 			var player1 = gml.get_instance("player1") #---[FLAG] may have to change this for multiplayer
-			player1.hold_item = 0
+			player1.hold_item = null
 			player1.pickup_item_type = ""
 			global.pickup_item = ""
 		

@@ -386,7 +386,7 @@ func step():
 					if (held):
 				
 						held = false
-						player1.hold_item = 0
+						player1.hold_item = null
 						player1.pickup_item_type = ""
 				
 			

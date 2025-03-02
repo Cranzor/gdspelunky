@@ -177,7 +177,7 @@ func destroy():
 
 	if (held):
 		var player1 = gml.get_instance("player1") #---[FLAG] may have to change this for multiplayer
-		player1.hold_item = 0
+		player1.hold_item = null
 		player1.pickup_item = ""
 
 
@@ -222,7 +222,8 @@ func step():
 		
 			depth = 1
 		
-			if (player1.hold_item == 0 or status < 98):
+			#if (player1.hold_item == 0 or status < 98):
+			if (player1.hold_item == null or status < 98):
 		
 				held = false
 		

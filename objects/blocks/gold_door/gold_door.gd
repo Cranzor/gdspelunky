@@ -25,7 +25,7 @@ func collision_with_sceptre():
 			var all_player1s = gml.get_all_instances("player1")
 			for player1_instance in all_player1s:
 		
-				player1_instance.hold_item = 0
+				player1_instance.hold_item = null
 				player1_instance.pickup_item_type = ""
 		
 			gml.instance_destroy(other)

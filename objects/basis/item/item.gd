@@ -143,8 +143,8 @@ func step():
 				else: position.y = player1.position.y+2
 			
 			depth = 1
-			if (player1.hold_item == 0): #---[FLAG] changing 0 to null. #--- changed this back for now. should make this consistent across project
-			#if (player1.hold_item == null):
+			#if (player1.hold_item == 0): #--- 0 changed to null
+			if (player1.hold_item == null):
 			
 				held = false
 			
@@ -461,7 +461,7 @@ func step():
 							obj.held = false
 							
 							var player1 = gml.get_instance("player1") #---[FLAG] may have to change this for multiplayer
-							player1.hold_item = 0
+							player1.hold_item = null
 							player1.pickup_item_type = ""
 						
 						obj.hp -= 1
@@ -497,4 +497,4 @@ func alarm_2():
 func destroy():
 	if (held):
 		var player1 = gml.get_instance("player1") #---[FLAG] may have to change this for multiplayer
-		player1.hold_item = 0
+		player1.hold_item = null

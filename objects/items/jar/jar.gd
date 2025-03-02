@@ -38,7 +38,7 @@ func collision_with_whip():
 	elif (gml.rand(1,12) == 1): gml.instance_create(position.x-8, position.y-8, Objects.snake)
 	if (held):
 		var player1 = gml.get_instance("player1") #---[FLAG] may need to change this for multiplayer
-		player1.hold_item = 0
+		player1.hold_item = null
 		player1.pickup_item_type = ""
 
 	gml.instance_destroy(self)
@@ -89,7 +89,7 @@ func destroy():
 	
 		if (held):
 			var player1 = gml.get_instance("player1") #---[FLAG] may need to change this for multiplayer
-			player1.hold_item = 0
+			player1.hold_item = null
 			player1.pickup_item = ""
 
 
@@ -256,7 +256,7 @@ func step():
 	
 		if (enemy.held): enemy.held = false
 		var player1 = gml.get_instance("player1") #---[FLAG] may have to change this for multiplayer
-		player1.hold_item = 0
+		player1.hold_item = null
 		enemy.hp -= 1
 		enemy.y_vel = -6
 		enemy.status = 2
@@ -271,7 +271,7 @@ func step():
 
 		if (held):
 			var player1 = gml.get_instance("player1") #---[FLAG] may need to change this for multiplayer
-			player1.hold_item = 0
+			player1.hold_item = null
 			player1.pickup_item_type = ""
 	
 		gml.instance_destroy(self)

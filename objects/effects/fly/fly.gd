@@ -50,7 +50,7 @@ func collision_with_damsel():
 	
 			other.held = false
 			var player1 = gml.get_instance("player1") #---[FLAG] may have to change this for multiplayer
-			player1.hold_item = 0
+			player1.hold_item = null
 	
 		other.hp -= 2
 		other.y_vel = -6

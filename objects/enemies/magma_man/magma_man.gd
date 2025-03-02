@@ -40,7 +40,7 @@ func collision_with_bomb():
 
 	if (other.held):
 		var character = gml.get_instance("character") #---[FLAG] may have to change this for multiplayer
-		if (character): character.hold_item = 0
+		if (character): character.hold_item = null
 
 
 func collision_with_character():
