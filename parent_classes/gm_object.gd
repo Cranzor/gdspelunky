@@ -636,3 +636,12 @@ func compare_grid_position_with_tester(tester_position):
 
 func remove_from_collision_grid():
 	remove_from_group("in_collision_grid")
+
+func debug_glow(on_or_off: bool):
+	var debug_glow = get_tree().get_first_node_in_group("debug_glow")
+	if on_or_off == true:
+		debug_glow.position = position
+		debug_glow.size = object_size
+		debug_glow.show()
+	else:
+		debug_glow.hide()

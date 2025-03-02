@@ -62776,6 +62776,26 @@ const room_database = {
 						"y": "48"
 					}
 				},
+				#################################
+				{
+					"creation_code": null,
+					"locked": "false",
+					"object": "brick",
+					"position": {
+						"x": "448",
+						"y": "80"
+					}
+				},
+				{
+					"creation_code": null,
+					"locked": "false",
+					"object": "brick",
+					"position": {
+						"x": "608",
+						"y": "80"
+					}
+				},
+				#################################
 				{
 					"creation_code": null,
 					"locked": "false",
@@ -66331,15 +66351,15 @@ const room_database = {
 						"y": "72"
 					}
 				},
-				{
-					"creation_code": null,
-					"locked": "false",
-					"object": "bat",
-					"position": {
-						"x": "480",
-						"y": "176"
-					}
-				},
+				#{
+					#"creation_code": null,
+					#"locked": "false",
+					#"object": "bat",
+					#"position": {
+						#"x": "480",
+						#"y": "176"
+					#}
+				#},
 				{
 					"creation_code": null,
 					"locked": "false",

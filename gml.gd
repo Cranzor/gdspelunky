@@ -435,6 +435,21 @@ func random(x): #---[FLAG] may be a float?
 func rand(x1, x2):
 	return randi_range(x1, x2)
 
+func gm_round(n):
+	var return_val
+	if abs(n - int(n)) == 0.5:
+		if not fmod(round(float(n)), 2.0) == 0:
+			if n > 0:
+				return_val = round(n) - 1.0
+			else:
+				return_val = round(n) + 1.0
+		else:
+			return_val = round(n)
+	else:
+		return_val = round(n)
+	print(return_val)
+	return return_val
+
 #---------------------------------------
 func get_all_instances(group: String): #Replacement for 'with' keyword
 	var all_instances = get_tree().get_nodes_in_group(group)
@@ -588,6 +603,9 @@ func handle_collision_ray(x1, y1, x2, y2, obj):
 			var object_node = collider.get_parent().get_parent().get_parent()
 			var groups = object_node.get_groups()
 			if obj in groups:
+				#####---
+				object_node.debug_glow(true)
+				#####---
 				return object_node
 
 	return false

@@ -279,14 +279,12 @@ func is_collision_left(number, node):
 		var x2 = round(lb-number)
 		var y2 = round(bb-1)
 		#debug_line.add_point(Vector2(x1, y1))
-		#debug_line.add_point(Vector2((abs(x2 - x1)), abs(y2 - y1)))
-		debug_line.add_point(Vector2(x1, y1))
-		debug_line.add_point(Vector2(x2, y2))
+		#debug_line.add_point(Vector2(x2, y2))
 		debug_line.width = 1
 		debug_line.default_color = Color.RED
 		#####----
 		return true
-	debug_line.clear_points()
+
 	return false
 	
 func is_collision_moveable_solid_left(number, node):
@@ -336,8 +334,19 @@ func is_collision_right(number, node):
 	var bb = all_points_exact.w
 	
 	if gml.collision_line(round(rb+number-1),round(tb),round(rb+number-1),round(bb-1),'solid',1,1):#>0:
+		#####----
+		debug_line.clear_points()
+		var x1 = (round(rb+number-1))
+		var y1 = round(tb)
+		var x2 = round(rb+number-1)
+		var y2 = round(bb-1)
+		debug_line.add_point(Vector2(x1, y1))
+		debug_line.add_point(Vector2(x2, y2))
+		debug_line.width = 1
+		debug_line.default_color = Color.RED
+		#####----
 		return true
-
+	debug_line.clear_points()
 	return false
 
 #---Vertical---
