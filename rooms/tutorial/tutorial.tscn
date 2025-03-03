@@ -84,6 +84,6 @@ color = Color(0.713462, 0.000400352, 0.716327, 0.188235)
 
 [node name="Test" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_lvptm")
-frame_progress = 0.00853815
+frame_progress = 0.86118
 centered = false
 offset = Vector2(-24, -8)
