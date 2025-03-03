@@ -1,10 +1,63 @@
-[gd_scene load_steps=6 format=3 uid="uid://dpevsukwrfdu"]
+[gd_scene load_steps=17 format=3 uid="uid://dpevsukwrfdu"]
 
 [ext_resource type="Script" path="res://rooms/tutorial/tutorial.gd" id="1_8s7xq"]
 [ext_resource type="PackedScene" uid="uid://b2jlcu453ynaf" path="res://bg_elements.tscn" id="1_73yn2"]
 [ext_resource type="PackedScene" uid="uid://chivya8n7oo3x" path="res://texture_rect.tscn" id="3_kyms1"]
 [ext_resource type="PackedScene" uid="uid://b8sip2nv63phc" path="res://FPSCounter.tscn" id="4_00qvr"]
 [ext_resource type="PackedScene" uid="uid://8pect2ibgg6e" path="res://scenes/collision/collision_ray.tscn" id="5_53681"]
+[ext_resource type="Texture2D" uid="uid://b704hoxlqf8qn" path="res://sprites/character/main dude/duck_to_hang_l/duck_to_hang_l_0.png" id="6_nbvvd"]
+[ext_resource type="Texture2D" uid="uid://dbylc26f05ecr" path="res://sprites/character/main dude/duck_to_hang_l/duck_to_hang_l_1.png" id="7_hhsje"]
+[ext_resource type="Texture2D" uid="uid://dwbacdkx25sun" path="res://sprites/character/main dude/duck_to_hang_l/duck_to_hang_l_2.png" id="8_h22xp"]
+[ext_resource type="Texture2D" uid="uid://ccehdhnxvrsxr" path="res://sprites/character/main dude/duck_to_hang_l/duck_to_hang_l_3.png" id="9_mdvj6"]
+[ext_resource type="Texture2D" uid="uid://d3ab7spdt1axc" path="res://sprites/character/main dude/duck_to_hang_l/duck_to_hang_l_4.png" id="10_erdsw"]
+[ext_resource type="Texture2D" uid="uid://b7croubp53ncf" path="res://sprites/character/main dude/duck_to_hang_l/duck_to_hang_l_5.png" id="11_5wo8j"]
+[ext_resource type="Texture2D" uid="uid://co1h68vbgp87v" path="res://sprites/character/main dude/duck_to_hang_l/duck_to_hang_l_6.png" id="12_umlrl"]
+[ext_resource type="Texture2D" uid="uid://dte2fcuq6kooj" path="res://sprites/character/main dude/duck_to_hang_l/duck_to_hang_l_7.png" id="13_digvl"]
+[ext_resource type="Texture2D" uid="uid://bp83e3611jbur" path="res://sprites/character/main dude/duck_to_hang_l/duck_to_hang_l_8.png" id="14_k1jxh"]
+[ext_resource type="Texture2D" uid="uid://dbfljnxxluub6" path="res://sprites/character/main dude/stand_left/stand_left_0.png" id="15_1pmyj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lvptm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_nbvvd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_hhsje")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_h22xp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_mdvj6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_erdsw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_5wo8j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_umlrl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_digvl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_k1jxh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_1pmyj")
+}],
+"loop": true,
+"name": &"stand",
+"speed": 5.0
+}]
 
 [node name="Tutorial" type="Node2D" groups=["objects_holder"]]
 script = ExtResource("1_8s7xq")
@@ -28,3 +81,9 @@ visible = false
 offset_right = 40.0
 offset_bottom = 40.0
 color = Color(0.713462, 0.000400352, 0.716327, 0.188235)
+
+[node name="Test" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_lvptm")
+frame_progress = 0.00853815
+centered = false
+offset = Vector2(-24, -8)

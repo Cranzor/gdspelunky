@@ -273,15 +273,15 @@ func is_collision_left(number, node):
 	
 	if gml.collision_line(gml.gm_round(lb-number),gml.gm_round(tb),gml.gm_round(lb-number),gml.gm_round(bb-1),'solid',1,1):#>0:
 		#####----
-		debug_line.clear_points()
-		var x1 = (gml.gm_round(lb-number))
-		var y1 = gml.gm_round(tb)
-		var x2 = gml.gm_round(lb-number)
-		var y2 = gml.gm_round(bb-1)
-		#debug_line.add_point(Vector2(x1, y1))
-		#debug_line.add_point(Vector2(x2, y2))
-		debug_line.width = 1
-		debug_line.default_color = Color.RED
+		#debug_line.clear_points()
+		#var x1 = (gml.gm_round(lb-number))
+		#var y1 = gml.gm_round(tb)
+		#var x2 = gml.gm_round(lb-number)
+		#var y2 = gml.gm_round(bb-1)
+		##debug_line.add_point(Vector2(x1, y1))
+		##debug_line.add_point(Vector2(x2, y2))
+		#debug_line.width = 1
+		#debug_line.default_color = Color.RED
 		#####----
 		return true
 
@@ -335,18 +335,18 @@ func is_collision_right(number, node):
 	
 	if gml.collision_line(gml.gm_round(rb+number-1),gml.gm_round(tb),gml.gm_round(rb+number-1),gml.gm_round(bb-1),'solid',1,1):#>0:
 		#####----
-		debug_line.clear_points()
-		var x1 = (gml.gm_round(rb+number-1))
-		var y1 = gml.gm_round(tb)
-		var x2 = gml.gm_round(rb+number-1)
-		var y2 = gml.gm_round(bb-1)
-		debug_line.add_point(Vector2(x1, y1))
-		debug_line.add_point(Vector2(x2, y2))
-		debug_line.width = 1
-		debug_line.default_color = Color.RED
+		#debug_line.clear_points()
+		#var x1 = (gml.gm_round(rb+number-1))
+		#var y1 = gml.gm_round(tb)
+		#var x2 = gml.gm_round(rb+number-1)
+		#var y2 = gml.gm_round(bb-1)
+		#debug_line.add_point(Vector2(x1, y1))
+		#debug_line.add_point(Vector2(x2, y2))
+		#debug_line.width = 1
+		#debug_line.default_color = Color.RED
 		#####----
 		return true
-	debug_line.clear_points()
+
 	return false
 
 #---Vertical---

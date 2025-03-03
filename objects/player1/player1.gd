@@ -1338,7 +1338,7 @@ func bomb_rope_and_whipping_handling(): #--- Also handles picking up items and a
 				
 				if (global.rope > 0):
 				
-					hold_item = gml.instance_create(position.x, position.y, "rope_throw")
+					hold_item = gml.instance_create(position.x, position.y, Objects.rope_throw)
 					hold_item.held = true
 					global.rope -= 1
 					whoa_timer = whoa_timer_max

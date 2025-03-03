@@ -147,21 +147,13 @@ var subimg:
 
 var image_xscale: float:
 	set(value):
-		if value == -1:
-			animated_sprite_node.flip_h = true
-		else:
-			animated_sprite_node.scale.x = value
-			animated_sprite_node.flip_h = false
+		animated_sprite_node.scale.x = value
 	get:
 		return animated_sprite_node.scale.x #--- [FLAG] may need to be adjusted
 		
 var image_yscale: float:
 	set(value):
-		if value == -1:
-			animated_sprite_node.flip_v = true
-		else:
-			animated_sprite_node.scale.y = value
-			animated_sprite_node.flip_v = false
+		animated_sprite_node.scale.y = value
 	get:
 		return animated_sprite_node.scale.y
 		
@@ -250,12 +242,7 @@ func set_sprite_offset(new_sprite):
 	var animated_sprite = get_animated_sprite_2d()
 	sprite_offset = sprites.sprite_database[new_sprite]["origin"]
 	
-	#sprite_offset = sprites_and_offsets[new_sprite] --- got rid of this variable so won't work. update this with new collision
-	if !animated_sprite.flip_h:
-		animated_sprite.offset = -sprite_offset
-		
-	else:
-		animated_sprite.offset = -sprite_offset
+	animated_sprite.offset = -sprite_offset
 
 var x_velocity = 0
 var y_velocity = 0
