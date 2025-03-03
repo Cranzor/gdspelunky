@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b0kkrtj83blfp"]
 
-[ext_resource type="Script" path="res://objects/level editor/damsel_tile/damsel_tile.gd" id="1_17sek"]
+[ext_resource type="Script" uid="uid://cd5mofgfndh7j" path="res://objects/level editor/damsel_tile/damsel_tile.gd" id="1_17sek"]
 
 [node name="DamselTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_17sek")

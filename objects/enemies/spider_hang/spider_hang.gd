@@ -57,7 +57,7 @@ func step():
 
 		if (hp < 1):
 
-			MiscScripts.scr_create_blood(position.x+8, position.y+8, 3)
+			MiscScripts.scr_create_blood(position.x+8, position.y+8, 3, self)
 			if (InLevel.is_real_level()): global.enemy_kills[2] += 1
 			global.spiders += 1
 			global.kills += 1

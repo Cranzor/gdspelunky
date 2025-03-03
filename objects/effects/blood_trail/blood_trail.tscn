@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://n4f87aplw0yx"]
 
-[ext_resource type="Script" path="res://objects/effects/blood_trail/blood_trail.gd" id="1_0cxxk"]
+[ext_resource type="Script" uid="uid://bo3shi3hitppi" path="res://objects/effects/blood_trail/blood_trail.gd" id="1_0cxxk"]
 
 [node name="BloodTrail" type="Node2D"]
 script = ExtResource("1_0cxxk")

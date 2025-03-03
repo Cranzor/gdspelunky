@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://kib8fqk13upj"]
 
-[ext_resource type="Script" path="res://objects/traps/spears_left/spears_left.gd" id="1_c1vcq"]
+[ext_resource type="Script" uid="uid://d1bakbsr0c538" path="res://objects/traps/spears_left/spears_left.gd" id="1_c1vcq"]
 
 [node name="SpearsLeft" type="Node2D"]
 script = ExtResource("1_c1vcq")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cnqucw6irno58"]
 
-[ext_resource type="Script" path="res://objects/level editor/edit_button/edit_button.gd" id="1_acvnu"]
+[ext_resource type="Script" uid="uid://d3ym7sycg18yh" path="res://objects/level editor/edit_button/edit_button.gd" id="1_acvnu"]
 
 [node name="EditButton" type="Node2D"]
 script = ExtResource("1_acvnu")

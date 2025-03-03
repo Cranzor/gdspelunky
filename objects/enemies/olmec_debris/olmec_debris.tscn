@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bf7j7e830gc6x"]
 
-[ext_resource type="Script" path="res://objects/enemies/olmec_debris/olmec_debris.gd" id="1_fgcsc"]
+[ext_resource type="Script" uid="uid://c1254sj3nppn5" path="res://objects/enemies/olmec_debris/olmec_debris.gd" id="1_fgcsc"]
 
 [node name="OlmecDebris" type="Node2D"]
 script = ExtResource("1_fgcsc")

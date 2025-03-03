@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dnd8oo5pk7wj7"]
 
-[ext_resource type="Script" path="res://objects/level editor/shotgun_tile/shotgun_tile.gd" id="1_pkg4u"]
+[ext_resource type="Script" uid="uid://bgnvlht715q4h" path="res://objects/level editor/shotgun_tile/shotgun_tile.gd" id="1_pkg4u"]
 
 [node name="ShotgunTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_pkg4u")

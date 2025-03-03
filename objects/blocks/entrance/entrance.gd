@@ -14,8 +14,6 @@ func _process(delta):
 
 
 #--- Object functions
-var leads_to
-
 
 #func create():
 	#type = "exit"

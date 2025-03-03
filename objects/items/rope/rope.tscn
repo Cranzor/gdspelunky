@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b56uhwt5w7ffm"]
 
-[ext_resource type="Script" path="res://objects/items/rope/rope.gd" id="1_75ulf"]
+[ext_resource type="Script" uid="uid://dy5gegmcr1fte" path="res://objects/items/rope/rope.gd" id="1_75ulf"]
 
 [node name="Rope" type="Node2D"]
 z_index = -200

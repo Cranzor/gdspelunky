@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dpki0wfufn3i2"]
 
-[ext_resource type="Script" path="res://objects/level editor/load_button/load_button.gd" id="1_7bnyc"]
+[ext_resource type="Script" uid="uid://8x5rot15anx5" path="res://objects/level editor/load_button/load_button.gd" id="1_7bnyc"]
 
 [node name="LoadButton" type="Node2D"]
 script = ExtResource("1_7bnyc")

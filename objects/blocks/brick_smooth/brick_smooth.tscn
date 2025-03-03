@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://t16tsipk7hyj"]
 
-[ext_resource type="Script" path="res://objects/blocks/brick_smooth/brick_smooth.gd" id="1_df582"]
+[ext_resource type="Script" uid="uid://cwqu72fx53dds" path="res://objects/blocks/brick_smooth/brick_smooth.gd" id="1_df582"]
 
 [node name="BrickSmooth" type="Node2D"]
 z_index = -110

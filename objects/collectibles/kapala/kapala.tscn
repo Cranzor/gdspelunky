@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dnm6cj6yte7yb"]
 
-[ext_resource type="Script" path="res://objects/collectibles/kapala/kapala.gd" id="1_qo1q3"]
+[ext_resource type="Script" uid="uid://cshmoruiireay" path="res://objects/collectibles/kapala/kapala.gd" id="1_qo1q3"]
 
 [node name="Kapala" type="Node2D"]
 script = ExtResource("1_qo1q3")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cq1mffol3nnac"]
 
-[ext_resource type="Script" path="res://snake_test.gd" id="1_a1v20"]
+[ext_resource type="Script" uid="uid://c1xvt11tdtfuv" path="res://snake_test.gd" id="1_a1v20"]
 [ext_resource type="Texture2D" uid="uid://br1ansd6sm643" path="res://snake_left.png" id="1_jatfw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hk31p"]

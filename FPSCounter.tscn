@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b8sip2nv63phc"]
 
-[ext_resource type="Script" path="res://fps_counter.gd" id="1_5aw23"]
+[ext_resource type="Script" uid="uid://6gfki1hwdkrq" path="res://fps_counter.gd" id="1_5aw23"]
 [ext_resource type="FontFile" uid="uid://dgd06bxddo4pq" path="res://fonts/small_font.png" id="2_jjlen"]
 
 [node name="FpsCounter" type="CanvasLayer"]

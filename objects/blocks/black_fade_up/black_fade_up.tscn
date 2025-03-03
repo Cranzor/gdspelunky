@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b535suql4v5ca"]
 
-[ext_resource type="Script" path="res://objects/blocks/black_fade_up/black_fade_up.gd" id="1_v8281"]
+[ext_resource type="Script" uid="uid://d210lhfpaeqoj" path="res://objects/blocks/black_fade_up/black_fade_up.gd" id="1_v8281"]
 
 [node name="BlackFadeUp" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_v8281")

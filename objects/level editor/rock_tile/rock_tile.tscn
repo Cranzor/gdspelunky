@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bqbnx4y7xd1vy"]
 
-[ext_resource type="Script" path="res://objects/level editor/rock_tile/rock_tile.gd" id="1_inrvs"]
+[ext_resource type="Script" uid="uid://bhbc0vocjyhws" path="res://objects/level editor/rock_tile/rock_tile.gd" id="1_inrvs"]
 
 [node name="RockTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_inrvs")

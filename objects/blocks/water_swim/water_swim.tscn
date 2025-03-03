@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bddqqwb5jfu5j"]
 
-[ext_resource type="Script" path="res://objects/blocks/water_swim/water_swim.gd" id="1_3w8dt"]
+[ext_resource type="Script" uid="uid://lirvn2c8rwk8" path="res://objects/blocks/water_swim/water_swim.gd" id="1_3w8dt"]
 
 [node name="WaterSwim" type="Node2D"]
 script = ExtResource("1_3w8dt")

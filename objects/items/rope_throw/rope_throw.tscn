@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cemg03lulx62j"]
 
-[ext_resource type="Script" path="res://objects/items/rope_throw/rope_throw.gd" id="1_fslem"]
+[ext_resource type="Script" uid="uid://ddygtrogut5ww" path="res://objects/items/rope_throw/rope_throw.gd" id="1_fslem"]
 
 [node name="RopeThrow" type="Node2D"]
 z_index = -100

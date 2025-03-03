@@ -147,7 +147,7 @@ func step():
 
 		if (hp < 1):
 
-			MiscScripts.scr_create_blood(position.x+14+gml.rand(0,4), position.y+14+gml.rand(0,4), 4)
+			MiscScripts.scr_create_blood(position.x+14+gml.rand(0,4), position.y+14+gml.rand(0,4), 4, self)
 			for repetition in range(4):
 		
 				gml.instance_create(position.x+14+gml.rand(0,4), position.y+12+gml.rand(0,6), Objects.bone)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bfh1x2nvr1xp0"]
 
-[ext_resource type="Script" path="res://objects/blocks/alien_ship/alien_ship.gd" id="1_if8tg"]
+[ext_resource type="Script" uid="uid://dhj71nr83tyy" path="res://objects/blocks/alien_ship/alien_ship.gd" id="1_if8tg"]
 
 [node name="AlienShip" type="Node2D"]
 script = ExtResource("1_if8tg")

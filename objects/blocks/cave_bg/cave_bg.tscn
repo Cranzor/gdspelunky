@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c1nft158wkr41"]
 
-[ext_resource type="Script" path="res://objects/blocks/cave_bg/cave_bg.gd" id="1_22c6x"]
+[ext_resource type="Script" uid="uid://uev35tdiq2dj" path="res://objects/blocks/cave_bg/cave_bg.gd" id="1_22c6x"]
 
 [node name="CaveBg" type="Node2D"]
 script = ExtResource("1_22c6x")

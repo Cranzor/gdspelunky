@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b6ej1ad6pv2mx"]
 
-[ext_resource type="Script" path="res://objects/collectibles/rope_bag/rope_bag.gd" id="1_8exb3"]
+[ext_resource type="Script" uid="uid://lr256i4r4bcn" path="res://objects/collectibles/rope_bag/rope_bag.gd" id="1_8exb3"]
 
 [node name="RopeBag" type="Node2D"]
 script = ExtResource("1_8exb3")

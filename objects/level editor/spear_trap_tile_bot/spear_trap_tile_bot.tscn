@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://crm73cv6tfkxs"]
 
-[ext_resource type="Script" path="res://objects/level editor/spear_trap_tile_bot/spear_trap_tile_bot.gd" id="1_4ot17"]
+[ext_resource type="Script" uid="uid://bgceproaex5iv" path="res://objects/level editor/spear_trap_tile_bot/spear_trap_tile_bot.gd" id="1_4ot17"]
 
 [node name="SpearTrapTileBot" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_4ot17")

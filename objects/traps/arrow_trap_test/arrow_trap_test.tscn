@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ckoud5055nwru"]
 
-[ext_resource type="Script" path="res://objects/traps/arrow_trap_test/arrow_trap_test.gd" id="1_03keg"]
+[ext_resource type="Script" uid="uid://dwl35a4a40wpb" path="res://objects/traps/arrow_trap_test/arrow_trap_test.gd" id="1_03keg"]
 
 [node name="ArrowTrapTest" type="Node2D"]
 script = ExtResource("1_03keg")

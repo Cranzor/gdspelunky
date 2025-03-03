@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ci4o6thdcbhso"]
 
-[ext_resource type="Script" path="res://objects/traps/arrow_trap_right_lit/arrow_trap_right_lit.gd" id="1_0148k"]
+[ext_resource type="Script" uid="uid://c637i2lm2j4cd" path="res://objects/traps/arrow_trap_right_lit/arrow_trap_right_lit.gd" id="1_0148k"]
 
 [node name="ArrowTrapRightLit" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_0148k")

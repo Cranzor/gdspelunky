@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://gs3fuw48xstm"]
 
-[ext_resource type="Script" path="res://objects/other/p_dummy3/p_dummy3.gd" id="1_sgunq"]
+[ext_resource type="Script" uid="uid://btuuh56httbs3" path="res://objects/other/p_dummy3/p_dummy3.gd" id="1_sgunq"]
 
 [node name="PDummy3" type="Node2D"]
 z_index = -40

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dcu266l5t6wa6"]
 
-[ext_resource type="Script" path="res://objects/blocks/x_gold/x_gold.gd" id="1_slq83"]
+[ext_resource type="Script" uid="uid://bgem8bhl0d3ts" path="res://objects/blocks/x_gold/x_gold.gd" id="1_slq83"]
 
 [node name="XGold" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_slq83")

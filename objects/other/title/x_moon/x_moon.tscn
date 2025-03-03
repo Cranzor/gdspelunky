@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bg7800bj5q26k"]
 
-[ext_resource type="Script" path="res://objects/other/title/x_moon/x_moon.gd" id="1_e3y4b"]
+[ext_resource type="Script" uid="uid://bb1ua7x0qqnty" path="res://objects/other/title/x_moon/x_moon.gd" id="1_e3y4b"]
 
 [node name="XMoon" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_e3y4b")

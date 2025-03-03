@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cpmvk8vwcyopg"]
 
-[ext_resource type="Script" path="res://objects/enemies/man_trap/man_trap.gd" id="1_oy3mt"]
+[ext_resource type="Script" uid="uid://d18fb6m4jx7k0" path="res://objects/enemies/man_trap/man_trap.gd" id="1_oy3mt"]
 
 [node name="ManTrap" type="Node2D"]
 script = ExtResource("1_oy3mt")

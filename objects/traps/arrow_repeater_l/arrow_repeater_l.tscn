@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bxvxyri3cpavt"]
 
-[ext_resource type="Script" path="res://objects/traps/arrow_repeater_l/arrow_repeater_l.gd" id="1_7v1xc"]
+[ext_resource type="Script" uid="uid://bbk477sdpx21e" path="res://objects/traps/arrow_repeater_l/arrow_repeater_l.gd" id="1_7v1xc"]
 
 [node name="ArrowRepeaterL" type="Node2D"]
 script = ExtResource("1_7v1xc")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dsy8sqawph7ei"]
 
-[ext_resource type="Script" path="res://objects/other/title/quit_sign/quit_sign.gd" id="1_cp6cu"]
+[ext_resource type="Script" uid="uid://b4oat4ye8tcmp" path="res://objects/other/title/quit_sign/quit_sign.gd" id="1_cp6cu"]
 
 [node name="QuitSign" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_cp6cu")

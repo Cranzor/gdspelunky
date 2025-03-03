@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bceyr3nrnoofk"]
 
-[ext_resource type="Script" path="res://objects/other/title/scores_sign/scores_sign.gd" id="1_s12rd"]
+[ext_resource type="Script" uid="uid://yg0hlo14tb37" path="res://objects/other/title/scores_sign/scores_sign.gd" id="1_s12rd"]
 
 [node name="ScoresSign" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_s12rd")

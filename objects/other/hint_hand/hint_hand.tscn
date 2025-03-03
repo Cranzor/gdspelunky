@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cg1p7emtoarge"]
 
-[ext_resource type="Script" path="res://objects/other/hint_hand/hint_hand.gd" id="1_qkv0d"]
+[ext_resource type="Script" uid="uid://b2abe10m28yr4" path="res://objects/other/hint_hand/hint_hand.gd" id="1_qkv0d"]
 [ext_resource type="FontFile" uid="uid://dgd06bxddo4pq" path="res://fonts/small_font.png" id="7_3r5tb"]
 
 [node name="HintHand" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]

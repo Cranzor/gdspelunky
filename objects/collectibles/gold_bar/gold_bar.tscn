@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dllqpxosvn6dg"]
 
-[ext_resource type="Script" path="res://objects/collectibles/gold_bar/gold_bar.gd" id="1_g87dv"]
+[ext_resource type="Script" uid="uid://dw51ffyey27hk" path="res://objects/collectibles/gold_bar/gold_bar.gd" id="1_g87dv"]
 
 [node name="GoldBar" type="Node2D"]
 script = ExtResource("1_g87dv")

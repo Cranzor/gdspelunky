@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bxjq0si0wbcu8"]
 
-[ext_resource type="Script" path="res://objects/level editor/hawkman_tile/hawkman_tile.gd" id="1_2ljr7"]
+[ext_resource type="Script" uid="uid://bwvsabnsvng1n" path="res://objects/level editor/hawkman_tile/hawkman_tile.gd" id="1_2ljr7"]
 
 [node name="HawkmanTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_2ljr7")

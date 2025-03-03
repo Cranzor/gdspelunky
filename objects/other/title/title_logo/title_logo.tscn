@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://7xer5wdayt4e"]
 
-[ext_resource type="Script" path="res://objects/other/title/title_logo/title_logo.gd" id="1_gpqy7"]
+[ext_resource type="Script" uid="uid://drnu01kuop6g5" path="res://objects/other/title/title_logo/title_logo.gd" id="1_gpqy7"]
 
 [node name="TitleLogo" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_gpqy7")

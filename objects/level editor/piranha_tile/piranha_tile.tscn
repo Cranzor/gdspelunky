@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://rfgf17s832gb"]
 
-[ext_resource type="Script" path="res://objects/level editor/piranha_tile/piranha_tile.gd" id="1_k2nh1"]
+[ext_resource type="Script" uid="uid://bkkcn1flw38fs" path="res://objects/level editor/piranha_tile/piranha_tile.gd" id="1_k2nh1"]
 
 [node name="PiranhaTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_k2nh1")

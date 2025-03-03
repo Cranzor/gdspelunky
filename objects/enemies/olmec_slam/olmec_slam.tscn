@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bqyx8qx0jjdvu"]
 
-[ext_resource type="Script" path="res://objects/enemies/olmec_slam/olmec_slam.gd" id="1_c7j2p"]
+[ext_resource type="Script" uid="uid://dtvhnrcjlouph" path="res://objects/enemies/olmec_slam/olmec_slam.gd" id="1_c7j2p"]
 
 [node name="OlmecSlam" type="Node2D"]
 script = ExtResource("1_c7j2p")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dj8dwkj30ffac"]
 
-[ext_resource type="Script" path="res://objects/effects/flame_trail/flame_trail.gd" id="1_so1m0"]
+[ext_resource type="Script" uid="uid://dkvxie50iwtox" path="res://objects/effects/flame_trail/flame_trail.gd" id="1_so1m0"]
 
 [node name="FlameTrail" type="Node2D"]
 script = ExtResource("1_so1m0")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dhdtsgvpsyeuw"]
 
-[ext_resource type="Script" path="res://objects/enemies/scarab/scarab.gd" id="1_cdlw0"]
+[ext_resource type="Script" uid="uid://dl4tj2gv3jxc6" path="res://objects/enemies/scarab/scarab.gd" id="1_cdlw0"]
 
 [node name="Scarab" type="Node2D"]
 script = ExtResource("1_cdlw0")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ddter4pmfqhjb"]
 
-[ext_resource type="Script" path="res://objects/level editor/gold_idol_tile/gold_idol_tile.gd" id="1_c4cd5"]
+[ext_resource type="Script" uid="uid://ceax6gac6hr62" path="res://objects/level editor/gold_idol_tile/gold_idol_tile.gd" id="1_c4cd5"]
 
 [node name="GoldIdolTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_c4cd5")

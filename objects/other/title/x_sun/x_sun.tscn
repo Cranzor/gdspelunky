@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bennr15rhgy7w"]
 
-[ext_resource type="Script" path="res://objects/other/title/x_sun/x_sun.gd" id="1_qiwqj"]
+[ext_resource type="Script" uid="uid://b5ko2c17b53ui" path="res://objects/other/title/x_sun/x_sun.gd" id="1_qiwqj"]
 
 [node name="XSun" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_qiwqj")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dlkjt654qbhar"]
 
-[ext_resource type="Script" path="res://objects/enemies/caveman_worship/caveman_worship.gd" id="1_4elcy"]
+[ext_resource type="Script" uid="uid://cpbpfeo1iipes" path="res://objects/enemies/caveman_worship/caveman_worship.gd" id="1_4elcy"]
 
 [node name="CavemanWorship" type="Node2D"]
 script = ExtResource("1_4elcy")

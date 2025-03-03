@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b7efd7axp8cyp"]
 
-[ext_resource type="Script" path="res://objects/final_boss/final_boss.gd" id="1_n36wt"]
+[ext_resource type="Script" uid="uid://c1iiubj5dpmhf" path="res://objects/final_boss/final_boss.gd" id="1_n36wt"]
 
 [node name="FinalBoss" type="Node2D"]
 script = ExtResource("1_n36wt")

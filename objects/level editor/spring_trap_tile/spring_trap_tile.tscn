@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://hckpahlspj8w"]
 
-[ext_resource type="Script" path="res://objects/level editor/spring_trap_tile/spring_trap_tile.gd" id="1_dpt1x"]
+[ext_resource type="Script" uid="uid://b066fs4pd6hr" path="res://objects/level editor/spring_trap_tile/spring_trap_tile.gd" id="1_dpt1x"]
 
 [node name="SpringTrapTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_dpt1x")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dku6yfyjrry0a"]
 
-[ext_resource type="Script" path="res://objects/level editor/man_trap_tile/man_trap_tile.gd" id="1_m5i1x"]
+[ext_resource type="Script" uid="uid://7hvak1quhmae" path="res://objects/level editor/man_trap_tile/man_trap_tile.gd" id="1_m5i1x"]
 
 [node name="ManTrapTile" type="Node2D"]
 script = ExtResource("1_m5i1x")

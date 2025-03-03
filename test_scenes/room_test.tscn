@@ -1,6 +1,5 @@
 [gd_scene load_steps=8 format=3 uid="uid://c4wdmp8r2eo7t"]
 
-[ext_resource type="Script" path="res://Test Scenes/room_test.gd" id="1_5hivt"]
 [ext_resource type="PackedScene" uid="uid://be14vogv2v7e1" path="res://base_room.tscn" id="2_6sl4e"]
 [ext_resource type="FontFile" uid="uid://cjfa4ea02s5yi" path="res://fonts/main_font.png" id="3_l0bgv"]
 [ext_resource type="FontFile" uid="uid://dgd06bxddo4pq" path="res://fonts/small_font.png" id="4_7kuce"]
@@ -8,8 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://dxk74orkbwm5u" path="res://objects/player1/player1.tscn" id="6_0bgfa"]
 [ext_resource type="PackedScene" uid="uid://dimbvflcml3em" path="res://objects/screen/screen.tscn" id="7_rcpk0"]
 
+[sub_resource type="Resource" id="Resource_i4wpd"]
+metadata/__load_path__ = "res://Test Scenes/room_test.gd"
+
 [node name="r_level" type="Node2D"]
-script = ExtResource("1_5hivt")
+script = SubResource("Resource_i4wpd")
 
 [node name="BaseRoom" parent="." instance=ExtResource("2_6sl4e")]
 

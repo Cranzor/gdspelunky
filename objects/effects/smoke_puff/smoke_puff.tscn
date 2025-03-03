@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://oougsmtnxpqv"]
 
-[ext_resource type="Script" path="res://objects/effects/smoke_puff/smoke_puff.gd" id="1_oj8hq"]
+[ext_resource type="Script" uid="uid://beruirdrohw3a" path="res://objects/effects/smoke_puff/smoke_puff.gd" id="1_oj8hq"]
 
 [node name="SmokePuff" type="Node2D"]
 script = ExtResource("1_oj8hq")

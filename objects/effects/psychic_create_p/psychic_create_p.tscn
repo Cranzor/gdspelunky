@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://w8dfjx1us3pc"]
 
-[ext_resource type="Script" path="res://objects/effects/psychic_create_p/psychic_create_p.gd" id="1_7mdie"]
+[ext_resource type="Script" uid="uid://bjwyo6hlbk1kf" path="res://objects/effects/psychic_create_p/psychic_create_p.gd" id="1_7mdie"]
 
 [node name="PsychicCreateP" type="Node2D"]
 script = ExtResource("1_7mdie")

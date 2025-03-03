@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://qkx8bdhgk7uv"]
 
-[ext_resource type="Script" path="res://test_scenes/brick_test.gd" id="1_viixp"]
+[ext_resource type="Script" uid="uid://bfgevjoe61yqm" path="res://test_scenes/brick_test.gd" id="1_viixp"]
 [ext_resource type="Texture2D" uid="uid://wasy1yo3pejo" path="res://brick.png" id="1_yrybw"]
 
 [node name="Brick" type="Node2D" groups=["brick", "solid"]]

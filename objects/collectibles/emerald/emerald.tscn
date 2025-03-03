@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c4d7q1dnted32"]
 
-[ext_resource type="Script" path="res://objects/collectibles/emerald/emerald.gd" id="1_rafxc"]
+[ext_resource type="Script" uid="uid://b2t0y5boyclft" path="res://objects/collectibles/emerald/emerald.gd" id="1_rafxc"]
 
 [node name="Emerald" type="Node2D"]
 script = ExtResource("1_rafxc")

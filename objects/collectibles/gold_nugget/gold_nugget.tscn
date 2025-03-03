@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://d2uq1y13rkcye"]
 
-[ext_resource type="Script" path="res://objects/collectibles/gold_nugget/gold_nugget.gd" id="1_axhcy"]
+[ext_resource type="Script" uid="uid://ca7kveiap6m5u" path="res://objects/collectibles/gold_nugget/gold_nugget.gd" id="1_axhcy"]
 
 [node name="GoldNugget" type="Node2D"]
 script = ExtResource("1_axhcy")

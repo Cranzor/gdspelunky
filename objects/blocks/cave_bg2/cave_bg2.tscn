@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://duy0bvbxq1dn2"]
 
-[ext_resource type="Script" path="res://objects/blocks/cave_bg2/cave_bg2.gd" id="1_p1bhx"]
+[ext_resource type="Script" uid="uid://cbsiy2q1ynghm" path="res://objects/blocks/cave_bg2/cave_bg2.gd" id="1_p1bhx"]
 
 [node name="CaveBg2" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = 998

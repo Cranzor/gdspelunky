@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://d0bji4vx3tykb"]
 
-[ext_resource type="Script" path="res://objects/init/radio_box/radio_box.gd" id="1_4wgky"]
+[ext_resource type="Script" uid="uid://jvtspefs081n" path="res://objects/init/radio_box/radio_box.gd" id="1_4wgky"]
 
 [node name="RadioBox" type="Node2D"]
 script = ExtResource("1_4wgky")

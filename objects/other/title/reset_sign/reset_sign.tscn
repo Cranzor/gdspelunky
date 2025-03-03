@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b7aflfdqnuvhg"]
 
-[ext_resource type="Script" path="res://objects/other/title/reset_sign/reset_sign.gd" id="1_m4m5l"]
+[ext_resource type="Script" uid="uid://b03drajxiptry" path="res://objects/other/title/reset_sign/reset_sign.gd" id="1_m4m5l"]
 
 [node name="ResetSign" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_m4m5l")

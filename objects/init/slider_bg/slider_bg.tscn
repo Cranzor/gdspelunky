@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://hlryhu65icpp"]
 
-[ext_resource type="Script" path="res://objects/init/slider_bg/slider_bg.gd" id="1_0mq70"]
+[ext_resource type="Script" uid="uid://bv0dlcpcvqvsr" path="res://objects/init/slider_bg/slider_bg.gd" id="1_0mq70"]
 
 [node name="SliderBg" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_0mq70")

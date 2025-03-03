@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://j3x62ixf4hy5"]
 
-[ext_resource type="Script" path="res://objects/other/intro/palm_tree_dark/palm_tree_dark.gd" id="1_r1t2r"]
+[ext_resource type="Script" uid="uid://c1c70dcf8w2d" path="res://objects/other/intro/palm_tree_dark/palm_tree_dark.gd" id="1_r1t2r"]
 
 [node name="PalmTreeDark" type="Node2D"]
 script = ExtResource("1_r1t2r")

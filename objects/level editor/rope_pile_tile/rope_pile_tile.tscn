@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bcbqg1amrf164"]
 
-[ext_resource type="Script" path="res://objects/level editor/rope_pile_tile/rope_pile_tile.gd" id="1_0xtig"]
+[ext_resource type="Script" uid="uid://dpnc4n5qutwrf" path="res://objects/level editor/rope_pile_tile/rope_pile_tile.gd" id="1_0xtig"]
 
 [node name="RopePileTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_0xtig")

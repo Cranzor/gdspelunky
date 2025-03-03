@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dkhc64o3ctn1w"]
 
-[ext_resource type="Script" path="res://objects/other/intro/shrub/shrub.gd" id="1_76qtt"]
+[ext_resource type="Script" uid="uid://bv6fqh3omenqh" path="res://objects/other/intro/shrub/shrub.gd" id="1_76qtt"]
 
 [node name="Shrub" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_76qtt")

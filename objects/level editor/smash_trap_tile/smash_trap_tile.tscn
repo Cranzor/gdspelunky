@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bdtrtre0ewag8"]
 
-[ext_resource type="Script" path="res://objects/level editor/smash_trap_tile/smash_trap_tile.gd" id="1_vbymc"]
+[ext_resource type="Script" uid="uid://crp35rv8yowcf" path="res://objects/level editor/smash_trap_tile/smash_trap_tile.gd" id="1_vbymc"]
 
 [node name="SmashTrapTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_vbymc")

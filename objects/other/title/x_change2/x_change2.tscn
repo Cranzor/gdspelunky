@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://gky4tipeo57o"]
 
-[ext_resource type="Script" path="res://objects/other/title/x_change2/x_change_2.gd" id="1_v5rrh"]
+[ext_resource type="Script" uid="uid://c7oonc6wav715" path="res://objects/other/title/x_change2/x_change_2.gd" id="1_v5rrh"]
 
 [node name="XChange2" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_v5rrh")

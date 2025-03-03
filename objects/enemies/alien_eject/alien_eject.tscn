@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dtu6aomvo2ynb"]
 
-[ext_resource type="Script" path="res://objects/enemies/alien_eject/alien_eject.gd" id="1_erfuc"]
+[ext_resource type="Script" uid="uid://dcodr0sfavwq3" path="res://objects/enemies/alien_eject/alien_eject.gd" id="1_erfuc"]
 
 [node name="AlienEject" type="Node2D"]
 script = ExtResource("1_erfuc")

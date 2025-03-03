@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cuj523mo2sniq"]
 
-[ext_resource type="Script" path="res://objects/items/machete_pre/machete_pre.gd" id="1_rb3sv"]
+[ext_resource type="Script" uid="uid://cupwll5jjn6in" path="res://objects/items/machete_pre/machete_pre.gd" id="1_rb3sv"]
 
 [node name="MachetePre" type="Node2D"]
 script = ExtResource("1_rb3sv")

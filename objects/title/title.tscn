@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://vpxeuwqi1ujv"]
 
-[ext_resource type="Script" path="res://objects/title/title.gd" id="1_s0op7"]
+[ext_resource type="Script" uid="uid://byn7osdf2tlc6" path="res://objects/title/title.gd" id="1_s0op7"]
 [ext_resource type="FontFile" uid="uid://dgd06bxddo4pq" path="res://fonts/small_font.png" id="2_wketc"]
 
 [node name="Title" type="Node2D"]

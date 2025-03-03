@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://betxdf0mgp0tt"]
 
-[ext_resource type="Script" path="res://objects/blocks/x_market/x_market.gd" id="1_k313g"]
+[ext_resource type="Script" uid="uid://d04xlfr5hh3oi" path="res://objects/blocks/x_market/x_market.gd" id="1_k313g"]
 
 [node name="XMarket" type="Node2D"]
 script = ExtResource("1_k313g")

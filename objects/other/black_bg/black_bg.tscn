@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://66j4v0mx4bva"]
 
-[ext_resource type="Script" path="res://objects/other/black_bg/black_bg.gd" id="1_sbw03"]
+[ext_resource type="Script" uid="uid://doa0emehjv7cm" path="res://objects/other/black_bg/black_bg.gd" id="1_sbw03"]
 
 [node name="BlackBg" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_sbw03")

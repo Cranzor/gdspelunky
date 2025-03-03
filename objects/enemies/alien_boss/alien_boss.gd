@@ -136,7 +136,7 @@ func step():
 
 			if (gml.rand(1,2) == 1):
 		
-				MiscScripts.scr_create_blood(position.x+8, position.y+gml.rand(14,18), 1)
+				MiscScripts.scr_create_blood(position.x+8, position.y+gml.rand(14,18), 1, self)
 				var blood = gml.instance_create(position.x+8, position.y+gml.rand(14,18), Objects.blood)
 		
 

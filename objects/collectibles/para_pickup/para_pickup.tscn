@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bo22o7is8kwsg"]
 
-[ext_resource type="Script" path="res://objects/collectibles/para_pickup/para_pickup.gd" id="1_728mf"]
+[ext_resource type="Script" uid="uid://xak11lt5fss1" path="res://objects/collectibles/para_pickup/para_pickup.gd" id="1_728mf"]
 
 [node name="ParaPickup" type="Node2D"]
 script = ExtResource("1_728mf")

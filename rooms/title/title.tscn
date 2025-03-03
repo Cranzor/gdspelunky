@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=3 uid="uid://dccnfhv6qaic4"]
 
-[ext_resource type="Script" path="res://rooms/title/title.gd" id="1_8aivo"]
+[ext_resource type="Script" uid="uid://carj3kvawx3h6" path="res://rooms/title/title.gd" id="1_8aivo"]
 [ext_resource type="PackedScene" uid="uid://chivya8n7oo3x" path="res://texture_rect.tscn" id="2_82mmd"]
 [ext_resource type="AudioStream" uid="uid://bcj5koltev2db" path="res://sounds/jump.wav" id="7_41otq"]
 [ext_resource type="PackedScene" uid="uid://8pect2ibgg6e" path="res://scenes/collision/collision_ray.tscn" id="8_hwtff"]
 [ext_resource type="PackedScene" uid="uid://bft8urcdv7lh0" path="res://view.tscn" id="21_4id85"]
 [ext_resource type="PackedScene" uid="uid://b8sip2nv63phc" path="res://FPSCounter.tscn" id="23_57set"]
 [ext_resource type="PackedScene" uid="uid://b2jlcu453ynaf" path="res://bg_elements.tscn" id="24_c1f05"]
-[ext_resource type="Script" path="res://Test.gd" id="25_1dc3y"]
+[ext_resource type="Script" uid="uid://dcoe3it1wi0xk" path="res://Test.gd" id="25_1dc3y"]
 
 [node name="Title" type="Node2D"]
 script = ExtResource("1_8aivo")

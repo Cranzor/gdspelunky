@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://fiv5q4nn2w03"]
 
-[ext_resource type="Script" path="res://objects/blocks/dark/dark.gd" id="1_epkk4"]
+[ext_resource type="Script" uid="uid://bf5rjxmardth0" path="res://objects/blocks/dark/dark.gd" id="1_epkk4"]
 
 [node name="Dark" type="Node2D"]
 z_index = -100

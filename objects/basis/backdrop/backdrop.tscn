@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://daq81j02kna0b"]
 
-[ext_resource type="Script" path="res://objects/basis/backdrop/backdrop.gd" id="1_xqbcu"]
+[ext_resource type="Script" uid="uid://vpvvhqdu3owd" path="res://objects/basis/backdrop/backdrop.gd" id="1_xqbcu"]
 
 [node name="Backdrop" type="Node2D"]
 script = ExtResource("1_xqbcu")

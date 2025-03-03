@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://jka12k0y0us0"]
 
-[ext_resource type="Script" path="res://objects/other/title/x_shortcut13/x_shortcut_13.gd" id="1_euts1"]
+[ext_resource type="Script" uid="uid://drpth7gwbf0rp" path="res://objects/other/title/x_shortcut13/x_shortcut_13.gd" id="1_euts1"]
 
 [node name="XShortcut13" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_euts1")

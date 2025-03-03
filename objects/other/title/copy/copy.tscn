@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dgtujcc118c8d"]
 
-[ext_resource type="Script" path="res://objects/other/title/copy/copy.gd" id="1_fs20y"]
+[ext_resource type="Script" uid="uid://beho7qsfc4ksy" path="res://objects/other/title/copy/copy.gd" id="1_fs20y"]
 
 [node name="Copy" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_fs20y")

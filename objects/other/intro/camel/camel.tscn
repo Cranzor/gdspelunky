@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dwsl2t1lc7iv1"]
 
-[ext_resource type="Script" path="res://objects/other/intro/camel/camel.gd" id="1_782dl"]
+[ext_resource type="Script" uid="uid://djr60q8yrx5kv" path="res://objects/other/intro/camel/camel.gd" id="1_782dl"]
 
 [node name="Camel" type="Node2D"]
 script = ExtResource("1_782dl")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b6h38jsptnmwq"]
 
-[ext_resource type="Script" path="res://objects/items/fire_frog_bomb/fire_frog_bomb.gd" id="1_4222m"]
+[ext_resource type="Script" uid="uid://tqf8x5r7605l" path="res://objects/items/fire_frog_bomb/fire_frog_bomb.gd" id="1_4222m"]
 
 [node name="FireFrogBomb" type="Node2D"]
 script = ExtResource("1_4222m")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bnlnjanngiv56"]
 
-[ext_resource type="Script" path="res://objects/collectibles/ruby/ruby.gd" id="1_kltum"]
+[ext_resource type="Script" uid="uid://duprwry378lww" path="res://objects/collectibles/ruby/ruby.gd" id="1_kltum"]
 
 [node name="Ruby" type="Node2D"]
 script = ExtResource("1_kltum")

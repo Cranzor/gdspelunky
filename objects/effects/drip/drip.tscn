@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cj37r83r78cmw"]
 
-[ext_resource type="Script" path="res://objects/effects/drip/drip.gd" id="1_kpxiv"]
+[ext_resource type="Script" uid="uid://cfdypqa600rn8" path="res://objects/effects/drip/drip.gd" id="1_kpxiv"]
 
 [node name="Drip" type="Node2D"]
 script = ExtResource("1_kpxiv")

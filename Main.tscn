@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://daya2nraw8r6t"]
 
-[ext_resource type="Script" path="res://RoomGen.gd" id="1_4piaa"]
+[ext_resource type="Script" uid="uid://bme1lc3tyb2an" path="res://RoomGen.gd" id="1_4piaa"]
 [ext_resource type="PackedScene" uid="uid://b2jlcu453ynaf" path="res://bg_elements.tscn" id="2_lss11"]
 
 [node name="Main" type="Node2D"]

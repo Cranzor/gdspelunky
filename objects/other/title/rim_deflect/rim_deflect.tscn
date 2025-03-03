@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cokh6e8hnq6ms"]
 
-[ext_resource type="Script" path="res://objects/other/title/rim_deflect/rim_deflect.gd" id="1_6v28t"]
+[ext_resource type="Script" uid="uid://nsdo33pv68be" path="res://objects/other/title/rim_deflect/rim_deflect.gd" id="1_6v28t"]
 
 [node name="RimDeflect" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_6v28t")

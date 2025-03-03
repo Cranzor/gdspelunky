@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://csvacajjnt5hw"]
 
-[ext_resource type="Script" path="res://objects/level editor/web_cannon_tile/web_cannon_tile.gd" id="1_h3asm"]
+[ext_resource type="Script" uid="uid://d0x5naw3y4vol" path="res://objects/level editor/web_cannon_tile/web_cannon_tile.gd" id="1_h3asm"]
 
 [node name="WebCannonTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_h3asm")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dm5rtkkoy7ykh"]
 
-[ext_resource type="Script" path="res://objects/collectibles/mitt/mitt.gd" id="1_wyugp"]
+[ext_resource type="Script" uid="uid://ta6srtoi3vu" path="res://objects/collectibles/mitt/mitt.gd" id="1_wyugp"]
 
 [node name="Mitt" type="Node2D"]
 script = ExtResource("1_wyugp")

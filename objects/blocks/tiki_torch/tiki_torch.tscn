@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://djou1sv5fwnck"]
 
-[ext_resource type="Script" path="res://objects/blocks/tiki_torch/tiki_torch.gd" id="1_jh1ov"]
+[ext_resource type="Script" uid="uid://b08x7nmjqq6dk" path="res://objects/blocks/tiki_torch/tiki_torch.gd" id="1_jh1ov"]
 
 [node name="TikiTorch" type="Node2D"]
 script = ExtResource("1_jh1ov")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cv3pd1bt26k5v"]
 
-[ext_resource type="Script" path="res://objects/blocks/ladder_orange/ladder_orange.gd" id="1_ba3cs"]
+[ext_resource type="Script" uid="uid://ch0r2pchvh6rn" path="res://objects/blocks/ladder_orange/ladder_orange.gd" id="1_ba3cs"]
 
 [node name="LadderOrange" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_ba3cs")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ces2p206w2pl4"]
 
-[ext_resource type="Script" path="res://objects/collectibles/sapphire_big/sapphire_big.gd" id="1_kwlfc"]
+[ext_resource type="Script" uid="uid://5dhapcuyynk4" path="res://objects/collectibles/sapphire_big/sapphire_big.gd" id="1_kwlfc"]
 
 [node name="SapphireBig" type="Node2D"]
 script = ExtResource("1_kwlfc")

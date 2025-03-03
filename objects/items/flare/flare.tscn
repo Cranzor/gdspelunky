@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bv00yotvshpk4"]
 
-[ext_resource type="Script" path="res://objects/items/flare/flare.gd" id="1_xxbaf"]
+[ext_resource type="Script" uid="uid://bb0apgctkmsvw" path="res://objects/items/flare/flare.gd" id="1_xxbaf"]
 
 [node name="Flare" type="Node2D"]
 z_index = -30

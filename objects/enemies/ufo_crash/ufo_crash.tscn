@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dr6xb0psi7p2h"]
 
-[ext_resource type="Script" path="res://objects/enemies/ufo_crash/ufo_crash.gd" id="1_ul1rm"]
+[ext_resource type="Script" uid="uid://cn82rykg1yhll" path="res://objects/enemies/ufo_crash/ufo_crash.gd" id="1_ul1rm"]
 
 [node name="UfoCrash" type="Node2D"]
 script = ExtResource("1_ul1rm")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://vfskfsvxoyqa"]
 
-[ext_resource type="Script" path="res://objects/collectibles/paste/paste.gd" id="1_5758f"]
+[ext_resource type="Script" uid="uid://b1brlu0np66kw" path="res://objects/collectibles/paste/paste.gd" id="1_5758f"]
 
 [node name="Paste" type="Node2D"]
 script = ExtResource("1_5758f")

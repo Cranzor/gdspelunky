@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://70b1ipc6q8t8"]
 
-[ext_resource type="Script" path="res://objects/blocks/vine_top/vine_top.gd" id="1_mqs33"]
+[ext_resource type="Script" uid="uid://8p1j300ckvhd" path="res://objects/blocks/vine_top/vine_top.gd" id="1_mqs33"]
 
 [node name="VineTop" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_mqs33")

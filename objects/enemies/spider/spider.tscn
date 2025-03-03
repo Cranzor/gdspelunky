@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bbc8barned0bx"]
 
-[ext_resource type="Script" path="res://objects/enemies/spider/spider.gd" id="1_qjuiy"]
+[ext_resource type="Script" uid="uid://dpmhtgd7b6tvq" path="res://objects/enemies/spider/spider.gd" id="1_qjuiy"]
 
 [node name="Spider" type="Node2D"]
 script = ExtResource("1_qjuiy")

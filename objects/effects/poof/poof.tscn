@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dw32lrcbmraye"]
 
-[ext_resource type="Script" path="res://objects/effects/poof/poof.gd" id="1_cjwki"]
+[ext_resource type="Script" uid="uid://perr4yh246hu" path="res://objects/effects/poof/poof.gd" id="1_cjwki"]
 
 [node name="Poof" type="Node2D"]
 z_index = -1

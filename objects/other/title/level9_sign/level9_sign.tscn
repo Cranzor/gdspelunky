@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bb3u4sh48o68f"]
 
-[ext_resource type="Script" path="res://objects/other/title/level9_sign/level_9_sign.gd" id="1_se8uf"]
+[ext_resource type="Script" uid="uid://bvhkb4evfjrnt" path="res://objects/other/title/level9_sign/level_9_sign.gd" id="1_se8uf"]
 
 [node name="Level9Sign" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_se8uf")

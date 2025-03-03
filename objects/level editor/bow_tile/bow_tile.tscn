@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://iykvwgp7rpey"]
 
-[ext_resource type="Script" path="res://objects/level editor/bow_tile/bow_tile.gd" id="1_0s62c"]
+[ext_resource type="Script" uid="uid://bk4s063u3855s" path="res://objects/level editor/bow_tile/bow_tile.gd" id="1_0s62c"]
 
 [node name="BowTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_0s62c")

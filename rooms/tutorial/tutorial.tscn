@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://dpevsukwrfdu"]
 
-[ext_resource type="Script" path="res://rooms/tutorial/tutorial.gd" id="1_8s7xq"]
+[ext_resource type="Script" uid="uid://da080vtd783bc" path="res://rooms/tutorial/tutorial.gd" id="1_8s7xq"]
 [ext_resource type="PackedScene" uid="uid://b2jlcu453ynaf" path="res://bg_elements.tscn" id="1_73yn2"]
 [ext_resource type="PackedScene" uid="uid://chivya8n7oo3x" path="res://texture_rect.tscn" id="3_kyms1"]
 [ext_resource type="PackedScene" uid="uid://b8sip2nv63phc" path="res://FPSCounter.tscn" id="4_00qvr"]
@@ -83,6 +83,7 @@ offset_bottom = 40.0
 color = Color(0.713462, 0.000400352, 0.716327, 0.188235)
 
 [node name="Test" type="AnimatedSprite2D" parent="."]
+visible = false
 sprite_frames = SubResource("SpriteFrames_lvptm")
 frame_progress = 0.86118
 centered = false

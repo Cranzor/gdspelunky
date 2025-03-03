@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bb7fbc1ac8omq"]
 
-[ext_resource type="Script" path="res://objects/level editor/shopkeeper_tile/shopkeeper_tile.gd" id="1_abuqr"]
+[ext_resource type="Script" uid="uid://verv65iul17b" path="res://objects/level editor/shopkeeper_tile/shopkeeper_tile.gd" id="1_abuqr"]
 
 [node name="ShopkeeperTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_abuqr")

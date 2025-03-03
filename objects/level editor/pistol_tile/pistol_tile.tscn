@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://unwwpn1qsk67"]
 
-[ext_resource type="Script" path="res://objects/level editor/pistol_tile/pistol_tile.gd" id="1_m068i"]
+[ext_resource type="Script" uid="uid://bg3t4i6u0uo8" path="res://objects/level editor/pistol_tile/pistol_tile.gd" id="1_m068i"]
 
 [node name="PistolTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_m068i")

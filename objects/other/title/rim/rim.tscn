@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ccd4wc106kro8"]
 
-[ext_resource type="Script" path="res://objects/other/title/rim/rim.gd" id="1_8xajl"]
+[ext_resource type="Script" uid="uid://ch0ewwkwnlm4x" path="res://objects/other/title/rim/rim.gd" id="1_8xajl"]
 
 [node name="Rim" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_8xajl")

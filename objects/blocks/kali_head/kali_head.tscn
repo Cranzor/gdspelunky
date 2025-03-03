@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://x8al3ajpuwv2"]
 
-[ext_resource type="Script" path="res://objects/blocks/kali_head/kali_head.gd" id="1_8ccce"]
+[ext_resource type="Script" uid="uid://b7jq2jcyl3qnn" path="res://objects/blocks/kali_head/kali_head.gd" id="1_8ccce"]
 
 [node name="KaliHead" type="Node2D"]
 script = ExtResource("1_8ccce")

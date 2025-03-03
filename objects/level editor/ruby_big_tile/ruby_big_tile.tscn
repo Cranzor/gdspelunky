@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://5nh330bgyxfm"]
 
-[ext_resource type="Script" path="res://objects/level editor/ruby_big_tile/ruby_big_tile.gd" id="1_msglb"]
+[ext_resource type="Script" uid="uid://bwrip0dt2nfwn" path="res://objects/level editor/ruby_big_tile/ruby_big_tile.gd" id="1_msglb"]
 
 [node name="RubyBigTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_msglb")

@@ -138,7 +138,7 @@ func collision_with_whip():
 			hp -= other.damage
 			if (blood_left > 0):
 		
-				MiscScripts.scr_create_blood(position.x+sprite_width/2, position.y+sprite_height/2, 1)
+				MiscScripts.scr_create_blood(position.x+sprite_width/2, position.y+sprite_height/2, 1, self) #---[FLAG] check division here to make sure it functions correctly
 				if (hp < 0): blood_left -= 1
 		
 	
@@ -159,7 +159,7 @@ func collision_with_whip_pre():
 			hp -= other.damage
 			if (blood_left > 0):
 		
-				MiscScripts.scr_create_blood(position.x+sprite_width/2, position.y+sprite_height/2, 1)
+				MiscScripts.scr_create_blood(position.x+sprite_width/2, position.y+sprite_height/2, 1, self) #---[FLAG] check division
 				if (hp < 0): blood_left -= 1
 		
 	
@@ -268,7 +268,7 @@ func step():
 
 			if (gml.collision_point(position.x+8, position.y+12, "solid", 0, 0)):
 		
-				MiscScripts.scr_create_blood(position.x+8, position.y+8, 3)
+				MiscScripts.scr_create_blood(position.x+8, position.y+8, 3, self)
 				Audio.play_sound(global.snd_caveman_die)
 				if (hp > 0):
 			
@@ -282,7 +282,7 @@ func step():
 
 		elif (not held and gml.collision_point(position.x+8, position.y+8, "solid", 0, 0)):
 
-			MiscScripts.scr_create_blood(position.x+8, position.y+8, 3)
+			MiscScripts.scr_create_blood(position.x+8, position.y+8, 3, self)
 			Audio.play_sound(global.snd_caveman_die)
 			if (hp > 0):
 		
@@ -710,7 +710,7 @@ func step():
 			if (col_bot and not bounced):
 		
 				bounced = true
-				MiscScripts.scr_create_blood(position.x+8, position.y+8, 3)
+				MiscScripts.scr_create_blood(position.x+8, position.y+8, 3, self)
 		
 		
 			if (held or col_bot):

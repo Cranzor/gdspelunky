@@ -1332,8 +1332,8 @@ func bomb_rope_and_whipping_handling(): #--- Also handles picking up items and a
 			
 			elif (hold_item.sprite_index == "bomb"):
 				
-				hold_item.global.bombs += 1 #--- Double-check if this works
-				hold_item.gml.instance_destroy(hold_item)
+				global.bombs += 1
+				gml.instance_destroy(hold_item)
 				
 				
 				if (global.rope > 0):
@@ -1350,8 +1350,8 @@ func bomb_rope_and_whipping_handling(): #--- Also handles picking up items and a
 			
 			elif (hold_item.sprite_index == "rope_end"):
 				
-				hold_item.global.rope += 1
-				hold_item.gml.instance_destroy(hold_item)
+				global.rope += 1
+				gml.instance_destroy(hold_item)
 				
 				
 				CharacterScripts.scr_hold_item(pickup_item_type)

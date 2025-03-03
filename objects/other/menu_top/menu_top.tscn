@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dd35hg5lgor25"]
 
-[ext_resource type="Script" path="res://objects/other/menu_top/menu_top.gd" id="1_yfkc1"]
+[ext_resource type="Script" uid="uid://brrcrb0s6k47f" path="res://objects/other/menu_top/menu_top.gd" id="1_yfkc1"]
 
 [node name="MenuTop" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_yfkc1")

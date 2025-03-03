@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://borw8qv15t47j"]
 
-[ext_resource type="Script" path="res://objects/traps/spear_trap_top/spear_trap_top.gd" id="1_n8wwv"]
+[ext_resource type="Script" uid="uid://cndknf3o5x762" path="res://objects/traps/spear_trap_top/spear_trap_top.gd" id="1_n8wwv"]
 
 [node name="SpearTrapTop" type="Node2D"]
 script = ExtResource("1_n8wwv")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://db1uwte520n15"]
 
-[ext_resource type="Script" path="res://objects/blocks/hard_block/hard_block.gd" id="1_t575k"]
+[ext_resource type="Script" uid="uid://b7w6xhnspuivb" path="res://objects/blocks/hard_block/hard_block.gd" id="1_t575k"]
 
 [node name="HardBlock" type="Node2D"]
 z_index = -100

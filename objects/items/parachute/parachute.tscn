@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://hbo7rg5pcwrr"]
 
-[ext_resource type="Script" path="res://objects/items/parachute/parachute.gd" id="1_r5exd"]
+[ext_resource type="Script" uid="uid://dkmmy2f5wmcj5" path="res://objects/items/parachute/parachute.gd" id="1_r5exd"]
 
 [node name="Parachute" type="Node2D"]
 script = ExtResource("1_r5exd")

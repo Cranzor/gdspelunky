@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b6f0sg5u8ix0j"]
 
-[ext_resource type="Script" path="res://objects/level editor/spring_shoes_tile/spring_shoes_tile.gd" id="1_cvswd"]
+[ext_resource type="Script" uid="uid://rg8rp83gn13r" path="res://objects/level editor/spring_shoes_tile/spring_shoes_tile.gd" id="1_cvswd"]
 
 [node name="SpringShoesTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_cvswd")

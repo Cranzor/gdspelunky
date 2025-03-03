@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dj8fhf0oo2cpo"]
 
-[ext_resource type="Script" path="res://objects/blocks/xoc_block/xoc_block.gd" id="1_od10r"]
+[ext_resource type="Script" uid="uid://cx53wit0i7sjp" path="res://objects/blocks/xoc_block/xoc_block.gd" id="1_od10r"]
 
 [node name="XocBlock" type="Node2D"]
 script = ExtResource("1_od10r")

@@ -264,14 +264,14 @@ func step():
 				global.kills += 1
 		
 			for repetition in range(3):  gml.instance_create(position.x+gml.rand(0,16), position.y-8+gml.rand(0,16), Objects.leaf)
-			MiscScripts.scr_create_blood(position.x+8, position.y+8, 1)
+			MiscScripts.scr_create_blood(position.x+8, position.y+8, 1, self)
 			if (ate_shopkeeper):
 		
 				var obj = gml.instance_create(position.x, position.y, Objects.shopkeeper)
 				obj.status = 2
 				obj.has_gun = false
 				for repetition in range(3):  gml.instance_create(position.x+gml.rand(0,16), position.y-8+gml.rand(0,16), Objects.leaf)
-				MiscScripts.scr_create_blood(position.x+8, position.y+8, 1)
+				MiscScripts.scr_create_blood(position.x+8, position.y+8, 1, self)
 				Audio.play_sound(global.snd_small_explode)
 		
 			gml.instance_destroy(self)
@@ -338,7 +338,7 @@ func step():
 			if (col_bot and not bounced):
 		
 				bounced = true
-				MiscScripts.scr_create_blood(position.x+8, position.y+8, 1)
+				MiscScripts.scr_create_blood(position.x+8, position.y+8, 1, self)
 		
 		
 			if (held or col_bot):
@@ -352,7 +352,7 @@ func step():
 						obj.status = 2
 						obj.has_gun = false
 						for repetition in range(3):  gml.instance_create(position.x+gml.rand(0,16), position.y-8+gml.rand(0,16), Objects.leaf)
-						MiscScripts.scr_create_blood(position.x+8, position.y+8, 1)
+						MiscScripts.scr_create_blood(position.x+8, position.y+8, 1, self)
 						Audio.play_sound(global.snd_small_explode)
 						gml.instance_destroy(self)
 				
@@ -392,7 +392,7 @@ func step():
 
 		if (status == EATING and image_index == 8):
 
-			MiscScripts.scr_create_blood(position.x+8, position.y, 1)
+			MiscScripts.scr_create_blood(position.x+8, position.y, 1, self)
 
 
 		if (status == SLEEPY and image_index == 6 and gml.rand(1,8) == 1):

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://du6rmwqcgyd5m"]
 
-[ext_resource type="Script" path="res://objects/blocks/altar_right/altar_right.gd" id="1_uh62q"]
+[ext_resource type="Script" uid="uid://dipqty4y4lv5j" path="res://objects/blocks/altar_right/altar_right.gd" id="1_uh62q"]
 
 [node name="AltarRight" type="Node2D"]
 script = ExtResource("1_uh62q")

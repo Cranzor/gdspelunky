@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cdiie1okf1u35"]
 
-[ext_resource type="Script" path="res://objects/items/mattock_hit/mattock_hit.gd" id="1_qxb5i"]
+[ext_resource type="Script" uid="uid://crmf8nifg6ikv" path="res://objects/items/mattock_hit/mattock_hit.gd" id="1_qxb5i"]
 
 [node name="MattockHit" type="Node2D"]
 script = ExtResource("1_qxb5i")

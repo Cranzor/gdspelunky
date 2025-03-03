@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ufgk4gjepwjf"]
 
-[ext_resource type="Script" path="res://objects/level editor/crystal_skull_tile/crystal_skull_tile.gd" id="1_7m2ch"]
+[ext_resource type="Script" uid="uid://iy11rmrupnd" path="res://objects/level editor/crystal_skull_tile/crystal_skull_tile.gd" id="1_7m2ch"]
 
 [node name="CrystalSkullTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_7m2ch")

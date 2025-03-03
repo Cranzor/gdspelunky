@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://we1i6vy4c88v"]
 
-[ext_resource type="Script" path="res://objects/level editor/mattock_tile/mattock_tile.gd" id="1_8ne8g"]
+[ext_resource type="Script" uid="uid://5tpynyl1cit7" path="res://objects/level editor/mattock_tile/mattock_tile.gd" id="1_8ne8g"]
 
 [node name="MattockTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_8ne8g")

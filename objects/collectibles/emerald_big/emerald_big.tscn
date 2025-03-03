@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c05msw61s8n5s"]
 
-[ext_resource type="Script" path="res://objects/collectibles/emerald_big/emerald_big.gd" id="1_pt4o7"]
+[ext_resource type="Script" uid="uid://cbei7f6r0al5n" path="res://objects/collectibles/emerald_big/emerald_big.gd" id="1_pt4o7"]
 
 [node name="EmeraldBig" type="Node2D"]
 script = ExtResource("1_pt4o7")

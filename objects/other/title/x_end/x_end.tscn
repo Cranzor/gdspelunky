@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b1e50p5nehuc5"]
 
-[ext_resource type="Script" path="res://objects/other/title/x_end/x_end.gd" id="1_ypk81"]
+[ext_resource type="Script" uid="uid://kmx7fs7265vd" path="res://objects/other/title/x_end/x_end.gd" id="1_ypk81"]
 
 [node name="XEnd" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_ypk81")

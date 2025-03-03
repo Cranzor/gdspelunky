@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cta0fpknobkdr"]
 
-[ext_resource type="Script" path="res://objects/blocks/gold_big/gold_big.gd" id="1_sosib"]
+[ext_resource type="Script" uid="uid://dewu35c4wt6c8" path="res://objects/blocks/gold_big/gold_big.gd" id="1_sosib"]
 
 [node name="GoldBig" type="Node2D"]
 script = ExtResource("1_sosib")

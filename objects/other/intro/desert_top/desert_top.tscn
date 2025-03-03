@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bpib0or50oftd"]
 
-[ext_resource type="Script" path="res://objects/other/intro/desert_top/desert_top.gd" id="1_whi8f"]
+[ext_resource type="Script" uid="uid://ckwsseq6a53if" path="res://objects/other/intro/desert_top/desert_top.gd" id="1_whi8f"]
 
 [node name="DesertTop" type="Node2D"]
 z_index = 10

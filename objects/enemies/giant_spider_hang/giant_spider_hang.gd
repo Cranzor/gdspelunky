@@ -76,7 +76,7 @@ func step():
 			var obj = gml.instance_create(position.x+16, position.y+24, Objects.paste)
 			obj.cost = 0
 			obj.for_sale = false
-			MiscScripts.scr_create_blood(position.x+16, position.y+24, 4)
+			MiscScripts.scr_create_blood(position.x+16, position.y+24, 4, self)
 			if (counts_as_kill):
 		
 				if (InLevel.is_real_level()): global.enemy_kills[3] += 1

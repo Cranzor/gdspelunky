@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://blv81p62ridhh"]
 
-[ext_resource type="Script" path="res://objects/level editor/alien_tile/alien_tile.gd" id="1_gfxek"]
+[ext_resource type="Script" uid="uid://nb6o2ilvvca6" path="res://objects/level editor/alien_tile/alien_tile.gd" id="1_gfxek"]
 
 [node name="AlienTile" type="Node2D"]
 script = ExtResource("1_gfxek")

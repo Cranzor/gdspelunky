@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bhffcxa878l6g"]
 
-[ext_resource type="Script" path="res://objects/other/title/trophy/trophy.gd" id="1_7je7j"]
+[ext_resource type="Script" uid="uid://b2m31iadvmkvh" path="res://objects/other/title/trophy/trophy.gd" id="1_7je7j"]
 
 [node name="Trophy" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_7je7j")

@@ -79,7 +79,7 @@ func collision_with_whip():
 	
 			hp -= other.damage
 			counts_as_kill = true
-			MiscScripts.scr_create_blood(position.x+sprite_width/2, position.y+sprite_height/2, 1)
+			MiscScripts.scr_create_blood(position.x+sprite_width/2, position.y+sprite_height/2, 1, self) #---[FLAG] check division
 			Audio.play_sound(global.snd_hit)
 			whipped = 10
 	
@@ -152,7 +152,7 @@ func step():
 
 		if (hp < 1):
 
-			MiscScripts.scr_create_blood(position.x+14+gml.rand(0,4), position.y+14+gml.rand(0,4), 3)
+			MiscScripts.scr_create_blood(position.x+14+gml.rand(0,4), position.y+14+gml.rand(0,4), 3, self)
 			for repetition in range(4):
 		
 				gml.instance_create(position.x+14+gml.rand(0,4), position.y+14+gml.rand(0,6), Objects.bone)

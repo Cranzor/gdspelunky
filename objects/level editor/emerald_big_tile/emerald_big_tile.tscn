@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dlnhipostnhfl"]
 
-[ext_resource type="Script" path="res://objects/level editor/emerald_big_tile/emerald_big_tile.gd" id="1_vu5ak"]
+[ext_resource type="Script" uid="uid://cncawsow1ov0b" path="res://objects/level editor/emerald_big_tile/emerald_big_tile.gd" id="1_vu5ak"]
 
 [node name="EmeraldBigTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_vu5ak")

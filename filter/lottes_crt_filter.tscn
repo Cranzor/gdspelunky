@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c3rc85dmd0ft5"]
 
-[ext_resource type="Script" path="res://filter/lottes_crt_filter.gd" id="1_2qfc8"]
-[ext_resource type="Shader" path="res://filter/crt_lottes_updated.gdshader" id="1_dakcy"]
+[ext_resource type="Script" uid="uid://bh16yn45kqcg7" path="res://filter/lottes_crt_filter.gd" id="1_2qfc8"]
+[ext_resource type="Shader" uid="uid://b35bhbigj0q5i" path="res://filter/crt_lottes_updated.gdshader" id="1_dakcy"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5wfem"]
 shader = ExtResource("1_dakcy")
@@ -21,7 +21,7 @@ shader_parameter/shape = 2.0
 shader_parameter/OutputSize = Vector2(1920, 1080)
 shader_parameter/TextureSize = Vector2(320, 240)
 shader_parameter/InputSize = Vector2(320, 240)
-shader_parameter/FrameCount = null
+shader_parameter/FrameCount = 0
 
 [node name="LottesCrtFilter" type="CanvasLayer"]
 script = ExtResource("1_2qfc8")

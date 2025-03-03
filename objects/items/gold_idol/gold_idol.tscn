@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bwcww3gwevou4"]
 
-[ext_resource type="Script" path="res://objects/items/gold_idol/gold_idol.gd" id="1_3phb8"]
+[ext_resource type="Script" uid="uid://bcqi8t8arkai" path="res://objects/items/gold_idol/gold_idol.gd" id="1_3phb8"]
 
 [node name="GoldIdol" type="Node2D"]
 script = ExtResource("1_3phb8")

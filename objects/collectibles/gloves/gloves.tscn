@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dwv2306717tx6"]
 
-[ext_resource type="Script" path="res://objects/collectibles/gloves/gloves.gd" id="1_yfko3"]
+[ext_resource type="Script" uid="uid://dm2xq0t0lioyy" path="res://objects/collectibles/gloves/gloves.gd" id="1_yfko3"]
 
 [node name="Gloves" type="Node2D"]
 script = ExtResource("1_yfko3")

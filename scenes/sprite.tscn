@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dicegcuj450ms"]
 
-[ext_resource type="Script" path="res://scenes/sprite.gd" id="1_wjvgk"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="1_wjvgk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_f4ket"]
 resource_local_to_scene = true

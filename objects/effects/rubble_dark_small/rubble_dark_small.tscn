@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://doyusak5y2nih"]
 
-[ext_resource type="Script" path="res://objects/effects/rubble_dark_small/rubble_dark_small.gd" id="1_a3ief"]
+[ext_resource type="Script" uid="uid://bbog20to8dxk1" path="res://objects/effects/rubble_dark_small/rubble_dark_small.gd" id="1_a3ief"]
 
 [node name="RubbleDarkSmall" type="Node2D"]
 script = ExtResource("1_a3ief")

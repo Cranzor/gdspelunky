@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b5i5wa0fgjk5v"]
 
-[ext_resource type="Script" path="res://objects/level editor/fire_frog_tile/fire_frog_tile.gd" id="1_3s3yy"]
+[ext_resource type="Script" uid="uid://erta14l8bc7q" path="res://objects/level editor/fire_frog_tile/fire_frog_tile.gd" id="1_3s3yy"]
 
 [node name="FireFrogTile" type="Node2D"]
 script = ExtResource("1_3s3yy")

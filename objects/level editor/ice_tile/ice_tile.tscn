@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c40eshuen5msf"]
 
-[ext_resource type="Script" path="res://objects/level editor/ice_tile/ice_tile.gd" id="1_mbktr"]
+[ext_resource type="Script" uid="uid://dyp8d1j6bx05n" path="res://objects/level editor/ice_tile/ice_tile.gd" id="1_mbktr"]
 
 [node name="IceTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_mbktr")

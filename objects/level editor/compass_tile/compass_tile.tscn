@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bg5bb1pi5nw05"]
 
-[ext_resource type="Script" path="res://objects/level editor/compass_tile/compass_tile.gd" id="1_7foxy"]
+[ext_resource type="Script" uid="uid://biku5t7hmdy6i" path="res://objects/level editor/compass_tile/compass_tile.gd" id="1_7foxy"]
 
 [node name="CompassTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_7foxy")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bopxpiokugy2m"]
 
-[ext_resource type="Script" path="res://objects/basis/rubble_piece/rubble_piece.gd" id="1_vt54h"]
+[ext_resource type="Script" uid="uid://luyxrlp6ch6i" path="res://objects/basis/rubble_piece/rubble_piece.gd" id="1_vt54h"]
 
 [node name="RubblePiece" type="Node2D"]
 script = ExtResource("1_vt54h")

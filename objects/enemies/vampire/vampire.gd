@@ -75,7 +75,7 @@ func collision_with_whip():
 	if (status < STUNNED or other.type == "machete"):
 
 		hp -= other.damage
-		MiscScripts.scr_create_blood(position.x+sprite_width/2, position.y+sprite_height/2, 1)
+		MiscScripts.scr_create_blood(position.x+sprite_width/2, position.y+sprite_height/2, 1, self) #---[FLAG] check division
 		counts_as_kill = true
 		status = STUNNED
 		counter = stun_time
@@ -90,7 +90,7 @@ func collision_with_whip_pre():
 	if (status < STUNNED or other.type == "machete"):
 
 		hp -= other.damage
-		MiscScripts.scr_create_blood(position.x+sprite_width/2, position.y+sprite_height/2, 1)
+		MiscScripts.scr_create_blood(position.x+sprite_width/2, position.y+sprite_height/2, 1, self) #---[FLAG] check division
 		counts_as_kill = true
 		status = STUNNED
 		counter = stun_time
@@ -374,7 +374,7 @@ func step():
 			if (col_bot and not bounced):
 		
 				bounced = true
-				MiscScripts.scr_create_blood(position.x+8, position.y+8, 1)
+				MiscScripts.scr_create_blood(position.x+8, position.y+8, 1, self)
 		
 		
 			if (held or col_bot):

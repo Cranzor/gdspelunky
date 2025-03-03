@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dvughqwqeey8y"]
 
-[ext_resource type="Script" path="res://objects/level editor/gloves_tile/gloves_tile.gd" id="1_jxttu"]
+[ext_resource type="Script" uid="uid://cylw14gfjglxg" path="res://objects/level editor/gloves_tile/gloves_tile.gd" id="1_jxttu"]
 
 [node name="GlovesTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_jxttu")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://blbewnoqy6jwh"]
 
-[ext_resource type="Script" path="res://objects/other/end/big_chest/big_chest.gd" id="1_3fnyb"]
+[ext_resource type="Script" uid="uid://beuo50lam1a25" path="res://objects/other/end/big_chest/big_chest.gd" id="1_3fnyb"]
 
 [node name="BigChest" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_3fnyb")

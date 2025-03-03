@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://sksg5kr6l2xx"]
 
-[ext_resource type="Script" path="res://objects/blocks/dark_fall/dark_fall.gd" id="1_ur3gk"]
+[ext_resource type="Script" uid="uid://dou430weivb04" path="res://objects/blocks/dark_fall/dark_fall.gd" id="1_ur3gk"]
 
 [node name="DarkFall" type="Node2D"]
 script = ExtResource("1_ur3gk")

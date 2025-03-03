@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://crm2j0n1x230i"]
 
-[ext_resource type="Script" path="res://objects/items/whip/whip.gd" id="1_3nu70"]
+[ext_resource type="Script" uid="uid://ct5ifhn8ibr4" path="res://objects/items/whip/whip.gd" id="1_3nu70"]
 
 [node name="Whip" type="Node2D"]
 z_index = -1

@@ -113,8 +113,8 @@ var other #--- most recent object collided with
 		
 var sprite_index:
 	set(new_sprite):
-		if new_sprite == "hang_left":
-			print("oh")
+		#if new_sprite == "hang_left":
+			#print("oh")
 		set_animation(new_sprite, animated_sprite_node)
 		set_sprite_offset(new_sprite)
 		sprite_index_name = new_sprite

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bwy3u05qfgq8d"]
 
-[ext_resource type="Script" path="res://objects/blocks/ice_block/ice_block.gd" id="1_wnu8h"]
+[ext_resource type="Script" uid="uid://dvwk3e7umvj28" path="res://objects/blocks/ice_block/ice_block.gd" id="1_wnu8h"]
 
 [node name="IceBlock" type="Node2D"]
 script = ExtResource("1_wnu8h")

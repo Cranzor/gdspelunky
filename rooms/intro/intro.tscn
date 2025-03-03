@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cp7345wvpbe1d"]
 
-[ext_resource type="Script" path="res://rooms/intro/intro.gd" id="1_886e7"]
+[ext_resource type="Script" uid="uid://mh7m6a0ori80" path="res://rooms/intro/intro.gd" id="1_886e7"]
 [ext_resource type="PackedScene" uid="uid://8pect2ibgg6e" path="res://scenes/collision/collision_ray.tscn" id="4_beiky"]
 [ext_resource type="Texture2D" uid="uid://c7mqbeksgioqi" path="res://backgrounds/background_night.png" id="16_pnhb5"]
 [ext_resource type="PackedScene" uid="uid://b2jlcu453ynaf" path="res://bg_elements.tscn" id="17_txyc1"]

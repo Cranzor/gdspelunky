@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cc6lx3loc4lxr"]
 
-[ext_resource type="Script" path="res://objects/level editor/bomb_box_tile/bomb_box_tile.gd" id="1_yq17e"]
+[ext_resource type="Script" uid="uid://caadtsc8ch2ur" path="res://objects/level editor/bomb_box_tile/bomb_box_tile.gd" id="1_yq17e"]
 
 [node name="BombBoxTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_yq17e")
