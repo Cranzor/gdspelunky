@@ -402,6 +402,8 @@ func bounding_box_setup():
 		object_size = no_sprite_size
 
 func sprite_setup(object_entry):
+	if object_name == "sprite":
+		print("stop")
 	var animated_sprite = get_animated_sprite_2d()
 	
 	if animated_sprite == null:

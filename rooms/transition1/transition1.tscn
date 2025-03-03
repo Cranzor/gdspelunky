@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://1usm8opppo3r"]
+
+[ext_resource type="Script" uid="uid://d2amqubljmrvw" path="res://rooms/transition1/transition1.gd" id="1_rr5tn"]
+[ext_resource type="PackedScene" uid="uid://b2jlcu453ynaf" path="res://bg_elements.tscn" id="2_hi1bn"]
+[ext_resource type="PackedScene" uid="uid://chivya8n7oo3x" path="res://texture_rect.tscn" id="3_fxps4"]
+[ext_resource type="PackedScene" uid="uid://8pect2ibgg6e" path="res://scenes/collision/collision_ray.tscn" id="3_qm5xy"]
+
+[node name="Transition1" type="Node2D"]
+script = ExtResource("1_rr5tn")
+
+[node name="BgElements" parent="." instance=ExtResource("2_hi1bn")]
+
+[node name="TextureRect" parent="." instance=ExtResource("3_fxps4")]
+
+[node name="ObjectsHolder" type="Node" parent="." groups=["objects_holder"]]
+
+[node name="CollisionRay" parent="." instance=ExtResource("3_qm5xy")]

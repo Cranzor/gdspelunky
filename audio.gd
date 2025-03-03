@@ -113,10 +113,10 @@ func start_music(): #---[FLAG] have to implement
 	
 func stop_all_music():
 	SS.stop_sound(global.mus_title)
-	#SS_StopSound(global.musCave);
-	#SS_StopSound(global.musLush);
-	#SS_StopSound(global.musIce);
-	#SS_StopSound(global.musTemple);
-	#SS_StopSound(global.musBoss);
-	#SS_StopSound(global.musVictory);
-	#SS_StopSound(global.musCredits);
+	SS.stop_sound(global.mus_cave)
+	SS.stop_sound(global.mus_lush)
+	SS.stop_sound(global.mus_ice)
+	SS.stop_sound(global.mus_temple)
+	SS.stop_sound(global.mus_boss)
+	SS.stop_sound(global.mus_victory)
+	SS.stop_sound(global.mus_credits)
