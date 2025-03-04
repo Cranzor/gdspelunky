@@ -46,7 +46,7 @@ func collision_with_whip():
 		Audio.play_sound(global.snd_damsel)
 		if (blood_left > 0):
 	 
-			MiscScripts.scr_create_blood(position.x+sprite_width/2, position.y+sprite_height/2, 1)
+			MiscScripts.scr_create_blood(position.x+sprite_width/2, position.y+sprite_height/2, 1, self) #---[FLAG] check division
 			if (hp < 0): blood_left -= 1
 	 
 
@@ -70,7 +70,7 @@ func collision_with_whip_pre():
 		Audio.play_sound(global.snd_damsel)
 		if (blood_left > 0):
 	 
-			MiscScripts.scr_create_blood(position.x+sprite_width/2, position.y+sprite_height/2, 1)
+			MiscScripts.scr_create_blood(position.x+sprite_width/2, position.y+sprite_height/2, 1, self) #---[FLAG] check division
 			if (hp < 0): blood_left -= 1
 	 
 
@@ -215,7 +215,7 @@ func step():
 
 		if (gml.collision_point(position.x, position.y, "solid", 0, 0) and not held):
 	
-			MiscScripts.scr_create_blood(position.x, position.y, 3)
+			MiscScripts.scr_create_blood(position.x, position.y, 3, self)
 			if (hp > 0):
 		
 				global.damsels_killed_total += 1
@@ -254,7 +254,7 @@ func step():
 			obj.sprite_index = "spikes_blood"
 			if (hp > 0):
 		
-				MiscScripts.scr_create_blood(position.x, position.y, 3)
+				MiscScripts.scr_create_blood(position.x, position.y, 3, self)
 		
 			if (global.is_damsel):
 		
@@ -481,7 +481,7 @@ func step():
 			
 					gml.instance_create(position.x, position.y, Objects.flame)
 					Audio.play_sound(global.snd_small_explode)
-					MiscScripts.scr_create_blood(position.x, position.y, 3)
+					MiscScripts.scr_create_blood(position.x, position.y, 3, self)
 					global.message = "KALI ACCEPTS YOUR SACRIFICE!"
 					if (global.favor <= -8):
 				

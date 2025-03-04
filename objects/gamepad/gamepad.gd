@@ -418,7 +418,6 @@ func step():
 			if attack == true:
 				attack_pressed = true
 
-			
 			#if (global.joy_attack_val > 0):
 				#attack = joystick_check_button(joyid,global.joy_attack_val)
 			#elif (global.joy_attack_val == -1):

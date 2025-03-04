@@ -532,7 +532,7 @@ func draw():
 
 
 func step():
-	if (ControlScripts.check_attack_pressed() or ControlScripts.check_start_pressed()):
+	if ControlScripts.check_attack_pressed() or ControlScripts.check_start_pressed():
 
 		var n = 0
 

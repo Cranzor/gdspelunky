@@ -1044,19 +1044,19 @@ func scr_init_level():
 	var all_rooms = gml.get_all_instances("room")
 	for room_instance in all_rooms:
 		#---[FLAG] having each room instance calling generation functions but may not be needed
-		if (global.level_type == 0): room_instance.scr_room_gen()
+		if (global.level_type == 0): scr_room_gen(room_instance.position.x, room_instance.position.y)
 		elif (global.level_type == 1):
 		
-			if (global.black_market): room_instance.scr_room_gen_market()
-			else: room_instance.scr_room_gen2()
+			if (global.black_market): scr_room_gen_market() #---[FLAG] may need to pass in x and y
+			else: scr_room_gen2() #---[FLAG] may need to pass in x and y
 		
 		elif (global.level_type == 2):
 		
-			if (global.yeti_lair): room_instance.scr_room_gen_yeti()
-			else: room_instance.scr_room_gen3()
+			if (global.yeti_lair): scr_room_gen_yeti()  #---[FLAG] may need to pass in x and y
+			else: scr_room_gen3()  #---[FLAG] may need to pass in x and y
 		
-		elif (global.level_type == 3): room_instance.scr_room_gen4()
-		else: room_instance.scr_room_gen5()
+		elif (global.level_type == 3): scr_room_gen4()  #---[FLAG] may need to pass in x and y
+		else: scr_room_gen5()  #---[FLAG] may need to pass in x and y
 
 
 	global.dark_level = false
@@ -1714,7 +1714,7 @@ func scr_room_gen(x, y): #--- have to pass in x and y
 			
 				n = gml.rand(1,6)
 				scr_generate_item(xpos+8, ypos+8, 1)
-				obj.in_dice_house = true #---[FLAG] obj doesn't appear to refer to anything in the original script
+				#obj.in_dice_house = true #---[FLAG] obj doesn't appear to refer to anything in the original script. commenting out to get code to work
 			
 			elif (tile == "+"):
 			
@@ -1862,7 +1862,7 @@ func scr_entity_gen():
 			
 				if (solid_instance.type != "altar"):
 				
-					scr_treasure_gen(solid_instance.position.x, solid_instance.position.y)
+					scr_treasure_gen(0, solid_instance) #--- passing in 0 for first argument as nothing is passed in original code
 				
 			
 				# DY:  enemies
@@ -1898,7 +1898,7 @@ func scr_entity_gen():
 		
 		
 		# DY:  force generate chest
-		if (global.gen_udjat_eye and not global.LockedChest):
+		if (global.gen_udjat_eye and not global.locked_chest):
 		
 			var all_exits = gml.get_all_instances("exit")
 			for exit_instance in all_exits:
