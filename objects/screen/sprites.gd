@@ -5,7 +5,7 @@ extends GMObject
 func _ready():
 	object_setup()
 	sprites_holder = Node2D.new()
-	sprites_holder.name = "Sprites"
+	sprites_holder.name = "HeldSprites"
 	add_child(sprites_holder)
 
 #--- Object functions

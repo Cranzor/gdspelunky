@@ -109,12 +109,14 @@ anchors_preset = 0
 
 [node name="Background" type="ColorRect" parent="TitleScreen"]
 visible = false
+layout_mode = 0
 offset_right = 320.0
 offset_bottom = 240.0
 color = Color(0, 0, 0, 1)
 
 [node name="DerekYuPresents" type="Label" parent="TitleScreen"]
 visible = false
+layout_mode = 0
 offset_left = 88.0
 offset_top = 48.0
 offset_right = 224.0

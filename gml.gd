@@ -371,14 +371,14 @@ func draw_sprite(sprite: String, subimg: int, x, y, node, is_object_sprite: bool
 		node.draw_object = true
 	
 	else:
-		if !node.has_node("Sprites/" + sprite_pascal_case):
+		if !node.has_node("HeldSprites/" + sprite_pascal_case):
 			var new_sprite = SPRITE.instantiate()
 			new_sprite.name = sprite.to_pascal_case()
 			node.sprites_holder.add_child(new_sprite)
 			node.set_animation(sprite, new_sprite)
 		
 
-		var new_sprite = node.get_node("Sprites/" + sprite_pascal_case)
+		var new_sprite = node.get_node("HeldSprites/" + sprite_pascal_case)
 		new_sprite.global_position = Vector2(x, y)
 		new_sprite.sprite_displayed = true
 		

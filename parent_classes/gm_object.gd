@@ -191,10 +191,7 @@ var owner_object #---[FLAG] have to account for this
 var x_vel = 0:
 	set(value):
 		x_vel = value
-		if object_name == "player1":
-			if value == 3.038:
-				#print("hm")
-				pass
+
 var y_vel = 0
 var x_acc = 0
 var y_acc = 0
@@ -392,7 +389,7 @@ func depth_setup(object_entry):
 func bounding_box_setup():
 	var sprite = get_animation()
 	
-	if sprite != null:
+	if sprite != "default":
 		if sprites.sprite_database[sprite]["mask"]["shape"] == "RECTANGLE":
 			object_size = sprites.sprite_database[sprite]["mask"]["collision_rectangles"][1]
 		else:
@@ -402,19 +399,27 @@ func bounding_box_setup():
 		object_size = no_sprite_size
 
 func sprite_setup(object_entry):
-	if object_name == "sprite":
-		print("stop")
 	var animated_sprite = get_animated_sprite_2d()
 	
 	if animated_sprite == null:
+		var new_animated_sprite = SPRITE.instantiate()
+		var sprite_frames = new_animated_sprite.sprite_frames
+		sprite_frames.remove_animation("default")
+		new_animated_sprite.sprite_frames = sprite_frames
+		new_animated_sprite.name = "MainAnimations"
+		new_animated_sprite.z_index = depth
+		new_animated_sprite.add_to_group("animated_sprite", true)
+		animated_sprite_node = new_animated_sprite
+		sprites_holder = Node2D.new()
+		sprites_holder.name = "Sprites"
+		add_child(sprites_holder)
+		sprites_holder.add_child(new_animated_sprite)
+		
 		var sprite_to_add = object_entry["sprite"]
 		if sprite_to_add != null:
 			var sprite_entry = sprites.sprite_database[sprite_to_add]
 			var sprite_offset = sprite_entry["origin"]
 			var sprite_folder_path = sprite_entry["folder_path"]
-			var new_animated_sprite = SPRITE.instantiate()
-			#var sprite_frames = SpriteFrames.new()
-			var sprite_frames = new_animated_sprite.sprite_frames
 			
 			var shape = sprite_entry["mask"]["shape"]
 		
@@ -422,17 +427,8 @@ func sprite_setup(object_entry):
 			sprite_frames.remove_animation("default")
 			
 			new_animated_sprite.sprite_frames = sprite_frames
-			#new_animated_sprite.name = "AnimatedSprite2D"
-			new_animated_sprite.name = "MainAnimations"
-			new_animated_sprite.z_index = depth
-			new_animated_sprite.add_to_group("animated_sprite", true)
-			animated_sprite_node = new_animated_sprite
 			
 			
-			sprites_holder = Node2D.new()
-			sprites_holder.name = "Sprites"
-			add_child(sprites_holder)
-			sprites_holder.add_child(new_animated_sprite)
 			new_animated_sprite.play(sprite_to_add)
 			set_sprite_offset(sprite_to_add)
 			sprite_index_name = sprite_to_add
@@ -565,7 +561,7 @@ func run_draw_event(obj):
 		else:
 			animated_sprite_node.sprite_displayed = true
 	
-func run_collision_with(obj):
+func run_collision_with(obj): #---[FLAG] update this to not use object_size
 	for object in collision_with:
 		#--- fixed an issue here in which object_size by itself was used. for collision_rectangle, object size + position must be passed in
 		if gml.collision_rectangle(position.x, position.y, position.x + object_size.x, position.y + object_size.y, object, 0, 0):
