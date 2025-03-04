@@ -582,8 +582,8 @@ func generate_random_hash():
 func handle_collision_ray(x1, y1, x2, y2, obj):
 	var collision_ray: RayCast2D = get_tree().get_first_node_in_group("collision_ray")
 	var colliders = []
-	collision_ray.position = Vector2(x1, y1 + 0.1) #--- no idea why this works but it fixes collision issues
-	collision_ray.target_position = Vector2(abs(x2 - x1), abs(y2 - (y1 - 0.1))) #--- raycast bordering on a pixel exactly seems to register it as colliding
+	collision_ray.position = Vector2(x1 + 0.1, y1 + 0.1) #--- no idea why this works but it fixes collision issues
+	collision_ray.target_position = Vector2(abs(x2 - (x1 - 0.1)), abs(y2 - (y1 - 0.1))) #--- raycast bordering on a pixel exactly seems to register it as colliding
 	collision_ray.enabled = true
 	collision_ray.force_raycast_update()
 	while collision_ray.is_colliding():
