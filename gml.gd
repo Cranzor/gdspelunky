@@ -185,16 +185,22 @@ func tile_add(background,left,top,width,height,x,y,depth): #return value of tile
 		for j in range(0, size.x):
 			bg_elements.set_cell(layer_number, Vector2i(x + j, y - 1), tile_id, Vector2i(coords.x + j, coords.y))
 
-func distance_to_object(obj: String, node): #Make this more accurate with this info https://manual.gamemaker.io/monthly/en/GameMaker_Language/GML_Reference/Maths_And_Numbers/Angles_And_Distance/distance_to_object.htm
-	var x = node.position.x
-	var y = node.position.y
+func distance_to_object(obj: GMObject, comparison_node: GMObject): #Make this more accurate with this info https://manual.gamemaker.io/monthly/en/GameMaker_Language/GML_Reference/Maths_And_Numbers/Angles_And_Distance/distance_to_object.htm
+	if obj == null:
+		return 50000 #--- returning a large number here for variables passed in that don't exist. original engine seems to just not make the function work at all if the object doesn't exist
+	var distance: float = comparison_node.position.distance_to(obj.position)
+	return distance
 	
-	if instance_exists(obj) == true:
-		var comparison_obj_vector2 = instance_nearest(x, y, obj)
-		var distance = Vector2(x, y).distance_to(Vector2(comparison_obj_vector2.position.x, comparison_obj_vector2.position.y))
-		return distance
-	else: #------------------ testing with this for now. not exactly sure how GML handles this
-		return -1
+	
+	#var x = node.position.x
+	#var y = node.position.y
+	#
+	#if instance_exists(obj) == true:
+		#var comparison_obj_vector2 = instance_nearest(x, y, obj)
+		#var distance = Vector2(x, y).distance_to(Vector2(comparison_obj_vector2.position.x, comparison_obj_vector2.position.y))
+		#return distance
+	#else: #------------------ testing with this for now. not exactly sure how GML handles this
+		#return -1
 
 func distance_to_point(x, y, node): #--- used only once in the whole game (vampire step event)
 	pass

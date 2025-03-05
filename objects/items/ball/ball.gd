@@ -33,8 +33,8 @@ func step():
 	super()
 
 	# main_code
-	if (gml.distance_to_object("player1", self) >= 24):
-		var player1 = gml.get_instance("player1") #---[FLAG] may need to adjust for multiplayer
+	var player1 = gml.get_instance("player1") #---[FLAG] may need to adjust for multiplayer
+	if (gml.distance_to_object(player1, self) >= 24):
 		if (abs(player1.position.x - position.x) >= 24 or not col_bot):
 	
 			if (abs(player1.position.x-position.x) < 1):

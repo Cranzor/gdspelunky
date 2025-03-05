@@ -280,11 +280,12 @@ func begin_step():
 				#draw_set_color(make_color_rgb(255-255*level.darkness,255-255*level.darkness,255)) #--- [FLAG] used this code for RGB calculation
 				
 				if (gml.instance_exists("lamp_red")):
+					var lamp_red = gml.get_instance("lamp_red")
 					
 					var all_player1s = gml.get_all_instances("player1")
 					for player1_instance in all_player1s:
 					
-						var dist_to_lamp = gml.distance_to_object(player1_instance, "lamp_red")
+						var dist_to_lamp = gml.distance_to_object(lamp_red, player1_instance)
 						if (dist_to_lamp <= 96):
 						
 							#draw_set_color(make_color_rgb(255-dist_to_lamp,120-(96-dist_to_lamp),120-(96-dist_to_lamp))) #--- [FLAG] used this code for RGB calculation
@@ -292,11 +293,12 @@ func begin_step():
 					
 				
 				if (gml.instance_exists("lamp_red_item")):
-				
+					var lamp_red_item = gml.get_instance("lamp_red_item")
+					
 					var all_player1s = gml.get_all_instances("player1")
 					for player1_instance in all_player1s:
 					
-						var dist_to_lamp = gml.distance_to_object(player1_instance, "lamp_red_item")
+						var dist_to_lamp = gml.distance_to_object(lamp_red_item, player1_instance)
 						if (dist_to_lamp <= 96):
 						
 							#draw_set_color(make_color_rgb(255-dist_to_lamp,120-(96-dist_to_lamp),120-(96-dist_to_lamp)))  #--- [FLAG] used this code for RGB calculation

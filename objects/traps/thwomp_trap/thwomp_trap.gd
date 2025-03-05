@@ -41,7 +41,8 @@ func create():
 	
 
 func step():
-	dist = gml.distance_to_object("character", self)
+	var character = gml.get_instance("character") #---[FLAG] may need to change this for multiplayer
+	dist = gml.distance_to_object(character, self)
 	if (status == IDLE):
 		var player1 = gml.get_instance("player1") #---[FLAG] may need to change this for multiplayer
 		if (player1.position.y > position.y and dist < 96 and abs(player1.position.x - position.x) < 8):

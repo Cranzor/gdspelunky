@@ -50,7 +50,7 @@ func step():
 		position.y > gml.view("yview")-20 and position.y < gml.view("yview") + gml.view("hview")+4)):
 		
 		var character = gml.get_instance("character") #---[FLAG] may need to change this for multiplayer
-		dist = gml.distance_to_object("character", self)
+		dist = gml.distance_to_object(character, self)
 		if (gml.collision_point(position.x+8, position.y+4, "solid", 0, 0)):
 
 			hp = 0

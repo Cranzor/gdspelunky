@@ -157,8 +157,9 @@ func step():
 	#super() #--- commenting out as this seems to do nothing, since moveable_solid has no step function 
 
 	# main_code
+	var player1 = gml.get_instance("player1") #---[FLAG] may need to change this for multiplayer
+	
 	if (carry_player or gml.collision_rectangle(position.x-1, position.y, position.x+66,  position.y+62, "player1", 0, 0)):
-		var player1 = gml.get_instance("player1") #---[FLAG] may have to change this for multiplayer
 		player1.position.x += x_vel
 		player1.position.y += y_vel
 
@@ -200,7 +201,7 @@ func step():
 		gml.instance_destroy(self)
 
 
-	dist = gml.distance_to_object("player1", self) + 32
+	dist = gml.distance_to_object(player1, self) + 32
 
 
 	if (gml.collision_rectangle(position.x, position.y-2, position.x+64,  position.y+64, "player1", 0, 0)): carry_player = true
@@ -261,7 +262,6 @@ func step():
 	
 			if (counter > 1): counter -= 1
 			elif (counter == 1):
-				var player1 = gml.get_instance("player1") #---[FLAG] may need to change this for multiplayer
 				if (player1.position.x < position.x): x_vel = -0.25
 				elif (player1.position.x > position.x+64): x_vel = 0.25
 				else: x_vel = 0
@@ -275,7 +275,6 @@ func step():
 				elif (x_vel > 0 and not toggle): x_vel -= 0.25
 				if (x_vel <= -2 or x_vel >= 2): toggle = not toggle
 		
-			var player1 = gml.get_instance("player1") #---[FLAG] may need to change this for multiplayer
 			if ((not player1.active and y_vel >= 0) or
 				(player1.position.y > position.y and abs(player1.position.x - (position.x+32)) < 32 and x_vel > -1)):
 		
@@ -323,7 +322,6 @@ func step():
 				InLevel.scr_shake(5)
 		
 			else:
-				var player1 = gml.get_instance("player1") #---[FLAG] may need to change this for multiplayer
 				if (gml.rand(1,2) == 1 or not player1.active): status = IDLE
 				else: status = CREATE
 				x_vel = 0

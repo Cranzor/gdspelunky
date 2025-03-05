@@ -161,8 +161,8 @@ func step():
 		if (Collision.is_collision_solid(self)):
 			position.y -= 2
 		
-		dist = gml.distance_to_object("player1", self)
 		var player1 = gml.get_instance("player1") #---[FLAG] may need to change this for multiplayer
+		dist = gml.distance_to_object(player1, self) #---[FLAG] may need to change this for multiplayer
 		if (psychic_recover > 0): psychic_recover -= 1
 		elif (dist < 96 and status != DEAD and not player1.dead and not player1.stunned and player1.invincible == 0):
 

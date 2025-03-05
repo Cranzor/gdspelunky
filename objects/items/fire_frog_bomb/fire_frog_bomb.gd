@@ -18,7 +18,7 @@ func _process(delta):
 
 func alarm_1():
 	gml.instance_create(position.x, position.y, Objects.explosion)
-	MiscScripts.scr_create_blood(position.x, position.y, 3)
+	MiscScripts.scr_create_blood(position.x, position.y, 3, self)
 	if (global.graphics_high):
 
 		MiscScripts.scr_create_flame(position.x, position.y, 3)
@@ -51,10 +51,10 @@ func step():
 
 	# main_code
 	if (armed and gml.instance_exists("shopkeeper")):
-
+		var shopkeeper = gml.get_instance("shopkeeper")
 		if ((global.room_path[[LevelGeneration.scr_get_room_x(position.x), LevelGeneration.scr_get_room_y(position.y)]] == 4 or
 			global.room_path[[LevelGeneration.scr_get_room_x(position.x), LevelGeneration.scr_get_room_y(position.y)]] == 5) and
-			gml.distance_to_object("shopkeeper", self) < 96):
+			gml.distance_to_object(shopkeeper, self) < 96):
 	
 			#with shopkeeper #--- commenting this out as scr_shopkeeper_anger only calls the nearest shopkeeper
 		

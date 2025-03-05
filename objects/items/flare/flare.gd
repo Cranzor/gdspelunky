@@ -46,7 +46,7 @@ func step():
 	
 	if (gml.instance_exists("player1")):
 		var player1 = gml.get_instance("player1") #--- [FLAG] may need to change this for multiplayer
-		dist_to_player = gml.distance_to_object("player1", self)
+		dist_to_player = gml.distance_to_object(player1, self)
 		
 	if (gml.collision_point(position.x, position.y, "water", -1, -1)):
 

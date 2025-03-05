@@ -62,6 +62,8 @@ func step():
 	super()
 
 	# main_code
+	var character = gml.get_instance("character") #---[FLAG] may have to change this for multiplayer
+	
 	if ((position.x > gml.view("xview")-20 and position.x < gml.view("xview") + gml.view("wview")+4 and
 		position.y > gml.view("yview")-20 and position.y < gml.view("yview") + gml.view("hview")+4)):
 
@@ -97,7 +99,7 @@ func step():
 		col_bot = false
 		if (Collision.is_collision_bottom(1, self)): col_bot = true
 
-		var dist = gml.distance_to_object("character", self)
+		var dist = gml.distance_to_object(character, self) #---[FLAG] may have to change this for multiplayer
 
 		if (status == IDLE):
 
@@ -122,7 +124,7 @@ func step():
 			if (col_bot):
 		
 				y_vel = -1 * gml.rand(2,4)
-				var character = gml.get_instance("character") #---[FLAG] may have to change this for multiplayer
+
 				if (character.position.x < position.x):
 			
 					facing = LEFT

@@ -309,7 +309,7 @@ func step():
 			status = DEAD
 
 
-		dist = gml.distance_to_object("player1", self)
+		dist = gml.distance_to_object(player1, self) #---[FLAG] may have to change this for multiplayer
 
 		if (status == IDLE or status == FOLLOW):
 
@@ -329,7 +329,7 @@ func step():
 
 		if ((status == PATROL or status == WALK)):
 
-			if (not player1.dead and gml.distance_to_object("player1", self) < 64 and player1.position.y - (position.y+8) < 16):
+			if (not player1.dead and gml.distance_to_object(player1, self) < 64 and player1.position.y - (position.y+8) < 16):
 		
 				status = ATTACK
 		

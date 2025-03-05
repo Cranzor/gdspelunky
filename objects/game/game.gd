@@ -375,11 +375,11 @@ func step():
 	
 	if (not gml.instance_exists("x_market")): global.udjat_blink = false
 	else:
-
+		var x_market = gml.get_instance("x_market")
 		var all_player1s = gml.get_all_instances("player1")
 		for player1_instance in all_player1s:
 		
-			player1_instance.dm = gml.distance_to_object('x_market', player1_instance)
+			player1_instance.dm = gml.distance_to_object(x_market, player1_instance)
 			if (player1_instance.dm < 4): player1_instance.dm = 4
 			if (alarm_2_countdown.frames_to_count_down < 1 or player1_instance.dm < alarm_2_countdown.frames_to_count_down): alarm_2_countdown.start(player1_instance.dm)
 		

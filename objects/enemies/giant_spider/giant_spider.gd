@@ -142,6 +142,8 @@ func create():
 
 
 func step():
+	var character = gml.get_instance("character") #---[FLAG] may have to change this for multiplayer
+	
 	if ((position.x > gml.view("xview")-32 and position.x < gml.view("xview") + gml.view("wview") and
 		position.y > gml.view("yview")-32 and position.y < gml.view("yview") + gml.view("hview"))):
 
@@ -198,14 +200,14 @@ func step():
 		if (Collision.is_collision_top(1, self) and Collision.is_collision_bottom(1, self) and status != CRAWL):
 
 			status = CRAWL
-			var character = gml.get_instance("character") #---[FLAG] may have to change this for multiplayer
+
 			if (character.position.x < position.x+16):
 				x_vel = -1
 			else:
 				x_vel = 1
 
 
-		dist = gml.distance_to_object("character", self)
+		dist = gml.distance_to_object(character, self) #---[FLAG] may have to change this for multiplayer
 
 		if (squirt_timer > 0): squirt_timer -= 1
 
@@ -243,7 +245,7 @@ func step():
 		
 				sprite_index = "giant_spider"
 				y_vel = -1 * gml.rand(3,6)
-				var character = gml.get_instance("character") #---[FLAG] may have to change this for multiplayer
+
 				if (character.position.x < position.x+16):
 			
 					x_vel = -2.5

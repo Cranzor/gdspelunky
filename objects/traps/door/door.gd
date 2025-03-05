@@ -47,7 +47,8 @@ func destroy():
 
 
 func step():
-	dist = gml.distance_to_object("character", self)
+	var character = gml.get_instance("character") #---[FLAG] may need to change this for multiplayer
+	dist = gml.distance_to_object(character, self)
 	if (status == IDLE):
 
 		# DY:  nothing

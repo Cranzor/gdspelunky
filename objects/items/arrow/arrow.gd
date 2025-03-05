@@ -82,7 +82,7 @@ func step():
 		if (gml.instance_exists("target")):
 			var target = gml.get_instance("target")
 			if (position.x > target.position.x and position.y > target.position.y-16 and position.y < target.position.y+16 and
-				gml.distance_to_object("target", self) < 4):
+				gml.distance_to_object(target, self) < 4):
 		
 				position.x = target.position.x+4
 				x_vel = 0

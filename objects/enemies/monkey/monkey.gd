@@ -133,6 +133,8 @@ func step():
 	super()
 
 	# main_code
+	var character = gml.get_instance("character") #---[FLAG] may have to change this for multiplayer
+	
 	if ((position.x > gml.view("xview")-20 and position.x < gml.view("xview") + gml.view("wview")+4 and
 		position.y > gml.view("yview")-20 and position.y < gml.view("yview") + gml.view("hview")+4)):
 
@@ -189,7 +191,7 @@ func step():
 		if (vine_counter > 0): vine_counter -= 1
 		if (throw_counter > 0): throw_counter -= 1
 
-		dist = gml.distance_to_object("character", self)
+		dist = gml.distance_to_object(character, self)
 
 		if (status == IDLE):
 
@@ -248,7 +250,7 @@ func step():
 			if (col_bot):
 		
 				y_vel = -1 * gml.rand(4,5)
-				var character = gml.get_instance("character") #---[FLAG] may have to change this for multiplayer
+
 				if (character.position.x < (position.x+8)):
 			
 					facing = LEFT
@@ -300,7 +302,6 @@ func step():
 					counter = gml.rand(10,40)
 			
 		
-			var character = gml.get_instance("character") #---[FLAG] may have to change this for multiplayer
 			if (dist < 64 and character.position.y > position.y):
 		
 				status = BOUNCE
@@ -407,7 +408,7 @@ func step():
 				status = BOUNCE
 				vine_counter = 20
 				y_vel = -1 * gml.rand(2,4)
-				var character = gml.get_instance("character") #---[FLAG] may have to change this for multiplayer
+
 				if (character.position.x > (position.x+8)):
 			
 					facing = LEFT

@@ -49,15 +49,15 @@ func create():
 
 
 func step():
+	var character = gml.get_instance("character") #---[FLAG] may need to adjust this for multiplayer
 	if ((position.x > gml.view("xview")-32 and position.x < gml.view("xview") + gml.view("wview") and
 		position.y > gml.view("yview")-32 and position.y < gml.view("yview") + gml.view("hview"))):
 
-		var dist = gml.distance_to_object("character", self) #---[FLAG] may need to adjust this for multiplayer
+		var dist = gml.distance_to_object(character, self) #---[FLAG] may need to adjust this for multiplayer
 		if (gml.collision_point(position.x+16, position.y+8, "solid", 0, 0)):
 
 			hp = 0
 
-		var character = gml.get_instance("character") #---[FLAG] may need to adjust this for multiplayer
 		if (hp < 1):
 
 			for repetition in range(gml.rand(1,3)):

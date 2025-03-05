@@ -432,7 +432,7 @@ func find_nearest_light_source():
 	if (gml.instance_exists(explosion)):
 
 		var source = gml.instance_nearest(position.x, position.y, 'explosion')
-		dist_to_nearest_light_source = gml.distance_to_object('source', self)
+		dist_to_nearest_light_source = gml.distance_to_object(source, self)
 		if (source.image_index <= 3): dist_to_nearest_light_source -= source.image_index*16
 		else: dist_to_nearest_light_source += (source.image_index-3)*16
 
@@ -1604,7 +1604,7 @@ func bomb_rope_and_whipping_handling(): #--- Also handles picking up items and a
 							var all_trap_blocks = gml.get_all_instances("trap_block")
 							for trap_block_instance in all_trap_blocks:
 							
-								var dist = gml.distance_to_object('character', trap_block_instance)
+								var dist = gml.distance_to_object(self, trap_block_instance) #---[FLAG] passing in self instead of character as they should be the same
 								if (dist < 90):
 								
 									trap_block_instance.dying = true
@@ -1634,7 +1634,7 @@ func bomb_rope_and_whipping_handling(): #--- Also handles picking up items and a
 								var all_trap_blocks = gml.get_all_instances("trap_block")
 								for trap_block_instance in all_trap_blocks:
 								
-									var dist = gml.distance_to_object('character', trap_block_instance)
+									var dist = gml.distance_to_object(self, trap_block_instance) #---[FLAG] passing in self instead of character as they should be the same.
 									if (dist < 90):
 									
 										gml.instance_destroy(trap_block_instance)
@@ -1728,6 +1728,7 @@ func handle_shop_behavior(): #--- Purchasing and games etc. (different shop type
 
 		if (InLevel.is_in_shop(position.x, position.y) and gml.instance_exists("shopkeeper")):
 			var shopkeeper #------ [FLAG] get reference to shopkeeper here
+			var damsel = gml.get_instance("damsel")
 		
 			var n = 0
 			if (hold_item):
@@ -1759,7 +1760,7 @@ func handle_shop_behavior(): #--- Purchasing and games etc. (different shop type
 				
 			
 			if ((global.black_market and global.room_path[[LevelGeneration.scr_get_room_x(position.x), LevelGeneration.scr_get_room_y(position.y)]] == 5) or
-				(not global.black_market and shopkeeper.style == "Craps")):
+				(not global.black_market and shopkeeper.style == "craps")):
 			
 				if (global.thief_level > 0 or global.murderer):
 				
@@ -1789,7 +1790,7 @@ func handle_shop_behavior(): #--- Purchasing and games etc. (different shop type
 				
 			
 			
-			if (shopkeeper.style == "Kissing" and gml.distance_to_object('damsel', self) < 16):
+			if (shopkeeper.style == "kissing" and gml.distance_to_object(damsel, self) < 16):
 			
 				var obj = gml.instance_nearest(position.x, position.y, 'damsel')
 				if (global.thief_level > 0 or global.murderer or not obj.for_sale):
@@ -3602,9 +3603,9 @@ func apply_friction():
 
 func apply_ball_and_chain():
 	# apply ball and chain
-	if (gml.instance_exists('ball')):
-
-		if (gml.distance_to_object('ball', self) >= 24):
+	if (gml.instance_exists("ball")):
+		var ball = gml.get_instance("ball")
+		if (gml.distance_to_object(ball, self) >= 24):
 			var ball_instance = gml.instance_nearest(position.x, position.y, 'ball') #--- adding this so we have a reference to the object
 		
 			if (x_vel > 0 and ball_instance.position.x < position.x and abs(ball_instance.position.x-position.x) > 24): x_vel = 0

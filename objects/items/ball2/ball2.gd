@@ -34,6 +34,6 @@ func step():
 
 	# main_code
 	if (gml.instance_exists("p_dummy")):
-		if (gml.distance_to_object("p_dummy", self) >= 24):
-			var p_dummy = gml.get_instance("p_dummy") #---[FLAG] may have to update this
+		var p_dummy = gml.get_instance("p_dummy") #---[FLAG] may have to update this
+		if (gml.distance_to_object(p_dummy, self) >= 24):
 			position.x = p_dummy.position.x - 24

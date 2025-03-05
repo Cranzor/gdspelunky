@@ -468,9 +468,14 @@ func scr_treasure_gen(bones_chance, instance): #--- will pass in x and y as well
 	
 	var n
 	
-	if (gml.distance_to_object("entrance", instance) < 32): return 0
-	if (gml.distance_to_object("exit", instance) < 32): return 0
-	if (gml.distance_to_object("gold_idol", instance) < 64): return 0
+	var entrance = gml.get_instance("entrance")
+	var exit = gml.get_instance("exit")
+	var gold_idol = gml.get_instance("gold_idol")
+	var giant_spider = gml.get_instance("giant_spider") #---[FLAG] does this work if giant spider doesn't exist?
+	
+	if (gml.distance_to_object(entrance, instance) < 32): return 0
+	if (gml.distance_to_object(exit, instance) < 32): return 0
+	if (gml.distance_to_object(gold_idol, instance) < 64): return 0
 
 	var col_stuff = true
 	if (not gml.collision_point(x, y-16, "solid", 0, 0) and
@@ -501,7 +506,7 @@ func scr_treasure_gen(bones_chance, instance): #--- will pass in x and y as well
 		var game = gml.get_instance("game")
 		
 		n = 60
-		if (gml.distance_to_object("giant_spider", instance) < 100): n = 5 #---[FLAG] original code is distance_to_object(oGiantSpider < 100). this might return an unexpected value in the original as it seems to be an incorrect construction
+		if (gml.distance_to_object(giant_spider, instance) < 100): n = 5 #---[FLAG] original code is distance_to_object(oGiantSpider < 100). this might return an unexpected value in the original as it seems to be an incorrect construction
 		
 		if (global.level_type != 2 and gml.rand(1,n) == 1): gml.instance_create(x, y-16, Objects.web)
 		elif (global.gen_udjat_eye and not global.locked_chest):
@@ -547,7 +552,7 @@ func scr_treasure_gen(bones_chance, instance): #--- will pass in x and y as well
 		(gml.collision_point(x-16, y-16, "solid", 0, 0) and gml.collision_point(x+16, y-16, "solid", 0, 0))):
 
 		n = 60
-		if (gml.distance_to_object("giant_spider", instance) < 100): n = 10 #---[FLAG] original code is distance_to_object(oGiantSpider < 100). this might return an unexpected value in the original as it seems to be an incorrect construction
+		if (gml.distance_to_object(giant_spider, instance) < 100): n = 10 #---[FLAG] original code is distance_to_object(oGiantSpider < 100). this might return an unexpected value in the original as it seems to be an incorrect construction
 		if (global.level_type != 2 and gml.rand(1,n) == 1): gml.instance_create(x, y-16, Objects.web)
 		elif (gml.rand(1,4) == 1): gml.instance_create(x+8, y-4, Objects.gold_bar)
 		elif (gml.rand(1,8) == 1): gml.instance_create(x+8, y-8, Objects.gold_bars)
@@ -1844,6 +1849,7 @@ func scr_entity_gen():
 	#***********************************************************************************/
 
 	# DY:  Note: depth of trees, statues is 9005
+	var exit = gml.get_instance("exit")
 
 	global.locked_chest = false
 	global.key = false
@@ -2200,7 +2206,7 @@ func scr_entity_gen():
 					gml.point_distance(solid_instance.position.x, solid_instance.position.y, entrance.position.x, entrance.position.y) > 64 and
 					not InLevel.is_in_shop(solid_instance.position.x, solid_instance.position.y)):
 				
-					if (gml.rand(1,10) == 1 and solid_instance.sprite_index == "dark" and not gml.collision_rectangle(solid_instance.position.x, solid_instance.position.y-64, solid_instance.position.x+15, solid_instance.position.y-1, "solid", 0, 0) and gml.distance_to_object("exit", solid_instance) > 64): gml.instance_create(solid_instance.position.x, solid_instance.position.y-16, Objects.spring_trap)
+					if (gml.rand(1,10) == 1 and solid_instance.sprite_index == "dark" and not gml.collision_rectangle(solid_instance.position.x, solid_instance.position.y-64, solid_instance.position.x+15, solid_instance.position.y-1, "solid", 0, 0) and gml.distance_to_object(exit, solid_instance) > 64): gml.instance_create(solid_instance.position.x, solid_instance.position.y-16, Objects.spring_trap)
 					elif (gml.rand(1,20) == 1 and gml.point_distance(solid_instance.solid_instance.position.x, solid_instance.solid_instance.position.y, entrance.position.x, entrance.position.y) > 64): gml.instance_create(solid_instance.position.x, solid_instance.position.y-16, Objects.yeti)
 				
 				
