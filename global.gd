@@ -31,8 +31,8 @@ var damsels
 var damsels_bought
 var damsels_grabbed = 0 #---[FLAG] setting to 0
 var damsels_killed
-var damsels_killed_total
-var damsels_saved_total
+var damsels_killed_total: int
+var damsels_saved_total: int
 var dark_level
 var darkness_lerp
 var deadfish
@@ -174,7 +174,8 @@ var message_timer
 var mini1
 var mini2
 var mini3
-var misc_deaths
+var misc_deaths: Dictionary[int, int] = {0 : 0, 1 : 0, 2 : 0, 3 : 0, 4 : 0, 5 : 0, \
+				6 : 0, 7 : 0, 8 : 0, 9 : 0, 10 : 0, 11 : 0}
 var money
 var monkeys
 var murderer = false
@@ -309,7 +310,7 @@ var time
 var title_start
 var tofu
 var tomblords
-var total_chests
+var total_chests: int
 var total_crates: int
 var total_monkey_kills
 var tunnel1

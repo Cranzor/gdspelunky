@@ -54,7 +54,7 @@ func step():
 	super()
 
 	# main_code
-	var direction #--- making declaration here
+	var direction: float #--- making declaration here
 	if (x_vel > 0 and y_vel < 0):
 
 		direction = gml.radtodeg(gml.arctan(-y_vel/x_vel))

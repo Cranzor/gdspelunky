@@ -385,6 +385,8 @@ func draw_sprite(sprite: String, subimg: int, x, y, node, is_object_sprite: bool
 		
 
 		var new_sprite = node.get_node("HeldSprites/" + sprite_pascal_case)
+		if new_sprite == null:
+			new_sprite = node.get_node("Sprites/" + sprite_pascal_case) #---[FLAG] janky way of handling this. make this uniform
 		new_sprite.global_position = Vector2(x, y)
 		new_sprite.sprite_displayed = true
 		

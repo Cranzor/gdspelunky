@@ -108,7 +108,6 @@ var p_dummy5
 
 
 var splash
-var burn
 
 
 
@@ -512,8 +511,8 @@ func handle_edge_leaning():
 			hold_item.held = false
 			if (facing == LEFT): hold_item.x_vel = -2
 			else: hold_item.x_vel = 2
-			if (hold_item.type == "Damsel"): Audio.play_sound(global.snd_damsel)
-			if (hold_item.type == "Bow" and bow_armed):
+			if (hold_item.type == "damsel"): Audio.play_sound(global.snd_damsel)
+			if (hold_item.type == "bow" and bow_armed):
 			
 				CharacterScripts.scr_fire_bow()
 			
@@ -545,7 +544,7 @@ func create_burn():
 	# BURNING
 	if (burning > 0):
 
-		if (randi_range(1,5) == 1): gml.instance_create(position.x-8+randi_range(4,12), position.y-8+randi_range(4,12), burn)
+		if (randi_range(1,5) == 1): gml.instance_create(position.x-8+randi_range(4,12), position.y-8+randi_range(4,12), Objects.burn)
 		burning -= 1
 
 func kill_player_upon_touching_lava():
@@ -687,7 +686,7 @@ func handle_player_dead_or_stunned():
 
 		if (hold_item):
 		
-			if (hold_item.type == "Bow" and bow_armed):
+			if (hold_item.type == "bow" and bow_armed):
 			
 				CharacterScripts.scr_fire_bow()
 			
@@ -858,7 +857,7 @@ func start_weapon_animation():
 func start_weapon_pre_animation():
 	if (hold_item):
 
-		if (hold_item.type == "Machete"):
+		if (hold_item.type == "machete"):
 		
 			if ((sprite_index == "attack_left" or sprite_index == "damsel_attack_l" or sprite_index == "tunnel_attack_l") and facing == LEFT and image_index < 2 and gml.instance_number('machete_pre') == 0):
 			
@@ -871,7 +870,7 @@ func start_weapon_pre_animation():
 				obj.sprite_index = "machete_pre_r"
 			
 		
-		elif (hold_item.type == "Mattock"):
+		elif (hold_item.type == "mattock"):
 		
 			if ((sprite_index == "attack_left" or sprite_index == "damsel_attack_l" or sprite_index == "tunnel_attack_l") and facing == LEFT and image_index < 2 and gml.instance_number('machete_pre') == 0):
 			
@@ -1068,7 +1067,7 @@ func start_game():
 				hold_item = null
 				pickup_item_type = ""
 			
-			elif (hold_item.type == "Bomb"):
+			elif (hold_item.type == "bomb"):
 			
 				if (hold_item.armed):
 				
@@ -1077,15 +1076,15 @@ func start_game():
 				else:
 				
 					global.bombs += 1
-					hold_item.gml.instance_destroy()
+					gml.instance_destroy(hold_item)
 				
 				
 				global.pickup_item = pickup_item_type
 			
-			elif (hold_item.type == "Rope"):
+			elif (hold_item.type == "rope"):
 			
 				global.rope += 1
-				hold_item.gml.instance_destroy()
+				gml.instance_destroy(hold_item)
 				
 				global.pickup_item = pickup_item_type
 			
@@ -1219,7 +1218,7 @@ func exit_level():
 			
 				global.pickup_item = hold_item.type
 				hold_item.break_pieces = false
-				hold_item.gml.instance_destroy()
+				gml.instance_destroy(hold_item)
 				
 			
 			hold_item = null
@@ -1361,7 +1360,7 @@ func bomb_rope_and_whipping_handling(): #--- Also handles picking up items and a
 				if (global.bombs > 0 or global.rope > 0):
 				
 					pickup_item_type = hold_item.type
-					if (hold_item.type == "Bow" and bow_armed):
+					if (hold_item.type == "bow" and bow_armed):
 					
 						CharacterScripts.scr_fire_bow()
 					
@@ -1372,7 +1371,7 @@ func bomb_rope_and_whipping_handling(): #--- Also handles picking up items and a
 				
 				if (global.bombs > 0):
 				
-					hold_item = gml.instance_create(position.x, position.y, "bomb")
+					hold_item = gml.instance_create(position.x, position.y, Objects.bomb)
 					if (global.has_sticky_bombs): hold_item.sticky = true
 					hold_item.held = true
 					global.bombs -= 1
@@ -1575,13 +1574,13 @@ func bomb_rope_and_whipping_handling(): #--- Also handles picking up items and a
 					whoa_timer = whoa_timer_max
 					pickup_item_type = hold_item.type
 					
-					if (hold_item.type == "Bow" and hold_item.new):
+					if (hold_item.type == "bow" and hold_item.new):
 					
 						hold_item.new = false
 						global.arrows += 6
 					
 					
-					if (hold_item.type == "Gold Idol" and hold_item.trigger and not InLevel.is_room("r_load_level")):
+					if (hold_item.type == "gold idol" and hold_item.trigger and not InLevel.is_room("r_load_level")):
 					
 						global.idols_grabbed += 1
 						if (global.level_type == 0):
@@ -1647,7 +1646,7 @@ func bomb_rope_and_whipping_handling(): #--- Also handles picking up items and a
 							hold_item.trigger = false
 						
 					
-					elif (hold_item.type == "Damsel"):
+					elif (hold_item.type == "damsel"):
 					
 						if (hold_item.status == 4): # exiting
 						
@@ -1727,7 +1726,7 @@ func handle_shop_behavior(): #--- Purchasing and games etc. (different shop type
 	if (InLevel.is_level() and active and k_pay_pressed and not dead and not stunned):
 
 		if (InLevel.is_in_shop(position.x, position.y) and gml.instance_exists("shopkeeper")):
-			var shopkeeper #------ [FLAG] get reference to shopkeeper here
+			var shopkeeper = gml.get_instance("shopkeeper")
 			var damsel = gml.get_instance("damsel")
 		
 			var n = 0
@@ -1993,7 +1992,7 @@ func handle_hit_by_explosion():
 
 		global.plife -= 10
 		if (global.plife > 0 and InLevel.is_real_level()): global.misc_deaths[1] += 1
-		explosion = gml.instance_nearest(position.x, position.y, explosion)
+		explosion = gml.instance_nearest(position.x, position.y, "explosion")
 		if (explosion.position.x < position.x): x_vel = randi_range(4,6)
 		else: x_vel = -randi_range(4,6)
 		y_vel = -6
@@ -2097,11 +2096,11 @@ func drop_item_when_dead_or_stunned():
 		hold_item.x_vel = x_vel
 		hold_item.y_vel = -6
 		hold_item.armed = true
-		if (hold_item.type == "Damsel"):
+		if (hold_item.type == "damsel"):
 		
 			hold_item.status = 2
 		
-		elif (hold_item.type == "Bow"):
+		elif (hold_item.type == "bow"):
 		
 			CharacterScripts.scr_fire_bow()
 		
@@ -2374,7 +2373,7 @@ func modify_collect_and_money_values():
 func collect_arrow():
 	if (hold_item):
 
-		if (hold_item.type == "Bow"):
+		if (hold_item.type == "bow"):
 		
 			if (gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "arrow", 0, 0) and not dead and not stunned):
 			
@@ -2398,25 +2397,25 @@ func collect_treasure():
 			
 			var coin = false
 			#gml.instance_create(position.x, position.y-8, "small_collect")
-			if (gem.type == "Gold Chunk"):
+			if (gem.type == "gold chunk"):
 				global.gold += 1
 				coin = true
-			if (gem.type == "Gold Nugget"):
+			if (gem.type == "gold nugget"):
 				global.nuggets += 1
 				coin = true
-			if (gem.type == "Gold Bar"):
+			if (gem.type == "gold bar"):
 				global.goldbar += 1
 				coin = true
-			if (gem.type == "Gold Bars"):
+			if (gem.type == "gold bars"):
 				global.goldbars += 1
 				coin = true
-			if (gem.type == "Emerald"): global.emeralds += 1
-			if (gem.type == "Big Emerald"): global.bigemeralds += 1
-			if (gem.type == "Sapphire"): global.sapphires += 1
-			if (gem.type == "Big Sapphire"): global.bigsapphires += 1
-			if (gem.type == "Ruby"): global.rubies += 1
-			if (gem.type == "Big Ruby"): global.bigrubies += 1
-			if (gem.type == "Diamond"): global.diamonds += 1
+			if (gem.type == "emerald"): global.emeralds += 1
+			if (gem.type == "big emerald"): global.bigemeralds += 1
+			if (gem.type == "sapphire"): global.sapphires += 1
+			if (gem.type == "big sapphire"): global.bigsapphires += 1
+			if (gem.type == "ruby"): global.rubies += 1
+			if (gem.type == "big ruby"): global.bigrubies += 1
+			if (gem.type == "diamond"): global.diamonds += 1
 			if (coin): Audio.play_sound(global.snd_coin)
 			else: Audio.play_sound(global.snd_gem)
 
@@ -2474,7 +2473,7 @@ func collect_idol_and_damsel():
 		if (hold_item != null):
 		
 			collect = false
-			if (hold_item.type == "Gold Idol"):
+			if (hold_item.type == "gold idol"):
 			
 				if (InLevel.is_real_level()): global.idols_converted += 1
 				global.collect += hold_item.value*(global.level_type+1)
@@ -2498,7 +2497,7 @@ func collect_idol_and_damsel():
 					hold_item.position.x = door.position.x+8
 					hold_item.position.y = door.position.y+8
 
-					var hold_item_instance = gml.instance_nearest(position.x, position.y, hold_item)
+					var hold_item_instance = gml.instance_nearest(position.x, position.y, hold_item.object_name)
 					
 					if (global.is_damsel): hold_item_instance.sprite_index = "p_exit"
 					else: hold_item_instance.sprite_index = "damsel_exit2"
@@ -2506,7 +2505,7 @@ func collect_idol_and_damsel():
 					hold_item_instance.held = false
 					hold_item_instance.x_vel = 0
 					hold_item_instance.y_vel = 0
-					hold_item_instance.Audio.play_sound(global.snd_steps)
+					Audio.play_sound(global.snd_steps)
 					hold_item_instance.depth = 1000
 					hold_item_instance.active = false
 					hold_item_instance.can_pick_up = false
