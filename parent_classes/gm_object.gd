@@ -401,6 +401,8 @@ func bounding_box_setup():
 func sprite_setup(object_entry):
 	var animated_sprite = get_animated_sprite_2d()
 	
+	var visibility = object_entry["visible"]
+	
 	if animated_sprite == null:
 		var new_animated_sprite = SPRITE.instantiate()
 		var sprite_frames = new_animated_sprite.sprite_frames
@@ -412,6 +414,8 @@ func sprite_setup(object_entry):
 		animated_sprite_node = new_animated_sprite
 		sprites_holder = Node2D.new()
 		sprites_holder.name = "Sprites"
+		if visibility == false:
+			sprites_holder.hide()
 		add_child(sprites_holder)
 		sprites_holder.add_child(new_animated_sprite)
 		

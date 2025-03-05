@@ -470,7 +470,8 @@ func step():
 						dice_instance.rolled = false
 			
 		
-			elif (player1.hold_item > 0):
+			#elif (player1.hold_item > 0):
+			elif (player1.hold_item != null):
 		
 				var obj = player1.hold_item
 				if (obj.cost > 0):

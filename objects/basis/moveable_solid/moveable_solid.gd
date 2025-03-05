@@ -15,6 +15,7 @@ func _process(delta):
 
 
 #--- Object functions
+var y_m_prev #--- used in game_step_event
 
 
 func create():

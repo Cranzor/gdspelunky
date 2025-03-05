@@ -187,7 +187,7 @@ func tile_add(background,left,top,width,height,x,y,depth): #return value of tile
 
 func distance_to_object(obj: GMObject, comparison_node: GMObject): #Make this more accurate with this info https://manual.gamemaker.io/monthly/en/GameMaker_Language/GML_Reference/Maths_And_Numbers/Angles_And_Distance/distance_to_object.htm
 	if obj == null:
-		return 50000 #--- returning a large number here for variables passed in that don't exist. original engine seems to just not make the function work at all if the object doesn't exist
+		return 50000.0 #--- returning a large number here for variables passed in that don't exist. original engine seems to just not make the function work at all if the object doesn't exist
 	var distance: float = comparison_node.position.distance_to(obj.position)
 	return distance
 	

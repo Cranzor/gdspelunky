@@ -306,8 +306,8 @@ func game_step_event():
 		var all_moveable_solids = gml.get_all_instances("moveable_solid")
 		for moveable_solid_instance in all_moveable_solids:
 
-			if ((moveable_solid_instance.position.x > gml.view('xview')-16 and moveable_solid_instance.position.x < gml.view('xview') + gml.view('wview')[0] and
-				moveable_solid_instance.position.y > gml.view('yview')-16 and moveable_solid_instance.position.y < gml.view('yview')[0] + gml.view('hview'))):
+			if ((moveable_solid_instance.position.x > gml.view('xview')-16 and moveable_solid_instance.position.x < gml.view('xview') + gml.view('wview') and
+				moveable_solid_instance.position.y > gml.view('yview')-16 and moveable_solid_instance.position.y < gml.view('yview') + gml.view('hview'))):
 			
 				moveable_solid_instance.y_m_prev = moveable_solid_instance.position.y
 				moveable_solid_instance.y_vel += moveable_solid_instance.my_grav
