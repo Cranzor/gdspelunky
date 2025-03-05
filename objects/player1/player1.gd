@@ -1093,7 +1093,7 @@ func start_game():
 			
 				global.pickup_item = hold_item.type
 				hold_item.break_pieces = false
-				hold_item.gml.instance_destroy(hold_item)
+				gml.instance_destroy(hold_item)
 				
 			
 		
@@ -1153,7 +1153,7 @@ func exit_level():
 				else: global.idols += 1
 				Audio.play_sound(global.snd_coin)
 				gml.instance_create(position.x, position.y-8, "big_collect")
-				hold_item.gml.instance_destroy(hold_item)
+				gml.instance_destroy(hold_item)
 				hold_item = null
 			
 			elif (hold_item.type == "damsel"):
@@ -1203,7 +1203,7 @@ func exit_level():
 				else:
 				
 					global.bombs += 1
-					hold_item.gml.instance_destroy(hold_item)
+					gml.instance_destroy(hold_item)
 				
 				
 				global.pickup_item = pickup_item_type
@@ -1211,7 +1211,7 @@ func exit_level():
 			elif (hold_item.type == "rope"):
 			
 				global.rope += 1
-				hold_item.gml.instance_destroy(hold_item)
+				gml.instance_destroy(hold_item)
 				
 				global.pickup_item = pickup_item_type
 			
@@ -1366,7 +1366,7 @@ func bomb_rope_and_whipping_handling(): #--- Also handles picking up items and a
 						CharacterScripts.scr_fire_bow()
 					
 					hold_item.break_pieces = false
-					hold_item.gml.instance_destroy(hold_item)
+					gml.instance_destroy(hold_item)
 					
 				
 				
@@ -2145,8 +2145,8 @@ func handle_dead_or_stunned():
 			
 			else:
 			
-				if (x_vel < 0): sprite_index = "damsel_die_l_l"
-				else: sprite_index = "damsel_die_l_r"
+				if (x_vel < 0): sprite_index = "damsel_die_ll"
+				else: sprite_index = "damsel_die_lr"
 			
 		
 		elif (global.is_tunnel_man):
@@ -2163,8 +2163,8 @@ func handle_dead_or_stunned():
 			
 			else:
 			
-				if (x_vel < 0): sprite_index = "tunnel_die_l_l"
-				else: sprite_index = "tunnel_die_l_r"
+				if (x_vel < 0): sprite_index = "tunnel_die_ll"
+				else: sprite_index = "tunnel_die_lr"
 			
 		
 		else:
@@ -2181,8 +2181,8 @@ func handle_dead_or_stunned():
 			
 			else:
 			
-				if (x_vel < 0): sprite_index = "die_l_l"
-				else: sprite_index = "die_l_r"
+				if (x_vel < 0): sprite_index = "die_ll"
+				else: sprite_index = "die_lr"
 			
 		
 		
@@ -2459,7 +2459,7 @@ func collect_rope_pile():
 		if (not obj.held and obj.cost == 0 and not gml.collision_point(obj.position.x, obj.position.y, "solid", 0, 0)):
 		
 			global.rope += 3
-			var disp = gml.instance_create(obj.position.x, obj.position.y-15, "items_get")
+			var disp = gml.instance_create(obj.position.x, obj.position.y-15, Objects.items_get)
 			disp.sprite_index = "rope_get"
 			gml.instance_destroy(obj)
 			Audio.play_sound(global.snd_pickup)
@@ -4236,7 +4236,7 @@ func move_to(x_vel, y_vel):
 			if Collision.is_collision_bottom(1, self):
 				break
 			if Collision.can_land_on_platforms(self):
-				if Collision.is_collision_platform(self)==false and Collision.is_collision_platform_bottom(1, self) and k_down==0: #---TODO: got an error here. 'boot' and 'int' in operator ==
+				if Collision.is_collision_platform(self)==false and Collision.is_collision_platform_bottom(1, self) and k_down==false: #--- changed 0 to false
 					break
 					
 			position.y += 1

@@ -171,7 +171,7 @@ func move_to(x_vel, y_vel, node):
 			can_move = false
 			
 		elif Collision.can_land_on_platforms(node):
-			if Collision.is_collision_platform(node)==false and Collision.is_collision_platform_bottom(1, node) and node.k_down==0:
+			if Collision.is_collision_platform(node)==false and Collision.is_collision_platform_bottom(1, node) and node.k_down==false: #--- changed 0 to false
 				can_move = false
 				
 		if can_move:

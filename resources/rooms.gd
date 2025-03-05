@@ -66580,7 +66580,7 @@ const room_database = {
 	}	
 }
 
-const rooms_extents = {
+const rooms_extents = { #---[FLAG] update this entire fill to get all needed data. these are just "size" in the original room file -- grab it from there
  "credits1" : Vector2(320, 240),
  "credits2" : Vector2(320, 240),
  "end" : Vector2(640, 256),
@@ -66591,7 +66591,7 @@ const rooms_extents = {
  "intro" : Vector2(960, 240),
  "joy_config" : Vector2(16, 16),
  "key_config" : Vector2(16, 16),
- "level" : Vector2(512, 416),
+ "level" : Vector2(672, 544),
  "level2" : Vector2(672, 608),
  "level3" : Vector2(512, 544),
  "level_editor" : Vector2(672, 544),

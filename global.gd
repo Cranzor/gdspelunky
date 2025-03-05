@@ -69,7 +69,9 @@ var draw_hud
 var emeralds
 var end_room_x
 var end_room_y
-var enemy_deaths
+var enemy_deaths: Dictionary[int, int] = {0 : 0, 1 : 0, 2 : 0, 3 : 0, 4 : 0, 5 : 0, \
+				6 : 0, 7 : 0, 8 : 0, 9 : 0, 10 : 0, 11 : 0, 12 : 0, 13 : 0, 14 : 0, 15 : 0, \
+				16 : 0, 17 : 0, 18 : 0, 19 : 0, 20 : 0, 21 : 0, 22 : 0, 23 : 0, 24 : 0}
 var enemy_kills: Dictionary[int, int] = {0 : 0, 1 : 0, 2 : 0, 3 : 0, 4 : 0, 5 : 0, \
 				6 : 0, 7 : 0, 8 : 0, 9 : 0, 10 : 0, 11 : 0, 12 : 0, 13 : 0, 14 : 0, 15 : 0, \
 				16 : 0, 17 : 0, 18 : 0, 19 : 0, 20 : 0, 21 : 0}
@@ -308,7 +310,7 @@ var title_start
 var tofu
 var tomblords
 var total_chests
-var total_crates
+var total_crates: int
 var total_monkey_kills
 var tunnel1
 var tunnel1_max

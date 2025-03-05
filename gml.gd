@@ -545,6 +545,10 @@ func arctan(x):
 func make_color_rgb(red, green, blue):
 	return Color(red, green, blue)
 
+func string_upper(string: String):
+	string.replace("_", " ")
+	return string.to_upper()
+
 #------------------------
 func singleton_test():
 	var bg_holder_list = get_tree().get_nodes_in_group('BgHolder')

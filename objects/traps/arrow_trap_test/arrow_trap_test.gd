@@ -19,7 +19,7 @@ var arrow
 
 
 func collision_with_boulder():
-	if (trap_id == 0):
+	if (trap_id == null):
 
 		gml.instance_destroy(self)
 
@@ -46,7 +46,7 @@ func collision_with_boulder():
 
 func collision_with_character():
 	var player1 = gml.get_instance("player1") #---[FLAG] may have to change this for multiplayer
-	if (trap_id == 0):
+	if (trap_id == null):
 
 		gml.instance_destroy(self)
 
@@ -75,7 +75,7 @@ func collision_with_character():
 
 
 func collision_with_enemy():
-	if (trap_id == 0):
+	if (trap_id == null):
 
 		gml.instance_destroy(self)
 
@@ -101,7 +101,7 @@ func collision_with_enemy():
 
 
 func collision_with_item():
-	if (trap_id == 0):
+	if (trap_id == null):
 
 		gml.instance_destroy(self)
 
@@ -127,7 +127,7 @@ func collision_with_item():
 
 
 func collision_with_moveable_solid():
-	if (trap_id == 0):
+	if (trap_id == null):
 
 		gml.instance_destroy(self)
 
@@ -153,7 +153,7 @@ func collision_with_moveable_solid():
 	
 
 func collision_with_treasure():
-	if (trap_id == 0):
+	if (trap_id == null):
 
 		gml.instance_destroy(self)
 
@@ -179,4 +179,5 @@ func collision_with_treasure():
 
 
 func create():
-	trap_id = 0
+	#trap_id = 0
+	trap_id = null
