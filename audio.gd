@@ -26,7 +26,7 @@ func scr_music_fade():
 		
 		else: SS.set_sound_freq(global.mus_cave, SS.get_sound_freq(global.mus_cave)-100)
 	
-func start_music(): #---[FLAG] have to implement
+func start_music():
 	var player1 = gml.get_instance("player1") #---[FLAG] may have to change this for multiplayer
 	
 	if (gml.instance_exists("load_level")):

@@ -111,7 +111,7 @@ func string_insert(substr,passed_string,index):
 	passed_string = passed_string.insert(index, substr)
 	return passed_string
 	
-func instance_exists(obj): #--- FLAG. if enforcing this as a string, it sometimes breaks
+func instance_exists(obj: String): #--- FLAG. if enforcing this as a string, it sometimes breaks
 	var existence = get_tree().get_nodes_in_group(str(obj))
 	if existence == []:
 		return false
@@ -121,14 +121,12 @@ func instance_exists(obj): #--- FLAG. if enforcing this as a string, it sometime
 #-----------------------Have to work on
 func instance_create(x,y,obj): #should return the node as this is used in scripts
 	if obj is String:
+		assert(obj is String, "String was passed into instance_create")
 		obj = load(obj)
 	var instance = obj.instantiate()
-	instance.position.x = x
-	instance.position.y = y
+	instance.position = Vector2(x, y)
 	var objects_holder = get_tree().get_first_node_in_group("objects_holder")
 	objects_holder.add_child(instance)
-	#instance.position.x = x
-	#instance.position.y = y
 	
 	#for objects bigger than 16x16, get height and width of sprite texture and then add that as the size
 	
@@ -307,13 +305,6 @@ func instance_activate_object(obj: String):
 func instance_activate_region(left, top, width, height, inside):
 	pass
 
-func sprite_index(sprite_name: String, node):
-	var sprite = node.animated_sprite_node
-	sprite.play(sprite_name)
-
-func get_sprite_index(node):
-	pass
-
 func draw_set_font(font: String):
 	draw_font = font
 
@@ -419,17 +410,6 @@ func instance_deactivate_all(notme):
 func game_end():
 	Screen.game_end()
 	get_tree().quit()
-	
-func animation_end(object, animated_sprite):
-	#var number_of_frames = animated_sprite.sprite_frames.get_frame_count(animated_sprite.animation)
-	#var current_index = animated_sprite.get_frame()
-	
-	#if current_index == number_of_frames - 1:
-	
-	if animated_sprite.frame == 0:
-		return true
-	else:
-		return false
 
 func tile_layer_find(depth, x, y): #---[FLAG] have to implement this. returns the given tile
 	pass
@@ -573,14 +553,6 @@ func get_nearest_multiple(number, target_number): #--- Adapted from here: https:
 	number = number + z
 	number = number - (int(number) % int(target_number))
 	return number
-
-func alarm_frames(frame_number):
-	frame_number = float(frame_number)
-	var frame_rate = 30.0
-	var time_truncated = int(frame_number/frame_rate * 100)/100.0
-	print("here")
-	print(time_truncated)
-	return time_truncated
 	
 func generate_random_hash():
 	var characters = '1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYS'

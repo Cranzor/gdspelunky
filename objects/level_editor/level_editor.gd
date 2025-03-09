@@ -49,9 +49,9 @@ func _process(delta):
 #    for j in range(0, 32):
 
 #        for i in range(0, 40):
-    
+	
 #            level_array[i, j] = "0"
-    
+	
 
 
 #    BLOCKS = 0
@@ -162,17 +162,17 @@ func _process(delta):
 #        level_name = global.test_level
 #        file = file_text_open_read("levels/" + string_lower(level_name)+".lvl")
 #        if (file):
-    
+	
 #            for j in range(0, 32):
-        
+		
 #                str = file_text_read_str(file)
 #                for i in range(0, 40):
-            
+			
 #                    level_array[i, j] = string_char_at(str, i+1)
 #                    scr_create_tile(level_array[i, j], 16+i*16, 16+j*16)
-            
+			
 #                file_text_readln(file)
-        
+		
 #            author = file_text_read_str(file)
 #            file_text_readln(file)
 #            music = file_text_read_str(file)
@@ -185,25 +185,25 @@ func _process(delta):
 #            file_text_readln(file)
 #            next_level = file_text_read_str(file)
 #            file_text_close(file)
-    
+	
 #        */
-    
+	
 #                status = EDIT
 #                level_name = global.test_level
 #                file = file_text_open_read("levels/test.tmp")
 #                # DY:  file = file_text_open_read("levels/" + string_lower(level_name)+".lvl")
 #                if (file):
-            
+			
 #                    for j in range(0, 32):
-                
+				
 #                        str = file_text_read_str(file)
 #                        for i in range(0, 40):
-                    
+					
 #                            level_array[i, j] = string_char_at(str, i+1)
 #                            # DY: scr_create_tile(level_array[i, j], 16+i*16, 16+j*16)
-                    
+					
 #                        file_text_readln(file)
-                
+				
 #                    author = file_text_read_str(file)
 #                    file_text_readln(file)
 #                    music = file_text_read_str(file)
@@ -217,83 +217,83 @@ func _process(delta):
 #                    next_level = file_text_read_str(file)
 #                    exit_names_num = 0
 #                    if (not file_text_eof(file)):
-                
+				
 #                        file_text_readln(file)
 #                        exit_names_num = real(file_text_read_str(file))
-                
+				
 #                    if (exit_names_num > 0):
-                
+				
 #                        file_text_readln(file)
 #                        for (i = 0 i < exit_names_num i += 1)
-                    
+					
 #                            exit_names[i] = file_text_read_str(file)
 #                            if (i < exit_names_num-1): file_text_readln(file)
-                    
-                
+					
+				
 #                    sign_names_num = 0
 #                    if (not file_text_eof(file)):
-                
+				
 #                        file_text_readln(file)
 #                        sign_names_num = real(file_text_read_str(file))
-                
+				
 #                    if (sign_names_num > 0):
-                
+				
 #                        file_text_readln(file)
 #                        for (i = 0 i < sign_names_num i += 1)
-                    
+					
 #                            sign_names[i] = file_text_read_str(file)
 #    		          if (i < sign_names_num-1): file_text_readln(file)
-                    
-                
+					
+				
 #                    file_text_close(file)
-                
+				
 #                    # DY:  build level
 #                    exit_names_id = 0
 #                    sign_names_id = 0
 #                    for j in range(0, 32):
-                
+				
 #                        for i in range(0, 40):
-                    
+					
 #                            scr_create_tile(level_array[i, j], 16+i*16, 16+j*16)
 #                            if (level_array[i, j] == "X"):
-                        
+						
 #                                obj = instance_position(16+i*16, 16+j*16, exit)
 #                                if (obj):
-                            
+							
 #                                    if (exit_names_num > 0):
-                                
+								
 #                                        obj.leads_to = exit_names[exit_names_id]
 #                                        exit_names_id += 1
-                                
-                            
-                        
+								
+							
+						
 #                            elif (level_array[i, j] == "@"):
-                        
+						
 #                                obj = instance_position(16+i*16, 16+j*16, entrance)
 #                                if (obj):
-                            
+							
 #                                    if (exit_names_num > 0):
-                                
+								
 #                                        obj.leads_to = exit_names[exit_names_id]
 #                                        exit_names_id += 1
-                                
-                            
-                        
+								
+							
+						
 #                            elif (level_array[i, j] == "I"):
-                        
+						
 #                                obj = instance_position(16+i*16, 16+j*16, msg_sign)
 #                                if (obj):
-                            
+							
 #                                    if (sign_names_num > 0):
-                                
+								
 #                                        obj.message = sign_names[sign_names_id]
 #                                        sign_names_id += 1
-                                
-                            
-                        
-                    
-                
-            
+								
+							
+						
+					
+				
+			
 
 #        window_set_cursor(cr_default)
 #        curs_obj.visible = true
@@ -302,7 +302,7 @@ func _process(delta):
 #        gml.instance_create(position.x+320-32, position.y, Objects.test_button)
 
 
-    
+	
 
 #func draw():
 #    gml.draw_set_font(global.my_font_small)
@@ -356,42 +356,42 @@ func _process(delta):
 #        n = 320 - str_len
 #        n = ceil(n / 2)
 #        gml.draw_text(gml.view("xview")+n, gml.view("yview")+116, "SAVE LEVEL? (Y/N)")
-    
+	
 #        m = 16
 #        gml.draw_set_color(gml.c_yellow)
 #        if not (gml.instance_exists("entrance")):
-    
+	
 #            str_len = string_length("WARNING: NO ENTRANCE!")*8
 #            n = 320 - str_len
 #            n = ceil(n / 2)
 #            gml.draw_text(gml.view("xview")+n, gml.view("yview")+116+m, "WARNING: NO ENTRANCE!")
 #            m += 8
-    
-    
+	
+	
 #        if not (gml.instance_exists("exit")):
-    
+	
 #            str_len = string_length("WARNING: NO EXIT!")*8
 #            n = 320 - str_len
 #            n = ceil(n / 2)
 #            gml.draw_text(gml.view("xview")+n, gml.view("yview")+116+m, "WARNING: NO EXIT!")
-    
+	
 
 #    else:
 
 #        # DY: gml.draw_text(gml.view("xview"), gml.view("yview"), str(mouse_x) + ", " + str(mouse_y))
 #        if (gml.view("yview") == 0):
-    
+	
 #            gml.draw_text(gml.view("xview")+40, gml.view("yview")+gml.view("hview")-32, level_name + " BY " + author)
 #            gml.draw_text(gml.view("xview")+40, gml.view("yview")+gml.view("hview")-24, str(curs_obj.position.x) + ", " + str(curs_obj.position.y))
-    
+	
 #        else:
-    
+	
 #            gml.draw_text(gml.view("xview")+40, gml.view("yview")+16, level_name + " BY " + author)
 #            gml.draw_text(gml.view("xview")+40, gml.view("yview")+24, str(curs_obj.position.x) + ", " + str(curs_obj.position.y))
-    
+	
 
 
-    
+	
 
 #func key 1 pressed():
 #    # DY:  Blocks
@@ -406,7 +406,7 @@ func _process(delta):
 #        curs_obj.sprite_index = "entrance"
 
 
-    
+	
 
 #func key 2 pressed():
 #    # DY:  Monsters
@@ -421,7 +421,7 @@ func _process(delta):
 #        curs_obj.sprite_index = "bat_left"
 
 
-    
+	
 
 #func key 3 pressed():
 #    # DY:  Traps
@@ -436,7 +436,7 @@ func _process(delta):
 #        curs_obj.sprite_index = "spikes"
 
 
-    
+	
 
 #func key 4 pressed():
 #    # DY:  Items
@@ -448,7 +448,7 @@ func _process(delta):
 #        curs_obj.sprite_index = "gold_bar_tile"
 
 
-    
+	
 
 #func key a pressed():
 #    if (status == 1):
@@ -459,29 +459,29 @@ func _process(delta):
 #        scr_set_cursor_tile()
 
 
-    
+	
 
 #func key any key pressed():
 #    if (status == GET_FILE_NAME):
 
 #        if (keyboard_key == vk_enter):
-    
+	
 #            if (level_name != ""):
-        
+		
 #                status = EDIT
 #                file = file_text_open_read("levels/" + string_lower(level_name)+".lvl")
 #                if (file):
-            
+			
 #                    for j in range(0, 32):
-                
+				
 #                        str = file_text_read_str(file)
 #                        for i in range(0, 40):
-                    
+					
 #                            level_array[i, j] = string_char_at(str, i+1)
 #                            # DY: scr_create_tile(level_array[i, j], 16+i*16, 16+j*16)
-                    
+					
 #                        file_text_readln(file)
-                
+				
 #                    author = file_text_read_str(file)
 #                    file_text_readln(file)
 #                    music = file_text_read_str(file)
@@ -495,102 +495,102 @@ func _process(delta):
 #                    next_level = file_text_read_str(file)
 #                    exit_names_num = 0
 #                    if (not file_text_eof(file)):
-                
+				
 #                        file_text_readln(file)
 #                        exit_names_num = real(file_text_read_str(file))
-                
+				
 #                    if (exit_names_num > 0):
-                
+				
 #                        file_text_readln(file)
 #                        for (i = 0 i < exit_names_num i += 1)
-                    
+					
 #                            exit_names[i] = file_text_read_str(file)
 #                            if (i < exit_names_num-1): file_text_readln(file)
-                    
-                
+					
+				
 #                    sign_names_num = 0
 #                    if (not file_text_eof(file)):
-                
+				
 #                        file_text_readln(file)
 #                        sign_names_num = real(file_text_read_str(file))
-                
+				
 #                    if (sign_names_num > 0):
-                
+				
 #                        file_text_readln(file)
 #                        for (i = 0 i < sign_names_num i += 1)
-                    
+					
 #                            sign_names[i] = file_text_read_str(file)
 #    		          if (i < sign_names_num-1): file_text_readln(file)
-                    
-                
+					
+				
 #                    file_text_close(file)
-                
+				
 #                    # DY:  build level
 #                    exit_names_id = 0
 #                    sign_names_id = 0
 #                    for j in range(0, 32):
-                
+				
 #                        for i in range(0, 40):
-                    
+					
 #                            scr_create_tile(level_array[i, j], 16+i*16, 16+j*16)
 #                            if (level_array[i, j] == "X"):
-                        
+						
 #                                obj = instance_position(16+i*16, 16+j*16, exit)
 #                                if (obj):
-                            
+							
 #                                    if (exit_names_num > 0):
-                                
+								
 #                                        obj.leads_to = exit_names[exit_names_id]
 #                                        exit_names_id += 1
-                                
-                            
-                        
+								
+							
+						
 #                            elif (level_array[i, j] == "@"):
-                        
+						
 #                                obj = instance_position(16+i*16, 16+j*16, entrance)
 #                                if (obj):
-                            
+							
 #                                    if (exit_names_num > 0):
-                                
+								
 #                                        obj.leads_to = exit_names[exit_names_id]
 #                                        exit_names_id += 1
-                                
-                            
-                        
+								
+							
+						
 #                            elif (level_array[i, j] == "I"):
-                        
+						
 #                                obj = instance_position(16+i*16, 16+j*16, msg_sign)
 #                                if (obj):
-                            
+							
 #                                    if (sign_names_num > 0):
-                                
+								
 #                                        obj.message = sign_names[sign_names_id]
 #                                        sign_names_id += 1
-                                
-                            
-                        
-                    
-                
-            
+								
+							
+						
+					
+				
+			
 #                window_set_cursor(cr_default)
 #                curs_obj.visible = true
 #                gml.instance_create(position.x+16, position.y, Objects.edit_button)
 #                gml.instance_create(position.x+320-32, position.y, Objects.new_button)
 #                gml.instance_create(position.x+320-48, position.y, Objects.test_button)
-        
-    
+		
+	
 #        elif (keyboard_key == vk_backspace or keyboard_key == vk_delete):
-    
+	
 #            # DY: level_name += "DEL"
 #            level_name = string_delete(level_name, string_length(level_name), 1)
-    
+	
 #        else: level_name += scr_get_char(keyboard_key)
 
 #    elif (status == EDIT):
 
 #        if (keyboard_key == ord('E')):
-    
-    
+	
+	
 #            if (mouse_x > 16 and:
 #                mouse_x < room_width-16 and
 #                mouse_y > 16 and
@@ -599,36 +599,36 @@ func _process(delta):
 #                curs_obj.position.x < room_width-16 and
 #                curs_obj.position.y >= 16 and
 #                curs_obj.position.y < room_height-16)
-        
+		
 #                obj = instance_position(curs_obj.position.x+8, curs_obj.position.y+12, drawn_sprite)
 #                if (obj):
-            
+			
 #                    if (obj.type == "Exit"):
-                
+				
 #                        text_edit = obj.leads_to
 #                        level_editor.status = EDIT_DOOR
 #                        with new_button  gml.instance_destroy(self) 
 #                        with test_button  gml.instance_destroy(self) 
 #                        with edit_button  gml.instance_destroy(self) 
 #                        # DY: level_array[floor(curs_obj.position.x/16)-1, floor(curs_obj.position.y/16)-1] = "0"
-                
+				
 #                    elif (obj.type == "Message Sign"):
-                
+				
 #                        text_edit = obj.message
 #                        level_editor.status = EDIT_MSG
 #                        with new_button  gml.instance_destroy(self) 
 #                        with test_button  gml.instance_destroy(self) 
 #                        with edit_button  gml.instance_destroy(self) 
 #                        # DY: level_array[floor(curs_obj.position.x/16)-1, floor(curs_obj.position.y/16)-1] = "0"
-                
-            
-        
-    
+				
+			
+		
+	
 
 #    elif (status == EDIT_DOOR):
 
 #        if (keyboard_key == vk_enter):
-    
+	
 #            obj.leads_to = text_edit
 #            status = EDIT
 #            window_set_cursor(cr_default)
@@ -636,17 +636,17 @@ func _process(delta):
 #            gml.instance_create(position.x+16, position.y, Objects.edit_button)
 #            gml.instance_create(position.x+320-48, position.y, Objects.new_button)
 #            gml.instance_create(position.x+320-48, position.y, Objects.test_button)
-    
+	
 #        elif (keyboard_key == vk_backspace or keyboard_key == vk_delete):
-    
+	
 #            text_edit = string_delete(text_edit, string_length(text_edit), 1)
-    
+	
 #        elif (string_length(text_edit) < 38): text_edit += scr_get_char(keyboard_key)
 
 #    elif (status == EDIT_MSG):
 
 #        if (keyboard_key == vk_enter):
-    
+	
 #            obj.message = text_edit
 #            status = EDIT
 #            window_set_cursor(cr_default)
@@ -654,138 +654,138 @@ func _process(delta):
 #            gml.instance_create(position.x+16, position.y, Objects.edit_button)
 #            gml.instance_create(position.x+320-48, position.y, Objects.new_button)
 #            gml.instance_create(position.x+320-48, position.y, Objects.test_button)
-    
+	
 #        elif (keyboard_key == vk_backspace or keyboard_key == vk_delete):
-    
+	
 #            text_edit = string_delete(text_edit , string_length(text_edit), 1)
-    
+	
 #        elif (string_length(text_edit) < 38):text_edit += scr_get_char(keyboard_key)
 
 
 #    elif (status == INFO_NAME):
 
 #        if (keyboard_key == vk_enter):
-    
+	
 #            if (level_name != ""):
-        
+		
 #                status = INFO_AUTHOR
 #                window_set_cursor(cr_default)
 #                curs_obj.visible = true
-        
-    
+		
+	
 #        elif (keyboard_key == vk_backspace or keyboard_key == vk_delete):
-    
+	
 #            level_name = string_delete(level_name, string_length(level_name), 1)
-    
+	
 #        else: level_name += scr_get_char(keyboard_key)
 
 #    elif (status == INFO_AUTHOR):
 
 #        if (keyboard_key == vk_enter):
-    
+	
 #            if (author != ""):
-        
+		
 #                status = INFO_MUSIC
 #                window_set_cursor(cr_default)
 #                curs_obj.visible = true
-        
-    
+		
+	
 #        elif (keyboard_key == vk_backspace or keyboard_key == vk_delete):
-    
+	
 #            author = string_delete(author, string_length(author), 1)
-    
+	
 #        else: author += scr_get_char(keyboard_key)
 
 #    elif (status == INFO_MUSIC):
 
 #        if (keyboard_key == vk_enter):
-    
+	
 #            if (music != ""):
-        
+		
 #                status = INFO_LIFE
 #                window_set_cursor(cr_default)
 #                curs_obj.visible = true
-        
-    
+		
+	
 #        elif (keyboard_key == vk_backspace or keyboard_key == vk_delete):
-    
+	
 #            music = string_delete(music, string_length(music), 1)
-    
+	
 #        else: music += scr_get_char(keyboard_key)
 
 #    elif (status == INFO_LIFE):
 
 #        if (keyboard_key == vk_enter):
-    
+	
 #            if (life_start != ""):
-        
+		
 #                status = INFO_BOMBS
 #                window_set_cursor(cr_default)
 #                curs_obj.visible = true
-        
-    
+		
+	
 #        elif (keyboard_key == vk_backspace or keyboard_key == vk_delete):
-    
+	
 #            life_start = string_delete(life_start, string_length(life_start), 1)
-    
+	
 #        else: life_start += scr_get_char(keyboard_key)
 
 #    elif (status == INFO_BOMBS):
 
 #        if (keyboard_key == vk_enter):
-    
+	
 #            if (bomb_start != ""):
-        
+		
 #                status = INFO_ROPE
 #                window_set_cursor(cr_default)
 #                curs_obj.visible = true
-        
-    
+		
+	
 #        elif (keyboard_key == vk_backspace or keyboard_key == vk_delete):
-    
+	
 #            bomb_start = string_delete(bomb_start, string_length(bomb_start), 1)
-    
+	
 #        else: bomb_start += scr_get_char(keyboard_key)
 
 #    elif (status == INFO_ROPE):
 
 #        if (keyboard_key == vk_enter):
-    
+	
 #            if (rope_start != ""):
-        
+		
 #                status = INFO_NEXT
 #                window_set_cursor(cr_default)
 #                curs_obj.visible = true
-        
-    
+		
+	
 #        elif (keyboard_key == vk_backspace or keyboard_key == vk_delete):
-    
+	
 #            rope_start = string_delete(rope_start, string_length(rope_start), 1)
-    
+	
 #        else: rope_start += scr_get_char(keyboard_key)
 
 #    elif (status == INFO_NEXT):
 
 #        if (keyboard_key == vk_enter):
-    
+	
 #            if (next_level != ""):
-        
+		
 #                status = EDIT
 #                window_set_cursor(cr_default)
 #                curs_obj.visible = true
 #                gml.instance_create(position.x+16, position.y, Objects.edit_button)
 #                gml.instance_create(position.x+320-48, position.y, Objects.new_button)
 #                gml.instance_create(position.x+320-48, position.y, Objects.test_button)
-        
-    
+		
+	
 #        elif (keyboard_key == vk_backspace or keyboard_key == vk_delete):
-    
+	
 #            next_level = string_delete(next_level , string_length(next_level), 1)
-    
+	
 #        else: next_level += scr_get_char(keyboard_key)
 
 
-    
+	
 
 #func key escape pressed():
 #    if (status == EDIT):
@@ -805,7 +805,7 @@ func _process(delta):
 #        get_tree().change_scene_to_file("res://r_title.tscn")
 
 
-    
+	
 
 #func key n pressed():
 #    if (status == EXIT):
@@ -820,7 +820,7 @@ func _process(delta):
 #        room_restart()
 
 
-    
+	
 
 #func key s pressed():
 #    if (status == 1):
@@ -831,7 +831,7 @@ func _process(delta):
 #        scr_set_cursor_tile()
 
 
-    
+	
 
 #func key y pressed():
 #    if (status == EXIT or status == NEW):
@@ -843,32 +843,32 @@ func _process(delta):
 #        sign_names_id = 0
 #        file = file_text_open_write("levels/" + string_lower(level_name)+".lvl")
 #        for j in range(0, 32):
-    
+	
 #            for i in range(0, 40):
-        
+		
 #                file_text_write_str(file, level_array[i, j])
 #                if (level_array[i, j] == "X" or level_array[i, j] == "@"):
-            
+			
 #                    obj = instance_position(16+i*16, 16+j*16, exit)
 #                    if (not obj): obj = instance_position(16+i*16, 16+j*16, entrance)
 #                    if (obj):
-                
+				
 #                        exit_names[exit_names_id] = obj.leads_to
 #                        exit_names_id += 1
-                
-            
+				
+			
 #                elif (level_array[i, j] == "I"):
-            
+			
 #                    obj = instance_position(16+i*16, 16+j*16, msg_sign)
 #                    if (obj):
-                
+				
 #                        sign_names[sign_names_id] = obj.message
 #                        sign_names_id += 1
-                
-            
-        
+				
+			
+		
 #            file_text_writeln(file)
-    
+	
 #        file_text_write_str(file, author)
 #        file_text_writeln(file)
 #        file_text_write_str(file, music)
@@ -884,17 +884,17 @@ func _process(delta):
 #        file_text_write_str(file, str(exit_names_id))
 #        if (exit_names_id > 0): file_text_writeln(file)
 #        for (i = 0 i < exit_names_id i += 1)
-    
+	
 #            file_text_write_str(file, exit_names[i])
 #            if (i < exit_names_id): file_text_writeln(file)
-    
+	
 #        file_text_write_str(file, str(sign_names_id))
 #        if (sign_names_id > 0): file_text_writeln(file)
 #        for (i = 0 i < sign_names_id i += 1)
-    
+	
 #            file_text_write_str(file, sign_names[i])
 #            if (i < sign_names_id-1): file_text_writeln(file)
-    
+	
 #        file_text_close(file)
 
 
@@ -910,7 +910,7 @@ func _process(delta):
 #        room_restart()
 
 
-    
+	
 
 #func mouse wheel down():
 #    if (status == 1):
@@ -921,7 +921,7 @@ func _process(delta):
 #        scr_set_cursor_tile()
 
 
-    
+	
 
 #func mouse wheel up():
 #    if (status == 1):
@@ -932,7 +932,7 @@ func _process(delta):
 #        scr_set_cursor_tile()
 
 
-    
+	
 
 #func step():
 #    if (status == EDIT):  curs_obj.visible = true window_set_cursor(cr_default) 
@@ -951,7 +951,7 @@ func _process(delta):
 
 #        scr_test_level()
 #        get_tree().change_scene_to_file("res://r_load_level.tscn")
-    
+	
 #    elif (mouse_x > 16 and:
 #        mouse_x < room_width-16 and
 #        mouse_y > 16 and
@@ -965,44 +965,44 @@ func _process(delta):
 #            not gml.collision_point(mouse_x, mouse_y, "edit_button", 0, 0) and
 #            not gml.collision_point(mouse_x, mouse_y, "new_button", 0, 0) and
 #            not gml.collision_point(mouse_x, mouse_y, "test_button", 0, 0))
-    
+	
 #            if (drop_select == BLOCKS):
-        
+		
 #                scr_create_tile(block_array[drop_val], curs_obj.position.x, curs_obj.position.y)
 #                level_array[floor(curs_obj.position.x/16)-1, floor(curs_obj.position.y/16)-1] = block_array[drop_val]
-        
+		
 #            elif (drop_select == ENEMIES):
-        
+		
 #                scr_create_tile(enemy_array[drop_val], curs_obj.position.x, curs_obj.position.y)
 #                level_array[floor(curs_obj.position.x/16)-1, floor(curs_obj.position.y/16)-1] = enemy_array[drop_val]
-        
+		
 #            elif (drop_select == TRAPS):
-        
+		
 #                scr_create_tile(trap_array[drop_val], curs_obj.position.x, curs_obj.position.y)
 #                level_array[floor(curs_obj.position.x/16)-1, floor(curs_obj.position.y/16)-1] = trap_array[drop_val]
-        
+		
 #            elif (drop_select == ITEMS):
-        
+		
 #                scr_create_tile(loot_array[drop_val], curs_obj.position.x, curs_obj.position.y)
 #                level_array[floor(curs_obj.position.x/16)-1, floor(curs_obj.position.y/16)-1] = loot_array[drop_val]
-        
-    
+		
+	
 #        elif (mouse_check_button(mb_right)):
-    
+	
 #            obj = gml.collision_rectangle(curs_obj.position.x, curs_obj.position.y, curs_obj.position.x+15,  curs_obj.position.y+15, "drawn_sprite", 0, 0) # DY:  instance_position(curs_obj.position.x+8, curs_obj.position.y+12, drawn_sprite)
 #            # DY:  if (not obj): obj = instance_position(curs_obj.position.x+8, curs_obj.position.y+4, drawn_sprite)
 #            if (obj):
-        
+		
 #                with obj
-            
+			
 #                    if (type == "Giant Spider" or type == "Tomb Lord"):
-                
+				
 #                        if (position.x == curs_obj.position.x and position.y == curs_obj.position.y):
-                    
+					
 #                            gml.instance_destroy(self)
-                    
-                
+					
+				
 #                    else: gml.instance_destroy(self)
-            
-        
+			
+		
 #            level_array[floor(curs_obj.position.x/16)-1, floor(curs_obj.position.y/16)-1] = "0"

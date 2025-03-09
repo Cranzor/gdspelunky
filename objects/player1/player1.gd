@@ -367,7 +367,7 @@ func cap_hud_values():
 func spawn_cape():
 	if (global.has_cape and not gml.instance_exists(cape)): gml.instance_create(position.x, position.y, cape)
 
-	if (gml.instance_exists(cape)):
+	if (gml.instance_exists("cape")):
 
 		if (cape.open): fall_timer = 0
 
@@ -428,7 +428,7 @@ func find_nearest_light_source():
 	# find distance to nearest light source, used for dark rooms
 	# aka longest variable name ever
 	dist_to_nearest_light_source = 999
-	if (gml.instance_exists(explosion)):
+	if (gml.instance_exists("explosion")):
 
 		var source = gml.instance_nearest(position.x, position.y, 'explosion')
 		dist_to_nearest_light_source = gml.distance_to_object(source, self)
@@ -646,7 +646,7 @@ func handle_player_active():
 		else:# if (gml.collision_point(position.x, position.y+9, solid, 0, 0) or state == JUMPING or state == HANGING or state == CLIMBING or state == DUCKING):
 		
 			fall_timer = 0
-			if (gml.instance_exists(parachute)):
+			if (gml.instance_exists("parachute")):
 			
 				gml.instance_create(position.x-8, position.y-16-8, para_used)
 				var all_parachutes = gml.get_all_instances("parachute")
@@ -1059,7 +1059,7 @@ func start_game():
 		sprite_index != "p_exit" and sprite_index != "damsel_exit" and sprite_index != "tunnel_exit"):
 
 		# x_end is the child of x_start, for some reason, that's why this is here:
-		if (InLevel.is_room("r_olmec") and hold_item):
+		if (InLevel.is_room("olmec") and hold_item):
 		
 			if (hold_item.heavy):
 			
@@ -1096,7 +1096,7 @@ func start_game():
 				
 			
 		
-		elif (InLevel.is_room("r_olmec")): global.pickup_item = ""
+		elif (InLevel.is_room("olmec")): global.pickup_item = ""
 		elif (hold_item): hold_item.held = false
 		hold_item = null
 		pickup_item_type = ""
@@ -1274,7 +1274,7 @@ func game_over():
 	# Game Over
 	#
 	if ((ControlScripts.check_attack_pressed() or ControlScripts.check_start_pressed()) and dead):
-
+		var game = gml.get_instance("game")
 		if (game.money_count < global.money or game.draw_status < 3):
 		
 			game.draw_status = 3
@@ -1302,9 +1302,9 @@ func game_over():
 			else:
 			
 				MiscScripts.scr_clear_globals()
-				if (InLevel.is_room("r_sun")): global.scores_start = 1
-				if (InLevel.is_room("r_moon")): global.scores_start = 2
-				if (InLevel.is_room("r_stars")): global.scores_start = 3
+				if (InLevel.is_room("sun")): global.scores_start = 1
+				if (InLevel.is_room("moon")): global.scores_start = 2
+				if (InLevel.is_room("stars")): global.scores_start = 3
 				get_tree().change_scene_to_file("res://highscores.tscn")
 	
 func set_in_game_status():
@@ -1580,7 +1580,7 @@ func bomb_rope_and_whipping_handling(): #--- Also handles picking up items and a
 						global.arrows += 6
 					
 					
-					if (hold_item.type == "gold idol" and hold_item.trigger and not InLevel.is_room("r_load_level")):
+					if (hold_item.type == "gold idol" and hold_item.trigger and not InLevel.is_room("load_level")):
 					
 						global.idols_grabbed += 1
 						if (global.level_type == 0):
@@ -1882,7 +1882,7 @@ func kill_upon_being_crushed():
 		
 			if (InLevel.is_real_level()):
 			
-				if (InLevel.is_room("r_olmec")): global.enemy_deaths[22] += 1
+				if (InLevel.is_room("olmec")): global.enemy_deaths[22] += 1
 				else: global.misc_deaths[2] += 1
 			
 		
@@ -2226,7 +2226,7 @@ func decrease_dead_counter():
 	if (dead and dead_counter > 0): dead_counter -= 1
 	
 func handle_ankh_revival():
-	if (InLevel.is_level() or InLevel.is_room("r_sun") or InLevel.is_room("r_moon") or InLevel.is_room("r_stars")):
+	if (InLevel.is_level() or InLevel.is_room("sun") or InLevel.is_room("moon") or InLevel.is_room("stars")):
 
 		if (not dead and global.plife < 1):
 		
@@ -2240,7 +2240,7 @@ func handle_ankh_revival():
 					position.x = moai.position.x+16+8
 					position.y = moai.position.y+16+8
 				
-				elif (InLevel.is_room("r_olmec")):
+				elif (InLevel.is_room("olmec")):
 				
 					position.x = 16+8
 					position.y = 544+8
@@ -2282,19 +2282,19 @@ func handle_ankh_revival():
 				var sun_room = gml.get_instance('sun_room')
 				var moon_room = gml.get_instance('moon_room')
 				var stars_room = gml.get_instance('stars_room')
-				if (InLevel.is_room("r_sun")): global.mini1 = sun_room.points
-				if (InLevel.is_room("r_moon")):
+				if (InLevel.is_room("sun")): global.mini1 = sun_room.points
+				if (InLevel.is_room("moon")):
 				
 					global.mini2 = moon_room.baskets
 					moon_room.timer = -1
 					moon_room.alarm_10_countdown.start(30)
 				
-				if (InLevel.is_room("r_stars")): global.mini3 = stars_room.kills
+				if (InLevel.is_room("stars")): global.mini3 = stars_room.kills
 				if (global.mini1 > 99): global.mini1 = 99
 				if (global.mini2 > 99): global.mini2 = 99
 				if (global.mini3 > 99): global.mini3 = 99
 				
-				if (InLevel.is_room("r_sun") or InLevel.is_room("r_moon") or InLevel.is_room("r_stars")): MiscScripts.scr_update_highscores(2)
+				if (InLevel.is_room("sun") or InLevel.is_room("moon") or InLevel.is_room("stars")): MiscScripts.scr_update_highscores(2)
 				else: MiscScripts.scr_update_highscores(0)
 		
 				dead = true
@@ -3186,7 +3186,7 @@ func cap_hang_count():
 func while_hanging_behavior():
 	if (state == HANGING):
 
-		if (gml.instance_exists(cape)): cape.open = false
+		if (gml.instance_exists("cape")): cape.open = false
 		k_jumped = false
 		
 		if (k_down and k_jump_pressed):
@@ -3566,11 +3566,11 @@ func running_and_duck_to_hang_behavior():
 
 func apply_parachute_and_cape_friction():
 	# PARACHUTE AND CAPE
-	if (gml.instance_exists(parachute)):
+	if (gml.instance_exists("parachute")):
 
 		y_fric = 0.5
 
-	if (gml.instance_exists(cape)):
+	if (gml.instance_exists("cape")):
 
 		if (cape.open): y_fric = 0.5
 
@@ -3744,7 +3744,7 @@ func alarm_0():
 
 	
 	
-	if (InLevel.is_room("r_tutorial")):
+	if (InLevel.is_room("tutorial")):
 
 	# do nothing
 		pass
@@ -3810,7 +3810,7 @@ func alarm_0():
 		global.message_timer = 200
 
 func alarm_1():
-	if (InLevel.is_room("r_tutorial")):
+	if (InLevel.is_room("tutorial")):
 
 		# do nothing
 		pass
@@ -4416,7 +4416,7 @@ func animation_end():
 			obj = gml.collision_point(position.x+8, position.y, "ladder", 0, 0) #---[FLAG] this must return an object
 			if (!obj): obj = gml.collision_point(position.x+8, position.y, "ladder_top", 0, 0)
 		
-		if (gml.instance_exists(obj)):
+		if (obj != false and gml.instance_exists(obj.object_name)): #--- added bool check for obj. passing in object_name as a string is needed
 		
 			state = CLIMBING
 			position.x = obj.position.x + 8

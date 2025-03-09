@@ -185,7 +185,9 @@ func move_to(x_vel, y_vel, node):
 			
 		else:
 			node.position.y+= y_vel * get_physics_process_delta_time() * 30
-	
+
+#--- platform_character_is() is inside player1 script
+
 func scr_moveable_solid_recurse_drop(node):
 	var obj
 	obj = gml.instance_place(node.position.x, node.position.y-1, "moveable_solid", node)
