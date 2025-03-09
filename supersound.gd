@@ -1,5 +1,6 @@
 extends Node
 
+var sound_and_freq: Dictionary
 
 func free_sound():
 	pass
@@ -22,7 +23,9 @@ func play_sound(sound):
 
 
 func set_sound_freq(sound, frequency):
-	pass
+	sound_and_freq[sound] = frequency
+	var normalized_value = float(frequency) / 44100.0
+	Music.set_pitch_scale(sound, normalized_value)
 
 
 func set_sound_pan(temp, temp2):
@@ -44,3 +47,9 @@ func unload():
 #--- Advanced
 func is_sound_playing(sound):
 	pass
+
+func get_sound_freq(sound):
+	if sound in sound_and_freq:
+		return sound_and_freq[sound]
+	return null
+	

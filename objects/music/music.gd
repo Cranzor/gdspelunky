@@ -36,6 +36,12 @@ func stop(sound_path):
 		_on_stream_finished(node)
 
 
+func set_pitch_scale(sound_path, pitch_scale_value):
+	if sound_and_node.has(sound_path):
+		var node = sound_and_node[sound_path]
+		node.pitch_scale = pitch_scale_value
+
+
 func _process(_delta):
 	# Play a queued sound if any players are available.
 	if not queue.is_empty() and not available.is_empty():
