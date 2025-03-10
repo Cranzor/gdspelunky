@@ -262,22 +262,11 @@ func frac(number):
 func object_get_parent(ind):
 	return ind.parent
 
-func place_meeting(x,y,_obj): #--- only used 4 times in the whole game --- [FLAG] need to actually implement this
-	var intersecting = false
-	var rect = Rect2(Vector2(x, y), Vector2(16, 16)) #---[FLAG] grab the size later so this can be different size
-	
-	#if instanced_object_locations.has(obj):
-		#for entry in instanced_object_locations[obj]:
-			#var location = entry[0]
-			#var obj_rect = Rect2(location, Vector2(16, 16))
-			#
-			#intersecting = rect.intersects(obj_rect)
-			#if intersecting == true:
-				##print('obj_rect:' + str(obj_rect))
-				##print('rect: ' + str(rect))
-				#break
-	
-	return intersecting
+func place_meeting(x, y, obj: String, comparison_object): #--- only used 4 times in the whole game
+	var intersecting = instance_place(x, y, obj, comparison_object)
+	if intersecting:
+		return true
+	return false
 	
 func move_snap(hsnap,vsnap, obj):
 	if hsnap != 1:
@@ -592,3 +581,12 @@ func handle_collision_ray(x1, y1, x2, y2, obj):
 				return object_node
 
 	return false
+
+func highlight_node(node: GMObject):
+	var animated_sprite2d = node.get_node("Sprites/MainAnimations")
+	var color_rect: ColorRect = ColorRect.new()
+	color_rect.name = "ColorRect"
+	color_rect.size = node.object_size
+	color_rect.color = Color.CRIMSON
+	if node.get_node("Sprites/MainAnimations/ColorRect") == null:
+		animated_sprite2d.add_child(color_rect)

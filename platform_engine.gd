@@ -110,7 +110,7 @@ func move_to(x_vel, y_vel, node):
 				var all_solids = gml.get_all_instances("solid")
 				for solid_instance in all_solids:
 			
-					if gml.place_meeting(solid_instance.x+1,solid_instance.y,'solid'):      #there will be a collision!
+					if gml.place_meeting(solid_instance.x+1,solid_instance.y,'solid', solid_instance):      #there will be a collision!
 						#--- is x here referring to the iterator or the node's x position? no idea. going with the position
 			  
 			   

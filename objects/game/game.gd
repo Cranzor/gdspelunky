@@ -318,9 +318,10 @@ func game_step_event():
 				
 				#if there is a collision with a solid or the character one pixel below the moveable solid, we want it to stop:
 				#is there a (precise) collision
-					if (gml.place_meeting(moveable_solid_instance.position.x, moveable_solid_instance.position.y+1, 'solid')): # or is_collision_character_bottom(2))
+					if (gml.place_meeting(moveable_solid_instance.position.x, moveable_solid_instance.position.y+1, 'solid', moveable_solid_instance)): # or is_collision_character_bottom(2))
 					
 						if (moveable_solid_instance.y_vel > moveable_solid_instance.my_grav): Audio.play_sound(global.snd_thud)
+						gml.highlight_node(moveable_solid_instance)
 						moveable_solid_instance.y_vel = 0
 						break
 					

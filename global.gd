@@ -23,7 +23,7 @@ var clean_solids
 var collect
 var collect_counter
 var craps_point
-var curr_level = 1 #adjust later
+var curr_level: int
 var custom_level
 var custom_level_author
 var custom_level_name

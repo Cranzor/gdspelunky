@@ -4186,7 +4186,7 @@ func move_to(x_vel, y_vel):
 					#we must move the moveable solid, unless there is another solid (moveable or non-moveable) in it's way
 					var all_solids = gml.get_all_instances("solid")
 					for solid_instance in all_solids:
-						if gml.place_meeting(solid_instance.position.x+1,solid_instance.position.y,'solid'):      #there will be a collision!
+						if gml.place_meeting(solid_instance.position.x+1,solid_instance.position.y,'solid', solid_instance):      #there will be a collision!
 							#--- is x here referring to the iterator or the node's x position? no idea. going with the position
 							break
 						else:
