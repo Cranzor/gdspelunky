@@ -314,14 +314,13 @@ func game_step_event():
 				if (moveable_solid_instance.y_vel > 8): moveable_solid_instance.y_vel = 8
 				#y_vel+=self.moveable_solid_grav
 				#moves the moveable solid down
-				for y in range(moveable_solid_instance.position.y, moveable_solid_instance.y_m_prev + moveable_solid_instance.y_vel, 1):
+				for y in range(moveable_solid_instance.position.y, round(moveable_solid_instance.y_m_prev + moveable_solid_instance.y_vel), 1): #--- rounding the second part due to range not accounting for float values. velocity being 0.6 means that the loop doesn't run. in the original engine, a value simply being higher makes it run
 				
 				#if there is a collision with a solid or the character one pixel below the moveable solid, we want it to stop:
 				#is there a (precise) collision
-					if (gml.place_meeting(moveable_solid_instance.position.x, moveable_solid_instance.position.y+1, 'solid', moveable_solid_instance)): # or is_collision_character_bottom(2))
+					if (gml.place_meeting(moveable_solid_instance.position.x, y+1, 'solid', moveable_solid_instance)): # or is_collision_character_bottom(2))
 					
 						if (moveable_solid_instance.y_vel > moveable_solid_instance.my_grav): Audio.play_sound(global.snd_thud)
-						gml.highlight_node(moveable_solid_instance)
 						moveable_solid_instance.y_vel = 0
 						break
 					

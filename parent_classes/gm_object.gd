@@ -16,7 +16,7 @@ var solid = false
 
 var dir #---[FLAG] not exactly sure what this does
 var status #--- declaring this here for objects that use it but don't have drawn_sprite as their parent
-var counter #--- same as above
+var counter: int #--- same as above
 var type
 var my_grav
 var trigger
@@ -192,7 +192,10 @@ var x_vel = 0:
 	set(value):
 		x_vel = value
 
-var y_vel = 0
+var y_vel = 0:
+	set(value):
+		y_vel = value
+		#assert(object_name != "push_block")
 var x_acc = 0
 var y_acc = 0
 
