@@ -35,6 +35,7 @@ Gamepad="*res://objects/gamepad/gamepad.tscn"
 Objects="*res://objects.gd"
 GlobalInput="*res://global_input.gd"
 LevelGeneration="*res://level_generation.gd"
+CircleDraw="*res://resources/circle_draw.gd"
 
 [display]
 
