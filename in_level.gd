@@ -57,7 +57,7 @@ func scr_shopkeeper_anger(message_number, node): #--- assuming XY is needed here
 	# Make the nearest shopkeeper angry.  RAWR! 
 	#
 
-	var shp = gml.instance_nearest(node.x, node.y, 'shopkeeper')
+	var shp = gml.instance_nearest(node.position.x, node.position.y, 'shopkeeper')
 	if (shp):
 
 		if (not shp.dead and not shp.angered):

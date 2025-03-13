@@ -28,3 +28,11 @@ drag_top_margin = 0.4
 drag_bottom_margin = 0.4
 
 [node name="Circle" type="Sprite2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+color = Color(0.768627, 0.141176, 0.811765, 0.741176)

@@ -12,9 +12,9 @@ func create_bresenham_circle(r): #--- adapted from here https://funloop.org/post
 	var x: int = 0
 	var y: int = -r
 	var F_M: int = 1 - r
-	# Initial value for (0,-r) for 2x + 3 = 0x + 3 = 3.
+	# --- initial value for (0,-r) for 2x + 3 = 0x + 3 = 3
 	var d_e: int = 3
-	# Initial value for (0,-r) for 2(x + y) + 5 = 0 - 2y + 5 = -2y + 5.
+	#--- initial value for (0,-r) for 2(x + y) + 5 = 0 - 2y + 5 = -2y + 5
 	var d_ne: int = -(r << 1) + 5
 	points.append_array(mirror_points_8(x, y))
 	while x < -y:
@@ -32,5 +32,4 @@ func create_bresenham_circle(r): #--- adapted from here https://funloop.org/post
 	for point in points:
 		image.set_pixel(point.x + r, point.y + r, Color.WHITE)
 	var texture = ImageTexture.create_from_image(image)
-	print(texture.get_size())
 	return texture

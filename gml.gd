@@ -230,7 +230,7 @@ func instance_destroy(obj): #'Destroys current instance' ---  Should probably st
 	obj.queue_free()
 
 func collision_rectangle(x1,y1,x2,y2,obj,_prec,_notme): #"This function tests whether there is a collision between the (filled) rectangle with the indicated opposite corners and entities of object obj. For example, you can use this to test whether an area is free of obstacles."
-	return handle_collision_ray(x1, y1, x2, y2, obj)
+	return handle_collision_shapecast(x1, y1, x2, y2, obj)
 
 func point_distance(x1,y1,x2,y2): #"Returns the distance between point (x1,y1) and point (x2,y2)."
 	var distance = Vector2(x1, y1).distance_to(Vector2(x2, y2))
@@ -581,6 +581,36 @@ func handle_collision_ray(x1, y1, x2, y2, obj):
 				return object_node
 
 	return false
+
+func handle_collision_shapecast(x1, y1, x2, y2, obj):
+	var shapecast: ShapeCast2D = get_tree().get_first_node_in_group("collision_shapecast")
+	var colliders = []
+
+	var size = Vector2(abs(x2 - x1), abs(y2 - y1))
+	shapecast.position = Vector2(x1 + (size.x / 2), y1 + (size.y / 2))
+	shapecast.shape.size = size
+	shapecast.enabled = true
+	shapecast.force_shapecast_update()
+	var collision_count = shapecast.get_collision_count()
+	while shapecast.is_colliding():
+		var area = shapecast.get_collider(0)
+		colliders.append(area)
+		shapecast.add_exception(area)
+		shapecast.force_shapecast_update()
+	shapecast.enabled = false
+	
+	for collider in colliders:
+		shapecast.remove_exception(collider)
+	
+	if colliders != []:
+		for collider in colliders:
+			var object_node = collider.get_parent().get_parent().get_parent()
+			var groups = object_node.get_groups()
+			if obj in groups:
+				return object_node
+
+	return false
+
 
 func highlight_node(node: GMObject):
 	var animated_sprite2d = node.get_node("Sprites/MainAnimations")

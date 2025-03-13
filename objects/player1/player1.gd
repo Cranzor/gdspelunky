@@ -2385,9 +2385,9 @@ func collect_arrow():
 					gml.instance_destroy(obj)
 	
 func collect_treasure():
-	if (gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "treasure", 0, 0) and not dead and not stunned):
+	if (gml.collision_rectangle(position.x-8, position.y-8, position.x+8, position.y+8, "treasure", 0, 0) and not dead and not stunned):
 
-		var gem = gml.instance_nearest(position.x, position.y, 'treasure')
+		var gem = gml.instance_nearest(position.x, position.y, "treasure")
 		if (gem.can_collect):
 		
 			# global.money += gem.value

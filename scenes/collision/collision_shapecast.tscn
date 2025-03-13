@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpik07grwpaj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0pwbi"]
+size = Vector2(0, 0)
+
+[node name="CollisionShapecast" type="ShapeCast2D" groups=["collision_shapecast"]]
+enabled = false
+shape = SubResource("RectangleShape2D_0pwbi")
+target_position = Vector2(0, 0)
+margin = 1.0
+collide_with_areas = true
+collide_with_bodies = false
