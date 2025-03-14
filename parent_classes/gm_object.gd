@@ -48,6 +48,11 @@ var RECOVER
 var DEAD
 var bounce_counter
 var t: bool
+var x_vel_integer: int
+var y_vel_integer: int
+var final_x_vel = 0
+var final_y_vel = 0
+var k_down #--- moving this here from player1 script to make things easier since move_to references it
 
 #--- want access to these for all objects, so defining here
 var collision_bounds_offset_left_x

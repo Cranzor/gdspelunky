@@ -1,7 +1,5 @@
 extends Node
 
-var game #--- Grab this from the current scene
-
 func character_create_event(): #--- Put this directly inside of Player1 _ready function instead
 	pass
 	
@@ -29,7 +27,11 @@ func make_active(node):
 
 var frame = 1
 var yes_counter = 0
-func move_to(x_vel, y_vel, node):
+
+var game = null
+func move_to(x_vel, y_vel, node: GMObject):
+	if game == null:
+		game = gml.get_instance("game")
 	#/*
 	#Any object that has the collision bounds set can use this script.
 	#(To set the collision bounds, call the script "set_collision_bounds.")
@@ -46,145 +48,115 @@ func move_to(x_vel, y_vel, node):
 	#0: x distance to move
 	#1: y distance to move
 	#*/
-	#x_vel = -0.3 #-------- delete this!!!
 	
-	#var mt_x_prev=node.position.x
-	#var mt_y_prev=node.position.y
+	node.final_x_vel = 0
+	node.final_y_vel = 0
+	
+	var mt_x_prev=node.position.x
+	var mt_y_prev=node.position.y
 	##change the decimal arguments to integer variables with relation to time
-	#var x_vel_frac=gml.frac(abs(x_vel))
-	#var y_vel_frac=gml.frac(abs(y_vel))
-	#var x_vel_integer=0
-	#var y_vel_integer=0
-	#if x_vel_frac!=0:
-		#print("x_vel:" + str(x_vel))
-		#print('x_vel_frac:' + str(x_vel_frac))
-		#print('round(1/x_vel_frac): ' + str(round(1/x_vel_frac)))
-		##if round(1/x_vel_frac)!=0: #-------- temporary comment. bring this back
-			##if game.time % round(1/x_vel_frac)==0:
-				##x_vel_integer=1
-			##else:
-				##x_vel_integer=0
-		#if round(1/x_vel_frac)!=0:
-			#print(round(1/x_vel_frac))
-			#print(frame)
-			#frame += 1
-			#var rounded = round(1/x_vel_frac)
-			#if frame % int(rounded) ==0:
-				#print('yes')
-				#yes_counter += 1
-				#print(yes_counter)
-				#x_vel_integer=1
-			#else:
-				#print('no')
-				#x_vel_integer=0
-		#
-		#var movement_speed = (x_vel_frac * get_process_delta_time()) * 30 #---temporary for testing
-		#print(movement_speed)
-		##print(movement_speed)
-	#if y_vel_frac!=0:
-		#if round(1/y_vel_frac)!=0:
-			#if game.time % round(1/y_vel_frac)==0:
-				#y_vel_integer=1
-			#else:
-				#y_vel_integer=0
-	#x_vel_integer+=floor(abs(x_vel))
-	#y_vel_integer+=floor(abs(y_vel))
-	#if x_vel<0:
-		#x_vel_integer*=-1
-	#if y_vel<0:
-		#y_vel_integer*=-1
-	#x_vel_integer=round(x_vel_integer)
-	#y_vel_integer=round(y_vel_integer)
+	var x_vel_frac=gml.frac(abs(x_vel))
+	var y_vel_frac=gml.frac(abs(y_vel))
+	node.x_vel_integer=0
+	node.y_vel_integer=0
+	if x_vel_frac!=0:
+		if gml.gm_round(1/x_vel_frac)!=0:
+			if int(game.time) % int(gml.gm_round(1/x_vel_frac))==0:
+				node.x_vel_integer=1
+			else:
+				node.x_vel_integer=0
+	if y_vel_frac!=0:
+		if gml.gm_round(1/y_vel_frac)!=0:
+			if int(game.time) % int(gml.gm_round(1/y_vel_frac))==0:
+				node.y_vel_integer=1
+			else:
+				node.y_vel_integer=0
+	node.x_vel_integer+=floor(abs(x_vel))
+	node.y_vel_integer+=floor(abs(y_vel))
+	if x_vel<0:
+		node.x_vel_integer*=-1
+	if y_vel<0:
+		node.y_vel_integer*=-1
+	node.x_vel_integer=gml.gm_round(node.x_vel_integer)
+	node.y_vel_integer=gml.gm_round(node.y_vel_integer)
 	
 	#object is moving to the right
-	if x_vel>0:
-		var can_move = true
-		  
-		var solid_id=Collision.get_id_collision_right(1, node)
-		#if there is a collision with a solid:
-		if solid_id!= null:
-		
-			if gml.object_get_parent(solid_id) == 'moveable_solid' and Collision.can_push_moveable_solids(node):
-		  
-				#we must move the moveable solid, unless there is another solid (moveable or non-moveable) in it's way
-				var all_solids = gml.get_all_instances("solid")
-				for solid_instance in all_solids:
-			
-					if gml.place_meeting(solid_instance.x+1,solid_instance.y,'solid', solid_instance):      #there will be a collision!
-						#--- is x here referring to the iterator or the node's x position? no idea. going with the position
+	if node.x_vel_integer>0:
+		for x in range(node.position.x, mt_x_prev + node.x_vel_integer, 1):
 			  
-			   
-						can_move = false
+			var solid_id=Collision.get_id_collision_right(1, node)
+			#if there is a collision with a solid:
+			if solid_id!= null:
+				if gml.object_get_parent(solid_id) == 'moveable_solid' and Collision.can_push_moveable_solids(node):
 			  
-					else:
-			  
-						solid_instance.position.x += 1 * get_physics_process_delta_time()             #we're free to move the moveable solid
-						if (not SS.is_sound_playing(global.snd_push)): Audio.play_sound(global.snd_push)
-			  
-			
-		  
-			else:
-		   
-				can_move = false
-		
-		if can_move:
-			node.position.x+= x_vel * get_physics_process_delta_time() * 30
+					#we must move the moveable solid, unless there is another solid (moveable or non-moveable) in it's way
+					var all_solids = gml.get_all_instances("solid")
+					for solid_instance in all_solids:
+						if gml.place_meeting(solid_instance.position.x+1,solid_instance.position.y,'solid', solid_instance):      #there will be a collision!
+							#--- is x here referring to the iterator or the node's x position? no idea. going with the position
+							break
+						else:
+							solid_instance.position.x += 1 * get_physics_process_delta_time() * 30         #we're free to move the moveable solid
+							if (not SS.is_sound_playing(global.snd_push)): Audio.play_sound(global.snd_push)
+
+				else:
+					break
+					
+			node.position.x += 1
+			node.final_x_vel += 1
 	  
 	#object is moving to the left
 	#if x_vel_integer<0:
-	if x_vel<0:
-		var can_move = true
-		
-		var solid_id = Collision.get_id_collision_left(1, node) # --- [FLAG] assuming this returns a node
-		#if there is a collision with a solid:
-		if solid_id!=null:
-		
-			if gml.object_get_parent(solid_id)== 'moveable_solid' and Collision.can_push_moveable_solids(node):
-		  
-			#we must move the moveable solid, unless there is another solid (moveable or non-moveable) in it's way
-				var all_solids = gml.get_all_instances("solid")
-				for solid_instance in all_solids:
-					
-					if solid_id.gml.place_meeting(solid_id.x-1,solid_id.y,'solid'):      #there will be a collision!
-				  
-				   
-						can_move = false
-				  
-					else:
-				  
-						solid_instance.position.x += 1 * get_physics_process_delta_time()             #we're free to move the moveable solid
-						if (not SS.is_sound_playing(global.snd_push)): Audio.play_sound(global.snd_push)
-			  
+	if node.x_vel_integer<0:
+		for x in range(node.position.x, mt_x_prev + node.x_vel_integer, -1):
+			var can_move = true
 			
-		  
-			else:
-		   
-				can_move = false
-		if can_move:
-			node.position.x+= x_vel * get_physics_process_delta_time() * 30
+			var solid_id = Collision.get_id_collision_left(1, node) # --- [FLAG] assuming this returns a node
+			#if there is a collision with a solid:
+			if solid_id!=null:
+			
+				if gml.object_get_parent(solid_id)== 'moveable_solid' and Collision.can_push_moveable_solids(node):
+			  
+				#we must move the moveable solid, unless there is another solid (moveable or non-moveable) in it's way
+					var all_solids = gml.get_all_instances("solid")
+					for solid_instance in all_solids:
+						if solid_id.gml.place_meeting(solid_id.x-1,solid_id.y,'solid'):      #there will be a collision!
+							break
+						else:
+							solid_instance.position.x += 1 * get_physics_process_delta_time() * 30             #we're free to move the moveable solid
+							if (not SS.is_sound_playing(global.snd_push)): Audio.play_sound(global.snd_push)
+
+				else:
+					break
+
+			node.position.x -= 1
+			node.final_x_vel -= 1
+			#position.x += mt_x_prev + x_vel_integer - position.x
+		#position.x += mt_x_prev + x_vel_integer - position.x * get_physics_process_delta_time() * 30
+		
 		
 	#object is moving down
-	if y_vel>0:
-		var can_move = true
-		
-		if Collision.is_collision_bottom(1, node):
-			can_move = false
+	if node.y_vel_integer>0:
+		for y in range(node.position.y, mt_y_prev + node.y_vel_integer, 1):
+			if Collision.is_collision_bottom(1, node):
+				break
+			if Collision.can_land_on_platforms(node):
+				if Collision.is_collision_platform(node)==false and Collision.is_collision_platform_bottom(1, node) and node.k_down==false: #--- changed 0 to false
+					break
+					
+			node.position.y += 1
+			node.final_y_vel += 1
 			
-		elif Collision.can_land_on_platforms(node):
-			if Collision.is_collision_platform(node)==false and Collision.is_collision_platform_bottom(1, node) and node.k_down==false: #--- changed 0 to false
-				can_move = false
-				
-		if can_move:
-			node.position.y+= y_vel * get_physics_process_delta_time() * 30
+		
 	  
 	#object is moving up
-	if y_vel<0:
-
-		if Collision.is_collision_top(1, node):
-			pass
-			
-		else:
-			node.position.y+= y_vel * get_physics_process_delta_time() * 30
+	if node.y_vel_integer<0:
+		for y in range(node.position.y, mt_y_prev + node.y_vel_integer, -1):
+			if Collision.is_collision_top(1, node):
+				break
+				
+			node.position.y -= 1
+			node.final_y_vel -= 1
 
 #--- platform_character_is() is inside player1 script
 

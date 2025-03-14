@@ -22,7 +22,7 @@ var gen_supply_shop
 var gen_rare_shop
 var gen_weapon_shop
 var moveable_solid_grav
-var time
+var time = 1
 
 var players: Array
 var players_length

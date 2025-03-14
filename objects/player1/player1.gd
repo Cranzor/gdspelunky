@@ -120,7 +120,7 @@ var bubble
 
 var x_vel_limit
 var y_vel_limit
-var k_down
+#var k_down #--- declaring in gm_object
 var k_right
 var k_left
 var view_yview
@@ -154,8 +154,6 @@ var friction_running_fast_x
 var friction_running_x
 var x_acc_limit
 var max_slope
-var x_vel_integer = 0
-var y_vel_integer = 0
 var max_down_slope
 var state_prev_prev
 var state_prev
@@ -204,8 +202,6 @@ var y_prev_high
 #------------------------------------------------------------------
 
 var test = true
-var final_x_vel = 0
-var final_y_vel = 0
 	
 func create():
 	# ---[FLAG] setting these here
@@ -2196,7 +2192,7 @@ func handle_dead_or_stunned():
 			
 				for i in range(0, 3):
 				
-					gml.instance_create(self.position.x, self.position.y, "blood") #--- same as above with changing 'other' to 'self'
+					gml.instance_create(self.position.x, self.position.y, Objects.blood) #--- same as above with changing 'other' to 'self'
 				
 				global.plife -= 1
 				wall_hurt -= 1
@@ -2443,7 +2439,7 @@ func collect_bomb_box():
 		if (not obj.held and obj.cost == 0 and not gml.collision_point(obj.position.x, obj.position.y, "solid", 0, 0)):
 		
 			global.bombs += 12
-			var disp = gml.instance_create(obj.position.x, obj.position.y-14, "items_get")
+			var disp = gml.instance_create(obj.position.x, obj.position.y-14, Objects.items_get)
 			disp.sprite_index = "bombs_get"
 			gml.instance_destroy(obj)
 			Audio.play_sound(global.snd_pickup)

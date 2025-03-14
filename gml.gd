@@ -590,6 +590,7 @@ func handle_collision_shapecast(x1, y1, x2, y2, obj):
 	shapecast.position = Vector2(x1 + (size.x / 2), y1 + (size.y / 2))
 	shapecast.shape.size = size
 	shapecast.enabled = true
+	shapecast.margin = -size.x
 	shapecast.force_shapecast_update()
 	var collision_count = shapecast.get_collision_count()
 	while shapecast.is_colliding():
