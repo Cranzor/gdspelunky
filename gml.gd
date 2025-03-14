@@ -587,10 +587,10 @@ func handle_collision_shapecast(x1, y1, x2, y2, obj):
 	var colliders = []
 
 	var size = Vector2(abs(x2 - x1), abs(y2 - y1))
+	var adjusted_size = Vector2(size.x - 0.1, size.y - 0.1) #--- corners touching counts as a collision, which isn't the case in the original engine. subtracting by 0.1 corrects for this
 	shapecast.position = Vector2(x1 + (size.x / 2), y1 + (size.y / 2))
-	shapecast.shape.size = size
+	shapecast.shape.size = adjusted_size
 	shapecast.enabled = true
-	shapecast.margin = -size.x
 	shapecast.force_shapecast_update()
 	var collision_count = shapecast.get_collision_count()
 	while shapecast.is_colliding():

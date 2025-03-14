@@ -91,4 +91,3 @@ centered = false
 offset = Vector2(-24, -8)
 
 [node name="CollisionShapecast" parent="." instance=ExtResource("16_t8hfp")]
-margin = 0.0

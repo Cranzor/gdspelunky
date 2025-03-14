@@ -1,3 +1,35 @@
-[gd_scene format=3 uid="uid://q5sfm3vccj6f"]
+[gd_scene load_steps=5 format=3 uid="uid://q5sfm3vccj6f"]
+
+[ext_resource type="Texture2D" uid="uid://nkw6afdklf8m" path="res://sprites/blocks/mines/brick/brick_0.png" id="1_6bprr"]
+[ext_resource type="Texture2D" uid="uid://b1gqefym32l7u" path="res://sprites/enemies/snake_walk_l/snake_walk_l_0.png" id="2_v07bj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wfkkk"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6si4h"]
+size = Vector2(11, 15)
 
 [node name="CollisionVisualization" type="Node2D"]
+
+[node name="Brick0" type="Sprite2D" parent="."]
+position = Vector2(240, 96)
+texture = ExtResource("1_6bprr")
+centered = false
+
+[node name="Area2D" type="Area2D" parent="Brick0"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Brick0/Area2D"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_wfkkk")
+
+[node name="SnakeWalkL0" type="Sprite2D" parent="."]
+position = Vector2(256, 112)
+texture = ExtResource("2_v07bj")
+centered = false
+
+[node name="ShapeCast2D" type="ShapeCast2D" parent="SnakeWalkL0"]
+position = Vector2(5.5, 7.5)
+shape = SubResource("RectangleShape2D_6si4h")
+target_position = Vector2(0, 0)
+collide_with_areas = true
+collide_with_bodies = false
