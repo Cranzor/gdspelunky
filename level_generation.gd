@@ -829,10 +829,6 @@ func scr_level_gen():
 
 	# DY:  shop
 	if (gml.rand(1,global.curr_level) <= 2 and global.curr_level > 1 and not global.made_black_market):
-		print(gml.rand(1,global.curr_level) <= 2)
-		print(global.curr_level > 1)
-		print(global.curr_level)
-		print(not global.made_black_market)
 		var i = 0
 		for k in range(0, 4):
 		
@@ -885,6 +881,8 @@ func scr_level_gen():
 							break
 						
 						else: n -= 1
+				
+				break #--- added second break here because j = 4 and k = 4 above are meant to break out of both loops
 
 
 func scr_init_level():
