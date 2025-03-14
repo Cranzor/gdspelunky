@@ -5,6 +5,6 @@
 [node name="TextureRect" type="TextureRect"]
 z_index = -4096
 offset_right = 768.0
-offset_bottom = 512.0
+offset_bottom = 528.0
 texture = ExtResource("1_fpwm1")
 stretch_mode = 1

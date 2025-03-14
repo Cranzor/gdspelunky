@@ -4412,7 +4412,7 @@ func animation_end():
 			obj = gml.collision_point(position.x+8, position.y, "ladder", 0, 0) #---[FLAG] this must return an object
 			if (!obj): obj = gml.collision_point(position.x+8, position.y, "ladder_top", 0, 0)
 		
-		if (obj != false and gml.instance_exists(obj.object_name)): #--- added bool check for obj. passing in object_name as a string is needed
+		if (gml.instance_exists(obj.object_name)):
 		
 			state = CLIMBING
 			position.x = obj.position.x + 8

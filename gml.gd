@@ -230,6 +230,8 @@ func instance_destroy(obj): #'Destroys current instance' ---  Should probably st
 	obj.queue_free()
 
 func collision_rectangle(x1,y1,x2,y2,obj,_prec,_notme): #"This function tests whether there is a collision between the (filled) rectangle with the indicated opposite corners and entities of object obj. For example, you can use this to test whether an area is free of obstacles."
+	if abs(x2 - x1) == 0 or abs(y2 - y1) == 0: #--- raycast is more appropriate in this case since it's just a line
+		return handle_collision_ray(x1, y1, x2, y2, obj) #--- also avoids error in handle_collision_shapecast() associated with size being negative
 	return handle_collision_shapecast(x1, y1, x2, y2, obj)
 
 func point_distance(x1,y1,x2,y2): #"Returns the distance between point (x1,y1) and point (x2,y2)."
@@ -580,7 +582,7 @@ func handle_collision_ray(x1, y1, x2, y2, obj):
 				#####---
 				return object_node
 
-	return false
+	return null
 
 func handle_collision_shapecast(x1, y1, x2, y2, obj):
 	var shapecast: ShapeCast2D = get_tree().get_first_node_in_group("collision_shapecast")
@@ -610,7 +612,7 @@ func handle_collision_shapecast(x1, y1, x2, y2, obj):
 			if obj in groups:
 				return object_node
 
-	return false
+	return null
 
 
 func highlight_node(node: GMObject):

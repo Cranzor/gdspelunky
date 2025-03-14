@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://df3di5vguofi1"]
+
+[ext_resource type="Script" uid="uid://dwhtiyhx6sdro" path="res://scenes/debug/debug_buttons.gd" id="1_pmkdu"]
+
+[node name="DebugButtons" type="Node2D"]
+script = ExtResource("1_pmkdu")
+
+[node name="FirstTimeFalse" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "First time false"
+
+[connection signal="button_down" from="FirstTimeFalse" to="." method="_on_first_time_false_button_down"]

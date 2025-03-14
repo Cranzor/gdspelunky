@@ -59,5 +59,6 @@ func _input(event: InputEvent) -> void:
 	if Input.is_action_pressed("debug2"):
 		#var circle = CircleDraw.get_circle_texture(gml.view_xview, gml.view_yview, 96)
 		#$Sprite2D.texture = circle
-		var circle = gml.get_instance("player1").get_node("Circle")
-		circle.texture = CircleDraw.create_bresenham_circle(96)
+		#var circle = gml.get_instance("player1").get_node("Circle")
+		#circle.texture = CircleDraw.create_bresenham_circle(96)
+		print(global.curr_level)

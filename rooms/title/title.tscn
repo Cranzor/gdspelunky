@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dccnfhv6qaic4"]
+[gd_scene load_steps=11 format=3 uid="uid://dccnfhv6qaic4"]
 
 [ext_resource type="Script" uid="uid://carj3kvawx3h6" path="res://rooms/title/title.gd" id="1_8aivo"]
 [ext_resource type="PackedScene" uid="uid://chivya8n7oo3x" path="res://texture_rect.tscn" id="2_82mmd"]
 [ext_resource type="AudioStream" uid="uid://bcj5koltev2db" path="res://sounds/jump.wav" id="7_41otq"]
 [ext_resource type="PackedScene" uid="uid://8pect2ibgg6e" path="res://scenes/collision/collision_ray.tscn" id="8_hwtff"]
+[ext_resource type="PackedScene" uid="uid://dpik07grwpaj" path="res://scenes/collision/collision_shapecast.tscn" id="9_mya61"]
+[ext_resource type="PackedScene" uid="uid://df3di5vguofi1" path="res://scenes/debug/debug_buttons.tscn" id="10_vnlyb"]
 [ext_resource type="PackedScene" uid="uid://bft8urcdv7lh0" path="res://view.tscn" id="21_4id85"]
 [ext_resource type="PackedScene" uid="uid://b8sip2nv63phc" path="res://FPSCounter.tscn" id="23_57set"]
 [ext_resource type="PackedScene" uid="uid://b2jlcu453ynaf" path="res://bg_elements.tscn" id="24_c1f05"]
@@ -40,5 +42,10 @@ stream = ExtResource("7_41otq")
 [node name="ObjectsHolder" type="Node" parent="." groups=["objects_holder"]]
 
 [node name="CollisionRay" parent="." instance=ExtResource("8_hwtff")]
+
+[node name="CollisionShapecast" parent="." instance=ExtResource("9_mya61")]
+
+[node name="DebugButtons" parent="." instance=ExtResource("10_vnlyb")]
+position = Vector2(512, 80)
 
 [connection signal="button_down" from="Button" to="Button" method="_on_button_down"]
