@@ -214,7 +214,7 @@ func point_direction(x1, y1, x2, y2): #---[FLAG] may need to adjust angle to be 
 func instance_place(x,y,obj: String, comparison_object: GMObject): #' Returns the id of the instance of type obj met when the current instance is placed at position (x,y). obj can be an object or the keyword all. If it does not exist, the special object noone is returned.'
 	var comparison_object_collision_shape_size = comparison_object.get_node("Sprites/MainAnimations/Area2D/CollisionShape2D").shape.get_rect().size
 	var size_with_scale: Vector2 = Vector2(x + comparison_object_collision_shape_size.x, y + comparison_object_collision_shape_size.y)
-	if comparison_object.object_name == "arrow_trap_test":
+	if comparison_object.object_name == "arrow_trap_test": #--- adding a special exception as arrow_trap_test is the only object in the game with larger collision due to its scaling
 		size_with_scale = Vector2(x + (comparison_object_collision_shape_size.x * comparison_object.image_xscale), y + (comparison_object_collision_shape_size.y * comparison_object.image_yscale))
 	return collision_rectangle(x, y, size_with_scale.x, size_with_scale.y, obj, 0, 0)
 
@@ -562,7 +562,7 @@ func generate_random_hash():
 
 func handle_collision_ray(x1, y1, x2, y2, obj):
 	var collision_ray: RayCast2D = get_tree().get_first_node_in_group("collision_ray")
-	var colliders = []
+	collision_ray.clear_exceptions()
 	collision_ray.position = Vector2(x1 + 0.1, y1 + 0.1) #--- no idea why this works but it fixes collision issues
 	collision_ray.target_position = Vector2(abs(x2 - (x1 - 0.1)), abs(y2 - (y1 - 0.1))) #--- raycast bordering on a pixel exactly seems to register it as colliding
 	collision_ray.enabled = true
@@ -570,32 +570,20 @@ func handle_collision_ray(x1, y1, x2, y2, obj):
 	while collision_ray.is_colliding():
 		collision_ray.force_update_transform()
 		var area = collision_ray.get_collider()
-		colliders.append(area)
+		var object_node = area.get_parent().get_parent().get_parent()
+		var groups = object_node.get_groups()
+		if obj in groups:
+			collision_ray.enabled = false
+			return object_node
 		collision_ray.add_exception(area)
 		collision_ray.force_raycast_update()
 	collision_ray.enabled = false
-	
-	for collider in colliders:
-		collision_ray.remove_exception(collider)
-	
-	if colliders != []:
-		for collider in colliders:
-			var object_node = collider.get_parent().get_parent().get_parent()
-			var groups = object_node.get_groups()
-			if obj in groups:
-				if obj == "character":
-					print(gml.get_instance("player1").position)
-					print("oh")
-				#####---
-				object_node.debug_glow(true)
-				#####---
-				return object_node
 
 	return null
 
 func handle_collision_shapecast(x1, y1, x2, y2, obj):
 	var shapecast: ShapeCast2D = get_tree().get_first_node_in_group("collision_shapecast")
-	var colliders = []
+	shapecast.clear_exceptions()
 
 	var size = Vector2(abs(x2 - x1), abs(y2 - y1))
 	var adjusted_size = Vector2(size.x - 0.1, size.y - 0.1) #--- corners touching counts as a collision, which isn't the case in the original engine. subtracting by 0.1 corrects for this
@@ -603,26 +591,17 @@ func handle_collision_shapecast(x1, y1, x2, y2, obj):
 	shapecast.shape.size = adjusted_size
 	shapecast.enabled = true
 	shapecast.force_shapecast_update()
-	var collision_count = shapecast.get_collision_count()
 	while shapecast.is_colliding():
 		var area = shapecast.get_collider(0)
-		colliders.append(area)
+		var object_node = area.get_parent().get_parent().get_parent()
+		var groups = object_node.get_groups()
+		if obj in groups:
+			shapecast.enabled = false
+			return object_node
 		shapecast.add_exception(area)
 		shapecast.force_shapecast_update()
 	shapecast.enabled = false
 	
-	for collider in colliders:
-		shapecast.remove_exception(collider)
-	
-	if colliders != []:
-		for collider in colliders:
-			var object_node = collider.get_parent().get_parent().get_parent()
-			var groups = object_node.get_groups()
-			if obj in groups:
-				if obj == "character":
-					print("ok")
-				return object_node
-
 	return null
 
 #--- debug
