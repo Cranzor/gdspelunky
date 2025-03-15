@@ -157,7 +157,7 @@ var key_up_val = "up"
 var kills
 var kisses_bought
 var lake
-var level_deaths
+var level_deaths: Array
 var level_select
 var level_type = 0 #temp for testing
 var locked_chest_chance

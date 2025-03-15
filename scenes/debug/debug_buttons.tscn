@@ -6,8 +6,8 @@
 script = ExtResource("1_pmkdu")
 
 [node name="FirstTimeFalse" type="Button" parent="."]
-offset_right = 8.0
-offset_bottom = 8.0
+offset_right = 123.0
+offset_bottom = 31.0
 text = "First time false"
 
 [connection signal="button_down" from="FirstTimeFalse" to="." method="_on_first_time_false_button_down"]

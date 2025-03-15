@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://3r3kx8vikog4"]
+[gd_scene load_steps=7 format=3 uid="uid://3r3kx8vikog4"]
 
 [ext_resource type="Script" uid="uid://banbeugdmh4cr" path="res://rooms/level/level.gd" id="1_ytww3"]
 [ext_resource type="PackedScene" uid="uid://b2jlcu453ynaf" path="res://bg_elements.tscn" id="2_1jd7p"]
 [ext_resource type="PackedScene" uid="uid://chivya8n7oo3x" path="res://texture_rect.tscn" id="3_qtrxg"]
 [ext_resource type="PackedScene" uid="uid://8pect2ibgg6e" path="res://scenes/collision/collision_ray.tscn" id="4_cerl0"]
 [ext_resource type="PackedScene" uid="uid://dpik07grwpaj" path="res://scenes/collision/collision_shapecast.tscn" id="5_1jd7p"]
+[ext_resource type="PackedScene" uid="uid://b8sip2nv63phc" path="res://FPSCounter.tscn" id="6_qtrxg"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_ytww3")
@@ -18,3 +19,5 @@ script = ExtResource("1_ytww3")
 [node name="CollisionRay" parent="." instance=ExtResource("4_cerl0")]
 
 [node name="CollisionShapecast" parent="." instance=ExtResource("5_1jd7p")]
+
+[node name="FpsCounter" parent="." instance=ExtResource("6_qtrxg")]

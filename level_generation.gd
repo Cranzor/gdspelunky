@@ -1774,7 +1774,7 @@ func scr_room_gen(x, y): #--- have to pass in x and y
 			
 			elif (tile == "i"):
 			
-				scr_shop_items_gen(x, y, shop_type)
+				scr_shop_items_gen(xpos, ypos, shop_type)
 			
 			elif (tile == "d"):
 			

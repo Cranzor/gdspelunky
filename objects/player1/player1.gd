@@ -1281,8 +1281,8 @@ func game_over():
 			# Stats!
 			if (InLevel.is_real_level()): global.level_deaths[global.curr_level-1] += 1
 		
-			#if (gamepad.attack_pressed): gamepad.attack_pressed = false --- [FLAG] Come back and check if these causes any issues
-			#if (gamepad.start_pressed): gamepad.start_pressed = false --- [FLAG] this line too
+			if (Gamepad.attack_pressed): Gamepad.attack_pressed = false #--- [FLAG] Come back and check if these causes any issues
+			if (Gamepad.start_pressed): Gamepad.start_pressed = false #--- [FLAG] this line too
 			global.prev_custom_level = ""
 			if (global.test_level != ""):
 			
@@ -4448,15 +4448,15 @@ func animation_end():
 			if (global.test_level != ""):
 			
 				MiscScripts.scr_clear_globals()
-				get_tree().change_scene_to_file("res://level_editor.tscn")
+				get_tree().change_scene_to_file("res://rooms/level_editor/level_editor.tscn")
 			
-			elif (global.curr_level == 5): get_tree().change_scene_to_file("res://transition1x.tscn")
-			elif (global.curr_level == 9): get_tree().change_scene_to_file("res://transition2x.tscn")
-			elif (global.curr_level == 13): get_tree().change_scene_to_file("res://transition3x.tscn")
-			elif (global.level_type == 1): get_tree().change_scene_to_file("res://transition2.tscn")
-			elif (global.level_type == 2): get_tree().change_scene_to_file("res://transition3.tscn")
-			elif (global.level_type == 3): get_tree().change_scene_to_file("res://transition4.tscn")
-			elif (global.level_type == 4): get_tree().change_scene_to_file("res://transition4.tscn")
+			elif (global.curr_level == 5): get_tree().change_scene_to_file("res://rooms/transition1x/transition1x.tscn")
+			elif (global.curr_level == 9): get_tree().change_scene_to_file("res://rooms/transition2x/transition2x.tscn")
+			elif (global.curr_level == 13): get_tree().change_scene_to_file("res://rooms/transition3x/transition3x.tscn")
+			elif (global.level_type == 1): get_tree().change_scene_to_file("res://rooms/transition2/transition2.tscn")
+			elif (global.level_type == 2): get_tree().change_scene_to_file("res://rooms/transition3/transition3.tscn")
+			elif (global.level_type == 3): get_tree().change_scene_to_file("res://rooms/transition4/transition4.tscn")
+			elif (global.level_type == 4): get_tree().change_scene_to_file("res://rooms/transition4/transition4.tscn")
 			else: get_tree().change_scene_to_file("res://rooms/transition1/transition1.tscn")
 		
 		elif (p_exit == x_start):
@@ -4472,8 +4472,8 @@ func animation_end():
 				var tutorial_room = load("res://rooms/tutorial/tutorial.tscn")
 				get_tree().change_scene_to_packed(tutorial_room)
 			
-			elif (global.level_type == 2): get_tree().change_scene_to_file("res://level2.tscn")
-			else: get_tree().change_scene_to_file("res://level.tscn")
+			elif (global.level_type == 2): get_tree().change_scene_to_file("res://rooms/level2/level2.tscn")
+			else: get_tree().change_scene_to_file("res://rooms/level/level.tscn")
 		
 		elif (p_exit == x_tutorial):
 		
@@ -4482,7 +4482,7 @@ func animation_end():
 			global.curr_level = 0
 			global.bombs = 0
 			global.rope = 2
-			get_tree().change_scene_to_file("res://tutorial.tscn")
+			get_tree().change_scene_to_file("res://rooms/tutorial/tutorial.tscn")
 		
 		elif (p_exit == x_scores):
 		
@@ -4496,7 +4496,7 @@ func animation_end():
 			elif (InLevel.is_room("stars")):
 				global.scores_start = 3
 			else: global.scores_start = 0
-			get_tree().change_scene_to_file("res://highscores.tscn")
+			get_tree().change_scene_to_file("res://rooms/highscores/highscores.tscn")
 		
 		elif (p_exit == x_title):
 		

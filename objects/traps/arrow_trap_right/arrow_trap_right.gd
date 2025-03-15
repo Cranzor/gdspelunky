@@ -37,6 +37,9 @@ func alarm_1():
 		if (x_act < 32):  x_act = 32
 		var obj = gml.instance_create(position.x+16, position.y, Objects.arrow_trap_test)
 		obj.image_xscale = ceil((x_act-16)/16)
+		#---
+		obj.position.x = obj.position.x + obj.image_xscale *.5
+		#---
 		#obj.trap_id = id #--- commenting this out to avoid using id. will provide direct reference to node
 		obj.trap_id = self #---[FLAG] check this later
 

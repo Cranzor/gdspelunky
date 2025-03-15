@@ -211,9 +211,12 @@ func point_direction(x1, y1, x2, y2): #---[FLAG] may need to adjust angle to be 
 	angle = radtodeg(angle)
 	return -angle
 		
-func instance_place(x,y,obj: String, comparison_object): #' Returns the id of the instance of type obj met when the current instance is placed at position (x,y). obj can be an object or the keyword all. If it does not exist, the special object noone is returned.'
+func instance_place(x,y,obj: String, comparison_object: GMObject): #' Returns the id of the instance of type obj met when the current instance is placed at position (x,y). obj can be an object or the keyword all. If it does not exist, the special object noone is returned.'
 	var comparison_object_collision_shape_size = comparison_object.get_node("Sprites/MainAnimations/Area2D/CollisionShape2D").shape.get_rect().size
-	return handle_collision_ray(x, y, comparison_object_collision_shape_size.x, comparison_object_collision_shape_size.y, obj)
+	var size_with_scale: Vector2 = Vector2(x + comparison_object_collision_shape_size.x, y + comparison_object_collision_shape_size.y)
+	if comparison_object.object_name == "arrow_trap_test":
+		size_with_scale = Vector2((x + comparison_object_collision_shape_size.x) * comparison_object.image_xscale, (y + comparison_object_collision_shape_size.y) * comparison_object.image_yscale)
+	return collision_rectangle(x, y, size_with_scale.x, size_with_scale.y, obj, 0, 0)
 
 func instance_position(x, y, obj: String): #---[FLAG] this needs checked
 	var intersecting = collision_point(x, y, obj, 0, 0)
@@ -267,6 +270,9 @@ func object_get_parent(ind):
 func place_meeting(x, y, obj: String, comparison_object): #--- only used 4 times in the whole game
 	var intersecting = instance_place(x, y, obj, comparison_object)
 	if intersecting:
+		if obj == "character" and comparison_object.object_name == "arrow_trap_test":
+			print(gml.get_instance("player1").position)
+			print("got")
 		return true
 	return false
 	
@@ -577,6 +583,9 @@ func handle_collision_ray(x1, y1, x2, y2, obj):
 			var object_node = collider.get_parent().get_parent().get_parent()
 			var groups = object_node.get_groups()
 			if obj in groups:
+				if obj == "character":
+					print(gml.get_instance("player1").position)
+					print("oh")
 				#####---
 				object_node.debug_glow(true)
 				#####---

@@ -61,4 +61,4 @@ func _input(event: InputEvent) -> void:
 		#$Sprite2D.texture = circle
 		#var circle = gml.get_instance("player1").get_node("Circle")
 		#circle.texture = CircleDraw.create_bresenham_circle(96)
-		print(global.curr_level)
+		global.plife += 1
