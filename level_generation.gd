@@ -2093,7 +2093,7 @@ func scr_entity_gen():
 				if (solid_instance.type != "altar"):
 				
 					if (global.cemetary): scr_treasure_gen(10, solid_instance)
-					else: scr_treasure_gen(solid_instance.position.x, solid_instance.position.y)
+					else: scr_treasure_gen(0, solid_instance) #--- passing in 0 for first argument as nothing is passed in original code
 				
 			
 				# DY:  enemies

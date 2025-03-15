@@ -15,6 +15,7 @@ size = Vector2(11, 15)
 size = Vector2(16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6skb8"]
+size = Vector2(2170.9, 15.9)
 
 [node name="CollisionVisualization" type="Node2D"]
 
@@ -55,15 +56,11 @@ texture = ExtResource("3_v07bj")
 shape = SubResource("RectangleShape2D_v07bj")
 
 [node name="ArrowTrapLeft0" type="Sprite2D" parent="."]
-position = Vector2(176, 304)
+position = Vector2(415, 320)
 texture = ExtResource("4_wfkkk")
 centered = false
 
-[node name="Area2D" type="Area2D" parent="ArrowTrapLeft0"]
-position = Vector2(-79, 0)
-scale = Vector2(6, 6)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ArrowTrapLeft0/Area2D"]
-position = Vector2(8, 8)
-scale = Vector2(0.8, 0.8)
+[node name="ShapeCast2D" type="ShapeCast2D" parent="."]
+position = Vector2(1500.5, 328)
 shape = SubResource("RectangleShape2D_6skb8")
+target_position = Vector2(0, 0)

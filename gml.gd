@@ -215,7 +215,7 @@ func instance_place(x,y,obj: String, comparison_object: GMObject): #' Returns th
 	var comparison_object_collision_shape_size = comparison_object.get_node("Sprites/MainAnimations/Area2D/CollisionShape2D").shape.get_rect().size
 	var size_with_scale: Vector2 = Vector2(x + comparison_object_collision_shape_size.x, y + comparison_object_collision_shape_size.y)
 	if comparison_object.object_name == "arrow_trap_test":
-		size_with_scale = Vector2((x + comparison_object_collision_shape_size.x) * comparison_object.image_xscale, (y + comparison_object_collision_shape_size.y) * comparison_object.image_yscale)
+		size_with_scale = Vector2(x + (comparison_object_collision_shape_size.x * comparison_object.image_xscale), y + (comparison_object_collision_shape_size.y * comparison_object.image_yscale))
 	return collision_rectangle(x, y, size_with_scale.x, size_with_scale.y, obj, 0, 0)
 
 func instance_position(x, y, obj: String): #---[FLAG] this needs checked
@@ -619,11 +619,13 @@ func handle_collision_shapecast(x1, y1, x2, y2, obj):
 			var object_node = collider.get_parent().get_parent().get_parent()
 			var groups = object_node.get_groups()
 			if obj in groups:
+				if obj == "character":
+					print("ok")
 				return object_node
 
 	return null
 
-
+#--- debug
 func highlight_node(node: GMObject):
 	var animated_sprite2d = node.get_node("Sprites/MainAnimations")
 	var color_rect: ColorRect = ColorRect.new()
@@ -632,3 +634,11 @@ func highlight_node(node: GMObject):
 	color_rect.color = Color.CRIMSON
 	if node.get_node("Sprites/MainAnimations/ColorRect") == null:
 		animated_sprite2d.add_child(color_rect)
+
+func color_rect(x1, y1, x2, y2):
+	var color_rect_holder = get_tree().get_first_node_in_group("color_rect_holder")
+	var color_rect: ColorRect = ColorRect.new()
+	color_rect.position = Vector2(x1, y1)
+	color_rect.size = Vector2(x2, y2)
+	color_rect.color = Color("26ffff72")
+	color_rect_holder.add_child(color_rect)

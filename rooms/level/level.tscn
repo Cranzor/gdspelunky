@@ -21,3 +21,5 @@ script = ExtResource("1_ytww3")
 [node name="CollisionShapecast" parent="." instance=ExtResource("5_1jd7p")]
 
 [node name="FpsCounter" parent="." instance=ExtResource("6_qtrxg")]
+
+[node name="ColorRectHolder" type="Node2D" parent="." groups=["color_rect_holder"]]

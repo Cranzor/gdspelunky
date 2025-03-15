@@ -38,7 +38,9 @@ func alarm_1():
 		var obj = gml.instance_create(position.x+16, position.y, Objects.arrow_trap_test)
 		obj.image_xscale = ceil((x_act-16)/16)
 		#---
-		obj.position.x = obj.position.x + obj.image_xscale *.5
+		#obj.position.x = obj.position.x + obj.image_xscale *.5
+		#gml.color_rect(obj.position.x, obj.position.y, 16 * obj.image_xscale, 16)
+		#obj.animated_sprite_node.visible = true
 		#---
 		#obj.trap_id = id #--- commenting this out to avoid using id. will provide direct reference to node
 		obj.trap_id = self #---[FLAG] check this later
