@@ -500,7 +500,7 @@ func step():
 
 		if (status >= STUNNED):
 
-			MiscScripts.scr_check_collisions()
+			MiscScripts.scr_check_collisions(self)
 		
 			if (x_vel == 0 and y_vel == 0 and hp < 1): status = DEAD
 

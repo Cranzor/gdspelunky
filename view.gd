@@ -66,4 +66,4 @@ func _input(event: InputEvent) -> void:
 		
 		global.plife += 1
 		var player1 = gml.get_instance("player1")
-		gml.instance_create(player1.position.x + 64, player1.position.y - 10, Objects.caveman)
+		gml.instance_create(player1.position.x - 64, player1.position.y - 10, Objects.caveman)

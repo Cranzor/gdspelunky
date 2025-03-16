@@ -378,7 +378,7 @@ func step():
 
 		if (status >= STUNNED):
 
-			MiscScripts.scr_check_collisions()
+			MiscScripts.scr_check_collisions(self)
 
 
 		# DY:  friction

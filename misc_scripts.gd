@@ -415,8 +415,59 @@ func scr_draw_hud():
 		if (global.collect > 0): gml.draw_text(money_x, 8+16, "+" + str(global.collect), "global_collect", Screen.sprites_holder)
 
 
-func scr_check_collisions():
-	pass
+func scr_check_collisions(node):
+	# DY: 
+	# DY:  scr_check_collisions()
+	# DY: 
+	# DY:  Generic collision adjustments made by enemies.
+	# DY: 
+
+	#/**********************************************************************************
+		#Copyright (c) 2008, 2009 Derek Yu and Mossmouth, LLC
+		#
+		#This file is part of Spelunky.
+#
+		#You can redistribute and/or modify Spelunky, including its source code, under
+		#the terms of the Spelunky User License.
+#
+		#Spelunky is distributed in the hope that it will be entertaining and useful,
+		#but WITHOUT WARRANTY.  Please see the Spelunky User License for more details.
+#
+		#The Spelunky User License should be available in "Game Information", which
+		#can be found in the Resource Explorer, or as an external file called COPYING.
+		#If not, please obtain a new copy of Spelunky from <http://spelunkyworld.com/>
+		#
+	#***********************************************************************************/
+
+	Collision.set_collision_bounds(node, 2, 6, 14, 16)
+
+	if (node.col_left and not node.col_right):
+
+		node.position.x += 1
+
+	elif (node.col_right):
+
+		node.position.x -= 1
+
+
+	if (node.col_left or node.col_right):
+
+		node.x_vel = -node.x_vel * 0.5
+
+
+	if (node.col_top and not node.col_bot):
+
+		node.position.y += 1
+
+	elif (node.col_bot):
+
+		# DY:  bounce
+		if (node.y_vel > 1): node.y_vel = -node.y_vel * 0.5
+		elif (abs(node.y_vel) < 1): node.y_vel = 0
+			
+		# DY:  friction
+		if (abs(node.x_vel) < 0.1): node.x_vel = 0
+		elif (abs(node.x_vel) != 0): node.x_vel *= 0.3
 
 func scr_get_favor_msg():
 	pass
