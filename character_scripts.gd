@@ -116,8 +116,40 @@ func scr_hold_item(passed_item_type):
 			player1.pickup_item_type = ""
 
 
-func scr_player_is_ducking():
-	pass
+func scr_player_is_ducking(node):
+	# DY: 
+	# DY:  scr_player_is_ducking()
+	# DY: 
+	# DY:  Is the player ducking or what?!
+	# DY: 
+
+	#/**********************************************************************************
+		#Copyright (c) 2008, 2009 Derek Yu and Mossmouth, LLC
+		#
+		#This file is part of Spelunky.
+#
+		#You can redistribute and/or modify Spelunky, including its source code, under
+		#the terms of the Spelunky User License.
+#
+		#Spelunky is distributed in the hope that it will be entertaining and useful,
+		#but WITHOUT WARRANTY.  Please see the Spelunky User License for more details.
+#
+		#The Spelunky User License should be available in "Game Information", which
+		#can be found in the Resource Explorer, or as an external file called COPYING.
+		#If not, please obtain a new copy of Spelunky from <http:#//spelunkyworld.com/>
+		#
+	#***********************************************************************************/
+
+	if (node.sprite_index == "duck_left" or
+		node.sprite_index == "crawl_left" or
+		node.sprite_index == "damsel_duck_l" or
+		node.sprite_index == "damsel_crawl_l" or
+		node.sprite_index == "tunnel_duck_l" or
+		node.sprite_index == "tunnel_crawl_l"):
+
+		return true
+
+	else: return false
 	
 func scr_steal_item():
 	pass

@@ -28,7 +28,7 @@ var col_bot
 var can_pick_up
 var bounce_factor
 var friction_factor
-var cost
+var cost: int
 var for_sale
 var cimg
 var sticky

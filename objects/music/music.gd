@@ -13,7 +13,7 @@ var sound_and_node = {}
 func create_audio_stream_player_nodes():
 	# Create the pool of AudioStreamPlayer nodes.
 	for i in num_players:
-		var p = AudioStreamPlayer.new()
+		var p: AudioStreamPlayer = AudioStreamPlayer.new()
 		add_child(p)
 		available.append(p)
 		p.finished.connect(_on_stream_finished.bind(p))

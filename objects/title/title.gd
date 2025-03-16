@@ -63,21 +63,21 @@ func create():
 	# Tunnel Man
 	if (global.tunnel1 == 0 or (global.tunnel1 > 0 and global.tunnel2 == 0)):
 
-		gml.instance_create(352, 96, "ladder_orange")
-		gml.instance_create(352, 96+16, "ladder_top")
-		gml.instance_create(352, 96+32, "ladder_orange")
-		gml.instance_create(352, 96+48, "ladder_orange")
-		gml.instance_create(352, 96+64, "ladder_orange")
-		gml.instance_create(352, 96+80, "ladder_orange")
+		gml.instance_create(352, 96, Objects.ladder_orange)
+		gml.instance_create(352, 96+16, Objects.ladder_top)
+		gml.instance_create(352, 96+32, Objects.ladder_orange)
+		gml.instance_create(352, 96+48, Objects.ladder_orange)
+		gml.instance_create(352, 96+64, Objects.ladder_orange)
+		gml.instance_create(352, 96+80, Objects.ladder_orange)
 		
 		if (global.tunnel2 == 0):
 		
-			gml.instance_create(128, 112, "level9_sign")
-			gml.instance_create(144, 128, "x_shortcut9")
+			gml.instance_create(128, 112, Objects.level9_sign)
+			gml.instance_create(144, 128, Objects.x_shortcut9)
 			if (global.tunnel1 == 0):
 			
-				gml.instance_create(192, 112, "level13_sign")
-				gml.instance_create(208, 128, "x_shortcut13")
+				gml.instance_create(192, 112, Objects.level13_sign)
+				gml.instance_create(208, 128, Objects.x_shortcut13)
 			
 		 
 

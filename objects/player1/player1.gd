@@ -320,7 +320,7 @@ func step():
 	#------------------------
 	
 	step_function_1() #--- Miscellaneous functions related to setting player values and handling some actions
-	step_function_2() #--- Related to player actions and setting relevant animations. Starting game and exiting game are also here 
+	step_function_2() #--- Related to player actions and setting relevant animations. Starting game and exiting game are also here
 	step_function_3() #--- Functions for when the player takes damage
 	step_function_4() #--- Player death functions
 	step_function_5() #--- Caps values for when the player blinks when damaged
@@ -1502,7 +1502,7 @@ func bomb_rope_and_whipping_handling(): #--- Also handles picking up items and a
 		obj.image_speed = 0.2
 			   
 		obj.safe = true
-		#obj.alarm_2_countdown.start(10) #--- bomb does not have alarm 2, so commenting out
+		obj.alarm_2_countdown.start(10)
 				
 		if (facing == LEFT):
 		
@@ -1675,7 +1675,7 @@ func bomb_rope_and_whipping_handling(): #--- Also handles picking up items and a
 
 		if (hold_item):
 		
-			CharacterScripts.scr_use_item()
+			scr_use_item()
 		
 
 
@@ -3866,7 +3866,7 @@ func alarm_3():
 	walk_snd_toggle = not walk_snd_toggle
 			
 
-func alarm_4():			
+func alarm_4():
 	if (global.lake):
 
 		global.message = "YOU HEAR RUSHING WATER..."
@@ -3885,7 +3885,7 @@ func alarm_10():
 	obj.x_vel = randi_range(0,3) - randi_range(0,3)
 	Audio.play_sound(global.snd_jetpack)
 			
-func alarm_11():			
+func alarm_11():
 	if (hold_arrow > 0):
 
 		hold_arrow_toggle = not hold_arrow_toggle
@@ -4609,6 +4609,697 @@ func animation_end():
 		
 		
 		global.clean_solids = true
+
+func scr_use_item(): #--- only called by player1 so including it here for convenience
+	# DY: 
+	# DY:  scr_use_item()
+	# DY: 
+	# DY:  Use currently held item.  Must be called by player1.
+	# DY: 
+
+	#/**********************************************************************************
+		#Copyright (c) 2008, 2009 Derek Yu and Mossmouth, LLC
+		#
+		#This file is part of Spelunky.
+#
+		#You can redistribute and/or modify Spelunky, including its source code, under
+		#the terms of the Spelunky User License.
+#
+		#Spelunky is distributed in the hope that it will be entertaining and useful,
+		#but WITHOUT WARRANTY.  Please see the Spelunky User License for more details.
+#
+		#The Spelunky User License should be available in "Game Information", which
+		#can be found in the Resource Explorer, or as an external file called COPYING.
+		#If not, please obtain a new copy of Spelunky from <http://spelunkyworld.com/>
+		#
+	#***********************************************************************************/
+
+	if (hold_item.sprite_index == "bomb"):
+			
+		hold_item.sprite_index = "bomb_armed"
+		hold_item.armed = true
+				
+		hold_item.alarm_0_countdown.start(80)
+		hold_item.image_speed = 0.2
+				
+				
+				# DY: global.bombs -= 1
+			
+	elif (hold_item.sprite_index == "rope_end"):
+			
+		if (not k_down and col_top):
+				
+				  # DY:  do nothing
+			pass
+				
+		else:
+					
+			hold_item.held = false
+			hold_item.armed = true
+					
+			hold_item.px = position.x
+			hold_item.py = position.y
+					
+			if (k_down):
+				var obj	
+				if (facing == LEFT):
+						
+					obj = gml.instance_create(position.x-16, position.y, Objects.rope_throw)
+						
+				else:
+						
+					obj = gml.instance_create(position.x+16, position.y, Objects.rope_throw)
+						
+						
+				obj.t = true
+				gml.move_snap(16, 1, obj)
+				if (self.position.x < obj.position.x and not gml.collision_point(self.position.x+2, self.position.y, "solid", 0, 0)):
+						
+					if (not gml.collision_rectangle(obj.position.x-8, obj.position.y, obj.position.x-7,  obj.position.y+16, "solid", 0, 0)):
+							
+						obj.position.x -= 8
+							
+					elif (not gml.collision_rectangle(obj.position.x+7, obj.position.y, obj.position.x+8,  obj.position.y+16, "solid", 0, 0)):
+							
+						obj.position.x += 8
+							
+					else: obj.t = false
+						
+				elif (not gml.collision_point(self.position.x-2, self.position.y, "solid", 0, 0)):
+						
+					if (not gml.collision_rectangle(obj.position.x+7, obj.position.y, obj.position.x+8,  obj.position.y+16, "solid", 0, 0)):
+							
+						obj.position.x += 8
+							
+					elif (not gml.collision_rectangle(obj.position.x-8, obj.position.y, obj.position.x-7,  obj.position.y+16, "solid", 0, 0)):
+							
+						obj.position.x -= 8
+							
+					else: obj.t = false
+						
+						
+				if (not obj.t):
+						
+					obj = self.hold_item
+					obj = gml.instance_create(obj.position.x, obj.position.y, Objects.rope_throw)
+					if (self.facing == 18): obj.x_vel = -3.2
+					else: obj.x_vel = 3.2
+					obj.y_vel = 0.5
+					gml.instance_destroy(obj)
+						
+				else:
+						
+					gml.instance_create(obj.position.x, obj.position.y, Objects.rope_top)
+					obj.armed = false
+					obj.falling = true
+					obj.x_vel = 0
+					obj.y_vel = 0
+							
+						
+				gml.instance_destroy(hold_item)
+				hold_item = null
+					
+			else:
+					
+				hold_item.position.x = position.x
+				hold_item.x_vel = 0
+				hold_item.y_vel = -12
+					
+					
+			CharacterScripts.scr_hold_item(pickup_item_type)
+			Audio.play_sound(global.snd_throw)
+				
+			
+	elif (hold_item.type == "machete"):
+			
+		if (k_down and not whipping):
+				
+			if (CharacterScripts.scr_player_is_ducking(self)):
+					
+				hold_item.held = false
+				hold_item.safe = true
+				hold_item.alarm_2_countdown.start(10)
+				
+				if (facing == LEFT):
+						
+					if (hold_item.heavy): hold_item.x_vel = -4 + x_vel
+					else: hold_item.x_vel = -8 + x_vel
+						
+				elif (facing == RIGHT):
+						
+					if (hold_item.heavy): hold_item.x_vel = 4 + x_vel
+					else: hold_item.x_vel = 8 + x_vel
+						
+					
+				hold_item.x_vel *= 0.4
+				hold_item.y_vel = 0.5
+						
+				hold_item = null
+					
+				
+		if (not CharacterScripts.scr_player_is_ducking(self) and not whipping):
+				
+			image_speed = 1
+			if (global.is_tunnel_man):
+					
+				sprite_index = "tunnel_attack_l"
+					
+			elif (global.is_damsel):
+					
+				sprite_index = "damsel_attack_l"
+					
+			else:
+					
+				sprite_index = "attack_left"
+					
+			image_index = 0
+			whipping = true
+			hold_item.visible = false
+				
+			
+	elif (hold_item.type == "mattock"):
+			
+		if (k_down and not whipping):
+				
+			if (CharacterScripts.scr_player_is_ducking(self)):
+					
+				hold_item.held = false
+				hold_item.safe = true
+				hold_item.alarm_2_countdown.start(10)
+				
+				if (facing == LEFT):
+						
+					if (hold_item.heavy): hold_item.x_vel = -4 + x_vel
+					else: hold_item.x_vel = -8 + x_vel
+						
+				elif (facing == RIGHT):
+						
+					if (hold_item.heavy): hold_item.x_vel = 4 + x_vel
+					else: hold_item.x_vel = 8 + x_vel
+						
+					
+				hold_item.x_vel *= 0.4
+				hold_item.y_vel = 0.5
+						
+				hold_item = null
+					
+				
+		if (not CharacterScripts.scr_player_is_ducking(self) and not whipping and platform_character_is(ON_GROUND)):
+				
+			image_speed = 0.2
+			if (global.is_tunnel_man):
+					
+				sprite_index = "tunnel_attack_l"
+					
+			elif (global.is_damsel):
+					
+				sprite_index = "damsel_attack_l"
+					
+			else:
+					
+				sprite_index = "attack_left"
+					
+			image_index = 0
+			whipping = true
+			cant_jump = 20
+			hold_item.visible = false
+				
+			
+	elif (hold_item.type == "pistol"):
+			
+		if (k_down):
+				
+			if (CharacterScripts.scr_player_is_ducking(self)):
+					
+				hold_item.held = false
+				hold_item.safe = true
+				hold_item.alarm_2_countdown.start(10)
+				
+				if (facing == LEFT):
+						
+					if (hold_item.heavy): hold_item.x_vel = -4 + x_vel
+					else: hold_item.x_vel = -8 + x_vel
+						
+				elif (facing == RIGHT):
+						
+					if (hold_item.heavy): hold_item.x_vel = 4 + x_vel
+					else: hold_item.x_vel = 8 + x_vel
+						
+					
+				hold_item.x_vel *= 0.4
+				hold_item.y_vel = 0.5
+						
+				hold_item = null
+					
+				
+		if (not CharacterScripts.scr_player_is_ducking(self)):
+			var obj
+			if (facing == LEFT and firing == 0):
+					
+				gml.instance_create(position.x-9, position.y+1, Objects.shotgun_blast_left)
+				obj = gml.instance_create(position.x-9, position.y-2, Objects.bullet)
+				obj.x_vel = (-1 * gml.rand(6,8)) + x_vel
+				if (obj.x_vel >= -6): obj.x_vel = -6
+				obj.y_vel = 0
+				if (state != HANGING and state != CLIMBING):
+						
+					y_vel -= 1
+					x_vel += 1
+						
+				Audio.play_sound(global.snd_shotgun)
+				firing = firing_pistol_max
+					
+			elif (facing == RIGHT and firing == 0):
+					
+				gml.instance_create(position.x+8, position.y+1, Objects.shotgun_blast_right)
+				obj = gml.instance_create(position.x+8, position.y-2, Objects.bullet)
+				obj.x_vel = gml.rand(6,8) + x_vel
+				if (obj.x_vel < 6): obj.x_vel = 6
+				obj.y_vel = 0
+				if (state != HANGING and state != CLIMBING):
+						
+					y_vel -= 1
+					x_vel -= 1
+						
+				Audio.play_sound(global.snd_shotgun)
+				firing = firing_pistol_max
+				
+			
+	elif (hold_item.type == "sceptre"):
+			
+		if (k_down):
+				
+			if (CharacterScripts.scr_player_is_ducking(self)):
+					
+				hold_item.held = false
+				hold_item.safe = true
+				hold_item.alarm_2_countdown.start(10)
+				
+				if (facing == LEFT):
+						
+					if (hold_item.heavy): hold_item.x_vel = -4 + x_vel
+					else: hold_item.x_vel = -8 + x_vel
+						
+				elif (facing == RIGHT):
+						
+					if (hold_item.heavy): hold_item.x_vel = 4 + x_vel
+					else: hold_item.x_vel = 8 + x_vel
+						
+					
+				hold_item.x_vel *= 0.4
+				hold_item.y_vel = 0.5
+						
+				hold_item = null
+					
+				
+		if (not CharacterScripts.scr_player_is_ducking(self)):
+			var obj
+			if (facing == LEFT and firing == 0):
+					
+				for repetition in range(3):
+						
+					obj = gml.instance_create(position.x-12, position.y+4, Objects.psychic_create_p)
+					obj.x_vel = -gml.rand(1,3)
+					obj.y_vel = -gml.random(2)
+						
+				obj = gml.instance_create(position.x-12, position.y-2, Objects.psychic_wave_p)
+				obj.x_vel = -6
+				Audio.play_sound(global.snd_psychic)
+				firing = firing_pistol_max
+					
+			elif (facing == RIGHT and firing == 0):
+					
+				for repetition in range(3):
+						
+					obj = gml.instance_create(position.x+12, position.y+4, Objects.psychic_create_p)
+					obj.x_vel = gml.rand(1,3)
+					obj.y_vel = -gml.random(2)
+						
+				obj = gml.instance_create(position.x+12, position.y-2, Objects.psychic_wave_p)
+				obj.x_vel = 6
+				Audio.play_sound(global.snd_psychic)
+				firing = firing_pistol_max
+				
+			
+	elif (hold_item.type == "web cannon"):
+			
+		if (k_down):
+				
+			if (CharacterScripts.scr_player_is_ducking(self)):
+					
+				hold_item.held = false
+				hold_item.safe = true
+				hold_item.alarm_2_countdown.start(10)
+				
+				if (facing == LEFT):
+						
+					if (hold_item.heavy): hold_item.x_vel = -4 + x_vel
+					else: hold_item.x_vel = -8 + x_vel
+						
+				elif (facing == RIGHT):
+						
+					if (hold_item.heavy): hold_item.x_vel = 4 + x_vel
+					else: hold_item.x_vel = 8 + x_vel
+						
+					
+				hold_item.x_vel *= 0.4
+				hold_item.y_vel = 0.5
+						
+				hold_item = null
+					
+				
+		if (not CharacterScripts.scr_player_is_ducking(self)):
+			var obj
+			if (facing == LEFT and firing == 0):
+					
+				gml.instance_create(position.x-12, position.y, Objects.shotgun_blast_left)
+				for i in range(1): #--- appears that having more than one web ball shoot out was experimented with
+						
+					obj = gml.instance_create(position.x-12, position.y-2, Objects.web_ball)
+					obj.x_vel = (-1 * gml.rand(6,8)) + x_vel
+					if (obj.x_vel >= -6): obj.x_vel = -6
+					obj.y_vel = 0
+						
+				if (state != HANGING and state != CLIMBING):
+						
+					y_vel -= 1
+					x_vel += 1
+						
+				Audio.play_sound(global.snd_shotgun)
+				firing = firing_pistol_max
+					
+			elif (facing == RIGHT and firing == 0):
+					
+				gml.instance_create(position.x+12, position.y, Objects.shotgun_blast_right)
+				for i in range(1):
+						
+					obj = gml.instance_create(position.x+12, position.y-2, Objects.web_ball)
+					obj.x_vel = gml.rand(6,8) + x_vel
+					if (obj.x_vel < 6): obj.x_vel = 6
+					obj.y_vel = 0
+						
+				if (state != HANGING and state != CLIMBING):
+						
+					y_vel -= 1
+					x_vel -= 1
+						
+				Audio.play_sound(global.snd_shotgun)
+				firing = firing_pistol_max
+				
+			
+	elif (hold_item.type == "teleporter"):
+			
+		if (k_down):
+				
+			if (CharacterScripts.scr_player_is_ducking(self)):
+					
+				hold_item.held = false
+				hold_item.safe = true
+				hold_item.alarm_2_countdown.start(10)
+				
+				if (facing == LEFT):
+						
+					if (hold_item.heavy): hold_item.x_vel = -4 + x_vel
+					else: hold_item.x_vel = -8 + x_vel
+						
+				elif (facing == RIGHT):
+						
+					if (hold_item.heavy): hold_item.x_vel = 4 + x_vel
+					else: hold_item.x_vel = 8 + x_vel
+						
+					
+				hold_item.x_vel *= 0.4
+				hold_item.y_vel = 0.5
+						
+				hold_item = null
+					
+				
+		else:
+			var tx
+			var ty
+			if (k_up):
+					
+				tx = position.x
+				ty = position.y - (16*gml.rand(4,8))
+				while (ty < 16):  ty += 16
+					
+			elif (not CharacterScripts.scr_player_is_ducking(self)):
+					
+				if (facing == LEFT and firing == 0):
+						
+					tx = position.x - (16*gml.rand(4,8))
+					ty = position.y
+					if (tx < 8): tx = 8
+						
+				elif (facing == RIGHT and firing == 0):
+						
+					tx = position.x + (16*gml.rand(4,8))
+					ty = position.y
+					if (tx > gml.room_width - 8): tx = gml.room_width - 8
+						
+					
+			var n = 0
+			while (gml.collision_rectangle(tx-4, ty-4, tx+4,  ty+4, "solid", 0, 0) and n < 3 and ty > 16):
+					
+				ty -= 16
+				n += 1
+					
+			for repetition in range(3):
+					
+				gml.instance_create(position.x-4+gml.rand(0,8), position.y-4+gml.rand(0,8), Objects.flare_spark)
+					
+			if (position.y < 8): position.y = 8
+			position.x = tx
+			position.y = ty
+					#with ball
+			var ball = gml.get_instance("ball") #--- changing this as there should only be one
+					
+			ball.position.x = self.position.x
+			ball.position.y = self.position.y
+					
+					#with chain
+			var chain = gml.get_instance("chain") #--- changing this as there should only be one
+					
+			chain.position.x = self.position.x
+			chain.position.y = self.position.y
+					
+					# DY:  state = STANDING
+			var obj = gml.instance_place(position.x, position.y, "enemy", self)
+			if (obj):
+					
+						#with obj
+						
+				MiscScripts.scr_create_blood(self.position.x, self.position.y, 3, obj)
+				obj.hp -= 99
+				gml.instance_destroy(obj)
+						
+					
+			Audio.play_sound(global.snd_teleport)
+					#with player1
+					
+			self.state = 16
+					
+				
+			
+	elif (hold_item.type == "bow"):
+			
+		if (k_down):
+				
+			if (CharacterScripts.scr_player_is_ducking(self)):
+					
+				hold_item.held = false
+				hold_item.safe = true
+				hold_item.alarm_2_countdown.start(10)
+				
+				if (facing == LEFT):
+						
+					if (hold_item.heavy): hold_item.x_vel = -4 + x_vel
+					else: hold_item.x_vel = -8 + x_vel
+						
+				elif (facing == RIGHT):
+						
+					if (hold_item.heavy): hold_item.x_vel = 4 + x_vel
+					else: hold_item.x_vel = 8 + x_vel
+						
+					
+				hold_item.x_vel *= 0.4
+				hold_item.y_vel = 0.5
+						
+				hold_item = null
+					
+				
+		elif (not CharacterScripts.scr_player_is_ducking(self) and
+			firing == 0 and not bow_armed and global.arrows > 0):
+				
+			bow_armed = true
+			Audio.play_sound(global.snd_bow_pull)
+				
+		elif (global.arrows <= 0):
+				
+			global.message = "I'M OUT OF ARROWS!"
+			global.message2 = ""
+			global.message_timer = 80
+				
+			
+	elif (hold_item.type == "shotgun"):
+			
+		if (k_down):
+				
+			if (CharacterScripts.scr_player_is_ducking(self)):
+					
+				hold_item.held = false
+				hold_item.safe = true
+				hold_item.alarm_2_countdown.start(10)
+				
+				if (facing == LEFT):
+						
+					if (hold_item.heavy): hold_item.x_vel = -4 + x_vel
+					else: hold_item.x_vel = -8 + x_vel
+						
+				elif (facing == RIGHT):
+						
+					if (hold_item.heavy): hold_item.x_vel = 4 + x_vel
+					else: hold_item.x_vel = 8 + x_vel
+						
+					
+				hold_item.x_vel *= 0.4
+				hold_item.y_vel = 0.5
+						
+				hold_item = null
+					
+				
+		if (not CharacterScripts.scr_player_is_ducking(self)):
+			var obj
+			if (facing == LEFT and firing == 0):
+					
+				gml.instance_create(position.x-9, position.y+1, Objects.shotgun_blast_left)
+				for repetition in range(6):
+						
+					obj = gml.instance_create(position.x-9, position.y-2, Objects.bullet)
+					obj.x_vel = (-1 * gml.rand(6,8)) + x_vel
+					if (obj.x_vel >= -6): obj.x_vel = -6
+					obj.y_vel = gml.random(1) - gml.random(1)
+						
+				if (state != HANGING and state != CLIMBING):
+						
+					y_vel -= 1
+					x_vel += 3
+						
+				Audio.play_sound(global.snd_shotgun)
+				firing = firing_shotgun_max
+					
+			elif (facing == RIGHT and firing == 0):
+					
+				gml.instance_create(position.x+8, position.y+1, Objects.shotgun_blast_right)
+				for repetition in range(6):
+						
+					obj = gml.instance_create(position.x+8, position.y-2, Objects.bullet)
+					obj.x_vel = gml.rand(6,8) + x_vel
+					if (obj.x_vel < 6): obj.x_vel = 6
+					obj.y_vel = gml.random(1) - gml.random(1)
+						
+				if (state != HANGING and state != CLIMBING):
+						
+					y_vel -= 1
+					x_vel -= 3
+						
+				Audio.play_sound(global.snd_shotgun)
+				firing = firing_shotgun_max
+				
+			
+	else:
+			
+		if (hold_item.type == "damsel"):
+				
+			hold_item.status = 2
+			hold_item.counter = hold_item.stun_max
+			hold_item.position.y -= 4
+			Audio.play_sound(global.snd_damsel)
+				
+			
+		hold_item.held = false
+		hold_item.safe = true
+		hold_item.alarm_2_countdown.start(10)
+				
+		if (facing == LEFT):
+				
+			if (hold_item.heavy): hold_item.x_vel = -4 + x_vel
+			else: hold_item.x_vel = -8 + x_vel
+			if (gml.collision_point(position.x-8, position.y, "solid", 0, 0)): # DY:  prevent getting stuck in wall
+					
+				hold_item.position.x += 8
+					
+				
+		elif (facing == RIGHT):
+				
+			if (hold_item.heavy): hold_item.x_vel = 4 + x_vel
+			else: hold_item.x_vel = 8 + x_vel
+			if (gml.collision_point(position.x+8, position.y, "solid", 0, 0)): # DY:  prevent getting stuck in wall
+					
+				hold_item.position.x -= 8
+					
+				
+				
+		if (hold_item.heavy): hold_item.y_vel = -2
+		else: hold_item.y_vel = -3
+		
+		if (k_up):
+				
+			if (hold_item.heavy): hold_item.y_vel = -4
+			else: hold_item.y_vel = -9
+				
+				
+		if (k_down):
+				
+			if (platform_character_is(ON_GROUND)):
+					
+				hold_item.position.y -= 2
+				hold_item.x_vel *= 0.6
+				hold_item.y_vel = 0.5
+					
+			else: hold_item.y_vel = 3
+				
+		elif (not global.has_mitt):
+				
+			if (facing == LEFT):
+					
+				if (gml.collision_point(position.x-8, position.y-10, "solid", 0, 0)):
+						
+					hold_item.y_vel = 0
+					hold_item.x_vel -= 1
+						
+					
+			elif (facing == RIGHT):
+					
+				if (gml.collision_point(position.x+8, position.y-10, "solid", 0, 0)):
+						
+					hold_item.y_vel = 0
+					hold_item.x_vel += 1
+						
+					
+				
+				
+		if (global.has_mitt and not CharacterScripts.scr_player_is_ducking(self)):
+				
+			if (hold_item.x_vel < 0): hold_item.x_vel -= 6
+			else: hold_item.x_vel += 6
+				
+			if (not k_up and not k_down): hold_item.y_vel = -0.4
+			elif (k_down): hold_item.y_vel = 6
+					
+			hold_item.my_grav = 0.1
+				
+				
+		if (hold_item.sprite_index == "bomb_armed"): CharacterScripts.scr_hold_item(pickup_item_type)
+		else: hold_item = null
+		Audio.play_sound(global.snd_throw)
+			
+			
+	if (k_down and hold_item):
+		hold_item.position.x = position.x
+		hold_item.position.y = position.y
+	if (hold_item == null): pickup_item_type = ""
+
 
 func collision_with_blood(): #---[FLAG] have to implement
 	pass

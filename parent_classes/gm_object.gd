@@ -350,6 +350,7 @@ func handle_smooth_motion_values():
 func object_setup():
 	var object_database = object_database.object_database
 	var object_entry = object_database[object_name]
+	var parent = object_entry["parent"]
 	
 	groups_setup(object_entry)
 	depth_setup(object_entry)
@@ -357,6 +358,9 @@ func object_setup():
 	bounding_box_setup()
 	##collision_setup()
 	alarms_setup(object_entry)
+	if parent != null:
+		var parent_entry = object_database[parent]
+		alarms_setup(parent_entry) #--- running this due to item class having alarm_2
 	collision_with_setup(object_entry)
 	#---[FLAG] have to set up outside_room function
 	

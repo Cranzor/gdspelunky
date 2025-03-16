@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cp7345wvpbe1d"]
+[gd_scene load_steps=8 format=3 uid="uid://cp7345wvpbe1d"]
 
 [ext_resource type="Script" uid="uid://mh7m6a0ori80" path="res://rooms/intro/intro.gd" id="1_886e7"]
 [ext_resource type="PackedScene" uid="uid://8pect2ibgg6e" path="res://scenes/collision/collision_ray.tscn" id="4_beiky"]
+[ext_resource type="PackedScene" uid="uid://df3di5vguofi1" path="res://scenes/debug/debug_buttons.tscn" id="5_p6f0b"]
 [ext_resource type="Texture2D" uid="uid://c7mqbeksgioqi" path="res://backgrounds/background_night.png" id="16_pnhb5"]
 [ext_resource type="PackedScene" uid="uid://b2jlcu453ynaf" path="res://bg_elements.tscn" id="17_txyc1"]
 
@@ -29,3 +30,9 @@ tile_set = SubResource("TileSet_n3hse")
 [node name="ObjectsHolder" type="Node2D" parent="."]
 
 [node name="CollisionRay" parent="." instance=ExtResource("4_beiky")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+offset = Vector2(30, 0)
+transform = Transform2D(1, 0, 0, 1, 30, 0)
+
+[node name="DebugButtons" parent="CanvasLayer" instance=ExtResource("5_p6f0b")]
