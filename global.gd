@@ -314,7 +314,7 @@ var tofu
 var tomblords
 var total_chests: int
 var total_crates: int
-var total_monkey_kills
+var total_monkey_kills: int
 var tunnel1
 var tunnel1_max
 var tunnel2

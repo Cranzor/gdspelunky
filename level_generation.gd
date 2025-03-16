@@ -1054,7 +1054,7 @@ func scr_init_level():
 		elif (global.level_type == 1):
 		
 			if (global.black_market): scr_room_gen_market() #---[FLAG] may need to pass in x and y
-			else: scr_room_gen2() #---[FLAG] may need to pass in x and y
+			else: scr_room_gen2(room_instance.position.x, room_instance.position.y)
 		
 		elif (global.level_type == 2):
 		
@@ -1810,8 +1810,604 @@ func scr_room_gen(x, y): #--- have to pass in x and y
 func scr_room_gen_market():
 	pass
 
-func scr_room_gen2():
-	pass
+func scr_room_gen2(x, y):
+	# DY: 
+	# DY:  scr_room_gen2()
+	# DY: 
+	# DY:  Room generation for Area 2, the Lush Jungle.
+	# DY: 
+
+	#/**********************************************************************************
+		#Copyright (c) 2008, 2009 Derek Yu and Mossmouth, LLC
+		#
+		#This file is part of Spelunky.
+#
+		#You can redistribute and/or modify Spelunky, including its source code, under
+		#the terms of the Spelunky User License.
+#
+		#Spelunky is distributed in the hope that it will be entertaining and useful,
+		#but WITHOUT WARRANTY.  Please see the Spelunky User License for more details.
+#
+		#The Spelunky User License should be available in "Game Information", which
+		#can be found in the Resource Explorer, or as an external file called COPYING.
+		#If not, please obtain a new copy of Spelunky from <http://spelunkyworld.com/>
+		#
+	#***********************************************************************************/
+
+	#/*
+	#Note:
+#
+	#ROOMS are 10x8 tile areas.
+#
+	#str_temp = "0000000000
+		#0000000000
+		#0000000000
+		#0000000000
+		#0000000000
+		#0000000000
+		#0000000000
+		#0000000000"
+#
+	#OBSTACLES are 5x3 tile chunks that are randomized within rooms.
+			   #
+	#str_obs = "00000
+		#00000
+		#00000"
+			  #
+	#The string representing a room or obstacle must be laid out unbroken:
+	#*/
+	var str_temp = "00000000000000000000000000000000000000000000000000000000000000000000000000000000"
+
+	var room_path = global.room_path[[LevelGeneration.scr_get_room_x(x), LevelGeneration.scr_get_room_y(y)]]
+	var room_path_above = -1
+	var n
+	var game = gml.get_instance("game")
+	var shop_type
+	if (LevelGeneration.scr_get_room_y(y) != 0): room_path_above = global.room_path[[LevelGeneration.scr_get_room_x(x), LevelGeneration.scr_get_room_y(y-128)]]
+
+	if (LevelGeneration.scr_get_room_x(x) == global.start_room_x and LevelGeneration.scr_get_room_y(y) == global.start_room_y): # DY:  start room
+
+		if (room_path == 2): n = gml.rand(3,4)
+		else: n = gml.rand(1,2)
+		match n:
+		
+			1:  str_temp = "60000600000000000000000000000000000000000008000000000000000000000000001111111111"
+			2:  str_temp = "11111111112222222222000000000000000000000008000000000000000000000000001111111111"
+			# DY:  hole
+			3:  str_temp = "60000600000000000000000000000000000000000008000000000000000000000000002021111120"
+			4:  str_temp = "11111111112222222222000000000000000000000008000000000000000000000000002021111120"
+		
+
+	elif (LevelGeneration.scr_get_room_x(x) == global.end_room_x and LevelGeneration.scr_get_room_y(y) == global.end_room_y): # DY:  end room
+
+		if (global.lake): n = gml.rand(5,5)
+		elif (room_path_above == 2): n = gml.rand(1,2)
+		else: n = gml.rand(3,4)
+		match n:
+		
+			1:  str_temp = "00000000000000000000000000000000000000000008000000000000000000000000001111111111"
+			2:  str_temp = "00000000000011111100000000000000000000000008000000000000000000000000001111111111"
+			3:  str_temp = "60000600000000000000000000000000000000000008000000000000000000000000001111111111"
+			4:  str_temp = "11111111112222222222000000000000000000000008000000000000000000000000001111111111"
+			5:  str_temp = "000000000000000900000221111220wwvvvvvvwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww"
+		
+
+	elif (room_path == 0 and gml.rand(1,3) <= 2): # DY:  side room
+
+		if (not game.altar and gml.rand(1,12) == 1):
+		
+			n = 10
+			game.altar = true
+		
+		elif (game.idol):
+		
+			n = gml.rand(1,8)
+		
+		else:
+		
+			n = gml.rand(1,9)
+			if (n == 9): game.idol = true
+		
+
+		match n:
+		
+			# DY:  upper plats
+			1:  str_temp = "00000000000010111100000000000000011010000050000000000000000000000000001111111111"
+			2:  str_temp = "111111111111V0000211120000021100000002110000000211112000021111120021111111001111"
+			3:  str_temp = "1111111111112V000011112000002111200000001120000000112000021111120021111111001111"
+			4:  str_temp = "11120021111100000222120000021100000002220000000211112000022211177T71111111111111"
+			5:  str_temp = "1112002111222000001111200000212220000000112000000022200002111117T771111111111111"
+			6:  str_temp = "1112002111222000001111200000212220000000112000000022200002111117T771111111111111"
+			# DY:  water rooms
+			7:  str_temp = "000000000011wwwwww1111wwwwww11113wwww311113wwww311113wwww31111133331111111111111"
+			8:  str_temp = "00000000000000rr0000000rttr00000rrrrrr0000V0000000000000000000000000000000000000"
+			# DY:  idols
+			9:
+			
+				if (global.cemetary): str_temp = "ttttttttttttttttttttttp0_c00pttttt0tt0ttt4000000004ttt0tt0tttttp0000ptt1111111111"
+				else: str_temp = "01000000100000I0000001BBBBBB10110000001111wwwwww1111wwwwww11113wwww3111111111111"
+				#break
+			
+			# DY:  altars
+			10:  str_temp = "220000002200000000000000000000000000000000000000000000x0000002211112201111111111"
+		
+
+	elif (room_path == 0 or room_path == 1):
+
+		match gml.rand(1,10):
+		
+			# DY:  basic rooms
+			1:  str_temp = "60000600000000000000000000000000000000000050000000000000000000000000001111111111"
+			2:  str_temp = "60000600000000000000000000000000000000005000050000000000000000000000001111111111"
+			3:  str_temp = "60000600000000000000000000000050000500000000000000000000000011111111111111111111"
+			4:  str_temp = "60000600000000000000000000000000000000000000000000000111110000111111001111111111"
+			5:  str_temp = "2222222222000000000000000000000000tt000000r0220r0000t0tt0t000rtrttrtr01111111111"
+			6:
+				if (gml.rand(1,2) == 1): str_temp = "0L000000001L111111110L222222200L000000000002002000011122111011200002111111111111"
+				else: str_temp = "00000000L011111111L102222222L000000000L00002002000011122111011200002111111111111"
+				#break
+			
+			# DY:  spikes
+			7:  str_temp = "1111111111V0000V000000000000000000000000000000000010000000011ssssssss11111111111"
+			# DY:  upper plats
+			8:  str_temp = "00000000000000000000000000000000000000005000050000000000000000000000001111111111"
+			# DY:  water
+			9:  str_temp = "000000000000000000000000000000013wwww310013wwww310113wwww31111133331111111111111"
+			10:  str_temp = "0060000000000000000000000000000000000000013wwww310113wwww31111133331111111111111"
+		
+
+	elif (room_path == 3):
+
+		match gml.rand(1,7):
+		
+			# DY:  basic rooms
+			1:  str_temp = "00000000000000000000000000000000000000000050000000000000000000000000001111111111"
+			2:  str_temp = "00000000000000000000000000000000000000005000050000000000000000000000001111111111"
+			3:  str_temp = "00000000000000000000000000000050000500000000000000000000000011111111111111111111"
+			
+			# DY:  upper plats
+			4:  str_temp = "00000000000000000000000000000000000000000002222220001111111011111111111111111111"
+			5:  str_temp = "00000000000000000000000000000000000000000000000221000002211100002211111111111111"
+			# DY:  water
+			6:  str_temp = "000000000000000000000000000000013wwww310013wwww310113wwww31111133331111111111111"
+			7:  str_temp = "0000000000006000000000000000000000000000013wwww310113wwww31111133331111111111111"
+		
+
+	elif (room_path == 4): # DY:  shop
+
+		str_temp = "111111111111111111111111221111111l000211...000W010...00000k0..Kiiii000bbbbbbbbbb"
+		
+		match gml.rand(1,7):
+		
+			1:  shop_type = "General"
+			2:  shop_type = "Bomb"
+			3:  shop_type = "Weapon"
+			4:  shop_type = "Rare"
+			5:  shop_type = "Clothing"
+			6:
+				shop_type = "Craps"
+				str_temp = "11111111111111111111111122111111Kl000211..b_q00_w010.0+00000k0.q+uu00000bbbbbbbbbb"
+			7:
+				shop_type = "Kissing"
+				str_temp = "111111111111111111111111221111111l000211...000W010...00000k0..K00D0000bbbbbbbbbb"
+				game.damsel = true
+		   
+
+	elif (room_path == 5): # DY:  shop
+
+		str_temp = "111111111111111111111111221111112000l11101W0000...0k00000...000iiiiK..bbbbbbbbbb"
+			
+		match gml.rand(1,7):
+		
+			1:  shop_type = "General"
+			2:  shop_type = "Bomb"
+			3:  shop_type = "Weapon"
+			4:  shop_type = "Rare"
+			5:  shop_type = "Clothing"
+			6:
+				shop_type = "Craps"
+				str_temp = "111111111111111111111111221111112000lK1101W0Q00b..0k00000+0.00000uu+q.bbbbbbbbbb"
+			7:
+				shop_type = "Kissing"
+				str_temp = "111111111111111111111111221111112000l11101W0000...0k00000...0000D00K..bbbbbbbbbb"
+				game.damsel = true
+		
+
+	elif (room_path == 7): # DY:  Lake Bottom
+
+		match gml.rand(1,8):
+		
+			1:  str_temp = "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww"
+			2:  str_temp = "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww,,,,,,,,,,"
+			3:  str_temp = "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww,,wwwwww,,wwwwwwwwwwwwwwwwwwww,,,,,,,,,,"
+			4:  str_temp = "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww,v,wwwwwwwwwv,wwwwwww,v,wwwwww,,v,,,,,ww"
+			5:  str_temp = "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww,v,wwwwww,vwwwwwwww,v,ww,,,,,,v,,"
+			6:  str_temp = "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww,,wwwwwww,vv,wwwwww,vv,wwwww,,vv,,ww,,,vvvv,,,"
+			7:  str_temp = "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww,,,,wwwww,vvvv,www,v,w,vv,ww,wwww,vv,,,,,,,,,,,"
+			8:  str_temp = "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww,,,,wwwww,vvvv,www,vv,w,v,w,vv,wwww,w,,,,,,,,,,"
+		
+
+	elif (room_path == 8): # DY:  Lake Top
+
+		if (global.room_path[[LevelGeneration.scr_get_room_x(x), LevelGeneration.scr_get_room_y(y-128)]] == 2):
+			n = gml.rand(1,5)
+		else:
+			n = gml.rand(1,8)
+		match n:
+		
+			1:  str_temp = "000000000000000000000001111000w,,vvvv,,wwwww,,wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww"
+			2:  str_temp = "000000000000000000001200000000vvwwwwwwww,wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww"
+			3:  str_temp = "000000000000000000000000000021wwwwwwwwvvwwwwwwwww,wwwwwwwwwwwwwwwwwwwwwwwwwwwwww"
+			4:  str_temp = "000000000000000000000000000000wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww"
+			5:  str_temp = "000000000000000000000001111000w,,vvvv,,wwww,vv,wwwwwwwvvwwwwwwww,,wwwwwwwwwwwwww"
+			6:  str_temp = "000022000000021120000001111000w,,vvvv,,wwww,vv,wwwwwwwvvwwwwwwww,,wwwwwwwwwwwwww"
+			7:  str_temp = "600006000000000000000000000000wwwvvvvwwwwwww,,wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww"
+			8:  str_temp = "000022000000021120000221111220www,,,,wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww"
+		
+
+	elif (room_path == 9): # DY:  Mega Mouth
+
+		match gml.rand(1,1):
+		
+			1:  str_temp = "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww_jwwwwwwwwwwwwwwwwwwwwwwwwww,,,,,,,,,,"
+		
+
+	else: # DY:  drop
+
+		if (room_path_above != 2): n = gml.rand(1,6)
+		else: n = gml.rand(1,5)
+		match n:
+		
+			1:  str_temp = "00000000000000000000000000000000000000000000000000000000002200000002111111202111"
+			2:  str_temp = "000000000000000000000000000000000000000000000000002200000000112T0000001111202111"
+			3:  str_temp = "00000000006000000000000000000000000000000000000000000000000000000000001000000001"
+			4:  str_temp = "00000000000000000000000000000000000000000000000000000000000020000222221000111111"
+			5:  str_temp = "00000000000000000000000000000000000000000000000000000000000022222000021111110001"
+			# DY: 
+			6:  str_temp = "11111111111111111111120000002100000000000000000000022000022021120021121111001111"
+		
+
+
+	# DY:  Add obstacles
+
+	for i in range(1, 81):
+
+		var j = i
+	  
+		var str_obs1 = "00000"
+		var str_obs2 = "00000"
+		var str_obs3 = "00000"
+		var str_obs4 = "00000"
+		var tile = gml.string_char_at(str_temp, i)
+		
+		if (tile == "8"):
+		
+			n = gml.rand(1,1)
+			match n:
+			
+				1:
+					str_obs1 = "00900"
+					str_obs2 = "01110"
+					str_obs3 = "11111"
+			
+		
+		elif (tile == "5"): # DY:  ground
+		
+			if (gml.rand(1,8) == 1): n = gml.rand(100,102)
+			else: n = gml.rand(1,2)
+			match n:
+			
+				1:
+					str_obs1 = "00000"
+					str_obs2 = "00000"
+					str_obs3 = "22222"
+				2:
+					str_obs1 = "00000"
+					str_obs2 = "22222"
+					str_obs3 = "11111"
+				100:
+					str_obs1 = "00000"
+					str_obs2 = "00000"
+					str_obs3 = "0T022"
+				101:
+					str_obs1 = "00000"
+					str_obs2 = "00000"
+					str_obs3 = "20T02"
+				102:
+					str_obs1 = "00000"
+					str_obs2 = "00000"
+					str_obs3 = "220T0"
+			
+		
+		elif (tile == "6"): # DY:  air
+		
+			n = gml.rand(1,4)
+			match n:
+			
+				1:
+					str_obs1 = "11112"
+					str_obs2 = "22220"
+					str_obs3 = "00000"
+				2:
+					str_obs1 = "21111"
+					str_obs2 = "02222"
+					str_obs3 = "00000"
+				3:
+					str_obs1 = "22222"
+					str_obs2 = "00000"
+					str_obs3 = "00000"
+				4:
+					str_obs1 = "11111"
+					str_obs2 = "21112"
+					str_obs3 = "00000"
+			
+		
+		elif (tile == "V"): # DY:  vines
+		
+			n = gml.rand(1,3)
+			match n:
+			
+				1:
+					str_obs1 = "L0L0L"
+					str_obs2 = "L0L0L"
+					str_obs3 = "L000L"
+					str_obs4 = "L0000"
+				2:
+					str_obs1 = "L0L0L"
+					str_obs2 = "L0L0L"
+					str_obs3 = "L000L"
+					str_obs4 = "0000L"
+				3:
+					str_obs1 = "0L0L0"
+					str_obs2 = "0L0L0"
+					str_obs3 = "0L0L0"
+					str_obs4 = "000L0"
+			
+		
+		
+		if (tile == "5" or tile == "6" or tile == "8" or tile == "V"):
+		
+			str_temp = gml.string_delete(str_temp, j, 5)
+			str_temp = gml.string_insert(str_obs1, str_temp, j)
+			j += 10
+			str_temp = gml.string_delete(str_temp, j, 5)
+			str_temp = gml.string_insert(str_obs2, str_temp, j)
+			j += 10
+			str_temp = gml.string_delete(str_temp, j, 5)
+			str_temp = gml.string_insert(str_obs3, str_temp, j)
+		
+		if (tile == "V"):
+		
+			j += 10
+			str_temp = gml.string_delete(str_temp, j, 5)
+			str_temp = gml.string_insert(str_obs4, str_temp, j)
+		
+
+
+	# DY:  Generate the tiles
+	for j in range(0, 8):
+
+		for i in range(1, 11):
+			var obj
+			var tile = gml.string_char_at(str_temp, i+j*10)
+			var xpos = x + (i-1)*16
+			var ypos = y + j*16
+			if (tile == "1" and not gml.collision_point(xpos, ypos, "solid", 0, 0)):
+			
+				gml.instance_create(xpos, ypos, Objects.lush)
+			
+			elif (tile == "2" and gml.rand(1,2) == 1 and not gml.collision_point(xpos, ypos, "solid", 0, 0)):
+			
+				gml.instance_create(xpos, ypos, Objects.lush)
+			
+			if (tile == "t" and not gml.collision_point(xpos, ypos, "solid", 0, 0)):
+			
+				gml.instance_create(xpos, ypos, Objects.temple)
+			
+			if (tile == "r" and not gml.collision_point(xpos, ypos, "solid", 0, 0)):
+			
+				if (gml.rand(1,2) == 1): gml.instance_create(xpos, ypos, Objects.temple)
+				else: gml.instance_create(xpos, ypos, Objects.lush)
+			
+			elif (tile == "3" and not gml.collision_point(xpos, ypos, "solid", 0, 0)):
+			
+				if (gml.rand(1,2) == 1): gml.instance_create(xpos, ypos, Objects.water_swim)
+				else: gml.instance_create(xpos, ypos, Objects.lush)
+			
+			elif (tile == "L"): gml.instance_create(xpos, ypos, Objects.vine)
+			elif (tile == "P"): gml.instance_create(xpos, ypos, Objects.vine_top)
+			elif (tile == "7" and gml.rand(1,3) == 1): gml.instance_create(xpos, ypos, Objects.spikes)
+			elif (tile == "s"): gml.instance_create(xpos, ypos, Objects.spikes)
+			elif (tile == "4"): gml.instance_create(xpos, ypos, Objects.push_block)
+			elif (tile == "9"):
+			
+				var block = gml.instance_create(xpos, ypos+16, Objects.lush)
+				if (LevelGeneration.scr_get_room_x(x) == global.start_room_x and LevelGeneration.scr_get_room_y(y) == global.start_room_y):
+					gml.instance_create(xpos, ypos, Objects.entrance)
+				else:
+				
+					gml.instance_create(xpos, ypos, Objects.exit)
+					global.exit_x = xpos
+					global.exit_y = ypos
+					block.invincible = true
+				
+			
+			elif (tile == "c"):
+			
+				gml.instance_create(xpos, ypos, Objects.chest)
+			
+			elif (tile == "d"):
+			
+				gml.instance_create(xpos, ypos, Objects.water_swim)
+				gml.instance_create(xpos, ypos, Objects.chest)
+			
+			elif (tile == "w"):
+			
+				gml.instance_create(xpos, ypos, Objects.water_swim)
+			
+			elif (tile == "v"):
+			
+				gml.instance_create(xpos, ypos, Objects.water_swim)
+				gml.instance_create(xpos, ypos, Objects.lush)
+			
+			elif (tile == ","):
+			
+				gml.instance_create(xpos, ypos, Objects.water_swim)
+				if (gml.rand(1,2)==1): gml.instance_create(xpos, ypos, Objects.lush)
+			
+			elif (tile == "J"):
+			
+				gml.instance_create(xpos, ypos, Objects.water_swim)
+				gml.instance_create(xpos, ypos, Objects.jaws)
+			
+			elif (tile == "I"):
+			
+				gml.instance_create(xpos+16, ypos+12, Objects.gold_idol)
+			
+			elif (tile == "C"):
+			
+				gml.instance_create(xpos+16, ypos+12, Objects.crystal_skull)
+			
+			elif (tile == "." and not gml.collision_point(xpos, ypos, "solid", 0, 0)):
+			
+				obj = gml.instance_create(xpos, ypos, Objects.lush)
+				obj.shop_wall = true
+			
+			elif (tile == "Q"):
+			
+				if (shop_type == "Craps"):
+				
+					gml.tile_add("bg_dice_sign", 0, 0, 48, 32, xpos, ypos, 9004)
+				
+			
+			elif (tile == "q"):
+			
+				n = gml.rand(1,6)
+				scr_generate_item(xpos+8, ypos+8, 1)
+				#obj.in_dice_house = true #---[FLAG] obj doesn't appear to refer to anything in the original script. commenting out to get code to work
+			
+			elif (tile == "+"):
+			
+				obj = gml.instance_create(xpos, ypos, Objects.solid)
+				obj.sprite_index = "ice_block"
+				obj.shop_wall = true
+			
+			elif (tile == "W"):
+			
+				if (global.murderer or global.thief_level > 0):
+				
+					if (global.is_damsel): gml.tile_add("bg_wanted", 32, 0, 32, 32, xpos, ypos, 9004)
+					elif (global.is_tunnel_man): gml.tile_add("bg_wanted", 64, 0, 32, 32, xpos, ypos, 9004)
+					else: gml.tile_add("bg_wanted", 0, 0, 32, 32, xpos, ypos, 9004)
+				
+			
+			elif (tile == "b"):
+			
+				obj = gml.instance_create(xpos, ypos, Objects.brick_smooth)
+				obj.sprite_index = "lush_smooth"
+				obj.shop_wall = true
+			
+			elif (tile == "l"):
+			
+				if (game.damsel): gml.instance_create(xpos, ypos, Objects.lamp_red)
+				else: gml.instance_create(xpos, ypos, Objects.lamp)
+			
+			elif (tile == "K"):
+			
+				obj = gml.instance_create(xpos, ypos, Objects.shopkeeper)
+				obj.style = shop_type
+			
+			elif (tile == "k"):
+			
+				obj = gml.instance_create(xpos, ypos, Objects.sign)
+				if (shop_type == "General"): obj.sprite_index = "sign_general"
+				elif (shop_type == "Bomb"): obj.sprite_index = "sign_bomb"
+				elif (shop_type == "Weapon"): obj.sprite_index = "sign_weapon"
+				elif (shop_type == "Clothing"): obj.sprite_index = "sign_clothing"
+				elif (shop_type == "Rare"): obj.sprite_index = "sign_rare"
+				elif (shop_type == "Craps"): obj.sprite_index = "sign_craps"
+				elif (shop_type == "Kissing"): obj.sprite_index = "sign_kissing"
+			
+			elif (tile == "i"):
+			
+				scr_shop_items_gen(x, y, shop_type)
+			
+			elif (tile == "u"):
+			
+				gml.instance_create(xpos+8, ypos+8, Objects.dice)
+			
+			elif (tile == "D"):
+			
+				obj = gml.instance_create(xpos+8, ypos+8, Objects.damsel)
+				obj.for_sale = true
+				obj.status = 5
+			
+			elif (tile == "B"):
+			
+				obj = gml.instance_create(xpos, ypos, Objects.trap_block)
+				var gold_idol = gml.get_instance("gold_idol")
+				obj.death_timer = 40-abs(obj.position.x-(gold_idol.position.x-8))
+				if (obj.death_timer < 0): obj.death_timer = 0
+			
+			elif (tile == "x"):
+			
+				gml.instance_create(xpos, ypos, Objects.sac_altar_left)
+				gml.instance_create(xpos+16, ypos, Objects.sac_altar_right)
+				gml.tile_add("bg_kali_body", 0, 0, 64, 64, xpos-16, ypos-48, 10001)
+				gml.instance_create(xpos+16, ypos-80+16, Objects.kali_head)
+			
+			elif (tile == "p"):
+			
+				if (gml.rand(1,2)): gml.instance_create(xpos, ypos, Objects.fake_bones)
+				else: gml.instance_create(xpos+8, ypos+10, Objects.jar)
+			
+			elif (tile == "T"):
+			
+				gml.instance_create(xpos, ypos, Objects.tree)
+				n = 0
+				var tx = xpos
+				var ty = ypos-16
+				var b1 = false
+				var b2 = false
+				for m in range(0, 5):
+				
+					if (gml.rand(0,m) > 2):
+					
+						break
+					
+					else:
+					
+						if (not gml.collision_point(tx, ty-16, "solid", 0, 0) and
+							not gml.collision_point(tx-16, ty-16, "solid", 0, 0) and
+							not gml.collision_point(tx+16, ty-16, "solid", 0, 0)):
+						
+							gml.instance_create(tx, ty, Objects.tree)
+							if (m < 4):
+							
+								if (gml.rand(1,5) < 4 and not b1):
+								
+									gml.instance_create(tx+16, ty, Objects.tree_branch)
+									b1 = true
+								
+								elif (b1): b1 = false
+								if (gml.rand(1,5) < 4 and not b2):
+								
+									gml.instance_create(tx-16, ty, Objects.tree_branch)
+									b2 = true
+								
+								elif (b2): b2 = false
+							
+						
+						else:
+						
+							break
+						
+					
+					ty -= 16
+				
+				gml.instance_create(tx-16, ty+16, Objects.leaves)
+				gml.instance_create(tx+16, ty+16, Objects.leaves)
+
 
 func scr_room_gen_yeti():
 	pass
@@ -1920,9 +2516,9 @@ func scr_entity_gen():
 					break
 				
 				elif (not gml.collision_point(exit_instance.position.x+8, exit_instance.position.y, "solid", 0, 0) and
-						 not gml.collision_point(exit_instance.position.x+8, exit_instance.position.y+15, "treasure", 0, 0) and
-						 not gml.collision_point(exit_instance.position.x+8, exit_instance.position.y+8, "chest", 0, 0) and
-						 not gml.collision_point(exit_instance.position.x+8, exit_instance.position.y+8, "spikes", 0, 0)):
+					not gml.collision_point(exit_instance.position.x+8, exit_instance.position.y+15, "treasure", 0, 0) and
+					not gml.collision_point(exit_instance.position.x+8, exit_instance.position.y+8, "chest", 0, 0) and
+					not gml.collision_point(exit_instance.position.x+8, exit_instance.position.y+8, "spikes", 0, 0)):
 				
 					gml.instance_create(exit_instance.position.x+16+8, exit_instance.position.y+8, Objects.locked_chest)
 					global.locked_chest = true
@@ -2027,7 +2623,7 @@ func scr_entity_gen():
 						obj = gml.instance_create(lush_instance.position.x+8, lush_instance.position.y+8, Objects.shotgun)
 						obj.cost = 0
 						obj.for_sale = false
-						lush_instance.ash_grave = true                
+						#lush_instance.ash_grave = true #---[FLAG] local variable doesn't seem to be used anywhere. double-check this
 					
 					elif (not gml.collision_point(lush_instance.position.x+8, lush_instance.position.y+8, "treasure", 0, 0)):
 					
@@ -2061,26 +2657,26 @@ func scr_entity_gen():
 					else: global.market_chance -= 1
 				
 				elif (solid_instance.type != "tree" and solid_instance.type != "altar" and solid_instance.position.y != 0 and
-						 not gml.collision_rectangle(solid_instance.position.x, solid_instance.position.y-32, solid_instance.position.x+15,  solid_instance.position.y-1, "solid", false, true) and
-						 not gml.collision_rectangle(solid_instance.position.x, solid_instance.position.y-16, solid_instance.position.x+15,  solid_instance.position.y-1, "enemy", 0, 0) and
-						 (not gml.collision_point(solid_instance.position.x-16, solid_instance.position.y, "solid", 0, 0) or not gml.collision_point(solid_instance.position.x+16, solid_instance.position.y, "solid", 0, 0)) and
-						 gml.collision_point(solid_instance.position.x, solid_instance.position.y+16, "solid", 0, 0) and
-						 not gml.collision_point(solid_instance.position.x, solid_instance.position.y, "x_market", 0, 0) and
-						 not InLevel.is_in_shop(solid_instance.position.x, solid_instance.position.y) and
-						 gml.point_distance(solid_instance.position.x, solid_instance.position.y, entrance.position.x, entrance.position.y) > 64):
+					not gml.collision_rectangle(solid_instance.position.x, solid_instance.position.y-32, solid_instance.position.x+15,  solid_instance.position.y-1, "solid", false, true) and
+					not gml.collision_rectangle(solid_instance.position.x, solid_instance.position.y-16, solid_instance.position.x+15,  solid_instance.position.y-1, "enemy", 0, 0) and
+					(not gml.collision_point(solid_instance.position.x-16, solid_instance.position.y, "solid", 0, 0) or not gml.collision_point(solid_instance.position.x+16, solid_instance.position.y, "solid", 0, 0)) and
+					gml.collision_point(solid_instance.position.x, solid_instance.position.y+16, "solid", 0, 0) and
+					not gml.collision_point(solid_instance.position.x, solid_instance.position.y, "x_market", 0, 0) and
+					not InLevel.is_in_shop(solid_instance.position.x, solid_instance.position.y) and
+					gml.point_distance(solid_instance.position.x, solid_instance.position.y, entrance.position.x, entrance.position.y) > 64):
 				
 					if (global.dark_level and not gml.collision_point(solid_instance.position.x, solid_instance.position.y-32, "water", 0, 0) and gml.rand(1,20) == 1):
 					
 						gml.instance_create(solid_instance.position.x, solid_instance.position.y-32, Objects.tiki_torch)
 					
 					elif (gml.rand(1,12) == 1 and
-							 solid_instance.position.x != 160 and solid_instance.position.x != 176 and solid_instance.position.x != 320 and solid_instance.position.x != 336 and solid_instance.position.x != 480 and solid_instance.position.x != 496):
+						solid_instance.position.x != 160 and solid_instance.position.x != 176 and solid_instance.position.x != 320 and solid_instance.position.x != 336 and solid_instance.position.x != 480 and solid_instance.position.x != 496):
 					
 						if (gml.collision_point(solid_instance.position.x, solid_instance.position.y-16, "solid", 0, 0)):
 						
 							var sol = gml.instance_nearest(solid_instance.position.x, solid_instance.position.y-16, "solid")
 							sol.clean_death = true
-							gml.instance_destroy(sol) 
+							gml.instance_destroy(sol)
 						
 						gml.instance_create(solid_instance.position.x, solid_instance.position.y, Objects.spear_trap_bottom)
 						if (global.dark_level): gml.instance_create(solid_instance.position.x, solid_instance.position.y-16, Objects.spear_trap_lit)
@@ -2122,7 +2718,7 @@ func scr_entity_gen():
 						
 						elif (not gml.collision_point(solid_instance.position.x, solid_instance.position.y-16, "water", 0, 0)):
 						
-							if (global.black_market and (solid_instance.position.y % 128 == 0)): n = 0 # DY:  to prevent mantraps from spawning near shopkeepers in black market 
+							if (global.black_market and (solid_instance.position.y % 128 == 0)): n = 0 # DY:  to prevent mantraps from spawning near shopkeepers in black market
 							else: n = 1
 							if (gml.rand(1,60) == n): gml.instance_create(solid_instance.position.x, solid_instance.position.y-16, Objects.man_trap)
 							elif (gml.rand(1,60) == 1): gml.instance_create(solid_instance.position.x, solid_instance.position.y-16, Objects.caveman)
@@ -2169,7 +2765,7 @@ func scr_entity_gen():
 			
 				if (gml.rand(1,30) == 1):
 				
-					if (global.cemetary): gml.instance_create(water_instance.water_instance.position.x+4, water_instance.position.y+4, Objects.dead_fish)
+					if (global.cemetary): gml.instance_create(water_instance.position.x+4, water_instance.position.y+4, Objects.dead_fish)
 					else: gml.instance_create(water_instance.position.x+4, water_instance.position.y+4, Objects.piranha)
 				
 			
@@ -2250,14 +2846,14 @@ func scr_entity_gen():
 					else: global.gold_chance -= 1
 				
 				elif (solid_instance.type != "tree" and solid_instance.type != "altar" and solid_instance.position.y != 0 and
-						 not gml.collision_point(solid_instance.position.x, solid_instance.position.y-16, "solid", 0, 0) and
-						 not gml.collision_point(solid_instance.position.x, solid_instance.position.y-16, "lava", 0, 0) and
-						 not gml.collision_rectangle(solid_instance.position.x, solid_instance.position.y-16, solid_instance.position.x+15,  solid_instance.position.y-1, "enemy", 0, 0) and
-						 not gml.collision_point(solid_instance.position.x, solid_instance.position.y-32, "solid", 0, 0) and
-						 (not gml.collision_point(solid_instance.position.x-16, solid_instance.position.y, "solid", 0, 0) or not gml.collision_point(solid_instance.position.x+16, solid_instance.position.y, "solid", 0, 0)) and
-						 gml.collision_point(solid_instance.position.x, solid_instance.position.y+16, "solid", 0, 0) and
-						 not InLevel.is_in_shop(solid_instance.position.x, solid_instance.position.y) and
-						 solid_instance.position.x != 160 and solid_instance.position.x != 176 and solid_instance.position.x != 320 and solid_instance.position.x != 336 and solid_instance.position.x != 480 and solid_instance.position.x != 496):
+					not gml.collision_point(solid_instance.position.x, solid_instance.position.y-16, "solid", 0, 0) and
+					not gml.collision_point(solid_instance.position.x, solid_instance.position.y-16, "lava", 0, 0) and
+					not gml.collision_rectangle(solid_instance.position.x, solid_instance.position.y-16, solid_instance.position.x+15,  solid_instance.position.y-1, "enemy", 0, 0) and
+					not gml.collision_point(solid_instance.position.x, solid_instance.position.y-32, "solid", 0, 0) and
+					(not gml.collision_point(solid_instance.position.x-16, solid_instance.position.y, "solid", 0, 0) or not gml.collision_point(solid_instance.position.x+16, solid_instance.position.y, "solid", 0, 0)) and
+					gml.collision_point(solid_instance.position.x, solid_instance.position.y+16, "solid", 0, 0) and
+					not InLevel.is_in_shop(solid_instance.position.x, solid_instance.position.y) and
+					solid_instance.position.x != 160 and solid_instance.position.x != 176 and solid_instance.position.x != 320 and solid_instance.position.x != 336 and solid_instance.position.x != 480 and solid_instance.position.x != 496):
 				
 					if (gml.rand(1,12) == 1 and gml.point_distance(solid_instance.position.x, solid_instance.position.y, entrance.position.x, entrance.position.y) > 64):
 					
@@ -2274,7 +2870,7 @@ func scr_entity_gen():
 							
 								var sol = gml.instance_nearest(solid_instance.position.x, solid_instance.position.y-16, "solid")
 								sol.clean_death = true
-								gml.instance_destroy(sol) 
+								gml.instance_destroy(sol)
 							
 							gml.instance_create(solid_instance.position.x, solid_instance.position.y, Objects.spear_trap_bottom)
 							if (global.dark_level): gml.instance_create(solid_instance.position.x, solid_instance.position.y-16, Objects.spear_trap_lit)
@@ -2287,8 +2883,8 @@ func scr_entity_gen():
 			
 				# DY:  enemies
 				if (solid_instance.position.y < gml.room_height - 64 and
-						not gml.collision_point(solid_instance.position.x, solid_instance.position.y+16, "solid", 0, 0) and not gml.collision_point(solid_instance.position.x, solid_instance.position.y+32, "solid", 0, 0) and
-						not gml.collision_point(solid_instance.position.x, solid_instance.position.y+16, "water", 0, 0) and not gml.collision_point(solid_instance.position.x, solid_instance.position.y+32, "water", 0, 0)):
+					not gml.collision_point(solid_instance.position.x, solid_instance.position.y+16, "solid", 0, 0) and not gml.collision_point(solid_instance.position.x, solid_instance.position.y+32, "solid", 0, 0) and
+					not gml.collision_point(solid_instance.position.x, solid_instance.position.y+16, "water", 0, 0) and not gml.collision_point(solid_instance.position.x, solid_instance.position.y+32, "water", 0, 0)):
 				
 					if (global.dark_level and gml.rand(1,40) == 1): gml.instance_create(solid_instance.position.x, solid_instance.position.y+16, Objects.scarab)
 				
@@ -2425,10 +3021,10 @@ func scr_setup_walls(placement):
 		brick_instance.left = false
 		brick_instance.right = false
 
-		if (brick_instance.position.y == 0 or gml.collision_point(brick_instance.position.x, brick_instance.position.y-16, "brick", 0, 0) or gml.collision_point(brick_instance.position.x, brick_instance.position.y-16, "hard_block", 0, 0)): brick_instance.up = true 
-		if (brick_instance.position.y >= placement or gml.collision_point(brick_instance.position.x, brick_instance.position.y+16, "brick", 0, 0) or gml.collision_point(brick_instance.position.x, brick_instance.position.y+16, "hard_block", 0, 0)): brick_instance.down = true 
-		if (gml.collision_point(brick_instance.position.x-16, brick_instance.position.y, "brick", 0, 0) or gml.collision_point(brick_instance.position.x-16, brick_instance.position.y, "hard_block", 0, 0)): brick_instance.left = true 
-		if (gml.collision_point(brick_instance.position.x+16, brick_instance.position.y, "brick", 0, 0) or gml.collision_point(brick_instance.position.x+16, brick_instance.position.y, "hard_block", 0, 0)): brick_instance.right = true 
+		if (brick_instance.position.y == 0 or gml.collision_point(brick_instance.position.x, brick_instance.position.y-16, "brick", 0, 0) or gml.collision_point(brick_instance.position.x, brick_instance.position.y-16, "hard_block", 0, 0)): brick_instance.up = true
+		if (brick_instance.position.y >= placement or gml.collision_point(brick_instance.position.x, brick_instance.position.y+16, "brick", 0, 0) or gml.collision_point(brick_instance.position.x, brick_instance.position.y+16, "hard_block", 0, 0)): brick_instance.down = true
+		if (gml.collision_point(brick_instance.position.x-16, brick_instance.position.y, "brick", 0, 0) or gml.collision_point(brick_instance.position.x-16, brick_instance.position.y, "hard_block", 0, 0)): brick_instance.left = true
+		if (gml.collision_point(brick_instance.position.x+16, brick_instance.position.y, "brick", 0, 0) or gml.collision_point(brick_instance.position.x+16, brick_instance.position.y, "hard_block", 0, 0)): brick_instance.right = true
 
 		if (not brick_instance.up):
 		
@@ -2470,10 +3066,10 @@ func scr_setup_walls(placement):
 		lush_instance.left = false
 		lush_instance.right = false
 
-		if (lush_instance.position.y == 0 or gml.collision_point(lush_instance.position.x, lush_instance.position.y-16, "lush", 0, 0)): lush_instance.up = true 
-		if (lush_instance.position.y >= placement or gml.collision_point(lush_instance.position.x, lush_instance.position.y+16, "lush", 0, 0)): lush_instance.down = true 
-		if (gml.collision_point(lush_instance.position.x-16, lush_instance.position.y, "lush", 0, 0)): lush_instance.left = true 
-		if (gml.collision_point(lush_instance.position.x+16, lush_instance.position.y, "lush", 0, 0)): lush_instance.right = true 
+		if (lush_instance.position.y == 0 or gml.collision_point(lush_instance.position.x, lush_instance.position.y-16, "lush", 0, 0)): lush_instance.up = true
+		if (lush_instance.position.y >= placement or gml.collision_point(lush_instance.position.x, lush_instance.position.y+16, "lush", 0, 0)): lush_instance.down = true
+		if (gml.collision_point(lush_instance.position.x-16, lush_instance.position.y, "lush", 0, 0)): lush_instance.left = true
+		if (gml.collision_point(lush_instance.position.x+16, lush_instance.position.y, "lush", 0, 0)): lush_instance.right = true
 
 
 		if (not lush_instance.up):
@@ -2509,10 +3105,10 @@ func scr_setup_walls(placement):
 		dark_instance.left = false
 		dark_instance.right = false
 
-		if (dark_instance.position.y == 0 or gml.collision_point(dark_instance.position.x, dark_instance.position.y-16, "dark", 0, 0)): dark_instance.up = true 
-		if (dark_instance.position.y >= placement or gml.collision_point(dark_instance.position.x, dark_instance.position.y+16, "dark", 0, 0)): dark_instance.down = true 
-		if (gml.collision_point(dark_instance.position.x-16, dark_instance.position.y, "dark", 0, 0)): dark_instance.left = true 
-		if (gml.collision_point(dark_instance.position.x+16, dark_instance.position.y, "dark", 0, 0)): dark_instance.right = true 
+		if (dark_instance.position.y == 0 or gml.collision_point(dark_instance.position.x, dark_instance.position.y-16, "dark", 0, 0)): dark_instance.up = true
+		if (dark_instance.position.y >= placement or gml.collision_point(dark_instance.position.x, dark_instance.position.y+16, "dark", 0, 0)): dark_instance.down = true
+		if (gml.collision_point(dark_instance.position.x-16, dark_instance.position.y, "dark", 0, 0)): dark_instance.left = true
+		if (gml.collision_point(dark_instance.position.x+16, dark_instance.position.y, "dark", 0, 0)): dark_instance.right = true
 
 		if (not dark_instance.up):
 		
@@ -2551,10 +3147,10 @@ func scr_setup_walls(placement):
 		ice_instance.left = false
 		ice_instance.right = false
 
-		if (gml.collision_point(ice_instance.position.x, ice_instance.position.y-16, "ice", 0, 0)):  ice_instance.up = true 
-		if (gml.collision_point(ice_instance.position.x, ice_instance.position.y+16, "ice", 0, 0)):  ice_instance.down = true 
-		if (gml.collision_point(ice_instance.position.x-16, ice_instance.position.y, "ice", 0, 0)):  ice_instance.left = true 
-		if (gml.collision_point(ice_instance.position.x+16, ice_instance.position.y, "ice", 0, 0)):  ice_instance.right = true 
+		if (gml.collision_point(ice_instance.position.x, ice_instance.position.y-16, "ice", 0, 0)):  ice_instance.up = true
+		if (gml.collision_point(ice_instance.position.x, ice_instance.position.y+16, "ice", 0, 0)):  ice_instance.down = true
+		if (gml.collision_point(ice_instance.position.x-16, ice_instance.position.y, "ice", 0, 0)):  ice_instance.left = true
+		if (gml.collision_point(ice_instance.position.x+16, ice_instance.position.y, "ice", 0, 0)):  ice_instance.right = true
 
 		if (not ice_instance.up):
 		
@@ -2596,10 +3192,10 @@ func scr_setup_walls(placement):
 		temple_instance.left = false
 		temple_instance.right = false
 
-		if (temple_instance.position.y == 0 or gml.collision_point(temple_instance.position.x, temple_instance.position.y-16, "temple", 0, 0) or gml.collision_point(temple_instance.position.x, temple_instance.position.y+16, "temple_fake", 0, 0)): temple_instance.up = true 
-		if (temple_instance.position.y >= placement or gml.collision_point(temple_instance.position.x, temple_instance.position.y+16, "temple", 0, 0) or gml.collision_point(temple_instance.position.x, temple_instance.position.y+16, "temple_fake", 0, 0)): temple_instance.down = true 
-		if (gml.collision_point(temple_instance.position.x-16, temple_instance.position.y, "temple", 0, 0) or gml.collision_point(temple_instance.position.x-16, temple_instance.position.y, "temple_fake", 0, 0)): temple_instance.left = true 
-		if (gml.collision_point(temple_instance.position.x+16, temple_instance.position.y, "temple", 0, 0) or gml.collision_point(temple_instance.position.x+16, temple_instance.position.y, "temple_fake", 0, 0)): temple_instance.right = true 
+		if (temple_instance.position.y == 0 or gml.collision_point(temple_instance.position.x, temple_instance.position.y-16, "temple", 0, 0) or gml.collision_point(temple_instance.position.x, temple_instance.position.y+16, "temple_fake", 0, 0)): temple_instance.up = true
+		if (temple_instance.position.y >= placement or gml.collision_point(temple_instance.position.x, temple_instance.position.y+16, "temple", 0, 0) or gml.collision_point(temple_instance.position.x, temple_instance.position.y+16, "temple_fake", 0, 0)): temple_instance.down = true
+		if (gml.collision_point(temple_instance.position.x-16, temple_instance.position.y, "temple", 0, 0) or gml.collision_point(temple_instance.position.x-16, temple_instance.position.y, "temple_fake", 0, 0)): temple_instance.left = true
+		if (gml.collision_point(temple_instance.position.x+16, temple_instance.position.y, "temple", 0, 0) or gml.collision_point(temple_instance.position.x+16, temple_instance.position.y, "temple_fake", 0, 0)): temple_instance.right = true
 
 		if (global.city_of_gold):
 		
@@ -2638,7 +3234,7 @@ func scr_setup_walls(placement):
 		
 		
 		
-		else: 
+		else:
 			if (not temple_instance.up):
 			
 				temple_instance.sprite_index = "temple_up"
@@ -2680,10 +3276,10 @@ func scr_setup_walls(placement):
 		temple_fake_instance.left = false
 		temple_fake_instance.right = false
 
-		if (temple_fake_instance.position.y == 0 or gml.collision_point(temple_fake_instance.position.x, temple_fake_instance.position.y-16, "temple", 0, 0) or gml.collision_point(temple_fake_instance.position.x, temple_fake_instance.position.y-16, "temple_fake", 0, 0)): temple_fake_instance.up = true 
-		if (gml.collision_point(temple_fake_instance.position.x, temple_fake_instance.position.y+16, "temple", 0, 0) or gml.collision_point(temple_fake_instance.position.x, temple_fake_instance.position.y+16, "temple_fake", 0, 0)): temple_fake_instance.down = true 
-		if (gml.collision_point(temple_fake_instance.position.x-16, temple_fake_instance.position.y, "temple", 0, 0) or gml.collision_point(temple_fake_instance.position.x-16, temple_fake_instance.position.y, "temple_fake", 0, 0)): temple_fake_instance.left = true 
-		if (gml.collision_point(temple_fake_instance.position.x+16, temple_fake_instance.position.y, "temple", 0, 0) or gml.collision_point(temple_fake_instance.position.x+16, temple_fake_instance.position.y, "temple_fake", 0, 0)): temple_fake_instance.right = true 
+		if (temple_fake_instance.position.y == 0 or gml.collision_point(temple_fake_instance.position.x, temple_fake_instance.position.y-16, "temple", 0, 0) or gml.collision_point(temple_fake_instance.position.x, temple_fake_instance.position.y-16, "temple_fake", 0, 0)): temple_fake_instance.up = true
+		if (gml.collision_point(temple_fake_instance.position.x, temple_fake_instance.position.y+16, "temple", 0, 0) or gml.collision_point(temple_fake_instance.position.x, temple_fake_instance.position.y+16, "temple_fake", 0, 0)): temple_fake_instance.down = true
+		if (gml.collision_point(temple_fake_instance.position.x-16, temple_fake_instance.position.y, "temple", 0, 0) or gml.collision_point(temple_fake_instance.position.x-16, temple_fake_instance.position.y, "temple_fake", 0, 0)): temple_fake_instance.left = true
+		if (gml.collision_point(temple_fake_instance.position.x+16, temple_fake_instance.position.y, "temple", 0, 0) or gml.collision_point(temple_fake_instance.position.x+16, temple_fake_instance.position.y, "temple_fake", 0, 0)): temple_fake_instance.right = true
 
 		if (global.city_of_gold):
 		
@@ -2722,7 +3318,7 @@ func scr_setup_walls(placement):
 		
 		
 		
-		else: 
+		else:
 
 			if (not temple_fake_instance.up):
 			
@@ -2763,9 +3359,9 @@ func scr_setup_walls(placement):
 			water_instance.left = false
 			water_instance.right = false
 
-			if (gml.collision_point(water_instance.position.x, water_instance.position.y-16, "water", 0, 0)): water_instance.up_water = true 
-			if (gml.collision_point(water_instance.position.x, water_instance.position.y-16, "solid", 0, 0)): water_instance.up = true 
-			if (gml.collision_point(water_instance.position.x, water_instance.position.y+16, "solid", 0, 0) and not gml.collision_point(water_instance.position.x, water_instance.position.y+16, "water", 0, 0)): water_instance.down = true 
+			if (gml.collision_point(water_instance.position.x, water_instance.position.y-16, "water", 0, 0)): water_instance.up_water = true
+			if (gml.collision_point(water_instance.position.x, water_instance.position.y-16, "solid", 0, 0)): water_instance.up = true
+			if (gml.collision_point(water_instance.position.x, water_instance.position.y+16, "solid", 0, 0) and not gml.collision_point(water_instance.position.x, water_instance.position.y+16, "water", 0, 0)): water_instance.down = true
 
 			if (not water_instance.up and not water_instance.up_water):
 			
@@ -2783,10 +3379,10 @@ func scr_setup_walls(placement):
 				var n = gml.rand(1,4)
 				match (n):
 				
-					1: water_instance.sprite_index = "water_bottom"  
-					2: water_instance.sprite_index = "water_bottom2"  
-					3: water_instance.sprite_index = "water_bottom3"  
-					4: water_instance.sprite_index = "water_bottom4"  
+					1: water_instance.sprite_index = "water_bottom"
+					2: water_instance.sprite_index = "water_bottom2"
+					3: water_instance.sprite_index = "water_bottom3"
+					4: water_instance.sprite_index = "water_bottom4"
 			
 		
 		
@@ -2800,9 +3396,9 @@ func scr_setup_walls(placement):
 		lava_instance.left = false
 		lava_instance.right = false
 
-		if (gml.collision_point(lava_instance.position.x, lava_instance.position.y-16, "water", 0, 0)): lava_instance.up_water = true 
-		if (gml.collision_point(lava_instance.position.x, lava_instance.position.y-16, "solid", 0, 0)): lava_instance.up = true 
-		if (gml.collision_point(lava_instance.position.x, lava_instance.position.y+16, "solid", 0, 0)): lava_instance.down = true 
+		if (gml.collision_point(lava_instance.position.x, lava_instance.position.y-16, "water", 0, 0)): lava_instance.up_water = true
+		if (gml.collision_point(lava_instance.position.x, lava_instance.position.y-16, "solid", 0, 0)): lava_instance.up = true
+		if (gml.collision_point(lava_instance.position.x, lava_instance.position.y+16, "solid", 0, 0)): lava_instance.down = true
 
 		if (not lava_instance.up and not lava_instance.up_water):
 		
@@ -2838,8 +3434,8 @@ func scr_setup_walls(placement):
 		vine_instance.left = false
 		vine_instance.right = false
 
-		if (gml.collision_point(vine_instance.position.x+8, vine_instance.position.y-8, "ladder", 0, 0)): vine_instance.up = true 
-		if (gml.collision_point(vine_instance.position.x+8, vine_instance.position.y+16, "ladder", 0, 0)): vine_instance.down = true 
+		if (gml.collision_point(vine_instance.position.x+8, vine_instance.position.y-8, "ladder", 0, 0)): vine_instance.up = true
+		if (gml.collision_point(vine_instance.position.x+8, vine_instance.position.y+16, "ladder", 0, 0)): vine_instance.down = true
 
 		if (not vine_instance.up):
 		
@@ -2855,7 +3451,7 @@ func scr_setup_walls(placement):
 
 		block_instance.down = false
 
-		if (gml.collision_point(block_instance.position.x, block_instance.position.y+16, "brick", 0, 0) or gml.collision_point(block_instance.position.x, block_instance.position.y+16, "temple", 0, 0) or gml.collision_point(block_instance.position.x, block_instance.position.y+16, "hard_block", 0, 0)): block_instance.down = true 
+		if (gml.collision_point(block_instance.position.x, block_instance.position.y+16, "brick", 0, 0) or gml.collision_point(block_instance.position.x, block_instance.position.y+16, "temple", 0, 0) or gml.collision_point(block_instance.position.x, block_instance.position.y+16, "hard_block", 0, 0)): block_instance.down = true
 
 		# DY:  don't want push blocks next to lava until we tighten up liquid draining
 		if (gml.collision_point(block_instance.position.x-16, block_instance.position.y, "lava", 0, 0) or gml.collision_point(block_instance.position.x+16, block_instance.position.y, "lava", 0, 0)): block_instance.down = false
@@ -2874,10 +3470,10 @@ func scr_setup_walls(placement):
 		tree_instance.left = false
 		tree_instance.right = false
 
-		if (gml.collision_point(tree_instance.position.x, tree_instance.position.y-16, "tree", 0, 0)): tree_instance.up = true 
-		if (gml.collision_point(tree_instance.position.x, tree_instance.position.y+16, "tree", 0, 0)): tree_instance.down = true 
-		if (gml.collision_point(tree_instance.position.x-16, tree_instance.position.y, "tree", 0, 0)): tree_instance.left = true 
-		if (gml.collision_point(tree_instance.position.x+16, tree_instance.position.y, "tree", 0, 0)): tree_instance.right = true 
+		if (gml.collision_point(tree_instance.position.x, tree_instance.position.y-16, "tree", 0, 0)): tree_instance.up = true
+		if (gml.collision_point(tree_instance.position.x, tree_instance.position.y+16, "tree", 0, 0)): tree_instance.down = true
+		if (gml.collision_point(tree_instance.position.x-16, tree_instance.position.y, "tree", 0, 0)): tree_instance.left = true
+		if (gml.collision_point(tree_instance.position.x+16, tree_instance.position.y, "tree", 0, 0)): tree_instance.right = true
 		
 		if (not tree_instance.up):
 		
@@ -2894,10 +3490,10 @@ func scr_setup_walls(placement):
 		tree_branch_instance.left = false
 		tree_branch_instance.right = false
 
-		if (gml.collision_point(tree_branch_instance.position.x, tree_branch_instance.position.y-16, "leaves", 0, 0)): tree_branch_instance.up = true 
-		if (gml.collision_point(tree_branch_instance.position.x, tree_branch_instance.position.y+16, "tree_branch", 0, 0)): tree_branch_instance.down = true 
-		if (gml.collision_point(tree_branch_instance.position.x-16, tree_branch_instance.position.y, "tree_branch", 0, 0)): tree_branch_instance.left = true 
-		if (gml.collision_point(tree_branch_instance.position.x+16, tree_branch_instance.position.y, "tree", 0, 0)): tree_branch_instance.right = true 
+		if (gml.collision_point(tree_branch_instance.position.x, tree_branch_instance.position.y-16, "leaves", 0, 0)): tree_branch_instance.up = true
+		if (gml.collision_point(tree_branch_instance.position.x, tree_branch_instance.position.y+16, "tree_branch", 0, 0)): tree_branch_instance.down = true
+		if (gml.collision_point(tree_branch_instance.position.x-16, tree_branch_instance.position.y, "tree_branch", 0, 0)): tree_branch_instance.left = true
+		if (gml.collision_point(tree_branch_instance.position.x+16, tree_branch_instance.position.y, "tree", 0, 0)): tree_branch_instance.right = true
 		
 		if (tree_branch_instance.up):
 		
@@ -2942,7 +3538,7 @@ func scr_check_water_top(calling_object):
 			
 			if (obj.type == "lava"): obj.sprite_index = "lava_top"
 			else: obj.sprite_index = "water_top"
-			scr_check_water_top(calling_object)  
+			scr_check_water_top(calling_object)
 			
 		
 

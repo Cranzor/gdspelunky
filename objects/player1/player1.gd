@@ -4533,14 +4533,14 @@ func animation_end():
 			global.used_shortcut = true
 			global.curr_level = 5
 			global.game_start = true
-			get_tree().change_scene_to_file("res://level.tscn")
+			get_tree().change_scene_to_file("res://rooms/level/level.tscn")
 		
 		elif (p_exit == x_shortcut9):
 		
 			global.used_shortcut = true
 			global.curr_level = 9
 			global.game_start = true
-			get_tree().change_scene_to_file("res://level2.tscn")
+			get_tree().change_scene_to_file("res://rooms/level2/level2.tscn")
 		
 		elif (p_exit == x_shortcut13):
 		

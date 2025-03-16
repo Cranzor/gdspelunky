@@ -12,8 +12,8 @@ dest_files=["res://.godot/imported/lush.ogg-46eb8343bb7e1449bdf13ab0685310d4.ogg
 
 [params]
 
-loop=false
-loop_offset=0
-bpm=0
+loop=true
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4

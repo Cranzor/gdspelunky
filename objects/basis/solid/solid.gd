@@ -19,8 +19,6 @@ func _process(delta):
 var shop_wall
 var treasure
 var clean_death
-var up
-var down
 var fired_max #--- used in spear_trap_top and spear_trap_bottom
 var prox #--- used in spear_trap_top and spear_trap_bottom
 var spear_range #--- used in spear_trap_top and spear_trap_bottom. changed name from "range" to not conflict with Godot keyword

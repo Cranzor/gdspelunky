@@ -54,7 +54,7 @@ func step():
 	spear_range = 64
 	var player1 = gml.get_instance("player1") #---[FLAG] may have to change this for multiplayer
 	if (fired == 0 and abs(player1.position.y-position.y-8) < prox and player1.position.x < position.x and
-		gml.point_distance(position.x+8, position.y+8, player1.position.x, player1.position.y) < range):
+		gml.point_distance(position.x+8, position.y+8, player1.position.x, player1.position.y) < spear_range):
 
 		gml.instance_create(position.x-16, position.y, Objects.spears_left)
 		fired = fired_max
@@ -63,7 +63,7 @@ func step():
 	var obj = gml.instance_nearest(position.x, position.y, "enemy")
 	if (obj):
 		if (fired == 0 and abs(obj.position.y-position.y) < prox and obj.position.x < position.x and
-			gml.point_distance(position.x, position.y, obj.position.x, obj.position.y) < range):
+			gml.point_distance(position.x, position.y, obj.position.x, obj.position.y) < spear_range):
 
 			gml.instance_create(position.x-16, position.y, Objects.spears_left)
 			fired = fired_max
@@ -72,7 +72,7 @@ func step():
 	obj = gml.instance_nearest(position.x, position.y, "moveable_solid")
 	if (obj):
 		if (fired == 0 and abs(obj.position.y-position.y) < prox and obj.position.x < position.x and
-			gml.point_distance(position.x, position.y, obj.position.x, obj.position.y) < range):
+			gml.point_distance(position.x, position.y, obj.position.x, obj.position.y) < spear_range):
 
 			gml.instance_create(position.x-16, position.y, Objects.spears_left)
 			fired = fired_max
@@ -81,7 +81,7 @@ func step():
 	obj = gml.instance_nearest(position.x, position.y, "item")
 	if (obj):
 		if (fired == 0 and abs(obj.position.y-position.y-8) < prox and obj.position.x < position.x+8 and
-			gml.point_distance(position.x+8, position.y+8, obj.position.x, obj.position.y) < range):
+			gml.point_distance(position.x+8, position.y+8, obj.position.x, obj.position.y) < spear_range):
 
 			gml.instance_create(position.x-16, position.y, Objects.spears_left)
 			fired = fired_max
@@ -90,7 +90,7 @@ func step():
 	# DY:  right
 
 	if (fired == 0 and abs(player1.position.y-position.y-8) < prox and player1.position.x > position.x+8 and
-		gml.point_distance(position.x+8, position.y+8, player1.position.x, player1.position.y) < range):
+		gml.point_distance(position.x+8, position.y+8, player1.position.x, player1.position.y) < spear_range):
 
 			var spears = gml.instance_create(position.x+16, position.y, Objects.spears_left)
 			spears.sprite_index = "spears_right"
@@ -100,7 +100,7 @@ func step():
 	obj = gml.instance_nearest(position.x, position.y, "enemy")
 	if (obj):
 		if (fired == 0 and abs(obj.position.y-position.y) < prox and obj.position.x > position.x and
-			gml.point_distance(position.x, position.y, obj.position.x, obj.position.y) < range):
+			gml.point_distance(position.x, position.y, obj.position.x, obj.position.y) < spear_range):
 
 			var spears = gml.instance_create(position.x+16, position.y, Objects.spears_left)
 			spears.sprite_index = "spears_right"
@@ -110,7 +110,7 @@ func step():
 	obj = gml.instance_nearest(position.x, position.y, "moveable_solid")
 	if (obj):
 		if (fired == 0 and abs(obj.position.y-position.y) < prox and obj.position.x > position.x and
-			gml.point_distance(position.x, position.y, obj.position.x, obj.position.y) < range):
+			gml.point_distance(position.x, position.y, obj.position.x, obj.position.y) < spear_range):
 
 			var spears = gml.instance_create(position.x+16, position.y, Objects.spears_left)
 			spears.sprite_index = "spears_right"
@@ -120,7 +120,7 @@ func step():
 	obj = gml.instance_nearest(position.x, position.y, "item")
 	if (obj):
 		if (fired == 0 and abs(obj.position.y-position.y-8) < prox and obj.position.x > position.x+8 and
-			gml.point_distance(position.x+8, position.y+8, obj.position.x, obj.position.y) < range):
+			gml.point_distance(position.x+8, position.y+8, obj.position.x, obj.position.y) < spear_range):
 
 			var spears = gml.instance_create(position.x+16, position.y, Objects.spears_left)
 			spears.sprite_index = "spears_right"
