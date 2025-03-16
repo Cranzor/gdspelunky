@@ -69,7 +69,7 @@ func collision_with_character():
 	
 
 func collision_with_whip():
-	if (status < STUNNED or other.type == "Machete"):
+	if (status < STUNNED or other.type == "machete"):
 
 		hp -= other.damage
 		if (blood_left > 0):
@@ -88,7 +88,7 @@ func collision_with_whip():
 
 
 func collision_with_whip_pre():
-	if (status < STUNNED or other.type == "Machete"):
+	if (status < STUNNED or other.type == "machete"):
 
 		hp -= other.damage
 		if (blood_left > 0):
@@ -148,7 +148,7 @@ func step():
 	super()
 
 	# main_code
-	if (active):
+	if (active): #--- set each frame in enemy class if on camera
 
 		PlatformEngine.move_to(x_vel,y_vel, self)
 
@@ -164,7 +164,7 @@ func step():
 		if (Collision.is_collision_bottom(1, self)): col_bot = true
 		if (Collision.is_collision_top(1, self)): col_top = true
 
-		if (status >= STUNNED):
+		if (status >= STUNNED): #--- 98 or 99. if either stunned or dead
 
 			if (gml.collision_point(position.x+8, position.y+12, "solid", 0, 0)):
 		
@@ -183,7 +183,7 @@ func step():
 		
 
 
-		if (status != DEAD and status != STUNNED and hp < 1):
+		if (status != DEAD and status != STUNNED and hp < 1): #--- set enemy as dead
 
 			status = DEAD
 
@@ -191,10 +191,10 @@ func step():
 		if (col_bot and status != STUNNED):
 			y_vel = 0
 
-		if (status == IDLE):
+		if (status == IDLE): #--- if 0
 
 			bounced = false
-			if (col_bot and
+			if (col_bot and #--- jump if surrounded by two blocks
 				(gml.collision_point(position.x-1, position.y, "solid", -1, -1) or gml.collision_point(position.x+16, position.y, "solid", -1, -1))):
 		
 				y_vel = -6
@@ -203,7 +203,7 @@ func step():
 				counter -= 10
 		
 		
-			if (y_vel < 0 and col_top):
+			if (y_vel < 0 and col_top): #--- stop jumping if hitting an overhead block
 		
 				y_vel = 0
 		
@@ -217,7 +217,7 @@ func step():
 			if (sight_counter > 0): sight_counter -= 1
 			else:
 		
-				var sight = gml.instance_create(position.x, position.y, Objects.enemy_sight)
+				var sight: GMObject = gml.instance_create(position.x, position.y, Objects.enemy_sight)
 				if (facing == LEFT): sight.direction = 180
 				else: sight.direction = 0
 				sight.speed = 10

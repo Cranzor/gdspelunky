@@ -365,7 +365,7 @@ func step():
 							
 							obj.hp -= 1
 							obj.status = STUNNED
-							obj.counter = stun_time
+							obj.counter = obj.stun_time
 							obj.y_vel = -6
 							Audio.play_sound(global.snd_hit)
 						

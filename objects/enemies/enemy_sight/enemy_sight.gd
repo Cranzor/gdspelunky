@@ -42,4 +42,4 @@ func collision_with_solid():
 	
 
 func create():
-	owner_object = 0
+	owner_object = null #--- changing to null instead of 0

@@ -189,10 +189,18 @@ var sprite_height: int: #--- read-only variable that gives the width in pixels b
 		var height = animated_sprite_node.sprite_frames.get_frame_texture(animated_sprite_node.animation, animated_sprite_node.frame).get_height()
 		return abs(height * image_yscale)
 
-var direction #---[FLAG] have to account for this
-var speed #---[FLAG] have to account for this
-var owner_object #---[FLAG] have to account for this
-
+#---
+var direction #---#--- only caveman, hawkman, yeti, and fire_bow script use this
+var speed: int #--- only caveman, hawkman, and yeti use this
+var owner_object: #--- only caveman, hawkman, and yeti use this
+	set(value):
+		owner_object = value
+		if value != null:
+			handle_enemy_sight(value) #--- as only sighted enemies use this, we can work with this assumption to handle enemy_sight behavior
+		
+	get:
+		return owner_object
+#---
 var x_vel = 0:
 	set(value):
 		x_vel = value
@@ -513,6 +521,7 @@ func object_tick():
 	run_draw_event(self)
 	run_collision_with(self)
 	run_animation_end(self)
+	run_speed_position_update(self)
 
 	#smooth_motion.tick_end(position, animated_sprite_node)
 
@@ -590,6 +599,14 @@ func run_animation_end(obj):
 		if image_index + 1 == amount_of_frames:
 			obj.animation_end()
 
+func run_speed_position_update(obj): #--- original engine runs speed * direction on objects to make them move. only is used for caveman, hawkman, and yeti in Spelunky
+	#--- only for enemy_sight, so we can make some assumptions with how speed and direction work with one another
+	if speed != 0:
+		if direction == 0: #--- 0 indicating movement to the right
+			position.x += speed
+		elif direction == 180: #--- the only other value is 180, which indicates movement to the left
+			position.x -= speed
+		
 func object_process(delta):
 	#smooth_motion.handle_smooth_motion(self, delta, get_physics_process_delta_time())
 	pass
@@ -651,3 +668,10 @@ func debug_glow(on_or_off: bool):
 	#else:
 		#debug_glow.hide()
 	pass
+
+func handle_enemy_sight(parent_object: GMObject):
+	name = "EnemySight"
+	var existing_node = parent_object.get_node("EnemySight")
+	if existing_node != null:
+		existing_node.queue_free()
+	parent_object.add_child(self)

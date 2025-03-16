@@ -53,12 +53,17 @@ func set_camera_limits() -> void:
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_pressed("debug"):
-		var player1 = gml.get_instance("player1")
-		player1.sprite_index = "gold_idol"
+		#print_debug(gml.instance_number("enemy_sight"))
+		var test = gml.get_instance("rotation_test")
+		test.rotation_degrees = 180
+		print(test)
 	
-	if Input.is_action_pressed("debug2"):
+	if Input.is_action_just_pressed("debug2"):
 		#var circle = CircleDraw.get_circle_texture(gml.view_xview, gml.view_yview, 96)
 		#$Sprite2D.texture = circle
 		#var circle = gml.get_instance("player1").get_node("Circle")
 		#circle.texture = CircleDraw.create_bresenham_circle(96)
+		
 		global.plife += 1
+		var player1 = gml.get_instance("player1")
+		gml.instance_create(player1.position.x + 64, player1.position.y - 10, Objects.caveman)

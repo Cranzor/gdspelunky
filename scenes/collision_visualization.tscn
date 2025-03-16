@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://q5sfm3vccj6f"]
+[gd_scene load_steps=10 format=3 uid="uid://q5sfm3vccj6f"]
 
 [ext_resource type="Texture2D" uid="uid://nkw6afdklf8m" path="res://sprites/blocks/mines/brick/brick_0.png" id="1_6bprr"]
+[ext_resource type="Script" uid="uid://3oo6yoqhgiwp" path="res://scenes/collision_visualization.gd" id="1_6si4h"]
 [ext_resource type="Texture2D" uid="uid://b1gqefym32l7u" path="res://sprites/enemies/snake_walk_l/snake_walk_l_0.png" id="2_v07bj"]
 [ext_resource type="Texture2D" uid="uid://dbfljnxxluub6" path="res://sprites/character/main dude/stand_left/stand_left_0.png" id="3_v07bj"]
 [ext_resource type="Texture2D" uid="uid://jj6o48lynrsq" path="res://sprites/traps/arrow_trap_left/arrow_trap_left_0.png" id="4_wfkkk"]
@@ -18,6 +19,7 @@ size = Vector2(16, 16)
 size = Vector2(2170.9, 15.9)
 
 [node name="CollisionVisualization" type="Node2D"]
+script = ExtResource("1_6si4h")
 
 [node name="Brick0" type="Sprite2D" parent="."]
 position = Vector2(240, 96)
@@ -46,21 +48,23 @@ collide_with_bodies = false
 position = Vector2(176, 176)
 target_position = Vector2(159.9, 159.9)
 
-[node name="StandLeft0" type="Sprite2D" parent="."]
-position = Vector2(80, 240)
+[node name="StandLeft0" type="Sprite2D" parent="." groups=["test_rotation"]]
+position = Vector2(80, 176)
 texture = ExtResource("3_v07bj")
+centered = false
 
 [node name="Area2D" type="Area2D" parent="StandLeft0"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StandLeft0/Area2D"]
 shape = SubResource("RectangleShape2D_v07bj")
 
-[node name="ArrowTrapLeft0" type="Sprite2D" parent="."]
-position = Vector2(415, 320)
-texture = ExtResource("4_wfkkk")
-centered = false
-
 [node name="ShapeCast2D" type="ShapeCast2D" parent="."]
 position = Vector2(1500.5, 328)
 shape = SubResource("RectangleShape2D_6skb8")
 target_position = Vector2(0, 0)
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="ArrowTrapLeft0" type="Sprite2D" parent="Node2D"]
+texture = ExtResource("4_wfkkk")
+centered = false
