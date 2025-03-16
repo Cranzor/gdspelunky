@@ -21,7 +21,7 @@ func create():
 	super()
 
 	# main_code
-	type = "Ankh"
+	type = "ankh"
 	PlatformEngine.make_active(self)
 	Collision.set_collision_bounds(self, -4, -6, 4, 8)
 

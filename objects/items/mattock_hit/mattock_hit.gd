@@ -22,12 +22,12 @@ func animation_end():
 	
 	if (gml.collision_point(position.x, position.y, "solid", 0, 0)):
 
-		obj = gml.instance_place(position.x, position.y, solid, self)
+		obj = gml.instance_place(position.x, position.y, "solid", self)
 		if (not obj.invincible): hit = true
 
 	elif (gml.collision_point(position.x, position.y+9, "solid", 0, 0)):
 
-		obj = gml.instance_place(position.x, position.y+9, solid, self)
+		obj = gml.instance_place(position.x, position.y+9, "solid", self)
 		if (not obj.invincible): hit = true
 
 

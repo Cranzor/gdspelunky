@@ -65,8 +65,9 @@ func collision_with_character():
 			Audio.play_sound(global.snd_ghost)
 
 
-#func collision_with_whip(): #--- keeping this commented out as it doesn't do anything. but may need to uncomment due to how events are configured
-	## DY: 
+func collision_with_whip():
+	#DY: ##
+	pass
 
 
 func create():

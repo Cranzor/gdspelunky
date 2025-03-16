@@ -100,7 +100,6 @@ var x_change
 var x_shortcut13
 var x_change2
 
-var cape
 var explosion
 var state
 var p_dummy5
@@ -361,10 +360,10 @@ func cap_hud_values():
 	if (global.rope > 99): global.rope = 99
 	
 func spawn_cape():
-	if (global.has_cape and not gml.instance_exists(cape)): gml.instance_create(position.x, position.y, cape)
+	if (global.has_cape and not gml.instance_exists("cape")): gml.instance_create(position.x, position.y, Objects.cape)
 
 	if (gml.instance_exists("cape")):
-
+		var cape = gml.get_instance("cape") #---[FLAG] may have to change this for multiplayer
 		if (cape.open): fall_timer = 0
 
 func handle_kapala():
@@ -644,7 +643,7 @@ func handle_player_active():
 			fall_timer = 0
 			if (gml.instance_exists("parachute")):
 			
-				gml.instance_create(position.x-8, position.y-16-8, para_used)
+				gml.instance_create(position.x-8, position.y-16-8, Objects.para_used)
 				var all_parachutes = gml.get_all_instances("parachute")
 				for parachute in all_parachutes: gml.instance_destroy(parachute)
 			
@@ -658,7 +657,7 @@ func handle_player_active():
 			if (bubble_timer > 0): bubble_timer -= 1
 			else:
 			
-				gml.instance_create(position.x, position.y-4, bubble)
+				gml.instance_create(position.x, position.y-4, Objects.bubble)
 				bubble_timer = bubble_timer_max
 			
 		
@@ -792,13 +791,13 @@ func start_weapon_animation():
 		
 			if (hold_item.type == "machete"):
 			
-				var obj = gml.instance_create(position.x-16, position.y, "slash")
+				var obj = gml.instance_create(position.x-16, position.y, Objects.slash)
 				obj.sprite_index = "slash_left"
 				Audio.play_sound(global.snd_whip)
 			
 			elif (hold_item.type == "mattock"):
 			
-				var obj = gml.instance_create(position.x-16, position.y, "mattock_hit")
+				var obj = gml.instance_create(position.x-16, position.y, Objects.mattock_hit)
 				obj.sprite_index = "mattock_hit_l"
 				Audio.play_sound(global.snd_whip)
 			
@@ -807,7 +806,7 @@ func start_weapon_animation():
 		
 			if (global.is_tunnel_man):
 			
-				var obj = gml.instance_create(position.x-16, position.y, "mattock_hit")
+				var obj = gml.instance_create(position.x-16, position.y, Objects.mattock_hit)
 				obj.sprite_index = "mattock_hit_l"
 				Audio.play_sound(global.snd_whip)
 			
@@ -825,13 +824,13 @@ func start_weapon_animation():
 		
 			if (hold_item.type == "machete"):
 			
-				var obj = gml.instance_create(position.x+16, position.y, "slash")
+				var obj = gml.instance_create(position.x+16, position.y, Objects.slash)
 				obj.sprite_index = "slash_right"
 				Audio.play_sound(global.snd_whip)
 			
 			elif (hold_item.type == "mattock"):
 			
-				var obj = gml.instance_create(position.x+16, position.y, "mattock_hit")
+				var obj = gml.instance_create(position.x+16, position.y, Objects.mattock_hit)
 				obj.sprite_index = "mattock_hit_r"
 				Audio.play_sound(global.snd_whip)
 			
@@ -840,7 +839,7 @@ func start_weapon_animation():
 		
 			if (global.is_tunnel_man):
 			
-				var obj = gml.instance_create(position.x+16, position.y, "mattock_hit")
+				var obj = gml.instance_create(position.x+16, position.y, Objects.mattock_hit)
 				obj.sprite_index = "mattock_hit_r"
 				Audio.play_sound(global.snd_whip)
 			
@@ -857,12 +856,12 @@ func start_weapon_pre_animation():
 		
 			if ((sprite_index == "attack_left" or sprite_index == "damsel_attack_l" or sprite_index == "tunnel_attack_l") and facing == LEFT and image_index < 2 and gml.instance_number('machete_pre') == 0):
 			
-				var obj = gml.instance_create(position.x+16, position.y, "machete_pre")
+				var obj = gml.instance_create(position.x+16, position.y, Objects.machete_pre)
 				obj.sprite_index = "machete_pre_l"
 			
 			elif ((sprite_index == "attack_left" or sprite_index == "damsel_attack_l" or sprite_index == "tunnel_attack_l") and facing == RIGHT and image_index < 2 and gml.instance_number('machete_pre') == 0):
 			
-				var obj = gml.instance_create(position.x-16, position.y, "machete_pre")
+				var obj = gml.instance_create(position.x-16, position.y, Objects.machete_pre)
 				obj.sprite_index = "machete_pre_r"
 			
 		
@@ -870,12 +869,12 @@ func start_weapon_pre_animation():
 		
 			if ((sprite_index == "attack_left" or sprite_index == "damsel_attack_l" or sprite_index == "tunnel_attack_l") and facing == LEFT and image_index < 2 and gml.instance_number('machete_pre') == 0):
 			
-				var obj = gml.instance_create(position.x+16, position.y, "mattock_pre")
+				var obj = gml.instance_create(position.x+16, position.y, Objects.mattock_pre)
 				obj.sprite_index = "mattock_pre_l"
 			
 			elif ((sprite_index == "attack_left" or sprite_index == "damsel_attack_l" or sprite_index == "tunnel_attack_l") and facing == RIGHT and image_index < 2 and gml.instance_number('machete_pre') == 0):
 			
-				var obj = gml.instance_create(position.x-16, position.y, "mattock_pre")
+				var obj = gml.instance_create(position.x-16, position.y, Objects.mattock_pre)
 				obj.sprite_index = "mattock_pre_r"
 			
 		
@@ -884,12 +883,12 @@ func start_weapon_pre_animation():
 
 		if (facing == LEFT):
 		
-			var obj = gml.instance_create(position.x+16, position.y, "mattock_pre")
+			var obj = gml.instance_create(position.x+16, position.y, Objects.mattock_pre)
 			obj.sprite_index = "mattock_pre_l"
 		
 		else:
 		
-			var obj = gml.instance_create(position.x-16, position.y, "mattock_pre")
+			var obj = gml.instance_create(position.x-16, position.y, Objects.mattock_pre)
 			obj.sprite_index = "mattock_pre_r"
 		
 
@@ -921,7 +920,7 @@ func handle_item_stealing():
 
 			if (global.room_path[[LevelGeneration.scr_get_room_x(position.x), LevelGeneration.scr_get_room_y(position.y)]] != 4 and global.room_path[[LevelGeneration.scr_get_room_x(position.x), LevelGeneration.scr_get_room_y(position.y)]] != 5):
 			
-				CharacterScripts.scr_steal_item()
+				CharacterScripts.scr_steal_item(x_vel, y_vel, self)
 				if (gml.instance_exists("shopkeeper")):
 				
 					InLevel.scr_shopkeeper_anger(0, self)
@@ -930,7 +929,7 @@ func handle_item_stealing():
 		
 		elif (hold_item.cost > 0):
 		
-			CharacterScripts.scr_steal_item()
+			CharacterScripts.scr_steal_item(x_vel, y_vel, self)
 	
 func handle_chest_opening():
 	# open chest
@@ -1655,7 +1654,7 @@ func bomb_rope_and_whipping_handling(): #--- Also handles picking up items and a
 							else: hold_item.sprite_index = "damsel_hold_l"
 						
 					
-					elif (hold_item.cost == 0): CharacterScripts.scr_steal_item()
+					elif (hold_item.cost == 0): CharacterScripts.scr_steal_item(x_vel, y_vel, self)
 				
 			
 			elif (gml.collision_rectangle(position.x-8, position.y, position.x+8, position.y+8, 'enemy', 0, 0)):
@@ -1747,7 +1746,7 @@ func handle_shop_behavior(): #--- Purchasing and games etc. (different shop type
 				
 					if (InLevel.is_real_level()): global.items_bought += 1
 					global.money -= hold_item.cost
-					CharacterScripts.scr_steal_item()
+					CharacterScripts.scr_steal_item(x_vel, y_vel, self)
 					#global.message = "THANK YOU!"
 					#global.message2 = ""
 					global.message_timer = 80
@@ -2864,7 +2863,7 @@ func handle_ladder_climbing():
 	if (state == CLIMBING):
 
 		if (gml.instance_exists('cape')):
-		
+			var cape = gml.get_instance("cape") #---[FLAG] may have to change this for multiplayer
 			cape.open = false
 		
 		k_jumped = false
@@ -3006,7 +3005,7 @@ func handle_jumping():
 		grav = grav_norm
 
 	elif (global.has_cape and k_jump_pressed and k_jumped and platform_character_is(IN_AIR)):
-
+		var cape = gml.get_instance("cape") #---[FLAG] may have to change this for multiplayer
 		if (not cape.open): cape.open = true
 		else: cape.open = false
 
@@ -3091,7 +3090,7 @@ func initial_hanging_behavior():
 		if (global.has_gloves and y_vel > 0):
 
 			if (hang_count == 0 and position.y > 16 and !platform_character_is(ON_GROUND) and k_right and col_right and
-				(gml.collision_point(position.x+9, position.y-5, 'solid', 0, 0) or gml.collision_point(position.x+9, position.y-6, 'solid', 0, 0))):
+				(gml.collision_point(position.x+9, position.y-5, "solid", 0, 0) or gml.collision_point(position.x+9, position.y-6, "solid", 0, 0))):
 			
 				state = HANGING
 				gml.move_snap(1, 8, self)
@@ -3100,7 +3099,7 @@ func initial_hanging_behavior():
 				grav = 0
 			
 			elif (hang_count == 0 and position.y > 16 and !platform_character_is(ON_GROUND) and k_left and col_left and
-				(gml.collision_point(position.x-9, position.y-5, solid, 0, 0) or gml.collision_point(position.x-9, position.y-6, solid, 0, 0))):
+				(gml.collision_point(position.x-9, position.y-5, "solid", 0, 0) or gml.collision_point(position.x-9, position.y-6, "solid", 0, 0))):
 			
 				state = HANGING
 				gml.move_snap(1, 8, self)
@@ -3182,7 +3181,9 @@ func cap_hang_count():
 func while_hanging_behavior():
 	if (state == HANGING):
 
-		if (gml.instance_exists("cape")): cape.open = false
+		if (gml.instance_exists("cape")):
+			var cape = gml.get_instance("cape") #---[FLAG] may have to change this for multiplayer
+			cape.open = false
 		k_jumped = false
 		
 		if (k_down and k_jump_pressed):
@@ -3443,7 +3444,9 @@ func calculate_friction():
 		
 		elif (gml.collision_point(position.x, position.y, 'water', -1, -1)):
 		
-			if (gml.instance_exists(cape)): cape.open = false
+			if (gml.instance_exists("cape")):
+				var cape = gml.get_instance("cape") #---[FLAG] may have to change this for multiplayer
+				cape.open = false
 		
 			if (state == FALLING and y_vel > 0):
 			
@@ -3567,7 +3570,7 @@ func apply_parachute_and_cape_friction():
 		y_fric = 0.5
 
 	if (gml.instance_exists("cape")):
-
+		var cape = gml.get_instance("cape") #---[FLAG] may have to change this for multiplayer
 		if (cape.open): y_fric = 0.5
 
 func cap_push_timer():
@@ -5073,15 +5076,15 @@ func scr_use_item(): #--- only called by player1 so including it here for conven
 			position.y = ty
 					#with ball
 			var ball = gml.get_instance("ball") #--- changing this as there should only be one
-					
-			ball.position.x = self.position.x
-			ball.position.y = self.position.y
+			if ball: #--- adding a check here
+				ball.position.x = self.position.x
+				ball.position.y = self.position.y
 					
 					#with chain
 			var chain = gml.get_instance("chain") #--- changing this as there should only be one
-					
-			chain.position.x = self.position.x
-			chain.position.y = self.position.y
+			if chain: #--- adding a check here
+				chain.position.x = self.position.x
+				chain.position.y = self.position.y
 					
 					# DY:  state = STANDING
 			var obj = gml.instance_place(position.x, position.y, "enemy", self)
