@@ -118,22 +118,22 @@ func game_step_event():
 
 				moving_solid_instance.y_acc=0
 	  		#moves the solid, pushes the character, carries the character, and stops if the character will be crushed by another solid:
-			moving_solid_instance.mst_x_prev=moving_solid_instance.position.x
-			moving_solid_instance.mst_y_prev=moving_solid_instance.position.y
+			var mst_x_prev=moving_solid_instance.position.x
+			var mst_y_prev=moving_solid_instance.position.y
 	 		 #change the decimal arguments to integer variables with relation to time
-			moving_solid_instance.x_vel_frac=gml.frac(abs(moving_solid_instance.x_vel))
-			moving_solid_instance.y_vel_frac=gml.frac(abs(moving_solid_instance.y_vel))
+			var x_vel_frac=gml.frac(abs(moving_solid_instance.x_vel))
+			var y_vel_frac=gml.frac(abs(moving_solid_instance.y_vel))
 			moving_solid_instance.x_vel_integer=0
 			moving_solid_instance.y_vel_integer=0
-			if moving_solid_instance.x_vel_frac!=0:
-				if gml.gm_round(1/moving_solid_instance.x_vel_frac)!=0:
-					if self.time % gml.gm_round(1/moving_solid_instance.x_vel_frac)==0:
+			if x_vel_frac!=0:
+				if gml.gm_round(float(1)/float(x_vel_frac))!=0: #---[FLAG] have to cast these as floats?
+					if self.time % gml.gm_round(float(1)/float(x_vel_frac))==0:
 						moving_solid_instance.x_vel_integer = 1
 					else:
 						moving_solid_instance.x_vel_integer = 0
-			if moving_solid_instance.y_vel_frac!=0:
-				if gml.gm_round(1/moving_solid_instance.y_vel_frac)!=0:
-					if self.time % gml.gm_round(1/moving_solid_instance.y_vel_frac) == 0:
+			if y_vel_frac!=0:
+				if gml.gm_round(float(1)/float(y_vel_frac))!=0:
+					if self.time % gml.gm_round(float(1)/float(y_vel_frac)) == 0:
 						moving_solid_instance.y_vel_integer = 1
 					else:
 						moving_solid_instance.y_vel_integer = 0
@@ -147,19 +147,19 @@ func game_step_event():
 			moving_solid_instance.y_vel_integer=gml.gm_round(moving_solid_instance.y_vel_integer)
 	 		 #calculate the collision bounds of the character -- we'll need it later
 			for character_instance in all_characters:
-				character_instance.calculate_collision_bounds()
-			moving_solid_instance.solid_is_near_players = 0    #whether the solid is near either of the players
+				Collision.calculate_collision_bounds(character_instance)
+			var solid_is_near_players = 0    #whether the solid is near either of the players
 	  		#determine if the solid is close to a player:
 			for i in range(self.players_length):
 				if Collision.is_collision_rectangle(moving_solid_instance.position.x-abs(moving_solid_instance.x_vel_integer)-moving_solid_instance.sprite_xoffset-2,moving_solid_instance.position.y-abs(moving_solid_instance.y_vel_integer)-moving_solid_instance.sprite_yoffset-2,moving_solid_instance.position.x+moving_solid_instance.sprite_width+abs(moving_solid_instance.x_vel_integer)-moving_solid_instance.sprite_xoffset+2,moving_solid_instance.position.y+moving_solid_instance.sprite_height+abs(moving_solid_instance.y_vel_integer)-moving_solid_instance.sprite_yoffset+2,self.players[i].lb,self.players[i].tb,self.players[i].rb,self.players[i].bb):
-					moving_solid_instance.solid_is_near_players = 1
+					solid_is_near_players = 1
 		
 	  
-			if(moving_solid_instance.solid_is_near_players):
+			if(solid_is_near_players): #---[FLAG] assuming this will run if set to 1?
 				#solid is moving to the right
 				if moving_solid_instance.x_vel_integer>0:
 					moving_solid_instance.break_now=0    #whether we should break out of the movement loop because the character is stuck
-					for x in range(moving_solid_instance.position.x, moving_solid_instance.mst_x_prev + moving_solid_instance.x_vel_integer, 1):
+					for x in range(moving_solid_instance.position.x, mst_x_prev + moving_solid_instance.x_vel_integer, 1):
 		  
 						for i in range(0, self.players_length):
 			
@@ -187,7 +187,7 @@ func game_step_event():
 				if moving_solid_instance.x_vel_integer<0:
 		
 					moving_solid_instance.break_now=0    #whether we should break out of the movement loop because the character is stuck
-					for x in range(moving_solid_instance.position.x, moving_solid_instance.mst_x_prev + moving_solid_instance.x_vel_integer, -1):
+					for x in range(moving_solid_instance.position.x, mst_x_prev + moving_solid_instance.x_vel_integer, -1):
 		  
 						for i in range(0, self.players_length):
 			
@@ -218,7 +218,7 @@ func game_step_event():
 				if moving_solid_instance.y_vel_integer>0:
 				
 					moving_solid_instance.break_now=0    #whether we should break out of the movement loop because the character is stuck
-					for y in range(moving_solid_instance.position.y, moving_solid_instance.mst_y_prev + moving_solid_instance.y_vel_integer, 1):
+					for y in range(moving_solid_instance.position.y, mst_y_prev + moving_solid_instance.y_vel_integer, 1):
 				  
 						for i in range(0, self.players_length):
 					
@@ -248,7 +248,7 @@ func game_step_event():
 				if moving_solid_instance.y_vel_integer<0:
 				
 					moving_solid_instance.break_now=0    #whether we should break out of the movement loop because the character is stuck
-					for y in range(moving_solid_instance.position.y, moving_solid_instance.mst_y_prev + moving_solid_instance.y_vel_integer, -1):
+					for y in range(moving_solid_instance.position.y, mst_y_prev + moving_solid_instance.y_vel_integer, -1):
 				  
 						for i in range(0, self.players_length):
 					

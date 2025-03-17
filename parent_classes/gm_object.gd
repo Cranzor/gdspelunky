@@ -189,6 +189,9 @@ var sprite_height: int: #--- read-only variable that gives the width in pixels b
 		var height = animated_sprite_node.sprite_frames.get_frame_texture(animated_sprite_node.animation, animated_sprite_node.frame).get_height()
 		return abs(height * image_yscale)
 
+var sprite_xoffset: int #---[FLAG] have to account for this
+var sprite_yoffset: int #---[FLAG] have to account for this
+
 #---
 var direction #---#--- only caveman, hawkman, yeti, and fire_bow script use this
 var speed: int #--- only caveman, hawkman, and yeti use this

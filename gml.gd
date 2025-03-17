@@ -99,8 +99,12 @@ var view_xview: int:
 	#set(value):
 		#view_node.offset.x = value
 
-func string_char_at(passed_string,index):
-	var character = passed_string[index - 1]
+func string_char_at(passed_string: String, index: int):
+	var length = passed_string.length()
+	var adjusted_index = index - 1
+	if adjusted_index > length:
+		return ""
+	var character = passed_string[adjusted_index]
 	return character
 
 func string_delete(passed_string,index,count):
@@ -119,7 +123,7 @@ func instance_exists(obj: String): #--- FLAG. if enforcing this as a string, it 
 		return true
 
 #-----------------------Have to work on
-func instance_create(x,y,obj): #should return the node as this is used in scripts
+func instance_create(x,y,obj): #---[FLAG] make this so that obj is forced to be type GMObject
 	if obj is String:
 		assert(obj is String, "String was passed into instance_create")
 		obj = load(obj)
