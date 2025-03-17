@@ -1,4 +1,5 @@
 extends Node
+class_name Room
 
 var room_generation = RoomGeneration.new()
 

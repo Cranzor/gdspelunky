@@ -1,38 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://cp7345wvpbe1d"]
+[gd_scene load_steps=2 format=3 uid="uid://du8oll4nckuyd"]
 
-[ext_resource type="Script" uid="uid://mh7m6a0ori80" path="res://rooms/intro/intro.gd" id="1_886e7"]
-[ext_resource type="PackedScene" uid="uid://8pect2ibgg6e" path="res://scenes/collision/collision_ray.tscn" id="4_beiky"]
-[ext_resource type="PackedScene" uid="uid://df3di5vguofi1" path="res://scenes/debug/debug_buttons.tscn" id="5_p6f0b"]
-[ext_resource type="Texture2D" uid="uid://c7mqbeksgioqi" path="res://backgrounds/background_night.png" id="16_pnhb5"]
-[ext_resource type="PackedScene" uid="uid://b2jlcu453ynaf" path="res://bg_elements.tscn" id="17_txyc1"]
+[ext_resource type="PackedScene" uid="uid://b8g70geq8alqq" path="res://scenes/room.tscn" id="1_suwvs"]
 
-[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_ou686"]
+[node name="Intro" instance=ExtResource("1_suwvs")]
+room_name = "intro"
 
-[sub_resource type="TileSet" id="TileSet_n3hse"]
-sources/0 = SubResource("TileSetScenesCollectionSource_ou686")
+[node name="TextureRect" parent="." index="1"]
+visible = false
 
-[node name="Intro" type="Node2D" groups=["objects_holder"]]
-script = ExtResource("1_886e7")
-
-[node name="TextureRect" type="TextureRect" parent="."]
-z_index = -4096
-offset_right = 1328.0
-offset_bottom = 384.0
-texture = ExtResource("16_pnhb5")
-
-[node name="BgElements" parent="." instance=ExtResource("17_txyc1")]
-
-[node name="Layers" type="Node" parent="."]
-
-[node name="TileMapLayer" type="TileMapLayer" parent="Layers"]
-tile_set = SubResource("TileSet_n3hse")
-
-[node name="ObjectsHolder" type="Node2D" parent="."]
-
-[node name="CollisionRay" parent="." instance=ExtResource("4_beiky")]
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-offset = Vector2(30, 0)
-transform = Transform2D(1, 0, 0, 1, 30, 0)
-
-[node name="DebugButtons" parent="CanvasLayer" instance=ExtResource("5_p6f0b")]
+[node name="TextureRect2" parent="." index="2"]
+visible = true

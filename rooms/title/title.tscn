@@ -1,51 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://dccnfhv6qaic4"]
+[gd_scene load_steps=4 format=3 uid="uid://dccnfhv6qaic4"]
 
-[ext_resource type="Script" uid="uid://carj3kvawx3h6" path="res://rooms/title/title.gd" id="1_8aivo"]
-[ext_resource type="PackedScene" uid="uid://chivya8n7oo3x" path="res://texture_rect.tscn" id="2_82mmd"]
-[ext_resource type="AudioStream" uid="uid://bcj5koltev2db" path="res://sounds/jump.wav" id="7_41otq"]
-[ext_resource type="PackedScene" uid="uid://8pect2ibgg6e" path="res://scenes/collision/collision_ray.tscn" id="8_hwtff"]
-[ext_resource type="PackedScene" uid="uid://dpik07grwpaj" path="res://scenes/collision/collision_shapecast.tscn" id="9_mya61"]
+[ext_resource type="PackedScene" uid="uid://b8g70geq8alqq" path="res://scenes/room.tscn" id="1_7epe5"]
 [ext_resource type="PackedScene" uid="uid://df3di5vguofi1" path="res://scenes/debug/debug_buttons.tscn" id="10_vnlyb"]
 [ext_resource type="PackedScene" uid="uid://bft8urcdv7lh0" path="res://view.tscn" id="21_4id85"]
-[ext_resource type="PackedScene" uid="uid://b8sip2nv63phc" path="res://FPSCounter.tscn" id="23_57set"]
-[ext_resource type="PackedScene" uid="uid://b2jlcu453ynaf" path="res://bg_elements.tscn" id="24_c1f05"]
-[ext_resource type="Script" uid="uid://dcoe3it1wi0xk" path="res://Test.gd" id="25_1dc3y"]
 
-[node name="Title" type="Node2D"]
-script = ExtResource("1_8aivo")
+[node name="Title" instance=ExtResource("1_7epe5")]
+room_name = "title"
 
-[node name="TextureRect" parent="." instance=ExtResource("2_82mmd")]
-
-[node name="FpsCounter" parent="." instance=ExtResource("23_57set")]
-
-[node name="BgElements" parent="." instance=ExtResource("24_c1f05")]
-z_as_relative = false
-layer_29/name = "Layer29"
-
-[node name="Button" type="Button" parent="."]
-visible = false
-offset_left = 576.0
-offset_top = 176.0
-offset_right = 584.0
-offset_bottom = 184.0
-focus_mode = 0
-text = "Hi"
-script = ExtResource("25_1dc3y")
-
-[node name="View" parent="." instance=ExtResource("21_4id85")]
-position = Vector2(320, 0)
+[node name="View" parent="." index="6" instance=ExtResource("21_4id85")]
 anchor_mode = 0
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_41otq")
-
-[node name="ObjectsHolder" type="Node" parent="." groups=["objects_holder"]]
-
-[node name="CollisionRay" parent="." instance=ExtResource("8_hwtff")]
-
-[node name="CollisionShapecast" parent="." instance=ExtResource("9_mya61")]
-
-[node name="DebugButtons" parent="." instance=ExtResource("10_vnlyb")]
-position = Vector2(512, 80)
-
-[connection signal="button_down" from="Button" to="Button" method="_on_button_down"]
+[node name="DebugButtons" parent="." index="7" instance=ExtResource("10_vnlyb")]
+position = Vector2(576, 64)

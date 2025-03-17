@@ -1,23 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://dwtcd4ux63wd3"]
+[gd_scene load_steps=2 format=3 uid="uid://dwtcd4ux63wd3"]
 
-[ext_resource type="Script" uid="uid://bbukexfkxtvcb" path="res://rooms/level2/level2.gd" id="1_amcx3"]
-[ext_resource type="PackedScene" uid="uid://b2jlcu453ynaf" path="res://bg_elements.tscn" id="1_rnnet"]
-[ext_resource type="PackedScene" uid="uid://chivya8n7oo3x" path="res://texture_rect.tscn" id="2_amcx3"]
-[ext_resource type="PackedScene" uid="uid://8pect2ibgg6e" path="res://scenes/collision/collision_ray.tscn" id="3_jmv4r"]
-[ext_resource type="PackedScene" uid="uid://dpik07grwpaj" path="res://scenes/collision/collision_shapecast.tscn" id="4_ldug1"]
-[ext_resource type="PackedScene" uid="uid://b8sip2nv63phc" path="res://FPSCounter.tscn" id="5_2nu62"]
+[ext_resource type="PackedScene" uid="uid://b8g70geq8alqq" path="res://scenes/room.tscn" id="1_cjxku"]
 
-[node name="Level2" type="Node2D"]
-script = ExtResource("1_amcx3")
-
-[node name="BgElements" parent="." instance=ExtResource("1_rnnet")]
-
-[node name="TextureRect" parent="." instance=ExtResource("2_amcx3")]
-
-[node name="ObjectsHolder" type="Node" parent="." groups=["objects_holder"]]
-
-[node name="CollisionRay" parent="." instance=ExtResource("3_jmv4r")]
-
-[node name="CollisionShapecast" parent="." instance=ExtResource("4_ldug1")]
-
-[node name="FpsCounter" parent="." instance=ExtResource("5_2nu62")]
+[node name="Level2" instance=ExtResource("1_cjxku")]
+room_name = "level2"

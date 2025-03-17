@@ -46,14 +46,7 @@ func collision_with_boulder():
 
 func collision_with_character():
 	var player1 = gml.get_instance("player1") #---[FLAG] may have to change this for multiplayer
-	#---
-	var sprite = animated_sprite_node
-	var area2d = animated_sprite_node.get_child(0)
-	var collision_body: CollisionShape2D = area2d.get_child(0)
-	var size = collision_body.shape.size
-	var scale = image_xscale
-	gml.color_rect(position.x, position.y, size.x * scale, 16)
-	#---
+
 	if (trap_id == null):
 
 		gml.instance_destroy(self)
