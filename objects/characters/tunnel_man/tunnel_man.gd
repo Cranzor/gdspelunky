@@ -54,7 +54,7 @@ func step():
 		if (talk == 1): talk = 2
 		elif (talk == 2):
 
-			if (InLevel.is_room("r_transition1x") or InLevel.is_room("r_transition3x")):
+			if (InLevel.is_room("transition1x") or InLevel.is_room("transition3x")):
 		
 				if (donate > 0):
 			

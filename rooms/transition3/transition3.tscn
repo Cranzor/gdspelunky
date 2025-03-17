@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://vtc11kbkh83m"]
+
+[ext_resource type="PackedScene" uid="uid://b8g70geq8alqq" path="res://scenes/room.tscn" id="1_2ikof"]
+
+[node name="Transition3" type="Node"]
+
+[node name="Room" parent="." instance=ExtResource("1_2ikof")]
+room_name = "transition3"

@@ -3,6 +3,7 @@ extends Camera2D
 func _ready() -> void:
 	set_camera_limits()
 
+
 func _process(delta: float) -> void:
 	#print(get_screen_center_position())
 	#position.x = clamp(position.x, limit_left, limit_right)
@@ -26,6 +27,7 @@ func _process(delta: float) -> void:
 	
 	#if offset.y > 0:
 		#drag_bottom_margin = (48 + offset.y) / 240
+	#print(offset.x)
 
 
 func _physics_process(delta: float) -> void:
@@ -58,6 +60,7 @@ func _input(event: InputEvent) -> void:
 		#test.rotation_degrees = 180
 		#print(test)
 		global.plife += 1
+		print(gml.view("xview"))
 	
 	if Input.is_action_just_pressed("debug2"):
 		#var circle = CircleDraw.get_circle_texture(gml.view_xview, gml.view_yview, 96)

@@ -8,7 +8,6 @@
 room_name = "title"
 
 [node name="View" parent="." index="6" instance=ExtResource("21_4id85")]
-anchor_mode = 0
 
 [node name="DebugButtons" parent="." index="7" instance=ExtResource("10_vnlyb")]
-position = Vector2(576, 64)
+position = Vector2(512, 48)

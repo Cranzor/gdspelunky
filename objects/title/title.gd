@@ -46,9 +46,7 @@ func create():
 	global.test_level = ""
 	global.prev_custom_level = ""
 
-	#view_xview[0] = 320
-	var view = get_tree().get_first_node_in_group("view")
-	view.position.x = 320
+	gml.view_xview = 320
 
 	global.new_money = false
 	global.new_kills = false
@@ -167,17 +165,13 @@ func step():
 
 	if (gml.instance_exists("player1")):
 		var player1 = gml.get_instance("player1") #---[FLAG] may have to change for multiplayer
-		if (player1.position.x <= 320 and gml.view("xview") > 0):
+		if (player1.position.x <= 320 and gml.view_xview > 0):
 		
-			#view_xview[0] -= 8
-			var view = get_tree().get_first_node_in_group("view")
-			view.position.x -= 8
+			gml.view_xview -= 8
 		
-		if (player1.position.x > 320 and gml.view("xview") < 320):
+		if (player1.position.x > 320 and gml.view_xview < 320):
 		
-			#view_xview[0] += 8
-			var view = get_tree().get_first_node_in_group("view")
-			view.position.x -= 8
+			gml.view_xview += 8
 
 
 	if (fade_out):
@@ -207,7 +201,7 @@ func draw():
 	if (gml.instance_exists("player1")):
 
 		var player = gml.instance_nearest(0, 0, "player1")
-		if (player.position.x < 256 and gml.view("xview") <= 1):
+		if (player.position.x < 256 and gml.view_xview <= 1):
 		
 			#draw_set_font(global.my_font_small)
 			#draw_set_color(c_white)
