@@ -138,6 +138,11 @@ func calculate_collision_bounds(node):
 	var rb = node.position.x + node.collision_bounds_offset_right_x
 	var bb = node.position.y + node.collision_bounds_offset_bottom_y
 	
+	node.lb = lb
+	node.tb = tb
+	node.rb = rb
+	node.bb = bb
+	
 	var all_points_exact = Vector4(lb, tb, rb, bb)
 	return(all_points_exact)
 

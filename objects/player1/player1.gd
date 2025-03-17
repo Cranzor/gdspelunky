@@ -531,7 +531,7 @@ func create_water_splash():
 
 		if (not swimming):
 		
-			gml.instance_create(position.x, position.y-8, splash)
+			gml.instance_create(position.x, position.y-8, Objects.splash)
 			swimming = true
 			Audio.play_sound(global.snd_splash)
 
@@ -1956,7 +1956,7 @@ func handle_hit_by_laser():
 			
 			MiscScripts.scr_create_blood(position.x, position.y, 3, self)
 			
-			gml.instance_create(obj.position.x, obj.position.y, "laser_explode")
+			gml.instance_create(obj.position.x, obj.position.y, Objects.laser_explode)
 			gml.instance_destroy(obj)
 			
 			Audio.play_sound(global.snd_hurt)

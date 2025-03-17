@@ -80,26 +80,28 @@ func game_step_event():
 	#/**
 	 #* The game's step event.
 	 #*/
+	#--- this appears to be set up to allow multiplayer to work, as "with" would apply to all players at once
+	#--- for now, will assume there is only one player
 	if (true):
-		#self.players[0] = null     #players (used when "with( )" structures will not work)
-		self.players.clear() #--- should do the same thing
-		self.players_length = 0
+		#self.players[0] = null     #DY: players (used when "with( )" structures will not work)
+		players.clear() #--- should do the same thing
+		players_length = 0
 		var all_characters = gml.get_all_instances("character")
 		for character_instance in all_characters:
 
 		  #necessary to reset the "viscid" movement from a moving solid
 			character_instance.viscid_movement_ok=1
 		  #store the characters in the self.players variable
-			players.append(1) #--- adding this to avoid invalid set index error
-			self.players[self.players_length] = character_instance#.id
-			self.players_length+=1
+			players.append(character_instance) #--- adding this to avoid invalid set index error
+			players[players_length] = character_instance#.id
+			players_length+=1
 
 
 		#since we are not using GM's hspeed and vspeed variables, we need to add in decimal support ourselves (so 0.25 will only move 1 pixel every 4 steps, for example)
-		self.time+=1
+		time+=1
 		#we don't want the time to grow too large
-		if self.time>100000000:
-			self.time=0
+		if time>100000000:
+			time=0
 
 		#moves all of the solids so that none of them collide with the character
 		var all_moving_solids = gml.get_all_instances("moving_solid")
@@ -127,13 +129,13 @@ func game_step_event():
 			moving_solid_instance.y_vel_integer=0
 			if x_vel_frac!=0:
 				if gml.gm_round(float(1)/float(x_vel_frac))!=0: #---[FLAG] have to cast these as floats?
-					if self.time % gml.gm_round(float(1)/float(x_vel_frac))==0:
+					if time % gml.gm_round(float(1)/float(x_vel_frac))==0:
 						moving_solid_instance.x_vel_integer = 1
 					else:
 						moving_solid_instance.x_vel_integer = 0
 			if y_vel_frac!=0:
 				if gml.gm_round(float(1)/float(y_vel_frac))!=0:
-					if self.time % gml.gm_round(float(1)/float(y_vel_frac)) == 0:
+					if time % gml.gm_round(float(1)/float(y_vel_frac)) == 0:
 						moving_solid_instance.y_vel_integer = 1
 					else:
 						moving_solid_instance.y_vel_integer = 0
@@ -150,8 +152,8 @@ func game_step_event():
 				Collision.calculate_collision_bounds(character_instance)
 			var solid_is_near_players = 0    #whether the solid is near either of the players
 	  		#determine if the solid is close to a player:
-			for i in range(self.players_length):
-				if Collision.is_collision_rectangle(moving_solid_instance.position.x-abs(moving_solid_instance.x_vel_integer)-moving_solid_instance.sprite_xoffset-2,moving_solid_instance.position.y-abs(moving_solid_instance.y_vel_integer)-moving_solid_instance.sprite_yoffset-2,moving_solid_instance.position.x+moving_solid_instance.sprite_width+abs(moving_solid_instance.x_vel_integer)-moving_solid_instance.sprite_xoffset+2,moving_solid_instance.position.y+moving_solid_instance.sprite_height+abs(moving_solid_instance.y_vel_integer)-moving_solid_instance.sprite_yoffset+2,self.players[i].lb,self.players[i].tb,self.players[i].rb,self.players[i].bb):
+			for i in range(players_length):
+				if Collision.is_collision_rectangle(moving_solid_instance.position.x-abs(moving_solid_instance.x_vel_integer)-moving_solid_instance.sprite_xoffset-2,moving_solid_instance.position.y-abs(moving_solid_instance.y_vel_integer)-moving_solid_instance.sprite_yoffset-2,moving_solid_instance.position.x+moving_solid_instance.sprite_width+abs(moving_solid_instance.x_vel_integer)-moving_solid_instance.sprite_xoffset+2,moving_solid_instance.position.y+moving_solid_instance.sprite_height+abs(moving_solid_instance.y_vel_integer)-moving_solid_instance.sprite_yoffset+2,players[i].lb,players[i].tb,players[i].rb,players[i].bb):
 					solid_is_near_players = 1
 		
 	  
@@ -161,22 +163,22 @@ func game_step_event():
 					moving_solid_instance.break_now=0    #whether we should break out of the movement loop because the character is stuck
 					for x in range(moving_solid_instance.position.x, mst_x_prev + moving_solid_instance.x_vel_integer, 1):
 		  
-						for i in range(0, self.players_length):
+						for i in range(0, players_length):
 			
-							if(moving_solid_instance.viscid_top and Collision.is_collision_character_top(1,self.players[i]) and ((self.players[i]).viscid_movement_ok==1 or (self.players[i]).viscid_movement_ok==2)):
+							if(moving_solid_instance.viscid_top and Collision.is_collision_character_top(1,players[i]) and ((players[i]).viscid_movement_ok==1 or (players[i]).viscid_movement_ok==2)):
 			  
-								if Collision.is_collision_right(1, self.players[i])==0:
-									self.players[i].position.x+=1
-									self.players[i].viscid_movement_ok=2
+								if Collision.is_collision_right(1, players[i])==0:
+									players[i].position.x+=1
+									players[i].viscid_movement_ok=2
 				  
 			  
-							elif Collision.is_collision_character_right(1,self.players[i]):
-								self.players[i].collision=Collision.is_collision_right(1, self.players[i])
-								if self.players[i].collision:
+							elif Collision.is_collision_character_right(1,players[i]):
+								players[i].collision=Collision.is_collision_right(1, players[i])
+								if players[i].collision:
 									moving_solid_instance.break_now = 1
 									break
 				
-								self.players[i].position.x+=1
+								players[i].position.x+=1
 			  
 			
 						if moving_solid_instance.break_now:
@@ -189,24 +191,24 @@ func game_step_event():
 					moving_solid_instance.break_now=0    #whether we should break out of the movement loop because the character is stuck
 					for x in range(moving_solid_instance.position.x, mst_x_prev + moving_solid_instance.x_vel_integer, -1):
 		  
-						for i in range(0, self.players_length):
+						for i in range(0, players_length):
 			
-							if moving_solid_instance.viscid_top and Collision.is_collision_character_top(1,self.players[i]) and (self.players[i].viscid_movement_ok==1 or self.players[i].viscid_movement_ok==2):
+							if moving_solid_instance.viscid_top and Collision.is_collision_character_top(1,players[i]) and (players[i].viscid_movement_ok==1 or players[i].viscid_movement_ok==2):
 			  
-								if Collision.is_collision_left(1, self.players[i])==0:
+								if Collision.is_collision_left(1, players[i])==0:
 				  
 									moving_solid_instance.position.x-=1
 									moving_solid_instance.viscid_movement_ok=2
 				  
 			  
-							elif Collision.is_collision_character_left(1,self.players[i]):
+							elif Collision.is_collision_character_left(1,players[i]):
 			  
-								self.players[i].collision=Collision.is_collision_left(1, self.players[i])
-								if self.players[i].collision:
+								players[i].collision=Collision.is_collision_left(1, players[i])
+								if players[i].collision:
 									moving_solid_instance.break_now = 1
 									break
 				
-								self.players[i].position.x-=1
+								players[i].position.x-=1
 			  
 			
 							if moving_solid_instance.break_now:
@@ -220,25 +222,25 @@ func game_step_event():
 					moving_solid_instance.break_now=0    #whether we should break out of the movement loop because the character is stuck
 					for y in range(moving_solid_instance.position.y, mst_y_prev + moving_solid_instance.y_vel_integer, 1):
 				  
-						for i in range(0, self.players_length):
+						for i in range(0, players_length):
 					
-							if moving_solid_instance.viscid_top and Collision.is_collision_character_top(2,self.players[i]):
+							if moving_solid_instance.viscid_top and Collision.is_collision_character_top(2,players[i]):
 					  
 								#since we do not want to include the solid that is pulling the character down,
 								#we must alter the position of the solid to get around this dilemma
 								position.y+=5
-								if Collision.is_collision_bottom(1, self.players[1])==0:
+								if Collision.is_collision_bottom(1, players[1])==0:
 									position.y+=1
 								position.y-=5
 					  
-							elif Collision.is_collision_character_bottom(1,self.players[i]):
+							elif Collision.is_collision_character_bottom(1,players[i]):
 					  
-								self.players[i].collision=Collision.is_collision_bottom(1, self.players[i])
-								if self.players[i].collision:
+								players[i].collision=Collision.is_collision_bottom(1, players[i])
+								if players[i].collision:
 									moving_solid_instance.break_now = 1
 									break
 						
-								self.players[i].position.y+=1
+								players[i].position.y+=1
 					  
 						if moving_solid_instance.break_now:
 							break
@@ -250,26 +252,26 @@ func game_step_event():
 					moving_solid_instance.break_now=0    #whether we should break out of the movement loop because the character is stuck
 					for y in range(moving_solid_instance.position.y, mst_y_prev + moving_solid_instance.y_vel_integer, -1):
 				  
-						for i in range(0, self.players_length):
+						for i in range(0, players_length):
 					
 					  		#push the character up regardless of the viscid properties of the solid top
-							if Collision.is_collision_character_top(1,self.players[i]):
+							if Collision.is_collision_character_top(1,players[i]):
 
-								self.players[i].collision=Collision.is_collision_top(1, self.players[i])
-								if self.players[i].collision:
+								players[i].collision=Collision.is_collision_top(1, players[i])
+								if players[i].collision:
 									moving_solid_instance.break_now = 1
 									break
 						
-								self.players[i].position.y-=1
+								players[i].position.y-=1
 					  
-							if Collision.is_collision_character_bottom(1,self.players[i]):
+							if Collision.is_collision_character_bottom(1,players[i]):
 					  
 								#variable jumping causes the character to get stuck to the bottom of a moving solid
 								#that is moving faster than 1 pixel per step upwards, so we need this code
-								if self.players[i].jump_time<self.players[i].jump_time_total:
+								if players[i].jump_time<players[i].jump_time_total:
 						
-									self.players[i].y_vel=-2
-									self.players[i].jump_time=self.players[i].jump_time_total
+									players[i].y_vel=-2
+									players[i].jump_time=players[i].jump_time_total
 						
 						if moving_solid_instance.break_now:
 							break
@@ -467,7 +469,7 @@ func step():
 					(not gml.collision_point(position.x+16, position.y, "solid", 0, 0) and not gml.collision_point(position.x+16, position.y, "water", 0, 0)) or
 					(not gml.collision_point(position.x, position.y+16, "solid", 0, 0) and not gml.collision_point(position.x, position.y+16, "water", 0, 0))):
 				
-					gml.instance_destroy(self)
+					gml.instance_destroy(water_instance)
 					global.water_counter += 1
 				
 				

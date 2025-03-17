@@ -77,7 +77,7 @@ func step():
 
 			for i in range(0, 3):
 		
-				gml.instance_create(other.position.x+8, other.position.y+8, Objects.bone)
+				gml.instance_create(other.position.x+8, other.position.y+8, Objects.bone) #---[FLAG] other is not grabbed here
 		
 			var skull = gml.instance_create(other.position.x+8, other.position.y+8, Objects.skull)
 			skull.y_vel = -gml.rand(1,3)

@@ -29,8 +29,8 @@ func collision_with_arrow():
 
 	gml.instance_create(x_mid, -64, Objects.bat_target)
 
-	if (sprite_index == "ufo"): gml.instance_create(position.x, position.y, Objects.ufcrash)
-	else: MiscScripts.scr_create_blood(position.x+8, position.y+8, 3)
+	if (sprite_index == "ufo"): gml.instance_create(position.x, position.y, Objects.ufo_crash)
+	else: MiscScripts.scr_create_blood(position.x+8, position.y+8, 3, self)
 	gml.instance_destroy(self)
 
 
@@ -50,7 +50,7 @@ func collision_with_character():
 
 		gml.instance_create(position.x, -64, Objects.bat_target)
 
-		MiscScripts.scr_create_blood(position.x+8, position.y+8, 3)
+		MiscScripts.scr_create_blood(position.x+8, position.y+8, 3, self)
 		gml.instance_destroy(self)
 
 	elif (other.invincible == 0):
@@ -63,7 +63,7 @@ func collision_with_character():
 			other.x_vel = 6
 	
 		if (global.plife > 0): global.plife -= 1
-		MiscScripts.scr_create_blood(position.x+4, position.y+4, 1)
+		MiscScripts.scr_create_blood(position.x+4, position.y+4, 1, self)
 		Audio.play_sound(global.snd_hurt)
 
 

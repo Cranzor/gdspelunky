@@ -72,7 +72,7 @@ func step():
 
 		if (hp < 1):
 
-			gml.instance_create(position.x, position.y, Objects.ufcrash)
+			gml.instance_create(position.x, position.y, Objects.ufo_crash)
 			if (counts_as_kill):
 		
 				if (InLevel.is_real_level()): global.enemy_kills[16] += 1
