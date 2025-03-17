@@ -596,8 +596,8 @@ func run_draw_event(obj):
 func run_collision_with(obj): #---[FLAG] update this to not use object_size
 	for object in collision_with:
 		#--- fixed an issue here in which object_size by itself was used. for collision_rectangle, object size + position must be passed in
-		if gml.place_meeting(position.x, position.y, object, obj):
-			other = gml.instance_nearest(position.x, position.y, object)
+		other = gml.instance_place(position.x, position.y, object, obj)
+		if other:
 			var callable = collision_with[object]
 			callable.call()
 

@@ -274,9 +274,6 @@ func object_get_parent(ind):
 func place_meeting(x, y, obj: String, comparison_object): #--- only used 4 times in the whole game
 	var intersecting = instance_place(x, y, obj, comparison_object)
 	if intersecting:
-		if obj == "character" and comparison_object.object_name == "arrow_trap_test":
-			print(gml.get_instance("player1").position)
-			print("got")
 		return true
 	return false
 	
