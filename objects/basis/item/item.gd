@@ -361,7 +361,7 @@ func step():
 							
 							elif (obj.type == "man_trap"):
 							
-								gml.instance_create(obj.position.x+randi_range(0,16), obj.position.y-8+randi_range(0,16), "leaf")
+								gml.instance_create(obj.position.x+randi_range(0,16), obj.position.y-8+randi_range(0,16), Objects.leaf)
 							
 							obj.hp -= 1
 							obj.status = STUNNED

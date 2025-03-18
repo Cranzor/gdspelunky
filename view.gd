@@ -28,7 +28,9 @@ func _process(delta: float) -> void:
 	#if offset.y > 0:
 		#drag_bottom_margin = (48 + offset.y) / 240
 	#print(offset.x)
-
+	var player1 = gml.get_instance("player1")
+	if player1:
+		print(player1.x_vel_limit)
 
 func _physics_process(delta: float) -> void:
 		var bottom_view = get_screen_center_position().y + 120

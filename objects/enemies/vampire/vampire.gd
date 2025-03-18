@@ -229,7 +229,7 @@ func step():
 				status = WALK
 		
 		
-			if (dist < 96):
+			if (dist < 96): #---[FLAG] causes an error if not set
 		
 				if (player1.position.x < position.x+8): facing = LEFT
 				elif (player1.position.x > position.x+8): facing = RIGHT
