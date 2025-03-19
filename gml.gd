@@ -37,6 +37,18 @@ var c_teal = Color(0, 128, 128)
 var c_white = Color(255, 255, 255)
 var c_yellow = Color(255, 255, 0)
 
+var collision_layers = [ProjectSettings.get_setting("layer_names/2d_physics/layer_1"), ProjectSettings.get_setting("layer_names/2d_physics/layer_2"),
+ProjectSettings.get_setting("layer_names/2d_physics/layer_3"), ProjectSettings.get_setting("layer_names/2d_physics/layer_4"), ProjectSettings.get_setting("layer_names/2d_physics/layer_5"),
+ProjectSettings.get_setting("layer_names/2d_physics/layer_6"), ProjectSettings.get_setting("layer_names/2d_physics/layer_7"), ProjectSettings.get_setting("layer_names/2d_physics/layer_8"),
+ProjectSettings.get_setting("layer_names/2d_physics/layer_9"), ProjectSettings.get_setting("layer_names/2d_physics/layer_10"), ProjectSettings.get_setting("layer_names/2d_physics/layer_11"),
+ProjectSettings.get_setting("layer_names/2d_physics/layer_12"), ProjectSettings.get_setting("layer_names/2d_physics/layer_13"), ProjectSettings.get_setting("layer_names/2d_physics/layer_14"),
+ProjectSettings.get_setting("layer_names/2d_physics/layer_15"), ProjectSettings.get_setting("layer_names/2d_physics/layer_16"), ProjectSettings.get_setting("layer_names/2d_physics/layer_17"),
+ProjectSettings.get_setting("layer_names/2d_physics/layer_18"), ProjectSettings.get_setting("layer_names/2d_physics/layer_19"), ProjectSettings.get_setting("layer_names/2d_physics/layer_20"),
+ProjectSettings.get_setting("layer_names/2d_physics/layer_21"), ProjectSettings.get_setting("layer_names/2d_physics/layer_22"), ProjectSettings.get_setting("layer_names/2d_physics/layer_23"),
+ProjectSettings.get_setting("layer_names/2d_physics/layer_24"), ProjectSettings.get_setting("layer_names/2d_physics/layer_25"), ProjectSettings.get_setting("layer_names/2d_physics/layer_26"),
+ProjectSettings.get_setting("layer_names/2d_physics/layer_27"), ProjectSettings.get_setting("layer_names/2d_physics/layer_28"), ProjectSettings.get_setting("layer_names/2d_physics/layer_29"),
+ProjectSettings.get_setting("layer_names/2d_physics/layer_30"), ProjectSettings.get_setting("layer_names/2d_physics/layer_31")]
+
 var background_index #---[FLAG] have this set the background of the stage
 
 var draw_font

@@ -363,6 +363,7 @@ func object_setup():
 	depth_setup(object_entry)
 	sprite_setup(object_entry)
 	bounding_box_setup()
+	collision_layers_setup()
 	##collision_setup()
 	alarms_setup(object_entry)
 	if parent != null:
@@ -424,6 +425,14 @@ func bounding_box_setup():
 	else:
 		var no_sprite_size = Vector2(0, 0)
 		object_size = no_sprite_size
+
+func collision_layers_setup():
+	for group: String in get_groups():
+		var layer = gml.collision_layers.find(group)
+		if layer != -1:
+			var layer_to_set = layer + 1
+			var area_2d = animated_sprite_node.get_node("Area2D")
+			area_2d.set_collision_layer_value(layer_to_set, true)
 
 func sprite_setup(object_entry):
 	var animated_sprite = get_animated_sprite_2d()

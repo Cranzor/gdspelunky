@@ -24,13 +24,6 @@ func _process(delta: float) -> void:
 	
 	if offset.y < 0:
 		offset.y = 0
-	
-	#if offset.y > 0:
-		#drag_bottom_margin = (48 + offset.y) / 240
-	#print(offset.x)
-	var player1 = gml.get_instance("player1")
-	if player1:
-		print(player1.x_vel_limit)
 
 func _physics_process(delta: float) -> void:
 		var bottom_view = get_screen_center_position().y + 120
@@ -62,7 +55,7 @@ func _input(event: InputEvent) -> void:
 		#test.rotation_degrees = 180
 		#print(test)
 		global.plife += 1
-		print(gml.view("xview"))
+		print(gml.collision_layers)
 	
 	if Input.is_action_just_pressed("debug2"):
 		#var circle = CircleDraw.get_circle_texture(gml.view_xview, gml.view_yview, 96)
