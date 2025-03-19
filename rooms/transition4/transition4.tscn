@@ -5,4 +5,4 @@
 [node name="Transition4" type="Node"]
 
 [node name="Room" parent="." instance=ExtResource("1_dokmi")]
-room_name = "transition4x"
+room_name = "transition4"

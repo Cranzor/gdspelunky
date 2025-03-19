@@ -9,7 +9,8 @@ const TEXT = preload("res://scenes/text.tscn")
 const SPRITE = preload("res://scenes/sprite.tscn")
 const COLLISION_RAY = preload("res://scenes/collision/collision_ray.tscn")
 
-@onready var collision_ray: RayCast2D = null
+var collision_ray: RayCast2D = null
+var shapecast: ShapeCast2D = null
 
 #For tile_add
 @export_dir var bg_folder
@@ -115,9 +116,9 @@ var view_xview: int:
 
 func string_char_at(passed_string: String, index: int):
 	var length = passed_string.length()
-	var adjusted_index = index - 1
-	if adjusted_index > length:
+	if index > length:
 		return ""
+	var adjusted_index = index - 1
 	var character = passed_string[adjusted_index]
 	return character
 
@@ -581,11 +582,12 @@ func handle_collision_ray(x1, y1, x2, y2, obj):
 	collision_ray.clear_exceptions()
 	var layer = collision_layers.find(obj) + 1
 	var object_node: GMObject = null
+	
+	collision_ray.position = Vector2(x1 + 0.1, y1 + 0.1) #--- no idea why this works but it fixes collision issues
+	collision_ray.target_position = Vector2(abs(x2 - (x1 - 0.1)), abs(y2 - (y1 - 0.1))) #--- raycast bordering on a pixel exactly seems to register it as colliding
 
 	if layer != 0:
 		collision_ray.set_collision_mask_value(layer, true)
-		collision_ray.position = Vector2(x1 + 0.1, y1 + 0.1) #--- no idea why this works but it fixes collision issues
-		collision_ray.target_position = Vector2(abs(x2 - (x1 - 0.1)), abs(y2 - (y1 - 0.1))) #--- raycast bordering on a pixel exactly seems to register it as colliding
 		collision_ray.enabled = true
 		collision_ray.force_raycast_update()
 		if collision_ray.is_colliding():
@@ -596,8 +598,6 @@ func handle_collision_ray(x1, y1, x2, y2, obj):
 	
 	else:
 		collision_ray.set_collision_mask_value(1, true)
-		collision_ray.position = Vector2(x1 + 0.1, y1 + 0.1) #--- no idea why this works but it fixes collision issues
-		collision_ray.target_position = Vector2(abs(x2 - (x1 - 0.1)), abs(y2 - (y1 - 0.1))) #--- raycast bordering on a pixel exactly seems to register it as colliding
 		collision_ray.enabled = true
 		collision_ray.force_raycast_update()
 		while collision_ray.is_colliding():
@@ -616,27 +616,43 @@ func handle_collision_ray(x1, y1, x2, y2, obj):
 	return object_node
 
 func handle_collision_shapecast(x1, y1, x2, y2, obj):
-	var shapecast: ShapeCast2D = get_tree().get_first_node_in_group("collision_shapecast")
+	if shapecast == null:
+		shapecast = get_tree().get_first_node_in_group("collision_shapecast")
 	shapecast.clear_exceptions()
+	var layer = collision_layers.find(obj) + 1
+	var object_node: GMObject = null
 
 	var size = Vector2(abs(x2 - x1), abs(y2 - y1))
 	var adjusted_size = Vector2(size.x - 0.1, size.y - 0.1) #--- corners touching counts as a collision, which isn't the case in the original engine. subtracting by 0.1 corrects for this
 	shapecast.position = Vector2(x1 + (size.x / 2), y1 + (size.y / 2))
 	shapecast.shape.size = adjusted_size
-	shapecast.enabled = true
-	shapecast.force_shapecast_update()
-	while shapecast.is_colliding():
-		var area = shapecast.get_collider(0)
-		var object_node = area.get_parent().get_parent().get_parent()
-		var groups = object_node.get_groups()
-		if obj in groups:
-			shapecast.enabled = false
-			return object_node
-		shapecast.add_exception(area)
+
+	if layer != 0:
+		shapecast.set_collision_mask_value(layer, true)
+		shapecast.enabled = true
 		shapecast.force_shapecast_update()
-	shapecast.enabled = false
+		if shapecast.is_colliding():
+			var area = shapecast.get_collider(0)
+			object_node = area.get_parent().get_parent().get_parent()
+		shapecast.set_collision_mask_value(layer, false)
 	
-	return null
+	else:
+		shapecast.set_collision_mask_value(1, true)
+		shapecast.enabled = true
+		shapecast.force_shapecast_update()
+		while shapecast.is_colliding():
+			var area = shapecast.get_collider(0)
+			var temp_object_node = area.get_parent().get_parent().get_parent()
+			var groups = temp_object_node.get_groups()
+			if obj in groups:
+				object_node = temp_object_node
+				break
+			shapecast.add_exception(area)
+			shapecast.force_shapecast_update()
+		shapecast.set_collision_mask_value(1, false)
+	
+	shapecast.enabled = false
+	return object_node
 
 #--- debug
 func highlight_node(node: GMObject):
