@@ -9,6 +9,8 @@ const TEXT = preload("res://scenes/text.tscn")
 const SPRITE = preload("res://scenes/sprite.tscn")
 const COLLISION_RAY = preload("res://scenes/collision/collision_ray.tscn")
 
+@onready var collision_ray: RayCast2D = null
+
 #For tile_add
 @export_dir var bg_folder
 @export var bg_holder_path: String
@@ -574,25 +576,44 @@ func generate_random_hash():
 	return word
 
 func handle_collision_ray(x1, y1, x2, y2, obj):
-	var collision_ray: RayCast2D = get_tree().get_first_node_in_group("collision_ray")
+	if collision_ray == null:
+		collision_ray = get_tree().get_first_node_in_group("collision_ray")
 	collision_ray.clear_exceptions()
-	collision_ray.position = Vector2(x1 + 0.1, y1 + 0.1) #--- no idea why this works but it fixes collision issues
-	collision_ray.target_position = Vector2(abs(x2 - (x1 - 0.1)), abs(y2 - (y1 - 0.1))) #--- raycast bordering on a pixel exactly seems to register it as colliding
-	collision_ray.enabled = true
-	collision_ray.force_raycast_update()
-	while collision_ray.is_colliding():
-		collision_ray.force_update_transform()
-		var area = collision_ray.get_collider()
-		var object_node = area.get_parent().get_parent().get_parent()
-		var groups = object_node.get_groups()
-		if obj in groups:
-			collision_ray.enabled = false
-			return object_node
-		collision_ray.add_exception(area)
-		collision_ray.force_raycast_update()
-	collision_ray.enabled = false
+	var layer = collision_layers.find(obj) + 1
+	var object_node: GMObject = null
 
-	return null
+	if layer != 0:
+		collision_ray.set_collision_mask_value(layer, true)
+		collision_ray.position = Vector2(x1 + 0.1, y1 + 0.1) #--- no idea why this works but it fixes collision issues
+		collision_ray.target_position = Vector2(abs(x2 - (x1 - 0.1)), abs(y2 - (y1 - 0.1))) #--- raycast bordering on a pixel exactly seems to register it as colliding
+		collision_ray.enabled = true
+		collision_ray.force_raycast_update()
+		if collision_ray.is_colliding():
+			collision_ray.force_update_transform()
+			var area = collision_ray.get_collider()
+			object_node = area.get_parent().get_parent().get_parent()
+		collision_ray.set_collision_mask_value(layer, false)
+	
+	else:
+		collision_ray.set_collision_mask_value(1, true)
+		collision_ray.position = Vector2(x1 + 0.1, y1 + 0.1) #--- no idea why this works but it fixes collision issues
+		collision_ray.target_position = Vector2(abs(x2 - (x1 - 0.1)), abs(y2 - (y1 - 0.1))) #--- raycast bordering on a pixel exactly seems to register it as colliding
+		collision_ray.enabled = true
+		collision_ray.force_raycast_update()
+		while collision_ray.is_colliding():
+			collision_ray.force_update_transform()
+			var area = collision_ray.get_collider()
+			var temp_object_node = area.get_parent().get_parent().get_parent()
+			var groups = temp_object_node.get_groups()
+			if obj in groups:
+				object_node = temp_object_node
+				break
+			collision_ray.add_exception(area)
+			collision_ray.force_raycast_update()
+		collision_ray.set_collision_mask_value(1, false)
+	
+	collision_ray.enabled = false
+	return object_node
 
 func handle_collision_shapecast(x1, y1, x2, y2, obj):
 	var shapecast: ShapeCast2D = get_tree().get_first_node_in_group("collision_shapecast")
