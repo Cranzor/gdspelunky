@@ -249,10 +249,13 @@ func instance_position(x, y, obj: String): #---[FLAG] this needs checked
 	else:
 		return null
 
-func instance_destroy(obj): #'Destroys current instance' ---  Should probably start passing 'self' or other node reference as an argument. Go through and check
+func instance_destroy(obj: GMObject): #'Destroys current instance' ---  Should probably start passing 'self' or other node reference as an argument. Go through and check
 	if obj.has_method("destroy"):
 		obj.destroy()
 	
+	var area_2d: Area2D = obj.get_node("Sprites/MainAnimations/Area2D")
+	area_2d.set_collision_layer_value(1, false)
+	obj.hide()
 	obj.queue_free()
 
 func collision_rectangle(x1,y1,x2,y2,obj,_prec,_notme): #"This function tests whether there is a collision between the (filled) rectangle with the indicated opposite corners and entities of object obj. For example, you can use this to test whether an area is free of obstacles."
@@ -602,7 +605,7 @@ func handle_collision_ray(x1, y1, x2, y2, obj):
 	collision_ray.enabled = false
 
 	if possible != []:
-		return possible[-1]
+		return possible[-1] #--- grabbing the last one found makes collision_shapecast function accurately, so assuming the same here
 	return null
 
 func handle_collision_shapecast(x1, y1, x2, y2, obj):
@@ -628,7 +631,7 @@ func handle_collision_shapecast(x1, y1, x2, y2, obj):
 	shapecast.enabled = false
 	
 	if possible != []:
-		return possible[-1]
+		return possible[-1] #--- seems like original engine scans from top to bottom while shapecast does bottom to top, so have to account for this
 	return null
 
 #--- debug

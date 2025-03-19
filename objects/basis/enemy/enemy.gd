@@ -45,9 +45,9 @@ func collision_with_character():
 
 		other.y_vel = -6 - 0.2 * other.y_vel
 		if (global.has_spike_shoes):
-			hp -= (3 * (floor(other.fall_timer/16)+1))
+			hp -= (3 * (float(floor(other.fall_timer)/float(16))+1)) #---[FLAG] imagine this needs to be float division (same with else below)
 			MiscScripts.scr_create_blood(other.position.x, other.position.y+8, 1, self)
-		else: hp -= (1 * (floor(other.fall_timer/16)+1))
+		else: hp -= (1 * (float(floor(other.fall_timer)/(16))+1))
 		other.fall_timer = 0
 		Audio.play_sound(global.snd_hit)
 
