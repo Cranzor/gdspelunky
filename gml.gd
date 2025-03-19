@@ -231,11 +231,15 @@ func point_direction(x1, y1, x2, y2): #---[FLAG] may need to adjust angle to be 
 	return -angle
 		
 func instance_place(x,y,obj: String, comparison_object: GMObject): #' Returns the id of the instance of type obj met when the current instance is placed at position (x,y). obj can be an object or the keyword all. If it does not exist, the special object noone is returned.'
-	var comparison_object_collision_shape_size = comparison_object.get_node("Sprites/MainAnimations/Area2D/CollisionShape2D").shape.get_rect().size
-	var size_with_scale: Vector2 = Vector2(x + comparison_object_collision_shape_size.x, y + comparison_object_collision_shape_size.y)
+	var sprite: AnimatedSprite2D = comparison_object.get_node("Sprites/MainAnimations")
+	var offset = sprite.offset
+	var collision_shape: CollisionShape2D = comparison_object.get_node("Sprites/MainAnimations/Area2D/CollisionShape2D")
+	var comparison_object_collision_shape_size = collision_shape.shape.get_rect().size
+	var position_with_offset = Vector2(x + offset.x, y + offset.y)
+	var size_with_scale: Vector2 = Vector2(position_with_offset.x + comparison_object_collision_shape_size.x, position_with_offset.y + comparison_object_collision_shape_size.y)
 	if comparison_object.object_name == "arrow_trap_test": #--- adding a special exception as arrow_trap_test is the only object in the game with larger collision due to its scaling
-		size_with_scale = Vector2(x + (comparison_object_collision_shape_size.x * comparison_object.image_xscale), y + (comparison_object_collision_shape_size.y * comparison_object.image_yscale))
-	return collision_rectangle(x, y, size_with_scale.x, size_with_scale.y, obj, 0, 0)
+		size_with_scale = Vector2(position_with_offset.x + (comparison_object_collision_shape_size.x * comparison_object.image_xscale), position_with_offset.y + (comparison_object_collision_shape_size.y * comparison_object.image_yscale))
+	return collision_rectangle(position_with_offset.x, position_with_offset.y, size_with_scale.x, size_with_scale.y, obj, 0, 0)
 
 func instance_position(x, y, obj: String): #---[FLAG] this needs checked
 	var intersecting = collision_point(x, y, obj, 0, 0)
@@ -577,82 +581,55 @@ func generate_random_hash():
 	return word
 
 func handle_collision_ray(x1, y1, x2, y2, obj):
-	if collision_ray == null:
-		collision_ray = get_tree().get_first_node_in_group("collision_ray")
+	var collision_ray: RayCast2D = get_tree().get_first_node_in_group("collision_ray")
 	collision_ray.clear_exceptions()
-	var layer = collision_layers.find(obj) + 1
-	var object_node: GMObject = null
+	
+	var possible = []
 	
 	collision_ray.position = Vector2(x1 + 0.1, y1 + 0.1) #--- no idea why this works but it fixes collision issues
 	collision_ray.target_position = Vector2(abs(x2 - (x1 - 0.1)), abs(y2 - (y1 - 0.1))) #--- raycast bordering on a pixel exactly seems to register it as colliding
-
-	if layer != 0:
-		collision_ray.set_collision_mask_value(layer, true)
-		collision_ray.enabled = true
+	collision_ray.enabled = true
+	collision_ray.force_raycast_update()
+	while collision_ray.is_colliding():
+		collision_ray.force_update_transform()
+		var area = collision_ray.get_collider()
+		var object_node = area.get_parent().get_parent().get_parent()
+		var groups = object_node.get_groups()
+		if obj in groups:
+			possible.append(object_node)
+		collision_ray.add_exception(area)
 		collision_ray.force_raycast_update()
-		if collision_ray.is_colliding():
-			collision_ray.force_update_transform()
-			var area = collision_ray.get_collider()
-			object_node = area.get_parent().get_parent().get_parent()
-		collision_ray.set_collision_mask_value(layer, false)
-	
-	else:
-		collision_ray.set_collision_mask_value(1, true)
-		collision_ray.enabled = true
-		collision_ray.force_raycast_update()
-		while collision_ray.is_colliding():
-			collision_ray.force_update_transform()
-			var area = collision_ray.get_collider()
-			var temp_object_node = area.get_parent().get_parent().get_parent()
-			var groups = temp_object_node.get_groups()
-			if obj in groups:
-				object_node = temp_object_node
-				break
-			collision_ray.add_exception(area)
-			collision_ray.force_raycast_update()
-		collision_ray.set_collision_mask_value(1, false)
-	
 	collision_ray.enabled = false
-	return object_node
+
+	if possible != []:
+		return possible[-1]
+	return null
 
 func handle_collision_shapecast(x1, y1, x2, y2, obj):
-	if shapecast == null:
-		shapecast = get_tree().get_first_node_in_group("collision_shapecast")
+	var shapecast: ShapeCast2D = get_tree().get_first_node_in_group("collision_shapecast")
 	shapecast.clear_exceptions()
-	var layer = collision_layers.find(obj) + 1
-	var object_node: GMObject = null
 
+	var possible = []
+	
 	var size = Vector2(abs(x2 - x1), abs(y2 - y1))
 	var adjusted_size = Vector2(size.x - 0.1, size.y - 0.1) #--- corners touching counts as a collision, which isn't the case in the original engine. subtracting by 0.1 corrects for this
 	shapecast.position = Vector2(x1 + (size.x / 2), y1 + (size.y / 2))
 	shapecast.shape.size = adjusted_size
-
-	if layer != 0:
-		shapecast.set_collision_mask_value(layer, true)
-		shapecast.enabled = true
+	shapecast.enabled = true
+	shapecast.force_shapecast_update()
+	while shapecast.is_colliding():
+		var area = shapecast.get_collider(0)
+		var object_node = area.get_parent().get_parent().get_parent()
+		var groups = object_node.get_groups()
+		if obj in groups:
+			possible.append(object_node)
+		shapecast.add_exception(area)
 		shapecast.force_shapecast_update()
-		if shapecast.is_colliding():
-			var area = shapecast.get_collider(0)
-			object_node = area.get_parent().get_parent().get_parent()
-		shapecast.set_collision_mask_value(layer, false)
-	
-	else:
-		shapecast.set_collision_mask_value(1, true)
-		shapecast.enabled = true
-		shapecast.force_shapecast_update()
-		while shapecast.is_colliding():
-			var area = shapecast.get_collider(0)
-			var temp_object_node = area.get_parent().get_parent().get_parent()
-			var groups = temp_object_node.get_groups()
-			if obj in groups:
-				object_node = temp_object_node
-				break
-			shapecast.add_exception(area)
-			shapecast.force_shapecast_update()
-		shapecast.set_collision_mask_value(1, false)
-	
 	shapecast.enabled = false
-	return object_node
+	
+	if possible != []:
+		return possible[-1]
+	return null
 
 #--- debug
 func highlight_node(node: GMObject):

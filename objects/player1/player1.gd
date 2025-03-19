@@ -2477,7 +2477,7 @@ func collect_idol_and_damsel():
 				if (hold_item.sprite_index == "crystal_skull"): global.skulls += 1
 				else: global.idols += 1
 				Audio.play_sound(global.snd_coin)
-				gml.instance_create(position.x, position.y-8, "big_collect")
+				gml.instance_create(position.x, position.y-8, Objects.big_collect)
 				gml.instance_destroy(hold_item) #---[FLAG] hold_item should be set to the string of the item name
 				hold_item = null
 			

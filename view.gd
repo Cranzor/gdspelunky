@@ -55,7 +55,8 @@ func _input(event: InputEvent) -> void:
 		#test.rotation_degrees = 180
 		#print(test)
 		global.plife += 1
-		print(gml.collision_layers)
+		for i in range(5, 0, -1):
+			print(i)
 	
 	if Input.is_action_just_pressed("debug2"):
 		#var circle = CircleDraw.get_circle_texture(gml.view_xview, gml.view_yview, 96)
