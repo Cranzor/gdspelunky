@@ -486,8 +486,8 @@ func view(view_value: String):
 		return 0
 
 func room_get_name():
-	var root = get_tree().get_current_scene()
-	var room_name = root.room_name
+	var room = get_tree().get_first_node_in_group("base_room")
+	var room_name = room.room_name
 	return room_name
 
 func draw_sprite_ext(sprite, subimg, x, y, xscale, yscale, rot, color, alpha, node: GMObject, is_object_sprite: bool = true):

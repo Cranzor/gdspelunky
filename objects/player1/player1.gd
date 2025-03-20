@@ -70,6 +70,7 @@ var red_toggle
 var k_attack_released
 var hold_item = null
 var hold_item_type
+var pickup_item #--- used in enemy script but seems to be an error, confusing global.pickup_item and player1's pickup_item_type
 var pickup_item_type
 var k_item
 var k_item_pressed
@@ -5222,7 +5223,8 @@ func scr_use_item(): #--- only called by player1 so including it here for conven
 			
 		hold_item.held = false
 		hold_item.safe = true
-		hold_item.alarm_2_countdown.start(10)
+		if hold_item.alarm_2_countdown: #--- adding a check here. yeti (and probably other objects) don't have this alarm. original engine seems to not have a problem with this
+			hold_item.alarm_2_countdown.start(10)
 				
 		if (facing == LEFT):
 				

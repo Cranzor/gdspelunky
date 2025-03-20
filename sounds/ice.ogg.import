@@ -12,8 +12,8 @@ dest_files=["res://.godot/imported/ice.ogg-5900ded563c9485d2a394b4e14c6e2ae.oggv
 
 [params]
 
-loop=false
-loop_offset=0
-bpm=0
+loop=true
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4

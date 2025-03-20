@@ -546,7 +546,7 @@ func step():
 	
 			if (Gamepad.attack_pressed): Gamepad.attack_pressed = false
 			if (Gamepad.start_pressed): Gamepad.start_pressed = false
-			if (alarm_0_countdown.frames_to_count_down > 1): alarm_0_countdown.start(1) #---[FLAG] check both this and line below
+			if (alarm_0_countdown.frames_to_count_down > 1): alarm_0_countdown.start(1)
 			if (alarm_1_countdown.frames_to_count_down > 1): alarm_1_countdown.start(1)
 			global.game_start = true
 			global.lake = false

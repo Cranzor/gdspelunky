@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dpik07grwpaj" path="res://scenes/collision/collision_shapecast.tscn" id="5_jn645"]
 [ext_resource type="PackedScene" uid="uid://b8sip2nv63phc" path="res://FPSCounter.tscn" id="6_jn645"]
 
-[node name="Room" type="Node"]
+[node name="Room" type="Node" groups=["base_room"]]
 script = ExtResource("1_36trf")
 
 [node name="BgElements" parent="." instance=ExtResource("2_85yof")]

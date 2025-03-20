@@ -12,11 +12,13 @@ func _physics_process(_delta):
 	
 	if frames_to_count_down != -1:
 		frames_to_count_down -= 1
+	
+	if frames_to_count_down < -1:
+		frames_to_count_down = -1
 
 func start(frames):
-	if is_stopped():
-		frames_to_count_down = frames - 1
-		started = true
+	frames_to_count_down = frames# - 1
+	started = true
 
 func is_stopped():
 	if frames_to_count_down == -1:
