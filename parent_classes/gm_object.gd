@@ -537,6 +537,7 @@ var smooth_motion = SmoothMotion.new()
 func object_tick():
 	#smooth_motion.tick_start(position, animated_sprite_node)
 
+	run_alarm_events(self)
 	run_step_event(self)
 	run_draw_event(self)
 	run_collision_with(self)
@@ -582,6 +583,16 @@ func collision_with_setup(object_entry):
 			var function = "collision_with_" + object
 			var collision_with_function = Callable(self, function)
 			collision_with[object] = collision_with_function
+
+func run_alarm_events(obj):
+	var alarms = [alarm_0_countdown, alarm_1_countdown, alarm_2_countdown, alarm_3_countdown, alarm_4_countdown, alarm_5_countdown,
+				alarm_6_countdown, alarm_7_countdown, alarm_8_countdown, alarm_9_countdown, alarm_10_countdown, alarm_11_countdown]
+	
+	for alarm: Alarm in alarms:
+		if alarm != null:
+			if alarm.ready_to_emit:
+				alarm.ready_to_emit = false
+				alarm.emit_signal("timeout")
 
 func run_step_event(obj):
 	if obj.has_method("step"):
