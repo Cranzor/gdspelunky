@@ -1,10 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://q5sfm3vccj6f"]
+[gd_scene load_steps=18 format=3 uid="uid://q5sfm3vccj6f"]
 
 [ext_resource type="Texture2D" uid="uid://nkw6afdklf8m" path="res://sprites/blocks/mines/brick/brick_0.png" id="1_6bprr"]
 [ext_resource type="Script" uid="uid://3oo6yoqhgiwp" path="res://scenes/collision_visualization.gd" id="1_6si4h"]
 [ext_resource type="Texture2D" uid="uid://b1gqefym32l7u" path="res://sprites/enemies/snake_walk_l/snake_walk_l_0.png" id="2_v07bj"]
 [ext_resource type="Texture2D" uid="uid://dbfljnxxluub6" path="res://sprites/character/main dude/stand_left/stand_left_0.png" id="3_v07bj"]
 [ext_resource type="Texture2D" uid="uid://jj6o48lynrsq" path="res://sprites/traps/arrow_trap_left/arrow_trap_left_0.png" id="4_wfkkk"]
+[ext_resource type="Texture2D" uid="uid://b13vby6gujc2r" path="res://sprites/character/main dude/jump_left/jump_left_0.png" id="6_h0khy"]
+[ext_resource type="Texture2D" uid="uid://bf2emntal75mi" path="res://sprites/enemies/snake_walk_l/snake_walk_l_1.png" id="7_clsns"]
+[ext_resource type="Texture2D" uid="uid://bikhjyty6jnfv" path="res://sprites/blocks/mines/brick_gold/brick_gold_0.png" id="8_m2svd"]
+[ext_resource type="Texture2D" uid="uid://ermhxd0l34ik" path="res://sprites/blocks/mines/brick_gold_big/brick_gold_big_0.png" id="9_yobrk"]
+[ext_resource type="Texture2D" uid="uid://cc80ffrvkibcp" path="res://sprites/enemies/yeti/yeti_left/yeti_left_0.png" id="10_yobrk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wfkkk"]
 size = Vector2(16, 16)
@@ -17,6 +22,15 @@ size = Vector2(16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6skb8"]
 size = Vector2(2170.9, 15.9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m2svd"]
+size = Vector2(14, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h0khy"]
+size = Vector2(14, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yobrk"]
+size = Vector2(16, 16)
 
 [node name="CollisionVisualization" type="Node2D"]
 script = ExtResource("1_6si4h")
@@ -68,3 +82,76 @@ target_position = Vector2(0, 0)
 [node name="ArrowTrapLeft0" type="Sprite2D" parent="Node2D"]
 texture = ExtResource("4_wfkkk")
 centered = false
+
+[node name="SnakeWalkL1" type="Sprite2D" parent="."]
+position = Vector2(60, 464)
+texture = ExtResource("7_clsns")
+centered = false
+flip_h = true
+
+[node name="Area2D" type="Area2D" parent="SnakeWalkL1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SnakeWalkL1/Area2D"]
+position = Vector2(8, 10)
+shape = SubResource("RectangleShape2D_m2svd")
+
+[node name="JumpLeft0" type="Sprite2D" parent="."]
+position = Vector2(600, 174)
+texture = ExtResource("6_h0khy")
+centered = false
+offset = Vector2(-8, -8)
+
+[node name="Area2D" type="Area2D" parent="JumpLeft0"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="JumpLeft0/Area2D"]
+shape = SubResource("RectangleShape2D_h0khy")
+
+[node name="Brick1" type="Sprite2D" parent="."]
+position = Vector2(60, 360)
+texture = ExtResource("1_6bprr")
+centered = false
+
+[node name="Brick2" type="Sprite2D" parent="."]
+position = Vector2(44, 360)
+texture = ExtResource("1_6bprr")
+centered = false
+
+[node name="Brick3" type="Sprite2D" parent="."]
+position = Vector2(28, 360)
+texture = ExtResource("1_6bprr")
+centered = false
+
+[node name="Brick4" type="Sprite2D" parent="."]
+position = Vector2(60, 360)
+texture = ExtResource("1_6bprr")
+centered = false
+
+[node name="Brick5" type="Sprite2D" parent="."]
+position = Vector2(28, 280)
+texture = ExtResource("1_6bprr")
+centered = false
+
+[node name="BrickGold0" type="Sprite2D" parent="."]
+position = Vector2(36, 352)
+texture = ExtResource("8_m2svd")
+
+[node name="BrickGold1" type="Sprite2D" parent="."]
+position = Vector2(36, 336)
+texture = ExtResource("8_m2svd")
+
+[node name="BrickGoldBig0" type="Sprite2D" parent="."]
+position = Vector2(36, 320)
+texture = ExtResource("9_yobrk")
+
+[node name="BrickGoldBig1" type="Sprite2D" parent="."]
+position = Vector2(36, 304)
+texture = ExtResource("9_yobrk")
+
+[node name="YetiLeft0" type="Sprite2D" parent="."]
+position = Vector2(25, 192)
+texture = ExtResource("10_yobrk")
+
+[node name="ShapeCast2D2" type="ShapeCast2D" parent="."]
+position = Vector2(589, 176)
+shape = SubResource("RectangleShape2D_yobrk")
+target_position = Vector2(0, 0)

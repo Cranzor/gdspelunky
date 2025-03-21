@@ -6,8 +6,7 @@ func _ready():
 
 func _physics_process(_delta):
 	object_tick()
-	#print(position)
-	#print(animated_sprite_node.position)
+	#print(position.y)
 	
 func _process(delta):
 	object_process(delta)

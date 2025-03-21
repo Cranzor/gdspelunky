@@ -414,7 +414,7 @@ func depth_setup(object_entry):
 	
 	depth = converted_depth
 
-func bounding_box_setup():
+func bounding_box_setup(): #--- leaving here for now in case it's needed but planning to delete
 	var sprite = get_animation()
 	
 	if sprite != "default":
@@ -425,6 +425,11 @@ func bounding_box_setup():
 	else:
 		var no_sprite_size = Vector2(0, 0)
 		object_size = no_sprite_size
+
+func get_bounding_box():
+	var sprite = get_animation()
+	var bounding_box = sprites.sprite_database[sprite]["mask"]["bounding_box"][1] #---[FLAG] may not include bottom and rightmost edges
+	return bounding_box
 
 func collision_layers_setup():
 	for group: String in get_groups():
@@ -539,8 +544,8 @@ func object_tick():
 
 	run_alarm_events(self)
 	run_step_event(self)
-	run_draw_event(self)
 	run_collision_with(self)
+	run_draw_event(self)
 	run_animation_end(self)
 	run_speed_position_update(self)
 
@@ -613,9 +618,12 @@ func run_draw_event(obj):
 		else:
 			animated_sprite_node.sprite_displayed = true
 	
-func run_collision_with(obj: GMObject): #---[FLAG] update this to not use object_size
+func run_collision_with(obj: GMObject):
 	if not obj.is_queued_for_deletion():
 		for object in collision_with:
+			if object_name == "yeti":
+				if object == "character":
+					print("hi")
 			#--- fixed an issue here in which object_size by itself was used. for collision_rectangle, object size + position must be passed in
 			other = gml.instance_place(position.x, position.y, object, obj)
 			if other:

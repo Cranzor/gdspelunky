@@ -49,14 +49,16 @@ func set_camera_limits() -> void:
 	drag_bottom_margin = 0.2
 
 func _input(event: InputEvent) -> void:
-	if Input.is_action_pressed("debug"):
+	if Input.is_action_just_pressed("debug"):
 		#print_debug(gml.instance_number("enemy_sight"))
 		#var test = gml.get_instance("rotation_test")
 		#test.rotation_degrees = 180
 		#print(test)
-		global.plife += 1
-		for i in range(5, 0, -1):
-			print(i)
+		
+		#global.plife += 1
+		if !event.is_echo():
+			var player1 = gml.get_instance("player1")
+			gml.instance_create(player1.position.x - 32, player1.position.y - 10, Objects.yeti)
 	
 	if Input.is_action_just_pressed("debug2"):
 		#var circle = CircleDraw.get_circle_texture(gml.view_xview, gml.view_yview, 96)
@@ -65,4 +67,4 @@ func _input(event: InputEvent) -> void:
 		#circle.texture = CircleDraw.create_bresenham_circle(96)
 		
 		var player1 = gml.get_instance("player1")
-		gml.instance_create(player1.position.x - 16, player1.position.y - 10, Objects.teleporter)
+		gml.instance_create(player1.position.x - 32, player1.position.y - 10, Objects.yeti)
