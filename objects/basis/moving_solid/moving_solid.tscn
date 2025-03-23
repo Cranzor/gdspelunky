@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cysyql5ctxjm5"]
 
-[ext_resource type="Script" uid="uid://ctwnu3k8l1ptw" path="res://objects/basis/moving_solid/moving_solid.gd" id="1_wiqw3"]
+[ext_resource type="Script" uid="uid://ctwnu3k8l1ptw" path="res://objects/basis/moving_solid/moving_solid.gd" id="1_36y0b"]
 
-[node name="MovingSolid" type="Node2D"]
-script = ExtResource("1_wiqw3")
+[node name="MovingSolid" type="StaticBody2D"]
+script = ExtResource("1_36y0b")
 object_name = "moving_solid"

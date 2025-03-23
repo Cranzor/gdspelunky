@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bdofugqa7nqg2"]
 
-[ext_resource type="Script" uid="uid://d4lxwissf8cwr" path="res://objects/enemies/caveman/caveman.gd" id="1_dqk7x"]
+[ext_resource type="Script" uid="uid://d4lxwissf8cwr" path="res://objects/enemies/caveman/caveman.gd" id="1_6b31n"]
 
-[node name="Caveman" type="Node2D"]
-script = ExtResource("1_dqk7x")
+[node name="Caveman" type="StaticBody2D"]
+script = ExtResource("1_6b31n")
 object_name = "caveman"

@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://ci2uyddqd1bst"]
 
-[ext_resource type="Script" uid="uid://do63eofhm73dl" path="res://objects/blocks/moai2/moai2.gd" id="1_1dcm7"]
+[ext_resource type="Script" uid="uid://do63eofhm73dl" path="res://objects/blocks/moai2/moai2.gd" id="1_aiar6"]
 
-[node name="Moai2" type="Node2D"]
-script = ExtResource("1_1dcm7")
+[node name="Moai2" type="StaticBody2D"]
+script = ExtResource("1_aiar6")
 object_name = "moai2"

@@ -1,8 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://b4mivj5bs8uo0"]
 
-[ext_resource type="Script" uid="uid://bg3hh6f513gsu" path="res://objects/enemies/snake/snake.gd" id="1_c0yod"]
+[ext_resource type="Script" uid="uid://bg3hh6f513gsu" path="res://objects/enemies/snake/snake.gd" id="1_ibgfx"]
 
-[node name="Snake" type="Node2D"]
-script = ExtResource("1_c0yod")
-sprite_index_name = "snake_left"
+[node name="Snake" type="StaticBody2D"]
+script = ExtResource("1_ibgfx")
 object_name = "snake"

@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cbijc8efdg1w2"]
 
-[ext_resource type="Script" uid="uid://bogpvv4vivmqp" path="res://objects/items/ball/ball.gd" id="1_lj727"]
+[ext_resource type="Script" uid="uid://bogpvv4vivmqp" path="res://objects/items/ball/ball.gd" id="1_bps65"]
 
-[node name="Ball" type="Node2D"]
-script = ExtResource("1_lj727")
+[node name="Ball" type="StaticBody2D"]
+script = ExtResource("1_bps65")
 object_name = "ball"

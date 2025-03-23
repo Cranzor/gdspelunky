@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bw61lt6aoaabs"]
 
-[ext_resource type="Script" uid="uid://tku5i5xxjr1t" path="res://objects/collectibles/rope_pile/rope_pile.gd" id="1_60erj"]
+[ext_resource type="Script" uid="uid://tku5i5xxjr1t" path="res://objects/collectibles/rope_pile/rope_pile.gd" id="1_v1ptf"]
 
-[node name="RopePile" type="Node2D"]
-script = ExtResource("1_60erj")
+[node name="RopePile" type="StaticBody2D"]
+script = ExtResource("1_v1ptf")
 object_name = "rope_pile"

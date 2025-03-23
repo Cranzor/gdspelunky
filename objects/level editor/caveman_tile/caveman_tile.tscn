@@ -1,9 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://dr0y4uit7vx8"]
 
-[ext_resource type="Script" uid="uid://nmx4coegs3hf" path="res://objects/level editor/caveman_tile/caveman_tile.gd" id="1_2fxnk"]
+[ext_resource type="Script" uid="uid://nmx4coegs3hf" path="res://objects/level editor/caveman_tile/caveman_tile.gd" id="1_m1gfg"]
 
-[node name="CavemanTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
-script = ExtResource("1_2fxnk")
-sprite_index_name = "caveman_left"
-animated_sprite_node = NodePath("")
+[node name="CavemanTile" type="StaticBody2D"]
+script = ExtResource("1_m1gfg")
 object_name = "caveman_tile"

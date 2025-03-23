@@ -1,9 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://eg8vgsqm88pa"]
 
-[ext_resource type="Script" uid="uid://bk4lhdik70q7d" path="res://objects/other/menu_bottom/menu_bottom.gd" id="1_22u7j"]
+[ext_resource type="Script" uid="uid://bk4lhdik70q7d" path="res://objects/other/menu_bottom/menu_bottom.gd" id="1_8ths3"]
 
-[node name="MenuBottom" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
-script = ExtResource("1_22u7j")
-sprite_index_name = "menu_bottom"
-animated_sprite_node = NodePath("")
+[node name="MenuBottom" type="StaticBody2D"]
+script = ExtResource("1_8ths3")
 object_name = "menu_bottom"

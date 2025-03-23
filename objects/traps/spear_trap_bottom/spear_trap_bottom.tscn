@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://crpu54rn0bg4y"]
 
-[ext_resource type="Script" uid="uid://dybdu1wj360ax" path="res://objects/traps/spear_trap_bottom/spear_trap_bottom.gd" id="1_as2fj"]
+[ext_resource type="Script" uid="uid://dybdu1wj360ax" path="res://objects/traps/spear_trap_bottom/spear_trap_bottom.gd" id="1_06jn1"]
 
-[node name="SpearTrapBottom" type="Node2D"]
-script = ExtResource("1_as2fj")
+[node name="SpearTrapBottom" type="StaticBody2D"]
+script = ExtResource("1_06jn1")
 object_name = "spear_trap_bottom"

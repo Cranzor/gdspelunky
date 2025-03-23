@@ -1,9 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://qnjegtvceimp"]
 
-[ext_resource type="Script" uid="uid://3oyevn4sbkct" path="res://objects/level editor/cape_tile/cape_tile.gd" id="1_55uge"]
+[ext_resource type="Script" uid="uid://3oyevn4sbkct" path="res://objects/level editor/cape_tile/cape_tile.gd" id="1_dqff6"]
 
-[node name="CapeTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
-script = ExtResource("1_55uge")
-sprite_index_name = "cape_tile"
-animated_sprite_node = NodePath("")
+[node name="CapeTile" type="StaticBody2D"]
+script = ExtResource("1_dqff6")
 object_name = "cape_tile"

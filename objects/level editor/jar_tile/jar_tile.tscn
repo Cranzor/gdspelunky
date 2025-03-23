@@ -1,9 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://csaw3ureavhu3"]
 
-[ext_resource type="Script" uid="uid://bq3xlfrak3clo" path="res://objects/level editor/jar_tile/jar_tile.gd" id="1_8c6x3"]
+[ext_resource type="Script" uid="uid://bq3xlfrak3clo" path="res://objects/level editor/jar_tile/jar_tile.gd" id="1_a6add"]
 
-[node name="JarTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
-script = ExtResource("1_8c6x3")
-sprite_index_name = "jar_tile"
-animated_sprite_node = NodePath("")
+[node name="JarTile" type="StaticBody2D"]
+script = ExtResource("1_a6add")
 object_name = "jar_tile"

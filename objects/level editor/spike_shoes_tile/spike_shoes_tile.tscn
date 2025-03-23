@@ -1,9 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bt8r6ahoenmo2"]
 
-[ext_resource type="Script" uid="uid://cakaf5vsgr47u" path="res://objects/level editor/spike_shoes_tile/spike_shoes_tile.gd" id="1_moye5"]
+[ext_resource type="Script" uid="uid://cakaf5vsgr47u" path="res://objects/level editor/spike_shoes_tile/spike_shoes_tile.gd" id="1_sc20x"]
 
-[node name="SpikeShoesTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
-script = ExtResource("1_moye5")
-sprite_index_name = "spike_shoes_tile"
-animated_sprite_node = NodePath("")
+[node name="SpikeShoesTile" type="StaticBody2D"]
+script = ExtResource("1_sc20x")
 object_name = "spike_shoes_tile"

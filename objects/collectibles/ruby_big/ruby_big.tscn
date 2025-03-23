@@ -1,9 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://73n83hbh1qdu"]
 
-[ext_resource type="Script" uid="uid://caussmwxvclg3" path="res://objects/collectibles/ruby_big/ruby_big.gd" id="1_32fdd"]
+[ext_resource type="Script" uid="uid://caussmwxvclg3" path="res://objects/collectibles/ruby_big/ruby_big.gd" id="1_3487a"]
 
-[node name="RubyBig" type="Node2D"]
-script = ExtResource("1_32fdd")
-sprite_index_name = "ruby_big"
-sprite_offset = Vector2(4, 4)
+[node name="RubyBig" type="StaticBody2D"]
+script = ExtResource("1_3487a")
 object_name = "ruby_big"

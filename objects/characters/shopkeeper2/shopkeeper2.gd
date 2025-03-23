@@ -37,5 +37,5 @@ func step():
 		if (death_timer > 0): death_timer -= 1
 		else:
 	
-			MiscScripts.scr_create_blood(position.x+8, position.y+8, 3)
+			MiscScripts.scr_create_blood(position.x+8, position.y+8, 3, self)
 			gml.instance_destroy(self)

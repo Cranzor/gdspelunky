@@ -1,9 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bceyr3nrnoofk"]
 
-[ext_resource type="Script" uid="uid://yg0hlo14tb37" path="res://objects/other/title/scores_sign/scores_sign.gd" id="1_s12rd"]
+[ext_resource type="Script" uid="uid://yg0hlo14tb37" path="res://objects/other/title/scores_sign/scores_sign.gd" id="1_jeqlv"]
 
-[node name="ScoresSign" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
-script = ExtResource("1_s12rd")
-sprite_index_name = "scores_sign"
-animated_sprite_node = NodePath("")
+[node name="ScoresSign" type="StaticBody2D"]
+script = ExtResource("1_jeqlv")
 object_name = "scores_sign"

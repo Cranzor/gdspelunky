@@ -1,4 +1,3 @@
-
 extends GMObject
 
 
@@ -20,12 +19,12 @@ func _process(delta):
 #func mouse leave():
 #    sprite_index = "key_config_button"
 
-    
+	
 
 #func mouse left button pressed():
 #    sprite_index = "key_config_button_pressed"
 
-    
+	
 
 #func mouse left button released():
 #    if (sprite_index == "key_config_button_pressed"): get_tree().change_scene_to_file("res://r_key_config.tscn")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cyqsbw1hct0kn"]
 
-[ext_resource type="Script" uid="uid://cyablcjxj7tln" path="res://objects/effects/fly/fly.gd" id="1_lffeh"]
+[ext_resource type="Script" uid="uid://cyablcjxj7tln" path="res://objects/effects/fly/fly.gd" id="1_2jxwh"]
 
-[node name="Fly" type="Node2D"]
-script = ExtResource("1_lffeh")
+[node name="Fly" type="StaticBody2D"]
+script = ExtResource("1_2jxwh")
 object_name = "fly"

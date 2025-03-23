@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bdsk5pwalq5wm"]
 
-[ext_resource type="Script" uid="uid://0wf05blgcuug" path="res://objects/other/end/treasure_sil/treasure_sil.gd" id="1_jn8wb"]
+[ext_resource type="Script" uid="uid://0wf05blgcuug" path="res://objects/other/end/treasure_sil/treasure_sil.gd" id="1_mw7y2"]
 
-[node name="TreasureSil" type="Node2D"]
-script = ExtResource("1_jn8wb")
+[node name="TreasureSil" type="StaticBody2D"]
+script = ExtResource("1_mw7y2")
 object_name = "treasure_sil"

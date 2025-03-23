@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bbypvam7h8rhd"]
 
-[ext_resource type="Script" uid="uid://bguvxvotke7df" path="res://objects/basis/water/water.gd" id="1_ivhla"]
+[ext_resource type="Script" uid="uid://bguvxvotke7df" path="res://objects/basis/water/water.gd" id="1_krawp"]
 
-[node name="Water" type="Node2D"]
-script = ExtResource("1_ivhla")
+[node name="Water" type="StaticBody2D"]
+script = ExtResource("1_krawp")
 object_name = "water"

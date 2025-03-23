@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://c08oalmsps1ng"]
 
-[ext_resource type="Script" uid="uid://cbs67yl4uowb1" path="res://objects/traps/arrow_repeater_r/arrow_repeater_r.gd" id="1_ss5ha"]
+[ext_resource type="Script" uid="uid://cbs67yl4uowb1" path="res://objects/traps/arrow_repeater_r/arrow_repeater_r.gd" id="1_ypovo"]
 
-[node name="ArrowRepeaterR" type="Node2D"]
-script = ExtResource("1_ss5ha")
+[node name="ArrowRepeaterR" type="StaticBody2D"]
+script = ExtResource("1_ypovo")
 object_name = "arrow_repeater_r"

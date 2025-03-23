@@ -1,9 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://iykvwgp7rpey"]
 
-[ext_resource type="Script" uid="uid://bk4s063u3855s" path="res://objects/level editor/bow_tile/bow_tile.gd" id="1_0s62c"]
+[ext_resource type="Script" uid="uid://bk4s063u3855s" path="res://objects/level editor/bow_tile/bow_tile.gd" id="1_6jwld"]
 
-[node name="BowTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
-script = ExtResource("1_0s62c")
-sprite_index_name = "bow_tile"
-animated_sprite_node = NodePath("")
+[node name="BowTile" type="StaticBody2D"]
+script = ExtResource("1_6jwld")
 object_name = "bow_tile"

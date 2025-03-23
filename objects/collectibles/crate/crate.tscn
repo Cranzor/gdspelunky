@@ -1,9 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cccbc4sui07d8"]
 
-[ext_resource type="Script" uid="uid://e41jrf4lv6vb" path="res://objects/collectibles/crate/crate.gd" id="1_udxly"]
+[ext_resource type="Script" uid="uid://e41jrf4lv6vb" path="res://objects/collectibles/crate/crate.gd" id="1_u5fct"]
 
-[node name="Crate" type="Node2D"]
-script = ExtResource("1_udxly")
-sprite_index_name = "crate"
-sprite_offset = Vector2(8, 8)
+[node name="Crate" type="StaticBody2D"]
+script = ExtResource("1_u5fct")
 object_name = "crate"

@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://ekhdkbbts830"]
 
-[ext_resource type="Script" uid="uid://c3ukbrdo1hcel" path="res://objects/items/crystal_skull/crystal_skull.gd" id="1_xrt8c"]
+[ext_resource type="Script" uid="uid://c3ukbrdo1hcel" path="res://objects/items/crystal_skull/crystal_skull.gd" id="1_45s6p"]
 
-[node name="CrystalSkull" type="Node2D"]
-script = ExtResource("1_xrt8c")
+[node name="CrystalSkull" type="StaticBody2D"]
+script = ExtResource("1_45s6p")
 object_name = "crystal_skull"

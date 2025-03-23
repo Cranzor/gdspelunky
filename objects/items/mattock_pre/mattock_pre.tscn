@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://3o2a8digflkl"]
 
-[ext_resource type="Script" uid="uid://cfjqvm7xh14eu" path="res://objects/items/mattock_pre/mattock_pre.gd" id="1_f1cxy"]
+[ext_resource type="Script" uid="uid://cfjqvm7xh14eu" path="res://objects/items/mattock_pre/mattock_pre.gd" id="1_phob0"]
 
-[node name="MattockPre" type="Node2D"]
-script = ExtResource("1_f1cxy")
+[node name="MattockPre" type="StaticBody2D"]
+script = ExtResource("1_phob0")
 object_name = "mattock_pre"

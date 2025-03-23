@@ -1,9 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cwbwhqb4wmbrk"]
 
-[ext_resource type="Script" uid="uid://c7c7dxdwjnm3n" path="res://objects/level editor/sapphire_big_tile/sapphire_big_tile.gd" id="1_0cqq7"]
+[ext_resource type="Script" uid="uid://c7c7dxdwjnm3n" path="res://objects/level editor/sapphire_big_tile/sapphire_big_tile.gd" id="1_3wa5c"]
 
-[node name="SapphireBigTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
-script = ExtResource("1_0cqq7")
-sprite_index_name = "sapphire_big_tile"
-animated_sprite_node = NodePath("")
+[node name="SapphireBigTile" type="StaticBody2D"]
+script = ExtResource("1_3wa5c")
 object_name = "sapphire_big_tile"

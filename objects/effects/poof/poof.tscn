@@ -1,10 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://dw32lrcbmraye"]
 
-[ext_resource type="Script" uid="uid://perr4yh246hu" path="res://objects/effects/poof/poof.gd" id="1_cjwki"]
+[ext_resource type="Script" uid="uid://perr4yh246hu" path="res://objects/effects/poof/poof.gd" id="1_4c5vc"]
 
-[node name="Poof" type="Node2D"]
-z_index = -1
-script = ExtResource("1_cjwki")
-sprite_index_name = "poof"
-sprite_offset = Vector2(4, 4)
+[node name="Poof" type="StaticBody2D"]
+script = ExtResource("1_4c5vc")
 object_name = "poof"

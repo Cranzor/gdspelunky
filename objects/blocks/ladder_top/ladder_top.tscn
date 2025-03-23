@@ -1,9 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://c3y7x7kf3135e"]
 
-[ext_resource type="Script" uid="uid://m4jd7p341ruh" path="res://objects/blocks/ladder_top/ladder_top.gd" id="1_gmqxp"]
+[ext_resource type="Script" uid="uid://m4jd7p341ruh" path="res://objects/blocks/ladder_top/ladder_top.gd" id="1_v0d8l"]
 
-[node name="LadderTop" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
-script = ExtResource("1_gmqxp")
-sprite_index_name = "ladder_top"
-animated_sprite_node = NodePath("")
+[node name="LadderTop" type="StaticBody2D"]
+script = ExtResource("1_v0d8l")
 object_name = "ladder_top"

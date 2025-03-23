@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cjqel1xvwlea4"]
 
-[ext_resource type="Script" uid="uid://bk7y6i6750028" path="res://objects/enemies/vampire/vampire.gd" id="1_yjwxm"]
+[ext_resource type="Script" uid="uid://bk7y6i6750028" path="res://objects/enemies/vampire/vampire.gd" id="1_t0d5w"]
 
-[node name="Vampire" type="Node2D"]
-script = ExtResource("1_yjwxm")
+[node name="Vampire" type="StaticBody2D"]
+script = ExtResource("1_t0d5w")
 object_name = "vampire"

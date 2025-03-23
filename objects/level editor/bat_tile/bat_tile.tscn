@@ -1,9 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cog1qowromcas"]
 
-[ext_resource type="Script" uid="uid://bkn3aea62odj7" path="res://objects/level editor/bat_tile/bat_tile.gd" id="1_1tghe"]
+[ext_resource type="Script" uid="uid://bkn3aea62odj7" path="res://objects/level editor/bat_tile/bat_tile.gd" id="1_82m5j"]
 
-[node name="BatTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
-script = ExtResource("1_1tghe")
-sprite_index_name = "bat_hang"
-animated_sprite_node = NodePath("")
+[node name="BatTile" type="StaticBody2D"]
+script = ExtResource("1_82m5j")
 object_name = "bat_tile"

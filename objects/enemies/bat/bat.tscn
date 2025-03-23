@@ -1,8 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://yrv4vb3tbgls"]
 
-[ext_resource type="Script" uid="uid://chyko7e4rsxfj" path="res://objects/enemies/bat/bat.gd" id="1_edvsb"]
+[ext_resource type="Script" uid="uid://chyko7e4rsxfj" path="res://objects/enemies/bat/bat.gd" id="1_0whhn"]
 
-[node name="Bat" type="Node2D"]
-script = ExtResource("1_edvsb")
-sprite_index_name = "bat_hang"
+[node name="Bat" type="StaticBody2D"]
+script = ExtResource("1_0whhn")
 object_name = "bat"

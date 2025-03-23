@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bwjdnhmc4qtqp"]
 
-[ext_resource type="Script" uid="uid://67q5mdoax6vk" path="res://objects/collectibles/spring_shoes/spring_shoes.gd" id="1_h7n61"]
+[ext_resource type="Script" uid="uid://67q5mdoax6vk" path="res://objects/collectibles/spring_shoes/spring_shoes.gd" id="1_72u4m"]
 
-[node name="SpringShoes" type="Node2D"]
-script = ExtResource("1_h7n61")
+[node name="SpringShoes" type="StaticBody2D"]
+script = ExtResource("1_72u4m")
 object_name = "spring_shoes"

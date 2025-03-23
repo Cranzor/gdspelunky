@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bf1ipk0r6l466"]
 
-[ext_resource type="Script" uid="uid://cmp3ymnqqcsl0" path="res://objects/collectibles/bomb_bag/bomb_bag.gd" id="1_p0fi4"]
+[ext_resource type="Script" uid="uid://cmp3ymnqqcsl0" path="res://objects/collectibles/bomb_bag/bomb_bag.gd" id="1_oc7po"]
 
-[node name="BombBag" type="Node2D"]
-script = ExtResource("1_p0fi4")
+[node name="BombBag" type="StaticBody2D"]
+script = ExtResource("1_oc7po")
 object_name = "bomb_bag"

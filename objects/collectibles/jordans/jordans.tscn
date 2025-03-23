@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cv3wdpg6vjeas"]
 
-[ext_resource type="Script" uid="uid://cpdc8mhjxst2p" path="res://objects/collectibles/jordans/jordans.gd" id="1_amyvy"]
+[ext_resource type="Script" uid="uid://cpdc8mhjxst2p" path="res://objects/collectibles/jordans/jordans.gd" id="1_6g63x"]
 
-[node name="Jordans" type="Node2D"]
-script = ExtResource("1_amyvy")
+[node name="Jordans" type="StaticBody2D"]
+script = ExtResource("1_6g63x")
 object_name = "jordans"

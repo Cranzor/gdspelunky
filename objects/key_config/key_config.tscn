@@ -1,3 +1,7 @@
-[gd_scene format=3 uid="uid://d126hludklei4"]
+[gd_scene load_steps=2 format=3 uid="uid://d126hludklei4"]
 
-[node name="KeyConfig" type="Node2D"]
+[ext_resource type="Script" uid="uid://b0iyvg1fvm20m" path="res://objects/key_config/key_config.gd" id="1_8yful"]
+
+[node name="KeyConfig" type="StaticBody2D"]
+script = ExtResource("1_8yful")
+object_name = "key_config"

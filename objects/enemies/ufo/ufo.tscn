@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://j4g74q5lh3d3"]
 
-[ext_resource type="Script" uid="uid://dl0vmljn44qke" path="res://objects/enemies/ufo/ufo.gd" id="1_ajkgo"]
+[ext_resource type="Script" uid="uid://dl0vmljn44qke" path="res://objects/enemies/ufo/ufo.gd" id="1_qa7jp"]
 
-[node name="Ufo" type="Node2D"]
-script = ExtResource("1_ajkgo")
+[node name="Ufo" type="StaticBody2D"]
+script = ExtResource("1_qa7jp")
 object_name = "ufo"

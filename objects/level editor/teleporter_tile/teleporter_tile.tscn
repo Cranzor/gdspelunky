@@ -1,9 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cydb4xmtw5jxh"]
 
-[ext_resource type="Script" uid="uid://dsy5wtugjsusv" path="res://objects/level editor/teleporter_tile/teleporter_tile.gd" id="1_185ru"]
+[ext_resource type="Script" uid="uid://dsy5wtugjsusv" path="res://objects/level editor/teleporter_tile/teleporter_tile.gd" id="1_ewmu3"]
 
-[node name="TeleporterTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
-script = ExtResource("1_185ru")
-sprite_index_name = "teleporter_tile"
-animated_sprite_node = NodePath("")
+[node name="TeleporterTile" type="StaticBody2D"]
+script = ExtResource("1_ewmu3")
 object_name = "teleporter_tile"

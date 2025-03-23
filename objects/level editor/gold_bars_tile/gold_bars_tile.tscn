@@ -1,9 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cv158gvnomihx"]
 
-[ext_resource type="Script" uid="uid://dsgce5nxo1hlx" path="res://objects/level editor/gold_bars_tile/gold_bars_tile.gd" id="1_gu5d4"]
+[ext_resource type="Script" uid="uid://dsgce5nxo1hlx" path="res://objects/level editor/gold_bars_tile/gold_bars_tile.gd" id="1_g7kme"]
 
-[node name="GoldBarsTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
-script = ExtResource("1_gu5d4")
-sprite_index_name = "gold_bars_tile"
-animated_sprite_node = NodePath("")
+[node name="GoldBarsTile" type="StaticBody2D"]
+script = ExtResource("1_g7kme")
 object_name = "gold_bars_tile"

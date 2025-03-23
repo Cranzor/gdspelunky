@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://dg7leddsy5css"]
 
-[ext_resource type="Script" uid="uid://b38sqasoim81q" path="res://objects/effects/laser/laser.gd" id="1_08h5v"]
+[ext_resource type="Script" uid="uid://b38sqasoim81q" path="res://objects/effects/laser/laser.gd" id="1_ygjyg"]
 
-[node name="Laser" type="Node2D"]
-script = ExtResource("1_08h5v")
+[node name="Laser" type="StaticBody2D"]
+script = ExtResource("1_ygjyg")
 object_name = "laser"

@@ -1,10 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://c7c3ih447fd73"]
 
-[ext_resource type="Script" uid="uid://dhp3wa5yuhegf" path="res://objects/characters/tunnel_man/tunnel_man.gd" id="1_2wyg8"]
+[ext_resource type="Script" uid="uid://dhp3wa5yuhegf" path="res://objects/characters/tunnel_man/tunnel_man.gd" id="1_ae3nh"]
 
-[node name="TunnelMan" type="Node2D"]
-z_index = -100
-script = ExtResource("1_2wyg8")
-sprite_index_name = "tunnel_man_left"
-sprite_offset = Vector2(8, 8)
+[node name="TunnelMan" type="StaticBody2D"]
+script = ExtResource("1_ae3nh")
 object_name = "tunnel_man"

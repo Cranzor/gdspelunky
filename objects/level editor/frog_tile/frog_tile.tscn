@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://d2us8588ocu6a"]
 
-[ext_resource type="Script" uid="uid://0fndhq6ax5ja" path="res://objects/level editor/frog_tile/frog_tile.gd" id="1_oyb1n"]
+[ext_resource type="Script" uid="uid://0fndhq6ax5ja" path="res://objects/level editor/frog_tile/frog_tile.gd" id="1_nhnmy"]
 
-[node name="FrogTile" type="Node2D"]
-script = ExtResource("1_oyb1n")
+[node name="FrogTile" type="StaticBody2D"]
+script = ExtResource("1_nhnmy")
 object_name = "frog_tile"

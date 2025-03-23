@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cer3gn2ivf4hs"]
 
-[ext_resource type="Script" uid="uid://581xfnx7fgun" path="res://objects/level editor/test_button/test_button.gd" id="1_rvf2q"]
+[ext_resource type="Script" uid="uid://581xfnx7fgun" path="res://objects/level editor/test_button/test_button.gd" id="1_0a5q8"]
 
-[node name="TestButton" type="Node2D"]
-script = ExtResource("1_rvf2q")
+[node name="TestButton" type="StaticBody2D"]
+script = ExtResource("1_0a5q8")
+object_name = "test_button"

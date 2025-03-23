@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://nm3ucxvivp4r"]
 
-[ext_resource type="Script" uid="uid://0ta42kps5d08" path="res://objects/other/page_up/page_up.gd" id="1_oxlfd"]
+[ext_resource type="Script" uid="uid://0ta42kps5d08" path="res://objects/other/page_up/page_up.gd" id="1_01nts"]
 
-[node name="PageUp" type="Node2D"]
-script = ExtResource("1_oxlfd")
+[node name="PageUp" type="StaticBody2D"]
+script = ExtResource("1_01nts")
 object_name = "page_up"

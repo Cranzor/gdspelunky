@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://caxj5maf6bdwq"]
 
-[ext_resource type="Script" uid="uid://mrnwjc8myy7f" path="res://objects/enemies/magma_trail/magma_trail.gd" id="1_lqayc"]
+[ext_resource type="Script" uid="uid://mrnwjc8myy7f" path="res://objects/enemies/magma_trail/magma_trail.gd" id="1_ufdsd"]
 
-[node name="MagmaTrail" type="Node2D"]
-script = ExtResource("1_lqayc")
+[node name="MagmaTrail" type="StaticBody2D"]
+script = ExtResource("1_ufdsd")
 object_name = "magma_trail"

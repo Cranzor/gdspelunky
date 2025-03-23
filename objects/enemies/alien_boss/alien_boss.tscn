@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://w6kx4ue8fl8e"]
 
-[ext_resource type="Script" uid="uid://chqm41anlc8s4" path="res://objects/enemies/alien_boss/alien_boss.gd" id="1_0epbh"]
+[ext_resource type="Script" uid="uid://chqm41anlc8s4" path="res://objects/enemies/alien_boss/alien_boss.gd" id="1_hx5qe"]
 
-[node name="AlienBoss" type="Node2D"]
-script = ExtResource("1_0epbh")
+[node name="AlienBoss" type="StaticBody2D"]
+script = ExtResource("1_hx5qe")
 object_name = "alien_boss"

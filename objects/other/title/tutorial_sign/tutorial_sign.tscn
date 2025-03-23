@@ -1,9 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cs3d3feookfqs"]
 
-[ext_resource type="Script" uid="uid://fjpajte86dn1" path="res://objects/other/title/tutorial_sign/tutorial_sign.gd" id="1_8r4mc"]
+[ext_resource type="Script" uid="uid://fjpajte86dn1" path="res://objects/other/title/tutorial_sign/tutorial_sign.gd" id="1_a3yhq"]
 
-[node name="TutorialSign" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
-script = ExtResource("1_8r4mc")
-sprite_index_name = "tutorial_sign"
-animated_sprite_node = NodePath("")
+[node name="TutorialSign" type="StaticBody2D"]
+script = ExtResource("1_a3yhq")
 object_name = "tutorial_sign"

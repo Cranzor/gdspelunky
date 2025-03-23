@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://dkquihb7infbn"]
 
-[ext_resource type="Script" uid="uid://c0j8r8alerrwh" path="res://objects/blocks/tree_tile/tree_tile.gd" id="1_12wkh"]
+[ext_resource type="Script" uid="uid://c0j8r8alerrwh" path="res://objects/blocks/tree_tile/tree_tile.gd" id="1_awxcv"]
 
-[node name="TreeTile" type="Node2D"]
-script = ExtResource("1_12wkh")
+[node name="TreeTile" type="StaticBody2D"]
+script = ExtResource("1_awxcv")
 object_name = "tree_tile"

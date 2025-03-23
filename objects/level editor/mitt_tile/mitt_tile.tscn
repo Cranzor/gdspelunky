@@ -1,9 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cq7dx3fkvvree"]
 
-[ext_resource type="Script" uid="uid://5cwu3olkgqn0" path="res://objects/level editor/mitt_tile/mitt_tile.gd" id="1_pv3up"]
+[ext_resource type="Script" uid="uid://5cwu3olkgqn0" path="res://objects/level editor/mitt_tile/mitt_tile.gd" id="1_bsf30"]
 
-[node name="MittTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
-script = ExtResource("1_pv3up")
-sprite_index_name = "mitt_tile"
-animated_sprite_node = NodePath("")
+[node name="MittTile" type="StaticBody2D"]
+script = ExtResource("1_bsf30")
 object_name = "mitt_tile"

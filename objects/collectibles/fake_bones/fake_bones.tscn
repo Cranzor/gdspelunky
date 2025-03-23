@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bmh35t7pemrl2"]
 
-[ext_resource type="Script" uid="uid://cq3o82yj8idpv" path="res://objects/collectibles/fake_bones/fake_bones.gd" id="1_d85pb"]
+[ext_resource type="Script" uid="uid://cq3o82yj8idpv" path="res://objects/collectibles/fake_bones/fake_bones.gd" id="1_l7ctq"]
 
-[node name="FakeBones" type="Node2D"]
-script = ExtResource("1_d85pb")
+[node name="FakeBones" type="StaticBody2D"]
+script = ExtResource("1_l7ctq")
 object_name = "fake_bones"

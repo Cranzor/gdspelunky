@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bbktqpuifc8mh"]
 
-[ext_resource type="Script" uid="uid://3bv7mmuminh3" path="res://objects/blocks/block/block.gd" id="1_e32au"]
+[ext_resource type="Script" uid="uid://3bv7mmuminh3" path="res://objects/blocks/block/block.gd" id="1_utqe4"]
 
-[node name="Block" type="Node2D"]
-script = ExtResource("1_e32au")
+[node name="Block" type="StaticBody2D"]
+script = ExtResource("1_utqe4")
 object_name = "block"

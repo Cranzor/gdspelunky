@@ -1,8 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://dfw0l78jvgh8d"]
 
-[ext_resource type="Script" uid="uid://d0ykh0c4oylo" path="res://objects/other/title/title_bg/title_bg.gd" id="1_guo66"]
+[ext_resource type="Script" uid="uid://d0ykh0c4oylo" path="res://objects/other/title/title_bg/title_bg.gd" id="1_asgqs"]
 
-[node name="TitleBg" type="Node2D"]
-script = ExtResource("1_guo66")
-sprite_index_name = "title_bg"
+[node name="TitleBg" type="StaticBody2D"]
+script = ExtResource("1_asgqs")
 object_name = "title_bg"

@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cenfl0atfq5oa"]
 
-[ext_resource type="Script" uid="uid://d1ypy8wt5l2sl" path="res://objects/enemies/yeti/yeti.gd" id="1_mwm60"]
+[ext_resource type="Script" uid="uid://d1ypy8wt5l2sl" path="res://objects/enemies/yeti/yeti.gd" id="1_qptr0"]
 
-[node name="Yeti" type="Node2D"]
-script = ExtResource("1_mwm60")
+[node name="Yeti" type="StaticBody2D"]
+script = ExtResource("1_qptr0")
 object_name = "yeti"

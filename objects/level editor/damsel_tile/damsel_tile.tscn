@@ -1,9 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://b0kkrtj83blfp"]
 
-[ext_resource type="Script" uid="uid://cd5mofgfndh7j" path="res://objects/level editor/damsel_tile/damsel_tile.gd" id="1_17sek"]
+[ext_resource type="Script" uid="uid://cd5mofgfndh7j" path="res://objects/level editor/damsel_tile/damsel_tile.gd" id="1_pg1bj"]
 
-[node name="DamselTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
-script = ExtResource("1_17sek")
-sprite_index_name = "damsel_left_ico"
-animated_sprite_node = NodePath("")
+[node name="DamselTile" type="StaticBody2D"]
+script = ExtResource("1_pg1bj")
 object_name = "damsel_tile"

@@ -1,9 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://coxndfvre2ld2"]
 
-[ext_resource type="Script" uid="uid://cf0i5ly0wyqvw" path="res://objects/other/title/x_title/x_title.gd" id="1_j777p"]
+[ext_resource type="Script" uid="uid://cf0i5ly0wyqvw" path="res://objects/other/title/x_title/x_title.gd" id="1_om4ib"]
 
-[node name="XTitle" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
-script = ExtResource("1_j777p")
-sprite_index_name = "exit"
-animated_sprite_node = NodePath("")
+[node name="XTitle" type="StaticBody2D"]
+script = ExtResource("1_om4ib")
 object_name = "x_title"

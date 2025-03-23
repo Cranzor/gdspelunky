@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://6rlxrq2733fk"]
 
-[ext_resource type="Script" uid="uid://b5gqnfg57wbmi" path="res://objects/blocks/grave/grave.gd" id="1_pejtd"]
+[ext_resource type="Script" uid="uid://b5gqnfg57wbmi" path="res://objects/blocks/grave/grave.gd" id="1_r3tho"]
 
-[node name="Grave" type="Node2D"]
-script = ExtResource("1_pejtd")
+[node name="Grave" type="StaticBody2D"]
+script = ExtResource("1_r3tho")
 object_name = "grave"

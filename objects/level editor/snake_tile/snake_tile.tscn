@@ -1,9 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cdumcxqcbtpac"]
 
-[ext_resource type="Script" uid="uid://dwgsysmtjkj0x" path="res://objects/level editor/snake_tile/snake_tile.gd" id="1_w7hwy"]
+[ext_resource type="Script" uid="uid://dwgsysmtjkj0x" path="res://objects/level editor/snake_tile/snake_tile.gd" id="1_q8tr4"]
 
-[node name="SnakeTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
-script = ExtResource("1_w7hwy")
-sprite_index_name = "snake_left"
-animated_sprite_node = NodePath("")
+[node name="SnakeTile" type="StaticBody2D"]
+script = ExtResource("1_q8tr4")
 object_name = "snake_tile"

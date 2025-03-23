@@ -1,3 +1,7 @@
-[gd_scene format=3 uid="uid://7acu220whuyh"]
+[gd_scene load_steps=2 format=3 uid="uid://7acu220whuyh"]
 
-[node name="LevelEditor" type="Node2D"]
+[ext_resource type="Script" uid="uid://b2q2va53mdpr5" path="res://objects/level_editor/level_editor.gd" id="1_p5jdw"]
+
+[node name="LevelEditor" type="StaticBody2D"]
+script = ExtResource("1_p5jdw")
+object_name = "level_editor"

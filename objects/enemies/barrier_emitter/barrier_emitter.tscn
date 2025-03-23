@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bswknh01l04ji"]
 
-[ext_resource type="Script" uid="uid://dnnbn5cujv8g0" path="res://objects/enemies/barrier_emitter/barrier_emitter.gd" id="1_5wt6b"]
+[ext_resource type="Script" uid="uid://dnnbn5cujv8g0" path="res://objects/enemies/barrier_emitter/barrier_emitter.gd" id="1_0dgyw"]
 
-[node name="BarrierEmitter" type="Node2D"]
-script = ExtResource("1_5wt6b")
+[node name="BarrierEmitter" type="StaticBody2D"]
+script = ExtResource("1_0dgyw")
 object_name = "barrier_emitter"

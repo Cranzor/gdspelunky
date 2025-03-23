@@ -1,9 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://df4bdgergk5lo"]
 
-[ext_resource type="Script" uid="uid://bu7rqe28513x1" path="res://objects/other/intro/palm_tree/palm_tree.gd" id="1_plvli"]
+[ext_resource type="Script" uid="uid://bu7rqe28513x1" path="res://objects/other/intro/palm_tree/palm_tree.gd" id="1_k6jks"]
 
-[node name="PalmTree" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
-script = ExtResource("1_plvli")
-sprite_index_name = "palm_tree"
-animated_sprite_node = NodePath("")
+[node name="PalmTree" type="StaticBody2D"]
+script = ExtResource("1_k6jks")
 object_name = "palm_tree"

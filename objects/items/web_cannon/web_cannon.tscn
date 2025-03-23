@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://dby2a8vu8r5o7"]
 
-[ext_resource type="Script" uid="uid://bauqyxs3fd46a" path="res://objects/items/web_cannon/web_cannon.gd" id="1_snjhe"]
+[ext_resource type="Script" uid="uid://bauqyxs3fd46a" path="res://objects/items/web_cannon/web_cannon.gd" id="1_tmfej"]
 
-[node name="WebCannon" type="Node2D"]
-script = ExtResource("1_snjhe")
+[node name="WebCannon" type="StaticBody2D"]
+script = ExtResource("1_tmfej")
 object_name = "web_cannon"

@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://b0s4oc5m18vl7"]
 
-[ext_resource type="Script" uid="uid://b31hvx5hrxypr" path="res://objects/collectibles/compass/compass.gd" id="1_7m72i"]
+[ext_resource type="Script" uid="uid://b31hvx5hrxypr" path="res://objects/collectibles/compass/compass.gd" id="1_83srj"]
 
-[node name="Compass" type="Node2D"]
-script = ExtResource("1_7m72i")
+[node name="Compass" type="StaticBody2D"]
+script = ExtResource("1_83srj")
 object_name = "compass"

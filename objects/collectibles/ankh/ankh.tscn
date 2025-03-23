@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bog5s4boh70dw"]
 
-[ext_resource type="Script" uid="uid://d3cd5a7jouxyb" path="res://objects/collectibles/ankh/ankh.gd" id="1_p03gm"]
+[ext_resource type="Script" uid="uid://d3cd5a7jouxyb" path="res://objects/collectibles/ankh/ankh.gd" id="1_nbcnt"]
 
-[node name="Ankh" type="Node2D"]
-script = ExtResource("1_p03gm")
+[node name="Ankh" type="StaticBody2D"]
+script = ExtResource("1_nbcnt")
 object_name = "ankh"

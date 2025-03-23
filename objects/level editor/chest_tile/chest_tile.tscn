@@ -1,9 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://nmn3pta6csha"]
 
-[ext_resource type="Script" uid="uid://csrrw0wy663wk" path="res://objects/level editor/chest_tile/chest_tile.gd" id="1_5swc1"]
+[ext_resource type="Script" uid="uid://csrrw0wy663wk" path="res://objects/level editor/chest_tile/chest_tile.gd" id="1_gtrwf"]
 
-[node name="ChestTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
-script = ExtResource("1_5swc1")
-sprite_index_name = "chest_tile"
-animated_sprite_node = NodePath("")
+[node name="ChestTile" type="StaticBody2D"]
+script = ExtResource("1_gtrwf")
 object_name = "chest_tile"

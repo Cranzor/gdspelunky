@@ -1,9 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://boxc36fot75d7"]
 
-[ext_resource type="Script" uid="uid://dyjkegg58jbjp" path="res://objects/blocks/brick/brick.gd" id="1_wetyu"]
+[ext_resource type="Script" uid="uid://dyjkegg58jbjp" path="res://objects/blocks/brick/brick.gd" id="1_k0bbd"]
 
-[node name="Brick" type="Node2D"]
-z_index = -100
-script = ExtResource("1_wetyu")
-sprite_index_name = "brick"
+[node name="Brick" type="StaticBody2D"]
+script = ExtResource("1_k0bbd")
 object_name = "brick"

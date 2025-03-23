@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cxag275s4b0do"]
 
-[ext_resource type="Script" uid="uid://c1pyyn46i3m4v" path="res://objects/level editor/vampire_tile/vampire_tile.gd" id="1_yeoq5"]
+[ext_resource type="Script" uid="uid://c1pyyn46i3m4v" path="res://objects/level editor/vampire_tile/vampire_tile.gd" id="1_vplv4"]
 
-[node name="VampireTile" type="Node2D"]
-script = ExtResource("1_yeoq5")
+[node name="VampireTile" type="StaticBody2D"]
+script = ExtResource("1_vplv4")
 object_name = "vampire_tile"

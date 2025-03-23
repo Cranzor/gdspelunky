@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://q5536filbkf1"]
 
-[ext_resource type="Script" uid="uid://d1ycc6gor3mlh" path="res://objects/curs_obj/curs_obj.gd" id="1_v5kbq"]
+[ext_resource type="Script" uid="uid://d1ycc6gor3mlh" path="res://objects/curs_obj/curs_obj.gd" id="1_r4280"]
 
-[node name="CursObj" type="Node2D"]
-script = ExtResource("1_v5kbq")
+[node name="CursObj" type="StaticBody2D"]
+script = ExtResource("1_r4280")
 object_name = "curs_obj"

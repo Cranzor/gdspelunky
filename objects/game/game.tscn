@@ -1,11 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://3ui3v5o7nedx"]
 
-[ext_resource type="Script" uid="uid://bcg7xiosxqch" path="res://objects/game/game.gd" id="1_aosp6"]
+[ext_resource type="Script" uid="uid://bcg7xiosxqch" path="res://objects/game/game.gd" id="1_dnbg5"]
 [ext_resource type="FontFile" uid="uid://cjfa4ea02s5yi" path="res://fonts/main_font.png" id="2_jcdm3"]
 [ext_resource type="FontFile" uid="uid://dgd06bxddo4pq" path="res://fonts/small_font.png" id="3_7mteh"]
 
-[node name="Game" type="Node2D"]
-script = ExtResource("1_aosp6")
+[node name="Game" type="StaticBody2D"]
+script = ExtResource("1_dnbg5")
 object_name = "game"
 
 [node name="UI" type="Control" parent="."]

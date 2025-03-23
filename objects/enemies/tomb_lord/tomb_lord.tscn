@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://b4o8epkp0ba1h"]
 
-[ext_resource type="Script" uid="uid://bxwfpf3nluv0s" path="res://objects/enemies/tomb_lord/tomb_lord.gd" id="1_dh8ur"]
+[ext_resource type="Script" uid="uid://bxwfpf3nluv0s" path="res://objects/enemies/tomb_lord/tomb_lord.gd" id="1_l6j2s"]
 
-[node name="TombLord" type="Node2D"]
-script = ExtResource("1_dh8ur")
+[node name="TombLord" type="StaticBody2D"]
+script = ExtResource("1_l6j2s")
 object_name = "tomb_lord"

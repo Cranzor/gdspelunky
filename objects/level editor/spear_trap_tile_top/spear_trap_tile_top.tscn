@@ -1,9 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://w7c8sxrhdaun"]
 
-[ext_resource type="Script" uid="uid://du53boff041uq" path="res://objects/level editor/spear_trap_tile_top/spear_trap_tile_top.gd" id="1_3rhih"]
+[ext_resource type="Script" uid="uid://du53boff041uq" path="res://objects/level editor/spear_trap_tile_top/spear_trap_tile_top.gd" id="1_47t1l"]
 
-[node name="SpearTrapTileTop" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
-script = ExtResource("1_3rhih")
-sprite_index_name = "spear_trap1"
-animated_sprite_node = NodePath("")
+[node name="SpearTrapTileTop" type="StaticBody2D"]
+script = ExtResource("1_47t1l")
 object_name = "spear_trap_tile_top"

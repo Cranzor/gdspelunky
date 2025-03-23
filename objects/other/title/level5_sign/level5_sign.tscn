@@ -1,10 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://c40w2xu4ycwym"]
 
-[ext_resource type="Script" uid="uid://dfyfoyliutyci" path="res://objects/other/title/level5_sign/level5_sign.gd" id="1_l7rk8"]
+[ext_resource type="Script" uid="uid://dfyfoyliutyci" path="res://objects/other/title/level5_sign/level5_sign.gd" id="1_1cld2"]
 
-[node name="Level5Sign" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
-z_index = -999
-script = ExtResource("1_l7rk8")
-sprite_index_name = "level5_sign"
-animated_sprite_node = NodePath("")
+[node name="Level5Sign" type="StaticBody2D"]
+script = ExtResource("1_1cld2")
 object_name = "level5_sign"

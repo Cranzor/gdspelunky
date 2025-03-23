@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://dejj3agipt7kp"]
 
-[ext_resource type="Script" uid="uid://cj381sps6pjer" path="res://objects/enemies/enemy_sight/enemy_sight.gd" id="1_k5l8k"]
+[ext_resource type="Script" uid="uid://cj381sps6pjer" path="res://objects/enemies/enemy_sight/enemy_sight.gd" id="1_4muj8"]
 
-[node name="EnemySight" type="Node2D"]
-script = ExtResource("1_k5l8k")
+[node name="EnemySight" type="StaticBody2D"]
+script = ExtResource("1_4muj8")
 object_name = "enemy_sight"

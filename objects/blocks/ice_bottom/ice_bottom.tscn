@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://7ogapnsfdho0"]
 
-[ext_resource type="Script" uid="uid://dfsl22ngmjnno" path="res://objects/blocks/ice_bottom/ice_bottom.gd" id="1_2ag64"]
+[ext_resource type="Script" uid="uid://dfsl22ngmjnno" path="res://objects/blocks/ice_bottom/ice_bottom.gd" id="1_1eryv"]
 
-[node name="IceBottom" type="Node2D"]
-script = ExtResource("1_2ag64")
+[node name="IceBottom" type="StaticBody2D"]
+script = ExtResource("1_1eryv")
 object_name = "ice_bottom"

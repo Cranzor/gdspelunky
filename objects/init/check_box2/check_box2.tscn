@@ -1,3 +1,7 @@
-[gd_scene format=3 uid="uid://cle40i7xyr1as"]
+[gd_scene load_steps=2 format=3 uid="uid://cle40i7xyr1as"]
 
-[node name="CheckBox2" type="Node2D"]
+[ext_resource type="Script" uid="uid://bn2vwov53olpd" path="res://objects/init/check_box2/check_box2.gd" id="1_hyryd"]
+
+[node name="CheckBox2" type="StaticBody2D"]
+script = ExtResource("1_hyryd")
+object_name = "check_box2"

@@ -1,4 +1,3 @@
-
 extends GMObject
 
 
@@ -42,20 +41,20 @@ func _process(delta):
 
 
 
-    
+	
 
 #func mouse left button pressed():
 #    if (not on):
 
 #        with radibox
-    
+	
 #            on = false
 #            sprite_index = "box"
-    
+	
 
 #        on = true
 #        sprite_index = "box_marked"
-    
+	
 #        if (position.y == 24): global.screen_scale = 1
 #        elif (position.y == 32): global.screen_scale = 2
 #        elif (position.y == 40): global.screen_scale = 3

@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cd7tsvmdk7k1i"]
 
-[ext_resource type="Script" uid="uid://cefygpii5xv33" path="res://objects/other/page_down/page_down.gd" id="1_s1rwi"]
+[ext_resource type="Script" uid="uid://cefygpii5xv33" path="res://objects/other/page_down/page_down.gd" id="1_pw6kj"]
 
-[node name="PageDown" type="Node2D"]
-script = ExtResource("1_s1rwi")
+[node name="PageDown" type="StaticBody2D"]
+script = ExtResource("1_pw6kj")
 object_name = "page_down"

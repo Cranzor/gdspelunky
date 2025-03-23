@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://dd2mvsvwhym2e"]
 
-[ext_resource type="Script" uid="uid://d3vjl7nu8yd1l" path="res://objects/enemies/giant_spider/giant_spider.gd" id="1_lcknl"]
+[ext_resource type="Script" uid="uid://d3vjl7nu8yd1l" path="res://objects/enemies/giant_spider/giant_spider.gd" id="1_k3lwk"]
 
-[node name="GiantSpider" type="Node2D"]
-script = ExtResource("1_lcknl")
+[node name="GiantSpider" type="StaticBody2D"]
+script = ExtResource("1_k3lwk")
 object_name = "giant_spider"

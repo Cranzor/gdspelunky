@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://dgsyevy78feec"]
 
-[ext_resource type="Script" uid="uid://bvmg5mg3idg6b" path="res://objects/blocks/tree_branch_tile/tree_branch_tile.gd" id="1_8lb33"]
+[ext_resource type="Script" uid="uid://bvmg5mg3idg6b" path="res://objects/blocks/tree_branch_tile/tree_branch_tile.gd" id="1_wvnar"]
 
-[node name="TreeBranchTile" type="Node2D"]
-script = ExtResource("1_8lb33")
+[node name="TreeBranchTile" type="StaticBody2D"]
+script = ExtResource("1_wvnar")
 object_name = "tree_branch_tile"

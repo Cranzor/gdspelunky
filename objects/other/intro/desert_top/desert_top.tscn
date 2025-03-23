@@ -1,9 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bpib0or50oftd"]
 
-[ext_resource type="Script" uid="uid://ckwsseq6a53if" path="res://objects/other/intro/desert_top/desert_top.gd" id="1_whi8f"]
+[ext_resource type="Script" uid="uid://ckwsseq6a53if" path="res://objects/other/intro/desert_top/desert_top.gd" id="1_kvkr4"]
 
-[node name="DesertTop" type="Node2D"]
-z_index = 10
-script = ExtResource("1_whi8f")
-sprite_index_name = "desert_top"
+[node name="DesertTop" type="StaticBody2D"]
+script = ExtResource("1_kvkr4")
 object_name = "desert_top"

@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cnpm2nrekmfld"]
 
-[ext_resource type="Script" uid="uid://bg4xd6466dwfx" path="res://objects/blocks/altar_left/altar_left.gd" id="1_5eh5a"]
+[ext_resource type="Script" uid="uid://bg4xd6466dwfx" path="res://objects/blocks/altar_left/altar_left.gd" id="1_11ysq"]
 
-[node name="AltarLeft" type="Node2D"]
-script = ExtResource("1_5eh5a")
+[node name="AltarLeft" type="StaticBody2D"]
+script = ExtResource("1_11ysq")
 object_name = "altar_left"

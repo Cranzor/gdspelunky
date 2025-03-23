@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cntugcy04jbnj"]
 
-[ext_resource type="Script" uid="uid://du35ens7gcvak" path="res://objects/items/basketball/basketball.gd" id="1_1rc2t"]
+[ext_resource type="Script" uid="uid://du35ens7gcvak" path="res://objects/items/basketball/basketball.gd" id="1_m0j18"]
 
-[node name="Basketball" type="Node2D"]
-script = ExtResource("1_1rc2t")
+[node name="Basketball" type="StaticBody2D"]
+script = ExtResource("1_m0j18")
 object_name = "basketball"

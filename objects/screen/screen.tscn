@@ -1,12 +1,12 @@
 [gd_scene load_steps=5 format=3 uid="uid://dimbvflcml3em"]
 
-[ext_resource type="Script" uid="uid://co45frbaa7f0l" path="res://objects/screen/screen.gd" id="1_27kbe"]
+[ext_resource type="Script" uid="uid://co45frbaa7f0l" path="res://objects/screen/screen.gd" id="1_d8euu"]
 [ext_resource type="FontFile" uid="uid://dgd06bxddo4pq" path="res://fonts/small_font.png" id="2_nrj7p"]
 [ext_resource type="FontFile" uid="uid://cjfa4ea02s5yi" path="res://fonts/main_font.png" id="3_q6hrt"]
 [ext_resource type="Script" uid="uid://cydk63m013yg0" path="res://objects/screen/sprites.gd" id="4_pk685"]
 
 [node name="Screen" type="CanvasLayer"]
-script = ExtResource("1_27kbe")
+script = ExtResource("1_d8euu")
 
 [node name="PauseUI" type="Control" parent="."]
 z_index = 5
@@ -158,6 +158,7 @@ theme_override_colors/font_color = Color(1, 1, 0, 1)
 theme_override_fonts/font = ExtResource("2_nrj7p")
 text = "LET'S GET OUT OF HERE!"
 
-[node name="SpritesHolder" type="Node2D" parent="."]
+[node name="SpritesHolder" type="StaticBody2D" parent="."]
 script = ExtResource("4_pk685")
 object_name = "sprite"
+metadata/_custom_type_script = "uid://h5utltffv0oi"

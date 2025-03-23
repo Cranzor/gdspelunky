@@ -1,10 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://b56uhwt5w7ffm"]
 
-[ext_resource type="Script" uid="uid://dy5gegmcr1fte" path="res://objects/items/rope/rope.gd" id="1_75ulf"]
+[ext_resource type="Script" uid="uid://dy5gegmcr1fte" path="res://objects/items/rope/rope.gd" id="1_0xici"]
 
-[node name="Rope" type="Node2D"]
-z_index = -200
-script = ExtResource("1_75ulf")
-sprite_index_name = "rope"
-sprite_offset = Vector2(4, 4)
+[node name="Rope" type="StaticBody2D"]
+script = ExtResource("1_0xici")
 object_name = "rope"

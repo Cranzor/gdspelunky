@@ -1,9 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bvm5aof6fpoyv"]
 
-[ext_resource type="Script" uid="uid://ck4mmpuxa8aay" path="res://objects/other/title/new/new.gd" id="1_ba2re"]
+[ext_resource type="Script" uid="uid://ck4mmpuxa8aay" path="res://objects/other/title/new/new.gd" id="1_bfy3e"]
 
-[node name="New" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
-script = ExtResource("1_ba2re")
-sprite_index_name = "new"
-animated_sprite_node = NodePath("")
+[node name="New" type="StaticBody2D"]
+script = ExtResource("1_bfy3e")
 object_name = "new"

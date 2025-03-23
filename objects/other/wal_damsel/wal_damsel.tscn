@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://c0we0kvbuenat"]
 
-[ext_resource type="Script" uid="uid://bqux4ew1f8150" path="res://objects/other/wal_damsel/wal_damsel.gd" id="1_v7fpp"]
+[ext_resource type="Script" uid="uid://bqux4ew1f8150" path="res://objects/other/wal_damsel/wal_damsel.gd" id="1_pr4de"]
 
-[node name="WalDamsel" type="Node2D"]
-script = ExtResource("1_v7fpp")
+[node name="WalDamsel" type="StaticBody2D"]
+script = ExtResource("1_pr4de")
 object_name = "wal_damsel"

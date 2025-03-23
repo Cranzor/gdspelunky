@@ -1,9 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://ct7cog44eb7hl"]
 
-[ext_resource type="Script" uid="uid://bgptlv618hjm4" path="res://objects/level editor/spider_tile/spider_tile.gd" id="1_56fvs"]
+[ext_resource type="Script" uid="uid://bgptlv618hjm4" path="res://objects/level editor/spider_tile/spider_tile.gd" id="1_a0e2h"]
 
-[node name="SpiderTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
-script = ExtResource("1_56fvs")
-sprite_index_name = "spider_hang"
-animated_sprite_node = NodePath("")
+[node name="SpiderTile" type="StaticBody2D"]
+script = ExtResource("1_a0e2h")
 object_name = "spider_tile"

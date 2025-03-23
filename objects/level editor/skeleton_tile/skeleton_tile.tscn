@@ -1,9 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://7ixg6lsp0eqd"]
 
-[ext_resource type="Script" uid="uid://xgncxahgaj7i" path="res://objects/level editor/skeleton_tile/skeleton_tile.gd" id="1_ssj6c"]
+[ext_resource type="Script" uid="uid://xgncxahgaj7i" path="res://objects/level editor/skeleton_tile/skeleton_tile.gd" id="1_nxww4"]
 
-[node name="SkeletonTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
-script = ExtResource("1_ssj6c")
-sprite_index_name = "skeleton_left"
-animated_sprite_node = NodePath("")
+[node name="SkeletonTile" type="StaticBody2D"]
+script = ExtResource("1_nxww4")
 object_name = "skeleton_tile"

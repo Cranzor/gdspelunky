@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://c8ck60wqng207"]
 
-[ext_resource type="Script" uid="uid://c2t58xqsfehmq" path="res://objects/items/slash/slash.gd" id="1_j26vj"]
+[ext_resource type="Script" uid="uid://c2t58xqsfehmq" path="res://objects/items/slash/slash.gd" id="1_oxlie"]
 
-[node name="Slash" type="Node2D"]
-script = ExtResource("1_j26vj")
+[node name="Slash" type="StaticBody2D"]
+script = ExtResource("1_oxlie")
 object_name = "slash"

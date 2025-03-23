@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://dj3wjlx750iwt"]
 
-[ext_resource type="Script" uid="uid://dbdf1avse5dsa" path="res://objects/blocks/temple/temple.gd" id="1_2qin5"]
+[ext_resource type="Script" uid="uid://dbdf1avse5dsa" path="res://objects/blocks/temple/temple.gd" id="1_thpwd"]
 
-[node name="Temple" type="Node2D"]
-script = ExtResource("1_2qin5")
+[node name="Temple" type="StaticBody2D"]
+script = ExtResource("1_thpwd")
 object_name = "temple"

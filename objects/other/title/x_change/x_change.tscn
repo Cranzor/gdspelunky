@@ -1,9 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://dpehpp5nupeas"]
 
-[ext_resource type="Script" uid="uid://c1pyo6ixhff3r" path="res://objects/other/title/x_change/x_change.gd" id="1_s2ldt"]
+[ext_resource type="Script" uid="uid://c1pyo6ixhff3r" path="res://objects/other/title/x_change/x_change.gd" id="1_d02ym"]
 
-[node name="XChange" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
-script = ExtResource("1_s2ldt")
-sprite_index_name = "exit"
-animated_sprite_node = NodePath("")
+[node name="XChange" type="StaticBody2D"]
+script = ExtResource("1_d02ym")
 object_name = "x_change"

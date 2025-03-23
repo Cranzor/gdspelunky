@@ -1,9 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://6juwqld6dlpx"]
 
-[ext_resource type="Script" uid="uid://dki0ftw4cso5g" path="res://objects/level editor/parachute_tile/parachute_tile.gd" id="1_r3dcw"]
+[ext_resource type="Script" uid="uid://dki0ftw4cso5g" path="res://objects/level editor/parachute_tile/parachute_tile.gd" id="1_tifyd"]
 
-[node name="ParachuteTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
-script = ExtResource("1_r3dcw")
-sprite_index_name = "parachute_tile"
-animated_sprite_node = NodePath("")
+[node name="ParachuteTile" type="StaticBody2D"]
+script = ExtResource("1_tifyd")
 object_name = "parachute_tile"

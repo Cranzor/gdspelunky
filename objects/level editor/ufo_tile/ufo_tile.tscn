@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cjsiri38ch06s"]
 
-[ext_resource type="Script" uid="uid://rtoxw1t8bwcn" path="res://objects/level editor/ufo_tile/ufo_tile.gd" id="1_4yoe1"]
+[ext_resource type="Script" uid="uid://rtoxw1t8bwcn" path="res://objects/level editor/ufo_tile/ufo_tile.gd" id="1_8aylc"]
 
-[node name="UfoTile" type="Node2D"]
-script = ExtResource("1_4yoe1")
+[node name="UfoTile" type="StaticBody2D"]
+script = ExtResource("1_8aylc")
 object_name = "ufo_tile"

@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bu3vj8g7r5g0a"]
 
-[ext_resource type="Script" uid="uid://cb1ohuhcpkkhv" path="res://objects/basis/detritus/detritus.gd" id="1_jwvpx"]
+[ext_resource type="Script" uid="uid://cb1ohuhcpkkhv" path="res://objects/basis/detritus/detritus.gd" id="1_eyl2a"]
 
-[node name="Detritus" type="Node2D"]
-script = ExtResource("1_jwvpx")
+[node name="Detritus" type="StaticBody2D"]
+script = ExtResource("1_eyl2a")
 object_name = "detritus"

@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cnw7dixje4u84"]
 
-[ext_resource type="Script" uid="uid://yc7llsrmxbb5" path="res://objects/collectibles/crown/crown.gd" id="1_n2f8b"]
+[ext_resource type="Script" uid="uid://yc7llsrmxbb5" path="res://objects/collectibles/crown/crown.gd" id="1_bvorh"]
 
-[node name="Crown" type="Node2D"]
-script = ExtResource("1_n2f8b")
+[node name="Crown" type="StaticBody2D"]
+script = ExtResource("1_bvorh")
 object_name = "crown"

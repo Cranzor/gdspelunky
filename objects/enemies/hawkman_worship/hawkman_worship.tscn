@@ -1,9 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://c7yp6s3byj6be"]
 
-[ext_resource type="Script" uid="uid://b8waixowru5cx" path="res://objects/enemies/hawkman_worship/hawkman_worship.gd" id="1_igb0p"]
+[ext_resource type="Script" uid="uid://b8waixowru5cx" path="res://objects/enemies/hawkman_worship/hawkman_worship.gd" id="1_d6j6p"]
 
-[node name="HawkmanWorship" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
-script = ExtResource("1_igb0p")
-sprite_index_name = "hawk_left"
-animated_sprite_node = NodePath("")
+[node name="HawkmanWorship" type="StaticBody2D"]
+script = ExtResource("1_d6j6p")
 object_name = "hawkman_worship"

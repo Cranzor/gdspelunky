@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://w2gkce1rgclo"]
 
-[ext_resource type="Script" uid="uid://bf1j8y3lu8fak" path="res://objects/traps/spikes/spikes.gd" id="1_uioik"]
+[ext_resource type="Script" uid="uid://bf1j8y3lu8fak" path="res://objects/traps/spikes/spikes.gd" id="1_mf52a"]
 
-[node name="Spikes" type="Node2D"]
-script = ExtResource("1_uioik")
+[node name="Spikes" type="StaticBody2D"]
+script = ExtResource("1_mf52a")
 object_name = "spikes"

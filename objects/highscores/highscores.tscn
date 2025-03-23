@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bqkohht8fc1w8"]
 
-[ext_resource type="Script" uid="uid://cukjqgapdpeed" path="res://objects/highscores/highscores.gd" id="1_lx3nb"]
+[ext_resource type="Script" uid="uid://cukjqgapdpeed" path="res://objects/highscores/highscores.gd" id="1_1f1cs"]
 
-[node name="Highscores" type="Node2D"]
-script = ExtResource("1_lx3nb")
+[node name="Highscores" type="StaticBody2D"]
+script = ExtResource("1_1f1cs")
 object_name = "highscores"

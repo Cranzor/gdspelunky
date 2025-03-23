@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://c5fv0uyp86jh3"]
 
-[ext_resource type="Script" uid="uid://capeaaaixbbx" path="res://objects/moon_room/moon_room.gd" id="1_k0vtj"]
+[ext_resource type="Script" uid="uid://capeaaaixbbx" path="res://objects/moon_room/moon_room.gd" id="1_48oti"]
 
-[node name="MoonRoom" type="Node2D"]
-script = ExtResource("1_k0vtj")
+[node name="MoonRoom" type="StaticBody2D"]
+script = ExtResource("1_48oti")
 object_name = "moon_room"

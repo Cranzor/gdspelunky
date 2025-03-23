@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://tw7fgh8w1dtl"]
 
-[ext_resource type="Script" uid="uid://du4a6tmvss0d0" path="res://objects/effects/rope_burn/rope_burn.gd" id="1_s3c87"]
+[ext_resource type="Script" uid="uid://du4a6tmvss0d0" path="res://objects/effects/rope_burn/rope_burn.gd" id="1_fir7s"]
 
-[node name="RopeBurn" type="Node2D"]
-script = ExtResource("1_s3c87")
+[node name="RopeBurn" type="StaticBody2D"]
+script = ExtResource("1_fir7s")
 object_name = "rope_burn"

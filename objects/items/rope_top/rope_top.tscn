@@ -1,10 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://b0e2spw8cbuik"]
 
-[ext_resource type="Script" uid="uid://dyukt5o7vklng" path="res://objects/items/rope_top/rope_top.gd" id="1_a6mhc"]
+[ext_resource type="Script" uid="uid://dyukt5o7vklng" path="res://objects/items/rope_top/rope_top.gd" id="1_tlk1d"]
 
-[node name="RopeTop" type="Node2D"]
-z_index = -200
-script = ExtResource("1_a6mhc")
-sprite_index_name = "rope_top"
-sprite_offset = Vector2(4, 4)
+[node name="RopeTop" type="StaticBody2D"]
+script = ExtResource("1_tlk1d")
 object_name = "rope_top"

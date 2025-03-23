@@ -1,9 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bhneg1ljjksyl"]
 
-[ext_resource type="Script" uid="uid://bblvefyc5o8ly" path="res://objects/level editor/water_tile/water_tile.gd" id="1_7mt5l"]
+[ext_resource type="Script" uid="uid://bblvefyc5o8ly" path="res://objects/level editor/water_tile/water_tile.gd" id="1_nj3tk"]
 
-[node name="WaterTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
-script = ExtResource("1_7mt5l")
-sprite_index_name = "water"
-animated_sprite_node = NodePath("")
+[node name="WaterTile" type="StaticBody2D"]
+script = ExtResource("1_nj3tk")
 object_name = "water_tile"

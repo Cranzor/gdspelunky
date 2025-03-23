@@ -1,12 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://dllqpxosvn6dg"]
 
-[ext_resource type="Script" uid="uid://dw51ffyey27hk" path="res://objects/collectibles/gold_bar/gold_bar.gd" id="1_g87dv"]
+[ext_resource type="Script" uid="uid://dw51ffyey27hk" path="res://objects/collectibles/gold_bar/gold_bar.gd" id="1_gghs6"]
 
-[node name="GoldBar" type="Node2D"]
-script = ExtResource("1_g87dv")
-sprite_index_name = "gold_bar"
-sprite_offset = Vector2(4, 4)
+[node name="GoldBar" type="StaticBody2D"]
+script = ExtResource("1_gghs6")
 object_name = "gold_bar"
-editor_setup_finished = null
-depth = null
-object_size = null

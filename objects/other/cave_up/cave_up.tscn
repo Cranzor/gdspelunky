@@ -1,9 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cjermd7q563cp"]
 
-[ext_resource type="Script" uid="uid://bo8helg15evph" path="res://objects/other/cave_up/cave_up.gd" id="1_lx08b"]
+[ext_resource type="Script" uid="uid://bo8helg15evph" path="res://objects/other/cave_up/cave_up.gd" id="1_eeqvg"]
 
-[node name="CaveUp" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
-script = ExtResource("1_lx08b")
-sprite_index_name = "cave_up"
-animated_sprite_node = NodePath("")
+[node name="CaveUp" type="StaticBody2D"]
+script = ExtResource("1_eeqvg")
 object_name = "cave_up"

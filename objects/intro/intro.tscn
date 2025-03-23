@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://cmapfp1bw4euu"]
 
-[ext_resource type="Script" uid="uid://cl4ma2coogdgn" path="res://objects/intro/intro.gd" id="1_km52s"]
+[ext_resource type="Script" uid="uid://cl4ma2coogdgn" path="res://objects/intro/intro.gd" id="1_hinbn"]
 [ext_resource type="FontFile" uid="uid://dgd06bxddo4pq" path="res://fonts/small_font.png" id="2_3dbqd"]
 
-[node name="Intro" type="Node2D"]
-script = ExtResource("1_km52s")
+[node name="Intro" type="StaticBody2D"]
+script = ExtResource("1_hinbn")
 object_name = "intro"
 
 [node name="TextBackground" type="ColorRect" parent="."]

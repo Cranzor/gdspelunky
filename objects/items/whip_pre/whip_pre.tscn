@@ -1,10 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://dc162titb5s1l"]
 
-[ext_resource type="Script" uid="uid://c6obbqad5xgqh" path="res://objects/items/whip_pre/whip_pre.gd" id="1_sbivy"]
+[ext_resource type="Script" uid="uid://c6obbqad5xgqh" path="res://objects/items/whip_pre/whip_pre.gd" id="1_srf2j"]
 
-[node name="WhipPre" type="Node2D"]
-z_index = -1
-script = ExtResource("1_sbivy")
-sprite_index_name = "whip_pre_r"
-sprite_offset = Vector2(8, 8)
+[node name="WhipPre" type="StaticBody2D"]
+script = ExtResource("1_srf2j")
 object_name = "whip_pre"

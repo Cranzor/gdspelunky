@@ -1,9 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://biv6cnjcs3tsr"]
 
-[ext_resource type="Script" uid="uid://b55vnii01wsw6" path="res://objects/other/title/start_sign/start_sign.gd" id="1_q1u4d"]
+[ext_resource type="Script" uid="uid://b55vnii01wsw6" path="res://objects/other/title/start_sign/start_sign.gd" id="1_a5wop"]
 
-[node name="StartSign" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
-script = ExtResource("1_q1u4d")
-sprite_index_name = "start_sign"
-animated_sprite_node = NodePath("")
+[node name="StartSign" type="StaticBody2D"]
+script = ExtResource("1_a5wop")
 object_name = "start_sign"

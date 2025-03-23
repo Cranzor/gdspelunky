@@ -1,9 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://5nh330bgyxfm"]
 
-[ext_resource type="Script" uid="uid://bwrip0dt2nfwn" path="res://objects/level editor/ruby_big_tile/ruby_big_tile.gd" id="1_msglb"]
+[ext_resource type="Script" uid="uid://bwrip0dt2nfwn" path="res://objects/level editor/ruby_big_tile/ruby_big_tile.gd" id="1_le478"]
 
-[node name="RubyBigTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
-script = ExtResource("1_msglb")
-sprite_index_name = "ruby_big_tile"
-animated_sprite_node = NodePath("")
+[node name="RubyBigTile" type="StaticBody2D"]
+script = ExtResource("1_le478")
 object_name = "ruby_big_tile"

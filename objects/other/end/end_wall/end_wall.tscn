@@ -1,9 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://c4wym5ko5raoy"]
 
-[ext_resource type="Script" uid="uid://doos87xeqei8r" path="res://objects/other/end/end_wall/end_wall.gd" id="1_1mift"]
+[ext_resource type="Script" uid="uid://doos87xeqei8r" path="res://objects/other/end/end_wall/end_wall.gd" id="1_aujwn"]
 
-[node name="EndWall" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
-script = ExtResource("1_1mift")
-sprite_index_name = "end_wall"
-animated_sprite_node = NodePath("")
+[node name="EndWall" type="StaticBody2D"]
+script = ExtResource("1_aujwn")
 object_name = "end_wall"

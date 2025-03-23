@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://crs7gfpgfwsru"]
 
-[ext_resource type="Script" uid="uid://d3mv5asngejoc" path="res://objects/collectibles/key/key.gd" id="1_nkuib"]
+[ext_resource type="Script" uid="uid://d3mv5asngejoc" path="res://objects/collectibles/key/key.gd" id="1_d4tir"]
 
-[node name="Key" type="Node2D"]
-script = ExtResource("1_nkuib")
+[node name="Key" type="StaticBody2D"]
+script = ExtResource("1_d4tir")
 object_name = "key"

@@ -1,9 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://gy38114xxpn0"]
 
-[ext_resource type="Script" uid="uid://cmq275e8xm0su" path="res://objects/blocks/cave_bg_entrance/cave_bg_entrance.gd" id="1_asjyd"]
+[ext_resource type="Script" uid="uid://cmq275e8xm0su" path="res://objects/blocks/cave_bg_entrance/cave_bg_entrance.gd" id="1_mkm4q"]
 
-[node name="CaveBgEntrance" type="Node2D"]
-z_index = 998
-script = ExtResource("1_asjyd")
-sprite_index_name = "cave_bg_entrance"
+[node name="CaveBgEntrance" type="StaticBody2D"]
+script = ExtResource("1_mkm4q")
 object_name = "cave_bg_entrance"

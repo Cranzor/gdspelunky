@@ -1,9 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cil1x4wti8ivy"]
 
-[ext_resource type="Script" uid="uid://ul20n0lf3o42" path="res://objects/level editor/crate_tile/crate_tile.gd" id="1_sgs4k"]
+[ext_resource type="Script" uid="uid://ul20n0lf3o42" path="res://objects/level editor/crate_tile/crate_tile.gd" id="1_2ijx3"]
 
-[node name="CrateTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
-script = ExtResource("1_sgs4k")
-sprite_index_name = "crate_tile"
-animated_sprite_node = NodePath("")
+[node name="CrateTile" type="StaticBody2D"]
+script = ExtResource("1_2ijx3")
 object_name = "crate_tile"

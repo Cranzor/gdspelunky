@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bw3w3426ywpnv"]
 
-[ext_resource type="Script" uid="uid://ciyyp2yy3njbw" path="res://objects/effects/bone/bone.gd" id="1_ukxit"]
+[ext_resource type="Script" uid="uid://ciyyp2yy3njbw" path="res://objects/effects/bone/bone.gd" id="1_4o388"]
 
-[node name="Bone" type="Node2D"]
-script = ExtResource("1_ukxit")
+[node name="Bone" type="StaticBody2D"]
+script = ExtResource("1_4o388")
 object_name = "bone"

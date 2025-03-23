@@ -1,9 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bknoeu4k1fo7p"]
 
-[ext_resource type="Script" uid="uid://b42rrksvrfftp" path="res://objects/level editor/bones_tile/bones_tile.gd" id="1_sveiv"]
+[ext_resource type="Script" uid="uid://b42rrksvrfftp" path="res://objects/level editor/bones_tile/bones_tile.gd" id="1_q6g4g"]
 
-[node name="BonesTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
-script = ExtResource("1_sveiv")
-sprite_index_name = "fake_bones_left"
-animated_sprite_node = NodePath("")
+[node name="BonesTile" type="StaticBody2D"]
+script = ExtResource("1_q6g4g")
 object_name = "bones_tile"

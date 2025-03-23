@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cnry8hpc6lbdr"]
 
-[ext_resource type="Script" uid="uid://cqtln5jysou1l" path="res://objects/blocks/sac_altar_left/sac_altar_left.gd" id="1_6trsq"]
+[ext_resource type="Script" uid="uid://cqtln5jysou1l" path="res://objects/blocks/sac_altar_left/sac_altar_left.gd" id="1_27skj"]
 
-[node name="SacAltarLeft" type="Node2D"]
-script = ExtResource("1_6trsq")
+[node name="SacAltarLeft" type="StaticBody2D"]
+script = ExtResource("1_27skj")
 object_name = "sac_altar_left"

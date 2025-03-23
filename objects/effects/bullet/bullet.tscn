@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://42ef306d1f4y"]
 
-[ext_resource type="Script" uid="uid://ccixscgc5g61f" path="res://objects/effects/bullet/bullet.gd" id="1_auj6v"]
+[ext_resource type="Script" uid="uid://ccixscgc5g61f" path="res://objects/effects/bullet/bullet.gd" id="1_i37y4"]
 
-[node name="Bullet" type="Node2D"]
-script = ExtResource("1_auj6v")
+[node name="Bullet" type="StaticBody2D"]
+script = ExtResource("1_i37y4")
 object_name = "bullet"

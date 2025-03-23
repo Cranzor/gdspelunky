@@ -1,9 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://nckn3en8rtlj"]
 
-[ext_resource type="Script" uid="uid://bksi1aewhaw02" path="res://objects/other/intro/desert/desert.gd" id="1_88w6d"]
+[ext_resource type="Script" uid="uid://bksi1aewhaw02" path="res://objects/other/intro/desert/desert.gd" id="1_svagp"]
 
-[node name="Desert" type="Node2D"]
-z_index = 100
-script = ExtResource("1_88w6d")
-sprite_index_name = "desert"
+[node name="Desert" type="StaticBody2D"]
+script = ExtResource("1_svagp")
 object_name = "desert"

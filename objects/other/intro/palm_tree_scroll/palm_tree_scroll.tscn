@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cnkgt4k8y3ija"]
 
-[ext_resource type="Script" uid="uid://ct7dslryjbc00" path="res://objects/other/intro/palm_tree_scroll/palm_tree_scroll.gd" id="1_mbjlc"]
+[ext_resource type="Script" uid="uid://ct7dslryjbc00" path="res://objects/other/intro/palm_tree_scroll/palm_tree_scroll.gd" id="1_6c8d3"]
 
-[node name="PalmTreeScroll" type="Node2D"]
-script = ExtResource("1_mbjlc")
+[node name="PalmTreeScroll" type="StaticBody2D"]
+script = ExtResource("1_6c8d3")
 object_name = "palm_tree_scroll"

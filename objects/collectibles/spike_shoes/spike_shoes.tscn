@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://btnpv0blf6041"]
 
-[ext_resource type="Script" uid="uid://p8jk0sijvj0p" path="res://objects/collectibles/spike_shoes/spike_shoes.gd" id="1_0udln"]
+[ext_resource type="Script" uid="uid://p8jk0sijvj0p" path="res://objects/collectibles/spike_shoes/spike_shoes.gd" id="1_bfkwi"]
 
-[node name="SpikeShoes" type="Node2D"]
-script = ExtResource("1_0udln")
+[node name="SpikeShoes" type="StaticBody2D"]
+script = ExtResource("1_bfkwi")
 object_name = "spike_shoes"

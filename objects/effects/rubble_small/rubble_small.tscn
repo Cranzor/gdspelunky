@@ -1,10 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://b22od4hdfla4b"]
 
-[ext_resource type="Script" uid="uid://mb172hbgbijs" path="res://objects/effects/rubble_small/rubble_small.gd" id="1_hf81c"]
+[ext_resource type="Script" uid="uid://mb172hbgbijs" path="res://objects/effects/rubble_small/rubble_small.gd" id="1_10yu8"]
 
-[node name="RubbleSmall" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
-script = ExtResource("1_hf81c")
-sprite_index_name = "rubble_small"
-animated_sprite_node = NodePath("")
-sprite_offset = Vector2(4, 4)
+[node name="RubbleSmall" type="StaticBody2D"]
+script = ExtResource("1_10yu8")
 object_name = "rubble_small"

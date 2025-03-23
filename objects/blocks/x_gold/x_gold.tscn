@@ -1,9 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://dcu266l5t6wa6"]
 
-[ext_resource type="Script" uid="uid://bgem8bhl0d3ts" path="res://objects/blocks/x_gold/x_gold.gd" id="1_slq83"]
+[ext_resource type="Script" uid="uid://bgem8bhl0d3ts" path="res://objects/blocks/x_gold/x_gold.gd" id="1_de8km"]
 
-[node name="XGold" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
-script = ExtResource("1_slq83")
-sprite_index_name = "exit"
-animated_sprite_node = NodePath("")
+[node name="XGold" type="StaticBody2D"]
+script = ExtResource("1_de8km")
 object_name = "x_gold"

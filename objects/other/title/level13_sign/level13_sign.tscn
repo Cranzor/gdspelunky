@@ -1,9 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bx1mjxun7s5io"]
 
-[ext_resource type="Script" uid="uid://bu67woko3fugy" path="res://objects/other/title/level13_sign/level_13_sign.gd" id="1_fo5gv"]
+[ext_resource type="Script" uid="uid://cyousavi4q5iw" path="res://objects/other/title/level13_sign/level13_sign.gd" id="1_xifgd"]
 
-[node name="Level13Sign" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
-script = ExtResource("1_fo5gv")
-sprite_index_name = "level13_sign"
-animated_sprite_node = NodePath("")
+[node name="Level13Sign" type="StaticBody2D"]
+script = ExtResource("1_xifgd")
 object_name = "level13_sign"

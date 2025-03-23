@@ -1,9 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://dferqrf34bln3"]
 
-[ext_resource type="Script" uid="uid://vmthn7gf0qmx" path="res://objects/level editor/yeti_tile/yeti_tile.gd" id="1_louj4"]
+[ext_resource type="Script" uid="uid://vmthn7gf0qmx" path="res://objects/level editor/yeti_tile/yeti_tile.gd" id="1_k0jbr"]
 
-[node name="YetiTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
-script = ExtResource("1_louj4")
-sprite_index_name = "yeti_left"
-animated_sprite_node = NodePath("")
+[node name="YetiTile" type="StaticBody2D"]
+script = ExtResource("1_k0jbr")
 object_name = "yeti_tile"

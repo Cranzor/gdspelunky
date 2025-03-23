@@ -1,9 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://sn6tqbtc2v6h"]
 
-[ext_resource type="Script" uid="uid://mx4o1p0o3wlf" path="res://objects/other/title/x_tutorial/x_tutorial.gd" id="1_gjoy5"]
+[ext_resource type="Script" uid="uid://mx4o1p0o3wlf" path="res://objects/other/title/x_tutorial/x_tutorial.gd" id="1_7eil1"]
 
-[node name="XTutorial" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
-script = ExtResource("1_gjoy5")
-sprite_index_name = "exit"
-animated_sprite_node = NodePath("")
+[node name="XTutorial" type="StaticBody2D"]
+script = ExtResource("1_7eil1")
 object_name = "x_tutorial"

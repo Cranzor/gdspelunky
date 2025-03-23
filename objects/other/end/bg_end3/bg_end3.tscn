@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://dp6dubea6ar03"]
 
-[ext_resource type="Script" uid="uid://dx5i5kqa6m7gw" path="res://objects/other/end/bg_end3/bg_end3.gd" id="1_5jvx7"]
+[ext_resource type="Script" uid="uid://dx5i5kqa6m7gw" path="res://objects/other/end/bg_end3/bg_end3.gd" id="1_xewd3"]
 
-[node name="BgEnd3" type="Node2D"]
-script = ExtResource("1_5jvx7")
+[node name="BgEnd3" type="StaticBody2D"]
+script = ExtResource("1_xewd3")
 object_name = "bg_end3"

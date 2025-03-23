@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://136pdxpg2yts"]
 
-[ext_resource type="Script" uid="uid://c4l55nhu424kp" path="res://objects/other/end/lava_spray/lava_spray.gd" id="1_0ke1c"]
+[ext_resource type="Script" uid="uid://c4l55nhu424kp" path="res://objects/other/end/lava_spray/lava_spray.gd" id="1_5xg5q"]
 
-[node name="LavaSpray" type="Node2D"]
-script = ExtResource("1_0ke1c")
+[node name="LavaSpray" type="StaticBody2D"]
+script = ExtResource("1_5xg5q")
 object_name = "lava_spray"

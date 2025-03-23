@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://0ll8e3dclykc"]
 
-[ext_resource type="Script" uid="uid://cerojbnqk5a13" path="res://objects/other/title/bat_target/bat_target.gd" id="1_1lmk2"]
+[ext_resource type="Script" uid="uid://cerojbnqk5a13" path="res://objects/other/title/bat_target/bat_target.gd" id="1_vv8sc"]
 
-[node name="BatTarget" type="Node2D"]
-script = ExtResource("1_1lmk2")
+[node name="BatTarget" type="StaticBody2D"]
+script = ExtResource("1_vv8sc")
 object_name = "bat_target"

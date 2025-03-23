@@ -1,9 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://blbewnoqy6jwh"]
 
-[ext_resource type="Script" uid="uid://beuo50lam1a25" path="res://objects/other/end/big_chest/big_chest.gd" id="1_3fnyb"]
+[ext_resource type="Script" uid="uid://beuo50lam1a25" path="res://objects/other/end/big_chest/big_chest.gd" id="1_amph1"]
 
-[node name="BigChest" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
-script = ExtResource("1_3fnyb")
-sprite_index_name = "big_chest"
-animated_sprite_node = NodePath("")
+[node name="BigChest" type="StaticBody2D"]
+script = ExtResource("1_amph1")
 object_name = "big_chest"

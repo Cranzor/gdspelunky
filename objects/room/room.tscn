@@ -1,9 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://dd17kqxvodrlv"]
 
-[ext_resource type="Script" uid="uid://bb0ltbis7awb" path="res://objects/room/room.gd" id="1_m14id"]
+[ext_resource type="Script" uid="uid://bb0ltbis7awb" path="res://objects/room/room.gd" id="1_i8eox"]
 
-[node name="Room" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
-script = ExtResource("1_m14id")
-sprite_index_name = "room"
-animated_sprite_node = NodePath("")
+[node name="Room" type="StaticBody2D"]
+script = ExtResource("1_i8eox")
 object_name = "room"

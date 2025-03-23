@@ -1,9 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bcb8krpeqcorl"]
 
-[ext_resource type="Script" uid="uid://d172pnctxrxni" path="res://objects/level editor/machete_tile/machete_tile.gd" id="1_sle1a"]
+[ext_resource type="Script" uid="uid://d172pnctxrxni" path="res://objects/level editor/machete_tile/machete_tile.gd" id="1_wm57t"]
 
-[node name="MacheteTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
-script = ExtResource("1_sle1a")
-sprite_index_name = "machete_tile"
-animated_sprite_node = NodePath("")
+[node name="MacheteTile" type="StaticBody2D"]
+script = ExtResource("1_wm57t")
 object_name = "machete_tile"

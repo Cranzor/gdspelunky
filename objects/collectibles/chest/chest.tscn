@@ -1,9 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cajmbi8trva6o"]
 
-[ext_resource type="Script" uid="uid://b5d5h53k7cm7q" path="res://objects/collectibles/chest/chest.gd" id="1_rgiqq"]
+[ext_resource type="Script" uid="uid://b5d5h53k7cm7q" path="res://objects/collectibles/chest/chest.gd" id="1_p6m3u"]
 
-[node name="Chest" type="Node2D"]
-script = ExtResource("1_rgiqq")
-sprite_index_name = "chest"
-sprite_offset = Vector2(8, 8)
+[node name="Chest" type="StaticBody2D"]
+script = ExtResource("1_p6m3u")
 object_name = "chest"

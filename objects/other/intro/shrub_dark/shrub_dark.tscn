@@ -1,9 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://d4kioh5dhxrr1"]
 
-[ext_resource type="Script" uid="uid://7jucpjsmd7yh" path="res://objects/other/intro/shrub_dark/shrub_dark.gd" id="1_ydqq8"]
+[ext_resource type="Script" uid="uid://7jucpjsmd7yh" path="res://objects/other/intro/shrub_dark/shrub_dark.gd" id="1_vgpqk"]
 
-[node name="ShrubDark" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
-script = ExtResource("1_ydqq8")
-sprite_index_name = "shrub_dark"
-animated_sprite_node = NodePath("")
+[node name="ShrubDark" type="StaticBody2D"]
+script = ExtResource("1_vgpqk")
 object_name = "shrub_dark"

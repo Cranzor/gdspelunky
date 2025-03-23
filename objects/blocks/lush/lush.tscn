@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://d0cddnabifriw"]
 
-[ext_resource type="Script" uid="uid://chn4k5g56yfaq" path="res://objects/blocks/lush/lush.gd" id="1_bj2g3"]
+[ext_resource type="Script" uid="uid://chn4k5g56yfaq" path="res://objects/blocks/lush/lush.gd" id="1_0xr0n"]
 
-[node name="Lush" type="Node2D"]
-script = ExtResource("1_bj2g3")
+[node name="Lush" type="StaticBody2D"]
+script = ExtResource("1_0xr0n")
 object_name = "lush"

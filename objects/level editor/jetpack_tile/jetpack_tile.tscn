@@ -1,9 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://j0s83y7lm5uf"]
 
-[ext_resource type="Script" uid="uid://cyi1j7ky8gpel" path="res://objects/level editor/jetpack_tile/jetpack_tile.gd" id="1_346i5"]
+[ext_resource type="Script" uid="uid://cyi1j7ky8gpel" path="res://objects/level editor/jetpack_tile/jetpack_tile.gd" id="1_lng78"]
 
-[node name="JetpackTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
-script = ExtResource("1_346i5")
-sprite_index_name = "jetpack_tile"
-animated_sprite_node = NodePath("")
+[node name="JetpackTile" type="StaticBody2D"]
+script = ExtResource("1_lng78")
 object_name = "jetpack_tile"

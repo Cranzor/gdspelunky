@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://fftcqual31hn"]
 
-[ext_resource type="Script" uid="uid://ciq8ji1i2k224" path="res://objects/items/mattock_head/mattock_head.gd" id="1_bkeck"]
+[ext_resource type="Script" uid="uid://ciq8ji1i2k224" path="res://objects/items/mattock_head/mattock_head.gd" id="1_3dvwx"]
 
-[node name="MattockHead" type="Node2D"]
-script = ExtResource("1_bkeck")
+[node name="MattockHead" type="StaticBody2D"]
+script = ExtResource("1_3dvwx")
 object_name = "mattock_head"

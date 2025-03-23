@@ -1,9 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://b0yndb12kmp5h"]
 
-[ext_resource type="Script" uid="uid://dfq1r4sxhdv0g" path="res://objects/level editor/spectacles_tile/spectacles_tile.gd" id="1_7e5xx"]
+[ext_resource type="Script" uid="uid://dfq1r4sxhdv0g" path="res://objects/level editor/spectacles_tile/spectacles_tile.gd" id="1_h2qdp"]
 
-[node name="SpectaclesTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
-script = ExtResource("1_7e5xx")
-sprite_index_name = "spectacles_tile"
-animated_sprite_node = NodePath("")
+[node name="SpectaclesTile" type="StaticBody2D"]
+script = ExtResource("1_h2qdp")
 object_name = "spectacles_tile"

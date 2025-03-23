@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://ck7kb0ybiygm4"]
 
-[ext_resource type="Script" uid="uid://d01l37p4546p4" path="res://objects/traps/trap_block/trap_block.gd" id="1_tmifs"]
+[ext_resource type="Script" uid="uid://d01l37p4546p4" path="res://objects/traps/trap_block/trap_block.gd" id="1_wco1v"]
 
-[node name="TrapBlock" type="Node2D"]
-script = ExtResource("1_tmifs")
+[node name="TrapBlock" type="StaticBody2D"]
+script = ExtResource("1_wco1v")
 object_name = "trap_block"

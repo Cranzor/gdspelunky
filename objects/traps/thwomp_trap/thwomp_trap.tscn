@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://v88nig6la4p0"]
 
-[ext_resource type="Script" uid="uid://t185l4d6h75j" path="res://objects/traps/thwomp_trap/thwomp_trap.gd" id="1_kycmf"]
+[ext_resource type="Script" uid="uid://t185l4d6h75j" path="res://objects/traps/thwomp_trap/thwomp_trap.gd" id="1_rmaup"]
 
-[node name="ThwompTrap" type="Node2D"]
-script = ExtResource("1_kycmf")
+[node name="ThwompTrap" type="StaticBody2D"]
+script = ExtResource("1_rmaup")
 object_name = "thwomp_trap"

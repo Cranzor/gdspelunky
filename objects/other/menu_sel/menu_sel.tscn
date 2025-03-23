@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://7qltvrfh1u0m"]
 
-[ext_resource type="Script" uid="uid://cq0sh8u0h840i" path="res://objects/other/menu_sel/menu_sel.gd" id="1_0h7wj"]
+[ext_resource type="Script" uid="uid://cq0sh8u0h840i" path="res://objects/other/menu_sel/menu_sel.gd" id="1_v5as4"]
 
-[node name="MenuSel" type="Node2D"]
-script = ExtResource("1_0h7wj")
+[node name="MenuSel" type="StaticBody2D"]
+script = ExtResource("1_v5as4")
 object_name = "menu_sel"

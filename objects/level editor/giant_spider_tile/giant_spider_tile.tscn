@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://baojppbqjb27a"]
 
-[ext_resource type="Script" uid="uid://b4owklld2eyqj" path="res://objects/level editor/giant_spider_tile/giant_spider_tile.gd" id="1_wx0j0"]
+[ext_resource type="Script" uid="uid://b4owklld2eyqj" path="res://objects/level editor/giant_spider_tile/giant_spider_tile.gd" id="1_5kxpk"]
 
-[node name="GiantSpiderTile" type="Node2D"]
-script = ExtResource("1_wx0j0")
+[node name="GiantSpiderTile" type="StaticBody2D"]
+script = ExtResource("1_5kxpk")
 object_name = "giant_spider_tile"

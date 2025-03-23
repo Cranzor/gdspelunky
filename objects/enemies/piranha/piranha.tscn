@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://b2uoty8cy7ltg"]
 
-[ext_resource type="Script" uid="uid://cg5mxpkc2w6tq" path="res://objects/enemies/piranha/piranha.gd" id="1_n2v30"]
+[ext_resource type="Script" uid="uid://cg5mxpkc2w6tq" path="res://objects/enemies/piranha/piranha.gd" id="1_hmaav"]
 
-[node name="Piranha" type="Node2D"]
-script = ExtResource("1_n2v30")
+[node name="Piranha" type="StaticBody2D"]
+script = ExtResource("1_hmaav")
 object_name = "piranha"

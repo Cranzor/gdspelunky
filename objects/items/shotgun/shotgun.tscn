@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://d1enj0yr10kwc"]
 
-[ext_resource type="Script" uid="uid://djgm3s08b3pqn" path="res://objects/items/shotgun/shotgun.gd" id="1_2yrpr"]
+[ext_resource type="Script" uid="uid://djgm3s08b3pqn" path="res://objects/items/shotgun/shotgun.gd" id="1_hnl71"]
 
-[node name="Shotgun" type="Node2D"]
-script = ExtResource("1_2yrpr")
+[node name="Shotgun" type="StaticBody2D"]
+script = ExtResource("1_hnl71")
 object_name = "shotgun"

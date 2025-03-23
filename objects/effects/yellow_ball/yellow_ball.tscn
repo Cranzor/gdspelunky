@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bwho3cnlfckf8"]
 
-[ext_resource type="Script" uid="uid://cgfpoivsetk85" path="res://objects/effects/yellow_ball/yellow_ball.gd" id="1_451fl"]
+[ext_resource type="Script" uid="uid://cgfpoivsetk85" path="res://objects/effects/yellow_ball/yellow_ball.gd" id="1_lhuio"]
 
-[node name="YellowBall" type="Node2D"]
-script = ExtResource("1_451fl")
+[node name="YellowBall" type="StaticBody2D"]
+script = ExtResource("1_lhuio")
 object_name = "yellow_ball"

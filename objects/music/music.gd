@@ -1,4 +1,4 @@
-extends Node
+extends GMObject
 
 #--- audio manager adapted from here: https://kidscancode.org/godot_recipes/3.x/audio/audio_manager/
 

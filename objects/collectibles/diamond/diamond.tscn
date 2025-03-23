@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bxf7r0icrs3o3"]
 
-[ext_resource type="Script" uid="uid://corsv7wpbxu0" path="res://objects/collectibles/diamond/diamond.gd" id="1_7d1cb"]
+[ext_resource type="Script" uid="uid://corsv7wpbxu0" path="res://objects/collectibles/diamond/diamond.gd" id="1_4scjb"]
 
-[node name="Diamond" type="Node2D"]
-script = ExtResource("1_7d1cb")
+[node name="Diamond" type="StaticBody2D"]
+script = ExtResource("1_4scjb")
 object_name = "diamond"

@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://5fhibg5rxhyg"]
 
-[ext_resource type="Script" uid="uid://bo3ldwodgkdwu" path="res://objects/collectibles/spectacles/spectacles.gd" id="1_6k7i7"]
+[ext_resource type="Script" uid="uid://bo3ldwodgkdwu" path="res://objects/collectibles/spectacles/spectacles.gd" id="1_us8s4"]
 
-[node name="Spectacles" type="Node2D"]
-script = ExtResource("1_6k7i7")
+[node name="Spectacles" type="StaticBody2D"]
+script = ExtResource("1_us8s4")
 object_name = "spectacles"

@@ -1,9 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://jlo67gkaninn"]
 
-[ext_resource type="Script" uid="uid://dwycx34o24y2w" path="res://objects/other/menu_left/menu_left.gd" id="1_menco"]
+[ext_resource type="Script" uid="uid://dwycx34o24y2w" path="res://objects/other/menu_left/menu_left.gd" id="1_ofhk7"]
 
-[node name="MenuLeft" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
-script = ExtResource("1_menco")
-sprite_index_name = "menu_left"
-animated_sprite_node = NodePath("")
+[node name="MenuLeft" type="StaticBody2D"]
+script = ExtResource("1_ofhk7")
 object_name = "menu_left"

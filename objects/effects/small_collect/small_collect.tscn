@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bn412ge66g2ty"]
 
-[ext_resource type="Script" uid="uid://dibblwcttfpi2" path="res://objects/effects/small_collect/small_collect.gd" id="1_gyrwr"]
+[ext_resource type="Script" uid="uid://dibblwcttfpi2" path="res://objects/effects/small_collect/small_collect.gd" id="1_lclk1"]
 
-[node name="SmallCollect" type="Node2D"]
-script = ExtResource("1_gyrwr")
+[node name="SmallCollect" type="StaticBody2D"]
+script = ExtResource("1_lclk1")
 object_name = "small_collect"

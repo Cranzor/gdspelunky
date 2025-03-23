@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://chrvaqcstaqou"]
 
-[ext_resource type="Script" uid="uid://dvel01dx7vyyk" path="res://objects/collectibles/cape_pickup/cape_pickup.gd" id="1_we3b3"]
+[ext_resource type="Script" uid="uid://dvel01dx7vyyk" path="res://objects/collectibles/cape_pickup/cape_pickup.gd" id="1_j7udx"]
 
-[node name="CapePickup" type="Node2D"]
-script = ExtResource("1_we3b3")
+[node name="CapePickup" type="StaticBody2D"]
+script = ExtResource("1_j7udx")
 object_name = "cape_pickup"

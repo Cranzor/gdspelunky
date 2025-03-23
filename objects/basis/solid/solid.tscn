@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://csce7fyjeng8e"]
 
-[ext_resource type="Script" uid="uid://dfi6lxe8bflm6" path="res://objects/basis/solid/solid.gd" id="1_f2mu1"]
+[ext_resource type="Script" uid="uid://dfi6lxe8bflm6" path="res://objects/basis/solid/solid.gd" id="1_hmqp7"]
 
-[node name="Solid" type="Node2D"]
-script = ExtResource("1_f2mu1")
+[node name="Solid" type="StaticBody2D"]
+script = ExtResource("1_hmqp7")
 object_name = "solid"

@@ -1,9 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://dwrx8dikwi7hu"]
 
-[ext_resource type="Script" uid="uid://bmryq6y1x4mxc" path="res://objects/level editor/diamond_tile/diamond_tile.gd" id="1_k0stc"]
+[ext_resource type="Script" uid="uid://bmryq6y1x4mxc" path="res://objects/level editor/diamond_tile/diamond_tile.gd" id="1_y6l64"]
 
-[node name="DiamondTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
-script = ExtResource("1_k0stc")
-sprite_index_name = "diamond_tile"
-animated_sprite_node = NodePath("")
+[node name="DiamondTile" type="StaticBody2D"]
+script = ExtResource("1_y6l64")
 object_name = "diamond_tile"

@@ -1,8 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://dfd7rj0f01nci"]
 
-[ext_resource type="Script" uid="uid://b0nf0fawr2tdj" path="res://objects/blocks/exit/exit.gd" id="1_ctiun"]
+[ext_resource type="Script" uid="uid://b0nf0fawr2tdj" path="res://objects/blocks/exit/exit.gd" id="1_gepuy"]
 
-[node name="Exit" type="Node2D"]
-script = ExtResource("1_ctiun")
-sprite_index_name = "exit"
+[node name="Exit" type="StaticBody2D"]
+script = ExtResource("1_gepuy")
 object_name = "exit"

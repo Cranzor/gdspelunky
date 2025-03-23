@@ -1,10 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bd1b3xugpfga6"]
 
-[ext_resource type="Script" uid="uid://qjdp3fklnw8y" path="res://objects/other/intro/desert2/desert2.gd" id="1_bds77"]
+[ext_resource type="Script" uid="uid://qjdp3fklnw8y" path="res://objects/other/intro/desert2/desert2.gd" id="1_uy4ld"]
 
-[node name="Desert2" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
-z_index = 100
-script = ExtResource("1_bds77")
-sprite_index_name = "desert2"
-animated_sprite_node = NodePath("")
+[node name="Desert2" type="StaticBody2D"]
+script = ExtResource("1_uy4ld")
 object_name = "desert2"

@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://b1s2v534v78yo"]
 
-[ext_resource type="Script" uid="uid://b3lxjnllduuyh" path="res://objects/blocks/leaves/leaves.gd" id="1_3okq7"]
+[ext_resource type="Script" uid="uid://b3lxjnllduuyh" path="res://objects/blocks/leaves/leaves.gd" id="1_nn7nm"]
 
-[node name="Leaves" type="Node2D"]
-script = ExtResource("1_3okq7")
+[node name="Leaves" type="StaticBody2D"]
+script = ExtResource("1_nn7nm")
 object_name = "leaves"

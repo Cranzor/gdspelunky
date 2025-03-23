@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://d1j2iebw7ullm"]
 
-[ext_resource type="Script" uid="uid://bu2ftfan76tqy" path="res://objects/stars_room/stars_room.gd" id="1_ok00l"]
+[ext_resource type="Script" uid="uid://bu2ftfan76tqy" path="res://objects/stars_room/stars_room.gd" id="1_a2b4s"]
 
-[node name="StarsRoom" type="Node2D"]
-script = ExtResource("1_ok00l")
+[node name="StarsRoom" type="StaticBody2D"]
+script = ExtResource("1_a2b4s")
 object_name = "stars_room"

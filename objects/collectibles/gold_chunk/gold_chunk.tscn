@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://by14u7ubpr4qe"]
 
-[ext_resource type="Script" uid="uid://tbyqf8tysoik" path="res://objects/collectibles/gold_chunk/gold_chunk.gd" id="1_8schr"]
+[ext_resource type="Script" uid="uid://tbyqf8tysoik" path="res://objects/collectibles/gold_chunk/gold_chunk.gd" id="1_ov20u"]
 
-[node name="GoldChunk" type="Node2D"]
-script = ExtResource("1_8schr")
+[node name="GoldChunk" type="StaticBody2D"]
+script = ExtResource("1_ov20u")
 object_name = "gold_chunk"

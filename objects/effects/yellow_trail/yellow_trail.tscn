@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://b0idepoll13xo"]
 
-[ext_resource type="Script" uid="uid://nin5tuv08cm3" path="res://objects/effects/yellow_trail/yellow_trail.gd" id="1_v0axh"]
+[ext_resource type="Script" uid="uid://nin5tuv08cm3" path="res://objects/effects/yellow_trail/yellow_trail.gd" id="1_vpsnm"]
 
-[node name="YellowTrail" type="Node2D"]
-script = ExtResource("1_v0axh")
+[node name="YellowTrail" type="StaticBody2D"]
+script = ExtResource("1_vpsnm")
 object_name = "yellow_trail"

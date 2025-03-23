@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://d00dsfb1jl1n5"]
 
-[ext_resource type="Script" uid="uid://cpu52upb33it" path="res://objects/traps/spring_trap/spring_trap.gd" id="1_4p0an"]
+[ext_resource type="Script" uid="uid://cpu52upb33it" path="res://objects/traps/spring_trap/spring_trap.gd" id="1_5gf5u"]
 
-[node name="SpringTrap" type="Node2D"]
-script = ExtResource("1_4p0an")
+[node name="SpringTrap" type="StaticBody2D"]
+script = ExtResource("1_5gf5u")
 object_name = "spring_trap"

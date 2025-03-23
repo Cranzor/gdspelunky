@@ -1,9 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://37vfyoa0wyxb"]
 
-[ext_resource type="Script" uid="uid://bgn6ba2721wjj" path="res://objects/items/rock/rock.gd" id="1_cgns2"]
+[ext_resource type="Script" uid="uid://bgn6ba2721wjj" path="res://objects/items/rock/rock.gd" id="1_rm876"]
 
-[node name="Rock" type="Node2D"]
-script = ExtResource("1_cgns2")
-sprite_index_name = "rock"
-sprite_offset = Vector2(4, 4)
+[node name="Rock" type="StaticBody2D"]
+script = ExtResource("1_rm876")
 object_name = "rock"

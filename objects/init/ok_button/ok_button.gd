@@ -1,1 +1,1 @@
-
+extends GMObject

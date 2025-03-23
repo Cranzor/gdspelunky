@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://dw8wmuyk5p6i1"]
 
-[ext_resource type="Script" uid="uid://klch8oqg7qdb" path="res://objects/level editor/alien_boss_tile/alien_boss_tile.gd" id="1_nr300"]
+[ext_resource type="Script" uid="uid://klch8oqg7qdb" path="res://objects/level editor/alien_boss_tile/alien_boss_tile.gd" id="1_ido6c"]
 
-[node name="AlienBossTile" type="Node2D"]
-script = ExtResource("1_nr300")
+[node name="AlienBossTile" type="StaticBody2D"]
+script = ExtResource("1_ido6c")
 object_name = "alien_boss_tile"

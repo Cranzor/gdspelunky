@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bdsireklvyldb"]
 
-[ext_resource type="Script" uid="uid://djxmx1imgpuep" path="res://objects/level/level.gd" id="1_g6deh"]
+[ext_resource type="Script" uid="uid://djxmx1imgpuep" path="res://objects/level/level.gd" id="1_rc3fd"]
 
-[node name="Level" type="Node2D"]
-script = ExtResource("1_g6deh")
+[node name="Level" type="StaticBody2D"]
+script = ExtResource("1_rc3fd")
 object_name = "level"

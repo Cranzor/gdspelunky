@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://jbkbs37mr46w"]
 
-[ext_resource type="Script" uid="uid://5acuyrx1fian" path="res://objects/items/lamp_item/lamp_item.gd" id="1_xaler"]
+[ext_resource type="Script" uid="uid://5acuyrx1fian" path="res://objects/items/lamp_item/lamp_item.gd" id="1_8qya0"]
 
-[node name="LampItem" type="Node2D"]
-script = ExtResource("1_xaler")
+[node name="LampItem" type="StaticBody2D"]
+script = ExtResource("1_8qya0")
 object_name = "lamp_item"

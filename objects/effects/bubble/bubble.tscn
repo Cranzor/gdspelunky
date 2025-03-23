@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://f41uopgnkgjh"]
 
-[ext_resource type="Script" uid="uid://buiamsuthnp5p" path="res://objects/effects/bubble/bubble.gd" id="1_ahu3n"]
+[ext_resource type="Script" uid="uid://buiamsuthnp5p" path="res://objects/effects/bubble/bubble.gd" id="1_0gxgu"]
 
-[node name="Bubble" type="Node2D"]
-script = ExtResource("1_ahu3n")
+[node name="Bubble" type="StaticBody2D"]
+script = ExtResource("1_0gxgu")
 object_name = "bubble"

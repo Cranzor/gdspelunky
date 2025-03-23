@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://c5hohouemyy0n"]
 
-[ext_resource type="Script" uid="uid://dvo0bom1u8t1y" path="res://objects/basis/foreground/foreground.gd" id="1_6xn6o"]
+[ext_resource type="Script" uid="uid://dvo0bom1u8t1y" path="res://objects/basis/foreground/foreground.gd" id="1_e00mk"]
 
-[node name="Foreground" type="Node2D"]
-script = ExtResource("1_6xn6o")
+[node name="Foreground" type="StaticBody2D"]
+script = ExtResource("1_e00mk")
 object_name = "foreground"

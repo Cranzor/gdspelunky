@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://b2n6jbm6cxakc"]
 
-[ext_resource type="Script" uid="uid://dts5owjmlnklh" path="res://objects/enemies/alien/alien.gd" id="1_celok"]
+[ext_resource type="Script" uid="uid://dts5owjmlnklh" path="res://objects/enemies/alien/alien.gd" id="1_xcha5"]
 
-[node name="Alien" type="Node2D"]
-script = ExtResource("1_celok")
+[node name="Alien" type="StaticBody2D"]
+script = ExtResource("1_xcha5")
 object_name = "alien"

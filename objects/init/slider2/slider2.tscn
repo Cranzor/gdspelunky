@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://7so8nh8m2wxs"]
 
-[ext_resource type="Script" uid="uid://buhngshnxr6hg" path="res://objects/init/slider2/slider2.gd" id="1_rhjcn"]
+[ext_resource type="Script" uid="uid://buhngshnxr6hg" path="res://objects/init/slider2/slider2.gd" id="1_ri6td"]
 
-[node name="Slider2" type="Node2D"]
-script = ExtResource("1_rhjcn")
+[node name="Slider2" type="StaticBody2D"]
+script = ExtResource("1_ri6td")
 object_name = "slider2"

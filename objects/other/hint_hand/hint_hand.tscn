@@ -1,12 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://cg1p7emtoarge"]
 
-[ext_resource type="Script" uid="uid://b2abe10m28yr4" path="res://objects/other/hint_hand/hint_hand.gd" id="1_qkv0d"]
+[ext_resource type="Script" uid="uid://b2abe10m28yr4" path="res://objects/other/hint_hand/hint_hand.gd" id="1_nrls5"]
 [ext_resource type="FontFile" uid="uid://dgd06bxddo4pq" path="res://fonts/small_font.png" id="7_3r5tb"]
 
-[node name="HintHand" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
-script = ExtResource("1_qkv0d")
-sprite_index_name = "hint_point"
-animated_sprite_node = NodePath("")
+[node name="HintHand" type="StaticBody2D"]
+script = ExtResource("1_nrls5")
 object_name = "hint_hand"
 
 [node name="PressUpToEnter" type="Label" parent="."]

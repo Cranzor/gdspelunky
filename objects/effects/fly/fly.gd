@@ -42,7 +42,7 @@ func collision_with_damsel():
 
 		if (other.blood_left > 0):
 	
-			MiscScripts.scr_create_blood(other.position.x+sprite_width/2, other.position.y+sprite_height/2, 1)
+			MiscScripts.scr_create_blood(other.position.x+sprite_width/2, other.position.y+sprite_height/2, 1, self) #---[FLAG] check division
 			if (other.hp < 0): other.blood_left -= 1
 		
 
@@ -82,7 +82,7 @@ func collision_with_enemy():
 		other.hp -= 2
 		if (other.blood_left > 0):
 	
-			MiscScripts.scr_create_blood(other.position.x+sprite_width/2, other.position.y+sprite_height/2, 1)
+			MiscScripts.scr_create_blood(other.position.x+sprite_width/2, other.position.y+sprite_height/2, 1, self) #---[FLAG] check division
 			if (other.hp < 0): other.blood_left -= 1
 	
 		other.status = 98

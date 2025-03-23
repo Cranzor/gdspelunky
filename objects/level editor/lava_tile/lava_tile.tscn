@@ -1,9 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://r60kgv3fo74a"]
 
-[ext_resource type="Script" uid="uid://dn7hv1vmcovv2" path="res://objects/level editor/lava_tile/lava_tile.gd" id="1_l12bf"]
+[ext_resource type="Script" uid="uid://dn7hv1vmcovv2" path="res://objects/level editor/lava_tile/lava_tile.gd" id="1_51vup"]
 
-[node name="LavaTile" type="Node2D" node_paths=PackedStringArray("animated_sprite_node")]
-script = ExtResource("1_l12bf")
-sprite_index_name = "lava"
-animated_sprite_node = NodePath("")
+[node name="LavaTile" type="StaticBody2D"]
+script = ExtResource("1_51vup")
 object_name = "lava_tile"

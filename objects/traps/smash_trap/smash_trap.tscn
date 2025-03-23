@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cu4y8008n16l1"]
 
-[ext_resource type="Script" uid="uid://dqr608wv378y" path="res://objects/traps/smash_trap/smash_trap.gd" id="1_r3ca5"]
+[ext_resource type="Script" uid="uid://dqr608wv378y" path="res://objects/traps/smash_trap/smash_trap.gd" id="1_xilu7"]
 
-[node name="SmashTrap" type="Node2D"]
-script = ExtResource("1_r3ca5")
+[node name="SmashTrap" type="StaticBody2D"]
+script = ExtResource("1_xilu7")
 object_name = "smash_trap"

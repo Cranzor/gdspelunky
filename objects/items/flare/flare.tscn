@@ -1,10 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bv00yotvshpk4"]
 
-[ext_resource type="Script" uid="uid://bb0apgctkmsvw" path="res://objects/items/flare/flare.gd" id="1_xxbaf"]
+[ext_resource type="Script" uid="uid://bb0apgctkmsvw" path="res://objects/items/flare/flare.gd" id="1_kgxyb"]
 
-[node name="Flare" type="Node2D"]
-z_index = -30
-script = ExtResource("1_xxbaf")
-sprite_index_name = "flare"
-sprite_offset = Vector2(4, 4)
+[node name="Flare" type="StaticBody2D"]
+script = ExtResource("1_kgxyb")
 object_name = "flare"

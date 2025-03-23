@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://crgeff13p53lj"]
 
-[ext_resource type="Script" uid="uid://da48oct4v4nju" path="res://objects/gamepad/gamepad.gd" id="1_kv2fu"]
+[ext_resource type="Script" uid="uid://da48oct4v4nju" path="res://objects/gamepad/gamepad.gd" id="1_laopm"]
 
-[node name="Gamepad" type="Node2D"]
-script = ExtResource("1_kv2fu")
+[node name="Gamepad" type="StaticBody2D"]
+script = ExtResource("1_laopm")
 object_name = "gamepad"
