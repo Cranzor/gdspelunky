@@ -21,3 +21,8 @@ func _on_animation_changed() -> void:
 		collision_position -= sprite_entry["origin"]
 		$Area2D/CollisionShape2D.shape.size = collision_size
 		$Area2D/CollisionShape2D.position = collision_position
+		
+		var parent = get_parent().get_parent()
+		if parent.get_node("CollisionShape2D"):
+			parent.get_node("CollisionShape2D").shape.size = collision_size
+			parent.get_node("CollisionShape2D").position = collision_position

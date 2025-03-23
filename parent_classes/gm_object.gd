@@ -390,6 +390,8 @@ func object_setup():
 	get_collision_grid_position()
 	last_collision_check_position = position
 	
+	collision_shape_setup()
+	
 func run_create_function(obj):
 	if obj.has_method("create"):
 		obj.create()
@@ -589,9 +591,14 @@ func collision_with_setup(object_entry):
 			var collision_with_function = Callable(self, function)
 			collision_with[object] = collision_with_function
 
+func collision_shape_setup(): #--- used to set up collision shape for each object. should eventually replace Area2D with this and switch to body collisions instead of area
+	var collision_copy = animated_sprite_node.get_node("Area2D/CollisionShape2D").duplicate()
+	collision_copy.transform = transform
+	add_child(collision_copy)
+
 func run_alarm_events(obj):
 	var alarms = [alarm_0_countdown, alarm_1_countdown, alarm_2_countdown, alarm_3_countdown, alarm_4_countdown, alarm_5_countdown,
-				alarm_6_countdown, alarm_7_countdown, alarm_8_countdown, alarm_9_countdown, alarm_10_countdown, alarm_11_countdown]
+		alarm_6_countdown, alarm_7_countdown, alarm_8_countdown, alarm_9_countdown, alarm_10_countdown, alarm_11_countdown]
 	
 	for alarm: Alarm in alarms:
 		if alarm != null:
@@ -621,14 +628,35 @@ func run_draw_event(obj):
 func run_collision_with(obj: GMObject):
 	if not obj.is_queued_for_deletion():
 		for object in collision_with:
-			if object_name == "yeti":
-				if object == "character":
-					print("hi")
-			#--- fixed an issue here in which object_size by itself was used. for collision_rectangle, object size + position must be passed in
-			other = gml.instance_place(position.x, position.y, object, obj)
+			var checked: bool = false
+			var collision_owner_ids: Dictionary
+			
+			while not checked:
+				var collision: KinematicCollision2D = move_and_collide(Vector2(0, 0), true, 0)
+				if collision != null:
+					var collider: StaticBody2D = collision.get_collider()
+					var groups = collider.get_groups()
+					if object in groups:
+						if object_name == "yeti":
+							if object == "character":
+								print("found")
+						other = collider
+						break
+					var owner: int = collider.get_shape_owners()[0]
+					collider.shape_owner_set_disabled(owner, true)
+					collision_owner_ids[collider] = owner
+				else:
+					other = null
+					checked = true
+					
+			for collider: StaticBody2D in collision_owner_ids:
+				var owner: int = collision_owner_ids[collider]
+				collider.shape_owner_set_disabled(owner, false)
+
 			if other:
 				var callable = collision_with[object]
 				callable.call()
+
 
 func run_animation_end(obj):
 	if obj.has_method("animation_end"):
