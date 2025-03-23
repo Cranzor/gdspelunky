@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bikhjyty6jnfv" path="res://sprites/blocks/mines/brick_gold/brick_gold_0.png" id="8_m2svd"]
 [ext_resource type="Texture2D" uid="uid://ermhxd0l34ik" path="res://sprites/blocks/mines/brick_gold_big/brick_gold_big_0.png" id="9_yobrk"]
 [ext_resource type="Texture2D" uid="uid://cc80ffrvkibcp" path="res://sprites/enemies/yeti/yeti_left/yeti_left_0.png" id="10_yobrk"]
+[ext_resource type="PackedScene" uid="uid://dpik07grwpaj" path="res://scenes/collision/collision_shapecast.tscn" id="11_8p7qe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wfkkk"]
 size = Vector2(16, 16)
@@ -20,22 +21,20 @@ size = Vector2(11, 15)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v07bj"]
 size = Vector2(16, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6skb8"]
-size = Vector2(2170.9, 15.9)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m2svd"]
 size = Vector2(14, 12)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h0khy"]
 size = Vector2(14, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yobrk"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ebssq"]
 size = Vector2(16, 16)
 
-[node name="CollisionVisualization" type="Node2D"]
+[node name="CollisionVisualization" type="Node"]
 script = ExtResource("1_6si4h")
 
 [node name="Brick0" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(240, 96)
 texture = ExtResource("1_6bprr")
 centered = false
@@ -47,6 +46,7 @@ position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_wfkkk")
 
 [node name="SnakeWalkL0" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(256, 112)
 texture = ExtResource("2_v07bj")
 centered = false
@@ -58,11 +58,8 @@ target_position = Vector2(0, 0)
 collide_with_areas = true
 collide_with_bodies = false
 
-[node name="RayCast2D" type="RayCast2D" parent="."]
-position = Vector2(176, 176)
-target_position = Vector2(159.9, 159.9)
-
 [node name="StandLeft0" type="Sprite2D" parent="." groups=["test_rotation"]]
+visible = false
 position = Vector2(80, 176)
 texture = ExtResource("3_v07bj")
 centered = false
@@ -72,19 +69,15 @@ centered = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StandLeft0/Area2D"]
 shape = SubResource("RectangleShape2D_v07bj")
 
-[node name="ShapeCast2D" type="ShapeCast2D" parent="."]
-position = Vector2(1500.5, 328)
-shape = SubResource("RectangleShape2D_6skb8")
-target_position = Vector2(0, 0)
-
 [node name="Node2D" type="Node2D" parent="."]
+visible = false
 
 [node name="ArrowTrapLeft0" type="Sprite2D" parent="Node2D"]
 texture = ExtResource("4_wfkkk")
 centered = false
 
 [node name="SnakeWalkL1" type="Sprite2D" parent="."]
-position = Vector2(60, 464)
+position = Vector2(251, 217)
 texture = ExtResource("7_clsns")
 centered = false
 flip_h = true
@@ -95,8 +88,8 @@ flip_h = true
 position = Vector2(8, 10)
 shape = SubResource("RectangleShape2D_m2svd")
 
-[node name="JumpLeft0" type="Sprite2D" parent="."]
-position = Vector2(600, 174)
+[node name="JumpLeft0" type="Sprite2D" parent="." groups=["collision_testing_node"]]
+position = Vector2(162, 232)
 texture = ExtResource("6_h0khy")
 centered = false
 offset = Vector2(-8, -8)
@@ -107,51 +100,64 @@ offset = Vector2(-8, -8)
 shape = SubResource("RectangleShape2D_h0khy")
 
 [node name="Brick1" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(60, 360)
 texture = ExtResource("1_6bprr")
 centered = false
 
 [node name="Brick2" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(44, 360)
 texture = ExtResource("1_6bprr")
 centered = false
 
 [node name="Brick3" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(28, 360)
 texture = ExtResource("1_6bprr")
 centered = false
 
 [node name="Brick4" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(60, 360)
 texture = ExtResource("1_6bprr")
 centered = false
 
 [node name="Brick5" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(28, 280)
 texture = ExtResource("1_6bprr")
 centered = false
 
 [node name="BrickGold0" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(36, 352)
 texture = ExtResource("8_m2svd")
 
 [node name="BrickGold1" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(36, 336)
 texture = ExtResource("8_m2svd")
 
 [node name="BrickGoldBig0" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(36, 320)
 texture = ExtResource("9_yobrk")
 
 [node name="BrickGoldBig1" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(36, 304)
 texture = ExtResource("9_yobrk")
 
 [node name="YetiLeft0" type="Sprite2D" parent="."]
-position = Vector2(25, 192)
+position = Vector2(154, 224)
 texture = ExtResource("10_yobrk")
+centered = false
 
-[node name="ShapeCast2D2" type="ShapeCast2D" parent="."]
-position = Vector2(589, 176)
-shape = SubResource("RectangleShape2D_yobrk")
-target_position = Vector2(0, 0)
+[node name="Area2D" type="Area2D" parent="YetiLeft0"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YetiLeft0/Area2D"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_ebssq")
+
+[node name="CollisionShapecast" parent="." instance=ExtResource("11_8p7qe")]

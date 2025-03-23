@@ -55,16 +55,16 @@ func _input(event: InputEvent) -> void:
 		#test.rotation_degrees = 180
 		#print(test)
 		
-		#global.plife += 1
-		if !event.is_echo():
-			var player1 = gml.get_instance("player1")
-			gml.instance_create(player1.position.x - 32, player1.position.y - 10, Objects.yeti)
+		global.plife += 1
+		#if !event.is_echo():
+			#var player1 = gml.get_instance("player1")
+			#gml.instance_create(player1.position.x - 32, player1.position.y - 10, Objects.yeti)
 	
 	if Input.is_action_just_pressed("debug2"):
 		#var circle = CircleDraw.get_circle_texture(gml.view_xview, gml.view_yview, 96)
 		#$Sprite2D.texture = circle
-		#var circle = gml.get_instance("player1").get_node("Circle")
-		#circle.texture = CircleDraw.create_bresenham_circle(96)
+		var circle = gml.get_instance("player1").get_node("Circle")
+		circle.texture = CircleDraw.create_bresenham_circle(96)
 		
 		var player1 = gml.get_instance("player1")
 		gml.instance_create(player1.position.x - 32, player1.position.y - 10, Objects.yeti)
