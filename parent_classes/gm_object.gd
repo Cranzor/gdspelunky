@@ -1,5 +1,5 @@
 @icon("res://sprites/blocks/shop/sign_rare/sign_rare_0.png")
-extends Node2D
+extends StaticBody2D
 class_name GMObject
 
 var object_database = ObjectDatabase.new()

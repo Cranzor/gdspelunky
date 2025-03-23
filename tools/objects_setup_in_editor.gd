@@ -9,7 +9,7 @@ var all_object_paths = []
 
 func _run() -> void:
 	#objects_reset()
-	pass
+	change_node_type_to_gm_object()
 	
 func objects_setup():
 	get_all_object_paths()
@@ -207,6 +207,38 @@ func alarms_setup(object_entry, node):
 			new_alarm.name = event.to_pascal_case()
 			alarms_holder.add_child(new_alarm)
 			new_alarm.owner = node
+
+func change_node_type_to_gm_object():
+	get_all_object_paths()
+	
+	var test_path = ["res://objects/bricks/bricks.tscn"]
+	
+	for path in all_object_paths:
+		var original_node = ResourceLoader.load(path, "", 0)
+		original_node = original_node.instantiate()
+		
+		var new_node = GMObject.new()
+		new_node.name = original_node.name
+		original_node.replace_by(new_node)
+		var name_in_snake_case = new_node.name.to_snake_case()
+		new_node.object_name = delete_underscore_number_combination(name_in_snake_case)
+
+		var scene = PackedScene.new()
+		var result = scene.pack(new_node)
+		if result == OK:
+			print("saved")
+			ResourceSaver.save(scene, path)
+		print(path + ": Done")
+
+func delete_underscore_number_combination(passed_string):
+	var regex: RegEx = RegEx.new()
+	regex.compile("_(\\d)")
+	var search = regex.search(passed_string)
+	if search:
+		var new_string = regex.sub(passed_string, search.get_string(1))
+		return new_string
+	else:
+		return passed_string
 
 func get_all_object_paths():
 	var objects_script = "res://objects.gd"

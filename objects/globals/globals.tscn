@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://qwotdqelr7ot" path="res://objects/globals/globals.gd" id="1_btbma"]
 
-[node name="Globals" type="Node2D"]
+[node name="Globals" type="StaticBody2D"]
 script = ExtResource("1_btbma")
 object_name = "globals"
+metadata/_custom_type_script = "uid://h5utltffv0oi"

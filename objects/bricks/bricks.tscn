@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://b0uyw0gvr57yu"]
 
-[ext_resource type="Script" uid="uid://chor8e726gn2g" path="res://objects/bricks/bricks.gd" id="1_55g5b"]
+[ext_resource type="Script" uid="uid://h5utltffv0oi" path="res://parent_classes/gm_object.gd" id="1_vg6fu"]
 
-[node name="Bricks" type="Node2D"]
-script = ExtResource("1_55g5b")
+[node name="Bricks" type="StaticBody2D"]
+script = ExtResource("1_vg6fu")
 object_name = "bricks"
