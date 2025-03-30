@@ -592,9 +592,13 @@ func collision_with_setup(object_entry):
 			collision_with[object] = collision_with_function
 
 func collision_shape_setup(): #--- used to set up collision shape for each object. should eventually replace Area2D with this and switch to body collisions instead of area
-	var collision_copy = animated_sprite_node.get_node("Area2D/CollisionShape2D").duplicate()
-	collision_copy.transform = transform
-	add_child(collision_copy)
+	var collision_copy = animated_sprite_node.get_node("Area2D/CollisionShape2D")
+	var collision_copy_transform = collision_copy.transform
+	var collision_copy_shape = collision_copy.get_shape()
+	var new_collision_shape = CollisionShape2D.new()
+	new_collision_shape.transform = collision_copy_transform
+	new_collision_shape.set_shape(collision_copy_shape)
+	add_child(new_collision_shape)
 
 func run_alarm_events(obj):
 	var alarms = [alarm_0_countdown, alarm_1_countdown, alarm_2_countdown, alarm_3_countdown, alarm_4_countdown, alarm_5_countdown,
