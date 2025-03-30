@@ -404,6 +404,8 @@ func groups_setup(object_entry):
 			print('huh')
 		if !is_in_group(group):
 			add_to_group(group)
+	
+	add_to_group("gm_object")
 
 func depth_setup(object_entry):
 	var object_depth = object_entry["depth"]
@@ -544,14 +546,15 @@ var smooth_motion = SmoothMotion.new()
 func object_tick():
 	#smooth_motion.tick_start(position, animated_sprite_node)
 
-	run_alarm_events(self)
-	run_step_event(self)
-	run_collision_with(self)
-	run_draw_event(self)
-	run_animation_end(self)
-	run_speed_position_update(self)
+	#run_alarm_events()
+	#run_step_event(self)
+	#run_collision_with()
+	#run_draw_event(self)
+	#run_animation_end()
+	#run_speed_position_update()
 
 	#smooth_motion.tick_end(position, animated_sprite_node)
+	pass
 
 func alarms_setup(object_entry):
 	var events: Array = object_entry["events"]
@@ -599,7 +602,7 @@ func collision_shape_setup(): #--- used to set up collision shape for each objec
 	collision_shape.set_shape(rectangle_shape)
 	add_child(collision_shape)
 
-func run_alarm_events(obj):
+func run_alarm_events():
 	var alarms = [alarm_0_countdown, alarm_1_countdown, alarm_2_countdown, alarm_3_countdown, alarm_4_countdown, alarm_5_countdown,
 		alarm_6_countdown, alarm_7_countdown, alarm_8_countdown, alarm_9_countdown, alarm_10_countdown, alarm_11_countdown]
 	
@@ -610,14 +613,15 @@ func run_alarm_events(obj):
 				alarm.emit_signal("timeout")
 
 func run_step_event(obj):
-	if obj.has_method("step"):
+	if self.has_method("step"):
 		obj.step()
 
-func run_draw_event(obj):
+func run_draw_event():
 	#--- draw event overrides the default sprite trying, so draw_object is set to false
-	if obj.has_method("draw"):
+	if has_method("draw"):
 		draw_object = false
-		obj.draw()
+		var callable = Callable(self, "draw")
+		callable.call()
 	else:
 		draw_object = true
 	
@@ -628,8 +632,8 @@ func run_draw_event(obj):
 		else:
 			animated_sprite_node.sprite_displayed = true
 	
-func run_collision_with(obj: GMObject):
-	if not obj.is_queued_for_deletion():
+func run_collision_with():
+	if not is_queued_for_deletion():
 		for object in collision_with:
 			var checked: bool = false
 			var collision_owner_ids: Dictionary
@@ -661,16 +665,17 @@ func run_collision_with(obj: GMObject):
 				callable.call()
 
 
-func run_animation_end(obj):
-	if obj.has_method("animation_end"):
+func run_animation_end():
+	if has_method("animation_end"):
 		var animated_sprite = get_animated_sprite_2d()
 		var animation = animated_sprite.animation
 		var sprite_frames = animated_sprite.sprite_frames
 		var amount_of_frames = sprite_frames.get_frame_count(animation)
 		if image_index + 1 == amount_of_frames:
-			obj.animation_end()
+			var callable = Callable(self, "animation_end")
+			callable.call()
 
-func run_speed_position_update(obj): #--- original engine runs speed * direction on objects to make them move. only is used for caveman, hawkman, and yeti in Spelunky
+func run_speed_position_update(): #--- original engine runs speed * direction on objects to make them move. only is used for caveman, hawkman, and yeti in Spelunky
 	#--- only for enemy_sight, so we can make some assumptions with how speed and direction work with one another
 	if speed != 0:
 		if direction == 0: #--- 0 indicating movement to the right

@@ -416,7 +416,7 @@ func step():
 					
 						gml.instance_create(obj.position.x+8, obj.position.y+8, Objects.explosion)
 						Audio.play_sound(global.snd_explosion)
-						if (randi_range(1,3) == 1): gml.instance_create(obj.position.x+8, obj.position.y+8, "alien_eject")
+						if (randi_range(1,3) == 1): gml.instance_create(obj.position.x+8, obj.position.y+8, Objects.alien_eject)
 						if (InLevel.is_real_level()): global.enemy_kills[16] += 1
 						global.ufos += 1
 						global.kills += 1

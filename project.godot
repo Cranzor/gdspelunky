@@ -36,6 +36,7 @@ Objects="*res://objects.gd"
 GlobalInput="*res://global_input.gd"
 LevelGeneration="*res://level_generation.gd"
 CircleDraw="*res://resources/circle_draw.gd"
+GmLoop="*res://resources/gm_loop.gd"
 
 [display]
 
