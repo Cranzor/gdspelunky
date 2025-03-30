@@ -7,5 +7,3 @@ size = Vector2(0, 0)
 enabled = false
 shape = SubResource("RectangleShape2D_0pwbi")
 target_position = Vector2(0, 0)
-collide_with_areas = true
-collide_with_bodies = false

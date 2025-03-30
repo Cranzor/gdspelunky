@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dicegcuj450ms"]
+[gd_scene load_steps=3 format=3 uid="uid://dicegcuj450ms"]
 
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="1_wjvgk"]
 
@@ -11,19 +11,10 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7pdo1"]
-resource_local_to_scene = true
-size = Vector2(0, 0)
-
 [node name="Sprite" type="AnimatedSprite2D" groups=["animated_sprite"]]
 z_as_relative = false
 sprite_frames = SubResource("SpriteFrames_f4ket")
 centered = false
 script = ExtResource("1_wjvgk")
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_7pdo1")
 
 [connection signal="animation_changed" from="." to="." method="_on_animation_changed"]

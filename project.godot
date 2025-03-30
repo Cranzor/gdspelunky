@@ -13,7 +13,6 @@ config_version=5
 config/name="Spelunky Port"
 run/main_scene="uid://du8oll4nckuyd"
 config/features=PackedStringArray("4.4", "Forward Plus")
-run/max_fps=30
 config/icon="uid://dc4sg8xk0ur2i"
 
 [autoload]

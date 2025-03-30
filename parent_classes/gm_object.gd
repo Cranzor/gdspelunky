@@ -355,15 +355,17 @@ func handle_smooth_motion_values():
 
 #--------
 func object_setup():
+	disable_mode = CollisionObject2D.DISABLE_MODE_KEEP_ACTIVE
 	var object_database = object_database.object_database
 	var object_entry = object_database[object_name]
 	var parent = object_entry["parent"]
+	collision_shape_setup()
 	
 	groups_setup(object_entry)
 	depth_setup(object_entry)
 	sprite_setup(object_entry)
 	bounding_box_setup()
-	collision_layers_setup()
+	#collision_layers_setup()
 	##collision_setup()
 	alarms_setup(object_entry)
 	if parent != null:
@@ -389,8 +391,6 @@ func object_setup():
 	
 	get_collision_grid_position()
 	last_collision_check_position = position
-	
-	collision_shape_setup()
 	
 func run_create_function(obj):
 	if obj.has_method("create"):
@@ -486,7 +486,7 @@ func sprite_setup(object_entry):
 				collision_size = sprite_entry["mask"]["collision_rectangles"][1]
 				collision_position = collision_size / 2 + sprite_entry["mask"]["collision_rectangles"][0]
 				collision_position -= sprite_entry["origin"]
-				var collision_shape = new_animated_sprite.get_node("Area2D/CollisionShape2D")
+				var collision_shape = get_node("CollisionShape2D")
 				collision_shape.shape.size = collision_size
 				collision_shape.position = collision_position
 				
@@ -494,7 +494,7 @@ func sprite_setup(object_entry):
 				collision_size = sprite_entry["mask"]["bounding_box"][1]
 				collision_position = collision_size / 2 + sprite_entry["mask"]["bounding_box"][0]
 				collision_position -= sprite_entry["origin"]
-				var collision_shape = new_animated_sprite.get_node("Area2D/CollisionShape2D")
+				var collision_shape = get_node("CollisionShape2D")
 				collision_shape.shape.size = collision_size
 				collision_shape.position = collision_position
 				
@@ -592,13 +592,12 @@ func collision_with_setup(object_entry):
 			collision_with[object] = collision_with_function
 
 func collision_shape_setup(): #--- used to set up collision shape for each object. should eventually replace Area2D with this and switch to body collisions instead of area
-	var collision_copy = animated_sprite_node.get_node("Area2D/CollisionShape2D")
-	var collision_copy_transform = collision_copy.transform
-	var collision_copy_shape = collision_copy.get_shape()
-	var new_collision_shape = CollisionShape2D.new()
-	new_collision_shape.transform = collision_copy_transform
-	new_collision_shape.set_shape(collision_copy_shape)
-	add_child(new_collision_shape)
+	var collision_shape: CollisionShape2D = CollisionShape2D.new()
+	collision_shape.name = "CollisionShape2D"
+	var rectangle_shape: RectangleShape2D = RectangleShape2D.new()
+	rectangle_shape.size = Vector2(0, 0)
+	collision_shape.set_shape(rectangle_shape)
+	add_child(collision_shape)
 
 func run_alarm_events(obj):
 	var alarms = [alarm_0_countdown, alarm_1_countdown, alarm_2_countdown, alarm_3_countdown, alarm_4_countdown, alarm_5_countdown,

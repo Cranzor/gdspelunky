@@ -233,7 +233,7 @@ func point_direction(x1, y1, x2, y2): #---[FLAG] may need to adjust angle to be 
 func instance_place(x,y,obj: String, comparison_object: GMObject): #' Returns the id of the instance of type obj met when the current instance is placed at position (x,y). obj can be an object or the keyword all. If it does not exist, the special object noone is returned.'
 	var sprite: AnimatedSprite2D = comparison_object.get_node("Sprites/MainAnimations")
 	var offset = sprite.offset
-	var collision_shape: CollisionShape2D = comparison_object.get_node("Sprites/MainAnimations/Area2D/CollisionShape2D")
+	var collision_shape: CollisionShape2D = comparison_object.get_node("CollisionShape2D")
 	var comparison_object_collision_shape_size = collision_shape.shape.get_rect().size
 	var position_with_offset = Vector2(x + offset.x, y + offset.y)
 	var size_with_scale: Vector2 = Vector2(position_with_offset.x + comparison_object_collision_shape_size.x, position_with_offset.y + comparison_object_collision_shape_size.y)
@@ -253,8 +253,8 @@ func instance_destroy(obj: GMObject): #'Destroys current instance' ---  Should p
 	if obj.has_method("destroy"):
 		obj.destroy()
 	
-	var area_2d: Area2D = obj.get_node("Sprites/MainAnimations/Area2D")
-	area_2d.set_collision_layer_value(1, false)
+	#var area_2d: Area2D = obj.get_node("Sprites/MainAnimations/Area2D") #---[FLAG] should do this for main object
+	#area_2d.set_collision_layer_value(1, false)
 	obj.hide()
 	obj.queue_free()
 
@@ -595,12 +595,11 @@ func handle_collision_ray(x1, y1, x2, y2, obj):
 	collision_ray.force_raycast_update()
 	while collision_ray.is_colliding():
 		collision_ray.force_update_transform()
-		var area = collision_ray.get_collider()
-		var object_node = area.get_parent().get_parent().get_parent()
+		var object_node = collision_ray.get_collider()
 		var groups = object_node.get_groups()
 		if obj in groups:
 			possible.append(object_node)
-		collision_ray.add_exception(area)
+		collision_ray.add_exception(object_node)
 		collision_ray.force_raycast_update()
 	collision_ray.enabled = false
 
@@ -621,12 +620,11 @@ func handle_collision_shapecast(x1, y1, x2, y2, obj):
 	shapecast.enabled = true
 	shapecast.force_shapecast_update()
 	while shapecast.is_colliding():
-		var area = shapecast.get_collider(0)
-		var object_node = area.get_parent().get_parent().get_parent()
+		var object_node = shapecast.get_collider(0)
 		var groups = object_node.get_groups()
 		if obj in groups:
 			possible.append(object_node)
-		shapecast.add_exception(area)
+		shapecast.add_exception(object_node)
 		shapecast.force_shapecast_update()
 	shapecast.enabled = false
 	
