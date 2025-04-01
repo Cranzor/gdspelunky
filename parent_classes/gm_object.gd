@@ -378,6 +378,8 @@ func object_setup():
 	camera_setup()
 	run_create_function(self)
 	
+	move_child($CollisionShape2D, -1)
+	
 	#--- for flare_spark
 	if has_method("_on_animated_sprite_2d_frame_changed"):
 		var callable = Callable(self, "_on_animated_sprite_2d_frame_changed")
