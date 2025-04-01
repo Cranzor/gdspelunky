@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfa0d2vsvtr0e"]
+
+[ext_resource type="PackedScene" uid="uid://b8g70geq8alqq" path="res://scenes/room.tscn" id="1_6ydtw"]
+
+[node name="Highscores" type="Node"]
+
+[node name="Room" parent="." instance=ExtResource("1_6ydtw")]
+room_name = "highscores"

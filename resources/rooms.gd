@@ -62791,6 +62791,24 @@ const room_database = {
 					"locked": "false",
 					"object": "brick",
 					"position": {
+						"x": "464",
+						"y": "80"
+					}
+				},
+				{
+					"creation_code": null,
+					"locked": "false",
+					"object": "snake",
+					"position": {
+						"x": "448",
+						"y": "64"
+					}
+				},
+				{
+					"creation_code": null,
+					"locked": "false",
+					"object": "brick",
+					"position": {
 						"x": "608",
 						"y": "80"
 					}

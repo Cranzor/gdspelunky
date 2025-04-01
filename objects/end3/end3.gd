@@ -116,7 +116,7 @@ func draw():
 
 	if (draw_status > 5):
 
-		gml.gml.draw_set_font(global.my_font_small)
+		gml.draw_set_font(global.my_font_small)
 		gml.draw_set_color(gml.c_yellow)
 		gml.draw_text(64, 96+8, "KILLS: ", "kills", self)
 		gml.draw_set_color(gml.c_white)

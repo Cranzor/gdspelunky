@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://be50oo687s2h1"]
+
+[ext_resource type="PackedScene" uid="uid://b8g70geq8alqq" path="res://scenes/room.tscn" id="1_xjoyr"]
+
+[node name="EndCustom" type="Node"]
+
+[node name="Room" parent="." instance=ExtResource("1_xjoyr")]
+room_name = "end_custom"
