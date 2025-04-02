@@ -649,8 +649,14 @@ func run_collision_with():
 						if object_name == "yeti":
 							if object == "character":
 								print("found")
-						other = collider
-						break
+						#--- Rect2 overlap double check to prevent false positives
+						var self_collision_shape = get_node("CollisionShape2D")
+						var other_collision_shape = collider.get_node("CollisionShape2D")
+						var rect1 = Rect2(Vector2(self_collision_shape.global_position), Vector2(self_collision_shape.shape.get_rect().size))
+						var rect2 = Rect2(Vector2(other_collision_shape.global_position), Vector2(other_collision_shape.shape.get_rect().size))
+						if rect1.intersects(rect2):
+							other = collider
+							break
 					var owner: int = collider.get_shape_owners()[0]
 					collider.shape_owner_set_disabled(owner, true)
 					collision_owner_ids[collider] = owner

@@ -608,9 +608,9 @@ func handle_player_active():
 			if (fall_timer > 16): wall_hurt = 0 # no sense in them taking extra damage from being thrown here
 			if (global.has_parachute and not stunned and fall_timer > 14):
 			
-				if (not gml.collision_point(position.x, position.y+32, solid, 0, 0)):
+				if (not gml.collision_point(position.x, position.y+32, "solid", 0, 0)):
 				
-					gml.instance_create(position.x-8, position.y-16, parachute)
+					gml.instance_create(position.x-8, position.y-16, Objects.parachute)
 					fall_timer = 0
 					global.has_parachute = false
 				
