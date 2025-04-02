@@ -5,3 +5,5 @@
 [node name="DamselKiss" type="StaticBody2D"]
 script = ExtResource("1_fo51r")
 object_name = "damsel_kiss"
+
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]

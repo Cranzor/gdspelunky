@@ -57,3 +57,7 @@ func step():
 
 		gml.instance_create(position.x-8, position.y-8, Objects.heart)
 		Audio.play_sound(global.snd_kiss)
+
+
+func _on_tree_exiting() -> void: #--- making an exception as this is the only script in the game with room_end()
+	room_end()

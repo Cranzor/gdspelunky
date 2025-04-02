@@ -48,7 +48,10 @@ var swimming
 var fired
 var x_act
 var firing
-var hit
+var hit:
+	set(value):
+		hit = value
+
 var orig_x
 var orig_y
 var LEFT = 1 #---setting LEFT and RIGHT to have default values as player1 doesn't set thems

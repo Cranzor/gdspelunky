@@ -5222,8 +5222,8 @@ func scr_use_item(): #--- only called by player1 so including it here for conven
 			
 		hold_item.held = false
 		hold_item.safe = true
-		if hold_item.alarm_2_countdown: #--- adding a check here. yeti (and probably other objects) don't have this alarm. original engine seems to not have a problem with this
-			hold_item.alarm_2_countdown.start(10)
+		#if hold_item.alarm_2_countdown: #--- adding a check here. yeti (and probably other objects) don't have this alarm. original engine seems to not have a problem with this
+		hold_item.alarm_2_countdown.start(10)
 				
 		if (facing == LEFT):
 				

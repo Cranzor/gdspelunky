@@ -454,6 +454,7 @@ func step():
 					if (not (obj.held and safe)):
 					
 						MiscScripts.scr_create_blood(obj.position.x, obj.position.y, 1, obj)
+						print(safe)
 						#with obj
 						
 						if (obj.held):
@@ -470,7 +471,7 @@ func step():
 						obj.counter = 120
 						obj.hit = 10
 						
-						obj.x_vel = x_vel * 0.3
+						obj.x_vel = float(x_vel) * 0.3
 						
 						if (type == "arrow" or type == "fish bone"): gml.instance_destroy(self)
 					
