@@ -40,10 +40,6 @@ var STUNNED = 98 #--- making this a variable and not a constant because it is se
 var stun_time
 var damage
 var puncture
-var up
-var down
-var left
-var right
 var burning
 var dist
 var viscid_top

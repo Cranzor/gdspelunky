@@ -17,16 +17,16 @@ func _process(delta):
 var start
 var start_pressed
 var start_released
-var left
+#--- var left
 var left_pressed
 var left_released
-var right
+#--- var right
 var right_pressed
 var right_released
-var up
+#--- var up
 var up_pressed
 var up_released
-var down
+#--- var down
 var down_pressed
 var down_released
 var jump

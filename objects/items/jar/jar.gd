@@ -219,7 +219,7 @@ func step():
 					
 				
 					enemy.status = STUNNED
-					enemy.counter = stun_time
+					enemy.counter = enemy.stun_time
 					enemy.y_vel = -6
 					Audio.play_sound(global.snd_hit)
 			

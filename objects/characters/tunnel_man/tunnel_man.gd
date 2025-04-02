@@ -1,4 +1,4 @@
-extends DrawnSprite #--- adding DrawnSprite as parent to get access to sprite_index
+extends DrawnSprite #---[FLAG] adding DrawnSprite as parent to get access to sprite_index
 
 func _ready():
 	object_setup()
@@ -72,7 +72,7 @@ func step():
 			
 					if (donate >= global.tunnel2):
 				
-						global.tunnel1 = global.tunnel3Max + 1
+						global.tunnel1 = global.tunnel3_max + 1
 						talk = 5
 				
 					else: talk = 3

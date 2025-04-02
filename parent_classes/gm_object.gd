@@ -57,6 +57,10 @@ var lb
 var tb
 var rb
 var bb
+var up
+var down
+var left
+var right
 
 #--- want access to these for all objects, so defining here
 var collision_bounds_offset_left_x
@@ -657,6 +661,15 @@ func run_collision_with():
 						if rect1.intersects(rect2):
 							other = collider
 							break
+						else:
+							#print(object_name)
+							#print(object)
+							#print(rect1)
+							#print(rect2)
+							#print(collision.get_position())
+							#print("error")
+							#print("-----")
+							pass
 					var owner: int = collider.get_shape_owners()[0]
 					collider.shape_owner_set_disabled(owner, true)
 					collision_owner_ids[collider] = owner

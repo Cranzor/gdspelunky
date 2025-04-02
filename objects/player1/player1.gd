@@ -1286,13 +1286,13 @@ func game_over():
 			if (global.test_level != ""):
 			
 				MiscScripts.scr_clear_globals()
-				get_tree().change_scene_to_file("res://level_editor.tscn")
+				get_tree().change_scene_to_file("res://level_editor/level_editor.tscn")
 			
 			elif (global.custom_level):
 			
 				MiscScripts.scr_clear_globals()
 				global.custom_level = false
-				get_tree().change_scene_to_file("res://load_level.tscn")
+				get_tree().change_scene_to_file("res://load_level/load_level.tscn")
 			
 			else:
 			
@@ -1300,7 +1300,7 @@ func game_over():
 				if (InLevel.is_room("sun")): global.scores_start = 1
 				if (InLevel.is_room("moon")): global.scores_start = 2
 				if (InLevel.is_room("stars")): global.scores_start = 3
-				get_tree().change_scene_to_file("res://highscores.tscn")
+				get_tree().change_scene_to_file("res://highscores/highscores.tscn")
 	
 func set_in_game_status():
 	in_game = true
@@ -4526,7 +4526,7 @@ func animation_end():
 		elif (p_exit == x_end):
 		
 			global.game_start = false
-			get_tree().change_scene_to_file("res://end.tscn")
+			get_tree().change_scene_to_file("res://rooms/end/end.tscn")
 		
 		elif (p_exit == x_shortcut5):
 		
@@ -4547,22 +4547,22 @@ func animation_end():
 			global.used_shortcut = true
 			global.curr_level = 13
 			global.game_start = true
-			get_tree().change_scene_to_file("res://level.tscn")
+			get_tree().change_scene_to_file("res://rooms/level/level.tscn")
 		
 		elif (p_exit == x_sun):
 		
 			global.game_start = false
-			get_tree().change_scene_to_file("res://sun.tscn")
+			get_tree().change_scene_to_file("res://rooms/sun/sun.tscn")
 		
 		elif (p_exit == x_moon):
 		
 			global.game_start = false
-			get_tree().change_scene_to_file("res://moon.tscn")
+			get_tree().change_scene_to_file("res://rooms/moon/moon.tscn")
 		
 		elif (p_exit == x_stars):
 		
 			global.game_start = false
-			get_tree().change_scene_to_file("res://stars.tscn")
+			get_tree().change_scene_to_file("res://rooms/stars/stars.tscn")
 		
 		elif (p_exit == x_change):
 		
