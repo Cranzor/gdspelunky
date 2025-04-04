@@ -3896,14 +3896,14 @@ func scr_entity_gen():
 					n > 48):
 				
 					if (gml.collision_point(block_instance.position.x+16, block_instance.position.y, "solid", 0, 0) and not
-						gml.collision_rectangle(block_instance.position.x-32, block_instance.position.y, block_instance.position.x-1,  block_instance.position.y+15, "solid", 0, null)):
+						gml.collision_rectangle(block_instance.position.x-32, block_instance.position.y, block_instance.position.x-1,  block_instance.position.y+15, "solid", 0, false, block_instance)):
 					
 						if (global.dark_level): gml.instance_create(block_instance.position.x, block_instance.position.y, Objects.arrow_trap_left_lit)
 						else: gml.instance_create(block_instance.position.x, block_instance.position.y, Objects.arrow_trap_left)
 						gml.instance_destroy(block_instance)
 					
 					elif (gml.collision_point(block_instance.position.x-16, block_instance.position.y, "solid", 0, 0) and not
-						gml.collision_rectangle(block_instance.position.x+16, block_instance.position.y, block_instance.position.x+48,  block_instance.position.y+15, "solid", 0, null)):
+						gml.collision_rectangle(block_instance.position.x+16, block_instance.position.y, block_instance.position.x+48,  block_instance.position.y+15, "solid", 0, false, block_instance)):
 					
 						if (global.dark_level): gml.instance_create(block_instance.position.x, block_instance.position.y, Objects.arrow_trap_right_lit)
 						else: gml.instance_create(block_instance.position.x, block_instance.position.y, Objects.arrow_trap_right)
@@ -3969,8 +3969,8 @@ func scr_entity_gen():
 					else: global.market_chance -= 1
 				
 				elif (solid_instance.type != "tree" and solid_instance.type != "altar" and solid_instance.position.y != 0 and
-					not gml.collision_rectangle(solid_instance.position.x, solid_instance.position.y-32, solid_instance.position.x+15,  solid_instance.position.y-1, "solid", false, solid_instance) and
-					not gml.collision_rectangle(solid_instance.position.x, solid_instance.position.y-16, solid_instance.position.x+15,  solid_instance.position.y-1, "enemy", 0, null) and
+					not gml.collision_rectangle(solid_instance.position.x, solid_instance.position.y-32, solid_instance.position.x+15,  solid_instance.position.y-1, "solid", false, true, solid_instance) and
+					not gml.collision_rectangle(solid_instance.position.x, solid_instance.position.y-16, solid_instance.position.x+15,  solid_instance.position.y-1, "enemy", 0, false, solid_instance) and
 					(not gml.collision_point(solid_instance.position.x-16, solid_instance.position.y, "solid", 0, 0) or not gml.collision_point(solid_instance.position.x+16, solid_instance.position.y, "solid", 0, 0)) and
 					gml.collision_point(solid_instance.position.x, solid_instance.position.y+16, "solid", 0, 0) and
 					not gml.collision_point(solid_instance.position.x, solid_instance.position.y, "x_market", 0, 0) and
@@ -4115,7 +4115,7 @@ func scr_entity_gen():
 					gml.point_distance(solid_instance.position.x, solid_instance.position.y, entrance.position.x, entrance.position.y) > 64 and
 					not InLevel.is_in_shop(solid_instance.position.x, solid_instance.position.y)):
 				
-					if (gml.rand(1,10) == 1 and solid_instance.sprite_index == "dark" and not gml.collision_rectangle(solid_instance.position.x, solid_instance.position.y-64, solid_instance.position.x+15, solid_instance.position.y-1, "solid", 0, null) and gml.distance_to_object(exit, solid_instance) > 64): gml.instance_create(solid_instance.position.x, solid_instance.position.y-16, Objects.spring_trap)
+					if (gml.rand(1,10) == 1 and solid_instance.sprite_index == "dark" and not gml.collision_rectangle(solid_instance.position.x, solid_instance.position.y-64, solid_instance.position.x+15, solid_instance.position.y-1, "solid", 0, false, solid_instance) and gml.distance_to_object(exit, solid_instance) > 64): gml.instance_create(solid_instance.position.x, solid_instance.position.y-16, Objects.spring_trap)
 					elif (gml.rand(1,20) == 1 and gml.point_distance(solid_instance.position.x, solid_instance.position.y, entrance.position.x, entrance.position.y) > 64): gml.instance_create(solid_instance.position.x, solid_instance.position.y-16, Objects.yeti)
 				
 				
@@ -4160,7 +4160,7 @@ func scr_entity_gen():
 				elif (solid_instance.type != "tree" and solid_instance.type != "altar" and solid_instance.position.y != 0 and
 					not gml.collision_point(solid_instance.position.x, solid_instance.position.y-16, "solid", 0, 0) and
 					not gml.collision_point(solid_instance.position.x, solid_instance.position.y-16, "lava", 0, 0) and
-					not gml.collision_rectangle(solid_instance.position.x, solid_instance.position.y-16, solid_instance.position.x+15,  solid_instance.position.y-1, "enemy", 0, null) and
+					not gml.collision_rectangle(solid_instance.position.x, solid_instance.position.y-16, solid_instance.position.x+15,  solid_instance.position.y-1, "enemy", 0, false, solid_instance) and
 					not gml.collision_point(solid_instance.position.x, solid_instance.position.y-32, "solid", 0, 0) and
 					(not gml.collision_point(solid_instance.position.x-16, solid_instance.position.y, "solid", 0, 0) or not gml.collision_point(solid_instance.position.x+16, solid_instance.position.y, "solid", 0, 0)) and
 					gml.collision_point(solid_instance.position.x, solid_instance.position.y+16, "solid", 0, 0) and
@@ -4208,7 +4208,7 @@ func scr_entity_gen():
 					
 						if (global.gen_tomb_lord and
 							not global.tomb_lord and
-							not gml.collision_rectangle(solid_instance.position.x, solid_instance.position.y-32, solid_instance.position.x+32,  solid_instance.position.y-1, "solid", 0, null) and
+							not gml.collision_rectangle(solid_instance.position.x, solid_instance.position.y-32, solid_instance.position.x+32,  solid_instance.position.y-1, "solid", 0, false, solid_instance) and
 							gml.rand(1,40) == 1):
 						
 							gml.instance_create(solid_instance.position.x, solid_instance.position.y-32, Objects.tomb_lord)
@@ -4259,14 +4259,14 @@ func scr_entity_gen():
 					n > 48):
 				
 					if (gml.collision_point(block_instance.position.x+16, block_instance.position.y, "solid", 0, 0) and not
-						gml.collision_rectangle(block_instance.position.x-32, block_instance.position.y, block_instance.position.x-1,  block_instance.position.y+15, "solid", 0, null)):
+						gml.collision_rectangle(block_instance.position.x-32, block_instance.position.y, block_instance.position.x-1,  block_instance.position.y+15, "solid", 0, false, block_instance)):
 					
 						if (global.dark_level): gml.instance_create(block_instance.position.x, block_instance.position.y, Objects.arrow_trap_left_lit)
 						else: gml.instance_create(block_instance.position.x, block_instance.position.y, Objects.arrow_trap_left)
 						gml.instance_destroy(block_instance)
 					
 					elif (gml.collision_point(block_instance.position.x-16, block_instance.position.y, "solid", 0, 0) and not
-						gml.collision_rectangle(block_instance.position.x+16, block_instance.position.y, block_instance.position.x+48,  block_instance.position.y+15, "solid", 0, null)):
+						gml.collision_rectangle(block_instance.position.x+16, block_instance.position.y, block_instance.position.x+48,  block_instance.position.y+15, "solid", 0, false, block_instance)):
 					
 						if (global.dark_level): gml.instance_create(block_instance.position.x, block_instance.position.y, Objects.arrow_trap_right_lit)
 						else: gml.instance_create(block_instance.position.x, block_instance.position.y, Objects.arrow_trap_right)
