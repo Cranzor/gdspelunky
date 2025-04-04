@@ -22,7 +22,7 @@ func create():
 
 
 func step():
-	if (gml.collision_rectangle(position.x+2, position.y+11, position.x+13,  position.y+15, "solid", 0, 0)):
+	if (gml.collision_rectangle(position.x+2, position.y+11, position.x+13,  position.y+15, "solid", 0, null)):
 
 		if (not pushed):
 		

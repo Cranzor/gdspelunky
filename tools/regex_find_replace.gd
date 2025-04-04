@@ -14,7 +14,8 @@ func convert_scripts() -> void:
 	
 	for file in all_gd_files:
 		var new_text: String = get_new_file_text(file) # retrieving post-conversion file content
-		#write_new_text_to_file(file, new_text) # actually writing new file content to the file
+		write_new_text_to_file(file, new_text) # actually writing new file content to the file
+	print("done")
 
 
 func scan_dir_for_gd_files(path) -> Array:

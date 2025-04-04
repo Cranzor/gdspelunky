@@ -143,7 +143,7 @@ func step():
 
 		depth = 100
 	
-		if (gml.collision_rectangle(position.x-3, position.y-3, position.x+3,  position.y+3, "lava", 0, 0)):
+		if (gml.collision_rectangle(position.x-3, position.y-3, position.x+3,  position.y+3, "lava", 0, null)):
 	
 			my_grav = 0
 			x_vel = 0
@@ -166,7 +166,7 @@ func step():
 	
 
 
-	if (gml.collision_rectangle(position.x-3, position.y-3, position.x+3,  position.y+3, "enemy", 0, 0) and (abs(x_vel) > 2 or abs(y_vel) > 2)):
+	if (gml.collision_rectangle(position.x-3, position.y-3, position.x+3,  position.y+3, "enemy", 0, null) and (abs(x_vel) > 2 or abs(y_vel) > 2)):
 
 		var enemy = gml.instance_nearest(position.x, position.y, "enemy")
 		if (not enemy.invincible):
@@ -209,7 +209,7 @@ func step():
 		to_destroy = true
 
 
-	if (type != "damsel" and gml.collision_rectangle(position.x-3, position.y-3, position.x+3,  position.y+3, "damsel", 0, 0) and (abs(x_vel) > 2 or abs(y_vel) > 2)):
+	if (type != "damsel" and gml.collision_rectangle(position.x-3, position.y-3, position.x+3,  position.y+3, "damsel", 0, null) and (abs(x_vel) > 2 or abs(y_vel) > 2)):
 
 		var enemy = gml.instance_nearest(position.x, position.y, "damsel")
 		if (not enemy.invincible and (abs(x_vel) > 1 or abs(y_vel) > 1)):
