@@ -112,7 +112,7 @@ func step():
 	
 		else: depth = 101
 	
-		if (gml.collision_rectangle(position.x-3, position.y-3, position.x+3,  position.y+3, "lava", 0, null)):
+		if (gml.collision_rectangle(position.x-3, position.y-3, position.x+3,  position.y+3, "lava", 0, 0)):
 	
 			my_grav = 0
 			x_vel = 0

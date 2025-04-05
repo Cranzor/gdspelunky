@@ -241,7 +241,7 @@ func step():
 				my_grav = 0.6
 			
 		
-			if (gml.collision_rectangle(position.x-3, position.y-3, position.x+3,  position.y+3, "lava", 0, null)):
+			if (gml.collision_rectangle(position.x-3, position.y-3, position.x+3,  position.y+3, "lava", 0, 0)):
 			
 				my_grav = 0
 				x_vel = 0
@@ -300,7 +300,7 @@ func step():
 
 		if (type == "bomb" and sticky):
 		
-			if (abs(x_vel) > 2 or abs(y_vel) > 2 and gml.collision_rectangle(position.x-2, position.y-2, position.x+2,  position.y+2, "enemy", 0, null) and enemy_id == 0):
+			if (abs(x_vel) > 2 or abs(y_vel) > 2 and gml.collision_rectangle(position.x-2, position.y-2, position.x+2,  position.y+2, "enemy", 0, 0) and enemy_id == 0):
 			
 				enemy_id = gml.instance_nearest(position.x, position.y, "enemy")
 				#/*
@@ -318,9 +318,9 @@ func step():
 				sticky_x_diff = enemy_id.position.x-position.x
 				sticky_y_diff = enemy_id.position.y-position.y
 			
-			elif (abs(x_vel) > 2 or abs(y_vel) > 2 and gml.collision_rectangle(position.x-2, position.y-2, position.x+2,  position.y+2, "damsel", 0, null) and enemy_id == 0):
+			elif (abs(x_vel) > 2 or abs(y_vel) > 2 and gml.collision_rectangle(position.x-2, position.y-2, position.x+2,  position.y+2, "damsel", 0, 0) and enemy_id == 0):
 			
-				enemy_id = gml.collision_rectangle(position.x-2, position.y-2, position.x+2,  position.y+2, "damsel", 0, null)
+				enemy_id = gml.collision_rectangle(position.x-2, position.y-2, position.x+2,  position.y+2, "damsel", 0, 0)
 				#/*
 				#if (enemy_id.bomb_id):
 				#
@@ -339,7 +339,7 @@ func step():
 		
 		elif (abs(x_vel) > 2 or abs(y_vel) > 2):
 		
-			if (gml.collision_rectangle(position.x-2, position.y-2, position.x+2,  position.y+2, "enemy", 0, null)):
+			if (gml.collision_rectangle(position.x-2, position.y-2, position.x+2,  position.y+2, "enemy", 0, 0)):
 			
 				var obj = gml.instance_nearest(position.x, position.y, "enemy")
 				if (not obj.invincible and obj.type != "magma man"):
@@ -446,9 +446,9 @@ func step():
 				
 			
 
-			if (gml.collision_rectangle(position.x-2, position.y-2, position.x+2,  position.y+2, "damsel", false, self)):
+			if (gml.collision_rectangle(position.x-2, position.y-2, position.x+2,  position.y+2, "damsel", false, true)):
 			
-				var obj = gml.collision_rectangle(position.x-2, position.y-2, position.x+2,  position.y+2, "damsel", false, self)
+				var obj = gml.collision_rectangle(position.x-2, position.y-2, position.x+2,  position.y+2, "damsel", false, true)
 				if (not obj.invincible and obj.status != 99 and obj.hit == 0):
 				
 					if (not (obj.held and safe)):

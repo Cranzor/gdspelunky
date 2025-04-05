@@ -167,7 +167,7 @@ func step():
 			
 		
 		
-			if (gml.collision_rectangle(position.x-1,position.y-1,position.x+17,position.y+17,"tomb_lord",0, null)): hit = true
+			if (gml.collision_rectangle(position.x-1,position.y-1,position.x+17,position.y+17,"tomb_lord",0,0)): hit = true
 		
 			if (hit):
 		
@@ -196,6 +196,6 @@ func step():
 			if (gml.collision_point(position.x, position.y-1, "lava", 0, 0)): gml.instance_destroy(self)
 
 
-		if (gml.collision_rectangle(position.x+1, position.y+1, position.x+15,  position.y+15, "lava", 0, null)):
+		if (gml.collision_rectangle(position.x+1, position.y+1, position.x+15,  position.y+15, "lava", 0, 0)):
 
 			status = 99

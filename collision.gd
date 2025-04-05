@@ -43,10 +43,10 @@ func is_collision_ladder(node):
 	var rb = all_points_exact.z
 	var bb = all_points_exact.w
 	
-	if (gml.collision_rectangle(lb+8,tb+8,rb-8,bb-8,'ladder_top',1,node)):# > 0): --- changing this since this works differently in Godot
+	if (gml.collision_rectangle(lb+8,tb+8,rb-8,bb-8,'ladder_top',1,1)):# > 0): --- changing this since this works differently in Godot
 		return true
 	else:
-		if (gml.collision_rectangle(lb+8,tb+8,rb-8,bb-8,'ladder',1,node)):#>0:
+		if (gml.collision_rectangle(lb+8,tb+8,rb-8,bb-8,'ladder',1,1)):#>0:
 			return true
 	
 	return false
@@ -64,7 +64,7 @@ func is_collision_platform(node):
 	var rb = all_points_exact.z
 	var bb = all_points_exact.w
 	
-	if gml.collision_rectangle(lb,tb,rb-1,bb-1,'platform',1,node):#>0
+	if gml.collision_rectangle(lb,tb,rb-1,bb-1,'platform',1,1):#>0
 		return true
 	return false
 	
@@ -81,7 +81,7 @@ func is_collision_solid(node):
 	var rb = all_points_exact.z
 	var bb = all_points_exact.w
 	
-	if gml.collision_rectangle(lb,tb,rb-1,bb-1,'solid',1,node):#>0
+	if gml.collision_rectangle(lb,tb,rb-1,bb-1,'solid',1,1):#>0
 		return true
 	return false
 

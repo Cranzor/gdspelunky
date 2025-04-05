@@ -123,8 +123,8 @@ func step():
 	
 		if (not gml.collision_point(position.x, position.y+16, "solid", 0, 0)):
 	
-			col_left = gml.collision_rectangle(position.x-16, position.y-16, position.x-8,  position.y+16, "solid", false, self)
-			col_right = gml.collision_rectangle(position.x+8, position.y-16, position.x+16,  position.y+16, "solid", false, self)
+			col_left = gml.collision_rectangle(position.x-16, position.y-16, position.x-8,  position.y+16, "solid", false, true)
+			col_right = gml.collision_rectangle(position.x+8, position.y-16, position.x+16,  position.y+16, "solid", false, true)
 			if (col_left and not col_right): position.x += 1
 			elif (col_right and not col_left): position.x -= 1
 	
