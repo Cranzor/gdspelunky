@@ -51,7 +51,7 @@ func step():
 
 		PlatformEngine.move_to(x_vel, y_vel, self)
 
-		if (gml.collision_point(position.x+8, position.y+8, "solid", 0, false)): hp = -999
+		if (gml.collision_point(position.x+8, position.y+8, "solid", 0, 0)): hp = -999
 
 		if (hp < 1):
 
@@ -72,7 +72,7 @@ func step():
 		if (status == HANG):
 
 			if (not player1.swimming and not player1.dead and
-				((dist < 90 and player1.position.y > position.y + 16) or not gml.collision_point(position.x+8, position.y-1, "solid", 0, false))):
+				((dist < 90 and player1.position.y > position.y + 16) or not gml.collision_point(position.x+8, position.y-1, "solid", 0, 0))):
 	  
 				status = ATTACK
 				Audio.play_sound(global.snd_bat)
@@ -106,12 +106,12 @@ func step():
 					else: dir = 0
 			
 			
-				if (gml.collision_point(position.x+8, position.y+16, "water", 0, false) and dir > 180 and dir < 360):
+				if (gml.collision_point(position.x+8, position.y+16, "water", 0, 0) and dir > 180 and dir < 360):
 			
 					dir = 90
 			
 			
-				if (not gml.collision_point(position.x, position.y+12, "water", 0, false) or player1.position.y < position.y):
+				if (not gml.collision_point(position.x, position.y+12, "water", 0, 0) or player1.position.y < position.y):
 			
 					x_vel = 1 * cos(gml.degtorad(dir))
 					y_vel = -1 * sin(gml.degtorad(dir))
@@ -119,7 +119,7 @@ func step():
 		
 			else:
 		
-				if (gml.collision_point(position.x+8, position.y-1, "solid", 0, false)): status = HANG
+				if (gml.collision_point(position.x+8, position.y-1, "solid", 0, 0)): status = HANG
 				else:
 			
 					dir = 90
@@ -135,7 +135,7 @@ func step():
 
 		else:
 
-			if (gml.collision_point(position.x+8, position.y-1, "solid", 0, false)): status = HANG
+			if (gml.collision_point(position.x+8, position.y-1, "solid", 0, 0)): status = HANG
 			else:
 		
 				dir = 90

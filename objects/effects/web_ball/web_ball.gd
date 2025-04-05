@@ -97,9 +97,9 @@ func step():
 		sprite_index = "web_create"
 
 
-	#/*if (gml.collision_point(position.x, position.y, "dark", 0, false) or:
-		#gml.collision_point(position.x, position.y, "dark_fall", 0, false) or
-		#gml.collision_point(position.x, position.y, "ice", 0, false))
+	#/*if (gml.collision_point(position.x, position.y, "dark", 0, 0) or:
+		#gml.collision_point(position.x, position.y, "dark_fall", 0, 0) or
+		#gml.collision_point(position.x, position.y, "ice", 0, 0))
 #
 		#gml.instance_destroy(self)
 	#*/

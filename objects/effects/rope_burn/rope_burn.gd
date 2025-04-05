@@ -28,12 +28,12 @@ func create():
 func step():
 	position.y += y_vel
 
-	if (gml.collision_point(position.x, position.y, "solid", 0, false) or not gml.collision_rectangle(position.x-1, position.y-8, position.x+1,  position.y+8, "rope", 0, false, self)):
+	if (gml.collision_point(position.x, position.y, "solid", 0, 0) or not gml.collision_rectangle(position.x-1, position.y-8, position.x+1,  position.y+8, "rope", 0, false, self)):
 
 		gml.instance_destroy(self)
 
 
-	if (gml.collision_point(position.x, position.y, "rope", 0, false)):
+	if (gml.collision_point(position.x, position.y, "rope", 0, 0)):
 
 		var rope = gml.instance_nearest(position.x, position.y, "rope")
 		rope.burn_timer = 1

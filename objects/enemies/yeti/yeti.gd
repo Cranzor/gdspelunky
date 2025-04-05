@@ -55,7 +55,7 @@ func collision_with_character():
 
 	elif (other.invincible == 0 and status < STUNNED):
 
-		if (gml.collision_point(position.x+8, position.y-4, "solid", 0, false)):
+		if (gml.collision_point(position.x+8, position.y-4, "solid", 0, 0)):
 	
 			other.blink = 30
 			other.invincible = 30
@@ -239,14 +239,14 @@ func step():
 
 		if (status >= STUNNED):
 
-			if (gml.collision_point(position.x+8, position.y+12, "solid", 0, false)):
+			if (gml.collision_point(position.x+8, position.y+12, "solid", 0, 0)):
 		
 				MiscScripts.scr_create_blood(position.x+8, position.y+8, 3, self)
 				Audio.play_sound(global.snd_caveman_die)
 				gml.instance_destroy(self)
 		
 
-		elif (not held and gml.collision_point(position.x+8, position.y+8, "solid", 0, false)):
+		elif (not held and gml.collision_point(position.x+8, position.y+8, "solid", 0, 0)):
 
 			MiscScripts.scr_create_blood(position.x+8, position.y+8, 3, self)
 			Audio.play_sound(global.snd_caveman_die)
@@ -363,7 +363,7 @@ func step():
 				else: sprite_index = "yeti_die_lr"
 		
 		
-			if (gml.collision_point(position.x, position.y, "spikes", 0, false) and dead and y_vel != 0):
+			if (gml.collision_point(position.x, position.y, "spikes", 0, 0) and dead and y_vel != 0):
 		
 				if (gml.rand(1,8) == 1): gml.instance_create(other.position.x, other.position.y, Objects.blood)
 		

@@ -166,7 +166,7 @@ func step():
 
 		if (status >= STUNNED): #--- 98 or 99. if either stunned or dead
 
-			if (gml.collision_point(position.x+8, position.y+12, "solid", 0, false)):
+			if (gml.collision_point(position.x+8, position.y+12, "solid", 0, 0)):
 		
 				MiscScripts.scr_create_blood(position.x+8, position.y+8, 3, self)
 				Audio.play_sound(global.snd_caveman_die)
@@ -175,7 +175,7 @@ func step():
 
 		elif (not held):
 
-			if (gml.collision_point(position.x+8, position.y+8, "solid", 0, false)):
+			if (gml.collision_point(position.x+8, position.y+8, "solid", 0, 0)):
 		
 				MiscScripts.scr_create_blood(position.x+8, position.y+8, 3, self)
 				Audio.play_sound(global.snd_caveman_die)

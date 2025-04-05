@@ -365,8 +365,8 @@ func step():
 							held = false
 							# DY:  trap can get stuck in wall at this point:
 							var player1 = gml.get_instance("player1") #---[FLAG] may have to change this for multiplayer
-							if (gml.collision_point(position.x+16, position.y+8, "solid", 0, false)): position.x = player1.position.x - 12
-							elif (gml.collision_point(position.x, position.y+8, "solid", 0, false)): position.x = player1.position.x - 4
+							if (gml.collision_point(position.x+16, position.y+8, "solid", 0, 0)): position.x = player1.position.x - 12
+							elif (gml.collision_point(position.x, position.y+8, "solid", 0, 0)): position.x = player1.position.x - 4
 							position.y = player1.position.y - 8
 							player1.hold_item = null
 							player1.pickup_item_type = ""

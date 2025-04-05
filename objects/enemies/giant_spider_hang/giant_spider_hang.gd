@@ -54,7 +54,7 @@ func step():
 		position.y > gml.view("yview")-32 and position.y < gml.view("yview") + gml.view("hview"))):
 
 		var dist = gml.distance_to_object(character, self) #---[FLAG] may need to adjust this for multiplayer
-		if (gml.collision_point(position.x+16, position.y+8, "solid", 0, false)):
+		if (gml.collision_point(position.x+16, position.y+8, "solid", 0, 0)):
 
 			hp = 0
 
@@ -85,7 +85,7 @@ func step():
 		
 			gml.instance_destroy(self)
 
-		elif (hp < 10 or not gml.collision_point(position.x, position.y-16, "solid", 0, false) or (dist < 90 and character.position.y > position.y and abs(character.position.x - (position.x+16)) < 8)):
+		elif (hp < 10 or not gml.collision_point(position.x, position.y-16, "solid", 0, 0) or (dist < 90 and character.position.y > position.y and abs(character.position.x - (position.x+16)) < 8)):
 
 			var spider = gml.instance_create(position.x, position.y, Objects.giant_spider)
 			spider.hp = hp

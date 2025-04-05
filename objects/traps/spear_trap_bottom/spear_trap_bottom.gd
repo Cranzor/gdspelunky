@@ -131,7 +131,7 @@ func step():
 	if ((position.x > gml.view("xview")-8 and position.x < gml.view("xview") + gml.view("wview")+8 and
 		position.y > gml.view("yview")-8 and position.y < gml.view("yview") + gml.view("hview")+8)):
 
-		if (not gml.collision_point(position.x, position.y+16, "solid", 0, false)):
+		if (not gml.collision_point(position.x, position.y+16, "solid", 0, 0)):
 
 			gml.instance_destroy(self)
 

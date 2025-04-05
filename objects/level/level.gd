@@ -205,11 +205,11 @@ func step():
 		#if (gml.instance_exists("olmec")):
 		#	instance_activate_region(olmec.position.x-16, olmec.position.y-16, 96, 96, true)
 		#/*
-		#with cave_top  if (not gml.collision_point(position.x, position.y+16, "brick", 0, false)): gml.instance_destroy(self)
-		#with lush_top  if (not gml.collision_point(position.x, position.y+16, "lush", 0, false)): gml.instance_destroy(self)
-		#with dark_top  if (not gml.collision_point(position.x, position.y+16, "dark", 0, false)): gml.instance_destroy(self)
-		#with temple_top  if (not gml.collision_point(position.x, position.y+16, "temple", 0, false)): gml.instance_destroy(self)
-		#with ice_bottom  if (not gml.collision_point(position.x, position.y-16, "ice", 0, false)): gml.instance_destroy(self)
+		#with cave_top  if (not gml.collision_point(position.x, position.y+16, "brick", 0, 0)): gml.instance_destroy(self)
+		#with lush_top  if (not gml.collision_point(position.x, position.y+16, "lush", 0, 0)): gml.instance_destroy(self)
+		#with dark_top  if (not gml.collision_point(position.x, position.y+16, "dark", 0, 0)): gml.instance_destroy(self)
+		#with temple_top  if (not gml.collision_point(position.x, position.y+16, "temple", 0, 0)): gml.instance_destroy(self)
+		#with ice_bottom  if (not gml.collision_point(position.x, position.y-16, "ice", 0, 0)): gml.instance_destroy(self)
 		#*/
 
 

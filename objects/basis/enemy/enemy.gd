@@ -259,9 +259,9 @@ func step():
 			burning -= 1
 
 
-		if (gml.collision_point(position.x+floor(sprite_width/2), position.y-1, "lava", 0, false)): gml.instance_destroy(self)
+		if (gml.collision_point(position.x+floor(sprite_width/2), position.y-1, "lava", 0, 0)): gml.instance_destroy(self)
 
-		if (gml.collision_point(position.x+floor(sprite_width/2), position.y+sprite_height-2, "lava", 0, false)):
+		if (gml.collision_point(position.x+floor(sprite_width/2), position.y+sprite_height-2, "lava", 0, 0)):
 
 			hp = 0
 			counts_as_kill = false
@@ -304,7 +304,7 @@ func step():
 		
 
 
-		if (gml.collision_point(position.x+8, position.y+16, "spikes", 0, false) and y_vel > 2):
+		if (gml.collision_point(position.x+8, position.y+16, "spikes", 0, 0) and y_vel > 2):
 
 			var spikes = gml.instance_place(position.x+8, position.y+14, "spikes", self)
 		
@@ -331,7 +331,7 @@ func step():
 
 			if (not held and x_vel == 0 and y_vel == 0):
 		
-				if (gml.collision_point(position.x+8, position.y+16, "sac_altar_left", 0, false)):
+				if (gml.collision_point(position.x+8, position.y+16, "sac_altar_left", 0, 0)):
 			
 					if (sac_count > 0): sac_count -= 1
 					else:

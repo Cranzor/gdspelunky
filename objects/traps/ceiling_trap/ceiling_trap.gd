@@ -73,7 +73,7 @@ func step():
 			position.y += 1
 	
 		y_vel = 0
-		if (gml.collision_point(position.x+8, position.y+17, "solid", 0, false)): status = WAIT
+		if (gml.collision_point(position.x+8, position.y+17, "solid", 0, 0)): status = WAIT
 		if (sprite_index == "block"): sprite_index = "ceiling_trap_s"
 
 	elif (status == WAIT):

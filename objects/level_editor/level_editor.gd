@@ -962,9 +962,9 @@ func _process(delta):
 #        curs_obj.position.y < room_height-16)
 
 #        if (mouse_check_button(mb_left) and:
-#            not gml.collision_point(mouse_x, mouse_y, "edit_button", 0, false) and
-#            not gml.collision_point(mouse_x, mouse_y, "new_button", 0, false) and
-#            not gml.collision_point(mouse_x, mouse_y, "test_button", 0, false))
+#            not gml.collision_point(mouse_x, mouse_y, "edit_button", 0, 0) and
+#            not gml.collision_point(mouse_x, mouse_y, "new_button", 0, 0) and
+#            not gml.collision_point(mouse_x, mouse_y, "test_button", 0, 0))
 	
 #            if (drop_select == BLOCKS):
 		

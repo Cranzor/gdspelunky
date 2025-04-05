@@ -149,7 +149,7 @@ func step():
 				held = false
 			
 		
-		elif (not gml.collision_point(position.x, position.y, "solid", 0, false)):
+		elif (not gml.collision_point(position.x, position.y, "solid", 0, 0)):
 		
 			PlatformEngine.move_to(x_vel, y_vel, self)
 
@@ -253,7 +253,7 @@ func step():
 				my_grav = 0.6
 			
 		
-			if (gml.collision_point(position.x, position.y-5, "lava", 0, false) and type != "sceptre"):
+			if (gml.collision_point(position.x, position.y-5, "lava", 0, 0) and type != "sceptre"):
 			
 				if (type == "bomb"):
 				

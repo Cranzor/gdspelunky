@@ -154,7 +154,7 @@ func instance_create(x,y,obj): #---[FLAG] make this so that obj is forced to be 
 	
 	return instance
 	
-func collision_point(x,y,obj: String,_prec,notme: bool): #"This function tests whether at point (x,y) there is a collision with entities of object obj."
+func collision_point(x,y,obj: String,_prec,notme): #"This function tests whether at point (x,y) there is a collision with entities of object obj."
 	return handle_collision_ray(x, y, x, y, obj, notme)
 
 #Always adds bg elements

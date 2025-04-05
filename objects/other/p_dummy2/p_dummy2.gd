@@ -112,7 +112,7 @@ func step():
 		elif (global.is_tunnel_man): sprite_index = "tunnel_fall_l"
 		else: sprite_index = "die_l_fall"
 		y_vel = 6
-		if (gml.collision_point(position.x, position.y+9, "desert2", 0, false)):
+		if (gml.collision_point(position.x, position.y+9, "desert2", 0, 0)):
 	
 			y_vel = 0
 			status += 1
@@ -150,7 +150,7 @@ func step():
 		elif (global.is_tunnel_man): sprite_index = "tunnel_die_lr"
 		else: sprite_index = "jump_left"
 		if (y_vel < 4): y_vel += 0.6
-		if (gml.collision_point(position.x, position.y+6, "desert2", 0, false)):
+		if (gml.collision_point(position.x, position.y+6, "desert2", 0, 0)):
 	
 			y_vel = 0
 			status += 1
@@ -166,10 +166,10 @@ func step():
 	
    
 
-	if (gml.collision_point(position.x, position.y+6, "desert2", 0, false)):
+	if (gml.collision_point(position.x, position.y+6, "desert2", 0, 0)):
 
 		position.y -= 2
 
-	if (gml.collision_point(position.x, position.y+7, "desert2", 0, false)):
+	if (gml.collision_point(position.x, position.y+7, "desert2", 0, 0)):
 
 		position.y -= 1

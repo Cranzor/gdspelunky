@@ -26,12 +26,12 @@ func create():
 
 
 func step():
-	if (not gml.collision_point(position.x+8, position.y+16, "solid", 0, false)):
+	if (not gml.collision_point(position.x+8, position.y+16, "solid", 0, 0)):
 
 		position.y += y_vel
 		y_vel += y_acc
 
 
-	if (gml.collision_point(position.x+8, position.y+15, "solid", 0, false)):
+	if (gml.collision_point(position.x+8, position.y+15, "solid", 0, 0)):
 
 		position.y -= 1

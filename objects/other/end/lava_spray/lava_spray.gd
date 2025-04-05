@@ -30,7 +30,7 @@ func step():
 	position.y += y_vel
 	if (y_vel > -6): y_vel += y_acc
 
-	if (gml.collision_point(position.x, position.y-1, "end_plat", 0, false)):
+	if (gml.collision_point(position.x, position.y-1, "end_plat", 0, 0)):
 		var end_plat = gml.get_instance("end_plat")
 		var p_dummy = gml.get_instance("p_dummy")
 		var big_treasure = gml.get_instance("big_treasure")

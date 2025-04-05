@@ -154,7 +154,7 @@ func step():
 
 		if (whipped > 0): whipped -= 1
 
-		if (gml.collision_point(position.x+16, position.y+24, "solid", 0, false)):
+		if (gml.collision_point(position.x+16, position.y+24, "solid", 0, 0)):
 
 			hp = 0
 

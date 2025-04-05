@@ -40,14 +40,14 @@ func step():
 		gml.move_snap(16, 1, self)
 		if (px < position.x):
 		
-			if (not gml.collision_point(position.x-8, position.y, "solid", 0, false)): position.x -= 8
+			if (not gml.collision_point(position.x-8, position.y, "solid", 0, 0)): position.x -= 8
 			else:
 				position.x += 8
 				x_velocity = 8
 		
 		else:
 		
-			if (not gml.collision_point(position.x+8, position.y, "solid", 0, false)): position.x += 8
+			if (not gml.collision_point(position.x+8, position.y, "solid", 0, 0)): position.x += 8
 			else:
 				position.x -= 8
 				x_velocity = -8

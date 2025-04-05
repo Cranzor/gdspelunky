@@ -143,7 +143,7 @@ func step():
 			x_vel = -x_vel * 0.5
 	
 	
-		if (gml.collision_point(position.x, position.y, "solid", 0, false)): to_destroy = true
+		if (gml.collision_point(position.x, position.y, "solid", 0, 0)): to_destroy = true
 	
 		if (col_bot):
 	
@@ -184,7 +184,7 @@ func step():
 			y_vel = 0
 			position.y += 0.05
 	
-		if (gml.collision_point(position.x, position.y-5, "lava", 0, false)):
+		if (gml.collision_point(position.x, position.y-5, "lava", 0, 0)):
 	
 			if (type == "bomb"):
 		

@@ -34,4 +34,4 @@ func step():
 	#super() #--- commenting out as this seems to do nothing, since drawn_sprite has no step function 
 
 	# main_code
-	if (not gml.collision_point(position.x+8, position.y-1, "solid", 0, false)): gml.instance_destroy(self)
+	if (not gml.collision_point(position.x+8, position.y-1, "solid", 0, 0)): gml.instance_destroy(self)

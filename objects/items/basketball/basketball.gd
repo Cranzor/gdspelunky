@@ -67,7 +67,7 @@ func step():
 
 	if (bounces > 0): bounces -= 1
 
-	if (gml.collision_point(position.x, position.y, "rim", 0, false)):
+	if (gml.collision_point(position.x, position.y, "rim", 0, 0)):
 		var player1 = gml.get_instance("player1") #---[FLAG] may have to change this for multiplayer
 		if (not going_in and (y_vel > 0 or (held and player1.state == 16))):
 			
@@ -95,5 +95,5 @@ func step():
 
 	else: going_in = false
 
-	if (held and gml.collision_point(position.x, position.y+6, "solid", 0, false)): sprite_index = "dribble"
+	if (held and gml.collision_point(position.x, position.y+6, "solid", 0, 0)): sprite_index = "dribble"
 	else: sprite_index = "basketball"

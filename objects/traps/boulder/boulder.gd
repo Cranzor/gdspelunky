@@ -121,7 +121,7 @@ func step():
 			if (abs(x_vel) < 0.5): x_vel = 0
 	
 	
-		if (not gml.collision_point(position.x, position.y+16, "solid", 0, false)):
+		if (not gml.collision_point(position.x, position.y+16, "solid", 0, 0)):
 	
 			col_left = gml.collision_rectangle(position.x-16, position.y-16, position.x-8,  position.y+16, "solid", false, true, self)
 			col_right = gml.collision_rectangle(position.x+8, position.y-16, position.x+16,  position.y+16, "solid", false, true, self)

@@ -62,7 +62,7 @@ func step():
 	# super() #--- commenting out as this seems to do nothing, since drawn_sprite has no step function
 
 	# main_code
-	if (gml.collision_point(position.x+8, position.y+14, "lava", 0, false) and not gml.collision_point(position.x+8, position.y+17, "solid", 0, 0)):
+	if (gml.collision_point(position.x+8, position.y+14, "lava", 0, 0) and not gml.collision_point(position.x+8, position.y+17, "solid", 0, 0)):
 
 		y_vel = 0
 		my_grav = 0

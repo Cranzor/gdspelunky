@@ -193,7 +193,7 @@ func step():
 			xa = 0
 			ya = 0
 			position.y += 0.05
-			if (gml.collision_point(position.x, position.y-1, "lava", 0, false)): gml.instance_destroy(self)
+			if (gml.collision_point(position.x, position.y-1, "lava", 0, 0)): gml.instance_destroy(self)
 
 
 		if (gml.collision_rectangle(position.x+1, position.y+1, position.x+15,  position.y+15, "lava", 0, false, self)):

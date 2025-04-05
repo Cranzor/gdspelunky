@@ -36,13 +36,13 @@ func step():
 	if ((position.x > gml.view("xview")-16 and position.x < gml.view("xview") + gml.view("wview") and
 		position.y > gml.view("yview")-16 and position.y < gml.view("yview") + gml.view("hview"))):
 
-		if (not gml.collision_point(position.x+8, position.y+16, "solid", 0, false)):
+		if (not gml.collision_point(position.x+8, position.y+16, "solid", 0, 0)):
 
 			position.y += y_vel
 			y_vel += y_acc
 
 
-		if (gml.collision_point(position.x+8, position.y+15, "solid", 0, false)):
+		if (gml.collision_point(position.x+8, position.y+15, "solid", 0, 0)):
 
 			position.y -= 1
 

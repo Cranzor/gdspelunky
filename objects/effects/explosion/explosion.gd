@@ -138,7 +138,7 @@ func collision_with_solid():
 		var all_spikes = gml.get_all_instances("spikes")
 		for spikes_instance in all_spikes:
 	
-			if (not gml.collision_point(spikes_instance.position.x, spikes_instance.position.y+16, "solid", 0, false)):
+			if (not gml.collision_point(spikes_instance.position.x, spikes_instance.position.y+16, "solid", 0, 0)):
 		
 				gml.instance_destroy(spikes_instance)
 		

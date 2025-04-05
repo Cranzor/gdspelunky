@@ -65,7 +65,7 @@ func collision_with_character():
 
 	elif (other.invincible == 0 and status < STUNNED):
 
-		if (gml.collision_point(position.x+8, position.y-4, "solid", 0, false)):
+		if (gml.collision_point(position.x+8, position.y-4, "solid", 0, 0)):
 	
 			other.blink = 30
 			other.invincible = 30
@@ -266,7 +266,7 @@ func step():
 		# DY:  crushed
 		if (status >= STUNNED):
 
-			if (gml.collision_point(position.x+8, position.y+12, "solid", 0, false)):
+			if (gml.collision_point(position.x+8, position.y+12, "solid", 0, 0)):
 		
 				MiscScripts.scr_create_blood(position.x+8, position.y+8, 3, self)
 				Audio.play_sound(global.snd_caveman_die)
@@ -280,7 +280,7 @@ func step():
 				gml.instance_destroy(self)
 		
 
-		elif (not held and gml.collision_point(position.x+8, position.y+8, "solid", 0, false)):
+		elif (not held and gml.collision_point(position.x+8, position.y+8, "solid", 0, 0)):
 
 			MiscScripts.scr_create_blood(position.x+8, position.y+8, 3, self)
 			Audio.play_sound(global.snd_caveman_die)
@@ -631,7 +631,7 @@ func step():
 							if (obj.x_vel >= -6): obj.x_vel = -6
 							obj.y_vel = gml.random(1) - gml.random(1)
 							obj.safe = true
-							if (gml.collision_point(obj.position.x, obj.position.y, "solid", 0, false)): gml.instance_destroy(obj)
+							if (gml.collision_point(obj.position.x, obj.position.y, "solid", 0, 0)): gml.instance_destroy(obj)
 					
 						y_vel -= 1
 						x_vel += 3
@@ -648,7 +648,7 @@ func step():
 							if (obj.x_vel < 6): obj.x_vel = 6
 							obj.y_vel = gml.random(1) - gml.random(1)
 							obj.safe = true
-							if (gml.collision_point(obj.position.x, obj.position.y, "solid", 0, false)): gml.instance_destroy(obj)
+							if (gml.collision_point(obj.position.x, obj.position.y, "solid", 0, 0)): gml.instance_destroy(obj)
 					
 						y_vel -= 1
 						x_vel -= 3

@@ -159,7 +159,7 @@ func step():
 
 	# main_code
 	if (active and
-		gml.collision_point(position.x, position.y, "exit", 0, false) and
+		gml.collision_point(position.x, position.y, "exit", 0, 0) and
 		hp > 0 and
 		not held and
 		status != THROWN):
@@ -213,7 +213,7 @@ func step():
 
 	if (not invincible):
 
-		if (gml.collision_point(position.x, position.y, "solid", 0, false) and not held):
+		if (gml.collision_point(position.x, position.y, "solid", 0, 0) and not held):
 	
 			MiscScripts.scr_create_blood(position.x, position.y, 3, self)
 			if (hp > 0):
@@ -232,7 +232,7 @@ func step():
 			burning -= 1
 	
 
-		if (gml.collision_point(position.x, position.y+6, "lava", 0, false)):
+		if (gml.collision_point(position.x, position.y+6, "lava", 0, 0)):
 	
 			status = DEAD
 			dead = true
@@ -248,7 +248,7 @@ func step():
 			depth = 999
 	
 
-		if (gml.collision_point(position.x, position.y+6, "spikes", 0, false) and y_vel > 2):
+		if (gml.collision_point(position.x, position.y+6, "spikes", 0, 0) and y_vel > 2):
 	
 			var obj = gml.instance_place(position.x, position.y+6, "spikes", self)
 			obj.sprite_index = "spikes_blood"
@@ -474,7 +474,7 @@ func step():
 
 		if (not held and x_vel == 0 and y_vel == 0):
 	
-			if (gml.collision_point(position.x, position.y+8, "sac_altar_left", 0, false)):
+			if (gml.collision_point(position.x, position.y+8, "sac_altar_left", 0, 0)):
 		
 				if (sac_count > 0): sac_count -= 1
 				else:

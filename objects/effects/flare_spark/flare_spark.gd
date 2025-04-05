@@ -28,6 +28,6 @@ func create():
 func step():
 	position.y += y_vel
 
-	if (gml.collision_point(position.x, position.y, "solid", 0, false)):
+	if (gml.collision_point(position.x, position.y, "solid", 0, 0)):
 
 		gml.instance_destroy(self)

@@ -25,7 +25,7 @@ func alarm_0():
 		var j = 32
 		if (i < 40): i = 40
 		if (i > 280): i = 280
-		if (not gml.collision_point(i, j, "solid", 0, false)):
+		if (not gml.collision_point(i, j, "solid", 0, 0)):
 	
 			if (points >= 80):
 		

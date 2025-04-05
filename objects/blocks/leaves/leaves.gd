@@ -20,7 +20,7 @@ var sprite_set
 func create():
 	if (global.cemetary): sprite_index = "leaves_dead"
 
-	if (gml.collision_point(position.x-16, position.y, "tree", 0, false) or gml.collision_point(position.x-16, position.y, "leaves", 0, 0)):
+	if (gml.collision_point(position.x-16, position.y, "tree", 0, 0) or gml.collision_point(position.x-16, position.y, "leaves", 0, 0)):
 
 		if (global.cemetary): sprite_index = "leaves_dead_r"
 		else: sprite_index = "leaves_right"
@@ -39,8 +39,8 @@ func destroy():
 func step():
 	if (not sprite_set):
 
-		if ((gml.collision_point(position.x-16, position.y, "tree", 0, false) or gml.collision_point(position.x-16, position.y, "leaves", 0, 0))and
-		(gml.collision_point(position.x+16, position.y, "tree", 0, false) or gml.collision_point(position.x+16, position.y, "leaves", 0, 0))):
+		if ((gml.collision_point(position.x-16, position.y, "tree", 0, 0) or gml.collision_point(position.x-16, position.y, "leaves", 0, 0))and
+		(gml.collision_point(position.x+16, position.y, "tree", 0, 0) or gml.collision_point(position.x+16, position.y, "leaves", 0, 0))):
 	
 			sprite_index = "leaves_top"
 	
@@ -51,21 +51,21 @@ func step():
 
 		if (sprite_index == "leaves_top"):
 	
-			if ((not gml.collision_point(position.x-16, position.y, "tree", 0, false) and not gml.collision_point(position.x-16, position.y, "leaves", 0, 0)) or
-				(not gml.collision_point(position.x+16, position.y, "tree", 0, false) and not gml.collision_point(position.x+16, position.y, "leaves", 0, 0))):
+			if ((not gml.collision_point(position.x-16, position.y, "tree", 0, 0) and not gml.collision_point(position.x-16, position.y, "leaves", 0, 0)) or
+				(not gml.collision_point(position.x+16, position.y, "tree", 0, 0) and not gml.collision_point(position.x+16, position.y, "leaves", 0, 0))):
 		
 				gml.instance_destroy(self)
 		
 	
 		elif (sprite_index == "leaves" or sprite_index == "leaves_dead"):
 	
-			if (not gml.collision_point(position.x+16, position.y, "tree", 0, false) and not gml.collision_point(position.x+16, position.y, "leaves", 0, 0)):
+			if (not gml.collision_point(position.x+16, position.y, "tree", 0, 0) and not gml.collision_point(position.x+16, position.y, "leaves", 0, 0)):
 		
 				gml.instance_destroy(self)
 		
 	
 		elif (sprite_index == "leaves_right" or sprite_index == "leaves_dead_r"):
 	
-			if (not gml.collision_point(position.x-16, position.y, "tree", 0, false) and not gml.collision_point(position.x-16, position.y, "leaves", 0, 0)):
+			if (not gml.collision_point(position.x-16, position.y, "tree", 0, 0) and not gml.collision_point(position.x-16, position.y, "leaves", 0, 0)):
 		
 				gml.instance_destroy(self)

@@ -544,7 +544,7 @@ func create_burn():
 
 func kill_player_upon_touching_lava():
 	# LAVA
-	if (gml.collision_point(position.x, position.y+6, 'lava', 0, false)):
+	if (gml.collision_point(position.x, position.y+6, 'lava', 0, 0)):
 
 		if (not dead):
 		
@@ -608,7 +608,7 @@ func handle_player_active():
 			if (fall_timer > 16): wall_hurt = 0 # no sense in them taking extra damage from being thrown here
 			if (global.has_parachute and not stunned and fall_timer > 14):
 			
-				if (not gml.collision_point(position.x, position.y+32, "solid", 0, false)):
+				if (not gml.collision_point(position.x, position.y+32, "solid", 0, 0)):
 				
 					gml.instance_create(position.x-8, position.y-16, Objects.parachute)
 					fall_timer = 0
@@ -638,7 +638,7 @@ func handle_player_active():
 			obj.x_vel = 0.4
 			Audio.play_sound(global.snd_thud)
 		
-		else:# if (gml.collision_point(position.x, position.y+9, solid, 0, false) or state == JUMPING or state == HANGING or state == CLIMBING or state == DUCKING):
+		else:# if (gml.collision_point(position.x, position.y+9, solid, 0, 0) or state == JUMPING or state == HANGING or state == CLIMBING or state == DUCKING):
 		
 			fall_timer = 0
 			if (gml.instance_exists("parachute")):
@@ -651,7 +651,7 @@ func handle_player_active():
 		
 		# if (stunned): fall_timer = 0
 		
-		if (swimming and not gml.collision_point(position.x, position.y, 'lava', 0, false)):
+		if (swimming and not gml.collision_point(position.x, position.y, 'lava', 0, 0)):
 		
 			fall_timer = 0
 			if (bubble_timer > 0): bubble_timer -= 1
@@ -718,7 +718,7 @@ func handle_player_dead_or_stunned():
 			
 			# friction
 			if (abs(x_vel) < 0.1): x_vel = 0
-			elif (abs(x_vel) != 0 and gml.collision_point(position.x, position.y+16, 'ice', 0, false)): x_vel *= 0.8
+			elif (abs(x_vel) != 0 and gml.collision_point(position.x, position.y+16, 'ice', 0, 0)): x_vel *= 0.8
 			elif (abs(x_vel) != 0): x_vel *= 0.3
 			
 			bounced = true
@@ -933,7 +933,7 @@ func handle_item_stealing():
 	
 func handle_chest_opening():
 	# open chest
-	if (k_up and k_attack_pressed and gml.collision_point(position.x, position.y, "chest", 0, false)):
+	if (k_up and k_attack_pressed and gml.collision_point(position.x, position.y, "chest", 0, 0)):
 
 		if (InLevel.is_real_level()): global.total_chests += 1
 		var chest_instance = gml.instance_place(position.x, position.y, 'chest', self)
@@ -981,7 +981,7 @@ func handle_chest_opening():
 	
 func handle_crate_opening():
 	# open crate
-	if (k_up and k_attack_pressed and gml.collision_point(position.x, position.y, "crate", 0, false)):
+	if (k_up and k_attack_pressed and gml.collision_point(position.x, position.y, "crate", 0, 0)):
 		var obj
 		if (InLevel.is_real_level()): global.total_crates += 1
 		var chest_instance = gml.instance_place(position.x, position.y, 'crate', self)
@@ -1022,7 +1022,7 @@ func handle_crate_opening():
 func handle_flare_crate_opening():
 	# open flare crate
 
-	if (k_up and k_attack_pressed and gml.collision_point(position.x, position.y, "flare_crate", 0, false)):
+	if (k_up and k_attack_pressed and gml.collision_point(position.x, position.y, "flare_crate", 0, 0)):
 
 		var chest_instance = gml.instance_place(position.x, position.y, 'flare_crate', self)
 		for i in range (0, 3):
@@ -1048,7 +1048,7 @@ func start_game():
 	if (not dead and
 		not stunned and
 		not whipping and
-		gml.collision_point(position.x, position.y, "x_start", 0, false) and
+		gml.collision_point(position.x, position.y, "x_start", 0, 0) and
 		k_up and
 		platform_character_is(ON_GROUND) and
 		sprite_index != "p_exit" and sprite_index != "damsel_exit" and sprite_index != "tunnel_exit"):
@@ -1107,18 +1107,18 @@ func start_game():
 		invincible = 999
 		
 		p_exit = x_start
-		if (gml.collision_point(position.x, position.y, "x_scores", 0, false)): p_exit = x_scores
-		elif (gml.collision_point(position.x, position.y, "x_tutorial", 0, false)): p_exit = x_tutorial
-		elif (gml.collision_point(position.x, position.y, "x_title", 0, false)): p_exit = x_title
-		elif (gml.collision_point(position.x, position.y, "x_end", 0, false)): p_exit = x_end
-		elif (gml.collision_point(position.x, position.y, "x_shortcut5", 0, false)): p_exit = x_shortcut5
-		elif (gml.collision_point(position.x, position.y, "x_shortcut9", 0, false)): p_exit = x_shortcut9
-		elif (gml.collision_point(position.x, position.y, "x_shortcut13", 0, false)): p_exit = x_shortcut13
-		elif (gml.collision_point(position.x, position.y, "x_sun", 0, false)): p_exit = x_sun
-		elif (gml.collision_point(position.x, position.y, "x_moon", 0, false)): p_exit = x_moon
-		elif (gml.collision_point(position.x, position.y, "x_stars", 0, false)): p_exit = x_stars
-		elif (gml.collision_point(position.x, position.y, "x_change", 0, false)): p_exit = x_change
-		elif (gml.collision_point(position.x, position.y, "x_change2", 0, false)): p_exit = x_change2
+		if (gml.collision_point(position.x, position.y, "x_scores", 0, 0)): p_exit = x_scores
+		elif (gml.collision_point(position.x, position.y, "x_tutorial", 0, 0)): p_exit = x_tutorial
+		elif (gml.collision_point(position.x, position.y, "x_title", 0, 0)): p_exit = x_title
+		elif (gml.collision_point(position.x, position.y, "x_end", 0, 0)): p_exit = x_end
+		elif (gml.collision_point(position.x, position.y, "x_shortcut5", 0, 0)): p_exit = x_shortcut5
+		elif (gml.collision_point(position.x, position.y, "x_shortcut9", 0, 0)): p_exit = x_shortcut9
+		elif (gml.collision_point(position.x, position.y, "x_shortcut13", 0, 0)): p_exit = x_shortcut13
+		elif (gml.collision_point(position.x, position.y, "x_sun", 0, 0)): p_exit = x_sun
+		elif (gml.collision_point(position.x, position.y, "x_moon", 0, 0)): p_exit = x_moon
+		elif (gml.collision_point(position.x, position.y, "x_stars", 0, 0)): p_exit = x_stars
+		elif (gml.collision_point(position.x, position.y, "x_change", 0, 0)): p_exit = x_change
+		elif (gml.collision_point(position.x, position.y, "x_change2", 0, 0)): p_exit = x_change2
 		
 		if (p_exit != x_change2): Audio.stop_all_music()
 		
@@ -1130,7 +1130,7 @@ func exit_level():
 	if (not dead and
 		not stunned and
 		not whipping and
-		gml.collision_point(position.x, position.y, "exit", 0, false) and
+		gml.collision_point(position.x, position.y, "exit", 0, 0) and
 		k_up and
 		platform_character_is(ON_GROUND) and
 		sprite_index != "p_exit" and sprite_index != "damsel_exit" and sprite_index != "tunnel_exit"):
@@ -1244,9 +1244,9 @@ func exit_level():
 		else: global.curr_level += level_skip
 		Audio.stop_all_music()
 		Audio.play_sound(global.snd_steps)
-		if (gml.collision_point(position.x, position.y, "x_market", 0, false)): global.gen_black_market = true
-		if (gml.collision_point(position.x, position.y, "x_gold", 0, false)): global.city_of_gold = true
-		var obj = gml.collision_point(position.x, position.y, "exit", 0, false)
+		if (gml.collision_point(position.x, position.y, "x_market", 0, 0)): global.gen_black_market = true
+		if (gml.collision_point(position.x, position.y, "x_gold", 0, 0)): global.city_of_gold = true
+		var obj = gml.collision_point(position.x, position.y, "exit", 0, 0)
 		if (obj):
 		
 			if (obj.leads_to != ""):
@@ -1424,7 +1424,7 @@ func bomb_rope_and_whipping_handling(): #--- Also handles picking up items and a
 				gml.move_snap(16, 1, obj)
 				if (position.x < obj.position.x):
 				
-					if (not gml.collision_point(position.x+8, position.y, "solid", 0, false)):
+					if (not gml.collision_point(position.x+8, position.y, "solid", 0, 0)):
 					
 						if (not  gml.collision_rectangle(obj.position.x-8, obj.position.y, obj.position.x-7, obj.position.y+16, 'solid', 0, false, self)):
 							position.x -= 8
@@ -1434,7 +1434,7 @@ func bomb_rope_and_whipping_handling(): #--- Also handles picking up items and a
 					
 					else: obj.t = false
 				
-				elif (not gml.collision_point(position.x-8, position.y, "solid", 0, false)):
+				elif (not gml.collision_point(position.x-8, position.y, "solid", 0, 0)):
 				
 					if (not  gml.collision_rectangle(obj.position.x+7, obj.position.y, obj.position.x+8, obj.position.y+16, 'solid', 0, false, self)):
 						obj.position.x += 8
@@ -1562,7 +1562,7 @@ func bomb_rope_and_whipping_handling(): #--- Also handles picking up items and a
 			if (gml.collision_rectangle(position.x-8, position.y, position.x+8, position.y+8, 'item', 0, false, self)):
 			
 				var obj = gml.instance_nearest(position.x, position.y, 'item') #---  [FLAG] might need to check this
-				if (obj.can_pick_up and not gml.collision_point(obj.position.x, obj.position.y, "solid", 0, false)):
+				if (obj.can_pick_up and not gml.collision_point(obj.position.x, obj.position.y, "solid", 0, 0)):
 				
 					hold_item = obj
 					hold_item.held = true
@@ -1871,7 +1871,7 @@ func handle_damage_by_various_objects():
 	
 func kill_upon_being_crushed():
 	# crushed
-	if (gml.collision_point(position.x, position.y, "solid", 0, false)):
+	if (gml.collision_point(position.x, position.y, "solid", 0, 0)):
 
 		if (global.plife > 0):
 		
@@ -2057,7 +2057,7 @@ func handle_spike_collision():
 	if (col_spikes and dead):
 
 		#grav = 0
-		if (not gml.collision_point(position.x, position.y+9, "solid", 0, false)): position.y += 0.05
+		if (not gml.collision_point(position.x, position.y+9, "solid", 0, 0)): position.y += 0.05
 		else: my_grav = 0.6
 
 	else: my_grav = 0.6
@@ -2180,7 +2180,7 @@ func handle_dead_or_stunned():
 			
 		
 		
-		if (gml.collision_point(position.x, position.y, "spikes", 0, false) and dead and y_vel != 0):
+		if (gml.collision_point(position.x, position.y, "spikes", 0, 0) and dead and y_vel != 0):
 		
 			if (randi_range(1,8) == 1): MiscScripts.scr_create_blood(self.position.x, self.position.y, 1, self) #---[FLAG] changing 'other' to self, as this appears to be referring to the player
 																											#(as the other side of the collision)
@@ -2420,7 +2420,7 @@ func collect_bomb_bag():
 	if (gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "bomb_bag", 0, false, self) and not dead and not stunned):
 
 		var obj = gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "bomb_bag", 0, false, self)
-		if (not obj.held and obj.cost == 0 and not gml.collision_point(obj.position.x, obj.position.y, "solid", 0, false)):
+		if (not obj.held and obj.cost == 0 and not gml.collision_point(obj.position.x, obj.position.y, "solid", 0, 0)):
 		
 			global.bombs += 3
 			var disp = gml.instance_create(obj.position.x, obj.position.y-14, Objects.items_get)
@@ -2435,7 +2435,7 @@ func collect_bomb_box():
 	if (gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "bomb_box", 0, false, self) and not dead and not stunned):
 
 		var obj = gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "bomb_box", 0, false, self)
-		if (not obj.held and obj.cost == 0 and not gml.collision_point(obj.position.x, obj.position.y, "solid", 0, false)):
+		if (not obj.held and obj.cost == 0 and not gml.collision_point(obj.position.x, obj.position.y, "solid", 0, 0)):
 		
 			global.bombs += 12
 			var disp = gml.instance_create(obj.position.x, obj.position.y-14, Objects.items_get)
@@ -2450,7 +2450,7 @@ func collect_rope_pile():
 	if (gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "rope_pile", 0, false, self) and not dead and not stunned):
 
 		var obj = gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "rope_pile", 0, false, self)
-		if (not obj.held and obj.cost == 0 and not gml.collision_point(obj.position.x, obj.position.y, "solid", 0, false)):
+		if (not obj.held and obj.cost == 0 and not gml.collision_point(obj.position.x, obj.position.y, "solid", 0, 0)):
 		
 			global.rope += 3
 			var disp = gml.instance_create(obj.position.x, obj.position.y-15, Objects.items_get)
@@ -2462,7 +2462,7 @@ func collect_rope_pile():
 			global.message_timer = 120
 	
 func collect_idol_and_damsel():
-	if (gml.collision_point(position.x, position.y, "exit", 0, false)):
+	if (gml.collision_point(position.x, position.y, "exit", 0, 0)):
 
 		#if (hold_item != 0):
 		if (hold_item != null):
@@ -2789,7 +2789,7 @@ func check_collisions():
 	if (Collision.is_collision_platform_bottom(1, self)): col_plat_bot = true
 	if (Collision.is_collision_platform(self)): col_plat = true
 	if (Collision.is_collision_water_top(1, self)): col_water_top = true
-	if (gml.collision_point(position.x, position.y+8, 'ice', 0, false)): col_ice_bot = true
+	if (gml.collision_point(position.x, position.y+8, 'ice', 0, 0)): col_ice_bot = true
 	
 func check_run():
 	if (ControlScripts.check_run()):
@@ -2868,9 +2868,9 @@ func handle_ladder_climbing():
 		
 		k_jumped = false
 		ladder_timer = 10
-		#var ladder_instance = gml.collision_point(position.x, position.y, 'ladder', 0, false) #--- adjusting this as collision_point in my implementation only returns a boolean
+		#var ladder_instance = gml.collision_point(position.x, position.y, 'ladder', 0, 0) #--- adjusting this as collision_point in my implementation only returns a boolean
 		var ladder_instance
-		if gml.collision_point(position.x, position.y, 'ladder', 0, false):
+		if gml.collision_point(position.x, position.y, 'ladder', 0, 0):
 			ladder_instance = gml.instance_nearest(position.x, position.y, 'ladder')
 		if (ladder_instance): position.x = ladder_instance.position.x + 8
 
@@ -2878,7 +2878,7 @@ func handle_ladder_climbing():
 		elif (k_right): facing = RIGHT
 		if (k_up):
 		
-			if (gml.collision_point(position.x, position.y-8, 'ladder', 0, false) or gml.collision_point(position.x, position.y-8, 'ladder_top', 0, 0)):
+			if (gml.collision_point(position.x, position.y-8, 'ladder', 0, 0) or gml.collision_point(position.x, position.y-8, 'ladder_top', 0, 0)):
 			
 				y_acc -= climb_acc
 				if (alarm_2_countdown.frames_to_count_down < 1): alarm_2_countdown.start(8)
@@ -2886,7 +2886,7 @@ func handle_ladder_climbing():
 		
 		elif (k_down):
 		
-			if (gml.collision_point(position.x, position.y+8, 'ladder', 0, false) or gml.collision_point(position.x, position.y+8, 'ladder_top', 0, 0)):
+			if (gml.collision_point(position.x, position.y+8, 'ladder', 0, 0) or gml.collision_point(position.x, position.y+8, 'ladder_top', 0, 0)):
 			
 				y_acc += climb_acc
 				if (alarm_2_countdown.frames_to_count_down < 1): alarm_2_countdown.start(8)
@@ -2978,7 +2978,7 @@ func end_jump_upon_button_release():
 		k_jumped = false
 		
 func handle_jumping():
-	if (k_jump_pressed and gml.collision_point(position.x, position.y, 'web', 0, false)):
+	if (k_jump_pressed and gml.collision_point(position.x, position.y, 'web', 0, 0)):
 
 		var obj = gml.instance_place(position.x, position.y, "web", self)
 		obj.life -= 1
@@ -3090,7 +3090,7 @@ func initial_hanging_behavior():
 		if (global.has_gloves and y_vel > 0):
 
 			if (hang_count == 0 and position.y > 16 and !platform_character_is(ON_GROUND) and k_right and col_right and
-				(gml.collision_point(position.x+9, position.y-5, "solid", 0, false) or gml.collision_point(position.x+9, position.y-6, "solid", 0, 0))):
+				(gml.collision_point(position.x+9, position.y-5, "solid", 0, 0) or gml.collision_point(position.x+9, position.y-6, "solid", 0, 0))):
 			
 				state = HANGING
 				gml.move_snap(1, 8, self)
@@ -3099,7 +3099,7 @@ func initial_hanging_behavior():
 				grav = 0
 			
 			elif (hang_count == 0 and position.y > 16 and !platform_character_is(ON_GROUND) and k_left and col_left and
-				(gml.collision_point(position.x-9, position.y-5, "solid", 0, false) or gml.collision_point(position.x-9, position.y-6, "solid", 0, 0))):
+				(gml.collision_point(position.x-9, position.y-5, "solid", 0, 0) or gml.collision_point(position.x-9, position.y-6, "solid", 0, 0))):
 			
 				state = HANGING
 				gml.move_snap(1, 8, self)
@@ -3109,7 +3109,7 @@ func initial_hanging_behavior():
 			
 
 		elif (hang_count == 0 and position.y > 16 and !platform_character_is(ON_GROUND) and k_right and col_right and
-			(gml.collision_point(position.x+9, position.y-5, 'tree', 0, false) or gml.collision_point(position.x+9, position.y-6, 'tree', 0, 0))):
+			(gml.collision_point(position.x+9, position.y-5, 'tree', 0, 0) or gml.collision_point(position.x+9, position.y-6, 'tree', 0, 0))):
 
 			state = HANGING
 			gml.move_snap(1, 8, self)
@@ -3118,7 +3118,7 @@ func initial_hanging_behavior():
 			grav = 0
 
 		elif (hang_count == 0 and position.y > 16 and !platform_character_is(ON_GROUND) and k_left and col_left and
-			(gml.collision_point(position.x-9, position.y-5, 'tree', 0, false) or gml.collision_point(position.x-9, position.y-6, 'tree', 0, 0))):
+			(gml.collision_point(position.x-9, position.y-5, 'tree', 0, 0) or gml.collision_point(position.x-9, position.y-6, 'tree', 0, 0))):
 
 			state = HANGING
 			gml.move_snap(1, 8, self)
@@ -3127,8 +3127,8 @@ func initial_hanging_behavior():
 			grav = 0
 
 		elif (hang_count == 0 and position.y > 16 and !platform_character_is(ON_GROUND) and k_right and col_right and
-			(gml.collision_point(position.x+9, position.y-5, 'solid', 0, false) or gml.collision_point(position.x+9, position.y-6, 'solid', 0, 0)) and
-			not gml.collision_point(position.x+9, position.y-9, 'solid', 0, false) and not gml.collision_point(position.x, position.y+9, 'solid', 0, 0)):
+			(gml.collision_point(position.x+9, position.y-5, 'solid', 0, 0) or gml.collision_point(position.x+9, position.y-6, 'solid', 0, 0)) and
+			not gml.collision_point(position.x+9, position.y-9, 'solid', 0, 0) and not gml.collision_point(position.x, position.y+9, 'solid', 0, 0)):
 
 				state = HANGING
 				gml.move_snap(1, 8, self)
@@ -3137,8 +3137,8 @@ func initial_hanging_behavior():
 				grav = 0
 
 		elif (hang_count == 0 and position.y > 16 and !platform_character_is(ON_GROUND) and k_left and col_left and
-			(gml.collision_point(position.x-9, position.y-5, 'solid', 0, false) or gml.collision_point(position.x-9, position.y-6, 'solid', 0, 0)) and
-			not gml.collision_point(position.x-9, position.y-9, 'solid', 0, false) and not gml.collision_point(position.x, position.y+9, 'solid', 0, 0)):
+			(gml.collision_point(position.x-9, position.y-5, 'solid', 0, 0) or gml.collision_point(position.x-9, position.y-6, 'solid', 0, 0)) and
+			not gml.collision_point(position.x-9, position.y-9, 'solid', 0, 0) and not gml.collision_point(position.x, position.y+9, 'solid', 0, 0)):
 
 				state = HANGING
 				gml.move_snap(1, 8, self)
@@ -3148,8 +3148,8 @@ func initial_hanging_behavior():
 
 
 		if (hang_count == 0 and position.y > 16 and !platform_character_is(ON_GROUND) and state == FALLING and
-			(gml.collision_point(position.x, position.y-5, 'arrow', 0, false) or gml.collision_point(position.x, position.y-6, 'arrow', 0, 0)) and
-			not gml.collision_point(position.x, position.y-9, 'arrow', 0, false) and not gml.collision_point(position.x, position.y+9, 'arrow', 0, 0)):
+			(gml.collision_point(position.x, position.y-5, 'arrow', 0, 0) or gml.collision_point(position.x, position.y-6, 'arrow', 0, 0)) and
+			not gml.collision_point(position.x, position.y-9, 'arrow', 0, 0) and not gml.collision_point(position.x, position.y+9, 'arrow', 0, 0)):
 
 			var obj = gml.instance_nearest(position.x, position.y-5, 'arrow')
 			if (obj.stuck):
@@ -3164,8 +3164,8 @@ func initial_hanging_behavior():
 
 		#/*
 		#if (hang_count == 0 and position.y > 16 and !platform_character_is(ON_GROUND) and state == FALLING and:
-			#(gml.collision_point(position.x, position.y-5, treeBranch, 0, false) or gml.collision_point(position.x, position.y-6, treeBranch, 0, 0)) and
-			#not gml.collision_point(position.x, position.y-9, treeBranch, 0, false) and not gml.collision_point(position.x, position.y+9, treeBranch, 0, 0))
+			#(gml.collision_point(position.x, position.y-5, treeBranch, 0, 0) or gml.collision_point(position.x, position.y-6, treeBranch, 0, 0)) and
+			#not gml.collision_point(position.x, position.y-9, treeBranch, 0, 0) and not gml.collision_point(position.x, position.y+9, treeBranch, 0, 0))
 	#
 				#state = HANGING
 		  ## gml.move_snap(1, 8)
@@ -3298,11 +3298,11 @@ func set_falling_state():
 	
 func handle_ladder_climbing2():
 	# CLIMB LADDER
-	var col_point_ladder = gml.collision_point(position.x, position.y, 'ladder', 0, false) or gml.collision_point(position.x, position.y, 'ladder_top', 0, 0)
+	var col_point_ladder = gml.collision_point(position.x, position.y, 'ladder', 0, 0) or gml.collision_point(position.x, position.y, 'ladder_top', 0, 0)
 
-	if ((k_up and platform_character_is(IN_AIR) and gml.collision_point(position.x, position.y-8, 'ladder', 0, false) and ladder_timer == 0) or
+	if ((k_up and platform_character_is(IN_AIR) and gml.collision_point(position.x, position.y-8, 'ladder', 0, 0) and ladder_timer == 0) or
 		(k_up and col_point_ladder and ladder_timer == 0) or
-		(k_down and col_point_ladder and ladder_timer == 0 and platform_character_is(ON_GROUND) and gml.collision_point(position.x, position.y+9, 'ladder_top', 0, false) and x_vel == 0)):
+		(k_down and col_point_ladder and ladder_timer == 0 and platform_character_is(ON_GROUND) and gml.collision_point(position.x, position.y+9, 'ladder_top', 0, 0) and x_vel == 0)):
 
 		#ladder = 0 #--- Setting to zero seems to do nothing, so commenting out
 		var ladder_instance = gml.instance_place(position.x, position.y-8, 'ladder', self)
@@ -3313,7 +3313,7 @@ func handle_ladder_climbing2():
 			
 				position.x = ladder_instance.position.x + 8
 				
-				if (not gml.collision_point(position.x, position.y, 'ladder', 0, false) and not gml.collision_point(position.x, position.y, 'ladder_top', 0, 0)):
+				if (not gml.collision_point(position.x, position.y, 'ladder', 0, 0) and not gml.collision_point(position.x, position.y, 'ladder_top', 0, 0)):
 				
 					global_position.y = ladder_instance.global_position.y + 14
 
@@ -3330,11 +3330,11 @@ func handle_ladder_climbing2():
 	#if (sprite_index == "duck_thang_l" or sprite_index == "damsel_dt_hl"):
 #
 		#ladder = 0
-		#if (facing == LEFT and  gml.collision_rectangle(position.x-8, position.y, position.x, position.y+16, ladder, 0, false, self) and not gml.collision_point(position.x-4, position.y+16, solid, 0, false)):
+		#if (facing == LEFT and  gml.collision_rectangle(position.x-8, position.y, position.x, position.y+16, ladder, 0, false, self) and not gml.collision_point(position.x-4, position.y+16, solid, 0, 0)):
 		#
 			#ladder = instance_nearest(position.x-4, position.y+16, ladder)
 		#
-		#elif (facing == RIGHT and  gml.collision_rectangle(position.x, position.y, position.x+8, position.y+16, ladder, 0, false, self) and not gml.collision_point(position.x+4, position.y+16, solid, 0, false)):
+		#elif (facing == RIGHT and  gml.collision_rectangle(position.x, position.y, position.x+8, position.y+16, ladder, 0, false, self) and not gml.collision_point(position.x+4, position.y+16, solid, 0, 0)):
 		#
 			#ladder = instance_nearest(position.x+4, position.y+16, ladder)
 		#
@@ -3436,7 +3436,7 @@ func calculate_friction():
 		
 		
 		# Stuck on web or underwater
-		if (gml.collision_point(position.x, position.y, 'web', 0, false)):
+		if (gml.collision_point(position.x, position.y, 'web', 0, 0)):
 		
 			x_fric = 0.2
 			y_fric = 0.2
@@ -3499,7 +3499,7 @@ func running_and_duck_to_hang_behavior():
 		
 		# ledge flip
 		if (state == DUCKING and abs(x_vel) < 3 and facing == LEFT and
-			gml.collision_point(position.x, position.y+9, 'solid', 0, false) and not gml.collision_point(position.x-1, position.y+9, 'solid', 0, 0) and k_left):
+			gml.collision_point(position.x, position.y+9, 'solid', 0, 0) and not gml.collision_point(position.x-1, position.y+9, 'solid', 0, 0) and k_left):
 		
 			state = DUCKTOHANG
 			
@@ -3523,7 +3523,7 @@ func running_and_duck_to_hang_behavior():
 			
 		
 		elif (state == DUCKING and abs(x_vel) < 3 and facing == RIGHT and
-			gml.collision_point(position.x, position.y+9, 'solid', 0, false) and not gml.collision_point(position.x+1, position.y+9, 'solid', 0, 0) and k_right):
+			gml.collision_point(position.x, position.y+9, 'solid', 0, 0) and not gml.collision_point(position.x+1, position.y+9, 'solid', 0, 0) and k_right):
 		
 			state = DUCKTOHANG
 			
@@ -3957,7 +3957,7 @@ func character_sprite():
 
 		if (state == STANDING):
 		
-			if (not gml.collision_point(position.x-2, position.y+9, "solid", 0, false)):
+			if (not gml.collision_point(position.x-2, position.y+9, "solid", 0, 0)):
 			
 				image_speed = 0.6
 				sprite_index = "tunnel_whoa_l"
@@ -3992,7 +3992,7 @@ func character_sprite():
 			sprite_index = "tunnel_dt_hl"
 		if (state == CLIMBING):
 		
-			if (gml.collision_point(position.x,position.y,'rope',0, false)):
+			if (gml.collision_point(position.x,position.y,'rope',0,0)):
 			
 				if (k_down): sprite_index = "tunnel_climb3"
 				else: sprite_index = "tunnel_climb2"
@@ -4004,7 +4004,7 @@ func character_sprite():
 
 		if (state == STANDING):
 		
-			if (not gml.collision_point(position.x-2, position.y+9, "solid", 0, false)):
+			if (not gml.collision_point(position.x-2, position.y+9, "solid", 0, 0)):
 			
 				image_speed = 0.6
 				sprite_index = "damsel_whoa_l"
@@ -4054,7 +4054,7 @@ func character_sprite():
 			sprite_index = "damsel_dt_hl"
 		if (state == CLIMBING):
 		
-			if (gml.collision_point(position.x,position.y,'rope',0, false)):
+			if (gml.collision_point(position.x,position.y,'rope',0,0)):
 			
 				if (k_down): sprite_index = "damsel_climb3"
 				else: sprite_index = "damsel_climb2"
@@ -4066,7 +4066,7 @@ func character_sprite():
 		 
 		if (state == STANDING):
 		
-			if (not gml.collision_point(position.x-2, position.y+9, "solid", 0, false)):
+			if (not gml.collision_point(position.x-2, position.y+9, "solid", 0, 0)):
 			
 				image_speed = 0.6
 				sprite_index = "whoa_left"
@@ -4114,7 +4114,7 @@ func character_sprite():
 			sprite_index = "push_left"
 		if (state == CLIMBING):
 		
-			if (gml.collision_point(position.x,position.y,'rope',0, false)):
+			if (gml.collision_point(position.x,position.y,'rope',0,0)):
 			
 				if (k_down): sprite_index = "climb_up3"
 				else: sprite_index = "climb_up2"
@@ -4407,13 +4407,13 @@ func animation_end():
 		grav = 0
 		if (facing == LEFT):
 		
-			obj = gml.collision_point(position.x-8, position.y, "ladder", 0, false) #---[FLAG] this must return an object
-			if (!obj): obj = gml.collision_point(position.x-8, position.y, "ladder_top", 0, false)
+			obj = gml.collision_point(position.x-8, position.y, "ladder", 0, 0) #---[FLAG] this must return an object
+			if (!obj): obj = gml.collision_point(position.x-8, position.y, "ladder_top", 0, 0)
 		
 		else:
 		
-			obj = gml.collision_point(position.x+8, position.y, "ladder", 0, false) #---[FLAG] this must return an object
-			if (!obj): obj = gml.collision_point(position.x+8, position.y, "ladder_top", 0, false)
+			obj = gml.collision_point(position.x+8, position.y, "ladder", 0, 0) #---[FLAG] this must return an object
+			if (!obj): obj = gml.collision_point(position.x+8, position.y, "ladder_top", 0, 0)
 		
 		if (obj != null and gml.instance_exists(obj.object_name)): #--- adding check here to make sure object isn't null
 		
@@ -4676,7 +4676,7 @@ func scr_use_item(): #--- only called by player1 so including it here for conven
 						
 				obj.t = true
 				gml.move_snap(16, 1, obj)
-				if (self.position.x < obj.position.x and not gml.collision_point(self.position.x+2, self.position.y, "solid", 0, false)):
+				if (self.position.x < obj.position.x and not gml.collision_point(self.position.x+2, self.position.y, "solid", 0, 0)):
 						
 					if (not gml.collision_rectangle(obj.position.x-8, obj.position.y, obj.position.x-7,  obj.position.y+16, "solid", 0, false, self)):
 							
@@ -4688,7 +4688,7 @@ func scr_use_item(): #--- only called by player1 so including it here for conven
 							
 					else: obj.t = false
 						
-				elif (not gml.collision_point(self.position.x-2, self.position.y, "solid", 0, false)):
+				elif (not gml.collision_point(self.position.x-2, self.position.y, "solid", 0, 0)):
 						
 					if (not gml.collision_rectangle(obj.position.x+7, obj.position.y, obj.position.x+8,  obj.position.y+16, "solid", 0, false, self)):
 							
@@ -5229,7 +5229,7 @@ func scr_use_item(): #--- only called by player1 so including it here for conven
 				
 			if (hold_item.heavy): hold_item.x_vel = -4 + x_vel
 			else: hold_item.x_vel = -8 + x_vel
-			if (gml.collision_point(position.x-8, position.y, "solid", 0, false)): # DY:  prevent getting stuck in wall
+			if (gml.collision_point(position.x-8, position.y, "solid", 0, 0)): # DY:  prevent getting stuck in wall
 					
 				hold_item.position.x += 8
 					
@@ -5238,7 +5238,7 @@ func scr_use_item(): #--- only called by player1 so including it here for conven
 				
 			if (hold_item.heavy): hold_item.x_vel = 4 + x_vel
 			else: hold_item.x_vel = 8 + x_vel
-			if (gml.collision_point(position.x+8, position.y, "solid", 0, false)): # DY:  prevent getting stuck in wall
+			if (gml.collision_point(position.x+8, position.y, "solid", 0, 0)): # DY:  prevent getting stuck in wall
 					
 				hold_item.position.x -= 8
 					
@@ -5267,7 +5267,7 @@ func scr_use_item(): #--- only called by player1 so including it here for conven
 				
 			if (facing == LEFT):
 					
-				if (gml.collision_point(position.x-8, position.y-10, "solid", 0, false)):
+				if (gml.collision_point(position.x-8, position.y-10, "solid", 0, 0)):
 						
 					hold_item.y_vel = 0
 					hold_item.x_vel -= 1
@@ -5275,7 +5275,7 @@ func scr_use_item(): #--- only called by player1 so including it here for conven
 					
 			elif (facing == RIGHT):
 					
-				if (gml.collision_point(position.x+8, position.y-10, "solid", 0, false)):
+				if (gml.collision_point(position.x+8, position.y-10, "solid", 0, 0)):
 						
 					hold_item.y_vel = 0
 					hold_item.x_vel += 1

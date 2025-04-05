@@ -31,7 +31,7 @@ func step():
 		var obj = gml.instance_place(640, 544, "entrance", self) #---[FLAG] don't see how this works when final_boss has no sprite/collision?
 		gml.instance_destroy(obj)
 		gml.instance_create(640, 544, Objects.x_end)
-		if (not gml.collision_point(640, 560, "solid", 0, false)):
+		if (not gml.collision_point(640, 560, "solid", 0, 0)):
 	
 			var brick = gml.instance_create(640, 560, Objects.temple)
 			brick.invincible = true
