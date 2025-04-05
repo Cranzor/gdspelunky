@@ -258,7 +258,7 @@ func instance_destroy(obj: GMObject): #'Destroys current instance' ---  Should p
 	obj.hide()
 	obj.queue_free()
 
-func collision_rectangle(x1,y1,x2,y2,obj,_prec,notme: GMObject): #"This function tests whether there is a collision between the (filled) rectangle with the indicated opposite corners and entities of object obj. For example, you can use this to test whether an area is free of obstacles."
+func collision_rectangle(x1,y1,x2,y2,obj,_prec,notme: bool, calling_object: GMObject = null): #"This function tests whether there is a collision between the (filled) rectangle with the indicated opposite corners and entities of object obj. For example, you can use this to test whether an area is free of obstacles."
 	if abs(x2 - x1) == 0 or abs(y2 - y1) == 0: #--- raycast is more appropriate in this case since it's just a line
 		return handle_collision_ray(x1, y1, x2, y2, obj, notme) #--- also avoids error in handle_collision_shapecast() associated with size being negative
 	return handle_collision_shapecast(x1, y1, x2, y2, obj)
