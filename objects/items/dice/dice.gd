@@ -138,7 +138,7 @@ func step():
 			if (global.has_spectacles): depth = 0
 			else: depth = 101
 		
-			if (gml.collision_rectangle(position.x-3, position.y-3, position.x+3,  position.y+3, "lava", 0, false, self)):
+			if (gml.collision_rectangle(position.x-3, position.y-3, position.x+3,  position.y+3, "lava", 0, null)):
 		
 				my_grav = 0
 				x_vel = 0
@@ -154,7 +154,7 @@ func step():
 
 		if ((abs(x_vel) > 3 or abs(y_vel) > 3)):
 	
-			if (gml.collision_rectangle(position.x-2, position.y-2, position.x+2,  position.y+2, "enemy", 0, false, self)):
+			if (gml.collision_rectangle(position.x-2, position.y-2, position.x+2,  position.y+2, "enemy", 0, null)):
 		
 				var obj = gml.instance_nearest(position.x, position.y, "enemy")
 				if (not obj.invincible and obj.type != "magma man"):
@@ -226,7 +226,7 @@ func step():
 			
 		
 
-			if (gml.collision_rectangle(position.x-2, position.y-2, position.x+2,  position.y+2, "damsel", 0, false, self)):
+			if (gml.collision_rectangle(position.x-2, position.y-2, position.x+2,  position.y+2, "damsel", 0, null)):
 		
 				var obj = gml.instance_nearest(position.x, position.y, "damsel")
 				if (not obj.invincible and obj.status != 2 and obj.status != 99):

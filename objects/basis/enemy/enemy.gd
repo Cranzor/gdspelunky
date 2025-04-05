@@ -272,7 +272,7 @@ func step():
 			depth = 999
 
 
-		if (gml.collision_rectangle(position.x+2, position.y+2, position.x+14,  position.y+14, "spears_left", 0, false, self)):
+		if (gml.collision_rectangle(position.x+2, position.y+2, position.x+14,  position.y+14, "spears_left", 0, null)):
 
 			var trap = gml.instance_nearest(position.x, position.y, "spears_left")
 			if (trap.image_index >= 20 and trap.image_index < 24):
@@ -370,7 +370,7 @@ func step():
 
 			if ((abs(x_vel) > 2 or abs(y_vel) > 2)):
 		
-				var obj = gml.collision_rectangle(position.x, position.y, position.x+16,  position.y+16, "enemy", false, true, self)
+				var obj = gml.collision_rectangle(position.x, position.y, position.x+16,  position.y+16, "enemy", false, self)
 				if (obj):
 			
 					if (not obj.invincible and obj.type != "magma man"):
