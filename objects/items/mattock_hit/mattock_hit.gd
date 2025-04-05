@@ -20,12 +20,12 @@ func animation_end():
 	hit = false
 	var obj
 	
-	if (gml.collision_point(position.x, position.y, "solid", 0, 0)):
+	if (gml.collision_point(position.x, position.y, "solid", 0, false)):
 
 		obj = gml.instance_place(position.x, position.y, "solid", self)
 		if (not obj.invincible): hit = true
 
-	elif (gml.collision_point(position.x, position.y+9, "solid", 0, 0)):
+	elif (gml.collision_point(position.x, position.y+9, "solid", 0, false)):
 
 		obj = gml.instance_place(position.x, position.y+9, "solid", self)
 		if (not obj.invincible): hit = true
@@ -50,7 +50,7 @@ func animation_end():
 		var all_spikes = gml.get_all_instances("spikes")
 		for spikes_instance in all_spikes:
 	
-			if (not gml.collision_point(spikes_instance.position.x, spikes_instance.position.y+16, "solid", 0, 0)):
+			if (not gml.collision_point(spikes_instance.position.x, spikes_instance.position.y+16, "solid", 0, false)):
 		
 				gml.instance_destroy(spikes_instance)
 		

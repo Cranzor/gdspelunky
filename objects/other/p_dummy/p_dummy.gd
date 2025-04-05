@@ -143,7 +143,7 @@ func draw():
 func step():
 	position.y += y_vel
 
-	if (status != STOPPED and gml.collision_point(position.x+8, position.y, "damsel_kiss", 0, 0)):
+	if (status != STOPPED and gml.collision_point(position.x+8, position.y, "damsel_kiss", 0, false)):
 
 		var person = gml.instance_nearest(position.x+8, position.y, "damsel_kiss")
 		if (not person.kissed):
@@ -164,7 +164,7 @@ func step():
 	if (gml.instance_exists("tunnel_man")):
 
 		var person = gml.instance_nearest(position.x+8, position.y, "tunnel_man")
-		if (status != STOPPED and gml.collision_point(position.x+8, position.y, "tunnel_man", 0, 0) and person.talk == 0):
+		if (status != STOPPED and gml.collision_point(position.x+8, position.y, "tunnel_man", 0, false) and person.talk == 0):
 	
 			status = STOPPED
 			x_vel = 0

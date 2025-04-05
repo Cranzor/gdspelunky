@@ -54,7 +54,7 @@ func create():
 	shake_counter = 0
 	shake_toggle = 1
 
-	if (gml.collision_point(position.x, position.y, "water", 0, 0)): swimming = true
+	if (gml.collision_point(position.x, position.y, "water", 0, false)): swimming = true
 
 
 func step():
@@ -72,7 +72,7 @@ func step():
 		y_vel += my_grav
 		if (y_vel > y_vel_limit): y_vel = y_vel_limit
 
-		if (gml.collision_point(position.x+8, position.y+8, "solid", 0, 0)): hp = -999
+		if (gml.collision_point(position.x+8, position.y+8, "solid", 0, false)): hp = -999
 
 		if (hp < 1):
 

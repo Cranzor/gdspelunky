@@ -33,7 +33,7 @@ func destroy():
 			gml.instance_create(position.x+randi_range(0,16), position.y+randi_range(0,16), Objects.drip)
 	
 
-		if (gml.collision_point(position.x+8, position.y+8, "frozen_caveman", 0, 0)):
+		if (gml.collision_point(position.x+8, position.y+8, "frozen_caveman", 0, false)):
 	
 			var frozen_caveman_instance = gml.instance_place(position.x+8, position.y+8, "frozen_caveman", self)
 			gml.instance_destroy(frozen_caveman_instance)

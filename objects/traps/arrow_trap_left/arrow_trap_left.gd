@@ -25,7 +25,7 @@ func alarm_1():
 	if (not InLevel.is_room("level_editor")):
 
 		x_act = position.x-1
-		while (not gml.collision_point(x_act, position.y+8, "solid", 0, 0)):
+		while (not gml.collision_point(x_act, position.y+8, "solid", 0, false)):
 	
 			if (position.x - x_act > 96): break
 			x_act -= 1

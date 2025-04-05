@@ -27,7 +27,7 @@ func alarm_1():
 		# DY:  calculate how far to motion detect
 		x_act = position.x+16
 		var n = 100
-		while (not gml.collision_point(x_act, position.y+8, "solid", 0, 0) && n > 0):
+		while (not gml.collision_point(x_act, position.y+8, "solid", 0, false) && n > 0):
 	
 			if (x_act - position.x > 96): break
 			x_act += 1

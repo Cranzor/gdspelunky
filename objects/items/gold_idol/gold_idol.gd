@@ -41,7 +41,7 @@ func step():
 		if (InLevel.is_level()):
 
 			if (not held and
-				gml.collision_point(position.x, position.y+4, "brick_smooth", 0, 0) and
+				gml.collision_point(position.x, position.y+4, "brick_smooth", 0, false) and
 				gml.instance_exists("shopkeeper") and
 				global.thief_level == 0 and not global.murderer):
 				var shopkeeper = gml.get_instance("shopkeeper")

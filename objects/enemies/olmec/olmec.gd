@@ -190,9 +190,9 @@ func step():
 		# DY: if (x_vel > 0): x_vel = -x_vel * 0.8
 
 
-	if (gml.collision_point(position.x, position.y+64, "lava", 0, 0)): status = DROWNING
+	if (gml.collision_point(position.x, position.y+64, "lava", 0, false)): status = DROWNING
 
-	if (gml.collision_point(position.x, position.y-2, "lava", 0, 0)):
+	if (gml.collision_point(position.x, position.y-2, "lava", 0, false)):
 
 		global.enemy_kills[21] += 1
 		var final_boss = gml.get_instance("final_boss") #---[FLAG] check to make sure there is only one

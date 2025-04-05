@@ -55,7 +55,7 @@ func collision_with_character():
 
 		elif (other.invincible == 0 and status < STUNNED):
 
-			if (gml.collision_point(position.x+8, position.y-4, "solid", 0, 0)):
+			if (gml.collision_point(position.x+8, position.y-4, "solid", 0, false)):
 		
 				other.blink = 30
 				other.invincible = 30
@@ -208,7 +208,7 @@ func step():
 
 		if (status >= STUNNED):
 
-			if (gml.collision_point(position.x+8, position.y+12, "solid", 0, 0)):
+			if (gml.collision_point(position.x+8, position.y+12, "solid", 0, false)):
 		
 				MiscScripts.scr_create_blood(position.x+8, position.y+8, 3, self)
 				Audio.play_sound(global.snd_caveman_die)
@@ -217,7 +217,7 @@ func step():
 
 		elif (not held):
 
-			if (gml.collision_point(position.x+8, position.y+8, "solid", 0, 0)):
+			if (gml.collision_point(position.x+8, position.y+8, "solid", 0, false)):
 		
 				MiscScripts.scr_create_blood(position.x+8, position.y+8, 3, self)
 				Audio.play_sound(global.snd_caveman_die)
@@ -323,7 +323,7 @@ func step():
 			if (facing == LEFT): x_vel = -3
 			else: x_vel = 3
 		
-			if (Collision.is_collision_bottom(1, self) and not gml.collision_point(position.x, position.y-16, "solid", 0, 0)):
+			if (Collision.is_collision_bottom(1, self) and not gml.collision_point(position.x, position.y-16, "solid", 0, false)):
 		
 				y_vel = -6
 		

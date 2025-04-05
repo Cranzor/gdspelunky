@@ -59,7 +59,7 @@ func collision_with_item():
 				if (facing == RIGHT): other.x_vel = 5
 				else: other.x_vel = -5
 				other.y_vel = -4
-				if (not gml.collision_point(other.position.x, other.position.y, "solid", 0, 0)): other.position.y = position.y-2
+				if (not gml.collision_point(other.position.x, other.position.y, "solid", 0, false)): other.position.y = position.y-2
 				throw_counter = 60
 				status = IDLE
 				counter = gml.rand(20,60)
@@ -70,7 +70,7 @@ func collision_with_item():
 			if (facing == RIGHT): other.x_vel = 5
 			else: other.x_vel = -5
 			other.y_vel = -4
-			if (not gml.collision_point(other.position.x, other.position.y-2, "solid", 0, 0)): other.position.y -= 2
+			if (not gml.collision_point(other.position.x, other.position.y-2, "solid", 0, false)): other.position.y -= 2
 			throw_counter = 60
 			status = IDLE
 			counter = gml.rand(20,60)
@@ -125,7 +125,7 @@ func create():
 	shake_counter = 0
 	shake_toggle = 1
 
-	if (gml.collision_point(position.x, position.y, "water", 0, 0)): swimming = true
+	if (gml.collision_point(position.x, position.y, "water", 0, false)): swimming = true
 
 
 func step():
@@ -146,7 +146,7 @@ func step():
 		if (status != HANG and status != CLIMB and status != GRAB): y_vel += my_grav
 		if (y_vel > y_vel_limit): y_vel = y_vel_limit
 
-		if (gml.collision_point(position.x+8, position.y+8, "solid", 0, 0)): hp = -999
+		if (gml.collision_point(position.x+8, position.y+8, "solid", 0, false)): hp = -999
 
 		if (gml.collision_point(position.x+8, position.y+8, "water", -1, -1)):
 
@@ -285,7 +285,7 @@ func step():
 			if (dir == UP):
 		
 				y_vel = -1
-				if (not gml.collision_point(position.x+8, position.y, "vine", 0, 0)):
+				if (not gml.collision_point(position.x+8, position.y, "vine", 0, false)):
 			
 					dir = DOWN
 					status = HANG
@@ -295,7 +295,7 @@ func step():
 			else:
 		
 				y_vel = 1
-				if (not gml.collision_point(position.x+8, position.y+22, "vine", 0, 0)):
+				if (not gml.collision_point(position.x+8, position.y+22, "vine", 0, false)):
 			
 					dir = UP
 					status = HANG

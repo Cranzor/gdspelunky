@@ -98,7 +98,7 @@ func step():
 		position.y > gml.view("yview")-48 and position.y < gml.view("yview") + gml.view("hview")+48)):
 
 
-		if (not gml.collision_point(position.x+8, position.y+16, "water", 0, 0)):
+		if (not gml.collision_point(position.x+8, position.y+16, "water", 0, false)):
 
 			hp -= 1
 
@@ -131,7 +131,7 @@ func step():
 
 			if (dir == 0): # DY:  right
 		
-				if (gml.collision_point(position.x+18, position.y+16, "water", 0, 0) and not (gml.collision_point(position.x+18, position.y+16, "solid", 0, 0))):
+				if (gml.collision_point(position.x+18, position.y+16, "water", 0, false) and not (gml.collision_point(position.x+18, position.y+16, "solid", 0, 0))):
 			
 					PlatformEngine.move_to(2,0,self)
 			
@@ -146,7 +146,7 @@ func step():
 		
 			else:
 		
-				if (gml.collision_point(position.x-2, position.y+16, "water", 0, 0) and not (gml.collision_point(position.x-2, position.y+16, "solid", 0, 0))):
+				if (gml.collision_point(position.x-2, position.y+16, "water", 0, false) and not (gml.collision_point(position.x-2, position.y+16, "solid", 0, 0))):
 			
 					PlatformEngine.move_to(-2,0,self)
 			
@@ -201,7 +201,7 @@ func step():
 			
 				else:
 			
-					if (sprite_index == "jaws_left" and not gml.collision_point(position.x-2, position.y+16, "solid", 0, 0)):
+					if (sprite_index == "jaws_left" and not gml.collision_point(position.x-2, position.y+16, "solid", 0, false)):
 				
 						status = TURN
 						dir = 0
@@ -213,8 +213,8 @@ func step():
 			
 				if (not turn):
 			
-					if (gml.collision_point(position.x + cos(gml.degtorad(dir)), position.y - sin(gml.degtorad(dir)), "water", 0, 0) and
-					not gml.collision_point(position.x + cos(gml.degtorad(dir)), position.y - sin(gml.degtorad(dir)), "solid", 0, 0)):
+					if (gml.collision_point(position.x + cos(gml.degtorad(dir)), position.y - sin(gml.degtorad(dir)), "water", 0, false) and
+					not gml.collision_point(position.x + cos(gml.degtorad(dir)), position.y - sin(gml.degtorad(dir)), "solid", 0, false)):
 				
 						PlatformEngine.move_to(3 * cos(gml.degtorad(dir)), -3 * sin(gml.degtorad(dir)), self)
 				

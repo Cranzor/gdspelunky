@@ -26,7 +26,7 @@ func create():
 func step():
 	var player1 = gml.get_instance("player1") #--- [FLAG] may have to change this if multiplayer is added
 	
-	if (gml.collision_point(position.x+12, position.y, "lava", 0, 0) and burn_timer == 0):
+	if (gml.collision_point(position.x+12, position.y, "lava", 0, false) and burn_timer == 0):
 
 		gml.instance_create(position.x+8, position.y, "rope_burn")
 

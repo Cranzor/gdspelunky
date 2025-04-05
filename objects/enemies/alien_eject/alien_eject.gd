@@ -116,7 +116,7 @@ func step():
 
 			x_vel = 0
 			y_vel = 2
-			if (gml.collision_point(position.x, position.y+6, "solid", 0, 0)):
+			if (gml.collision_point(position.x, position.y+6, "solid", 0, false)):
 		
 				gml.instance_create(position.x-8, position.y-12, Objects.alien)
 				gml.instance_destroy(self)
@@ -124,9 +124,9 @@ func step():
 			elif (dir == 0):
 		
 				x_vel = -1
-				if (gml.collision_point(position.x-8, position.y, "solid", 0, 0)): dir = 99
+				if (gml.collision_point(position.x-8, position.y, "solid", 0, false)): dir = 99
 		
 			elif (dir == 1):
 		
 				x_vel = 1
-				if (gml.collision_point(position.x+8, position.y, "solid", 0, 0)): dir = 99
+				if (gml.collision_point(position.x+8, position.y, "solid", 0, false)): dir = 99

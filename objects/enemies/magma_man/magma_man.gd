@@ -133,7 +133,7 @@ func create():
 
 func step():
 	if (hp > 0): hp -= 1
-	if (gml.collision_point(position.x+8, position.y+8, "solid", 0, 0) or hp < 1):
+	if (gml.collision_point(position.x+8, position.y+8, "solid", 0, false) or hp < 1):
 
 		x_vel = 0
 		y_vel = 0

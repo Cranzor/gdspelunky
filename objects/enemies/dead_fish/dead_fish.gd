@@ -78,13 +78,13 @@ func step():
 
 			if (dir == 0):
 		
-				if (gml.collision_point(position.x+8+2, position.y, "water", 0, 0) and not (gml.collision_point(position.x+10, position.y, "solid", 0, 0))):
+				if (gml.collision_point(position.x+8+2, position.y, "water", 0, false) and not (gml.collision_point(position.x+10, position.y, "solid", 0, 0))):
 					PlatformEngine.move_to(1,0,self)
 				else: dir = 180
 		
 			else:
 		
-				if (gml.collision_point(position.x-2, position.y, "water", 0, 0) and not (gml.collision_point(position.x-2, position.y, "solid", 0, 0))):
+				if (gml.collision_point(position.x-2, position.y, "water", 0, false) and not (gml.collision_point(position.x-2, position.y, "solid", 0, 0))):
 					PlatformEngine.move_to(-1,0,self)
 				else: dir = 0
 		
@@ -108,7 +108,7 @@ func step():
 			if (dist < 90 and character.swimming and not character.dead):
 		
 				dir = gml.point_direction(position.x, position.y, character.position.x, character.position.y)+gml.rand(0,1)-gml.rand(0,1)
-				if (gml.collision_point(position.x + cos(gml.degtorad(dir)), position.y - sin(gml.degtorad(dir)), "water", 0, 0)):
+				if (gml.collision_point(position.x + cos(gml.degtorad(dir)), position.y - sin(gml.degtorad(dir)), "water", 0, false)):
 					PlatformEngine.move_to(1 * cos(gml.degtorad(dir)), -1 * sin(gml.degtorad(dir)), self)
 		
 			else:
@@ -123,7 +123,7 @@ func step():
 		else:
 			sprite_index = "dead_fish_right"
 		
-		if (not gml.collision_point(position.x+4, position.y+4, "water", 0, 0)):
+		if (not gml.collision_point(position.x+4, position.y+4, "water", 0, false)):
 
 			gml.instance_create(position.x, position.y, Objects.fish_bone)
 			gml.instance_destroy(self)

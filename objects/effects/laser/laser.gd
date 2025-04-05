@@ -50,12 +50,12 @@ func collision_with_solid():
 
 	if (not other.invincible):
 
-		if (gml.collision_point(other.position.x, other.position.y, "gold", 0, 0)):
+		if (gml.collision_point(other.position.x, other.position.y, "gold", 0, false)):
 	
 			var gold = gml.instance_place(other.position.x, other.position.y, "gold", other)
 			gml.instance_destroy(gold)
 	
-		if (gml.collision_point(other.position.x, other.position.y, "gold_big", 0, 0)):
+		if (gml.collision_point(other.position.x, other.position.y, "gold_big", 0, false)):
 	
 			var gold = gml.instance_place(other.position.x, other.position.y, "gold_big", other)
 			gml.instance_destroy(gold)
@@ -92,9 +92,9 @@ func step():
 	y_vel += y_acc
 	if (y_vel > 4): y_vel = 0
 
-	#/*if (gml.collision_point(position.x, position.y, "dark", 0, 0) or:
-		#gml.collision_point(position.x, position.y, "dark_fall", 0, 0) or
-		#gml.collision_point(position.x, position.y, "ice", 0, 0))
+	#/*if (gml.collision_point(position.x, position.y, "dark", 0, false) or:
+		#gml.collision_point(position.x, position.y, "dark_fall", 0, false) or
+		#gml.collision_point(position.x, position.y, "ice", 0, false))
 #
 		#gml.instance_destroy(self)
 	#*/

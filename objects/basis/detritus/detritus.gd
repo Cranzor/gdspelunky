@@ -44,7 +44,7 @@ func step():
 
 	PlatformEngine.move_to(x_vel, y_vel, self)
 
-	if (gml.collision_point(position.x, position.y-4, "lava", 0, 0)):
+	if (gml.collision_point(position.x, position.y-4, "lava", 0, false)):
 
 		gml.instance_destroy(self)
 

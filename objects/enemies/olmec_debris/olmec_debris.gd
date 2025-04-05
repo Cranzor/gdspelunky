@@ -53,7 +53,7 @@ func step():
 			y_vel += grav
 	
 	
-		if (gml.collision_point(position.x, position.y+4, "temple", 0, 0)):
+		if (gml.collision_point(position.x, position.y+4, "temple", 0, false)):
 	
 			# DY:  bounce
 			if (y_vel > 1): y_vel = -y_vel * 0.4

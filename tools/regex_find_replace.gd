@@ -51,8 +51,10 @@ func get_new_file_text(file) -> String:
 
 	# file content gets updated with three different RegEx operations
 	#updated_content = regex_sub(updated_content, "(gml.collision_rectangle.*?,.*?,.*?,.*?,.*?,.*?,)(.*?0)(\\).*)") # turning 0 for notme to null
-	updated_content = regex_sub(updated_content, "(gml.collision_rectangle.*?,.*?,.*?,.*?,.*?,.*?,)(.*?)(\\).*)")
+	#updated_content = regex_sub(updated_content, "(gml.collision_rectangle.*?,.*?,.*?,.*?,.*?,.*?,)(.*?)(\\).*)")
 	#updated_content = regex_sub(updated_content, "(gml.collision_rectangle.*?,.*?,.*?,.*?,.*?,.*?,)(.*?null)(\\).*)")
+	#updated_content = regex_sub(updated_content, "(gml.collision_point.*?,.*?,.*?,.*?,)(.*?)(\\).*)")
+	updated_content = regex_sub(updated_content, "(gml.collision_point.*?,.*?,.*?,.*?,)(.*?0)(\\).*)")
 	return updated_content
 	
 	
@@ -71,7 +73,7 @@ func write_new_text_to_file(file, new_text) -> void:
 func regex_sub(file_content, pattern):
 	var regex: RegEx = RegEx.new()
 	regex.compile(pattern)
-	#var new_file_content = regex.sub(file_content, "$1" + " false" + "$3", true)
-	var new_file_content = regex.sub(file_content, "$1" + "$2" + ", self" + "$3", true)
-	print(new_file_content)
+	var new_file_content = regex.sub(file_content, "$1" + " false" + "$3", true)
+	#var new_file_content = regex.sub(file_content, "$1" + "$2" + ", self" + "$3", true)
+	#print(new_file_content)
 	return new_file_content

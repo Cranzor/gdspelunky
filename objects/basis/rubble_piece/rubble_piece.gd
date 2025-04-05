@@ -32,7 +32,7 @@ func step():
 	position.y += y_vel
 	y_vel += y_acc
 
-	if (gml.collision_point(position.x, position.y, "water_swim", 0, 0)):
+	if (gml.collision_point(position.x, position.y, "water_swim", 0, false)):
 
 		if (type == "drip"): gml.instance_destroy(self)
 		elif (type == "leaf"):
@@ -40,12 +40,12 @@ func step():
 			sprite_index = "leaf_still"
 		else: y_vel = 0.2
 
-	elif (gml.collision_point(position.x, position.y, "lava", 0, 0)):
+	elif (gml.collision_point(position.x, position.y, "lava", 0, false)):
 
 		gml.instance_destroy(self)
 
 
-	if (gml.collision_point(position.x, position.y, "solid", 0, 0)):
+	if (gml.collision_point(position.x, position.y, "solid", 0, false)):
 
 		gml.instance_destroy(self)
 

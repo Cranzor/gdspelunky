@@ -34,6 +34,6 @@ func step():
 	if (position.x > gml.view("xview")-16 and position.x < gml.view("xview") + gml.view("wview")+16 and
 		position.y > gml.view("yview")-16 and position.y < gml.view("yview") + gml.view("hview")+16):
 
-		if (not gml.collision_point(position.x-16, position.y, "tree", 0, 0) and not gml.collision_point(position.x+16, position.y, "tree", 0, 0)):
+		if (not gml.collision_point(position.x-16, position.y, "tree", 0, false) and not gml.collision_point(position.x+16, position.y, "tree", 0, 0)):
 
 			gml.instance_destroy(self)

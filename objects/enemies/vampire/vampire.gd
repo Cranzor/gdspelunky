@@ -172,7 +172,7 @@ func step():
 
 		if (status >= STUNNED):
 
-			if (gml.collision_point(position.x+8, position.y+12, "solid", 0, 0)):
+			if (gml.collision_point(position.x+8, position.y+12, "solid", 0, false)):
 		
 				gml.instance_create(position.x+8, position.y+8, Objects.smoke_puff)
 				Audio.play_sound(global.snd_caveman_die)
@@ -181,7 +181,7 @@ func step():
 
 		elif (not held):
 
-			if (gml.collision_point(position.x+8, position.y+8, "solid", 0, 0)):
+			if (gml.collision_point(position.x+8, position.y+8, "solid", 0, false)):
 		
 				gml.instance_create(position.x+8, position.y+8, Objects.smoke_puff)
 				Audio.play_sound(global.snd_caveman_die)
@@ -295,20 +295,20 @@ func step():
 		
 			elif (facing == LEFT):
 		
-				if (not gml.collision_point(position.x-8, position.y+16, "solid", 0, 0)):
+				if (not gml.collision_point(position.x-8, position.y+16, "solid", 0, false)):
 			
 					status = BOUNCE
 			
 		
 			elif (facing == RIGHT):
 		
-				if (not gml.collision_point(position.x+8, position.y+16, "solid", 0, 0)):
+				if (not gml.collision_point(position.x+8, position.y+16, "solid", 0, false)):
 			
 					status = BOUNCE
 			
 		
 		
-			if (abs(player1.position.x-position.x) < 32 and player1.position.y < position.y+8 and not gml.collision_point(position.x+8, position.y+8, "water", 0, 0)): status = FLY
+			if (abs(player1.position.x-position.x) < 32 and player1.position.y < position.y+8 and not gml.collision_point(position.x+8, position.y+8, "water", 0, false)): status = FLY
 		
 			if (facing == LEFT): x_vel = -4
 			else: x_vel = 4
@@ -332,10 +332,10 @@ func step():
 				y_vel = 0
 				counter = gml.rand(40,100)
 		
-			elif (not gml.collision_point(position.x+8, position.y+8, "water", 0, 0)):
+			elif (not gml.collision_point(position.x+8, position.y+8, "water", 0, false)):
 		
 				if (gml.rand(1,100) == 1): status = FLY
-				elif (gml.collision_point(position.x+8, position.y+24, "water", 0, 0)): status = FLY
+				elif (gml.collision_point(position.x+8, position.y+24, "water", 0, false)): status = FLY
 		
 
 		elif (status == BOUNCE):
@@ -419,7 +419,7 @@ func step():
 			y_vel = 0
 
 			if (not player1.dead and not player1.swimming and
-				((dist < 90 and player1.position.y > position.y + 16) or not gml.collision_point(position.x+8, position.y-1, "solid", 0, 0))):
+				((dist < 90 and player1.position.y > position.y + 16) or not gml.collision_point(position.x+8, position.y-1, "solid", 0, false))):
 		
 				status = FLY
 				Audio.play_sound(global.snd_bat)
@@ -454,12 +454,12 @@ func step():
 					else: dir = 0
 			
 			
-				if (gml.collision_point(position.x+8, position.y+16, "water", 0, 0) and dir > 180 and dir < 360):
+				if (gml.collision_point(position.x+8, position.y+16, "water", 0, false) and dir > 180 and dir < 360):
 			
 					dir = 90
 			
 			
-				if (not gml.collision_point(position.x, position.y+12, "water", 0, 0) or player1.position.y < position.y):
+				if (not gml.collision_point(position.x, position.y+12, "water", 0, false) or player1.position.y < position.y):
 			
 					x_vel = 2 * cos(gml.degtorad(dir))
 					y_vel = -2 * sin(gml.degtorad(dir))
@@ -467,7 +467,7 @@ func step():
 		
 			else:
 		
-				if (gml.collision_point(position.x+8, position.y-1, "solid", 0, 0)): status = HANG
+				if (gml.collision_point(position.x+8, position.y-1, "solid", 0, false)): status = HANG
 				else:
 			
 					dir = 90
@@ -479,7 +479,7 @@ func step():
 			if (player1.position.x < position.x+8): facing = LEFT
 			else: facing = RIGHT
 
-			if (col_bot or gml.collision_point(position.x, position.y, "water", 0, 0)):
+			if (col_bot or gml.collision_point(position.x, position.y, "water", 0, false)):
 		
 				status = IDLE
 		
@@ -489,7 +489,7 @@ func step():
 			x_vel = 0
 			y_vel = 0
 		
-			if (gml.collision_point(position.x+8, position.y-1, "solid", 0, 0)): status = HANG
+			if (gml.collision_point(position.x+8, position.y-1, "solid", 0, false)): status = HANG
 			else:
 		
 				dir = 90

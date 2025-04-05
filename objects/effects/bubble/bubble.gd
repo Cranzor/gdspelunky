@@ -33,6 +33,6 @@ func create():
 func step():
 	position.y += y_vel
 
-	if (not gml.collision_point(position.x, position.y, "water", 0, 0)):
+	if (not gml.collision_point(position.x, position.y, "water", 0, false)):
 
 		gml.instance_destroy(self)

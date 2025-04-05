@@ -27,4 +27,4 @@ func destroy():
 
 
 func step():
-	if (not gml.collision_point(position.x, position.y, "ice", 0, 0)): gml.instance_destroy(self)
+	if (not gml.collision_point(position.x, position.y, "ice", 0, false)): gml.instance_destroy(self)

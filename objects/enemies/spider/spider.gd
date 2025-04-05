@@ -87,7 +87,7 @@ func step():
 		y_vel += my_grav
 		if (y_vel > y_vel_limit): y_vel = y_vel_limit
 
-		if (gml.collision_point(position.x+8, position.y+8, "solid", 0, 0)):
+		if (gml.collision_point(position.x+8, position.y+8, "solid", 0, false)):
 
 			hp = 0
 
@@ -164,7 +164,7 @@ func step():
 		# DY:   position.y -= 2
 
 	# main_code
-	if (gml.collision_point(position.x+8, position.y+8, "water", 0, 0) and status != DROWNED):
+	if (gml.collision_point(position.x+8, position.y+8, "water", 0, false) and status != DROWNED):
 
 		status = DROWNED
 		sprite_index = "spider_drowning"

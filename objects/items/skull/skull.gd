@@ -150,7 +150,7 @@ func step():
 			y_vel = 0
 			position.y += 0.05
 	
-		if (gml.collision_point(position.x, position.y-5, "lava", 0, 0)):
+		if (gml.collision_point(position.x, position.y-5, "lava", 0, false)):
 	
 			if (type == "bomb"):
 		

@@ -34,7 +34,7 @@ func step():
 	position.y += y_vel
 	y_vel += y_acc
 
-	if (gml.collision_point(position.x, position.y, "brick", 0, 0) or
-		gml.collision_point(position.x, position.y, "block", 0, 0)):
+	if (gml.collision_point(position.x, position.y, "brick", 0, false) or
+		gml.collision_point(position.x, position.y, "block", 0, false)):
 
 		gml.instance_destroy(self)

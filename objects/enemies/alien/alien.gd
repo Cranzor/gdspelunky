@@ -60,7 +60,7 @@ func step():
 
 		PlatformEngine.move_to(x_vel,y_vel, self)
 
-		if (gml.collision_point(position.x+8, position.y+8, "solid", 0, 0)):
+		if (gml.collision_point(position.x+8, position.y+8, "solid", 0, false)):
 
 			hp = 0
 

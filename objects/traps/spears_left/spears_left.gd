@@ -22,11 +22,11 @@ func animation_end():
 	
 
 func step():
-	if (sprite_index == "spears_left" and not gml.collision_point(position.x+16, position.y, "spear_trap_top", 0, 0) and not gml.collision_point(position.x+16, position.y, "spear_trap_bottom", 0, 0)):
+	if (sprite_index == "spears_left" and not gml.collision_point(position.x+16, position.y, "spear_trap_top", 0, false) and not gml.collision_point(position.x+16, position.y, "spear_trap_bottom", 0, 0)):
 
 		gml.instance_destroy(self)
 
-	if (sprite_index == "spears_right" and not gml.collision_point(position.x-16, position.y, "spear_trap_top", 0, 0) and not gml.collision_point(position.x-16, position.y, "spear_trap_bottom", 0, 0)):
+	if (sprite_index == "spears_right" and not gml.collision_point(position.x-16, position.y, "spear_trap_top", 0, false) and not gml.collision_point(position.x-16, position.y, "spear_trap_bottom", 0, 0)):
 
 		gml.instance_destroy(self)
 

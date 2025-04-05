@@ -145,7 +145,7 @@ func step():
 		y_vel += my_grav
 		if (y_vel > y_vel_limit): y_vel = y_vel_limit
 
-		if (gml.collision_point(position.x+16, position.y+16, "solid", 0, 0)):
+		if (gml.collision_point(position.x+16, position.y+16, "solid", 0, false)):
 
 			hp = 0
 

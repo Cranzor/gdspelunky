@@ -23,7 +23,7 @@ func alarm_0():
 
 func alarm_1():
 	x_act = position.x+16
-	while (not gml.collision_point(x_act, position.y+8, "solid", 0, 0)):
+	while (not gml.collision_point(x_act, position.y+8, "solid", 0, false)):
 
 		if (x_act - position.x > 96):
 			break
