@@ -239,7 +239,7 @@ func instance_place(x,y,obj: String, comparison_object: GMObject): #' Returns th
 	var size_with_scale: Vector2 = Vector2(position_with_offset.x + comparison_object_collision_shape_size.x, position_with_offset.y + comparison_object_collision_shape_size.y)
 	if comparison_object.object_name == "arrow_trap_test": #--- adding a special exception as arrow_trap_test is the only object in the game with larger collision due to its scaling
 		size_with_scale = Vector2(position_with_offset.x + (comparison_object_collision_shape_size.x * comparison_object.image_xscale), position_with_offset.y + (comparison_object_collision_shape_size.y * comparison_object.image_yscale))
-	return collision_rectangle(position_with_offset.x, position_with_offset.y, size_with_scale.x, size_with_scale.y, obj, 0, 0, null) #--- need to set other here? if so, need object ref
+	return collision_rectangle(position_with_offset.x, position_with_offset.y, size_with_scale.x, size_with_scale.y, obj, 0, 0)
 
 func instance_position(x, y, obj: String): #---[FLAG] this needs checked
 	var intersecting = collision_point(x, y, obj, 0, 0)
@@ -258,7 +258,7 @@ func instance_destroy(obj: GMObject): #'Destroys current instance' ---  Should p
 	obj.hide()
 	obj.queue_free()
 
-func collision_rectangle(x1,y1,x2,y2,obj,_prec,notme: bool, calling_object: GMObject): #"This function tests whether there is a collision between the (filled) rectangle with the indicated opposite corners and entities of object obj. For example, you can use this to test whether an area is free of obstacles."
+func collision_rectangle(x1,y1,x2,y2,obj,_prec,notme: bool, calling_object: GMObject = null): #"This function tests whether there is a collision between the (filled) rectangle with the indicated opposite corners and entities of object obj. For example, you can use this to test whether an area is free of obstacles."
 	if abs(x2 - x1) == 0 or abs(y2 - y1) == 0: #--- raycast is more appropriate in this case since it's just a line
 		return handle_collision_ray(x1, y1, x2, y2, obj, notme) #--- also avoids error in handle_collision_shapecast() associated with size being negative
 	return handle_collision_shapecast(x1, y1, x2, y2, obj)

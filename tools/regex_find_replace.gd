@@ -14,7 +14,7 @@ func convert_scripts() -> void:
 	
 	for file in all_gd_files:
 		var new_text: String = get_new_file_text(file) # retrieving post-conversion file content
-		write_new_text_to_file(file, new_text) # actually writing new file content to the file
+		#write_new_text_to_file(file, new_text) # actually writing new file content to the file
 
 
 func scan_dir_for_gd_files(path) -> Array:
@@ -47,8 +47,9 @@ func get_new_file_text(file) -> String:
 	var content: String = get_file_content(file)
 	var updated_content: String = content
 	
+
 	# file content gets updated with three different RegEx operations
-	updated_content = regex_sub(updated_content, "(gml.collision_rectangle.*?,.*?,.*?,.*?,.*?,.*?,.*?)(\\).*)") # turning 0 for notme to null
+	updated_content = regex_sub(updated_content, "(gml.collision_rectangle.*?,.*?,.*?,.*?,.*?,.*?,)(.*?0)(\\).*)") # turning 0 for notme to null
 	return updated_content
 	
 	
@@ -67,7 +68,6 @@ func regex_sub(file_content, pattern):
 	var regex: RegEx = RegEx.new()
 	regex.compile(pattern)
 	
-	var new_file_content = regex.sub(file_content, "$1" + ", self" + "$2", true)
+	var new_file_content = regex.sub(file_content, "$1" + " null" + "$3", true)
 
-	print(new_file_content)
 	return new_file_content

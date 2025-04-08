@@ -135,7 +135,7 @@ func step():
 			
 					PlatformEngine.move_to(2,0,self)
 			
-				elif (not gml.collision_rectangle(position.x-32, position.y, position.x,  position.y+32, "solid", 0, 0, self)):
+				elif (not gml.collision_rectangle(position.x-32, position.y, position.x,  position.y+32, "solid", 0, 0)):
 			
 					status = TURN
 					dir = 180
@@ -150,7 +150,7 @@ func step():
 			
 					PlatformEngine.move_to(-2,0,self)
 			
-				elif (not gml.collision_rectangle(position.x+16, position.y, position.x+48,  position.y+32, "solid", 0, 0, self)):
+				elif (not gml.collision_rectangle(position.x+16, position.y, position.x+48,  position.y+32, "solid", 0, 0)):
 			
 					status = TURN
 					dir = 0
@@ -189,7 +189,7 @@ func step():
 				turn = false
 				if (player1.position.x < position.x+8):
 			
-					if (sprite_index == "jaws_right" and not gml.collision_rectangle(position.x-32, position.y, position.x,  position.y+32, "solid", 0, 0, self)):
+					if (sprite_index == "jaws_right" and not gml.collision_rectangle(position.x-32, position.y, position.x,  position.y+32, "solid", 0, 0)):
 				
 						status = TURN
 						dir = 180

@@ -159,7 +159,7 @@ func step():
 	# main_code
 	var player1 = gml.get_instance("player1") #---[FLAG] may need to change this for multiplayer
 	
-	if (carry_player or gml.collision_rectangle(position.x-1, position.y, position.x+66,  position.y+62, "player1", 0, 0, self)):
+	if (carry_player or gml.collision_rectangle(position.x-1, position.y, position.x+66,  position.y+62, "player1", 0, 0)):
 		player1.position.x += x_vel
 		player1.position.y += y_vel
 
@@ -204,7 +204,7 @@ func step():
 	dist = gml.distance_to_object(player1, self) + 32
 
 
-	if (gml.collision_rectangle(position.x, position.y-2, position.x+64,  position.y+64, "player1", 0, 0, self)): carry_player = true
+	if (gml.collision_rectangle(position.x, position.y-2, position.x+64,  position.y+64, "player1", 0, 0)): carry_player = true
 	else: carry_player = false
 
 	if (status == START1):

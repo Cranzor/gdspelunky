@@ -276,7 +276,7 @@ func step():
 			y_vel = 0.2
 	
 
-		if (gml.collision_rectangle(position.x-3, position.y-3, position.x+3,  position.y+3, "spears_left", 0, 0, self) and
+		if (gml.collision_rectangle(position.x-3, position.y-3, position.x+3,  position.y+3, "spears_left", 0, 0) and
 			(status != THROWN or Collision.is_collision_bottom(1, self))):
 	
 			var obj = gml.instance_nearest(position.x, position.y, "spears_left")
@@ -439,7 +439,7 @@ func step():
 			bounced = true
 	
 	
-		if (Collision.is_collision_bottom(2, self) or gml.collision_rectangle(position.x-4, position.y-6, position.x+4,  position.y+8, "web", 0, 0, self)):
+		if (Collision.is_collision_bottom(2, self) or gml.collision_rectangle(position.x-4, position.y-6, position.x+4,  position.y+8, "web", 0, 0)):
 	
 			if (!dead):
 		
