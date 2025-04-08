@@ -58,7 +58,7 @@ func create():
 	shake_toggle = 1
 
 
-func destroy():
+func destroy(): # one of seven scripts which uses 'other' outside of collision_with
 	for repetition in range(3):
 
 		gml.instance_create(other.position.x+6+gml.rand(0,4), other.position.y+6+gml.rand(0,4), Objects.flare_spark)
@@ -70,7 +70,7 @@ func step():
 
 		PlatformEngine.move_to(x_vel, y_vel, self)
 
-		if (gml.collision_point(position.x+8, position.y+8, "solid", 0, 0)): hp = -999
+		if (gml.collision_point(position.x+8, position.y+8, "solid", 0, 0, self)): hp = -999
 
 		if (hp < 1):
 

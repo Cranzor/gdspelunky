@@ -446,9 +446,9 @@ func step():
 				
 			
 
-			if (gml.collision_rectangle(position.x-2, position.y-2, position.x+2,  position.y+2, "damsel", false, true)):
+			if (gml.collision_rectangle(position.x-2, position.y-2, position.x+2,  position.y+2, "damsel", false, true, self)):
 			
-				var obj = gml.collision_rectangle(position.x-2, position.y-2, position.x+2,  position.y+2, "damsel", false, true)
+				var obj = gml.collision_rectangle(position.x-2, position.y-2, position.x+2,  position.y+2, "damsel", false, true, self)
 				if (not obj.invincible and obj.status != 99 and obj.hit == 0):
 				
 					if (not (obj.held and safe)):

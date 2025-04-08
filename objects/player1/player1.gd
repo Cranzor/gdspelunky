@@ -310,7 +310,7 @@ func create():
 	if (InLevel.is_room("olmec")): active = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func step():
+func step(): # one of seven scripts which uses 'other' outside of collision_with
 	#print('node position: ' + str(position))
 	#print('sprite position: ' + str(animated_sprite.position))
 	#print("final x vel: " + str(final_x_vel), " final y vel: " + str(final_y_vel))
@@ -2180,10 +2180,9 @@ func handle_dead_or_stunned():
 			
 		
 		
-		if (gml.collision_point(position.x, position.y, "spikes", 0, 0) and dead and y_vel != 0):
+		if (gml.collision_point(position.x, position.y, "spikes", 0, 0, self) and dead and y_vel != 0): #--- passing in calling_object to get 'other' reference
 		
-			if (randi_range(1,8) == 1): MiscScripts.scr_create_blood(self.position.x, self.position.y, 1, self) #---[FLAG] changing 'other' to self, as this appears to be referring to the player
-																											#(as the other side of the collision)
+			if (randi_range(1,8) == 1): MiscScripts.scr_create_blood(other.position.x, other.position.y, 1, self)
 		
 		if (Collision.is_collision_right(1, self) or Collision.is_collision_left(1, self) or Collision.is_collision_bottom(1, self)):
 		
@@ -2191,7 +2190,7 @@ func handle_dead_or_stunned():
 			
 				for i in range(0, 3):
 				
-					gml.instance_create(self.position.x, self.position.y, Objects.blood) #--- same as above with changing 'other' to 'self'
+					gml.instance_create(other.position.x, other.position.y, Objects.blood)
 				
 				global.plife -= 1
 				wall_hurt -= 1
@@ -2204,7 +2203,7 @@ func handle_dead_or_stunned():
 			bounced = true
 			for i in range(0, 3):
 			
-				MiscScripts.scr_create_blood(self.position.x, self.position.y, 1, self) #--- same as above with changing 'other' to 'self'
+				MiscScripts.scr_create_blood(other.position.x, other.position.y, 1, self)
 			
 			
 			if (wall_hurt > 0):
@@ -5222,8 +5221,8 @@ func scr_use_item(): #--- only called by player1 so including it here for conven
 			
 		hold_item.held = false
 		hold_item.safe = true
-		#if hold_item.alarm_2_countdown: #--- adding a check here. yeti (and probably other objects) don't have this alarm. original engine seems to not have a problem with this
-		hold_item.alarm_2_countdown.start(10)
+		if hold_item.alarm_2_countdown: #--- adding a check here. yeti (and probably other objects) don't have this alarm. original engine seems to not have a problem with this
+			hold_item.alarm_2_countdown.start(10)
 				
 		if (facing == LEFT):
 				

@@ -55,7 +55,7 @@ func create():
 	shake_toggle = 1
 
 
-func step():
+func step(): # one of seven scripts which uses 'other' outside of collision_with
 	# action_inherited
 	super()
 
@@ -68,7 +68,7 @@ func step():
 		y_vel += my_grav
 		if (y_vel > y_vel_limit): y_vel = y_vel_limit
 
-		if (gml.collision_point(position.x+8, position.y+8, "solid", 0, 0)):
+		if (gml.collision_point(position.x+8, position.y+8, "solid", 0, 0, self)):
 
 			hp = 0
 

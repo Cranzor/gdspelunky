@@ -154,8 +154,11 @@ func instance_create(x,y,obj): #---[FLAG] make this so that obj is forced to be 
 	
 	return instance
 	
-func collision_point(x,y,obj: String,_prec,notme): #"This function tests whether at point (x,y) there is a collision with entities of object obj."
-	return handle_collision_ray(x, y, x, y, obj, notme)
+func collision_point(x,y,obj: String,_prec,notme,calling_object: GMObject = null): #"This function tests whether at point (x,y) there is a collision with entities of object obj."
+	var collided_object = handle_collision_ray(x, y, x, y, obj, notme)
+	if calling_object:
+		calling_object.other = collided_object
+	return collided_object
 
 #Always adds bg elements
 func tile_add(background,left,top,width,height,x,y,depth): #return value of tile as well. left: left to right value in pixels. top: top to bottom in pixels
@@ -259,9 +262,28 @@ func instance_destroy(obj: GMObject): #'Destroys current instance' ---  Should p
 	obj.queue_free()
 
 func collision_rectangle(x1,y1,x2,y2,obj,_prec,notme: bool, calling_object: GMObject = null): #"This function tests whether there is a collision between the (filled) rectangle with the indicated opposite corners and entities of object obj. For example, you can use this to test whether an area is free of obstacles."
+	var collided_object: GMObject
 	if abs(x2 - x1) == 0 or abs(y2 - y1) == 0: #--- raycast is more appropriate in this case since it's just a line
-		return handle_collision_ray(x1, y1, x2, y2, obj, notme) #--- also avoids error in handle_collision_shapecast() associated with size being negative
-	return handle_collision_shapecast(x1, y1, x2, y2, obj)
+		collided_object = handle_collision_ray(x1, y1, x2, y2, obj, notme) #--- also avoids error in handle_collision_shapecast() associated with size being negative
+		if check_notme(notme, collided_object, calling_object):
+				return null
+		if calling_object:
+			calling_object.other = collided_object
+		return collided_object
+
+	collided_object = handle_collision_shapecast(x1, y1, x2, y2, obj)
+	if check_notme(notme, collided_object, calling_object):
+			return null
+	if calling_object:
+		calling_object.other = collided_object
+	return collided_object
+	
+func check_notme(notme, collided_object, calling_object):
+	if notme:
+		if collided_object == calling_object:
+			return true
+		else:
+			return false
 
 func point_distance(x1,y1,x2,y2): #"Returns the distance between point (x1,y1) and point (x2,y2)."
 	var distance = Vector2(x1, y1).distance_to(Vector2(x2, y2))
@@ -316,8 +338,13 @@ func instance_number(obj: String):
 	var number_of_instances = all_instances.size()
 	return number_of_instances
 
-func collision_line(x1,y1,x2,y2,obj,_prec,notme):
-	return handle_collision_ray(x1, y1, x2, y2, obj, notme)
+func collision_line(x1,y1,x2,y2,obj,_prec,notme,calling_object: GMObject = null):
+	var collided_object = handle_collision_ray(x1, y1, x2, y2, obj, notme)
+	if check_notme(notme, collided_object, calling_object):
+		return null
+	if calling_object:
+		calling_object.other = collided_object
+	return collided_object
 
 func instance_activate_object(obj: String):
 	pass

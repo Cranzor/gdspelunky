@@ -55,7 +55,7 @@ func collision_with_character():
 
 	elif (other.invincible == 0 and status < STUNNED):
 
-		if (gml.collision_point(position.x+8, position.y-4, "solid", 0, 0)):
+		if (gml.collision_point(position.x+8, position.y-4, "solid", 0, 0, self)):
 	
 			other.blink = 30
 			other.invincible = 30
@@ -209,7 +209,7 @@ func create():
 	shake_toggle = 1
 
 
-func step():
+func step(): # one of seven scripts which uses 'other' outside of collision_with
 	# action_inherited
 	super()
 
@@ -239,14 +239,14 @@ func step():
 
 		if (status >= STUNNED):
 
-			if (gml.collision_point(position.x+8, position.y+12, "solid", 0, 0)):
+			if (gml.collision_point(position.x+8, position.y+12, "solid", 0, 0, self)):
 		
 				MiscScripts.scr_create_blood(position.x+8, position.y+8, 3, self)
 				Audio.play_sound(global.snd_caveman_die)
 				gml.instance_destroy(self)
 		
 
-		elif (not held and gml.collision_point(position.x+8, position.y+8, "solid", 0, 0)):
+		elif (not held and gml.collision_point(position.x+8, position.y+8, "solid", 0, 0, self)):
 
 			MiscScripts.scr_create_blood(position.x+8, position.y+8, 3, self)
 			Audio.play_sound(global.snd_caveman_die)
@@ -257,7 +257,7 @@ func step():
 
 			bounced = false
 			if (Collision.is_collision_bottom(1, self) and
-				(gml.collision_point(position.x-1, position.y, "solid", -1, -1) or gml.collision_point(position.x+16, position.y, "solid", -1, -1))):
+				(gml.collision_point(position.x-1, position.y, "solid", -1, -1, self) or gml.collision_point(position.x+16, position.y, "solid", -1, -1, self))):
 		
 				y_vel = -6
 				if (facing == LEFT): x_vel = -1
@@ -309,7 +309,7 @@ func step():
 			elif (facing == LEFT):
 		
 				x_vel = -1.5
-				if (not gml.collision_point(position.x-1, position.y+16, "solid", -1, -1)):
+				if (not gml.collision_point(position.x-1, position.y+16, "solid", -1, -1, self)):
 			
 					status = IDLE
 					counter = gml.rand(20,50)
@@ -319,7 +319,7 @@ func step():
 			elif (facing == RIGHT):
 		
 				x_vel = 1.5
-				if (not gml.collision_point(position.x+16, position.y+16, "solid", -1, -1)):
+				if (not gml.collision_point(position.x+16, position.y+16, "solid", -1, -1, self)):
 			
 					status = IDLE
 					counter = gml.rand(20,50)
@@ -363,7 +363,7 @@ func step():
 				else: sprite_index = "yeti_die_lr"
 		
 		
-			if (gml.collision_point(position.x, position.y, "spikes", 0, 0) and dead and y_vel != 0):
+			if (gml.collision_point(position.x, position.y, "spikes", 0, 0, self) and dead and y_vel != 0):
 		
 				if (gml.rand(1,8) == 1): gml.instance_create(other.position.x, other.position.y, Objects.blood)
 		

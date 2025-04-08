@@ -3969,7 +3969,7 @@ func scr_entity_gen():
 					else: global.market_chance -= 1
 				
 				elif (solid_instance.type != "tree" and solid_instance.type != "altar" and solid_instance.position.y != 0 and
-					not gml.collision_rectangle(solid_instance.position.x, solid_instance.position.y-32, solid_instance.position.x+15,  solid_instance.position.y-1, "solid", false, true) and
+					not gml.collision_rectangle(solid_instance.position.x, solid_instance.position.y-32, solid_instance.position.x+15,  solid_instance.position.y-1, "solid", false, true, solid_instance) and
 					not gml.collision_rectangle(solid_instance.position.x, solid_instance.position.y-16, solid_instance.position.x+15,  solid_instance.position.y-1, "enemy", 0, 0) and
 					(not gml.collision_point(solid_instance.position.x-16, solid_instance.position.y, "solid", 0, 0) or not gml.collision_point(solid_instance.position.x+16, solid_instance.position.y, "solid", 0, 0)) and
 					gml.collision_point(solid_instance.position.x, solid_instance.position.y+16, "solid", 0, 0) and

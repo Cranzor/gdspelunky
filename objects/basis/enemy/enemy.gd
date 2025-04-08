@@ -370,7 +370,7 @@ func step():
 
 			if ((abs(x_vel) > 2 or abs(y_vel) > 2)):
 		
-				var obj = gml.collision_rectangle(position.x, position.y, position.x+16,  position.y+16, "enemy", false, true)
+				var obj = gml.collision_rectangle(position.x, position.y, position.x+16,  position.y+16, "enemy", false, true, self)
 				if (obj):
 			
 					if (not obj.invincible and obj.type != "magma man"):
