@@ -42,7 +42,7 @@ func step():
 	if (col_left or col_right): wall_bounce = true
 	elif (col_bot): wall_bounce = false
 
-	if (gml.collision_rectangle(position.x-1, position.y+4, position.x+1,  position.y+5, "rim_deflect", 0, 0) and not going_in and bounces < 40):
+	if (gml.collision_rectangle(position.x-1, position.y+4, position.x+1,  position.y+5, "rim_deflect", 0, 0, self) and not going_in and bounces < 40):
 
 		y_vel = -y_vel * 0.8
 		var obj = gml.instance_nearest(position.x, position.y, "rim_deflect")

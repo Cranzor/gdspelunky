@@ -989,7 +989,7 @@ func _process(delta):
 	
 #        elif (mouse_check_button(mb_right)):
 	
-#            obj = gml.collision_rectangle(curs_obj.position.x, curs_obj.position.y, curs_obj.position.x+15,  curs_obj.position.y+15, "drawn_sprite", 0, 0) # DY:  instance_position(curs_obj.position.x+8, curs_obj.position.y+12, drawn_sprite)
+#            obj = gml.collision_rectangle(curs_obj.position.x, curs_obj.position.y, curs_obj.position.x+15,  curs_obj.position.y+15, "drawn_sprite", 0, 0, self) # DY:  instance_position(curs_obj.position.x+8, curs_obj.position.y+12, drawn_sprite)
 #            # DY:  if (not obj): obj = instance_position(curs_obj.position.x+8, curs_obj.position.y+4, drawn_sprite)
 #            if (obj):
 		

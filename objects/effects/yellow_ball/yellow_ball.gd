@@ -27,7 +27,7 @@ func alarm_1():
 
 func collision_with_solid(): #--- all code is commented out
 	#/*
-	#if (not gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "olmec", 0, 0)):
+	#if (not gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "olmec", 0, 0, self)):
 #
 		#if (gml.rand(1,2) == 1): n = gml.rand(1,4)
 		#else: n = gml.rand(1,5)
@@ -67,8 +67,8 @@ func step():
 	position.x += x_vel
 	position.y += y_vel
 
-	if (gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "solid", 0, 0) and
-		not gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "olmec", 0, 0)):
+	if (gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "solid", 0, 0, self) and
+		not gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "olmec", 0, 0, self)):
 
 		position.x -= x_vel
 		position.y -= y_vel

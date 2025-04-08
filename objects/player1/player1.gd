@@ -616,7 +616,7 @@ func handle_player_active():
 				
 			
 		
-		elif (platform_character_is(ON_GROUND) and fall_timer > 16 and not gml.collision_rectangle(position.x-8, position.y-8, position.x+8, position.y+8, 'spring_trap', 0, 0)): # LONG DROP
+		elif (platform_character_is(ON_GROUND) and fall_timer > 16 and not gml.collision_rectangle(position.x-8, position.y-8, position.x+8, position.y+8, 'spring_trap', 0, 0, self)): # LONG DROP
 		
 			# LONG DROP
 			stunned = true
@@ -1426,9 +1426,9 @@ func bomb_rope_and_whipping_handling(): #--- Also handles picking up items and a
 				
 					if (not gml.collision_point(position.x+8, position.y, "solid", 0, 0)):
 					
-						if (not  gml.collision_rectangle(obj.position.x-8, obj.position.y, obj.position.x-7, obj.position.y+16, 'solid', 0, 0)):
+						if (not  gml.collision_rectangle(obj.position.x-8, obj.position.y, obj.position.x-7, obj.position.y+16, 'solid', 0, 0, self)):
 							position.x -= 8
-						elif (not  gml.collision_rectangle(obj.position.x+7, obj.position.y, obj.position.x+8, obj.position.y+16, 'solid', 0, 0)):
+						elif (not  gml.collision_rectangle(obj.position.x+7, obj.position.y, obj.position.x+8, obj.position.y+16, 'solid', 0, 0, self)):
 							obj.position.x += 8
 						else: obj.t = false
 					
@@ -1436,9 +1436,9 @@ func bomb_rope_and_whipping_handling(): #--- Also handles picking up items and a
 				
 				elif (not gml.collision_point(position.x-8, position.y, "solid", 0, 0)):
 				
-					if (not  gml.collision_rectangle(obj.position.x+7, obj.position.y, obj.position.x+8, obj.position.y+16, 'solid', 0, 0)):
+					if (not  gml.collision_rectangle(obj.position.x+7, obj.position.y, obj.position.x+8, obj.position.y+16, 'solid', 0, 0, self)):
 						obj.position.x += 8
-					elif (not  gml.collision_rectangle(obj.position.x-8, obj.position.y, obj.position.x-7, obj.position.y+16, 'solid', 0, 0)):
+					elif (not  gml.collision_rectangle(obj.position.x-8, obj.position.y, obj.position.x-7, obj.position.y+16, 'solid', 0, 0, self)):
 						obj.position.x -= 8
 					else: obj.t = false
 				
@@ -1559,7 +1559,7 @@ func bomb_rope_and_whipping_handling(): #--- Also handles picking up items and a
 		elif (k_attack_pressed and k_down):
 		
 			# pick up item
-			if (gml.collision_rectangle(position.x-8, position.y, position.x+8, position.y+8, 'item', 0, 0)):
+			if (gml.collision_rectangle(position.x-8, position.y, position.x+8, position.y+8, 'item', 0, 0, self)):
 			
 				var obj = gml.instance_nearest(position.x, position.y, 'item') #---  [FLAG] might need to check this
 				if (obj.can_pick_up and not gml.collision_point(obj.position.x, obj.position.y, "solid", 0, 0)):
@@ -1657,7 +1657,7 @@ func bomb_rope_and_whipping_handling(): #--- Also handles picking up items and a
 					elif (hold_item.cost == 0): CharacterScripts.scr_steal_item(x_vel, y_vel, self)
 				
 			
-			elif (gml.collision_rectangle(position.x-8, position.y, position.x+8, position.y+8, 'enemy', 0, 0)):
+			elif (gml.collision_rectangle(position.x-8, position.y, position.x+8, position.y+8, 'enemy', 0, 0, self)):
 			
 				var obj = gml.instance_nearest(position.x, position.y, 'enemy')
 				if (obj.status >= 98 and obj.can_pick_up):
@@ -1891,7 +1891,7 @@ func kill_upon_being_crushed():
 		visible = false
 	
 func handle_hit_by_arrow():
-	if (gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "arrow", 0, 0)):
+	if (gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "arrow", 0, 0, self)):
 
 		var obj = gml.instance_nearest(position.x, position.y, 'arrow')
 		if (obj and abs(obj.x_vel) > 3 and not obj.safe):
@@ -1913,7 +1913,7 @@ func handle_hit_by_arrow():
 			stun_timer = 20
 	
 func handle_hit_by_rock():
-	if (gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "rock", 0, 0)):
+	if (gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "rock", 0, 0, self)):
 
 		var obj = gml.instance_nearest(position.x, position.y, 'rock')
 		if (obj and abs(obj.x_vel) > 4 and not obj.safe and not stunned and not dead):
@@ -1940,7 +1940,7 @@ func handle_hit_by_rock():
 				stun_timer = 20
 	
 func handle_hit_by_laser():
-	if (gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "laser", 0, 0)):
+	if (gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "laser", 0, 0, self)):
 
 		var obj = gml.instance_nearest(position.x, position.y, 'laser')
 		if (obj):
@@ -1964,7 +1964,7 @@ func handle_hit_by_laser():
 			stun_timer = 20
 	
 func handle_hit_by_psychic_wave():
-	if (gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "psychic_wave", 0, 0) and not stunned and not dead):
+	if (gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "psychic_wave", 0, 0, self) and not stunned and not dead):
 
 		var obj = gml.instance_nearest(position.x, position.y, 'psychic_wave')
 		if (obj):
@@ -1983,7 +1983,7 @@ func handle_hit_by_psychic_wave():
 			stun_timer = 40
 	
 func handle_hit_by_explosion():
-	if (gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "explosion", 0, 0)):
+	if (gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "explosion", 0, 0, self)):
 
 		global.plife -= 10
 		if (global.plife > 0 and InLevel.is_real_level()): global.misc_deaths[1] += 1
@@ -1998,7 +1998,7 @@ func handle_hit_by_explosion():
 		MiscScripts.scr_create_blood(position.x, position.y, 1, self)
 	
 func handle_hit_by_spears_left():
-	var obj = gml.collision_rectangle(position.x-6, position.y-6, position.x+6,  position.y+7, "spears_left", 0, 0) #instance_nearest(position.x, position.y, spears_left) ---[FLAG] doesn't seem to be used for anything but come back and check this
+	var obj = gml.collision_rectangle(position.x-6, position.y-6, position.x+6,  position.y+7, "spears_left", 0, 0, self) #instance_nearest(position.x, position.y, spears_left) ---[FLAG] doesn't seem to be used for anything but come back and check this
 	if (obj):
 
 		if (obj.image_index >= 20 and obj.image_index < 24):
@@ -2017,7 +2017,7 @@ func handle_hit_by_spears_left():
 			MiscScripts.scr_create_blood(position.x, position.y, 1, self)
 	
 func handle_hit_by_smash_trap():
-	if (gml.collision_rectangle(position.x-6, position.y-6, position.x+6,  position.y+7, "smash_trap", 0, 0)):
+	if (gml.collision_rectangle(position.x-6, position.y-6, position.x+6,  position.y+7, "smash_trap", 0, 0, self)):
 
 		if (global.plife > 0 and InLevel.is_real_level()): global.misc_deaths[8] += 1
 
@@ -2040,7 +2040,7 @@ func handle_hit_by_smash_trap():
 			hold_item = null
 	
 func handle_hit_by_ceiling_trap():
-	var obj = gml.collision_rectangle(position.x-2, position.y-9, position.x+2,  position.y-7, "ceiling_trap", 0, 0) #instance_nearest(position.x, position.y-8, ceiling_trap)
+	var obj = gml.collision_rectangle(position.x-2, position.y-9, position.x+2,  position.y-7, "ceiling_trap", 0, 0, self) #instance_nearest(position.x, position.y-8, ceiling_trap)
 	if (obj):
 
 		if (obj.status > 0):
@@ -2052,7 +2052,7 @@ func handle_hit_by_ceiling_trap():
 	
 func handle_spike_collision():
 	col_spikes = false
-	if (gml.collision_rectangle(position.x-4, position.y-4, position.x+4,  position.y+8, "spikes", 0, 0)): col_spikes = true
+	if (gml.collision_rectangle(position.x-4, position.y-4, position.x+4,  position.y+8, "spikes", 0, 0, self)): col_spikes = true
 
 	if (col_spikes and dead):
 
@@ -2370,7 +2370,7 @@ func collect_arrow():
 
 		if (hold_item.type == "bow"):
 		
-			if (gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "arrow", 0, 0) and not dead and not stunned):
+			if (gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "arrow", 0, 0, self) and not dead and not stunned):
 			
 				var obj = gml.instance_nearest(position.x, position.y, 'arrow')
 				if (abs(obj.x_vel) < 1 and abs(obj.y_vel) < 1 and not obj.stuck):
@@ -2380,7 +2380,7 @@ func collect_arrow():
 					gml.instance_destroy(obj)
 	
 func collect_treasure():
-	if (gml.collision_rectangle(position.x-8, position.y-8, position.x+8, position.y+8, "treasure", 0, 0) and not dead and not stunned):
+	if (gml.collision_rectangle(position.x-8, position.y-8, position.x+8, position.y+8, "treasure", 0, 0, self) and not dead and not stunned):
 
 		var gem = gml.instance_nearest(position.x, position.y, "treasure")
 		if (gem.can_collect):
@@ -2417,9 +2417,9 @@ func collect_treasure():
 			gml.instance_destroy(gem)
 	
 func collect_bomb_bag():
-	if (gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "bomb_bag", 0, 0) and not dead and not stunned):
+	if (gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "bomb_bag", 0, 0, self) and not dead and not stunned):
 
-		var obj = gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "bomb_bag", 0, 0)
+		var obj = gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "bomb_bag", 0, 0, self)
 		if (not obj.held and obj.cost == 0 and not gml.collision_point(obj.position.x, obj.position.y, "solid", 0, 0)):
 		
 			global.bombs += 3
@@ -2432,9 +2432,9 @@ func collect_bomb_bag():
 			global.message_timer = 120
 	
 func collect_bomb_box():
-	if (gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "bomb_box", 0, 0) and not dead and not stunned):
+	if (gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "bomb_box", 0, 0, self) and not dead and not stunned):
 
-		var obj = gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "bomb_box", 0, 0)
+		var obj = gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "bomb_box", 0, 0, self)
 		if (not obj.held and obj.cost == 0 and not gml.collision_point(obj.position.x, obj.position.y, "solid", 0, 0)):
 		
 			global.bombs += 12
@@ -2447,9 +2447,9 @@ func collect_bomb_box():
 			global.message_timer = 120
 	
 func collect_rope_pile():
-	if (gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "rope_pile", 0, 0) and not dead and not stunned):
+	if (gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "rope_pile", 0, 0, self) and not dead and not stunned):
 
-		var obj = gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "rope_pile", 0, 0)
+		var obj = gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "rope_pile", 0, 0, self)
 		if (not obj.held and obj.cost == 0 and not gml.collision_point(obj.position.x, obj.position.y, "solid", 0, 0)):
 		
 			global.rope += 3
@@ -3330,11 +3330,11 @@ func handle_ladder_climbing2():
 	#if (sprite_index == "duck_thang_l" or sprite_index == "damsel_dt_hl"):
 #
 		#ladder = 0
-		#if (facing == LEFT and  gml.collision_rectangle(position.x-8, position.y, position.x, position.y+16, ladder, 0, 0) and not gml.collision_point(position.x-4, position.y+16, solid, 0, 0)):
+		#if (facing == LEFT and  gml.collision_rectangle(position.x-8, position.y, position.x, position.y+16, ladder, 0, 0, self) and not gml.collision_point(position.x-4, position.y+16, solid, 0, 0)):
 		#
 			#ladder = instance_nearest(position.x-4, position.y+16, ladder)
 		#
-		#elif (facing == RIGHT and  gml.collision_rectangle(position.x, position.y, position.x+8, position.y+16, ladder, 0, 0) and not gml.collision_point(position.x+4, position.y+16, solid, 0, 0)):
+		#elif (facing == RIGHT and  gml.collision_rectangle(position.x, position.y, position.x+8, position.y+16, ladder, 0, 0, self) and not gml.collision_point(position.x+4, position.y+16, solid, 0, 0)):
 		#
 			#ladder = instance_nearest(position.x+4, position.y+16, ladder)
 		#
@@ -4678,11 +4678,11 @@ func scr_use_item(): #--- only called by player1 so including it here for conven
 				gml.move_snap(16, 1, obj)
 				if (self.position.x < obj.position.x and not gml.collision_point(self.position.x+2, self.position.y, "solid", 0, 0)):
 						
-					if (not gml.collision_rectangle(obj.position.x-8, obj.position.y, obj.position.x-7,  obj.position.y+16, "solid", 0, 0)):
+					if (not gml.collision_rectangle(obj.position.x-8, obj.position.y, obj.position.x-7,  obj.position.y+16, "solid", 0, 0, self)):
 							
 						obj.position.x -= 8
 							
-					elif (not gml.collision_rectangle(obj.position.x+7, obj.position.y, obj.position.x+8,  obj.position.y+16, "solid", 0, 0)):
+					elif (not gml.collision_rectangle(obj.position.x+7, obj.position.y, obj.position.x+8,  obj.position.y+16, "solid", 0, 0, self)):
 							
 						obj.position.x += 8
 							
@@ -4690,11 +4690,11 @@ func scr_use_item(): #--- only called by player1 so including it here for conven
 						
 				elif (not gml.collision_point(self.position.x-2, self.position.y, "solid", 0, 0)):
 						
-					if (not gml.collision_rectangle(obj.position.x+7, obj.position.y, obj.position.x+8,  obj.position.y+16, "solid", 0, 0)):
+					if (not gml.collision_rectangle(obj.position.x+7, obj.position.y, obj.position.x+8,  obj.position.y+16, "solid", 0, 0, self)):
 							
 						obj.position.x += 8
 							
-					elif (not gml.collision_rectangle(obj.position.x-8, obj.position.y, obj.position.x-7,  obj.position.y+16, "solid", 0, 0)):
+					elif (not gml.collision_rectangle(obj.position.x-8, obj.position.y, obj.position.x-7,  obj.position.y+16, "solid", 0, 0, self)):
 							
 						obj.position.x -= 8
 							
@@ -5062,7 +5062,7 @@ func scr_use_item(): #--- only called by player1 so including it here for conven
 						
 					
 			var n = 0
-			while (gml.collision_rectangle(tx-4, ty-4, tx+4,  ty+4, "solid", 0, 0) and n < 3 and ty > 16):
+			while (gml.collision_rectangle(tx-4, ty-4, tx+4,  ty+4, "solid", 0, 0, self) and n < 3 and ty > 16):
 					
 				ty -= 16
 				n += 1
