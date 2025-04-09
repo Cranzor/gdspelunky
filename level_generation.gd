@@ -4695,7 +4695,6 @@ func scr_setup_walls(placement):
 					2: water_instance.sprite_index = "water_bottom2"
 					3: water_instance.sprite_index = "water_bottom3"
 					4: water_instance.sprite_index = "water_bottom4"
-			
 		
 		
 
@@ -4843,7 +4842,8 @@ func scr_check_water_top(calling_object):
 	#***********************************************************************************/
 
 	var obj = gml.instance_place(calling_object.position.x-16, calling_object.position.y, "water", calling_object)
-	if (gml.instance_exists("obj")):
+	#if (gml.instance_exists(obj)): #--- can do a simple check here to see if it found a collision, rather than calling instance_ex
+	if obj:
 
 		if (obj.sprite_index != "water_top" and obj.sprite_index != "lava_top"):
 
@@ -4855,7 +4855,8 @@ func scr_check_water_top(calling_object):
 		
 
 	obj = gml.instance_place(calling_object.position.x+16, calling_object.position.y, "water", calling_object)
-	if (gml.instance_exists("obj")):
+	#if (gml.instance_exists(obj)):
+	if obj: #--- can do a simple check here to see if it found a collision, rather than calling instance_ex
 
 		if (obj.sprite_index != "water_top" and obj.sprite_index != "lava_top"):
 

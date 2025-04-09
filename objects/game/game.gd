@@ -439,14 +439,15 @@ func step():
 			
 					gml.instance_activate_region(water_instance.position.x-16, water_instance.position.y-16, 48, 48, true)
 			
-				if (not gml.collision_point(position.x, position.y-16, "solid", 0, 0) and not gml.collision_point(position.x, position.y-16, "water", 0, 0)):
+				if (not gml.collision_point(water_instance.position.x, water_instance.position.y-16, "solid", 0, 0) and not gml.collision_point(water_instance.position.x, water_instance.position.y-16, "water", 0, 0)):
 				
 					if (water_instance.type == "lava"): water_instance.sprite_index = "lava_top"
 					else: water_instance.sprite_index = "water_top"
 				
 				
 				var obj = gml.instance_place(water_instance.position.x-16, water_instance.position.y, 'water', water_instance)
-				if (gml.instance_exists("obj")):
+				#if (gml.instance_exists(obj)):
+				if obj: #--- can do a simple check here to see if it found a collision, rather than calling instance_exists
 				
 					if (obj.sprite_index == "water_top" or obj.sprite_index == "lava_top"):
 					
@@ -456,7 +457,8 @@ func step():
 				
 				
 				obj = gml.instance_place(water_instance.position.x+16, water_instance.position.y, 'water', water_instance)
-				if (gml.instance_exists("obj")):
+				#if (gml.instance_exists(obj)):
+				if obj: #--- can do a simple check here to see if it found a collision, rather than calling instance_ex
 				
 					if (obj.sprite_index == "water_top" or obj.sprite_index == "lava_top"):
 					
@@ -465,9 +467,9 @@ func step():
 					
 				
 				
-				if ((not gml.collision_point(position.x-16, position.y, "solid", 0, 0) and not gml.collision_point(position.x-16, position.y, "water", 0, 0)) or
-					(not gml.collision_point(position.x+16, position.y, "solid", 0, 0) and not gml.collision_point(position.x+16, position.y, "water", 0, 0)) or
-					(not gml.collision_point(position.x, position.y+16, "solid", 0, 0) and not gml.collision_point(position.x, position.y+16, "water", 0, 0))):
+				if ((not gml.collision_point(water_instance.position.x-16, water_instance.position.y, "solid", 0, 0) and not gml.collision_point(water_instance.position.x-16, water_instance.position.y, "water", 0, 0)) or
+					(not gml.collision_point(water_instance.position.x+16, water_instance.position.y, "solid", 0, 0) and not gml.collision_point(water_instance.position.x+16, water_instance.position.y, "water", 0, 0)) or
+					(not gml.collision_point(water_instance.position.x, water_instance.position.y+16, "solid", 0, 0) and not gml.collision_point(water_instance.position.x, water_instance.position.y+16, "water", 0, 0))):
 				
 					gml.instance_destroy(water_instance)
 					global.water_counter += 1
