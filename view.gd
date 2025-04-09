@@ -67,4 +67,7 @@ func _input(event: InputEvent) -> void:
 		#circle.texture = CircleDraw.create_bresenham_circle(96)
 		
 		var player1 = gml.get_instance("player1")
-		gml.instance_create(player1.position.x - 32, player1.position.y, Objects.damsel)
+		#gml.instance_create(player1.position.x - 32, player1.position.y, Objects.damsel)
+
+		var tile = gml.tile_layer_find(3, player1.position.x, player1.position.y)
+		gml.tile_delete(tile)

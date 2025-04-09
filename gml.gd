@@ -170,40 +170,56 @@ func tile_add(background,left,top,width,height,x,y,depth): #return value of tile
 	y = y / 16
 	x = x / 16
 	
-	if left == 0:
-		pass
-	else:
+	if left != 0:
 		coords.x = left / 16
 		
-	if top == 0:
-		pass
-	else:
+	if top != 0:
 		coords.y = top / 16 - 1
 		
-	if width == 16:
-		pass
-	else:
+	if width != 16:
 		size.x = width / 16
 	
-	if height == 16:
-		pass
-	else:
+	if height != 16:
 		size.y = height / 16
 	
 	var cur_scene = get_tree()
-	var bg_elements: TileMap = cur_scene.get_first_node_in_group("bg_elements")
+	var bg_elements: Node2D = cur_scene.get_first_node_in_group("bg_elements")
+	var tile_map_layer: TileMapLayer = bg_elements.get_child(layer_number)
 	
 	if depth > 4095:
 		depth = 4095
 	
-	bg_elements.set_layer_z_index(layer_number, -depth)
+	tile_map_layer.z_index = -depth
 	
 	#coords.y -= 1
 	for i in range(0, size.y):
 		y = y + 1
 		coords.y += 1
 		for j in range(0, size.x):
-			bg_elements.set_cell(layer_number, Vector2i(x + j, y - 1), tile_id, Vector2i(coords.x + j, coords.y))
+			tile_map_layer.set_cell(Vector2i(x + j, y - 1), tile_id, Vector2i(coords.x + j, coords.y))
+
+func tile_layer_find(depth, x, y):
+	var bg_elements: Node2D = get_tree().get_first_node_in_group("bg_elements")
+	var used_cells
+	for child: TileMapLayer in bg_elements.get_children():
+		if child.z_index == -depth:
+			used_cells = child.get_used_cells()
+	
+	for cell in used_cells:
+		var cell_pixel_position = cell * 16
+		var rect1: Rect2 = Rect2(cell_pixel_position, Vector2(16, 16))
+		var rect2: Rect2 = Rect2(Vector2(x, y), Vector2(1, 1))
+		var intersects = rect1.intersects(rect2)
+		if intersects == true:
+			return [depth, cell]
+	
+	return null
+
+func tile_delete(id): #--- id[0] is depth, id[1] is cell coords
+	var bg_elements: Node2D = get_tree().get_first_node_in_group("bg_elements")
+	for child: TileMapLayer in bg_elements.get_children():
+		if child.z_index == -id[0]:
+			child.erase_cell(id[1])
 
 func distance_to_object(obj: GMObject, comparison_node: GMObject): #Make this more accurate with this info https://manual.gamemaker.io/monthly/en/GameMaker_Language/GML_Reference/Maths_And_Numbers/Angles_And_Distance/distance_to_object.htm
 	if obj == null:
@@ -457,12 +473,6 @@ func instance_deactivate_all(notme):
 func game_end():
 	Screen.game_end()
 	get_tree().quit()
-
-func tile_layer_find(depth, x, y): #---[FLAG] have to implement this. returns the given tile
-	pass
-
-func tile_delete(id): #---[FLAG] have to implement this
-	pass
 
 func random(x): #---[FLAG] may be a float?
 	return randi_range(0, x)

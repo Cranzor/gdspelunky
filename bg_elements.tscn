@@ -729,35 +729,121 @@ sources/26 = SubResource("TileSetAtlasSource_eea21")
 sources/27 = SubResource("TileSetAtlasSource_8uwuk")
 sources/28 = SubResource("TileSetAtlasSource_rbnwk")
 
-[node name="BgElements" type="TileMap" groups=["bg_elements"]]
+[node name="BgElements" type="Node2D" groups=["bg_elements"]]
+
+[node name="Layer0" type="TileMapLayer" parent="."]
+z_index = -1
+use_parent_material = true
 tile_set = SubResource("TileSet_kjode")
-format = 2
-layer_0/z_index = -1
-layer_1/name = "Layer1"
-layer_2/name = "Layer2"
-layer_3/name = "Layer3"
-layer_4/name = "Layer4"
-layer_5/name = "Layer5"
-layer_6/name = "Layer6"
-layer_7/name = "Layer7"
-layer_8/name = "Layer8"
-layer_9/name = "Layer9"
-layer_10/name = "Layer10"
-layer_11/name = "Layer11"
-layer_12/name = "Layer12"
-layer_13/name = "Layer13"
-layer_14/name = "Layer14"
-layer_15/name = "Layer15"
-layer_16/name = "Layer16"
-layer_17/name = "Layer17"
-layer_18/name = "Layer18"
-layer_19/name = "Layer19"
-layer_20/name = "Layer20"
-layer_21/name = "Layer21"
-layer_22/name = "Layer22"
-layer_23/name = "Layer23"
-layer_24/name = "Layer24"
-layer_25/name = "Layer25"
-layer_26/name = "Layer26"
-layer_27/name = "Layer27"
-layer_28/name = "Layer28"
+
+[node name="Layer1" type="TileMapLayer" parent="."]
+use_parent_material = true
+tile_set = SubResource("TileSet_kjode")
+
+[node name="Layer2" type="TileMapLayer" parent="."]
+use_parent_material = true
+tile_set = SubResource("TileSet_kjode")
+
+[node name="Layer3" type="TileMapLayer" parent="."]
+use_parent_material = true
+tile_set = SubResource("TileSet_kjode")
+
+[node name="Layer4" type="TileMapLayer" parent="."]
+use_parent_material = true
+tile_set = SubResource("TileSet_kjode")
+
+[node name="Layer5" type="TileMapLayer" parent="."]
+use_parent_material = true
+tile_set = SubResource("TileSet_kjode")
+
+[node name="Layer6" type="TileMapLayer" parent="."]
+use_parent_material = true
+tile_set = SubResource("TileSet_kjode")
+
+[node name="Layer7" type="TileMapLayer" parent="."]
+use_parent_material = true
+tile_set = SubResource("TileSet_kjode")
+
+[node name="Layer8" type="TileMapLayer" parent="."]
+use_parent_material = true
+tile_set = SubResource("TileSet_kjode")
+
+[node name="Layer9" type="TileMapLayer" parent="."]
+use_parent_material = true
+tile_set = SubResource("TileSet_kjode")
+
+[node name="Layer10" type="TileMapLayer" parent="."]
+use_parent_material = true
+tile_set = SubResource("TileSet_kjode")
+
+[node name="Layer11" type="TileMapLayer" parent="."]
+use_parent_material = true
+tile_set = SubResource("TileSet_kjode")
+
+[node name="Layer12" type="TileMapLayer" parent="."]
+use_parent_material = true
+tile_set = SubResource("TileSet_kjode")
+
+[node name="Layer13" type="TileMapLayer" parent="."]
+use_parent_material = true
+tile_set = SubResource("TileSet_kjode")
+
+[node name="Layer14" type="TileMapLayer" parent="."]
+use_parent_material = true
+tile_set = SubResource("TileSet_kjode")
+
+[node name="Layer15" type="TileMapLayer" parent="."]
+use_parent_material = true
+tile_set = SubResource("TileSet_kjode")
+
+[node name="Layer16" type="TileMapLayer" parent="."]
+use_parent_material = true
+tile_set = SubResource("TileSet_kjode")
+
+[node name="Layer17" type="TileMapLayer" parent="."]
+use_parent_material = true
+tile_set = SubResource("TileSet_kjode")
+
+[node name="Layer18" type="TileMapLayer" parent="."]
+use_parent_material = true
+tile_set = SubResource("TileSet_kjode")
+
+[node name="Layer19" type="TileMapLayer" parent="."]
+use_parent_material = true
+tile_set = SubResource("TileSet_kjode")
+
+[node name="Layer20" type="TileMapLayer" parent="."]
+use_parent_material = true
+tile_set = SubResource("TileSet_kjode")
+
+[node name="Layer21" type="TileMapLayer" parent="."]
+use_parent_material = true
+tile_set = SubResource("TileSet_kjode")
+
+[node name="Layer22" type="TileMapLayer" parent="."]
+use_parent_material = true
+tile_set = SubResource("TileSet_kjode")
+
+[node name="Layer23" type="TileMapLayer" parent="."]
+use_parent_material = true
+tile_set = SubResource("TileSet_kjode")
+
+[node name="Layer24" type="TileMapLayer" parent="."]
+use_parent_material = true
+tile_set = SubResource("TileSet_kjode")
+
+[node name="Layer25" type="TileMapLayer" parent="."]
+use_parent_material = true
+tile_set = SubResource("TileSet_kjode")
+
+[node name="Layer26" type="TileMapLayer" parent="."]
+use_parent_material = true
+tile_set = SubResource("TileSet_kjode")
+
+[node name="Layer27" type="TileMapLayer" parent="."]
+use_parent_material = true
+tile_set = SubResource("TileSet_kjode")
+
+[node name="Layer28" type="TileMapLayer" parent="."]
+use_parent_material = true
+tile_set = SubResource("TileSet_kjode")
