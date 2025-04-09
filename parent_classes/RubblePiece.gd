@@ -1,5 +1,5 @@
 extends DrawnSprite
-class_name RubblePiece
+#class_name RubblePiece
 
 func _ready():
 	sprite
