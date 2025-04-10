@@ -692,12 +692,15 @@ func run_collision_with2():
 		var overlap_query = PhysicsShapeQueryParameters2D.new()
 		overlap_query.collide_with_bodies = true
 		var checking_object_collision_shape = get_node("CollisionShape2D").shape
-		overlap_query.transform = Transform2D(0, position + (checking_object_collision_shape.size / 2))
+		var origin = Vector2(0, 0)
+		if sprite_index_name != "":
+			origin = sprites.sprite_database[sprite_index_name]["origin"]
+		overlap_query.transform = Transform2D(0, (position - origin) + (checking_object_collision_shape.size / 2))
 		overlap_query.collision_mask = 1
 		overlap_query.margin = -1
 		overlap_query.shape = checking_object_collision_shape
 		
-		var overlaps = get_world_2d().direct_space_state.intersect_shape(overlap_query)
+		var overlaps = get_world_2d().direct_space_state.intersect_shape(overlap_query, 100)
 		for object in collision_with:
 			for overlap in overlaps:
 				var collider = overlap["collider"]
@@ -706,11 +709,14 @@ func run_collision_with2():
 					other = collider
 					var callable = collision_with[object]
 					callable.call()
-					#var checker_precise = sprites.sprite_database[sprite_index_name]["mask"]["shape"]
-					#var collider_precise = sprites.sprite_database[collider.sprite_index_name]["mask"]["shape"]
-					#if checker_precise == "PRECISE" or collider_precise == "PRECISE":
-						#pass
-		
+					var checker_precise = sprites.sprite_database[sprite_index_name]["mask"]["shape"]
+					var collider_precise = sprites.sprite_database[collider.sprite_index_name]["mask"]["shape"]
+					if checker_precise == "PRECISE" or collider_precise == "PRECISE":
+						if object_name == "explosion":
+							print(position)
+							print(get_node("CollisionShape2D").position)
+							print(checking_object_collision_shape.size)
+							print("---")
 
 
 func run_animation_end():
