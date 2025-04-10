@@ -458,7 +458,7 @@ func step():
 				
 				obj = gml.instance_place(water_instance.position.x+16, water_instance.position.y, 'water', water_instance)
 				#if (gml.instance_exists(obj)):
-				if obj: #--- can do a simple check here to see if it found a collision, rather than calling instance_ex
+				if obj: #--- can do a simple check here to see if it found a collision, rather than calling instance_exists
 				
 					if (obj.sprite_index == "water_top" or obj.sprite_index == "lava_top"):
 					
