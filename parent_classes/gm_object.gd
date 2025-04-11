@@ -735,13 +735,10 @@ func run_collision_with2():
 							var bitmap2: BitMap = BitMap.new()
 							bitmap2.create_from_image_alpha(new_image2)
 							
-							var new_image_size = new_image.get_size()
-							for x in range(new_image_size.x): for y in range(new_image_size.y):
-								if bitmap1.get_bit(x, y) and bitmap2.get_bit(x, y):
-									other = collider
-									var callable = collision_with[object]
-									callable.call()
-									break
+							if bitmap1.get_true_bit_count() > 0 and bitmap2.get_true_bit_count() > 0:
+								other = collider
+								var callable = collision_with[object]
+								callable.call()
 						
 					else:
 						other = collider
