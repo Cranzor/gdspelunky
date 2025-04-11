@@ -706,17 +706,47 @@ func run_collision_with2():
 				var collider = overlap["collider"]
 				var collider_groups = collider.get_groups()
 				if object in collider_groups:
-					other = collider
-					var callable = collision_with[object]
-					callable.call()
 					var checker_precise = sprites.sprite_database[sprite_index_name]["mask"]["shape"]
 					var collider_precise = sprites.sprite_database[collider.sprite_index_name]["mask"]["shape"]
 					if checker_precise == "PRECISE" or collider_precise == "PRECISE":
-						if object_name == "explosion":
-							print(position)
-							print(get_node("CollisionShape2D").position)
-							print(checking_object_collision_shape.size)
-							print("---")
+						var checker_frame = animated_sprite_node.frame
+						var collider_frame = collider.animated_sprite_node.frame
+						var image1 = animated_sprite_node.sprite_frames.get_frame_texture(sprite_index_name, checker_frame).get_image()
+						var image2 = collider.animated_sprite_node.sprite_frames.get_frame_texture(collider.sprite_index_name, collider_frame).get_image()
+						var image1_size: Vector2 = image1.get_size()
+						var image2_size: Vector2 = image2.get_size()
+						var rect1 = Rect2((position - origin) + (image1_size / 2), image1_size)
+						var collider_origin = sprites.sprite_database[collider.sprite_index_name]["origin"]
+						var rect2 = Rect2((collider.position - collider_origin) + (image2_size / 2), image2_size)
+						var intersection = rect1.intersection(rect2)
+						if intersection:
+							image1.convert(Image.FORMAT_RGBA8)
+							image2.convert(Image.FORMAT_RGBA8)
+							
+							var new_image = Image.create_empty(intersection.size.x, intersection.size.y, false, Image.FORMAT_RGBA8)
+							var adjusted_position: Vector2 = abs(((position - origin) + (image1_size / 2)) - intersection.position)
+							new_image.blit_rect(image1, Rect2i(Vector2(adjusted_position.x, adjusted_position.y), Vector2(intersection.size.x, intersection.size.y)), Vector2(0, 0))
+						
+							var new_image2 = Image.create_empty(intersection.size.x, intersection.size.y, false, Image.FORMAT_RGBA8)
+							new_image2.blit_rect(image2, Rect2i(Vector2(0, 0), Vector2(intersection.size.x, intersection.size.y)), Vector2(0, 0))
+							
+							var bitmap1: BitMap = BitMap.new()
+							bitmap1.create_from_image_alpha(new_image)
+							var bitmap2: BitMap = BitMap.new()
+							bitmap2.create_from_image_alpha(new_image2)
+							
+							var new_image_size = new_image.get_size()
+							for x in range(new_image_size.x): for y in range(new_image_size.y):
+								if bitmap1.get_bit(x, y) and bitmap2.get_bit(x, y):
+									other = collider
+									var callable = collision_with[object]
+									callable.call()
+									break
+						
+					else:
+						other = collider
+						var callable = collision_with[object]
+						callable.call()	
 
 
 func run_animation_end():
