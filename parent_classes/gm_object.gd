@@ -638,7 +638,8 @@ func run_draw_event():
 		else:
 			animated_sprite_node.sprite_displayed = true
 
-
+#var new_image
+#var new_image2
 func run_collision_with():
 	if not is_queued_for_deletion():
 		var overlap_query = PhysicsShapeQueryParameters2D.new() #--- creating an overlap query the same size/position of the checking object's collision shape
@@ -668,7 +669,7 @@ func run_collision_with():
 						var image2 = collider.animated_sprite_node.sprite_frames.get_frame_texture(collider.sprite_index_name, collider_frame).get_image()
 						var image1_size: Vector2 = image1.get_size()
 						var image2_size: Vector2 = image2.get_size()
-						#--- performing a Rect2D overlap test to get overlap info
+						#--- performing a Rect2 overlap test to get overlap info
 						var rect1 = Rect2((position - origin), image1_size)
 						var collider_origin = sprites.sprite_database[collider.sprite_index_name]["origin"]
 						var rect2 = Rect2((collider.position - collider_origin), image2_size)
@@ -688,18 +689,13 @@ func run_collision_with():
 							var new_image2 = Image.create_empty(intersection.size.x, intersection.size.y, false, Image.FORMAT_RGBA8)
 							new_image2.blit_rect(image2, Rect2i(Vector2(0, 0), Vector2(intersection.size.x, intersection.size.y)), Vector2(0, 0))
 							
-							#--- creating bitmaps of both new images
-							var bitmap1: BitMap = BitMap.new()
-							bitmap1.create_from_image_alpha(new_image)
-							var bitmap2: BitMap = BitMap.new()
-							bitmap2.create_from_image_alpha(new_image2)
-							
 							#--- if either new image is empty, we know there is not any overlap between pixels (just with bounding boxes)
 							#--- otherwise, if both contain at least one bit, then there was an overlap, so we call the collision_with function
-							if bitmap1.get_true_bit_count() > 0 and bitmap2.get_true_bit_count() > 0:
+							if !new_image.is_empty() and !new_image2.is_empty():
 								other = collider
 								var callable = collision_with[object]
 								callable.call()
+
 					#--- can simply call the collision_with function if both objects have rectangle masks
 					else:
 						other = collider

@@ -1027,7 +1027,7 @@ func handle_flare_crate_opening():
 		var chest_instance = gml.instance_place(position.x, position.y, 'flare_crate', self)
 		for i in range (0, 3):
 		
-			var obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, "flare")
+			var obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.flare)
 			obj.x_vel = randi_range(0,3)-randi_range(0,3)
 			obj.y_vel = randi_range(1,3)*-1
 		
