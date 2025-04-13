@@ -147,6 +147,8 @@ func instance_create(x,y,obj): #---[FLAG] make this so that obj is forced to be 
 	var objects_holder = get_tree().get_first_node_in_group("objects_holder")
 	objects_holder.add_child(instance)
 	
+	get_tree().call_group("gm_object", "force_update_transform")
+	
 	#for objects bigger than 16x16, get height and width of sprite texture and then add that as the size
 	
 	#getting each location of each object spawned in. note that this only applies to stationary objects
@@ -155,10 +157,25 @@ func instance_create(x,y,obj): #---[FLAG] make this so that obj is forced to be 
 	return instance
 	
 func collision_point(x,y,obj: String,_prec,notme,calling_object: GMObject = null): #"This function tests whether at point (x,y) there is a collision with entities of object obj."
-	var collided_object = handle_collision_ray(x, y, x, y, obj, notme)
-	if calling_object:
-		calling_object.other = collided_object
-	return collided_object
+	var possible = []
+	var overlap_query = PhysicsPointQueryParameters2D.new()
+	overlap_query.collide_with_bodies = true
+	overlap_query.position = Vector2(x ,y)
+	overlap_query.collision_mask = 1
+	var overlaps = get_tree().get_first_node_in_group("gm_object").get_world_2d().direct_space_state.intersect_point(overlap_query, 100)
+	for overlap in overlaps:
+		var collider = overlap["collider"]
+		var collider_groups = collider.get_groups()
+		if obj in collider_groups:
+			possible.append(collider)
+	if possible != []:
+		return possible[-1]
+	return null
+	
+	#var collided_object = handle_collision_ray(x, y, x, y, obj, notme)
+	#if calling_object:
+		#calling_object.other = collided_object
+	#return collided_object
 
 #Always adds bg elements
 func tile_add(background,left,top,width,height,x,y,depth): #return value of tile as well. left: left to right value in pixels. top: top to bottom in pixels
