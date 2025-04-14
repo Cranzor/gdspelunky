@@ -14,6 +14,8 @@ var draw_object: bool = true #--- "draw" in GML (keyword is taken in Godot). det
 var sprite
 var solid = false
 
+var parent
+
 var dir #---[FLAG] not exactly sure what this does
 var status #--- declaring this here for objects that use it but don't have drawn_sprite as their parent
 var counter: int #--- same as above
@@ -362,7 +364,7 @@ func object_setup():
 	disable_mode = CollisionObject2D.DISABLE_MODE_KEEP_ACTIVE
 	var object_database = object_database.object_database
 	var object_entry = object_database[object_name]
-	var parent = object_entry["parent"]
+	parent = object_entry["parent"]
 	collision_shape_setup()
 	
 	groups_setup(object_entry)

@@ -4182,14 +4182,12 @@ func move_to(x_vel, y_vel):
 				if gml.object_get_parent(solid_id) == 'moveable_solid' and Collision.can_push_moveable_solids(self):
 			  
 					#we must move the moveable solid, unless there is another solid (moveable or non-moveable) in it's way
-					var all_solids = gml.get_all_instances("solid")
-					for solid_instance in all_solids:
-						if gml.place_meeting(solid_instance.position.x+1,solid_instance.position.y,'solid', solid_instance):      #there will be a collision!
-							#--- is x here referring to the iterator or the node's x position? no idea. going with the position
-							break
-						else:
-							solid_instance.position.x += 1 * get_physics_process_delta_time() * 30         #we're free to move the moveable solid
-							if (not SS.is_sound_playing(global.snd_push)): Audio.play_sound(global.snd_push)
+					if gml.place_meeting(solid_id.position.x+1,solid_id.position.y,'solid', solid_id):      #there will be a collision!
+						#--- is x here referring to the iterator or the node's x position? no idea. going with the position
+						break
+					else:
+						solid_id.position.x += 1         #we're free to move the moveable solid
+						if (not SS.is_sound_playing(global.snd_push)): Audio.play_sound(global.snd_push)
 
 				else:
 					break
@@ -4206,17 +4204,14 @@ func move_to(x_vel, y_vel):
 			var solid_id = Collision.get_id_collision_left(1, self) # --- [FLAG] assuming this returns a node
 			#if there is a collision with a solid:
 			if solid_id!=null:
-			
 				if gml.object_get_parent(solid_id)== 'moveable_solid' and Collision.can_push_moveable_solids(self):
 			  
 				#we must move the moveable solid, unless there is another solid (moveable or non-moveable) in it's way
-					var all_solids = gml.get_all_instances("solid")
-					for solid_instance in all_solids:
-						if solid_id.gml.place_meeting(solid_id.x-1,solid_id.y,'solid'):      #there will be a collision!
-							break
-						else:
-							solid_instance.position.x += 1 * get_physics_process_delta_time() * 30             #we're free to move the moveable solid
-							if (not SS.is_sound_playing(global.snd_push)): Audio.play_sound(global.snd_push)
+					if gml.place_meeting(solid_id.position.x-1,solid_id.position.y,'solid', solid_id):      #there will be a collision!
+						break
+					else:
+						solid_id.position.x += 1             #we're free to move the moveable solid
+						if (not SS.is_sound_playing(global.snd_push)): Audio.play_sound(global.snd_push)
 
 				else:
 					break

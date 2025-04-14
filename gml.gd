@@ -275,7 +275,7 @@ func instance_place(x,y,obj: String, comparison_object: GMObject): #' Returns th
 	var size_with_scale: Vector2 = Vector2(position_with_offset.x + comparison_object_collision_shape_size.x, position_with_offset.y + comparison_object_collision_shape_size.y)
 	if comparison_object.object_name == "arrow_trap_test": #--- adding a special exception as arrow_trap_test is the only object in the game with larger collision due to its scaling
 		size_with_scale = Vector2(position_with_offset.x + (comparison_object_collision_shape_size.x * comparison_object.image_xscale), position_with_offset.y + (comparison_object_collision_shape_size.y * comparison_object.image_yscale))
-	return collision_rectangle(position_with_offset.x, position_with_offset.y, size_with_scale.x, size_with_scale.y, obj, 0, 0)
+	return collision_rectangle(position_with_offset.x, position_with_offset.y, size_with_scale.x, size_with_scale.y, obj, 0, true, comparison_object)
 
 func instance_position(x, y, obj: String): #---[FLAG] this needs checked
 	var intersecting = collision_point(x, y, obj, 0, 0)

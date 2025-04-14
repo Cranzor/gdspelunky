@@ -187,13 +187,9 @@ func get_id_collision_left(number, node): #--- Only used once in PlatformEngine.
 	var _rb = all_points_exact.z
 	var bb = all_points_exact.w
 	
-	if gml.collision_line(gml.gm_round(lb-number),gml.gm_round(tb+5),gml.gm_round(lb-number),gml.gm_round(bb-1),'solid',1,1,node):
-		var solid = gml.instance_nearest(lb, tb, 'solid')
-		return solid
-	
-	else:
-		return null
-	
+	return gml.collision_line(gml.gm_round(lb-number),gml.gm_round(tb+5),gml.gm_round(lb-number),gml.gm_round(bb-1),'solid',1,1,node)
+
+
 func get_id_collision_right(number, node): #--- Only used once in PlatformEngine.move_to
 	#/*
 	#An object can only use this script after calling "set_collision_bounds."
@@ -207,13 +203,9 @@ func get_id_collision_right(number, node): #--- Only used once in PlatformEngine
 	var rb = all_points_exact.z
 	var bb = all_points_exact.w
 	
-	if gml.collision_line(gml.gm_round(rb+number-1),gml.gm_round(tb+5),gml.gm_round(rb+number-1),gml.gm_round(bb-1),'solid',1,1,node):
-		var solid = gml.instance_nearest(lb, tb, 'solid')
-		return solid
-	
-	else:
-		return null
-	
+	return gml.collision_line(gml.gm_round(rb+number-1),gml.gm_round(tb+5),gml.gm_round(rb+number-1),gml.gm_round(bb-1),'solid',1,1,node)
+
+
 func is_collision_character_left(number, id = 0): #--- id is just the group
 	#/*
 	#0: Number of pixels left of the collision rectangle to check for a collision

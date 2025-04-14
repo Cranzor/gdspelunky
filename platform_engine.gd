@@ -96,7 +96,7 @@ func move_to(x_vel, y_vel, node: GMObject):
 							#--- is x here referring to the iterator or the node's x position? no idea. going with the position
 							break
 						else:
-							solid_instance.position.x += 1 * get_physics_process_delta_time() * 30         #we're free to move the moveable solid
+							solid_instance.position.x += 1         #we're free to move the moveable solid
 							if (not SS.is_sound_playing(global.snd_push)): Audio.play_sound(global.snd_push)
 
 				else:
@@ -123,7 +123,7 @@ func move_to(x_vel, y_vel, node: GMObject):
 						if solid_id.gml.place_meeting(solid_id.x-1,solid_id.y,'solid'):      #there will be a collision!
 							break
 						else:
-							solid_instance.position.x += 1 * get_physics_process_delta_time() * 30             #we're free to move the moveable solid
+							solid_instance.position.x += 1             #we're free to move the moveable solid
 							if (not SS.is_sound_playing(global.snd_push)): Audio.play_sound(global.snd_push)
 
 				else:
