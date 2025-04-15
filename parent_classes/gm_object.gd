@@ -694,15 +694,17 @@ func run_collision_with():
 							#--- if either new image is empty, we know there is not any overlap between pixels (just with bounding boxes)
 							#--- otherwise, if both contain at least one bit, then there was an overlap, so we call the collision_with function
 							if !new_image.is_empty() and !new_image2.is_empty():
-								other = collider
-								var callable = collision_with[object]
-								callable.call()
+								if collider != self and !collider.is_queued_for_deletion():
+									other = collider
+									var callable = collision_with[object]
+									callable.call()
 
 					#--- can simply call the collision_with function if both objects have rectangle masks
 					else:
-						other = collider
-						var callable = collision_with[object]
-						callable.call()	
+						if collider != self and !collider.is_queued_for_deletion():
+							other = collider
+							var callable = collision_with[object]
+							callable.call()	
 
 
 func run_animation_end():

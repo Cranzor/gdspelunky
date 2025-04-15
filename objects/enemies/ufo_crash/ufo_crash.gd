@@ -17,8 +17,8 @@ func _process(delta):
 
 
 func alarm_0():
-	if (randi_range(1,2) == 1): gml.instance_create(position.x+randi_range(0,16), position.y+randi_range(0,16), Objects.flame_trail)
-	else: gml.instance_create(position.x+randi_range(0,16), position.y+randi_range(0,16), Objects.burn)
+	if (gml.rand(1,2) == 1): gml.instance_create(position.x+gml.rand(0,16), position.y+gml.rand(0,16), Objects.flame_trail)
+	else: gml.instance_create(position.x+gml.rand(0,16), position.y+gml.rand(0,16), Objects.burn)
 	alarm_0_countdown.start(3)
 	
 
