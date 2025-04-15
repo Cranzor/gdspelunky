@@ -4210,7 +4210,7 @@ func move_to(x_vel, y_vel):
 					if gml.place_meeting(solid_id.position.x-1,solid_id.position.y,'solid', solid_id):      #there will be a collision!
 						break
 					else:
-						solid_id.position.x += 1             #we're free to move the moveable solid
+						solid_id.position.x -= 1             #we're free to move the moveable solid
 						if (not SS.is_sound_playing(global.snd_push)): Audio.play_sound(global.snd_push)
 
 				else:
