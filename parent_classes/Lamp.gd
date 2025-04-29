@@ -1,5 +1,5 @@
 extends GMObject
-class_name Lamp
+#class_name Lamp
 
 #var sprite = 'sLamp'
 #var solid = false

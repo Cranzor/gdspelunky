@@ -66597,35 +66597,3 @@ const room_database = {
 		}
 	}	
 }
-
-const rooms_extents = { #---[FLAG] update this entire fill to get all needed data. these are just "size" in the original room file -- grab it from there
- "credits1" : Vector2(320, 240),
- "credits2" : Vector2(320, 240),
- "end" : Vector2(640, 256),
- "end2" : Vector2(16, 16),
- "end3" : Vector2(320, 240),
- "end_custom" : Vector2(320, 240),
- "highscores" : Vector2(320, 256),
- "intro" : Vector2(960, 240),
- "joy_config" : Vector2(16, 16),
- "key_config" : Vector2(16, 16),
- "level" : Vector2(672, 544),
- "level2" : Vector2(672, 608),
- "level3" : Vector2(512, 544),
- "level_editor" : Vector2(672, 544),
- "load_level" : Vector2(672, 544),
- "moon" : Vector2(320, 256),
- "olmec" : Vector2(656, 880),
- "screen_init" : Vector2(32, 16),
- "stars" : Vector2(320, 256),
- "sun" : Vector2(320, 256),
- "title" : Vector2(640, 240),
- "transition1" : Vector2(320, 240),
- "transition1x" : Vector2(320, 240),
- "transition2" : Vector2(320, 240),
- "transition2x" : Vector2(320, 240),
- "transition3" : Vector2(320, 240),
- "transition3x" : Vector2(320, 240),
- "transition4" : Vector2(320, 240),
- "tutorial" : Vector2(672, 304),
-}

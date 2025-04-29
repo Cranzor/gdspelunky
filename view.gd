@@ -37,9 +37,8 @@ func _physics_process(delta: float) -> void:
 
 func set_camera_limits() -> void:
 	var rooms = Rooms.new()
-	var room_extents = rooms.rooms_extents
 	var current_room = gml.room_get_name()
-	var camera_extents = room_extents[current_room]
+	var camera_extents = Vector2(int(rooms.room_database[current_room]["size"]["width"]), int(rooms.room_database[current_room]["size"]["height"]))
 	limit_left = 0
 	limit_top = 0
 	limit_right = camera_extents.x

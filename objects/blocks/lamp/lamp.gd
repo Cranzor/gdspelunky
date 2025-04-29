@@ -1,4 +1,5 @@
 extends GMObject
+class_name Lamp
 
 
 func _ready():

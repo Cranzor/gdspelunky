@@ -514,7 +514,11 @@ func gm_round(n):
 #---------------------------------------
 func get_all_instances(group: String): #Replacement for 'with' keyword
 	var all_instances = get_tree().get_nodes_in_group(group)
-	return all_instances
+	var all_instances_non_queued: Array = []
+	for instance in all_instances:
+		if !instance.is_queued_for_deletion():
+			all_instances_non_queued.append(instance)
+	return all_instances_non_queued
 
 
 func view(view_value: String):
