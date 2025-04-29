@@ -2330,7 +2330,7 @@ func scr_room_gen2(x, y):
 			
 			elif (tile == "i"):
 			
-				scr_shop_items_gen(x, y, shop_type)
+				scr_shop_items_gen(xpos, ypos, shop_type)
 			
 			elif (tile == "u"):
 			
@@ -3660,7 +3660,7 @@ func scr_room_gen4(x, y):
 			
 			elif (tile == "i"):
 			
-				scr_shop_items_gen(x, y, shop_type)
+				scr_shop_items_gen(xpos, ypos, shop_type)
 			
 
 			elif (tile == "w"):

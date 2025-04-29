@@ -520,7 +520,7 @@ func step():
 			if (player1.hold_item != null):
 		
 				var obj = player1.hold_item
-				if (obj == 0 or obj.cost == 0):
+				if (obj == null or obj.cost == 0):
 			
 					status = IDLE
 			

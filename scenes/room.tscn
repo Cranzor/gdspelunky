@@ -14,6 +14,8 @@ script = ExtResource("1_36trf")
 [node name="BgElements" parent="." instance=ExtResource("2_85yof")]
 
 [node name="TextureRect" parent="." instance=ExtResource("3_14vil")]
+offset_right = 992.0
+offset_bottom = 784.0
 
 [node name="TextureRect2" parent="." instance=ExtResource("3_14vil")]
 visible = false
