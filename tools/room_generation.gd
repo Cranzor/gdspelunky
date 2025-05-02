@@ -12,6 +12,7 @@ func generate_room(room_name: String):
 	var room_database = rooms.room_database
 	var room_data = room_database[room_name]
 	var room_instances = room_data['instances']['instance']
+	var objects_in_level: Array
 	
 	var x = 0
 	for instance in room_instances:
@@ -32,7 +33,11 @@ func generate_room(room_name: String):
 		#holder.add_child(loaded_object)
 		#loaded_object.owner = EditorInterface.get_edited_scene_root()
 		
-		gml.instance_create(object_position.x, object_position.y, loaded_object)
+		var obj = gml.instance_create(object_position.x, object_position.y, loaded_object, false)
+		objects_in_level.append(obj)
+	
+	for object in objects_in_level: #--- running create event for all objects after they are all instanced so that they can reference one another regardless of order
+		object.run_create_function(object)
 	
 	#apply_camera(room_name)
 	print(x)

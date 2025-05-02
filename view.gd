@@ -55,6 +55,7 @@ func _input(event: InputEvent) -> void:
 		#print(test)
 		
 		global.plife += 1
+		print(global.curr_level)
 		#if !event.is_echo():
 			#var player1 = gml.get_instance("player1")
 			#gml.instance_create(player1.position.x - 32, player1.position.y - 10, Objects.yeti)

@@ -1,15 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://dccnfhv6qaic4"]
+[gd_scene load_steps=3 format=3 uid="uid://ba1epw562qj6d"]
 
 [ext_resource type="PackedScene" uid="uid://b8g70geq8alqq" path="res://scenes/room.tscn" id="1_7epe5"]
-[ext_resource type="PackedScene" uid="uid://df3di5vguofi1" path="res://scenes/debug/debug_buttons.tscn" id="10_vnlyb"]
-[ext_resource type="PackedScene" uid="uid://bft8urcdv7lh0" path="res://view.tscn" id="21_4id85"]
+[ext_resource type="PackedScene" uid="uid://bft8urcdv7lh0" path="res://view.tscn" id="2_362mf"]
 
-[node name="Title" instance=ExtResource("1_7epe5")]
+[node name="Title" type="Node"]
+
+[node name="Room" parent="." instance=ExtResource("1_7epe5")]
 room_name = "title"
 
-[node name="View" parent="." index="3" instance=ExtResource("21_4id85")]
+[node name="View" parent="." instance=ExtResource("2_362mf")]
 position = Vector2(320, 0)
 anchor_mode = 0
-
-[node name="DebugButtons" parent="." index="7" instance=ExtResource("10_vnlyb")]
-position = Vector2(512, 48)

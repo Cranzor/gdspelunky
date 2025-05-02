@@ -1062,7 +1062,7 @@ func scr_init_level():
 			else: scr_room_gen3(room_instance.position.x, room_instance.position.y)  #---[FLAG] may need to pass in x and y
 		
 		elif (global.level_type == 3): scr_room_gen4(room_instance.position.x, room_instance.position.y)  #---[FLAG] may need to pass in x and y
-		else: scr_room_gen5()  #---[FLAG] may need to pass in x and y
+		else: scr_room_gen5(room_instance.position.x, room_instance.position.y)  #---[FLAG] may need to pass in x and y
 
 
 	global.dark_level = false
@@ -3725,13 +3725,266 @@ func scr_room_gen4(x, y):
 				
 				gml.instance_create(tx-16, ty+16, Objects.leaves)
 				gml.instance_create(tx+16, ty+16, Objects.leaves)
-			
+
+
+func scr_room_gen5(x, y):
+	# DY: 
+	# DY:  scr_room_gen5()
+	# DY: 
+	# DY:  Room generation for the final boss level (which is only partially randomized).
+	# DY: 
+
+	#/**********************************************************************************
+		#Copyright (c) 2008, 2009 Derek Yu and Mossmouth, LLC
+		#
+		#This file is part of Spelunky.
+#
+		#You can redistribute and/or modify Spelunky, including its source code, under
+		#the terms of the Spelunky User License.
+#
+		#Spelunky is distributed in the hope that it will be entertaining and useful,
+		#but WITHOUT WARRANTY.  Please see the Spelunky User License for more details.
+#
+		#The Spelunky User License should be available in "Game Information", which
+		#can be found in the Resource Explorer, or as an external file called COPYING.
+		#If not, please obtain a new copy of Spelunky from <http://spelunkyworld.com/>
+		#
+	#***********************************************************************************/
+
+	#/*
+	#Note:
+#
+	#ROOMS are 10x8 tile areas.
+#
+	#str_temp = "0000000000
+		#0000000000
+		#0000000000
+		#0000000000
+		#0000000000
+		#0000000000
+		#0000000000
+		#0000000000"
+#
+	#OBSTACLES are 5x3 tile chunks that are randomized within rooms.
+			   #
+	#str_obs = "00000
+		#00000
+		#00000"
+			  #
+	#The string representing a room or obstacle must be laid out unbroken:
+	#*/
+	var str_temp = "00000000000000000000000000000000000000000000000000000000000000000000000000000000"
+
+	var room_path = global.room_path[[LevelGeneration.scr_get_room_x(x), LevelGeneration.scr_get_room_y(y)]]
+	if (y < 480):
+
+		match gml.rand(1,6):
+		
+			1:  str_temp = "60000000000000000000000000000000000000000000000000600000000000000000000000000000"
+			2:  str_temp = "00000600000000000000000000000000000000000000000000600000000000000000000000000000"
+			3:  str_temp = "60000000000000000000000000000000000000000000000000000006000000000000000000000000"
+			4:  str_temp = "60000600000000000000000000000000000000000000000000000000000000000000000000000000"
+			5:  str_temp = "00000000000000000000000000000000000000000000000000600006000000000000000000000000"
+			6:  str_temp = "00000000000000000000000000000000600000000000000000000000000000000000000000000000"
+		
+
+	else:
+
+		match gml.rand(1,6):
+		
+			1:  str_temp = "11111111111111111111111111111111111111111111111111111111111111111111111111111111"
+			2:  str_temp = "11111111111222111111122211111111111111111111111111111111111111111111111111111111"
+			3:  str_temp = "11111111111111111111111111111111122221111112222111111111111111111111111111111111"
+			4:  str_temp = "11111111111111112221111111222111111111111111111111111111111111111111111111111111"
+			5:  str_temp = "11111111111111111111111111111111111111111111111111122211111112221111111111111111"
+			6:  str_temp = "11111111111111111111111111111111111111111111111111111111222111111122211111111111"
 		
 
 
+	# DY:  Add obstacles
 
-func scr_room_gen5():
-	pass
+	for i in range(1, 81):
+
+		var j = i
+	  
+		var str_obs1 = "00000"
+		var str_obs2 = "00000"
+		var str_obs3 = "00000"
+		var tile = gml.string_char_at(str_temp, i)
+		
+		if (tile == "8"):
+		
+			match gml.rand(1,1):
+			
+				1:
+					str_obs1 = "00900"
+					str_obs2 = "21112"
+					str_obs3 = "21112"
+			
+		
+		elif (tile == "5"): # DY:  ground
+		
+			match gml.rand(1,8):
+			
+				1:
+					str_obs1 = "00000"
+					str_obs2 = "02220"
+					str_obs3 = "21112"
+				2:
+					str_obs1 = "00000"
+					str_obs2 = "02020"
+					str_obs3 = "21212"
+				3:
+					str_obs1 = "11100"
+					str_obs2 = "11110"
+					str_obs3 = "11111"
+				4:
+					str_obs1 = "00111"
+					str_obs2 = "01111"
+					str_obs3 = "11111"
+				5:
+					str_obs1 = "21112"
+					str_obs2 = "22222"
+					str_obs3 = "00000"
+				6:
+					str_obs1 = "00022"
+					str_obs2 = "00011"
+					str_obs3 = "00011"
+				7:
+					str_obs1 = "22000"
+					str_obs2 = "11000"
+					str_obs3 = "11000"
+				8:
+					str_obs1 = "00000"
+					str_obs2 = "00000"
+					str_obs3 = "00000"
+			
+		
+		elif (tile == "6"): # DY:  air
+		
+			match gml.rand(1,8):
+			
+				1:
+					str_obs1 = "0TTT0"
+					str_obs2 = "21112"
+					str_obs3 = "02220"
+				2:
+					str_obs1 = "0000T"
+					str_obs2 = "0TTT1"
+					str_obs3 = "21111"
+				3:
+					str_obs1 = "T0000"
+					str_obs2 = "1TTT0"
+					str_obs3 = "11112"
+				4:
+					str_obs1 = "1TT00"
+					str_obs2 = "11112"
+					str_obs3 = "12200"
+				5:
+					str_obs1 = "0TTT1"
+					str_obs2 = "21111"
+					str_obs3 = "00221"
+				6:
+					str_obs1 = "21112"
+					str_obs2 = "TTTTT"
+					str_obs3 = "11111"
+			
+		
+		
+		if (tile == "5" or tile == "6" or tile == "8"):
+		
+			str_temp = gml.string_delete(str_temp, j, 5)
+			str_temp = gml.string_insert(str_obs1, str_temp, j)
+			j += 10
+			str_temp = gml.string_delete(str_temp, j, 5)
+			str_temp = gml.string_insert(str_obs2, str_temp, j)
+			j += 10
+			str_temp = gml.string_delete(str_temp, j, 5)
+			str_temp = gml.string_insert(str_obs3, str_temp, j)
+		
+
+
+	# DY:  Generate the tiles
+	for j in range(0, 8):
+
+		for i in range(1, 11):
+		
+			var tile = gml.string_char_at(str_temp, i+j*10)
+			var xpos = x + (i-1)*16
+			var ypos = y + j*16
+			if (tile == "1" and not gml.collision_point(xpos, ypos, "solid", 0, 0)):
+			
+				if (gml.rand(1,10) == 1): gml.instance_create(xpos, ypos, Objects.block)
+				else:
+				
+					gml.instance_create(xpos, ypos, Objects.temple)
+				
+			
+			elif (tile == "2" and gml.rand(1,2) == 1 and not gml.collision_point(xpos, ypos, "solid", 0, 0)):
+			
+				if (gml.rand(1,10) == 1): gml.instance_create(xpos, ypos, Objects.block)
+				else:
+				
+					gml.instance_create(xpos, ypos, Objects.temple)
+				
+			
+			elif (tile == "L"): gml.instance_create(xpos, ypos, Objects.vine)
+			elif (tile == "P"): gml.instance_create(xpos, ypos, Objects.vine_top)
+			elif (tile == "7" and gml.rand(1,3) == 1): gml.instance_create(xpos, ypos, Objects.spikes)
+			elif (tile == "4" and gml.rand(1,4) == 1): gml.instance_create(xpos, ypos, Objects.push_block)
+			elif (tile == "9"):
+			
+				if (LevelGeneration.scr_get_room_x(x) == global.start_room_x and LevelGeneration.scr_get_room_y(y) == global.start_room_y):
+					gml.instance_create(xpos, ypos, Objects.entrance)
+				else:
+				
+					gml.instance_create(xpos, ypos, Objects.exit)
+					global.exit_x = xpos
+					global.exit_y = ypos
+				
+				var block = gml.instance_create(xpos, ypos+16, Objects.temple)
+				block.invincible = true
+			
+			elif (tile == "a"):
+			
+				if (gml.rand(1,1) == 1): gml.instance_create(xpos+8, ypos+8, Objects.chest)
+			
+			elif (tile == "T"):
+			
+				if (gml.rand(1,15) == 1): gml.instance_create(xpos+8, ypos+8, Objects.chest)
+				elif (gml.rand(1,6) == 1): gml.instance_create(xpos+8, ypos+8, Objects.gold_bars)
+				elif (gml.rand(1,6) == 1): gml.instance_create(xpos+8, ypos+12, Objects.emerald_big)
+				elif (gml.rand(1,8) == 1): gml.instance_create(xpos+8, ypos+12, Objects.sapphire_big)
+				elif (gml.rand(1,10) == 1): gml.instance_create(xpos+8, ypos+12, Objects.ruby_big)
+				elif (gml.rand(1,10) == 1): gml.instance_create(xpos+8, ypos+8, Objects.crate)
+				elif (gml.rand(1,10) == 1): gml.instance_create(xpos, ypos, Objects.block)
+				else:
+				
+					gml.instance_create(xpos, ypos, Objects.temple)
+				
+			
+			elif (tile == "t"):
+			
+				gml.instance_create(xpos, ypos, Objects.thwomp_trap)
+			
+			elif (tile == "I"):
+			
+				if (gml.rand(1,1) == 1): gml.instance_create(xpos+16, ypos, Objects.gold_idol)
+			
+			elif (tile == "C"):
+			
+				gml.instance_create(xpos, ypos, Objects.ceiling_trap)
+			
+			elif (tile == "D"):
+			
+				gml.instance_create(xpos, ypos, Objects.temple_fake)
+				gml.instance_create(xpos, ypos+16, Objects.temple_fake)
+				gml.instance_create(xpos, ypos, Objects.door)
+			
+			elif (tile == "w"):
+			
+				gml.instance_create(xpos, ypos, Objects.water_swim)
+
 
 func scr_entity_gen():
 	# DY: 

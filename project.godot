@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Spelunky Port"
-run/main_scene="uid://du8oll4nckuyd"
+run/main_scene="uid://cmxlvbcann11a"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="uid://dc4sg8xk0ur2i"
 

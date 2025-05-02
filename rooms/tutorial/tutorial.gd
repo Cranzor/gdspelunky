@@ -1,8 +1,0 @@
-extends Node
-
-var room_generation = RoomGeneration.new()
-
-var room_name = "tutorial"
-
-func _ready() -> void:
-	room_generation.generate_room(room_name)

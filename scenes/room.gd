@@ -7,5 +7,7 @@ var room_generation = RoomGeneration.new()
 func _ready() -> void:
 	Screen.get_node("TitleScreen/Background").visible = true #--- putting this here to avoid objects being visible for one frame before background becomes visible
 
-	if room_name == "intro": get_node("TextureRect").visible = false
+	if room_name == "intro":
+		get_node("TextureRect").visible = false
+		get_node("TextureRect2").visible = true
 	room_generation.generate_room(room_name)

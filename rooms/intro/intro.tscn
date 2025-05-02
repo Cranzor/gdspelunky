@@ -1,18 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://du8oll4nckuyd"]
+[gd_scene load_steps=2 format=3 uid="uid://cmxlvbcann11a"]
 
 [ext_resource type="PackedScene" uid="uid://b8g70geq8alqq" path="res://scenes/room.tscn" id="1_suwvs"]
-[ext_resource type="PackedScene" uid="uid://df3di5vguofi1" path="res://scenes/debug/debug_buttons.tscn" id="5_p6f0b"]
 
-[node name="Intro" instance=ExtResource("1_suwvs")]
+[node name="Intro" type="Node"]
+
+[node name="Room" parent="." instance=ExtResource("1_suwvs")]
 room_name = "intro"
-
-[node name="TextureRect" parent="." index="1"]
-visible = false
-
-[node name="TextureRect2" parent="." index="2"]
-visible = true
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." index="6"]
-
-[node name="DebugButtons" parent="CanvasLayer" index="0" instance=ExtResource("5_p6f0b")]
-position = Vector2(112, 16)

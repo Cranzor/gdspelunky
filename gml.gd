@@ -122,7 +122,7 @@ func string_char_at(passed_string: String, index: int):
 	var character = passed_string[adjusted_index]
 	return character
 
-func string_delete(passed_string,index,count):
+func string_delete(passed_string: String ,index,count):
 	passed_string = passed_string.erase(index, count)
 	return passed_string
 	
@@ -138,7 +138,7 @@ func instance_exists(obj: String): #--- FLAG. if enforcing this as a string, it 
 		return true
 
 #-----------------------Have to work on
-func instance_create(x,y,obj): #---[FLAG] make this so that obj is forced to be type GMObject
+func instance_create(x,y,obj,run_create = true): #---[FLAG] make this so that obj is forced to be type GMObject
 	if obj is String:
 		assert(obj is String, "String was passed into instance_create")
 		obj = load(obj)
@@ -148,6 +148,8 @@ func instance_create(x,y,obj): #---[FLAG] make this so that obj is forced to be 
 	objects_holder.add_child(instance)
 	
 	get_tree().call_group("gm_object", "force_update_transform")
+	if run_create:
+		instance.run_create_function(instance)
 	
 	#for objects bigger than 16x16, get height and width of sprite texture and then add that as the size
 	

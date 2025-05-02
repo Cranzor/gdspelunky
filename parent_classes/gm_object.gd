@@ -382,7 +382,6 @@ func object_setup():
 	
 	#--- keep the below enabled even if objects are set up in the editor
 	camera_setup()
-	run_create_function(self)
 	
 	move_child($CollisionShape2D, -1)
 	
