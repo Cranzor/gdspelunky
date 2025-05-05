@@ -1,9 +1,14 @@
 extends Node
 
+var frame_counter = 0
+
 func _physics_process(delta: float) -> void:
+	frame_counter += 1
+	print(frame_counter)
 	gm_loop()
 
 func gm_loop():
+	get_tree().call_group("alarm", "count_down")
 	get_tree().call_group("gm_object", "run_alarm_events")
 	get_tree().call_group("gm_object", "step")
 	get_tree().call_group("gm_object", "force_update_transform")

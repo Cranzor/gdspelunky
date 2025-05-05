@@ -162,7 +162,7 @@ func collision_point(x,y,obj: String,_prec,notme,calling_object: GMObject = null
 	var possible = []
 	var overlap_query = PhysicsPointQueryParameters2D.new()
 	overlap_query.collide_with_bodies = true
-	overlap_query.position = Vector2(x ,y)
+	overlap_query.position = Vector2(x, y)
 	overlap_query.collision_mask = 1
 	var overlaps = get_tree().get_first_node_in_group("gm_object").get_world_2d().direct_space_state.intersect_point(overlap_query, 100)
 	for overlap in overlaps:
@@ -380,6 +380,35 @@ func collision_line(x1,y1,x2,y2,obj,_prec,notme,calling_object: GMObject = null)
 	if calling_object:
 		calling_object.other = collided_object
 	return collided_object
+	
+	#get_tree().call_group("gm_object", "force_update_transform")
+	#var possible = []
+	#var overlap_query = PhysicsRayQueryParameters2D.new()
+	#overlap_query.collide_with_bodies = true
+	#overlap_query.from = Vector2(x1 + 0.1, y1 + 0.1)
+	#overlap_query.to = Vector2(x2 - 0.1, y2 - 0.1)
+	#overlap_query.hit_from_inside = true
+	#var finished: bool = false
+	#while finished == false:
+		#var overlap = get_tree().get_first_node_in_group("gm_object").get_world_2d().direct_space_state.intersect_ray(overlap_query)
+		#if overlap == {}:
+			#finished = true
+			#break
+		#var collider = overlap["collider"]
+		#var rid = overlap["rid"]
+		#var exclusions: Array = overlap_query.get_exclude().duplicate()
+		#exclusions.append(rid)
+		#overlap_query.set_exclude(exclusions)
+		#var collider_groups = collider.get_groups()
+		#if obj in collider_groups:
+			#possible.append(collider)
+			#
+	#if possible != []:
+		#if check_notme(notme, possible[-1], calling_object):
+			#return null
+		#else:
+			#return possible[-1]
+	#return null
 
 func instance_activate_object(obj: String):
 	pass

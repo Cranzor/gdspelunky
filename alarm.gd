@@ -7,17 +7,16 @@ signal timeout
 var ready_to_emit
 
 
-func _physics_process(_delta):
-	if frames_to_count_down == 0:
-		frames_to_count_down = -1 #---[FLAG] check this later to make sure it's right
-		ready_to_emit = true
-	
+func count_down():
 	if frames_to_count_down != -1:
 		frames_to_count_down -= 1
+	
+	if frames_to_count_down == 0:
+		ready_to_emit = true
 
 
 func start(frames):
-	frames_to_count_down = frames# - 1
+	frames_to_count_down = frames
 	started = true
 
 

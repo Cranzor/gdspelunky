@@ -575,6 +575,7 @@ func alarms_setup(object_entry):
 			var alarm_countdown_instance: String = event + "_countdown"
 			var alarm_function = Callable(self, event)
 			var new_alarm: Node = Alarm.new()
+			new_alarm.add_to_group("alarm")
 			set(alarm_countdown_instance, new_alarm)
 			new_alarm.set_physics_process(true)
 			new_alarm.timeout.connect(alarm_function)
@@ -610,14 +611,24 @@ func collision_shape_setup(): #--- used to set up collision shape for each objec
 	add_child(collision_shape)
 
 func run_alarm_events():
+	if object_name == "olmec_slam":
+		print("")
+	
 	var alarms = [alarm_0_countdown, alarm_1_countdown, alarm_2_countdown, alarm_3_countdown, alarm_4_countdown, alarm_5_countdown,
 		alarm_6_countdown, alarm_7_countdown, alarm_8_countdown, alarm_9_countdown, alarm_10_countdown, alarm_11_countdown]
+	
+	var alarms_with_funcs = {alarm_0_countdown : "alarm_0", alarm_1_countdown : "alarm_1", alarm_2_countdown : "alarm_2", alarm_3_countdown : "alarm_3",
+		alarm_4_countdown : "alarm_4", alarm_5_countdown : "alarm_5", alarm_6_countdown : "alarm_6", alarm_7_countdown : "alarm_7", alarm_8_countdown : "alarm_8",
+		alarm_9_countdown : "alarm_9", alarm_10_countdown : "alarm_10", alarm_11_countdown : "alarm_11"}
 	
 	for alarm: Alarm in alarms:
 		if alarm != null:
 			if alarm.ready_to_emit:
 				alarm.ready_to_emit = false
-				alarm.emit_signal("timeout")
+				var func_name = alarms_with_funcs[alarm]
+				var callable = Callable(self, func_name)
+				callable.call()
+				#alarm.emit_signal("timeout")
 
 func run_step_event(obj):
 	if self.has_method("step"):
@@ -642,6 +653,9 @@ func run_draw_event():
 #var new_image
 #var new_image2
 func run_collision_with():
+	if object_name == "olmec_slam":
+		print("")
+	
 	if not is_queued_for_deletion():
 		var overlap_query = PhysicsShapeQueryParameters2D.new() #--- creating an overlap query the same size/position of the checking object's collision shape
 		overlap_query.collide_with_bodies = true
