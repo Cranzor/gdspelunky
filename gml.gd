@@ -500,17 +500,17 @@ func rand(x1, x2):
 	return randi_range(x1, x2)
 
 func gm_round(n):
-	var return_val
+	var return_val: int
 	if abs(n - int(n)) == 0.5:
-		if not fmod(round(float(n)), 2.0) == 0:
+		if not fmod(roundi(float(n)), 2.0) == 0:
 			if n > 0:
-				return_val = round(n) - 1.0
+				return_val = roundi(n) - 1.0
 			else:
-				return_val = round(n) + 1.0
+				return_val = roundi(n) + 1.0
 		else:
-			return_val = round(n)
+			return_val = roundi(n)
 	else:
-		return_val = round(n)
+		return_val = roundi(n)
 	return return_val
 
 #---------------------------------------
