@@ -381,7 +381,7 @@ func object_setup():
 	#---[FLAG] have to set up outside_room function
 	
 	#--- keep the below enabled even if objects are set up in the editor
-	camera_setup()
+	#camera_setup()
 	
 	move_child($CollisionShape2D, -1)
 	
@@ -510,7 +510,7 @@ func sprite_setup(object_entry):
 	else:
 		sprite_offset = Vector2(0, 0)
 	
-	camera_setup()
+	#camera_setup()
 
 func camera_setup():
 	if object_name == 'p_dummy3':

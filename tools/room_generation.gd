@@ -11,7 +11,7 @@ var all_objects = {}
 func generate_room(room_name: String):
 	var room_database = rooms.room_database
 	var room_data = room_database[room_name]
-	var room_instances = room_data['instances']['instance']
+	var room_instances = room_data['room']['instances']['instance']
 	var objects_in_level: Array
 	
 	var x = 0
@@ -36,22 +36,22 @@ func generate_room(room_name: String):
 		var obj = gml.instance_create(object_position.x, object_position.y, loaded_object, false)
 		objects_in_level.append(obj)
 	
+	set_up_view()
+	
 	for object in objects_in_level: #--- running create event for all objects after they are all instanced so that they can reference one another regardless of order
 		object.run_create_function(object)
-	
-	#apply_camera(room_name)
-	print(x)
 
-func apply_camera(room_name):
-	var rooms_with_camera = ["intro", "level", "level2", "level3", "olmec", "tutorial"]
-	
-	if room_name in rooms_with_camera:
-		if room_name == "intro":
-			var p_dummy3 = Engine.get_main_loop().get_first_node_in_group("p_dummy3")
-			var animated_sprite = p_dummy3.find_child("AnimatedSprite2D", true, false)
-			animated_sprite.add_child(VIEW.instantiate())
-		
+
+func set_up_view() -> void:
+	var view = Engine.get_main_loop().get_first_node_in_group("view")
+	var rooms = Rooms.new()
+	var current_room = gml.room_get_name()
+
+	var entry = rooms.room_database[current_room]["room"]["views"]["view"][0]["object_following"]
+	if entry.has("#text"):
+		var object_following = entry["#text"]
+		if gml.instance_exists(object_following):
+			var instance = gml.get_instance(object_following)
+			view.reparent(instance.animated_sprite_node)
 		else:
-			var player1 = get_tree().get_first_node_in_group('player1')
-			var animated_sprite = player1.find_child("AnimatedSprite2D", true, false)
-			animated_sprite.add_child(VIEW.instantiate())
+			view.object_to_follow = object_following

@@ -46,9 +46,7 @@ func create():
 	global.test_level = ""
 	global.prev_custom_level = ""
 
-	#view_xview[0] = 320
-	var view = get_tree().get_first_node_in_group("view")
-	view.position.x = 320
+	gml.view_xview = 320
 
 	global.new_money = false
 	global.new_kills = false

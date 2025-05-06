@@ -74,16 +74,17 @@ var room_width: int:
 		
 var view_vborder: int: #--- vertical boundary of camera. original code always has it as view_vborder[0]
 	set(value):
-		view_node.drag_top_margin = ((float(value) / 2) + view_node.offset.y) / 240
-		view_node.drag_bottom_margin = ((float(value) / 2) + view_node.offset.y) / 240
+		view_node.drag_top_margin = ((float(value) / 2) + view_node.offset.y) / 240.0
+		view_node.drag_bottom_margin = ((float(value) / 2) + view_node.offset.y) / 240.0
 		
 	get:
 		return view_node.drag_top_margin #--- can return only one as the top/bottom should always be the same
 		
 var view_hborder: int:#--- horizontal boundary of camera. original code always has it as view_hborder[0]. only used in olmec scene
 	set(value):
-		view_node.drag_right_margin = (float(value) / 2) / 320
-		view_node.drag_left_margin = (float(value) / 2) / 320
+		var drag_val = (float(value) / 2.0) / 320.0
+		view_node.drag_right_margin = drag_val
+		view_node.drag_left_margin = drag_val
 	get:
 		return view_node.drag_right_margin
 
@@ -91,7 +92,11 @@ var view_node: Camera2D:
 	get:
 		return get_tree().get_first_node_in_group("view")
 
-var view_object #---[FLAG] make this attach the camera to the node it's set equal to
+var view_object: GMObject:
+	set(value):
+		view_node.reparent(value.animated_sprite_node)
+	get:
+		return view_node.get_parent()
 		
 var view_yview: int:
 	set(value):

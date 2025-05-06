@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b8g70geq8alqq"]
+[gd_scene load_steps=9 format=3 uid="uid://b8g70geq8alqq"]
 
 [ext_resource type="Script" uid="uid://bpwfpbixw4l5b" path="res://scenes/room.gd" id="1_36trf"]
 [ext_resource type="PackedScene" uid="uid://b2jlcu453ynaf" path="res://bg_elements.tscn" id="2_85yof"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c7mqbeksgioqi" path="res://backgrounds/background_night.png" id="4_qvc4m"]
 [ext_resource type="PackedScene" uid="uid://dpik07grwpaj" path="res://scenes/collision/collision_shapecast.tscn" id="5_jn645"]
 [ext_resource type="PackedScene" uid="uid://b8sip2nv63phc" path="res://FPSCounter.tscn" id="6_jn645"]
+[ext_resource type="PackedScene" uid="uid://bft8urcdv7lh0" path="res://view.tscn" id="8_7dqbv"]
 
 [node name="Room" type="Node" groups=["base_room"]]
 script = ExtResource("1_36trf")
@@ -30,3 +31,5 @@ texture = ExtResource("4_qvc4m")
 [node name="CollisionShapecast" parent="Collision" instance=ExtResource("5_jn645")]
 
 [node name="FpsCounter" parent="." instance=ExtResource("6_jn645")]
+
+[node name="View" parent="." instance=ExtResource("8_7dqbv")]

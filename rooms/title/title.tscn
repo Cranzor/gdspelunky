@@ -1,13 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ba1epw562qj6d"]
+[gd_scene load_steps=2 format=3 uid="uid://ba1epw562qj6d"]
 
 [ext_resource type="PackedScene" uid="uid://b8g70geq8alqq" path="res://scenes/room.tscn" id="1_7epe5"]
-[ext_resource type="PackedScene" uid="uid://bft8urcdv7lh0" path="res://view.tscn" id="2_362mf"]
 
 [node name="Title" type="Node"]
 
 [node name="Room" parent="." instance=ExtResource("1_7epe5")]
 room_name = "title"
-
-[node name="View" parent="." instance=ExtResource("2_362mf")]
-position = Vector2(320, 0)
-anchor_mode = 0

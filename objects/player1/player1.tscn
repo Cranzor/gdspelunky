@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://du8lsjk87vay6"]
+[gd_scene load_steps=4 format=3 uid="uid://du8lsjk87vay6"]
 
 [ext_resource type="Script" uid="uid://cpssqhjyjmpbq" path="res://objects/player1/player1.gd" id="1_3btm2"]
-[ext_resource type="PackedScene" uid="uid://bft8urcdv7lh0" path="res://view.tscn" id="4_0a32v"]
 [ext_resource type="FontFile" uid="uid://dgd06bxddo4pq" path="res://fonts/small_font.png" id="485_i3dxl"]
 [ext_resource type="Script" uid="uid://bsv3htjdkon3" path="res://debug_player_state.gd" id="486_8kwyl"]
 
@@ -18,12 +17,6 @@ offset_bottom = -9.0
 theme_override_fonts/font = ExtResource("485_i3dxl")
 text = "WALK"
 script = ExtResource("486_8kwyl")
-
-[node name="View" parent="." instance=ExtResource("4_0a32v")]
-limit_left = 0
-limit_top = 0
-drag_top_margin = 0.4
-drag_bottom_margin = 0.4
 
 [node name="Circle" type="Sprite2D" parent="."]
 

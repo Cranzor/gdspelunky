@@ -5,4 +5,6 @@
 [node name="View" type="Camera2D" groups=["view"]]
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+drag_top_margin = 0.4
+drag_bottom_margin = 0.4
 script = ExtResource("1_4fpx2")

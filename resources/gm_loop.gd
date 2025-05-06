@@ -4,7 +4,7 @@ var frame_counter = 0
 
 func _physics_process(delta: float) -> void:
 	frame_counter += 1
-	print(frame_counter)
+	#print(frame_counter)
 	gm_loop()
 
 func gm_loop():

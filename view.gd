@@ -1,7 +1,13 @@
 extends Camera2D
 
+var object_to_follow = null
+var reparented = false
+var parent
+
 func _ready() -> void:
+	add_to_group("view")
 	set_camera_limits()
+	set_up_drag_margins()
 
 
 func _process(delta: float) -> void:
@@ -11,6 +17,9 @@ func _process(delta: float) -> void:
 	
 	#var offset_limit = limit_bottom - 240
 	#offset.y = clamp(offset.y, 0, offset_limit)
+	
+	set_object_following_later()
+		
 	
 	var normal_view = get_screen_center_position().y - offset.y
 	var past_limit = false
@@ -25,6 +34,7 @@ func _process(delta: float) -> void:
 	if offset.y < 0:
 		offset.y = 0
 
+
 func _physics_process(delta: float) -> void:
 		var bottom_view = get_screen_center_position().y + 120
 		var bottom_diff
@@ -35,17 +45,34 @@ func _physics_process(delta: float) -> void:
 			if bottom_diff > 144: #--- reason for 144 is bottom of the screen is 240, and vborder is 96. 240 - 96 = 144.
 				offset.y -= bottom_diff - 144 #diff being at 144 means player y position is at the top of the border, resulting in one pixel down + one pixel up cancelling out
 
+
 func set_camera_limits() -> void:
 	var rooms = Rooms.new()
 	var current_room = gml.room_get_name()
-	var camera_extents = Vector2(int(rooms.room_database[current_room]["size"]["width"]), int(rooms.room_database[current_room]["size"]["height"]))
+	var camera_extents = Vector2(int(rooms.room_database[current_room]["room"]["size"]["width"]), int(rooms.room_database[current_room]["room"]["size"]["height"]))
 	limit_left = 0
 	limit_top = 0
 	limit_right = camera_extents.x
 	limit_bottom = camera_extents.y
-	
-	drag_top_margin = 0.2
-	drag_bottom_margin = 0.2
+
+
+func set_up_drag_margins() -> void:
+	var rooms = Rooms.new()
+	var current_room = gml.room_get_name()
+	var entry = rooms.room_database[current_room]["room"]["views"]["view"][0]["object_following"]
+	var h_border = int(entry["h_border"])
+	var v_border = int(entry["v_border"])
+	gml.view_hborder = h_border
+	gml.view_vborder = v_border
+
+
+func set_object_following_later() -> void:
+	if object_to_follow != null and reparented == false:
+		if gml.instance_exists(object_to_follow):
+			var object = gml.get_instance(object_to_follow)
+			reparent(object.animated_sprite_node)
+			reparented = true
+
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("debug"):
