@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c7mqbeksgioqi" path="res://backgrounds/background_night.png" id="4_qvc4m"]
 [ext_resource type="PackedScene" uid="uid://dpik07grwpaj" path="res://scenes/collision/collision_shapecast.tscn" id="5_jn645"]
 [ext_resource type="PackedScene" uid="uid://b8sip2nv63phc" path="res://FPSCounter.tscn" id="6_jn645"]
-[ext_resource type="PackedScene" uid="uid://bft8urcdv7lh0" path="res://view.tscn" id="8_7dqbv"]
+[ext_resource type="PackedScene" uid="uid://btcxwyjni2p86" path="res://resources/view.tscn" id="8_7dqbv"]
 
 [node name="Room" type="Node" groups=["base_room"]]
 script = ExtResource("1_36trf")
@@ -33,3 +33,8 @@ texture = ExtResource("4_qvc4m")
 [node name="FpsCounter" parent="." instance=ExtResource("6_jn645")]
 
 [node name="View" parent="." instance=ExtResource("8_7dqbv")]
+
+[node name="ColorRect" type="ColorRect" parent="." groups=["debug_color_rect"]]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.211765, 1, 1, 0.407843)

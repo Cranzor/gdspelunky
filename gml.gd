@@ -60,6 +60,10 @@ var draw_color
 var room_speed = 30
 var view_enabled = true #--- doesn't seem to be false in any instance within the game
 
+var view2:
+	get:
+		return get_tree().get_first_node_in_group("view")
+
 var room_height: int:
 	set(value):
 		pass
@@ -74,46 +78,35 @@ var room_width: int:
 		
 var view_vborder: int: #--- vertical boundary of camera. original code always has it as view_vborder[0]
 	set(value):
-		view_node.drag_top_margin = ((float(value) / 2) + view_node.offset.y) / 240.0
-		view_node.drag_bottom_margin = ((float(value) / 2) + view_node.offset.y) / 240.0
+		view2.border.y = value
 		
 	get:
-		return view_node.drag_top_margin #--- can return only one as the top/bottom should always be the same
+		return view2.border.y
 		
 var view_hborder: int:#--- horizontal boundary of camera. original code always has it as view_hborder[0]. only used in olmec scene
 	set(value):
-		var drag_val = (float(value) / 2.0) / 320.0
-		view_node.drag_right_margin = drag_val
-		view_node.drag_left_margin = drag_val
+		view2.border.x = value
+		
 	get:
-		return view_node.drag_right_margin
-
-var view_node: Camera2D:
-	get:
-		return get_tree().get_first_node_in_group("view")
+		return view2.border.x
 
 var view_object: GMObject:
 	set(value):
-		view_node.reparent(value.animated_sprite_node)
+		view2.object_following = value
 	get:
-		return view_node.get_parent()
+		return view2.object_following
 		
 var view_yview: int:
 	set(value):
-		var bottom_view = view_node.get_screen_center_position().y + 120
-		var player1 = gml.get_instance("player1")
-		var bottom_diff = bottom_view - player1.position.y
-		
-		if bottom_diff < 144: #--- reason for 144 is bottom of the screen is 240, and vborder is 96. 240 - 96 = 144.
-			view_node.offset.y = value #--- diff being at 144 means player y position is at the top of the border, resulting in one pixel down + one pixel up cancelling out
+		view2.set_camera_pos(Vector2(0, value))
 		
 	get:
-		return view_node.offset.y
+		return view2.get_camera_pos().y
 var view_xview: int:
 	set(value):
-		view_node.offset.x = value
+		view2.set_camera_pos(Vector2(value, 0))
 	get:
-		return view_node.offset.x
+		return view2.get_camera_pos().x
 
 #var view_hview: int:
 	#set(value):
@@ -558,23 +551,18 @@ func get_all_instances(group: String): #Replacement for 'with' keyword
 
 
 func view(view_value: String):
-	var view = view_node
-	#view.force_update_scroll()
-	
-	if view != null:
-		view.force_update_scroll()
+
+	if view_value == 'xview':
+		return view_xview
 		
-		if view_value == 'xview':
-			return round(view.get_screen_center_position().x - 160)
-			
-		elif view_value == 'yview':
-			return round(view.get_screen_center_position().y - 120)
-			
-		elif view_value == 'wview':
-			return 320
-			
-		elif view_value == 'hview':
-			return 240
+	elif view_value == 'yview':
+		return view_yview
+		
+	elif view_value == 'wview':
+		return 320
+		
+	elif view_value == 'hview':
+		return 240
 	
 	else:
 		return 0
@@ -659,6 +647,7 @@ func get_instance(obj: String): #Support function for when GML handles this by i
 	if instance_exists(obj):
 		var instance = get_tree().get_first_node_in_group(str(obj))
 		return instance
+	return null
 
 func get_nearest_multiple(number, target_number): #--- Adapted from here: https://www.geeksforgeeks.org/multiple-of-x-closest-to-n/
 	if target_number > number:

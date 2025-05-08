@@ -4,8 +4,6 @@ class_name RoomGeneration
 var rooms = Rooms.new()
 var objects = ObjectDatabase.new()
 
-const VIEW = preload("res://view.tscn")
-
 var all_objects = {}
 
 func generate_room(room_name: String):
@@ -43,15 +41,16 @@ func generate_room(room_name: String):
 
 
 func set_up_view() -> void:
-	var view = Engine.get_main_loop().get_first_node_in_group("view")
 	var rooms = Rooms.new()
 	var current_room = gml.room_get_name()
 
+	var object_following = ""
+	var delayed_object_setup: bool = false
 	var entry = rooms.room_database[current_room]["room"]["views"]["view"][0]["object_following"]
 	if entry.has("#text"):
-		var object_following = entry["#text"]
-		if gml.instance_exists(object_following):
-			var instance = gml.get_instance(object_following)
-			view.reparent(instance.animated_sprite_node)
-		else:
-			view.object_to_follow = object_following
+		object_following = entry["#text"]
+	var border = Vector2(int(entry["h_border"]), int(entry["v_border"]))
+	var room_size = rooms.room_database[current_room]["room"]["size"]
+	var level_boundaries = Vector2(int(room_size["width"]), int(room_size["height"]))
+	Engine.get_main_loop().get_first_node_in_group("view").setup(level_boundaries, border, object_following)
+	

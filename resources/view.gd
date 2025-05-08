@@ -1,4 +1,5 @@
 extends Node2D
+class_name View
 
 #--- project settings
 #--- stretch:
@@ -7,6 +8,8 @@ extends Node2D
 
 var level_boundaries = Vector2(500, 500) #--- placeholder
 var border = Vector2(128, 96) #--- placeholder
+var object_following_name: String
+var object_following: GMObject
 var viewport
 
 
@@ -20,6 +23,13 @@ func _ready() -> void:
 	#var border_rect = create_camera_border_rect(border)
 	#compare_border_rect_and_object_following(border_rect, character_body)
 	#draw_debug_camera_border(create_camera_border_rect(border))
+
+
+func setup(passed_level_boundaries: Vector2, passed_border: Vector2, passed_object_following: String):
+	level_boundaries  = passed_level_boundaries
+	border = passed_border
+	object_following = gml.get_instance(passed_object_following)
+	object_following_name = passed_object_following
 
 
 func move_camera(position: Vector2): #--- moves camera by a specific number of pixels. ex: Vector2(2, 2) would move the camera two pixels to the right and two pixels down
@@ -43,32 +53,47 @@ func get_camera_pos(): #--- returns the position value for the camera based on i
 
 
 func can_move(destination_pos, level_boundaries): #--- determines whether camera can move based on level boundaries
-	if -destination_pos < level_boundaries and -destination_pos > Vector2(0, 0):
+	if -destination_pos.x + 320 <= level_boundaries.x and -destination_pos.x >= 0 and -destination_pos.y + 240 <= level_boundaries.y and -destination_pos.y >= 0:
 		return true
 	return false
 
 
-func compare_border_rect_and_object_following(border_rect, object_following):
-	#--- sides of the camera borders
-	var left = border_rect.position.x
-	var top = border_rect.position.y
-	var right = border_rect.position.x + border_rect.size.x
-	var bottom = border_rect.position.y + border_rect.size.y
-
-	#--- moving the camera in a certain direction depending on which side the followed object goes outside of the box
-	#--- camera moves the amount of pixels between the side moved away from and the followed object
-	if object_following.position.x > right:
-		move_camera(Vector2(object_following.position.x - right, 0))
-	elif object_following.position.x < left:
-		move_camera(Vector2(abs(object_following.position.x)-abs(left), 0))
+func compare_border_rect_and_object_following():
+	print(get_camera_pos())
+	set_object_if_delayed() #--- setting the correct object to follow if the object spawns in later
+	var border_rect = create_camera_border_rect()
 	
-	if object_following.position.y > bottom:
-		move_camera(Vector2(0, object_following.position.y - bottom))
-	elif object_following.position.y < top:
-		move_camera(Vector2(0, abs(object_following.position.y) - abs(top)))
+	if object_following:
+		#--- sides of the camera borders
+		var left = border_rect.position.x
+		var top = border_rect.position.y
+		var right = border_rect.position.x + border_rect.size.x
+		var bottom = border_rect.position.y + border_rect.size.y
+
+		#--- moving the camera in a certain direction depending on which side the followed object goes outside of the box
+		#--- camera moves the amount of pixels between the side moved away from and the followed object
+		if object_following.position.x > right:
+			move_camera(Vector2(object_following.position.x - right, 0))
+		elif object_following.position.x < left:
+			move_camera(Vector2(abs(object_following.position.x)-abs(left), 0))
+		
+		if object_following.position.y > bottom:
+			move_camera(Vector2(0, object_following.position.y - bottom))
+		elif object_following.position.y < top:
+			move_camera(Vector2(0, abs(object_following.position.y) - abs(top)))
+	
+	draw_debug_camera_border(create_camera_border_rect(), get_tree().get_first_node_in_group("debug_color_rect"))
+	print(get_camera_pos())
 
 
-func create_camera_border_rect(border): #--- creates a Rect2D of the camera border
+func set_object_if_delayed():
+	if object_following == null:
+		var check = gml.get_instance(object_following_name)
+		if check != null:
+			object_following = check
+
+
+func create_camera_border_rect(): #--- creates a Rect2D of the camera border
 	var viewport_pos = get_camera_pos()
 	var offset: Vector2
 	offset.x = ((320 - border.x) / 2) + viewport_pos.x #--- for putting box in the center of the screen

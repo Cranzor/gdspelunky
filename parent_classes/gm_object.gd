@@ -509,18 +509,7 @@ func sprite_setup(object_entry):
 				
 	else:
 		sprite_offset = Vector2(0, 0)
-	
-	#camera_setup()
 
-func camera_setup():
-	if object_name == 'p_dummy3':
-		var view = preload("res://view.tscn")
-		view = view.instantiate()
-		var animated_sprite = get_animated_sprite_2d()
-		#view.limit_left = 0
-		#view.limit_right = 960
-		#view.limit_bottom = 240
-		animated_sprite.add_child(view)
 			
 #--- Helper function to set up a single animation for an AnimatedSprite2D
 func sprite_animation_setup(sprite_name, sprite_frames):

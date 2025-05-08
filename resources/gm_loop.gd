@@ -16,3 +16,4 @@ func gm_loop():
 	get_tree().call_group("gm_object", "run_draw_event")
 	get_tree().call_group("gm_object", "run_animation_end")
 	get_tree().call_group("gm_object", "run_speed_position_update")
+	get_tree().call_group("view", "compare_border_rect_and_object_following")
