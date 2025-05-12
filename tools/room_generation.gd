@@ -55,5 +55,8 @@ func set_up_view() -> void:
 					   #--- so having it at 160 was done to offset this. correcting this manually as we don't have this issue
 	var room_size = rooms.room_database[current_room]["room"]["size"]
 	var level_boundaries = Vector2(int(room_size["width"]), int(room_size["height"]))
-	Engine.get_main_loop().get_first_node_in_group("view").setup(level_boundaries, border, object_following)
+	var view: View = Engine.get_main_loop().get_first_node_in_group("view")
+	view.setup(level_boundaries, border, object_following)
+	view.update_camera_pos()
+	
 	

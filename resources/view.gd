@@ -39,7 +39,8 @@ func move_camera(position: Vector2): #--- moves camera by a specific number of p
 
 
 func set_camera_pos(position: Vector2): #--- sets camera to a specific position
-	var new_origin = -position
+	var clamped_pos = position.clamp(Vector2(0, 0), Vector2(level_boundaries.x - 320, level_boundaries.y - 240))
+	var new_origin = -clamped_pos
 	var new_trans = Transform2D(0.0, new_origin)
 	viewport.set_canvas_transform(new_trans)
 
