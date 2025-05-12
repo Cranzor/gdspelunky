@@ -17,7 +17,7 @@ func _process(delta):
 
 
 func alarm_0():
-	get_tree().change_scene_to_file("res://rooms/end2/end2.tscn")
+	gml.room_goto("end2")
 
 
 func create():

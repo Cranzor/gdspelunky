@@ -168,7 +168,7 @@ func step():
 			if (Gamepad.attack_pressed): Gamepad.attack_pressed = false
 			if (Gamepad.start_pressed): Gamepad.start_pressed = false
 			MiscScripts.scr_clear_globals()
-			get_tree().change_scene_to_file("res://rooms/highscores/highscores.tscn")
+			gml.room_goto("highscores")
 	
 
 

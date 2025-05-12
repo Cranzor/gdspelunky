@@ -60,7 +60,7 @@ var draw_color
 var room_speed = 30
 var view_enabled = true #--- doesn't seem to be false in any instance within the game
 
-var view2:
+var view2: View:
 	get:
 		return get_tree().get_first_node_in_group("view")
 
@@ -98,13 +98,13 @@ var view_object: GMObject:
 		
 var view_yview: int:
 	set(value):
-		view2.set_camera_pos(Vector2(0, value))
+		view2.set_camera_y_pos(value)
 		
 	get:
 		return view2.get_camera_pos().y
 var view_xview: int:
 	set(value):
-		view2.set_camera_pos(Vector2(value, 0))
+		view2.set_camera_x_pos(value)
 	get:
 		return view2.get_camera_pos().x
 
@@ -571,6 +571,12 @@ func room_get_name():
 	var room = get_tree().get_first_node_in_group("base_room")
 	var room_name = room.room_name
 	return room_name
+
+
+func room_goto(room_name: String):
+	view2.set_camera_pos(Vector2(0, 0))
+	get_tree().change_scene_to_file("res://rooms/" + room_name + "/" + room_name + ".tscn")
+
 
 func draw_sprite_ext(sprite, subimg, x, y, xscale, yscale, rot, color, alpha, node: GMObject, is_object_sprite: bool = true):
 	#--- added "is_object_sprite" bool to indicate whether sprite is intended to override the main sprite or not

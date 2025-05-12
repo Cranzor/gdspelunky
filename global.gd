@@ -14,14 +14,14 @@ var bigrubies
 var bigsapphires
 var black_market
 var blood_level
-var bombs
+var bombs: int
 var cavemen
 var cemetary
 var check_water
 var city_of_gold
 var clean_solids
-var collect
-var collect_counter
+var collect: int
+var collect_counter: int
 var craps_point
 var curr_level: int:
 	set(value):
@@ -140,7 +140,7 @@ var joy_rope_val = "rope"
 var joy_run_val = "run"
 var joy_start_val = "start"
 var kali_gift
-var kali_punish
+var kali_punish: int
 var keep_score
 var key_attack_val = "attack"
 var key_bomb_val = "bomb"
@@ -172,10 +172,10 @@ var market_entrance
 var megamouths
 var message
 var message2
-var message_timer
-var mini1
-var mini2
-var mini3
+var message_timer: int
+var mini1: int
+var mini2: int
+var mini3: int
 var misc_deaths: Dictionary[int, int] = {0 : 0, 1 : 0, 2 : 0, 3 : 0, 4 : 0, 5 : 0, \
 				6 : 0, 7 : 0, 8 : 0, 9 : 0, 10 : 0, 11 : 0}
 var money
@@ -202,7 +202,7 @@ var no_dark_level
 var nuggets
 var pickup_item
 var piranhas
-var plife
+var plife: int
 var prev_custom_level
 var prob_alien
 var prob_cemetary
@@ -216,7 +216,7 @@ var room_path = {[0,0]:0, [0,1]:0, [0,2]:0, [0,3]:0, #adjust?
 	[2,0]:0, [2,1]:0, [2,2]:0, [2,3]:0,
 	[3,0]:0, [3,1]: 0, [3,2]:0, [3,3]:0}
 var room_poss: Dictionary
-var rope
+var rope: int
 var rubies
 var sacrifice_pit
 var sapphires

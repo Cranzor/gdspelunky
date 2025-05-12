@@ -550,17 +550,17 @@ func step():
 			if (alarm_1_countdown.frames_to_count_down > 1): alarm_1_countdown.start(1)
 			global.game_start = true
 			global.lake = false
-			if (global.custom_level): get_tree().change_scene_to_file("res://rooms/load_level/load_level.tscn")
+			if (global.custom_level): gml.room_goto("load_level")
 			elif (global.curr_level >= 5 and global.curr_level <= 8 and not global.gen_black_market):
 		
 				if (gml.rand(1,global.prob_lake) == 1):
 					global.lake = true
-					get_tree().change_scene_to_file("res://rooms/level3/level3.tscn")
-				else: get_tree().change_scene_to_file("res://rooms/level/level.tscn")
+					gml.room_goto("level3")
+				else: gml.room_goto("level")
 		
-			elif (global.curr_level >= 9 and global.curr_level <= 12): get_tree().change_scene_to_file("res://rooms/level2/level2.tscn")
-			elif (global.curr_level == 16): get_tree().change_scene_to_file("res://rooms/olmec/olmec.tscn")
-			else: get_tree().change_scene_to_file("res://rooms/level/level.tscn")
+			elif (global.curr_level >= 9 and global.curr_level <= 12): gml.room_goto("level2")
+			elif (global.curr_level == 16): gml.room_goto("olmec")
+			else: gml.room_goto("level")
 	
 		else:
 	

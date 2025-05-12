@@ -116,7 +116,7 @@ func step():
 		else:
 		
 			global.game_start = false
-			get_tree().change_scene_to_file("res://rooms/title/title.tscn")
+			gml.room_goto("title")
 			
 	#----------
 	

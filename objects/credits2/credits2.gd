@@ -280,4 +280,4 @@ func step():
 			MiscScripts.scr_clear_globals()
 			global.draw_hud = false
 			global.game_start = false
-			get_tree().change_scene_to_file("res://rooms/highscores/highscores.tscn")
+			gml.room_goto("highscores")

@@ -48,4 +48,4 @@ func step():
 		if (Gamepad.attack_pressed): Gamepad.attack_pressed = false
 		if (Gamepad.start_pressed): Gamepad.start_pressed = false
 		global.game_start = false
-		get_tree().change_scene_to_file("res://rooms/end3/end3.tscn")
+		gml.room_goto("end3")

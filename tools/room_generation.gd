@@ -50,6 +50,9 @@ func set_up_view() -> void:
 	if entry.has("#text"):
 		object_following = entry["#text"]
 	var border = Vector2(int(entry["h_border"]), int(entry["v_border"]))
+	if current_room == "intro":
+		border.x = 128 #--- view in intro seems to have a bug/quirk where the player starting at -32 offsets the border somehow.
+					   #--- so having it at 160 was done to offset this. correcting this manually as we don't have this issue
 	var room_size = rooms.room_database[current_room]["room"]["size"]
 	var level_boundaries = Vector2(int(room_size["width"]), int(room_size["height"]))
 	Engine.get_main_loop().get_first_node_in_group("view").setup(level_boundaries, border, object_following)

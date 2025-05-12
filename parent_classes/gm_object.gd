@@ -361,6 +361,7 @@ func handle_smooth_motion_values():
 
 #--------
 func object_setup():
+	var autoloads = ["globals", "screen", "music", "gamepad"]
 	disable_mode = CollisionObject2D.DISABLE_MODE_KEEP_ACTIVE
 	var object_database = object_database.object_database
 	var object_entry = object_database[object_name]
@@ -380,10 +381,11 @@ func object_setup():
 	collision_with_setup(object_entry)
 	#---[FLAG] have to set up outside_room function
 	
-	#--- keep the below enabled even if objects are set up in the editor
-	#camera_setup()
+	
 	
 	move_child($CollisionShape2D, -1)
+	if object_name in autoloads:
+		run_create_function(self)
 	
 	#--- for flare_spark
 	if has_method("_on_animated_sprite_2d_frame_changed"):

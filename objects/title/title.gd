@@ -220,7 +220,7 @@ func draw():
 func key_f2_pressed():
 	Audio.stop_all_music()
 	global.test_level = ""
-	get_tree().change_scene_to_file("res://rooms/level_editor/level_editor.tscn")
+	gml.room_goto("level_editor")
 
 func key_f3_pressed():
 	Audio.stop_all_music()
@@ -230,7 +230,7 @@ func key_f3_pressed():
 	global.custom_level = false
 	global.first_custom_level = ""
 	global.test_level = ""
-	get_tree().change_scene_to_file("res://rooms/load_level/load_level.tscn")
+	gml.room_goto("load_level")
 
 func alarm_0():
 	state = 1

@@ -36,4 +36,4 @@ func step():
 		
 		
 		if (position.y > 240):
-			get_tree().change_scene_to_file("res://rooms/end3/end3.tscn") #---[FLAG] may have to adjust how this works depending on how scene transitions are handled
+			gml.room_goto("end3") #---[FLAG] may have to adjust how this works depending on how scene transitions are handled (leaving this here to check later but seemingly not an issue)

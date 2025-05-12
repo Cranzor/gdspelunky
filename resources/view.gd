@@ -18,11 +18,9 @@ func _ready() -> void:
 	viewport.snap_2d_transforms_to_pixel = true #--- gets rid of visual waviness
 
 
-#--- sample code that demonstrates how functions work
-#func _physics_process(delta: float) -> void:
-	#var border_rect = create_camera_border_rect(border)
-	#compare_border_rect_and_object_following(border_rect, character_body)
-	#draw_debug_camera_border(create_camera_border_rect(border))
+func _physics_process(delta: float) -> void:
+	#print(get_camera_pos())
+	pass
 
 
 func setup(passed_level_boundaries: Vector2, passed_border: Vector2, passed_object_following: String):
@@ -33,12 +31,11 @@ func setup(passed_level_boundaries: Vector2, passed_border: Vector2, passed_obje
 
 
 func move_camera(position: Vector2): #--- moves camera by a specific number of pixels. ex: Vector2(2, 2) would move the camera two pixels to the right and two pixels down
-	var new_origin = -position #--- transform for camera takes a negative position
-	var current_origin = viewport.get_canvas_transform().origin
-	var combined_origin = new_origin + current_origin
-	var new_trans = Transform2D(0.0, combined_origin)
-	if can_move(combined_origin, level_boundaries):
-		viewport.set_canvas_transform(new_trans)
+	var combined_pos = position + get_camera_pos()
+	var clamped_pos = combined_pos.clamp(Vector2(0, 0), Vector2(level_boundaries.x - 320, level_boundaries.y - 240))
+	var new_origin = -clamped_pos
+	var new_trans = Transform2D(0.0, new_origin)
+	viewport.set_canvas_transform(new_trans)
 
 
 func set_camera_pos(position: Vector2): #--- sets camera to a specific position
@@ -47,43 +44,49 @@ func set_camera_pos(position: Vector2): #--- sets camera to a specific position
 	viewport.set_canvas_transform(new_trans)
 
 
+func set_camera_x_pos(x_pos: int):
+	var current_pos = get_camera_pos()
+	var new_pos = current_pos
+	new_pos.x = x_pos
+	set_camera_pos(new_pos)
+
+
+func set_camera_y_pos(y_pos: int):
+	var current_pos = get_camera_pos()
+	var new_pos = current_pos
+	new_pos.y = y_pos
+	set_camera_pos(new_pos)
+
+
 func get_camera_pos(): #--- returns the position value for the camera based on its origin
 	var current_pos = -viewport.get_canvas_transform().origin
 	return current_pos
 
 
-func can_move(destination_pos, level_boundaries): #--- determines whether camera can move based on level boundaries
-	if -destination_pos.x + 320 <= level_boundaries.x and -destination_pos.x >= 0 and -destination_pos.y + 240 <= level_boundaries.y and -destination_pos.y >= 0:
-		return true
-	return false
-
-
-func compare_border_rect_and_object_following():
-	print(get_camera_pos())
+func update_camera_pos():
 	set_object_if_delayed() #--- setting the correct object to follow if the object spawns in later
-	var border_rect = create_camera_border_rect()
 	
 	if object_following:
 		#--- sides of the camera borders
-		var left = border_rect.position.x
-		var top = border_rect.position.y
-		var right = border_rect.position.x + border_rect.size.x
-		var bottom = border_rect.position.y + border_rect.size.y
+		#--- comments are sample values for level
+		var left = get_camera_pos().x + border.x #--- 128
+		var bottom = (get_camera_pos().y + 240) - border.y #--- 144
+		var right = (get_camera_pos().x + 320) - border.x #--- 192
+		var top = get_camera_pos().y + border.y #--- 96
 
 		#--- moving the camera in a certain direction depending on which side the followed object goes outside of the box
 		#--- camera moves the amount of pixels between the side moved away from and the followed object
 		if object_following.position.x > right:
 			move_camera(Vector2(object_following.position.x - right, 0))
 		elif object_following.position.x < left:
-			move_camera(Vector2(abs(object_following.position.x)-abs(left), 0))
+			move_camera(Vector2(-(abs(object_following.position.x - left)), 0))
 		
 		if object_following.position.y > bottom:
 			move_camera(Vector2(0, object_following.position.y - bottom))
 		elif object_following.position.y < top:
-			move_camera(Vector2(0, abs(object_following.position.y) - abs(top)))
+			move_camera(Vector2(0, -(abs(object_following.position.y - top))))
 	
-	draw_debug_camera_border(create_camera_border_rect(), get_tree().get_first_node_in_group("debug_color_rect"))
-	print(get_camera_pos())
+		draw_debug_camera_border(Vector2(left, top), Vector2(right - left, bottom - top), get_tree().get_first_node_in_group("debug_color_rect"))
 
 
 func set_object_if_delayed():
@@ -93,15 +96,7 @@ func set_object_if_delayed():
 			object_following = check
 
 
-func create_camera_border_rect(): #--- creates a Rect2D of the camera border
-	var viewport_pos = get_camera_pos()
-	var offset: Vector2
-	offset.x = ((320 - border.x) / 2) + viewport_pos.x #--- for putting box in the center of the screen
-	offset.y = ((240 - border.y) / 2) + viewport_pos.y #--- for putting box in the center of the screen
-	var border_rect = Rect2(offset, border) #--- offset is the position and border is the size
-	return border_rect
-
-
-func draw_debug_camera_border(border_rect, color_rect): #--- shows a visual depiction of the camera border
-	color_rect.size = border_rect.size
-	color_rect.position = border_rect.position
+func draw_debug_camera_border(pos, size, color_rect): #--- shows a visual depiction of the camera border
+	color_rect.size = size
+	color_rect.position = pos
+	color_rect.visible = true

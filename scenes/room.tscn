@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b8g70geq8alqq"]
+[gd_scene load_steps=10 format=3 uid="uid://b8g70geq8alqq"]
 
 [ext_resource type="Script" uid="uid://bpwfpbixw4l5b" path="res://scenes/room.gd" id="1_36trf"]
 [ext_resource type="PackedScene" uid="uid://b2jlcu453ynaf" path="res://bg_elements.tscn" id="2_85yof"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dpik07grwpaj" path="res://scenes/collision/collision_shapecast.tscn" id="5_jn645"]
 [ext_resource type="PackedScene" uid="uid://b8sip2nv63phc" path="res://FPSCounter.tscn" id="6_jn645"]
 [ext_resource type="PackedScene" uid="uid://btcxwyjni2p86" path="res://resources/view.tscn" id="8_7dqbv"]
+[ext_resource type="PackedScene" uid="uid://df3di5vguofi1" path="res://scenes/debug/debug_buttons.tscn" id="9_ybpoa"]
 
 [node name="Room" type="Node" groups=["base_room"]]
 script = ExtResource("1_36trf")
@@ -35,6 +36,10 @@ texture = ExtResource("4_qvc4m")
 [node name="View" parent="." instance=ExtResource("8_7dqbv")]
 
 [node name="ColorRect" type="ColorRect" parent="." groups=["debug_color_rect"]]
-offset_right = 40.0
-offset_bottom = 40.0
+visible = false
+offset_right = 160.0
+offset_bottom = 160.0
 color = Color(0.211765, 1, 1, 0.407843)
+
+[node name="DebugButtons" parent="." instance=ExtResource("9_ybpoa")]
+visible = false
