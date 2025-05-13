@@ -60,21 +60,19 @@ var draw_color
 var room_speed = 30
 var view_enabled = true #--- doesn't seem to be false in any instance within the game
 
+var changed_scene: bool = false
+
 var view2: View:
 	get:
 		return get_tree().get_first_node_in_group("view")
 
 var room_height: int:
-	set(value):
-		pass
 	get:
-		return 544 #--- placeholder value
+		return view2.level_boundaries.y
 
 var room_width: int:
-	set(value):
-		pass
 	get:
-		return 400 #--- placeholder value
+		return view2.level_boundaries.x
 		
 var view_vborder: int: #--- vertical boundary of camera. original code always has it as view_vborder[0]
 	set(value):
@@ -574,6 +572,7 @@ func room_get_name():
 
 
 func room_goto(room_name: String):
+	changed_scene = true
 	view2.set_camera_pos(Vector2(0, 0))
 	get_tree().change_scene_to_file("res://rooms/" + room_name + "/" + room_name + ".tscn")
 

@@ -38,7 +38,7 @@ func step():
 	
 		else:
 	
-			var brick = gml.instance_position(640, 560, solid)
+			var brick = gml.instance_position(640, 560, "solid")
 			brick.invincible = true
 	
 		Audio.play_sound(global.snd_thump)

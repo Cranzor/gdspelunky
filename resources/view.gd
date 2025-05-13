@@ -87,7 +87,7 @@ func update_camera_pos():
 		elif object_following.position.y < top:
 			move_camera(Vector2(0, -(abs(object_following.position.y - top))))
 	
-		draw_debug_camera_border(Vector2(left, top), Vector2(right - left, bottom - top), get_tree().get_first_node_in_group("debug_color_rect"))
+		#draw_debug_camera_border(Vector2(left, top), Vector2(right - left, bottom - top), get_tree().get_first_node_in_group("debug_color_rect"))
 
 
 func set_object_if_delayed():

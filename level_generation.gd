@@ -1101,9 +1101,9 @@ func scr_init_level():
 	if (gml.instance_exists("entrance") and not global.custom_level):
 		var entrance = gml.get_instance("entrance")
 		var player1 = gml.get_instance("player1") #---[FLAG] may have to change this for multiplayer
-
-		player1.position.x = entrance.position.x+8
-		player1.position.y = entrance.position.y+8
+		if player1: #---[FLAG] seems necessary to add this or else end room doesn't work
+			player1.position.x = entrance.position.x+8
+			player1.position.y = entrance.position.y+8
 
 
 	if (global.dark_level or
