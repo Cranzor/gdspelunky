@@ -8,6 +8,7 @@ var all_objects = {}
 
 func generate_room(room_name: String):
 	set_up_background()
+	set_up_tiles()
 	
 	var room_database = rooms.room_database
 	var room_data = room_database[room_name]
@@ -75,3 +76,24 @@ func set_up_background() -> void:
 	texture = load(image_path)
 	background_node.texture = texture
 	background_node.size = level_boundaries
+
+
+func set_up_tiles() -> void:
+	var rooms = Rooms.new()
+	var current_room = gml.room_get_name()
+	var tiles = rooms.room_database[current_room]["room"]["tiles"]["tile"]
+
+	if tiles is Dictionary:
+		create_tile(tiles)
+	elif tiles is Array:
+		for tile in tiles:
+			create_tile(tile)
+
+
+func create_tile(tile):
+	var background = tile["background"]
+	var background_pos = Vector2(int(tile["background_position"]["x"]), int(tile["background_position"]["y"]))
+	var room_pos = Vector2(int(tile["room_position"]["x"]), int(tile["room_position"]["y"]))
+	var size = Vector2(int(tile["size"]["width"]), int(tile["size"]["height"]))
+	var depth = int(tile["depth"])
+	gml.tile_add(background, background_pos.x, background_pos.y, size.x, size.y, room_pos.x, room_pos.y, depth)
