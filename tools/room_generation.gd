@@ -7,6 +7,8 @@ var objects = ObjectDatabase.new()
 var all_objects = {}
 
 func generate_room(room_name: String):
+	set_up_background()
+	
 	var room_database = rooms.room_database
 	var room_data = room_database[room_name]
 	var room_instances = room_data['room']['instances']['instance']
@@ -59,4 +61,17 @@ func set_up_view() -> void:
 	view.setup(level_boundaries, border, object_following)
 	view.update_camera_pos()
 	
+
+func set_up_background() -> void:
+	var rooms = Rooms.new()
+	var current_room = gml.room_get_name()
+	var background_name = rooms.room_database[current_room]["room"]["backgrounds"]["background_def"][0]["background_image"]
+	var room_size = rooms.room_database[current_room]["room"]["size"]
+	var level_boundaries = Vector2(int(room_size["width"]), int(room_size["height"]))
 	
+	var background_node: TextureRect = Engine.get_main_loop().get_first_node_in_group("background")
+	var image_path = "res://backgrounds/" + background_name + ".png"
+	var texture = Texture2D.new()
+	texture = load(image_path)
+	background_node.texture = texture
+	background_node.size = level_boundaries

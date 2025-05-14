@@ -26,11 +26,13 @@ func all_objects_step_event():
 	var all_objects = get_tree().get_first_node_in_group("objects_holder").get_children()
 	all_objects.reverse()
 	for object in all_objects:
-		if object.has_method("step"):
+		if object.has_method("step") and gml.changed_scene == false:
 			object.step()
 
+
 func autoloads_step_event():
-	get_tree().call_group("gamepad", "step")
-	get_tree().call_group("globals", "step")
-	get_tree().call_group("screen", "step")
-	get_tree().call_group("music", "step")
+	if gml.changed_scene == false:
+		get_tree().call_group("gamepad", "step")
+		get_tree().call_group("globals", "step")
+		get_tree().call_group("screen", "step")
+		get_tree().call_group("music", "step")
