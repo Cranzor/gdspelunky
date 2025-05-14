@@ -63,6 +63,7 @@ var up
 var down
 var left
 var right
+var timer
 
 #--- want access to these for all objects, so defining here
 var collision_bounds_offset_left_x

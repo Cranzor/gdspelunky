@@ -14,7 +14,6 @@ func _process(delta):
 
 
 #--- Object functions
-var timer
 var baskets
 
 

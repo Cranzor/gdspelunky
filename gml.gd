@@ -573,6 +573,7 @@ func room_get_name():
 
 func room_goto(room_name: String):
 	changed_scene = true
+	get_tree().call_group("gm_object", "room_end")
 	view2.set_camera_pos(Vector2(0, 0))
 	get_tree().change_scene_to_file("res://rooms/" + room_name + "/" + room_name + ".tscn")
 

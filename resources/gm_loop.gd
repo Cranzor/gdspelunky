@@ -11,11 +11,9 @@ func _physics_process(delta: float) -> void:
 func gm_loop(): #---[FLAG] consider running every event in the same order as step
 	get_tree().call_group("alarm", "count_down")
 	get_tree().call_group("gm_object", "run_alarm_events")
-	autoloads_step_event()
-	all_objects_step_event()
-	if Input.is_action_just_pressed("debug"):
-		global.plife += 1
-		global.bombs += 1
+	if gml.changed_scene == false:
+		autoloads_step_event()
+		all_objects_step_event()
 	get_tree().call_group("gm_object", "force_update_transform")
 	get_tree().call_group("gm_object", "run_collision_with")
 	get_tree().call_group("gm_object", "run_draw_event")
@@ -28,7 +26,7 @@ func all_objects_step_event():
 	var all_objects = get_tree().get_first_node_in_group("objects_holder").get_children()
 	all_objects.reverse()
 	for object in all_objects:
-		if object.has_method("step") and gml.changed_scene == false:
+		if object.has_method("step"):
 			object.step()
 
 func autoloads_step_event():
