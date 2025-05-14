@@ -46,7 +46,17 @@ func is_room(name):
 		return false
 
 func scr_shake(number):
-	pass
+##
+##DY: scr_shake(duration)
+##
+##DY: Shake the screen.
+##
+
+	if (global.shake < number): global.shake = number
+	if (global.shake < 0): global.shake = 0
+	global.xview = gml.view_xview
+	global.yview = gml.view_yview
+
 
 func scr_shopkeeper_anger(message_number, node): #--- assuming XY is needed here
 	#

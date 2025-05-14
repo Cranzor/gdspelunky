@@ -45,10 +45,83 @@ func scr_drop_item(x_vel, y_vel):
 
 		player1.hold_item = null
 		player1.pickup_item_type = ""
-	
+
+
 func scr_fire_bow():
-	pass
+	# DY: 
+	# DY:  CharacterScripts.scr_fire_bow()
+	# DY: 
+	# DY:  Fire the bow.  Must be called by player1.
+	# DY: 
+
+	#/**********************************************************************************
+		#Copyright (c) 2008, 2009 Derek Yu and Mossmouth, LLC
+		#
+		#This file is part of Spelunky.
+#
+		#You can redistribute and/or modify Spelunky, including its source code, under
+		#the terms of the Spelunky User License.
+#
+		#Spelunky is distributed in the hope that it will be entertaining and useful,
+		#but WITHOUT WARRANTY.  Please see the Spelunky User License for more details.
+#
+		#The Spelunky User License should be available in "Game Information", which
+		#can be found in the Resource Explorer, or as an external file called COPYING.
+		#If not, please obtain a new copy of Spelunky from <http://spelunkyworld.com/>
+		#
+	#***********************************************************************************/
+	var player1 = gml.get_instance("player1") #---[FLAG] may have to change this for multiplayer
 	
+	if (player1.hold_item):
+
+		if (player1.hold_item.type == "bow"):
+			var obj
+			if (player1.facing == player1.LEFT):
+
+				if (gml.collision_point(player1.position.x-14, player1.position.y, "solid", 0, 0)): obj = gml.instance_create(player1.position.x, player1.position.y, Objects.arrow)
+				else: obj = gml.instance_create(player1.position.x-14, player1.position.y, Objects.arrow)
+				obj.x_vel = player1.x_vel - 1 - player1.bow_strength
+				if (obj.x_vel >= -1): obj.x_vel = -1
+				obj.y_vel = 0
+				obj.direction = 180
+				obj.safe = true
+				obj.alarm_2_countdown.start(10)
+				Audio.play_sound(global.snd_arrow_trap)
+				player1.firing = 10
+			
+			elif (player1.facing == player1.RIGHT):
+				
+				if (gml.collision_point(player1.position.x+14, player1.position.y, "solid", 0, 0)): obj = gml.instance_create(player1.position.x, player1.position.y, Objects.arrow)
+				else: obj = gml.instance_create(player1.position.x+14, player1.position.y, Objects.arrow)
+				obj.x_vel = player1.x_vel + 1 + player1.bow_strength
+				if (obj.x_vel < 1): obj.x_vel = 1
+				obj.y_vel = 0
+				obj.direction = 0
+				obj.safe = true
+				obj.alarm_2_countdown.start(10)
+				Audio.play_sound(global.snd_arrow_trap)
+				player1.firing = 10
+			
+			if (player1.hold_arrow == player1.ARROW_BOMB):
+			
+				obj.sprite_index = "bomb_arrow_right"
+				obj.alarm_1(player1.bomb_arrow_counter)
+				player1.bomb_arrow_counter = 80
+			
+			
+			player1.hold_arrow = 0
+			global.arrows -= 1
+			
+			if (player1.sprite_index == "duck_left" or player1.sprite_index == "damsel_duck_l"):
+			
+				obj.position.y += 4
+			
+		
+			player1.bow_armed = false
+			player1.bow_strength = 0
+			if (SS.is_sound_playing(global.snd_bow_pull)): SS.stop_sound(global.snd_bow_pull)
+
+
 func scr_hold_item(passed_item_type):
 	#
 	# DY: scr_hold_item(item_type)

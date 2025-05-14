@@ -105,12 +105,12 @@ func create():
 
 	elif (global.title_start == 1): # start at highscore door
 
-		var player = gml.instance_create(432+8, 184, "player1")
+		var player = gml.instance_create(432+8, 184, Objects.player1)
 		player.facing = 19
 		gml.instance_create(320+280, 188, "flare")
 		Screen.can_pause = true
 		Audio.play_music(global.mus_title, true)
-		if (global.first_time): gml.instance_create(384, 144, "hint_hand")
+		if (global.first_time): gml.instance_create(384, 144, Objects.hint_hand)
 
 	elif (global.title_start == 2): # start at rope
 

@@ -14,6 +14,11 @@ func gm_loop(): #---[FLAG] consider running every event in the same order as ste
 	if gml.changed_scene == false:
 		autoloads_step_event()
 		all_objects_step_event()
+	#---
+	if Input.is_action_just_pressed("debug"):
+		var player1 = gml.get_instance("player1")
+		gml.instance_create(player1.position.x + 32, player1.position.y, Objects.skeleton)
+	#---
 	get_tree().call_group("gm_object", "force_update_transform")
 	get_tree().call_group("gm_object", "run_collision_with")
 	get_tree().call_group("gm_object", "run_draw_event")
