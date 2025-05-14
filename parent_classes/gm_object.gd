@@ -696,9 +696,15 @@ func run_collision_with():
 							var new_image2 = Image.create_empty(intersection.size.x, intersection.size.y, false, Image.FORMAT_RGBA8)
 							new_image2.blit_rect(image2, Rect2i(Vector2(0, 0), Vector2(intersection.size.x, intersection.size.y)), Vector2(0, 0))
 							
+							#--- creating bitmaps of both new images
+							var bitmap1: BitMap = BitMap.new()
+							bitmap1.create_from_image_alpha(new_image)
+							var bitmap2: BitMap = BitMap.new()
+							bitmap2.create_from_image_alpha(new_image2)
+							
 							#--- if either new image is empty, we know there is not any overlap between pixels (just with bounding boxes)
 							#--- otherwise, if both contain at least one bit, then there was an overlap, so we call the collision_with function
-							if !new_image.is_empty() and !new_image2.is_empty():
+							if bitmap1.get_true_bit_count() > 0 and bitmap2.get_true_bit_count() > 0:
 								if collider != self and !collider.is_queued_for_deletion():
 									other = collider
 									var callable = collision_with[object]

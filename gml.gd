@@ -167,6 +167,8 @@ func collision_point(x,y,obj: String,_prec,notme,calling_object: GMObject = null
 		if obj in collider_groups:
 			possible.append(collider)
 	if possible != []:
+		if calling_object:
+			calling_object.other = possible[-1]
 		return possible[-1]
 	return null
 	
@@ -298,14 +300,14 @@ func collision_rectangle(x1,y1,x2,y2,obj,_prec,notme: bool, calling_object: GMOb
 		collided_object = handle_collision_ray(x1, y1, x2, y2, obj, notme) #--- also avoids error in handle_collision_shapecast() associated with size being negative
 		if check_notme(notme, collided_object, calling_object):
 				return null
-		if calling_object:
+		if calling_object and collided_object:
 			calling_object.other = collided_object
 		return collided_object
 
 	collided_object = handle_collision_shapecast(x1, y1, x2, y2, obj)
 	if check_notme(notme, collided_object, calling_object):
 			return null
-	if calling_object:
+	if calling_object and collided_object:
 		calling_object.other = collided_object
 	return collided_object
 	
@@ -373,7 +375,7 @@ func collision_line(x1,y1,x2,y2,obj,_prec,notme,calling_object: GMObject = null)
 	var collided_object = handle_collision_ray(x1, y1, x2, y2, obj, notme)
 	if check_notme(notme, collided_object, calling_object):
 		return null
-	if calling_object:
+	if calling_object and collided_object:
 		calling_object.other = collided_object
 	return collided_object
 	

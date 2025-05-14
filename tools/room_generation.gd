@@ -81,13 +81,14 @@ func set_up_background() -> void:
 func set_up_tiles() -> void:
 	var rooms = Rooms.new()
 	var current_room = gml.room_get_name()
-	var tiles = rooms.room_database[current_room]["room"]["tiles"]["tile"]
-
-	if tiles is Dictionary:
-		create_tile(tiles)
-	elif tiles is Array:
-		for tile in tiles:
-			create_tile(tile)
+	var tiles = rooms.room_database[current_room]["room"]["tiles"]
+	if tiles != null:
+		var tiles_entry = tiles["tile"]
+		if tiles_entry is Dictionary:
+			create_tile(tiles_entry)
+		elif tiles_entry is Array:
+			for tile in tiles_entry:
+				create_tile(tile)
 
 
 func create_tile(tile):
