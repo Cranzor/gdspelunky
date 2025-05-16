@@ -8,6 +8,8 @@ var bus = "master"
 var available = []  # The available players.
 var queue = []  # The queue of sounds to play.
 var sound_and_node = {}
+var audio_stream_players: Dictionary
+var music_tracks = []
 
 
 func create_audio_stream_player_nodes():
@@ -18,6 +20,7 @@ func create_audio_stream_player_nodes():
 		available.append(p)
 		p.finished.connect(_on_stream_finished.bind(p))
 		p.bus = bus
+		audio_stream_players[i] = p
 
 
 func _on_stream_finished(stream):
@@ -26,7 +29,11 @@ func _on_stream_finished(stream):
 
 
 func play(sound_path):
-	queue.append(sound_path)
+	if sound_path.ends_with(".ogg"):
+		$Music.stream = load(sound_path)
+		$Music.play()
+	else:
+		queue.append(sound_path)
 
 
 func stop(sound_path):
@@ -34,12 +41,22 @@ func stop(sound_path):
 		var node = sound_and_node[sound_path]
 		node.stop()
 		_on_stream_finished(node)
+	elif sound_path == $Music.stream.resource_path:
+		$Music.stop()
 
 
 func set_pitch_scale(sound_path, pitch_scale_value):
 	if sound_and_node.has(sound_path):
 		var node = sound_and_node[sound_path]
 		node.pitch_scale = pitch_scale_value
+
+
+func clear_all_sounds():
+	for i in audio_stream_players:
+		available.clear()
+		available.append(audio_stream_players[i])
+		queue.clear()
+		_on_stream_finished(audio_stream_players[i])
 
 
 func _process(_delta):

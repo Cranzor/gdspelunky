@@ -5,3 +5,5 @@
 [node name="Music" type="StaticBody2D"]
 script = ExtResource("1_0gvbg")
 object_name = "music"
+
+[node name="Music" type="AudioStreamPlayer" parent="."]

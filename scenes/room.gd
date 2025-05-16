@@ -6,4 +6,5 @@ var room_generation = RoomGeneration.new()
 
 func _ready() -> void:
 	gml.changed_scene = false
+	Music.clear_all_sounds()
 	room_generation.generate_room(room_name)
