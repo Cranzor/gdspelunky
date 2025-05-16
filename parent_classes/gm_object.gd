@@ -103,7 +103,8 @@ const ALARM = preload("res://alarm.tscn")
 @export var editor_setup_finished: bool = false
 
 @export var collision_with: Dictionary
-var other #--- most recent object collided with
+var other #--- this keyword appears to mistakenly be used in step events and not collision events. in this case, it should have no
+		  #--- reference and appears to act the same as passing in "self." it is set to self after run_collision_with for  this purpose
 
 @export var depth: int = 0:
 	set(new_depth):
@@ -644,10 +645,7 @@ func run_draw_event():
 
 #var new_image
 #var new_image2
-func run_collision_with():
-	if object_name == "olmec_slam":
-		print("")
-	
+func run_collision_with():	
 	if not is_queued_for_deletion():
 		var overlap_query = PhysicsShapeQueryParameters2D.new() #--- creating an overlap query the same size/position of the checking object's collision shape
 		overlap_query.collide_with_bodies = true
@@ -716,6 +714,8 @@ func run_collision_with():
 							other = collider
 							var callable = collision_with[object]
 							callable.call()	
+
+	other = self #--- see "other" declaration for why this is done
 
 
 func run_animation_end():
