@@ -167,15 +167,11 @@ func step():
 		var player1 = gml.get_instance("player1") #---[FLAG] may have to change for multiplayer
 		if (player1.position.x <= 320 and gml.view("xview") > 0):
 		
-			#view_xview[0] -= 8
-			var view = get_tree().get_first_node_in_group("view")
-			view.position.x -= 8
+			gml.view_xview -= 8
 		
 		if (player1.position.x > 320 and gml.view("xview") < 320):
 		
-			#view_xview[0] += 8
-			var view = get_tree().get_first_node_in_group("view")
-			view.position.x -= 8
+			gml.view_xview += 8
 
 
 	if (fade_out):
