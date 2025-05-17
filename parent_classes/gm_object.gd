@@ -166,6 +166,16 @@ var subimg:
 var image_xscale: float:
 	set(value):
 		animated_sprite_node.scale.x = value
+		
+		if object_name == "arrow_trap_test": #--- this is the only object in the game with a collision size that gets stretched by image_xscale
+			var collision_shape = $CollisionShape2D
+			var current_position = collision_shape.position
+			var current_size = collision_shape.shape.size
+			var new_size = Vector2(current_size.x * value, current_size.y)
+			var new_position = Vector2(collision_shape.position.x * value, collision_shape.position.y)
+			collision_shape.shape.set_size(new_size)
+			collision_shape.position = new_position
+			
 	get:
 		return animated_sprite_node.scale.x #--- [FLAG] may need to be adjusted
 		
@@ -666,7 +676,9 @@ func run_collision_with():
 				if object in collider_groups: #--- checking if collided object is in collision_with groups
 					var checker_precise = sprites.sprite_database[sprite_index_name]["mask"]["shape"]
 					var collider_precise = sprites.sprite_database[collider.sprite_index_name]["mask"]["shape"]
-					if checker_precise == "PRECISE" or collider_precise == "PRECISE": #--- if either object has a precise mask, run pixel perfect check
+					if (checker_precise == "PRECISE" or collider_precise == "PRECISE") and object_name != "arrow_trap_test": #--- if either object has a precise mask, run pixel perfect check
+						#--- arrow_trap_test is an exception because it is the only object in the game in which image_xscale affects its collision
+						#--- it is a simple rectangle already, so we don't need to check it with precise collision, so we skip it (and it wouldn't work anyway without further changes)
 						var checker_frame = animated_sprite_node.frame
 						var collider_frame = collider.animated_sprite_node.frame
 						#--- creating images of current sprite frame for both objects
