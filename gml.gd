@@ -57,6 +57,11 @@ var background_index #---[FLAG] have this set the background of the stage
 var draw_font
 var draw_color
 
+var text_to_draw: Array
+var sprites_to_draw: Array
+var sprites_to_draw_ext: Array
+var draw_to_surface: bool = false
+
 var room_speed = 30
 var view_enabled = true #--- doesn't seem to be false in any instance within the game
 
@@ -419,36 +424,20 @@ func draw_rectangle(x1, y1, x2, y2, outline):
 func draw_text(x, y, string: String, name: String, node):
 	#--- capitalizing the full string as the fonts don't support lowercase letters
 	string = string.to_upper()
+	var font
 	
-	#--- add a holder for text if it doesn't exist
-	if !node.has_node("Text"):
-		var default_node = Node2D.new()
-		default_node.name = "Text"
-		node.add_child(default_node)
+	if draw_font == "main_font":
+		font = load("res://fonts/main_font.png")
+		y += 8 #--- offsetting y pos by half of the font pixel height to make it correct
+	elif draw_font == "small_font":
+		font = load("res://fonts/small_font.png")
+		y += 4 #--- offsetting y pos by half of the font pixel height to make it correct
 
-	var text_holder = node.get_node("Text")
+	#-- if draw_to_surface == true, offset text by adding view position
+	#--- this is a bit of a shortcut compared to the original code but the outcome should be the same
+	var text_info = [font, Vector2(x, y), string, draw_color, draw_to_surface]
+	text_to_draw.append(text_info)
 	
-	#--- create label node for string if it doesn't exist
-	if !node.has_node("Text/" + name.to_pascal_case()):
-		var text_node: Label = TEXT.instantiate()
-		#text_node.global_position = Vector2(x, y)
-		text_node.name = name.to_pascal_case()
-		text_node.text = string
-		text_node.add_theme_color_override("font_color", draw_color)
-		
-		if draw_font == "main_font":
-			text_node.add_theme_font_override("font", text_node.main_font)
-		elif draw_font == "small_font":
-			text_node.add_theme_font_override("font", text_node.small_font)
-			
-		text_holder.add_child(text_node)
-		
-	var string_node = node.get_node("Text/" + name.to_pascal_case())
-	
-	#--- setting the text (in case of updates) and making the string node visible because it hides itself each frame
-	string_node.global_position = Vector2(x, y)
-	string_node.text = string
-	string_node.text_displayed = true
 	
 func draw_sprite(sprite: String, subimg: int, x, y, node, is_object_sprite: bool = false): #--- appears to typically be used for sprites with only 1 animation frame
 	#--- added "is_object_sprite" bool to indicate whether sprite is intended to override the main sprite or not
@@ -528,6 +517,15 @@ func gm_round(n):
 	else:
 		return_val = roundi(n)
 	return return_val
+
+
+func surface_set_target():
+	draw_to_surface = true
+
+
+func surface_reset_target():
+	draw_to_surface = false
+	
 
 #---------------------------------------
 func get_all_instances(group: String): #Replacement for 'with' keyword

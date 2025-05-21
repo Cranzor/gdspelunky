@@ -385,6 +385,7 @@ func begin_step():
 				#draw_set_blend_mode(bm_normal)
 			
 			#surface_set_target(screen)
+			gml.surface_set_target()
 			MiscScripts.scr_draw_hud()
 			if (global.message_timer > 0):
 			
@@ -408,7 +409,7 @@ func begin_step():
 			#draw_set_color(c_black)
 			#draw_rectangle(0, 0, screen_w,screen_h, 0)
 			#draw_set_blend_mode(bm_normal)
-			#surface_reset_target()
+			gml.surface_reset_target()
 		#
 		#draw_set_blend_mode_ext(bm_one, bm_zero) # According to Chevy_ray, this should fix the black box glitch
 		#draw_surface_stretched(screen,screen_x,screen_y,screen_w*screen_scale,screen_h*screen_scale)
