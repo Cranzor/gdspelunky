@@ -286,17 +286,17 @@ func scr_draw_hud():
 		var money_x = 176
 		gml.draw_set_font(global.my_font)
 		gml.draw_set_color(gml.c_white)
-		gml.draw_sprite("heart", -1, life_x, 8, Screen.sprites_holder)
+		gml.draw_sprite("heart", -1, life_x, 8, Screen)
 		var life = global.plife
 		if (life < 0): life = 0
-		gml.draw_text(life_x+16, 8, str(life), "life", Screen.sprites_holder)
-		if (global.has_sticky_bombs): gml.draw_sprite("sticky_bomb_icon", -1, bomb_x, 8, Screen.sprites_holder)
-		else: gml.draw_sprite("bomb_icon", -1, bomb_x, 8, Screen.sprites_holder)
-		gml.draw_text(bomb_x+16, 8, str(global.bombs), "global_bombs", Screen.sprites_holder)
-		gml.draw_sprite("rope_icon", -1, rope_x, 8, Screen.sprites_holder)
-		gml.draw_text(rope_x+16, 8, str(global.rope), "global_rope", Screen.sprites_holder)
-		gml.draw_sprite("dollar_sign", -1, money_x, 8, Screen.sprites_holder)
-		gml.draw_text(money_x+16, 8, str(global.money), "global_money", Screen.sprites_holder)
+		gml.draw_text(life_x+16, 8, str(life), "life", Screen)
+		if (global.has_sticky_bombs): gml.draw_sprite("sticky_bomb_icon", -1, bomb_x, 8, Screen)
+		else: gml.draw_sprite("bomb_icon", -1, bomb_x, 8, Screen)
+		gml.draw_text(bomb_x+16, 8, str(global.bombs), "global_bombs", Screen)
+		gml.draw_sprite("rope_icon", -1, rope_x, 8, Screen)
+		gml.draw_text(rope_x+16, 8, str(global.rope), "global_rope", Screen)
+		gml.draw_sprite("dollar_sign", -1, money_x, 8, Screen)
+		gml.draw_text(money_x+16, 8, str(global.money), "global_money", Screen)
 
 		if (InLevel.is_room("olmec")):
 			global.exit_x = 640
@@ -308,123 +308,123 @@ func scr_draw_hud():
 			
 				if (global.exit_x < gml.view_xview):
 				
-					if (global.message_timer > 0): gml.draw_sprite("compass_small_ll", -1, 0, 224, Screen.sprites_holder)
-					else: gml.draw_sprite("compass_ll", -1, 0, 224, Screen.sprites_holder)
+					if (global.message_timer > 0): gml.draw_sprite("compass_small_ll", -1, 0, 224, Screen)
+					else: gml.draw_sprite("compass_ll", -1, 0, 224, Screen)
 				
 				elif (global.exit_x > gml.view_xview+320-16):
 				
-					if (global.message_timer > 0): gml.draw_sprite("compass_small_lr", -1, 304, 224, Screen.sprites_holder)
-					else: gml.draw_sprite("compass_lr", -1, 304, 224, Screen.sprites_holder)
+					if (global.message_timer > 0): gml.draw_sprite("compass_small_lr", -1, 304, 224, Screen)
+					else: gml.draw_sprite("compass_lr", -1, 304, 224, Screen)
 				
 				else:
 				
-					if (global.message_timer > 0): gml.draw_sprite("compass_small_down", -1, global.exit_x-gml.view_xview, 224, Screen.sprites_holder)
-					else: gml.draw_sprite("compass_down", -1, global.exit_x-gml.view_xview, 224, Screen.sprites_holder)
+					if (global.message_timer > 0): gml.draw_sprite("compass_small_down", -1, global.exit_x-gml.view_xview, 224, Screen)
+					else: gml.draw_sprite("compass_down", -1, global.exit_x-gml.view_xview, 224, Screen)
 				
 			
 			elif (global.exit_x < gml.view_xview):
 			
-				if (global.message_timer > 0): gml.draw_sprite("compass_small_left", -1, 0, global.exit_y-gml.view_yview, Screen.sprites_holder)
-				else: gml.draw_sprite("compass_left", -1, 0, global.exit_y-gml.view_yview, Screen.sprites_holder)
+				if (global.message_timer > 0): gml.draw_sprite("compass_small_left", -1, 0, global.exit_y-gml.view_yview, Screen)
+				else: gml.draw_sprite("compass_left", -1, 0, global.exit_y-gml.view_yview, Screen)
 			
 			elif (global.exit_x > gml.view_xview+320-16):
 			
-				if (global.message_timer > 0): gml.draw_sprite("compass_small_right", -1, 304, global.exit_y-gml.view_yview, Screen.sprites_holder)
-				else: gml.draw_sprite("compass_right", -1, 304, global.exit_y-gml.view_yview, Screen.sprites_holder)
+				if (global.message_timer > 0): gml.draw_sprite("compass_small_right", -1, 304, global.exit_y-gml.view_yview, Screen)
+				else: gml.draw_sprite("compass_right", -1, 304, global.exit_y-gml.view_yview, Screen)
 			
 		
 		
-		gml.draw_sprite("hold_item_icon", -1, 8, 24, Screen.sprites_holder)
+		gml.draw_sprite("hold_item_icon", -1, 8, 24, Screen)
 		var player1 = gml.get_instance("player1") #---[FLAG] may have to change this for multiplayer
 		if (player1.pickup_item_type!= ""):
 		
-			if (player1.pickup_item_type== "rock"): gml.draw_sprite("rock", -1, 8+8, 24+8, Screen.sprites_holder)
-			elif (player1.pickup_item_type== "jar"): gml.draw_sprite("jar", -1, 8+8, 24+8, Screen.sprites_holder)
-			elif (player1.pickup_item_type== "skull"): gml.draw_sprite("skull", -1, 8+8, 24+8, Screen.sprites_holder)
-			elif (player1.pickup_item_type== "fish bone"): gml.draw_sprite("fish_bone", -1, 8+8, 24+8, Screen.sprites_holder)
-			elif (player1.pickup_item_type== "arrow"): gml.draw_sprite("arrow_right", -1, 8+8, 24+8, Screen.sprites_holder)
-			elif (player1.pickup_item_type== "machete"): gml.draw_sprite("machete_right", -1, 8+8, 24+8, Screen.sprites_holder)
-			elif (player1.pickup_item_type== "mattock"): gml.draw_sprite("mattock_right", -1, 8+8, 24+8, Screen.sprites_holder)
-			elif (player1.pickup_item_type== "mattock head"): gml.draw_sprite("mattock_head", -1, 8+8, 24+8, Screen.sprites_holder)
-			elif (player1.pickup_item_type== "pistol"): gml.draw_sprite("pistol_right", -1, 8+8, 24+8, Screen.sprites_holder)
-			elif (player1.pickup_item_type== "web cannon"): gml.draw_sprite("web_cannon_r", -1, 8+8, 24+8, Screen.sprites_holder)
-			elif (player1.pickup_item_type== "teleporter"): gml.draw_sprite("teleporter", -1, 8+8, 24+8, Screen.sprites_holder)
-			elif (player1.pickup_item_type== "shotgun"): gml.draw_sprite("shotgun_right", -1, 8+8, 24+8, Screen.sprites_holder)
-			elif (player1.pickup_item_type== "bow"): gml.draw_sprite("bow_disp", -1, 8+8, 24+8, Screen.sprites_holder)
-			elif (player1.pickup_item_type== "sceptre"): gml.draw_sprite("sceptre_right", -1, 8+8, 24+8, Screen.sprites_holder)
-			elif (player1.pickup_item_type== "flare"): gml.draw_sprite("flare", -1, 8+8, 24+8, Screen.sprites_holder)
-			elif (player1.pickup_item_type== "key"): gml.draw_sprite("key_right", -1, 8+8, 24+8, Screen.sprites_holder)
+			if (player1.pickup_item_type== "rock"): gml.draw_sprite("rock", -1, 8+8, 24+8, Screen)
+			elif (player1.pickup_item_type== "jar"): gml.draw_sprite("jar", -1, 8+8, 24+8, Screen)
+			elif (player1.pickup_item_type== "skull"): gml.draw_sprite("skull", -1, 8+8, 24+8, Screen)
+			elif (player1.pickup_item_type== "fish bone"): gml.draw_sprite("fish_bone", -1, 8+8, 24+8, Screen)
+			elif (player1.pickup_item_type== "arrow"): gml.draw_sprite("arrow_right", -1, 8+8, 24+8, Screen)
+			elif (player1.pickup_item_type== "machete"): gml.draw_sprite("machete_right", -1, 8+8, 24+8, Screen)
+			elif (player1.pickup_item_type== "mattock"): gml.draw_sprite("mattock_right", -1, 8+8, 24+8, Screen)
+			elif (player1.pickup_item_type== "mattock head"): gml.draw_sprite("mattock_head", -1, 8+8, 24+8, Screen)
+			elif (player1.pickup_item_type== "pistol"): gml.draw_sprite("pistol_right", -1, 8+8, 24+8, Screen)
+			elif (player1.pickup_item_type== "web cannon"): gml.draw_sprite("web_cannon_r", -1, 8+8, 24+8, Screen)
+			elif (player1.pickup_item_type== "teleporter"): gml.draw_sprite("teleporter", -1, 8+8, 24+8, Screen)
+			elif (player1.pickup_item_type== "shotgun"): gml.draw_sprite("shotgun_right", -1, 8+8, 24+8, Screen)
+			elif (player1.pickup_item_type== "bow"): gml.draw_sprite("bow_disp", -1, 8+8, 24+8, Screen)
+			elif (player1.pickup_item_type== "sceptre"): gml.draw_sprite("sceptre_right", -1, 8+8, 24+8, Screen)
+			elif (player1.pickup_item_type== "flare"): gml.draw_sprite("flare", -1, 8+8, 24+8, Screen)
+			elif (player1.pickup_item_type== "key"): gml.draw_sprite("key_right", -1, 8+8, 24+8, Screen)
 		
 		
 		var n = 28
 		if (global.has_udjat_eye):
 		
-			if (global.udjat_blink): gml.draw_sprite("udjat_eye_icon2", -1, n, 24, Screen.sprites_holder)
-			else: gml.draw_sprite("udjat_eye_icon", -1, n, 24, Screen.sprites_holder)
+			if (global.udjat_blink): gml.draw_sprite("udjat_eye_icon2", -1, n, 24, Screen)
+			else: gml.draw_sprite("udjat_eye_icon", -1, n, 24, Screen)
 			n += 20
 		
 		if (global.has_ankh):
 		
-			gml.draw_sprite("ankh_icon", -1, n, 24, Screen.sprites_holder)
+			gml.draw_sprite("ankh_icon", -1, n, 24, Screen)
 			n += 20
 		
 		if (global.has_crown):
 		
-			gml.draw_sprite("crown_icon", -1, n, 24, Screen.sprites_holder)
+			gml.draw_sprite("crown_icon", -1, n, 24, Screen)
 			n += 20
 		
 		if (global.has_kapala):
 		
-			if (global.blood_level == 0): gml.draw_sprite("kapala_icon", 0, n, 24, Screen.sprites_holder)
-			elif (global.blood_level <= 2): gml.draw_sprite("kapala_icon", 1, n, 24, Screen.sprites_holder)
-			elif (global.blood_level <= 4): gml.draw_sprite("kapala_icon", 2, n, 24, Screen.sprites_holder)
-			elif (global.blood_level <= 6): gml.draw_sprite("kapala_icon", 3, n, 24, Screen.sprites_holder)
-			elif (global.blood_level <= 8): gml.draw_sprite("kapala_icon", 4, n, 24, Screen.sprites_holder)
+			if (global.blood_level == 0): gml.draw_sprite("kapala_icon", 0, n, 24, Screen)
+			elif (global.blood_level <= 2): gml.draw_sprite("kapala_icon", 1, n, 24, Screen)
+			elif (global.blood_level <= 4): gml.draw_sprite("kapala_icon", 2, n, 24, Screen)
+			elif (global.blood_level <= 6): gml.draw_sprite("kapala_icon", 3, n, 24, Screen)
+			elif (global.blood_level <= 8): gml.draw_sprite("kapala_icon", 4, n, 24, Screen)
 			n += 20
 		
 		if (global.has_spectacles):
 		
-			gml.draw_sprite("spectacles_icon", -1, n, 24, Screen.sprites_holder)
+			gml.draw_sprite("spectacles_icon", -1, n, 24, Screen)
 			n += 20
 		
 		if (global.has_gloves):
 		
-			gml.draw_sprite("gloves_icon", -1, n, 24, Screen.sprites_holder)
+			gml.draw_sprite("gloves_icon", -1, n, 24, Screen)
 			n += 20
 		
 		if (global.has_mitt):
 		
-			gml.draw_sprite("mitt_icon", -1, n, 24, Screen.sprites_holder)
+			gml.draw_sprite("mitt_icon", -1, n, 24, Screen)
 			n += 20
 		
 		if (global.has_spring_shoes):
 		
-			gml.draw_sprite("spring_shoes_icon", -1, n, 24, Screen.sprites_holder)
+			gml.draw_sprite("spring_shoes_icon", -1, n, 24, Screen)
 			n += 20
 		
 		if (global.has_spike_shoes):
 		
-			gml.draw_sprite("spike_shoes_icon", -1, n, 24, Screen.sprites_holder)
+			gml.draw_sprite("spike_shoes_icon", -1, n, 24, Screen)
 			n += 20
 		
 		if (global.has_cape):
 		
-			gml.draw_sprite("cape_icon", -1, n, 24, Screen.sprites_holder)
+			gml.draw_sprite("cape_icon", -1, n, 24, Screen)
 			n += 20
 		
 		if (global.has_jetpack):
 		
-			gml.draw_sprite("jetpack_icon", -1, n, 24, Screen.sprites_holder)
+			gml.draw_sprite("jetpack_icon", -1, n, 24, Screen)
 			n += 20
 		
 		if (global.has_compass):
 		
-			gml.draw_sprite("compass_icon", -1, n, 24, Screen.sprites_holder)
+			gml.draw_sprite("compass_icon", -1, n, 24, Screen)
 			n += 20
 		
 		if (global.has_parachute):
 		
-			gml.draw_sprite("parachute_icon", -1, n, 24, Screen.sprites_holder)
+			gml.draw_sprite("parachute_icon", -1, n, 24, Screen)
 			n += 20
 		
 		if (player1.pickup_item_type == "bow"):
@@ -432,7 +432,7 @@ func scr_draw_hud():
 			var m = global.arrows
 			while (m > 0):
 			
-				gml.draw_sprite("arrow_icon", -1, n, 24, Screen.sprites_holder)
+				gml.draw_sprite("arrow_icon", -1, n, 24, Screen)
 				n += 4
 				m -= 1
 			
@@ -440,7 +440,7 @@ func scr_draw_hud():
 		 
 		gml.draw_set_font(global.my_font_small)
 		gml.draw_set_color(gml.c_yellow)
-		if (global.collect > 0): gml.draw_text(money_x, 8+16, "+" + str(global.collect), "global_collect", Screen.sprites_holder)
+		if (global.collect > 0): gml.draw_text(money_x, 8+16, "+" + str(global.collect), "global_collect", Screen)
 
 
 func scr_check_collisions(node):

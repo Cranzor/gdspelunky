@@ -1,12 +1,26 @@
-extends CanvasLayer
+extends GMObject
+
+
+func _ready():
+	object_setup()
+
+
+func _physics_process(delta):
+	object_tick()
+
+
+func _process(delta):
+	object_process(delta)
+
+
+#--- Object functions
+
 ##---Handles title introduction screen, lights in dark levels, message displays, and pause menu
 
 var py
 var can_pause
 var paused
 var enabled
-
-@onready var sprites_holder = $SpritesHolder #--- declaring this here since screen extends CanvasLayer and doesn't have this by default
 
 
 @onready var derek_yu_presents = $TitleScreen/DerekYuPresents
@@ -16,9 +30,6 @@ var enabled
 
 @onready var title_screen = [$TitleScreen/Background, $TitleScreen/DerekYuPresents]
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	create()
 
 func _input(event):
 	if Input.is_key_pressed(KEY_F1): #---[FLAG] fix this
@@ -27,11 +38,6 @@ func _input(event):
 	if Input.is_key_pressed(KEY_F10):
 		key_f10_pressed()
 
-func _physics_process(_delta):
-	
-	for node in title_screen:
-		node.hide()
-	begin_step()
 
 #--- most things in this script are GameMaker specific and therefore not necessary
 func create():

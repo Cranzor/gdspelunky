@@ -242,14 +242,21 @@ var object_id = ''
 @export var object_size: Vector2 #--- created by me for collision purposes
 
 var sprites_to_draw = []
+var textures = []
+
+#--- each object is responsible for drawing the sprites that it creates with draw_sprite
+#--- this approach ensures that the z_index is correct for the drawn sprites
 func _draw() -> void:
 	if gml.changed_scene == false:
 		for sprite in sprites_to_draw:
 			var texture = sprite[0]
 			var pos = sprite[1]
+			pos -= position #--- resetting origin to 0, 0 by subtracting the node's position
 			var draw_to_surface = sprite[2]
+			if draw_to_surface: #--- adding the current view position when drawing to a surface
+				pos += Vector2(gml.view_xview, gml.view_yview)
 			draw_texture(texture, pos)
-		sprites_to_draw = []
+	sprites_to_draw = []
 
 func get_animated_sprite_2d():
 	return animated_sprite_node
@@ -643,6 +650,7 @@ func run_alarm_events():
 				callable.call()
 				#alarm.emit_signal("timeout")
 
+
 func run_step_event(obj):
 	if self.has_method("step"):
 		obj.step()
@@ -653,7 +661,6 @@ func run_draw_event():
 		draw_object = false
 		var callable = Callable(self, "draw")
 		callable.call()
-		queue_redraw()
 	else:
 		draw_object = true
 	

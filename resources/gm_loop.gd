@@ -2,10 +2,12 @@ extends Node2D
 
 var frame_counter = 0
 
+
 func _physics_process(delta: float) -> void:
 	frame_counter += 1
 	#print(frame_counter)
 	gm_loop()
+
 
 func _draw() -> void:
 	if gml.changed_scene == false:
@@ -16,13 +18,9 @@ func gm_loop(): #---[FLAG] consider running every event in the same order as ste
 	get_tree().call_group("alarm", "count_down")
 	get_tree().call_group("gm_object", "run_alarm_events")
 	if gml.changed_scene == false:
+		get_tree().call_group("screen", "begin_step") #--- screen is the only object with this event
 		autoloads_step_event()
 		all_objects_step_event()
-	#---
-	if Input.is_action_just_pressed("debug"):
-		var player1 = gml.get_instance("player1")
-		gml.instance_create(player1.position.x + 32, player1.position.y, Objects.skeleton)
-	#---
 	get_tree().call_group("gm_object", "force_update_transform")
 	get_tree().call_group("gm_object", "run_collision_with")
 	#get_tree().call_group("gm_object", "run_draw_event")
@@ -30,6 +28,7 @@ func gm_loop(): #---[FLAG] consider running every event in the same order as ste
 	get_tree().call_group("gm_object", "run_speed_position_update")
 	get_tree().call_group("view", "update_camera_pos")
 	get_tree().call_group("gm_object", "run_draw_event") #--- putting draw event after updating camera position fixes text jitter issues
+	get_tree().call_group("gm_object", "queue_redraw")
 	queue_redraw()
 
 
