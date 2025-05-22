@@ -4,12 +4,13 @@ var sprite_displayed
 var sprites = Sprites.new()
 
 func _physics_process(_delta):
-	if sprite_displayed == true:
-		show()
-	else:
-		hide()
-		
-	sprite_displayed = false
+	#if sprite_displayed == true:
+		#show()
+	#else:
+		#hide()
+		#
+	#sprite_displayed = false
+	pass
 
 
 func _on_animation_changed() -> void:

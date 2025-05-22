@@ -158,7 +158,7 @@ theme_override_colors/font_color = Color(1, 1, 0, 1)
 theme_override_fonts/font = ExtResource("2_nrj7p")
 text = "LET'S GET OUT OF HERE!"
 
-[node name="SpritesHolder" type="StaticBody2D" parent="."]
+[node name="SpritesHolder" type="StaticBody2D" parent="." groups=["gm_object"]]
 script = ExtResource("4_pk685")
 object_name = "sprite"
 metadata/_custom_type_script = "uid://h5utltffv0oi"

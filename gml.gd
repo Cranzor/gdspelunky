@@ -58,8 +58,13 @@ var draw_font
 var draw_color
 
 var text_to_draw: Array
+
 var sprites_to_draw: Array
+var sprites_to_draw_current_frame: Dictionary
+
 var sprites_to_draw_ext: Array
+var sprites_to_draw_ext_current_frame: Dictionary
+
 var draw_to_surface: bool = false
 
 var room_speed = 30
@@ -440,36 +445,20 @@ func draw_text(x, y, string: String, name: String, node):
 	
 	
 func draw_sprite(sprite: String, subimg: int, x, y, node, is_object_sprite: bool = false): #--- appears to typically be used for sprites with only 1 animation frame
-	#--- added "is_object_sprite" bool to indicate whether sprite is intended to override the main sprite or not
-	var sprite_pascal_case = sprite.to_pascal_case()
+	if subimg == -1:
+		if sprite not in sprites_to_draw_current_frame:
+			sprites_to_draw_current_frame[sprite] = subimg
+		subimg = sprites_to_draw_current_frame[sprite] + 1
+		sprites_to_draw_current_frame[sprite] = subimg
 	
-	if is_object_sprite:
-		node.sprite_index = sprite
-		
-		#--- image_index being passed in results in the sprite playing normally. otherwise, a specific frame is set
-		var current_index = node.image_index
-		if subimg != current_index:
-			node.image_index = subimg
-
-		node.animated_sprite_node.global_position = Vector2(x, y)
-		node.draw_object = true
-	
-	else:
-		if !node.has_node("HeldSprites/" + sprite_pascal_case):
-			var new_sprite = SPRITE.instantiate()
-			new_sprite.name = sprite.to_pascal_case()
-			node.sprites_holder.add_child(new_sprite)
-			node.set_animation(sprite, new_sprite)
-		
-
-		var new_sprite = node.get_node("HeldSprites/" + sprite_pascal_case)
-		if new_sprite == null:
-			new_sprite = node.get_node("Sprites/" + sprite_pascal_case) #---[FLAG] janky way of handling this. make this uniform
-		new_sprite.global_position = Vector2(x, y)
-		new_sprite.sprite_displayed = true
-		
-		var current_progress = new_sprite.get_frame_progress()
-		new_sprite.set_frame_and_progress(subimg, current_progress)
+	var folder_path = Sprites.sprite_database[sprite]["folder_path"]
+	var file_path = folder_path + "/" + sprite + "_" + str(subimg) + ".png"
+	if !FileAccess.file_exists(file_path):
+		subimg = 0
+		sprites_to_draw_current_frame[sprite] = subimg
+		file_path = folder_path + "/" + sprite + "_" + str(subimg) + ".png"
+	var sprite_info = [load(file_path), Vector2(x, y), draw_to_surface]
+	node.sprites_to_draw.append(sprite_info)
 
 
 func string_length(passed_string: String):

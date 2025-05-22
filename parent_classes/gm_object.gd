@@ -241,6 +241,16 @@ var object_id = ''
 
 @export var object_size: Vector2 #--- created by me for collision purposes
 
+var sprites_to_draw = []
+func _draw() -> void:
+	if gml.changed_scene == false:
+		for sprite in sprites_to_draw:
+			var texture = sprite[0]
+			var pos = sprite[1]
+			var draw_to_surface = sprite[2]
+			draw_texture(texture, pos)
+		sprites_to_draw = []
+
 func get_animated_sprite_2d():
 	return animated_sprite_node
 
@@ -643,6 +653,7 @@ func run_draw_event():
 		draw_object = false
 		var callable = Callable(self, "draw")
 		callable.call()
+		queue_redraw()
 	else:
 		draw_object = true
 	
