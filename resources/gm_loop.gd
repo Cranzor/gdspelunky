@@ -2,7 +2,6 @@ extends Node2D
 
 var frame_counter = 0
 
-
 func _physics_process(delta: float) -> void:
 	frame_counter += 1
 	#print(frame_counter)
@@ -15,6 +14,7 @@ func _draw() -> void:
 
 
 func gm_loop(): #---[FLAG] consider running every event in the same order as step
+	gml.nodes_sorted_by_z_index.clear()
 	get_tree().call_group("alarm", "count_down")
 	get_tree().call_group("gm_object", "run_alarm_events")
 	if gml.changed_scene == false:
@@ -28,7 +28,15 @@ func gm_loop(): #---[FLAG] consider running every event in the same order as ste
 	get_tree().call_group("gm_object", "run_speed_position_update")
 	get_tree().call_group("view", "update_camera_pos")
 	get_tree().call_group("gm_object", "run_draw_event") #--- putting draw event after updating camera position fixes text jitter issues
-	get_tree().call_group("gm_object", "queue_redraw")
+	if gml.changed_scene == false:
+		get_tree().call_group("gm_object", "add_node_to_z_index_dict")
+		var keys = gml.nodes_sorted_by_z_index.keys()
+		keys.sort
+		keys.reverse
+		for key in keys:
+			for value in gml.nodes_sorted_by_z_index[key]:
+				value.queue_redraw()
+	#get_tree().call_group("gm_object", "queue_redraw")
 	queue_redraw()
 
 

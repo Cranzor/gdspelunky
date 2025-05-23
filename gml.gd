@@ -67,6 +67,8 @@ var sprites_to_draw_ext_current_frame: Dictionary
 
 var draw_to_surface: bool = false
 
+var nodes_sorted_by_z_index: Dictionary
+
 var room_speed = 30
 var view_enabled = true #--- doesn't seem to be false in any instance within the game
 
@@ -562,46 +564,27 @@ func room_goto(room_name: String):
 
 
 func draw_sprite_ext(sprite, subimg, x, y, xscale, yscale, rot, color, alpha, node: GMObject, is_object_sprite: bool = true):
-	#--- added "is_object_sprite" bool to indicate whether sprite is intended to override the main sprite or not
-	if subimg == -1:
-		subimg = node.subimg
-
-	var sprite_pascal_case = sprite.to_pascal_case()
+	if subimg == -1: #--- incrementing sprite frame by one if -1 is passed in
+		if node.animated_sprite_node.animation == sprite:
+			subimg = node.image_index
+		else:
+			if sprite not in sprites_to_draw_current_frame:
+				sprites_to_draw_current_frame[sprite] = subimg
+			subimg = sprites_to_draw_current_frame[sprite] + 1
+			sprites_to_draw_current_frame[sprite] = subimg
 	
-	if is_object_sprite:
-		node.sprite_index = sprite
-		
-		#--- image_index being passed in results in the sprite playing normally. otherwise, a specific frame is set
-		var current_index = node.image_index
-		if subimg != current_index:
-			node.image_index = subimg
-
-		node.animated_sprite_node.global_position = Vector2(x, y)
-		node.animated_sprite_node.scale = Vector2(xscale, yscale)
-		node.animated_sprite_node.rotation_degrees = -rot #--- appears to rotate counter-clockwise in GML
-		if color != gml.c_white: #--- c_white is to display the default color
-			node.animated_sprite_node.self_modulate = color
-		node.animated_sprite_node.self_modulate.a = alpha
-		node.draw_object = true
-	
-	else:
-		if !node.has_node("Sprites/" + sprite_pascal_case):
-			var new_sprite = SPRITE.instantiate()
-			new_sprite.name = sprite.to_pascal_case()
-			node.sprites_holder.add_child(new_sprite)
-			node.set_animation(sprite, new_sprite)
-		
-
-		var new_sprite = node.get_node("Sprites/" + sprite_pascal_case)
-		new_sprite.global_position = Vector2(x, y)
-		new_sprite.scale = Vector2(xscale, yscale)
-		new_sprite.rotation_degrees = -rot #--- appears to rotate counter-clockwise in GML
-		new_sprite.self_modulate = color
-		new_sprite.self_modulate.a = alpha
-		new_sprite.sprite_displayed = true
-		
-		var current_progress = new_sprite.get_frame_progress()
-		new_sprite.set_frame_and_progress(subimg, current_progress)
+	var folder_path = Sprites.sprite_database[sprite]["folder_path"]
+	var file_path = folder_path + "/" + sprite + "_" + str(subimg) + ".png"
+	if !FileAccess.file_exists(file_path): #--- resetting sprite to frame 0 if it reaches its maximum
+		subimg = 0
+		sprites_to_draw_current_frame[sprite] = subimg
+		file_path = folder_path + "/" + sprite + "_" + str(subimg) + ".png"
+	var texture = load(file_path)
+	var position = Vector2(x, y)
+	if texture not in node.textures: #--- this keeps the textures loaded so that they appear properly when drawing
+		node.textures.append(texture)
+	var sprite_info = [texture, position, Vector2(xscale, yscale), -rot, color, alpha, sprite, draw_to_surface]
+	node.sprites_to_draw_ext.append(sprite_info)
 
 func degtorad(deg): #---[FLAG] need to test
 	var angle_radians = deg * PI / 180

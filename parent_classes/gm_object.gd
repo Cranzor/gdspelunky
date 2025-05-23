@@ -241,12 +241,18 @@ var object_id = ''
 
 @export var object_size: Vector2 #--- created by me for collision purposes
 
-var sprites_to_draw = []
-var textures = []
+var sprites_to_draw: Array
+var sprites_to_draw_ext: Array
+var textures: Array
 
 #--- each object is responsible for drawing the sprites that it creates with draw_sprite
 #--- this approach ensures that the z_index is correct for the drawn sprites
 func _draw() -> void:
+	draw_sprites()
+	draw_sprites_ext()
+
+
+func draw_sprites(): #--- for drawing additional sprites this object creates with draw_sprite
 	if gml.changed_scene == false:
 		for sprite in sprites_to_draw:
 			var texture = sprite[0]
@@ -257,6 +263,39 @@ func _draw() -> void:
 				pos += Vector2(gml.view_xview, gml.view_yview)
 			draw_texture(texture, pos)
 	sprites_to_draw = []
+
+
+func draw_sprites_ext(): #--- for drawing additional sprites this object creates with draw_sprite_ext
+	if gml.changed_scene == false:
+		for sprite in sprites_to_draw_ext:
+			var texture: Texture2D = sprite[0]
+			var pos = sprite[1]
+			pos -= position #--- resetting origin to 0, 0 by subtracting the node's position
+			var scale = sprite[2]
+			var rotation = sprite[3]
+			var color = sprite[4]
+			if color == gml.c_white:
+				color = modulate
+			color.a = sprite[5]
+			var sprite_name = sprite[6]
+			var draw_to_surface = sprite[7]
+			#if draw_to_surface: #--- adding the current view position when drawing to a surface
+				#pos += Vector2(gml.view_xview, gml.view_yview)
+			#draw_set_transform(pos, rotation, scale)
+			var sprite_entry = sprites.sprite_database[sprite_name]
+			var origin = sprite_entry["origin"]
+			draw_set_transform(pos, rotation, scale)
+			draw_texture(texture, Vector2(0, 0) - origin, color)
+	sprites_to_draw_ext = []
+
+
+func add_node_to_z_index_dict():
+	if depth not in gml.nodes_sorted_by_z_index:
+		gml.nodes_sorted_by_z_index[depth] = []
+	var new_value = gml.nodes_sorted_by_z_index[depth].duplicate()
+	new_value.append(self)
+	gml.nodes_sorted_by_z_index[depth] = new_value
+
 
 func get_animated_sprite_2d():
 	return animated_sprite_node
@@ -661,6 +700,7 @@ func run_draw_event():
 		draw_object = false
 		var callable = Callable(self, "draw")
 		callable.call()
+		animated_sprite_node.hide()
 	else:
 		draw_object = true
 	
