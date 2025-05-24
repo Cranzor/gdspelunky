@@ -4562,7 +4562,7 @@ func animation_end():
 		
 			global.is_damsel = not global.is_damsel
 			active = true
-			depth = -50 #--- changing to negative
+			depth = 50
 			invincible = 0
 			state = STANDING
 			facing = LEFT
@@ -4582,7 +4582,7 @@ func animation_end():
 			global.is_tunnel_man = not global.is_tunnel_man
 			if (global.is_tunnel_man): global.is_damsel = false
 			active = true
-			depth = -50 #--- changing to negative
+			depth = 50
 			invincible = 0
 			state = STANDING
 			facing = RIGHT

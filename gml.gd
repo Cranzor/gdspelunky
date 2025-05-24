@@ -67,8 +67,6 @@ var sprites_to_draw_ext_current_frame: Dictionary
 
 var draw_to_surface: bool = false
 
-var nodes_sorted_by_z_index: Dictionary
-
 var room_speed = 30
 var view_enabled = true #--- doesn't seem to be false in any instance within the game
 
@@ -464,7 +462,7 @@ func draw_sprite(sprite: String, subimg: int, x, y, node, is_object_sprite: bool
 	var position = Vector2(x, y)
 	if texture not in node.textures: #--- this keeps the textures loaded so that they appear properly when drawing
 		node.textures.append(texture)
-	var sprite_info = [texture, position, draw_to_surface]
+	var sprite_info = [texture, position, sprite, draw_to_surface]
 	node.sprites_to_draw.append(sprite_info)
 
 

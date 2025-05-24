@@ -75,16 +75,16 @@ func create():
 	sticky_x_diff = 0
 	sticky_y_diff = 0
 
-	if (global.has_spectacles): depth = -51
-	else: depth = -101
+	if (global.has_spectacles): depth = 51
+	else: depth = 101
 
 func step():
 	if ((position.x > gml.view('xview')-16 and position.x < gml.view('xview') + gml.view('wview')+16 and
 	position.y > gml.view('yview')-16 and position.y < gml.view('yview') + gml.view('hview')+16) or
 	type == "rope"):
 
-		if (global.has_spectacles): depth = -51
-		else: depth = -101
+		if (global.has_spectacles): depth = 51
+		else: depth = 101
 
 		if ((not gml.instance_exists("shopkeeper") or
 			global.thief_level > 0 or

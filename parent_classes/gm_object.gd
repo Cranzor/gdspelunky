@@ -108,25 +108,13 @@ var other #--- this keyword appears to mistakenly be used in step events and not
 
 @export var depth: int = 0:
 	set(new_depth):
-		var minimum_depth = -4096
-		
-		if new_depth > 0: #--- changing positive GML depth to negative in case it is not already changed
-			new_depth = -new_depth
-			if new_depth < minimum_depth:
-				new_depth = minimum_depth
-		
-		var animated_sprite = get_animated_sprite_2d()
-		if animated_sprite:
-			animated_sprite.z_index = new_depth
-		else:
-			z_index = new_depth #--- [FLAG] seems to give an error for canvas items?
+		if object_name == "hint_hand":
+			var value = new_depth
+		new_depth = clampi(-new_depth, RenderingServer.CANVAS_ITEM_Z_MIN, RenderingServer.CANVAS_ITEM_Z_MAX)
+		z_index = new_depth
 		depth = new_depth
 	get:
-		var animated_sprite = get_animated_sprite_2d()
-		if animated_sprite:
-			return animated_sprite.z_index
-		else:
-			return z_index
+		return z_index
 		
 var sprite_index:
 	set(new_sprite):
@@ -258,10 +246,13 @@ func draw_sprites(): #--- for drawing additional sprites this object creates wit
 			var texture = sprite[0]
 			var pos = sprite[1]
 			pos -= position #--- resetting origin to 0, 0 by subtracting the node's position
-			var draw_to_surface = sprite[2]
+			var sprite_name = sprite[2]
+			var draw_to_surface = sprite[3]
+			var sprite_entry = sprites.sprite_database[sprite_name]
+			var origin = sprite_entry["origin"]
 			if draw_to_surface: #--- adding the current view position when drawing to a surface
 				pos += Vector2(gml.view_xview, gml.view_yview)
-			draw_texture(texture, pos)
+			draw_texture(texture, pos - origin)
 	sprites_to_draw = []
 
 
@@ -287,14 +278,6 @@ func draw_sprites_ext(): #--- for drawing additional sprites this object creates
 			draw_set_transform(pos, rotation, scale)
 			draw_texture(texture, Vector2(0, 0) - origin, color)
 	sprites_to_draw_ext = []
-
-
-func add_node_to_z_index_dict():
-	if depth not in gml.nodes_sorted_by_z_index:
-		gml.nodes_sorted_by_z_index[depth] = []
-	var new_value = gml.nodes_sorted_by_z_index[depth].duplicate()
-	new_value.append(self)
-	gml.nodes_sorted_by_z_index[depth] = new_value
 
 
 func get_animated_sprite_2d():
@@ -486,14 +469,7 @@ func groups_setup(object_entry):
 
 func depth_setup(object_entry):
 	var object_depth = object_entry["depth"]
-	
-	#--- In Godot, the value must be negative to display properly
-	var converted_depth = -object_depth
-	#--- Making sure the value isn't lower than the minimum value
-	if converted_depth < -4096:
-		converted_depth = -4096
-	
-	depth = converted_depth
+	depth = object_depth
 
 func bounding_box_setup(): #--- leaving here for now in case it's needed but planning to delete
 	var sprite = get_animation()
@@ -521,6 +497,7 @@ func collision_layers_setup():
 			area_2d.set_collision_layer_value(layer_to_set, true)
 
 func sprite_setup(object_entry):
+	z_index = depth
 	var animated_sprite = get_animated_sprite_2d()
 	
 	var visibility = object_entry["visible"]
@@ -531,7 +508,6 @@ func sprite_setup(object_entry):
 		sprite_frames.remove_animation("default")
 		new_animated_sprite.sprite_frames = sprite_frames
 		new_animated_sprite.name = "MainAnimations"
-		new_animated_sprite.z_index = depth
 		new_animated_sprite.add_to_group("animated_sprite", true)
 		animated_sprite_node = new_animated_sprite
 		sprites_holder = Node2D.new()

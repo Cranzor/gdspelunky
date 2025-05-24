@@ -12,7 +12,6 @@ animations = [{
 }]
 
 [node name="Sprite" type="AnimatedSprite2D" groups=["animated_sprite"]]
-z_as_relative = false
 sprite_frames = SubResource("SpriteFrames_f4ket")
 centered = false
 script = ExtResource("1_wjvgk")

@@ -1,16 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cg1p7emtoarge"]
+[gd_scene load_steps=2 format=3 uid="uid://cg1p7emtoarge"]
 
 [ext_resource type="Script" uid="uid://b2abe10m28yr4" path="res://objects/other/hint_hand/hint_hand.gd" id="1_nrls5"]
-[ext_resource type="FontFile" uid="uid://dgd06bxddo4pq" path="res://fonts/small_font.png" id="7_3r5tb"]
 
 [node name="HintHand" type="StaticBody2D"]
 script = ExtResource("1_nrls5")
 object_name = "hint_hand"
-
-[node name="PressUpToEnter" type="Label" parent="."]
-offset_left = 471.0
-offset_top = 216.0
-offset_right = 615.0
-offset_bottom = 239.0
-theme_override_fonts/font = ExtResource("7_3r5tb")
-text = "PRESS UP TO ENTER!"
