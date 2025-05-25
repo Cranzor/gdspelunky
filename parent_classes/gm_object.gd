@@ -263,7 +263,7 @@ func draw_sprites_ext(): #--- for drawing additional sprites this object creates
 			var pos = sprite[1]
 			pos -= position #--- resetting origin to 0, 0 by subtracting the node's position
 			var scale = sprite[2]
-			var rotation = sprite[3]
+			var rotation = deg_to_rad(sprite[3]) #--- have to convert degrees to radians
 			var color = sprite[4]
 			if color == gml.c_white:
 				color = modulate
