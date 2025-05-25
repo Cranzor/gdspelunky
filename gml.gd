@@ -56,8 +56,8 @@ var background_index #---[FLAG] have this set the background of the stage
 
 var draw_font
 var draw_color
+var draw_alpha
 
-var text_to_draw: Array
 
 var sprites_to_draw: Array
 var sprites_to_draw_current_frame: Dictionary
@@ -420,10 +420,14 @@ func draw_set_color(color: Color):
 	draw_color = color
 
 func draw_set_alpha(alpha):
-	pass
+	draw_alpha = alpha
 
-func draw_rectangle(x1, y1, x2, y2, outline):
-	pass
+
+func draw_rectangle(x1, y1, x2, y2, outline, node: GMObject):
+	var rect2 = Rect2(x1, y1, x2, y2)
+	var color = gml.draw_color
+	color.a = gml.draw_alpha
+	node.rectangle_to_draw = [rect2, color]
 
 #--- font represents draw_set_font, and color represents draw_set_color. name is used to identify the label node
 func draw_text(x, y, string: String, name: String, node):
@@ -441,7 +445,7 @@ func draw_text(x, y, string: String, name: String, node):
 	#-- if draw_to_surface == true, offset text by adding view position
 	#--- this is a bit of a shortcut compared to the original code but the outcome should be the same
 	var text_info = [font, Vector2(x, y), string, draw_color, draw_to_surface]
-	text_to_draw.append(text_info)
+	node.text_to_draw.append(text_info)
 	
 
 

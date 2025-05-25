@@ -231,11 +231,15 @@ var object_id = ''
 
 var sprites_to_draw: Array
 var sprites_to_draw_ext: Array
+var rectangle_to_draw: Array
+var text_to_draw: Array
 var textures: Array
 
 #--- each object is responsible for drawing the sprites that it creates with draw_sprite
 #--- this approach ensures that the z_index is correct for the drawn sprites
 func _draw() -> void:
+	draw_rectangle()
+	draw_text_to_screen()
 	draw_sprites()
 	draw_sprites_ext()
 
@@ -278,6 +282,33 @@ func draw_sprites_ext(): #--- for drawing additional sprites this object creates
 			draw_set_transform(pos, rotation, scale)
 			draw_texture(texture, Vector2(0, 0) - origin, color)
 	sprites_to_draw_ext = []
+
+
+func draw_rectangle():
+	if !rectangle_to_draw.is_empty():
+		var rect2 = rectangle_to_draw[0]
+		var color = rectangle_to_draw[1]
+		#var draw_to_surface = gml.draw_clear_rect[2]
+		#
+		#if draw_to_surface: #--- adding the current view position when drawing to a surface
+			#rect2.position += Vector2(gml.view_xview, gml.view_yview)
+		draw_rect(rect2, color)
+		rectangle_to_draw.clear()
+
+
+func draw_text_to_screen():
+	for text in text_to_draw:
+		var font = text[0]
+		var pos = text[1]
+		var string = text[2]
+		var color = text[3]
+		var draw_to_surface = text[4]
+		if draw_to_surface:
+			pos += Vector2(gml.view_xview, gml.view_yview)
+		
+		draw_string(font, pos, string, 0, -1, 16, color)
+		
+	text_to_draw = []
 
 
 func get_animated_sprite_2d():

@@ -19,12 +19,6 @@ var str1
 var str2
 var str3
 
-@onready var str1_label = $TextBackground/Str1
-@onready var str2_label = $TextBackground/Str2
-@onready var str3_label = $TextBackground/Str3
-
-@onready var text_background = $TextBackground
-
 var skip_button_just_pressed: bool = false
 
 func _input(event):
@@ -126,53 +120,39 @@ func draw():
 	var str_len
 	var n
 	
-	text_background.color = gml.c_black
-	text_background.color = Color(0, 0, 0, fade_level)
-	text_background.position = Vector2(gml.view("xview"), gml.view("yview"))
-	text_background.position = Vector2(0, 0)
-	#draw_set_alpha(1) --- doesn't seem to be needed
+	gml.draw_set_color(gml.c_black)
+	gml.draw_set_alpha(fade_level)
+	gml.draw_rectangle(gml.view_xview, gml.view_yview, gml.view_xview + 320, gml.view_yview + 240, false, self)
+	gml.draw_set_alpha(1)
 	
 	if (draw_status > 0):
 
-		#draw_set_font(global.my_font_small)
-		#draw_set_color(c_white)
+		gml.draw_set_font(global.my_font_small)
+		gml.draw_set_color(gml.c_white)
 		str_len = gml.string_length(str1)*8
 		n = 320 - str_len
 		n = ceil(n / 2)
-		#gml.draw_text(n, 116-16, str1, "small", gml.c_white)
-		str1_label.visible = true
-		str1_label.position = Vector2(n, 116-16)
-		str1_label.text = str1
+		gml.draw_text(n, 116-16, str1, "", self)
 
 	if (draw_status > 1):
 
-		#draw_set_font(global.my_font_small)
-		#draw_set_color(c_white)
+		gml.draw_set_font(global.my_font_small)
+		gml.draw_set_color(gml.c_white)
 		str_len = gml.string_length(str2)*8
 		n = 320 - str_len
 		n = ceil(n / 2)
-		#gml.draw_text(n, 116, str2, "small", gml.c_white)
-		str2_label.visible = true
-		str2_label.position = Vector2(n, 116)
-		str2_label.text = str2
+		gml.draw_text(n, 116, str2, "", self)
 
 	if (draw_status > 2):
 
-		#draw_set_font(global.my_font_small)
-		#draw_set_color(c_white)
+		gml.draw_set_font(global.my_font_small)
+		gml.draw_set_color(gml.c_white)
 		str_len = gml.string_length(str3)*8
 		n = 320 - str_len
 		n = ceil(n / 2)
-		#gml.draw_text(n, 116+16, str3, "small", gml.c_white)
-		str3_label.visible = true
-		str3_label.position = Vector2(n, 116+16)
-		str3_label.text = str3
-	
-	if draw_status < 0: #--- adding this we are not drawing per frame
-		str1_label.visible = false
-		str2_label.visible = false
-		str3_label.visible = false
-		
+		gml.draw_text(n, 116+16, str3, "", self)
+
+
 func alarm_11():
 	if (not fade_in):
 
@@ -180,6 +160,7 @@ func alarm_11():
 			draw_status = 1
 		
 		alarm_10_countdown.start(80)
+
 
 func alarm_10():
 	if (not fade_in):
@@ -189,6 +170,7 @@ func alarm_10():
 		
 		alarm_9_countdown.start(80)
 
+
 func alarm_9():
 	if (not fade_in):
 
@@ -196,6 +178,7 @@ func alarm_9():
 			draw_status = 3
 			
 		alarm_8_countdown.start(80)
+
 
 func alarm_8():
 	if (not fade_in):

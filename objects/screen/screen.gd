@@ -106,7 +106,7 @@ func create():
 
 	# this will destroy the screen object if surfaces are not supported on the graphics card, reverting to the viewport method:
 	#if (screen == -1): game_end()
-	#else: room_gotnext()
+	#else: room_goto_next()
 
 func begin_step():
 #if (not surface_exists(p_surf)): p_surf = surface_create(screen_w, screen_h) #--- not needed
@@ -150,8 +150,9 @@ func begin_step():
 			if (gml.instance_exists("player1")):
 				var player1 = gml.get_instance("player1") #---[FLAG] may need to change this for multiplayer
 				if (not player1.dead):
-				
-					#surface_set_target(p_surf) #--- not needed
+					
+					gml.surface_set_target()
+					#surface_set_target(p_surf)
 					#screen_redraw()
 					
 					if (global.dark_level): $PauseUI/Background.color = Color(0, 0, 0, 1)
