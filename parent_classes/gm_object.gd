@@ -111,6 +111,8 @@ var other #--- this keyword appears to mistakenly be used in step events and not
 		if object_name == "hint_hand":
 			var value = new_depth
 		new_depth = clampi(-new_depth, RenderingServer.CANVAS_ITEM_Z_MIN, RenderingServer.CANVAS_ITEM_Z_MAX)
+		if object_name == "screen": #--- default value is 0. putting it to 1 to ensure that it draws above everything else
+			new_depth = 1
 		z_index = new_depth
 		depth = new_depth
 	get:
@@ -283,23 +285,29 @@ func draw_sprites_ext(): #--- for drawing additional sprites this object creates
 			draw_texture(texture, Vector2(0, 0) - origin, color)
 	sprites_to_draw_ext = []
 
-
+var surface_rectangle: Array
 func draw_rectangle():
 	if !rectangle_to_draw.is_empty():
 		var rect2 = rectangle_to_draw[0]
 		var color = rectangle_to_draw[1]
-		#var draw_to_surface = gml.draw_clear_rect[2]
-		#
-		#if draw_to_surface: #--- adding the current view position when drawing to a surface
-			#rect2.position += Vector2(gml.view_xview, gml.view_yview)
-		draw_rect(rect2, color)
+		var draw_to_surface = rectangle_to_draw[2]
+		var surface_target = rectangle_to_draw[3]
+
+		if draw_to_surface: #--- adding the current view position when drawing to a surface
+			rect2.position += Vector2(gml.view_xview, gml.view_yview)
+			surface_rectangle = rectangle_to_draw.duplicate()
+		
+		if gml.surfaces_to_draw[surface_target] == true:
+			draw_rect(rect2, color)
 		rectangle_to_draw.clear()
+		rectangle_to_draw = surface_rectangle.duplicate()
 
 
 func draw_text_to_screen():
 	for text in text_to_draw:
 		var font = text[0]
 		var pos = text[1]
+		pos -= position #--- resetting origin to 0, 0 by subtracting the node's position
 		var string = text[2]
 		var color = text[3]
 		var draw_to_surface = text[4]

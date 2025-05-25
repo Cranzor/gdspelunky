@@ -40,6 +40,9 @@ var c_teal = Color(0, 128, 128)
 var c_white = Color(255, 255, 255)
 var c_yellow = Color(255, 255, 0)
 
+var screen_w = 320
+var screen_h = 240
+
 var collision_layers = [ProjectSettings.get_setting("layer_names/2d_physics/layer_1"), ProjectSettings.get_setting("layer_names/2d_physics/layer_2"),
 ProjectSettings.get_setting("layer_names/2d_physics/layer_3"), ProjectSettings.get_setting("layer_names/2d_physics/layer_4"), ProjectSettings.get_setting("layer_names/2d_physics/layer_5"),
 ProjectSettings.get_setting("layer_names/2d_physics/layer_6"), ProjectSettings.get_setting("layer_names/2d_physics/layer_7"), ProjectSettings.get_setting("layer_names/2d_physics/layer_8"),
@@ -66,6 +69,9 @@ var sprites_to_draw_ext: Array
 var sprites_to_draw_ext_current_frame: Dictionary
 
 var draw_to_surface: bool = false
+var surfaces = ["default", "screen", "p_surf", "dark_surf"]
+var surface_target: String = "default"
+var surfaces_to_draw = {"default" = true, "screen" = false, "p_surf" = false, "dark_surf" = false}
 
 var room_speed = 30
 var view_enabled = true #--- doesn't seem to be false in any instance within the game
@@ -427,7 +433,7 @@ func draw_rectangle(x1, y1, x2, y2, outline, node: GMObject):
 	var rect2 = Rect2(x1, y1, x2, y2)
 	var color = gml.draw_color
 	color.a = gml.draw_alpha
-	node.rectangle_to_draw = [rect2, color]
+	node.rectangle_to_draw = [rect2, color, draw_to_surface, surface_target]
 
 #--- font represents draw_set_font, and color represents draw_set_color. name is used to identify the label node
 func draw_text(x, y, string: String, name: String, node):
@@ -468,6 +474,10 @@ func draw_sprite(sprite: String, subimg: int, x, y, node, is_object_sprite: bool
 		node.textures.append(texture)
 	var sprite_info = [texture, position, sprite, draw_to_surface]
 	node.sprites_to_draw.append(sprite_info)
+
+
+func draw_surface(id, x, y):
+	surfaces_to_draw[id] = true
 
 
 func string_length(passed_string: String):
@@ -517,12 +527,14 @@ func gm_round(n):
 	return return_val
 
 
-func surface_set_target():
+func surface_set_target(passed_surface):
 	draw_to_surface = true
+	surface_target = passed_surface
 
 
 func surface_reset_target():
 	draw_to_surface = false
+	surface_target = "default"
 	
 
 #---------------------------------------
@@ -601,7 +613,11 @@ func arctan(x):
 	return inverse_tanget
 
 func make_color_rgb(red, green, blue):
-	return Color(red, green, blue)
+	var color = Color()
+	color.r8 = red
+	color.g8 = green
+	color.b8 = blue
+	return color
 
 func string_upper(string: String):
 	string.replace("_", " ")

@@ -23,14 +23,6 @@ var paused
 var enabled
 
 
-@onready var derek_yu_presents = $TitleScreen/DerekYuPresents
-
-@onready var message = $GlobalMessages/Message
-@onready var message2 = $GlobalMessages/Message2
-
-@onready var title_screen = [$TitleScreen/Background, $TitleScreen/DerekYuPresents]
-
-
 func _input(event):
 	if Input.is_key_pressed(KEY_F1): #---[FLAG] fix this
 		key_f1_pressed()
@@ -69,7 +61,7 @@ func create():
 
 	#if (screen):
 #
-		#surface_set_target(screen)
+		#surface_set_target("screen")
 		#draw_clear(c_black)
 
 
@@ -151,15 +143,15 @@ func begin_step():
 				var player1 = gml.get_instance("player1") #---[FLAG] may need to change this for multiplayer
 				if (not player1.dead):
 					
-					gml.surface_set_target()
-					#surface_set_target(p_surf)
+					gml.surface_set_target("p_surf")
 					#screen_redraw()
 					
-					if (global.dark_level): $PauseUI/Background.color = Color(0, 0, 0, 1)
-					else: $PauseUI/Background.color = Color(0, 0, 0, 0.9)
-					#draw_set_color(c_black) #--- not needed
-					#draw_rectangle(0, 0, screen_w*screen_scale, screen_h*screen_scale, false) --- not needed
-					#draw_set_alpha(1) --- not needed
+					if (global.dark_level): gml.draw_set_alpha(1)
+					else: gml.draw_set_alpha(0.9)
+					gml.draw_set_color(gml.c_black)
+					#gml.draw_rectangle(0, 0, screen_w*screen_scale, screen_h*screen_scale, false)
+					gml.draw_rectangle(0, 0, 320, 240, false, self) #--- changed screen variables to pixel counts
+					gml.draw_set_alpha(1)
 					if (SS.is_sound_playing(global.mus_title)): SS.set_sound_vol(global.mus_title, 0)
 					if (SS.is_sound_playing(global.mus_cave)): SS.set_sound_vol(global.mus_cave, 0)
 					if (SS.is_sound_playing(global.mus_lush)): SS.set_sound_vol(global.mus_lush, 0)
@@ -187,24 +179,24 @@ func begin_step():
 
 
 	# this draws the surface on the screen
-	#surface_reset_target() #--- not needed
+	gml.surface_reset_target()
 	#draw_clear(0) #--- not needed
 	if (paused):
 
-		#surface_set_target(p_surf) #--- not needed
-		#draw_set_font(global.my_font)
-		#draw_set_color(c_white)
-		#draw_text(112, 200, "PAUSED") #--- set in the editor
-		#draw_set_font(global.my_fontSmall)
+		gml.surface_set_target("p_surf")
+		gml.draw_set_font(global.my_font)
+		gml.draw_set_color(gml.c_white)
+		gml.draw_text(112, 200, "PAUSED", "", self)
+		gml.draw_set_font(global.my_font_small)
 		if (InLevel.is_level()):
 		
 			var n = 128-24
-			if (global.curr_level < 1): $PauseUI/Level.text = "TUTORIAL CAVE"
-			elif (InLevel.is_room("r_load_level")): $PauseUI/Level.text = "LEVEL: " + global.custom_level_name + " BY " + global.custom_level_author
-			else: $PauseUI/Level.text = "LEVEL " + str(global.curr_level)
-			$PauseUI/Depth.text = "DEPTH: " + str((174.8*(global.curr_level-1)+(py+8)*0.34) + " FEET")
-			$PauseUI/Money.text = "MONEY: " + str(global.money)
-			$PauseUI/Kills.text = "KILLS: " + str(global.kills)
+			if (global.curr_level < 1): gml.draw_text(40, n-24, "TUTORIAL CAVE", "", self)
+			elif (InLevel.is_room("load_level")): gml.draw_text(40, n-24, "LEVEL: " + global.custom_level_name + " BY " + global.custom_level_author, "", self)
+			else: gml.draw_text(40, n-24, "LEVEL " + str(global.curr_level), "", self)
+			gml.draw_text(40, n-16, "DEPTH: " + str(174.8*(global.curr_level-1)+(py+8)*0.34) + " FEET", "", self)
+			gml.draw_text(40, n, "MONEY: " + str(global.money), "", self)
+			gml.draw_text(40, n+8, "KILLS: " + str(global.kills), "", self)
 			var s = global.xtime
 			s = floor(s / 1000)
 			var m = 0
@@ -227,64 +219,54 @@ func begin_step():
 			var str2
 			if (s2 < 10): str2 = "0" + str(s2)
 			else: str2 = str(s2)
-			$PauseUI/Time.text = "TIME:  " + str(m) + ":" + str + " / " + str(m2) + ":" + str2
-			$PauseUI/Saves.text = "SAVES: " + str(global.damsels)
-			if (global.gamepad_on):
-				$PauseUI/ReturnDieQuit.text = "START-RETURN  BOMB-DIE  ROPE-QUIT"
-				$PauseUI/ReturnDieQuit.position = Vector2(24, 216)
-			else:
-				$PauseUI/ReturnDieQuit.text = "ESC-RETURN  F1-DIE  F10-QUIT"
-				$PauseUI/ReturnDieQuit.position = Vector2(40, 216)
+			gml.draw_text(40, n+16, "TIME:  " + str(m) + ":" + str + " / " + str(m2) + ":" + str2, "", self)
+			gml.draw_text(40, n+24, "SAVES: " + str(global.damsels), "", self)
+			if (global.gamepad_on): gml.draw_text(24, 216, "START-RETURN  BOMB-DIE  ROPE-QUIT", "", self)
+			else: gml.draw_text(40, 216, "ESC-RETURN  F1-DIE  F10-QUIT", "", self)
 		
 		else:
 		
-			if (global.gamepad_on):
-				$PauseUI/ReturnDieQuit.text = "START-RETURN  ROPE-QUIT"
-				$PauseUI/ReturnDieQuit.position = Vector2(64, 216)
-			else:
-				$PauseUI/ReturnDieQuit.text = "START-RETURN  ROPE-QUIT"
-				$PauseUI/ReturnDieQuit.position = Vector2(80, 216)
+			if (global.gamepad_on): gml.draw_text(64, 216, "START-RETURN  ROPE-QUIT", "", self)
+			else: gml.draw_text(80, 216, "ESC-RETURN  F10-QUIT", "", self)
 		
-		#surface_reset_target() #--- not needed
+		gml.surface_reset_target()
 		#draw_surface_stretched(p_surf,screen_x,screen_y,screen_w*screen_scale,screen_h*screen_scale)
+		gml.draw_surface("p_surf",320,240)
 
 	else:
 
 		if (InLevel.is_room("title")):
 			var title = gml.get_instance("title")
-			#surface_set_target(screen) #---not needed
-			$TitleScreen/Background.color = Color(0, 0, 0, title.darkness)
-			#draw_set_alpha(title.darkness) --- [FLAG] check darkness variable of Title object
-			#draw_set_color(c_black)
+			gml.surface_set_target("screen")
+			gml.draw_set_alpha(title.darkness)
+			gml.draw_set_color(gml.c_black)
 			if (title.darkness > 0):
-				$TitleScreen/Background.visible = true
-			else:
-				$TitleScreen/Background.visible = false
-				
+				#gml.draw_rectangle(0, 0, screen_w, screen_h, false)
+				gml.draw_rectangle(0, 0, 320, 240, false, self) #--- changed screen variables to pixel counts
 			if (title.state == 1):
 			
-				#draw_set_font(global.my_font_small) #--- not needed
-				#draw_set_color(c_white)
-				derek_yu_presents.text = "DEREK YU PRESENTS"
-				derek_yu_presents.visible = true
+				gml.draw_set_font(global.my_font_small)
+				gml.draw_set_color(gml.c_white)
+				gml.draw_text(88, 48, "DEREK YU PRESENTS", "", self)
 			
-			#draw_set_alpha(1) --- should not be needed for anything
-			#draw_set_blend_mode_ext(bm_src_color,bm_one)
-			#draw_set_color(c_black)
-			#draw_rectangle(0, 0, screen_w,screen_h, 0)
-			#draw_set_blend_%e(bm_normal)
-			#surface_reset_target()
+			#gml.draw_set_alpha(1)
+			##draw_set_blend_mode_ext(bm_src_color,bm_one)
+			#gml.draw_set_color(gml.c_black)
+			##gml.draw_rectangle(0, 0, screen_w,screen_h, 0)
+			#gml.draw_rectangle(0, 0, 320, 240, 0, self) #--- changed screen variables to pixel counts
+			#draw_set_blend_mode(bm_normal)
+			gml.surface_reset_target()
 		
 		elif (InLevel.is_level() and gml.instance_exists("player1")):
 			var player1 = gml.get_instance("player1") #---[FLAG] may need to adjust this for multiplayer
 			
 			#get nearest instance
 			if (global.dark_level and not player1.dead):
-			
-				#surface_set_target(dark_surf) #--- not needed
-				#draw_set_color(c_black)
-				#draw_rectangle(0, 0, screen_w, screen_h, false)
-				#draw_set_color(make_color_rgb(255-255*level.darkness,255-255*level.darkness,255)) #--- [FLAG] used this code for RGB calculation
+				var level = gml.get_instance("level")
+				gml.surface_set_target("dark_surf")
+				gml.draw_set_color(gml.c_black)
+				gml.draw_rectangle(0, 0, gml.screen_w, gml.screen_h, false, self)
+				gml.draw_set_color(gml.make_color_rgb(255-255*level.darkness,255-255*level.darkness,255))
 				
 				if (gml.instance_exists("lamp_red")):
 					var lamp_red = gml.get_instance("lamp_red")
@@ -295,8 +277,7 @@ func begin_step():
 						var dist_to_lamp = gml.distance_to_object(lamp_red, player1_instance)
 						if (dist_to_lamp <= 96):
 						
-							#draw_set_color(make_color_rgb(255-dist_to_lamp,120-(96-dist_to_lamp),120-(96-dist_to_lamp))) #--- [FLAG] used this code for RGB calculation
-							pass
+							gml.draw_set_color(gml.make_color_rgb(255-dist_to_lamp,120-(96-dist_to_lamp),120-(96-dist_to_lamp)))
 					
 				
 				if (gml.instance_exists("lamp_red_item")):
@@ -308,11 +289,9 @@ func begin_step():
 						var dist_to_lamp = gml.distance_to_object(lamp_red_item, player1_instance)
 						if (dist_to_lamp <= 96):
 						
-							#draw_set_color(make_color_rgb(255-dist_to_lamp,120-(96-dist_to_lamp),120-(96-dist_to_lamp)))  #--- [FLAG] used this code for RGB calculation
-							pass
+							gml.draw_set_color(gml.make_color_rgb(255-dist_to_lamp,120-(96-dist_to_lamp),120-(96-dist_to_lamp)))
 						
-					
-				var level = gml.get_instance("level")
+				
 				gml.draw_circle(player1.position.x-gml.view("xview"), player1.position.y-gml.view("yview"), 96-64*level.darkness, false)
 					
 				var all_flares = gml.get_all_instances("flare")
@@ -385,14 +364,13 @@ func begin_step():
 				
 					gml.draw_circle((ghost_instance.position.x+16)-gml.view("xview"), (ghost_instance.position.y+16)-gml.view("yview"), 64, false)
 				
-				#surface_set_target(screen) #--- not needed
+				gml.surface_set_target("screen")
 				#draw_set_blend_mode_ext(bm_dest_color, bm_zero)
-				#draw_set_alpha(1)
+				gml.draw_set_alpha(1)
 				#draw_surface(dark_surf, 0, 0)
 				#draw_set_blend_mode(bm_normal)
 			
-			#surface_set_target(screen)
-			gml.surface_set_target()
+			gml.surface_set_target("screen")
 			MiscScripts.scr_draw_hud()
 			if (global.message_timer > 0):
 			
@@ -420,6 +398,7 @@ func begin_step():
 		#
 		#draw_set_blend_mode_ext(bm_one, bm_zero) # According to Chevy_ray, this should fix the black box glitch
 		#draw_surface_stretched(screen,screen_x,screen_y,screen_w*screen_scale,screen_h*screen_scale)
+		gml.draw_surface("screen", 320, 240)
 		#draw_set_blend_mode(bm_normal) # According to Chevy_ray, this should fix the black box glitch
 
 	#screen_refresh()
@@ -429,24 +408,24 @@ func begin_step():
 
 #func end_step(): #--- also not needed
 	# this sets surface 'screen' as the drawing target for everything in the game, so all drawing will be done on this surface and not on the game screen
-	#surface_set_target(screen)
+	#surface_set_target("screen")
 
 func game_end():
 	#if (surface_exists(screen)): #--- not needed
 #
-		#surface_set_target(screen)
+		#surface_set_target("screen")
 		#draw_clear(0)
 		#surface_free(screen)
 #
 	#if (surface_exists(p_surf)):
 #
-		#surface_set_target(p_surf)
+		#surface_set_target("p_surf")
 		#draw_clear(0)
 		#surface_free(p_surf)
 #
 	#if (surface_exists(dark_surf)):
 #
-		#surface_set_target(dark_surf)
+		#surface_set_target("dark_surf")
 		#draw_clear(0)
 		#surface_free(dark_surf)
 
@@ -481,5 +460,5 @@ func key_f10_pressed():
 		gml.game_end()
 
 #func room_end(): #--- not needed
-	#surface_set_target(screen)
+	#surface_set_target("screen")
 	#draw_clear(0)
