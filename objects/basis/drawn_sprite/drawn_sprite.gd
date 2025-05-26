@@ -53,7 +53,7 @@ var hit:
 
 var orig_x
 var orig_y
-var LEFT = 1 #---setting LEFT and RIGHT to have default values as player1 doesn't set thems
+var LEFT = 18 #---setting LEFT and RIGHT to have default values as player1 doesn't set them
 var RIGHT = 0
 var hp
 var shake_counter

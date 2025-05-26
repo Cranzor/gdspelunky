@@ -14,8 +14,10 @@ func gm_loop(): #---[FLAG] consider running every event in the same order as ste
 	get_tree().call_group("gm_object", "run_alarm_events")
 	if gml.changed_scene == false:
 		get_tree().call_group("screen", "begin_step") #--- screen is the only object with this event
+		gml.in_step_event = true
 		autoloads_step_event()
 		all_objects_step_event()
+		gml.in_step_event = false
 	get_tree().call_group("gm_object", "force_update_transform")
 	get_tree().call_group("gm_object", "run_collision_with")
 	#get_tree().call_group("gm_object", "run_draw_event")
@@ -34,6 +36,12 @@ func all_objects_step_event():
 	for object in all_objects:
 		if object.has_method("step") and gml.changed_scene == false:
 			object.step()
+	
+	for object in gml.new_objects_to_run_step: #--- running step for objects that were created during the step event of other objects
+		if object.has_method("step") and gml.changed_scene == false:
+			object.step()
+	
+	gml.new_objects_to_run_step.clear()
 
 
 func autoloads_step_event():
