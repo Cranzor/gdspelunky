@@ -157,7 +157,8 @@ var key_up_val = "up"
 var kills
 var kisses_bought
 var lake
-var level_deaths: Array
+var level_deaths: Dictionary[int, int] = {0 : 0, 1 : 0, 2 : 0, 3 : 0, 4 : 0, 5 : 0, \
+				6 : 0, 7 : 0, 8 : 0, 9 : 0, 10 : 0, 11 : 0, 12 : 0, 13 : 0, 14 : 0, 15 : 0}
 var level_select
 var level_type = 0 #temp for testing
 var locked_chest_chance

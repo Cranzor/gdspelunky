@@ -81,8 +81,8 @@ func create():
 
 	if (t_money >= 200000 && t_time > 0 && t_time <= 600 && t_kills >= 120 && t_saves >= 8):
 
-		gml.instance_create(32, 112, "multi_trophy")
-		gml.instance_create(32, 128, "x_change2")
+		gml.instance_create(32, 112, Objects.multi_trophy)
+		gml.instance_create(32, 128, Objects.x_change2)
 
 	else:
 
@@ -101,7 +101,7 @@ func create():
 
 		var player = gml.instance_create(432+8, 184, Objects.player1)
 		player.facing = 19
-		gml.instance_create(320+280, 188, "flare")
+		gml.instance_create(320+280, 188, Objects.flare)
 		Screen.can_pause = true
 		Audio.play_music(global.mus_title, true)
 		if (global.first_time): gml.instance_create(384, 144, Objects.hint_hand)

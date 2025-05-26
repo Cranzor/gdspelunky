@@ -658,6 +658,9 @@ func generate_random_hash():
 	return word
 
 func handle_collision_ray(x1, y1, x2, y2, obj, notme):
+	if get_tree().current_scene == null:
+		return null
+
 	var collision_ray: RayCast2D = get_tree().get_first_node_in_group("collision_ray")
 	collision_ray.clear_exceptions()
 	
@@ -682,6 +685,8 @@ func handle_collision_ray(x1, y1, x2, y2, obj, notme):
 	return null
 
 func handle_collision_shapecast(x1, y1, x2, y2, obj):
+	if get_tree().current_scene == null:
+		return null
 	var shapecast: ShapeCast2D = get_tree().get_first_node_in_group("collision_shapecast")
 	shapecast.clear_exceptions()
 

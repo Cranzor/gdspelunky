@@ -522,33 +522,27 @@ func draw():
 		if (player1.dead or InLevel.is_room("moon")):
 			
 			if (InLevel.is_level()):
-				$UI/Level.visible = true
 			
 				if (draw_status > 0):
 				
-					#draw_set_font(global.my_font)
-					#draw_set_color(c_yellow)
-					#draw_text(view_xview[0]+88, view_yview[0]+32+16, "GAME OVER")
-					$UI/Level/GameOver.visible = true
+					gml.draw_set_font(global.my_font)
+					gml.draw_set_color(gml.c_yellow)
+					gml.draw_text(gml.view_xview+88, gml.view_yview+32+16, "GAME OVER", "", self)
 				
 				if (draw_status > 1):
 				
-					#draw_set_font(global.my_fontSmall)
-					#draw_set_color(c_yellow)
-					#draw_text(view_xview[0]+88, view_yview[0]+64+16, "FINAL SCORE:")
-					$UI/Level/FinalScore.visible = true
+					gml.draw_set_font(global.my_font_small)
+					gml.draw_set_color(gml.c_yellow)
+					gml.draw_text(gml.view_xview+88, gml.view_yview+64+16, "FINAL SCORE:", "", self)
 				
 				if (draw_status > 2):
 				
-					#draw_set_font(global.my_font)
-					#draw_set_color(c_white)
-					#draw_text(view_xview[0]+88, view_yview[0]+72+16, "$" + str(money_count))
-					$UI/Level/Money.text = "$" + str(money_count)
-					$UI/Level/Money.visible = true
+					gml.draw_set_font(global.my_font)
+					gml.draw_set_color(gml.c_white)
+					gml.draw_text(gml.view_xview+88, gml.view_yview+72+16, "$" + str(money_count), "", self)
 					
-					#draw_set_font(global.my_fontSmall)
-					#draw_set_color(c_yellow)
-					
+					gml.draw_set_font(global.my_font_small)
+					gml.draw_set_color(gml.c_yellow)
 					if (global.custom_level):
 					
 						if (global.test_level != ""):
@@ -563,10 +557,7 @@ func draw():
 						str_len = gml.string_length(str)*8
 						n = 320 - str_len
 						n = ceil(n / 2)
-						#draw_text(view_xview[0]+n, view_yview[0]+120, str)
-						$UI/Level/CustomLevelText.position.x = n
-						$UI/Level/CustomLevelText.text = str
-						$UI/Level/CustomLevelText.visible = true
+						gml.draw_text(gml.view_xview+n, gml.view_yview+120, str, "", self)
 					
 					else:
 					
@@ -575,89 +566,70 @@ func draw():
 						str_len = gml.string_length(str)*8
 						n = 320 - str_len
 						n = ceil(n / 2)
-						#draw_text(view_xview[0]+n, view_yview[0]+120, str)
-						$UI/Level/HighScores.position.x = n
-						$UI/Level/HighScores.text = str
-						$UI/Level/HighScores.visible = true
-					
-				
+						gml.draw_text(gml.view_xview+n, gml.view_yview+120, str, "", self)
+			
 			
 			elif (InLevel.is_room("sun")):
-				$UI/BonusRooms.visible = true
 				var sun_room = gml.get_instance("sun_room")
 			
 				if (draw_status > 0):
 				
-					#draw_set_font(global.my_font)
-					#draw_set_color(c_yellow)
-					#draw_text(view_xview[0]+88, view_yview[0]+32+16, "FINISHED!")
-					$UI/BonusRooms/Finished.visible = true
+					gml.draw_set_font(global.my_font)
+					gml.draw_set_color(gml.c_yellow)
+					gml.draw_text(gml.view_xview+88, gml.view_yview+32+16, "FINISHED!", "", self)
 				
 				if (draw_status > 1):
 				
-					#draw_set_font(global.my_fontSmall)
-					#draw_set_color(c_yellow)
+					gml.draw_set_font(global.my_font_small)
+					gml.draw_set_color(gml.c_yellow)
 					if (sun_room.highscore): str = "YOU SET A NEW RECORD!"
 					else: str = "BETTER LUCK NEXT TIME..."
 					str_len = gml.string_length(str)*8
 					n = 320 - str_len
 					n = ceil(n / 2)
-					#draw_text(n, view_yview[0]+64+16, str)
-					$UI/BonusRooms/RecordOrBetterLuck.position.x = n
-					$UI/BonusRooms/RecordOrBetterLuck.text = str
-					$UI/BonusRooms/RecordOrBetterLuck.visible = true
-				
+					gml.draw_text(n, gml.view_yview+64+16, str, "", self)
+					
 			
 			elif (InLevel.is_room("moon")):
-				$UI/BonusRooms.visible = true
 				var moon_room = gml.get_instance("moon_room")
 			
 				if (moon_room.timer < 0):
 				
 					if (draw_status > 0):
 					
-						#draw_set_font(global.my_font)
-						#draw_set_color(c_yellow)
-						#draw_text(view_xview[0]+88, view_yview[0]+32+16, "FINISHED!")
-						$UI/BonusRooms/Finished.visible = true
+						gml.draw_set_font(global.my_font)
+						gml.draw_set_color(gml.c_yellow)
+						gml.draw_text(gml.view_xview+88, gml.view_yview+32+16, "FINISHED!", "", self)
 					
 					if (draw_status > 1):
 					
-						#draw_set_font(global.my_fontSmall)
-						#draw_set_color(c_yellow)
+						gml.draw_set_font(global.my_font_small)
+						gml.draw_set_color(gml.c_yellow)
 						if (moon_room.highscore): str = "YOU SET A NEW RECORD!"
 						else: str = "BETTER LUCK NEXT TIME..."
 						str_len = gml.string_length(str)*8
 						n = 320 - str_len
 						n = ceil(n / 2)
-						#draw_text(n, view_yview[0]+64+16, str)
-						$UI/BonusRooms/RecordOrBetterLuck.position.x = n
-						$UI/BonusRooms/RecordOrBetterLuck.text = str
-						$UI/BonusRooms/RecordOrBetterLuck.visible = true
+						gml.draw_text(n, gml.view_yview+64+16, str, "", self)
 					
 				
 			
 			elif (InLevel.is_room("stars")):
-				$UI/BonusRooms.visible = true
 				var stars_room = gml.get_instance("stars_room")
 			
 				if (draw_status > 0):
 				
-					#draw_set_font(global.my_font)
-					#draw_set_color(c_yellow)
-					#draw_text(view_xview[0]+88, view_yview[0]+32+16, "FINISHED!")
-					$UI/BonusRooms/Finished.visible = true
+					gml.draw_set_font(global.my_font)
+					gml.draw_set_color(gml.c_yellow)
+					gml.draw_text(gml.view_xview+88, gml.view_yview+32+16, "FINISHED!", "", self)
 				
 				if (draw_status > 1):
 				
-					#draw_set_font(global.my_font_small)
-					#draw_set_color(c_yellow)
+					gml.draw_set_font(global.my_font_small)
+					gml.draw_set_color(gml.c_yellow)
 					if (stars_room.highscore): str = "YOU SET A NEW RECORD!"
 					else: str = "BETTER LUCK NEXT TIME..."
 					str_len = gml.string_length(str)*8
 					n = 320 - str_len
 					n = ceil(n / 2)
-					#draw_text(n, view_yview[0]+64+16, str)
-					$UI/BonusRooms/RecordOrBetterLuck.position.x = n
-					$UI/BonusRooms/RecordOrBetterLuck.text = str
-					$UI/BonusRooms/RecordOrBetterLuck.visible = true
+					gml.draw_text(n, gml.view_yview+64+16, str, "", self)

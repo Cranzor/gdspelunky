@@ -39,11 +39,11 @@ func is_real_level():
 	return false
 
 func is_room(name):
-	var current_room = str(get_tree().current_scene.get_child(0).get("room_name"))
-	if name == current_room:
-		return true
-	else:
-		return false
+	if get_tree().current_scene != null:
+		var current_room = str(get_tree().current_scene.get_child(0).get("room_name"))
+		if name == current_room:
+			return true
+	return false
 
 func scr_shake(number):
 ##
