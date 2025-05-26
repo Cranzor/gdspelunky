@@ -494,6 +494,7 @@ func instance_deactivate_region(left, top, width, height, inside, notme):
 	pass
 	
 func room_restart():
+	changed_scene = true
 	get_tree().reload_current_scene()
 	
 func instance_activate_all():

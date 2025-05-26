@@ -17,12 +17,6 @@ var darkness
 var need_dark
 var state
 
-@onready var shortcut_house = $ShortcutHouse
-
-var brick = preload("res://objects/blocks/brick/brick.tscn")
-var tunnel_man = preload("res://objects/characters/tunnel_man/tunnel_man.tscn")
-var flare = preload("res://objects/items/flare/flare.tscn")
-#var p_dummy4 = preload("res://objects/other/p_dummy4/p_dummy4.tscn")
 
 func _input(event):
 	if gml.keyboard_check_pressed(KEY_F2):
@@ -81,8 +75,8 @@ func create():
 
 	else:
 
-		gml.instance_create(320, 96, brick)
-		gml.instance_create(336, 96, brick)
+		gml.instance_create(320, 96, Objects.brick)
+		gml.instance_create(336, 96, Objects.brick)
 
 
 	if (t_money >= 200000 && t_time > 0 && t_time <= 600 && t_kills >= 120 && t_saves >= 8):
@@ -92,7 +86,7 @@ func create():
 
 	else:
 
-		gml.instance_create(32+8, 128+8, tunnel_man)
+		gml.instance_create(32+8, 128+8, Objects.tunnel_man)
 
 
 	if (global.title_start == 0):
@@ -133,9 +127,9 @@ func create():
 
 	if (global.first_time):
 
-		gml.instance_create(320, 160, brick)
-		gml.instance_create(336, 160, brick)
-		gml.instance_create(336, 176, brick)
+		gml.instance_create(320, 160, Objects.brick)
+		gml.instance_create(336, 160, Objects.brick)
+		gml.instance_create(336, 176, Objects.brick)
 
 func step():
 	if (gml.keyboard_check_pressed(KEY_ENTER) or
@@ -203,15 +197,13 @@ func draw():
 		var player = gml.instance_nearest(0, 0, "player1")
 		if (player.position.x < 256 and gml.view("xview") <= 1):
 		
-			#draw_set_font(global.my_font_small)
-			#draw_set_color(c_white)
+			gml.draw_set_font(global.my_font_small)
+			gml.draw_set_color(gml.c_white)
 			var str_len = gml.string_length("WELCOME TO THE SHORTCUT HOUSE!")*8
 			var n = 320 - str_len
 			n = ceil(n / 2)
-			#draw_text(n, 224, str\("WELCOME TO THE SHORTCUT HOUSE!"))
-			shortcut_house.text = "WELCOME TO THE SHORTCUT HOUSE!"
-			shortcut_house.position = Vector2(n, 224)
-			shortcut_house.visible = true
+			gml.draw_text(n, 224, str("WELCOME TO THE SHORTCUT HOUSE!"), "", self)
+
 
 func key_f2_pressed():
 	Audio.stop_all_music()
@@ -238,7 +230,7 @@ func alarm_1():
 
 func alarm_2():
 	state = 3
-	gml.instance_create(320+280, -8, flare)
+	gml.instance_create(320+280, -8, Objects.flare)
 	Audio.play_sound(global.snd_ignite)
 	alarm_3_countdown.start(50)
 

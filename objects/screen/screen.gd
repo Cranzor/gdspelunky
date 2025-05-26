@@ -240,9 +240,9 @@ func begin_step():
 			gml.surface_set_target("screen")
 			gml.draw_set_alpha(title.darkness)
 			gml.draw_set_color(gml.c_black)
-			if (title.darkness > 0):
+			#if (title.darkness > 0): #-- -removing if statement to always draw this rectangle on the title screen. simplifies things so we don't have to deal with blend modes etc. below
 				#gml.draw_rectangle(0, 0, screen_w, screen_h, false)
-				gml.draw_rectangle(0, 0, 320, 240, false, self) #--- changed screen variables to pixel counts
+			gml.draw_rectangle(0, 0, 320, 240, false, self) #--- changed screen variables to pixel counts
 			if (title.state == 1):
 			
 				gml.draw_set_font(global.my_font_small)
