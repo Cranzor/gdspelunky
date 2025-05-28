@@ -198,6 +198,8 @@ var y_fric
 var slope_y_prev
 var slope_change_in_y
 var y_prev_high
+
+var collision
 #------------------------------------------------------------------
 
 var test = true
