@@ -367,7 +367,7 @@ func begin_step():
 				gml.surface_set_target("screen")
 				#draw_set_blend_mode_ext(bm_dest_color, bm_zero)
 				gml.draw_set_alpha(1)
-				#draw_surface(dark_surf, 0, 0)
+				gml.draw_surface("dark_surf", 0, 0)
 				#draw_set_blend_mode(bm_normal)
 			
 			gml.surface_set_target("screen")

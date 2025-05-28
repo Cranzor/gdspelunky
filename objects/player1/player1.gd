@@ -1039,8 +1039,8 @@ func handle_flare_crate_opening():
 			hold_item = null
 			pickup_item_type = ""
 		
-		chest_instance.gml.instance_create(position.x, position.y, "poof")
-		chest_instance.gml.instance_destroy()
+		gml.instance_create(position.x, position.y, Objects.poof)
+		gml.instance_destroy(chest_instance)
 		
 		k_attack_pressed = false
 	

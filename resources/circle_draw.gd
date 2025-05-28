@@ -1,11 +1,14 @@
 extends Node
+class_name CircleDraw
 
 func create_empty_image(x, y):
 	var image = Image.create_empty(x, y, false, Image.FORMAT_RGBA8)
 	return image
 
+
 func mirror_points_8(x: int, y: int)->Array:
 	return [Vector2( x,  y), Vector2( y,  x), Vector2(-x,  y), Vector2(-y,  x), Vector2( x, -y), Vector2( y, -x), Vector2(-x, -y), Vector2(-y, -x)]
+
 
 func create_bresenham_circle(r): #--- adapted from here https://funloop.org/post/2021-03-15-bresenham-circle-drawing-algorithm.html
 	var points: Array = []
