@@ -21,6 +21,7 @@ func _process(delta):
 #--- Object functions
 var WAIT
 var RETURN
+var break_now: int #--- used in game script
 
 
 func create():

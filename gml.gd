@@ -154,6 +154,8 @@ func instance_exists(obj: String): #--- FLAG. if enforcing this as a string, it 
 #-----------------------Have to work on
 func instance_create(x,y,obj,run_create = true): #---[FLAG] make this so that obj is forced to be type GMObject
 	if obj is String:
+		if obj == "blood":
+			print("hi")
 		assert(obj is String, "String was passed into instance_create")
 		obj = load(obj)
 	var instance = obj.instantiate()
