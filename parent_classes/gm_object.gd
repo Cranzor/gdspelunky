@@ -111,7 +111,7 @@ var other #--- this keyword appears to mistakenly be used in step events and not
 		if object_name == "hint_hand":
 			var value = new_depth
 		new_depth = clampi(-new_depth, RenderingServer.CANVAS_ITEM_Z_MIN, RenderingServer.CANVAS_ITEM_Z_MAX)
-		if object_name == "screen": #--- default value is 0. putting it to 1 to ensure that it draws above everything else
+		if object_name == "screen" or object_name == "game": #--- default value is 0. putting these to 1 to ensure that they draw above everything else
 			new_depth = 1
 		z_index = new_depth
 		depth = new_depth
