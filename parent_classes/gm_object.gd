@@ -111,7 +111,9 @@ var other #--- this keyword appears to mistakenly be used in step events and not
 		if object_name == "hint_hand":
 			var value = new_depth
 		new_depth = clampi(-new_depth, RenderingServer.CANVAS_ITEM_Z_MIN, RenderingServer.CANVAS_ITEM_Z_MAX)
-		if object_name == "screen" or object_name == "game": #--- default value is 0. putting these to 1 to ensure that they draw above everything else
+		if object_name == "screen": #--- default values are 0. putting these higher to ensure that they draw above everything else
+			new_depth = 2
+		elif object_name == "game":
 			new_depth = 1
 		z_index = new_depth
 		depth = new_depth
@@ -243,7 +245,6 @@ var circle_textures: Array
 #--- this approach ensures that the z_index is correct for the drawn sprites
 func _draw() -> void:
 	draw_rectangle()
-	draw_circles()
 	draw_text_to_screen()
 	draw_sprites()
 	draw_sprites_ext()
@@ -304,22 +305,6 @@ func draw_rectangle():
 			draw_rect(rect2, color)
 		rectangle_to_draw.clear()
 		rectangle_to_draw = surface_rectangle.duplicate()
-
-
-func draw_circles():
-	for circle in circles_to_draw:
-		var texture = circle[0]
-		var pos = circle[1]
-		pos -= position #--- resetting origin to 0, 0 by subtracting the node's position
-		var color = circle[2]
-		var draw_to_surface = circle[3]
-		var surface_target = circle[4]
-		
-		if draw_to_surface: #--- adding the current view position when drawing to a surface
-			pos += Vector2(gml.view_xview, gml.view_yview)
-		
-		draw_texture(texture, pos, color)
-	circles_to_draw.clear()
 
 
 func draw_text_to_screen():

@@ -1,4 +1,6 @@
 extends GMObject
+@onready var circles = $BackBufferCopy/Circles
+@onready var dark_surf = $BackBufferCopy/DarkSurf
 
 
 func _ready():

@@ -439,19 +439,19 @@ func draw_rectangle(x1, y1, x2, y2, outline, node: GMObject):
 	var rect2 = Rect2(x1, y1, x2, y2)
 	var color = gml.draw_color
 	color.a = gml.draw_alpha
-	node.rectangle_to_draw = [rect2, color, draw_to_surface, surface_target]
+	if surface_target == "dark_surf":
+		Screen.dark_surf.rectangle_to_draw = [rect2, color, draw_to_surface, surface_target]
+	else:
+		node.rectangle_to_draw = [rect2, color, draw_to_surface, surface_target]
 	
 
 func draw_circle(x, y, r, outline):
-	var circle_draw = CircleDraw.new()
-	var circle_texture = circle_draw.create_bresenham_circle(int(r))
-	var position = Vector2(x - r, y - r)
+	var position = Vector2(x, y)
+	var radius = r
 	var color = gml.draw_color
 	color.a = gml.draw_alpha
-	var circle_data = [circle_texture, position, color, draw_to_surface, surface_target]
-	Screen.circles_to_draw.append(circle_data) #--- can assume the calling object is screen as it's the only object that uses this method
-	if circle_texture not in Screen.circle_textures:
-		Screen.circle_textures.append(circle_texture)
+	var circle_data = [position, radius, color, draw_to_surface, surface_target]
+	Screen.circles.circles_to_draw.append(circle_data) #--- can assume the calling object is screen as it's the only object that uses this method
 
 
 #--- font represents draw_set_font, and color represents draw_set_color. name is used to identify the label node

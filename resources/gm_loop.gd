@@ -25,9 +25,7 @@ func gm_loop(): #---[FLAG] consider running every event in the same order as ste
 	get_tree().call_group("gm_object", "run_speed_position_update")
 	get_tree().call_group("view", "update_camera_pos")
 	get_tree().call_group("gm_object", "run_draw_event") #--- putting draw event after updating camera position fixes text jitter issues
-	if gml.changed_scene == false:
-		get_tree().call_group("gm_object", "queue_redraw")
-	queue_redraw()
+	queue_redraws()
 
 
 func all_objects_step_event():
@@ -56,3 +54,11 @@ func reset_surfaces():
 	gml.surfaces_to_draw["screen"] = false
 	gml.surfaces_to_draw["p_surf"] = false
 	gml.surfaces_to_draw["dark_surf"] = false
+
+
+func queue_redraws():
+	if gml.changed_scene == false:
+		get_tree().call_group("gm_object", "queue_redraw")
+	Screen.dark_surf.queue_redraw()
+	Screen.circles.queue_redraw()
+	queue_redraw()
