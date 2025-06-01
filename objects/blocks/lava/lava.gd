@@ -21,21 +21,20 @@ var spurt_counter
 
 func create():
 	# main_code
-	type = "Lava"
+	type = "lava"
 	spurt = false
-	spurt_time = randi_range(100,300)
+	spurt_time = gml.rand(100,300)
 	spurt_counter = spurt_time
 	# main_code
-	image_speed
-	0.4
+	image_speed = 0.4
 
 
 func destroy():
 	for i in range(0, 3):
 
-		gml.instance_create(position.x+randi_range(0,16), position.y+randi_range(0,16), Objects.lava_drip)
+		gml.instance_create(position.x+gml.rand(0,16), position.y+gml.rand(0,16), Objects.lava_drip)
 
-	if (randi_range(1,6) == 1):
+	if (gml.rand(1,6) == 1):
 
 		var flame = gml.instance_create(position.x+8, position.y+8, Objects.flame)
 		flame.y_vel = 4
@@ -54,6 +53,6 @@ func step():
 	
 			spurt_counter = spurt_time
 			var flame
-			if (randi_range(1,8) == 1): flame = gml.instance_create(position.x+8, position.y-4, Objects.magma)
+			if (gml.rand(1,8) == 1): flame = gml.instance_create(position.x+8, position.y-4, Objects.magma)
 			else: flame = gml.instance_create(position.x+8, position.y-4, Objects.flame)
-			flame.y_vel = -randi_range(1,4)
+			flame.y_vel = -gml.rand(1,4)
