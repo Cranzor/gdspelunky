@@ -274,7 +274,9 @@ func distance_to_object(obj: GMObject, comparison_node: GMObject): #Make this mo
 		#return -1
 
 func distance_to_point(x, y, node): #--- used only once in the whole game (vampire step event)
-	pass
+	x += 8 #--- as this calculates based on the bounding box, and the x, y being passed in subtracts player offset (8),
+	y += 8 #--- we can take a shortcut by adding 8 to get the player's position. [FLAG] should check this against original game
+	return node.position.distance_to(Vector2(x, y))
 
 func point_direction(x1, y1, x2, y2): #---[FLAG] may need to adjust angle to be more like GML (uses different orientation)
 	var point1 = Vector2(x1, y1)
