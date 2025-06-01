@@ -4,7 +4,7 @@ var rectangle_to_draw: Array
 var surface_rectangle: Array
 
 func _draw() -> void:
-	if gml.surfaces_to_draw["dark_surf"] == true:
+	if gml.surfaces_to_draw["dark_surf"] == true and gml.changed_scene == false:
 		if !rectangle_to_draw.is_empty():
 			var rect2 = rectangle_to_draw[0]
 			var color = rectangle_to_draw[1]

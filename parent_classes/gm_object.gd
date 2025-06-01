@@ -733,7 +733,7 @@ func run_draw_event():
 #var new_image
 #var new_image2
 func run_collision_with():	
-	if not is_queued_for_deletion():
+	if !collision_with.is_empty() and !is_queued_for_deletion():
 		var overlap_query = PhysicsShapeQueryParameters2D.new() #--- creating an overlap query the same size/position of the checking object's collision shape
 		overlap_query.collide_with_bodies = true
 		var checking_object_collision_shape = get_node("CollisionShape2D").shape
