@@ -5,14 +5,16 @@ var frames_to_count_down = -1
 var started = false
 signal timeout
 var ready_to_emit
+@onready var parent = get_parent()
 
 
 func count_down():
-	if frames_to_count_down != -1:
-		frames_to_count_down -= 1
-	
-	if frames_to_count_down == 0:
-		ready_to_emit = true
+	if parent.is_in_group("active_gm_object"):
+		if frames_to_count_down != -1:
+			frames_to_count_down -= 1
+		
+		if frames_to_count_down == 0:
+			ready_to_emit = true
 
 
 func start(frames):

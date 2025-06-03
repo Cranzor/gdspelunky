@@ -509,6 +509,7 @@ func groups_setup(object_entry):
 			add_to_group(group)
 	
 	add_to_group("gm_object")
+	add_to_group("active_gm_object")
 
 func depth_setup(object_entry):
 	var object_depth = object_entry["depth"]
@@ -816,6 +817,17 @@ func run_animation_end():
 		if image_index + 1 == amount_of_frames:
 			var callable = Callable(self, "animation_end")
 			callable.call()
+
+
+func pause_animation():
+	if animated_sprite_node and animated_sprite_node.is_playing():
+		animated_sprite_node.pause()
+
+
+func resume_animation():
+	if animated_sprite_node and animated_sprite_node.animation != "default": #--- some objects have a sprite but no animations set up, which would cause an error
+		animated_sprite_node.play()
+
 
 func run_speed_position_update(): #--- original engine runs speed * direction on objects to make them move. only is used for caveman, hawkman, and yeti in Spelunky
 	#--- only for enemy_sight, so we can make some assumptions with how speed and direction work with one another
