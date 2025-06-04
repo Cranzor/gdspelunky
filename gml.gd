@@ -221,8 +221,8 @@ func tile_add(background,left,top,width,height,x,y,depth): #return value of tile
 	var bg_elements: Node2D = cur_scene.get_first_node_in_group("bg_elements")
 	var tile_map_layer: TileMapLayer = bg_elements.get_child(layer_number)
 	
-	if depth > 4095:
-		depth = 4095
+	if depth > 4096:
+		depth = 4096
 	
 	tile_map_layer.z_index = -depth
 	

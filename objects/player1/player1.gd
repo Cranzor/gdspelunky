@@ -1170,7 +1170,7 @@ func exit_level():
 					hold_item.held = false
 					hold_item.x_vel = 0
 					hold_item.y_vel = 0
-					hold_item.Audio.play_sound(global.snd_steps)
+					Audio.play_sound(global.snd_steps)
 					hold_item.depth = 1000
 					hold_item.active = false
 					
