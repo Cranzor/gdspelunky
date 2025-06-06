@@ -484,8 +484,11 @@ func draw_sprite(sprite: String, subimg: int, x, y, node, is_object_sprite: bool
 		sprites_to_draw_current_frame[sprite] = subimg
 	
 	var folder_path = Sprites.sprite_database[sprite]["folder_path"]
-	var file_path = folder_path + "/" + sprite + "_" + str(subimg) + ".png"
-	if !FileAccess.file_exists(file_path): #--- resetting sprite to frame 0 if it reaches its maximum
+	var file_name = sprite + "_" + str(subimg) + ".png"
+	var file_path = folder_path + "/" + file_name
+	var files_in_directory = ResourceLoader.list_directory(folder_path)
+
+	if file_name not in files_in_directory: #--- resetting sprite to frame 0 if it reaches its maximum
 		subimg = 0
 		sprites_to_draw_current_frame[sprite] = subimg
 		file_path = folder_path + "/" + sprite + "_" + str(subimg) + ".png"
@@ -618,8 +621,11 @@ func draw_sprite_ext(sprite, subimg, x, y, xscale, yscale, rot, color, alpha, no
 			sprites_to_draw_current_frame[sprite] = subimg
 	
 	var folder_path = Sprites.sprite_database[sprite]["folder_path"]
-	var file_path = folder_path + "/" + sprite + "_" + str(subimg) + ".png"
-	if !FileAccess.file_exists(file_path): #--- resetting sprite to frame 0 if it reaches its maximum
+	var file_name = sprite + "_" + str(subimg) + ".png"
+	var file_path = folder_path + "/" + file_name
+	var files_in_directory = ResourceLoader.list_directory(folder_path)
+
+	if file_name not in files_in_directory: #--- resetting sprite to frame 0 if it reaches its maximum
 		subimg = 0
 		sprites_to_draw_current_frame[sprite] = subimg
 		file_path = folder_path + "/" + sprite + "_" + str(subimg) + ".png"

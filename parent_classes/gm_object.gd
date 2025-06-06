@@ -607,10 +607,10 @@ func sprite_animation_setup(sprite_name, sprite_frames):
 	sprite_frames.set_animation_speed(sprite_name, 30)
 	sprite_frames.set_animation_loop(sprite_name, true)
 	var sprite_folder_path = sprites.sprite_database[sprite_name]["folder_path"]
-	var files = DirAccess.get_files_at(sprite_folder_path)
+	var files = ResourceLoader.list_directory(sprite_folder_path)
+
 	for file in files:
 		if file.get_extension() == "png":
-			#print(file)
 			var sprite_texture = load(sprite_folder_path + "/" + file)
 			sprite_frames.add_frame(sprite_name, sprite_texture)
 	
