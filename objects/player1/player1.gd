@@ -10,199 +10,170 @@ func _physics_process(_delta):
 	
 func _process(delta):
 	object_process(delta)
-	#print(x_fric)
 
 #--- Object functions
+const STANDING: int = 10
+const RUNNING: int = 11
+const DUCKING: int = 12
+const LOOKING_UP: int = 13
+const CLIMBING: int = 14
+const JUMPING: int = 15
+const FALLING: int = 16
+const DYING: int = 17
+const ON_GROUND: int = 20
+const IN_AIR: int = 21
+const ON_LADDER: int = 22
+const HANGING: int = 23
+const DUCKTOHANG: int = 24
 
-var game #--- Temporary to solve errors. Make this an autoload
+var blink: int
+var k_jump_pressed: bool
+var player: int
 
-const STANDING = 10
-const RUNNING = 11
-const DUCKING = 12
-const LOOKING_UP = 13
-const CLIMBING = 14
-const JUMPING = 15
-const FALLING = 16
-const DYING = 17
-const ON_GROUND = 20
-const IN_AIR = 21
-const ON_LADDER = 22
-const HANGING = 23
-const DUCKTOHANG = 24
-
-var blink
-var k_jump_pressed
-var player
-
-var first_level_skip
-var level_skip
+var first_level_skip: int
+var level_skip: int
 
 
-var dead_counter
-var stunned = false #--- Change this back
-var fall_timer
-var stun_timer
-var wall_hurt
-var push_timer
-var whoa_timer
-var whoa_timer_max
-var dist_to_nearest_light_source
-var bubble_timer
-var bubble_timer_max
-var bet
-var point
-var climb_snd_toggle
-var walk_snd_toggle
-var k_attack
-var k_attack_pressed
-var whipping
-var cant_jump
-var k_jumped
-var firing_max
-var firing_pistol_max
-var firing_shotgun_max
-var bow_armed
-var bow_strength
-var jetpack_fuel
-var red_color
-var red_toggle
-var k_attack_released
+var dead_counter: int
+var stunned: bool = false #--- Change this back [FLAG] not sure why I added this
+var fall_timer: int
+var stun_timer: int
+var wall_hurt: int
+var push_timer: int
+var whoa_timer: int
+var whoa_timer_max: int
+var dist_to_nearest_light_source: float
+var bubble_timer: int
+var bubble_timer_max: int
+var bet: int
+var point: bool
+var climb_snd_toggle: bool
+var walk_snd_toggle: bool
+var k_attack: bool
+var k_attack_pressed: bool
+var whipping: bool
+var cant_jump: int
+var k_jumped: bool
+var firing_max: int
+var firing_pistol_max: int
+var firing_shotgun_max: int
+var bow_armed: bool
+var bow_strength: float
+var jetpack_fuel: int
+var red_color: int
+var red_toggle: bool
+var k_attack_released: bool
 var hold_item = null
-var hold_item_type
+var hold_item_type: String
 var pickup_item #--- used in enemy script but seems to be an error, confusing global.pickup_item and player1's pickup_item_type
-var pickup_item_type
-var k_item
-var k_item_pressed
-var k_item_released
-var k_rope
-var k_bomb
-var k_pay
-var hold_arrow
-var hold_arrow_toggle
-var bomb_arrow_counter
-var ARROW_NORM
-var ARROW_BOMB
-var move_toggle
-var view_count
-var look_off
-var p_exit
-var x_start
-var x_tutorial
-var x_scores
-var x_title
-var x_end
-var x_shortcut5
-var x_shortcut9
-var x_sun
-var x_moon
-var x_stars
-var x_change
-var x_shortcut13
-var x_change2
-
-var explosion
-var state
-var p_dummy5
-
-
-
-var splash
-
-
-
-var parachute
-var poof
-var para_used
-var bubble
-
-
-
-var x_vel_limit
-var y_vel_limit
+var pickup_item_type: String
+var k_item: int
+var k_item_pressed: int
+var k_item_released: int
+var k_rope: int
+var k_bomb: int
+var k_pay: int
+var hold_arrow: int
+var hold_arrow_toggle: bool
+var bomb_arrow_counter: int
+var ARROW_NORM: int
+var ARROW_BOMB: int
+var move_toggle: bool
+var view_count: int
+var look_off: int
+var p_exit: int
+var x_start: int
+var x_tutorial: int
+var x_scores: int
+var x_title: int
+var x_end: int
+var x_shortcut5: int
+var x_shortcut9: int
+var x_sun: int
+var x_moon: int
+var x_stars: int
+var x_change: int
+var x_shortcut13: int
+var x_change2: int
+var state: int
+var x_vel_limit: int
+var y_vel_limit: int
 #var k_down #--- declaring in gm_object
-var k_right
-var k_left
-var view_yview
-var k_up
+var k_right: bool
+var k_left: bool
+var k_up: bool
 
-var k_left_pushed_steps
-var k_right_pushed_steps
-var can_run
-var k_run
-var k_jump
+var k_left_pushed_steps: int
+var k_right_pushed_steps: int
+var can_run: bool
+var k_run: bool
+var k_jump: bool
 
-var run_held
-var run_acc
-var ladder_timer
-var climb_acc
-var depart_ladder_x_vel
-var depart_ladder_y_vel
-var jump_button_released
-var jump_time
+var run_held: int
+var run_acc: int
+var ladder_timer: int
+var climb_acc: float
+var depart_ladder_x_vel: int
+var depart_ladder_y_vel: int
+var jump_button_released: bool
+var jump_time: int
 var gravity_intensity: float
-var jumps
-var hang_count
-var web
-var initial_jump_acc
-var grav_norm
-var y_acc_limit
-var jump_time_total
-var friction_climbing_x
-var friction_climbing_y
-var friction_running_fast_x
-var friction_running_x
-var x_acc_limit
-var max_slope
-var max_down_slope
-var state_prev_prev
-var state_prev
-var run_anim_speed
-var climb_anim_speed
+var jumps: int
+var hang_count: int
+var initial_jump_acc: int
+var grav_norm: int
+var y_acc_limit: int
+var jump_time_total: int
+var friction_climbing_x: float
+var friction_climbing_y: float
+var friction_running_fast_x: float
+var friction_running_x: float
+var x_acc_limit: int
+var max_slope: int
+var max_down_slope: int
+var state_prev_prev: int
+var state_prev: int
+var run_anim_speed: float
+var climb_anim_speed: float
 
-var rock
 
-var k_bomb_pressed #--- only found in step
-var k_rope_pressed #--- only found in step
-var in_game #--- only found in step
-var col_spikes #--- only found in step
-var money #--- only found in step
-var collect #--- only found in step
-var k_pay_pressed  #--- only found in step
+var k_bomb_pressed: bool #--- only found in step
+var k_rope_pressed: bool #--- only found in step
+var in_game: bool #--- only found in step
+var col_spikes: bool #--- only found in step
+var money: int #--- only found in step
+var collect: int #--- only found in step
+var k_pay_pressed: bool  #--- only found in step
 
 var viscid_movement_ok #--- called by game_step_event. Seems to do nothing
 
 #------------------------------------------------------------------
  #--- only found in character_step_event
-var k_left_released #--- only found in character_step_event
-var k_right_released #--- only found in character_step_event
-var k_jump_released #--- only found in character_step_event
-var x_prev #--- only found in character_step_event
-var y_prev #--- only found in character_step_event
-var k_left_pressed #--- only found in character_step_event
-var k_right_pressed #--- only found in character_step_event
-var run_key
-var col_solid_left
-var col_solid_right
-var col_plat_bot
-var col_plat
-var col_water_top
-var col_ladder
-var col_ice_bot
-var looking
-var hang_count_max
-var x_fric:
-	set(value):
-		x_fric = value
-		
-var y_fric
-var slope_y_prev
-var slope_change_in_y
-var y_prev_high
-
-var collision
+var k_left_released: bool #--- only found in character_step_event
+var k_right_released: bool #--- only found in character_step_event
+var k_jump_released: bool #--- only found in character_step_event
+var x_prev: int #--- only found in character_step_event
+var y_prev: int #--- only found in character_step_event
+var k_left_pressed: bool #--- only found in character_step_event
+var k_right_pressed: bool #--- only found in character_step_event
+var run_key: bool
+var col_solid_left: bool
+var col_solid_right: bool
+var col_plat_bot: bool
+var col_plat: bool
+var col_water_top: bool
+var col_ladder: bool
+var col_ice_bot: bool
+var looking: int
+var hang_count_max: int
+var x_fric: float
+var y_fric: float
+var slope_y_prev: int
+var slope_change_in_y: int
+var y_prev_high: int
 #------------------------------------------------------------------
 
-var test = true
+var test: bool = true
 	
 func create():
 	# ---[FLAG] setting these here
@@ -312,7 +283,7 @@ func create():
 	if (InLevel.is_room("olmec")): active = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func step(): # one of seven scripts which uses 'other' outside of collision_with
+func step() -> void: # one of seven scripts which uses 'other' outside of collision_with
 	#print('node position: ' + str(position))
 	#print('sprite position: ' + str(animated_sprite.position))
 	#print("final x vel: " + str(final_x_vel), " final y vel: " + str(final_y_vel))
@@ -330,7 +301,7 @@ func step(): # one of seven scripts which uses 'other' outside of collision_with
 	end_step()
 	draw()
 
-func step_function_1():
+func step_function_1() -> void:
 	prevent_player_death()
 	cap_hud_values()
 	spawn_cape()
@@ -349,26 +320,26 @@ func step_function_1():
 	handle_player_active()
 	handle_player_dead_or_stunned()
 
-func prevent_player_death():
+func prevent_player_death() -> void:
 	# prevent player from dying on title screen
 	if (InLevel.is_room("title") or InLevel.is_room("highscores")):
 
 		if (global.is_tunnel_man): global.plife = 2
 		else: global.plife = 4
 	
-func cap_hud_values():
+func cap_hud_values() -> void:
 	if (global.plife > 99): global.plife = 99
 	if (global.bombs > 99): global.bombs = 99
 	if (global.rope > 99): global.rope = 99
 	
-func spawn_cape():
+func spawn_cape() -> void:
 	if (global.has_cape and not gml.instance_exists("cape")): gml.instance_create(position.x, position.y, Objects.cape)
 
 	if (gml.instance_exists("cape")):
 		var cape = gml.get_instance("cape") #---[FLAG] may have to change this for multiplayer
 		if (cape.open): fall_timer = 0
 
-func handle_kapala():
+func handle_kapala() -> void:
 	# kapala
 	if (red_color > 0):
 
@@ -378,13 +349,13 @@ func handle_kapala():
 
 	else: red_color = 0
 
-func handle_bomb_arrows():
+func handle_bomb_arrows() -> void:
 	if (hold_arrow == ARROW_BOMB):
 
 		if (bomb_arrow_counter > 0): bomb_arrow_counter -= 1
 		else:
 		
-			gml.instance_create(position.x, position.y, explosion)
+			gml.instance_create(position.x, position.y, Objects.explosion)
 			if (global.graphics_high):
 			
 				MiscScripts.scr_create_flame(position.x, position.y, 3)
@@ -397,7 +368,7 @@ func handle_bomb_arrows():
 		
 			InLevel.scr_shopkeeper_anger(2, self)
 	
-func exit_game_from_title():
+func exit_game_from_title() -> void:
 	# exit game from title screen
 	if (InLevel.is_room("title") and state == CLIMBING and position.y < 32):
 
@@ -407,10 +378,10 @@ func exit_game_from_title():
 			hold_item = null
 			pickup_item_type = ""
 		
-		gml.instance_create(position.x, position.y, p_dummy5)
+		gml.instance_create(position.x, position.y, Objects.p_dummy5)
 		gml.instance_destroy(self)
 
-func hide_player_on_death():
+func hide_player_on_death() -> void:
 	# instead of destroying the player instance when dead, we occasionally make him disappear
 	# i.e. being eaten by plant
 	if (dead and not visible):
@@ -421,7 +392,7 @@ func hide_player_on_death():
 		my_grav = 0
 		bounced = true
 	
-func find_nearest_light_source():
+func find_nearest_light_source() -> void:
 	# find distance to nearest light source, used for dark rooms
 	# aka longest variable name ever
 	dist_to_nearest_light_source = 999
@@ -498,7 +469,7 @@ func find_nearest_light_source():
 		if (gml.distance_to_object(source, self) < dist_to_nearest_light_source):
 			dist_to_nearest_light_source = gml.distance_to_object(source, self)
 	
-func handle_edge_leaning():
+func handle_edge_leaning() -> void:
 	# WHOA
 	if (sprite_index == 'whoa_left' or sprite_index == 'damsel_whoa_l' or sprite_index == 'tunnel_whoa_l'):
 
@@ -523,11 +494,11 @@ func handle_edge_leaning():
 
 	else: whoa_timer = whoa_timer_max
 
-func handle_firing():
+func handle_firing() -> void:
 	# FIRING
 	if (firing > 0): firing -= 1
 
-func create_water_splash():
+func create_water_splash() -> void:
 	# WATER
 	if (gml.collision_point(position.x, position.y, 'water_swim', -1, -1)):
 
@@ -537,14 +508,14 @@ func create_water_splash():
 			swimming = true
 			Audio.play_sound(global.snd_splash)
 
-func create_burn():
+func create_burn() -> void:
 	# BURNING
 	if (burning > 0):
 
 		if (randi_range(1,5) == 1): gml.instance_create(position.x-8+randi_range(4,12), position.y-8+randi_range(4,12), Objects.burn)
 		burning -= 1
 
-func kill_player_upon_touching_lava():
+func kill_player_upon_touching_lava() -> void:
 	# LAVA
 	if (gml.collision_point(position.x, position.y+6, 'lava', 0, 0)):
 
@@ -563,13 +534,13 @@ func kill_player_upon_touching_lava():
 		burning = 100
 		depth = 999
 
-func set_jetpack_fuel():
+func set_jetpack_fuel() -> void:
 	# JETPACK
 	if (global.has_jetpack and platform_character_is(ON_GROUND)):
 
 		jetpack_fuel = 50
 
-func fall_off_bottom_of_screen():
+func fall_off_bottom_of_screen() -> void:
 	# fall off bottom of screen
 	if (position.y > gml.room_height + 16 and not dead):
 
@@ -590,7 +561,7 @@ func fall_off_bottom_of_screen():
 		Audio.play_sound(global.snd_thud)
 		Audio.play_sound(global.snd_die)
 
-func handle_player_active():
+func handle_player_active() -> void:
 	if (active):
 
 		if (stun_timer > 0 and (sprite_index == 'stun_l' or sprite_index == 'damsel_stun_l' or sprite_index == 'tunnel_stun_l')):
@@ -677,7 +648,7 @@ func handle_player_active():
 		
 			state = STANDING
 
-func handle_player_dead_or_stunned():
+func handle_player_dead_or_stunned() -> void:
 	# if (dead or stunned):
 	if (dead or stunned):
 
@@ -749,7 +720,7 @@ func handle_player_dead_or_stunned():
 		
 		else: view_count = 0
 
-func step_function_2():
+func step_function_2() -> void:
 #Action
 	check_attack_button_on_death()
 	check_bomb_pressed()
@@ -770,23 +741,23 @@ func step_function_2():
 	handle_shop_behavior() #--- Purchasing and games etc. (different shop types)
 	handle_bow()
 
-func check_attack_button_on_death():
+func check_attack_button_on_death() -> void:
 	if (dead):
 		k_attack_pressed = ControlScripts.check_attack_pressed()
 	
-func check_bomb_pressed():
+func check_bomb_pressed() -> void:
 	if (global.plife > 0): k_bomb_pressed = ControlScripts.check_bomb_pressed()
 	else: k_bomb_pressed = false
 	
-func check_rope_pressed():
+func check_rope_pressed() -> void:
 	if (global.plife > 0): k_rope_pressed = ControlScripts.check_rope_pressed()
 	else: k_rope_pressed = false
 	
-func check_pay_pressed():
+func check_pay_pressed() -> void:
 	k_pay_pressed = ControlScripts.check_pay_pressed()
 	# k_flare_pressed = check_flare_pressed()
 	
-func start_weapon_animation():
+func start_weapon_animation() -> void:
 	if ((sprite_index == "attack_left" or sprite_index == "damsel_attack_l" or sprite_index == "tunnel_attack_l") and facing == LEFT and image_index > 4 and gml.instance_number('whip') == 0):
 
 		if (hold_item):
@@ -851,7 +822,7 @@ func start_weapon_animation():
 				obj.sprite_index = "whip_right"
 				Audio.play_sound(global.snd_whip)
 	
-func start_weapon_pre_animation():
+func start_weapon_pre_animation() -> void:
 	if (hold_item):
 
 		if (hold_item.type == "machete"):
@@ -904,7 +875,7 @@ func start_weapon_pre_animation():
 		var obj = gml.instance_create(position.x-16, position.y, Objects.whip_pre)
 		obj.sprite_index = "whip_pre_r"
 	
-func delete_whip_instances_when_not_whipping():
+func delete_whip_instances_when_not_whipping() -> void:
 	if (not whipping):
 
 		var all_whips = gml.get_all_instances("whip")
@@ -913,7 +884,7 @@ func delete_whip_instances_when_not_whipping():
 		var all_whip_pres = gml.get_all_instances("whip_pre")
 		for whip_pre_instance in all_whip_pres: gml.instance_destroy(whip_pre_instance)
 	
-func handle_item_stealing():
+func handle_item_stealing() -> void:
 	#if (hold_item > 0): #--- adjusting this line
 	if hold_item != null:
 
@@ -933,7 +904,7 @@ func handle_item_stealing():
 		
 			CharacterScripts.scr_steal_item(x_vel, y_vel, self)
 	
-func handle_chest_opening():
+func handle_chest_opening() -> void:
 	# open chest
 	if (k_up and k_attack_pressed and gml.collision_point(position.x, position.y, "chest", 0, 0)):
 
@@ -981,7 +952,7 @@ func handle_chest_opening():
 			
 			k_attack_pressed = false
 	
-func handle_crate_opening():
+func handle_crate_opening() -> void:
 	# open crate
 	if (k_up and k_attack_pressed and gml.collision_point(position.x, position.y, "crate", 0, 0)):
 		var obj
@@ -1021,7 +992,7 @@ func handle_crate_opening():
 			
 		k_attack_pressed = false
 	
-func handle_flare_crate_opening():
+func handle_flare_crate_opening() -> void:
 	# open flare crate
 
 	if (k_up and k_attack_pressed and gml.collision_point(position.x, position.y, "flare_crate", 0, 0)):
@@ -1044,7 +1015,7 @@ func handle_flare_crate_opening():
 		
 		k_attack_pressed = false
 	
-func start_game():
+func start_game() -> void:
 	# start game
 	#
 	if (not dead and
@@ -1126,7 +1097,7 @@ func start_game():
 		
 		Audio.play_sound(global.snd_steps)
 	
-func exit_level():
+func exit_level() -> void:
 	# exit level
 	#
 	if (not dead and
@@ -1267,7 +1238,7 @@ func exit_level():
 				monkey_instance.vine_counter = 20
 				monkey_instance.grab_counter = 60
 	
-func game_over():
+func game_over() -> void:
 	# Game Over
 	#
 	if ((ControlScripts.check_attack_pressed() or ControlScripts.check_start_pressed()) and dead):
@@ -1305,13 +1276,13 @@ func game_over():
 				gml.room_goto("highscores")
 
 
-func set_in_game_status():
+func set_in_game_status() -> void:
 	in_game = true
 	if (not InLevel.is_level()):
 
 		in_game = false
 	
-func bomb_rope_and_whipping_handling(): #--- Also handles picking up items and attacking with items
+func bomb_rope_and_whipping_handling() -> void: #--- Also handles picking up items and attacking with items
 	if (dead or stunned or not active):
 
 		# do nothing
@@ -1591,11 +1562,8 @@ func bomb_rope_and_whipping_handling(): #--- Also handles picking up items and a
 						elif (global.level_type == 1):
 						
 							if (global.cemetary and not global.ghost_exists):
-								var view_xview
-								var view_wview
-								var view_hview #----------------- [FLAG] change these to match camera
-								if (self.position.x > gml.room_width / 2): gml.instance_create(view_xview[0]+view_wview[0]+8, view_yview[0]+floor(view_hview[0] / 2), "ghost")
-								else: gml.instance_create(view_xview[0]-32,  view_yview[0]+floor(view_hview[0] / 2), "ghost")
+								if (self.position.x > gml.room_width / 2): gml.instance_create(gml.view_xview+gml.view_wview+8, gml.view_yview+floor(gml.view_hview / 2), "ghost")
+								else: gml.instance_create(gml.view_xview-32, gml.view_yview+floor(gml.view_hview / 2), Objects.ghost)
 								global.ghost_exists = true
 							
 							var all_trap_blocks = gml.get_all_instances("trap_block")
@@ -1720,7 +1688,7 @@ func bomb_rope_and_whipping_handling(): #--- Also handles picking up items and a
 #
 	#*/
 	
-func handle_shop_behavior(): #--- Purchasing and games etc. (different shop types)
+func handle_shop_behavior() -> void: #--- Purchasing and games etc. (different shop types)
 	if (InLevel.is_level() and active and k_pay_pressed and not dead and not stunned):
 
 		if (InLevel.is_in_shop(position.x, position.y) and gml.instance_exists("shopkeeper")):
@@ -1824,7 +1792,7 @@ func handle_shop_behavior(): #--- Purchasing and games etc. (different shop type
 					global.message2 = "GET OUTTA HERE, DEADBEAT!"
 					global.message_timer = 200
 	
-func handle_bow():
+func handle_bow() -> void:
 	if (k_attack and bow_armed and bow_strength < 12):
 
 		bow_strength += 0.2
@@ -1841,7 +1809,7 @@ func handle_bow():
 
 		CharacterScripts.scr_fire_bow()
 
-func step_function_3():
+func step_function_3() -> void:
 	#Hurt
 	cap_negative_player_life()
 	create_blood_upon_very_low_player_life()
@@ -1849,16 +1817,16 @@ func step_function_3():
 	drop_item_when_dead_or_stunned()
 	handle_dead_or_stunned()
 
-func cap_negative_player_life():
+func cap_negative_player_life() -> void:
 	if (global.plife < -10000): global.plife = -10000
 	
-func create_blood_upon_very_low_player_life():
+func create_blood_upon_very_low_player_life() -> void:
 	if (global.plife < -99 and visible):
 
 		MiscScripts.scr_create_blood(position.x, position.y, 3, self)
 		visible = false
 
-func handle_damage_by_various_objects():
+func handle_damage_by_various_objects() -> void:
 	if (global.plife >= -99 and visible and sprite_index != "p_exit" and sprite_index != "damsel_exit" and sprite_index != "tunnel_exit"):
 
 		kill_upon_being_crushed()
@@ -1872,7 +1840,7 @@ func handle_damage_by_various_objects():
 		handle_hit_by_ceiling_trap()
 		handle_spike_collision()
 	
-func kill_upon_being_crushed():
+func kill_upon_being_crushed() -> void:
 	# crushed
 	if (gml.collision_point(position.x, position.y, "solid", 0, 0)):
 
@@ -1893,7 +1861,7 @@ func kill_upon_being_crushed():
 		
 		visible = false
 	
-func handle_hit_by_arrow():
+func handle_hit_by_arrow() -> void:
 	if (gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "arrow", 0, 0)):
 
 		var obj = gml.instance_nearest(position.x, position.y, 'arrow')
@@ -1915,15 +1883,15 @@ func handle_hit_by_arrow():
 			stunned = true
 			stun_timer = 20
 	
-func handle_hit_by_rock():
+func handle_hit_by_rock() -> void:
 	if (gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "rock", 0, 0)):
 
-		var obj = gml.instance_nearest(position.x, position.y, 'rock')
+		var obj = gml.instance_nearest(position.x, position.y, "rock")
 		if (obj and abs(obj.x_vel) > 4 and not obj.safe and not stunned and not dead):
 		
 			if (global.has_mitt and !hold_item):
 			
-				hold_item = rock
+				hold_item = gml.get_instance("rock") #--- this assuems there is only one rock in the level
 				hold_item.held = true
 				pickup_item_type = hold_item.type
 			
@@ -1942,7 +1910,7 @@ func handle_hit_by_rock():
 				stunned = true
 				stun_timer = 20
 	
-func handle_hit_by_laser():
+func handle_hit_by_laser() -> void:
 	if (gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "laser", 0, 0)):
 
 		var obj = gml.instance_nearest(position.x, position.y, 'laser')
@@ -1966,7 +1934,7 @@ func handle_hit_by_laser():
 			stunned = true
 			stun_timer = 20
 	
-func handle_hit_by_psychic_wave():
+func handle_hit_by_psychic_wave() -> void:
 	if (gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "psychic_wave", 0, 0) and not stunned and not dead):
 
 		var obj = gml.instance_nearest(position.x, position.y, 'psychic_wave')
@@ -1985,12 +1953,12 @@ func handle_hit_by_psychic_wave():
 			stunned = true
 			stun_timer = 40
 	
-func handle_hit_by_explosion():
+func handle_hit_by_explosion() -> void:
 	if (gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "explosion", 0, 0)):
 
 		global.plife -= 10
 		if (global.plife > 0 and InLevel.is_real_level()): global.misc_deaths[1] += 1
-		explosion = gml.instance_nearest(position.x, position.y, "explosion")
+		var explosion: GMObject = gml.instance_nearest(position.x, position.y, "explosion")
 		if (explosion.position.x < position.x): x_vel = randi_range(4,6)
 		else: x_vel = -randi_range(4,6)
 		y_vel = -6
@@ -2000,7 +1968,7 @@ func handle_hit_by_explosion():
 			
 		MiscScripts.scr_create_blood(position.x, position.y, 1, self)
 	
-func handle_hit_by_spears_left():
+func handle_hit_by_spears_left() -> void:
 	var obj = gml.collision_rectangle(position.x-6, position.y-6, position.x+6,  position.y+7, "spears_left", 0, 0) #instance_nearest(position.x, position.y, spears_left) ---[FLAG] doesn't seem to be used for anything but come back and check this
 	if (obj):
 
@@ -2019,7 +1987,7 @@ func handle_hit_by_spears_left():
 			
 			MiscScripts.scr_create_blood(position.x, position.y, 1, self)
 	
-func handle_hit_by_smash_trap():
+func handle_hit_by_smash_trap() -> void:
 	if (gml.collision_rectangle(position.x-6, position.y-6, position.x+6,  position.y+7, "smash_trap", 0, 0)):
 
 		if (global.plife > 0 and InLevel.is_real_level()): global.misc_deaths[8] += 1
@@ -2042,7 +2010,7 @@ func handle_hit_by_smash_trap():
 			hold_item.held = false
 			hold_item = null
 	
-func handle_hit_by_ceiling_trap():
+func handle_hit_by_ceiling_trap() -> void:
 	var obj = gml.collision_rectangle(position.x-2, position.y-9, position.x+2,  position.y-7, "ceiling_trap", 0, 0) #instance_nearest(position.x, position.y-8, ceiling_trap)
 	if (obj):
 
@@ -2053,7 +2021,7 @@ func handle_hit_by_ceiling_trap():
 			global.plife -= 10
 			MiscScripts.scr_create_blood(position.x, position.y, 1, self)
 	
-func handle_spike_collision():
+func handle_spike_collision() -> void:
 	col_spikes = false
 	if (gml.collision_rectangle(position.x-4, position.y-4, position.x+4,  position.y+8, "spikes", 0, 0)): col_spikes = true
 
@@ -2085,7 +2053,7 @@ func handle_spike_collision():
 
 #elif (not dead): my_grav = 0.6
 	
-func drop_item_when_dead_or_stunned():
+func drop_item_when_dead_or_stunned() -> void:
 	#if ((dead or stunned) and hold_item != 0):
 	if ((dead or stunned) and hold_item != null):
 
@@ -2110,7 +2078,7 @@ func drop_item_when_dead_or_stunned():
 		
 		else: CharacterScripts.scr_hold_item(pickup_item_type)
 	
-func handle_dead_or_stunned():
+func handle_dead_or_stunned() -> void:
 	if (dead or stunned):
 
 		if (gml.instance_exists("parachute")):
@@ -2214,15 +2182,15 @@ func handle_dead_or_stunned():
 				global.plife -= 1
 				wall_hurt -= 1
 	
-func step_function_4():
+func step_function_4() -> void:
 	# DIED
 	decrease_dead_counter()
 	handle_ankh_revival()
 
-func decrease_dead_counter():
+func decrease_dead_counter() -> void:
 	if (dead and dead_counter > 0): dead_counter -= 1
 	
-func handle_ankh_revival():
+func handle_ankh_revival() -> void:
 	if (InLevel.is_level() or InLevel.is_room("sun") or InLevel.is_room("moon") or InLevel.is_room("stars")):
 
 		if (not dead and global.plife < 1):
@@ -2304,15 +2272,15 @@ func handle_ankh_revival():
 		
 			Audio.stop_all_music()
 
-func step_function_5():
+func step_function_5() -> void:
 	cap_invincibility()
 	cap_blink()
 	  
-func cap_invincibility():
+func cap_invincibility() -> void:
 	if (not dead and invincible > 0):
 		invincible -= 1
 	
-func cap_blink():
+func cap_blink() -> void:
 	if (blink > 0):
 
 		blink_toggle *= -1
@@ -2333,7 +2301,7 @@ func cap_blink():
 #
 	#*/
 	
-func step_function_6():
+func step_function_6() -> void:
 	#Collect
 	set_money_value()
 	modify_collect_and_money_values()
@@ -2346,10 +2314,10 @@ func step_function_6():
 	increase_global_xmoney_value()
 				
 
-func set_money_value():
+func set_money_value() -> void:
 	money = global.money
 	
-func modify_collect_and_money_values():
+func modify_collect_and_money_values() -> void:
 	if (global.collect_counter == 0):
 
 		if (global.collect > 100):
@@ -2367,7 +2335,7 @@ func modify_collect_and_money_values():
 
 		global.collect_counter -= 1
 	
-func collect_arrow():
+func collect_arrow() -> void:
 	if (hold_item):
 
 		if (hold_item.type == "bow"):
@@ -2381,7 +2349,7 @@ func collect_arrow():
 					Audio.play_sound(global.snd_pickup)
 					gml.instance_destroy(obj)
 	
-func collect_treasure():
+func collect_treasure() -> void:
 	if (gml.collision_rectangle(position.x-8, position.y-8, position.x+8, position.y+8, "treasure", 0, 0) and not dead and not stunned):
 
 		var gem = gml.instance_nearest(position.x, position.y, "treasure")
@@ -2418,7 +2386,7 @@ func collect_treasure():
 
 			gml.instance_destroy(gem)
 	
-func collect_bomb_bag():
+func collect_bomb_bag() -> void:
 	if (gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "bomb_bag", 0, 0) and not dead and not stunned):
 
 		var obj = gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "bomb_bag", 0, 0)
@@ -2433,7 +2401,7 @@ func collect_bomb_bag():
 			global.message2 = ""
 			global.message_timer = 120
 	
-func collect_bomb_box():
+func collect_bomb_box() -> void:
 	if (gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "bomb_box", 0, 0) and not dead and not stunned):
 
 		var obj = gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "bomb_box", 0, 0)
@@ -2448,7 +2416,7 @@ func collect_bomb_box():
 			global.message2 = ""
 			global.message_timer = 120
 	
-func collect_rope_pile():
+func collect_rope_pile() -> void:
 	if (gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "rope_pile", 0, 0) and not dead and not stunned):
 
 		var obj = gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "rope_pile", 0, 0)
@@ -2463,7 +2431,7 @@ func collect_rope_pile():
 			global.message2 = ""
 			global.message_timer = 120
 	
-func collect_idol_and_damsel():
+func collect_idol_and_damsel() -> void:
 	if (gml.collision_point(position.x, position.y, "exit", 0, 0)):
 
 		#if (hold_item != 0):
@@ -2509,10 +2477,10 @@ func collect_idol_and_damsel():
 					
 					hold_item = null
 	
-func increase_global_xmoney_value():
+func increase_global_xmoney_value() -> void:
 	global.xmoney += global.money - money
 
-func character_create_event():
+func character_create_event() -> void:
 	#/*
 	#This script should be placed in the "Create Event" of the platform character.
 	#It sets the variables needed for the platform character.
@@ -2627,7 +2595,7 @@ func character_create_event():
 	# makes the object "active" (don't edit)
 	PlatformEngine.make_active(self)
 
-func character_step_event():
+func character_step_event() -> void:
 	
 	#/*
 	#This script should be placed in the step event for the platform character.
@@ -2679,7 +2647,7 @@ func character_step_event():
 	
 	k_jump_pressed = false
 
-func check_keys():
+func check_keys() -> void:
 	###################
 	# KEYS
 	###################
@@ -2764,7 +2732,7 @@ func check_keys():
 		k_attack_released = false
 		k_item_pressed = false
 
-func check_collisions():
+func check_collisions() -> void:
 	#####################
 	# Collisions
 	#####################
@@ -2793,7 +2761,7 @@ func check_collisions():
 	if (Collision.is_collision_water_top(1, self)): col_water_top = true
 	if (gml.collision_point(position.x, position.y+8, 'ice', 0, 0)): col_ice_bot = true
 	
-func check_run():
+func check_run() -> void:
 	if (ControlScripts.check_run()):
 
 		run_held = 100
@@ -2808,7 +2776,7 @@ func check_run():
 
 	if (not run_key or (not k_left and not k_right)): run_held = 0
 	
-func set_x_acceleration(): #--- Used for running left and right
+func set_x_acceleration() -> void: #--- Used for running left and right
 	# allows the character to run left and right
 	# if state!=DUCKING and state!=LOOKING_UP and state!=CLIMBING:
 	if (state != CLIMBING and state != HANGING):
@@ -2855,7 +2823,7 @@ func set_x_acceleration(): #--- Used for running left and right
 			facing = RIGHT
 			#if (platform_character_is(ON_GROUND) and abs(x_vel) > 0 and alarm[3] < 1): alarm[3] = floor(16/x_vel)
 	
-func handle_ladder_climbing():
+func handle_ladder_climbing() -> void:
 	#/******************************************
 #
 	  #LADDERS
@@ -2917,12 +2885,12 @@ func handle_ladder_climbing():
 
 		if (ladder_timer > 0): ladder_timer -= 1
 		
-func set_y_acceleration():
+func set_y_acceleration() -> void:
 	if (platform_character_is(IN_AIR) and state != HANGING):
 
 		y_acc += gravity_intensity
 		
-func handle_landing():
+func handle_landing() -> void:
 	# Player has landed
 	if ((col_bot or col_plat_bot) and platform_character_is(IN_AIR) and y_vel >= 0):
 
@@ -2940,7 +2908,7 @@ func handle_landing():
 		if not col_plat:
 			y_vel = 0
 			
-func handle_walking_off_ledge():
+func handle_walking_off_ledge() -> void:
 	# Player has just walked off of the edge of a solid
 	if (col_bot == false and (not col_plat_bot or col_plat) and platform_character_is(ON_GROUND)):
 
@@ -2949,19 +2917,19 @@ func handle_walking_off_ledge():
 		k_jumped = true
 		if (global.has_gloves): hang_count = 5
 		
-func handle_ceiling_bump():
+func handle_ceiling_bump() -> void:
 	if (col_top):
 
 		if (dead or stunned): y_vel = -y_vel * 0.8
 		elif (state == JUMPING): y_vel = abs(y_vel*0.3)
 		
-func handle_wall_collision():
+func handle_wall_collision() -> void:
 	if (col_left and facing == LEFT) or (col_right and facing == RIGHT):
 
 		if (dead or stunned): x_vel = -x_vel * 0.5
 		else: x_vel = 0
 		
-func end_jump_upon_button_release():
+func end_jump_upon_button_release() -> void:
 	#/******************************************
 #
 		#JUMPING
@@ -2979,7 +2947,7 @@ func end_jump_upon_button_release():
 			cape.open = false
 		k_jumped = false
 		
-func handle_jumping():
+func handle_jumping() -> void:
 	if (k_jump_pressed and gml.collision_point(position.x, position.y, 'web', 0, 0)):
 
 		var obj = gml.instance_place(position.x, position.y, "web", self)
@@ -3068,7 +3036,7 @@ func handle_jumping():
 
 	gravity_intensity = (float(jump_time)/float(jump_time_total)) * grav #--- putting these as float to not get 0
 	
-func handle_looking_up():
+func handle_looking_up() -> void:
 	if (k_up and platform_character_is(ON_GROUND) and not col_ladder):
 
 		looking = UP
@@ -3080,7 +3048,7 @@ func handle_looking_up():
 
 		state=STANDING
 		
-func initial_hanging_behavior():
+func initial_hanging_behavior() -> void:
 	#/******************************************
 #
 		#HANGING
@@ -3177,10 +3145,10 @@ func initial_hanging_behavior():
 	#
 		#*/
 
-func cap_hang_count():
+func cap_hang_count() -> void:
 	if (hang_count > 0): hang_count -= 1
 	
-func while_hanging_behavior():
+func while_hanging_behavior() -> void:
 	if (state == HANGING):
 
 		if (gml.instance_exists("cape")):
@@ -3227,7 +3195,7 @@ func while_hanging_behavior():
 
 		grav = grav_norm
 		
-func pressing_down_behavior():
+func pressing_down_behavior() -> void:
 	# pressing down while standing:
 	if (k_down and platform_character_is(ON_GROUND) and not whipping):
 
@@ -3269,28 +3237,28 @@ func pressing_down_behavior():
 				#the character can't move down because there is a solid in the way
 				state = RUNNING
 				
-func reset_to_standing_from_down():
+func reset_to_standing_from_down() -> void:
 	if (not k_down and state == DUCKING):
 
 		state = STANDING
 		x_vel = 0
 		x_acc = 0
-func reset_to_standing_from_running():
+func reset_to_standing_from_running() -> void:
 	if (x_vel == 0 and x_acc == 0 and state == RUNNING):
 
 		state = STANDING
 
-func set_running_state():
+func set_running_state() -> void:
 	if (x_acc != 0 and state == STANDING):
 
 		state = RUNNING
 
-func set_jumping_state():
+func set_jumping_state() -> void:
 	if (y_vel < 0 and platform_character_is(IN_AIR) and state != HANGING):
 
 		state = JUMPING
 		
-func set_falling_state():
+func set_falling_state() -> void:
 	if (y_vel > 0 and platform_character_is(IN_AIR) and state != HANGING):
 
 		state = FALLING
@@ -3298,7 +3266,7 @@ func set_falling_state():
 
 	else: Collision.set_collision_bounds(self, -5, -8, 5, 8)
 	
-func handle_ladder_climbing2():
+func handle_ladder_climbing2() -> void:
 	# CLIMB LADDER
 	var col_point_ladder = gml.collision_point(position.x, position.y, 'ladder', 0, 0) or gml.collision_point(position.x, position.y, 'ladder_top', 0, 0)
 
@@ -3370,7 +3338,7 @@ func handle_ladder_climbing2():
 #
 	#*/
 	
-func calculate_friction():
+func calculate_friction() -> void:
 	# Calculate horizontal/vertical friction
 	if (state == CLIMBING):
 
@@ -3475,7 +3443,7 @@ func calculate_friction():
 		x_fric = 0.98
 		y_fric = 1
 
-func running_and_duck_to_hang_behavior():
+func running_and_duck_to_hang_behavior() -> void:
 	# RUNNING
 
 	if (platform_character_is(ON_GROUND)):
@@ -3565,7 +3533,7 @@ func running_and_duck_to_hang_behavior():
 		y_acc = 0
 		grav = 0
 
-func apply_parachute_and_cape_friction():
+func apply_parachute_and_cape_friction() -> void:
 	# PARACHUTE AND CAPE
 	if (gml.instance_exists("parachute")):
 
@@ -3575,33 +3543,33 @@ func apply_parachute_and_cape_friction():
 		var cape = gml.get_instance("cape") #---[FLAG] may have to change this for multiplayer
 		if (cape.open): y_fric = 0.5
 
-func cap_push_timer():
+func cap_push_timer() -> void:
 	if (push_timer > 100): push_timer = 100
 
-func limit_acceleration():
+func limit_acceleration() -> void:
 	# limits the acceleration if it is too extreme:
 	if (x_acc > x_acc_limit): x_acc = x_acc_limit
 	elif (x_acc < -x_acc_limit): x_acc = -x_acc_limit
 	if (y_acc > y_acc_limit): y_acc = y_acc_limit
 	elif (y_acc < -y_acc_limit): y_acc = -y_acc_limit
 
-func apply_acceleration():
+func apply_acceleration() -> void:
 	# applies the acceleration
 	x_vel += x_acc
 	if (dead or stunned): y_vel += 0.6
 	else: y_vel += y_acc
 
-func nullify_acceleration_values():
+func nullify_acceleration_values() -> void:
 	# nullifies the acceleration
 	x_acc = 0
 	y_acc = 0
 
-func apply_friction():
+func apply_friction() -> void:
 	# applies the friction to the velocity, now that the velocity has been calculated
 	x_vel *= x_fric
 	y_vel *= y_fric
 
-func apply_ball_and_chain():
+func apply_ball_and_chain() -> void:
 	# apply ball and chain
 	if (gml.instance_exists("ball")):
 		var ball = gml.get_instance("ball")
@@ -3631,7 +3599,7 @@ func apply_ball_and_chain():
 			
 			if (y_vel < 0 and ball_instance.position.y > position.y and abs(ball_instance.position.y-position.y) > 24): y_vel = 0
 
-func limit_velocity():
+func limit_velocity() -> void:
 	# apply the limits since the velocity may be too extreme
 	if (not dead and not stunned):
 
@@ -3641,14 +3609,14 @@ func limit_velocity():
 	if (y_vel > y_vel_limit): y_vel = y_vel_limit
 	elif (y_vel < -y_vel_limit): y_vel = -y_vel_limit
 
-func set_near_zero_velocity_and_acceleration_to_zero():
+func set_near_zero_velocity_and_acceleration_to_zero() -> void:
 	# approximates the "active" variables
 	if Collision.approximately_zero(x_vel): x_vel=0
 	if Collision.approximately_zero(y_vel): y_vel=0
 	if Collision.approximately_zero(x_acc): x_acc=0
 	if Collision.approximately_zero(y_acc): y_acc=0
 
-func slope_movement_preparation():
+func slope_movement_preparation() -> void:
 	# prepares the character to move up a hill
 	# we need to use the "slope_y_prev" variable later to know the "true" position.y previous value
 	# keep this condition the same
@@ -3663,7 +3631,7 @@ func slope_movement_preparation():
 	else:
 		slope_change_in_y=0
 
-func handle_basic_movement():
+func handle_basic_movement() -> void:
 	# moves the character, and balances out the effects caused by other processes
 	# keep this condition the same
 	if max_slope*abs(x_vel)>0 and platform_character_is(ON_GROUND):
@@ -3695,7 +3663,7 @@ func handle_basic_movement():
 	  # we simply move x_vel and y_vel while in the air or on a ladder:
 		move_to(x_vel,y_vel)
 
-func move_character_down_slope():
+func move_character_down_slope() -> void:
 	# move the character downhill if possible:
 	# we need to multiply max_down_slope by the absolute value of x_vel since the character normally runs at an x_vel larger than 1
 	if not col_bot and max_down_slope>0 and x_vel_integer!=0 and platform_character_is(ON_GROUND):
@@ -3708,16 +3676,16 @@ func move_character_down_slope():
 				break 				  #out of this loop
 		position.y=up_y_prev
 
-func get_character_sprite_index():
+func get_character_sprite_index() -> void:
 	#figures out what the sprite index of the character should be
 	character_sprite()
 
-func set_prev_and_prev_prev_states():
+func set_prev_and_prev_prev_states() -> void:
 	#sets the previous state and the previously previous state
 	state_prev_prev = state_prev
 	state_prev = state
 
-func set_image_speed():
+func set_image_speed() -> void:
 	#calculates the image_speed based on the character's velocity
 	if (state == RUNNING or state == DUCKING or state == LOOKING_UP):
 
@@ -3741,7 +3709,7 @@ func set_image_speed():
 	#limit the image_speed at 1 so the animation always looks good
 	if (image_speed > 1): image_speed = 1
 
-func alarm_0():
+func alarm_0() -> void:
 
 	
 	
@@ -3810,7 +3778,7 @@ func alarm_0():
 		global.message2 = ""
 		global.message_timer = 200
 
-func alarm_1():
+func alarm_1() -> void:
 	if (InLevel.is_room("tutorial")):
 
 		# do nothing
@@ -3865,13 +3833,13 @@ func alarm_2():
 	else: Audio.play_sound(global.snd_climb2)
 	climb_snd_toggle = not climb_snd_toggle
 			
-func alarm_3():
+func alarm_3() -> void:
 	if (walk_snd_toggle): Audio.play_sound(global.snd_step1)
 	else: Audio.play_sound(global.snd_step2)
 	walk_snd_toggle = not walk_snd_toggle
 			
 
-func alarm_4():
+func alarm_4() -> void:
 	if (global.lake):
 
 		global.message = "YOU HEAR RUSHING WATER..."
@@ -3884,19 +3852,19 @@ func alarm_4():
 		global.message2 = ""
 		global.message_timer = 200
 			
-func alarm_10():
+func alarm_10() -> void:
 	var obj = gml.instance_create(position.x+randi_range(0,3)-randi_range(0,3), position.y+randi_range(0,3)-randi_range(0,3), "flare_spark")
 	obj.y_vel = randi_range(1,3)
 	obj.x_vel = randi_range(0,3) - randi_range(0,3)
 	Audio.play_sound(global.snd_jetpack)
 			
-func alarm_11():
+func alarm_11() -> void:
 	if (hold_arrow > 0):
 
 		hold_arrow_toggle = not hold_arrow_toggle
 		alarm_11_countdown.start(1)
 			
-func platform_character_is(character_trait): #--- putting this here instead of PlatformEngine to make things easier
+func platform_character_is(character_trait) -> int: #--- putting this here instead of PlatformEngine to make things easier
 	#/*
 	#Returns whether a GENERAL trait about a character is true.
 	#Only the platform character should run this script. 
@@ -3931,7 +3899,7 @@ func platform_character_is(character_trait): #--- putting this here instead of P
 			return 1
 	return 0
 
-func character_sprite():
+func character_sprite() -> void:
 	#
 	# character_sprite()
 	#
@@ -4126,7 +4094,7 @@ func character_sprite():
 		if (state == DUCKTOHANG):
 			sprite_index = "duck_to_hang_l"
 
-func move_to(x_vel, y_vel):
+func move_to(x_vel, y_vel) -> void:
 	#/*
 	#Any object that has the collision bounds set can use this script.
 	#(To set the collision bounds, call the script "set_collision_bounds.")
@@ -4256,7 +4224,7 @@ func move_to(x_vel, y_vel):
 		#if mt_y_prev == position.y:
 			#animated_sprite_node.position.y = position.y
 #---------------------------------------------------------------------------------------- Test functions
-func character_size_test():
+func character_size_test() -> void:
 	var all_test_rects = get_tree().get_nodes_in_group('test_size')
 	for test_rect in all_test_rects:
 		test_rect.queue_free()
@@ -4271,14 +4239,14 @@ func character_size_test():
 
 var timer_started = false
 var time = 1
-func every_second_timer():
+func every_second_timer() -> void:
 	if timer_started == false:
 		timer_started = true
 		await get_tree().create_timer(1 / 30).timeout
 		time += 1
 		timer_started = false
 
-func end_step():
+func end_step() -> void:
 	if (hold_item):
 
 		if (state == CLIMBING and (global.has_jetpack or global.has_cape)): hold_item.depth = 51
@@ -4289,10 +4257,10 @@ func end_step():
 
 		state = STANDING
 
-func draw():
+func draw() -> void:
 	character_draw_event()
 	
-func key_backspace_pressed(): #--- debug function that is commented out
+func key_backspace_pressed() -> void: #--- debug function that is commented out
 	# debug
 
 	#/*
@@ -4304,7 +4272,7 @@ func key_backspace_pressed(): #--- debug function that is commented out
 	#*/
 	pass
 
-func key_enter_pressed(): #--- debug function that is commented out
+func key_enter_pressed() -> void: #--- debug function that is commented out
 	# DEBUG
 
 	#/*
@@ -4320,7 +4288,7 @@ func key_enter_pressed(): #--- debug function that is commented out
 	# global.money += 100000
 	pass
 
-func character_draw_event():
+func character_draw_event() -> void:
 	#/*
 	#This event should be placed in the draw event of the platform character.
 	#*/
@@ -4384,7 +4352,7 @@ func character_draw_event():
 	#*/
 
 
-func animation_end():
+func animation_end() -> void:
 	#--- 'Animation end' event
 	var  obj
 	
@@ -4609,7 +4577,7 @@ func animation_end():
 		
 		global.clean_solids = true
 
-func scr_use_item(): #--- only called by player1 so including it here for convenience
+func scr_use_item() -> void: #--- only called by player1 so including it here for convenience
 	# DY: 
 	# DY:  scr_use_item()
 	# DY: 
@@ -5301,5 +5269,5 @@ func scr_use_item(): #--- only called by player1 so including it here for conven
 	if (hold_item == null): pickup_item_type = ""
 
 
-func collision_with_blood(): #---[FLAG] have to implement
+func collision_with_blood() -> void: #---[FLAG] have to implement
 	pass
