@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b8g70geq8alqq"]
+[gd_scene load_steps=11 format=3 uid="uid://b8g70geq8alqq"]
 
 [ext_resource type="Script" uid="uid://bpwfpbixw4l5b" path="res://scenes/room.gd" id="1_36trf"]
 [ext_resource type="PackedScene" uid="uid://b2jlcu453ynaf" path="res://bg_elements.tscn" id="2_85yof"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b8sip2nv63phc" path="res://FPSCounter.tscn" id="6_jn645"]
 [ext_resource type="PackedScene" uid="uid://btcxwyjni2p86" path="res://resources/view.tscn" id="8_7dqbv"]
 [ext_resource type="PackedScene" uid="uid://df3di5vguofi1" path="res://scenes/debug/debug_buttons.tscn" id="9_ybpoa"]
+[ext_resource type="PackedScene" uid="uid://dfkrem72v8ms8" path="res://scenes/hud.tscn" id="10_qtoah"]
 
 [node name="Room" type="Node" groups=["base_room"]]
 script = ExtResource("1_36trf")
@@ -43,3 +44,5 @@ color = Color(0.211765, 1, 1, 0.407843)
 
 [node name="DebugButtons" parent="." instance=ExtResource("9_ybpoa")]
 visible = false
+
+[node name="HUD" parent="." instance=ExtResource("10_qtoah")]

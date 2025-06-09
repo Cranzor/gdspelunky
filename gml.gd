@@ -476,27 +476,28 @@ func draw_text(x, y, string: String, name: String, node) -> void:
 
 
 func draw_sprite(sprite: String, subimg: int, x, y, node, is_object_sprite: bool = false): #--- appears to typically be used for sprites with only 1 animation frame
-	if subimg == -1: #--- incrementing sprite frame by one if -1 is passed in
-		if sprite not in sprites_to_draw_current_frame:
-			sprites_to_draw_current_frame[sprite] = subimg
-		subimg = sprites_to_draw_current_frame[sprite] + 1
-		sprites_to_draw_current_frame[sprite] = subimg
-	
-	var folder_path = Sprites.sprite_database[sprite]["folder_path"]
-	var file_name = sprite + "_" + str(subimg) + ".png"
-	var file_path = folder_path + "/" + file_name
-	var files_in_directory = ResourceLoader.list_directory(folder_path)
-
-	if file_name not in files_in_directory: #--- resetting sprite to frame 0 if it reaches its maximum
-		subimg = 0
-		sprites_to_draw_current_frame[sprite] = subimg
-		file_path = folder_path + "/" + sprite + "_" + str(subimg) + ".png"
-	var texture = load(file_path)
-	var position = Vector2(x, y)
-	if texture not in node.textures: #--- this keeps the textures loaded so that they appear properly when drawing
-		node.textures.append(texture)
-	var sprite_info = [texture, position, sprite, draw_to_surface]
-	node.sprites_to_draw.append(sprite_info)
+	#if subimg == -1: #--- incrementing sprite frame by one if -1 is passed in
+		#if sprite not in sprites_to_draw_current_frame:
+			#sprites_to_draw_current_frame[sprite] = subimg
+		#subimg = sprites_to_draw_current_frame[sprite] + 1
+		#sprites_to_draw_current_frame[sprite] = subimg
+	#
+	#var folder_path = Sprites.sprite_database[sprite]["folder_path"]
+	#var file_name = sprite + "_" + str(subimg) + ".png"
+	#var file_path = folder_path + "/" + file_name
+	#var files_in_directory = ResourceLoader.list_directory(folder_path)
+#
+	#if file_name not in files_in_directory: #--- resetting sprite to frame 0 if it reaches its maximum
+		#subimg = 0
+		#sprites_to_draw_current_frame[sprite] = subimg
+		#file_path = folder_path + "/" + sprite + "_" + str(subimg) + ".png"
+	#var texture = load(file_path)
+	#var position = Vector2(x, y)
+	#if texture not in node.textures: #--- this keeps the textures loaded so that they appear properly when drawing
+		#node.textures.append(texture)
+	#var sprite_info = [texture, position, sprite, draw_to_surface]
+	#node.sprites_to_draw.append(sprite_info)
+	pass
 
 
 func draw_surface(id, x, y) -> void:

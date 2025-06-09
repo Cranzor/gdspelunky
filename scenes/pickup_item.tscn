@@ -1,0 +1,222 @@
+[gd_scene load_steps=34 format=3 uid="uid://cilypuxykq1h4"]
+
+[ext_resource type="Texture2D" uid="uid://ds86rvtkhavdb" path="res://sprites/items/weapons/arrow_right/arrow_right_0.png" id="2_du5dg"]
+[ext_resource type="Texture2D" uid="uid://b8hi7oahspowt" path="res://sprites/items/saleable/bow_disp/bow_disp_0.png" id="3_uh6jf"]
+[ext_resource type="Texture2D" uid="uid://cu45ltspw2ljl" path="res://sprites/items/weapons/fish_bone/fish_bone_0.png" id="4_hnkii"]
+[ext_resource type="Texture2D" uid="uid://xl22nkdn84is" path="res://sprites/other/intro/flare/flare_0.png" id="5_ygl1u"]
+[ext_resource type="Texture2D" uid="uid://b35llggffeeax" path="res://sprites/other/intro/flare/flare_1.png" id="6_uf7cm"]
+[ext_resource type="Texture2D" uid="uid://cx8s88xgpqfxc" path="res://sprites/items/weapons/rock/rock_0.png" id="7_62egj"]
+[ext_resource type="Texture2D" uid="uid://bwrok2ssex31x" path="res://sprites/items/weapons/jar/jar_0.png" id="7_82ap8"]
+[ext_resource type="Texture2D" uid="uid://ch4r06icondn5" path="res://sprites/items/saleable/key_right/key_right_0.png" id="8_p0lwu"]
+[ext_resource type="Texture2D" uid="uid://c3f23uo36bh21" path="res://sprites/items/saleable/machete_right/machete_right_0.png" id="9_67yok"]
+[ext_resource type="Texture2D" uid="uid://x8r8woy2dp5h" path="res://sprites/items/saleable/mattock_right/mattock_right_0.png" id="10_0fr8n"]
+[ext_resource type="Texture2D" uid="uid://w2c5cu4n8unw" path="res://sprites/items/weapons/mattock_head/mattock_head_0.png" id="11_0ca2d"]
+[ext_resource type="Texture2D" uid="uid://408ptjaqix8d" path="res://sprites/items/saleable/pistol_right/pistol_right_0.png" id="12_aj367"]
+[ext_resource type="Texture2D" uid="uid://cfee8247y1cls" path="res://sprites/items/saleable/sceptre_right/sceptre_right_0.png" id="14_x412v"]
+[ext_resource type="Texture2D" uid="uid://c0adx0lcg4d0c" path="res://sprites/items/weapons/shotgun_right/shotgun_right_0.png" id="15_np54e"]
+[ext_resource type="Texture2D" uid="uid://cr2ia1tfwpsqr" path="res://sprites/items/weapons/skull/skull_0.png" id="16_xgqtl"]
+[ext_resource type="Texture2D" uid="uid://diai2vm8oc2rt" path="res://sprites/items/saleable/teleporter/teleporter_0.png" id="17_fuswr"]
+[ext_resource type="Texture2D" uid="uid://bhgf7uwjrjdd3" path="res://sprites/items/saleable/teleporter/teleporter_1.png" id="18_kyesh"]
+[ext_resource type="Texture2D" uid="uid://dx0vwtcukmobr" path="res://sprites/items/saleable/teleporter/teleporter_2.png" id="19_177fc"]
+[ext_resource type="Texture2D" uid="uid://ckd7a8bvtulvn" path="res://sprites/items/saleable/teleporter/teleporter_3.png" id="20_p6omy"]
+[ext_resource type="Texture2D" uid="uid://cyovdl21ou0ow" path="res://sprites/items/saleable/teleporter/teleporter_4.png" id="21_ybauk"]
+[ext_resource type="Texture2D" uid="uid://npcorssxtwnm" path="res://sprites/items/saleable/teleporter/teleporter_5.png" id="22_wpybl"]
+[ext_resource type="Texture2D" uid="uid://61njxn74fak3" path="res://sprites/items/saleable/teleporter/teleporter_6.png" id="23_nh1or"]
+[ext_resource type="Texture2D" uid="uid://brtet3a4g2vc7" path="res://sprites/items/saleable/teleporter/teleporter_7.png" id="24_2o4yk"]
+[ext_resource type="Texture2D" uid="uid://dm213b43r1xov" path="res://sprites/items/saleable/teleporter/teleporter_8.png" id="25_wfhtt"]
+[ext_resource type="Texture2D" uid="uid://cirtulj63t1df" path="res://sprites/items/saleable/teleporter/teleporter_9.png" id="26_ose83"]
+[ext_resource type="Texture2D" uid="uid://dxfh5l85qsxrs" path="res://sprites/items/saleable/teleporter/teleporter_10.png" id="27_ton8n"]
+[ext_resource type="Texture2D" uid="uid://bacswfkx4ssma" path="res://sprites/items/saleable/teleporter/teleporter_11.png" id="28_br6u0"]
+[ext_resource type="Texture2D" uid="uid://lnx3i1vesvxy" path="res://sprites/items/saleable/teleporter/teleporter_12.png" id="29_7wpw7"]
+[ext_resource type="Texture2D" uid="uid://y8h46rip6mvd" path="res://sprites/items/saleable/teleporter/teleporter_13.png" id="30_gu4bo"]
+[ext_resource type="Texture2D" uid="uid://bkrcxgtew5bvd" path="res://sprites/items/saleable/teleporter/teleporter_14.png" id="31_3jh7u"]
+[ext_resource type="Texture2D" uid="uid://dmwaal5w24yg0" path="res://sprites/items/saleable/teleporter/teleporter_15.png" id="32_vmrq6"]
+[ext_resource type="Texture2D" uid="uid://b75oruft58io1" path="res://sprites/items/saleable/web_cannon_r/web_cannon_r_0.png" id="33_p0dr1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jvkj8"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_du5dg")
+}],
+"loop": true,
+"name": &"arrow",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_uh6jf")
+}],
+"loop": true,
+"name": &"bow",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_hnkii")
+}],
+"loop": true,
+"name": &"fish_bone",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_ygl1u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_uf7cm")
+}],
+"loop": true,
+"name": &"flare",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_82ap8")
+}],
+"loop": true,
+"name": &"jar",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_p0lwu")
+}],
+"loop": true,
+"name": &"key",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_67yok")
+}],
+"loop": true,
+"name": &"machete",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_0fr8n")
+}],
+"loop": true,
+"name": &"mattock",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_0ca2d")
+}],
+"loop": true,
+"name": &"mattock_head",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_aj367")
+}],
+"loop": true,
+"name": &"pistol",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_62egj")
+}],
+"loop": true,
+"name": &"rock",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_x412v")
+}],
+"loop": true,
+"name": &"sceptre",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_np54e")
+}],
+"loop": true,
+"name": &"shotgun",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_xgqtl")
+}],
+"loop": true,
+"name": &"skull",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_fuswr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_kyesh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_177fc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_p6omy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_ybauk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_wpybl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_nh1or")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_2o4yk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_wfhtt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_ose83")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_ton8n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_br6u0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_7wpw7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_gu4bo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_3jh7u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_vmrq6")
+}],
+"loop": true,
+"name": &"teleporter",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_p0dr1")
+}],
+"loop": true,
+"name": &"web_cannon",
+"speed": 30.0
+}]
+
+[node name="PickupItem" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_jvkj8")
+animation = &"arrow"
+frame_progress = 0.77528
+centered = false
+
+[connection signal="animation_changed" from="." to="." method="_on_animation_changed"]

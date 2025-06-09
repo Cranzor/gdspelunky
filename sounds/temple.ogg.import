@@ -12,8 +12,8 @@ dest_files=["res://.godot/imported/temple.ogg-1f593a93f2c2e7e83c2add93d182969b.o
 
 [params]
 
-loop=false
-loop_offset=0
-bpm=0
+loop=true
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4
