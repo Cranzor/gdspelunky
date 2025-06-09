@@ -2,10 +2,9 @@
 extends StaticBody2D
 class_name GMObject
 
-var object_database = ObjectDatabase.new()
-var sprites = Sprites.new()
+var object_database: ObjectDatabase = ObjectDatabase.new()
+var sprites: Sprites = Sprites.new()
 
-var collision_grid = CollisionGrid.new()
 var grid_position
 
 const SPRITE = preload("res://scenes/sprite.tscn")
@@ -17,53 +16,53 @@ var solid = false
 var parent
 
 var dir #---[FLAG] not exactly sure what this does
-var status #--- declaring this here for objects that use it but don't have drawn_sprite as their parent
+var status: int #--- declaring this here for objects that use it but don't have drawn_sprite as their parent
 var counter: int #--- same as above
-var type
-var my_grav
-var trigger
-var grav
-var dying
-var life
-var UP
-var DOWN
-var bloodless
-var IDLE
-var draw_status
-var highscore
-var safe
-var money_count
-var fade_out
-var fade_level
-var poop
-var money_diff
-var shake_toggle
-var t_money
-var t_time
-var t_kills
-var t_saves
-var scrolling
-var fade_in
-var scroll_start
-var y_delta #--- only used for those in enemy class besides Olmec
-var RECOVER
-var DEAD
-var bounce_counter
+var type: String
+var my_grav: float
+var trigger: bool
+var grav: float
+var dying: bool
+var life: int
+var UP: int
+var DOWN: int
+var bloodless: bool
+var IDLE: int
+var draw_status: int
+var highscore: bool
+var safe: bool
+var money_count: int
+var fade_out: bool
+var fade_level: float
+var poop: bool
+var money_diff: int
+var shake_toggle: bool
+var t_money: int
+var t_time: int
+var t_kills: int
+var t_saves: int
+var scrolling: bool
+var fade_in: bool
+var scroll_start: bool
+var y_delta: float #--- only used for those in enemy class besides Olmec
+var RECOVER: int
+var DEAD: int
+var bounce_counter: int
 var t: bool
 var x_vel_integer: int
 var y_vel_integer: int
 var final_x_vel = 0
 var final_y_vel = 0
-var k_down #--- moving this here from player1 script to make things easier since move_to references it
+var k_down: bool #--- moving this here from player1 script to make things easier since move_to references it
 var lb
 var tb
 var rb
 var bb
-var up
-var down
-var left
-var right
-var timer
+var up: bool
+var down: bool
+var left: bool
+var right: bool
+var timer: int
 
 #--- want access to these for all objects, so defining here
 var collision_bounds_offset_left_x
@@ -71,7 +70,7 @@ var collision_bounds_offset_top_y
 var collision_bounds_offset_right_x
 var collision_bounds_offset_bottom_y
 
-var moving_object = false
+var moving_object: bool = false
 
 @export_group("Sprite")
 @export var sprite_index_name: String
@@ -120,7 +119,7 @@ var other #--- this keyword appears to mistakenly be used in step events and not
 	get:
 		return z_index
 		
-var sprite_index:
+var sprite_index: String:
 	set(new_sprite):
 		#if new_sprite == "hang_left":
 			#print("oh")
@@ -133,7 +132,7 @@ var sprite_index:
 		return current_animation
 		#return sprite_index
 		
-var image_speed:
+var image_speed: float:
 	set(new_speed):
 		image_speed = new_speed
 		set_animation_speed_scale(new_speed)
@@ -142,7 +141,7 @@ var image_speed:
 		var current_speed_scale = get_animation_speed_scale()
 		return current_speed_scale
 		
-var image_index:
+var image_index: int:
 	set(new_index):
 		image_index = new_index
 		set_image_index(new_index)
@@ -151,7 +150,7 @@ var image_index:
 		var index = animated_sprite.get_frame()
 		return index
 
-var subimg:
+var subimg: int:
 	get:
 		return image_index
 
@@ -207,7 +206,7 @@ var sprite_xoffset: int #---[FLAG] have to account for this
 var sprite_yoffset: int #---[FLAG] have to account for this
 
 #---
-var direction #---#--- only caveman, hawkman, yeti, and fire_bow script use this
+var direction #--- only caveman, hawkman, yeti, and fire_bow script use this
 var speed: int #--- only caveman, hawkman, and yeti use this
 var owner_object: #--- only caveman, hawkman, and yeti use this
 	set(value):
@@ -218,18 +217,16 @@ var owner_object: #--- only caveman, hawkman, and yeti use this
 	get:
 		return owner_object
 #---
-var x_vel = 0:
+var x_vel: float:
 	set(value):
 		x_vel = value
 
-var y_vel = 0:
+var y_vel: float:
 	set(value):
 		y_vel = value
 		#assert(object_name != "push_block")
-var x_acc = 0
-var y_acc = 0
-
-var object_id = ''
+var x_acc: float
+var y_acc: float
 
 @export var object_size: Vector2 #--- created by me for collision purposes
 
@@ -250,7 +247,7 @@ func _draw() -> void:
 	draw_sprites_ext()
 
 
-func draw_sprites(): #--- for drawing additional sprites this object creates with draw_sprite
+func draw_sprites() -> void: #--- for drawing additional sprites this object creates with draw_sprite
 	if gml.changed_scene == false:
 		for sprite in sprites_to_draw:
 			var texture = sprite[0]
@@ -266,7 +263,7 @@ func draw_sprites(): #--- for drawing additional sprites this object creates wit
 	sprites_to_draw = []
 
 
-func draw_sprites_ext(): #--- for drawing additional sprites this object creates with draw_sprite_ext
+func draw_sprites_ext() -> void: #--- for drawing additional sprites this object creates with draw_sprite_ext
 	if gml.changed_scene == false:
 		for sprite in sprites_to_draw_ext:
 			var texture: Texture2D = sprite[0]
@@ -290,7 +287,7 @@ func draw_sprites_ext(): #--- for drawing additional sprites this object creates
 	sprites_to_draw_ext = []
 
 var surface_rectangle: Array
-func draw_rectangle():
+func draw_rectangle() -> void:
 	if !rectangle_to_draw.is_empty():
 		var rect2 = rectangle_to_draw[0]
 		var color = rectangle_to_draw[1]
@@ -307,7 +304,7 @@ func draw_rectangle():
 		rectangle_to_draw = surface_rectangle.duplicate()
 
 
-func draw_text_to_screen():
+func draw_text_to_screen() -> void:
 	for text in text_to_draw:
 		var font = text[0]
 		var pos = text[1]
@@ -323,10 +320,10 @@ func draw_text_to_screen():
 	text_to_draw = []
 
 
-func get_animated_sprite_2d():
+func get_animated_sprite_2d() -> AnimatedSprite2D:
 	return animated_sprite_node
 
-func set_animation(new_sprite, sprite_node):
+func set_animation(new_sprite, sprite_node) -> void:
 	var animated_sprite = sprite_node
 	#assert(animated_sprite.sprite_frames.has_animation(new_sprite))
 	if animated_sprite.sprite_frames.has_animation(new_sprite):
@@ -345,21 +342,21 @@ func get_animation():
 	else:
 		return null
 
-func set_animation_speed_scale(new_speed):
+func set_animation_speed_scale(new_speed) -> void:
 	var animated_sprite: AnimatedSprite2D = get_animated_sprite_2d()
 	if animated_sprite != null:
 		animated_sprite.speed_scale = new_speed
 
-func get_animation_speed_scale():
+func get_animation_speed_scale() -> float:
 	var animated_sprite: AnimatedSprite2D = get_animated_sprite_2d()
 	var current_speed_scale = animated_sprite.speed_scale
 	return current_speed_scale
 	
-func set_image_index(new_index):
+func set_image_index(new_index) -> void:
 	var animated_sprite = get_animated_sprite_2d()
 	animated_sprite.set_frame(new_index)
 
-func set_sprite_offset(new_sprite):
+func set_sprite_offset(new_sprite) -> void:
 	var animated_sprite = get_animated_sprite_2d()
 	sprite_offset = sprites.sprite_database[new_sprite]["origin"]
 	
@@ -373,8 +370,8 @@ var tick_end_position: Vector2
 var starting_animation
 var updated_animation
 
-var sprite_initialized = false
-func smooth_animated_sprite_movement(x_velocity, y_velocity):
+var sprite_initialized: bool = false
+func smooth_animated_sprite_movement(x_velocity, y_velocity) -> void:
 	var animated_sprite = get_animated_sprite_2d()
 	if animated_sprite != null:
 		initialize_sprite_for_smooth_movement(animated_sprite)
@@ -382,24 +379,24 @@ func smooth_animated_sprite_movement(x_velocity, y_velocity):
 
 #--- Setting up arguments here so they don't have to be called every time
 
-func initialize_sprite_for_smooth_movement(animated_sprite):
+func initialize_sprite_for_smooth_movement(animated_sprite) -> void:
 	if sprite_initialized == false:
 		if animated_sprite != null:
 			set_up_sprite_parent_node(animated_sprite)
 			sprite_initialized = true
 
-func update_sprite_position(animated_sprite):
+func update_sprite_position(animated_sprite) -> void:
 	animated_sprite.position.x += (x_velocity * 30) * get_process_delta_time()
 	animated_sprite.position.y += (y_velocity * 30) * get_process_delta_time()
 	
 	#animated_sprite.position.x += (x_velocity * int(get_physics_process_delta_time())) * get_process_delta_time()
 	#animated_sprite.position.y += (y_velocity * int(get_physics_process_delta_time())) * get_process_delta_time()
 
-func find_specific_child(node_name):
+func find_specific_child(node_name) -> Node:
 	var child = find_child(node_name, true, false)
 	return child
 
-func set_up_sprite_parent_node(animated_sprite):
+func set_up_sprite_parent_node(animated_sprite) -> void:
 	if animated_sprite != null:
 		var parent_node = Node.new()
 		add_child(parent_node)
@@ -410,7 +407,7 @@ func set_up_sprite_parent_node(animated_sprite):
 		
 		animated_sprite.position = position
 
-func smooth_motion_step_begin():
+func smooth_motion_step_begin() -> void:
 	if tick_end_position == position:
 		x_velocity = 0
 		y_velocity = 0
@@ -419,7 +416,7 @@ func smooth_motion_step_begin():
 	starting_animation = get_animation()
 	
 
-func smooth_motion_step_end():
+func smooth_motion_step_end() -> void:
 	tick_end_position = position
 	var position_diff = tick_end_position - tick_start_position
 	x_velocity = position_diff.x
@@ -437,7 +434,7 @@ func smooth_motion_step_end():
 		#gml.update_obj_list_collision(self)
 
 var test_prior_tick_position
-func handle_smooth_motion_values():
+func handle_smooth_motion_values() -> void:
 	if did_object_move():
 		initialize_prior_tick_position()
 		set_x_y_velocity()
@@ -454,7 +451,7 @@ func handle_smooth_motion_values():
 	update_prior_tick_position()
 
 #--------
-func object_setup():
+func object_setup() -> void:
 	var autoloads = ["globals", "screen", "music", "gamepad"]
 	disable_mode = CollisionObject2D.DISABLE_MODE_KEEP_ACTIVE
 	var object_database = object_database.object_database
@@ -492,14 +489,13 @@ func object_setup():
 		var sprite = get_animated_sprite_2d()
 		sprite.animation_looped.connect(callable)
 	
-	get_collision_grid_position()
 	last_collision_check_position = position
 	
-func run_create_function(obj):
+func run_create_function(obj) -> void:
 	if obj.has_method("create"):
 		obj.create()
 
-func groups_setup(object_entry):
+func groups_setup(object_entry) -> void:
 	var groups = object_entry['groups']
 	
 	for group in groups:
@@ -511,11 +507,11 @@ func groups_setup(object_entry):
 	add_to_group("gm_object")
 	add_to_group("active_gm_object")
 
-func depth_setup(object_entry):
+func depth_setup(object_entry) -> void:
 	var object_depth = object_entry["depth"]
 	depth = object_depth
 
-func bounding_box_setup(): #--- leaving here for now in case it's needed but planning to delete
+func bounding_box_setup() -> void: #--- leaving here for now in case it's needed but planning to delete
 	var sprite = get_animation()
 	
 	if sprite != "default":
@@ -527,12 +523,12 @@ func bounding_box_setup(): #--- leaving here for now in case it's needed but pla
 		var no_sprite_size = Vector2(0, 0)
 		object_size = no_sprite_size
 
-func get_bounding_box():
+func get_bounding_box() -> Vector2:
 	var sprite = get_animation()
 	var bounding_box = sprites.sprite_database[sprite]["mask"]["bounding_box"][1] #---[FLAG] may not include bottom and rightmost edges
 	return bounding_box
 
-func collision_layers_setup():
+func collision_layers_setup() -> void:
 	for group: String in get_groups():
 		var layer = gml.collision_layers.find(group)
 		if layer != -1:
@@ -540,7 +536,7 @@ func collision_layers_setup():
 			var area_2d = animated_sprite_node.get_node("Area2D")
 			area_2d.set_collision_layer_value(layer_to_set, true)
 
-func sprite_setup(object_entry):
+func sprite_setup(object_entry) -> void:
 	z_index = depth
 	var animated_sprite = get_animated_sprite_2d()
 	
@@ -602,7 +598,7 @@ func sprite_setup(object_entry):
 
 			
 #--- Helper function to set up a single animation for an AnimatedSprite2D
-func sprite_animation_setup(sprite_name, sprite_frames):
+func sprite_animation_setup(sprite_name, sprite_frames) -> SpriteFrames:
 	sprite_frames.add_animation(sprite_name)
 	sprite_frames.set_animation_speed(sprite_name, 30)
 	sprite_frames.set_animation_loop(sprite_name, true)
@@ -616,20 +612,11 @@ func sprite_animation_setup(sprite_name, sprite_frames):
 	
 	return sprite_frames
 
-func collision_setup():
-
-	#--- Just do position -> for group in all groups, group.merge object_info. That way, for example, if we check for "spider":
-	#--- 1. Get grid areas to check by position and size 2. For entry in Dictionary[grid][spider], Dictionary[grid][spider][hash][position] and compare
-	
-	object_hash = generate_random_hash()
-	var collision_grid = CollisionGrid.new()
-	var grid_positions = collision_grid.find_grid_position(global_position, object_size)
-
 var tick_start_position1
 var tick_end_position1: Vector2
 
 var smooth_motion = SmoothMotion.new()
-func object_tick():
+func object_tick() -> void:
 	#smooth_motion.tick_start(position, animated_sprite_node)
 
 	#run_alarm_events()
@@ -642,14 +629,11 @@ func object_tick():
 	#smooth_motion.tick_end(position, animated_sprite_node)
 	pass
 
-func alarms_setup(object_entry):
+func alarms_setup(object_entry) -> void:
 	var events: Array = object_entry["events"]
 	var alarms: Array = ['alarm_0', 'alarm_1', 'alarm_2', 'alarm_3', 'alarm_4', 'alarm_5', 'alarm_6', 'alarm_7', 'alarm_8', 'alarm_9', 'alarm_10', 'alarm_11']
 	
-	if object_name == "intro":
-		print('hi')
-	
-	for event in events:
+	for event: String in events:
 		if event in alarms:
 			var alarm_countdown_instance: String = event + "_countdown"
 			var alarm_function = Callable(self, event)
@@ -661,10 +645,10 @@ func alarms_setup(object_entry):
 			add_child(new_alarm)
 
 
-func collision_with_setup(object_entry):
+func collision_with_setup(object_entry) -> void:
 	var events: Array = object_entry["events"]
 	
-	for event in events:
+	for event: String in events:
 		var string_beginning = "collision_with_"
 		if event.begins_with(string_beginning):
 			var object = event.trim_prefix(string_beginning)
@@ -681,7 +665,7 @@ func collision_with_setup(object_entry):
 			var collision_with_function = Callable(self, function)
 			collision_with[object] = collision_with_function
 
-func collision_shape_setup(): #--- used to set up collision shape for each object. should eventually replace Area2D with this and switch to body collisions instead of area
+func collision_shape_setup() -> void: #--- used to set up collision shape for each object. should eventually replace Area2D with this and switch to body collisions instead of area
 	var collision_shape: CollisionShape2D = CollisionShape2D.new()
 	collision_shape.name = "CollisionShape2D"
 	var rectangle_shape: RectangleShape2D = RectangleShape2D.new()
@@ -689,14 +673,11 @@ func collision_shape_setup(): #--- used to set up collision shape for each objec
 	collision_shape.set_shape(rectangle_shape)
 	add_child(collision_shape)
 
-func run_alarm_events():
-	if object_name == "olmec_slam":
-		print("")
-	
-	var alarms = [alarm_0_countdown, alarm_1_countdown, alarm_2_countdown, alarm_3_countdown, alarm_4_countdown, alarm_5_countdown,
+func run_alarm_events() -> void:
+	var alarms: Array = [alarm_0_countdown, alarm_1_countdown, alarm_2_countdown, alarm_3_countdown, alarm_4_countdown, alarm_5_countdown,
 		alarm_6_countdown, alarm_7_countdown, alarm_8_countdown, alarm_9_countdown, alarm_10_countdown, alarm_11_countdown]
 	
-	var alarms_with_funcs = {alarm_0_countdown : "alarm_0", alarm_1_countdown : "alarm_1", alarm_2_countdown : "alarm_2", alarm_3_countdown : "alarm_3",
+	var alarms_with_funcs: Dictionary = {alarm_0_countdown : "alarm_0", alarm_1_countdown : "alarm_1", alarm_2_countdown : "alarm_2", alarm_3_countdown : "alarm_3",
 		alarm_4_countdown : "alarm_4", alarm_5_countdown : "alarm_5", alarm_6_countdown : "alarm_6", alarm_7_countdown : "alarm_7", alarm_8_countdown : "alarm_8",
 		alarm_9_countdown : "alarm_9", alarm_10_countdown : "alarm_10", alarm_11_countdown : "alarm_11"}
 	
@@ -704,17 +685,16 @@ func run_alarm_events():
 		if alarm != null:
 			if alarm.ready_to_emit:
 				alarm.ready_to_emit = false
-				var func_name = alarms_with_funcs[alarm]
+				var func_name: String = alarms_with_funcs[alarm]
 				var callable = Callable(self, func_name)
 				callable.call()
-				#alarm.emit_signal("timeout")
 
 
-func run_step_event(obj):
+func run_step_event(obj) -> void:
 	if self.has_method("step"):
 		obj.step()
 
-func run_draw_event():
+func run_draw_event() -> void:
 	#--- draw event overrides the default sprite trying, so draw_object is set to false
 	if has_method("draw"):
 		draw_object = false
@@ -733,7 +713,7 @@ func run_draw_event():
 
 #var new_image
 #var new_image2
-func run_collision_with():	
+func run_collision_with() -> void:	
 	if !collision_with.is_empty() and !is_queued_for_deletion():
 		var overlap_query = PhysicsShapeQueryParameters2D.new() #--- creating an overlap query the same size/position of the checking object's collision shape
 		overlap_query.collide_with_bodies = true
@@ -808,7 +788,7 @@ func run_collision_with():
 	other = self #--- see "other" declaration for why this is done
 
 
-func run_animation_end():
+func run_animation_end() -> void:
 	if has_method("animation_end"):
 		var animated_sprite = get_animated_sprite_2d()
 		var animation = animated_sprite.animation
@@ -819,17 +799,17 @@ func run_animation_end():
 			callable.call()
 
 
-func pause_animation():
+func pause_animation() -> void:
 	if animated_sprite_node and animated_sprite_node.is_playing():
 		animated_sprite_node.pause()
 
 
-func resume_animation():
+func resume_animation() -> void:
 	if animated_sprite_node and animated_sprite_node.animation != "default": #--- some objects have a sprite but no animations set up, which would cause an error
 		animated_sprite_node.play()
 
 
-func run_speed_position_update(): #--- original engine runs speed * direction on objects to make them move. only is used for caveman, hawkman, and yeti in Spelunky
+func run_speed_position_update() -> void: #--- original engine runs speed * direction on objects to make them move. only is used for caveman, hawkman, and yeti in Spelunky
 	#--- only for enemy_sight, so we can make some assumptions with how speed and direction work with one another
 	if speed != 0:
 		if direction == 0: #--- 0 indicating movement to the right
@@ -837,34 +817,34 @@ func run_speed_position_update(): #--- original engine runs speed * direction on
 		elif direction == 180: #--- the only other value is 180, which indicates movement to the left
 			position.x -= speed
 		
-func object_process(delta):
+func object_process(delta) -> void:
 	#smooth_motion.handle_smooth_motion(self, delta, get_physics_process_delta_time())
 	pass
-func did_object_move():
+func did_object_move() -> bool:
 	var current_position = position
 	if current_position == test_prior_tick_position:
 		return false
 	else:
 		return true
 
-func initialize_prior_tick_position():
+func initialize_prior_tick_position() -> void:
 	if test_prior_tick_position == null:
 		test_prior_tick_position = position
 
-func update_prior_tick_position():
+func update_prior_tick_position() -> void:
 	test_prior_tick_position = position
 
-func set_x_y_velocity():
+func set_x_y_velocity() -> void:
 	var position_diff = position - test_prior_tick_position
 	x_velocity = position_diff.x
 	y_velocity = position_diff.y
 
 
-func reset_x_y_velocity():
+func reset_x_y_velocity() -> void:
 	x_velocity = 0
 	y_velocity = 0
 
-func generate_random_hash():
+func generate_random_hash() -> String:
 	var characters = '1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYS'
 	var length = 16
 	var word = ""
@@ -874,22 +854,8 @@ func generate_random_hash():
 	return word
 
 var last_collision_check_position
-func get_collision_grid_position():
-	grid_position = collision_grid.find_grid_position(position, object_size)
 
-func compare_grid_position_with_tester(tester_position):
-	if position != last_collision_check_position:
-		get_collision_grid_position()
-		
-	for value in tester_position:
-		if value in grid_position:
-			add_to_group("in_collision_grid")
-			break
-
-func remove_from_collision_grid():
-	remove_from_group("in_collision_grid")
-
-func debug_glow(on_or_off: bool):
+func debug_glow(on_or_off: bool) -> void:
 	#var debug_glow = get_tree().get_first_node_in_group("debug_glow")
 	#if on_or_off == true:
 		#debug_glow.position = position
@@ -899,7 +865,7 @@ func debug_glow(on_or_off: bool):
 		#debug_glow.hide()
 	pass
 
-func handle_enemy_sight(parent_object: GMObject):
+func handle_enemy_sight(parent_object: GMObject) -> void:
 	name = "EnemySight"
 	var existing_node = parent_object.get_node("EnemySight")
 	if existing_node != null:
