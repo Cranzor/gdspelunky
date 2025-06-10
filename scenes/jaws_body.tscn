@@ -1,0 +1,67 @@
+[gd_scene load_steps=9 format=3 uid="uid://cf7xtr1slrfry"]
+
+[ext_resource type="Texture2D" uid="uid://b1iqqc0brqxc5" path="res://sprites/enemies/jaws/jaws_body1_l/jaws_body1_l_0.png" id="1_8s1m0"]
+[ext_resource type="Texture2D" uid="uid://beqkqvan0st41" path="res://sprites/enemies/jaws/jaws_body1_r/jaws_body1_r_0.png" id="2_rk5xy"]
+[ext_resource type="Texture2D" uid="uid://dek67ysbh7mgk" path="res://sprites/enemies/jaws/jaws_body2_l/jaws_body2_l_0.png" id="3_eudcs"]
+[ext_resource type="Texture2D" uid="uid://8l8vms1hqtjl" path="res://sprites/enemies/jaws/jaws_body2_r/jaws_body2_r_0.png" id="4_p427g"]
+[ext_resource type="Texture2D" uid="uid://cckqyhsqqn376" path="res://sprites/enemies/jaws/jaws_body3_l/jaws_body3_l_0.png" id="5_yxoc0"]
+[ext_resource type="Texture2D" uid="uid://dye43ltlrbbuq" path="res://sprites/enemies/jaws/jaws_body3_r/jaws_body3_r_0.png" id="6_aysun"]
+[ext_resource type="Script" uid="uid://j0umox0l6av3" path="res://scenes/jaws_body.gd" id="7_rk5xy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_30iys"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8s1m0")
+}],
+"loop": true,
+"name": &"jaws_body1_l",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rk5xy")
+}],
+"loop": true,
+"name": &"jaws_body1_r",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_eudcs")
+}],
+"loop": true,
+"name": &"jaws_body2_l",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_p427g")
+}],
+"loop": true,
+"name": &"jaws_body2_r",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_yxoc0")
+}],
+"loop": true,
+"name": &"jaws_body3_l",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_aysun")
+}],
+"loop": true,
+"name": &"jaws_body3_r",
+"speed": 30.0
+}]
+
+[node name="JawsBody" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_30iys")
+animation = &"jaws_body1_l"
+frame_progress = 0.61923
+centered = false
+script = ExtResource("7_rk5xy")

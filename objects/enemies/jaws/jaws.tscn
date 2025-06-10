@@ -1,7 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://btd2fjfptj4ru"]
+[gd_scene load_steps=3 format=3 uid="uid://btd2fjfptj4ru"]
 
 [ext_resource type="Script" uid="uid://pavwt4jdawua" path="res://objects/enemies/jaws/jaws.gd" id="1_0y0vv"]
+[ext_resource type="PackedScene" uid="uid://cf7xtr1slrfry" path="res://scenes/jaws_body.tscn" id="2_nce14"]
 
 [node name="Jaws" type="StaticBody2D"]
 script = ExtResource("1_0y0vv")
 object_name = "jaws"
+
+[node name="JawsBody" parent="." instance=ExtResource("2_nce14")]
