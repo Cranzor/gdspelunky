@@ -2,21 +2,21 @@ extends AnimatedSprite2D
 
 var sprites = Sprites.new()
 var objects = ObjectDatabase.new()
-enum {HUD, DUMMY}
-@export_enum("HUD", "DUMMY") var type: int
+enum Type {HUD, DUMMY}
+@export var type: Type
 
 func _ready() -> void:
-	if type == HUD:
+	if type == Type.HUD:
 		position = Vector2(16, 32)
-	elif type == DUMMY:
+	elif type == Type.DUMMY:
 		position = Vector2(4, 2)
 	
-	if global.pickup_item and type == DUMMY:
+	if global.pickup_item and type == Type.DUMMY:
 		draw_pickup_item()
 
 
 func draw_pickup_item():
-	if type == HUD:
+	if type == Type.HUD:
 		var player1 = gml.get_instance("player1")
 		var pickup_item_type = player1.pickup_item_type
 		if pickup_item_type:
@@ -24,7 +24,7 @@ func draw_pickup_item():
 		else:
 			hide()
 
-	elif type == DUMMY:
+	elif type == Type.DUMMY:
 		var pickup_item_type = global.pickup_item
 		if pickup_item_type:
 			set_sprite(pickup_item_type)

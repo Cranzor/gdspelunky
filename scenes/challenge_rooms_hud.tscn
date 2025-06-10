@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://dq140qq6udxt3"]
+
+[ext_resource type="Texture2D" uid="uid://xajjg6rysmmk" path="res://sprites/hud/heart/heart_0.png" id="1_e7obr"]
+[ext_resource type="Texture2D" uid="uid://s0hxn8toctlv" path="res://sprites/hud/hoops_icon/hoops_icon_0.png" id="1_sum52"]
+[ext_resource type="Script" uid="uid://ce5qxdpaox4f0" path="res://scenes/challenge_rooms_hud.gd" id="1_ytepk"]
+[ext_resource type="Texture2D" uid="uid://bf1x4cv1krq33" path="res://sprites/hud/timer_icon/timer_icon_0.png" id="2_ytepk"]
+[ext_resource type="Texture2D" uid="uid://b1j0iug6bkyu4" path="res://sprites/hud/shopkeeper_icon/shopkeeper_icon_0.png" id="4_mijso"]
+[ext_resource type="Texture2D" uid="uid://b4kanv0y603ev" path="res://sprites/hud/damsel_icon/damsel_icon_0.png" id="5_4cyai"]
+
+[node name="ChallengeRoomsHUD" type="CanvasLayer"]
+script = ExtResource("1_ytepk")
+
+[node name="HoopsIcon" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(8, 8)
+texture = ExtResource("1_sum52")
+centered = false
+
+[node name="TimerIcon" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(64, 8)
+texture = ExtResource("2_ytepk")
+centered = false
+
+[node name="Heart" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(8, 8)
+texture = ExtResource("1_e7obr")
+centered = false
+
+[node name="ShopkeeperIcon" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(64, 8)
+texture = ExtResource("4_mijso")
+centered = false
+
+[node name="DamselIcon" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(64, 8)
+texture = ExtResource("5_4cyai")
+centered = false

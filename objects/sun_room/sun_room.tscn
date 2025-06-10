@@ -1,7 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://dygahnt1ayw4r"]
+[gd_scene load_steps=3 format=3 uid="uid://dygahnt1ayw4r"]
 
 [ext_resource type="Script" uid="uid://dtsgtvaqkitff" path="res://objects/sun_room/sun_room.gd" id="1_ohof8"]
+[ext_resource type="PackedScene" uid="uid://dq140qq6udxt3" path="res://scenes/challenge_rooms_hud.tscn" id="2_nfp54"]
 
 [node name="SunRoom" type="StaticBody2D"]
 script = ExtResource("1_ohof8")
 object_name = "sun_room"
+
+[node name="BonusRoomsHUD" parent="." instance=ExtResource("2_nfp54")]
+type = 2
