@@ -1,5 +1,4 @@
 extends Solid
-class_name SacAltarLeft
 
 func _ready():
 	sprite = 'sSacAltarLeft'
