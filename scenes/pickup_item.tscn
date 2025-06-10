@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://cilypuxykq1h4"]
+[gd_scene load_steps=35 format=3 uid="uid://cilypuxykq1h4"]
 
 [ext_resource type="Texture2D" uid="uid://ds86rvtkhavdb" path="res://sprites/items/weapons/arrow_right/arrow_right_0.png" id="2_du5dg"]
 [ext_resource type="Texture2D" uid="uid://b8hi7oahspowt" path="res://sprites/items/saleable/bow_disp/bow_disp_0.png" id="3_uh6jf"]
@@ -31,6 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://y8h46rip6mvd" path="res://sprites/items/saleable/teleporter/teleporter_13.png" id="30_gu4bo"]
 [ext_resource type="Texture2D" uid="uid://bkrcxgtew5bvd" path="res://sprites/items/saleable/teleporter/teleporter_14.png" id="31_3jh7u"]
 [ext_resource type="Texture2D" uid="uid://dmwaal5w24yg0" path="res://sprites/items/saleable/teleporter/teleporter_15.png" id="32_vmrq6"]
+[ext_resource type="Script" uid="uid://b41ttbqs61wed" path="res://scenes/pickup_item.gd" id="33_82ap8"]
 [ext_resource type="Texture2D" uid="uid://b75oruft58io1" path="res://sprites/items/saleable/web_cannon_r/web_cannon_r_0.png" id="33_p0dr1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jvkj8"]
@@ -218,5 +219,6 @@ sprite_frames = SubResource("SpriteFrames_jvkj8")
 animation = &"arrow"
 frame_progress = 0.77528
 centered = false
+script = ExtResource("33_82ap8")
 
 [connection signal="animation_changed" from="." to="." method="_on_animation_changed"]

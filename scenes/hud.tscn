@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://dfkrem72v8ms8"]
+[gd_scene load_steps=64 format=3 uid="uid://dfkrem72v8ms8"]
 
 [ext_resource type="Texture2D" uid="uid://xajjg6rysmmk" path="res://sprites/hud/heart/heart_0.png" id="1_kp442"]
 [ext_resource type="Script" uid="uid://clfaomwucanks" path="res://scenes/hud.gd" id="1_o1o2r"]
@@ -60,6 +60,7 @@
 [ext_resource type="Texture2D" uid="uid://bkrcxgtew5bvd" path="res://sprites/items/saleable/teleporter/teleporter_14.png" id="58_eeue3"]
 [ext_resource type="Texture2D" uid="uid://dmwaal5w24yg0" path="res://sprites/items/saleable/teleporter/teleporter_15.png" id="59_s6kjl"]
 [ext_resource type="Texture2D" uid="uid://b75oruft58io1" path="res://sprites/items/saleable/web_cannon_r/web_cannon_r_0.png" id="60_21fqs"]
+[ext_resource type="Script" uid="uid://b41ttbqs61wed" path="res://scenes/pickup_item.gd" id="61_qn0nn"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_oo0fn"]
 resource_local_to_scene = true
@@ -427,11 +428,10 @@ texture = ExtResource("25_fr0ct")
 centered = false
 
 [node name="PickupItem" parent="." instance=ExtResource("28_qn0nn")]
-visible = false
-position = Vector2(16, 32)
 sprite_frames = SubResource("SpriteFrames_eavr3")
 animation = &"key_right"
 frame_progress = 0.0
 offset = Vector2(-8, -12)
+script = ExtResource("61_qn0nn")
 
 [connection signal="animation_changed" from="ItemIcons/KapalaIcon" to="ItemIcons/KapalaIcon" method="_on_animation_changed"]
