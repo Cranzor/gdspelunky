@@ -18,4 +18,3 @@ offset_bottom = 8.0
 color = Color(0.768627, 0.141176, 0.811765, 0.741176)
 
 [node name="JetpackDraw" parent="." instance=ExtResource("2_u664n")]
-z_index = -1

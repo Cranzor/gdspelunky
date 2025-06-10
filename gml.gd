@@ -692,7 +692,7 @@ func generate_random_hash() -> String:
 		word += characters[randi_range(0, n_char - 1)]
 	return word
 
-func handle_collision_ray(x1: int, y1: int, x2: int, y2: int, obj: String, notme: bool) -> GMObject:
+func handle_collision_ray(x1: int, y1: int, x2: int, y2: int, obj, notme: bool) -> GMObject:
 	if get_tree().current_scene == null:
 		return null
 

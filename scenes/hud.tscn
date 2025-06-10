@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://dfkrem72v8ms8"]
+[gd_scene load_steps=73 format=3 uid="uid://dfkrem72v8ms8"]
 
 [ext_resource type="Texture2D" uid="uid://xajjg6rysmmk" path="res://sprites/hud/heart/heart_0.png" id="1_kp442"]
 [ext_resource type="Script" uid="uid://clfaomwucanks" path="res://scenes/hud.gd" id="1_o1o2r"]
@@ -60,6 +60,15 @@
 [ext_resource type="Texture2D" uid="uid://bkrcxgtew5bvd" path="res://sprites/items/saleable/teleporter/teleporter_14.png" id="58_eeue3"]
 [ext_resource type="Texture2D" uid="uid://dmwaal5w24yg0" path="res://sprites/items/saleable/teleporter/teleporter_15.png" id="59_s6kjl"]
 [ext_resource type="Texture2D" uid="uid://b75oruft58io1" path="res://sprites/items/saleable/web_cannon_r/web_cannon_r_0.png" id="60_21fqs"]
+[ext_resource type="Texture2D" uid="uid://ckrid8f1s08no" path="res://sprites/items/saleable/compass_left/compass_left_0.png" id="61_pwa8h"]
+[ext_resource type="Texture2D" uid="uid://5gtuaxhbapbu" path="res://sprites/items/saleable/compass_down/compass_down_0.png" id="61_q0uyn"]
+[ext_resource type="Texture2D" uid="uid://d1ixesmqcwn4w" path="res://sprites/items/saleable/compass_small_ll/compass_small_ll_0.png" id="61_qn0nn"]
+[ext_resource type="Texture2D" uid="uid://dspyh6wvj8e6y" path="res://sprites/items/saleable/compass_ll/compass_ll_0.png" id="62_gxo4v"]
+[ext_resource type="Texture2D" uid="uid://cwmjc08kvke5q" path="res://sprites/items/saleable/compass_small_down/compass_small_down_0.png" id="63_2l8v3"]
+[ext_resource type="Texture2D" uid="uid://fdkxqlfxq8yk" path="res://sprites/items/saleable/compass_small_left/compass_small_left_0.png" id="64_66st5"]
+[ext_resource type="Texture2D" uid="uid://bi8d73nhos5dg" path="res://sprites/items/saleable/compass_lr/compass_lr_0.png" id="64_ep55p"]
+[ext_resource type="Script" uid="uid://deuarbfqqf3v4" path="res://scenes/compass_arrows.gd" id="65_gxo4v"]
+[ext_resource type="Texture2D" uid="uid://o5sy6e1i3h2m" path="res://sprites/items/saleable/compass_small_lr/compass_small_lr_0.png" id="68_dbhui"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_oo0fn"]
 resource_local_to_scene = true
@@ -265,6 +274,73 @@ animations = [{
 "speed": 30.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_1dsb4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("61_q0uyn")
+}],
+"loop": true,
+"name": &"compass_down",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("61_pwa8h")
+}],
+"loop": true,
+"name": &"compass_left",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("62_gxo4v")
+}],
+"loop": true,
+"name": &"compass_ll",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("64_ep55p")
+}],
+"loop": true,
+"name": &"compass_lr",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("63_2l8v3")
+}],
+"loop": true,
+"name": &"compass_small_down",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("64_66st5")
+}],
+"loop": true,
+"name": &"compass_small_left",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("61_qn0nn")
+}],
+"loop": true,
+"name": &"compass_small_ll",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("68_dbhui")
+}],
+"loop": true,
+"name": &"compass_small_lr",
+"speed": 30.0
+}]
+
 [node name="HUD" type="CanvasLayer"]
 visible = false
 script = ExtResource("1_o1o2r")
@@ -431,5 +507,11 @@ sprite_frames = SubResource("SpriteFrames_eavr3")
 animation = &"key_right"
 frame_progress = 0.0
 offset = Vector2(-8, -12)
+
+[node name="CompassArrows" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_1dsb4")
+animation = &"compass_small_lr"
+centered = false
+script = ExtResource("65_gxo4v")
 
 [connection signal="animation_changed" from="ItemIcons/KapalaIcon" to="ItemIcons/KapalaIcon" method="_on_animation_changed"]

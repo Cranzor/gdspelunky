@@ -10,6 +10,8 @@ func draw_jetpack(passed_position, passed_sprite):
 	play(passed_sprite)
 	if passed_sprite == "jetpack_back":
 		z_index = 0
+	else:
+		z_index = -1
 	show()
 
 

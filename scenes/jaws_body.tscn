@@ -62,6 +62,5 @@ animations = [{
 [node name="JawsBody" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_30iys")
 animation = &"jaws_body1_l"
-frame_progress = 0.61923
 centered = false
 script = ExtResource("7_rk5xy")
