@@ -29,6 +29,9 @@ func gm_loop(): #---[FLAG] consider running every event in the same order as ste
 	get_tree().call_group("active_gm_object", "run_draw_event") #--- putting draw event after updating camera position fixes text jitter issues
 	queue_redraws()
 
+	if Input.is_action_just_pressed("debug"):
+		var player1 = gml.get_instance("player1")
+		gml.instance_create(player1.position.x, player1.position.y, Objects.jetpack)
 
 func all_objects_step_event():
 	var all_objects = get_tree().get_first_node_in_group("objects_holder").get_children()

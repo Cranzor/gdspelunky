@@ -172,7 +172,7 @@ var slope_y_prev: int
 var slope_change_in_y: int
 var y_prev_high: int
 #------------------------------------------------------------------
-
+@onready var jetpack_draw = $JetpackDraw
 var test: bool = true
 	
 func create():
@@ -3853,7 +3853,7 @@ func alarm_4() -> void:
 		global.message_timer = 200
 			
 func alarm_10() -> void:
-	var obj = gml.instance_create(position.x+randi_range(0,3)-randi_range(0,3), position.y+randi_range(0,3)-randi_range(0,3), "flare_spark")
+	var obj = gml.instance_create(position.x+randi_range(0,3)-randi_range(0,3), position.y+randi_range(0,3)-randi_range(0,3), Objects.flare_spark)
 	obj.y_vel = randi_range(1,3)
 	obj.x_vel = randi_range(0,3) - randi_range(0,3)
 	Audio.play_sound(global.snd_jetpack)
@@ -4302,12 +4302,17 @@ func character_draw_event() -> void:
 		if ((state == CLIMBING or (sprite_index == "p_exit" or sprite_index == "damsel_exit" or sprite_index == "tunnel_exit")) and global.has_jetpack and not whipping):
 		
 			gml.draw_sprite_ext(sprite_index, -1, position.x, position.y, image_xscale, image_yscale, image_angle, image_blend, image_alpha, self)
-			#draw_sprite(sprite_index,-1,position.x,position.y)
-			gml.draw_sprite("jetpack_back",-1,position.x,position.y,self)
+			#DY: draw_sprite(sprite_index,-1,position.x,position.y)
+			#gml.draw_sprite("jetpack_back",-1,position.x,position.y,self) #--- commenting out draw_sprite to use jetpack_draw node
+			jetpack_draw.draw_jetpack(Vector2(0, 0), "jetpack_back")
 			draw = false
 		
-		elif (global.has_jetpack and facing == RIGHT): gml.draw_sprite("jetpack_right",-1,position.x-4,position.y-1,self)
-		elif (global.has_jetpack): gml.draw_sprite("jetpack_left",-1,position.x+4,position.y-1,self)
+		elif (global.has_jetpack and facing == RIGHT):
+			#gml.draw_sprite("jetpack_right",-1,position.x-4,position.y-1,self) #--- commenting out draw_sprite to use jetpack_draw node
+			jetpack_draw.draw_jetpack(Vector2(-4, -1), "jetpack_right")
+		elif (global.has_jetpack):
+			#gml.draw_sprite("jetpack_left",-1,position.x+4,position.y-1,self) #--- commenting out draw_sprite to use jetpack_draw node
+			jetpack_draw.draw_jetpack(Vector2(4, -1), "jetpack_left")
 		if (draw):
 		
 			if (red_color > 0): gml.draw_sprite_ext(sprite_index, -1, position.x, position.y, image_xscale, image_yscale, image_angle, gml.make_color_rgb(200 + red_color,0,0), image_alpha, self)

@@ -5,6 +5,7 @@ var objects = ObjectDatabase.new()
 enum Type {HUD, DUMMY}
 @export var type: Type
 
+#---[FLAG] draw_pickup_item currently doesn't draw for dummies
 func _ready() -> void:
 	if type == Type.HUD:
 		position = Vector2(16, 32)

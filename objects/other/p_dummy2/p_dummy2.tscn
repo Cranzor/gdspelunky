@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://oecxisyhmrax"]
+[gd_scene load_steps=37 format=3 uid="uid://oecxisyhmrax"]
 
 [ext_resource type="Script" uid="uid://cv5hdq8uasmj4" path="res://objects/other/p_dummy2/p_dummy2.gd" id="1_v7pxj"]
 [ext_resource type="PackedScene" uid="uid://cilypuxykq1h4" path="res://scenes/pickup_item.tscn" id="2_h242l"]
@@ -34,6 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://bkrcxgtew5bvd" path="res://sprites/items/saleable/teleporter/teleporter_14.png" id="32_6nvk5"]
 [ext_resource type="Texture2D" uid="uid://dmwaal5w24yg0" path="res://sprites/items/saleable/teleporter/teleporter_15.png" id="33_yp4av"]
 [ext_resource type="Texture2D" uid="uid://b75oruft58io1" path="res://sprites/items/saleable/web_cannon_r/web_cannon_r_0.png" id="34_yutko"]
+[ext_resource type="PackedScene" uid="uid://cdxt2i7ri1v5b" path="res://scenes/jetpack_draw.tscn" id="35_vokys"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bghx8"]
 resource_local_to_scene = true
@@ -220,5 +221,8 @@ script = ExtResource("1_v7pxj")
 object_name = "p_dummy2"
 
 [node name="PickupItem" parent="." instance=ExtResource("2_h242l")]
+visible = false
 sprite_frames = SubResource("SpriteFrames_bghx8")
 type = 1
+
+[node name="JetpackDraw" parent="." instance=ExtResource("35_vokys")]
