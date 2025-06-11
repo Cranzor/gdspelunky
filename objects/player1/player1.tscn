@@ -1,7 +1,55 @@
-[gd_scene load_steps=3 format=3 uid="uid://du8lsjk87vay6"]
+[gd_scene load_steps=11 format=3 uid="uid://du8lsjk87vay6"]
 
 [ext_resource type="Script" uid="uid://cpssqhjyjmpbq" path="res://objects/player1/player1.gd" id="1_3btm2"]
 [ext_resource type="PackedScene" uid="uid://cdxt2i7ri1v5b" path="res://scenes/jetpack_draw.tscn" id="2_u664n"]
+[ext_resource type="Texture2D" uid="uid://drcyi45tywirl" path="res://sprites/items/weapons/arrow_left/arrow_left_0.png" id="3_0imcj"]
+[ext_resource type="Texture2D" uid="uid://ds86rvtkhavdb" path="res://sprites/items/weapons/arrow_right/arrow_right_0.png" id="4_h2jsy"]
+[ext_resource type="Texture2D" uid="uid://e8kqsqdn82hb" path="res://sprites/items/weapons/bomb_arrow_left/bomb_arrow_left_0.png" id="5_308ap"]
+[ext_resource type="Texture2D" uid="uid://pe0ob4yo4l78" path="res://sprites/items/weapons/bomb_arrow_left/bomb_arrow_left_1.png" id="6_a8l3l"]
+[ext_resource type="Texture2D" uid="uid://bh8col12q5n81" path="res://sprites/items/weapons/bomb_arrow_right/bomb_arrow_right_0.png" id="7_ecv23"]
+[ext_resource type="Texture2D" uid="uid://do3rwsnj0nnau" path="res://sprites/items/weapons/bomb_arrow_right/bomb_arrow_right_1.png" id="8_1ccgs"]
+[ext_resource type="Script" uid="uid://dsq31fh5ff8qm" path="res://objects/player1/arrow_draw.gd" id="9_mjd68"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1x2a7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_0imcj")
+}],
+"loop": true,
+"name": &"arrow_left",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_h2jsy")
+}],
+"loop": true,
+"name": &"arrow_right",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_308ap")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_a8l3l")
+}],
+"loop": true,
+"name": &"bomb_arrow_left",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_ecv23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_1ccgs")
+}],
+"loop": true,
+"name": &"bomb_arrow_right",
+"speed": 30.0
+}]
 
 [node name="Player1" type="StaticBody2D"]
 script = ExtResource("1_3btm2")
@@ -18,3 +66,10 @@ offset_bottom = 8.0
 color = Color(0.768627, 0.141176, 0.811765, 0.741176)
 
 [node name="JetpackDraw" parent="." instance=ExtResource("2_u664n")]
+
+[node name="ArrowDraw" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_1x2a7")
+animation = &"arrow_left"
+centered = false
+script = ExtResource("9_mjd68")

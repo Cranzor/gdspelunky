@@ -47,8 +47,13 @@ func check_items():
 		kapala_icon.show()
 	
 	var arrows_children: Array[Node] = arrows.get_children()
-	for i in global.arrows:
-		arrows_children[i].show()
+	var children_count = arrows.get_child_count()
+	for i in children_count:
+		var current_child = arrows_children[i]
+		if i < global.arrows:
+			current_child.show()
+		else:
+			current_child.hide()
 
 
 func lay_out_icons():
