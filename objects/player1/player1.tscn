@@ -73,3 +73,4 @@ sprite_frames = SubResource("SpriteFrames_1x2a7")
 animation = &"arrow_left"
 centered = false
 script = ExtResource("9_0imcj")
+hide_at_start_of_frame = true

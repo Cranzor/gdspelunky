@@ -182,8 +182,9 @@ func destroy():
 
 
 func draw():
-	if (facing == RIGHT): gml.draw_sprite_ext(sprite_index, image_index, position.x+16, position.y, -1, image_yscale, image_angle, image_blend, image_alpha, self)
-	else: gml.draw_sprite_ext(sprite_index, image_index, position.x, position.y, 1, image_yscale, image_angle, image_blend, image_alpha, self)
+	var draw_sprite = DrawSprite.new()
+	if (facing == RIGHT): draw_sprite.draw_sprite_ext(sprite_index, image_index, position.x+16, position.y, -1, image_yscale, image_angle, image_blend, image_alpha, animated_sprite_node)
+	else: draw_sprite.draw_sprite_ext(sprite_index, image_index, position.x, position.y, 1, image_yscale, image_angle, image_blend, image_alpha, animated_sprite_node)
 
 
 func outside_room():

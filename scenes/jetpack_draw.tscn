@@ -39,3 +39,4 @@ sprite_frames = SubResource("SpriteFrames_8p1w3")
 animation = &"jetpack_back"
 centered = false
 script = ExtResource("4_02v0m")
+hide_at_start_of_frame = true

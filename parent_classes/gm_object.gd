@@ -700,7 +700,7 @@ func run_draw_event() -> void:
 		draw_object = false
 		var callable = Callable(self, "draw")
 		callable.call()
-		animated_sprite_node.hide()
+		#animated_sprite_node.hide()
 	else:
 		draw_object = true
 	
