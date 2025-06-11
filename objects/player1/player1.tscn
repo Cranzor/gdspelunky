@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://pe0ob4yo4l78" path="res://sprites/items/weapons/bomb_arrow_left/bomb_arrow_left_1.png" id="6_a8l3l"]
 [ext_resource type="Texture2D" uid="uid://bh8col12q5n81" path="res://sprites/items/weapons/bomb_arrow_right/bomb_arrow_right_0.png" id="7_ecv23"]
 [ext_resource type="Texture2D" uid="uid://do3rwsnj0nnau" path="res://sprites/items/weapons/bomb_arrow_right/bomb_arrow_right_1.png" id="8_1ccgs"]
-[ext_resource type="Script" uid="uid://dsq31fh5ff8qm" path="res://objects/player1/arrow_draw.gd" id="9_mjd68"]
+[ext_resource type="Script" uid="uid://d1v64vt58kawp" path="res://resources/draw_sprite.gd" id="9_0imcj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1x2a7"]
 animations = [{
@@ -72,4 +72,4 @@ visible = false
 sprite_frames = SubResource("SpriteFrames_1x2a7")
 animation = &"arrow_left"
 centered = false
-script = ExtResource("9_mjd68")
+script = ExtResource("9_0imcj")

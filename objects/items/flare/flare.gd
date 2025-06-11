@@ -47,7 +47,7 @@ func step():
 		
 	if (gml.collision_point(position.x, position.y, "water", -1, -1)):
 
-		gml.instance_create(position.x, position.y, "splash")
+		gml.instance_create(position.x, position.y, Objects.splash)
 		Audio.play_sound(global.snd_splash)
 		if (held):
 			var player1 = gml.get_instance("player1") #--- [FLAG] may need to change this for multiplayer

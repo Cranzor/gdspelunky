@@ -14,7 +14,7 @@ func _process(delta):
 
 
 #--- Object functions
-@onready var jetpack_draw = $JetpackDraw
+@onready var jetpack_draw: DrawSprite = $JetpackDraw
 var GETUP
 var JUMPING
 
@@ -69,8 +69,8 @@ func draw():
 	if ((sprite_index == "p_exit" or sprite_index == "damsel_exit" or sprite_index == "tunnel_exit") and global.has_jetpack):
 
 		gml.draw_sprite_ext(sprite_index, -1, position.x, position.y, image_xscale, image_yscale, image_angle, image_blend, image_alpha, self)
-		#gml.draw_sprite("jetpack_back",-1,position.x,position.y, self) #--- commenting out draw_sprite to use JetpackDraw node
-		jetpack_draw.draw_jetpack(Vector2(0, 0), "jetpack_back")
+		#gml.draw_sprite("jetpack_back",-1,position.x,position.y, self) #--- commenting out draw_sprite to use DrawSprite class
+		jetpack_draw.draw_sprite(Vector2(0, 0), "jetpack_back")
 
 	elif (sprite_index == "p_exit" or sprite_index == "damsel_exit" or sprite_index == "tunnel_exit"):
 
@@ -78,8 +78,8 @@ func draw():
 
 	elif (global.has_jetpack):
 
-		#gml.draw_sprite("jetpack_right",-1,position.x-4,position.y-1, self) #--- commenting out draw_sprite to use JetpackDraw node
-		jetpack_draw.draw_jetpack(Vector2(-4, -1), "jetpack_right")
+		#gml.draw_sprite("jetpack_right",-1,position.x-4,position.y-1, self) #--- commenting out draw_sprite to use DrawSprite class
+		jetpack_draw.draw_sprite(Vector2(-4, -1), "jetpack_right", 0, -1)
 
 
 	if (sprite_index != "p_exit" and sprite_index != "damsel_exit" and sprite_index != "tunnel_exit"):

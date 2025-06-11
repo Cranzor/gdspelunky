@@ -1,7 +1,5 @@
-extends AnimatedSprite2D
+extends DrawSprite
 
-var sprites = Sprites.new()
-var objects = ObjectDatabase.new()
 enum Type {HUD, DUMMY}
 @export var type: Type
 
@@ -31,11 +29,6 @@ func draw_pickup_item():
 			set_sprite(pickup_item_type)
 		else:
 			hide()
-
-func get_sprite_offset(sprite_name: String) -> Vector2:
-	var origin: Vector2 = Sprites.sprite_database[sprite_name]["origin"]
-	var offset: Vector2 = -origin
-	return offset
 
 
 func set_sprite(pickup_item_type):

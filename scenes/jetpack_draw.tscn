@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://cdxt2i7ri1v5b"]
 
 [ext_resource type="Texture2D" uid="uid://vvxjsfho1j21" path="res://sprites/items/saleable/jetpack_back/jetpack_back_0.png" id="1_02v0m"]
-[ext_resource type="Script" uid="uid://bhnobducv4ipu" path="res://scenes/jetpack_draw.gd" id="1_qgkjt"]
 [ext_resource type="Texture2D" uid="uid://bgno4c75gvig4" path="res://sprites/items/saleable/jetpack_left/jetpack_left_0.png" id="2_ikuof"]
 [ext_resource type="Texture2D" uid="uid://c6pvhdrl4ghn4" path="res://sprites/items/saleable/jetpack_right/jetpack_right_0.png" id="3_asier"]
+[ext_resource type="Script" uid="uid://d1v64vt58kawp" path="res://resources/draw_sprite.gd" id="4_02v0m"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8p1w3"]
 animations = [{
@@ -38,4 +38,4 @@ z_index = -1
 sprite_frames = SubResource("SpriteFrames_8p1w3")
 animation = &"jetpack_back"
 centered = false
-script = ExtResource("1_qgkjt")
+script = ExtResource("4_02v0m")
