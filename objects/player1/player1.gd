@@ -4294,6 +4294,7 @@ func character_draw_event() -> void:
 	#This event should be placed in the draw event of the platform character.
 	#*/
 	#draws the sprite
+	var draw_sprite = DrawSprite.new()
 	var draw = true
 	if (facing == RIGHT): image_xscale = -1
 	else: image_xscale = 1
@@ -4302,7 +4303,8 @@ func character_draw_event() -> void:
 
 		if ((state == CLIMBING or (sprite_index == "p_exit" or sprite_index == "damsel_exit" or sprite_index == "tunnel_exit")) and global.has_jetpack and not whipping):
 		
-			gml.draw_sprite_ext(sprite_index, -1, position.x, position.y, image_xscale, image_yscale, image_angle, image_blend, image_alpha, self)
+			#gml.draw_sprite_ext(sprite_index, -1, position.x, position.y, image_xscale, image_yscale, image_angle, image_blend, image_alpha, self)
+			draw_sprite.draw_sprite_ext(sprite_index, -1, position.x, position.y, image_xscale, image_yscale, image_angle, image_blend, image_alpha, animated_sprite_node)
 			#DY: draw_sprite(sprite_index,-1,position.x,position.y)
 			#gml.draw_sprite("jetpack_back",-1,position.x,position.y,self) #--- commenting out draw_sprite to use DrawSprite class
 			jetpack_draw.draw_sprite(Vector2(0, 0), "jetpack_back")
@@ -4316,8 +4318,12 @@ func character_draw_event() -> void:
 			jetpack_draw.draw_sprite(Vector2(4, -1), "jetpack_left", 0, -1)
 		if (draw):
 		
-			if (red_color > 0): gml.draw_sprite_ext(sprite_index, -1, position.x, position.y, image_xscale, image_yscale, image_angle, gml.make_color_rgb(200 + red_color,0,0), image_alpha, self)
-			else: gml.draw_sprite_ext(sprite_index, -1, position.x, position.y, image_xscale, image_yscale, image_angle, image_blend, image_alpha, self)
+			if (red_color > 0):
+				#gml.draw_sprite_ext(sprite_index, -1, position.x, position.y, image_xscale, image_yscale, image_angle, gml.make_color_rgb(200 + red_color,0,0), image_alpha, self)
+				draw_sprite.draw_sprite_ext(sprite_index, -1, position.x, position.y, image_xscale, image_yscale, image_angle, gml.make_color_rgb(200 + red_color,0,0), image_alpha, animated_sprite_node)
+			else:
+				#gml.draw_sprite_ext(sprite_index, -1, position.x, position.y, image_xscale, image_yscale, image_angle, image_blend, image_alpha, self)
+				draw_sprite.draw_sprite_ext(sprite_index, -1, position.x, position.y, image_xscale, image_yscale, image_angle, image_blend, image_alpha, animated_sprite_node)
 		
 		if (facing == RIGHT):
 		
@@ -4350,7 +4356,8 @@ func character_draw_event() -> void:
 					#gml.draw_sprite("bomb_arrow_left", 1, position.x-4, position.y+2, self) #--- commenting out draw_sprite to use ArrowDraw node
 					arrow_draw.draw_sprite(Vector2(-4, 2), "bomb_arrow_left")
 			
-		
+	else:
+		animated_sprite_node.hide()
 
 	#/*
 	#if can_run:
