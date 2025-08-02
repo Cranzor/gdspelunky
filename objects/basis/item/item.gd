@@ -35,6 +35,7 @@ var sticky_y_diff
 var buy_message #---[FLAG] may want to move this to drawn_sprite. check damsel script
 
 var to_destroy
+
 var small_collect_draw_node
 
 
