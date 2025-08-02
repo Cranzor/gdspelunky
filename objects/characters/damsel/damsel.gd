@@ -151,7 +151,7 @@ func draw():
 	if (cost > 0):
 
 		#gml.draw_sprite_ext("small_collect", cimg, position.x, position.y-12, 1, 1, 0, gml.c_white, 1, self, false)
-		small_collect_draw_node.draw_sprite_ext("small_collect", cimg, position.x, position.y-12, 1, 1, 0, gml.c_white, 1, self, false)
+		small_collect_draw_node.draw_sprite_ext("small_collect", cimg, position.x, position.y-12, 1, 1, 0, gml.c_white, 1, self)
 		cimg += 1
 		if (cimg > 9): cimg = 0
 

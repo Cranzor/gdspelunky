@@ -832,30 +832,30 @@ func scr_level_gen():
 		var i = 0
 		for k in range(0, 4):
 		
-			for j in range(0, 4):
+			for j in range(0, 4): #--- looping through every room
 			
-				global.room_poss[[j,k]] = 0
+				global.room_poss[[j,k]] = 0 #--- each possible room is initially zero
 				# DY: j = gml.rand(0,3)
 				# DY: k = gml.rand(0,3)
-				if (global.room_path[[j,k]] == 0):
+				if (global.room_path[[j,k]] == 0): #--- if current room in room_path is a side room
 				
-					if (j < 3):
+					if (j < 3): #--- if current room is not all the way to the right side
 					
-						if (global.room_path[[j+1,k]] == 1 or global.room_path[[j+1,k]] == 2):
+						if (global.room_path[[j+1,k]] == 1 or global.room_path[[j+1,k]] == 2): #--- if room to the right is normal room on path
 						
 							# DY: global.room_path[[j,k]] = 4
-							global.room_poss[[j,k]] = 4
+							global.room_poss[[j,k]] = 4 #--- possible room to the left of above room (non-right side shop)
 							i += 1
 							# DY: global.shop = true
 							# DY: break
 						
 					
-					elif (j > 0):
+					elif (j > 0): #--- if room is all the way to the right side
 					
-						if (global.room_path[[j-1,k]] == 1 or global.room_path[[j-1,k]] == 2):
+						if (global.room_path[[j-1,k]] == 1 or global.room_path[[j-1,k]] == 2): #--- if the room to the left is a normal room on path
 						
 							# DY: global.room_path[[j,k]] = 5
-							global.room_poss[[j,k]] = 5
+							global.room_poss[[j,k]] = 5 #--- possible room to the right of above room (side shop)
 							i += 1
 							# DY: global.shop = true
 							# DY: break
@@ -864,25 +864,27 @@ func scr_level_gen():
 			
 		
 		
-		if (i > 0):
-			n = gml.rand(0,i-1)
+		if (i > 0): #--- if there are possible shops
+			var room_selected: bool = false #--- added a check here to properly break out of both loops. j = 4 and k = 4 are meant to break out of both (does nothing in GDScript)
+			n = gml.rand(0,i-1) #--- choosing one of the possible shops randomly
 			for k in range(0, 4):
-			
-				for j in range(0, 4):
+				if room_selected:
+					break
+				for j in range(0, 4): #--- looping through every room
 				
-					if (global.room_poss[[j,k]] != 0):
+					if (global.room_poss[[j,k]] != 0): #--- if possible room exists for this entry
 					
-						if (n == 0):
+						if (n == 0): #--- if matches the randomly chosen shop
 						
 							global.room_path[[j,k]] = global.room_poss[[j,k]]
 							global.shop = true
 							j = 4
 							k = 4
+							room_selected = true
 							break
 						
 						else: n -= 1
-				
-				break #--- added second break here because j = 4 and k = 4 above are meant to break out of both loops
+
 
 
 func scr_init_level():
