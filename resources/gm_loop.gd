@@ -10,6 +10,7 @@ func _physics_process(delta: float) -> void:
 
 func gm_loop(): #---[FLAG] consider running every event in the same order as step
 	reset_surfaces()
+	get_tree().call_group("draw_sprite", "hide")
 	get_tree().call_group("alarm", "count_down")
 	get_tree().call_group("active_gm_object", "run_alarm_events")
 	if gml.changed_scene == false:

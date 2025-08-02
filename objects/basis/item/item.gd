@@ -35,9 +35,15 @@ var sticky_y_diff
 var buy_message #---[FLAG] may want to move this to drawn_sprite. check damsel script
 
 var to_destroy
+var small_collect_draw_node
 
 
 func create():
+	var small_collect_draw = load("res://scenes/small_collect_draw.tscn").instantiate() #--- each item creates a node for drawing small collect icon
+	small_collect_draw.name = "SmallCollectDraw"
+	add_child(small_collect_draw)
+	small_collect_draw_node = small_collect_draw
+	#---
 	super()
 	active = true
 	type = "none"
@@ -483,10 +489,12 @@ func step():
 
 
 func draw():
-	gml.draw_sprite_ext(sprite_index, image_index, position.x, position.y, 1, 1, 0, gml.c_white, 1, self)
+	var draw_sprite = DrawSprite.new()
+	#gml.draw_sprite_ext(sprite_index, image_index, position.x, position.y, 1, 1, 0, gml.c_white, 1, self)
+	draw_sprite.draw_sprite_ext(sprite_index, image_index, position.x, position.y, 1, 1, 0, gml.c_white, 1, animated_sprite_node)
 	if (cost > 0):
-	
-		gml.draw_sprite_ext("small_collect", cimg, position.x, position.y-12, 1, 1, 0, gml.c_white, 1, self, false)
+		#gml.draw_sprite_ext("small_collect", cimg, position.x, position.y-12, 1, 1, 0, gml.c_white, 1, self, false)
+		small_collect_draw_node.draw_sprite_ext("small_collect", cimg, position.x, position.y-12, 1, 1, 0, gml.c_white, 1, small_collect_draw_node)
 		cimg += 1
 		if (cimg > 9): cimg = 0
 

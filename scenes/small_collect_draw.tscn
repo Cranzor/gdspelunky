@@ -1,0 +1,53 @@
+[gd_scene load_steps=12 format=3 uid="uid://ci13yjnwuajhw"]
+
+[ext_resource type="PackedScene" uid="uid://cdchca2colg37" path="res://components/draw_sprite/draw_sprite.tscn" id="1_gh6dr"]
+[ext_resource type="Texture2D" uid="uid://t4ccvue5cbn7" path="res://sprites/effects/small_collect/small_collect_0.png" id="2_3ar3d"]
+[ext_resource type="Texture2D" uid="uid://deswy0h5xpsmu" path="res://sprites/effects/small_collect/small_collect_1.png" id="3_40pmd"]
+[ext_resource type="Texture2D" uid="uid://u8wc5syikysh" path="res://sprites/effects/small_collect/small_collect_2.png" id="4_ri38r"]
+[ext_resource type="Texture2D" uid="uid://cfrr8e2wjkaqa" path="res://sprites/effects/small_collect/small_collect_3.png" id="5_rwb4r"]
+[ext_resource type="Texture2D" uid="uid://dgvjrkvaooxt2" path="res://sprites/effects/small_collect/small_collect_4.png" id="6_a0xr6"]
+[ext_resource type="Texture2D" uid="uid://bv4c5cvg1locn" path="res://sprites/effects/small_collect/small_collect_5.png" id="7_g4igv"]
+[ext_resource type="Texture2D" uid="uid://dj5gjj7kans0s" path="res://sprites/effects/small_collect/small_collect_6.png" id="8_y8ga0"]
+[ext_resource type="Texture2D" uid="uid://k8usv722l46b" path="res://sprites/effects/small_collect/small_collect_7.png" id="9_b1mhj"]
+[ext_resource type="Texture2D" uid="uid://b215u0hyrc8re" path="res://sprites/effects/small_collect/small_collect_8.png" id="10_rogkf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qk2pt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3ar3d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_40pmd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ri38r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_rwb4r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_a0xr6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_g4igv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_y8ga0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_b1mhj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_rogkf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[node name="SmallCollect" instance=ExtResource("1_gh6dr")]
+sprite_frames = SubResource("SpriteFrames_qk2pt")
+frame = 1
+frame_progress = 0.386406
+offset = Vector2(-4, -4)

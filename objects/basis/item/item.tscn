@@ -5,3 +5,5 @@
 [node name="Item" type="StaticBody2D"]
 script = ExtResource("1_73uxe")
 object_name = "item"
+
+[node name="Test" type="Node" parent="."]

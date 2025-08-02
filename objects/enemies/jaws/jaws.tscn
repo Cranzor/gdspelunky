@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://pavwt4jdawua" path="res://objects/enemies/jaws/jaws.gd" id="1_0y0vv"]
 [ext_resource type="Texture2D" uid="uid://b1iqqc0brqxc5" path="res://sprites/enemies/jaws/jaws_body1_l/jaws_body1_l_0.png" id="2_ce3y6"]
 [ext_resource type="Texture2D" uid="uid://beqkqvan0st41" path="res://sprites/enemies/jaws/jaws_body1_r/jaws_body1_r_0.png" id="3_5c6ss"]
-[ext_resource type="Script" uid="uid://d1v64vt58kawp" path="res://resources/draw_sprite.gd" id="3_qlrml"]
+[ext_resource type="Script" uid="uid://d1v64vt58kawp" path="res://components/draw_sprite/draw_sprite.gd" id="3_qlrml"]
 [ext_resource type="Texture2D" uid="uid://dek67ysbh7mgk" path="res://sprites/enemies/jaws/jaws_body2_l/jaws_body2_l_0.png" id="4_f6i7s"]
 [ext_resource type="Texture2D" uid="uid://8l8vms1hqtjl" path="res://sprites/enemies/jaws/jaws_body2_r/jaws_body2_r_0.png" id="5_hwvum"]
 [ext_resource type="Texture2D" uid="uid://cckqyhsqqn376" path="res://sprites/enemies/jaws/jaws_body3_l/jaws_body3_l_0.png" id="6_qn6po"]
