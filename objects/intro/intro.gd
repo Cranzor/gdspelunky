@@ -20,6 +20,7 @@ var str2
 var str3
 
 var skip_button_just_pressed: bool = false
+@onready var draw_text: Node = $DrawText
 
 func _input(event):
 	if (gml.keyboard_check_pressed(KEY_ENTER) or
@@ -132,7 +133,7 @@ func draw():
 		str_len = gml.string_length(str1)*8
 		n = 320 - str_len
 		n = ceil(n / 2)
-		gml.draw_text(n, 116-16, str1, "", self)
+		draw_text.draw_text(n, 116-16, str1)
 
 	if (draw_status > 1):
 
@@ -141,7 +142,7 @@ func draw():
 		str_len = gml.string_length(str2)*8
 		n = 320 - str_len
 		n = ceil(n / 2)
-		gml.draw_text(n, 116, str2, "", self)
+		draw_text.draw_text(n, 116, str2)
 
 	if (draw_status > 2):
 
@@ -150,7 +151,7 @@ func draw():
 		str_len = gml.string_length(str3)*8
 		n = 320 - str_len
 		n = ceil(n / 2)
-		gml.draw_text(n, 116+16, str3, "", self)
+		draw_text.draw_text(n, 116+16, str3)
 
 
 func alarm_11():

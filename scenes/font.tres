@@ -1,0 +1,9 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://cy384qi6lkue8"]
+
+[ext_resource type="FontFile" uid="uid://cjfa4ea02s5yi" path="res://fonts/main_font.png" id="1_qd3ot"]
+[ext_resource type="FontFile" uid="uid://dgd06bxddo4pq" path="res://fonts/small_font.png" id="2_25v6g"]
+
+[resource]
+default_font = ExtResource("1_qd3ot")
+LabelSmall/base_type = &"Label"
+LabelSmall/fonts/font = ExtResource("2_25v6g")
