@@ -14,7 +14,6 @@ func _process(delta):
 
 
 #--- Object functions
-@onready var in_level: InLevel = InLevel.new()
 
 
 func animation_end():
@@ -118,8 +117,8 @@ func collision_with_item():
 
 
 func collision_with_solid():
-	if (in_level.is_level() or (position.x > gml.view("xview")-16 and position.x < gml.view("xview") + gml.view("wview")+16 and
-		position.y > gml.view("yview")-16 and position.y < gml.view("yview") + gml.view("hview")+16)): #--- was "in_level.is_level("tutorial")" but this appears to be an error as is_level takes no argument
+	if (InLevel.is_level() or (position.x > gml.view("xview")-16 and position.x < gml.view("xview") + gml.view("wview")+16 and
+		position.y > gml.view("yview")-16 and position.y < gml.view("yview") + gml.view("hview")+16)): #--- was "InLevel.is_level("tutorial")" but this appears to be an error as is_level takes no argument
 	
 		for repetition in range(2):
 	
@@ -161,4 +160,4 @@ func create():
 	0.8
 	# main_code
 	Audio.play_sound(global.snd_explosion)
-	in_level.scr_shake(5)
+	InLevel.scr_shake(5)

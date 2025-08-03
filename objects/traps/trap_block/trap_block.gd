@@ -38,7 +38,7 @@ func destroy():
 		if (dying):
 	
 			Audio.play_sound(global.snd_thump)
-			in_level.scr_shake(10)
+			InLevel.scr_shake(10)
 
 
 func step():

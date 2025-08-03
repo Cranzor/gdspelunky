@@ -29,8 +29,6 @@ var players_length
 
 var physics_frame_rate = 30
 
-@onready var in_level: InLevel = InLevel.new()
-
 
 func _input(event):
 	if Input.is_key_pressed(KEY_M): #---[FLAG] fix this to be its own function
@@ -62,12 +60,12 @@ func key_m_pressed():
 	else:
 
 		global.music = true
-		if (in_level.is_level()):
+		if (InLevel.is_level()):
 		
 			if (global.level_type == 1): Audio.play_music(global.mus_lush, true)
 			elif (global.level_type == 2): Audio.play_music(global.mus_ice, true)
 			elif (global.level_type == 3): Audio.play_music(global.mus_temple, true)
-			elif (in_level.is_room("olmec")):
+			elif (InLevel.is_room("olmec")):
 				
 				var player1 = gml.get_instance("player1")
 				if (player1.active):
@@ -75,7 +73,7 @@ func key_m_pressed():
 			
 			else: Audio.play_music(global.mus_cave, true)
 		
-		elif (in_level.is_room("title")): Audio.play_music(global.mus_title, true)
+		elif (InLevel.is_room("title")): Audio.play_music(global.mus_title, true)
 
 func game_step_event():
 	#/**
@@ -390,7 +388,7 @@ func step():
 		
 
 
-	if (global.game_start and gml.instance_exists("character") and in_level.is_level()):
+	if (global.game_start and gml.instance_exists("character") and InLevel.is_level()):
 		var character = gml.get_instance("character") #--- [FLAG] may want to update this when implementing multiplayer
 
 		if (not character.dead):
@@ -404,7 +402,7 @@ func step():
 	if (gml.instance_exists("player1")):
 		var player1 = gml.get_instance("player1") #--- [FLAG] may want to update this when implementing multiplayer
 
-		if (in_level.is_level() and not in_level.is_room("olmec") and not in_level.is_room("load_level") and global.curr_level > 1 and
+		if (InLevel.is_level() and not InLevel.is_room("olmec") and not InLevel.is_room("load_level") and global.curr_level > 1 and
 			not global.has_crown and global.xtime > 120000 and
 			player1.sprite_index != "p_exit" and player1.sprite_index != "damsel_exit"):
 			
@@ -418,7 +416,7 @@ func step():
 			
 		
 		
-		if (in_level.is_level() and not in_level.is_room("olmec") and not in_level.is_room("load_level") and global.curr_level > 1 and
+		if (InLevel.is_level() and not InLevel.is_room("olmec") and not InLevel.is_room("load_level") and global.curr_level > 1 and
 			not global.has_crown and global.xtime > 150000 and not global.ghost_exists and
 			player1.sprite_index != "p_exit" and player1.sprite_index != "damsel_exit"):
 		
@@ -434,10 +432,10 @@ func step():
 		var all_water = gml.get_all_instances("water")
 		for water_instance in all_water:
 		
-			# if (position.y > view_yview[0]-32 and position.y < view_yview[0] + view_hview[0]+32 and not in_level.is_room("r_olmec")):
-			if (not in_level.is_room("olmec")):
+			# if (position.y > view_yview[0]-32 and position.y < view_yview[0] + view_hview[0]+32 and not InLevel.is_room("r_olmec")):
+			if (not InLevel.is_room("olmec")):
 			
-				if ((!in_level.is_room("load_level") and water_instance.position.y < 512) or in_level.is_room("load_level")):
+				if ((!InLevel.is_room("load_level") and water_instance.position.y < 512) or InLevel.is_room("load_level")):
 				
 			
 					gml.instance_activate_region(water_instance.position.x-16, water_instance.position.y-16, 48, 48, true)
@@ -520,9 +518,9 @@ func draw():
 		var str_len
 		var n
 		
-		if (player1.dead or in_level.is_room("moon")):
+		if (player1.dead or InLevel.is_room("moon")):
 			
-			if (in_level.is_level()):
+			if (InLevel.is_level()):
 			
 				if (draw_status > 0):
 				
@@ -570,7 +568,7 @@ func draw():
 						gml.draw_text(gml.view_xview+n, gml.view_yview+120, str, "", self)
 			
 			
-			elif (in_level.is_room("sun")):
+			elif (InLevel.is_room("sun")):
 				var sun_room = gml.get_instance("sun_room")
 			
 				if (draw_status > 0):
@@ -591,7 +589,7 @@ func draw():
 					gml.draw_text(n, gml.view_yview+64+16, str, "", self)
 					
 			
-			elif (in_level.is_room("moon")):
+			elif (InLevel.is_room("moon")):
 				var moon_room = gml.get_instance("moon_room")
 			
 				if (moon_room.timer < 0):
@@ -615,7 +613,7 @@ func draw():
 					
 				
 			
-			elif (in_level.is_room("stars")):
+			elif (InLevel.is_room("stars")):
 				var stars_room = gml.get_instance("stars_room")
 			
 				if (draw_status > 0):

@@ -18,8 +18,6 @@ var EJECT
 var DEPLOY
 var FLOAT
 
-@onready var in_level: InLevel = InLevel.new()
-
 
 func animation_end():
 	if (sprite_index == "alien_deploy"): sprite_index = "alien_parachute"
@@ -38,7 +36,7 @@ func collision_with_player1():
 	
 		if (counts_as_kill):
 	
-			if (in_level.is_real_level()): global.enemy_kills[15] += 1
+			if (InLevel.is_real_level()): global.enemy_kills[15] += 1
 			global.aliens += 1
 			global.kills += 1
 	

@@ -19,7 +19,7 @@ func is_in_shop(x, y):
 
 	return false
 
-func is_level() -> bool:
+static func is_level() -> bool:
 	#
 	# is_level()
 	#
@@ -29,7 +29,7 @@ func is_level() -> bool:
 	if (is_room("tutorial") or is_room("load_level") or is_room("level") or is_room("level2") or is_room("level3") or is_room("olmec")): return true
 	return false
 
-func is_real_level():
+static func is_real_level() -> bool:
 	#
 	# is_real_level()
 	#
@@ -39,7 +39,7 @@ func is_real_level():
 	if (is_room("level") or is_room("level2") or is_room("level3") or is_room("olmec")): return true
 	return false
 
-func is_room(name):
+static func is_room(name):
 	if name == global.current_room:
 		return true
 	return false

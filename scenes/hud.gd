@@ -5,7 +5,7 @@ extends CanvasLayer
 @onready var pickup_item = $PickupItem
 @onready var item_icons = $ItemIcons
 @onready var compass_arrows = $CompassArrows
-@onready var in_level: InLevel = InLevel.new()
+
 
 #--- change this to update in gm_loop
 func _physics_process(delta: float) -> void:
@@ -29,7 +29,7 @@ func _physics_process(delta: float) -> void:
 	
 
 func draw_compass_arrow() -> void:
-	if global.has_compass and in_level.is_level() and gml.instance_exists("player1"):
+	if global.has_compass and InLevel.is_level() and gml.instance_exists("player1"):
 		if (global.exit_y > gml.view_yview + 240):
 			if (global.exit_x < gml.view_xview):
 				if global.message_timer > 0: compass_arrows.draw_compass_arrow(Vector2(0, 224), "compass_small_ll")

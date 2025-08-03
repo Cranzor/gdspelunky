@@ -499,8 +499,6 @@ func groups_setup(object_entry) -> void:
 	var groups = object_entry['groups']
 	
 	for group in groups:
-		if group == "explosion":
-			print('huh')
 		if !is_in_group(group):
 			add_to_group(group)
 	

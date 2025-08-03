@@ -22,7 +22,7 @@ func alarm_0():
 	
 
 func alarm_1():
-	if (not in_level.is_room("level_editor")):
+	if (not InLevel.is_room("level_editor")):
 
 		# DY:  calculate how far to motion detect
 		x_act = position.x+16

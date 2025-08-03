@@ -64,7 +64,7 @@ func collision_with_character():
 		else:
 			other.x_vel = 6
 	
-		if (global.plife > 0 and in_level.is_real_level()):
+		if (global.plife > 0 and InLevel.is_real_level()):
 	
 			global.plife -= 2
 			if (global.plife <= 0): global.enemy_deaths[14] += 1

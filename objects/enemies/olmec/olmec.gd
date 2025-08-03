@@ -319,7 +319,7 @@ func step():
 		
 				gml.instance_create(position.x, position.y+64, Objects.olmec_slam)
 				slammed = true
-				in_level.scr_shake(5)
+				InLevel.scr_shake(5)
 		
 			else:
 				if (gml.rand(1,2) == 1 or not player1.active): status = IDLE
@@ -336,7 +336,7 @@ func step():
 		x_vel = 0
 		y_vel = 0.1
 		my_grav = 0
-		in_level.scr_shake(10)
+		InLevel.scr_shake(10)
 		if (not SS.is_sound_playing(global.snd_flame)): Audio.play_sound(global.snd_flame)
 
 

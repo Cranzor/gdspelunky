@@ -19,8 +19,6 @@ var music_fade
 var music_fade_timer
 var darkness #---[FLAG] could declare this higher up as title object uses it as well
 
-@onready var in_level: InLevel = InLevel.new()
-
 
 func create():
 	Screen.enabled = true
@@ -87,7 +85,7 @@ func draw():
 		n = ceil(n / 2)
 		gml.draw_text(gml.view("xview")+n, gml.view("yview")+216, str(global.message), "global_message", self)
 	
-		if (not in_level.is_level()): gml.draw_set_color(gml.c_yellow) #--- was "in_level.is_level("tutorial")" but this appears to be an error as is_level takes no argument
+		if (not InLevel.is_level()): gml.draw_set_color(gml.c_yellow) #--- was "InLevel.is_level("tutorial")" but this appears to be an error as is_level takes no argument
 		str_len = gml.string_length(global.message2)*8
 		n = 320 - str_len
 		n = ceil(n / 2)

@@ -62,7 +62,7 @@ func _physics_process(_delta):
 			MiscScripts.scr_create_blood(position.x+8, position.y+8, 3)
 			if (counts_as_kill):
 			
-				if (in_level.is_real_level()): global.enemy_kills[1] += 1
+				if (InLevel.is_real_level()): global.enemy_kills[1] += 1
 				global.snakes += 1
 				global.kills += 1
 			

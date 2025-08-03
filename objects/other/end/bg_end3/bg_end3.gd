@@ -16,8 +16,6 @@ func _process(delta):
 #--- Object functions
 var x_off
 
-@onready var in_level: InLevel = InLevel.new()
-
 
 func create():
 	x_off = -64
@@ -25,7 +23,7 @@ func create():
 
 
 func step():
-	if (in_level.is_room("end3")):
+	if (InLevel.is_room("end3")):
 
 		# DY:  do nothing
 		pass

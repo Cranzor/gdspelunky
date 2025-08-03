@@ -99,13 +99,13 @@ func step():
 			global.thief_level > 0 or
 			global.murderer) and cost > 0):
 		
-			if (in_level.is_real_level()): global.items_stolen += 1
+			if (InLevel.is_real_level()): global.items_stolen += 1
 			cost = 0
 			for_sale = false
 		
 
 			#DY: stealing makes shopkeeper angry
-		if (in_level.is_real_level()):
+		if (InLevel.is_real_level()):
 		
 			if (cost > 0 and for_sale and not in_level.is_in_shop(position.x, position.y)):
 			
@@ -114,7 +114,7 @@ func step():
 				cost = 0
 			
 		
-		elif (in_level.is_level()):
+		elif (InLevel.is_level()):
 		
 			if (cost > 0 and for_sale and not in_level.is_in_shop(position.x, position.y)):
 			
@@ -426,7 +426,7 @@ func step():
 						gml.instance_create(obj.position.x+8, obj.position.y+8, Objects.explosion)
 						Audio.play_sound(global.snd_explosion)
 						if (randi_range(1,3) == 1): gml.instance_create(obj.position.x+8, obj.position.y+8, Objects.alien_eject)
-						if (in_level.is_real_level()): global.enemy_kills[16] += 1
+						if (InLevel.is_real_level()): global.enemy_kills[16] += 1
 						global.ufos += 1
 						global.kills += 1
 						gml.instance_destroy(obj)

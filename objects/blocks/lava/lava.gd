@@ -18,8 +18,6 @@ var spurt
 var spurt_time
 var spurt_counter
 
-@onready var in_level: InLevel = InLevel.new()
-
 func create():
 	# main_code
 	type = "lava"
@@ -43,7 +41,7 @@ func destroy():
 
 func step():
 	dist = 0
-	if (in_level.is_level()):
+	if (InLevel.is_level()):
 		var player1 = gml.get_instance("player1") #---[FLAG] may have to change this for multiplayer
 		dist = gml.point_distance(position.x, position.y, player1.position.x, player1.position.y)
 

@@ -52,7 +52,7 @@ func step():
 	
 
 		# DY:  stealing makes shopkeeper angry
-		if (in_level.is_level()):
+		if (InLevel.is_level()):
 	
 			if (not in_level.is_in_shop(position.x, position.y)):
 		

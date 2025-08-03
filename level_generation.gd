@@ -1,8 +1,8 @@
 extends Node
 
-@onready var in_level: InLevel = InLevel.new()
+@onready var in_level = InLevel.new()
 	
-func scr_get_room_x(x):
+static func scr_get_room_x(x):
 #
 # DY: scr_get_room_x(x)
 #
@@ -17,7 +17,7 @@ func scr_get_room_x(x):
 
 	return -1
 
-func scr_get_room_y(y):
+static func scr_get_room_y(y):
 #
 # DY: scr_get_room_y(y)
 #
@@ -971,7 +971,7 @@ func scr_init_level():
 
 		for j in range(0, k + 1): #---[FLAG] <= in original code is handled by doing value + 1. check other loops to make sure this is correct
 		
-			if (not in_level.is_level()):
+			if (not InLevel.is_level()):
 			
 				i = 999
 				j = 999
@@ -1099,7 +1099,7 @@ func scr_init_level():
 	# DY:  ENTITY / TREASURES
 	# DY: # DY: # DY: # DY: # DY: # DY: # DY: # DY: # DY: # DY: # DY: # DY: # DY: # DY: 
 	global.temp2 = global.game_start
-	if (not in_level.is_room("tutorial") and not in_level.is_room("load_level")): scr_entity_gen()
+	if (not InLevel.is_room("tutorial") and not InLevel.is_room("load_level")): scr_entity_gen()
 
 	if (gml.instance_exists("entrance") and not global.custom_level):
 		var entrance = gml.get_instance("entrance")
@@ -1119,7 +1119,7 @@ func scr_init_level():
 		global.sacrifice_pit or
 		global.city_of_gold):
 
-		if (not in_level.is_room("load_level")):
+		if (not InLevel.is_room("load_level")):
 			var player1 = gml.get_instance("player1") #---[FLAG] may have to adjust this for multiplayer. check original code (uses "with" keyword)
 			player1.alarm_0_countdown.start(10)
 		
@@ -4028,7 +4028,6 @@ func scr_entity_gen():
 
 		var all_solids = gml.get_all_instances("solid")
 		for solid_instance in all_solids:
-		
 			if (not in_level.is_in_shop(solid_instance.position.x, solid_instance.position.y) and solid_instance.position.y > 16):
 			
 				if (solid_instance.type != "altar"):

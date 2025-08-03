@@ -167,7 +167,7 @@ func step():
 			MiscScripts.scr_create_blood(position.x+8, position.y+8, 3, self)
 			if (counts_as_kill):
 		
-				if (in_level.is_real_level()): global.total_monkey_kills += 1 # DY:  this is for stats
+				if (InLevel.is_real_level()): global.total_monkey_kills += 1 # DY:  this is for stats
 				global.monkeys += 1
 				global.kills += 1
 		

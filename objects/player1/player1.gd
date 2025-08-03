@@ -282,7 +282,7 @@ func create():
 	x_shortcut13 = 11
 	x_change2 = 12
 
-	if (in_level.is_room("olmec")): active = false
+	if (InLevel.is_room("olmec")): active = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func step() -> void: # one of seven scripts which uses 'other' outside of collision_with
@@ -324,7 +324,7 @@ func step_function_1() -> void:
 
 func prevent_player_death() -> void:
 	# prevent player from dying on title screen
-	if (in_level.is_room("title") or in_level.is_room("highscores")):
+	if (InLevel.is_room("title") or InLevel.is_room("highscores")):
 
 		if (global.is_tunnel_man): global.plife = 2
 		else: global.plife = 4
@@ -372,7 +372,7 @@ func handle_bomb_arrows() -> void:
 	
 func exit_game_from_title() -> void:
 	# exit game from title screen
-	if (in_level.is_room("title") and state == CLIMBING and position.y < 32):
+	if (InLevel.is_room("title") and state == CLIMBING and position.y < 32):
 
 		if (hold_item):
 		
@@ -523,7 +523,7 @@ func kill_player_upon_touching_lava() -> void:
 
 		if (not dead):
 		
-			if (in_level.is_real_level()): global.misc_deaths[11] += 1
+			if (InLevel.is_real_level()): global.misc_deaths[11] += 1
 			Audio.play_sound(global.snd_flame)
 		
 		global.plife -= 99
@@ -546,7 +546,7 @@ func fall_off_bottom_of_screen() -> void:
 	# fall off bottom of screen
 	if (position.y > gml.room_height + 16 and not dead):
 
-		if (in_level.is_real_level()): global.misc_deaths[10] += 1
+		if (InLevel.is_real_level()): global.misc_deaths[10] += 1
 		global.plife -= 99
 		x_vel = 0
 		y_vel = 0
@@ -601,7 +601,7 @@ func handle_player_active() -> void:
 			if (global.plife < 1):
 			
 				MiscScripts.scr_create_blood(position.x, position.y, 3, self)
-				if (in_level.is_real_level()): global.misc_deaths[3] += 1
+				if (InLevel.is_real_level()): global.misc_deaths[3] += 1
 			
 			bounced = true
 			stun_timer += 60
@@ -708,7 +708,7 @@ func handle_player_dead_or_stunned() -> void:
 		
 		move_to(x_vel, y_vel)
 
-	elif (in_level.is_level()): # look up and down
+	elif (InLevel.is_level()): # look up and down
 
 		if (k_down and (platform_character_is(ON_GROUND) or state == HANGING) and not k_right and not k_left):
 		
@@ -890,7 +890,7 @@ func handle_item_stealing() -> void:
 	#if (hold_item > 0): #--- adjusting this line
 	if hold_item != null:
 
-		if (hold_item.cost > 0 and in_level.is_level()):
+		if (hold_item.cost > 0 and InLevel.is_level()):
 			
 
 			if (global.room_path[[LevelGeneration.scr_get_room_x(position.x), LevelGeneration.scr_get_room_y(position.y)]] != 4 and global.room_path[[LevelGeneration.scr_get_room_x(position.x), LevelGeneration.scr_get_room_y(position.y)]] != 5):
@@ -910,7 +910,7 @@ func handle_chest_opening() -> void:
 	# open chest
 	if (k_up and k_attack_pressed and gml.collision_point(position.x, position.y, "chest", 0, 0)):
 
-		if (in_level.is_real_level()): global.total_chests += 1
+		if (InLevel.is_real_level()): global.total_chests += 1
 		var chest_instance = gml.instance_place(position.x, position.y, 'chest', self)
 		if (chest_instance.sprite_index == "chest"):
 		
@@ -958,9 +958,9 @@ func handle_crate_opening() -> void:
 	# open crate
 	if (k_up and k_attack_pressed and gml.collision_point(position.x, position.y, "crate", 0, 0)):
 		var obj
-		if (in_level.is_real_level()): global.total_crates += 1
+		if (InLevel.is_real_level()): global.total_crates += 1
 		var chest_instance = gml.instance_place(position.x, position.y, 'crate', self)
-		if (in_level.is_room("tutorial")): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.bomb_bag)
+		if (InLevel.is_room("tutorial")): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.bomb_bag)
 		elif (randi_range(1,500) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.jetpack)
 		elif (randi_range(1,200) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.cape_pickup)
 		elif (randi_range(1,100) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.shotgun)
@@ -1029,7 +1029,7 @@ func start_game() -> void:
 		sprite_index != "p_exit" and sprite_index != "damsel_exit" and sprite_index != "tunnel_exit"):
 
 		# x_end is the child of x_start, for some reason, that's why this is here:
-		if (in_level.is_room("olmec") and hold_item):
+		if (InLevel.is_room("olmec") and hold_item):
 		
 			if (hold_item.heavy):
 			
@@ -1066,7 +1066,7 @@ func start_game() -> void:
 				
 			
 		
-		elif (in_level.is_room("olmec")): global.pickup_item = ""
+		elif (InLevel.is_room("olmec")): global.pickup_item = ""
 		elif (hold_item): hold_item.held = false
 		hold_item = null
 		pickup_item_type = ""
@@ -1116,7 +1116,7 @@ func exit_level() -> void:
 		
 			if (hold_item.type == "gold idol"):
 			
-				if (in_level.is_real_level()): global.idols_converted += 1
+				if (InLevel.is_real_level()): global.idols_converted += 1
 				global.money += hold_item.value*(global.level_type+1)
 				if (hold_item.sprite_index == "crystal_skull"): global.skulls += 1
 				else: global.idols += 1
@@ -1130,7 +1130,7 @@ func exit_level() -> void:
 				if (hold_item.hp > 0):
 				
 					# global.plife += 1
-					if (in_level.is_real_level()): global.damsels_saved_total += 1
+					if (InLevel.is_real_level()): global.damsels_saved_total += 1
 					global.damsels += 1
 					global.xdamsels += 1
 					var door = gml.instance_place(position.x, position.y, 'exit', self)
@@ -1253,7 +1253,7 @@ func game_over() -> void:
 		else:
 		
 			# Stats!
-			if (in_level.is_real_level()): global.level_deaths[global.curr_level-1] += 1
+			if (InLevel.is_real_level()): global.level_deaths[global.curr_level-1] += 1
 		
 			if (Gamepad.attack_pressed): Gamepad.attack_pressed = false #--- [FLAG] Come back and check if these causes any issues
 			if (Gamepad.start_pressed): Gamepad.start_pressed = false #--- [FLAG] this line too
@@ -1272,15 +1272,15 @@ func game_over() -> void:
 			else:
 			
 				MiscScripts.scr_clear_globals()
-				if (in_level.is_room("sun")): global.scores_start = 1
-				if (in_level.is_room("moon")): global.scores_start = 2
-				if (in_level.is_room("stars")): global.scores_start = 3
+				if (InLevel.is_room("sun")): global.scores_start = 1
+				if (InLevel.is_room("moon")): global.scores_start = 2
+				if (InLevel.is_room("stars")): global.scores_start = 3
 				gml.room_goto("highscores")
 
 
 func set_in_game_status() -> void:
 	in_game = true
-	if (not in_level.is_level()):
+	if (not InLevel.is_level()):
 
 		in_game = false
 	
@@ -1551,14 +1551,14 @@ func bomb_rope_and_whipping_handling() -> void: #--- Also handles picking up ite
 						global.arrows += 6
 					
 					
-					if (hold_item.type == "gold idol" and hold_item.trigger and not in_level.is_room("load_level")):
+					if (hold_item.type == "gold idol" and hold_item.trigger and not InLevel.is_room("load_level")):
 					
 						global.idols_grabbed += 1
 						if (global.level_type == 0):
 						
 							var trap_instance = gml.instance_nearest(position.x, position.y-64, 'giant_tiki_head')
 							trap_instance.alarm_0_countdown.start(100)
-							in_level.scr_shake(100)
+							InLevel.scr_shake(100)
 							hold_item.trigger = false
 						
 						elif (global.level_type == 1):
@@ -1589,7 +1589,7 @@ func bomb_rope_and_whipping_handling() -> void: #--- Also handles picking up ite
 									ceiling_trap_instance.status = 1
 									ceiling_trap_instance.y_vel = 0.5
 								
-								in_level.scr_shake(20)
+								InLevel.scr_shake(20)
 								var trap = gml.instance_nearest(position.x-64, position.y-64, 'door')
 								trap.status = 1
 								trap.y_vel = 1
@@ -1606,8 +1606,8 @@ func bomb_rope_and_whipping_handling() -> void: #--- Also handles picking up ite
 									
 										gml.instance_destroy(trap_block_instance)
 									
-									trap_block_instance.Audio.play_sound(global.snd_thump)
-									trap_block_instance.in_level.scr_shake(10)
+									Audio.play_sound(global.snd_thump)
+									InLevel.scr_shake(10)
 								
 							
 					
@@ -1652,7 +1652,7 @@ func bomb_rope_and_whipping_handling() -> void: #--- Also handles picking up ite
 
 
 	#/*
-	#if (in_level.is_level() and k_flare_pressed and active and not dead and not stunned):
+	#if (InLevel.is_level() and k_flare_pressed and active and not dead and not stunned):
 #
 		#if (global.flares > 0):
 		#
@@ -1691,7 +1691,7 @@ func bomb_rope_and_whipping_handling() -> void: #--- Also handles picking up ite
 	#*/
 	
 func handle_shop_behavior() -> void: #--- Purchasing and games etc. (different shop types)
-	if (in_level.is_level() and active and k_pay_pressed and not dead and not stunned):
+	if (InLevel.is_level() and active and k_pay_pressed and not dead and not stunned):
 
 		if (in_level.is_in_shop(position.x, position.y) and gml.instance_exists("shopkeeper")):
 			var shopkeeper = gml.get_instance("shopkeeper")
@@ -1717,7 +1717,7 @@ func handle_shop_behavior() -> void: #--- Purchasing and games etc. (different s
 				
 				else:
 				
-					if (in_level.is_real_level()): global.items_bought += 1
+					if (InLevel.is_real_level()): global.items_bought += 1
 					global.money -= hold_item.cost
 					CharacterScripts.scr_steal_item(x_vel, y_vel, self)
 					#global.message = "THANK YOU!"
@@ -1736,7 +1736,7 @@ func handle_shop_behavior() -> void: #--- Purchasing and games etc. (different s
 				
 				elif (bet == 0 and global.money >= (1000 + global.curr_level * 500)):
 				
-					if (in_level.is_real_level()): global.dice_games_played += 1
+					if (InLevel.is_real_level()): global.dice_games_played += 1
 					bet = 1000 + global.curr_level * 500
 					global.money -= 1000 + global.curr_level * 500
 					global.message = "YOU BET $" + str(1000 + global.curr_level * 500) + "!"
@@ -1769,7 +1769,7 @@ func handle_shop_behavior() -> void: #--- Purchasing and games etc. (different s
 				
 					if (obj.for_sale and not obj.held):
 					
-						if (in_level.is_real_level()): global.kisses_bought += 1
+						if (InLevel.is_real_level()): global.kisses_bought += 1
 						obj.status = 6
 						if (global.is_damsel):
 						
@@ -1848,9 +1848,9 @@ func kill_upon_being_crushed() -> void:
 
 		if (global.plife > 0):
 		
-			if (in_level.is_real_level()):
+			if (InLevel.is_real_level()):
 			
-				if (in_level.is_room("olmec")): global.enemy_deaths[22] += 1
+				if (InLevel.is_room("olmec")): global.enemy_deaths[22] += 1
 				else: global.misc_deaths[2] += 1
 			
 		
@@ -1872,7 +1872,7 @@ func handle_hit_by_arrow() -> void:
 			if (global.plife > 0):
 			
 				global.plife -= 2
-				if (global.plife <= 0 and in_level.is_real_level()): global.misc_deaths[6] += 1
+				if (global.plife <= 0 and InLevel.is_real_level()): global.misc_deaths[6] += 1
 			
 			x_vel = obj.x_vel
 			y_vel = -4
@@ -1901,7 +1901,7 @@ func handle_hit_by_rock() -> void:
 				if (global.plife > 0):
 				
 					global.plife -= 2
-					if (global.plife <= 0 and in_level.is_real_level()): global.misc_deaths[0] += 1
+					if (global.plife <= 0 and InLevel.is_real_level()): global.misc_deaths[0] += 1
 				
 				x_vel = obj.x_vel
 				y_vel = -4
@@ -1921,7 +1921,7 @@ func handle_hit_by_laser() -> void:
 			if (global.plife > 0):
 			
 				global.plife -= 3
-				if (global.plife <= 0 and in_level.is_real_level()): global.enemy_deaths[16] += 1
+				if (global.plife <= 0 and InLevel.is_real_level()): global.enemy_deaths[16] += 1
 			
 			if (obj.position.x < position.x): x_vel = 2
 			else: x_vel = -2
@@ -1945,7 +1945,7 @@ func handle_hit_by_psychic_wave() -> void:
 			if (global.plife > 0):
 			
 				global.plife -= 1
-				if (global.plife <= 0 and in_level.is_real_level()): global.enemy_deaths[17] += 1
+				if (global.plife <= 0 and InLevel.is_real_level()): global.enemy_deaths[17] += 1
 			
 			if (obj.position.x < position.x): x_vel = 2
 			else: x_vel = -2
@@ -1959,7 +1959,7 @@ func handle_hit_by_explosion() -> void:
 	if (gml.collision_rectangle(position.x-8, position.y-8, position.x+8,  position.y+8, "explosion", 0, 0)):
 
 		global.plife -= 10
-		if (global.plife > 0 and in_level.is_real_level()): global.misc_deaths[1] += 1
+		if (global.plife > 0 and InLevel.is_real_level()): global.misc_deaths[1] += 1
 		var explosion: GMObject = gml.instance_nearest(position.x, position.y, "explosion")
 		if (explosion.position.x < position.x): x_vel = randi_range(4,6)
 		else: x_vel = -randi_range(4,6)
@@ -1976,7 +1976,7 @@ func handle_hit_by_spears_left() -> void:
 
 		if (obj.image_index >= 20 and obj.image_index < 24):
 		
-			if (global.plife > 0 and in_level.is_real_level()):  global.misc_deaths[7] += 1
+			if (global.plife > 0 and InLevel.is_real_level()):  global.misc_deaths[7] += 1
 		
 			# stunned = true
 			# bounced  = false
@@ -1992,7 +1992,7 @@ func handle_hit_by_spears_left() -> void:
 func handle_hit_by_smash_trap() -> void:
 	if (gml.collision_rectangle(position.x-6, position.y-6, position.x+6,  position.y+7, "smash_trap", 0, 0)):
 
-		if (global.plife > 0 and in_level.is_real_level()): global.misc_deaths[8] += 1
+		if (global.plife > 0 and InLevel.is_real_level()): global.misc_deaths[8] += 1
 
 		var obj = gml.instance_nearest(position.x, position.y, 'smash_trap')
 		global.plife -= 10
@@ -2018,7 +2018,7 @@ func handle_hit_by_ceiling_trap() -> void:
 
 		if (obj.status > 0):
 		
-			if (global.plife > 0 and in_level.is_real_level()): global.misc_deaths[9] += 1
+			if (global.plife > 0 and InLevel.is_real_level()): global.misc_deaths[9] += 1
 
 			global.plife -= 10
 			MiscScripts.scr_create_blood(position.x, position.y, 1, self)
@@ -2039,7 +2039,7 @@ func handle_spike_collision() -> void:
 
 		if (not dead):
 		
-			if (in_level.is_real_level()): global.misc_deaths[4] += 1
+			if (InLevel.is_real_level()): global.misc_deaths[4] += 1
 			MiscScripts.scr_create_blood(position.x, position.y, 3, self)
 			global.plife -= 99
 			x_vel = 0
@@ -2193,7 +2193,7 @@ func decrease_dead_counter() -> void:
 	if (dead and dead_counter > 0): dead_counter -= 1
 	
 func handle_ankh_revival() -> void:
-	if (in_level.is_level() or in_level.is_room("sun") or in_level.is_room("moon") or in_level.is_room("stars")):
+	if (InLevel.is_level() or InLevel.is_room("sun") or InLevel.is_room("moon") or InLevel.is_room("stars")):
 
 		if (not dead and global.plife < 1):
 		
@@ -2207,7 +2207,7 @@ func handle_ankh_revival() -> void:
 					position.x = moai.position.x+16+8
 					position.y = moai.position.y+16+8
 				
-				elif (in_level.is_room("olmec")):
+				elif (InLevel.is_room("olmec")):
 				
 					position.x = 16+8
 					position.y = 544+8
@@ -2249,19 +2249,19 @@ func handle_ankh_revival() -> void:
 				var sun_room = gml.get_instance('sun_room')
 				var moon_room = gml.get_instance('moon_room')
 				var stars_room = gml.get_instance('stars_room')
-				if (in_level.is_room("sun")): global.mini1 = sun_room.points
-				if (in_level.is_room("moon")):
+				if (InLevel.is_room("sun")): global.mini1 = sun_room.points
+				if (InLevel.is_room("moon")):
 				
 					global.mini2 = moon_room.baskets
 					moon_room.timer = -1
 					moon_room.alarm_10_countdown.start(30)
 				
-				if (in_level.is_room("stars")): global.mini3 = stars_room.kills
+				if (InLevel.is_room("stars")): global.mini3 = stars_room.kills
 				if (global.mini1 > 99): global.mini1 = 99
 				if (global.mini2 > 99): global.mini2 = 99
 				if (global.mini3 > 99): global.mini3 = 99
 				
-				if (in_level.is_room("sun") or in_level.is_room("moon") or in_level.is_room("stars")): MiscScripts.scr_update_highscores(2)
+				if (InLevel.is_room("sun") or InLevel.is_room("moon") or InLevel.is_room("stars")): MiscScripts.scr_update_highscores(2)
 				else: MiscScripts.scr_update_highscores(0)
 		
 				dead = true
@@ -2442,7 +2442,7 @@ func collect_idol_and_damsel() -> void:
 			collect = false
 			if (hold_item.type == "gold idol"):
 			
-				if (in_level.is_real_level()): global.idols_converted += 1
+				if (InLevel.is_real_level()): global.idols_converted += 1
 				global.collect += hold_item.value*(global.level_type+1)
 				global.collect_counter += 20
 				if (global.collect_counter > 100): global.collect_counter = 100
@@ -2457,7 +2457,7 @@ func collect_idol_and_damsel() -> void:
 			
 				if (hold_item.active and hold_item.hp > 0):
 				
-					if (in_level.is_real_level()): global.damsels_saved_total += 1
+					if (InLevel.is_real_level()): global.damsels_saved_total += 1
 					global.damsels += 1
 					global.xdamsels += 1
 					var door = gml.instance_place(position.x, position.y, 'exit', self)
@@ -3715,7 +3715,7 @@ func alarm_0() -> void:
 
 	
 	
-	if (in_level.is_room("tutorial")):
+	if (InLevel.is_room("tutorial")):
 
 	# do nothing
 		pass
@@ -3781,7 +3781,7 @@ func alarm_0() -> void:
 		global.message_timer = 200
 
 func alarm_1() -> void:
-	if (in_level.is_room("tutorial")):
+	if (InLevel.is_room("tutorial")):
 
 		# do nothing
 		pass
@@ -4476,13 +4476,13 @@ func animation_end() -> void:
 		elif (p_exit == x_scores):
 		
 			global.game_start = false
-			if (in_level.is_room("title")):
+			if (InLevel.is_room("title")):
 				global.scores_start = 0
-			elif (in_level.is_room("sun")):
+			elif (InLevel.is_room("sun")):
 				global.scores_start = 1
-			elif (in_level.is_room("moon")):
+			elif (InLevel.is_room("moon")):
 				global.scores_start = 2
-			elif (in_level.is_room("stars")):
+			elif (InLevel.is_room("stars")):
 				global.scores_start = 3
 			else: global.scores_start = 0
 			gml.room_goto("highscores")
@@ -4490,9 +4490,9 @@ func animation_end() -> void:
 		elif (p_exit == x_title):
 		
 			global.game_start = false
-			if (in_level.is_room("highscores")):
+			if (InLevel.is_room("highscores")):
 				global.title_start = 1
-			elif (in_level.is_room("tutorial")):
+			elif (InLevel.is_room("tutorial")):
 			
 				MiscScripts.scr_clear_globals()
 				global.title_start = 3

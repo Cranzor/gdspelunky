@@ -68,7 +68,7 @@ func collision_with_character():
 		if (global.plife > 0):
 	
 			global.plife -= 2
-			if (global.plife <= 0 and in_level.is_real_level()): global.enemy_deaths[20] += 1
+			if (global.plife <= 0 and InLevel.is_real_level()): global.enemy_deaths[20] += 1
 	
 		Audio.play_sound(global.snd_hurt)
 
@@ -155,7 +155,7 @@ func step():
 			if (global.curr_level == 13): gml.instance_create(position.x+16, position.y+16, Objects.sceptre)
 			if (counts_as_kill):
 		
-				if (in_level.is_real_level()): global.enemy_kills[20] += 1
+				if (InLevel.is_real_level()): global.enemy_kills[20] += 1
 				global.tomblords += 1
 				global.kills += 1
 		

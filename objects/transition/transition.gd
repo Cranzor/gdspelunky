@@ -24,8 +24,6 @@ var debug_counter
 var up_held
 var down_held
 
-@onready var in_level: InLevel = InLevel.new()
-
 
 func alarm_0():
 	if (draw_loot == 0):
@@ -380,17 +378,17 @@ func create():
 		gml.instance_create(176+8, 176+8, Objects.damsel_kiss)
 
 
-	if (global.tunnel1 > 0 and global.tunnel2 > 0 and in_level.is_room("transition1x")):
+	if (global.tunnel1 > 0 and global.tunnel2 > 0 and InLevel.is_room("transition1x")):
 
 		if (global.tunnel1 > global.tunnel1_max): global.tunnel1 -= 1
 		else: gml.instance_create(96+8, 176+8, Objects.tunnel_man)
 
-	elif (global.tunnel1 == 0 and global.tunnel2 > 0 and in_level.is_room("transition2x")):
+	elif (global.tunnel1 == 0 and global.tunnel2 > 0 and InLevel.is_room("transition2x")):
 
 		if (global.tunnel2 > global.tunnel2_max): global.tunnel2 -= 1
 		else: gml.instance_create(96+8, 176+8, Objects.tunnel_man)
 
-	elif (global.tunnel1 > 0 and global.tunnel2 == 0 and in_level.is_room("transition3x")):
+	elif (global.tunnel1 > 0 and global.tunnel2 == 0 and InLevel.is_room("transition3x")):
 
 		if (global.tunnel1 > global.tunnel3_max): global.tunnel1 -= 1
 		else: gml.instance_create(96+8, 176+8, Objects.tunnel_man)
@@ -427,11 +425,11 @@ func draw():
 			n = 320 - str_len
 			n = ceil(n / 2)
 			gml.draw_text(n, 208, "CAN YOU LEND ME A LITTLE MONEY?", "lend_money", self)
-			if (in_level.is_room("transition1x") or in_level.is_room("transition3x")): str_len = gml.string_length("I NEED $" + str(global.tunnel1) + " FOR A NEW SHORTCUT.")*8
+			if (InLevel.is_room("transition1x") or InLevel.is_room("transition3x")): str_len = gml.string_length("I NEED $" + str(global.tunnel1) + " FOR A NEW SHORTCUT.")*8
 			else: str_len = gml.string_length("I NEED $" + str(global.tunnel2) + " FOR A NEW SHORTCUT.")*8
 			n = 320 - str_len
 			n = ceil(n / 2)
-			if (in_level.is_room("transition1x") or in_level.is_room("transition3x")): gml.draw_text(n, 216, "I NEED $" + str(global.tunnel1) + " FOR A NEW SHORTCUT.", "need_money", self)
+			if (InLevel.is_room("transition1x") or InLevel.is_room("transition3x")): gml.draw_text(n, 216, "I NEED $" + str(global.tunnel1) + " FOR A NEW SHORTCUT.", "need_money", self)
 			else: gml.draw_text(n, 216, "I NEED $" + str(global.tunnel2) + " FOR A NEW SHORTCUT.", "need_money2", self)
 			gml.draw_set_color(gml.c_yellow)
 			var tunnel_man = gml.get_instance("tunnel_man")
@@ -576,7 +574,7 @@ func step():
 	
 			var person = gml.instance_nearest(100, 100, "tunnel_man")
 			person.donate += 100
-			if (in_level.is_room("transition1x") or in_level.is_room("transition3x")):
+			if (InLevel.is_room("transition1x") or InLevel.is_room("transition3x")):
 		
 				if (global.money > global.tunnel1):
 			

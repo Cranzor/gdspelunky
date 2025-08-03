@@ -24,7 +24,7 @@ func _process(delta):
 
 #func draw():
 #    draw_sprite(sprite_index, -1, position.x, position.y)
-#    if (in_level.is_room("r_level_editor")):
+#    if (InLevel.is_room("r_level_editor")):
 
 #        gml.draw_set_font(global.my_font_small)
 #        gml.draw_set_color(gml.c_white)
