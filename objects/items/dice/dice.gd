@@ -52,11 +52,11 @@ func step():
 	
 
 		# DY:  stealing makes shopkeeper angry
-		if (InLevel.is_level()):
+		if (in_level.is_level()):
 	
-			if (not InLevel.is_in_shop(position.x, position.y)):
+			if (not in_level.is_in_shop(position.x, position.y)):
 		
-				InLevel.scr_shopkeeper_anger(0, self)
+				in_level.scr_shopkeeper_anger(0, self)
 		
 	
 		var character = gml.get_instance("character") #---[FLAG] may have to change this for multiplayer
@@ -264,7 +264,7 @@ func step():
 
 		if (rolling and y_vel == 0):
 	
-			if (rolled): InLevel.scr_shopkeeper_anger(0, self) # DY:  NO CHEATING!
+			if (rolled): in_level.scr_shopkeeper_anger(0, self) # DY:  NO CHEATING!
 			rolled = true
 			rolling = false
 	

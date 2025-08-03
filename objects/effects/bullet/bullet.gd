@@ -14,6 +14,7 @@ func _process(delta):
 
 
 #--- Object functions
+@onready var in_level: InLevel = InLevel.new()
 
 
 func alarm_0():
@@ -26,7 +27,7 @@ func collision_with_character():
 		if (global.plife > 0):
 	
 			global.plife -= 4
-			if (global.plife <= 0 and InLevel.is_real_level()): global.enemy_deaths[19] += 1
+			if (global.plife <= 0 and in_level.is_real_level()): global.enemy_deaths[19] += 1
 	
 	
 		other.x_vel = x_vel

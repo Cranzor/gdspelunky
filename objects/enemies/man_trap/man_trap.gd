@@ -94,7 +94,7 @@ func collision_with_character():
 			global.plife = -99
 			Audio.play_sound(global.snd_die)
 			global.draw_hud = false
-			if (InLevel.is_real_level()): global.enemy_deaths[10] += 1
+			if (in_level.is_real_level()): global.enemy_deaths[10] += 1
 				
 			if (other.hold_item):
 		
@@ -259,7 +259,7 @@ func step():
 
 			if (counts_as_kill):
 		
-				if (InLevel.is_real_level()): global.enemy_kills[10] += 1
+				if (in_level.is_real_level()): global.enemy_kills[10] += 1
 				global.mantraps += 1
 				global.kills += 1
 		

@@ -14,6 +14,7 @@ func _process(delta):
 
 
 #--- Object functions
+@onready var in_level: InLevel = InLevel.new()
 
 
 func animation_end():
@@ -31,7 +32,7 @@ func animation_end():
 		if (not obj.invincible): hit = true
 
 
-	if (hit and not InLevel.is_room("title") and not InLevel.is_room("highscores")):
+	if (hit and not in_level.is_room("title") and not in_level.is_room("highscores")):
 	  
 		var tile = gml.tile_layer_find(3, obj.position.x, obj.position.y-16)
 		if (tile): gml.tile_delete(tile)

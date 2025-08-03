@@ -23,6 +23,7 @@ var fired_max #--- used in spear_trap_top and spear_trap_bottom
 var prox #--- used in spear_trap_top and spear_trap_bottom
 var spear_range #--- used in spear_trap_top and spear_trap_bottom. changed name from "range" to not conflict with Godot keyword
 
+@onready var in_level: InLevel = InLevel.new()
 
 func create():
 	# action_inherited
@@ -42,7 +43,7 @@ func destroy():
 		var all_shopkeepers = gml.get_all_instances("shopkeeper")
 		for shopkeeper_instance in all_shopkeepers:
 		
-			InLevel.scr_shopkeeper_anger(1, shopkeeper_instance) #--- a bit strange for the shopkeeper to check for the existence of itself, but that appears to be how it works
+			in_level.scr_shopkeeper_anger(1, shopkeeper_instance) #--- a bit strange for the shopkeeper to check for the existence of itself, but that appears to be how it works
 	
 	if (gml.collision_point(position.x+8, position.y-1, "spikes", 0, 0)):
 

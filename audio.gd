@@ -1,5 +1,7 @@
 extends Node
 
+@onready var in_level: InLevel = InLevel.new()
+
 func play_music(music_piece, loop: bool):
 	if (global.music and not SS.is_sound_playing(music_piece)):
 
@@ -14,12 +16,12 @@ func play_sound(sound):
 func scr_music_fade():
 	var player1 = null #---[FLAG] Get player here
 	
-	if (InLevel.is_level()):
+	if (in_level.is_level()):
 
 		if (global.level_type == 1): SS.set_sound_freq(global.mus_lush, SS.get_sound_freq(global.mus_lush)-100)
 		elif (global.level_type == 2): SS.set_sound_freq(global.mus_ice, SS.get_sound_freq(global.mus_ice)-100)
 		elif (global.level_type == 3): SS.set_sound_freq(global.mus_temple, SS.get_sound_freq(global.mus_temple)-100)
-		elif (InLevel.is_room("olmec")):
+		elif (in_level.is_room("olmec")):
 		
 			if (player1.active):
 				SS.set_sound_freq(global.mus_boss, SS.get_sound_freq(global.mus_boss)-100)
@@ -67,9 +69,9 @@ func start_music():
 		
 		
 
-	elif (InLevel.is_level()):
+	elif (in_level.is_level()):
 
-		if (InLevel.is_room("olmec")):
+		if (in_level.is_room("olmec")):
 		
 			if (player1.active):
 			
@@ -103,8 +105,8 @@ func start_music():
 			SS.set_sound_freq(global.mus_cave, 44100)
 		
 
-	elif (InLevel.is_room("title")): SS.stop_sound(global.mus_title)
-	elif (InLevel.is_room("sun") or InLevel.is_room("moon") or InLevel.is_room("stars")):
+	elif (in_level.is_room("title")): SS.stop_sound(global.mus_title)
+	elif (in_level.is_room("sun") or in_level.is_room("moon") or in_level.is_room("stars")):
 
 		play_music(global.mus_boss, true)
 		SS.set_sound_vol(global.mus_boss, 2000 + 8000 * (global.music_vol/18))

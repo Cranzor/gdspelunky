@@ -58,7 +58,7 @@ func step():
 	
 			#with shopkeeper #--- commenting this out as scr_shopkeeper_anger only calls the nearest shopkeeper
 		
-				InLevel.scr_shopkeeper_anger(2, self)
+				in_level.scr_shopkeeper_anger(2, self)
 		
 	
 

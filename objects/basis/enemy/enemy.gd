@@ -33,6 +33,7 @@ var attack_timer
 var THROW
 var sight_counter
 
+@onready var in_level: InLevel = InLevel.new()
 
 func collision_with_character():
 	# DY:  jumped on - caveman, man_trap replaces this script with its own
@@ -64,7 +65,7 @@ func collision_with_character():
 	
 			global.plife -= 1
 		
-			if (global.plife <= 0 and InLevel.is_real_level()):
+			if (global.plife <= 0 and in_level.is_real_level()):
 		
 				if (type == "bat"): global.enemy_deaths[0] += 1
 				elif (type == "snake"): global.enemy_deaths[1] += 1

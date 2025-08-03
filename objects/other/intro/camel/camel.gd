@@ -14,6 +14,7 @@ func _process(delta):
 
 
 #--- Object functions
+@onready var in_level: InLevel = InLevel.new()
 
 
 func create():
@@ -42,6 +43,6 @@ func step():
 		position.x -= 2
 
 
-	if (InLevel.is_room("credits1") and position.x < -64):
+	if (in_level.is_room("credits1") and position.x < -64):
 		var credits1 = gml.get_instance("credits1")
 		credits1.fade_out = true

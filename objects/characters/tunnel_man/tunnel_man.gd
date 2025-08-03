@@ -23,6 +23,9 @@ const TRANSITION = 0
 var attack_pressed = false
 var check_up = false
 var check_down = false
+
+@onready var in_level: InLevel = InLevel.new()
+
 func _input(_event):
 	if ControlScripts.check_attack_pressed():
 		attack_pressed = true
@@ -46,7 +49,7 @@ func create():
 	up_held = 0
 	down_held = 0
 
-	if (InLevel.is_room("title")): sprite_index = "tunnel_man_right"
+	if (in_level.is_room("title")): sprite_index = "tunnel_man_right"
 
 func step():
 	if (attack_pressed):
@@ -54,7 +57,7 @@ func step():
 		if (talk == 1): talk = 2
 		elif (talk == 2):
 
-			if (InLevel.is_room("transition1x") or InLevel.is_room("transition3x")):
+			if (in_level.is_room("transition1x") or in_level.is_room("transition3x")):
 		
 				if (donate > 0):
 			
@@ -105,7 +108,7 @@ func step():
 				else: donate += 100
 		
 			if (donate > global.money): donate = global.money
-			if (InLevel.is_room("transition1x") or InLevel.is_room("transition3x")):  if (donate > global.tunnel1): donate = global.tunnel1
+			if (in_level.is_room("transition1x") or in_level.is_room("transition3x")):  if (donate > global.tunnel1): donate = global.tunnel1
 			else:  if (donate > global.tunnel2): donate = global.tunnel2
 			down_counter = 0
 

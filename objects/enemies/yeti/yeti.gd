@@ -68,7 +68,7 @@ func collision_with_character():
 			if (global.plife > 0):
 		
 				global.plife -= 1
-				if (global.plife <= 0 and InLevel.is_real_level()): global.enemy_deaths[13] += 1
+				if (global.plife <= 0 and in_level.is_real_level()): global.enemy_deaths[13] += 1
 		
 			Audio.play_sound(global.snd_hurt)
 	
@@ -396,7 +396,7 @@ func step(): # one of seven scripts which uses 'other' outside of collision_with
 		
 				if (counts_as_kill):
 			
-					if (InLevel.is_real_level()): global.enemy_kills[13] += 1
+					if (in_level.is_real_level()): global.enemy_kills[13] += 1
 					global.yetis += 1
 					global.kills += 1
 			

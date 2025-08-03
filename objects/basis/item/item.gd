@@ -38,6 +38,8 @@ var to_destroy
 
 var small_collect_draw_node
 
+@onready var in_level: InLevel = InLevel.new()
+
 
 func create():
 	var small_collect_draw = load("res://scenes/small_collect_draw.tscn").instantiate() #--- each item creates a node for drawing small collect icon
@@ -97,26 +99,26 @@ func step():
 			global.thief_level > 0 or
 			global.murderer) and cost > 0):
 		
-			if (InLevel.is_real_level()): global.items_stolen += 1
+			if (in_level.is_real_level()): global.items_stolen += 1
 			cost = 0
 			for_sale = false
 		
 
 			#DY: stealing makes shopkeeper angry
-		if (InLevel.is_real_level()):
+		if (in_level.is_real_level()):
 		
-			if (cost > 0 and for_sale and not InLevel.is_in_shop(position.x, position.y)):
+			if (cost > 0 and for_sale and not in_level.is_in_shop(position.x, position.y)):
 			
 				global.items_stolen += 1
-				InLevel.scr_shopkeeper_anger(0, self)
+				in_level.scr_shopkeeper_anger(0, self)
 				cost = 0
 			
 		
-		elif (InLevel.is_level()):
+		elif (in_level.is_level()):
 		
-			if (cost > 0 and for_sale and not InLevel.is_in_shop(position.x, position.y)):
+			if (cost > 0 and for_sale and not in_level.is_in_shop(position.x, position.y)):
 			
-				InLevel.scr_shopkeeper_anger(0, self)
+				in_level.scr_shopkeeper_anger(0, self)
 				cost = 0
 			
 		
@@ -424,7 +426,7 @@ func step():
 						gml.instance_create(obj.position.x+8, obj.position.y+8, Objects.explosion)
 						Audio.play_sound(global.snd_explosion)
 						if (randi_range(1,3) == 1): gml.instance_create(obj.position.x+8, obj.position.y+8, Objects.alien_eject)
-						if (InLevel.is_real_level()): global.enemy_kills[16] += 1
+						if (in_level.is_real_level()): global.enemy_kills[16] += 1
 						global.ufos += 1
 						global.kills += 1
 						gml.instance_destroy(obj)
@@ -486,7 +488,7 @@ func step():
 					
 						if (obj.for_sale):
 						
-							InLevel.scr_shopkeeper_anger(3, self)
+							in_level.scr_shopkeeper_anger(3, self)
 
 
 func draw():

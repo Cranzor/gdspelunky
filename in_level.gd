@@ -1,6 +1,7 @@
 extends Node
+class_name InLevel
 
-func get_kiss_value():
+static func get_kiss_value():
 	return 10000+5000*(global.curr_level-2)
 
 func is_in_shop(x, y):
@@ -18,7 +19,7 @@ func is_in_shop(x, y):
 
 	return false
 
-func is_level():
+func is_level() -> bool:
 	#
 	# is_level()
 	#
@@ -39,13 +40,11 @@ func is_real_level():
 	return false
 
 func is_room(name):
-	if get_tree().current_scene != null:
-		var current_room = str(get_tree().current_scene.get_child(0).get("room_name"))
-		if name == current_room:
-			return true
+	if name == global.current_room:
+		return true
 	return false
 
-func scr_shake(number):
+static func scr_shake(number):
 ##
 ##DY: scr_shake(duration)
 ##

@@ -78,7 +78,7 @@ func step():
 	image_angle = direction
 
 	# DY:  ensure the arrow does not shoot through the target in the Moon challenge
-	if (InLevel.is_room("moon")):
+	if (in_level.is_room("moon")):
 
 		if (gml.instance_exists("target")):
 			var target = gml.get_instance("target")

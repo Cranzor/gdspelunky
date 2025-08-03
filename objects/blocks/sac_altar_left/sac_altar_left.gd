@@ -46,7 +46,7 @@ func destroy():
 		global.message = "YOU DARE DEFILE MY ALTAR?"
 		global.message2 = "I WILL PUNISH YOU!"
 		global.message_timer = 200
-		InLevel.scr_shake(10)
+		in_level.scr_shake(10)
 		global.favor -= 16
 	
 		if (global.kali_punish == 0):

@@ -69,7 +69,7 @@ func step():
 			MiscScripts.scr_create_blood(position.x+4, position.y+4, 3, self)
 			if (counts_as_kill):
 		
-				if (InLevel.is_real_level()): global.enemy_kills[11] += 1
+				if (in_level.is_real_level()): global.enemy_kills[11] += 1
 				global.piranhas += 1
 				global.kills += 1
 		

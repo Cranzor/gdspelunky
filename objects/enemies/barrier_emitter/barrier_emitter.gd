@@ -14,6 +14,7 @@ func _process(delta):
 
 
 #--- Object functions
+@onready var in_level: InLevel = InLevel.new()
 
 
 func collision_with_bullet():
@@ -39,7 +40,7 @@ func destroy():
 		var obj = gml.instance_create(position.x+2+gml.rand(0,14), position.y+2+gml.rand(0,14), Objects.flare_spark)
 		obj.y_vel = gml.rand(1,3)
 
-	InLevel.scr_shake(10)
+	in_level.scr_shake(10)
 	Audio.play_sound(global.snd_small_explode)
 	var all_barriers = gml.get_all_instances("barrier")
 	for barrier in all_barriers:

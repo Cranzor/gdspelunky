@@ -20,7 +20,6 @@ config/icon="uid://dc4sg8xk0ur2i"
 
 global="*res://global.tscn"
 gml="*res://gml.tscn"
-InLevel="*res://in_level.gd"
 ControlScripts="*res://control_scripts.gd"
 PlatformEngine="*res://platform_engine.gd"
 MiscScripts="*res://misc_scripts.gd"

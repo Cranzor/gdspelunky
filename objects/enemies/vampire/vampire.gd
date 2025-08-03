@@ -403,7 +403,7 @@ func step(): # one of seven scripts which uses 'other' outside of collision_with
 			obj.x_vel = gml.rand(0,3)-gml.rand(0,3)
 			if (counts_as_kill):
 		
-				if (InLevel.is_real_level()): global.enemy_kills[7] += 1
+				if (in_level.is_real_level()): global.enemy_kills[7] += 1
 				global.vampires += 1
 				global.kills += 1
 		

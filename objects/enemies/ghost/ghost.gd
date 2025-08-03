@@ -14,6 +14,7 @@ func _process(delta):
 
 
 #--- Object functions
+@onready var in_level: InLevel = InLevel.new()
 
 
 func animation_end():
@@ -35,7 +36,7 @@ func collision_with_character():
 
 		if (true):
 	
-			if (InLevel.is_real_level()): global.enemy_deaths[23] += 1
+			if (in_level.is_real_level()): global.enemy_deaths[23] += 1
 			for repetition in range(3):
 		
 				gml.instance_create(other.position.x, other.position.y, Objects.bone)

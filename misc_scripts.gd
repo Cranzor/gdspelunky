@@ -297,8 +297,8 @@ func scr_draw_hud():
 		gml.draw_text(rope_x+16, 8, str(global.rope), "global_rope", Screen)
 		gml.draw_sprite("dollar_sign", -1, money_x, 8, Screen)
 		gml.draw_text(money_x+16, 8, str(global.money), "global_money", Screen)
-
-		if (InLevel.is_room("olmec")):
+		var in_level: InLevel = InLevel.new()
+		if (in_level.is_room("olmec")):
 			global.exit_x = 640
 			global.exit_y = 544
 		

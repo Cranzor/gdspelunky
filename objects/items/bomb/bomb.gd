@@ -84,4 +84,4 @@ func step():
 			var all_shopkeepers = gml.get_all_instances("shopkeeper")
 			for shopkeeper_instance in all_shopkeepers:
 		
-				InLevel.scr_shopkeeper_anger(2, shopkeeper_instance) #--- a bit strange for the shopkeeper to check for the existence of itself, but that appears to be how it works
+				in_level.scr_shopkeeper_anger(2, shopkeeper_instance) #--- a bit strange for the shopkeeper to check for the existence of itself, but that appears to be how it works

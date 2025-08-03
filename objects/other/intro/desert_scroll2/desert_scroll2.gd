@@ -16,6 +16,7 @@ func _process(delta):
 #--- Object functions
 var scroll
 
+@onready var in_level: InLevel = InLevel.new()
 
 func create():
 	# action_inherited
@@ -24,7 +25,7 @@ func create():
 	# main_code
 	scroll = false
 
-	if (InLevel.is_room("credits1")): sprite_index = "desert_night2"
+	if (in_level.is_room("credits1")): sprite_index = "desert_night2"
 
 
 func step():

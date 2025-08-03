@@ -1,5 +1,6 @@
 extends Node
 
+@onready var in_level: InLevel = InLevel.new()
 	
 func scr_get_room_x(x):
 #
@@ -970,7 +971,7 @@ func scr_init_level():
 
 		for j in range(0, k + 1): #---[FLAG] <= in original code is handled by doing value + 1. check other loops to make sure this is correct
 		
-			if (not InLevel.is_level()):
+			if (not in_level.is_level()):
 			
 				i = 999
 				j = 999
@@ -1098,7 +1099,7 @@ func scr_init_level():
 	# DY:  ENTITY / TREASURES
 	# DY: # DY: # DY: # DY: # DY: # DY: # DY: # DY: # DY: # DY: # DY: # DY: # DY: # DY: 
 	global.temp2 = global.game_start
-	if (not InLevel.is_room("tutorial") and not InLevel.is_room("load_level")): scr_entity_gen()
+	if (not in_level.is_room("tutorial") and not in_level.is_room("load_level")): scr_entity_gen()
 
 	if (gml.instance_exists("entrance") and not global.custom_level):
 		var entrance = gml.get_instance("entrance")
@@ -1118,7 +1119,7 @@ func scr_init_level():
 		global.sacrifice_pit or
 		global.city_of_gold):
 
-		if (not InLevel.is_room("load_level")):
+		if (not in_level.is_room("load_level")):
 			var player1 = gml.get_instance("player1") #---[FLAG] may have to adjust this for multiplayer. check original code (uses "with" keyword)
 			player1.alarm_0_countdown.start(10)
 		
@@ -4028,7 +4029,7 @@ func scr_entity_gen():
 		var all_solids = gml.get_all_instances("solid")
 		for solid_instance in all_solids:
 		
-			if (not InLevel.is_in_shop(solid_instance.position.x, solid_instance.position.y) and solid_instance.position.y > 16):
+			if (not in_level.is_in_shop(solid_instance.position.x, solid_instance.position.y) and solid_instance.position.y > 16):
 			
 				if (solid_instance.type != "altar"):
 				
@@ -4142,10 +4143,10 @@ func scr_entity_gen():
 		var all_blocks = gml.get_all_instances("block")
 		for block_instance in all_blocks:
 		
-			if (not InLevel.is_in_shop(block_instance.position.x, block_instance.position.y)):
+			if (not in_level.is_in_shop(block_instance.position.x, block_instance.position.y)):
 				var entrance = gml.get_instance("entrance")
 				var n = gml.point_distance(block_instance.position.x, block_instance.position.y, entrance.position.x, entrance.position.y)
-				if (not InLevel.is_in_shop(block_instance.position.x, block_instance.position.y) and
+				if (not in_level.is_in_shop(block_instance.position.x, block_instance.position.y) and
 					gml.rand(1,4) == 1 and not
 					(block_instance.position.y == entrance.position.y and n < 144) and
 					n > 48):
@@ -4209,7 +4210,7 @@ func scr_entity_gen():
 			# DY:  bg
 			if (gml.rand(1,100) == 1 and not gml.collision_point(solid_instance.position.x, solid_instance.position.y-16, "solid", 0, 0)): gml.tile_add("bg_trees", 0, 0, 16, 48, solid_instance.position.x, solid_instance.position.y-32, 9005)
 			
-			if (not InLevel.is_in_shop(solid_instance.position.x, solid_instance.position.y)):
+			if (not in_level.is_in_shop(solid_instance.position.x, solid_instance.position.y)):
 			
 				var entrance = gml.get_instance("entrance")
 				if (solid_instance.position.y > 32 and gml.collision_point(solid_instance.position.x, solid_instance.position.y-16, "solid", 0, 0) and global.gen_market_entrance and not global.made_market_entrance):
@@ -4229,7 +4230,7 @@ func scr_entity_gen():
 					(not gml.collision_point(solid_instance.position.x-16, solid_instance.position.y, "solid", 0, 0) or not gml.collision_point(solid_instance.position.x+16, solid_instance.position.y, "solid", 0, 0)) and
 					gml.collision_point(solid_instance.position.x, solid_instance.position.y+16, "solid", 0, 0) and
 					not gml.collision_point(solid_instance.position.x, solid_instance.position.y, "x_market", 0, 0) and
-					not InLevel.is_in_shop(solid_instance.position.x, solid_instance.position.y) and
+					not in_level.is_in_shop(solid_instance.position.x, solid_instance.position.y) and
 					gml.point_distance(solid_instance.position.x, solid_instance.position.y, entrance.position.x, entrance.position.y) > 64):
 				
 					if (global.dark_level and not gml.collision_point(solid_instance.position.x, solid_instance.position.y-32, "water", 0, 0) and gml.rand(1,20) == 1):
@@ -4343,7 +4344,7 @@ func scr_entity_gen():
 		var all_solids = gml.get_all_instances("solid")
 		for solid_instance in all_solids:
 		
-			if (not InLevel.is_in_shop(solid_instance.position.x, solid_instance.position.y)):
+			if (not in_level.is_in_shop(solid_instance.position.x, solid_instance.position.y)):
 				var entrance = gml.get_instance("entrance")
 				# DY:  enemies
 				var n = 30
@@ -4357,7 +4358,7 @@ func scr_entity_gen():
 					
 						if (global.dark_level and gml.rand(1,40) == 1): gml.instance_create(solid_instance.position.x, solid_instance.position.y+16, Objects.scarab)
 					
-					elif (solid_instance.position.y > 16 and solid_instance.position.y < 592 and not gml.collision_point(solid_instance.position.x, solid_instance.position.y-16, "solid", 0, 0) and not InLevel.is_in_shop(solid_instance.position.x, solid_instance.position.y)):
+					elif (solid_instance.position.y > 16 and solid_instance.position.y < 592 and not gml.collision_point(solid_instance.position.x, solid_instance.position.y-16, "solid", 0, 0) and not in_level.is_in_shop(solid_instance.position.x, solid_instance.position.y)):
 					
 						if (gml.rand(1,n) == 1): gml.instance_create(solid_instance.position.x, solid_instance.position.y-16, Objects.ufo)
 					
@@ -4368,7 +4369,7 @@ func scr_entity_gen():
 					not gml.collision_point(solid_instance.position.x+8, solid_instance.position.y-8, "enemy", 0, 0) and
 					not gml.collision_point(solid_instance.position.x+8, solid_instance.position.y-1, "spikes", 0, 0) and
 					gml.point_distance(solid_instance.position.x, solid_instance.position.y, entrance.position.x, entrance.position.y) > 64 and
-					not InLevel.is_in_shop(solid_instance.position.x, solid_instance.position.y)):
+					not in_level.is_in_shop(solid_instance.position.x, solid_instance.position.y)):
 				
 					if (gml.rand(1,10) == 1 and solid_instance.sprite_index == "dark" and not gml.collision_rectangle(solid_instance.position.x, solid_instance.position.y-64, solid_instance.position.x+15, solid_instance.position.y-1, "solid", 0, 0) and gml.distance_to_object(exit, solid_instance) > 64): gml.instance_create(solid_instance.position.x, solid_instance.position.y-16, Objects.spring_trap)
 					elif (gml.rand(1,20) == 1 and gml.point_distance(solid_instance.position.x, solid_instance.position.y, entrance.position.x, entrance.position.y) > 64): gml.instance_create(solid_instance.position.x, solid_instance.position.y-16, Objects.yeti)
@@ -4398,7 +4399,7 @@ func scr_entity_gen():
 			# DY:  bg
 			if (gml.rand(1,100) == 1 and not gml.collision_point(solid_instance.position.x, solid_instance.position.y-16, "solid", 0, 0)): gml.tile_add("bg_statues", 0, 0, 16, 48, solid_instance.position.x, solid_instance.position.y-32, 9005)
 		
-			if (not InLevel.is_in_shop(solid_instance.position.x, solid_instance.position.y)):
+			if (not in_level.is_in_shop(solid_instance.position.x, solid_instance.position.y)):
 			
 				var entrance = gml.get_instance("entrance")
 				# DY:  traps
@@ -4419,7 +4420,7 @@ func scr_entity_gen():
 					not gml.collision_point(solid_instance.position.x, solid_instance.position.y-32, "solid", 0, 0) and
 					(not gml.collision_point(solid_instance.position.x-16, solid_instance.position.y, "solid", 0, 0) or not gml.collision_point(solid_instance.position.x+16, solid_instance.position.y, "solid", 0, 0)) and
 					gml.collision_point(solid_instance.position.x, solid_instance.position.y+16, "solid", 0, 0) and
-					not InLevel.is_in_shop(solid_instance.position.x, solid_instance.position.y) and
+					not in_level.is_in_shop(solid_instance.position.x, solid_instance.position.y) and
 					solid_instance.position.x != 160 and solid_instance.position.x != 176 and solid_instance.position.x != 320 and solid_instance.position.x != 336 and solid_instance.position.x != 480 and solid_instance.position.x != 496):
 				
 					if (gml.rand(1,12) == 1 and gml.point_distance(solid_instance.position.x, solid_instance.position.y, entrance.position.x, entrance.position.y) > 64):
@@ -4505,10 +4506,10 @@ func scr_entity_gen():
 		for block_instance in all_blocks:
 		   
 			block_instance.clean_death = true
-			if (not InLevel.is_in_shop(block_instance.position.x, block_instance.position.y)):
+			if (not in_level.is_in_shop(block_instance.position.x, block_instance.position.y)):
 				var entrance = gml.get_instance("entrance")
 				var n = gml.point_distance(block_instance.position.x, block_instance.position.y, entrance.position.x, entrance.position.y)
-				if (not InLevel.is_in_shop(block_instance.position.x, block_instance.position.y) and
+				if (not in_level.is_in_shop(block_instance.position.x, block_instance.position.y) and
 					gml.rand(1,3) == 1 and not
 					(block_instance.position.y == entrance.position.y and n < 144) and
 					n > 48):

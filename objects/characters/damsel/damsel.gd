@@ -58,7 +58,7 @@ func collision_with_whip():
 		Audio.play_sound(global.snd_damsel)
 		if (for_sale):
 	
-			InLevel.scr_shopkeeper_anger(3, self)
+			in_level.scr_shopkeeper_anger(3, self)
 
 
 func collision_with_whip_pre():
@@ -82,7 +82,7 @@ func collision_with_whip_pre():
 		Audio.play_sound(global.snd_damsel)
 		if (for_sale):
 	
-			InLevel.scr_shopkeeper_anger(3, self)
+			in_level.scr_shopkeeper_anger(3, self)
 
 
 func create():
@@ -99,7 +99,7 @@ func create():
 	invincible = false
 	swimming = false
 	heavy = true
-	cost = InLevel.get_kiss_value() * 3
+	cost = in_level.get_kiss_value() * 3
 	if (global.is_damsel): buy_message = "I'LL LET YOU HAVE HIM FOR $" + str(cost) + "!"
 	else: buy_message = "I'LL LET YOU HAVE HER FOR $" + str(cost) + "!"
 
@@ -151,7 +151,7 @@ func draw():
 	if (cost > 0):
 
 		#gml.draw_sprite_ext("small_collect", cimg, position.x, position.y-12, 1, 1, 0, gml.c_white, 1, self, false)
-		small_collect_draw_node.draw_sprite_ext("small_collect", cimg, position.x, position.y-12, 1, 1, 0, gml.c_white, 1, self)
+		small_collect_draw_node.draw_sprite_ext("small_collect", cimg, position.x, position.y-12, 1, 1, 0, gml.c_white, 1, small_collect_draw_node)
 		cimg += 1
 		if (cimg > 9): cimg = 0
 
@@ -211,7 +211,7 @@ func step(): # one of seven scripts which uses 'other' outside of collision_with
 	# DY:  if damsel dies offscreen sometimes it won't trigger shopkeeper:
 	if (cost > 0 and hp <= 0):
 
-		InLevel.scr_shopkeeper_anger(3, self)
+		in_level.scr_shopkeeper_anger(3, self)
 
 
 	if (not invincible):

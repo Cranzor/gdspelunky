@@ -17,6 +17,7 @@ func _process(delta):
 var message: String
 var message2: String
 
+@onready var in_level: InLevel = InLevel.new()
 
 func collision_with_character():
 	global.message = message
@@ -28,7 +29,7 @@ func create():
 	type = "message sign"
 
 	# DY:  tutorial cave init
-	if (InLevel.is_room("level_editor") or InLevel.is_room("load_level")):
+	if (in_level.is_room("level_editor") or in_level.is_room("load_level")):
 
 		message = ""
 		message2 = ""
@@ -147,7 +148,7 @@ func create():
 
 func draw():
 	gml.draw_sprite(sprite_index, -1, position.x, position.y, self, true)
-	if (InLevel.is_room("level_editor")):
+	if (in_level.is_room("level_editor")):
 
 		gml.draw_set_font(global.my_font_small)
 		gml.draw_set_color(gml.c_white)

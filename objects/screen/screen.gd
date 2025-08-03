@@ -24,6 +24,8 @@ var can_pause
 var paused
 var enabled
 
+@onready var in_level: InLevel = InLevel.new()
+
 
 func _input(event):
 	if Input.is_key_pressed(KEY_F1): #---[FLAG] fix this
@@ -109,7 +111,7 @@ func begin_step():
 
 	if (ControlScripts.check_bomb_pressed()):
 
-		if (paused and global.plife > 0 and InLevel.is_level()):
+		if (paused and global.plife > 0 and in_level.is_level()):
 		
 			gml.instance_activate_all()
 			paused = false
@@ -190,11 +192,11 @@ func begin_step():
 		gml.draw_set_color(gml.c_white)
 		gml.draw_text(112, 200, "PAUSED", "", self)
 		gml.draw_set_font(global.my_font_small)
-		if (InLevel.is_level()):
+		if (in_level.is_level()):
 		
 			var n = 128-24
 			if (global.curr_level < 1): gml.draw_text(40, n-24, "TUTORIAL CAVE", "", self)
-			elif (InLevel.is_room("load_level")): gml.draw_text(40, n-24, "LEVEL: " + global.custom_level_name + " BY " + global.custom_level_author, "", self)
+			elif (in_level.is_room("load_level")): gml.draw_text(40, n-24, "LEVEL: " + global.custom_level_name + " BY " + global.custom_level_author, "", self)
 			else: gml.draw_text(40, n-24, "LEVEL " + str(global.curr_level), "", self)
 			gml.draw_text(40, n-16, "DEPTH: " + str(174.8*(global.curr_level-1)+(py+8)*0.34) + " FEET", "", self)
 			gml.draw_text(40, n, "MONEY: " + str(global.money), "", self)
@@ -237,7 +239,7 @@ func begin_step():
 
 	else:
 
-		if (InLevel.is_room("title")):
+		if (in_level.is_room("title") and get_tree().current_scene != null): #--- adding this check for now. otherwise title becomes a null instance
 			var title = gml.get_instance("title")
 			gml.surface_set_target("screen")
 			gml.draw_set_alpha(title.darkness)
@@ -259,7 +261,7 @@ func begin_step():
 			#draw_set_blend_mode(bm_normal)
 			gml.surface_reset_target()
 		
-		elif (InLevel.is_level() and gml.instance_exists("player1")):
+		elif (in_level.is_level() and gml.instance_exists("player1")):
 			var player1 = gml.get_instance("player1") #---[FLAG] may need to adjust this for multiplayer
 			
 			#get nearest instance
@@ -384,7 +386,7 @@ func begin_step():
 				gml.draw_text(n, 216, str(global.message), "global_message", self)
 
 				var text_color = gml.c_white
-				if (not InLevel.is_room("tutorial")): gml.c_yellow
+				if (not in_level.is_room("tutorial")): gml.c_yellow
 				str_len = gml.string_length(global.message2)*8
 				n = 320 - str_len
 				n = ceil(n / 2)
@@ -436,7 +438,7 @@ func game_end():
 	StatTracking.scr_write_stats()
 
 func key_f1_pressed():
-	if (paused and global.plife > 0 and InLevel.is_level()):
+	if (paused and global.plife > 0 and in_level.is_level()):
 
 		gml.instance_activate_all()
 		paused = false

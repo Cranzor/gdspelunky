@@ -26,6 +26,7 @@ var craps_point
 var curr_level: int:
 	set(value):
 		curr_level = value
+var current_room: String #--- added this so we don't have to run get_tree() to check every time
 var custom_level
 var custom_level_author
 var custom_level_name

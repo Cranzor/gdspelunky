@@ -78,7 +78,7 @@ func collision_with_character():
 			if (global.plife > 0):
 		
 				global.plife -= 1
-				if (global.plife <= 0 and InLevel.is_real_level()): global.enemy_deaths[19] += 1
+				if (global.plife <= 0 and in_level.is_real_level()): global.enemy_deaths[19] += 1
 		
 			Audio.play_sound(global.snd_hurt)
 	
@@ -272,7 +272,7 @@ func step():
 				Audio.play_sound(global.snd_caveman_die)
 				if (hp > 0):
 			
-					if (InLevel.is_real_level()): global.enemy_kills[19] += 1
+					if (in_level.is_real_level()): global.enemy_kills[19] += 1
 					global.shopkeepers += 1
 					global.kills += 1
 			
@@ -286,7 +286,7 @@ func step():
 			Audio.play_sound(global.snd_caveman_die)
 			if (hp > 0):
 		
-				if (InLevel.is_real_level()): global.enemy_kills[19] += 1
+				if (in_level.is_real_level()): global.enemy_kills[19] += 1
 				global.shopkeepers += 1
 				global.kills += 1
 		
@@ -382,8 +382,8 @@ func step():
 			
 				elif (style == "kissing"):
 			
-					if (global.gamepad_on): global.message2 = "$" + str(InLevel.get_kiss_value()) + " A KISS. PRESS " + MiscScripts.scr_get_joy(global.joy_pay_val) + "."
-					else: global.message2 = "$" + str(InLevel.get_kiss_value()) + " A KISS. PRESS " + MiscScripts.scr_get_key(global.key_pay_val) + "."
+					if (global.gamepad_on): global.message2 = "$" + str(in_level.get_kiss_value()) + " A KISS. PRESS " + MiscScripts.scr_get_joy(global.joy_pay_val) + "."
+					else: global.message2 = "$" + str(in_level.get_kiss_value()) + " A KISS. PRESS " + MiscScripts.scr_get_key(global.key_pay_val) + "."
 			
 				else: global.message2 = ""
 				global.message_timer = 200
@@ -416,7 +416,7 @@ func step():
 			
 					if (global.dice_value == 7):
 				
-						if (InLevel.is_real_level()): global.dice_games_won += 1
+						if (in_level.is_real_level()): global.dice_games_won += 1
 						global.message = "YOU ROLLED A SEVEN!"
 						global.message2 = "YOU WIN A PRIZE!"
 						global.message_timer = 200
@@ -447,7 +447,7 @@ func step():
 				
 					elif (global.dice_value > 7):
 				
-						if (InLevel.is_real_level()): global.dice_games_won += 1
+						if (in_level.is_real_level()): global.dice_games_won += 1
 						global.message = "YOU ROLLED A " + str(global.dice_value) + "!"
 						global.message2 = "CONGRATULATIONS! YOU WIN!"
 						global.message_timer = 200
@@ -458,7 +458,7 @@ func step():
 				
 					elif (global.dice_value < 7):
 				
-						if (InLevel.is_real_level()): global.dice_games_lost += 1
+						if (in_level.is_real_level()): global.dice_games_lost += 1
 						global.message = "YOU ROLLED A " + str(global.dice_value) + "!"
 						global.message2 = "I'M SORRY, BUT YOU LOSE!"
 						global.message_timer = 200
@@ -733,14 +733,14 @@ func step():
 
 			if (not dead):
 		
-				if (InLevel.is_room("stars")):
+				if (in_level.is_room("stars")):
 			
 					var stars_room = gml.get_instance("star_rooms")
 					if (stars_room.kills < 99): stars_room.kills += 1
 			
 				else:
 			
-					if (InLevel.is_real_level()): global.enemy_kills[19] += 1
+					if (in_level.is_real_level()): global.enemy_kills[19] += 1
 					global.shopkeepers += 1
 					global.kills += 1
 					global.murderer = true

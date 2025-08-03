@@ -89,7 +89,7 @@ func collision_with_character():
 			if (global.plife > 0):
 		
 				global.plife -= 2
-				if (global.plife <= 0 and InLevel.is_real_level()): global.enemy_deaths[3] += 1
+				if (global.plife <= 0 and in_level.is_real_level()): global.enemy_deaths[3] += 1
 		
 			Audio.play_sound(global.snd_hurt)
 
@@ -180,7 +180,7 @@ func step():
 			MiscScripts.scr_create_blood(position.x+16, position.y+24, 4, self)
 			if (counts_as_kill):
 		
-				if (InLevel.is_real_level()): global.enemy_kills[3] += 1
+				if (in_level.is_real_level()): global.enemy_kills[3] += 1
 				global.giantspiders += 1
 				global.kills += 1
 		

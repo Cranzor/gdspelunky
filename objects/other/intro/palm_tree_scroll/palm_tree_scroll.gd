@@ -16,10 +16,11 @@ func _process(delta):
 #--- Object functions
 var scroll
 
+@onready var in_level: InLevel = InLevel.new()
 
 func create():
 	scroll = false
-	if (InLevel.is_room("credits1")):
+	if (in_level.is_room("credits1")):
 		sprite_index = "palm_tree_dark"
 
 	

@@ -38,7 +38,7 @@ func step():
 		position.y > gml.view("yview")-8 and position.y < gml.view("yview") + gml.view("hview")+8)):
 
 		# DY:  get money for idols at shops
-		if (InLevel.is_level()):
+		if (in_level.is_level()):
 
 			if (not held and
 				gml.collision_point(position.x, position.y+4, "brick_smooth", 0, 0) and
