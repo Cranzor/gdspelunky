@@ -227,12 +227,16 @@ func create():
 
 
 func draw():
-	if (facing == RIGHT): gml.draw_sprite_ext(sprite_index, image_index, position.x+16, position.y, -1, image_yscale, image_angle, image_blend, image_alpha, self)
-	else: gml.draw_sprite_ext(sprite_index, image_index, position.x, position.y, 1, image_yscale, image_angle, image_blend, image_alpha, self)
+	if (facing == RIGHT):
+		#gml.draw_sprite_ext(sprite_index, image_index, position.x+16, position.y, -1, image_yscale, image_angle, image_blend, image_alpha, self)
+		DrawSprite.draw_sprite_ext(sprite_index, image_index, position.x+16, position.y, -1, image_yscale, image_angle, image_blend, image_alpha, animated_sprite_node)
+	else:
+		#gml.draw_sprite_ext(sprite_index, image_index, position.x, position.y, 1, image_yscale, image_angle, image_blend, image_alpha, self)
+		DrawSprite.draw_sprite_ext(sprite_index, image_index, position.x, position.y, 1, image_yscale, image_angle, image_blend, image_alpha, animated_sprite_node)
 	# DY:  gml.draw_sprite_ext(sprite_index, image_index, position.x, position.y, 1, 1, 0, c_white, 1)
 	if (has_gun and status != IDLE and status != FOLLOW):
 
-		if (facing == LEFT): gml.draw_sprite_ext("shotgun_left", 0, position.x+6, position.y+10, 1, 1, 0, gml.c_white, 1, self, false)
+		if (facing == LEFT): gml.draw_sprite_ext("shotgun_left", 0, position.x+6, position.y+10, 1, 1, 0, gml.c_white, 1, self, false) #---TODO: update these
 		else: gml.draw_sprite_ext("shotgun_right", 0, position.x+10, position.y+10, 1, 1, 0, gml.c_white, 1, self, false)
 
 

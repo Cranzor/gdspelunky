@@ -51,3 +51,4 @@ sprite_frames = SubResource("SpriteFrames_qk2pt")
 frame = 1
 frame_progress = 0.386406
 offset = Vector2(-4, -4)
+hide_at_start_of_frame = true

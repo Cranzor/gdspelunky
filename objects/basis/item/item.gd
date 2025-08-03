@@ -492,9 +492,8 @@ func step():
 
 
 func draw():
-	var draw_sprite = DrawSprite.new()
 	#gml.draw_sprite_ext(sprite_index, image_index, position.x, position.y, 1, 1, 0, gml.c_white, 1, self)
-	draw_sprite.draw_sprite_ext(sprite_index, image_index, position.x, position.y, 1, 1, 0, gml.c_white, 1, animated_sprite_node)
+	DrawSprite.draw_sprite_ext(sprite_index, image_index, position.x, position.y, 1, 1, 0, gml.c_white, 1, animated_sprite_node)
 	if (cost > 0):
 		#gml.draw_sprite_ext("small_collect", cimg, position.x, position.y-12, 1, 1, 0, gml.c_white, 1, self, false)
 		small_collect_draw_node.draw_sprite_ext("small_collect", cimg, position.x, position.y-12, 1, 1, 0, gml.c_white, 1, small_collect_draw_node)

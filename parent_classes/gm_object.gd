@@ -243,48 +243,6 @@ var circle_textures: Array
 func _draw() -> void:
 	draw_rectangle()
 	draw_text_to_screen()
-	draw_sprites()
-	draw_sprites_ext()
-
-
-func draw_sprites() -> void: #--- for drawing additional sprites this object creates with draw_sprite
-	if gml.changed_scene == false:
-		for sprite in sprites_to_draw:
-			var texture = sprite[0]
-			var pos = sprite[1]
-			pos -= position #--- resetting origin to 0, 0 by subtracting the node's position
-			var sprite_name = sprite[2]
-			var draw_to_surface = sprite[3]
-			var sprite_entry = sprites.sprite_database[sprite_name]
-			var origin = sprite_entry["origin"]
-			if draw_to_surface: #--- adding the current view position when drawing to a surface
-				pos += Vector2(gml.view_xview, gml.view_yview)
-			draw_texture(texture, pos - origin)
-	sprites_to_draw = []
-
-
-func draw_sprites_ext() -> void: #--- for drawing additional sprites this object creates with draw_sprite_ext
-	if gml.changed_scene == false:
-		for sprite in sprites_to_draw_ext:
-			var texture: Texture2D = sprite[0]
-			var pos = sprite[1]
-			pos -= position #--- resetting origin to 0, 0 by subtracting the node's position
-			var scale = sprite[2]
-			var rotation = deg_to_rad(sprite[3]) #--- have to convert degrees to radians
-			var color = sprite[4]
-			if color == gml.c_white:
-				color = modulate
-			color.a = sprite[5]
-			var sprite_name = sprite[6]
-			var draw_to_surface = sprite[7]
-			#if draw_to_surface: #--- adding the current view position when drawing to a surface
-				#pos += Vector2(gml.view_xview, gml.view_yview)
-			#draw_set_transform(pos, rotation, scale)
-			var sprite_entry = sprites.sprite_database[sprite_name]
-			var origin = sprite_entry["origin"]
-			draw_set_transform(pos, rotation, scale)
-			draw_texture(texture, Vector2(0, 0) - origin, color)
-	sprites_to_draw_ext = []
 
 var surface_rectangle: Array
 func draw_rectangle() -> void:

@@ -46,8 +46,7 @@ func create():
 
 
 func draw():
-	var draw_sprite = DrawSprite.new()
-	draw_sprite.draw_sprite_ext(sprite_index, image_index, position.x, position.y, 1, 1, image_angle, gml.c_white, 1, animated_sprite_node)
+	DrawSprite.draw_sprite_ext(sprite_index, image_index, position.x, position.y, 1, 1, image_angle, gml.c_white, 1, animated_sprite_node)
 	
 
 func step():

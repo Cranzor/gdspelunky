@@ -17,7 +17,7 @@ func draw_sprite(passed_position, passed_sprite, passed_frame = 0, passed_z_inde
 	animated_sprite.show()
 
 
-func draw_sprite_ext(passed_sprite: String, subimg: int, x: int, y: int, xscale: int, yscale: int, rot, color: Color, alpha, animated_sprite: AnimatedSprite2D):
+static func draw_sprite_ext(passed_sprite: String, subimg: int, x: int, y: int, xscale: int, yscale: int, rot, color: Color, alpha, animated_sprite: AnimatedSprite2D):
 	animated_sprite.global_position = Vector2(x, y)
 	animated_sprite.scale.x = xscale
 	animated_sprite.rotation_degrees = -rot

@@ -220,5 +220,6 @@ animation = &"arrow"
 frame_progress = 0.77528
 centered = false
 script = ExtResource("33_82ap8")
+hide_at_start_of_frame = true
 
 [connection signal="animation_changed" from="." to="." method="_on_animation_changed"]

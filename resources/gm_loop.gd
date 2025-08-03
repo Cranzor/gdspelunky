@@ -10,7 +10,7 @@ func _physics_process(delta: float) -> void:
 
 func gm_loop(): #---[FLAG] consider running every event in the same order as step
 	reset_surfaces()
-	get_tree().call_group("draw_sprite", "hide")
+	get_tree().call_group("draw_sprite", "hide_draw_object")
 	get_tree().call_group("alarm", "count_down")
 	get_tree().call_group("active_gm_object", "run_alarm_events")
 	if gml.changed_scene == false:
@@ -34,6 +34,7 @@ func gm_loop(): #---[FLAG] consider running every event in the same order as ste
 		var player1 = gml.get_instance("player1")
 		gml.instance_create(player1.position.x, player1.position.y, Objects.bow)
 		gml.instance_create(player1.position.x + 16, player1.position.y, Objects.jetpack)
+		global.rope = 99
 
 func all_objects_step_event():
 	var all_objects = get_tree().get_first_node_in_group("objects_holder").get_children()

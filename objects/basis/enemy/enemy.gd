@@ -182,9 +182,8 @@ func destroy():
 
 
 func draw():
-	var draw_sprite = DrawSprite.new()
-	if (facing == RIGHT): draw_sprite.draw_sprite_ext(sprite_index, image_index, position.x+16, position.y, -1, image_yscale, image_angle, image_blend, image_alpha, animated_sprite_node)
-	else: draw_sprite.draw_sprite_ext(sprite_index, image_index, position.x, position.y, 1, image_yscale, image_angle, image_blend, image_alpha, animated_sprite_node)
+	if (facing == RIGHT): DrawSprite.draw_sprite_ext(sprite_index, image_index, position.x+16, position.y, -1, image_yscale, image_angle, image_blend, image_alpha, animated_sprite_node)
+	else: DrawSprite.draw_sprite_ext(sprite_index, image_index, position.x, position.y, 1, image_yscale, image_angle, image_blend, image_alpha, animated_sprite_node)
 
 
 func outside_room():
