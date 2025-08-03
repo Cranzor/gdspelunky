@@ -16,6 +16,7 @@ func _process(delta):
 #--- Object functions
 var message: String
 var message2: String
+@onready var draw_text = $DrawText
 
 
 func collision_with_character():
@@ -151,4 +152,4 @@ func draw():
 
 		gml.draw_set_font(global.my_font_small)
 		gml.draw_set_color(gml.c_white)
-		gml.draw_text(position.x, position.y, message, "message", self)
+		draw_text.draw_text(position.x, position.y, message, "message", self)

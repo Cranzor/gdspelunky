@@ -1,7 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bdsireklvyldb"]
+[gd_scene load_steps=3 format=3 uid="uid://bdsireklvyldb"]
 
 [ext_resource type="Script" uid="uid://djxmx1imgpuep" path="res://objects/level/level.gd" id="1_rc3fd"]
+[ext_resource type="PackedScene" uid="uid://8nvpnq1dktdh" path="res://components/draw_text/draw_text.tscn" id="2_nquip"]
 
 [node name="Level" type="StaticBody2D"]
 script = ExtResource("1_rc3fd")
 object_name = "level"
+
+[node name="DrawText" parent="." instance=ExtResource("2_nquip")]

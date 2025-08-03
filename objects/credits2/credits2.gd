@@ -1,4 +1,3 @@
-
 extends GMObject
 
 
@@ -15,6 +14,7 @@ func _process(delta):
 
 
 #--- Object functions
+@onready var draw_text: Node2D = $DrawText
 
 
 func alarm_0():
@@ -143,86 +143,86 @@ func draw():
 
 		gml.draw_set_font(global.my_font)
 		gml.draw_set_color(gml.c_yellow)
-		gml.draw_text(16, 16, "SPELUNKY", "spelunky", self)
+		draw_text.draw_text(16, 16, "SPELUNKY", "spelunky", self)
 
 	elif (draw_status == 2):
 
 		gml.draw_set_font(global.my_font_small)
 		gml.draw_set_color(gml.c_yellow)
-		gml.draw_text(16, 16, "A GAME BY", "a_game_by", self)
+		draw_text.draw_text(16, 16, "A GAME BY")
 		# DY:  gml.draw_set_font(global.my_font_small)
 		gml.draw_set_color(gml.c_white)
-		gml.draw_text(64, 32, "DEREK YU", "derek_yu", self)
+		draw_text.draw_text(64, 32, "DEREK YU")
 
 	elif (draw_status == 3):
 
 		gml.draw_set_font(global.my_font_small)
 		gml.draw_set_color(gml.c_yellow)
-		gml.draw_text(16, 16, "PLATFORM ENGINE", "platform_engine", self)
+		draw_text.draw_text(16, 16, "PLATFORM ENGINE")
 		gml.draw_set_color(gml.c_white)
-		gml.draw_text(16, 24, "MARTIN PIECYK", "martin_piecyk", self)
+		draw_text.draw_text(16, 24, "MARTIN PIECYK")
 		gml.draw_set_color(gml.c_yellow)
-		gml.draw_text(16, 40, "SOUND EFFECTS MADE USING", "sound_effects", "self")
+		draw_text.draw_text(16, 40, "SOUND EFFECTS MADE USING")
 		gml.draw_set_color(gml.c_white)
-		gml.draw_text(16, 48, "DR PETTER'S SFXR", "dr_petter_sfxr", self)
+		draw_text.draw_text(16, 48, "DR PETTER'S SFXR")
 		gml.draw_set_color(gml.c_yellow)
-		gml.draw_text(16, 64, "SCREEN SCALING CODE", "screen_scaling", self)
+		draw_text.draw_text(16, 64, "SCREEN SCALING CODE")
 		gml.draw_set_color(gml.c_white)
-		gml.draw_text(16, 72, "CHEVYRAY", "chevyray", self)
+		draw_text.draw_text(16, 72, "CHEVYRAY")
 
 	elif (draw_status == 4):
 
 		gml.draw_set_font(global.my_font_small)
 		gml.draw_set_color(gml.c_yellow)
-		gml.draw_text(16, 16, "MUSIC BY", "music_by", self)
+		draw_text.draw_text(16, 16, "MUSIC BY")
 		gml.draw_set_color(gml.c_white)
-		gml.draw_text(32, 32, "GEORGE BUZINKAI", "george_buzinkai", self)
-		gml.draw_text(32, 48, "JONATHAN PERRY", "jonathan_perry", self)
+		draw_text.draw_text(32, 32, "GEORGE BUZINKAI")
+		draw_text.draw_text(32, 48, "JONATHAN PERRY")
 
 	elif (draw_status == 5):
 
 		gml.draw_set_font(global.my_font_small)
 		gml.draw_set_color(gml.c_yellow)
-		gml.draw_text(16, 16, "BETA TESTING BY", "beta_testing_by", self)
+		draw_text.draw_text(16, 16, "BETA TESTING BY")
 		gml.draw_set_color(gml.c_white)
-		gml.draw_text(16, 24, "ANNABELLE K.", "annabelle_k", self)
-		gml.draw_text(16, 32, "BENZIDO", "benzido", self)
-		gml.draw_text(16, 40, "CHUTUP", "chutup", self)
-		gml.draw_text(16, 48, "CORPUS", "corpus", self)
-		gml.draw_text(16, 56, "GENERALVALTER", "generalvalter", self)
-		gml.draw_text(16, 64, "GUERT", "guert", self)
-		gml.draw_text(16, 72, "GRAHAM GORING", "graham_goring", self)
-		gml.draw_text(16, 80, "HAOWAN", "haowan", self)
-		gml.draw_text(16, 88, "HIDEOUS", "hideous", self)
-		gml.draw_text(16, 96, "INANE", "inane", self)
+		draw_text.draw_text(16, 24, "ANNABELLE K.")
+		draw_text.draw_text(16, 32, "BENZIDO")
+		draw_text.draw_text(16, 40, "CHUTUP")
+		draw_text.draw_text(16, 48, "CORPUS")
+		draw_text.draw_text(16, 56, "GENERALVALTER")
+		draw_text.draw_text(16, 64, "GUERT")
+		draw_text.draw_text(16, 72, "GRAHAM GORING")
+		draw_text.draw_text(16, 80, "HAOWAN")
+		draw_text.draw_text(16, 88, "HIDEOUS")
+		draw_text.draw_text(16, 96, "INANE")
 		# DY: 
-		gml.draw_text(128, 24, "INCREPARE", "increpare", self)
-		gml.draw_text(128, 32, "KAO", "kao", self)
-		gml.draw_text(128, 40, "MARK JOHNS", "mark_johns", self)
-		gml.draw_text(128, 48, "MELLY", "melly", self)
-		gml.draw_text(128, 56, "PAUL ERES", "paul_eres", self)
-		gml.draw_text(128, 64, "SUPER JOE", "super_joe", self)
-		gml.draw_text(128, 72, "TANTAN", "tantan", self)
-		gml.draw_text(128, 80, "TEAM QUIGGAN", "team_quiggan", self)
-		gml.draw_text(128, 88, "TERRY", "terry", self)
-		gml.draw_text(128, 96, "XION", "xion", self)
-		gml.draw_text(128, 104, "ZAPHOS", "zaphos", self)
+		draw_text.draw_text(128, 24, "INCREPARE")
+		draw_text.draw_text(128, 32, "KAO")
+		draw_text.draw_text(128, 40, "MARK JOHNS")
+		draw_text.draw_text(128, 48, "MELLY")
+		draw_text.draw_text(128, 56, "PAUL ERES")
+		draw_text.draw_text(128, 64, "SUPER JOE")
+		draw_text.draw_text(128, 72, "TANTAN")
+		draw_text.draw_text(128, 80, "TEAM QUIGGAN")
+		draw_text.draw_text(128, 88, "TERRY")
+		draw_text.draw_text(128, 96, "XION")
+		draw_text.draw_text(128, 104, "ZAPHOS")
 
 	elif (draw_status == 6):
 
 		gml.draw_set_font(global.my_font_small)
 		gml.draw_set_color(gml.c_yellow)
-		gml.draw_text(16, 16, "THANKS FOR PLAYING!", "thanks_for_playing", self)
+		draw_text.draw_text(16, 16, "THANKS FOR PLAYING!")
 		# DY:  gml.draw_set_font(global.my_font_small)
 		gml.draw_set_color(gml.c_white)
-		gml.draw_text(32, 32, "SEE YOU NEXT ADVENTURE!", "next_adventure", self)
+		draw_text.draw_text(32, 32, "SEE YOU NEXT ADVENTURE!")
 
 
 	if (fade_in or fade_out):
 
 		gml.draw_set_color(gml.c_black)
 		gml.draw_set_alpha(fade_level)
-		gml.draw_rectangle(0, 0, 320, 240, false)
+		gml.draw_rectangle(0, 0, 320, 240, false, self)
 		gml.draw_set_alpha(1)
 
 

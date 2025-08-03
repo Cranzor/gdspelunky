@@ -1,7 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://xnnh2syksk67"]
+[gd_scene load_steps=3 format=3 uid="uid://xnnh2syksk67"]
 
 [ext_resource type="Script" uid="uid://c6o51n3wjsnml" path="res://objects/end3/end3.gd" id="1_b5g40"]
+[ext_resource type="PackedScene" uid="uid://8nvpnq1dktdh" path="res://components/draw_text/draw_text.tscn" id="2_nx7u3"]
 
 [node name="End3" type="StaticBody2D"]
 script = ExtResource("1_b5g40")
 object_name = "end3"
+
+[node name="DrawText" parent="." instance=ExtResource("2_nx7u3")]

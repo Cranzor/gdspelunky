@@ -7,7 +7,8 @@ const small_font: String = "res://fonts/small_font.png"
 var string_counter = 0
 var strings: Dictionary[String, int]
 
-func draw_text(x, y, text: String, unique_identifier: String = ""):
+
+func draw_text(x, y, text: StringName, unique_identifier: StringName = ""):
 	var label: Label
 	
 	if unique_identifier and unique_identifier not in strings:

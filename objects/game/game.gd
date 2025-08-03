@@ -28,6 +28,7 @@ var players: Array
 var players_length
 
 var physics_frame_rate = 30
+@onready var draw_text = $DrawText
 
 
 func _input(event):
@@ -526,19 +527,19 @@ func draw():
 				
 					gml.draw_set_font(global.my_font)
 					gml.draw_set_color(gml.c_yellow)
-					gml.draw_text(gml.view_xview+88, gml.view_yview+32+16, "GAME OVER", "", self)
+					draw_text.draw_text(gml.view_xview+88, gml.view_yview+32+16, "GAME OVER")
 				
 				if (draw_status > 1):
 				
 					gml.draw_set_font(global.my_font_small)
 					gml.draw_set_color(gml.c_yellow)
-					gml.draw_text(gml.view_xview+88, gml.view_yview+64+16, "FINAL SCORE:", "", self)
+					draw_text.draw_text(gml.view_xview+88, gml.view_yview+64+16, "FINAL SCORE:")
 				
 				if (draw_status > 2):
 				
 					gml.draw_set_font(global.my_font)
 					gml.draw_set_color(gml.c_white)
-					gml.draw_text(gml.view_xview+88, gml.view_yview+72+16, "$" + str(money_count), "", self)
+					draw_text.draw_text(gml.view_xview+88, gml.view_yview+72+16, "$" + str(money_count), "money_count")
 					
 					gml.draw_set_font(global.my_font_small)
 					gml.draw_set_color(gml.c_yellow)
@@ -556,7 +557,7 @@ func draw():
 						str_len = gml.string_length(str)*8
 						n = 320 - str_len
 						n = ceil(n / 2)
-						gml.draw_text(gml.view_xview+n, gml.view_yview+120, str, "", self)
+						draw_text.draw_text(gml.view_xview+n, gml.view_yview+120, str)
 					
 					else:
 					
@@ -565,7 +566,7 @@ func draw():
 						str_len = gml.string_length(str)*8
 						n = 320 - str_len
 						n = ceil(n / 2)
-						gml.draw_text(gml.view_xview+n, gml.view_yview+120, str, "", self)
+						draw_text.draw_text(gml.view_xview+n, gml.view_yview+120, str)
 			
 			
 			elif (InLevel.is_room("sun")):
@@ -575,7 +576,7 @@ func draw():
 				
 					gml.draw_set_font(global.my_font)
 					gml.draw_set_color(gml.c_yellow)
-					gml.draw_text(gml.view_xview+88, gml.view_yview+32+16, "FINISHED!", "", self)
+					draw_text.draw_text(gml.view_xview+88, gml.view_yview+32+16, "FINISHED!")
 				
 				if (draw_status > 1):
 				
@@ -586,7 +587,7 @@ func draw():
 					str_len = gml.string_length(str)*8
 					n = 320 - str_len
 					n = ceil(n / 2)
-					gml.draw_text(n, gml.view_yview+64+16, str, "", self)
+					draw_text.draw_text(n, gml.view_yview+64+16, str)
 					
 			
 			elif (InLevel.is_room("moon")):
@@ -598,7 +599,7 @@ func draw():
 					
 						gml.draw_set_font(global.my_font)
 						gml.draw_set_color(gml.c_yellow)
-						gml.draw_text(gml.view_xview+88, gml.view_yview+32+16, "FINISHED!", "", self)
+						draw_text.draw_text(gml.view_xview+88, gml.view_yview+32+16, "FINISHED!")
 					
 					if (draw_status > 1):
 					
@@ -609,7 +610,7 @@ func draw():
 						str_len = gml.string_length(str)*8
 						n = 320 - str_len
 						n = ceil(n / 2)
-						gml.draw_text(n, gml.view_yview+64+16, str, "", self)
+						draw_text.draw_text(n, gml.view_yview+64+16, str)
 					
 				
 			
@@ -620,7 +621,7 @@ func draw():
 				
 					gml.draw_set_font(global.my_font)
 					gml.draw_set_color(gml.c_yellow)
-					gml.draw_text(gml.view_xview+88, gml.view_yview+32+16, "FINISHED!", "", self)
+					draw_text.draw_text(gml.view_xview+88, gml.view_yview+32+16, "FINISHED!")
 				
 				if (draw_status > 1):
 				
@@ -631,4 +632,4 @@ func draw():
 					str_len = gml.string_length(str)*8
 					n = 320 - str_len
 					n = ceil(n / 2)
-					gml.draw_text(n, gml.view_yview+64+16, str, "", self)
+					draw_text.draw_text(n, gml.view_yview+64+16, str)

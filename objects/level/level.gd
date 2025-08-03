@@ -18,6 +18,7 @@ var shake_switch
 var music_fade
 var music_fade_timer
 var darkness #---[FLAG] could declare this higher up as title object uses it as well
+@onready var draw_text: Node2D = $DrawText
 
 
 func create():
@@ -83,13 +84,13 @@ func draw():
 		var str_len = gml.string_length(global.message)*8
 		var n = 320 - str_len
 		n = ceil(n / 2)
-		gml.draw_text(gml.view("xview")+n, gml.view("yview")+216, str(global.message), "global_message", self)
+		draw_text.draw_text(gml.view("xview")+n, gml.view("yview")+216, str(global.message))
 	
 		if (not InLevel.is_level()): gml.draw_set_color(gml.c_yellow) #--- was "InLevel.is_level("tutorial")" but this appears to be an error as is_level takes no argument
 		str_len = gml.string_length(global.message2)*8
 		n = 320 - str_len
 		n = ceil(n / 2)
-		gml.draw_text(gml.view("xview")+n, gml.view("yview")+224, str(global.message2), "global_message2", self)
+		draw_text.draw_text(gml.view("xview")+n, gml.view("yview")+224, str(global.message2))
 	
 		global.message_timer -= 1
 
