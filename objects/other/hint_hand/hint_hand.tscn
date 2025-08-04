@@ -1,7 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://cg1p7emtoarge"]
+[gd_scene load_steps=3 format=3 uid="uid://cg1p7emtoarge"]
 
 [ext_resource type="Script" uid="uid://b2abe10m28yr4" path="res://objects/other/hint_hand/hint_hand.gd" id="1_nrls5"]
+[ext_resource type="PackedScene" uid="uid://8nvpnq1dktdh" path="res://components/draw_text/draw_text.tscn" id="2_nrls5"]
 
 [node name="HintHand" type="StaticBody2D"]
 script = ExtResource("1_nrls5")
 object_name = "hint_hand"
+
+[node name="DrawText" parent="." instance=ExtResource("2_nrls5")]

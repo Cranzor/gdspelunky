@@ -289,14 +289,14 @@ func scr_draw_hud():
 		gml.draw_sprite("heart", -1, life_x, 8, Screen)
 		var life = global.plife
 		if (life < 0): life = 0
-		gml.draw_text(life_x+16, 8, str(life), "life", Screen)
+		#Screen.draw_text.draw_text(life_x+16, 8, str(life), "life") #--- moved to hud script
 		if (global.has_sticky_bombs): gml.draw_sprite("sticky_bomb_icon", -1, bomb_x, 8, Screen)
 		else: gml.draw_sprite("bomb_icon", -1, bomb_x, 8, Screen)
-		gml.draw_text(bomb_x+16, 8, str(global.bombs), "global_bombs", Screen)
+		#Screen.draw_text.draw_text(bomb_x+16, 8, str(global.bombs), "global_bombs") #--- moved to hud script
 		gml.draw_sprite("rope_icon", -1, rope_x, 8, Screen)
-		gml.draw_text(rope_x+16, 8, str(global.rope), "global_rope", Screen)
+		#Screen.draw_text.draw_text(rope_x+16, 8, str(global.rope), "global_rope") #--- moved to hud script
 		gml.draw_sprite("dollar_sign", -1, money_x, 8, Screen)
-		gml.draw_text(money_x+16, 8, str(global.money), "global_money", Screen)
+		#Screen.draw_text.draw_text(money_x+16, 8, str(global.money), "global_money") #--- moved to hud script
 		if (InLevel.is_room("olmec")):
 			global.exit_x = 640
 			global.exit_y = 544
@@ -439,7 +439,7 @@ func scr_draw_hud():
 		 
 		gml.draw_set_font(global.my_font_small)
 		gml.draw_set_color(gml.c_yellow)
-		if (global.collect > 0): gml.draw_text(money_x, 8+16, "+" + str(global.collect), "global_collect", Screen)
+		#if (global.collect > 0): Screen.draw_text.draw_text(money_x, 8+16, "+" + str(global.collect), "global_collect") #--- moved to hud script
 
 
 func scr_check_collisions(node):

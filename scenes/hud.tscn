@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://dfkrem72v8ms8"]
+[gd_scene load_steps=74 format=3 uid="uid://dfkrem72v8ms8"]
 
 [ext_resource type="Texture2D" uid="uid://xajjg6rysmmk" path="res://sprites/hud/heart/heart_0.png" id="1_kp442"]
 [ext_resource type="Script" uid="uid://clfaomwucanks" path="res://scenes/hud.gd" id="1_o1o2r"]
@@ -69,6 +69,7 @@
 [ext_resource type="Texture2D" uid="uid://bi8d73nhos5dg" path="res://sprites/items/saleable/compass_lr/compass_lr_0.png" id="64_ep55p"]
 [ext_resource type="Script" uid="uid://deuarbfqqf3v4" path="res://scenes/compass_arrows.gd" id="65_gxo4v"]
 [ext_resource type="Texture2D" uid="uid://o5sy6e1i3h2m" path="res://sprites/items/saleable/compass_small_lr/compass_small_lr_0.png" id="68_dbhui"]
+[ext_resource type="PackedScene" uid="uid://8nvpnq1dktdh" path="res://components/draw_text/draw_text.tscn" id="70_ep55p"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_oo0fn"]
 resource_local_to_scene = true
@@ -513,5 +514,7 @@ sprite_frames = SubResource("SpriteFrames_1dsb4")
 animation = &"compass_small_lr"
 centered = false
 script = ExtResource("65_gxo4v")
+
+[node name="DrawText" parent="." instance=ExtResource("70_ep55p")]
 
 [connection signal="animation_changed" from="ItemIcons/KapalaIcon" to="ItemIcons/KapalaIcon" method="_on_animation_changed"]

@@ -310,52 +310,52 @@ func _process(delta):
 
 #    if (status == GET_FILE_NAME):
 
-#        gml.draw_text(gml.view("xview")+9, gml.view("yview")+116, "EDIT LEVEL: " + level_name)
+#        draw_text.draw_text(gml.view("xview")+9, gml.view("yview")+116, "EDIT LEVEL: " + level_name)
 
 #    elif (status == EDIT_DOOR):
 
-#        gml.draw_text(gml.view("xview")+9, gml.view("yview")+100, "LABEL:")
-#        gml.draw_text(gml.view("xview")+9, gml.view("yview")+116, text_edit)
+#        draw_text.draw_text(gml.view("xview")+9, gml.view("yview")+100, "LABEL:")
+#        draw_text.draw_text(gml.view("xview")+9, gml.view("yview")+116, text_edit)
 
 #    elif (status == EDIT_MSG):
 
-#        gml.draw_text(gml.view("xview")+9, gml.view("yview")+100, "MESSAGE:")
-#        gml.draw_text(gml.view("xview")+9, gml.view("yview")+116, text_edit)
+#        draw_text.draw_text(gml.view("xview")+9, gml.view("yview")+100, "MESSAGE:")
+#        draw_text.draw_text(gml.view("xview")+9, gml.view("yview")+116, text_edit)
 
 #    elif (status == INFO_NAME):
 
-#        gml.draw_text(gml.view("xview")+9, gml.view("yview")+116, "LEVEL NAME: " + level_name)
+#        draw_text.draw_text(gml.view("xview")+9, gml.view("yview")+116, "LEVEL NAME: " + level_name)
 
 #    elif (status == INFO_AUTHOR):
 
-#        gml.draw_text(gml.view("xview")+9, gml.view("yview")+116, "AUTHOR: " + author)
+#        draw_text.draw_text(gml.view("xview")+9, gml.view("yview")+116, "AUTHOR: " + author)
 
 #    elif (status == INFO_MUSIC):
 
-#        gml.draw_text(gml.view("xview")+9, gml.view("yview")+116, "MUSIC: " + music)
+#        draw_text.draw_text(gml.view("xview")+9, gml.view("yview")+116, "MUSIC: " + music)
 
 #    elif (status == INFO_LIFE):
 
-#        gml.draw_text(gml.view("xview")+9, gml.view("yview")+116, "START LIFE: " + life_start)
+#        draw_text.draw_text(gml.view("xview")+9, gml.view("yview")+116, "START LIFE: " + life_start)
 
 #    elif (status == INFO_BOMBS):
 
-#        gml.draw_text(gml.view("xview")+9, gml.view("yview")+116, "START BOMBS: " + bomb_start)
+#        draw_text.draw_text(gml.view("xview")+9, gml.view("yview")+116, "START BOMBS: " + bomb_start)
 
 #    elif (status == INFO_ROPE):
 
-#        gml.draw_text(gml.view("xview")+9, gml.view("yview")+116, "START ROPE: " + rope_start)
+#        draw_text.draw_text(gml.view("xview")+9, gml.view("yview")+116, "START ROPE: " + rope_start)
 
 #    elif (status == INFO_NEXT):
 
-#        gml.draw_text(gml.view("xview")+9, gml.view("yview")+116, "NEXT LEVEL: " + next_level)
+#        draw_text.draw_text(gml.view("xview")+9, gml.view("yview")+116, "NEXT LEVEL: " + next_level)
 
 #    elif (status == EXIT or status == NEW):
 
 #        str_len = string_length("SAVE LEVEL? (Y/N)")*8
 #        n = 320 - str_len
 #        n = ceil(n / 2)
-#        gml.draw_text(gml.view("xview")+n, gml.view("yview")+116, "SAVE LEVEL? (Y/N)")
+#        draw_text.draw_text(gml.view("xview")+n, gml.view("yview")+116, "SAVE LEVEL? (Y/N)")
 	
 #        m = 16
 #        gml.draw_set_color(gml.c_yellow)
@@ -364,7 +364,7 @@ func _process(delta):
 #            str_len = string_length("WARNING: NO ENTRANCE!")*8
 #            n = 320 - str_len
 #            n = ceil(n / 2)
-#            gml.draw_text(gml.view("xview")+n, gml.view("yview")+116+m, "WARNING: NO ENTRANCE!")
+#            draw_text.draw_text(gml.view("xview")+n, gml.view("yview")+116+m, "WARNING: NO ENTRANCE!")
 #            m += 8
 	
 	
@@ -373,21 +373,21 @@ func _process(delta):
 #            str_len = string_length("WARNING: NO EXIT!")*8
 #            n = 320 - str_len
 #            n = ceil(n / 2)
-#            gml.draw_text(gml.view("xview")+n, gml.view("yview")+116+m, "WARNING: NO EXIT!")
+#            draw_text.draw_text(gml.view("xview")+n, gml.view("yview")+116+m, "WARNING: NO EXIT!")
 	
 
 #    else:
 
-#        # DY: gml.draw_text(gml.view("xview"), gml.view("yview"), str(mouse_x) + ", " + str(mouse_y))
+#        # DY: draw_text.draw_text(gml.view("xview"), gml.view("yview"), str(mouse_x) + ", " + str(mouse_y))
 #        if (gml.view("yview") == 0):
 	
-#            gml.draw_text(gml.view("xview")+40, gml.view("yview")+gml.view("hview")-32, level_name + " BY " + author)
-#            gml.draw_text(gml.view("xview")+40, gml.view("yview")+gml.view("hview")-24, str(curs_obj.position.x) + ", " + str(curs_obj.position.y))
+#            draw_text.draw_text(gml.view("xview")+40, gml.view("yview")+gml.view("hview")-32, level_name + " BY " + author)
+#            draw_text.draw_text(gml.view("xview")+40, gml.view("yview")+gml.view("hview")-24, str(curs_obj.position.x) + ", " + str(curs_obj.position.y))
 	
 #        else:
 	
-#            gml.draw_text(gml.view("xview")+40, gml.view("yview")+16, level_name + " BY " + author)
-#            gml.draw_text(gml.view("xview")+40, gml.view("yview")+24, str(curs_obj.position.x) + ", " + str(curs_obj.position.y))
+#            draw_text.draw_text(gml.view("xview")+40, gml.view("yview")+16, level_name + " BY " + author)
+#            draw_text.draw_text(gml.view("xview")+40, gml.view("yview")+24, str(curs_obj.position.x) + ", " + str(curs_obj.position.y))
 	
 
 

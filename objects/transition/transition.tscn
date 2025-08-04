@@ -1,7 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://crsjto5gtqytq"]
+[gd_scene load_steps=3 format=3 uid="uid://crsjto5gtqytq"]
 
 [ext_resource type="Script" uid="uid://crm06d1cisik0" path="res://objects/transition/transition.gd" id="1_dvn3p"]
+[ext_resource type="PackedScene" uid="uid://8nvpnq1dktdh" path="res://components/draw_text/draw_text.tscn" id="2_f3kbj"]
 
 [node name="Transition" type="StaticBody2D"]
 script = ExtResource("1_dvn3p")
 object_name = "transition"
+
+[node name="DrawText" parent="." instance=ExtResource("2_f3kbj")]

@@ -18,6 +18,7 @@ var sun_gold
 var moon_gold
 var stars_gold
 var trophy
+@onready var draw_text: Node2D = $DrawText
 
 
 func create():
@@ -152,106 +153,106 @@ func draw():
 
 		gml.draw_set_font(global.my_font_small)
 		gml.draw_set_color(gml.c_yellow)
-		gml.draw_text(128+16, 32, "SECRET CHALLENGES", "secret_challenges", self)
+		draw_text.draw_text(128+16, 32, "SECRET CHALLENGES")
 		gml.draw_set_color(gml.c_white)
 		var t_mini1 = floor(gml.highscore_value(10) / 10000)
 		var t_mini2 = floor((gml.highscore_value(10)-(t_mini1*10000)) / 100)
 		var t_mini3 = floor(gml.highscore_value(10)-(t_mini1*10000)-(t_mini2*100))
-		gml.draw_text(128, 48, "SUN:   " + str(t_mini1), "sun", self)
-		gml.draw_text(128, 64, "MOON:  " + str(t_mini2), "moon", self)
-		gml.draw_text(128, 80, "STARS: " + str(t_mini3), "stars", self)
+		draw_text.draw_text(128, 48, "SUN:   " + str(t_mini1), "sun")
+		draw_text.draw_text(128, 64, "MOON:  " + str(t_mini2), "moon")
+		draw_text.draw_text(128, 80, "STARS: " + str(t_mini3), "stars")
 
 		if (player1.position.y < 48+16):
 
 			gml.draw_set_color(gml.c_yellow)
-			gml.draw_text(168, 96, "SUN ROOM", "sun_room", self)
+			draw_text.draw_text(168, 96, "SUN ROOM")
 			gml.draw_set_color(gml.c_white)
 			if (t_money >= sun_gold):
 		
 				if (false): # DY:  (global.is_tunnel_man)
 			
-					gml.draw_text(128, 112, "NO MATTOCKS ALLOWED!", "no_mattocks", self)
-					gml.draw_text(128, 128, "THIS MEANS YOU!", "this_means_you", self)
-					gml.draw_text(128, 144, "", "empty1", self)
-					gml.draw_text(128, 160, "", "empty2", self)
+					draw_text.draw_text(128, 112, "NO MATTOCKS ALLOWED!")
+					draw_text.draw_text(128, 128, "THIS MEANS YOU!")
+					draw_text.draw_text(128, 144, "", "empty1")
+					draw_text.draw_text(128, 160, "", "empty2")
 			
 				else:
 			
-					gml.draw_text(128, 112, "KEEP YOURSELF AND", "keep_yourself_and", self)
-					gml.draw_text(128, 128, "THE DAMSEL ALIVE", "the_damsel_alive", self)
-					gml.draw_text(128, 144, "FOR AS LONG AS", "for_as_long_as", self)
-					gml.draw_text(128, 160, "POSSIBLE!", "possible", self)
+					draw_text.draw_text(128, 112, "KEEP YOURSELF AND")
+					draw_text.draw_text(128, 128, "THE DAMSEL ALIVE")
+					draw_text.draw_text(128, 144, "FOR AS LONG AS")
+					draw_text.draw_text(128, 160, "POSSIBLE!")
 			
 		
 			else:
 		
-				gml.draw_text(128, 112, "LOCKED.", "locked", self)
+				draw_text.draw_text(128, 112, "LOCKED.")
 		
 
 		elif (player1.position.y < 80+16):
 
 			gml.draw_set_color(gml.c_yellow)
-			gml.draw_text(168, 96, "MOON ROOM", "moon_room", self)
+			draw_text.draw_text(168, 96, "MOON ROOM")
 			gml.draw_set_color(gml.c_white)
 			if (t_time > 0 and t_time <= moon_gold):
 		
 				if (false): # DY:  (global.is_tunnel_man)
 			
-					gml.draw_text(128, 112, "NO MATTOCKS ALLOWED!", "no_mattocks", self)
-					gml.draw_text(128, 128, "THIS MEANS YOU!", "this_means_you", self)
-					gml.draw_text(128, 144, "", "empty1", self)
-					gml.draw_text(128, 160, "", "empty2", self)
+					draw_text.draw_text(128, 112, "NO MATTOCKS ALLOWED!")
+					draw_text.draw_text(128, 128, "THIS MEANS YOU!")
+					draw_text.draw_text(128, 144, "", "empty1")
+					draw_text.draw_text(128, 160, "", "empty2")
 			
 				else:
 			
-					gml.draw_text(128, 112, "SHOOT THE MOVING", "shoot_the_moving", self)
-					gml.draw_text(128, 128, "TARGETS WITH YOUR", "targets_with_your", self)
-					gml.draw_text(128, 144, "BOW AND ARROWS!", "bow_and_arrows", self)
+					draw_text.draw_text(128, 112, "SHOOT THE MOVING")
+					draw_text.draw_text(128, 128, "TARGETS WITH YOUR")
+					draw_text.draw_text(128, 144, "BOW AND ARROWS!")
 			
 		
 			else:
 		
-				gml.draw_text(128, 112, "LOCKED.", "locked", self)
+				draw_text.draw_text(128, 112, "LOCKED.")
 		
 
 		elif (player1.position.y < 112+16):
 
 			gml.draw_set_color(gml.c_yellow)
-			gml.draw_text(168, 96, "STARS ROOM", "stars_room", self)
+			draw_text.draw_text(168, 96, "STARS ROOM")
 			gml.draw_set_color(gml.c_white)
 			if (t_kills >= stars_gold):
 		
 				if (false): # DY:  (global.is_tunnel_man)
 			
-					gml.draw_text(128, 112, "NO MATTOCKS ALLOWED!", "no_mattocks", self)
-					gml.draw_text(128, 128, "THIS MEANS YOU!", "this_means_you", self)
-					gml.draw_text(128, 144, "", "empty1", self)
-					gml.draw_text(128, 160, "", "empty2", self)
+					draw_text.draw_text(128, 112, "NO MATTOCKS ALLOWED!")
+					draw_text.draw_text(128, 128, "THIS MEANS YOU!")
+					draw_text.draw_text(128, 144, "", "empty1")
+					draw_text.draw_text(128, 160, "", "empty2")
 			
 				else:
 			
-					gml.draw_text(128, 112, "KILL AS MANY ANGRY", "kill_as_many_angry", self)
-					gml.draw_text(128, 128, "SHOPKEEPS AS YOU CAN", "shopkeepers_as_you_can", self)
-					gml.draw_text(128, 144, "BEFORE THEY GET YOU!", "before_they_get_you", self)
+					draw_text.draw_text(128, 112, "KILL AS MANY ANGRY")
+					draw_text.draw_text(128, 128, "SHOPKEEPS AS YOU CAN")
+					draw_text.draw_text(128, 144, "BEFORE THEY GET YOU!")
 			
 		
 			else:
 		
-				gml.draw_text(128, 112, "LOCKED.", "locked", self)
+				draw_text.draw_text(128, 112, "LOCKED.")
 		
 
 		elif (player1.position.y < 160):
 
 			gml.draw_set_color(gml.c_yellow)
-			gml.draw_text(160, 96, "CHANGING ROOM", "changing_room", self)
+			draw_text.draw_text(160, 96, "CHANGING ROOM")
 			gml.draw_set_color(gml.c_white)
 			if (t_saves >= 8):
 		
-				gml.draw_text(128, 112, "LADY IN RED...", "lady_in_red", self)
+				draw_text.draw_text(128, 112, "LADY IN RED...")
 		
 			else:
 		
-				gml.draw_text(128, 112, "LOCKED.", "locked", self)
+				draw_text.draw_text(128, 112, "LOCKED.")
 		
 			var all_new = gml.get_all_instances("new")
 			for new_instance in all_new:
@@ -270,11 +271,11 @@ func draw():
 
 		gml.draw_set_font(global.my_font_small)
 		gml.draw_set_color(gml.c_yellow)
-		gml.draw_text(160, 32, "TOP DEFILERS", "top_defilers", self)
+		draw_text.draw_text(160, 32, "TOP DEFILERS")
 		gml.draw_set_color(gml.c_white)
-		gml.draw_text(128, 48, "MONEY:  " + str(gml.highscore_value(1)-9000000), "money_score", self)
-		gml.draw_text(128, 64, "KILLS:  " + str(gml.highscore_value(3)-7000000), "kills_score", self)
-		gml.draw_text(128, 80, "SAVES:  " + str(gml.highscore_value(4)-6000000), "saves_score", self)
+		draw_text.draw_text(128, 48, "MONEY:  " + str(gml.highscore_value(1)-9000000), "money_score")
+		draw_text.draw_text(128, 64, "KILLS:  " + str(gml.highscore_value(3)-7000000), "kills_score")
+		draw_text.draw_text(128, 80, "SAVES:  " + str(gml.highscore_value(4)-6000000), "saves_score")
 		# DY:  only display time if won:
 		if (gml.highscore_value(6)-4000000 > 0):
 
@@ -288,16 +289,16 @@ func draw():
 		
 		
 			gml.draw_set_color(gml.c_white)
-			gml.draw_text(128, 96, "TIME: ", "time", self)
-			if (s < 10): gml.draw_text(128+64, 96, str(m) + ":0" + str(s), "time_display1", self)
-			else: gml.draw_text(128+64, 96, str(m) + ":" + str(s), "time_display2", self)
+			draw_text.draw_text(128, 96, "TIME: ", "time", self)
+			if (s < 10): draw_text.draw_text(128+64, 96, str(m) + ":0" + str(s), "time_display1")
+			else: draw_text.draw_text(128+64, 96, str(m) + ":" + str(s), "time_display2")
 
 		gml.draw_set_color(gml.c_yellow)
-		gml.draw_text(168, 112, "STATISTICS", "statistics", self)
+		draw_text.draw_text(168, 112, "STATISTICS", "statistics", self)
 		gml.draw_set_color(gml.c_white)
-		gml.draw_text(128, 128, "PLAYS:  " + str(gml.highscore_value(5)-5000000), "plays", self)
-		gml.draw_text(128, 144, "DEATHS: " + str(gml.highscore_value(7)-3000000), "deaths", self)
-		gml.draw_text(128, 160, "WINS:   " + str(gml.highscore_value(6)-4000000), "wins", self)
+		draw_text.draw_text(128, 128, "PLAYS:  " + str(gml.highscore_value(5)-5000000), "plays")
+		draw_text.draw_text(128, 144, "DEATHS: " + str(gml.highscore_value(7)-3000000), "deaths")
+		draw_text.draw_text(128, 160, "WINS:   " + str(gml.highscore_value(6)-4000000), "wins")
 
 		var block = gml.instance_nearest(160, 240, "push_block")
 		var button_highscore = gml.get_instance("button_highscore") #---[FLAG] make sure there is only one
@@ -308,7 +309,7 @@ func draw():
 			var str_len = gml.string_length("THIS WILL CLEAR EVERYTHING!")*8
 			var n = 320 - str_len
 			n = ceil(n / 2)
-			gml.draw_text(n, 216, str("THIS WILL CLEAR EVERYTHING!"), "clear_everything", self)
+			draw_text.draw_text(n, 216, str("THIS WILL CLEAR EVERYTHING!"))
 
 
 func key_q_pressed():

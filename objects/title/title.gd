@@ -16,6 +16,7 @@ func _process(delta):
 var darkness
 var need_dark
 var state
+@onready var draw_text: Node2D = $DrawText
 
 
 func _input(event):
@@ -202,7 +203,7 @@ func draw():
 			var str_len = gml.string_length("WELCOME TO THE SHORTCUT HOUSE!")*8
 			var n = 320 - str_len
 			n = ceil(n / 2)
-			gml.draw_text(n, 224, str("WELCOME TO THE SHORTCUT HOUSE!"), "", self)
+			draw_text.draw_text(n, 224, str("WELCOME TO THE SHORTCUT HOUSE!"))
 
 
 func key_f2_pressed():

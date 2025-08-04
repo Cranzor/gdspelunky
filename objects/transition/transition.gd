@@ -23,6 +23,7 @@ var hurryup
 var debug_counter
 var up_held
 var down_held
+@onready var draw_text: Node2D = $DrawText
 
 
 func alarm_0():
@@ -413,27 +414,27 @@ func draw():
 			str_len = gml.string_length("HEY THERE! I'M THE TUNNEL MAN!")*8
 			n = 320 - str_len
 			n = ceil(n / 2)
-			gml.draw_text(n, 208, "HEY THERE! I'M THE TUNNEL MAN!", "tunnel_man", self)
+			draw_text.draw_text(n, 208, "HEY THERE! I'M THE TUNNEL MAN!")
 			str_len = gml.string_length("I DIG SHORTCUTS.")*8
 			n = 320 - str_len
 			n = ceil(n / 2)
-			gml.draw_text(n, 216, "I DIG SHORTCUTS.", "dig_shortcuts", self)
+			draw_text.draw_text(n, 216, "I DIG SHORTCUTS.")
 	
 		elif (person.talk == 2):
 	
 			str_len = gml.string_length("CAN YOU LEND ME A LITTLE MONEY?")*8
 			n = 320 - str_len
 			n = ceil(n / 2)
-			gml.draw_text(n, 208, "CAN YOU LEND ME A LITTLE MONEY?", "lend_money", self)
+			draw_text.draw_text(n, 208, "CAN YOU LEND ME A LITTLE MONEY?")
 			if (InLevel.is_room("transition1x") or InLevel.is_room("transition3x")): str_len = gml.string_length("I NEED $" + str(global.tunnel1) + " FOR A NEW SHORTCUT.")*8
 			else: str_len = gml.string_length("I NEED $" + str(global.tunnel2) + " FOR A NEW SHORTCUT.")*8
 			n = 320 - str_len
 			n = ceil(n / 2)
-			if (InLevel.is_room("transition1x") or InLevel.is_room("transition3x")): gml.draw_text(n, 216, "I NEED $" + str(global.tunnel1) + " FOR A NEW SHORTCUT.", "need_money", self)
-			else: gml.draw_text(n, 216, "I NEED $" + str(global.tunnel2) + " FOR A NEW SHORTCUT.", "need_money2", self)
+			if (InLevel.is_room("transition1x") or InLevel.is_room("transition3x")): draw_text.draw_text(n, 216, "I NEED $" + str(global.tunnel1) + " FOR A NEW SHORTCUT.", "need_money")
+			else: draw_text.draw_text(n, 216, "I NEED $" + str(global.tunnel2) + " FOR A NEW SHORTCUT.", "need_money2")
 			gml.draw_set_color(gml.c_yellow)
 			var tunnel_man = gml.get_instance("tunnel_man")
-			gml.draw_text(n, 224, "DONATE: " + str(tunnel_man.donate), "donate", self)
+			draw_text.draw_text(n, 224, "DONATE: " + str(tunnel_man.donate), "donate")
 			gml.draw_set_color(gml.c_white)
 	
 		elif (person.talk == 3):
@@ -441,21 +442,21 @@ func draw():
 			str_len = gml.string_length("THANKS! YOU WON'T REGRET IT!")*8
 			n = 320 - str_len
 			n = ceil(n / 2)
-			gml.draw_text(n, 216, "THANKS! YOU WON'T REGRET IT!", "thanks", self)
+			draw_text.draw_text(n, 216, "THANKS! YOU WON'T REGRET IT!")
 	
 		elif (person.talk == 4):
 	
 			str_len = gml.string_length("I'LL NEVER GET THIS SHORTCUT BUILT!")*8
 			n = 320 - str_len
 			n = ceil(n / 2)
-			gml.draw_text(n, 216, "I'LL NEVER GET THIS SHORTCUT BUILT!", "never_get_shortcut_built", self)
+			draw_text.draw_text(n, 216, "I'LL NEVER GET THIS SHORTCUT BUILT!")
 	
 		elif (person.talk == 5):
 	
 			str_len = gml.string_length("ONE SHORTCUT, COMING UP!")*8
 			n = 320 - str_len
 			n = ceil(n / 2)
-			gml.draw_text(n, 216, "ONE SHORTCUT, COMING UP!", "shortcut_coming_up", self)
+			draw_text.draw_text(n, 216, "ONE SHORTCUT, COMING UP!")
 	
 
 	elif (gml.instance_exists("damsel_kiss")):
@@ -466,30 +467,30 @@ func draw():
 			str_len = gml.string_length("MY HERO!")*8
 			n = 320 - str_len
 			n = ceil(n / 2)
-			gml.draw_text(n, 216, "MY HERO!", "my_hero", self)
+			draw_text.draw_text(n, 216, "MY HERO!")
 	
 
 	#/* debug
 	#else:
 #
-		#gml.draw_text(8, 208, str(debug_counter))
-		#if (global.gen_black_market): gml.draw_text(8, 216, "MARKET : " + str(draw_loot) + " :$ " + str(money_count) + " :$ " + str(global.xmoney) + " :A " + str(alarm[0]) + " :A " + str(alarm[1]))
+		#draw_text.draw_text(8, 208, str(debug_counter))
+		#if (global.gen_black_market): draw_text.draw_text(8, 216, "MARKET : " + str(draw_loot) + " :$ " + str(money_count) + " :$ " + str(global.xmoney) + " :A " + str(alarm[0]) + " :A " + str(alarm[1]))
 #
 	#*/
 
 	gml.draw_set_color(gml.c_yellow)
-	if (global.custom_level): gml.draw_text(32, 48, global.custom_level_name + " COMPLETED!", "completed", self)
-	elif (global.curr_level-1 < 1): gml.draw_text(32, 48, "TUTORIAL CAVE COMPLETED!", "tutorial_cave_completed", self)
-	else: gml.draw_text(32, 48, "LEVEL " + str(global.curr_level-1) + " COMPLETED!", "level_completed", self)
+	if (global.custom_level): draw_text.draw_text(32, 48, global.custom_level_name + " COMPLETED!", "completed")
+	elif (global.curr_level-1 < 1): draw_text.draw_text(32, 48, "TUTORIAL CAVE COMPLETED!")
+	else: draw_text.draw_text(32, 48, "LEVEL " + str(global.curr_level-1) + " COMPLETED!", "level_completed")
 	gml.draw_set_color(gml.c_white)
-	gml.draw_text(32, 64, "TIME  = ", "time_equals", self)
-	gml.draw_text(32, 80, "LOOT  = ", "loot_equals", self)
-	gml.draw_text(32, 96, "KILLS = ", "kills_equals", self)
-	gml.draw_text(32, 112, "MONEY = ", "money_equals", self)
+	draw_text.draw_text(32, 64, "TIME  = ")
+	draw_text.draw_text(32, 80, "LOOT  = ")
+	draw_text.draw_text(32, 96, "KILLS = ")
+	draw_text.draw_text(32, 112, "MONEY = ")
 
 	if (draw_loot >= 1 and not is_loot):
 
-		gml.draw_text(96, 80, "NONE", "none", self)
+		draw_text.draw_text(96, 80, "NONE", "none")
 
 
 	if (draw_loot > -2):
@@ -516,19 +517,19 @@ func draw():
 			m2 += 1
 	
 	
-		if (s < 10 and s2 < 10): gml.draw_text(96, 64, str(m) + ":0" + str(s) + " / " + str(m2) + ":0" + str(s2), "time_display", self)
-		elif (s < 10): gml.draw_text(96, 64, str(m) + ":0" + str(s) + " / " + str(m2) + ":" + str(s2), "time_display2", self)
-		elif (s2 < 10): gml.draw_text(96, 64, str(m) + ":" + str(s) + " / " + str(m2) + ":0" + str(s2), "time_display3", self)
-		else: gml.draw_text(96, 64, str(m) + ":" + str(s) + " / " + str(m2) + ":" + str(s2), "time_display4", self)
+		if (s < 10 and s2 < 10): draw_text.draw_text(96, 64, str(m) + ":0" + str(s) + " / " + str(m2) + ":0" + str(s2), "time_display")
+		elif (s < 10): draw_text.draw_text(96, 64, str(m) + ":0" + str(s) + " / " + str(m2) + ":" + str(s2), "time_display2")
+		elif (s2 < 10): draw_text.draw_text(96, 64, str(m) + ":" + str(s) + " / " + str(m2) + ":0" + str(s2), "time_display3")
+		else: draw_text.draw_text(96, 64, str(m) + ":" + str(s) + " / " + str(m2) + ":" + str(s2), "time_display4")
 
 
 	if (draw_loot == 2):
 
 		if (not is_kills):
 	
-			gml.draw_text(96, 96, "NONE", "none2", self)
+			draw_text.draw_text(96, 96, "NONE", "none2")
 	
-		gml.draw_text(96, 112, "$" + str(money_count) + " / $" + str(global.money), "money_count", self)
+		draw_text.draw_text(96, 112, "$" + str(money_count) + " / $" + str(global.money), "money_count")
 
 
 func step():

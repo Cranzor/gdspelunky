@@ -14,6 +14,9 @@ func _process(delta):
 
 
 #--- Object functions
+@onready var draw_text: Node2D = $DrawText
+
+
 func create():
 	image_speed = 0.5
 
@@ -29,6 +32,6 @@ func draw():
 			var str_len = gml.string_length("PRESS UP TO ENTER!")*8
 			var n = 320 - str_len
 			n = ceil(n / 2)
-			gml.draw_text(320+n, 216, str("PRESS UP TO ENTER!"), "", self)
+			draw_text.draw_text(320+n, 216, str("PRESS UP TO ENTER!"))
 	
 	gml.draw_sprite(sprite_index, image_index, position.x, position.y, self)

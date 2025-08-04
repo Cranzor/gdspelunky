@@ -23,6 +23,7 @@ var py
 var can_pause
 var paused
 var enabled
+@onready var draw_text: Node2D = $DrawText
 
 
 func _input(event):

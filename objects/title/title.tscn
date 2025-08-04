@@ -1,17 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://vpxeuwqi1ujv"]
 
 [ext_resource type="Script" uid="uid://byn7osdf2tlc6" path="res://objects/title/title.gd" id="1_f0nhl"]
-[ext_resource type="FontFile" uid="uid://dgd06bxddo4pq" path="res://fonts/small_font.png" id="2_wketc"]
+[ext_resource type="PackedScene" uid="uid://8nvpnq1dktdh" path="res://components/draw_text/draw_text.tscn" id="2_f0nhl"]
 
 [node name="Title" type="StaticBody2D"]
 script = ExtResource("1_f0nhl")
 object_name = "title"
 
-[node name="ShortcutHouse" type="Label" parent="."]
-visible = false
-offset_left = 40.0
-offset_top = 224.0
-offset_right = 280.0
-offset_bottom = 247.0
-theme_override_fonts/font = ExtResource("2_wketc")
-text = "WELCOME TO THE SHORTCUT HOUSE!"
+[node name="DrawText" parent="." instance=ExtResource("2_f0nhl")]

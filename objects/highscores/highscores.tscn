@@ -1,7 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bqkohht8fc1w8"]
+[gd_scene load_steps=3 format=3 uid="uid://bqkohht8fc1w8"]
 
 [ext_resource type="Script" uid="uid://cukjqgapdpeed" path="res://objects/highscores/highscores.gd" id="1_1f1cs"]
+[ext_resource type="PackedScene" uid="uid://8nvpnq1dktdh" path="res://components/draw_text/draw_text.tscn" id="2_ufxky"]
 
 [node name="Highscores" type="StaticBody2D"]
 script = ExtResource("1_1f1cs")
 object_name = "highscores"
+
+[node name="DrawText" parent="." instance=ExtResource("2_ufxky")]

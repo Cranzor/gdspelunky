@@ -54,9 +54,9 @@ func _process(delta):
 #    for j in range(0, 32):
 
 #        for i in range(0, 40):
-    
+	
 #            level_array[i, j] = "0"
-    
+	
 
 
 #    # DY:  load level list
@@ -64,36 +64,36 @@ func _process(delta):
 
 #        temp_file = file_find_first("levels\*.lvl", 0)
 #        while (temp_file != ""):
-    
+	
 #            if (string_char_at(temp_file, 0) != "!"):
-        
-           
+		
+		   
 #    break
-        
+		
 #            temp_file = file_find_next()
-    
+	
 #        level_list[0] = ""
 #        level_list[0] = temp_file
 #        level_list[0] = string_delete(level_list[0], string_length(level_list[0])-3, 4)
 #        num_levels = 1
 #        while (level_list[num_levels-1] != ""):
-    
+	
 #            temp_file = file_find_next()
 #            if (temp_file != ""):
-        
+		
 #                if (string_char_at(temp_file, 0) != "!"):
-            
+			
 #                    level_list[num_levels] = temp_file
 #                    level_list[num_levels] = string_delete(level_list[num_levels], string_length(level_list[num_levels])-3, 4)
 #                    num_levels += 1
-            
-        
+			
+		
 #            else:
-        
-           
+		
+		   
 #    break
-        
-    
+		
+	
 #        if (level_list[0] == ""): num_levels = 0
 
 #        page = 1
@@ -110,7 +110,7 @@ func _process(delta):
 #    else: screen.enabled = false
 
 
-    
+	
 
 #func draw():
 #    gml.draw_set_font(global.my_font_small)
@@ -118,26 +118,26 @@ func _process(delta):
 
 #    if (status == GET_FILE_NAME):
 
-#        gml.draw_text(gml.view("xview")+32, gml.view("yview")+64, "LOAD LEVEL: " + level_name)
+#        draw_text.draw_text(gml.view("xview")+32, gml.view("yview")+64, "LOAD LEVEL: " + level_name)
 #        gml.draw_set_color(gml.c_yellow)
-#        gml.draw_text(gml.view("xview")+40, gml.view("yview")+96, "LEVELS")
-#        gml.draw_text(gml.view("xview")+224, gml.view("yview")+96, str(page) + "/" + str(num_pages))
+#        draw_text.draw_text(gml.view("xview")+40, gml.view("yview")+96, "LEVELS")
+#        draw_text.draw_text(gml.view("xview")+224, gml.view("yview")+96, str(page) + "/" + str(num_pages))
 #        if (msg_timer > 0):
-    
+	
 #            gml.draw_set_color(gml.c_red)
-#            gml.draw_text(gml.view("xview")+32, gml.view("yview")+224, "NO SUCH LEVEL EXISTS!")
-    
-#        else: gml.draw_text(gml.view("xview")+32, gml.view("yview")+224, "PRESS ESCAPE TO RETURN TO TITLE.")
+#            draw_text.draw_text(gml.view("xview")+32, gml.view("yview")+224, "NO SUCH LEVEL EXISTS!")
+	
+#        else: draw_text.draw_text(gml.view("xview")+32, gml.view("yview")+224, "PRESS ESCAPE TO RETURN TO TITLE.")
 #        gml.draw_set_color(gml.c_white)
 #        n = 112
 #        m = 0
 #        i = (page-1)*10
 #        while (m < 10 and i+m < num_levels):
-    
-#            gml.draw_text(gml.view("xview")+40, gml.view("yview")+n, string_upper(level_list[i+m]))
+	
+#            draw_text.draw_text(gml.view("xview")+40, gml.view("yview")+n, string_upper(level_list[i+m]))
 #            n += 8
 #            m += 1
-    
+	
 
 
 #    if (black_out):
@@ -146,36 +146,36 @@ func _process(delta):
 #        draw_rectangle(0, 0, 320, 240, false)
 
 
-    
+	
 
 #func key any key pressed():
 #    if (status == GET_FILE_NAME):
 
 #        if (keyboard_key == vk_escape):
-    
+	
 #            global.game_start = false
 #            global.title_start = 2
 #            get_tree().change_scene_to_file("res://r_title.tscn")
-    
+	
 #        elif (keyboard_key == vk_enter):
-    
+	
 #            global.first_custom_level = level_name
 #            scr_load_level()
-    
+	
 #        elif (keyboard_key == vk_backspace or keyboard_key == vk_delete):
-    
+	
 #            # DY: level_name += "DEL"
 #            level_name = string_delete(level_name, string_length(level_name), 1)
 #            with menu_sel  sprite_index = "menu_sel_off" 
-    
+	
 #        else:
-    
+	
 #            level_name += scr_get_char(keyboard_key)
 #            with menu_sel  sprite_index = "menu_sel_off" 
-    
+	
 
 
-    
+	
 
 #func step():
 #    if (msg_timer > 0): msg_timer -= 1
@@ -185,12 +185,12 @@ func _process(delta):
 #    if (status == GET_FILE_NAME):
 
 #        if (ControlScripts.check_start_pressed() or gamepad.attack_pressed):
-    
+	
 #            if (level_name != ""):
-        
+		
 #                global.first_custom_level = level_name
 #                scr_load_level()
-        
-    
+		
+	
 
 #    */
