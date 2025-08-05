@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dimbvflcml3em"]
+[gd_scene load_steps=8 format=3 uid="uid://dimbvflcml3em"]
 
 [ext_resource type="Script" uid="uid://co45frbaa7f0l" path="res://objects/screen/screen.gd" id="1_d8euu"]
 [ext_resource type="Script" uid="uid://b3b10hikop4qk" path="res://objects/screen/dark_surf.gd" id="2_d8euu"]
 [ext_resource type="Shader" uid="uid://d1iyh2el2fl0l" path="res://resources/mask.gdshader" id="2_lwwhj"]
 [ext_resource type="Script" uid="uid://dlplaivafr0s4" path="res://objects/screen/circles.gd" id="3_yv5hl"]
 [ext_resource type="PackedScene" uid="uid://8nvpnq1dktdh" path="res://components/draw_text/draw_text.tscn" id="5_c7y80"]
+[ext_resource type="PackedScene" uid="uid://bctkguili8lu6" path="res://components/draw_rectangle/draw_rectangle.tscn" id="6_q0mpi"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yv5hl"]
 shader = ExtResource("2_lwwhj")
@@ -26,3 +27,6 @@ material = SubResource("ShaderMaterial_yv5hl")
 script = ExtResource("3_yv5hl")
 
 [node name="DrawText" parent="." instance=ExtResource("5_c7y80")]
+
+[node name="DrawRectangle" parent="." instance=ExtResource("6_q0mpi")]
+z_index = 1

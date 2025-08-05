@@ -6,6 +6,9 @@ extends CanvasLayer
 @onready var item_icons = $InGame/ItemIcons
 @onready var compass_arrows = $InGame/CompassArrows
 @onready var draw_text = $InGame/DrawText
+@onready var in_game = $InGame
+@onready var pause_screen = $PauseScreen
+@onready var title_fade_in = $TitleFadeIn
 
 
 #--- change this to update in gm_loop
@@ -15,6 +18,8 @@ func _physics_process(delta: float) -> void:
 		show()
 		item_icons.draw_icons()
 		pickup_item.draw_pickup_item()
+	elif gml.room_get_name() == "title":
+		hide_all_but_title()
 	else:
 		propagate_call("hide")
 	
@@ -68,3 +73,9 @@ func draw_hud_text(): #--- moving this from screen object as it's more appropria
 		gml.draw_set_font(global.my_font_small)
 		gml.draw_set_color(gml.c_yellow)
 		draw_text.draw_text(money_x, 8+16, "+" + str(global.collect), "global_collect")
+
+func hide_all_but_title():
+	in_game.hide()
+	pause_screen.hide()
+	title_fade_in.show()
+	show()

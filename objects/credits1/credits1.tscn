@@ -1,10 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://5bilr5h7dtda"]
+[gd_scene load_steps=4 format=3 uid="uid://5bilr5h7dtda"]
 
 [ext_resource type="Script" uid="uid://dgrqsbo7x24ub" path="res://objects/credits1/credits1.gd" id="1_m2pq6"]
 [ext_resource type="PackedScene" uid="uid://8nvpnq1dktdh" path="res://components/draw_text/draw_text.tscn" id="2_dfgje"]
+[ext_resource type="PackedScene" uid="uid://bctkguili8lu6" path="res://components/draw_rectangle/draw_rectangle.tscn" id="3_estd2"]
 
 [node name="Credits1" type="StaticBody2D"]
 script = ExtResource("1_m2pq6")
 object_name = "credits1"
 
 [node name="DrawText" parent="." instance=ExtResource("2_dfgje")]
+
+[node name="DrawRectangle" parent="." instance=ExtResource("3_estd2")]

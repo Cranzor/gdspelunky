@@ -436,14 +436,14 @@ func draw_set_alpha(alpha) -> void:
 	draw_alpha = alpha
 
 
-func draw_rectangle(x1, y1, x2, y2, outline, node: GMObject) -> void:
-	var rect2 = Rect2(x1, y1, x2, y2)
-	var color = gml.draw_color
-	color.a = gml.draw_alpha
-	if surface_target == "dark_surf":
-		Screen.dark_surf.rectangle_to_draw = [rect2, color, draw_to_surface, surface_target]
-	else:
-		node.rectangle_to_draw = [rect2, color, draw_to_surface, surface_target]
+#func draw_rectangle(x1, y1, x2, y2, outline, node: GMObject) -> void: #--- made into its own component (DrawRectangle)
+	#var rect2 = Rect2(x1, y1, x2, y2)
+	#var color = gml.draw_color
+	#color.a = gml.draw_alpha
+	#if surface_target == "dark_surf":
+		#Screen.dark_surf.rectangle_to_draw = [rect2, color, draw_to_surface, surface_target]
+	#else:
+		#node.rectangle_to_draw = [rect2, color, draw_to_surface, surface_target]
 	
 
 func draw_circle(x, y, r, outline) -> void:

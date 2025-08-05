@@ -229,38 +229,8 @@ var x_acc: float
 var y_acc: float
 
 @export var object_size: Vector2 #--- created by me for collision purposes
-
-var sprites_to_draw: Array
-var sprites_to_draw_ext: Array
-var rectangle_to_draw: Array
-var circles_to_draw: Array
-var text_to_draw: Array
 var textures: Array
-var circle_textures: Array
-
-#--- each object is responsible for drawing the sprites that it creates with draw_sprite
-#--- this approach ensures that the z_index is correct for the drawn sprites
-func _draw() -> void:
-	#draw_rectangle()
-	pass
-
-var surface_rectangle: Array
-#func draw_rectangle() -> void:
-	#if !rectangle_to_draw.is_empty():
-		#var rect2 = rectangle_to_draw[0]
-		#var color = rectangle_to_draw[1]
-		#var draw_to_surface = rectangle_to_draw[2]
-		#var surface_target = rectangle_to_draw[3]
-#
-		#if draw_to_surface: #--- adding the current view position when drawing to a surface
-			#rect2.position += Vector2(gml.view_xview, gml.view_yview)
-			#surface_rectangle = rectangle_to_draw.duplicate()
-		#
-		#if gml.surfaces_to_draw[surface_target] == true:
-			#draw_rect(rect2, color)
-		#rectangle_to_draw.clear()
-		#rectangle_to_draw = surface_rectangle.duplicate()
-
+var sprites_to_draw_ext: Array
 
 func get_animated_sprite_2d() -> AnimatedSprite2D:
 	return animated_sprite_node

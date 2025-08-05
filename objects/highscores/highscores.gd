@@ -289,12 +289,12 @@ func draw():
 		
 		
 			gml.draw_set_color(gml.c_white)
-			draw_text.draw_text(128, 96, "TIME: ", "time", self)
+			draw_text.draw_text(128, 96, "TIME: ", "time")
 			if (s < 10): draw_text.draw_text(128+64, 96, str(m) + ":0" + str(s), "time_display1")
 			else: draw_text.draw_text(128+64, 96, str(m) + ":" + str(s), "time_display2")
 
 		gml.draw_set_color(gml.c_yellow)
-		draw_text.draw_text(168, 112, "STATISTICS", "statistics", self)
+		draw_text.draw_text(168, 112, "STATISTICS")
 		gml.draw_set_color(gml.c_white)
 		draw_text.draw_text(128, 128, "PLAYS:  " + str(gml.highscore_value(5)-5000000), "plays")
 		draw_text.draw_text(128, 144, "DEATHS: " + str(gml.highscore_value(7)-3000000), "deaths")

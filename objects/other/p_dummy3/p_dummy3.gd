@@ -81,7 +81,7 @@ func draw():
 	if (facing == RIGHT): image_xscale = -1
 	else: image_xscale = 1
 
-	gml.draw_sprite_ext(sprite_index, image_index, position.x, position.y, image_xscale, image_yscale, image_angle, image_blend, image_alpha, self, true)
+	gml.draw_sprite_ext(sprite_index, image_index, position.x, position.y, image_xscale, image_yscale, image_angle, image_blend, image_alpha, self, true) #---TODO
 
 
 func alarm_0():

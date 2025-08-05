@@ -24,6 +24,7 @@ var can_pause
 var paused
 var enabled
 @onready var draw_text: Node2D = $DrawText
+@onready var draw_rectangle: ColorRect = $DrawRectangle
 
 
 func _input(event):
@@ -146,14 +147,14 @@ func begin_step():
 				var player1 = gml.get_instance("player1") #---[FLAG] may need to change this for multiplayer
 				if (not player1.dead):
 					
-					gml.surface_set_target("p_surf")
+					#gml.surface_set_target("p_surf") #--- moved draw_rectangle code to HUD (TitleFadeIn node)
 					#screen_redraw()
 					
-					if (global.dark_level): gml.draw_set_alpha(1)
-					else: gml.draw_set_alpha(0.9)
-					gml.draw_set_color(gml.c_black)
-					#gml.draw_rectangle(0, 0, screen_w*screen_scale, screen_h*screen_scale, false)
-					gml.draw_rectangle(0, 0, 320, 240, false, self) #--- changed screen variables to pixel counts
+					#if (global.dark_level): gml.draw_set_alpha(1)
+					#else: gml.draw_set_alpha(0.9)
+					#gml.draw_set_color(gml.c_black)
+					#draw_rectangle.draw_rectangle(0, 0, screen_w*screen_scale, screen_h*screen_scale, false)
+					#draw_rectangle.draw_rectangle(0, 0, 320, 240, false) #--- changed screen variables to pixel counts
 					gml.draw_set_alpha(1)
 					if (SS.is_sound_playing(global.mus_title)): SS.set_sound_vol(global.mus_title, 0)
 					if (SS.is_sound_playing(global.mus_cave)): SS.set_sound_vol(global.mus_cave, 0)
@@ -239,26 +240,27 @@ func begin_step():
 	else:
 
 		if (InLevel.is_room("title") and get_tree().current_scene != null): #--- adding this check for now. otherwise title becomes a null instance
-			var title = gml.get_instance("title")
-			gml.surface_set_target("screen")
-			gml.draw_set_alpha(title.darkness)
-			gml.draw_set_color(gml.c_black)
+			SignalBus.emit_signal("draw_title_rect")
+			#var title = gml.get_instance("title")
+			#gml.surface_set_target("screen")
+			#gml.draw_set_alpha(title.darkness)
+			#gml.draw_set_color(gml.c_black)
 			#if (title.darkness > 0): #-- -removing if statement to always draw this rectangle on the title screen. simplifies things so we don't have to deal with blend modes etc. below
-				#gml.draw_rectangle(0, 0, screen_w, screen_h, false)
-			gml.draw_rectangle(0, 0, 320, 240, false, self) #--- changed screen variables to pixel counts
-			if (title.state == 1):
+				#draw_rectangle.draw_rectangle(0, 0, screen_w, screen_h, false)
+			#draw_rectangle.draw_rectangle(0, 0, 320, 240, false) #--- changed screen variables to pixel counts
+			#if (title.state == 1):
 			
-				gml.draw_set_font(global.my_font_small)
-				gml.draw_set_color(gml.c_white)
-				draw_text.draw_text(88, 48, "DEREK YU PRESENTS")
+				#gml.draw_set_font(global.my_font_small)
+				#gml.draw_set_color(gml.c_white)
+				#draw_text.draw_text(88, 48, "DEREK YU PRESENTS")
 			
 			#gml.draw_set_alpha(1)
 			##draw_set_blend_mode_ext(bm_src_color,bm_one)
 			#gml.draw_set_color(gml.c_black)
-			##gml.draw_rectangle(0, 0, screen_w,screen_h, 0)
-			#gml.draw_rectangle(0, 0, 320, 240, 0, self) #--- changed screen variables to pixel counts
+			##draw_rectangle.draw_rectangle(0, 0, screen_w,screen_h, 0)
+			#draw_rectangle.draw_rectangle(0, 0, 320, 240, 0, self) #--- changed screen variables to pixel counts
 			#draw_set_blend_mode(bm_normal)
-			gml.surface_reset_target()
+			#gml.surface_reset_target()
 		
 		elif (InLevel.is_level() and gml.instance_exists("player1")):
 			var player1 = gml.get_instance("player1") #---[FLAG] may need to adjust this for multiplayer
@@ -268,7 +270,7 @@ func begin_step():
 				var level = gml.get_instance("level")
 				gml.surface_set_target("dark_surf")
 				gml.draw_set_color(gml.c_black)
-				gml.draw_rectangle(0, 0, gml.screen_w, gml.screen_h, false, self)
+				draw_rectangle.draw_rectangle(0, 0, gml.screen_w, gml.screen_h, false) #---TODO
 				gml.draw_set_color(gml.make_color_rgb(255-255*level.darkness,255-255*level.darkness,255))
 				
 				if (gml.instance_exists("lamp_red")):
@@ -382,14 +384,14 @@ func begin_step():
 				var str_len = gml.string_length(global.message)*8
 				var n = 320 - str_len
 				n = ceil(n / 2)
-				draw_text.draw_text(n, 216, str(global.message), "global_message")
+				draw_text.draw_text(n, 216, str(global.message), "global_message") #---TODO
 
 				var text_color = gml.c_white
 				if (not InLevel.is_room("tutorial")): gml.c_yellow
 				str_len = gml.string_length(global.message2)*8
 				n = 320 - str_len
 				n = ceil(n / 2)
-				draw_text.draw_text(n, 224, str(global.message2), "global_message2")
+				draw_text.draw_text(n, 224, str(global.message2), "global_message2") #---TODO
 		
 				global.message_timer -= 1
 			

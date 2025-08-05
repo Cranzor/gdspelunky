@@ -15,6 +15,7 @@ func _process(delta):
 
 #--- Object functions
 @onready var draw_text: Node2D = $DrawText
+@onready var draw_rectangle: ColorRect = $DrawRectangle
 
 
 func alarm_0():

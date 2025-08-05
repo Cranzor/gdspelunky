@@ -15,6 +15,7 @@ func _process(delta):
 
 #--- Object functions
 @onready var draw_text: Node2D = $DrawText
+@onready var draw_rectangle: ColorRect = $DrawRectangle
 
 
 func alarm_0():
@@ -136,7 +137,7 @@ func draw():
 
 		gml.draw_set_color(gml.c_black)
 		gml.draw_set_alpha(fade_level)
-		gml.draw_rectangle(0, 0, 320, 240, false, self)
+		draw_rectangle.draw_rectangle(0, 0, 320, 240, false)
 		gml.draw_set_alpha(1)
 
 
