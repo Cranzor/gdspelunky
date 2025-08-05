@@ -4,5 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://cycctqx2bmx2j" path="res://components/draw_text/drawn_text.tscn" id="2_ewq6i"]
 
 [node name="DrawText" type="Node2D" groups=["draw_text"]]
+z_index = 1
 script = ExtResource("1_0dwxx")
 drawn_text = ExtResource("2_ewq6i")

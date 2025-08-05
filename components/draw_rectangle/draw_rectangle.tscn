@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bctkguili8lu6"]
+
+[ext_resource type="Script" uid="uid://nt05ksk5fdo6" path="res://components/draw_rectangle/draw_rectangle.gd" id="1_2b2fh"]
+
+[node name="DrawRectangle" type="ColorRect"]
+script = ExtResource("1_2b2fh")

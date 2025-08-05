@@ -21,6 +21,8 @@ var str3
 
 var skip_button_just_pressed: bool = false
 @onready var draw_text: Node = $DrawText
+@onready var draw_rectangle: ColorRect = $DrawRectangle
+
 
 func _input(event):
 	if (gml.keyboard_check_pressed(KEY_ENTER) or
@@ -123,7 +125,7 @@ func draw():
 	
 	gml.draw_set_color(gml.c_black)
 	gml.draw_set_alpha(fade_level)
-	gml.draw_rectangle(gml.view_xview, gml.view_yview, gml.view_xview + 320, gml.view_yview + 240, false, self)
+	draw_rectangle.draw_rectangle(gml.view_xview, gml.view_yview, gml.view_xview + 320, gml.view_yview + 240, false)
 	gml.draw_set_alpha(1)
 	
 	if (draw_status > 0):
