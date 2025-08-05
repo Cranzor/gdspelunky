@@ -456,23 +456,9 @@ func draw_circle(x, y, r, outline) -> void:
 
 
 #--- font represents draw_set_font, and color represents draw_set_color. name is used to identify the label node
-func draw_text(x, y, string: String, name: String, node) -> void:
-	#--- capitalizing the full string as the fonts don't support lowercase letters
-	string = string.to_upper()
-	var font
-	
-	if draw_font == "main_font":
-		font = load("res://fonts/main_font.png")
-		y += 8 #--- offsetting y pos by half of the font pixel height to make it correct
-	elif draw_font == "small_font":
-		font = load("res://fonts/small_font.png")
-		y += 4 #--- offsetting y pos by half of the font pixel height to make it correct
+#func draw_text(x, y, string: String, name: String, node) -> void:
+#--- replaced with DrawText component
 
-	#-- if draw_to_surface == true, offset text by adding view position
-	#--- this is a bit of a shortcut compared to the original code but the outcome should be the same
-	var text_info = [font, Vector2(x, y), string, draw_color, draw_to_surface]
-	node.text_to_draw.append(text_info)
-	
 
 
 func draw_sprite(sprite: String, subimg: int, x, y, node, is_object_sprite: bool = false): #--- appears to typically be used for sprites with only 1 animation frame

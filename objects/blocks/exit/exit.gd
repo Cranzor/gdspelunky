@@ -28,4 +28,4 @@ func _process(delta):
 
 #        gml.draw_set_font(global.my_font_small)
 #        gml.draw_set_color(gml.c_white)
-#        gml.draw_text(position.x, position.y, leads_to)
+#        draw_text.draw_text(position.x, position.y, leads_to)

@@ -242,7 +242,6 @@ var circle_textures: Array
 #--- this approach ensures that the z_index is correct for the drawn sprites
 func _draw() -> void:
 	draw_rectangle()
-	draw_text_to_screen()
 
 var surface_rectangle: Array
 func draw_rectangle() -> void:
@@ -260,22 +259,6 @@ func draw_rectangle() -> void:
 			draw_rect(rect2, color)
 		rectangle_to_draw.clear()
 		rectangle_to_draw = surface_rectangle.duplicate()
-
-
-func draw_text_to_screen() -> void:
-	for text in text_to_draw:
-		var font = text[0]
-		var pos = text[1]
-		pos -= position #--- resetting origin to 0, 0 by subtracting the node's position
-		var string = text[2]
-		var color = text[3]
-		var draw_to_surface = text[4]
-		if draw_to_surface:
-			pos += Vector2(gml.view_xview, gml.view_yview)
-		
-		draw_string(font, pos, string, 0, -1, 16, color)
-		
-	text_to_draw = []
 
 
 func get_animated_sprite_2d() -> AnimatedSprite2D:

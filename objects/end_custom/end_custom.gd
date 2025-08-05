@@ -14,6 +14,7 @@ func _process(delta):
 
 
 #--- Object functions
+@onready var draw_text = $DrawText
 
 
 func alarm_0():
@@ -79,19 +80,19 @@ func draw():
 
 		gml.draw_set_font(global.my_font)
 		gml.draw_set_color(gml.c_yellow)
-		gml.draw_text(64, 32, "YOU MADE IT!", "you_made_it", self)
+		draw_text.draw_text(64, 32, "YOU MADE IT!")
 
 	if (draw_status > 1):
 
 		gml.draw_set_font(global.my_font_small)
 		gml.draw_set_color(gml.c_yellow)
-		gml.draw_text(64, 64, "FINAL SCORE:", "final_score", self)
+		draw_text.draw_text(64, 64, "FINAL SCORE:")
 
 	if (draw_status > 2):
 
 		gml.draw_set_font(global.my_font)
 		gml.draw_set_color(gml.c_white)
-		gml.draw_text(64, 72, "$" + str(money_count), "money_count", self)
+		draw_text.draw_text(64, 72, "$" + str(money_count), "money_count")
 
 	if (draw_status > 4):
 
@@ -106,33 +107,33 @@ func draw():
 
 		gml.draw_set_font(global.my_font_small)
 		gml.draw_set_color(gml.c_yellow)
-		gml.draw_text(64, 96, "TIME: ", "time", self)
+		draw_text.draw_text(64, 96, "TIME: ")
 		gml.draw_set_color(gml.c_white)
-		if (s < 10): gml.draw_text(96+24, 96, str(m) + ":0" + str(s), "time_display1", self)
-		else: gml.draw_text(96+24, 96, str(m) + ":" + str(s), "time_display2", self)
+		if (s < 10): draw_text.draw_text(96+24, 96, str(m) + ":0" + str(s), "time_display1")
+		else: draw_text.draw_text(96+24, 96, str(m) + ":" + str(s), "time_display2")
 
 	if (draw_status > 5):
 
 		gml.draw_set_font(global.my_font_small)
 		gml.draw_set_color(gml.c_yellow)
-		gml.draw_text(64, 96+8, "KILLS: ", "kills", self)
+		draw_text.draw_text(64, 96+8, "KILLS: ")
 		gml.draw_set_color(gml.c_white)
-		gml.draw_text(96+24, 96+8, str(global.kills), "global_kills", self)
+		draw_text.draw_text(96+24, 96+8, str(global.kills), "global_kills")
 
 	if (draw_status > 6):
 
 		gml.draw_set_font(global.my_font_small)
 		gml.draw_set_color(gml.c_yellow)
-		gml.draw_text(64, 96+16, "SAVES: ", "saves", self)
+		draw_text.draw_text(64, 96+16, "SAVES: ")
 		gml.draw_set_color(gml.c_white)
-		gml.draw_text(96+24, 96+16, str(global.damsels), "global_damsels", self)
+		draw_text.draw_text(96+24, 96+16, str(global.damsels), "global_damsels")
 
 
 	if (fade_out):
 
 		gml.draw_set_color(gml.c_black)
 		gml.draw_set_alpha(fade_level)
-		gml.draw_rectangle(0, 0, 320, 240, false)
+		gml.draw_rectangle(0, 0, 320, 240, false, self)
 		gml.draw_set_alpha(1)
 
 
@@ -143,7 +144,7 @@ func draw():
 		var str_len = gml.string_length("YOU SHALL BE REMEMBERED AS A HERO.")*8
 		var n = 320 - str_len
 		n = ceil(n / 2)
-		gml.draw_text(n, 116, str("YOU SHALL BE REMEMBERED AS A HERO."), "as_a_hero", self)
+		draw_text.draw_text(n, 116, str("YOU SHALL BE REMEMBERED AS A HERO."))
 
 
 func step():
