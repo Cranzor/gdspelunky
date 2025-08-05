@@ -35,6 +35,7 @@ Gamepad="*res://objects/gamepad/gamepad.tscn"
 GlobalInput="*res://global_input.gd"
 LevelGeneration="*res://level_generation.gd"
 GmLoop="*res://resources/gm_loop.gd"
+SignalBus="*res://resources/signal_bus.gd"
 
 [display]
 

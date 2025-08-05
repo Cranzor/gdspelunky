@@ -15,6 +15,7 @@ func _process(delta):
 
 #--- Object functions
 var baskets
+@onready var draw_text = $BonusRoomsHUD/DrawText
 
 
 func alarm_0():
@@ -140,10 +141,10 @@ func draw():
 	gml.draw_set_font(global.my_font)
 	gml.draw_set_color(gml.c_white)
 	gml.draw_sprite("hoops_icon", -1, gml.view("xview")+8, gml.view("yview")+8, self)
-	gml.draw_text(gml.view("xview")+24, gml.view("yview")+8, str(baskets), "baskets", self)
+	draw_text.draw_text(gml.view("xview")+24, gml.view("yview")+8, str(baskets), "baskets")
 	gml.draw_sprite("timer_icon", -1, gml.view("xview")+64, gml.view("yview")+8, self)
-	if (timer >= 0): gml.draw_text(gml.view("xview")+64+16, gml.view("yview")+8, str(timer), "timer", self)
-	else: gml.draw_text(gml.view("xview")+64+16, gml.view("yview")+8, "0", "zero", self)
+	if (timer >= 0): draw_text.draw_text(gml.view("xview")+64+16, gml.view("yview")+8, str(timer), "timer")
+	else: draw_text.draw_text(gml.view("xview")+64+16, gml.view("yview")+8, "0", "zero")
 	if (draw_status < 3):
 
 		gml.draw_set_font(global.my_font_small)
@@ -151,4 +152,4 @@ func draw():
 		var str_len = gml.string_length("ARCHERY CHALLENGE BEGINS IN 3...")*8
 		var n = 320 - str_len
 		n = ceil(n / 2)
-		gml.draw_text(n, 216, "ARCHERY CHALLENGE BEGINS IN " + str(3-draw_status) + "...", "archery_challenge_message", self)
+		draw_text.draw_text(n, 216, "ARCHERY CHALLENGE BEGINS IN " + str(3-draw_status) + "...", "archery_challenge_message")

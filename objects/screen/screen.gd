@@ -178,59 +178,59 @@ func begin_step():
 			if (SS.is_sound_playing(global.mus_temple)): SS.set_sound_vol(global.mus_temple, 2000 + 8000 * (global.music_vol/18))
 			if (SS.is_sound_playing(global.mus_boss)): SS.set_sound_vol(global.mus_boss, 2000 + 8000 * (global.music_vol/18))
 			paused = false
-	
 
 
 	# this draws the surface on the screen
 	gml.surface_reset_target()
 	#draw_clear(0) #--- not needed
-	if (paused):
+	if (paused): #--- moved text drawing here to HUD (PauseScreen node)
 
 		gml.surface_set_target("p_surf")
 		gml.draw_set_font(global.my_font)
 		gml.draw_set_color(gml.c_white)
-		gml.draw_text(112, 200, "PAUSED", "", self)
+		#draw_text.draw_text(112, 200, "PAUSED")
 		gml.draw_set_font(global.my_font_small)
-		if (InLevel.is_level()):
+		#if (InLevel.is_level()):
 		
-			var n = 128-24
-			if (global.curr_level < 1): gml.draw_text(40, n-24, "TUTORIAL CAVE", "", self)
-			elif (InLevel.is_room("load_level")): gml.draw_text(40, n-24, "LEVEL: " + global.custom_level_name + " BY " + global.custom_level_author, "", self)
-			else: gml.draw_text(40, n-24, "LEVEL " + str(global.curr_level), "", self)
-			gml.draw_text(40, n-16, "DEPTH: " + str(174.8*(global.curr_level-1)+(py+8)*0.34) + " FEET", "", self)
-			gml.draw_text(40, n, "MONEY: " + str(global.money), "", self)
-			gml.draw_text(40, n+8, "KILLS: " + str(global.kills), "", self)
-			var s = global.xtime
-			s = floor(s / 1000)
-			var m = 0
-			while (s > 59):
-			
-				s -= 60
-				m += 1
-			
-			var str
-			if (s < 10): str = "0" + str(s)
-			else: str = str(s)
-			var s2 = global.time
-			s2 = floor(s2 / 1000)
-			var m2 = 0
-			while (s2 > 59):
-			
-				s2 -= 60
-				m2 += 1
-			
-			var str2
-			if (s2 < 10): str2 = "0" + str(s2)
-			else: str2 = str(s2)
-			gml.draw_text(40, n+16, "TIME:  " + str(m) + ":" + str + " / " + str(m2) + ":" + str2, "", self)
-			gml.draw_text(40, n+24, "SAVES: " + str(global.damsels), "", self)
-			if (global.gamepad_on): gml.draw_text(24, 216, "START-RETURN  BOMB-DIE  ROPE-QUIT", "", self)
-			else: gml.draw_text(40, 216, "ESC-RETURN  F1-DIE  F10-QUIT", "", self)
+			#var n = 128-24
+			#if (global.curr_level < 1): draw_text.draw_text(40, n-24, "TUTORIAL CAVE")
+			#elif (InLevel.is_room("load_level")): draw_text.draw_text(40, n-24, "LEVEL: " + global.custom_level_name + " BY " + global.custom_level_author, "level_name")
+			#else: draw_text.draw_text(40, n-24, "LEVEL " + str(global.curr_level), "level_number")
+			#draw_text.draw_text(40, n-16, "DEPTH: " + str(174.8*(global.curr_level-1)+(py+8)*0.34) + " FEET", "depth")
+			#draw_text.draw_text(40, n, "MONEY: " + str(global.money), "money")
+			#draw_text.draw_text(40, n+8, "KILLS: " + str(global.kills), "kills")
+			#var s = global.xtime
+			#s = floor(s / 1000)
+			#var m = 0
+			#while (s > 59):
+			#
+				#s -= 60
+				#m += 1
+			#
+			#var str
+			#if (s < 10): str = "0" + str(s)
+			#else: str = str(s)
+			#var s2 = global.time
+			#s2 = floor(s2 / 1000)
+			#var m2 = 0
+			#while (s2 > 59):
+			#
+				#s2 -= 60
+				#m2 += 1
+			#
+			#var str2
+			#if (s2 < 10): str2 = "0" + str(s2)
+			#else: str2 = str(s2)
+			#draw_text.draw_text(40, n+16, "TIME:  " + str(m) + ":" + str + " / " + str(m2) + ":" + str2, "time")
+			#draw_text.draw_text(40, n+24, "SAVES: " + str(global.damsels), "saves")
+			#if (global.gamepad_on): draw_text.draw_text(24, 216, "START-RETURN  BOMB-DIE  ROPE-QUIT")
+			#else: draw_text.draw_text(40, 216, "ESC-RETURN  F1-DIE  F10-QUIT")
 		
-		else:
+		#else:
 		
-			if (global.gamepad_on): gml.draw_text(64, 216, "START-RETURN  ROPE-QUIT", "", self)
-			else: gml.draw_text(80, 216, "ESC-RETURN  F10-QUIT", "", self)
+			#if (global.gamepad_on): draw_text.draw_text(64, 216, "START-RETURN  ROPE-QUIT")
+			#else: draw_text.draw_text(80, 216, "ESC-RETURN  F10-QUIT")
+			#pass
 		
 		gml.surface_reset_target()
 		#draw_surface_stretched(p_surf,screen_x,screen_y,screen_w*screen_scale,screen_h*screen_scale)
@@ -250,7 +250,7 @@ func begin_step():
 			
 				gml.draw_set_font(global.my_font_small)
 				gml.draw_set_color(gml.c_white)
-				gml.draw_text(88, 48, "DEREK YU PRESENTS", "", self)
+				draw_text.draw_text(88, 48, "DEREK YU PRESENTS")
 			
 			#gml.draw_set_alpha(1)
 			##draw_set_blend_mode_ext(bm_src_color,bm_one)
@@ -382,14 +382,14 @@ func begin_step():
 				var str_len = gml.string_length(global.message)*8
 				var n = 320 - str_len
 				n = ceil(n / 2)
-				gml.draw_text(n, 216, str(global.message), "global_message", self)
+				draw_text.draw_text(n, 216, str(global.message), "global_message")
 
 				var text_color = gml.c_white
 				if (not InLevel.is_room("tutorial")): gml.c_yellow
 				str_len = gml.string_length(global.message2)*8
 				n = 320 - str_len
 				n = ceil(n / 2)
-				gml.draw_text(n, 224, str(global.message2), "global_message2", self)
+				draw_text.draw_text(n, 224, str(global.message2), "global_message2")
 		
 				global.message_timer -= 1
 			
@@ -405,6 +405,7 @@ func begin_step():
 		#draw_set_blend_mode(bm_normal) # According to Chevy_ray, this should fix the black box glitch
 
 	#screen_refresh()
+	SignalBus.emit_signal("game_paused", paused)
 
 #func close_button(): #--- not needed as this is what Godot does by default
 	#game_end()
@@ -441,6 +442,7 @@ func key_f1_pressed():
 
 		gml.instance_activate_all()
 		paused = false
+		SignalBus.emit_signal("game_paused", paused)
 		#with player1
 		var all_player1s = gml.get_all_instances("player1")
 		for player1_instance in all_player1s:

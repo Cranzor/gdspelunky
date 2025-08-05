@@ -26,4 +26,3 @@ material = SubResource("ShaderMaterial_yv5hl")
 script = ExtResource("3_yv5hl")
 
 [node name="DrawText" parent="." instance=ExtResource("5_c7y80")]
-ui_string = true

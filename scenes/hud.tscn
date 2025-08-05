@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://dfkrem72v8ms8"]
+[gd_scene load_steps=75 format=3 uid="uid://dfkrem72v8ms8"]
 
 [ext_resource type="Texture2D" uid="uid://xajjg6rysmmk" path="res://sprites/hud/heart/heart_0.png" id="1_kp442"]
 [ext_resource type="Script" uid="uid://clfaomwucanks" path="res://scenes/hud.gd" id="1_o1o2r"]
@@ -69,6 +69,7 @@
 [ext_resource type="Texture2D" uid="uid://bi8d73nhos5dg" path="res://sprites/items/saleable/compass_lr/compass_lr_0.png" id="64_ep55p"]
 [ext_resource type="Script" uid="uid://deuarbfqqf3v4" path="res://scenes/compass_arrows.gd" id="65_gxo4v"]
 [ext_resource type="Texture2D" uid="uid://o5sy6e1i3h2m" path="res://sprites/items/saleable/compass_small_lr/compass_small_lr_0.png" id="68_dbhui"]
+[ext_resource type="Script" uid="uid://c0yg5gcwfrm0c" path="res://scenes/pause_screen.gd" id="70_dbhui"]
 [ext_resource type="PackedScene" uid="uid://8nvpnq1dktdh" path="res://components/draw_text/draw_text.tscn" id="70_ep55p"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_oo0fn"]
@@ -342,179 +343,187 @@ animations = [{
 "speed": 30.0
 }]
 
-[node name="HUD" type="CanvasLayer"]
+[node name="HUD" type="CanvasLayer" groups=["hud"]]
 visible = false
 script = ExtResource("1_o1o2r")
 
-[node name="Heart" type="Sprite2D" parent="."]
+[node name="InGame" type="Node2D" parent="."]
+
+[node name="Heart" type="Sprite2D" parent="InGame"]
 position = Vector2(8, 8)
 texture = ExtResource("1_kp442")
 centered = false
 
-[node name="StickyBombIcon" type="Sprite2D" parent="."]
+[node name="StickyBombIcon" type="Sprite2D" parent="InGame"]
 visible = false
 position = Vector2(64, 8)
 texture = ExtResource("2_gltyx")
 centered = false
 
-[node name="BombIcon" type="Sprite2D" parent="."]
+[node name="BombIcon" type="Sprite2D" parent="InGame"]
 position = Vector2(64, 8)
 texture = ExtResource("3_mgfyp")
 centered = false
 
-[node name="RopeIcon" type="Sprite2D" parent="."]
+[node name="RopeIcon" type="Sprite2D" parent="InGame"]
 position = Vector2(120, 8)
 texture = ExtResource("4_ptr5m")
 centered = false
 
-[node name="DollarSign" type="Sprite2D" parent="."]
+[node name="DollarSign" type="Sprite2D" parent="InGame"]
 position = Vector2(176, 8)
 texture = ExtResource("5_of3ib")
 centered = false
 
-[node name="HoldItemIcon" type="Sprite2D" parent="."]
+[node name="HoldItemIcon" type="Sprite2D" parent="InGame"]
 position = Vector2(8, 24)
 texture = ExtResource("6_7600b")
 centered = false
 
-[node name="ItemIcons" type="CanvasLayer" parent="."]
+[node name="ItemIcons" type="CanvasLayer" parent="InGame"]
 script = ExtResource("7_gltyx")
 
-[node name="UdjatEyeIcon2" type="Sprite2D" parent="ItemIcons"]
+[node name="UdjatEyeIcon2" type="Sprite2D" parent="InGame/ItemIcons"]
 visible = false
 position = Vector2(0, 24)
 texture = ExtResource("7_e558t")
 centered = false
 
-[node name="UdjatEyeIcon" type="Sprite2D" parent="ItemIcons"]
+[node name="UdjatEyeIcon" type="Sprite2D" parent="InGame/ItemIcons"]
 visible = false
 position = Vector2(0, 24)
 texture = ExtResource("8_frrke")
 centered = false
 
-[node name="AnkhIcon" type="Sprite2D" parent="ItemIcons"]
+[node name="AnkhIcon" type="Sprite2D" parent="InGame/ItemIcons"]
 visible = false
 position = Vector2(0, 24)
 texture = ExtResource("9_vh1iw")
 centered = false
 
-[node name="CrownIcon" type="Sprite2D" parent="ItemIcons"]
+[node name="CrownIcon" type="Sprite2D" parent="InGame/ItemIcons"]
 visible = false
 position = Vector2(0, 24)
 texture = ExtResource("10_fgtve")
 centered = false
 
-[node name="KapalaIcon" type="AnimatedSprite2D" parent="ItemIcons" groups=["animated_sprite"]]
+[node name="KapalaIcon" type="AnimatedSprite2D" parent="InGame/ItemIcons" groups=["animated_sprite"]]
 visible = false
 position = Vector2(0, 24)
 sprite_frames = SubResource("SpriteFrames_oo0fn")
 frame_progress = 0.80557
 centered = false
 
-[node name="SpectaclesIcon" type="Sprite2D" parent="ItemIcons"]
+[node name="SpectaclesIcon" type="Sprite2D" parent="InGame/ItemIcons"]
 visible = false
 position = Vector2(0, 24)
 texture = ExtResource("17_qccye")
 centered = false
 
-[node name="GlovesIcon" type="Sprite2D" parent="ItemIcons"]
+[node name="GlovesIcon" type="Sprite2D" parent="InGame/ItemIcons"]
 visible = false
 position = Vector2(0, 24)
 texture = ExtResource("18_flipt")
 centered = false
 
-[node name="MittIcon" type="Sprite2D" parent="ItemIcons"]
+[node name="MittIcon" type="Sprite2D" parent="InGame/ItemIcons"]
 visible = false
 position = Vector2(0, 24)
 texture = ExtResource("19_uorui")
 centered = false
 
-[node name="SpringShoesIcon" type="Sprite2D" parent="ItemIcons"]
+[node name="SpringShoesIcon" type="Sprite2D" parent="InGame/ItemIcons"]
 visible = false
 position = Vector2(0, 24)
 texture = ExtResource("20_wi3kw")
 centered = false
 
-[node name="SpikeShoesIcon" type="Sprite2D" parent="ItemIcons"]
+[node name="SpikeShoesIcon" type="Sprite2D" parent="InGame/ItemIcons"]
 visible = false
 position = Vector2(0, 24)
 texture = ExtResource("23_qn0nn")
 centered = false
 
-[node name="CapeIcon" type="Sprite2D" parent="ItemIcons"]
+[node name="CapeIcon" type="Sprite2D" parent="InGame/ItemIcons"]
 visible = false
 position = Vector2(0, 24)
 texture = ExtResource("21_ka0sb")
 centered = false
 
-[node name="JetpackIcon" type="Sprite2D" parent="ItemIcons"]
+[node name="JetpackIcon" type="Sprite2D" parent="InGame/ItemIcons"]
 visible = false
 position = Vector2(0, 24)
 texture = ExtResource("22_7r3ka")
 centered = false
 
-[node name="CompassIcon" type="Sprite2D" parent="ItemIcons"]
+[node name="CompassIcon" type="Sprite2D" parent="InGame/ItemIcons"]
 visible = false
 position = Vector2(0, 24)
 texture = ExtResource("23_snea0")
 centered = false
 
-[node name="ParachuteIcon" type="Sprite2D" parent="ItemIcons"]
+[node name="ParachuteIcon" type="Sprite2D" parent="InGame/ItemIcons"]
 visible = false
 position = Vector2(0, 24)
 texture = ExtResource("24_mvlge")
 centered = false
 
-[node name="Arrows" type="Node2D" parent="ItemIcons"]
+[node name="Arrows" type="Node2D" parent="InGame/ItemIcons"]
 position = Vector2(0, 24)
 
-[node name="ArrowIcon" type="Sprite2D" parent="ItemIcons/Arrows"]
+[node name="ArrowIcon" type="Sprite2D" parent="InGame/ItemIcons/Arrows"]
 visible = false
 texture = ExtResource("25_fr0ct")
 centered = false
 
-[node name="ArrowIcon2" type="Sprite2D" parent="ItemIcons/Arrows"]
+[node name="ArrowIcon2" type="Sprite2D" parent="InGame/ItemIcons/Arrows"]
 visible = false
 position = Vector2(4, 0)
 texture = ExtResource("25_fr0ct")
 centered = false
 
-[node name="ArrowIcon3" type="Sprite2D" parent="ItemIcons/Arrows"]
+[node name="ArrowIcon3" type="Sprite2D" parent="InGame/ItemIcons/Arrows"]
 visible = false
 position = Vector2(8, 0)
 texture = ExtResource("25_fr0ct")
 centered = false
 
-[node name="ArrowIcon4" type="Sprite2D" parent="ItemIcons/Arrows"]
+[node name="ArrowIcon4" type="Sprite2D" parent="InGame/ItemIcons/Arrows"]
 visible = false
 position = Vector2(12, 0)
 texture = ExtResource("25_fr0ct")
 centered = false
 
-[node name="ArrowIcon5" type="Sprite2D" parent="ItemIcons/Arrows"]
+[node name="ArrowIcon5" type="Sprite2D" parent="InGame/ItemIcons/Arrows"]
 visible = false
 position = Vector2(16, 0)
 texture = ExtResource("25_fr0ct")
 centered = false
 
-[node name="ArrowIcon6" type="Sprite2D" parent="ItemIcons/Arrows"]
+[node name="ArrowIcon6" type="Sprite2D" parent="InGame/ItemIcons/Arrows"]
 visible = false
 position = Vector2(20, 0)
 texture = ExtResource("25_fr0ct")
 centered = false
 
-[node name="PickupItem" parent="." instance=ExtResource("28_qn0nn")]
+[node name="PickupItem" parent="InGame" instance=ExtResource("28_qn0nn")]
 sprite_frames = SubResource("SpriteFrames_eavr3")
 animation = &"key_right"
 frame_progress = 0.0
 offset = Vector2(-8, -12)
 
-[node name="CompassArrows" type="AnimatedSprite2D" parent="."]
+[node name="CompassArrows" type="AnimatedSprite2D" parent="InGame"]
 sprite_frames = SubResource("SpriteFrames_1dsb4")
 animation = &"compass_small_lr"
 centered = false
 script = ExtResource("65_gxo4v")
 
-[node name="DrawText" parent="." instance=ExtResource("70_ep55p")]
+[node name="DrawText" parent="InGame" instance=ExtResource("70_ep55p")]
 
-[connection signal="animation_changed" from="ItemIcons/KapalaIcon" to="ItemIcons/KapalaIcon" method="_on_animation_changed"]
+[node name="PauseScreen" type="Node2D" parent="."]
+script = ExtResource("70_dbhui")
+
+[node name="DrawText" parent="PauseScreen" instance=ExtResource("70_ep55p")]
+hide_at_frame_start = false
+
+[connection signal="animation_changed" from="InGame/ItemIcons/KapalaIcon" to="InGame/ItemIcons/KapalaIcon" method="_on_animation_changed"]

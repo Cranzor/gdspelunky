@@ -4,6 +4,7 @@ const main_font: String = "res://fonts/main_font.png"
 const small_font: String = "res://fonts/small_font.png"
 
 @export var drawn_text: PackedScene
+@export var hide_at_frame_start: bool = true
 var string_counter = 0
 var strings: Dictionary[String, int]
 
@@ -37,3 +38,13 @@ func set_up_label(label, text):
 		label.theme_type_variation=&"LabelSmall"
 	string_counter += 1
 	return label
+
+
+func hide_labels() -> void:
+	if hide_at_frame_start:
+		hide_children()
+
+func hide_children() -> void:
+	var children = get_children()
+	for child in children:
+		child.hide()

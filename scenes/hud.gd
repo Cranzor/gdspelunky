@@ -1,11 +1,11 @@
 extends CanvasLayer
 
-@onready var bomb_icon = $BombIcon
-@onready var sticky_bomb_icon = $StickyBombIcon
-@onready var pickup_item = $PickupItem
-@onready var item_icons = $ItemIcons
-@onready var compass_arrows = $CompassArrows
-@onready var draw_text = $DrawText
+@onready var bomb_icon = $InGame/BombIcon
+@onready var sticky_bomb_icon = $InGame/StickyBombIcon
+@onready var pickup_item = $InGame/PickupItem
+@onready var item_icons = $InGame/ItemIcons
+@onready var compass_arrows = $InGame/CompassArrows
+@onready var draw_text = $InGame/DrawText
 
 
 #--- change this to update in gm_loop

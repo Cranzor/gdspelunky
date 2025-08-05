@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dq140qq6udxt3"]
+[gd_scene load_steps=8 format=3 uid="uid://dq140qq6udxt3"]
 
 [ext_resource type="Texture2D" uid="uid://xajjg6rysmmk" path="res://sprites/hud/heart/heart_0.png" id="1_e7obr"]
 [ext_resource type="Texture2D" uid="uid://s0hxn8toctlv" path="res://sprites/hud/hoops_icon/hoops_icon_0.png" id="1_sum52"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bf1x4cv1krq33" path="res://sprites/hud/timer_icon/timer_icon_0.png" id="2_ytepk"]
 [ext_resource type="Texture2D" uid="uid://b1j0iug6bkyu4" path="res://sprites/hud/shopkeeper_icon/shopkeeper_icon_0.png" id="4_mijso"]
 [ext_resource type="Texture2D" uid="uid://b4kanv0y603ev" path="res://sprites/hud/damsel_icon/damsel_icon_0.png" id="5_4cyai"]
+[ext_resource type="PackedScene" uid="uid://8nvpnq1dktdh" path="res://components/draw_text/draw_text.tscn" id="7_eiigu"]
 
 [node name="ChallengeRoomsHUD" type="CanvasLayer"]
 script = ExtResource("1_ytepk")
@@ -39,3 +40,5 @@ visible = false
 position = Vector2(64, 8)
 texture = ExtResource("5_4cyai")
 centered = false
+
+[node name="DrawText" parent="." instance=ExtResource("7_eiigu")]
