@@ -25,48 +25,116 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.901961)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Menu"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Menu"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -40.0
-offset_top = -48.0
-offset_right = 40.0
-offset_bottom = 48.0
+offset_left = -70.0
+offset_top = -54.0
+offset_right = 70.0
+offset_bottom = 54.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Mines" type="Button" parent="Menu/VBoxContainer"]
+[node name="Stages" type="VBoxContainer" parent="Menu/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Menu/HBoxContainer/Stages"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_ifkhq")
+text = "STAGE"
+
+[node name="Mines" type="Button" parent="Menu/HBoxContainer/Stages"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_ifkhq")
 text = "MINES"
 
-[node name="Lush" type="Button" parent="Menu/VBoxContainer"]
+[node name="Lush" type="Button" parent="Menu/HBoxContainer/Stages"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_ifkhq")
 text = "LUSH"
 
-[node name="IceCaves" type="Button" parent="Menu/VBoxContainer"]
+[node name="IceCaves" type="Button" parent="Menu/HBoxContainer/Stages"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_ifkhq")
 text = "ICE CAVES"
 
-[node name="Temple" type="Button" parent="Menu/VBoxContainer"]
+[node name="Temple" type="Button" parent="Menu/HBoxContainer/Stages"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_ifkhq")
 text = "TEMPLE"
 
-[node name="Olmec" type="Button" parent="Menu/VBoxContainer"]
+[node name="Olmec" type="Button" parent="Menu/HBoxContainer/Stages"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_ifkhq")
 text = "OLMEC"
 
-[connection signal="pressed" from="Menu/VBoxContainer/Mines" to="." method="_on_mines_pressed"]
-[connection signal="pressed" from="Menu/VBoxContainer/Lush" to="." method="_on_lush_pressed"]
-[connection signal="pressed" from="Menu/VBoxContainer/IceCaves" to="." method="_on_ice_caves_pressed"]
-[connection signal="pressed" from="Menu/VBoxContainer/Temple" to="." method="_on_temple_pressed"]
-[connection signal="pressed" from="Menu/VBoxContainer/Olmec" to="." method="_on_olmec_pressed"]
+[node name="Max" type="VBoxContainer" parent="Menu/HBoxContainer"]
+layout_mode = 2
+
+[node name="Max" type="Label" parent="Menu/HBoxContainer/Max"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_ifkhq")
+text = "MAX"
+
+[node name="Health" type="Button" parent="Menu/HBoxContainer/Max"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ifkhq")
+text = "HEALTH"
+
+[node name="Ropes" type="Button" parent="Menu/HBoxContainer/Max"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ifkhq")
+text = "ROPES"
+
+[node name="Bombs" type="Button" parent="Menu/HBoxContainer/Max"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ifkhq")
+text = "BOMBS"
+
+[node name="SpawnItem" type="Label" parent="Menu/HBoxContainer/Max"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_ifkhq")
+text = "SPAWN ITEM"
+
+[node name="ItemName" type="LineEdit" parent="Menu/HBoxContainer/Max"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ifkhq")
+placeholder_text = "ITEM NAME"
+caret_blink = true
+
+[node name="Info" type="VBoxContainer" parent="Menu/HBoxContainer"]
+layout_mode = 2
+
+[node name="Info" type="Label" parent="Menu/HBoxContainer/Info"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_ifkhq")
+text = "INFO"
+
+[node name="Object" type="LineEdit" parent="Menu/HBoxContainer/Info"]
+custom_minimum_size = Vector2(58, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ifkhq")
+placeholder_text = "OBJECT"
+caret_blink = true
+
+[connection signal="pressed" from="Menu/HBoxContainer/Stages/Mines" to="." method="_on_mines_pressed"]
+[connection signal="pressed" from="Menu/HBoxContainer/Stages/Lush" to="." method="_on_lush_pressed"]
+[connection signal="pressed" from="Menu/HBoxContainer/Stages/IceCaves" to="." method="_on_ice_caves_pressed"]
+[connection signal="pressed" from="Menu/HBoxContainer/Stages/Temple" to="." method="_on_temple_pressed"]
+[connection signal="pressed" from="Menu/HBoxContainer/Stages/Olmec" to="." method="_on_olmec_pressed"]
+[connection signal="pressed" from="Menu/HBoxContainer/Max/Health" to="." method="_on_health_pressed"]
+[connection signal="pressed" from="Menu/HBoxContainer/Max/Ropes" to="." method="_on_ropes_pressed"]
+[connection signal="pressed" from="Menu/HBoxContainer/Max/Bombs" to="." method="_on_bombs_pressed"]
+[connection signal="text_changed" from="Menu/HBoxContainer/Max/ItemName" to="." method="_on_item_name_text_changed"]
+[connection signal="text_submitted" from="Menu/HBoxContainer/Max/ItemName" to="." method="_on_item_name_text_submitted"]
+[connection signal="text_changed" from="Menu/HBoxContainer/Info/Object" to="." method="_on_object_text_changed"]
+[connection signal="text_submitted" from="Menu/HBoxContainer/Info/Object" to="." method="_on_object_text_submitted"]

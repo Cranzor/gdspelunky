@@ -40,3 +40,55 @@ func load_level(level_num: int, name: String):
 	global.curr_level = level_num
 	global.game_start = true
 	gml.room_goto(name)
+
+
+func _on_health_pressed() -> void:
+	global.plife = 99
+
+
+func _on_ropes_pressed() -> void:
+	global.rope = 99
+
+
+func _on_bombs_pressed() -> void:
+	global.bombs = 99
+
+
+func _on_item_name_text_submitted(new_text: String) -> void:
+	var item_name: String = new_text.to_lower()
+	var objects = Objects.new()
+	var item = objects.get(item_name)
+	var player1 = gml.get_instance("player1")
+	gml.instance_create(player1.position.x + 16, player1.position.y - 16, item)
+	await get_tree().create_timer(0.2).timeout
+	$Menu.hide()
+	paused = !paused
+	get_tree().paused = false
+	delete_line_edit_text($Menu/HBoxContainer/Max/ItemName)
+
+
+func _on_item_name_text_changed(new_text: String) -> void:
+	var item_name: LineEdit = $Menu/HBoxContainer/Max/ItemName
+	capitalize_text(item_name, new_text)
+
+
+func capitalize_text(line_edit: LineEdit, new_text: String) -> void:
+	var caret_col = line_edit.caret_column
+	line_edit.text = new_text.to_upper()
+	line_edit.caret_column = caret_col
+
+func delete_line_edit_text(line_edit: LineEdit):
+	line_edit.text = ""
+
+func _on_object_text_changed(new_text: String) -> void:
+	var object: LineEdit = $Menu/HBoxContainer/Info/Object
+	capitalize_text(object, new_text)
+
+
+func _on_object_text_submitted(new_text: String) -> void:
+	var all_objects: Array = gml.get_all_instances(new_text.to_lower())
+	if all_objects != []:
+		for object in all_objects:
+			var display_info: Node2D = load("res://debug/display_info.tscn").instantiate()
+			object.add_child(display_info)
+	delete_line_edit_text($Menu/HBoxContainer/Info/Object)
