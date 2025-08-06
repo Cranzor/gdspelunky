@@ -167,7 +167,7 @@ func game_step_event():
 			
 							if(moving_solid_instance.viscid_top and Collision.is_collision_character_top(1,players[i]) and ((players[i]).viscid_movement_ok==1 or (players[i]).viscid_movement_ok==2)):
 			  
-								if Collision.is_collision_right(1, players[i])==0:
+								if Collision.is_collision_right(1, players[i])==false: #--- changed to bool
 									players[i].position.x+=1
 									players[i].viscid_movement_ok=2
 				  
@@ -195,7 +195,7 @@ func game_step_event():
 			
 							if moving_solid_instance.viscid_top and Collision.is_collision_character_top(1,players[i]) and (players[i].viscid_movement_ok==1 or players[i].viscid_movement_ok==2):
 			  
-								if Collision.is_collision_left(1, players[i])==0:
+								if Collision.is_collision_left(1, players[i])==false: #--- changed to bool
 				  
 									moving_solid_instance.position.x-=1
 									moving_solid_instance.viscid_movement_ok=2
@@ -229,7 +229,7 @@ func game_step_event():
 								#since we do not want to include the solid that is pulling the character down,
 								#we must alter the position of the solid to get around this dilemma
 								position.y+=5
-								if Collision.is_collision_bottom(1, players[1])==0:
+								if Collision.is_collision_bottom(1, players[1])==false: #--- changed to bool
 									position.y+=1
 								position.y-=5
 					  
