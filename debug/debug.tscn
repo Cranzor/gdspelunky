@@ -1,0 +1,72 @@
+[gd_scene load_steps=3 format=3 uid="uid://tjqoddfss6i5"]
+
+[ext_resource type="Script" uid="uid://nbxy6prtlgk0" path="res://debug/debug.gd" id="1_ikwhb"]
+[ext_resource type="FontFile" uid="uid://dgd06bxddo4pq" path="res://fonts/small_font.png" id="2_ifkhq"]
+
+[node name="Debug" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_ikwhb")
+
+[node name="Menu" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="Menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.901961)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -48.0
+offset_right = 40.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Mines" type="Button" parent="Menu/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ifkhq")
+text = "MINES"
+
+[node name="Lush" type="Button" parent="Menu/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ifkhq")
+text = "LUSH"
+
+[node name="IceCaves" type="Button" parent="Menu/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ifkhq")
+text = "ICE CAVES"
+
+[node name="Temple" type="Button" parent="Menu/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ifkhq")
+text = "TEMPLE"
+
+[node name="Olmec" type="Button" parent="Menu/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ifkhq")
+text = "OLMEC"
+
+[connection signal="pressed" from="Menu/VBoxContainer/Mines" to="." method="_on_mines_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/Lush" to="." method="_on_lush_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/IceCaves" to="." method="_on_ice_caves_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/Temple" to="." method="_on_temple_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/Olmec" to="." method="_on_olmec_pressed"]
