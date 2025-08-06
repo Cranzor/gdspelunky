@@ -19,7 +19,20 @@ object_name = "screen"
 z_index = -1
 copy_mode = 2
 
+[node name="ColorRect" type="ColorRect" parent="BackBufferCopy"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -100.0
+offset_right = -100.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
 [node name="DarkSurf" type="Node2D" parent="BackBufferCopy"]
+visible = false
 script = ExtResource("2_d8euu")
 
 [node name="Circles" type="Node2D" parent="BackBufferCopy"]
@@ -29,4 +42,3 @@ script = ExtResource("3_yv5hl")
 [node name="DrawText" parent="." instance=ExtResource("5_c7y80")]
 
 [node name="DrawRectangle" parent="." instance=ExtResource("6_q0mpi")]
-z_index = 1

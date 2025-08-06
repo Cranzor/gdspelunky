@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 var paused: bool = false
+var dark: bool = false
 
 
 func _input(event: InputEvent) -> void:
@@ -36,6 +37,8 @@ func _on_olmec_pressed() -> void:
 
 
 func load_level(level_num: int, name: String):
+	if dark:
+		global.debug_dark_level = true
 	get_tree().paused = false
 	global.curr_level = level_num
 	global.game_start = true
@@ -92,3 +95,7 @@ func _on_object_text_submitted(new_text: String) -> void:
 			var display_info: Node2D = load("res://debug/display_info.tscn").instantiate()
 			object.add_child(display_info)
 	delete_line_edit_text($Menu/HBoxContainer/Info/Object)
+
+
+func _on_check_box_toggled(toggled_on: bool) -> void:
+	dark = toggled_on

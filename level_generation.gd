@@ -1069,6 +1069,7 @@ func scr_init_level():
 
 
 	global.dark_level = false
+	global.dark_level = global.debug_dark_level #--- added for debugging purposes
 	# DY: if (not global.had_dark_level and global.curr_level != 0 and global.level_type != 2 and global.curr_level != 16 and gml.rand(1,1) == 1):
 	if (not global.had_dark_level and not global.no_dark_level and global.curr_level != 0 and global.curr_level != 1 and global.level_type != 2 and global.curr_level != 16 and gml.rand(1,global.prob_dark_level) == 1):
 

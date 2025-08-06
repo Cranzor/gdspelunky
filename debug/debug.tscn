@@ -74,6 +74,18 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("2_ifkhq")
 text = "OLMEC"
 
+[node name="HBoxContainer" type="HBoxContainer" parent="Menu/HBoxContainer/Stages"]
+layout_mode = 2
+
+[node name="Dark" type="Label" parent="Menu/HBoxContainer/Stages/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_ifkhq")
+text = "DARK"
+
+[node name="CheckBox" type="CheckBox" parent="Menu/HBoxContainer/Stages/HBoxContainer"]
+layout_mode = 2
+
 [node name="Max" type="VBoxContainer" parent="Menu/HBoxContainer"]
 layout_mode = 2
 
@@ -131,6 +143,7 @@ caret_blink = true
 [connection signal="pressed" from="Menu/HBoxContainer/Stages/IceCaves" to="." method="_on_ice_caves_pressed"]
 [connection signal="pressed" from="Menu/HBoxContainer/Stages/Temple" to="." method="_on_temple_pressed"]
 [connection signal="pressed" from="Menu/HBoxContainer/Stages/Olmec" to="." method="_on_olmec_pressed"]
+[connection signal="toggled" from="Menu/HBoxContainer/Stages/HBoxContainer/CheckBox" to="." method="_on_check_box_toggled"]
 [connection signal="pressed" from="Menu/HBoxContainer/Max/Health" to="." method="_on_health_pressed"]
 [connection signal="pressed" from="Menu/HBoxContainer/Max/Ropes" to="." method="_on_ropes_pressed"]
 [connection signal="pressed" from="Menu/HBoxContainer/Max/Bombs" to="." method="_on_bombs_pressed"]

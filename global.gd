@@ -39,6 +39,7 @@ var damsels_saved_total: int
 var dark_level
 var darkness_lerp
 var deadfish
+var debug_dark_level: bool = false #--- added by me for debugging purposes
 var diamonds
 var dice_games_lost
 var dice_games_played
