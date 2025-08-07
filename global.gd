@@ -44,6 +44,7 @@ var dark_level: bool = false:
 var darkness_lerp
 var deadfish
 var debug_dark_level: bool = false #--- added by me for debugging purposes
+var debug_shop: bool = false
 var diamonds
 var dice_games_lost
 var dice_games_played

@@ -829,7 +829,7 @@ func scr_level_gen():
 
 
 	# DY:  shop
-	if (gml.rand(1,global.curr_level) <= 2 and global.curr_level > 1 and not global.made_black_market):
+	if (gml.rand(1,global.curr_level) <= 2 and global.curr_level > 1 and not global.made_black_market) or (global.debug_shop and global.curr_level < 16):
 		var i = 0
 		for k in range(0, 4):
 		
@@ -2543,7 +2543,7 @@ func scr_room_gen3(x, y):
 
 	elif (room_path == 4): # DY:  shop
 
-		str_temp = "111111111111111111111111221111111l000211...000W010...00000k0..K$$$$000:"
+		str_temp = "111111111111111111111111221111111l000211...000W010...00000k0..K$$$$000::::::::::"
 		
 		match gml.rand(1,7):
 		
@@ -2554,17 +2554,17 @@ func scr_room_gen3(x, y):
 			5:  shop_type = "clothing"
 			6:
 				shop_type = "craps"
-				str_temp = "11111111111111111111111122111111Kl000211..:Q00W010.0+00000k0.q+uu00000:"
+				str_temp = "11111111111111111111111122111111Kl000211..:Q00W010.0+00000k0.q+uu00000::::::::::"
 			7:
 				shop_type = "kissing"
-				str_temp = "111111111111111111111111221111111l000211...000W010...00000k0..K00!0000:"
+				str_temp = "111111111111111111111111221111111l000211...000W010...00000k0..K00!0000::::::::::"
 				game.damsel = true
 		   
 
 
 	elif (room_path == 5): # DY:  shop
 
-		str_temp = "111111111111111111111111221111112000l11101W0000...0k00000...000$$$$K..:"
+		str_temp = "111111111111111111111111221111112000l11101W0000...0k00000...000$$$$K..::::::::::"
 		
 		match gml.rand(1,7):
 		
@@ -2575,10 +2575,10 @@ func scr_room_gen3(x, y):
 			5:  shop_type = "clothing"
 			6:
 				shop_type = "craps"
-				str_temp = "111111111111111111111111221111112000lK1101W0Q00:..0k00000+0.00000uu+q.:"
+				str_temp = "111111111111111111111111221111112000lK1101W0Q00:..0k00000+0.00000uu+q.::::::::::"
 			7:
 				shop_type = "kissing"
-				str_temp = "111111111111111111111111221111112000l11101W0000...0k00000...0000!00K..:"
+				str_temp = "111111111111111111111111221111112000l11101W0000...0k00000...0000!00K..::::::::::"
 				game.damsel = true
 		
 
@@ -2826,7 +2826,7 @@ func scr_room_gen3(x, y):
 			str_temp = gml.string_insert(str_obs3, str_temp, j)
 		
 
-
+	assert(str_temp.length() == 80) #---TODO: double-check shop varieties and make sure there are no issues
 	# DY:  Generate the tiles
 	for j in range(0, 8):
 
@@ -2886,7 +2886,9 @@ func scr_room_gen3(x, y):
 			
 				n = gml.rand(1,6)
 				scr_generate_item(xpos+8, ypos+8, 1)
-				obj.in_dice_house = true
+				if obj: #--- adding checks because obj can be null
+					if obj.has("in_dice_house"):
+						obj.in_dice_house = true
 			
 			elif (tile == "+"):
 			
@@ -2932,7 +2934,7 @@ func scr_room_gen3(x, y):
 			
 			elif (tile == "$"):
 			
-				scr_shop_items_gen(x, y, shop_type)
+				scr_shop_items_gen(xpos, ypos, shop_type)
 			
 			elif (tile == "u"):
 			

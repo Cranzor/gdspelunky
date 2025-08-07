@@ -2,6 +2,7 @@ extends CanvasLayer
 
 var paused: bool = false
 var dark: bool = false
+var shop: bool = false
 
 
 func _input(event: InputEvent) -> void:
@@ -39,6 +40,8 @@ func _on_olmec_pressed() -> void:
 func load_level(level_num: int, name: String):
 	if dark:
 		global.debug_dark_level = true
+	if shop:
+		global.debug_shop = true
 	get_tree().paused = false
 	global.curr_level = level_num
 	global.game_start = true
@@ -99,3 +102,7 @@ func _on_object_text_submitted(new_text: String) -> void:
 
 func _on_check_box_toggled(toggled_on: bool) -> void:
 	dark = toggled_on
+
+
+func _on_shop_check_box_toggled(toggled_on: bool) -> void:
+	shop = toggled_on
