@@ -7,5 +7,5 @@ uniform vec4 color : source_color;
 void fragment () {
 	COLOR = texture(screen_texture, SCREEN_UV);
 	COLOR.a = texture(TEXTURE, UV).a;
-	//COLOR *= color;
+	COLOR *= color;
 }

@@ -1,7 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://ci4o6thdcbhso"]
+[gd_scene load_steps=3 format=3 uid="uid://ci4o6thdcbhso"]
 
 [ext_resource type="Script" uid="uid://c637i2lm2j4cd" path="res://objects/traps/arrow_trap_right_lit/arrow_trap_right_lit.gd" id="1_7jo0v"]
+[ext_resource type="PackedScene" uid="uid://w6jxjbgfs6na" path="res://components/drawing/draw_circle/dark_level_circle.tscn" id="2_pujfo"]
 
 [node name="ArrowTrapRightLit" type="StaticBody2D"]
 script = ExtResource("1_7jo0v")
 object_name = "arrow_trap_right_lit"
+
+[node name="DarkLevelCircle" parent="." instance=ExtResource("2_pujfo")]
+offset_value = Vector2(8, 8)

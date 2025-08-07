@@ -1,7 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://ckdnm82bfuxa6"]
+[gd_scene load_steps=3 format=3 uid="uid://ckdnm82bfuxa6"]
 
 [ext_resource type="Script" uid="uid://ctyq7pxttleda" path="res://objects/traps/spear_trap_lit/spear_trap_lit.gd" id="1_g14e6"]
+[ext_resource type="PackedScene" uid="uid://w6jxjbgfs6na" path="res://components/drawing/draw_circle/dark_level_circle.tscn" id="2_al41r"]
 
 [node name="SpearTrapLit" type="StaticBody2D"]
 script = ExtResource("1_g14e6")
 object_name = "spear_trap_lit"
+
+[node name="DarkLevelCircle" parent="." instance=ExtResource("2_al41r")]
+offset_value = Vector2(8, 8)

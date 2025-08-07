@@ -1,5 +1,5 @@
 extends GMObject
-@onready var circles = $BackBufferCopy/Circles
+
 @onready var dark_surf = $BackBufferCopy/DarkSurf
 
 
@@ -267,10 +267,11 @@ func begin_step():
 			#get nearest instance
 			if (global.dark_level and not player1.dead):
 				var level = gml.get_instance("level")
-				gml.surface_set_target("dark_surf")
+				#gml.surface_set_target("dark_surf")
 				gml.draw_set_color(gml.c_black)
 				#draw_rectangle.draw_rectangle(0, 0, gml.screen_w, gml.screen_h, false) #---TODO
-				gml.draw_set_color(gml.make_color_rgb(255-255*level.darkness,255-255*level.darkness,255))
+				#gml.draw_set_color(gml.make_color_rgb(255-255*level.darkness,255-255*level.darkness,255))
+				var circle_color: Color = gml.make_color_rgb(255-255*level.darkness,255-255*level.darkness,255)
 				
 				if (gml.instance_exists("lamp_red")):
 					var lamp_red = gml.get_instance("lamp_red")
@@ -282,6 +283,7 @@ func begin_step():
 						if (dist_to_lamp <= 96):
 						
 							gml.draw_set_color(gml.make_color_rgb(255-dist_to_lamp,120-(96-dist_to_lamp),120-(96-dist_to_lamp)))
+							circle_color = gml.make_color_rgb(255-dist_to_lamp,120-(96-dist_to_lamp),120-(96-dist_to_lamp))
 					
 				
 				if (gml.instance_exists("lamp_red_item")):
@@ -294,84 +296,87 @@ func begin_step():
 						if (dist_to_lamp <= 96):
 						
 							gml.draw_set_color(gml.make_color_rgb(255-dist_to_lamp,120-(96-dist_to_lamp),120-(96-dist_to_lamp)))
+							circle_color = gml.make_color_rgb(255-dist_to_lamp,120-(96-dist_to_lamp),120-(96-dist_to_lamp))
 						
+				SignalBus.emit_signal("dark_level_circle_color_updated", circle_color)
 				
-				gml.draw_circle(player1.position.x-gml.view("xview"), player1.position.y-gml.view("yview"), 96-64*level.darkness, false)
+				#--- circle drawing is now handled with DarkLevelCircle component
+				#gml.draw_circle(player1.position.x-gml.view("xview"), player1.position.y-gml.view("yview"), 96-64*level.darkness, false)
 					
-				var all_flares = gml.get_all_instances("flare")
-				for flare_instance in all_flares:
+				#var all_flares = gml.get_all_instances("flare")
+				#for flare_instance in all_flares:
 				
-					gml.draw_circle(flare_instance.position.x-gml.view("xview"), flare_instance.position.y-gml.view("yview"), 96, false)
+					#gml.draw_circle(flare_instance.position.x-gml.view("xview"), flare_instance.position.y-gml.view("yview"), 96, false)
 				
-				var all_flare_crates = gml.get_all_instances("flare_crate")
-				for flare_crate_instance in all_flare_crates:
+				#var all_flare_crates = gml.get_all_instances("flare_crate")
+				#for flare_crate_instance in all_flare_crates:
 				
-					gml.draw_circle(flare_crate_instance.position.x-gml.view("xview"), flare_crate_instance.position.y-gml.view("yview"), 96, false)
+					#gml.draw_circle(flare_crate_instance.position.x-gml.view("xview"), flare_crate_instance.position.y-gml.view("yview"), 96, false)
 				
-				var all_lamps = gml.get_all_instances("lamp")
-				for lamp_instance in all_lamps:
+				#var all_lamps = gml.get_all_instances("lamp")
+				#for lamp_instance in all_lamps:
 				
-					gml.draw_circle((lamp_instance.position.x+8)-gml.view("xview"), (lamp_instance.position.y+8)-gml.view("yview"), 96, false)
+					#gml.draw_circle((lamp_instance.position.x+8)-gml.view("xview"), (lamp_instance.position.y+8)-gml.view("yview"), 96, false)
 				
-				var all_lamp_items = gml.get_all_instances("lamp_item")
-				for lamp_item_instance in all_lamp_items:
+				#var all_lamp_items = gml.get_all_instances("lamp_item")
+				#for lamp_item_instance in all_lamp_items:
 				
-					gml.draw_circle(lamp_item_instance.position.x-gml.view("xview"), (lamp_item_instance.position.y-4)-gml.view("yview"), 96, false)
+					#gml.draw_circle(lamp_item_instance.position.x-gml.view("xview"), (lamp_item_instance.position.y-4)-gml.view("yview"), 96, false)
 				
-				var all_arrow_trap_left_lits = gml.get_all_instances("arrow_trap_left_lit")
-				for arrow_trap_left_lit_instance in all_arrow_trap_left_lits:
+				#var all_arrow_trap_left_lits = gml.get_all_instances("arrow_trap_left_lit")
+				#for arrow_trap_left_lit_instance in all_arrow_trap_left_lits:
 				
-					gml.draw_circle((arrow_trap_left_lit_instance.position.x+8)-gml.view("xview"), (arrow_trap_left_lit_instance.position.y+8)-gml.view("yview"), 32, false)
+					#gml.draw_circle((arrow_trap_left_lit_instance.position.x+8)-gml.view("xview"), (arrow_trap_left_lit_instance.position.y+8)-gml.view("yview"), 32, false)
 				
-				var all_arrow_trap_right_lits = gml.get_all_instances("arrow_trap_right_lit")
-				for arrow_trap_right_lit_instance in all_arrow_trap_right_lits:
+				#var all_arrow_trap_right_lits = gml.get_all_instances("arrow_trap_right_lit")
+				#for arrow_trap_right_lit_instance in all_arrow_trap_right_lits:
 				
-					gml.draw_circle((arrow_trap_right_lit_instance.position.x+8)-gml.view("xview"), (arrow_trap_right_lit_instance.position.y+8)-gml.view("yview"), 32, false)
+					#gml.draw_circle((arrow_trap_right_lit_instance.position.x+8)-gml.view("xview"), (arrow_trap_right_lit_instance.position.y+8)-gml.view("yview"), 32, false)
 				
-				var all_tiki_torchs = gml.get_all_instances("tiki_torch")
-				for tiki_torch_instance in all_tiki_torchs:
+				#var all_tiki_torchs = gml.get_all_instances("tiki_torch")
+				#for tiki_torch_instance in all_tiki_torchs:
 				
-					gml.draw_circle((tiki_torch_instance.position.x+8)-gml.view("xview"), (tiki_torch_instance.position.y+8)-gml.view("yview"), 32, false)
+					#gml.draw_circle((tiki_torch_instance.position.x+8)-gml.view("xview"), (tiki_torch_instance.position.y+8)-gml.view("yview"), 32, false)
 				
-				var all_fire_frogs = gml.get_all_instances("fire_frog")
-				for fire_frog_instance in all_fire_frogs:
+				#var all_fire_frogs = gml.get_all_instances("fire_frog")
+				#for fire_frog_instance in all_fire_frogs:
 				
-					gml.draw_circle((fire_frog_instance.position.x+8)-gml.view("xview"), (fire_frog_instance.position.y+8)-gml.view("yview"), 32, false)
+					#gml.draw_circle((fire_frog_instance.position.x+8)-gml.view("xview"), (fire_frog_instance.position.y+8)-gml.view("yview"), 32, false)
 				
-				var all_spear_trap_lits = gml.get_all_instances("spear_trap_lit")
-				for spear_trap_lit_instance in all_spear_trap_lits:
+				#var all_spear_trap_lits = gml.get_all_instances("spear_trap_lit")
+				#for spear_trap_lit_instance in all_spear_trap_lits:
 				
-					gml.draw_circle((spear_trap_lit_instance.position.x+8)-gml.view("xview"), (spear_trap_lit_instance.position.y+8)-gml.view("yview"), 32, false)
+					#gml.draw_circle((spear_trap_lit_instance.position.x+8)-gml.view("xview"), (spear_trap_lit_instance.position.y+8)-gml.view("yview"), 32, false)
 				
-				var all_smash_trap_lits = gml.get_all_instances("smash_trap_lit")
-				for smash_trap_lit_instance in all_smash_trap_lits:
+				#var all_smash_trap_lits = gml.get_all_instances("smash_trap_lit")
+				#for smash_trap_lit_instance in all_smash_trap_lits:
 				
-					gml.draw_circle((smash_trap_lit_instance.position.x+8)-gml.view("xview"), (smash_trap_lit_instance.position.y+8)-gml.view("yview"), 32, false)
+					#gml.draw_circle((smash_trap_lit_instance.position.x+8)-gml.view("xview"), (smash_trap_lit_instance.position.y+8)-gml.view("yview"), 32, false)
 				
-				var all_explosions = gml.get_all_instances("explosion")
-				for explosion_instance in all_explosions:
+				#var all_explosions = gml.get_all_instances("explosion")
+				#for explosion_instance in all_explosions:
 				
-					gml.draw_circle(explosion_instance.position.x-gml.view("xview"), explosion_instance.position.y-gml.view("yview"), 96, false)
+					#gml.draw_circle(explosion_instance.position.x-gml.view("xview"), explosion_instance.position.y-gml.view("yview"), 96, false)
 				
-				var all_lava = gml.get_all_instances("lava")
-				for lava_instance in all_lava:
+				#var all_lava = gml.get_all_instances("lava")
+				#for lava_instance in all_lava:
 				
-					gml.draw_circle((lava_instance.position.x+8)-gml.view("xview"), (lava_instance.position.y+8)-gml.view("yview"), 32, false)
+					#gml.draw_circle((lava_instance.position.x+8)-gml.view("xview"), (lava_instance.position.y+8)-gml.view("yview"), 32, false)
 				
-				var all_scarabs = gml.get_all_instances("scarab")
-				for scarab_instance in all_scarabs:
+				#var all_scarabs = gml.get_all_instances("scarab")
+				#for scarab_instance in all_scarabs:
 				
-					gml.draw_circle((scarab_instance.position.x+8)-gml.view("xview"), (scarab_instance.position.y+8)-gml.view("yview"), 16, false)
+					#gml.draw_circle((scarab_instance.position.x+8)-gml.view("xview"), (scarab_instance.position.y+8)-gml.view("yview"), 16, false)
 				
-				var all_ghosts = gml.get_all_instances("ghost")
-				for ghost_instance in all_ghosts:
+				#var all_ghosts = gml.get_all_instances("ghost")
+				#for ghost_instance in all_ghosts:
 				
-					gml.draw_circle((ghost_instance.position.x+16)-gml.view("xview"), (ghost_instance.position.y+16)-gml.view("yview"), 64, false)
+					#gml.draw_circle((ghost_instance.position.x+16)-gml.view("xview"), (ghost_instance.position.y+16)-gml.view("yview"), 64, false)
 				
-				gml.surface_set_target("screen")
+				#gml.surface_set_target("screen")
 				#draw_set_blend_mode_ext(bm_dest_color, bm_zero)
 				gml.draw_set_alpha(1)
-				gml.draw_surface("dark_surf", 0, 0)
+				#gml.draw_surface("dark_surf", 0, 0)
 				#draw_set_blend_mode(bm_normal)
 			
 			gml.surface_set_target("screen")

@@ -1,7 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://dhdtsgvpsyeuw"]
+[gd_scene load_steps=3 format=3 uid="uid://dhdtsgvpsyeuw"]
 
 [ext_resource type="Script" uid="uid://dl4tj2gv3jxc6" path="res://objects/enemies/scarab/scarab.gd" id="1_tx2hp"]
+[ext_resource type="PackedScene" uid="uid://w6jxjbgfs6na" path="res://components/drawing/draw_circle/dark_level_circle.tscn" id="2_8h5vu"]
 
 [node name="Scarab" type="StaticBody2D"]
 script = ExtResource("1_tx2hp")
 object_name = "scarab"
+
+[node name="DarkLevelCircle" parent="." instance=ExtResource("2_8h5vu")]
+radius = 16
+offset_value = Vector2(8, 8)

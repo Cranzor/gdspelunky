@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cnpx2owt8tmkt" path="res://components/drawing/draw_circle/circle_r64.png" id="3_j1edd"]
 [ext_resource type="Texture2D" uid="uid://4xv4ky4kkda2" path="res://components/drawing/draw_circle/circle_r96.png" id="4_w86y2"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_mowtl"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ttmrw"]
 shader = ExtResource("1_cbaqk")
 shader_parameter/color = Color(0, 0, 0, 1)
 
@@ -47,9 +47,10 @@ animations = [{
 }]
 
 [node name="DarkLevelCircle" type="AnimatedSprite2D"]
+visible = false
 z_index = 10
 z_as_relative = false
-material = SubResource("ShaderMaterial_mowtl")
+material = SubResource("ShaderMaterial_ttmrw")
 sprite_frames = SubResource("SpriteFrames_n62uf")
 animation = &"16"
 script = ExtResource("1_7jcuk")

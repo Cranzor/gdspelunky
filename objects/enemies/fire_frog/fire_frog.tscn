@@ -1,7 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://cxcb8r5dcdjto"]
+[gd_scene load_steps=3 format=3 uid="uid://cxcb8r5dcdjto"]
 
 [ext_resource type="Script" uid="uid://bhxkikg1cslgr" path="res://objects/enemies/fire_frog/fire_frog.gd" id="1_1pkil"]
+[ext_resource type="PackedScene" uid="uid://w6jxjbgfs6na" path="res://components/drawing/draw_circle/dark_level_circle.tscn" id="2_vusux"]
 
 [node name="FireFrog" type="StaticBody2D"]
 script = ExtResource("1_1pkil")
 object_name = "fire_frog"
+
+[node name="DarkLevelCircle" parent="." instance=ExtResource("2_vusux")]
+offset_value = Vector2(8, 8)

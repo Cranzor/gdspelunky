@@ -1,7 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://dypwc6kmhkfrp"]
+[gd_scene load_steps=3 format=3 uid="uid://dypwc6kmhkfrp"]
 
 [ext_resource type="Script" uid="uid://d03npey1mibey" path="res://objects/blocks/lava/lava.gd" id="1_6csex"]
+[ext_resource type="PackedScene" uid="uid://w6jxjbgfs6na" path="res://components/drawing/draw_circle/dark_level_circle.tscn" id="2_wnahu"]
 
 [node name="Lava" type="StaticBody2D"]
 script = ExtResource("1_6csex")
 object_name = "lava"
+
+[node name="DarkLevelCircle" parent="." instance=ExtResource("2_wnahu")]
+offset_value = Vector2(8, 8)

@@ -9,7 +9,7 @@ func _physics_process(delta: float) -> void:
 
 
 func gm_loop(): #---[FLAG] consider running every event in the same order as step
-	reset_surfaces()
+	#reset_surfaces()
 	get_tree().call_group("draw_sprite", "hide_draw_object")
 	get_tree().call_group("draw_text", "hide_labels")
 	get_tree().call_group("alarm", "count_down")
@@ -29,7 +29,6 @@ func gm_loop(): #---[FLAG] consider running every event in the same order as ste
 	get_tree().call_group("screen", "begin_step") #--- moving this here as all code in the script is relating to drawing.
 												  #---not doing so can cause issues like global.message passed into draw_text being outdated (since it's updated in run_collision_with)
 	get_tree().call_group("active_gm_object", "run_draw_event") #--- putting draw event after updating camera position fixes text jitter issues
-	queue_redraws()
 
 
 func all_objects_step_event():
@@ -58,10 +57,3 @@ func reset_surfaces():
 	gml.surfaces_to_draw["screen"] = false
 	gml.surfaces_to_draw["p_surf"] = false
 	gml.surfaces_to_draw["dark_surf"] = false
-
-
-func queue_redraws():
-	if gml.changed_scene == false:
-		get_tree().call_group("active_gm_object", "queue_redraw")
-	SignalBus.emit_signal("circle_redraw")
-	queue_redraw()

@@ -453,7 +453,6 @@ func draw_circle(x, y, r, outline) -> void:
 	color.a = gml.draw_alpha
 	var circle_data = [position, radius, color, draw_to_surface, surface_target]
 	#Screen.circles.circles_to_draw.append(circle_data) #--- can assume the calling object is screen as it's the only object that uses this method
-	SignalBus.emit_signal("circle_data", circle_data)
 
 
 #--- font represents draw_set_font, and color represents draw_set_color. name is used to identify the label node

@@ -1,7 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://5h8a26sc1tan"]
+[gd_scene load_steps=3 format=3 uid="uid://5h8a26sc1tan"]
 
 [ext_resource type="Script" uid="uid://dsha0aqqf1evg" path="res://objects/effects/explosion/explosion.gd" id="1_mib06"]
+[ext_resource type="PackedScene" uid="uid://w6jxjbgfs6na" path="res://components/drawing/draw_circle/dark_level_circle.tscn" id="2_tucbt"]
 
 [node name="Explosion" type="StaticBody2D"]
 script = ExtResource("1_mib06")
 object_name = "explosion"
+
+[node name="DarkLevelCircle" parent="." instance=ExtResource("2_tucbt")]
+radius = 96

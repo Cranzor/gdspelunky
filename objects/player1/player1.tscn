@@ -77,4 +77,3 @@ script = ExtResource("9_0imcj")
 hide_at_start_of_frame = true
 
 [node name="DarkLevelCircle" parent="." instance=ExtResource("10_h2jsy")]
-radius = 96
