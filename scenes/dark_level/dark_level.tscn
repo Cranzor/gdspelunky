@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://p16jqhjvgljv"]
+
+[ext_resource type="Shader" uid="uid://d1iyh2el2fl0l" path="res://resources/mask.gdshader" id="1_wn1vq"]
+[ext_resource type="Script" uid="uid://btswea3gr706g" path="res://scenes/dark_level/dark_level.gd" id="1_xu7by"]
+[ext_resource type="Script" uid="uid://dlplaivafr0s4" path="res://objects/screen/circles.gd" id="2_bycqw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yv5hl"]
+shader = ExtResource("1_wn1vq")
+shader_parameter/color = Color(0, 0, 0, 1)
+
+[node name="DarkLevel" type="BackBufferCopy"]
+visible = false
+copy_mode = 2
+script = ExtResource("1_xu7by")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 500.0
+offset_bottom = 500.0
+color = Color(0, 0, 0, 1)
+
+[node name="Circles" type="Node2D" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_yv5hl")
+script = ExtResource("2_bycqw")

@@ -70,8 +70,8 @@
 [ext_resource type="Script" uid="uid://deuarbfqqf3v4" path="res://scenes/compass_arrows.gd" id="65_gxo4v"]
 [ext_resource type="Texture2D" uid="uid://o5sy6e1i3h2m" path="res://sprites/items/saleable/compass_small_lr/compass_small_lr_0.png" id="68_dbhui"]
 [ext_resource type="Script" uid="uid://c0yg5gcwfrm0c" path="res://scenes/pause_screen.gd" id="70_dbhui"]
-[ext_resource type="PackedScene" uid="uid://8nvpnq1dktdh" path="res://components/draw_text/draw_text.tscn" id="70_ep55p"]
-[ext_resource type="PackedScene" uid="uid://bctkguili8lu6" path="res://components/draw_rectangle/draw_rectangle.tscn" id="72_4hsw7"]
+[ext_resource type="PackedScene" uid="uid://8nvpnq1dktdh" path="res://components/drawing/draw_text/draw_text.tscn" id="70_ep55p"]
+[ext_resource type="PackedScene" uid="uid://bctkguili8lu6" path="res://components/drawing/draw_rectangle/draw_rectangle.tscn" id="72_4hsw7"]
 [ext_resource type="Script" uid="uid://c2a645i3pc7il" path="res://scenes/title_fade_in.gd" id="72_tj8l3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_oo0fn"]

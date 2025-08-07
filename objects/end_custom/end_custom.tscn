@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://cpwj7n6s5goyq"]
 
 [ext_resource type="Script" uid="uid://dj33758kmbfye" path="res://objects/end_custom/end_custom.gd" id="1_ucx7w"]
-[ext_resource type="PackedScene" uid="uid://8nvpnq1dktdh" path="res://components/draw_text/draw_text.tscn" id="2_r30e5"]
-[ext_resource type="PackedScene" uid="uid://bctkguili8lu6" path="res://components/draw_rectangle/draw_rectangle.tscn" id="3_7wf4u"]
+[ext_resource type="PackedScene" uid="uid://8nvpnq1dktdh" path="res://components/drawing/draw_text/draw_text.tscn" id="2_r30e5"]
+[ext_resource type="PackedScene" uid="uid://bctkguili8lu6" path="res://components/drawing/draw_rectangle/draw_rectangle.tscn" id="3_7wf4u"]
 
 [node name="EndCustom" type="StaticBody2D"]
 script = ExtResource("1_ucx7w")

@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://cycctqx2bmx2j"]
 
-[ext_resource type="Theme" uid="uid://cy384qi6lkue8" path="res://scenes/font.tres" id="1_1dton"]
+[ext_resource type="Theme" uid="uid://cy384qi6lkue8" path="res://scenes/font.tres" id="1_56u7w"]
 
 [node name="DrawnText" type="Label" groups=["drawn_text"]]
-theme = ExtResource("1_1dton")
+theme = ExtResource("1_56u7w")
 theme_type_variation = &"LabelMain"
 text = "HELLO"

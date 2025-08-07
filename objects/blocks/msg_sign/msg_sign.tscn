@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cxph7np7ruc8f"]
 
 [ext_resource type="Script" uid="uid://vuqt84gleaw3" path="res://objects/blocks/msg_sign/msg_sign.gd" id="1_nbgqu"]
-[ext_resource type="PackedScene" uid="uid://8nvpnq1dktdh" path="res://components/draw_text/draw_text.tscn" id="2_86t5a"]
+[ext_resource type="PackedScene" uid="uid://8nvpnq1dktdh" path="res://components/drawing/draw_text/draw_text.tscn" id="2_86t5a"]
 
 [node name="MsgSign" type="StaticBody2D"]
 script = ExtResource("1_nbgqu")

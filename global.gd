@@ -36,7 +36,11 @@ var damsels_grabbed = 0 #---[FLAG] setting to 0
 var damsels_killed
 var damsels_killed_total: int
 var damsels_saved_total: int
-var dark_level
+var dark_level: bool = false:
+	set(value):
+		dark_level = value
+		if dark_level:
+			SignalBus.emit_signal("dark_level_started")
 var darkness_lerp
 var deadfish
 var debug_dark_level: bool = false #--- added by me for debugging purposes

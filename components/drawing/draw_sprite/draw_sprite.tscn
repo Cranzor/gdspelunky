@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cdchca2colg37"]
 
-[ext_resource type="Script" uid="uid://d1v64vt58kawp" path="res://components/draw_sprite/draw_sprite.gd" id="1_c0we0"]
+[ext_resource type="Script" uid="uid://d1v64vt58kawp" path="res://components/drawing/draw_sprite/draw_sprite.gd" id="1_c0we0"]
 
 [node name="DrawSprite" type="AnimatedSprite2D" groups=["draw_sprite"]]
 centered = false

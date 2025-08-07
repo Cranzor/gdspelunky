@@ -63,6 +63,5 @@ func reset_surfaces():
 func queue_redraws():
 	if gml.changed_scene == false:
 		get_tree().call_group("active_gm_object", "queue_redraw")
-	Screen.dark_surf.queue_redraw()
-	Screen.circles.queue_redraw()
+	SignalBus.emit_signal("circle_redraw")
 	queue_redraw()

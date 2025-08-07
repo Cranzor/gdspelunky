@@ -24,7 +24,6 @@ var can_pause
 var paused
 var enabled
 @onready var draw_text: Node2D = $DrawText
-@onready var draw_rectangle: ColorRect = $BackBufferCopy/DrawRectangle
 
 
 func _input(event):
@@ -271,7 +270,6 @@ func begin_step():
 				gml.surface_set_target("dark_surf")
 				gml.draw_set_color(gml.c_black)
 				#draw_rectangle.draw_rectangle(0, 0, gml.screen_w, gml.screen_h, false) #---TODO
-				$BackBufferCopy/ColorRect.size = Vector2(5000, 5000) #--- changing to this for now for testing
 				gml.draw_set_color(gml.make_color_rgb(255-255*level.darkness,255-255*level.darkness,255))
 				
 				if (gml.instance_exists("lamp_red")):

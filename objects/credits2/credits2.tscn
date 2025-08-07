@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://cl4bv3bwdn6lp"]
 
 [ext_resource type="Script" uid="uid://b8brflbg2cq1o" path="res://objects/credits2/credits2.gd" id="1_c01mg"]
-[ext_resource type="PackedScene" uid="uid://8nvpnq1dktdh" path="res://components/draw_text/draw_text.tscn" id="2_memfg"]
-[ext_resource type="PackedScene" uid="uid://bctkguili8lu6" path="res://components/draw_rectangle/draw_rectangle.tscn" id="3_arddl"]
+[ext_resource type="PackedScene" uid="uid://8nvpnq1dktdh" path="res://components/drawing/draw_text/draw_text.tscn" id="2_memfg"]
+[ext_resource type="PackedScene" uid="uid://bctkguili8lu6" path="res://components/drawing/draw_rectangle/draw_rectangle.tscn" id="3_arddl"]
 
 [node name="Credits2" type="StaticBody2D"]
 script = ExtResource("1_c01mg")
