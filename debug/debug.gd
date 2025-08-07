@@ -106,3 +106,8 @@ func _on_check_box_toggled(toggled_on: bool) -> void:
 
 func _on_shop_check_box_toggled(toggled_on: bool) -> void:
 	shop = toggled_on
+
+
+func _on_lake_pressed() -> void:
+	global.lake = true
+	load_level(5, "level3")

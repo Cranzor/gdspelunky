@@ -1643,7 +1643,7 @@ func scr_room_gen(x, y): #--- have to pass in x and y
 			str_temp = gml.string_insert(str_obs3, str_temp, j)
 		
 
-
+	assert(str_temp.length() == 80) #---TODO: check level strings in this file to make sure they match with originals. some got messed up in the conversion
 	# DY:  Generate the tiles
 	for j in range(0, 8):
 		var obj
@@ -1928,7 +1928,7 @@ func scr_room_gen2(x, y):
 			# DY:  idols
 			9:
 			
-				if (global.cemetary): str_temp = "ttttttttttttttttttttttp0_c00pttttt0tt0ttt4000000004ttt0tt0tttttp0000ptt1111111111"
+				if (global.cemetary): str_temp = "ttttttttttttttttttttttp0C00pttttt0tt0ttt4000000004ttt0tt0tttttp0000ptt1111111111"
 				else: str_temp = "01000000100000I0000001BBBBBB10110000001111wwwwww1111wwwwww11113wwww3111111111111"
 				#break
 			
@@ -1983,16 +1983,16 @@ func scr_room_gen2(x, y):
 		
 		match gml.rand(1,7):
 		
-			1:  shop_type = "General"
-			2:  shop_type = "Bomb"
-			3:  shop_type = "Weapon"
-			4:  shop_type = "Rare"
-			5:  shop_type = "Clothing"
+			1:  shop_type = "general"
+			2:  shop_type = "bomb"
+			3:  shop_type = "weapon"
+			4:  shop_type = "rare"
+			5:  shop_type = "clothing"
 			6:
-				shop_type = "Craps"
-				str_temp = "11111111111111111111111122111111Kl000211..b_q00_w010.0+00000k0.q+uu00000bbbbbbbbbb"
+				shop_type = "craps"
+				str_temp = "11111111111111111111111122111111Kl000211..bQ00W010.0+00000k0.q+uu00000bbbbbbbbbb"
 			7:
-				shop_type = "Kissing"
+				shop_type = "kissing"
 				str_temp = "111111111111111111111111221111111l000211...000W010...00000k0..K00D0000bbbbbbbbbb"
 				game.damsel = true
 		   
@@ -2003,16 +2003,16 @@ func scr_room_gen2(x, y):
 			
 		match gml.rand(1,7):
 		
-			1:  shop_type = "General"
-			2:  shop_type = "Bomb"
-			3:  shop_type = "Weapon"
-			4:  shop_type = "Rare"
-			5:  shop_type = "Clothing"
+			1:  shop_type = "general"
+			2:  shop_type = "bomb"
+			3:  shop_type = "weapon"
+			4:  shop_type = "rare"
+			5:  shop_type = "clothing"
 			6:
-				shop_type = "Craps"
+				shop_type = "craps"
 				str_temp = "111111111111111111111111221111112000lK1101W0Q00b..0k00000+0.00000uu+q.bbbbbbbbbb"
 			7:
-				shop_type = "Kissing"
+				shop_type = "kissing"
 				str_temp = "111111111111111111111111221111112000l11101W0000...0k00000...0000D00K..bbbbbbbbbb"
 				game.damsel = true
 		
@@ -2053,7 +2053,7 @@ func scr_room_gen2(x, y):
 
 		match gml.rand(1,1):
 		
-			1:  str_temp = "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww_jwwwwwwwwwwwwwwwwwwwwwwwwww,,,,,,,,,,"
+			1:  str_temp = "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwJwwwwwwwwwwwwwwwwwwwwwwwwww,,,,,,,,,,"
 		
 
 	else: # DY:  drop
@@ -2187,7 +2187,7 @@ func scr_room_gen2(x, y):
 			str_temp = gml.string_insert(str_obs4, str_temp, j)
 		
 
-
+	assert(str_temp.length() == 80)
 	# DY:  Generate the tiles
 	for j in range(0, 8):
 
@@ -2279,7 +2279,7 @@ func scr_room_gen2(x, y):
 			
 			elif (tile == "Q"):
 			
-				if (shop_type == "Craps"):
+				if (shop_type == "craps"):
 				
 					gml.tile_add("bg_dice_sign", 0, 0, 48, 32, xpos, ypos, 9004)
 				
@@ -2324,13 +2324,13 @@ func scr_room_gen2(x, y):
 			elif (tile == "k"):
 			
 				obj = gml.instance_create(xpos, ypos, Objects.sign)
-				if (shop_type == "General"): obj.sprite_index = "sign_general"
-				elif (shop_type == "Bomb"): obj.sprite_index = "sign_bomb"
-				elif (shop_type == "Weapon"): obj.sprite_index = "sign_weapon"
-				elif (shop_type == "Clothing"): obj.sprite_index = "sign_clothing"
-				elif (shop_type == "Rare"): obj.sprite_index = "sign_rare"
-				elif (shop_type == "Craps"): obj.sprite_index = "sign_craps"
-				elif (shop_type == "Kissing"): obj.sprite_index = "sign_kissing"
+				if (shop_type == "general"): obj.sprite_index = "sign_general"
+				elif (shop_type == "bomb"): obj.sprite_index = "sign_bomb"
+				elif (shop_type == "weapon"): obj.sprite_index = "sign_weapon"
+				elif (shop_type == "clothing"): obj.sprite_index = "sign_clothing"
+				elif (shop_type == "rare"): obj.sprite_index = "sign_rare"
+				elif (shop_type == "craps"): obj.sprite_index = "sign_craps"
+				elif (shop_type == "kissing"): obj.sprite_index = "sign_kissing"
 			
 			elif (tile == "i"):
 			
@@ -3478,7 +3478,7 @@ func scr_room_gen4(x, y):
 			str_temp = gml.string_insert(str_obs3, str_temp, j)
 		
 
-
+	assert(str_temp.length() == 80)
 	# DY:  Generate the tiles
 	for j in range(0, 8):
 		var obj
@@ -3909,7 +3909,7 @@ func scr_room_gen5(x, y):
 			str_temp = gml.string_insert(str_obs3, str_temp, j)
 		
 
-
+	assert(str_temp.length() == 80)
 	# DY:  Generate the tiles
 	for j in range(0, 8):
 

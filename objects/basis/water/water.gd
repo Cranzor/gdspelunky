@@ -1,3 +1,4 @@
+@icon("res://sprites/blocks/water/water_top/water_top_0.png")
 extends DrawnSprite
 class_name Water
 

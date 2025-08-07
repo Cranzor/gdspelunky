@@ -75,29 +75,29 @@ func create():
 
 func draw():
 	#gml.draw_sprite(sprite_index, -1, position.x, position.y, self, true)
-	if (sprite_index == "jaws_left"):
+	if (sprite_index == "jaws_left"): #TODO: fix turning to the left animation
 
 		if (hp < 10):
 			#gml.draw_sprite("jaws_body3_l", 0, position.x+16, position.y, self, true) #--- commenting out draw_sprite to use JawsBody node
-			jaws_body.draw_sprite(16, 0, "jaws_body3_l")
+			jaws_body.draw_sprite(Vector2(16, 0), "jaws_body3_l")
 		elif (hp < 20):
 			#gml.draw_sprite("jaws_body2_l", 0, position.x+16, position.y, self, true) #--- commenting out draw_sprite to use JawsBody node
-			jaws_body.draw_sprite(16, 0, "jaws_body2_l")
+			jaws_body.draw_sprite(Vector2(16, 0), "jaws_body2_l")
 		else:
 			#gml.draw_sprite("jaws_body1_l", 0, position.x+16, position.y, self, true) #--- commenting out draw_sprite to use JawsBody node
-			jaws_body.draw_sprite(16, 0, "jaws_body1_l")
+			jaws_body.draw_sprite(Vector2(16, 0), "jaws_body1_l")
 
 	elif (sprite_index == "jaws_right"):
 
 		if (hp < 10):
 			#gml.draw_sprite("jaws_body3_r", 0, position.x-48, position.y, self, true) #--- commenting out draw_sprite to use JawsBody node
-			jaws_body.draw_sprite(-48, 0, "jaws_body3_r")
+			jaws_body.draw_sprite(Vector2(-48, 0), "jaws_body3_r")
 		elif (hp < 20):
 			#gml.draw_sprite("jaws_body2_r", 0, position.x-48, position.y, self, true) #--- commenting out draw_sprite to use JawsBody node
-			jaws_body.draw_sprite(-48, 0, "jaws_body2_r")
+			jaws_body.draw_sprite(Vector2(-48, 0), "jaws_body2_r")
 		else:
 			#gml.draw_sprite("jaws_body1_r", 0, position.x-48, position.y, self, true) #--- commenting out draw_sprite to use JawsBody node
-			jaws_body.draw_sprite(-48, 0, "jaws_body1_r")
+			jaws_body.draw_sprite(Vector2(-48, 0), "jaws_body1_r")
 
 	#/* debug
 	#draw_set_font(global.my_font_small)
