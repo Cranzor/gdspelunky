@@ -4,6 +4,7 @@ class_name GMObject
 
 var object_database: ObjectDatabase = ObjectDatabase.new()
 var sprites: Sprites = Sprites.new()
+var new_collision: NewCollision = NewCollision.new()
 
 var grid_position
 
@@ -626,79 +627,69 @@ func run_draw_event() -> void:
 		else:
 			animated_sprite_node.sprite_displayed = true
 
-#var new_image
-#var new_image2
-func run_collision_with() -> void:	
+
+func run_collision_with() -> void:
 	if !collision_with.is_empty() and !is_queued_for_deletion():
-		var overlap_query = PhysicsShapeQueryParameters2D.new() #--- creating an overlap query the same size/position of the checking object's collision shape
-		overlap_query.collide_with_bodies = true
-		var checking_object_collision_shape = get_node("CollisionShape2D").shape
 		var origin = Vector2(0, 0)
 		if sprite_index_name != "":
 			origin = sprites.sprite_database[sprite_index_name]["origin"]
-		overlap_query.transform = Transform2D(0, (position - origin) + (checking_object_collision_shape.size / 2))
-		overlap_query.collision_mask = 1
-		overlap_query.margin = -1 #--- makes it so only objects inside the shape are found (not ones with edges touching)
-		overlap_query.shape = checking_object_collision_shape
-		
-		var overlaps = get_world_2d().direct_space_state.intersect_shape(overlap_query, 100)
-		for object in collision_with: #--- looping through every collision found in the overlap query
-			for overlap in overlaps:
-				var collider = overlap["collider"] #--- this is the collision's object node
-				var collider_groups = collider.get_groups()
-				if object in collider_groups: #--- checking if collided object is in collision_with groups
-					var checker_precise = sprites.sprite_database[sprite_index_name]["mask"]["shape"]
-					var collider_precise = sprites.sprite_database[collider.sprite_index_name]["mask"]["shape"]
-					if (checker_precise == "PRECISE" or collider_precise == "PRECISE") and object_name != "arrow_trap_test": #--- if either object has a precise mask, run pixel perfect check
-						#--- arrow_trap_test is an exception because it is the only object in the game in which image_xscale affects its collision
-						#--- it is a simple rectangle already, so we don't need to check it with precise collision, so we skip it (and it wouldn't work anyway without further changes)
-						var checker_frame = animated_sprite_node.frame
-						var collider_frame = collider.animated_sprite_node.frame
-						#--- creating images of current sprite frame for both objects
-						var image1 = animated_sprite_node.sprite_frames.get_frame_texture(sprite_index_name, checker_frame).get_image()
-						var image2 = collider.animated_sprite_node.sprite_frames.get_frame_texture(collider.sprite_index_name, collider_frame).get_image()
-						var image1_size: Vector2 = image1.get_size()
-						var image2_size: Vector2 = image2.get_size()
-						#--- performing a Rect2 overlap test to get overlap info
-						var rect1 = Rect2((position - origin), image1_size)
-						var collider_origin = sprites.sprite_database[collider.sprite_index_name]["origin"]
-						var rect2 = Rect2((collider.position - collider_origin), image2_size)
-							
-						var intersection = rect1.intersection(rect2)
-						if intersection:
-							#--- converting to RGBA8 in case one of both is not in this format. cannot blit if format is not correct
-							image1.convert(Image.FORMAT_RGBA8)
-							image2.convert(Image.FORMAT_RGBA8)
-							
-							#--- creating a new image the size of the overlap that holds the portion of the checking object that is in the collision
-							var new_image = Image.create_empty(intersection.size.x, intersection.size.y, false, Image.FORMAT_RGBA8)
-							var adjusted_position: Vector2 = abs(((position - origin) - intersection.position))
-							new_image.blit_rect(image1, Rect2i(Vector2(adjusted_position.x, adjusted_position.y), Vector2(intersection.size.x, intersection.size.y)), Vector2(0, 0))
-							
-							#--- creating another image the size of the overlap that holds the portion of the checked object that is in the collision
-							var new_image2 = Image.create_empty(intersection.size.x, intersection.size.y, false, Image.FORMAT_RGBA8)
-							new_image2.blit_rect(image2, Rect2i(Vector2(0, 0), Vector2(intersection.size.x, intersection.size.y)), Vector2(0, 0))
-							
-							#--- creating bitmaps of both new images
-							var bitmap1: BitMap = BitMap.new()
-							bitmap1.create_from_image_alpha(new_image)
-							var bitmap2: BitMap = BitMap.new()
-							bitmap2.create_from_image_alpha(new_image2)
-							
-							#--- if either new image is empty, we know there is not any overlap between pixels (just with bounding boxes)
-							#--- otherwise, if both contain at least one bit, then there was an overlap, so we call the collision_with function
-							if bitmap1.get_true_bit_count() > 0 and bitmap2.get_true_bit_count() > 0:
-								if collider != self and !collider.is_queued_for_deletion():
-									other = collider
-									var callable = collision_with[object]
-									callable.call()
 
-					#--- can simply call the collision_with function if both objects have rectangle masks
-					else:
-						if collider != self and !collider.is_queued_for_deletion():
-							other = collider
-							var callable = collision_with[object]
-							callable.call()	
+		for object in collision_with: #--- looping through every collision found in the overlap query
+			if object in groups_in_bb:
+				var collider = new_collision.check_inner_box_for_collision_with_group(self, object)
+				if collider:
+						var checker_precise = sprites.sprite_database[sprite_index_name]["mask"]["shape"]
+						var collider_precise = sprites.sprite_database[collider.sprite_index_name]["mask"]["shape"]
+						if (checker_precise == "PRECISE" or collider_precise == "PRECISE") and object_name != "arrow_trap_test": #--- if either object has a precise mask, run pixel perfect check
+							#--- arrow_trap_test is an exception because it is the only object in the game in which image_xscale affects its collision
+							#--- it is a simple rectangle already, so we don't need to check it with precise collision, so we skip it (and it wouldn't work anyway without further changes)
+							var checker_frame = animated_sprite_node.frame
+							var collider_frame = collider.animated_sprite_node.frame
+							#--- creating images of current sprite frame for both objects
+							var image1 = animated_sprite_node.sprite_frames.get_frame_texture(sprite_index_name, checker_frame).get_image()
+							var image2 = collider.animated_sprite_node.sprite_frames.get_frame_texture(collider.sprite_index_name, collider_frame).get_image()
+							var image1_size: Vector2 = image1.get_size()
+							var image2_size: Vector2 = image2.get_size()
+							#--- performing a Rect2 overlap test to get overlap info
+							var rect1 = Rect2((position - origin), image1_size)
+							var collider_origin = sprites.sprite_database[collider.sprite_index_name]["origin"]
+							var rect2 = Rect2((collider.position - collider_origin), image2_size)
+								
+							var intersection = rect1.intersection(rect2)
+							if intersection:
+								#--- converting to RGBA8 in case one of both is not in this format. cannot blit if format is not correct
+								image1.convert(Image.FORMAT_RGBA8)
+								image2.convert(Image.FORMAT_RGBA8)
+								
+								#--- creating a new image the size of the overlap that holds the portion of the checking object that is in the collision
+								var new_image = Image.create_empty(intersection.size.x, intersection.size.y, false, Image.FORMAT_RGBA8)
+								var adjusted_position: Vector2 = abs(((position - origin) - intersection.position))
+								new_image.blit_rect(image1, Rect2i(Vector2(adjusted_position.x, adjusted_position.y), Vector2(intersection.size.x, intersection.size.y)), Vector2(0, 0))
+								
+								#--- creating another image the size of the overlap that holds the portion of the checked object that is in the collision
+								var new_image2 = Image.create_empty(intersection.size.x, intersection.size.y, false, Image.FORMAT_RGBA8)
+								new_image2.blit_rect(image2, Rect2i(Vector2(0, 0), Vector2(intersection.size.x, intersection.size.y)), Vector2(0, 0))
+								
+								#--- creating bitmaps of both new images
+								var bitmap1: BitMap = BitMap.new()
+								bitmap1.create_from_image_alpha(new_image)
+								var bitmap2: BitMap = BitMap.new()
+								bitmap2.create_from_image_alpha(new_image2)
+								
+								#--- if either new image is empty, we know there is not any overlap between pixels (just with bounding boxes)
+								#--- otherwise, if both contain at least one bit, then there was an overlap, so we call the collision_with function
+								if bitmap1.get_true_bit_count() > 0 and bitmap2.get_true_bit_count() > 0:
+									if collider != self and !collider.is_queued_for_deletion():
+										other = collider
+										var callable = collision_with[object]
+										callable.call()
+
+						#--- can simply call the collision_with function if both objects have rectangle masks
+						else:
+							if !collider.is_queued_for_deletion():
+								other = collider
+								var callable = collision_with[object]
+								callable.call()	
 
 	other = self #--- see "other" declaration for why this is done
 
@@ -788,31 +779,23 @@ func handle_enemy_sight(parent_object: GMObject) -> void:
 	parent_object.add_child(self)
 
 var objects_in_bb: Dictionary
-#--- new collision
-func check_collision(group: String):
-	var new_collision: NewCollision = NewCollision.new()
-	for obj: GMObject in objects_in_bb:
-		var groups: Array = objects_in_bb[obj]
-		if groups.has(group):
-			var self_collision: Rect2 = new_collision.get_object_collision_shape_rect(self)
-			var other_collision: Rect2 = new_collision.get_object_collision_shape_rect(obj)
-			if self_collision.intersects(other_collision):
-				print("collided with " + str(obj.object_name))
-			
+var groups_in_bb: Array
+
 
 func _bounding_box_entered(area: Area2D):
 	var parent: GMObject = area.get_parent()
 	var groups: Array = parent.get_groups()
 	objects_in_bb[area.get_parent()] = groups
-	if object_name == "player1":
-		print(area.get_parent().object_name + " entered")
-		print(str(objects_in_bb.size()) + " overlapping")
-		print("---")
+	groups_in_bb.append_array(groups)
+	#if object_name == "player1":
+		#print(area.get_parent().object_name + " entered")
+		#print(str(objects_in_bb.size()) + " overlapping")
+		#print("---")
 
 
 func _bounding_box_exited(area: Area2D):
-	objects_in_bb.erase(area.get_parent())
-	if object_name == "player1":
-		print(area.get_parent().object_name + " exited")
-		print(str(objects_in_bb.size()) + " overlapping")
-		print("---")
+	objects_in_bb.erase(area.get_parent()) #TODO: erase groups from array when object leaves
+	#if object_name == "player1":
+		#print(area.get_parent().object_name + " exited")
+		#print(str(objects_in_bb.size()) + " overlapping")
+		#print("---")
