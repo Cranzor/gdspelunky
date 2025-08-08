@@ -107,77 +107,77 @@ func begin_step():
 #if (not surface_exists(p_surf)): p_surf = surface_create(screen_w, screen_h) #--- not needed
 #if (not surface_exists(screen)): screen = surface_create(screen_w, screen_h)
 #if (not surface_exists(dark_surf)): dark_surf = surface_create(screen_w, screen_h)
+	#--- moved pause screen/pausing functionality to PauseScreen node in HUD scene
+	#if (ControlScripts.check_bomb_pressed()):
+#
+		#if (paused and global.plife > 0 and InLevel.is_level()):
+		#
+			#gml.instance_activate_all()
+			#paused = false
+			#
+			#var all_player1s = gml.get_all_instances("player1")
+			#for player1_instance in all_player1s:
+				#if (player1_instance.facing == 18): player1_instance.x_vel = -3
+				#else: player1_instance.x_vel = 3
+				#player1_instance.y_vel = -6
+				#global.plife = -99
+			#
+		#
+			#if (SS.is_sound_playing(global.mus_title)): SS.set_sound_vol(global.mus_title, 2000 + 8000 * (global.music_vol/18))
+			#if (SS.is_sound_playing(global.mus_cave)): SS.set_sound_vol(global.mus_cave, 2000 + 8000 * (global.music_vol/18))
+			#if (SS.is_sound_playing(global.mus_lush)): SS.set_sound_vol(global.mus_lush, 2000 + 8000 * (global.music_vol/18))
+			#if (SS.is_sound_playing(global.mus_ice)): SS.set_sound_vol(global.mus_ice, 2000 + 8000 * (global.music_vol/18))
+			#if (SS.is_sound_playing(global.mus_temple)): SS.set_sound_vol(global.mus_temple, 2000 + 8000 * (global.music_vol/18))
+			#if (SS.is_sound_playing(global.mus_boss)): SS.set_sound_vol(global.mus_boss, 2000 + 8000 * (global.music_vol/18))
+			#
+			#if (not global.has_ankh): Audio.stop_all_music()
+		#
+#
+	#elif (ControlScripts.check_rope_pressed()):
+#
+		#if (paused):
+			#gml.game_end()
 
-	if (ControlScripts.check_bomb_pressed()):
-
-		if (paused and global.plife > 0 and InLevel.is_level()):
-		
-			gml.instance_activate_all()
-			paused = false
-			
-			var all_player1s = gml.get_all_instances("player1")
-			for player1_instance in all_player1s:
-				if (player1_instance.facing == 18): player1_instance.x_vel = -3
-				else: player1_instance.x_vel = 3
-				player1_instance.y_vel = -6
-				global.plife = -99
-			
-		
-			if (SS.is_sound_playing(global.mus_title)): SS.set_sound_vol(global.mus_title, 2000 + 8000 * (global.music_vol/18))
-			if (SS.is_sound_playing(global.mus_cave)): SS.set_sound_vol(global.mus_cave, 2000 + 8000 * (global.music_vol/18))
-			if (SS.is_sound_playing(global.mus_lush)): SS.set_sound_vol(global.mus_lush, 2000 + 8000 * (global.music_vol/18))
-			if (SS.is_sound_playing(global.mus_ice)): SS.set_sound_vol(global.mus_ice, 2000 + 8000 * (global.music_vol/18))
-			if (SS.is_sound_playing(global.mus_temple)): SS.set_sound_vol(global.mus_temple, 2000 + 8000 * (global.music_vol/18))
-			if (SS.is_sound_playing(global.mus_boss)): SS.set_sound_vol(global.mus_boss, 2000 + 8000 * (global.music_vol/18))
-			
-			if (not global.has_ankh): Audio.stop_all_music()
-		
-
-	elif (ControlScripts.check_rope_pressed()):
-
-		if (paused):
-			gml.game_end()
-
-	elif (ControlScripts.check_start_pressed()):
-
-		if (not paused and can_pause):
-		
-			if (gml.instance_exists("player1")):
-				var player1 = gml.get_instance("player1") #---[FLAG] may need to change this for multiplayer
-				if (not player1.dead):
-					
-					#gml.surface_set_target("p_surf") #--- moved draw_rectangle code to HUD (TitleFadeIn node)
-					#screen_redraw()
-					
-					#if (global.dark_level): gml.draw_set_alpha(1)
-					#else: gml.draw_set_alpha(0.9)
-					#gml.draw_set_color(gml.c_black)
-					#draw_rectangle.draw_rectangle(0, 0, screen_w*screen_scale, screen_h*screen_scale, false)
-					#draw_rectangle.draw_rectangle(0, 0, 320, 240, false) #--- changed screen variables to pixel counts
-					gml.draw_set_alpha(1)
-					if (SS.is_sound_playing(global.mus_title)): SS.set_sound_vol(global.mus_title, 0)
-					if (SS.is_sound_playing(global.mus_cave)): SS.set_sound_vol(global.mus_cave, 0)
-					if (SS.is_sound_playing(global.mus_lush)): SS.set_sound_vol(global.mus_lush, 0)
-					if (SS.is_sound_playing(global.mus_ice)): SS.set_sound_vol(global.mus_ice, 0)
-					if (SS.is_sound_playing(global.mus_temple)): SS.set_sound_vol(global.mus_temple, 0)
-					if (SS.is_sound_playing(global.mus_boss)): SS.set_sound_vol(global.mus_boss, 0)
-					py = player1.position.y
-					gml.instance_deactivate_all(true)
-					gml.instance_activate_object("gamepad")
-					paused = true
+	#elif (ControlScripts.check_start_pressed()):
+#
+		#if (not paused and can_pause):
+		#
+			#if (gml.instance_exists("player1")):
+				#var player1 = gml.get_instance("player1") #---[FLAG] may need to change this for multiplayer
+				#if (not player1.dead):
+					#
+					##gml.surface_set_target("p_surf") #--- moved draw_rectangle code to HUD (TitleFadeIn node)
+					##screen_redraw()
+					#
+					##if (global.dark_level): gml.draw_set_alpha(1)
+					##else: gml.draw_set_alpha(0.9)
+					##gml.draw_set_color(gml.c_black)
+					##draw_rectangle.draw_rectangle(0, 0, screen_w*screen_scale, screen_h*screen_scale, false)
+					##draw_rectangle.draw_rectangle(0, 0, 320, 240, false) #--- changed screen variables to pixel counts
+					#gml.draw_set_alpha(1)
+					#if (SS.is_sound_playing(global.mus_title)): SS.set_sound_vol(global.mus_title, 0)
+					#if (SS.is_sound_playing(global.mus_cave)): SS.set_sound_vol(global.mus_cave, 0)
+					#if (SS.is_sound_playing(global.mus_lush)): SS.set_sound_vol(global.mus_lush, 0)
+					#if (SS.is_sound_playing(global.mus_ice)): SS.set_sound_vol(global.mus_ice, 0)
+					#if (SS.is_sound_playing(global.mus_temple)): SS.set_sound_vol(global.mus_temple, 0)
+					#if (SS.is_sound_playing(global.mus_boss)): SS.set_sound_vol(global.mus_boss, 0)
+					#py = player1.position.y
+					#gml.instance_deactivate_all(true)
+					#gml.instance_activate_object("gamepad")
+					#paused = true
 				
 			
 		
-		else:
-		
-			gml.instance_activate_all()
-			if (SS.is_sound_playing(global.mus_title)): SS.set_sound_vol(global.mus_title, 2000 + 8000 * (global.music_vol/18))
-			if (SS.is_sound_playing(global.mus_cave)): SS.set_sound_vol(global.mus_cave, 2000 + 8000 * (global.music_vol/18))
-			if (SS.is_sound_playing(global.mus_lush)): SS.set_sound_vol(global.mus_lush, 2000 + 8000 * (global.music_vol/18))
-			if (SS.is_sound_playing(global.mus_ice)): SS.set_sound_vol(global.mus_ice, 2000 + 8000 * (global.music_vol/18))
-			if (SS.is_sound_playing(global.mus_temple)): SS.set_sound_vol(global.mus_temple, 2000 + 8000 * (global.music_vol/18))
-			if (SS.is_sound_playing(global.mus_boss)): SS.set_sound_vol(global.mus_boss, 2000 + 8000 * (global.music_vol/18))
-			paused = false
+		#else:
+		#
+			#gml.instance_activate_all()
+			#if (SS.is_sound_playing(global.mus_title)): SS.set_sound_vol(global.mus_title, 2000 + 8000 * (global.music_vol/18))
+			#if (SS.is_sound_playing(global.mus_cave)): SS.set_sound_vol(global.mus_cave, 2000 + 8000 * (global.music_vol/18))
+			#if (SS.is_sound_playing(global.mus_lush)): SS.set_sound_vol(global.mus_lush, 2000 + 8000 * (global.music_vol/18))
+			#if (SS.is_sound_playing(global.mus_ice)): SS.set_sound_vol(global.mus_ice, 2000 + 8000 * (global.music_vol/18))
+			#if (SS.is_sound_playing(global.mus_temple)): SS.set_sound_vol(global.mus_temple, 2000 + 8000 * (global.music_vol/18))
+			#if (SS.is_sound_playing(global.mus_boss)): SS.set_sound_vol(global.mus_boss, 2000 + 8000 * (global.music_vol/18))
+			#paused = false
 
 
 	# this draws the surface on the screen

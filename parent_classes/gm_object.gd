@@ -371,7 +371,6 @@ func object_setup() -> void:
 	var object_entry = object_database[object_name]
 	parent = object_entry["parent"]
 	collision_shape_setup()
-	
 	groups_setup(object_entry)
 	depth_setup(object_entry)
 	sprite_setup(object_entry)
@@ -383,6 +382,7 @@ func object_setup() -> void:
 		var parent_entry = object_database[parent]
 		alarms_setup(parent_entry) #--- running this due to item class having alarm_2
 	collision_with_setup(object_entry)
+	groups_setup(object_entry)
 	#---[FLAG] have to set up outside_room function
 	
 	
@@ -409,14 +409,31 @@ func run_create_function(obj) -> void:
 		obj.create()
 
 func groups_setup(object_entry) -> void:
+	if object_name == "bat":
+		print()
 	var groups = object_entry['groups']
 	
 	for group in groups:
 		if !is_in_group(group):
 			add_to_group(group)
+			
+	if !collision_with.is_empty():
+		add_to_group("collision_with_object")
+		
+	if has_method("draw"):
+		add_to_group("draw_object")
+	
+	if has_method("animation_end"):
+		add_to_group("animation_end_object")
+	
+	if has_method("step"):
+		add_to_group("step_object")
+	if object_name == "gamepad":
+		remove_from_group("step_object")
+	
+	#--- alarm_object group added in alarms_setup()
 	
 	add_to_group("gm_object")
-	add_to_group("active_gm_object")
 
 func depth_setup(object_entry) -> void:
 	var object_depth = object_entry["depth"]
@@ -551,6 +568,8 @@ func alarms_setup(object_entry) -> void:
 	
 	for event: String in events:
 		if event in alarms:
+			if !is_in_group("alarm_object"):
+				add_to_group("alarm_object")
 			var alarm_countdown_instance: String = event + "_countdown"
 			var alarm_function = Callable(self, event)
 			var new_alarm: Node = Alarm.new()

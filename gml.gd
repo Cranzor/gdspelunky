@@ -508,18 +508,20 @@ func room_restart() -> void:
 	get_tree().reload_current_scene()
 	
 func instance_activate_all() -> void:
-	get_tree().call_group("gm_object", "add_to_group", "active_gm_object")
-	get_tree().call_group("gm_object", "resume_animation")
-	AudioServer.set_bus_mute(0, false)
+	#get_tree().call_group("gm_object", "add_to_group", "active_gm_object")
+	#get_tree().call_group("gm_object", "resume_animation")
+	#AudioServer.set_bus_mute(0, false)
+	pass
 
 func instance_deactivate_all(notme) -> void:
-	#--- takes all gm_objects out of active_gm_object group, preventing them running in gm_loop
-	get_tree().call_group("gm_object", "remove_from_group", "active_gm_object")
-	get_tree().call_group("gm_object", "pause_animation")
-	#--- activating gamepad and screen immediately to make things simpler. these should not stop when game is paused
-	get_tree().call_group("gamepad", "add_to_group", "active_gm_object")
-	get_tree().call_group("screen", "add_to_group", "active_gm_object")
-	AudioServer.set_bus_mute(0, true)
+	##--- takes all gm_objects out of active_gm_object group, preventing them running in gm_loop
+	#get_tree().call_group("gm_object", "remove_from_group", "active_gm_object")
+	#get_tree().call_group("gm_object", "pause_animation")
+	##--- activating gamepad and screen immediately to make things simpler. these should not stop when game is paused
+	#get_tree().call_group("gamepad", "add_to_group", "active_gm_object")
+	#get_tree().call_group("screen", "add_to_group", "active_gm_object")
+	#AudioServer.set_bus_mute(0, true)
+	pass
 
 func game_end() -> void:
 	Screen.game_end()

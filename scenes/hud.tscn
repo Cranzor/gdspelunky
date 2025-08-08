@@ -523,6 +523,7 @@ script = ExtResource("65_gxo4v")
 [node name="DrawText" parent="InGame" instance=ExtResource("70_ep55p")]
 
 [node name="PauseScreen" type="Node2D" parent="."]
+process_mode = 3
 z_index = 2
 script = ExtResource("70_dbhui")
 

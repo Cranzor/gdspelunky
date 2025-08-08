@@ -22,7 +22,7 @@ var active
 var held #--- seems easier to put this here since both items and enemies use it
 var bounce
 var heavy
-var value
+var value: int
 var col_bot
 var can_pick_up
 var bounce_factor

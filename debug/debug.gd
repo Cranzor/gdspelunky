@@ -38,6 +38,16 @@ func _on_olmec_pressed() -> void:
 
 
 func load_level(level_num: int, name: String):
+	#if level_num >= 5 and level_num <= 8:
+		#global.level_type = 1
+	#elif level_num >= 9 and level_num <= 12:
+		#global.level_type = 2
+	#elif level_num >= 13 and level_num <= 15:
+		#global.level_type = 3
+	#elif level_num == 16:
+		#global.level_type = 4
+	global.curr_level = level_num
+
 	if dark:
 		global.debug_dark_level = true
 	if shop:

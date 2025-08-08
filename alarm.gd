@@ -9,12 +9,11 @@ var ready_to_emit
 
 
 func count_down():
-	if parent.is_in_group("active_gm_object"):
-		if frames_to_count_down != -1:
-			frames_to_count_down -= 1
-		
-		if frames_to_count_down == 0:
-			ready_to_emit = true
+	if frames_to_count_down != -1:
+		frames_to_count_down -= 1
+	
+	if frames_to_count_down == 0:
+		ready_to_emit = true
 
 
 func start(frames):
