@@ -299,9 +299,8 @@ func step() -> void: # one of seven scripts which uses 'other' outside of collis
 	step_function_4() #--- Player death functions
 	step_function_5() #--- Caps values for when the player blinks when damaged
 	step_function_6() #--- Functions handling the player collecting various items
-	
+
 	end_step()
-	draw()
 
 func step_function_1() -> void:
 	prevent_player_death()

@@ -487,6 +487,7 @@ func sprite_setup(object_entry) -> void:
 			
 			var collision_size
 			var collision_position
+			var new_collision: NewCollision = NewCollision.new()
 			if shape == "RECTANGLE":
 				collision_size = sprite_entry["mask"]["collision_rectangles"][1]
 				collision_position = collision_size / 2 + sprite_entry["mask"]["collision_rectangles"][0]
@@ -494,6 +495,8 @@ func sprite_setup(object_entry) -> void:
 				var collision_shape = get_node("CollisionShape2D")
 				collision_shape.shape.size = collision_size
 				collision_shape.position = collision_position
+				if object_name != "level" and object_name != "room":
+					new_collision.create_bounding_box(self, collision_position, collision_size)
 				
 			elif shape == "PRECISE":
 				collision_size = sprite_entry["mask"]["bounding_box"][1]
@@ -502,6 +505,8 @@ func sprite_setup(object_entry) -> void:
 				var collision_shape = get_node("CollisionShape2D")
 				collision_shape.shape.size = collision_size
 				collision_shape.position = collision_position
+				if object_name != "level" and object_name != "room":
+					new_collision.create_bounding_box(self, collision_position, collision_size)
 				
 	else:
 		sprite_offset = Vector2(0, 0)
@@ -781,3 +786,33 @@ func handle_enemy_sight(parent_object: GMObject) -> void:
 	if existing_node != null:
 		existing_node.queue_free()
 	parent_object.add_child(self)
+
+var objects_in_bb: Dictionary
+#--- new collision
+func check_collision(group: String):
+	var new_collision: NewCollision = NewCollision.new()
+	for obj: GMObject in objects_in_bb:
+		var groups: Array = objects_in_bb[obj]
+		if groups.has(group):
+			var self_collision: Rect2 = new_collision.get_object_collision_shape_rect(self)
+			var other_collision: Rect2 = new_collision.get_object_collision_shape_rect(obj)
+			if self_collision.intersects(other_collision):
+				print("collided with " + str(obj.object_name))
+			
+
+func _bounding_box_entered(area: Area2D):
+	var parent: GMObject = area.get_parent()
+	var groups: Array = parent.get_groups()
+	objects_in_bb[area.get_parent()] = groups
+	if object_name == "player1":
+		print(area.get_parent().object_name + " entered")
+		print(str(objects_in_bb.size()) + " overlapping")
+		print("---")
+
+
+func _bounding_box_exited(area: Area2D):
+	objects_in_bb.erase(area.get_parent())
+	if object_name == "player1":
+		print(area.get_parent().object_name + " exited")
+		print(str(objects_in_bb.size()) + " overlapping")
+		print("---")
