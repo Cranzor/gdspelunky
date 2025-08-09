@@ -31,28 +31,13 @@ func gm_loop(): #---[FLAG] consider running every event in the same order as ste
 													  #---not doing so can cause issues like global.message passed into draw_text being outdated (since it's updated in run_collision_with)
 		get_tree().call_group("draw_object", "run_draw_event") #--- putting draw event after updating camera position fixes text jitter issues
 
+
 func all_objects_step_event():
-	#var all_objects = get_tree().get_first_node_in_group("objects_holder").get_children()
-	#all_objects.reverse()
-	#for object in all_objects:
-		#if object.has_method("step"):
-			#print(object.object_name)
-		#if object.has_method("step") and gml.changed_scene == false and object.is_in_group("gm_object"):
-			#object.step()
-	#
-	#for object in gml.new_objects_to_run_step: #--- running step for objects that were created during the step event of other objects
-		#if object.has_method("step") and gml.changed_scene == false:
-			#object.step()
-	#
-	#gml.new_objects_to_run_step.clear()
-	#print("---")
 	var step_objects = get_tree().get_nodes_in_group("step_object")
 	step_objects.reverse()
 	for object in step_objects:
-		#print(object.object_name)
 		if gml.changed_scene == false:
 			object.step()
-	#print("--- end step")
 
 
 func autoloads_step_event():

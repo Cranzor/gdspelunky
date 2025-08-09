@@ -648,6 +648,8 @@ func run_draw_event() -> void:
 
 
 func run_collision_with() -> void:
+	if object_name == "explosion":
+		print()
 	if !collision_with.is_empty() and !is_queued_for_deletion():
 		var origin = Vector2(0, 0)
 		if sprite_index_name != "":
@@ -797,14 +799,14 @@ func handle_enemy_sight(parent_object: GMObject) -> void:
 		existing_node.queue_free()
 	parent_object.add_child(self)
 
-var objects_in_bb: Dictionary
+var objects_in_bb: Array
 var groups_in_bb: Array
 
 
 func _bounding_box_entered(area: Area2D):
 	var parent: GMObject = area.get_parent()
 	var groups: Array = parent.get_groups()
-	objects_in_bb[area.get_parent()] = groups
+	objects_in_bb.append(area.get_parent())
 	groups_in_bb.append_array(groups)
 	#if object_name == "player1":
 		#print(area.get_parent().object_name + " entered")

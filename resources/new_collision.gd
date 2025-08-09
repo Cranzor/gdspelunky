@@ -32,8 +32,10 @@ func get_object_collision_shape_rect(object: GMObject):
 	return returned_rect
 
 func check_inner_box_for_collision_with_group(passed_object: GMObject, group: StringName):
-	for comparison_obj: GMObject in passed_object.objects_in_bb:
-		var groups: Array = passed_object.objects_in_bb[comparison_obj]
+	var bb_objects: Array = passed_object.objects_in_bb.duplicate()
+	bb_objects.reverse()
+	for comparison_obj: GMObject in bb_objects:
+		var groups: Array = comparison_obj.get_groups()
 		if groups.has(group):
 			var self_collision: Rect2 = get_object_collision_shape_rect(passed_object)
 			var other_collision: Rect2 = get_object_collision_shape_rect(comparison_obj)
