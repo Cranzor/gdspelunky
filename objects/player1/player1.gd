@@ -171,6 +171,7 @@ var y_fric: float
 var slope_y_prev: int
 var slope_change_in_y: int
 var y_prev_high: int
+var collision: bool = false #--- in game_step_event. seems to be unused
 #------------------------------------------------------------------
 @onready var jetpack_draw = $JetpackDraw
 @onready var arrow_draw = $ArrowDraw

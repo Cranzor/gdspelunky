@@ -648,8 +648,6 @@ func run_draw_event() -> void:
 
 
 func run_collision_with() -> void:
-	if object_name == "explosion":
-		print()
 	if !collision_with.is_empty() and !is_queued_for_deletion():
 		var origin = Vector2(0, 0)
 		if sprite_index_name != "":
@@ -657,8 +655,9 @@ func run_collision_with() -> void:
 
 		for object in collision_with: #--- looping through every collision found in the overlap query
 			if object in groups_in_bb:
-				var collider = new_collision.check_inner_box_for_collision_with_group(self, object)
-				if collider:
+				var colliders: Array = new_collision.check_inner_box_for_collision_with_group(self, object)
+				if !colliders.is_empty():
+					for collider in colliders:
 						var checker_precise = sprites.sprite_database[sprite_index_name]["mask"]["shape"]
 						var collider_precise = sprites.sprite_database[collider.sprite_index_name]["mask"]["shape"]
 						if (checker_precise == "PRECISE" or collider_precise == "PRECISE") and object_name != "arrow_trap_test": #--- if either object has a precise mask, run pixel perfect check

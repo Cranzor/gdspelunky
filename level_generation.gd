@@ -1398,7 +1398,7 @@ func scr_room_gen(x, y): #--- have to pass in x and y
 			5:  shop_type = "clothing"
 			6:
 				shop_type = "craps"
-				str_temp = "11111111111111111111111122111111Kl000211..b_q00_w010.0+00000k0.q+dd00000bbbbbbbbbb"
+				str_temp = "11111111111111111111111122111111Kl000211..bQ00W010.0+00000k0.q+dd00000bbbbbbbbbb"
 			7:
 				shop_type = "kissing"
 				str_temp = "111111111111111111111111221111111l000211...000W010...00000k0..K00D0000bbbbbbbbbb"
