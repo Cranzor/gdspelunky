@@ -409,8 +409,6 @@ func run_create_function(obj) -> void:
 		obj.create()
 
 func groups_setup(object_entry) -> void:
-	if object_name == "bat":
-		print()
 	var groups = object_entry['groups']
 	
 	for group in groups:

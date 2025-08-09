@@ -174,7 +174,7 @@ func step():
 		if (darkness < 1): darkness += 0.1
 		else:
 		
-			get_tree().change_scene("res://rooms/credits1/credits1.tscn")
+			gml.room_goto("credits1")
 
 func draw():
 	if (gml.instance_exists("flare") and need_dark):

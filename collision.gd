@@ -133,10 +133,10 @@ func calculate_collision_bounds(node) -> Vector4:
 	#var rb = node.global_position.x + node.collision_bounds_offset_right_x
 	#var bb = node.global_position.y + node.collision_bounds_offset_bottom_y
 	
-	var lb: int = node.position.x + node.collision_bounds_offset_left_x
-	var tb: int = node.position.y + node.collision_bounds_offset_top_y
-	var rb: int = node.position.x + node.collision_bounds_offset_right_x
-	var bb: int = node.position.y + node.collision_bounds_offset_bottom_y
+	var lb: float = node.position.x + node.collision_bounds_offset_left_x
+	var tb: float = node.position.y + node.collision_bounds_offset_top_y
+	var rb: float = node.position.x + node.collision_bounds_offset_right_x
+	var bb: float = node.position.y + node.collision_bounds_offset_bottom_y
 	
 	node.lb = lb
 	node.tb = tb
@@ -268,10 +268,10 @@ func is_collision_left(number, node) -> bool:
 	#with a solid object.
 	#*/
 	var all_points_exact: Vector4 = calculate_collision_bounds(node)
-	var lb: int = all_points_exact.x
-	var tb: int = all_points_exact.y
-	var _rb: int = all_points_exact.z
-	var bb: int = all_points_exact.w
+	var lb: float = all_points_exact.x
+	var tb: float = all_points_exact.y
+	var _rb: float = all_points_exact.z
+	var bb: float = all_points_exact.w
 	
 	if gml.collision_line(gml.gm_round(lb-number),gml.gm_round(tb),gml.gm_round(lb-number),gml.gm_round(bb-1),'solid',1,1,node):#>0:
 		#####----
@@ -330,10 +330,10 @@ func is_collision_right(number, node) -> bool:
 	#with a solid object.
 	#*/
 	var all_points_exact: Vector4 = calculate_collision_bounds(node)
-	var _lb: int = all_points_exact.x
-	var tb: int = all_points_exact.y
-	var rb: int = all_points_exact.z
-	var bb: int = all_points_exact.w
+	var _lb: float = all_points_exact.x
+	var tb: float = all_points_exact.y
+	var rb: float = all_points_exact.z
+	var bb: float = all_points_exact.w
 	
 	if gml.collision_line(gml.gm_round(rb+number-1),gml.gm_round(tb),gml.gm_round(rb+number-1),gml.gm_round(bb-1),'solid',1,1,node):#>0:
 		#####----
@@ -363,10 +363,10 @@ func is_collision_bottom(number, node) -> bool:
 	#with a solid object.
 	#*/
 	var all_points_exact: Vector4 = calculate_collision_bounds(node)
-	var lb: int = all_points_exact.x
-	var _tb: int = all_points_exact.y
-	var rb: int = all_points_exact.z
-	var bb: int = all_points_exact.w
+	var lb: float = all_points_exact.x
+	var _tb: float = all_points_exact.y
+	var rb: float = all_points_exact.z
+	var bb: float = all_points_exact.w
 	
 	if gml.collision_line(gml.gm_round(lb),gml.gm_round(bb+number-1),gml.gm_round(rb-1),gml.gm_round(bb+number-1),'solid',1,1,node):#>0:
 		return true
@@ -454,10 +454,10 @@ func is_collision_top(number, node) -> bool:
 	#with a solid object.
 	#*/
 	var all_points_exact: Vector4 = calculate_collision_bounds(node)
-	var lb: int = all_points_exact.x
-	var tb: int = all_points_exact.y
-	var rb: int = all_points_exact.z
-	var _bb: int = all_points_exact.w
+	var lb: float = all_points_exact.x
+	var tb: float = all_points_exact.y
+	var rb: float = all_points_exact.z
+	var _bb: float = all_points_exact.w
 	
 	if gml.collision_line(gml.gm_round(lb),gml.gm_round(tb-number),gml.gm_round(rb-1),gml.gm_round(tb-number),'solid',1,1,node):#>0:
 		return true

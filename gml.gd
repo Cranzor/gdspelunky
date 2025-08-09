@@ -176,7 +176,7 @@ func instance_create(x,y,obj,run_create = true) -> GMObject: #---[FLAG] make thi
 	
 	return instance
 	
-func collision_point(x: int,y: int,obj: String,_prec,notme,calling_object: GMObject = null) -> GMObject: #"This function tests whether at point (x,y) there is a collision with entities of object obj."
+func collision_point(x: float,y: float,obj: String,_prec,notme,calling_object: GMObject = null) -> GMObject: #"This function tests whether at point (x,y) there is a collision with entities of object obj."
 	var possible = []
 	var overlap_query = PhysicsPointQueryParameters2D.new()
 	overlap_query.collide_with_bodies = true
@@ -313,7 +313,7 @@ func instance_destroy(obj: GMObject) -> void: #'Destroys current instance' ---  
 	obj.hide()
 	obj.queue_free()
 
-func collision_rectangle(x1:int,y1:int,x2:int,y2:int,obj,_prec,notme: bool, calling_object: GMObject = null) -> GMObject: #"This function tests whether there is a collision between the (filled) rectangle with the indicated opposite corners and entities of object obj. For example, you can use this to test whether an area is free of obstacles."
+func collision_rectangle(x1:float,y1:float,x2:float,y2:float,obj,_prec,notme: bool, calling_object: GMObject = null) -> GMObject: #"This function tests whether there is a collision between the (filled) rectangle with the indicated opposite corners and entities of object obj. For example, you can use this to test whether an area is free of obstacles."
 	var collided_object: GMObject
 	if abs(x2 - x1) == 0 or abs(y2 - y1) == 0: #--- raycast is more appropriate in this case since it's just a line
 		collided_object = handle_collision_ray(x1, y1, x2, y2, obj, notme) #--- also avoids error in handle_collision_shapecast() associated with size being negative
@@ -386,7 +386,7 @@ func instance_number(obj: String) -> int:
 	return number_of_instances
 
 func collision_line(x1:int,y1:int,x2:int,y2:int,obj,_prec,notme,calling_object: GMObject = null) -> GMObject:
-	var collided_object: GMObject = handle_collision_ray(x1, y1, x2, y2, obj, notme)
+	var collided_object: GMObject = handle_collision_ray(x1, y1, x2, y2, obj, notme, calling_object)
 	if check_notme(notme, collided_object, calling_object):
 		return null
 	return collided_object
@@ -680,7 +680,7 @@ func generate_random_hash() -> String:
 		word += characters[randi_range(0, n_char - 1)]
 	return word
 
-func handle_collision_ray(x1: int, y1: int, x2: int, y2: int, obj, notme: bool) -> GMObject:
+func handle_collision_ray(x1: int, y1: int, x2: int, y2: int, obj, notme: bool, notme_object: GMObject = null) -> GMObject:
 	if get_tree().current_scene == null:
 		return null
 
@@ -698,7 +698,10 @@ func handle_collision_ray(x1: int, y1: int, x2: int, y2: int, obj, notme: bool) 
 		var object_node: Object = collision_ray.get_collider()
 		var groups: Array = object_node.get_groups()
 		if obj in groups:
-			possible.append(object_node)
+			if notme and notme_object == object_node:
+				pass
+			else:
+				possible.append(object_node)
 		collision_ray.add_exception(object_node)
 		collision_ray.force_raycast_update()
 	collision_ray.enabled = false
