@@ -356,7 +356,7 @@ func is_collision_right(number, node) -> bool:
 func get_id_collision_character_top(): # --- doesn't seem to be used anywhere
 	pass
 	
-func is_collision_bottom(number, node) -> bool:
+func is_collision_bottom(number, node, notme_object: GMObject = null) -> bool:
 	#/*
 	#An object can only use this script after calling "set_collision_bounds."
 	#0: Number of pixels below the collision rectangle to check for a collision
@@ -368,12 +368,13 @@ func is_collision_bottom(number, node) -> bool:
 	var rb: float = all_points_exact.z
 	var bb: float = all_points_exact.w
 	
-	if gml.collision_line(gml.gm_round(lb),gml.gm_round(bb+number-1),gml.gm_round(rb-1),gml.gm_round(bb+number-1),'solid',1,1,node):#>0:
+	var colliding_object = gml.collision_line(gml.gm_round(lb),gml.gm_round(bb+number-1),gml.gm_round(rb-1),gml.gm_round(bb+number-1),'solid',1,1,node)#>0:
+	if colliding_object != notme_object: #--- for moving_solid exceptions in game_step_event (don't want to count them when standing on top of them)
 		return true
 		
 	return false
 	
-func is_collision_character_bottom(number, id = null):
+func is_collision_character_bottom(number, id = null, calling_node: GMObject = null):
 	#/*
 	#0: Number of pixels to the bottom of the collision rectangle to check for a collision
 	#with the character.
@@ -395,12 +396,12 @@ func is_collision_character_bottom(number, id = null):
 		var rb = all_points_exact.z
 		var _bb = all_points_exact.w
 	  #if there is a collision with temp_id on the character's top side
-		if gml.collision_line(gml.gm_round(lb),gml.gm_round(tb-number),gml.gm_round(rb-1),gml.gm_round(tb-number),'character',1,1,character_instance):#>0:
+		if gml.collision_line(gml.gm_round(lb),gml.gm_round(tb-number),gml.gm_round(rb-1),gml.gm_round(tb-number),calling_node.unique_id,1,1,character_instance):#>0:
 			return true
 
 	return false
 	
-func is_collision_character_top(number, id = null):
+func is_collision_character_top(number, id = null, calling_node: GMObject = null):
 	#/*
 	#0: Number of pixels above the collision rectangle to check for a collision
 	#with the character.
@@ -422,7 +423,7 @@ func is_collision_character_top(number, id = null):
 		var rb = all_points_exact.z
 		var bb = all_points_exact.w
 	  #if there is a collision with temp_id on the character's bottom side
-		if gml.collision_line(gml.gm_round(lb),gml.gm_round(bb+number-1),gml.gm_round(rb-1),gml.gm_round(bb+number-1),'character',1,1,character_instance):#>0:
+		if gml.collision_line(gml.gm_round(lb),gml.gm_round(bb+number-1),gml.gm_round(rb-1),gml.gm_round(bb+number-1),calling_node.unique_id,1,1,character_instance):#>0:
 			return true
 
 	return false

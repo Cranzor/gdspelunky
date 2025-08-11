@@ -34,7 +34,7 @@ func gm_loop(): #---[FLAG] consider running every event in the same order as ste
 
 func all_objects_step_event():
 	var step_objects = get_tree().get_nodes_in_group("step_object")
-	step_objects.reverse()
+	#step_objects.reverse()
 	for object in step_objects:
 		if gml.changed_scene == false:
 			object.step()

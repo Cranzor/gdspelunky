@@ -51,7 +51,7 @@ func step():
 	#super() #--- commenting out as this seems to do nothing, since drawn_sprite has no step function
 
 	# main_code
-	if Collision.is_collision_character_top(1):
+	if Collision.is_collision_character_top(1, null, self):
 
 		time_fall -= 1
 		if (time_fall <= 0): y_acc = grav

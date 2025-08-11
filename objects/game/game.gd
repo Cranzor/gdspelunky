@@ -106,7 +106,6 @@ func game_step_event():
 		#moves all of the solids so that none of them collide with the character
 		var all_moving_solids = gml.get_all_instances("moving_solid")
 		for moving_solid_instance in all_moving_solids:
-
 		 	 #applies the acceleration
 			moving_solid_instance.x_vel+=moving_solid_instance.x_acc
 			moving_solid_instance.y_vel+=moving_solid_instance.y_acc
@@ -117,7 +116,7 @@ func game_step_event():
 				moving_solid_instance.y_vel=0
 			if Collision.approximately_zero(moving_solid_instance.x_acc):
 				moving_solid_instance.x_acc=0
-
+			if Collision.approximately_zero(moving_solid_instance.y_acc):
 				moving_solid_instance.y_acc=0
 	  		#moves the solid, pushes the character, carries the character, and stops if the character will be crushed by another solid:
 			var mst_x_prev=moving_solid_instance.position.x
@@ -165,7 +164,7 @@ func game_step_event():
 		  
 						for i in range(0, players_length):
 			
-							if(moving_solid_instance.viscid_top and Collision.is_collision_character_top(1,players[i]) and ((players[i]).viscid_movement_ok==1 or (players[i]).viscid_movement_ok==2)):
+							if(moving_solid_instance.viscid_top and Collision.is_collision_character_top(1,players[i],moving_solid_instance) and ((players[i]).viscid_movement_ok==1 or (players[i]).viscid_movement_ok==2)):
 			  
 								if Collision.is_collision_right(1, players[i])==false: #--- changed to bool
 									players[i].position.x+=1
@@ -193,7 +192,7 @@ func game_step_event():
 		  
 						for i in range(0, players_length):
 			
-							if moving_solid_instance.viscid_top and Collision.is_collision_character_top(1,players[i]) and (players[i].viscid_movement_ok==1 or players[i].viscid_movement_ok==2):
+							if moving_solid_instance.viscid_top and Collision.is_collision_character_top(1,players[i],moving_solid_instance) and (players[i].viscid_movement_ok==1 or players[i].viscid_movement_ok==2):
 			  
 								if Collision.is_collision_left(1, players[i])==false: #--- changed to bool
 				  
@@ -224,16 +223,16 @@ func game_step_event():
 				  
 						for i in range(0, players_length):
 					
-							if moving_solid_instance.viscid_top and Collision.is_collision_character_top(2,players[i]):
+							if moving_solid_instance.viscid_top and Collision.is_collision_character_top(2,players[i],moving_solid_instance):
 					  
 								#since we do not want to include the solid that is pulling the character down,
 								#we must alter the position of the solid to get around this dilemma
-								position.y+=5
-								if Collision.is_collision_bottom(1, players[1])==false: #--- changed to bool
-									position.y+=1
-								position.y-=5
+								moving_solid_instance.position.y+=5
+								if Collision.is_collision_bottom(1, players[i], moving_solid_instance)==false: #--- changed to bool
+									players[i].position.y+=1
+								moving_solid_instance.position.y-=5
 					  
-							elif Collision.is_collision_character_bottom(1,players[i]):
+							elif Collision.is_collision_character_bottom(1,players[i], moving_solid_instance):
 					  
 								players[i].collision=Collision.is_collision_bottom(1, players[i])
 								if players[i].collision:
@@ -244,6 +243,8 @@ func game_step_event():
 					  
 						if moving_solid_instance.break_now:
 							break
+
+						moving_solid_instance.position.y += 1 #--- original script moves the object as part of the loop, but this is not the case in GDScript, so we have to manually do it
 		  
 		
 				#solid is moving up
@@ -255,7 +256,7 @@ func game_step_event():
 						for i in range(0, players_length):
 					
 					  		#push the character up regardless of the viscid properties of the solid top
-							if Collision.is_collision_character_top(1,players[i]):
+							if Collision.is_collision_character_top(1,players[i],moving_solid_instance):
 
 								players[i].collision=Collision.is_collision_top(1, players[i])
 								if players[i].collision:
