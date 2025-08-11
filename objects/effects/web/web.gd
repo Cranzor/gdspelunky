@@ -70,6 +70,6 @@ func create():
 
 
 func step():
-	image_alpha = life/12 #---[FLAG] have to double check to make sure this works correctly
+	image_alpha = life/float(12)
 	if (dying): life -= 0.02
 	if (life <= 1): gml.instance_destroy(self)

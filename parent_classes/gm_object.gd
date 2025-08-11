@@ -24,7 +24,7 @@ var my_grav: float
 var trigger: bool
 var grav: float
 var dying: bool
-var life: int
+var life: float
 var UP: int
 var DOWN: int
 var bloodless: bool
@@ -187,7 +187,7 @@ var image_blend: Color:
 	get:
 		return animated_sprite_node.self_modulate
 		
-var image_alpha: int:
+var image_alpha: float:
 	set(value):
 		animated_sprite_node.self_modulate.a = value
 	get:
