@@ -21,7 +21,7 @@ func alarm_0():
 	
 
 func alarm_1():
-	if (gml.instance_number("yellow_trail") < 12): gml.instance_create(position.x, position.y, Objects.yellow_trail)
+	if (gml.instance_number("yellow_trail") < 12): gml.instance_create(position.x, position.y, Objects.yellow_trail, self)
 	alarm_1_countdown.start(4)
 
 
@@ -33,11 +33,11 @@ func collision_with_solid(): #--- all code is commented out
 		#else: n = gml.rand(1,5)
 		#match (n)
 	#
-			#1:  gml.instance_create(position.x-8, position.y-8, Objects.bat)
-			#2:  gml.instance_create(position.x-8, position.y-8, Objects.spider)
-			#3:  gml.instance_create(position.x-8, position.y-8, Objects.snake)
-			#4:  gml.instance_create(position.x-8, position.y-8, Objects.frog)
-			#5:  gml.instance_create(position.x-8, position.y-8, Objects.fire_frog)
+			#1:  gml.instance_create(position.x-8, position.y-8, Objects.bat, self)
+			#2:  gml.instance_create(position.x-8, position.y-8, Objects.spider, self)
+			#3:  gml.instance_create(position.x-8, position.y-8, Objects.snake, self)
+			#4:  gml.instance_create(position.x-8, position.y-8, Objects.frog, self)
+			#5:  gml.instance_create(position.x-8, position.y-8, Objects.fire_frog, self)
 	#
 		#gml.instance_destroy(self)
 #
@@ -77,11 +77,11 @@ func step():
 		else: n = gml.rand(1,5)
 		match (n):
 	
-			1:  gml.instance_create(position.x-8, position.y-8, Objects.bat)
-			2:  gml.instance_create(position.x-8, position.y-8, Objects.spider)
-			3:  gml.instance_create(position.x-8, position.y-8, Objects.snake)
-			4:  gml.instance_create(position.x-8, position.y-8, Objects.frog)
-			5:  gml.instance_create(position.x-8, position.y-8, Objects.fire_frog)
+			1:  gml.instance_create(position.x-8, position.y-8, Objects.bat, self)
+			2:  gml.instance_create(position.x-8, position.y-8, Objects.spider, self)
+			3:  gml.instance_create(position.x-8, position.y-8, Objects.snake, self)
+			4:  gml.instance_create(position.x-8, position.y-8, Objects.frog, self)
+			5:  gml.instance_create(position.x-8, position.y-8, Objects.fire_frog, self)
 	
 		gml.instance_destroy(self)
 

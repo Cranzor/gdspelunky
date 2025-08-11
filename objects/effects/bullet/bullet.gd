@@ -33,7 +33,7 @@ func collision_with_character():
 		other.y_vel = -4
 
 	
-		gml.instance_create(other.position.x, other.position.y, Objects.blood)
+		gml.instance_create(other.position.x, other.position.y, Objects.blood, self)
 		other.stunned = true
 		other.stun_timer = 20
 	
@@ -103,7 +103,7 @@ func collision_with_enemy():
 
 
 func collision_with_solid():
-	gml.instance_create(position.x, position.y, Objects.smoke_puff)
+	gml.instance_create(position.x, position.y, Objects.smoke_puff, self)
 	Audio.play_sound(global.snd_hit)
 	gml.instance_destroy(self)
 

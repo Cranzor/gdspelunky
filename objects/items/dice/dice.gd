@@ -167,11 +167,11 @@ func step():
 					
 							if (obj.type == "caveman" or obj.type == "yeti" or obj.type == "hawkman"):
 						
-								gml.instance_create(obj.position.x, obj.position.y, Objects.blood)
+								gml.instance_create(obj.position.x, obj.position.y, Objects.blood, self)
 						
 							elif (obj.type == "mantrap"):
 						
-								gml.instance_create(obj.position.x+gml.rand(0,16), obj.position.y-8+gml.rand(0,16), Objects.leaf)
+								gml.instance_create(obj.position.x+gml.rand(0,16), obj.position.y-8+gml.rand(0,16), Objects.leaf, self)
 						
 							obj.hp -= 1
 							obj.status = STUNNED
@@ -184,7 +184,7 @@ func step():
 				
 						if (obj.status < 98):
 					
-							gml.instance_create(obj.position.x, obj.position.y, Objects.blood)
+							gml.instance_create(obj.position.x, obj.position.y, Objects.blood, self)
 							obj.hp -= 1
 							obj.y_vel = -6
 							obj.status = 2
@@ -195,7 +195,7 @@ func step():
 				
 						if (obj.whipped == 0):
 					
-							gml.instance_create(obj.position.x+16, obj.position.y+24, Objects.blood)
+							gml.instance_create(obj.position.x+16, obj.position.y+24, Objects.blood, self)
 							obj.hp -= 1
 							obj.whipped = 10
 							Audio.play_sound(global.snd_hit)
@@ -205,7 +205,7 @@ func step():
 				
 						if (obj.status != 99 and obj.sprite_index != "alien_boss_hurt"):
 					
-							gml.instance_create(obj.position.x+8, obj.position.y+8, Objects.blood)
+							gml.instance_create(obj.position.x+8, obj.position.y+8, Objects.blood, self)
 							obj.hp -= 1
 							obj.sprite_index = "alien_boss_hurt"
 							obj.image_speed = 0.8
@@ -214,7 +214,7 @@ func step():
 				
 					else:
 				
-						gml.instance_create(obj.position.x+8, obj.position.y+8, Objects.blood)
+						gml.instance_create(obj.position.x+8, obj.position.y+8, Objects.blood, self)
 						obj.hp -= 1
 						obj.orig_y = position.x
 						obj.orig_y = position.y
@@ -231,7 +231,7 @@ func step():
 				var obj = gml.instance_nearest(position.x, position.y, "damsel")
 				if (not obj.invincible and obj.status != 2 and obj.status != 99):
 			
-					gml.instance_create(position.x, position.y, Objects.blood)
+					gml.instance_create(position.x, position.y, Objects.blood, self)
 				
 					if (obj.held):
 				

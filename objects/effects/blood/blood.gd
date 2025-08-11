@@ -20,7 +20,7 @@ var collectible
 func alarm_0():
 	if (global.graphics_high):
 
-		if (gml.instance_number("blood_trail") < 12): gml.instance_create(position.x, position.y, Objects.blood_trail)
+		if (gml.instance_number("blood_trail") < 12): gml.instance_create(position.x, position.y, Objects.blood_trail, self)
 		alarm_0_countdown.start(4)
 
 

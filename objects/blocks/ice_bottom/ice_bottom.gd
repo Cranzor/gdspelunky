@@ -17,7 +17,7 @@ func _process(delta):
 
 
 func alarm_0():
-	gml.instance_create(position.x+8, position.y+4, Objects.drip)
+	gml.instance_create(position.x+8, position.y+4, Objects.drip, self)
 	alarm_0_countdown.start(randi_range(20,400))
 	
 

@@ -147,7 +147,7 @@ func step():
 		#/*
 		#if (x_vel == 0 and y_vel == 0):
 	#
-			#gml.instance_create(position.x, position.y, Objects.boulder_static)
+			#gml.instance_create(position.x, position.y, Objects.boulder_static, self)
 			#gml.instance_destroy(self)
 	#
 		#*/

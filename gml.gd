@@ -152,14 +152,17 @@ func instance_exists(obj: String) -> bool: #--- FLAG. if enforcing this as a str
 		return true
 
 #-----------------------Have to work on
-func instance_create(x,y,obj,run_create = true) -> GMObject: #---[FLAG] make this so that obj is forced to be type GMObject
+func instance_create(x,y,obj,calling_object: GMObject = null,run_create = true) -> GMObject: #---[FLAG] make this so that obj is forced to be type GMObject
 	if obj is String:
 		if obj == "blood":
 			print("hi")
 		assert(obj is String, "String was passed into instance_create")
 		obj = load(obj)
-	var instance = obj.instantiate()
+	var instance: GMObject = obj.instantiate()
 	instance.position = Vector2(x, y)
+	if calling_object: #--- for collision purposes, getting collision data of the calling object so that newly instantiated objects check for collisions the same frame they are created
+		instance.objects_in_bb = calling_object.objects_in_bb
+		instance.groups_in_bb = calling_object.groups_in_bb
 	var objects_holder = get_tree().get_first_node_in_group("objects_holder")
 	objects_holder.add_child(instance)
 	

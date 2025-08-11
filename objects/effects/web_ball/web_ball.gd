@@ -21,14 +21,14 @@ func alarm_0():
 
 
 func alarm_1():
-	if (gml.instance_number("yellow_trail") < 12): gml.instance_create(position.x, position.y, Objects.yellow_trail)
+	if (gml.instance_number("yellow_trail") < 12): gml.instance_create(position.x, position.y, Objects.yellow_trail, self)
 	alarm_1_countdown.start(4)
 
 
 func animation_end():
 	if (sprite_index == "web_create"):
 
-		var obj = gml.instance_create(position.x-8, position.y-8, Objects.web)
+		var obj = gml.instance_create(position.x-8, position.y-8, Objects.web, self)
 		obj.dying = true
 		gml.instance_destroy(self)
 	

@@ -40,7 +40,7 @@ func collision_with_character():
 			other.y_vel=-6-0.2*other.y_vel
 			if (global.has_spike_shoes):
 				hp -= (3 * (floor(other.fall_timer/16)+1))
-				if (not bloodless): gml.instance_create(other.position.x, other.position.y+8, Objects.blood)
+				if (not bloodless): gml.instance_create(other.position.x, other.position.y+8, Objects.blood, self)
 			else: hp -= (1 * (floor(other.fall_timer/16)+1))
 			other.fall_timer = 0
 			counts_as_kill = true
@@ -65,7 +65,7 @@ func collision_with_character():
 				other.x_vel = -6
 			else:
 				other.x_vel = 6
-			gml.instance_create(other.position.x, other.position.y, Objects.blood)
+			gml.instance_create(other.position.x, other.position.y, Objects.blood, self)
 	
 			if (global.plife > 0): global.plife -= 1
 			Audio.play_sound(global.snd_hurt)
@@ -174,7 +174,7 @@ func step(): # one of seven scripts which uses 'other' outside of collision_with
 
 			if (gml.collision_point(position.x+8, position.y+12, "solid", 0, 0, self)):
 		
-				gml.instance_create(position.x+8, position.y+8, Objects.smoke_puff)
+				gml.instance_create(position.x+8, position.y+8, Objects.smoke_puff, self)
 				Audio.play_sound(global.snd_caveman_die)
 				gml.instance_destroy(self)
 		
@@ -183,7 +183,7 @@ func step(): # one of seven scripts which uses 'other' outside of collision_with
 
 			if (gml.collision_point(position.x+8, position.y+8, "solid", 0, 0, self)):
 		
-				gml.instance_create(position.x+8, position.y+8, Objects.smoke_puff)
+				gml.instance_create(position.x+8, position.y+8, Objects.smoke_puff, self)
 				Audio.play_sound(global.snd_caveman_die)
 				gml.instance_destroy(self)
 		
@@ -199,7 +199,7 @@ func step(): # one of seven scripts which uses 'other' outside of collision_with
 
 		if (burning > 0):
 
-			if (gml.rand(1,5) == 1): gml.instance_create(position.x+gml.rand(4,12), position.y+gml.rand(4,12), Objects.burn)
+			if (gml.rand(1,5) == 1): gml.instance_create(position.x+gml.rand(4,12), position.y+gml.rand(4,12), Objects.burn, self)
 			burning -= 1
 
 		var player1 = gml.get_instance("player1") #---[FLAG] may have to change this for multiplayer
@@ -396,9 +396,9 @@ func step(): # one of seven scripts which uses 'other' outside of collision_with
 
 			for repetition in range(3):
 		
-				gml.instance_create(other.position.x+8, other.position.y+8, Objects.bone)
+				gml.instance_create(other.position.x+8, other.position.y+8, Objects.bone, self)
 		
-			var obj = gml.instance_create(other.position.x+8, other.position.y+8, Objects.skull)
+			var obj = gml.instance_create(other.position.x+8, other.position.y+8, Objects.skull, self)
 			obj.y_vel = -gml.rand(1,3)
 			obj.x_vel = gml.rand(0,3)-gml.rand(0,3)
 			if (counts_as_kill):
@@ -408,7 +408,7 @@ func step(): # one of seven scripts which uses 'other' outside of collision_with
 				global.kills += 1
 		
 			Audio.play_sound(global.snd_caveman_die)
-			obj = gml.instance_create(position.x+8, position.y+8, Objects.cape_pickup)
+			obj = gml.instance_create(position.x+8, position.y+8, Objects.cape_pickup, self)
 			obj.cost = 0
 			obj.for_sale = false
 			gml.instance_destroy(self)

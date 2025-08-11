@@ -52,7 +52,7 @@ func step():
 				position.x -= 8
 				x_velocity = -8
 		
-		gml.instance_create(position.x, position.y, Objects.rope_top)
+		gml.instance_create(position.x, position.y, Objects.rope_top, self)
 		armed = false
 		falling = true
 		x_vel = 0
@@ -73,4 +73,4 @@ func step():
 			y_velocity = -8
 			gml.instance_destroy(self)
 		
-		else: gml.instance_create(position.x-8, position.y, Objects.rope)
+		else: gml.instance_create(position.x-8, position.y, Objects.rope, self)

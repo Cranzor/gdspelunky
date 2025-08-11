@@ -46,11 +46,11 @@ func collision_with_character():
 		other.y_vel = -6 - 0.2 * other.y_vel
 		if (global.has_spike_shoes):
 			hp -= (3 * ceil(other.fall_timer/16))
-			gml.instance_create(other.position.x, other.position.y+8, Objects.blood)
+			gml.instance_create(other.position.x, other.position.y+8, Objects.blood, self)
 		else: hp -= (1 * ceil(other.fall_timer/16))
 		other.fall_timer = 0
 		counts_as_kill = true
-		gml.instance_create(position.x+16, position.y+8, Objects.blood)
+		gml.instance_create(position.x+16, position.y+8, Objects.blood, self)
 		Audio.play_sound(global.snd_hit)
 
 	elif (other.invincible == 0):
@@ -155,21 +155,21 @@ func step():
 			MiscScripts.scr_create_blood(position.x+14+gml.rand(0,4), position.y+14+gml.rand(0,4), 3, self)
 			for repetition in range(4):
 		
-				gml.instance_create(position.x+14+gml.rand(0,4), position.y+14+gml.rand(0,6), Objects.bone)
+				gml.instance_create(position.x+14+gml.rand(0,4), position.y+14+gml.rand(0,6), Objects.bone, self)
 		
 			for repetition in range(4):
 				
 				var obj
 				if (gml.rand(1,12) == 1):
 			
-					obj = gml.instance_create(position.x+16, position.y+16, Objects.spike_shoes)
+					obj = gml.instance_create(position.x+16, position.y+16, Objects.spike_shoes, self)
 					obj.cost = 0
 					obj.for_sale = false
 			
-				elif (gml.rand(1,2) == 1): obj = gml.instance_create(position.x+16, position.y+16, Objects.sapphire_big)
+				elif (gml.rand(1,2) == 1): obj = gml.instance_create(position.x+16, position.y+16, Objects.sapphire_big, self)
 				else:
 			
-					obj = gml.instance_create(position.x+16, position.y+16, Objects.rope_pile)
+					obj = gml.instance_create(position.x+16, position.y+16, Objects.rope_pile, self)
 					obj.cost = 0
 					obj.for_sale = false
 			
@@ -262,7 +262,7 @@ func step():
 							abs((yeti_king.position.x+16)-(ice_instance.position.x+8)) > 16 and
 							gml.point_distance(ice_instance.position.x, ice_instance.position.y, yeti_king.position.x, yeti_king.position.y) < 96):
 					
-							gml.instance_create(ice_instance.position.x, ice_instance.position.y, Objects.ice_block)
+							gml.instance_create(ice_instance.position.x, ice_instance.position.y, Objects.ice_block, self)
 							gml.instance_destroy(ice_instance)
 					
 				

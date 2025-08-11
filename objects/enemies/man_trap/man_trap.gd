@@ -55,7 +55,7 @@ func collision_with_character():
 		other.y_vel=-6-0.2*other.y_vel
 		if (global.has_spike_shoes):
 			hp -= (3 * (floor(other.fall_timer/16)+1))
-			if (not bloodless): gml.instance_create(other.position.x, other.position.y+8, Objects.blood)
+			if (not bloodless): gml.instance_create(other.position.x, other.position.y+8, Objects.blood, self)
 		else: hp -= (1 * (floor(other.fall_timer/16)+1))
 		other.fall_timer = 0
 		counts_as_kill = true
@@ -139,7 +139,7 @@ func collision_with_shopkeeper():
 	
 		if (other.has_gun):
 	
-			var obj = gml.instance_create(other.position.x+8, other.position.y+8, Objects.shotgun)
+			var obj = gml.instance_create(other.position.x+8, other.position.y+8, Objects.shotgun, self)
 			obj.y_vel = gml.rand(4,6)
 			if (other.x_vel < 0): obj.x_vel = -1 * gml.rand(4,6)
 			else: obj.x_vel = gml.rand(4,6)
@@ -168,7 +168,7 @@ func collision_with_whip():
 		if (other.position.x < (position.x+8)): x_vel = 2
 		else: x_vel = -2
 		image_speed = 0.5
-		gml.instance_create(position.x+gml.rand(0,16), position.y-8+gml.rand(0,16), Objects.leaf)
+		gml.instance_create(position.x+gml.rand(0,16), position.y-8+gml.rand(0,16), Objects.leaf, self)
 		Audio.play_sound(global.snd_hit)
 
 
@@ -190,7 +190,7 @@ func collision_with_whip_pre():
 		if (other.position.x < (position.x+8)): x_vel = 2
 		else: x_vel = -2
 		image_speed = 0.5
-		gml.instance_create(position.x+gml.rand(0,16), position.y-8+gml.rand(0,16), Objects.leaf)
+		gml.instance_create(position.x+gml.rand(0,16), position.y-8+gml.rand(0,16), Objects.leaf, self)
 		Audio.play_sound(global.snd_hit)
 
 
@@ -263,14 +263,14 @@ func step():
 				global.mantraps += 1
 				global.kills += 1
 		
-			for repetition in range(3):  gml.instance_create(position.x+gml.rand(0,16), position.y-8+gml.rand(0,16), Objects.leaf)
+			for repetition in range(3):  gml.instance_create(position.x+gml.rand(0,16), position.y-8+gml.rand(0,16), Objects.leaf, self)
 			MiscScripts.scr_create_blood(position.x+8, position.y+8, 1, self)
 			if (ate_shopkeeper):
 		
-				var obj = gml.instance_create(position.x, position.y, Objects.shopkeeper)
+				var obj = gml.instance_create(position.x, position.y, Objects.shopkeeper, self)
 				obj.status = 2
 				obj.has_gun = false
-				for repetition in range(3):  gml.instance_create(position.x+gml.rand(0,16), position.y-8+gml.rand(0,16), Objects.leaf)
+				for repetition in range(3):  gml.instance_create(position.x+gml.rand(0,16), position.y-8+gml.rand(0,16), Objects.leaf, self)
 				MiscScripts.scr_create_blood(position.x+8, position.y+8, 1, self)
 				Audio.play_sound(global.snd_small_explode)
 		
@@ -348,10 +348,10 @@ func step():
 			
 					if (ate_shopkeeper):
 				
-						var obj = gml.instance_create(position.x, position.y, Objects.shopkeeper)
+						var obj = gml.instance_create(position.x, position.y, Objects.shopkeeper, self)
 						obj.status = 2
 						obj.has_gun = false
-						for repetition in range(3):  gml.instance_create(position.x+gml.rand(0,16), position.y-8+gml.rand(0,16), Objects.leaf)
+						for repetition in range(3):  gml.instance_create(position.x+gml.rand(0,16), position.y-8+gml.rand(0,16), Objects.leaf, self)
 						MiscScripts.scr_create_blood(position.x+8, position.y+8, 1, self)
 						Audio.play_sound(global.snd_small_explode)
 						gml.instance_destroy(self)
@@ -399,12 +399,12 @@ func step():
 
 			if (facing == LEFT):
 		
-				var bone = gml.instance_create(position.x+2, position.y+4, Objects.bone)
+				var bone = gml.instance_create(position.x+2, position.y+4, Objects.bone, self)
 				bone.x_vel = -2
 		
 			else:
 		
-				var bone = gml.instance_create(position.x+14, position.y+4, Objects.bone)
+				var bone = gml.instance_create(position.x+14, position.y+4, Objects.bone, self)
 				bone.x_vel = 2
 		
 

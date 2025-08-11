@@ -152,7 +152,7 @@ func step():
 
 			if (not swimming):
 		
-				gml.instance_create(position.x+8, position.y, Objects.splash)
+				gml.instance_create(position.x+8, position.y, Objects.splash, self)
 				swimming = true
 				Audio.play_sound(global.snd_splash)
 		
@@ -366,7 +366,7 @@ func step():
 			
 					# DY:  throw out money
 					global.money -= n
-					var obj = gml.instance_create(position.x, position.y, Objects.gold_nugget)
+					var obj = gml.instance_create(position.x, position.y, Objects.gold_nugget, self)
 				
 					obj.can_collect = false
 					obj.alarm_0_countdown.start(20)
@@ -379,7 +379,7 @@ func step():
 			
 					# DY:  throw out rope
 					global.rope -= 1
-					var obj = gml.instance_create(position.x, position.y, Objects.rope_throw)
+					var obj = gml.instance_create(position.x, position.y, Objects.rope_throw, self)
 				
 					obj.x_vel = gml.rand(1,3)-gml.rand(1,3)
 					obj.y_vel = -gml.rand(3,4)
@@ -390,7 +390,7 @@ func step():
 			
 					# DY:  throw out bomb
 					global.bombs -= 1
-					var obj = gml.instance_create(position.x, position.y, Objects.bomb)
+					var obj = gml.instance_create(position.x, position.y, Objects.bomb, self)
 					if (gml.rand(1,10) == 1):
 				
 						obj.sprite_index = "bomb_armed"

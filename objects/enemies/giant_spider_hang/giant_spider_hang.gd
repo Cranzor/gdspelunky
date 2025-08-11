@@ -44,8 +44,8 @@ func create():
 	shake_counter = 0
 	shake_toggle = 1
 
-	gml.instance_create(position.x, position.y+16, Objects.web)
-	gml.instance_create(position.x+16, position.y+16, Objects.web)
+	gml.instance_create(position.x, position.y+16, Objects.web, self)
+	gml.instance_create(position.x+16, position.y+16, Objects.web, self)
 
 
 func step():
@@ -66,14 +66,14 @@ func step():
 				var gem
 				match (n):
 			
-					1:  gem = gml.instance_create(position.x+16, position.y+24, Objects.emerald_big)
-					2:  gem = gml.instance_create(position.x+16, position.y+24, Objects.sapphire_big)
-					3:  gem = gml.instance_create(position.x+16, position.y+24, Objects.ruby_big)
+					1:  gem = gml.instance_create(position.x+16, position.y+24, Objects.emerald_big, self)
+					2:  gem = gml.instance_create(position.x+16, position.y+24, Objects.sapphire_big, self)
+					3:  gem = gml.instance_create(position.x+16, position.y+24, Objects.ruby_big, self)
 			
 				gem.x_vel = gml.rand(0,3) - gml.rand(0,3)
 				gem.y_vel = -2
 		
-			var obj = gml.instance_create(position.x+16, position.y+24, Objects.paste)
+			var obj = gml.instance_create(position.x+16, position.y+24, Objects.paste, self)
 			obj.cost = 0
 			obj.for_sale = false
 			MiscScripts.scr_create_blood(position.x+16, position.y+24, 4, self)
@@ -87,6 +87,6 @@ func step():
 
 		elif (hp < 10 or not gml.collision_point(position.x, position.y-16, "solid", 0, 0) or (dist < 90 and character.position.y > position.y and abs(character.position.x - (position.x+16)) < 8)):
 
-			var spider = gml.instance_create(position.x, position.y, Objects.giant_spider)
+			var spider = gml.instance_create(position.x, position.y, Objects.giant_spider, self)
 			spider.hp = hp
 			gml.instance_destroy(self)

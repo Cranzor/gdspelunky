@@ -17,7 +17,7 @@ func _process(delta):
 
 
 func alarm_0():
-	gml.instance_create(position.x+randi_range(0,3)-randi_range(0,3), position.y-4+randi_range(0,3)-randi_range(0,3), Objects.flare_spark)
+	gml.instance_create(position.x+randi_range(0,3)-randi_range(0,3), position.y-4+randi_range(0,3)-randi_range(0,3), Objects.flare_spark, self)
 	alarm_0_countdown.start(2)
 
 
@@ -45,7 +45,7 @@ func step():
 	# main_code
 	if (gml.collision_point(position.x, position.y, "water", -1, -1)):
 
-		gml.instance_create(position.x, position.y, Objects.splash)
+		gml.instance_create(position.x, position.y, Objects.splash, self)
 		Audio.play_sound(global.snd_splash)
 		if (held):
 			var player1 = gml.get_instance("player1") #---[FLAG] may need to adjust for multiplayer
@@ -54,5 +54,5 @@ func step():
 		
 			held = false
 	
-		gml.instance_create(position.x, position.y, Objects.poof)
+		gml.instance_create(position.x, position.y, Objects.poof, self)
 		gml.instance_destroy(self)

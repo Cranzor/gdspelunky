@@ -30,10 +30,10 @@ func step():
 		door_open = true
 		var obj = gml.instance_place(640, 544, "entrance", self) #---[FLAG] don't see how this works when final_boss has no sprite/collision?
 		gml.instance_destroy(obj)
-		gml.instance_create(640, 544, Objects.x_end)
+		gml.instance_create(640, 544, Objects.x_end, self)
 		if (not gml.collision_point(640, 560, "solid", 0, 0)):
 	
-			var brick = gml.instance_create(640, 560, Objects.temple)
+			var brick = gml.instance_create(640, 560, Objects.temple, self)
 			brick.invincible = true
 	
 		else:

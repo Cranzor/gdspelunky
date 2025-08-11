@@ -17,14 +17,14 @@ func _process(delta):
 
 
 func alarm_0():
-	gml.instance_create(position.x, position.y, Objects.magma_trail)
+	gml.instance_create(position.x, position.y, Objects.magma_trail, self)
 	alarm_0_countdown.start(2)
 	
 
 func animation_end():
 	if (dying):
 
-		var magma = gml.instance_create(position.x-8, position.y-8, Objects.magma_man)
+		var magma = gml.instance_create(position.x-8, position.y-8, Objects.magma_man, self)
 		magma.hp = hp
 		gml.instance_destroy(self)
 	
@@ -42,7 +42,7 @@ func collision_with_character():
 			other.x_vel = -6
 		else:
 			other.x_vel = 6
-		gml.instance_create(other.position.x, other.position.y, Objects.blood)
+		gml.instance_create(other.position.x, other.position.y, Objects.blood, self)
 	
 		if (global.plife > 0): global.plife -= 2
 		Audio.play_sound(global.snd_hurt)
@@ -66,7 +66,7 @@ func collision_with_enemy():
 	
 
 func collision_with_water():
-	gml.instance_create(position.x, position.y, Objects.smoke_puff)
+	gml.instance_create(position.x, position.y, Objects.smoke_puff, self)
 	gml.instance_destroy(self)
 
 

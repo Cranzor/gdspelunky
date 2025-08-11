@@ -41,7 +41,7 @@ func collision_with_character():
 			other.y_vel=-6-0.2*other.y_vel
 			if (global.has_spike_shoes):
 				hp -= (3 * (floor(other.fall_timer/16)+1))
-				if (not bloodless): gml.instance_create(other.position.x, other.position.y+8, Objects.blood)
+				if (not bloodless): gml.instance_create(other.position.x, other.position.y+8, Objects.blood, self)
 			else: hp -= (1 * (floor(other.fall_timer/16)+1))
 			other.fall_timer = 0
 			counts_as_kill = true
@@ -63,7 +63,7 @@ func collision_with_character():
 					other.x_vel = -6
 				else:
 					other.x_vel = 6
-				gml.instance_create(other.position.x, other.position.y, Objects.blood)
+				gml.instance_create(other.position.x, other.position.y, Objects.blood, self)
 		
 				if (global.plife > 0):
 			
@@ -257,7 +257,7 @@ func step():
 			if (sight_counter > 0): sight_counter -= 1
 			else:
 		
-				var sight = gml.instance_create(position.x, position.y, Objects.enemy_sight)
+				var sight = gml.instance_create(position.x, position.y, Objects.enemy_sight, self)
 				if (facing == LEFT): sight.direction = 180
 				else: sight.direction = 0
 				sight.speed = 10
@@ -304,7 +304,7 @@ func step():
 			if (sight_counter > 0): sight_counter -= 1
 			else:
 		
-				var sight = gml.instance_create(position.x, position.y, Objects.enemy_sight)
+				var sight = gml.instance_create(position.x, position.y, Objects.enemy_sight, self)
 				if (facing == LEFT): sight.direction = 180
 				else: sight.direction = 0
 				sight.speed = 10

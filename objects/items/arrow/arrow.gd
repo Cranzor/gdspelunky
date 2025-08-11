@@ -17,7 +17,7 @@ func _process(delta):
 
 
 func alarm_1():
-	gml.instance_create(position.x, position.y, Objects.explosion)
+	gml.instance_create(position.x, position.y, Objects.explosion, self)
 	if (global.graphics_high):
 
 		MiscScripts.scr_create_flame(position.x, position.y, 3)

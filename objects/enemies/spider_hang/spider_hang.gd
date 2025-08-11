@@ -65,6 +65,6 @@ func step():
 
 		elif (not gml.collision_point(position.x, position.y-16, "solid", 0, 0) or (dist < 90 and character.position.y > position.y and abs(character.position.x - (position.x+8)) < 8)):
 
-			var spider = gml.instance_create(position.x, position.y, Objects.spider)
+			var spider = gml.instance_create(position.x, position.y, Objects.spider, self)
 			spider.hp = hp
 			gml.instance_destroy(self)

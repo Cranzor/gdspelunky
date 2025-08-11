@@ -19,19 +19,19 @@ func _process(delta):
 
 
 func alarm_0():
-	gml.instance_create(320, 144, Objects.camel)
+	gml.instance_create(320, 144, Objects.camel, self)
 
 
 func alarm_1():
 	if (scrolling):
 
-		if (gml.rand(1,8) == 1): gml.instance_create(-16, 176, Objects.shrub_scroll)
-		elif (gml.rand(1,12) == 1): gml.instance_create(-32, 176-112, Objects.palm_tree_scroll)
+		if (gml.rand(1,8) == 1): gml.instance_create(-16, 176, Objects.shrub_scroll, self)
+		elif (gml.rand(1,12) == 1): gml.instance_create(-32, 176-112, Objects.palm_tree_scroll, self)
 
-		gml.instance_create(-16, 176, Objects.desert_top_scroll)
-		gml.instance_create(-16, 192, Objects.desert_scroll2)
-		gml.instance_create(-16, 208, Objects.desert_scroll)
-		gml.instance_create(-16, 224, Objects.desert_scroll)
+		gml.instance_create(-16, 176, Objects.desert_top_scroll, self)
+		gml.instance_create(-16, 192, Objects.desert_scroll2, self)
+		gml.instance_create(-16, 208, Objects.desert_scroll, self)
+		gml.instance_create(-16, 224, Objects.desert_scroll, self)
 		
 		var all_desert_scrolls = gml.get_all_instances("desert_scroll")
 		for desert_scroll_instance in all_desert_scrolls:
@@ -128,7 +128,7 @@ func create():
 	fade_out = false
 	fade_level = 1
 
-	gml.instance_create(-120, 112, Objects.intro_bg)
+	gml.instance_create(-120, 112, Objects.intro_bg, self)
 	# DY:  alarm_0_countdown.start(20)
 
 	draw_status = 0

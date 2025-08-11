@@ -171,5 +171,5 @@ func step():
 		alarm_1_countdown.start(30)
 		x_vel = 0
 		y_vel = 0.2
-		gml.instance_create(position.x+8, position.y, Objects.splash)
+		gml.instance_create(position.x+8, position.y, Objects.splash, self)
 		Audio.play_sound(global.snd_splash)

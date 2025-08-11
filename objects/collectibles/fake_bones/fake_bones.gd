@@ -19,7 +19,7 @@ func _process(delta):
 func animation_end():
 	if (sprite_index == "skeleton_create_l"):
 
-		gml.instance_create(position.x, position.y, Objects.skeleton)
+		gml.instance_create(position.x, position.y, Objects.skeleton, self)
 		gml.instance_destroy(self)
 
 

@@ -40,9 +40,9 @@ func create():
 
 
 func destroy():
-		var rubble = gml.instance_create(position.x+8+randi_range(0,4)-randi_range(0,4), position.y+8+randi_range(0,8)-randi_range(0,8), Objects.rubble_small)
+		var rubble = gml.instance_create(position.x+8+randi_range(0,4)-randi_range(0,4), position.y+8+randi_range(0,8)-randi_range(0,8), Objects.rubble_small, self)
 		rubble.sprite_index = "rubble_tan_small"
-		rubble = gml.instance_create(position.x+8+randi_range(0,4)-randi_range(0,4), position.y+8+randi_range(0,8)-randi_range(0,8), Objects.rubble_small)
+		rubble = gml.instance_create(position.x+8+randi_range(0,4)-randi_range(0,4), position.y+8+randi_range(0,8)-randi_range(0,8), Objects.rubble_small, self)
 		rubble.sprite_index = "rubble_tan_small"
 
 

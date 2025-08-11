@@ -17,7 +17,7 @@ func _process(delta):
 
 
 func alarm_0():
-	gml.instance_create(position.x, position.y, Objects.laser_trail)
+	gml.instance_create(position.x, position.y, Objects.laser_trail, self)
 	alarm_0_countdown.start(1)
 
 
@@ -30,7 +30,7 @@ func collision_with_damsel():
 		other.y_vel = -6
 		status = 2
 
-		gml.instance_create(position.x, position.y, Objects.laser_explode)
+		gml.instance_create(position.x, position.y, Objects.laser_explode, self)
 		gml.instance_destroy(self)
 	
 
@@ -41,7 +41,7 @@ func collision_with_enemy():
 		other.x_vel = gml.rand(0,2)-gml.rand(1,2)
 		other.x_vel = -1
 		other.y_vel = -6
-		gml.instance_create(position.x, position.y, Objects.laser_explode)
+		gml.instance_create(position.x, position.y, Objects.laser_explode, self)
 		# DY:  global.check_water = true
 		gml.instance_destroy(self)
 
@@ -67,7 +67,7 @@ func collision_with_solid():
 	if (tile): gml.tile_delete(tile)
 
 
-	gml.instance_create(position.x, position.y, Objects.laser_explode)
+	gml.instance_create(position.x, position.y, Objects.laser_explode, self)
 	# DY:  global.check_water = true
 	gml.instance_destroy(self)
 

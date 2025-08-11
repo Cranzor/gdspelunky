@@ -798,22 +798,18 @@ func handle_enemy_sight(parent_object: GMObject) -> void:
 
 var objects_in_bb: Array
 var groups_in_bb: Array
-
+var first_time_entered: bool = true
 
 func _bounding_box_entered(area: Area2D):
+	if first_time_entered: #--- clearing arrays out the first time because instantiated objects take these values from their parents the first frame
+		objects_in_bb.clear()
+		groups_in_bb.clear()
+		first_time_entered = false
 	var parent: GMObject = area.get_parent()
 	var groups: Array = parent.get_groups()
 	objects_in_bb.append(area.get_parent())
 	groups_in_bb.append_array(groups)
-	#if object_name == "player1":
-		#print(area.get_parent().object_name + " entered")
-		#print(str(objects_in_bb.size()) + " overlapping")
-		#print("---")
 
 
 func _bounding_box_exited(area: Area2D):
 	objects_in_bb.erase(area.get_parent()) #TODO: erase groups from array when object leaves
-	#if object_name == "player1":
-		#print(area.get_parent().object_name + " exited")
-		#print(str(objects_in_bb.size()) + " overlapping")
-		#print("---")

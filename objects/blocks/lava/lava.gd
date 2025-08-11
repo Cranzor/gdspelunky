@@ -31,11 +31,11 @@ func create():
 func destroy():
 	for i in range(0, 3):
 
-		gml.instance_create(position.x+gml.rand(0,16), position.y+gml.rand(0,16), Objects.lava_drip)
+		gml.instance_create(position.x+gml.rand(0,16), position.y+gml.rand(0,16), Objects.lava_drip, self)
 
 	if (gml.rand(1,6) == 1):
 
-		var flame = gml.instance_create(position.x+8, position.y+8, Objects.flame)
+		var flame = gml.instance_create(position.x+8, position.y+8, Objects.flame, self)
 		flame.y_vel = 4
 
 
@@ -52,6 +52,6 @@ func step():
 	
 			spurt_counter = spurt_time
 			var flame
-			if (gml.rand(1,8) == 1): flame = gml.instance_create(position.x+8, position.y-4, Objects.magma)
-			else: flame = gml.instance_create(position.x+8, position.y-4, Objects.flame)
+			if (gml.rand(1,8) == 1): flame = gml.instance_create(position.x+8, position.y-4, Objects.magma, self)
+			else: flame = gml.instance_create(position.x+8, position.y-4, Objects.flame, self)
 			flame.y_vel = -gml.rand(1,4)

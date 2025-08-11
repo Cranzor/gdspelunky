@@ -20,7 +20,7 @@ func _process(delta):
 func destroy():
 	if (not global.clean_solids):
 
-		var enemy = gml.instance_create(position.x, position.y, Objects.caveman)
+		var enemy = gml.instance_create(position.x, position.y, Objects.caveman, self)
 		enemy.invincible = 20
 		enemy.status = 98
 		enemy.counter = enemy.stun_time

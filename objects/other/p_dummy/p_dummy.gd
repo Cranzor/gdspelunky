@@ -29,7 +29,7 @@ func alarm_0():
 func alarm_1():
 	var big_chest = gml.get_instance("big_chest") #---[FLAG] check to make sure there is only one instance
 	big_chest.sprite_index = "big_chest_open"
-	var treasure = gml.instance_create(big_chest.position.x, big_chest.position.y, Objects.big_treasure)
+	var treasure = gml.instance_create(big_chest.position.x, big_chest.position.y, Objects.big_treasure, self)
 	treasure.y_vel = -4
 	treasure.x_vel = -3
 	Audio.play_sound(global.snd_click)
@@ -42,7 +42,7 @@ func alarm_2():
 
 func alarm_3():
 	var end_plat = gml.get_instance("end_plat") #---[FLAG] check to make sure there is only one instance
-	gml.instance_create(end_plat.position.x, end_plat.position.y+30, Objects.lava_spray)
+	gml.instance_create(end_plat.position.x, end_plat.position.y+30, Objects.lava_spray, self)
 	global.shake = 9999
 	alarm_4_countdown.start(10)
 
@@ -214,4 +214,4 @@ func step():
 
 	elif (status == LAVA+1):
 		var end_plat = gml.get_instance("end_plat") #---[FLAG] check to make sure there is only one instance
-		gml.instance_create(end_plat.position.x+gml.rand(0,80), 192+32, Objects.burn)
+		gml.instance_create(end_plat.position.x+gml.rand(0,80), 192+32, Objects.burn, self)

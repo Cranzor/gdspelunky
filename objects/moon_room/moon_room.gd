@@ -20,19 +20,19 @@ var baskets
 
 func alarm_0():
 	#/*
-	#gml.instance_create(n, 128, Objects.basket)
-	#gml.instance_create(n, 128, Objects.rim)
-	#gml.instance_create(n, 128, Objects.rim_deflect)
-	#obj = gml.instance_create(n+8, 128+8, Objects.poof)
+	#gml.instance_create(n, 128, Objects.basket, self)
+	#gml.instance_create(n, 128, Objects.rim, self)
+	#gml.instance_create(n, 128, Objects.rim_deflect, self)
+	#obj = gml.instance_create(n+8, 128+8, Objects.poof, self)
 	#obj.x_vel = -0.5
 	#obj.y_vel = -0.5
-	#obj = gml.instance_create(n+8, 128+8, Objects.poof)
+	#obj = gml.instance_create(n+8, 128+8, Objects.poof, self)
 	#obj.x_vel = 0.5
 	#obj.y_vel = -0.5
-	#obj = gml.instance_create(n+8, 128+8, Objects.poof)
+	#obj = gml.instance_create(n+8, 128+8, Objects.poof, self)
 	#obj.x_vel = 0.5
 	#obj.y_vel = 0.5
-	#obj = gml.instance_create(n+8, 128+8, Objects.poof)
+	#obj = gml.instance_create(n+8, 128+8, Objects.poof, self)
 	#obj.x_vel = -0.5
 	#obj.y_vel = 0.5
 	#*/
@@ -70,10 +70,10 @@ func alarm_11():
 		var all_bat_targets = gml.get_all_instances("bat_target")
 		for bat_target_instance in all_bat_targets:
  
-			var obj = gml.instance_create(bat_target_instance.position.x+8, bat_target_instance.position.y, Objects.poof)
+			var obj = gml.instance_create(bat_target_instance.position.x+8, bat_target_instance.position.y, Objects.poof, self)
 			obj.x_vel = 0
 			obj.y_vel = -1
-			obj = gml.instance_create(bat_target_instance.position.x+8, bat_target_instance.position.y, Objects.poof)
+			obj = gml.instance_create(bat_target_instance.position.x+8, bat_target_instance.position.y, Objects.poof, self)
 			obj.x_vel = 0
 			obj.y_vel = 1
 		
@@ -82,7 +82,7 @@ func alarm_11():
 		var all_entrances = gml.get_all_instances("entrance") #--- should only be one but grabbing all just in case
 		for entrance_instance in all_entrances:
 	
-			gml.instance_create(entrance_instance.position.x, entrance_instance.position.y, Objects.x_scores)
+			gml.instance_create(entrance_instance.position.x, entrance_instance.position.y, Objects.x_scores, self)
 			gml.instance_destroy(entrance_instance)
 	
 		alarm_10_countdown.start(30)
@@ -99,16 +99,16 @@ func alarm_2():
 func alarm_3():
 	draw_status = 3
 	#/*
-	#obj = gml.instance_create(160, 0, Objects.poof)
+	#obj = gml.instance_create(160, 0, Objects.poof, self)
 	#obj.x_vel = 0
 	#obj.y_vel = -1
-	#obj = gml.instance_create(160, 0, Objects.poof)
+	#obj = gml.instance_create(160, 0, Objects.poof, self)
 	#obj.x_vel = 0
 	#obj.y_vel = 1
 	#*/
-	gml.instance_create(160, -16, Objects.bat_target)
-	gml.instance_create(208, -64, Objects.bat_target)
-	gml.instance_create(256, -128, Objects.bat_target)
+	gml.instance_create(160, -16, Objects.bat_target, self)
+	gml.instance_create(208, -64, Objects.bat_target, self)
+	gml.instance_create(256, -128, Objects.bat_target, self)
 
 
 func alarm_9():

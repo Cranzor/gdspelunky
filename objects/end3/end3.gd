@@ -19,7 +19,7 @@ func _process(delta):
 
 
 func alarm_0():
-	gml.instance_create(144, -32, Objects.p_dummy2)
+	gml.instance_create(144, -32, Objects.p_dummy2, self)
 	Audio.play_sound(global.snd_p_fall)
 
 	

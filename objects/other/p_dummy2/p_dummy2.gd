@@ -20,7 +20,7 @@ var JUMPING
 
 
 func alarm_0():
-	gml.instance_create(160, -32, Objects.big_treasure)
+	gml.instance_create(160, -32, Objects.big_treasure, self)
 	Audio.play_sound(global.snd_t_fall)
 
 
@@ -122,9 +122,9 @@ func step():
 			if (global.is_damsel): sprite_index = "damsel_stun_l"
 			elif (global.is_tunnel_man): sprite_index = "tunnel_stun_l"
 			else: sprite_index = "stun_l"
-			var poof = gml.instance_create(position.x-4, position.y+6, Objects.poof)
+			var poof = gml.instance_create(position.x-4, position.y+6, Objects.poof, self)
 			poof.x_vel = -0.4
-			poof = gml.instance_create(position.x+4, position.y+6, Objects.poof)
+			poof = gml.instance_create(position.x+4, position.y+6, Objects.poof, self)
 			poof.x_vel = 0.4
 			Audio.play_sound(global.snd_thud)
 	

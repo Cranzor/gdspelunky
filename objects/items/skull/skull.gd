@@ -43,11 +43,11 @@ func destroy():
 	if (break_pieces):
 
 		Audio.play_sound(global.snd_break)
-		gml.instance_create(position.x, position.y, Objects.smoke_puff)
+		gml.instance_create(position.x, position.y, Objects.smoke_puff, self)
 		
 		for i in gml.rand(1,2):
 	
-			var piece = gml.instance_create(position.x-2, position.y-2, Objects.bone)
+			var piece = gml.instance_create(position.x-2, position.y-2, Objects.bone, self)
 			if (col_left): piece.x_vel = gml.rand(1,3)
 			elif (col_right): piece.x_vel = -gml.rand(1,3)
 			else: piece.x_vel = gml.rand(1,3)-gml.rand(1,3)
@@ -154,10 +154,10 @@ func step():
 	
 			if (type == "bomb"):
 		
-				gml.instance_create(position.x, position.y, Objects.explosion)
+				gml.instance_create(position.x, position.y, Objects.explosion, self)
 				for i in range(0, 3):
 			
-					gml.instance_create(position.x, position.y, Objects.flame)
+					gml.instance_create(position.x, position.y, Objects.flame, self)
 			
 
 				Audio.play_sound(global.snd_explosion)
@@ -181,7 +181,7 @@ func step():
 				
 						for i in range(0, 1):
 					
-							gml.instance_create(enemy.position.x, enemy.position.y, Objects.blood)
+							gml.instance_create(enemy.position.x, enemy.position.y, Objects.blood, self)
 					
 				
 					enemy.status = STUNNED
@@ -192,7 +192,7 @@ func step():
 		
 			else:
 		
-				gml.instance_create(enemy.position.x+8, enemy.position.y+8, Objects.blood)
+				gml.instance_create(enemy.position.x+8, enemy.position.y+8, Objects.blood, self)
 				enemy.hp -= 1
 				enemy.orig_x = position.x
 				enemy.orig_y = position.y
@@ -216,7 +216,7 @@ func step():
 	
 			for i in range(0, 1):
 		
-				gml.instance_create(position.x, position.y, Objects.blood)
+				gml.instance_create(position.x, position.y, Objects.blood, self)
 	
 		if (enemy.held): enemy.held = false
 		var player1 = gml.get_instance("player1") #---[FLAG] may have to change this for multiplayer

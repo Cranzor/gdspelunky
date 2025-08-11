@@ -17,20 +17,20 @@ func _process(delta):
 
 
 func alarm_0():
-	var player = gml.instance_create(240, 132, Objects.player_sil)
+	var player = gml.instance_create(240, 132, Objects.player_sil, self)
 	# DY: player.x_vel = -6
 	# DY: player.y_vel = -8
 	alarm_1_countdown.start(30)
 	
 
 func alarm_1():
-	var player = gml.instance_create(240, 132, Objects.treasure_sil)
+	var player = gml.instance_create(240, 132, Objects.treasure_sil, self)
 	# DY: player.x_vel = -6
 	# DY: player.y_vel = -8
 
 
 func alarm_2():
-	gml.instance_create(224+randi_range(0,48), 144+randi_range(0,8), Objects.volcano_flame)
+	gml.instance_create(224+randi_range(0,48), 144+randi_range(0,8), Objects.volcano_flame, self)
 	alarm_2_countdown.start(randi_range(10,20))
 
 

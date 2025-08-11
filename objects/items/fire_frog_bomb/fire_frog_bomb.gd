@@ -17,7 +17,7 @@ func _process(delta):
 
 
 func alarm_1():
-	gml.instance_create(position.x, position.y, Objects.explosion)
+	gml.instance_create(position.x, position.y, Objects.explosion, self)
 	MiscScripts.scr_create_blood(position.x, position.y, 3, self)
 	if (global.graphics_high):
 
@@ -67,7 +67,7 @@ func step():
 
 		if (not swimming):
 	
-			gml.instance_create(position.x, position.y, Objects.splash)
+			gml.instance_create(position.x, position.y, Objects.splash, self)
 			swimming = true
 			Audio.play_sound(global.snd_splash)
 	

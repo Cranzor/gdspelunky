@@ -37,11 +37,11 @@ func collision_with_character():
 		other.y_vel = -6 - 0.2 * other.y_vel
 		if (global.has_spike_shoes): #---[FLAG] may want to double check this as the syntax is strange in GML
 			hp -= (3 * (floor(other.fall_timer/16)+1))
-			if (not bloodless): gml.instance_create(other.position.x, other.position.y+8, Objects.blood)
+			if (not bloodless): gml.instance_create(other.position.x, other.position.y+8, Objects.blood, self)
 		else: hp -= (1 * (floor(other.fall_timer/16)+1))
 		other.fall_timer = 0
 		counts_as_kill = true
-		gml.instance_create(position.x+16, position.y+8, Objects.blood)
+		gml.instance_create(position.x+16, position.y+8, Objects.blood, self)
 		Audio.play_sound(global.snd_hit)
 
 	elif (other.invincible == 0 and status != DEAD):
@@ -117,9 +117,9 @@ func step():
 				var gem
 				match (n):
 			
-					1:  gem = gml.instance_create(position.x+16, position.y+16, Objects.emerald_big)
-					2:  gem = gml.instance_create(position.x+16, position.y+16, Objects.sapphire_big)
-					3:  gem = gml.instance_create(position.x+16, position.y+16, Objects.ruby_big)
+					1:  gem = gml.instance_create(position.x+16, position.y+16, Objects.emerald_big, self)
+					2:  gem = gml.instance_create(position.x+16, position.y+16, Objects.sapphire_big, self)
+					3:  gem = gml.instance_create(position.x+16, position.y+16, Objects.ruby_big, self)
 			
 				gem.x_vel = gml.rand(0,3) - gml.rand(0,3)
 				gem.y_vel = -2
@@ -137,7 +137,7 @@ func step():
 			if (gml.rand(1,2) == 1):
 		
 				MiscScripts.scr_create_blood(position.x+8, position.y+gml.rand(14,18), 1, self)
-				var blood = gml.instance_create(position.x+8, position.y+gml.rand(14,18), Objects.blood)
+				var blood = gml.instance_create(position.x+8, position.y+gml.rand(14,18), Objects.blood, self)
 		
 
 
@@ -168,9 +168,9 @@ func step():
 
 			for i in range(0, 6):
 		
-				gml.instance_create(position.x+16+gml.rand(0,32)-gml.rand(0,32), position.y+16+gml.rand(0,32)-gml.rand(0,32), Objects.psychic_create)
+				gml.instance_create(position.x+16+gml.rand(0,32)-gml.rand(0,32), position.y+16+gml.rand(0,32)-gml.rand(0,32), Objects.psychic_create, self)
 		
-			gml.instance_create(position.x+16, position.y+16, Objects.psychic_wave)
+			gml.instance_create(position.x+16, position.y+16, Objects.psychic_wave, self)
 			psychic_recover = 100
 			Audio.play_sound(global.snd_psychic)
 

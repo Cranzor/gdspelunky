@@ -30,13 +30,13 @@ func create():
 	image_speed = 0.5
 	if (not gml.instance_exists("barrier")):
 
-		gml.instance_create(position.x, position.y+16, Objects.barrier)
+		gml.instance_create(position.x, position.y+16, Objects.barrier, self)
 	
 
 func destroy():
 	for repetition in range(6):
 
-		var obj = gml.instance_create(position.x+2+gml.rand(0,14), position.y+2+gml.rand(0,14), Objects.flare_spark)
+		var obj = gml.instance_create(position.x+2+gml.rand(0,14), position.y+2+gml.rand(0,14), Objects.flare_spark, self)
 		obj.y_vel = gml.rand(1,3)
 
 	InLevel.scr_shake(10)

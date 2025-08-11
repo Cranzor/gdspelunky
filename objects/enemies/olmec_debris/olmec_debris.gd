@@ -59,7 +59,7 @@ func step():
 			if (y_vel > 1): y_vel = -y_vel * 0.4
 			else:
 		
-				gml.instance_create(position.x, position.y, Objects.smoke_puff)
+				gml.instance_create(position.x, position.y, Objects.smoke_puff, self)
 				gml.instance_destroy(self)
 		
 		

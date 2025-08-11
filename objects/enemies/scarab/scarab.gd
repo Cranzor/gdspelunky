@@ -61,7 +61,7 @@ func create():
 func destroy(): # one of seven scripts which uses 'other' outside of collision_with
 	for repetition in range(3):
 
-		gml.instance_create(other.position.x+6+gml.rand(0,4), other.position.y+6+gml.rand(0,4), Objects.flare_spark)
+		gml.instance_create(other.position.x+6+gml.rand(0,4), other.position.y+6+gml.rand(0,4), Objects.flare_spark, self)
 	
 
 func step():
@@ -76,7 +76,7 @@ func step():
 
 			for repetition in range(3):
 		
-				var obj = gml.instance_create(position.x+2+gml.rand(0,14), position.y+2+gml.rand(0,14), Objects.flare_spark)
+				var obj = gml.instance_create(position.x+2+gml.rand(0,14), position.y+2+gml.rand(0,14), Objects.flare_spark, self)
 				obj.y_vel = gml.rand(1,3)
 		
 			gml.instance_destroy(self)

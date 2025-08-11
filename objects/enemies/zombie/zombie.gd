@@ -75,9 +75,9 @@ func step(): # one of seven scripts which uses 'other' outside of collision_with
 			MiscScripts.scr_create_blood(position.x+8, position.y+8, 1, self)
 			for repetition in range(3):
 		
-				gml.instance_create(other.position.x+8, other.position.y+8, Objects.bone)
+				gml.instance_create(other.position.x+8, other.position.y+8, Objects.bone, self)
 		
-			var skull = gml.instance_create(other.position.x+8, other.position.y+8, Objects.skull)
+			var skull = gml.instance_create(other.position.x+8, other.position.y+8, Objects.skull, self)
 			skull.y_vel = -gml.rand(1,3)
 			skull.x_vel = gml.rand(0,3)-gml.rand(0,3)
 			if (counts_as_kill):

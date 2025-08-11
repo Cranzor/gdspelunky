@@ -22,20 +22,20 @@ func collision_with_bullet():
 
 func collision_with_whip():
 	Audio.play_sound(global.snd_break)
-	gml.instance_create(position.x, position.y, Objects.smoke_puff)
+	gml.instance_create(position.x, position.y, Objects.smoke_puff, self)
 	for i in range(0, 3):
 
-		var piece = gml.instance_create(position.x-2, position.y-2, Objects.rubble_small)
+		var piece = gml.instance_create(position.x-2, position.y-2, Objects.rubble_small, self)
 		piece.x_vel = gml.rand(1,3)-gml.rand(1,3)
 
 	
-	if (gml.rand(1,3) == 1): gml.instance_create(position.x, position.y, Objects.gold_chunk)
-	elif (gml.rand(1,6) == 1): gml.instance_create(position.x, position.y, Objects.gold_nugget)
-	elif (gml.rand(1,12) == 1): gml.instance_create(position.x, position.y, Objects.emerald_big)
-	elif (gml.rand(1,12) == 1): gml.instance_create(position.x, position.y, Objects.sapphire_big)
-	elif (gml.rand(1,12) == 1): gml.instance_create(position.x, position.y, Objects.ruby_big)
-	elif (gml.rand(1,6) == 1): gml.instance_create(position.x-8, position.y-8, Objects.spider)
-	elif (gml.rand(1,12) == 1): gml.instance_create(position.x-8, position.y-8, Objects.snake)
+	if (gml.rand(1,3) == 1): gml.instance_create(position.x, position.y, Objects.gold_chunk, self)
+	elif (gml.rand(1,6) == 1): gml.instance_create(position.x, position.y, Objects.gold_nugget, self)
+	elif (gml.rand(1,12) == 1): gml.instance_create(position.x, position.y, Objects.emerald_big, self)
+	elif (gml.rand(1,12) == 1): gml.instance_create(position.x, position.y, Objects.sapphire_big, self)
+	elif (gml.rand(1,12) == 1): gml.instance_create(position.x, position.y, Objects.ruby_big, self)
+	elif (gml.rand(1,6) == 1): gml.instance_create(position.x-8, position.y-8, Objects.spider, self)
+	elif (gml.rand(1,12) == 1): gml.instance_create(position.x-8, position.y-8, Objects.snake, self)
 	if (held):
 		var player1 = gml.get_instance("player1") #---[FLAG] may need to change this for multiplayer
 		player1.hold_item = null
@@ -63,10 +63,10 @@ func destroy():
 	if (break_pieces):
 
 		Audio.play_sound(global.snd_break)
-		gml.instance_create(position.x, position.y, Objects.smoke_puff)
+		gml.instance_create(position.x, position.y, Objects.smoke_puff, self)
 		for i in range(0, 3):
 	
-			var piece = gml.instance_create(position.x-2, position.y-2, Objects.rubble_small)
+			var piece = gml.instance_create(position.x-2, position.y-2, Objects.rubble_small, self)
 			if (col_left): piece.x_vel = gml.rand(1,3)
 			elif (col_right): piece.x_vel = -gml.rand(1,3)
 			else: piece.x_vel = gml.rand(1,3)-gml.rand(1,3)
@@ -74,17 +74,17 @@ func destroy():
 			else: piece.y_vel = -gml.rand(0,3)
 	
 	
-		if (gml.rand(1,3) == 1): gml.instance_create(position.x, position.y, Objects.gold_chunk)
-		elif (gml.rand(1,6) == 1): gml.instance_create(position.x, position.y, Objects.gold_nugget)
-		elif (gml.rand(1,12) == 1): gml.instance_create(position.x, position.y, Objects.emerald_big)
-		elif (gml.rand(1,12) == 1): gml.instance_create(position.x, position.y, Objects.sapphire_big)
-		elif (gml.rand(1,12) == 1): gml.instance_create(position.x, position.y, Objects.ruby_big)
-		elif (gml.rand(1,6) == 1): gml.instance_create(position.x-8, position.y-8, Objects.spider)
+		if (gml.rand(1,3) == 1): gml.instance_create(position.x, position.y, Objects.gold_chunk, self)
+		elif (gml.rand(1,6) == 1): gml.instance_create(position.x, position.y, Objects.gold_nugget, self)
+		elif (gml.rand(1,12) == 1): gml.instance_create(position.x, position.y, Objects.emerald_big, self)
+		elif (gml.rand(1,12) == 1): gml.instance_create(position.x, position.y, Objects.sapphire_big, self)
+		elif (gml.rand(1,12) == 1): gml.instance_create(position.x, position.y, Objects.ruby_big, self)
+		elif (gml.rand(1,6) == 1): gml.instance_create(position.x-8, position.y-8, Objects.spider, self)
 		elif (gml.rand(1,12) == 1):
 	
-			if (col_left): gml.instance_create(position.x, position.y-8, Objects.snake)
-			elif (col_right): gml.instance_create(position.x-16, position.y-8, Objects.snake)
-			else: gml.instance_create(position.x-8, position.y-8, Objects.snake)
+			if (col_left): gml.instance_create(position.x, position.y-8, Objects.snake, self)
+			elif (col_right): gml.instance_create(position.x-16, position.y-8, Objects.snake, self)
+			else: gml.instance_create(position.x-8, position.y-8, Objects.snake, self)
 	
 	
 		if (held):
@@ -188,10 +188,10 @@ func step():
 	
 			if (type == "bomb"):
 		
-				gml.instance_create(position.x, position.y, Objects.explosion)
+				gml.instance_create(position.x, position.y, Objects.explosion, self)
 				for i in range(0, 3):
 			
-					gml.instance_create(position.x, position.y, Objects.flame)
+					gml.instance_create(position.x, position.y, Objects.flame, self)
 			
 
 				Audio.play_sound(global.snd_explosion)
@@ -215,7 +215,7 @@ func step():
 				
 						for i in 1:
 					
-							gml.instance_create(enemy.position.x, enemy.position.y, Objects.blood)
+							gml.instance_create(enemy.position.x, enemy.position.y, Objects.blood, self)
 					
 				
 					enemy.status = STUNNED
@@ -226,7 +226,7 @@ func step():
 		
 			else:
 		
-				gml.instance_create(enemy.position.x+8, enemy.position.y+8, Objects.blood)
+				gml.instance_create(enemy.position.x+8, enemy.position.y+8, Objects.blood, self)
 				enemy.hp -= 1
 				enemy.orig_x = position.x
 				enemy.orig_y = position.y
@@ -250,7 +250,7 @@ func step():
 	
 			for i in range(0, 1):
 		
-				gml.instance_create(position.x, position.y, Objects.blood)
+				gml.instance_create(position.x, position.y, Objects.blood, self)
 		
 	
 	

@@ -234,7 +234,7 @@ func step():
 
 			if (not swimming):
 		
-				gml.instance_create(position.x+floor(sprite_width/2), position.y, Objects.splash)
+				gml.instance_create(position.x+floor(sprite_width/2), position.y, Objects.splash, self)
 				swimming = true
 				Audio.play_sound(global.snd_splash)
 		
@@ -242,7 +242,7 @@ func step():
 		
 			if (type == "fire frog"):
 		
-				var obj = gml.instance_create(position.x, position.y, Objects.frog)
+				var obj = gml.instance_create(position.x, position.y, Objects.frog, self)
 				obj.status = status
 				gml.instance_destroy(self)
 		
@@ -255,7 +255,7 @@ func step():
 
 		if (burning > 0):
 
-			if (gml.rand(1,5) == 1): gml.instance_create(position.x+gml.rand(0,sprite_width), position.y+gml.rand(0,sprite_height), Objects.burn)
+			if (gml.rand(1,5) == 1): gml.instance_create(position.x+gml.rand(0,sprite_width), position.y+gml.rand(0,sprite_height), Objects.burn, self)
 			burning -= 1
 
 
@@ -336,7 +336,7 @@ func step():
 					if (sac_count > 0): sac_count -= 1
 					else:
 				
-						gml.instance_create(position.x+8, position.y+8, Objects.flame)
+						gml.instance_create(position.x+8, position.y+8, Objects.flame, self)
 						Audio.play_sound(global.snd_small_explode)
 						MiscScripts.scr_create_blood(position.x+8, position.y+8, 3, self)
 						global.message = "KALI ACCEPTS THE SACRIFICE!"
@@ -387,7 +387,7 @@ func step():
 							
 								elif (type == "mantrap"):
 							
-									gml.instance_create(obj.position.x+gml.rand(0,16), obj.position.y-8+gml.rand(0,16), Objects.leaf)
+									gml.instance_create(obj.position.x+gml.rand(0,16), obj.position.y-8+gml.rand(0,16), Objects.leaf, self)
 							
 								obj.hp -= 1
 								obj.status = STUNNED
@@ -440,9 +440,9 @@ func step():
 					
 						elif (obj.type == "ufo"):
 					
-							gml.instance_create(obj.position.x+8, obj.position.y+8, Objects.explosion)
+							gml.instance_create(obj.position.x+8, obj.position.y+8, Objects.explosion, self)
 							Audio.play_sound(global.snd_explosion)
-							if (gml.rand(1,3) == 1): gml.instance_create(obj.position.x+8, obj.position.y+8, Objects.alien_eject)
+							if (gml.rand(1,3) == 1): gml.instance_create(obj.position.x+8, obj.position.y+8, Objects.alien_eject, self)
 							global.ufos += 1
 							global.kills += 1
 							gml.instance_destroy(self)

@@ -64,7 +64,7 @@ func animation_end():
 			player1.pickup_item_type = ""
 			global.pickup_item = ""
 		
-			obj = gml.instance_create(position.x, position.y, Objects.mattock_head)
+			obj = gml.instance_create(position.x, position.y, Objects.mattock_head, self)
 			obj.y_vel = -2
 			Audio.play_sound(global.snd_mattock_break)
 			

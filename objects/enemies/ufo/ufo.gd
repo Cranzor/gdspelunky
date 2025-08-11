@@ -72,7 +72,7 @@ func step():
 
 		if (hp < 1):
 
-			gml.instance_create(position.x, position.y, Objects.ufo_crash)
+			gml.instance_create(position.x, position.y, Objects.ufo_crash, self)
 			if (counts_as_kill):
 		
 				if (InLevel.is_real_level()): global.enemy_kills[16] += 1
@@ -143,7 +143,7 @@ func step():
 			sprite_index = "ufo_blast"
 			if (image_index == 16):
 		
-				gml.instance_create(position.x+8, position.y+16, Objects.laser)
+				gml.instance_create(position.x+8, position.y+16, Objects.laser, self)
 				Audio.play_sound(global.snd_laser)
 		
 

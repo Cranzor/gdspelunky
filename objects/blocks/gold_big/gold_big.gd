@@ -18,11 +18,11 @@ func _process(delta):
 
 
 func destroy():
-	var gold = gml.instance_create(position.x+randi_range(0,2)-randi_range(0,2), position.y+randi_range(0,2)-randi_range(0,2), Objects.gold_nugget)
+	var gold = gml.instance_create(position.x+randi_range(0,2)-randi_range(0,2), position.y+randi_range(0,2)-randi_range(0,2), Objects.gold_nugget, self)
 	gold.x_vel = randi_range(0,3) - randi_range(0,3)
 	gold.y_vel = randi_range(3,6)
 
 	for i in range(randi_range(2,3)):
-		gold = gml.instance_create(position.x+randi_range(0,2)-randi_range(0,2), position.y+randi_range(0,2)-randi_range(0,2), Objects.gold_chunk)
+		gold = gml.instance_create(position.x+randi_range(0,2)-randi_range(0,2), position.y+randi_range(0,2)-randi_range(0,2), Objects.gold_chunk, self)
 		gold.x_vel = randi_range(0,3) - randi_range(0,3)
 		gold.y_vel = randi_range(3,6)

@@ -335,7 +335,7 @@ func cap_hud_values() -> void:
 	if (global.rope > 99): global.rope = 99
 	
 func spawn_cape() -> void:
-	if (global.has_cape and not gml.instance_exists("cape")): gml.instance_create(position.x, position.y, Objects.cape)
+	if (global.has_cape and not gml.instance_exists("cape")): gml.instance_create(position.x, position.y, Objects.cape, self)
 
 	if (gml.instance_exists("cape")):
 		var cape = gml.get_instance("cape") #---[FLAG] may have to change this for multiplayer
@@ -357,7 +357,7 @@ func handle_bomb_arrows() -> void:
 		if (bomb_arrow_counter > 0): bomb_arrow_counter -= 1
 		else:
 		
-			gml.instance_create(position.x, position.y, Objects.explosion)
+			gml.instance_create(position.x, position.y, Objects.explosion, self)
 			if (global.graphics_high):
 			
 				MiscScripts.scr_create_flame(position.x, position.y, 3)
@@ -380,7 +380,7 @@ func exit_game_from_title() -> void:
 			hold_item = null
 			pickup_item_type = ""
 		
-		gml.instance_create(position.x, position.y, Objects.p_dummy5)
+		gml.instance_create(position.x, position.y, Objects.p_dummy5, self)
 		gml.instance_destroy(self)
 
 func hide_player_on_death() -> void:
@@ -506,7 +506,7 @@ func create_water_splash() -> void:
 
 		if (not swimming):
 		
-			gml.instance_create(position.x, position.y-8, Objects.splash)
+			gml.instance_create(position.x, position.y-8, Objects.splash, self)
 			swimming = true
 			Audio.play_sound(global.snd_splash)
 
@@ -514,7 +514,7 @@ func create_burn() -> void:
 	# BURNING
 	if (burning > 0):
 
-		if (randi_range(1,5) == 1): gml.instance_create(position.x-8+randi_range(4,12), position.y-8+randi_range(4,12), Objects.burn)
+		if (randi_range(1,5) == 1): gml.instance_create(position.x-8+randi_range(4,12), position.y-8+randi_range(4,12), Objects.burn, self)
 		burning -= 1
 
 func kill_player_upon_touching_lava() -> void:
@@ -585,7 +585,7 @@ func handle_player_active() -> void:
 			
 				if (not gml.collision_point(position.x, position.y+32, "solid", 0, 0)):
 				
-					gml.instance_create(position.x-8, position.y-16, Objects.parachute)
+					gml.instance_create(position.x-8, position.y-16, Objects.parachute, self)
 					fall_timer = 0
 					global.has_parachute = false
 				
@@ -607,9 +607,9 @@ func handle_player_active() -> void:
 			stun_timer += 60
 			y_vel = -3
 			fall_timer = 0
-			var obj = gml.instance_create(position.x-4, position.y+6, Objects.poof)
+			var obj = gml.instance_create(position.x-4, position.y+6, Objects.poof, self)
 			obj.x_vel = -0.4 #--- changing this as it's only referring to one instance
-			obj = gml.instance_create(position.x+4, position.y+6, Objects.poof)
+			obj = gml.instance_create(position.x+4, position.y+6, Objects.poof, self)
 			obj.x_vel = 0.4
 			Audio.play_sound(global.snd_thud)
 		
@@ -618,7 +618,7 @@ func handle_player_active() -> void:
 			fall_timer = 0
 			if (gml.instance_exists("parachute")):
 			
-				gml.instance_create(position.x-8, position.y-16-8, Objects.para_used)
+				gml.instance_create(position.x-8, position.y-16-8, Objects.para_used, self)
 				var all_parachutes = gml.get_all_instances("parachute")
 				for parachute in all_parachutes: gml.instance_destroy(parachute)
 			
@@ -632,7 +632,7 @@ func handle_player_active() -> void:
 			if (bubble_timer > 0): bubble_timer -= 1
 			else:
 			
-				gml.instance_create(position.x, position.y-4, Objects.bubble)
+				gml.instance_create(position.x, position.y-4, Objects.bubble, self)
 				bubble_timer = bubble_timer_max
 			
 		
@@ -766,13 +766,13 @@ func start_weapon_animation() -> void:
 		
 			if (hold_item.type == "machete"):
 			
-				var obj = gml.instance_create(position.x-16, position.y, Objects.slash)
+				var obj = gml.instance_create(position.x-16, position.y, Objects.slash, self)
 				obj.sprite_index = "slash_left"
 				Audio.play_sound(global.snd_whip)
 			
 			elif (hold_item.type == "mattock"):
 			
-				var obj = gml.instance_create(position.x-16, position.y, Objects.mattock_hit)
+				var obj = gml.instance_create(position.x-16, position.y, Objects.mattock_hit, self)
 				obj.sprite_index = "mattock_hit_l"
 				Audio.play_sound(global.snd_whip)
 			
@@ -781,13 +781,13 @@ func start_weapon_animation() -> void:
 		
 			if (global.is_tunnel_man):
 			
-				var obj = gml.instance_create(position.x-16, position.y, Objects.mattock_hit)
+				var obj = gml.instance_create(position.x-16, position.y, Objects.mattock_hit, self)
 				obj.sprite_index = "mattock_hit_l"
 				Audio.play_sound(global.snd_whip)
 			
 			else:
 			
-				var obj = gml.instance_create(position.x-16, position.y, Objects.whip)
+				var obj = gml.instance_create(position.x-16, position.y, Objects.whip, self)
 				obj.sprite_index = "whip_left"
 				Audio.play_sound(global.snd_whip)
 			
@@ -799,13 +799,13 @@ func start_weapon_animation() -> void:
 		
 			if (hold_item.type == "machete"):
 			
-				var obj = gml.instance_create(position.x+16, position.y, Objects.slash)
+				var obj = gml.instance_create(position.x+16, position.y, Objects.slash, self)
 				obj.sprite_index = "slash_right"
 				Audio.play_sound(global.snd_whip)
 			
 			elif (hold_item.type == "mattock"):
 			
-				var obj = gml.instance_create(position.x+16, position.y, Objects.mattock_hit)
+				var obj = gml.instance_create(position.x+16, position.y, Objects.mattock_hit, self)
 				obj.sprite_index = "mattock_hit_r"
 				Audio.play_sound(global.snd_whip)
 			
@@ -814,13 +814,13 @@ func start_weapon_animation() -> void:
 		
 			if (global.is_tunnel_man):
 			
-				var obj = gml.instance_create(position.x+16, position.y, Objects.mattock_hit)
+				var obj = gml.instance_create(position.x+16, position.y, Objects.mattock_hit, self)
 				obj.sprite_index = "mattock_hit_r"
 				Audio.play_sound(global.snd_whip)
 			
 			else:
 			
-				var obj = gml.instance_create(position.x+16, position.y, Objects.whip)
+				var obj = gml.instance_create(position.x+16, position.y, Objects.whip, self)
 				obj.sprite_index = "whip_right"
 				Audio.play_sound(global.snd_whip)
 	
@@ -831,12 +831,12 @@ func start_weapon_pre_animation() -> void:
 		
 			if ((sprite_index == "attack_left" or sprite_index == "damsel_attack_l" or sprite_index == "tunnel_attack_l") and facing == LEFT and image_index < 2 and gml.instance_number('machete_pre') == 0):
 			
-				var obj = gml.instance_create(position.x+16, position.y, Objects.machete_pre)
+				var obj = gml.instance_create(position.x+16, position.y, Objects.machete_pre, self)
 				obj.sprite_index = "machete_pre_l"
 			
 			elif ((sprite_index == "attack_left" or sprite_index == "damsel_attack_l" or sprite_index == "tunnel_attack_l") and facing == RIGHT and image_index < 2 and gml.instance_number('machete_pre') == 0):
 			
-				var obj = gml.instance_create(position.x-16, position.y, Objects.machete_pre)
+				var obj = gml.instance_create(position.x-16, position.y, Objects.machete_pre, self)
 				obj.sprite_index = "machete_pre_r"
 			
 		
@@ -844,12 +844,12 @@ func start_weapon_pre_animation() -> void:
 		
 			if ((sprite_index == "attack_left" or sprite_index == "damsel_attack_l" or sprite_index == "tunnel_attack_l") and facing == LEFT and image_index < 2 and gml.instance_number('machete_pre') == 0):
 			
-				var obj = gml.instance_create(position.x+16, position.y, Objects.mattock_pre)
+				var obj = gml.instance_create(position.x+16, position.y, Objects.mattock_pre, self)
 				obj.sprite_index = "mattock_pre_l"
 			
 			elif ((sprite_index == "attack_left" or sprite_index == "damsel_attack_l" or sprite_index == "tunnel_attack_l") and facing == RIGHT and image_index < 2 and gml.instance_number('machete_pre') == 0):
 			
-				var obj = gml.instance_create(position.x-16, position.y, Objects.mattock_pre)
+				var obj = gml.instance_create(position.x-16, position.y, Objects.mattock_pre, self)
 				obj.sprite_index = "mattock_pre_r"
 			
 		
@@ -858,23 +858,23 @@ func start_weapon_pre_animation() -> void:
 
 		if (facing == LEFT):
 		
-			var obj = gml.instance_create(position.x+16, position.y, Objects.mattock_pre)
+			var obj = gml.instance_create(position.x+16, position.y, Objects.mattock_pre, self)
 			obj.sprite_index = "mattock_pre_l"
 		
 		else:
 		
-			var obj = gml.instance_create(position.x-16, position.y, Objects.mattock_pre)
+			var obj = gml.instance_create(position.x-16, position.y, Objects.mattock_pre, self)
 			obj.sprite_index = "mattock_pre_r"
 		
 
 	elif ((sprite_index == "attack_left" or sprite_index == "damsel_attack_l" or sprite_index == "tunnel_attack_l") and facing == LEFT and image_index < 2 and gml.instance_number('whip_pre') == 0):
 
-		var obj = gml.instance_create(position.x+16, position.y, Objects.whip_pre)
+		var obj = gml.instance_create(position.x+16, position.y, Objects.whip_pre, self)
 		obj.sprite_index = "whip_pre_l"
 
 	elif ((sprite_index == "attack_left" or sprite_index == "damsel_attack_l" or sprite_index == "tunnel_attack_l") and facing == RIGHT  and image_index < 2 and gml.instance_number('whip_pre') == 0):
 
-		var obj = gml.instance_create(position.x-16, position.y, Objects.whip_pre)
+		var obj = gml.instance_create(position.x-16, position.y, Objects.whip_pre, self)
 		obj.sprite_index = "whip_pre_r"
 	
 func delete_whip_instances_when_not_whipping() -> void:
@@ -917,7 +917,7 @@ func handle_chest_opening() -> void:
 			chest_instance.sprite_index = "chest_open"
 			if (randi_range(1,12) == 1 and global.curr_level > 0):
 			
-				var obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.bomb)
+				var obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.bomb, self)
 				obj.x_vel = randi_range(0,3) - randi_range(0,3)
 				obj.y_vel = -2
 				obj.sprite_index = "bomb_armed"
@@ -932,9 +932,9 @@ func handle_chest_opening() -> void:
 
 					var n = randi_range(1,3)
 					match (n):
-						1:  obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.emerald)
-						2:  obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.sapphire)
-						3:  obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.ruby)
+						1:  obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.emerald, self)
+						2:  obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.sapphire, self)
+						3:  obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.ruby, self)
 					
 					obj.x_vel = randi_range(0,3) - randi_range(0,3)
 					obj.y_vel = -2
@@ -944,9 +944,9 @@ func handle_chest_opening() -> void:
 					var n = randi_range(1,3)
 					match (n):
 					
-						1:  obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.emerald_big)
-						2:  obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.sapphire_big)
-						3:  obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.ruby_big)
+						1:  obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.emerald_big, self)
+						2:  obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.sapphire_big, self)
+						3:  obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.ruby_big, self)
 					
 					obj.x_vel = randi_range(0,3) - randi_range(0,3)
 					obj.y_vel = -2
@@ -960,27 +960,27 @@ func handle_crate_opening() -> void:
 		var obj
 		if (InLevel.is_real_level()): global.total_crates += 1
 		var chest_instance = gml.instance_place(position.x, position.y, 'crate', self)
-		if (InLevel.is_room("tutorial")): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.bomb_bag)
-		elif (randi_range(1,500) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.jetpack)
-		elif (randi_range(1,200) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.cape_pickup)
-		elif (randi_range(1,100) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.shotgun)
-		elif (randi_range(1,100) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.mattock)
-		elif (randi_range(1,100) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.teleporter)
-		elif (randi_range(1,90) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.gloves)
-		elif (randi_range(1,90) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.spectacles)
-		elif (randi_range(1,80) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.web_cannon)
-		elif (randi_range(1,80) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.pistol)
-		elif (randi_range(1,80) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.mitt)
-		elif (randi_range(1,60) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.paste)
-		elif (randi_range(1,60) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.spring_shoes)
-		elif (randi_range(1,60) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.spike_shoes)
-		elif (randi_range(1,60) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.machete)
-		elif (randi_range(1,40) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.bomb_box)
-		elif (randi_range(1,40) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.bow)
-		elif (randi_range(1,20) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.compass)
-		elif (randi_range(1,10) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.para_pickup)
-		elif (randi_range(1,2) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.rope_pile)
-		else: obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.bomb_bag)
+		if (InLevel.is_room("tutorial")): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.bomb_bag, self)
+		elif (randi_range(1,500) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.jetpack, self)
+		elif (randi_range(1,200) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.cape_pickup, self)
+		elif (randi_range(1,100) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.shotgun, self)
+		elif (randi_range(1,100) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.mattock, self)
+		elif (randi_range(1,100) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.teleporter, self)
+		elif (randi_range(1,90) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.gloves, self)
+		elif (randi_range(1,90) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.spectacles, self)
+		elif (randi_range(1,80) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.web_cannon, self)
+		elif (randi_range(1,80) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.pistol, self)
+		elif (randi_range(1,80) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.mitt, self)
+		elif (randi_range(1,60) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.paste, self)
+		elif (randi_range(1,60) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.spring_shoes, self)
+		elif (randi_range(1,60) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.spike_shoes, self)
+		elif (randi_range(1,60) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.machete, self)
+		elif (randi_range(1,40) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.bomb_box, self)
+		elif (randi_range(1,40) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.bow, self)
+		elif (randi_range(1,20) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.compass, self)
+		elif (randi_range(1,10) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.para_pickup, self)
+		elif (randi_range(1,2) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.rope_pile, self)
+		else: obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.bomb_bag, self)
 		obj.cost = 0
 		Audio.play_sound(global.snd_pickup)
 		
@@ -989,7 +989,7 @@ func handle_crate_opening() -> void:
 			hold_item = null
 			pickup_item_type = ""
 			
-		gml.instance_create(position.x, position.y, Objects.poof)
+		gml.instance_create(position.x, position.y, Objects.poof, self)
 		gml.instance_destroy(chest_instance)
 			
 		k_attack_pressed = false
@@ -1002,7 +1002,7 @@ func handle_flare_crate_opening() -> void:
 		var chest_instance = gml.instance_place(position.x, position.y, 'flare_crate', self)
 		for i in range (0, 3):
 		
-			var obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.flare)
+			var obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.flare, self)
 			obj.x_vel = randi_range(0,3)-randi_range(0,3)
 			obj.y_vel = randi_range(1,3)*-1
 		
@@ -1012,7 +1012,7 @@ func handle_flare_crate_opening() -> void:
 			hold_item = null
 			pickup_item_type = ""
 		
-		gml.instance_create(position.x, position.y, Objects.poof)
+		gml.instance_create(position.x, position.y, Objects.poof, self)
 		gml.instance_destroy(chest_instance)
 		
 		k_attack_pressed = false
@@ -1121,7 +1121,7 @@ func exit_level() -> void:
 				if (hold_item.sprite_index == "crystal_skull"): global.skulls += 1
 				else: global.idols += 1
 				Audio.play_sound(global.snd_coin)
-				gml.instance_create(position.x, position.y-8, "big_collect")
+				gml.instance_create(position.x, position.y-8, "big_collect", self)
 				gml.instance_destroy(hold_item)
 				hold_item = null
 			
@@ -1308,7 +1308,7 @@ func bomb_rope_and_whipping_handling() -> void: #--- Also handles picking up ite
 				
 				if (global.rope > 0):
 				
-					hold_item = gml.instance_create(position.x, position.y, Objects.rope_throw)
+					hold_item = gml.instance_create(position.x, position.y, Objects.rope_throw, self)
 					hold_item.held = true
 					global.rope -= 1
 					whoa_timer = whoa_timer_max
@@ -1342,7 +1342,7 @@ func bomb_rope_and_whipping_handling() -> void: #--- Also handles picking up ite
 				
 				if (global.bombs > 0):
 				
-					hold_item = gml.instance_create(position.x, position.y, Objects.bomb)
+					hold_item = gml.instance_create(position.x, position.y, Objects.bomb, self)
 					if (global.has_sticky_bombs): hold_item.sticky = true
 					hold_item.held = true
 					global.bombs -= 1
@@ -1350,7 +1350,7 @@ func bomb_rope_and_whipping_handling() -> void: #--- Also handles picking up ite
 				
 				elif (global.rope > 0):
 				
-					hold_item = gml.instance_create(position.x, position.y, Objects.rope_throw)
+					hold_item = gml.instance_create(position.x, position.y, Objects.rope_throw, self)
 					hold_item.held = true
 					global.rope -= 1
 					whoa_timer = whoa_timer_max
@@ -1361,7 +1361,7 @@ func bomb_rope_and_whipping_handling() -> void: #--- Also handles picking up ite
 		
 			if (global.bombs > 0):
 			
-				hold_item = gml.instance_create(position.x, position.y, Objects.bomb)
+				hold_item = gml.instance_create(position.x, position.y, Objects.bomb, self)
 				if (global.has_sticky_bombs): hold_item.sticky = true
 				hold_item.held = true
 				global.bombs -= 1
@@ -1369,7 +1369,7 @@ func bomb_rope_and_whipping_handling() -> void: #--- Also handles picking up ite
 			
 			elif (global.rope > 0):
 			
-				hold_item = gml.instance_create(position.x, position.y, Objects.rope_throw)
+				hold_item = gml.instance_create(position.x, position.y, Objects.rope_throw, self)
 				hold_item.held = true
 				global.rope -= 1
 				whoa_timer = whoa_timer_max
@@ -1389,11 +1389,11 @@ func bomb_rope_and_whipping_handling() -> void: #--- Also handles picking up ite
 				var obj
 				if (facing == LEFT):
 				
-					obj = gml.instance_create(position.x-16, position.y, Objects.rope_throw)
+					obj = gml.instance_create(position.x-16, position.y, Objects.rope_throw, self)
 				
 				else:
 				
-					obj = gml.instance_create(position.x+16, position.y, Objects.rope_throw)
+					obj = gml.instance_create(position.x+16, position.y, Objects.rope_throw, self)
 				
 				
 				obj.t = true
@@ -1425,12 +1425,12 @@ func bomb_rope_and_whipping_handling() -> void: #--- Also handles picking up ite
 					#/*
 					#if (player1.facing == 18):
 					#
-						#obj = gml.instance_create(player1.position.x-4, player1.position.y+2, "rope_throw")
+						#obj = gml.instance_create(player1.position.x-4, player1.position.y+2, "rope_throw", self)
 						#obj.x_vel = -3.2
 					#
 					#else:
 					#
-						#obj = gml.instance_create(player1.position.x+4, player1.position.y+2, "rope_throw")
+						#obj = gml.instance_create(player1.position.x+4, player1.position.y+2, "rope_throw", self)
 						#obj.x_vel = 3.2
 					#
 					#obj.y_vel = 0.5
@@ -1439,7 +1439,7 @@ func bomb_rope_and_whipping_handling() -> void: #--- Also handles picking up ite
 				
 				else:
 				
-					gml.instance_create(obj.position.x, obj.position.y, Objects.rope_top)
+					gml.instance_create(obj.position.x, obj.position.y, Objects.rope_top, self)
 					obj.armed = false
 					obj.falling = true
 					obj.x_vel = 0
@@ -1451,7 +1451,7 @@ func bomb_rope_and_whipping_handling() -> void: #--- Also handles picking up ite
 			
 			else:
 			
-				var obj = gml.instance_create(position.x, position.y, Objects.rope_throw)
+				var obj = gml.instance_create(position.x, position.y, Objects.rope_throw, self)
 				obj.armed = true
 				obj.px = position.x
 				obj.py = position.y
@@ -1469,7 +1469,7 @@ func bomb_rope_and_whipping_handling() -> void: #--- Also handles picking up ite
 
 	elif (in_game and k_bomb_pressed and global.bombs > 0 and not whipping):
 
-		var obj = gml.instance_create(position.x, position.y, Objects.bomb)
+		var obj = gml.instance_create(position.x, position.y, Objects.bomb, self)
 		if (global.has_sticky_bombs): obj.sticky = true
 		obj.sprite_index = "bomb_armed"
 		obj.armed = true
@@ -1564,8 +1564,8 @@ func bomb_rope_and_whipping_handling() -> void: #--- Also handles picking up ite
 						elif (global.level_type == 1):
 						
 							if (global.cemetary and not global.ghost_exists):
-								if (self.position.x > gml.room_width / 2): gml.instance_create(gml.view_xview+gml.view_wview+8, gml.view_yview+floor(gml.view_hview / 2), "ghost")
-								else: gml.instance_create(gml.view_xview-32, gml.view_yview+floor(gml.view_hview / 2), Objects.ghost)
+								if (self.position.x > gml.room_width / 2): gml.instance_create(gml.view_xview+gml.view_wview+8, gml.view_yview+floor(gml.view_hview / 2), "ghost", self)
+								else: gml.instance_create(gml.view_xview-32, gml.view_yview+floor(gml.view_hview / 2), Objects.ghost, self)
 								global.ghost_exists = true
 							
 							var all_trap_blocks = gml.get_all_instances("trap_block")
@@ -1656,7 +1656,7 @@ func bomb_rope_and_whipping_handling() -> void: #--- Also handles picking up ite
 #
 		#if (global.flares > 0):
 		#
-			#flare = gml.instance_create(position.x, position.y, "flare")
+			#flare = gml.instance_create(position.x, position.y, "flare", self)
 #
 			## drop any item you're already carrying
 			#if (hold_item):
@@ -1929,7 +1929,7 @@ func handle_hit_by_laser() -> void:
 			
 			MiscScripts.scr_create_blood(position.x, position.y, 3, self)
 			
-			gml.instance_create(obj.position.x, obj.position.y, Objects.laser_explode)
+			gml.instance_create(obj.position.x, obj.position.y, Objects.laser_explode, self)
 			gml.instance_destroy(obj)
 			
 			Audio.play_sound(global.snd_hurt)
@@ -2085,7 +2085,7 @@ func handle_dead_or_stunned() -> void:
 
 		if (gml.instance_exists("parachute")):
 		
-			gml.instance_create(position.x-8, position.y-16-8, "para_used")
+			gml.instance_create(position.x-8, position.y-16-8, "para_used", self)
 			var all_parachutes = gml.get_all_instances("parachute")
 			for parachute_instance in all_parachutes: gml.instance_destroy(parachute_instance)
 		
@@ -2163,7 +2163,7 @@ func handle_dead_or_stunned() -> void:
 			
 				for i in range(0, 3):
 				
-					gml.instance_create(other.position.x, other.position.y, Objects.blood)
+					gml.instance_create(other.position.x, other.position.y, Objects.blood, self)
 				
 				global.plife -= 1
 				wall_hurt -= 1
@@ -2293,12 +2293,12 @@ func cap_blink() -> void:
 	#/*
 	#if (sprite_index == "slide_right"):
 #
-		#spark = gml.instance_create(position.x, position.y, "ground_spark")
+		#spark = gml.instance_create(position.x, position.y, "ground_spark", self)
 		#with spark  position.x += random(3)
 #
 	#elif (sprite_index == "slide_left"):
 #
-		#spark = gml.instance_create(position.x, position.y, "ground_spark")
+		#spark = gml.instance_create(position.x, position.y, "ground_spark", self)
 		#with spark  sprite_index = sSpark_left position.x += random(3)
 #
 	#*/
@@ -2363,7 +2363,7 @@ func collect_treasure() -> void:
 			if (global.collect_counter > 100): global.collect_counter = 100
 			
 			var coin = false
-			#gml.instance_create(position.x, position.y-8, "small_collect")
+			#gml.instance_create(position.x, position.y-8, "small_collect", self)
 			if (gem.type == "gold chunk"):
 				global.gold += 1
 				coin = true
@@ -2395,7 +2395,7 @@ func collect_bomb_bag() -> void:
 		if (not obj.held and obj.cost == 0 and not gml.collision_point(obj.position.x, obj.position.y, "solid", 0, 0)):
 		
 			global.bombs += 3
-			var disp = gml.instance_create(obj.position.x, obj.position.y-14, Objects.items_get)
+			var disp = gml.instance_create(obj.position.x, obj.position.y-14, Objects.items_get, self)
 			disp.sprite_index = "bombs_get"
 			gml.instance_destroy(obj)
 			Audio.play_sound(global.snd_pickup)
@@ -2410,7 +2410,7 @@ func collect_bomb_box() -> void:
 		if (not obj.held and obj.cost == 0 and not gml.collision_point(obj.position.x, obj.position.y, "solid", 0, 0)):
 		
 			global.bombs += 12
-			var disp = gml.instance_create(obj.position.x, obj.position.y-14, Objects.items_get)
+			var disp = gml.instance_create(obj.position.x, obj.position.y-14, Objects.items_get, self)
 			disp.sprite_index = "bombs_get"
 			gml.instance_destroy(obj)
 			Audio.play_sound(global.snd_pickup)
@@ -2425,7 +2425,7 @@ func collect_rope_pile() -> void:
 		if (not obj.held and obj.cost == 0 and not gml.collision_point(obj.position.x, obj.position.y, "solid", 0, 0)):
 		
 			global.rope += 3
-			var disp = gml.instance_create(obj.position.x, obj.position.y-15, Objects.items_get)
+			var disp = gml.instance_create(obj.position.x, obj.position.y-15, Objects.items_get, self)
 			disp.sprite_index = "rope_get"
 			gml.instance_destroy(obj)
 			Audio.play_sound(global.snd_pickup)
@@ -2449,7 +2449,7 @@ func collect_idol_and_damsel() -> void:
 				if (hold_item.sprite_index == "crystal_skull"): global.skulls += 1
 				else: global.idols += 1
 				Audio.play_sound(global.snd_coin)
-				gml.instance_create(position.x, position.y-8, Objects.big_collect)
+				gml.instance_create(position.x, position.y-8, Objects.big_collect, self)
 				gml.instance_destroy(hold_item) #---[FLAG] hold_item should be set to the string of the item name
 				hold_item = null
 			
@@ -3855,7 +3855,7 @@ func alarm_4() -> void:
 		global.message_timer = 200
 			
 func alarm_10() -> void:
-	var obj = gml.instance_create(position.x+randi_range(0,3)-randi_range(0,3), position.y+randi_range(0,3)-randi_range(0,3), Objects.flare_spark)
+	var obj = gml.instance_create(position.x+randi_range(0,3)-randi_range(0,3), position.y+randi_range(0,3)-randi_range(0,3), Objects.flare_spark, self)
 	obj.y_vel = randi_range(1,3)
 	obj.x_vel = randi_range(0,3) - randi_range(0,3)
 	Audio.play_sound(global.snd_jetpack)
@@ -4284,9 +4284,9 @@ func key_enter_pressed() -> void: #--- debug function that is commented out
 	#*/
 
 	# global.murderer = 1
-	# gml.instance_create(position.x-32, position.y, "shotgun")
-	# gml.instance_create(position.x-32, position.y, "pistol")
-	# gml.instance_create(position.x, position.y, "magma_man")
+	# gml.instance_create(position.x-32, position.y, "shotgun", self)
+	# gml.instance_create(position.x-32, position.y, "pistol", self)
+	# gml.instance_create(position.x, position.y, "magma_man", self)
 	# global.money += 100000
 	pass
 
@@ -4652,11 +4652,11 @@ func scr_use_item() -> void: #--- only called by player1 so including it here fo
 				var obj	
 				if (facing == LEFT):
 						
-					obj = gml.instance_create(position.x-16, position.y, Objects.rope_throw)
+					obj = gml.instance_create(position.x-16, position.y, Objects.rope_throw, self)
 						
 				else:
 						
-					obj = gml.instance_create(position.x+16, position.y, Objects.rope_throw)
+					obj = gml.instance_create(position.x+16, position.y, Objects.rope_throw, self)
 						
 						
 				obj.t = true
@@ -4689,7 +4689,7 @@ func scr_use_item() -> void: #--- only called by player1 so including it here fo
 				if (not obj.t):
 						
 					obj = self.hold_item
-					obj = gml.instance_create(obj.position.x, obj.position.y, Objects.rope_throw)
+					obj = gml.instance_create(obj.position.x, obj.position.y, Objects.rope_throw, self)
 					if (self.facing == 18): obj.x_vel = -3.2
 					else: obj.x_vel = 3.2
 					obj.y_vel = 0.5
@@ -4697,7 +4697,7 @@ func scr_use_item() -> void: #--- only called by player1 so including it here fo
 						
 				else:
 						
-					gml.instance_create(obj.position.x, obj.position.y, Objects.rope_top)
+					gml.instance_create(obj.position.x, obj.position.y, Objects.rope_top, self)
 					obj.armed = false
 					obj.falling = true
 					obj.x_vel = 0
@@ -4844,8 +4844,8 @@ func scr_use_item() -> void: #--- only called by player1 so including it here fo
 			var obj
 			if (facing == LEFT and firing == 0):
 					
-				gml.instance_create(position.x-9, position.y+1, Objects.shotgun_blast_left)
-				obj = gml.instance_create(position.x-9, position.y-2, Objects.bullet)
+				gml.instance_create(position.x-9, position.y+1, Objects.shotgun_blast_left, self)
+				obj = gml.instance_create(position.x-9, position.y-2, Objects.bullet, self)
 				obj.x_vel = (-1 * gml.rand(6,8)) + x_vel
 				if (obj.x_vel >= -6): obj.x_vel = -6
 				obj.y_vel = 0
@@ -4859,8 +4859,8 @@ func scr_use_item() -> void: #--- only called by player1 so including it here fo
 					
 			elif (facing == RIGHT and firing == 0):
 					
-				gml.instance_create(position.x+8, position.y+1, Objects.shotgun_blast_right)
-				obj = gml.instance_create(position.x+8, position.y-2, Objects.bullet)
+				gml.instance_create(position.x+8, position.y+1, Objects.shotgun_blast_right, self)
+				obj = gml.instance_create(position.x+8, position.y-2, Objects.bullet, self)
 				obj.x_vel = gml.rand(6,8) + x_vel
 				if (obj.x_vel < 6): obj.x_vel = 6
 				obj.y_vel = 0
@@ -4906,11 +4906,11 @@ func scr_use_item() -> void: #--- only called by player1 so including it here fo
 					
 				for repetition in range(3):
 						
-					obj = gml.instance_create(position.x-12, position.y+4, Objects.psychic_create_p)
+					obj = gml.instance_create(position.x-12, position.y+4, Objects.psychic_create_p, self)
 					obj.x_vel = -gml.rand(1,3)
 					obj.y_vel = -gml.random(2)
 						
-				obj = gml.instance_create(position.x-12, position.y-2, Objects.psychic_wave_p)
+				obj = gml.instance_create(position.x-12, position.y-2, Objects.psychic_wave_p, self)
 				obj.x_vel = -6
 				Audio.play_sound(global.snd_psychic)
 				firing = firing_pistol_max
@@ -4919,11 +4919,11 @@ func scr_use_item() -> void: #--- only called by player1 so including it here fo
 					
 				for repetition in range(3):
 						
-					obj = gml.instance_create(position.x+12, position.y+4, Objects.psychic_create_p)
+					obj = gml.instance_create(position.x+12, position.y+4, Objects.psychic_create_p, self)
 					obj.x_vel = gml.rand(1,3)
 					obj.y_vel = -gml.random(2)
 						
-				obj = gml.instance_create(position.x+12, position.y-2, Objects.psychic_wave_p)
+				obj = gml.instance_create(position.x+12, position.y-2, Objects.psychic_wave_p, self)
 				obj.x_vel = 6
 				Audio.play_sound(global.snd_psychic)
 				firing = firing_pistol_max
@@ -4960,10 +4960,10 @@ func scr_use_item() -> void: #--- only called by player1 so including it here fo
 			var obj
 			if (facing == LEFT and firing == 0):
 					
-				gml.instance_create(position.x-12, position.y, Objects.shotgun_blast_left)
+				gml.instance_create(position.x-12, position.y, Objects.shotgun_blast_left, self)
 				for i in range(1): #--- appears that having more than one web ball shoot out was experimented with
 						
-					obj = gml.instance_create(position.x-12, position.y-2, Objects.web_ball)
+					obj = gml.instance_create(position.x-12, position.y-2, Objects.web_ball, self)
 					obj.x_vel = (-1 * gml.rand(6,8)) + x_vel
 					if (obj.x_vel >= -6): obj.x_vel = -6
 					obj.y_vel = 0
@@ -4978,10 +4978,10 @@ func scr_use_item() -> void: #--- only called by player1 so including it here fo
 					
 			elif (facing == RIGHT and firing == 0):
 					
-				gml.instance_create(position.x+12, position.y, Objects.shotgun_blast_right)
+				gml.instance_create(position.x+12, position.y, Objects.shotgun_blast_right, self)
 				for i in range(1):
 						
-					obj = gml.instance_create(position.x+12, position.y-2, Objects.web_ball)
+					obj = gml.instance_create(position.x+12, position.y-2, Objects.web_ball, self)
 					obj.x_vel = gml.rand(6,8) + x_vel
 					if (obj.x_vel < 6): obj.x_vel = 6
 					obj.y_vel = 0
@@ -5054,7 +5054,7 @@ func scr_use_item() -> void: #--- only called by player1 so including it here fo
 					
 			for repetition in range(3):
 					
-				gml.instance_create(position.x-4+gml.rand(0,8), position.y-4+gml.rand(0,8), Objects.flare_spark)
+				gml.instance_create(position.x-4+gml.rand(0,8), position.y-4+gml.rand(0,8), Objects.flare_spark, self)
 					
 			if (position.y < 8): position.y = 8
 			position.x = tx
@@ -5160,10 +5160,10 @@ func scr_use_item() -> void: #--- only called by player1 so including it here fo
 			var obj
 			if (facing == LEFT and firing == 0):
 					
-				gml.instance_create(position.x-9, position.y+1, Objects.shotgun_blast_left)
+				gml.instance_create(position.x-9, position.y+1, Objects.shotgun_blast_left, self)
 				for repetition in range(6):
 						
-					obj = gml.instance_create(position.x-9, position.y-2, Objects.bullet)
+					obj = gml.instance_create(position.x-9, position.y-2, Objects.bullet, self)
 					obj.x_vel = (-1 * gml.rand(6,8)) + x_vel
 					if (obj.x_vel >= -6): obj.x_vel = -6
 					obj.y_vel = gml.random(1) - gml.random(1)
@@ -5178,10 +5178,10 @@ func scr_use_item() -> void: #--- only called by player1 so including it here fo
 					
 			elif (facing == RIGHT and firing == 0):
 					
-				gml.instance_create(position.x+8, position.y+1, Objects.shotgun_blast_right)
+				gml.instance_create(position.x+8, position.y+1, Objects.shotgun_blast_right, self)
 				for repetition in range(6):
 						
-					obj = gml.instance_create(position.x+8, position.y-2, Objects.bullet)
+					obj = gml.instance_create(position.x+8, position.y-2, Objects.bullet, self)
 					obj.x_vel = gml.rand(6,8) + x_vel
 					if (obj.x_vel < 6): obj.x_vel = 6
 					obj.y_vel = gml.random(1) - gml.random(1)

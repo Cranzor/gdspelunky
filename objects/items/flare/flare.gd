@@ -18,7 +18,7 @@ var dist_to_player
 
 
 func alarm_0():
-	gml.instance_create(position.x+randi_range(0,3)-randi_range(0,3), position.y+randi_range(0,3)-randi_range(0,3), Objects.flare_spark)
+	gml.instance_create(position.x+randi_range(0,3)-randi_range(0,3), position.y+randi_range(0,3)-randi_range(0,3), Objects.flare_spark, self)
 	alarm_0_countdown.start(2)
 
 func create():
@@ -47,7 +47,7 @@ func step():
 		
 	if (gml.collision_point(position.x, position.y, "water", -1, -1)):
 
-		gml.instance_create(position.x, position.y, Objects.splash)
+		gml.instance_create(position.x, position.y, Objects.splash, self)
 		Audio.play_sound(global.snd_splash)
 		if (held):
 			var player1 = gml.get_instance("player1") #--- [FLAG] may need to change this for multiplayer

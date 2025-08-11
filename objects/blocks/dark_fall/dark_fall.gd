@@ -20,10 +20,10 @@ var time_fall_max
 
 func collision_with_solid():
 	Audio.play_sound(global.snd_break)
-	gml.instance_create(position.x+8, position.y+8, Objects.smoke_puff)
+	gml.instance_create(position.x+8, position.y+8, Objects.smoke_puff, self)
 	for i in range(0, 3):
 
-		var obj = gml.instance_create(position.x+randi_range(2,14), position.y+randi_range(2,14), Objects.rubble_dark)
+		var obj = gml.instance_create(position.x+randi_range(2,14), position.y+randi_range(2,14), Objects.rubble_dark, self)
 		obj.x_vel = randi_range(1,3)-randi_range(1,3)
 		obj.y_vel = -randi_range(0,3)
 

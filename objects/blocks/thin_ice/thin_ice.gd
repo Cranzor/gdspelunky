@@ -29,7 +29,7 @@ func step():
 	if (gml.collision_rectangle(position.x, position.y-1, position.x+16,  position.y+1, "player1", 0, 0)):
 
 		thickness -= 2
-		if (randi_range(1,100) == 1): gml.instance_create(position.x+randi_range(0,16), position.y+9, Objects.drip)
+		if (randi_range(1,100) == 1): gml.instance_create(position.x+randi_range(0,16), position.y+9, Objects.drip, self)
 
 
 	if (thickness > 50): sprite_index = "thin_ice1"

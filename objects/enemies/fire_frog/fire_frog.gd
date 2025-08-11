@@ -82,7 +82,7 @@ func step():
 				global.firefrogs += 1
 				global.kills += 1
 		
-			var obj = gml.instance_create(position.x+8, position.y+8, Objects.fire_frog_bomb)
+			var obj = gml.instance_create(position.x+8, position.y+8, Objects.fire_frog_bomb, self)
 			gml.instance_destroy(self)
 
 

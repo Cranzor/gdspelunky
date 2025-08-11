@@ -51,7 +51,7 @@ func collision_with_character():
 		else: hp -= (1 * (floor(other.fall_timer/16)+1))
 		other.fall_timer = 0
 		counts_as_kill = true
-		gml.instance_create(position.x+16, position.y, Objects.bone)
+		gml.instance_create(position.x+16, position.y, Objects.bone, self)
 		Audio.play_sound(global.snd_hit)
 
 	elif (other.invincible == 0):
@@ -78,7 +78,7 @@ func collision_with_whip():
 
 		hp -= other.damage
 		counts_as_kill = true
-		gml.instance_create(position.x+16, position.y+24, Objects.blood)
+		gml.instance_create(position.x+16, position.y+24, Objects.blood, self)
 		Audio.play_sound(global.snd_hit)
 		whipped = 10
 
@@ -150,9 +150,9 @@ func step():
 			MiscScripts.scr_create_blood(position.x+14+gml.rand(0,4), position.y+14+gml.rand(0,4), 4, self)
 			for repetition in range(4):
 		
-				gml.instance_create(position.x+14+gml.rand(0,4), position.y+12+gml.rand(0,6), Objects.bone)
+				gml.instance_create(position.x+14+gml.rand(0,4), position.y+12+gml.rand(0,6), Objects.bone, self)
 		
-			if (global.curr_level == 13): gml.instance_create(position.x+16, position.y+16, Objects.sceptre)
+			if (global.curr_level == 13): gml.instance_create(position.x+16, position.y+16, Objects.sceptre, self)
 			if (counts_as_kill):
 		
 				if (InLevel.is_real_level()): global.enemy_kills[20] += 1
@@ -230,12 +230,12 @@ func step():
 		
 				if (facing == LEFT):
 			
-					var obj = gml.instance_create(position.x+8, position.y+12+gml.rand(0,4), Objects.fly)
+					var obj = gml.instance_create(position.x+8, position.y+12+gml.rand(0,4), Objects.fly, self)
 					obj.x_vel = -gml.rand(3,5)
 			
 				else:
 			
-					var obj = gml.instance_create(position.x+24, position.y+12+gml.rand(0,4), Objects.fly)
+					var obj = gml.instance_create(position.x+24, position.y+12+gml.rand(0,4), Objects.fly, self)
 					obj.x_vel = gml.rand(3,5)
 			
 		

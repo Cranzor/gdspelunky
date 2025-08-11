@@ -34,7 +34,7 @@ func generate_room(room_name: String):
 		#holder.add_child(loaded_object)
 		#loaded_object.owner = EditorInterface.get_edited_scene_root()
 		
-		var obj = gml.instance_create(object_position.x, object_position.y, loaded_object, false)
+		var obj = gml.instance_create(object_position.x, object_position.y, loaded_object, null, false)
 		objects_in_level.append(obj)
 	
 	set_up_view()
@@ -71,7 +71,7 @@ func set_up_background() -> void:
 	var level_boundaries = Vector2(int(room_size["width"]), int(room_size["height"]))
 	
 	var background_node: TextureRect = Engine.get_main_loop().get_first_node_in_group("background")
-	var image_path = "res://backgrounds/" + background_name + ".png"
+	var image_path = "res://backgrounds/" + background_name + ".png" #---TODO: error when loading end2 room
 	var texture = Texture2D.new()
 	texture = load(image_path)
 	background_node.texture = texture

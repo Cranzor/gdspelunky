@@ -38,9 +38,9 @@ func collision_with_character():
 			if (InLevel.is_real_level()): global.enemy_deaths[23] += 1
 			for repetition in range(3):
 		
-				gml.instance_create(other.position.x, other.position.y, Objects.bone)
+				gml.instance_create(other.position.x, other.position.y, Objects.bone, self)
 		
-			var skull = gml.instance_create(other.position.x, other.position.y-2, Objects.skull)
+			var skull = gml.instance_create(other.position.x, other.position.y-2, Objects.skull, self)
 			skull.y_vel = -gml.rand(1,3)
 			skull.x_vel = gml.rand(0,3)-gml.rand(0,3)
 			other.visible = false

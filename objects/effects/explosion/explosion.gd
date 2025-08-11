@@ -28,13 +28,13 @@ func collision_with_barrier_emitter():
 func collision_with_boulder():
 	for i in range(0, 3):
 
-		var rubble = gml.instance_create(other.position.x+gml.rand(0,15)-gml.rand(0,15), other.position.y+gml.rand(0,15)-gml.rand(0,15), Objects.rubble)
+		var rubble = gml.instance_create(other.position.x+gml.rand(0,15)-gml.rand(0,15), other.position.y+gml.rand(0,15)-gml.rand(0,15), Objects.rubble, self)
 		rubble.sprite_index = "rubble_tan"
-		if (gml.rand(1,3) == 1): gml.instance_create(other.position.x+gml.rand(0,15)-gml.rand(0,15), other.position.y+gml.rand(0,15)-gml.rand(0,15), Objects.rock)
+		if (gml.rand(1,3) == 1): gml.instance_create(other.position.x+gml.rand(0,15)-gml.rand(0,15), other.position.y+gml.rand(0,15)-gml.rand(0,15), Objects.rock, self)
 
 	for i in range(0, 6):
 
-		var rubble = gml.instance_create(other.position.x+gml.rand(0,15)-gml.rand(0,15), other.position.y+gml.rand(0,15)-gml.rand(0,15), Objects.rubble_small)
+		var rubble = gml.instance_create(other.position.x+gml.rand(0,15)-gml.rand(0,15), other.position.y+gml.rand(0,15)-gml.rand(0,15), Objects.rubble_small, self)
 		rubble.sprite_index = "rubble_tan_small"
 
 
@@ -55,9 +55,9 @@ func collision_with_damsel():
 func collision_with_enemy():
 	if (other.type == "magma man"):
 	
-		other.flame = gml.instance_create(position.x+8, position.y-4, Objects.magma)
+		other.flame = gml.instance_create(position.x+8, position.y-4, Objects.magma, self)
 		other.flame.y_vel = -gml.rand(1,3)
-		other.flame = gml.instance_create(position.x+8, position.y-4, Objects.magma)
+		other.flame = gml.instance_create(position.x+8, position.y-4, Objects.magma, self)
 		other.flame.y_vel = -gml.rand(1,3)
 		gml.instance_destroy(other)
 	

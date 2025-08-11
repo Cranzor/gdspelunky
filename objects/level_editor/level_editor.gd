@@ -297,9 +297,9 @@ func _process(delta):
 
 #        window_set_cursor(cr_default)
 #        curs_obj.visible = true
-#        gml.instance_create(position.x, position.y, Objects.edit_button)
-#        gml.instance_create(position.x+320-32, position.y, Objects.new_button)
-#        gml.instance_create(position.x+320-32, position.y, Objects.test_button)
+#        gml.instance_create(position.x, position.y, Objects.edit_button, self)
+#        gml.instance_create(position.x+320-32, position.y, Objects.new_button, self)
+#        gml.instance_create(position.x+320-32, position.y, Objects.test_button, self)
 
 
 	
@@ -574,9 +574,9 @@ func _process(delta):
 			
 #                window_set_cursor(cr_default)
 #                curs_obj.visible = true
-#                gml.instance_create(position.x+16, position.y, Objects.edit_button)
-#                gml.instance_create(position.x+320-32, position.y, Objects.new_button)
-#                gml.instance_create(position.x+320-48, position.y, Objects.test_button)
+#                gml.instance_create(position.x+16, position.y, Objects.edit_button, self)
+#                gml.instance_create(position.x+320-32, position.y, Objects.new_button, self)
+#                gml.instance_create(position.x+320-48, position.y, Objects.test_button, self)
 		
 	
 #        elif (keyboard_key == vk_backspace or keyboard_key == vk_delete):
@@ -633,9 +633,9 @@ func _process(delta):
 #            status = EDIT
 #            window_set_cursor(cr_default)
 #            curs_obj.visible = true
-#            gml.instance_create(position.x+16, position.y, Objects.edit_button)
-#            gml.instance_create(position.x+320-48, position.y, Objects.new_button)
-#            gml.instance_create(position.x+320-48, position.y, Objects.test_button)
+#            gml.instance_create(position.x+16, position.y, Objects.edit_button, self)
+#            gml.instance_create(position.x+320-48, position.y, Objects.new_button, self)
+#            gml.instance_create(position.x+320-48, position.y, Objects.test_button, self)
 	
 #        elif (keyboard_key == vk_backspace or keyboard_key == vk_delete):
 	
@@ -651,9 +651,9 @@ func _process(delta):
 #            status = EDIT
 #            window_set_cursor(cr_default)
 #            curs_obj.visible = true
-#            gml.instance_create(position.x+16, position.y, Objects.edit_button)
-#            gml.instance_create(position.x+320-48, position.y, Objects.new_button)
-#            gml.instance_create(position.x+320-48, position.y, Objects.test_button)
+#            gml.instance_create(position.x+16, position.y, Objects.edit_button, self)
+#            gml.instance_create(position.x+320-48, position.y, Objects.new_button, self)
+#            gml.instance_create(position.x+320-48, position.y, Objects.test_button, self)
 	
 #        elif (keyboard_key == vk_backspace or keyboard_key == vk_delete):
 	
@@ -773,9 +773,9 @@ func _process(delta):
 #                status = EDIT
 #                window_set_cursor(cr_default)
 #                curs_obj.visible = true
-#                gml.instance_create(position.x+16, position.y, Objects.edit_button)
-#                gml.instance_create(position.x+320-48, position.y, Objects.new_button)
-#                gml.instance_create(position.x+320-48, position.y, Objects.test_button)
+#                gml.instance_create(position.x+16, position.y, Objects.edit_button, self)
+#                gml.instance_create(position.x+320-48, position.y, Objects.new_button, self)
+#                gml.instance_create(position.x+320-48, position.y, Objects.test_button, self)
 		
 	
 #        elif (keyboard_key == vk_backspace or keyboard_key == vk_delete):
@@ -795,9 +795,9 @@ func _process(delta):
 #    elif (status == EXIT or status == EDIT_DOOR or status == EDIT_MSG):
 
 #        status = EDIT
-#        gml.instance_create(position.x, position.y, Objects.edit_button)
-#        gml.instance_create(position.x+320-32, position.y, Objects.new_button)
-#        gml.instance_create(position.x+320-32, position.y, Objects.test_button)
+#        gml.instance_create(position.x, position.y, Objects.edit_button, self)
+#        gml.instance_create(position.x+320-32, position.y, Objects.new_button, self)
+#        gml.instance_create(position.x+320-32, position.y, Objects.test_button, self)
 
 #    else:
 

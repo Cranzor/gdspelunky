@@ -195,7 +195,7 @@ func step(): # one of seven scripts which uses 'other' outside of collision_with
 
 		if (not swimming):
 	
-			gml.instance_create(position.x, position.y, Objects.splash)
+			gml.instance_create(position.x, position.y, Objects.splash, self)
 			swimming = true
 			Audio.play_sound(global.snd_splash)
 	
@@ -230,7 +230,7 @@ func step(): # one of seven scripts which uses 'other' outside of collision_with
 
 		if (burning > 0):
 	
-			if (gml.rand(1,5) == 1): gml.instance_create(position.x+gml.rand(4,12), position.y+gml.rand(4,12), Objects.burn)
+			if (gml.rand(1,5) == 1): gml.instance_create(position.x+gml.rand(4,12), position.y+gml.rand(4,12), Objects.burn, self)
 			burning -= 1
 	
 
@@ -299,7 +299,7 @@ func step(): # one of seven scripts which uses 'other' outside of collision_with
 				else: x_vel = -4
 				image_speed = 0.5
 				Audio.play_sound(global.snd_hit)
-				gml.instance_create(other.position.x+8, other.position.y+8, Objects.blood)
+				gml.instance_create(other.position.x+8, other.position.y+8, Objects.blood, self)
 		
 	
 
@@ -333,8 +333,8 @@ func step(): # one of seven scripts which uses 'other' outside of collision_with
 		if ((sprite_index == "damsel_kiss_l" or
 			sprite_index == "p_kiss_l") and image_index == 7):
 	
-			if (facing == LEFT): gml.instance_create(position.x-8, position.y-8, Objects.heart)
-			else: gml.instance_create(position.x+8, position.y-8, Objects.heart)
+			if (facing == LEFT): gml.instance_create(position.x-8, position.y-8, Objects.heart, self)
+			else: gml.instance_create(position.x+8, position.y-8, Objects.heart, self)
 			Audio.play_sound(global.snd_kiss)
 	
 
@@ -371,7 +371,7 @@ func step(): # one of seven scripts which uses 'other' outside of collision_with
 
 		if (image_index == 4):
 	
-			gml.instance_create(position.x, position.y-16, Objects.yell_help)
+			gml.instance_create(position.x, position.y-16, Objects.yell_help, self)
 	
 
 	elif (status == RUN):
@@ -481,7 +481,7 @@ func step(): # one of seven scripts which uses 'other' outside of collision_with
 				if (sac_count > 0): sac_count -= 1
 				else:
 			
-					gml.instance_create(position.x, position.y, Objects.flame)
+					gml.instance_create(position.x, position.y, Objects.flame, self)
 					Audio.play_sound(global.snd_small_explode)
 					MiscScripts.scr_create_blood(position.x, position.y, 3, self)
 					global.message = "KALI ACCEPTS YOUR SACRIFICE!"

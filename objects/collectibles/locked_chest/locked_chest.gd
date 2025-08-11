@@ -29,12 +29,12 @@ func collision_with_key():
 	
 		sprite_index = "locked_chest_open"
 		Audio.play_sound(global.snd_chest_open)
-		var obj = gml.instance_create(position.x, position.y, Objects.udjat_eye)
+		var obj = gml.instance_create(position.x, position.y, Objects.udjat_eye, self)
 		obj.x_vel = randi_range(0,3) - randi_range(0,3)
 		obj.y_vel = -2
-		obj = gml.instance_create(position.x, position.y, Objects.poof)
+		obj = gml.instance_create(position.x, position.y, Objects.poof, self)
 		obj.x_vel = -0.4
-		obj = gml.instance_create(position.x, position.y, Objects.poof)
+		obj = gml.instance_create(position.x, position.y, Objects.poof, self)
 		obj.x_vel = 0.4
 		gml.instance_destroy(self)
 

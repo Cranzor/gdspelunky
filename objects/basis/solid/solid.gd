@@ -63,13 +63,13 @@ func destroy():
 	if (gml.collision_point(position.x+8, position.y+18, "lamp_red", 0, 0)):
 
 		var obj = gml.instance_place(position.x+8, position.y+16, "lamp_red", self)
-		gml.instance_create(obj.position.x+8, obj.position.y+12, Objects.lamp_red_item)
+		gml.instance_create(obj.position.x+8, obj.position.y+12, Objects.lamp_red_item, self)
 		gml.instance_destroy(obj)
 
 	if (gml.collision_point(position.x+8, position.y+18, "lamp", 0, 0)):
 
 		var obj = gml.instance_place(position.x+8, position.y+16, "lamp", self)
-		gml.instance_create(obj.position.x+8, obj.position.y+12, Objects.lamp_item)
+		gml.instance_create(obj.position.x+8, obj.position.y+12, Objects.lamp_item, self)
 		gml.instance_destroy(obj)
 
 

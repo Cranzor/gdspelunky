@@ -55,11 +55,11 @@ func create():
 
 	if (t_money >= 50000):
 
-		trophy = gml.instance_create(32, 32, Objects.trophy)
+		trophy = gml.instance_create(32, 32, Objects.trophy, self)
 		if (t_money >= 200000):
 	
 			trophy.sprite_index = "gold_trophy"
-			gml.instance_create(32, 48, Objects.x_sun)
+			gml.instance_create(32, 48, Objects.x_sun, self)
 	
 		elif (t_money >= 100000):
 	
@@ -73,7 +73,7 @@ func create():
 
 	if (t_time > 0 and t_time < 960):
 
-		trophy = gml.instance_create(64, 64, Objects.trophy)
+		trophy = gml.instance_create(64, 64, Objects.trophy, self)
 		if (t_time <= 960):
 	
 			trophy.sprite_index = "bronze_trophy"
@@ -85,17 +85,17 @@ func create():
 		if (t_time <= 600):
 	
 			trophy.sprite_index = "gold_trophy"
-			gml.instance_create(64, 80, Objects.x_moon)
+			gml.instance_create(64, 80, Objects.x_moon, self)
 	
 
 
 	if (t_kills >= 80):
 
-		trophy = gml.instance_create(32, 96, Objects.trophy)
+		trophy = gml.instance_create(32, 96, Objects.trophy, self)
 		if (t_kills >= 120):
 	
 			trophy.sprite_index = "gold_trophy"
-			gml.instance_create(32, 112, Objects.x_stars)
+			gml.instance_create(32, 112, Objects.x_stars, self)
 	
 		elif (t_kills >= 100):
 	
@@ -109,11 +109,11 @@ func create():
 
 	if (t_saves >= 4):
 
-		trophy = gml.instance_create(64, 128, Objects.trophy)
+		trophy = gml.instance_create(64, 128, Objects.trophy, self)
 		if (t_saves >= 8):
 	
 			trophy.sprite_index = "gold_trophy"
-			gml.instance_create(64, 144, Objects.x_change)
+			gml.instance_create(64, 144, Objects.x_change, self)
 	
 		elif (t_saves >= 6):
 	
@@ -141,10 +141,10 @@ func create():
 		player1.position.y = 112+8
 
 
-	if (global.new_money): gml.instance_create(272, 48, Objects.new)
-	if (global.new_kills): gml.instance_create(272, 64, Objects.new)
-	if (global.new_saves): gml.instance_create(272, 80, Objects.new)
-	if (global.new_time): gml.instance_create(272, 96, Objects.new)
+	if (global.new_money): gml.instance_create(272, 48, Objects.new, self)
+	if (global.new_kills): gml.instance_create(272, 64, Objects.new, self)
+	if (global.new_saves): gml.instance_create(272, 80, Objects.new, self)
+	if (global.new_time): gml.instance_create(272, 96, Objects.new, self)
 
 
 func draw():

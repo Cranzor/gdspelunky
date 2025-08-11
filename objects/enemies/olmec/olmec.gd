@@ -30,7 +30,7 @@ func alarm_1():
 	sprite_index = "olmec_start2"
 	for i in range(0, 6):
 
-		var debris = gml.instance_create(position.x+32+gml.rand(0,32), position.y+gml.rand(0,32), Objects.olmec_debris)
+		var debris = gml.instance_create(position.x+32+gml.rand(0,32), position.y+gml.rand(0,32), Objects.olmec_debris, self)
 		debris.x_vel = gml.rand(1,4)
 		debris.y_vel = -gml.rand(1,3)
 
@@ -38,7 +38,7 @@ func alarm_1():
 	var all_hawkman_worships = gml.get_all_instances("hawkman_worship")
 	for hawkman_worship_instance in all_hawkman_worships:
 
-		var obj = gml.instance_create(hawkman_worship_instance.position.x, hawkman_worship_instance.position.y, Objects.hawkman)    
+		var obj = gml.instance_create(hawkman_worship_instance.position.x, hawkman_worship_instance.position.y, Objects.hawkman, self)    
 		obj.status = 98
 		obj.hp = 1
 		obj.x_vel = -3
@@ -61,7 +61,7 @@ func alarm_2():
 	alarm_3_countdown.start(50)
 	for i in range(0, 6):
 
-		var debris = gml.instance_create(position.x+gml.rand(0,32), position.y+gml.rand(0,32), Objects.olmec_debris)
+		var debris = gml.instance_create(position.x+gml.rand(0,32), position.y+gml.rand(0,32), Objects.olmec_debris, self)
 		debris.x_vel = -gml.rand(1,4)
 		debris.y_vel = -gml.rand(1,3)
 
@@ -72,7 +72,7 @@ func alarm_3():
 	sprite_index = "olmec"
 	for i in range(0, 12):
 
-		var debris = gml.instance_create(position.x+gml.rand(0,64), position.y+32+gml.rand(0,32), Objects.olmec_debris)
+		var debris = gml.instance_create(position.x+gml.rand(0,64), position.y+32+gml.rand(0,32), Objects.olmec_debris, self)
 		debris.x_vel = gml.rand(1,4)-gml.rand(1,4)
 		debris.y_vel = -gml.rand(1,3)
 
@@ -105,7 +105,7 @@ func alarm_6():
 	var all_caveman_worships = gml.get_all_instances("caveman_worship")
 	for caveman_worship_instance in all_caveman_worships:
 
-		var obj = gml.instance_create(caveman_worship_instance.position.x, caveman_worship_instance.position.y, Objects.caveman)
+		var obj = gml.instance_create(caveman_worship_instance.position.x, caveman_worship_instance.position.y, Objects.caveman, self)
 		obj.facing = 1
 		obj.status = 2
 		gml.instance_destroy(caveman_worship_instance)
@@ -172,7 +172,7 @@ func step():
 	
 	if (Collision.is_collision_top(1, self)):
 
-		gml.instance_create(position.x, position.y-16, Objects.olmec_slam)
+		gml.instance_create(position.x, position.y-16, Objects.olmec_slam, self)
 		position.y += 1
 		if (y_vel < 0): y_vel = -y_vel * 0.8
 
@@ -240,11 +240,11 @@ func step():
 
 		for repetition in range(6):
 	
-			gml.instance_create(position.x+32+gml.rand(0,32)-gml.rand(0,32), position.y+14+gml.rand(0,32)-gml.rand(0,32), Objects.psychic_create2)
+			gml.instance_create(position.x+32+gml.rand(0,32)-gml.rand(0,32), position.y+14+gml.rand(0,32)-gml.rand(0,32), Objects.psychic_create2, self)
 	
-		gml.instance_create(position.x+32, position.y+16, Objects.yellow_ball)
-		gml.instance_create(position.x+32, position.y+16, Objects.yellow_ball)
-		gml.instance_create(position.x+32, position.y+16, Objects.yellow_ball)
+		gml.instance_create(position.x+32, position.y+16, Objects.yellow_ball, self)
+		gml.instance_create(position.x+32, position.y+16, Objects.yellow_ball, self)
+		gml.instance_create(position.x+32, position.y+16, Objects.yellow_ball, self)
 		Audio.play_sound(global.snd_psychic)
 		status = IDLE
 
@@ -317,7 +317,7 @@ func step():
 	
 			if (not slammed):
 		
-				gml.instance_create(position.x, position.y+64, Objects.olmec_slam)
+				gml.instance_create(position.x, position.y+64, Objects.olmec_slam, self)
 				slammed = true
 				InLevel.scr_shake(5)
 		

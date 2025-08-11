@@ -32,11 +32,11 @@ func destroy():
 	
 	if (not clean_death and not global.clean_solids):
 
-		var rubble = gml.instance_create(position.x+8+gml.rand(0,8)-gml.rand(0,8), position.y+8+gml.rand(0,8)-gml.rand(0,8), Objects.rubble)
+		var rubble = gml.instance_create(position.x+8+gml.rand(0,8)-gml.rand(0,8), position.y+8+gml.rand(0,8)-gml.rand(0,8), Objects.rubble, self)
 		rubble.sprite_index = "rubble_tan"
-		rubble = gml.instance_create(position.x+8+gml.rand(0,8)-gml.rand(0,8), position.y+8+gml.rand(0,8)-gml.rand(0,8), Objects.rubble_small)
+		rubble = gml.instance_create(position.x+8+gml.rand(0,8)-gml.rand(0,8), position.y+8+gml.rand(0,8)-gml.rand(0,8), Objects.rubble_small, self)
 		rubble.sprite_index = "rubble_tan_small"
-		rubble = gml.instance_create(position.x+8+gml.rand(0,8)-gml.rand(0,8), position.y+8+gml.rand(0,8)-gml.rand(0,8), Objects.rubble_small)
+		rubble = gml.instance_create(position.x+8+gml.rand(0,8)-gml.rand(0,8), position.y+8+gml.rand(0,8)-gml.rand(0,8), Objects.rubble_small, self)
 		rubble.sprite_index = "rubble_tan_small"
 
 
@@ -58,14 +58,14 @@ func destroy():
 	
 		elif (global.kali_punish == 1):
 
-			gml.instance_create(player1.position.x, player1.position.y, Objects.ball)
-			var obj = gml.instance_create(player1.position.x, player1.position.y, Objects.chain)
+			gml.instance_create(player1.position.x, player1.position.y, Objects.ball, self)
+			var obj = gml.instance_create(player1.position.x, player1.position.y, Objects.chain, self)
 			obj.link_val = 1
-			obj = gml.instance_create(player1.position.x, player1.position.y, Objects.chain)
+			obj = gml.instance_create(player1.position.x, player1.position.y, Objects.chain, self)
 			obj.link_val = 2
-			obj = gml.instance_create(player1.position.x, player1.position.y, Objects.chain)
+			obj = gml.instance_create(player1.position.x, player1.position.y, Objects.chain, self)
 			obj.link_val = 3
-			obj = gml.instance_create(player1.position.x, player1.position.y, Objects.chain)
+			obj = gml.instance_create(player1.position.x, player1.position.y, Objects.chain, self)
 			obj.link_val = 4
 	
 		else:
@@ -82,8 +82,8 @@ func destroy():
 				global.dark_level = true
 				if (not global.ghost_exists):
 			
-					if (player1.position.x > gml.room_width / 2): gml.instance_create(gml.view("xview")+gml.view("wview")+8, gml.view("yview")+floor(gml.view("hview") / 2), Objects.ghost)
-					else: gml.instance_create(gml.view("xview")-32,  gml.view("yview")+floor(gml.view("hview") / 2), Objects.ghost)
+					if (player1.position.x > gml.room_width / 2): gml.instance_create(gml.view("xview")+gml.view("wview")+8, gml.view("yview")+floor(gml.view("hview") / 2), Objects.ghost, self)
+					else: gml.instance_create(gml.view("xview")-32,  gml.view("yview")+floor(gml.view("hview") / 2), Objects.ghost, self)
 					global.ghost_exists = true
 			
 		

@@ -17,7 +17,7 @@ func _process(delta):
 
 
 func alarm_0():
-	var arrow = gml.instance_create(position.x+16, position.y+4, Objects.arrow)
+	var arrow = gml.instance_create(position.x+16, position.y+4, Objects.arrow, self)
 	arrow.x_vel = 5
 	
 
@@ -35,7 +35,7 @@ func alarm_1():
 	
 		x_act -= (position.x+8)
 		if (x_act < 32):  x_act = 32
-		var obj = gml.instance_create(position.x+16, position.y, Objects.arrow_trap_test)
+		var obj = gml.instance_create(position.x+16, position.y, Objects.arrow_trap_test, self)
 		obj.image_xscale = ceil((x_act-16)/16)
 		#obj.trap_id = id #--- commenting this out to avoid using id. will provide direct reference to node
 		obj.trap_id = self #---[FLAG] check this later
@@ -58,13 +58,13 @@ func create():
 func destroy():
 	if (not clean_death and not global.clean_solids):
 
-		var rubble = gml.instance_create(position.x+8+gml.rand(0,8)-gml.rand(0,8), position.y+8+gml.rand(0,8)-gml.rand(0,8), Objects.rubble)
+		var rubble = gml.instance_create(position.x+8+gml.rand(0,8)-gml.rand(0,8), position.y+8+gml.rand(0,8)-gml.rand(0,8), Objects.rubble, self)
 		rubble.sprite_index = "rubble_tan"
-		rubble = gml.instance_create(position.x+8+gml.rand(0,8)-gml.rand(0,8), position.y+8+gml.rand(0,8)-gml.rand(0,8), Objects.rubble_small)
+		rubble = gml.instance_create(position.x+8+gml.rand(0,8)-gml.rand(0,8), position.y+8+gml.rand(0,8)-gml.rand(0,8), Objects.rubble_small, self)
 		rubble.sprite_index = "rubble_tan_small"
-		rubble = gml.instance_create(position.x+8+gml.rand(0,8)-gml.rand(0,8), position.y+8+gml.rand(0,8)-gml.rand(0,8), Objects.rubble_small)
+		rubble = gml.instance_create(position.x+8+gml.rand(0,8)-gml.rand(0,8), position.y+8+gml.rand(0,8)-gml.rand(0,8), Objects.rubble_small, self)
 		rubble.sprite_index = "rubble_tan_small"
-		if (fired == 0): gml.instance_create(position.x+8, position.y+8, Objects.arrow)
+		if (fired == 0): gml.instance_create(position.x+8, position.y+8, Objects.arrow, self)
 
 
 func step():
@@ -105,7 +105,7 @@ func step():
 	#
 		#if (firing):
 	#
-			#arrow = gml.instance_create(position.x+18, position.y+4, Objects.arrow)
+			#arrow = gml.instance_create(position.x+18, position.y+4, Objects.arrow, self)
 			#arrow.x_vel = 8
 			#fired += 1
 			#Audio.play_sound(global.snd_arrow_trap)

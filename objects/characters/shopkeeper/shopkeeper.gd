@@ -51,7 +51,7 @@ func collision_with_character():
 			other.y_vel=-6-0.2*other.y_vel
 			if (global.has_spike_shoes):
 				hp -= (3 * ceil(other.fall_timer/16))
-				gml.instance_create(other.position.x, other.position.y+8, Objects.blood)
+				gml.instance_create(other.position.x, other.position.y+8, Objects.blood, self)
 			else: hp -= (1 * ceil(other.fall_timer/16))
 			other.fall_timer = 0
 			status = STUNNED
@@ -73,7 +73,7 @@ func collision_with_character():
 				other.x_vel = -6
 			else:
 				other.x_vel = 6
-			gml.instance_create(other.position.x, other.position.y, Objects.blood)
+			gml.instance_create(other.position.x, other.position.y, Objects.blood, self)
 	
 			if (global.plife > 0):
 		
@@ -297,7 +297,7 @@ func step():
 			global.murderer = true
 			if (has_gun):
 		
-				var obj = gml.instance_create(position.x+8, position.y+8, Objects.shotgun)
+				var obj = gml.instance_create(position.x+8, position.y+8, Objects.shotgun, self)
 				obj.y_vel = gml.rand(4,6)
 				if (x_vel < 0): obj.x_vel = -1 * gml.rand(4,6)
 				else: obj.x_vel = gml.rand(4,6)
@@ -431,17 +431,17 @@ func step():
 						
 							if (item_instance.in_dice_house):
 						
-								var obj = gml.instance_create(item_instance.position.x-4, item_instance.position.y+6, Objects.poof)
+								var obj = gml.instance_create(item_instance.position.x-4, item_instance.position.y+6, Objects.poof, self)
 								obj.x_vel = -0.4
-								obj = gml.instance_create(item_instance.position.x+4, item_instance.position.y+6, Objects.poof)
+								obj = gml.instance_create(item_instance.position.x+4, item_instance.position.y+6, Objects.poof, self)
 								obj.x_vel = 0.4
 								LevelGeneration.scr_generate_item(item_instance.position.x, item_instance.position.y, 1)
 								obj.in_dice_house = true
 								if (player1.position.x < item_instance.position.x): item_instance.position.x -= 32
 								else: item_instance.position.x += 32
-								obj = gml.instance_create(item_instance.position.x-4, item_instance.position.y+6, Objects.poof)
+								obj = gml.instance_create(item_instance.position.x-4, item_instance.position.y+6, Objects.poof, self)
 								obj.x_vel = -0.4
-								obj = gml.instance_create(item_instance.position.x+4, item_instance.position.y+6, Objects.poof)
+								obj = gml.instance_create(item_instance.position.x+4, item_instance.position.y+6, Objects.poof, self)
 								obj.x_vel = 0.4
 								item_instance.cost = 0
 								item_instance.for_sale = false
@@ -627,10 +627,10 @@ func step():
 			
 					if (facing == LEFT and player1.position.x < position.x+8 and dist < 96):
 				
-						gml.instance_create(position.x, position.y+9, Objects.shotgun_blast_left)
+						gml.instance_create(position.x, position.y+9, Objects.shotgun_blast_left, self)
 						for i in 6: #---[FLAG] double check this
 					
-							var obj = gml.instance_create(position.x+4, position.y+8, Objects.bullet)
+							var obj = gml.instance_create(position.x+4, position.y+8, Objects.bullet, self)
 							obj.x_vel = (-1 * gml.rand(6,8)) + x_vel
 							if (obj.x_vel >= -6): obj.x_vel = -6
 							obj.y_vel = gml.random(1) - gml.random(1)
@@ -644,10 +644,10 @@ func step():
 				
 					if (facing == RIGHT and player1.position.x > position.x+8 and dist < 96):
 				
-						gml.instance_create(position.x+16, position.y+9, Objects.shotgun_blast_right)
+						gml.instance_create(position.x+16, position.y+9, Objects.shotgun_blast_right, self)
 						for i in 6: #---[FLAG] need to check this
 					
-							var obj = gml.instance_create(position.x+12, position.y+8, Objects.bullet)
+							var obj = gml.instance_create(position.x+12, position.y+8, Objects.bullet, self)
 							obj.x_vel = gml.rand(6,8) + x_vel
 							if (obj.x_vel < 6): obj.x_vel = 6
 							obj.y_vel = gml.random(1) - gml.random(1)
@@ -750,7 +750,7 @@ func step():
 					global.murderer = true
 					for repetition in gml.rand(1,4): #---[FLAG] check this
 				
-						var obj = gml.instance_create(position.x+8, position.y+8, Objects.gold_nugget)
+						var obj = gml.instance_create(position.x+8, position.y+8, Objects.gold_nugget, self)
 						obj.y_vel = -1
 						obj.x_vel = gml.rand(1,3)-gml.rand(1,3)
 				
@@ -770,7 +770,7 @@ func step():
 
 			if (has_gun):
 		
-				var obj = gml.instance_create(position.x+8, position.y+8, Objects.shotgun)
+				var obj = gml.instance_create(position.x+8, position.y+8, Objects.shotgun, self)
 				obj.y_vel = gml.rand(4,6)
 				if (x_vel < 0): obj.x_vel = -1 * gml.rand(4,6)
 				else: obj.x_vel = gml.rand(4,6)

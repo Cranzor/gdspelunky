@@ -57,12 +57,12 @@ func step():
 		if (position.y >= 176 + 8):
 	
 			position.y = 176 + 8
-			var player = gml.instance_create(position.x, position.y, Objects.player1)
+			var player = gml.instance_create(position.x, position.y, Objects.player1, self)
 			player.facing = 18
 			gml.instance_destroy(self)
 	
 
 	else:
-		var player = gml.instance_create(position.x, position.y, Objects.player1)
+		var player = gml.instance_create(position.x, position.y, Objects.player1, self)
 		player.facing = 18
 		gml.instance_destroy(self)

@@ -77,9 +77,9 @@ func step(): # one of seven scripts which uses 'other' outside of collision_with
 
 			for i in range(0, 3):
 		
-				gml.instance_create(other.position.x+8, other.position.y+8, Objects.bone) #---[FLAG] other is not grabbed here
+				gml.instance_create(other.position.x+8, other.position.y+8, Objects.bone, self) #---[FLAG] other is not grabbed here
 		
-			var skull = gml.instance_create(other.position.x+8, other.position.y+8, Objects.skull)
+			var skull = gml.instance_create(other.position.x+8, other.position.y+8, Objects.skull, self)
 			skull.y_vel = -gml.rand(1,3)
 			skull.x_vel = gml.rand(0,3)-gml.rand(0,3)
 			if (counts_as_kill):

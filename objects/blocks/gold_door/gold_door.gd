@@ -31,7 +31,7 @@ func collision_with_sceptre():
 			gml.instance_destroy(other)
 	
 			Audio.play_sound(global.snd_chest_open)
-			gml.instance_create(position.x, position.y, Objects.x_gold)
+			gml.instance_create(position.x, position.y, Objects.x_gold, self)
 			gml.instance_destroy(self)
 	
 		else:

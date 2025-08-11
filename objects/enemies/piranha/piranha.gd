@@ -187,7 +187,7 @@ func step():
 		if (bubble_timer > 0): bubble_timer -= 1
 		else:
 
-			gml.instance_create(position.x, position.y, Objects.bubble)
+			gml.instance_create(position.x, position.y, Objects.bubble, self)
 			bubble_timer = (gml.rand(bubble_timer_max-10, bubble_timer_max+10))
 
 
@@ -199,5 +199,5 @@ func step():
 		
 		if (not gml.collision_point(position.x+4, position.y+4, "water", 0, 0)):
 
-			gml.instance_create(position.x, position.y, Objects.fish_bone)
+			gml.instance_create(position.x, position.y, Objects.fish_bone, self)
 			gml.instance_destroy(self)

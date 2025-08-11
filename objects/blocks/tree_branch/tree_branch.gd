@@ -27,7 +27,7 @@ func create():
 func destroy():
 	if (sprite_index != "tree_branch_dead_l" and sprite_index != "tree_branch_dead_r"):
 
-		var rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), Objects.leaf)
+		var rubble = gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), Objects.leaf, self)
 
 
 func step():

@@ -43,7 +43,7 @@ func alarm_0():
 		if (draw_pos_y > 91 + 4): draw_pos_y = 91
 
 
-	sprite = gml.instance_create(draw_pos_x, draw_pos_y, Objects.sprite)
+	sprite = gml.instance_create(draw_pos_x, draw_pos_y, Objects.sprite, self)
 
 	if (draw_loot < 0):
 
@@ -349,7 +349,7 @@ func create():
 
 	if (global.has_cape):
 
-		gml.instance_create(0, 0, Objects.cape)
+		gml.instance_create(0, 0, Objects.cape, self)
 
 
 	if (global.curr_level-1 < 1):
@@ -360,14 +360,14 @@ func create():
 
 	if (global.kali_punish >= 2):
 		var p_dummy = gml.get_instance("p_dummy")
-		gml.instance_create(p_dummy.position.x, p_dummy.position.y+2, Objects.ball2)
-		var obj = gml.instance_create(p_dummy.position.x, p_dummy.position.y, Objects.chain2)
+		gml.instance_create(p_dummy.position.x, p_dummy.position.y+2, Objects.ball2, self)
+		var obj = gml.instance_create(p_dummy.position.x, p_dummy.position.y, Objects.chain2, self)
 		obj.link_val = 1
-		obj = gml.instance_create(p_dummy.position.x, p_dummy.position.y, Objects.chain2)
+		obj = gml.instance_create(p_dummy.position.x, p_dummy.position.y, Objects.chain2, self)
 		obj.link_val = 2
-		obj = gml.instance_create(p_dummy.position.x, p_dummy.position.y, Objects.chain2)
+		obj = gml.instance_create(p_dummy.position.x, p_dummy.position.y, Objects.chain2, self)
 		obj.link_val = 3
-		obj = gml.instance_create(p_dummy.position.x, p_dummy.position.y, Objects.chain2)
+		obj = gml.instance_create(p_dummy.position.x, p_dummy.position.y, Objects.chain2, self)
 		obj.link_val = 4
 
 
@@ -376,23 +376,23 @@ func create():
 
 	if (global.xdamsels > 0):
 
-		gml.instance_create(176+8, 176+8, Objects.damsel_kiss)
+		gml.instance_create(176+8, 176+8, Objects.damsel_kiss, self)
 
 
 	if (global.tunnel1 > 0 and global.tunnel2 > 0 and InLevel.is_room("transition1x")):
 
 		if (global.tunnel1 > global.tunnel1_max): global.tunnel1 -= 1
-		else: gml.instance_create(96+8, 176+8, Objects.tunnel_man)
+		else: gml.instance_create(96+8, 176+8, Objects.tunnel_man, self)
 
 	elif (global.tunnel1 == 0 and global.tunnel2 > 0 and InLevel.is_room("transition2x")):
 
 		if (global.tunnel2 > global.tunnel2_max): global.tunnel2 -= 1
-		else: gml.instance_create(96+8, 176+8, Objects.tunnel_man)
+		else: gml.instance_create(96+8, 176+8, Objects.tunnel_man, self)
 
 	elif (global.tunnel1 > 0 and global.tunnel2 == 0 and InLevel.is_room("transition3x")):
 
 		if (global.tunnel1 > global.tunnel3_max): global.tunnel1 -= 1
-		else: gml.instance_create(96+8, 176+8, Objects.tunnel_man)
+		else: gml.instance_create(96+8, 176+8, Objects.tunnel_man, self)
 
 
 	up_held = 0

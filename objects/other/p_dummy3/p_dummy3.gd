@@ -85,7 +85,7 @@ func draw():
 
 
 func alarm_0():
-	var rope = gml.instance_create(position.x+16, position.y, Objects.rope_throw)
+	var rope = gml.instance_create(position.x+16, position.y, Objects.rope_throw, self)
 	rope.falling = true
 	rope.armed = true
 	#alarm_1(50) #--- commenting out as alarm_1 doesn't exist

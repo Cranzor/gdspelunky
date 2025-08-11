@@ -23,7 +23,7 @@ func alarm_0():
 	if (not player1.dead):
 
 		var n = gml.rand(0,3)
-		gml.instance_create(32 + n*80, 0, Objects.shopkeeper2)
+		gml.instance_create(32 + n*80, 0, Objects.shopkeeper2, self)
 		if (kills >= 40):
 	
 			alarm_0_countdown.start(100)
@@ -57,7 +57,7 @@ func alarm_11():
 	if (not player1.dead and gml.rand(1, 100) < kills):
 
 		var n = gml.rand(0,3)
-		gml.instance_create(32 + n*80, 0, Objects.spider)
+		gml.instance_create(32 + n*80, 0, Objects.spider, self)
 
 
 	if (not player1.dead): alarm_11_countdown.start(20)

@@ -42,7 +42,7 @@ func _process(delta):
 #        life_start = "4"
 #        bomb_start = "4"
 #        rope_start = "4"
-#        gml.instance_create(256, 64, Objects.load_button)
+#        gml.instance_create(256, 64, Objects.load_button, self)
 #        global.prev_custom_level = ""
 
 

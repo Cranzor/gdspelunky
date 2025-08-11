@@ -51,9 +51,9 @@ func step():
 	
 			if (y_vel > 5):
 		
-				var poof = gml.instance_create(position.x+16-4, position.y+30, Objects.poof)
+				var poof = gml.instance_create(position.x+16-4, position.y+30, Objects.poof, self)
 				poof.x_vel = -0.4
-				poof = gml.instance_create(position.x+16+4, position.y+30, Objects.poof)
+				poof = gml.instance_create(position.x+16+4, position.y+30, Objects.poof, self)
 				poof.x_vel = 0.4
 				Audio.play_sound(global.snd_thump)
 		

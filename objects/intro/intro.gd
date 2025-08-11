@@ -39,7 +39,7 @@ func create():
 	fade_in = false
 	fade_out = false
 	fade_level = 1
-	#gml.instance_create(-32, 184, p_dummy3)
+	#gml.instance_create(-32, 184, p_dummy3, self)
 
 	draw_status = 0
 	
@@ -104,7 +104,7 @@ func step():
 		else:
 		
 			fade_in = false
-			if (not gml.instance_exists("p_dummy3")): gml.instance_create(-32, 184, Objects.p_dummy3)
+			if (not gml.instance_exists("p_dummy3")): gml.instance_create(-32, 184, Objects.p_dummy3, self)
 		
 
 	elif (fade_out):

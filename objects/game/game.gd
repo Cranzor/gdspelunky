@@ -422,8 +422,8 @@ func step():
 			not global.has_crown and global.xtime > 150000 and not global.ghost_exists and
 			player1.sprite_index != "p_exit" and player1.sprite_index != "damsel_exit"):
 		
-			if (player1.position.x > gml.room_width / 2): gml.instance_create(gml.view('xview')+gml.view('wview')+8, gml.view('yview')+floor(gml.view('hview') / 2), Objects.ghost)
-			else: gml.instance_create(gml.view('xview')-32,  gml.view('yview')+floor(gml.view('hview') / 2), Objects.ghost)
+			if (player1.position.x > gml.room_width / 2): gml.instance_create(gml.view('xview')+gml.view('wview')+8, gml.view('yview')+floor(gml.view('hview') / 2), Objects.ghost, self)
+			else: gml.instance_create(gml.view('xview')-32,  gml.view('yview')+floor(gml.view('hview') / 2), Objects.ghost, self)
 			global.ghost_exists = true
 		
 

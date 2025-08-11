@@ -29,12 +29,12 @@ func collision_with_boulder():
 	
 			if (trap_id.facing == 0):
 		
-				arrow = gml.instance_create(trap_id.position.x-2, trap_id.position.y+4, Objects.arrow)
+				arrow = gml.instance_create(trap_id.position.x-2, trap_id.position.y+4, Objects.arrow, self)
 				arrow.x_vel = -8
 		
 			else:
 		
-				arrow = gml.instance_create(position.x+18, position.y+4, Objects.arrow)
+				arrow = gml.instance_create(position.x+18, position.y+4, Objects.arrow, self)
 				arrow.x_vel = 8
 		
 			trap_id.fired += 1
@@ -60,12 +60,12 @@ func collision_with_character():
 		
 				if (trap_id.facing == 0):
 			
-					arrow = gml.instance_create(trap_id.position.x-2, trap_id.position.y+4, Objects.arrow)
+					arrow = gml.instance_create(trap_id.position.x-2, trap_id.position.y+4, Objects.arrow, self)
 					arrow.x_vel = -8
 			
 				else:
 			
-					arrow = gml.instance_create(trap_id.position.x+18, trap_id.position.y+4, Objects.arrow)
+					arrow = gml.instance_create(trap_id.position.x+18, trap_id.position.y+4, Objects.arrow, self)
 					arrow.x_vel = 8
 			
 				trap_id.fired += 1
@@ -86,12 +86,12 @@ func collision_with_enemy():
 	
 			if (trap_id.facing == 0):
 		
-				arrow = gml.instance_create(trap_id.position.x-2, trap_id.position.y+4, Objects.arrow)
+				arrow = gml.instance_create(trap_id.position.x-2, trap_id.position.y+4, Objects.arrow, self)
 				arrow.x_vel = -8
 		
 			else:
 		
-				arrow = gml.instance_create(trap_id.position.x+18, trap_id.position.y+4, Objects.arrow)
+				arrow = gml.instance_create(trap_id.position.x+18, trap_id.position.y+4, Objects.arrow, self)
 				arrow.x_vel = 8
 		
 			trap_id.fired += 1
@@ -112,12 +112,12 @@ func collision_with_item():
 	
 			if (trap_id.facing == 0):
 		
-				arrow = gml.instance_create(trap_id.position.x-2, trap_id.position.y+4, Objects.arrow)
+				arrow = gml.instance_create(trap_id.position.x-2, trap_id.position.y+4, Objects.arrow, self)
 				arrow.x_vel = -8
 		
 			else:
 		
-				arrow = gml.instance_create(trap_id.position.x+18, trap_id.position.y+4, Objects.arrow)
+				arrow = gml.instance_create(trap_id.position.x+18, trap_id.position.y+4, Objects.arrow, self)
 				arrow.x_vel = 8
 		
 			trap_id.fired += 1
@@ -138,12 +138,12 @@ func collision_with_moveable_solid():
 	
 			if (trap_id.facing == 0):
 		
-				arrow = gml.instance_create(trap_id.position.x-2, trap_id.position.y+4, Objects.arrow)
+				arrow = gml.instance_create(trap_id.position.x-2, trap_id.position.y+4, Objects.arrow, self)
 				arrow.x_vel = -8
 		
 			else:
 		
-				arrow = gml.instance_create(trap_id.position.x+18, trap_id.position.y+4, Objects.arrow)
+				arrow = gml.instance_create(trap_id.position.x+18, trap_id.position.y+4, Objects.arrow, self)
 				arrow.x_vel = 8
 		
 			trap_id.fired += 1
@@ -164,12 +164,12 @@ func collision_with_treasure():
 	
 			if (trap_id.facing == 0):
 		
-				arrow = gml.instance_create(trap_id.position.x-2, trap_id.position.y+4, Objects.arrow)
+				arrow = gml.instance_create(trap_id.position.x-2, trap_id.position.y+4, Objects.arrow, self)
 				arrow.x_vel = -8
 		
 			else:
 		
-				arrow = gml.instance_create(trap_id.position.x+18, trap_id.position.y+4, Objects.arrow)
+				arrow = gml.instance_create(trap_id.position.x+18, trap_id.position.y+4, Objects.arrow, self)
 				arrow.x_vel = 8
 		
 			trap_id.fired += 1

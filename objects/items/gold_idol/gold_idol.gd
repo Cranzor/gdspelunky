@@ -52,7 +52,7 @@ func step():
 					if (global.collect_counter > 100): global.collect_counter = 100
 					global.idols += 1
 					Audio.play_sound(global.snd_coin)
-					gml.instance_create(position.x, position.y-8, Objects.big_collect)
+					gml.instance_create(position.x, position.y-8, Objects.big_collect, self)
 					global.message = "PLEASURE DOING BUSINESS!"
 					global.message2 = ""
 					global.message_timer = 100

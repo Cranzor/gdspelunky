@@ -55,14 +55,14 @@ func create():
 			player1.hold_item.cost = 0
 		if (global.kali_punish >= 2):
 	
-			gml.instance_create(player1.position.x, player1.position.y, Objects.ball)
-			var obj = gml.instance_create(player1.position.x, player1.position.y, Objects.chain)
+			gml.instance_create(player1.position.x, player1.position.y, Objects.ball, self)
+			var obj = gml.instance_create(player1.position.x, player1.position.y, Objects.chain, self)
 			obj.link_val = 1
-			obj = gml.instance_create(player1.position.x, player1.position.y, Objects.chain)
+			obj = gml.instance_create(player1.position.x, player1.position.y, Objects.chain, self)
 			obj.link_val = 2
-			obj = gml.instance_create(player1.position.x, player1.position.y, Objects.chain)
+			obj = gml.instance_create(player1.position.x, player1.position.y, Objects.chain, self)
 			obj.link_val = 3
-			obj = gml.instance_create(player1.position.x, player1.position.y, Objects.chain)
+			obj = gml.instance_create(player1.position.x, player1.position.y, Objects.chain, self)
 			obj.link_val = 4
 	
 

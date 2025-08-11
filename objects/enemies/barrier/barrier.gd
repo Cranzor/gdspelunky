@@ -17,7 +17,7 @@ func _process(delta):
 
 
 func collision_with_bullet():
-	gml.instance_create(other.position.x, other.position.y, Objects.smoke_puff)
+	gml.instance_create(other.position.x, other.position.y, Objects.smoke_puff, self)
 	Audio.play_sound(global.snd_hit)
 	gml.instance_destroy(other)
 

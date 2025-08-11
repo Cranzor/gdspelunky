@@ -28,9 +28,9 @@ func create():
 	elif (n < 30): sprite_index = "brick_gold_big"
 	elif (InLevel.is_level() and position.x > 1 and position.x < gml.room_width-16 and position.y > 1 and position.y < gml.room_height-16):
 
-		if (randi_range(1,100) == 1): gml.instance_create(position.x+8, position.y+8, Objects.sapphire_big)
-		elif (randi_range(1,120) == 1): gml.instance_create(position.x+8, position.y+8, Objects.emerald_big)
-		elif (randi_range(1,140) == 1): gml.instance_create(position.x+8, position.y+8, Objects.ruby_big)
+		if (randi_range(1,100) == 1): gml.instance_create(position.x+8, position.y+8, Objects.sapphire_big, self)
+		elif (randi_range(1,120) == 1): gml.instance_create(position.x+8, position.y+8, Objects.emerald_big, self)
+		elif (randi_range(1,140) == 1): gml.instance_create(position.x+8, position.y+8, Objects.ruby_big, self)
 		elif (randi_range(1,1200) == 1):
 
 			LevelGeneration.scr_generate_item(position.x+8, position.y+8, 2)
@@ -40,15 +40,15 @@ func destroy():
 	
 	if (not clean_death and not global.clean_solids):
 
-		gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), Objects.rubble)
-		gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), Objects.rubble_small)
-		gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), Objects.rubble_small)
+		gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), Objects.rubble, self)
+		gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), Objects.rubble_small, self)
+		gml.instance_create(position.x+8+randi_range(0,8)-randi_range(0,8), position.y+8+randi_range(0,8)-randi_range(0,8), Objects.rubble_small, self)
 
 		if (sprite_index == "brick_gold"):
 		
 			for i in range(3):
 			
-				var gold = gml.instance_create(position.x+8+randi_range(0,4)-randi_range(0,4), position.y+8+randi_range(0,4)-randi_range(0,4), Objects.gold_chunk)
+				var gold = gml.instance_create(position.x+8+randi_range(0,4)-randi_range(0,4), position.y+8+randi_range(0,4)-randi_range(0,4), Objects.gold_chunk, self)
 				gold.x_vel = randi_range(0,3) - randi_range(0,3)
 				gold.y_vel = randi_range(2,4) * 1
 			
@@ -57,10 +57,10 @@ func destroy():
 		
 			for i in range(3):
 			
-				var gold = gml.instance_create(position.x+8+randi_range(0,4)-randi_range(0,4), position.y+8+randi_range(0,4)-randi_range(0,4), Objects.gold_chunk)
+				var gold = gml.instance_create(position.x+8+randi_range(0,4)-randi_range(0,4), position.y+8+randi_range(0,4)-randi_range(0,4), Objects.gold_chunk, self)
 				gold.x_vel = randi_range(0,3) - randi_range(0,3)
 				gold.y_vel = randi_range(2,4) * 1
 			
-			var gold = gml.instance_create(position.x+8+randi_range(0,4)-randi_range(0,4), position.y+8+randi_range(0,4)-randi_range(0,4), Objects.gold_nugget)
+			var gold = gml.instance_create(position.x+8+randi_range(0,4)-randi_range(0,4), position.y+8+randi_range(0,4)-randi_range(0,4), Objects.gold_nugget, self)
 			gold.x_vel = randi_range(0,3) - randi_range(0,3)
 			gold.y_vel = randi_range(2,4) * 1

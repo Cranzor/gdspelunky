@@ -32,7 +32,7 @@ func collision_with_player1():
 		Audio.play_sound(global.snd_hit)
 		for repetition in range(3):
 	
-			gml.instance_create(other.position.x+8, other.position.y+8, Objects.blood)
+			gml.instance_create(other.position.x+8, other.position.y+8, Objects.blood, self)
 	
 		if (counts_as_kill):
 	
@@ -58,7 +58,7 @@ func collision_with_player1():
 
 
 func collision_with_web():
-	gml.instance_create(position.x-8, position.y-12, Objects.alien)
+	gml.instance_create(position.x-8, position.y-12, Objects.alien, self)
 	gml.instance_destroy(self)
 
 
@@ -110,7 +110,7 @@ func step():
 				status = FLOAT
 				sprite_index = "alien_deploy"
 		
-			if (gml.rand(1,5) == 1): gml.instance_create(position.x+gml.rand(0,3)-gml.rand(0,3), position.y+gml.rand(0,3)-gml.rand(0,3), Objects.burn)
+			if (gml.rand(1,5) == 1): gml.instance_create(position.x+gml.rand(0,3)-gml.rand(0,3), position.y+gml.rand(0,3)-gml.rand(0,3), Objects.burn, self)
 
 		elif (status == FLOAT):
 
@@ -118,7 +118,7 @@ func step():
 			y_vel = 2
 			if (gml.collision_point(position.x, position.y+6, "solid", 0, 0)):
 		
-				gml.instance_create(position.x-8, position.y-12, Objects.alien)
+				gml.instance_create(position.x-8, position.y-12, Objects.alien, self)
 				gml.instance_destroy(self)
 		
 			elif (dir == 0):

@@ -41,7 +41,7 @@ func collision_with_character():
 			other.y_vel=-6-0.2*other.y_vel
 			if (global.has_spike_shoes):
 				hp -= (3 * ceil(other.fall_timer/16))
-				gml.instance_create(other.position.x, other.position.y+8, Objects.blood)
+				gml.instance_create(other.position.x, other.position.y+8, Objects.blood, self)
 			else: hp -= (1 * ceil(other.fall_timer/16))
 			other.fall_timer = 0
 			status = STUNNED
@@ -63,7 +63,7 @@ func collision_with_character():
 				other.x_vel = -6
 			else:
 				other.x_vel = 6
-			gml.instance_create(other.position.x, other.position.y, Objects.blood)
+			gml.instance_create(other.position.x, other.position.y, Objects.blood, self)
 	
 			if (global.plife > 0):
 		
@@ -279,7 +279,7 @@ func step(): # one of seven scripts which uses 'other' outside of collision_with
 			if (sight_counter > 0): sight_counter -= 1
 			else:
 		
-				var sight = gml.instance_create(position.x, position.y, Objects.enemy_sight)
+				var sight = gml.instance_create(position.x, position.y, Objects.enemy_sight, self)
 				if (facing == LEFT): sight.direction = 180
 				else: sight.direction = 0
 				sight.speed = 10
@@ -330,7 +330,7 @@ func step(): # one of seven scripts which uses 'other' outside of collision_with
 			if (sight_counter > 0): sight_counter -= 1
 			else:
 		
-				var sight = gml.instance_create(position.x, position.y, Objects.enemy_sight)
+				var sight = gml.instance_create(position.x, position.y, Objects.enemy_sight, self)
 				if (facing == LEFT): sight.direction = 180
 				else: sight.direction = 0
 				sight.speed = 10
@@ -365,7 +365,7 @@ func step(): # one of seven scripts which uses 'other' outside of collision_with
 		
 			if (gml.collision_point(position.x, position.y, "spikes", 0, 0, self) and dead and y_vel != 0):
 		
-				if (gml.rand(1,8) == 1): gml.instance_create(other.position.x, other.position.y, Objects.blood)
+				if (gml.rand(1,8) == 1): gml.instance_create(other.position.x, other.position.y, Objects.blood, self)
 		
 		
 			if (col_bot and not bounced):

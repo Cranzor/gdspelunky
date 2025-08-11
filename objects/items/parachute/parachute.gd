@@ -23,7 +23,7 @@ func animation_end():
 func collision_with_item():
 	if (other.x_vel > 0 or other.y_vel > 0):
 
-		gml.instance_create(position.x, position.y, Objects.para_used)
+		gml.instance_create(position.x, position.y, Objects.para_used, self)
 		gml.instance_destroy(self)
 
 

@@ -31,7 +31,7 @@ func collision_with_damsel():
 		status = 2
 
 
-	# DY:  gml.instance_create(position.x, position.y, Objects.laser_explode)
+	# DY:  gml.instance_create(position.x, position.y, Objects.laser_explode, self)
 
 	# DY:  global.check_water = true
 

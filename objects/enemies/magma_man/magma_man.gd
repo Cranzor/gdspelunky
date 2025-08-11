@@ -56,7 +56,7 @@ func collision_with_character():
 			other.x_vel = -6
 		else:
 			other.x_vel = 6
-		gml.instance_create(other.position.x, other.position.y, Objects.blood)
+		gml.instance_create(other.position.x, other.position.y, Objects.blood, self)
 	
 		if (global.plife > 0):
 	
@@ -148,7 +148,7 @@ func step():
 		y_vel = 0
 	else:
 
-		gml.instance_create(position.x+8, position.y+8, Objects.magma)
+		gml.instance_create(position.x+8, position.y+8, Objects.magma, self)
 		gml.instance_destroy(self)
 
 	#/*
@@ -158,7 +158,7 @@ func step():
 	#)
 	#*/
 
-	if (gml.rand(1,20) == 1): gml.instance_create(position.x+gml.rand(4,12), position.y+gml.rand(4,12), Objects.burn)
+	if (gml.rand(1,20) == 1): gml.instance_create(position.x+gml.rand(4,12), position.y+gml.rand(4,12), Objects.burn, self)
 	burning -= 1
 	
 	if (status == IDLE):
@@ -175,7 +175,7 @@ func step():
 			status = WALK
 			if (gml.rand(1,6) == 1):
 		
-				var magma = gml.instance_create(position.x+8, position.y+8, Objects.magma)
+				var magma = gml.instance_create(position.x+8, position.y+8, Objects.magma, self)
 				magma.hp = hp
 				gml.instance_destroy(self)
 		

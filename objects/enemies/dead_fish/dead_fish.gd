@@ -61,7 +61,7 @@ func step():
 
 			for repetition in range(3):
 		
-				gml.instance_create(position.x+4, position.y+4, Objects.bone)
+				gml.instance_create(position.x+4, position.y+4, Objects.bone, self)
 		
 			if (counts_as_kill):
 		
@@ -125,5 +125,5 @@ func step():
 		
 		if (not gml.collision_point(position.x+4, position.y+4, "water", 0, 0)):
 
-			gml.instance_create(position.x, position.y, Objects.fish_bone)
+			gml.instance_create(position.x, position.y, Objects.fish_bone, self)
 			gml.instance_destroy(self)

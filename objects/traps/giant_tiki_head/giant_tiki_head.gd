@@ -16,5 +16,5 @@ func _process(delta):
 #--- Object functions
 func alarm_0():
 	sprite_index = "gth_hole"
-	gml.instance_create(position.x, position.y, Objects.boulder)
+	gml.instance_create(position.x, position.y, Objects.boulder, self)
 	Audio.play_sound(global.snd_thump)

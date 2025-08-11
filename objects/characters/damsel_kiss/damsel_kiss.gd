@@ -55,5 +55,5 @@ func step():
 	# main_code
 	if ((sprite_index == "damsel_kiss_l" or sprite_index == "p_kiss_l") and image_index == 7):
 
-		gml.instance_create(position.x-8, position.y-8, Objects.heart)
+		gml.instance_create(position.x-8, position.y-8, Objects.heart, self)
 		Audio.play_sound(global.snd_kiss)

@@ -266,10 +266,10 @@ func step():
 			
 				if (type == "bomb"):
 				
-					gml.instance_create(position.x, position.y, "explosion")
+					gml.instance_create(position.x, position.y, "explosion", self)
 					for repetition in range(3):
 					
-						gml.instance_create(position.x, position.y, "flame")
+						gml.instance_create(position.x, position.y, "flame", self)
 					
 
 					Audio.play_sound(global.snd_explosion)
@@ -370,7 +370,7 @@ func step():
 							
 							elif (obj.type == "man_trap"):
 							
-								gml.instance_create(obj.position.x+randi_range(0,16), obj.position.y-8+randi_range(0,16), Objects.leaf)
+								gml.instance_create(obj.position.x+randi_range(0,16), obj.position.y-8+randi_range(0,16), Objects.leaf, self)
 							
 							obj.hp -= 1
 							obj.status = STUNNED
@@ -423,9 +423,9 @@ func step():
 					
 					elif (obj.type == "ufo"):
 					
-						gml.instance_create(obj.position.x+8, obj.position.y+8, Objects.explosion)
+						gml.instance_create(obj.position.x+8, obj.position.y+8, Objects.explosion, self)
 						Audio.play_sound(global.snd_explosion)
-						if (randi_range(1,3) == 1): gml.instance_create(obj.position.x+8, obj.position.y+8, Objects.alien_eject)
+						if (randi_range(1,3) == 1): gml.instance_create(obj.position.x+8, obj.position.y+8, Objects.alien_eject, self)
 						if (InLevel.is_real_level()): global.enemy_kills[16] += 1
 						global.ufos += 1
 						global.kills += 1
@@ -444,7 +444,7 @@ func step():
 					
 					if (type == "arrow" and sprite_index == "bomb_arrow_right"): #---[FLAG] make sure this sprite is set for relevant object
 					
-						gml.instance_create(position.x, position.y, "explosion")
+						gml.instance_create(position.x, position.y, "explosion", self)
 						if (global.graphics_high): MiscScripts.scr_create_flame(position.x, position.y, 3)
 									
 

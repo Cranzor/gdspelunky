@@ -17,12 +17,12 @@ func _process(delta):
 
 
 func alarm_0():
-	if (gml.instance_number("flame_trail") < 12): gml.instance_create(position.x, position.y, Objects.flame_trail)
+	if (gml.instance_number("flame_trail") < 12): gml.instance_create(position.x, position.y, Objects.flame_trail, self)
 	alarm_0_countdown.start(2)
 
 
 func collision_with_water():
-	gml.instance_create(position.x, position.y, Objects.smoke_puff)
+	gml.instance_create(position.x, position.y, Objects.smoke_puff, self)
 	gml.instance_destroy(self)
 
 
@@ -43,7 +43,7 @@ func create():
 
 
 func destroy():
-	gml.instance_create(position.x, position.y, Objects.smoke_puff)
+	gml.instance_create(position.x, position.y, Objects.smoke_puff, self)
 
 
 func step():

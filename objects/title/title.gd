@@ -56,38 +56,38 @@ func create():
 	# Tunnel Man
 	if (global.tunnel1 == 0 or (global.tunnel1 > 0 and global.tunnel2 == 0)):
 
-		gml.instance_create(352, 96, Objects.ladder_orange)
-		gml.instance_create(352, 96+16, Objects.ladder_top)
-		gml.instance_create(352, 96+32, Objects.ladder_orange)
-		gml.instance_create(352, 96+48, Objects.ladder_orange)
-		gml.instance_create(352, 96+64, Objects.ladder_orange)
-		gml.instance_create(352, 96+80, Objects.ladder_orange)
+		gml.instance_create(352, 96, Objects.ladder_orange, self)
+		gml.instance_create(352, 96+16, Objects.ladder_top, self)
+		gml.instance_create(352, 96+32, Objects.ladder_orange, self)
+		gml.instance_create(352, 96+48, Objects.ladder_orange, self)
+		gml.instance_create(352, 96+64, Objects.ladder_orange, self)
+		gml.instance_create(352, 96+80, Objects.ladder_orange, self)
 		
 		if (global.tunnel2 == 0):
 		
-			gml.instance_create(128, 112, Objects.level9_sign)
-			gml.instance_create(144, 128, Objects.x_shortcut9)
+			gml.instance_create(128, 112, Objects.level9_sign, self)
+			gml.instance_create(144, 128, Objects.x_shortcut9, self)
 			if (global.tunnel1 == 0):
 			
-				gml.instance_create(192, 112, Objects.level13_sign)
-				gml.instance_create(208, 128, Objects.x_shortcut13)
+				gml.instance_create(192, 112, Objects.level13_sign, self)
+				gml.instance_create(208, 128, Objects.x_shortcut13, self)
 			
 		 
 
 	else:
 
-		gml.instance_create(320, 96, Objects.brick)
-		gml.instance_create(336, 96, Objects.brick)
+		gml.instance_create(320, 96, Objects.brick, self)
+		gml.instance_create(336, 96, Objects.brick, self)
 
 
 	if (t_money >= 200000 && t_time > 0 && t_time <= 600 && t_kills >= 120 && t_saves >= 8):
 
-		gml.instance_create(32, 112, Objects.multi_trophy)
-		gml.instance_create(32, 128, Objects.x_change2)
+		gml.instance_create(32, 112, Objects.multi_trophy, self)
+		gml.instance_create(32, 128, Objects.x_change2, self)
 
 	else:
 
-		gml.instance_create(32+8, 128+8, Objects.tunnel_man)
+		gml.instance_create(32+8, 128+8, Objects.tunnel_man, self)
 
 
 	if (global.title_start == 0):
@@ -95,42 +95,42 @@ func create():
 		darkness = 1
 		alarm_0_countdown.start(50)
 		Screen.can_pause = false
-		#gml.instance_create(280, -32, "p_dummy4")
-		#gml.instance_create(280, 32, "flare")
+		#gml.instance_create(280, -32, "p_dummy4", self)
+		#gml.instance_create(280, 32, "flare", self)
 
 	elif (global.title_start == 1): # start at highscore door
 
-		var player = gml.instance_create(432+8, 184, Objects.player1)
+		var player = gml.instance_create(432+8, 184, Objects.player1, self)
 		player.facing = 19
-		gml.instance_create(320+280, 188, Objects.flare)
+		gml.instance_create(320+280, 188, Objects.flare, self)
 		Screen.can_pause = true
 		Audio.play_music(global.mus_title, true)
-		if (global.first_time): gml.instance_create(384, 144, Objects.hint_hand)
+		if (global.first_time): gml.instance_create(384, 144, Objects.hint_hand, self)
 
 	elif (global.title_start == 2): # start at rope
 
-		var player = gml.instance_create(320+280, 184, Objects.player1)
+		var player = gml.instance_create(320+280, 184, Objects.player1, self)
 		player.facing = 18
-		gml.instance_create(320+280, 188, Objects.flare)
+		gml.instance_create(320+280, 188, Objects.flare, self)
 		Screen.can_pause = true
 		Audio.play_music(global.mus_title, true)
-		if (global.first_time): gml.instance_create(384, 144, Objects.hint_hand)
+		if (global.first_time): gml.instance_create(384, 144, Objects.hint_hand, self)
 
 	elif (global.title_start == 3): # start at tutorial door
 
-		var player = gml.instance_create(336+8, 184, Objects.player1)
+		var player = gml.instance_create(336+8, 184, Objects.player1, self)
 		player.facing = 19
-		gml.instance_create(320+280, 188, Objects.flare)
+		gml.instance_create(320+280, 188, Objects.flare, self)
 		Screen.can_pause = true
 		Audio.play_music(global.mus_title, true)
-		if (global.first_time): gml.instance_create(384, 144, Objects.hint_hand)
+		if (global.first_time): gml.instance_create(384, 144, Objects.hint_hand, self)
 
 
 	if (global.first_time):
 
-		gml.instance_create(320, 160, Objects.brick)
-		gml.instance_create(336, 160, Objects.brick)
-		gml.instance_create(336, 176, Objects.brick)
+		gml.instance_create(320, 160, Objects.brick, self)
+		gml.instance_create(336, 160, Objects.brick, self)
+		gml.instance_create(336, 176, Objects.brick, self)
 
 func step():
 	if (gml.keyboard_check_pressed(KEY_ENTER) or
@@ -231,11 +231,11 @@ func alarm_1():
 
 func alarm_2():
 	state = 3
-	gml.instance_create(320+280, -8, Objects.flare)
+	gml.instance_create(320+280, -8, Objects.flare, self)
 	Audio.play_sound(global.snd_ignite)
 	alarm_3_countdown.start(50)
 
 func alarm_3():
-	gml.instance_create(320+280, -32, Objects.p_dummy4)
+	gml.instance_create(320+280, -32, Objects.p_dummy4, self)
 	Screen.can_pause = true
 	Audio.play_sound(global.mus_title) #--- don't see why the "true" here is needed

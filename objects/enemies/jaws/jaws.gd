@@ -127,11 +127,11 @@ func step():
 			MiscScripts.scr_create_blood(position.x+22+gml.rand(0,4), position.y+14+gml.rand(0,4), 4, self)
 			for repetition in range(4):
 		
-				gml.instance_create(position.x+22+gml.rand(0,4), position.y+14+gml.rand(0,6), Objects.bone)
+				gml.instance_create(position.x+22+gml.rand(0,4), position.y+14+gml.rand(0,6), Objects.bone, self)
 		
 			for repetition in range(4):
 		
-				var obj = gml.instance_create(position.x+16, position.y+16, Objects.crate)
+				var obj = gml.instance_create(position.x+16, position.y+16, Objects.crate, self)
 				obj.x_vel = gml.rand(0,3)-gml.rand(0,3)
 				obj.y_vel = -gml.rand(1,2)
 		
@@ -244,7 +244,7 @@ func step():
 		if (bubble_timer > 0): bubble_timer -= 1
 		else:
 
-			gml.instance_create(position.x, position.y+16, Objects.bubble)
+			gml.instance_create(position.x, position.y+16, Objects.bubble, self)
 			bubble_timer = bubble_timer_max
 
 

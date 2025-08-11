@@ -25,14 +25,14 @@ func create():
 
 	if (global.kali_punish >= 2):
 
-		gml.instance_create(p_dummy.position.x, p_dummy.position.y+2, Objects.ball2)
-		var obj = gml.instance_create(p_dummy.position.x, p_dummy.position.y, Objects.chain2)
+		gml.instance_create(p_dummy.position.x, p_dummy.position.y+2, Objects.ball2, self)
+		var obj = gml.instance_create(p_dummy.position.x, p_dummy.position.y, Objects.chain2, self)
 		obj.link_val = 1
-		obj = gml.instance_create(p_dummy.position.x, p_dummy.position.y, Objects.chain2)
+		obj = gml.instance_create(p_dummy.position.x, p_dummy.position.y, Objects.chain2, self)
 		obj.link_val = 2
-		obj = gml.instance_create(p_dummy.position.x, p_dummy.position.y, Objects.chain2)
+		obj = gml.instance_create(p_dummy.position.x, p_dummy.position.y, Objects.chain2, self)
 		obj.link_val = 3
-		obj = gml.instance_create(p_dummy.position.x, p_dummy.position.y, Objects.chain2)
+		obj = gml.instance_create(p_dummy.position.x, p_dummy.position.y, Objects.chain2, self)
 		obj.link_val = 4
 
 

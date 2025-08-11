@@ -67,10 +67,10 @@ func collision_with_character():
 		other.y_vel = -6 - 0.2 * other.y_vel
 		if (global.has_spike_shoes):
 			hp -= (3 * (floor(other.fall_timer/16)+1))
-			if (not bloodless): gml.instance_create(other.position.x, other.position.y+8, Objects.blood)
+			if (not bloodless): gml.instance_create(other.position.x, other.position.y+8, Objects.blood, self)
 		else: hp -= (1 * (floor(other.fall_timer/16)+1))
 		other.fall_timer = 0
-		gml.instance_create(position.x+16, position.y+24, Objects.blood)
+		gml.instance_create(position.x+16, position.y+24, Objects.blood, self)
 		Audio.play_sound(global.snd_hit)
 
 	elif (other.invincible == 0):
@@ -98,7 +98,7 @@ func collision_with_whip():
 	if (whipped == 0):
 
 		hp -= 1
-		gml.instance_create(position.x+16, position.y+24, Objects.blood)
+		gml.instance_create(position.x+16, position.y+24, Objects.blood, self)
 		Audio.play_sound(global.snd_hit)
 		whipped = 10
 
@@ -167,14 +167,14 @@ func step():
 				var n = gml.rand(1,3)
 				match (n):
 			
-					1:  gem = gml.instance_create(position.x+16, position.y+24, Objects.emerald_big)
-					2:  gem = gml.instance_create(position.x+16, position.y+24, Objects.sapphire_big)
-					3:  gem = gml.instance_create(position.x+16, position.y+24, Objects.ruby_big)
+					1:  gem = gml.instance_create(position.x+16, position.y+24, Objects.emerald_big, self)
+					2:  gem = gml.instance_create(position.x+16, position.y+24, Objects.sapphire_big, self)
+					3:  gem = gml.instance_create(position.x+16, position.y+24, Objects.ruby_big, self)
 			
 				gem.x_vel = gml.rand(0,3) - gml.rand(0,3)
 				gem.y_vel = -2
 		
-			var obj = gml.instance_create(position.x+16, position.y+24, Objects.paste)
+			var obj = gml.instance_create(position.x+16, position.y+24, Objects.paste, self)
 			obj.cost = 0
 			obj.for_sale = false
 			MiscScripts.scr_create_blood(position.x+16, position.y+24, 4, self)
@@ -230,7 +230,7 @@ func step():
 			sprite_index = "giant_spider_squirt"
 			if (image_index >= 5 and squirt_timer == 0):
 		
-				gml.instance_create(position.x+16, position.y+16, Objects.web_ball)
+				gml.instance_create(position.x+16, position.y+16, Objects.web_ball, self)
 				squirt_timer = gml.rand(100,1000)
 		
 

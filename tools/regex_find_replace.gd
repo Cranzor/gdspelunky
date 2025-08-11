@@ -14,7 +14,8 @@ func convert_scripts() -> void:
 	
 	for file in all_gd_files:
 		var new_text: String = get_new_file_text(file) # retrieving post-conversion file content
-		#write_new_text_to_file(file, new_text) # actually writing new file content to the file
+		write_new_text_to_file(file, new_text) # actually writing new file content to the file
+	print("done")
 
 
 func scan_dir_for_gd_files(path) -> Array:
@@ -33,7 +34,7 @@ func scan_dir_for_gd_files(path) -> Array:
 		else:
 			if file_name.get_extension() == 'gd':
 				var name: String = path + "/" + file_name
-				if name not in all_gd_files and !path.contains("res:///addons/inheritance_chain_mender"):
+				if name not in all_gd_files:
 					all_gd_files.append(name)
 				files.push_back(name)
 		file_name = dir.get_next()
@@ -50,7 +51,8 @@ func get_new_file_text(file) -> String:
 
 	# file content gets updated with three different RegEx operations
 	#updated_content = regex_sub(updated_content, "(gml.collision_rectangle.*?,.*?,.*?,.*?,.*?,.*?,)(.*?0)(\\).*)") # turning 0 for notme to null
-	updated_content = regex_sub(updated_content, "(gml.collision_point.*?,.*?,.*?,.*?,.*?1)(\\).+?(?=gml|))")
+	#updated_content = regex_sub(updated_content, "(gml.collision_point.*?,.*?,.*?,.*?,.*?1)(\\).+?(?=gml|))")
+	updated_content = regex_sub(updated_content, "(gml.instance_create)(\\(.*)(\\))")
 	return updated_content
 	
 	
@@ -69,7 +71,8 @@ func regex_sub(file_content, pattern):
 	var regex: RegEx = RegEx.new()
 	regex.compile(pattern)
 	
-	var new_file_content = regex.sub(file_content, "$1" + " null" + "$3", true)
+	#var new_file_content = regex.sub(file_content, "$1" + " null" + "$3", true)
+	var new_file_content = regex.sub(file_content, "$1" + "$2" + ", self" + "$3", true)
 	
 	print(new_file_content)
 	return new_file_content

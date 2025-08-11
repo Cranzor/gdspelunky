@@ -31,34 +31,34 @@ func alarm_0():
 			if (points >= 80):
 		
 				if (gml.instance_exists("ghost")):  pass #DY: /* do nothing */
-				elif (player1.position.x > gml.room_width/2): gml.instance_create(-32, 120-16, Objects.ghost)
-				else: gml.instance_create(320, 120-16, Objects.ghost)
+				elif (player1.position.x > gml.room_width/2): gml.instance_create(-32, 120-16, Objects.ghost, self)
+				else: gml.instance_create(320, 120-16, Objects.ghost, self)
 		
 			elif (points >= 50):
 		
-				var vampire = gml.instance_create(152, 32, Objects.vampire) #--- changing name from "obj" to "vampire" so that the following code works
+				var vampire = gml.instance_create(152, 32, Objects.vampire, self) #--- changing name from "obj" to "vampire" so that the following code works
 				vampire.status = 7
 			
-				var obj = gml.instance_create(vampire.position.x+8, vampire.position.y+8, Objects.poof)
+				var obj = gml.instance_create(vampire.position.x+8, vampire.position.y+8, Objects.poof, self)
 				obj.x_vel = -1
 				obj.y_vel = 0
-				obj = gml.instance_create(vampire.position.x+8, vampire.position.y+8, Objects.poof)
+				obj = gml.instance_create(vampire.position.x+8, vampire.position.y+8, Objects.poof, self)
 				obj.x_vel = 1
 				obj.y_vel = 0
 			
 		
 			else:
 		
-				var bomb = gml.instance_create(i, j, Objects.bomb) #--- changing name from "obj" to "bomb" so that the following code works
+				var bomb = gml.instance_create(i, j, Objects.bomb, self) #--- changing name from "obj" to "bomb" so that the following code works
 				bomb.sprite_index = "bomb_armed"
 				bomb.armed = true
 			
 				bomb.alarm_0_countdown.start(80)
 				bomb.image_speed = 0.2
-				var obj = gml.instance_create(bomb.position.x, bomb.position.y, Objects.poof)
+				var obj = gml.instance_create(bomb.position.x, bomb.position.y, Objects.poof, self)
 				obj.x_vel = -1
 				obj.y_vel = 0
-				obj = gml.instance_create(bomb.position.x, bomb.position.y, Objects.poof)
+				obj = gml.instance_create(bomb.position.x, bomb.position.y, Objects.poof, self)
 				obj.x_vel = 1
 				obj.y_vel = 0
 				   

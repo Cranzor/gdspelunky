@@ -21,7 +21,7 @@ func alarm_0():
 
 
 func collision_with_ghost():
-	gml.instance_create(position.x, position.y, Objects.diamond)
+	gml.instance_create(position.x, position.y, Objects.diamond, self)
 	gml.instance_destroy(self)
 
 

@@ -17,7 +17,7 @@ func _process(delta):
 
 
 func alarm_0():
-	var arrow = gml.instance_create(position.x-16, position.y+4, Objects.arrow)
+	var arrow = gml.instance_create(position.x-16, position.y+4, Objects.arrow, self)
 	arrow.x_vel = -5
 
 
@@ -37,11 +37,11 @@ func create():
 func destroy():
 	if (not clean_death and not global.clean_solids):
 
-		var rubble = gml.instance_create(position.x+8+gml.rand(0,8)-gml.rand(0,8), position.y+8+gml.rand(0,8)-gml.rand(0,8), Objects.rubble)
+		var rubble = gml.instance_create(position.x+8+gml.rand(0,8)-gml.rand(0,8), position.y+8+gml.rand(0,8)-gml.rand(0,8), Objects.rubble, self)
 		rubble.sprite_index = "rubble_tan"
-		rubble = gml.instance_create(position.x+8+gml.rand(0,8)-gml.rand(0,8), position.y+8+gml.rand(0,8)-gml.rand(0,8), Objects.rubble_small)
+		rubble = gml.instance_create(position.x+8+gml.rand(0,8)-gml.rand(0,8), position.y+8+gml.rand(0,8)-gml.rand(0,8), Objects.rubble_small, self)
 		rubble.sprite_index = "rubble_tan_small"
-		rubble = gml.instance_create(position.x+8+gml.rand(0,8)-gml.rand(0,8), position.y+8+gml.rand(0,8)-gml.rand(0,8), Objects.rubble_small)
+		rubble = gml.instance_create(position.x+8+gml.rand(0,8)-gml.rand(0,8), position.y+8+gml.rand(0,8)-gml.rand(0,8), Objects.rubble_small, self)
 		rubble.sprite_index = "rubble_tan_small"
 
 
@@ -56,7 +56,7 @@ func step():
 	if (fired == 0 and abs(player1.position.y-position.y-8) < prox and player1.position.x < position.x and
 		gml.point_distance(position.x+8, position.y+8, player1.position.x, player1.position.y) < spear_range):
 
-		gml.instance_create(position.x-16, position.y, Objects.spears_left)
+		gml.instance_create(position.x-16, position.y, Objects.spears_left, self)
 		fired = fired_max
 
 
@@ -65,7 +65,7 @@ func step():
 		if (fired == 0 and abs(obj.position.y-position.y) < prox and obj.position.x < position.x and
 			gml.point_distance(position.x, position.y, obj.position.x, obj.position.y) < spear_range):
 
-			gml.instance_create(position.x-16, position.y, Objects.spears_left)
+			gml.instance_create(position.x-16, position.y, Objects.spears_left, self)
 			fired = fired_max
 
 
@@ -74,7 +74,7 @@ func step():
 		if (fired == 0 and abs(obj.position.y-position.y) < prox and obj.position.x < position.x and
 			gml.point_distance(position.x, position.y, obj.position.x, obj.position.y) < spear_range):
 
-			gml.instance_create(position.x-16, position.y, Objects.spears_left)
+			gml.instance_create(position.x-16, position.y, Objects.spears_left, self)
 			fired = fired_max
 
 
@@ -83,7 +83,7 @@ func step():
 		if (fired == 0 and abs(obj.position.y-position.y-8) < prox and obj.position.x < position.x+8 and
 			gml.point_distance(position.x+8, position.y+8, obj.position.x, obj.position.y) < spear_range):
 
-			gml.instance_create(position.x-16, position.y, Objects.spears_left)
+			gml.instance_create(position.x-16, position.y, Objects.spears_left, self)
 			fired = fired_max
 
 
@@ -92,7 +92,7 @@ func step():
 	if (fired == 0 and abs(player1.position.y-position.y-8) < prox and player1.position.x > position.x+8 and
 		gml.point_distance(position.x+8, position.y+8, player1.position.x, player1.position.y) < spear_range):
 
-			var spears = gml.instance_create(position.x+16, position.y, Objects.spears_left)
+			var spears = gml.instance_create(position.x+16, position.y, Objects.spears_left, self)
 			spears.sprite_index = "spears_right"
 			fired = fired_max
 
@@ -102,7 +102,7 @@ func step():
 		if (fired == 0 and abs(obj.position.y-position.y) < prox and obj.position.x > position.x and
 			gml.point_distance(position.x, position.y, obj.position.x, obj.position.y) < spear_range):
 
-			var spears = gml.instance_create(position.x+16, position.y, Objects.spears_left)
+			var spears = gml.instance_create(position.x+16, position.y, Objects.spears_left, self)
 			spears.sprite_index = "spears_right"
 			fired = fired_max
 
@@ -112,7 +112,7 @@ func step():
 		if (fired == 0 and abs(obj.position.y-position.y) < prox and obj.position.x > position.x and
 			gml.point_distance(position.x, position.y, obj.position.x, obj.position.y) < spear_range):
 
-			var spears = gml.instance_create(position.x+16, position.y, Objects.spears_left)
+			var spears = gml.instance_create(position.x+16, position.y, Objects.spears_left, self)
 			spears.sprite_index = "spears_right"
 			fired = fired_max
 
@@ -122,7 +122,7 @@ func step():
 		if (fired == 0 and abs(obj.position.y-position.y-8) < prox and obj.position.x > position.x+8 and
 			gml.point_distance(position.x+8, position.y+8, obj.position.x, obj.position.y) < spear_range):
 
-			var spears = gml.instance_create(position.x+16, position.y, Objects.spears_left)
+			var spears = gml.instance_create(position.x+16, position.y, Objects.spears_left, self)
 			spears.sprite_index = "spears_right"
 			fired = fired_max
 
