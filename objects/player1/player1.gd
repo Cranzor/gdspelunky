@@ -1403,7 +1403,7 @@ func bomb_rope_and_whipping_handling() -> void: #--- Also handles picking up ite
 					if (not gml.collision_point(position.x+8, position.y, "solid", 0, 0)):
 					
 						if (not  gml.collision_rectangle(obj.position.x-8, obj.position.y, obj.position.x-7, obj.position.y+16, 'solid', 0, 0)):
-							position.x -= 8
+							obj.position.x -= 8
 						elif (not  gml.collision_rectangle(obj.position.x+7, obj.position.y, obj.position.x+8, obj.position.y+16, 'solid', 0, 0)):
 							obj.position.x += 8
 						else: obj.t = false

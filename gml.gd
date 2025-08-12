@@ -372,13 +372,7 @@ func place_meeting(x, y, obj: String, comparison_object) -> bool: #--- only used
 	return false
 	
 func move_snap(hsnap,vsnap, obj) -> void:
-	if hsnap != 1:
-		var new_x_target = get_nearest_multiple(obj.position.x, hsnap)
-		obj.position.x = new_x_target
-	
-	if vsnap != 1:
-		var new_y_target = get_nearest_multiple(obj.position.y, vsnap)
-		obj.position.y = new_y_target
+	obj.position = obj.position.snapped(Vector2(hsnap, vsnap))
 
 func sqr(number) -> float:
 	return number * number
@@ -666,14 +660,6 @@ func get_instance(obj: String) -> GMObject: #Support function for when GML handl
 		return instance
 	return null
 
-func get_nearest_multiple(number, target_number) -> int: #--- Adapted from here: https://www.geeksforgeeks.org/multiple-of-x-closest-to-n/
-	if target_number > number:
-		return target_number
-	var z = int(target_number/2)
-	number = number + z
-	number = number - (int(number) % int(target_number))
-	return number
-	
 func generate_random_hash() -> String:
 	var characters = '1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYS'
 	var length = 16
