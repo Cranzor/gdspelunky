@@ -30,7 +30,12 @@ func get_object_collision_shape_rect(object: GMObject):
 	var collision_shape: CollisionShape2D = object.get_node("CollisionShape2D")
 	var pos: Vector2 = object.position - origin #--- was using collision_shape's global position, but can't rely on this for things that spawn in instantly (like explosion)
 	var size = box #--- same with above
+	
 	var returned_rect: Rect2 = Rect2(pos, size)
+	if object.object_name == "arrow_trap_test": #--- making an exception for arrow_trap_test due to how its image_xscale value affects its collision size
+		var alt_pos = object.position
+		var alt_size = Vector2(16 * object.image_xscale, 16)
+		returned_rect = Rect2(alt_pos, alt_size)
 	return returned_rect
 
 func check_inner_box_for_collision_with_group(passed_object: GMObject, group: StringName) -> Array:

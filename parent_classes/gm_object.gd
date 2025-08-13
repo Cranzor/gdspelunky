@@ -168,6 +168,16 @@ var image_xscale: float:
 			collision_shape.shape.set_size(new_size)
 			collision_shape.position = new_position
 			
+			var bounding_box = $BoundingBox
+			var bb_shape = bounding_box.get_child(0)
+			var bb_pos = bounding_box.position
+			var bb_size = bb_shape.shape.size
+			var bb_new_size = new_size
+			bb_new_size.y = new_size.y * 2
+			var bb_new_pos =  new_position
+			bb_shape.shape.set_size(bb_new_size)
+			bb_shape.position = bb_new_pos
+			
 	get:
 		return animated_sprite_node.scale.x #--- [FLAG] may need to be adjusted
 		
@@ -807,7 +817,8 @@ func _bounding_box_entered(area: Area2D):
 		first_time_entered = false
 	var parent: GMObject = area.get_parent()
 	var groups: Array = parent.get_groups()
-	objects_in_bb.append(area.get_parent())
+	if parent not in objects_in_bb:
+		objects_in_bb.append(parent)
 	groups_in_bb.append_array(groups)
 
 
