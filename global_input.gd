@@ -3,9 +3,10 @@
 
 extends Node
 
-var all_inputs = {}
+func _ready() -> void:
+	Input.joy_connection_changed.connect(_on_joy_connection_changed)
 
-var keyboard_in_use = true
+var all_inputs = {}
 
 const XBOX_BUTTON_INDEX_WITH_BUTTON_NAME: Dictionary = {
 	0 : "A",
@@ -26,33 +27,33 @@ const XBOX_BUTTON_INDEX_WITH_BUTTON_NAME: Dictionary = {
 }
 
 var actions_with_keyboard_keys = {
-	"attack" : "",
-	"bomb" : "",
-	"flare" : "",
-	"item" : "",
-	"jump" : "",
-	"pay" : "",
-	"rope" : "",
-	"run" : "",
-	"start" : "",
-	"left" : "",
-	"right" : "",
-	"up" : "",
+	"attack" : "SPACE",
+	"bomb" : "ENTER",
+	"flare" : "F",
+	"item" : "I",
+	"jump" : "J",
+	"pay" : "P",
+	"rope" : "R",
+	"run" : "SHIFT",
+	"start" : "ENTER",
+	"left" : "A",
+	"right" : "D",
+	"up" : "W",
 }
 
 var actions_with_gamepad_buttons = {
-	"attack" : "",
-	"bomb" : "",
-	"flare" : "",
-	"item" : "",
-	"jump" : "",
-	"pay" : "",
-	"rope" : "",
-	"run" : "",
-	"start" : "",
-	"left" : "",
-	"right" : "",
-	"up" : "",
+	"attack" : "X",
+	"bomb" : "B",
+	"flare" : "LB",
+	"item" : "LB",
+	"jump" : "A",
+	"pay" : "L",
+	"rope" : "Y",
+	"run" : "RB",
+	"start" : "START",
+	"left" : "LEFT",
+	"right" : "RIGHT",
+	"up" : "UP",
 }
 
 func _process(delta: float) -> void:
@@ -111,37 +112,26 @@ func check_input(input):
 	return false
 
 # switches between keyboard and gamepad modes globally
-func _input(event: InputEvent) -> void:
-	if event is InputEventKey:
-		keyboard_in_use = true
-		global.gamepad_on = false
-	elif event is InputEventJoypadButton:
-		keyboard_in_use = false
-		global.gamepad_on = true
+#func _input(event: InputEvent) -> void:
+	#if event is InputEventKey:
+		#keyboard_in_use = true
+		#global.gamepad_on = false
+	#elif event is InputEventJoypadButton:
+		#keyboard_in_use = false
+		#global.gamepad_on = true
 
 
 func get_keyboard_key_from_action(action):
-	if actions_with_keyboard_keys[action] == "":
-		var events = str(InputMap.action_get_events(action))
-		var regex = RegEx.new()
-		regex.compile("InputEventKey: keycode=\\d+ \\((.+)\\)")
-		var result = regex.search(events)
-		var key = result.get_string(1)
-		actions_with_keyboard_keys[action] = key.to_upper()
-		return key.to_upper()
-	else:
-		return actions_with_keyboard_keys[action]
+	return actions_with_keyboard_keys[action]
 
-#--- have to update this to account for "joypad axis" with shoulder buttons. and also support sticks too
+
 func get_gamepad_button_from_action(action):
-	if actions_with_gamepad_buttons[action] == "":
-		var events = str(InputMap.action_get_events(action))
-		var regex = RegEx.new()
-		regex.compile("InputEventJoypadButton: button_index=(\\d+)")
-		var result = regex.search(events)
-		var index = int(result.get_string(1))
-		var button = XBOX_BUTTON_INDEX_WITH_BUTTON_NAME[index]
-		actions_with_keyboard_keys[action] = button.to_upper()
-		return button.to_upper()
-	else:
-		return actions_with_keyboard_keys[action]
+	return actions_with_gamepad_buttons[action]
+
+
+func set_keyboard_in_use():
+	global.gamepad_on = !Input.get_connected_joypads().is_empty()
+
+
+func _on_joy_connection_changed(device: int, connected: bool):
+	set_keyboard_in_use()

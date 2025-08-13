@@ -135,7 +135,7 @@ var idols_converted: int
 var idols_grabbed: int
 var is_damsel
 var is_tunnel_man
-var items_bought
+var items_bought: int
 var items_stolen: int
 var joy_attack_val = "attack"
 var joy_bomb_val = "bomb"
