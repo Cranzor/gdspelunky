@@ -173,7 +173,7 @@ var image_xscale: float:
 			var bb_pos = bounding_box.position
 			var bb_size = bb_shape.shape.size
 			var bb_new_size = new_size
-			bb_new_size.y = new_size.y * 2
+			bb_new_size = new_size * 2
 			var bb_new_pos =  new_position
 			bb_shape.shape.set_size(bb_new_size)
 			bb_shape.position = bb_new_pos
@@ -806,8 +806,8 @@ func handle_enemy_sight(parent_object: GMObject) -> void:
 		existing_node.queue_free()
 	parent_object.add_child(self)
 
-var objects_in_bb: Array
-var groups_in_bb: Array
+var objects_in_bb: Array[GMObject]
+var groups_in_bb: Array[StringName]
 var first_time_entered: bool = true
 
 func _bounding_box_entered(area: Area2D):
@@ -817,9 +817,12 @@ func _bounding_box_entered(area: Area2D):
 		first_time_entered = false
 	var parent: GMObject = area.get_parent()
 	var groups: Array = parent.get_groups()
-	if parent not in objects_in_bb:
-		objects_in_bb.append(parent)
-	groups_in_bb.append_array(groups)
+	groups.pop_front()
+	#if parent not in objects_in_bb: #--- preventing duplicates causes issues for some reason (olmec_slam not working, for example)
+	objects_in_bb.append(parent)
+	for group in groups:
+		if group not in groups_in_bb:
+			groups_in_bb.append(group)
 
 
 func _bounding_box_exited(area: Area2D):
