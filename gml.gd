@@ -161,8 +161,9 @@ func instance_create(x,y,obj,calling_object: GMObject = null,run_create = true) 
 	var instance: GMObject = obj.instantiate()
 	instance.position = Vector2(x, y)
 	if calling_object: #--- for collision purposes, getting collision data of the calling object so that newly instantiated objects check for collisions the same frame they are created
-		instance.objects_in_bb = calling_object.objects_in_bb
-		instance.groups_in_bb = calling_object.groups_in_bb
+		instance.objects_in_bb = calling_object.objects_in_bb.duplicate()
+		instance.groups_in_bb = calling_object.groups_in_bb.duplicate()
+		instance.first_time_entered = true
 	var objects_holder = get_tree().get_first_node_in_group("objects_holder")
 	objects_holder.add_child(instance)
 	

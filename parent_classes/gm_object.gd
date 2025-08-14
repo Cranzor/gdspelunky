@@ -808,7 +808,7 @@ func handle_enemy_sight(parent_object: GMObject) -> void:
 
 var objects_in_bb: Array[GMObject]
 var groups_in_bb: Array[StringName]
-var first_time_entered: bool = true
+var first_time_entered: bool = false
 
 func _bounding_box_entered(area: Area2D):
 	if first_time_entered: #--- clearing arrays out the first time because instantiated objects take these values from their parents the first frame
@@ -818,8 +818,8 @@ func _bounding_box_entered(area: Area2D):
 	var parent: GMObject = area.get_parent()
 	var groups: Array = parent.get_groups()
 	groups.pop_front()
-	#if parent not in objects_in_bb: #--- preventing duplicates causes issues for some reason (olmec_slam not working, for example)
-	objects_in_bb.append(parent)
+	if parent not in objects_in_bb: #--- preventing duplicates causes issues for some reason (olmec_slam not working, for example)
+		objects_in_bb.append(parent)
 	for group in groups:
 		if group not in groups_in_bb:
 			groups_in_bb.append(group)
