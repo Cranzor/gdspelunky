@@ -820,6 +820,8 @@ func _bounding_box_entered(area: Area2D):
 	groups.pop_front()
 	if parent not in objects_in_bb: #--- preventing duplicates causes issues for some reason (olmec_slam not working, for example)
 		objects_in_bb.append(parent)
+	else:
+		assert(false, "Duplicate found in bounding box objects array")
 	for group in groups:
 		if group not in groups_in_bb:
 			groups_in_bb.append(group)

@@ -132,16 +132,18 @@ func string_char_at(passed_string: String, index: int) -> String:
 	var length = passed_string.length()
 	if index > length:
 		return ""
-	var adjusted_index = index - 1
+	var adjusted_index = index - 1 #---string index starts at 1 in GML
 	var character = passed_string[adjusted_index]
 	return character
 
-func string_delete(passed_string: String ,index,count) -> String:
-	passed_string = passed_string.erase(index, count)
+func string_delete(passed_string: String, index: int, count: int) -> String:
+	var adjusted_index: int = index - 1 #---string index starts at 1 in GML
+	passed_string = passed_string.erase(adjusted_index, count)
 	return passed_string
 	
-func string_insert(substr,passed_string,index) -> String:
-	passed_string = passed_string.insert(index, substr)
+func string_insert(substr: String, passed_string: String, index: int) -> String:
+	var adjusted_index = index - 1 #---string index starts at 1 in GML
+	passed_string = passed_string.insert(adjusted_index, substr)
 	return passed_string
 	
 func instance_exists(obj: String) -> bool: #--- FLAG. if enforcing this as a string, it sometimes breaks
