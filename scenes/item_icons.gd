@@ -1,7 +1,6 @@
 extends CanvasLayer
 @onready var arrows: Node2D = $Arrows
-@onready var udjat_eye_icon: Sprite2D = $UdjatEyeIcon
-@onready var udjat_eye_icon2: Sprite2D = $UdjatEyeIcon2
+@onready var udjat_eye_icon: AnimatedSprite2D = $UdjatEyeIcon
 @onready var ankh_icon: Sprite2D = $AnkhIcon
 @onready var crown_icon: Sprite2D = $CrownIcon
 @onready var kapala_icon: AnimatedSprite2D = $KapalaIcon
@@ -35,8 +34,9 @@ func check_items():
 			key.hide()
 	
 	if global.has_udjat_eye:
-		if global.udjat_blink: udjat_eye_icon2.show()
-		else: udjat_eye_icon.show()
+		udjat_eye_icon.show()
+		if global.udjat_blink: udjat_eye_icon.animation = "closed"
+		else: udjat_eye_icon.animation = "open"
 	
 	if global.has_kapala:
 		if global.blood_level == 0: kapala_icon.frame = 0

@@ -8,7 +8,7 @@ var ready_to_emit
 @onready var parent = get_parent()
 
 
-func count_down():
+func count_down() -> void:
 	if frames_to_count_down != -1:
 		frames_to_count_down -= 1
 	
@@ -16,12 +16,12 @@ func count_down():
 		ready_to_emit = true
 
 
-func start(frames):
+func start(frames: int) -> void:
 	frames_to_count_down = frames
 	started = true
 
 
-func is_stopped():
+func is_stopped() -> bool:
 	if frames_to_count_down == -1:
 		return true
 	else:

@@ -64,6 +64,11 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("2_ifkhq")
 text = "2.LAKE"
 
+[node name="Market" type="Button" parent="Menu/HBoxContainer/Stages"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ifkhq")
+text = "2.MARKET"
+
 [node name="IceCaves" type="Button" parent="Menu/HBoxContainer/Stages"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_ifkhq")
@@ -158,6 +163,7 @@ caret_blink = true
 [connection signal="pressed" from="Menu/HBoxContainer/Stages/Mines" to="." method="_on_mines_pressed"]
 [connection signal="pressed" from="Menu/HBoxContainer/Stages/Lush" to="." method="_on_lush_pressed"]
 [connection signal="pressed" from="Menu/HBoxContainer/Stages/Lake" to="." method="_on_lake_pressed"]
+[connection signal="pressed" from="Menu/HBoxContainer/Stages/Market" to="." method="_on_market_pressed"]
 [connection signal="pressed" from="Menu/HBoxContainer/Stages/IceCaves" to="." method="_on_ice_caves_pressed"]
 [connection signal="pressed" from="Menu/HBoxContainer/Stages/Temple" to="." method="_on_temple_pressed"]
 [connection signal="pressed" from="Menu/HBoxContainer/Stages/Olmec" to="." method="_on_olmec_pressed"]

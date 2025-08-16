@@ -266,7 +266,7 @@ func distance_to_object(obj: GMObject, comparison_node: GMObject) -> float: #Mak
 	if obj == null:
 		return 50000.0 #--- returning a large number here for variables passed in that don't exist. original engine seems to just not make the function work at all if the object doesn't exist
 	var distance: float = comparison_node.position.distance_to(obj.position)
-	return distance
+	return ceil(distance)
 	
 	
 	#var x = node.position.x

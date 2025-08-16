@@ -43,6 +43,7 @@ var dark_level: bool = false:
 			SignalBus.emit_signal("dark_level_started")
 var darkness_lerp
 var deadfish
+var debug_black_market: bool = false
 var debug_dark_level: bool = false #--- added by me for debugging purposes
 var debug_shop: bool = false
 var diamonds

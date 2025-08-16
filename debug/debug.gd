@@ -38,14 +38,6 @@ func _on_olmec_pressed() -> void:
 
 
 func load_level(level_num: int, name: String):
-	#if level_num >= 5 and level_num <= 8:
-		#global.level_type = 1
-	#elif level_num >= 9 and level_num <= 12:
-		#global.level_type = 2
-	#elif level_num >= 13 and level_num <= 15:
-		#global.level_type = 3
-	#elif level_num == 16:
-		#global.level_type = 4
 	global.curr_level = level_num
 
 	if dark:
@@ -121,3 +113,8 @@ func _on_shop_check_box_toggled(toggled_on: bool) -> void:
 func _on_lake_pressed() -> void:
 	global.lake = true
 	load_level(5, "level3")
+
+
+func _on_market_pressed() -> void:
+	global.debug_black_market = true
+	load_level(6, "level")
