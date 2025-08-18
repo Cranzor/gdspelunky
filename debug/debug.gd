@@ -118,3 +118,8 @@ func _on_lake_pressed() -> void:
 func _on_market_pressed() -> void:
 	global.debug_black_market = true
 	load_level(6, "level")
+
+
+func _on_city_of_gold_pressed() -> void:
+	global.city_of_gold = true
+	load_level(15, "level")
