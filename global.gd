@@ -49,8 +49,8 @@ var debug_shop: bool = false
 var diamonds
 var dice_games_lost
 var dice_games_played: int
-var dice_games_won
-var dice_rolled
+var dice_games_won: int
+var dice_rolled: bool
 var dice_value
 var dll_ss_free_sound
 var dll_ss_get_sound_bytes_per_second
