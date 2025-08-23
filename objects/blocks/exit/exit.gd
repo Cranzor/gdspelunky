@@ -1,4 +1,5 @@
 extends DrawnSprite
+class_name Exit
 
 
 func _ready():
@@ -24,7 +25,7 @@ func _process(delta):
 
 #func draw():
 #    draw_sprite(sprite_index, -1, position.x, position.y)
-#    if (InLevel.is_room("r_level_editor")):
+#    if (InLevel.is_room("level_editor")):
 
 #        gml.draw_set_font(global.my_font_small)
 #        gml.draw_set_color(gml.c_white)

@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dpe37cc2sccby"]
-
-[ext_resource type="Script" uid="uid://cjurgjle1d34e" path="res://alarm.gd" id="1_g3y4o"]
-
-[node name="Alarm" type="Node2D" groups=["alarm"]]
-script = ExtResource("1_g3y4o")

@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://b4yxry1gi7stn"]
-
-[ext_resource type="Script" uid="uid://d0t4y0e5lumc0" path="res://collision_test_scene.gd" id="1_ebdfj"]
-
-[node name="CollisionTestScene" type="Node2D" groups=["objects_holder"]]
-script = ExtResource("1_ebdfj")
-
-[node name="Camera2D" type="Camera2D" parent="." groups=["view"]]
-offset = Vector2(-5, 5)

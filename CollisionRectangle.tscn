@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dhc387j32wflj"]
-
-[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_w7e42"]
-
-[node name="CollisionRectangle" type="Area2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("ConvexPolygonShape2D_w7e42")

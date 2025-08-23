@@ -54,7 +54,13 @@ animations = [{
 
 [node name="Player1" type="StaticBody2D"]
 script = ExtResource("1_3btm2")
+sprite_index_name = null
+sprite_offset = null
 object_name = "player1"
+editor_setup_finished = null
+collision_with = null
+depth = null
+object_size = null
 
 [node name="Circle" type="Sprite2D" parent="."]
 
