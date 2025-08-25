@@ -2,6 +2,8 @@
 extends StaticBody2D
 class_name GMObject
 
+#---TODO: add simple "object setup" and "clear object setup" functions with buttons to make this easier in the editor
+
 var object_database: ObjectDatabase = ObjectDatabase.new()
 var sprites: Sprites = Sprites.new()
 var new_collision: NewCollision = NewCollision.new()
@@ -99,6 +101,8 @@ const ALARM = preload("res://scenes/alarm.tscn")
 @export var alarm_10_countdown: Node
 @export var alarm_11_countdown: Node
 @export_group("")
+
+@export var alarms: Dictionary[StringName, Alarm]
 
 @export var editor_setup_finished: bool = false
 
