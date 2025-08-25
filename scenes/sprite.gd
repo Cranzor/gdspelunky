@@ -86,8 +86,6 @@ func add_sprite_info(sprite_name: StringName, sprite_pngs: PackedStringArray):
 		new_sprite_info.images = generate_sprite_images(sprite_pngs)
 	new_sprite_info.origin = origin
 	new_sprite_info.containing_box = find_sprite_containing_box(sprite_pngs)
-	print(sprite_name)
-	print(new_sprite_info.containing_box)
 	sprite_info[sprite_name] = new_sprite_info
 
 
