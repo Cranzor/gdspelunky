@@ -39,6 +39,7 @@ func generate_sprites():
 			var sprite_pngs: PackedStringArray = get_sprite_png_paths(sprite_folder)
 			add_new_animation(sprite, sprite_pngs)
 			add_sprite_info(sprite, sprite_pngs)
+	set_autoplay(all_sprites[0]) #--- object's default sprite plays
 
 
 func get_all_sprites() -> Array:

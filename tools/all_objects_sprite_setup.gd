@@ -9,14 +9,12 @@ func generate_all_sprites():
 	for object in all_objects:
 		var sprite = preload("res://scenes/sprite.tscn").instantiate()
 		var loaded_object = ResourceLoader.load(object, "", 0).instantiate()
-		print(loaded_object)
 		loaded_object.add_child(sprite)
 		sprite.generate_sprites()
 		sprite.owner = loaded_object
 		
 		var scene = PackedScene.new()
 		var result = scene.pack(loaded_object)
-		print(result)
 		if result == OK:
 			ResourceSaver.save(scene, object)
 	print("done")
