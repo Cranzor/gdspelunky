@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://1hhem32qn5x"]
+
+[ext_resource type="Script" uid="uid://owj4ql0h5xrd" path="res://tools/all_objects_sprite_setup.gd" id="1_1sctx"]
+
+[node name="AllObjectsSpriteSetup" type="Node"]
+script = ExtResource("1_1sctx")
