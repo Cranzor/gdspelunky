@@ -1,4 +1,5 @@
 extends Solid
+class_name SpearTrapTop
 
 
 func _ready():

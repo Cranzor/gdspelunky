@@ -1,4 +1,5 @@
 extends Item
+class_name GoldIdol
 
 
 func _ready():

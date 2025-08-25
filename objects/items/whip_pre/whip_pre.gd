@@ -1,4 +1,5 @@
 extends DrawnSprite
+class_name WhipPre
 
 
 func _ready():

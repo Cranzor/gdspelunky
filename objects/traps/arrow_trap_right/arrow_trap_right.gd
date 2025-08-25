@@ -1,4 +1,5 @@
 extends Solid
+class_name ArrowTrapRight
 
 
 func _ready():
