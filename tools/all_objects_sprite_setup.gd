@@ -19,6 +19,17 @@ func objects_setup():
 			ResourceSaver.save(scene, object)
 	print("finished")
 
+func object_setup(scene_file_path: String):
+	var sprite = preload("res://scenes/sprite.tscn").instantiate()
+	var loaded_object = ResourceLoader.load(scene_file_path, "", 0).instantiate()
+	generate_all_sprites(loaded_object, sprite)
+	generate_containing_box(loaded_object)
+	groups_setup(loaded_object)
+	var scene = PackedScene.new()
+	var result = scene.pack(loaded_object)
+	if result == OK:
+		ResourceSaver.save(scene, scene_file_path)	
+
 
 func generate_all_sprites(loaded_object: GMObject, sprite: AnimatedSprite2D):
 	loaded_object.add_child(sprite)
@@ -65,3 +76,20 @@ func groups_setup(loaded_object: GMObject): #--- TODO: add "alarms" group
 #--- TODO: alarms setup
 #--- TODO: collision_with setup
 #--- TODO: bounding box setup
+
+func reset_object(scene_file_path: String):
+	var loaded_object: GMObject = ResourceLoader.load(scene_file_path, "", 0).instantiate()
+	remove_node(loaded_object, "Sprite")
+	remove_node(loaded_object, "CollisionShape2D")
+	loaded_object.animated_sprite_node = null
+	for group in loaded_object.get_groups():
+		loaded_object.remove_from_group(group)
+	var scene = PackedScene.new()
+	var result = scene.pack(loaded_object)
+	if result == OK:
+		ResourceSaver.save(scene, scene_file_path)
+
+func remove_node(object: GMObject, node_path: NodePath):
+	if object.has_node(node_path):
+		var child = object.get_node(node_path)
+		object.remove_child(child)
