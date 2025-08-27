@@ -1,7 +1,8 @@
 @tool
 extends Node
 
-@export_tool_button("Generate Sprites For All Objects", "Callable") var run_action = objects_setup
+@export_tool_button("Set Up All Objects", "Callable") var run_action = objects_setup
+@export_tool_button("Reset All Objects", "Callable") var run_action2 = reset_objects
 var object_database = ObjectDatabase.new()
 
 
@@ -9,18 +10,18 @@ func objects_setup():
 	var file_search = preload("res://tools/file_search.gd").new()
 	var all_objects: Array[String] = file_search.get_files("res://objects/", "tscn")
 	for object in all_objects:
-		var sprite = preload("res://scenes/sprite.tscn").instantiate()
-		var loaded_object = ResourceLoader.load(object, "", 0).instantiate()
-		generate_all_sprites(loaded_object, sprite)
-		generate_containing_box(loaded_object)
-		groups_setup(loaded_object)
-		var scene = PackedScene.new()
-		var result = scene.pack(loaded_object)
-		if result == OK:
-			ResourceSaver.save(scene, object)
-	print("finished")
+		object_setup(object)
+
+
+func reset_objects():
+	var file_search = preload("res://tools/file_search.gd").new()
+	var all_objects: Array[String] = file_search.get_files("res://objects/", "tscn")
+	for object in all_objects:
+		reset_object(object)
+
 
 func object_setup(scene_file_path: String):
+	reset_object(scene_file_path)
 	var sprite = preload("res://scenes/sprite.tscn").instantiate()
 	var loaded_object = ResourceLoader.load(scene_file_path, "", 0).instantiate()
 	generate_all_sprites(loaded_object, sprite)

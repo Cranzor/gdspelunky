@@ -47,14 +47,14 @@ func generate_sprites():
 
 func get_all_sprites() -> Array:
 	var object_name: String = get_parent().object_name
-	var object_sprites = preload("res://resources/object_sprites.gd")
+	var object_sprites = load("res://resources/object_sprites.gd")
 	var object_sprites_instance = object_sprites.new()
 	var all_sprites: Array = object_sprites_instance.OBJECT_SPRITES[object_name]
 	return all_sprites
 
 
 func get_sprite_folder(default_sprite: StringName) -> String:
-	var file_search = preload("res://tools/file_search.gd")
+	var file_search = load("res://tools/file_search.gd")
 	var file_search_instance = file_search.new()
 	var all_folders: PackedStringArray = file_search_instance.get_directories("res://sprites/")
 	for folder: String in all_folders:
@@ -64,7 +64,7 @@ func get_sprite_folder(default_sprite: StringName) -> String:
 
 
 func get_sprite_png_paths(sprite_folder: String) -> Array[String]:
-	var file_search = preload("res://tools/file_search.gd")
+	var file_search = load("res://tools/file_search.gd")
 	var file_search_instance = file_search.new()
 	var files: Array[String] = file_search_instance.get_files(sprite_folder, "png")
 	return files
@@ -82,7 +82,7 @@ func add_new_animation(animation_name: StringName, sprite_pngs: PackedStringArra
 
 func add_sprite_info(sprite_name: StringName, sprite_pngs: PackedStringArray):
 	var new_sprite_info: SpriteInfo = SpriteInfo.new()
-	var sprites = preload("res://resources/sprites.gd").new()
+	var sprites = load("res://resources/sprites.gd").new()
 	var shape: String = sprites.sprite_database[sprite_name]["mask"]["shape"]
 	var origin: Vector2 = sprites.sprite_database[sprite_name]["origin"]
 	if shape == "PRECISE":
