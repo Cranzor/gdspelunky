@@ -1,7 +1,123 @@
-[gd_scene load_steps=2 format=3 uid="uid://dsp80ylkcvfl3"]
+[gd_scene load_steps=17 format=4 uid="uid://dsp80ylkcvfl3"]
 
 [ext_resource type="Script" uid="uid://cjhvvpw6qvho0" path="res://objects/effects/rubble/rubble.gd" id="1_hqslu"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_jn33l"]
+[ext_resource type="Texture2D" uid="uid://c3h4h2a1r0ilp" path="res://sprites/effects/rubble/rubble_0.png" id="3_p61hw"]
+[ext_resource type="Texture2D" uid="uid://dad0ufhuvmnnh" path="res://sprites/effects/rubble_tan/rubble_tan_0.png" id="4_ir0ox"]
+[ext_resource type="Texture2D" uid="uid://da6iae0nt0xin" path="res://sprites/effects/rubble_tan_small/rubble_tan_small_0.png" id="5_3dpgs"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="6_awdd3"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="7_1qhri"]
 
-[node name="Rubble" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_jn33l"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_p61hw")
+}],
+"loop": true,
+"name": &"rubble",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ir0ox")
+}],
+"loop": true,
+"name": &"rubble_tan",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_3dpgs")
+}],
+"loop": true,
+"name": &"rubble_tan_small",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_p61hw"]
+data = {
+"data": PackedByteArray("JhQQACYUEAAmFBAAJhQQACYUEAAmFBAAJhQQACYUEAAmFBAAJhQQACYUEAAmFBD/JhQQ/yYUEAAmFBAAJhQQACYUEAAmFBAAJhQQ/45ZJf+OWSX/JhQQ/yYUEAAmFBAAJhQQACYUEP+OWSX/Yy8d/2MvHf+OWSX/JhQQ/yYUEAAmFBAAJhQQ/yYUEP9jLx3/Yy8d/yYUEP8mFBD/JhQQACYUEAAmFBAAJhQQ/yYUEP8mFBD/JhQQ/yYUEAAmFBAAJhQQACYUEAAmFBAAJhQQ/yYUEP8mFBAAJhQQACYUEAAmFBAAJhQQACYUEAAmFBAAJhQQACYUEAAmFBAAJhQQAA=="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Resource" id="Resource_ir0ox"]
+script = ExtResource("7_1qhri")
+origin = Vector2(4, 4)
+containing_box = Rect2(1, 1, 6, 6)
+precise = true
+images = Array[Image]([SubResource("Image_p61hw")])
+
+[sub_resource type="Image" id="Image_3dpgs"]
+data = {
+"data": PackedByteArray("JyAYACcgGAAnIBgAJyAYACcgGAAnIBgAJyAYACcgGAAnIBgAJyAYACcgGAAnIBj/JyAY/ycgGAAnIBgAJyAYACcgGAAnIBgAJyAY/62baP+tm2j/JyAY/ycgGAAnIBgAJyAYACcgGP+tm2j/cGdO/3BnTv+tm2j/JyAY/ycgGAAnIBgAJyAY/ycgGP9wZ07/cGdO/ycgGP8nIBj/JyAYACcgGAAnIBgAJyAY/ycgGP8nIBj/JyAY/ycgGAAnIBgAJyAYACcgGAAnIBgAJyAY/ycgGP8nIBgAJyAYACcgGAAnIBgAJyAYACcgGAAnIBgAJyAYACcgGAAnIBgAJyAYAA=="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Resource" id="Resource_awdd3"]
+script = ExtResource("7_1qhri")
+origin = Vector2(4, 4)
+containing_box = Rect2(1, 1, 6, 6)
+precise = true
+images = Array[Image]([SubResource("Image_3dpgs")])
+
+[sub_resource type="Image" id="Image_1qhri"]
+data = {
+"data": PackedByteArray("JyAYACcgGP8nIBj/JyAYACcgGP+tm2j/rZto/ycgGP8nIBj/cGdO/3BnTv8nIBj/JyAYACcgGP8nIBj/JyAYAA=="),
+"format": "RGBA8",
+"height": 4,
+"mipmaps": false,
+"width": 4
+}
+
+[sub_resource type="Resource" id="Resource_uf4ak"]
+script = ExtResource("7_1qhri")
+origin = Vector2(4, 4)
+containing_box = Rect2(0, 0, 4, 4)
+precise = true
+images = Array[Image]([SubResource("Image_1qhri")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yxhg1"]
+size = Vector2(6, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qss2y"]
+size = Vector2(12, 12)
+
+[node name="Rubble" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -1
 script = ExtResource("1_hqslu")
+animated_sprite_node = NodePath("Sprite")
 object_name = "rubble"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_jn33l")]
+sprite_frames = SubResource("SpriteFrames_jn33l")
+autoplay = "rubble"
+centered = false
+offset = Vector2(-4, -4)
+script = ExtResource("6_awdd3")
+sprite_info = Dictionary[StringName, ExtResource("7_1qhri")]({
+&"rubble": SubResource("Resource_ir0ox"),
+&"rubble_tan": SubResource("Resource_awdd3"),
+&"rubble_tan_small": SubResource("Resource_uf4ak")
+})
+default_animation = &"rubble"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_yxhg1")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+shape = SubResource("RectangleShape2D_qss2y")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

@@ -1,7 +1,124 @@
-[gd_scene load_steps=2 format=3 uid="uid://bhffcxa878l6g"]
+[gd_scene load_steps=17 format=4 uid="uid://bhffcxa878l6g"]
 
 [ext_resource type="Script" uid="uid://b2m31iadvmkvh" path="res://objects/other/title/trophy/trophy.gd" id="1_rrvl7"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_xjswj"]
+[ext_resource type="Texture2D" uid="uid://bjgo0hdtjj47s" path="res://sprites/other/title/bronze_trophy/bronze_trophy_0.png" id="3_3qfa1"]
+[ext_resource type="Texture2D" uid="uid://dlp6rvrr2wimr" path="res://sprites/other/title/gold_trophy/gold_trophy_0.png" id="4_y322g"]
+[ext_resource type="Texture2D" uid="uid://oukty50iux3l" path="res://sprites/other/title/silver_trophy/silver_trophy_0.png" id="5_r4b2j"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="6_jsgam"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="7_yfadp"]
 
-[node name="Trophy" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_xjswj"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_3qfa1")
+}],
+"loop": true,
+"name": &"bronze_trophy",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_y322g")
+}],
+"loop": true,
+"name": &"gold_trophy",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_r4b2j")
+}],
+"loop": true,
+"name": &"silver_trophy",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_3qfa1"]
+data = {
+"data": PackedByteArray("flw6AH5cOgB+XDoAflw6AH5cOgD///8A////AP///wD///8A////AP///wB+XDoAflw6AH5cOgB+XDoAflw6AH5cOgB+XDoAflw6AH5cOgB+XDoA////AP///wD///8A////AP///wD///8Aflw6AH5cOgB+XDoAflw6AH5cOgB+XDoAflw6AH5cOgB+XDoAflw6AP///wD///8A////AP///wD///8A////AH5cOgB+XDoAflw6AH5cOgB+XDoAflw6AH5cOgB+XDoAflw6AH5cOgD///8A////AP///wD///8A////AP///wB+XDoAflw6AH5cOgB+XDoAflw6AH5cOgB+XDoAflw6AH5cOgB+XDr/////////////////////////////////flw6/35cOgB+XDoAflw6AH5cOgAmFBAAJhQQACYUEAAmFBAAJhQQ/91pMf/daTH/3Wkx/91pMf///////////yYUEP8mFBAAJhQQACYUEAAmFBAAJhQQACYUEAAmFBAAJhQQACYUEP/daTH/3Wkx/91pMf/daTH///////////8mFBD/JhQQACYUEAAmFBAAJhQQACYUEAAmFBAAJhQQACYUEAAmFBD/3Wkx/91pMf/daTH/3Wkx///////daTH/JhQQ/yYUEAAmFBAAJhQQACYUEAAmFBAAJhQQACYUEAAmFBAAJhQQ/35cOv/daTH/3Wkx/91pMf/daTH/flw6/yYUEP8mFBAAJhQQACYUEAAmFBAAJhQQACYUEAAmFBAAJhQQACYUEP9+XDr/flw6/35cOv9+XDr/3Wkx/35cOv8mFBD/JhQQACYUEAAmFBAAJhQQACYUEAAmFBAAJhQQACYUEAAmFBD/Yy8d/35cOv9+XDr/3Wkx/35cOv9jLx3/JhQQ/yYUEAAmFBAAJhQQACYUEAAmFBAAJhQQACYUEAAmFBAAJhQQACYUEP9jLx3/Yy8d/2MvHf9jLx3/JhQQ/yYUEAAmFBAAJhQQACYUEAAmFBAAJhQQACYUEAAmFBAAJhQQACYUEAAmFBAAJhQQ/2MvHf9jLx3/JhQQ/yYUEAAmFBAAJhQQACYUEAAmFBAAJhQQACYUEAAmFBAAJhQQACYUEAAmFBAAJhQQACYUEP9+XDr/flw6/yYUEP8mFBAAJhQQACYUEAAmFBAAJhQQACYUEAAmFBAAJhQQACYUEAAmFBAAJhQQACYUEP9+XDr/3Wkx/91pMf9+XDr/JhQQ/yYUEAAmFBAAJhQQACYUEAAmFBAAAIAAACYUEAAmFBAAJhQQACYUEAAmFBD/JhQQ/yYUEP8mFBD/JhQQ/yYUEP8mFBAAJhQQACYUEAAmFBAAAIAAAA=="),
+"format": "RGBA8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Resource" id="Resource_y322g"]
+script = ExtResource("7_yfadp")
+origin = Vector2(0, 0)
+containing_box = Rect2(4, 4, 8, 12)
+precise = true
+images = Array[Image]([SubResource("Image_3qfa1")])
+
+[sub_resource type="Image" id="Image_r4b2j"]
+data = {
+"data": PackedByteArray("flw6AH5cOv////////////////////////////////////////////////////////////////9+XDr/flw6ACYUEAAmFBD///Vo///1aP//9Wj///Vo///1aP//9Wj///Vo///1aP//////////////////9Wj/JhQQ/yYUEAAmFBAAJhQQ///1aP//9Wj///Vo///1aP//9Wj///Vo///1aP//9Wj///////////////////Vo/yYUEP8mFBAAJhQQACYUEP//9Wj///Vo///1aP//9Wj///Vo///1aP//9Wj///Vo///////////////////1aP8mFBD/JhQQACYUEAAmFBD///Vo///1aP//9Wj///Vo///1aP//9Wj///Vo///1aP//////////////////9Wj/JhQQ/yYUEAAmFBD//5UZ///1aP//9Wj///Vo///1aP//9Wj///Vo///1aP//////////////////9Wj///Vo//+VGf8mFBD/JhQQ///1aP//lRn///Vo///1aP//9Wj///Vo///1aP//9Wj/////////////9Wj///Vo//+VGf//9Wj/JhQQ/yYUEP//9Wj/JhQQ/35cOv//lRn///Vo///1aP//9Wj///Vo///1aP//9Wj//5UZ/35cOv8mFBD///Vo/yYUEP8mFBD///Vo/yYUEP8mFBD/flw6/35cOv//lRn//5UZ//+VGf//9Wj/flw6/35cOv8mFBD/JhQQ///1aP8mFBD/JhQQ//+VGf//9Wj/JhQQ/yYUEP9+XDr/flw6/35cOv9+XDr/flw6/35cOv8mFBD/JhQQ///1aP//lRn/JhQQ/yYUEAAmFBD//5UZ//+VGf9+XDr/JhQQ/yYUEP9+XDr/flw6/yYUEP8mFBD/flw6//+VGf//lRn/JhQQ/yYUEAAmFBAAJhQQACYUEP8mFBD/JhQQ/yYUEAAmFBD//5UZ//+VGf8mFBD/JhQQACYUEP8mFBD/JhQQ/yYUEAAmFBAAJhQQACYUEAAmFBAAJhQQACYUEAAmFBAAJhQQ//+VGf//lRn/JhQQ/yYUEAAmFBAAJhQQACYUEAAmFBAAJhQQACYUEAAmFBAAJhQQACYUEAAmFBD/JhQQ/35cOv//lRn//5UZ/35cOv8mFBD/JhQQ/yYUEAAmFBAAJhQQACYUEAAmFBAAJhQQACYUEAAmFBD//5UZ///1aP//9Wj///Vo//////////////Vo//+VGf8mFBD/JhQQACYUEAAmFBAAJhQQACYUEAAmFBAAJhQQ/yYUEP8mFBD/JhQQ/yYUEP8mFBD/JhQQ/yYUEP8mFBD/JhQQ/yYUEAAmFBAAJhQQAA=="),
+"format": "RGBA8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Resource" id="Resource_jsgam"]
+script = ExtResource("7_yfadp")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = true
+images = Array[Image]([SubResource("Image_r4b2j")])
+
+[sub_resource type="Image" id="Image_yfadp"]
+data = {
+"data": PackedByteArray("gICAAICAgACAgIAAgICAAP///wD///8A////AP///wD///8A////AP///wD///8AgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgP///////////////////////////////////////////4CAgP+AgIAAgICAAICAgAAgICAAICAgACAgIAAgICD/wMDA/8DAwP/AwMD/wMDA/8DAwP///////////8DAwP8gICD/ICAgACAgIAAgICAAICAgACAgIAAgICAAICAg/8DAwP/AwMD/wMDA/8DAwP/AwMD////////////AwMD/ICAg/yAgIAAgICAAICAgACAgIAAgICAAICAgACAgIP/AwMD/wMDA/8DAwP/AwMD/wMDA////////////wMDA/yAgIP8gICAAICAgACAgIAAgICAAICAgACAgIAAgICD/gICA/8DAwP/AwMD/wMDA/8DAwP//////wMDA/4CAgP8gICD/ICAgACAgIAAgICAAICAgACAgIAAgICAAICAg/0BAQP+AgID/wMDA/8DAwP/AwMD/wMDA/4CAgP9AQED/ICAg/yAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICD/gICA/4CAgP+AgID/gICA/8DAwP+AgID/ICAg/yAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAg/0BAQP+AgID/gICA/8DAwP+AgID/QEBA/yAgIP8gICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICD/QEBA/0BAQP9AQED/QEBA/yAgIP8gICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIP9AQED/QEBA/yAgIP8gICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICD/gICA/4CAgP8gICD/ICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAg/4CAgP+AgID/ICAg/yAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAg/0BAQP+AgID/gICA/0BAQP8gICD/ICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAg/4CAgP/AwMD////////////AwMD/gICA/yAgIP8gICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIP8gICD/ICAg/yAgIP8gICD/ICAg/yAgIP8gICD/ICAgACAgIAAgICAAICAgAA=="),
+"format": "RGBA8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Resource" id="Resource_1jq8t"]
+script = ExtResource("7_yfadp")
+origin = Vector2(0, 0)
+containing_box = Rect2(3, 1, 10, 15)
+precise = true
+images = Array[Image]([SubResource("Image_yfadp")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_otka7"]
+size = Vector2(8, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pkrlm"]
+size = Vector2(16, 24)
+
+[node name="Trophy" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -900
 script = ExtResource("1_rrvl7")
+animated_sprite_node = NodePath("Sprite")
 object_name = "trophy"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_xjswj")]
+sprite_frames = SubResource("SpriteFrames_xjswj")
+autoplay = "bronze_trophy"
+centered = false
+script = ExtResource("6_jsgam")
+sprite_info = Dictionary[StringName, ExtResource("7_yfadp")]({
+&"bronze_trophy": SubResource("Resource_y322g"),
+&"gold_trophy": SubResource("Resource_jsgam"),
+&"silver_trophy": SubResource("Resource_1jq8t")
+})
+default_animation = &"bronze_trophy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 10)
+shape = SubResource("RectangleShape2D_otka7")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 10)
+shape = SubResource("RectangleShape2D_pkrlm")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

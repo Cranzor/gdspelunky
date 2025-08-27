@@ -1,7 +1,71 @@
-[gd_scene load_steps=2 format=3 uid="uid://b0s4oc5m18vl7"]
+[gd_scene load_steps=11 format=4 uid="uid://b0s4oc5m18vl7"]
 
 [ext_resource type="Script" uid="uid://b31hvx5hrxypr" path="res://objects/collectibles/compass/compass.gd" id="1_83srj"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_uglpb"]
+[ext_resource type="Texture2D" uid="uid://b2bj4rfpjipgi" path="res://sprites/items/saleable/compass/compass_0.png" id="3_8fucm"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_3xedt"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_qwd37"]
 
-[node name="Compass" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_uglpb"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_8fucm")
+}],
+"loop": true,
+"name": &"compass",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_8fucm"]
+data = {
+"data": PackedByteArray("jcY/AI3GPwCNxj8AjcY/AI3GPwCNxj//jcY//43GP/+Nxj//jcY//43GP/+Nxj8AjcY/AI3GPwCNxj8AjcY/AI3GPwCNxj8AjcY/AI3GPwCNxj//gICA/4CAgP+AgID/gICA/4CAgP+AgID/jcY//43GPwCNxj8AjcY/AI3GPwCNxj8AjcY/AI3GPwCNxj//gICA/4CAgP//////////////////////gICA/4CAgP+Nxj//jcY/AI3GPwCNxj8AjcY/AI3GPwCNxj//gICA/4CAgP///////////8AAAP+AAAD///////////+AgID/gICA/43GP/+Nxj8AjcY/AEBmGABAZhgAQGYY/4CAgP///////////8AAAP/AAAD/gAAA/4AAAP///////////4CAgP9AZhj/QGYYAEBmGAAAOBgAADgYAAA4GP/AwMD////////////AAAD/wAAA/4AAAP+AAAD////////////AwMD/ADgY/wA4GAAAOBgAADgYAAA4GAAAOBj/wMDA/////////////4CA//+AgP//gID//4CA////////////wMDA/wA4GP8AOBgAADgYAAAAAAAAAAAAAAAA/0BmGP////////////+AgP//gID//4CA//+AgP///////////0BmGP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAP8AOBj/QGYY/////////////4CA//+AgP///////////0BmGP8AOBj/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAD/ADgY/wA4GP9AZhj/QGYY/0BmGP9AZhj/QGYY/0BmGP8AOBj/ADgY/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AOBj/ADgY/wA4GP/AwMD/gICA/wA4GP8AOBj/ADgY/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wA4GP8AOBj/AAAA/wAAAP8AOBj/ADgY/wAAAP8AAAAAAAAAAAAAAAAAAAAA"),
+"format": "RGBA8",
+"height": 12,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Resource" id="Resource_3xedt"]
+script = ExtResource("5_qwd37")
+origin = Vector2(8, 6)
+containing_box = Rect2(2, 0, 12, 12)
+precise = true
+images = Array[Image]([SubResource("Image_8fucm")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qwd37"]
+size = Vector2(12, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xy6r0"]
+size = Vector2(24, 24)
+
+[node name="Compass" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -100
 script = ExtResource("1_83srj")
+animated_sprite_node = NodePath("Sprite")
 object_name = "compass"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_uglpb")]
+sprite_frames = SubResource("SpriteFrames_uglpb")
+autoplay = "compass"
+centered = false
+offset = Vector2(-8, -6)
+script = ExtResource("4_3xedt")
+sprite_info = Dictionary[StringName, ExtResource("5_qwd37")]({
+&"compass": SubResource("Resource_3xedt")
+})
+default_animation = &"compass"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_qwd37")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+shape = SubResource("RectangleShape2D_xy6r0")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

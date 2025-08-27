@@ -1,7 +1,99 @@
-[gd_scene load_steps=2 format=3 uid="uid://d1enj0yr10kwc"]
+[gd_scene load_steps=14 format=4 uid="uid://d1enj0yr10kwc"]
 
 [ext_resource type="Script" uid="uid://djgm3s08b3pqn" path="res://objects/items/shotgun/shotgun.gd" id="1_hnl71"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_ag5g7"]
+[ext_resource type="Texture2D" uid="uid://b71ml0xtb78ct" path="res://sprites/items/weapons/shotgun_left/shotgun_left_0.png" id="3_8qfgc"]
+[ext_resource type="Texture2D" uid="uid://c0adx0lcg4d0c" path="res://sprites/items/weapons/shotgun_right/shotgun_right_0.png" id="4_y1rew"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="5_8bifn"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="6_cm45o"]
 
-[node name="Shotgun" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_ag5g7"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_8qfgc")
+}],
+"loop": true,
+"name": &"shotgun_left",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_y1rew")
+}],
+"loop": true,
+"name": &"shotgun_right",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_8qfgc"]
+data = {
+"data": PackedByteArray("EgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCP8SCgj/EgoI/xIKCP8SCgj/EgoI/xIKCP8SCgj/EgoI/xIKCAASCggAEgoIABIKCAASCggAEgoI//////+AgID/wMDA/8DAwP/AwMD////////////AwMD/gICA/xIKCP8SCggAEgoIABIKCAASCggAEgoI/45ZJf9jLx3/gICA/4CAgP+AgID/QEBA/0BAQP9AQED/QEBA/0BAQP8SCgj/EgoIABIKCAASCggAEgoI/45ZJf9jLx3/JhQQ/2MvHf9jLx3/Yy8d/45ZJf+OWSX/jlkl/2MvHf9AQED/EgoI/xIKCAASCggAEgoIABIKCP9jLx3/Yy8d/xIKCP8mFBD/JhQQ/yYUEP8mFBD/JhQQ/yYUEP8mFBD/EgoI/xIKCAASCggAEgoIABIKCAASCgj/JhQQ/yYUEP8SCgj/EgoI/xIKCP8SCgj/EgoI/xIKCP8SCgj/EgoI/xIKCAASCggAEgoIABIKCAASCggAEgoIABIKCP8SCgj/EgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAA="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Resource" id="Resource_y1rew"]
+script = ExtResource("6_cm45o")
+origin = Vector2(8, 4)
+containing_box = Rect2(2, 1, 13, 7)
+precise = true
+images = Array[Image]([SubResource("Image_8qfgc")])
+
+[sub_resource type="Image" id="Image_8bifn"]
+data = {
+"data": PackedByteArray("EgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCgj/EgoI/xIKCP8SCgj/EgoI/xIKCP8SCgj/EgoI/xIKCP8SCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoI/4CAgP/AwMD////////////AwMD/wMDA/8DAwP+AgID//////xIKCP8SCggAEgoIABIKCAASCggAEgoIABIKCP9AQED/QEBA/0BAQP9AQED/QEBA/4CAgP+AgID/gICA/2MvHf+OWSX/EgoI/xIKCAASCggAEgoIABIKCAASCgj/QEBA/2MvHf+OWSX/jlkl/45ZJf9jLx3/Yy8d/2MvHf8mFBD/Yy8d/45ZJf8SCgj/EgoIABIKCAASCggAEgoIABIKCP8mFBD/JhQQ/yYUEP8mFBD/JhQQ/yYUEP8mFBD/EgoI/2MvHf9jLx3/EgoI/xIKCAASCggAEgoIABIKCAASCggAEgoI/xIKCP8SCgj/EgoI/xIKCP8SCgj/EgoI/xIKCP8mFBD/JhQQ/xIKCP8SCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoI/xIKCP8SCggAEgoIABIKCAA="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Resource" id="Resource_cm45o"]
+script = ExtResource("6_cm45o")
+origin = Vector2(8, 4)
+containing_box = Rect2(1, 1, 13, 7)
+precise = true
+images = Array[Image]([SubResource("Image_8bifn")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xof2i"]
+size = Vector2(13, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kuolo"]
+size = Vector2(26, 14)
+
+[node name="Shotgun" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -101
 script = ExtResource("1_hnl71")
+animated_sprite_node = NodePath("Sprite")
 object_name = "shotgun"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_ag5g7")]
+sprite_frames = SubResource("SpriteFrames_ag5g7")
+autoplay = "shotgun_right"
+centered = false
+offset = Vector2(-8, -4)
+script = ExtResource("5_8bifn")
+sprite_info = Dictionary[StringName, ExtResource("6_cm45o")]({
+&"shotgun_left": SubResource("Resource_cm45o"),
+&"shotgun_right": SubResource("Resource_y1rew")
+})
+default_animation = &"shotgun_right"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_xof2i")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_kuolo")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

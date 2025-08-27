@@ -1,7 +1,72 @@
-[gd_scene load_steps=2 format=3 uid="uid://jlo67gkaninn"]
+[gd_scene load_steps=11 format=4 uid="uid://jlo67gkaninn"]
 
 [ext_resource type="Script" uid="uid://dwycx34o24y2w" path="res://objects/other/menu_left/menu_left.gd" id="1_ofhk7"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_l1k2t"]
+[ext_resource type="Texture2D" uid="uid://bwi32v3nj532j" path="res://sprites/other/menu_left/menu_left_0.png" id="3_emk5x"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_hvoee"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_3wjt2"]
 
-[node name="MenuLeft" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_l1k2t"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_emk5x")
+}],
+"loop": true,
+"name": &"menu_left",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_emk5x"]
+data = {
+"data": PackedByteArray("AAAA////////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"),
+"format": "RGB8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Resource" id="Resource_hvoee"]
+script = ExtResource("5_3wjt2")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = true
+images = Array[Image]([SubResource("Image_emk5x")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3wjt2"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6dmt2"]
+size = Vector2(32, 32)
+
+[node name="MenuLeft" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -1
 script = ExtResource("1_ofhk7")
+animated_sprite_node = NodePath("Sprite")
 object_name = "menu_left"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_l1k2t")]
+sprite_frames = SubResource("SpriteFrames_l1k2t")
+autoplay = "menu_left"
+centered = false
+script = ExtResource("4_hvoee")
+sprite_info = Dictionary[StringName, ExtResource("5_3wjt2")]({
+&"menu_left": SubResource("Resource_hvoee")
+})
+default_animation = &"menu_left"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_3wjt2")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_6dmt2")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

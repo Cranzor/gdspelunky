@@ -1,7 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://2wxv706jgagk"]
+[gd_scene load_steps=5 format=3 uid="uid://2wxv706jgagk"]
 
 [ext_resource type="Script" uid="uid://bdm032r6yv2id" path="res://objects/joy_config/joy_config.gd" id="1_xfylq"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_qoo64"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="3_2dxbj"]
 
-[node name="JoyConfig" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_qoo64"]
+resource_local_to_scene = true
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[node name="JoyConfig" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_xfylq")
+animated_sprite_node = NodePath("Sprite")
 object_name = "joy_config"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_qoo64")]
+sprite_frames = SubResource("SpriteFrames_qoo64")
+centered = false
+script = ExtResource("3_2dxbj")
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

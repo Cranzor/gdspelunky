@@ -1,11 +1,32 @@
-[gd_scene load_steps=3 format=3 uid="uid://d1j2iebw7ullm"]
+[gd_scene load_steps=7 format=3 uid="uid://d1j2iebw7ullm"]
 
 [ext_resource type="Script" uid="uid://bu2ftfan76tqy" path="res://objects/stars_room/stars_room.gd" id="1_a2b4s"]
 [ext_resource type="PackedScene" uid="uid://dq140qq6udxt3" path="res://scenes/challenge_rooms_hud.tscn" id="2_2ulvr"]
+[ext_resource type="Script" uid="uid://ce5qxdpaox4f0" path="res://scenes/challenge_rooms_hud.gd" id="3_ckpng"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="4_u5stb"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="5_aib6p"]
 
-[node name="StarsRoom" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_u5stb"]
+resource_local_to_scene = true
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[node name="StarsRoom" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_a2b4s")
+animated_sprite_node = NodePath("Sprite")
 object_name = "stars_room"
 
-[node name="BonusRoomsHUD" parent="." instance=ExtResource("2_2ulvr")]
+[node name="BonusRoomsHUD" type="CanvasLayer" parent="." instance=ExtResource("2_2ulvr")]
+script = ExtResource("3_ckpng")
 type = 1
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("4_u5stb")]
+sprite_frames = SubResource("SpriteFrames_u5stb")
+centered = false
+script = ExtResource("5_aib6p")
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

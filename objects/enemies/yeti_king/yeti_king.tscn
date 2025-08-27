@@ -1,7 +1,366 @@
-[gd_scene load_steps=2 format=3 uid="uid://bpfeeu2i3ceey"]
+[gd_scene load_steps=70 format=3 uid="uid://bpfeeu2i3ceey"]
 
 [ext_resource type="Script" uid="uid://bpolye2ni3x2u" path="res://objects/enemies/yeti_king/yeti_king.gd" id="1_vsosg"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_8nc2g"]
+[ext_resource type="Texture2D" uid="uid://b0ntmb5lppx82" path="res://sprites/enemies/yeti_king/yeti_king_left/yeti_king_left_0.png" id="3_vvmfb"]
+[ext_resource type="Texture2D" uid="uid://d1op7lecds7pv" path="res://sprites/enemies/yeti_king/yeti_king_right/yeti_king_right_0.png" id="4_3nr8f"]
+[ext_resource type="Texture2D" uid="uid://ddf57vjpehr7k" path="res://sprites/enemies/yeti_king/yeti_king_turn_l/yeti_king_turn_l_0.png" id="5_6hhef"]
+[ext_resource type="Texture2D" uid="uid://dn0lax2rgdr1t" path="res://sprites/enemies/yeti_king/yeti_king_turn_l/yeti_king_turn_l_1.png" id="6_0dcuq"]
+[ext_resource type="Texture2D" uid="uid://co2qgj8q3dbbn" path="res://sprites/enemies/yeti_king/yeti_king_turn_l/yeti_king_turn_l_2.png" id="7_hkrp0"]
+[ext_resource type="Texture2D" uid="uid://eykck06uvx7o" path="res://sprites/enemies/yeti_king/yeti_king_turn_l/yeti_king_turn_l_3.png" id="8_v1md2"]
+[ext_resource type="Texture2D" uid="uid://c424dxaouk7p3" path="res://sprites/enemies/yeti_king/yeti_king_turn_l/yeti_king_turn_l_4.png" id="9_nv0ls"]
+[ext_resource type="Texture2D" uid="uid://cjuw1s5u0b2p0" path="res://sprites/enemies/yeti_king/yeti_king_turn_r/yeti_king_turn_r_0.png" id="10_jgv0e"]
+[ext_resource type="Texture2D" uid="uid://d4er1sivm6dsi" path="res://sprites/enemies/yeti_king/yeti_king_turn_r/yeti_king_turn_r_1.png" id="11_m6dfe"]
+[ext_resource type="Texture2D" uid="uid://briohiwm7tuht" path="res://sprites/enemies/yeti_king/yeti_king_turn_r/yeti_king_turn_r_2.png" id="12_d0p34"]
+[ext_resource type="Texture2D" uid="uid://cd03n6pehdeg" path="res://sprites/enemies/yeti_king/yeti_king_turn_r/yeti_king_turn_r_3.png" id="13_533k6"]
+[ext_resource type="Texture2D" uid="uid://b6o3wcn5ow0ni" path="res://sprites/enemies/yeti_king/yeti_king_turn_r/yeti_king_turn_r_4.png" id="14_e6cd5"]
+[ext_resource type="Texture2D" uid="uid://dl4m5w7i8r8g8" path="res://sprites/enemies/yeti_king/yeti_king_walk_l/yeti_king_walk_l_0.png" id="15_4r5ax"]
+[ext_resource type="Texture2D" uid="uid://cvty74xt8t6f5" path="res://sprites/enemies/yeti_king/yeti_king_walk_l/yeti_king_walk_l_1.png" id="16_yj2sg"]
+[ext_resource type="Texture2D" uid="uid://rni2rrrkan6w" path="res://sprites/enemies/yeti_king/yeti_king_walk_l/yeti_king_walk_l_2.png" id="17_nlsmx"]
+[ext_resource type="Texture2D" uid="uid://cg0j0qcvpcjk4" path="res://sprites/enemies/yeti_king/yeti_king_walk_l/yeti_king_walk_l_3.png" id="18_uj7ya"]
+[ext_resource type="Texture2D" uid="uid://d4dlrbw5pbhg2" path="res://sprites/enemies/yeti_king/yeti_king_walk_l/yeti_king_walk_l_4.png" id="19_i0hov"]
+[ext_resource type="Texture2D" uid="uid://cgc8a3nr8qnu2" path="res://sprites/enemies/yeti_king/yeti_king_walk_l/yeti_king_walk_l_5.png" id="20_7mpig"]
+[ext_resource type="Texture2D" uid="uid://dsqisie0udb3d" path="res://sprites/enemies/yeti_king/yeti_king_walk_l/yeti_king_walk_l_6.png" id="21_v6g3y"]
+[ext_resource type="Texture2D" uid="uid://cnew7fh3rsj48" path="res://sprites/enemies/yeti_king/yeti_king_walk_l/yeti_king_walk_l_7.png" id="22_usb70"]
+[ext_resource type="Texture2D" uid="uid://cbyacy0lnsi44" path="res://sprites/enemies/yeti_king/yeti_king_walk_r/yeti_king_walk_r_0.png" id="23_57qvd"]
+[ext_resource type="Texture2D" uid="uid://ddpn27yevpnce" path="res://sprites/enemies/yeti_king/yeti_king_walk_r/yeti_king_walk_r_1.png" id="24_joqgg"]
+[ext_resource type="Texture2D" uid="uid://uf6p1l7vxggd" path="res://sprites/enemies/yeti_king/yeti_king_walk_r/yeti_king_walk_r_2.png" id="25_nhhbf"]
+[ext_resource type="Texture2D" uid="uid://d2t4xfwab2lgq" path="res://sprites/enemies/yeti_king/yeti_king_walk_r/yeti_king_walk_r_3.png" id="26_4dqom"]
+[ext_resource type="Texture2D" uid="uid://dp5rc1m1mk2us" path="res://sprites/enemies/yeti_king/yeti_king_walk_r/yeti_king_walk_r_4.png" id="27_tqw3x"]
+[ext_resource type="Texture2D" uid="uid://cltm1atintc3q" path="res://sprites/enemies/yeti_king/yeti_king_walk_r/yeti_king_walk_r_5.png" id="28_ldlyr"]
+[ext_resource type="Texture2D" uid="uid://bpdypdo3kwhyg" path="res://sprites/enemies/yeti_king/yeti_king_walk_r/yeti_king_walk_r_6.png" id="29_606bg"]
+[ext_resource type="Texture2D" uid="uid://dwvnwo8rsgiq1" path="res://sprites/enemies/yeti_king/yeti_king_walk_r/yeti_king_walk_r_7.png" id="30_157ub"]
+[ext_resource type="Texture2D" uid="uid://3byik7ppnst" path="res://sprites/enemies/yeti_king/yeti_king_yell_l/yeti_king_yell_l_0.png" id="31_qhmjf"]
+[ext_resource type="Texture2D" uid="uid://b65gw20smdsm7" path="res://sprites/enemies/yeti_king/yeti_king_yell_l/yeti_king_yell_l_1.png" id="32_fjp52"]
+[ext_resource type="Texture2D" uid="uid://iyh0c0ewqsf8" path="res://sprites/enemies/yeti_king/yeti_king_yell_l/yeti_king_yell_l_10.png" id="33_kamnl"]
+[ext_resource type="Texture2D" uid="uid://x7m06gbpfffc" path="res://sprites/enemies/yeti_king/yeti_king_yell_l/yeti_king_yell_l_11.png" id="34_ccpy3"]
+[ext_resource type="Texture2D" uid="uid://2benk0g7h2wp" path="res://sprites/enemies/yeti_king/yeti_king_yell_l/yeti_king_yell_l_12.png" id="35_ytwr7"]
+[ext_resource type="Texture2D" uid="uid://cr4tg7e5msvbk" path="res://sprites/enemies/yeti_king/yeti_king_yell_l/yeti_king_yell_l_2.png" id="36_e4wth"]
+[ext_resource type="Texture2D" uid="uid://c4jvpo8aa1j6b" path="res://sprites/enemies/yeti_king/yeti_king_yell_l/yeti_king_yell_l_3.png" id="37_3cltv"]
+[ext_resource type="Texture2D" uid="uid://by8raywaqt0wb" path="res://sprites/enemies/yeti_king/yeti_king_yell_l/yeti_king_yell_l_4.png" id="38_dh75l"]
+[ext_resource type="Texture2D" uid="uid://b5wqw7qxe80e7" path="res://sprites/enemies/yeti_king/yeti_king_yell_l/yeti_king_yell_l_5.png" id="39_o1042"]
+[ext_resource type="Texture2D" uid="uid://dekr7epoc2vd4" path="res://sprites/enemies/yeti_king/yeti_king_yell_l/yeti_king_yell_l_6.png" id="40_ge1ly"]
+[ext_resource type="Texture2D" uid="uid://gf1m2dukdiuc" path="res://sprites/enemies/yeti_king/yeti_king_yell_l/yeti_king_yell_l_7.png" id="41_2n8fs"]
+[ext_resource type="Texture2D" uid="uid://buxi5yov4433b" path="res://sprites/enemies/yeti_king/yeti_king_yell_l/yeti_king_yell_l_8.png" id="42_8nhn7"]
+[ext_resource type="Texture2D" uid="uid://dg8cu0febiqos" path="res://sprites/enemies/yeti_king/yeti_king_yell_l/yeti_king_yell_l_9.png" id="43_mmo7e"]
+[ext_resource type="Texture2D" uid="uid://xifggkhxak37" path="res://sprites/enemies/yeti_king/yeti_king_yell_r/yeti_king_yell_r_0.png" id="44_xkne4"]
+[ext_resource type="Texture2D" uid="uid://dteksw23fo05r" path="res://sprites/enemies/yeti_king/yeti_king_yell_r/yeti_king_yell_r_1.png" id="45_qm4qc"]
+[ext_resource type="Texture2D" uid="uid://cxkq3icxo7psy" path="res://sprites/enemies/yeti_king/yeti_king_yell_r/yeti_king_yell_r_10.png" id="46_5dowm"]
+[ext_resource type="Texture2D" uid="uid://qbw3rncj0lmn" path="res://sprites/enemies/yeti_king/yeti_king_yell_r/yeti_king_yell_r_11.png" id="47_1h8t4"]
+[ext_resource type="Texture2D" uid="uid://dj3rx0tthfy4v" path="res://sprites/enemies/yeti_king/yeti_king_yell_r/yeti_king_yell_r_12.png" id="48_ha05e"]
+[ext_resource type="Texture2D" uid="uid://bxag0wonukpld" path="res://sprites/enemies/yeti_king/yeti_king_yell_r/yeti_king_yell_r_2.png" id="49_3fsgg"]
+[ext_resource type="Texture2D" uid="uid://dk0s5vugjfsux" path="res://sprites/enemies/yeti_king/yeti_king_yell_r/yeti_king_yell_r_3.png" id="50_e51bc"]
+[ext_resource type="Texture2D" uid="uid://rqk1ib7qvhae" path="res://sprites/enemies/yeti_king/yeti_king_yell_r/yeti_king_yell_r_4.png" id="51_kpxc3"]
+[ext_resource type="Texture2D" uid="uid://cllevw4g870xs" path="res://sprites/enemies/yeti_king/yeti_king_yell_r/yeti_king_yell_r_5.png" id="52_2ml7p"]
+[ext_resource type="Texture2D" uid="uid://c7uw42mdtgxbi" path="res://sprites/enemies/yeti_king/yeti_king_yell_r/yeti_king_yell_r_6.png" id="53_x1tww"]
+[ext_resource type="Texture2D" uid="uid://6bogtaklacmx" path="res://sprites/enemies/yeti_king/yeti_king_yell_r/yeti_king_yell_r_7.png" id="54_emmy8"]
+[ext_resource type="Texture2D" uid="uid://8lmcbl4xdx4m" path="res://sprites/enemies/yeti_king/yeti_king_yell_r/yeti_king_yell_r_8.png" id="55_o0xwu"]
+[ext_resource type="Texture2D" uid="uid://bl7dhb6f55vpb" path="res://sprites/enemies/yeti_king/yeti_king_yell_r/yeti_king_yell_r_9.png" id="56_byr0g"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="57_oedyb"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="58_86vaj"]
 
-[node name="YetiKing" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_8nc2g"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_vvmfb")
+}],
+"loop": true,
+"name": &"yeti_king_left",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_3nr8f")
+}],
+"loop": true,
+"name": &"yeti_king_right",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_6hhef")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_0dcuq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_hkrp0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_v1md2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_nv0ls")
+}],
+"loop": true,
+"name": &"yeti_king_turn_l",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_jgv0e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_m6dfe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_d0p34")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_533k6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_e6cd5")
+}],
+"loop": true,
+"name": &"yeti_king_turn_r",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_4r5ax")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_yj2sg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_nlsmx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_uj7ya")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_i0hov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_7mpig")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_v6g3y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_usb70")
+}],
+"loop": true,
+"name": &"yeti_king_walk_l",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_57qvd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_joqgg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_nhhbf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_4dqom")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_tqw3x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_ldlyr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_606bg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_157ub")
+}],
+"loop": true,
+"name": &"yeti_king_walk_r",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31_qhmjf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_fjp52")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_kamnl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_ccpy3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_ytwr7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_e4wth")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_3cltv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_dh75l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_o1042")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_ge1ly")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_2n8fs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_8nhn7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_mmo7e")
+}],
+"loop": true,
+"name": &"yeti_king_yell_l",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("44_xkne4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_qm4qc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_5dowm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_1h8t4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_ha05e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_3fsgg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_e51bc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_kpxc3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_2ml7p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_x1tww")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_emmy8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_o0xwu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_byr0g")
+}],
+"loop": true,
+"name": &"yeti_king_yell_r",
+"speed": 30.0
+}]
+
+[sub_resource type="Resource" id="Resource_vvmfb"]
+script = ExtResource("58_86vaj")
+origin = Vector2(0, 0)
+containing_box = Rect2(1, 0, 31, 32)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_3nr8f"]
+script = ExtResource("58_86vaj")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 32, 32)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_6hhef"]
+script = ExtResource("58_86vaj")
+origin = Vector2(0, 0)
+containing_box = Rect2(1, 0, 31, 32)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_0dcuq"]
+script = ExtResource("58_86vaj")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 32, 32)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_hkrp0"]
+script = ExtResource("58_86vaj")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 31, 32)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_v1md2"]
+script = ExtResource("58_86vaj")
+origin = Vector2(0, 0)
+containing_box = Rect2(1, 0, 31, 32)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_nv0ls"]
+script = ExtResource("58_86vaj")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 31, 32)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_jgv0e"]
+script = ExtResource("58_86vaj")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 31, 32)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m6dfe"]
+size = Vector2(31, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d0p34"]
+size = Vector2(62, 64)
+
+[node name="YetiKing" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -60
 script = ExtResource("1_vsosg")
+animated_sprite_node = NodePath("Sprite")
 object_name = "yeti_king"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_8nc2g")]
+sprite_frames = SubResource("SpriteFrames_8nc2g")
+autoplay = "yeti_king_left"
+centered = false
+script = ExtResource("57_oedyb")
+sprite_info = Dictionary[StringName, ExtResource("58_86vaj")]({
+&"yeti_king_left": SubResource("Resource_vvmfb"),
+&"yeti_king_right": SubResource("Resource_jgv0e"),
+&"yeti_king_turn_l": SubResource("Resource_0dcuq"),
+&"yeti_king_turn_r": SubResource("Resource_3nr8f"),
+&"yeti_king_walk_l": SubResource("Resource_v1md2"),
+&"yeti_king_walk_r": SubResource("Resource_nv0ls"),
+&"yeti_king_yell_l": SubResource("Resource_6hhef"),
+&"yeti_king_yell_r": SubResource("Resource_hkrp0")
+})
+default_animation = &"yeti_king_left"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(16.5, 16)
+shape = SubResource("RectangleShape2D_m6dfe")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(16.5, 16)
+shape = SubResource("RectangleShape2D_d0p34")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

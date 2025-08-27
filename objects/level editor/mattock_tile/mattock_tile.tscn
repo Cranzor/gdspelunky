@@ -1,7 +1,72 @@
-[gd_scene load_steps=2 format=3 uid="uid://we1i6vy4c88v"]
+[gd_scene load_steps=11 format=4 uid="uid://we1i6vy4c88v"]
 
 [ext_resource type="Script" uid="uid://5tpynyl1cit7" path="res://objects/level editor/mattock_tile/mattock_tile.gd" id="1_rskmq"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_eefum"]
+[ext_resource type="Texture2D" uid="uid://1o0vaoj84wkg" path="res://sprites/level editor/mattock_tile/mattock_tile_0.png" id="3_p22oe"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_cfasu"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_q6r0o"]
 
-[node name="MattockTile" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_eefum"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_p22oe")
+}],
+"loop": true,
+"name": &"mattock_tile",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_p22oe"]
+data = {
+"data": PackedByteArray("AIAAAACAAAAAgAAAAIAAAACAAACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAACAAAAAgAAAAIAAAACAAAAAgAAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgAAAgAAAAIAAAACAAAAAgAAAAIAAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAAIAAAACAAAAAgAAAAIAAAACAAACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAACwWEwAsFhMALBYTACwWEwAsFhMAgICAAICAgACAgIAAgICAAICAgP+AgID/gICA/4CAgACAgIAAgICAAICAgAAsFhMALBYTACwWEwAsFhMALBYTACwWEwBAQEAAQEBAAEBAQABAQED///////////+AgID/gICAAICAgACAgIAALBYTACwWEwAsFhMALBYTACwWEwAsFhMALBYTACwWEwBAQEAAQEBAAEBAQP/AwMD//////4CAgP+AgIAAgICAACwWEwAsFhMALBYTACwWEwAsFhMALBYTACwWEwAsFhMALBYTAEBAQABAQED/wMDA/8DAwP+AgID/gICAAICAgAAsFhMALBYTACwWE/8sFhP/LBYT/ywWE/8sFhP/LBYT/ywWE/8sFhP/LBYT////////////EgoI/xIKCAASCggALBYTACwWE/9jLx3/jlkl/8h6LP/Ieiz/yHos/45ZJf+OWSX/jlkl/45ZJf///////////45ZJf8SCgj/EgoIABIKCAASCgj/Yy8d/2MvHf9jLx3/Yy8d/2MvHf9jLx3/Yy8d/2MvHf9jLx3/gICA/4CAgP+OWSX/EgoI/xIKCAASCggAEgoIABIKCP8SCgj/EgoI/xIKCP8SCgj/EgoI/xIKCP8SCgj/EgoI/4CAgP+AgID/EgoI/xIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIAEBAQP/AwMD/wMDA/0BAQP9AQEAAQEBAABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAQEBAAEBAQABAQED/wMDA/4CAgP8SCgj/EgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAQEBAAEBAQABAQED/gICA/4CAgP8SCgj/EgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoI/xIKCP8SCgj/EgoIABIKCAASCggAEgoIAA=="),
+"format": "RGBA8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Resource" id="Resource_cfasu"]
+script = ExtResource("5_q6r0o")
+origin = Vector2(0, 0)
+containing_box = Rect2(1, 4, 14, 12)
+precise = true
+images = Array[Image]([SubResource("Image_p22oe")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q6r0o"]
+size = Vector2(14, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8r44d"]
+size = Vector2(28, 24)
+
+[node name="MattockTile" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -100
 script = ExtResource("1_rskmq")
+animated_sprite_node = NodePath("Sprite")
 object_name = "mattock_tile"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_eefum")]
+sprite_frames = SubResource("SpriteFrames_eefum")
+autoplay = "mattock_tile"
+centered = false
+script = ExtResource("4_cfasu")
+sprite_info = Dictionary[StringName, ExtResource("5_q6r0o")]({
+&"mattock_tile": SubResource("Resource_cfasu")
+})
+default_animation = &"mattock_tile"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 10)
+shape = SubResource("RectangleShape2D_q6r0o")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 10)
+shape = SubResource("RectangleShape2D_8r44d")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

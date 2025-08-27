@@ -1,7 +1,123 @@
-[gd_scene load_steps=2 format=3 uid="uid://caxj5maf6bdwq"]
+[gd_scene load_steps=19 format=4 uid="uid://caxj5maf6bdwq"]
 
 [ext_resource type="Script" uid="uid://mrnwjc8myy7f" path="res://objects/enemies/magma_trail/magma_trail.gd" id="1_ufdsd"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_uypyv"]
+[ext_resource type="Texture2D" uid="uid://bhiqvca538ke6" path="res://sprites/effects/flame_trail/flame_trail_0.png" id="3_ojvt1"]
+[ext_resource type="Texture2D" uid="uid://buma5v67glpua" path="res://sprites/effects/flame_trail/flame_trail_1.png" id="4_jck2l"]
+[ext_resource type="Texture2D" uid="uid://cnrfbjfcmuyik" path="res://sprites/effects/flame_trail/flame_trail_2.png" id="5_x65wq"]
+[ext_resource type="Texture2D" uid="uid://xhl7wsl7qxm3" path="res://sprites/effects/flame_trail/flame_trail_3.png" id="6_tx33v"]
+[ext_resource type="Texture2D" uid="uid://bsff0762ifr27" path="res://sprites/effects/flame_trail/flame_trail_4.png" id="7_shbfl"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="8_2u8ur"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="9_wtni3"]
 
-[node name="MagmaTrail" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_uypyv"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ojvt1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jck2l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_x65wq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_tx33v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_shbfl")
+}],
+"loop": true,
+"name": &"flame_trail",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_xsu18"]
+data = {
+"data": PackedByteArray("mycAAJsnAACbJwD/mycA/5snAP+bJwD/mycAAJsnAACbJwAAmycA//9CAP//lRn//5UZ//9CAP+bJwD/mycAAJsnAACbJwD//5UZ//z/If/8/yH//5UZ//9CAP+bJwD/mycA//9CAP//lRn//P8h//z/If//lRn//0IA/5snAP+bJwD//0IA//+VGf//lRn//5UZ//9CAP//QgD/mycA/5snAACbJwD//0IA//9CAP//QgD//0IA//+VGf+bJwAAmycAAJsnAACbJwD//0IA//+VGf//lRn/mycA/5snAACbJwAAmycAAJsnAACbJwD/mycA/5snAP+bJwAAmycAAA=="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Image" id="Image_fpd7n"]
+data = {
+"data": PackedByteArray("/0IAAP9CAAD/QgAA/0IAAJsnAACbJwAAmycAAJsnAAD/QgAA/0IAAP9CAP//QgD/mycA/5snAACbJwAAmycAAP9CAAD/QgD//5UZ//+VGf//lRn//0IA/5snAP+bJwAA/0IAAP9CAP//lRn//5UZ//9CAP//QgD/mycA/5snAACbJwAAmycA//9CAP//QgD//0IA//9CAP+bJwD/mycAAJsnAACbJwAA/0IA//9CAP//lRn/mycA/5snAACbJwAAmycAAJsnAACbJwD/mycA/5snAP+bJwAAmycAAJsnAACbJwAAmycAAJsnAACbJwAAmycAAJsnAACbJwAAmycAAA=="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Image" id="Image_yy7yk"]
+data = {
+"data": PackedByteArray("mycAAJsnAACbJwAAmycAAJsnAABAQEAAQEBAAEBAQACbJwAAmycAAJsnAACbJwAAmycAAEBAQABAQEAAQEBAAJsnAACbJwAAmycA/5snAP+bJwD/QEBA/0BAQABAQEAAmycAAJsnAP+bJwD/mycA/5snAP9AQED/QEBAAEBAQABAQEAAQEBA/5snAP+AgID/QEBA/yAgIP8gICAAICAgAEBAQABAQEAAQEBA/0BAQP8gICD/ICAgACAgIAAgICAAQEBAAEBAQABAQEAAQEBAACAgIAAgICAAICAgACAgIABAQEAAQEBAAEBAQABAQEAAICAgACAgIAAgICAAICAgAA=="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Image" id="Image_3xnc7"]
+data = {
+"data": PackedByteArray("QEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAICAgAEBAQABAQEAAQEBAAEBAQP9AQED/QEBAACAgIAAgICAAQEBAAEBAQABAQED/gICA/4CAgP8gICD/ICAgACAgIABAQEAAQEBAAEBAQP9AQED/ICAg/yAgIP8gICAAICAgAEBAQABAQEAAQEBAACAgIP8gICD/ICAgACAgIAAgICAAQEBAAEBAQAAgICAAICAgACAgIAAgICAAICAgACAgIABAQEAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgAA=="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Image" id="Image_5i350"]
+data = {
+"data": PackedByteArray("QEBAAEBAQABAQEAAQEBAACAgIAAgICAAICAgACAgIABAQEAAQEBAAEBAQABAQEAAICAgACAgIAAgICAAICAgAEBAQABAQEAAQEBAAEBAQAAgICAAICAgACAgIAAgICAAQEBAAEBAQABAQEAAQEBA/yAgIP8gICAAICAgACAgIAAgICAAICAgACAgIAAgICD/ICAg/yAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgAA=="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Resource" id="Resource_ojvt1"]
+script = ExtResource("9_wtni3")
+origin = Vector2(4, 4)
+containing_box = Rect2(0, 0, 8, 8)
+precise = true
+images = Array[Image]([SubResource("Image_xsu18"), SubResource("Image_fpd7n"), SubResource("Image_yy7yk"), SubResource("Image_3xnc7"), SubResource("Image_5i350")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jck2l"]
+size = Vector2(8, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x65wq"]
+size = Vector2(16, 16)
+
+[node name="MagmaTrail" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -2
 script = ExtResource("1_ufdsd")
+animated_sprite_node = NodePath("Sprite")
 object_name = "magma_trail"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_uypyv")]
+sprite_frames = SubResource("SpriteFrames_uypyv")
+autoplay = "flame_trail"
+centered = false
+offset = Vector2(-4, -4)
+script = ExtResource("8_2u8ur")
+sprite_info = Dictionary[StringName, ExtResource("9_wtni3")]({
+&"flame_trail": SubResource("Resource_ojvt1")
+})
+default_animation = &"flame_trail"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jck2l")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+shape = SubResource("RectangleShape2D_x65wq")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

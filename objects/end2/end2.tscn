@@ -1,7 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://qdua2ggdahaj"]
+[gd_scene load_steps=5 format=3 uid="uid://qdua2ggdahaj"]
 
 [ext_resource type="Script" uid="uid://tswipkvblbh6" path="res://objects/end2/end2.gd" id="1_7lai0"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_uw3pc"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="3_t81fj"]
 
-[node name="End2" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_uw3pc"]
+resource_local_to_scene = true
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[node name="End2" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_7lai0")
+animated_sprite_node = NodePath("Sprite")
 object_name = "end2"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_uw3pc")]
+sprite_frames = SubResource("SpriteFrames_uw3pc")
+centered = false
+script = ExtResource("3_t81fj")
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

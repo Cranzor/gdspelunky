@@ -1,7 +1,163 @@
-[gd_scene load_steps=2 format=3 uid="uid://c5j6pgldtci80"]
+[gd_scene load_steps=25 format=4 uid="uid://c5j6pgldtci80"]
 
 [ext_resource type="Script" uid="uid://cogbono0r5c4h" path="res://objects/other/end/player_sil/player_sil.gd" id="1_molow"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_jakni"]
+[ext_resource type="Texture2D" uid="uid://b8bfeewtt4l2a" path="res://sprites/other/end/player_sil/player_sil_0.png" id="3_7h2v3"]
+[ext_resource type="Texture2D" uid="uid://bepungsnoxopg" path="res://sprites/other/end/player_sil/player_sil_1.png" id="4_8dsxp"]
+[ext_resource type="Texture2D" uid="uid://dmowgkf0on4co" path="res://sprites/other/end/player_sil/player_sil_2.png" id="5_875pd"]
+[ext_resource type="Texture2D" uid="uid://ckdiw66b0w31w" path="res://sprites/other/end/player_sil/player_sil_3.png" id="6_w4sgw"]
+[ext_resource type="Texture2D" uid="uid://br18bg6w1uj2b" path="res://sprites/other/end/player_sil/player_sil_4.png" id="7_ow651"]
+[ext_resource type="Texture2D" uid="uid://h6smewkw53ob" path="res://sprites/other/end/player_sil/player_sil_5.png" id="8_ugo45"]
+[ext_resource type="Texture2D" uid="uid://buwbag4m2ldvb" path="res://sprites/other/end/player_sil/player_sil_6.png" id="9_0m7fc"]
+[ext_resource type="Texture2D" uid="uid://5mt8w2do3nlp" path="res://sprites/other/end/player_sil/player_sil_7.png" id="10_uytus"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="11_1w5se"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="12_plpek"]
 
-[node name="PlayerSil" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_jakni"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_7h2v3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8dsxp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_875pd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_w4sgw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ow651")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ugo45")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_0m7fc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_uytus")
+}],
+"loop": true,
+"name": &"player_sil",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_7h2v3"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAD/AAAA/wAAAP8AAAD/AAAAAAAAAAAAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAAAAAAAAAAAA/wAAAP8AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAD/AAAA/wAAAP8AAAD/AAAAAAAAAAAAAAAAAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAAAAAAAAAAAAAAAAA/wAAAP8AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAD/AAAA/wAAAP8AAAD/AAAAAAAAAAAAAAAAAAAA/wAAAAAAAAAAAAAAAAAAAAAAAAD/AAAAAA=="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Image" id="Image_8dsxp"]
+data = {
+"data": PackedByteArray("AAAAAAAAAP8AAAD/AAAAAAAAAP8AAAAAAAAAAAAAAAAAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAAAAAAD/AAAAAAAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAAAAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAAAAAAAAAAAAAAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAAAAAAP8AAAAAAAAA/wAAAP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wAAAAAAAAAAAAAAAA=="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Image" id="Image_875pd"]
+data = {
+"data": PackedByteArray("AAAAAAAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wAAAAAAAAAAAAAA/wAAAAAAAAAAAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAAAAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAAAAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAAAAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAAAAAAAAAAAAP8AAAAAAAAAAAAAAP8AAAAAAAAAAAAAAP8AAAAAAAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Image" id="Image_w4sgw"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAAAAAAAAAAAAAAAAAA/wAAAAAAAAD/AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAAAAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAAAAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAAAAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAAAAAAAAAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAAAAAAA/wAAAAAAAAAAAAAA/wAAAP8AAAAAAAAA/wAAAAAAAAAAAAAAAA=="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Image" id="Image_ow651"]
+data = {
+"data": PackedByteArray("AAAAAAAAAP8AAAAAAAAAAAAAAAAAAAAAAAAA/wAAAAAAAAAAAAAAAAAAAP8AAAD/AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAA/wAAAP8AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAP8AAAD/AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAA/wAAAP8AAAD/AAAA/wAAAAAAAAAAAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAAAAAAAAAAAAP8AAAD/AAAA/wAAAP8AAAAAAAAAAA=="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Image" id="Image_ugo45"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAD/AAAA/wAAAAAAAAD/AAAAAAAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAAAAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAAAAAAAAAAAAAAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAAAAAAP8AAAAAAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAD/AAAAAAAAAP8AAAD/AAAAAA=="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Image" id="Image_0m7fc"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wAAAAAAAAD/AAAAAAAAAAAAAAD/AAAAAAAAAAAAAAD/AAAAAAAAAAAAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAAAAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAAAAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAAAAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAAAAAAAAAAAA/wAAAAAAAAAAAAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAAAA=="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Image" id="Image_uytus"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAA/wAAAAAAAAD/AAAA/wAAAAAAAAAAAAAA/wAAAAAAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAAAAAAAAAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAAAAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAAAAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAAAAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAD/AAAA/wAAAP8AAAAAAAAA/wAAAAAAAAAAAAAAAAAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAA=="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Resource" id="Resource_1w5se"]
+script = ExtResource("12_plpek")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 8, 8)
+precise = true
+images = Array[Image]([SubResource("Image_7h2v3"), SubResource("Image_8dsxp"), SubResource("Image_875pd"), SubResource("Image_w4sgw"), SubResource("Image_ow651"), SubResource("Image_ugo45"), SubResource("Image_0m7fc"), SubResource("Image_uytus")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_plpek"]
+size = Vector2(8, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_era5g"]
+size = Vector2(16, 16)
+
+[node name="PlayerSil" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -1
 script = ExtResource("1_molow")
+animated_sprite_node = NodePath("Sprite")
 object_name = "player_sil"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_jakni")]
+sprite_frames = SubResource("SpriteFrames_jakni")
+autoplay = "player_sil"
+centered = false
+script = ExtResource("11_1w5se")
+sprite_info = Dictionary[StringName, ExtResource("12_plpek")]({
+&"player_sil": SubResource("Resource_1w5se")
+})
+default_animation = &"player_sil"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_plpek")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_era5g")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

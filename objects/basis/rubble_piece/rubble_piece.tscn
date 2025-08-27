@@ -1,7 +1,72 @@
-[gd_scene load_steps=2 format=3 uid="uid://bopxpiokugy2m"]
+[gd_scene load_steps=11 format=4 uid="uid://bopxpiokugy2m"]
 
 [ext_resource type="Script" uid="uid://luyxrlp6ch6i" path="res://objects/basis/rubble_piece/rubble_piece.gd" id="1_2wdgn"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_kk4cj"]
+[ext_resource type="Texture2D" uid="uid://ck0qlwmjcx160" path="res://sprites/effects/leaf_still/leaf_still_0.png" id="3_hglqo"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_id2a4"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_kohik"]
 
-[node name="RubblePiece" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_kk4cj"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_hglqo")
+}],
+"loop": true,
+"name": &"leaf_still",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_hglqo"]
+data = {
+"data": PackedByteArray("wADAAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAwADAAMAAwADAAMAAwADAAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAwADAAMAAwABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGADAAMAAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAwADAAEBmGABAZhgAQGYYAEBmGABAZhgAQGYY/0BmGP9AZhj/QGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAMAAwABAZhgAQGYYAEBmGABAZhgAQGYY/43GP/+Nxj//jcY//0BmGP9AZhj/QGYYAEBmGABAZhgAQGYYAEBmGADAAMAAQGYYAEBmGABAZhgAQGYYAEBmGAAAIA7/wNsr/8DbK/+Nxj//jcY//0BmGP9AZhgAQGYYAEBmGABAZhgAwADAAEBmGABAZhgAQGYYAEBmGAAAIA4AACAOAEBmGP8AIA7/ACAO/wAgDv9AZhgAQGYYAEBmGABAZhgAQGYYAMAAwAA="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Resource" id="Resource_id2a4"]
+script = ExtResource("5_kohik")
+origin = Vector2(4, 4)
+containing_box = Rect2(4, 4, 7, 4)
+precise = true
+images = Array[Image]([SubResource("Image_hglqo")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kohik"]
+size = Vector2(7, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r7w66"]
+size = Vector2(14, 8)
+
+[node name="RubblePiece" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_2wdgn")
+animated_sprite_node = NodePath("Sprite")
 object_name = "rubble_piece"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_kk4cj")]
+sprite_frames = SubResource("SpriteFrames_kk4cj")
+autoplay = "leaf_still"
+centered = false
+offset = Vector2(-4, -4)
+script = ExtResource("4_id2a4")
+sprite_info = Dictionary[StringName, ExtResource("5_kohik")]({
+&"leaf_still": SubResource("Resource_id2a4")
+})
+default_animation = &"leaf_still"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.5, 2)
+shape = SubResource("RectangleShape2D_kohik")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(3.5, 2)
+shape = SubResource("RectangleShape2D_r7w66")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

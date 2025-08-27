@@ -1,7 +1,114 @@
-[gd_scene load_steps=2 format=3 uid="uid://dj3wjlx750iwt"]
+[gd_scene load_steps=16 format=3 uid="uid://dj3wjlx750iwt"]
 
 [ext_resource type="Script" uid="uid://dbdf1avse5dsa" path="res://objects/blocks/temple/temple.gd" id="1_thpwd"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_52s7j"]
+[ext_resource type="Texture2D" uid="uid://didiv23igdfhr" path="res://sprites/blocks/temple/g_temple/g_temple_0.png" id="3_dq4lt"]
+[ext_resource type="Texture2D" uid="uid://drvw1otuoyei2" path="res://sprites/blocks/temple/temple/temple_0.png" id="4_ud8vx"]
+[ext_resource type="Texture2D" uid="uid://0e7q6qvc11x3" path="res://sprites/blocks/temple/temple_gold/temple_gold_0.png" id="5_afvoe"]
+[ext_resource type="Texture2D" uid="uid://bv3r375crevtu" path="res://sprites/blocks/temple/temple_gold_big/temple_gold_big_0.png" id="6_55ocd"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="7_2h8cj"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="8_vd55r"]
 
-[node name="Temple" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_52s7j"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_dq4lt")
+}],
+"loop": true,
+"name": &"g_temple",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ud8vx")
+}],
+"loop": true,
+"name": &"temple",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_afvoe")
+}],
+"loop": true,
+"name": &"temple_gold",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_55ocd")
+}],
+"loop": true,
+"name": &"temple_gold_big",
+"speed": 30.0
+}]
+
+[sub_resource type="Resource" id="Resource_dq4lt"]
+script = ExtResource("8_vd55r")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_ud8vx"]
+script = ExtResource("8_vd55r")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_afvoe"]
+script = ExtResource("8_vd55r")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_55ocd"]
+script = ExtResource("8_vd55r")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2h8cj"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vd55r"]
+size = Vector2(32, 32)
+
+[node name="Temple" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -100
 script = ExtResource("1_thpwd")
+animated_sprite_node = NodePath("Sprite")
 object_name = "temple"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_52s7j")]
+sprite_frames = SubResource("SpriteFrames_52s7j")
+autoplay = "temple"
+centered = false
+script = ExtResource("7_2h8cj")
+sprite_info = Dictionary[StringName, ExtResource("8_vd55r")]({
+&"g_temple": SubResource("Resource_ud8vx"),
+&"temple": SubResource("Resource_dq4lt"),
+&"temple_gold": SubResource("Resource_afvoe"),
+&"temple_gold_big": SubResource("Resource_55ocd")
+})
+default_animation = &"temple"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_2h8cj")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_vd55r")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

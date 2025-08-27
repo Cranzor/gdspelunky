@@ -1,7 +1,73 @@
-[gd_scene load_steps=2 format=3 uid="uid://bw61lt6aoaabs"]
+[gd_scene load_steps=11 format=4 uid="uid://bw61lt6aoaabs"]
 
 [ext_resource type="Script" uid="uid://tku5i5xxjr1t" path="res://objects/collectibles/rope_pile/rope_pile.gd" id="1_v1ptf"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_27bsa"]
+[ext_resource type="Texture2D" uid="uid://d27uipo0571bw" path="res://sprites/items/saleable/rope_pile/rope_pile_0.png" id="3_2j6yg"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_v5vl8"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_3xvxx"]
 
-[node name="RopePile" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_27bsa"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_2j6yg")
+}],
+"loop": true,
+"name": &"rope_pile",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_2j6yg"]
+data = {
+"data": PackedByteArray("EgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAAIAAABIKCAASCggAEgoIABIKCAASCggAEgoI/xIKCP8SCgj/EgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoI/8DAwP/AwMD/gICA/xIKCP8SCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoI/4CAgP8SCgj/Yy8d/45ZJf9AQED/EgoI/xIKCP8SCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCP8SCgj/EgoI/xIKCP8SCgj/EgoI/xIKCP8SCgj/EgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoI/2MvHf/Ieiz/jlkl/8h6LP9jLx3/Yy8d/xIKCP8SCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoI/xIKCP8SCgj/EgoI/xIKCP8SCgj/EgoI/xIKCP8SCgj/EgoI/xIKCAASCggAEgoIABIKCAASCggAEgoIABIKCP9jLx3/yHos/45ZJf/Ieiz/jlkl/8h6LP9jLx3/Yy8d/xIKCP8SCggAEgoIABIKCAASCggAEgoIABIKCP8SCgj/EgoI/xIKCP8SCgj/EgoI/xIKCP8SCgj/EgoI/xIKCP8SCgj/EgoI/xIKCAASCggAEgoIABIKCAASCgj/Yy8d/8h6LP+OWSX/yHos/45ZJf/Ieiz/jlkl/45ZJf9jLx3/Yy8d/xIKCP8SCggAEgoIAA=="),
+"format": "RGBA8",
+"height": 10,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Resource" id="Resource_v5vl8"]
+script = ExtResource("5_3xvxx")
+origin = Vector2(8, 5)
+containing_box = Rect2(2, 1, 12, 9)
+precise = true
+images = Array[Image]([SubResource("Image_2j6yg")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3xvxx"]
+size = Vector2(12, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gieq6"]
+size = Vector2(24, 18)
+
+[node name="RopePile" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -100
 script = ExtResource("1_v1ptf")
+animated_sprite_node = NodePath("Sprite")
 object_name = "rope_pile"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_27bsa")]
+sprite_frames = SubResource("SpriteFrames_27bsa")
+autoplay = "rope_pile"
+centered = false
+offset = Vector2(-8, -5)
+script = ExtResource("4_v5vl8")
+sprite_info = Dictionary[StringName, ExtResource("5_3xvxx")]({
+&"rope_pile": SubResource("Resource_v5vl8")
+})
+default_animation = &"rope_pile"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_3xvxx")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_gieq6")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

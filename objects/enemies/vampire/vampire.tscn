@@ -1,7 +1,322 @@
-[gd_scene load_steps=2 format=3 uid="uid://cjqel1xvwlea4"]
+[gd_scene load_steps=50 format=3 uid="uid://cjqel1xvwlea4"]
 
 [ext_resource type="Script" uid="uid://bk7y6i6750028" path="res://objects/enemies/vampire/vampire.gd" id="1_t0d5w"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_ssex6"]
+[ext_resource type="Texture2D" uid="uid://byojlpy7l7x8o" path="res://sprites/enemies/vampire/vampire_bat_hang/vampire_bat_hang_0.png" id="3_rvugb"]
+[ext_resource type="Texture2D" uid="uid://cfmkkbmldqcmg" path="res://sprites/enemies/vampire/vampire_bat_left/vampire_bat_left_0.png" id="4_turvg"]
+[ext_resource type="Texture2D" uid="uid://cu3caj5d28x5f" path="res://sprites/enemies/vampire/vampire_bat_left/vampire_bat_left_1.png" id="5_7ibey"]
+[ext_resource type="Texture2D" uid="uid://dfs57v30oufss" path="res://sprites/enemies/vampire/vampire_bat_left/vampire_bat_left_2.png" id="6_40hsj"]
+[ext_resource type="Texture2D" uid="uid://22c40vjdkb5j" path="res://sprites/enemies/vampire/vampire_bat_left/vampire_bat_left_3.png" id="7_go5xl"]
+[ext_resource type="Texture2D" uid="uid://b3r72anbrv4bn" path="res://sprites/enemies/vampire/vampire_bounce_l/vampire_bounce_l_0.png" id="8_xj0dl"]
+[ext_resource type="Texture2D" uid="uid://cl2tkkopcrk5f" path="res://sprites/enemies/vampire/vampire_d_held_l/vampire_d_held_l_0.png" id="9_3jxyw"]
+[ext_resource type="Texture2D" uid="uid://pub8tqfsul1r" path="res://sprites/enemies/vampire/vampire_die_ll/vampire_die_ll_0.png" id="10_hv28c"]
+[ext_resource type="Texture2D" uid="uid://sthvio8dfgiu" path="res://sprites/enemies/vampire/vampire_die_lr/vampire_die_lr_0.png" id="11_ejtn7"]
+[ext_resource type="Texture2D" uid="uid://hclli5oxj10q" path="res://sprites/enemies/vampire/vampire_fall_l/vampire_fall_l_0.png" id="12_4bca7"]
+[ext_resource type="Texture2D" uid="uid://btbr8x8sq51ih" path="res://sprites/enemies/vampire/vampire_held_l/vampire_held_l_0.png" id="13_2r1ve"]
+[ext_resource type="Texture2D" uid="uid://cucceu8orjy0k" path="res://sprites/enemies/vampire/vampire_held_l/vampire_held_l_1.png" id="14_8tlbv"]
+[ext_resource type="Texture2D" uid="uid://ciq3rxgqvqbgl" path="res://sprites/enemies/vampire/vampire_held_l/vampire_held_l_2.png" id="15_7vldd"]
+[ext_resource type="Texture2D" uid="uid://cv5uacve72ykf" path="res://sprites/enemies/vampire/vampire_held_l/vampire_held_l_3.png" id="16_gmmp8"]
+[ext_resource type="Texture2D" uid="uid://daw5oamfw00fe" path="res://sprites/enemies/vampire/vampire_held_l/vampire_held_l_4.png" id="17_dgghq"]
+[ext_resource type="Texture2D" uid="uid://ds52b2ig2kjr1" path="res://sprites/enemies/vampire/vampire_held_l/vampire_held_l_5.png" id="18_o53c5"]
+[ext_resource type="Texture2D" uid="uid://b5yd6koousogt" path="res://sprites/enemies/vampire/vampire_jump_l/vampire_jump_l_0.png" id="19_1ypii"]
+[ext_resource type="Texture2D" uid="uid://bth33icab4gf6" path="res://sprites/enemies/vampire/vampire_left/vampire_left_0.png" id="20_5y83r"]
+[ext_resource type="Texture2D" uid="uid://btjd0m8hlppu1" path="res://sprites/enemies/vampire/vampire_run_l/vampire_run_l_0.png" id="21_682mf"]
+[ext_resource type="Texture2D" uid="uid://bsvvy24pvu65o" path="res://sprites/enemies/vampire/vampire_run_l/vampire_run_l_1.png" id="22_346d5"]
+[ext_resource type="Texture2D" uid="uid://ceyuw63lv0bhg" path="res://sprites/enemies/vampire/vampire_run_l/vampire_run_l_2.png" id="23_ga0xs"]
+[ext_resource type="Texture2D" uid="uid://c2gaue5sa5lyc" path="res://sprites/enemies/vampire/vampire_run_l/vampire_run_l_3.png" id="24_j53g8"]
+[ext_resource type="Texture2D" uid="uid://cp8wpe4qykaw2" path="res://sprites/enemies/vampire/vampire_run_l/vampire_run_l_4.png" id="25_nu1b4"]
+[ext_resource type="Texture2D" uid="uid://cvfg5jsrpy2b1" path="res://sprites/enemies/vampire/vampire_run_l/vampire_run_l_5.png" id="26_j4bwo"]
+[ext_resource type="Texture2D" uid="uid://b406bcaw3s5wl" path="res://sprites/enemies/vampire/vampire_stun_l/vampire_stun_l_0.png" id="27_tv8fl"]
+[ext_resource type="Texture2D" uid="uid://daeu3fn52l32h" path="res://sprites/enemies/vampire/vampire_stun_l/vampire_stun_l_1.png" id="28_0poly"]
+[ext_resource type="Texture2D" uid="uid://cuoss487fero7" path="res://sprites/enemies/vampire/vampire_stun_l/vampire_stun_l_2.png" id="29_ietrl"]
+[ext_resource type="Texture2D" uid="uid://b1dn5ehpjogg2" path="res://sprites/enemies/vampire/vampire_stun_l/vampire_stun_l_3.png" id="30_nkaqw"]
+[ext_resource type="Texture2D" uid="uid://rbk2rdtt433v" path="res://sprites/enemies/vampire/vampire_stun_l/vampire_stun_l_4.png" id="31_8oqg8"]
+[ext_resource type="Texture2D" uid="uid://6m4pcwvgw1y7" path="res://sprites/enemies/vampire/vampire_stun_l/vampire_stun_l_5.png" id="32_1u3hj"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="33_wgqec"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="34_umq1t"]
 
-[node name="Vampire" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_ssex6"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_rvugb")
+}],
+"loop": true,
+"name": &"vampire_bat_hang",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_turvg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7ibey")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_40hsj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_go5xl")
+}],
+"loop": true,
+"name": &"vampire_bat_left",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_xj0dl")
+}],
+"loop": true,
+"name": &"vampire_bounce_l",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_3jxyw")
+}],
+"loop": true,
+"name": &"vampire_d_held_l",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_hv28c")
+}],
+"loop": true,
+"name": &"vampire_die_ll",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_ejtn7")
+}],
+"loop": true,
+"name": &"vampire_die_lr",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_4bca7")
+}],
+"loop": true,
+"name": &"vampire_fall_l",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_2r1ve")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_8tlbv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_7vldd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_gmmp8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_dgghq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_o53c5")
+}],
+"loop": true,
+"name": &"vampire_held_l",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_1ypii")
+}],
+"loop": true,
+"name": &"vampire_jump_l",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_5y83r")
+}],
+"loop": true,
+"name": &"vampire_left",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_682mf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_346d5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_ga0xs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_j53g8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_nu1b4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_j4bwo")
+}],
+"loop": true,
+"name": &"vampire_run_l",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_tv8fl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_0poly")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_ietrl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_nkaqw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_8oqg8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_1u3hj")
+}],
+"loop": true,
+"name": &"vampire_stun_l",
+"speed": 30.0
+}]
+
+[sub_resource type="Resource" id="Resource_rvugb"]
+script = ExtResource("34_umq1t")
+origin = Vector2(0, 0)
+containing_box = Rect2(2, 0, 14, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_turvg"]
+script = ExtResource("34_umq1t")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_7ibey"]
+script = ExtResource("34_umq1t")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 15)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_40hsj"]
+script = ExtResource("34_umq1t")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 2, 16, 13)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_go5xl"]
+script = ExtResource("34_umq1t")
+origin = Vector2(0, 0)
+containing_box = Rect2(1, 0, 15, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_xj0dl"]
+script = ExtResource("34_umq1t")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 15, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_3jxyw"]
+script = ExtResource("34_umq1t")
+origin = Vector2(0, 0)
+containing_box = Rect2(1, 0, 14, 15)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_hv28c"]
+script = ExtResource("34_umq1t")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_ejtn7"]
+script = ExtResource("34_umq1t")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_4bca7"]
+script = ExtResource("34_umq1t")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_2r1ve"]
+script = ExtResource("34_umq1t")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_8tlbv"]
+script = ExtResource("34_umq1t")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 3, 16, 13)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7vldd"]
+size = Vector2(14, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gmmp8"]
+size = Vector2(28, 32)
+
+[node name="Vampire" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -60
 script = ExtResource("1_t0d5w")
+animated_sprite_node = NodePath("Sprite")
 object_name = "vampire"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_ssex6")]
+sprite_frames = SubResource("SpriteFrames_ssex6")
+autoplay = "vampire_left"
+centered = false
+script = ExtResource("33_wgqec")
+sprite_info = Dictionary[StringName, ExtResource("34_umq1t")]({
+&"vampire_bat_hang": SubResource("Resource_3jxyw"),
+&"vampire_bat_left": SubResource("Resource_hv28c"),
+&"vampire_bounce_l": SubResource("Resource_7ibey"),
+&"vampire_d_held_l": SubResource("Resource_8tlbv"),
+&"vampire_die_ll": SubResource("Resource_go5xl"),
+&"vampire_die_lr": SubResource("Resource_xj0dl"),
+&"vampire_fall_l": SubResource("Resource_40hsj"),
+&"vampire_held_l": SubResource("Resource_2r1ve"),
+&"vampire_jump_l": SubResource("Resource_ejtn7"),
+&"vampire_left": SubResource("Resource_rvugb"),
+&"vampire_run_l": SubResource("Resource_4bca7"),
+&"vampire_stun_l": SubResource("Resource_turvg")
+})
+default_animation = &"vampire_left"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(9, 8)
+shape = SubResource("RectangleShape2D_7vldd")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(9, 8)
+shape = SubResource("RectangleShape2D_gmmp8")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

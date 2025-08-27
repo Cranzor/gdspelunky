@@ -1,7 +1,63 @@
-[gd_scene load_steps=2 format=3 uid="uid://c40eshuen5msf"]
+[gd_scene load_steps=10 format=3 uid="uid://c40eshuen5msf"]
 
 [ext_resource type="Script" uid="uid://dyp8d1j6bx05n" path="res://objects/level editor/ice_tile/ice_tile.gd" id="1_66ekt"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_ep5f6"]
+[ext_resource type="Texture2D" uid="uid://b4alhvfohyhvn" path="res://sprites/blocks/dark/ice/ice_0.png" id="3_vph22"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_5mf24"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_ut2gq"]
 
-[node name="IceTile" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_ep5f6"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_vph22")
+}],
+"loop": true,
+"name": &"ice",
+"speed": 30.0
+}]
+
+[sub_resource type="Resource" id="Resource_vph22"]
+script = ExtResource("5_ut2gq")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5mf24"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ut2gq"]
+size = Vector2(32, 32)
+
+[node name="IceTile" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -100
 script = ExtResource("1_66ekt")
+animated_sprite_node = NodePath("Sprite")
 object_name = "ice_tile"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_ep5f6")]
+sprite_frames = SubResource("SpriteFrames_ep5f6")
+autoplay = "ice"
+centered = false
+script = ExtResource("4_5mf24")
+sprite_info = Dictionary[StringName, ExtResource("5_ut2gq")]({
+&"ice": SubResource("Resource_vph22")
+})
+default_animation = &"ice"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_5mf24")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_ut2gq")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

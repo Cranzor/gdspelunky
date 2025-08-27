@@ -1,7 +1,190 @@
-[gd_scene load_steps=2 format=3 uid="uid://bdusq23vl38ra"]
+[gd_scene load_steps=29 format=4 uid="uid://bdusq23vl38ra"]
 
 [ext_resource type="Script" uid="uid://d2bkaamjcmw6c" path="res://objects/effects/leaf/leaf.gd" id="1_6kej8"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_yp7ih"]
+[ext_resource type="Texture2D" uid="uid://hm3o8o3ovuyp" path="res://sprites/effects/leaf/leaf_0.png" id="3_rrpv8"]
+[ext_resource type="Texture2D" uid="uid://3nx2kj6imfwy" path="res://sprites/effects/leaf/leaf_1.png" id="4_4j5kw"]
+[ext_resource type="Texture2D" uid="uid://cvqtsahq2qo8u" path="res://sprites/effects/leaf/leaf_2.png" id="5_v8mcg"]
+[ext_resource type="Texture2D" uid="uid://63hkn7qrj7uu" path="res://sprites/effects/leaf/leaf_3.png" id="6_536hl"]
+[ext_resource type="Texture2D" uid="uid://bx3iw4g2da7tt" path="res://sprites/effects/leaf/leaf_4.png" id="7_06ppe"]
+[ext_resource type="Texture2D" uid="uid://mcyg1i6yv5cn" path="res://sprites/effects/leaf/leaf_5.png" id="8_3d2i0"]
+[ext_resource type="Texture2D" uid="uid://dfvoucgdba37s" path="res://sprites/effects/leaf/leaf_6.png" id="9_ik1wg"]
+[ext_resource type="Texture2D" uid="uid://vc8dv71lmxwp" path="res://sprites/effects/leaf/leaf_7.png" id="10_vv426"]
+[ext_resource type="Texture2D" uid="uid://bf3xhk3lpn7v5" path="res://sprites/effects/leaf/leaf_8.png" id="11_chj1w"]
+[ext_resource type="Texture2D" uid="uid://dlorilwb1qrlr" path="res://sprites/effects/leaf/leaf_9.png" id="12_bho71"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="13_sl3b1"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="14_gfy4o"]
 
-[node name="Leaf" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_yp7ih"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_rrpv8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4j5kw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_v8mcg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_536hl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_06ppe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_3d2i0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ik1wg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_vv426")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_chj1w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_bho71")
+}],
+"loop": true,
+"name": &"leaf",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_rrpv8"]
+data = {
+"data": PackedByteArray("wADAAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAwADAAMAAwABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGP9AZhj/QGYYAEBmGABAZhgAQGYYAMAAwADAAMAAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYY/0BmGP+Nxj//ACAO/wAgDgAAIA4AACAOAAAgDgDAAMAAwADAAEBmGABAZhgAQGYYAEBmGABAZhgAQGYY/43GP//A2yv/QGYY/wAgDv8AIA4AACAOAAAgDgAAIA4AwADAAMAAwABAZhgAQGYYAEBmGABAZhgAQGYY/43GP//A2yv/QGYY/wAgDv8AIA4AACAOAAAgDgAAIA4AACAOAMAAwADAAMAAQGYYAEBmGABAZhgAQGYYAEBmGAAAIA7/ACAO/wAgDv8AIA4AACAOAAAgDgAAIA4AACAOAAAgDgDAAMAAwADAAEBmGABAZhgAQGYYAEBmGAAAIA4AACAOAAAgDgAAIA4AACAOAAAgDgAAIA4AACAOAAAgDgAAIA4AwADAAMAAwABAZhgAQGYYAEBmGAAAIA4AACAOAAAgDgAAIA4AACAOAAAgDgAAIA4AACAOAAAgDgAAIA4AACAOAMAAwAA="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Image" id="Image_4j5kw"]
+data = {
+"data": PackedByteArray("QGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAACAOAMAAwADAAMAAwADAAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAACAOAAAgDgDAAMAAwADAAMAAwABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAACAOAAAgDgAAIA4AwADAAMAAwADAAMAAQGYYAEBmGABAZhgAQGYYAEBmGABAZhj/QGYY/0BmGP9AZhgAACAOAAAgDgAAIA4AACAOAMAAwADAAMAAwADAAEBmGABAZhgAQGYYAEBmGP9AZhj/jcY//43GP//A2yv/ACAO/wAgDgAAIA4AACAOAAAgDgDAAMAAwADAAMAAwABAZhgAQGYYAEBmGP+Nxj//wNsr/8DbK/8AIA7/ACAO/wAgDgAAIA4AACAOAAAgDgAAIA4AwADAAMAAwADAAMAAQGYYAEBmGABAZhgAQGYY/0BmGP9AZhj/ACAOAAAgDgAAIA4AACAOAAAgDgAAIA4AACAOAMAAwADAAMAAwADAAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGAAAIA4AACAOAAAgDgAAIA4AACAOAAAgDgDAAMAAwADAAMAAwAA="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Image" id="Image_v8mcg"]
+data = {
+"data": PackedByteArray("QGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAwADAAMAAwADAAMAAwADAAMAAwADAAMAAwADAAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAMAAwADAAMAAwADAAMAAwADAAMAAwADAAMAAwABAZhgAQGYY/0BmGP9AZhgAQGYYAEBmGABAZhgAQGYYAEBmGADAAMAAwADAAMAAwADAAMAAwADAAMAAwADAAMAAQGYY/8DbK/+Nxj//QGYY/0BmGABAZhgAQGYYAEBmGABAZhgAwADAAMAAwADAAMAAwADAAMAAwADAAMAAwADAAEBmGAAAIA7/wNsr/43GP/9AZhj/QGYYAEBmGABAZhgAQGYYAMAAwADAAMAAwADAAMAAwADAAMAAwADAAMAAwAAAIA4AACAOAAAgDv9AZhj/ACAO/wAgDgAAIA4AACAOAAAgDgDAAMAAwADAAMAAwADAAMAAwADAAMAAwADAAMAAACAOAAAgDgAAIA4AACAO/wAgDgAAIA4AACAOAAAgDgAAIA4AwADAAMAAwADAAMAAwADAAMAAwADAAMAAwADAAAAgDgAAIA4AACAOAAAgDgAAIA4AACAOAAAgDgAAIA4AACAOAMAAwADAAMAAwADAAMAAwADAAMAAwADAAMAAwAA="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Image" id="Image_536hl"]
+data = {
+"data": PackedByteArray("QGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGADAAMAAwADAAMAAwADAAMAAwADAAMAAwADAAMAAwADAAEBmGABAZhj/QGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAMAAwADAAMAAwADAAMAAwADAAMAAwADAAMAAwABAZhj/jcY//0BmGP9AZhgAQGYYAEBmGABAZhgAQGYYAEBmGADAAMAAwADAAMAAwADAAMAAwADAAMAAwADAAMAAQGYY/8DbK/+Nxj//QGYY/0BmGABAZhgAQGYYAEBmGABAZhgAwADAAMAAwADAAMAAwADAAMAAwADAAMAAwADAAEBmGAAAIA7/wNsr/0BmGP9AZhgAQGYYAEBmGABAZhgAQGYYAMAAwADAAMAAwADAAMAAwADAAMAAwADAAMAAwAAAIA4AACAOAAAgDv+Nxj//QGYY/0BmGABAZhgAQGYYAEBmGADAAMAAwADAAMAAwADAAMAAwADAAMAAwADAAMAAACAOAAAgDgAAIA4AACAO/0BmGABAZhgAQGYYAEBmGABAZhgAwADAAMAAwADAAMAAwADAAMAAwADAAMAAwADAAAAgDgAAIA4AACAOAAAgDgAAIA4AQGYYAEBmGABAZhgAQGYYAMAAwADAAMAAwADAAMAAwADAAMAAwADAAMAAwAA="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Image" id="Image_06ppe"]
+data = {
+"data": PackedByteArray("QGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGADAAMAAwADAAMAAwADAAMAAwADAAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGADAAMAAwADAAMAAwABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAMAAwADAAMAAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGADAAMAAwADAAEBmGABAZhgAQGYYAEBmGABAZhj/QGYY/0BmGP9AZhgAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAwADAAMAAwABAZhgAQGYYAEBmGABAZhj/jcY//43GP/+Nxj//QGYY/0BmGP9AZhgAQGYYAEBmGABAZhgAQGYYAMAAwADAAMAAQGYYAEBmGABAZhgAQGYYAAAgDv/A2yv/wNsr/43GP/+Nxj//QGYY/0BmGABAZhgAQGYYAEBmGADAAMAAwADAAEBmGABAZhgAQGYYAAAgDgAAIA4AQGYY/wAgDv8AIA7/ACAO/0BmGABAZhgAQGYYAEBmGABAZhgAwADAAMAAwAA="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Image" id="Image_3d2i0"]
+data = {
+"data": PackedByteArray("wADAAMAAwADAAMAAwADAAMAAwADAAMAAwADAAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAMAAwADAAMAAwADAAMAAwADAAMAAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGADAAMAAwADAAMAAwADAAMAAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAwADAAMAAwADAAMAAwADAAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAMAAwADAAMAAwADAAMAAwABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYY/0BmGP9AZhgAQGYYAEBmGADAAMAAwADAAMAAwADAAMAAQGYYAEBmGABAZhgAQGYYAEBmGABAZhj/QGYY/8DbK/+Nxj//QGYY/0BmGABAZhgAwADAAMAAwADAAMAAwADAAEBmGABAZhgAQGYYAEBmGABAZhj/jcY//8DbK/9AZhj/ACAO/0BmGABAZhgAQGYYAMAAwADAAMAAwADAAMAAwABAZhgAQGYYAEBmGABAZhgAQGYYAAAgDv8AIA7/ACAO/wAgDgAAIA4AQGYYAEBmGAA="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Image" id="Image_ik1wg"]
+data = {
+"data": PackedByteArray("wADAAMAAwADAAMAAwADAAMAAwADAAMAAwADAAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGP9AZhgAQGYYAMAAwADAAMAAwADAAMAAwADAAMAAwADAAMAAwABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGP+Nxj//QGYY/0BmGADAAMAAwADAAMAAwADAAMAAwADAAMAAwADAAMAAQGYYAEBmGABAZhgAQGYYAEBmGP+Nxj//wNsr/0BmGP9AZhgAwADAAMAAwADAAMAAwADAAMAAwADAAMAAwADAAEBmGABAZhgAQGYYAEBmGABAZhj/jcY//8DbK/9AZhj/QGYYAMAAwADAAMAAwADAAMAAwADAAMAAwADAAMAAwABAZhgAQGYYAEBmGABAZhgAQGYY/8DbK/8AIA7/QGYYAEBmGADAAMAAwADAAMAAwADAAMAAwADAAMAAwADAAMAAQGYYAEBmGABAZhgAQGYYAEBmGAAAIA7/ACAOAAAgDgBAZhgAwADAAMAAwADAAMAAwADAAMAAwADAAMAAwADAAEBmGABAZhgAQGYYAEBmGAAAIA4AACAOAAAgDgAAIA4AACAOAMAAwADAAMAAwADAAMAAwADAAMAAwADAAMAAwABAZhgAQGYYAEBmGAAAIA4AACAOAAAgDgAAIA4AACAOAAAgDgA="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Image" id="Image_vv426"]
+data = {
+"data": PackedByteArray("wADAAMAAwADAAMAAwADAAMAAwABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAMAAwADAAMAAwADAAMAAwADAAMAAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYY/0BmGP9AZhj/QGYYAEBmGADAAMAAwADAAMAAwADAAMAAwADAAEBmGABAZhgAQGYYAEBmGABAZhgAQGYY/43GP//A2yv/ACAO/wAgDgAAIA4AwADAAMAAwADAAMAAwADAAMAAwABAZhgAQGYYAEBmGABAZhgAQGYY/43GP//A2yv/ACAO/wAgDgAAIA4AACAOAMAAwADAAMAAwADAAMAAwADAAMAAQGYYAEBmGABAZhgAQGYYAEBmGP8AIA7/ACAO/wAgDgAAIA4AACAOAAAgDgDAAMAAwADAAMAAwADAAMAAwADAAEBmGABAZhgAQGYYAEBmGABAZhgAACAOAAAgDgAAIA4AACAOAAAgDgAAIA4AwADAAMAAwADAAMAAwADAAMAAwABAZhgAQGYYAEBmGABAZhgAQGYYAAAgDgAAIA4AACAOAAAgDgAAIA4AACAOAMAAwADAAMAAwADAAMAAwADAAMAAQGYYAEBmGABAZhgAQGYYAEBmGAAAIA4AACAOAAAgDgAAIA4AACAOAAAgDgA="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Image" id="Image_chj1w"]
+data = {
+"data": PackedByteArray("wADAAMAAwADAAMAAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYY/0BmGP9AZhj/QGYY/0BmGABAZhgAQGYYAMAAwADAAMAAwADAAEBmGABAZhgAQGYYAEBmGABAZhgAQGYY/43GP//A2yv/wNsr/wAgDv8AIA4AACAOAAAgDgDAAMAAwADAAMAAwABAZhgAQGYYAEBmGABAZhgAQGYY/43GP//A2yv/QGYY/wAgDv8AIA4AACAOAAAgDgAAIA4AwADAAMAAwADAAMAAQGYYAEBmGABAZhgAQGYYAEBmGAAAIA7/ACAO/wAgDv8AIA4AACAOAAAgDgAAIA4AACAOAMAAwADAAMAAwADAAEBmGABAZhgAQGYYAEBmGAAAIA4AACAOAAAgDgAAIA4AACAOAAAgDgAAIA4AACAOAAAgDgDAAMAAwADAAMAAwABAZhgAQGYYAEBmGAAAIA4AACAOAAAgDgAAIA4AACAOAAAgDgAAIA4AACAOAAAgDgAAIA4AwADAAMAAwADAAMAAQGYYAEBmGAAAIA4AACAOAAAgDgAAIA4AACAOAAAgDgAAIA4AACAOAAAgDgAAIA4AACAOAMAAwADAAMAAwADAAMAAwAAAIA4AACAOAAAgDgAAIA4AACAOAAAgDgAAIA4AACAOAAAgDgAAIA4AACAOAMAAwAA="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Image" id="Image_bho71"]
+data = {
+"data": PackedByteArray("wADAAMAAwABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAAAgDgAAIA4AACAOAMAAwADAAMAAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYY/0BmGP9AZhj/QGYYAAAgDgAAIA4AACAOAAAgDgDAAMAAwADAAEBmGABAZhgAQGYYAEBmGABAZhgAQGYY/43GP//A2yv/QGYY/wAgDv8AIA4AACAOAAAgDgAAIA4AwADAAMAAwABAZhgAQGYYAEBmGABAZhgAQGYY/43GP//A2yv/QGYY/wAgDv8AIA4AACAOAAAgDgAAIA4AACAOAMAAwADAAMAAQGYYAEBmGABAZhgAQGYYAEBmGAAAIA7/ACAO/wAgDv8AIA4AACAOAAAgDgAAIA4AACAOAAAgDgDAAMAAwADAAEBmGABAZhgAQGYYAEBmGAAAIA4AACAOAAAgDgAAIA4AACAOAAAgDgAAIA4AACAOAAAgDgAAIA4AwADAAMAAwABAZhgAQGYYAEBmGAAAIA4AACAOAAAgDgAAIA4AACAOAAAgDgAAIA4AACAOAAAgDgAAIA4AACAOAMAAwADAAMAAQGYYAEBmGAAAIA4AACAOAAAgDgAAIA4AACAOAAAgDgAAIA4AACAOAAAgDgAAIA4AACAOAMAAwAA="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Resource" id="Resource_sl3b1"]
+script = ExtResource("14_gfy4o")
+origin = Vector2(4, 4)
+containing_box = Rect2(0, 0, 15, 8)
+precise = true
+images = Array[Image]([SubResource("Image_rrpv8"), SubResource("Image_4j5kw"), SubResource("Image_v8mcg"), SubResource("Image_536hl"), SubResource("Image_06ppe"), SubResource("Image_3d2i0"), SubResource("Image_ik1wg"), SubResource("Image_vv426"), SubResource("Image_chj1w"), SubResource("Image_bho71")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gfy4o"]
+size = Vector2(15, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0n2d8"]
+size = Vector2(30, 16)
+
+[node name="Leaf" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -1
 script = ExtResource("1_6kej8")
+animated_sprite_node = NodePath("Sprite")
 object_name = "leaf"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_yp7ih")]
+sprite_frames = SubResource("SpriteFrames_yp7ih")
+autoplay = "leaf"
+centered = false
+offset = Vector2(-4, -4)
+script = ExtResource("13_sl3b1")
+sprite_info = Dictionary[StringName, ExtResource("14_gfy4o")]({
+&"leaf": SubResource("Resource_sl3b1")
+})
+default_animation = &"leaf"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.5, 0)
+shape = SubResource("RectangleShape2D_gfy4o")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(3.5, 0)
+shape = SubResource("RectangleShape2D_0n2d8")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

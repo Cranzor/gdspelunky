@@ -1,7 +1,123 @@
-[gd_scene load_steps=2 format=3 uid="uid://ccy03msu2v4la"]
+[gd_scene load_steps=19 format=4 uid="uid://ccy03msu2v4la"]
 
 [ext_resource type="Script" uid="uid://bp72356luaomw" path="res://objects/effects/laser_trail/laser_trail.gd" id="1_lwj8l"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_ggkq2"]
+[ext_resource type="Texture2D" uid="uid://c0gm880je8kft" path="res://sprites/effects/laser_trail/laser_trail_0.png" id="3_bqjr4"]
+[ext_resource type="Texture2D" uid="uid://cujg3o7ocjrk0" path="res://sprites/effects/laser_trail/laser_trail_1.png" id="4_pqtmu"]
+[ext_resource type="Texture2D" uid="uid://if180nrkjssq" path="res://sprites/effects/laser_trail/laser_trail_2.png" id="5_jwb3v"]
+[ext_resource type="Texture2D" uid="uid://degij0dmsvftj" path="res://sprites/effects/laser_trail/laser_trail_3.png" id="6_0rka3"]
+[ext_resource type="Texture2D" uid="uid://ban25hppqfq7m" path="res://sprites/effects/laser_trail/laser_trail_4.png" id="7_en6sy"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="8_37j5q"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="9_lxamy"]
 
-[node name="LaserTrail" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_ggkq2"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_bqjr4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pqtmu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_jwb3v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_0rka3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_en6sy")
+}],
+"loop": true,
+"name": &"laser_trail",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_bqjr4"]
+data = {
+"data": PackedByteArray("gP+AAID/gACA/4D/gP+A/4D/gP+A/4D/gP+AAID/gACA/4AAgP+A//////////////////////+A/4D/gP+AAID/gP////////////////////////////////+A/4D/gP+A/////////////////////////////////4D/gP+A/4D/////////////////////////////////gP+A/4D/gP////////////////////////////////+A/4D/gP+AAID/gP//////////////////////gP+A/4D/gACA/4AAgP+AAID/gP+A/4D/gP+A/4D/gP+A/4AAgP+AAA=="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Image" id="Image_pqtmu"]
+data = {
+"data": PackedByteArray("AMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAP8AwAD/AMAA/wDAAP8AwAAAAMAAAADAAAAAwAD/AMAA/4D/gP+A/4D/AMAA/wDAAP8AwAAAAMAAAADAAP+A/4D///////////+A/4D/AMAA/wDAAAAAwAAAAMAA/4D/gP///////////4D/gP8AwAD/AMAAAADAAAAAwAD/AMAA/4D/gP+A/4D/AMAA/wDAAP8AwAAAAMAAAADAAAAAwAD/AMAA/wDAAP8AwAD/AMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAA=="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Image" id="Image_jwb3v"]
+data = {
+"data": PackedByteArray("AMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAP8AwAD/AMAAAADAAAAAwAAAAMAAAADAAAAAwAD///////////8AwAD/AMAAAADAAAAAwAAAAMAAAADAAP///////////wDAAP8AwAAAAMAAAADAAAAAwAAAAMAAAADAAP8AwAD/AMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAA=="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Image" id="Image_0rka3"]
+data = {
+"data": PackedByteArray("AMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAA/wDAAP8AwAAAAMAAAADAAAAAwAAAAMAAAADAAP+A/4D/gP+A/wDAAP8AwAAAAMAAAADAAAAAwAAAAMAAAADAAP8AwAD/AMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAA=="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Image" id="Image_en6sy"]
+data = {
+"data": PackedByteArray("AMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAD/AMAA/wDAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAA=="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Resource" id="Resource_37j5q"]
+script = ExtResource("9_lxamy")
+origin = Vector2(4, 4)
+containing_box = Rect2(0, 0, 8, 8)
+precise = true
+images = Array[Image]([SubResource("Image_bqjr4"), SubResource("Image_pqtmu"), SubResource("Image_jwb3v"), SubResource("Image_0rka3"), SubResource("Image_en6sy")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lxamy"]
+size = Vector2(8, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vn548"]
+size = Vector2(16, 16)
+
+[node name="LaserTrail" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -1
 script = ExtResource("1_lwj8l")
+animated_sprite_node = NodePath("Sprite")
 object_name = "laser_trail"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_ggkq2")]
+sprite_frames = SubResource("SpriteFrames_ggkq2")
+autoplay = "laser_trail"
+centered = false
+offset = Vector2(-4, -4)
+script = ExtResource("8_37j5q")
+sprite_info = Dictionary[StringName, ExtResource("9_lxamy")]({
+&"laser_trail": SubResource("Resource_37j5q")
+})
+default_animation = &"laser_trail"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_lxamy")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+shape = SubResource("RectangleShape2D_vn548")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

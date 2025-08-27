@@ -1,7 +1,99 @@
-[gd_scene load_steps=2 format=3 uid="uid://6opg1aewv85r"]
+[gd_scene load_steps=15 format=4 uid="uid://6opg1aewv85r"]
 
 [ext_resource type="Script" uid="uid://dup73bcqlr52g" path="res://objects/effects/blood/blood.gd" id="1_lbqer"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_3qirj"]
+[ext_resource type="Texture2D" uid="uid://d2rk86lwnrfbc" path="res://sprites/effects/blood/blood_0.png" id="3_2wxqn"]
+[ext_resource type="Texture2D" uid="uid://ccku1arf3y2ef" path="res://sprites/effects/blood/blood_1.png" id="4_k6fuq"]
+[ext_resource type="Texture2D" uid="uid://6atbb2v7sfb3" path="res://sprites/effects/blood/blood_2.png" id="5_m8ew7"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="6_ev6n5"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="7_o2rqa"]
 
-[node name="Blood" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_3qirj"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_2wxqn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_k6fuq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_m8ew7")
+}],
+"loop": true,
+"name": &"blood",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_2wxqn"]
+data = {
+"data": PackedByteArray("wAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAP9AQADAAAAAwAAAAMAAAP/AAAD/wAAA/8AAAAD/QEAA/0BAAMAAAADAAAD/wAAA/8AAAP/AAAD//0BA//9AQAD/QEAAgAAAAIAAAP/AAAD//0BA//9AQP+AAAD/gAAAAIAAAACAAAAAgAAAAIAAAP+AAAD/gAAA/0AAAP9AAAAAQAAAAIAAAACAAAAAgAAAAEAAAP9AAAD/QAAAAEAAAABAAAAAgAAAAIAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAACAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAA=="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Image" id="Image_k6fuq"]
+data = {
+"data": PackedByteArray("wAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAP/AAAD/wAAA/8AAAADAAAAAwAAAAMAAAADAAAD/wAAA/8AAAP/AAAD/wAAA/8AAAADAAAAA/0BAAP9AQP//QED/wAAA/8AAAP+AAAD/gAAAAIAAAADAAAAAwAAA/8AAAP/AAAD/gAAA/0AAAP9AAAAAQAAAAMAAAADAAAAAgAAA/0AAAP9AAAD/QAAAAEAAAABAAAAAwAAAAIAAAACAAAAAQAAAAEAAAABAAAAAQAAAAEAAAACAAAAAgAAAAIAAAABAAAAAQAAAAEAAAABAAAAAQAAAAA=="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Image" id="Image_m8ew7"]
+data = {
+"data": PackedByteArray("/0BAAP9AQAD/QEAA/0BAAMAAAADAAAAAwAAAAMAAAAD/QEAA/0BAAP9AQAD/QEAAwAAAAMAAAADAAAAAwAAAAP9AQAD/QEAA/0BAAP9AQP/AAAD/wAAA/8AAAADAAAAA/0BAAP9AQAD/QED/wAAA/8AAAP/AAAD/wAAA/8AAAACAAAAAgAAAAIAAAP/AAAD/wAAA/4AAAP+AAAD/gAAAAEAAAABAAAAAQAAA/4AAAP+AAAD/QAAA/4AAAACAAAAAQAAAAEAAAABAAAAAgAAAAIAAAABAAAAAQAAAAIAAAABAAAAAQAAAAEAAAACAAAAAgAAAAEAAAABAAAAAQAAAAA=="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Resource" id="Resource_ev6n5"]
+script = ExtResource("7_o2rqa")
+origin = Vector2(4, 4)
+containing_box = Rect2(1, 1, 6, 5)
+precise = true
+images = Array[Image]([SubResource("Image_2wxqn"), SubResource("Image_k6fuq"), SubResource("Image_m8ew7")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o2rqa"]
+size = Vector2(6, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2sue3"]
+size = Vector2(12, 10)
+
+[node name="Blood" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -1
 script = ExtResource("1_lbqer")
+animated_sprite_node = NodePath("Sprite")
 object_name = "blood"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_3qirj")]
+sprite_frames = SubResource("SpriteFrames_3qirj")
+autoplay = "blood"
+centered = false
+offset = Vector2(-4, -4)
+script = ExtResource("6_ev6n5")
+sprite_info = Dictionary[StringName, ExtResource("7_o2rqa")]({
+&"blood": SubResource("Resource_ev6n5")
+})
+default_animation = &"blood"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_o2rqa")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_2sue3")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

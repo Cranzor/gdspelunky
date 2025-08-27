@@ -1,7 +1,72 @@
-[gd_scene load_steps=2 format=3 uid="uid://bqbnx4y7xd1vy"]
+[gd_scene load_steps=11 format=4 uid="uid://bqbnx4y7xd1vy"]
 
 [ext_resource type="Script" uid="uid://bhbc0vocjyhws" path="res://objects/level editor/rock_tile/rock_tile.gd" id="1_hsxr1"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_pd6hj"]
+[ext_resource type="Texture2D" uid="uid://dpfyra32dltq8" path="res://sprites/level editor/rock_tile/rock_tile_0.png" id="3_vphms"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_44u8r"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_60okt"]
 
-[node name="RockTile" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_pd6hj"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_vphms")
+}],
+"loop": true,
+"name": &"rock_tile",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_vphms"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAAAAAAAAAAAAAAAAAMDAwACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAAAAAAAAAAADAwMAAwMDAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAMDAwAAAAAAAwMDAAMDAwADAwMAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAMDAwADAwMAAAAAAAMDAwADAwMAAwMDAAMDAwACAgIAAgICA/4CAgP+AgID/gICA/4CAgACAgIAAgICAAMDAwADAwMAAwMDAAAAAAADAwMAAwMDAAMDAwADAwMAAwMDA/4CAgP+AgID/gICA/4CAgP+AgID/gICAAMDAwADAwMAAwMDAAMDAwAAAAAAAgICAAICAgACAgIAAgICAAICAgP/AwMD/gICA/4CAgP+AgID/gICA/8DAwP/AwMAAwMDAAMDAwADAwMAAAAAAAICAgACAgIAAgICAAICAgACAgID/gICA////////////wMDA/8DAwP9AQED/QEBAAEBAQABAQEAAQEBAAAAAAACAgIAAgICAAICAgACAgIAAgICA/4CAgP/AwMD/QEBA/0BAQP9AQED/QEBA/0BAQABAQEAAQEBAAEBAQAAAAAAATjkkAE45JABOOSQATjkkAE45JP+AgID/QEBA/0BAQP9AQED/QEBA/ycrK/8nKysAJysrACcrKwAnKysAAAAAAE45JABOOSQATjkkAE45JABOOSQATjkk/0BAQP9AQED/QEBA/ycrK/8nKysAJysrACcrKwAnKysAJysrAA=="),
+"format": "RGBA8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Resource" id="Resource_44u8r"]
+script = ExtResource("5_60okt")
+origin = Vector2(0, 0)
+containing_box = Rect2(5, 9, 7, 7)
+precise = true
+images = Array[Image]([SubResource("Image_vphms")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_60okt"]
+size = Vector2(7, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0aso2"]
+size = Vector2(14, 14)
+
+[node name="RockTile" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -100
 script = ExtResource("1_hsxr1")
+animated_sprite_node = NodePath("Sprite")
 object_name = "rock_tile"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_pd6hj")]
+sprite_frames = SubResource("SpriteFrames_pd6hj")
+autoplay = "rock_tile"
+centered = false
+script = ExtResource("4_44u8r")
+sprite_info = Dictionary[StringName, ExtResource("5_60okt")]({
+&"rock_tile": SubResource("Resource_44u8r")
+})
+default_animation = &"rock_tile"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8.5, 12.5)
+shape = SubResource("RectangleShape2D_60okt")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8.5, 12.5)
+shape = SubResource("RectangleShape2D_0aso2")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

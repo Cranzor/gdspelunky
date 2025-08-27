@@ -1,7 +1,84 @@
-[gd_scene load_steps=2 format=3 uid="uid://cu3ohdsxe8wm3"]
+[gd_scene load_steps=15 format=3 uid="uid://cu3ohdsxe8wm3"]
 
 [ext_resource type="Script" uid="uid://bcdnuoqs5hr61" path="res://objects/blocks/splash/splash.gd" id="1_yih8j"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_f50uy"]
+[ext_resource type="Texture2D" uid="uid://dkay0x8x8b4oi" path="res://sprites/effects/splash/splash_0.png" id="3_5dtmk"]
+[ext_resource type="Texture2D" uid="uid://c0f15yaapxltj" path="res://sprites/effects/splash/splash_1.png" id="4_qwq36"]
+[ext_resource type="Texture2D" uid="uid://3x4vcx5jjmdk" path="res://sprites/effects/splash/splash_2.png" id="5_5gbqu"]
+[ext_resource type="Texture2D" uid="uid://btesyrtuggjb" path="res://sprites/effects/splash/splash_3.png" id="6_ur7y7"]
+[ext_resource type="Texture2D" uid="uid://ldig3k1kj5qw" path="res://sprites/effects/splash/splash_4.png" id="7_836xt"]
+[ext_resource type="Texture2D" uid="uid://c1o308f6hy7k5" path="res://sprites/effects/splash/splash_5.png" id="8_xnhht"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="9_klbjj"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="10_prtyf"]
 
-[node name="Splash" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_f50uy"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_5dtmk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qwq36")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5gbqu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ur7y7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_836xt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_xnhht")
+}],
+"loop": true,
+"name": &"splash",
+"speed": 30.0
+}]
+
+[sub_resource type="Resource" id="Resource_5dtmk"]
+script = ExtResource("10_prtyf")
+origin = Vector2(8, 8)
+containing_box = Rect2(1, 2, 14, 14)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qwq36"]
+size = Vector2(14, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5gbqu"]
+size = Vector2(28, 28)
+
+[node name="Splash" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -1
 script = ExtResource("1_yih8j")
+animated_sprite_node = NodePath("Sprite")
 object_name = "splash"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_f50uy")]
+sprite_frames = SubResource("SpriteFrames_f50uy")
+autoplay = "splash"
+centered = false
+offset = Vector2(-8, -8)
+script = ExtResource("9_klbjj")
+sprite_info = Dictionary[StringName, ExtResource("10_prtyf")]({
+&"splash": SubResource("Resource_5dtmk")
+})
+default_animation = &"splash"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_qwq36")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_5gbqu")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

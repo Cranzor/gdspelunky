@@ -1,7 +1,71 @@
-[gd_scene load_steps=2 format=3 uid="uid://dg7leddsy5css"]
+[gd_scene load_steps=11 format=4 uid="uid://dg7leddsy5css"]
 
 [ext_resource type="Script" uid="uid://b38sqasoim81q" path="res://objects/effects/laser/laser.gd" id="1_ygjyg"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_1kpll"]
+[ext_resource type="Texture2D" uid="uid://bwkuu85rawblt" path="res://sprites/effects/laser/laser_0.png" id="3_7n4vb"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_xscni"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_wmxvn"]
 
-[node name="Laser" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_1kpll"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_7n4vb")
+}],
+"loop": true,
+"name": &"laser",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_7n4vb"]
+data = {
+"data": PackedByteArray("gP+AAID/gACA/4D/gP+A/4D/gP+A/4D/gP+AAID/gACA/4AAgP+A//////////////////////+A/4D/gP+AAID/gP////////////////////////////////+A/4D/gP+A/////////////////////////////////4D/gP+A/4D/////////////////////////////////gP+A/4D/gP////////////////////////////////+A/4D/gP+AAID/gP//////////////////////gP+A/4D/gACA/4AAgP+AAID/gP+A/4D/gP+A/4D/gP+A/4AAgP+AAA=="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Resource" id="Resource_xscni"]
+script = ExtResource("5_wmxvn")
+origin = Vector2(4, 4)
+containing_box = Rect2(0, 0, 8, 8)
+precise = true
+images = Array[Image]([SubResource("Image_7n4vb")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wmxvn"]
+size = Vector2(8, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p15li"]
+size = Vector2(16, 16)
+
+[node name="Laser" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -1
 script = ExtResource("1_ygjyg")
+animated_sprite_node = NodePath("Sprite")
 object_name = "laser"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_1kpll")]
+sprite_frames = SubResource("SpriteFrames_1kpll")
+autoplay = "laser"
+centered = false
+offset = Vector2(-4, -4)
+script = ExtResource("4_xscni")
+sprite_info = Dictionary[StringName, ExtResource("5_wmxvn")]({
+&"laser": SubResource("Resource_xscni")
+})
+default_animation = &"laser"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_wmxvn")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+shape = SubResource("RectangleShape2D_p15li")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

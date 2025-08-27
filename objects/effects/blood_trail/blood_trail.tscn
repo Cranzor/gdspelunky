@@ -1,7 +1,151 @@
-[gd_scene load_steps=2 format=3 uid="uid://n4f87aplw0yx"]
+[gd_scene load_steps=23 format=4 uid="uid://n4f87aplw0yx"]
 
 [ext_resource type="Script" uid="uid://bo3shi3hitppi" path="res://objects/effects/blood_trail/blood_trail.gd" id="1_efs4t"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_ytuma"]
+[ext_resource type="Texture2D" uid="uid://dyqgt1a1j53ap" path="res://sprites/effects/blood_trail/blood_trail_0.png" id="3_1ehls"]
+[ext_resource type="Texture2D" uid="uid://b5mb5dtvpl76v" path="res://sprites/effects/blood_trail/blood_trail_1.png" id="4_k26g8"]
+[ext_resource type="Texture2D" uid="uid://c1ok44awox7re" path="res://sprites/effects/blood_trail/blood_trail_2.png" id="5_vid4r"]
+[ext_resource type="Texture2D" uid="uid://chjm58n6cbet5" path="res://sprites/effects/blood_trail/blood_trail_3.png" id="6_06dbu"]
+[ext_resource type="Texture2D" uid="uid://d2fho6u5yh5bh" path="res://sprites/effects/blood_trail/blood_trail_4.png" id="7_hl0oi"]
+[ext_resource type="Texture2D" uid="uid://c1rmb06ojgh58" path="res://sprites/effects/blood_trail/blood_trail_5.png" id="8_dxqh0"]
+[ext_resource type="Texture2D" uid="uid://bqhu343527wes" path="res://sprites/effects/blood_trail/blood_trail_6.png" id="9_wc7xe"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="10_btgvx"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="11_mqqfv"]
 
-[node name="BloodTrail" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_ytuma"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_1ehls")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_k26g8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_vid4r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_06dbu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_hl0oi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_dxqh0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_wc7xe")
+}],
+"loop": true,
+"name": &"blood_trail",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_1ehls"]
+data = {
+"data": PackedByteArray("wAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAP/AAAD/wAAA/8AAAADAAAAAwAAAAMAAAADAAAD/wAAA/8AAAP/AAAD/wAAA/8AAAADAAAAAgAAAAIAAAP/AAAD/wAAA/8AAAP+AAAD/gAAAAIAAAACAAAAAgAAAAIAAAP+AAAD/gAAA/0AAAP9AAAAAQAAAAIAAAACAAAAAgAAAAEAAAP9AAAD/QAAAAEAAAABAAAAAgAAAAIAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAACAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAA=="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Image" id="Image_k26g8"]
+data = {
+"data": PackedByteArray("wAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAIAAAADAAAAAwAAAAMAAAP/AAAD/wAAA/8AAAACAAAAAgAAAAMAAAP/AAAD/wAAA/8AAAP/AAAD/gAAA/4AAAACAAAAAgAAA/8AAAP/AAAD/wAAA/8AAAP+AAAD/gAAA/4AAAACAAAAAQAAA/4AAAP+AAAD/gAAA/4AAAP9AAAD/QAAAAEAAAABAAAAAgAAAAEAAAP9AAAD/gAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAA=="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Image" id="Image_vid4r"]
+data = {
+"data": PackedByteArray("wAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAIAAAADAAAAAwAAAAMAAAP/AAAD/wAAA/8AAAACAAAAAgAAAAMAAAADAAAD/wAAA/8AAAP/AAAD/gAAA/4AAAACAAAAAwAAA/8AAAP/AAAD/wAAA/4AAAP+AAAD/gAAAAIAAAABAAAD/gAAA/4AAAP+AAAD/gAAA/0AAAP9AAAAAQAAAAEAAAACAAAAAQAAA/4AAAP9AAAD/QAAAAEAAAABAAAAAQAAAAEAAAABAAAAAgAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAACAAAAAQAAAAEAAAABAAAAAQAAAAA=="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Image" id="Image_06dbu"]
+data = {
+"data": PackedByteArray("wAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAD/wAAA/8AAAADAAAAAwAAAAMAAAADAAAAAwAAA/8AAAP/AAAD/wAAA/8AAAACAAAAAwAAAAMAAAP/AAAD/wAAA/8AAAP/AAAD/gAAA/4AAAACAAAAAgAAA/8AAAP/AAAD/wAAA/4AAAP9AAAD/QAAAAIAAAACAAAAAgAAA/4AAAP+AAAD/QAAA/0AAAABAAAAAgAAAAIAAAACAAAAAgAAAAIAAAABAAAAAQAAAAEAAAACAAAAAgAAAAIAAAACAAAAAgAAAAEAAAABAAAAAQAAAAA=="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Image" id="Image_hl0oi"]
+data = {
+"data": PackedByteArray("wAAAAMAAAADAAAAAgAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAACAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAA/4AAAP/AAAD/wAAA/8AAAADAAAAAwAAAAMAAAP/AAAD/wAAA/8AAAP+AAAD/gAAAAIAAAADAAAAAwAAAAIAAAP+AAAD/gAAA/4AAAACAAAAAgAAAAMAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAA=="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Image" id="Image_dxqh0"]
+data = {
+"data": PackedByteArray("wAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAD/wAAA/8AAAP/AAAAAwAAAAMAAAACAAAAAgAAAAIAAAP+AAAD/gAAA/4AAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAA=="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Image" id="Image_wc7xe"]
+data = {
+"data": PackedByteArray("wAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAA/8AAAADAAAAAwAAAAMAAAACAAAAAgAAAAIAAAACAAAD/gAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAA=="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Resource" id="Resource_btgvx"]
+script = ExtResource("11_mqqfv")
+origin = Vector2(4, 4)
+containing_box = Rect2(0, 1, 7, 5)
+precise = true
+images = Array[Image]([SubResource("Image_1ehls"), SubResource("Image_k26g8"), SubResource("Image_vid4r"), SubResource("Image_06dbu"), SubResource("Image_hl0oi"), SubResource("Image_dxqh0"), SubResource("Image_wc7xe")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mqqfv"]
+size = Vector2(7, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mypgy"]
+size = Vector2(14, 10)
+
+[node name="BloodTrail" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -1
 script = ExtResource("1_efs4t")
+animated_sprite_node = NodePath("Sprite")
 object_name = "blood_trail"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_ytuma")]
+sprite_frames = SubResource("SpriteFrames_ytuma")
+autoplay = "blood_trail"
+centered = false
+offset = Vector2(-4, -4)
+script = ExtResource("10_btgvx")
+sprite_info = Dictionary[StringName, ExtResource("11_mqqfv")]({
+&"blood_trail": SubResource("Resource_btgvx")
+})
+default_animation = &"blood_trail"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_mqqfv")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_mypgy")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

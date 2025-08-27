@@ -1,7 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://csce7fyjeng8e"]
+[gd_scene load_steps=5 format=3 uid="uid://csce7fyjeng8e"]
 
 [ext_resource type="Script" uid="uid://dfi6lxe8bflm6" path="res://objects/basis/solid/solid.gd" id="1_hmqp7"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_u5fxm"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="3_y2kc5"]
 
-[node name="Solid" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_u5fxm"]
+resource_local_to_scene = true
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[node name="Solid" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -100
 script = ExtResource("1_hmqp7")
+animated_sprite_node = NodePath("Sprite")
 object_name = "solid"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_u5fxm")]
+sprite_frames = SubResource("SpriteFrames_u5fxm")
+centered = false
+script = ExtResource("3_y2kc5")
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

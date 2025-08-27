@@ -1,7 +1,72 @@
-[gd_scene load_steps=2 format=3 uid="uid://c08alw42udsbo"]
+[gd_scene load_steps=11 format=4 uid="uid://c08alw42udsbo"]
 
 [ext_resource type="Script" uid="uid://bk8luttp11nth" path="res://objects/level editor/bomb_bag_tile/bomb_bag_tile.gd" id="1_vq10g"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_nuyme"]
+[ext_resource type="Texture2D" uid="uid://d4nr0nngqwkfx" path="res://sprites/level editor/bomb_bag_tile/bomb_bag_tile_0.png" id="3_xnytd"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_ul7dw"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_mxisc"]
 
-[node name="BombBagTile" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_nuyme"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_xnytd")
+}],
+"loop": true,
+"name": &"bomb_bag_tile",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_xnytd"]
+data = {
+"data": PackedByteArray("AIAAAACAAAAsFhMALBYTACwWEwAsFhMALBYTACwWEwAsFhMALBYTACwWEwAsFhMALBYTACwWEwAAgAAAAIAAAACAAAAsFhMALBYTACwWEwAsFhMALBYTACwWEwAsFhMALBYTACwWEwAsFhMALBYTACwWEwAsFhMALBYTAACAAAAAgAAALBYTACwWEwAsFhMALBYTACwWEwAsFhMALBYTACwWEwAsFhMALBYTACwWEwAsFhMALBYTACwWEwAAgAAAAIAAACwWEwAsFhMALBYTACwWEwAsFhMALBYTACwWEwAsFhMALBYTACwWEwAsFhMALBYTACwWEwAsFhMAAIAAAACAAAAsFhMALBYTACwWEwAsFhMALBYTACwWE/8sFhP/LBYT/ywWE/8sFhMALBYTACwWEwAsFhMALBYTAACAAAAsFhMALBYTACwWEwAsFhMALBYTACwWE/97X0T/t4dc/7eHXP97X0T/LBYT/ywWEwAsFhMALBYTACwWEwAsFhMALBYTACwWEwAsFhMALBYTACwWEwAsFhP/UD0p/3tfRP97X0T/UD0p/ywWE/8sFhMALBYTACwWEwAsFhMALBYTACwWEwAsFhMALBYTACwWEwAsFhMALBYTACwWE/9QPSn/UD0p/ywWE/8sFhMALBYTACwWEwAsFhMALBYTACwWEwAsFhMALBYTACwWEwAsFhMALBYTACwWE/97X0T/t4dc/7eHXP97X0T/LBYT/ywWEwAsFhMALBYTACwWEwAsFhMALBYTACwWEwAsFhMALBYTACwWE/+3h1z/t4dc/7eHXP+3h1z/t4dc/7eHXP8sFhP/LBYTACwWEwAsFhMALBYTACwWEwAsFhMALBYTACwWE/97X0T/e19E/////////////////3tfRP97X0T/e19E/ywWE/8sFhMALBYTACwWEwAsFhMALBYTACwWE/97X0T/e19E/3tfRP//////e19E/3tfRP//////e19E/3tfRP97X0T/LBYT/ywWEwAsFhMALBYTACwWEwAsFhP/e19E/3tfRP97X0T/////////////////e19E/3tfRP97X0T/e19E/ywWE/8sFhMALBYTACwWEwAsFhMALBYT/1A9Kf9QPSn/e19E//////97X0T/e19E//////97X0T/UD0p/1A9Kf8sFhP/LBYTACwWEwAsFhMALBYTACwWE/9QPSn/UD0p/1A9Kf////////////////9QPSn/UD0p/1A9Kf9QPSn/LBYT/ywWEwAsFhMALBYTACwWEwAsFhMALBYT/1A9Kf9QPSn/UD0p/1A9Kf9QPSn/UD0p/1A9Kf9QPSn/LBYT/ywWEwAsFhMALBYTAA=="),
+"format": "RGBA8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Resource" id="Resource_ul7dw"]
+script = ExtResource("5_mxisc")
+origin = Vector2(0, 0)
+containing_box = Rect2(2, 4, 12, 12)
+precise = true
+images = Array[Image]([SubResource("Image_xnytd")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mxisc"]
+size = Vector2(12, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jgvjj"]
+size = Vector2(24, 24)
+
+[node name="BombBagTile" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -100
 script = ExtResource("1_vq10g")
+animated_sprite_node = NodePath("Sprite")
 object_name = "bomb_bag_tile"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_nuyme")]
+sprite_frames = SubResource("SpriteFrames_nuyme")
+autoplay = "bomb_bag_tile"
+centered = false
+script = ExtResource("4_ul7dw")
+sprite_info = Dictionary[StringName, ExtResource("5_mxisc")]({
+&"bomb_bag_tile": SubResource("Resource_ul7dw")
+})
+default_animation = &"bomb_bag_tile"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 10)
+shape = SubResource("RectangleShape2D_mxisc")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 10)
+shape = SubResource("RectangleShape2D_jgvjj")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

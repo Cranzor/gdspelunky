@@ -1,7 +1,72 @@
-[gd_scene load_steps=2 format=3 uid="uid://cakfgwyeqwpw5"]
+[gd_scene load_steps=11 format=4 uid="uid://cakfgwyeqwpw5"]
 
 [ext_resource type="Script" uid="uid://couver1wj0874" path="res://objects/other/menu_ur/menu_ur.gd" id="1_ns44d"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_xxnrp"]
+[ext_resource type="Texture2D" uid="uid://byyeokkmbjtsj" path="res://sprites/other/menu_ur/menu_ur_0.png" id="3_73ijt"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_4uphu"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_qp58b"]
 
-[node name="MenuUr" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_xxnrp"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_73ijt")
+}],
+"loop": true,
+"name": &"menu_ur",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_73ijt"]
+data = {
+"data": PackedByteArray("AIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAAA//////////////////////////////////////////////////////////////////////////8AAAD/AAAA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP///////////wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD///////////8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA////////////AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP///////////wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD///////////8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA////////////AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP///////////wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD///////////8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA////////////AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///8A////AAAAAAA="),
+"format": "RGBA8",
+"height": 17,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Resource" id="Resource_4uphu"]
+script = ExtResource("5_qp58b")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 5, 16, 11)
+precise = true
+images = Array[Image]([SubResource("Image_73ijt")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qp58b"]
+size = Vector2(16, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wynes"]
+size = Vector2(32, 22)
+
+[node name="MenuUr" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -1
 script = ExtResource("1_ns44d")
+animated_sprite_node = NodePath("Sprite")
 object_name = "menu_ur"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_xxnrp")]
+sprite_frames = SubResource("SpriteFrames_xxnrp")
+autoplay = "menu_ur"
+centered = false
+script = ExtResource("4_4uphu")
+sprite_info = Dictionary[StringName, ExtResource("5_qp58b")]({
+&"menu_ur": SubResource("Resource_4uphu")
+})
+default_animation = &"menu_ur"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 10.5)
+shape = SubResource("RectangleShape2D_qp58b")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 10.5)
+shape = SubResource("RectangleShape2D_wynes")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

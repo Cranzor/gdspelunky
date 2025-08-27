@@ -1,7 +1,71 @@
-[gd_scene load_steps=2 format=3 uid="uid://fkuug1e4o4gh"]
+[gd_scene load_steps=11 format=4 uid="uid://fkuug1e4o4gh"]
 
 [ext_resource type="Script" uid="uid://c30rk72nf4mkf" path="res://objects/traps/giant_tiki_head/giant_tiki_head.gd" id="1_apwpu"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_kksdw"]
+[ext_resource type="Texture2D" uid="uid://dvsdfwubrfihv" path="res://sprites/traps/giant_tiki_head/giant_tiki_head_0.png" id="3_fcgcg"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_hijv3"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_lptua"]
 
-[node name="GiantTikiHead" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_kksdw"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_fcgcg")
+}],
+"loop": true,
+"name": &"giant_tiki_head",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_fcgcg"]
+data = {
+"data": PackedByteArray("AAAAAAAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAAAAAAAAAAAD/AAAA/wcMEP8AAAD/AAAA/wcMEP8HDBD/EBcf/xAXH/8bJjT/GyY0/wcMEP8bJjT/GyY0/xsmNP8bJjT/GyY0/xsmNP8bJjT/GyY0/wcMEP8bJjT/GyY0/xAXH/8QFx//BwwQ/wAAAP8HDBD/BwwQ/wAAAP8AAAD/AAAAAAAAAP8HDBD/BwwQ/wAAAP8HDBD/BwwQ/wcMEP8HDBD/BwwQ/wcMEP8HDBD/GyY0/wcMEP8HDBD/BwwQ/wcMEP8HDBD/BwwQ/wcMEP8HDBD/GyY0/wcMEP8HDBD/BwwQ/wcMEP8HDBD/AAAA/wAAAP8HDBD/BwwQ/wAAAP8AAAAAAAAA/wAAAP8AAAD/BwwQ/xAXH/8QFx//EBcf/xAXH/8QFx//GyY0/wcMEP8bJjT/BwwQ/xsmNP8HDBD/GyY0/xsmNP8HDBD/GyY0/wcMEP8bJjT/BwwQ/xsmNP8QFx//EBcf/xAXH/8QFx//AAAA/wAAAP8AAAD/AAAA/wAAAAAAAAAAAAAA/wcMEP8HDBD/BwwQ/wcMEP8HDBD/BwwQ/wcMEP8HDBD/BwwQ/wcMEP8HDBD/BwwQ/xsmNP8bJjT/GyY0/xsmNP8HDBD/BwwQ/wcMEP8HDBD/BwwQ/wcMEP8HDBD/BwwQ/wcMEP8HDBD/BwwQ/wAAAP8AAAAAAAAAAAAAAAAAAAD/BwwQ/wcMEP8HDBD/BwwQ/wcMEP8QFx//EBcf/xsmNP8bJjT/GyY0/y9AVv8HDBD/GyY0/xsmNP8bJjT/GyY0/wcMEP8vQFb/GyY0/xsmNP8bJjT/EBcf/xAXH/8HDBD/BwwQ/wcMEP8HDBD/AAAA/wAAAP8AAAD/AAAAAAAAAP8HDBD/BwwQ/wcMEP8HDBD/EBcf/xAXH/8QFx//GyY0/xsmNP8bJjT/GyY0/wcMEP8QFx//GyY0/xsmNP8QFx//BwwQ/xsmNP8bJjT/GyY0/xsmNP8QFx//EBcf/xAXH/8HDBD/BwwQ/wAAAP8HDBD/BwwQ/wAAAP8AAAD/AAAA/wAAAP8HDBD/BwwQ/xAXH/8QFx//EBcf/wcMEP8HDBD/BwwQ/wcMEP8bJjT/GyY0/wcMEP8QFx//EBcf/wcMEP8bJjT/GyY0/wcMEP8HDBD/BwwQ/wcMEP8QFx//EBcf/xAXH/8HDBD/AAAA/wcMEP8HDBD/AAAA/wAAAP8HDBD/BwwQ/wAAAP8QFx//EBcf/xAXH/8QFx//GyY0/xsmNP8bJjT/GyY0/wcMEP8bJjT/GyY0/wcMEP8HDBD/GyY0/xsmNP8HDBD/GyY0/xsmNP8bJjT/GyY0/xAXH/8QFx//EBcf/xAXH/8HDBD/AAAA/wAAAP8AAAD/AAAA/wcMEP8HDBD/AAAA/xAXH/8QFx//EBcf/wcMEP8HDBD/BwwQ/wcMEP8QFx//GyY0/wcMEP8bJjT/L0BW/y9AVv8bJjT/BwwQ/xsmNP8QFx//BwwQ/wcMEP8HDBD/BwwQ/xAXH/8QFx//EBcf/wcMEP8HDBD/AAAA/wAAAAAAAAD/BwwQ/wcMEP8AAAD/EBcf/xAXH/8HDBD/EBcf/xsmNP8bJjT/GyY0/wcMEP8QFx//GyY0/wcMEP8bJjT/GyY0/wcMEP8bJjT/EBcf/wcMEP8bJjT/GyY0/xsmNP8QFx//BwwQ/xAXH/8QFx//BwwQ/wcMEP8AAAD/AAAAAAAAAP8HDBD/BwwQ/wAAAP8QFx//BwwQ/xAXH/8AAAD/AAAA/wAAAP8AAAD/GyY0/wcMEP8bJjT/BwwQ/xsmNP8bJjT/BwwQ/xsmNP8HDBD/GyY0/wAAAP8AAAD/AAAA/wAAAP8QFx//BwwQ/xAXH/8HDBD/BwwQ/wAAAP8AAAAAAAAA/wAAAP8AAAD/AAAA/xsmNP8HDBD/EBcf/wAAAP8HDBD/BwwQ/wcMEP8bJjT/BwwQ/xsmNP8HDBD/GyY0/xsmNP8HDBD/GyY0/wcMEP8bJjT/BwwQ/wcMEP8HDBD/AAAA/xAXH/8HDBD/EBcf/wcMEP8HDBD/AAAA/wAAAAAAAAD/AAAA/wAAAP8HDBD/GyY0/wcMEP8QFx//BwwQ/wcMEP8bJjT/GyY0/xsmNP8HDBD/GyY0/xAXH/8QFx//EBcf/xAXH/8bJjT/BwwQ/xsmNP8bJjT/GyY0/wcMEP8HDBD/EBcf/wcMEP8bJjT/BwwQ/wcMEP8AAAD/AAAAAAAAAP8AAAD/BwwQ/wcMEP8QFx//BwwQ/xAXH/8QFx//EBcf/wcMEP8HDBD/GyY0/wcMEP8HDBD/EBcf/xAXH/8QFx//EBcf/wcMEP8HDBD/GyY0/wcMEP8HDBD/EBcf/xAXH/8QFx//BwwQ/xAXH/8HDBD/BwwQ/wAAAP8AAAAAAAAA/wAAAP8HDBD/BwwQ/xAXH/8QFx//BwwQ/wcMEP8HDBD/GyY0/xsmNP8HDBD/GyY0/xsmNP8bJjT/L0BW/y9AVv8bJjT/GyY0/xsmNP8HDBD/GyY0/xsmNP8HDBD/BwwQ/wcMEP8QFx//EBcf/wcMEP8HDBD/AAAA/wAAAAAAAAD/AAAA/wcMEP8HDBD/GyY0/xsmNP8bJjT/EBcf/xAXH/8bJjT/GyY0/wcMEP8bJjT/AAAA/wAAAP8bJjT/GyY0/wAAAP8AAAD/GyY0/wcMEP8bJjT/GyY0/xAXH/8QFx//GyY0/xsmNP8bJjT/BwwQ/wcMEP8AAAD/AAAAAAAAAP8AAAD/AAAA/wcMEP8HDBD/GyY0/xsmNP8QFx//EBcf/xsmNP8bJjT/BwwQ/xsmNP8HDBD/AAAA/xsmNP8bJjT/AAAA/wcMEP8bJjT/BwwQ/xsmNP8bJjT/EBcf/xAXH/8bJjT/GyY0/wcMEP8HDBD/BwwQ/wAAAP8AAAAABwwQ/wAAAP8AAAD/BwwQ/wcMEP8QFx//EBcf/xAXH/8HDBD/GyY0/xsmNP8QFx//BwwQ/xsmNP8HDBD/GyY0/xsmNP8HDBD/GyY0/wcMEP8QFx//GyY0/xsmNP8HDBD/EBcf/xAXH/8QFx//BwwQ/wcMEP8HDBD/AAAA/wAAAAAHDBD/BwwQ/wAAAP8HDBD/BwwQ/xAXH/8QFx//BwwQ/xsmNP8HDBD/GyY0/xAXH/8QFx//BwwQ/wcMEP8HDBD/BwwQ/wcMEP8HDBD/EBcf/xAXH/8bJjT/BwwQ/xsmNP8HDBD/EBcf/xAXH/8HDBD/BwwQ/wcMEP8AAAD/AAAAAAcMEP8HDBD/AAAA/wcMEP8QFx//EBcf/wcMEP8HDBD/GyY0/wcMEP8bJjT/GyY0/xAXH/8QFx//EBcf/xAXH/8QFx//EBcf/xAXH/8QFx//GyY0/xsmNP8HDBD/GyY0/wcMEP8HDBD/EBcf/xAXH/8HDBD/AAAA/wAAAP8AAAD/BwwQ/wcMEP8AAAD/BwwQ/xAXH/8QFx//AAAA/wcMEP8bJjT/GyY0/wcMEP8AAAD/BwwQ/wcMEP8AAAD/BwwQ/wcMEP8AAAD/BwwQ/wcMEP8AAAD/BwwQ/xsmNP8bJjT/BwwQ/wAAAP8QFx//EBcf/wcMEP8AAAD/AAAA/wcMEP8AAAD/BwwQ/wAAAP8HDBD/EBcf/xAXH/8AAAD/BwwQ/xsmNP8bJjT/GyY0/wcMEP8bJjT/GyY0/wcMEP8bJjT/GyY0/wcMEP8bJjT/GyY0/wcMEP8bJjT/GyY0/xsmNP8HDBD/AAAA/xAXH/8QFx//AAAA/wAAAP8HDBD/BwwQ/wAAAP8AAAD/AAAA/wcMEP8QFx//EBcf/xAXH/8AAAD/BwwQ/xsmNP8bJjT/BwwQ/xsmNP8bJjT/BwwQ/xsmNP8bJjT/BwwQ/xsmNP8bJjT/BwwQ/xsmNP8bJjT/BwwQ/wAAAP8QFx//EBcf/xAXH/8AAAD/BwwQ/wcMEP8HDBD/AAAAAAAAAP8HDBD/BwwQ/wcMEP8QFx//EBcf/xAXH/8AAAD/BwwQ/wcMEP8AAAD/BwwQ/wcMEP8AAAD/BwwQ/wcMEP8AAAD/BwwQ/wcMEP8AAAD/BwwQ/wcMEP8AAAD/EBcf/xAXH/8QFx//BwwQ/wAAAP8HDBD/BwwQ/wAAAP8AAAAAAAAA/wcMEP8HDBD/BwwQ/wcMEP8QFx//EBcf/xAXH/8bJjT/GyY0/xsmNP8bJjT/GyY0/xsmNP8bJjT/GyY0/xsmNP8bJjT/GyY0/xsmNP8bJjT/GyY0/xAXH/8QFx//EBcf/wcMEP8HDBD/BwwQ/wAAAP8AAAD/AAAA/wAAAAAAAAD/BwwQ/wcMEP8QFx//BwwQ/wcMEP8QFx//EBcf/xsmNP8bJjT/GyY0/xsmNP8bJjT/BwwQ/wcMEP8HDBD/BwwQ/xsmNP8bJjT/GyY0/xsmNP8bJjT/EBcf/xAXH/8HDBD/BwwQ/xAXH/8HDBD/BwwQ/wAAAP8AAAAAAAAAAAAAAP8HDBD/BwwQ/xAXH/8QFx//BwwQ/wcMEP8HDBD/BwwQ/xAXH/8QFx//EBcf/xAXH/8QFx//GyY0/xsmNP8QFx//EBcf/xAXH/8QFx//EBcf/wcMEP8HDBD/BwwQ/wcMEP8QFx//EBcf/wcMEP8HDBD/AAAA/wAAAAAAAAAAAAAA/wAAAP8HDBD/EBcf/xAXH/8HDBD/BwwQ/wAAAP8AAAD/AAAA/wcMEP8HDBD/BwwQ/wcMEP8HDBD/BwwQ/wcMEP8HDBD/BwwQ/wcMEP8HDBD/BwwQ/wcMEP8HDBD/AAAA/wAAAP8AAAD/BwwQ/wAAAP8AAAD/AAAA/wAAAAAAAAAAAAAA/wcMEP8QFx//EBcf/wcMEP8AAAD/BwwQ/wcMEP8AAAD/AAAA/wcMEP8HDBD/BwwQ/wcMEP8HDBD/BwwQ/wcMEP8HDBD/BwwQ/wcMEP8HDBD/AAAA/wAAAP8AAAD/BwwQ/wAAAP8HDBD/AAAA/wcMEP8HDBD/AAAAAAAAAAAAAAD/AAAA/wcMEP8QFx//BwwQ/wAAAP8HDBD/BwwQ/wcMEP8AAAD/AAAA/wcMEP8HDBD/GyY0/xsmNP8HDBD/BwwQ/wcMEP8HDBD/BwwQ/wAAAP8AAAD/BwwQ/wcMEP8HDBD/AAAA/wAAAP8AAAD/BwwQ/wcMEP8AAAAAAAAAAAAAAAAAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8HDBD/BwwQ/wAAAP8AAAD/AAAA/wAAAP8HDBD/BwwQ/w=="),
+"format": "RGBA8",
+"height": 32,
+"mipmaps": false,
+"width": 32
+}
+
+[sub_resource type="Resource" id="Resource_hijv3"]
+script = ExtResource("5_lptua")
+origin = Vector2(16, 16)
+containing_box = Rect2(0, 0, 32, 32)
+precise = true
+images = Array[Image]([SubResource("Image_fcgcg")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lptua"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ve5fa"]
+size = Vector2(64, 64)
+
+[node name="GiantTikiHead" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -997
 script = ExtResource("1_apwpu")
+animated_sprite_node = NodePath("Sprite")
 object_name = "giant_tiki_head"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_kksdw")]
+sprite_frames = SubResource("SpriteFrames_kksdw")
+autoplay = "giant_tiki_head"
+centered = false
+offset = Vector2(-16, -16)
+script = ExtResource("4_hijv3")
+sprite_info = Dictionary[StringName, ExtResource("5_lptua")]({
+&"giant_tiki_head": SubResource("Resource_hijv3")
+})
+default_animation = &"giant_tiki_head"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_lptua")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+shape = SubResource("RectangleShape2D_ve5fa")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

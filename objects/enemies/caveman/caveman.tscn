@@ -1,7 +1,260 @@
-[gd_scene load_steps=2 format=3 uid="uid://bdofugqa7nqg2"]
+[gd_scene load_steps=39 format=3 uid="uid://bdofugqa7nqg2"]
 
 [ext_resource type="Script" uid="uid://d4lxwissf8cwr" path="res://objects/enemies/caveman/caveman.gd" id="1_6b31n"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_npye2"]
+[ext_resource type="Texture2D" uid="uid://d0b05cptselrk" path="res://sprites/enemies/caveman/caveman_bounce_l/caveman_bounce_l_0.png" id="3_si8um"]
+[ext_resource type="Texture2D" uid="uid://cv1hulay1ojhu" path="res://sprites/enemies/caveman/caveman_d_held_l/caveman_d_held_l_0.png" id="4_o8x3r"]
+[ext_resource type="Texture2D" uid="uid://d22n7313w3s8m" path="res://sprites/enemies/caveman/caveman_dead_l/caveman_dead_l_0.png" id="5_gy6s6"]
+[ext_resource type="Texture2D" uid="uid://bdkqr4wyi4qvx" path="res://sprites/enemies/caveman/caveman_die_ll/caveman_die_ll_0.png" id="6_l63w0"]
+[ext_resource type="Texture2D" uid="uid://rvwmjtvtdv2p" path="res://sprites/enemies/caveman/caveman_die_lr/caveman_die_lr_0.png" id="7_lqipr"]
+[ext_resource type="Texture2D" uid="uid://dkrru46yurgk5" path="res://sprites/enemies/caveman/caveman_fall_l/caveman_fall_l_0.png" id="8_ubcqj"]
+[ext_resource type="Texture2D" uid="uid://b1dp824yj2v7p" path="res://sprites/enemies/caveman/caveman_held_l/caveman_held_l_0.png" id="9_qsf3l"]
+[ext_resource type="Texture2D" uid="uid://beluyh8obrj1l" path="res://sprites/enemies/caveman/caveman_held_l/caveman_held_l_1.png" id="10_b2n0r"]
+[ext_resource type="Texture2D" uid="uid://c2im5rb7w53ad" path="res://sprites/enemies/caveman/caveman_held_l/caveman_held_l_2.png" id="11_tqpkh"]
+[ext_resource type="Texture2D" uid="uid://gollx3gebty2" path="res://sprites/enemies/caveman/caveman_held_l/caveman_held_l_3.png" id="12_db18u"]
+[ext_resource type="Texture2D" uid="uid://b3kqlt0uw3smg" path="res://sprites/enemies/caveman/caveman_held_l/caveman_held_l_4.png" id="13_cqguf"]
+[ext_resource type="Texture2D" uid="uid://bj0v7r3pm2tdi" path="res://sprites/enemies/caveman/caveman_left/caveman_left_0.png" id="14_jsi8b"]
+[ext_resource type="Texture2D" uid="uid://h2vedacxqbn3" path="res://sprites/enemies/caveman/caveman_run_left/caveman_run_left_0.png" id="15_s2wyo"]
+[ext_resource type="Texture2D" uid="uid://bbct8u6a3wkye" path="res://sprites/enemies/caveman/caveman_run_left/caveman_run_left_1.png" id="16_gal8p"]
+[ext_resource type="Texture2D" uid="uid://0aplc4vmi7lo" path="res://sprites/enemies/caveman/caveman_run_left/caveman_run_left_2.png" id="17_48oko"]
+[ext_resource type="Texture2D" uid="uid://fvfgy7fqaona" path="res://sprites/enemies/caveman/caveman_run_left/caveman_run_left_3.png" id="18_i0c8g"]
+[ext_resource type="Texture2D" uid="uid://k6nn6l3wbcpc" path="res://sprites/enemies/caveman/caveman_stun_l/caveman_stun_l_0.png" id="19_i7nql"]
+[ext_resource type="Texture2D" uid="uid://1mlovyoudn17" path="res://sprites/enemies/caveman/caveman_stun_l/caveman_stun_l_1.png" id="20_1xj3k"]
+[ext_resource type="Texture2D" uid="uid://dskyw63rho3wl" path="res://sprites/enemies/caveman/caveman_stun_l/caveman_stun_l_2.png" id="21_2m3l3"]
+[ext_resource type="Texture2D" uid="uid://bfkdse1vi3lmx" path="res://sprites/enemies/caveman/caveman_stun_l/caveman_stun_l_3.png" id="22_sqe4a"]
+[ext_resource type="Texture2D" uid="uid://dvrnmyiek3wn" path="res://sprites/enemies/caveman/caveman_stun_l/caveman_stun_l_4.png" id="23_5ujx3"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="24_dgsoq"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="25_pee01"]
 
-[node name="Caveman" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_npye2"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_si8um")
+}],
+"loop": true,
+"name": &"caveman_bounce_l",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_o8x3r")
+}],
+"loop": true,
+"name": &"caveman_d_held_l",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_gy6s6")
+}],
+"loop": true,
+"name": &"caveman_dead_l",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_l63w0")
+}],
+"loop": true,
+"name": &"caveman_die_ll",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_lqipr")
+}],
+"loop": true,
+"name": &"caveman_die_lr",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_ubcqj")
+}],
+"loop": true,
+"name": &"caveman_fall_l",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_qsf3l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_b2n0r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_tqpkh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_db18u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_cqguf")
+}],
+"loop": true,
+"name": &"caveman_held_l",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_jsi8b")
+}],
+"loop": true,
+"name": &"caveman_left",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_s2wyo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_gal8p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_48oko")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_i0c8g")
+}],
+"loop": true,
+"name": &"caveman_run_left",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_i7nql")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_1xj3k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_2m3l3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_sqe4a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_5ujx3")
+}],
+"loop": true,
+"name": &"caveman_stun_l",
+"speed": 30.0
+}]
+
+[sub_resource type="Resource" id="Resource_si8um"]
+script = ExtResource("25_pee01")
+origin = Vector2(0, 0)
+containing_box = Rect2(1, 0, 14, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_o8x3r"]
+script = ExtResource("25_pee01")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 1, 16, 15)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_gy6s6"]
+script = ExtResource("25_pee01")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 2, 16, 12)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_l63w0"]
+script = ExtResource("25_pee01")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 2, 16, 12)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_lqipr"]
+script = ExtResource("25_pee01")
+origin = Vector2(0, 0)
+containing_box = Rect2(1, 0, 14, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_ubcqj"]
+script = ExtResource("25_pee01")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 15, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_qsf3l"]
+script = ExtResource("25_pee01")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 7, 16, 9)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_b2n0r"]
+script = ExtResource("25_pee01")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_tqpkh"]
+script = ExtResource("25_pee01")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 1, 16, 15)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_db18u"]
+script = ExtResource("25_pee01")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 4, 16, 12)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cqguf"]
+size = Vector2(14, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jsi8b"]
+size = Vector2(28, 32)
+
+[node name="Caveman" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -60
 script = ExtResource("1_6b31n")
+animated_sprite_node = NodePath("Sprite")
 object_name = "caveman"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_npye2")]
+sprite_frames = SubResource("SpriteFrames_npye2")
+autoplay = "caveman_left"
+centered = false
+script = ExtResource("24_dgsoq")
+sprite_info = Dictionary[StringName, ExtResource("25_pee01")]({
+&"caveman_bounce_l": SubResource("Resource_gy6s6"),
+&"caveman_d_held_l": SubResource("Resource_db18u"),
+&"caveman_dead_l": SubResource("Resource_qsf3l"),
+&"caveman_die_ll": SubResource("Resource_lqipr"),
+&"caveman_die_lr": SubResource("Resource_ubcqj"),
+&"caveman_fall_l": SubResource("Resource_l63w0"),
+&"caveman_held_l": SubResource("Resource_tqpkh"),
+&"caveman_left": SubResource("Resource_si8um"),
+&"caveman_run_left": SubResource("Resource_b2n0r"),
+&"caveman_stun_l": SubResource("Resource_o8x3r")
+})
+default_animation = &"caveman_left"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_cqguf")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_jsi8b")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

@@ -1,11 +1,140 @@
-[gd_scene load_steps=3 format=3 uid="uid://bv00yotvshpk4"]
+[gd_scene load_steps=22 format=4 uid="uid://bv00yotvshpk4"]
 
 [ext_resource type="Script" uid="uid://bb0apgctkmsvw" path="res://objects/items/flare/flare.gd" id="1_kgxyb"]
 [ext_resource type="PackedScene" uid="uid://w6jxjbgfs6na" path="res://components/drawing/draw_circle/dark_level_circle.tscn" id="2_hsv7l"]
+[ext_resource type="Shader" uid="uid://d1iyh2el2fl0l" path="res://resources/mask.gdshader" id="3_lryyf"]
+[ext_resource type="Texture2D" uid="uid://c1ka78isguv06" path="res://components/drawing/draw_circle/circle_r16.png" id="4_kyeku"]
+[ext_resource type="Texture2D" uid="uid://bkxksvh8l3or2" path="res://components/drawing/draw_circle/circle_r32.png" id="5_7uvvo"]
+[ext_resource type="Texture2D" uid="uid://cnpx2owt8tmkt" path="res://components/drawing/draw_circle/circle_r64.png" id="6_iwmpg"]
+[ext_resource type="Texture2D" uid="uid://4xv4ky4kkda2" path="res://components/drawing/draw_circle/circle_r96.png" id="7_cw6ko"]
+[ext_resource type="Script" uid="uid://cht4oclnookax" path="res://components/drawing/draw_circle/dark_level_circle.gd" id="8_nxska"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="9_nxska"]
+[ext_resource type="Texture2D" uid="uid://xl22nkdn84is" path="res://sprites/other/intro/flare/flare_0.png" id="10_als37"]
+[ext_resource type="Texture2D" uid="uid://b35llggffeeax" path="res://sprites/other/intro/flare/flare_1.png" id="11_of2p6"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="12_2td2q"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="13_tx1cy"]
 
-[node name="Flare" type="StaticBody2D"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ttmrw"]
+shader = ExtResource("3_lryyf")
+shader_parameter/color = Color(0, 0, 0, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n62uf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_kyeku")
+}],
+"loop": true,
+"name": &"16",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_7uvvo")
+}],
+"loop": true,
+"name": &"32",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_iwmpg")
+}],
+"loop": true,
+"name": &"64",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_cw6ko")
+}],
+"loop": true,
+"name": &"96",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nxska"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_als37")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_of2p6")
+}],
+"loop": true,
+"name": &"flare",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_als37"]
+data = {
+"data": PackedByteArray("/0BAAP9AQAD/QEAA/0BA//9AQP//QEAA/0BAAP9AQAD/QEAA/0BA//9AQP//wMD//8DA//9AQP//QED//0BAAP9AQAD/QED//8DA////QP///0D//8DA//9AQP//QEAA/0BA///AwP///0D//////////////0D//8DA//9AQP//QED//8DA////QP//////////////QP//wMD//0BA//9AQAD/QED//8DA////QP///0D//8DA//9AQP//QEAA/0BAAP9AQP//QED//8DA///AwP//QED//0BA//9AQAD/QEAA/0BAAP9AQAD/QED//0BA//9AQAD/QEAA/0BAAA=="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Image" id="Image_of2p6"]
+data = {
+"data": PackedByteArray("/0BAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAP9AQAD/QED//0BA//9AQAD/QEAA/0BAAP9AQAD/QEAA/0BA///AwP//wMD//0BA//9AQAD/QEAA/0BAAP9AQP//wMD/////////////wMD//0BA//9AQAD/QEAA/0BA///AwP/////////////AwP//QED//0BAAP9AQAD/QEAA/0BA///AwP//wMD//0BA//9AQAD/QEAA/0BAAP9AQAD/QEAA/0BA//9AQP//QEAA/0BAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAA=="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Resource" id="Resource_2td2q"]
+script = ExtResource("13_tx1cy")
+origin = Vector2(4, 4)
+containing_box = Rect2(0, 0, 8, 8)
+precise = true
+images = Array[Image]([SubResource("Image_als37"), SubResource("Image_of2p6")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tx1cy"]
+size = Vector2(8, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_roli2"]
+size = Vector2(16, 16)
+
+[node name="Flare" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -30
 script = ExtResource("1_kgxyb")
+animated_sprite_node = NodePath("Sprite")
 object_name = "flare"
 
-[node name="DarkLevelCircle" parent="." instance=ExtResource("2_hsv7l")]
+[node name="DarkLevelCircle" type="AnimatedSprite2D" parent="." instance=ExtResource("2_hsv7l")]
+visible = false
+z_index = 10
+z_as_relative = false
+material = SubResource("ShaderMaterial_ttmrw")
+sprite_frames = SubResource("SpriteFrames_n62uf")
+animation = &"16"
+script = ExtResource("8_nxska")
 radius = 96
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("9_nxska")]
+sprite_frames = SubResource("SpriteFrames_nxska")
+autoplay = "flare"
+centered = false
+offset = Vector2(-4, -4)
+script = ExtResource("12_2td2q")
+sprite_info = Dictionary[StringName, ExtResource("13_tx1cy")]({
+&"flare": SubResource("Resource_2td2q")
+})
+default_animation = &"flare"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_tx1cy")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+shape = SubResource("RectangleShape2D_roli2")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

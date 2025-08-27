@@ -1,11 +1,135 @@
-[gd_scene load_steps=3 format=3 uid="uid://utxug1o4cr87"]
+[gd_scene load_steps=23 format=3 uid="uid://utxug1o4cr87"]
 
 [ext_resource type="Script" uid="uid://g4uv7akg7dqf" path="res://objects/traps/smash_trap_lit/smash_trap_lit.gd" id="1_ufpoj"]
 [ext_resource type="PackedScene" uid="uid://w6jxjbgfs6na" path="res://components/drawing/draw_circle/dark_level_circle.tscn" id="2_2cw15"]
+[ext_resource type="Shader" uid="uid://d1iyh2el2fl0l" path="res://resources/mask.gdshader" id="3_atlff"]
+[ext_resource type="Texture2D" uid="uid://c1ka78isguv06" path="res://components/drawing/draw_circle/circle_r16.png" id="4_60ena"]
+[ext_resource type="Texture2D" uid="uid://bkxksvh8l3or2" path="res://components/drawing/draw_circle/circle_r32.png" id="5_hp7nt"]
+[ext_resource type="Texture2D" uid="uid://cnpx2owt8tmkt" path="res://components/drawing/draw_circle/circle_r64.png" id="6_avgnn"]
+[ext_resource type="Texture2D" uid="uid://4xv4ky4kkda2" path="res://components/drawing/draw_circle/circle_r96.png" id="7_nm4jl"]
+[ext_resource type="Script" uid="uid://cht4oclnookax" path="res://components/drawing/draw_circle/dark_level_circle.gd" id="8_k6a4b"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="9_ytjlb"]
+[ext_resource type="Texture2D" uid="uid://bk5ky0fjx5frg" path="res://sprites/traps/smash_trap_lit/smash_trap_lit_0.png" id="10_1p1fl"]
+[ext_resource type="Texture2D" uid="uid://bdutfrxhv6llk" path="res://sprites/traps/smash_trap_lit/smash_trap_lit_1.png" id="11_dgl8i"]
+[ext_resource type="Texture2D" uid="uid://ckv5rnrrtedxs" path="res://sprites/traps/smash_trap_lit/smash_trap_lit_2.png" id="12_o33dm"]
+[ext_resource type="Texture2D" uid="uid://cdspxdaj6l0qt" path="res://sprites/traps/smash_trap_lit/smash_trap_lit_3.png" id="13_w2bmf"]
+[ext_resource type="Texture2D" uid="uid://coje7u6or3a72" path="res://sprites/traps/smash_trap_lit/smash_trap_lit_4.png" id="14_8b4ey"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="15_nh38g"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="16_q5s0g"]
 
-[node name="SmashTrapLit" type="StaticBody2D"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ttmrw"]
+shader = ExtResource("3_atlff")
+shader_parameter/color = Color(0, 0, 0, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n62uf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_60ena")
+}],
+"loop": true,
+"name": &"16",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_hp7nt")
+}],
+"loop": true,
+"name": &"32",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_avgnn")
+}],
+"loop": true,
+"name": &"64",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_nm4jl")
+}],
+"loop": true,
+"name": &"96",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ytjlb"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_1p1fl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_dgl8i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_o33dm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_w2bmf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_8b4ey")
+}],
+"loop": true,
+"name": &"smash_trap_lit",
+"speed": 30.0
+}]
+
+[sub_resource type="Resource" id="Resource_1p1fl"]
+script = ExtResource("16_q5s0g")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dgl8i"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o33dm"]
+size = Vector2(32, 32)
+
+[node name="SmashTrapLit" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -60
 script = ExtResource("1_ufpoj")
+animated_sprite_node = NodePath("Sprite")
 object_name = "smash_trap_lit"
 
-[node name="DarkLevelCircle" parent="." instance=ExtResource("2_2cw15")]
+[node name="DarkLevelCircle" type="AnimatedSprite2D" parent="." instance=ExtResource("2_2cw15")]
+visible = false
+z_index = 10
+z_as_relative = false
+material = SubResource("ShaderMaterial_ttmrw")
+sprite_frames = SubResource("SpriteFrames_n62uf")
+animation = &"16"
+script = ExtResource("8_k6a4b")
 offset_value = Vector2(8, 8)
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("9_ytjlb")]
+sprite_frames = SubResource("SpriteFrames_ytjlb")
+autoplay = "smash_trap_lit"
+centered = false
+script = ExtResource("15_nh38g")
+sprite_info = Dictionary[StringName, ExtResource("16_q5s0g")]({
+&"smash_trap_lit": SubResource("Resource_1p1fl")
+})
+default_animation = &"smash_trap_lit"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_dgl8i")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_o33dm")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

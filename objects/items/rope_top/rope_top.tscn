@@ -1,7 +1,71 @@
-[gd_scene load_steps=2 format=3 uid="uid://b0e2spw8cbuik"]
+[gd_scene load_steps=11 format=4 uid="uid://b0e2spw8cbuik"]
 
 [ext_resource type="Script" uid="uid://dyukt5o7vklng" path="res://objects/items/rope_top/rope_top.gd" id="1_tlk1d"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_aik8l"]
+[ext_resource type="Texture2D" uid="uid://c2efthti27sc7" path="res://sprites/items/weapons/rope_top/rope_top_0.png" id="3_heli8"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_rm0w5"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_m3wnp"]
 
-[node name="RopeTop" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_aik8l"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_heli8")
+}],
+"loop": true,
+"name": &"rope_top",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_heli8"]
+data = {
+"data": PackedByteArray("EgoIABIKCAASCggAEgoI/xIKCP8SCggAEgoIABIKCAASCggAEgoIABIKCP/Ieiz/yHos/xIKCP8SCggAEgoIABIKCAASCgj/yHos/xIKCP8SCgj/jlkl/xIKCP8SCggAEgoI/45ZJf8SCgj//////8DAwP8SCgj/jlkl/xIKCP8SCgj/Yy8d/xIKCP9AQED/QEBA/xIKCP9jLx3/EgoI/xIKCP8SCgj/Yy8d/2MvHf8SCgj/Yy8d/xIKCP8SCggAEgoIABIKCP8SCgj/EgoI/2MvHf8SCgj/EgoIABIKCAASCggAEgoIABIKCAASCgj/jlkl/xIKCP8SCggAEgoIAA=="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Resource" id="Resource_rm0w5"]
+script = ExtResource("5_m3wnp")
+origin = Vector2(4, 4)
+containing_box = Rect2(0, 0, 8, 8)
+precise = true
+images = Array[Image]([SubResource("Image_heli8")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m3wnp"]
+size = Vector2(8, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nade7"]
+size = Vector2(16, 16)
+
+[node name="RopeTop" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -200
 script = ExtResource("1_tlk1d")
+animated_sprite_node = NodePath("Sprite")
 object_name = "rope_top"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_aik8l")]
+sprite_frames = SubResource("SpriteFrames_aik8l")
+autoplay = "rope_top"
+centered = false
+offset = Vector2(-4, -4)
+script = ExtResource("4_rm0w5")
+sprite_info = Dictionary[StringName, ExtResource("5_m3wnp")]({
+&"rope_top": SubResource("Resource_rm0w5")
+})
+default_animation = &"rope_top"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_m3wnp")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+shape = SubResource("RectangleShape2D_nade7")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

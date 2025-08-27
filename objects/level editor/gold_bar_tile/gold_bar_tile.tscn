@@ -1,7 +1,63 @@
-[gd_scene load_steps=2 format=3 uid="uid://b7xbxw201k0ul"]
+[gd_scene load_steps=10 format=3 uid="uid://b7xbxw201k0ul"]
 
 [ext_resource type="Script" uid="uid://nwlg2s6pejp5" path="res://objects/level editor/gold_bar_tile/gold_bar_tile.gd" id="1_x0j8m"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_riy7h"]
+[ext_resource type="Texture2D" uid="uid://dovtf50r1nwff" path="res://sprites/level editor/gold_bar_tile/gold_bar_tile_0.png" id="3_wncyh"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_j83y0"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_06tcf"]
 
-[node name="GoldBarTile" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_riy7h"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_wncyh")
+}],
+"loop": true,
+"name": &"gold_bar_tile",
+"speed": 30.0
+}]
+
+[sub_resource type="Resource" id="Resource_wncyh"]
+script = ExtResource("5_06tcf")
+origin = Vector2(0, 0)
+containing_box = Rect2(4, 11, 8, 5)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j83y0"]
+size = Vector2(8, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_06tcf"]
+size = Vector2(16, 10)
+
+[node name="GoldBarTile" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -100
 script = ExtResource("1_x0j8m")
+animated_sprite_node = NodePath("Sprite")
 object_name = "gold_bar_tile"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_riy7h")]
+sprite_frames = SubResource("SpriteFrames_riy7h")
+autoplay = "gold_bar_tile"
+centered = false
+script = ExtResource("4_j83y0")
+sprite_info = Dictionary[StringName, ExtResource("5_06tcf")]({
+&"gold_bar_tile": SubResource("Resource_wncyh")
+})
+default_animation = &"gold_bar_tile"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 13.5)
+shape = SubResource("RectangleShape2D_j83y0")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 13.5)
+shape = SubResource("RectangleShape2D_06tcf")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

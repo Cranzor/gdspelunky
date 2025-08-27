@@ -1,7 +1,63 @@
-[gd_scene load_steps=2 format=3 uid="uid://dj8fhf0oo2cpo"]
+[gd_scene load_steps=10 format=3 uid="uid://dj8fhf0oo2cpo"]
 
 [ext_resource type="Script" uid="uid://cx53wit0i7sjp" path="res://objects/blocks/xoc_block/xoc_block.gd" id="1_6whhx"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_s1ivm"]
+[ext_resource type="Texture2D" uid="uid://xr1hu81ymgc1" path="res://sprites/blocks/gold/gold_block/gold_block_0.png" id="3_jpvv2"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_jtrii"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_c1wub"]
 
-[node name="XocBlock" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_s1ivm"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_jpvv2")
+}],
+"loop": true,
+"name": &"gold_block",
+"speed": 30.0
+}]
+
+[sub_resource type="Resource" id="Resource_jpvv2"]
+script = ExtResource("5_c1wub")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jtrii"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c1wub"]
+size = Vector2(32, 32)
+
+[node name="XocBlock" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -110
 script = ExtResource("1_6whhx")
+animated_sprite_node = NodePath("Sprite")
 object_name = "xoc_block"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_s1ivm")]
+sprite_frames = SubResource("SpriteFrames_s1ivm")
+autoplay = "gold_block"
+centered = false
+script = ExtResource("4_jtrii")
+sprite_info = Dictionary[StringName, ExtResource("5_c1wub")]({
+&"gold_block": SubResource("Resource_jpvv2")
+})
+default_animation = &"gold_block"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_jtrii")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_c1wub")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

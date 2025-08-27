@@ -1,7 +1,301 @@
-[gd_scene load_steps=2 format=3 uid="uid://cenfl0atfq5oa"]
+[gd_scene load_steps=47 format=3 uid="uid://cenfl0atfq5oa"]
 
 [ext_resource type="Script" uid="uid://d1ypy8wt5l2sl" path="res://objects/enemies/yeti/yeti.gd" id="1_qptr0"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_wotf3"]
+[ext_resource type="Texture2D" uid="uid://briuqmlccppwk" path="res://sprites/enemies/yeti/yeti_bounce_l/yeti_bounce_l_0.png" id="3_jd5hp"]
+[ext_resource type="Texture2D" uid="uid://b2yj2v2j8n02b" path="res://sprites/enemies/yeti/yeti_d_held_l/yeti_d_held_l_0.png" id="4_n5i8j"]
+[ext_resource type="Texture2D" uid="uid://6niuxmqgsyx0" path="res://sprites/enemies/yeti/yeti_dead_l/yeti_dead_l_0.png" id="5_5pike"]
+[ext_resource type="Texture2D" uid="uid://bwc73bnof0ceq" path="res://sprites/enemies/yeti/yeti_die_ll/yeti_die_ll_0.png" id="6_aar82"]
+[ext_resource type="Texture2D" uid="uid://cn0tpnltlp8yw" path="res://sprites/enemies/yeti/yeti_die_lr/yeti_die_lr_0.png" id="7_e631q"]
+[ext_resource type="Texture2D" uid="uid://dd8p4p2u77i56" path="res://sprites/enemies/yeti/yeti_fall_l/yeti_fall_l_0.png" id="8_r0l7y"]
+[ext_resource type="Texture2D" uid="uid://bqkj0koqqi2iu" path="res://sprites/enemies/yeti/yeti_held_l/yeti_held_l_0.png" id="9_ebaye"]
+[ext_resource type="Texture2D" uid="uid://chp0bmrq37rjw" path="res://sprites/enemies/yeti/yeti_held_l/yeti_held_l_1.png" id="10_l2aym"]
+[ext_resource type="Texture2D" uid="uid://df3lfakkynvix" path="res://sprites/enemies/yeti/yeti_held_l/yeti_held_l_2.png" id="11_e5vdm"]
+[ext_resource type="Texture2D" uid="uid://cfkpp8vnu652t" path="res://sprites/enemies/yeti/yeti_held_l/yeti_held_l_3.png" id="12_20dv8"]
+[ext_resource type="Texture2D" uid="uid://6w1vi5igd4yo" path="res://sprites/enemies/yeti/yeti_held_l/yeti_held_l_4.png" id="13_encle"]
+[ext_resource type="Texture2D" uid="uid://cc80ffrvkibcp" path="res://sprites/enemies/yeti/yeti_left/yeti_left_0.png" id="14_xr5yc"]
+[ext_resource type="Texture2D" uid="uid://b8mdt03nnbi6c" path="res://sprites/enemies/yeti/yeti_run_left/yeti_run_left_0.png" id="15_vohso"]
+[ext_resource type="Texture2D" uid="uid://ca5qo8uup0y4s" path="res://sprites/enemies/yeti/yeti_run_left/yeti_run_left_1.png" id="16_bxerv"]
+[ext_resource type="Texture2D" uid="uid://beydvkr82e23j" path="res://sprites/enemies/yeti/yeti_run_left/yeti_run_left_2.png" id="17_kynm7"]
+[ext_resource type="Texture2D" uid="uid://8r3wtwtmfhwo" path="res://sprites/enemies/yeti/yeti_run_left/yeti_run_left_3.png" id="18_2q1p7"]
+[ext_resource type="Texture2D" uid="uid://bjno7diyva0c3" path="res://sprites/enemies/yeti/yeti_stun_l/yeti_stun_l_0.png" id="19_yom3q"]
+[ext_resource type="Texture2D" uid="uid://by8s08ykukmmy" path="res://sprites/enemies/yeti/yeti_stun_l/yeti_stun_l_1.png" id="20_fddt4"]
+[ext_resource type="Texture2D" uid="uid://keh42ipxrha4" path="res://sprites/enemies/yeti/yeti_stun_l/yeti_stun_l_2.png" id="21_80q2n"]
+[ext_resource type="Texture2D" uid="uid://clmv7t8n0m6e0" path="res://sprites/enemies/yeti/yeti_stun_l/yeti_stun_l_3.png" id="22_wku2v"]
+[ext_resource type="Texture2D" uid="uid://bmn4w6lgqmbit" path="res://sprites/enemies/yeti/yeti_stun_l/yeti_stun_l_4.png" id="23_7hgb3"]
+[ext_resource type="Texture2D" uid="uid://bmwhck6be4rou" path="res://sprites/enemies/yeti/yeti_throw_l/yeti_throw_l_0.png" id="24_f6873"]
+[ext_resource type="Texture2D" uid="uid://ytjepvp4gtqe" path="res://sprites/enemies/yeti/yeti_throw_l/yeti_throw_l_1.png" id="25_ic1ki"]
+[ext_resource type="Texture2D" uid="uid://cmgkmwk80eck" path="res://sprites/enemies/yeti/yeti_throw_l/yeti_throw_l_2.png" id="26_esi0c"]
+[ext_resource type="Texture2D" uid="uid://b3d7pio2epv3f" path="res://sprites/enemies/yeti/yeti_throw_l/yeti_throw_l_3.png" id="27_21b7v"]
+[ext_resource type="Texture2D" uid="uid://dnx0rriselx4g" path="res://sprites/enemies/yeti/yeti_throw_l/yeti_throw_l_4.png" id="28_eaxxq"]
+[ext_resource type="Texture2D" uid="uid://c2i2ruod0wtje" path="res://sprites/enemies/yeti/yeti_throw_l/yeti_throw_l_5.png" id="29_ituuh"]
+[ext_resource type="Texture2D" uid="uid://8ynr3t3x4dq8" path="res://sprites/enemies/yeti/yeti_throw_l/yeti_throw_l_6.png" id="30_bcvuo"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="31_dh3vo"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="32_cxur3"]
 
-[node name="Yeti" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_wotf3"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_jd5hp")
+}],
+"loop": true,
+"name": &"yeti_bounce_l",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_n5i8j")
+}],
+"loop": true,
+"name": &"yeti_d_held_l",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_5pike")
+}],
+"loop": true,
+"name": &"yeti_dead_l",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_aar82")
+}],
+"loop": true,
+"name": &"yeti_die_ll",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_e631q")
+}],
+"loop": true,
+"name": &"yeti_die_lr",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_r0l7y")
+}],
+"loop": true,
+"name": &"yeti_fall_l",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_ebaye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_l2aym")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_e5vdm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_20dv8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_encle")
+}],
+"loop": true,
+"name": &"yeti_held_l",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_xr5yc")
+}],
+"loop": true,
+"name": &"yeti_left",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_vohso")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_bxerv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_kynm7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_2q1p7")
+}],
+"loop": true,
+"name": &"yeti_run_left",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_yom3q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_fddt4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_80q2n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_wku2v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_7hgb3")
+}],
+"loop": true,
+"name": &"yeti_stun_l",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_f6873")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_ic1ki")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_esi0c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_21b7v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_eaxxq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_ituuh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_bcvuo")
+}],
+"loop": true,
+"name": &"yeti_throw_l",
+"speed": 30.0
+}]
+
+[sub_resource type="Resource" id="Resource_jd5hp"]
+script = ExtResource("32_cxur3")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_n5i8j"]
+script = ExtResource("32_cxur3")
+origin = Vector2(4, 0)
+containing_box = Rect2(4, 0, 20, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_5pike"]
+script = ExtResource("32_cxur3")
+origin = Vector2(4, 0)
+containing_box = Rect2(2, 0, 20, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_aar82"]
+script = ExtResource("32_cxur3")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 2, 16, 14)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_e631q"]
+script = ExtResource("32_cxur3")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 1, 16, 12)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_r0l7y"]
+script = ExtResource("32_cxur3")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_ebaye"]
+script = ExtResource("32_cxur3")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_l2aym"]
+script = ExtResource("32_cxur3")
+origin = Vector2(4, 0)
+containing_box = Rect2(2, 7, 20, 9)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_e5vdm"]
+script = ExtResource("32_cxur3")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_20dv8"]
+script = ExtResource("32_cxur3")
+origin = Vector2(4, 0)
+containing_box = Rect2(4, 0, 16, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_encle"]
+script = ExtResource("32_cxur3")
+origin = Vector2(4, 0)
+containing_box = Rect2(4, 3, 16, 13)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xr5yc"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vohso"]
+size = Vector2(32, 32)
+
+[node name="Yeti" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -60
 script = ExtResource("1_qptr0")
+animated_sprite_node = NodePath("Sprite")
 object_name = "yeti"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_wotf3")]
+sprite_frames = SubResource("SpriteFrames_wotf3")
+autoplay = "yeti_left"
+centered = false
+script = ExtResource("31_dh3vo")
+sprite_info = Dictionary[StringName, ExtResource("32_cxur3")]({
+&"yeti_bounce_l": SubResource("Resource_aar82"),
+&"yeti_d_held_l": SubResource("Resource_encle"),
+&"yeti_dead_l": SubResource("Resource_l2aym"),
+&"yeti_die_ll": SubResource("Resource_r0l7y"),
+&"yeti_die_lr": SubResource("Resource_ebaye"),
+&"yeti_fall_l": SubResource("Resource_e631q"),
+&"yeti_held_l": SubResource("Resource_20dv8"),
+&"yeti_left": SubResource("Resource_jd5hp"),
+&"yeti_run_left": SubResource("Resource_e5vdm"),
+&"yeti_stun_l": SubResource("Resource_5pike"),
+&"yeti_throw_l": SubResource("Resource_n5i8j")
+})
+default_animation = &"yeti_left"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_xr5yc")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_vohso")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

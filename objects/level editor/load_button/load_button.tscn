@@ -1,7 +1,72 @@
-[gd_scene load_steps=2 format=3 uid="uid://dpki0wfufn3i2"]
+[gd_scene load_steps=11 format=4 uid="uid://dpki0wfufn3i2"]
 
 [ext_resource type="Script" uid="uid://8x5rot15anx5" path="res://objects/level editor/load_button/load_button.gd" id="1_wxm3e"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_v0pbx"]
+[ext_resource type="Texture2D" uid="uid://dns3ifqp648s6" path="res://sprites/other/load_button/load_button_0.png" id="3_ecm7s"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_jx5a0"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_l33i1"]
 
-[node name="LoadButton" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_v0pbx"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ecm7s")
+}],
+"loop": true,
+"name": &"load_button",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_ecm7s"]
+data = {
+"data": PackedByteArray("8Gwe5qNI5qNI5qNI5qNI5qNI5qNI5qNI5qNI5qNI5qNI5qNI5qNI5qNI5qNI5qNI5qNI5qNI5qNI5qNI5qNI5qNI5qNI5qNI5qNI5qNI5qNI5qNI5qNI5qNI8GweYy8djlkl8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8GwejlklYy8djlkl8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8GwejlklYy8djlkl8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8GwejlklYy8djlkl8Gwe8Gwe8Gwe////////8Gwe8Gwe8Gwe8Gwe////////////8Gwe8Gwe8Gwe////////////8Gwe8Gwe////////////////8Gwe8Gwe8Gwe8Gwe8GwejlklYy8djlkl8Gwe8Gwe8Gwe////////8Gwe8Gwe8Gwe////////////////////8Gwe////////////////////8Gwe////////////////////8Gwe8Gwe8Gwe8GwejlklYy8djlkl8Gwe8Gwe8Gwe////////8Gwe8Gwe8Gwe////////Yy8d////////8Gwe////////Yy8d////////8Gwe////////Yy8d////////8Gwe8Gwe8Gwe8GwejlklYy8djlkl8Gwe8Gwe8Gwe////////8Gwe8Gwe8Gwe////////8Gwe////////8Gwe////////8Gwe////////8Gwe////////8Gwe////////8Gwe8Gwe8Gwe8GwejlklYy8djlkl8Gwe8Gwe8Gwe////////8Gwe8Gwe8Gwe////////8Gwe////////8Gwe////////////////////8Gwe////////8Gwe////////8Gwe8Gwe8Gwe8GwejlklYy8djlkl8Gwe8Gwe8Gwe////////8Gwe8Gwe8Gwe////////8Gwe////////8Gwe////////////////////8Gwe////////8Gwe////////8Gwe8Gwe8Gwe8GwejlklYy8djlkl8Gwe8Gwe8Gwe////////////////8Gwe////////////////////8Gwe////////Yy8d////////8Gwe////////////////////8Gwe8Gwe8Gwe8GwejlklYy8djlkl8Gwe8Gwe8Gwe////////////////8GweYy8d////////////Yy8d8Gwe////////8Gwe////////8Gwe////////////////Yy8d8Gwe8Gwe8Gwe8GwejlklYy8djlkl8Gwe8Gwe8GweYy8dYy8dYy8dYy8d8Gwe8GweYy8dYy8dYy8d8Gwe8GweYy8dYy8d8GweYy8dYy8d8GweYy8dYy8dYy8dYy8d8Gwe8Gwe8Gwe8Gwe8GwejlklYy8djlkl8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8GwejlklYy8djlkl8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8GwejlklYy8dYy8dYy8dYy8dYy8dYy8dYy8dYy8dYy8dYy8dYy8dYy8dYy8dYy8dYy8dYy8dYy8dYy8dYy8dYy8dYy8dYy8dYy8dYy8dYy8dYy8dYy8dYy8dYy8dYy8dYy8dYy8dYy8d"),
+"format": "RGB8",
+"height": 16,
+"mipmaps": false,
+"width": 32
+}
+
+[sub_resource type="Resource" id="Resource_jx5a0"]
+script = ExtResource("5_l33i1")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 32, 16)
+precise = true
+images = Array[Image]([SubResource("Image_ecm7s")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l33i1"]
+size = Vector2(32, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xw66w"]
+size = Vector2(64, 32)
+
+[node name="LoadButton" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -1
 script = ExtResource("1_wxm3e")
+animated_sprite_node = NodePath("Sprite")
 object_name = "load_button"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_v0pbx")]
+sprite_frames = SubResource("SpriteFrames_v0pbx")
+autoplay = "load_button"
+centered = false
+script = ExtResource("4_jx5a0")
+sprite_info = Dictionary[StringName, ExtResource("5_l33i1")]({
+&"load_button": SubResource("Resource_jx5a0")
+})
+default_animation = &"load_button"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(16, 8)
+shape = SubResource("RectangleShape2D_l33i1")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(16, 8)
+shape = SubResource("RectangleShape2D_xw66w")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

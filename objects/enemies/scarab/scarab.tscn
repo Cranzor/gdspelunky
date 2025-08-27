@@ -1,12 +1,128 @@
-[gd_scene load_steps=3 format=3 uid="uid://dhdtsgvpsyeuw"]
+[gd_scene load_steps=21 format=3 uid="uid://dhdtsgvpsyeuw"]
 
 [ext_resource type="Script" uid="uid://dl4tj2gv3jxc6" path="res://objects/enemies/scarab/scarab.gd" id="1_tx2hp"]
 [ext_resource type="PackedScene" uid="uid://w6jxjbgfs6na" path="res://components/drawing/draw_circle/dark_level_circle.tscn" id="2_8h5vu"]
+[ext_resource type="Shader" uid="uid://d1iyh2el2fl0l" path="res://resources/mask.gdshader" id="3_nw77n"]
+[ext_resource type="Texture2D" uid="uid://c1ka78isguv06" path="res://components/drawing/draw_circle/circle_r16.png" id="4_mfutb"]
+[ext_resource type="Texture2D" uid="uid://bkxksvh8l3or2" path="res://components/drawing/draw_circle/circle_r32.png" id="5_8431c"]
+[ext_resource type="Texture2D" uid="uid://cnpx2owt8tmkt" path="res://components/drawing/draw_circle/circle_r64.png" id="6_k1thn"]
+[ext_resource type="Texture2D" uid="uid://4xv4ky4kkda2" path="res://components/drawing/draw_circle/circle_r96.png" id="7_2hqm1"]
+[ext_resource type="Script" uid="uid://cht4oclnookax" path="res://components/drawing/draw_circle/dark_level_circle.gd" id="8_70aqs"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="9_bry47"]
+[ext_resource type="Texture2D" uid="uid://ubsr182i11gt" path="res://sprites/items/treasures/scarab/scarab_0.png" id="10_fsnvs"]
+[ext_resource type="Texture2D" uid="uid://dahg6ni1ygme" path="res://sprites/items/treasures/scarab/scarab_1.png" id="11_u24ia"]
+[ext_resource type="Texture2D" uid="uid://hvlgwgyxfn34" path="res://sprites/items/treasures/scarab/scarab_2.png" id="12_6u8m4"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="13_6yk53"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="14_trmij"]
 
-[node name="Scarab" type="StaticBody2D"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ttmrw"]
+shader = ExtResource("3_nw77n")
+shader_parameter/color = Color(0, 0, 0, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n62uf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_mfutb")
+}],
+"loop": true,
+"name": &"16",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_8431c")
+}],
+"loop": true,
+"name": &"32",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_k1thn")
+}],
+"loop": true,
+"name": &"64",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_2hqm1")
+}],
+"loop": true,
+"name": &"96",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bry47"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_fsnvs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_u24ia")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_6u8m4")
+}],
+"loop": true,
+"name": &"scarab",
+"speed": 30.0
+}]
+
+[sub_resource type="Resource" id="Resource_fsnvs"]
+script = ExtResource("14_trmij")
+origin = Vector2(0, 0)
+containing_box = Rect2(1, 2, 13, 11)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u24ia"]
+size = Vector2(13, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6u8m4"]
+size = Vector2(26, 22)
+
+[node name="Scarab" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -40
 script = ExtResource("1_tx2hp")
+animated_sprite_node = NodePath("Sprite")
 object_name = "scarab"
 
-[node name="DarkLevelCircle" parent="." instance=ExtResource("2_8h5vu")]
+[node name="DarkLevelCircle" type="AnimatedSprite2D" parent="." instance=ExtResource("2_8h5vu")]
+visible = false
+z_index = 10
+z_as_relative = false
+material = SubResource("ShaderMaterial_ttmrw")
+sprite_frames = SubResource("SpriteFrames_n62uf")
+animation = &"16"
+script = ExtResource("8_70aqs")
 radius = 16
 offset_value = Vector2(8, 8)
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("9_bry47")]
+sprite_frames = SubResource("SpriteFrames_bry47")
+autoplay = "scarab"
+centered = false
+script = ExtResource("13_6yk53")
+sprite_info = Dictionary[StringName, ExtResource("14_trmij")]({
+&"scarab": SubResource("Resource_fsnvs")
+})
+default_animation = &"scarab"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(7.5, 7.5)
+shape = SubResource("RectangleShape2D_u24ia")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(7.5, 7.5)
+shape = SubResource("RectangleShape2D_6u8m4")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

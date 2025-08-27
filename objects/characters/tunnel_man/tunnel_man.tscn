@@ -1,7 +1,145 @@
-[gd_scene load_steps=2 format=3 uid="uid://c7c3ih447fd73"]
+[gd_scene load_steps=24 format=3 uid="uid://c7c3ih447fd73"]
 
 [ext_resource type="Script" uid="uid://dhp3wa5yuhegf" path="res://objects/characters/tunnel_man/tunnel_man.gd" id="1_ae3nh"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_w7ik8"]
+[ext_resource type="Texture2D" uid="uid://cqoa7yamvj0yl" path="res://sprites/character/damsel/damsel_run_l/damsel_run_l_0.png" id="3_8s536"]
+[ext_resource type="Texture2D" uid="uid://dwmcxeya8m82f" path="res://sprites/character/damsel/damsel_run_l/damsel_run_l_1.png" id="4_qtvno"]
+[ext_resource type="Texture2D" uid="uid://cn0g2tdts128f" path="res://sprites/character/damsel/damsel_run_l/damsel_run_l_2.png" id="5_wcsmg"]
+[ext_resource type="Texture2D" uid="uid://gh4gcjdv5p2h" path="res://sprites/character/damsel/damsel_run_l/damsel_run_l_3.png" id="6_jjivm"]
+[ext_resource type="Texture2D" uid="uid://c1sjye38k7j1o" path="res://sprites/character/main dude/run_left/run_left_0.png" id="7_hvyxf"]
+[ext_resource type="Texture2D" uid="uid://6upedmxmqrnl" path="res://sprites/character/main dude/run_left/run_left_1.png" id="8_r3nje"]
+[ext_resource type="Texture2D" uid="uid://d04goe7k0jvmn" path="res://sprites/character/main dude/run_left/run_left_2.png" id="9_8aqqk"]
+[ext_resource type="Texture2D" uid="uid://cr6p0f6tnk3h6" path="res://sprites/character/main dude/run_left/run_left_3.png" id="10_78wpe"]
+[ext_resource type="Texture2D" uid="uid://d1n0ivu5r1sr4" path="res://sprites/character/main dude/run_left/run_left_4.png" id="11_lay6g"]
+[ext_resource type="Texture2D" uid="uid://b00w6nbl4fc6" path="res://sprites/character/main dude/run_left/run_left_5.png" id="12_txtyo"]
+[ext_resource type="Texture2D" uid="uid://b44or3erubrta" path="res://sprites/character/tunnel_man_left/tunnel_man_left_0.png" id="13_0t6n2"]
+[ext_resource type="Texture2D" uid="uid://b22xk52rcqhad" path="res://sprites/character/tunnel_man_right/tunnel_man_right_0.png" id="14_5ltvu"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="15_k106m"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="16_ftfhc"]
 
-[node name="TunnelMan" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_w7ik8"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_8s536")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qtvno")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_wcsmg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_jjivm")
+}],
+"loop": true,
+"name": &"damsel_run_l",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_hvyxf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_r3nje")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_8aqqk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_78wpe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_lay6g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_txtyo")
+}],
+"loop": true,
+"name": &"run_left",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_0t6n2")
+}],
+"loop": true,
+"name": &"tunnel_man_left",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_5ltvu")
+}],
+"loop": true,
+"name": &"tunnel_man_right",
+"speed": 30.0
+}]
+
+[sub_resource type="Resource" id="Resource_8s536"]
+script = ExtResource("16_ftfhc")
+origin = Vector2(8, 8)
+containing_box = Rect2(2, 0, 12, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_qtvno"]
+script = ExtResource("16_ftfhc")
+origin = Vector2(8, 8)
+containing_box = Rect2(2, 0, 12, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_wcsmg"]
+script = ExtResource("16_ftfhc")
+origin = Vector2(8, 8)
+containing_box = Rect2(2, 0, 14, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_jjivm"]
+script = ExtResource("16_ftfhc")
+origin = Vector2(8, 8)
+containing_box = Rect2(1, 0, 14, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hvyxf"]
+size = Vector2(12, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r3nje"]
+size = Vector2(24, 32)
+
+[node name="TunnelMan" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -100
 script = ExtResource("1_ae3nh")
+animated_sprite_node = NodePath("Sprite")
 object_name = "tunnel_man"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_w7ik8")]
+sprite_frames = SubResource("SpriteFrames_w7ik8")
+autoplay = "tunnel_man_left"
+centered = false
+offset = Vector2(-8, -8)
+script = ExtResource("15_k106m")
+sprite_info = Dictionary[StringName, ExtResource("16_ftfhc")]({
+&"damsel_run_l": SubResource("Resource_wcsmg"),
+&"run_left": SubResource("Resource_jjivm"),
+&"tunnel_man_left": SubResource("Resource_8s536"),
+&"tunnel_man_right": SubResource("Resource_qtvno")
+})
+default_animation = &"tunnel_man_left"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_hvyxf")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+shape = SubResource("RectangleShape2D_r3nje")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

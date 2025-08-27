@@ -1,10 +1,36 @@
-[gd_scene load_steps=3 format=3 uid="uid://dimbvflcml3em"]
+[gd_scene load_steps=8 format=3 uid="uid://dimbvflcml3em"]
 
 [ext_resource type="Script" uid="uid://co45frbaa7f0l" path="res://objects/screen/screen.gd" id="1_d8euu"]
+[ext_resource type="Script" uid="uid://dtgd0cguix6db" path="res://components/drawing/draw_text/draw_text.gd" id="3_d8euu"]
+[ext_resource type="PackedScene" uid="uid://cycctqx2bmx2j" path="res://components/drawing/draw_text/drawn_text.tscn" id="4_c7y80"]
 [ext_resource type="PackedScene" uid="uid://8nvpnq1dktdh" path="res://components/drawing/draw_text/draw_text.tscn" id="5_c7y80"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="5_q0mpi"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="6_hpk62"]
 
-[node name="Screen" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_q0mpi"]
+resource_local_to_scene = true
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[node name="Screen" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+visible = false
+z_index = 2
 script = ExtResource("1_d8euu")
+animated_sprite_node = NodePath("Sprite")
 object_name = "screen"
 
-[node name="DrawText" parent="." instance=ExtResource("5_c7y80")]
+[node name="DrawText" type="Node2D" parent="." groups=["draw_text"] instance=ExtResource("5_c7y80")]
+z_index = 1
+script = ExtResource("3_d8euu")
+drawn_text = ExtResource("4_c7y80")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("5_q0mpi")]
+sprite_frames = SubResource("SpriteFrames_q0mpi")
+centered = false
+script = ExtResource("6_hpk62")
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

@@ -1,7 +1,91 @@
-[gd_scene load_steps=2 format=3 uid="uid://cjsiri38ch06s"]
+[gd_scene load_steps=17 format=3 uid="uid://cjsiri38ch06s"]
 
 [ext_resource type="Script" uid="uid://rtoxw1t8bwcn" path="res://objects/level editor/ufo_tile/ufo_tile.gd" id="1_8aylc"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_20snp"]
+[ext_resource type="Texture2D" uid="uid://btc8qlgyf1bua" path="res://sprites/enemies/ufo/ufo_0.png" id="3_s6lmb"]
+[ext_resource type="Texture2D" uid="uid://bsjtpndoo5v" path="res://sprites/enemies/ufo/ufo_1.png" id="4_efk40"]
+[ext_resource type="Texture2D" uid="uid://d08xabh261pkv" path="res://sprites/enemies/ufo/ufo_2.png" id="5_ak5a8"]
+[ext_resource type="Texture2D" uid="uid://hlhwt04diubm" path="res://sprites/enemies/ufo/ufo_3.png" id="6_nno1e"]
+[ext_resource type="Texture2D" uid="uid://vnjfwokprutl" path="res://sprites/enemies/ufo/ufo_4.png" id="7_s5eku"]
+[ext_resource type="Texture2D" uid="uid://i2gvg1avof11" path="res://sprites/enemies/ufo/ufo_5.png" id="8_otep0"]
+[ext_resource type="Texture2D" uid="uid://bvcw5a5s47gqh" path="res://sprites/enemies/ufo/ufo_6.png" id="9_65jnc"]
+[ext_resource type="Texture2D" uid="uid://c5fxjnkg867fc" path="res://sprites/enemies/ufo/ufo_7.png" id="10_i67ml"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="11_qxb5l"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="12_erc83"]
 
-[node name="UfoTile" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_20snp"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_s6lmb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_efk40")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ak5a8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_nno1e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_s5eku")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_otep0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_65jnc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_i67ml")
+}],
+"loop": true,
+"name": &"ufo",
+"speed": 30.0
+}]
+
+[sub_resource type="Resource" id="Resource_s6lmb"]
+script = ExtResource("12_erc83")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 1, 16, 13)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_efk40"]
+size = Vector2(16, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ak5a8"]
+size = Vector2(32, 26)
+
+[node name="UfoTile" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -100
 script = ExtResource("1_8aylc")
+animated_sprite_node = NodePath("Sprite")
 object_name = "ufo_tile"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_20snp")]
+sprite_frames = SubResource("SpriteFrames_20snp")
+autoplay = "ufo"
+centered = false
+script = ExtResource("11_qxb5l")
+sprite_info = Dictionary[StringName, ExtResource("12_erc83")]({
+&"ufo": SubResource("Resource_s6lmb")
+})
+default_animation = &"ufo"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 7.5)
+shape = SubResource("RectangleShape2D_efk40")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 7.5)
+shape = SubResource("RectangleShape2D_ak5a8")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

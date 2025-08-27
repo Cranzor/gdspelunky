@@ -1,7 +1,72 @@
-[gd_scene load_steps=2 format=3 uid="uid://c7545x5tbxyj3"]
+[gd_scene load_steps=11 format=4 uid="uid://c7545x5tbxyj3"]
 
 [ext_resource type="Script" uid="uid://b3sq5qxjud5ya" path="res://objects/level editor/monkey_tile/monkey_tile.gd" id="1_c34l8"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_dvipg"]
+[ext_resource type="Texture2D" uid="uid://ct23nr2cxrmrs" path="res://sprites/enemies/monkey/monkey_left/monkey_left_0.png" id="3_iyuka"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_s4wcm"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_yys6x"]
 
-[node name="MonkeyTile" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_dvipg"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_iyuka")
+}],
+"loop": true,
+"name": &"monkey_left",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_gfhro"]
+data = {
+"data": PackedByteArray("JhQQACYUEAAmFBAAJhQQACYUEABjLx0AYy8dAGMvHQAmFBAAJhQQACYUEAAmFBAAJhQQAECAAABAgAAAQIAAACYUEAAmFBAAJhQQACYUEAAmFBAAYy8dAGMvHQBjLx0AJhQQACYUEAAmFBAAJhQQACYUEAAmFBAAQIAAAECAAAAmFBAAJhQQACYUEAAmFBAAJhQQAGMvHQBjLx0AYy8dACYUEAAmFBAAJhQQACYUEAAmFBAAJhQQAECAAABAgAAAJhQQACYUEAAmFBAAJhQQACYUEABjLx0AYy8dAGMvHQAmFBAAJhQQACYUEAAmFBAAJhQQACYUEABAgAAAQIAAACYUEAAmFBAAJhQQACYUEAAmFBD/Yy8d/2MvHf9jLx3/JhQQ/yYUEAAmFBAAJhQQACYUEAAmFBAA46aIAECAAAAmFBAAJhQQACYUEAAmFBD/jlkl/45ZJf9jLx3/JhQQ/yYUEP8mFBD/JhQQACYUEAAmFBAAJhQQAOOmiABAgAAA46aIAOOmiADjpogA46aI/yYUEP8mFBD/46aI/yYUEP8mFBD/JhQQ/yYUEAAmFBAA46aIAOOmiADjpogAQIAAAP/YtQBLS0sAS0tLAEtLS//jpoj/46aI/0tLS//jpoj/JhQQ///Ytf//2LUA46aIAOOmiADjpogA46aIACYUEAD/2LUA/9i1ABMTEwATExP////////Ytf8TExP/46aI/yYUEP//2LX/46aI/+OmiADjpogA46aIAOOmiAAmFBAA/9i1AP/YtQD/2LX//9i1////////2LX//9i1/+OmiP8mFBD/46aI/+OmiADjpogA46aIACYUEAAmFBAAJhQQAOOmiADjpogA46aI/xMTE/8TExP/ExMT/+OmiP8mFBD/JhQQ/yYUEP8mFBD/JhQQACYUEAAmFBAAJhQQACYUEADjpogA46aIAOOmiADjpoj/46aI/+OmiP8mFBD/JhQQ/yYUEP8mFBD/JhQQ/yYUEP8mFBAAJhQQACYUEAAmFBAA46aIAOOmiADjpogA46aIAOOmiABjLx3/JhQQ/2MvHf8mFBD/JhQQ/yYUEP9jLx3/Yy8dACYUEP8mFBAAJhQQAOOmiADjpogA46aIAOOmiABjLx0AYy8d/xIKCP9jLx3/JhQQ/xIKCP9jLx3/JhQQ/yYUEAASCgj/JhQQ/yYUEADjpogA46aIACYUEAAmFBAAJhQQACYUEP8SCggAJhQQ/xIKCP8SCgj/JhQQ/yYUEP8mFBD/JhQQ/xIKCP8SCggA46aIAOOmiADjpogA46aIAOOmiADjpoj/46aIAOOmiP8SCggA46aI/+OmiP8SCgj/EgoI/xIKCP8SCggAEgoIAA=="),
+"format": "RGBA8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Resource" id="Resource_iyuka"]
+script = ExtResource("5_yys6x")
+origin = Vector2(0, 0)
+containing_box = Rect2(2, 4, 13, 12)
+precise = true
+images = Array[Image]([SubResource("Image_gfhro")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s4wcm"]
+size = Vector2(13, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yys6x"]
+size = Vector2(26, 24)
+
+[node name="MonkeyTile" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -100
 script = ExtResource("1_c34l8")
+animated_sprite_node = NodePath("Sprite")
 object_name = "monkey_tile"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_dvipg")]
+sprite_frames = SubResource("SpriteFrames_dvipg")
+autoplay = "monkey_left"
+centered = false
+script = ExtResource("4_s4wcm")
+sprite_info = Dictionary[StringName, ExtResource("5_yys6x")]({
+&"monkey_left": SubResource("Resource_iyuka")
+})
+default_animation = &"monkey_left"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8.5, 10)
+shape = SubResource("RectangleShape2D_s4wcm")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8.5, 10)
+shape = SubResource("RectangleShape2D_yys6x")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

@@ -1,7 +1,63 @@
-[gd_scene load_steps=2 format=3 uid="uid://dferqrf34bln3"]
+[gd_scene load_steps=10 format=3 uid="uid://dferqrf34bln3"]
 
 [ext_resource type="Script" uid="uid://vmthn7gf0qmx" path="res://objects/level editor/yeti_tile/yeti_tile.gd" id="1_k0jbr"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_jtfb8"]
+[ext_resource type="Texture2D" uid="uid://cc80ffrvkibcp" path="res://sprites/enemies/yeti/yeti_left/yeti_left_0.png" id="3_ahvop"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_ic1ts"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_fmcsd"]
 
-[node name="YetiTile" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_jtfb8"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ahvop")
+}],
+"loop": true,
+"name": &"yeti_left",
+"speed": 30.0
+}]
+
+[sub_resource type="Resource" id="Resource_ahvop"]
+script = ExtResource("5_fmcsd")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ic1ts"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fmcsd"]
+size = Vector2(32, 32)
+
+[node name="YetiTile" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -100
 script = ExtResource("1_k0jbr")
+animated_sprite_node = NodePath("Sprite")
 object_name = "yeti_tile"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_jtfb8")]
+sprite_frames = SubResource("SpriteFrames_jtfb8")
+autoplay = "yeti_left"
+centered = false
+script = ExtResource("4_ic1ts")
+sprite_info = Dictionary[StringName, ExtResource("5_fmcsd")]({
+&"yeti_left": SubResource("Resource_ahvop")
+})
+default_animation = &"yeti_left"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_ic1ts")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_fmcsd")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

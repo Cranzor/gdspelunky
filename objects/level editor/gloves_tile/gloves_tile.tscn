@@ -1,7 +1,72 @@
-[gd_scene load_steps=2 format=3 uid="uid://dvughqwqeey8y"]
+[gd_scene load_steps=11 format=4 uid="uid://dvughqwqeey8y"]
 
 [ext_resource type="Script" uid="uid://cylw14gfjglxg" path="res://objects/level editor/gloves_tile/gloves_tile.gd" id="1_faci5"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_8yfan"]
+[ext_resource type="Texture2D" uid="uid://ephekq3fxn7h" path="res://sprites/level editor/gloves_tile/gloves_tile_0.png" id="3_2eggy"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_pmg0q"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_veaao"]
 
-[node name="GlovesTile" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_8yfan"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_2eggy")
+}],
+"loop": true,
+"name": &"gloves_tile",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_2eggy"]
+data = {
+"data": PackedByteArray("ADgYAAA4GAAAOBgAADgYAAA4GP8AOBj/ADgYAAA4GP8AOBj/ADgYAAA4GAAAOBgAADgYAAA4GAAAOBgAADgYAAA4GAAAOBgAADgYAAA4GP+Nxj//Vogg/wA4GP+Nxj//Vogg/wA4GP8AOBj/ADgY/wA4GAAAOBgAADgYAAA4GAAAOBgAADgYAAA4GAAAOBj/QGYY/0BmGP8AOBj/QGYY/0BmGP8AOBj/jcY//1aIIP8AOBj/ADgYAAA4GAAAOBgAADgYAAA4GAAAOBgAADgY/0BmGP9AZhj/ADgY/0BmGP9AZhj/ADgY/0BmGP9AZhj/ADgY/wA4GP8AOBj/ADgYAAA4GAAAOBgAAAAAAAAAAP8AOBj/ADgY/wAAAP9AZhj/QGYY/wAAAP9AZhj/QGYY/wA4GP+Nxj//Vogg/wA4GP8AOBgAADgY/wA4GP8AAAD/ADgY/wA4GP8AOBj/ADgY/0BmGP8AOBj/ADgY/0BmGP8AAAD/QGYY/0BmGP8AOBj/ADgY/1aIIP+Nxj//AAAA/wA4GP8AOBj/QGYY/0BmGP9AZhj/QGYY/0BmGP9AZhj/ADgY/0BmGP9AZhj/ADgY/wA4GP9WiCD/Vogg/wAAAP8AAAD/ADgY/0BmGP9AZhj/QGYY/0BmGP9AZhj/QGYY/0BmGP8AOBj/QGYY/wA4GP8AOBj/QGYY/0BmGP9WiCD/Vogg/1aIIP8AOBj/QGYY/0BmGP9AZhj/jcY//1aIIP9WiCD/QGYY/0BmGP8AAAD/AAAA/wA4GP9AZhj/QGYY/0BmGP9WiCD/Vogg/0BmGP9AZhj/jcY//1aIIP9AZhj/QGYY/0BmGP9AZhj/AAAA/wAAAAAAAAD/ADgY/0BmGP9AZhj/QGYY/0BmGP9AZhj/QGYY/0BmGP9AZhj/QGYY/0BmGP9AZhj/ADgY/wAAAP8AAAAAAAAAAAAAAP8AOBj/ADgY/0BmGP9AZhj/QGYY/wA4GP9AZhj/QGYY/0BmGP9AZhj/ADgY/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAA/wAAAP8AAAD/AAAA/wA4GP8AOBj/ADgY/wA4GP8AOBj/QGYY/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/ADgY/wA4GP8AOBj/ADgY/wA4GP8AOBj/QGYY/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wA4GP8AOBj/ADgY/wA4GP8AOBj/ADgY/0BmGP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AOBj/QGYY/0BmGP9AZhj/QGYY/0BmGP9AZhj/AAAA/wAAAAAAAAAAAAAAAA=="),
+"format": "RGBA8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Resource" id="Resource_pmg0q"]
+script = ExtResource("5_veaao")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = true
+images = Array[Image]([SubResource("Image_2eggy")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_veaao"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ctr0"]
+size = Vector2(32, 32)
+
+[node name="GlovesTile" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -100
 script = ExtResource("1_faci5")
+animated_sprite_node = NodePath("Sprite")
 object_name = "gloves_tile"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_8yfan")]
+sprite_frames = SubResource("SpriteFrames_8yfan")
+autoplay = "gloves_tile"
+centered = false
+script = ExtResource("4_pmg0q")
+sprite_info = Dictionary[StringName, ExtResource("5_veaao")]({
+&"gloves_tile": SubResource("Resource_pmg0q")
+})
+default_animation = &"gloves_tile"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_veaao")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_7ctr0")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

@@ -1,7 +1,98 @@
-[gd_scene load_steps=2 format=3 uid="uid://coel5mdilaxp7"]
+[gd_scene load_steps=14 format=4 uid="uid://coel5mdilaxp7"]
 
 [ext_resource type="Script" uid="uid://06bdxctf3xep" path="res://objects/blocks/leaves_tile/leaves_tile.gd" id="1_xepn3"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_8tw71"]
+[ext_resource type="Texture2D" uid="uid://hdyjtp3gee6w" path="res://sprites/blocks/lush/leaves/leaves_0.png" id="3_mq4ls"]
+[ext_resource type="Texture2D" uid="uid://bu1do2e18kblw" path="res://sprites/blocks/lush/leaves_right/leaves_right_0.png" id="4_ka6n3"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="5_weco2"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="6_r8xm8"]
 
-[node name="LeavesTile" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_8tw71"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_mq4ls")
+}],
+"loop": true,
+"name": &"leaves",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ka6n3")
+}],
+"loop": true,
+"name": &"leaves_right",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_csfx7"]
+data = {
+"data": PackedByteArray("AAAA/wAgDv8AIA7/ADgY/wA4GP8AOBj/ADgY/wA4GP8AOBj/ADgY/wA4GP8AOBj/ADgY/wA4GP8AOBj/ADgY/wAgDv8AIA7/KUIP/0BmGP9AZhj/QGYY/0BmGP9AZhj/QGYY/0BmGP9AZhj/QGYY/0BmGP9AZhj/QGYY/0BmGP8AIA7/KUIP/0BmGP9AZhj/QGYY/0BmGP9AZhj/QGYY/0BmGP9AZhj/QGYY/0BmGP9AZhj/QGYY/0BmGP9AZhj/ACAO/0BmGP9hmCP/QGYY/0BmGP9AZhj/QGYY/0BmGP9AZhj/QGYY/0BmGP9AZhj/QGYY/0BmGP9AZhj/QGYY/0BmGP9hmCP/YZgj/2GYI/9AZhj/QGYY/2GYI/9AZhj/QGYY/0BmGP9hmCP/YZgj/0BmGP9AZhj/YZgj/2GYI/9AZhj/YZgj/2GYI/9AZhj/QGYY/2GYI/9hmCP/YZgj/0BmGP9hmCP/YZgj/0BmGP9AZhj/YZgj/2GYI/9AZhj/ADgY/0BmGP9AZhj/QGYY/wA4GP9AZhj/QGYY/0BmGP8AOBj/QGYY/0BmGP9AZhj/KUIP/0BmGP9AZhj/ADgY/wAgDv8AOBj/KUIP/wA4GP8AIA7/KUIP/ylCD/8AOBj/ACAO/ylCD/9AZhj/ADgY/wAgDv8AIA7/ADgY/ylCD/9AZhj/ACAO/wAgDv8AIA7/ADgY/wAgDv8AIA7/ACAO/wA4GP8AIA7/ACAO/wAgDv8AOBj/ADgY/wAgDv8AIA7/KUIP/0BmGP9AZhj/ACAO/wA4GP8pQg//QGYY/ylCD/8AIA7/KUIP/0BmGP8pQg//ACAO/wAgDv9AZhj/KUIP/wA4GP8pQg//KUIP/wA4GP8AIA7/ADgY/ylCD/8AOBj/ACAO/wA4GP8pQg//ADgY/wAgDv8pQg//KUIP/wA4GP8AIA7/ADgY/wA4GP8AIA7/AAAA/wAgDv8AOBj/ADgY/wAAAP8pQg//ADgY/wA4GP8AAAD/ADgY/wAgDv8AAAD/ACAO/ylCD/8AIA7/ACAO/wAAAP8AAAD/ACAO/wAgDv8AIA7/ACAO/ylCD/8AIA7/AAAA/0BmGP8pQg//ADgY/wAAAP8AIA7/ACAO/wAAAP8AIA7/QGYY/ylCD/8AIA7/AAAA/wAgDv8AIA7/AAAA/wAgDv8pQg//ADgY/wAgDv8AAAAAAAAA/wAAAP8AAAAAAAAA/wAgDv8AIA7/AAAA/wAAAAAAAAD/AAAA/wAAAAAAAAD/ACAO/wAgDv8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAD/AAAAAA=="),
+"format": "RGBA8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Resource" id="Resource_mq4ls"]
+script = ExtResource("6_r8xm8")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = true
+images = Array[Image]([SubResource("Image_csfx7")])
+
+[sub_resource type="Image" id="Image_vqae7"]
+data = {
+"data": PackedByteArray("ADgY/wA4GP8AOBj/ADgY/wA4GP8AOBj/ADgY/wA4GP8AOBj/ADgY/wA4GP8AOBj/ADgY/wAgDv8AIA7/AAAA/0BmGP9AZhj/QGYY/0BmGP9AZhj/QGYY/0BmGP9AZhj/QGYY/0BmGP9AZhj/QGYY/0BmGP8pQg//ACAO/wAgDv9AZhj/QGYY/0BmGP9AZhj/QGYY/0BmGP9AZhj/QGYY/0BmGP9AZhj/QGYY/0BmGP9AZhj/QGYY/ylCD/8AIA7/QGYY/0BmGP9AZhj/QGYY/0BmGP9AZhj/QGYY/0BmGP9AZhj/QGYY/0BmGP9AZhj/QGYY/2GYI/9AZhj/ACAO/2GYI/9hmCP/QGYY/0BmGP9hmCP/YZgj/0BmGP9AZhj/QGYY/2GYI/9AZhj/QGYY/2GYI/9hmCP/YZgj/0BmGP9AZhj/YZgj/2GYI/9AZhj/QGYY/2GYI/9hmCP/QGYY/2GYI/9hmCP/YZgj/0BmGP9AZhj/YZgj/2GYI/9AZhj/ADgY/0BmGP9AZhj/KUIP/0BmGP9AZhj/QGYY/wA4GP9AZhj/QGYY/0BmGP8AOBj/QGYY/0BmGP9AZhj/ADgY/ylCD/8AOBj/ACAO/wAgDv8AOBj/QGYY/ylCD/8AIA7/ADgY/ylCD/8pQg//ACAO/wA4GP8pQg//ADgY/wAgDv8AIA7/ACAO/wA4GP8AOBj/ACAO/wAgDv8AIA7/ADgY/wAgDv8AIA7/ACAO/wA4GP8AIA7/ACAO/wAgDv9AZhj/KUIP/0BmGP8AIA7/ACAO/ylCD/9AZhj/KUIP/wAgDv8pQg//QGYY/ylCD/8AOBj/ACAO/0BmGP9AZhj/KUIP/wA4GP8pQg//KUIP/wAgDv8AOBj/KUIP/wA4GP8AIA7/ADgY/ylCD/8AOBj/ACAO/wA4GP8pQg//KUIP/wA4GP8AAAD/ACAO/wA4GP8AAAD/ADgY/wA4GP8pQg//AAAA/wA4GP8AOBj/ACAO/wAAAP8AIA7/ADgY/wA4GP8AIA7/ADgY/ylCD/9AZhj/AAAA/wAgDv8pQg//ACAO/wAgDv8AIA7/ACAO/wAAAP8AAAD/ACAO/wAgDv8pQg//ACAO/wAgDv8AOBj/KUIP/wAgDv8AAAD/ACAO/wAgDv8AAAD/ACAO/ylCD/9AZhj/ACAO/wAAAP8AIA7/ACAO/wAAAP8AAAD/ACAO/wAgDv8AAAD/AAAAAAAAAP8AAAD/AAAAAAAAAP8AIA7/ACAO/wAAAP8AAAAAAAAA/wAAAP8AAAAAAAAAAAAAAP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAA=="),
+"format": "RGBA8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Resource" id="Resource_ka6n3"]
+script = ExtResource("6_r8xm8")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = true
+images = Array[Image]([SubResource("Image_vqae7")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_weco2"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r8xm8"]
+size = Vector2(32, 32)
+
+[node name="LeavesTile" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -1
 script = ExtResource("1_xepn3")
+animated_sprite_node = NodePath("Sprite")
 object_name = "leaves_tile"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_8tw71")]
+sprite_frames = SubResource("SpriteFrames_8tw71")
+autoplay = "leaves"
+centered = false
+script = ExtResource("5_weco2")
+sprite_info = Dictionary[StringName, ExtResource("6_r8xm8")]({
+&"leaves": SubResource("Resource_mq4ls"),
+&"leaves_right": SubResource("Resource_ka6n3")
+})
+default_animation = &"leaves"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_weco2")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_r8xm8")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

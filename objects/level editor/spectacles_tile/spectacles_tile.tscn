@@ -1,7 +1,72 @@
-[gd_scene load_steps=2 format=3 uid="uid://b0yndb12kmp5h"]
+[gd_scene load_steps=11 format=4 uid="uid://b0yndb12kmp5h"]
 
 [ext_resource type="Script" uid="uid://dfq1r4sxhdv0g" path="res://objects/level editor/spectacles_tile/spectacles_tile.gd" id="1_h2qdp"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_jj2e4"]
+[ext_resource type="Texture2D" uid="uid://wi8hnjxe0trt" path="res://sprites/level editor/spectacles_tile/spectacles_tile_0.png" id="3_futqu"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_jthv1"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_ycfyk"]
 
-[node name="SpectaclesTile" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_jj2e4"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_futqu")
+}],
+"loop": true,
+"name": &"spectacles_tile",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_futqu"]
+data = {
+"data": PackedByteArray("gACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAGMvHQBjLx0AYy8dAGMvHQBjLx0AYy8dAGMvHQBjLx0AYy8dAGMvHQBjLx0AYy8dAGMvHQBjLx0AYy8dAGMvHQBjLx0AYy8dAGMvHQBjLx0AYy8dAGMvHQBjLx0AYy8dAGMvHQBjLx0AYy8dAGMvHQBjLx0AYy8dAGMvHQBjLx0AYy8dAGMvHQBjLx0AYy8dAGMvHQBjLx0AYy8dAGMvHQBjLx0AYy8dAGMvHQBjLx0AYy8dAGMvHQBjLx0AYy8dAGMvHQBjLx0AYy8dAGMvHQBjLx0AYy8dAGMvHQBjLx0AYy8dAGMvHQBjLx0AYy8dAGMvHQBjLx0AYy8dAGMvHQBjLx0AYy8dAGMvHf9jLx3/Yy8d/2MvHQBjLx0AYy8dAGMvHQBjLx0AYy8dAGMvHQBjLx3/Yy8d/2MvHQBjLx0AYy8dAGMvHf/Ieiz/yHos/8h6LP9jLx3/Yy8dAGMvHQBjLx0AYy8dAGMvHQBjLx3//P8h//z/If9jLx3/Yy8dAGMvHf/Ieiz/Yy8d/2MvHf/Ieiz/Yy8d/2MvHf9jLx3/Yy8d/2MvHf9jLx3//P8h/wAAAP8AAAD//5UZ/2MvHf///////P8h//z/If/8/yH//P8h/////////////P8h//z/If/8/yH//P8h//////8AAAD/AAAAAAAAAP9jLx3//5UZ////////////////////////lRn//5UZ////////////////////////lRn/AAAA/wAAAAAAAAAAYy8dAMh6LP//////////////////////yHos/8h6LP//////////////////////yHos/wAAAP8AAAAAAAAAAGMvHQAAAAD//////////////////////wAAAP8AAAD//////////////////////wAAAP8AAAAAAAAAAAAAAABjLx0AAAAAAAAAAP/Ieiz/yHos/wAAAP8AAAAAAAAAAAAAAP/Ieiz/yHos/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAA=="),
+"format": "RGBA8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Resource" id="Resource_jthv1"]
+script = ExtResource("5_ycfyk")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 8, 16, 8)
+precise = true
+images = Array[Image]([SubResource("Image_futqu")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ycfyk"]
+size = Vector2(16, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jpkwb"]
+size = Vector2(32, 16)
+
+[node name="SpectaclesTile" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -100
 script = ExtResource("1_h2qdp")
+animated_sprite_node = NodePath("Sprite")
 object_name = "spectacles_tile"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_jj2e4")]
+sprite_frames = SubResource("SpriteFrames_jj2e4")
+autoplay = "spectacles_tile"
+centered = false
+script = ExtResource("4_jthv1")
+sprite_info = Dictionary[StringName, ExtResource("5_ycfyk")]({
+&"spectacles_tile": SubResource("Resource_jthv1")
+})
+default_animation = &"spectacles_tile"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 12)
+shape = SubResource("RectangleShape2D_ycfyk")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 12)
+shape = SubResource("RectangleShape2D_jpkwb")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

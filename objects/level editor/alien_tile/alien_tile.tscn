@@ -1,7 +1,75 @@
-[gd_scene load_steps=2 format=3 uid="uid://blv81p62ridhh"]
+[gd_scene load_steps=13 format=3 uid="uid://blv81p62ridhh"]
 
 [ext_resource type="Script" uid="uid://nb6o2ilvvca6" path="res://objects/level editor/alien_tile/alien_tile.gd" id="1_4i1qe"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_hca4l"]
+[ext_resource type="Texture2D" uid="uid://gvr1l08f5r8c" path="res://sprites/enemies/alien/alien_0.png" id="3_uq00b"]
+[ext_resource type="Texture2D" uid="uid://dypgbd536fo52" path="res://sprites/enemies/alien/alien_1.png" id="4_6mrx8"]
+[ext_resource type="Texture2D" uid="uid://cl7w7f30xyici" path="res://sprites/enemies/alien/alien_2.png" id="5_cbi7f"]
+[ext_resource type="Texture2D" uid="uid://cr8trvhcewtnv" path="res://sprites/enemies/alien/alien_3.png" id="6_4gjv2"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="7_dgy6a"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="8_56gu4"]
 
-[node name="AlienTile" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_hca4l"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_uq00b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6mrx8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_cbi7f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_4gjv2")
+}],
+"loop": true,
+"name": &"alien",
+"speed": 30.0
+}]
+
+[sub_resource type="Resource" id="Resource_uq00b"]
+script = ExtResource("8_56gu4")
+origin = Vector2(0, 0)
+containing_box = Rect2(1, 5, 14, 11)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6mrx8"]
+size = Vector2(14, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cbi7f"]
+size = Vector2(28, 22)
+
+[node name="AlienTile" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -100
 script = ExtResource("1_4i1qe")
+animated_sprite_node = NodePath("Sprite")
 object_name = "alien_tile"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_hca4l")]
+sprite_frames = SubResource("SpriteFrames_hca4l")
+autoplay = "alien"
+centered = false
+script = ExtResource("7_dgy6a")
+sprite_info = Dictionary[StringName, ExtResource("8_56gu4")]({
+&"alien": SubResource("Resource_uq00b")
+})
+default_animation = &"alien"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 10.5)
+shape = SubResource("RectangleShape2D_6mrx8")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 10.5)
+shape = SubResource("RectangleShape2D_cbi7f")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

@@ -1,7 +1,92 @@
-[gd_scene load_steps=2 format=3 uid="uid://dm47runmxb0n2"]
+[gd_scene load_steps=15 format=3 uid="uid://dm47runmxb0n2"]
 
 [ext_resource type="Script" uid="uid://367g5kpbxeye" path="res://objects/enemies/zombie/zombie.gd" id="1_wdql7"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_hy5wn"]
+[ext_resource type="Texture2D" uid="uid://dbt84e8lwho6e" path="res://sprites/enemies/zombie_jump_l/zombie_jump_l_0.png" id="3_08hh8"]
+[ext_resource type="Texture2D" uid="uid://uaohrc5gitit" path="res://sprites/enemies/zombie_left/zombie_left_0.png" id="4_8kbla"]
+[ext_resource type="Texture2D" uid="uid://b2c8l6iu1r5e7" path="res://sprites/enemies/zombie_left/zombie_left_1.png" id="5_hho48"]
+[ext_resource type="Texture2D" uid="uid://dwfxg3var4sfk" path="res://sprites/enemies/zombie_left/zombie_left_2.png" id="6_1moyw"]
+[ext_resource type="Texture2D" uid="uid://bgx46q74vnh1c" path="res://sprites/enemies/zombie_left/zombie_left_3.png" id="7_uux43"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="8_7ci8v"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="9_2oyon"]
 
-[node name="Zombie" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_hy5wn"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_08hh8")
+}],
+"loop": true,
+"name": &"zombie_jump_l",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_8kbla")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_hho48")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_1moyw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_uux43")
+}],
+"loop": true,
+"name": &"zombie_left",
+"speed": 30.0
+}]
+
+[sub_resource type="Resource" id="Resource_08hh8"]
+script = ExtResource("9_2oyon")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_8kbla"]
+script = ExtResource("9_2oyon")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 15, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hho48"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1moyw"]
+size = Vector2(32, 32)
+
+[node name="Zombie" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -40
 script = ExtResource("1_wdql7")
+animated_sprite_node = NodePath("Sprite")
 object_name = "zombie"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_hy5wn")]
+sprite_frames = SubResource("SpriteFrames_hy5wn")
+autoplay = "zombie_left"
+centered = false
+script = ExtResource("8_7ci8v")
+sprite_info = Dictionary[StringName, ExtResource("9_2oyon")]({
+&"zombie_jump_l": SubResource("Resource_8kbla"),
+&"zombie_left": SubResource("Resource_08hh8")
+})
+default_animation = &"zombie_left"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_hho48")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_1moyw")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

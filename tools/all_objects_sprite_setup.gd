@@ -11,6 +11,7 @@ func objects_setup():
 	var all_objects: Array[String] = file_search.get_files("res://objects/", "tscn")
 	for object in all_objects:
 		object_setup(object)
+	print_rich("[color=green]Set up all objects[/color]")
 
 
 func reset_objects():
@@ -18,6 +19,7 @@ func reset_objects():
 	var all_objects: Array[String] = file_search.get_files("res://objects/", "tscn")
 	for object in all_objects:
 		reset_object(object)
+	print_rich("[color=yellow]Reset all objects[/color]")
 
 
 func object_setup(scene_file_path: String):
@@ -26,10 +28,11 @@ func object_setup(scene_file_path: String):
 	var loaded_object = ResourceLoader.load(scene_file_path, "", 0).instantiate()
 	generate_all_sprites(loaded_object, sprite)
 	generate_containing_box(loaded_object)
-	groups_setup(loaded_object)
+	#--groups_setup(loaded_object)
 	z_index_setup(loaded_object)
 	#alarms_setup(loaded_object)
-	collision_with_setup(loaded_object)
+	#--collision_with_setup(loaded_object)
+	set_visibility(loaded_object)
 	var scene = PackedScene.new()
 	var result = scene.pack(loaded_object)
 	if result == OK:
@@ -132,7 +135,11 @@ func collision_with_setup(loaded_object: GMObject):
 			loaded_object.collision_with2.append(event)
 			
 
-#--- TODO: bounding box setup
+func set_visibility(loaded_object: GMObject):
+	var visibility = object_database.object_database[loaded_object.object_name]["visible"]
+	if visibility == false:
+		loaded_object.hide()
+
 
 func reset_object(scene_file_path: String):
 	var loaded_object: GMObject = ResourceLoader.load(scene_file_path, "", 0).instantiate()

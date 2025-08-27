@@ -1,7 +1,73 @@
-[gd_scene load_steps=2 format=3 uid="uid://cccbc4sui07d8"]
+[gd_scene load_steps=11 format=4 uid="uid://cccbc4sui07d8"]
 
 [ext_resource type="Script" uid="uid://e41jrf4lv6vb" path="res://objects/collectibles/crate/crate.gd" id="1_u5fct"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_sjsup"]
+[ext_resource type="Texture2D" uid="uid://7c4ua78d37ae" path="res://sprites/items/other/crate/crate_0.png" id="3_54fp2"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_65o12"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_qn2fk"]
 
-[node name="Crate" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_sjsup"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_54fp2")
+}],
+"loop": true,
+"name": &"crate",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_54fp2"]
+data = {
+"data": PackedByteArray("AIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAADkwHIA5MByAOTAcgDkwHIA5MByAOTAcgDkwHIA5MByAOTAcgDkwHIAt4dcAHtUQwB7VEMAe1RDAHtUQwB7VEMA5MByAOTAcgDkwHIA5MByAOTAcgDkwHIA5MByAOTAcgDkwHIA5MByALeHXAB7VEMAe1RDAHtUQwB7VEMAe1RDAOTAcgDkwHIA5MByAOTAcgDkwHIA5MByAOTAcgDkwHIA5MByAOTAcgC3h1wAe1RDAHtUQwB7VEMAe1RDAHtUQwDkwHIA5MByAOTAcgDkwHIA5MByAOTAcgDkwHIA5MByAOTAcgDkwHIAt4dcAHtUQwB7VEMAe1RDAHtUQwB7VEMA5MByAOTAcgDkwHIA5MBy/+TAcv/kwHL/5MBy/+TAcv/kwHL/5MBy/7eHXP97VEP/e1RD/3tUQ/97VEP/e1RDALeHXAC3h1wAt4dcALeHXP8sFhP/e1RD/ywWE/97VEP/LBYT/3tUQ/+3h1z/e1RD/ywWE/8sFhP/e1RD/3tUQwC3h1wAt4dcALeHXAC3h1z/e1RD/3tUQ/97VEP/e1RD/3tUQ/97VEP/t4dc/3tUQ/8sFhP/LBYT/3tUQ/97VEMAt4dcALeHXAC3h1wAt4dc/3tUQ/+3h1z/e1RD/7eHXP97VEP/t4dc/7eHXP97VEP/LBYT/ywWE/97VEP/e1RDALeHXAC3h1wAt4dcALeHXP97VEP/t4dc/3tUQ/+3h1z/e1RD/7eHXP+3h1z/e1RD/ywWE/8sFhP/e1RD/3tUQwC3h1wAt4dcALeHXAC3h1z/e1RD/7eHXP97VEP/t4dc/3tUQ/+3h1z/t4dc/3tUQ/8sFhP/LBYT/3tUQ/97VEMAt4dcALeHXAC3h1wAt4dc/3tUQ/+3h1z/e1RD/7eHXP97VEP/t4dc/7eHXP97VEP/LBYT/ywWE/97VEP/e1RDALeHXAC3h1wAt4dcALeHXP97VEP/t4dc/3tUQ/+3h1z/e1RD/7eHXP+3h1z/e1RD/ywWE/8sFhP/e1RD/3tUQwC3h1wAt4dcALeHXAC3h1z/e1RD/7eHXP97VEP/t4dc/3tUQ/+3h1z/t4dc/3tUQ/8sFhP/LBYT/3tUQ/97VEMA5MByAOTAcgDkwHIA5MBy/+TAcv/kwHL/5MBy/+TAcv/kwHL/5MBy/7eHXP97VEP/e1RD/3tUQ/97VEP/e1RDAA=="),
+"format": "RGBA8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Resource" id="Resource_65o12"]
+script = ExtResource("5_qn2fk")
+origin = Vector2(8, 8)
+containing_box = Rect2(3, 6, 12, 10)
+precise = true
+images = Array[Image]([SubResource("Image_54fp2")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qn2fk"]
+size = Vector2(12, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nw0am"]
+size = Vector2(24, 20)
+
+[node name="Crate" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -900
 script = ExtResource("1_u5fct")
+animated_sprite_node = NodePath("Sprite")
 object_name = "crate"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_sjsup")]
+sprite_frames = SubResource("SpriteFrames_sjsup")
+autoplay = "crate"
+centered = false
+offset = Vector2(-8, -8)
+script = ExtResource("4_65o12")
+sprite_info = Dictionary[StringName, ExtResource("5_qn2fk")]({
+&"crate": SubResource("Resource_65o12")
+})
+default_animation = &"crate"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 3)
+shape = SubResource("RectangleShape2D_qn2fk")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(1, 3)
+shape = SubResource("RectangleShape2D_nw0am")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

@@ -1,7 +1,72 @@
-[gd_scene load_steps=2 format=3 uid="uid://4tssj1r8j68f"]
+[gd_scene load_steps=11 format=4 uid="uid://4tssj1r8j68f"]
 
 [ext_resource type="Script" uid="uid://byupoglrru2ud" path="res://objects/blocks/gold_door/gold_door.gd" id="1_3j837"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_65s78"]
+[ext_resource type="Texture2D" uid="uid://lcknlbnajx8e" path="res://sprites/blocks/background/gold_door/gold_door_0.png" id="3_ecfsn"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_ennct"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_dx6mh"]
 
-[node name="GoldDoor" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_65s78"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ecfsn")
+}],
+"loop": true,
+"name": &"gold_door",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_ecfsn"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANEZbFR4oFR4oFR4oFR4oFR4oFR4oFR4oFR4oFR4oFR4oFR4oFR4oBwwQBwwQNEZbFR4oNEZbR2F+R2F+R2F+R2F+R2F+R2F+R2F+R2F+R2F+R2F+R2F+R2F+NEZbBwwQFR4oNEZbFR4oBwwQBwwQBwwQAAAAAAAAAAAAAAAAAAAAAAAABwwQFR4oFR4oBwwQFR4oNEZbBwwQBwwQBwwQBwwQBwwQBwwQBwwQBwwQBwwQBwwQBwwQBwwQFR4oBwwQFR4oNEZbAAAALBYTyHosyHosyHosyHosyHosyHosyHosyHosLBYTBwwQFR4oBwwQFR4oNEZbAAAAyHosyHos/5UZ/////////////////5UZyHosyHosBwwQFR4oBwwQFR4oNEZbAAAAyHos/5UZ/P8h/P8hLBYTLBYT/P8h/P8h/5UZyHosBwwQFR4oBwwQFR4oNEZbAAAA/P8h/P8h/P8h/P8hBwwQBwwQ/P8h/P8h/P8h/P8hBwwQFR4oBwwQFR4oNEZbAAAA/P8h/P8h/P8h/P8hBwwQBwwQ/P8h/P8h/P8h/P8hBwwQFR4oBwwQFR4oNEZbAAAA/P8h/////P8h/P8hBwwQBwwQ/P8h/P8h/P8h/P8hBwwQFR4oBwwQFR4oNEZbAAAA/////////P8h/P8hBwwQBwwQ/P8h/P8h/P8h/P8hBwwQFR4oBwwQFR4oNEZbAAAA/////////5UZ/P8h/////////P8h/5UZ/P8h/P8hBwwQFR4oBwwQFR4oNEZbAAAA/P8h/P8hyHosyHosyHosyHosyHosyHos/P8h/P8hBwwQFR4oBwwQFR4oNEZbAAAA/P8h/P8h/P8h/P8h/P8h/P8h/P8h/P8h////////BwwQFR4oBwwQFR4oNEZbAAAA/5UZ/P8h/P8h/P8h/P8h/P8h/P8h/////////5UZBwwQFR4oBwwQ"),
+"format": "RGB8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Resource" id="Resource_ennct"]
+script = ExtResource("5_dx6mh")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = true
+images = Array[Image]([SubResource("Image_ecfsn")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dx6mh"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jd7ui"]
+size = Vector2(32, 32)
+
+[node name="GoldDoor" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -4095
 script = ExtResource("1_3j837")
+animated_sprite_node = NodePath("Sprite")
 object_name = "gold_door"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_65s78")]
+sprite_frames = SubResource("SpriteFrames_65s78")
+autoplay = "gold_door"
+centered = false
+script = ExtResource("4_ennct")
+sprite_info = Dictionary[StringName, ExtResource("5_dx6mh")]({
+&"gold_door": SubResource("Resource_ennct")
+})
+default_animation = &"gold_door"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_dx6mh")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_jd7ui")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

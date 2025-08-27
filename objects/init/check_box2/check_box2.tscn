@@ -1,7 +1,79 @@
-[gd_scene load_steps=2 format=3 uid="uid://cle40i7xyr1as"]
+[gd_scene load_steps=12 format=3 uid="uid://cle40i7xyr1as"]
 
 [ext_resource type="Script" uid="uid://bn2vwov53olpd" path="res://objects/init/check_box2/check_box2.gd" id="1_hyryd"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_8njkp"]
+[ext_resource type="Texture2D" uid="uid://5sghcijgx18f" path="res://sprites/other/box/box_0.png" id="3_ik4is"]
+[ext_resource type="Texture2D" uid="uid://6m3j473yiuor" path="res://sprites/other/box_checked/box_checked_0.png" id="4_a8a6m"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="5_h3bh8"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="6_wkpso"]
 
-[node name="CheckBox2" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_8njkp"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ik4is")
+}],
+"loop": true,
+"name": &"box",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_a8a6m")
+}],
+"loop": true,
+"name": &"box_checked",
+"speed": 30.0
+}]
+
+[sub_resource type="Resource" id="Resource_ik4is"]
+script = ExtResource("6_wkpso")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 8, 8)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_a8a6m"]
+script = ExtResource("6_wkpso")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 8, 8)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h3bh8"]
+size = Vector2(8, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wkpso"]
+size = Vector2(16, 16)
+
+[node name="CheckBox2" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_hyryd")
+animated_sprite_node = NodePath("Sprite")
 object_name = "check_box2"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_8njkp")]
+sprite_frames = SubResource("SpriteFrames_8njkp")
+autoplay = "box_checked"
+centered = false
+script = ExtResource("5_h3bh8")
+sprite_info = Dictionary[StringName, ExtResource("6_wkpso")]({
+&"box": SubResource("Resource_a8a6m"),
+&"box_checked": SubResource("Resource_ik4is")
+})
+default_animation = &"box_checked"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_h3bh8")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_wkpso")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

@@ -1,7 +1,72 @@
-[gd_scene load_steps=2 format=3 uid="uid://bt8r6ahoenmo2"]
+[gd_scene load_steps=11 format=4 uid="uid://bt8r6ahoenmo2"]
 
 [ext_resource type="Script" uid="uid://cakaf5vsgr47u" path="res://objects/level editor/spike_shoes_tile/spike_shoes_tile.gd" id="1_sc20x"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_324c7"]
+[ext_resource type="Texture2D" uid="uid://b0vgx7ia5a6fd" path="res://sprites/level editor/spike_shoes_tile/spike_shoes_tile_0.png" id="3_aelfx"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_1efxt"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_l0rnb"]
 
-[node name="SpikeShoesTile" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_324c7"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_aelfx")
+}],
+"loop": true,
+"name": &"spike_shoes_tile",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_aelfx"]
+data = {
+"data": PackedByteArray("EgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIAACAAAAAgAAAAIAAABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAAAgAAAAIAAAACAAAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAAIAAAACAAAAAgAAAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCgj/EgoI/xIKCP8SCgj/EgoI/xIKCP8SCgj/EgoI/xIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoI/45ZJf+OWSX/yHos/+TAcv/kwHL/yHos/xIKCP8SCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCP9jLx3/Yy8d/45ZJf+OWSX/jlkl/45ZJf8SCgj/EgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCgj/EgoI/xIKCP9jLx3/jlkl/45ZJf+OWSX/Yy8d/xIKCP8SCgj/EgoI/xIKCAASCggAEgoIABIKCAASCggAEgoI/2MvHf9jLx3/jlkl/45ZJf+OWSX/jlkl/8h6LP+OWSX/yHos/2MvHf8SCgj/EgoIABIKCAASCggAEgoIABIKCP9jLx3/Yy8d/45ZJf+OWSX/jlkl/45ZJf/kwHL/jlkl/+TAcv+OWSX/Yy8d/xIKCP8SCggAEgoIABIKCAASCgj/Yy8d/2MvHf+OWSX/jlkl/45ZJf+OWSX/Yy8d/45ZJf9jLx3/jlkl/45ZJf9jLx3/EgoI/xIKCAASCggAEgoI/2MvHf9jLx3/jlkl/45ZJf+OWSX/jlkl/45ZJf+OWSX/jlkl/45ZJf+OWSX/Yy8d/xIKCP8SCggAEgoIABIKCP/Ieiz/5MBy/8h6LP/kwHL/yHos/+TAcv/Ieiz/5MBy/8h6LP/kwHL/yHos/+TAcv8SCgj/EgoIABIKCAASCggAEgoI//////8SCgj//////xIKCP//////EgoI//////8SCgj//////xIKCP//////EgoI/xIKCAASCggAEgoIABIKCP+AgID/EgoI/4CAgP8SCgj/gICA/xIKCP+AgID/EgoI/4CAgP8SCgj/gICA/xIKCP8SCggAEgoIABIKCAASCggAEgoI/xIKCAASCgj/EgoIABIKCP8SCggAEgoI/xIKCAASCgj/EgoIABIKCP8SCggAEgoIAA=="),
+"format": "RGBA8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Resource" id="Resource_1efxt"]
+script = ExtResource("5_l0rnb")
+origin = Vector2(0, 0)
+containing_box = Rect2(1, 4, 14, 12)
+precise = true
+images = Array[Image]([SubResource("Image_aelfx")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l0rnb"]
+size = Vector2(14, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o8qkc"]
+size = Vector2(28, 24)
+
+[node name="SpikeShoesTile" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -100
 script = ExtResource("1_sc20x")
+animated_sprite_node = NodePath("Sprite")
 object_name = "spike_shoes_tile"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_324c7")]
+sprite_frames = SubResource("SpriteFrames_324c7")
+autoplay = "spike_shoes_tile"
+centered = false
+script = ExtResource("4_1efxt")
+sprite_info = Dictionary[StringName, ExtResource("5_l0rnb")]({
+&"spike_shoes_tile": SubResource("Resource_1efxt")
+})
+default_animation = &"spike_shoes_tile"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 10)
+shape = SubResource("RectangleShape2D_l0rnb")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 10)
+shape = SubResource("RectangleShape2D_o8qkc")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

@@ -1,7 +1,80 @@
-[gd_scene load_steps=2 format=3 uid="uid://b5o1dxuta5ai8"]
+[gd_scene load_steps=12 format=3 uid="uid://b5o1dxuta5ai8"]
 
 [ext_resource type="Script" uid="uid://dwlktcptq3aty" path="res://objects/blocks/tree_branch/tree_branch.gd" id="1_35skc"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_6xilp"]
+[ext_resource type="Texture2D" uid="uid://cq1cmt03pxxxv" path="res://sprites/blocks/lush/tree_branch_dead_r/tree_branch_dead_r_0.png" id="3_emx67"]
+[ext_resource type="Texture2D" uid="uid://dttjtb2xj5avq" path="res://sprites/blocks/lush/tree_branch_right/tree_branch_right_0.png" id="4_tr5hd"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="5_rmsd8"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="6_gler6"]
 
-[node name="TreeBranch" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_6xilp"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_emx67")
+}],
+"loop": true,
+"name": &"tree_branch_dead_r",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_tr5hd")
+}],
+"loop": true,
+"name": &"tree_branch_right",
+"speed": 30.0
+}]
+
+[sub_resource type="Resource" id="Resource_emx67"]
+script = ExtResource("6_gler6")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 11)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_tr5hd"]
+script = ExtResource("6_gler6")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 10)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rmsd8"]
+size = Vector2(16, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gler6"]
+size = Vector2(32, 22)
+
+[node name="TreeBranch" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -2
 script = ExtResource("1_35skc")
+animated_sprite_node = NodePath("Sprite")
 object_name = "tree_branch"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_6xilp")]
+sprite_frames = SubResource("SpriteFrames_6xilp")
+autoplay = "tree_branch_right"
+centered = false
+script = ExtResource("5_rmsd8")
+sprite_info = Dictionary[StringName, ExtResource("6_gler6")]({
+&"tree_branch_dead_r": SubResource("Resource_tr5hd"),
+&"tree_branch_right": SubResource("Resource_emx67")
+})
+default_animation = &"tree_branch_right"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 5.5)
+shape = SubResource("RectangleShape2D_rmsd8")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 5.5)
+shape = SubResource("RectangleShape2D_gler6")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

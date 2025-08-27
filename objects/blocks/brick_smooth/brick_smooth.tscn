@@ -1,7 +1,67 @@
-[gd_scene load_steps=2 format=3 uid="uid://t16tsipk7hyj"]
+[gd_scene load_steps=11 format=3 uid="uid://t16tsipk7hyj"]
 
 [ext_resource type="Script" uid="uid://cwqu72fx53dds" path="res://objects/blocks/brick_smooth/brick_smooth.gd" id="1_r8hvh"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_xcoun"]
+[ext_resource type="Texture2D" uid="uid://xai8r4vmmomr" path="res://sprites/blocks/mines/cave_smooth/cave_smooth_0.png" id="3_rux50"]
+[ext_resource type="Texture2D" uid="uid://ddhptoyx6eshy" path="res://sprites/blocks/mines/cave_smooth/cave_smooth_cave_smooth.png" id="4_onddc"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="5_r313x"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="6_216a3"]
 
-[node name="BrickSmooth" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_xcoun"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_rux50")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_onddc")
+}],
+"loop": true,
+"name": &"cave_smooth",
+"speed": 30.0
+}]
+
+[sub_resource type="Resource" id="Resource_rux50"]
+script = ExtResource("6_216a3")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_onddc"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r313x"]
+size = Vector2(32, 32)
+
+[node name="BrickSmooth" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -110
 script = ExtResource("1_r8hvh")
+animated_sprite_node = NodePath("Sprite")
 object_name = "brick_smooth"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_xcoun")]
+sprite_frames = SubResource("SpriteFrames_xcoun")
+autoplay = "cave_smooth"
+centered = false
+script = ExtResource("5_r313x")
+sprite_info = Dictionary[StringName, ExtResource("6_216a3")]({
+&"cave_smooth": SubResource("Resource_rux50")
+})
+default_animation = &"cave_smooth"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_onddc")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_r313x")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

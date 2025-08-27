@@ -1,7 +1,62 @@
-[gd_scene load_steps=2 format=3 uid="uid://y7qqxlryxv8r"]
+[gd_scene load_steps=10 format=3 uid="uid://y7qqxlryxv8r"]
 
 [ext_resource type="Script" uid="uid://k5yr626kyyin" path="res://objects/collectibles/sapphire/sapphire.gd" id="1_mxitw"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_gc652"]
+[ext_resource type="Texture2D" uid="uid://b1n383p7rs68v" path="res://sprites/items/treasures/sapphire/sapphire_0.png" id="3_vjb6d"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_cdnd2"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_g8o4d"]
 
-[node name="Sapphire" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_gc652"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_vjb6d")
+}],
+"loop": true,
+"name": &"sapphire",
+"speed": 30.0
+}]
+
+[sub_resource type="Resource" id="Resource_vjb6d"]
+script = ExtResource("5_g8o4d")
+origin = Vector2(2, 2)
+containing_box = Rect2(0, 0, 4, 4)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cdnd2"]
+size = Vector2(4, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g8o4d"]
+size = Vector2(8, 8)
+
+[node name="Sapphire" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -101
 script = ExtResource("1_mxitw")
+animated_sprite_node = NodePath("Sprite")
 object_name = "sapphire"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_gc652")]
+sprite_frames = SubResource("SpriteFrames_gc652")
+autoplay = "sapphire"
+centered = false
+offset = Vector2(-2, -2)
+script = ExtResource("4_cdnd2")
+sprite_info = Dictionary[StringName, ExtResource("5_g8o4d")]({
+&"sapphire": SubResource("Resource_vjb6d")
+})
+default_animation = &"sapphire"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_cdnd2")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+shape = SubResource("RectangleShape2D_g8o4d")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

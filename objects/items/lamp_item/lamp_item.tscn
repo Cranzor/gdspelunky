@@ -1,12 +1,129 @@
-[gd_scene load_steps=3 format=3 uid="uid://jbkbs37mr46w"]
+[gd_scene load_steps=21 format=3 uid="uid://jbkbs37mr46w"]
 
 [ext_resource type="Script" uid="uid://5acuyrx1fian" path="res://objects/items/lamp_item/lamp_item.gd" id="1_8qya0"]
 [ext_resource type="PackedScene" uid="uid://w6jxjbgfs6na" path="res://components/drawing/draw_circle/dark_level_circle.tscn" id="2_fbtcu"]
+[ext_resource type="Shader" uid="uid://d1iyh2el2fl0l" path="res://resources/mask.gdshader" id="3_4hdd8"]
+[ext_resource type="Texture2D" uid="uid://c1ka78isguv06" path="res://components/drawing/draw_circle/circle_r16.png" id="4_n8j0d"]
+[ext_resource type="Texture2D" uid="uid://bkxksvh8l3or2" path="res://components/drawing/draw_circle/circle_r32.png" id="5_7wxg7"]
+[ext_resource type="Texture2D" uid="uid://cnpx2owt8tmkt" path="res://components/drawing/draw_circle/circle_r64.png" id="6_y3omi"]
+[ext_resource type="Texture2D" uid="uid://4xv4ky4kkda2" path="res://components/drawing/draw_circle/circle_r96.png" id="7_1s5mv"]
+[ext_resource type="Script" uid="uid://cht4oclnookax" path="res://components/drawing/draw_circle/dark_level_circle.gd" id="8_qja41"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="9_jljvx"]
+[ext_resource type="Texture2D" uid="uid://dpcdlvafk2jjf" path="res://sprites/items/treasures/lamp_item/lamp_item_0.png" id="10_8g0v6"]
+[ext_resource type="Texture2D" uid="uid://bjlk7au3kcfj2" path="res://sprites/items/treasures/lamp_item/lamp_item_1.png" id="11_20sl0"]
+[ext_resource type="Texture2D" uid="uid://bsvnkhm4w5m2x" path="res://sprites/items/treasures/lamp_item/lamp_item_2.png" id="12_f6124"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="13_e7yiv"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="14_2vv4h"]
 
-[node name="LampItem" type="StaticBody2D"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ttmrw"]
+shader = ExtResource("3_4hdd8")
+shader_parameter/color = Color(0, 0, 0, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n62uf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_n8j0d")
+}],
+"loop": true,
+"name": &"16",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_7wxg7")
+}],
+"loop": true,
+"name": &"32",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_y3omi")
+}],
+"loop": true,
+"name": &"64",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_1s5mv")
+}],
+"loop": true,
+"name": &"96",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jljvx"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_8g0v6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_20sl0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_f6124")
+}],
+"loop": true,
+"name": &"lamp_item",
+"speed": 30.0
+}]
+
+[sub_resource type="Resource" id="Resource_8g0v6"]
+script = ExtResource("14_2vv4h")
+origin = Vector2(8, 12)
+containing_box = Rect2(1, 0, 14, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_20sl0"]
+size = Vector2(14, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f6124"]
+size = Vector2(28, 32)
+
+[node name="LampItem" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -100
 script = ExtResource("1_8qya0")
+animated_sprite_node = NodePath("Sprite")
 object_name = "lamp_item"
 
-[node name="DarkLevelCircle" parent="." instance=ExtResource("2_fbtcu")]
+[node name="DarkLevelCircle" type="AnimatedSprite2D" parent="." instance=ExtResource("2_fbtcu")]
+visible = false
+z_index = 10
+z_as_relative = false
+material = SubResource("ShaderMaterial_ttmrw")
+sprite_frames = SubResource("SpriteFrames_n62uf")
+animation = &"16"
+script = ExtResource("8_qja41")
 radius = 96
 offset_value = Vector2(0, 4)
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("9_jljvx")]
+sprite_frames = SubResource("SpriteFrames_jljvx")
+autoplay = "lamp_item"
+centered = false
+offset = Vector2(-8, -12)
+script = ExtResource("13_e7yiv")
+sprite_info = Dictionary[StringName, ExtResource("14_2vv4h")]({
+&"lamp_item": SubResource("Resource_8g0v6")
+})
+default_animation = &"lamp_item"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_20sl0")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_f6124")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

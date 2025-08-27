@@ -1,7 +1,114 @@
-[gd_scene load_steps=2 format=3 uid="uid://boxc36fot75d7"]
+[gd_scene load_steps=16 format=3 uid="uid://boxc36fot75d7"]
 
 [ext_resource type="Script" uid="uid://dyjkegg58jbjp" path="res://objects/blocks/brick/brick.gd" id="1_k0bbd"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_cghdr"]
+[ext_resource type="Texture2D" uid="uid://nkw6afdklf8m" path="res://sprites/blocks/mines/brick/brick_0.png" id="3_afn0t"]
+[ext_resource type="Texture2D" uid="uid://bof0pw63axkhs" path="res://sprites/blocks/mines/brick2/brick2_0.png" id="4_0ea63"]
+[ext_resource type="Texture2D" uid="uid://bikhjyty6jnfv" path="res://sprites/blocks/mines/brick_gold/brick_gold_0.png" id="5_lefri"]
+[ext_resource type="Texture2D" uid="uid://ermhxd0l34ik" path="res://sprites/blocks/mines/brick_gold_big/brick_gold_big_0.png" id="6_fa2bf"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="7_v6ywl"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="8_akvyr"]
 
-[node name="Brick" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_cghdr"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_afn0t")
+}],
+"loop": true,
+"name": &"brick",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_0ea63")
+}],
+"loop": true,
+"name": &"brick2",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_lefri")
+}],
+"loop": true,
+"name": &"brick_gold",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_fa2bf")
+}],
+"loop": true,
+"name": &"brick_gold_big",
+"speed": 30.0
+}]
+
+[sub_resource type="Resource" id="Resource_afn0t"]
+script = ExtResource("8_akvyr")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_0ea63"]
+script = ExtResource("8_akvyr")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_lefri"]
+script = ExtResource("8_akvyr")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_fa2bf"]
+script = ExtResource("8_akvyr")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v6ywl"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_akvyr"]
+size = Vector2(32, 32)
+
+[node name="Brick" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -100
 script = ExtResource("1_k0bbd")
+animated_sprite_node = NodePath("Sprite")
 object_name = "brick"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_cghdr")]
+sprite_frames = SubResource("SpriteFrames_cghdr")
+autoplay = "brick"
+centered = false
+script = ExtResource("7_v6ywl")
+sprite_info = Dictionary[StringName, ExtResource("8_akvyr")]({
+&"brick": SubResource("Resource_afn0t"),
+&"brick2": SubResource("Resource_0ea63"),
+&"brick_gold": SubResource("Resource_lefri"),
+&"brick_gold_big": SubResource("Resource_fa2bf")
+})
+default_animation = &"brick"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_v6ywl")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_akvyr")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

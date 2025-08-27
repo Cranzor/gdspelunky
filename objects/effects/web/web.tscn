@@ -1,7 +1,72 @@
-[gd_scene load_steps=2 format=3 uid="uid://bm2fvi2eaoyia"]
+[gd_scene load_steps=11 format=4 uid="uid://bm2fvi2eaoyia"]
 
 [ext_resource type="Script" uid="uid://bapw4bewbjed4" path="res://objects/effects/web/web.gd" id="1_iqnqg"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_lswib"]
+[ext_resource type="Texture2D" uid="uid://m6p6rj5x4cp0" path="res://sprites/enemies/giant_spider/web/web_0.png" id="3_7odoi"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_7iolk"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_cxxml"]
 
-[node name="Web" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_lswib"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_7odoi")
+}],
+"loop": true,
+"name": &"web",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_7odoi"]
+data = {
+"data": PackedByteArray("AAAAAAAAAP//////////AMDAwADAwMAAwMDAAMDAwP/AwMAAwMDAAMDAwAD///8A/////wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAA///////AwMD/wMDA/8DAwP8AAAD/wMDA/8DAwP/AwMD//////wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAwMD///////////8AAAD/AAAAAAAAAP8AAAD//////wAAAP/AwMD/wMDAAMDAwADAwMAAwMDAAMDAwADAwMD/AAAA//////8AAAD///////////////////////////8AAAAAAAAA/8DAwP/AwMAAwMDAAMDAwADAwMD/AAAA/wAAAAD/////AAAAAP////8AAAD/AAAA/wAAAP//////////AAAAAP/AwMD/wMDAAP///wDAwMAAwMDA/wAAAAD//////////////wAAAAD//////wAAAAD/////AAAA////////////////////////////wMDA////////////AAAA/wAAAP//////AAAAAP//////////AAAA/wAAAAAAAAD//////wAAAP/AwMD/AAAA/wAAAP/AwMD/AAAA//////8AAAAAAAAA//////8AAAD//////wAAAAD///8A/////wAAAP/AwMD/AAAA/wAAAAAAAAAAwMDA/wAAAAAAAAD//////wAAAAD/////AAAAAAAAAP////////////////8AAAAAwMDA/wAAAAAAAAAAAAAAAAAAAP/AwMD/AAAAAP////////8AAAAA/////////////////wAAAP//////////AMDAwP/AwMAAwMDAAAAAAAAAAAAAwMDA/8DAwAD/////////AP////8AAAD/AAAA//////8AAAAA/////////wAAAAD/wMDA/8DAwADAwMAAwMDAAMDAwP/AwMAA//////////8AAAD/AAAAAAAAAAD/////////AP//////////AAAAAMDAwP/AwMAAAAAAAAAAAAAAAAD//////wAAAP8AAAD///////////////8AAAAA//////8AAAD/AAAA///////AwMD/wMDAAAAAAAAAAAAAAAAAAP/////AwMD/wMDA/wAAAP8AAAD///////////8AAAD/wMDA/8DAwP/AwMD//////////wD///8A////AP////8AAAD/AAAA/wAAAP/AwMD/wMDA////////////wMDA/wAAAP8AAAD/AAAA/wAAAP//////////AP////8AAAD/AAAAAAAAAAAAAAAAAAAA//////8AAAD/AAAA//////8AAAAAAAAAAAAAAAAAAAAAAAAA/w=="),
+"format": "RGBA8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Resource" id="Resource_7iolk"]
+script = ExtResource("5_cxxml")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = true
+images = Array[Image]([SubResource("Image_7odoi")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cxxml"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cyqvt"]
+size = Vector2(32, 32)
+
+[node name="Web" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -200
 script = ExtResource("1_iqnqg")
+animated_sprite_node = NodePath("Sprite")
 object_name = "web"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_lswib")]
+sprite_frames = SubResource("SpriteFrames_lswib")
+autoplay = "web"
+centered = false
+script = ExtResource("4_7iolk")
+sprite_info = Dictionary[StringName, ExtResource("5_cxxml")]({
+&"web": SubResource("Resource_7iolk")
+})
+default_animation = &"web"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_cxxml")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_cyqvt")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

@@ -1,7 +1,72 @@
-[gd_scene load_steps=2 format=3 uid="uid://nmn3pta6csha"]
+[gd_scene load_steps=11 format=4 uid="uid://nmn3pta6csha"]
 
 [ext_resource type="Script" uid="uid://csrrw0wy663wk" path="res://objects/level editor/chest_tile/chest_tile.gd" id="1_gtrwf"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_13iks"]
+[ext_resource type="Texture2D" uid="uid://bavppn6f7q66v" path="res://sprites/level editor/chest_tile/chest_tile_0.png" id="3_k6oi8"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_h2nuv"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_npd3h"]
 
-[node name="ChestTile" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_13iks"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_k6oi8")
+}],
+"loop": true,
+"name": &"chest_tile",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_k6oi8"]
+data = {
+"data": PackedByteArray("AIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAACwWEwAsFhMALBYTACwWEwC3h1wAe1RDAHtUQwB7VEMAe1RDAHtUQwB7VEMAe1RDALeHXAC3h1wAt4dcALeHXAAsFhMALBYTACwWEwAsFhMAt4dcAHtUQwB7VEMAe1RDAHtUQwB7VEMAe1RDAHtUQwC3h1wAt4dcALeHXAC3h1wALBYTACwWEwAsFhMALBYTALeHXAB7VEMAe1RDAHtUQwB7VEMAe1RDAHtUQwB7VEMAt4dcALeHXAC3h1wAt4dcACwWEwAsFhMALBYTACwWEwC3h1wAe1RDAHtUQwB7VEMAe1RDAHtUQwB7VEMAe1RDALeHXAC3h1wAt4dcALeHXAAsFhMALBYTACwWEwAsFhP/t4dc/3tUQ/97VEP/e1RD/3tUQ/97VEP/e1RD/3tUQ/+3h1z/t4dcALeHXAC3h1wALBYTACwWEwAsFhP/LBYT/ywWE/+3h1z/e1RD/3tUQ/97VEP/e1RD/3tUQ/97VEP/e1RD/7eHXP+3h1wAt4dcACwWEwAsFhMALBYT/ywWE/8sFhP/t4dc/3tUQ/97VEP/5MBy/+TAcv+3h1z/e1RD/3tUQ/+3h1z/t4dcALeHXAAsFhMALBYTACwWE/8sFhP/LBYT/7eHXP97VEP/e1RD/+TAcv8AAAD/t4dc/3tUQ/97VEP/t4dc/7eHXAC3h1wAkm9RAJJvUQCSb1H/km9R/5JvUf+3h1z/t4dc/7eHXP+3h1z/AAAA/7eHXP+3h1z/t4dc/7eHXP+3h1wAt4dcACwWEwAsFhMALBYT/ywWE/8sFhP/t4dc/ywWE/8sFhP/t4dc/7eHXP+3h1z/LBYT/ywWE/+3h1z/t4dcALeHXAAsFhMALBYTACwWE/8sFhP/LBYT/7eHXP97VEP/e1RD/ywWE/8sFhP/LBYT/3tUQ/97VEP/t4dc/7eHXAC3h1wALBYTACwWEwAsFhP/LBYT/ywWE/+3h1z/e1RD/3tUQ/97VEP/e1RD/3tUQ/97VEP/e1RD/7eHXP+3h1wAt4dcAA=="),
+"format": "RGBA8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Resource" id="Resource_h2nuv"]
+script = ExtResource("5_npd3h")
+origin = Vector2(0, 0)
+containing_box = Rect2(2, 8, 12, 8)
+precise = true
+images = Array[Image]([SubResource("Image_k6oi8")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_npd3h"]
+size = Vector2(12, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6xs40"]
+size = Vector2(24, 16)
+
+[node name="ChestTile" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -100
 script = ExtResource("1_gtrwf")
+animated_sprite_node = NodePath("Sprite")
 object_name = "chest_tile"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_13iks")]
+sprite_frames = SubResource("SpriteFrames_13iks")
+autoplay = "chest_tile"
+centered = false
+script = ExtResource("4_h2nuv")
+sprite_info = Dictionary[StringName, ExtResource("5_npd3h")]({
+&"chest_tile": SubResource("Resource_h2nuv")
+})
+default_animation = &"chest_tile"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 12)
+shape = SubResource("RectangleShape2D_npd3h")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 12)
+shape = SubResource("RectangleShape2D_6xs40")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

@@ -1,13 +1,39 @@
-[gd_scene load_steps=4 format=3 uid="uid://cpwj7n6s5goyq"]
+[gd_scene load_steps=10 format=3 uid="uid://cpwj7n6s5goyq"]
 
 [ext_resource type="Script" uid="uid://dj33758kmbfye" path="res://objects/end_custom/end_custom.gd" id="1_ucx7w"]
 [ext_resource type="PackedScene" uid="uid://8nvpnq1dktdh" path="res://components/drawing/draw_text/draw_text.tscn" id="2_r30e5"]
 [ext_resource type="PackedScene" uid="uid://bctkguili8lu6" path="res://components/drawing/draw_rectangle/draw_rectangle.tscn" id="3_7wf4u"]
+[ext_resource type="Script" uid="uid://dtgd0cguix6db" path="res://components/drawing/draw_text/draw_text.gd" id="3_baekh"]
+[ext_resource type="PackedScene" uid="uid://cycctqx2bmx2j" path="res://components/drawing/draw_text/drawn_text.tscn" id="4_yfae3"]
+[ext_resource type="Script" uid="uid://nt05ksk5fdo6" path="res://components/drawing/draw_rectangle/draw_rectangle.gd" id="6_04n2q"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="7_04n2q"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="8_ita7l"]
 
-[node name="EndCustom" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_04n2q"]
+resource_local_to_scene = true
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[node name="EndCustom" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_ucx7w")
+animated_sprite_node = NodePath("Sprite")
 object_name = "end_custom"
 
-[node name="DrawText" parent="." instance=ExtResource("2_r30e5")]
+[node name="DrawText" type="Node2D" parent="." groups=["draw_text"] instance=ExtResource("2_r30e5")]
+z_index = 1
+script = ExtResource("3_baekh")
+drawn_text = ExtResource("4_yfae3")
 
-[node name="DrawRectangle" parent="." instance=ExtResource("3_7wf4u")]
+[node name="DrawRectangle" type="ColorRect" parent="." instance=ExtResource("3_7wf4u")]
+script = ExtResource("6_04n2q")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("7_04n2q")]
+sprite_frames = SubResource("SpriteFrames_04n2q")
+centered = false
+script = ExtResource("8_ita7l")
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

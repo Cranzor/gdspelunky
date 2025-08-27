@@ -1,7 +1,73 @@
-[gd_scene load_steps=2 format=3 uid="uid://bo22o7is8kwsg"]
+[gd_scene load_steps=11 format=4 uid="uid://bo22o7is8kwsg"]
 
 [ext_resource type="Script" uid="uid://xak11lt5fss1" path="res://objects/collectibles/para_pickup/para_pickup.gd" id="1_2jacw"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_jfvv6"]
+[ext_resource type="Texture2D" uid="uid://cbfvx3pd3j0dk" path="res://sprites/items/saleable/para_pickup/para_pickup_0.png" id="3_3awtp"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_44n4c"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_nmeim"]
 
-[node name="ParaPickup" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_jfvv6"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_3awtp")
+}],
+"loop": true,
+"name": &"para_pickup",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_3awtp"]
+data = {
+"data": PackedByteArray("LBYTACwWEwAsFhMALBYTACwWE/8sFhP/LBYT/ywWE/8sFhP/LBYT/ywWE/8sFhP/LBYT/ywWEwAsFhMALBYTACwWEwAsFhMALBYTACwWE/97X0T/5MBy/+TAcv/kwHL/UD0p/+TAcv/kwHL/5MBy/3tfRP8sFhP/LBYTACwWEwAsFhMALBYTACwWE/97X0T/5MBy/+TAcv+3h1z/t4dc/+TAcv+3h1z/t4dc/+TAcv/kwHL/e19E/ywWE/8sFhMALBYTACwWEwAsFhP/t4dc/7eHXP+3h1z/t4dc/7eHXP//////t4dc/7eHXP+3h1z/t4dc/7eHXP8sFhP/LBYTACwWEwAsFhMALBYT/3tfRP+3h1z/t4dc/7eHXP+3h1z//////7eHXP+3h1z/t4dc/7eHXP97X0T/LBYT/ywWEwAsFhMALBYTACwWE/9QPSn/e19E/3tfRP97X0T/jlkl//////+OWSX/e19E/3tfRP97X0T/UD0p/ywWE/8sFhMALBYTACwWEwAsFhP/5MBy/////////////////////////////////////////////////+TAcv8sFhP/LBYTACwWEwAsFhMALBYT/3tfRP+3h1z/t4dc/7eHXP97X0T//////3tfRP+3h1z/t4dc/7eHXP97X0T/LBYT/ywWEwAsFhMALBYTACwWE/+3h1z/t4dc/7eHXP+3h1z/t4dc//////+3h1z/t4dc/7eHXP+3h1z/t4dc/ywWE/8sFhMALBYTACwWEwAsFhP/e19E/7eHXP+3h1z/t4dc/7eHXP//////t4dc/7eHXP+3h1z/t4dc/3tfRP8sFhP/LBYTACwWEwAsFhMALBYT/1A9Kf97X0T/e19E/3tfRP+OWSX/wMDA/45ZJf97X0T/e19E/3tfRP9QPSn/LBYT/ywWEwAsFhMALBYTACwWEwAsFhP/UD0p/1A9Kf9QPSn/UD0p/ywWE/9QPSn/UD0p/1A9Kf9QPSn/LBYT/ywWEwAsFhMA"),
+"format": "RGBA8",
+"height": 12,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Resource" id="Resource_44n4c"]
+script = ExtResource("5_nmeim")
+origin = Vector2(8, 6)
+containing_box = Rect2(2, 0, 13, 12)
+precise = true
+images = Array[Image]([SubResource("Image_3awtp")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nmeim"]
+size = Vector2(13, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_no30p"]
+size = Vector2(26, 24)
+
+[node name="ParaPickup" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -100
 script = ExtResource("1_2jacw")
+animated_sprite_node = NodePath("Sprite")
 object_name = "para_pickup"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_jfvv6")]
+sprite_frames = SubResource("SpriteFrames_jfvv6")
+autoplay = "para_pickup"
+centered = false
+offset = Vector2(-8, -6)
+script = ExtResource("4_44n4c")
+sprite_info = Dictionary[StringName, ExtResource("5_nmeim")]({
+&"para_pickup": SubResource("Resource_44n4c")
+})
+default_animation = &"para_pickup"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_nmeim")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_no30p")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

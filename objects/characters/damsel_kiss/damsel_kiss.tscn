@@ -1,9 +1,133 @@
-[gd_scene load_steps=2 format=3 uid="uid://bxhjy7fggnujw"]
+[gd_scene load_steps=23 format=3 uid="uid://bxhjy7fggnujw"]
 
 [ext_resource type="Script" uid="uid://c1xuh60fyqtso" path="res://objects/characters/damsel_kiss/damsel_kiss.gd" id="1_fo51r"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_6g3cy"]
+[ext_resource type="Texture2D" uid="uid://c3ilq048qfec6" path="res://sprites/character/damsel/damsel_left/damsel_left_0.png" id="3_g5f83"]
+[ext_resource type="Texture2D" uid="uid://bhii6xljgrwry" path="res://sprites/character/main dude/p_kiss_l/p_kiss_l_0.png" id="4_00myo"]
+[ext_resource type="Texture2D" uid="uid://c2j751xklns60" path="res://sprites/character/main dude/p_kiss_l/p_kiss_l_1.png" id="5_3idii"]
+[ext_resource type="Texture2D" uid="uid://b7wlw6lv16lnf" path="res://sprites/character/main dude/p_kiss_l/p_kiss_l_2.png" id="6_g8asl"]
+[ext_resource type="Texture2D" uid="uid://ci5nbmi1fjg0e" path="res://sprites/character/main dude/p_kiss_l/p_kiss_l_3.png" id="7_n4cmi"]
+[ext_resource type="Texture2D" uid="uid://bo3dilhbaq8jq" path="res://sprites/character/main dude/p_kiss_l/p_kiss_l_4.png" id="8_6t54n"]
+[ext_resource type="Texture2D" uid="uid://c4djysqi5mm4a" path="res://sprites/character/main dude/p_kiss_l/p_kiss_l_5.png" id="9_u33eg"]
+[ext_resource type="Texture2D" uid="uid://c038xijmsstyg" path="res://sprites/character/main dude/p_kiss_l/p_kiss_l_6.png" id="10_tp8rn"]
+[ext_resource type="Texture2D" uid="uid://7a0uejv2lmn0" path="res://sprites/character/main dude/p_kiss_l/p_kiss_l_7.png" id="11_qpl4v"]
+[ext_resource type="Texture2D" uid="uid://dqoqhe8apt1lf" path="res://sprites/character/main dude/p_kiss_l/p_kiss_l_8.png" id="12_0ya8p"]
+[ext_resource type="Texture2D" uid="uid://2v4yx6v3drq5" path="res://sprites/character/main dude/p_kiss_l/p_kiss_l_9.png" id="13_rqb4w"]
+[ext_resource type="Texture2D" uid="uid://dbfljnxxluub6" path="res://sprites/character/main dude/stand_left/stand_left_0.png" id="14_ukggd"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="15_70w3m"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="16_kuxs2"]
 
-[node name="DamselKiss" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_6g3cy"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_g5f83")
+}],
+"loop": true,
+"name": &"damsel_left",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_00myo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_3idii")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_g8asl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_n4cmi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6t54n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_u33eg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_tp8rn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_qpl4v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_0ya8p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_rqb4w")
+}],
+"loop": true,
+"name": &"p_kiss_l",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_ukggd")
+}],
+"loop": true,
+"name": &"stand_left",
+"speed": 30.0
+}]
+
+[sub_resource type="Resource" id="Resource_g5f83"]
+script = ExtResource("16_kuxs2")
+origin = Vector2(8, 8)
+containing_box = Rect2(2, 0, 12, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_00myo"]
+script = ExtResource("16_kuxs2")
+origin = Vector2(8, 8)
+containing_box = Rect2(2, 0, 12, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_3idii"]
+script = ExtResource("16_kuxs2")
+origin = Vector2(8, 8)
+containing_box = Rect2(0, 0, 15, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g8asl"]
+size = Vector2(12, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n4cmi"]
+size = Vector2(24, 32)
+
+[node name="DamselKiss" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -100
 script = ExtResource("1_fo51r")
+animated_sprite_node = NodePath("Sprite")
 object_name = "damsel_kiss"
 
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_6g3cy")]
+sprite_frames = SubResource("SpriteFrames_6g3cy")
+autoplay = "damsel_left"
+centered = false
+offset = Vector2(-8, -8)
+script = ExtResource("15_70w3m")
+sprite_info = Dictionary[StringName, ExtResource("16_kuxs2")]({
+&"damsel_left": SubResource("Resource_g5f83"),
+&"p_kiss_l": SubResource("Resource_3idii"),
+&"stand_left": SubResource("Resource_00myo")
+})
+default_animation = &"damsel_left"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_g8asl")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+shape = SubResource("RectangleShape2D_n4cmi")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

@@ -1,7 +1,72 @@
-[gd_scene load_steps=2 format=3 uid="uid://blvqjgc8dse6m"]
+[gd_scene load_steps=11 format=4 uid="uid://blvqjgc8dse6m"]
 
 [ext_resource type="Script" uid="uid://w0e4uckjcrxa" path="res://objects/blocks/entrance/entrance.gd" id="1_qx01b"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_x4ecl"]
+[ext_resource type="Texture2D" uid="uid://b5v65hg1oudxs" path="res://sprites/blocks/background/entrance/entrance_0.png" id="3_6ssdv"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_k4033"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_mvq21"]
 
-[node name="Entrance" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_x4ecl"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_6ssdv")
+}],
+"loop": true,
+"name": &"entrance",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_6ssdv"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANEZbFR4oFR4oFR4oFR4oFR4oFR4oFR4oFR4oFR4oFR4oFR4oFR4oBwwQBwwQNEZbFR4oNEZbR2F+R2F+R2F+R2F+R2F+R2F+R2F+R2F+R2F+R2F+R2F+R2F+NEZbBwwQFR4oNEZbFR4oBwwQBwwQBwwQAAAAAAAAAAAAAAAAAAAAAAAABwwQFR4oFR4oBwwQFR4oNEZbBwwQBwwQBwwQBwwQBwwQBwwQBwwQBwwQBwwQBwwQBwwQBwwQFR4oBwwQFR4oNEZbAAAAFR4oFR4oFR4oFR4oFR4oFR4oFR4oFR4oFR4oFR4oBwwQFR4oBwwQFR4oNEZbAAAAFR4oFR4oFR4oBwwQFR4oFR4oFR4oFR4oFR4oFR4oBwwQFR4oBwwQFR4oNEZbAAAAFR4oFR4oFR4oNEZbFR4oFR4oFR4oFR4oBwwQBwwQBwwQFR4oBwwQFR4oNEZbAAAAFR4oFR4oFR4oFR4oFR4oFR4oFR4oFR4oNEZbNEZbBwwQFR4oBwwQFR4oNEZbAAAAFR4oFR4oFR4oFR4oFR4oFR4oFR4oFR4oFR4oFR4oBwwQFR4oBwwQFR4oNEZbAAAABwwQBwwQFR4oFR4oFR4oFR4oFR4oFR4oFR4oFR4oBwwQFR4oBwwQFR4oNEZbAAAANEZbNEZbFR4oFR4oFR4oFR4oFR4oFR4oFR4oFR4oBwwQFR4oBwwQFR4oNEZbAAAAFR4oFR4oFR4oFR4oFR4oFR4oBwwQFR4oFR4oFR4oBwwQFR4oBwwQFR4oNEZbAAAAFR4oFR4oFR4oFR4oFR4oBwwQNEZbFR4oFR4oFR4oBwwQFR4oBwwQFR4oNEZbAAAAFR4oBwwQFR4oFR4oFR4oNEZbFR4oFR4oFR4oFR4oBwwQFR4oBwwQFR4oNEZbAAAAFR4oNEZbFR4oFR4oFR4oFR4oFR4oFR4oFR4oFR4oBwwQFR4oBwwQ"),
+"format": "RGB8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Resource" id="Resource_k4033"]
+script = ExtResource("5_mvq21")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = true
+images = Array[Image]([SubResource("Image_6ssdv")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mvq21"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_knfqp"]
+size = Vector2(32, 32)
+
+[node name="Entrance" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -4095
 script = ExtResource("1_qx01b")
+animated_sprite_node = NodePath("Sprite")
 object_name = "entrance"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_x4ecl")]
+sprite_frames = SubResource("SpriteFrames_x4ecl")
+autoplay = "entrance"
+centered = false
+script = ExtResource("4_k4033")
+sprite_info = Dictionary[StringName, ExtResource("5_mvq21")]({
+&"entrance": SubResource("Resource_k4033")
+})
+default_animation = &"entrance"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_mvq21")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_knfqp")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

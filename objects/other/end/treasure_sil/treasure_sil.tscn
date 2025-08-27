@@ -1,7 +1,72 @@
-[gd_scene load_steps=2 format=3 uid="uid://bdsk5pwalq5wm"]
+[gd_scene load_steps=11 format=4 uid="uid://bdsk5pwalq5wm"]
 
 [ext_resource type="Script" uid="uid://0wf05blgcuug" path="res://objects/other/end/treasure_sil/treasure_sil.gd" id="1_mw7y2"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_voj46"]
+[ext_resource type="Texture2D" uid="uid://bod1wfrbvfv4y" path="res://sprites/other/end/treasure_sil/treasure_sil_0.png" id="3_74o12"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_5guj3"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_1x6tn"]
 
-[node name="TreasureSil" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_voj46"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_74o12")
+}],
+"loop": true,
+"name": &"treasure_sil",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_74o12"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAD/AAAA/wAAAP8AAAD/AAAAAAAAAAAAAAAAAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAAAAAAAAAAAD/AAAAAAAAAP8AAAD/AAAAAAAAAP8AAAAAAAAAAAAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAAAAAAAAAAAA/wAAAAAAAAAAAAAAAAAAAAAAAAD/AAAAAAAAAAAAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAAAAAAAAAAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAAAAAAAAAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAAA=="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Resource" id="Resource_5guj3"]
+script = ExtResource("5_1x6tn")
+origin = Vector2(0, 0)
+containing_box = Rect2(1, 0, 6, 8)
+precise = true
+images = Array[Image]([SubResource("Image_74o12")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1x6tn"]
+size = Vector2(6, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8mjsm"]
+size = Vector2(12, 16)
+
+[node name="TreasureSil" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -1
 script = ExtResource("1_mw7y2")
+animated_sprite_node = NodePath("Sprite")
 object_name = "treasure_sil"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_voj46")]
+sprite_frames = SubResource("SpriteFrames_voj46")
+autoplay = "treasure_sil"
+centered = false
+script = ExtResource("4_5guj3")
+sprite_info = Dictionary[StringName, ExtResource("5_1x6tn")]({
+&"treasure_sil": SubResource("Resource_5guj3")
+})
+default_animation = &"treasure_sil"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_1x6tn")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_8mjsm")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

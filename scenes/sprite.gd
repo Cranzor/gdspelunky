@@ -10,6 +10,8 @@ var sprites = Sprites.new()
 
 
 func _on_animation_changed() -> void:
+	if get_parent() == null:
+		return
 	var sprite_entry = sprites.sprite_database[animation]
 	var shape = sprite_entry["mask"]["shape"]
 	if shape == "RECTANGLE":
@@ -17,7 +19,7 @@ func _on_animation_changed() -> void:
 		var collision_position = collision_size / 2 + sprite_entry["mask"]["collision_rectangles"][0]
 		collision_position -= sprite_entry["origin"]
 		
-		var parent = get_parent().get_parent()
+		var parent = get_parent()
 		if parent.get_node("CollisionShape2D"):
 			parent.get_node("CollisionShape2D").shape.size = collision_size
 			parent.get_node("CollisionShape2D").position = collision_position
@@ -26,7 +28,7 @@ func _on_animation_changed() -> void:
 		var collision_position = collision_size / 2 + sprite_entry["mask"]["bounding_box"][0]
 		collision_position -= sprite_entry["origin"]
 		
-		var parent = get_parent().get_parent()
+		var parent = get_parent()
 		if parent.get_node("CollisionShape2D"):
 			parent.get_node("CollisionShape2D").shape.size = collision_size
 			parent.get_node("CollisionShape2D").position = collision_position
@@ -54,16 +56,18 @@ func get_all_sprites() -> Array:
 
 
 func get_sprite_folder(default_sprite: StringName) -> String:
-	var file_search = load("res://tools/file_search.gd")
-	var file_search_instance = file_search.new()
-	var all_folders: PackedStringArray = file_search_instance.get_directories("res://sprites/")
-	for folder: String in all_folders:
-		if folder.ends_with("/" + default_sprite):
-			return folder
-	return ""
+	#var file_search = load("res://tools/file_search.gd")
+	#var file_search_instance = file_search.new()
+	#var all_folders: PackedStringArray = file_search_instance.get_directories("res://sprites/")
+	#for folder: String in all_folders:
+		#if folder.ends_with("/" + default_sprite):
+			#return folder
+	#return ""
+	return sprites.sprite_database[default_sprite]["folder_path"]
 
 
 func get_sprite_png_paths(sprite_folder: String) -> Array[String]:
+	print(sprite_folder)
 	var file_search = load("res://tools/file_search.gd")
 	var file_search_instance = file_search.new()
 	var files: Array[String] = file_search_instance.get_files(sprite_folder, "png")

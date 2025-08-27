@@ -1,7 +1,88 @@
-[gd_scene load_steps=2 format=3 uid="uid://bel6870plswvi"]
+[gd_scene load_steps=14 format=3 uid="uid://bel6870plswvi"]
 
 [ext_resource type="Script" uid="uid://xq180e15evt2" path="res://objects/enemies/frog/frog.gd" id="1_nxmx6"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_mbwvc"]
+[ext_resource type="Texture2D" uid="uid://cp3apnitfvmlb" path="res://sprites/enemies/frog_jump_l/frog_jump_l_0.png" id="3_snck4"]
+[ext_resource type="Texture2D" uid="uid://cocfeubae2qg6" path="res://sprites/enemies/frog_left/frog_left_0.png" id="4_sjbmc"]
+[ext_resource type="Texture2D" uid="uid://c4p3jlw5gq6ty" path="res://sprites/enemies/frog_left/frog_left_1.png" id="5_f34ug"]
+[ext_resource type="Texture2D" uid="uid://3qqm132wfpex" path="res://sprites/enemies/frog_left/frog_left_2.png" id="6_fw6yy"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="7_5s5vy"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="8_kcc3b"]
 
-[node name="Frog" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_mbwvc"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_snck4")
+}],
+"loop": true,
+"name": &"frog_jump_l",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_sjbmc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_f34ug")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_fw6yy")
+}],
+"loop": true,
+"name": &"frog_left",
+"speed": 30.0
+}]
+
+[sub_resource type="Resource" id="Resource_snck4"]
+script = ExtResource("8_kcc3b")
+origin = Vector2(0, 0)
+containing_box = Rect2(2, 4, 13, 12)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_sjbmc"]
+script = ExtResource("8_kcc3b")
+origin = Vector2(0, 0)
+containing_box = Rect2(1, 2, 14, 12)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f34ug"]
+size = Vector2(13, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fw6yy"]
+size = Vector2(26, 24)
+
+[node name="Frog" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -40
 script = ExtResource("1_nxmx6")
+animated_sprite_node = NodePath("Sprite")
 object_name = "frog"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_mbwvc")]
+sprite_frames = SubResource("SpriteFrames_mbwvc")
+autoplay = "frog_left"
+centered = false
+script = ExtResource("7_5s5vy")
+sprite_info = Dictionary[StringName, ExtResource("8_kcc3b")]({
+&"frog_jump_l": SubResource("Resource_sjbmc"),
+&"frog_left": SubResource("Resource_snck4")
+})
+default_animation = &"frog_left"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8.5, 10)
+shape = SubResource("RectangleShape2D_f34ug")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8.5, 10)
+shape = SubResource("RectangleShape2D_fw6yy")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

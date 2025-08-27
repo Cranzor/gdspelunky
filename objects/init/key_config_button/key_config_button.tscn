@@ -1,7 +1,71 @@
-[gd_scene load_steps=2 format=3 uid="uid://ctonkbm667vhu"]
+[gd_scene load_steps=11 format=4 uid="uid://ctonkbm667vhu"]
 
 [ext_resource type="Script" uid="uid://bhh83yta5j1gd" path="res://objects/init/key_config_button/key_config_button.gd" id="1_0agxr"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_vqqv8"]
+[ext_resource type="Texture2D" uid="uid://cixib60g451al" path="res://sprites/other/key_config_button/key_config_button_0.png" id="3_8c1ex"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_lcr3w"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_ow7id"]
 
-[node name="KeyConfigButton" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_vqqv8"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_8c1ex")
+}],
+"loop": true,
+"name": &"key_config_button",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_8c1ex"]
+data = {
+"data": PackedByteArray("gICAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAgICAQEBAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAQEBAQEBAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAQEBAQEBAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAQEBAQEBAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAQEBAQEBAgICAgICAgICAgICA////////gICA////////gICA////////////////gICA////////gICAgICA////////gICA////////////////gICA////////////////gICA////////gICAgICA////gICA////////////////gICA////////gICA////////////////gICAgICAgICAgICAQEBAQEBAgICAgICAgICAgICA////////////////////gICA////////QEBAQEBAgICA////////gICAgICA////////gICA////////////////gICA////////////////gICA////////////gICA////gICA////////////////gICA////////gICA////////////////gICAgICAgICAgICAQEBAQEBAgICAgICAgICAgICA////////////////QEBAgICA////////////////gICA////////////////////////gICA////////QEBAQEBAgICA////////QEBA////gICA////////////////////gICA////////QEBAQEBAgICA////////gICA////////QEBAQEBAgICAgICAgICAgICAQEBAQEBAgICAgICAgICAgICA////////////////gICAgICA////////QEBAQEBAgICA////////////////////////gICA////////gICAgICAgICA////////gICA////gICA////////////////////gICA////////////////gICA////////gICA////////gICA////gICAgICAgICAgICAQEBAQEBAgICAgICAgICAgICA////////////////////gICA////////////////gICAQEBAQEBA////////QEBAQEBAgICA////////////////gICA////////////////gICA////////QEBA////////gICA////////QEBAQEBAgICA////////gICA////////////////gICAgICAgICAgICAQEBAQEBAgICAgICAgICAgICA////////QEBA////////gICA////////////////gICAgICAgICA////////gICAgICAgICA////////////////gICA////////////////gICA////////gICA////////gICA////////gICAgICAgICA////////gICA////////////////gICAgICAgICAgICAQEBAQEBAgICAgICAgICAgICAQEBAQEBAgICAQEBAQEBAgICAQEBAQEBAQEBAQEBAgICAgICAgICAQEBAQEBAgICAgICAgICAQEBAQEBAQEBAQEBAgICAQEBAQEBAQEBAQEBAgICAQEBAQEBAgICAQEBAQEBAgICAQEBAQEBAgICAgICAgICAQEBAQEBAgICAQEBAQEBAQEBAQEBAgICAgICAgICAgICAQEBAQEBAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAQEBAQEBAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAQEBAQEBAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg"),
+"format": "RGB8",
+"height": 16,
+"mipmaps": false,
+"width": 56
+}
+
+[sub_resource type="Resource" id="Resource_lcr3w"]
+script = ExtResource("5_ow7id")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 56, 16)
+precise = true
+images = Array[Image]([SubResource("Image_8c1ex")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ow7id"]
+size = Vector2(56, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mi8ll"]
+size = Vector2(112, 32)
+
+[node name="KeyConfigButton" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_0agxr")
+animated_sprite_node = NodePath("Sprite")
 object_name = "key_config_button"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_vqqv8")]
+sprite_frames = SubResource("SpriteFrames_vqqv8")
+autoplay = "key_config_button"
+centered = false
+script = ExtResource("4_lcr3w")
+sprite_info = Dictionary[StringName, ExtResource("5_ow7id")]({
+&"key_config_button": SubResource("Resource_lcr3w")
+})
+default_animation = &"key_config_button"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(28, 8)
+shape = SubResource("RectangleShape2D_ow7id")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(28, 8)
+shape = SubResource("RectangleShape2D_mi8ll")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

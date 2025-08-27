@@ -1,7 +1,97 @@
-[gd_scene load_steps=2 format=3 uid="uid://d0cddnabifriw"]
+[gd_scene load_steps=14 format=3 uid="uid://d0cddnabifriw"]
 
 [ext_resource type="Script" uid="uid://chn4k5g56yfaq" path="res://objects/blocks/lush/lush.gd" id="1_0xr0n"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_nftbi"]
+[ext_resource type="Texture2D" uid="uid://dt68ucfndoa60" path="res://sprites/blocks/lush/lush/lush_0.png" id="3_1treg"]
+[ext_resource type="Texture2D" uid="uid://cyfd0d6qsya62" path="res://sprites/blocks/lush/lush_gold/lush_gold_0.png" id="4_vxk5l"]
+[ext_resource type="Texture2D" uid="uid://con58ewvocjkq" path="res://sprites/blocks/lush/lush_gold_big/lush_gold_big_0.png" id="5_tjptl"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="6_5kle4"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="7_13d7s"]
 
-[node name="Lush" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_nftbi"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_1treg")
+}],
+"loop": true,
+"name": &"lush",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_vxk5l")
+}],
+"loop": true,
+"name": &"lush_gold",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_tjptl")
+}],
+"loop": true,
+"name": &"lush_gold_big",
+"speed": 30.0
+}]
+
+[sub_resource type="Resource" id="Resource_1treg"]
+script = ExtResource("7_13d7s")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_vxk5l"]
+script = ExtResource("7_13d7s")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_tjptl"]
+script = ExtResource("7_13d7s")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5kle4"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_13d7s"]
+size = Vector2(32, 32)
+
+[node name="Lush" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -100
 script = ExtResource("1_0xr0n")
+animated_sprite_node = NodePath("Sprite")
 object_name = "lush"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_nftbi")]
+sprite_frames = SubResource("SpriteFrames_nftbi")
+autoplay = "lush"
+centered = false
+script = ExtResource("6_5kle4")
+sprite_info = Dictionary[StringName, ExtResource("7_13d7s")]({
+&"lush": SubResource("Resource_1treg"),
+&"lush_gold": SubResource("Resource_vxk5l"),
+&"lush_gold_big": SubResource("Resource_tjptl")
+})
+default_animation = &"lush"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_5kle4")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_13d7s")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

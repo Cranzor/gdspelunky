@@ -1,7 +1,148 @@
-[gd_scene load_steps=2 format=3 uid="uid://c5b4waufn8dyu"]
+[gd_scene load_steps=20 format=3 uid="uid://c5b4waufn8dyu"]
 
 [ext_resource type="Script" uid="uid://bqvfbe186vyvy" path="res://objects/blocks/thin_ice/thin_ice.gd" id="1_ml0g8"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_8w5wk"]
+[ext_resource type="Texture2D" uid="uid://da1kaoctiqqtg" path="res://sprites/blocks/dark/thin_ice1/thin_ice1_0.png" id="3_e5ewy"]
+[ext_resource type="Texture2D" uid="uid://cgog04pg478md" path="res://sprites/blocks/dark/thin_ice2/thin_ice2_0.png" id="4_g04d6"]
+[ext_resource type="Texture2D" uid="uid://dgdo34pimkoki" path="res://sprites/blocks/dark/thin_ice3/thin_ice3_0.png" id="5_a4ujl"]
+[ext_resource type="Texture2D" uid="uid://db2khscng4yrb" path="res://sprites/blocks/dark/thin_ice4/thin_ice4_0.png" id="6_86pbe"]
+[ext_resource type="Texture2D" uid="uid://c3qic6oucqweu" path="res://sprites/blocks/dark/thin_ice5/thin_ice5_0.png" id="7_y61g8"]
+[ext_resource type="Texture2D" uid="uid://blws0m43i4ncg" path="res://sprites/blocks/dark/thin_ice6/thin_ice6_0.png" id="8_rbmo0"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="9_y5wnc"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="10_rt5w0"]
 
-[node name="ThinIce" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_8w5wk"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_e5ewy")
+}],
+"loop": true,
+"name": &"thin_ice1",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_g04d6")
+}],
+"loop": true,
+"name": &"thin_ice2",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_a4ujl")
+}],
+"loop": true,
+"name": &"thin_ice3",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_86pbe")
+}],
+"loop": true,
+"name": &"thin_ice4",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_y61g8")
+}],
+"loop": true,
+"name": &"thin_ice5",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_rbmo0")
+}],
+"loop": true,
+"name": &"thin_ice6",
+"speed": 30.0
+}]
+
+[sub_resource type="Resource" id="Resource_e5ewy"]
+script = ExtResource("10_rt5w0")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 9)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_g04d6"]
+script = ExtResource("10_rt5w0")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 9)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_a4ujl"]
+script = ExtResource("10_rt5w0")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 9)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_86pbe"]
+script = ExtResource("10_rt5w0")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 7)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_y61g8"]
+script = ExtResource("10_rt5w0")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 6)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_rbmo0"]
+script = ExtResource("10_rt5w0")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 5)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y5wnc"]
+size = Vector2(16, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rt5w0"]
+size = Vector2(32, 18)
+
+[node name="ThinIce" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -110
 script = ExtResource("1_ml0g8")
+animated_sprite_node = NodePath("Sprite")
 object_name = "thin_ice"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_8w5wk")]
+sprite_frames = SubResource("SpriteFrames_8w5wk")
+autoplay = "thin_ice1"
+centered = false
+script = ExtResource("9_y5wnc")
+sprite_info = Dictionary[StringName, ExtResource("10_rt5w0")]({
+&"thin_ice1": SubResource("Resource_e5ewy"),
+&"thin_ice2": SubResource("Resource_g04d6"),
+&"thin_ice3": SubResource("Resource_a4ujl"),
+&"thin_ice4": SubResource("Resource_86pbe"),
+&"thin_ice5": SubResource("Resource_y61g8"),
+&"thin_ice6": SubResource("Resource_rbmo0")
+})
+default_animation = &"thin_ice1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 4.5)
+shape = SubResource("RectangleShape2D_y5wnc")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 4.5)
+shape = SubResource("RectangleShape2D_rt5w0")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

@@ -1,7 +1,72 @@
-[gd_scene load_steps=2 format=3 uid="uid://dnd8oo5pk7wj7"]
+[gd_scene load_steps=11 format=4 uid="uid://dnd8oo5pk7wj7"]
 
 [ext_resource type="Script" uid="uid://bgnvlht715q4h" path="res://objects/level editor/shotgun_tile/shotgun_tile.gd" id="1_yfogk"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_bn78u"]
+[ext_resource type="Texture2D" uid="uid://x58dtqhg4uas" path="res://sprites/level editor/shotgun_tile/shotgun_tile_0.png" id="3_1bqux"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_kn2mp"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_a7yoc"]
 
-[node name="ShotgunTile" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_bn78u"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_1bqux")
+}],
+"loop": true,
+"name": &"shotgun_tile",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_1bqux"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoI/xIKCP8SCgj/EgoI/xIKCP8SCgj/EgoI/xIKCP8SCgj/EgoIABIKCAASCggAEgoIABIKCAASCgj//////4CAgP/AwMD/wMDA/8DAwP///////////8DAwP+AgID/EgoI/xIKCAASCggAEgoIABIKCAASCgj/jlkl/2MvHf+AgID/gICA/4CAgP9AQED/QEBA/0BAQP9AQED/QEBA/xIKCP8SCggAEgoIABIKCAASCgj/jlkl/2MvHf8mFBD/Yy8d/2MvHf9jLx3/jlkl/45ZJf+OWSX/Yy8d/0BAQP8SCgj/EgoIABIKCAASCggAEgoI/2MvHf9jLx3/EgoI/yYUEP8mFBD/JhQQ/yYUEP8mFBD/JhQQ/yYUEP8SCgj/EgoIABIKCAASCggAEgoIABIKCP8mFBD/JhQQ/xIKCP8SCgj/EgoI/xIKCP8SCgj/EgoI/xIKCP8SCgj/EgoIABIKCAASCggAEgoIABIKCAASCggAEgoI/xIKCP8SCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIAA=="),
+"format": "RGBA8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Resource" id="Resource_kn2mp"]
+script = ExtResource("5_a7yoc")
+origin = Vector2(0, 0)
+containing_box = Rect2(2, 9, 13, 7)
+precise = true
+images = Array[Image]([SubResource("Image_1bqux")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a7yoc"]
+size = Vector2(13, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ucc7i"]
+size = Vector2(26, 14)
+
+[node name="ShotgunTile" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -100
 script = ExtResource("1_yfogk")
+animated_sprite_node = NodePath("Sprite")
 object_name = "shotgun_tile"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_bn78u")]
+sprite_frames = SubResource("SpriteFrames_bn78u")
+autoplay = "shotgun_tile"
+centered = false
+script = ExtResource("4_kn2mp")
+sprite_info = Dictionary[StringName, ExtResource("5_a7yoc")]({
+&"shotgun_tile": SubResource("Resource_kn2mp")
+})
+default_animation = &"shotgun_tile"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8.5, 12.5)
+shape = SubResource("RectangleShape2D_a7yoc")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8.5, 12.5)
+shape = SubResource("RectangleShape2D_ucc7i")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

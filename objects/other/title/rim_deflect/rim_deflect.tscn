@@ -1,7 +1,72 @@
-[gd_scene load_steps=2 format=3 uid="uid://cokh6e8hnq6ms"]
+[gd_scene load_steps=11 format=4 uid="uid://cokh6e8hnq6ms"]
 
 [ext_resource type="Script" uid="uid://nsdo33pv68be" path="res://objects/other/title/rim_deflect/rim_deflect.gd" id="1_xaurw"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_x2b0e"]
+[ext_resource type="Texture2D" uid="uid://cr5o8n50tx4k5" path="res://sprites/other/rim_deflect/rim_deflect_0.png" id="3_mcgqn"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_6votm"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_5u81d"]
 
-[node name="RimDeflect" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_x2b0e"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_mcgqn")
+}],
+"loop": true,
+"name": &"rim_deflect",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_mcgqn"]
+data = {
+"data": PackedByteArray("Yy8dAGMvHf9jLx0AYy8dAGMvHQBjLx0AAIAAAACAAAAAgAAAAIAAAGMvHQBjLx0AYy8dAGMvHQBjLx3/Yy8dAGMvHf+OWSX/jlklAI5ZJQCOWSUAjlklAACAAAAAgAAAAIAAAACAAACOWSUAjlklAI5ZJQCOWSUAjlkl/2MvHf8SCgj/Yy8d/2MvHQBjLx0AYy8dAGMvHQAAgAAAAIAAAACAAAAAgAAAYy8dAGMvHQBjLx0AYy8dAGMvHf8SCgj/EgoI/xIKCP8SCggAEgoIABIKCAASCggAAIAAAACAAAAAgAAAAIAAABIKCAASCggAEgoIABIKCAASCgj/EgoI/xIKCAASCggAEgoIABIKCAASCggAEgoIAACAAAAAgAAAAIAAAACAAAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAAAgAAAAIAAAACAAAAAgAAAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAAIAAAACAAAAAgAAAAIAAABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIAACAAAAAgAAAAIAAAACAAAASCggAEgoIABIKCAASCggAEgoIABIKCAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAA=="),
+"format": "RGBA8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Resource" id="Resource_6votm"]
+script = ExtResource("5_5u81d")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 4)
+precise = true
+images = Array[Image]([SubResource("Image_mcgqn")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5u81d"]
+size = Vector2(16, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xsobu"]
+size = Vector2(32, 8)
+
+[node name="RimDeflect" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -99
 script = ExtResource("1_xaurw")
+animated_sprite_node = NodePath("Sprite")
 object_name = "rim_deflect"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_x2b0e")]
+sprite_frames = SubResource("SpriteFrames_x2b0e")
+autoplay = "rim_deflect"
+centered = false
+script = ExtResource("4_6votm")
+sprite_info = Dictionary[StringName, ExtResource("5_5u81d")]({
+&"rim_deflect": SubResource("Resource_6votm")
+})
+default_animation = &"rim_deflect"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 2)
+shape = SubResource("RectangleShape2D_5u81d")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 2)
+shape = SubResource("RectangleShape2D_xsobu")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

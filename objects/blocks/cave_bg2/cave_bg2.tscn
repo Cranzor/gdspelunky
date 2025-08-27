@@ -1,7 +1,72 @@
-[gd_scene load_steps=2 format=3 uid="uid://duy0bvbxq1dn2"]
+[gd_scene load_steps=11 format=4 uid="uid://duy0bvbxq1dn2"]
 
 [ext_resource type="Script" uid="uid://cbsiy2q1ynghm" path="res://objects/blocks/cave_bg2/cave_bg2.gd" id="1_ud18g"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_ij46b"]
+[ext_resource type="Texture2D" uid="uid://dnt0qayryuft8" path="res://sprites/blocks/background/cave_bg/cave_bg_0.png" id="3_ta7fv"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_stjaj"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_2l7ur"]
 
-[node name="CaveBg2" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_ij46b"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ta7fv")
+}],
+"loop": true,
+"name": &"cave_bg",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_ta7fv"]
+data = {
+"data": PackedByteArray("BwwQAAAAAAAAAAAABwwQBwwQAAAABwwQBwwQBwwQAAAABwwQBwwQBwwQBwwQBwwQBwwQBwwQBwwQBwwQBwwQAAAABwwQBwwQBwwQBwwQBwwQAAAAAAAABwwQBwwQBwwQBwwQBwwQBwwQBwwQBwwQBwwQAAAAAAAAAAAAAAAAAAAABwwQBwwQBwwQBwwQFR4oFR4oFR4oBwwQBwwQBwwQAAAABwwQBwwQBwwQBwwQBwwQAAAAAAAABwwQBwwQBwwQBwwQBwwQBwwQBwwQBwwQBwwQAAAAAAAAAAAAAAAAAAAAAAAABwwQBwwQFR4oFR4oBwwQBwwQBwwQBwwQBwwQAAAABwwQBwwQBwwQBwwQAAAAAAAAAAAAAAAABwwQBwwQBwwQBwwQBwwQBwwQBwwQBwwQAAAAAAAAFR4oFR4oAAAAAAAABwwQBwwQFR4oBwwQBwwQBwwQBwwQBwwQBwwQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABwwQBwwQBwwQBwwQBwwQBwwQBwwQAAAAAAAAFR4oBwwQBwwQBwwQAAAAAAAABwwQFR4oBwwQBwwQBwwQBwwQBwwQAAAAAAAAAAAAFR4oFR4oAAAAAAAABwwQBwwQAAAAAAAABwwQBwwQBwwQBwwQBwwQBwwQAAAAFR4oBwwQBwwQBwwQBwwQAAAAAAAABwwQBwwQBwwQBwwQBwwQBwwQBwwQAAAAFR4oFR4oBwwQBwwQBwwQAAAABwwQBwwQBwwQAAAABwwQBwwQBwwQBwwQBwwQAAAAAAAAFR4oBwwQBwwQBwwQBwwQBwwQAAAABwwQBwwQBwwQBwwQBwwQBwwQAAAAFR4oBwwQBwwQBwwQBwwQBwwQAAAABwwQBwwQBwwQAAAABwwQBwwQBwwQBwwQAAAAAAAAFR4oBwwQBwwQBwwQBwwQBwwQBwwQAAAAAAAABwwQBwwQBwwQBwwQBwwQAAAAFR4oBwwQBwwQFR4oFR4oBwwQBwwQAAAABwwQBwwQAAAAAAAAAAAAAAAAAAAAAAAAAAAAFR4oBwwQBwwQBwwQBwwQBwwQBwwQAAAAAAAAAAAABwwQBwwQBwwQBwwQAAAAFR4oBwwQFR4oBwwQBwwQBwwQBwwQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFR4oBwwQBwwQBwwQBwwQBwwQBwwQBwwQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABwwQBwwQFR4oBwwQBwwQBwwQAAAAAAAAAAAAAAAAAAAAAAAAFR4oAAAAAAAAFR4oBwwQBwwQBwwQBwwQBwwQBwwQBwwQBwwQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABwwQBwwQBwwQBwwQAAAAAAAAFR4oFR4oFR4oFR4oFR4oBwwQBwwQAAAABwwQBwwQBwwQBwwQBwwQBwwQBwwQBwwQAAAAAAAAFR4oFR4oFR4oFR4oFR4oFR4oAAAAAAAABwwQBwwQBwwQAAAAAAAAFR4oFR4oFR4oFR4oBwwQBwwQBwwQBwwQAAAABwwQBwwQBwwQBwwQBwwQBwwQBwwQAAAAAAAAFR4oFR4oBwwQBwwQBwwQBwwQBwwQBwwQAAAAAAAAAAAAAAAAAAAAAAAAFR4oFR4oBwwQBwwQBwwQBwwQBwwQBwwQAAAAAAAABwwQBwwQBwwQBwwQBwwQAAAAAAAAFR4oFR4oBwwQBwwQBwwQBwwQBwwQBwwQBwwQAAAAAAAAFR4oFR4oFR4oAAAAFR4oFR4oBwwQBwwQBwwQBwwQBwwQBwwQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFR4oFR4oBwwQBwwQBwwQBwwQBwwQBwwQBwwQBwwQAAAAFR4oFR4oBwwQBwwQAAAAFR4oBwwQBwwQBwwQBwwQBwwQBwwQBwwQBwwQAAAABwwQBwwQBwwQAAAAAAAAFR4oFR4oBwwQBwwQBwwQFR4oFR4oFR4oBwwQBwwQBwwQAAAAFR4oBwwQBwwQBwwQAAAAFR4oBwwQBwwQBwwQBwwQBwwQBwwQBwwQBwwQAAAABwwQBwwQAAAAAAAAFR4oFR4oBwwQBwwQBwwQFR4oBwwQBwwQBwwQBwwQBwwQBwwQAAAABwwQBwwQBwwQBwwQAAAABwwQBwwQBwwQBwwQBwwQBwwQBwwQBwwQBwwQAAAABwwQAAAAAAAAFR4oFR4oBwwQBwwQBwwQFR4oBwwQBwwQBwwQBwwQBwwQBwwQBwwQAAAABwwQBwwQBwwQAAAAAAAAAAAABwwQBwwQBwwQBwwQBwwQBwwQBwwQBwwQAAAAAAAAAAAAFR4oFR4oBwwQBwwQBwwQFR4oBwwQBwwQBwwQBwwQBwwQBwwQBwwQBwwQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABwwQBwwQBwwQBwwQBwwQBwwQAAAAAAAAAAAAFR4oFR4oBwwQBwwQBwwQBwwQFR4oBwwQBwwQBwwQBwwQBwwQBwwQBwwQAAAAAAAAAAAAFR4oFR4oFR4oBwwQAAAAAAAABwwQBwwQBwwQBwwQBwwQBwwQAAAAAAAAAAAAFR4oBwwQBwwQBwwQBwwQBwwQFR4oBwwQBwwQBwwQBwwQBwwQBwwQBwwQAAAAAAAAFR4oFR4oFR4oBwwQBwwQBwwQAAAAAAAABwwQBwwQBwwQBwwQAAAAAAAAAAAAAAAABwwQBwwQBwwQBwwQBwwQBwwQBwwQBwwQBwwQBwwQBwwQBwwQBwwQAAAAAAAAFR4oFR4oFR4oBwwQBwwQBwwQBwwQAAAAAAAAAAAABwwQBwwQAAAAAAAABwwQBwwQAAAAAAAABwwQBwwQBwwQBwwQBwwQBwwQBwwQBwwQBwwQBwwQBwwQAAAAAAAAFR4oFR4oFR4oBwwQBwwQBwwQBwwQBwwQBwwQAAAAAAAAAAAAAAAAAAAAAAAAAAAABwwQAAAAAAAAAAAAAAAABwwQBwwQBwwQBwwQBwwQBwwQBwwQAAAAAAAAAAAAFR4oFR4oFR4oBwwQBwwQBwwQFR4oFR4oBwwQBwwQAAAABwwQAAAAAAAAAAAAAAAAAAAAAAAAAAAABwwQBwwQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABwwQBwwQAAAAFR4oFR4oBwwQBwwQBwwQFR4oFR4oBwwQBwwQBwwQAAAAAAAAAAAAAAAAFR4oFR4oBwwQAAAAAAAABwwQBwwQBwwQAAAAAAAABwwQBwwQBwwQAAAAAAAABwwQAAAAAAAABwwQBwwQBwwQBwwQFR4oFR4oBwwQBwwQBwwQAAAAAAAAAAAAFR4oFR4oBwwQBwwQBwwQBwwQAAAABwwQBwwQBwwQBwwQAAAABwwQBwwQBwwQAAAAAAAAAAAAAAAAAAAAAAAABwwQBwwQBwwQBwwQBwwQBwwQBwwQBwwQAAAAAAAAFR4oBwwQBwwQBwwQBwwQBwwQBwwQBwwQAAAABwwQBwwQBwwQAAAABwwQBwwQAAAAAAAAFR4oFR4oFR4oFR4oAAAABwwQBwwQBwwQBwwQBwwQBwwQBwwQBwwQAAAAFR4oBwwQBwwQBwwQBwwQFR4oFR4oAAAABwwQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFR4oFR4oBwwQBwwQBwwQBwwQAAAABwwQBwwQBwwQBwwQBwwQBwwQAAAAFR4oBwwQBwwQBwwQBwwQFR4oBwwQBwwQBwwQAAAABwwQAAAAAAAABwwQBwwQAAAAAAAAFR4oFR4oBwwQBwwQBwwQBwwQBwwQBwwQAAAABwwQBwwQBwwQBwwQBwwQAAAAFR4oBwwQBwwQBwwQBwwQFR4oBwwQBwwQBwwQAAAABwwQAAAABwwQBwwQBwwQAAAAAAAAFR4oBwwQBwwQBwwQBwwQBwwQBwwQBwwQAAAAAAAAAAAAAAAAAAAAAAAAAAAABwwQBwwQBwwQBwwQBwwQAAAABwwQBwwQBwwQAAAABwwQAAAABwwQBwwQBwwQAAAABwwQBwwQBwwQBwwQBwwQBwwQBwwQBwwQBwwQBwwQAAAABwwQBwwQBwwQAAAAAAAABwwQBwwQBwwQBwwQBwwQ"),
+"format": "RGB8",
+"height": 32,
+"mipmaps": false,
+"width": 32
+}
+
+[sub_resource type="Resource" id="Resource_stjaj"]
+script = ExtResource("5_2l7ur")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 32, 32)
+precise = true
+images = Array[Image]([SubResource("Image_ta7fv")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2l7ur"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vm0mn"]
+size = Vector2(64, 64)
+
+[node name="CaveBg2" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -998
 script = ExtResource("1_ud18g")
+animated_sprite_node = NodePath("Sprite")
 object_name = "cave_bg2"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_ij46b")]
+sprite_frames = SubResource("SpriteFrames_ij46b")
+autoplay = "cave_bg"
+centered = false
+script = ExtResource("4_stjaj")
+sprite_info = Dictionary[StringName, ExtResource("5_2l7ur")]({
+&"cave_bg": SubResource("Resource_stjaj")
+})
+default_animation = &"cave_bg"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_2l7ur")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_vm0mn")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

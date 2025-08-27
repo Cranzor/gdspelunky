@@ -1,7 +1,150 @@
-[gd_scene load_steps=2 format=3 uid="uid://hbo7rg5pcwrr"]
+[gd_scene load_steps=22 format=4 uid="uid://hbo7rg5pcwrr"]
 
 [ext_resource type="Script" uid="uid://dkmmy2f5wmcj5" path="res://objects/items/parachute/parachute.gd" id="1_icwxw"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_3rcre"]
+[ext_resource type="Texture2D" uid="uid://bm3c5gqsw4jdf" path="res://sprites/items/saleable/para_open/para_open_0.png" id="3_irmf0"]
+[ext_resource type="Texture2D" uid="uid://rsttp0xmlrhj" path="res://sprites/items/saleable/para_open/para_open_1.png" id="4_ak6tj"]
+[ext_resource type="Texture2D" uid="uid://be3dys72d3wot" path="res://sprites/items/saleable/para_open/para_open_2.png" id="5_rkglm"]
+[ext_resource type="Texture2D" uid="uid://b0sls1752uryv" path="res://sprites/items/saleable/para_open/para_open_3.png" id="6_esaec"]
+[ext_resource type="Texture2D" uid="uid://c7xox6vpuxf8h" path="res://sprites/items/saleable/para_open/para_open_4.png" id="7_ncpti"]
+[ext_resource type="Texture2D" uid="uid://c5imsceo3bq2s" path="res://sprites/items/saleable/parachute/parachute_0.png" id="8_glm5y"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="9_kfm05"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="10_vgnnr"]
 
-[node name="Parachute" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_3rcre"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_irmf0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ak6tj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_rkglm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_esaec")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ncpti")
+}],
+"loop": true,
+"name": &"para_open",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_glm5y")
+}],
+"loop": true,
+"name": &"parachute",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_irmf0"]
+data = {
+"data": PackedByteArray("QIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAP///wD///8A////AP///wD///8A////AP///wD///8A////AECAAABAgAAAQIAAAECAAABAgAAAQIAAAP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8AQIAAAECAAABAgAAAQIAAAECAAAD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AECAAABAgAAAQIAAAECAAABAgAAA////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wBAgAAAQIAAAECAAABAgAAAQIAAAP///wD///8A////AP///wD///8A/////////wD///8A////AP///wD///8AQIAAAECAAABAgAAAQIAAAECAAAD///8A////AP///wD///8A////////////////////AP///wD///8A////AECAAABAgAAAQIAAAECAAABAgAAA////AP///wD///8A////AP///////////////////wD///8A////AP///wBAgAAAQIAAAECAAABAgAAAQIAAAMDAwADAwMAAwMDAAMDAwADAwMD/wMDA/8DAwP/AwMAAwMDAAMDAwADAwMAAQIAAAECAAABAgAAAQIAAAECAAADAwMAAwMDAAMDAwADAwMAAwMDAAMDAwP/AwMAAwMDAAMDAwADAwMAAwMDAAECAAABAgAAAQIAAAA=="),
+"format": "RGBA8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Image" id="Image_ak6tj"]
+data = {
+"data": PackedByteArray("QIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAAD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AECAAABAgAAAQIAAAECAAAD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8AQIAAAECAAABAgAAA////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AECAAABAgAAAQIAAAP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wBAgAAAQIAAAECAAAD///8A////AP///wD///8A////AP///////////////////wD///8A////AP///wD///8AQIAAAECAAABAgAAA////AP///wD///8A////AP//////////////////////////////AP///wD///8A////AECAAABAgAAAQIAAAMDAwADAwMAAwMDAAMDAwADAwMD/////////////////wMDA/8DAwADAwMAAwMDAAMDAwABAgAAAQIAAAECAAADAwMAAwMDAAMDAwADAwMAAwMDAAP///wDAwMD/////AMDAwADAwMAAwMDAAMDAwADAwMAAQIAAAECAAABAgAAAwMDAAMDAwADAwMAAwMDAAMDAwADAwMAAwMDA/8DAwADAwMAAwMDAAMDAwADAwMAAwMDAAECAAABAgAAAQIAAAMDAwADAwMAAwMDAAMDAwADAwMAAwMDAAMDAwADAwMAAwMDAAMDAwADAwMAAwMDAAMDAwABAgAAAQIAAAA=="),
+"format": "RGBA8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Image" id="Image_rkglm"]
+data = {
+"data": PackedByteArray("QIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAA////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wBAgAAAQIAAAECAAABAgAAA////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AECAAABAgAAA////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8AQIAAAP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///////////////////8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD//////////////////////////////wD///8A////AP///wD///8A////AP///wD///8A////AP///wD/////////////////////////////////////////AP///wD///8A////AP///wD///8A////AP///wD///////////////////////////////////////////////////8A////AP///wD///8AwMDAAMDAwADAwMAAwMDA/8DAwP////8A////////////////////AMDAwP/AwMD/wMDAAMDAwADAwMAAwMDAAMDAwADAwMAAwMDAAMDAwADAwMD/wMDAAMDAwP/AwMD/wMDA/8DAwADAwMD/wMDAAMDAwADAwMAAwMDAAMDAwADAwMAAwMDAAMDAwADAwMAAwMDAAICAgP/AwMAAwMDA/8DAwACAgID/wMDAAMDAwADAwMAAwMDAAMDAwADAwMAAwMDAAMDAwADAwMAAwMDAAICAgACAgIAAgICA/4CAgP+AgID/gICAAICAgADAwMAAwMDAAMDAwADAwMAAwMDAAMDAwADAwMAAwMDAAICAgACAgIAAgICAAICAgACAgID/gICAAICAgACAgIAAgICAAMDAwADAwMAAwMDAAMDAwADAwMAAwMDAAICAgACAgIAAgICAAICAgACAgIAAgICA/4CAgACAgIAAgICAAICAgACAgIAAwMDAAMDAwABAgAAAQIAAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgP+AgIAAgICAAICAgACAgIAAgICAAICAgABAgAAAQIAAAA=="),
+"format": "RGBA8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Image" id="Image_esaec"]
+data = {
+"data": PackedByteArray("////AP///wD///8A////AP///wD///8A/////////////////////////wD///8A////AP///wD///8A////AP///wD///8A////AP///wD//////////////////////////////////////////////wD///8A////AP///wD///8A////AP///wD/////////////////////////////////////////////////////////AP///wD///8A////AP///wD///////////////////////////////////////////////////////////////////8A////AP///wD///8A////////////////wMDA/8DAwP///////////8DAwP/AwMD/////////////////////AP///wD///8A////AP/////AwMD/////AMDAwADAwMAAwMDA/8DAwP/AwMAAwMDAAP///wDAwMD//////////wD///8AwMDAAMDAwADAwMD/wMDAAMDAwADAwMAAwMDAAMDAwACAgID/gICAAMDAwADAwMAAwMDAAMDAwP/AwMAAwMDAAICAgACAgIAAgICA/4CAgP+AgIAAgICAAICAgACAgIAAgICA/4CAgACAgIAAgICAAICAgP+AgID/gICAAICAgACAgIAAgICAAICAgACAgID/gICAAICAgACAgIAAgICAAICAgP+AgIAAgICAAICAgACAgID/gICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgP+AgIAAgICAAICAgACAgID/gICAAICAgACAgID/gICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgID/gICAAICAgACAgIAAgICA/4CAgACAgIAAgICA/4CAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgP+AgIAAgICAAICAgP+AgIAAgICA/4CAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgID/gICAAICAgACAgID/gICAAICAgP+AgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgP+AgIAAgICA/4CAgP+AgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgID/gICAAICAgP+AgID/gICAAICAgACAgIAAgICAAICAgACAgIAAQIAAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgP+AgID/gICAAICAgACAgIAAgICAAICAgACAgIAAQIAAAA=="),
+"format": "RGBA8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Image" id="Image_ncpti"]
+data = {
+"data": PackedByteArray("////AP///wD///8A////AP//////////////////////////////////////////////AP///wD///8A////AP///wD///8A////AP////////////////////////////////////////////////////////8A////AP///wD///8A////AP///////////////////////////////////////////////////////////////////wD///8A////AP///wD///////////////////////////////////////////////////////////////////8A////AP///wD//////////////////////////////////////////////////////////////////////////////wD///8A///////////AwMD/wMDA/8DAwP//////////////////////wMDA/8DAwP/AwMD///////////////8AwMDAAMDAwP/AwMD/gICA/8DAwADAwMAAwMDA/8DAwP/AwMD/wMDA/8DAwADAwMAAgICA/8DAwP/AwMD/wMDAAICAgACAgID/wMDA/4CAgACAgIAAgICAAICAgP/AwMD/wMDA/4CAgP+AgIAAgICAAICAgADAwMD/gICA/4CAgACAgIAAgICAAICAgP+AgIAAgICAAICAgACAgIAAgICA/4CAgP+AgIAAgICAAICAgACAgIAAgICA/4CAgACAgIAAgICAAICAgACAgID/gICAAICAgACAgIAAgICAAICAgP+AgID/gICAAICAgACAgIAAgICAAICAgP+AgIAAgICAAICAgACAgIAAgICAAICAgP+AgIAAgICAAICAgACAgIAAgICA/4CAgACAgIAAgICAAICAgP+AgIAAgICAAICAgACAgIAAgICAAICAgACAgID/gICAAICAgACAgIAAgICAAICAgP+AgIAAgICAAICAgACAgID/gICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgP+AgIAAgICAAICAgACAgID/gICAAICAgACAgID/gICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgID/gICAAICAgACAgIAAgICA/4CAgACAgIAAgICA/4CAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgP+AgIAAgICAAICAgP+AgIAAgICA/4CAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgID/gICAAICAgACAgID/gICAAICAgP+AgIAAgICAAICAgACAgIAAgICAAA=="),
+"format": "RGBA8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Resource" id="Resource_glm5y"]
+script = ExtResource("10_vgnnr")
+origin = Vector2(0, 0)
+containing_box = Rect2(1, 0, 14, 16)
+precise = true
+images = Array[Image]([SubResource("Image_irmf0"), SubResource("Image_ak6tj"), SubResource("Image_rkglm"), SubResource("Image_esaec"), SubResource("Image_ncpti")])
+
+[sub_resource type="Image" id="Image_kfm05"]
+data = {
+"data": PackedByteArray("////AP///wD///8A////AP//////////////////////////////////////////////AP///wD///8A////AP///wD///8A////AP////////////////////////////////////////////////////////8A////AP///wD///8A////AP///////////////////////////////////////////////////////////////////wD///8A////AP///wD///////////////////////////////////////////////////////////////////8A////AP///wD//////////////////////////////////////////////////////////////////////////////wD///8A///////////AwMD/wMDA/8DAwP//////////////////////wMDA/8DAwP/AwMD///////////////8AwMDAAMDAwP/AwMD/gICA/8DAwADAwMAAwMDA/8DAwP/AwMD/wMDA/8DAwADAwMAAgICA/8DAwP/AwMD/wMDAAICAgACAgID/wMDA/4CAgACAgIAAgICAAICAgP/AwMD/wMDA/4CAgP+AgIAAgICAAICAgADAwMD/gICA/4CAgACAgIAAgICAAICAgP+AgIAAgICAAICAgACAgIAAgICA/4CAgP+AgIAAgICAAICAgACAgIAAgICA/4CAgACAgIAAgICAAICAgACAgID/gICAAICAgACAgIAAgICAAICAgP+AgID/gICAAICAgACAgIAAgICAAICAgP+AgIAAgICAAICAgACAgIAAgICAAICAgP+AgIAAgICAAICAgACAgIAAgICA/4CAgACAgIAAgICAAICAgP+AgIAAgICAAICAgACAgIAAgICAAICAgACAgID/gICAAICAgACAgIAAgICAAICAgP+AgIAAgICAAICAgACAgID/gICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgP+AgIAAgICAAICAgACAgID/gICAAICAgACAgID/gICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgID/gICAAICAgACAgIAAgICA/4CAgACAgIAAgICA/4CAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgP+AgIAAgICAAICAgP+AgIAAgICA/4CAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgID/gICAAICAgACAgID/gICAAICAgP+AgIAAgICAAICAgACAgIAAgICAAA=="),
+"format": "RGBA8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Resource" id="Resource_vgnnr"]
+script = ExtResource("10_vgnnr")
+origin = Vector2(0, 0)
+containing_box = Rect2(1, 0, 14, 16)
+precise = true
+images = Array[Image]([SubResource("Image_kfm05")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7lgva"]
+size = Vector2(14, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y0bs2"]
+size = Vector2(28, 32)
+
+[node name="Parachute" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -900
 script = ExtResource("1_icwxw")
+animated_sprite_node = NodePath("Sprite")
 object_name = "parachute"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_3rcre")]
+sprite_frames = SubResource("SpriteFrames_3rcre")
+autoplay = "para_open"
+centered = false
+script = ExtResource("9_kfm05")
+sprite_info = Dictionary[StringName, ExtResource("10_vgnnr")]({
+&"para_open": SubResource("Resource_glm5y"),
+&"parachute": SubResource("Resource_vgnnr")
+})
+default_animation = &"para_open"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_7lgva")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_y0bs2")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

@@ -1,7 +1,67 @@
-[gd_scene load_steps=2 format=3 uid="uid://5nh330bgyxfm"]
+[gd_scene load_steps=11 format=3 uid="uid://5nh330bgyxfm"]
 
 [ext_resource type="Script" uid="uid://bwrip0dt2nfwn" path="res://objects/level editor/ruby_big_tile/ruby_big_tile.gd" id="1_le478"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_g1wcm"]
+[ext_resource type="Texture2D" uid="uid://bchcc8rqss34r" path="res://sprites/level editor/ruby_big_tile/ruby_big_tile_0.png" id="3_jh1cx"]
+[ext_resource type="Texture2D" uid="uid://c4qml2rtwdm4" path="res://sprites/level editor/ruby_big_tile/ruby_big_tile_ruby_big_tile.png" id="4_rye84"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="5_2qs3w"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="6_512l5"]
 
-[node name="RubyBigTile" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_g1wcm"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_jh1cx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rye84")
+}],
+"loop": true,
+"name": &"ruby_big_tile",
+"speed": 30.0
+}]
+
+[sub_resource type="Resource" id="Resource_jh1cx"]
+script = ExtResource("6_512l5")
+origin = Vector2(0, 0)
+containing_box = Rect2(4, 8, 8, 8)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rye84"]
+size = Vector2(8, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2qs3w"]
+size = Vector2(16, 16)
+
+[node name="RubyBigTile" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -100
 script = ExtResource("1_le478")
+animated_sprite_node = NodePath("Sprite")
 object_name = "ruby_big_tile"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_g1wcm")]
+sprite_frames = SubResource("SpriteFrames_g1wcm")
+autoplay = "ruby_big_tile"
+centered = false
+script = ExtResource("5_2qs3w")
+sprite_info = Dictionary[StringName, ExtResource("6_512l5")]({
+&"ruby_big_tile": SubResource("Resource_jh1cx")
+})
+default_animation = &"ruby_big_tile"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 12)
+shape = SubResource("RectangleShape2D_rye84")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 12)
+shape = SubResource("RectangleShape2D_2qs3w")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

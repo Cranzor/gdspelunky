@@ -1,7 +1,301 @@
-[gd_scene load_steps=2 format=3 uid="uid://dx73w7fhadmlt"]
+[gd_scene load_steps=47 format=3 uid="uid://dx73w7fhadmlt"]
 
 [ext_resource type="Script" uid="uid://b3uicfmaw0p2b" path="res://objects/enemies/hawkman/hawkman.gd" id="1_385p7"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_tos52"]
+[ext_resource type="Texture2D" uid="uid://cksyhfs5dbtc4" path="res://sprites/enemies/hawkman/hawk_bounce_l/hawk_bounce_l_0.png" id="3_20c6o"]
+[ext_resource type="Texture2D" uid="uid://ctvuuuej0yf0t" path="res://sprites/enemies/hawkman/hawk_d_held_l/hawk_d_held_l_0.png" id="4_uqdh6"]
+[ext_resource type="Texture2D" uid="uid://cs734babybtfj" path="res://sprites/enemies/hawkman/hawk_dead_l/hawk_dead_l_0.png" id="5_y38lv"]
+[ext_resource type="Texture2D" uid="uid://byhyy1i1jxtmi" path="res://sprites/enemies/hawkman/hawk_die_ll/hawk_die_ll_0.png" id="6_63rqq"]
+[ext_resource type="Texture2D" uid="uid://68ylvdxd6uew" path="res://sprites/enemies/hawkman/hawk_die_lr/hawk_die_lr_0.png" id="7_812me"]
+[ext_resource type="Texture2D" uid="uid://bs5jls1whfbbu" path="res://sprites/enemies/hawkman/hawk_fall_l/hawk_fall_l_0.png" id="8_l4gmw"]
+[ext_resource type="Texture2D" uid="uid://ck4b2760lifk1" path="res://sprites/enemies/hawkman/hawk_held_l/hawk_held_l_0.png" id="9_8bubr"]
+[ext_resource type="Texture2D" uid="uid://bkyt50cffqopm" path="res://sprites/enemies/hawkman/hawk_held_l/hawk_held_l_1.png" id="10_ep44u"]
+[ext_resource type="Texture2D" uid="uid://yrqrvu61gfg6" path="res://sprites/enemies/hawkman/hawk_held_l/hawk_held_l_2.png" id="11_id2ui"]
+[ext_resource type="Texture2D" uid="uid://crdo5cryp24gx" path="res://sprites/enemies/hawkman/hawk_held_l/hawk_held_l_3.png" id="12_kquaw"]
+[ext_resource type="Texture2D" uid="uid://n65dn2ej4n1o" path="res://sprites/enemies/hawkman/hawk_held_l/hawk_held_l_4.png" id="13_j8rv1"]
+[ext_resource type="Texture2D" uid="uid://bb3ymf3wtaywf" path="res://sprites/enemies/hawkman/hawk_left/hawk_left_0.png" id="14_ljwv6"]
+[ext_resource type="Texture2D" uid="uid://bo5yin1lu06jw" path="res://sprites/enemies/hawkman/hawk_run_left/hawk_run_left_0.png" id="15_n7iy1"]
+[ext_resource type="Texture2D" uid="uid://dc1trge8puwoe" path="res://sprites/enemies/hawkman/hawk_run_left/hawk_run_left_1.png" id="16_rxn48"]
+[ext_resource type="Texture2D" uid="uid://c575uilenvrf2" path="res://sprites/enemies/hawkman/hawk_run_left/hawk_run_left_2.png" id="17_0nutn"]
+[ext_resource type="Texture2D" uid="uid://dvvxd04ekh4f6" path="res://sprites/enemies/hawkman/hawk_run_left/hawk_run_left_3.png" id="18_fuoq5"]
+[ext_resource type="Texture2D" uid="uid://b4eb1g1afys4w" path="res://sprites/enemies/hawkman/hawk_stun_l/hawk_stun_l_0.png" id="19_onvk8"]
+[ext_resource type="Texture2D" uid="uid://cqvdepwfpbhxg" path="res://sprites/enemies/hawkman/hawk_stun_l/hawk_stun_l_1.png" id="20_8g7rp"]
+[ext_resource type="Texture2D" uid="uid://chkbrv44fvmn3" path="res://sprites/enemies/hawkman/hawk_stun_l/hawk_stun_l_2.png" id="21_5kctt"]
+[ext_resource type="Texture2D" uid="uid://deedyuot7bvfd" path="res://sprites/enemies/hawkman/hawk_stun_l/hawk_stun_l_3.png" id="22_thr8h"]
+[ext_resource type="Texture2D" uid="uid://b55uhdg6r1mmj" path="res://sprites/enemies/hawkman/hawk_stun_l/hawk_stun_l_4.png" id="23_0mcu5"]
+[ext_resource type="Texture2D" uid="uid://d34byub1dy1kb" path="res://sprites/enemies/hawkman/hawk_throw_l/hawk_throw_l_0.png" id="24_j4lui"]
+[ext_resource type="Texture2D" uid="uid://c0csj5j3gpyxw" path="res://sprites/enemies/hawkman/hawk_throw_l/hawk_throw_l_1.png" id="25_eyuxv"]
+[ext_resource type="Texture2D" uid="uid://lormw6fl1v1y" path="res://sprites/enemies/hawkman/hawk_throw_l/hawk_throw_l_2.png" id="26_53mc4"]
+[ext_resource type="Texture2D" uid="uid://bncwm0mlnaed1" path="res://sprites/enemies/hawkman/hawk_throw_l/hawk_throw_l_3.png" id="27_834d7"]
+[ext_resource type="Texture2D" uid="uid://bnl7doasmelop" path="res://sprites/enemies/hawkman/hawk_throw_l/hawk_throw_l_4.png" id="28_jcevo"]
+[ext_resource type="Texture2D" uid="uid://yee3tiue0bg4" path="res://sprites/enemies/hawkman/hawk_throw_l/hawk_throw_l_5.png" id="29_aopgk"]
+[ext_resource type="Texture2D" uid="uid://b6sxnvv52b41d" path="res://sprites/enemies/hawkman/hawk_throw_l/hawk_throw_l_6.png" id="30_8upg2"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="31_pxriw"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="32_uilyx"]
 
-[node name="Hawkman" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_tos52"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_20c6o")
+}],
+"loop": true,
+"name": &"hawk_bounce_l",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_uqdh6")
+}],
+"loop": true,
+"name": &"hawk_d_held_l",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_y38lv")
+}],
+"loop": true,
+"name": &"hawk_dead_l",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_63rqq")
+}],
+"loop": true,
+"name": &"hawk_die_ll",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_812me")
+}],
+"loop": true,
+"name": &"hawk_die_lr",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_l4gmw")
+}],
+"loop": true,
+"name": &"hawk_fall_l",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_8bubr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ep44u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_id2ui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_kquaw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_j8rv1")
+}],
+"loop": true,
+"name": &"hawk_held_l",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_ljwv6")
+}],
+"loop": true,
+"name": &"hawk_left",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_n7iy1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_rxn48")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_0nutn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_fuoq5")
+}],
+"loop": true,
+"name": &"hawk_run_left",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_onvk8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_8g7rp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_5kctt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_thr8h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_0mcu5")
+}],
+"loop": true,
+"name": &"hawk_stun_l",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_j4lui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_eyuxv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_53mc4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_834d7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_jcevo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_aopgk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_8upg2")
+}],
+"loop": true,
+"name": &"hawk_throw_l",
+"speed": 30.0
+}]
+
+[sub_resource type="Resource" id="Resource_20c6o"]
+script = ExtResource("32_uilyx")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_uqdh6"]
+script = ExtResource("32_uilyx")
+origin = Vector2(0, 0)
+containing_box = Rect2(4, 0, 20, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_y38lv"]
+script = ExtResource("32_uilyx")
+origin = Vector2(4, 0)
+containing_box = Rect2(2, 0, 20, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_63rqq"]
+script = ExtResource("32_uilyx")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 2, 16, 14)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_812me"]
+script = ExtResource("32_uilyx")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 2, 16, 12)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_l4gmw"]
+script = ExtResource("32_uilyx")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_8bubr"]
+script = ExtResource("32_uilyx")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_ep44u"]
+script = ExtResource("32_uilyx")
+origin = Vector2(4, 0)
+containing_box = Rect2(2, 7, 20, 9)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_id2ui"]
+script = ExtResource("32_uilyx")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_kquaw"]
+script = ExtResource("32_uilyx")
+origin = Vector2(4, 0)
+containing_box = Rect2(4, 0, 16, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_j8rv1"]
+script = ExtResource("32_uilyx")
+origin = Vector2(4, 0)
+containing_box = Rect2(4, 3, 16, 13)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ljwv6"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n7iy1"]
+size = Vector2(32, 32)
+
+[node name="Hawkman" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -60
 script = ExtResource("1_385p7")
+animated_sprite_node = NodePath("Sprite")
 object_name = "hawkman"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_tos52")]
+sprite_frames = SubResource("SpriteFrames_tos52")
+autoplay = "hawk_left"
+centered = false
+script = ExtResource("31_pxriw")
+sprite_info = Dictionary[StringName, ExtResource("32_uilyx")]({
+&"hawk_bounce_l": SubResource("Resource_63rqq"),
+&"hawk_d_held_l": SubResource("Resource_j8rv1"),
+&"hawk_dead_l": SubResource("Resource_ep44u"),
+&"hawk_die_ll": SubResource("Resource_l4gmw"),
+&"hawk_die_lr": SubResource("Resource_8bubr"),
+&"hawk_fall_l": SubResource("Resource_812me"),
+&"hawk_held_l": SubResource("Resource_kquaw"),
+&"hawk_left": SubResource("Resource_20c6o"),
+&"hawk_run_left": SubResource("Resource_id2ui"),
+&"hawk_stun_l": SubResource("Resource_y38lv"),
+&"hawk_throw_l": SubResource("Resource_uqdh6")
+})
+default_animation = &"hawk_left"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_ljwv6")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_n7iy1")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

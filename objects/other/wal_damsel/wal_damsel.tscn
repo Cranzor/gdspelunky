@@ -1,7 +1,131 @@
-[gd_scene load_steps=2 format=3 uid="uid://c0we0kvbuenat"]
+[gd_scene load_steps=27 format=3 uid="uid://c0we0kvbuenat"]
 
 [ext_resource type="Script" uid="uid://bqux4ew1f8150" path="res://objects/other/wal_damsel/wal_damsel.gd" id="1_pr4de"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_0pv71"]
+[ext_resource type="Texture2D" uid="uid://cxvg32rta7j0p" path="res://sprites/character/damsel/wal_damsel/wal_damsel_0.png" id="3_wjfj8"]
+[ext_resource type="Texture2D" uid="uid://b2uittcnqw3i7" path="res://sprites/character/damsel/wal_damsel/wal_damsel_1.png" id="4_e12ct"]
+[ext_resource type="Texture2D" uid="uid://dd4v0ej3fth1g" path="res://sprites/character/damsel/wal_damsel/wal_damsel_10.png" id="5_4ry03"]
+[ext_resource type="Texture2D" uid="uid://crd38f0wmbtwn" path="res://sprites/character/damsel/wal_damsel/wal_damsel_11.png" id="6_io8g5"]
+[ext_resource type="Texture2D" uid="uid://nsw2hwbrsg03" path="res://sprites/character/damsel/wal_damsel/wal_damsel_12.png" id="7_mdyl6"]
+[ext_resource type="Texture2D" uid="uid://cewrgtfn807rd" path="res://sprites/character/damsel/wal_damsel/wal_damsel_13.png" id="8_sj7a7"]
+[ext_resource type="Texture2D" uid="uid://ddc5qcfhbxy0r" path="res://sprites/character/damsel/wal_damsel/wal_damsel_14.png" id="9_ut71x"]
+[ext_resource type="Texture2D" uid="uid://cyldiyd43w2qq" path="res://sprites/character/damsel/wal_damsel/wal_damsel_15.png" id="10_qk423"]
+[ext_resource type="Texture2D" uid="uid://ctp2nwr8rf3iv" path="res://sprites/character/damsel/wal_damsel/wal_damsel_16.png" id="11_nsvbm"]
+[ext_resource type="Texture2D" uid="uid://dn43kyx1bk0ox" path="res://sprites/character/damsel/wal_damsel/wal_damsel_17.png" id="12_pq30y"]
+[ext_resource type="Texture2D" uid="uid://dcyhqlwlu0on0" path="res://sprites/character/damsel/wal_damsel/wal_damsel_2.png" id="13_701la"]
+[ext_resource type="Texture2D" uid="uid://cga50ey66jggy" path="res://sprites/character/damsel/wal_damsel/wal_damsel_3.png" id="14_y0ik8"]
+[ext_resource type="Texture2D" uid="uid://b0u62q2cu8r4f" path="res://sprites/character/damsel/wal_damsel/wal_damsel_4.png" id="15_govvg"]
+[ext_resource type="Texture2D" uid="uid://cl5dkqyjf25gv" path="res://sprites/character/damsel/wal_damsel/wal_damsel_5.png" id="16_4ywp4"]
+[ext_resource type="Texture2D" uid="uid://oibq428ed055" path="res://sprites/character/damsel/wal_damsel/wal_damsel_6.png" id="17_t1od3"]
+[ext_resource type="Texture2D" uid="uid://utybyvq2pwax" path="res://sprites/character/damsel/wal_damsel/wal_damsel_7.png" id="18_ygjgr"]
+[ext_resource type="Texture2D" uid="uid://2hsbnamakhqd" path="res://sprites/character/damsel/wal_damsel/wal_damsel_8.png" id="19_0ebio"]
+[ext_resource type="Texture2D" uid="uid://dy72wpapvhcvt" path="res://sprites/character/damsel/wal_damsel/wal_damsel_9.png" id="20_aaofl"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="21_4fbv7"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="22_5wnf7"]
 
-[node name="WalDamsel" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_0pv71"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_wjfj8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_e12ct")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_4ry03")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_io8g5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_mdyl6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_sj7a7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ut71x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_qk423")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_nsvbm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_pq30y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_701la")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_y0ik8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_govvg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_4ywp4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_t1od3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ygjgr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_0ebio")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_aaofl")
+}],
+"loop": true,
+"name": &"wal_damsel",
+"speed": 30.0
+}]
+
+[sub_resource type="Resource" id="Resource_wjfj8"]
+script = ExtResource("22_5wnf7")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 48, 48)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e12ct"]
+size = Vector2(48, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ry03"]
+size = Vector2(96, 96)
+
+[node name="WalDamsel" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -100
 script = ExtResource("1_pr4de")
+animated_sprite_node = NodePath("Sprite")
 object_name = "wal_damsel"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_0pv71")]
+sprite_frames = SubResource("SpriteFrames_0pv71")
+autoplay = "wal_damsel"
+centered = false
+script = ExtResource("21_4fbv7")
+sprite_info = Dictionary[StringName, ExtResource("22_5wnf7")]({
+&"wal_damsel": SubResource("Resource_wjfj8")
+})
+default_animation = &"wal_damsel"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(24, 24)
+shape = SubResource("RectangleShape2D_e12ct")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(24, 24)
+shape = SubResource("RectangleShape2D_4ry03")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

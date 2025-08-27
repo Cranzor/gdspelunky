@@ -1,7 +1,71 @@
-[gd_scene load_steps=2 format=3 uid="uid://bvm5aof6fpoyv"]
+[gd_scene load_steps=11 format=4 uid="uid://bvm5aof6fpoyv"]
 
 [ext_resource type="Script" uid="uid://ck4mmpuxa8aay" path="res://objects/other/title/new/new.gd" id="1_bfy3e"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_t0gtf"]
+[ext_resource type="Texture2D" uid="uid://ck8xu7fpqs7vk" path="res://sprites/other/title/new/new_0.png" id="3_gbx30"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_jnshq"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_2iiwl"]
 
-[node name="New" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_t0gtf"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_gbx30")
+}],
+"loop": true,
+"name": &"new",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_gbx30"]
+data = {
+"data": PackedByteArray("AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP//////AAAA/wAAAP//////AAAA/////////////////wAAAP//////AAAA/wAAAP8AAAD//////wAAAP8AAAD///8A////AP8AAAD///8A/wAAAP///wD///8A/wAAAP8AAAD///8A/wAAAP//////AAAA////AP8AAAD/AAAA////AP///wD///8A////AP8AAAD///8A////AP///wD/AAAA////AP8AAAD///8A/wAAAP///wD/AAAA/wAAAP///wD/AAAA////AP///wD/AAAA////AP///wD/AAAA/wAAAP///wD///8A////AP///wD///8A/wAAAP8AAAD///8A/wAAAP8AAAD///8A/wAAAP///wD///8A////AP8AAAD///8A////AP8AAAD///8A////AP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Resource" id="Resource_jnshq"]
+script = ExtResource("5_2iiwl")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 7)
+precise = true
+images = Array[Image]([SubResource("Image_gbx30")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2iiwl"]
+size = Vector2(16, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i0yk7"]
+size = Vector2(32, 14)
+
+[node name="New" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_bfy3e")
+animated_sprite_node = NodePath("Sprite")
 object_name = "new"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_t0gtf")]
+sprite_frames = SubResource("SpriteFrames_t0gtf")
+autoplay = "new"
+centered = false
+script = ExtResource("4_jnshq")
+sprite_info = Dictionary[StringName, ExtResource("5_2iiwl")]({
+&"new": SubResource("Resource_jnshq")
+})
+default_animation = &"new"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 3.5)
+shape = SubResource("RectangleShape2D_2iiwl")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 3.5)
+shape = SubResource("RectangleShape2D_i0yk7")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

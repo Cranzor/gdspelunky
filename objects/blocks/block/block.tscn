@@ -1,7 +1,80 @@
-[gd_scene load_steps=2 format=3 uid="uid://bbktqpuifc8mh"]
+[gd_scene load_steps=12 format=3 uid="uid://bbktqpuifc8mh"]
 
 [ext_resource type="Script" uid="uid://3bv7mmuminh3" path="res://objects/blocks/block/block.gd" id="1_utqe4"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_ucamc"]
+[ext_resource type="Texture2D" uid="uid://wayfbximqa8c" path="res://sprites/blocks/mines/block/block_0.png" id="3_iui46"]
+[ext_resource type="Texture2D" uid="uid://xr1hu81ymgc1" path="res://sprites/blocks/gold/gold_block/gold_block_0.png" id="4_e83dy"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="5_r34sm"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="6_jkpot"]
 
-[node name="Block" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_ucamc"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_iui46")
+}],
+"loop": true,
+"name": &"block",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_e83dy")
+}],
+"loop": true,
+"name": &"gold_block",
+"speed": 30.0
+}]
+
+[sub_resource type="Resource" id="Resource_iui46"]
+script = ExtResource("6_jkpot")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_e83dy"]
+script = ExtResource("6_jkpot")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r34sm"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jkpot"]
+size = Vector2(32, 32)
+
+[node name="Block" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -110
 script = ExtResource("1_utqe4")
+animated_sprite_node = NodePath("Sprite")
 object_name = "block"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_ucamc")]
+sprite_frames = SubResource("SpriteFrames_ucamc")
+autoplay = "block"
+centered = false
+script = ExtResource("5_r34sm")
+sprite_info = Dictionary[StringName, ExtResource("6_jkpot")]({
+&"block": SubResource("Resource_iui46"),
+&"gold_block": SubResource("Resource_e83dy")
+})
+default_animation = &"block"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_r34sm")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_jkpot")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

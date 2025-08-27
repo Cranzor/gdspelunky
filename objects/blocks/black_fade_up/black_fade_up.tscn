@@ -1,7 +1,72 @@
-[gd_scene load_steps=2 format=3 uid="uid://b535suql4v5ca"]
+[gd_scene load_steps=11 format=4 uid="uid://b535suql4v5ca"]
 
 [ext_resource type="Script" uid="uid://d210lhfpaeqoj" path="res://objects/blocks/black_fade_up/black_fade_up.gd" id="1_wvcb0"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_g1qjp"]
+[ext_resource type="Texture2D" uid="uid://bybuadim0lauo" path="res://sprites/black_fade_up/black_fade_up_0.png" id="3_o1krh"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_gi16k"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_mt7sh"]
 
-[node name="BlackFadeUp" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_g1qjp"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_o1krh")
+}],
+"loop": true,
+"name": &"black_fade_up",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_o1krh"]
+data = {
+"data": PackedByteArray("AMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wAAAAAAAAD/AAAAAAAAAP8AAAAAAAAA/wAAAAAAAAD/AAAAAAAAAP8AAAAAAAAA/wAAAAAAAAD/AAAA/wAAAAAAAAD/AAAAAAAAAP8AAAAAAAAA/wAAAAAAAAD/AAAAAAAAAP8AAAAAAAAA/wAAAAAAAAD/AAAAAAAAAAAAAAD/AAAAAAAAAP8AAAAAAAAA/wAAAAAAAAD/AAAAAAAAAP8AAAAAAAAA/wAAAAAAAAD/AAAAAAAAAP8AAAD/AAAAAAAAAP8AAAAAAAAA/wAAAAAAAAD/AAAAAAAAAP8AAAAAAAAA/wAAAAAAAAD/AAAAAAAAAP8AAAAAAAAAAAAAAP8AAAD/AAAA/wAAAAAAAAD/AAAA/wAAAP8AAAAAAAAA/wAAAP8AAAD/AAAAAAAAAP8AAAD/AAAA/wAAAP8AAAAAAAAA/wAAAAAAAAD/AAAAAAAAAP8AAAAAAAAA/wAAAAAAAAD/AAAAAAAAAP8AAAAAAAAA/wAAAAAAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="),
+"format": "RGBA8",
+"height": 17,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Resource" id="Resource_gi16k"]
+script = ExtResource("5_mt7sh")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 8, 16, 8)
+precise = true
+images = Array[Image]([SubResource("Image_o1krh")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mt7sh"]
+size = Vector2(16, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_51dd3"]
+size = Vector2(32, 16)
+
+[node name="BlackFadeUp" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -4095
 script = ExtResource("1_wvcb0")
+animated_sprite_node = NodePath("Sprite")
 object_name = "black_fade_up"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_g1qjp")]
+sprite_frames = SubResource("SpriteFrames_g1qjp")
+autoplay = "black_fade_up"
+centered = false
+script = ExtResource("4_gi16k")
+sprite_info = Dictionary[StringName, ExtResource("5_mt7sh")]({
+&"black_fade_up": SubResource("Resource_gi16k")
+})
+default_animation = &"black_fade_up"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 12)
+shape = SubResource("RectangleShape2D_mt7sh")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 12)
+shape = SubResource("RectangleShape2D_51dd3")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

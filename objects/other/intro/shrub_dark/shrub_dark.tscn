@@ -1,7 +1,72 @@
-[gd_scene load_steps=2 format=3 uid="uid://d4kioh5dhxrr1"]
+[gd_scene load_steps=11 format=4 uid="uid://d4kioh5dhxrr1"]
 
 [ext_resource type="Script" uid="uid://7jucpjsmd7yh" path="res://objects/other/intro/shrub_dark/shrub_dark.gd" id="1_vgpqk"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_7dypb"]
+[ext_resource type="Texture2D" uid="uid://c881cmrd4qok3" path="res://sprites/other/intro/shrub_dark/shrub_dark_0.png" id="3_x6me5"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_tcx3q"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_qa61i"]
 
-[node name="ShrubDark" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_7dypb"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_x6me5")
+}],
+"loop": true,
+"name": &"shrub_dark",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_x6me5"]
+data = {
+"data": PackedByteArray("CVCEAAlQhAAJUIQACVCEAAlQhAAJUIQACVCEAAlQhAAJUIQACVCEAAlQhAAJUIQACVCEAAlQhAAJUIQACVCEAAlQhAAJUIT/CVCE/wlQhAAJUIQACVCEAAlQhP8JUIQACVCEAAlQhP8JUIQACVCEAAlQhAAJUIT/CVCE/wlQhAAAAED/AABA/wAAQP8JUIT/CVCE/wlQhAAJUIT/CVCEAAlQhAAJUIT/CVCEAAlQhP8JUIT/AABA/wAAQP8AAED/AABAAAAAQAAAAED/AABA/wAAQP8JUIT/AABA/wAAQAAAAEAAAABA/wlQhP8AAED/AABA/wAAQAAAAEAAAABAAAlQhAAJUIQAAABAAAAAQAAAAAD/AABA/wAAQP8AAED/AABA/wAAQP8AAED/AAAA/wAAQAAJUIQACVCEAAlQhAAJUIQACVCE/wlQhP8JUIT/AAAA/wAAAP8AAED/AABA/wAAQP8AAAD/AAAA/wAAAAAJUIQACVCE/wlQhP8JUIQACVCE/wAAQP8AAED/AABA/wAAQP8AAED/AABA/wAAQP8AAED/AABA/wAAQP8AAED/AABA/wAAQP8AAED/CVCE/wlQhAAAAEAAAABAAAAAAP8JUIT/AABA/wAAQP8AAED/AABA/wAAQP8AAED/CVCE/wAAAP8AAEAAAABAAAlQhAAJUIQACVCEAAlQhP8JUIT/AABA/wAAAP8JUIT/AABA/wAAQP8JUIT/AAAA/wAAQP8JUIT/CVCE/wlQhAAJUIQACVCEAAlQhP8AAED/AAAA/wAAAP8AAED/CVCE/wAAQP8AAED/CVCE/wAAQP8AAAD/AAAA/wAAQP8JUIT/CVCEAAlQhAAJUIQAAAAA/wAAQP8AAED/AABA/wAAQP8AAED/AABA/wAAQP8AAED/AABA/wAAQP8AAAD/CVCEAAlQhAAAAAAAAAAA/wAAQP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AABA/wAAAP8AAAAAAABAAAAAQP8AAAD/AABA/wAAQP8AAED/AABA/wAAQP8AAED/AABA/wAAQP8AAED/AABA/wAAAP8AAED/AABAAAAAAAAAAAD/AABA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAED/AAAA/wAAAAAAAAAAAAAAAAAAAP8AAED/AABA/wAAQP8AAED/AABA/wAAQP8AAED/AABA/wAAQP8AAED/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAAAAAAAAAAAAAA=="),
+"format": "RGBA8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Resource" id="Resource_tcx3q"]
+script = ExtResource("5_qa61i")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 1, 16, 15)
+precise = true
+images = Array[Image]([SubResource("Image_x6me5")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qa61i"]
+size = Vector2(16, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8q2mm"]
+size = Vector2(32, 30)
+
+[node name="ShrubDark" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -998
 script = ExtResource("1_vgpqk")
+animated_sprite_node = NodePath("Sprite")
 object_name = "shrub_dark"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_7dypb")]
+sprite_frames = SubResource("SpriteFrames_7dypb")
+autoplay = "shrub_dark"
+centered = false
+script = ExtResource("4_tcx3q")
+sprite_info = Dictionary[StringName, ExtResource("5_qa61i")]({
+&"shrub_dark": SubResource("Resource_tcx3q")
+})
+default_animation = &"shrub_dark"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8.5)
+shape = SubResource("RectangleShape2D_qa61i")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 8.5)
+shape = SubResource("RectangleShape2D_8q2mm")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

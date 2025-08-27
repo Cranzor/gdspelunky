@@ -1,7 +1,99 @@
-[gd_scene load_steps=2 format=3 uid="uid://dby2a8vu8r5o7"]
+[gd_scene load_steps=14 format=4 uid="uid://dby2a8vu8r5o7"]
 
 [ext_resource type="Script" uid="uid://bauqyxs3fd46a" path="res://objects/items/web_cannon/web_cannon.gd" id="1_tmfej"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_hwbgw"]
+[ext_resource type="Texture2D" uid="uid://bdbl5vipbcqbo" path="res://sprites/items/saleable/web_cannon_l/web_cannon_l_0.png" id="3_gipi3"]
+[ext_resource type="Texture2D" uid="uid://b75oruft58io1" path="res://sprites/items/saleable/web_cannon_r/web_cannon_r_0.png" id="4_lax57"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="5_tlaus"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="6_vlxvj"]
 
-[node name="WebCannon" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_hwbgw"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_gipi3")
+}],
+"loop": true,
+"name": &"web_cannon_l",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_lax57")
+}],
+"loop": true,
+"name": &"web_cannon_r",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_gipi3"]
+data = {
+"data": PackedByteArray("ACFXAAAhVwAAIVcAACFXAAAhV/8AIVcAADRx/wA0cf8ANHH/ACFX/wAhV/8AIVcAgICAAICAgP9AQED/QEBAAAAhVwAAIVcAACFXAAAhV//AwMD/ADRx/wCu7/9tz/b/bc/2/wCu7/+AgID/ACFX/4CAgP//////wMDA/0BAQP8mFBAAJhQQACYUEAAmFBD/JhQQ/wCu7/9tz/b/bc/2/wCu7/8Acrz//////4CAgP/////////////////AwMD/JhQQACYUEAAmFBAAJhQQACYUEP9jLx3/ADRx/wByvP8Acrz/AHK8/8DAwP+AgID/wMDA/8DAwP/AwMD/QEBA/yYUEAAmFBAAJhQQACYUEP+OWSX/Yy8d/yYUEP8ANHH/AHK8/wA0cf+AgID/AAAA/yAgIP9AQED/QEBA/yAgIP8mFBAAJhQQACYUEAAmFBD/Yy8d/yYUEP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAAAgICAAICAg/yAgIP8gICAAJhQQACYUEAAmFBAAJhQQ/wAAAP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAICAgACAgIAAgICAAICAgACYUEAAmFBAAJhQQACYUEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAgIAAgICAAICAgACAgIAA="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Resource" id="Resource_lax57"]
+script = ExtResource("6_vlxvj")
+origin = Vector2(8, 4)
+containing_box = Rect2(3, 0, 13, 7)
+precise = true
+images = Array[Image]([SubResource("Image_gipi3")])
+
+[sub_resource type="Image" id="Image_tlaus"]
+data = {
+"data": PackedByteArray("QEBAAEBAQP+AgID/gICAAAAhVwAAIVf/ACFX/wA0cf8ANHH/ADRx/wA0cQAAIVf/ACFXAAAhVwAAIVcAACFXAEBAQP/AwMD//////4CAgP8AIVf/gICA/wCu7/9tz/b/bc/2/wCu7/8ANHH/wMDA/wAhV/8AIVcAACFXAAAhVwDAwMD/////////////////gICA//////8Acrz/AK7v/23P9v9tz/b/AK7v/yYUEP8mFBD/JhQQACYUEAAmFBAAQEBA/8DAwP/AwMD/wMDA/4CAgP/AwMD/AHK8/wByvP8Acrz/ADRx/2MvHf8mFBD/JhQQACYUEAAmFBAAJhQQACAgIP9AQED/QEBA/yAgIP8AAAD/gICA/wA0cf8Acrz/ADRx/yYUEP9jLx3/jlkl/yYUEP8mFBAAJhQQACYUEAAgICAAICAg/yAgIP8gICAAAAAAAAAAAP8AAAD/AAAA/wAAAP8AAAD/JhQQ/2MvHf8mFBD/JhQQACYUEAAmFBAAICAgACAgIAAgICAAICAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAD/JhQQ/yYUEAAmFBAAJhQQACAgIAAgICAAICAgACAgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACYUEAAmFBAAJhQQACYUEAA="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Resource" id="Resource_vlxvj"]
+script = ExtResource("6_vlxvj")
+origin = Vector2(8, 4)
+containing_box = Rect2(0, 0, 13, 7)
+precise = true
+images = Array[Image]([SubResource("Image_tlaus")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2x8w4"]
+size = Vector2(13, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q16ro"]
+size = Vector2(26, 14)
+
+[node name="WebCannon" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -101
 script = ExtResource("1_tmfej")
+animated_sprite_node = NodePath("Sprite")
 object_name = "web_cannon"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_hwbgw")]
+sprite_frames = SubResource("SpriteFrames_hwbgw")
+autoplay = "web_cannon_r"
+centered = false
+offset = Vector2(-8, -4)
+script = ExtResource("5_tlaus")
+sprite_info = Dictionary[StringName, ExtResource("6_vlxvj")]({
+&"web_cannon_l": SubResource("Resource_vlxvj"),
+&"web_cannon_r": SubResource("Resource_lax57")
+})
+default_animation = &"web_cannon_r"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, -0.5)
+shape = SubResource("RectangleShape2D_2x8w4")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(1.5, -0.5)
+shape = SubResource("RectangleShape2D_q16ro")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

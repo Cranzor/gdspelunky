@@ -1,7 +1,109 @@
-[gd_scene load_steps=2 format=3 uid="uid://bmh35t7pemrl2"]
+[gd_scene load_steps=18 format=4 uid="uid://bmh35t7pemrl2"]
 
 [ext_resource type="Script" uid="uid://cq3o82yj8idpv" path="res://objects/collectibles/fake_bones/fake_bones.gd" id="1_l7ctq"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_nn2tj"]
+[ext_resource type="Texture2D" uid="uid://c05ujnwtwoi0q" path="res://sprites/items/other/fake_bones_left/fake_bones_left_0.png" id="3_uy2cu"]
+[ext_resource type="Texture2D" uid="uid://dv5uer432s6n4" path="res://sprites/enemies/skeleton/skeleton_create_l/skeleton_create_l_0.png" id="4_jsjug"]
+[ext_resource type="Texture2D" uid="uid://d2a37my0a577b" path="res://sprites/enemies/skeleton/skeleton_create_l/skeleton_create_l_1.png" id="5_16lbl"]
+[ext_resource type="Texture2D" uid="uid://cq1kgaqwy0ju7" path="res://sprites/enemies/skeleton/skeleton_create_l/skeleton_create_l_2.png" id="6_sw01l"]
+[ext_resource type="Texture2D" uid="uid://bxlc2masamosx" path="res://sprites/enemies/skeleton/skeleton_create_l/skeleton_create_l_3.png" id="7_54imp"]
+[ext_resource type="Texture2D" uid="uid://dcpfklbb4ed6j" path="res://sprites/enemies/skeleton/skeleton_create_l/skeleton_create_l_4.png" id="8_3na0g"]
+[ext_resource type="Texture2D" uid="uid://deq466cwy5101" path="res://sprites/enemies/skeleton/skeleton_create_l/skeleton_create_l_5.png" id="9_liwnr"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="10_stt81"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="11_gkdy1"]
 
-[node name="FakeBones" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_nn2tj"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_uy2cu")
+}],
+"loop": true,
+"name": &"fake_bones_left",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_jsjug")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_16lbl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_sw01l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_54imp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_3na0g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_liwnr")
+}],
+"loop": true,
+"name": &"skeleton_create_l",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_uy2cu"]
+data = {
+"data": PackedByteArray("QIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAQIAAAECAAABAgAAAQIAAACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgAECAAABAgAAAQIAAACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIABAQEAAQEBAAEBAQABAQEAAQEBAACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAQEBAAEBAQABAQEAAQEBAAEBAQAAgICAAICAgACAgIAAgICAAICAg/yAgIP8gICD/ICAg/yAgIP8gICAAICAgAEBAQABAQEAAQEBAAEBAQABAQEAAICAgACAgIAAgICAAICAg/8DAwP///////9i1/8DAwP+AgID/ICAg/yAgIABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQAAgICAAICAg/8DAwP////////////////+AgID/gICA/yAgIP8gICAAQEBAAEBAQABAQEAAQEBAAEBAQP9AQEAAICAgACAgIP//////gICA/yAgIP//////wMDA/yAgIP8AAAD/ICAg/0BAQABAQEAAQEBAAEBAQP//////QEBA/0BAQAAAAAD/wMDA//////8AAAD////////Ytf/AwMD/AAAA//////9AQEAAQEBAAEBAQP8AAAD//////wAAAP8gICD/AAAAAAAAAP/////////////Ytf8AAAD/AAAA//////+AgID/QEBAAEBAQP//////AAAA/4CAgP//////AAAA/yAgIP8AAAD////////Ytf8AAAD/ICAg//////+AgID/ICAg/w=="),
+"format": "RGBA8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Resource" id="Resource_jsjug"]
+script = ExtResource("11_gkdy1")
+origin = Vector2(0, 0)
+containing_box = Rect2(1, 9, 15, 7)
+precise = true
+images = Array[Image]([SubResource("Image_uy2cu")])
+
+[sub_resource type="Resource" id="Resource_16lbl"]
+script = ExtResource("11_gkdy1")
+origin = Vector2(0, 0)
+containing_box = Rect2(1, 0, 15, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sw01l"]
+size = Vector2(15, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_54imp"]
+size = Vector2(30, 14)
+
+[node name="FakeBones" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -900
 script = ExtResource("1_l7ctq")
+animated_sprite_node = NodePath("Sprite")
 object_name = "fake_bones"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_nn2tj")]
+sprite_frames = SubResource("SpriteFrames_nn2tj")
+autoplay = "fake_bones_left"
+centered = false
+script = ExtResource("10_stt81")
+sprite_info = Dictionary[StringName, ExtResource("11_gkdy1")]({
+&"fake_bones_left": SubResource("Resource_jsjug"),
+&"skeleton_create_l": SubResource("Resource_16lbl")
+})
+default_animation = &"fake_bones_left"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8.5, 12.5)
+shape = SubResource("RectangleShape2D_sw01l")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8.5, 12.5)
+shape = SubResource("RectangleShape2D_54imp")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

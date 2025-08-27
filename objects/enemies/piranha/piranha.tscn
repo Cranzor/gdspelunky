@@ -1,7 +1,96 @@
-[gd_scene load_steps=2 format=3 uid="uid://b2uoty8cy7ltg"]
+[gd_scene load_steps=16 format=3 uid="uid://b2uoty8cy7ltg"]
 
 [ext_resource type="Script" uid="uid://cg5mxpkc2w6tq" path="res://objects/enemies/piranha/piranha.gd" id="1_hmaav"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_kevv7"]
+[ext_resource type="Texture2D" uid="uid://c1tmvg6jcw7mp" path="res://sprites/enemies/piranha_left/piranha_left_0.png" id="3_gamdg"]
+[ext_resource type="Texture2D" uid="uid://ym6amx47q8c3" path="res://sprites/enemies/piranha_left/piranha_left_1.png" id="4_y6db5"]
+[ext_resource type="Texture2D" uid="uid://b2prv8t8s04su" path="res://sprites/enemies/piranha_left/piranha_left_2.png" id="5_iuv8f"]
+[ext_resource type="Texture2D" uid="uid://dxfwkco03c6w" path="res://sprites/enemies/piranha_right/piranha_right_0.png" id="6_4o7oi"]
+[ext_resource type="Texture2D" uid="uid://bct21jhgkulnb" path="res://sprites/enemies/piranha_right/piranha_right_1.png" id="7_flpu8"]
+[ext_resource type="Texture2D" uid="uid://dy01oomsh3gil" path="res://sprites/enemies/piranha_right/piranha_right_2.png" id="8_s48ot"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="9_dkbhf"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="10_w856o"]
 
-[node name="Piranha" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_kevv7"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_gamdg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_y6db5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_iuv8f")
+}],
+"loop": true,
+"name": &"piranha_left",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_4o7oi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_flpu8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_s48ot")
+}],
+"loop": true,
+"name": &"piranha_right",
+"speed": 30.0
+}]
+
+[sub_resource type="Resource" id="Resource_gamdg"]
+script = ExtResource("10_w856o")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 8, 8)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_y6db5"]
+script = ExtResource("10_w856o")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 8, 8)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iuv8f"]
+size = Vector2(8, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4o7oi"]
+size = Vector2(16, 16)
+
+[node name="Piranha" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -40
 script = ExtResource("1_hmaav")
+animated_sprite_node = NodePath("Sprite")
 object_name = "piranha"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_kevv7")]
+sprite_frames = SubResource("SpriteFrames_kevv7")
+autoplay = "piranha_left"
+centered = false
+script = ExtResource("9_dkbhf")
+sprite_info = Dictionary[StringName, ExtResource("10_w856o")]({
+&"piranha_left": SubResource("Resource_gamdg"),
+&"piranha_right": SubResource("Resource_y6db5")
+})
+default_animation = &"piranha_left"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_iuv8f")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_4o7oi")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

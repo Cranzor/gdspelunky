@@ -1,7 +1,72 @@
-[gd_scene load_steps=2 format=3 uid="uid://bcb8krpeqcorl"]
+[gd_scene load_steps=11 format=4 uid="uid://bcb8krpeqcorl"]
 
 [ext_resource type="Script" uid="uid://d172pnctxrxni" path="res://objects/level editor/machete_tile/machete_tile.gd" id="1_wm57t"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_1cr7h"]
+[ext_resource type="Texture2D" uid="uid://bfkopfvqgmj8e" path="res://sprites/level editor/machete_tile/machete_tile_0.png" id="3_foc5o"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_xxikg"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_54rdi"]
 
-[node name="MacheteTile" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_1cr7h"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_foc5o")
+}],
+"loop": true,
+"name": &"machete_tile",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_foc5o"]
+data = {
+"data": PackedByteArray("AIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAACwWEwAsFhMALBYTACwWEwAsFhMAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAABIKCAAsFhMALBYTACwWEwAsFhMALBYTAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQAASCggALBYTACwWEwAsFhMALBYTACwWEwBAQEAAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAEgoIACwWEwAsFhMALBYTACwWEwAsFhMAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAABIKCAAsFhMALBYT/ywWE/8sFhP/LBYT/0BAQP9AQED/QEBA/0BAQP9AQED/QEBA/0BAQP9AQED/QEBA/0BAQP8SCgj/LBYT/2MvHf+OWSX/yHos/45ZJf+AgID///////////////////////////////////////////+AgID/EgoI/xIKCP9jLx3/Yy8d/2MvHf9jLx3/QEBA/8DAwP/AwMD/wMDA/8DAwP/AwMD/wMDA/8DAwP+AgID/EgoI/xIKCAASCggAEgoI/xIKCP8SCgj/EgoI/xIKCP9AQED/QEBA/4CAgP/AwMD/wMDA/8DAwP+AgID/EgoI/xIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoI/xIKCP8SCgj/EgoI/xIKCP8SCgj/EgoI/xIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIAA=="),
+"format": "RGBA8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Resource" id="Resource_xxikg"]
+script = ExtResource("5_54rdi")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 8, 16, 5)
+precise = true
+images = Array[Image]([SubResource("Image_foc5o")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_54rdi"]
+size = Vector2(16, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fgajr"]
+size = Vector2(32, 10)
+
+[node name="MacheteTile" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -100
 script = ExtResource("1_wm57t")
+animated_sprite_node = NodePath("Sprite")
 object_name = "machete_tile"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_1cr7h")]
+sprite_frames = SubResource("SpriteFrames_1cr7h")
+autoplay = "machete_tile"
+centered = false
+script = ExtResource("4_xxikg")
+sprite_info = Dictionary[StringName, ExtResource("5_54rdi")]({
+&"machete_tile": SubResource("Resource_xxikg")
+})
+default_animation = &"machete_tile"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 10.5)
+shape = SubResource("RectangleShape2D_54rdi")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 10.5)
+shape = SubResource("RectangleShape2D_fgajr")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

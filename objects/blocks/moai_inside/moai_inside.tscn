@@ -1,7 +1,63 @@
-[gd_scene load_steps=2 format=3 uid="uid://3b2d3htdvhas"]
+[gd_scene load_steps=10 format=3 uid="uid://3b2d3htdvhas"]
 
 [ext_resource type="Script" uid="uid://cu1wmwuolv1b5" path="res://objects/blocks/moai_inside/moai_inside.gd" id="1_0fmms"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_xb314"]
+[ext_resource type="Texture2D" uid="uid://df2u71k5himex" path="res://sprites/blocks/dark/moai_inside/moai_inside_0.png" id="3_k2f22"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_dl2tq"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_csvsw"]
 
-[node name="MoaiInside" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_xb314"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_k2f22")
+}],
+"loop": true,
+"name": &"moai_inside",
+"speed": 30.0
+}]
+
+[sub_resource type="Resource" id="Resource_k2f22"]
+script = ExtResource("5_csvsw")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 48)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dl2tq"]
+size = Vector2(16, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_csvsw"]
+size = Vector2(32, 96)
+
+[node name="MoaiInside" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -100
 script = ExtResource("1_0fmms")
+animated_sprite_node = NodePath("Sprite")
 object_name = "moai_inside"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_xb314")]
+sprite_frames = SubResource("SpriteFrames_xb314")
+autoplay = "moai_inside"
+centered = false
+script = ExtResource("4_dl2tq")
+sprite_info = Dictionary[StringName, ExtResource("5_csvsw")]({
+&"moai_inside": SubResource("Resource_k2f22")
+})
+default_animation = &"moai_inside"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 24)
+shape = SubResource("RectangleShape2D_dl2tq")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 24)
+shape = SubResource("RectangleShape2D_csvsw")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

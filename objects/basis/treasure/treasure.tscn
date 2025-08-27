@@ -1,7 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://bvbm5gxldt5up"]
+[gd_scene load_steps=5 format=3 uid="uid://bvbm5gxldt5up"]
 
 [ext_resource type="Script" uid="uid://bgc1imgf0s6kn" path="res://objects/basis/treasure/treasure.gd" id="1_ehe8t"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_oclru"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="3_4j3jt"]
 
-[node name="Treasure" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_oclru"]
+resource_local_to_scene = true
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[node name="Treasure" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -101
 script = ExtResource("1_ehe8t")
+animated_sprite_node = NodePath("Sprite")
 object_name = "treasure"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_oclru")]
+sprite_frames = SubResource("SpriteFrames_oclru")
+centered = false
+script = ExtResource("3_4j3jt")
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

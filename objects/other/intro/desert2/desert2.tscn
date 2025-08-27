@@ -1,7 +1,98 @@
-[gd_scene load_steps=2 format=3 uid="uid://bd1b3xugpfga6"]
+[gd_scene load_steps=14 format=4 uid="uid://bd1b3xugpfga6"]
 
 [ext_resource type="Script" uid="uid://qjdp3fklnw8y" path="res://objects/other/intro/desert2/desert2.gd" id="1_uy4ld"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_niv0r"]
+[ext_resource type="Texture2D" uid="uid://c7j1lhevpxqkb" path="res://sprites/other/intro/desert2/desert2_0.png" id="3_2125l"]
+[ext_resource type="Texture2D" uid="uid://cco2y6avwwh8i" path="res://sprites/other/intro/desert_night2/desert_night2_0.png" id="4_pi77d"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="5_l1icg"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="6_cpvk8"]
 
-[node name="Desert2" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_niv0r"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_2125l")
+}],
+"loop": true,
+"name": &"desert2",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_pi77d")
+}],
+"loop": true,
+"name": &"desert_night2",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_2125l"]
+data = {
+"data": PackedByteArray("+9Vi+9Vi+9Viq5tB+9Vi+9Viq5tB+9Vi+9Viq5tB+9Vi+9Vi+9Vi+9Viq5tB+9Vi+9Viq5tB+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Viq5tB+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Viq5tB+9Vi+9Vi+9Viq5tB+9Vi+9Vi+9Vi+9Viq5tB+9Viq5tB+9Viq5tB+9Vi+9Vi+9Vi+9Viq5tB+9Vi+9Vi+9Viq5tB+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Viq5tB+9Vi+9Vi+9Vi+9Vi+9Vi+9Viq5tB+9Vi+9Vi+9Vi+9Viq5tB+9Vi+9Vi+9Vi+9Vi+9Viq5tB+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Viq5tB+9Vi+9Vi+9Vi+9Viq5tB+9Vi+9Vi+9Vi+9Viq5tB+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Viq5tB+9Vi+9Vi+9Vi+9Viq5tB+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Viq5tB+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Viq5tB+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Viq5tB+9Vi+9Vi+9Vi+9Vi+9Vi+9Viq5tB+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Viq5tB+9Vi+9Vi+9Viq5tB+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Viq5tB+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi+9Vi"),
+"format": "RGB8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Resource" id="Resource_pi77d"]
+script = ExtResource("6_cpvk8")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = true
+images = Array[Image]([SubResource("Image_2125l")])
+
+[sub_resource type="Image" id="Image_l1icg"]
+data = {
+"data": PackedByteArray("CVCECVCECVCEAABACVCECVCEAABACVCECVCEAABACVCECVCECVCECVCEAABACVCECVCEAABACVCECVCECVCECVCECVCECVCECVCECVCECVCEAABACVCECVCECVCECVCECVCECVCECVCECVCEAABACVCECVCECVCEAABACVCECVCECVCECVCEAABACVCEAABACVCEAABACVCECVCECVCECVCEAABACVCECVCECVCEAABACVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCEAABACVCECVCECVCECVCECVCECVCEAABACVCECVCECVCECVCEAABACVCECVCECVCECVCECVCEAABACVCECVCECVCECVCECVCECVCECVCEAABACVCECVCECVCECVCEAABACVCECVCECVCECVCEAABACVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCEAABACVCECVCECVCECVCEAABACVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCEAABACVCECVCECVCECVCECVCECVCECVCECVCECVCEAABACVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCEAABACVCECVCECVCECVCECVCECVCEAABACVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCEAABACVCECVCECVCEAABACVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCECVCEAABACVCECVCECVCECVCECVCECVCECVCECVCECVCE"),
+"format": "RGB8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Resource" id="Resource_cpvk8"]
+script = ExtResource("6_cpvk8")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = true
+images = Array[Image]([SubResource("Image_l1icg")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j7tjp"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bgix4"]
+size = Vector2(32, 32)
+
+[node name="Desert2" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -100
 script = ExtResource("1_uy4ld")
+animated_sprite_node = NodePath("Sprite")
 object_name = "desert2"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_niv0r")]
+sprite_frames = SubResource("SpriteFrames_niv0r")
+autoplay = "desert2"
+centered = false
+script = ExtResource("5_l1icg")
+sprite_info = Dictionary[StringName, ExtResource("6_cpvk8")]({
+&"desert2": SubResource("Resource_pi77d"),
+&"desert_night2": SubResource("Resource_cpvk8")
+})
+default_animation = &"desert2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_j7tjp")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_bgix4")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

@@ -1,7 +1,72 @@
-[gd_scene load_steps=2 format=3 uid="uid://csvacajjnt5hw"]
+[gd_scene load_steps=11 format=4 uid="uid://csvacajjnt5hw"]
 
 [ext_resource type="Script" uid="uid://d0x5naw3y4vol" path="res://objects/level editor/web_cannon_tile/web_cannon_tile.gd" id="1_pr7x5"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_7i6xt"]
+[ext_resource type="Texture2D" uid="uid://biyjqaqohsgdh" path="res://sprites/level editor/web_cannon_tile/web_cannon_tile_0.png" id="3_04ryr"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_a0tkl"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_ee13r"]
 
-[node name="WebCannonTile" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_7i6xt"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_04ryr")
+}],
+"loop": true,
+"name": &"web_cannon_tile",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_04ryr"]
+data = {
+"data": PackedByteArray("gACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAAAhVwAAIVcAACFXAAAhVwAAIVcAACFXAAA0cQAANHEAADRxAAAhVwAAIVcAACFXAICAgACAgIAAQEBAAEBAQAAAIVcAACFXAAAhVwAAIVcAACFXAAAhVwAANHEAADRxAAA0cQAAIVcAACFXAAAhVwCAgIAAgICAAEBAQABAQEAAACFXAAAhVwAAIVcAACFXAAAhVwAAIVcAADRxAAA0cQAANHEAACFXAAAhVwAAIVcAgICAAICAgABAQEAAQEBAAAAhVwAAIVcAACFXAAAhVwAAIVcAACFXAAA0cQAANHEAADRxAAAhVwAAIVcAACFXAICAgACAgIAAQEBAAEBAQAAAIVcAACFXAAAhVwAAIVcAACFX/wAhVwAANHH/ADRx/wA0cf8AIVf/ACFX/wAhVwCAgIAAgICA/0BAQP9AQEAAACFXAAAhVwAAIVcAACFX/8DAwP8ANHH/AK7v/23P9v9tz/b/AK7v/4CAgP8AIVf/gICA///////AwMD/QEBA/yYUEAAmFBAAJhQQACYUEP8mFBD/AK7v/23P9v9tz/b/AK7v/wByvP//////gICA/////////////////8DAwP8mFBAAJhQQACYUEAAmFBAAJhQQ/2MvHf8ANHH/AHK8/wByvP8Acrz/wMDA/4CAgP/AwMD/wMDA/8DAwP9AQED/JhQQACYUEAAmFBAAJhQQ/45ZJf9jLx3/JhQQ/wA0cf8Acrz/ADRx/4CAgP8AAAD/ICAg/0BAQP9AQED/ICAg/yYUEAAmFBAAJhQQACYUEP9jLx3/JhQQ/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAACAgIAAgICD/ICAg/yAgIAAmFBAAJhQQACYUEAAmFBD/AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgICAAICAgACAgIAAgICAAJhQQACYUEAAmFBAAJhQQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAICAgACAgIAAgICAAICAgAA=="),
+"format": "RGBA8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Resource" id="Resource_a0tkl"]
+script = ExtResource("5_ee13r")
+origin = Vector2(0, 0)
+containing_box = Rect2(3, 8, 13, 7)
+precise = true
+images = Array[Image]([SubResource("Image_04ryr")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ee13r"]
+size = Vector2(13, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_10iij"]
+size = Vector2(26, 14)
+
+[node name="WebCannonTile" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -100
 script = ExtResource("1_pr7x5")
+animated_sprite_node = NodePath("Sprite")
 object_name = "web_cannon_tile"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_7i6xt")]
+sprite_frames = SubResource("SpriteFrames_7i6xt")
+autoplay = "web_cannon_tile"
+centered = false
+script = ExtResource("4_a0tkl")
+sprite_info = Dictionary[StringName, ExtResource("5_ee13r")]({
+&"web_cannon_tile": SubResource("Resource_a0tkl")
+})
+default_animation = &"web_cannon_tile"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(9.5, 11.5)
+shape = SubResource("RectangleShape2D_ee13r")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(9.5, 11.5)
+shape = SubResource("RectangleShape2D_10iij")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

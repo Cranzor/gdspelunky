@@ -1,7 +1,138 @@
-[gd_scene load_steps=2 format=3 uid="uid://dw32lrcbmraye"]
+[gd_scene load_steps=21 format=4 uid="uid://dw32lrcbmraye"]
 
 [ext_resource type="Script" uid="uid://perr4yh246hu" path="res://objects/effects/poof/poof.gd" id="1_4c5vc"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_f8yms"]
+[ext_resource type="Texture2D" uid="uid://beoboar3hgf0o" path="res://sprites/effects/poof/poof_0.png" id="3_jo5ak"]
+[ext_resource type="Texture2D" uid="uid://cpisub83tj72k" path="res://sprites/effects/poof/poof_1.png" id="4_bqnqr"]
+[ext_resource type="Texture2D" uid="uid://dv4lc7i1kbjgx" path="res://sprites/effects/poof/poof_2.png" id="5_xjbkh"]
+[ext_resource type="Texture2D" uid="uid://d38uma2qc08pi" path="res://sprites/effects/poof/poof_3.png" id="6_u1a5f"]
+[ext_resource type="Texture2D" uid="uid://3lobl62mp4do" path="res://sprites/effects/poof/poof_4.png" id="7_mq4bb"]
+[ext_resource type="Texture2D" uid="uid://wip7u2ol36f0" path="res://sprites/effects/poof/poof_5.png" id="8_ox4u1"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="9_nmcqf"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="10_375tx"]
 
-[node name="Poof" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_f8yms"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_jo5ak")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bqnqr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xjbkh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_u1a5f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_mq4bb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ox4u1")
+}],
+"loop": true,
+"name": &"poof",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_jo5ak"]
+data = {
+"data": PackedByteArray("////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A//////////////8A////AP///wD///8A////AP///wD//////////////wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AA=="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Image" id="Image_bqnqr"]
+data = {
+"data": PackedByteArray("////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//////////////AP///wD///8A////AP///wD/////////////////////////AP///wD///8A////AP////////////////////////8A////AP///wD///8A////AP//////////////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AA=="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Image" id="Image_xjbkh"]
+data = {
+"data": PackedByteArray("////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP////////////////////////8A////AP///wD///////////////////////////////////8A////AP///////////////////////////////////wD///8A////////////////////////////////////AP///wD///8A//////////////////////////////8A////AP///wD///8A////////////////////AP///wD///8A////AP///wD///8A////AP///wD///8A////AA=="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Image" id="Image_u1a5f"]
+data = {
+"data": PackedByteArray("////AP///wD///8A////AP//////////////AP///wD///8A////AP///wD/////////////////////////AP///wD///8A////AP////////////////////////8A////AP//////////////AP//////////////AP///wD/////////////////////////AP///wD///////////////////////////////////8A////AP//////////////AP//////////////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AA=="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Image" id="Image_mq4bb"]
+data = {
+"data": PackedByteArray("////AP///wD///8A////AP////////8A////AP///wD///8A////AP///wD///////////////////8A////AP///wD///8A////AP///wD/////////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//////////////AP////////8A////AP///wD///////////////////8A////AP///wD///8A/////////wD///8A////AP///wD///8A////AP///wD///8A////AA=="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Image" id="Image_ox4u1"]
+data = {
+"data": PackedByteArray("////AP///wD///8A////AP////////8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP////////8A////AP///wD///8A////AP///wD/////////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AA=="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Resource" id="Resource_nmcqf"]
+script = ExtResource("10_375tx")
+origin = Vector2(4, 4)
+containing_box = Rect2(0, 0, 8, 7)
+precise = true
+images = Array[Image]([SubResource("Image_jo5ak"), SubResource("Image_bqnqr"), SubResource("Image_xjbkh"), SubResource("Image_u1a5f"), SubResource("Image_mq4bb"), SubResource("Image_ox4u1")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_375tx"]
+size = Vector2(8, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gl2i7"]
+size = Vector2(16, 14)
+
+[node name="Poof" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -1
 script = ExtResource("1_4c5vc")
+animated_sprite_node = NodePath("Sprite")
 object_name = "poof"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_f8yms")]
+sprite_frames = SubResource("SpriteFrames_f8yms")
+autoplay = "poof"
+centered = false
+offset = Vector2(-4, -4)
+script = ExtResource("9_nmcqf")
+sprite_info = Dictionary[StringName, ExtResource("10_375tx")]({
+&"poof": SubResource("Resource_nmcqf")
+})
+default_animation = &"poof"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_375tx")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_gl2i7")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

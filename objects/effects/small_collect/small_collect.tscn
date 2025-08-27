@@ -1,7 +1,320 @@
-[gd_scene load_steps=2 format=3 uid="uid://bn412ge66g2ty"]
+[gd_scene load_steps=49 format=4 uid="uid://bn412ge66g2ty"]
 
 [ext_resource type="Script" uid="uid://dibblwcttfpi2" path="res://objects/effects/small_collect/small_collect.gd" id="1_lclk1"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_nx0rx"]
+[ext_resource type="Texture2D" uid="uid://t4ccvue5cbn7" path="res://sprites/effects/small_collect/small_collect_0.png" id="3_gtmev"]
+[ext_resource type="Texture2D" uid="uid://deswy0h5xpsmu" path="res://sprites/effects/small_collect/small_collect_1.png" id="4_sh2e6"]
+[ext_resource type="Texture2D" uid="uid://2ioexu63lbf0" path="res://sprites/effects/small_collect/small_collect_10.png" id="5_cdu7q"]
+[ext_resource type="Texture2D" uid="uid://bhkt3af21lgan" path="res://sprites/effects/small_collect/small_collect_11.png" id="6_op1gk"]
+[ext_resource type="Texture2D" uid="uid://cj3md6qgmtebc" path="res://sprites/effects/small_collect/small_collect_12.png" id="7_bk47d"]
+[ext_resource type="Texture2D" uid="uid://byfrrx7nwyygj" path="res://sprites/effects/small_collect/small_collect_13.png" id="8_l38dw"]
+[ext_resource type="Texture2D" uid="uid://c2pkygswl4mar" path="res://sprites/effects/small_collect/small_collect_14.png" id="9_grxgj"]
+[ext_resource type="Texture2D" uid="uid://cov604vhkmepw" path="res://sprites/effects/small_collect/small_collect_15.png" id="10_kpler"]
+[ext_resource type="Texture2D" uid="uid://bncr5vo3nvokd" path="res://sprites/effects/small_collect/small_collect_16.png" id="11_5i55s"]
+[ext_resource type="Texture2D" uid="uid://b5tshwflwylgm" path="res://sprites/effects/small_collect/small_collect_17.png" id="12_erkuk"]
+[ext_resource type="Texture2D" uid="uid://cdsq2sbgog85" path="res://sprites/effects/small_collect/small_collect_18.png" id="13_ikqt2"]
+[ext_resource type="Texture2D" uid="uid://cluvem52bf75m" path="res://sprites/effects/small_collect/small_collect_19.png" id="14_mkqvd"]
+[ext_resource type="Texture2D" uid="uid://u8wc5syikysh" path="res://sprites/effects/small_collect/small_collect_2.png" id="15_w8ppp"]
+[ext_resource type="Texture2D" uid="uid://cfrr8e2wjkaqa" path="res://sprites/effects/small_collect/small_collect_3.png" id="16_pcnox"]
+[ext_resource type="Texture2D" uid="uid://dgvjrkvaooxt2" path="res://sprites/effects/small_collect/small_collect_4.png" id="17_nikon"]
+[ext_resource type="Texture2D" uid="uid://bv4c5cvg1locn" path="res://sprites/effects/small_collect/small_collect_5.png" id="18_srayd"]
+[ext_resource type="Texture2D" uid="uid://dj5gjj7kans0s" path="res://sprites/effects/small_collect/small_collect_6.png" id="19_x2fhs"]
+[ext_resource type="Texture2D" uid="uid://k8usv722l46b" path="res://sprites/effects/small_collect/small_collect_7.png" id="20_0mqv7"]
+[ext_resource type="Texture2D" uid="uid://b215u0hyrc8re" path="res://sprites/effects/small_collect/small_collect_8.png" id="21_o26xb"]
+[ext_resource type="Texture2D" uid="uid://dyjqy2yx8rv5x" path="res://sprites/effects/small_collect/small_collect_9.png" id="22_1djm6"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="23_ev0ch"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="24_qs6ej"]
 
-[node name="SmallCollect" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_nx0rx"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_gtmev")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_sh2e6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_cdu7q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_op1gk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_bk47d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_l38dw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_grxgj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_kpler")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_5i55s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_erkuk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ikqt2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_mkqvd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_w8ppp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_pcnox")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_nikon")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_srayd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_x2fhs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_0mqv7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_o26xb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_1djm6")
+}],
+"loop": true,
+"name": &"small_collect",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_gtmev"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAP/1aAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//VoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//9Wj/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAD///Vo///1aP//9Wj/AAAA/wAAAAAAAAAAAAAA///1aP8AAAD/AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAA///1aP//9Wj/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAD/AAAA/wAAAP//9Wj/AAAA/wAAAAAAAAAAAAAA///1aP//9Wj///Vo/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAA///1aP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wAAAAAAAAAAAAAAAAAAAAA="),
+"format": "RGBA8",
+"height": 10,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Image" id="Image_sh2e6"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAP/1aAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//VoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//9Wj/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAD///Vo///1aP//9Wj/AAAA/wAAAAAAAAAAAAAA///1aP8AAAD/AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAA///1aP//9Wj/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAD/AAAA/wAAAP//9Wj/AAAA/wAAAAAAAAAAAAAA///1aP//9Wj///Vo/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAA///1aP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wAAAAAAAAAAAAAAAAAAAAA="),
+"format": "RGBA8",
+"height": 10,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Image" id="Image_cdu7q"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAA//VoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//9Wj/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA///1aP+OWSX/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAD/AAAA/45ZJf8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAP//9Wj/jlkl/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAA///1aP8AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAD///Vo/45ZJf8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/jlkl/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="),
+"format": "RGBA8",
+"height": 10,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Image" id="Image_op1gk"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAA//VoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//9Wj/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA///1aP+OWSX/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAD/AAAA/45ZJf8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAP//9Wj/jlkl/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAA///1aP8AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAD///Vo/45ZJf8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/jlkl/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="),
+"format": "RGBA8",
+"height": 10,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Image" id="Image_bk47d"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAA//VoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/9WgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA///1aP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAP//9Wj///Vo///1aP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAP8AAAD/AAAA///1aP8AAAD/AAAAAAAAAAAAAAAAAAAA///1aP//9Wj/AAAA/wAAAAAAAAAAAAAAAAAAAP//9Wj/AAAA/wAAAP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAP//9Wj///Vo///1aP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAP//9Wj/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAAAAAAAAAAAAAA="),
+"format": "RGBA8",
+"height": 10,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Image" id="Image_l38dw"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAA//VoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/9WgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA///1aP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAP//9Wj///Vo///1aP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAP8AAAD/AAAA///1aP8AAAD/AAAAAAAAAAAAAAAAAAAA///1aP//9Wj/AAAA/wAAAAAAAAAAAAAAAAAAAP//9Wj/AAAA/wAAAP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAP//9Wj///Vo///1aP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAP//9Wj/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAAAAAAAAAAAAAA="),
+"format": "RGBA8",
+"height": 10,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Image" id="Image_grxgj"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAjlklAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP+OWSX/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/45ZJf//9Wj/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAD/AAAA///1aP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAP+OWSX///Vo/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAA/45ZJf8AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAD/jlkl///1aP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///Vo/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="),
+"format": "RGBA8",
+"height": 10,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Image" id="Image_kpler"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAjlklAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP+OWSX/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/45ZJf//9Wj/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAD/AAAA///1aP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAP+OWSX///Vo/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAA/45ZJf8AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAD/jlkl///1aP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///Vo/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="),
+"format": "RGBA8",
+"height": 10,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Image" id="Image_5i55s"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//9Wj/jlkl/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAA///1aP+OWSX/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAD///Vo/45ZJf8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAP//9Wj/jlkl/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAA///1aP+OWSX/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAD///Vo/45ZJf8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="),
+"format": "RGBA8",
+"height": 10,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Image" id="Image_erkuk"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//9Wj/jlkl/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAA///1aP+OWSX/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAD///Vo/45ZJf8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAP//9Wj/jlkl/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAA///1aP+OWSX/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAD///Vo/45ZJf8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="),
+"format": "RGBA8",
+"height": 10,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Image" id="Image_ikqt2"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAI5ZJQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/jlkl/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAA///1aP+OWSX/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAD///Vo/wAAAP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAP//9Wj/jlkl/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAA/wAAAP+OWSX/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAD///Vo/45ZJf8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAP//9Wj/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="),
+"format": "RGBA8",
+"height": 10,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Image" id="Image_mkqvd"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAI5ZJQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/jlkl/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAA///1aP+OWSX/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAD///Vo/wAAAP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAP//9Wj/jlkl/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAA/wAAAP+OWSX/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAD///Vo/45ZJf8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAP//9Wj/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="),
+"format": "RGBA8",
+"height": 10,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Image" id="Image_w8ppp"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAP/1aAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//VoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//9Wj/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAD///Vo///1aP//9Wj/AAAA/wAAAAAAAAAAAAAA///1aP8AAAD/AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAA///1aP//9Wj/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAD/AAAA/wAAAP//9Wj/AAAA/wAAAAAAAAAAAAAA///1aP//9Wj///Vo/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAA///1aP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wAAAAAAAAAAAAAAAAAAAAA="),
+"format": "RGBA8",
+"height": 10,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Image" id="Image_pcnox"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAP/1aAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//VoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//9Wj/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAD///Vo///1aP//9Wj/AAAA/wAAAAAAAAAAAAAA///1aP8AAAD/AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAA///1aP//9Wj/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAD/AAAA/wAAAP//9Wj/AAAA/wAAAAAAAAAAAAAA///1aP//9Wj///Vo/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAA///1aP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wAAAAAAAAAAAAAAAAAAAAA="),
+"format": "RGBA8",
+"height": 10,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Image" id="Image_nikon"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAP/1aAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//VoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//9Wj/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAD///Vo///1aP//9Wj/AAAA/wAAAAAAAAAAAAAA///1aP8AAAD/AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAA///1aP//9Wj/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAD/AAAA/wAAAP//9Wj/AAAA/wAAAAAAAAAAAAAA///1aP//9Wj///Vo/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAA///1aP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wAAAAAAAAAAAAAAAAAAAAA="),
+"format": "RGBA8",
+"height": 10,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Image" id="Image_srayd"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAP/1aAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//VoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP//9Wj/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAD///Vo///1aP//9Wj/AAAA/wAAAAAAAAAAAAAA///1aP8AAAD/AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAA///1aP//9Wj/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAD/AAAA/wAAAP//9Wj/AAAA/wAAAAAAAAAAAAAA///1aP//9Wj///Vo/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAA///1aP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wAAAAAAAAAAAAAAAAAAAAA="),
+"format": "RGBA8",
+"height": 10,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Image" id="Image_x2fhs"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAP/1aAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///Vo/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAA/45ZJf//9Wj/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAD/jlkl/wAAAP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAP+OWSX///Vo/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAA/wAAAP//9Wj/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAD/jlkl///1aP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAP+OWSX/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="),
+"format": "RGBA8",
+"height": 10,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Image" id="Image_0mqv7"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAP/1aAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///Vo/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAA/45ZJf//9Wj/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAD/jlkl/wAAAP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAP+OWSX///Vo/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAA/wAAAP//9Wj/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAD/jlkl///1aP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAP+OWSX/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="),
+"format": "RGBA8",
+"height": 10,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Image" id="Image_o26xb"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP+OWSX///Vo/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAA/45ZJf//9Wj/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAD/jlkl///1aP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAP+OWSX///Vo/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAA/45ZJf//9Wj/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAD/jlkl///1aP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="),
+"format": "RGBA8",
+"height": 10,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Image" id="Image_1djm6"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP+OWSX///Vo/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAA/45ZJf//9Wj/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAD/jlkl///1aP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAP+OWSX///Vo/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAA/45ZJf//9Wj/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAD/jlkl///1aP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="),
+"format": "RGBA8",
+"height": 10,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Resource" id="Resource_ev0ch"]
+script = ExtResource("24_qs6ej")
+origin = Vector2(4, 4)
+containing_box = Rect2(1, 0, 6, 10)
+precise = true
+images = Array[Image]([SubResource("Image_gtmev"), SubResource("Image_sh2e6"), SubResource("Image_cdu7q"), SubResource("Image_op1gk"), SubResource("Image_bk47d"), SubResource("Image_l38dw"), SubResource("Image_grxgj"), SubResource("Image_kpler"), SubResource("Image_5i55s"), SubResource("Image_erkuk"), SubResource("Image_ikqt2"), SubResource("Image_mkqvd"), SubResource("Image_w8ppp"), SubResource("Image_pcnox"), SubResource("Image_nikon"), SubResource("Image_srayd"), SubResource("Image_x2fhs"), SubResource("Image_0mqv7"), SubResource("Image_o26xb"), SubResource("Image_1djm6")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qs6ej"]
+size = Vector2(6, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q0jn5"]
+size = Vector2(12, 20)
+
+[node name="SmallCollect" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -1
 script = ExtResource("1_lclk1")
+animated_sprite_node = NodePath("Sprite")
 object_name = "small_collect"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_nx0rx")]
+sprite_frames = SubResource("SpriteFrames_nx0rx")
+autoplay = "small_collect"
+centered = false
+offset = Vector2(-4, -4)
+script = ExtResource("23_ev0ch")
+sprite_info = Dictionary[StringName, ExtResource("24_qs6ej")]({
+&"small_collect": SubResource("Resource_ev0ch")
+})
+default_animation = &"small_collect"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_qs6ej")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_q0jn5")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

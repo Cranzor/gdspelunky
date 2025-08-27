@@ -1,7 +1,67 @@
-[gd_scene load_steps=2 format=3 uid="uid://bcajqtq8pigx5"]
+[gd_scene load_steps=11 format=3 uid="uid://bcajqtq8pigx5"]
 
 [ext_resource type="Script" uid="uid://btgrk00uxc5wa" path="res://objects/characters/shopkeeper2/shopkeeper2.gd" id="1_t3s5w"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_nqjhq"]
+[ext_resource type="Texture2D" uid="uid://dm61um76ttk6l" path="res://sprites/enemies/shopkeeper/shop_left/shop_left_0.png" id="3_pcv3y"]
+[ext_resource type="Texture2D" uid="uid://dyrnewh47fhyb" path="res://sprites/enemies/shopkeeper/shop_left/shop_left_shopkeeper.png" id="4_mcdsi"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="5_pfybu"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="6_yy0lu"]
 
-[node name="Shopkeeper2" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_nqjhq"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_pcv3y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_mcdsi")
+}],
+"loop": true,
+"name": &"shop_left",
+"speed": 30.0
+}]
+
+[sub_resource type="Resource" id="Resource_pcv3y"]
+script = ExtResource("6_yy0lu")
+origin = Vector2(0, 0)
+containing_box = Rect2(2, 1, 12, 15)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mcdsi"]
+size = Vector2(12, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pfybu"]
+size = Vector2(24, 30)
+
+[node name="Shopkeeper2" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -60
 script = ExtResource("1_t3s5w")
+animated_sprite_node = NodePath("Sprite")
 object_name = "shopkeeper2"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_nqjhq")]
+sprite_frames = SubResource("SpriteFrames_nqjhq")
+autoplay = "shop_left"
+centered = false
+script = ExtResource("5_pfybu")
+sprite_info = Dictionary[StringName, ExtResource("6_yy0lu")]({
+&"shop_left": SubResource("Resource_pcv3y")
+})
+default_animation = &"shop_left"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8.5)
+shape = SubResource("RectangleShape2D_mcdsi")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 8.5)
+shape = SubResource("RectangleShape2D_pfybu")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

@@ -1,7 +1,123 @@
-[gd_scene load_steps=2 format=3 uid="uid://b1age0gvdr7f5"]
+[gd_scene load_steps=19 format=3 uid="uid://b1age0gvdr7f5"]
 
 [ext_resource type="Script" uid="uid://bu8jyk56tmc0q" path="res://objects/effects/flare_spark/flare_spark.gd" id="1_p44n4"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_yubk7"]
+[ext_resource type="Texture2D" uid="uid://b2avn0ofxjhew" path="res://sprites/other/intro/flare_spark/flare_spark_0.png" id="3_irgpa"]
+[ext_resource type="Texture2D" uid="uid://c0doidnplmawd" path="res://sprites/other/intro/flare_spark/flare_spark_1.png" id="4_hwjnr"]
+[ext_resource type="Texture2D" uid="uid://ms4hqt43ukem" path="res://sprites/other/intro/flare_spark/flare_spark_2.png" id="5_04byp"]
+[ext_resource type="Texture2D" uid="uid://cwvfu1u7bwslw" path="res://sprites/other/intro/flare_spark/flare_spark_3.png" id="6_sh52v"]
+[ext_resource type="Texture2D" uid="uid://cp8g264lmu2e3" path="res://sprites/other/intro/flare_spark/flare_spark_4.png" id="7_8kaxt"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="8_tgrwu"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="9_ojhqt"]
 
-[node name="FlareSpark" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_yubk7"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_irgpa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hwjnr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_04byp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_sh52v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_8kaxt")
+}],
+"loop": true,
+"name": &"flare_spark",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_irgpa"]
+data = {
+"data": PackedByteArray(255, 255, 64, 0, 255, 255, 64, 255, 255, 255, 64, 255, 255, 255, 64, 0, 255, 255, 64, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 64, 255, 255, 255, 64, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 64, 255, 255, 255, 64, 0, 255, 255, 64, 255, 255, 255, 64, 255, 255, 255, 64, 0),
+"format": "RGBA8",
+"height": 4,
+"mipmaps": false,
+"width": 4
+}
+
+[sub_resource type="Image" id="Image_hwjnr"]
+data = {
+"data": PackedByteArray(255, 192, 192, 0, 255, 192, 192, 255, 255, 192, 192, 255, 255, 192, 192, 0, 255, 192, 192, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 192, 192, 255, 255, 192, 192, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 192, 192, 255, 255, 192, 192, 0, 255, 192, 192, 255, 255, 192, 192, 255, 255, 192, 192, 0),
+"format": "RGBA8",
+"height": 4,
+"mipmaps": false,
+"width": 4
+}
+
+[sub_resource type="Image" id="Image_04byp"]
+data = {
+"data": PackedByteArray(255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0),
+"format": "RGBA8",
+"height": 4,
+"mipmaps": false,
+"width": 4
+}
+
+[sub_resource type="Image" id="Image_sh52v"]
+data = {
+"data": PackedByteArray(255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0),
+"format": "RGBA8",
+"height": 4,
+"mipmaps": false,
+"width": 4
+}
+
+[sub_resource type="Image" id="Image_8kaxt"]
+data = {
+"data": PackedByteArray(255, 255, 255, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 255, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0, 255, 255, 255, 0),
+"format": "RGBA8",
+"height": 4,
+"mipmaps": false,
+"width": 4
+}
+
+[sub_resource type="Resource" id="Resource_tgrwu"]
+script = ExtResource("9_ojhqt")
+origin = Vector2(2, 2)
+containing_box = Rect2(0, 0, 4, 4)
+precise = true
+images = Array[Image]([SubResource("Image_irgpa"), SubResource("Image_hwjnr"), SubResource("Image_04byp"), SubResource("Image_sh52v"), SubResource("Image_8kaxt")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ojhqt"]
+size = Vector2(4, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_34v5i"]
+size = Vector2(8, 8)
+
+[node name="FlareSpark" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -150
 script = ExtResource("1_p44n4")
+animated_sprite_node = NodePath("Sprite")
 object_name = "flare_spark"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_yubk7")]
+sprite_frames = SubResource("SpriteFrames_yubk7")
+autoplay = "flare_spark"
+centered = false
+offset = Vector2(-2, -2)
+script = ExtResource("8_tgrwu")
+sprite_info = Dictionary[StringName, ExtResource("9_ojhqt")]({
+&"flare_spark": SubResource("Resource_tgrwu")
+})
+default_animation = &"flare_spark"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ojhqt")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+shape = SubResource("RectangleShape2D_34v5i")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

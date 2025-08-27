@@ -1,7 +1,72 @@
-[gd_scene load_steps=2 format=3 uid="uid://unwwpn1qsk67"]
+[gd_scene load_steps=11 format=4 uid="uid://unwwpn1qsk67"]
 
 [ext_resource type="Script" uid="uid://bg3t4i6u0uo8" path="res://objects/level editor/pistol_tile/pistol_tile.gd" id="1_3ykx1"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_aoeqf"]
+[ext_resource type="Texture2D" uid="uid://clbxgywtiy54d" path="res://sprites/level editor/pistol_tile/pistol_tile_0.png" id="3_dovfx"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_wxdcg"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_bstwf"]
 
-[node name="PistolTile" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_aoeqf"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_dovfx")
+}],
+"loop": true,
+"name": &"pistol_tile",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_dovfx"]
+data = {
+"data": PackedByteArray("gACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgAAmFBAAJhQQACYUEAAmFBAAwMDAACYUEAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAJhQQACYUEAAmFBAAJhQQAMDAwAAmFBAAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIACYUEAAmFBAAJhQQACYUEADAwMAAJhQQABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAAmFBAAJhQQACYUEAAmFBAAwMDAACYUEAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAJhQQACYUEAAmFBAAJhQQ/8DAwP8mFBD/EgoI/xIKCP8SCgj/EgoI/xIKCP8SCgj/EgoIABIKCAASCggAEgoIACYUEAAmFBAAJhQQACYUEP8mFBD//////4CAgP/AwMD//////8DAwP+AgID/EgoI/xIKCAASCggAEgoIABIKCAAmFBAAJhQQACYUEAAmFBAAJhQQ/2MvHf+AgID/QEBA/0BAQP9AQED/QEBA/yYUEP8mFBAAJhQQACYUEAAmFBAAJhQQACYUEAAmFBAAJhQQ/45ZJf9jLx3/JhQQ/4CAgP8mFBD/JhQQ/yYUEP8mFBD/JhQQACYUEAAmFBAAJhQQACYUEAAmFBAAJhQQACYUEP9jLx3/Yy8d/yYUEP+AgIAAJhQQACYUEAAmFBAAJhQQACYUEAAmFBAAJhQQACYUEAAmFBAAJhQQACYUEAAmFBD/JhQQ/yYUEP8mFBAAJhQQACYUEAAmFBAAJhQQACYUEAAmFBAAJhQQACYUEAAmFBAAJhQQACYUEAAmFBAAJhQQACYUEAAmFBAAJhQQACYUEAAmFBAAJhQQACYUEAAmFBAAJhQQACYUEAAmFBAAJhQQAA=="),
+"format": "RGBA8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Resource" id="Resource_wxdcg"]
+script = ExtResource("5_bstwf")
+origin = Vector2(0, 0)
+containing_box = Rect2(3, 9, 9, 6)
+precise = true
+images = Array[Image]([SubResource("Image_dovfx")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bstwf"]
+size = Vector2(9, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s8i6w"]
+size = Vector2(18, 12)
+
+[node name="PistolTile" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -100
 script = ExtResource("1_3ykx1")
+animated_sprite_node = NodePath("Sprite")
 object_name = "pistol_tile"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_aoeqf")]
+sprite_frames = SubResource("SpriteFrames_aoeqf")
+autoplay = "pistol_tile"
+centered = false
+script = ExtResource("4_wxdcg")
+sprite_info = Dictionary[StringName, ExtResource("5_bstwf")]({
+&"pistol_tile": SubResource("Resource_wxdcg")
+})
+default_animation = &"pistol_tile"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(7.5, 12)
+shape = SubResource("RectangleShape2D_bstwf")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(7.5, 12)
+shape = SubResource("RectangleShape2D_s8i6w")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

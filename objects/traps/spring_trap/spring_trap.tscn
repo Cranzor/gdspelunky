@@ -1,7 +1,112 @@
-[gd_scene load_steps=2 format=3 uid="uid://d00dsfb1jl1n5"]
+[gd_scene load_steps=20 format=3 uid="uid://d00dsfb1jl1n5"]
 
 [ext_resource type="Script" uid="uid://cpu52upb33it" path="res://objects/traps/spring_trap/spring_trap.gd" id="1_5gf5u"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_t23m8"]
+[ext_resource type="Texture2D" uid="uid://cjt4er51iquoj" path="res://sprites/traps/spring_trap/spring_trap_0.png" id="3_pjvj0"]
+[ext_resource type="Texture2D" uid="uid://d2rbh4bli1dq8" path="res://sprites/traps/spring_trap_sprung/spring_trap_sprung_0.png" id="4_w4weo"]
+[ext_resource type="Texture2D" uid="uid://cw16wd4cqccw8" path="res://sprites/traps/spring_trap_sprung/spring_trap_sprung_1.png" id="5_fd3q5"]
+[ext_resource type="Texture2D" uid="uid://c17ffr5yfkwd7" path="res://sprites/traps/spring_trap_sprung/spring_trap_sprung_2.png" id="6_dy5fm"]
+[ext_resource type="Texture2D" uid="uid://luuwusow0qwk" path="res://sprites/traps/spring_trap_sprung/spring_trap_sprung_3.png" id="7_l10o7"]
+[ext_resource type="Texture2D" uid="uid://cjibqvxccpsa6" path="res://sprites/traps/spring_trap_sprung/spring_trap_sprung_4.png" id="8_6bh6d"]
+[ext_resource type="Texture2D" uid="uid://denmmegc3dw8k" path="res://sprites/traps/spring_trap_sprung/spring_trap_sprung_5.png" id="9_fkxal"]
+[ext_resource type="Texture2D" uid="uid://caucryg5bv7ir" path="res://sprites/traps/spring_trap_sprung/spring_trap_sprung_6.png" id="10_oqta1"]
+[ext_resource type="Texture2D" uid="uid://6trjls8b3pdc" path="res://sprites/traps/spring_trap_sprung/spring_trap_sprung_7.png" id="11_sxm5g"]
+[ext_resource type="Texture2D" uid="uid://brbl2l6fushg8" path="res://sprites/traps/spring_trap_sprung/spring_trap_sprung_8.png" id="12_e8alv"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="13_iq4ja"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="14_atu3k"]
 
-[node name="SpringTrap" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_t23m8"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_pjvj0")
+}],
+"loop": true,
+"name": &"spring_trap",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_w4weo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fd3q5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_dy5fm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_l10o7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6bh6d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_fkxal")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_oqta1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_sxm5g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_e8alv")
+}],
+"loop": true,
+"name": &"spring_trap_sprung",
+"speed": 30.0
+}]
+
+[sub_resource type="Resource" id="Resource_pjvj0"]
+script = ExtResource("14_atu3k")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 12, 16, 4)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_w4weo"]
+script = ExtResource("14_atu3k")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fd3q5"]
+size = Vector2(16, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dy5fm"]
+size = Vector2(32, 8)
+
+[node name="SpringTrap" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -100
 script = ExtResource("1_5gf5u")
+animated_sprite_node = NodePath("Sprite")
 object_name = "spring_trap"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_t23m8")]
+sprite_frames = SubResource("SpriteFrames_t23m8")
+autoplay = "spring_trap"
+centered = false
+script = ExtResource("13_iq4ja")
+sprite_info = Dictionary[StringName, ExtResource("14_atu3k")]({
+&"spring_trap": SubResource("Resource_pjvj0"),
+&"spring_trap_sprung": SubResource("Resource_w4weo")
+})
+default_animation = &"spring_trap"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 14)
+shape = SubResource("RectangleShape2D_fd3q5")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 14)
+shape = SubResource("RectangleShape2D_dy5fm")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

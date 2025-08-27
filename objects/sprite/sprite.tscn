@@ -1,7 +1,1076 @@
-[gd_scene load_steps=2 format=3 uid="uid://clxx5ltmypdf4"]
+[gd_scene load_steps=161 format=4 uid="uid://clxx5ltmypdf4"]
 
 [ext_resource type="Script" uid="uid://f1v82n0itrlt" path="res://objects/sprite/sprite.gd" id="1_fx3ib"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_wsgd5"]
+[ext_resource type="Texture2D" uid="uid://gvr1l08f5r8c" path="res://sprites/enemies/alien/alien_0.png" id="3_bcice"]
+[ext_resource type="Texture2D" uid="uid://dypgbd536fo52" path="res://sprites/enemies/alien/alien_1.png" id="4_b8p6p"]
+[ext_resource type="Texture2D" uid="uid://cl7w7f30xyici" path="res://sprites/enemies/alien/alien_2.png" id="5_5ri4w"]
+[ext_resource type="Texture2D" uid="uid://cr8trvhcewtnv" path="res://sprites/enemies/alien/alien_3.png" id="6_6ra1x"]
+[ext_resource type="Texture2D" uid="uid://kxam06ykovvh" path="res://sprites/enemies/alien_boss_disp/alien_boss_disp_0.png" id="7_rv7pu"]
+[ext_resource type="Texture2D" uid="uid://ceuvbylqdg71v" path="res://sprites/enemies/bat_left/bat_left_0.png" id="8_5t0n2"]
+[ext_resource type="Texture2D" uid="uid://do110h7mxmu1a" path="res://sprites/enemies/bat_left/bat_left_1.png" id="9_pran7"]
+[ext_resource type="Texture2D" uid="uid://c0fgoil7juc5y" path="res://sprites/enemies/bat_left/bat_left_2.png" id="10_8e6d2"]
+[ext_resource type="Texture2D" uid="uid://bj0v7r3pm2tdi" path="res://sprites/enemies/caveman/caveman_left/caveman_left_0.png" id="11_qp8w7"]
+[ext_resource type="Texture2D" uid="uid://bb7u0gcoq554x" path="res://sprites/items/treasures/crystal_skull_ico/crystal_skull_ico_0.png" id="12_du5tq"]
+[ext_resource type="Texture2D" uid="uid://c3ilq048qfec6" path="res://sprites/character/damsel/damsel_left/damsel_left_0.png" id="13_nrelh"]
+[ext_resource type="Texture2D" uid="uid://qppdxyc0kqpx" path="res://sprites/character/damsel/damsel_left_ico/damsel_left_ico_0.png" id="14_j4ter"]
+[ext_resource type="Texture2D" uid="uid://xo42oy1pneyk" path="res://sprites/enemies/dead_fish_left_ico/dead_fish_left_ico_0.png" id="15_csn3s"]
+[ext_resource type="Texture2D" uid="uid://d2hh717fb5jkt" path="res://sprites/items/treasures/diamond/diamond_0.png" id="16_uvydy"]
+[ext_resource type="Texture2D" uid="uid://u0mgyn6ajqs6" path="res://sprites/items/treasures/emerald/emerald_0.png" id="17_ulrhj"]
+[ext_resource type="Texture2D" uid="uid://bj12ug8ihe6i7" path="res://sprites/items/treasures/emerald_big/emerald_big_0.png" id="18_fmt1s"]
+[ext_resource type="Texture2D" uid="uid://imuoxlpd1efy" path="res://sprites/enemies/fire_frog_left/fire_frog_left_0.png" id="19_o6nw2"]
+[ext_resource type="Texture2D" uid="uid://g3rscb1vml3f" path="res://sprites/enemies/fire_frog_left/fire_frog_left_1.png" id="20_285nb"]
+[ext_resource type="Texture2D" uid="uid://bgfq0s2cg2c3i" path="res://sprites/enemies/fire_frog_left/fire_frog_left_2.png" id="21_wvdg4"]
+[ext_resource type="Texture2D" uid="uid://dfcnxryy2rgsv" path="res://sprites/enemies/fire_frog_left/fire_frog_left_3.png" id="22_h6jri"]
+[ext_resource type="Texture2D" uid="uid://c01j2tgj7yvpr" path="res://sprites/enemies/fire_frog_left/fire_frog_left_4.png" id="23_dhu0c"]
+[ext_resource type="Texture2D" uid="uid://bc8e4hnrlbk2s" path="res://sprites/enemies/fire_frog_left/fire_frog_left_5.png" id="24_63hg3"]
+[ext_resource type="Texture2D" uid="uid://cocfeubae2qg6" path="res://sprites/enemies/frog_left/frog_left_0.png" id="25_r2yvl"]
+[ext_resource type="Texture2D" uid="uid://c4p3jlw5gq6ty" path="res://sprites/enemies/frog_left/frog_left_1.png" id="26_6v2tc"]
+[ext_resource type="Texture2D" uid="uid://3qqm132wfpex" path="res://sprites/enemies/frog_left/frog_left_2.png" id="27_wmj7a"]
+[ext_resource type="Texture2D" uid="uid://yehi54qtvtol" path="res://sprites/enemies/giant_spider/giant_spider_disp/giant_spider_disp_0.png" id="28_xefcy"]
+[ext_resource type="Texture2D" uid="uid://0v4u0arhw2nr" path="res://sprites/items/treasures/gold_bar_draw/gold_bar_draw_0.png" id="29_q4bci"]
+[ext_resource type="Texture2D" uid="uid://dv2gug1pdlhwh" path="res://sprites/items/treasures/gold_bars_draw/gold_bars_draw_0.png" id="30_0nbts"]
+[ext_resource type="Texture2D" uid="uid://gmh0x10kx726" path="res://sprites/items/treasures/gold_chunk/gold_chunk_0.png" id="31_842um"]
+[ext_resource type="Texture2D" uid="uid://enw0s00bm3e1" path="res://sprites/items/treasures/gold_idol_ico/gold_idol_ico_0.png" id="32_ms7dh"]
+[ext_resource type="Texture2D" uid="uid://d3ne1j4gsqyt8" path="res://sprites/items/treasures/gold_nugget/gold_nugget_0.png" id="33_0cps1"]
+[ext_resource type="Texture2D" uid="uid://bb3ymf3wtaywf" path="res://sprites/enemies/hawkman/hawk_left/hawk_left_0.png" id="34_gqlef"]
+[ext_resource type="Texture2D" uid="uid://dlpfhmhnyp6ug" path="res://sprites/enemies/man_trap/man_trap_left/man_trap_left_0.png" id="35_3onro"]
+[ext_resource type="Texture2D" uid="uid://c815nscgu47g0" path="res://sprites/enemies/man_trap/man_trap_left/man_trap_left_1.png" id="36_4my5j"]
+[ext_resource type="Texture2D" uid="uid://er5dsw0ifutn" path="res://sprites/enemies/man_trap/man_trap_left/man_trap_left_2.png" id="37_r8x1c"]
+[ext_resource type="Texture2D" uid="uid://doyq8w57r67q" path="res://sprites/enemies/man_trap/man_trap_left/man_trap_left_3.png" id="38_n2jle"]
+[ext_resource type="Texture2D" uid="uid://cuoi3bhnbo51u" path="res://sprites/enemies/jaws/mega_mouth/mega_mouth_0.png" id="39_ml0hf"]
+[ext_resource type="Texture2D" uid="uid://ct23nr2cxrmrs" path="res://sprites/enemies/monkey/monkey_left/monkey_left_0.png" id="40_1g13d"]
+[ext_resource type="Texture2D" uid="uid://cg8p736x42mun" path="res://sprites/enemies/piranha_left_ico/piranha_left_ico_0.png" id="41_puecl"]
+[ext_resource type="Texture2D" uid="uid://c4xbrthliagsb" path="res://sprites/items/treasures/ruby/ruby_0.png" id="42_f7q21"]
+[ext_resource type="Texture2D" uid="uid://cbl4q04mjtfb8" path="res://sprites/items/treasures/ruby_big/ruby_big_0.png" id="43_gbjuc"]
+[ext_resource type="Texture2D" uid="uid://b1n383p7rs68v" path="res://sprites/items/treasures/sapphire/sapphire_0.png" id="44_igxr8"]
+[ext_resource type="Texture2D" uid="uid://biy5owbcpf38u" path="res://sprites/items/treasures/sapphire_big/sapphire_big_0.png" id="45_v1byf"]
+[ext_resource type="Texture2D" uid="uid://bm4emda7lukke" path="res://sprites/items/treasures/scarab_disp/scarab_disp_0.png" id="46_fw05l"]
+[ext_resource type="Texture2D" uid="uid://clhqilmjnls7a" path="res://sprites/items/treasures/scarab_disp/scarab_disp_1.png" id="47_uwwb0"]
+[ext_resource type="Texture2D" uid="uid://cej2g45mk6600" path="res://sprites/items/treasures/scarab_disp/scarab_disp_2.png" id="48_1421n"]
+[ext_resource type="Texture2D" uid="uid://ddle7dbjonal1" path="res://sprites/enemies/shopkeeper/shop_left_ico/shop_left_ico_0.png" id="49_sbjox"]
+[ext_resource type="Texture2D" uid="uid://d3vr7lqhv4k8n" path="res://sprites/enemies/skeleton/skeleton_left/skeleton_left_0.png" id="50_irjab"]
+[ext_resource type="Texture2D" uid="uid://bigyiggtyfuj4" path="res://sprites/enemies/snake_left/snake_left_0.png" id="51_qae67"]
+[ext_resource type="Texture2D" uid="uid://crmsthveew8eq" path="res://sprites/traps/spears_right/spears_right_0.png" id="52_5h4pr"]
+[ext_resource type="Texture2D" uid="uid://dnksyqs3jnya6" path="res://sprites/traps/spears_right/spears_right_1.png" id="53_et6pc"]
+[ext_resource type="Texture2D" uid="uid://kgen4pe58l5d" path="res://sprites/traps/spears_right/spears_right_10.png" id="54_thvbr"]
+[ext_resource type="Texture2D" uid="uid://heop0ydlgnpu" path="res://sprites/traps/spears_right/spears_right_11.png" id="55_3x515"]
+[ext_resource type="Texture2D" uid="uid://ejmg3bfge17k" path="res://sprites/traps/spears_right/spears_right_12.png" id="56_38rix"]
+[ext_resource type="Texture2D" uid="uid://cdxwky4vjys4g" path="res://sprites/traps/spears_right/spears_right_13.png" id="57_10sk6"]
+[ext_resource type="Texture2D" uid="uid://c8emr4b1ne4jc" path="res://sprites/traps/spears_right/spears_right_14.png" id="58_4uegr"]
+[ext_resource type="Texture2D" uid="uid://c05why76ae0yr" path="res://sprites/traps/spears_right/spears_right_15.png" id="59_ubbxk"]
+[ext_resource type="Texture2D" uid="uid://ciy40qay3sh7m" path="res://sprites/traps/spears_right/spears_right_16.png" id="60_keaur"]
+[ext_resource type="Texture2D" uid="uid://cc5b55prsl3c4" path="res://sprites/traps/spears_right/spears_right_17.png" id="61_qbllv"]
+[ext_resource type="Texture2D" uid="uid://dkcdkmg2esuw4" path="res://sprites/traps/spears_right/spears_right_18.png" id="62_kkhi6"]
+[ext_resource type="Texture2D" uid="uid://cdoofmywc727r" path="res://sprites/traps/spears_right/spears_right_19.png" id="63_ruu6u"]
+[ext_resource type="Texture2D" uid="uid://nmmk6lt1a07" path="res://sprites/traps/spears_right/spears_right_2.png" id="64_4u1g4"]
+[ext_resource type="Texture2D" uid="uid://csh4d6jfcaret" path="res://sprites/traps/spears_right/spears_right_20.png" id="65_6urhw"]
+[ext_resource type="Texture2D" uid="uid://7m1c1xni3y2o" path="res://sprites/traps/spears_right/spears_right_21.png" id="66_thak5"]
+[ext_resource type="Texture2D" uid="uid://clw0y5bhw0nt0" path="res://sprites/traps/spears_right/spears_right_22.png" id="67_3bbu5"]
+[ext_resource type="Texture2D" uid="uid://bbprnauc3hkd" path="res://sprites/traps/spears_right/spears_right_23.png" id="68_1rlpt"]
+[ext_resource type="Texture2D" uid="uid://dwnbmaoaam4t2" path="res://sprites/traps/spears_right/spears_right_24.png" id="69_3kqy4"]
+[ext_resource type="Texture2D" uid="uid://blpc3jvbbvgyh" path="res://sprites/traps/spears_right/spears_right_25.png" id="70_5v2b6"]
+[ext_resource type="Texture2D" uid="uid://dpq71nqjaflkw" path="res://sprites/traps/spears_right/spears_right_26.png" id="71_dye3h"]
+[ext_resource type="Texture2D" uid="uid://dcsffudt7p7px" path="res://sprites/traps/spears_right/spears_right_27.png" id="72_jdw5v"]
+[ext_resource type="Texture2D" uid="uid://umughiyoqio0" path="res://sprites/traps/spears_right/spears_right_28.png" id="73_hblue"]
+[ext_resource type="Texture2D" uid="uid://bha3dja6jrv4m" path="res://sprites/traps/spears_right/spears_right_29.png" id="74_ur2cr"]
+[ext_resource type="Texture2D" uid="uid://bfp85yfio0yy6" path="res://sprites/traps/spears_right/spears_right_3.png" id="75_2maah"]
+[ext_resource type="Texture2D" uid="uid://duvs85a8x512f" path="res://sprites/traps/spears_right/spears_right_30.png" id="76_rd4hb"]
+[ext_resource type="Texture2D" uid="uid://c4yb3yi4kib02" path="res://sprites/traps/spears_right/spears_right_4.png" id="77_tsnn1"]
+[ext_resource type="Texture2D" uid="uid://bhldqtyc86aer" path="res://sprites/traps/spears_right/spears_right_5.png" id="78_1owq2"]
+[ext_resource type="Texture2D" uid="uid://cty1rywlqe2bb" path="res://sprites/traps/spears_right/spears_right_6.png" id="79_3gfgu"]
+[ext_resource type="Texture2D" uid="uid://bkifjn2l5nwax" path="res://sprites/traps/spears_right/spears_right_7.png" id="80_hmfaq"]
+[ext_resource type="Texture2D" uid="uid://bvhrsmuh503wg" path="res://sprites/traps/spears_right/spears_right_8.png" id="81_l5byw"]
+[ext_resource type="Texture2D" uid="uid://twkt46lu10n0" path="res://sprites/traps/spears_right/spears_right_9.png" id="82_mjpjr"]
+[ext_resource type="Texture2D" uid="uid://d04a7hse1gnun" path="res://sprites/enemies/spider/spider_0.png" id="83_i8x5v"]
+[ext_resource type="Texture2D" uid="uid://dj04giixjh8cj" path="res://sprites/enemies/spider/spider_1.png" id="84_so8kv"]
+[ext_resource type="Texture2D" uid="uid://buntuclawuhac" path="res://sprites/enemies/spider/spider_2.png" id="85_bo11q"]
+[ext_resource type="Texture2D" uid="uid://dhrmbwkbwiwa3" path="res://sprites/enemies/spider/spider_3.png" id="86_cm5nr"]
+[ext_resource type="Texture2D" uid="uid://dbfljnxxluub6" path="res://sprites/character/main dude/stand_left/stand_left_0.png" id="87_78118"]
+[ext_resource type="Texture2D" uid="uid://dvtyo8ybpgswh" path="res://sprites/character/main dude/stand_left_ico/stand_left_ico_0.png" id="88_tkaht"]
+[ext_resource type="Texture2D" uid="uid://d3k03v7fi4sjw" path="res://sprites/enemies/tomb_lord/tomb_lord_disp/tomb_lord_disp_0.png" id="89_06bsl"]
+[ext_resource type="Texture2D" uid="uid://dqeidbbjg0184" path="res://sprites/enemies/tomb_lord/tomb_lord_disp/tomb_lord_disp_1.png" id="90_d260r"]
+[ext_resource type="Texture2D" uid="uid://cfn6uhgicjhep" path="res://sprites/enemies/tomb_lord/tomb_lord_disp/tomb_lord_disp_2.png" id="91_qrxp2"]
+[ext_resource type="Texture2D" uid="uid://bmtilvrimdk50" path="res://sprites/enemies/tomb_lord/tomb_lord_disp/tomb_lord_disp_3.png" id="92_ri7ku"]
+[ext_resource type="Texture2D" uid="uid://btc8qlgyf1bua" path="res://sprites/enemies/ufo/ufo_0.png" id="93_gmu16"]
+[ext_resource type="Texture2D" uid="uid://bsjtpndoo5v" path="res://sprites/enemies/ufo/ufo_1.png" id="94_x5qfa"]
+[ext_resource type="Texture2D" uid="uid://d08xabh261pkv" path="res://sprites/enemies/ufo/ufo_2.png" id="95_6neha"]
+[ext_resource type="Texture2D" uid="uid://hlhwt04diubm" path="res://sprites/enemies/ufo/ufo_3.png" id="96_h1134"]
+[ext_resource type="Texture2D" uid="uid://vnjfwokprutl" path="res://sprites/enemies/ufo/ufo_4.png" id="97_0rhmo"]
+[ext_resource type="Texture2D" uid="uid://i2gvg1avof11" path="res://sprites/enemies/ufo/ufo_5.png" id="98_e37ec"]
+[ext_resource type="Texture2D" uid="uid://bvcw5a5s47gqh" path="res://sprites/enemies/ufo/ufo_6.png" id="99_nuv2i"]
+[ext_resource type="Texture2D" uid="uid://c5fxjnkg867fc" path="res://sprites/enemies/ufo/ufo_7.png" id="100_xrbp4"]
+[ext_resource type="Texture2D" uid="uid://bth33icab4gf6" path="res://sprites/enemies/vampire/vampire_left/vampire_left_0.png" id="101_pi1m5"]
+[ext_resource type="Texture2D" uid="uid://demhp88032f16" path="res://sprites/enemies/yeti_king/yeti_king_disp/yeti_king_disp_0.png" id="102_ags3c"]
+[ext_resource type="Texture2D" uid="uid://cc80ffrvkibcp" path="res://sprites/enemies/yeti/yeti_left/yeti_left_0.png" id="103_f2ia5"]
+[ext_resource type="Texture2D" uid="uid://uaohrc5gitit" path="res://sprites/enemies/zombie_left/zombie_left_0.png" id="104_44kl5"]
+[ext_resource type="Texture2D" uid="uid://b2c8l6iu1r5e7" path="res://sprites/enemies/zombie_left/zombie_left_1.png" id="105_bs3ax"]
+[ext_resource type="Texture2D" uid="uid://dwfxg3var4sfk" path="res://sprites/enemies/zombie_left/zombie_left_2.png" id="106_jmxl2"]
+[ext_resource type="Texture2D" uid="uid://bgx46q74vnh1c" path="res://sprites/enemies/zombie_left/zombie_left_3.png" id="107_q2aed"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="109_ponw7"]
 
-[node name="Sprite" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_wsgd5"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_bcice")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_b8p6p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5ri4w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_6ra1x")
+}],
+"loop": true,
+"name": &"alien",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_rv7pu")
+}],
+"loop": true,
+"name": &"alien_boss_disp",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_5t0n2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_pran7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_8e6d2")
+}],
+"loop": true,
+"name": &"bat_left",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_qp8w7")
+}],
+"loop": true,
+"name": &"caveman_left",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_du5tq")
+}],
+"loop": true,
+"name": &"crystal_skull_ico",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_nrelh")
+}],
+"loop": true,
+"name": &"damsel_left",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_j4ter")
+}],
+"loop": true,
+"name": &"damsel_left_ico",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_csn3s")
+}],
+"loop": true,
+"name": &"dead_fish_left_ico",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_uvydy")
+}],
+"loop": true,
+"name": &"diamond",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_ulrhj")
+}],
+"loop": true,
+"name": &"emerald",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_fmt1s")
+}],
+"loop": true,
+"name": &"emerald_big",
+"speed": 30.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"empty",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_o6nw2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_285nb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_wvdg4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_h6jri")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_dhu0c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_63hg3")
+}],
+"loop": true,
+"name": &"fire_frog_left",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_r2yvl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_6v2tc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_wmj7a")
+}],
+"loop": true,
+"name": &"frog_left",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_xefcy")
+}],
+"loop": true,
+"name": &"giant_spider_disp",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_q4bci")
+}],
+"loop": true,
+"name": &"gold_bar_draw",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_0nbts")
+}],
+"loop": true,
+"name": &"gold_bars_draw",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31_842um")
+}],
+"loop": true,
+"name": &"gold_chunk",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("32_ms7dh")
+}],
+"loop": true,
+"name": &"gold_idol_ico",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_0cps1")
+}],
+"loop": true,
+"name": &"gold_nugget",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("34_gqlef")
+}],
+"loop": true,
+"name": &"hawk_left",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("35_3onro")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_4my5j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_r8x1c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_n2jle")
+}],
+"loop": true,
+"name": &"man_trap_left",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("39_ml0hf")
+}],
+"loop": true,
+"name": &"mega_mouth",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("40_1g13d")
+}],
+"loop": true,
+"name": &"monkey_left",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("41_puecl")
+}],
+"loop": true,
+"name": &"piranha_left_ico",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("42_f7q21")
+}],
+"loop": true,
+"name": &"ruby",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("43_gbjuc")
+}],
+"loop": true,
+"name": &"ruby_big",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("44_igxr8")
+}],
+"loop": true,
+"name": &"sapphire",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("45_v1byf")
+}],
+"loop": true,
+"name": &"sapphire_big",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("46_fw05l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_uwwb0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_1421n")
+}],
+"loop": true,
+"name": &"scarab_disp",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("49_sbjox")
+}],
+"loop": true,
+"name": &"shop_left_ico",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("50_irjab")
+}],
+"loop": true,
+"name": &"skeleton_left",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("51_qae67")
+}],
+"loop": true,
+"name": &"snake_left",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("52_5h4pr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_et6pc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_thvbr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_3x515")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_38rix")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_10sk6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_4uegr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_ubbxk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_keaur")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_qbllv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_kkhi6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_ruu6u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_4u1g4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_6urhw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_thak5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_3bbu5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_1rlpt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_3kqy4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_5v2b6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_dye3h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_jdw5v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_hblue")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_ur2cr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_2maah")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_rd4hb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_tsnn1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_1owq2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_3gfgu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_hmfaq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_l5byw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_mjpjr")
+}],
+"loop": true,
+"name": &"spears_right",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("83_i8x5v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_so8kv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_bo11q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_cm5nr")
+}],
+"loop": true,
+"name": &"spider",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("87_78118")
+}],
+"loop": true,
+"name": &"stand_left",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("88_tkaht")
+}],
+"loop": true,
+"name": &"stand_left_ico",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("89_06bsl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_d260r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_qrxp2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_ri7ku")
+}],
+"loop": true,
+"name": &"tomb_lord_disp",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("93_gmu16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_x5qfa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_6neha")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_h1134")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_0rhmo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_e37ec")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_nuv2i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_xrbp4")
+}],
+"loop": true,
+"name": &"ufo",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("101_pi1m5")
+}],
+"loop": true,
+"name": &"vampire_left",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("102_ags3c")
+}],
+"loop": true,
+"name": &"yeti_king_disp",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("103_f2ia5")
+}],
+"loop": true,
+"name": &"yeti_left",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("104_44kl5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_bs3ax")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_jmxl2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107_q2aed")
+}],
+"loop": true,
+"name": &"zombie_left",
+"speed": 30.0
+}]
+
+[sub_resource type="Resource" id="Resource_0cps1"]
+script = ExtResource("109_ponw7")
+origin = Vector2(0, 0)
+containing_box = Rect2(1, 5, 14, 11)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_gqlef"]
+script = ExtResource("109_ponw7")
+origin = Vector2(8, 8)
+containing_box = Rect2(1, 1, 31, 31)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_bcice"]
+script = ExtResource("109_ponw7")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 3, 16, 11)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_3onro"]
+script = ExtResource("109_ponw7")
+origin = Vector2(0, 0)
+containing_box = Rect2(1, 0, 14, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_o6nw2"]
+script = ExtResource("109_ponw7")
+origin = Vector2(8, 12)
+containing_box = Rect2(2, 1, 12, 15)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_uvydy"]
+script = ExtResource("109_ponw7")
+origin = Vector2(8, 8)
+containing_box = Rect2(2, 0, 12, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_1421n"]
+script = ExtResource("109_ponw7")
+origin = Vector2(0, 0)
+containing_box = Rect2(2, 0, 12, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_h6jri"]
+script = ExtResource("109_ponw7")
+origin = Vector2(0, 0)
+containing_box = Rect2(4, 5, 8, 6)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_j4ter"]
+script = ExtResource("109_ponw7")
+origin = Vector2(4, 4)
+containing_box = Rect2(0, 0, 8, 8)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_5ri4w"]
+script = ExtResource("109_ponw7")
+origin = Vector2(2, 2)
+containing_box = Rect2(0, 0, 4, 4)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_qp8w7"]
+script = ExtResource("109_ponw7")
+origin = Vector2(4, 4)
+containing_box = Rect2(0, 0, 8, 8)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_xefcy"]
+script = ExtResource("109_ponw7")
+origin = Vector2(0, 0)
+containing_box = Rect2(1, 3, 14, 13)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_wmj7a"]
+script = ExtResource("109_ponw7")
+origin = Vector2(0, 0)
+containing_box = Rect2(2, 4, 13, 12)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Image" id="Image_r8x1c"]
+data = {
+"data": PackedByteArray("AEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAD/AAAA/xMVFf8AAAD/ExUV/wAAAP8TFRX/AAAA/xMVFf8AAAD/ExUV/wAAAP8TFRX/AAAA/wAAAP8AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAA/wAAAP8AAAD/ExUV/xMVFf8TFRX/ICAg/xMVFf8gICD/ExUV/yAgIP8TFRX/ICAg/xMVFf8gICD/ExUV/yAgIP8TFRX/ExUV/xMVFf8TFRX/AAAA/wAAAP8AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/yAgIP8gICD/ICAg/xMVFf8AAAD/ExUV/yAgIP8gICD/QEBA/yAgIP8AAAD/AAAA/xMVFf8TFRX/AAAA/wAAAP9AQED/ICAg/0BAQP8gICD/ExUV/wAAAP8TFRX/ICAg/yAgIP8gICD/AAAA/wAAAAAAAAAAAAAAAAAAAP8gICD/QEBA/0BAQP8AAAD/AAAA/wAAAP8gICD/ICAg/0BAQP8gICD/AAAA/yAgIP9AQED/QEBA/0BAQP9AQED/ICAg/wAAAP9AQED/ICAg/yAgIP8gICD/AAAA/wAAAP8AAAD/QEBA/0BAQP8gICD/AAAA/wAAAAATFRUAExUV/xMVFf8AAAD/AAAA/yAgIP8gICD/QEBA/wAAAP8gICD/QEBA/wAAAP8gICD/QEBA/wAAAP+AgID/gICA/wAAAP9AQED/ICAg/wAAAP9AQED/ICAg/wAAAP9AQED/ICAg/yAgIP8AAAD/AAAA/xMVFf8TFRX/ExUVAAAAAAAAAAD/AAAA/yAgIP8gICD/QEBA/0BAQP+AgID/QEBA/xMVFf8AAAD/ExUV/wAAAP9hYWH//0BA/wAAAP8AAAD//0BA/2FhYf8AAAD/ExUV/wAAAP8TFRX/QEBA/4CAgP9AQED/QEBA/yAgIP8gICD/AAAA/xMVFf8TFRUAAAAAAAAAAP8gICD/QEBA/0BAQP9hYWH/YWFh/wAAAP8AAAD/ExUV/wAAAP9AQED/wAAA/yAgIP8gICD/ICAg/yAgIP8gICD/ICAg/8AAAP9AQED/AAAA/xMVFf8AAAD/AAAA/2FhYf9hYWH/QEBA/0BAQP8gICD/AAAA/wAAAAAAAAAAAAAA/0BAQP9AQED/YWFh/yAgIP8TFRX/ICAg/0BAQP9AQED/ExUV/0BAQP8gICD/AAAA/xMVFf8AAAD/AAAA/xMVFf8AAAD/ICAg/0BAQP8TFRX/QEBA/0BAQP8gICD/ExUV/yAgIP9hYWH/QEBA/0BAQP8AAAD/AAAAAAAAAAAAAAD/AAAA/wAAAP8gICD/ExUV/wAAAP9AQED/YWFh/4CAgP8AAAD/ExUV/wAAAP+AgID/QEBA/wAAAP8AAAD/QEBA/4CAgP8AAAD/ExUV/wAAAP+AgID/YWFh/0BAQP8AAAD/ExUV/yAgIP8AAAD/AAAA/wAAAP8AAAAAAAAAAAAAAAATFRX/YWFh/yAgIP8AAAD/ICAg/yAgIP8AAAD/ExUV/wAAAAATFRUAExUV/4CAgP+AgID/ICAg/yAgIP+AgID/gICA/xMVFf8TFRUAAAAAABMVFf8AAAD/ICAg/yAgIP8AAAD/ICAg/2FhYf8TFRX/AAAAAAAAAAATFRUAExUVABMVFf9hYWH/QEBA/wAAAP8AAAD/YWFh/wAAAP8TFRUAExUVABMVFQATFRUAExUV/8DAwP8TFRX/ExUV/8DAwP8TFRX/ExUVABMVFQATFRUAExUVAAAAAP9hYWH/AAAA/wAAAP9AQED/YWFh/xMVFf8TFRUAExUVABMVFQATFRUAExUVABMVFf9hYWH/ICAg/xMVFf9hYWH/ICAg/wAAAP8AAAAAAAAAABMVFQATFRUAExUV/wAAAP8AAAD/ExUV/xMVFQATFRUAAAAAAAAAAAAAAAD/ICAg/2FhYf8TFRX/ICAg/2FhYf8TFRX/ExUVABMVFQATFRUAExUVABMVFQATFRUAExUV/0BAQP9hYWH/ExUV/0BAQP9hYWH/AAAA/wAAAAAAAAAAExUVABMVFQATFRUAAAAAAAAAAAATFRUAExUVABMVFQAAAAAAAAAAAAAAAP9hYWH/QEBA/xMVFf9hYWH/QEBA/xMVFf8TFRUAExUVABMVFQATFRUAExUVABMVFQATFRUAExUV/2FhYf8gICD/ExUV/2FhYf8TFRX/ExUVABMVFQATFRUAExUVABMVFQAAAAAAAAAAABMVFQATFRUAExUVABMVFQATFRUAExUV/2FhYf8TFRX/ICAg/2FhYf8TFRX/ExUVABMVFQATFRUAExUVABMVFQATFRUAExUVABMVFQATFRUAYWFhACAgIAATFRUAYWFhABMVFQATFRUAExUVABMVFQATFRUAExUVAAAAAAAAAAAAExUVABMVFQATFRUAExUVABMVFQATFRUAYWFhABMVFQAgICAAYWFhABMVFQATFRUAExUVABMVFQATFRUAExUVABMVFQATFRUAExUVABMVFQBhYWEAICAgABMVFQBhYWEAExUVABMVFQATFRUAExUVABMVFQATFRUAAAAAAAAAAAATFRUAExUVABMVFQATFRUAExUVABMVFQBhYWEAExUVACAgIABhYWEAExUVABMVFQATFRUAExUVABMVFQATFRUAExUVABMVFQATFRUAExUVAGFhYQAgICAAExUVAGFhYQATFRUAExUVABMVFQATFRUAExUVAABAAAAAQAAAAEAAAABAAAATFRUAExUVABMVFQATFRUAExUVAGFhYQATFRUAICAgAGFhYQATFRUAExUVABMVFQATFRUAExUVABMVFQATFRUAExUVABMVFQATFRUAYWFhACAgIAATFRUAYWFhABMVFQATFRUAExUVABMVFQATFRUAAEAAAABAAAAAQAAAAEAAABMVFQATFRUAExUVABMVFQATFRUAYWFhABMVFQAgICAAYWFhABMVFQATFRUAExUVABMVFQATFRUAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAA=="),
+"format": "RGBA8",
+"height": 32,
+"mipmaps": false,
+"width": 32
+}
+
+[sub_resource type="Resource" id="Resource_n2jle"]
+script = ExtResource("109_ponw7")
+origin = Vector2(8, 8)
+containing_box = Rect2(1, 8, 30, 15)
+precise = true
+images = Array[Image]([SubResource("Image_r8x1c")])
+
+[sub_resource type="Resource" id="Resource_pran7"]
+script = ExtResource("109_ponw7")
+origin = Vector2(4, 4)
+containing_box = Rect2(0, 1, 8, 6)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_8e6d2"]
+script = ExtResource("109_ponw7")
+origin = Vector2(8, 8)
+containing_box = Rect2(0, 2, 16, 11)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_b8p6p"]
+script = ExtResource("109_ponw7")
+origin = Vector2(2, 2)
+containing_box = Rect2(0, 0, 4, 4)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_fmt1s"]
+script = ExtResource("109_ponw7")
+origin = Vector2(8, 8)
+containing_box = Rect2(2, 1, 12, 15)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_5t0n2"]
+script = ExtResource("109_ponw7")
+origin = Vector2(4, 4)
+containing_box = Rect2(0, 0, 8, 8)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_4my5j"]
+script = ExtResource("109_ponw7")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_0nbts"]
+script = ExtResource("109_ponw7")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Image" id="Image_ml0hf"]
+data = {
+"data": PackedByteArray("QIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAACAgIAAgICAAICAgACAgIAAgICAAICAgABMVFQAAAAAAAAAAAAAAAAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAAAAAAAAAAAAAAAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAATFRUAAAAAAAAAAAAAAAAAExUVACAgIAAgICAAICAgACAgIAAgICD/ICAg/yAgIP8gICD/ICAg/yAgIP8gICD/ICAg/yAgIP8gICD/ICAg/yAgIP8gICAAAAAAAAAAAAAAAAAAAAAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAExUVAAAAAAAAAAAAAAAAABMVFQAgICAAICAg/yAgIP8gICD/XFxc/1xcXP+AgID/gICA/4CAgP+AgID/gICA/4CAgP9cXFz/XFxc/0BAQP8gICD/AAAA/wAAAAAAAAAAAAAAAAAAAAAgICAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgABMVFQAAAAAAAAAAAAAAAP8TFRX/ICAg/0BAQP9cXFz/gICA/4CAgP9cXFz/XFxc/0BAQP9AQED/QEBA/0BAQP9AQED/QEBA/yscRf8rHEX/ICAg/wAAAP8AAAAAAAAAAAAAAAAAAAAAICAgACAgIAAgICAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAg/yAgIP8TFRX/AAAA/wAAAP8TFRX/ICAg/yAgIP8gICD/ICAg/yAgIP8TFRX/ExUV/xMVFf8TFRX/AAAA/wAAAP8AAAD/QEBA/yscRf8rHEX/ICAg/wAAAP8AAAD/AAAAAAAAAAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICD/ICAg/yAgIP8gICD/ICAg/0BAQP9AQED/QEBA/0BAQP9AQED/QEBA/0BAQP9AQED/XFxc/1xcXP9AQED/QEBA/0BAQP8gICD/QEBA/0BAQP9AQED/ExUV/wAAAP8AAAD/AAAA/wAAAP8AAAD/ICAg/yAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIABAgAAAQIAAAECAAABAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAECAAABAgAAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIP8gICD/QEBA/1xcXP+AgID/gICA/1xcXP9cXFz/QEBA/0BAQP9AQED/XFxc/0BAQP9AQED/QEBA/0BAQP9AQED/QEBA/0BAQP9AQED/QEBA/0BAQP9AQED/QEBA/1xcXP9AQED/QEBA/1xcXP9AQED/QEBA/yAgIP8gICD/ICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAExUVAECAAABAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAgAAAQIAAACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIP9AQED/XFxc/8DAwP+AgID/XFxc/1xcXP9AQED/QEBA/0BAQP9AQED/QEBA/0BAQP9AQED/XFxc/0BAQP9AQED/QEBA/0BAQP9AQED/XFxc/0BAQP9AQED/QEBA/1xcXP/AwMD/XFxc/0BAQP9AQED/QEBA/0BAQP9AQED/QEBA/yAgIP8gICD/ICAgACAgIAAgICAAICAgACAgIAAgICAAExUVABMVFQATFRUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQIAAAECAAAAgICAAICAgACAgIAAgICAAICAgACAgIP9AQED/XFxc/8DAwP9cXFz/QEBA/0BAQP9AQED/QEBA/0BAQP9AQED/QEBA/0BAQP9AQED/QEBA/0BAQP9AQED/QEBA/0BAQP9AQED/QEBA/0BAQP9AQED/ICAg/yAgIP9cXFz/XFxc/1xcXP9AQED/QEBA/0BAQP9cXFz/QEBA/0BAQP9AQED/QEBA/yAgIP8gICD/ICAgACAgIAAgICAAExUVABMVFQATFRUAExUVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAECAAABAgAAAICAgACAgIAAgICAAICAgACAgIAAgICD/XFxc/4CAgP9cXFz/XFxc/0BAQP9AQED/QEBA/0BAQP9AQED/QEBA/0BAQP9AQED/ICAg/0BAQP9AQED/QEBA/0BAQP9AQED/ICAg/0BAQP9AQED/QEBA/yAgIP8gICD/QEBA/1xcXP9AQED/QEBA/0BAQP9cXFz/XFxc/1xcXP9AQED/QEBA/0BAQP9AQED/QEBA/yAgIP8gICAAExUVABMVFQATFRUAExUVABMVFQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAA/wAAAAAAAAAAAAAAAAAAAABAgAAAQIAAACAgIAAgICAAICAgACAgIAAgICD/QEBA/4CAgP9cXFz/QEBA/0BAQP9AQED/QEBA/0BAQP9AQED/QEBA/0BAQP9AQED/XFxc/0BAQP9AQED/QEBA/0BAQP9AQED/XFxc/yAgIP9AQED/QEBA/0BAQP9AQED/QEBA/0BAQP9AQED/QEBA/0BAQP9AQED/QEBA/1xcXP8gICD/ICAg/0BAQP9AQED/QEBA/0BAQP9AQED/ExUV/xMVFQATFRUAExUVABMVFQATFRUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/QEBA/wAAAP8AAAAAAAAAAAAAAAAAAAAAQIAAAECAAAAgICAAICAgACAgIAAgICAAICAg/1xcXP9cXFz/QEBA/0BAQP9AQED/QEBA/0BAQP9AQED/QEBA/0BAQP9AQED/QEBA/0BAQP9cXFz/QEBA/0BAQP8gICD/QEBA/0BAQP9AQED/QEBA/0BAQP9cXFz/XFxc/0BAQP9AQED/QEBA/0BAQP9AQED/QEBA/0BAQP9AQED/ICAg/0BAQP9AQED/QEBA/0BAQP9AQED/QEBA/0BAQP8TFRX/ExUVABMVFQATFRUAExUVAAAAAAAAAAAAAAAAAAAAAAAAAAD/QEBA/yAgIP8AAAD/AAAAAAAAAAAAAAAAAAAAAECAAABAgAAAICAgACAgIAAgICAAICAg/0BAQP9cXFz/QEBA/0BAQP9AQED/QEBA/yAgIP8rHEX/QEBA/0BAQP9AQED/QEBA/0BAQP9AQED/XFxc/0BAQP9AQED/QEBA/0BAQP9AQED/QEBA/0BAQP9cXFz/wMDA/1xcXP9cXFz/QEBA/0BAQP9AQED/XFxc/1xcXP9AQED/QEBA/0BAQP9AQED/XFxc/1xcXP9AQED/ICAg/yAgIP9AQED/QEBA/xMVFf8TFRUAExUVABMVFQAAAAAAAAAAAAAAAAAAAAD/XFxc/yAgIP8gICD/AAAA/wAAAAAAAAAAAAAAAAAAAABAgAAAQIAAACAgIAAgICAAICAgACAgIP9AQED/QEBA/0BAQP9AQED/QEBA/yAgIP8gICD/KxxF/yscRf9AQED/QEBA/0BAQP9AQED/QEBA/1xcXP9cXFz/QEBA/yAgIP9AQED/QEBA/0BAQP9AQED/QEBA/1xcXP9cXFz/QEBA/0BAQP9AQED/ICAg/1xcXP9cXFz/QEBA/0BAQP9AQED/XFxc/1xcXP9cXFz/XFxc/yAgIP8gICD/QEBA/0BAQP9AQED/ExUV/xMVFQATFRUAAAAAAAAAAP8AAAD/XFxc/yAgIP8gICD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAQIAAAECAAAAgICAAICAgACAgIP9AQED/QEBA/0BAQP9AQED/QEBA/yAgIP8gICD///9A////QP8rHEX/KxxF/0BAQP9AQED/QEBA/0BAQP+AgID/XFxc/0BAQP8gICD/QEBA/0BAQP9AQED/XFxc/0BAQP8gICD/ICAg/yAgIP9AQED/QEBA/yAgIP8gICD/QEBA/0BAQP9AQED/QEBA/1xcXP9cXFz/XFxc/1xcXP9AQED/QEBA/0BAQP9AQED/QEBA/0BAQP8gICD/ExUV/xMVFf9AQED/XFxc/yAgIP8gICD/QEBA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAECAAABAgAAAICAgACAgIAAgICD/QEBA/wAAAP8AAAD/QEBA/0BAQP8gICD///9A//////8AAAD///9A/yscRf9AQED/QEBA/0BAQP9cXFz/gICA/1xcXP9AQED/ICAg/0BAQP9AQED/QEBA/0BAQP9AQED/QEBA/yAgIP9AQED/QEBA/0BAQP9AQED/QEBA/0BAQP9AQED/QEBA/0BAQP9AQED/XFxc/1xcXP9AQED/QEBA/0BAQP9AQED/XFxc/0BAQP9AQED/QEBA/0BAQP8AAAD/AAAA/yAgIP9AQED/XFxc/wAAAP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAABAgAAAQIAAABMVFQATFRUAExUV/0BAQP8gICD/wMDA/0BAQP9AQED/QEBA////QP8AAAD/AAAA////QP9AQED/QEBA/0BAQP9AQED/XFxc/8DAwP9AQED/ICAg/yscRf9AQED/QEBA/0BAQP9AQED/QEBA/0BAQP9AQED/QEBA/0BAQP9AQED/XFxc/0BAQP9AQED/QEBA/0BAQP9AQED/QEBA/0BAQP9AQED/QEBA/0BAQP9AQED/QEBA/0BAQP9AQED/ICAg/0BAQP8AAAD/AAAA/0BAQP9AQED/ICAg/yAgIP8gICD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAQIAAAECAAAATFRUAExUVABMVFf9AQED/XFxc/0BAQP9AQED/QEBA/0BAQP9cXFz///9A////QP9cXFz/QEBA/0BAQP9AQED/XFxc/8DAwP9AQED/ICAg/yscRf9AQED/QEBA/0BAQP9AQED/QEBA/0BAQP9cXFz/XFxc/0BAQP9AQED/QEBA/0BAQP9AQED/QEBA/0BAQP9cXFz/QEBA/0BAQP9AQED/QEBA/0BAQP9cXFz/XFxc/0BAQP9AQED/QEBA/0BAQP9AQED/AAAA/yAgIP8gICD/ICAg/0BAQP9cXFz/QEBA/wAAAP8AAAAAAAAAAAAAAAAAAAAAQIAAAECAAABAgAAAAAAAAAAAAAAAAAD///9A/0BAQP9AQED/QEBA/0BAQP9AQED/QEBA/4CAgP9cXFz/QEBA/0BAQP9AQED/XFxc/4CAgP9AQED/ICAg/xMVFf8gICD/XFxc/0BAQP9AQED/QEBA/0BAQP9cXFz/XFxc/1xcXP9cXFz/QEBA/0BAQP9cXFz/XFxc/1xcXP/AwMD/wMDA/8DAwP9cXFz/XFxc/1xcXP9cXFz/wMDA/8DAwP9cXFz/XFxc/1xcXP9AQED/QEBA/yAgIP8gICD/QEBA/0BAQP8gICD/AAAA/wAAAP8AAAD/AAAAAAAAAAAAAAAAAAAAAECAAABAgAAAQIAAAAAAAAAAAAAAAAAA//////8AAAD///9A/yAgIP8gICD/ICAg/yAgIP9AQED/QEBA/0BAQP9AQED/QEBA/0BAQP8gICD/ICAg/wAAAP8gICD/gICA/0BAQP9AQED/QEBA/0BAQP9AQED/QEBA/8DAwP/AwMD/XFxc/1xcXP9cXFz/XFxc/1xcXP9cXFz/XFxc/8DAwP9cXFz/XFxc/1xcXP9cXFz/XFxc/1xcXP9cXFz/XFxc/1xcXP9cXFz/XFxc/0BAQP9AQED/ICAg/yAgIP8gICD/QEBA/1xcXP8gICD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAQIAAAECAAAAAAAAAAAAAAAAAAAAAAAD/AAAA//////8AAAD///9A/wAAAP8TFRX/ICAg/yAgIP8gICD/ICAg/yAgIP8TFRX/AAAA/wAAAP8gICD/gICA/0BAQP9AQED/XFxc/1xcXP9cXFz/XFxc/1xcXP9cXFz/XFxc/1xcXP9cXFz/wMDA/8DAwP9cXFz/XFxc/1xcXP9cXFz/XFxc/1xcXP9cXFz/XFxc/1xcXP9cXFz/XFxc/1xcXP9cXFz/QEBA/0BAQP8gICD/AAAA/0BAQP9AQED/ICAg/wAAAP8AAAD/QEBA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAECAAABAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAA////QP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP+AgID/gICA/0BAQP9cXFz/XFxc/1xcXP9cXFz/XFxc//9AQP9cXFz/XFxc/1xcXP9cXFz/XFxc/8DAwP/AwMD/XFxc/1xcXP9cXFz/XFxc/1xcXP9cXFz/XFxc/1xcXP9cXFz/XFxc/0BAQP9AQED/QEBA/yAgIP8AAAD/AAAA/wAAAAAAAAD/AAAA/0BAQP9AQED/ICAg/wAAAP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAABAgAAAQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/QAAA/0AAAP9AAAD/AAAA/0AAAP/AAAD/QEBA/1xcXP+AgID/QEBA/0AAAP/AAAD/wAAA/8AAAP//QED//0BA/1xcXP9cXFz/XFxc/1xcXP9cXFz//0BA/1xcXP9cXFz/XFxc/1xcXP9cXFz/XFxc/1xcXP9cXFz/XFxc/1xcXP9AQED/QEBA/yscRf8rHEX/ExUV/wAAAP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAA/0BAQP8gICD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAQIAAAECAAAAAAAAAAAAAAAAAAAAAAAD/AAAAAAAAAP8AAAD///9A/0AAAP/AAAD/wAAA/8AAAP8AAAD/AAAA/8AAAP/AAAD/QEBA/0AAAP/AAAD/wAAA/8AAAP/AAAD/wAAA/8AAAP/AAAD/wAAA//9AQP//QED/XFxc/1xcXP9AQED/QEBA/0BAQP9AQED/QEBA/0BAQP9AQED/QEBA/0BAQP9AQED/KxxF/yscRf9AQED/KxxF/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/QEBA/yAgIP8AAAD/AAAAAAAAAAAAAAAAAAAAAECAAABAgAAAAAAAAAAAAAAAAAD//////wAAAP///0D/AAAA//9AQP/AAAD/wAAA//9AQP//gID/wAAA/8AAAP9AAAD/QAAA/0AAAP/AAAD/wAAA/4AAAP+AAAD/gAAA/4AAAP+AAAD/wAAA/8AAAP/AAAD/wAAA/8AAAP/AAAD//0BA/0BAQP8rHEX/KxxF/0BAQP9AQED/QEBA/yscRf8rHEX/KxxF/0BAQP9cXFz/KxxF/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP9AQED/AAAA/wAAAAAAAAAAAAAAAAAAAABAgAAAQIAAAAAAAAAAAAAAAAAA////QP8AAAD//0BA/8AAAP/AAAD/wAAA/8AAAP/AAAD//0BA//9AQP//QED/wAAA/8AAAP+AAAD/gAAA/0AAAP9AAAD/QAAA/0AAAP+AAAD/gAAA/4AAAP+AAAD/gAAA/4AAAP/AAAD/wAAA/8AAAP/AAAD/wAAA/xMVFf8TFRX/ICAg/yAgIP8gICD/QEBA/1xcXP9cXFz/AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAQIAAAECAAABAAAAAQAAAAEAAAP//QED/wAAA/8AAAP/AAAD/gAAA/8AAAP+AAAD/wAAA/8AAAP/AAAD/wAAA/4AAAP+AAAD/QAAA/0AAAP//QED//0BA//+AgP/AAAD/QAAA/0AAAP8AAAD/AAAA/4AAAP+AAAD/gAAA/4AAAP+AAAD/QAAA/0AAAP8AAAD//0BA/1xcXP9cXFz/XFxc/1xcXP8TFRX/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAECAAABAgAAAQAAAAEAAAABAAAD/gAAA/8AAAP/AAAD/gAAA/8AAAP+AAAD/wAAA/4AAAP+AAAD/gAAA/4AAAP9AAAD/QAAA/wAAAP+AAAD/wAAA/8AAAP//QED//4CA//+AgP//QED//0BA/8AAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAABMVFf//QED//0BA/0BAQP9AQED/QEBA/xMVFf8TFRUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAECAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAgAAAQIAAAEAAAABAAAAAQAAAAAAAAP9AAAD/gAAA/4AAAP+AAAD/gAAA/4AAAP+AAAD/QAAA/0AAAP9AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP+AAAD/wAAA/8AAAP+AAAD/gAAA/0AAAP8AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATFRUAAAAA/xMVFf8TFRX/ExUV/xMVFf8TFRUAExUVABMVFQAAAAAAAAAAAAAAAAAAAAAAAAAAAECAAABAgAAAQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQIAAAECAAABAAAAAQAAAAAAAAAAAAAAAAAAA/0AAAP9AAAD/QAAA/0AAAP9AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wAAAP+AAAD/wAAA/8AAAP/AAAD/gAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATFRUAExUVABMVFQATFRUAExUVABMVFQATFRUAExUVAAAAAAAAAAAAAAAAAECAAABAgAAAQIAAAECAAABAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAECAAABAgAAAQAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAEAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAExUVABMVFQATFRUAExUVABMVFQATFRUAExUVABMVFQATFRUAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAEAAAABAAAAAQAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABMVFQATFRUAExUVABMVFQATFRUAExUVABMVFQATFRUAExUVAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAAA="),
+"format": "RGBA8",
+"height": 32,
+"mipmaps": false,
+"width": 64
+}
+
+[sub_resource type="Resource" id="Resource_1g13d"]
+script = ExtResource("109_ponw7")
+origin = Vector2(8, 8)
+containing_box = Rect2(2, 1, 56, 30)
+precise = true
+images = Array[Image]([SubResource("Image_ml0hf")])
+
+[sub_resource type="Image" id="Image_gfhro"]
+data = {
+"data": PackedByteArray("JhQQACYUEAAmFBAAJhQQACYUEABjLx0AYy8dAGMvHQAmFBAAJhQQACYUEAAmFBAAJhQQAECAAABAgAAAQIAAACYUEAAmFBAAJhQQACYUEAAmFBAAYy8dAGMvHQBjLx0AJhQQACYUEAAmFBAAJhQQACYUEAAmFBAAQIAAAECAAAAmFBAAJhQQACYUEAAmFBAAJhQQAGMvHQBjLx0AYy8dACYUEAAmFBAAJhQQACYUEAAmFBAAJhQQAECAAABAgAAAJhQQACYUEAAmFBAAJhQQACYUEABjLx0AYy8dAGMvHQAmFBAAJhQQACYUEAAmFBAAJhQQACYUEABAgAAAQIAAACYUEAAmFBAAJhQQACYUEAAmFBD/Yy8d/2MvHf9jLx3/JhQQ/yYUEAAmFBAAJhQQACYUEAAmFBAA46aIAECAAAAmFBAAJhQQACYUEAAmFBD/jlkl/45ZJf9jLx3/JhQQ/yYUEP8mFBD/JhQQACYUEAAmFBAAJhQQAOOmiABAgAAA46aIAOOmiADjpogA46aI/yYUEP8mFBD/46aI/yYUEP8mFBD/JhQQ/yYUEAAmFBAA46aIAOOmiADjpogAQIAAAP/YtQBLS0sAS0tLAEtLS//jpoj/46aI/0tLS//jpoj/JhQQ///Ytf//2LUA46aIAOOmiADjpogA46aIACYUEAD/2LUA/9i1ABMTEwATExP////////Ytf8TExP/46aI/yYUEP//2LX/46aI/+OmiADjpogA46aIAOOmiAAmFBAA/9i1AP/YtQD/2LX//9i1////////2LX//9i1/+OmiP8mFBD/46aI/+OmiADjpogA46aIACYUEAAmFBAAJhQQAOOmiADjpogA46aI/xMTE/8TExP/ExMT/+OmiP8mFBD/JhQQ/yYUEP8mFBD/JhQQACYUEAAmFBAAJhQQACYUEADjpogA46aIAOOmiADjpoj/46aI/+OmiP8mFBD/JhQQ/yYUEP8mFBD/JhQQ/yYUEP8mFBAAJhQQACYUEAAmFBAA46aIAOOmiADjpogA46aIAOOmiABjLx3/JhQQ/2MvHf8mFBD/JhQQ/yYUEP9jLx3/Yy8dACYUEP8mFBAAJhQQAOOmiADjpogA46aIAOOmiABjLx0AYy8d/xIKCP9jLx3/JhQQ/xIKCP9jLx3/JhQQ/yYUEAASCgj/JhQQ/yYUEADjpogA46aIACYUEAAmFBAAJhQQACYUEP8SCggAJhQQ/xIKCP8SCgj/JhQQ/yYUEP8mFBD/JhQQ/xIKCP8SCggA46aIAOOmiADjpogA46aIAOOmiADjpoj/46aIAOOmiP8SCggA46aI/+OmiP8SCgj/EgoI/xIKCP8SCggAEgoIAA=="),
+"format": "RGBA8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Resource" id="Resource_q4bci"]
+script = ExtResource("109_ponw7")
+origin = Vector2(0, 0)
+containing_box = Rect2(2, 4, 13, 12)
+precise = true
+images = Array[Image]([SubResource("Image_gfhro")])
+
+[sub_resource type="Resource" id="Resource_dhu0c"]
+script = ExtResource("109_ponw7")
+origin = Vector2(0, 0)
+containing_box = Rect2(4, 4, 8, 8)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_rv7pu"]
+script = ExtResource("109_ponw7")
+origin = Vector2(2, 2)
+containing_box = Rect2(0, 0, 4, 4)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_nrelh"]
+script = ExtResource("109_ponw7")
+origin = Vector2(4, 4)
+containing_box = Rect2(0, 0, 8, 8)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_6ra1x"]
+script = ExtResource("109_ponw7")
+origin = Vector2(2, 2)
+containing_box = Rect2(0, 0, 4, 4)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_du5tq"]
+script = ExtResource("109_ponw7")
+origin = Vector2(4, 4)
+containing_box = Rect2(0, 0, 8, 8)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_ulrhj"]
+script = ExtResource("109_ponw7")
+origin = Vector2(8, 8)
+containing_box = Rect2(1, 2, 13, 11)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_sbjox"]
+script = ExtResource("109_ponw7")
+origin = Vector2(0, 0)
+containing_box = Rect2(2, 1, 12, 15)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_63hg3"]
+script = ExtResource("109_ponw7")
+origin = Vector2(0, 0)
+containing_box = Rect2(2, 0, 11, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_285nb"]
+script = ExtResource("109_ponw7")
+origin = Vector2(0, 0)
+containing_box = Rect2(1, 4, 14, 12)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_irjab"]
+script = ExtResource("109_ponw7")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 9, 15)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_wvdg4"]
+script = ExtResource("109_ponw7")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 5, 16, 11)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_csn3s"]
+script = ExtResource("109_ponw7")
+origin = Vector2(8, 8)
+containing_box = Rect2(2, 0, 12, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_uwwb0"]
+script = ExtResource("109_ponw7")
+origin = Vector2(0, 0)
+containing_box = Rect2(2, 0, 12, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Image" id="Image_f7q21"]
+data = {
+"data": PackedByteArray("//VoAP/1aAD/9WgA//VoAP/1aAD///8A////AEBAQABAQEAAQEBAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgABAQEAAQEBAAEBAQAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAD/9WgA//VoAP/1aAD/9WgA//VoAP///wD///8AQEBAAEBAQABAQEAAgICAAICAgACAgIAAgICAAICAgACAgIAAQEBAAEBAQABAQEAAQEBAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAP/1aAD/9WgA//VoAP/1aAD/9WgA////AP///wBAQEAAQEBAAEBAQP+AgID/gICA/4CAgP+AgID/gICAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAA//VoAP/1aAD/9WgA//VoAP/1aP//////////AEBAQP9AQED/wMDA/////////////////8DAwP9AQED/QEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAmFBAAJhQQACYUEAAmFBAAJhQQ//+VGf8AAAD/wMDA/8DAwP/AwMD/wMDA/8DAwP/AwMD/wMDA/8DAwP9AQED/QEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAACYUEAAmFBAAJhQQACYUEAAmFBAAJhQQ//+VGf//lRn///Vo///1aP//9Wj/////////////9Wj//5UZ/yYUEP8mFBAAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAJhQQACYUEAAmFBAAJhQQACYUEAAmFBD/JhQQ/yYUEP8mFBD/JhQQ/yYUEP8mFBD/JhQQ/yYUEP8mFBD/JhQQ/0BAQP9AQEAAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAAIAAAACAAAAAgAAAAIAAAACAAAAmFBAAAAAAAAAAAAAAAAAAAAAAAAAAAP/AwMD/AAAA/wAAAP+AgID/wMDA/8DAwP/AwMD/wMDA//////9AQED/gICA/0BAQP9AQED/QEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAAIAAAACAAAAAgAAAAIAAACYUEAAAAAAAAAAAAAAAAAAAAAAAAAAA/8DAwP8AAAD/AAAA/wAAAP//////////////////////wMDA/4CAgP///////////4CAgP9AQED/QEBA/0BAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQAAAgAAAAIAAAACAAAAAgAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/QEBA/4CAgP8AAAD/AAAA///////AwMD/wMDA/8DAwP/AwMD//////8DAwP/AwMD/////////////////QEBA/0BAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQAAAgAAAAIAAAACAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAQED/////////////////wMDA/8DAwP+AgID/gICA///////AwMD/////////////////wMDA/4CAgP//////QEBA/0BAQABAQEAAQEBAAEBAQABAQEAAQEBAAACAAAAAgAAAAIAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAD/gICA///////AwMD/gICA/8DAwP+AgID/gICA////////////wMDA/8DAwP///////////0BAQP+AgID/QEBA/0BAQABAQEAAQEBAAEBAQABAQEAAAIAAAACAAAAAgAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wAAAP8AAAD/wMDA/4CAgP+AgID/ICAg/4CAgP///////////8DAwP//////////////////////gICA/0BAQP8gICD/ICAgAEBAQABAQEAAQEBAAEBAQAAgICAAAIAAAACAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/QEBA/wAAAP/AwMD/QEBA/yAgIP+AgID/gICA//////+AgID//////4CAgP///////////8DAwP+AgID//////4CAgP9AQED/QEBAAEBAQABAQEAAQEBAACAgIAAAgAAAAIAAAACAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/QEBA/0BAQP8AAAD/AAAA/0BAQP+AgID/gICA/8DAwP///////////4CAgP/AwMD/gICA////////////gICA/yAgIP8gICAAICAgACAgIAAgICAAICAgAACAAAAAgAAAAIAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAD/AAAA/wAAAAAAAAD/AAAA/0BAQP///////////8DAwP/AwMD/QEBA/////////////////8DAwP9AQED/ICAg/yAgIAAgICAAICAgACAgIAAgICAAAIAAAACAAAAAgAAAQEBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQEBAAEBAQP8AAAD/wMDA////////////wMDA/4CAgP8AAAD/wMDA///////AwMD/gICA/0BAQP+AgID/ICAg/yAgIAAgICAAICAgACAgIAAAgAAAAIAAAACAAABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQP9AQED/////////////////gICA//////+AgID/AAAA/wAAAP9AQED/gICA/4CAgP///////////4CAgP8gICD/ICAgACAgIAAgICAAICAgAACAAAAAgAAAAIAAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQP9AQED///////////+AgID//////8DAwP/AwMD/gICA/0BAQP8AAAD/wMDA////////////////////////////gICA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAIAAAACAAAAAgAAAQEBAAEBAQABAQEAAQEBAAEBAQABAQED//////4CAgP//////wMDA/8DAwP+AgID/wMDA/4CAgP9AQED/AAAA/0BAQP9AQED/gICA/////////////////8DAwP+AgID/AAAA/wAAAAAAAAAAAAAAAAAAAAAAgAAAAIAAAACAAABAQEAAQEBAAEBAQABAQEAAQEBA/////////////////4CAgP/AwMD/gICA/wAAAP8AAAD/AAAA/wAAAP/AwMD/////////////////gICA/4CAgP/AwMD/QEBA/4CAgP8AAAD/AAAAAAAAAAAAAAAAAAAAAACAAAAAgAAAAIAAAEBAQABAQEAAQEBAAEBAQABAQED//////8DAwP9AQED/AAAA/wAAAP8AAAD/AAAAAAAAAAAAAAAAAAAA/0BAQP/AwMD///////////////////////////+AgID/QEBA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAIAAAACAAAAAgAAAQEBAAEBAQABAQEAAQEBAAEBAQP/AwMD/gICA/wAAAP8AAAAAAAAAAAAAAAAAAAAAICAgACAgIP8AAAD/wMDA/4CAgP/AwMD////////////AwMD/gICA/4CAgP9AQED/AAAA/wAAAAAAAAAAAAAAAAAAAAAAgAAAAIAAAACAAABAQEAAQEBAAEBAQABAQEAAQEBAAAAAAP8AAAD/AAAAAAAAAAAAAAAAICAgACAgIAAgICD/QEBA/0BAQP//////wMDA/4CAgP/AwMD/wMDA/4CAgP+AgID/QEBA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAgAAAAIAAAEBAQABAQEAAQEBAAEBAQAAAAAAAAAAAAAAAAAAAAAAAAAAAACAgIAAgICAAICAg/0BAQP+AgID/wMDA/////////////////8DAwP+AgID/gICA/0BAQP8gICD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAACAAAAAgAAAQEBAAEBAQABAQEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgICAAICAgACAgIAAgICD////////////AwMD/wMDA/4CAgP+AgID/QEBA/0BAQP9AQED/ICAg/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAIAAAACAAABAQEAAQEBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAICAgACAgIAAgICAAICAg/8DAwP+AgID/////////////////wMDA/0BAQP8AAAD/AAAA/wAAAP8AAAD/QEBA/0BAQABAQEAAAAAAAAAAAAAAAAAAAAAAAACAAAAAgAAAAIAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgICAAICAgACAgIAAgICD/wMDA//////+AgID/QEBA/0BAQP8AAAD/AAAA/wAAAP8AAAD/AAAA/4CAgP9AQED/QEBAAEBAQABAQEAAQEBAAEBAQAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP9AQED////////////AwMD/AAAA/wAAAAAAAAAAAAAA/0BAQP/AwMD/wMDA/4CAgP9AQED/QEBAAEBAQABAQEAAQEBAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//////+AgID/QEBA/wAAAP8AAAAAAAAAAAAAAAAAAAD/QEBA/0BAQP+AgID/gICA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/gICA///////AwMD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAD/gICA/8DAwP/AwMD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/8DAwP//////QEBA/0BAQP8AAAD/AAAAAAAAAADAwMAAwMDAAMDAwP9AQED/gICA/4CAgP8AAAD/AAAAAAAAAAAAAAAAAAAAAACAAAAAgAAAAIAAAA=="),
+"format": "RGBA8",
+"height": 32,
+"mipmaps": false,
+"width": 32
+}
+
+[sub_resource type="Image" id="Image_gbjuc"]
+data = {
+"data": PackedByteArray("//VoAP/1aAD/9WgA//VoAP/1aAD///8A////AEBAQABAQEAAQEBAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAQEBAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAD/9WgA//VoAP/1aAD/9WgA//VoAP///wD///8AQEBAAEBAQABAQEAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAEBAQABAQEAAQEBAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAP/1aAD/9WgA//VoAP/1aAD/9WgA////AP///wBAQEAAQEBAAEBAQACAgIAAgICAAICAgACAgIAAgICAAICAgABAQEAAQEBAAEBAQABAQEAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAA//VoAP/1aAD/9WgA//VoAP/1aAD///8A////AEBAQABAQEAAQEBA/4CAgP+AgID/gICA/4CAgP+AgIAAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAD/9WgA//VoAP/1aAD/9WgA//Vo//////////8AQEBA/0BAQP/AwMD/////////////////wMDA/0BAQP9AQEAAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAACYUEAAmFBAAJhQQACYUEAAmFBD//5UZ/wAAAP/AwMD/wMDA/8DAwP/AwMD/wMDA/8DAwP/AwMD/wMDA/0BAQP9AQEAAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAJhQQACYUEAAmFBAAJhQQACYUEAAmFBD//5UZ//+VGf//9Wj///Vo///1aP/////////////1aP//lRn/JhQQ/yYUEABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAmFBAAJhQQACYUEAAmFBAAJhQQACYUEP8mFBD/JhQQ/yYUEP8mFBD/JhQQ/yYUEP8mFBD/JhQQ/yYUEP8mFBD/QEBA/0BAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQAAAgAAAAIAAAACAAAAAgAAAAIAAACYUEAAAAAAAAAAAAAAAAAAAAAAAAAAA/8DAwP8AAAD/AAAA/4CAgP/AwMD/wMDA/8DAwP/AwMD//////0BAQP+AgID/QEBA/0BAQP9AQEAAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQAAAgAAAAIAAAACAAAAAgAAAJhQQAAAAAAAAAAAAAAAAAAAAAAAAAAD/wMDA/wAAAP8AAAD/AAAA///////////////////////AwMD/gICA////////////gICA/0BAQP9AQED/QEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAACAAAAAgAAAAIAAAACAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAP9AQED/gICA/wAAAP8AAAD//////8DAwP/AwMD/wMDA/8DAwP//////wMDA/8DAwP////////////////9AQED/QEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAACAAAAAgAAAAIAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP/////////////////AwMD/wMDA/4CAgP+AgID//////8DAwP/////////////////AwMD/gICA//////9AQED/QEBAAEBAQABAQEAAQEBAAEBAQABAQEAAAIAAAACAAAAAgAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wAAAP8AAAD/gICA//////+AgID/wMDA/4CAgP+AgID////////////AwMD/wMDA////////////QEBA/4CAgP9AQED/QEBAAEBAQABAQEAAQEBAAEBAQAAAgAAAAIAAAACAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wAAAP8AAAD/wMDA/4CAgP8gICD/gICA/8DAwP/AwMD/wMDA/4CAgP////////////////+AgID/QEBA/yAgIP8gICAAQEBAAEBAQABAQEAAQEBAACAgIAAAgAAAAIAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/QEBA/wAAAP/AwMD/ICAg/4CAgP9AQED/gICA/////////////////4CAgP//////wMDA/4CAgP//////gICA/0BAQP9AQEAAQEBAAEBAQABAQEAAICAgAACAAAAAgAAAAIAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/QEBA/0BAQP8AAAD/QEBA/0BAQP/AwMD/wMDA////////////gICA/8DAwP+AgID///////////+AgID/ICAg/yAgIAAgICAAICAgACAgIAAgICAAAIAAAACAAAAAgAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAD/AAAA/wAAAP8AAAD/QEBA////////////gICA/8DAwP9AQED/////////////////wMDA/0BAQP8gICD/ICAgACAgIAAgICAAICAgACAgIAAAgAAAAIAAAACAAAAAgAAAQEBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQEBA/wAAAP/AwMD////////////AwMD/gICA/wAAAP/AwMD//////8DAwP//////QEBA/4CAgP8gICD/ICAgACAgIAAgICAAICAgAACAAAAAgAAAAIAAAACAAABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQP////////////////+AgID//////4CAgP8AAAD/AAAA/0BAQP+AgID////////////AwMD/gICA/yAgIP8gICAAICAgACAgIAAgICAAAIAAAACAAAAAgAAAAIAAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQP9AQED//////4CAgP//////wMDA/8DAwP+AgID/QEBA/wAAAP/AwMD///////////////////////////+AgID/AAAA/wAAAAAAAAAAAAAAAAAAAAAAgAAAAIAAAACAAAAAgAAAQEBAAEBAQABAQEAAQEBAAEBAQABAQED//////4CAgP//////wMDA/4CAgP/AwMD/gICA/0BAQP8AAAD/QEBA/0BAQP+AgID/gICA/8DAwP//////wMDA/4CAgP8AAAD/AAAAAAAAAAAAAAAAAAAAAACAAAAAgAAAAIAAAACAAABAQEAAQEBAAEBAQABAQEAAQEBA/////////////////4CAgP+AgID/AAAA/wAAAP8AAAD/AAAA/8DAwP//////////////////////gICA/4CAgP9AQED/gICA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAIAAAACAAAAAgAAAAIAAAEBAQABAQEAAQEBAAEBAQABAQED//////8DAwP9AQED/AAAA/wAAAP8AAAAAAAAAACAgIP8AAAD/wMDA/4CAgP/AwMD/////////////////wMDA/4CAgP9AQED/AAAA/wAAAAAAAAAAAAAAAAAAAAAAgAAAAIAAAACAAAAAgAAAQEBAAEBAQABAQEAAQEBAAEBAQP/AwMD/gICA/wAAAP8AAAAAAAAAACAgIAAgICD/QEBA/0BAQP//////wMDA/4CAgP+AgID/wMDA/4CAgP+AgID/QEBA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAgAAAAIAAAACAAABAQEAAQEBAAEBAQABAQEAAQEBAAAAAAP8AAAD/AAAAAAAAAAAgICAAICAg/0BAQP+AgID/wMDA/////////////////8DAwP+AgID/gICA/0BAQP8gICD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAACAAAAAgAAAAIAAAEBAQABAQEAAQEBAAEBAQAAAAAAAAAAAAAAAAAAAAAAAICAgACAgIAAgICD////////////AwMD/wMDA/4CAgP+AgID/QEBA/0BAQP9AQED/ICAg/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAIAAAACAAAAAgAAAQEBAAEBAQABAQEAAAAAAAAAAAAAAAAAAAAAAACAgIAAgICAAICAg/8DAwP+AgID/////////////////wMDA/0BAQP8AAAD/AAAA/wAAAP8AAAD/QEBA/0BAQABAQEAAAAAAAAAAAAAAAAAAAAAAAACAAAAAgAAAAIAAAACAAABAQEAAQEBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAICAgACAgIAAgICD/wMDA//////+AgID/QEBA/0BAQP8AAAD/AAAA/wAAAP8AAAD/AAAA/4CAgP9AQED/QEBAAEBAQABAQEAAQEBAAEBAQAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP9AQED////////////AwMD/AAAA/wAAAAAAAAAAAAAA/0BAQP/AwMD/wMDA/4CAgP9AQED/QEBAAEBAQABAQEAAQEBAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//////+AgID/QEBA/wAAAP8AAAAAAAAAAAAAAAAAAAD/QEBA/0BAQP+AgID/gICA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/gICA///////AwMD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAD/gICA/8DAwP/AwMD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/8DAwP//////QEBA/0BAQP8AAAD/AAAAAAAAAADAwMAAwMDAAMDAwP9AQED/gICA/4CAgP8AAAD/AAAAAAAAAAAAAAAAAAAAAACAAAAAgAAAAIAAAA=="),
+"format": "RGBA8",
+"height": 32,
+"mipmaps": false,
+"width": 32
+}
+
+[sub_resource type="Image" id="Image_igxr8"]
+data = {
+"data": PackedByteArray("AIAAAACAAAAAgAAAAIAAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAEBAQABAQEAAQEBAAEBAQACAgIAAgICAAICAgACAgIAAgICAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAP/1aAD/9WgA//VoAP/1aABAQEAAQEBAAICAgACAgIAAgICAAICAgACAgIAAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAA//VoAP/1aAD/9WgA//VoAEBAQABAQEAAQEBAAICAgACAgIAAgICAAICAgABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAD/9WgA//VoAP/1aAD/9WgA////AEBAQABAQEAAgICAAICAgP+AgID/gICA/0BAQP9AQED/QEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAP/1aAD/9WgA//VoAP/1aAD///8AQEBAAEBAQP+AgID/wMDA/8DAwP/AwMD//////8DAwP9AQED/QEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAA//VoAP/1aAD/9WgA//Vo//////9AQED/wMDA/8DAwP/AwMD////////////AwMD/wMDA/4CAgP9AQED/QEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAmFBAAJhQQACYUEAAmFBD//5UZ/wAAAP+AgID/wMDA/8DAwP/AwMD/wMDA////////9Wj//5UZ/yYUEP8mFBAAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAACYUEAAmFBAAJhQQACYUEAAmFBD//5UZ//+VGf//9Wj///Vo///1aP//////JhQQ/yYUEP8mFBD/JhQQ/0BAQP9AQEAAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAJhQQACYUEAAmFBAAJhQQACYUEP8mFBD/JhQQ/yYUEP8mFBD/JhQQ/yYUEP/AwMD/wMDA//////9AQED/gICA/0BAQP9AQED/QEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAAIAAAACAAAAAgAAAAIAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/8DAwP8AAAD/AAAA/4CAgP/AwMD/wMDA////////////wMDA/4CAgP///////////4CAgP9AQED/QEBA/0BAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQAAAgAAAAIAAAACAAAAAgAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/wMDA/wAAAP8AAAD/AAAA////////////wMDA/8DAwP/AwMD//////8DAwP/AwMD/////////////////QEBA/0BAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQAAAgAAAAIAAAACAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAP9AQED/gICA/wAAAP8AAAD//////8DAwP+AgID/gICA///////AwMD/////////////////wMDA/4CAgP//////QEBA/0BAQABAQEAAQEBAAEBAQABAQEAAQEBAAACAAAAAgAAAAIAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAD/gICA///////AwMD/gICA/8DAwP9AQED/gICA////////////wMDA/8DAwP///////////0BAQP+AgID/QEBA/0BAQABAQEAAQEBAAEBAQABAQEAAAIAAAACAAAAAgAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wAAAP8AAAD/wMDA/4CAgP+AgID/ICAg/0BAQP///////////8DAwP//////////////////////gICA/0BAQP8gICD/ICAgAEBAQABAQEAAQEBAAEBAQAAgICAAAIAAAACAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/0BAQP8AAAD/wMDA/yAgIP9AQED/gICA/////////////////4CAgP///////////8DAwP+AgID//////4CAgP9AQED/QEBAAEBAQABAQEAAQEBAACAgIAAAgAAAAIAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/0BAQP9AQED/AAAA/0BAQP9AQED/QEBA/4CAgP///////////4CAgP/AwMD/gICA////////////gICA/yAgIP8gICAAICAgACAgIAAgICAAICAgAACAAAAAgAAAAIAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAA/wAAAP8AAAD/AAAA/0BAQP///////////4CAgP/AwMD/QEBA/////////////////8DAwP9AQED/ICAg/yAgIAAgICAAICAgACAgIAAgICAAAIAAAACAAAAAgAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEBAQP8AAAD/wMDA////////////wMDA/4CAgP8AAAD/wMDA///////AwMD/gICA/0BAQP+AgID/ICAg/yAgIAAgICAAICAgACAgIAAAgAAAAIAAAACAAAAAgAAAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQABAQED/////////////////gICA//////+AgID/AAAA/wAAAP9AQED/gICA/4CAgP/AwMD//////4CAgP8gICD/ICAgACAgIAAgICAAICAgAACAAAAAgAAAAIAAAACAAABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQABAQED/QEBA//////+AgID//////8DAwP/AwMD/gICA/0BAQP8AAAD/wMDA////////////////////////////gICA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAIAAAACAAAAAgAAAAIAAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBA//////+AgID//////8DAwP+AgID/wMDA/4CAgP9AQED/AAAA/0BAQP9AQED/gICA/4CAgP/AwMD//////8DAwP+AgID/AAAA/wAAAAAAAAAAAAAAAAAAAAAAgAAAAIAAAACAAAAAgAAAQEBAAEBAQABAQEAAQEBAAEBAQP////////////////+AgID/gICA/wAAAP8AAAD/AAAA/wAAAP9AQED/gICA/8DAwP///////////4CAgP9AQED/QEBA/4CAgP8AAAD/AAAAAAAAAAAAAAAAAAAAAACAAAAAgAAAAIAAAACAAABAQEAAQEBAAEBAQABAQEAAQEBA///////AwMD/QEBA/wAAAP8AAAD/AAAAAAAAAAAgICD/AAAA/8DAwP/AwMD/gICA/4CAgP//////wMDA/4CAgP+AgID/QEBA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAIAAAACAAAAAgAAAAIAAAEBAQABAQEAAQEBAAEBAQABAQED/wMDA/4CAgP8AAAD/AAAAAAAAAAAgICAAICAg/0BAQP+AgID/wMDA/////////////////4CAgP+AgID/gICA/0BAQP8gICD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAgAAAAIAAAACAAAAAgAAAQEBAAEBAQABAQEAAQEBAAEBAQAAAAAD/AAAA/wAAAAAAAAAAICAgACAgIAAgICD////////////AwMD/wMDA/4CAgP+AgID/QEBA/0BAQP9AQED/ICAg/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAgAAAAIAAAACAAABAQEAAQEBAAEBAQABAQEAAAAAAAAAAAAAAAAAAAAAAACAgIAAgICAAICAg/8DAwP+AgID/////////////////wMDA/0BAQP8AAAD/AAAA/wAAAP8AAAD/QEBA/0BAQABAQEAAAAAAAAAAAAAAAAAAAIAAAACAAAAAgAAAAIAAAEBAQABAQEAAQEBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAICAgACAgIAAgICD/wMDA//////+AgID/QEBA/0BAQP8AAAD/AAAA/wAAAP8AAAD/AAAA/4CAgP9AQED/QEBAAEBAQABAQEAAQEBAAEBAQAAAgAAAAIAAAACAAAAAgAAAQEBAAEBAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP9AQED////////////AwMD/AAAA/wAAAAAAAAAAAAAA/0BAQP/AwMD/wMDA/4CAgP9AQED/QEBAAEBAQABAQEAAQEBAAACAAAAAgAAAAIAAAACAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//////+AgID/QEBA/wAAAP8AAAAAAAAAAAAAAAAAAAD/QEBA/0BAQP+AgID/gICA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/gICA///////AwMD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAD/gICA/8DAwP/AwMD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/8DAwP//////QEBA/0BAQP8AAAD/AAAAAAAAAADAwMAAwMDAAMDAwP9AQED/gICA/4CAgP8AAAD/AAAAAAAAAAAAAAAAAAAAAACAAAAAgAAAAIAAAA=="),
+"format": "RGBA8",
+"height": 32,
+"mipmaps": false,
+"width": 32
+}
+
+[sub_resource type="Image" id="Image_v1byf"]
+data = {
+"data": PackedByteArray("//VoAP/1aAD/9WgA//VoAP/1aAD///8A////AEBAQABAQEAAQEBAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAQEBAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAD/9WgA//VoAP/1aAD/9WgA//VoAP///wD///8AQEBAAEBAQABAQEAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAEBAQABAQEAAQEBAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAP/1aAD/9WgA//VoAP/1aAD/9WgA////AP///wBAQEAAQEBAAEBAQACAgIAAgICAAICAgACAgIAAgICAAICAgABAQEAAQEBAAEBAQABAQEAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAA//VoAP/1aAD/9WgA//VoAP/1aAD///8A////AEBAQABAQEAAQEBA/4CAgP+AgID/gICA/4CAgP+AgIAAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAD/9WgA//VoAP/1aAD/9WgA//Vo//////////8AQEBA/0BAQP/AwMD/////////////////wMDA/0BAQP9AQEAAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAACYUEAAmFBAAJhQQACYUEAAmFBD//5UZ/wAAAP/AwMD/wMDA/8DAwP/AwMD/wMDA/8DAwP/AwMD/wMDA/0BAQP9AQEAAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAJhQQACYUEAAmFBAAJhQQACYUEAAmFBD//5UZ//+VGf//9Wj///Vo///1aP/////////////1aP//lRn/JhQQ/yYUEABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAmFBAAJhQQACYUEAAmFBAAJhQQACYUEP8mFBD/JhQQ/yYUEP8mFBD/JhQQ/yYUEP8mFBD/JhQQ/yYUEP8mFBD/QEBA/0BAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQAAAgAAAAIAAAACAAAAAgAAAAIAAACYUEAAAAAAAAAAAAAAAAAAAAAAAAAAA/8DAwP8AAAD/AAAA/4CAgP/AwMD/wMDA/8DAwP/AwMD//////0BAQP+AgID/QEBA/0BAQP9AQEAAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQAAAgAAAAIAAAACAAAAAgAAAJhQQAAAAAAAAAAAAAAAAAAAAAAAAAAD/wMDA/wAAAP8AAAD/AAAA///////////////////////AwMD/gICA////////////gICA/0BAQP9AQED/QEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAACAAAAAgAAAAIAAAACAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAP9AQED/gICA/wAAAP8AAAD//////8DAwP/AwMD/wMDA/8DAwP//////wMDA/8DAwP////////////////9AQED/QEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAACAAAAAgAAAAIAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP/////////////////AwMD/wMDA/4CAgP+AgID//////8DAwP/////////////////AwMD/gICA//////9AQED/QEBAAEBAQABAQEAAQEBAAEBAQABAQEAAAIAAAACAAAAAgAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wAAAP8AAAD/gICA//////+AgID/wMDA/4CAgP+AgID////////////AwMD/wMDA////////////QEBA/4CAgP9AQED/QEBAAEBAQABAQEAAQEBAAEBAQAAAgAAAAIAAAACAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wAAAP8AAAD/wMDA/4CAgP8gICD/gICA/8DAwP/AwMD/wMDA/4CAgP////////////////+AgID/QEBA/yAgIP8gICAAQEBAAEBAQABAQEAAQEBAACAgIAAAgAAAAIAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/QEBA/wAAAP/AwMD/ICAg/4CAgP9AQED/gICA/////////////////4CAgP//////wMDA/4CAgP//////gICA/0BAQP9AQEAAQEBAAEBAQABAQEAAICAgAACAAAAAgAAAAIAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/QEBA/0BAQP8AAAD/QEBA/0BAQP/AwMD/wMDA////////////gICA/8DAwP+AgID///////////+AgID/ICAg/yAgIAAgICAAICAgACAgIAAgICAAAIAAAACAAAAAgAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAD/AAAA/wAAAP8AAAD/QEBA////////////gICA/8DAwP9AQED/////////////////wMDA/0BAQP8gICD/ICAgACAgIAAgICAAICAgACAgIAAAgAAAAIAAAACAAAAAgAAAQEBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQEBA/wAAAP/AwMD////////////AwMD/gICA/wAAAP/AwMD//////8DAwP//////QEBA/4CAgP8gICD/ICAgACAgIAAgICAAICAgAACAAAAAgAAAAIAAAACAAABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQP////////////////+AgID//////4CAgP8AAAD/AAAA/0BAQP+AgID////////////AwMD/gICA/yAgIP8gICAAICAgACAgIAAgICAAAIAAAACAAAAAgAAAAIAAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQP9AQED//////4CAgP//////wMDA/8DAwP+AgID/QEBA/wAAAP/AwMD///////////////////////////+AgID/AAAA/wAAAAAAAAAAAAAAAAAAAAAAgAAAAIAAAACAAAAAgAAAQEBAAEBAQABAQEAAQEBAAEBAQABAQED//////4CAgP//////wMDA/4CAgP/AwMD/gICA/0BAQP8AAAD/QEBA/0BAQP+AgID/gICA/8DAwP//////wMDA/4CAgP8AAAD/AAAAAAAAAAAAAAAAAAAAAACAAAAAgAAAAIAAAACAAABAQEAAQEBAAEBAQABAQEAAQEBA/////////////////4CAgP+AgID/AAAA/wAAAP8AAAD/AAAA/8DAwP//////////////////////gICA/4CAgP9AQED/gICA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAIAAAACAAAAAgAAAAIAAAEBAQABAQEAAQEBAAEBAQABAQED//////8DAwP9AQED/AAAA/wAAAP8AAAAAAAAAACAgIP8AAAD/wMDA/4CAgP/AwMD/////////////////wMDA/4CAgP9AQED/AAAA/wAAAAAAAAAAAAAAAAAAAAAAgAAAAIAAAACAAAAAgAAAQEBAAEBAQABAQEAAQEBAAEBAQP/AwMD/gICA/wAAAP8AAAAAAAAAACAgIAAgICD/QEBA/0BAQP//////wMDA/4CAgP+AgID/wMDA/4CAgP+AgID/QEBA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAgAAAAIAAAACAAABAQEAAQEBAAEBAQABAQEAAQEBAAAAAAP8AAAD/AAAAAAAAAAAgICAAICAg/0BAQP+AgID/wMDA/////////////////8DAwP+AgID/gICA/0BAQP8gICD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAACAAAAAgAAAAIAAAEBAQABAQEAAQEBAAEBAQAAAAAAAAAAAAAAAAAAAAAAAICAgACAgIAAgICD////////////AwMD/wMDA/4CAgP+AgID/QEBA/0BAQP9AQED/ICAg/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAIAAAACAAAAAgAAAQEBAAEBAQABAQEAAAAAAAAAAAAAAAAAAAAAAACAgIAAgICAAICAg/8DAwP+AgID/////////////////wMDA/0BAQP8AAAD/AAAA/wAAAP8AAAD/QEBA/0BAQABAQEAAAAAAAAAAAAAAAAAAAAAAAACAAAAAgAAAAIAAAACAAABAQEAAQEBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAICAgACAgIAAgICD/wMDA//////+AgID/QEBA/0BAQP8AAAD/AAAA/wAAAP8AAAD/AAAA/4CAgP9AQED/QEBAAEBAQABAQEAAQEBAAEBAQAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP9AQED////////////AwMD/AAAA/wAAAAAAAAAAAAAA/0BAQP/AwMD/wMDA/4CAgP9AQED/QEBAAEBAQABAQEAAQEBAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//////+AgID/QEBA/wAAAP8AAAAAAAAAAAAAAAAAAAD/QEBA/0BAQP+AgID/gICA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/gICA///////AwMD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAD/gICA/8DAwP/AwMD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/8DAwP//////QEBA/0BAQP8AAAD/AAAAAAAAAADAwMAAwMDAAMDAwP9AQED/gICA/4CAgP8AAAD/AAAAAAAAAAAAAAAAAAAAAACAAAAAgAAAAIAAAA=="),
+"format": "RGBA8",
+"height": 32,
+"mipmaps": false,
+"width": 32
+}
+
+[sub_resource type="Resource" id="Resource_fw05l"]
+script = ExtResource("109_ponw7")
+origin = Vector2(8, 8)
+containing_box = Rect2(3, 2, 23, 30)
+precise = true
+images = Array[Image]([SubResource("Image_f7q21"), SubResource("Image_gbjuc"), SubResource("Image_igxr8"), SubResource("Image_v1byf")])
+
+[sub_resource type="Resource" id="Resource_ms7dh"]
+script = ExtResource("109_ponw7")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 1, 16, 13)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_6v2tc"]
+script = ExtResource("109_ponw7")
+origin = Vector2(0, 0)
+containing_box = Rect2(2, 0, 14, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_puecl"]
+script = ExtResource("109_ponw7")
+origin = Vector2(8, 8)
+containing_box = Rect2(1, 0, 31, 32)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_842um"]
+script = ExtResource("109_ponw7")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_r2yvl"]
+script = ExtResource("109_ponw7")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qae67"]
+size = Vector2(16, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5h4pr"]
+size = Vector2(32, 22)
+
+[node name="Sprite" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -1
 script = ExtResource("1_fx3ib")
+animated_sprite_node = NodePath("Sprite")
 object_name = "sprite"
+
+[node name="Sprite" parent="." instance=ExtResource("2_wsgd5")]
+sprite_frames = SubResource("SpriteFrames_wsgd5")
+animation = &"empty"
+autoplay = "empty"
+sprite_info = Dictionary[StringName, ExtResource("109_ponw7")]({
+&"alien": SubResource("Resource_0cps1"),
+&"alien_boss_disp": SubResource("Resource_gqlef"),
+&"bat_left": SubResource("Resource_bcice"),
+&"caveman_left": SubResource("Resource_3onro"),
+&"crystal_skull_ico": SubResource("Resource_o6nw2"),
+&"damsel_left": SubResource("Resource_uvydy"),
+&"damsel_left_ico": SubResource("Resource_1421n"),
+&"dead_fish_left_ico": SubResource("Resource_h6jri"),
+&"diamond": SubResource("Resource_j4ter"),
+&"emerald": SubResource("Resource_5ri4w"),
+&"emerald_big": SubResource("Resource_qp8w7"),
+&"fire_frog_left": SubResource("Resource_xefcy"),
+&"frog_left": SubResource("Resource_wmj7a"),
+&"giant_spider_disp": SubResource("Resource_n2jle"),
+&"gold_bar_draw": SubResource("Resource_pran7"),
+&"gold_bars_draw": SubResource("Resource_8e6d2"),
+&"gold_chunk": SubResource("Resource_b8p6p"),
+&"gold_idol_ico": SubResource("Resource_fmt1s"),
+&"gold_nugget": SubResource("Resource_5t0n2"),
+&"hawk_left": SubResource("Resource_4my5j"),
+&"man_trap_left": SubResource("Resource_0nbts"),
+&"mega_mouth": SubResource("Resource_1g13d"),
+&"monkey_left": SubResource("Resource_q4bci"),
+&"piranha_left_ico": SubResource("Resource_dhu0c"),
+&"ruby": SubResource("Resource_rv7pu"),
+&"ruby_big": SubResource("Resource_nrelh"),
+&"sapphire": SubResource("Resource_6ra1x"),
+&"sapphire_big": SubResource("Resource_du5tq"),
+&"scarab_disp": SubResource("Resource_ulrhj"),
+&"shop_left_ico": SubResource("Resource_sbjox"),
+&"skeleton_left": SubResource("Resource_63hg3"),
+&"snake_left": SubResource("Resource_285nb"),
+&"spears_right": SubResource("Resource_irjab"),
+&"spider": SubResource("Resource_wvdg4"),
+&"stand_left": SubResource("Resource_csn3s"),
+&"stand_left_ico": SubResource("Resource_uwwb0"),
+&"tomb_lord_disp": SubResource("Resource_fw05l"),
+&"ufo": SubResource("Resource_ms7dh"),
+&"vampire_left": SubResource("Resource_6v2tc"),
+&"yeti_king_disp": SubResource("Resource_puecl"),
+&"yeti_left": SubResource("Resource_842um"),
+&"zombie_left": SubResource("Resource_r2yvl")
+})
+default_animation = &"bat_left"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8.5)
+shape = SubResource("RectangleShape2D_qae67")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 8.5)
+shape = SubResource("RectangleShape2D_5h4pr")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)

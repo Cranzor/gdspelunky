@@ -1,7 +1,73 @@
-[gd_scene load_steps=2 format=3 uid="uid://chrvaqcstaqou"]
+[gd_scene load_steps=11 format=4 uid="uid://chrvaqcstaqou"]
 
 [ext_resource type="Script" uid="uid://dvel01dx7vyyk" path="res://objects/collectibles/cape_pickup/cape_pickup.gd" id="1_j7udx"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_h5b0l"]
+[ext_resource type="Texture2D" uid="uid://y2o3resustqr" path="res://sprites/items/saleable/cape/cape_0.png" id="3_jmc3t"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_je0te"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_06stv"]
 
-[node name="CapePickup" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_h5b0l"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_jmc3t")
+}],
+"loop": true,
+"name": &"cape",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_jmc3t"]
+data = {
+"data": PackedByteArray("Yy8dAGMvHQBjLx0AYy8dAGMvHQBjLx0AYy8dAGMvHQBjLx0AYy8dAGMvHQBjLx0AYy8dAGMvHQBjLx0AYy8dAGMvHQBjLx0AYy8dAGMvHQBjLx0AYy8dAGMvHf9jLx3/Yy8d/2MvHf9jLx0AYy8dAGMvHQBjLx0AYy8dAGMvHQBjLx0AYy8dAGMvHQBjLx0AYy8dAGMvHf9jLx3/Yy8dAGMvHQBjLx3/Yy8d/2MvHQBjLx0AYy8dAGMvHQBjLx0AYy8dAGMvHQBjLx0AYy8dAGMvHf/8/yH/Yy8d/2MvHQBjLx0AYy8d//z/If9jLx3/Yy8dAGMvHQBjLx0AYy8dACYUEAAmFBAAJhQQACYUEAAmFBD/yHos//z/If9jLx3/Yy8d//z/If/Ieiz/JhQQ/yYUEAAmFBAAJhQQACYUEAAmFBAAJhQQACYUEAAmFBAAJhQQ/8h6LP/Ieiz//P8h//z/If/Ieiz/yHos/yYUEP8mFBAAJhQQACYUEAAmFBAAJhQQACYUEAAmFBAAJhQQ/8h6LP/8/yH/yHos////////////yHos//z/If/Ieiz/JhQQ/yYUEAAmFBAAJhQQACYUEAAmFBAAJhQQACYUEP/8/yH//P8h//z/If////////////z/If/8/yH//P8h/yYUEP8mFBAAJhQQACYUEAAmFBAAJhQQACYUEAAmFBD///////z/If/8/yH////////////8/yH//P8h//////8mFBD/JhQQACYUEAAmFBAAJhQQACYUEAAmFBD/yHos///////8/yH//P8h/////////////P8h//z/If//////yHos/yYUEP8mFBAAJhQQACYUEAAmFBAAJhQQ//z/If///////P8h//z/If/8/yH//P8h//z/If/8/yH///////z/If8mFBD/JhQQACYUEAAmFBAAJhQQACYUEP///////P8h/8h6LP/8/yH//P8h//z/If/8/yH/yHos//z/If//////JhQQ/yYUEAAmFBAAJhQQACYUEP/Ieiz//P8h//z/If/Ieiz/yHos/8h6LP/Ieiz/yHos/8h6LP/8/yH//P8h/8h6LP8mFBD/JhQQACYUEAAmFBD//P8h//z/If/Ieiz/JhQQ/yYUEP8mFBD/JhQQ/yYUEP8mFBD/yHos//z/If/8/yH/JhQQ/yYUEAAmFBAAJhQQ/8h6LP8mFBD/JhQQ/yYUEAAmFBAAJhQQACYUEAAmFBAAJhQQACYUEP8mFBD/yHos/yYUEP8mFBAAJhQQACYUEP8mFBD/JhQQACYUEAAmFBAAJhQQACYUEAAmFBAAJhQQACYUEAAmFBAAJhQQACYUEP8mFBD/JhQQAA=="),
+"format": "RGBA8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Resource" id="Resource_je0te"]
+script = ExtResource("5_06stv")
+origin = Vector2(8, 8)
+containing_box = Rect2(1, 1, 14, 15)
+precise = true
+images = Array[Image]([SubResource("Image_jmc3t")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_06stv"]
+size = Vector2(14, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mm511"]
+size = Vector2(28, 30)
+
+[node name="CapePickup" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -100
 script = ExtResource("1_j7udx")
+animated_sprite_node = NodePath("Sprite")
 object_name = "cape_pickup"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_h5b0l")]
+sprite_frames = SubResource("SpriteFrames_h5b0l")
+autoplay = "cape"
+centered = false
+offset = Vector2(-8, -8)
+script = ExtResource("4_je0te")
+sprite_info = Dictionary[StringName, ExtResource("5_06stv")]({
+&"cape": SubResource("Resource_je0te")
+})
+default_animation = &"cape"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_06stv")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_mm511")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

@@ -1,7 +1,72 @@
-[gd_scene load_steps=2 format=3 uid="uid://b3pa5xkft8ix4"]
+[gd_scene load_steps=11 format=4 uid="uid://b3pa5xkft8ix4"]
 
 [ext_resource type="Script" uid="uid://dah5m5k7bjuhj" path="res://objects/other/title/multi_trophy/multi_trophy.gd" id="1_itye1"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_utud7"]
+[ext_resource type="Texture2D" uid="uid://dj2dg7au6vtbr" path="res://sprites/other/title/multi_gold/multi_gold_0.png" id="3_4naj2"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_g3amv"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_7788d"]
 
-[node name="MultiTrophy" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_utud7"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_4naj2")
+}],
+"loop": true,
+"name": &"multi_gold",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_4naj2"]
+data = {
+"data": PackedByteArray("flw6AH5cOgD///8A////AP///wD///8Aflw6AH5cOgB+XDoAflw6AP///wD///8A////AP///wB+XDoAflw6AH5cOgB+XDr//////////////////////35cOv9+XDoAflw6AH5cOv//////////////////////flw6/35cOgD/lRkA/5UZ///1aP//9Wj///Vo///1aP//lRn//5UZAP+VGQD/lRn///Vo///1aP//9Wj///Vo//+VGf//lRkA/5UZAP+VGf//9Wj///Vo///1aP//9Wj//5UZ//+VGQD/lRkA/5UZ///1aP//9Wj///Vo///1aP//lRn//5UZAH5cOgB+XDr//5UZ//+VGf//lRn//5UZ/35cOv9+XDoAflw6AH5cOv//lRn//5UZ//+VGf//lRn/flw6/35cOgAmFBAAJhQQ/35cOv9+XDr/flw6/35cOv8mFBD/JhQQACYUEAAmFBD/flw6/35cOv9+XDr/flw6/yYUEP8mFBAAJhQQACYUEAAmFBD//5UZ//+VGf8mFBD/JhQQACYUEAAmFBAAJhQQACYUEP//lRn//5UZ/yYUEP8mFBAAJhQQACYUEAAmFBD//5UZ///1aP//9Wj//5UZ/yYUEP8mFBAAJhQQACYUEP//lRn///Vo///1aP//lRn/JhQQ/yYUEAAmFBAAJhQQAP+VGQD/9WgA//VoAP+VGQAmFBAAJhQQACYUEAAmFBAA/5UZAP/1aAD/9WgA/5UZACYUEAAmFBAAflw6AH5cOv//////////////////////flw6/35cOgB+XDoAflw6//////////////////////9+XDr/flw6AP+VGQD/lRn///Vo///1aP//9Wj///Vo//+VGf//lRkA/5UZAP+VGf//9Wj///Vo///1aP//9Wj//5UZ//+VGQD/lRkA/5UZ///1aP//9Wj///Vo///1aP//lRn//5UZAP+VGQD/lRn///Vo///1aP//9Wj///Vo//+VGf//lRkAflw6AH5cOv//lRn//5UZ//+VGf//lRn/flw6/35cOgB+XDoAflw6//+VGf//lRn//5UZ//+VGf9+XDr/flw6ACYUEAAmFBD/flw6/35cOv9+XDr/flw6/yYUEP8mFBAAJhQQACYUEP9+XDr/flw6/35cOv9+XDr/JhQQ/yYUEAAmFBAAJhQQACYUEP//lRn//5UZ/yYUEP8mFBAAJhQQACYUEAAmFBAAJhQQ//+VGf//lRn/JhQQ/yYUEAAmFBAAJhQQACYUEP//lRn///Vo///1aP//lRn/JhQQ/yYUEAAmFBAAJhQQ//+VGf//9Wj///Vo//+VGf8mFBD/JhQQAA=="),
+"format": "RGBA8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Resource" id="Resource_g3amv"]
+script = ExtResource("5_7788d")
+origin = Vector2(0, 0)
+containing_box = Rect2(1, 1, 14, 15)
+precise = true
+images = Array[Image]([SubResource("Image_4naj2")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7788d"]
+size = Vector2(14, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ct6u"]
+size = Vector2(28, 30)
+
+[node name="MultiTrophy" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -900
 script = ExtResource("1_itye1")
+animated_sprite_node = NodePath("Sprite")
 object_name = "multi_trophy"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_utud7")]
+sprite_frames = SubResource("SpriteFrames_utud7")
+autoplay = "multi_gold"
+centered = false
+script = ExtResource("4_g3amv")
+sprite_info = Dictionary[StringName, ExtResource("5_7788d")]({
+&"multi_gold": SubResource("Resource_g3amv")
+})
+default_animation = &"multi_gold"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8.5)
+shape = SubResource("RectangleShape2D_7788d")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 8.5)
+shape = SubResource("RectangleShape2D_5ct6u")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

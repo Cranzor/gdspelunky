@@ -1,7 +1,92 @@
-[gd_scene load_steps=2 format=3 uid="uid://b4mivj5bs8uo0"]
+[gd_scene load_steps=15 format=3 uid="uid://b4mivj5bs8uo0"]
 
 [ext_resource type="Script" uid="uid://bg3hh6f513gsu" path="res://objects/enemies/snake/snake.gd" id="1_ibgfx"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_kekc7"]
+[ext_resource type="Texture2D" uid="uid://bigyiggtyfuj4" path="res://sprites/enemies/snake_left/snake_left_0.png" id="3_mb1gq"]
+[ext_resource type="Texture2D" uid="uid://b1gqefym32l7u" path="res://sprites/enemies/snake_walk_l/snake_walk_l_0.png" id="4_5wbqj"]
+[ext_resource type="Texture2D" uid="uid://bf2emntal75mi" path="res://sprites/enemies/snake_walk_l/snake_walk_l_1.png" id="5_aa6yy"]
+[ext_resource type="Texture2D" uid="uid://cowmdfwj8uxj4" path="res://sprites/enemies/snake_walk_l/snake_walk_l_2.png" id="6_gmgy7"]
+[ext_resource type="Texture2D" uid="uid://b73gpivtyp0yv" path="res://sprites/enemies/snake_walk_l/snake_walk_l_3.png" id="7_y2sf5"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="8_scqcf"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="9_j0jm4"]
 
-[node name="Snake" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_kekc7"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_mb1gq")
+}],
+"loop": true,
+"name": &"snake_left",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_5wbqj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_aa6yy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_gmgy7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_y2sf5")
+}],
+"loop": true,
+"name": &"snake_walk_l",
+"speed": 30.0
+}]
+
+[sub_resource type="Resource" id="Resource_mb1gq"]
+script = ExtResource("9_j0jm4")
+origin = Vector2(0, 0)
+containing_box = Rect2(1, 4, 14, 12)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_5wbqj"]
+script = ExtResource("9_j0jm4")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 3, 16, 13)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aa6yy"]
+size = Vector2(14, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gmgy7"]
+size = Vector2(28, 24)
+
+[node name="Snake" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -60
 script = ExtResource("1_ibgfx")
+animated_sprite_node = NodePath("Sprite")
 object_name = "snake"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_kekc7")]
+sprite_frames = SubResource("SpriteFrames_kekc7")
+autoplay = "snake_left"
+centered = false
+script = ExtResource("8_scqcf")
+sprite_info = Dictionary[StringName, ExtResource("9_j0jm4")]({
+&"snake_left": SubResource("Resource_mb1gq"),
+&"snake_walk_l": SubResource("Resource_5wbqj")
+})
+default_animation = &"snake_left"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 10)
+shape = SubResource("RectangleShape2D_aa6yy")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 10)
+shape = SubResource("RectangleShape2D_gmgy7")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

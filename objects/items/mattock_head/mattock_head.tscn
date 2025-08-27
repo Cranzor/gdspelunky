@@ -1,7 +1,73 @@
-[gd_scene load_steps=2 format=3 uid="uid://fftcqual31hn"]
+[gd_scene load_steps=11 format=4 uid="uid://fftcqual31hn"]
 
 [ext_resource type="Script" uid="uid://ciq8ji1i2k224" path="res://objects/items/mattock_head/mattock_head.gd" id="1_3dvwx"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_xeod5"]
+[ext_resource type="Texture2D" uid="uid://w2c5cu4n8unw" path="res://sprites/items/weapons/mattock_head/mattock_head_0.png" id="3_rkmlq"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_ejs6y"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_hxvm5"]
 
-[node name="MattockHead" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_xeod5"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_rkmlq")
+}],
+"loop": true,
+"name": &"mattock_head",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_rkmlq"]
+data = {
+"data": PackedByteArray("gICAAICAgACAgIAAgICAAICAgAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIAICAgACAgIAAgICAAICAgACAgIAAgICAABIKCAASCggAEgoIABIKCABAQEAAEgoIABIKCAASCggAEgoIABIKCACAgIAAgICAAICAgACAgIAAgICAAICAgAASCggAEgoI/xIKCP8SCggAQEBAABIKCAASCggAEgoIABIKCAASCggAgICAAICAgACAgIAAgICAAICAgP+AgID/EgoI/45ZJf+OWSX/EgoI/0BAQP8SCgj/EgoIABIKCAASCggAEgoIAICAgACAgIAAgICAAICAgP//////wMDA////////////gICA/4CAgP/AwMD/gICA/xIKCP8SCggAEgoIABIKCACAgIAAgICAAICAgP//////wMDA/8DAwP///////////4CAgP+AgID/wMDA/8DAwP+AgID/EgoI/xIKCAASCggAgICAAICAgACAgID//////0BAQP9AQED/LBYT/45ZJf9jLx3/EgoI/0BAQP9AQED/gICA/xIKCP8SCggAEgoIAICAgACAgIAAgICA/0BAQP9AQEAAQEBAABIKCP8SCgj/EgoI/xIKCP9AQEAAQEBAAEBAQP8SCgj/EgoIABIKCAA="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Resource" id="Resource_ejs6y"]
+script = ExtResource("5_hxvm5")
+origin = Vector2(8, 4)
+containing_box = Rect2(2, 2, 12, 6)
+precise = true
+images = Array[Image]([SubResource("Image_rkmlq")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hxvm5"]
+size = Vector2(12, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_inw3h"]
+size = Vector2(24, 12)
+
+[node name="MattockHead" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -100
 script = ExtResource("1_3dvwx")
+animated_sprite_node = NodePath("Sprite")
 object_name = "mattock_head"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_xeod5")]
+sprite_frames = SubResource("SpriteFrames_xeod5")
+autoplay = "mattock_head"
+centered = false
+offset = Vector2(-8, -4)
+script = ExtResource("4_ejs6y")
+sprite_info = Dictionary[StringName, ExtResource("5_hxvm5")]({
+&"mattock_head": SubResource("Resource_ejs6y")
+})
+default_animation = &"mattock_head"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_hxvm5")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_inw3h")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

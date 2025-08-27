@@ -1,10 +1,31 @@
-[gd_scene load_steps=3 format=3 uid="uid://c5fv0uyp86jh3"]
+[gd_scene load_steps=7 format=3 uid="uid://c5fv0uyp86jh3"]
 
 [ext_resource type="Script" uid="uid://capeaaaixbbx" path="res://objects/moon_room/moon_room.gd" id="1_48oti"]
 [ext_resource type="PackedScene" uid="uid://dq140qq6udxt3" path="res://scenes/challenge_rooms_hud.tscn" id="2_fw4qm"]
+[ext_resource type="Script" uid="uid://ce5qxdpaox4f0" path="res://scenes/challenge_rooms_hud.gd" id="3_1r8m7"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="4_rj0c6"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="5_tbcb5"]
 
-[node name="MoonRoom" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_rj0c6"]
+resource_local_to_scene = true
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[node name="MoonRoom" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_48oti")
+animated_sprite_node = NodePath("Sprite")
 object_name = "moon_room"
 
-[node name="BonusRoomsHUD" parent="." instance=ExtResource("2_fw4qm")]
+[node name="BonusRoomsHUD" type="CanvasLayer" parent="." instance=ExtResource("2_fw4qm")]
+script = ExtResource("3_1r8m7")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("4_rj0c6")]
+sprite_frames = SubResource("SpriteFrames_rj0c6")
+centered = false
+script = ExtResource("5_tbcb5")
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

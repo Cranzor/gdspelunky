@@ -1,7 +1,148 @@
-[gd_scene load_steps=2 format=3 uid="uid://6rlxrq2733fk"]
+[gd_scene load_steps=20 format=3 uid="uid://6rlxrq2733fk"]
 
 [ext_resource type="Script" uid="uid://b5gqnfg57wbmi" path="res://objects/blocks/grave/grave.gd" id="1_r3tho"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_4ujxx"]
+[ext_resource type="Texture2D" uid="uid://dle410v1peg7n" path="res://sprites/blocks/graves/grave/grave_0.png" id="3_ckj6n"]
+[ext_resource type="Texture2D" uid="uid://c07a2xkw5ggu1" path="res://sprites/blocks/graves/grave2/grave2_0.png" id="4_dnvqy"]
+[ext_resource type="Texture2D" uid="uid://c5wd8o6ahvfdb" path="res://sprites/blocks/graves/grave3/grave3_0.png" id="5_ec3fj"]
+[ext_resource type="Texture2D" uid="uid://dpij267cqe3nx" path="res://sprites/blocks/graves/grave4/grave4_0.png" id="6_nox41"]
+[ext_resource type="Texture2D" uid="uid://eh1ei5ubpolh" path="res://sprites/blocks/graves/grave5/grave5_0.png" id="7_advlf"]
+[ext_resource type="Texture2D" uid="uid://it5qh7dy7r47" path="res://sprites/blocks/graves/grave6/grave6_0.png" id="8_l8tiq"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="9_nwiri"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="10_clgfu"]
 
-[node name="Grave" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_4ujxx"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ckj6n")
+}],
+"loop": true,
+"name": &"grave",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_dnvqy")
+}],
+"loop": true,
+"name": &"grave2",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_ec3fj")
+}],
+"loop": true,
+"name": &"grave3",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_nox41")
+}],
+"loop": true,
+"name": &"grave4",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_advlf")
+}],
+"loop": true,
+"name": &"grave5",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_l8tiq")
+}],
+"loop": true,
+"name": &"grave6",
+"speed": 30.0
+}]
+
+[sub_resource type="Resource" id="Resource_ckj6n"]
+script = ExtResource("10_clgfu")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_dnvqy"]
+script = ExtResource("10_clgfu")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_ec3fj"]
+script = ExtResource("10_clgfu")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_nox41"]
+script = ExtResource("10_clgfu")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_advlf"]
+script = ExtResource("10_clgfu")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_l8tiq"]
+script = ExtResource("10_clgfu")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nwiri"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_clgfu"]
+size = Vector2(32, 32)
+
+[node name="Grave" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -110
 script = ExtResource("1_r3tho")
+animated_sprite_node = NodePath("Sprite")
 object_name = "grave"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_4ujxx")]
+sprite_frames = SubResource("SpriteFrames_4ujxx")
+autoplay = "grave"
+centered = false
+script = ExtResource("9_nwiri")
+sprite_info = Dictionary[StringName, ExtResource("10_clgfu")]({
+&"grave": SubResource("Resource_ckj6n"),
+&"grave2": SubResource("Resource_dnvqy"),
+&"grave3": SubResource("Resource_ec3fj"),
+&"grave4": SubResource("Resource_nox41"),
+&"grave5": SubResource("Resource_advlf"),
+&"grave6": SubResource("Resource_l8tiq")
+})
+default_animation = &"grave"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_nwiri")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_clgfu")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

@@ -1,7 +1,145 @@
-[gd_scene load_steps=2 format=3 uid="uid://bbc8barned0bx"]
+[gd_scene load_steps=26 format=3 uid="uid://bbc8barned0bx"]
 
 [ext_resource type="Script" uid="uid://dpmhtgd7b6tvq" path="res://objects/enemies/spider/spider.gd" id="1_di8d3"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_qxxtb"]
+[ext_resource type="Texture2D" uid="uid://d04a7hse1gnun" path="res://sprites/enemies/spider/spider_0.png" id="3_t7o15"]
+[ext_resource type="Texture2D" uid="uid://dj04giixjh8cj" path="res://sprites/enemies/spider/spider_1.png" id="4_kt0o1"]
+[ext_resource type="Texture2D" uid="uid://buntuclawuhac" path="res://sprites/enemies/spider/spider_2.png" id="5_q6lur"]
+[ext_resource type="Texture2D" uid="uid://dhrmbwkbwiwa3" path="res://sprites/enemies/spider/spider_3.png" id="6_xwaws"]
+[ext_resource type="Texture2D" uid="uid://0hiope560djp" path="res://sprites/enemies/spider_drowning/spider_drowning_0.png" id="7_px1x0"]
+[ext_resource type="Texture2D" uid="uid://cpdw3eg7shcam" path="res://sprites/enemies/spider_drowning/spider_drowning_1.png" id="8_stjaa"]
+[ext_resource type="Texture2D" uid="uid://ear1i4xafffj" path="res://sprites/enemies/spider_flip/spider_flip_0.png" id="9_4mlhd"]
+[ext_resource type="Texture2D" uid="uid://b25pexgt8rat0" path="res://sprites/enemies/spider_flip/spider_flip_1.png" id="10_4u3bb"]
+[ext_resource type="Texture2D" uid="uid://c0bxf7xoo6tq0" path="res://sprites/enemies/spider_flip/spider_flip_2.png" id="11_46xpi"]
+[ext_resource type="Texture2D" uid="uid://dhy0oriixwovh" path="res://sprites/enemies/spider_flip/spider_flip_3.png" id="12_nq4vx"]
+[ext_resource type="Texture2D" uid="uid://dtf21ftccot08" path="res://sprites/enemies/spider_flip/spider_flip_4.png" id="13_0fpsa"]
+[ext_resource type="Texture2D" uid="uid://bf4jbti2ip4kl" path="res://sprites/enemies/spider_flip/spider_flip_5.png" id="14_jlbu1"]
+[ext_resource type="Texture2D" uid="uid://cnoe2rl3x4qyt" path="res://sprites/enemies/spider_flip/spider_flip_6.png" id="15_ekhra"]
+[ext_resource type="Texture2D" uid="uid://bl322831bnb4v" path="res://sprites/enemies/spider_flip/spider_flip_7.png" id="16_qb40t"]
+[ext_resource type="Texture2D" uid="uid://dnny55y8etktd" path="res://sprites/enemies/spider_flip/spider_flip_8.png" id="17_kibog"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="18_f2lo5"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="19_wyy80"]
 
-[node name="Spider" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_qxxtb"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_t7o15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kt0o1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_q6lur")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xwaws")
+}],
+"loop": true,
+"name": &"spider",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_px1x0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_stjaa")
+}],
+"loop": true,
+"name": &"spider_drowning",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_4mlhd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_4u3bb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_46xpi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_nq4vx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_0fpsa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_jlbu1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ekhra")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_qb40t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_kibog")
+}],
+"loop": true,
+"name": &"spider_flip",
+"speed": 30.0
+}]
+
+[sub_resource type="Resource" id="Resource_t7o15"]
+script = ExtResource("19_wyy80")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_kt0o1"]
+script = ExtResource("19_wyy80")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 5, 16, 11)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_q6lur"]
+script = ExtResource("19_wyy80")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 10)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xwaws"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_px1x0"]
+size = Vector2(32, 32)
+
+[node name="Spider" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -40
 script = ExtResource("1_di8d3")
+animated_sprite_node = NodePath("Sprite")
 object_name = "spider"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_qxxtb")]
+sprite_frames = SubResource("SpriteFrames_qxxtb")
+autoplay = "spider_flip"
+centered = false
+script = ExtResource("18_f2lo5")
+sprite_info = Dictionary[StringName, ExtResource("19_wyy80")]({
+&"spider": SubResource("Resource_kt0o1"),
+&"spider_drowning": SubResource("Resource_q6lur"),
+&"spider_flip": SubResource("Resource_t7o15")
+})
+default_animation = &"spider_flip"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_xwaws")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_px1x0")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

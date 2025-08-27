@@ -1,7 +1,72 @@
-[gd_scene load_steps=2 format=3 uid="uid://gy38114xxpn0"]
+[gd_scene load_steps=11 format=4 uid="uid://gy38114xxpn0"]
 
 [ext_resource type="Script" uid="uid://cmq275e8xm0su" path="res://objects/blocks/cave_bg_entrance/cave_bg_entrance.gd" id="1_mkm4q"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_q4crv"]
+[ext_resource type="Texture2D" uid="uid://fkeoomno8buo" path="res://sprites/blocks/background/cave_bg_entrance/cave_bg_entrance_0.png" id="3_i2v17"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_j2fea"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_pi1cq"]
 
-[node name="CaveBgEntrance" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_q4crv"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_i2v17")
+}],
+"loop": true,
+"name": &"cave_bg_entrance",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_i2v17"]
+data = {
+"data": PackedByteArray("AAAAAAAAAP85U2//AAAA/xUeKP8HDBD/AAAA/xUeKP8HDBD/BwwQ/wAAAP8VHij/BwwQ/wcMEP8HDBD/BwwQ/wAAAAAAAAD/AAAA/zlTb/8VHij/BwwQ/wAAAP8AAAD/AAAA/wAAAP8AAAD/FR4o/wcMEP8HDBD/BwwQ/xUeKP8AAAD/FR4o/wAAAP85U2//FR4o/wcMEP8AAAD/AAAA/xUeKP8VHij/AAAA/wAAAP8VHij/BwwQ/xUeKP8VHij/AAAA/zlTb/8VHij/AAAA/wAAAP8HDBD/AAAA/xUeKP8HDBD/BwwQ/wcMEP8AAAD/FR4o/wcMEP8VHij/BwwQ/wAAAP85U2//FR4o/wcMEP8AAAD/AAAA/wAAAP8VHij/BwwQ/wcMEP8HDBD/AAAA/wAAAP8HDBD/FR4o/wcMEP8AAAD/OVNv/xUeKP8HDBD/BwwQ/wAAAP8AAAD/AAAA/xUeKP8HDBD/AAAA/wAAAP8AAAD/FR4o/wcMEP8HDBD/AAAA/xUeKP8HDBD/BwwQ/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/xUeKP8HDBD/BwwQ/wAAAP8VHij/BwwQ/wAAAP8AAAD/FR4o/wcMEP8AAAD/AAAA/xUeKP8VHij/FR4o/wAAAP8AAAD/BwwQ/wcMEP8AAAAAAAAA/wAAAP8AAAD/OVNv/xUeKP8HDBD/AAAA/xUeKP8HDBD/BwwQ/wcMEP8HDBD/AAAA/wAAAP8HDBD/AAAAAAAAAP8AAAD/AAAA/zlTb/8VHij/BwwQ/wAAAP8HDBD/BwwQ/wcMEP8HDBD/BwwQ/wAAAP8AAAD/AAAA/wAAAP85U2//FR4o/wAAAP8AAAD/FR4o/wcMEP8AAAD/BwwQ/wcMEP8HDBD/BwwQ/wAAAP8AAAD/AAAA/wAAAP8AAAD/FR4o/wcMEP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8HDBD/BwwQ/wcMEP8AAAD/FR4o/xUeKP8VHij/AAAA/xUeKP8HDBD/AAAA/zlTb/8VHij/BwwQ/wAAAP8AAAD/AAAA/wAAAP8AAAD/FR4o/xUeKP8HDBD/BwwQ/wAAAP8HDBD/AAAA/wAAAP85U2//FR4o/wcMEP8HDBD/AAAA/wAAAP8AAAD/FR4o/xUeKP8HDBD/BwwQ/wcMEP8AAAD/AAAA/wAAAP8AAAD/FR4o/xUeKP8HDBD/BwwQ/wcMEP8AAAD/FR4o/xUeKP8HDBD/BwwQ/wcMEP8HDBD/AAAAAAAAAP8VHij/AAAA/wAAAP8VHij/BwwQ/wcMEP8AAAD/AAAA/xUeKP8HDBD/BwwQ/wcMEP8VHij/FR4o/w=="),
+"format": "RGBA8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Resource" id="Resource_j2fea"]
+script = ExtResource("5_pi1cq")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = true
+images = Array[Image]([SubResource("Image_i2v17")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pi1cq"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fyb0b"]
+size = Vector2(32, 32)
+
+[node name="CaveBgEntrance" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -998
 script = ExtResource("1_mkm4q")
+animated_sprite_node = NodePath("Sprite")
 object_name = "cave_bg_entrance"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_q4crv")]
+sprite_frames = SubResource("SpriteFrames_q4crv")
+autoplay = "cave_bg_entrance"
+centered = false
+script = ExtResource("4_j2fea")
+sprite_info = Dictionary[StringName, ExtResource("5_pi1cq")]({
+&"cave_bg_entrance": SubResource("Resource_j2fea")
+})
+default_animation = &"cave_bg_entrance"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_pi1cq")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_fyb0b")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

@@ -1,7 +1,71 @@
-[gd_scene load_steps=2 format=3 uid="uid://cnqucw6irno58"]
+[gd_scene load_steps=11 format=4 uid="uid://cnqucw6irno58"]
 
 [ext_resource type="Script" uid="uid://d3ym7sycg18yh" path="res://objects/level editor/edit_button/edit_button.gd" id="1_ohxvb"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_60bfj"]
+[ext_resource type="Texture2D" uid="uid://bn1b3727k1enn" path="res://sprites/other/edit_button/edit_button_0.png" id="3_gqu0r"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_dnm5m"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_8leik"]
 
-[node name="EditButton" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_60bfj"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_gqu0r")
+}],
+"loop": true,
+"name": &"edit_button",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_gqu0r"]
+data = {
+"data": PackedByteArray("8Gwe5qNI5qNI5qNI5qNI5qNI5qNI5qNI5qNI5qNI5qNI5qNI5qNI5qNI5qNI8Gwejlkl8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwejlkljlkl8Gwe////////8Gwe////////8Gwe8Gwe////8Gwe////////////8Gwejlkljlkl8Gwe////Yy8d8Gwe////Yy8d////8Gwe////8GweYy8d////Yy8d8Gwejlkljlkl8Gwe////////8Gwe////8Gwe////8Gwe////8Gwe8Gwe////8Gwe8Gwejlkljlkl8Gwe////Yy8d8Gwe////8Gwe////8Gwe////8Gwe8Gwe////8Gwe8Gwejlkljlkl8Gwe////////8Gwe////////Yy8d8Gwe////8Gwe8Gwe////8Gwe8Gwejlkljlkl8GweYy8dYy8d8GweYy8dYy8d8Gwe8GweYy8d8Gwe8GweYy8d8Gwe8Gwejlkljlkl8Gwe////8Gwe////////8Gwe8Gwe////////8Gwe////////////8Gwejlkljlkl8Gwe////8Gwe////Yy8d////8Gwe////Yy8d8Gwe////Yy8d////8Gwejlkljlkl8Gwe////8Gwe////8Gwe////8Gwe////////8Gwe////8Gwe////8Gwejlkljlkl8Gwe////8Gwe////8Gwe////8Gwe////Yy8d8Gwe////8Gwe////8Gwejlkljlkl8Gwe////8Gwe////8Gwe////8Gwe////8Gwe8Gwe////////////8Gwejlkljlkl8GweYy8d8GweYy8d8GweYy8d8GweYy8d8Gwe8GweYy8dYy8dYy8d8Gwejlkljlkl8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8Gwe8GwejlklYy8dYy8dYy8dYy8dYy8dYy8dYy8dYy8dYy8dYy8dYy8dYy8dYy8dYy8dYy8dYy8d"),
+"format": "RGB8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Resource" id="Resource_dnm5m"]
+script = ExtResource("5_8leik")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = true
+images = Array[Image]([SubResource("Image_gqu0r")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8leik"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n5m43"]
+size = Vector2(32, 32)
+
+[node name="EditButton" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_ohxvb")
+animated_sprite_node = NodePath("Sprite")
 object_name = "edit_button"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_60bfj")]
+sprite_frames = SubResource("SpriteFrames_60bfj")
+autoplay = "edit_button"
+centered = false
+script = ExtResource("4_dnm5m")
+sprite_info = Dictionary[StringName, ExtResource("5_8leik")]({
+&"edit_button": SubResource("Resource_dnm5m")
+})
+default_animation = &"edit_button"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_8leik")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_n5m43")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

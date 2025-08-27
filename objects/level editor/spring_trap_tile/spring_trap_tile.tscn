@@ -1,7 +1,63 @@
-[gd_scene load_steps=2 format=3 uid="uid://hckpahlspj8w"]
+[gd_scene load_steps=10 format=3 uid="uid://hckpahlspj8w"]
 
 [ext_resource type="Script" uid="uid://b066fs4pd6hr" path="res://objects/level editor/spring_trap_tile/spring_trap_tile.gd" id="1_8jrcv"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_5lobw"]
+[ext_resource type="Texture2D" uid="uid://cjt4er51iquoj" path="res://sprites/traps/spring_trap/spring_trap_0.png" id="3_f3mn0"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_55qt5"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_fi4ji"]
 
-[node name="SpringTrapTile" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_5lobw"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_f3mn0")
+}],
+"loop": true,
+"name": &"spring_trap",
+"speed": 30.0
+}]
+
+[sub_resource type="Resource" id="Resource_f3mn0"]
+script = ExtResource("5_fi4ji")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 12, 16, 4)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_55qt5"]
+size = Vector2(16, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fi4ji"]
+size = Vector2(32, 8)
+
+[node name="SpringTrapTile" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -100
 script = ExtResource("1_8jrcv")
+animated_sprite_node = NodePath("Sprite")
 object_name = "spring_trap_tile"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_5lobw")]
+sprite_frames = SubResource("SpriteFrames_5lobw")
+autoplay = "spring_trap"
+centered = false
+script = ExtResource("4_55qt5")
+sprite_info = Dictionary[StringName, ExtResource("5_fi4ji")]({
+&"spring_trap": SubResource("Resource_f3mn0")
+})
+default_animation = &"spring_trap"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 14)
+shape = SubResource("RectangleShape2D_55qt5")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 14)
+shape = SubResource("RectangleShape2D_fi4ji")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

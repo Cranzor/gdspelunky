@@ -1,7 +1,70 @@
-[gd_scene load_steps=2 format=3 uid="uid://3vdxy1vbeyw3"]
+[gd_scene load_steps=12 format=3 uid="uid://3vdxy1vbeyw3"]
 
 [ext_resource type="Script" uid="uid://prigfywhh8gc" path="res://objects/other/intro/bat_intro/bat_intro.gd" id="1_qkug1"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_3kuud"]
+[ext_resource type="Texture2D" uid="uid://ceuvbylqdg71v" path="res://sprites/enemies/bat_left/bat_left_0.png" id="3_2p01b"]
+[ext_resource type="Texture2D" uid="uid://do110h7mxmu1a" path="res://sprites/enemies/bat_left/bat_left_1.png" id="4_1iwae"]
+[ext_resource type="Texture2D" uid="uid://c0fgoil7juc5y" path="res://sprites/enemies/bat_left/bat_left_2.png" id="5_igpql"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="6_156n7"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="7_ne5gs"]
 
-[node name="BatIntro" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_3kuud"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_2p01b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1iwae")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_igpql")
+}],
+"loop": true,
+"name": &"bat_left",
+"speed": 30.0
+}]
+
+[sub_resource type="Resource" id="Resource_2p01b"]
+script = ExtResource("7_ne5gs")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 3, 16, 11)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1iwae"]
+size = Vector2(16, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_igpql"]
+size = Vector2(32, 22)
+
+[node name="BatIntro" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_qkug1")
+animated_sprite_node = NodePath("Sprite")
 object_name = "bat_intro"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_3kuud")]
+sprite_frames = SubResource("SpriteFrames_3kuud")
+autoplay = "bat_left"
+centered = false
+script = ExtResource("6_156n7")
+sprite_info = Dictionary[StringName, ExtResource("7_ne5gs")]({
+&"bat_left": SubResource("Resource_2p01b")
+})
+default_animation = &"bat_left"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8.5)
+shape = SubResource("RectangleShape2D_1iwae")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 8.5)
+shape = SubResource("RectangleShape2D_igpql")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

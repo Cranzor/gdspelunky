@@ -1,7 +1,71 @@
-[gd_scene load_steps=2 format=3 uid="uid://bf1ipk0r6l466"]
+[gd_scene load_steps=11 format=4 uid="uid://bf1ipk0r6l466"]
 
 [ext_resource type="Script" uid="uid://cmp3ymnqqcsl0" path="res://objects/collectibles/bomb_bag/bomb_bag.gd" id="1_oc7po"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_xt2gh"]
+[ext_resource type="Texture2D" uid="uid://10xjgyxkt756" path="res://sprites/items/saleable/bomb_bag/bomb_bag_0.png" id="3_hgv2b"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_7qulg"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_y8h13"]
 
-[node name="BombBag" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_xt2gh"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_hgv2b")
+}],
+"loop": true,
+"name": &"bomb_bag",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_hgv2b"]
+data = {
+"data": PackedByteArray("AIAAACwWEwAsFhMALBYTACwWEwAsFhMALBYT/ywWE/8sFhP/LBYT/ywWEwAsFhMALBYTACwWEwAsFhMAAIAAACwWEwAsFhMALBYTACwWEwAsFhMALBYT/3tfRP+3h1z/t4dc/3tfRP8sFhP/LBYTACwWEwAsFhMALBYTACwWEwAsFhMALBYTACwWEwAsFhMALBYTACwWE/9QPSn/e19E/3tfRP9QPSn/LBYT/ywWEwAsFhMALBYTACwWEwAsFhMALBYTACwWEwAsFhMALBYTACwWEwAsFhMALBYT/1A9Kf9QPSn/LBYT/ywWEwAsFhMALBYTACwWEwAsFhMALBYTACwWEwAsFhMALBYTACwWEwAsFhMALBYT/3tfRP+3h1z/t4dc/3tfRP8sFhP/LBYTACwWEwAsFhMALBYTACwWEwAsFhMALBYTACwWEwAsFhMALBYT/7eHXP+3h1z/t4dc/7eHXP+3h1z/t4dc/ywWE/8sFhMALBYTACwWEwAsFhMALBYTACwWEwAsFhMALBYT/3tfRP97X0T/////////////////e19E/3tfRP97X0T/LBYT/ywWEwAsFhMALBYTACwWEwAsFhMALBYT/3tfRP97X0T/e19E//////97X0T/e19E//////97X0T/e19E/3tfRP8sFhP/LBYTACwWEwAsFhMALBYTACwWE/97X0T/e19E/3tfRP////////////////97X0T/e19E/3tfRP97X0T/LBYT/ywWEwAsFhMALBYTACwWEwAsFhP/UD0p/1A9Kf97X0T//////3tfRP97X0T//////3tfRP9QPSn/UD0p/ywWE/8sFhMALBYTACwWEwAsFhMALBYT/1A9Kf9QPSn/UD0p/////////////////1A9Kf9QPSn/UD0p/1A9Kf8sFhP/LBYTACwWEwAsFhMALBYTACwWEwAsFhP/UD0p/1A9Kf9QPSn/UD0p/1A9Kf9QPSn/UD0p/1A9Kf8sFhP/LBYTACwWEwAsFhMA"),
+"format": "RGBA8",
+"height": 12,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Resource" id="Resource_7qulg"]
+script = ExtResource("5_y8h13")
+origin = Vector2(8, 6)
+containing_box = Rect2(2, 0, 12, 12)
+precise = true
+images = Array[Image]([SubResource("Image_hgv2b")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y8h13"]
+size = Vector2(12, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_834xi"]
+size = Vector2(24, 24)
+
+[node name="BombBag" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -100
 script = ExtResource("1_oc7po")
+animated_sprite_node = NodePath("Sprite")
 object_name = "bomb_bag"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_xt2gh")]
+sprite_frames = SubResource("SpriteFrames_xt2gh")
+autoplay = "bomb_bag"
+centered = false
+offset = Vector2(-8, -6)
+script = ExtResource("4_7qulg")
+sprite_info = Dictionary[StringName, ExtResource("5_y8h13")]({
+&"bomb_bag": SubResource("Resource_7qulg")
+})
+default_animation = &"bomb_bag"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_y8h13")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+shape = SubResource("RectangleShape2D_834xi")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

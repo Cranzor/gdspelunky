@@ -1,11 +1,135 @@
-[gd_scene load_steps=3 format=3 uid="uid://do3qj17jfn1rb"]
+[gd_scene load_steps=23 format=3 uid="uid://do3qj17jfn1rb"]
 
 [ext_resource type="Script" uid="uid://sm4at6twbgp3" path="res://objects/traps/arrow_trap_left_lit/arrow_trap_left_lit.gd" id="1_5eauu"]
 [ext_resource type="PackedScene" uid="uid://w6jxjbgfs6na" path="res://components/drawing/draw_circle/dark_level_circle.tscn" id="2_av7sh"]
+[ext_resource type="Shader" uid="uid://d1iyh2el2fl0l" path="res://resources/mask.gdshader" id="3_m7exh"]
+[ext_resource type="Texture2D" uid="uid://c1ka78isguv06" path="res://components/drawing/draw_circle/circle_r16.png" id="4_qad64"]
+[ext_resource type="Texture2D" uid="uid://bkxksvh8l3or2" path="res://components/drawing/draw_circle/circle_r32.png" id="5_tfddb"]
+[ext_resource type="Texture2D" uid="uid://cnpx2owt8tmkt" path="res://components/drawing/draw_circle/circle_r64.png" id="6_6s747"]
+[ext_resource type="Texture2D" uid="uid://4xv4ky4kkda2" path="res://components/drawing/draw_circle/circle_r96.png" id="7_r5auj"]
+[ext_resource type="Script" uid="uid://cht4oclnookax" path="res://components/drawing/draw_circle/dark_level_circle.gd" id="8_mevwg"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="9_cdah2"]
+[ext_resource type="Texture2D" uid="uid://cehjmpw0k8vsg" path="res://sprites/traps/arrow_trap_left_lit/arrow_trap_left_lit_0.png" id="10_qym5c"]
+[ext_resource type="Texture2D" uid="uid://ccqf71m3u7yor" path="res://sprites/traps/arrow_trap_left_lit/arrow_trap_left_lit_1.png" id="11_dagb5"]
+[ext_resource type="Texture2D" uid="uid://5u6n777vqvlb" path="res://sprites/traps/arrow_trap_left_lit/arrow_trap_left_lit_2.png" id="12_vrwrt"]
+[ext_resource type="Texture2D" uid="uid://di58m6ocy2mtt" path="res://sprites/traps/arrow_trap_left_lit/arrow_trap_left_lit_3.png" id="13_arep2"]
+[ext_resource type="Texture2D" uid="uid://ceuw1u865f0ro" path="res://sprites/traps/arrow_trap_left_lit/arrow_trap_left_lit_4.png" id="14_ws0bq"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="15_2hvqq"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="16_bforu"]
 
-[node name="ArrowTrapLeftLit" type="StaticBody2D"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ttmrw"]
+shader = ExtResource("3_m7exh")
+shader_parameter/color = Color(0, 0, 0, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n62uf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_qad64")
+}],
+"loop": true,
+"name": &"16",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_tfddb")
+}],
+"loop": true,
+"name": &"32",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_6s747")
+}],
+"loop": true,
+"name": &"64",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_r5auj")
+}],
+"loop": true,
+"name": &"96",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cdah2"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_qym5c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_dagb5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_vrwrt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_arep2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ws0bq")
+}],
+"loop": true,
+"name": &"arrow_trap_left_lit",
+"speed": 30.0
+}]
+
+[sub_resource type="Resource" id="Resource_qym5c"]
+script = ExtResource("16_bforu")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 0, 16, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dagb5"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vrwrt"]
+size = Vector2(32, 32)
+
+[node name="ArrowTrapLeftLit" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -110
 script = ExtResource("1_5eauu")
+animated_sprite_node = NodePath("Sprite")
 object_name = "arrow_trap_left_lit"
 
-[node name="DarkLevelCircle" parent="." instance=ExtResource("2_av7sh")]
+[node name="DarkLevelCircle" type="AnimatedSprite2D" parent="." instance=ExtResource("2_av7sh")]
+visible = false
+z_index = 10
+z_as_relative = false
+material = SubResource("ShaderMaterial_ttmrw")
+sprite_frames = SubResource("SpriteFrames_n62uf")
+animation = &"16"
+script = ExtResource("8_mevwg")
 offset_value = Vector2(8, 8)
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("9_cdah2")]
+sprite_frames = SubResource("SpriteFrames_cdah2")
+autoplay = "arrow_trap_left_lit"
+centered = false
+script = ExtResource("15_2hvqq")
+sprite_info = Dictionary[StringName, ExtResource("16_bforu")]({
+&"arrow_trap_left_lit": SubResource("Resource_qym5c")
+})
+default_animation = &"arrow_trap_left_lit"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_dagb5")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_vrwrt")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

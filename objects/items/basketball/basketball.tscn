@@ -1,7 +1,123 @@
-[gd_scene load_steps=2 format=3 uid="uid://cntugcy04jbnj"]
+[gd_scene load_steps=18 format=4 uid="uid://cntugcy04jbnj"]
 
 [ext_resource type="Script" uid="uid://du35ens7gcvak" path="res://objects/items/basketball/basketball.gd" id="1_m0j18"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_g1xxa"]
+[ext_resource type="Texture2D" uid="uid://h00wp4s3lt0c" path="res://sprites/items/weapons/basketball/basketball_0.png" id="3_xtr8k"]
+[ext_resource type="Texture2D" uid="uid://2hg4eimpjx6f" path="res://sprites/items/weapons/dribble/dribble_0.png" id="4_au3ye"]
+[ext_resource type="Texture2D" uid="uid://4rj7ud0x5jlx" path="res://sprites/items/weapons/dribble/dribble_1.png" id="5_5akjf"]
+[ext_resource type="Texture2D" uid="uid://dhpev4rpn4i7g" path="res://sprites/items/weapons/dribble/dribble_2.png" id="6_jykg0"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="7_rtl5k"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="8_ntxtd"]
 
-[node name="Basketball" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_g1xxa"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_xtr8k")
+}],
+"loop": true,
+"name": &"basketball",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_au3ye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5akjf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_jykg0")
+}],
+"loop": true,
+"name": &"dribble",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_xtr8k"]
+data = {
+"data": PackedByteArray("EgoIABIKCAASCgj/EgoI/xIKCP8SCgj/EgoIABIKCAASCggAEgoI/45ZJf/PVg7/z1YO/45ZJf8SCgj/EgoIABIKCP+OWSX/z1YO//BsHv/wbB7/z1YO/45ZJf8SCgj/EgoI/89WDv/PVg7/8Gwe//BsHv/PVg7/z1YO/xIKCP8SCgj/jlkl/89WDv/PVg7/z1YO/89WDv+OWSX/EgoI/xIKCP9jLx3/jlkl/89WDv/PVg7/jlkl/2MvHf8SCgj/EgoIABIKCP9jLx3/Yy8d/2MvHf9jLx3/EgoI/xIKCAASCggAEgoIABIKCP8SCgj/EgoI/xIKCP8SCggAEgoIAA=="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Resource" id="Resource_au3ye"]
+script = ExtResource("8_ntxtd")
+origin = Vector2(4, 4)
+containing_box = Rect2(0, 0, 8, 8)
+precise = true
+images = Array[Image]([SubResource("Image_xtr8k")])
+
+[sub_resource type="Image" id="Image_5akjf"]
+data = {
+"data": PackedByteArray("EgoIABIKCAASCgj/EgoI/xIKCP8SCgj/EgoIABIKCAASCggAEgoI/45ZJf/PVg7/z1YO/45ZJf8SCgj/EgoIABIKCP+OWSX/z1YO//BsHv/wbB7/z1YO/45ZJf8SCgj/EgoI/89WDv/PVg7/8Gwe//BsHv/PVg7/z1YO/xIKCP8SCgj/jlkl/89WDv/PVg7/z1YO/89WDv+OWSX/EgoI/xIKCP9jLx3/jlkl/89WDv/PVg7/jlkl/2MvHf8SCgj/EgoIABIKCP9jLx3/Yy8d/2MvHf9jLx3/EgoI/xIKCAASCggAEgoIABIKCP8SCgj/EgoI/xIKCP8SCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAA="),
+"format": "RGBA8",
+"height": 10,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Image" id="Image_jykg0"]
+data = {
+"data": PackedByteArray("EgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoI/xIKCP8SCgj/EgoI/xIKCAASCggAEgoIABIKCP+OWSX/z1YO/89WDv+OWSX/EgoI/xIKCAASCgj/jlkl/89WDv/wbB7/8Gwe/89WDv+OWSX/EgoI/xIKCP/PVg7/z1YO//BsHv/wbB7/z1YO/89WDv8SCgj/EgoI/45ZJf/PVg7/z1YO/89WDv/PVg7/jlkl/xIKCP8SCgj/Yy8d/45ZJf/PVg7/z1YO/45ZJf9jLx3/EgoI/xIKCAASCgj/Yy8d/2MvHf9jLx3/Yy8d/xIKCP8SCggAEgoIABIKCAASCgj/EgoI/xIKCP8SCgj/EgoIABIKCAA="),
+"format": "RGBA8",
+"height": 10,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Image" id="Image_rtl5k"]
+data = {
+"data": PackedByteArray("EgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCgj/EgoI/xIKCP8SCgj/EgoIABIKCAASCggAEgoI/45ZJf/PVg7/z1YO/45ZJf8SCgj/EgoIABIKCP+OWSX/z1YO//BsHv/wbB7/z1YO/45ZJf8SCgj/EgoI/89WDv/PVg7/8Gwe//BsHv/PVg7/z1YO/xIKCP8SCgj/jlkl/89WDv/PVg7/z1YO/89WDv+OWSX/EgoI/xIKCP9jLx3/jlkl/89WDv/PVg7/jlkl/2MvHf8SCgj/EgoIAGMvHQBjLx3/Yy8d/2MvHf9jLx3/Yy8dABIKCAA="),
+"format": "RGBA8",
+"height": 10,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Resource" id="Resource_ntxtd"]
+script = ExtResource("8_ntxtd")
+origin = Vector2(4, 4)
+containing_box = Rect2(0, 0, 8, 10)
+precise = true
+images = Array[Image]([SubResource("Image_5akjf"), SubResource("Image_jykg0"), SubResource("Image_rtl5k")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_td78n"]
+size = Vector2(8, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8mldx"]
+size = Vector2(16, 16)
+
+[node name="Basketball" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -100
 script = ExtResource("1_m0j18")
+animated_sprite_node = NodePath("Sprite")
 object_name = "basketball"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_g1xxa")]
+sprite_frames = SubResource("SpriteFrames_g1xxa")
+autoplay = "basketball"
+centered = false
+offset = Vector2(-4, -4)
+script = ExtResource("7_rtl5k")
+sprite_info = Dictionary[StringName, ExtResource("8_ntxtd")]({
+&"basketball": SubResource("Resource_au3ye"),
+&"dribble": SubResource("Resource_ntxtd")
+})
+default_animation = &"basketball"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_td78n")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+shape = SubResource("RectangleShape2D_8mldx")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

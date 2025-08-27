@@ -1,7 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://daq81j02kna0b"]
+[gd_scene load_steps=5 format=3 uid="uid://daq81j02kna0b"]
 
 [ext_resource type="Script" uid="uid://vpvvhqdu3owd" path="res://objects/basis/backdrop/backdrop.gd" id="1_nj7mi"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_dj82h"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="3_bo786"]
 
-[node name="Backdrop" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_dj82h"]
+resource_local_to_scene = true
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[node name="Backdrop" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_nj7mi")
+animated_sprite_node = NodePath("Sprite")
 object_name = "backdrop"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_dj82h")]
+sprite_frames = SubResource("SpriteFrames_dj82h")
+centered = false
+script = ExtResource("3_bo786")
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

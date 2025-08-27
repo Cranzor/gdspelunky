@@ -1,7 +1,98 @@
-[gd_scene load_steps=2 format=3 uid="uid://bpib0or50oftd"]
+[gd_scene load_steps=14 format=4 uid="uid://bpib0or50oftd"]
 
 [ext_resource type="Script" uid="uid://ckwsseq6a53if" path="res://objects/other/intro/desert_top/desert_top.gd" id="1_kvkr4"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_nhpiy"]
+[ext_resource type="Texture2D" uid="uid://dit340p5nft6o" path="res://sprites/other/intro/desert_top/desert_top_0.png" id="3_oq41h"]
+[ext_resource type="Texture2D" uid="uid://cy5rk2bsfh0mk" path="res://sprites/other/intro/desert_top_night/desert_top_night_0.png" id="4_r6pkh"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="5_7mo73"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="6_bwf10"]
 
-[node name="DesertTop" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_nhpiy"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_oq41h")
+}],
+"loop": true,
+"name": &"desert_top",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_r6pkh")
+}],
+"loop": true,
+"name": &"desert_top_night",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_oq41h"]
+data = {
+"data": PackedByteArray("AIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAA+9ViAPvVYgD71WIA+9ViAPvVYgD71WIA+9ViAPvVYgD71WIA+9ViAPvVYgAAgAAAAIAAAACAAAAAgAAAAIAAAPvVYgD71WIA+9ViAPvVYgD71WIA+9ViAPvVYgD71WIA+9ViAPvVYgD71WIA+9ViAPvVYgD71WIA+9ViAACAAAD71WIA+9ViAPvVYgD71WIA+9ViAPvVYgD71WIA+9ViAPvVYgD71WIA+9ViAPvVYgD71WIA+9ViAPvVYgD71WIA+9ViAPvVYgD71WIA+9ViAPvVYgD71WIA+9ViAPvVYgD71WIA+9ViAPvVYgD71WIA+9ViAPvVYgD71WIA+9ViAPvVYgD71WIA+9ViAPvVYgD71WL/+9Vi//vVYv/71WIA+9ViAPvVYgD71WIA+9ViAPvVYgD71WIA+9ViAPvVYgD71WIA+9ViAPvVYv/71WL/+9Vi//vVYv/71WL/+9Vi//vVYv/71WL/+9Vi//vVYgD71WIA+9ViAPvVYgD71WIA+9Vi//vVYv/71WL/+9Vi//vVYv/71WL/+9Vi//vVYv/71WL/+9Vi//vVYv/71WL/+9Vi//vVYv/71WL/+9Vi//vVYgD71WIA+9ViAPvVYgD71WIA+9ViAPvVYgD71WIA+9ViAPvVYgD71WIA+9ViAPvVYgD71WIA+9ViAPvVYgA="),
+"format": "RGBA8",
+"height": 17,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Resource" id="Resource_r6pkh"]
+script = ExtResource("6_bwf10")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 13, 16, 3)
+precise = true
+images = Array[Image]([SubResource("Image_oq41h")])
+
+[sub_resource type="Image" id="Image_7mo73"]
+data = {
+"data": PackedByteArray("AIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAACVCEAAlQhAAJUIQACVCEAAlQhAAJUIQACVCEAAlQhAAJUIQACVCEAAlQhAAAgAAAAIAAAACAAAAAgAAAAIAAAAlQhAAJUIQACVCEAAlQhAAJUIQACVCEAAlQhAAJUIQACVCEAAlQhAAJUIQACVCEAAlQhAAJUIQACVCEAACAAAAJUIQACVCEAAlQhAAJUIQACVCEAAlQhAAJUIQACVCEAAlQhAAJUIQACVCEAAlQhAAJUIQACVCEAAlQhAAJUIQACVCEAAlQhAAJUIQACVCEAAlQhAAJUIQACVCEAAlQhAAJUIQACVCEAAlQhAAJUIQACVCEAAlQhAAJUIQACVCEAAlQhAAJUIQACVCEAAlQhAAJUIT/CVCE/wlQhP8JUIQACVCEAAlQhAAJUIQACVCEAAlQhAAJUIQACVCEAAlQhAAJUIQACVCEAAlQhP8JUIT/CVCE/wlQhP8JUIT/CVCE/wlQhP8JUIT/CVCE/wlQhAAJUIQACVCEAAlQhAAJUIQACVCE/wlQhP8JUIT/CVCE/wlQhP8JUIT/CVCE/wlQhP8JUIT/CVCE/wlQhP8JUIT/CVCE/wlQhP8JUIT/CVCE/wlQhAAJUIQACVCEAAlQhAAJUIQACVCEAAlQhAAJUIQACVCEAAlQhAAJUIQACVCEAAlQhAAJUIQACVCEAAlQhAA="),
+"format": "RGBA8",
+"height": 17,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Resource" id="Resource_bwf10"]
+script = ExtResource("6_bwf10")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 13, 16, 3)
+precise = true
+images = Array[Image]([SubResource("Image_7mo73")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cgvwm"]
+size = Vector2(16, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0n020"]
+size = Vector2(32, 6)
+
+[node name="DesertTop" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -10
 script = ExtResource("1_kvkr4")
+animated_sprite_node = NodePath("Sprite")
 object_name = "desert_top"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_nhpiy")]
+sprite_frames = SubResource("SpriteFrames_nhpiy")
+autoplay = "desert_top"
+centered = false
+script = ExtResource("5_7mo73")
+sprite_info = Dictionary[StringName, ExtResource("6_bwf10")]({
+&"desert_top": SubResource("Resource_r6pkh"),
+&"desert_top_night": SubResource("Resource_bwf10")
+})
+default_animation = &"desert_top"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 14.5)
+shape = SubResource("RectangleShape2D_cgvwm")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 14.5)
+shape = SubResource("RectangleShape2D_0n020")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

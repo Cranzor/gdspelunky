@@ -1,7 +1,113 @@
-[gd_scene load_steps=2 format=3 uid="uid://yrv4vb3tbgls"]
+[gd_scene load_steps=18 format=3 uid="uid://yrv4vb3tbgls"]
 
 [ext_resource type="Script" uid="uid://chyko7e4rsxfj" path="res://objects/enemies/bat/bat.gd" id="1_0whhn"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_qgjsc"]
+[ext_resource type="Texture2D" uid="uid://umbefaecj007" path="res://sprites/enemies/bat_hang/bat_hang_0.png" id="3_e1y2w"]
+[ext_resource type="Texture2D" uid="uid://ceuvbylqdg71v" path="res://sprites/enemies/bat_left/bat_left_0.png" id="4_5dw2s"]
+[ext_resource type="Texture2D" uid="uid://do110h7mxmu1a" path="res://sprites/enemies/bat_left/bat_left_1.png" id="5_byrlv"]
+[ext_resource type="Texture2D" uid="uid://c0fgoil7juc5y" path="res://sprites/enemies/bat_left/bat_left_2.png" id="6_o5fl2"]
+[ext_resource type="Texture2D" uid="uid://ccvh8g8fckr6a" path="res://sprites/enemies/bat_right/bat_right_0.png" id="7_mtek4"]
+[ext_resource type="Texture2D" uid="uid://c3ef6ysnspx4j" path="res://sprites/enemies/bat_right/bat_right_1.png" id="8_vncre"]
+[ext_resource type="Texture2D" uid="uid://b2b5knjmdttxb" path="res://sprites/enemies/bat_right/bat_right_2.png" id="9_7l0py"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="10_s1qpf"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="11_qxqpp"]
 
-[node name="Bat" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_qgjsc"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_e1y2w")
+}],
+"loop": true,
+"name": &"bat_hang",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_5dw2s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_byrlv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_o5fl2")
+}],
+"loop": true,
+"name": &"bat_left",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_mtek4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_vncre")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_7l0py")
+}],
+"loop": true,
+"name": &"bat_right",
+"speed": 30.0
+}]
+
+[sub_resource type="Resource" id="Resource_e1y2w"]
+script = ExtResource("11_qxqpp")
+origin = Vector2(0, 0)
+containing_box = Rect2(3, 0, 11, 12)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_5dw2s"]
+script = ExtResource("11_qxqpp")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 3, 16, 11)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_byrlv"]
+script = ExtResource("11_qxqpp")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 3, 16, 11)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o5fl2"]
+size = Vector2(11, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mtek4"]
+size = Vector2(22, 24)
+
+[node name="Bat" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -40
 script = ExtResource("1_0whhn")
+animated_sprite_node = NodePath("Sprite")
 object_name = "bat"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_qgjsc")]
+sprite_frames = SubResource("SpriteFrames_qgjsc")
+autoplay = "bat_hang"
+centered = false
+script = ExtResource("10_s1qpf")
+sprite_info = Dictionary[StringName, ExtResource("11_qxqpp")]({
+&"bat_hang": SubResource("Resource_e1y2w"),
+&"bat_left": SubResource("Resource_5dw2s"),
+&"bat_right": SubResource("Resource_byrlv")
+})
+default_animation = &"bat_hang"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8.5, 6)
+shape = SubResource("RectangleShape2D_o5fl2")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8.5, 6)
+shape = SubResource("RectangleShape2D_mtek4")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

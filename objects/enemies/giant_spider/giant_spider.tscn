@@ -1,7 +1,215 @@
-[gd_scene load_steps=2 format=3 uid="uid://dd2mvsvwhym2e"]
+[gd_scene load_steps=39 format=3 uid="uid://dd2mvsvwhym2e"]
 
 [ext_resource type="Script" uid="uid://d3vjl7nu8yd1l" path="res://objects/enemies/giant_spider/giant_spider.gd" id="1_k3lwk"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_j427r"]
+[ext_resource type="Texture2D" uid="uid://cn7811hxck8vb" path="res://sprites/enemies/giant_spider/giant_spider/giant_spider_0.png" id="3_6neq7"]
+[ext_resource type="Texture2D" uid="uid://cwyg1alfblq5n" path="res://sprites/enemies/giant_spider/giant_spider/giant_spider_1.png" id="4_i0rxo"]
+[ext_resource type="Texture2D" uid="uid://dh8ru3i844ux2" path="res://sprites/enemies/giant_spider/giant_spider/giant_spider_2.png" id="5_4takm"]
+[ext_resource type="Texture2D" uid="uid://q04w7c217m0q" path="res://sprites/enemies/giant_spider/giant_spider/giant_spider_3.png" id="6_xorcv"]
+[ext_resource type="Texture2D" uid="uid://csgtjbs5kgoyj" path="res://sprites/enemies/giant_spider/giant_spider_crawl/giant_spider_crawl_0.png" id="7_0i0qf"]
+[ext_resource type="Texture2D" uid="uid://bgbvt7666hsyi" path="res://sprites/enemies/giant_spider/giant_spider_crawl/giant_spider_crawl_1.png" id="8_4fix4"]
+[ext_resource type="Texture2D" uid="uid://cdse3s5js3v2u" path="res://sprites/enemies/giant_spider/giant_spider_crawl/giant_spider_crawl_2.png" id="9_rwmx0"]
+[ext_resource type="Texture2D" uid="uid://dy3mwi6gup85j" path="res://sprites/enemies/giant_spider/giant_spider_crawl/giant_spider_crawl_3.png" id="10_snkpr"]
+[ext_resource type="Texture2D" uid="uid://1sc8c7frnnvo" path="res://sprites/enemies/giant_spider/giant_spider_flip/giant_spider_flip_0.png" id="11_6odol"]
+[ext_resource type="Texture2D" uid="uid://d4b7yu1x2ji60" path="res://sprites/enemies/giant_spider/giant_spider_flip/giant_spider_flip_1.png" id="12_3hokd"]
+[ext_resource type="Texture2D" uid="uid://drybnyp7dppny" path="res://sprites/enemies/giant_spider/giant_spider_flip/giant_spider_flip_2.png" id="13_chmeo"]
+[ext_resource type="Texture2D" uid="uid://c3di76gyjg4qm" path="res://sprites/enemies/giant_spider/giant_spider_flip/giant_spider_flip_3.png" id="14_7psqh"]
+[ext_resource type="Texture2D" uid="uid://bsd6af3xxh6d4" path="res://sprites/enemies/giant_spider/giant_spider_flip/giant_spider_flip_4.png" id="15_r3qo1"]
+[ext_resource type="Texture2D" uid="uid://bvfr16f33icvi" path="res://sprites/enemies/giant_spider/giant_spider_flip/giant_spider_flip_5.png" id="16_cyx0i"]
+[ext_resource type="Texture2D" uid="uid://dnuarsscdhfvy" path="res://sprites/enemies/giant_spider/giant_spider_flip/giant_spider_flip_6.png" id="17_vx4rm"]
+[ext_resource type="Texture2D" uid="uid://clbruahe0nbj1" path="res://sprites/enemies/giant_spider/giant_spider_flip/giant_spider_flip_7.png" id="18_wqpth"]
+[ext_resource type="Texture2D" uid="uid://bxh7rwy881stw" path="res://sprites/enemies/giant_spider/giant_spider_flip/giant_spider_flip_8.png" id="19_qtw1v"]
+[ext_resource type="Texture2D" uid="uid://bx1g3jnx5usoj" path="res://sprites/enemies/giant_spider/giant_spider_jump/giant_spider_jump_0.png" id="20_b0tfe"]
+[ext_resource type="Texture2D" uid="uid://dtjtyrukia2q1" path="res://sprites/enemies/giant_spider/giant_spider_squirt/giant_spider_squirt_0.png" id="21_1fbud"]
+[ext_resource type="Texture2D" uid="uid://bt33opms824rn" path="res://sprites/enemies/giant_spider/giant_spider_squirt/giant_spider_squirt_1.png" id="22_vvd6k"]
+[ext_resource type="Texture2D" uid="uid://dsonpjpwd37db" path="res://sprites/enemies/giant_spider/giant_spider_squirt/giant_spider_squirt_2.png" id="23_uevkp"]
+[ext_resource type="Texture2D" uid="uid://bhuobt1fqjagr" path="res://sprites/enemies/giant_spider/giant_spider_squirt/giant_spider_squirt_3.png" id="24_6a4b6"]
+[ext_resource type="Texture2D" uid="uid://cou17cegsmjya" path="res://sprites/enemies/giant_spider/giant_spider_squirt/giant_spider_squirt_4.png" id="25_77vfp"]
+[ext_resource type="Texture2D" uid="uid://ccwyfe6eupm8g" path="res://sprites/enemies/giant_spider/giant_spider_squirt/giant_spider_squirt_5.png" id="26_xoqw5"]
+[ext_resource type="Texture2D" uid="uid://byaxjgd6ih6tg" path="res://sprites/enemies/giant_spider/giant_spider_squirt/giant_spider_squirt_6.png" id="27_84pma"]
+[ext_resource type="Texture2D" uid="uid://ct7tpuuv07yan" path="res://sprites/enemies/giant_spider/giant_spider_squirt/giant_spider_squirt_7.png" id="28_me6hw"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="29_6g1l6"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="30_lmm11"]
 
-[node name="GiantSpider" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_j427r"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_6neq7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_i0rxo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_4takm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xorcv")
+}],
+"loop": true,
+"name": &"giant_spider",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_0i0qf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_4fix4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_rwmx0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_snkpr")
+}],
+"loop": true,
+"name": &"giant_spider_crawl",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_6odol")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_3hokd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_chmeo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_7psqh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_r3qo1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_cyx0i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_vx4rm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_wqpth")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_qtw1v")
+}],
+"loop": true,
+"name": &"giant_spider_flip",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_b0tfe")
+}],
+"loop": true,
+"name": &"giant_spider_jump",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_1fbud")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_vvd6k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_uevkp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_6a4b6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_77vfp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_xoqw5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_84pma")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_me6hw")
+}],
+"loop": true,
+"name": &"giant_spider_squirt",
+"speed": 30.0
+}]
+
+[sub_resource type="Resource" id="Resource_6neq7"]
+script = ExtResource("30_lmm11")
+origin = Vector2(0, 0)
+containing_box = Rect2(1, 0, 30, 32)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_i0rxo"]
+script = ExtResource("30_lmm11")
+origin = Vector2(0, 0)
+containing_box = Rect2(3, 12, 26, 20)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_4takm"]
+script = ExtResource("30_lmm11")
+origin = Vector2(0, 0)
+containing_box = Rect2(1, 17, 30, 15)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_xorcv"]
+script = ExtResource("30_lmm11")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 16, 32, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_0i0qf"]
+script = ExtResource("30_lmm11")
+origin = Vector2(0, 0)
+containing_box = Rect2(1, 8, 30, 24)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4fix4"]
+size = Vector2(30, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rwmx0"]
+size = Vector2(60, 64)
+
+[node name="GiantSpider" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -40
 script = ExtResource("1_k3lwk")
+animated_sprite_node = NodePath("Sprite")
 object_name = "giant_spider"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_j427r")]
+sprite_frames = SubResource("SpriteFrames_j427r")
+autoplay = "giant_spider_flip"
+centered = false
+script = ExtResource("29_6g1l6")
+sprite_info = Dictionary[StringName, ExtResource("30_lmm11")]({
+&"giant_spider": SubResource("Resource_4takm"),
+&"giant_spider_crawl": SubResource("Resource_xorcv"),
+&"giant_spider_flip": SubResource("Resource_6neq7"),
+&"giant_spider_jump": SubResource("Resource_i0rxo"),
+&"giant_spider_squirt": SubResource("Resource_0i0qf")
+})
+default_animation = &"giant_spider_flip"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_4fix4")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_rwmx0")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

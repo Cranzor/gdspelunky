@@ -1,7 +1,96 @@
-[gd_scene load_steps=2 format=3 uid="uid://reokdyrox133"]
+[gd_scene load_steps=16 format=3 uid="uid://reokdyrox133"]
 
 [ext_resource type="Script" uid="uid://cxeakbfwhbicp" path="res://objects/enemies/dead_fish/dead_fish.gd" id="1_aa6no"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_1ctkh"]
+[ext_resource type="Texture2D" uid="uid://dmg7a1hg2tuq" path="res://sprites/enemies/dead_fish_left/dead_fish_left_0.png" id="3_wnpau"]
+[ext_resource type="Texture2D" uid="uid://cfoak441qtyjd" path="res://sprites/enemies/dead_fish_left/dead_fish_left_1.png" id="4_u3nbi"]
+[ext_resource type="Texture2D" uid="uid://b414gxk5iwtxa" path="res://sprites/enemies/dead_fish_left/dead_fish_left_2.png" id="5_76qpu"]
+[ext_resource type="Texture2D" uid="uid://ba77rwayrvl02" path="res://sprites/enemies/dead_fish_right/dead_fish_right_0.png" id="6_wiwbq"]
+[ext_resource type="Texture2D" uid="uid://cfjwj53yw578n" path="res://sprites/enemies/dead_fish_right/dead_fish_right_1.png" id="7_20ptu"]
+[ext_resource type="Texture2D" uid="uid://tf1n2rlhve6y" path="res://sprites/enemies/dead_fish_right/dead_fish_right_2.png" id="8_m0bdf"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="9_qws2b"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="10_umo70"]
 
-[node name="DeadFish" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_1ctkh"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_wnpau")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_u3nbi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_76qpu")
+}],
+"loop": true,
+"name": &"dead_fish_left",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_wiwbq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_20ptu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_m0bdf")
+}],
+"loop": true,
+"name": &"dead_fish_right",
+"speed": 30.0
+}]
+
+[sub_resource type="Resource" id="Resource_wnpau"]
+script = ExtResource("10_umo70")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 1, 8, 6)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_u3nbi"]
+script = ExtResource("10_umo70")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 1, 8, 6)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_76qpu"]
+size = Vector2(8, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wiwbq"]
+size = Vector2(16, 12)
+
+[node name="DeadFish" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -40
 script = ExtResource("1_aa6no")
+animated_sprite_node = NodePath("Sprite")
 object_name = "dead_fish"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_1ctkh")]
+sprite_frames = SubResource("SpriteFrames_1ctkh")
+autoplay = "dead_fish_left"
+centered = false
+script = ExtResource("9_qws2b")
+sprite_info = Dictionary[StringName, ExtResource("10_umo70")]({
+&"dead_fish_left": SubResource("Resource_wnpau"),
+&"dead_fish_right": SubResource("Resource_u3nbi")
+})
+default_animation = &"dead_fish_left"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_76qpu")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_wiwbq")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

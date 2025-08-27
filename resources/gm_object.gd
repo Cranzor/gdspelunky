@@ -173,7 +173,7 @@ var image_xscale: float:
 			collision_shape.shape.set_size(new_size)
 			collision_shape.position = new_position
 			
-			var bounding_box = $BoundingBox
+			var bounding_box = $BoundingBoxArea
 			var bb_shape = bounding_box.get_child(0)
 			var bb_pos = bounding_box.position
 			var bb_size = bb_shape.shape.size
@@ -380,16 +380,22 @@ func handle_smooth_motion_values() -> void:
 
 #--------
 func object_setup() -> void:
+	if has_node("BoundingBoxArea"):
+		var bounding_box_area = $BoundingBoxArea
+		bounding_box_area.area_entered.connect(_bounding_box_entered)
+		bounding_box_area.area_exited.connect(_bounding_box_exited)
+	sprite_index_name = $Sprite.default_animation
+
 	var autoloads = ["globals", "screen", "music", "gamepad"]
 	disable_mode = CollisionObject2D.DISABLE_MODE_KEEP_ACTIVE
 	var object_database = object_database.object_database
 	var object_entry = object_database[object_name]
 	parent = object_entry["parent"]
-	collision_shape_setup()
+	#collision_shape_setup()
 	groups_setup(object_entry)
-	depth_setup(object_entry)
-	sprite_setup(object_entry)
-	bounding_box_setup()
+	#depth_setup(object_entry)
+	#sprite_setup(object_entry)
+	#bounding_box_setup()
 	#collision_layers_setup()
 	##collision_setup()
 	alarms_setup(object_entry)
@@ -402,7 +408,7 @@ func object_setup() -> void:
 	
 	
 	
-	move_child($CollisionShape2D, -1)
+	#move_child($CollisionShape2D, -1)
 	if object_name in autoloads:
 		run_create_function(self)
 	

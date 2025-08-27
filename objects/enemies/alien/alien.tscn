@@ -1,7 +1,75 @@
-[gd_scene load_steps=2 format=3 uid="uid://b2n6jbm6cxakc"]
+[gd_scene load_steps=13 format=3 uid="uid://b2n6jbm6cxakc"]
 
 [ext_resource type="Script" uid="uid://dts5owjmlnklh" path="res://objects/enemies/alien/alien.gd" id="1_xcha5"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_pqbk7"]
+[ext_resource type="Texture2D" uid="uid://gvr1l08f5r8c" path="res://sprites/enemies/alien/alien_0.png" id="3_rnfa7"]
+[ext_resource type="Texture2D" uid="uid://dypgbd536fo52" path="res://sprites/enemies/alien/alien_1.png" id="4_idpcw"]
+[ext_resource type="Texture2D" uid="uid://cl7w7f30xyici" path="res://sprites/enemies/alien/alien_2.png" id="5_e0ije"]
+[ext_resource type="Texture2D" uid="uid://cr8trvhcewtnv" path="res://sprites/enemies/alien/alien_3.png" id="6_l1fys"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="7_m21ab"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="8_7tl33"]
 
-[node name="Alien" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_pqbk7"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_rnfa7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_idpcw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_e0ije")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_l1fys")
+}],
+"loop": true,
+"name": &"alien",
+"speed": 30.0
+}]
+
+[sub_resource type="Resource" id="Resource_rnfa7"]
+script = ExtResource("8_7tl33")
+origin = Vector2(0, 0)
+containing_box = Rect2(1, 5, 14, 11)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_idpcw"]
+size = Vector2(14, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e0ije"]
+size = Vector2(28, 22)
+
+[node name="Alien" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -60
 script = ExtResource("1_xcha5")
+animated_sprite_node = NodePath("Sprite")
 object_name = "alien"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_pqbk7")]
+sprite_frames = SubResource("SpriteFrames_pqbk7")
+autoplay = "alien"
+centered = false
+script = ExtResource("7_m21ab")
+sprite_info = Dictionary[StringName, ExtResource("8_7tl33")]({
+&"alien": SubResource("Resource_rnfa7")
+})
+default_animation = &"alien"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 10.5)
+shape = SubResource("RectangleShape2D_idpcw")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 10.5)
+shape = SubResource("RectangleShape2D_e0ije")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

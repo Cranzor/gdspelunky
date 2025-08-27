@@ -1,7 +1,265 @@
-[gd_scene load_steps=2 format=3 uid="uid://denhr2g78tcs7"]
+[gd_scene load_steps=54 format=3 uid="uid://denhr2g78tcs7"]
 
 [ext_resource type="Script" uid="uid://cfth6mr4ha4js" path="res://objects/other/p_dummy5/p_dummy5.gd" id="1_kd475"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_54e2k"]
+[ext_resource type="Texture2D" uid="uid://ci2hdv6q2u7qr" path="res://sprites/character/main dude/climb_up2/climb_up2_0.png" id="3_63agc"]
+[ext_resource type="Texture2D" uid="uid://4e2hrpvecvrv" path="res://sprites/character/main dude/climb_up2/climb_up2_1.png" id="4_e4wh4"]
+[ext_resource type="Texture2D" uid="uid://b38hi0m5mxp2w" path="res://sprites/character/main dude/climb_up2/climb_up2_10.png" id="5_cm1fm"]
+[ext_resource type="Texture2D" uid="uid://12xptpst2s2u" path="res://sprites/character/main dude/climb_up2/climb_up2_11.png" id="6_s46ou"]
+[ext_resource type="Texture2D" uid="uid://n4hksrj1tqts" path="res://sprites/character/main dude/climb_up2/climb_up2_2.png" id="7_n67vn"]
+[ext_resource type="Texture2D" uid="uid://4ygj2teqyqtm" path="res://sprites/character/main dude/climb_up2/climb_up2_3.png" id="8_6ggut"]
+[ext_resource type="Texture2D" uid="uid://0p6oj8afkul5" path="res://sprites/character/main dude/climb_up2/climb_up2_4.png" id="9_yi0a4"]
+[ext_resource type="Texture2D" uid="uid://dgcph50ya745u" path="res://sprites/character/main dude/climb_up2/climb_up2_5.png" id="10_mog8e"]
+[ext_resource type="Texture2D" uid="uid://b5givwg312aoo" path="res://sprites/character/main dude/climb_up2/climb_up2_6.png" id="11_ynk6g"]
+[ext_resource type="Texture2D" uid="uid://bid1k0nei0tk7" path="res://sprites/character/main dude/climb_up2/climb_up2_7.png" id="12_xo22j"]
+[ext_resource type="Texture2D" uid="uid://4us5wt6k3td8" path="res://sprites/character/main dude/climb_up2/climb_up2_8.png" id="13_eo8am"]
+[ext_resource type="Texture2D" uid="uid://dbsko08jicgvh" path="res://sprites/character/main dude/climb_up2/climb_up2_9.png" id="14_ky8ue"]
+[ext_resource type="Texture2D" uid="uid://buo86dw4x58ka" path="res://sprites/character/damsel/damsel_climb2/damsel_climb2_0.png" id="15_yfmru"]
+[ext_resource type="Texture2D" uid="uid://cplurji7lcjgw" path="res://sprites/character/damsel/damsel_climb2/damsel_climb2_1.png" id="16_m0tje"]
+[ext_resource type="Texture2D" uid="uid://c4qey8tshnx2h" path="res://sprites/character/damsel/damsel_climb2/damsel_climb2_10.png" id="17_vehbg"]
+[ext_resource type="Texture2D" uid="uid://byxoxk0krh26f" path="res://sprites/character/damsel/damsel_climb2/damsel_climb2_11.png" id="18_b0siv"]
+[ext_resource type="Texture2D" uid="uid://dg01c3j8v6nq2" path="res://sprites/character/damsel/damsel_climb2/damsel_climb2_2.png" id="19_m8flm"]
+[ext_resource type="Texture2D" uid="uid://rynit1gpyu5o" path="res://sprites/character/damsel/damsel_climb2/damsel_climb2_3.png" id="20_motjl"]
+[ext_resource type="Texture2D" uid="uid://ct6josbxdfl2i" path="res://sprites/character/damsel/damsel_climb2/damsel_climb2_4.png" id="21_s7una"]
+[ext_resource type="Texture2D" uid="uid://pflvglr2ekhg" path="res://sprites/character/damsel/damsel_climb2/damsel_climb2_5.png" id="22_pedo0"]
+[ext_resource type="Texture2D" uid="uid://igwwmsmsmduc" path="res://sprites/character/damsel/damsel_climb2/damsel_climb2_6.png" id="23_afj5b"]
+[ext_resource type="Texture2D" uid="uid://bstkdh6o4sgg" path="res://sprites/character/damsel/damsel_climb2/damsel_climb2_7.png" id="24_x5omn"]
+[ext_resource type="Texture2D" uid="uid://c2cpscylnv7mr" path="res://sprites/character/damsel/damsel_climb2/damsel_climb2_8.png" id="25_83fxp"]
+[ext_resource type="Texture2D" uid="uid://dwxibdd0t0lqq" path="res://sprites/character/damsel/damsel_climb2/damsel_climb2_9.png" id="26_ja54a"]
+[ext_resource type="Texture2D" uid="uid://c1sjye38k7j1o" path="res://sprites/character/main dude/run_left/run_left_0.png" id="27_qo4hf"]
+[ext_resource type="Texture2D" uid="uid://6upedmxmqrnl" path="res://sprites/character/main dude/run_left/run_left_1.png" id="28_n43wl"]
+[ext_resource type="Texture2D" uid="uid://d04goe7k0jvmn" path="res://sprites/character/main dude/run_left/run_left_2.png" id="29_0m5cn"]
+[ext_resource type="Texture2D" uid="uid://cr6p0f6tnk3h6" path="res://sprites/character/main dude/run_left/run_left_3.png" id="30_l18ho"]
+[ext_resource type="Texture2D" uid="uid://d1n0ivu5r1sr4" path="res://sprites/character/main dude/run_left/run_left_4.png" id="31_5xa6x"]
+[ext_resource type="Texture2D" uid="uid://b00w6nbl4fc6" path="res://sprites/character/main dude/run_left/run_left_5.png" id="32_5e42x"]
+[ext_resource type="Texture2D" uid="uid://bgg2ctpf4f2vt" path="res://sprites/character/tunnel man/tunnel_climb2/tunnel_climb2_0.png" id="33_wahoe"]
+[ext_resource type="Texture2D" uid="uid://dms8cjrqhq12s" path="res://sprites/character/tunnel man/tunnel_climb2/tunnel_climb2_1.png" id="34_4nbtj"]
+[ext_resource type="Texture2D" uid="uid://mc01xpmkyksc" path="res://sprites/character/tunnel man/tunnel_climb2/tunnel_climb2_10.png" id="35_f0w3h"]
+[ext_resource type="Texture2D" uid="uid://wkvtx8gc6ee3" path="res://sprites/character/tunnel man/tunnel_climb2/tunnel_climb2_11.png" id="36_0k1ky"]
+[ext_resource type="Texture2D" uid="uid://btofaasy10nua" path="res://sprites/character/tunnel man/tunnel_climb2/tunnel_climb2_2.png" id="37_dodfh"]
+[ext_resource type="Texture2D" uid="uid://dwb2a6hwyc6ut" path="res://sprites/character/tunnel man/tunnel_climb2/tunnel_climb2_3.png" id="38_8ypgu"]
+[ext_resource type="Texture2D" uid="uid://ofjpfxfcblts" path="res://sprites/character/tunnel man/tunnel_climb2/tunnel_climb2_4.png" id="39_rfbxf"]
+[ext_resource type="Texture2D" uid="uid://k0adw4sgu2x7" path="res://sprites/character/tunnel man/tunnel_climb2/tunnel_climb2_5.png" id="40_3h8ru"]
+[ext_resource type="Texture2D" uid="uid://bi8ucxyjddft3" path="res://sprites/character/tunnel man/tunnel_climb2/tunnel_climb2_6.png" id="41_ltk0c"]
+[ext_resource type="Texture2D" uid="uid://g61x4m8ljgxm" path="res://sprites/character/tunnel man/tunnel_climb2/tunnel_climb2_7.png" id="42_ben2b"]
+[ext_resource type="Texture2D" uid="uid://dy0udi8jhxfy4" path="res://sprites/character/tunnel man/tunnel_climb2/tunnel_climb2_8.png" id="43_u4af0"]
+[ext_resource type="Texture2D" uid="uid://batf7dffo56d0" path="res://sprites/character/tunnel man/tunnel_climb2/tunnel_climb2_9.png" id="44_uurme"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="45_vni6j"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="46_nksws"]
 
-[node name="PDummy5" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_54e2k"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_63agc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_e4wh4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_cm1fm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_s46ou")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_n67vn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6ggut")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_yi0a4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_mog8e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ynk6g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_xo22j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_eo8am")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_ky8ue")
+}],
+"loop": true,
+"name": &"climb_up2",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_yfmru")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_m0tje")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_vehbg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_b0siv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_m8flm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_motjl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_s7una")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_pedo0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_afj5b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_x5omn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_83fxp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_ja54a")
+}],
+"loop": true,
+"name": &"damsel_climb2",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_qo4hf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_n43wl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_0m5cn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_l18ho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_5xa6x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_5e42x")
+}],
+"loop": true,
+"name": &"run_left",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_wahoe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_4nbtj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_f0w3h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_0k1ky")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_dodfh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_8ypgu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_rfbxf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_3h8ru")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_ltk0c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_ben2b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_u4af0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_uurme")
+}],
+"loop": true,
+"name": &"tunnel_climb2",
+"speed": 30.0
+}]
+
+[sub_resource type="Resource" id="Resource_63agc"]
+script = ExtResource("46_nksws")
+origin = Vector2(8, 8)
+containing_box = Rect2(1, 0, 14, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_e4wh4"]
+script = ExtResource("46_nksws")
+origin = Vector2(8, 16)
+containing_box = Rect2(0, 5, 16, 19)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_cm1fm"]
+script = ExtResource("46_nksws")
+origin = Vector2(8, 16)
+containing_box = Rect2(0, 5, 16, 19)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_s46ou"]
+script = ExtResource("46_nksws")
+origin = Vector2(8, 16)
+containing_box = Rect2(0, 6, 16, 18)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n67vn"]
+size = Vector2(14, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ggut"]
+size = Vector2(28, 32)
+
+[node name="PDummy5" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -50
 script = ExtResource("1_kd475")
+animated_sprite_node = NodePath("Sprite")
 object_name = "p_dummy5"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_54e2k")]
+sprite_frames = SubResource("SpriteFrames_54e2k")
+autoplay = "run_left"
+centered = false
+offset = Vector2(-8, -8)
+script = ExtResource("45_vni6j")
+sprite_info = Dictionary[StringName, ExtResource("46_nksws")]({
+&"climb_up2": SubResource("Resource_s46ou"),
+&"damsel_climb2": SubResource("Resource_e4wh4"),
+&"run_left": SubResource("Resource_63agc"),
+&"tunnel_climb2": SubResource("Resource_cm1fm")
+})
+default_animation = &"run_left"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_n67vn")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+shape = SubResource("RectangleShape2D_6ggut")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

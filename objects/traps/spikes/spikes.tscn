@@ -1,7 +1,80 @@
-[gd_scene load_steps=2 format=3 uid="uid://w2gkce1rgclo"]
+[gd_scene load_steps=12 format=3 uid="uid://w2gkce1rgclo"]
 
 [ext_resource type="Script" uid="uid://bf1j8y3lu8fak" path="res://objects/traps/spikes/spikes.gd" id="1_mf52a"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_v6ity"]
+[ext_resource type="Texture2D" uid="uid://dy3gcbuvs80ek" path="res://sprites/traps/spikes/spikes_0.png" id="3_07kok"]
+[ext_resource type="Texture2D" uid="uid://cb2y2bn7ochwq" path="res://sprites/traps/spikes_blood/spikes_blood_0.png" id="4_xv1xe"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="5_xxmtd"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="6_hy60h"]
 
-[node name="Spikes" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_v6ity"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_07kok")
+}],
+"loop": true,
+"name": &"spikes",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_xv1xe")
+}],
+"loop": true,
+"name": &"spikes_blood",
+"speed": 30.0
+}]
+
+[sub_resource type="Resource" id="Resource_07kok"]
+script = ExtResource("6_hy60h")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 3, 16, 13)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_xv1xe"]
+script = ExtResource("6_hy60h")
+origin = Vector2(0, 0)
+containing_box = Rect2(0, 4, 16, 12)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xxmtd"]
+size = Vector2(16, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hy60h"]
+size = Vector2(32, 26)
+
+[node name="Spikes" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -120
 script = ExtResource("1_mf52a")
+animated_sprite_node = NodePath("Sprite")
 object_name = "spikes"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_v6ity")]
+sprite_frames = SubResource("SpriteFrames_v6ity")
+autoplay = "spikes"
+centered = false
+script = ExtResource("5_xxmtd")
+sprite_info = Dictionary[StringName, ExtResource("6_hy60h")]({
+&"spikes": SubResource("Resource_07kok"),
+&"spikes_blood": SubResource("Resource_xv1xe")
+})
+default_animation = &"spikes"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 9.5)
+shape = SubResource("RectangleShape2D_xxmtd")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 9.5)
+shape = SubResource("RectangleShape2D_hy60h")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

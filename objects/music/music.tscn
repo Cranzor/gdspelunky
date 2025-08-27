@@ -1,9 +1,29 @@
-[gd_scene load_steps=2 format=3 uid="uid://q56gv78d73dc"]
+[gd_scene load_steps=5 format=3 uid="uid://q56gv78d73dc"]
 
 [ext_resource type="Script" uid="uid://rqb7dvwsiipy" path="res://objects/music/music.gd" id="1_0gvbg"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_rdork"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="3_gm83b"]
 
-[node name="Music" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_rdork"]
+resource_local_to_scene = true
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[node name="Music" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+visible = false
 script = ExtResource("1_0gvbg")
+animated_sprite_node = NodePath("Sprite")
 object_name = "music"
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_rdork")]
+sprite_frames = SubResource("SpriteFrames_rdork")
+centered = false
+script = ExtResource("3_gm83b")
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

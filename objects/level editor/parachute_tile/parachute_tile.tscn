@@ -1,7 +1,72 @@
-[gd_scene load_steps=2 format=3 uid="uid://6juwqld6dlpx"]
+[gd_scene load_steps=11 format=4 uid="uid://6juwqld6dlpx"]
 
 [ext_resource type="Script" uid="uid://dki0ftw4cso5g" path="res://objects/level editor/parachute_tile/parachute_tile.gd" id="1_tifyd"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_m27ic"]
+[ext_resource type="Texture2D" uid="uid://gp8h47kpr4vf" path="res://sprites/level editor/parachute_tile/parachute_tile_0.png" id="3_hfii4"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_5whbh"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_jfoko"]
 
-[node name="ParachuteTile" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_m27ic"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_hfii4")
+}],
+"loop": true,
+"name": &"parachute_tile",
+"speed": 30.0
+}]
+
+[sub_resource type="Image" id="Image_hfii4"]
+data = {
+"data": PackedByteArray("LBYTACwWEwAsFhMALBYTACwWEwAsFhMALBYTACwWEwAsFhMALBYTACwWEwAsFhMALBYTACwWEwAsFhMALBYTACwWEwAsFhMALBYTACwWEwAsFhMALBYTACwWEwAsFhMALBYTACwWEwAsFhMALBYTACwWEwAsFhMALBYTACwWEwAsFhMALBYTACwWEwAsFhMALBYTACwWEwAsFhMALBYTACwWEwAsFhMALBYTACwWEwAsFhMALBYTACwWEwAsFhMALBYTACwWEwAsFhMALBYTACwWEwAsFhMALBYTACwWEwAsFhMALBYTACwWEwAsFhMALBYTACwWEwAsFhMALBYTACwWEwAsFhMALBYTACwWEwAsFhP/LBYT/ywWE/8sFhP/LBYT/ywWE/8sFhP/LBYT/ywWE/8sFhMALBYTACwWEwAsFhMALBYTACwWEwAsFhP/e19E/+TAcv/kwHL/5MBy/1A9Kf/kwHL/5MBy/+TAcv97X0T/LBYT/ywWEwAsFhMALBYTACwWEwAsFhP/e19E/+TAcv/kwHL/t4dc/7eHXP/kwHL/t4dc/7eHXP/kwHL/5MBy/3tfRP8sFhP/LBYTACwWEwAsFhMALBYT/7eHXP+3h1z/t4dc/7eHXP+3h1z//////7eHXP+3h1z/t4dc/7eHXP+3h1z/LBYT/ywWEwAsFhMALBYTACwWE/97X0T/t4dc/7eHXP+3h1z/t4dc//////+3h1z/t4dc/7eHXP+3h1z/e19E/ywWE/8sFhMALBYTACwWEwAsFhP/UD0p/3tfRP97X0T/e19E/45ZJf//////jlkl/3tfRP97X0T/e19E/1A9Kf8sFhP/LBYTACwWEwAsFhMALBYT/+TAcv/////////////////////////////////////////////////kwHL/LBYT/ywWEwAsFhMALBYTACwWE/97X0T/t4dc/7eHXP+3h1z/e19E//////97X0T/t4dc/7eHXP+3h1z/e19E/ywWE/8sFhMALBYTACwWEwAsFhP/t4dc/7eHXP+3h1z/t4dc/7eHXP//////t4dc/7eHXP+3h1z/t4dc/7eHXP8sFhP/LBYTACwWEwAsFhMALBYT/3tfRP+3h1z/t4dc/7eHXP+3h1z//////7eHXP+3h1z/t4dc/7eHXP97X0T/LBYT/ywWEwAsFhMALBYTACwWE/9QPSn/e19E/3tfRP97X0T/jlkl/8DAwP+OWSX/e19E/3tfRP97X0T/UD0p/ywWE/8sFhMALBYTACwWEwAsFhMALBYT/1A9Kf9QPSn/UD0p/1A9Kf8sFhP/UD0p/1A9Kf9QPSn/UD0p/ywWE/8sFhMALBYTAA=="),
+"format": "RGBA8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Resource" id="Resource_5whbh"]
+script = ExtResource("5_jfoko")
+origin = Vector2(0, 0)
+containing_box = Rect2(2, 4, 13, 12)
+precise = true
+images = Array[Image]([SubResource("Image_hfii4")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jfoko"]
+size = Vector2(13, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sh8f0"]
+size = Vector2(26, 24)
+
+[node name="ParachuteTile" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -100
 script = ExtResource("1_tifyd")
+animated_sprite_node = NodePath("Sprite")
 object_name = "parachute_tile"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_m27ic")]
+sprite_frames = SubResource("SpriteFrames_m27ic")
+autoplay = "parachute_tile"
+centered = false
+script = ExtResource("4_5whbh")
+sprite_info = Dictionary[StringName, ExtResource("5_jfoko")]({
+&"parachute_tile": SubResource("Resource_5whbh")
+})
+default_animation = &"parachute_tile"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8.5, 10)
+shape = SubResource("RectangleShape2D_jfoko")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8.5, 10)
+shape = SubResource("RectangleShape2D_sh8f0")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

@@ -1,7 +1,75 @@
-[gd_scene load_steps=2 format=3 uid="uid://b5xpgdguryfor"]
+[gd_scene load_steps=13 format=3 uid="uid://b5xpgdguryfor"]
 
 [ext_resource type="Script" uid="uid://cjte3k20hv17s" path="res://objects/blocks/lamp_red/lamp_red.gd" id="1_syoc5"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_k3rit"]
+[ext_resource type="Texture2D" uid="uid://drg4jsdmb2w6s" path="res://sprites/blocks/shop/lamp_red/lamp_red_0.png" id="3_1htjt"]
+[ext_resource type="Texture2D" uid="uid://dqm44c1wi6ox4" path="res://sprites/blocks/shop/lamp_red/lamp_red_1.png" id="4_1wdy2"]
+[ext_resource type="Texture2D" uid="uid://ee7ob71iaj3j" path="res://sprites/blocks/shop/lamp_red/lamp_red_2.png" id="5_dnj6u"]
+[ext_resource type="Texture2D" uid="uid://bjcxjqu08yi2c" path="res://sprites/blocks/shop/lamp_red/lamp_red_lamp_red.png" id="6_g8sih"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="7_h8fkc"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="8_xddf3"]
 
-[node name="LampRed" type="StaticBody2D"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_k3rit"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_1htjt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1wdy2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_dnj6u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_g8sih")
+}],
+"loop": true,
+"name": &"lamp_red",
+"speed": 30.0
+}]
+
+[sub_resource type="Resource" id="Resource_1htjt"]
+script = ExtResource("8_xddf3")
+origin = Vector2(0, 0)
+containing_box = Rect2(1, 0, 14, 16)
+precise = false
+images = Array[Image]([])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1wdy2"]
+size = Vector2(14, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dnj6u"]
+size = Vector2(28, 32)
+
+[node name="LampRed" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+z_index = -201
 script = ExtResource("1_syoc5")
+animated_sprite_node = NodePath("Sprite")
 object_name = "lamp_red"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_k3rit")]
+sprite_frames = SubResource("SpriteFrames_k3rit")
+autoplay = "lamp_red"
+centered = false
+script = ExtResource("7_h8fkc")
+sprite_info = Dictionary[StringName, ExtResource("8_xddf3")]({
+&"lamp_red": SubResource("Resource_1htjt")
+})
+default_animation = &"lamp_red"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_1wdy2")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_dnj6u")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]
