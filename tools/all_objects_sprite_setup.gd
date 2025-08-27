@@ -2,6 +2,7 @@
 extends Node
 
 @export_tool_button("Generate Sprites For All Objects", "Callable") var run_action = objects_setup
+var object_database = ObjectDatabase.new()
 
 
 func objects_setup():
@@ -25,6 +26,7 @@ func object_setup(scene_file_path: String):
 	generate_all_sprites(loaded_object, sprite)
 	generate_containing_box(loaded_object)
 	groups_setup(loaded_object)
+	z_index_setup(loaded_object)
 	var scene = PackedScene.new()
 	var result = scene.pack(loaded_object)
 	if result == OK:
@@ -60,7 +62,6 @@ func generate_containing_box(loaded_object: GMObject):
 
 func groups_setup(loaded_object: GMObject): #--- TODO: add "alarms" group
 	var method_groups: Array[StringName] = ["draw", "animation_end", "step"]
-	var object_database: ObjectDatabase = ObjectDatabase.new()
 	var groups = object_database.object_database[loaded_object.object_name]["groups"]
 	loaded_object.add_to_group("gm_object", true)
 	for group in groups:
@@ -72,7 +73,14 @@ func groups_setup(loaded_object: GMObject): #--- TODO: add "alarms" group
 		loaded_object.remove_from_group("step_object")
 
 
-#--- TODO: z-index setup
+func z_index_setup(loaded_object: GMObject):
+	var depth = object_database.object_database[loaded_object.object_name]["depth"]
+	loaded_object.z_index = clampi(-depth, RenderingServer.CANVAS_ITEM_Z_MIN + 1, RenderingServer.CANVAS_ITEM_Z_MAX) #--- adding 1 to minimum to ensure background elements are always behind
+	if loaded_object.object_name == "screen": #--- default values are 0. putting these higher to ensure that they draw above everything else
+		loaded_object.z_index = 2
+	elif loaded_object.object_name == "game":
+		loaded_object.z_index = 1
+
 #--- TODO: alarms setup
 #--- TODO: collision_with setup
 #--- TODO: bounding box setup
@@ -84,6 +92,7 @@ func reset_object(scene_file_path: String):
 	loaded_object.animated_sprite_node = null
 	for group in loaded_object.get_groups():
 		loaded_object.remove_from_group(group)
+	loaded_object.z_index = 0
 	var scene = PackedScene.new()
 	var result = scene.pack(loaded_object)
 	if result == OK:
