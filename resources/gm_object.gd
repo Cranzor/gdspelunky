@@ -107,6 +107,7 @@ const ALARM = preload("res://scenes/alarm.tscn")
 @export var editor_setup_finished: bool = false
 
 @export var collision_with: Dictionary
+@export var collision_with2: Array[StringName]
 var other #--- this keyword appears to mistakenly be used in step events and not collision events. in this case, it should have no
 		  #--- reference and appears to act the same as passing in "self." it is set to self after run_collision_with for  this purpose
 
