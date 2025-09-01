@@ -15,5 +15,3 @@ animations = [{
 sprite_frames = SubResource("SpriteFrames_f4ket")
 centered = false
 script = ExtResource("1_wjvgk")
-
-[connection signal="animation_changed" from="." to="." method="_on_animation_changed"]

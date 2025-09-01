@@ -52,10 +52,15 @@ func generate_all_sprites(loaded_object: GMObject, sprite: AnimatedSprite2D):
 
 func generate_containing_box(loaded_object: GMObject):
 	var sprite = loaded_object.animated_sprite_node
-	var default_sprite_info = sprite.sprite_info[sprite.default_animation]
-	var collision_size: Vector2 = default_sprite_info.containing_box.size
-	var collision_position: Vector2 = collision_size / 2 + default_sprite_info.containing_box.position
-	collision_position -= default_sprite_info.origin
+	var collision_size: Vector2
+	var collision_position: Vector2
+	
+	if sprite.default_animation:
+		var default_sprite_info = sprite.sprite_info[sprite.default_animation]
+		collision_size = default_sprite_info.containing_box.size
+		collision_position = collision_size / 2 + default_sprite_info.containing_box.position
+		collision_position -= default_sprite_info.origin
+
 	var collision_shape = CollisionShape2D.new()
 	var rectangle_shape = RectangleShape2D.new()
 	collision_shape.shape = rectangle_shape

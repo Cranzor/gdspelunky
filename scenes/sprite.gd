@@ -7,31 +7,39 @@ extends AnimatedSprite2D
 
 var sprite_displayed
 var sprites = Sprites.new()
+var objects = ObjectDatabase.new()
+
+
+func _ready() -> void:
+	if !is_connected("animation_changed", _on_animation_changed):
+		animation_changed.connect(_on_animation_changed)
 
 
 func _on_animation_changed() -> void:
-	if get_parent() == null:
-		return
-	var sprite_entry = sprites.sprite_database[animation]
-	var shape = sprite_entry["mask"]["shape"]
-	if shape == "RECTANGLE":
-		var collision_size = sprite_entry["mask"]["collision_rectangles"][1]
-		var collision_position = collision_size / 2 + sprite_entry["mask"]["collision_rectangles"][0]
-		collision_position -= sprite_entry["origin"]
-		
-		var parent = get_parent()
-		if parent.get_node("CollisionShape2D"):
-			parent.get_node("CollisionShape2D").shape.size = collision_size
-			parent.get_node("CollisionShape2D").position = collision_position
-	else:
-		var collision_size = sprite_entry["mask"]["bounding_box"][1]
-		var collision_position = collision_size / 2 + sprite_entry["mask"]["bounding_box"][0]
-		collision_position -= sprite_entry["origin"]
-		
-		var parent = get_parent()
-		if parent.get_node("CollisionShape2D"):
-			parent.get_node("CollisionShape2D").shape.size = collision_size
-			parent.get_node("CollisionShape2D").position = collision_position
+	if !Engine.is_editor_hint():
+		if get_parent() == null:
+			return
+		show() #--- showing sprite in case it is hidden due to having no default animation
+		var sprite_entry = sprites.sprite_database[animation]
+		var shape = sprite_entry["mask"]["shape"]
+		if shape == "RECTANGLE":
+			var collision_size = sprite_entry["mask"]["collision_rectangles"][1]
+			var collision_position = collision_size / 2 + sprite_entry["mask"]["collision_rectangles"][0]
+			collision_position -= sprite_entry["origin"]
+			
+			var parent = get_parent()
+			if parent.get_node("CollisionShape2D"):
+				parent.get_node("CollisionShape2D").shape.size = collision_size
+				parent.get_node("CollisionShape2D").position = collision_position
+		else:
+			var collision_size = sprite_entry["mask"]["bounding_box"][1]
+			var collision_position = collision_size / 2 + sprite_entry["mask"]["bounding_box"][0]
+			collision_position -= sprite_entry["origin"]
+			
+			var parent = get_parent()
+			if parent.get_node("CollisionShape2D"):
+				parent.get_node("CollisionShape2D").shape.size = collision_size
+				parent.get_node("CollisionShape2D").position = collision_position
 
 
 func generate_sprites():
@@ -42,8 +50,12 @@ func generate_sprites():
 			var sprite_pngs: PackedStringArray = get_sprite_png_paths(sprite_folder)
 			add_new_animation(sprite, sprite_pngs)
 			add_sprite_info(sprite, sprite_pngs)
-	default_animation = all_sprites[0]
-	set_autoplay(default_animation) #--- object's default sprite plays
+	var object_sprite_value = objects.object_database[get_parent().object_name]["sprite"]
+	if object_sprite_value == null: #--- some objects, like "sprite" object, have no default animation but can display sprites. should hide them until they are ready
+		hide()
+	else:
+		default_animation = object_sprite_value
+		set_autoplay(default_animation) #--- object's default sprite plays
 	offset = -sprite_info[default_animation].origin
 
 
@@ -67,7 +79,6 @@ func get_sprite_folder(default_sprite: StringName) -> String:
 
 
 func get_sprite_png_paths(sprite_folder: String) -> Array[String]:
-	print(sprite_folder)
 	var file_search = load("res://tools/file_search.gd")
 	var file_search_instance = file_search.new()
 	var files: Array[String] = file_search_instance.get_files(sprite_folder, "png")
