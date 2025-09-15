@@ -86,7 +86,7 @@ func draw():
 		n = ceil(n / 2)
 		draw_text.draw_text(gml.view("xview")+n, gml.view("yview")+216, str(global.message))
 	
-		if (not InLevel.is_level()): gml.draw_set_color(gml.c_yellow) #--- was "InLevel.is_level("tutorial")" but this appears to be an error as is_level takes no argument
+		if (not InLevel.is_room("tutorial")): gml.draw_set_color(gml.c_yellow) #--- was "InLevel.is_level("tutorial")" but this appears to be an error as is_level takes no argument. changed it to match screen object script
 		str_len = gml.string_length(global.message2)*8
 		n = 320 - str_len
 		n = ceil(n / 2)

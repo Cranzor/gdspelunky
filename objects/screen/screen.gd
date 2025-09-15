@@ -379,25 +379,25 @@ func begin_step():
 				#gml.draw_surface("dark_surf", 0, 0)
 				#draw_set_blend_mode(bm_normal)
 			
-			gml.surface_set_target("screen")
-			MiscScripts.scr_draw_hud()
-			if (global.message_timer > 0):
-			
-				gml.draw_set_font(global.my_font_small)
-				gml.draw_set_color(gml.c_white)
-				var str_len = gml.string_length(global.message)*8
-				var n = 320 - str_len
-				n = ceil(n / 2)
-				draw_text.draw_text(n, 216, str(global.message), "global_message") #---TODO
-
-				var text_color = gml.c_white
-				if (not InLevel.is_room("tutorial")): gml.c_yellow
-				str_len = gml.string_length(global.message2)*8
-				n = 320 - str_len
-				n = ceil(n / 2)
-				draw_text.draw_text(n, 224, str(global.message2), "global_message2") #---TODO
-		
-				global.message_timer -= 1
+			#gml.surface_set_target("screen") #--- global message drawing moved to HUD scene
+			#MiscScripts.scr_draw_hud()
+			#if (global.message_timer > 0):
+			#
+				#gml.draw_set_font(global.my_font_small)
+				#gml.draw_set_color(gml.c_white)
+				#var str_len = gml.string_length(global.message)*8
+				#var n = 320 - str_len
+				#n = ceil(n / 2)
+				#draw_text.draw_text(n, 216, str(global.message), "global_message") #---TODO
+#
+				#var text_color = gml.c_white
+				#if (not InLevel.is_room("tutorial")): gml.c_yellow
+				#str_len = gml.string_length(global.message2)*8
+				#n = 320 - str_len
+				#n = ceil(n / 2)
+				#draw_text.draw_text(n, 224, str(global.message2), "global_message2") #---TODO
+		#
+				#global.message_timer -= 1
 			
 			#draw_set_blend_mode_ext(bm_src_color,bm_one)
 			#draw_set_color(c_black)

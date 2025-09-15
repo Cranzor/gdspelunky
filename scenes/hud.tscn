@@ -534,7 +534,9 @@ animation = &"compass_small_lr"
 centered = false
 script = ExtResource("65_gxo4v")
 
-[node name="DrawText" parent="InGame" instance=ExtResource("70_ep55p")]
+[node name="HUDText" parent="InGame" instance=ExtResource("70_ep55p")]
+
+[node name="GlobalMessage" parent="InGame" instance=ExtResource("70_ep55p")]
 
 [node name="PauseScreen" type="Node2D" parent="."]
 process_mode = 3

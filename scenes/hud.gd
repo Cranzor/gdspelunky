@@ -5,7 +5,8 @@ extends CanvasLayer
 @onready var pickup_item = $InGame/PickupItem
 @onready var item_icons = $InGame/ItemIcons
 @onready var compass_arrows = $InGame/CompassArrows
-@onready var draw_text = $InGame/DrawText
+@onready var hud_text = $InGame/HUDText
+@onready var global_message = $InGame/GlobalMessage
 @onready var in_game = $InGame
 @onready var pause_screen = $PauseScreen
 @onready var title_fade_in = $TitleFadeIn
@@ -33,6 +34,7 @@ func _physics_process(delta: float) -> void:
 	compass_arrows.hide()
 	draw_compass_arrow()
 	draw_hud_text()
+	draw_global_message_text()
 	
 
 func draw_compass_arrow() -> void:
@@ -64,15 +66,35 @@ func draw_hud_text(): #--- moving this from screen object as it's more appropria
 	var money_x = 176
 	var life = global.plife
 	if (life < 0): life = 0
-	draw_text.draw_text(life_x+16, 8, str(life), "life")
-	draw_text.draw_text(bomb_x+16, 8, str(global.bombs), "global_bombs")
-	draw_text.draw_text(rope_x+16, 8, str(global.rope), "global_rope")
-	draw_text.draw_text(money_x+16, 8, str(global.money), "global_money")
+	hud_text.draw_text(life_x+16, 8, str(life), "life")
+	hud_text.draw_text(bomb_x+16, 8, str(global.bombs), "global_bombs")
+	hud_text.draw_text(rope_x+16, 8, str(global.rope), "global_rope")
+	hud_text.draw_text(money_x+16, 8, str(global.money), "global_money")
 	
 	if (global.collect > 0):
 		gml.draw_set_font(global.my_font_small)
 		gml.draw_set_color(gml.c_yellow)
-		draw_text.draw_text(money_x, 8+16, "+" + str(global.collect), "global_collect")
+		hud_text.draw_text(money_x, 8+16, "+" + str(global.collect), "global_collect")
+
+
+func draw_global_message_text(): #--- moved from screen object
+	if (global.message_timer > 0):
+		gml.draw_set_font(global.my_font_small)
+		gml.draw_set_color(gml.c_white)
+		var str_len = gml.string_length(global.message)*8
+		var n = 320 - str_len
+		n = ceil(n / 2)
+		hud_text.draw_text(n, 216, str(global.message), "global_message")
+
+		var text_color = gml.c_white
+		if (not InLevel.is_room("tutorial")): gml.draw_set_color(gml.c_yellow)
+		str_len = gml.string_length(global.message2)*8
+		n = 320 - str_len
+		n = ceil(n / 2)
+		hud_text.draw_text(n, 224, str(global.message2), "global_message2")
+
+		global.message_timer -= 1
+
 
 func hide_all_but_title():
 	in_game.hide()
