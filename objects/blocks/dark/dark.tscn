@@ -1,11 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://fiv5q4nn2w03"]
+[gd_scene load_steps=15 format=3 uid="uid://fiv5q4nn2w03"]
 
 [ext_resource type="Script" uid="uid://bf5rjxmardth0" path="res://objects/blocks/dark/dark.gd" id="1_8sbew"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_uj35o"]
 [ext_resource type="Texture2D" uid="uid://dk7qncq1dyosr" path="res://sprites/blocks/dark/dark/dark_0.png" id="3_145kk"]
 [ext_resource type="Texture2D" uid="uid://cgqa3s5t7j11x" path="res://sprites/blocks/dark/dark_gold/dark_gold_0.png" id="4_2eoot"]
 [ext_resource type="Texture2D" uid="uid://jcsunmkelqha" path="res://sprites/blocks/dark/dark_gold_big/dark_gold_big_0.png" id="5_xq7hr"]
+[ext_resource type="PackedScene" uid="uid://oy6m7b600a1u" path="res://components/cave_top.tscn" id="7_145kk"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="7_gkc13"]
+[ext_resource type="Texture2D" uid="uid://bk8jqt0tc453q" path="res://backgrounds/bg_cave_top3.png" id="8_2eoot"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uj35o"]
 resource_local_to_scene = true
@@ -37,24 +39,15 @@ animations = [{
 
 [sub_resource type="Resource" id="Resource_145kk"]
 script = ExtResource("7_gkc13")
-origin = Vector2(0, 0)
 containing_box = Rect2(0, 0, 16, 16)
-precise = false
-images = Array[Image]([])
 
 [sub_resource type="Resource" id="Resource_2eoot"]
 script = ExtResource("7_gkc13")
-origin = Vector2(0, 0)
 containing_box = Rect2(0, 0, 16, 16)
-precise = false
-images = Array[Image]([])
 
 [sub_resource type="Resource" id="Resource_xq7hr"]
 script = ExtResource("7_gkc13")
-origin = Vector2(0, 0)
 containing_box = Rect2(0, 0, 16, 16)
-precise = false
-images = Array[Image]([])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_drgdd"]
 size = Vector2(16, 16)
@@ -91,3 +84,6 @@ collision_mask = 2
 position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_gkc13")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[node name="CaveTop" parent="." instance=ExtResource("7_145kk")]
+texture = ExtResource("8_2eoot")

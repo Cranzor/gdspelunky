@@ -236,7 +236,7 @@ func tile_add(background,left,top,width,height,x,y,depth) -> void: #return value
 		for j in range(0, size.x):
 			tile_map_layer.set_cell(Vector2i(x + j, y - 1), tile_id, Vector2i(coords.x + j, coords.y))
 
-func tile_layer_find(depth, x, y):
+func tile_layer_find(depth, x, y): #--- only currently used for xoc_block
 	var bg_elements: Node2D = get_tree().get_first_node_in_group("bg_elements")
 	var used_cells
 	for child: TileMapLayer in bg_elements.get_children():
@@ -253,7 +253,7 @@ func tile_layer_find(depth, x, y):
 	
 	return null
 
-func tile_delete(id) -> void: #--- id[0] is depth, id[1] is cell coords
+func tile_delete(id) -> void: #--- id[0] is depth, id[1] is cell coords. only currently used for xoc_block
 	var bg_elements: Node2D = get_tree().get_first_node_in_group("bg_elements")
 	for child: TileMapLayer in bg_elements.get_children():
 		if child.z_index == -id[0]:

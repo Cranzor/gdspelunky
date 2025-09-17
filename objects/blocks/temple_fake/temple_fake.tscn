@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://b3ird0fcn0nef"]
+[gd_scene load_steps=11 format=3 uid="uid://b3ird0fcn0nef"]
 
 [ext_resource type="Script" uid="uid://dlaawtal00ws1" path="res://objects/blocks/temple_fake/temple_fake.gd" id="1_p65r6"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_n4c1e"]
 [ext_resource type="Texture2D" uid="uid://drvw1otuoyei2" path="res://sprites/blocks/temple/temple/temple_0.png" id="3_umrj6"]
-[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_4cmxn"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_eilao"]
+[ext_resource type="PackedScene" uid="uid://oy6m7b600a1u" path="res://components/cave_top.tscn" id="5_umrj6"]
+[ext_resource type="Texture2D" uid="uid://coruvqw80pybl" path="res://backgrounds/bg_cave_top4.png" id="6_4cmxn"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n4c1e"]
 resource_local_to_scene = true
@@ -20,10 +21,7 @@ animations = [{
 
 [sub_resource type="Resource" id="Resource_umrj6"]
 script = ExtResource("5_eilao")
-origin = Vector2(0, 0)
 containing_box = Rect2(0, 0, 16, 16)
-precise = false
-images = Array[Image]([])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4cmxn"]
 size = Vector2(16, 16)
@@ -37,11 +35,9 @@ script = ExtResource("1_p65r6")
 animated_sprite_node = NodePath("Sprite")
 object_name = "temple_fake"
 
-[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_n4c1e")]
+[node name="Sprite" parent="." instance=ExtResource("2_n4c1e")]
 sprite_frames = SubResource("SpriteFrames_n4c1e")
 autoplay = "temple"
-centered = false
-script = ExtResource("4_4cmxn")
 sprite_info = Dictionary[StringName, ExtResource("5_eilao")]({
 &"temple": SubResource("Resource_umrj6")
 })
@@ -59,5 +55,8 @@ collision_mask = 2
 position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_eilao")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[node name="CaveTop" parent="." instance=ExtResource("5_umrj6")]
+texture = ExtResource("6_4cmxn")
 
 [connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

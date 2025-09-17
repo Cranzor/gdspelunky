@@ -33,10 +33,10 @@ func animation_end():
 
 	if (hit and not InLevel.is_room("title") and not InLevel.is_room("highscores")):
 	  
-		var tile = gml.tile_layer_find(3, obj.position.x, obj.position.y-16)
-		if (tile): gml.tile_delete(tile)
-		tile = gml.tile_layer_find(3, obj.position.x, obj.position.y+16)
-		if (tile): gml.tile_delete(tile)
+		#var tile = gml.tile_layer_find(3, obj.position.x, obj.position.y-16) #--- commenting out as relevant blocks now have CaveTop component
+		#if (tile): gml.tile_delete(tile)
+		#tile = gml.tile_layer_find(3, obj.position.x, obj.position.y+16)
+		#if (tile): gml.tile_delete(tile)
 	
 		if (not obj.invincible): gml.instance_destroy(obj)
 	

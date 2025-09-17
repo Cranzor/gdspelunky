@@ -120,13 +120,13 @@ func collision_with_solid():
 	if (InLevel.is_level() or (position.x > gml.view("xview")-16 and position.x < gml.view("xview") + gml.view("wview")+16 and
 		position.y > gml.view("yview")-16 and position.y < gml.view("yview") + gml.view("hview")+16)): #--- was "InLevel.is_level("tutorial")" but this appears to be an error as is_level takes no argument
 	
-		for repetition in range(2):
-	
-			var tile = gml.tile_layer_find(3, other.position.x+1, other.position.y-1)
-			if (tile): gml.tile_delete(tile)
-	
-		var tile = gml.tile_layer_find(3, other.position.x+1, other.position.y+16)
-		if (tile): gml.tile_delete(tile)
+		#for repetition in range(2): #--- commenting out as relevant blocks now have CaveTop component
+	#
+			#var tile = gml.tile_layer_find(3, other.position.x+1, other.position.y-1)
+			#if (tile): gml.tile_delete(tile)
+	#
+		#var tile = gml.tile_layer_find(3, other.position.x+1, other.position.y+16)
+		#if (tile): gml.tile_delete(tile)
 
 		if (not other.invincible): gml.instance_destroy(other)
 	

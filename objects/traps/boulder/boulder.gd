@@ -32,9 +32,9 @@ func collision_with_solid():
 		
 			else:
 			
-				var tile = gml.tile_layer_find(3, other.position.x, other.position.y-16)
-				if (tile): gml.tile_delete(tile)
-				tile = gml.instance_position(other.position.x+8, other.position.y-1, "spikes")
+				#var tile = gml.tile_layer_find(3, other.position.x, other.position.y-16) #--- commenting out as relevant blocks now have CaveTop component
+				#if (tile): gml.tile_delete(tile)
+				var tile = gml.instance_position(other.position.x+8, other.position.y-1, "spikes")
 				if (tile): gml.instance_destroy(tile)
 				gml.instance_destroy(other)
 			

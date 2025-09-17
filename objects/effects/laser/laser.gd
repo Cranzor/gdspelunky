@@ -63,8 +63,8 @@ func collision_with_solid():
 		gml.instance_destroy(other)
 
 
-	var tile = gml.tile_layer_find(3, other.position.x, other.position.y-16)
-	if (tile): gml.tile_delete(tile)
+	#var tile = gml.tile_layer_find(3, other.position.x, other.position.y-16) #--- commenting out as relevant blocks now have CaveTop component
+	#if (tile): gml.tile_delete(tile)
 
 
 	gml.instance_create(position.x, position.y, Objects.laser_explode, self)

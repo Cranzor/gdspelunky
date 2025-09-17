@@ -5695,10 +5695,10 @@ func scr_setup_walls(placement):
 		
 			lush_instance.sprite_index = "lush_up"
 			if (global.graphics_high):
-			
-				if (gml.rand(1,8) == 1): gml.tile_add("bg_cave_top2", 32, 0, 16, 16, lush_instance.position.x, lush_instance.position.y-16, 3)
-				elif (gml.rand(1,3) < 3): gml.tile_add("bg_cave_top2", 0, 0, 16, 16, lush_instance.position.x, lush_instance.position.y-16, 3)
-				else: gml.tile_add("bg_cave_top2", 16, 0, 16, 16, lush_instance.position.x, lush_instance.position.y-16, 3)
+				var cave_top: Sprite2D = lush_instance.get_node("CaveTop")
+				if (gml.rand(1,8) == 1): cave_top.set_cave_top("bg_cave_top2", 32, 0, 16, 16, lush_instance.position.x, lush_instance.position.y-16, 3) #--- changed from tile_add
+				elif (gml.rand(1,3) < 3): cave_top.set_cave_top("bg_cave_top2", 0, 0, 16, 16, lush_instance.position.x, lush_instance.position.y-16, 3) #--- changed from tile_add
+				else: cave_top.set_cave_top("bg_cave_top2", 16, 0, 16, 16, lush_instance.position.x, lush_instance.position.y-16, 3) #--- changed from tile_add
 			
 		
 		
@@ -5708,9 +5708,9 @@ func scr_setup_walls(placement):
 			else: lush_instance.sprite_index = "lush_down"
 			
 			if (not gml.collision_point(lush_instance.position.x, lush_instance.position.y+16, "solid", 0, 0) and global.graphics_high):
-			
-				if (gml.rand(1,12) == 1): gml.tile_add("bg_cave_top2", 48, 0, 16, 16, lush_instance.position.x, lush_instance.position.y+16, 3)
-				elif (gml.rand(1,12) == 1): gml.tile_add("bg_cave_top2", 64, 0, 16, 16, lush_instance.position.x, lush_instance.position.y+16, 3)
+				var cave_top: Sprite2D = lush_instance.get_node("CaveTop")
+				if (gml.rand(1,12) == 1): cave_top.set_cave_top("bg_cave_top2", 48, 0, 16, 16, lush_instance.position.x, lush_instance.position.y+16, 3) #--- changed from tile_add
+				elif (gml.rand(1,12) == 1): cave_top.set_cave_top("bg_cave_top2", 64, 0, 16, 16, lush_instance.position.x, lush_instance.position.y+16, 3) #--- changed from tile_add
 			
 			# DY: gml.instance_create(position.x, position.y+16, Objects.lush_bottom)
 		
@@ -5733,9 +5733,9 @@ func scr_setup_walls(placement):
 		
 			dark_instance.sprite_index = "dark_up"
 			if (global.graphics_high):
-			
-				if (gml.rand(1,3) < 3): gml.tile_add("bg_cave_top3", 0, 0, 16, 16, dark_instance.position.x, dark_instance.position.y-16, 3)
-				else: gml.tile_add("bg_cave_top3", 16, 0, 16, 16, dark_instance.position.x, dark_instance.position.y-16, 3)
+				var cave_top: Sprite2D = dark_instance.get_node("CaveTop")
+				if (gml.rand(1,3) < 3): cave_top.set_cave_top("bg_cave_top3", 0, 0, 16, 16, dark_instance.position.x, dark_instance.position.y-16, 3) #--- changed from tile_add
+				else: cave_top.set_cave_top("bg_cave_top3", 16, 0, 16, 16, dark_instance.position.x, dark_instance.position.y-16, 3) #--- changed from tile_add
 			
 		
 
@@ -5823,9 +5823,9 @@ func scr_setup_walls(placement):
 			
 				temple_instance.sprite_index = "g_temple_up"
 				if (global.graphics_high):
-				
-					if (gml.rand(1,4) == 1): gml.tile_add("bg_cave_top4", 0, 0, 16, 16, temple_instance.position.x, temple_instance.position.y-16, 3)
-					elif (gml.rand(1,4) == 1): gml.tile_add("bg_cave_top4", 16, 0, 16, 16, temple_instance.position.x, temple_instance.position.y-16, 3)
+					var cave_top: Sprite2D = temple_instance.get_node("CaveTop")
+					if (gml.rand(1,4) == 1): cave_top.set_cave_top("bg_cave_top4", 0, 0, 16, 16, temple_instance.position.x, temple_instance.position.y-16, 3) #--- changed from tile_add
+					elif (gml.rand(1,4) == 1): cave_top.set_cave_top("bg_cave_top4", 16, 0, 16, 16, temple_instance.position.x, temple_instance.position.y-16, 3) #--- changed from tile_add
 				
 				if (not temple_instance.left and not temple_instance.right):
 				
@@ -5858,9 +5858,9 @@ func scr_setup_walls(placement):
 			
 				temple_instance.sprite_index = "temple_up"
 				if (global.graphics_high):
-				
-					if (gml.rand(1,4) == 1): gml.tile_add("bg_cave_top4", 0, 0, 16, 16, temple_instance.position.x, temple_instance.position.y-16, 3)
-					elif (gml.rand(1,4) == 1): gml.tile_add("bg_cave_top4", 16, 0, 16, 16, temple_instance.position.x, temple_instance.position.y-16, 3)
+					var cave_top: Sprite2D = temple_instance.get_node("CaveTop")
+					if (gml.rand(1,4) == 1): cave_top.set_cave_top("bg_cave_top4", 0, 0, 16, 16, temple_instance.position.x, temple_instance.position.y-16, 3) #--- changed from tile_add
+					elif (gml.rand(1,4) == 1): cave_top.set_cave_top("bg_cave_top4", 16, 0, 16, 16, temple_instance.position.x, temple_instance.position.y-16, 3) #--- changed from tile_add
 				
 				if (not temple_instance.left and not temple_instance.right):
 				
@@ -5907,9 +5907,9 @@ func scr_setup_walls(placement):
 			
 				temple_fake_instance.sprite_index = "g_temple_up"
 				if (global.graphics_high):
-				
-					if (gml.rand(1,4) == 1): gml.tile_add("bg_cave_top4", 0, 0, 16, 16, temple_fake_instance.position.x, temple_fake_instance.position.y-16, 3)
-					elif (gml.rand(1,4) == 1): gml.tile_add("bg_cave_top4", 16, 0, 16, 16, temple_fake_instance.position.x, temple_fake_instance.position.y-16, 3)
+					var cave_top: Sprite2D = temple_fake_instance.get_node("CaveTop")
+					if (gml.rand(1,4) == 1): cave_top.set_cave_top("bg_cave_top4", 0, 0, 16, 16, temple_fake_instance.position.x, temple_fake_instance.position.y-16, 3)
+					elif (gml.rand(1,4) == 1): cave_top.set_cave_top("bg_cave_top4", 16, 0, 16, 16, temple_fake_instance.position.x, temple_fake_instance.position.y-16, 3)
 				
 				if (not temple_fake_instance.left and not temple_fake_instance.right):
 				

@@ -23,8 +23,8 @@ func alarm_0():
 
 func collision_with_solid():
 	other.clean_death = false
-	var tile = gml.tile_layer_find(3, position.x, position.y-16)
-	if (tile): gml.tile_delete(tile)
+	#var tile = gml.tile_layer_find(3, position.x, position.y-16) #--- commenting out as relevant blocks now have CaveTop component
+	#if (tile): gml.tile_delete(tile)
 	if other.object_name != "olmec": #--- adding a simple exception here.
 		#--- calling step objects in order causes Olmec to create this object, then game_step_event moves Olmec down, and Olmec gets destroyed as a solid.
 		#--- running objects in reverse fixes this but causes issues with dark_fall platforms crushing the player.
