@@ -5649,9 +5649,9 @@ func scr_setup_walls(placement):
 		
 			brick_instance.sprite_index = "cave_up"
 			if (global.graphics_high):
-			
-				if (gml.rand(1,3) < 3): gml.tile_add("bg_cave_top", 0, 0, 16, 16, brick_instance.position.x, brick_instance.position.y-16, 3)
-				else: gml.tile_add("bg_cave_top", 16, 0, 16, 16, brick_instance.position.x, brick_instance.position.y-16, 3)
+				var cave_top: Sprite2D = brick_instance.get_node("CaveTop")
+				if (gml.rand(1,3) < 3): cave_top.set_cave_top("bg_cave_top", 0, 0, 16, 16, brick_instance.position.x, brick_instance.position.y-16, 3) #--- changed from tile_add
+				else: cave_top.set_cave_top("bg_cave_top", 16, 0, 16, 16, brick_instance.position.x, brick_instance.position.y-16, 3) #--- changed from tile_add
 			
 			# DY:  gml.instance_create(position.x, position.y-16, Objects.cave_top)
 		

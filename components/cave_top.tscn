@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://oy6m7b600a1u"]
+
+[ext_resource type="Script" uid="uid://bjy8ydal68lbj" path="res://components/cave_top.gd" id="1_rhg0n"]
+
+[node name="CaveTop" type="Sprite2D"]
+visible = false
+z_index = -3
+z_as_relative = false
+position = Vector2(0, -16)
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+script = ExtResource("1_rhg0n")
