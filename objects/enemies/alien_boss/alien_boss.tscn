@@ -106,10 +106,7 @@ animations = [{
 
 [sub_resource type="Resource" id="Resource_7a322"]
 script = ExtResource("23_mr0pp")
-origin = Vector2(0, 0)
 containing_box = Rect2(1, 1, 31, 31)
-precise = false
-images = Array[Image]([])
 
 [sub_resource type="Image" id="Image_dsara"]
 data = {
@@ -122,7 +119,6 @@ data = {
 
 [sub_resource type="Resource" id="Resource_khgje"]
 script = ExtResource("23_mr0pp")
-origin = Vector2(0, 0)
 containing_box = Rect2(1, 22, 31, 10)
 precise = true
 images = Array[Image]([SubResource("Image_dsara")])
@@ -210,17 +206,13 @@ data = {
 
 [sub_resource type="Resource" id="Resource_urul0"]
 script = ExtResource("23_mr0pp")
-origin = Vector2(0, 0)
 containing_box = Rect2(1, 1, 31, 31)
 precise = true
 images = Array[Image]([SubResource("Image_f4jrv"), SubResource("Image_7vfue"), SubResource("Image_3tksq"), SubResource("Image_lquon"), SubResource("Image_1uf43"), SubResource("Image_idypx"), SubResource("Image_3cx6j"), SubResource("Image_4e3he"), SubResource("Image_qrlvj")])
 
 [sub_resource type="Resource" id="Resource_25a7o"]
 script = ExtResource("23_mr0pp")
-origin = Vector2(0, 0)
 containing_box = Rect2(1, 1, 31, 31)
-precise = false
-images = Array[Image]([])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k3r16"]
 size = Vector2(31, 31)
