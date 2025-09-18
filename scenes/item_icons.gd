@@ -55,6 +55,11 @@ func check_items():
 		else:
 			current_child.hide()
 
+	var player1 = gml.get_instance("player1")
+	if player1.pickup_item_type == "bow":
+		arrows.show()
+	else:
+		arrows.hide()
 
 func lay_out_icons():
 	var n: int = 28

@@ -524,7 +524,7 @@ centered = false
 
 [node name="PickupItem" parent="InGame" instance=ExtResource("28_qn0nn")]
 sprite_frames = SubResource("SpriteFrames_eavr3")
-animation = &"key_right"
+animation = &"bow_disp"
 frame_progress = 0.0
 offset = Vector2(-8, -12)
 

@@ -34,6 +34,8 @@ func draw_pickup_item():
 func set_sprite(pickup_item_type):
 	var type_without_spaces: String = pickup_item_type.replace(" ", "_")
 	var sprite_name: String = objects.object_database[type_without_spaces]["sprite"]
+	if type_without_spaces == "bow": #--- adding an exception for bow due to its HUD display being different from its default sprite
+		sprite_name = "bow_disp"
 	offset = get_sprite_offset(sprite_name)
 	var sprite_frames_node: SpriteFrames = sprite_frames
 	if sprite_frames_node.has_animation(sprite_name):
