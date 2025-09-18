@@ -39,6 +39,16 @@ func all_objects_step_event():
 		if gml.changed_scene == false:
 			object.step()
 
+	#--- have to check if objects were added during the step events of other objects, and then run step events for those objects
+	var step_objects_count: int = step_objects.size()
+	var updated_step_objects: Array = get_tree().get_nodes_in_group("step_object")
+	var updated_step_objects_count: int = updated_step_objects.size()
+	if step_objects_count != updated_step_objects_count:
+		var diff: int = updated_step_objects_count - step_objects_count
+		for i: int in diff:
+			var object: GMObject = updated_step_objects[updated_step_objects_count - diff]
+			object.step()
+
 
 func autoloads_step_event():
 	if gml.changed_scene == false:

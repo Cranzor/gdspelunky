@@ -78,7 +78,6 @@ var view_enabled = true #--- doesn't seem to be false in any instance within the
 
 var changed_scene: bool = false
 var in_step_event: bool = false
-var new_objects_to_run_step: Array
 
 var view2: View:
 	get:
@@ -172,9 +171,8 @@ func instance_create(x,y,obj,calling_object: GMObject = null,run_create = true) 
 	get_tree().call_group("gm_object", "force_update_transform")
 	if run_create:
 		instance.run_create_function(instance)
+		#instance.run_step_event(instance)
 	
-	if in_step_event:
-		new_objects_to_run_step.append(instance)
 	#for objects bigger than 16x16, get height and width of sprite texture and then add that as the size
 	
 	#getting each location of each object spawned in. note that this only applies to stationary objects
