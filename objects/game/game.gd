@@ -171,7 +171,7 @@ func game_step_event():
 									players[i].viscid_movement_ok=2
 				  
 			  
-							elif Collision.is_collision_character_right(1,players[i]):
+							elif Collision.is_collision_character_right(1,players[i],moving_solid_instance):
 								players[i].collision=Collision.is_collision_right(1, players[i])
 								if players[i].collision:
 									moving_solid_instance.break_now = 1
@@ -182,6 +182,8 @@ func game_step_event():
 			
 						if moving_solid_instance.break_now:
 							break
+						
+						moving_solid_instance.position.x += 1 #--- original script moves the object as part of the loop, but this is not the case in GDScript, so we have to manually do it
 		  
 		
 				#solid is moving to the left
@@ -200,7 +202,7 @@ func game_step_event():
 									moving_solid_instance.viscid_movement_ok=2
 				  
 			  
-							elif Collision.is_collision_character_left(1,players[i]):
+							elif Collision.is_collision_character_left(1,players[i],moving_solid_instance):
 			  
 								players[i].collision=Collision.is_collision_left(1, players[i])
 								if players[i].collision:
@@ -210,9 +212,11 @@ func game_step_event():
 								players[i].position.x-=1
 			  
 			
-							if moving_solid_instance.break_now:
+						if moving_solid_instance.break_now:
 			 
-								break
+							break
+							
+						moving_solid_instance.position.x -= 1 #--- original script moves the object as part of the loop, but this is not the case in GDScript, so we have to manually do it
 		  
 		
 				#solid is moving down
@@ -265,7 +269,7 @@ func game_step_event():
 						
 								players[i].position.y-=1
 					  
-							if Collision.is_collision_character_bottom(1,players[i]):
+							if Collision.is_collision_character_bottom(1,players[i],moving_solid_instance):
 					  
 								#variable jumping causes the character to get stuck to the bottom of a moving solid
 								#that is moving faster than 1 pixel per step upwards, so we need this code
@@ -277,6 +281,7 @@ func game_step_event():
 						if moving_solid_instance.break_now:
 							break
 		  
+						moving_solid_instance.position.y -= 1 #--- original script moves the object as part of the loop, but this is not the case in GDScript, so we have to manually do it
 		
 				for character_instance in all_characters:
 		

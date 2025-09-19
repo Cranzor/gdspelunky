@@ -206,7 +206,7 @@ func get_id_collision_right(number, node): #--- Only used once in PlatformEngine
 	return gml.collision_line(gml.gm_round(rb+number-1),gml.gm_round(tb+5),gml.gm_round(rb+number-1),gml.gm_round(bb-1),'solid',1,1,node)
 
 
-func is_collision_character_left(number, id = null): #--- id is just the group
+func is_collision_character_left(number, id = null, calling_node: GMObject = null): #--- id is just the group
 	#/*
 	#0: Number of pixels left of the collision rectangle to check for a collision
 	#with the character.
@@ -229,11 +229,11 @@ func is_collision_character_left(number, id = null): #--- id is just the group
 		var rb = all_points_exact.z
 		var bb = all_points_exact.w
 		  #if there is a collision with temp_id on the character's right side
-		if gml.collision_line(gml.gm_round(rb+number-1),gml.gm_round(tb),gml.gm_round(rb+number-1),gml.gm_round(bb-1),character_instance,1,1,character_instance):#0:
+		if gml.collision_line(gml.gm_round(rb+number-1),gml.gm_round(tb),gml.gm_round(rb+number-1),gml.gm_round(bb-1),calling_node.unique_id,1,1,character_instance):#0:
 			return true
 	return false
 	
-func is_collision_character_right(number, id = null):
+func is_collision_character_right(number, id = null, calling_node: GMObject = null):
 	#/*
 	#0: Number of pixels right of the collision rectangle to check for a collision
 	#with the character.
@@ -256,7 +256,7 @@ func is_collision_character_right(number, id = null):
 		var _rb = all_points_exact.z
 		var bb = all_points_exact.w
 	  #if there is a collision with temp_id on the character's left side
-		if gml.collision_line(gml.gm_round(lb-number),gml.gm_round(tb),gml.gm_round(lb-number),gml.gm_round(bb-1),'character',1,1):#>0:
+		if gml.collision_line(gml.gm_round(lb-number),gml.gm_round(tb),gml.gm_round(lb-number),gml.gm_round(bb-1),calling_node.unique_id,1,1,character_instance):#>0:
 			return true
 	return false
 
