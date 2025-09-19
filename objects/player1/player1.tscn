@@ -201,47 +201,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_1x2a7"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_0imcj")
-}],
-"loop": true,
-"name": &"arrow_left",
-"speed": 30.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_h2jsy")
-}],
-"loop": true,
-"name": &"arrow_right",
-"speed": 30.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_308ap")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_a8l3l")
-}],
-"loop": true,
-"name": &"bomb_arrow_left",
-"speed": 30.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("7_ecv23")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_1ccgs")
-}],
-"loop": true,
-"name": &"bomb_arrow_right",
-"speed": 30.0
-}]
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ttmrw"]
 shader = ExtResource("14_2rwj6")
 shader_parameter/color = Color(0, 0, 0, 1)
@@ -903,8 +862,6 @@ animations = [{
 script = ExtResource("175_l0xp4")
 origin = Vector2(8, 8)
 containing_box = Rect2(0, 0, 16, 16)
-precise = false
-images = Array[Image]([])
 
 [sub_resource type="Image" id="Image_obkdi"]
 data = {
@@ -935,134 +892,96 @@ images = Array[Image]([SubResource("Image_obkdi"), SubResource("Image_ludm3")])
 script = ExtResource("175_l0xp4")
 origin = Vector2(8, 8)
 containing_box = Rect2(0, 0, 15, 16)
-precise = false
-images = Array[Image]([])
 
 [sub_resource type="Resource" id="Resource_jvt48"]
 script = ExtResource("175_l0xp4")
 origin = Vector2(8, 8)
 containing_box = Rect2(1, 1, 15, 15)
-precise = false
-images = Array[Image]([])
 
 [sub_resource type="Resource" id="Resource_jsq8t"]
 script = ExtResource("175_l0xp4")
 origin = Vector2(8, 8)
 containing_box = Rect2(0, 6, 16, 10)
-precise = false
-images = Array[Image]([])
 
 [sub_resource type="Resource" id="Resource_r6y4w"]
 script = ExtResource("175_l0xp4")
 origin = Vector2(8, 8)
 containing_box = Rect2(2, 0, 13, 15)
-precise = false
-images = Array[Image]([])
 
 [sub_resource type="Resource" id="Resource_dmb78"]
 script = ExtResource("175_l0xp4")
 origin = Vector2(8, 8)
 containing_box = Rect2(1, 0, 13, 16)
-precise = false
-images = Array[Image]([])
 
 [sub_resource type="Resource" id="Resource_t6wf6"]
 script = ExtResource("175_l0xp4")
 origin = Vector2(24, 8)
 containing_box = Rect2(7, 0, 25, 29)
-precise = false
-images = Array[Image]([])
 
 [sub_resource type="Resource" id="Resource_377at"]
 script = ExtResource("175_l0xp4")
 origin = Vector2(8, 8)
 containing_box = Rect2(2, 0, 12, 16)
-precise = false
-images = Array[Image]([])
 
 [sub_resource type="Resource" id="Resource_pbfqt"]
 script = ExtResource("175_l0xp4")
 origin = Vector2(8, 8)
 containing_box = Rect2(0, 0, 14, 16)
-precise = false
-images = Array[Image]([])
 
 [sub_resource type="Resource" id="Resource_81fg0"]
 script = ExtResource("175_l0xp4")
 origin = Vector2(8, 8)
 containing_box = Rect2(0, 5, 16, 10)
-precise = false
-images = Array[Image]([])
 
 [sub_resource type="Resource" id="Resource_00x8r"]
 script = ExtResource("175_l0xp4")
 origin = Vector2(8, 8)
 containing_box = Rect2(2, 0, 12, 16)
-precise = false
-images = Array[Image]([])
 
 [sub_resource type="Resource" id="Resource_p0v2b"]
 script = ExtResource("175_l0xp4")
 origin = Vector2(8, 8)
 containing_box = Rect2(0, 0, 16, 16)
-precise = false
-images = Array[Image]([])
 
 [sub_resource type="Resource" id="Resource_sy36t"]
 script = ExtResource("175_l0xp4")
 origin = Vector2(8, 8)
 containing_box = Rect2(1, 7, 15, 9)
-precise = false
-images = Array[Image]([])
 
 [sub_resource type="Resource" id="Resource_4e0ip"]
 script = ExtResource("175_l0xp4")
 origin = Vector2(8, 8)
 containing_box = Rect2(0, 3, 15, 13)
-precise = false
-images = Array[Image]([])
 
 [sub_resource type="Resource" id="Resource_agnex"]
 script = ExtResource("175_l0xp4")
 origin = Vector2(8, 8)
 containing_box = Rect2(0, 6, 16, 10)
-precise = false
-images = Array[Image]([])
 
 [sub_resource type="Resource" id="Resource_4l1ou"]
 script = ExtResource("175_l0xp4")
 origin = Vector2(8, 8)
 containing_box = Rect2(1, 0, 13, 16)
-precise = false
-images = Array[Image]([])
 
 [sub_resource type="Resource" id="Resource_enlsv"]
 script = ExtResource("175_l0xp4")
 origin = Vector2(8, 8)
 containing_box = Rect2(1, 0, 14, 16)
-precise = false
-images = Array[Image]([])
 
 [sub_resource type="Resource" id="Resource_gee4v"]
 script = ExtResource("175_l0xp4")
 origin = Vector2(8, 8)
 containing_box = Rect2(1, 0, 14, 16)
-precise = false
-images = Array[Image]([])
 
 [sub_resource type="Resource" id="Resource_fb7hm"]
 script = ExtResource("175_l0xp4")
 origin = Vector2(8, 8)
 containing_box = Rect2(2, 0, 12, 16)
-precise = false
-images = Array[Image]([])
 
 [sub_resource type="Resource" id="Resource_6feeb"]
 script = ExtResource("175_l0xp4")
 origin = Vector2(8, 8)
 containing_box = Rect2(1, 0, 15, 16)
-precise = false
-images = Array[Image]([])
 
 [sub_resource type="Image" id="Image_q1ydx"]
 data = {
@@ -1174,64 +1093,87 @@ images = Array[Image]([SubResource("Image_q1ydx"), SubResource("Image_wca7a"), S
 script = ExtResource("175_l0xp4")
 origin = Vector2(8, 8)
 containing_box = Rect2(1, 7, 15, 9)
-precise = false
-images = Array[Image]([])
 
 [sub_resource type="Resource" id="Resource_qmm20"]
 script = ExtResource("175_l0xp4")
 origin = Vector2(8, 8)
 containing_box = Rect2(2, 0, 12, 16)
-precise = false
-images = Array[Image]([])
 
 [sub_resource type="Resource" id="Resource_2uu56"]
 script = ExtResource("175_l0xp4")
 origin = Vector2(8, 8)
 containing_box = Rect2(1, 0, 13, 16)
-precise = false
-images = Array[Image]([])
 
 [sub_resource type="Resource" id="Resource_xw5bw"]
 script = ExtResource("175_l0xp4")
 origin = Vector2(24, 8)
 containing_box = Rect2(8, 1, 24, 28)
-precise = false
-images = Array[Image]([])
 
 [sub_resource type="Resource" id="Resource_kwudh"]
 script = ExtResource("175_l0xp4")
 origin = Vector2(8, 8)
 containing_box = Rect2(1, 0, 14, 16)
-precise = false
-images = Array[Image]([])
 
 [sub_resource type="Resource" id="Resource_vqbrc"]
 script = ExtResource("175_l0xp4")
 origin = Vector2(8, 8)
 containing_box = Rect2(1, 0, 14, 16)
-precise = false
-images = Array[Image]([])
 
 [sub_resource type="Resource" id="Resource_phbt0"]
 script = ExtResource("175_l0xp4")
 origin = Vector2(8, 8)
 containing_box = Rect2(0, 3, 15, 13)
-precise = false
-images = Array[Image]([])
 
 [sub_resource type="Resource" id="Resource_j5etb"]
 script = ExtResource("175_l0xp4")
 origin = Vector2(8, 8)
 containing_box = Rect2(2, 0, 12, 16)
-precise = false
-images = Array[Image]([])
 
 [sub_resource type="Resource" id="Resource_w850y"]
 script = ExtResource("175_l0xp4")
 origin = Vector2(8, 8)
 containing_box = Rect2(1, 0, 15, 16)
-precise = false
-images = Array[Image]([])
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1x2a7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_0imcj")
+}],
+"loop": true,
+"name": &"arrow_left",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_h2jsy")
+}],
+"loop": true,
+"name": &"arrow_right",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_308ap")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_a8l3l")
+}],
+"loop": true,
+"name": &"bomb_arrow_left",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_ecv23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_1ccgs")
+}],
+"loop": true,
+"name": &"bomb_arrow_right",
+"speed": 30.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wlebj"]
 size = Vector2(12, 16)
@@ -1257,14 +1199,6 @@ color = Color(0.768627, 0.141176, 0.811765, 0.741176)
 
 [node name="JetpackDraw" parent="." instance=ExtResource("2_u664n")]
 sprite_frames = SubResource("SpriteFrames_8p1w3")
-
-[node name="ArrowDraw" type="AnimatedSprite2D" parent="."]
-visible = false
-sprite_frames = SubResource("SpriteFrames_1x2a7")
-animation = &"arrow_left"
-centered = false
-script = ExtResource("9_0imcj")
-hide_at_start_of_frame = true
 
 [node name="DarkLevelCircle" parent="." instance=ExtResource("10_h2jsy")]
 material = SubResource("ShaderMaterial_ttmrw")
@@ -1308,6 +1242,14 @@ sprite_info = Dictionary[StringName, ExtResource("175_l0xp4")]({
 &"tunnel_stun_l": SubResource("Resource_w850y")
 })
 default_animation = &"stand_left"
+
+[node name="ArrowDraw" type="AnimatedSprite2D" parent="." groups=["draw_sprite"]]
+visible = false
+sprite_frames = SubResource("SpriteFrames_1x2a7")
+animation = &"attack_left"
+centered = false
+script = ExtResource("9_0imcj")
+hide_at_start_of_frame = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_wlebj")

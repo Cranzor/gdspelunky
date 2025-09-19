@@ -32,7 +32,7 @@ animations = [{
 "speed": 30.0
 }]
 
-[node name="JetpackDraw" type="AnimatedSprite2D"]
+[node name="JetpackDraw" type="AnimatedSprite2D" groups=["draw_sprite"]]
 visible = false
 z_index = -1
 sprite_frames = SubResource("SpriteFrames_8p1w3")
