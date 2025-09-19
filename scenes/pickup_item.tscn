@@ -42,7 +42,7 @@ animations = [{
 "texture": ExtResource("2_du5dg")
 }],
 "loop": true,
-"name": &"arrow",
+"name": &"arrow_right",
 "speed": 30.0
 }, {
 "frames": [{
@@ -50,7 +50,7 @@ animations = [{
 "texture": ExtResource("3_uh6jf")
 }],
 "loop": true,
-"name": &"bow",
+"name": &"bow_disp",
 "speed": 30.0
 }, {
 "frames": [{
@@ -85,7 +85,7 @@ animations = [{
 "texture": ExtResource("8_p0lwu")
 }],
 "loop": true,
-"name": &"key",
+"name": &"key_right",
 "speed": 30.0
 }, {
 "frames": [{
@@ -93,15 +93,7 @@ animations = [{
 "texture": ExtResource("9_67yok")
 }],
 "loop": true,
-"name": &"machete",
-"speed": 30.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("10_0fr8n")
-}],
-"loop": true,
-"name": &"mattock",
+"name": &"machete_right",
 "speed": 30.0
 }, {
 "frames": [{
@@ -114,10 +106,18 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("10_0fr8n")
+}],
+"loop": true,
+"name": &"mattock_right",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("12_aj367")
 }],
 "loop": true,
-"name": &"pistol",
+"name": &"pistol_right",
 "speed": 30.0
 }, {
 "frames": [{
@@ -133,7 +133,7 @@ animations = [{
 "texture": ExtResource("14_x412v")
 }],
 "loop": true,
-"name": &"sceptre",
+"name": &"sceptre_right",
 "speed": 30.0
 }, {
 "frames": [{
@@ -141,7 +141,7 @@ animations = [{
 "texture": ExtResource("15_np54e")
 }],
 "loop": true,
-"name": &"shotgun",
+"name": &"shotgun_right",
 "speed": 30.0
 }, {
 "frames": [{
@@ -210,14 +210,13 @@ animations = [{
 "texture": ExtResource("33_p0dr1")
 }],
 "loop": true,
-"name": &"web_cannon",
+"name": &"web_cannon_r",
 "speed": 30.0
 }]
 
 [node name="PickupItem" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_jvkj8")
-animation = &"arrow"
-frame_progress = 0.77528
+animation = &"web_cannon_r"
 centered = false
 script = ExtResource("33_82ap8")
 hide_at_start_of_frame = true

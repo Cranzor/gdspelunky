@@ -1,4 +1,4 @@
-[gd_scene load_steps=147 format=3 uid="uid://7wpc0sv2veyy"]
+[gd_scene load_steps=144 format=3 uid="uid://7wpc0sv2veyy"]
 
 [ext_resource type="Script" uid="uid://i87kjv7b833k" path="res://objects/other/p_dummy/p_dummy.gd" id="1_lg7fy"]
 [ext_resource type="PackedScene" uid="uid://cilypuxykq1h4" path="res://scenes/pickup_item.tscn" id="2_0nho6"]
@@ -35,11 +35,9 @@
 [ext_resource type="Texture2D" uid="uid://dmwaal5w24yg0" path="res://sprites/items/saleable/teleporter/teleporter_15.png" id="33_i6017"]
 [ext_resource type="Texture2D" uid="uid://b75oruft58io1" path="res://sprites/items/saleable/web_cannon_r/web_cannon_r_0.png" id="34_o7f70"]
 [ext_resource type="PackedScene" uid="uid://cdxt2i7ri1v5b" path="res://scenes/jetpack_draw.tscn" id="35_6v4f3"]
-[ext_resource type="Script" uid="uid://b41ttbqs61wed" path="res://scenes/pickup_item.gd" id="35_mbxey"]
 [ext_resource type="Texture2D" uid="uid://vvxjsfho1j21" path="res://sprites/items/saleable/jetpack_back/jetpack_back_0.png" id="37_viv8a"]
 [ext_resource type="Texture2D" uid="uid://bgno4c75gvig4" path="res://sprites/items/saleable/jetpack_left/jetpack_left_0.png" id="38_ejxpe"]
 [ext_resource type="Texture2D" uid="uid://c6pvhdrl4ghn4" path="res://sprites/items/saleable/jetpack_right/jetpack_right_0.png" id="39_kgdn8"]
-[ext_resource type="Script" uid="uid://d1v64vt58kawp" path="res://components/drawing/draw_sprite/draw_sprite.gd" id="40_jqulc"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="41_xil01"]
 [ext_resource type="Texture2D" uid="uid://qkers0canpgg" path="res://sprites/character/damsel/damsel_exit/damsel_exit_0.png" id="42_gq22a"]
 [ext_resource type="Texture2D" uid="uid://bjeiqh21hutim" path="res://sprites/character/damsel/damsel_exit/damsel_exit_1.png" id="43_qdum8"]
@@ -128,188 +126,7 @@
 [ext_resource type="Texture2D" uid="uid://cdkir5hhokkin" path="res://sprites/character/tunnel man/tunnel_run_l/tunnel_run_l_3.png" id="126_5rddb"]
 [ext_resource type="Texture2D" uid="uid://b8m0di5lxiyut" path="res://sprites/character/tunnel man/tunnel_run_l/tunnel_run_l_4.png" id="127_d1h85"]
 [ext_resource type="Texture2D" uid="uid://cg0gcyr2h1lvl" path="res://sprites/character/tunnel man/tunnel_run_l/tunnel_run_l_5.png" id="128_iw4fr"]
-[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="129_k8l4o"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="130_33t2b"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ipoyn"]
-resource_local_to_scene = true
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_6v4f3")
-}],
-"loop": true,
-"name": &"arrow",
-"speed": 30.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_jrwt2")
-}],
-"loop": true,
-"name": &"bow",
-"speed": 30.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_67xl8")
-}],
-"loop": true,
-"name": &"fish_bone",
-"speed": 30.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("6_jnh6p")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_8nssf")
-}],
-"loop": true,
-"name": &"flare",
-"speed": 30.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("8_mbxey")
-}],
-"loop": true,
-"name": &"jar",
-"speed": 30.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("9_viv8a")
-}],
-"loop": true,
-"name": &"key",
-"speed": 30.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("10_ejxpe")
-}],
-"loop": true,
-"name": &"machete",
-"speed": 30.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("11_kgdn8")
-}],
-"loop": true,
-"name": &"mattock",
-"speed": 30.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("12_jqulc")
-}],
-"loop": true,
-"name": &"mattock_head",
-"speed": 30.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("13_4fiim")
-}],
-"loop": true,
-"name": &"pistol",
-"speed": 30.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("14_dsev4")
-}],
-"loop": true,
-"name": &"rock",
-"speed": 30.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("15_vuwba")
-}],
-"loop": true,
-"name": &"sceptre",
-"speed": 30.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("16_our7u")
-}],
-"loop": true,
-"name": &"shotgun",
-"speed": 30.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("17_fardb")
-}],
-"loop": true,
-"name": &"skull",
-"speed": 30.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("18_gthuw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("19_avhrk")
-}, {
-"duration": 1.0,
-"texture": ExtResource("20_0p4ly")
-}, {
-"duration": 1.0,
-"texture": ExtResource("21_gixvy")
-}, {
-"duration": 1.0,
-"texture": ExtResource("22_we4th")
-}, {
-"duration": 1.0,
-"texture": ExtResource("23_0cu2y")
-}, {
-"duration": 1.0,
-"texture": ExtResource("24_sgtmu")
-}, {
-"duration": 1.0,
-"texture": ExtResource("25_x4i4o")
-}, {
-"duration": 1.0,
-"texture": ExtResource("26_iopuh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("27_ntm32")
-}, {
-"duration": 1.0,
-"texture": ExtResource("28_ta4dp")
-}, {
-"duration": 1.0,
-"texture": ExtResource("29_18k8q")
-}, {
-"duration": 1.0,
-"texture": ExtResource("30_1yur4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("31_di4i2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("32_03w1b")
-}, {
-"duration": 1.0,
-"texture": ExtResource("33_i6017")
-}],
-"loop": true,
-"name": &"teleporter",
-"speed": 30.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("34_o7f70")
-}],
-"loop": true,
-"name": &"web_cannon",
-"speed": 30.0
-}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8p1w3"]
 animations = [{
@@ -658,82 +475,240 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_gq22a"]
-script = ExtResource("130_33t2b")
-origin = Vector2(8, 8)
-containing_box = Rect2(1, 0, 14, 16)
-precise = false
-images = Array[Image]([])
-
-[sub_resource type="Resource" id="Resource_qdum8"]
-script = ExtResource("130_33t2b")
-origin = Vector2(8, 8)
-containing_box = Rect2(2, 0, 14, 16)
-precise = false
-images = Array[Image]([])
-
-[sub_resource type="Resource" id="Resource_qh16p"]
-script = ExtResource("130_33t2b")
-origin = Vector2(8, 8)
-containing_box = Rect2(1, 0, 14, 16)
-precise = false
-images = Array[Image]([])
-
-[sub_resource type="Resource" id="Resource_xfwsg"]
+[sub_resource type="Resource" id="Resource_3rylc"]
 script = ExtResource("130_33t2b")
 origin = Vector2(8, 8)
 containing_box = Rect2(2, 0, 12, 16)
-precise = false
-images = Array[Image]([])
-
-[sub_resource type="Resource" id="Resource_q1c68"]
-script = ExtResource("130_33t2b")
-origin = Vector2(8, 8)
-containing_box = Rect2(2, 0, 12, 16)
-precise = false
-images = Array[Image]([])
-
-[sub_resource type="Resource" id="Resource_gkkre"]
-script = ExtResource("130_33t2b")
-origin = Vector2(8, 8)
-containing_box = Rect2(2, 0, 12, 16)
-precise = false
-images = Array[Image]([])
-
-[sub_resource type="Resource" id="Resource_cno8o"]
-script = ExtResource("130_33t2b")
-origin = Vector2(8, 8)
-containing_box = Rect2(0, 0, 15, 16)
-precise = false
-images = Array[Image]([])
 
 [sub_resource type="Resource" id="Resource_jcwqj"]
 script = ExtResource("130_33t2b")
 origin = Vector2(8, 8)
 containing_box = Rect2(0, 0, 15, 16)
-precise = false
-images = Array[Image]([])
 
-[sub_resource type="Resource" id="Resource_3rylc"]
+[sub_resource type="Resource" id="Resource_xfwsg"]
 script = ExtResource("130_33t2b")
 origin = Vector2(8, 8)
 containing_box = Rect2(2, 0, 12, 16)
-precise = false
-images = Array[Image]([])
 
-[sub_resource type="Resource" id="Resource_bqkfv"]
+[sub_resource type="Resource" id="Resource_qdum8"]
 script = ExtResource("130_33t2b")
 origin = Vector2(8, 8)
-containing_box = Rect2(1, 0, 14, 16)
-precise = false
-images = Array[Image]([])
+containing_box = Rect2(2, 0, 14, 16)
 
 [sub_resource type="Resource" id="Resource_48ugy"]
 script = ExtResource("130_33t2b")
 origin = Vector2(8, 8)
 containing_box = Rect2(1, 0, 14, 16)
-precise = false
-images = Array[Image]([])
+
+[sub_resource type="Resource" id="Resource_cno8o"]
+script = ExtResource("130_33t2b")
+origin = Vector2(8, 8)
+containing_box = Rect2(0, 0, 15, 16)
+
+[sub_resource type="Resource" id="Resource_gq22a"]
+script = ExtResource("130_33t2b")
+origin = Vector2(8, 8)
+containing_box = Rect2(1, 0, 14, 16)
+
+[sub_resource type="Resource" id="Resource_gkkre"]
+script = ExtResource("130_33t2b")
+origin = Vector2(8, 8)
+containing_box = Rect2(2, 0, 12, 16)
+
+[sub_resource type="Resource" id="Resource_bqkfv"]
+script = ExtResource("130_33t2b")
+origin = Vector2(8, 8)
+containing_box = Rect2(1, 0, 14, 16)
+
+[sub_resource type="Resource" id="Resource_q1c68"]
+script = ExtResource("130_33t2b")
+origin = Vector2(8, 8)
+containing_box = Rect2(2, 0, 12, 16)
+
+[sub_resource type="Resource" id="Resource_qh16p"]
+script = ExtResource("130_33t2b")
+origin = Vector2(8, 8)
+containing_box = Rect2(1, 0, 14, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ipoyn"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_6v4f3")
+}],
+"loop": true,
+"name": &"arrow",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_jrwt2")
+}],
+"loop": true,
+"name": &"bow",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_67xl8")
+}],
+"loop": true,
+"name": &"fish_bone",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_jnh6p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_8nssf")
+}],
+"loop": true,
+"name": &"flare",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_mbxey")
+}],
+"loop": true,
+"name": &"jar",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_viv8a")
+}],
+"loop": true,
+"name": &"key",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_ejxpe")
+}],
+"loop": true,
+"name": &"machete",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_kgdn8")
+}],
+"loop": true,
+"name": &"mattock",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_jqulc")
+}],
+"loop": true,
+"name": &"mattock_head",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_4fiim")
+}],
+"loop": true,
+"name": &"pistol",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_dsev4")
+}],
+"loop": true,
+"name": &"rock",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_vuwba")
+}],
+"loop": true,
+"name": &"sceptre",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_our7u")
+}],
+"loop": true,
+"name": &"shotgun",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_fardb")
+}],
+"loop": true,
+"name": &"skull",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_gthuw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_avhrk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_0p4ly")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_gixvy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_we4th")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_0cu2y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_sgtmu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_x4i4o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_iopuh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_ntm32")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_ta4dp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_18k8q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_1yur4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_di4i2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_03w1b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_i6017")
+}],
+"loop": true,
+"name": &"teleporter",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("34_o7f70")
+}],
+"loop": true,
+"name": &"web_cannon",
+"speed": 30.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5kq5q"]
 size = Vector2(14, 16)
@@ -747,31 +722,13 @@ script = ExtResource("1_lg7fy")
 animated_sprite_node = NodePath("Sprite")
 object_name = "p_dummy"
 
-[node name="PickupItem" type="AnimatedSprite2D" parent="." instance=ExtResource("2_0nho6")]
-visible = false
-sprite_frames = SubResource("SpriteFrames_ipoyn")
-animation = &"arrow"
-frame_progress = 0.77528
-centered = false
-script = ExtResource("35_mbxey")
-type = 1
-hide_at_start_of_frame = true
-
-[node name="JetpackDraw" type="AnimatedSprite2D" parent="." instance=ExtResource("35_6v4f3")]
-visible = false
-z_index = -1
+[node name="JetpackDraw" parent="." instance=ExtResource("35_6v4f3")]
 sprite_frames = SubResource("SpriteFrames_8p1w3")
-animation = &"jetpack_back"
-centered = false
-script = ExtResource("40_jqulc")
-hide_at_start_of_frame = true
 
-[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("41_xil01")]
+[node name="Sprite" parent="." instance=ExtResource("41_xil01")]
 sprite_frames = SubResource("SpriteFrames_xil01")
 autoplay = "run_left"
-centered = false
 offset = Vector2(-8, -8)
-script = ExtResource("129_k8l4o")
 sprite_info = Dictionary[StringName, ExtResource("130_33t2b")]({
 &"damsel_exit": SubResource("Resource_3rylc"),
 &"damsel_kiss_l": SubResource("Resource_jcwqj"),
@@ -787,6 +744,13 @@ sprite_info = Dictionary[StringName, ExtResource("130_33t2b")]({
 })
 default_animation = &"run_left"
 
+[node name="PickupItem" parent="." instance=ExtResource("2_0nho6")]
+visible = false
+sprite_frames = SubResource("SpriteFrames_ipoyn")
+animation = &"damsel_exit"
+frame_progress = 0.0
+type = 1
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_5kq5q")
 
@@ -798,5 +762,4 @@ collision_mask = 2
 shape = SubResource("RectangleShape2D_on4fp")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
-[connection signal="animation_changed" from="PickupItem" to="PickupItem" method="_on_animation_changed"]
 [connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]
