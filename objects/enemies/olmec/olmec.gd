@@ -112,6 +112,7 @@ func alarm_6():
 
 
 func create():
+	add_to_group(unique_id) #--- adding this for Collision.is_collision_character_*() functions. found in MovingSolid create, this is not called
 	shop_wall = false
 	PlatformEngine.make_active(self)
 	Collision.set_collision_bounds(self, 2, 0, 62, 64)

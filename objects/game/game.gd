@@ -198,8 +198,8 @@ func game_step_event():
 			  
 								if Collision.is_collision_left(1, players[i])==false: #--- changed to bool
 				  
-									moving_solid_instance.position.x-=1
-									moving_solid_instance.viscid_movement_ok=2
+									players[i].position.x-=1
+									players[i].viscid_movement_ok=2
 				  
 			  
 							elif Collision.is_collision_character_left(1,players[i],moving_solid_instance):
@@ -256,7 +256,7 @@ func game_step_event():
 				
 					moving_solid_instance.break_now=0    #whether we should break out of the movement loop because the character is stuck
 					for y in range(moving_solid_instance.position.y, mst_y_prev + moving_solid_instance.y_vel_integer, -1):
-				  
+				
 						for i in range(0, players_length):
 					
 					  		#push the character up regardless of the viscid properties of the solid top
