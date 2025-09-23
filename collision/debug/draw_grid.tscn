@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://pnuldwuudm5p"]
+
+[ext_resource type="Script" uid="uid://d2qr8pva8u51q" path="res://collision/debug/draw_grid.gd" id="1_dspyo"]
+
+[node name="DrawGrid" type="Node2D"]
+script = ExtResource("1_dspyo")

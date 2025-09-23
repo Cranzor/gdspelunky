@@ -36,6 +36,7 @@ GlobalInput="*res://resources/global_input.gd"
 LevelGeneration="*res://scripts/level_generation.gd"
 GmLoop="*res://resources/gm_loop.gd"
 SignalBus="*res://resources/signal_bus.gd"
+DrawGrid="*res://collision/debug/draw_grid.gd"
 
 [display]
 
