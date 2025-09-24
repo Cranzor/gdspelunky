@@ -14,7 +14,7 @@ func get_hash(position: Vector2) -> Vector2:
 
 
 func get_object_grid_cells(object: GMObject) -> PackedVector2Array:
-	var rect: Rect2 = get_object_rect(object)
+	var rect: Rect2 = get_object_rect(object) #---TODO: just get a simple rectangle for this step. can check the more accurate rect later
 	return get_grid_cells_from_rect(rect)
 
 
@@ -32,16 +32,18 @@ func get_grid_cells_from_rect(rect: Rect2) -> PackedVector2Array:
 
 
 func get_object_rect(object: GMObject) -> Rect2:
-	var origin = sprites.sprite_database[object.sprite_index_name]["origin"]
-	var size = sprites.sprite_database[object.sprite_index_name]["mask"]["bounding_box"][1]
-	var pos: Vector2 = object.position - origin #--- was using collision_shape's global position, but can't rely on this for things that spawn in instantly (like explosion)
-	
-	var returned_rect: Rect2 = Rect2(pos, size)
-	if object.object_name == "arrow_trap_test": #--- making an exception for arrow_trap_test due to how its image_xscale value affects its collision size
-		var alt_pos = object.position
-		var alt_size = Vector2(16 * object.image_xscale, 16)
-		returned_rect = Rect2(alt_pos, alt_size)
-	return returned_rect
+	if sprites.sprite_database.has(object.sprite_index_name):
+		var origin = sprites.sprite_database[object.sprite_index_name]["origin"]
+		var size = sprites.sprite_database[object.sprite_index_name]["mask"]["bounding_box"][1]
+		var pos: Vector2 = object.position - origin #--- was using collision_shape's global position, but can't rely on this for things that spawn in instantly (like explosion)
+		
+		var returned_rect: Rect2 = Rect2(pos, size)
+		if object.object_name == "arrow_trap_test": #--- making an exception for arrow_trap_test due to how its image_xscale value affects its collision size
+			var alt_pos = object.position
+			var alt_size = Vector2(16 * object.image_xscale, 16)
+			returned_rect = Rect2(alt_pos, alt_size)
+		return returned_rect
+	return Rect2(0, 0, 0, 0)
 
 
 func find_objects_in_grid_cells(cells: PackedVector2Array) -> Array[GMObject]:
@@ -49,7 +51,9 @@ func find_objects_in_grid_cells(cells: PackedVector2Array) -> Array[GMObject]:
 	for cell: Vector2 in cells:
 		if cell_to_objects.has(cell):
 			var cell_objects: Array = cell_to_objects[cell]
-			all_objects.append_array(cell_objects)
+			for object in cell_objects:
+				if is_instance_valid(object) and !object.is_queued_for_deletion():
+					all_objects.append(object)
 	return all_objects
 
 
@@ -61,9 +65,10 @@ func check_rect_collision(checking_rect: Rect2, checked_rect: Rect2) -> bool:
 
 func update_object_collision(object: GMObject, first_time: bool = false) -> void:
 	var cells: PackedVector2Array = get_object_grid_cells(object)
-	if !first_time: remove_object_from_cells(object, prior_occupied_cells)
-	set_object_to_cells(object, cells)
-	prior_occupied_cells = cells
+	if cells != prior_occupied_cells:
+		if !first_time: remove_object_from_cells(object, prior_occupied_cells)
+		set_object_to_cells(object, cells)
+		prior_occupied_cells = cells
 
 
 func set_object_to_cells(object: GMObject, cells: PackedVector2Array) -> void:
@@ -75,7 +80,7 @@ func set_object_to_cells(object: GMObject, cells: PackedVector2Array) -> void:
 
 func remove_object_from_cells(object: GMObject, cells: PackedVector2Array) -> void:
 	for cell: Vector2 in cells:
-		cell_to_objects[cell].erase[object]
+		cell_to_objects[cell].erase(object)
 
 
 func group_collision_query(checking_rect: Rect2, group: StringName, calling_object: GMObject = null, notme: bool = false):

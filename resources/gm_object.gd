@@ -7,6 +7,7 @@ class_name GMObject
 var object_database: ObjectDatabase = ObjectDatabase.new()
 var sprites: Sprites = Sprites.new()
 var new_collision: NewCollision = NewCollision.new()
+var custom_collision = preload("res://collision/custom_collision.gd").new()
 
 var grid_position
 
