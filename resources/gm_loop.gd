@@ -30,6 +30,7 @@ func gm_loop(): #---[FLAG] consider running every event in the same order as ste
 		get_tree().call_group("screen", "begin_step") #--- moving this here as all code in the script is relating to drawing.
 													  #---not doing so can cause issues like global.message passed into draw_text being outdated (since it's updated in run_collision_with)
 		get_tree().call_group("draw_object", "run_draw_event") #--- putting draw event after updating camera position fixes text jitter issues
+		update_collision()
 
 
 func all_objects_step_event():
@@ -62,3 +63,9 @@ func reset_surfaces():
 	gml.surfaces_to_draw["screen"] = false
 	gml.surfaces_to_draw["p_surf"] = false
 	gml.surfaces_to_draw["dark_surf"] = false
+
+
+func update_collision() -> void:
+	var objects = get_tree().get_nodes_in_group("gm_object")
+	for object: GMObject in objects:
+		object.custom_collision.update_object_collision(object)

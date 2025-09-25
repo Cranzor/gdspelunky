@@ -173,6 +173,8 @@ func instance_create(x,y,obj,calling_object: GMObject = null,run_create = true) 
 		instance.run_create_function(instance)
 		#instance.run_step_event(instance)
 	
+	instance.custom_collision.update_object_collision(instance, true)
+	
 	#for objects bigger than 16x16, get height and width of sprite texture and then add that as the size
 	
 	#getting each location of each object spawned in. note that this only applies to stationary objects
@@ -312,6 +314,7 @@ func instance_destroy(obj: GMObject) -> void: #'Destroys current instance' ---  
 	#var area_2d: Area2D = obj.get_node("Sprites/MainAnimations/Area2D") #---[FLAG] should do this for main object
 	#area_2d.set_collision_layer_value(1, false)
 	obj.hide()
+	obj.custom_collision.remove_object_from_cells(obj, obj.custom_collision.prior_occupied_cells)
 	obj.queue_free()
 
 func collision_rectangle(x1:float,y1:float,x2:float,y2:float,obj,_prec,notme: bool, calling_object: GMObject = null) -> GMObject: #"This function tests whether there is a collision between the (filled) rectangle with the indicated opposite corners and entities of object obj. For example, you can use this to test whether an area is free of obstacles."
@@ -590,6 +593,8 @@ func room_goto(room_name: String) -> void:
 	changed_scene = true
 	get_tree().call_group("gm_object", "room_end")
 	view2.set_camera_pos(Vector2(0, 0))
+	var custom_collision = load("res://collision/custom_collision.gd").new()
+	custom_collision.cell_to_objects.clear()
 	get_tree().change_scene_to_file("res://rooms/" + room_name + "/" + room_name + ".tscn")
 
 

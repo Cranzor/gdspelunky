@@ -65,6 +65,8 @@ func check_rect_collision(checking_rect: Rect2, checked_rect: Rect2) -> bool:
 
 
 func update_object_collision(object: GMObject, first_time: bool = false) -> void:
+	if object.is_queued_for_deletion():
+		return
 	var cells: PackedVector2Array = get_object_grid_cells(object)
 	if cells != prior_occupied_cells:
 		if !first_time: remove_object_from_cells(object, prior_occupied_cells)
