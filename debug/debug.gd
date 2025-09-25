@@ -3,6 +3,7 @@ extends CanvasLayer
 var paused: bool = false
 var dark: bool = false
 var shop: bool = false
+var custom_collision = preload("res://collision/custom_collision.gd").new()
 
 
 func _input(event: InputEvent) -> void:
@@ -123,3 +124,7 @@ func _on_market_pressed() -> void:
 func _on_city_of_gold_pressed() -> void:
 	global.city_of_gold = true
 	load_level(15, "level")
+
+
+func _on_print_collision_cells_pressed() -> void:
+	print(JSON.stringify(custom_collision.cell_to_objects, "  "))

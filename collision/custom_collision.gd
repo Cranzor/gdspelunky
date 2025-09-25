@@ -32,9 +32,10 @@ func get_grid_cells_from_rect(rect: Rect2) -> PackedVector2Array:
 
 
 func get_object_rect(object: GMObject) -> Rect2:
-	if sprites.sprite_database.has(object.sprite_index_name):
-		var origin = sprites.sprite_database[object.sprite_index_name]["origin"]
-		var size = sprites.sprite_database[object.sprite_index_name]["mask"]["bounding_box"][1]
+	var default_animation: StringName = object.animated_sprite_node.default_animation #--- for accurate updated sprite, change to object.sprite_index_name
+	if sprites.sprite_database.has(default_animation):
+		var origin = sprites.sprite_database[default_animation]["origin"]
+		var size = sprites.sprite_database[default_animation]["mask"]["bounding_box"][1]
 		var pos: Vector2 = object.position - origin #--- was using collision_shape's global position, but can't rely on this for things that spawn in instantly (like explosion)
 		
 		var returned_rect: Rect2 = Rect2(pos, size)

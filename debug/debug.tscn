@@ -163,7 +163,19 @@ custom_minimum_size = Vector2(58, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_ifkhq")
 placeholder_text = "OBJECT"
+alignment = 1
 caret_blink = true
+
+[node name="Collision" type="Label" parent="Menu/HBoxContainer/Info"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_ifkhq")
+text = "COLLISION"
+
+[node name="PrintCollisionCells" type="Button" parent="Menu/HBoxContainer/Info"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ifkhq")
+text = "PRINT"
 
 [connection signal="pressed" from="Menu/HBoxContainer/Stages/Mines" to="." method="_on_mines_pressed"]
 [connection signal="pressed" from="Menu/HBoxContainer/Stages/Lush" to="." method="_on_lush_pressed"]
@@ -182,3 +194,4 @@ caret_blink = true
 [connection signal="text_submitted" from="Menu/HBoxContainer/Max/ItemName" to="." method="_on_item_name_text_submitted"]
 [connection signal="text_changed" from="Menu/HBoxContainer/Info/Object" to="." method="_on_object_text_changed"]
 [connection signal="text_submitted" from="Menu/HBoxContainer/Info/Object" to="." method="_on_object_text_submitted"]
+[connection signal="pressed" from="Menu/HBoxContainer/Info/PrintCollisionCells" to="." method="_on_print_collision_cells_pressed"]
