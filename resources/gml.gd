@@ -184,7 +184,9 @@ func instance_create(x,y,obj,calling_object: GMObject = null,run_create = true) 
 	return instance
 	
 func collision_point(x: float,y: float,obj: String,_prec,notme,calling_object: GMObject = null) -> GMObject: #"This function tests whether at point (x,y) there is a collision with entities of object obj."
-	return custom_collision.group_collision_query(Rect2(x, y, 1, 1), obj, calling_object, notme)
+	return custom_collision.group_collision_query(Rect2(x, y, 1, 1), obj, calling_object, false)
+	#--- can simply pass in false for notme, as there seem to be no cases where it's true
+	#--- -1 as the value also evaluates to true (for some reason) which causes issues
 
 #Always adds bg elements
 func tile_add(background,left,top,width,height,x,y,depth) -> void: #return value of tile as well. left: left to right value in pixels. top: top to bottom in pixels
@@ -547,6 +549,7 @@ func room_goto(room_name: String) -> void:
 	get_tree().call_group("gm_object", "room_end")
 	view2.set_camera_pos(Vector2(0, 0))
 	custom_collision.cell_to_objects.clear()
+	SignalBus.emit_signal("scene_changed")
 	get_tree().change_scene_to_file("res://rooms/" + room_name + "/" + room_name + ".tscn")
 
 

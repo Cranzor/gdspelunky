@@ -8,6 +8,10 @@ var prior_cell: Vector2
 var prior_objects: Array[GMObject]
 
 
+func _ready() -> void:
+	SignalBus.scene_changed.connect(clear_prior_objects)
+
+
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		hightlight_objects_based_on_mouse_cell()
@@ -17,7 +21,8 @@ func hightlight_objects_based_on_mouse_cell():
 	var mouse_cell: Vector2 = custom_collision.get_hash(get_global_mouse_position())
 	if mouse_cell != prior_cell:
 		for object: GMObject in prior_objects:
-			debug_highlighting.reset_color(object)
+			if is_instance_valid(object) and !object.is_queued_for_deletion():
+				debug_highlighting.reset_color(object)
 		prior_objects.clear()
 		var objects = custom_collision.find_objects_in_grid_cells([mouse_cell])
 		for object: GMObject in objects:
@@ -42,3 +47,7 @@ func draw_grid() -> void:
 	while y < y_max:
 		y+= cell_size
 		draw_line(Vector2(0, y), Vector2(x_max, y), Color(1.0, 1.0, 1.0, 0.2), 1)
+
+
+func clear_prior_objects():
+	prior_objects.clear()

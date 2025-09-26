@@ -55,7 +55,7 @@ func find_objects_in_grid_cells(cells: PackedVector2Array) -> Array[GMObject]:
 		if cell_to_objects.has(cell):
 			var cell_objects: Array = cell_to_objects[cell]
 			for object in cell_objects:
-				if is_instance_valid(object) and !object.is_queued_for_deletion():
+				if is_instance_valid(object): #TODO: find out why there are null objects coming back in cell_objects
 					all_objects.append(object)
 	return all_objects
 
@@ -99,7 +99,7 @@ func group_collision_query(checking_rect: Rect2, group: StringName, calling_obje
 				if !check_notme(calling_object, object, notme):
 					matched_objects.append(object)
 	if matched_objects:
-		return matched_objects[-1]
+		return matched_objects[0]
 	return null
 
 
