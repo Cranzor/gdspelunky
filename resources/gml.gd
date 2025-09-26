@@ -184,23 +184,7 @@ func instance_create(x,y,obj,calling_object: GMObject = null,run_create = true) 
 	return instance
 	
 func collision_point(x: float,y: float,obj: String,_prec,notme,calling_object: GMObject = null) -> GMObject: #"This function tests whether at point (x,y) there is a collision with entities of object obj."
-	var possible = []
-	var overlap_query = PhysicsPointQueryParameters2D.new()
-	overlap_query.collide_with_bodies = true
-	overlap_query.position = Vector2(x, y)
-	overlap_query.collision_mask = 1
-	var overlaps = get_tree().get_first_node_in_group("gm_object").get_world_2d().direct_space_state.intersect_point(overlap_query, 100)
-	for overlap in overlaps:
-		var collider = overlap["collider"]
-		var collider_groups = collider.get_groups()
-		if obj in collider_groups:
-			possible.append(collider)
-	if possible != []:
-		return possible[-1]
-	return null
-	
-	#var collided_object = handle_collision_ray(x, y, x, y, obj, notme)
-	#return collided_object
+	return custom_collision.group_collision_query(Rect2(x, y, 1, 1), obj, calling_object, notme)
 
 #Always adds bg elements
 func tile_add(background,left,top,width,height,x,y,depth) -> void: #return value of tile as well. left: left to right value in pixels. top: top to bottom in pixels
@@ -319,17 +303,12 @@ func instance_destroy(obj: GMObject) -> void: #'Destroys current instance' ---  
 	obj.queue_free()
 
 func collision_rectangle(x1:float,y1:float,x2:float,y2:float,obj,_prec,notme: bool, calling_object: GMObject = null) -> GMObject: #"This function tests whether there is a collision between the (filled) rectangle with the indicated opposite corners and entities of object obj. For example, you can use this to test whether an area is free of obstacles."
-	var collided_object: GMObject
-	if abs(x2 - x1) == 0 or abs(y2 - y1) == 0: #--- raycast is more appropriate in this case since it's just a line
-		collided_object = handle_collision_ray(x1, y1, x2, y2, obj, notme) #--- also avoids error in handle_collision_shapecast() associated with size being negative
-		if check_notme(notme, collided_object, calling_object):
-				return null
-		return collided_object
-
-	collided_object = handle_collision_shapecast(x1, y1, x2, y2, obj)
-	if check_notme(notme, collided_object, calling_object):
-			return null
-	return collided_object
+	if x1 - x2 == 0:
+		x2 += 1
+	elif y1 - y2 == 0:
+		y2 += 1
+	
+	return custom_collision.group_collision_query(Rect2(x1, y1, abs(x2 - x1), abs(y2 - y1)), obj, calling_object, notme)
 	
 func check_notme(notme, collided_object, calling_object) -> bool:
 	if notme:
