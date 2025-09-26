@@ -4,6 +4,7 @@ class_name GML_Class
 var collision_handling = CollisionHandling.new()
 var sprite_database = Sprites.new()
 var object_database = ObjectDatabase.new()
+var custom_collision = preload("res://collision/custom_collision.gd").new()
 
 const TEXT = preload("res://scenes/text.tscn")
 const SPRITE = preload("res://scenes/sprite.tscn")
@@ -384,39 +385,12 @@ func instance_number(obj: String) -> int:
 	return number_of_instances
 
 func collision_line(x1:int,y1:int,x2:int,y2:int,obj,_prec,notme,calling_object: GMObject = null) -> GMObject:
-	var collided_object: GMObject = handle_collision_ray(x1, y1, x2, y2, obj, notme, calling_object)
-	if check_notme(notme, collided_object, calling_object):
-		return null
-	return collided_object
+	if x1 - x2 == 0:
+		x2 += 1
+	elif y1 - y2 == 0:
+		y2 += 1
 	
-	#get_tree().call_group("gm_object", "force_update_transform")
-	#var possible = []
-	#var overlap_query = PhysicsRayQueryParameters2D.new()
-	#overlap_query.collide_with_bodies = true
-	#overlap_query.from = Vector2(x1 + 0.1, y1 + 0.1)
-	#overlap_query.to = Vector2(x2 - 0.1, y2 - 0.1)
-	#overlap_query.hit_from_inside = true
-	#var finished: bool = false
-	#while finished == false:
-		#var overlap = get_tree().get_first_node_in_group("gm_object").get_world_2d().direct_space_state.intersect_ray(overlap_query)
-		#if overlap == {}:
-			#finished = true
-			#break
-		#var collider = overlap["collider"]
-		#var rid = overlap["rid"]
-		#var exclusions: Array = overlap_query.get_exclude().duplicate()
-		#exclusions.append(rid)
-		#overlap_query.set_exclude(exclusions)
-		#var collider_groups = collider.get_groups()
-		#if obj in collider_groups:
-			#possible.append(collider)
-			#
-	#if possible != []:
-		#if check_notme(notme, possible[-1], calling_object):
-			#return null
-		#else:
-			#return possible[-1]
-	#return null
+	return custom_collision.group_collision_query(Rect2(x1, y1, abs(x2 - x1), abs(y2 - y1)), obj, calling_object, notme)
 
 func instance_activate_object(obj: String) -> void:
 	pass
@@ -593,7 +567,6 @@ func room_goto(room_name: String) -> void:
 	changed_scene = true
 	get_tree().call_group("gm_object", "room_end")
 	view2.set_camera_pos(Vector2(0, 0))
-	var custom_collision = load("res://collision/custom_collision.gd").new()
 	custom_collision.cell_to_objects.clear()
 	get_tree().change_scene_to_file("res://rooms/" + room_name + "/" + room_name + ".tscn")
 

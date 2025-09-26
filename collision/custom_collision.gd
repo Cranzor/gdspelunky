@@ -7,6 +7,7 @@ var potential_collision_objects: Array[GMObject]
 var debug_highlighting = preload("res://collision/debug/broad_phase_highlighting.gd").new()
 var debug_highlighting_on: bool = false
 var sprites = Sprites.new()
+var rect: Rect2
 
 
 func get_hash(position: Vector2) -> Vector2:
@@ -43,6 +44,7 @@ func get_object_rect(object: GMObject) -> Rect2:
 			var alt_pos = object.position
 			var alt_size = Vector2(16 * object.image_xscale, 16)
 			returned_rect = Rect2(alt_pos, alt_size)
+		rect = returned_rect
 		return returned_rect
 	return Rect2(0, 0, 0, 0)
 
@@ -89,14 +91,15 @@ func remove_object_from_cells(object: GMObject, cells: PackedVector2Array) -> vo
 func group_collision_query(checking_rect: Rect2, group: StringName, calling_object: GMObject = null, notme: bool = false):
 	var grid_cells: PackedVector2Array = get_grid_cells_from_rect(checking_rect)
 	var candidate_objects: Array[GMObject] = find_objects_in_grid_cells(grid_cells)
+	var matched_objects: Array[GMObject]
 	for object in candidate_objects:
 		if object.get_groups().has(group):
-			var colliding: bool = check_rect_collision(checking_rect, get_object_rect(object))
+			var colliding: bool = check_rect_collision(checking_rect, object.custom_collision.rect)
 			if colliding:
 				if !check_notme(calling_object, object, notme):
-					candidate_objects.append(object)
-	if candidate_objects:
-		return candidate_objects[-1]
+					matched_objects.append(object)
+	if matched_objects:
+		return matched_objects[-1]
 	return null
 
 
