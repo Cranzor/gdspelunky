@@ -2840,10 +2840,7 @@ func handle_ladder_climbing() -> void:
 		
 		k_jumped = false
 		ladder_timer = 10
-		#var ladder_instance = gml.collision_point(position.x, position.y, 'ladder', 0, 0) #--- adjusting this as collision_point in my implementation only returns a boolean
-		var ladder_instance
-		if gml.collision_point(position.x, position.y, 'ladder', 0, 0):
-			ladder_instance = gml.instance_nearest(position.x, position.y, 'ladder')
+		var ladder_instance = gml.collision_point(position.x, position.y, "ladder", 0, 0)
 		if (ladder_instance): position.x = ladder_instance.position.x + 8
 
 		if (k_left): facing = LEFT
