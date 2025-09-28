@@ -19,7 +19,10 @@ func get_object_grid_cells(object: GMObject) -> PackedVector2Array:
 	return get_grid_cells_from_rect(rect)
 
 
+var rect_to_grid_cells: Dictionary[Rect2, PackedVector2Array]
 func get_grid_cells_from_rect(rect: Rect2) -> PackedVector2Array:
+	if rect in rect_to_grid_cells:
+		return rect_to_grid_cells[rect]
 	var grid_cells: PackedVector2Array
 	var min_point: Vector2 = rect.position
 	var max_point: Vector2 = rect.end
@@ -27,8 +30,8 @@ func get_grid_cells_from_rect(rect: Rect2) -> PackedVector2Array:
 	var max: Vector2 = get_hash(max_point)
 	for i in range(min.x, max.x+1):
 		for j in range(min.y, max.y+1):
-			if Vector2(i, j) not in grid_cells:
-				grid_cells.append(Vector2(i, j))
+			grid_cells.append(Vector2(i, j))
+	rect_to_grid_cells[rect] = grid_cells
 	return grid_cells
 
 
@@ -51,12 +54,14 @@ func get_object_rect(object: GMObject) -> Rect2:
 
 func find_objects_in_grid_cells(cells: PackedVector2Array) -> Array[GMObject]:
 	var all_objects: Array[GMObject]
+	var name_to_object: Dictionary[StringName, GMObject]
 	for cell: Vector2 in cells:
 		if cell_to_objects.has(cell):
 			var cell_objects: Array = cell_to_objects[cell]
 			for object in cell_objects:
 				if is_instance_valid(object): #TODO: find out why there are null objects coming back in cell_objects
-					all_objects.append(object)
+					name_to_object[object.name] = object
+	all_objects = name_to_object.values()
 	return all_objects
 
 
@@ -93,7 +98,7 @@ func group_collision_query(checking_rect: Rect2, group: StringName, calling_obje
 	var candidate_objects: Array[GMObject] = find_objects_in_grid_cells(grid_cells)
 	var matched_objects: Array[GMObject]
 	for object in candidate_objects:
-		if object.get_groups().has(group):
+		if object.groups.has(group):
 			var colliding: bool = check_rect_collision(checking_rect, object.custom_collision.rect)
 			if colliding:
 				if !check_notme(calling_object, object, notme):

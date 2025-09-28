@@ -18,6 +18,7 @@ var sprite
 var solid = false
 
 var parent
+var groups: PackedStringArray
 
 var dir #---[FLAG] not exactly sure what this does
 var status: int #--- declaring this here for objects that use it but don't have drawn_sprite as their parent
@@ -425,6 +426,9 @@ func object_setup() -> void:
 		sprite.animation_looped.connect(callable)
 	
 	last_collision_check_position = position
+	
+	for group in get_groups():
+		groups.append(group)
 	
 func run_create_function(obj) -> void:
 	if obj.has_method("create"):
