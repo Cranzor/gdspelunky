@@ -57,10 +57,11 @@ func find_objects_in_grid_cells(cells: PackedVector2Array) -> Array[GMObject]:
 	var name_to_object: Dictionary[StringName, GMObject]
 	for cell: Vector2 in cells:
 		if cell_to_objects.has(cell):
-			var cell_objects: Array = cell_to_objects[cell]
-			for object in cell_objects:
-				if is_instance_valid(object): #TODO: find out why there are null objects coming back in cell_objects
-					name_to_object[object.name] = object
+			var cell_objects: Dictionary = cell_to_objects[cell]
+			name_to_object.merge(cell_objects)
+			#for object in cell_objects:
+				#if is_instance_valid(object): #TODO: find out why there are null objects coming back in cell_objects
+					#name_to_object[object.name] = object
 	all_objects = name_to_object.values()
 	return all_objects
 
@@ -84,13 +85,13 @@ func update_object_collision(object: GMObject, first_time: bool = false) -> void
 func set_object_to_cells(object: GMObject, cells: PackedVector2Array) -> void:
 	for cell: Vector2 in cells:
 		if !cell_to_objects.has(cell):
-			cell_to_objects[cell] = []
-		cell_to_objects[cell].append(object)
+			cell_to_objects[cell] = {}
+		cell_to_objects[cell][object.name] = object
 
 
 func remove_object_from_cells(object: GMObject, cells: PackedVector2Array) -> void:
 	for cell: Vector2 in cells:
-		cell_to_objects[cell].erase(object)
+		cell_to_objects[cell].erase(object.name)
 
 
 func group_collision_query(checking_rect: Rect2, group: StringName, calling_object: GMObject = null, notme: bool = false):

@@ -50,6 +50,7 @@ func all_objects_step_event():
 		for i: int in diff:
 			var object: GMObject = updated_step_objects[updated_step_objects_count - diff]
 			object.step()
+			object.custom_collision.update_object_collision(object)
 
 
 func autoloads_step_event():
