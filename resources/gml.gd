@@ -458,6 +458,10 @@ func instance_deactivate_region(left, top, width, height, inside, notme) -> void
 	
 func room_restart() -> void:
 	changed_scene = true
+	get_tree().call_group("gm_object", "room_end")
+	view2.set_camera_pos(Vector2(0, 0))
+	custom_collision.cell_to_objects.clear()
+	SignalBus.emit_signal("scene_changed")
 	get_tree().reload_current_scene()
 	
 func instance_activate_all() -> void:
