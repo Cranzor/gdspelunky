@@ -530,7 +530,7 @@ script = ExtResource("130_33t2b")
 origin = Vector2(8, 8)
 containing_box = Rect2(1, 0, 14, 16)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ipoyn"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_2krs8"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -538,7 +538,7 @@ animations = [{
 "texture": ExtResource("3_6v4f3")
 }],
 "loop": true,
-"name": &"arrow",
+"name": &"arrow_right",
 "speed": 30.0
 }, {
 "frames": [{
@@ -546,7 +546,7 @@ animations = [{
 "texture": ExtResource("4_jrwt2")
 }],
 "loop": true,
-"name": &"bow",
+"name": &"bow_disp",
 "speed": 30.0
 }, {
 "frames": [{
@@ -581,7 +581,7 @@ animations = [{
 "texture": ExtResource("9_viv8a")
 }],
 "loop": true,
-"name": &"key",
+"name": &"key_right",
 "speed": 30.0
 }, {
 "frames": [{
@@ -589,15 +589,7 @@ animations = [{
 "texture": ExtResource("10_ejxpe")
 }],
 "loop": true,
-"name": &"machete",
-"speed": 30.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("11_kgdn8")
-}],
-"loop": true,
-"name": &"mattock",
+"name": &"machete_right",
 "speed": 30.0
 }, {
 "frames": [{
@@ -610,10 +602,18 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("11_kgdn8")
+}],
+"loop": true,
+"name": &"mattock_right",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("13_4fiim")
 }],
 "loop": true,
-"name": &"pistol",
+"name": &"pistol_right",
 "speed": 30.0
 }, {
 "frames": [{
@@ -629,7 +629,7 @@ animations = [{
 "texture": ExtResource("15_vuwba")
 }],
 "loop": true,
-"name": &"sceptre",
+"name": &"sceptre_right",
 "speed": 30.0
 }, {
 "frames": [{
@@ -637,7 +637,7 @@ animations = [{
 "texture": ExtResource("16_our7u")
 }],
 "loop": true,
-"name": &"shotgun",
+"name": &"shotgun_right",
 "speed": 30.0
 }, {
 "frames": [{
@@ -706,7 +706,7 @@ animations = [{
 "texture": ExtResource("34_o7f70")
 }],
 "loop": true,
-"name": &"web_cannon",
+"name": &"web_cannon_r",
 "speed": 30.0
 }]
 
@@ -727,6 +727,7 @@ sprite_frames = SubResource("SpriteFrames_8p1w3")
 
 [node name="Sprite" parent="." instance=ExtResource("41_xil01")]
 sprite_frames = SubResource("SpriteFrames_xil01")
+animation = &"damsel_exit"
 autoplay = "run_left"
 offset = Vector2(-8, -8)
 sprite_info = Dictionary[StringName, ExtResource("130_33t2b")]({
@@ -746,9 +747,8 @@ default_animation = &"run_left"
 
 [node name="PickupItem" parent="." instance=ExtResource("2_0nho6")]
 visible = false
-sprite_frames = SubResource("SpriteFrames_ipoyn")
-animation = &"damsel_exit"
-frame_progress = 0.0
+sprite_frames = SubResource("SpriteFrames_2krs8")
+animation = &"arrow_right"
 type = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
