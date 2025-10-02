@@ -109,6 +109,28 @@ func group_collision_query(checking_rect: Rect2, group: StringName, calling_obje
 	return null
 
 
+func check_rect_sides_for_collision_with_group(object_rect: Rect2, collision_checks: Dictionary[int, PackedStringArray], candidate_objects: Array[GMObject], grow_size: int):
+	var collision_results: Dictionary
+	var left_side: Rect2 = Rect2(object_rect.position.x - grow_size, object_rect.position.y, 1, object_rect.size.y)
+	var right_side: Rect2 = Rect2(object_rect.position.x + grow_size, object_rect.position.y, 1, object_rect.size.y)
+	var top_side: Rect2 = Rect2(object_rect.position.x, object_rect.position.y - grow_size, object_rect.size.x, 1)
+	var bottom_side: Rect2 = Rect2(object_rect.position.x, object_rect.position.y + grow_size, object_rect.size.x, 1)
+	var int_to_side: Dictionary[int, Rect2] = {0 : left_side, 1 : top_side, 2 : right_side, 3 : bottom_side}
+	for side in collision_checks:
+		if side not in collision_results:
+			collision_results[side] = {}
+		var groups: PackedStringArray = collision_checks[side]
+		for group in groups:
+			for obj: GMObject in candidate_objects:
+				if group in obj.groups:
+					var colliding: bool = check_rect_collision(int_to_side[side], obj.custom_collision.rect)
+					if colliding:
+						collision_results[side][group] = true
+						break
+				collision_results[side][group] = false
+	return collision_results
+
+
 func check_notme(calling_object: GMObject, comparison_object: GMObject, notme: bool) -> bool:
 	if notme == false:
 		return false
