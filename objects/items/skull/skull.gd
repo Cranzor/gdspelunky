@@ -185,7 +185,7 @@ func step():
 					
 				
 					enemy.status = STUNNED
-					enemy.counter = stun_time
+					enemy.counter = stun_time #TODO: causes bug with yeti
 					enemy.y_vel = -6
 					Audio.play_sound(global.snd_hit)
 			

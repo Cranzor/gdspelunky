@@ -370,7 +370,7 @@ func step():
 							
 							elif (obj.type == "man_trap"):
 							
-								gml.instance_create(obj.position.x+randi_range(0,16), obj.position.y-8+randi_range(0,16), Objects.leaf, self)
+								gml.instance_create(obj.position.x+gml.rand(0,16), obj.position.y-8+gml.rand(0,16), Objects.leaf, self)
 							
 							obj.hp -= 1
 							obj.status = STUNNED
@@ -425,7 +425,7 @@ func step():
 					
 						gml.instance_create(obj.position.x+8, obj.position.y+8, Objects.explosion, self)
 						Audio.play_sound(global.snd_explosion)
-						if (randi_range(1,3) == 1): gml.instance_create(obj.position.x+8, obj.position.y+8, Objects.alien_eject, self)
+						if (gml.rand(1,3) == 1): gml.instance_create(obj.position.x+8, obj.position.y+8, Objects.alien_eject, self)
 						if (InLevel.is_real_level()): global.enemy_kills[16] += 1
 						global.ufos += 1
 						global.kills += 1
