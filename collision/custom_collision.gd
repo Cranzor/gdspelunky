@@ -99,7 +99,7 @@ func group_collision_query(checking_rect: Rect2, group: StringName, calling_obje
 	var candidate_objects: Array[GMObject] = find_objects_in_grid_cells(grid_cells)
 	var matched_objects: Array[GMObject]
 	for object in candidate_objects:
-		if object.groups.has(group):
+		if object.get_groups().has(group): #TODO: adding groups at the start may be faster. but have to account for moving_solid objects that pass in unique_id
 			var colliding: bool = check_rect_collision(checking_rect, object.custom_collision.rect)
 			if colliding:
 				if !check_notme(calling_object, object, notme):
