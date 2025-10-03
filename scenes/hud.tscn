@@ -525,7 +525,6 @@ centered = false
 [node name="PickupItem" parent="InGame" instance=ExtResource("28_qn0nn")]
 sprite_frames = SubResource("SpriteFrames_eavr3")
 animation = &"bow_disp"
-frame_progress = 0.0
 offset = Vector2(-8, -12)
 
 [node name="CompassArrows" type="AnimatedSprite2D" parent="InGame"]
@@ -549,6 +548,7 @@ hide_at_frame_start = false
 [node name="DrawRectangle" parent="PauseScreen" instance=ExtResource("72_4hsw7")]
 
 [node name="TitleFadeIn" type="Node2D" parent="."]
+visible = false
 script = ExtResource("72_tj8l3")
 
 [node name="DrawText" parent="TitleFadeIn" instance=ExtResource("70_ep55p")]

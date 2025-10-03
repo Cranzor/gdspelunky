@@ -3,10 +3,10 @@ extends Node2D
 @onready var draw_text: Node2D = $DrawText
 @onready var draw_rectangle: ColorRect = $DrawRectangle
 
-signal hide_all_but_title
 
 func _ready() -> void:
 	SignalBus.draw_title_rect.connect(_draw_title)
+
 
 func _draw_title() -> void: #--- moved this code from screen object
 	var title = gml.get_instance("title")

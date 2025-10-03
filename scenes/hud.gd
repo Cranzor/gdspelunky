@@ -20,9 +20,10 @@ func _physics_process(delta: float) -> void:
 		item_icons.draw_icons()
 		pickup_item.draw_pickup_item()
 	elif gml.room_get_name() == "title":
-		hide_all_but_title()
+		handle_title_hud()
 	else:
-		propagate_call("hide")
+		show()
+		in_game.hide()
 	
 	if global.has_sticky_bombs:
 		bomb_icon.hide()
@@ -96,8 +97,7 @@ func draw_global_message_text(): #--- moved from screen object
 		global.message_timer -= 1
 
 
-func hide_all_but_title():
+func handle_title_hud():
 	in_game.hide()
-	pause_screen.hide()
 	title_fade_in.show()
 	show()
