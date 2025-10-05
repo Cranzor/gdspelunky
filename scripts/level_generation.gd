@@ -34,7 +34,7 @@ static func scr_get_room_y(y):
 
 	return -1
 
-func scr_generate_item(x, y, set_type):
+func scr_generate_item(x, y, set_type) -> GMObject:
 # DY: scr_generate_item(x, y, set_type)
 #
 # DY: Generate an item at (x,y).
@@ -107,6 +107,8 @@ func scr_generate_item(x, y, set_type):
 	
 		obj.cost = 0
 		obj.for_sale = false
+	
+	return obj
 
 func scr_shop_items_gen(xpos, ypos, shop_type): #--- original doesn't have these arguments but seems necessary
 # DY: 
@@ -1723,8 +1725,8 @@ func scr_room_gen(x, y): #--- have to pass in x and y
 			elif (tile == "q"):
 			
 				n = gml.rand(1,6)
-				scr_generate_item(xpos+8, ypos+8, 1)
-				#obj.in_dice_house = true #---[FLAG] obj doesn't appear to refer to anything in the original script. commenting out to get code to work
+				obj = scr_generate_item(xpos+8, ypos+8, 1)
+				obj.in_dice_house = true
 			
 			elif (tile == "+"):
 			
@@ -2184,10 +2186,8 @@ func scr_room_gen_market(x, y):
 			elif (tile == "q"):
 			
 				n = gml.rand(1,6)
-				scr_generate_item(xpos+8, ypos+8, 1)
-				if obj: #--- adding checks because obj can be null
-					if obj.has("in_dice_house"):
-						obj.in_dice_house = true
+				obj = scr_generate_item(xpos+8, ypos+8, 1)
+				obj.in_dice_house = true
 			
 			elif (tile == "Q"):
 			
@@ -2775,8 +2775,8 @@ func scr_room_gen2(x, y):
 			elif (tile == "q"):
 			
 				n = gml.rand(1,6)
-				scr_generate_item(xpos+8, ypos+8, 1)
-				#obj.in_dice_house = true #---[FLAG] obj doesn't appear to refer to anything in the original script. commenting out to get code to work
+				obj = scr_generate_item(xpos+8, ypos+8, 1)
+				obj.in_dice_house = true
 			
 			elif (tile == "+"):
 			
@@ -3377,7 +3377,7 @@ func scr_room_gen_yeti(x, y):
 			elif (tile == "q"):
 			
 				n = gml.rand(1,6)
-				scr_generate_item(xpos+8, ypos+8, 1)
+				obj = scr_generate_item(xpos+8, ypos+8, 1)
 				obj.in_dice_house = true
 			
 			elif (tile == "+"):
@@ -3934,10 +3934,8 @@ func scr_room_gen3(x, y):
 			elif (tile == "q"):
 			
 				n = gml.rand(1,6)
-				scr_generate_item(xpos+8, ypos+8, 1)
-				if obj: #--- adding checks because obj can be null
-					if obj.has("in_dice_house"):
-						obj.in_dice_house = true
+				obj = scr_generate_item(xpos+8, ypos+8, 1)
+				obj.in_dice_house = true
 			
 			elif (tile == "+"):
 			
@@ -4666,7 +4664,7 @@ func scr_room_gen4(x, y):
 			elif (tile == "q"):
 			
 				n = gml.rand(1,6)
-				scr_generate_item(xpos+8, ypos+8, 1)
+				obj = scr_generate_item(xpos+8, ypos+8, 1)
 				obj.in_dice_house = true
 			
 			elif (tile == "+"):

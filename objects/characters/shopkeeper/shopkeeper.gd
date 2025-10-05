@@ -435,7 +435,7 @@ func step():
 								obj.x_vel = -0.4
 								obj = gml.instance_create(item_instance.position.x+4, item_instance.position.y+6, Objects.poof, self)
 								obj.x_vel = 0.4
-								LevelGeneration.scr_generate_item(item_instance.position.x, item_instance.position.y, 1)
+								obj = LevelGeneration.scr_generate_item(item_instance.position.x, item_instance.position.y, 1)
 								obj.in_dice_house = true
 								if (player1.position.x < item_instance.position.x): item_instance.position.x -= 32
 								else: item_instance.position.x += 32
