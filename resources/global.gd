@@ -47,7 +47,7 @@ var debug_black_market: bool = false
 var debug_dark_level: bool = false #--- added by me for debugging purposes
 var debug_shop: bool = false
 var diamonds
-var dice_games_lost
+var dice_games_lost: int
 var dice_games_played: int
 var dice_games_won: int
 var dice_rolled: bool

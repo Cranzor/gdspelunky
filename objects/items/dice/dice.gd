@@ -16,6 +16,7 @@ func _process(delta):
 #--- Object functions
 var rolled
 var rolling
+@onready var red_arrow_down: AnimatedSprite2D = $RedArrowDown
 
 
 func create():
@@ -38,7 +39,7 @@ func draw():
 	var player1 = gml.get_instance("player1") #---[FLAG] may have to change this for multiplayer
 	if (!rolled and player1.bet > 0):
 
-		gml.draw_sprite_ext("red_arrow_down", 0, position.x, position.y-12, 1, 1, 0, gml.c_white, 1, self, false)
+		DrawSprite.draw_sprite_ext("red_arrow_down", 0, position.x, position.y-12, 1, 1, 0, gml.c_white, 1, red_arrow_down)
 
 
 func step():
