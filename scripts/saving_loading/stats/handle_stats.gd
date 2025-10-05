@@ -1,6 +1,5 @@
 extends Node
 
-
 var base_text: String = \
 "+---------------------------+
 |  SPELUNKY EXTENDED STATS  |
@@ -99,6 +98,7 @@ ENEMY        KILLS
  {zombie_kills}
  {vampire_kills}
  {frog_kills}
+ {monkey_kills}
  {fire_frog_kills}
  {mantrap_kills}
  {piranha_kills}
@@ -156,8 +156,9 @@ var enemies: Array = [
 	"shopkeeper",
 	"tomb_lord",
 	"olmec",
+	"monkey",
 	"magma_man", # moved magma_man after olmec as these last two aren't found in killed enemies section
-	"ghost"
+	"ghost",
 ]
 
 var misc: Array = [
@@ -237,13 +238,15 @@ func generate_dictionary() -> Dictionary:
 	
 	# enemy kills
 	var total_kills: int = 0
-	for i in enemies.size() - 2:
+	for i in enemies.size() - 3:
 		var enemy_kills = global.enemy_kills[i]
 		var enemy_name: String = enemies[i]
 		var enemy_entry: String = enemy_name + "_kills"
 		combined_dictionary[enemy_entry] = enemy_kills
 		total_kills += enemy_kills
-	combined_dictionary["total_kills"] = total_kills
+	# monkey exception (not in global.enemy_kills)
+	combined_dictionary["monkey_kills"] = global.total_monkey_kills	
+	combined_dictionary["total_kills"] = total_kills + global.total_monkey_kills
 
 	return combined_dictionary
 
@@ -276,8 +279,10 @@ func set_values_from_stats(stats: Dictionary) -> void:
 	
 	# enemy kills
 	var total_kills: int = 0
-	for i in enemies.size() - 2:
+	for i in enemies.size() - 3:
 		var enemy_name: String = enemies[i]
 		var enemy_entry: String = enemy_name + "_kills"
 		var value: int = stats[enemy_entry]
 		global.enemy_kills[i] = value
+	# monkey exception (not in global.enemy_kills)
+	global.total_monkey_kills = stats["monkey_kills"]
