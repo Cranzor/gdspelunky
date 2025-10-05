@@ -31,9 +31,9 @@ var custom_level
 var custom_level_author
 var custom_level_name
 var damsels
-var damsels_bought
-var damsels_grabbed = 0 #---[FLAG] setting to 0
-var damsels_killed
+var damsels_bought: int
+var damsels_grabbed: int
+var damsels_killed: int
 var damsels_killed_total: int
 var damsels_saved_total: int
 var dark_level: bool = false:
@@ -131,6 +131,7 @@ var has_spring_shoes
 var has_sticky_bombs
 var has_udjat_eye
 var hawkmen
+var highscore: Dictionary = {1 : 0, 2 : 0, 3 : 0, 4 : 0, 5 : 0, 6 : 0, 7 : 0, 8 : 0, 9 : 0, 10 : 0}
 var idols
 var idols_converted: int
 var idols_grabbed: int
@@ -163,7 +164,7 @@ var key_rope_val = "rope"
 var key_run_val = "run"
 var key_up_val = "up"
 var kills
-var kisses_bought
+var kisses_bought: int
 var lake
 var level_deaths: Dictionary[int, int] = {0 : 0, 1 : 0, 2 : 0, 3 : 0, 4 : 0, 5 : 0, \
 				6 : 0, 7 : 0, 8 : 0, 9 : 0, 10 : 0, 11 : 0, 12 : 0, 13 : 0, 14 : 0, 15 : 0}

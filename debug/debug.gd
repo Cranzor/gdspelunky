@@ -132,3 +132,18 @@ func _on_print_collision_cells_pressed() -> void:
 
 func _on_money_pressed() -> void:
 	global.money = 999999
+
+
+func _on_print_stats_pressed() -> void:
+	var generate_stats_text = load("res://scripts/saving_loading/stats/handle_stats.gd").new()
+	print(generate_stats_text.format_text())
+
+
+func _on_save_pressed() -> void:
+	var saving_loading = load("res://scripts/saving_loading/saving_loading.gd").new()
+	saving_loading.save_game()
+
+
+func _on_load_pressed() -> void:
+	var saving_loading = load("res://scripts/saving_loading/saving_loading.gd").new()
+	saving_loading.load_game()

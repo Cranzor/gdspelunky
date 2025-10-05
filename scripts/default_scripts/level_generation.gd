@@ -108,6 +108,9 @@ func scr_generate_item(x, y, set_type) -> GMObject:
 		obj.cost = 0
 		obj.for_sale = false
 	
+	#--- original engine behaves as if this script is run within the calling script
+	#--- that means "obj" in the calling script should be set to obj here
+	#--- replicating this by returning obj
 	return obj
 
 func scr_shop_items_gen(xpos, ypos, shop_type): #--- original doesn't have these arguments but seems necessary

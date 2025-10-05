@@ -182,6 +182,27 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("2_ifkhq")
 text = "PRINT"
 
+[node name="Stats" type="Label" parent="Menu/HBoxContainer/Info"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_ifkhq")
+text = "STATS"
+
+[node name="PrintStats" type="Button" parent="Menu/HBoxContainer/Info"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ifkhq")
+text = "PRINT"
+
+[node name="Save" type="Button" parent="Menu/HBoxContainer/Info"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ifkhq")
+text = "SAVE"
+
+[node name="Load" type="Button" parent="Menu/HBoxContainer/Info"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ifkhq")
+text = "LOAD"
+
 [connection signal="pressed" from="Menu/HBoxContainer/Stages/Mines" to="." method="_on_mines_pressed"]
 [connection signal="pressed" from="Menu/HBoxContainer/Stages/Lush" to="." method="_on_lush_pressed"]
 [connection signal="pressed" from="Menu/HBoxContainer/Stages/Lake" to="." method="_on_lake_pressed"]
@@ -201,3 +222,6 @@ text = "PRINT"
 [connection signal="text_changed" from="Menu/HBoxContainer/Info/Object" to="." method="_on_object_text_changed"]
 [connection signal="text_submitted" from="Menu/HBoxContainer/Info/Object" to="." method="_on_object_text_submitted"]
 [connection signal="pressed" from="Menu/HBoxContainer/Info/PrintCollisionCells" to="." method="_on_print_collision_cells_pressed"]
+[connection signal="pressed" from="Menu/HBoxContainer/Info/PrintStats" to="." method="_on_print_stats_pressed"]
+[connection signal="pressed" from="Menu/HBoxContainer/Info/Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="Menu/HBoxContainer/Info/Load" to="." method="_on_load_pressed"]
