@@ -128,3 +128,7 @@ func _on_city_of_gold_pressed() -> void:
 
 func _on_print_collision_cells_pressed() -> void:
 	print(JSON.stringify(custom_collision.cell_to_objects, "  "))
+
+
+func _on_money_pressed() -> void:
+	global.money = 999999

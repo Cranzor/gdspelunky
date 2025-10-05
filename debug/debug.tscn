@@ -137,6 +137,11 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("2_ifkhq")
 text = "BOMBS"
 
+[node name="Money" type="Button" parent="Menu/HBoxContainer/Max"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ifkhq")
+text = "MONEY"
+
 [node name="SpawnItem" type="Label" parent="Menu/HBoxContainer/Max"]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -190,6 +195,7 @@ text = "PRINT"
 [connection signal="pressed" from="Menu/HBoxContainer/Max/Health" to="." method="_on_health_pressed"]
 [connection signal="pressed" from="Menu/HBoxContainer/Max/Ropes" to="." method="_on_ropes_pressed"]
 [connection signal="pressed" from="Menu/HBoxContainer/Max/Bombs" to="." method="_on_bombs_pressed"]
+[connection signal="pressed" from="Menu/HBoxContainer/Max/Money" to="." method="_on_money_pressed"]
 [connection signal="text_changed" from="Menu/HBoxContainer/Max/ItemName" to="." method="_on_item_name_text_changed"]
 [connection signal="text_submitted" from="Menu/HBoxContainer/Max/ItemName" to="." method="_on_item_name_text_submitted"]
 [connection signal="text_changed" from="Menu/HBoxContainer/Info/Object" to="." method="_on_object_text_changed"]
