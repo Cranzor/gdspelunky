@@ -562,7 +562,7 @@ const object_database = {
 		},
 	"solid" : {
 		"object_id" : 126,
-		"sprite" : null,
+		"sprite" : "ice_block", # changed default sprite to ice_block, as it is the only sprite it ever uses when created
 		"solid" : false,
 		"visible" : true,
 		"depth" : 100,

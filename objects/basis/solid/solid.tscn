@@ -1,17 +1,31 @@
-[gd_scene load_steps=5 format=3 uid="uid://csce7fyjeng8e"]
+[gd_scene load_steps=9 format=3 uid="uid://csce7fyjeng8e"]
 
 [ext_resource type="Script" uid="uid://dfi6lxe8bflm6" path="res://objects/basis/solid/solid.gd" id="1_hmqp7"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_u5fxm"]
-[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="3_y2kc5"]
+[ext_resource type="Texture2D" uid="uid://c2uehy67omp2q" path="res://sprites/blocks/dark/ice_block/ice_block_0.png" id="3_u5fxm"]
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_adxew"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_u5fxm"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_8mitp"]
 resource_local_to_scene = true
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_u5fxm")
+}],
 "loop": true,
-"name": &"default",
+"name": &"ice_block",
 "speed": 30.0
 }]
+
+[sub_resource type="Resource" id="Resource_86ia6"]
+script = ExtResource("5_adxew")
+containing_box = Rect2(0, 0, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6kchu"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fphtx"]
+size = Vector2(32, 32)
 
 [node name="Solid" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -100
@@ -19,9 +33,24 @@ script = ExtResource("1_hmqp7")
 animated_sprite_node = NodePath("Sprite")
 object_name = "solid"
 
-[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_u5fxm")]
-sprite_frames = SubResource("SpriteFrames_u5fxm")
-centered = false
-script = ExtResource("3_y2kc5")
+[node name="Sprite" parent="." instance=ExtResource("2_u5fxm")]
+sprite_frames = SubResource("SpriteFrames_8mitp")
+animation = &"ice_block"
+autoplay = "ice_block"
+sprite_info = Dictionary[StringName, ExtResource("5_adxew")]({
+&"ice_block": SubResource("Resource_86ia6")
+})
+default_animation = &"ice_block"
 
-[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_6kchu")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_fphtx")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
