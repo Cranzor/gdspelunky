@@ -11,8 +11,6 @@ static func save_game() -> void:
 	var json = JSON.stringify(saved_data)
 	file.store_string(json)
 	file.close()
-	
-	print("Saved game")
 
 
 static func load_game() -> void:

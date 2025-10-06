@@ -473,3 +473,9 @@ func key_f10_pressed():
 #func room_end(): #--- not needed
 	#surface_set_target("screen")
 	#draw_clear(0)
+
+#--- added this here so the game saves even when the window is closed
+#--- chose this node because its game_end() function is what calls the saving process
+func _notification(what):
+	if what == NOTIFICATION_WM_CLOSE_REQUEST:
+		gml.game_end()

@@ -236,8 +236,128 @@ func scr_create_blood(x, y, num, object):
 
 
 
-func scr_update_highscores(type):
-	pass
+func scr_update_highscores(highscore_type: int):
+	# DY: 
+	# DY:  scr_update_highscores(type)
+	# DY: 
+	# DY:  type: 0 = game over, 1 = win, 2 = minigame
+	# DY: 
+	# DY:  Update "highscores".  Spelunky uses Game Maker's built-in highscore system to
+	# DY:  keep track of various data.  To ensure that each value is added to the right
+	# DY:  slot, we add a high number (some multiple of a million) to the value.
+	# DY: 
+
+	#/**********************************************************************************
+		#Copyright (c) 2008, 2009 Derek Yu and Mossmouth, LLC
+		#
+		#This file is part of Spelunky.
+#
+		#You can redistribute and/or modify Spelunky, including its source code, under
+		#the terms of the Spelunky User License.
+#
+		#Spelunky is distributed in the hope that it will be entertaining and useful,
+		#but WITHOUT WARRANTY.  Please see the Spelunky User License for more details.
+#
+		#The Spelunky User License should be available in "Game Information", which
+		#can be found in the Resource Explorer, or as an external file called COPYING.
+		#If not, please obtain a new copy of Spelunky from <http://spelunkyworld.com/>
+		#
+	#***********************************************************************************/
+
+	if (global.keep_score):
+
+
+		# DY:  retrieve highscore values from highscore list
+		var t_money = gml.highscore_value(1) - 9000000
+		var t_time = gml.highscore_value(2) - 8000000
+		var t_kills = gml.highscore_value(3) - 7000000
+		var t_saves = gml.highscore_value(4) - 6000000
+		var t_plays = gml.highscore_value(5) - 5000000
+		var t_wins = gml.highscore_value(6) - 4000000
+		var t_deaths = gml.highscore_value(7) - 3000000
+		var t_tunnel1 = gml.highscore_value(8) - 2000000
+		var t_tunnel2 = gml.highscore_value(9) - 1000000
+		var t_mini1 = floor(gml.highscore_value(10) / 10000)
+		var t_mini2 = floor((gml.highscore_value(10)-(t_mini1*10000)) / 100)
+		var t_mini3 = floor(gml.highscore_value(10)-(t_mini1*10000)-(t_mini2*100))
+			
+		gml.highscore_clear()
+			
+		if (global.money > t_money):
+
+			gml.highscore_add("MONEY", global.money + 9000000)
+			global.new_money = true
+
+		else: gml.highscore_add("MONEY", t_money + 9000000)
+
+		# DY:  convert time from 1000/sec to sec to prevent overflow
+		global.time = floor(global.time / 1000)
+
+		if (highscore_type == 1 and (global.time < t_time or t_time == 0) and not global.used_shortcut):
+
+			gml.highscore_add("TIME", global.time + 8000000)
+			global.new_time = true
+
+		else: gml.highscore_add("TIME", t_time + 8000000)
+			
+		if (global.kills > t_kills):
+
+			gml.highscore_add("KILLS", global.kills + 7000000)
+			global.new_kills = true
+
+		else: gml.highscore_add("KILLS", t_kills + 7000000)
+			
+		if (global.damsels > t_saves):
+
+			gml.highscore_add("SAVES", global.damsels + 6000000)
+			global.new_saves = true
+
+		else: gml.highscore_add("SAVES", t_saves + 6000000)
+			
+		if (highscore_type == 2): gml.highscore_add("PLAYS", t_plays + 5000000)
+		else: gml.highscore_add("PLAYS", t_plays + 1 + 5000000)
+
+		if (highscore_type == 1):
+
+			gml.highscore_add("WINS", t_wins + 1 + 4000000)
+			gml.highscore_add("DEATHS", t_deaths + 3000000)
+
+		elif (highscore_type == 2):
+
+			gml.highscore_add("WINS", t_wins + 4000000)
+			gml.highscore_add("DEATHS", t_deaths + 3000000)
+
+		else:
+
+			gml.highscore_add("WINS", t_wins + 4000000)
+			gml.highscore_add("DEATHS", t_deaths + 1 + 3000000)
+
+
+		gml.highscore_add("TUNNEL1", global.tunnel1 + 2000000)
+
+		gml.highscore_add("TUNNEL2", global.tunnel2 + 1000000)
+
+		if (global.mini1 > t_mini1):
+
+			t_mini1 = global.mini1
+			var sun_room = gml.get_instance("sun_room")
+			sun_room.highscore = true 
+
+		if (global.mini2 > t_mini2):
+
+			t_mini2 = global.mini2
+			var moon_room = gml.get_instance("moon_room")
+			moon_room.highscore = true 
+
+		if (global.mini3 > t_mini3):
+
+			t_mini3 = global.mini3
+			var stars_room = gml.get_instance("stars_room")
+			stars_room.highscore = true 
+
+
+		gml.highscore_add("MINIGAMES", (t_mini1*10000)+(t_mini2*100)+t_mini3)
+
 
 func scr_reset_highscores():
 	pass

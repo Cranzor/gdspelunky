@@ -6,4 +6,5 @@ func scr_read_stats():
 	SavingLoading.load_game()
 
 func scr_write_stats():
+	SavingLoading.save_game()
 	handle_stats.write_stats_to_file()
