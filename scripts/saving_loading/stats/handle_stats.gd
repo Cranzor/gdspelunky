@@ -286,3 +286,10 @@ func set_values_from_stats(stats: Dictionary) -> void:
 		global.enemy_kills[i] = value
 	# monkey exception (not in global.enemy_kills)
 	global.total_monkey_kills = stats["monkey_kills"]
+
+
+func write_stats_to_file() -> void:
+	#TODO: may want to add this as an option and potentially change the file path to the game folder
+	var file: FileAccess = FileAccess.open("user://stats.txt", FileAccess.WRITE)
+	file.store_string(format_text())
+	file.close()

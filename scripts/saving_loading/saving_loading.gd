@@ -1,7 +1,8 @@
 extends Node
+class_name SavingLoading
 
 
-func save_game() -> void:
+static func save_game() -> void:
 	var handle_stats = load("res://scripts/saving_loading/stats/handle_stats.gd").new()
 	var saved_data: Dictionary = handle_stats.generate_dictionary()
 	for highscore in global.highscore:
@@ -14,7 +15,7 @@ func save_game() -> void:
 	print("Saved game")
 
 
-func load_game() -> void:
+static func load_game() -> void:
 	var handle_stats = load("res://scripts/saving_loading/stats/handle_stats.gd").new()
 	var file: FileAccess = FileAccess.open("user://save.json", FileAccess.READ)
 	var json = file.get_as_text()
