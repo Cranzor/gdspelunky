@@ -19,3 +19,5 @@ static func load_game() -> void:
 	var json = file.get_as_text()
 	var saved_data = JSON.parse_string(json)
 	handle_stats.set_values_from_stats(saved_data)
+	for highscore in global.highscore:
+		global.highscore[highscore] = saved_data["highscore" + str(highscore)]

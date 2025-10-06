@@ -451,7 +451,14 @@ func keyboard_check_pressed(key) -> bool:
 	return check
 
 func highscore_value(place: int) -> int:
-	return 0 #--- [FLAG] temporary value
+	return global.highscore[place]
+
+func highscore_add(name: String, value: int, index: int) -> void:
+	#--- don't need name for anything. using index instead
+	global.highscore[index] = value
+
+func highscore_clear() -> void:
+	global.highscore.clear()
 	
 func instance_deactivate_region(left, top, width, height, inside, notme) -> void:
 	pass

@@ -141,10 +141,10 @@ func create():
 		player1.position.y = 112+8
 
 
-	if (global.new_money): gml.instance_create(272, 48, Objects.new, self)
-	if (global.new_kills): gml.instance_create(272, 64, Objects.new, self)
-	if (global.new_saves): gml.instance_create(272, 80, Objects.new, self)
-	if (global.new_time): gml.instance_create(272, 96, Objects.new, self)
+	if (global.new_money): gml.instance_create(272, 48, Objects.new_text, self)
+	if (global.new_kills): gml.instance_create(272, 64, Objects.new_text, self)
+	if (global.new_saves): gml.instance_create(272, 80, Objects.new_text, self)
+	if (global.new_time): gml.instance_create(272, 96, Objects.new_text, self)
 
 
 func draw():
