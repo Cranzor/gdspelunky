@@ -1,11 +1,13 @@
 extends DrawnSprite #---[FLAG] adding DrawnSprite as parent to get access to sprite_index
 
+
 func _ready():
 	object_setup()
 
+
 func _physics_process(_delta):
 	object_tick()
-	reset_inputs()
+
 
 func _process(delta):
 	object_process(delta)
@@ -17,28 +19,8 @@ var up_counter
 var down_counter
 var up_held
 var down_held
-
 const TRANSITION = 0
 
-var attack_pressed = false
-var check_up = false
-var check_down = false
-
-
-func _input(_event):
-	if ControlScripts.check_attack_pressed():
-		attack_pressed = true
-	
-	if ControlScripts.check_up():
-		check_up = true
-	
-	if ControlScripts.check_down():
-		check_down = true
-
-func reset_inputs():
-	attack_pressed = false
-	check_up = false
-	check_down = false
 
 func create():
 	talk = 0
@@ -50,8 +32,9 @@ func create():
 
 	if (InLevel.is_room("title")): sprite_index = "tunnel_man_right"
 
+
 func step():
-	if (attack_pressed):
+	if (ControlScripts.check_attack_pressed()):
 
 		if (talk == 1): talk = 2
 		elif (talk == 2):
@@ -95,7 +78,7 @@ func step():
 
 	if (talk == 2):
 
-		if (check_up):
+		if (ControlScripts.check_up()):
 
 			up_held += 1
 			down_held = 0
@@ -111,7 +94,7 @@ func step():
 			else:  if (donate > global.tunnel2): donate = global.tunnel2
 			down_counter = 0
 
-		elif (check_down):
+		elif (ControlScripts.check_down()):
 
 			down_held += 1
 			up_held = 0
