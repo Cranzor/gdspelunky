@@ -26,7 +26,7 @@ func gm_loop(): #---[FLAG] consider running every event in the same order as ste
 		#get_tree().call_group("active_gm_object", "run_draw_event")
 		get_tree().call_group("animation_end_object", "run_animation_end")
 		get_tree().call_group("gm_object", "run_speed_position_update")
-		get_tree().call_group("view", "update_camera_pos")
+		#get_tree().call_group("view", "update_camera_pos")
 		get_tree().call_group("screen", "begin_step") #--- moving this here as all code in the script is relating to drawing.
 													  #---not doing so can cause issues like global.message passed into draw_text being outdated (since it's updated in run_collision_with)
 		get_tree().call_group("draw_object", "run_draw_event") #--- putting draw event after updating camera position fixes text jitter issues

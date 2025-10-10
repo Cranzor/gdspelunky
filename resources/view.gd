@@ -11,11 +11,17 @@ var border = Vector2(128, 96) #--- placeholder
 var object_following_name: String
 var object_following: GMObject
 var viewport
+var smooth_motion: bool = true
+var remote_transform: RemoteTransform2D
+
+func _process(delta: float) -> void:
+	if smooth_motion:
+		update_camera_pos()
 
 
 func _ready() -> void:
 	viewport = get_viewport() #--- set viewport value
-	viewport.snap_2d_transforms_to_pixel = true #--- gets rid of visual waviness
+	#viewport.snap_2d_transforms_to_pixel = true #--- gets rid of visual waviness
 
 
 func _physics_process(delta: float) -> void:
@@ -68,6 +74,11 @@ func update_camera_pos():
 	set_object_if_delayed() #--- setting the correct object to follow if the object spawns in later
 	
 	if object_following:
+		var object_position: Vector2 = object_following.position
+		if smooth_motion and not remote_transform:
+				remote_transform = object_following.get_node("SmoothMotion/RemoteTransform2D")
+		if smooth_motion:
+			object_position = remote_transform.position
 		#--- sides of the camera borders
 		#--- comments are sample values for level
 		var left = get_camera_pos().x + border.x #--- 128
@@ -77,15 +88,15 @@ func update_camera_pos():
 
 		#--- moving the camera in a certain direction depending on which side the followed object goes outside of the box
 		#--- camera moves the amount of pixels between the side moved away from and the followed object
-		if object_following.position.x > right:
-			move_camera(Vector2(object_following.position.x - right, 0))
-		elif object_following.position.x < left:
-			move_camera(Vector2(-(abs(object_following.position.x - left)), 0))
+		if object_position.x > right:
+			move_camera(Vector2(object_position.x - right, 0))
+		elif object_position.x < left:
+			move_camera(Vector2(-(abs(object_position.x - left)), 0))
 		
-		if object_following.position.y > bottom:
-			move_camera(Vector2(0, object_following.position.y - bottom))
-		elif object_following.position.y < top:
-			move_camera(Vector2(0, -(abs(object_following.position.y - top))))
+		if object_position.y > bottom:
+			move_camera(Vector2(0, object_position.y - bottom))
+		elif object_position.y < top:
+			move_camera(Vector2(0, -(abs(object_position.y - top))))
 	
 		#draw_debug_camera_border(Vector2(left, top), Vector2(right - left, bottom - top), get_tree().get_first_node_in_group("debug_color_rect"))
 
