@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dd4xpe5r423ry"]
+
+[ext_resource type="Script" uid="uid://hc07d28luu1w" path="res://components/smooth_motion.gd" id="1_v2jjv"]
+
+[node name="SmoothMotion" type="Node"]
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
+script = ExtResource("1_v2jjv")
