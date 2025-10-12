@@ -10,18 +10,25 @@ var level_boundaries = Vector2(500, 500) #--- placeholder
 var border = Vector2(128, 96) #--- placeholder
 var object_following_name: String
 var object_following: GMObject
-var viewport
-var smooth_motion: bool = true
+static var viewport
+static var smooth_motion: bool = true
 var remote_transform: RemoteTransform2D
+static var smooth_scroll_camera_vertically: bool = false
+static var smooth_scroll_target_y_pos: float
+static var smooth_scroll_starting_y_pos: float
+static var smooth_scroll_pixel_amount: int
 
 func _process(delta: float) -> void:
 	if smooth_motion:
+		if smooth_scroll_camera_vertically:
+			move_camera(Vector2(0, smooth_scroll_pixel_amount * 30 * delta))
 		update_camera_pos()
 
 
 func _ready() -> void:
 	viewport = get_viewport() #--- set viewport value
-	#viewport.snap_2d_transforms_to_pixel = true #--- gets rid of visual waviness
+	if smooth_motion == false:
+		viewport.snap_2d_transforms_to_pixel = true #--- gets rid of visual waviness
 
 
 func _physics_process(delta: float) -> void:
@@ -65,7 +72,7 @@ func set_camera_y_pos(y_pos: int):
 	set_camera_pos(new_pos)
 
 
-func get_camera_pos(): #--- returns the position value for the camera based on its origin
+static func get_camera_pos(): #--- returns the position value for the camera based on its origin
 	var current_pos = -viewport.get_canvas_transform().origin
 	return current_pos
 
@@ -95,8 +102,10 @@ func update_camera_pos():
 		
 		if object_position.y > bottom:
 			move_camera(Vector2(0, object_position.y - bottom))
+			smooth_scroll_camera_vertically = false
 		elif object_position.y < top:
 			move_camera(Vector2(0, -(abs(object_position.y - top))))
+			smooth_scroll_camera_vertically = false
 	
 		#draw_debug_camera_border(Vector2(left, top), Vector2(right - left, bottom - top), get_tree().get_first_node_in_group("debug_color_rect"))
 
@@ -112,3 +121,14 @@ func draw_debug_camera_border(pos, size, color_rect): #--- shows a visual depict
 	color_rect.size = size
 	color_rect.position = pos
 	color_rect.visible = true
+
+
+#--- called by player1 to scroll the screen vertically by 
+static func vertical_scroll(pixels: int):
+	if smooth_motion:
+		smooth_scroll_starting_y_pos = get_camera_pos().y
+		smooth_scroll_target_y_pos = smooth_scroll_starting_y_pos + pixels
+		smooth_scroll_pixel_amount = pixels
+		smooth_scroll_camera_vertically = true
+	else:
+		gml.view_yview += pixels
