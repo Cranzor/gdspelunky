@@ -20,6 +20,8 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "game"
 
 [node name="DrawText" parent="." instance=ExtResource("2_p36kl")]
+z_index = 11
+z_as_relative = false
 
 [node name="Sprite" parent="." instance=ExtResource("5_vcxh7")]
 sprite_frames = SubResource("SpriteFrames_4jwi5")
