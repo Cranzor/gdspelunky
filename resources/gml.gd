@@ -467,7 +467,6 @@ func room_restart() -> void:
 	changed_scene = true
 	get_tree().call_group("gm_object", "room_end")
 	view2.set_camera_pos(Vector2(0, 0))
-	custom_collision.cell_to_objects.clear()
 	SignalBus.emit_signal("scene_changed")
 	get_tree().reload_current_scene()
 	
@@ -559,8 +558,8 @@ func room_goto(room_name: String) -> void:
 	changed_scene = true
 	get_tree().call_group("gm_object", "room_end")
 	view2.set_camera_pos(Vector2(0, 0))
-	custom_collision.cell_to_objects.clear()
 	SignalBus.emit_signal("scene_changed")
+	global.dark_level = false
 	get_tree().change_scene_to_file("res://rooms/" + room_name + "/" + room_name + ".tscn")
 
 
