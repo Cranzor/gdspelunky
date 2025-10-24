@@ -9,7 +9,7 @@ var player1: GMObject
 
 func _input(event: InputEvent) -> void:
 	player1 = gml.get_instance("player1")
-	if player1:
+	if player1 and not player1.dead:
 		if event.is_action_pressed("start"):
 			paused = !paused
 			GmLoop.paused = paused
