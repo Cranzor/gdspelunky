@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-var fps
+var fps: int
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
