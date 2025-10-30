@@ -9,11 +9,11 @@
 [ext_resource type="Texture2D" uid="uid://e8kqsqdn82hb" path="res://sprites/items/weapons/bomb_arrow_left/bomb_arrow_left_0.png" id="5_308ap"]
 [ext_resource type="Texture2D" uid="uid://c6pvhdrl4ghn4" path="res://sprites/items/saleable/jetpack_right/jetpack_right_0.png" id="5_ao1wj"]
 [ext_resource type="Texture2D" uid="uid://pe0ob4yo4l78" path="res://sprites/items/weapons/bomb_arrow_left/bomb_arrow_left_1.png" id="6_a8l3l"]
+[ext_resource type="Shader" uid="uid://bue0oye7f6yxw" path="res://components/drawing/draw_circle/pixel_circle.gdshader" id="7_4bm7n"]
 [ext_resource type="Texture2D" uid="uid://bh8col12q5n81" path="res://sprites/items/weapons/bomb_arrow_right/bomb_arrow_right_0.png" id="7_ecv23"]
 [ext_resource type="Texture2D" uid="uid://do3rwsnj0nnau" path="res://sprites/items/weapons/bomb_arrow_right/bomb_arrow_right_1.png" id="8_1ccgs"]
 [ext_resource type="Script" uid="uid://d1v64vt58kawp" path="res://components/drawing/draw_sprite/draw_sprite.gd" id="9_0imcj"]
 [ext_resource type="PackedScene" uid="uid://w6jxjbgfs6na" path="res://components/drawing/draw_circle/dark_level_circle.tscn" id="10_h2jsy"]
-[ext_resource type="Shader" uid="uid://d1iyh2el2fl0l" path="res://resources/mask.gdshader" id="14_2rwj6"]
 [ext_resource type="Texture2D" uid="uid://c1ka78isguv06" path="res://components/drawing/draw_circle/circle_r16.png" id="15_x37qn"]
 [ext_resource type="Texture2D" uid="uid://bkxksvh8l3or2" path="res://components/drawing/draw_circle/circle_r32.png" id="16_fwhoy"]
 [ext_resource type="Texture2D" uid="uid://cnpx2owt8tmkt" path="res://components/drawing/draw_circle/circle_r64.png" id="17_v84pi"]
@@ -202,7 +202,10 @@ animations = [{
 }]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ttmrw"]
-shader = ExtResource("14_2rwj6")
+shader = ExtResource("7_4bm7n")
+shader_parameter/diameter = 0.50000002375
+shader_parameter/circle_color = Color(1, 1, 1, 1)
+shader_parameter/elipse_factor = 45.0
 shader_parameter/color = Color(0, 0, 0, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n62uf"]
@@ -1203,9 +1206,12 @@ sprite_frames = SubResource("SpriteFrames_8p1w3")
 [node name="DarkLevelCircle" parent="." instance=ExtResource("10_h2jsy")]
 material = SubResource("ShaderMaterial_ttmrw")
 sprite_frames = SubResource("SpriteFrames_n62uf")
+animation = &"96"
+radius = 96
 
 [node name="Sprite" parent="." instance=ExtResource("20_sh18g")]
 sprite_frames = SubResource("SpriteFrames_sh18g")
+animation = &"attack_left"
 autoplay = "stand_left"
 offset = Vector2(-8, -8)
 sprite_info = Dictionary[StringName, ExtResource("175_l0xp4")]({

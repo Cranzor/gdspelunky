@@ -240,3 +240,4 @@ func step():
 	
 	
 		if (darkness > 0.9): darkness = 0.9
+		SignalBus.emit_signal("darkness_updated", darkness)
