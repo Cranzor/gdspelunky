@@ -5,7 +5,6 @@ extends RemoteTransform2D
 var current_pos: Vector2 = Vector2.ZERO
 var last_pos: Vector2 = Vector2.ZERO
 var diff: Vector2 = Vector2.ZERO
-var enable_smoothing: bool = true
 
 
 func _ready() -> void:
@@ -14,22 +13,23 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	if parent.get_node("Sprite").scale.x == -1:
-		scale.x = -1
-	else:
-		if parent.object_name != "arrow_trap_test":
-			scale.x = 1
-	
-	if parent.position != current_pos:
-		last_pos = current_pos
-		current_pos = parent.position
-	else:
-		last_pos = current_pos
-		position = parent.position
+	if GameSettings.smooth_motion:
+		if parent.get_node("Sprite").scale.x == -1:
+			scale.x = -1
+		else:
+			if parent.object_name != "arrow_trap_test":
+				scale.x = 1
+		
+		if parent.position != current_pos:
+			last_pos = current_pos
+			current_pos = parent.position
+		else:
+			last_pos = current_pos
+			position = parent.position
 
 
 func _process(delta: float) -> void:
-	if enable_smoothing:
+	if GameSettings.smooth_motion:
 		position += (current_pos - last_pos) * delta * physics_ticks
 
 

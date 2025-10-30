@@ -11,7 +11,6 @@ var border = Vector2(128, 96) #--- placeholder
 var object_following_name: String
 var object_following: GMObject
 static var viewport
-static var smooth_motion: bool = true
 var remote_transform: RemoteTransform2D
 static var smooth_scroll_camera_vertically: bool = false
 static var smooth_scroll_target_y_pos: float
@@ -19,7 +18,7 @@ static var smooth_scroll_starting_y_pos: float
 static var smooth_scroll_pixel_amount: int
 
 func _process(delta: float) -> void:
-	if smooth_motion:
+	if GameSettings.smooth_motion:
 		if smooth_scroll_camera_vertically:
 			move_camera(Vector2(0, smooth_scroll_pixel_amount * 30 * delta))
 		update_camera_pos()
@@ -27,7 +26,7 @@ func _process(delta: float) -> void:
 
 func _ready() -> void:
 	viewport = get_viewport() #--- set viewport value
-	if smooth_motion == false:
+	if GameSettings.smooth_motion == false:
 		viewport.snap_2d_transforms_to_pixel = true #--- gets rid of visual waviness
 
 
@@ -82,9 +81,9 @@ func update_camera_pos():
 	
 	if object_following:
 		var object_position: Vector2 = object_following.position
-		if smooth_motion and not remote_transform:
+		if GameSettings.smooth_motion and not remote_transform:
 				remote_transform = object_following.get_node("SmoothMotion/RemoteTransform2D")
-		if smooth_motion:
+		if GameSettings.smooth_motion:
 			object_position = remote_transform.position
 		#--- sides of the camera borders
 		#--- comments are sample values for level
@@ -123,9 +122,9 @@ func draw_debug_camera_border(pos, size, color_rect): #--- shows a visual depict
 	color_rect.visible = true
 
 
-#--- called by player1 to scroll the screen vertically by 
+#--- called by player1 to scroll the screen vertically
 static func vertical_scroll(pixels: int):
-	if smooth_motion:
+	if GameSettings.smooth_motion:
 		smooth_scroll_starting_y_pos = get_camera_pos().y
 		smooth_scroll_target_y_pos = smooth_scroll_starting_y_pos + pixels
 		smooth_scroll_pixel_amount = pixels
