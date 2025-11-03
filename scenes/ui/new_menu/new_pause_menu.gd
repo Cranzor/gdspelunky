@@ -1,8 +1,8 @@
 extends Control
 
-@onready var resume_game: Button = $VBoxContainer/MarginContainer2/VBoxContainer/ResumeGame
-@onready var end_adventure: Button = $VBoxContainer/MarginContainer2/VBoxContainer/EndAdventure
-@onready var exit_game: Button = $VBoxContainer/MarginContainer2/VBoxContainer/ExitGame
+@onready var resume_game: Button = $PauseScreen/MarginContainer2/VBoxContainer/ResumeGame
+@onready var end_adventure: Button = $PauseScreen/MarginContainer2/VBoxContainer/EndAdventure
+@onready var exit_game: Button = $PauseScreen/MarginContainer2/VBoxContainer/ExitGame
 var room: StringName
 
 

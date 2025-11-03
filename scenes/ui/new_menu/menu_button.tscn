@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://daqeilnqmceiy"]
+
+[ext_resource type="Theme" uid="uid://slghfexedlyr" path="res://scenes/small_font.tres" id="1_v2vqj"]
+[ext_resource type="Script" uid="uid://xfjf4ebjxqi3" path="res://scenes/ui/new_menu/menu_button.gd" id="2_6pgpu"]
+
+[node name="MenuButton" type="Button"]
+theme = ExtResource("1_v2vqj")
+text = "TEST"
+script = ExtResource("2_6pgpu")

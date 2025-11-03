@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://slghfexedlyr" path="res://scenes/small_font.tres" id="1_76hnl"]
 [ext_resource type="Script" uid="uid://bp6wa67jxvj3j" path="res://scenes/ui/new_menu/new_pause_menu.gd" id="2_6ujsf"]
 [ext_resource type="FontFile" uid="uid://cjfa4ea02s5yi" path="res://fonts/main_font.png" id="2_dnbp1"]
-[ext_resource type="Script" uid="uid://xfjf4ebjxqi3" path="res://scenes/ui/new_menu/menu_button.gd" id="3_dnbp1"]
+[ext_resource type="PackedScene" uid="uid://daqeilnqmceiy" path="res://scenes/ui/new_menu/menu_button.tscn" id="5_04n3j"]
 [ext_resource type="Texture2D" uid="uid://bj5ooio37b4ga" path="res://sprites/hud/hint_point/hint_point_0.png" id="5_x8h66"]
 [ext_resource type="Texture2D" uid="uid://cuedlacpy4xs6" path="res://sprites/hud/hint_point/hint_point_1.png" id="6_04n3j"]
 [ext_resource type="Texture2D" uid="uid://27iehp7itde1" path="res://sprites/hud/hint_point/hint_point_2.png" id="7_msgju"]
@@ -50,9 +50,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.9)
+color = Color(0, 0, 0, 0.90000004)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="PauseScreen" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -60,98 +60,106 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="PauseScreen"]
 layout_mode = 2
 theme_override_constants/margin_left = 3
 theme_override_constants/margin_top = 3
 theme_override_constants/margin_right = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PauseScreen/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseScreen/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 1
 
-[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="PauseScreen/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "$5000"
 
-[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Label2" type="Label" parent="PauseScreen/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "KILLS: 25"
 
-[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Label3" type="Label" parent="PauseScreen/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "SAVES: 11"
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="PauseScreen/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 1
 
-[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2"]
+[node name="Label4" type="Label" parent="PauseScreen/MarginContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 8
 text = "LEVEL 1"
 
-[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2"]
+[node name="Label5" type="Label" parent="PauseScreen/MarginContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 8
 text = "16.32 FEET"
 
-[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2"]
+[node name="Label6" type="Label" parent="PauseScreen/MarginContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 8
 text = "0:00 / 0:00"
 
-[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="PauseScreen"]
 layout_mode = 2
 theme_override_constants/margin_top = 55
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer2"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseScreen/MarginContainer2"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer"]
+[node name="Label" type="Label" parent="PauseScreen/MarginContainer2/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("2_dnbp1")
 text = "PAUSED"
 
-[node name="ResumeGame" type="Button" parent="VBoxContainer/MarginContainer2/VBoxContainer"]
+[node name="ResumeGame" parent="PauseScreen/MarginContainer2/VBoxContainer" instance=ExtResource("5_04n3j")]
 layout_mode = 2
 size_flags_horizontal = 4
+theme = null
 text = "RESUME GAME"
-script = ExtResource("3_dnbp1")
 signal_to_emit = &"game_unpaused"
 
-[node name="EndAdventure" type="Button" parent="VBoxContainer/MarginContainer2/VBoxContainer"]
+[node name="EndAdventure" parent="PauseScreen/MarginContainer2/VBoxContainer" instance=ExtResource("5_04n3j")]
 layout_mode = 2
 size_flags_horizontal = 4
+theme = null
 text = "END ADVENTURE"
-script = ExtResource("3_dnbp1")
 signal_to_emit = &"end_adventure"
 
-[node name="Options" type="Button" parent="VBoxContainer/MarginContainer2/VBoxContainer"]
+[node name="Options" parent="PauseScreen/MarginContainer2/VBoxContainer" instance=ExtResource("5_04n3j")]
 layout_mode = 2
 size_flags_horizontal = 4
+theme = null
 text = "OPTIONS"
-script = ExtResource("3_dnbp1")
 
-[node name="MainMenu" type="Button" parent="VBoxContainer/MarginContainer2/VBoxContainer"]
+[node name="MainMenu" parent="PauseScreen/MarginContainer2/VBoxContainer" instance=ExtResource("5_04n3j")]
 layout_mode = 2
 size_flags_horizontal = 4
+theme = null
 text = "MAIN MENU"
-script = ExtResource("3_dnbp1")
 
-[node name="ExitGame" type="Button" parent="VBoxContainer/MarginContainer2/VBoxContainer"]
+[node name="ExitGame" parent="PauseScreen/MarginContainer2/VBoxContainer" instance=ExtResource("5_04n3j")]
 layout_mode = 2
 size_flags_horizontal = 4
+theme = null
 text = "EXIT GAME"
-script = ExtResource("3_dnbp1")
+
+[node name="Settings" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Hand" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
