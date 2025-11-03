@@ -43,6 +43,7 @@ func _ready() -> void:
 	pause_handling.classic_pause_screen = pause_screen
 	pause_handling.new_pause_menu = new_pause_menu
 	SignalBus.connect("game_unpaused", _game_unpaused)
+	SignalBus.connect("end_adventure", _end_adventure)
 
 
 func draw_compass_arrow() -> void:
@@ -116,3 +117,7 @@ func _input(event: InputEvent) -> void:
 
 func _game_unpaused() -> void:
 	pause_handling.pause_handling()
+
+
+func _end_adventure() -> void:
+	pause_handling.end_adventure()
