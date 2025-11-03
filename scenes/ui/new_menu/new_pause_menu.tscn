@@ -77,17 +77,14 @@ theme_override_constants/separation = 1
 
 [node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.5019608, 0.5019608, 0.5019608, 1)
 text = "$5000"
 
 [node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.5019608, 0.5019608, 0.5019608, 1)
 text = "KILLS: 25"
 
 [node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.5019608, 0.5019608, 0.5019608, 1)
 text = "SAVES: 11"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer"]
@@ -98,19 +95,16 @@ theme_override_constants/separation = 1
 [node name="Label4" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 8
-theme_override_colors/font_color = Color(0.5019608, 0.5019608, 0.5019608, 1)
 text = "LEVEL 1"
 
 [node name="Label5" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 8
-theme_override_colors/font_color = Color(0.5019608, 0.5019608, 0.5019608, 1)
 text = "16.32 FEET"
 
 [node name="Label6" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 8
-theme_override_colors/font_color = Color(0.5019608, 0.5019608, 0.5019608, 1)
 text = "0:00 / 0:00"
 
 [node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
@@ -132,12 +126,14 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "RESUME GAME"
 script = ExtResource("3_dnbp1")
+signal_to_emit = &"game_unpaused"
 
 [node name="EndAdventure" type="Button" parent="VBoxContainer/MarginContainer2/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "END ADVENTURE"
 script = ExtResource("3_dnbp1")
+signal_to_emit = &"end_adventure"
 
 [node name="Options" type="Button" parent="VBoxContainer/MarginContainer2/VBoxContainer"]
 layout_mode = 2

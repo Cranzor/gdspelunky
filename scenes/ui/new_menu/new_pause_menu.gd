@@ -10,22 +10,12 @@ func _ready() -> void:
 	room = gml.room_get_name()
 	if room == "title" or room == "highscores":
 		end_adventure.hide()
-	resume_game.connect("pressed", _resume_game_pressed)
-	end_adventure.connect("pressed", _end_adventure_pressed)
 	exit_game.connect("pressed", _exit_game_pressed)
 
 
 func set_default_focus():
 	resume_game.grab_focus()
 	resume_game._focus_entered()
-
-
-func _resume_game_pressed():
-	SignalBus.emit_signal("game_unpaused")
-
-
-func _end_adventure_pressed():
-	SignalBus.emit_signal("end_adventure")
 
 
 func _exit_game_pressed():
