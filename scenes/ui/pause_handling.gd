@@ -11,7 +11,7 @@ var classic_pause_screen: Node2D
 func draw_pause_screen(paused: bool) -> void:
 	if paused:
 		if GameSettings.new_pause_menu:
-			new_pause_menu.show()
+			new_pause_menu.set_initial_pause_visibility()
 			new_pause_menu.set_default_focus()
 		else:
 			classic_pause_screen.draw_pause_screen_text()

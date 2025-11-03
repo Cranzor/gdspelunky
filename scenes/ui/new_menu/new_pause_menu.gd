@@ -3,6 +3,9 @@ extends Control
 @onready var resume_game: Button = $PauseScreen/MarginContainer2/VBoxContainer/ResumeGame
 @onready var end_adventure: Button = $PauseScreen/MarginContainer2/VBoxContainer/EndAdventure
 @onready var exit_game: Button = $PauseScreen/MarginContainer2/VBoxContainer/ExitGame
+@onready var background: ColorRect = $Background
+@onready var pause_screen: VBoxContainer = $PauseScreen
+@onready var settings: VBoxContainer = $Settings
 var room: StringName
 
 
@@ -20,3 +23,10 @@ func set_default_focus():
 
 func _exit_game_pressed():
 	gml.game_end()
+
+
+func set_initial_pause_visibility() -> void:
+	self.show()
+	background.show()
+	pause_screen.show()
+	settings.hide()
