@@ -1,9 +1,37 @@
-[gd_scene load_steps=5 format=3 uid="uid://dc1rbppknrh43"]
+[gd_scene load_steps=11 format=3 uid="uid://dc1rbppknrh43"]
 
 [ext_resource type="Theme" uid="uid://slghfexedlyr" path="res://scenes/small_font.tres" id="1_76hnl"]
 [ext_resource type="Script" uid="uid://bp6wa67jxvj3j" path="res://scenes/ui/new_menu/new_pause_menu.gd" id="2_6ujsf"]
 [ext_resource type="FontFile" uid="uid://cjfa4ea02s5yi" path="res://fonts/main_font.png" id="2_dnbp1"]
 [ext_resource type="Script" uid="uid://xfjf4ebjxqi3" path="res://scenes/ui/new_menu/menu_button.gd" id="3_dnbp1"]
+[ext_resource type="Texture2D" uid="uid://bj5ooio37b4ga" path="res://sprites/hud/hint_point/hint_point_0.png" id="5_x8h66"]
+[ext_resource type="Texture2D" uid="uid://cuedlacpy4xs6" path="res://sprites/hud/hint_point/hint_point_1.png" id="6_04n3j"]
+[ext_resource type="Texture2D" uid="uid://27iehp7itde1" path="res://sprites/hud/hint_point/hint_point_2.png" id="7_msgju"]
+[ext_resource type="Texture2D" uid="uid://call5h120c212" path="res://sprites/hud/hint_point/hint_point_3.png" id="8_yhfdk"]
+[ext_resource type="Texture2D" uid="uid://dfixltbhwga22" path="res://sprites/hud/hint_point/hint_point_4.png" id="9_urnj6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uucu8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_x8h66")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_04n3j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_msgju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_yhfdk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_urnj6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 15.0
+}]
 
 [node name="NewPauseMenu" type="Control"]
 layout_mode = 3
@@ -109,18 +137,31 @@ script = ExtResource("3_dnbp1")
 layout_mode = 2
 size_flags_horizontal = 4
 text = "END ADVENTURE"
+script = ExtResource("3_dnbp1")
 
 [node name="Options" type="Button" parent="VBoxContainer/MarginContainer2/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "OPTIONS"
+script = ExtResource("3_dnbp1")
 
 [node name="MainMenu" type="Button" parent="VBoxContainer/MarginContainer2/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "MAIN MENU"
+script = ExtResource("3_dnbp1")
 
 [node name="ExitGame" type="Button" parent="VBoxContainer/MarginContainer2/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "EXIT GAME"
+script = ExtResource("3_dnbp1")
+
+[node name="Hand" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(101, 112)
+rotation = 1.5707964
+sprite_frames = SubResource("SpriteFrames_uucu8")
+autoplay = "default"
+frame_progress = 0.79728234
+flip_v = true
