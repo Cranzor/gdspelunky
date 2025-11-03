@@ -1,6 +1,25 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://slghfexedlyr"]
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://slghfexedlyr"]
 
 [ext_resource type="FontFile" uid="uid://dgd06bxddo4pq" path="res://fonts/small_font.png" id="1_qd3ot"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qd3ot"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_25v6g"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v4bpy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2hqd7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o4ohg"]
+
 [resource]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_focus_color = Color(1, 1, 0, 1)
+Button/colors/font_hover_color = Color(1, 1, 0, 1)
+Button/fonts/font = ExtResource("1_qd3ot")
+Button/styles/disabled = SubResource("StyleBoxEmpty_qd3ot")
+Button/styles/focus = SubResource("StyleBoxEmpty_25v6g")
+Button/styles/hover = SubResource("StyleBoxEmpty_v4bpy")
+Button/styles/normal = SubResource("StyleBoxEmpty_2hqd7")
+Button/styles/pressed = SubResource("StyleBoxEmpty_o4ohg")
 Label/fonts/font = ExtResource("1_qd3ot")

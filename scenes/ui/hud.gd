@@ -10,7 +10,8 @@ extends CanvasLayer
 @onready var in_game = $InGame
 @onready var pause_screen = $PauseScreen
 @onready var title_fade_in = $TitleFadeIn
-
+@onready var new_pause_menu: Control = $NewPauseMenu
+@onready var pause_handling: PauseHandling = load("res://scenes/ui/pause_handling.gd").new()
 
 #--- change this to update in gm_loop
 func _physics_process(delta: float) -> void:
@@ -36,7 +37,13 @@ func _physics_process(delta: float) -> void:
 	draw_compass_arrow()
 	draw_hud_text()
 	draw_global_message_text()
-	
+
+
+func _ready() -> void:
+	pause_handling.classic_pause_screen = pause_screen
+	pause_handling.new_pause_menu = new_pause_menu
+	SignalBus.connect("game_unpaused", _game_unpaused)
+
 
 func draw_compass_arrow() -> void:
 	if global.has_compass and InLevel.is_level() and gml.instance_exists("player1"):
@@ -101,3 +108,11 @@ func handle_title_hud():
 	in_game.hide()
 	title_fade_in.show()
 	show()
+
+
+func _input(event: InputEvent) -> void:
+	pause_handling.pause_button_pressed(event)
+
+
+func _game_unpaused() -> void:
+	pause_handling.pause_handling()

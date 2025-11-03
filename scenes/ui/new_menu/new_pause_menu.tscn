@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dc1rbppknrh43"]
+[gd_scene load_steps=5 format=3 uid="uid://dc1rbppknrh43"]
 
-[ext_resource type="Theme" uid="uid://slghfexedlyr" path="res://scenes/small_font.tres" id="1_kapm8"]
-[ext_resource type="FontFile" uid="uid://cjfa4ea02s5yi" path="res://fonts/main_font.png" id="2_oxovt"]
+[ext_resource type="Theme" uid="uid://slghfexedlyr" path="res://scenes/small_font.tres" id="1_76hnl"]
+[ext_resource type="Script" uid="uid://bp6wa67jxvj3j" path="res://scenes/ui/new_menu/new_pause_menu.gd" id="2_6ujsf"]
+[ext_resource type="FontFile" uid="uid://cjfa4ea02s5yi" path="res://fonts/main_font.png" id="2_dnbp1"]
+[ext_resource type="Script" uid="uid://xfjf4ebjxqi3" path="res://scenes/ui/new_menu/menu_button.gd" id="3_dnbp1"]
 
 [node name="NewPauseMenu" type="Control"]
 layout_mode = 3
@@ -10,7 +12,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_kapm8")
+theme = ExtResource("1_76hnl")
+script = ExtResource("2_6ujsf")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -93,30 +96,31 @@ size_flags_vertical = 3
 [node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("2_oxovt")
+theme_override_fonts/font = ExtResource("2_dnbp1")
 text = "PAUSED"
 
-[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer"]
+[node name="ResumeGame" type="Button" parent="VBoxContainer/MarginContainer2/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "RESUME GAME"
+script = ExtResource("3_dnbp1")
 
-[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer"]
+[node name="EndAdventure" type="Button" parent="VBoxContainer/MarginContainer2/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "END ADVENTURE"
 
-[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer"]
+[node name="Options" type="Button" parent="VBoxContainer/MarginContainer2/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "OPTIONS"
 
-[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer"]
+[node name="MainMenu" type="Button" parent="VBoxContainer/MarginContainer2/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "MAIN MENU"
 
-[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer"]
+[node name="ExitGame" type="Button" parent="VBoxContainer/MarginContainer2/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 text = "EXIT GAME"

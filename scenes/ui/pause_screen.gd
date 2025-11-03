@@ -7,53 +7,6 @@ var player1: GMObject
 @onready var draw_rectangle: ColorRect = $DrawRectangle
 
 
-func _input(event: InputEvent) -> void:
-	player1 = gml.get_instance("player1")
-	if player1 and not player1.dead:
-		if event.is_action_pressed("start"):
-			paused = !paused
-			GmLoop.paused = paused
-			draw_pause_screen(paused)
-		elif paused and event.is_action_pressed("bomb"):
-			pause_handling()
-			if (global.plife > 0 and InLevel.is_level()):
-				gml.instance_activate_all()
-				paused = false
-				
-				var all_player1s = gml.get_all_instances("player1")
-				for player1_instance in all_player1s:
-					if (player1_instance.facing == 18): player1_instance.x_vel = -3
-					else: player1_instance.x_vel = 3
-					player1_instance.y_vel = -6
-					global.plife = -99
-
-				if (SS.is_sound_playing(global.mus_title)): SS.set_sound_vol(global.mus_title, 2000 + 8000 * (global.music_vol/18))
-				if (SS.is_sound_playing(global.mus_cave)): SS.set_sound_vol(global.mus_cave, 2000 + 8000 * (global.music_vol/18))
-				if (SS.is_sound_playing(global.mus_lush)): SS.set_sound_vol(global.mus_lush, 2000 + 8000 * (global.music_vol/18))
-				if (SS.is_sound_playing(global.mus_ice)): SS.set_sound_vol(global.mus_ice, 2000 + 8000 * (global.music_vol/18))
-				if (SS.is_sound_playing(global.mus_temple)): SS.set_sound_vol(global.mus_temple, 2000 + 8000 * (global.music_vol/18))
-				if (SS.is_sound_playing(global.mus_boss)): SS.set_sound_vol(global.mus_boss, 2000 + 8000 * (global.music_vol/18))
-				
-				if (not global.has_ankh): Audio.stop_all_music()
-		elif paused and event.is_action_pressed("rope"):
-			gml.game_end()
-
-#func _ready() -> void:
-	#SignalBus.game_paused.connect(_draw_pause_screen)
-
-func draw_pause_screen(paused: bool) -> void:
-	if paused:
-		draw_pause_screen_text()
-		draw_pause_screen_rect()
-		get_tree().call_group("gm_object", "pause_animation")
-		AudioServer.set_bus_mute(0, true)
-		
-	else:
-		draw_text.hide_children()
-		draw_rectangle.hide()
-		get_tree().call_group("gm_object", "resume_animation")
-		AudioServer.set_bus_mute(0, false)
-
 func draw_pause_screen_text() -> void:
 	player1 = get_tree().get_first_node_in_group("player1")
 	
@@ -115,8 +68,3 @@ func draw_pause_screen_rect():
 			else: gml.draw_set_alpha(0.9)
 			gml.draw_set_color(gml.c_black)
 			draw_rectangle.draw_rectangle(0, 0, 320, 240, false) #--- changed screen variables to pixel counts
-
-func pause_handling() -> void:
-	paused = !paused
-	GmLoop.paused = paused
-	draw_pause_screen(paused)

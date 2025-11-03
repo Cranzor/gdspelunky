@@ -9,4 +9,5 @@ static var auto_run: bool = false
 static var sound_effects_volume
 static var music_volume
 static var high_detail: bool = true
+static var new_pause_menu: bool = true
 static var resolution

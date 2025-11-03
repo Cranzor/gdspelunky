@@ -1,14 +1,14 @@
-[gd_scene load_steps=78 format=3 uid="uid://dfkrem72v8ms8"]
+[gd_scene load_steps=79 format=3 uid="uid://dfkrem72v8ms8"]
 
 [ext_resource type="Texture2D" uid="uid://xajjg6rysmmk" path="res://sprites/hud/heart/heart_0.png" id="1_kp442"]
-[ext_resource type="Script" uid="uid://clfaomwucanks" path="res://scenes/hud.gd" id="1_o1o2r"]
+[ext_resource type="Script" uid="uid://clfaomwucanks" path="res://scenes/ui/hud.gd" id="1_o1o2r"]
 [ext_resource type="Texture2D" uid="uid://c7jk64ruw6kf4" path="res://sprites/hud/sticky_bomb_icon/sticky_bomb_icon_0.png" id="2_gltyx"]
 [ext_resource type="Texture2D" uid="uid://bt611e6ft0333" path="res://sprites/hud/bomb_icon/bomb_icon_0.png" id="3_mgfyp"]
 [ext_resource type="Texture2D" uid="uid://ohqon2a7hbqg" path="res://sprites/hud/rope_icon/rope_icon_0.png" id="4_ptr5m"]
 [ext_resource type="Texture2D" uid="uid://ducgnklnf1o4j" path="res://sprites/hud/dollar_sign/dollar_sign_0.png" id="5_of3ib"]
 [ext_resource type="Texture2D" uid="uid://ht7e6k2xdcju" path="res://sprites/hud/hold_item_icon/hold_item_icon_0.png" id="6_7600b"]
 [ext_resource type="Texture2D" uid="uid://dshuo7wlikcae" path="res://sprites/items/saleable/udjat_eye_icon2/udjat_eye_icon2_0.png" id="7_e558t"]
-[ext_resource type="Script" uid="uid://c25xgatg6c6h" path="res://scenes/item_icons.gd" id="7_gltyx"]
+[ext_resource type="Script" uid="uid://c25xgatg6c6h" path="res://scenes/ui/item_icons.gd" id="7_gltyx"]
 [ext_resource type="Texture2D" uid="uid://dpcfgq6kjkf2p" path="res://sprites/items/saleable/udjat_eye_icon/udjat_eye_icon_0.png" id="8_frrke"]
 [ext_resource type="Texture2D" uid="uid://dd63yldkr4v48" path="res://sprites/items/saleable/ankh_icon/ankh_icon_0.png" id="9_vh1iw"]
 [ext_resource type="Texture2D" uid="uid://bd4wwyyo51cox" path="res://sprites/items/saleable/crown_icon/crown_icon_0.png" id="10_fgtve"]
@@ -69,10 +69,11 @@
 [ext_resource type="Texture2D" uid="uid://bi8d73nhos5dg" path="res://sprites/items/saleable/compass_lr/compass_lr_0.png" id="64_ep55p"]
 [ext_resource type="Script" uid="uid://deuarbfqqf3v4" path="res://scenes/compass_arrows.gd" id="65_gxo4v"]
 [ext_resource type="Texture2D" uid="uid://o5sy6e1i3h2m" path="res://sprites/items/saleable/compass_small_lr/compass_small_lr_0.png" id="68_dbhui"]
-[ext_resource type="Script" uid="uid://c0yg5gcwfrm0c" path="res://scenes/pause_screen.gd" id="70_dbhui"]
+[ext_resource type="Script" uid="uid://c0yg5gcwfrm0c" path="res://scenes/ui/pause_screen.gd" id="70_dbhui"]
 [ext_resource type="PackedScene" uid="uid://8nvpnq1dktdh" path="res://components/drawing/draw_text/draw_text.tscn" id="70_ep55p"]
 [ext_resource type="PackedScene" uid="uid://bctkguili8lu6" path="res://components/drawing/draw_rectangle/draw_rectangle.tscn" id="72_4hsw7"]
-[ext_resource type="Script" uid="uid://c2a645i3pc7il" path="res://scenes/title_fade_in.gd" id="72_tj8l3"]
+[ext_resource type="Script" uid="uid://c2a645i3pc7il" path="res://scenes/ui/title_fade_in.gd" id="72_tj8l3"]
+[ext_resource type="PackedScene" uid="uid://dc1rbppknrh43" path="res://scenes/ui/new_menu/new_pause_menu.tscn" id="74_jhjt4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tj8l3"]
 animations = [{
@@ -554,5 +555,9 @@ script = ExtResource("72_tj8l3")
 [node name="DrawText" parent="TitleFadeIn" instance=ExtResource("70_ep55p")]
 
 [node name="DrawRectangle" parent="TitleFadeIn" instance=ExtResource("72_4hsw7")]
+
+[node name="NewPauseMenu" parent="." instance=ExtResource("74_jhjt4")]
+visible = false
+z_index = 2
 
 [connection signal="animation_changed" from="InGame/ItemIcons/KapalaIcon" to="InGame/ItemIcons/KapalaIcon" method="_on_animation_changed"]
