@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://slghfexedlyr"]
+
+[ext_resource type="FontFile" uid="uid://dgd06bxddo4pq" path="res://fonts/small_font.png" id="1_qd3ot"]
+
+[resource]
+Label/fonts/font = ExtResource("1_qd3ot")

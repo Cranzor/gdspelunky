@@ -1,0 +1,122 @@
+[gd_scene load_steps=3 format=3 uid="uid://dc1rbppknrh43"]
+
+[ext_resource type="Theme" uid="uid://slghfexedlyr" path="res://scenes/small_font.tres" id="1_kapm8"]
+[ext_resource type="FontFile" uid="uid://cjfa4ea02s5yi" path="res://fonts/main_font.png" id="2_oxovt"]
+
+[node name="NewPauseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_kapm8")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.9)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 3
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5019608, 0.5019608, 0.5019608, 1)
+text = "$5000"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5019608, 0.5019608, 0.5019608, 1)
+text = "KILLS: 25"
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.5019608, 0.5019608, 0.5019608, 1)
+text = "SAVES: 11"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 1
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(0.5019608, 0.5019608, 0.5019608, 1)
+text = "LEVEL 1"
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(0.5019608, 0.5019608, 0.5019608, 1)
+text = "16.32 FEET"
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(0.5019608, 0.5019608, 0.5019608, 1)
+text = "0:00 / 0:00"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 55
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_oxovt")
+text = "PAUSED"
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "RESUME GAME"
+
+[node name="Label3" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "END ADVENTURE"
+
+[node name="Label4" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "OPTIONS"
+
+[node name="Label5" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "MAIN MENU"
+
+[node name="Label6" type="Label" parent="VBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "EXIT GAME"
