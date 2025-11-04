@@ -33,10 +33,11 @@ func _process(delta: float) -> void:
 
 func _button_pressed() -> void:
 	if next_menu_to_show:
-		var next_menu = get_node(next_menu_to_show)
-		next_menu.display_menu_screen()
-	if menu_to_hide:
-		get_node(menu_to_hide).hide()
+		#var next_menu = get_node(next_menu_to_show)
+		#next_menu.display_menu_screen()
+	#if menu_to_hide:
+		#get_node(menu_to_hide).hide()
+		SignalBus.emit_signal("menu_screen_change_requested", get_node(menu_to_hide), get_node(next_menu_to_show))
 	if signal_to_emit:
 		SignalBus.emit_signal(signal_to_emit)
 	if setting_to_update:

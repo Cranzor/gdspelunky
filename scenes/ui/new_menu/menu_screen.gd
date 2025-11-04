@@ -1,6 +1,7 @@
 extends Control
 
 @export var focus_to_grab: NodePath
+var previous_menu_screen: VBoxContainer
 
 func display_menu_screen() -> void:
 	show()
