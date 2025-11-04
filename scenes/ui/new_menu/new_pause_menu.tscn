@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dc1rbppknrh43"]
+[gd_scene load_steps=15 format=3 uid="uid://dc1rbppknrh43"]
 
 [ext_resource type="Theme" uid="uid://slghfexedlyr" path="res://scenes/small_font.tres" id="1_76hnl"]
 [ext_resource type="Script" uid="uid://bp6wa67jxvj3j" path="res://scenes/ui/new_menu/new_pause_menu.gd" id="2_6ujsf"]
@@ -6,9 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://daqeilnqmceiy" path="res://scenes/ui/new_menu/menu_button.tscn" id="5_04n3j"]
 [ext_resource type="Texture2D" uid="uid://bj5ooio37b4ga" path="res://sprites/hud/hint_point/hint_point_0.png" id="5_x8h66"]
 [ext_resource type="Texture2D" uid="uid://cuedlacpy4xs6" path="res://sprites/hud/hint_point/hint_point_1.png" id="6_04n3j"]
+[ext_resource type="Script" uid="uid://digupl0ub7tsy" path="res://scenes/ui/new_menu/menu_screen.gd" id="6_urnj6"]
 [ext_resource type="Texture2D" uid="uid://27iehp7itde1" path="res://sprites/hud/hint_point/hint_point_2.png" id="7_msgju"]
+[ext_resource type="PackedScene" uid="uid://bi0dx7uriyhe" path="res://scenes/ui/new_menu/option_selection.tscn" id="7_uucu8"]
 [ext_resource type="Texture2D" uid="uid://call5h120c212" path="res://sprites/hud/hint_point/hint_point_3.png" id="8_yhfdk"]
 [ext_resource type="Texture2D" uid="uid://dfixltbhwga22" path="res://sprites/hud/hint_point/hint_point_4.png" id="9_urnj6"]
+[ext_resource type="Texture2D" uid="uid://fdkxqlfxq8yk" path="res://sprites/items/saleable/compass_small_left/compass_small_left_0.png" id="11_yhfdk"]
+[ext_resource type="Texture2D" uid="uid://qk2gaywr0elr" path="res://sprites/items/saleable/compass_small_right/compass_small_right_0.png" id="12_urnj6"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uucu8"]
 animations = [{
@@ -34,7 +38,6 @@ animations = [{
 }]
 
 [node name="NewPauseMenu" type="Control"]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -60,6 +63,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("6_urnj6")
+focus_to_grab = NodePath("MarginContainer2/VBoxContainer/ResumeGame")
 
 [node name="MarginContainer" type="MarginContainer" parent="PauseScreen"]
 layout_mode = 2
@@ -170,6 +175,8 @@ offset_right = 64.0
 offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("6_urnj6")
+focus_to_grab = NodePath("GraphicsAudio")
 
 [node name="Options" type="Label" parent="Settings"]
 layout_mode = 2
@@ -182,6 +189,8 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "GRAPHICS & AUDIO"
+next_menu_to_show = NodePath("../../GraphicsAudio")
+menu_to_hide = NodePath("..")
 
 [node name="Controls" parent="Settings" instance=ExtResource("5_04n3j")]
 layout_mode = 2
@@ -201,6 +210,84 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "HUD"
 
+[node name="GraphicsAudio" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -26.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_76hnl")
+script = ExtResource("6_urnj6")
+focus_to_grab = NodePath("MarginContainer/HBoxContainer/VBoxContainer/MenuButton")
+
+[node name="Label" type="Label" parent="GraphicsAudio"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_dnbp1")
+text = "GRAPHICS & AUDIO"
+
+[node name="MarginContainer" type="MarginContainer" parent="GraphicsAudio"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_right = 25
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GraphicsAudio/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GraphicsAudio/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+
+[node name="MenuButton" parent="GraphicsAudio/MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("5_04n3j")]
+layout_mode = 2
+text = "RESOLUTION"
+alignment = 0
+option_to_scroll = NodePath("../../VBoxContainer2/OptionSelection")
+
+[node name="MenuButton2" parent="GraphicsAudio/MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("5_04n3j")]
+layout_mode = 2
+text = "RESOLUTION SCALE"
+alignment = 0
+option_to_scroll = NodePath("../../VBoxContainer2/OptionSelection2")
+
+[node name="MenuButton3" parent="GraphicsAudio/MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("5_04n3j")]
+layout_mode = 2
+text = "DISPLAY MODE"
+alignment = 0
+option_to_scroll = NodePath("../../VBoxContainer2/OptionSelection3")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="GraphicsAudio/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="OptionSelection" parent="GraphicsAudio/MarginContainer/HBoxContainer/VBoxContainer2" instance=ExtResource("7_uucu8")]
+layout_mode = 2
+text = "TEST"
+option_to_value = Dictionary[String, Variant]({
+"1920X1080": 1920,
+"2560X1440": 2560,
+"320X240": 320
+})
+
+[node name="OptionSelection2" parent="GraphicsAudio/MarginContainer/HBoxContainer/VBoxContainer2" instance=ExtResource("7_uucu8")]
+layout_mode = 2
+text = "1.00"
+option_to_value = Dictionary[String, Variant]({
+"1.00": 1
+})
+
+[node name="OptionSelection3" parent="GraphicsAudio/MarginContainer/HBoxContainer/VBoxContainer2" instance=ExtResource("7_uucu8")]
+layout_mode = 2
+text = "FULLSCREEN"
+option_to_value = Dictionary[String, Variant]({
+"FULLSCREEN": false
+})
+
 [node name="Hand" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(101, 112)
@@ -209,3 +296,15 @@ sprite_frames = SubResource("SpriteFrames_uucu8")
 autoplay = "default"
 frame_progress = 0.79728234
 flip_v = true
+
+[node name="ArrowLeft" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+position = Vector2(256, 112)
+texture = ExtResource("11_yhfdk")
+
+[node name="ArrowRight" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+visible = false
+position = Vector2(304, 112)
+texture = ExtResource("12_urnj6")

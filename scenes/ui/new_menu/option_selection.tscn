@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bi0dx7uriyhe"]
+
+[ext_resource type="Script" uid="uid://b3xxrcky7sa8c" path="res://scenes/ui/new_menu/option_selection.gd" id="1_tbn4y"]
+
+[node name="OptionSelection" type="Label"]
+horizontal_alignment = 2
+script = ExtResource("1_tbn4y")

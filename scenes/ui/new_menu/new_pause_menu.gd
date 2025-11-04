@@ -18,7 +18,6 @@ func _ready() -> void:
 
 func set_default_focus():
 	resume_game.grab_focus()
-	resume_game._focus_entered()
 
 
 func _exit_game_pressed():
