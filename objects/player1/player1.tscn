@@ -1,4 +1,4 @@
-[gd_scene load_steps=225 format=4 uid="uid://du8lsjk87vay6"]
+[gd_scene load_steps=226 format=4 uid="uid://du8lsjk87vay6"]
 
 [ext_resource type="Script" uid="uid://cpssqhjyjmpbq" path="res://objects/player1/player1.gd" id="1_3btm2"]
 [ext_resource type="PackedScene" uid="uid://cdxt2i7ri1v5b" path="res://scenes/jetpack_draw.tscn" id="2_u664n"]
@@ -172,6 +172,7 @@
 [ext_resource type="Texture2D" uid="uid://dsbj5jwwnxxe3" path="res://sprites/character/tunnel man/tunnel_stun_l/tunnel_stun_l_2.png" id="171_h5kh7"]
 [ext_resource type="Texture2D" uid="uid://bvpmkuqi8yd34" path="res://sprites/character/tunnel man/tunnel_stun_l/tunnel_stun_l_3.png" id="172_5spxe"]
 [ext_resource type="Texture2D" uid="uid://bjch1eaonn5mx" path="res://sprites/character/tunnel man/tunnel_stun_l/tunnel_stun_l_4.png" id="173_hjycq"]
+[ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="174_j1p73"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="175_l0xp4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8p1w3"]
@@ -1267,3 +1268,5 @@ collision_mask = 2
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 shape = SubResource("RectangleShape2D_yykjm")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[node name="SmoothMotion" parent="." instance=ExtResource("174_j1p73")]
