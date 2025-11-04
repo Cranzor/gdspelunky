@@ -57,6 +57,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0.90000004)
 
 [node name="PauseScreen" type="VBoxContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -211,7 +212,6 @@ size_flags_vertical = 4
 text = "HUD"
 
 [node name="GraphicsAudio" type="VBoxContainer" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
@@ -223,7 +223,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_76hnl")
 script = ExtResource("6_urnj6")
-focus_to_grab = NodePath("MarginContainer/HBoxContainer/VBoxContainer/MenuButton")
+focus_to_grab = NodePath("MarginContainer/HBoxContainer/Settings/MenuButton")
 
 [node name="Label" type="Label" parent="GraphicsAudio"]
 layout_mode = 2
@@ -239,54 +239,63 @@ theme_override_constants/margin_right = 25
 [node name="HBoxContainer" type="HBoxContainer" parent="GraphicsAudio/MarginContainer"]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="GraphicsAudio/MarginContainer/HBoxContainer"]
+[node name="Settings" type="VBoxContainer" parent="GraphicsAudio/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 2
 
-[node name="MenuButton" parent="GraphicsAudio/MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("5_04n3j")]
+[node name="MenuButton" parent="GraphicsAudio/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
 layout_mode = 2
 text = "RESOLUTION"
 alignment = 0
-option_to_scroll = NodePath("../../VBoxContainer2/OptionSelection")
+option_to_scroll = NodePath("../../Selections/OptionSelection")
 
-[node name="MenuButton2" parent="GraphicsAudio/MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("5_04n3j")]
+[node name="MenuButton2" parent="GraphicsAudio/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
 layout_mode = 2
 text = "RESOLUTION SCALE"
 alignment = 0
-option_to_scroll = NodePath("../../VBoxContainer2/OptionSelection2")
+option_to_scroll = NodePath("../../Selections/OptionSelection2")
 
-[node name="MenuButton3" parent="GraphicsAudio/MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("5_04n3j")]
+[node name="DisplayMode" parent="GraphicsAudio/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
 layout_mode = 2
 text = "DISPLAY MODE"
 alignment = 0
-option_to_scroll = NodePath("../../VBoxContainer2/OptionSelection3")
+option_to_scroll = NodePath("../../Selections/DisplayMode")
+setting_to_update = &"fullscreen"
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="GraphicsAudio/MarginContainer/HBoxContainer"]
+[node name="FrameRate" parent="GraphicsAudio/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
+layout_mode = 2
+text = "FRAME RATE"
+alignment = 0
+option_to_scroll = NodePath("../../Selections/FrameRate")
+setting_to_update = &"frame_rate"
+
+[node name="Selections" type="VBoxContainer" parent="GraphicsAudio/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 10
 
-[node name="OptionSelection" parent="GraphicsAudio/MarginContainer/HBoxContainer/VBoxContainer2" instance=ExtResource("7_uucu8")]
+[node name="OptionSelection" parent="GraphicsAudio/MarginContainer/HBoxContainer/Selections" instance=ExtResource("7_uucu8")]
 layout_mode = 2
 text = "TEST"
-option_to_value = Dictionary[String, Variant]({
-"1920X1080": 1920,
-"2560X1440": 2560,
-"320X240": 320
-})
+options = PackedStringArray("1920X1080")
+values = [1920]
 
-[node name="OptionSelection2" parent="GraphicsAudio/MarginContainer/HBoxContainer/VBoxContainer2" instance=ExtResource("7_uucu8")]
+[node name="OptionSelection2" parent="GraphicsAudio/MarginContainer/HBoxContainer/Selections" instance=ExtResource("7_uucu8")]
 layout_mode = 2
 text = "1.00"
-option_to_value = Dictionary[String, Variant]({
-"1.00": 1
-})
+options = PackedStringArray("1.00")
+values = [1]
 
-[node name="OptionSelection3" parent="GraphicsAudio/MarginContainer/HBoxContainer/VBoxContainer2" instance=ExtResource("7_uucu8")]
+[node name="DisplayMode" parent="GraphicsAudio/MarginContainer/HBoxContainer/Selections" instance=ExtResource("7_uucu8")]
 layout_mode = 2
 text = "FULLSCREEN"
-option_to_value = Dictionary[String, Variant]({
-"FULLSCREEN": false
-})
+options = PackedStringArray("WINDOWED", "FULLSCREEN")
+values = [false, true]
+
+[node name="FrameRate" parent="GraphicsAudio/MarginContainer/HBoxContainer/Selections" instance=ExtResource("7_uucu8")]
+layout_mode = 2
+text = "60"
+options = PackedStringArray("30", "60", "120", "144", "UNCAPPED")
+values = [30, 60, 120, 144, 0]
 
 [node name="Hand" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true

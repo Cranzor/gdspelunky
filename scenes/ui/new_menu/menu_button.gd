@@ -8,6 +8,7 @@ extends Button
 @export var option_to_scroll: NodePath
 @export var signal_to_emit: StringName
 @export var setting_to_update: StringName
+@export var game_settings: GameSettings = load("res://settings/game_settings.gd").new()
 var y_offset: int = 5
 var x_offset: int = 15
 
@@ -38,4 +39,6 @@ func _button_pressed() -> void:
 	if signal_to_emit:
 		SignalBus.emit_signal(signal_to_emit)
 	if setting_to_update:
-		pass
+		if option_to_scroll:
+			var value: Variant = get_node(option_to_scroll).get_option_value()
+			game_settings.set(setting_to_update, value)
