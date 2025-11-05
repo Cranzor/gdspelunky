@@ -6,7 +6,16 @@ var num_of_keyboard_actions: int
 var num_of_controller_actions: int
 enum {JOYPAD_BUTTON, JOYPAD_AXIS, KEYBOARD}
 @onready var game_settings: GameSettings = load("res://settings/game_settings.gd").new()
+var controller_setting_name: StringName
+var keyboard_setting_name: StringName
 
+
+func _ready() -> void:
+	controller_setting_name = "controller_" + action_name
+	keyboard_setting_name = "controller_" + action_name
+	var controller_button_index_and_type: PackedInt32Array = game_settings.get(controller_setting_name)
+	text = ButtonNames.get_button_name(controller_button_index_and_type)
+	
 
 func set_input(event: InputEvent):
 	var event_type: int = get_event_type(event)
@@ -44,12 +53,8 @@ func get_event_type(event: InputEvent) -> int:
 
 func update_game_settings(index: int, event_type: int) -> void:
 	if event_type == JOYPAD_BUTTON:
-		var game_setting_name: StringName = "controller_" + action_name 
-		game_settings.set(game_setting_name, [index, JOYPAD_BUTTON])
-		print(game_settings.controller_attack)
+		game_settings.set(controller_setting_name, [index, JOYPAD_BUTTON])
 	elif event_type == JOYPAD_AXIS:
-		var game_setting_name: StringName = "controller_" + action_name
-		game_settings.set(game_setting_name, [index, JOYPAD_AXIS])
+		game_settings.set(controller_setting_name, [index, JOYPAD_AXIS])
 	else:
-		var game_setting_name: StringName = "keyboard_" + action_name
-		game_settings.set(game_setting_name, index)
+		game_settings.set(keyboard_setting_name, index)
