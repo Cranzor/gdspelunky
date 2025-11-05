@@ -51,7 +51,36 @@ static var screen_shake: int = 2:
 	set(value):
 		screen_shake = value
 		print(value)
+		
 
 #--- HUD/UI
 static var display_fps: bool = false
 static var new_pause_menu: bool = true
+
+#--- controls
+#--- for controller, first value is button, second is input type. 0 = JoyButton, 1 = JoyAxis
+static var controller_attack: PackedInt32Array = [JOY_BUTTON_X, 0]
+static var controller_run: PackedInt32Array = [JOY_AXIS_TRIGGER_RIGHT, 1]
+static var controller_jump: PackedInt32Array = [JOY_BUTTON_A, 0]
+static var controller_bomb: PackedInt32Array = [JOY_BUTTON_B, 0]
+static var controller_rope: PackedInt32Array = [JOY_BUTTON_Y, 0]
+static var controller_pay: PackedInt32Array = [JOY_BUTTON_RIGHT_SHOULDER, 0]
+static var controller_cycle_bomb_rope: PackedInt32Array = [JOY_BUTTON_LEFT_SHOULDER, 0]
+static var controller_left: PackedInt32Array = [JOY_BUTTON_DPAD_LEFT, 0]
+static var controller_right: PackedInt32Array = [JOY_BUTTON_DPAD_RIGHT, 0]
+static var controller_up: PackedInt32Array = [JOY_BUTTON_DPAD_UP, 0]
+static var controller_down: PackedInt32Array = [JOY_BUTTON_DPAD_DOWN, 0]
+static var controller_pause: PackedInt32Array = [JOY_BUTTON_START, 0]
+
+static var keyboard_attack: Key = KEY_X
+static var keyboard_run: Key = KEY_SHIFT
+static var keyboard_jump: Key = KEY_Z
+static var keyboard_bomb: Key = KEY_C
+static var keyboard_rope: Key = KEY_D
+static var keyboard_pay: Key = KEY_A
+static var keyboard_cycle_bomb_rope: Key
+static var keyboard_left: Key = KEY_LEFT
+static var keyboard_right: Key = KEY_RIGHT
+static var keyboard_up: Key = KEY_UP
+static var keyboard_down: Key = KEY_DOWN
+static var keyboard_pause: Key = KEY_ESCAPE

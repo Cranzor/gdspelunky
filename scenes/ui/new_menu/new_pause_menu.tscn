@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dc1rbppknrh43"]
+[gd_scene load_steps=16 format=3 uid="uid://dc1rbppknrh43"]
 
 [ext_resource type="Theme" uid="uid://slghfexedlyr" path="res://scenes/small_font.tres" id="1_76hnl"]
 [ext_resource type="Script" uid="uid://bp6wa67jxvj3j" path="res://scenes/ui/new_menu/new_pause_menu.gd" id="2_6ujsf"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bj5ooio37b4ga" path="res://sprites/hud/hint_point/hint_point_0.png" id="5_x8h66"]
 [ext_resource type="Texture2D" uid="uid://cuedlacpy4xs6" path="res://sprites/hud/hint_point/hint_point_1.png" id="6_04n3j"]
 [ext_resource type="Script" uid="uid://digupl0ub7tsy" path="res://scenes/ui/new_menu/menu_screen.gd" id="6_urnj6"]
+[ext_resource type="Script" uid="uid://b1jbhwltybge8" path="res://scenes/ui/new_menu/input_option_selection.gd" id="7_7dyxn"]
 [ext_resource type="Texture2D" uid="uid://27iehp7itde1" path="res://sprites/hud/hint_point/hint_point_2.png" id="7_msgju"]
 [ext_resource type="PackedScene" uid="uid://bi0dx7uriyhe" path="res://scenes/ui/new_menu/option_selection.tscn" id="7_uucu8"]
 [ext_resource type="Texture2D" uid="uid://call5h120c212" path="res://sprites/hud/hint_point/hint_point_3.png" id="8_yhfdk"]
@@ -403,161 +404,162 @@ size_flags_horizontal = 2
 layout_mode = 2
 text = "ATTACK"
 alignment = 0
-option_to_scroll = NodePath("../../Selections/Attack")
+input_option = NodePath("../../Selections/Attack")
 setting_to_update = &"rumble"
 
 [node name="Run" parent="Controls/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
 layout_mode = 2
 text = "RUN"
 alignment = 0
-option_to_scroll = NodePath("../../Selections/Run")
 setting_to_update = &"screen_shake"
 
 [node name="Jump" parent="Controls/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
 layout_mode = 2
 text = "JUMP"
 alignment = 0
-option_to_scroll = NodePath("../../Selections/Jump")
 setting_to_update = &"auto_run"
 
 [node name="Bomb" parent="Controls/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
 layout_mode = 2
 text = "BOMB"
 alignment = 0
-option_to_scroll = NodePath("../../Selections/Bomb")
 setting_to_update = &"auto_run"
 
 [node name="Rope" parent="Controls/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
 layout_mode = 2
 text = "ROPE"
 alignment = 0
-option_to_scroll = NodePath("../../Selections/Rope")
 setting_to_update = &"auto_run"
 
 [node name="Pay" parent="Controls/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
 layout_mode = 2
 text = "PAY"
 alignment = 0
-option_to_scroll = NodePath("../../Selections/Pay")
 setting_to_update = &"auto_run"
 
 [node name="CycleBombRope" parent="Controls/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
 layout_mode = 2
 text = "CYCLE BOMB/ROPE"
 alignment = 0
-option_to_scroll = NodePath("../../Selections/CycleBombRope")
 setting_to_update = &"auto_run"
 
 [node name="Left" parent="Controls/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
 layout_mode = 2
 text = "LEFT"
 alignment = 0
-option_to_scroll = NodePath("../../Selections/Left")
 setting_to_update = &"auto_run"
 
 [node name="Right" parent="Controls/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
 layout_mode = 2
 text = "RIGHT"
 alignment = 0
-option_to_scroll = NodePath("../../Selections/Right")
 setting_to_update = &"auto_run"
 
 [node name="Up" parent="Controls/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
 layout_mode = 2
 text = "UP"
 alignment = 0
-option_to_scroll = NodePath("../../Selections/Up")
 setting_to_update = &"auto_run"
 
 [node name="Down" parent="Controls/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
 layout_mode = 2
 text = "DOWN"
 alignment = 0
-option_to_scroll = NodePath("../../Selections/Down")
 setting_to_update = &"auto_run"
 
 [node name="Pause" parent="Controls/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
 layout_mode = 2
 text = "PAUSE"
 alignment = 0
-option_to_scroll = NodePath("../../Selections/Pause")
 setting_to_update = &"auto_run"
 
 [node name="Selections" type="VBoxContainer" parent="Controls/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 10
 
-[node name="Attack" parent="Controls/MarginContainer/HBoxContainer/Selections" instance=ExtResource("7_uucu8")]
+[node name="Attack" type="Label" parent="Controls/MarginContainer/HBoxContainer/Selections"]
 layout_mode = 2
-text = "LOW"
-options = PackedStringArray("OFF", "LOW", "MEDIUM", "HIGH")
-values = [0, 1, 2, 3]
+text = "A"
+horizontal_alignment = 2
+script = ExtResource("7_7dyxn")
+action_name = &"attack"
 
-[node name="Run" parent="Controls/MarginContainer/HBoxContainer/Selections" instance=ExtResource("7_uucu8")]
+[node name="Run" type="Label" parent="Controls/MarginContainer/HBoxContainer/Selections"]
 layout_mode = 2
-text = "MEDIUM"
-options = PackedStringArray("OFF", "LOW", "MEDIUM", "HIGH")
-values = [0, 1, 2, 3]
+text = "A"
+horizontal_alignment = 2
+script = ExtResource("7_7dyxn")
+action_name = &"run"
 
-[node name="Jump" parent="Controls/MarginContainer/HBoxContainer/Selections" instance=ExtResource("7_uucu8")]
+[node name="Jump" type="Label" parent="Controls/MarginContainer/HBoxContainer/Selections"]
 layout_mode = 2
-text = "OFF"
-options = PackedStringArray("OFF", "ON")
-values = [false, true]
+text = "A"
+horizontal_alignment = 2
+script = ExtResource("7_7dyxn")
+action_name = &"jump"
 
-[node name="Bomb" parent="Controls/MarginContainer/HBoxContainer/Selections" instance=ExtResource("7_uucu8")]
+[node name="Bomb" type="Label" parent="Controls/MarginContainer/HBoxContainer/Selections"]
 layout_mode = 2
-text = "OFF"
-options = PackedStringArray("OFF", "ON")
-values = [false, true]
+text = "A"
+horizontal_alignment = 2
+script = ExtResource("7_7dyxn")
+action_name = &"bomb"
 
-[node name="Rope" parent="Controls/MarginContainer/HBoxContainer/Selections" instance=ExtResource("7_uucu8")]
+[node name="Rope" type="Label" parent="Controls/MarginContainer/HBoxContainer/Selections"]
 layout_mode = 2
-text = "OFF"
-options = PackedStringArray("OFF", "ON")
-values = [false, true]
+text = "A"
+horizontal_alignment = 2
+script = ExtResource("7_7dyxn")
+action_name = &"rope"
 
-[node name="Pay" parent="Controls/MarginContainer/HBoxContainer/Selections" instance=ExtResource("7_uucu8")]
+[node name="Pay" type="Label" parent="Controls/MarginContainer/HBoxContainer/Selections"]
 layout_mode = 2
-text = "OFF"
-options = PackedStringArray("OFF", "ON")
-values = [false, true]
+text = "A"
+horizontal_alignment = 2
+script = ExtResource("7_7dyxn")
+action_name = &"pay"
 
-[node name="CycleBombRope" parent="Controls/MarginContainer/HBoxContainer/Selections" instance=ExtResource("7_uucu8")]
+[node name="CycleBombRope" type="Label" parent="Controls/MarginContainer/HBoxContainer/Selections"]
 layout_mode = 2
-text = "OFF"
-options = PackedStringArray("OFF", "ON")
-values = [false, true]
+text = "A"
+horizontal_alignment = 2
+script = ExtResource("7_7dyxn")
+action_name = &"item"
 
-[node name="Left" parent="Controls/MarginContainer/HBoxContainer/Selections" instance=ExtResource("7_uucu8")]
+[node name="Left" type="Label" parent="Controls/MarginContainer/HBoxContainer/Selections"]
 layout_mode = 2
-text = "OFF"
-options = PackedStringArray("OFF", "ON")
-values = [false, true]
+text = "A"
+horizontal_alignment = 2
+script = ExtResource("7_7dyxn")
+action_name = &"left"
 
-[node name="Right" parent="Controls/MarginContainer/HBoxContainer/Selections" instance=ExtResource("7_uucu8")]
+[node name="Right" type="Label" parent="Controls/MarginContainer/HBoxContainer/Selections"]
 layout_mode = 2
-text = "OFF"
-options = PackedStringArray("OFF", "ON")
-values = [false, true]
+text = "A"
+horizontal_alignment = 2
+script = ExtResource("7_7dyxn")
+action_name = &"right"
 
-[node name="Up" parent="Controls/MarginContainer/HBoxContainer/Selections" instance=ExtResource("7_uucu8")]
+[node name="Up" type="Label" parent="Controls/MarginContainer/HBoxContainer/Selections"]
 layout_mode = 2
-text = "OFF"
-options = PackedStringArray("OFF", "ON")
-values = [false, true]
+text = "A"
+horizontal_alignment = 2
+script = ExtResource("7_7dyxn")
+action_name = &"up"
 
-[node name="Down" parent="Controls/MarginContainer/HBoxContainer/Selections" instance=ExtResource("7_uucu8")]
+[node name="Down" type="Label" parent="Controls/MarginContainer/HBoxContainer/Selections"]
 layout_mode = 2
-text = "OFF"
-options = PackedStringArray("OFF", "ON")
-values = [false, true]
+text = "A"
+horizontal_alignment = 2
+script = ExtResource("7_7dyxn")
+action_name = &"down"
 
-[node name="Pause" parent="Controls/MarginContainer/HBoxContainer/Selections" instance=ExtResource("7_uucu8")]
+[node name="Pause" type="Label" parent="Controls/MarginContainer/HBoxContainer/Selections"]
 layout_mode = 2
-text = "OFF"
-options = PackedStringArray("OFF", "ON")
-values = [false, true]
+text = "A"
+horizontal_alignment = 2
+script = ExtResource("7_7dyxn")
+action_name = &"start"
 
 [node name="Hand" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
