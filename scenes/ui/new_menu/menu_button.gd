@@ -8,7 +8,7 @@ extends Button
 @export var option_to_scroll: NodePath
 @export var signal_to_emit: StringName
 @export var setting_to_update: StringName
-@export var game_settings: GameSettings = load("res://settings/game_settings.gd").new()
+var game_settings: GameSettings = load("res://settings/game_settings.gd").new()
 var y_offset: int = 5
 var x_offset: int = 15
 

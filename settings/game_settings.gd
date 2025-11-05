@@ -3,10 +3,18 @@ class_name GameSettings
 
 #--- graphics
 static var smooth_motion: bool = true
-static var screen_shake: bool = true
 static var high_detail: bool = true
 static var resolution
-static var vsync: bool = false
+static var vsync: bool = false:
+	set(value):
+		vsync = value
+		if value == true:
+			DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED)
+			ProjectSettings.set_setting("display/window/vsync/vsync_mode", DisplayServer.VSYNC_ENABLED)
+		else:
+			DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
+			ProjectSettings.set_setting("display/window/vsync/vsync_mode", DisplayServer.VSYNC_DISABLED)
+		
 static var fullscreen: bool = false:
 	set(value):
 		fullscreen = value
@@ -31,8 +39,18 @@ static var music_volume
 static var sound_effects_volume
 
 #--- gameplay
-static var auto_run: bool = false
-static var rumble: bool = true
+static var auto_run: bool = false:
+	set(value):
+		auto_run = value
+		print(value)
+static var rumble: int = 1:
+	set(value):
+		rumble = value
+		print(value)
+static var screen_shake: int = 2:
+	set(value):
+		screen_shake = value
+		print(value)
 
 #--- HUD/UI
 static var display_fps: bool = false

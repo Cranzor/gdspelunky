@@ -7,6 +7,7 @@ extends Control
 @onready var pause_screen: VBoxContainer = $PauseScreen
 @onready var settings: VBoxContainer = $Settings
 @onready var graphics_audio: VBoxContainer = $GraphicsAudio
+@onready var gameplay: VBoxContainer = $Gameplay
 var current_menu_screen: VBoxContainer
 
 var room: StringName
@@ -42,6 +43,7 @@ func set_initial_pause_visibility() -> void:
 	pause_screen.show()
 	settings.hide()
 	graphics_audio.hide()
+	gameplay.hide()
 
 
 func _handle_menu_screen_change(requesting_screen, next_screen, set_prev_screen: bool = true) -> void:
