@@ -198,6 +198,8 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "CONTROLS"
+next_menu_to_show = NodePath("../../Controls")
+menu_to_hide = NodePath("..")
 
 [node name="Gameplay" parent="Settings" instance=ExtResource("5_04n3j")]
 layout_mode = 2
@@ -290,6 +292,7 @@ options = PackedStringArray("OFF", "ON")
 values = [false, true]
 
 [node name="Gameplay" type="VBoxContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
@@ -359,6 +362,198 @@ options = PackedStringArray("OFF", "LOW", "MEDIUM", "HIGH")
 values = [0, 1, 2, 3]
 
 [node name="AutoRun" parent="Gameplay/MarginContainer/HBoxContainer/Selections" instance=ExtResource("7_uucu8")]
+layout_mode = 2
+text = "OFF"
+options = PackedStringArray("OFF", "ON")
+values = [false, true]
+
+[node name="Controls" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -26.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_76hnl")
+script = ExtResource("6_urnj6")
+focus_to_grab = NodePath("MarginContainer/HBoxContainer/Settings/Attack")
+
+[node name="Label" type="Label" parent="Controls"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_dnbp1")
+text = "CONTROLLER CONFIG"
+
+[node name="MarginContainer" type="MarginContainer" parent="Controls"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_right = 25
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Controls/MarginContainer"]
+layout_mode = 2
+
+[node name="Settings" type="VBoxContainer" parent="Controls/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+
+[node name="Attack" parent="Controls/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
+layout_mode = 2
+text = "ATTACK"
+alignment = 0
+option_to_scroll = NodePath("../../Selections/Attack")
+setting_to_update = &"rumble"
+
+[node name="Run" parent="Controls/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
+layout_mode = 2
+text = "RUN"
+alignment = 0
+option_to_scroll = NodePath("../../Selections/Run")
+setting_to_update = &"screen_shake"
+
+[node name="Jump" parent="Controls/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
+layout_mode = 2
+text = "JUMP"
+alignment = 0
+option_to_scroll = NodePath("../../Selections/Jump")
+setting_to_update = &"auto_run"
+
+[node name="Bomb" parent="Controls/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
+layout_mode = 2
+text = "BOMB"
+alignment = 0
+option_to_scroll = NodePath("../../Selections/Bomb")
+setting_to_update = &"auto_run"
+
+[node name="Rope" parent="Controls/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
+layout_mode = 2
+text = "ROPE"
+alignment = 0
+option_to_scroll = NodePath("../../Selections/Rope")
+setting_to_update = &"auto_run"
+
+[node name="Pay" parent="Controls/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
+layout_mode = 2
+text = "PAY"
+alignment = 0
+option_to_scroll = NodePath("../../Selections/Pay")
+setting_to_update = &"auto_run"
+
+[node name="CycleBombRope" parent="Controls/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
+layout_mode = 2
+text = "CYCLE BOMB/ROPE"
+alignment = 0
+option_to_scroll = NodePath("../../Selections/CycleBombRope")
+setting_to_update = &"auto_run"
+
+[node name="Left" parent="Controls/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
+layout_mode = 2
+text = "LEFT"
+alignment = 0
+option_to_scroll = NodePath("../../Selections/Left")
+setting_to_update = &"auto_run"
+
+[node name="Right" parent="Controls/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
+layout_mode = 2
+text = "RIGHT"
+alignment = 0
+option_to_scroll = NodePath("../../Selections/Right")
+setting_to_update = &"auto_run"
+
+[node name="Up" parent="Controls/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
+layout_mode = 2
+text = "UP"
+alignment = 0
+option_to_scroll = NodePath("../../Selections/Up")
+setting_to_update = &"auto_run"
+
+[node name="Down" parent="Controls/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
+layout_mode = 2
+text = "DOWN"
+alignment = 0
+option_to_scroll = NodePath("../../Selections/Down")
+setting_to_update = &"auto_run"
+
+[node name="Pause" parent="Controls/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
+layout_mode = 2
+text = "PAUSE"
+alignment = 0
+option_to_scroll = NodePath("../../Selections/Pause")
+setting_to_update = &"auto_run"
+
+[node name="Selections" type="VBoxContainer" parent="Controls/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="Attack" parent="Controls/MarginContainer/HBoxContainer/Selections" instance=ExtResource("7_uucu8")]
+layout_mode = 2
+text = "LOW"
+options = PackedStringArray("OFF", "LOW", "MEDIUM", "HIGH")
+values = [0, 1, 2, 3]
+
+[node name="Run" parent="Controls/MarginContainer/HBoxContainer/Selections" instance=ExtResource("7_uucu8")]
+layout_mode = 2
+text = "MEDIUM"
+options = PackedStringArray("OFF", "LOW", "MEDIUM", "HIGH")
+values = [0, 1, 2, 3]
+
+[node name="Jump" parent="Controls/MarginContainer/HBoxContainer/Selections" instance=ExtResource("7_uucu8")]
+layout_mode = 2
+text = "OFF"
+options = PackedStringArray("OFF", "ON")
+values = [false, true]
+
+[node name="Bomb" parent="Controls/MarginContainer/HBoxContainer/Selections" instance=ExtResource("7_uucu8")]
+layout_mode = 2
+text = "OFF"
+options = PackedStringArray("OFF", "ON")
+values = [false, true]
+
+[node name="Rope" parent="Controls/MarginContainer/HBoxContainer/Selections" instance=ExtResource("7_uucu8")]
+layout_mode = 2
+text = "OFF"
+options = PackedStringArray("OFF", "ON")
+values = [false, true]
+
+[node name="Pay" parent="Controls/MarginContainer/HBoxContainer/Selections" instance=ExtResource("7_uucu8")]
+layout_mode = 2
+text = "OFF"
+options = PackedStringArray("OFF", "ON")
+values = [false, true]
+
+[node name="CycleBombRope" parent="Controls/MarginContainer/HBoxContainer/Selections" instance=ExtResource("7_uucu8")]
+layout_mode = 2
+text = "OFF"
+options = PackedStringArray("OFF", "ON")
+values = [false, true]
+
+[node name="Left" parent="Controls/MarginContainer/HBoxContainer/Selections" instance=ExtResource("7_uucu8")]
+layout_mode = 2
+text = "OFF"
+options = PackedStringArray("OFF", "ON")
+values = [false, true]
+
+[node name="Right" parent="Controls/MarginContainer/HBoxContainer/Selections" instance=ExtResource("7_uucu8")]
+layout_mode = 2
+text = "OFF"
+options = PackedStringArray("OFF", "ON")
+values = [false, true]
+
+[node name="Up" parent="Controls/MarginContainer/HBoxContainer/Selections" instance=ExtResource("7_uucu8")]
+layout_mode = 2
+text = "OFF"
+options = PackedStringArray("OFF", "ON")
+values = [false, true]
+
+[node name="Down" parent="Controls/MarginContainer/HBoxContainer/Selections" instance=ExtResource("7_uucu8")]
+layout_mode = 2
+text = "OFF"
+options = PackedStringArray("OFF", "ON")
+values = [false, true]
+
+[node name="Pause" parent="Controls/MarginContainer/HBoxContainer/Selections" instance=ExtResource("7_uucu8")]
 layout_mode = 2
 text = "OFF"
 options = PackedStringArray("OFF", "ON")
