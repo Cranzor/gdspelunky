@@ -28,6 +28,7 @@ static func get_button_name(button_index_and_type: PackedInt32Array) -> StringNa
 	var index: int = button_index_and_type[0]
 	var type: int = button_index_and_type[1]
 	if type == 0:
-		return joy_button_names[index][0]
+		if index in joy_button_names: return joy_button_names[index][0]
 	else:
-		return joy_axis_names[index][0]
+		if index in joy_axis_names: return joy_axis_names[index][0]
+	return ""

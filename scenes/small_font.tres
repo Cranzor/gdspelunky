@@ -14,6 +14,7 @@
 
 [resource]
 Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_disabled_color = Color(1, 1, 1, 1)
 Button/colors/font_focus_color = Color(1, 1, 0, 1)
 Button/colors/font_hover_color = Color(1, 1, 0, 1)
 Button/fonts/font = ExtResource("1_qd3ot")

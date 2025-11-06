@@ -9,6 +9,7 @@ enum {JOYPAD_BUTTON, JOYPAD_AXIS, KEYBOARD}
 var controller_setting_name: StringName
 var keyboard_setting_name: StringName
 var controller_button_index_and_type: PackedInt32Array
+var current_text: String
 
 
 func _ready() -> void:
@@ -16,7 +17,8 @@ func _ready() -> void:
 	controller_setting_name = "controller_" + action_name
 	keyboard_setting_name = "controller_" + action_name
 	controller_button_index_and_type = game_settings.get(controller_setting_name)
-	text = ButtonNames.get_button_name(controller_button_index_and_type)
+	current_text = ButtonNames.get_button_name(controller_button_index_and_type)
+	text = current_text
 	
 
 #--- calling_from_input is to avoid recursion when switching buttons with another input
@@ -24,19 +26,25 @@ func _ready() -> void:
 #--- don't want the jump script to also emit a signal, since we are done once it's remapped
 func set_input(event: InputEvent, calling_from_input: bool = true): #TODO: need to check if button is valid
 	var event_type: int = get_event_type(event)
-	clear_existing_input(event_type)
 
 	if input_type == 0 and (event_type == JOYPAD_BUTTON or event_type == JOYPAD_AXIS):
 		var new_button_index_and_type: PackedInt32Array = get_button_and_index_from_event(event)
-		update_game_settings_controller(new_button_index_and_type)
-		InputMap.action_add_event(action_name, event)
-		if calling_from_input:
-			SignalBus.emit_signal("button_remapped", new_button_index_and_type, controller_button_index_and_type)
-		text = ButtonNames.get_button_name(new_button_index_and_type)
-		controller_button_index_and_type = new_button_index_and_type
-		print(str(action_name + " REMAPPED TO " + str(ButtonNames.get_button_name(new_button_index_and_type))))
+		var new_text: String = ButtonNames.get_button_name(new_button_index_and_type)
+		if new_text:
+			clear_existing_input(event_type)
+			update_game_settings_controller(new_button_index_and_type)
+			InputMap.action_add_event(action_name, event)
+			if calling_from_input:
+				SignalBus.emit_signal("button_remapped", new_button_index_and_type, controller_button_index_and_type)
+			controller_button_index_and_type = new_button_index_and_type
+			text = new_text
+			print(str(action_name + " REMAPPED TO " + str(ButtonNames.get_button_name(new_button_index_and_type))))
+		else:
+			text = current_text
 	elif input_type == 1 and event_type == KEYBOARD:
 		InputMap.action_add_event(action_name, event)
+	else:
+		text = current_text
 
 
 func clear_existing_input(event_type):
