@@ -38,3 +38,10 @@ func place_arrows() -> void:
 	arrow_right.show()
 	arrow_left.global_position = global_position + arrow_left_offset
 	arrow_right.global_position = global_position + arrow_right_offset
+
+
+func set_option_from_loaded_setting(setting: StringName, game_settings: GameSettings):
+	var setting_value = game_settings.get(setting)
+	current_option = values.find(setting_value)
+	current_option -= 1 #--- subtracting one here so we can simply use the already existing go_to_next_option() function, which adds one
+	go_to_next_option()

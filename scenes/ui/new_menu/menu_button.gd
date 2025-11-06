@@ -18,6 +18,10 @@ var waiting_for_input: bool = false
 func _ready() -> void:
 	self.pressed.connect(_button_pressed)
 	self.mouse_entered.connect(grab_focus)
+	
+	#--- setting label text based on the value in GameSettings
+	if option_to_scroll and setting_to_update:
+		get_node(option_to_scroll).set_option_from_loaded_setting(setting_to_update, game_settings)
 
 
 func _process(delta: float) -> void:
