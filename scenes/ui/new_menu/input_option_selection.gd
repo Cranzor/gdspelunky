@@ -22,7 +22,7 @@ func _ready() -> void:
 #--- calling_from_input is to avoid recursion when switching buttons with another input
 #--- for example, if attack is X and jump is A, setting attack to A will set jump to X
 #--- don't want the jump script to also emit a signal, since we are done once it's remapped
-func set_input(event: InputEvent, calling_from_input: bool = true):
+func set_input(event: InputEvent, calling_from_input: bool = true): #TODO: need to check if button is valid
 	var event_type: int = get_event_type(event)
 	clear_existing_input(event_type)
 
@@ -34,6 +34,7 @@ func set_input(event: InputEvent, calling_from_input: bool = true):
 			SignalBus.emit_signal("button_remapped", new_button_index_and_type, controller_button_index_and_type)
 		text = ButtonNames.get_button_name(new_button_index_and_type)
 		controller_button_index_and_type = new_button_index_and_type
+		print(str(action_name + " REMAPPED TO " + str(ButtonNames.get_button_name(new_button_index_and_type))))
 	elif input_type == 1 and event_type == KEYBOARD:
 		InputMap.action_add_event(action_name, event)
 

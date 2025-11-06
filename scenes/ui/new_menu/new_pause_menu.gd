@@ -9,6 +9,7 @@ extends Control
 @onready var graphics_audio: VBoxContainer = $GraphicsAudio
 @onready var gameplay: VBoxContainer = $Gameplay
 @onready var controls: VBoxContainer = $Controls
+@onready var viewport: Viewport = get_viewport()
 var current_menu_screen: VBoxContainer
 
 var room: StringName
@@ -23,11 +24,13 @@ func _ready() -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("ui_back"):
-		if current_menu_screen.previous_menu_screen:
-			_handle_menu_screen_change(current_menu_screen, current_menu_screen.previous_menu_screen, false)
-		else:
-			SignalBus.emit_signal("game_unpaused")
+	if visible:
+		if Input.is_action_just_pressed("ui_back"):
+			if current_menu_screen.previous_menu_screen:
+				_handle_menu_screen_change(current_menu_screen, current_menu_screen.previous_menu_screen, false)
+			else:
+				SignalBus.emit_signal("game_unpaused")
+				viewport.set_input_as_handled()
 
 
 func set_default_focus():

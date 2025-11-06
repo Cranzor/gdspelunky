@@ -112,7 +112,8 @@ func handle_title_hud():
 
 
 func _input(event: InputEvent) -> void:
-	pause_handling.pause_button_pressed(event)
+	if Input.is_action_just_pressed("start"):
+		pause_handling.pause_button_pressed(event)
 
 
 func _game_unpaused() -> void:

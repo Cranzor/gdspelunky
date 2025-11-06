@@ -19,7 +19,7 @@ var state
 @onready var draw_text: Node2D = $DrawText
 
 
-func _input(event):
+func _unhandled_input(event: InputEvent) -> void:
 	if gml.keyboard_check_pressed(KEY_F2):
 		key_f2_pressed()
 	

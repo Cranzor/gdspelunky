@@ -26,7 +26,7 @@ var enabled
 @onready var draw_text: Node2D = $DrawText
 
 
-func _input(event):
+func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_key_pressed(KEY_F1): #---[FLAG] fix this
 		key_f1_pressed()
 	

@@ -40,6 +40,9 @@ func _process(delta: float) -> void:
 
 
 func _button_pressed() -> void:
+	if waiting_for_input:
+		return
+	
 	if next_menu_to_show:
 		SignalBus.emit_signal("menu_screen_change_requested", get_node(menu_to_hide), get_node(next_menu_to_show))
 	if signal_to_emit:
@@ -50,10 +53,12 @@ func _button_pressed() -> void:
 			game_settings.set(setting_to_update, value)
 	if input_option:
 		waiting_for_input = true
+		get_node(input_option).text = "PRESS A BUTTON..."
 
 
 func _input(event: InputEvent) -> void:
 	if waiting_for_input:
-		if Input.is_anything_pressed():
-			get_node(input_option).set_input(event)
-			waiting_for_input = false
+		get_node(input_option).set_input(event)
+		waiting_for_input = false
+		var viewport: Viewport = get_viewport()
+		viewport.set_input_as_handled()

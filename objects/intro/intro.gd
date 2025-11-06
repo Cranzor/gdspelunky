@@ -24,7 +24,7 @@ var skip_button_just_pressed: bool = false
 @onready var draw_rectangle: ColorRect = $DrawRectangle
 
 
-func _input(event):
+func _unhandled_input(event: InputEvent) -> void:
 	if (gml.keyboard_check_pressed(KEY_ENTER) or
 		gml.keyboard_check_pressed(KEY_ESCAPE) or
 		ControlScripts.check_attack_pressed() or

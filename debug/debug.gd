@@ -6,7 +6,7 @@ var shop: bool = false
 var custom_collision = preload("res://collision/custom_collision.gd").new()
 
 
-func _input(event: InputEvent) -> void:
+func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("debug"):
 		paused = !paused
 		get_tree().paused = paused

@@ -31,7 +31,7 @@ var physics_frame_rate = 30
 @onready var draw_text = $DrawText
 
 
-func _input(event):
+func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_key_pressed(KEY_M): #---[FLAG] fix this to be its own function
 		key_m_pressed()
 
