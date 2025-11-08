@@ -21,7 +21,7 @@ func _ready() -> void:
 	
 	#--- setting label text based on the value in GameSettings
 	if option_to_scroll and setting_to_update:
-		get_node(option_to_scroll).set_option_from_loaded_setting(setting_to_update, game_settings)
+		get_node(option_to_scroll).set_option_from_loaded_setting()
 
 
 func _process(delta: float) -> void:
