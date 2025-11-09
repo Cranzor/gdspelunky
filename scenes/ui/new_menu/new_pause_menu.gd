@@ -10,6 +10,8 @@ extends Control
 @onready var gameplay: VBoxContainer = $Gameplay
 @onready var controls: VBoxContainer = $Controls
 @onready var viewport: Viewport = get_viewport()
+@onready var arrow_left: TextureRect = %ArrowLeft
+@onready var arrow_right: TextureRect = %ArrowRight
 var current_menu_screen: VBoxContainer
 
 var room: StringName
@@ -57,3 +59,6 @@ func _handle_menu_screen_change(requesting_screen, next_screen, set_prev_screen:
 	current_menu_screen = next_screen
 	if set_prev_screen:
 		next_screen.previous_menu_screen = requesting_screen
+	
+	arrow_left.hide()
+	arrow_right.hide()

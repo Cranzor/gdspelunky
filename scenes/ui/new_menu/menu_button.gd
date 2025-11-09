@@ -1,8 +1,6 @@
 extends Button
 
 @onready var hand: AnimatedSprite2D = %Hand
-@onready var arrow_left: Sprite2D = %ArrowLeft
-@onready var arrow_right: Sprite2D = %ArrowRight
 @export var next_menu_to_show: NodePath
 @export var menu_to_hide: NodePath
 @export var option_to_scroll: NodePath
@@ -34,9 +32,6 @@ func _process(delta: float) -> void:
 			scrollable.place_arrows()
 			if Input.is_action_just_pressed("ui_right"):
 				get_node(option_to_scroll).go_to_next_option()
-		else:
-			arrow_left.hide()
-			arrow_right.hide()
 
 
 func _button_pressed() -> void:

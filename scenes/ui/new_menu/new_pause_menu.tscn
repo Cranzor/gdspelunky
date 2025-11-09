@@ -218,17 +218,20 @@ text = "HUD"
 
 [node name="GraphicsAudio" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 14
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 0.5
+offset_left = -128.0
 offset_top = -26.0
+offset_right = 128.0
 offset_bottom = 26.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_76hnl")
 script = ExtResource("6_urnj6")
-focus_to_grab = NodePath("MarginContainer/HBoxContainer/Selections/DisplayMode")
+focus_to_grab = NodePath("HBoxContainer/Selections/DisplayMode")
 
 [node name="Label" type="Label" parent="GraphicsAudio"]
 layout_mode = 2
@@ -238,33 +241,31 @@ text = "GRAPHICS & AUDIO"
 
 [node name="MarginContainer" type="MarginContainer" parent="GraphicsAudio"]
 layout_mode = 2
-theme_override_constants/margin_left = 25
-theme_override_constants/margin_right = 25
 
-[node name="HBoxContainer" type="HBoxContainer" parent="GraphicsAudio/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="GraphicsAudio"]
 layout_mode = 2
 
-[node name="Settings" type="VBoxContainer" parent="GraphicsAudio/MarginContainer/HBoxContainer"]
+[node name="Settings" type="VBoxContainer" parent="GraphicsAudio/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="DisplayMode" type="Label" parent="GraphicsAudio/MarginContainer/HBoxContainer/Settings"]
+[node name="DisplayMode" type="Label" parent="GraphicsAudio/HBoxContainer/Settings"]
 layout_mode = 2
 text = "DISPLAY MODE"
 
-[node name="FrameRate" type="Label" parent="GraphicsAudio/MarginContainer/HBoxContainer/Settings"]
+[node name="FrameRate" type="Label" parent="GraphicsAudio/HBoxContainer/Settings"]
 layout_mode = 2
 text = "FRAME RATE"
 
-[node name="Vsync" type="Label" parent="GraphicsAudio/MarginContainer/HBoxContainer/Settings"]
+[node name="Vsync" type="Label" parent="GraphicsAudio/HBoxContainer/Settings"]
 layout_mode = 2
 text = "V-SYNC"
 
-[node name="Selections" type="VBoxContainer" parent="GraphicsAudio/MarginContainer/HBoxContainer"]
+[node name="Selections" type="VBoxContainer" parent="GraphicsAudio/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="DisplayMode" parent="GraphicsAudio/MarginContainer/HBoxContainer/Selections" instance=ExtResource("7_uucu8")]
+[node name="DisplayMode" parent="GraphicsAudio/HBoxContainer/Selections" instance=ExtResource("7_uucu8")]
 layout_mode = 2
 text = "FULLSCREEN"
 setting_to_update = &"fullscreen"
@@ -272,7 +273,7 @@ description = NodePath("../../Settings/DisplayMode")
 options = PackedStringArray("WINDOWED", "FULLSCREEN")
 values = [false, true]
 
-[node name="FrameRate" parent="GraphicsAudio/MarginContainer/HBoxContainer/Selections" instance=ExtResource("7_uucu8")]
+[node name="FrameRate" parent="GraphicsAudio/HBoxContainer/Selections" instance=ExtResource("7_uucu8")]
 layout_mode = 2
 text = "60"
 setting_to_update = &"frame_rate"
@@ -280,7 +281,7 @@ description = NodePath("../../Settings/FrameRate")
 options = PackedStringArray("30", "60", "120", "144", "UNCAPPED")
 values = [30, 60, 120, 144, 0]
 
-[node name="Vsync" parent="GraphicsAudio/MarginContainer/HBoxContainer/Selections" instance=ExtResource("7_uucu8")]
+[node name="Vsync" parent="GraphicsAudio/HBoxContainer/Selections" instance=ExtResource("7_uucu8")]
 layout_mode = 2
 text = "OFF"
 setting_to_update = &"vsync"
@@ -578,14 +579,38 @@ autoplay = "default"
 frame_progress = 0.79728234
 flip_v = true
 
-[node name="ArrowLeft" type="Sprite2D" parent="."]
+[node name="ArrowLeft" type="TextureRect" parent="."]
 unique_name_in_owner = true
 visible = false
-position = Vector2(256, 112)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -178.0
+offset_top = -9.0
+offset_right = -138.0
+offset_bottom = 31.0
+grow_horizontal = 0
+grow_vertical = 2
 texture = ExtResource("11_yhfdk")
+stretch_mode = 2
 
-[node name="ArrowRight" type="Sprite2D" parent="."]
+[node name="ArrowRight" type="TextureRect" parent="."]
 unique_name_in_owner = true
 visible = false
-position = Vector2(304, 112)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -9.0
+offset_right = 5.0004272
+offset_bottom = 31.0
+grow_horizontal = 0
+grow_vertical = 2
 texture = ExtResource("12_urnj6")
+stretch_mode = 2

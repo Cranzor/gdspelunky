@@ -1,7 +1,6 @@
 extends Label
 
-@onready var arrow_left: Sprite2D = %ArrowLeft
-@onready var arrow_right: Sprite2D = %ArrowRight
+
 var arrow_left_offset: Vector2 = Vector2(15, 3)
 var arrow_right_offset: Vector2 = Vector2(136, 3)
 @export var setting_to_update: StringName
@@ -13,6 +12,8 @@ var current_option: int = 0
 var y_offset: int = 5
 var x_offset: int = 15
 var game_settings = load("res://settings/game_settings.gd").new()
+@onready var arrow_left: TextureRect = %ArrowLeft
+@onready var arrow_right: TextureRect = %ArrowRight
 
 
 func _ready() -> void:
@@ -49,8 +50,14 @@ func place_arrows() -> void:
 	if has_focus():
 		arrow_left.show()
 		arrow_right.show()
-		arrow_left.global_position = global_position + arrow_left_offset
-		arrow_right.global_position = global_position + arrow_right_offset
+		
+		var description_node = get_node(description)
+		arrow_left.reparent(description_node, false)
+		arrow_right.reparent(description_node, false)
+		arrow_left.global_position = description_node.global_position + Vector2(110, -4)
+		arrow_right.global_position = description_node.global_position + Vector2(250, -4)
+		
+		
 
 
 func set_option_from_loaded_setting():
@@ -65,13 +72,13 @@ func _on_focus_entered() -> void:
 	place_arrows()
 	var description_node: Label = get_node(description)
 	modulate = gml.c_yellow
-	description_node.modulate = gml.c_yellow
+	description_node.self_modulate = gml.c_yellow
 
 
 func _on_focus_exited() -> void:
 	var description_node: Label = get_node(description)
 	modulate = gml.c_white
-	description_node.modulate = gml.c_white
+	description_node.self_modulate = gml.c_white
 	
 
 
