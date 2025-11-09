@@ -14,3 +14,4 @@ offset_left = -40.0
 offset_bottom = 23.0
 grow_horizontal = 0
 theme_override_fonts/font = ExtResource("2_jjlen")
+horizontal_alignment = 2

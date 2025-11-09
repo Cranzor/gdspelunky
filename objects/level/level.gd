@@ -115,13 +115,31 @@ func step():
 			if (player1.position.y < 96 or player1.position.y > gml.room_height-96): gml.view_vborder = 0
 			else: gml.view_vborder = 96
 			if (global.shake_toggle or gml.view("yview") <= 0):
-		
-				gml.view_yview += 3
+				#--- adding this check for screen shake settings
+				if GameSettings.screen_shake == 0:
+					pass
+				elif GameSettings.screen_shake == 1:
+					gml.view_yview += 1
+				elif GameSettings.screen_shake == 2:
+					gml.view_yview += 3
+				elif GameSettings.screen_shake == 3:
+					gml.view_yview += 5
+				
+				#gml.view_yview += 3 #--- no longer using due to above settings. 3 is set as the default value (2, medium) 
 				global.shake_toggle = false
 		
 			elif (not global.shake_toggle or gml.view("yview") >= gml.room_height - gml.view("hview")):
-		
-				gml.view_yview -= 3
+				#--- adding this check for screen shake settings
+				if GameSettings.screen_shake == 0:
+					pass
+				elif GameSettings.screen_shake == 1:
+					gml.view_yview -= 1
+				elif GameSettings.screen_shake == 2:
+					gml.view_yview -= 3
+				elif GameSettings.screen_shake == 3:
+					gml.view_yview -= 5
+				
+				#gml.view_yview -= 3 #--- no longer using due to above settings. 3 is set as the default value (2, medium) 
 				global.shake_toggle = true
 		
 			global.shake -= 1

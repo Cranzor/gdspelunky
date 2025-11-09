@@ -50,7 +50,6 @@ static func scr_shake(number):
 ##
 ##DY: Shake the screen.
 ##
-
 	if (global.shake < number): global.shake = number
 	if (global.shake < 0): global.shake = 0
 	global.xview = gml.view_xview
