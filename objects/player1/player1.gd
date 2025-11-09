@@ -102,6 +102,7 @@ var y_vel_limit: int
 var k_right: bool
 var k_left: bool
 var k_up: bool
+var k_enter_door: bool #--- adding this so entering a door doesn't have to be bound to up
 
 var k_left_pushed_steps: int
 var k_right_pushed_steps: int
@@ -1020,11 +1021,12 @@ func handle_flare_crate_opening() -> void:
 func start_game() -> void:
 	# start game
 	#
+	#--- changed k_up to k_enter_door
 	if (not dead and
 		not stunned and
 		not whipping and
 		gml.collision_point(position.x, position.y, "x_start", 0, 0) and
-		k_up and
+		k_enter_door and
 		platform_character_is(ON_GROUND) and
 		sprite_index != "p_exit" and sprite_index != "damsel_exit" and sprite_index != "tunnel_exit"):
 
@@ -1102,11 +1104,12 @@ func start_game() -> void:
 func exit_level() -> void:
 	# exit level
 	#
+	#--- changed k_up to k_enter_door
 	if (not dead and
 		not stunned and
 		not whipping and
 		gml.collision_point(position.x, position.y, "exit", 0, 0) and
-		k_up and
+		k_enter_door and
 		platform_character_is(ON_GROUND) and
 		sprite_index != "p_exit" and sprite_index != "damsel_exit" and sprite_index != "tunnel_exit"):
 
@@ -2525,6 +2528,7 @@ func character_create_event() -> void:
 	k_left = false
 	k_right = false
 	k_up = false
+	k_enter_door = false #--- adding this so entering a door doesn't have to be bound to up
 	k_down = false
 	k_jump = false
 	k_jump_pressed = false
@@ -2671,6 +2675,7 @@ func check_keys() -> void:
 	k_right_released = ControlScripts.check_right_released()
 	  
 	k_up = ControlScripts.check_up()
+	k_enter_door = ControlScripts.check_enter_door() #--- adding this so entering a door doesn't have to be bound to up
 	k_down = ControlScripts.check_down()
 	  
 	#key "run"
@@ -2725,6 +2730,7 @@ func check_keys() -> void:
 		k_right_pressed = false
 		k_right_released = false
 		k_up = false
+		k_enter_door = false #--- adding this so entering a door doesn't have to be bound to up
 		k_down = false
 		k_jump = false
 		k_jump_pressed = false

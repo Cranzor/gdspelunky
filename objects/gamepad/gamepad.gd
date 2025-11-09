@@ -26,6 +26,10 @@ var right_released
 #--- var up
 var up_pressed
 var up_released
+#--- adding this so entering a door doesn't have to be bound to up 
+var enter_door
+var enter_door_pressed
+var enter_door_released
 #--- var down
 var down_pressed
 var down_released
@@ -70,6 +74,11 @@ func create():
 	up_pressed = false
 	up_released = false
 
+	#--- adding this so entering a door doesn't have to be bound to up
+	enter_door = false
+	enter_door_pressed = false
+	enter_door_released = false
+	
 	down = false
 	down_pressed = false
 	down_released = false
@@ -267,6 +276,32 @@ func step():
 			#if ((joystick_has_pov(joyid) == 1 and joystick_pov(joyid) == 0) or joystick_direction(joyid) == 104): up = true
 			#else: up = false
 			#if (up): up_pressed = true
+		
+		#--- adding this so entering a door doesn't have to be bound to up
+		######/
+		# ENTER DOOR
+		######/
+
+		enter_door_released = false
+		enter_door_pressed = false
+		if (enter_door):
+
+			if GlobalInput.check_input("enter_door") == true:
+				enter_door = true
+			else:
+				enter_door = false
+
+			if enter_door != true:
+				enter_door_released = true
+
+		else:
+			if GlobalInput.check_input("enter_door") == true:
+				enter_door = true
+			else:
+				enter_door = false
+
+			if enter_door == true:
+				enter_door_pressed = true
 
 
 		######/

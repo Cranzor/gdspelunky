@@ -1,6 +1,7 @@
 extends Label
 
 @export var action_name: StringName
+@export var double_binding_exception: bool = false
 @export_enum("Controller", "Keyboard") var input_type: int
 var num_of_keyboard_actions: int
 var num_of_controller_actions: int

@@ -69,5 +69,8 @@ func check_start_pressed():
 func check_up():
 	return Gamepad.up
 
+func check_enter_door(): #--- adding this so entering a door doesn't have to be bound to up
+	return Gamepad.enter_door
+
 func check_up_pressed():
 	return Gamepad.up_pressed
