@@ -35,7 +35,7 @@ func set_input(event: InputEvent, calling_from_input: bool = true): #TODO: need 
 			clear_existing_input(event_type)
 			update_game_settings_controller(new_button_index_and_type)
 			InputMap.action_add_event(action_name, event)
-			if calling_from_input:
+			if calling_from_input and !double_binding_exception:
 				SignalBus.emit_signal("button_remapped", new_button_index_and_type, controller_button_index_and_type)
 			controller_button_index_and_type = new_button_index_and_type
 			text = new_text
@@ -64,9 +64,11 @@ func get_event_type(event: InputEvent) -> int:
 	elif event is InputEventJoypadMotion:
 		var index: int = event.axis
 		return JOYPAD_AXIS
-	else:
+	elif event is InputEventKey:
 		var index: int = event.key_label
 		return KEYBOARD
+	else:
+		return -1 #--- invalid input
 
 
 func update_game_settings_controller(button_index_and_type: PackedInt32Array) -> void:
@@ -100,6 +102,6 @@ func get_event_from_button_and_index(controller_button_index_and_type: PackedInt
 
 
 func _change_button_if_current_one_is_remapped(remapped_controller_button_index_and_type, prior_controller_button_index_and_type):
-	if remapped_controller_button_index_and_type == controller_button_index_and_type:
+	if remapped_controller_button_index_and_type == controller_button_index_and_type and !double_binding_exception:
 		var new_event: InputEvent = get_event_from_button_and_index(prior_controller_button_index_and_type)
 		set_input(new_event, false)

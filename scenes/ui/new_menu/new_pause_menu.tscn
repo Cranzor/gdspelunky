@@ -328,84 +328,78 @@ layout_mode = 2
 text = "ATTACK"
 alignment = 0
 input_option = NodePath("../../Selections/Attack")
-setting_to_update = &"rumble"
 
 [node name="Run" parent="Controls/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
 layout_mode = 2
 text = "RUN"
 alignment = 0
 input_option = NodePath("../../Selections/Run")
-setting_to_update = &"screen_shake"
 
 [node name="Jump" parent="Controls/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
 layout_mode = 2
 text = "JUMP"
 alignment = 0
 input_option = NodePath("../../Selections/Jump")
-setting_to_update = &"auto_run"
 
 [node name="Bomb" parent="Controls/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
 layout_mode = 2
 text = "BOMB"
 alignment = 0
 input_option = NodePath("../../Selections/Bomb")
-setting_to_update = &"auto_run"
 
 [node name="Rope" parent="Controls/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
 layout_mode = 2
 text = "ROPE"
 alignment = 0
 input_option = NodePath("../../Selections/Rope")
-setting_to_update = &"auto_run"
 
 [node name="Pay" parent="Controls/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
 layout_mode = 2
 text = "PAY"
 alignment = 0
 input_option = NodePath("../../Selections/Pay")
-setting_to_update = &"auto_run"
 
 [node name="CycleBombRope" parent="Controls/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
 layout_mode = 2
 text = "CYCLE BOMB/ROPE"
 alignment = 0
 input_option = NodePath("../../Selections/CycleBombRope")
-setting_to_update = &"auto_run"
+
+[node name="EnterDoor" parent="Controls/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
+layout_mode = 2
+text = "ENTER DOOR"
+alignment = 0
+input_option = NodePath("../../Selections/EnterDoor")
 
 [node name="Left" parent="Controls/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
 layout_mode = 2
 text = "LEFT"
 alignment = 0
 input_option = NodePath("../../Selections/Left")
-setting_to_update = &"auto_run"
 
 [node name="Right" parent="Controls/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
 layout_mode = 2
 text = "RIGHT"
 alignment = 0
 input_option = NodePath("../../Selections/Right")
-setting_to_update = &"auto_run"
 
 [node name="Up" parent="Controls/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
 layout_mode = 2
 text = "UP"
 alignment = 0
 input_option = NodePath("../../Selections/Up")
-setting_to_update = &"auto_run"
 
 [node name="Down" parent="Controls/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
 layout_mode = 2
 text = "DOWN"
 alignment = 0
 input_option = NodePath("../../Selections/Down")
-setting_to_update = &"auto_run"
 
 [node name="Pause" parent="Controls/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
 layout_mode = 2
 text = "PAUSE"
 alignment = 0
 input_option = NodePath("../../Selections/Pause")
-setting_to_update = &"auto_run"
 
 [node name="Selections" type="VBoxContainer" parent="Controls/MarginContainer/HBoxContainer"]
 layout_mode = 2
@@ -459,6 +453,14 @@ text = "A"
 horizontal_alignment = 2
 script = ExtResource("7_7dyxn")
 action_name = &"item"
+
+[node name="EnterDoor" type="Label" parent="Controls/MarginContainer/HBoxContainer/Selections"]
+layout_mode = 2
+text = "A"
+horizontal_alignment = 2
+script = ExtResource("7_7dyxn")
+action_name = &"enter_door"
+double_binding_exception = true
 
 [node name="Left" type="Label" parent="Controls/MarginContainer/HBoxContainer/Selections"]
 layout_mode = 2

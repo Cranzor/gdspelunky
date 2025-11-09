@@ -53,7 +53,10 @@ func _button_pressed() -> void:
 
 func _input(event: InputEvent) -> void:
 	if waiting_for_input:
-		get_node(input_option).set_input(event)
-		waiting_for_input = false
-		var viewport: Viewport = get_viewport()
-		viewport.set_input_as_handled()
+		var input_option_node = get_node(input_option)
+		var event_type: int = input_option_node.get_event_type(event)
+		if event_type != -1: #--- -1 refers to invalid input
+			input_option_node.set_input(event)
+			waiting_for_input = false
+			var viewport: Viewport = get_viewport()
+			viewport.set_input_as_handled()
