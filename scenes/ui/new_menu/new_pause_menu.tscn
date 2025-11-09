@@ -164,7 +164,6 @@ theme = null
 text = "EXIT GAME"
 
 [node name="Settings" type="VBoxContainer" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -217,6 +216,7 @@ size_flags_vertical = 4
 text = "HUD"
 
 [node name="GraphicsAudio" type="VBoxContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -286,82 +286,6 @@ layout_mode = 2
 text = "OFF"
 setting_to_update = &"vsync"
 description = NodePath("../../Settings/Vsync")
-options = PackedStringArray("OFF", "ON")
-values = [false, true]
-
-[node name="Gameplay" type="VBoxContainer" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -26.0
-offset_bottom = 26.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("1_76hnl")
-script = ExtResource("6_urnj6")
-focus_to_grab = NodePath("MarginContainer/HBoxContainer/Settings/Rumble")
-
-[node name="Label" type="Label" parent="Gameplay"]
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_fonts/font = ExtResource("2_dnbp1")
-text = "GAMEPLAY"
-
-[node name="MarginContainer" type="MarginContainer" parent="Gameplay"]
-layout_mode = 2
-theme_override_constants/margin_left = 25
-theme_override_constants/margin_right = 25
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Gameplay/MarginContainer"]
-layout_mode = 2
-
-[node name="Settings" type="VBoxContainer" parent="Gameplay/MarginContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 2
-
-[node name="Rumble" parent="Gameplay/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
-layout_mode = 2
-text = "CONTROLLER RUMBLE"
-alignment = 0
-option_to_scroll = NodePath("../../Selections/Rumble")
-setting_to_update = &"rumble"
-
-[node name="ScreenShake" parent="Gameplay/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
-layout_mode = 2
-text = "SCREEN SHAKE"
-alignment = 0
-option_to_scroll = NodePath("../../Selections/ScreenShake")
-setting_to_update = &"screen_shake"
-
-[node name="AutoRun" parent="Gameplay/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
-layout_mode = 2
-text = "AUTOMATICALLY RUN"
-alignment = 0
-option_to_scroll = NodePath("../../Selections/AutoRun")
-setting_to_update = &"auto_run"
-
-[node name="Selections" type="VBoxContainer" parent="Gameplay/MarginContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 10
-
-[node name="Rumble" parent="Gameplay/MarginContainer/HBoxContainer/Selections" instance=ExtResource("7_uucu8")]
-layout_mode = 2
-text = "LOW"
-options = PackedStringArray("OFF", "LOW", "MEDIUM", "HIGH")
-values = [0, 1, 2, 3]
-
-[node name="ScreenShake" parent="Gameplay/MarginContainer/HBoxContainer/Selections" instance=ExtResource("7_uucu8")]
-layout_mode = 2
-text = "MEDIUM"
-options = PackedStringArray("OFF", "LOW", "MEDIUM", "HIGH")
-values = [0, 1, 2, 3]
-
-[node name="AutoRun" parent="Gameplay/MarginContainer/HBoxContainer/Selections" instance=ExtResource("7_uucu8")]
-layout_mode = 2
-text = "OFF"
 options = PackedStringArray("OFF", "ON")
 values = [false, true]
 
@@ -569,6 +493,80 @@ text = "A"
 horizontal_alignment = 2
 script = ExtResource("7_7dyxn")
 action_name = &"start"
+
+[node name="Gameplay" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -28.0
+offset_right = 128.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_76hnl")
+script = ExtResource("6_urnj6")
+focus_to_grab = NodePath("HBoxContainer/Selections/Rumble")
+
+[node name="Label" type="Label" parent="Gameplay"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_dnbp1")
+text = "GAMEPLAY"
+
+[node name="MarginContainer" type="MarginContainer" parent="Gameplay"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Gameplay"]
+layout_mode = 2
+
+[node name="Settings" type="VBoxContainer" parent="Gameplay/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Rumble" type="Label" parent="Gameplay/HBoxContainer/Settings"]
+layout_mode = 2
+text = "RUMBLE"
+
+[node name="ScreenShake" type="Label" parent="Gameplay/HBoxContainer/Settings"]
+layout_mode = 2
+text = "SCREEN SHAKE"
+
+[node name="AutoRun" type="Label" parent="Gameplay/HBoxContainer/Settings"]
+layout_mode = 2
+text = "RUN BY DEFAULT"
+
+[node name="Selections" type="VBoxContainer" parent="Gameplay/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Rumble" parent="Gameplay/HBoxContainer/Selections" instance=ExtResource("7_uucu8")]
+layout_mode = 2
+text = "FULLSCREEN"
+setting_to_update = &"rumble"
+description = NodePath("../../Settings/Rumble")
+options = PackedStringArray("OFF", "LOW", "MEDIUM", "HIGH")
+values = [0, 1, 2, 3]
+
+[node name="ScreenShake" parent="Gameplay/HBoxContainer/Selections" instance=ExtResource("7_uucu8")]
+layout_mode = 2
+text = "60"
+setting_to_update = &"screen_shake"
+description = NodePath("../../Settings/ScreenShake")
+options = PackedStringArray("OFF", "LOW", "MEDIUM", "HIGH")
+values = [0, 1, 2, 3]
+
+[node name="AutoRun" parent="Gameplay/HBoxContainer/Selections" instance=ExtResource("7_uucu8")]
+layout_mode = 2
+text = "OFF"
+setting_to_update = &"auto_run"
+description = NodePath("../../Settings/AutoRun")
+options = PackedStringArray("OFF", "ON")
+values = [false, true]
 
 [node name="Hand" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true

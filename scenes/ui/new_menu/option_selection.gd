@@ -54,7 +54,7 @@ func place_arrows() -> void:
 		var description_node = get_node(description)
 		arrow_left.reparent(description_node, false)
 		arrow_right.reparent(description_node, false)
-		arrow_left.global_position = description_node.global_position + Vector2(110, -4)
+		arrow_left.global_position = description_node.global_position + Vector2(125, -4)
 		arrow_right.global_position = description_node.global_position + Vector2(250, -4)
 		
 		
