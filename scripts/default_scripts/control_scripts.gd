@@ -61,6 +61,8 @@ func check_rope_pressed():
 	return Gamepad.rope_pressed
 	
 func check_run():
+	if GameSettings.auto_run:
+		return !Gamepad.run
 	return Gamepad.run
 	
 func check_start_pressed():
