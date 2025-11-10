@@ -199,7 +199,15 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "CONTROLS"
-next_menu_to_show = NodePath("../../Controls")
+next_menu_to_show = NodePath("../../ControllerConfig")
+menu_to_hide = NodePath("..")
+
+[node name="Keyboard" parent="Settings" instance=ExtResource("5_04n3j")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "KEYBOARD"
+next_menu_to_show = NodePath("../../KeyboardConfig")
 menu_to_hide = NodePath("..")
 
 [node name="Gameplay" parent="Settings" instance=ExtResource("5_04n3j")]
@@ -290,7 +298,8 @@ description = NodePath("../../Settings/Vsync")
 options = PackedStringArray("OFF", "ON")
 values = [false, true]
 
-[node name="Controls" type="VBoxContainer" parent="."]
+[node name="ControllerConfig" type="VBoxContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -307,154 +316,154 @@ theme = ExtResource("1_76hnl")
 script = ExtResource("6_urnj6")
 focus_to_grab = NodePath("MarginContainer/HBoxContainer/Settings/Attack")
 
-[node name="Label" type="Label" parent="Controls"]
+[node name="Label" type="Label" parent="ControllerConfig"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("2_dnbp1")
 text = "CONTROLLER CONFIG"
 
-[node name="MarginContainer" type="MarginContainer" parent="Controls"]
+[node name="MarginContainer" type="MarginContainer" parent="ControllerConfig"]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Controls/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="ControllerConfig/MarginContainer"]
 layout_mode = 2
 
-[node name="Settings" type="VBoxContainer" parent="Controls/MarginContainer/HBoxContainer"]
+[node name="Settings" type="VBoxContainer" parent="ControllerConfig/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 2
 
-[node name="Attack" parent="Controls/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
+[node name="Attack" parent="ControllerConfig/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
 layout_mode = 2
 text = "ATTACK"
 alignment = 0
 input_option = NodePath("../../Selections/Attack")
 
-[node name="Run" parent="Controls/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
+[node name="Run" parent="ControllerConfig/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
 layout_mode = 2
 text = "RUN"
 alignment = 0
 input_option = NodePath("../../Selections/Run")
 
-[node name="Jump" parent="Controls/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
+[node name="Jump" parent="ControllerConfig/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
 layout_mode = 2
 text = "JUMP"
 alignment = 0
 input_option = NodePath("../../Selections/Jump")
 
-[node name="Bomb" parent="Controls/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
+[node name="Bomb" parent="ControllerConfig/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
 layout_mode = 2
 text = "BOMB"
 alignment = 0
 input_option = NodePath("../../Selections/Bomb")
 
-[node name="Rope" parent="Controls/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
+[node name="Rope" parent="ControllerConfig/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
 layout_mode = 2
 text = "ROPE"
 alignment = 0
 input_option = NodePath("../../Selections/Rope")
 
-[node name="Pay" parent="Controls/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
+[node name="Pay" parent="ControllerConfig/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
 layout_mode = 2
 text = "PAY"
 alignment = 0
 input_option = NodePath("../../Selections/Pay")
 
-[node name="CycleBombRope" parent="Controls/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
+[node name="CycleBombRope" parent="ControllerConfig/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
 layout_mode = 2
 text = "CYCLE BOMB/ROPE"
 alignment = 0
 input_option = NodePath("../../Selections/CycleBombRope")
 
-[node name="EnterDoor" parent="Controls/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
+[node name="EnterDoor" parent="ControllerConfig/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
 layout_mode = 2
 text = "ENTER DOOR"
 alignment = 0
 input_option = NodePath("../../Selections/EnterDoor")
 
-[node name="Left" parent="Controls/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
+[node name="Left" parent="ControllerConfig/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
 layout_mode = 2
 text = "LEFT"
 alignment = 0
 input_option = NodePath("../../Selections/Left")
 
-[node name="Right" parent="Controls/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
+[node name="Right" parent="ControllerConfig/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
 layout_mode = 2
 text = "RIGHT"
 alignment = 0
 input_option = NodePath("../../Selections/Right")
 
-[node name="Up" parent="Controls/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
+[node name="Up" parent="ControllerConfig/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
 layout_mode = 2
 text = "UP"
 alignment = 0
 input_option = NodePath("../../Selections/Up")
 
-[node name="Down" parent="Controls/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
+[node name="Down" parent="ControllerConfig/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
 layout_mode = 2
 text = "DOWN"
 alignment = 0
 input_option = NodePath("../../Selections/Down")
 
-[node name="Pause" parent="Controls/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
+[node name="Pause" parent="ControllerConfig/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
 layout_mode = 2
 text = "PAUSE"
 alignment = 0
 input_option = NodePath("../../Selections/Pause")
 
-[node name="Selections" type="VBoxContainer" parent="Controls/MarginContainer/HBoxContainer"]
+[node name="Selections" type="VBoxContainer" parent="ControllerConfig/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 10
 
-[node name="Attack" type="Label" parent="Controls/MarginContainer/HBoxContainer/Selections"]
+[node name="Attack" type="Label" parent="ControllerConfig/MarginContainer/HBoxContainer/Selections"]
 layout_mode = 2
 text = "A"
 horizontal_alignment = 2
 script = ExtResource("7_7dyxn")
 action_name = &"attack"
 
-[node name="Run" type="Label" parent="Controls/MarginContainer/HBoxContainer/Selections"]
+[node name="Run" type="Label" parent="ControllerConfig/MarginContainer/HBoxContainer/Selections"]
 layout_mode = 2
 text = "A"
 horizontal_alignment = 2
 script = ExtResource("7_7dyxn")
 action_name = &"run"
 
-[node name="Jump" type="Label" parent="Controls/MarginContainer/HBoxContainer/Selections"]
+[node name="Jump" type="Label" parent="ControllerConfig/MarginContainer/HBoxContainer/Selections"]
 layout_mode = 2
 text = "A"
 horizontal_alignment = 2
 script = ExtResource("7_7dyxn")
 action_name = &"jump"
 
-[node name="Bomb" type="Label" parent="Controls/MarginContainer/HBoxContainer/Selections"]
+[node name="Bomb" type="Label" parent="ControllerConfig/MarginContainer/HBoxContainer/Selections"]
 layout_mode = 2
 text = "A"
 horizontal_alignment = 2
 script = ExtResource("7_7dyxn")
 action_name = &"bomb"
 
-[node name="Rope" type="Label" parent="Controls/MarginContainer/HBoxContainer/Selections"]
+[node name="Rope" type="Label" parent="ControllerConfig/MarginContainer/HBoxContainer/Selections"]
 layout_mode = 2
 text = "A"
 horizontal_alignment = 2
 script = ExtResource("7_7dyxn")
 action_name = &"rope"
 
-[node name="Pay" type="Label" parent="Controls/MarginContainer/HBoxContainer/Selections"]
+[node name="Pay" type="Label" parent="ControllerConfig/MarginContainer/HBoxContainer/Selections"]
 layout_mode = 2
 text = "A"
 horizontal_alignment = 2
 script = ExtResource("7_7dyxn")
 action_name = &"pay"
 
-[node name="CycleBombRope" type="Label" parent="Controls/MarginContainer/HBoxContainer/Selections"]
+[node name="CycleBombRope" type="Label" parent="ControllerConfig/MarginContainer/HBoxContainer/Selections"]
 layout_mode = 2
 text = "A"
 horizontal_alignment = 2
 script = ExtResource("7_7dyxn")
 action_name = &"item"
 
-[node name="EnterDoor" type="Label" parent="Controls/MarginContainer/HBoxContainer/Selections"]
+[node name="EnterDoor" type="Label" parent="ControllerConfig/MarginContainer/HBoxContainer/Selections"]
 layout_mode = 2
 text = "A"
 horizontal_alignment = 2
@@ -462,40 +471,260 @@ script = ExtResource("7_7dyxn")
 action_name = &"enter_door"
 double_binding_exception = true
 
-[node name="Left" type="Label" parent="Controls/MarginContainer/HBoxContainer/Selections"]
+[node name="Left" type="Label" parent="ControllerConfig/MarginContainer/HBoxContainer/Selections"]
 layout_mode = 2
 text = "A"
 horizontal_alignment = 2
 script = ExtResource("7_7dyxn")
 action_name = &"left"
 
-[node name="Right" type="Label" parent="Controls/MarginContainer/HBoxContainer/Selections"]
+[node name="Right" type="Label" parent="ControllerConfig/MarginContainer/HBoxContainer/Selections"]
 layout_mode = 2
 text = "A"
 horizontal_alignment = 2
 script = ExtResource("7_7dyxn")
 action_name = &"right"
 
-[node name="Up" type="Label" parent="Controls/MarginContainer/HBoxContainer/Selections"]
+[node name="Up" type="Label" parent="ControllerConfig/MarginContainer/HBoxContainer/Selections"]
 layout_mode = 2
 text = "A"
 horizontal_alignment = 2
 script = ExtResource("7_7dyxn")
 action_name = &"up"
 
-[node name="Down" type="Label" parent="Controls/MarginContainer/HBoxContainer/Selections"]
+[node name="Down" type="Label" parent="ControllerConfig/MarginContainer/HBoxContainer/Selections"]
 layout_mode = 2
 text = "A"
 horizontal_alignment = 2
 script = ExtResource("7_7dyxn")
 action_name = &"down"
 
-[node name="Pause" type="Label" parent="Controls/MarginContainer/HBoxContainer/Selections"]
+[node name="Pause" type="Label" parent="ControllerConfig/MarginContainer/HBoxContainer/Selections"]
 layout_mode = 2
 text = "A"
 horizontal_alignment = 2
 script = ExtResource("7_7dyxn")
 action_name = &"start"
+
+[node name="KeyboardConfig" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.0
+offset_top = -80.0
+offset_right = 136.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_76hnl")
+script = ExtResource("6_urnj6")
+focus_to_grab = NodePath("MarginContainer/HBoxContainer/Settings/Attack")
+
+[node name="Label" type="Label" parent="KeyboardConfig"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_dnbp1")
+text = "KEYBOARD CONFIG"
+
+[node name="MarginContainer" type="MarginContainer" parent="KeyboardConfig"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="KeyboardConfig/MarginContainer"]
+layout_mode = 2
+
+[node name="Settings" type="VBoxContainer" parent="KeyboardConfig/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+
+[node name="Attack" parent="KeyboardConfig/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
+layout_mode = 2
+text = "ATTACK"
+alignment = 0
+input_option = NodePath("../../Selections/Attack")
+
+[node name="Run" parent="KeyboardConfig/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
+layout_mode = 2
+text = "RUN"
+alignment = 0
+input_option = NodePath("../../Selections/Run")
+
+[node name="Jump" parent="KeyboardConfig/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
+layout_mode = 2
+text = "JUMP"
+alignment = 0
+input_option = NodePath("../../Selections/Jump")
+
+[node name="Bomb" parent="KeyboardConfig/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
+layout_mode = 2
+text = "BOMB"
+alignment = 0
+input_option = NodePath("../../Selections/Bomb")
+
+[node name="Rope" parent="KeyboardConfig/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
+layout_mode = 2
+text = "ROPE"
+alignment = 0
+input_option = NodePath("../../Selections/Rope")
+
+[node name="Pay" parent="KeyboardConfig/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
+layout_mode = 2
+text = "PAY"
+alignment = 0
+input_option = NodePath("../../Selections/Pay")
+
+[node name="CycleBombRope" parent="KeyboardConfig/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
+layout_mode = 2
+text = "CYCLE BOMB/ROPE"
+alignment = 0
+input_option = NodePath("../../Selections/CycleBombRope")
+
+[node name="EnterDoor" parent="KeyboardConfig/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
+layout_mode = 2
+text = "ENTER DOOR"
+alignment = 0
+input_option = NodePath("../../Selections/EnterDoor")
+
+[node name="Left" parent="KeyboardConfig/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
+layout_mode = 2
+text = "LEFT"
+alignment = 0
+input_option = NodePath("../../Selections/Left")
+
+[node name="Right" parent="KeyboardConfig/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
+layout_mode = 2
+text = "RIGHT"
+alignment = 0
+input_option = NodePath("../../Selections/Right")
+
+[node name="Up" parent="KeyboardConfig/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
+layout_mode = 2
+text = "UP"
+alignment = 0
+input_option = NodePath("../../Selections/Up")
+
+[node name="Down" parent="KeyboardConfig/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
+layout_mode = 2
+text = "DOWN"
+alignment = 0
+input_option = NodePath("../../Selections/Down")
+
+[node name="Pause" parent="KeyboardConfig/MarginContainer/HBoxContainer/Settings" instance=ExtResource("5_04n3j")]
+layout_mode = 2
+text = "PAUSE"
+alignment = 0
+input_option = NodePath("../../Selections/Pause")
+
+[node name="Selections" type="VBoxContainer" parent="KeyboardConfig/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="Attack" type="Label" parent="KeyboardConfig/MarginContainer/HBoxContainer/Selections"]
+layout_mode = 2
+text = "A"
+horizontal_alignment = 2
+script = ExtResource("7_7dyxn")
+action_name = &"attack"
+input_type = 1
+
+[node name="Run" type="Label" parent="KeyboardConfig/MarginContainer/HBoxContainer/Selections"]
+layout_mode = 2
+text = "A"
+horizontal_alignment = 2
+script = ExtResource("7_7dyxn")
+action_name = &"run"
+input_type = 1
+
+[node name="Jump" type="Label" parent="KeyboardConfig/MarginContainer/HBoxContainer/Selections"]
+layout_mode = 2
+text = "A"
+horizontal_alignment = 2
+script = ExtResource("7_7dyxn")
+action_name = &"jump"
+input_type = 1
+
+[node name="Bomb" type="Label" parent="KeyboardConfig/MarginContainer/HBoxContainer/Selections"]
+layout_mode = 2
+text = "A"
+horizontal_alignment = 2
+script = ExtResource("7_7dyxn")
+action_name = &"bomb"
+input_type = 1
+
+[node name="Rope" type="Label" parent="KeyboardConfig/MarginContainer/HBoxContainer/Selections"]
+layout_mode = 2
+text = "A"
+horizontal_alignment = 2
+script = ExtResource("7_7dyxn")
+action_name = &"rope"
+input_type = 1
+
+[node name="Pay" type="Label" parent="KeyboardConfig/MarginContainer/HBoxContainer/Selections"]
+layout_mode = 2
+text = "A"
+horizontal_alignment = 2
+script = ExtResource("7_7dyxn")
+action_name = &"pay"
+input_type = 1
+
+[node name="CycleBombRope" type="Label" parent="KeyboardConfig/MarginContainer/HBoxContainer/Selections"]
+layout_mode = 2
+text = "A"
+horizontal_alignment = 2
+script = ExtResource("7_7dyxn")
+action_name = &"item"
+input_type = 1
+
+[node name="EnterDoor" type="Label" parent="KeyboardConfig/MarginContainer/HBoxContainer/Selections"]
+layout_mode = 2
+text = "A"
+horizontal_alignment = 2
+script = ExtResource("7_7dyxn")
+action_name = &"enter_door"
+double_binding_exception = true
+input_type = 1
+
+[node name="Left" type="Label" parent="KeyboardConfig/MarginContainer/HBoxContainer/Selections"]
+layout_mode = 2
+text = "A"
+horizontal_alignment = 2
+script = ExtResource("7_7dyxn")
+action_name = &"left"
+input_type = 1
+
+[node name="Right" type="Label" parent="KeyboardConfig/MarginContainer/HBoxContainer/Selections"]
+layout_mode = 2
+text = "A"
+horizontal_alignment = 2
+script = ExtResource("7_7dyxn")
+action_name = &"right"
+input_type = 1
+
+[node name="Up" type="Label" parent="KeyboardConfig/MarginContainer/HBoxContainer/Selections"]
+layout_mode = 2
+text = "A"
+horizontal_alignment = 2
+script = ExtResource("7_7dyxn")
+action_name = &"up"
+input_type = 1
+
+[node name="Down" type="Label" parent="KeyboardConfig/MarginContainer/HBoxContainer/Selections"]
+layout_mode = 2
+text = "A"
+horizontal_alignment = 2
+script = ExtResource("7_7dyxn")
+action_name = &"down"
+input_type = 1
+
+[node name="Pause" type="Label" parent="KeyboardConfig/MarginContainer/HBoxContainer/Selections"]
+layout_mode = 2
+text = "A"
+horizontal_alignment = 2
+script = ExtResource("7_7dyxn")
+action_name = &"start"
+input_type = 1
 
 [node name="Gameplay" type="VBoxContainer" parent="."]
 visible = false

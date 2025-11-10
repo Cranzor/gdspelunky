@@ -8,7 +8,8 @@ extends Control
 @onready var settings: VBoxContainer = $Settings
 @onready var graphics_audio: VBoxContainer = $GraphicsAudio
 @onready var gameplay: VBoxContainer = $Gameplay
-@onready var controls: VBoxContainer = $Controls
+@onready var controller_config: VBoxContainer = $ControllerConfig
+@onready var keyboard_config: VBoxContainer = $KeyboardConfig
 @onready var viewport: Viewport = get_viewport()
 @onready var arrow_left: TextureRect = %ArrowLeft
 @onready var arrow_right: TextureRect = %ArrowRight
@@ -50,7 +51,8 @@ func set_initial_pause_visibility() -> void:
 	settings.hide()
 	graphics_audio.hide()
 	gameplay.hide()
-	controls.hide()
+	controller_config.hide()
+	keyboard_config.hide()
 
 
 func _handle_menu_screen_change(requesting_screen, next_screen, set_prev_screen: bool = true) -> void:

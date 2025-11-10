@@ -78,9 +78,10 @@ static var keyboard_attack: Key = KEY_X
 static var keyboard_run: Key = KEY_SHIFT
 static var keyboard_jump: Key = KEY_Z
 static var keyboard_bomb: Key = KEY_C
-static var keyboard_rope: Key = KEY_D
-static var keyboard_pay: Key = KEY_A
-static var keyboard_item: Key
+static var keyboard_rope: Key = KEY_S
+static var keyboard_pay: Key = KEY_P
+static var keyboard_item: Key = KEY_C
+static var keyboard_enter_door: Key = KEY_UP
 static var keyboard_left: Key = KEY_LEFT
 static var keyboard_right: Key = KEY_RIGHT
 static var keyboard_up: Key = KEY_UP

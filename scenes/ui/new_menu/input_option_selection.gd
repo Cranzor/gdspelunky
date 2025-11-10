@@ -10,15 +10,22 @@ enum {JOYPAD_BUTTON, JOYPAD_AXIS, KEYBOARD}
 var controller_setting_name: StringName
 var keyboard_setting_name: StringName
 var controller_button_index_and_type: PackedInt32Array
+var current_key: Key
 var current_text: String
 
 
 func _ready() -> void:
-	SignalBus.connect("button_remapped", _change_button_if_current_one_is_remapped)
-	controller_setting_name = "controller_" + action_name
-	keyboard_setting_name = "controller_" + action_name
-	controller_button_index_and_type = game_settings.get(controller_setting_name)
-	current_text = ButtonNames.get_button_name(controller_button_index_and_type)
+	if input_type == 0:
+		SignalBus.connect("button_remapped", _change_button_if_current_one_is_remapped)
+		controller_setting_name = "controller_" + action_name
+		controller_button_index_and_type = game_settings.get(controller_setting_name)
+		current_text = ButtonNames.get_button_name(controller_button_index_and_type)
+	elif input_type == 1:
+		SignalBus.connect("key_remapped", _change_key_if_current_one_is_remapped)
+		keyboard_setting_name = "keyboard_" + action_name
+		current_key = game_settings.get(keyboard_setting_name)
+		var key_string: String = OS.get_keycode_string(current_key).to_upper()
+		current_text = key_string
 	text = current_text
 	
 
@@ -39,11 +46,17 @@ func set_input(event: InputEvent, calling_from_input: bool = true): #TODO: need 
 				SignalBus.emit_signal("button_remapped", new_button_index_and_type, controller_button_index_and_type)
 			controller_button_index_and_type = new_button_index_and_type
 			text = new_text
-			print(str(action_name + " REMAPPED TO " + str(ButtonNames.get_button_name(new_button_index_and_type))))
 		else:
 			text = current_text
 	elif input_type == 1 and event_type == KEYBOARD:
+		clear_existing_input(event_type)
+		var new_key: Key = event.keycode
 		InputMap.action_add_event(action_name, event)
+		if calling_from_input and !double_binding_exception:
+			SignalBus.emit_signal("key_remapped", new_key, game_settings.get(keyboard_setting_name))
+		current_key = new_key
+		update_game_settings_keyboard(event.keycode)
+		text = OS.get_keycode_string(new_key).to_upper()
 	else:
 		text = current_text
 
@@ -74,10 +87,10 @@ func get_event_type(event: InputEvent) -> int:
 func update_game_settings_controller(button_index_and_type: PackedInt32Array) -> void:
 	game_settings.set(controller_setting_name, button_index_and_type)
 
-func update_game_settings_keyboard() -> void:
-	#TODO: implement
-	#game_settings.set(keyboard_setting_name, index)
-	pass
+
+func update_game_settings_keyboard(keycode: Key) -> void:
+	game_settings.set(keyboard_setting_name, keycode)
+	print(game_settings.get(keyboard_setting_name))
 
 
 func get_button_and_index_from_event(event: InputEvent):
@@ -104,4 +117,11 @@ func get_event_from_button_and_index(controller_button_index_and_type: PackedInt
 func _change_button_if_current_one_is_remapped(remapped_controller_button_index_and_type, prior_controller_button_index_and_type):
 	if remapped_controller_button_index_and_type == controller_button_index_and_type and !double_binding_exception:
 		var new_event: InputEvent = get_event_from_button_and_index(prior_controller_button_index_and_type)
+		set_input(new_event, false)
+
+
+func _change_key_if_current_one_is_remapped(new_key, old_key):
+	if new_key == current_key and !double_binding_exception:
+		var new_event: InputEventKey = InputEventKey.new()
+		new_event.keycode = old_key
 		set_input(new_event, false)
