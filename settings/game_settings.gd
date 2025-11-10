@@ -24,6 +24,7 @@ static var fullscreen: bool = false:
 		else:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 			ProjectSettings.set_setting("display/window/size/mode", DisplayServer.WINDOW_MODE_WINDOWED)
+			GameInitialization.initalize_window()
 		ProjectSettings.save()
 
 static var frame_rate: int = 0:

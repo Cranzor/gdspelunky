@@ -13,10 +13,15 @@ config_version=5
 config/name="Spelunky Port"
 run/main_scene="uid://80vmcciuh4l3"
 config/features=PackedStringArray("4.5", "Forward Plus")
+boot_splash/bg_color=Color(0, 0, 0, 0)
+boot_splash/fullsize=false
+boot_splash/use_filter=false
+boot_splash/image="uid://g374vqyliw08"
 config/icon="uid://dc4sg8xk0ur2i"
 
 [autoload]
 
+GameInitialization="*res://scripts/game_initialization.gd"
 global="*res://resources/global.tscn"
 gml="*res://resources/gml.tscn"
 ControlScripts="*res://scripts/default_scripts/control_scripts.gd"
@@ -40,10 +45,12 @@ SignalBus="*res://resources/signal_bus.gd"
 
 window/size/viewport_width=320
 window/size/viewport_height=240
-window/size/window_width_override=1920
-window/size/window_height_override=1080
+window/size/borderless=true
+window/size/transparent=true
 window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 window/stretch/scale_mode="integer"
+window/per_pixel_transparency/allowed=true
 window/vsync/vsync_mode=0
 
 [editor_plugins]
@@ -236,3 +243,4 @@ common/physics_jitter_fix=0.0
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
