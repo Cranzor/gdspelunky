@@ -1,10 +1,60 @@
 extends Node
 class_name GameSettings
 
+static var default_setting_values: Dictionary = {
+	#--- graphics
+	"high_detail" : true,
+	"vsync" : false,
+	"fullscreen" : false,
+	"frame_rate" : 0,
+	
+	#--- sound
+	"music_volume" : null, #TODO
+	"sound_effects_volume" : null, #TODO
+	
+	#--- gameplay
+	"auto_run" : false,
+	"rumble" : 1,
+	"screen_shake" : 2,
+	
+	#--- HUD/UI
+	"display_fps" : false,
+	"new_pause_menu" : true,
+	
+	#--- controls (controller)
+	"controller_attack" : [JOY_BUTTON_X, 0],
+	"controller_run" : [JOY_AXIS_TRIGGER_RIGHT, 1],
+	"controller_jump" : [JOY_BUTTON_A, 0],
+	"controller_bomb" : [JOY_BUTTON_B, 0],
+	"controller_rope" : [JOY_BUTTON_Y, 0],
+	"controller_pay" : [JOY_BUTTON_RIGHT_SHOULDER, 0],
+	"controller_item" : [JOY_BUTTON_LEFT_SHOULDER, 0],
+	"controller_enter_door" : [JOY_BUTTON_RIGHT_SHOULDER, 0],
+	"controller_left" : [JOY_BUTTON_DPAD_LEFT, 0],
+	"controller_right" : [JOY_BUTTON_DPAD_RIGHT, 0],
+	"controller_up" : [JOY_BUTTON_DPAD_UP, 0],
+	"controller_down" : [JOY_BUTTON_DPAD_DOWN, 0],
+	"controller_start" : [JOY_BUTTON_START, 0],
+	
+	#--- controls (keyboard)
+	"keyboard_attack" : KEY_X,
+	"keyboard_run" : KEY_SHIFT,
+	"keyboard_jump" : KEY_Z,
+	"keyboard_bomb" : KEY_C,
+	"keyboard_rope" : KEY_S,
+	"keyboard_pay" : KEY_P,
+	"keyboard_item" : KEY_C,
+	"keyboard_enter_door" : KEY_UP,
+	"keyboard_left" : KEY_LEFT,
+	"keyboard_right" : KEY_RIGHT,
+	"keyboard_up" : KEY_UP,
+	"keyboard_down" : KEY_DOWN,
+	"keyboard_start" : KEY_ESCAPE
+}
+
 #--- graphics
 static var smooth_motion: bool = true
 static var high_detail: bool = true
-static var resolution
 static var vsync: bool = false:
 	set(value):
 		vsync = value

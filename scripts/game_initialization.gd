@@ -7,6 +7,7 @@ static var pixel_scale_factor: int = 5
 
 func _ready() -> void:
 	initalize_window()
+	SavingLoading.load_settings()
 
 
 func initalize_window() -> void:

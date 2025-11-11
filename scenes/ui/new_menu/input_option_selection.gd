@@ -20,12 +20,17 @@ func _ready() -> void:
 		controller_setting_name = "controller_" + action_name
 		controller_button_index_and_type = game_settings.get(controller_setting_name)
 		current_text = ButtonNames.get_button_name(controller_button_index_and_type)
+		var event: InputEvent = get_event_from_button_and_index(controller_button_index_and_type)
+		set_input(event, false)
 	elif input_type == 1:
 		SignalBus.connect("key_remapped", _change_key_if_current_one_is_remapped)
 		keyboard_setting_name = "keyboard_" + action_name
 		current_key = game_settings.get(keyboard_setting_name)
 		var key_string: String = OS.get_keycode_string(current_key).to_upper()
 		current_text = key_string
+		var new_event: InputEventKey = InputEventKey.new()
+		new_event.keycode = current_key
+		set_input(new_event, false)
 	text = current_text
 	
 
@@ -90,7 +95,6 @@ func update_game_settings_controller(button_index_and_type: PackedInt32Array) ->
 
 func update_game_settings_keyboard(keycode: Key) -> void:
 	game_settings.set(keyboard_setting_name, keycode)
-	print(game_settings.get(keyboard_setting_name))
 
 
 func get_button_and_index_from_event(event: InputEvent):

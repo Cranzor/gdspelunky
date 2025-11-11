@@ -27,6 +27,7 @@ func draw_pause_screen(paused: bool) -> void:
 			classic_pause_screen.draw_rectangle.hide()
 		Engine.get_main_loop().call_group("gm_object", "resume_animation")
 		AudioServer.set_bus_mute(0, false)
+		SavingLoading.save_settings()
 
 
 func pause_handling() -> void:
