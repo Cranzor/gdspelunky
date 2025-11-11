@@ -1,16 +1,19 @@
 extends CanvasLayer
 
+@onready var color_rect = $ColorRect
+@onready var viewport = get_viewport()
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
-	var color_rect = $ColorRect
-	var window_width_override = ProjectSettings.get_setting("display/window/size/window_width_override")
-	var window_height_override = ProjectSettings.get_setting("display/window/size/window_height_override")
-	var window_override = Vector2(window_width_override, window_height_override)
+	viewport.size_changed.connect(_on_viewport_size_changed)
+	_on_viewport_size_changed()
 
-	color_rect.material.set_shader_parameter("OutputSize", window_override)
-	print(color_rect.material.get_shader_parameter("OutputSize"))
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _on_viewport_size_changed() -> void:
+	var window_size = DisplayServer.window_get_size()
+	var texture_size = viewport.get_visible_rect().size
+	
+	color_rect.size = texture_size
+	color_rect.material.set_shader_parameter("OutputSize", window_size)
+	color_rect.material.set_shader_parameter("TextureSize", texture_size)
+	color_rect.material.set_shader_parameter("InputSize", texture_size)
