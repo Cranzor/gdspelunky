@@ -12,7 +12,6 @@ func _ready() -> void:
 
 func initalize_window() -> void:
 	window.transparent = false
-	ProjectSettings.set_setting("display/window/per_pixel_transparency/allowed", false)
 	window.borderless = false
 	
 	if ProjectSettings.get_setting("display/window/size/mode") == 3:

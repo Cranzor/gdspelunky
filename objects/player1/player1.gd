@@ -4858,6 +4858,7 @@ func scr_use_item() -> void: #--- only called by player1 so including it here fo
 					x_vel += 1
 						
 				Audio.play_sound(global.snd_shotgun)
+				GameSettings.start_controller_rumble(0.15) #--- adding rumble for pistol shot
 				firing = firing_pistol_max
 					
 			elif (facing == RIGHT and firing == 0):
@@ -4873,6 +4874,7 @@ func scr_use_item() -> void: #--- only called by player1 so including it here fo
 					x_vel -= 1
 						
 				Audio.play_sound(global.snd_shotgun)
+				GameSettings.start_controller_rumble(0.15) #--- adding rumble for pistol shot
 				firing = firing_pistol_max
 				
 			
@@ -5177,6 +5179,7 @@ func scr_use_item() -> void: #--- only called by player1 so including it here fo
 					x_vel += 3
 						
 				Audio.play_sound(global.snd_shotgun)
+				GameSettings.start_controller_rumble() #--- adding rumble for shotgun blast
 				firing = firing_shotgun_max
 					
 			elif (facing == RIGHT and firing == 0):
@@ -5195,6 +5198,7 @@ func scr_use_item() -> void: #--- only called by player1 so including it here fo
 					x_vel -= 3
 						
 				Audio.play_sound(global.snd_shotgun)
+				GameSettings.start_controller_rumble() #--- adding rumble for shotgun blast
 				firing = firing_shotgun_max
 				
 			

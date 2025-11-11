@@ -137,3 +137,13 @@ static var keyboard_right: Key = KEY_RIGHT
 static var keyboard_up: Key = KEY_UP
 static var keyboard_down: Key = KEY_DOWN
 static var keyboard_start: Key = KEY_ESCAPE
+
+
+static func get_screen_shake_value() -> int:
+	var values: PackedInt32Array = [0, 1, 3, 5]
+	return values[screen_shake]
+
+
+static func start_controller_rumble(duration: float = 0.3) -> void:
+	var values: PackedVector2Array = [Vector2(0.0, 0.0), Vector2(0.3, 0.3), Vector2(0.6, 0.6), Vector2(0.9, 0.9)]
+	Input.start_joy_vibration(0, values[rumble].x, values[rumble].y, duration)
