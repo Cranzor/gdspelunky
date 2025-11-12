@@ -13,10 +13,6 @@ func _ready() -> void:
 func initalize_window() -> void:
 	window.transparent = false
 	window.borderless = false
-	
-	if ProjectSettings.get_setting("display/window/size/mode") == 3:
-		pass
-	else:
-		window.size = base_resolution * pixel_scale_factor
-		var screen_size = DisplayServer.screen_get_size()
-		window.position = (screen_size - window.size) / 2
+	window.size = base_resolution * pixel_scale_factor
+	var screen_size = DisplayServer.screen_get_size()
+	window.position = (screen_size - window.size) / 2

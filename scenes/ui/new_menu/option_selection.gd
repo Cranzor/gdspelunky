@@ -27,19 +27,21 @@ func _ready() -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if has_focus() and Input.is_action_just_pressed("ui_right"):
-		go_to_next_option()
-		game_settings.set(setting_to_update, values[current_option])
-	
+	if has_focus():
+		if Input.is_action_just_pressed("ui_right"):
+			update_option(1)
+			game_settings.set(setting_to_update, values[current_option])
+		elif Input.is_action_just_pressed("ui_left"):
+			update_option(-1)
+			game_settings.set(setting_to_update, values[current_option])
 
-func go_to_next_option() -> void:
-	var size: int = options.size()
-	current_option += 1
-	if current_option == size:
-		current_option = 0
-		text = options[current_option]
-	else:
-		text = options[current_option]
+
+func update_option(amount: int) -> void:
+	var upper_limit: int = options.size() - 1
+	current_option += amount
+	if current_option > upper_limit: current_option = 0
+	elif current_option < 0: current_option = upper_limit
+	text = options[current_option]
 
 
 func get_option_value() -> Variant:
@@ -56,15 +58,12 @@ func place_arrows() -> void:
 		arrow_right.reparent(description_node, false)
 		arrow_left.global_position = description_node.global_position + Vector2(125, -4)
 		arrow_right.global_position = description_node.global_position + Vector2(250, -4)
-		
-		
 
 
 func set_option_from_loaded_setting():
 	var setting_value = game_settings.get(setting_to_update)
 	current_option = values.find(setting_value)
-	current_option -= 1 #--- subtracting one here so we can simply use the already existing go_to_next_option() function, which adds one
-	go_to_next_option()
+	update_option(0)
 
 
 func _on_focus_entered() -> void:
