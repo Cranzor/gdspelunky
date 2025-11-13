@@ -9,7 +9,7 @@ func _ready() -> void:
 	gml.changed_scene = false
 	var custom_collision = preload("res://collision/custom_collision.gd").new()
 	custom_collision.cell_to_objects.clear() #--- clearing out collision before generating new room
-	Music.clear_all_sounds()
+	Music.reset_on_room_changed()
 	room_generation.generate_room(room_name)
 	$LoadObjects.start()
 

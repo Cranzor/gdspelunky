@@ -46,9 +46,7 @@ func unload():
 
 #--- Advanced
 func is_sound_playing(sound):
-	if Music.sound_and_node.has(sound):
-		var node = Music.sound_and_node[sound]
-		if node.playing:
+	if Music.playing_sounds.has(sound):
 			return true
 	return false
 

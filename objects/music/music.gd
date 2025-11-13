@@ -1,74 +1,57 @@
 extends GMObject
-
 #--- audio manager adapted from here: https://kidscancode.org/godot_recipes/3.x/audio/audio_manager/
+@onready var music: AudioStreamPlayer = $Music
+@onready var sound_effects: AudioStreamPlayer = $SoundEffects
+@onready var bow_pull: AudioStreamPlayer = $BowPull
+@onready var sound_effects_playback: AudioStreamPlaybackPolyphonic
 
-var num_players = 8
-var bus = "master"
-
-var available = []  # The available players.
-var queue = []  # The queue of sounds to play.
-var sound_and_node = {}
-var audio_stream_players: Dictionary
-var music_tracks = []
+var playing_sounds: PackedStringArray
 
 
-func create_audio_stream_player_nodes():
-	# Create the pool of AudioStreamPlayer nodes.
-	for i in num_players:
-		var p: AudioStreamPlayer = AudioStreamPlayer.new()
-		add_child(p)
-		available.append(p)
-		p.finished.connect(_on_stream_finished.bind(p))
-		p.bus = bus
-		audio_stream_players[i] = p
+func sound_effects_playback_setup():
+	sound_effects.play()
+	sound_effects_playback = sound_effects.get_stream_playback()
 
 
-func _on_stream_finished(stream):
-	# When finished playing a stream, make the player available again.
-	available.append(stream)
-
-
-func play(sound_path):
+func play(sound_path: String):
+	var loaded_sound: AudioStream = load(sound_path)
 	if sound_path.ends_with(".ogg"):
-		$Music.stream = load(sound_path)
-		$Music.play()
+		music.stream = loaded_sound
+		music.pitch_scale = 1.0
+		music.play()
+	elif sound_path.ends_with("bowpull.wav"):
+		bow_pull.stream = loaded_sound
+		bow_pull.play()
 	else:
-		queue.append(sound_path)
+		sound_effects_playback.play_stream(loaded_sound, 0, sound_effects.volume_db) #--- have to do this in order to play multiple sounds at once in AudioStreamPlayer
+		
+	playing_sounds.append(sound_path)
+	var length: float = loaded_sound.get_length()
+	get_tree().create_timer(length).timeout.connect(remove_from_playing_sounds.bind(sound_path))
 
 
-func stop(sound_path):
-	if sound_and_node.has(sound_path):
-		var node = sound_and_node[sound_path]
-		node.stop()
-		_on_stream_finished(node)
-	elif sound_path == $Music.stream.resource_path:
-		$Music.stop()
+func stop(sound_path: String): #--- only sound effect to account for here is bowpull.wav, so it gets its own audio stream player
+	if sound_path.ends_with(".ogg"):
+		music.stop()
+	else:
+		bow_pull.stop() #--- we can assume that the sound is bowpull.wav if it's not music
 
 
-func set_pitch_scale(sound_path, pitch_scale_value):
-	if sound_and_node.has(sound_path):
-		var node = sound_and_node[sound_path]
-		node.pitch_scale = pitch_scale_value
+func set_pitch_scale(sound_path: String, pitch_scale_value: float): #--- only called on music
+	music.pitch_scale = pitch_scale_value
 
 
-func clear_all_sounds():
-	for i in audio_stream_players:
-		available.clear()
-		available.append(audio_stream_players[i])
-		queue.clear()
-		_on_stream_finished(audio_stream_players[i])
+func remove_from_playing_sounds(sound: String) -> void:
+	playing_sounds.erase(sound)
 
 
-func _process(_delta):
-	# Play a queued sound if any players are available.
-	if not queue.is_empty() and not available.is_empty():
-		sound_and_node[queue[0]] = available[0]
-		available[0].stream = load(queue.pop_front())
-		available[0].play()
-		available.pop_front()
+func reset_on_room_changed() -> void:
+	playing_sounds.clear()
 
 
 func _ready():
+	sound_effects_playback_setup()
+	#---
 	#SS.init() --- should not be needed for anything
 	
 	global.music = true
@@ -137,7 +120,6 @@ func _ready():
 	global.snd_p_fall = "res://sounds/pfall.wav"
 	global.snd_t_fall = "res://sounds/tfall.wav"
 
-	create_audio_stream_player_nodes()
 
 func game_end():
 	#SS_Unload --- called when game ends. not needed for Godot

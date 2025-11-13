@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" uid="uid://rqb7dvwsiipy" path="res://objects/music/music.gd" id="1_0gvbg"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_rdork"]
-[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="3_gm83b"]
+
+[sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_xkybd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rdork"]
 resource_local_to_scene = true
@@ -20,10 +21,17 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "music"
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
+bus = &"Music"
 
-[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_rdork")]
+[node name="SoundEffects" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamPolyphonic_xkybd")
+max_polyphony = 32
+bus = &"Sound Effects"
+
+[node name="BowPull" type="AudioStreamPlayer" parent="."]
+bus = &"Sound Effects"
+
+[node name="Sprite" parent="." instance=ExtResource("2_rdork")]
 sprite_frames = SubResource("SpriteFrames_rdork")
-centered = false
-script = ExtResource("3_gm83b")
 
 [connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]
