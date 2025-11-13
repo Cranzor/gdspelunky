@@ -226,12 +226,6 @@ text = "GAMEPLAY"
 next_menu_to_show = NodePath("../../Gameplay")
 menu_to_hide = NodePath("..")
 
-[node name="HUD" parent="Settings" instance=ExtResource("5_04n3j")]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-text = "HUD"
-
 [node name="Graphics" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -273,6 +267,10 @@ text = "DISPLAY MODE"
 layout_mode = 2
 text = "FRAME RATE"
 
+[node name="WindowScale" type="Label" parent="Graphics/HBoxContainer/Settings"]
+layout_mode = 2
+text = "WINDOW SCALE"
+
 [node name="Vsync" type="Label" parent="Graphics/HBoxContainer/Settings"]
 layout_mode = 2
 text = "V-SYNC"
@@ -300,6 +298,14 @@ setting_to_update = &"frame_rate"
 description = NodePath("../../Settings/FrameRate")
 options = PackedStringArray("30", "60", "120", "144", "UNCAPPED")
 values = [30, 60, 120, 144, 0]
+
+[node name="WindowScale" parent="Graphics/HBoxContainer/Selections" instance=ExtResource("7_uucu8")]
+layout_mode = 2
+text = "5"
+setting_to_update = &"window_scale"
+description = NodePath("../../Settings/WindowScale")
+options = PackedStringArray("1", "2", "3", "4", "5")
+values = [1, 2, 3, 4, 5]
 
 [node name="Vsync" parent="Graphics/HBoxContainer/Selections" instance=ExtResource("7_uucu8")]
 layout_mode = 2

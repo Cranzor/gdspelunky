@@ -6,11 +6,10 @@ static var pixel_scale_factor: int = 5
 
 
 func _ready() -> void:
-	initalize_window()
 	SavingLoading.load_settings()
 
 
-func initalize_window() -> void:
+func initalize_window() -> void: #--- gets called upon window scale being set when settings are loaded
 	window.transparent = false
 	window.borderless = false
 	window.size = base_resolution * pixel_scale_factor

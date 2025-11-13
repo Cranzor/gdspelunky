@@ -3,6 +3,7 @@ class_name GameSettings
 
 static var default_setting_values: Dictionary = {
 	#--- graphics
+	"window_scale" : 5,
 	"high_detail" : true,
 	"vsync" : false,
 	"fullscreen" : false,
@@ -78,6 +79,16 @@ static var frame_rate: int = 0:
 	set(value):
 		frame_rate = value
 		Engine.max_fps = value
+		
+		if value == 30: smooth_motion = false
+		else: smooth_motion = true
+
+
+static var window_scale: int = 5:
+	set(value):
+		window_scale = value
+		GameInitialization.pixel_scale_factor = value
+		GameInitialization.initalize_window()
 
 
 static var show_fps: bool = false:
