@@ -1,5 +1,5 @@
 extends GMObject
-#--- audio manager adapted from here: https://kidscancode.org/godot_recipes/3.x/audio/audio_manager/
+
 @onready var music: AudioStreamPlayer = $Music
 @onready var sound_effects: AudioStreamPlayer = $SoundEffects
 @onready var bow_pull: AudioStreamPlayer = $BowPull

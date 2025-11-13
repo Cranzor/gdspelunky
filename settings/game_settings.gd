@@ -9,8 +9,9 @@ static var default_setting_values: Dictionary = {
 	"frame_rate" : 0,
 	
 	#--- sound
-	"music_volume" : null, #TODO
-	"sound_effects_volume" : null, #TODO
+	"sfx_volume" : 5,
+	"music_volume" : 5,
+	"master_volume" : 5,
 	
 	#--- gameplay
 	"auto_run" : false,
@@ -79,8 +80,27 @@ static var frame_rate: int = 0:
 			
 
 #--- audio
-static var music_volume
-static var sound_effects_volume
+const volume_levels_linear: PackedFloat32Array = [0, 0.2, 0.4, 0.6, 0.8, 1]
+static var sfx_volume: int = 5:
+	set(value):
+		sfx_volume = value
+		handle_bus_volume(2, value)
+
+static var music_volume: int = 5:
+	set(value):
+		music_volume = value
+		handle_bus_volume(1, value)
+		
+static var master_volume: int = 5:
+	set(value):
+		master_volume = value
+		handle_bus_volume(0, value, -18)
+
+
+static func handle_bus_volume(bus_idx: int, value: int, volume_db_offset: float = 0):
+	AudioServer.set_bus_volume_linear(bus_idx, volume_levels_linear[value])
+	if volume_db_offset:
+		AudioServer.set_bus_volume_db(bus_idx, AudioServer.get_bus_volume_db(bus_idx) + volume_db_offset)
 
 #--- gameplay
 static var auto_run: bool = false:

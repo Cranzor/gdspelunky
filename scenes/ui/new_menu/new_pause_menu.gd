@@ -6,7 +6,8 @@ extends Control
 @onready var background: ColorRect = $Background
 @onready var pause_screen: VBoxContainer = $PauseScreen
 @onready var settings: VBoxContainer = $Settings
-@onready var graphics_audio: VBoxContainer = $GraphicsAudio
+@onready var graphics: VBoxContainer = $Graphics
+@onready var audio: VBoxContainer = $Audio
 @onready var gameplay: VBoxContainer = $Gameplay
 @onready var controller_config: VBoxContainer = $ControllerConfig
 @onready var keyboard_config: VBoxContainer = $KeyboardConfig
@@ -49,7 +50,8 @@ func set_initial_pause_visibility() -> void:
 	background.show()
 	pause_screen.show()
 	settings.hide()
-	graphics_audio.hide()
+	graphics.hide()
+	audio.hide()
 	gameplay.hide()
 	controller_config.hide()
 	keyboard_config.hide()

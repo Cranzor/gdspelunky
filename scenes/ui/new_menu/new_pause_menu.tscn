@@ -178,7 +178,7 @@ offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("6_urnj6")
-focus_to_grab = NodePath("GraphicsAudio")
+focus_to_grab = NodePath("Graphics")
 
 [node name="Options" type="Label" parent="Settings"]
 layout_mode = 2
@@ -186,12 +186,20 @@ size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("2_dnbp1")
 text = "OPTIONS"
 
-[node name="GraphicsAudio" parent="Settings" instance=ExtResource("5_04n3j")]
+[node name="Graphics" parent="Settings" instance=ExtResource("5_04n3j")]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "GRAPHICS & AUDIO"
-next_menu_to_show = NodePath("../../GraphicsAudio")
+text = "GRAPHICS"
+next_menu_to_show = NodePath("../../Graphics")
+menu_to_hide = NodePath("..")
+
+[node name="Audio" parent="Settings" instance=ExtResource("5_04n3j")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "AUDIO"
+next_menu_to_show = NodePath("../../Audio")
 menu_to_hide = NodePath("..")
 
 [node name="Controls" parent="Settings" instance=ExtResource("5_04n3j")]
@@ -224,7 +232,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "HUD"
 
-[node name="GraphicsAudio" type="VBoxContainer" parent="."]
+[node name="Graphics" type="VBoxContainer" parent="."]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -242,39 +250,39 @@ theme = ExtResource("1_76hnl")
 script = ExtResource("6_urnj6")
 focus_to_grab = NodePath("HBoxContainer/Selections/DisplayMode")
 
-[node name="Label" type="Label" parent="GraphicsAudio"]
+[node name="Label" type="Label" parent="Graphics"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("2_dnbp1")
-text = "GRAPHICS & AUDIO"
+text = "GRAPHICS"
 
-[node name="MarginContainer" type="MarginContainer" parent="GraphicsAudio"]
+[node name="MarginContainer" type="MarginContainer" parent="Graphics"]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="GraphicsAudio"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Graphics"]
 layout_mode = 2
 
-[node name="Settings" type="VBoxContainer" parent="GraphicsAudio/HBoxContainer"]
+[node name="Settings" type="VBoxContainer" parent="Graphics/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="DisplayMode" type="Label" parent="GraphicsAudio/HBoxContainer/Settings"]
+[node name="DisplayMode" type="Label" parent="Graphics/HBoxContainer/Settings"]
 layout_mode = 2
 text = "DISPLAY MODE"
 
-[node name="FrameRate" type="Label" parent="GraphicsAudio/HBoxContainer/Settings"]
+[node name="FrameRate" type="Label" parent="Graphics/HBoxContainer/Settings"]
 layout_mode = 2
 text = "FRAME RATE"
 
-[node name="Vsync" type="Label" parent="GraphicsAudio/HBoxContainer/Settings"]
+[node name="Vsync" type="Label" parent="Graphics/HBoxContainer/Settings"]
 layout_mode = 2
 text = "V-SYNC"
 
-[node name="Selections" type="VBoxContainer" parent="GraphicsAudio/HBoxContainer"]
+[node name="Selections" type="VBoxContainer" parent="Graphics/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="DisplayMode" parent="GraphicsAudio/HBoxContainer/Selections" instance=ExtResource("7_uucu8")]
+[node name="DisplayMode" parent="Graphics/HBoxContainer/Selections" instance=ExtResource("7_uucu8")]
 layout_mode = 2
 text = "FULLSCREEN"
 setting_to_update = &"fullscreen"
@@ -282,7 +290,7 @@ description = NodePath("../../Settings/DisplayMode")
 options = PackedStringArray("WINDOWED", "FULLSCREEN")
 values = [false, true]
 
-[node name="FrameRate" parent="GraphicsAudio/HBoxContainer/Selections" instance=ExtResource("7_uucu8")]
+[node name="FrameRate" parent="Graphics/HBoxContainer/Selections" instance=ExtResource("7_uucu8")]
 layout_mode = 2
 text = "60"
 setting_to_update = &"frame_rate"
@@ -290,13 +298,86 @@ description = NodePath("../../Settings/FrameRate")
 options = PackedStringArray("30", "60", "120", "144", "UNCAPPED")
 values = [30, 60, 120, 144, 0]
 
-[node name="Vsync" parent="GraphicsAudio/HBoxContainer/Selections" instance=ExtResource("7_uucu8")]
+[node name="Vsync" parent="Graphics/HBoxContainer/Selections" instance=ExtResource("7_uucu8")]
 layout_mode = 2
 text = "OFF"
 setting_to_update = &"vsync"
 description = NodePath("../../Settings/Vsync")
 options = PackedStringArray("OFF", "ON")
 values = [false, true]
+
+[node name="Audio" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -26.0
+offset_right = 128.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_76hnl")
+script = ExtResource("6_urnj6")
+focus_to_grab = NodePath("HBoxContainer/Selections/SFXVolume")
+
+[node name="Label" type="Label" parent="Audio"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_dnbp1")
+text = "AUDIO"
+
+[node name="MarginContainer" type="MarginContainer" parent="Audio"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Audio"]
+layout_mode = 2
+
+[node name="Settings" type="VBoxContainer" parent="Audio/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SFXVolume" type="Label" parent="Audio/HBoxContainer/Settings"]
+layout_mode = 2
+text = "SFX VOLUME"
+
+[node name="MusicVolume" type="Label" parent="Audio/HBoxContainer/Settings"]
+layout_mode = 2
+text = "MUSIC VOLUME"
+
+[node name="MasterVolume" type="Label" parent="Audio/HBoxContainer/Settings"]
+layout_mode = 2
+text = "MASTER VOLUME"
+
+[node name="Selections" type="VBoxContainer" parent="Audio/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SFXVolume" parent="Audio/HBoxContainer/Selections" instance=ExtResource("7_uucu8")]
+layout_mode = 2
+text = "5"
+setting_to_update = &"sfx_volume"
+description = NodePath("../../Settings/SFXVolume")
+options = PackedStringArray("0", "1", "2", "3", "4", "5")
+values = [0, 1, 2, 3, 4, 5]
+
+[node name="MusicVolume" parent="Audio/HBoxContainer/Selections" instance=ExtResource("7_uucu8")]
+layout_mode = 2
+text = "5"
+setting_to_update = &"music_volume"
+description = NodePath("../../Settings/MusicVolume")
+options = PackedStringArray("0", "1", "2", "3", "4", "5")
+values = [0, 1, 2, 3, 4, 5]
+
+[node name="MasterVolume" parent="Audio/HBoxContainer/Selections" instance=ExtResource("7_uucu8")]
+layout_mode = 2
+text = "5"
+setting_to_update = &"master_volume"
+description = NodePath("../../Settings/MasterVolume")
+options = PackedStringArray("0", "1", "2", "3", "4", "5")
+values = [0, 1, 2, 3, 4, 5]
 
 [node name="ControllerConfig" type="VBoxContainer" parent="."]
 visible = false
@@ -507,6 +588,7 @@ script = ExtResource("7_7dyxn")
 action_name = &"start"
 
 [node name="KeyboardConfig" type="VBoxContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
