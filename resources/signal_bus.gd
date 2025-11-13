@@ -5,6 +5,7 @@ signal game_unpaused
 signal menu_screen_change_requested(requesting_screen, next_screen)
 signal button_remapped(remapped_controller_button_index_and_type, prior_controller_button_index_and_type)
 signal key_remapped(new_key, old_key)
+signal show_fps(show: bool)
 signal end_adventure
 signal draw_title_rect
 signal dark_level_started

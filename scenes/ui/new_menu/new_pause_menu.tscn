@@ -233,7 +233,6 @@ size_flags_vertical = 4
 text = "HUD"
 
 [node name="Graphics" type="VBoxContainer" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -278,6 +277,10 @@ text = "FRAME RATE"
 layout_mode = 2
 text = "V-SYNC"
 
+[node name="ShowFPS" type="Label" parent="Graphics/HBoxContainer/Settings"]
+layout_mode = 2
+text = "SHOW FPS"
+
 [node name="Selections" type="VBoxContainer" parent="Graphics/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -306,7 +309,16 @@ description = NodePath("../../Settings/Vsync")
 options = PackedStringArray("OFF", "ON")
 values = [false, true]
 
+[node name="ShowFPS" parent="Graphics/HBoxContainer/Selections" instance=ExtResource("7_uucu8")]
+layout_mode = 2
+text = "OFF"
+setting_to_update = &"show_fps"
+description = NodePath("../../Settings/ShowFPS")
+options = PackedStringArray("OFF", "ON")
+values = [false, true]
+
 [node name="Audio" type="VBoxContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

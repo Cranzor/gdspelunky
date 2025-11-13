@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://dfkrem72v8ms8"]
+[gd_scene load_steps=81 format=3 uid="uid://dfkrem72v8ms8"]
 
 [ext_resource type="Texture2D" uid="uid://xajjg6rysmmk" path="res://sprites/hud/heart/heart_0.png" id="1_kp442"]
 [ext_resource type="Script" uid="uid://clfaomwucanks" path="res://scenes/ui/hud.gd" id="1_o1o2r"]
@@ -74,6 +74,8 @@
 [ext_resource type="PackedScene" uid="uid://bctkguili8lu6" path="res://components/drawing/draw_rectangle/draw_rectangle.tscn" id="72_4hsw7"]
 [ext_resource type="Script" uid="uid://c2a645i3pc7il" path="res://scenes/ui/title_fade_in.gd" id="72_tj8l3"]
 [ext_resource type="PackedScene" uid="uid://dc1rbppknrh43" path="res://scenes/ui/new_menu/new_pause_menu.tscn" id="74_jhjt4"]
+[ext_resource type="PackedScene" uid="uid://b8sip2nv63phc" path="res://scenes/ui/fps_counter.tscn" id="75_vpao8"]
+[ext_resource type="Theme" uid="uid://slghfexedlyr" path="res://scenes/small_font.tres" id="76_078bl"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tj8l3"]
 animations = [{
@@ -559,5 +561,16 @@ script = ExtResource("72_tj8l3")
 [node name="NewPauseMenu" parent="." instance=ExtResource("74_jhjt4")]
 visible = false
 z_index = 2
+
+[node name="FpsCounter" parent="." instance=ExtResource("75_vpao8")]
+visible = false
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1.0
+offset_bottom = 23.0
+grow_horizontal = 0
+theme = ExtResource("76_078bl")
+text = "500"
 
 [connection signal="animation_changed" from="InGame/ItemIcons/KapalaIcon" to="InGame/ItemIcons/KapalaIcon" method="_on_animation_changed"]

@@ -1,17 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://b8sip2nv63phc"]
+[gd_scene load_steps=2 format=3 uid="uid://b8sip2nv63phc"]
 
 [ext_resource type="Script" uid="uid://6gfki1hwdkrq" path="res://scenes/ui/fps_counter.gd" id="1_5aw23"]
-[ext_resource type="FontFile" uid="uid://dgd06bxddo4pq" path="res://fonts/small_font.png" id="2_jjlen"]
 
-[node name="FpsCounter" type="CanvasLayer"]
+[node name="FpsCounter" type="Label"]
 script = ExtResource("1_5aw23")
-
-[node name="FPSCount" type="Label" parent="."]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -40.0
-offset_bottom = 23.0
-grow_horizontal = 0
-theme_override_fonts/font = ExtResource("2_jjlen")
-horizontal_alignment = 2

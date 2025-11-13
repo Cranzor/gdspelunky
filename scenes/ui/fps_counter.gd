@@ -1,13 +1,16 @@
-extends CanvasLayer
+extends Label
 
-var fps: int
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	visible = GameSettings.show_fps
+	SignalBus.show_fps.connect(show_fps_display)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	fps = Engine.get_frames_per_second()
-	$FPSCount.text = str(fps)
+	var fps: int = Engine.get_frames_per_second()
+	text = str(fps)
+
+
+func show_fps_display(show_fps: bool) -> void:
+	if show_fps: show()
+	else: hide()

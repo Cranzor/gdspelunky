@@ -7,6 +7,7 @@ static var default_setting_values: Dictionary = {
 	"vsync" : false,
 	"fullscreen" : false,
 	"frame_rate" : 0,
+	"show_fps" : false,
 	
 	#--- sound
 	"sfx_volume" : 5,
@@ -77,7 +78,13 @@ static var frame_rate: int = 0:
 	set(value):
 		frame_rate = value
 		Engine.max_fps = value
-			
+
+
+static var show_fps: bool = false:
+	set(value):
+		show_fps = value
+		SignalBus.emit_signal("show_fps", value)
+
 
 #--- audio
 const volume_levels_linear: PackedFloat32Array = [0, 0.2, 0.4, 0.6, 0.8, 1]
