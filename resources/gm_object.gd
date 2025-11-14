@@ -822,6 +822,10 @@ func handle_enemy_sight(parent_object: GMObject) -> void:
 		existing_node.queue_free()
 	parent_object.add_child(self)
 
+func reset_interpolation() -> void: #--- call this whenever teleporting an object to an arbitary location
+	var remote_transform: RemoteTransform2D = $SmoothMotion/RemoteTransform2D
+	remote_transform.reset_position()
+
 var objects_in_bb: Array[GMObject]
 var groups_in_bb: Array[StringName]
 var first_time_entered: bool = false

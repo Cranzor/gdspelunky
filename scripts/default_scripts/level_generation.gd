@@ -1113,6 +1113,7 @@ func scr_init_level():
 		if player1: #---[FLAG] seems necessary to add this or else end room doesn't work
 			player1.position.x = entrance.position.x+8
 			player1.position.y = entrance.position.y+8
+			player1.reset_interpolation() #--- adding this to fix camera delay issue at high frame rates when level starts
 
 
 	if (global.dark_level or

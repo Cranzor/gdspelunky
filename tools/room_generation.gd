@@ -37,10 +37,10 @@ func generate_room(room_name: String):
 		var obj = gml.instance_create(object_position.x, object_position.y, loaded_object, null, false)
 		objects_in_level.append(obj)
 	
-	set_up_view()
-	
 	for object in objects_in_level: #--- running create event for all objects after they are all instanced so that they can reference one another regardless of order
 		object.run_create_function(object)
+	
+	set_up_view()
 
 
 func set_up_view() -> void:
