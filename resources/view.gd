@@ -17,11 +17,13 @@ static var smooth_scroll_target_y_pos: float
 static var smooth_scroll_starting_y_pos: float
 static var smooth_scroll_pixel_amount: int
 static var internal_position: Vector2
-static var diff: int
+static var offset: int
+static var half_offset: int
 
 
 func _process(delta: float) -> void:
-	diff = viewport.get_visible_rect().size.x - 320
+	offset = viewport.get_visible_rect().size.x - 320
+	half_offset = (offset / 2)
 	
 	if GameSettings.smooth_motion:
 		if smooth_scroll_camera_vertically:
@@ -42,13 +44,13 @@ func setup(passed_level_boundaries: Vector2, passed_border: Vector2, passed_obje
 	object_following_name = passed_object_following
 
 
-func move_camera(position: Vector2): #--- moves camera by a specific number of pixels. ex: Vector2(2, 2) would move the camera two pixels to the right and two pixels down
-	internal_position = position + internal_position
+func move_camera(passed_position: Vector2): #--- moves camera by a specific number of pixels. ex: Vector2(2, 2) would move the camera two pixels to the right and two pixels down
+	internal_position = passed_position + internal_position
 	internal_position = internal_position.clamp(Vector2(0, 0), Vector2(level_boundaries.x - 320, level_boundaries.y - 240))
 
 
-static func set_camera_pos(position: Vector2): #--- sets camera to a specific position
-	internal_position = position.clamp(Vector2(0, 0), Vector2(level_boundaries.x - 320, level_boundaries.y - 240))
+static func set_camera_pos(passed_position: Vector2): #--- sets camera to a specific position
+	internal_position = passed_position.clamp(Vector2(0, 0), Vector2(level_boundaries.x - 320, level_boundaries.y - 240))
 
 
 func update_camera_pos():
@@ -62,9 +64,9 @@ func update_camera_pos():
 			object_position = remote_transform.position
 		#--- sides of the camera borders
 		#--- comments are sample values for level
-		var left = internal_position.x + border.x #--- 128
+		var left = internal_position.x + border.x + half_offset #--- 128 (when offset is 0)
 		var bottom = (internal_position.y + 240) - border.y #--- 144
-		var right = (internal_position.x + 320) - border.x #--- 192
+		var right = (internal_position.x + 320) - border.x + half_offset #--- 192 (when offset is 0)
 		var top = internal_position.y + border.y #--- 96
 
 		#--- moving the camera in a certain direction depending on which side the followed object goes outside of the box
@@ -84,7 +86,7 @@ func update_camera_pos():
 
 
 static func apply_updated_view() -> void:
-	var new_pos: Vector2 = internal_position.clamp(Vector2(0, 0), Vector2(level_boundaries.x - 320 - diff, level_boundaries.y - 240)) #--- setting new clamped value for widescreen
+	var new_pos: Vector2 = internal_position.clamp(Vector2(0, 0), Vector2(level_boundaries.x - 320 - offset, level_boundaries.y - 240)) #--- setting new clamped value for widescreen
 	var new_origin: Vector2 = -new_pos
 	var new_trans: Transform2D = Transform2D(0.0, new_origin)
 	viewport.set_canvas_transform(new_trans)

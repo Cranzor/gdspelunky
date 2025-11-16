@@ -536,7 +536,7 @@ func view(view_value: String) -> int:
 		return view_yview
 		
 	elif view_value == 'wview':
-		return 320
+		return 320 + View.half_offset #--- have to subtract view widescreen offset to get accurate value
 		
 	elif view_value == 'hview':
 		return 240
