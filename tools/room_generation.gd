@@ -41,6 +41,11 @@ func generate_room(room_name: String):
 		object.run_create_function(object)
 	
 	set_up_view()
+	
+	#--- this is set in the title object script, which runs before set_up_view()
+	#--- so we can just add it here to make sure view is where it should be
+	if gml.room_get_name() == "title":
+		gml.view_xview = 320
 
 
 func set_up_view() -> void:

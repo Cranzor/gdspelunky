@@ -80,49 +80,45 @@ var view_enabled = true #--- doesn't seem to be false in any instance within the
 var changed_scene: bool = false
 var in_step_event: bool = false
 
-var view2: View:
-	get:
-		return get_tree().get_first_node_in_group("view")
-
 var room_height: int:
 	get:
-		return view2.level_boundaries.y
+		return View.level_boundaries.y
 
 var room_width: int:
 	get:
-		return view2.level_boundaries.x
+		return View.level_boundaries.x
 		
 var view_vborder: int: #--- vertical boundary of camera. original code always has it as view_vborder[0]
 	set(value):
-		view2.border.y = value
+		View.border.y = value
 		
 	get:
-		return view2.border.y
+		return View.border.y
 		
 var view_hborder: int:#--- horizontal boundary of camera. original code always has it as view_hborder[0]. only used in olmec scene
 	set(value):
-		view2.border.x = value
+		View.border.x = value
 		
 	get:
-		return view2.border.x
+		return View.border.x
 
 var view_object: GMObject:
 	set(value):
-		view2.object_following = value
+		View.object_following = value
 	get:
-		return view2.object_following
+		return View.object_following
 		
 var view_yview: int:
 	set(value):
-		view2.set_camera_y_pos(value)
+		View.set_camera_pos_and_apply(-1, value)
 		
 	get:
-		return view2.get_camera_pos().y
+		return View.internal_position.y
 var view_xview: int:
 	set(value):
-		view2.set_camera_x_pos(value)
+		View.set_camera_pos_and_apply(value, -1)
 	get:
-		return view2.get_camera_pos().x
+		return View.internal_position.x
 
 #var view_hview: int:
 	#set(value):
@@ -466,7 +462,7 @@ func instance_deactivate_region(left, top, width, height, inside, notme) -> void
 func room_restart() -> void:
 	changed_scene = true
 	get_tree().call_group("gm_object", "room_end")
-	view2.set_camera_pos(Vector2(0, 0))
+	View.set_camera_pos_and_apply(0, 0)
 	SignalBus.emit_signal("scene_changed")
 	get_tree().reload_current_scene()
 	
@@ -557,7 +553,7 @@ func room_get_name() -> String:
 func room_goto(room_name: String) -> void:
 	changed_scene = true
 	get_tree().call_group("gm_object", "room_end")
-	view2.set_camera_pos(Vector2(0, 0))
+	View.set_camera_pos_and_apply(0, 0)
 	SignalBus.emit_signal("scene_changed")
 	global.dark_level = false
 	get_tree().change_scene_to_file("res://rooms/" + room_name + "/" + room_name + ".tscn")
