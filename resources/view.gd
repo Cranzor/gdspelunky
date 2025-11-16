@@ -17,9 +17,12 @@ static var smooth_scroll_target_y_pos: float
 static var smooth_scroll_starting_y_pos: float
 static var smooth_scroll_pixel_amount: int
 static var internal_position: Vector2
+static var diff: int
 
 
 func _process(delta: float) -> void:
+	diff = viewport.get_visible_rect().size.x - 320
+	
 	if GameSettings.smooth_motion:
 		if smooth_scroll_camera_vertically:
 			move_camera(Vector2(0, smooth_scroll_pixel_amount * 30 * delta))
@@ -81,8 +84,9 @@ func update_camera_pos():
 
 
 static func apply_updated_view() -> void:
-	var new_origin = -internal_position
-	var new_trans = Transform2D(0.0, new_origin)
+	var new_pos: Vector2 = internal_position.clamp(Vector2(0, 0), Vector2(level_boundaries.x - 320 - diff, level_boundaries.y - 240)) #--- setting new clamped value for widescreen
+	var new_origin: Vector2 = -new_pos
+	var new_trans: Transform2D = Transform2D(0.0, new_origin)
 	viewport.set_canvas_transform(new_trans)
 
 
