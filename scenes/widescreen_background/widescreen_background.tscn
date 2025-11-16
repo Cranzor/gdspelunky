@@ -1,0 +1,29 @@
+[gd_scene load_steps=16 format=3 uid="uid://cldib4ijvkd65"]
+
+[ext_resource type="Script" uid="uid://dp0i0210gnx2b" path="res://scenes/widescreen_background/widescreen_background.gd" id="1_h5v87"]
+[ext_resource type="Texture2D" uid="uid://nkw6afdklf8m" path="res://sprites/blocks/mines/brick/brick_0.png" id="2_60qa7"]
+[ext_resource type="Texture2D" uid="uid://bof0pw63axkhs" path="res://sprites/blocks/mines/brick2/brick2_0.png" id="3_mw2se"]
+[ext_resource type="Texture2D" uid="uid://bikhjyty6jnfv" path="res://sprites/blocks/mines/brick_gold/brick_gold_0.png" id="4_rgfxn"]
+[ext_resource type="Texture2D" uid="uid://ermhxd0l34ik" path="res://sprites/blocks/mines/brick_gold_big/brick_gold_big_0.png" id="5_u56sh"]
+[ext_resource type="Texture2D" uid="uid://dt68ucfndoa60" path="res://sprites/blocks/lush/lush/lush_0.png" id="6_yvy7g"]
+[ext_resource type="Texture2D" uid="uid://cyfd0d6qsya62" path="res://sprites/blocks/lush/lush_gold/lush_gold_0.png" id="7_qs825"]
+[ext_resource type="Texture2D" uid="uid://con58ewvocjkq" path="res://sprites/blocks/lush/lush_gold_big/lush_gold_big_0.png" id="8_n5wlk"]
+[ext_resource type="Texture2D" uid="uid://dk7qncq1dyosr" path="res://sprites/blocks/dark/dark/dark_0.png" id="9_xxlth"]
+[ext_resource type="Texture2D" uid="uid://cgqa3s5t7j11x" path="res://sprites/blocks/dark/dark_gold/dark_gold_0.png" id="10_2jlwm"]
+[ext_resource type="Texture2D" uid="uid://jcsunmkelqha" path="res://sprites/blocks/dark/dark_gold_big/dark_gold_big_0.png" id="11_a4r4l"]
+[ext_resource type="Texture2D" uid="uid://drvw1otuoyei2" path="res://sprites/blocks/temple/temple/temple_0.png" id="12_dk87d"]
+[ext_resource type="Texture2D" uid="uid://0e7q6qvc11x3" path="res://sprites/blocks/temple/temple_gold/temple_gold_0.png" id="13_0sh74"]
+[ext_resource type="Texture2D" uid="uid://bv3r375crevtu" path="res://sprites/blocks/temple/temple_gold_big/temple_gold_big_0.png" id="14_c0m08"]
+[ext_resource type="Texture2D" uid="uid://didiv23igdfhr" path="res://sprites/blocks/temple/g_temple/g_temple_0.png" id="15_bfyej"]
+
+[node name="WidescreenBackground" type="Sprite2D"]
+z_index = -4096
+texture_repeat = 2
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 320, 240)
+script = ExtResource("1_h5v87")
+brick_textures = Array[Texture2D]([ExtResource("2_60qa7"), ExtResource("4_rgfxn"), ExtResource("5_u56sh"), ExtResource("3_mw2se")])
+lush_textures = Array[Texture2D]([ExtResource("6_yvy7g"), ExtResource("7_qs825"), ExtResource("8_n5wlk")])
+dark_textures = Array[Texture2D]([ExtResource("9_xxlth"), ExtResource("10_2jlwm"), ExtResource("11_a4r4l")])
+temple_textures = Array[Texture2D]([ExtResource("12_dk87d"), ExtResource("13_0sh74"), ExtResource("14_c0m08"), ExtResource("15_bfyej")])

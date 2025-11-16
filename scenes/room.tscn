@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://b8g70geq8alqq"]
+[gd_scene load_steps=13 format=3 uid="uid://b8g70geq8alqq"]
 
 [ext_resource type="Script" uid="uid://bpwfpbixw4l5b" path="res://scenes/room.gd" id="1_36trf"]
 [ext_resource type="PackedScene" uid="uid://b2jlcu453ynaf" path="res://scenes/bg_elements.tscn" id="2_85yof"]
 [ext_resource type="PackedScene" uid="uid://chivya8n7oo3x" path="res://scenes/texture_rect.tscn" id="3_14vil"]
+[ext_resource type="PackedScene" uid="uid://cldib4ijvkd65" path="res://scenes/widescreen_background/widescreen_background.tscn" id="3_tk5fv"]
 [ext_resource type="PackedScene" uid="uid://8pect2ibgg6e" path="res://scenes/collision/collision_ray.tscn" id="4_jxe34"]
 [ext_resource type="Texture2D" uid="uid://c7mqbeksgioqi" path="res://backgrounds/background_night.png" id="4_qvc4m"]
 [ext_resource type="PackedScene" uid="uid://dpik07grwpaj" path="res://scenes/collision/collision_shapecast.tscn" id="5_jn645"]
@@ -16,6 +17,8 @@
 script = ExtResource("1_36trf")
 
 [node name="BgElements" parent="." instance=ExtResource("2_85yof")]
+
+[node name="WidescreenBackground" parent="." instance=ExtResource("3_tk5fv")]
 
 [node name="Background" parent="." groups=["background"] instance=ExtResource("3_14vil")]
 offset_right = 992.0
