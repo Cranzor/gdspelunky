@@ -19,6 +19,7 @@ static var smooth_scroll_pixel_amount: int
 static var internal_position: Vector2
 static var offset: int
 static var half_offset: int
+static var screen_centered: bool = true
 
 
 func _process(delta: float) -> void:
@@ -37,12 +38,12 @@ func _ready() -> void:
 		viewport.snap_2d_transforms_to_pixel = true #--- gets rid of visual waviness
 
 
-func setup(passed_level_boundaries: Vector2, passed_border: Vector2, passed_object_following: String):
+func setup(passed_level_boundaries: Vector2, passed_border: Vector2, passed_object_following: String, centered: bool):
 	level_boundaries  = passed_level_boundaries
 	border = passed_border
 	object_following = gml.get_instance(passed_object_following)
 	object_following_name = passed_object_following
-
+	screen_centered = centered
 
 func move_camera(passed_position: Vector2): #--- moves camera by a specific number of pixels. ex: Vector2(2, 2) would move the camera two pixels to the right and two pixels down
 	internal_position = passed_position + internal_position
@@ -80,13 +81,18 @@ func update_camera_pos():
 		elif object_position.y < top:
 			move_camera(Vector2(0, -(abs(object_position.y - top))))
 			smooth_scroll_camera_vertically = false
+			
+			#draw_debug_camera_border(Vector2(left, top), Vector2(right - left, bottom - top), get_tree().get_first_node_in_group("debug_color_rect"))
 	
-		apply_updated_view()
-		#draw_debug_camera_border(Vector2(left, top), Vector2(right - left, bottom - top), get_tree().get_first_node_in_group("debug_color_rect"))
+	apply_updated_view()
 
 
 static func apply_updated_view() -> void:
-	var new_pos: Vector2 = internal_position.clamp(Vector2(0, 0), Vector2(level_boundaries.x - 320 - offset, level_boundaries.y - 240)) #--- setting new clamped value for widescreen
+	var new_pos: Vector2
+	#--- view position gets clamped with offset/screen centering taken into account
+	if screen_centered: new_pos = internal_position.clamp(Vector2(0, 0), Vector2(level_boundaries.x - 320 - half_offset, level_boundaries.y - 240))
+	else: new_pos = internal_position.clamp(Vector2(0, 0), Vector2(level_boundaries.x - 320 - offset, level_boundaries.y - 240))
+
 	var new_origin: Vector2 = -new_pos
 	var new_trans: Transform2D = Transform2D(0.0, new_origin)
 	viewport.set_canvas_transform(new_trans)

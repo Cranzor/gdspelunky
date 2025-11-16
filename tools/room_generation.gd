@@ -64,7 +64,11 @@ func set_up_view() -> void:
 	var room_size = rooms.room_database[current_room]["room"]["size"]
 	var level_boundaries = Vector2(int(room_size["width"]), int(room_size["height"]))
 	var view: View = Engine.get_main_loop().get_first_node_in_group("view")
-	view.setup(level_boundaries, border, object_following)
+	var centered: bool = true
+	var uncentered_rooms: PackedStringArray = ["intro", "tutorial", "olmec"]
+	if current_room.begins_with("level") or uncentered_rooms.has(current_room):
+		centered = false
+	view.setup(level_boundaries, border, object_following, centered)
 	view.update_camera_pos()
 	
 
