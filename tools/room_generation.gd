@@ -46,6 +46,9 @@ func generate_room(room_name: String):
 	#--- so we can just add it here to make sure view is where it should be
 	if gml.room_get_name() == "title":
 		gml.view_xview = 320
+	#--- Olmec is set as view_object in create script as well, so have to account for this (player1 is set in set_up_view())
+	elif gml.room_get_name() == "olmec":
+		gml.view_object = gml.get_instance("olmec")
 
 
 func set_up_view() -> void:
