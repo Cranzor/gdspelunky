@@ -16,14 +16,24 @@
 [ext_resource type="Texture2D" uid="uid://bv3r375crevtu" path="res://sprites/blocks/temple/temple_gold_big/temple_gold_big_0.png" id="14_c0m08"]
 [ext_resource type="Texture2D" uid="uid://didiv23igdfhr" path="res://sprites/blocks/temple/g_temple/g_temple_0.png" id="15_bfyej"]
 
-[node name="WidescreenBackground" type="Sprite2D"]
-z_index = -4096
-texture_repeat = 2
-centered = false
-region_enabled = true
-region_rect = Rect2(0, 0, 320, 240)
+[node name="WidescreenBackground" type="Node2D"]
 script = ExtResource("1_h5v87")
 brick_textures = Array[Texture2D]([ExtResource("2_60qa7"), ExtResource("4_rgfxn"), ExtResource("5_u56sh"), ExtResource("3_mw2se")])
 lush_textures = Array[Texture2D]([ExtResource("6_yvy7g"), ExtResource("7_qs825"), ExtResource("8_n5wlk")])
 dark_textures = Array[Texture2D]([ExtResource("9_xxlth"), ExtResource("10_2jlwm"), ExtResource("11_a4r4l")])
 temple_textures = Array[Texture2D]([ExtResource("12_dk87d"), ExtResource("13_0sh74"), ExtResource("14_c0m08"), ExtResource("15_bfyej")])
+
+[node name="Background1" type="Sprite2D" parent="."]
+z_index = -4096
+texture_repeat = 2
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 320, 240)
+
+[node name="Background2" type="Sprite2D" parent="."]
+z_index = -4096
+texture_repeat = 2
+centered = false
+offset = Vector2(320, 0)
+region_enabled = true
+region_rect = Rect2(0, 0, 320, 240)
