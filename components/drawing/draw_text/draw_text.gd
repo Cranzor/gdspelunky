@@ -5,6 +5,7 @@ const small_font: String = "res://fonts/small_font.png"
 
 @export var drawn_text: PackedScene
 @export var hide_at_frame_start: bool = true
+@export var text_centered: bool = false
 var string_counter = 0
 var strings: Dictionary[String, int]
 
@@ -27,6 +28,8 @@ func draw_text(x, y, text: StringName, unique_identifier: StringName = ""):
 	
 	label.text = text
 	label.global_position = Vector2(x, y)
+	if text_centered:
+		label.global_position.x += View.half_offset
 	label.set_modulate(gml.draw_color)
 	label.show()
 

@@ -93,14 +93,14 @@ func draw_global_message_text(): #--- moved from screen object
 		var str_len = gml.string_length(global.message)*8
 		var n = 320 - str_len
 		n = ceil(n / 2)
-		hud_text.draw_text(n, 216, str(global.message), "global_message")
+		global_message.draw_text(n, 216, str(global.message), "global_message")
 
 		var text_color = gml.c_white
 		if (not InLevel.is_room("tutorial")): gml.draw_set_color(gml.c_yellow)
 		str_len = gml.string_length(global.message2)*8
 		n = 320 - str_len
 		n = ceil(n / 2)
-		hud_text.draw_text(n, 224, str(global.message2), "global_message2")
+		global_message.draw_text(n, 224, str(global.message2), "global_message2")
 
 		global.message_timer -= 1
 

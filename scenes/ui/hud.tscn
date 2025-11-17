@@ -539,6 +539,7 @@ script = ExtResource("65_gxo4v")
 [node name="HUDText" parent="InGame" instance=ExtResource("70_ep55p")]
 
 [node name="GlobalMessage" parent="InGame" instance=ExtResource("70_ep55p")]
+text_centered = true
 
 [node name="PauseScreen" type="Node2D" parent="."]
 process_mode = 3

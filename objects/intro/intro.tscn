@@ -1,13 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://cmapfp1bw4euu"]
+[gd_scene load_steps=6 format=3 uid="uid://cmapfp1bw4euu"]
 
 [ext_resource type="Script" uid="uid://cl4ma2coogdgn" path="res://objects/intro/intro.gd" id="1_hinbn"]
 [ext_resource type="PackedScene" uid="uid://8nvpnq1dktdh" path="res://components/drawing/draw_text/draw_text.tscn" id="2_hinbn"]
 [ext_resource type="PackedScene" uid="uid://bctkguili8lu6" path="res://components/drawing/draw_rectangle/draw_rectangle.tscn" id="3_dy0xu"]
-[ext_resource type="Script" uid="uid://dtgd0cguix6db" path="res://components/drawing/draw_text/draw_text.gd" id="3_fxy5n"]
-[ext_resource type="PackedScene" uid="uid://cycctqx2bmx2j" path="res://components/drawing/draw_text/drawn_text.tscn" id="4_f8gis"]
-[ext_resource type="Script" uid="uid://nt05ksk5fdo6" path="res://components/drawing/draw_rectangle/draw_rectangle.gd" id="6_k74bh"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="7_k74bh"]
-[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="8_v37qy"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_k74bh"]
 resource_local_to_scene = true
@@ -23,17 +19,12 @@ script = ExtResource("1_hinbn")
 animated_sprite_node = NodePath("Sprite")
 object_name = "intro"
 
-[node name="DrawText" type="Node2D" parent="." groups=["draw_text"] instance=ExtResource("2_hinbn")]
-z_index = 1
-script = ExtResource("3_fxy5n")
-drawn_text = ExtResource("4_f8gis")
+[node name="DrawText" parent="." instance=ExtResource("2_hinbn")]
+text_centered = true
 
-[node name="DrawRectangle" type="ColorRect" parent="." instance=ExtResource("3_dy0xu")]
-script = ExtResource("6_k74bh")
+[node name="DrawRectangle" parent="." instance=ExtResource("3_dy0xu")]
 
-[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("7_k74bh")]
+[node name="Sprite" parent="." instance=ExtResource("7_k74bh")]
 sprite_frames = SubResource("SpriteFrames_k74bh")
-centered = false
-script = ExtResource("8_v37qy")
 
 [connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

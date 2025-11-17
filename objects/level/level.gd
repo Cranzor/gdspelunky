@@ -77,23 +77,24 @@ func draw():
 #
 #
 	#*/
-	if (not global.dark_level and global.message_timer > 0):
-
-		gml.draw_set_font(global.my_font_small)
-		gml.draw_set_color(gml.c_white)
-		var str_len = gml.string_length(global.message)*8
-		var n = 320 - str_len
-		n = ceil(n / 2)
-		draw_text.draw_text(gml.view("xview")+n, gml.view("yview")+216, str(global.message))
-	
-		if (not InLevel.is_room("tutorial")): gml.draw_set_color(gml.c_yellow) #--- was "InLevel.is_level("tutorial")" but this appears to be an error as is_level takes no argument. changed it to match screen object script
-		str_len = gml.string_length(global.message2)*8
-		n = 320 - str_len
-		n = ceil(n / 2)
-		draw_text.draw_text(gml.view("xview")+n, gml.view("yview")+224, str(global.message2))
-	
-		global.message_timer -= 1
-
+	#--- commenting out below code due to it being redundant with code drawn by screen (moved to HUD node)
+	#if (not global.dark_level and global.message_timer > 0):
+#
+		#gml.draw_set_font(global.my_font_small)
+		#gml.draw_set_color(gml.c_white)
+		#var str_len = gml.string_length(global.message)*8
+		#var n = 320 - str_len
+		#n = ceil(n / 2)
+		#draw_text.draw_text(gml.view("xview")+n, gml.view("yview")+216, str(global.message))
+	#
+		#if (not InLevel.is_room("tutorial")): gml.draw_set_color(gml.c_yellow) #--- was "InLevel.is_level("tutorial")" but this appears to be an error as is_level takes no argument. changed it to match screen object script
+		#str_len = gml.string_length(global.message2)*8
+		#n = 320 - str_len
+		#n = ceil(n / 2)
+		#draw_text.draw_text(gml.view("xview")+n, gml.view("yview")+224, str(global.message2))
+	#
+		#global.message_timer -= 1
+	pass
 
 func room_end(): #--- has no actual code
 	# DY: sound_stop(snd_music_test2)
