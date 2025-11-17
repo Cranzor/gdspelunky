@@ -556,6 +556,7 @@ visible = false
 script = ExtResource("72_tj8l3")
 
 [node name="DrawText" parent="TitleFadeIn" instance=ExtResource("70_ep55p")]
+text_centered = true
 
 [node name="DrawRectangle" parent="TitleFadeIn" instance=ExtResource("72_4hsw7")]
 
