@@ -171,6 +171,9 @@ func instance_create(x,y,obj,calling_object: GMObject = null,run_create = true) 
 		#instance.run_step_event(instance)
 	
 	instance.custom_collision.update_object_collision(instance, true)
+
+	instance.reset_interpolation_this_frame = true
+	instance.reset_interpolation()
 	
 	#for objects bigger than 16x16, get height and width of sprite texture and then add that as the size
 	

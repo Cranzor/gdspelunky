@@ -68,6 +68,7 @@ var down: bool
 var left: bool
 var right: bool
 var timer: int
+var reset_interpolation_this_frame: bool = false
 
 #--- want access to these for all objects, so defining here
 var collision_bounds_offset_left_x
@@ -822,9 +823,17 @@ func handle_enemy_sight(parent_object: GMObject) -> void:
 		existing_node.queue_free()
 	parent_object.add_child(self)
 
-func reset_interpolation() -> void: #--- call this whenever teleporting an object to an arbitary location
-	var remote_transform: RemoteTransform2D = $SmoothMotion/RemoteTransform2D
-	remote_transform.reset_position()
+#--- call this whenever teleporting an object to an arbitary location
+#--- room_start is set true when player1 calls this function in init_level()
+#--- this is so we can pass in a position to use and not have to wait for sprite's position to be set (avoiding a 1 tick camera delay when level starts)
+func reset_interpolation(room_start: bool = false) -> void:
+	if has_node("SmoothMotion/RemoteTransform2D"):
+		var remote_transform: RemoteTransform2D = $SmoothMotion/RemoteTransform2D
+		if room_start:
+			remote_transform.reset_position(position)
+		elif reset_interpolation_this_frame:
+			remote_transform.reset_position()
+			reset_interpolation_this_frame = false
 
 var objects_in_bb: Array[GMObject]
 var groups_in_bb: Array[StringName]

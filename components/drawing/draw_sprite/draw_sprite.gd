@@ -18,6 +18,7 @@ func draw_sprite(passed_position, passed_sprite, passed_frame = 0, passed_z_inde
 
 
 static func draw_sprite_ext(passed_sprite: String, subimg: int, x: int, y: int, xscale: int, yscale: int, rot, color: Color, alpha, animated_sprite: AnimatedSprite2D):
+	var before_updated_global_position: Vector2 = animated_sprite.global_position
 	animated_sprite.global_position = Vector2(x, y)
 	animated_sprite.scale.x = xscale
 	animated_sprite.rotation_degrees = -rot
@@ -30,6 +31,9 @@ static func draw_sprite_ext(passed_sprite: String, subimg: int, x: int, y: int, 
 		animated_sprite.play()
 	animated_sprite.show()
 
+	#--- set object to reset interpolation if distance moved is larger than 10 pixels
+	if abs(before_updated_global_position.x-animated_sprite.global_position.x) > 10 or abs(before_updated_global_position.y-animated_sprite.global_position.y) > 10:
+		animated_sprite.get_parent().reset_interpolation_this_frame = true
 
 func get_sprite_offset(sprite_name: String) -> Vector2:
 	var origin: Vector2 = Sprites.sprite_database[sprite_name]["origin"]

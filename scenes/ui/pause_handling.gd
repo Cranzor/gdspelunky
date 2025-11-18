@@ -42,6 +42,7 @@ func pause_button_pressed(event: InputEvent) -> void:
 		if event.is_action_pressed("start"):
 			paused = !paused
 			GmLoop.paused = paused
+			SmoothMotion.paused = paused
 			draw_pause_screen(paused)
 		if !GameSettings.new_pause_menu:
 			if paused and event.is_action_pressed("bomb"):

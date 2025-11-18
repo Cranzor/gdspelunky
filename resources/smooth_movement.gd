@@ -1,4 +1,4 @@
-class_name SmoothMotion
+#class_name SmoothMotion
 extends Node
 
 var x_velocity = 0

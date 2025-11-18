@@ -4,5 +4,5 @@
 
 [node name="SmoothMotion" type="Node"]
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="."]
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="." groups=["smooth_motion"]]
 script = ExtResource("1_v2jjv")
