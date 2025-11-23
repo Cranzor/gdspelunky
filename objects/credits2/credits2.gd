@@ -144,7 +144,7 @@ func draw():
 
 		gml.draw_set_font(global.my_font)
 		gml.draw_set_color(gml.c_yellow)
-		draw_text.draw_text(16, 16, "SPELUNKY", "spelunky", self)
+		draw_text.draw_text(16, 16, "SPELUNKY", "spelunky")
 
 	elif (draw_status == 2):
 
@@ -223,7 +223,7 @@ func draw():
 
 		gml.draw_set_color(gml.c_black)
 		gml.draw_set_alpha(fade_level)
-		gml.draw_rectangle(0, 0, 320, 240, false, self)
+		draw_rectangle.draw_rectangle(0, 0, 320, 240, false)
 		gml.draw_set_alpha(1)
 
 

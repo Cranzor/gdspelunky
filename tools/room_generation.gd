@@ -83,11 +83,12 @@ func set_up_background() -> void:
 	var level_boundaries = Vector2(int(room_size["width"]), int(room_size["height"]))
 	
 	var background_node: TextureRect = Engine.get_main_loop().get_first_node_in_group("background")
-	var image_path = "res://backgrounds/" + background_name + ".png" #---TODO: error when loading end2 room
-	var texture = Texture2D.new()
-	texture = load(image_path)
-	background_node.texture = texture
-	background_node.size = level_boundaries
+	if background_name:
+		var image_path = "res://backgrounds/" + background_name + ".png"
+		var texture = Texture2D.new()
+		texture = load(image_path)
+		background_node.texture = texture
+		background_node.size = level_boundaries
 
 
 func set_up_tiles() -> void:

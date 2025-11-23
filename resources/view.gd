@@ -9,9 +9,13 @@ class_name View
 static var level_boundaries = Vector2(500, 500) #--- placeholder
 static var border = Vector2(128, 96) #--- placeholder
 var object_following_name: String
-static var object_following: GMObject
+static var object_following: GMObject:
+	set(value):
+		object_following = value
+		if object_following: #--- update remote_transform as well if object_following is valid
+			remote_transform = value.get_node("SmoothMotion/RemoteTransform2D")
 static var viewport: Viewport
-var remote_transform: RemoteTransform2D
+static var remote_transform: RemoteTransform2D
 static var smooth_scroll_camera_vertically: bool = false
 static var smooth_scroll_target_y_pos: float
 static var smooth_scroll_starting_y_pos: float
@@ -59,8 +63,6 @@ func update_camera_pos():
 	
 	if object_following:
 		var object_position: Vector2 = object_following.position
-		if GameSettings.smooth_motion and not remote_transform:
-				remote_transform = object_following.get_node("SmoothMotion/RemoteTransform2D")
 		if GameSettings.smooth_motion:
 			object_position = remote_transform.position
 		#--- sides of the camera borders

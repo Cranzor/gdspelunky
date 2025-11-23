@@ -28,7 +28,8 @@ func step():
 	if (olmec_dead and not door_open):
 
 		door_open = true
-		var obj = gml.instance_place(640, 544, "entrance", self) #---[FLAG] don't see how this works when final_boss has no sprite/collision?
+		#var obj = gml.instance_place(640, 544, "entrance", self) #--- don't see how this works when final_boss has no sprite/collision?
+		var obj = gml.collision_point(640, 544, "entrance", 0, 0) #--- changed the above line to use collision_point. result is the same
 		gml.instance_destroy(obj)
 		gml.instance_create(640, 544, Objects.x_end, self)
 		if (not gml.collision_point(640, 560, "solid", 0, 0)):

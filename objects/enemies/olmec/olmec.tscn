@@ -1,11 +1,10 @@
-[gd_scene load_steps=18 format=4 uid="uid://coqxja7e6iscn"]
+[gd_scene load_steps=17 format=4 uid="uid://coqxja7e6iscn"]
 
 [ext_resource type="Script" uid="uid://bblou72igp5cn" path="res://objects/enemies/olmec/olmec.gd" id="1_8icyr"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_wkte4"]
 [ext_resource type="Texture2D" uid="uid://dkh1uvqv36e6" path="res://sprites/enemies/olmec/olmec_start1/olmec_start1_0.png" id="3_biby1"]
 [ext_resource type="Texture2D" uid="uid://bhq71428o3gbf" path="res://sprites/enemies/olmec/olmec_start2/olmec_start2_0.png" id="4_7dqsx"]
 [ext_resource type="Texture2D" uid="uid://m11pkhx16qwq" path="res://sprites/enemies/olmec/olmec_start3/olmec_start3_0.png" id="5_m23d7"]
-[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="6_bmtoy"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="7_8a4oi"]
 [ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="8_biby1"]
 
@@ -94,11 +93,9 @@ script = ExtResource("1_8icyr")
 animated_sprite_node = NodePath("Sprite")
 object_name = "olmec"
 
-[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_wkte4")]
+[node name="Sprite" parent="." instance=ExtResource("2_wkte4")]
 sprite_frames = SubResource("SpriteFrames_7dqsx")
 autoplay = "olmec_start1"
-centered = false
-script = ExtResource("6_bmtoy")
 sprite_info = Dictionary[StringName, ExtResource("7_8a4oi")]({
 &"olmec_start1": SubResource("Resource_bmtoy"),
 &"olmec_start2": SubResource("Resource_dbjfy"),
@@ -119,4 +116,4 @@ position = Vector2(32, 32)
 shape = SubResource("RectangleShape2D_t1rjx")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
-[node name="SmoothMotion" type="Node" parent="." instance=ExtResource("8_biby1")]
+[node name="SmoothMotion" parent="." instance=ExtResource("8_biby1")]
