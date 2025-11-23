@@ -110,7 +110,9 @@ func groups_setup(loaded_object: GMObject): #--- TODO: add "alarms" group
 
 func z_index_setup(loaded_object: GMObject):
 	var depth = object_database.object_database[loaded_object.object_name]["depth"]
-	loaded_object.z_index = clampi(-depth, RenderingServer.CANVAS_ITEM_Z_MIN + 1, RenderingServer.CANVAS_ITEM_Z_MAX) #--- adding 1 to minimum to ensure background elements are always behind
+	#--- adding 3 to minimum to ensure background elements are always behind
+	#--- -4096 is widescreen_background, -4095 is normal background, and -4094 is bg_elements
+	loaded_object.z_index = clampi(-depth, RenderingServer.CANVAS_ITEM_Z_MIN + 3, RenderingServer.CANVAS_ITEM_Z_MAX)
 	if loaded_object.object_name == "screen": #--- default values are 0. putting these higher to ensure that they draw above everything else
 		loaded_object.z_index = 2
 	elif loaded_object.object_name == "game":

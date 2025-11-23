@@ -26,6 +26,7 @@ func draw_pickup_item():
 	elif type == Type.DUMMY:
 		var pickup_item_type = global.pickup_item
 		if pickup_item_type:
+			z_index = 1
 			set_sprite(pickup_item_type)
 		else:
 			hide()

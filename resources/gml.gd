@@ -212,8 +212,9 @@ func tile_add(background,left,top,width,height,x,y,depth) -> void: #return value
 	var cur_scene = get_tree()
 	var bg_elements: Node2D = cur_scene.get_first_node_in_group("bg_elements")
 	var tile_map_layer: TileMapLayer = bg_elements.get_child(layer_number)
-	
-	tile_map_layer.z_index = clampi(-depth, RenderingServer.CANVAS_ITEM_Z_MIN + 1, RenderingServer.CANVAS_ITEM_Z_MAX) #--- adding 1 to minimum to ensure background elements are always behind
+	#--- adding 2 to minimum
+	#--- -4096 is widescreen_background, -4095 is normal background, and -4094 is bg_elements
+	tile_map_layer.z_index = clampi(-depth, RenderingServer.CANVAS_ITEM_Z_MIN + 2, RenderingServer.CANVAS_ITEM_Z_MAX)
 	
 	#coords.y -= 1
 	for i in range(0, size.y):
