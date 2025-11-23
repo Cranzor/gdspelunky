@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dygahnt1ayw4r"]
+[gd_scene load_steps=9 format=3 uid="uid://dygahnt1ayw4r"]
 
 [ext_resource type="Script" uid="uid://dtsgtvaqkitff" path="res://objects/sun_room/sun_room.gd" id="1_ohof8"]
 [ext_resource type="PackedScene" uid="uid://dq140qq6udxt3" path="res://scenes/challenge_rooms_hud.tscn" id="2_nfp54"]
@@ -15,6 +15,12 @@ animations = [{
 "speed": 30.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bkvb8"]
+size = Vector2(0, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ji1k"]
+size = Vector2(0, 0)
+
 [node name="SunRoom" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_ohof8")
 animated_sprite_node = NodePath("Sprite")
@@ -25,8 +31,18 @@ script = ExtResource("3_dldmp")
 type = 2
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("4_4dkao")]
+visible = false
 sprite_frames = SubResource("SpriteFrames_4dkao")
 centered = false
 script = ExtResource("5_bkvb8")
 
-[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_bkvb8")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+shape = SubResource("RectangleShape2D_7ji1k")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)

@@ -1,12 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://doyusak5y2nih"]
+[gd_scene load_steps=12 format=3 uid="uid://doyusak5y2nih"]
 
 [ext_resource type="Script" uid="uid://bbog20to8dxk1" path="res://objects/effects/rubble_dark_small/rubble_dark_small.gd" id="1_r4wlk"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_2yc4t"]
 [ext_resource type="Texture2D" uid="uid://budygf7n5ybs6" path="res://sprites/effects/rubble_dark_small/rubble_dark_small_0.png" id="3_io7ci"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_fw5j2"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_c5gci"]
+[ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="6_io7ci"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_2yc4t"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_fw5j2"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -18,7 +19,7 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Image" id="Image_io7ci"]
+[sub_resource type="Image" id="Image_c5gci"]
 data = {
 "data": PackedByteArray(11, 20, 30, 0, 11, 20, 30, 255, 11, 20, 30, 255, 11, 20, 30, 0, 11, 20, 30, 255, 17, 83, 147, 255, 17, 83, 147, 255, 11, 20, 30, 255, 11, 20, 30, 255, 17, 50, 62, 255, 17, 50, 62, 255, 11, 20, 30, 255, 11, 20, 30, 0, 11, 20, 30, 255, 11, 20, 30, 255, 11, 20, 30, 0),
 "format": "RGBA8",
@@ -27,17 +28,17 @@ data = {
 "width": 4
 }
 
-[sub_resource type="Resource" id="Resource_fw5j2"]
+[sub_resource type="Resource" id="Resource_5bn4d"]
 script = ExtResource("5_c5gci")
 origin = Vector2(4, 4)
 containing_box = Rect2(0, 0, 4, 4)
 precise = true
-images = Array[Image]([SubResource("Image_io7ci")])
+images = Array[Image]([SubResource("Image_c5gci")])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_c5gci"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mwnsl"]
 size = Vector2(4, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5bn4d"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jxvcc"]
 size = Vector2(8, 8)
 
 [node name="RubbleDarkSmall" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -47,19 +48,19 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "rubble_dark_small"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_2yc4t")]
-sprite_frames = SubResource("SpriteFrames_2yc4t")
+sprite_frames = SubResource("SpriteFrames_fw5j2")
 autoplay = "rubble_dark_small"
 centered = false
 offset = Vector2(-4, -4)
 script = ExtResource("4_fw5j2")
 sprite_info = Dictionary[StringName, ExtResource("5_c5gci")]({
-&"rubble_dark_small": SubResource("Resource_fw5j2")
+&"rubble_dark_small": SubResource("Resource_5bn4d")
 })
 default_animation = &"rubble_dark_small"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, -2)
-shape = SubResource("RectangleShape2D_c5gci")
+shape = SubResource("RectangleShape2D_mwnsl")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -67,7 +68,7 @@ collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 position = Vector2(-2, -2)
-shape = SubResource("RectangleShape2D_5bn4d")
+shape = SubResource("RectangleShape2D_jxvcc")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
-[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]
+[node name="SmoothMotion" type="Node" parent="." instance=ExtResource("6_io7ci")]

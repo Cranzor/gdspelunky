@@ -1,13 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://b3ird0fcn0nef"]
+[gd_scene load_steps=13 format=3 uid="uid://b3ird0fcn0nef"]
 
 [ext_resource type="Script" uid="uid://dlaawtal00ws1" path="res://objects/blocks/temple_fake/temple_fake.gd" id="1_p65r6"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_n4c1e"]
 [ext_resource type="Texture2D" uid="uid://drvw1otuoyei2" path="res://sprites/blocks/temple/temple/temple_0.png" id="3_umrj6"]
+[ext_resource type="Script" uid="uid://bjy8ydal68lbj" path="res://components/cave_top.gd" id="4_thpa5"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_eilao"]
 [ext_resource type="PackedScene" uid="uid://oy6m7b600a1u" path="res://components/cave_top.tscn" id="5_umrj6"]
 [ext_resource type="Texture2D" uid="uid://coruvqw80pybl" path="res://backgrounds/bg_cave_top4.png" id="6_4cmxn"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="7_eilao"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_n4c1e"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_cvbvy"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -19,14 +21,14 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_umrj6"]
+[sub_resource type="Resource" id="Resource_n2eht"]
 script = ExtResource("5_eilao")
 containing_box = Rect2(0, 0, 16, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4cmxn"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mu7qn"]
 size = Vector2(16, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_eilao"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0skhf"]
 size = Vector2(32, 32)
 
 [node name="TempleFake" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -35,17 +37,30 @@ script = ExtResource("1_p65r6")
 animated_sprite_node = NodePath("Sprite")
 object_name = "temple_fake"
 
-[node name="Sprite" parent="." instance=ExtResource("2_n4c1e")]
-sprite_frames = SubResource("SpriteFrames_n4c1e")
+[node name="CaveTop" type="Sprite2D" parent="." instance=ExtResource("5_umrj6")]
+visible = false
+z_index = -3
+z_as_relative = false
+position = Vector2(0, -16)
+texture = ExtResource("6_4cmxn")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+script = ExtResource("4_thpa5")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_n4c1e")]
+sprite_frames = SubResource("SpriteFrames_cvbvy")
 autoplay = "temple"
+centered = false
+script = ExtResource("7_eilao")
 sprite_info = Dictionary[StringName, ExtResource("5_eilao")]({
-&"temple": SubResource("Resource_umrj6")
+&"temple": SubResource("Resource_n2eht")
 })
 default_animation = &"temple"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_4cmxn")
+shape = SubResource("RectangleShape2D_mu7qn")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -53,10 +68,5 @@ collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_eilao")
+shape = SubResource("RectangleShape2D_0skhf")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
-
-[node name="CaveTop" parent="." instance=ExtResource("5_umrj6")]
-texture = ExtResource("6_4cmxn")
-
-[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

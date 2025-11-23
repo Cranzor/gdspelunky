@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://crm2j0n1x230i"]
+[gd_scene load_steps=15 format=4 uid="uid://crm2j0n1x230i"]
 
 [ext_resource type="Script" uid="uid://ct5ifhn8ibr4" path="res://objects/items/whip/whip.gd" id="1_xindk"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_ewm4r"]
@@ -6,8 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://ch5t2bcthnnxg" path="res://sprites/items/weapons/whip_right/whip_right_0.png" id="4_8qdim"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="5_nuhud"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="6_m8150"]
+[ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="7_3ueyo"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ewm4r"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_8qdim"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -27,25 +28,9 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Image" id="Image_3ueyo"]
-data = {
-"data": PackedByteArray("AIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCgj/EgoIABIKCAASCggAEgoIABIKCP8SCgj/EgoI/xIKCP8SCggAEgoIABIKCAASCggAEgoIABIKCP8SCgj/jlkl/xIKCP8SCggAEgoIABIKCACOWSX/jlkl/45ZJf+OWSX/EgoI/xIKCP8SCgj/EgoI/xIKCP+OWSX/jlkl/2MvHf8SCgj/EgoIABIKCAASCggAEgoI/xIKCP8SCgj/EgoI/45ZJf+OWSX/jlkl/45ZJf+OWSX/EgoI/xIKCP8SCgj/EgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCgj/EgoI/xIKCP8SCgj/EgoI/xIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAA=="),
-"format": "RGBA8",
-"height": 16,
-"mipmaps": false,
-"width": 16
-}
-
-[sub_resource type="Resource" id="Resource_8qdim"]
-script = ExtResource("6_m8150")
-origin = Vector2(8, 8)
-containing_box = Rect2(0, 6, 13, 5)
-precise = true
-images = Array[Image]([SubResource("Image_3ueyo")])
-
 [sub_resource type="Image" id="Image_nuhud"]
 data = {
-"data": PackedByteArray("AIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCP8SCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCP+OWSX/EgoI/xIKCP8SCggAEgoIABIKCAASCggAEgoIABIKCP8SCgj/EgoI/xIKCP8SCggAEgoIABIKCAASCgj/Yy8d/45ZJf+OWSX/EgoI/xIKCP8SCgj/EgoI/xIKCP+OWSX/jlkl/45ZJf+OWSX/EgoIABIKCAASCggAEgoIABIKCP8SCgj/EgoI/45ZJf+OWSX/jlkl/45ZJf+OWSX/EgoI/xIKCP8SCgj/EgoI/xIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCgj/EgoI/xIKCP8SCgj/EgoI/xIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAAAgAAAAIAAAACAAAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAA=="),
+"data": PackedByteArray("AIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCgj/EgoIABIKCAASCggAEgoIABIKCP8SCgj/EgoI/xIKCP8SCggAEgoIABIKCAASCggAEgoIABIKCP8SCgj/jlkl/xIKCP8SCggAEgoIABIKCACOWSX/jlkl/45ZJf+OWSX/EgoI/xIKCP8SCgj/EgoI/xIKCP+OWSX/jlkl/2MvHf8SCgj/EgoIABIKCAASCggAEgoI/xIKCP8SCgj/EgoI/45ZJf+OWSX/jlkl/45ZJf+OWSX/EgoI/xIKCP8SCgj/EgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCgj/EgoI/xIKCP8SCgj/EgoI/xIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAA=="),
 "format": "RGBA8",
 "height": 16,
 "mipmaps": false,
@@ -55,14 +40,30 @@ data = {
 [sub_resource type="Resource" id="Resource_m8150"]
 script = ExtResource("6_m8150")
 origin = Vector2(8, 8)
-containing_box = Rect2(3, 6, 13, 5)
+containing_box = Rect2(0, 6, 13, 5)
 precise = true
 images = Array[Image]([SubResource("Image_nuhud")])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sbrjw"]
+[sub_resource type="Image" id="Image_sbrjw"]
+data = {
+"data": PackedByteArray("AIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCP8SCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCP+OWSX/EgoI/xIKCP8SCggAEgoIABIKCAASCggAEgoIABIKCP8SCgj/EgoI/xIKCP8SCggAEgoIABIKCAASCgj/Yy8d/45ZJf+OWSX/EgoI/xIKCP8SCgj/EgoI/xIKCP+OWSX/jlkl/45ZJf+OWSX/EgoIABIKCAASCggAEgoIABIKCP8SCgj/EgoI/45ZJf+OWSX/jlkl/45ZJf+OWSX/EgoI/xIKCP8SCgj/EgoI/xIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCgj/EgoI/xIKCP8SCgj/EgoI/xIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAAAgAAAAIAAAACAAAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAA=="),
+"format": "RGBA8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="Resource" id="Resource_cw2k8"]
+script = ExtResource("6_m8150")
+origin = Vector2(8, 8)
+containing_box = Rect2(3, 6, 13, 5)
+precise = true
+images = Array[Image]([SubResource("Image_sbrjw")])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iupkg"]
 size = Vector2(13, 5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cw2k8"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p16ej"]
 size = Vector2(26, 10)
 
 [node name="Whip" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -72,20 +73,20 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "whip"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_ewm4r")]
-sprite_frames = SubResource("SpriteFrames_ewm4r")
+sprite_frames = SubResource("SpriteFrames_8qdim")
 autoplay = "whip_right"
 centered = false
 offset = Vector2(-8, -8)
 script = ExtResource("5_nuhud")
 sprite_info = Dictionary[StringName, ExtResource("6_m8150")]({
-&"whip_left": SubResource("Resource_m8150"),
-&"whip_right": SubResource("Resource_8qdim")
+&"whip_left": SubResource("Resource_cw2k8"),
+&"whip_right": SubResource("Resource_m8150")
 })
 default_animation = &"whip_right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1.5, 0.5)
-shape = SubResource("RectangleShape2D_sbrjw")
+shape = SubResource("RectangleShape2D_iupkg")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -93,7 +94,7 @@ collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 position = Vector2(-1.5, 0.5)
-shape = SubResource("RectangleShape2D_cw2k8")
+shape = SubResource("RectangleShape2D_p16ej")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
-[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]
+[node name="SmoothMotion" type="Node" parent="." instance=ExtResource("7_3ueyo")]

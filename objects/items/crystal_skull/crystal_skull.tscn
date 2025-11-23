@@ -1,12 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://ekhdkbbts830"]
+[gd_scene load_steps=11 format=3 uid="uid://ekhdkbbts830"]
 
 [ext_resource type="Script" uid="uid://c3ukbrdo1hcel" path="res://objects/items/crystal_skull/crystal_skull.gd" id="1_45s6p"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_ed3cx"]
 [ext_resource type="Texture2D" uid="uid://cnp0nsb38dsuy" path="res://sprites/items/treasures/crystal_skull/crystal_skull_0.png" id="3_sewne"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_vqm21"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_ydew1"]
+[ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="6_sewne"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ed3cx"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_vqm21"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -18,17 +19,15 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_sewne"]
+[sub_resource type="Resource" id="Resource_ydew1"]
 script = ExtResource("5_ydew1")
 origin = Vector2(8, 12)
 containing_box = Rect2(2, 1, 12, 15)
-precise = false
-images = Array[Image]([])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vqm21"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5s8xd"]
 size = Vector2(12, 15)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ydew1"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ellp6"]
 size = Vector2(24, 30)
 
 [node name="CrystalSkull" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -38,19 +37,19 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "crystal_skull"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_ed3cx")]
-sprite_frames = SubResource("SpriteFrames_ed3cx")
+sprite_frames = SubResource("SpriteFrames_vqm21")
 autoplay = "crystal_skull"
 centered = false
 offset = Vector2(-8, -12)
 script = ExtResource("4_vqm21")
 sprite_info = Dictionary[StringName, ExtResource("5_ydew1")]({
-&"crystal_skull": SubResource("Resource_sewne")
+&"crystal_skull": SubResource("Resource_ydew1")
 })
 default_animation = &"crystal_skull"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -3.5)
-shape = SubResource("RectangleShape2D_vqm21")
+shape = SubResource("RectangleShape2D_5s8xd")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -58,7 +57,7 @@ collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 position = Vector2(0, -3.5)
-shape = SubResource("RectangleShape2D_ydew1")
+shape = SubResource("RectangleShape2D_ellp6")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
-[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]
+[node name="SmoothMotion" type="Node" parent="." instance=ExtResource("6_sewne")]

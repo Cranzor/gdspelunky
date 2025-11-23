@@ -1,12 +1,13 @@
-[gd_scene load_steps=11 format=4 uid="uid://b6ej1ad6pv2mx"]
+[gd_scene load_steps=12 format=4 uid="uid://b6ej1ad6pv2mx"]
 
 [ext_resource type="Script" uid="uid://lr256i4r4bcn" path="res://objects/collectibles/rope_bag/rope_bag.gd" id="1_w3wbr"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_sh25r"]
 [ext_resource type="Texture2D" uid="uid://dp3dhpu2bp7f8" path="res://sprites/items/weapons/rope_end/rope_end_0.png" id="3_qhj3h"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_6rtdc"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_66hfs"]
+[ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="6_qhj3h"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_sh25r"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_6rtdc"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -18,7 +19,7 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Image" id="Image_qhj3h"]
+[sub_resource type="Image" id="Image_66hfs"]
 data = {
 "data": PackedByteArray("EgoIABIKCAASCgj/EgoI/8h6LP8SCgj/EgoIABIKCAASCggAEgoI/2MvHf8SCgj/yHos/xIKCP8SCgj/EgoIABIKCP9jLx3/EgoI/xIKCP+OWSX/EgoI/45ZJf8SCgj/Yy8d/xIKCP+OWSX/yHos/xIKCP9jLx3/yHos/xIKCP8SCgj/yHos/xIKCP8SCgj/Yy8d/xIKCP/Ieiz/EgoI/xIKCP+OWSX/Yy8d/xIKCP8SCgj/yHos/45ZJf8SCgj/EgoIABIKCP+OWSX/yHos/8h6LP+OWSX/EgoI/xIKCAASCggAEgoIABIKCP8SCgj/EgoI/xIKCP8SCggAEgoIAA=="),
 "format": "RGBA8",
@@ -27,17 +28,17 @@ data = {
 "width": 8
 }
 
-[sub_resource type="Resource" id="Resource_6rtdc"]
+[sub_resource type="Resource" id="Resource_ud7dj"]
 script = ExtResource("5_66hfs")
 origin = Vector2(4, 4)
 containing_box = Rect2(0, 0, 8, 8)
 precise = true
-images = Array[Image]([SubResource("Image_qhj3h")])
+images = Array[Image]([SubResource("Image_66hfs")])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_66hfs"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_03sxr"]
 size = Vector2(8, 8)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ud7dj"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_86abm"]
 size = Vector2(16, 16)
 
 [node name="RopeBag" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -47,25 +48,25 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "rope_bag"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_sh25r")]
-sprite_frames = SubResource("SpriteFrames_sh25r")
+sprite_frames = SubResource("SpriteFrames_6rtdc")
 autoplay = "rope_end"
 centered = false
 offset = Vector2(-4, -4)
 script = ExtResource("4_6rtdc")
 sprite_info = Dictionary[StringName, ExtResource("5_66hfs")]({
-&"rope_end": SubResource("Resource_6rtdc")
+&"rope_end": SubResource("Resource_ud7dj")
 })
 default_animation = &"rope_end"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_66hfs")
+shape = SubResource("RectangleShape2D_03sxr")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-shape = SubResource("RectangleShape2D_ud7dj")
+shape = SubResource("RectangleShape2D_86abm")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
-[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]
+[node name="SmoothMotion" type="Node" parent="." instance=ExtResource("6_qhj3h")]

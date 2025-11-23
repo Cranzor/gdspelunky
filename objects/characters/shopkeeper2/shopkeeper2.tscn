@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bcajqtq8pigx5"]
+[gd_scene load_steps=12 format=3 uid="uid://bcajqtq8pigx5"]
 
 [ext_resource type="Script" uid="uid://btgrk00uxc5wa" path="res://objects/characters/shopkeeper2/shopkeeper2.gd" id="1_t3s5w"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_nqjhq"]
@@ -6,8 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://dyrnewh47fhyb" path="res://sprites/enemies/shopkeeper/shop_left/shop_left_shopkeeper.png" id="4_mcdsi"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="5_pfybu"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="6_yy0lu"]
+[ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="7_pcv3y"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_nqjhq"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_mcdsi"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -22,17 +23,14 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_pcv3y"]
+[sub_resource type="Resource" id="Resource_pfybu"]
 script = ExtResource("6_yy0lu")
-origin = Vector2(0, 0)
 containing_box = Rect2(2, 1, 12, 15)
-precise = false
-images = Array[Image]([])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mcdsi"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yy0lu"]
 size = Vector2(12, 15)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pfybu"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8sv7d"]
 size = Vector2(24, 30)
 
 [node name="Shopkeeper2" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -42,18 +40,18 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "shopkeeper2"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_nqjhq")]
-sprite_frames = SubResource("SpriteFrames_nqjhq")
+sprite_frames = SubResource("SpriteFrames_mcdsi")
 autoplay = "shop_left"
 centered = false
 script = ExtResource("5_pfybu")
 sprite_info = Dictionary[StringName, ExtResource("6_yy0lu")]({
-&"shop_left": SubResource("Resource_pcv3y")
+&"shop_left": SubResource("Resource_pfybu")
 })
 default_animation = &"shop_left"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, 8.5)
-shape = SubResource("RectangleShape2D_mcdsi")
+shape = SubResource("RectangleShape2D_yy0lu")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -61,7 +59,7 @@ collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 position = Vector2(8, 8.5)
-shape = SubResource("RectangleShape2D_pfybu")
+shape = SubResource("RectangleShape2D_8sv7d")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
-[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]
+[node name="SmoothMotion" type="Node" parent="." instance=ExtResource("7_pcv3y")]

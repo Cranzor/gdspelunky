@@ -1,10 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://bu3vj8g7r5g0a"]
+[gd_scene load_steps=8 format=3 uid="uid://bu3vj8g7r5g0a"]
 
 [ext_resource type="Script" uid="uid://cb1ohuhcpkkhv" path="res://objects/basis/detritus/detritus.gd" id="1_eyl2a"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_i17r1"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="3_to3cu"]
+[ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="4_to3cu"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_i17r1"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_4wjoc"]
 resource_local_to_scene = true
 animations = [{
 "frames": [],
@@ -13,14 +14,32 @@ animations = [{
 "speed": 30.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l2kiv"]
+size = Vector2(0, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ta6ho"]
+size = Vector2(0, 0)
+
 [node name="Detritus" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_eyl2a")
 animated_sprite_node = NodePath("Sprite")
 object_name = "detritus"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_i17r1")]
-sprite_frames = SubResource("SpriteFrames_i17r1")
+visible = false
+sprite_frames = SubResource("SpriteFrames_4wjoc")
 centered = false
 script = ExtResource("3_to3cu")
 
-[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_l2kiv")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+shape = SubResource("RectangleShape2D_ta6ho")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[node name="SmoothMotion" type="Node" parent="." instance=ExtResource("4_to3cu")]

@@ -1,15 +1,17 @@
-[gd_scene load_steps=15 format=3 uid="uid://fiv5q4nn2w03"]
+[gd_scene load_steps=17 format=3 uid="uid://fiv5q4nn2w03"]
 
 [ext_resource type="Script" uid="uid://bf5rjxmardth0" path="res://objects/blocks/dark/dark.gd" id="1_8sbew"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_uj35o"]
 [ext_resource type="Texture2D" uid="uid://dk7qncq1dyosr" path="res://sprites/blocks/dark/dark/dark_0.png" id="3_145kk"]
 [ext_resource type="Texture2D" uid="uid://cgqa3s5t7j11x" path="res://sprites/blocks/dark/dark_gold/dark_gold_0.png" id="4_2eoot"]
+[ext_resource type="Script" uid="uid://bjy8ydal68lbj" path="res://components/cave_top.gd" id="4_f2wvv"]
 [ext_resource type="Texture2D" uid="uid://jcsunmkelqha" path="res://sprites/blocks/dark/dark_gold_big/dark_gold_big_0.png" id="5_xq7hr"]
 [ext_resource type="PackedScene" uid="uid://oy6m7b600a1u" path="res://components/cave_top.tscn" id="7_145kk"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="7_gkc13"]
 [ext_resource type="Texture2D" uid="uid://bk8jqt0tc453q" path="res://backgrounds/bg_cave_top3.png" id="8_2eoot"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="9_xq7hr"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_uj35o"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_drgdd"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -37,22 +39,22 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_145kk"]
+[sub_resource type="Resource" id="Resource_gkc13"]
 script = ExtResource("7_gkc13")
 containing_box = Rect2(0, 0, 16, 16)
 
-[sub_resource type="Resource" id="Resource_2eoot"]
+[sub_resource type="Resource" id="Resource_143gf"]
 script = ExtResource("7_gkc13")
 containing_box = Rect2(0, 0, 16, 16)
 
-[sub_resource type="Resource" id="Resource_xq7hr"]
+[sub_resource type="Resource" id="Resource_nnaun"]
 script = ExtResource("7_gkc13")
 containing_box = Rect2(0, 0, 16, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_drgdd"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o48i2"]
 size = Vector2(16, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gkc13"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wbkcd"]
 size = Vector2(32, 32)
 
 [node name="Dark" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -61,20 +63,32 @@ script = ExtResource("1_8sbew")
 animated_sprite_node = NodePath("Sprite")
 object_name = "dark"
 
-[node name="Sprite" parent="." instance=ExtResource("2_uj35o")]
-sprite_frames = SubResource("SpriteFrames_uj35o")
-animation = &"dark"
+[node name="CaveTop" type="Sprite2D" parent="." instance=ExtResource("7_145kk")]
+visible = false
+z_index = -3
+z_as_relative = false
+position = Vector2(0, -16)
+texture = ExtResource("8_2eoot")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+script = ExtResource("4_f2wvv")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_uj35o")]
+sprite_frames = SubResource("SpriteFrames_drgdd")
 autoplay = "dark"
+centered = false
+script = ExtResource("9_xq7hr")
 sprite_info = Dictionary[StringName, ExtResource("7_gkc13")]({
-&"dark": SubResource("Resource_145kk"),
-&"dark_gold": SubResource("Resource_2eoot"),
-&"dark_gold_big": SubResource("Resource_xq7hr")
+&"dark": SubResource("Resource_gkc13"),
+&"dark_gold": SubResource("Resource_143gf"),
+&"dark_gold_big": SubResource("Resource_nnaun")
 })
 default_animation = &"dark"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_drgdd")
+shape = SubResource("RectangleShape2D_o48i2")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -82,8 +96,5 @@ collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_gkc13")
+shape = SubResource("RectangleShape2D_wbkcd")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
-
-[node name="CaveTop" parent="." instance=ExtResource("7_145kk")]
-texture = ExtResource("8_2eoot")

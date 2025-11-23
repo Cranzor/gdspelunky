@@ -76,22 +76,16 @@ animations = [{
 script = ExtResource("16_kuxs2")
 origin = Vector2(8, 8)
 containing_box = Rect2(2, 0, 12, 16)
-precise = false
-images = Array[Image]([])
 
 [sub_resource type="Resource" id="Resource_00myo"]
 script = ExtResource("16_kuxs2")
 origin = Vector2(8, 8)
 containing_box = Rect2(2, 0, 12, 16)
-precise = false
-images = Array[Image]([])
 
 [sub_resource type="Resource" id="Resource_3idii"]
 script = ExtResource("16_kuxs2")
 origin = Vector2(8, 8)
 containing_box = Rect2(0, 0, 15, 16)
-precise = false
-images = Array[Image]([])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g8asl"]
 size = Vector2(12, 16)
@@ -130,4 +124,3 @@ shape = SubResource("RectangleShape2D_n4cmi")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
-[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

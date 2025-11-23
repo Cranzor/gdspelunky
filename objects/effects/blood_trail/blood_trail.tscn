@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://n4f87aplw0yx"]
+[gd_scene load_steps=24 format=4 uid="uid://n4f87aplw0yx"]
 
 [ext_resource type="Script" uid="uid://bo3shi3hitppi" path="res://objects/effects/blood_trail/blood_trail.gd" id="1_efs4t"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_ytuma"]
@@ -11,8 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://bqhu343527wes" path="res://sprites/effects/blood_trail/blood_trail_6.png" id="9_wc7xe"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="10_btgvx"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="11_mqqfv"]
+[ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="12_1ehls"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ytuma"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_k26g8"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -42,7 +43,7 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Image" id="Image_1ehls"]
+[sub_resource type="Image" id="Image_vid4r"]
 data = {
 "data": PackedByteArray("wAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAP/AAAD/wAAA/8AAAADAAAAAwAAAAMAAAADAAAD/wAAA/8AAAP/AAAD/wAAA/8AAAADAAAAAgAAAAIAAAP/AAAD/wAAA/8AAAP+AAAD/gAAAAIAAAACAAAAAgAAAAIAAAP+AAAD/gAAA/0AAAP9AAAAAQAAAAIAAAACAAAAAgAAAAEAAAP9AAAD/QAAAAEAAAABAAAAAgAAAAIAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAACAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAA=="),
 "format": "RGBA8",
@@ -51,7 +52,7 @@ data = {
 "width": 8
 }
 
-[sub_resource type="Image" id="Image_k26g8"]
+[sub_resource type="Image" id="Image_06dbu"]
 data = {
 "data": PackedByteArray("wAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAIAAAADAAAAAwAAAAMAAAP/AAAD/wAAA/8AAAACAAAAAgAAAAMAAAP/AAAD/wAAA/8AAAP/AAAD/gAAA/4AAAACAAAAAgAAA/8AAAP/AAAD/wAAA/8AAAP+AAAD/gAAA/4AAAACAAAAAQAAA/4AAAP+AAAD/gAAA/4AAAP9AAAD/QAAAAEAAAABAAAAAgAAAAEAAAP9AAAD/gAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAA=="),
 "format": "RGBA8",
@@ -60,7 +61,7 @@ data = {
 "width": 8
 }
 
-[sub_resource type="Image" id="Image_vid4r"]
+[sub_resource type="Image" id="Image_hl0oi"]
 data = {
 "data": PackedByteArray("wAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAIAAAADAAAAAwAAAAMAAAP/AAAD/wAAA/8AAAACAAAAAgAAAAMAAAADAAAD/wAAA/8AAAP/AAAD/gAAA/4AAAACAAAAAwAAA/8AAAP/AAAD/wAAA/4AAAP+AAAD/gAAAAIAAAABAAAD/gAAA/4AAAP+AAAD/gAAA/0AAAP9AAAAAQAAAAEAAAACAAAAAQAAA/4AAAP9AAAD/QAAAAEAAAABAAAAAQAAAAEAAAABAAAAAgAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAACAAAAAQAAAAEAAAABAAAAAQAAAAA=="),
 "format": "RGBA8",
@@ -69,7 +70,7 @@ data = {
 "width": 8
 }
 
-[sub_resource type="Image" id="Image_06dbu"]
+[sub_resource type="Image" id="Image_dxqh0"]
 data = {
 "data": PackedByteArray("wAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAD/wAAA/8AAAADAAAAAwAAAAMAAAADAAAAAwAAA/8AAAP/AAAD/wAAA/8AAAACAAAAAwAAAAMAAAP/AAAD/wAAA/8AAAP/AAAD/gAAA/4AAAACAAAAAgAAA/8AAAP/AAAD/wAAA/4AAAP9AAAD/QAAAAIAAAACAAAAAgAAA/4AAAP+AAAD/QAAA/0AAAABAAAAAgAAAAIAAAACAAAAAgAAAAIAAAABAAAAAQAAAAEAAAACAAAAAgAAAAIAAAACAAAAAgAAAAEAAAABAAAAAQAAAAA=="),
 "format": "RGBA8",
@@ -78,7 +79,7 @@ data = {
 "width": 8
 }
 
-[sub_resource type="Image" id="Image_hl0oi"]
+[sub_resource type="Image" id="Image_wc7xe"]
 data = {
 "data": PackedByteArray("wAAAAMAAAADAAAAAgAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAACAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAA/4AAAP/AAAD/wAAA/8AAAADAAAAAwAAAAMAAAP/AAAD/wAAA/8AAAP+AAAD/gAAAAIAAAADAAAAAwAAAAIAAAP+AAAD/gAAA/4AAAACAAAAAgAAAAMAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAA=="),
 "format": "RGBA8",
@@ -87,7 +88,7 @@ data = {
 "width": 8
 }
 
-[sub_resource type="Image" id="Image_dxqh0"]
+[sub_resource type="Image" id="Image_btgvx"]
 data = {
 "data": PackedByteArray("wAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAD/wAAA/8AAAP/AAAAAwAAAAMAAAACAAAAAgAAAAIAAAP+AAAD/gAAA/4AAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAA=="),
 "format": "RGBA8",
@@ -96,7 +97,7 @@ data = {
 "width": 8
 }
 
-[sub_resource type="Image" id="Image_wc7xe"]
+[sub_resource type="Image" id="Image_mqqfv"]
 data = {
 "data": PackedByteArray("wAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAA/8AAAADAAAAAwAAAAMAAAACAAAAAgAAAAIAAAACAAAD/gAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAA=="),
 "format": "RGBA8",
@@ -105,17 +106,17 @@ data = {
 "width": 8
 }
 
-[sub_resource type="Resource" id="Resource_btgvx"]
+[sub_resource type="Resource" id="Resource_mypgy"]
 script = ExtResource("11_mqqfv")
 origin = Vector2(4, 4)
 containing_box = Rect2(0, 1, 7, 5)
 precise = true
-images = Array[Image]([SubResource("Image_1ehls"), SubResource("Image_k26g8"), SubResource("Image_vid4r"), SubResource("Image_06dbu"), SubResource("Image_hl0oi"), SubResource("Image_dxqh0"), SubResource("Image_wc7xe")])
+images = Array[Image]([SubResource("Image_vid4r"), SubResource("Image_06dbu"), SubResource("Image_hl0oi"), SubResource("Image_dxqh0"), SubResource("Image_wc7xe"), SubResource("Image_btgvx"), SubResource("Image_mqqfv")])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mqqfv"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n6klr"]
 size = Vector2(7, 5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mypgy"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bd785"]
 size = Vector2(14, 10)
 
 [node name="BloodTrail" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -125,19 +126,19 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "blood_trail"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_ytuma")]
-sprite_frames = SubResource("SpriteFrames_ytuma")
+sprite_frames = SubResource("SpriteFrames_k26g8")
 autoplay = "blood_trail"
 centered = false
 offset = Vector2(-4, -4)
 script = ExtResource("10_btgvx")
 sprite_info = Dictionary[StringName, ExtResource("11_mqqfv")]({
-&"blood_trail": SubResource("Resource_btgvx")
+&"blood_trail": SubResource("Resource_mypgy")
 })
 default_animation = &"blood_trail"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, -0.5)
-shape = SubResource("RectangleShape2D_mqqfv")
+shape = SubResource("RectangleShape2D_n6klr")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -145,7 +146,7 @@ collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 position = Vector2(-0.5, -0.5)
-shape = SubResource("RectangleShape2D_mypgy")
+shape = SubResource("RectangleShape2D_bd785")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
-[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]
+[node name="SmoothMotion" type="Node" parent="." instance=ExtResource("12_1ehls")]

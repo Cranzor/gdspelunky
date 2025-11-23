@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://bv00yotvshpk4"]
+[gd_scene load_steps=23 format=4 uid="uid://bv00yotvshpk4"]
 
 [ext_resource type="Script" uid="uid://bb0apgctkmsvw" path="res://objects/items/flare/flare.gd" id="1_kgxyb"]
 [ext_resource type="PackedScene" uid="uid://w6jxjbgfs6na" path="res://components/drawing/draw_circle/dark_level_circle.tscn" id="2_hsv7l"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://b35llggffeeax" path="res://sprites/other/intro/flare/flare_1.png" id="11_of2p6"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="12_2td2q"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="13_tx1cy"]
+[ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="14_als37"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ttmrw"]
 shader = ExtResource("3_lryyf")
@@ -53,7 +54,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_nxska"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_of2p6"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -68,7 +69,7 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Image" id="Image_als37"]
+[sub_resource type="Image" id="Image_2td2q"]
 data = {
 "data": PackedByteArray("/0BAAP9AQAD/QEAA/0BA//9AQP//QEAA/0BAAP9AQAD/QEAA/0BA//9AQP//wMD//8DA//9AQP//QED//0BAAP9AQAD/QED//8DA////QP///0D//8DA//9AQP//QEAA/0BA///AwP///0D//////////////0D//8DA//9AQP//QED//8DA////QP//////////////QP//wMD//0BA//9AQAD/QED//8DA////QP///0D//8DA//9AQP//QEAA/0BAAP9AQP//QED//8DA///AwP//QED//0BA//9AQAD/QEAA/0BAAP9AQAD/QED//0BA//9AQAD/QEAA/0BAAA=="),
 "format": "RGBA8",
@@ -77,7 +78,7 @@ data = {
 "width": 8
 }
 
-[sub_resource type="Image" id="Image_of2p6"]
+[sub_resource type="Image" id="Image_tx1cy"]
 data = {
 "data": PackedByteArray("/0BAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAP9AQAD/QED//0BA//9AQAD/QEAA/0BAAP9AQAD/QEAA/0BA///AwP//wMD//0BA//9AQAD/QEAA/0BAAP9AQP//wMD/////////////wMD//0BA//9AQAD/QEAA/0BA///AwP/////////////AwP//QED//0BAAP9AQAD/QEAA/0BA///AwP//wMD//0BA//9AQAD/QEAA/0BAAP9AQAD/QEAA/0BA//9AQP//QEAA/0BAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAA=="),
 "format": "RGBA8",
@@ -86,17 +87,17 @@ data = {
 "width": 8
 }
 
-[sub_resource type="Resource" id="Resource_2td2q"]
+[sub_resource type="Resource" id="Resource_roli2"]
 script = ExtResource("13_tx1cy")
 origin = Vector2(4, 4)
 containing_box = Rect2(0, 0, 8, 8)
 precise = true
-images = Array[Image]([SubResource("Image_als37"), SubResource("Image_of2p6")])
+images = Array[Image]([SubResource("Image_2td2q"), SubResource("Image_tx1cy")])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tx1cy"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xsw0h"]
 size = Vector2(8, 8)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_roli2"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_the3c"]
 size = Vector2(16, 16)
 
 [node name="Flare" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -116,25 +117,25 @@ script = ExtResource("8_nxska")
 radius = 96
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("9_nxska")]
-sprite_frames = SubResource("SpriteFrames_nxska")
+sprite_frames = SubResource("SpriteFrames_of2p6")
 autoplay = "flare"
 centered = false
 offset = Vector2(-4, -4)
 script = ExtResource("12_2td2q")
 sprite_info = Dictionary[StringName, ExtResource("13_tx1cy")]({
-&"flare": SubResource("Resource_2td2q")
+&"flare": SubResource("Resource_roli2")
 })
 default_animation = &"flare"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_tx1cy")
+shape = SubResource("RectangleShape2D_xsw0h")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-shape = SubResource("RectangleShape2D_roli2")
+shape = SubResource("RectangleShape2D_the3c")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
-[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]
+[node name="SmoothMotion" type="Node" parent="." instance=ExtResource("14_als37")]

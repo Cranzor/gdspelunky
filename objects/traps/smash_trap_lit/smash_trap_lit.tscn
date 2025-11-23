@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://utxug1o4cr87"]
+[gd_scene load_steps=24 format=3 uid="uid://utxug1o4cr87"]
 
 [ext_resource type="Script" uid="uid://g4uv7akg7dqf" path="res://objects/traps/smash_trap_lit/smash_trap_lit.gd" id="1_ufpoj"]
 [ext_resource type="PackedScene" uid="uid://w6jxjbgfs6na" path="res://components/drawing/draw_circle/dark_level_circle.tscn" id="2_2cw15"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://coje7u6or3a72" path="res://sprites/traps/smash_trap_lit/smash_trap_lit_4.png" id="14_8b4ey"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="15_nh38g"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="16_q5s0g"]
+[ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="17_1p1fl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ttmrw"]
 shader = ExtResource("3_atlff")
@@ -56,7 +57,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ytjlb"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_dgl8i"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -80,17 +81,14 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_1p1fl"]
+[sub_resource type="Resource" id="Resource_o33dm"]
 script = ExtResource("16_q5s0g")
-origin = Vector2(0, 0)
 containing_box = Rect2(0, 0, 16, 16)
-precise = false
-images = Array[Image]([])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dgl8i"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w2bmf"]
 size = Vector2(16, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_o33dm"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8b4ey"]
 size = Vector2(32, 32)
 
 [node name="SmashTrapLit" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -110,18 +108,18 @@ script = ExtResource("8_k6a4b")
 offset_value = Vector2(8, 8)
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("9_ytjlb")]
-sprite_frames = SubResource("SpriteFrames_ytjlb")
+sprite_frames = SubResource("SpriteFrames_dgl8i")
 autoplay = "smash_trap_lit"
 centered = false
 script = ExtResource("15_nh38g")
 sprite_info = Dictionary[StringName, ExtResource("16_q5s0g")]({
-&"smash_trap_lit": SubResource("Resource_1p1fl")
+&"smash_trap_lit": SubResource("Resource_o33dm")
 })
 default_animation = &"smash_trap_lit"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_dgl8i")
+shape = SubResource("RectangleShape2D_w2bmf")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -129,7 +127,7 @@ collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_o33dm")
+shape = SubResource("RectangleShape2D_8b4ey")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
-[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]
+[node name="SmoothMotion" type="Node" parent="." instance=ExtResource("17_1p1fl")]

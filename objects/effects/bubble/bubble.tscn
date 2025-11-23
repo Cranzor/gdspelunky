@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://f41uopgnkgjh"]
+[gd_scene load_steps=28 format=4 uid="uid://f41uopgnkgjh"]
 
 [ext_resource type="Script" uid="uid://buiamsuthnp5p" path="res://objects/effects/bubble/bubble.gd" id="1_0gxgu"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_qsthy"]
@@ -13,8 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://dfygo6uutn5ex" path="res://sprites/effects/bubble/bubble_8.png" id="11_o7g7c"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="12_enavu"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="13_g3xfj"]
+[ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="14_de3v4"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_qsthy"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_xmy5f"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -50,7 +51,7 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Image" id="Image_de3v4"]
+[sub_resource type="Image" id="Image_om84p"]
 data = {
 "data": PackedByteArray("OWxsADlsbAA5bGwAOWxsACNDQwAjQ0MAI0NDACNDQwA5bGwAOWxsADlsbAA5bGwAI0NDACNDQwAjQ0MAI0NDADlsbAA5bGwAOWxsADlsbAAjQ0MAI0NDACNDQwAjQ0MAOWxsADlsbAA5bGwAOWxs/yNDQ/8jQ0MAI0NDACNDQwAjQ0MAI0NDACNDQwAjQ0P/I0ND/yNDQwAjQ0MAI0NDACNDQwAjQ0MAI0NDACNDQwAjQ0MAI0NDACNDQwAjQ0MAI0NDACNDQwAjQ0MAI0NDACNDQwAjQ0MAI0NDACNDQwAjQ0MAI0NDACNDQwAjQ0MAI0NDACNDQwAjQ0MAI0NDAA=="),
 "format": "RGBA8",
@@ -59,27 +60,9 @@ data = {
 "width": 8
 }
 
-[sub_resource type="Image" id="Image_xmy5f"]
-data = {
-"data": PackedByteArray("TZGRAE2RkQBNkZEATZGRADlsbAA5bGwAOWxsADlsbAA5bGwATZGRAE2RkQBNkZEAOWxsADlsbAA5bGwAOWxsADlsbAA5bGwATZGRAE2Rkf85bGz/OWxsADlsbAA5bGwAOWxsADlsbAA5bGz/TZGRADlsbAA5bGz/OWxsADlsbAAjQ0MAI0NDACNDQ/8jQ0MAI0NDACNDQ/8jQ0MAI0NDACNDQwAjQ0MAI0NDACNDQ/8jQ0P/I0NDACNDQwAjQ0MAI0NDACNDQwAjQ0MAI0NDACNDQwAjQ0MAI0NDACNDQwAjQ0MAI0NDACNDQwAjQ0MAI0NDACNDQwAjQ0MAI0NDAA=="),
-"format": "RGBA8",
-"height": 8,
-"mipmaps": false,
-"width": 8
-}
-
-[sub_resource type="Image" id="Image_om84p"]
-data = {
-"data": PackedByteArray("TZGRAE2RkQBNkZEATZGRADlsbAA5bGwAOWxsADlsbABNkZEATZGRAE2RkQBNkZH/OWxs/zlsbAA5bGwAOWxsADlsbABNkZEATZGR/02RkQA5bGwAOWxs/zlsbAA5bGwAOWxsADlsbP9NkZEATZGRADlsbAA5bGwAOWxs/zlsbAA5bGwAOWxs/zlsbAAjQ0MAI0NDACNDQwAjQ0P/I0NDADlsbAA5bGwAI0ND/yNDQwAjQ0MAI0ND/yNDQwAjQ0MAOWxsACNDQwAjQ0MAI0ND/yNDQ/8jQ0MAI0NDACNDQwAjQ0MAI0NDACNDQwAjQ0MAI0NDACNDQwAjQ0MAI0NDAA=="),
-"format": "RGBA8",
-"height": 8,
-"mipmaps": false,
-"width": 8
-}
-
 [sub_resource type="Image" id="Image_3ysos"]
 data = {
-"data": PackedByteArray("TZGRAE2RkQBNkZEAOWxsADlsbAA5bGwAOWxsADlsbABNkZEATZGRAE2Rkf85bGz/OWxsADlsbAA5bGwAOWxsAE2RkQBNkZH/TZGRADlsbAA5bGz/OWxsADlsbAA5bGwAOWxs/02RkQBNkZEAOWxsADlsbAA5bGz/OWxsADlsbAA5bGz/OWxsACNDQwAjQ0MAI0NDACNDQ/8jQ0MAI0NDADlsbAAjQ0P/I0NDACNDQwAjQ0P/I0NDACNDQwAjQ0MAI0NDACNDQwAjQ0P/I0ND/yNDQwAjQ0MAI0NDACNDQwAjQ0MAI0NDACNDQwAjQ0MAI0NDACNDQwAjQ0MAI0NDAA=="),
+"data": PackedByteArray("TZGRAE2RkQBNkZEATZGRADlsbAA5bGwAOWxsADlsbAA5bGwATZGRAE2RkQBNkZEAOWxsADlsbAA5bGwAOWxsADlsbAA5bGwATZGRAE2Rkf85bGz/OWxsADlsbAA5bGwAOWxsADlsbAA5bGz/TZGRADlsbAA5bGz/OWxsADlsbAAjQ0MAI0NDACNDQ/8jQ0MAI0NDACNDQ/8jQ0MAI0NDACNDQwAjQ0MAI0NDACNDQ/8jQ0P/I0NDACNDQwAjQ0MAI0NDACNDQwAjQ0MAI0NDACNDQwAjQ0MAI0NDACNDQwAjQ0MAI0NDACNDQwAjQ0MAI0NDACNDQwAjQ0MAI0NDAA=="),
 "format": "RGBA8",
 "height": 8,
 "mipmaps": false,
@@ -97,7 +80,7 @@ data = {
 
 [sub_resource type="Image" id="Image_3bja2"]
 data = {
-"data": PackedByteArray("TZGRAE2RkQBNkZEATZGRAE2RkQA5bGwAOWxsADlsbAA5bGwATZGRAE2RkQBNkZEATZGR/zlsbP85bGwAOWxsADlsbAA5bGwATZGRAE2Rkf9NkZEAOWxsADlsbP85bGwAOWxsADlsbAA5bGz/TZGRAE2RkQA5bGwAOWxsADlsbP85bGwAOWxsADlsbP85bGwAI0NDACNDQwAjQ0MAI0ND/zlsbAA5bGwAOWxsACNDQ/8jQ0MAI0NDACNDQ/8jQ0MAOWxsADlsbAAjQ0MAI0NDACNDQ/8jQ0P/I0NDACNDQwA5bGwAI0NDACNDQwAjQ0MAI0NDACNDQwAjQ0MAI0NDAA=="),
+"data": PackedByteArray("TZGRAE2RkQBNkZEAOWxsADlsbAA5bGwAOWxsADlsbABNkZEATZGRAE2Rkf85bGz/OWxsADlsbAA5bGwAOWxsAE2RkQBNkZH/TZGRADlsbAA5bGz/OWxsADlsbAA5bGwAOWxs/02RkQBNkZEAOWxsADlsbAA5bGz/OWxsADlsbAA5bGz/OWxsACNDQwAjQ0MAI0NDACNDQ/8jQ0MAI0NDADlsbAAjQ0P/I0NDACNDQwAjQ0P/I0NDACNDQwAjQ0MAI0NDACNDQwAjQ0P/I0ND/yNDQwAjQ0MAI0NDACNDQwAjQ0MAI0NDACNDQwAjQ0MAI0NDACNDQwAjQ0MAI0NDAA=="),
 "format": "RGBA8",
 "height": 8,
 "mipmaps": false,
@@ -115,7 +98,7 @@ data = {
 
 [sub_resource type="Image" id="Image_nvkwy"]
 data = {
-"data": PackedByteArray("OWxsADlsbAA5bGwAOWxsADlsbAA5bGwAOWxsADlsbAA5bGwAOWxsADlsbAA5bGwAOWxs/zlsbAA5bGwAOWxsADlsbAA5bGwAI0NDACNDQwAjQ0P/I0NDACNDQwA5bGwAOWxsADlsbP8jQ0P/I0NDACNDQwAjQ0MAOWxsADlsbAA5bGwAOWxsACNDQwAjQ0MAI0NDACNDQ/85bGz/OWxsADlsbAA5bGwAI0NDACNDQ/8jQ0MAI0NDADlsbAA5bGwAOWxsADlsbAA5bGwAOWxs/zlsbAAjQ0MAOWxsADlsbAA5bGwAOWxsADlsbAA5bGwAOWxsADlsbAA5bGwAOWxsAA=="),
+"data": PackedByteArray("TZGRAE2RkQBNkZEATZGRAE2RkQA5bGwAOWxsADlsbAA5bGwATZGRAE2RkQBNkZEATZGR/zlsbP85bGwAOWxsADlsbAA5bGwATZGRAE2Rkf9NkZEAOWxsADlsbP85bGwAOWxsADlsbAA5bGz/TZGRAE2RkQA5bGwAOWxsADlsbP85bGwAOWxsADlsbP85bGwAI0NDACNDQwAjQ0MAI0ND/zlsbAA5bGwAOWxsACNDQ/8jQ0MAI0NDACNDQ/8jQ0MAOWxsADlsbAAjQ0MAI0NDACNDQ/8jQ0P/I0NDACNDQwA5bGwAI0NDACNDQwAjQ0MAI0NDACNDQwAjQ0MAI0NDAA=="),
 "format": "RGBA8",
 "height": 8,
 "mipmaps": false,
@@ -124,6 +107,24 @@ data = {
 
 [sub_resource type="Image" id="Image_o7g7c"]
 data = {
+"data": PackedByteArray("TZGRAE2RkQBNkZEATZGRADlsbAA5bGwAOWxsADlsbABNkZEATZGRAE2RkQBNkZH/OWxs/zlsbAA5bGwAOWxsADlsbABNkZEATZGR/02RkQA5bGwAOWxs/zlsbAA5bGwAOWxsADlsbP9NkZEATZGRADlsbAA5bGwAOWxs/zlsbAA5bGwAOWxs/zlsbAAjQ0MAI0NDACNDQwAjQ0P/I0NDADlsbAA5bGwAI0ND/yNDQwAjQ0MAI0ND/yNDQwAjQ0MAOWxsACNDQwAjQ0MAI0ND/yNDQ/8jQ0MAI0NDACNDQwAjQ0MAI0NDACNDQwAjQ0MAI0NDACNDQwAjQ0MAI0NDAA=="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Image" id="Image_enavu"]
+data = {
+"data": PackedByteArray("OWxsADlsbAA5bGwAOWxsADlsbAA5bGwAOWxsADlsbAA5bGwAOWxsADlsbAA5bGwAOWxs/zlsbAA5bGwAOWxsADlsbAA5bGwAI0NDACNDQwAjQ0P/I0NDACNDQwA5bGwAOWxsADlsbP8jQ0P/I0NDACNDQwAjQ0MAOWxsADlsbAA5bGwAOWxsACNDQwAjQ0MAI0NDACNDQ/85bGz/OWxsADlsbAA5bGwAI0NDACNDQ/8jQ0MAI0NDADlsbAA5bGwAOWxsADlsbAA5bGwAOWxs/zlsbAAjQ0MAOWxsADlsbAA5bGwAOWxsADlsbAA5bGwAOWxsADlsbAA5bGwAOWxsAA=="),
+"format": "RGBA8",
+"height": 8,
+"mipmaps": false,
+"width": 8
+}
+
+[sub_resource type="Image" id="Image_g3xfj"]
+data = {
 "data": PackedByteArray("OWxsADlsbAA5bGwAOWxsADlsbAA5bGwAOWxsADlsbAA5bGwAOWxsADlsbAA5bGwAOWxs/zlsbAA5bGwAOWxsADlsbAA5bGwAOWxsADlsbAA5bGwAOWxsADlsbAA5bGwAOWxsADlsbP85bGwAOWxsADlsbAA5bGwAOWxsADlsbAA5bGwAOWxsADlsbAA5bGwAOWxsADlsbAA5bGz/OWxsADlsbAA5bGwAOWxsADlsbAA5bGwAOWxsADlsbAA5bGwAOWxsADlsbAA5bGwAOWxs/zlsbAA5bGwAOWxsADlsbAA5bGwAOWxsADlsbAA5bGwAOWxsADlsbAA5bGwAOWxsAA=="),
 "format": "RGBA8",
 "height": 8,
@@ -131,17 +132,17 @@ data = {
 "width": 8
 }
 
-[sub_resource type="Resource" id="Resource_enavu"]
+[sub_resource type="Resource" id="Resource_gjcfd"]
 script = ExtResource("13_g3xfj")
 origin = Vector2(4, 4)
 containing_box = Rect2(0, 1, 8, 6)
 precise = true
-images = Array[Image]([SubResource("Image_de3v4"), SubResource("Image_xmy5f"), SubResource("Image_om84p"), SubResource("Image_3ysos"), SubResource("Image_2n2av"), SubResource("Image_3bja2"), SubResource("Image_kdyca"), SubResource("Image_nvkwy"), SubResource("Image_o7g7c")])
+images = Array[Image]([SubResource("Image_om84p"), SubResource("Image_3ysos"), SubResource("Image_2n2av"), SubResource("Image_3bja2"), SubResource("Image_kdyca"), SubResource("Image_nvkwy"), SubResource("Image_o7g7c"), SubResource("Image_enavu"), SubResource("Image_g3xfj")])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g3xfj"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ymngj"]
 size = Vector2(8, 6)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gjcfd"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cphov"]
 size = Vector2(16, 12)
 
 [node name="Bubble" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -151,25 +152,25 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "bubble"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_qsthy")]
-sprite_frames = SubResource("SpriteFrames_qsthy")
+sprite_frames = SubResource("SpriteFrames_xmy5f")
 autoplay = "bubble"
 centered = false
 offset = Vector2(-4, -4)
 script = ExtResource("12_enavu")
 sprite_info = Dictionary[StringName, ExtResource("13_g3xfj")]({
-&"bubble": SubResource("Resource_enavu")
+&"bubble": SubResource("Resource_gjcfd")
 })
 default_animation = &"bubble"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_g3xfj")
+shape = SubResource("RectangleShape2D_ymngj")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-shape = SubResource("RectangleShape2D_gjcfd")
+shape = SubResource("RectangleShape2D_cphov")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
-[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]
+[node name="SmoothMotion" type="Node" parent="." instance=ExtResource("14_de3v4")]

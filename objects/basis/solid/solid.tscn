@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://csce7fyjeng8e"]
+[gd_scene load_steps=10 format=3 uid="uid://csce7fyjeng8e"]
 
 [ext_resource type="Script" uid="uid://dfi6lxe8bflm6" path="res://objects/basis/solid/solid.gd" id="1_hmqp7"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_u5fxm"]
 [ext_resource type="Texture2D" uid="uid://c2uehy67omp2q" path="res://sprites/blocks/dark/ice_block/ice_block_0.png" id="3_u5fxm"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_adxew"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_adxew"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8mitp"]
@@ -33,10 +34,11 @@ script = ExtResource("1_hmqp7")
 animated_sprite_node = NodePath("Sprite")
 object_name = "solid"
 
-[node name="Sprite" parent="." instance=ExtResource("2_u5fxm")]
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_u5fxm")]
 sprite_frames = SubResource("SpriteFrames_8mitp")
-animation = &"ice_block"
 autoplay = "ice_block"
+centered = false
+script = ExtResource("4_adxew")
 sprite_info = Dictionary[StringName, ExtResource("5_adxew")]({
 &"ice_block": SubResource("Resource_86ia6")
 })

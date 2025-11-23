@@ -1,12 +1,13 @@
-[gd_scene load_steps=11 format=4 uid="uid://bj6hl8alantq3"]
+[gd_scene load_steps=12 format=4 uid="uid://bj6hl8alantq3"]
 
 [ext_resource type="Script" uid="uid://clstdompnwmlf" path="res://objects/collectibles/udjat_eye/udjat_eye.gd" id="1_tvrqg"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_c26h1"]
 [ext_resource type="Texture2D" uid="uid://b1ghihpbptyof" path="res://sprites/items/saleable/udjat_eye/udjat_eye_0.png" id="3_dg4h3"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_u323u"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_30nkw"]
+[ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="6_dg4h3"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_c26h1"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_u323u"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -18,7 +19,7 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Image" id="Image_dg4h3"]
+[sub_resource type="Image" id="Image_30nkw"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wAAAP8AAAD/Yy8d/8h6LP/Ieiz/yHos/2MvHf8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAAAAAAA////////////Yy8d//+VGf/8/yH//P8h//z/If//lRn/Yy8d////////////////////////////AAAA/wAAAP9jLx3/Yy8d//+VGf9jLx3/Yy8d/2MvHf9jLx3/Yy8d//+VGf9jLx3/yHos//z/If/8/yH//P8h/wAAAP8AAAD//5UZ//z/If9jLx3//////wAAAP8AAAD/AAAA//////9jLx3//P8h//z/If/8/yH//P8h//z/If8AAAD/AAAA/2MvHf9jLx3/AAAA//////8gICD/AAAA/yAgIP//////AAAA/8h6LP/8/yH//P8h/8h6LP/Ieiz/AAAA/wAAAP//lRn///////////8AAAD/////////////////AAAA///////8/yH//5UZ/2MvHf//lRn/AAAA/wAAAAAAAAD/AAAA//+VGf/8/yH//////wAAAP8AAAD/AAAA///////8/yH//5UZ/2MvHf//lRn/AAAA/wAAAAAAAAAAAAAAAAAAAP9jLx3/yHos/8h6LP8AAAD//P8h/wAAAP/Ieiz/yHos/8h6LP8AAAD/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/2MvHf8AAAD/yHos/8h6LP8AAAD/AAAA/wAAAP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAA/wAAAP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"),
 "format": "RGBA8",
@@ -27,17 +28,17 @@ data = {
 "width": 16
 }
 
-[sub_resource type="Resource" id="Resource_u323u"]
+[sub_resource type="Resource" id="Resource_xk428"]
 script = ExtResource("5_30nkw")
 origin = Vector2(8, 6)
 containing_box = Rect2(0, 1, 16, 11)
 precise = true
-images = Array[Image]([SubResource("Image_dg4h3")])
+images = Array[Image]([SubResource("Image_30nkw")])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_30nkw"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p4klc"]
 size = Vector2(16, 11)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xk428"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_655nt"]
 size = Vector2(32, 22)
 
 [node name="UdjatEye" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -47,19 +48,19 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "udjat_eye"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_c26h1")]
-sprite_frames = SubResource("SpriteFrames_c26h1")
+sprite_frames = SubResource("SpriteFrames_u323u")
 autoplay = "udjat_eye"
 centered = false
 offset = Vector2(-8, -6)
 script = ExtResource("4_u323u")
 sprite_info = Dictionary[StringName, ExtResource("5_30nkw")]({
-&"udjat_eye": SubResource("Resource_u323u")
+&"udjat_eye": SubResource("Resource_xk428")
 })
 default_animation = &"udjat_eye"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)
-shape = SubResource("RectangleShape2D_30nkw")
+shape = SubResource("RectangleShape2D_p4klc")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -67,7 +68,7 @@ collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 position = Vector2(0, 0.5)
-shape = SubResource("RectangleShape2D_xk428")
+shape = SubResource("RectangleShape2D_655nt")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
-[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]
+[node name="SmoothMotion" type="Node" parent="." instance=ExtResource("6_dg4h3")]

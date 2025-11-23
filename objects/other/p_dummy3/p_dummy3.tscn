@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://gs3fuw48xstm"]
+[gd_scene load_steps=31 format=3 uid="uid://gs3fuw48xstm"]
 
 [ext_resource type="Script" uid="uid://btuuh56httbs3" path="res://objects/other/p_dummy3/p_dummy3.gd" id="1_er8je"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_yayyx"]
@@ -23,8 +23,9 @@
 [ext_resource type="Texture2D" uid="uid://b00w6nbl4fc6" path="res://sprites/character/main dude/run_left/run_left_5.png" id="21_0fyie"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="22_oijvc"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="23_5gk6r"]
+[ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="24_ll4og"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_yayyx"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_bjcvn"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -100,31 +101,25 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_ll4og"]
+[sub_resource type="Resource" id="Resource_trkk5"]
 script = ExtResource("23_5gk6r")
 origin = Vector2(8, 8)
 containing_box = Rect2(1, 0, 14, 16)
-precise = false
-images = Array[Image]([])
 
-[sub_resource type="Resource" id="Resource_bjcvn"]
+[sub_resource type="Resource" id="Resource_2301d"]
 script = ExtResource("23_5gk6r")
 origin = Vector2(8, 8)
 containing_box = Rect2(1, 7, 15, 9)
-precise = false
-images = Array[Image]([])
 
-[sub_resource type="Resource" id="Resource_trkk5"]
+[sub_resource type="Resource" id="Resource_8j2yn"]
 script = ExtResource("23_5gk6r")
 origin = Vector2(8, 16)
 containing_box = Rect2(0, 6, 16, 18)
-precise = false
-images = Array[Image]([])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2301d"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kolqo"]
 size = Vector2(14, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8j2yn"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_npnyv"]
 size = Vector2(28, 32)
 
 [node name="PDummy3" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -134,27 +129,27 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "p_dummy3"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_yayyx")]
-sprite_frames = SubResource("SpriteFrames_yayyx")
+sprite_frames = SubResource("SpriteFrames_bjcvn")
 autoplay = "run_left"
 centered = false
 offset = Vector2(-8, -8)
 script = ExtResource("22_oijvc")
 sprite_info = Dictionary[StringName, ExtResource("23_5gk6r")]({
-&"climb_up3": SubResource("Resource_trkk5"),
-&"duck_left": SubResource("Resource_bjcvn"),
-&"run_left": SubResource("Resource_ll4og")
+&"climb_up3": SubResource("Resource_8j2yn"),
+&"duck_left": SubResource("Resource_2301d"),
+&"run_left": SubResource("Resource_trkk5")
 })
 default_animation = &"run_left"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_2301d")
+shape = SubResource("RectangleShape2D_kolqo")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-shape = SubResource("RectangleShape2D_8j2yn")
+shape = SubResource("RectangleShape2D_npnyv")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
-[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]
+[node name="SmoothMotion" type="Node" parent="." instance=ExtResource("24_ll4og")]

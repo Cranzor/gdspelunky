@@ -1,12 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://y7qqxlryxv8r"]
+[gd_scene load_steps=11 format=3 uid="uid://y7qqxlryxv8r"]
 
 [ext_resource type="Script" uid="uid://k5yr626kyyin" path="res://objects/collectibles/sapphire/sapphire.gd" id="1_mxitw"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_gc652"]
 [ext_resource type="Texture2D" uid="uid://b1n383p7rs68v" path="res://sprites/items/treasures/sapphire/sapphire_0.png" id="3_vjb6d"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_cdnd2"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_g8o4d"]
+[ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="6_vjb6d"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_gc652"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_cdnd2"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -18,17 +19,15 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_vjb6d"]
+[sub_resource type="Resource" id="Resource_g8o4d"]
 script = ExtResource("5_g8o4d")
 origin = Vector2(2, 2)
 containing_box = Rect2(0, 0, 4, 4)
-precise = false
-images = Array[Image]([])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cdnd2"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3428f"]
 size = Vector2(4, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g8o4d"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y6wq7"]
 size = Vector2(8, 8)
 
 [node name="Sapphire" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -38,25 +37,25 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "sapphire"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_gc652")]
-sprite_frames = SubResource("SpriteFrames_gc652")
+sprite_frames = SubResource("SpriteFrames_cdnd2")
 autoplay = "sapphire"
 centered = false
 offset = Vector2(-2, -2)
 script = ExtResource("4_cdnd2")
 sprite_info = Dictionary[StringName, ExtResource("5_g8o4d")]({
-&"sapphire": SubResource("Resource_vjb6d")
+&"sapphire": SubResource("Resource_g8o4d")
 })
 default_animation = &"sapphire"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_cdnd2")
+shape = SubResource("RectangleShape2D_3428f")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-shape = SubResource("RectangleShape2D_g8o4d")
+shape = SubResource("RectangleShape2D_y6wq7")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
-[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]
+[node name="SmoothMotion" type="Node" parent="." instance=ExtResource("6_vjb6d")]

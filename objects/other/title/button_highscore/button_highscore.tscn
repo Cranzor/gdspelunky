@@ -29,17 +29,11 @@ animations = [{
 
 [sub_resource type="Resource" id="Resource_c2u2n"]
 script = ExtResource("6_bka1u")
-origin = Vector2(0, 0)
 containing_box = Rect2(2, 11, 12, 5)
-precise = false
-images = Array[Image]([])
 
 [sub_resource type="Resource" id="Resource_gimvo"]
 script = ExtResource("6_bka1u")
-origin = Vector2(0, 0)
 containing_box = Rect2(2, 13, 12, 3)
-precise = false
-images = Array[Image]([])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kpvhh"]
 size = Vector2(12, 5)
@@ -76,5 +70,3 @@ collision_mask = 2
 position = Vector2(8, 13.5)
 shape = SubResource("RectangleShape2D_bka1u")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
-
-[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

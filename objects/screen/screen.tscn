@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dimbvflcml3em"]
+[gd_scene load_steps=10 format=3 uid="uid://dimbvflcml3em"]
 
 [ext_resource type="Script" uid="uid://co45frbaa7f0l" path="res://objects/screen/screen.gd" id="1_d8euu"]
 [ext_resource type="Script" uid="uid://dtgd0cguix6db" path="res://components/drawing/draw_text/draw_text.gd" id="3_d8euu"]
@@ -16,6 +16,12 @@ animations = [{
 "speed": 30.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hpk62"]
+size = Vector2(0, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u2vo0"]
+size = Vector2(0, 0)
+
 [node name="Screen" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 visible = false
 z_index = 2
@@ -29,8 +35,18 @@ script = ExtResource("3_d8euu")
 drawn_text = ExtResource("4_c7y80")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("5_q0mpi")]
+visible = false
 sprite_frames = SubResource("SpriteFrames_q0mpi")
 centered = false
 script = ExtResource("6_hpk62")
 
-[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_hpk62")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+shape = SubResource("RectangleShape2D_u2vo0")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)

@@ -29,7 +29,6 @@ data = {
 
 [sub_resource type="Resource" id="Resource_py22n"]
 script = ExtResource("5_v2ww1")
-origin = Vector2(0, 0)
 containing_box = Rect2(4, 2, 7, 14)
 precise = true
 images = Array[Image]([SubResource("Image_8e6kr")])
@@ -68,5 +67,3 @@ collision_mask = 2
 position = Vector2(7.5, 9)
 shape = SubResource("RectangleShape2D_yex64")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
-
-[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

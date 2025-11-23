@@ -1,12 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://73n83hbh1qdu"]
+[gd_scene load_steps=11 format=3 uid="uid://73n83hbh1qdu"]
 
 [ext_resource type="Script" uid="uid://caussmwxvclg3" path="res://objects/collectibles/ruby_big/ruby_big.gd" id="1_3487a"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_uimhg"]
 [ext_resource type="Texture2D" uid="uid://cbl4q04mjtfb8" path="res://sprites/items/treasures/ruby_big/ruby_big_0.png" id="3_rks1v"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_lb6t7"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_muoxb"]
+[ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="6_rks1v"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_uimhg"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_lb6t7"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -18,17 +19,15 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_rks1v"]
+[sub_resource type="Resource" id="Resource_muoxb"]
 script = ExtResource("5_muoxb")
 origin = Vector2(4, 4)
 containing_box = Rect2(0, 0, 8, 8)
-precise = false
-images = Array[Image]([])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lb6t7"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ftww"]
 size = Vector2(8, 8)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_muoxb"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kcjgb"]
 size = Vector2(16, 16)
 
 [node name="RubyBig" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -38,25 +37,25 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "ruby_big"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_uimhg")]
-sprite_frames = SubResource("SpriteFrames_uimhg")
+sprite_frames = SubResource("SpriteFrames_lb6t7")
 autoplay = "ruby_big"
 centered = false
 offset = Vector2(-4, -4)
 script = ExtResource("4_lb6t7")
 sprite_info = Dictionary[StringName, ExtResource("5_muoxb")]({
-&"ruby_big": SubResource("Resource_rks1v")
+&"ruby_big": SubResource("Resource_muoxb")
 })
 default_animation = &"ruby_big"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_lb6t7")
+shape = SubResource("RectangleShape2D_5ftww")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-shape = SubResource("RectangleShape2D_muoxb")
+shape = SubResource("RectangleShape2D_kcjgb")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
-[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]
+[node name="SmoothMotion" type="Node" parent="." instance=ExtResource("6_rks1v")]

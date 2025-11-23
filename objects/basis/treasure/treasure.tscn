@@ -1,10 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://bvbm5gxldt5up"]
+[gd_scene load_steps=8 format=3 uid="uid://bvbm5gxldt5up"]
 
 [ext_resource type="Script" uid="uid://bgc1imgf0s6kn" path="res://objects/basis/treasure/treasure.gd" id="1_ehe8t"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_oclru"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="3_4j3jt"]
+[ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="4_4j3jt"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_oclru"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_mg7ej"]
 resource_local_to_scene = true
 animations = [{
 "frames": [],
@@ -13,6 +14,12 @@ animations = [{
 "speed": 30.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t35we"]
+size = Vector2(0, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_re8pl"]
+size = Vector2(0, 0)
+
 [node name="Treasure" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -101
 script = ExtResource("1_ehe8t")
@@ -20,8 +27,20 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "treasure"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_oclru")]
-sprite_frames = SubResource("SpriteFrames_oclru")
+visible = false
+sprite_frames = SubResource("SpriteFrames_mg7ej")
 centered = false
 script = ExtResource("3_4j3jt")
 
-[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_t35we")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+shape = SubResource("RectangleShape2D_re8pl")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[node name="SmoothMotion" type="Node" parent="." instance=ExtResource("4_4j3jt")]

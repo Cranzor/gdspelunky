@@ -823,7 +823,7 @@ const object_database = {
 		"parent" : "moving_solid",
 		"mask" : null,
 		"groups" : ['dark_fall', 'moving_solid', 'solid', 'drawn_sprite'],
-		"static" : true,
+		"static" : false,
 		"events" : ['collision_with_solid', 'create', 'step'],
 		"folder_path" : "res://objects/blocks/dark_fall/dark_fall.tscn",
 		},

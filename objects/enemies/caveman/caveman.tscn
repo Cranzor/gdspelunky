@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://bdofugqa7nqg2"]
+[gd_scene load_steps=40 format=3 uid="uid://bdofugqa7nqg2"]
 
 [ext_resource type="Script" uid="uid://d4lxwissf8cwr" path="res://objects/enemies/caveman/caveman.gd" id="1_6b31n"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_npye2"]
@@ -25,8 +25,9 @@
 [ext_resource type="Texture2D" uid="uid://dvrnmyiek3wn" path="res://sprites/enemies/caveman/caveman_stun_l/caveman_stun_l_4.png" id="23_5ujx3"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="24_dgsoq"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="25_pee01"]
+[ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="26_si8um"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_npye2"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_o8x3r"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -143,80 +144,50 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_si8um"]
-script = ExtResource("25_pee01")
-origin = Vector2(0, 0)
-containing_box = Rect2(1, 0, 14, 16)
-precise = false
-images = Array[Image]([])
-
-[sub_resource type="Resource" id="Resource_o8x3r"]
-script = ExtResource("25_pee01")
-origin = Vector2(0, 0)
-containing_box = Rect2(0, 1, 16, 15)
-precise = false
-images = Array[Image]([])
-
 [sub_resource type="Resource" id="Resource_gy6s6"]
 script = ExtResource("25_pee01")
-origin = Vector2(0, 0)
-containing_box = Rect2(0, 2, 16, 12)
-precise = false
-images = Array[Image]([])
+containing_box = Rect2(1, 0, 14, 16)
 
 [sub_resource type="Resource" id="Resource_l63w0"]
 script = ExtResource("25_pee01")
-origin = Vector2(0, 0)
-containing_box = Rect2(0, 2, 16, 12)
-precise = false
-images = Array[Image]([])
+containing_box = Rect2(0, 1, 16, 15)
 
 [sub_resource type="Resource" id="Resource_lqipr"]
 script = ExtResource("25_pee01")
-origin = Vector2(0, 0)
-containing_box = Rect2(1, 0, 14, 16)
-precise = false
-images = Array[Image]([])
+containing_box = Rect2(0, 2, 16, 12)
 
 [sub_resource type="Resource" id="Resource_ubcqj"]
 script = ExtResource("25_pee01")
-origin = Vector2(0, 0)
-containing_box = Rect2(0, 0, 15, 16)
-precise = false
-images = Array[Image]([])
+containing_box = Rect2(0, 2, 16, 12)
 
 [sub_resource type="Resource" id="Resource_qsf3l"]
 script = ExtResource("25_pee01")
-origin = Vector2(0, 0)
-containing_box = Rect2(0, 7, 16, 9)
-precise = false
-images = Array[Image]([])
+containing_box = Rect2(1, 0, 14, 16)
 
 [sub_resource type="Resource" id="Resource_b2n0r"]
 script = ExtResource("25_pee01")
-origin = Vector2(0, 0)
-containing_box = Rect2(0, 0, 16, 16)
-precise = false
-images = Array[Image]([])
+containing_box = Rect2(0, 0, 15, 16)
 
 [sub_resource type="Resource" id="Resource_tqpkh"]
 script = ExtResource("25_pee01")
-origin = Vector2(0, 0)
-containing_box = Rect2(0, 1, 16, 15)
-precise = false
-images = Array[Image]([])
+containing_box = Rect2(0, 7, 16, 9)
 
 [sub_resource type="Resource" id="Resource_db18u"]
 script = ExtResource("25_pee01")
-origin = Vector2(0, 0)
-containing_box = Rect2(0, 4, 16, 12)
-precise = false
-images = Array[Image]([])
+containing_box = Rect2(0, 0, 16, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cqguf"]
+[sub_resource type="Resource" id="Resource_cqguf"]
+script = ExtResource("25_pee01")
+containing_box = Rect2(0, 1, 16, 15)
+
+[sub_resource type="Resource" id="Resource_jsi8b"]
+script = ExtResource("25_pee01")
+containing_box = Rect2(0, 4, 16, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s2wyo"]
 size = Vector2(14, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jsi8b"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gal8p"]
 size = Vector2(28, 32)
 
 [node name="Caveman" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -226,27 +197,27 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "caveman"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_npye2")]
-sprite_frames = SubResource("SpriteFrames_npye2")
+sprite_frames = SubResource("SpriteFrames_o8x3r")
 autoplay = "caveman_left"
 centered = false
 script = ExtResource("24_dgsoq")
 sprite_info = Dictionary[StringName, ExtResource("25_pee01")]({
-&"caveman_bounce_l": SubResource("Resource_gy6s6"),
-&"caveman_d_held_l": SubResource("Resource_db18u"),
-&"caveman_dead_l": SubResource("Resource_qsf3l"),
-&"caveman_die_ll": SubResource("Resource_lqipr"),
-&"caveman_die_lr": SubResource("Resource_ubcqj"),
-&"caveman_fall_l": SubResource("Resource_l63w0"),
-&"caveman_held_l": SubResource("Resource_tqpkh"),
-&"caveman_left": SubResource("Resource_si8um"),
-&"caveman_run_left": SubResource("Resource_b2n0r"),
-&"caveman_stun_l": SubResource("Resource_o8x3r")
+&"caveman_bounce_l": SubResource("Resource_lqipr"),
+&"caveman_d_held_l": SubResource("Resource_jsi8b"),
+&"caveman_dead_l": SubResource("Resource_tqpkh"),
+&"caveman_die_ll": SubResource("Resource_qsf3l"),
+&"caveman_die_lr": SubResource("Resource_b2n0r"),
+&"caveman_fall_l": SubResource("Resource_ubcqj"),
+&"caveman_held_l": SubResource("Resource_cqguf"),
+&"caveman_left": SubResource("Resource_gy6s6"),
+&"caveman_run_left": SubResource("Resource_db18u"),
+&"caveman_stun_l": SubResource("Resource_l63w0")
 })
 default_animation = &"caveman_left"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_cqguf")
+shape = SubResource("RectangleShape2D_s2wyo")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -254,7 +225,7 @@ collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_jsi8b")
+shape = SubResource("RectangleShape2D_gal8p")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
-[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]
+[node name="SmoothMotion" type="Node" parent="." instance=ExtResource("26_si8um")]

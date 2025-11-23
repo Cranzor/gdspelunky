@@ -1,12 +1,13 @@
-[gd_scene load_steps=11 format=4 uid="uid://d0bx6i5jnn8yk"]
+[gd_scene load_steps=12 format=4 uid="uid://d0bx6i5jnn8yk"]
 
 [ext_resource type="Script" uid="uid://cmtbtv6aukvx0" path="res://objects/effects/rubble_dark/rubble_dark.gd" id="1_kaaxq"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_buryp"]
 [ext_resource type="Texture2D" uid="uid://b0f8mx4iotmwn" path="res://sprites/effects/rubble_dark/rubble_dark_0.png" id="3_dbnpm"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_gkuuh"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_c20gr"]
+[ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="6_dbnpm"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_buryp"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_gkuuh"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -18,7 +19,7 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Image" id="Image_dbnpm"]
+[sub_resource type="Image" id="Image_c20gr"]
 data = {
 "data": PackedByteArray("CxQeAAsUHgALFB4ACxQeAAsUHgALFB4ACxQeAAsUHgALFB4ACxQeAAsUHgALFB7/CxQe/wsUHgALFB4ACxQeAAsUHgALFB4ACxQe/xFTk/8RU5P/CxQe/wsUHgALFB4ACxQeAAsUHv8RU5P/ETI+/xEyPv8RU5P/CxQe/wsUHgALFB4ACxQe/wsUHv8RMj7/ETI+/wsUHv8LFB7/CxQeAAsUHgALFB4ACxQe/wsUHv8LFB7/CxQe/wsUHgALFB4ACxQeAAsUHgALFB4ACxQe/wsUHv8LFB4ACxQeAAsUHgALFB4ACxQeAAsUHgALFB4ACxQeAAsUHgALFB4ACxQeAA=="),
 "format": "RGBA8",
@@ -27,17 +28,17 @@ data = {
 "width": 8
 }
 
-[sub_resource type="Resource" id="Resource_gkuuh"]
+[sub_resource type="Resource" id="Resource_11wrp"]
 script = ExtResource("5_c20gr")
 origin = Vector2(4, 4)
 containing_box = Rect2(1, 1, 6, 6)
 precise = true
-images = Array[Image]([SubResource("Image_dbnpm")])
+images = Array[Image]([SubResource("Image_c20gr")])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_c20gr"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a34ao"]
 size = Vector2(6, 6)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_11wrp"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lxefi"]
 size = Vector2(12, 12)
 
 [node name="RubbleDark" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -47,25 +48,25 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "rubble_dark"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_buryp")]
-sprite_frames = SubResource("SpriteFrames_buryp")
+sprite_frames = SubResource("SpriteFrames_gkuuh")
 autoplay = "rubble_dark"
 centered = false
 offset = Vector2(-4, -4)
 script = ExtResource("4_gkuuh")
 sprite_info = Dictionary[StringName, ExtResource("5_c20gr")]({
-&"rubble_dark": SubResource("Resource_gkuuh")
+&"rubble_dark": SubResource("Resource_11wrp")
 })
 default_animation = &"rubble_dark"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_c20gr")
+shape = SubResource("RectangleShape2D_a34ao")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-shape = SubResource("RectangleShape2D_11wrp")
+shape = SubResource("RectangleShape2D_lxefi")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
-[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]
+[node name="SmoothMotion" type="Node" parent="." instance=ExtResource("6_dbnpm")]

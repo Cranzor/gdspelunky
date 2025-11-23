@@ -1,10 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://3ui3v5o7nedx"]
+[gd_scene load_steps=10 format=3 uid="uid://3ui3v5o7nedx"]
 
 [ext_resource type="Script" uid="uid://bcg7xiosxqch" path="res://objects/game/game.gd" id="1_dnbg5"]
 [ext_resource type="PackedScene" uid="uid://8nvpnq1dktdh" path="res://components/drawing/draw_text/draw_text.tscn" id="2_p36kl"]
+[ext_resource type="Script" uid="uid://dtgd0cguix6db" path="res://components/drawing/draw_text/draw_text.gd" id="3_icv08"]
+[ext_resource type="PackedScene" uid="uid://cycctqx2bmx2j" path="res://components/drawing/draw_text/drawn_text.tscn" id="4_2phe8"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="5_vcxh7"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="6_4jwi5"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_4jwi5"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_67e0g"]
 resource_local_to_scene = true
 animations = [{
 "frames": [],
@@ -13,15 +16,37 @@ animations = [{
 "speed": 30.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u35v2"]
+size = Vector2(0, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_io3vx"]
+size = Vector2(0, 0)
+
 [node name="Game" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = 1
 script = ExtResource("1_dnbg5")
 animated_sprite_node = NodePath("Sprite")
 object_name = "game"
 
-[node name="DrawText" parent="." instance=ExtResource("2_p36kl")]
+[node name="DrawText" type="Node2D" parent="." groups=["draw_text"] instance=ExtResource("2_p36kl")]
 z_index = 11
 z_as_relative = false
+script = ExtResource("3_icv08")
+drawn_text = ExtResource("4_2phe8")
 
-[node name="Sprite" parent="." instance=ExtResource("5_vcxh7")]
-sprite_frames = SubResource("SpriteFrames_4jwi5")
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("5_vcxh7")]
+visible = false
+sprite_frames = SubResource("SpriteFrames_67e0g")
+centered = false
+script = ExtResource("6_4jwi5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_u35v2")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+shape = SubResource("RectangleShape2D_io3vx")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)

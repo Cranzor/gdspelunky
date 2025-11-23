@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bbc8barned0bx"]
+[gd_scene load_steps=27 format=3 uid="uid://bbc8barned0bx"]
 
 [ext_resource type="Script" uid="uid://dpmhtgd7b6tvq" path="res://objects/enemies/spider/spider.gd" id="1_di8d3"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_qxxtb"]
@@ -19,8 +19,9 @@
 [ext_resource type="Texture2D" uid="uid://dnny55y8etktd" path="res://sprites/enemies/spider_flip/spider_flip_8.png" id="17_kibog"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="18_f2lo5"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="19_wyy80"]
+[ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="20_t7o15"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_qxxtb"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_kt0o1"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -84,31 +85,22 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_t7o15"]
-script = ExtResource("19_wyy80")
-origin = Vector2(0, 0)
-containing_box = Rect2(0, 0, 16, 16)
-precise = false
-images = Array[Image]([])
-
-[sub_resource type="Resource" id="Resource_kt0o1"]
-script = ExtResource("19_wyy80")
-origin = Vector2(0, 0)
-containing_box = Rect2(0, 5, 16, 11)
-precise = false
-images = Array[Image]([])
-
 [sub_resource type="Resource" id="Resource_q6lur"]
 script = ExtResource("19_wyy80")
-origin = Vector2(0, 0)
-containing_box = Rect2(0, 0, 16, 10)
-precise = false
-images = Array[Image]([])
+containing_box = Rect2(0, 0, 16, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xwaws"]
+[sub_resource type="Resource" id="Resource_xwaws"]
+script = ExtResource("19_wyy80")
+containing_box = Rect2(0, 5, 16, 11)
+
+[sub_resource type="Resource" id="Resource_px1x0"]
+script = ExtResource("19_wyy80")
+containing_box = Rect2(0, 0, 16, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_stjaa"]
 size = Vector2(16, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_px1x0"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4mlhd"]
 size = Vector2(32, 32)
 
 [node name="Spider" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -118,20 +110,20 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "spider"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_qxxtb")]
-sprite_frames = SubResource("SpriteFrames_qxxtb")
+sprite_frames = SubResource("SpriteFrames_kt0o1")
 autoplay = "spider_flip"
 centered = false
 script = ExtResource("18_f2lo5")
 sprite_info = Dictionary[StringName, ExtResource("19_wyy80")]({
-&"spider": SubResource("Resource_kt0o1"),
-&"spider_drowning": SubResource("Resource_q6lur"),
-&"spider_flip": SubResource("Resource_t7o15")
+&"spider": SubResource("Resource_xwaws"),
+&"spider_drowning": SubResource("Resource_px1x0"),
+&"spider_flip": SubResource("Resource_q6lur")
 })
 default_animation = &"spider_flip"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_xwaws")
+shape = SubResource("RectangleShape2D_stjaa")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -139,7 +131,7 @@ collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_px1x0")
+shape = SubResource("RectangleShape2D_4mlhd")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
-[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]
+[node name="SmoothMotion" type="Node" parent="." instance=ExtResource("20_t7o15")]

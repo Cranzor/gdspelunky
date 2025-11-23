@@ -38,7 +38,6 @@ data = {
 
 [sub_resource type="Resource" id="Resource_klwls"]
 script = ExtResource("6_rb7qb")
-origin = Vector2(0, 0)
 containing_box = Rect2(0, 0, 32, 31)
 precise = true
 images = Array[Image]([SubResource("Image_ajk2o")])
@@ -54,7 +53,6 @@ data = {
 
 [sub_resource type="Resource" id="Resource_rb7qb"]
 script = ExtResource("6_rb7qb")
-origin = Vector2(0, 0)
 containing_box = Rect2(0, 1, 32, 30)
 precise = true
 images = Array[Image]([SubResource("Image_kaj4t")])
@@ -94,5 +92,3 @@ collision_mask = 2
 position = Vector2(16, 15.5)
 shape = SubResource("RectangleShape2D_bcejv")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
-
-[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

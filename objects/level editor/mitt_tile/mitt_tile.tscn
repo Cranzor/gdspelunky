@@ -29,7 +29,6 @@ data = {
 
 [sub_resource type="Resource" id="Resource_46mnx"]
 script = ExtResource("5_51666")
-origin = Vector2(0, 0)
 containing_box = Rect2(1, 1, 14, 15)
 precise = true
 images = Array[Image]([SubResource("Image_mqvah")])
@@ -68,5 +67,3 @@ collision_mask = 2
 position = Vector2(8, 8.5)
 shape = SubResource("RectangleShape2D_x2evb")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
-
-[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]

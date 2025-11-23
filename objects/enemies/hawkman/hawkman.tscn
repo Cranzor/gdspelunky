@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://dx73w7fhadmlt"]
+[gd_scene load_steps=48 format=3 uid="uid://dx73w7fhadmlt"]
 
 [ext_resource type="Script" uid="uid://b3uicfmaw0p2b" path="res://objects/enemies/hawkman/hawkman.gd" id="1_385p7"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_tos52"]
@@ -32,8 +32,9 @@
 [ext_resource type="Texture2D" uid="uid://b6sxnvv52b41d" path="res://sprites/enemies/hawkman/hawk_throw_l/hawk_throw_l_6.png" id="30_8upg2"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="31_pxriw"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="32_uilyx"]
+[ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="33_20c6o"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_tos52"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_uqdh6"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -176,87 +177,58 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_20c6o"]
-script = ExtResource("32_uilyx")
-origin = Vector2(0, 0)
-containing_box = Rect2(0, 0, 16, 16)
-precise = false
-images = Array[Image]([])
-
-[sub_resource type="Resource" id="Resource_uqdh6"]
-script = ExtResource("32_uilyx")
-origin = Vector2(0, 0)
-containing_box = Rect2(4, 0, 20, 16)
-precise = false
-images = Array[Image]([])
-
 [sub_resource type="Resource" id="Resource_y38lv"]
 script = ExtResource("32_uilyx")
-origin = Vector2(4, 0)
-containing_box = Rect2(2, 0, 20, 16)
-precise = false
-images = Array[Image]([])
+containing_box = Rect2(0, 0, 16, 16)
 
 [sub_resource type="Resource" id="Resource_63rqq"]
 script = ExtResource("32_uilyx")
-origin = Vector2(0, 0)
-containing_box = Rect2(0, 2, 16, 14)
-precise = false
-images = Array[Image]([])
+containing_box = Rect2(4, 0, 20, 16)
 
 [sub_resource type="Resource" id="Resource_812me"]
 script = ExtResource("32_uilyx")
-origin = Vector2(0, 0)
-containing_box = Rect2(0, 2, 16, 12)
-precise = false
-images = Array[Image]([])
+origin = Vector2(4, 0)
+containing_box = Rect2(2, 0, 20, 16)
 
 [sub_resource type="Resource" id="Resource_l4gmw"]
 script = ExtResource("32_uilyx")
-origin = Vector2(0, 0)
-containing_box = Rect2(0, 0, 16, 16)
-precise = false
-images = Array[Image]([])
+containing_box = Rect2(0, 2, 16, 14)
 
 [sub_resource type="Resource" id="Resource_8bubr"]
 script = ExtResource("32_uilyx")
-origin = Vector2(0, 0)
-containing_box = Rect2(0, 0, 16, 16)
-precise = false
-images = Array[Image]([])
+containing_box = Rect2(0, 2, 16, 12)
 
 [sub_resource type="Resource" id="Resource_ep44u"]
 script = ExtResource("32_uilyx")
-origin = Vector2(4, 0)
-containing_box = Rect2(2, 7, 20, 9)
-precise = false
-images = Array[Image]([])
+containing_box = Rect2(0, 0, 16, 16)
 
 [sub_resource type="Resource" id="Resource_id2ui"]
 script = ExtResource("32_uilyx")
-origin = Vector2(0, 0)
 containing_box = Rect2(0, 0, 16, 16)
-precise = false
-images = Array[Image]([])
 
 [sub_resource type="Resource" id="Resource_kquaw"]
 script = ExtResource("32_uilyx")
 origin = Vector2(4, 0)
-containing_box = Rect2(4, 0, 16, 16)
-precise = false
-images = Array[Image]([])
+containing_box = Rect2(2, 7, 20, 9)
 
 [sub_resource type="Resource" id="Resource_j8rv1"]
 script = ExtResource("32_uilyx")
+containing_box = Rect2(0, 0, 16, 16)
+
+[sub_resource type="Resource" id="Resource_ljwv6"]
+script = ExtResource("32_uilyx")
+origin = Vector2(4, 0)
+containing_box = Rect2(4, 0, 16, 16)
+
+[sub_resource type="Resource" id="Resource_n7iy1"]
+script = ExtResource("32_uilyx")
 origin = Vector2(4, 0)
 containing_box = Rect2(4, 3, 16, 13)
-precise = false
-images = Array[Image]([])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ljwv6"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rxn48"]
 size = Vector2(16, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_n7iy1"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0nutn"]
 size = Vector2(32, 32)
 
 [node name="Hawkman" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -266,28 +238,28 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "hawkman"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_tos52")]
-sprite_frames = SubResource("SpriteFrames_tos52")
+sprite_frames = SubResource("SpriteFrames_uqdh6")
 autoplay = "hawk_left"
 centered = false
 script = ExtResource("31_pxriw")
 sprite_info = Dictionary[StringName, ExtResource("32_uilyx")]({
-&"hawk_bounce_l": SubResource("Resource_63rqq"),
-&"hawk_d_held_l": SubResource("Resource_j8rv1"),
-&"hawk_dead_l": SubResource("Resource_ep44u"),
-&"hawk_die_ll": SubResource("Resource_l4gmw"),
-&"hawk_die_lr": SubResource("Resource_8bubr"),
-&"hawk_fall_l": SubResource("Resource_812me"),
-&"hawk_held_l": SubResource("Resource_kquaw"),
-&"hawk_left": SubResource("Resource_20c6o"),
-&"hawk_run_left": SubResource("Resource_id2ui"),
-&"hawk_stun_l": SubResource("Resource_y38lv"),
-&"hawk_throw_l": SubResource("Resource_uqdh6")
+&"hawk_bounce_l": SubResource("Resource_l4gmw"),
+&"hawk_d_held_l": SubResource("Resource_n7iy1"),
+&"hawk_dead_l": SubResource("Resource_kquaw"),
+&"hawk_die_ll": SubResource("Resource_ep44u"),
+&"hawk_die_lr": SubResource("Resource_id2ui"),
+&"hawk_fall_l": SubResource("Resource_8bubr"),
+&"hawk_held_l": SubResource("Resource_ljwv6"),
+&"hawk_left": SubResource("Resource_y38lv"),
+&"hawk_run_left": SubResource("Resource_j8rv1"),
+&"hawk_stun_l": SubResource("Resource_812me"),
+&"hawk_throw_l": SubResource("Resource_63rqq")
 })
 default_animation = &"hawk_left"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_ljwv6")
+shape = SubResource("RectangleShape2D_rxn48")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -295,7 +267,7 @@ collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_n7iy1")
+shape = SubResource("RectangleShape2D_0nutn")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
-[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]
+[node name="SmoothMotion" type="Node" parent="." instance=ExtResource("33_20c6o")]

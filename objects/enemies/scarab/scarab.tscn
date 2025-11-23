@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dhdtsgvpsyeuw"]
+[gd_scene load_steps=22 format=3 uid="uid://dhdtsgvpsyeuw"]
 
 [ext_resource type="Script" uid="uid://dl4tj2gv3jxc6" path="res://objects/enemies/scarab/scarab.gd" id="1_tx2hp"]
 [ext_resource type="PackedScene" uid="uid://w6jxjbgfs6na" path="res://components/drawing/draw_circle/dark_level_circle.tscn" id="2_8h5vu"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://hvlgwgyxfn34" path="res://sprites/items/treasures/scarab/scarab_2.png" id="12_6u8m4"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="13_6yk53"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="14_trmij"]
+[ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="15_fsnvs"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ttmrw"]
 shader = ExtResource("3_nw77n")
@@ -54,7 +55,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_bry47"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_u24ia"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -72,17 +73,14 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_fsnvs"]
+[sub_resource type="Resource" id="Resource_6u8m4"]
 script = ExtResource("14_trmij")
-origin = Vector2(0, 0)
 containing_box = Rect2(1, 2, 13, 11)
-precise = false
-images = Array[Image]([])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u24ia"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6yk53"]
 size = Vector2(13, 11)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6u8m4"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_trmij"]
 size = Vector2(26, 22)
 
 [node name="Scarab" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -103,18 +101,18 @@ radius = 16
 offset_value = Vector2(8, 8)
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("9_bry47")]
-sprite_frames = SubResource("SpriteFrames_bry47")
+sprite_frames = SubResource("SpriteFrames_u24ia")
 autoplay = "scarab"
 centered = false
 script = ExtResource("13_6yk53")
 sprite_info = Dictionary[StringName, ExtResource("14_trmij")]({
-&"scarab": SubResource("Resource_fsnvs")
+&"scarab": SubResource("Resource_6u8m4")
 })
 default_animation = &"scarab"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(7.5, 7.5)
-shape = SubResource("RectangleShape2D_u24ia")
+shape = SubResource("RectangleShape2D_6yk53")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -122,7 +120,7 @@ collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 position = Vector2(7.5, 7.5)
-shape = SubResource("RectangleShape2D_6u8m4")
+shape = SubResource("RectangleShape2D_trmij")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
-[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]
+[node name="SmoothMotion" type="Node" parent="." instance=ExtResource("15_fsnvs")]

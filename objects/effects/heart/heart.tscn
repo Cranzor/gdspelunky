@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://c5to1bs6rldy7"]
+[gd_scene load_steps=14 format=4 uid="uid://c5to1bs6rldy7"]
 
 [ext_resource type="Script" uid="uid://blcqjh8ii3r2b" path="res://objects/effects/heart/heart.gd" id="1_hpkug"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_41lqa"]
@@ -6,8 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://bc2qoivrd27em" path="res://sprites/effects/smooch_heart/smooch_heart_1.png" id="4_wnab1"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="5_ysmyx"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="6_7hrvn"]
+[ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="7_tu52x"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_41lqa"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_wnab1"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -22,7 +23,7 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Image" id="Image_tu52x"]
+[sub_resource type="Image" id="Image_ysmyx"]
 data = {
 "data": PackedByteArray("QAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAP9AAAD/QAAAAEAAAABAAAAAQAAA/0AAAP9AAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAP/AAAD/wAAA/0AAAP9AAAAAQAAA/8AAAP/AAAD/QAAA/0AAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAP/AAAD//wAA//8AAP/AAAD/QAAA/8AAAP//AAD//wAA/8AAAP9AAAD/QAAAAEAAAABAAAAAQAAAAEAAAABAAAD//wAA//9AQP//QED//wAA/8AAAP//AAD//0BA//9AQP//AAD/QAAA/0AAAABAAAAAQAAAAEAAAABAAAAAQAAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA/0AAAP9AAAAAQAAAAEAAAABAAAAAQAAAAEAAAP/AAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA/8AAAP9AAAD/QAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAA/8AAAP/AAAD//wAA//8AAP//AAD/wAAA/8AAAP9AAAD/QAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAD/wAAA/8AAAP/AAAD/wAAA/8AAAP9AAAD/QAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAP/AAAD/wAAA/8AAAP9AAAD/QAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAA/8AAAP9AAAD/QAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAD/QAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAAAAgAAAAIAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAAAAgAAAAIAAAA=="),
 "format": "RGBA8",
@@ -31,7 +32,7 @@ data = {
 "width": 16
 }
 
-[sub_resource type="Image" id="Image_wnab1"]
+[sub_resource type="Image" id="Image_7hrvn"]
 data = {
 "data": PackedByteArray("AIAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAAAAgAAAAIAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAACAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAA/0AAAP9AAAAAQAAA/0AAAP9AAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAA/8AAAP/AAAD/QAAA/8AAAP/AAAD/QAAA/0AAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAA/8AAAP//AAD//wAA/8AAAP//AAD//wAA/8AAAP9AAAD/QAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAP//AAD//0BA//9AQP//AAD//0BA//9AQP//AAD/QAAA/0AAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAD/wAAA//8AAP//AAD//wAA//8AAP//AAD/wAAA/0AAAP9AAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAP/AAAD/wAAA//8AAP/AAAD/wAAA/0AAAP9AAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAA/8AAAP/AAAD/wAAA/0AAAP9AAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAD/wAAA/0AAAP9AAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAP9AAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAACAAAAAgAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAACAAAAAgAAAAIAAAACAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAACAAAAAgAAAAIAAAA=="),
 "format": "RGBA8",
@@ -40,17 +41,17 @@ data = {
 "width": 16
 }
 
-[sub_resource type="Resource" id="Resource_ysmyx"]
+[sub_resource type="Resource" id="Resource_o6i57"]
 script = ExtResource("6_7hrvn")
 origin = Vector2(8, 8)
 containing_box = Rect2(2, 3, 11, 11)
 precise = true
-images = Array[Image]([SubResource("Image_tu52x"), SubResource("Image_wnab1")])
+images = Array[Image]([SubResource("Image_ysmyx"), SubResource("Image_7hrvn")])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7hrvn"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rg7nu"]
 size = Vector2(11, 11)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_o6i57"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w6fo2"]
 size = Vector2(22, 22)
 
 [node name="Heart" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -60,19 +61,19 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "heart"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_41lqa")]
-sprite_frames = SubResource("SpriteFrames_41lqa")
+sprite_frames = SubResource("SpriteFrames_wnab1")
 autoplay = "smooch_heart"
 centered = false
 offset = Vector2(-8, -8)
 script = ExtResource("5_ysmyx")
 sprite_info = Dictionary[StringName, ExtResource("6_7hrvn")]({
-&"smooch_heart": SubResource("Resource_ysmyx")
+&"smooch_heart": SubResource("Resource_o6i57")
 })
 default_animation = &"smooch_heart"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 0.5)
-shape = SubResource("RectangleShape2D_7hrvn")
+shape = SubResource("RectangleShape2D_rg7nu")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -80,7 +81,7 @@ collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 position = Vector2(-0.5, 0.5)
-shape = SubResource("RectangleShape2D_o6i57")
+shape = SubResource("RectangleShape2D_w6fo2")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
-[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]
+[node name="SmoothMotion" type="Node" parent="." instance=ExtResource("7_tu52x")]

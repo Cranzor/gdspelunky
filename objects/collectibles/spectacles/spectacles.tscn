@@ -1,12 +1,13 @@
-[gd_scene load_steps=11 format=4 uid="uid://5fhibg5rxhyg"]
+[gd_scene load_steps=12 format=4 uid="uid://5fhibg5rxhyg"]
 
 [ext_resource type="Script" uid="uid://bo3ldwodgkdwu" path="res://objects/collectibles/spectacles/spectacles.gd" id="1_us8s4"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_6t1b8"]
 [ext_resource type="Texture2D" uid="uid://dredwrhpbmvod" path="res://sprites/items/saleable/spectacles/spectacles_0.png" id="3_6aoyf"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_nhcl6"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_we8o7"]
+[ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="6_6aoyf"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_6t1b8"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_nhcl6"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -18,7 +19,7 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Image" id="Image_6aoyf"]
+[sub_resource type="Image" id="Image_we8o7"]
 data = {
 "data": PackedByteArray("Yy8dAGMvHQBjLx0AYy8dAGMvHQBjLx0AYy8dAGMvHQBjLx0AYy8dAGMvHQBjLx0AYy8dAGMvHQBjLx0AYy8dAGMvHQBjLx0AYy8dAGMvHQBjLx0AYy8dAGMvHQBjLx0AYy8dAGMvHQBjLx0AYy8dAGMvHQBjLx0AYy8dAGMvHQBjLx0AYy8dAGMvHQBjLx0AYy8dAGMvHQBjLx0AYy8dAGMvHQBjLx0AYy8dAGMvHQBjLx0AYy8dAGMvHQBjLx0AYy8dAGMvHQBjLx0AYy8dAGMvHQBjLx0AYy8dAGMvHQBjLx0AYy8dAGMvHQBjLx0AYy8dAGMvHQBjLx0AYy8dAGMvHQBjLx0AYy8d/2MvHf9jLx3/Yy8dAGMvHQBjLx0AYy8dAGMvHQBjLx0AYy8dAGMvHf9jLx3/Yy8dAGMvHQBjLx0AYy8d/8h6LP/Ieiz/yHos/2MvHf9jLx0AYy8dAGMvHQBjLx0AYy8dAGMvHf/8/yH//P8h/2MvHf9jLx0AYy8d/8h6LP9jLx3/Yy8d/8h6LP9jLx3/Yy8d/2MvHf9jLx3/Yy8d/2MvHf/8/yH/AAAA/wAAAP//lRn/Yy8d///////8/yH//P8h//z/If/8/yH////////////8/yH//P8h//z/If/8/yH//////wAAAP8AAAAAAAAA/2MvHf//lRn///////////////////////+VGf//lRn///////////////////////+VGf8AAAD/AAAAAAAAAABjLx0AyHos///////////////////////Ieiz/yHos///////////////////////Ieiz/AAAA/wAAAAAAAAAAYy8dAAAAAP//////////////////////AAAA/wAAAP//////////////////////AAAA/wAAAAAAAAAAAAAAAGMvHQAAAAAAAAAA/8h6LP/Ieiz/AAAA/wAAAAAAAAAAAAAA/8h6LP/Ieiz/AAAA/wAAAAAAAAAAAAAAAAAAAAAAAAAA"),
 "format": "RGBA8",
@@ -27,17 +28,17 @@ data = {
 "width": 16
 }
 
-[sub_resource type="Resource" id="Resource_nhcl6"]
+[sub_resource type="Resource" id="Resource_6qpaj"]
 script = ExtResource("5_we8o7")
 origin = Vector2(8, 6)
 containing_box = Rect2(0, 4, 16, 8)
 precise = true
-images = Array[Image]([SubResource("Image_6aoyf")])
+images = Array[Image]([SubResource("Image_we8o7")])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_we8o7"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fkth7"]
 size = Vector2(16, 8)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6qpaj"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qdv6x"]
 size = Vector2(32, 16)
 
 [node name="Spectacles" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -47,19 +48,19 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "spectacles"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_6t1b8")]
-sprite_frames = SubResource("SpriteFrames_6t1b8")
+sprite_frames = SubResource("SpriteFrames_nhcl6")
 autoplay = "spectacles"
 centered = false
 offset = Vector2(-8, -6)
 script = ExtResource("4_nhcl6")
 sprite_info = Dictionary[StringName, ExtResource("5_we8o7")]({
-&"spectacles": SubResource("Resource_nhcl6")
+&"spectacles": SubResource("Resource_6qpaj")
 })
 default_animation = &"spectacles"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
-shape = SubResource("RectangleShape2D_we8o7")
+shape = SubResource("RectangleShape2D_fkth7")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -67,7 +68,7 @@ collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 position = Vector2(0, 2)
-shape = SubResource("RectangleShape2D_6qpaj")
+shape = SubResource("RectangleShape2D_qdv6x")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
-[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]
+[node name="SmoothMotion" type="Node" parent="." instance=ExtResource("6_6aoyf")]

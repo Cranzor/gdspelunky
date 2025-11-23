@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://cenfl0atfq5oa"]
+[gd_scene load_steps=48 format=3 uid="uid://cenfl0atfq5oa"]
 
 [ext_resource type="Script" uid="uid://d1ypy8wt5l2sl" path="res://objects/enemies/yeti/yeti.gd" id="1_qptr0"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_wotf3"]
@@ -32,8 +32,9 @@
 [ext_resource type="Texture2D" uid="uid://8ynr3t3x4dq8" path="res://sprites/enemies/yeti/yeti_throw_l/yeti_throw_l_6.png" id="30_bcvuo"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="31_dh3vo"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="32_cxur3"]
+[ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="33_jd5hp"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_wotf3"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_n5i8j"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -176,87 +177,59 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_jd5hp"]
-script = ExtResource("32_cxur3")
-origin = Vector2(0, 0)
-containing_box = Rect2(0, 0, 16, 16)
-precise = false
-images = Array[Image]([])
-
-[sub_resource type="Resource" id="Resource_n5i8j"]
-script = ExtResource("32_cxur3")
-origin = Vector2(4, 0)
-containing_box = Rect2(4, 0, 20, 16)
-precise = false
-images = Array[Image]([])
-
 [sub_resource type="Resource" id="Resource_5pike"]
 script = ExtResource("32_cxur3")
-origin = Vector2(4, 0)
-containing_box = Rect2(2, 0, 20, 16)
-precise = false
-images = Array[Image]([])
+containing_box = Rect2(0, 0, 16, 16)
 
 [sub_resource type="Resource" id="Resource_aar82"]
 script = ExtResource("32_cxur3")
-origin = Vector2(0, 0)
-containing_box = Rect2(0, 2, 16, 14)
-precise = false
-images = Array[Image]([])
+origin = Vector2(4, 0)
+containing_box = Rect2(4, 0, 20, 16)
 
 [sub_resource type="Resource" id="Resource_e631q"]
 script = ExtResource("32_cxur3")
-origin = Vector2(0, 0)
-containing_box = Rect2(0, 1, 16, 12)
-precise = false
-images = Array[Image]([])
+origin = Vector2(4, 0)
+containing_box = Rect2(2, 0, 20, 16)
 
 [sub_resource type="Resource" id="Resource_r0l7y"]
 script = ExtResource("32_cxur3")
-origin = Vector2(0, 0)
-containing_box = Rect2(0, 0, 16, 16)
-precise = false
-images = Array[Image]([])
+containing_box = Rect2(0, 2, 16, 14)
 
 [sub_resource type="Resource" id="Resource_ebaye"]
 script = ExtResource("32_cxur3")
-origin = Vector2(0, 0)
-containing_box = Rect2(0, 0, 16, 16)
-precise = false
-images = Array[Image]([])
+containing_box = Rect2(0, 1, 16, 12)
 
 [sub_resource type="Resource" id="Resource_l2aym"]
 script = ExtResource("32_cxur3")
-origin = Vector2(4, 0)
-containing_box = Rect2(2, 7, 20, 9)
-precise = false
-images = Array[Image]([])
+containing_box = Rect2(0, 0, 16, 16)
 
 [sub_resource type="Resource" id="Resource_e5vdm"]
 script = ExtResource("32_cxur3")
-origin = Vector2(0, 0)
 containing_box = Rect2(0, 0, 16, 16)
-precise = false
-images = Array[Image]([])
 
 [sub_resource type="Resource" id="Resource_20dv8"]
 script = ExtResource("32_cxur3")
 origin = Vector2(4, 0)
-containing_box = Rect2(4, 0, 16, 16)
-precise = false
-images = Array[Image]([])
+containing_box = Rect2(2, 7, 20, 9)
 
 [sub_resource type="Resource" id="Resource_encle"]
 script = ExtResource("32_cxur3")
+containing_box = Rect2(0, 0, 16, 16)
+
+[sub_resource type="Resource" id="Resource_xr5yc"]
+script = ExtResource("32_cxur3")
+origin = Vector2(4, 0)
+containing_box = Rect2(4, 0, 16, 16)
+
+[sub_resource type="Resource" id="Resource_vohso"]
+script = ExtResource("32_cxur3")
 origin = Vector2(4, 0)
 containing_box = Rect2(4, 3, 16, 13)
-precise = false
-images = Array[Image]([])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xr5yc"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bxerv"]
 size = Vector2(16, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vohso"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kynm7"]
 size = Vector2(32, 32)
 
 [node name="Yeti" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -266,28 +239,28 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "yeti"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_wotf3")]
-sprite_frames = SubResource("SpriteFrames_wotf3")
+sprite_frames = SubResource("SpriteFrames_n5i8j")
 autoplay = "yeti_left"
 centered = false
 script = ExtResource("31_dh3vo")
 sprite_info = Dictionary[StringName, ExtResource("32_cxur3")]({
-&"yeti_bounce_l": SubResource("Resource_aar82"),
-&"yeti_d_held_l": SubResource("Resource_encle"),
-&"yeti_dead_l": SubResource("Resource_l2aym"),
-&"yeti_die_ll": SubResource("Resource_r0l7y"),
-&"yeti_die_lr": SubResource("Resource_ebaye"),
-&"yeti_fall_l": SubResource("Resource_e631q"),
-&"yeti_held_l": SubResource("Resource_20dv8"),
-&"yeti_left": SubResource("Resource_jd5hp"),
-&"yeti_run_left": SubResource("Resource_e5vdm"),
-&"yeti_stun_l": SubResource("Resource_5pike"),
-&"yeti_throw_l": SubResource("Resource_n5i8j")
+&"yeti_bounce_l": SubResource("Resource_r0l7y"),
+&"yeti_d_held_l": SubResource("Resource_vohso"),
+&"yeti_dead_l": SubResource("Resource_20dv8"),
+&"yeti_die_ll": SubResource("Resource_l2aym"),
+&"yeti_die_lr": SubResource("Resource_e5vdm"),
+&"yeti_fall_l": SubResource("Resource_ebaye"),
+&"yeti_held_l": SubResource("Resource_xr5yc"),
+&"yeti_left": SubResource("Resource_5pike"),
+&"yeti_run_left": SubResource("Resource_encle"),
+&"yeti_stun_l": SubResource("Resource_e631q"),
+&"yeti_throw_l": SubResource("Resource_aar82")
 })
 default_animation = &"yeti_left"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_xr5yc")
+shape = SubResource("RectangleShape2D_bxerv")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -295,7 +268,7 @@ collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_vohso")
+shape = SubResource("RectangleShape2D_kynm7")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
-[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]
+[node name="SmoothMotion" type="Node" parent="." instance=ExtResource("33_jd5hp")]

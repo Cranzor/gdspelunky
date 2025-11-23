@@ -1,10 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://bdsireklvyldb"]
+[gd_scene load_steps=10 format=3 uid="uid://bdsireklvyldb"]
 
 [ext_resource type="Script" uid="uid://djxmx1imgpuep" path="res://objects/level/level.gd" id="1_rc3fd"]
 [ext_resource type="PackedScene" uid="uid://8nvpnq1dktdh" path="res://components/drawing/draw_text/draw_text.tscn" id="2_nquip"]
+[ext_resource type="Script" uid="uid://dtgd0cguix6db" path="res://components/drawing/draw_text/draw_text.gd" id="3_8erts"]
+[ext_resource type="PackedScene" uid="uid://cycctqx2bmx2j" path="res://components/drawing/draw_text/drawn_text.tscn" id="4_tj55x"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="5_s12wd"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="6_s12wd"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_s12wd"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_4g4r4"]
 resource_local_to_scene = true
 animations = [{
 "frames": [],
@@ -13,14 +16,35 @@ animations = [{
 "speed": 30.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ui6d"]
+size = Vector2(0, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fkq06"]
+size = Vector2(0, 0)
+
 [node name="Level" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_rc3fd")
 animated_sprite_node = NodePath("Sprite")
 object_name = "level"
 
-[node name="DrawText" parent="." instance=ExtResource("2_nquip")]
+[node name="DrawText" type="Node2D" parent="." groups=["draw_text"] instance=ExtResource("2_nquip")]
+z_index = 1
+script = ExtResource("3_8erts")
+drawn_text = ExtResource("4_tj55x")
 
-[node name="Sprite" parent="." instance=ExtResource("5_s12wd")]
-sprite_frames = SubResource("SpriteFrames_s12wd")
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("5_s12wd")]
+visible = false
+sprite_frames = SubResource("SpriteFrames_4g4r4")
+centered = false
+script = ExtResource("6_s12wd")
 
-[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7ui6d")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+shape = SubResource("RectangleShape2D_fkq06")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)

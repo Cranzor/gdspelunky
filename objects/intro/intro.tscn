@@ -1,11 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://cmapfp1bw4euu"]
+[gd_scene load_steps=12 format=3 uid="uid://cmapfp1bw4euu"]
 
 [ext_resource type="Script" uid="uid://cl4ma2coogdgn" path="res://objects/intro/intro.gd" id="1_hinbn"]
 [ext_resource type="PackedScene" uid="uid://8nvpnq1dktdh" path="res://components/drawing/draw_text/draw_text.tscn" id="2_hinbn"]
 [ext_resource type="PackedScene" uid="uid://bctkguili8lu6" path="res://components/drawing/draw_rectangle/draw_rectangle.tscn" id="3_dy0xu"]
+[ext_resource type="Script" uid="uid://dtgd0cguix6db" path="res://components/drawing/draw_text/draw_text.gd" id="3_fxy5n"]
+[ext_resource type="PackedScene" uid="uid://cycctqx2bmx2j" path="res://components/drawing/draw_text/drawn_text.tscn" id="4_f8gis"]
+[ext_resource type="Script" uid="uid://nt05ksk5fdo6" path="res://components/drawing/draw_rectangle/draw_rectangle.gd" id="6_k74bh"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="7_k74bh"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="8_k74bh"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_k74bh"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_v37qy"]
 resource_local_to_scene = true
 animations = [{
 "frames": [],
@@ -14,17 +18,39 @@ animations = [{
 "speed": 30.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u3cbd"]
+size = Vector2(0, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n176t"]
+size = Vector2(0, 0)
+
 [node name="Intro" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_hinbn")
 animated_sprite_node = NodePath("Sprite")
 object_name = "intro"
 
-[node name="DrawText" parent="." instance=ExtResource("2_hinbn")]
+[node name="DrawText" type="Node2D" parent="." groups=["draw_text"] instance=ExtResource("2_hinbn")]
+z_index = 1
+script = ExtResource("3_fxy5n")
+drawn_text = ExtResource("4_f8gis")
 text_centered = true
 
-[node name="DrawRectangle" parent="." instance=ExtResource("3_dy0xu")]
+[node name="DrawRectangle" type="ColorRect" parent="." instance=ExtResource("3_dy0xu")]
+script = ExtResource("6_k74bh")
 
-[node name="Sprite" parent="." instance=ExtResource("7_k74bh")]
-sprite_frames = SubResource("SpriteFrames_k74bh")
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("7_k74bh")]
+visible = false
+sprite_frames = SubResource("SpriteFrames_v37qy")
+centered = false
+script = ExtResource("8_k74bh")
 
-[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_u3cbd")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+shape = SubResource("RectangleShape2D_n176t")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://dd2mvsvwhym2e"]
+[gd_scene load_steps=40 format=3 uid="uid://dd2mvsvwhym2e"]
 
 [ext_resource type="Script" uid="uid://d3vjl7nu8yd1l" path="res://objects/enemies/giant_spider/giant_spider.gd" id="1_k3lwk"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_j427r"]
@@ -30,8 +30,9 @@
 [ext_resource type="Texture2D" uid="uid://ct7tpuuv07yan" path="res://sprites/enemies/giant_spider/giant_spider_squirt/giant_spider_squirt_7.png" id="28_me6hw"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="29_6g1l6"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="30_lmm11"]
+[ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="31_6neq7"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_j427r"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_i0rxo"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -138,45 +139,30 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_6neq7"]
-script = ExtResource("30_lmm11")
-origin = Vector2(0, 0)
-containing_box = Rect2(1, 0, 30, 32)
-precise = false
-images = Array[Image]([])
-
-[sub_resource type="Resource" id="Resource_i0rxo"]
-script = ExtResource("30_lmm11")
-origin = Vector2(0, 0)
-containing_box = Rect2(3, 12, 26, 20)
-precise = false
-images = Array[Image]([])
-
 [sub_resource type="Resource" id="Resource_4takm"]
 script = ExtResource("30_lmm11")
-origin = Vector2(0, 0)
-containing_box = Rect2(1, 17, 30, 15)
-precise = false
-images = Array[Image]([])
+containing_box = Rect2(1, 0, 30, 32)
 
 [sub_resource type="Resource" id="Resource_xorcv"]
 script = ExtResource("30_lmm11")
-origin = Vector2(0, 0)
-containing_box = Rect2(0, 16, 32, 16)
-precise = false
-images = Array[Image]([])
+containing_box = Rect2(3, 12, 26, 20)
 
 [sub_resource type="Resource" id="Resource_0i0qf"]
 script = ExtResource("30_lmm11")
-origin = Vector2(0, 0)
-containing_box = Rect2(1, 8, 30, 24)
-precise = false
-images = Array[Image]([])
+containing_box = Rect2(1, 17, 30, 15)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4fix4"]
+[sub_resource type="Resource" id="Resource_4fix4"]
+script = ExtResource("30_lmm11")
+containing_box = Rect2(0, 16, 32, 16)
+
+[sub_resource type="Resource" id="Resource_rwmx0"]
+script = ExtResource("30_lmm11")
+containing_box = Rect2(1, 8, 30, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_snkpr"]
 size = Vector2(30, 32)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rwmx0"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6odol"]
 size = Vector2(60, 64)
 
 [node name="GiantSpider" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -186,22 +172,22 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "giant_spider"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_j427r")]
-sprite_frames = SubResource("SpriteFrames_j427r")
+sprite_frames = SubResource("SpriteFrames_i0rxo")
 autoplay = "giant_spider_flip"
 centered = false
 script = ExtResource("29_6g1l6")
 sprite_info = Dictionary[StringName, ExtResource("30_lmm11")]({
-&"giant_spider": SubResource("Resource_4takm"),
-&"giant_spider_crawl": SubResource("Resource_xorcv"),
-&"giant_spider_flip": SubResource("Resource_6neq7"),
-&"giant_spider_jump": SubResource("Resource_i0rxo"),
-&"giant_spider_squirt": SubResource("Resource_0i0qf")
+&"giant_spider": SubResource("Resource_0i0qf"),
+&"giant_spider_crawl": SubResource("Resource_4fix4"),
+&"giant_spider_flip": SubResource("Resource_4takm"),
+&"giant_spider_jump": SubResource("Resource_xorcv"),
+&"giant_spider_squirt": SubResource("Resource_rwmx0")
 })
 default_animation = &"giant_spider_flip"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(16, 16)
-shape = SubResource("RectangleShape2D_4fix4")
+shape = SubResource("RectangleShape2D_snkpr")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -209,7 +195,7 @@ collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 position = Vector2(16, 16)
-shape = SubResource("RectangleShape2D_rwmx0")
+shape = SubResource("RectangleShape2D_6odol")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
-[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]
+[node name="SmoothMotion" type="Node" parent="." instance=ExtResource("31_6neq7")]

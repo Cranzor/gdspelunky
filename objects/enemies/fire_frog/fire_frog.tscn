@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cxcb8r5dcdjto"]
+[gd_scene load_steps=27 format=3 uid="uid://cxcb8r5dcdjto"]
 
 [ext_resource type="Script" uid="uid://bhxkikg1cslgr" path="res://objects/enemies/fire_frog/fire_frog.gd" id="1_1pkil"]
 [ext_resource type="PackedScene" uid="uid://w6jxjbgfs6na" path="res://components/drawing/draw_circle/dark_level_circle.tscn" id="2_vusux"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://bc8e4hnrlbk2s" path="res://sprites/enemies/fire_frog_left/fire_frog_left_5.png" id="16_trott"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="17_ic6vs"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="18_hl3ot"]
+[ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="19_b274h"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ttmrw"]
 shader = ExtResource("3_jqocb")
@@ -58,7 +59,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_cjpsp"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_gvej5"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -93,24 +94,18 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_b274h"]
+[sub_resource type="Resource" id="Resource_2ybdw"]
 script = ExtResource("18_hl3ot")
-origin = Vector2(0, 0)
 containing_box = Rect2(1, 3, 14, 13)
-precise = false
-images = Array[Image]([])
 
-[sub_resource type="Resource" id="Resource_gvej5"]
+[sub_resource type="Resource" id="Resource_6u8s6"]
 script = ExtResource("18_hl3ot")
-origin = Vector2(0, 0)
 containing_box = Rect2(1, 2, 14, 12)
-precise = false
-images = Array[Image]([])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ybdw"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kphff"]
 size = Vector2(14, 13)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6u8s6"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vkg0p"]
 size = Vector2(28, 26)
 
 [node name="FireFrog" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -130,19 +125,19 @@ script = ExtResource("8_gcoix")
 offset_value = Vector2(8, 8)
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("9_cjpsp")]
-sprite_frames = SubResource("SpriteFrames_cjpsp")
+sprite_frames = SubResource("SpriteFrames_gvej5")
 autoplay = "fire_frog_left"
 centered = false
 script = ExtResource("17_ic6vs")
 sprite_info = Dictionary[StringName, ExtResource("18_hl3ot")]({
-&"fire_frog_jump_l": SubResource("Resource_gvej5"),
-&"fire_frog_left": SubResource("Resource_b274h")
+&"fire_frog_jump_l": SubResource("Resource_6u8s6"),
+&"fire_frog_left": SubResource("Resource_2ybdw")
 })
 default_animation = &"fire_frog_left"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, 9.5)
-shape = SubResource("RectangleShape2D_2ybdw")
+shape = SubResource("RectangleShape2D_kphff")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -150,7 +145,7 @@ collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 position = Vector2(8, 9.5)
-shape = SubResource("RectangleShape2D_6u8s6")
+shape = SubResource("RectangleShape2D_vkg0p")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
-[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]
+[node name="SmoothMotion" type="Node" parent="." instance=ExtResource("19_b274h")]

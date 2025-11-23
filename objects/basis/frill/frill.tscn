@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dnaibwpmh5gk3"]
+[gd_scene load_steps=7 format=3 uid="uid://dnaibwpmh5gk3"]
 
 [ext_resource type="Script" uid="uid://dderl4bgf3ef8" path="res://objects/basis/frill/frill.gd" id="1_0mgjc"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_7snyl"]
@@ -13,14 +13,30 @@ animations = [{
 "speed": 30.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y5w7r"]
+size = Vector2(0, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tlygc"]
+size = Vector2(0, 0)
+
 [node name="Frill" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_0mgjc")
 animated_sprite_node = NodePath("Sprite")
 object_name = "frill"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_7snyl")]
+visible = false
 sprite_frames = SubResource("SpriteFrames_7snyl")
 centered = false
 script = ExtResource("3_y5w7r")
 
-[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_y5w7r")
+
+[node name="BoundingBoxArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
+shape = SubResource("RectangleShape2D_tlygc")
+debug_color = Color(0.69, 0.296, 0.987, 0.1)

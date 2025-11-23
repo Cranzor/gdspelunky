@@ -1,12 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://bwcww3gwevou4"]
+[gd_scene load_steps=11 format=3 uid="uid://bwcww3gwevou4"]
 
 [ext_resource type="Script" uid="uid://bcqi8t8arkai" path="res://objects/items/gold_idol/gold_idol.gd" id="1_k1mgn"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_4l1hg"]
 [ext_resource type="Texture2D" uid="uid://55qbkbp6nrb8" path="res://sprites/items/treasures/gold_idol/gold_idol_0.png" id="3_nhci6"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_e57fv"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_id8tn"]
+[ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="6_nhci6"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_4l1hg"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_e57fv"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -18,17 +19,15 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_nhci6"]
+[sub_resource type="Resource" id="Resource_id8tn"]
 script = ExtResource("5_id8tn")
 origin = Vector2(8, 12)
 containing_box = Rect2(2, 1, 12, 15)
-precise = false
-images = Array[Image]([])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_e57fv"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yfe2g"]
 size = Vector2(12, 15)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_id8tn"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1uu65"]
 size = Vector2(24, 30)
 
 [node name="GoldIdol" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -38,19 +37,19 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "gold_idol"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_4l1hg")]
-sprite_frames = SubResource("SpriteFrames_4l1hg")
+sprite_frames = SubResource("SpriteFrames_e57fv")
 autoplay = "gold_idol"
 centered = false
 offset = Vector2(-8, -12)
 script = ExtResource("4_e57fv")
 sprite_info = Dictionary[StringName, ExtResource("5_id8tn")]({
-&"gold_idol": SubResource("Resource_nhci6")
+&"gold_idol": SubResource("Resource_id8tn")
 })
 default_animation = &"gold_idol"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -3.5)
-shape = SubResource("RectangleShape2D_e57fv")
+shape = SubResource("RectangleShape2D_yfe2g")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -58,7 +57,7 @@ collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 position = Vector2(0, -3.5)
-shape = SubResource("RectangleShape2D_id8tn")
+shape = SubResource("RectangleShape2D_1uu65")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
-[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]
+[node name="SmoothMotion" type="Node" parent="." instance=ExtResource("6_nhci6")]

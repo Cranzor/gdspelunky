@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dm47runmxb0n2"]
+[gd_scene load_steps=16 format=3 uid="uid://dm47runmxb0n2"]
 
 [ext_resource type="Script" uid="uid://367g5kpbxeye" path="res://objects/enemies/zombie/zombie.gd" id="1_wdql7"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_hy5wn"]
@@ -9,8 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://bgx46q74vnh1c" path="res://sprites/enemies/zombie_left/zombie_left_3.png" id="7_uux43"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="8_7ci8v"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="9_2oyon"]
+[ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="10_08hh8"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_hy5wn"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_8kbla"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -39,24 +40,18 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_08hh8"]
+[sub_resource type="Resource" id="Resource_hho48"]
 script = ExtResource("9_2oyon")
-origin = Vector2(0, 0)
 containing_box = Rect2(0, 0, 16, 16)
-precise = false
-images = Array[Image]([])
 
-[sub_resource type="Resource" id="Resource_8kbla"]
+[sub_resource type="Resource" id="Resource_1moyw"]
 script = ExtResource("9_2oyon")
-origin = Vector2(0, 0)
 containing_box = Rect2(0, 0, 15, 16)
-precise = false
-images = Array[Image]([])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hho48"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uux43"]
 size = Vector2(16, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1moyw"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ci8v"]
 size = Vector2(32, 32)
 
 [node name="Zombie" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -66,19 +61,19 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "zombie"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_hy5wn")]
-sprite_frames = SubResource("SpriteFrames_hy5wn")
+sprite_frames = SubResource("SpriteFrames_8kbla")
 autoplay = "zombie_left"
 centered = false
 script = ExtResource("8_7ci8v")
 sprite_info = Dictionary[StringName, ExtResource("9_2oyon")]({
-&"zombie_jump_l": SubResource("Resource_8kbla"),
-&"zombie_left": SubResource("Resource_08hh8")
+&"zombie_jump_l": SubResource("Resource_1moyw"),
+&"zombie_left": SubResource("Resource_hho48")
 })
 default_animation = &"zombie_left"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_hho48")
+shape = SubResource("RectangleShape2D_uux43")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -86,7 +81,7 @@ collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_1moyw")
+shape = SubResource("RectangleShape2D_7ci8v")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
-[connection signal="animation_changed" from="Sprite" to="Sprite" method="_on_animation_changed"]
+[node name="SmoothMotion" type="Node" parent="." instance=ExtResource("10_08hh8")]
