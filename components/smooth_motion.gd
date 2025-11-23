@@ -12,8 +12,11 @@ static var paused: bool = false
 
 
 func _ready() -> void:
+	if parent.object_name == "arrow": #--- making an exception so that rotation works properly
+		update_rotation = false
+
 	set_sprite()
-	reset_position()
+	set_initial_position()
 
 
 func update_sprite_during_tick() -> void: #--- called in gm_loop once per tick
@@ -42,6 +45,14 @@ func _process(delta: float) -> void:
 func set_sprite():
 	remote_path = "../../Sprite"
 	sprite = get_node(remote_path)
+
+
+func set_initial_position():
+	position = parent.global_position
+	parent.animated_sprite_node.global_position = parent.global_position
+	last_pos = position
+	current_pos = position
+	waiting_for_reset = true
 
 
 func reset_position(passed_position: Vector2 = Vector2.ZERO):
