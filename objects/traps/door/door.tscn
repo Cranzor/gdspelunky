@@ -1,9 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://bk5eaesk1m2eo"]
+[gd_scene load_steps=9 format=3 uid="uid://bk5eaesk1m2eo"]
 
 [ext_resource type="Script" uid="uid://c42plm4dflaab" path="res://objects/traps/door/door.gd" id="1_qhcla"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_3dff4"]
 [ext_resource type="Texture2D" uid="uid://cdrjccptcw46j" path="res://sprites/traps/door/door_0.png" id="3_i4a18"]
-[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_2eqxy"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_egsaq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3dff4"]
@@ -29,16 +28,14 @@ size = Vector2(14, 32)
 size = Vector2(28, 64)
 
 [node name="Door" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
-z_index = -4095
+z_index = -4093
 script = ExtResource("1_qhcla")
 animated_sprite_node = NodePath("Sprite")
 object_name = "door"
 
-[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_3dff4")]
+[node name="Sprite" parent="." instance=ExtResource("2_3dff4")]
 sprite_frames = SubResource("SpriteFrames_3dff4")
 autoplay = "door"
-centered = false
-script = ExtResource("4_2eqxy")
 sprite_info = Dictionary[StringName, ExtResource("5_egsaq")]({
 &"door": SubResource("Resource_i4a18")
 })

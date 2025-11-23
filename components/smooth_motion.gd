@@ -17,6 +17,8 @@ func _ready() -> void:
 
 	set_sprite()
 	set_initial_position()
+	
+	SignalBus.fps_setting_changed.connect(set_initial_position)
 
 
 func update_sprite_during_tick() -> void: #--- called in gm_loop once per tick
@@ -52,12 +54,14 @@ func set_initial_position():
 	parent.animated_sprite_node.global_position = parent.global_position
 	last_pos = position
 	current_pos = position
+	scale.x = 1
 	waiting_for_reset = true
 
 
 func reset_position(passed_position: Vector2 = Vector2.ZERO):
-	if passed_position:
-		position = passed_position
-	else:
-		position = sprite.global_position
-		waiting_for_reset = true
+	if GameSettings.smooth_motion:
+		if passed_position:
+			position = passed_position
+		else:
+			position = sprite.global_position
+			waiting_for_reset = true

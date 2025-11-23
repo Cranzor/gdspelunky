@@ -82,6 +82,7 @@ static var frame_rate: int = 0:
 		
 		if value == 30: smooth_motion = false
 		else: smooth_motion = true
+		SignalBus.emit_signal("fps_setting_changed")
 
 
 static var window_scale: int = 5:
