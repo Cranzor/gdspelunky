@@ -33,6 +33,7 @@ func object_setup(scene_file_path: String):
 	#alarms_setup(loaded_object)
 	#--collision_with_setup(loaded_object)
 	set_visibility(loaded_object)
+	smooth_motion_setup(loaded_object)
 	var scene = PackedScene.new()
 	var result = scene.pack(loaded_object)
 	if result == OK:
@@ -146,11 +147,22 @@ func set_visibility(loaded_object: GMObject):
 		loaded_object.hide()
 
 
+func smooth_motion_setup(loaded_object: GMObject):
+	var static_object = object_database.object_database[loaded_object.object_name]["static"]
+
+	if not static_object:
+		var smooth_motion = ResourceLoader.load("res://components/smooth_motion.tscn", "", 0).instantiate()
+		smooth_motion.name = "SmoothMotion"
+		loaded_object.add_child(smooth_motion)
+		smooth_motion.owner = loaded_object
+
+
 func reset_object(scene_file_path: String):
 	var loaded_object: GMObject = ResourceLoader.load(scene_file_path, "", 0).instantiate()
 	remove_node(loaded_object, "Sprite")
 	remove_node(loaded_object, "CollisionShape2D")
 	remove_node(loaded_object, "BoundingBoxArea")
+	remove_node(loaded_object, "SmoothMotion")
 	loaded_object.animated_sprite_node = null
 	for group in loaded_object.get_groups():
 		loaded_object.remove_from_group(group)
@@ -161,6 +173,7 @@ func reset_object(scene_file_path: String):
 	var result = scene.pack(loaded_object)
 	if result == OK:
 		ResourceSaver.save(scene, scene_file_path)
+
 
 func remove_node(object: GMObject, node_path: NodePath):
 	if object.has_node(node_path):
