@@ -27,12 +27,12 @@ func update_sprite_during_tick() -> void: #--- called in gm_loop once per tick
 			if parent.object_name != "arrow_trap_test":
 				scale.x = 1
 		
-		if sprite.global_position != current_pos:
-			last_pos = current_pos
-			current_pos = sprite.global_position
-		else:
+		if parent.global_position.is_equal_approx(current_pos):
 			last_pos = current_pos
 			position = sprite.global_position
+		else:
+			last_pos = current_pos
+			current_pos = parent.global_position
 		
 		waiting_for_reset = false
 
