@@ -1,5 +1,7 @@
 extends Node
 
+@onready var game_settings = GameSettings.new()
+
 func scr_clear_globals():
 	 ##
 	## scr_clear_globals()
@@ -399,11 +401,13 @@ func scr_reset_highscores():
 
 
 func scr_get_joy(key):
-	var returned_key = GlobalInput.get_gamepad_button_from_action(key)
+	var button_setting_name: StringName = "controller_" + key
+	var returned_key = ButtonNames.get_button_name(game_settings.get(button_setting_name))
 	return returned_key
 	
 func scr_get_key(key):
-	var returned_key = GlobalInput.get_keyboard_key_from_action(key)
+	var key_setting_name: StringName = "keyboard_" + key
+	var returned_key = ButtonNames.get_key_name(game_settings.get(key_setting_name))
 	return returned_key
 
 func scr_init(): #--- add the rest of this script later

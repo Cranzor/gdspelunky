@@ -32,3 +32,7 @@ static func get_button_name(button_index_and_type: PackedInt32Array) -> StringNa
 	else:
 		if index in joy_axis_names: return joy_axis_names[index][0]
 	return ""
+
+
+static func get_key_name(key: int) -> String:
+	return OS.get_keycode_string(key).to_upper()

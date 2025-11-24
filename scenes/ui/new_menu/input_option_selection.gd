@@ -26,7 +26,7 @@ func _ready() -> void:
 		SignalBus.connect("key_remapped", _change_key_if_current_one_is_remapped)
 		keyboard_setting_name = "keyboard_" + action_name
 		current_key = game_settings.get(keyboard_setting_name)
-		var key_string: String = OS.get_keycode_string(current_key).to_upper()
+		var key_string: String = ButtonNames.get_key_name(current_key)
 		current_text = key_string
 		var new_event: InputEventKey = InputEventKey.new()
 		new_event.keycode = current_key
@@ -61,7 +61,7 @@ func set_input(event: InputEvent, calling_from_input: bool = true): #TODO: need 
 			SignalBus.emit_signal("key_remapped", new_key, game_settings.get(keyboard_setting_name))
 		current_key = new_key
 		update_game_settings_keyboard(event.keycode)
-		text = OS.get_keycode_string(new_key).to_upper()
+		text = ButtonNames.get_key_name(new_key)
 	else:
 		text = current_text
 
