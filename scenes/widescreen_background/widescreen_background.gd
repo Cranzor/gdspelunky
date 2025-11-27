@@ -34,7 +34,10 @@ func set_up_background(room_name: StringName) -> void:
 	var composite_texture: Texture2D = generate_texture(level_textures[0])
 	background1.texture = composite_texture
 	
-	if level_textures.size() == 1:
+	if room_name == "title": #--- special handling for title screen (see set_size() function)
+		background2.texture = composite_texture
+		set_size(2, room_name, true)
+	elif level_textures.size() == 1:
 		set_size(2, room_name)
 	elif level_textures.size() > 1:
 		composite_texture = generate_texture(level_textures[1])
@@ -89,3 +92,8 @@ func set_size(multipier: int, room_name: StringName, both_displayed: bool = fals
 		var background2_screens: int = multipier
 		background2.offset.x = default_region_size.x
 		background2.region_rect = Rect2(0, 0, default_region_size.x * background2_screens, room_height)
+		#--- title screen has special handling to cover the shortcut area if it's not unlocked
+		#--- the condition for not covering it is taken from the title object (when creating ladders). format with "pass" is just for clarity
+		if room_name == "title":
+			if (global.tunnel1 == 0 or (global.tunnel1 > 0 and global.tunnel2 == 0)): pass
+			else: background1.z_index = 10
