@@ -32,7 +32,7 @@ func draw_pause_screen(paused: bool) -> void:
 
 func pause_handling() -> void:
 	paused = !paused
-	GmLoop.paused = paused
+	set_pause_in_other_scripts()
 	draw_pause_screen(paused)
 
 
@@ -40,15 +40,17 @@ func pause_button_pressed(event: InputEvent) -> void:
 	player1 = gml.get_instance("player1")
 	if player1 and not player1.dead:
 		if event.is_action_pressed("start"):
-			paused = !paused
-			GmLoop.paused = paused
-			SmoothMotion.paused = paused
-			draw_pause_screen(paused)
+			pause_handling()
 		if !GameSettings.new_pause_menu:
 			if paused and event.is_action_pressed("bomb"):
 				end_adventure()
 			elif paused and event.is_action_pressed("rope"):
 				gml.game_end()
+
+
+func set_pause_in_other_scripts() -> void:
+	GmLoop.paused = paused
+	SmoothMotion.paused = paused
 
 
 func end_adventure() -> void:
