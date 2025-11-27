@@ -35,11 +35,11 @@ func set_up_background(room_name: StringName) -> void:
 	background1.texture = composite_texture
 	
 	if level_textures.size() == 1:
-		set_size(2)
+		set_size(2, room_name)
 	elif level_textures.size() > 1:
 		composite_texture = generate_texture(level_textures[1])
 		background2.texture = composite_texture
-		set_size(2, true)
+		set_size(2, room_name, true)
 
 
 func generate_texture(textures_to_use: Array[Texture2D]):
@@ -76,15 +76,16 @@ func generate_texture(textures_to_use: Array[Texture2D]):
 	return composite_texture
 
 
-func set_size(multipier: int, both_displayed: bool = false):
+func set_size(multipier: int, room_name: StringName, both_displayed: bool = false):
+	var room_height: int = int(Rooms.room_database[room_name]["room"]["size"]["height"])
 	var pixels: int = multipier * default_region_size.x
 	background1.offset.x = -pixels
 	if not both_displayed:
 		var screens: int = multipier * 2 + 1
-		background1.region_rect = Rect2(0, 0, default_region_size.x * screens, 240)
+		background1.region_rect = Rect2(0, 0, default_region_size.x * screens, room_height)
 	else:
 		var background1_screens: int = multipier + 1
-		background1.region_rect = Rect2(0, 0, default_region_size.x * background1_screens, 240)
+		background1.region_rect = Rect2(0, 0, default_region_size.x * background1_screens, room_height)
 		var background2_screens: int = multipier
 		background2.offset.x = default_region_size.x
-		background2.region_rect = Rect2(0, 0, default_region_size.x * background2_screens, 240)
+		background2.region_rect = Rect2(0, 0, default_region_size.x * background2_screens, room_height)
