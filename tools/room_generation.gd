@@ -22,6 +22,7 @@ func generate_room(room_name: String):
 		var position = instance['position']
 		var object_position = Vector2(int(position['x']), int(position['y']))
 		var object_folder_path = objects.object_database[object]['folder_path']
+		var persistent = objects.object_database[object]['persistent']
 		var loaded_object
 		if all_objects.has(object):
 			loaded_object = all_objects[object]
@@ -34,8 +35,9 @@ func generate_room(room_name: String):
 		#holder.add_child(loaded_object)
 		#loaded_object.owner = EditorInterface.get_edited_scene_root()
 		
-		var obj = gml.instance_create(object_position.x, object_position.y, loaded_object, null, false)
-		objects_in_level.append(obj)
+		if !persistent: #--- persistent objects are already created as autoloads
+			var obj = gml.instance_create(object_position.x, object_position.y, loaded_object, null, false)
+			objects_in_level.append(obj)
 	
 	for object in objects_in_level: #--- running create event for all objects after they are all instanced so that they can reference one another regardless of order
 		object.run_create_function(object)

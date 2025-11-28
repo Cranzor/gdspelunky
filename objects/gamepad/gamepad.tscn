@@ -23,6 +23,7 @@ size = Vector2(0, 0)
 script = ExtResource("1_laopm")
 animated_sprite_node = NodePath("Sprite")
 object_name = "gamepad"
+persistent = true
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_prgg4")]
 visible = false

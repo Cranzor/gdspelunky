@@ -33,6 +33,7 @@ func object_setup(scene_file_path: String):
 	#alarms_setup(loaded_object)
 	#--collision_with_setup(loaded_object)
 	set_visibility(loaded_object)
+	set_persistent(loaded_object)
 	smooth_motion_setup(loaded_object)
 	var scene = PackedScene.new()
 	var result = scene.pack(loaded_object)
@@ -149,6 +150,12 @@ func set_visibility(loaded_object: GMObject):
 		loaded_object.hide()
 
 
+func set_persistent(loaded_object: GMObject):
+	var persistent = object_database.object_database[loaded_object.object_name]["persistent"]
+	if persistent:
+		loaded_object.persistent = true
+
+
 func smooth_motion_setup(loaded_object: GMObject):
 	var static_object = object_database.object_database[loaded_object.object_name]["static"]
 
@@ -171,6 +178,8 @@ func reset_object(scene_file_path: String):
 	loaded_object.z_index = 0
 	loaded_object.alarms = {}
 	loaded_object.collision_with2.clear()
+	loaded_object.visible = true
+	loaded_object.persistent = false
 	var scene = PackedScene.new()
 	var result = scene.pack(loaded_object)
 	if result == OK:

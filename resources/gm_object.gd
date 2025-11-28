@@ -86,6 +86,7 @@ var sprites_holder: Node2D
 @export_group("")
 
 @export var object_name: String
+@export var persistent: bool = false
 var object_hash: String
 
 const ALARM = preload("res://scenes/alarm.tscn")
@@ -389,7 +390,6 @@ func object_setup() -> void:
 		bounding_box_area.area_exited.connect(_bounding_box_exited)
 	sprite_index_name = $Sprite.default_animation
 
-	var autoloads = ["globals", "screen", "music", "gamepad"]
 	disable_mode = CollisionObject2D.DISABLE_MODE_KEEP_ACTIVE
 	var object_database = object_database.object_database
 	var object_entry = object_database[object_name]
@@ -412,7 +412,7 @@ func object_setup() -> void:
 	
 	
 	#move_child($CollisionShape2D, -1)
-	if object_name in autoloads:
+	if persistent:
 		run_create_function(self)
 	
 	#--- for flare_spark

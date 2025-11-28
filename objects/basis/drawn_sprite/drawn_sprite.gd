@@ -2,7 +2,6 @@
 extends GMObject
 class_name DrawnSprite
 		
-var persistent = false
 var mask
 
 var blink_toggle

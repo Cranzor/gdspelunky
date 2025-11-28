@@ -1,12 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://q56gv78d73dc"]
+[gd_scene load_steps=7 format=3 uid="uid://q56gv78d73dc"]
 
 [ext_resource type="Script" uid="uid://rqb7dvwsiipy" path="res://objects/music/music.gd" id="1_0gvbg"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_rdork"]
-[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="3_rdork"]
 
 [sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_xkybd"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_gm83b"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_rdork"]
 resource_local_to_scene = true
 animations = [{
 "frames": [],
@@ -15,10 +14,10 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_n55ql"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gm83b"]
 size = Vector2(0, 0)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cu17a"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n55ql"]
 size = Vector2(0, 0)
 
 [node name="Music" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -26,6 +25,7 @@ visible = false
 script = ExtResource("1_0gvbg")
 animated_sprite_node = NodePath("Sprite")
 object_name = "music"
+persistent = true
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 bus = &"Music"
@@ -38,19 +38,17 @@ bus = &"Sound Effects"
 [node name="BowPull" type="AudioStreamPlayer" parent="."]
 bus = &"Sound Effects"
 
-[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_rdork")]
+[node name="Sprite" parent="." instance=ExtResource("2_rdork")]
 visible = false
-sprite_frames = SubResource("SpriteFrames_gm83b")
-centered = false
-script = ExtResource("3_rdork")
+sprite_frames = SubResource("SpriteFrames_rdork")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_n55ql")
+shape = SubResource("RectangleShape2D_gm83b")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-shape = SubResource("RectangleShape2D_cu17a")
+shape = SubResource("RectangleShape2D_n55ql")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
