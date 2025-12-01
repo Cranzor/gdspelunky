@@ -295,14 +295,15 @@ func instance_position(x, y, obj: String) -> GMObject: #---[FLAG] this needs che
 		return null
 
 func instance_destroy(obj: GMObject) -> void: #'Destroys current instance' ---  Should probably start passing 'self' or other node reference as an argument. Go through and check
-	if obj.has_method("destroy"):
-		obj.destroy()
-	
-	#var area_2d: Area2D = obj.get_node("Sprites/MainAnimations/Area2D") #---[FLAG] should do this for main object
-	#area_2d.set_collision_layer_value(1, false)
-	obj.hide()
-	obj.custom_collision.remove_object_from_cells(obj, obj.custom_collision.prior_occupied_cells)
-	obj.queue_free()
+	if obj:
+		if obj.has_method("destroy"):
+			obj.destroy()
+		
+		#var area_2d: Area2D = obj.get_node("Sprites/MainAnimations/Area2D") #---[FLAG] should do this for main object
+		#area_2d.set_collision_layer_value(1, false)
+		obj.hide()
+		obj.custom_collision.remove_object_from_cells(obj, obj.custom_collision.prior_occupied_cells)
+		obj.queue_free()
 
 func collision_rectangle(x1:float,y1:float,x2:float,y2:float,obj,_prec,notme: bool, calling_object: GMObject = null) -> GMObject: #"This function tests whether there is a collision between the (filled) rectangle with the indicated opposite corners and entities of object obj. For example, you can use this to test whether an area is free of obstacles."
 	if x1 - x2 == 0:
