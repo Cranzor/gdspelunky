@@ -131,7 +131,7 @@ var has_spring_shoes
 var has_sticky_bombs
 var has_udjat_eye
 var hawkmen
-var highscore: Dictionary = {1 : 0, 2 : 0, 3 : 0, 4 : 0, 5 : 0, 6 : 0, 7 : 0, 8 : 0, 9 : 0, 10 : 0}
+var highscore: Dictionary = {1 : 9000000, 2 : 8000000, 3 : 7000000, 4 : 6000000, 5 : 5000000, 6 : 4000000, 7 : 3000000, 8 : 2000000, 9 : 1000000, 10 : 0}
 var idols
 var idols_converted: int
 var idols_grabbed: int

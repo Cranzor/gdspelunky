@@ -15,7 +15,10 @@ static func save_game() -> void:
 
 static func load_game() -> void:
 	var handle_stats = load("res://scripts/saving_loading/stats/handle_stats.gd").new()
-	var file: FileAccess = FileAccess.open("user://save.json", FileAccess.READ)
+	var path: String = "user://save.json"
+	if !FileAccess.file_exists(path):
+		save_game()
+	var file: FileAccess = FileAccess.open(path, FileAccess.READ)
 	var json = file.get_as_text()
 	var saved_data = JSON.parse_string(json)
 	handle_stats.set_values_from_stats(saved_data)

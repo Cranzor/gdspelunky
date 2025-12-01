@@ -6,6 +6,7 @@ static var pixel_scale_factor: int = 5
 
 
 func _ready() -> void:
+	SavingLoading.load_game()
 	SavingLoading.load_settings()
 
 
