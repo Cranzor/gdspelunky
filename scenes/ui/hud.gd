@@ -25,6 +25,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		show()
 		in_game.hide()
+		item_icons.hide()
 	
 	if global.has_sticky_bombs:
 		bomb_icon.hide()
