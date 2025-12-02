@@ -50,7 +50,7 @@ func _ready() -> void:
 	pause_handling.new_pause_menu = new_pause_menu
 	SignalBus.connect("game_unpaused", _game_unpaused)
 	SignalBus.connect("end_adventure", _end_adventure)
-	if gml.room_get_name() == "title":
+	if gml.room_get_name() == "title" and global.title_start == 0:
 		handle_title_hud()
 
 
