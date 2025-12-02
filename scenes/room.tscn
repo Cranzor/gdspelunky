@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b8g70geq8alqq"]
+[gd_scene load_steps=12 format=3 uid="uid://b8g70geq8alqq"]
 
 [ext_resource type="Script" uid="uid://bpwfpbixw4l5b" path="res://scenes/room.gd" id="1_36trf"]
 [ext_resource type="PackedScene" uid="uid://b2jlcu453ynaf" path="res://scenes/bg_elements.tscn" id="2_85yof"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://c7mqbeksgioqi" path="res://backgrounds/background_night.png" id="4_qvc4m"]
 [ext_resource type="PackedScene" uid="uid://dpik07grwpaj" path="res://scenes/collision/collision_shapecast.tscn" id="5_jn645"]
 [ext_resource type="PackedScene" uid="uid://btcxwyjni2p86" path="res://resources/view.tscn" id="8_7dqbv"]
-[ext_resource type="PackedScene" uid="uid://df3di5vguofi1" path="res://scenes/debug/debug_buttons.tscn" id="9_ybpoa"]
 [ext_resource type="PackedScene" uid="uid://dfkrem72v8ms8" path="res://scenes/ui/hud.tscn" id="10_qtoah"]
 [ext_resource type="PackedScene" uid="uid://tjqoddfss6i5" path="res://debug/debug.tscn" id="11_eom3m"]
 [ext_resource type="PackedScene" uid="uid://p16jqhjvgljv" path="res://scenes/dark_level/dark_level.tscn" id="12_tk5fv"]
@@ -43,9 +42,6 @@ visible = false
 offset_right = 160.0
 offset_bottom = 160.0
 color = Color(0.211765, 1, 1, 0.407843)
-
-[node name="DebugButtons" parent="." instance=ExtResource("9_ybpoa")]
-visible = false
 
 [node name="HUD" parent="." instance=ExtResource("10_qtoah")]
 
