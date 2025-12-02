@@ -50,6 +50,8 @@ func _ready() -> void:
 	pause_handling.new_pause_menu = new_pause_menu
 	SignalBus.connect("game_unpaused", _game_unpaused)
 	SignalBus.connect("end_adventure", _end_adventure)
+	if gml.room_get_name() == "title":
+		handle_title_hud()
 
 
 func draw_compass_arrow() -> void:
@@ -114,6 +116,7 @@ func draw_global_message_text(): #--- moved from screen object
 func handle_title_hud():
 	in_game.hide()
 	title_fade_in.show()
+	$TitleFadeIn/DrawRectangle.size = Vector2(get_viewport().get_visible_rect().size.x, 240)
 	show()
 
 
