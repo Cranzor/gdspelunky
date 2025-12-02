@@ -1,7 +1,7 @@
 #--- sets up the game window and loads save/settings
 extends Node
 @onready var window: Window = get_window()
-const base_resolution: Vector2 = Vector2(320, 240)
+const base_resolution: Vector2i = Vector2i(320, 240)
 static var pixel_scale_factor: int = 5
 
 
@@ -17,6 +17,10 @@ func initalize_window() -> void: #--- gets called upon window scale being set wh
 	window.size = base_resolution * pixel_scale_factor
 	var screen_size = DisplayServer.screen_get_size()
 	window.position = (screen_size - window.size) / 2
+	
+	#--- turn off integer scaling if monitor size does not cleanly divide by base resolution
+	if screen_size.x % base_resolution.x == 0 and screen_size.y % base_resolution.y == 0: window.content_scale_stretch = Window.CONTENT_SCALE_STRETCH_INTEGER
+	else: window.content_scale_stretch = Window.CONTENT_SCALE_STRETCH_FRACTIONAL
 
 
 func load_all_objects() -> void:
