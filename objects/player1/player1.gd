@@ -4652,7 +4652,7 @@ func scr_use_item() -> void: #--- only called by player1 so including it here fo
 			hold_item.py = position.y
 					
 			if (k_down):
-				var obj	
+				var obj
 				if (facing == LEFT):
 						
 					obj = gml.instance_create(position.x-16, position.y, Objects.rope_throw, self)
@@ -5298,4 +5298,19 @@ func scr_use_item() -> void: #--- only called by player1 so including it here fo
 
 
 func collision_with_blood() -> void: #---[FLAG] have to implement
-	pass
+	if (global.has_kapala and other.collectible):
+
+		global.blood_level += 1
+		gml.instance_create(other.position.x, other.position.y, Objects.blood_spark)
+		gml.instance_destroy(other)
+		
+		if (global.blood_level > 8):
+		
+			global.blood_level = 0
+			global.plife += 1
+			gml.instance_create(position.x, position.y-8, Objects.heart)
+			Audio.play_sound(global.snd_kiss)
+		
+		
+		if (red_color < 55): red_color += 5
+		red_toggle = false

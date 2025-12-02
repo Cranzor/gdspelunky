@@ -204,7 +204,7 @@ var image_angle: float:
 		
 var image_blend: Color:
 	get:
-		return animated_sprite_node.self_modulate
+		return Color.WHITE
 		
 var image_alpha: float:
 	set(value):
