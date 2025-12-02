@@ -11,9 +11,3 @@ func _ready() -> void:
 	custom_collision.cell_to_objects.clear() #--- clearing out collision before generating new room
 	Music.reset_on_room_changed()
 	room_generation.generate_room(room_name)
-	$LoadObjects.start()
-
-
-func _on_timer_timeout() -> void:
-	var loader = preload("res://tools/load_all_objects.gd").new()
-	loader.load_all_objects()

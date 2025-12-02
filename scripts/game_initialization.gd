@@ -8,6 +8,7 @@ static var pixel_scale_factor: int = 5
 func _ready() -> void:
 	SavingLoading.load_game()
 	SavingLoading.load_settings()
+	load_all_objects()
 
 
 func initalize_window() -> void: #--- gets called upon window scale being set when settings are loaded
@@ -16,3 +17,8 @@ func initalize_window() -> void: #--- gets called upon window scale being set wh
 	window.size = base_resolution * pixel_scale_factor
 	var screen_size = DisplayServer.screen_get_size()
 	window.position = (screen_size - window.size) / 2
+
+
+func load_all_objects() -> void:
+	var load_objects: LoadObjects = LoadObjects.new()
+	add_child(load_objects)
