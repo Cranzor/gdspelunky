@@ -83,15 +83,15 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 1
 
-[node name="Label" type="Label" parent="PauseScreen/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Money" type="Label" parent="PauseScreen/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "$5000"
 
-[node name="Label2" type="Label" parent="PauseScreen/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Kills" type="Label" parent="PauseScreen/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "KILLS: 25"
 
-[node name="Label3" type="Label" parent="PauseScreen/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Saves" type="Label" parent="PauseScreen/MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "SAVES: 11"
 
@@ -100,17 +100,17 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 1
 
-[node name="Label4" type="Label" parent="PauseScreen/MarginContainer/HBoxContainer/VBoxContainer2"]
+[node name="Level" type="Label" parent="PauseScreen/MarginContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 8
 text = "LEVEL 1"
 
-[node name="Label5" type="Label" parent="PauseScreen/MarginContainer/HBoxContainer/VBoxContainer2"]
+[node name="Depth" type="Label" parent="PauseScreen/MarginContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 8
 text = "16.32 FEET"
 
-[node name="Label6" type="Label" parent="PauseScreen/MarginContainer/HBoxContainer/VBoxContainer2"]
+[node name="Time" type="Label" parent="PauseScreen/MarginContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 8
 text = "0:00 / 0:00"

@@ -12,20 +12,25 @@ extends CanvasLayer
 @onready var title_fade_in = $TitleFadeIn
 @onready var new_pause_menu: Control = $NewPauseMenu
 @onready var pause_handling: PauseHandling = load("res://scenes/ui/pause_handling.gd").new()
+@onready var fps_counter: Label = $FpsCounter
 
 #--- change this to update in gm_loop
 func _physics_process(delta: float) -> void:
 	var player1 = gml.get_instance("player1")
-	if global.draw_hud and player1:
+	if global.draw_hud and player1 and not pause_handling.paused:
 		show()
+		in_game.show()
+		item_icons.show()
 		item_icons.draw_icons()
 		pickup_item.draw_pickup_item()
+		fps_counter.show()
 	elif gml.room_get_name() == "title":
 		handle_title_hud()
 	else:
 		show()
 		in_game.hide()
 		item_icons.hide()
+		fps_counter.hide()
 	
 	if global.has_sticky_bombs:
 		bomb_icon.hide()

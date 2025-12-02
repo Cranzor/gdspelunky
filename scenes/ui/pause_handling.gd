@@ -13,6 +13,7 @@ func draw_pause_screen(paused: bool) -> void:
 		if GameSettings.new_pause_menu:
 			new_pause_menu.set_initial_pause_visibility()
 			new_pause_menu.set_default_focus()
+			new_pause_menu.update_game_status_text()
 		else:
 			classic_pause_screen.draw_pause_screen_text()
 			classic_pause_screen.draw_pause_screen_rect()

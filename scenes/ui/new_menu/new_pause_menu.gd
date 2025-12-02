@@ -14,6 +14,12 @@ extends Control
 @onready var viewport: Viewport = get_viewport()
 @onready var arrow_left: TextureRect = %ArrowLeft
 @onready var arrow_right: TextureRect = %ArrowRight
+@onready var money: Label = $PauseScreen/MarginContainer/HBoxContainer/VBoxContainer/Money
+@onready var kills: Label = $PauseScreen/MarginContainer/HBoxContainer/VBoxContainer/Kills
+@onready var saves: Label = $PauseScreen/MarginContainer/HBoxContainer/VBoxContainer/Saves
+@onready var level: Label = $PauseScreen/MarginContainer/HBoxContainer/VBoxContainer2/Level
+@onready var depth: Label = $PauseScreen/MarginContainer/HBoxContainer/VBoxContainer2/Depth
+@onready var time: Label = $PauseScreen/MarginContainer/HBoxContainer/VBoxContainer2/Time
 var current_menu_screen: VBoxContainer
 
 var room: StringName
@@ -66,3 +72,46 @@ func _handle_menu_screen_change(requesting_screen, next_screen, set_prev_screen:
 	
 	arrow_left.hide()
 	arrow_right.hide()
+
+
+func update_game_status_text() -> void:
+	var status_lines: Array[Label] = [money, kills, saves, level, depth, time]
+	
+	var player1 = gml.get_instance("player1")
+	
+	var py: float = player1.position.y
+	
+	if (InLevel.is_level()):
+		var n = 128-24
+		if (global.curr_level < 1): level.text = "TUTORIAL CAVE"
+		elif (InLevel.is_room("load_level")): level.text = global.custom_level_name + " BY " + global.custom_level_author
+		else: level.text = "LEVEL " + str(global.curr_level)
+		depth.text = str(174.8*(global.curr_level-1)+(py+8)*0.34) + " FEET"
+		money.text = "$" + str(global.money)
+		kills.text = "KILLS: " + str(global.kills)
+		var s = global.xtime
+		s = floor(s / 1000)
+		var m = 0
+		while (s > 59):
+		
+			s -= 60
+			m += 1
+		
+		var str
+		if (s < 10): str = "0" + str(s)
+		else: str = str(s)
+		var s2 = global.time
+		s2 = floor(s2 / 1000)
+		var m2 = 0
+		while (s2 > 59):
+		
+			s2 -= 60
+			m2 += 1
+		
+		var str2
+		if (s2 < 10): str2 = "0" + str(s2)
+		else: str2 = str(s2)
+		time.text = str(m) + ":" + str + " / " + str(m2) + ":" + str2
+		saves.text = "SAVES: " + str(global.damsels)
+	else:
+		for line in status_lines: line.text = ""
