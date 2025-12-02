@@ -151,12 +151,6 @@ text = "OPTIONS"
 next_menu_to_show = NodePath("../../../../Settings")
 menu_to_hide = NodePath("../../..")
 
-[node name="MainMenu" parent="PauseScreen/MarginContainer2/VBoxContainer" instance=ExtResource("5_04n3j")]
-layout_mode = 2
-size_flags_horizontal = 4
-theme = null
-text = "MAIN MENU"
-
 [node name="ExitGame" parent="PauseScreen/MarginContainer2/VBoxContainer" instance=ExtResource("5_04n3j")]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -279,6 +273,10 @@ text = "V-SYNC"
 layout_mode = 2
 text = "SHOW FPS"
 
+[node name="ForceIntegerScaling" type="Label" parent="Graphics/HBoxContainer/Settings"]
+layout_mode = 2
+text = "FORCE INT SCALE"
+
 [node name="Selections" type="VBoxContainer" parent="Graphics/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -320,6 +318,14 @@ layout_mode = 2
 text = "OFF"
 setting_to_update = &"show_fps"
 description = NodePath("../../Settings/ShowFPS")
+options = PackedStringArray("OFF", "ON")
+values = [false, true]
+
+[node name="ForceIntegerScaling" parent="Graphics/HBoxContainer/Selections" instance=ExtResource("7_uucu8")]
+layout_mode = 2
+text = "OFF"
+setting_to_update = &"force_integer_scaling"
+description = NodePath("../../Settings/ForceIntegerScaling")
 options = PackedStringArray("OFF", "ON")
 values = [false, true]
 

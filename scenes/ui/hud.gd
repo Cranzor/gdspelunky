@@ -23,7 +23,8 @@ func _physics_process(delta: float) -> void:
 		item_icons.show()
 		item_icons.draw_icons()
 		pickup_item.draw_pickup_item()
-		fps_counter.show()
+		if GameSettings.show_fps:
+			fps_counter.show()
 	elif gml.room_get_name() == "title":
 		handle_title_hud()
 	else:

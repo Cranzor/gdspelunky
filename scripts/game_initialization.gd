@@ -17,9 +17,13 @@ func initalize_window() -> void: #--- gets called upon window scale being set wh
 	window.size = base_resolution * pixel_scale_factor
 	var screen_size = DisplayServer.screen_get_size()
 	window.position = (screen_size - window.size) / 2
-	
+	set_window_scale_stretch_mode()
+
+
+func set_window_scale_stretch_mode() -> void:
 	#--- turn off integer scaling if monitor size does not cleanly divide by base resolution
-	if screen_size.x % base_resolution.x == 0 and screen_size.y % base_resolution.y == 0: window.content_scale_stretch = Window.CONTENT_SCALE_STRETCH_INTEGER
+	var screen_size = DisplayServer.screen_get_size()
+	if (screen_size.x % base_resolution.x == 0 and screen_size.y % base_resolution.y == 0) or GameSettings.force_integer_scaling: window.content_scale_stretch = Window.CONTENT_SCALE_STRETCH_INTEGER
 	else: window.content_scale_stretch = Window.CONTENT_SCALE_STRETCH_FRACTIONAL
 
 

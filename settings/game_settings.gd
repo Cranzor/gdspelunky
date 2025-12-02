@@ -9,6 +9,7 @@ static var default_setting_values: Dictionary = {
 	"fullscreen" : false,
 	"frame_rate" : 0,
 	"show_fps" : false,
+	"force_integer_scaling" : false,
 	
 	#--- sound
 	"sfx_volume" : 5,
@@ -97,6 +98,12 @@ static var show_fps: bool = false:
 		show_fps = value
 		SignalBus.emit_signal("show_fps", value)
 
+
+static var force_integer_scaling: bool = false:
+	set(value):
+		force_integer_scaling = value
+		GameInitialization.set_window_scale_stretch_mode()
+		
 
 #--- audio
 const volume_levels_linear: PackedFloat32Array = [0, 0.2, 0.4, 0.6, 0.8, 1]
