@@ -23,15 +23,16 @@ func _physics_process(delta: float) -> void:
 		item_icons.show()
 		item_icons.draw_icons()
 		pickup_item.draw_pickup_item()
-		if GameSettings.show_fps:
-			fps_counter.show()
 	elif gml.room_get_name() == "title":
 		handle_title_hud()
 	else:
 		show()
 		in_game.hide()
 		item_icons.hide()
-		fps_counter.hide()
+	
+	if not pause_handling.paused and GameSettings.show_fps: fps_counter.show()
+	else: fps_counter.hide()
+	
 	
 	if global.has_sticky_bombs:
 		bomb_icon.hide()
