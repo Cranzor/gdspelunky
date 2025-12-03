@@ -456,6 +456,8 @@ func groups_setup(object_entry) -> void:
 	if object_name == "gamepad":
 		remove_from_group("step_object")
 	
+	if object_name == "caveman" or object_name == "hawkman" or object_name == "yeti":
+		add_to_group("enemy_sight")
 	#--- alarm_object group added in alarms_setup()
 	
 	add_to_group("gm_object")
