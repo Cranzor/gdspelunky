@@ -6,7 +6,7 @@ static var default_setting_values: Dictionary = {
 	"window_scale" : 5,
 	"high_detail" : true,
 	"vsync" : false,
-	"fullscreen" : false,
+	"fullscreen" : true,
 	"frame_rate" : 0,
 	"show_fps" : false,
 	"force_integer_scaling" : false,
@@ -90,7 +90,7 @@ static var window_scale: int = 5:
 	set(value):
 		window_scale = value
 		GameInitialization.pixel_scale_factor = value
-		GameInitialization.initalize_window()
+		if !fullscreen: GameInitialization.initalize_window()
 
 
 static var show_fps: bool = false:

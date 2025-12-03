@@ -11,21 +11,9 @@ var str1
 var str2
 var str3
 
-var skip_button_just_pressed: bool = false
 @onready var draw_text: Node = $DrawText
 @onready var draw_rectangle: ColorRect = $DrawRectangle
 
-
-func _unhandled_input(event: InputEvent) -> void:
-	if (gml.keyboard_check_pressed(KEY_ENTER) or
-		gml.keyboard_check_pressed(KEY_ESCAPE) or
-		ControlScripts.check_attack_pressed() or
-		ControlScripts.check_start_pressed()):
-			skip_button_just_pressed = true
-			print("pressed")
-
-func reset_inputs():
-	skip_button_just_pressed = false
 
 func create():
 	fade_in = false
@@ -75,11 +63,10 @@ func create():
 		8:  str3 = "AND THAT'S WHEN IT ALL STARTED."
 
 func step():
-	#if (gml.keyboard_check_pressed(KEY_ENTER) or
-		#gml.keyboard_check_pressed(KEY_ESCAPE) or
-		#ControlScripts.check_attack_pressed() or
-		#ControlScripts.check_start_pressed()):
-	if skip_button_just_pressed:
+	if (gml.keyboard_check_pressed(KEY_ENTER) or
+		gml.keyboard_check_pressed(KEY_ESCAPE) or
+		ControlScripts.check_attack_pressed() or
+		ControlScripts.check_start_pressed()):
 
 		if (not gml.instance_exists("p_dummy3")): fade_in = true
 		else:
@@ -107,9 +94,6 @@ func step():
 			global.game_start = false
 			gml.room_goto("title")
 			
-	#----------
-	
-	reset_inputs()
 
 func draw():
 	var str_len

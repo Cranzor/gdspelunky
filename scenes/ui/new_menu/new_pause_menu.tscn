@@ -200,7 +200,7 @@ menu_to_hide = NodePath("..")
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "CONTROLS"
+text = "CONTROLLER CONFIG"
 next_menu_to_show = NodePath("../../ControllerConfig")
 menu_to_hide = NodePath("..")
 
@@ -208,7 +208,7 @@ menu_to_hide = NodePath("..")
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "KEYBOARD"
+text = "KEYBOARD CONFIG"
 next_menu_to_show = NodePath("../../KeyboardConfig")
 menu_to_hide = NodePath("..")
 
