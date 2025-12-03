@@ -1,9 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://bddqqwb5jfu5j"]
+[gd_scene load_steps=9 format=3 uid="uid://bddqqwb5jfu5j"]
 
 [ext_resource type="Script" uid="uid://lirvn2c8rwk8" path="res://objects/blocks/water_swim/water_swim.gd" id="1_i2rlo"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_xwlhw"]
 [ext_resource type="Texture2D" uid="uid://c8dc2qks0s0qx" path="res://sprites/blocks/water/water/water_0.png" id="3_l1f3k"]
-[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_kin6u"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_51khy"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xwlhw"]
@@ -29,16 +28,14 @@ size = Vector2(16, 16)
 size = Vector2(32, 32)
 
 [node name="WaterSwim" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
-z_index = -4095
+z_index = -4093
 script = ExtResource("1_i2rlo")
 animated_sprite_node = NodePath("Sprite")
 object_name = "water_swim"
 
-[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_xwlhw")]
+[node name="Sprite" parent="." instance=ExtResource("2_xwlhw")]
 sprite_frames = SubResource("SpriteFrames_xwlhw")
 autoplay = "water"
-centered = false
-script = ExtResource("4_kin6u")
 sprite_info = Dictionary[StringName, ExtResource("5_51khy")]({
 &"water": SubResource("Resource_l1f3k")
 })
