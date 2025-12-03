@@ -33,7 +33,7 @@ static var default_setting_values: Dictionary = {
 	"controller_rope" : [JOY_BUTTON_Y, 0],
 	"controller_pay" : [JOY_BUTTON_RIGHT_SHOULDER, 0],
 	"controller_item" : [JOY_BUTTON_LEFT_SHOULDER, 0],
-	"controller_enter_door" : [JOY_BUTTON_RIGHT_SHOULDER, 0],
+	"controller_enter_door" : [JOY_BUTTON_DPAD_UP, 0],
 	"controller_left" : [JOY_BUTTON_DPAD_LEFT, 0],
 	"controller_right" : [JOY_BUTTON_DPAD_RIGHT, 0],
 	"controller_up" : [JOY_BUTTON_DPAD_UP, 0],
