@@ -6,14 +6,6 @@ func _ready():
 	object_setup()
 
 
-func _physics_process(delta):
-	object_tick()
-
-
-func _process(delta):
-	object_process(delta)
-
-
 #--- Object functions
 
 
@@ -21,13 +13,13 @@ func _process(delta):
 #    position.x = global.music_vol * 8
 #    focus = false
 
-    
+	
 
 #func mouse left button pressed():
 #    focus = true
 #    play_music(global.mus_cave, true)
 
-    
+	
 
 #func step():
 #    if (mouse_check_button(mb_left) and focus):

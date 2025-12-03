@@ -6,14 +6,6 @@ func _ready():
 	object_setup()
 
 
-func _physics_process(delta):
-	object_tick()
-
-
-func _process(delta):
-	object_process(delta)
-
-
 #--- Object functions
 
 
@@ -24,19 +16,19 @@ func _process(delta):
 #        alarm_0_countdown.start(20)
 
 
-    
+	
 
 #func create():
 #    position.x = global.sound_vol * 8
 #    focus = false
 
-    
+	
 
 #func mouse left button pressed():
 #    focus = true
 #    alarm_0_countdown.start(1)
 
-    
+	
 
 #func step():
 #    if (mouse_check_button(mb_left) and focus):

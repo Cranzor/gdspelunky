@@ -8,4 +8,5 @@ func _ready():
 	sprites_holder.name = "HeldSprites"
 	add_child(sprites_holder)
 
+
 #--- Object functions

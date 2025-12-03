@@ -574,18 +574,7 @@ var tick_start_position1
 var tick_end_position1: Vector2
 
 var smooth_motion = SmoothMotion.new()
-func object_tick() -> void:
-	#smooth_motion.tick_start(position, animated_sprite_node)
 
-	#run_alarm_events()
-	#run_step_event(self)
-	#run_collision_with()
-	#run_draw_event(self)
-	#run_animation_end()
-	#run_speed_position_update()
-
-	#smooth_motion.tick_end(position, animated_sprite_node)
-	pass
 
 func alarms_setup(object_entry) -> void:
 	var events: Array = object_entry["events"]
@@ -768,9 +757,7 @@ func run_speed_position_update() -> void: #--- original engine runs speed * dire
 		elif direction == 180: #--- the only other value is 180, which indicates movement to the left
 			position.x -= speed
 		
-func object_process(delta) -> void:
-	#smooth_motion.handle_smooth_motion(self, delta, get_physics_process_delta_time())
-	pass
+
 func did_object_move() -> bool:
 	var current_position = position
 	if current_position == test_prior_tick_position:

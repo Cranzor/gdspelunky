@@ -6,21 +6,13 @@ func _ready():
 	object_setup()
 
 
-func _physics_process(delta):
-	object_tick()
-
-
-func _process(delta):
-	object_process(delta)
-
-
 #--- Object functions
 
 
 #func create():
 #    image_speed = 0
 
-    
+	
 
 #func step():
 #    if (mouse_x > gml.view("xview") and mouse_x < gml.view("xview")+320 and:

@@ -8,6 +8,7 @@ var test_matches: int
 func _run() -> void:
 	convert_scripts()
 
+
 func convert_scripts() -> void:
 	# putting paths for all project files with the .gd file type into all_gd_files with a recursive search
 	scan_dir_for_gd_files("res://objects")
@@ -52,7 +53,8 @@ func get_new_file_text(file) -> String:
 	# file content gets updated with three different RegEx operations
 	#updated_content = regex_sub(updated_content, "(gml.collision_rectangle.*?,.*?,.*?,.*?,.*?,.*?,)(.*?0)(\\).*)") # turning 0 for notme to null
 	#updated_content = regex_sub(updated_content, "(gml.collision_point.*?,.*?,.*?,.*?,.*?1)(\\).+?(?=gml|))")
-	updated_content = regex_sub(updated_content, "(gml.instance_create)(\\(.*)(\\))")
+	#updated_content = regex_sub(updated_content, "func _physics_process\\(_delta\\):\n\tobject_tick\\(\\)")
+	updated_content = regex_sub(updated_content, "(#--- Object functions)")
 	return updated_content
 	
 	
@@ -72,7 +74,8 @@ func regex_sub(file_content, pattern):
 	regex.compile(pattern)
 	
 	#var new_file_content = regex.sub(file_content, "$1" + " null" + "$3", true)
-	var new_file_content = regex.sub(file_content, "$1" + "$2" + ", self" + "$3", true)
+	#var new_file_content = regex.sub(file_content, "$1" + "$2" + ", self" + "$3", true)
+	var new_file_content = regex.sub(file_content, "\n" + "$1")
 	
-	print(new_file_content)
+	#print(new_file_content)
 	return new_file_content

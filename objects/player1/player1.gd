@@ -4,12 +4,6 @@ func _ready():
 	object_setup()
 	character_create_event()
 
-func _physics_process(_delta):
-	object_tick()
-	
-	
-func _process(delta):
-	object_process(delta)
 
 #--- Object functions
 const STANDING: int = 10
