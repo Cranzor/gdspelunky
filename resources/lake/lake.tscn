@@ -12,7 +12,7 @@ animations = [{
 "speed": 30.0
 }]
 
-[node name="Lake" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+[node name="Lake" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node") groups=["lake", "water", "water_swim"]]
 script = ExtResource("1_umr7l")
 animated_sprite_node = NodePath("Sprite")
 object_name = "lake"

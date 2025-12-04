@@ -528,7 +528,10 @@ func get_all_instances(group: String) -> Array: #Replacement for 'with' keyword
 	var all_instances_non_queued: Array = []
 	for instance in all_instances:
 		if !instance.is_queued_for_deletion():
-			all_instances_non_queued.append(instance)
+			if group == "water" and global.lake: #--- this is an exception so that lake is not returned when water instances are grabbed
+				if !instance.is_in_group("lake"): all_instances_non_queued.append(instance)
+			else: all_instances_non_queued.append(instance)
+
 	return all_instances_non_queued
 
 
