@@ -1062,7 +1062,9 @@ func scr_init_level():
 		elif (global.level_type == 1):
 		
 			if (global.black_market): scr_room_gen_market(room_instance.position.x, room_instance.position.y) #---[FLAG] may need to pass in x and y
-			else: scr_room_gen2(room_instance.position.x, room_instance.position.y)
+			else:
+				scr_room_gen2(room_instance.position.x, room_instance.position.y)
+				if global.lake: gml.instance_create(16, 448, "res://resources/lake/lake.tscn") #--- adding this here to have one lake object instead of many water_swim objects
 		
 		elif (global.level_type == 2):
 		
@@ -2733,27 +2735,27 @@ func scr_room_gen2(x, y):
 				gml.instance_create(xpos, ypos, Objects.chest)
 			
 			elif (tile == "d"):
-			
-				gml.instance_create(xpos, ypos, Objects.water_swim)
+				if !global.lake: gml.instance_create(xpos, ypos, Objects.water_swim) #--- adjusting so that water_swim doesn't spawn in lake
+				elif global.lake and ypos < 448: gml.instance_create(xpos, ypos, Objects.water_swim)
 				gml.instance_create(xpos, ypos, Objects.chest)
 			
 			elif (tile == "w"):
-			
-				gml.instance_create(xpos, ypos, Objects.water_swim)
+				if !global.lake: gml.instance_create(xpos, ypos, Objects.water_swim) #--- adjusting so that water_swim doesn't spawn in lake
+				elif global.lake and ypos < 448: gml.instance_create(xpos, ypos, Objects.water_swim)
 			
 			elif (tile == "v"):
-			
-				gml.instance_create(xpos, ypos, Objects.water_swim)
+				if !global.lake: gml.instance_create(xpos, ypos, Objects.water_swim) #--- adjusting so that water_swim doesn't spawn in lake
+				elif global.lake and ypos < 448: gml.instance_create(xpos, ypos, Objects.water_swim)
 				gml.instance_create(xpos, ypos, Objects.lush)
 			
 			elif (tile == ","):
-			
-				gml.instance_create(xpos, ypos, Objects.water_swim)
+				if !global.lake: gml.instance_create(xpos, ypos, Objects.water_swim) #--- adjusting so that water_swim doesn't spawn in lake
+				elif global.lake and ypos < 448: gml.instance_create(xpos, ypos, Objects.water_swim)
 				if (gml.rand(1,2)==1): gml.instance_create(xpos, ypos, Objects.lush)
 			
 			elif (tile == "J"):
 			
-				gml.instance_create(xpos, ypos, Objects.water_swim)
+				#gml.instance_create(xpos, ypos, Objects.water_swim) --- commenting out so that water_swim doesn't spawn in lake
 				gml.instance_create(xpos, ypos, Objects.jaws)
 			
 			elif (tile == "I"):

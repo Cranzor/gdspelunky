@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0g6r8fs4fdhs"]
+
+[ext_resource type="Script" uid="uid://bl7dg8na2pln8" path="res://resources/lake/lake.gd" id="1_umr7l"]
+[ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_d3qbj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c17rk"]
+resource_local_to_scene = true
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[node name="Lake" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
+script = ExtResource("1_umr7l")
+animated_sprite_node = NodePath("Sprite")
+object_name = "lake"
+
+[node name="Sprite" parent="." instance=ExtResource("2_d3qbj")]
+sprite_frames = SubResource("SpriteFrames_c17rk")
+default_animation = &"water"
