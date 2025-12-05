@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=3 uid="uid://bljuq6r1oqr54"]
+
+[ext_resource type="Texture2D" uid="uid://g714fn3n4ppc" path="res://sprites/blocks/water/water_bottom/water_bottom_0.png" id="1_7amun"]
+[ext_resource type="Texture2D" uid="uid://djmgygrt22c2g" path="res://resources/lake/water_bottom_tall_combined.png" id="1_rhtcp"]
+[ext_resource type="Texture2D" uid="uid://fpxuocglplgn" path="res://sprites/blocks/water/water_bottom2/water_bottom2_0.png" id="2_ticp4"]
+[ext_resource type="Texture2D" uid="uid://4ck2mi8blobx" path="res://sprites/blocks/water/water_bottom3/water_bottom3_0.png" id="3_yganl"]
+[ext_resource type="Texture2D" uid="uid://dq3ombqglw8vj" path="res://sprites/blocks/water/water_bottom4/water_bottom4_0.png" id="4_eg7ia"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hd5wl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7amun")
+}],
+"loop": true,
+"name": &"water_bottom",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ticp4")
+}],
+"loop": true,
+"name": &"water_bottom2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_yganl")
+}],
+"loop": true,
+"name": &"water_bottom3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_eg7ia")
+}],
+"loop": true,
+"name": &"water_bottom4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_rhtcp")
+}],
+"loop": true,
+"name": &"water_bottom_tall",
+"speed": 5.0
+}]
+
+[node name="LakeBottom" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_hd5wl")
+animation = &"water_bottom"
+autoplay = "water_bottom"
+centered = false

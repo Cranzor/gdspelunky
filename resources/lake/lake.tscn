@@ -33,5 +33,5 @@ region_rect = Rect2(16, 448, 640, 16)
 [node name="Water" type="ColorRect" parent="."]
 offset_top = 16.0
 offset_right = 640.0
-offset_bottom = 224.0
+offset_bottom = 208.0
 color = Color(0.05882353, 0.10980392, 0.10980392, 1)
