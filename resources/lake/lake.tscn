@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://c0g6r8fs4fdhs"]
+[gd_scene load_steps=5 format=3 uid="uid://c0g6r8fs4fdhs"]
 
 [ext_resource type="Script" uid="uid://bl7dg8na2pln8" path="res://resources/lake/lake.gd" id="1_umr7l"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_d3qbj"]
+[ext_resource type="Texture2D" uid="uid://dkufcykamyrmo" path="res://sprites/blocks/water/water_top/water_top_0.png" id="3_c17rk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c17rk"]
 resource_local_to_scene = true
@@ -13,6 +14,7 @@ animations = [{
 }]
 
 [node name="Lake" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node") groups=["lake", "water", "water_swim"]]
+z_index = -4093
 script = ExtResource("1_umr7l")
 animated_sprite_node = NodePath("Sprite")
 object_name = "lake"
@@ -20,3 +22,16 @@ object_name = "lake"
 [node name="Sprite" parent="." instance=ExtResource("2_d3qbj")]
 sprite_frames = SubResource("SpriteFrames_c17rk")
 default_animation = &"water"
+
+[node name="WaterTop" type="Sprite2D" parent="."]
+texture_repeat = 2
+texture = ExtResource("3_c17rk")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 448, 640, 16)
+
+[node name="Water" type="ColorRect" parent="."]
+offset_top = 16.0
+offset_right = 640.0
+offset_bottom = 224.0
+color = Color(0.05882353, 0.10980392, 0.10980392, 1)
