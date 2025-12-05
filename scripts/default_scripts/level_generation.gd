@@ -1062,9 +1062,7 @@ func scr_init_level():
 		elif (global.level_type == 1):
 		
 			if (global.black_market): scr_room_gen_market(room_instance.position.x, room_instance.position.y) #---[FLAG] may need to pass in x and y
-			else:
-				scr_room_gen2(room_instance.position.x, room_instance.position.y)
-				if global.lake: gml.instance_create(16, 448, "res://resources/lake/lake.tscn") #--- adding this here to have one lake object instead of many water_swim objects
+			else: scr_room_gen2(room_instance.position.x, room_instance.position.y)
 		
 		elif (global.level_type == 2):
 		
@@ -1074,6 +1072,7 @@ func scr_init_level():
 		elif (global.level_type == 3): scr_room_gen4(room_instance.position.x, room_instance.position.y)  #---[FLAG] may need to pass in x and y
 		else: scr_room_gen5(room_instance.position.x, room_instance.position.y)  #---[FLAG] may need to pass in x and y
 
+	if global.lake: gml.instance_create(16, 448, "res://resources/lake/lake.tscn") #--- adding this here to have one lake object instead of many water_swim objects
 
 	global.dark_level = false
 	global.dark_level = global.debug_dark_level #--- added for debugging purposes
@@ -5391,7 +5390,7 @@ func scr_entity_gen():
 					if (global.cemetary): gml.instance_create(water_instance.position.x+4, water_instance.position.y+4, Objects.dead_fish)
 					else: gml.instance_create(water_instance.position.x+4, water_instance.position.y+4, Objects.piranha)
 				
-			
+		if global.lake: gml.get_instance("lake").create_piranhas() #--- adding this here so that added lake object also gets piranhas
 		
 
 	elif (global.level_type == 2):

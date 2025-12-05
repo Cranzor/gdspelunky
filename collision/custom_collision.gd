@@ -48,7 +48,7 @@ func get_object_rect(object: GMObject) -> Rect2:
 			var alt_size = Vector2(16 * object.image_xscale, 16)
 			returned_rect = Rect2(alt_pos, alt_size)
 		elif object.object_name == "lake":
-			var alt_size = Vector2(640, 640)
+			var alt_size = object.size
 			returned_rect = Rect2(object.position, alt_size)
 		rect = returned_rect
 		return returned_rect
