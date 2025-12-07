@@ -950,3 +950,8 @@ grow_horizontal = 0
 grow_vertical = 2
 texture = ExtResource("12_urnj6")
 stretch_mode = 2
+
+[node name="InputRemapCountdown" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 5.0
+one_shot = true

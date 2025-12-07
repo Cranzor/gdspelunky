@@ -40,20 +40,17 @@ func _ready() -> void:
 func set_input(event: InputEvent, calling_from_input: bool = true): #TODO: need to check if button is valid
 	var event_type: int = get_event_type(event)
 
-	if input_type == 0 and (event_type == JOYPAD_BUTTON or event_type == JOYPAD_AXIS):
+	if input_type == 0:
 		var new_button_index_and_type: PackedInt32Array = get_button_and_index_from_event(event)
 		var new_text: String = ButtonNames.get_button_name(new_button_index_and_type)
-		if new_text:
-			clear_existing_input(event_type)
-			update_game_settings_controller(new_button_index_and_type)
-			InputMap.action_add_event(action_name, event)
-			if calling_from_input and !double_binding_exception:
-				SignalBus.emit_signal("button_remapped", new_button_index_and_type, controller_button_index_and_type)
-			controller_button_index_and_type = new_button_index_and_type
-			text = new_text
-		else:
-			text = current_text
-	elif input_type == 1 and event_type == KEYBOARD:
+		clear_existing_input(event_type)
+		update_game_settings_controller(new_button_index_and_type)
+		InputMap.action_add_event(action_name, event)
+		if calling_from_input and !double_binding_exception:
+			SignalBus.emit_signal("button_remapped", new_button_index_and_type, controller_button_index_and_type)
+		controller_button_index_and_type = new_button_index_and_type
+		text = new_text
+	elif input_type == 1:
 		clear_existing_input(event_type)
 		var new_key: Key = event.keycode
 		InputMap.action_add_event(action_name, event)
@@ -62,8 +59,6 @@ func set_input(event: InputEvent, calling_from_input: bool = true): #TODO: need 
 		current_key = new_key
 		update_game_settings_keyboard(event.keycode)
 		text = ButtonNames.get_key_name(new_key)
-	else:
-		text = current_text
 
 
 func clear_existing_input(event_type):
@@ -76,13 +71,21 @@ func clear_existing_input(event_type):
 			
 
 func get_event_type(event: InputEvent) -> int:
-	if event is InputEventJoypadButton:
-		var index: int = event.button_index
-		return JOYPAD_BUTTON
-	elif event is InputEventJoypadMotion:
-		var index: int = event.axis
-		return JOYPAD_AXIS
-	elif event is InputEventKey:
+	if event is InputEventJoypadButton and input_type == 0:
+		var new_button_index_and_type: PackedInt32Array = get_button_and_index_from_event(event)
+		var new_text: String = ButtonNames.get_button_name(new_button_index_and_type)
+		if new_text:
+			var index: int = event.button_index
+			return JOYPAD_BUTTON
+		else: return -1
+	elif event is InputEventJoypadMotion and input_type == 0:
+		var new_button_index_and_type: PackedInt32Array = get_button_and_index_from_event(event)
+		var new_text: String = ButtonNames.get_button_name(new_button_index_and_type)
+		if new_text:
+			var index: int = event.axis
+			return JOYPAD_AXIS
+		else: return -1
+	elif event is InputEventKey and input_type == 1:
 		var index: int = event.key_label
 		return KEYBOARD
 	else:

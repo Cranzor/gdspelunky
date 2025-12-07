@@ -7,6 +7,7 @@ extends Button
 @export var input_option: NodePath
 @export var signal_to_emit: StringName
 @export var setting_to_update: StringName
+@onready var input_remap_countdown: Timer = %InputRemapCountdown
 var game_settings: GameSettings = load("res://settings/game_settings.gd").new()
 var y_offset: int = 5
 var x_offset: int = 15
@@ -16,6 +17,7 @@ var waiting_for_input: bool = false
 func _ready() -> void:
 	self.pressed.connect(_button_pressed)
 	self.mouse_entered.connect(grab_focus)
+	input_remap_countdown.timeout.connect(_on_input_remap_countdown_timeout)
 	
 	#--- setting label text based on the value in GameSettings
 	if option_to_scroll and setting_to_update:
@@ -48,6 +50,7 @@ func _button_pressed() -> void:
 			game_settings.set(setting_to_update, value)
 	if input_option:
 		waiting_for_input = true
+		input_remap_countdown.start()
 		get_node(input_option).text = "PRESS A BUTTON..."
 
 
@@ -58,5 +61,12 @@ func _input(event: InputEvent) -> void:
 		if event_type != -1: #--- -1 refers to invalid input
 			input_option_node.set_input(event)
 			waiting_for_input = false
-			var viewport: Viewport = get_viewport()
-			viewport.set_input_as_handled()
+		var viewport: Viewport = get_viewport()
+		viewport.set_input_as_handled()
+
+
+func _on_input_remap_countdown_timeout() -> void:
+	if waiting_for_input:
+		var input_option_node = get_node(input_option)
+		input_option_node.text = input_option_node.current_text
+		waiting_for_input = false
