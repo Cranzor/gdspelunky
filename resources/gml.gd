@@ -165,7 +165,7 @@ func instance_create(x,y,obj,calling_object: GMObject = null,run_create = true) 
 	var objects_holder = get_tree().get_first_node_in_group("objects_holder")
 	objects_holder.add_child(instance)
 	
-	get_tree().call_group("gm_object", "force_update_transform")
+	#get_tree().call_group("gm_object", "force_update_transform")
 	if run_create:
 		instance.run_create_function(instance)
 		#instance.run_step_event(instance)

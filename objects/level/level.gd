@@ -163,13 +163,14 @@ func step():
 		var offset = 96
 		# DY:  deactivate all instances outside the region
 	
+		#--- commenting out the below as the checked variable is never used
 		# DY:  this is to prevent water from only getting drained partway
-		var all_water = gml.get_all_instances("water")
-		for water_instance in all_water:
-	
-			if (water_instance.position.x+8 < gml.view("xview")-96 or water_instance.position.x+8 > gml.view("xview")+gml.view("wview")+96 or water_instance.position.y+8 < gml.view("yview")-96 or water_instance.position.y+8 > gml.view("yview")+gml.view("hview")+96):
-		
-				water_instance.checked = false
+		#var all_water = gml.get_all_instances("water")
+		#for water_instance in all_water:
+	#
+			#if (water_instance.position.x+8 < gml.view("xview")-96 or water_instance.position.x+8 > gml.view("xview")+gml.view("wview")+96 or water_instance.position.y+8 < gml.view("yview")-96 or water_instance.position.y+8 > gml.view("yview")+gml.view("hview")+96):
+		#
+				#water_instance.checked = false
 		
 		#--- commenting out the following block due to deactivations only happening when pausing (with few exceptions)
 		#--- one exception is immediately below, but instance_activate_region immediately undoes it
