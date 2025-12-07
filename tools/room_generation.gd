@@ -50,6 +50,8 @@ func generate_room(room_name: String):
 		gml.view_xview = 320
 	#--- Olmec is set as view_object in create script as well, so have to account for this (player1 is set in set_up_view())
 	elif gml.room_get_name() == "olmec":
+		gml.view_hborder = 0
+		gml.view_vborder = 0
 		gml.view_object = gml.get_instance("olmec")
 
 

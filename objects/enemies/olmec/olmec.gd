@@ -16,6 +16,7 @@ var PREPARE
 var SLAM
 var CREATE
 var slammed
+var scroll_counter: int = 0
 
 
 func alarm_1():
@@ -202,7 +203,10 @@ func step():
 
 	if (status == START1):
 
-		if (gml.view("xview") < 176): gml.view_xview += 2
+		#if (gml.view("xview") < 176): gml.view_xview += 2 #--- commenting this line out to adjust how this works
+		if scroll_counter < 176: #--- new scroll_counter variable acts as a timer that ensures the wait length stays the same regardless of the screen position
+			if gml.view_xview + View.half_offset < 176: gml.view_xview += 2 #--- adding View.half_offset ensures camera scrolls to Olmec being in the center in widescreen
+			scroll_counter += 2
 		else:
 	
 			alarm_1_countdown.start(100)
