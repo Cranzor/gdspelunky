@@ -35,7 +35,7 @@ var col_left
 var col_right
 var col_top
 var STUNNED = 98 #--- making this a variable and not a constant because it is set to 1 in p_dummy2 (all other cases are 98)
-var stun_time
+var stun_time: int
 var damage
 var puncture
 var burning
