@@ -160,6 +160,7 @@ func step():
 		#
 			#if (start): start_pressed = true
 
+		#--- adding hard-coded stick alternatives for left, right, up, down, and enter door
 
 		######/
 		# LEFT
@@ -168,7 +169,7 @@ func step():
 		left_released = false
 		left_pressed = false
 		if (left):
-			if GlobalInput.check_input("left") == true:
+			if GlobalInput.check_input("left") == true or GlobalInput.check_input("stick_left"):
 				left = true
 			else:
 				left = false
@@ -177,7 +178,7 @@ func step():
 				left_released = true
 
 		else:
-			if GlobalInput.check_input("left") == true:
+			if GlobalInput.check_input("left") == true or GlobalInput.check_input("stick_left"):
 				left = true
 			else:
 				left = false
@@ -204,7 +205,7 @@ func step():
 		right_pressed = false
 		if (right):
 
-			if GlobalInput.check_input("right") == true:
+			if GlobalInput.check_input("right") == true or GlobalInput.check_input("stick_right"):
 				right = true
 			else:
 				right = false
@@ -213,7 +214,7 @@ func step():
 				right_released = true
 
 		else:
-			if GlobalInput.check_input("right") == true:
+			if GlobalInput.check_input("right") == true or GlobalInput.check_input("stick_right"):
 				right = true
 			else:
 				right = false
@@ -241,7 +242,7 @@ func step():
 		up_pressed = false
 		if (up):
 
-			if GlobalInput.check_input("up") == true:
+			if GlobalInput.check_input("up") == true or GlobalInput.check_input("stick_up"):
 				up = true
 			else:
 				up = false
@@ -250,7 +251,7 @@ func step():
 				up_released = true
 
 		else:
-			if GlobalInput.check_input("up") == true:
+			if GlobalInput.check_input("up") == true or GlobalInput.check_input("stick_up"):
 				up = true
 			else:
 				up = false
@@ -278,7 +279,7 @@ func step():
 		enter_door_pressed = false
 		if (enter_door):
 
-			if GlobalInput.check_input("enter_door") == true:
+			if GlobalInput.check_input("enter_door") == true or GlobalInput.check_input("stick_up"):
 				enter_door = true
 			else:
 				enter_door = false
@@ -287,7 +288,7 @@ func step():
 				enter_door_released = true
 
 		else:
-			if GlobalInput.check_input("enter_door") == true:
+			if GlobalInput.check_input("enter_door") == true or GlobalInput.check_input("stick_up"):
 				enter_door = true
 			else:
 				enter_door = false
@@ -304,7 +305,7 @@ func step():
 		down_pressed = false
 		if (down):
 
-			if GlobalInput.check_input("down") == true:
+			if GlobalInput.check_input("down") == true or GlobalInput.check_input("stick_down"):
 				down = true
 			else:
 				down = false
@@ -313,7 +314,7 @@ func step():
 				down_released = true
 
 		else:
-			if GlobalInput.check_input("down") == true:
+			if GlobalInput.check_input("down") == true or GlobalInput.check_input("stick_down"):
 				down = true
 			else:
 				down = false
