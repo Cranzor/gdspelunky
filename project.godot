@@ -22,6 +22,8 @@ config/icon="uid://dc4sg8xk0ur2i"
 
 [autoload]
 
+ModLoaderStore="*res://addons/mod_loader/mod_loader_store.gd"
+ModLoader="*res://addons/mod_loader/mod_loader.gd"
 GameInitialization="*res://scripts/game_initialization.gd"
 global="*res://resources/global.tscn"
 gml="*res://resources/gml.tscn"
