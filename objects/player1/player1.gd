@@ -901,7 +901,7 @@ func handle_item_stealing() -> void:
 		
 			CharacterScripts.scr_steal_item(x_vel, y_vel, self)
 	
-func handle_chest_opening() -> void:
+func handle_chest_opening() -> void: #--- changed chest items to be set upon object creation and adjusted below code accordingly. see chest script
 	# open chest
 	if (k_up and k_attack_pressed and gml.collision_point(position.x, position.y, "chest", 0, 0)):
 
@@ -910,7 +910,8 @@ func handle_chest_opening() -> void:
 		if (chest_instance.sprite_index == "chest"):
 		
 			chest_instance.sprite_index = "chest_open"
-			if (randi_range(1,12) == 1 and global.curr_level > 0):
+			#if (randi_range(1,12) == 1 and global.curr_level > 0): #--- commenting out
+			if chest_instance.bomb: #--- added this to check for bomb
 			
 				var obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.bomb, self)
 				obj.x_vel = randi_range(0,3) - randi_range(0,3)
@@ -923,59 +924,63 @@ func handle_chest_opening() -> void:
 			else:
 				var obj
 				Audio.play_sound(global.snd_chest_open)
-				for i in range(0, randi_range(3,4)):
-
-					var n = randi_range(1,3)
-					match (n):
-						1:  obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.emerald, self)
-						2:  obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.sapphire, self)
-						3:  obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.ruby, self)
-					
+				#for i in range(0, randi_range(3,4)): #--- commenting out
+#
+					#var n = randi_range(1,3)
+					#match (n):
+						#1:  obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.emerald, self)
+						#2:  obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.sapphire, self)
+						#3:  obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.ruby, self)
+				for gem in chest_instance.gems: #--- added this to check gems
+					obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, gem, self)
 					obj.x_vel = randi_range(0,3) - randi_range(0,3)
 					obj.y_vel = -2
 				
-				if (randi_range(1,4) == 1):
-				
-					var n = randi_range(1,3)
-					match (n):
-					
-						1:  obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.emerald_big, self)
-						2:  obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.sapphire_big, self)
-						3:  obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.ruby_big, self)
-					
+				#if (randi_range(1,4) == 1): #--- commenting out
+				#
+					#var n = randi_range(1,3)
+					#match (n):
+					#
+						#1:  obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.emerald_big, self)
+						#2:  obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.sapphire_big, self)
+						#3:  obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.ruby_big, self)
+				if chest_instance.big_gem: #--- added this to check for a big gem
+					obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, chest_instance.big_gem, self)
 					obj.x_vel = randi_range(0,3) - randi_range(0,3)
 					obj.y_vel = -2
 			
 			
 			k_attack_pressed = false
 	
-func handle_crate_opening() -> void:
+func handle_crate_opening() -> void: #--- changed crate item to be set upon object creation and adjusted below code accordingly. see crate script
 	# open crate
 	if (k_up and k_attack_pressed and gml.collision_point(position.x, position.y, "crate", 0, 0)):
 		var obj
 		if (InLevel.is_real_level()): global.total_crates += 1
 		var chest_instance = gml.instance_place(position.x, position.y, 'crate', self)
-		if (InLevel.is_room("tutorial")): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.bomb_bag, self)
-		elif (randi_range(1,500) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.jetpack, self)
-		elif (randi_range(1,200) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.cape_pickup, self)
-		elif (randi_range(1,100) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.shotgun, self)
-		elif (randi_range(1,100) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.mattock, self)
-		elif (randi_range(1,100) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.teleporter, self)
-		elif (randi_range(1,90) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.gloves, self)
-		elif (randi_range(1,90) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.spectacles, self)
-		elif (randi_range(1,80) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.web_cannon, self)
-		elif (randi_range(1,80) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.pistol, self)
-		elif (randi_range(1,80) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.mitt, self)
-		elif (randi_range(1,60) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.paste, self)
-		elif (randi_range(1,60) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.spring_shoes, self)
-		elif (randi_range(1,60) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.spike_shoes, self)
-		elif (randi_range(1,60) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.machete, self)
-		elif (randi_range(1,40) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.bomb_box, self)
-		elif (randi_range(1,40) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.bow, self)
-		elif (randi_range(1,20) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.compass, self)
-		elif (randi_range(1,10) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.para_pickup, self)
-		elif (randi_range(1,2) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.rope_pile, self)
-		else: obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.bomb_bag, self)
+		#--- commenting out item lines
+		#if (InLevel.is_room("tutorial")): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.bomb_bag, self)
+		#elif (randi_range(1,500) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.jetpack, self)
+		#elif (randi_range(1,200) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.cape_pickup, self)
+		#elif (randi_range(1,100) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.shotgun, self)
+		#elif (randi_range(1,100) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.mattock, self)
+		#elif (randi_range(1,100) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.teleporter, self)
+		#elif (randi_range(1,90) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.gloves, self)
+		#elif (randi_range(1,90) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.spectacles, self)
+		#elif (randi_range(1,80) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.web_cannon, self)
+		#elif (randi_range(1,80) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.pistol, self)
+		#elif (randi_range(1,80) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.mitt, self)
+		#elif (randi_range(1,60) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.paste, self)
+		#elif (randi_range(1,60) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.spring_shoes, self)
+		#elif (randi_range(1,60) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.spike_shoes, self)
+		#elif (randi_range(1,60) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.machete, self)
+		#elif (randi_range(1,40) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.bomb_box, self)
+		#elif (randi_range(1,40) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.bow, self)
+		#elif (randi_range(1,20) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.compass, self)
+		#elif (randi_range(1,10) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.para_pickup, self)
+		#elif (randi_range(1,2) == 1): obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.rope_pile, self)
+		#else: obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, Objects.bomb_bag, self)
+		obj = gml.instance_create(chest_instance.position.x, chest_instance.position.y, chest_instance.item, self) #--- adding this as item is already set
 		obj.cost = 0
 		Audio.play_sound(global.snd_pickup)
 		
