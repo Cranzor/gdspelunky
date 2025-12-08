@@ -22,6 +22,7 @@ static func draw_sprite_ext(passed_sprite: String, subimg: int, x: int, y: int, 
 	animated_sprite.global_position = Vector2(x, y)
 	animated_sprite.scale.x = xscale
 	animated_sprite.rotation_degrees = -rot
+	animated_sprite.set_animation(passed_sprite)
 
 	if color != gml.c_white: #--- c_white is to display the default color
 		animated_sprite.self_modulate = color

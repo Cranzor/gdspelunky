@@ -9,11 +9,10 @@ func _ready():
 #--- Object functions
 
 
-#func create():
-#    type = "exit"
-#    leads_to = "" # DY:  used for Level Editor only
+func create():
+	type = "exit"
+	leads_to = "" # DY:  used for Level Editor only
 
-	
 
 #func draw():
 #    draw_sprite(sprite_index, -1, position.x, position.y)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=4 uid="uid://n3fxa1qo50g0"]
+[gd_scene load_steps=63 format=4 uid="uid://n3fxa1qo50g0"]
 
 [ext_resource type="Script" uid="uid://br0p4i4jvstyw" path="res://objects/characters/shopkeeper/shopkeeper.gd" id="1_dkm78"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_i2xyq"]
@@ -35,9 +35,11 @@
 [ext_resource type="Texture2D" uid="uid://u531fegihhy7" path="res://sprites/enemies/shopkeeper/shop_throw_l/shop_throw_l_4.png" id="33_6sbvt"]
 [ext_resource type="Texture2D" uid="uid://ca2opcgda84iy" path="res://sprites/enemies/shopkeeper/shop_throw_l/shop_throw_l_5.png" id="34_k7728"]
 [ext_resource type="Texture2D" uid="uid://dg3k2knvmdtv" path="res://sprites/enemies/shopkeeper/shop_throw_l/shop_throw_l_6.png" id="35_ivu10"]
-[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="36_r4xjy"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="37_ps4hm"]
+[ext_resource type="Texture2D" uid="uid://b71ml0xtb78ct" path="res://sprites/items/weapons/shotgun_left/shotgun_left_0.png" id="38_cw1m1"]
 [ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="38_dcocs"]
+[ext_resource type="Texture2D" uid="uid://c0adx0lcg4d0c" path="res://sprites/items/weapons/shotgun_right/shotgun_right_0.png" id="39_0t0ul"]
+[ext_resource type="Script" uid="uid://d1v64vt58kawp" path="res://components/drawing/draw_sprite/draw_sprite.gd" id="40_rhmn5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rb0qd"]
 resource_local_to_scene = true
@@ -197,9 +199,45 @@ animations = [{
 "speed": 30.0
 }]
 
+[sub_resource type="Resource" id="Resource_m4qoi"]
+script = ExtResource("37_ps4hm")
+containing_box = Rect2(0, 2, 16, 13)
+
+[sub_resource type="Resource" id="Resource_kdeov"]
+script = ExtResource("37_ps4hm")
+containing_box = Rect2(0, 3, 16, 13)
+
+[sub_resource type="Resource" id="Resource_11e14"]
+script = ExtResource("37_ps4hm")
+containing_box = Rect2(0, 9, 16, 7)
+
+[sub_resource type="Resource" id="Resource_4m80l"]
+script = ExtResource("37_ps4hm")
+containing_box = Rect2(2, 0, 13, 15)
+
+[sub_resource type="Resource" id="Resource_gnbdc"]
+script = ExtResource("37_ps4hm")
+containing_box = Rect2(1, 0, 14, 16)
+
+[sub_resource type="Resource" id="Resource_s4t6j"]
+script = ExtResource("37_ps4hm")
+containing_box = Rect2(0, 2, 16, 12)
+
+[sub_resource type="Resource" id="Resource_08bv6"]
+script = ExtResource("37_ps4hm")
+containing_box = Rect2(0, 0, 16, 16)
+
 [sub_resource type="Resource" id="Resource_cw1m1"]
 script = ExtResource("37_ps4hm")
 containing_box = Rect2(2, 1, 12, 15)
+
+[sub_resource type="Resource" id="Resource_pbih4"]
+script = ExtResource("37_ps4hm")
+containing_box = Rect2(0, 0, 16, 16)
+
+[sub_resource type="Resource" id="Resource_qvmkg"]
+script = ExtResource("37_ps4hm")
+containing_box = Rect2(0, 0, 16, 16)
 
 [sub_resource type="Image" id="Image_0t0ul"]
 data = {
@@ -271,47 +309,30 @@ containing_box = Rect2(4, 0, 19, 16)
 precise = true
 images = Array[Image]([SubResource("Image_0t0ul"), SubResource("Image_rhmn5"), SubResource("Image_ihds6"), SubResource("Image_ic8bd"), SubResource("Image_266ao"), SubResource("Image_j6gx0"), SubResource("Image_2lxwo")])
 
-[sub_resource type="Resource" id="Resource_qvmkg"]
-script = ExtResource("37_ps4hm")
-containing_box = Rect2(0, 0, 16, 16)
-
-[sub_resource type="Resource" id="Resource_m4qoi"]
-script = ExtResource("37_ps4hm")
-containing_box = Rect2(0, 2, 16, 13)
-
-[sub_resource type="Resource" id="Resource_s4t6j"]
-script = ExtResource("37_ps4hm")
-containing_box = Rect2(0, 2, 16, 12)
-
-[sub_resource type="Resource" id="Resource_4m80l"]
-script = ExtResource("37_ps4hm")
-containing_box = Rect2(2, 0, 13, 15)
-
-[sub_resource type="Resource" id="Resource_gnbdc"]
-script = ExtResource("37_ps4hm")
-containing_box = Rect2(1, 0, 14, 16)
-
-[sub_resource type="Resource" id="Resource_11e14"]
-script = ExtResource("37_ps4hm")
-containing_box = Rect2(0, 9, 16, 7)
-
-[sub_resource type="Resource" id="Resource_pbih4"]
-script = ExtResource("37_ps4hm")
-containing_box = Rect2(0, 0, 16, 16)
-
-[sub_resource type="Resource" id="Resource_08bv6"]
-script = ExtResource("37_ps4hm")
-containing_box = Rect2(0, 0, 16, 16)
-
-[sub_resource type="Resource" id="Resource_kdeov"]
-script = ExtResource("37_ps4hm")
-containing_box = Rect2(0, 3, 16, 13)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ea4xb"]
 size = Vector2(12, 15)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4u0v1"]
 size = Vector2(24, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ihds6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("38_cw1m1")
+}],
+"loop": true,
+"name": &"shotgun_left",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("39_0t0ul")
+}],
+"loop": true,
+"name": &"shotgun_right",
+"speed": 30.0
+}]
 
 [node name="Shopkeeper" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -60
@@ -319,11 +340,9 @@ script = ExtResource("1_dkm78")
 animated_sprite_node = NodePath("Sprite")
 object_name = "shopkeeper"
 
-[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_i2xyq")]
+[node name="Sprite" parent="." instance=ExtResource("2_i2xyq")]
 sprite_frames = SubResource("SpriteFrames_rb0qd")
 autoplay = "shop_left"
-centered = false
-script = ExtResource("36_r4xjy")
 sprite_info = Dictionary[StringName, ExtResource("37_ps4hm")]({
 &"shop_bounce_l": SubResource("Resource_m4qoi"),
 &"shop_d_held_l": SubResource("Resource_kdeov"),
@@ -352,4 +371,11 @@ position = Vector2(8, 8.5)
 shape = SubResource("RectangleShape2D_4u0v1")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
-[node name="SmoothMotion" type="Node" parent="." instance=ExtResource("38_dcocs")]
+[node name="SmoothMotion" parent="." instance=ExtResource("38_dcocs")]
+
+[node name="ShotgunDraw" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ihds6")
+animation = &"shotgun_left"
+script = ExtResource("40_rhmn5")
+hide_at_start_of_frame = true
+metadata/_custom_type_script = "uid://d1v64vt58kawp"

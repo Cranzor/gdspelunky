@@ -42,13 +42,12 @@ animations = [{
 "texture": ExtResource("10_rogkf")
 }],
 "loop": true,
-"name": &"default",
+"name": &"small_collect",
 "speed": 30.0
 }]
 
 [node name="SmallCollect" instance=ExtResource("1_gh6dr")]
 sprite_frames = SubResource("SpriteFrames_qk2pt")
-frame = 1
-frame_progress = 0.386406
+animation = &"small_collect"
 offset = Vector2(-4, -4)
 hide_at_start_of_frame = true

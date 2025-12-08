@@ -17,6 +17,7 @@ var bet_value
 var welcomed
 var angered
 var firing_max
+@onready var shotgun_draw: DrawSprite = $ShotgunDraw
 
 
 func alarm_0():
@@ -226,10 +227,11 @@ func draw():
 		#gml.draw_sprite_ext(sprite_index, image_index, position.x, position.y, 1, image_yscale, image_angle, image_blend, image_alpha, self)
 		DrawSprite.draw_sprite_ext(sprite_index, image_index, position.x, position.y, 1, image_yscale, image_angle, image_blend, image_alpha, animated_sprite_node)
 	# DY:  gml.draw_sprite_ext(sprite_index, image_index, position.x, position.y, 1, 1, 0, c_white, 1)
+	shotgun_draw.hide() #--- hiding here so that it doesn't display while shopkeeper is stunned
 	if (has_gun and status != IDLE and status != FOLLOW):
 
-		if (facing == LEFT): gml.draw_sprite_ext("shotgun_left", 0, position.x+6, position.y+10, 1, 1, 0, gml.c_white, 1, self, false) #---TODO: update these
-		else: gml.draw_sprite_ext("shotgun_right", 0, position.x+10, position.y+10, 1, 1, 0, gml.c_white, 1, self, false)
+		if (facing == LEFT): shotgun_draw.draw_sprite_ext("shotgun_left", 0, position.x+6, position.y+10, 1, 1, 0, gml.c_white, 1, shotgun_draw) #---TODO: update these
+		else: shotgun_draw.draw_sprite_ext("shotgun_right", 0, position.x+10, position.y+10, 1, 1, 0, gml.c_white, 1, shotgun_draw)
 
 
 func step():
