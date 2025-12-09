@@ -8,6 +8,7 @@ var last_pos: Vector2 = Vector2.ZERO
 var diff: Vector2 = Vector2.ZERO
 var sprite: AnimatedSprite2D
 var waiting_for_reset: bool = false
+var fixed_delta: float = 0.0333333333
 static var paused: bool = false
 
 
@@ -35,13 +36,16 @@ func update_sprite_during_tick() -> void: #--- called in gm_loop once per tick
 		else:
 			last_pos = current_pos
 			current_pos = parent.global_position
+			
+			if !waiting_for_reset and !paused:
+				start_sprite_movement_tween()
 		
 		waiting_for_reset = false
 
 
-func _process(delta: float) -> void:
-	if GameSettings.smooth_motion and !waiting_for_reset and !paused:
-		position += (current_pos - last_pos) * delta * physics_ticks
+func start_sprite_movement_tween() -> void:
+	var tween: Tween = create_tween()
+	tween.tween_property(self, "position", current_pos, fixed_delta)
 
 
 func set_sprite():
