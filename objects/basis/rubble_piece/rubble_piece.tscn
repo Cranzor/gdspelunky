@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_kohik"]
 [ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="6_hglqo"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_id2a4"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_hglqo"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -19,7 +19,7 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Image" id="Image_kohik"]
+[sub_resource type="Image" id="Image_id2a4"]
 data = {
 "data": PackedByteArray("wADAAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAwADAAMAAwADAAMAAwADAAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAwADAAMAAwABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGADAAMAAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAEBmGABAZhgAwADAAEBmGABAZhgAQGYYAEBmGABAZhgAQGYY/0BmGP9AZhj/QGYYAEBmGABAZhgAQGYYAEBmGABAZhgAQGYYAMAAwABAZhgAQGYYAEBmGABAZhgAQGYY/43GP/+Nxj//jcY//0BmGP9AZhj/QGYYAEBmGABAZhgAQGYYAEBmGADAAMAAQGYYAEBmGABAZhgAQGYYAEBmGAAAIA7/wNsr/8DbK/+Nxj//jcY//0BmGP9AZhgAQGYYAEBmGABAZhgAwADAAEBmGABAZhgAQGYYAEBmGAAAIA4AACAOAEBmGP8AIA7/ACAO/wAgDv9AZhgAQGYYAEBmGABAZhgAQGYYAMAAwAA="),
 "format": "RGBA8",
@@ -28,17 +28,17 @@ data = {
 "width": 16
 }
 
-[sub_resource type="Resource" id="Resource_r7w66"]
+[sub_resource type="Resource" id="Resource_kohik"]
 script = ExtResource("5_kohik")
 origin = Vector2(4, 4)
 containing_box = Rect2(4, 4, 7, 4)
 precise = true
-images = Array[Image]([SubResource("Image_kohik")])
+images = Array[Image]([SubResource("Image_id2a4")])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pxxrd"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r7w66"]
 size = Vector2(0, 0)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lpis2"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pxxrd"]
 size = Vector2(0, 0)
 
 [node name="RubblePiece" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -48,22 +48,22 @@ object_name = "rubble_piece"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_kk4cj")]
 visible = false
-sprite_frames = SubResource("SpriteFrames_id2a4")
+sprite_frames = SubResource("SpriteFrames_hglqo")
 centered = false
 script = ExtResource("4_id2a4")
 sprite_info = Dictionary[StringName, ExtResource("5_kohik")]({
-&"leaf_still": SubResource("Resource_r7w66")
+&"leaf_still": SubResource("Resource_kohik")
 })
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_pxxrd")
+shape = SubResource("RectangleShape2D_r7w66")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-shape = SubResource("RectangleShape2D_lpis2")
+shape = SubResource("RectangleShape2D_pxxrd")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("6_hglqo")]

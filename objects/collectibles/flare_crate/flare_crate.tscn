@@ -55,7 +55,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_0wtfd"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_h8a7k"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -73,7 +73,7 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Image" id="Image_cgxx0"]
+[sub_resource type="Image" id="Image_0wtfd"]
 data = {
 "data": PackedByteArray("QIAAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAP9AQAD/QEAAQIAAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BA//9AQP//QEAA/0BAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAP9AQAD/QED//0BA///AwP//wMD//0BA//9AQP//QEAA/0BAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BA///AwP///0D///9A///AwP//QED//0BAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAP9AQAD/QED//0BA///AwP///0D//////////////0D//8DA//9AQP//QEAA/0BAAP9AQAD/QEAA/0BAAP9AQP//QED//8DA///AwP//QED//0BA//////////////9A///AwP//QED//0BA//9AQAD/QEAA/0BAAP9AQAD/QED//8DA////QP///0D//8DA//9AQP///0D///9A///AwP//QED//8DA///AwP//QED//0BAAHtUQwDkwHIA5MBy/+TAcv/kwHL/5MBy////QP///0D///9A////QP///0D/t4dc/3tUQ/97VEP/e1RD/3tUQ/97VEMAt4dcALeHXP8sFhP/e1RD/ywWE/97VEP/LBYT/3tUQ/8sFhP/e1RD/7eHXP97VEP/LBYT/ywWE/97VEP/e1RDALeHXAC3h1z/e1RD/3tUQ/97VEP/e1RD/3tUQ/97VEP/e1RD/3tUQ/+3h1z/e1RD/ywWE/8sFhP/e1RD/3tUQwC3h1wAt4dc/3tUQ/+3h1z/e1RD/7eHXP97VEP/t4dc/3tUQ/+3h1z/t4dc/3tUQ/8sFhP/LBYT/3tUQ/97VEMAt4dcALeHXP97VEP/t4dc/3tUQ/+3h1z/e1RD/7eHXP97VEP/t4dc/7eHXP97VEP/LBYT/ywWE/97VEP/e1RDALeHXAC3h1z/e1RD/7eHXP97VEP/t4dc/3tUQ/+3h1z/e1RD/7eHXP+3h1z/e1RD/ywWE/8sFhP/e1RD/3tUQwC3h1wAt4dc/3tUQ/+3h1z/e1RD/7eHXP97VEP/t4dc/3tUQ/+3h1z/t4dc/3tUQ/8sFhP/LBYT/3tUQ/97VEMA5MByAOTAcv/kwHL/5MBy/+TAcv/kwHL/5MBy/+TAcv/kwHL/5MBy/7eHXP97VEP/e1RD/3tUQ/97VEP/e1RDAA=="),
 "format": "RGBA8",
@@ -82,7 +82,7 @@ data = {
 "width": 16
 }
 
-[sub_resource type="Image" id="Image_hxg3i"]
+[sub_resource type="Image" id="Image_cgxx0"]
 data = {
 "data": PackedByteArray("/0BAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAP9AQP//QED//0BA//9AQP//QEAA/0BAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAP9AQP//QED//8DA///AwP//QED//0BA//9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAP9AQP//QED//8DA///AwP//wMD//8DA//9AQP//QED//0BA//9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAP9AQAD/QED//8DA///AwP///0D///9A//9AQP//QED//8DA///AwP//QED//0BAAP9AQAD/QEAA/0BAAP9AQAD/QED//0BA//9AQP///0D///9A//9AQP//QED//8DA////QP///0D//8DA//9AQP//QEAA/0BAAP9AQAD/QED//8DA///AwP//wMD//0BA////QP//QED//8DA////QP//////////////QP//wMD//0BA//9AQADkwHIA5MBy/+TAcv///0D///9A//////////////9A/+TAcv/kwHL/t4dc////QP//////////////QP///0AAt4dcALeHXP8sFhP/e1RD/ywWE/97VEP/LBYT/3tUQ/8sFhP/e1RD/7eHXP97VEP/LBYT/ywWE/97VEP/e1RDALeHXAC3h1z/e1RD/3tUQ/97VEP/e1RD/3tUQ/97VEP/e1RD/3tUQ/+3h1z/e1RD/ywWE/8sFhP/e1RD/3tUQwC3h1wAt4dc/3tUQ/+3h1z/e1RD////QP97VEP///9A/3tUQ/+3h1z/t4dc/3tUQ/8sFhP/LBYT/3tUQ/97VEMAt4dcALeHXP97VEP/t4dc/3tUQ/+3h1z/e1RD/7eHXP97VEP/t4dc/7eHXP97VEP/LBYT/ywWE/97VEP/e1RDALeHXAC3h1z/e1RD/7eHXP97VEP/t4dc/3tUQ/+3h1z/e1RD/7eHXP+3h1z/e1RD/ywWE/8sFhP/e1RD/3tUQwC3h1wAt4dc/3tUQ/+3h1z/e1RD/7eHXP97VEP/t4dc/3tUQ/+3h1z/t4dc/3tUQ/8sFhP/LBYT/3tUQ/97VEMA5MByAOTAcv/kwHL/5MBy/+TAcv/kwHL/5MBy/+TAcv/kwHL/5MBy/7eHXP97VEP/e1RD/3tUQ/97VEP/e1RDAA=="),
 "format": "RGBA8",
@@ -91,7 +91,7 @@ data = {
 "width": 16
 }
 
-[sub_resource type="Image" id="Image_gu3ff"]
+[sub_resource type="Image" id="Image_hxg3i"]
 data = {
 "data": PackedByteArray("/0BAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAECAAABAgAAAQIAAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAP9AQP//QED//0BA//9AQP//QED//0BA//9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAP9AQAD/QEAA/0BAAP9AQP//wMD//8DA///AwP//wMD//0BA//9AQP//QED//0BA//9AQP//QEAA/0BAAP9AQAD/QEAA/0BAAP9AQP//wMD///9A////QP///0D///9A///AwP//QED//0BA///AwP//wMD//0BA//9AQAD/QEAA/0BAAP9AQAD/QED//8DA////QP//////////////QP//wMD//0BA///AwP///0D///9A///AwP//QED//0BAAHtUQwD//0AA//9A////////////////////////////////////QP/kwHL/t4dc/3tUQ////0D///9A/3tUQ/97VEMAt4dcALeHXP8sFhP/e1RD/ywWE/97VEP/LBYT/3tUQ/8sFhP/e1RD/7eHXP97VEP/LBYT/ywWE/97VEP/e1RDALeHXAC3h1z/e1RD/3tUQ/97VEP/e1RD/3tUQ/97VEP/e1RD/3tUQ/+3h1z/e1RD/ywWE/8sFhP/e1RD/3tUQwC3h1wAt4dc/3tUQ////0D/e1RD//////97VEP///9A/3tUQ/+3h1z/t4dc/3tUQ/8sFhP/LBYT/3tUQ/97VEMAt4dcALeHXP97VEP/t4dc/3tUQ////0D/e1RD/7eHXP97VEP/t4dc/7eHXP97VEP/LBYT/ywWE/97VEP/e1RDALeHXAC3h1z/e1RD/7eHXP97VEP/t4dc/3tUQ/+3h1z/e1RD/7eHXP+3h1z/e1RD/ywWE/8sFhP/e1RD/3tUQwC3h1wAt4dc/3tUQ/+3h1z/e1RD/7eHXP97VEP/t4dc/3tUQ/+3h1z/t4dc/3tUQ/8sFhP/LBYT/3tUQ/97VEMA5MByAOTAcv/kwHL/5MBy/+TAcv/kwHL/5MBy/+TAcv/kwHL/5MBy/7eHXP97VEP/e1RD/3tUQ/97VEP/e1RDAA=="),
 "format": "RGBA8",
@@ -100,17 +100,17 @@ data = {
 "width": 16
 }
 
-[sub_resource type="Resource" id="Resource_aq1xp"]
+[sub_resource type="Resource" id="Resource_gu3ff"]
 script = ExtResource("14_gu3ff")
 origin = Vector2(8, 8)
 containing_box = Rect2(1, 2, 14, 14)
 precise = true
-images = Array[Image]([SubResource("Image_cgxx0"), SubResource("Image_hxg3i"), SubResource("Image_gu3ff")])
+images = Array[Image]([SubResource("Image_0wtfd"), SubResource("Image_cgxx0"), SubResource("Image_hxg3i")])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_m05e6"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aq1xp"]
 size = Vector2(14, 14)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_txebb"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m05e6"]
 size = Vector2(28, 28)
 
 [node name="FlareCrate" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -130,19 +130,19 @@ script = ExtResource("8_kemxn")
 radius = 96
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("9_yb6pp")]
-sprite_frames = SubResource("SpriteFrames_0wtfd")
+sprite_frames = SubResource("SpriteFrames_h8a7k")
 autoplay = "flare_crate"
 centered = false
 offset = Vector2(-8, -8)
 script = ExtResource("13_hxg3i")
 sprite_info = Dictionary[StringName, ExtResource("14_gu3ff")]({
-&"flare_crate": SubResource("Resource_aq1xp")
+&"flare_crate": SubResource("Resource_gu3ff")
 })
 default_animation = &"flare_crate"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_m05e6")
+shape = SubResource("RectangleShape2D_aq1xp")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -150,7 +150,7 @@ collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_txebb")
+shape = SubResource("RectangleShape2D_m05e6")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("15_h8a7k")]

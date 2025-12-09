@@ -10,7 +10,7 @@
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="8_ntxtd"]
 [ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="9_xtr8k"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_au3ye"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_xtr8k"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -36,7 +36,7 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Image" id="Image_5akjf"]
+[sub_resource type="Image" id="Image_au3ye"]
 data = {
 "data": PackedByteArray("EgoIABIKCAASCgj/EgoI/xIKCP8SCgj/EgoIABIKCAASCggAEgoI/45ZJf/PVg7/z1YO/45ZJf8SCgj/EgoIABIKCP+OWSX/z1YO//BsHv/wbB7/z1YO/45ZJf8SCgj/EgoI/89WDv/PVg7/8Gwe//BsHv/PVg7/z1YO/xIKCP8SCgj/jlkl/89WDv/PVg7/z1YO/89WDv+OWSX/EgoI/xIKCP9jLx3/jlkl/89WDv/PVg7/jlkl/2MvHf8SCgj/EgoIABIKCP9jLx3/Yy8d/2MvHf9jLx3/EgoI/xIKCAASCggAEgoIABIKCP8SCgj/EgoI/xIKCP8SCggAEgoIAA=="),
 "format": "RGBA8",
@@ -45,14 +45,14 @@ data = {
 "width": 8
 }
 
-[sub_resource type="Resource" id="Resource_jykg0"]
+[sub_resource type="Resource" id="Resource_5akjf"]
 script = ExtResource("8_ntxtd")
 origin = Vector2(4, 4)
 containing_box = Rect2(0, 0, 8, 8)
 precise = true
-images = Array[Image]([SubResource("Image_5akjf")])
+images = Array[Image]([SubResource("Image_au3ye")])
 
-[sub_resource type="Image" id="Image_rtl5k"]
+[sub_resource type="Image" id="Image_jykg0"]
 data = {
 "data": PackedByteArray("EgoIABIKCAASCgj/EgoI/xIKCP8SCgj/EgoIABIKCAASCggAEgoI/45ZJf/PVg7/z1YO/45ZJf8SCgj/EgoIABIKCP+OWSX/z1YO//BsHv/wbB7/z1YO/45ZJf8SCgj/EgoI/89WDv/PVg7/8Gwe//BsHv/PVg7/z1YO/xIKCP8SCgj/jlkl/89WDv/PVg7/z1YO/89WDv+OWSX/EgoI/xIKCP9jLx3/jlkl/89WDv/PVg7/jlkl/2MvHf8SCgj/EgoIABIKCP9jLx3/Yy8d/2MvHf9jLx3/EgoI/xIKCAASCggAEgoIABIKCP8SCgj/EgoI/xIKCP8SCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAA="),
 "format": "RGBA8",
@@ -61,7 +61,7 @@ data = {
 "width": 8
 }
 
-[sub_resource type="Image" id="Image_ntxtd"]
+[sub_resource type="Image" id="Image_rtl5k"]
 data = {
 "data": PackedByteArray("EgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoI/xIKCP8SCgj/EgoI/xIKCAASCggAEgoIABIKCP+OWSX/z1YO/89WDv+OWSX/EgoI/xIKCAASCgj/jlkl/89WDv/wbB7/8Gwe/89WDv+OWSX/EgoI/xIKCP/PVg7/z1YO//BsHv/wbB7/z1YO/89WDv8SCgj/EgoI/45ZJf/PVg7/z1YO/89WDv/PVg7/jlkl/xIKCP8SCgj/Yy8d/45ZJf/PVg7/z1YO/45ZJf9jLx3/EgoI/xIKCAASCgj/Yy8d/2MvHf9jLx3/Yy8d/xIKCP8SCggAEgoIABIKCAASCgj/EgoI/xIKCP8SCgj/EgoIABIKCAA="),
 "format": "RGBA8",
@@ -70,7 +70,7 @@ data = {
 "width": 8
 }
 
-[sub_resource type="Image" id="Image_td78n"]
+[sub_resource type="Image" id="Image_ntxtd"]
 data = {
 "data": PackedByteArray("EgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCgj/EgoI/xIKCP8SCgj/EgoIABIKCAASCggAEgoI/45ZJf/PVg7/z1YO/45ZJf8SCgj/EgoIABIKCP+OWSX/z1YO//BsHv/wbB7/z1YO/45ZJf8SCgj/EgoI/89WDv/PVg7/8Gwe//BsHv/PVg7/z1YO/xIKCP8SCgj/jlkl/89WDv/PVg7/z1YO/89WDv+OWSX/EgoI/xIKCP9jLx3/jlkl/89WDv/PVg7/jlkl/2MvHf8SCgj/EgoIAGMvHQBjLx3/Yy8d/2MvHf9jLx3/Yy8dABIKCAA="),
 "format": "RGBA8",
@@ -79,17 +79,17 @@ data = {
 "width": 8
 }
 
-[sub_resource type="Resource" id="Resource_8mldx"]
+[sub_resource type="Resource" id="Resource_td78n"]
 script = ExtResource("8_ntxtd")
 origin = Vector2(4, 4)
 containing_box = Rect2(0, 0, 8, 10)
 precise = true
-images = Array[Image]([SubResource("Image_rtl5k"), SubResource("Image_ntxtd"), SubResource("Image_td78n")])
+images = Array[Image]([SubResource("Image_jykg0"), SubResource("Image_rtl5k"), SubResource("Image_ntxtd")])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5wnn1"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8mldx"]
 size = Vector2(8, 8)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wjhjt"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5wnn1"]
 size = Vector2(16, 16)
 
 [node name="Basketball" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -99,26 +99,26 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "basketball"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_g1xxa")]
-sprite_frames = SubResource("SpriteFrames_au3ye")
+sprite_frames = SubResource("SpriteFrames_xtr8k")
 autoplay = "basketball"
 centered = false
 offset = Vector2(-4, -4)
 script = ExtResource("7_rtl5k")
 sprite_info = Dictionary[StringName, ExtResource("8_ntxtd")]({
-&"basketball": SubResource("Resource_jykg0"),
-&"dribble": SubResource("Resource_8mldx")
+&"basketball": SubResource("Resource_5akjf"),
+&"dribble": SubResource("Resource_td78n")
 })
 default_animation = &"basketball"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_5wnn1")
+shape = SubResource("RectangleShape2D_8mldx")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-shape = SubResource("RectangleShape2D_wjhjt")
+shape = SubResource("RectangleShape2D_5wnn1")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("9_xtr8k")]

@@ -55,7 +55,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_u24ia"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_fsnvs"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -73,14 +73,14 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_6u8m4"]
+[sub_resource type="Resource" id="Resource_u24ia"]
 script = ExtResource("14_trmij")
 containing_box = Rect2(1, 2, 13, 11)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6yk53"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6u8m4"]
 size = Vector2(13, 11)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_trmij"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6yk53"]
 size = Vector2(26, 22)
 
 [node name="Scarab" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -101,18 +101,18 @@ radius = 16
 offset_value = Vector2(8, 8)
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("9_bry47")]
-sprite_frames = SubResource("SpriteFrames_u24ia")
+sprite_frames = SubResource("SpriteFrames_fsnvs")
 autoplay = "scarab"
 centered = false
 script = ExtResource("13_6yk53")
 sprite_info = Dictionary[StringName, ExtResource("14_trmij")]({
-&"scarab": SubResource("Resource_6u8m4")
+&"scarab": SubResource("Resource_u24ia")
 })
 default_animation = &"scarab"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(7.5, 7.5)
-shape = SubResource("RectangleShape2D_6yk53")
+shape = SubResource("RectangleShape2D_6u8m4")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -120,7 +120,7 @@ collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 position = Vector2(7.5, 7.5)
-shape = SubResource("RectangleShape2D_trmij")
+shape = SubResource("RectangleShape2D_6yk53")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("15_fsnvs")]

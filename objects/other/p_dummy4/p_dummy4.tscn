@@ -25,7 +25,7 @@
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="23_b12ak"]
 [ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="24_lnccc"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_6he5m"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_lnccc"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -34,12 +34,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("4_6he5m")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_ohoyk")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_cllj8")
 }, {
 "duration": 1.0,
 "texture": ExtResource("7_uajjl")
@@ -64,6 +58,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("14_c3flk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ohoyk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_cllj8")
 }],
 "loop": true,
 "name": &"climb_up3",
@@ -101,6 +101,11 @@ animations = [{
 "speed": 30.0
 }]
 
+[sub_resource type="Resource" id="Resource_6he5m"]
+script = ExtResource("23_b12ak")
+origin = Vector2(8, 8)
+containing_box = Rect2(1, 0, 14, 16)
+
 [sub_resource type="Resource" id="Resource_ohoyk"]
 script = ExtResource("23_b12ak")
 origin = Vector2(8, 8)
@@ -108,18 +113,13 @@ containing_box = Rect2(1, 0, 14, 16)
 
 [sub_resource type="Resource" id="Resource_cllj8"]
 script = ExtResource("23_b12ak")
-origin = Vector2(8, 8)
-containing_box = Rect2(1, 0, 14, 16)
-
-[sub_resource type="Resource" id="Resource_uajjl"]
-script = ExtResource("23_b12ak")
 origin = Vector2(8, 16)
 containing_box = Rect2(0, 6, 16, 18)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_n5oa3"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uajjl"]
 size = Vector2(14, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mu6x0"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n5oa3"]
 size = Vector2(28, 32)
 
 [node name="PDummy4" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -129,27 +129,27 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "p_dummy4"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_w6bmm")]
-sprite_frames = SubResource("SpriteFrames_6he5m")
+sprite_frames = SubResource("SpriteFrames_lnccc")
 autoplay = "run_left"
 centered = false
 offset = Vector2(-8, -8)
 script = ExtResource("22_jsygh")
 sprite_info = Dictionary[StringName, ExtResource("23_b12ak")]({
-&"climb_up3": SubResource("Resource_uajjl"),
-&"fall_left": SubResource("Resource_cllj8"),
-&"run_left": SubResource("Resource_ohoyk")
+&"climb_up3": SubResource("Resource_cllj8"),
+&"fall_left": SubResource("Resource_ohoyk"),
+&"run_left": SubResource("Resource_6he5m")
 })
 default_animation = &"run_left"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_n5oa3")
+shape = SubResource("RectangleShape2D_uajjl")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-shape = SubResource("RectangleShape2D_mu6x0")
+shape = SubResource("RectangleShape2D_n5oa3")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("24_lnccc")]

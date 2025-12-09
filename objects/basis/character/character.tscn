@@ -23,6 +23,7 @@ size = Vector2(0, 0)
 script = ExtResource("1_ai7al")
 animated_sprite_node = NodePath("Sprite")
 object_name = "character"
+persistent = true
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_kb6li")]
 visible = false

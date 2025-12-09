@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_muoxb"]
 [ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="6_rks1v"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_lb6t7"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_rks1v"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -19,15 +19,15 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_muoxb"]
+[sub_resource type="Resource" id="Resource_lb6t7"]
 script = ExtResource("5_muoxb")
 origin = Vector2(4, 4)
 containing_box = Rect2(0, 0, 8, 8)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ftww"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_muoxb"]
 size = Vector2(8, 8)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kcjgb"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ftww"]
 size = Vector2(16, 16)
 
 [node name="RubyBig" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -37,25 +37,25 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "ruby_big"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_uimhg")]
-sprite_frames = SubResource("SpriteFrames_lb6t7")
+sprite_frames = SubResource("SpriteFrames_rks1v")
 autoplay = "ruby_big"
 centered = false
 offset = Vector2(-4, -4)
 script = ExtResource("4_lb6t7")
 sprite_info = Dictionary[StringName, ExtResource("5_muoxb")]({
-&"ruby_big": SubResource("Resource_muoxb")
+&"ruby_big": SubResource("Resource_lb6t7")
 })
 default_animation = &"ruby_big"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_5ftww")
+shape = SubResource("RectangleShape2D_muoxb")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-shape = SubResource("RectangleShape2D_kcjgb")
+shape = SubResource("RectangleShape2D_5ftww")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("6_rks1v")]

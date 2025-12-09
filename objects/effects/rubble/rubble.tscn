@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="7_1qhri"]
 [ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="8_p61hw"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ir0ox"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_p61hw"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -37,7 +37,7 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Image" id="Image_3dpgs"]
+[sub_resource type="Image" id="Image_ir0ox"]
 data = {
 "data": PackedByteArray("JhQQACYUEAAmFBAAJhQQACYUEAAmFBAAJhQQACYUEAAmFBAAJhQQACYUEAAmFBD/JhQQ/yYUEAAmFBAAJhQQACYUEAAmFBAAJhQQ/45ZJf+OWSX/JhQQ/yYUEAAmFBAAJhQQACYUEP+OWSX/Yy8d/2MvHf+OWSX/JhQQ/yYUEAAmFBAAJhQQ/yYUEP9jLx3/Yy8d/yYUEP8mFBD/JhQQACYUEAAmFBAAJhQQ/yYUEP8mFBD/JhQQ/yYUEAAmFBAAJhQQACYUEAAmFBAAJhQQ/yYUEP8mFBAAJhQQACYUEAAmFBAAJhQQACYUEAAmFBAAJhQQACYUEAAmFBAAJhQQAA=="),
 "format": "RGBA8",
@@ -46,14 +46,14 @@ data = {
 "width": 8
 }
 
-[sub_resource type="Resource" id="Resource_awdd3"]
+[sub_resource type="Resource" id="Resource_3dpgs"]
 script = ExtResource("7_1qhri")
 origin = Vector2(4, 4)
 containing_box = Rect2(1, 1, 6, 6)
 precise = true
-images = Array[Image]([SubResource("Image_3dpgs")])
+images = Array[Image]([SubResource("Image_ir0ox")])
 
-[sub_resource type="Image" id="Image_1qhri"]
+[sub_resource type="Image" id="Image_awdd3"]
 data = {
 "data": PackedByteArray("JyAYACcgGAAnIBgAJyAYACcgGAAnIBgAJyAYACcgGAAnIBgAJyAYACcgGAAnIBj/JyAY/ycgGAAnIBgAJyAYACcgGAAnIBgAJyAY/62baP+tm2j/JyAY/ycgGAAnIBgAJyAYACcgGP+tm2j/cGdO/3BnTv+tm2j/JyAY/ycgGAAnIBgAJyAY/ycgGP9wZ07/cGdO/ycgGP8nIBj/JyAYACcgGAAnIBgAJyAY/ycgGP8nIBj/JyAY/ycgGAAnIBgAJyAYACcgGAAnIBgAJyAY/ycgGP8nIBgAJyAYACcgGAAnIBgAJyAYACcgGAAnIBgAJyAYACcgGAAnIBgAJyAYAA=="),
 "format": "RGBA8",
@@ -62,14 +62,14 @@ data = {
 "width": 8
 }
 
-[sub_resource type="Resource" id="Resource_uf4ak"]
+[sub_resource type="Resource" id="Resource_1qhri"]
 script = ExtResource("7_1qhri")
 origin = Vector2(4, 4)
 containing_box = Rect2(1, 1, 6, 6)
 precise = true
-images = Array[Image]([SubResource("Image_1qhri")])
+images = Array[Image]([SubResource("Image_awdd3")])
 
-[sub_resource type="Image" id="Image_yxhg1"]
+[sub_resource type="Image" id="Image_uf4ak"]
 data = {
 "data": PackedByteArray("JyAYACcgGP8nIBj/JyAYACcgGP+tm2j/rZto/ycgGP8nIBj/cGdO/3BnTv8nIBj/JyAYACcgGP8nIBj/JyAYAA=="),
 "format": "RGBA8",
@@ -78,17 +78,17 @@ data = {
 "width": 4
 }
 
-[sub_resource type="Resource" id="Resource_qss2y"]
+[sub_resource type="Resource" id="Resource_yxhg1"]
 script = ExtResource("7_1qhri")
 origin = Vector2(4, 4)
 containing_box = Rect2(0, 0, 4, 4)
 precise = true
-images = Array[Image]([SubResource("Image_yxhg1")])
+images = Array[Image]([SubResource("Image_uf4ak")])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0k8a3"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qss2y"]
 size = Vector2(6, 6)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_c5f3o"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0k8a3"]
 size = Vector2(12, 12)
 
 [node name="Rubble" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -98,27 +98,27 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "rubble"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_jn33l")]
-sprite_frames = SubResource("SpriteFrames_ir0ox")
+sprite_frames = SubResource("SpriteFrames_p61hw")
 autoplay = "rubble"
 centered = false
 offset = Vector2(-4, -4)
 script = ExtResource("6_awdd3")
 sprite_info = Dictionary[StringName, ExtResource("7_1qhri")]({
-&"rubble": SubResource("Resource_awdd3"),
-&"rubble_tan": SubResource("Resource_uf4ak"),
-&"rubble_tan_small": SubResource("Resource_qss2y")
+&"rubble": SubResource("Resource_3dpgs"),
+&"rubble_tan": SubResource("Resource_1qhri"),
+&"rubble_tan_small": SubResource("Resource_yxhg1")
 })
 default_animation = &"rubble"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_0k8a3")
+shape = SubResource("RectangleShape2D_qss2y")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-shape = SubResource("RectangleShape2D_c5f3o")
+shape = SubResource("RectangleShape2D_0k8a3")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("8_p61hw")]

@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_1x6tn"]
 [ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="6_74o12"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_5guj3"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_74o12"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -19,7 +19,7 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Image" id="Image_1x6tn"]
+[sub_resource type="Image" id="Image_5guj3"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAAD/AAAA/wAAAP8AAAD/AAAAAAAAAAAAAAAAAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAAAAAAAAAAAD/AAAAAAAAAP8AAAD/AAAAAAAAAP8AAAAAAAAAAAAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAAAAAAAAAAAA/wAAAAAAAAAAAAAAAAAAAAAAAAD/AAAAAAAAAAAAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAAAAAAAAAAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAAAAAAAAAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAAA=="),
 "format": "RGBA8",
@@ -28,16 +28,16 @@ data = {
 "width": 8
 }
 
-[sub_resource type="Resource" id="Resource_8mjsm"]
+[sub_resource type="Resource" id="Resource_1x6tn"]
 script = ExtResource("5_1x6tn")
 containing_box = Rect2(1, 0, 6, 8)
 precise = true
-images = Array[Image]([SubResource("Image_1x6tn")])
+images = Array[Image]([SubResource("Image_5guj3")])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_oo3ax"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8mjsm"]
 size = Vector2(6, 8)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kqexg"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oo3ax"]
 size = Vector2(12, 16)
 
 [node name="TreasureSil" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -47,18 +47,18 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "treasure_sil"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_voj46")]
-sprite_frames = SubResource("SpriteFrames_5guj3")
+sprite_frames = SubResource("SpriteFrames_74o12")
 autoplay = "treasure_sil"
 centered = false
 script = ExtResource("4_5guj3")
 sprite_info = Dictionary[StringName, ExtResource("5_1x6tn")]({
-&"treasure_sil": SubResource("Resource_8mjsm")
+&"treasure_sil": SubResource("Resource_1x6tn")
 })
 default_animation = &"treasure_sil"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(4, 4)
-shape = SubResource("RectangleShape2D_oo3ax")
+shape = SubResource("RectangleShape2D_8mjsm")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -66,7 +66,7 @@ collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 position = Vector2(4, 4)
-shape = SubResource("RectangleShape2D_kqexg")
+shape = SubResource("RectangleShape2D_oo3ax")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("6_74o12")]

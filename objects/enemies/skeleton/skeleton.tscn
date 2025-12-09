@@ -18,7 +18,7 @@
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="16_xkk1q"]
 [ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="17_00a85"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_mbpht"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_00a85"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -73,22 +73,22 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_cgt8c"]
+[sub_resource type="Resource" id="Resource_mbpht"]
 script = ExtResource("16_xkk1q")
 containing_box = Rect2(1, 0, 15, 16)
 
-[sub_resource type="Resource" id="Resource_0jfxx"]
+[sub_resource type="Resource" id="Resource_cgt8c"]
 script = ExtResource("16_xkk1q")
 containing_box = Rect2(1, 0, 12, 16)
 
-[sub_resource type="Resource" id="Resource_m6x65"]
+[sub_resource type="Resource" id="Resource_0jfxx"]
 script = ExtResource("16_xkk1q")
 containing_box = Rect2(2, 0, 11, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1qvvu"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m6x65"]
 size = Vector2(15, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_llnbr"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1qvvu"]
 size = Vector2(30, 32)
 
 [node name="Skeleton" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -98,20 +98,20 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "skeleton"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_meh2j")]
-sprite_frames = SubResource("SpriteFrames_mbpht")
+sprite_frames = SubResource("SpriteFrames_00a85")
 autoplay = "skeleton_create_l"
 centered = false
 script = ExtResource("15_vdmum")
 sprite_info = Dictionary[StringName, ExtResource("16_xkk1q")]({
-&"skeleton_create_l": SubResource("Resource_cgt8c"),
-&"skeleton_left": SubResource("Resource_m6x65"),
-&"skeleton_walk_left": SubResource("Resource_0jfxx")
+&"skeleton_create_l": SubResource("Resource_mbpht"),
+&"skeleton_left": SubResource("Resource_0jfxx"),
+&"skeleton_walk_left": SubResource("Resource_cgt8c")
 })
 default_animation = &"skeleton_create_l"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8.5, 8)
-shape = SubResource("RectangleShape2D_1qvvu")
+shape = SubResource("RectangleShape2D_m6x65")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -119,7 +119,7 @@ collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 position = Vector2(8.5, 8)
-shape = SubResource("RectangleShape2D_llnbr")
+shape = SubResource("RectangleShape2D_1qvvu")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("17_00a85")]

@@ -64,7 +64,7 @@ size = Vector2(32, 31)
 size = Vector2(64, 62)
 
 [node name="CaveBg" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
-z_index = -4095
+z_index = -4093
 script = ExtResource("1_8ocdj")
 animated_sprite_node = NodePath("Sprite")
 object_name = "cave_bg"

@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_hxvm5"]
 [ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="6_rkmlq"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ejs6y"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_rkmlq"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -19,7 +19,7 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Image" id="Image_hxvm5"]
+[sub_resource type="Image" id="Image_ejs6y"]
 data = {
 "data": PackedByteArray("gICAAICAgACAgIAAgICAAICAgAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIAICAgACAgIAAgICAAICAgACAgIAAgICAABIKCAASCggAEgoIABIKCABAQEAAEgoIABIKCAASCggAEgoIABIKCACAgIAAgICAAICAgACAgIAAgICAAICAgAASCggAEgoI/xIKCP8SCggAQEBAABIKCAASCggAEgoIABIKCAASCggAgICAAICAgACAgIAAgICAAICAgP+AgID/EgoI/45ZJf+OWSX/EgoI/0BAQP8SCgj/EgoIABIKCAASCggAEgoIAICAgACAgIAAgICAAICAgP//////wMDA////////////gICA/4CAgP/AwMD/gICA/xIKCP8SCggAEgoIABIKCACAgIAAgICAAICAgP//////wMDA/8DAwP///////////4CAgP+AgID/wMDA/8DAwP+AgID/EgoI/xIKCAASCggAgICAAICAgACAgID//////0BAQP9AQED/LBYT/45ZJf9jLx3/EgoI/0BAQP9AQED/gICA/xIKCP8SCggAEgoIAICAgACAgIAAgICA/0BAQP9AQEAAQEBAABIKCP8SCgj/EgoI/xIKCP9AQEAAQEBAAEBAQP8SCgj/EgoIABIKCAA="),
 "format": "RGBA8",
@@ -28,17 +28,17 @@ data = {
 "width": 16
 }
 
-[sub_resource type="Resource" id="Resource_inw3h"]
+[sub_resource type="Resource" id="Resource_hxvm5"]
 script = ExtResource("5_hxvm5")
 origin = Vector2(8, 4)
 containing_box = Rect2(2, 2, 12, 6)
 precise = true
-images = Array[Image]([SubResource("Image_hxvm5")])
+images = Array[Image]([SubResource("Image_ejs6y")])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_unik0"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_inw3h"]
 size = Vector2(12, 6)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_go6pj"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_unik0"]
 size = Vector2(24, 12)
 
 [node name="MattockHead" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -48,19 +48,19 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "mattock_head"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_xeod5")]
-sprite_frames = SubResource("SpriteFrames_ejs6y")
+sprite_frames = SubResource("SpriteFrames_rkmlq")
 autoplay = "mattock_head"
 centered = false
 offset = Vector2(-8, -4)
 script = ExtResource("4_ejs6y")
 sprite_info = Dictionary[StringName, ExtResource("5_hxvm5")]({
-&"mattock_head": SubResource("Resource_inw3h")
+&"mattock_head": SubResource("Resource_hxvm5")
 })
 default_animation = &"mattock_head"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_unik0")
+shape = SubResource("RectangleShape2D_inw3h")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -68,7 +68,7 @@ collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_go6pj")
+shape = SubResource("RectangleShape2D_unik0")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("6_rkmlq")]

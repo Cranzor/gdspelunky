@@ -14,7 +14,7 @@
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="12_gdygc"]
 [ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="13_sbvdh"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_1l056"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_sbvdh"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -57,25 +57,25 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_cuske"]
+[sub_resource type="Resource" id="Resource_1l056"]
 script = ExtResource("12_gdygc")
 origin = Vector2(8, 12)
 containing_box = Rect2(3, 8, 10, 11)
 
-[sub_resource type="Resource" id="Resource_evcru"]
+[sub_resource type="Resource" id="Resource_cuske"]
 script = ExtResource("12_gdygc")
 origin = Vector2(8, 12)
 containing_box = Rect2(3, 0, 10, 17)
 
-[sub_resource type="Resource" id="Resource_hak4r"]
+[sub_resource type="Resource" id="Resource_evcru"]
 script = ExtResource("12_gdygc")
 origin = Vector2(8, 12)
 containing_box = Rect2(3, 0, 10, 19)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tup68"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hak4r"]
 size = Vector2(10, 11)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_en6wr"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tup68"]
 size = Vector2(20, 22)
 
 [node name="AlienEject" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -85,21 +85,21 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "alien_eject"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_23pwu")]
-sprite_frames = SubResource("SpriteFrames_1l056")
+sprite_frames = SubResource("SpriteFrames_sbvdh")
 autoplay = "alien_eject"
 centered = false
 offset = Vector2(-8, -12)
 script = ExtResource("11_hwph6")
 sprite_info = Dictionary[StringName, ExtResource("12_gdygc")]({
-&"alien_deploy": SubResource("Resource_hak4r"),
-&"alien_eject": SubResource("Resource_cuske"),
-&"alien_parachute": SubResource("Resource_evcru")
+&"alien_deploy": SubResource("Resource_evcru"),
+&"alien_eject": SubResource("Resource_1l056"),
+&"alien_parachute": SubResource("Resource_cuske")
 })
 default_animation = &"alien_eject"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1.5)
-shape = SubResource("RectangleShape2D_tup68")
+shape = SubResource("RectangleShape2D_hak4r")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -107,7 +107,7 @@ collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 position = Vector2(0, 1.5)
-shape = SubResource("RectangleShape2D_en6wr")
+shape = SubResource("RectangleShape2D_tup68")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("13_sbvdh")]

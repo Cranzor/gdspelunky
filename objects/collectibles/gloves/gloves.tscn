@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_eirb1"]
 [ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="6_2ngrv"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_lbwv6"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_2ngrv"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -19,7 +19,7 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Image" id="Image_eirb1"]
+[sub_resource type="Image" id="Image_lbwv6"]
 data = {
 "data": PackedByteArray("ADgYAAA4GAAAOBgAADgYAAA4GAAAOBgAADgYAAA4GAAAOBgAADgYAAA4GAAAOBgAADgYAAA4GAAAOBgAADgYAAA4GAAAOBgAADgYAAA4GAAAOBj/ADgY/wA4GAAAOBj/ADgY/wA4GAAAOBgAADgYAAA4GAAAOBgAADgYAAA4GAAAOBgAADgYAAA4GAAAOBj/jcY//1aIIP8AOBj/jcY//1aIIP8AOBj/ADgY/wA4GP8AOBgAADgYAAA4GAAAOBgAADgYAAA4GAAAOBgAADgY/0BmGP9AZhj/ADgY/0BmGP9AZhj/ADgY/43GP/9WiCD/ADgY/wA4GAAAOBgAADgYAAA4GAAAOBgAADgYAAA4GP9AZhj/QGYY/wA4GP9AZhj/QGYY/wA4GP9AZhj/QGYY/wA4GP8AOBj/ADgY/wA4GAAAOBgAADgYAAAAAAAAAAD/ADgY/wA4GP8AAAD/QGYY/0BmGP8AAAD/QGYY/0BmGP8AOBj/jcY//1aIIP8AOBj/ADgYAAA4GP8AOBj/AAAA/wA4GP8AOBj/ADgY/wA4GP9AZhj/ADgY/wA4GP9AZhj/AAAA/0BmGP9AZhj/ADgY/wA4GP9WiCD/jcY//wAAAP8AOBj/ADgY/0BmGP9AZhj/QGYY/0BmGP9AZhj/QGYY/wA4GP9AZhj/QGYY/wA4GP8AOBj/Vogg/1aIIP8AAAD/AAAA/wA4GP9AZhj/QGYY/0BmGP9AZhj/QGYY/0BmGP9AZhj/ADgY/0BmGP8AOBj/ADgY/0BmGP9AZhj/Vogg/1aIIP9WiCD/ADgY/0BmGP9AZhj/QGYY/43GP/9WiCD/Vogg/0BmGP9AZhj/AAAA/wAAAP8AOBj/QGYY/0BmGP9AZhj/Vogg/1aIIP9AZhj/QGYY/43GP/9WiCD/QGYY/0BmGP9AZhj/QGYY/wAAAP8AAAAAAAAA/wA4GP9AZhj/QGYY/0BmGP9AZhj/QGYY/0BmGP9AZhj/QGYY/0BmGP9AZhj/QGYY/wA4GP8AAAD/AAAAAAAAAAAAAAD/ADgY/wA4GP9AZhj/QGYY/0BmGP8AOBj/QGYY/0BmGP9AZhj/QGYY/wA4GP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAP8AAAD/AAAA/wAAAP8AOBj/ADgY/wA4GP8AOBj/ADgY/0BmGP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/wA4GP9AZhj/QGYY/0BmGP9AZhj/QGYY/0BmGP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AOBj/ADgY/wA4GP8AOBj/ADgY/wA4GP8AOBj/AAAA/wAAAAAAAAAAAAAAAA=="),
 "format": "RGBA8",
@@ -28,17 +28,17 @@ data = {
 "width": 16
 }
 
-[sub_resource type="Resource" id="Resource_nuqj0"]
+[sub_resource type="Resource" id="Resource_eirb1"]
 script = ExtResource("5_eirb1")
 origin = Vector2(8, 8)
 containing_box = Rect2(0, 1, 16, 15)
 precise = true
-images = Array[Image]([SubResource("Image_eirb1")])
+images = Array[Image]([SubResource("Image_lbwv6")])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u3ruj"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nuqj0"]
 size = Vector2(16, 15)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kmdty"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u3ruj"]
 size = Vector2(32, 30)
 
 [node name="Gloves" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -48,19 +48,19 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "gloves"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_yjbtl")]
-sprite_frames = SubResource("SpriteFrames_lbwv6")
+sprite_frames = SubResource("SpriteFrames_2ngrv")
 autoplay = "glove"
 centered = false
 offset = Vector2(-8, -8)
 script = ExtResource("4_lbwv6")
 sprite_info = Dictionary[StringName, ExtResource("5_eirb1")]({
-&"glove": SubResource("Resource_nuqj0")
+&"glove": SubResource("Resource_eirb1")
 })
 default_animation = &"glove"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)
-shape = SubResource("RectangleShape2D_u3ruj")
+shape = SubResource("RectangleShape2D_nuqj0")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -68,7 +68,7 @@ collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 position = Vector2(0, 0.5)
-shape = SubResource("RectangleShape2D_kmdty")
+shape = SubResource("RectangleShape2D_u3ruj")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("6_2ngrv")]

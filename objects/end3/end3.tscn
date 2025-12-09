@@ -1,11 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://xnnh2syksk67"]
+[gd_scene load_steps=12 format=3 uid="uid://xnnh2syksk67"]
 
 [ext_resource type="Script" uid="uid://c6o51n3wjsnml" path="res://objects/end3/end3.gd" id="1_b5g40"]
 [ext_resource type="PackedScene" uid="uid://8nvpnq1dktdh" path="res://components/drawing/draw_text/draw_text.tscn" id="2_nx7u3"]
+[ext_resource type="Script" uid="uid://dtgd0cguix6db" path="res://components/drawing/draw_text/draw_text.gd" id="3_7mt1j"]
 [ext_resource type="PackedScene" uid="uid://bctkguili8lu6" path="res://components/drawing/draw_rectangle/draw_rectangle.tscn" id="3_bmrql"]
+[ext_resource type="PackedScene" uid="uid://cycctqx2bmx2j" path="res://components/drawing/draw_text/drawn_text.tscn" id="4_tfwca"]
+[ext_resource type="Script" uid="uid://nt05ksk5fdo6" path="res://components/drawing/draw_rectangle/draw_rectangle.gd" id="6_0x0nw"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="7_0x0nw"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="8_0x0nw"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_0x0nw"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_qjhmx"]
 resource_local_to_scene = true
 animations = [{
 "frames": [],
@@ -14,10 +18,10 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qjhmx"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r6vfw"]
 size = Vector2(0, 0)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_r6vfw"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vy726"]
 size = Vector2(0, 0)
 
 [node name="End3" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -25,25 +29,33 @@ script = ExtResource("1_b5g40")
 animated_sprite_node = NodePath("Sprite")
 object_name = "end3"
 
-[node name="FinalScoreText" parent="." instance=ExtResource("2_nx7u3")]
+[node name="FinalScoreText" type="Node2D" parent="." groups=["draw_text"] instance=ExtResource("2_nx7u3")]
+z_index = 1
+script = ExtResource("3_7mt1j")
+drawn_text = ExtResource("4_tfwca")
 
-[node name="FinalMessage" parent="." instance=ExtResource("2_nx7u3")]
+[node name="FinalMessage" type="Node2D" parent="." groups=["draw_text"] instance=ExtResource("2_nx7u3")]
 z_index = 3
+script = ExtResource("3_7mt1j")
+drawn_text = ExtResource("4_tfwca")
 
-[node name="DrawRectangle" parent="." instance=ExtResource("3_bmrql")]
+[node name="DrawRectangle" type="ColorRect" parent="." instance=ExtResource("3_bmrql")]
 z_index = 2
+script = ExtResource("6_0x0nw")
 
-[node name="Sprite" parent="." instance=ExtResource("7_0x0nw")]
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("7_0x0nw")]
 visible = false
-sprite_frames = SubResource("SpriteFrames_0x0nw")
+sprite_frames = SubResource("SpriteFrames_qjhmx")
+centered = false
+script = ExtResource("8_0x0nw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_qjhmx")
+shape = SubResource("RectangleShape2D_r6vfw")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-shape = SubResource("RectangleShape2D_r6vfw")
+shape = SubResource("RectangleShape2D_vy726")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)

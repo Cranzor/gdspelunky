@@ -12,7 +12,7 @@
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="10_xpls8"]
 [ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="11_8e0bm"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_cyma1"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_8e0bm"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -39,7 +39,7 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Image" id="Image_if2kx"]
+[sub_resource type="Image" id="Image_hq5x1"]
 data = {
 "data": PackedByteArray("QIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAA////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8AQIAAAECAAABAgAAA////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wBAgAAAQIAAAP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8AQIAAAECAAAD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AECAAABAgAAA////AP///wD///8A////AP///wD/////////////////////////AP///wD///8A////AP///wBAgAAAQIAAAP///wD///8A////AP///wD///////////////////////////////////8A////AP///wD///8AQIAAAECAAAD///8A////AP///wD///8A////////////////////////////////////AP///wD///8A////AECAAABAgAAA////AP///wD///8A////AP///////////////////////////////////wD///8A////AP///wBAgAAAQIAAAP///wD///8A////AP///wD///////////////////////////////////8A////AP///wD///8AQIAAAECAAAD///8A////AP///wD///8A////AP////////////////////////8A////AP///wD///8A////AECAAABAgAAA////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wBAgAAAQIAAAP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8AQIAAAECAAAD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AECAAABAgAAAQIAAAP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAA=="),
 "format": "RGBA8",
@@ -48,7 +48,7 @@ data = {
 "width": 16
 }
 
-[sub_resource type="Image" id="Image_sswef"]
+[sub_resource type="Image" id="Image_if2kx"]
 data = {
 "data": PackedByteArray("QIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wBAgAAAQIAAAECAAABAgAAAQIAAAP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AECAAABAgAAAQIAAAP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8AQIAAAECAAAD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AECAAABAgAAA////AP///wD///8A////AP///wD///8A//////////////8A////AP///wD///8A////AP///wBAgAAAQIAAAP///wD///8A////AP///wD///8A/////////////////////////wD///8A////AP///wD///8AQIAAAECAAAD///8A////AP///wD///8A////////////////////////////////////AP///wD///8A////AECAAABAgAAA////AP///wD///8A////AP///////////////////////////////////wD///8A////AP///wBAgAAAQIAAAP///wD///8A////AP///wD///8A/////////////////////////wD///8A////AP///wD///8AQIAAAECAAAD///8A////AP///wD///8A////AP///wD//////////////wD///8A////AP///wD///8A////AECAAABAgAAA////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wBAgAAAQIAAAP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8AQIAAAECAAABAgAAA////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8AQIAAAECAAABAgAAAQIAAAECAAAD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8AQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAA=="),
 "format": "RGBA8",
@@ -57,7 +57,7 @@ data = {
 "width": 16
 }
 
-[sub_resource type="Image" id="Image_eeqlu"]
+[sub_resource type="Image" id="Image_sswef"]
 data = {
 "data": PackedByteArray("QIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAAD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8AQIAAAECAAABAgAAAQIAAAECAAAD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wBAgAAAQIAAAECAAABAgAAA////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8AQIAAAECAAABAgAAAQIAAAP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AECAAABAgAAAQIAAAECAAAD///8A////AP///wD///8A////AP//////////////AP///wD///8A////AP///wBAgAAAQIAAAECAAABAgAAA////AP///wD///8A////AP////////////////////////8A////AP///wD///8AQIAAAECAAABAgAAAQIAAAP///wD///8A////AP///wD/////////////////////////AP///wD///8A////AECAAABAgAAAQIAAAECAAAD///8A////AP///wD///8A////AP//////////////AP///wD///8A////AP///wBAgAAAQIAAAECAAABAgAAA////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8AQIAAAECAAABAgAAAQIAAAP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AECAAABAgAAAQIAAAECAAAD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wBAgAAAQIAAAECAAABAgAAAQIAAAP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wBAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAA=="),
 "format": "RGBA8",
@@ -66,7 +66,7 @@ data = {
 "width": 16
 }
 
-[sub_resource type="Image" id="Image_8b8d4"]
+[sub_resource type="Image" id="Image_eeqlu"]
 data = {
 "data": PackedByteArray("QIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAA////AP///wD///8A////AP///wD///8A////AP///wD///8A////AECAAABAgAAAQIAAAECAAABAgAAAQIAAAP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wBAgAAAQIAAAECAAABAgAAAQIAAAECAAAD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8AQIAAAECAAABAgAAAQIAAAECAAABAgAAA////AP///wD///8A////AP///wD///8A////AP///wD///8A////AECAAABAgAAAQIAAAECAAABAgAAAQIAAAP///wD///8A////AP///wD//////////////wD///8A////AP///wBAgAAAQIAAAECAAABAgAAAQIAAAECAAAD///8A////AP///wD///8A//////////////8A////AP///wD///8AQIAAAECAAABAgAAAQIAAAECAAABAgAAA////AP///wD///8A////AP///wD///8A////AP///wD///8A////AECAAABAgAAAQIAAAECAAABAgAAAQIAAAP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wBAgAAAQIAAAECAAABAgAAAQIAAAECAAAD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8AQIAAAECAAABAgAAAQIAAAECAAABAgAAA////AP///wD///8A////AP///wD///8A////AP///wD///8A////AECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAA=="),
 "format": "RGBA8",
@@ -75,7 +75,7 @@ data = {
 "width": 16
 }
 
-[sub_resource type="Image" id="Image_7faso"]
+[sub_resource type="Image" id="Image_8b8d4"]
 data = {
 "data": PackedByteArray("QIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAP///wD///8A////AP///wD///8A////AP///wD///8A////AECAAABAgAAAQIAAAECAAABAgAAAQIAAAP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wBAgAAAQIAAAECAAABAgAAAQIAAAECAAAD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8AQIAAAECAAABAgAAAQIAAAECAAABAgAAA////AP///wD///8A////AP///wD///8A////AP///wD///8A////AECAAABAgAAAQIAAAECAAABAgAAAQIAAAP///wD///8A////AP///wD///8A/////////wD///8A////AP///wBAgAAAQIAAAECAAABAgAAAQIAAAECAAAD///8A////AP///wD///8A/////////wD///8A////AP///wD///8AQIAAAECAAABAgAAAQIAAAECAAABAgAAA////AP///wD///8A////AP///wD///8A////AP///wD///8A////AECAAABAgAAAQIAAAECAAABAgAAAQIAAAP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wBAgAAAQIAAAECAAABAgAAAQIAAAECAAAD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8AQIAAAECAAABAgAAAQIAAAECAAABAgAAA////AP///wD///8A////AP///wD///8A////AP///wD///8AQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAA=="),
 "format": "RGBA8",
@@ -84,7 +84,7 @@ data = {
 "width": 16
 }
 
-[sub_resource type="Image" id="Image_fy8fe"]
+[sub_resource type="Image" id="Image_7faso"]
 data = {
 "data": PackedByteArray("QIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAA////AP///wD///8A////AP///wD///8A////AP///wD///8AQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wBAgAAAQIAAAECAAABAgAAAQIAAAECAAAD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8AQIAAAECAAABAgAAAQIAAAECAAABAgAAA////AP///wD///8A////AP///wD///8A////AP///wD///8A////AECAAABAgAAAQIAAAECAAABAgAAAQIAAAP///wD///8A////AP///wD/////////AP///wD///8A////AP///wBAgAAAQIAAAECAAABAgAAAQIAAAECAAAD///8A////AP///wD///8A////AP////////8A////AP///wD///8AQIAAAECAAABAgAAAQIAAAECAAABAgAAA////AP///wD///8A////AP///wD///8A////AP///wD///8A////AECAAABAgAAAQIAAAECAAABAgAAAQIAAAP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wBAgAAAQIAAAECAAABAgAAAQIAAAECAAAD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8AQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAP///wD///8A////AP///wD///8A////AP///wD///8A////AECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAA=="),
 "format": "RGBA8",
@@ -93,17 +93,17 @@ data = {
 "width": 16
 }
 
-[sub_resource type="Resource" id="Resource_e0n3u"]
+[sub_resource type="Resource" id="Resource_cyma1"]
 script = ExtResource("10_xpls8")
 origin = Vector2(8, 8)
 containing_box = Rect2(5, 5, 6, 6)
 precise = true
-images = Array[Image]([SubResource("Image_if2kx"), SubResource("Image_sswef"), SubResource("Image_eeqlu"), SubResource("Image_8b8d4"), SubResource("Image_7faso"), SubResource("Image_fy8fe")])
+images = Array[Image]([SubResource("Image_hq5x1"), SubResource("Image_if2kx"), SubResource("Image_sswef"), SubResource("Image_eeqlu"), SubResource("Image_8b8d4"), SubResource("Image_7faso")])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5cq43"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e0n3u"]
 size = Vector2(6, 6)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wvf0u"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5cq43"]
 size = Vector2(12, 12)
 
 [node name="PsychicCreateP" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -113,25 +113,25 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "psychic_create_p"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_5ckw6")]
-sprite_frames = SubResource("SpriteFrames_cyma1")
+sprite_frames = SubResource("SpriteFrames_8e0bm")
 autoplay = "psychic_create"
 centered = false
 offset = Vector2(-8, -8)
 script = ExtResource("9_44v1l")
 sprite_info = Dictionary[StringName, ExtResource("10_xpls8")]({
-&"psychic_create": SubResource("Resource_e0n3u")
+&"psychic_create": SubResource("Resource_cyma1")
 })
 default_animation = &"psychic_create"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_5cq43")
+shape = SubResource("RectangleShape2D_e0n3u")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-shape = SubResource("RectangleShape2D_wvf0u")
+shape = SubResource("RectangleShape2D_5cq43")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("11_8e0bm")]

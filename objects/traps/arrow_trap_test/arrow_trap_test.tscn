@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=4 uid="uid://ckoud5055nwru"]
+[gd_scene load_steps=11 format=4 uid="uid://ckoud5055nwru"]
 
 [ext_resource type="Script" uid="uid://dwl35a4a40wpb" path="res://objects/traps/arrow_trap_test/arrow_trap_test.gd" id="1_d7eok"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_f810v"]
 [ext_resource type="Texture2D" uid="uid://ct1pikkmy4100" path="res://sprites/red/red_0.png" id="3_bs1k8"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_f810v"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_7sx2q"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bs1k8"]
@@ -44,9 +45,11 @@ script = ExtResource("1_d7eok")
 animated_sprite_node = NodePath("Sprite")
 object_name = "arrow_trap_test"
 
-[node name="Sprite" parent="." instance=ExtResource("2_f810v")]
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_f810v")]
 sprite_frames = SubResource("SpriteFrames_bs1k8")
 autoplay = "red"
+centered = false
+script = ExtResource("4_f810v")
 sprite_info = Dictionary[StringName, ExtResource("5_7sx2q")]({
 &"red": SubResource("Resource_7sx2q")
 })

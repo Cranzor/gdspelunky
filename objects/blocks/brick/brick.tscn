@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dklgx6kbf2enj" path="res://backgrounds/bg_cave_top.png" id="9_0ea63"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="10_lefri"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_fa2bf"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_lefri"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -48,6 +48,10 @@ animations = [{
 "speed": 30.0
 }]
 
+[sub_resource type="Resource" id="Resource_fa2bf"]
+script = ExtResource("8_akvyr")
+containing_box = Rect2(0, 0, 16, 16)
+
 [sub_resource type="Resource" id="Resource_v6ywl"]
 script = ExtResource("8_akvyr")
 containing_box = Rect2(0, 0, 16, 16)
@@ -60,14 +64,10 @@ containing_box = Rect2(0, 0, 16, 16)
 script = ExtResource("8_akvyr")
 containing_box = Rect2(0, 0, 16, 16)
 
-[sub_resource type="Resource" id="Resource_wbkd0"]
-script = ExtResource("8_akvyr")
-containing_box = Rect2(0, 0, 16, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_20ig7"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wbkd0"]
 size = Vector2(16, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ryrx"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_20ig7"]
 size = Vector2(32, 32)
 
 [node name="Brick" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -88,21 +88,21 @@ region_rect = Rect2(0, 0, 16, 16)
 script = ExtResource("4_5w16i")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_cghdr")]
-sprite_frames = SubResource("SpriteFrames_fa2bf")
+sprite_frames = SubResource("SpriteFrames_lefri")
 autoplay = "brick"
 centered = false
 script = ExtResource("10_lefri")
 sprite_info = Dictionary[StringName, ExtResource("8_akvyr")]({
-&"brick": SubResource("Resource_v6ywl"),
-&"brick2": SubResource("Resource_akvyr"),
-&"brick_gold": SubResource("Resource_51eyp"),
-&"brick_gold_big": SubResource("Resource_wbkd0")
+&"brick": SubResource("Resource_fa2bf"),
+&"brick2": SubResource("Resource_v6ywl"),
+&"brick_gold": SubResource("Resource_akvyr"),
+&"brick_gold_big": SubResource("Resource_51eyp")
 })
 default_animation = &"brick"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_20ig7")
+shape = SubResource("RectangleShape2D_wbkd0")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -110,5 +110,5 @@ collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_7ryrx")
+shape = SubResource("RectangleShape2D_20ig7")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)

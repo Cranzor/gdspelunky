@@ -12,7 +12,7 @@
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="10_umo70"]
 [ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="11_wnpau"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_u3nbi"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_wnpau"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -44,18 +44,18 @@ animations = [{
 "speed": 30.0
 }]
 
+[sub_resource type="Resource" id="Resource_u3nbi"]
+script = ExtResource("10_umo70")
+containing_box = Rect2(0, 1, 8, 6)
+
 [sub_resource type="Resource" id="Resource_76qpu"]
 script = ExtResource("10_umo70")
 containing_box = Rect2(0, 1, 8, 6)
 
-[sub_resource type="Resource" id="Resource_wiwbq"]
-script = ExtResource("10_umo70")
-containing_box = Rect2(0, 1, 8, 6)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_20ptu"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wiwbq"]
 size = Vector2(8, 6)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_m0bdf"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_20ptu"]
 size = Vector2(16, 12)
 
 [node name="DeadFish" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -65,19 +65,19 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "dead_fish"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_1ctkh")]
-sprite_frames = SubResource("SpriteFrames_u3nbi")
+sprite_frames = SubResource("SpriteFrames_wnpau")
 autoplay = "dead_fish_left"
 centered = false
 script = ExtResource("9_qws2b")
 sprite_info = Dictionary[StringName, ExtResource("10_umo70")]({
-&"dead_fish_left": SubResource("Resource_76qpu"),
-&"dead_fish_right": SubResource("Resource_wiwbq")
+&"dead_fish_left": SubResource("Resource_u3nbi"),
+&"dead_fish_right": SubResource("Resource_76qpu")
 })
 default_animation = &"dead_fish_left"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(4, 4)
-shape = SubResource("RectangleShape2D_20ptu")
+shape = SubResource("RectangleShape2D_wiwbq")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -85,7 +85,7 @@ collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 position = Vector2(4, 4)
-shape = SubResource("RectangleShape2D_m0bdf")
+shape = SubResource("RectangleShape2D_20ptu")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("11_wnpau")]

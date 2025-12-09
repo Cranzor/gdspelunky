@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_l0rin"]
 [ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="6_1qvnp"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_2qivb"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_1qvnp"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -19,7 +19,7 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Image" id="Image_l0rin"]
+[sub_resource type="Image" id="Image_2qivb"]
 data = {
 "data": PackedByteArray("ICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIP8gICD/ICAgACAgIAAgICAAICAgACAgIAAgICD/wMDA/4CAgP8gICD/ICAgACAgIAAAAAAAAAAAAAAAAP9AQED/QEBA/wAAAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="),
 "format": "RGBA8",
@@ -28,17 +28,17 @@ data = {
 "width": 8
 }
 
-[sub_resource type="Resource" id="Resource_t6vlt"]
+[sub_resource type="Resource" id="Resource_l0rin"]
 script = ExtResource("5_l0rin")
 origin = Vector2(4, 0)
 containing_box = Rect2(2, 2, 4, 4)
 precise = true
-images = Array[Image]([SubResource("Image_l0rin")])
+images = Array[Image]([SubResource("Image_2qivb")])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_f4i61"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t6vlt"]
 size = Vector2(4, 4)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_s4v4f"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f4i61"]
 size = Vector2(8, 8)
 
 [node name="Bullet" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -47,19 +47,19 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "bullet"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_lc73r")]
-sprite_frames = SubResource("SpriteFrames_2qivb")
+sprite_frames = SubResource("SpriteFrames_1qvnp")
 autoplay = "bullet"
 centered = false
 offset = Vector2(-4, 0)
 script = ExtResource("4_2qivb")
 sprite_info = Dictionary[StringName, ExtResource("5_l0rin")]({
-&"bullet": SubResource("Resource_t6vlt")
+&"bullet": SubResource("Resource_l0rin")
 })
 default_animation = &"bullet"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 4)
-shape = SubResource("RectangleShape2D_f4i61")
+shape = SubResource("RectangleShape2D_t6vlt")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -67,7 +67,7 @@ collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 position = Vector2(0, 4)
-shape = SubResource("RectangleShape2D_s4v4f")
+shape = SubResource("RectangleShape2D_f4i61")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("6_1qvnp")]

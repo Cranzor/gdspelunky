@@ -12,7 +12,7 @@
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="10_375tx"]
 [ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="11_jo5ak"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_bqnqr"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_jo5ak"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -39,7 +39,7 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Image" id="Image_xjbkh"]
+[sub_resource type="Image" id="Image_bqnqr"]
 data = {
 "data": PackedByteArray("////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A//////////////8A////AP///wD///8A////AP///wD//////////////wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AA=="),
 "format": "RGBA8",
@@ -48,7 +48,7 @@ data = {
 "width": 8
 }
 
-[sub_resource type="Image" id="Image_u1a5f"]
+[sub_resource type="Image" id="Image_xjbkh"]
 data = {
 "data": PackedByteArray("////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//////////////AP///wD///8A////AP///wD/////////////////////////AP///wD///8A////AP////////////////////////8A////AP///wD///8A////AP//////////////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AA=="),
 "format": "RGBA8",
@@ -57,7 +57,7 @@ data = {
 "width": 8
 }
 
-[sub_resource type="Image" id="Image_mq4bb"]
+[sub_resource type="Image" id="Image_u1a5f"]
 data = {
 "data": PackedByteArray("////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP////////////////////////8A////AP///wD///////////////////////////////////8A////AP///////////////////////////////////wD///8A////////////////////////////////////AP///wD///8A//////////////////////////////8A////AP///wD///8A////////////////////AP///wD///8A////AP///wD///8A////AP///wD///8A////AA=="),
 "format": "RGBA8",
@@ -66,7 +66,7 @@ data = {
 "width": 8
 }
 
-[sub_resource type="Image" id="Image_ox4u1"]
+[sub_resource type="Image" id="Image_mq4bb"]
 data = {
 "data": PackedByteArray("////AP///wD///8A////AP//////////////AP///wD///8A////AP///wD/////////////////////////AP///wD///8A////AP////////////////////////8A////AP//////////////AP//////////////AP///wD/////////////////////////AP///wD///////////////////////////////////8A////AP//////////////AP//////////////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AA=="),
 "format": "RGBA8",
@@ -75,7 +75,7 @@ data = {
 "width": 8
 }
 
-[sub_resource type="Image" id="Image_nmcqf"]
+[sub_resource type="Image" id="Image_ox4u1"]
 data = {
 "data": PackedByteArray("////AP///wD///8A////AP////////8A////AP///wD///8A////AP///wD///////////////////8A////AP///wD///8A////AP///wD/////////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP//////////////AP////////8A////AP///wD///////////////////8A////AP///wD///8A/////////wD///8A////AP///wD///8A////AP///wD///8A////AA=="),
 "format": "RGBA8",
@@ -84,7 +84,7 @@ data = {
 "width": 8
 }
 
-[sub_resource type="Image" id="Image_375tx"]
+[sub_resource type="Image" id="Image_nmcqf"]
 data = {
 "data": PackedByteArray("////AP///wD///8A////AP////////8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP////////8A////AP///wD///8A////AP///wD/////////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AA=="),
 "format": "RGBA8",
@@ -93,17 +93,17 @@ data = {
 "width": 8
 }
 
-[sub_resource type="Resource" id="Resource_gl2i7"]
+[sub_resource type="Resource" id="Resource_375tx"]
 script = ExtResource("10_375tx")
 origin = Vector2(4, 4)
 containing_box = Rect2(0, 0, 8, 7)
 precise = true
-images = Array[Image]([SubResource("Image_xjbkh"), SubResource("Image_u1a5f"), SubResource("Image_mq4bb"), SubResource("Image_ox4u1"), SubResource("Image_nmcqf"), SubResource("Image_375tx")])
+images = Array[Image]([SubResource("Image_bqnqr"), SubResource("Image_xjbkh"), SubResource("Image_u1a5f"), SubResource("Image_mq4bb"), SubResource("Image_ox4u1"), SubResource("Image_nmcqf")])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h64xu"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gl2i7"]
 size = Vector2(8, 7)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_om5cf"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h64xu"]
 size = Vector2(16, 14)
 
 [node name="Poof" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -113,19 +113,19 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "poof"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_f8yms")]
-sprite_frames = SubResource("SpriteFrames_bqnqr")
+sprite_frames = SubResource("SpriteFrames_jo5ak")
 autoplay = "poof"
 centered = false
 offset = Vector2(-4, -4)
 script = ExtResource("9_nmcqf")
 sprite_info = Dictionary[StringName, ExtResource("10_375tx")]({
-&"poof": SubResource("Resource_gl2i7")
+&"poof": SubResource("Resource_375tx")
 })
 default_animation = &"poof"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -0.5)
-shape = SubResource("RectangleShape2D_h64xu")
+shape = SubResource("RectangleShape2D_gl2i7")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -133,7 +133,7 @@ collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 position = Vector2(0, -0.5)
-shape = SubResource("RectangleShape2D_om5cf")
+shape = SubResource("RectangleShape2D_h64xu")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("11_jo5ak")]

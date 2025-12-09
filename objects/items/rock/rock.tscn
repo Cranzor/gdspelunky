@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_mrgiv"]
 [ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="6_xk78s"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_w56ee"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_xk78s"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -19,7 +19,7 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Image" id="Image_mrgiv"]
+[sub_resource type="Image" id="Image_w56ee"]
 data = {
 "data": PackedByteArray("gICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgADAwMAAgICAAICAgP+AgID/gICA/4CAgP+AgIAAgICAAMDAwADAwMD/gICA/4CAgP+AgID/gICA/4CAgP+AgIAAgICAAICAgP/AwMD/gICA/4CAgP+AgID/gICA/8DAwP+AgIAAgICA/4CAgP///////////8DAwP/AwMD/QEBA/4CAgACAgID/gICA/8DAwP9AQED/QEBA/0BAQP9AQED/TjkkAE45JP+AgID/QEBA/0BAQP9AQED/QEBA/ycrK/9OOSQATjkkAE45JP9AQED/QEBA/0BAQP8nKyv/JysrAA=="),
 "format": "RGBA8",
@@ -28,17 +28,17 @@ data = {
 "width": 8
 }
 
-[sub_resource type="Resource" id="Resource_mjbkq"]
+[sub_resource type="Resource" id="Resource_mrgiv"]
 script = ExtResource("5_mrgiv")
 origin = Vector2(4, 4)
 containing_box = Rect2(1, 1, 7, 7)
 precise = true
-images = Array[Image]([SubResource("Image_mrgiv")])
+images = Array[Image]([SubResource("Image_w56ee")])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_t6awi"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mjbkq"]
 size = Vector2(7, 7)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_11gen"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t6awi"]
 size = Vector2(14, 14)
 
 [node name="Rock" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -48,19 +48,19 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "rock"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_kviil")]
-sprite_frames = SubResource("SpriteFrames_w56ee")
+sprite_frames = SubResource("SpriteFrames_xk78s")
 autoplay = "rock"
 centered = false
 offset = Vector2(-4, -4)
 script = ExtResource("4_w56ee")
 sprite_info = Dictionary[StringName, ExtResource("5_mrgiv")]({
-&"rock": SubResource("Resource_mjbkq")
+&"rock": SubResource("Resource_mrgiv")
 })
 default_animation = &"rock"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 0.5)
-shape = SubResource("RectangleShape2D_t6awi")
+shape = SubResource("RectangleShape2D_mjbkq")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -68,7 +68,7 @@ collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 position = Vector2(0.5, 0.5)
-shape = SubResource("RectangleShape2D_11gen")
+shape = SubResource("RectangleShape2D_t6awi")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("6_xk78s")]

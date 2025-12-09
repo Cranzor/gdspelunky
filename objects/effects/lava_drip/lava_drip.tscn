@@ -11,7 +11,7 @@
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="9_cfnar"]
 [ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="10_ue1fr"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_32rbl"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_ue1fr"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -35,7 +35,7 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Image" id="Image_lq75x"]
+[sub_resource type="Image" id="Image_32rbl"]
 data = {
 "data": PackedByteArray("mycAAJsnAACbJwAAmycA/5snAACbJwAAmycAAJsnAACbJwAAmycAAJsnAP//lRn/mycA/5snAACbJwAAmycAAJsnAACbJwD//5UZ//z/If/8/yH/mycA/5snAACbJwAAmycA//9CAP//lRn//P8h//z/If//lRn/mycA/5snAACbJwD//P8h//+VGf//lRn//5UZ//9CAP+bJwD/mycAAJsnAACbJwD//P8h//9CAP//QgD/mycA/5snAACbJwAAmycAAJsnAACbJwD/mycA/5snAP+bJwAAmycAAJsnAACbJwAAmycAAJsnAACbJwAAmycAAJsnAACbJwAAmycAAA=="),
 "format": "RGBA8",
@@ -44,7 +44,7 @@ data = {
 "width": 8
 }
 
-[sub_resource type="Image" id="Image_dkh2j"]
+[sub_resource type="Image" id="Image_lq75x"]
 data = {
 "data": PackedByteArray("mycAAJsnAACbJwAAmycA/5snAACbJwAAmycAAJsnAACbJwAAmycAAJsnAP//QgD/mycA/5snAACbJwAAmycAAJsnAACbJwAAmycA//+VGf+bJwD/mycAAJsnAACbJwAAmycAAJsnAP//lRn//5UZ//9CAP+bJwD/mycAAJsnAACbJwAAmycA//+VGf/8/yH//0IA/5snAP+bJwAAmycAAJsnAACbJwD//0IA//z/If//lRn/mycA/5snAACbJwAAmycAAJsnAACbJwD/mycA/5snAP+bJwAAmycAAJsnAACbJwAAmycAAJsnAACbJwAAmycAAJsnAACbJwAAmycAAA=="),
 "format": "RGBA8",
@@ -53,7 +53,7 @@ data = {
 "width": 8
 }
 
-[sub_resource type="Image" id="Image_lwnnj"]
+[sub_resource type="Image" id="Image_dkh2j"]
 data = {
 "data": PackedByteArray("mycAAJsnAACbJwAAmycAAJsnAACbJwAAmycAAJsnAACbJwAAmycAAJsnAACbJwD/mycAAJsnAACbJwAAmycAAJsnAACbJwAAmycA/5snAP+bJwD/mycAAJsnAACbJwAAmycAAJsnAACbJwD/mycA/5snAP+bJwAAmycAAJsnAACbJwAAmycAAJsnAP+AgID/QEBA/0BAQABAQEAAQEBAAJsnAACbJwAAmycAAEBAQP8gICD/ICAgACAgIAAgICAAmycAAJsnAABAQEAAQEBAACAgIAAgICAAICAgACAgIACbJwAAQEBAAEBAQABAQEAAICAgACAgIAAgICAAICAgAA=="),
 "format": "RGBA8",
@@ -62,7 +62,7 @@ data = {
 "width": 8
 }
 
-[sub_resource type="Image" id="Image_s51pc"]
+[sub_resource type="Image" id="Image_lwnnj"]
 data = {
 "data": PackedByteArray("QEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAICAgABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQACAgIAAgICAAEBAQABAQEAAQEBAAEBAQP9AQEAAgICAAICAgACAgIAAQEBAAEBAQABAQED/gICA/4CAgP+AgIAAgICAAICAgABAQEAAQEBAAEBAQP9AQED/ICAg/yAgIAAgICAAICAgAEBAQABAQEAAQEBAACAgIP8gICAAICAgACAgIAAgICAAQEBAAEBAQAAgICAAICAgACAgIAAgICAAICAgACAgIABAQEAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgAA=="),
 "format": "RGBA8",
@@ -71,7 +71,7 @@ data = {
 "width": 8
 }
 
-[sub_resource type="Image" id="Image_cfnar"]
+[sub_resource type="Image" id="Image_s51pc"]
 data = {
 "data": PackedByteArray("QEBAAEBAQABAQEAAICAgACAgIAAgICAAICAgACAgIABAQEAAQEBAAEBAQAAgICAAICAgACAgIAAgICAAICAgAEBAQABAQEAAQEBAACAgIAAgICAAICAgACAgIAAgICAAQEBAAEBAQABAQED/ICAg/yAgIAAgICAAICAgACAgIAAgICAAICAgACAgIP8gICD/ICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgAA=="),
 "format": "RGBA8",
@@ -80,17 +80,17 @@ data = {
 "width": 8
 }
 
-[sub_resource type="Resource" id="Resource_7evsa"]
+[sub_resource type="Resource" id="Resource_cfnar"]
 script = ExtResource("9_cfnar")
 origin = Vector2(4, 4)
 containing_box = Rect2(0, 0, 7, 7)
 precise = true
-images = Array[Image]([SubResource("Image_lq75x"), SubResource("Image_dkh2j"), SubResource("Image_lwnnj"), SubResource("Image_s51pc"), SubResource("Image_cfnar")])
+images = Array[Image]([SubResource("Image_32rbl"), SubResource("Image_lq75x"), SubResource("Image_dkh2j"), SubResource("Image_lwnnj"), SubResource("Image_s51pc")])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0qf00"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7evsa"]
 size = Vector2(7, 7)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7vm4b"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0qf00"]
 size = Vector2(14, 14)
 
 [node name="LavaDrip" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -100,19 +100,19 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "lava_drip"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_rq6h0")]
-sprite_frames = SubResource("SpriteFrames_32rbl")
+sprite_frames = SubResource("SpriteFrames_ue1fr")
 autoplay = "lava_drip"
 centered = false
 offset = Vector2(-4, -4)
 script = ExtResource("8_s51pc")
 sprite_info = Dictionary[StringName, ExtResource("9_cfnar")]({
-&"lava_drip": SubResource("Resource_7evsa")
+&"lava_drip": SubResource("Resource_cfnar")
 })
 default_animation = &"lava_drip"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, -0.5)
-shape = SubResource("RectangleShape2D_0qf00")
+shape = SubResource("RectangleShape2D_7evsa")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -120,7 +120,7 @@ collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 position = Vector2(-0.5, -0.5)
-shape = SubResource("RectangleShape2D_7vm4b")
+shape = SubResource("RectangleShape2D_0qf00")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("10_ue1fr")]

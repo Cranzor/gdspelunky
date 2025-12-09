@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_o3feb"]
 [ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="6_o377u"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_804p7"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_o377u"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -19,7 +19,7 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Image" id="Image_o3feb"]
+[sub_resource type="Image" id="Image_804p7"]
 data = {
 "data": PackedByteArray("/0D/AP9A/wD/QP8A/0D/AP9A/wD/QP8A/0D/AP9A/wD/QP8A/0D/AP9A/wD/QP8A/0D/AP9A/wD/QP8A/0D/AP9A/wD/QP8A/0D/AP9A/wD/QP8A/0D/AP9A/wD/QP8A/0D/AP9A/wD/QP8A/0D/AP9A/wD/QP8A/0D/AP9A/wD/QP8A/0D/AP9A/wD/QP8A/0D/AP9A/wD/QP8A/0D/AP9A/wD/QP8A/0D/AP9A/wD/QP8A/0D/AP9A/wD/QP8A/0D/AP9A/wD/QP8A/0D/AP9A/wD/QP8A/0D/AP9A/wD/QP8A/0D/AP9A/wD/QP8A/0D/AP9A/wD/QP8A/0D/AP9A/wD/QP8A/0D/AP9A/wD/QP8A/0D/AP9A/wD/QP8A/0D/AP9A/wD/QP8A/0D/AP9A/wD/QP8A/0D/AP9A/wD/QP8A/0D/ACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgAP9A/wD/QP8A/0D/ACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAA/0D/AP9A/wAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgAP9A/wD/QP8AICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAD/QP8A/0D/ACAgIAAgICAAICAgACAgIAAgICAAICAg/yAgIP8gICD/ICAg/yAgIAAgICAAICAgACAgIAAgICAA/0D/AP9A/wAgICAAICAgACAgIAAgICAAICAg/8DAwP//////wMDA/4CAgP8gICD/ICAgACAgIAAgICAAICAgAP9A/wD/QP8AAAAAAAAAAAAAAAAAAAAAAAAAAP/AwMD/AAAA/wAAAP+AgID/AAAA/wAAAAAAAAAAAAAAAAAAAAD/QP8A/0D/AAAAAAAAAAAAAAAAAAAAAAAAAAD/wMDA/yAgIP8gICD/gICA/wAAAP8AAAAAAAAAAAAAAAAAAAAA/0D/AP9A/wAAAAAAAAAAAAAAAAAAAAAAAAAA/0BAQP+AgID/gICA/0BAQP8AAAD/AAAAAAAAAAAAAAAAAAAAAP9A/wD/QP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/AAAA/wAAAP8AAAD/AAAAAAAAAAAAAAAAAAAAAAAAAAD/QP8A/0D/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/0D/AA=="),
 "format": "RGBA8",
@@ -28,17 +28,17 @@ data = {
 "width": 16
 }
 
-[sub_resource type="Resource" id="Resource_2x5q8"]
+[sub_resource type="Resource" id="Resource_o3feb"]
 script = ExtResource("5_o3feb")
 origin = Vector2(8, 8)
 containing_box = Rect2(5, 9, 6, 6)
 precise = true
-images = Array[Image]([SubResource("Image_o3feb")])
+images = Array[Image]([SubResource("Image_804p7")])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fh7fx"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2x5q8"]
 size = Vector2(6, 6)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2rlw6"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fh7fx"]
 size = Vector2(12, 12)
 
 [node name="Chain" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -48,19 +48,19 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "chain"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_m4awg")]
-sprite_frames = SubResource("SpriteFrames_804p7")
+sprite_frames = SubResource("SpriteFrames_o377u")
 autoplay = "chain"
 centered = false
 offset = Vector2(-8, -8)
 script = ExtResource("4_804p7")
 sprite_info = Dictionary[StringName, ExtResource("5_o3feb")]({
-&"chain": SubResource("Resource_2x5q8")
+&"chain": SubResource("Resource_o3feb")
 })
 default_animation = &"chain"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 4)
-shape = SubResource("RectangleShape2D_fh7fx")
+shape = SubResource("RectangleShape2D_2x5q8")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -68,7 +68,7 @@ collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 position = Vector2(0, 4)
-shape = SubResource("RectangleShape2D_2rlw6")
+shape = SubResource("RectangleShape2D_fh7fx")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("6_o377u")]

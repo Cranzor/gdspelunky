@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://coruvqw80pybl" path="res://backgrounds/bg_cave_top4.png" id="9_ud8vx"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="10_afvoe"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_55ocd"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_afvoe"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -48,6 +48,10 @@ animations = [{
 "speed": 30.0
 }]
 
+[sub_resource type="Resource" id="Resource_55ocd"]
+script = ExtResource("8_vd55r")
+containing_box = Rect2(0, 0, 16, 16)
+
 [sub_resource type="Resource" id="Resource_2h8cj"]
 script = ExtResource("8_vd55r")
 containing_box = Rect2(0, 0, 16, 16)
@@ -60,14 +64,10 @@ containing_box = Rect2(0, 0, 16, 16)
 script = ExtResource("8_vd55r")
 containing_box = Rect2(0, 0, 16, 16)
 
-[sub_resource type="Resource" id="Resource_j1vuf"]
-script = ExtResource("8_vd55r")
-containing_box = Rect2(0, 0, 16, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kpmus"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j1vuf"]
 size = Vector2(16, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dtgqj"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kpmus"]
 size = Vector2(32, 32)
 
 [node name="Temple" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -88,21 +88,21 @@ region_rect = Rect2(0, 0, 16, 16)
 script = ExtResource("4_pmtie")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_52s7j")]
-sprite_frames = SubResource("SpriteFrames_55ocd")
+sprite_frames = SubResource("SpriteFrames_afvoe")
 autoplay = "temple"
 centered = false
 script = ExtResource("10_afvoe")
 sprite_info = Dictionary[StringName, ExtResource("8_vd55r")]({
-&"g_temple": SubResource("Resource_vd55r"),
-&"temple": SubResource("Resource_2h8cj"),
-&"temple_gold": SubResource("Resource_nrotk"),
-&"temple_gold_big": SubResource("Resource_j1vuf")
+&"g_temple": SubResource("Resource_2h8cj"),
+&"temple": SubResource("Resource_55ocd"),
+&"temple_gold": SubResource("Resource_vd55r"),
+&"temple_gold_big": SubResource("Resource_nrotk")
 })
 default_animation = &"temple"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_kpmus")
+shape = SubResource("RectangleShape2D_j1vuf")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -110,5 +110,5 @@ collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_dtgqj")
+shape = SubResource("RectangleShape2D_kpmus")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)

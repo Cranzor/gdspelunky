@@ -12,7 +12,7 @@
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="10_vgnnr"]
 [ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="11_irmf0"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ak6tj"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_irmf0"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -44,7 +44,7 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Image" id="Image_rkglm"]
+[sub_resource type="Image" id="Image_ak6tj"]
 data = {
 "data": PackedByteArray("QIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAP///wD///8A////AP///wD///8A////AP///wD///8A////AECAAABAgAAAQIAAAECAAABAgAAAQIAAAP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8AQIAAAECAAABAgAAAQIAAAECAAAD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AECAAABAgAAAQIAAAECAAABAgAAA////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wBAgAAAQIAAAECAAABAgAAAQIAAAP///wD///8A////AP///wD///8A/////////wD///8A////AP///wD///8AQIAAAECAAABAgAAAQIAAAECAAAD///8A////AP///wD///8A////////////////////AP///wD///8A////AECAAABAgAAAQIAAAECAAABAgAAA////AP///wD///8A////AP///////////////////wD///8A////AP///wBAgAAAQIAAAECAAABAgAAAQIAAAMDAwADAwMAAwMDAAMDAwADAwMD/wMDA/8DAwP/AwMAAwMDAAMDAwADAwMAAQIAAAECAAABAgAAAQIAAAECAAADAwMAAwMDAAMDAwADAwMAAwMDAAMDAwP/AwMAAwMDAAMDAwADAwMAAwMDAAECAAABAgAAAQIAAAA=="),
 "format": "RGBA8",
@@ -53,7 +53,7 @@ data = {
 "width": 16
 }
 
-[sub_resource type="Image" id="Image_esaec"]
+[sub_resource type="Image" id="Image_rkglm"]
 data = {
 "data": PackedByteArray("QIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAAD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AECAAABAgAAAQIAAAECAAAD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8AQIAAAECAAABAgAAA////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AECAAABAgAAAQIAAAP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wBAgAAAQIAAAECAAAD///8A////AP///wD///8A////AP///////////////////wD///8A////AP///wD///8AQIAAAECAAABAgAAA////AP///wD///8A////AP//////////////////////////////AP///wD///8A////AECAAABAgAAAQIAAAMDAwADAwMAAwMDAAMDAwADAwMD/////////////////wMDA/8DAwADAwMAAwMDAAMDAwABAgAAAQIAAAECAAADAwMAAwMDAAMDAwADAwMAAwMDAAP///wDAwMD/////AMDAwADAwMAAwMDAAMDAwADAwMAAQIAAAECAAABAgAAAwMDAAMDAwADAwMAAwMDAAMDAwADAwMAAwMDA/8DAwADAwMAAwMDAAMDAwADAwMAAwMDAAECAAABAgAAAQIAAAMDAwADAwMAAwMDAAMDAwADAwMAAwMDAAMDAwADAwMAAwMDAAMDAwADAwMAAwMDAAMDAwABAgAAAQIAAAA=="),
 "format": "RGBA8",
@@ -62,7 +62,7 @@ data = {
 "width": 16
 }
 
-[sub_resource type="Image" id="Image_ncpti"]
+[sub_resource type="Image" id="Image_esaec"]
 data = {
 "data": PackedByteArray("QIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAA////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wBAgAAAQIAAAECAAABAgAAA////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AECAAABAgAAA////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8AQIAAAP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///////////////////8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD//////////////////////////////wD///8A////AP///wD///8A////AP///wD///8A////AP///wD/////////////////////////////////////////AP///wD///8A////AP///wD///8A////AP///wD///////////////////////////////////////////////////8A////AP///wD///8AwMDAAMDAwADAwMAAwMDA/8DAwP////8A////////////////////AMDAwP/AwMD/wMDAAMDAwADAwMAAwMDAAMDAwADAwMAAwMDAAMDAwADAwMD/wMDAAMDAwP/AwMD/wMDA/8DAwADAwMD/wMDAAMDAwADAwMAAwMDAAMDAwADAwMAAwMDAAMDAwADAwMAAwMDAAICAgP/AwMAAwMDA/8DAwACAgID/wMDAAMDAwADAwMAAwMDAAMDAwADAwMAAwMDAAMDAwADAwMAAwMDAAICAgACAgIAAgICA/4CAgP+AgID/gICAAICAgADAwMAAwMDAAMDAwADAwMAAwMDAAMDAwADAwMAAwMDAAICAgACAgIAAgICAAICAgACAgID/gICAAICAgACAgIAAgICAAMDAwADAwMAAwMDAAMDAwADAwMAAwMDAAICAgACAgIAAgICAAICAgACAgIAAgICA/4CAgACAgIAAgICAAICAgACAgIAAwMDAAMDAwABAgAAAQIAAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgP+AgIAAgICAAICAgACAgIAAgICAAICAgABAgAAAQIAAAA=="),
 "format": "RGBA8",
@@ -71,7 +71,7 @@ data = {
 "width": 16
 }
 
-[sub_resource type="Image" id="Image_glm5y"]
+[sub_resource type="Image" id="Image_ncpti"]
 data = {
 "data": PackedByteArray("////AP///wD///8A////AP///wD///8A/////////////////////////wD///8A////AP///wD///8A////AP///wD///8A////AP///wD//////////////////////////////////////////////wD///8A////AP///wD///8A////AP///wD/////////////////////////////////////////////////////////AP///wD///8A////AP///wD///////////////////////////////////////////////////////////////////8A////AP///wD///8A////////////////wMDA/8DAwP///////////8DAwP/AwMD/////////////////////AP///wD///8A////AP/////AwMD/////AMDAwADAwMAAwMDA/8DAwP/AwMAAwMDAAP///wDAwMD//////////wD///8AwMDAAMDAwADAwMD/wMDAAMDAwADAwMAAwMDAAMDAwACAgID/gICAAMDAwADAwMAAwMDAAMDAwP/AwMAAwMDAAICAgACAgIAAgICA/4CAgP+AgIAAgICAAICAgACAgIAAgICA/4CAgACAgIAAgICAAICAgP+AgID/gICAAICAgACAgIAAgICAAICAgACAgID/gICAAICAgACAgIAAgICAAICAgP+AgIAAgICAAICAgACAgID/gICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgP+AgIAAgICAAICAgACAgID/gICAAICAgACAgID/gICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgID/gICAAICAgACAgIAAgICA/4CAgACAgIAAgICA/4CAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgP+AgIAAgICAAICAgP+AgIAAgICA/4CAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgID/gICAAICAgACAgID/gICAAICAgP+AgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgP+AgIAAgICA/4CAgP+AgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgID/gICAAICAgP+AgID/gICAAICAgACAgIAAgICAAICAgACAgIAAQIAAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgP+AgID/gICAAICAgACAgIAAgICAAICAgACAgIAAQIAAAA=="),
 "format": "RGBA8",
@@ -80,7 +80,7 @@ data = {
 "width": 16
 }
 
-[sub_resource type="Image" id="Image_kfm05"]
+[sub_resource type="Image" id="Image_glm5y"]
 data = {
 "data": PackedByteArray("////AP///wD///8A////AP//////////////////////////////////////////////AP///wD///8A////AP///wD///8A////AP////////////////////////////////////////////////////////8A////AP///wD///8A////AP///////////////////////////////////////////////////////////////////wD///8A////AP///wD///////////////////////////////////////////////////////////////////8A////AP///wD//////////////////////////////////////////////////////////////////////////////wD///8A///////////AwMD/wMDA/8DAwP//////////////////////wMDA/8DAwP/AwMD///////////////8AwMDAAMDAwP/AwMD/gICA/8DAwADAwMAAwMDA/8DAwP/AwMD/wMDA/8DAwADAwMAAgICA/8DAwP/AwMD/wMDAAICAgACAgID/wMDA/4CAgACAgIAAgICAAICAgP/AwMD/wMDA/4CAgP+AgIAAgICAAICAgADAwMD/gICA/4CAgACAgIAAgICAAICAgP+AgIAAgICAAICAgACAgIAAgICA/4CAgP+AgIAAgICAAICAgACAgIAAgICA/4CAgACAgIAAgICAAICAgACAgID/gICAAICAgACAgIAAgICAAICAgP+AgID/gICAAICAgACAgIAAgICAAICAgP+AgIAAgICAAICAgACAgIAAgICAAICAgP+AgIAAgICAAICAgACAgIAAgICA/4CAgACAgIAAgICAAICAgP+AgIAAgICAAICAgACAgIAAgICAAICAgACAgID/gICAAICAgACAgIAAgICAAICAgP+AgIAAgICAAICAgACAgID/gICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgP+AgIAAgICAAICAgACAgID/gICAAICAgACAgID/gICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgID/gICAAICAgACAgIAAgICA/4CAgACAgIAAgICA/4CAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgP+AgIAAgICAAICAgP+AgIAAgICA/4CAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgID/gICAAICAgACAgID/gICAAICAgP+AgIAAgICAAICAgACAgIAAgICAAA=="),
 "format": "RGBA8",
@@ -89,13 +89,13 @@ data = {
 "width": 16
 }
 
-[sub_resource type="Resource" id="Resource_vgnnr"]
+[sub_resource type="Resource" id="Resource_kfm05"]
 script = ExtResource("10_vgnnr")
 containing_box = Rect2(1, 0, 14, 16)
 precise = true
-images = Array[Image]([SubResource("Image_rkglm"), SubResource("Image_esaec"), SubResource("Image_ncpti"), SubResource("Image_glm5y"), SubResource("Image_kfm05")])
+images = Array[Image]([SubResource("Image_ak6tj"), SubResource("Image_rkglm"), SubResource("Image_esaec"), SubResource("Image_ncpti"), SubResource("Image_glm5y")])
 
-[sub_resource type="Image" id="Image_7lgva"]
+[sub_resource type="Image" id="Image_vgnnr"]
 data = {
 "data": PackedByteArray("////AP///wD///8A////AP//////////////////////////////////////////////AP///wD///8A////AP///wD///8A////AP////////////////////////////////////////////////////////8A////AP///wD///8A////AP///////////////////////////////////////////////////////////////////wD///8A////AP///wD///////////////////////////////////////////////////////////////////8A////AP///wD//////////////////////////////////////////////////////////////////////////////wD///8A///////////AwMD/wMDA/8DAwP//////////////////////wMDA/8DAwP/AwMD///////////////8AwMDAAMDAwP/AwMD/gICA/8DAwADAwMAAwMDA/8DAwP/AwMD/wMDA/8DAwADAwMAAgICA/8DAwP/AwMD/wMDAAICAgACAgID/wMDA/4CAgACAgIAAgICAAICAgP/AwMD/wMDA/4CAgP+AgIAAgICAAICAgADAwMD/gICA/4CAgACAgIAAgICAAICAgP+AgIAAgICAAICAgACAgIAAgICA/4CAgP+AgIAAgICAAICAgACAgIAAgICA/4CAgACAgIAAgICAAICAgACAgID/gICAAICAgACAgIAAgICAAICAgP+AgID/gICAAICAgACAgIAAgICAAICAgP+AgIAAgICAAICAgACAgIAAgICAAICAgP+AgIAAgICAAICAgACAgIAAgICA/4CAgACAgIAAgICAAICAgP+AgIAAgICAAICAgACAgIAAgICAAICAgACAgID/gICAAICAgACAgIAAgICAAICAgP+AgIAAgICAAICAgACAgID/gICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgP+AgIAAgICAAICAgACAgID/gICAAICAgACAgID/gICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgID/gICAAICAgACAgIAAgICA/4CAgACAgIAAgICA/4CAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgP+AgIAAgICAAICAgP+AgIAAgICA/4CAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgID/gICAAICAgACAgID/gICAAICAgP+AgIAAgICAAICAgACAgIAAgICAAA=="),
 "format": "RGBA8",
@@ -104,16 +104,16 @@ data = {
 "width": 16
 }
 
-[sub_resource type="Resource" id="Resource_y0bs2"]
+[sub_resource type="Resource" id="Resource_7lgva"]
 script = ExtResource("10_vgnnr")
 containing_box = Rect2(1, 0, 14, 16)
 precise = true
-images = Array[Image]([SubResource("Image_7lgva")])
+images = Array[Image]([SubResource("Image_vgnnr")])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_t71vt"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y0bs2"]
 size = Vector2(14, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8wsfq"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t71vt"]
 size = Vector2(28, 32)
 
 [node name="Parachute" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -123,19 +123,19 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "parachute"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_3rcre")]
-sprite_frames = SubResource("SpriteFrames_ak6tj")
+sprite_frames = SubResource("SpriteFrames_irmf0")
 autoplay = "para_open"
 centered = false
 script = ExtResource("9_kfm05")
 sprite_info = Dictionary[StringName, ExtResource("10_vgnnr")]({
-&"para_open": SubResource("Resource_vgnnr"),
-&"parachute": SubResource("Resource_y0bs2")
+&"para_open": SubResource("Resource_kfm05"),
+&"parachute": SubResource("Resource_7lgva")
 })
 default_animation = &"para_open"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_t71vt")
+shape = SubResource("RectangleShape2D_y0bs2")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -143,7 +143,7 @@ collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_8wsfq")
+shape = SubResource("RectangleShape2D_t71vt")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("11_irmf0")]

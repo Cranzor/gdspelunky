@@ -13,7 +13,7 @@
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="11_qxqpp"]
 [ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="12_e1y2w"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_5dw2s"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_e1y2w"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -53,22 +53,22 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_byrlv"]
+[sub_resource type="Resource" id="Resource_5dw2s"]
 script = ExtResource("11_qxqpp")
 containing_box = Rect2(3, 0, 11, 12)
+
+[sub_resource type="Resource" id="Resource_byrlv"]
+script = ExtResource("11_qxqpp")
+containing_box = Rect2(0, 3, 16, 11)
 
 [sub_resource type="Resource" id="Resource_o5fl2"]
 script = ExtResource("11_qxqpp")
 containing_box = Rect2(0, 3, 16, 11)
 
-[sub_resource type="Resource" id="Resource_mtek4"]
-script = ExtResource("11_qxqpp")
-containing_box = Rect2(0, 3, 16, 11)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vncre"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mtek4"]
 size = Vector2(11, 12)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7l0py"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vncre"]
 size = Vector2(22, 24)
 
 [node name="Bat" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -78,20 +78,20 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "bat"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_qgjsc")]
-sprite_frames = SubResource("SpriteFrames_5dw2s")
+sprite_frames = SubResource("SpriteFrames_e1y2w")
 autoplay = "bat_hang"
 centered = false
 script = ExtResource("10_s1qpf")
 sprite_info = Dictionary[StringName, ExtResource("11_qxqpp")]({
-&"bat_hang": SubResource("Resource_byrlv"),
-&"bat_left": SubResource("Resource_o5fl2"),
-&"bat_right": SubResource("Resource_mtek4")
+&"bat_hang": SubResource("Resource_5dw2s"),
+&"bat_left": SubResource("Resource_byrlv"),
+&"bat_right": SubResource("Resource_o5fl2")
 })
 default_animation = &"bat_hang"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8.5, 6)
-shape = SubResource("RectangleShape2D_vncre")
+shape = SubResource("RectangleShape2D_mtek4")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -99,7 +99,7 @@ collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 position = Vector2(8.5, 6)
-shape = SubResource("RectangleShape2D_7l0py")
+shape = SubResource("RectangleShape2D_vncre")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("12_e1y2w")]

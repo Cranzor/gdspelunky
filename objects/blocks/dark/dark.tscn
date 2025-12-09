@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bk8jqt0tc453q" path="res://backgrounds/bg_cave_top3.png" id="8_2eoot"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="9_xq7hr"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_drgdd"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_xq7hr"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -39,6 +39,10 @@ animations = [{
 "speed": 30.0
 }]
 
+[sub_resource type="Resource" id="Resource_drgdd"]
+script = ExtResource("7_gkc13")
+containing_box = Rect2(0, 0, 16, 16)
+
 [sub_resource type="Resource" id="Resource_gkc13"]
 script = ExtResource("7_gkc13")
 containing_box = Rect2(0, 0, 16, 16)
@@ -47,14 +51,10 @@ containing_box = Rect2(0, 0, 16, 16)
 script = ExtResource("7_gkc13")
 containing_box = Rect2(0, 0, 16, 16)
 
-[sub_resource type="Resource" id="Resource_nnaun"]
-script = ExtResource("7_gkc13")
-containing_box = Rect2(0, 0, 16, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_o48i2"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nnaun"]
 size = Vector2(16, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wbkcd"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o48i2"]
 size = Vector2(32, 32)
 
 [node name="Dark" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -75,20 +75,20 @@ region_rect = Rect2(0, 0, 16, 16)
 script = ExtResource("4_f2wvv")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_uj35o")]
-sprite_frames = SubResource("SpriteFrames_drgdd")
+sprite_frames = SubResource("SpriteFrames_xq7hr")
 autoplay = "dark"
 centered = false
 script = ExtResource("9_xq7hr")
 sprite_info = Dictionary[StringName, ExtResource("7_gkc13")]({
-&"dark": SubResource("Resource_gkc13"),
-&"dark_gold": SubResource("Resource_143gf"),
-&"dark_gold_big": SubResource("Resource_nnaun")
+&"dark": SubResource("Resource_drgdd"),
+&"dark_gold": SubResource("Resource_gkc13"),
+&"dark_gold_big": SubResource("Resource_143gf")
 })
 default_animation = &"dark"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_o48i2")
+shape = SubResource("RectangleShape2D_nnaun")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -96,5 +96,5 @@ collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_wbkcd")
+shape = SubResource("RectangleShape2D_o48i2")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)

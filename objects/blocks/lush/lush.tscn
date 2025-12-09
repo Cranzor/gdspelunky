@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://b3krne6bxxl8w" path="res://backgrounds/bg_cave_top2.png" id="8_vxk5l"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="9_tjptl"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_5kle4"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_tjptl"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -39,6 +39,10 @@ animations = [{
 "speed": 30.0
 }]
 
+[sub_resource type="Resource" id="Resource_5kle4"]
+script = ExtResource("7_13d7s")
+containing_box = Rect2(0, 0, 16, 16)
+
 [sub_resource type="Resource" id="Resource_13d7s"]
 script = ExtResource("7_13d7s")
 containing_box = Rect2(0, 0, 16, 16)
@@ -47,14 +51,10 @@ containing_box = Rect2(0, 0, 16, 16)
 script = ExtResource("7_13d7s")
 containing_box = Rect2(0, 0, 16, 16)
 
-[sub_resource type="Resource" id="Resource_n1o00"]
-script = ExtResource("7_13d7s")
-containing_box = Rect2(0, 0, 16, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qna4y"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n1o00"]
 size = Vector2(16, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bo2ui"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qna4y"]
 size = Vector2(32, 32)
 
 [node name="Lush" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -75,20 +75,20 @@ region_rect = Rect2(0, 0, 16, 16)
 script = ExtResource("4_dsgki")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_nftbi")]
-sprite_frames = SubResource("SpriteFrames_5kle4")
+sprite_frames = SubResource("SpriteFrames_tjptl")
 autoplay = "lush"
 centered = false
 script = ExtResource("9_tjptl")
 sprite_info = Dictionary[StringName, ExtResource("7_13d7s")]({
-&"lush": SubResource("Resource_13d7s"),
-&"lush_gold": SubResource("Resource_jf15e"),
-&"lush_gold_big": SubResource("Resource_n1o00")
+&"lush": SubResource("Resource_5kle4"),
+&"lush_gold": SubResource("Resource_13d7s"),
+&"lush_gold_big": SubResource("Resource_jf15e")
 })
 default_animation = &"lush"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_qna4y")
+shape = SubResource("RectangleShape2D_n1o00")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -96,5 +96,5 @@ collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_bo2ui")
+shape = SubResource("RectangleShape2D_qna4y")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)

@@ -10,7 +10,7 @@
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="8_7tl33"]
 [ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="9_rnfa7"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_idpcw"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_rnfa7"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -31,14 +31,14 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_e0ije"]
+[sub_resource type="Resource" id="Resource_idpcw"]
 script = ExtResource("8_7tl33")
 containing_box = Rect2(1, 5, 14, 11)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_l1fys"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e0ije"]
 size = Vector2(14, 11)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_m21ab"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l1fys"]
 size = Vector2(28, 22)
 
 [node name="Alien" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -48,18 +48,18 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "alien"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_pqbk7")]
-sprite_frames = SubResource("SpriteFrames_idpcw")
+sprite_frames = SubResource("SpriteFrames_rnfa7")
 autoplay = "alien"
 centered = false
 script = ExtResource("7_m21ab")
 sprite_info = Dictionary[StringName, ExtResource("8_7tl33")]({
-&"alien": SubResource("Resource_e0ije")
+&"alien": SubResource("Resource_idpcw")
 })
 default_animation = &"alien"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, 10.5)
-shape = SubResource("RectangleShape2D_l1fys")
+shape = SubResource("RectangleShape2D_e0ije")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -67,7 +67,7 @@ collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 position = Vector2(8, 10.5)
-shape = SubResource("RectangleShape2D_m21ab")
+shape = SubResource("RectangleShape2D_l1fys")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("9_rnfa7")]

@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_1itxy"]
 [ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="6_4goak"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_omgk7"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_4goak"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -19,7 +19,7 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Image" id="Image_1itxy"]
+[sub_resource type="Image" id="Image_omgk7"]
 data = {
 "data": PackedByteArray("mycAAJsnAACbJwAAmycAAJsnAACbJwAAmycAAJsnAACbJwAAmycAAJsnAP+bJwD/mycA/5snAACbJwAAmycAAJsnAACbJwD//0IA//9CAP//QgD/mycA/5snAACbJwAA/0IAAP9CAP//QgD//0IA//9CAP+bJwD/mycA/5snAAD/QgAA/0IA//9CAP//QgD/mycA/5snAP+bJwD/mycAAJsnAACbJwD/mycA/5snAP+bJwD/mycA/5snAACbJwAAmycAAJsnAACbJwD/mycA/5snAP+bJwAAmycAAJsnAACbJwAAmycAAJsnAACbJwAAmycAAJsnAACbJwAAmycAAA=="),
 "format": "RGBA8",
@@ -28,17 +28,17 @@ data = {
 "width": 8
 }
 
-[sub_resource type="Resource" id="Resource_40v3j"]
+[sub_resource type="Resource" id="Resource_1itxy"]
 script = ExtResource("5_1itxy")
 origin = Vector2(4, 4)
 containing_box = Rect2(1, 1, 6, 6)
 precise = true
-images = Array[Image]([SubResource("Image_1itxy")])
+images = Array[Image]([SubResource("Image_omgk7")])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_k6n7g"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_40v3j"]
 size = Vector2(6, 6)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tu18i"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k6n7g"]
 size = Vector2(12, 12)
 
 [node name="Flame" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -48,25 +48,25 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "flame"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_jbrhh")]
-sprite_frames = SubResource("SpriteFrames_omgk7")
+sprite_frames = SubResource("SpriteFrames_4goak")
 autoplay = "flame"
 centered = false
 offset = Vector2(-4, -4)
 script = ExtResource("4_omgk7")
 sprite_info = Dictionary[StringName, ExtResource("5_1itxy")]({
-&"flame": SubResource("Resource_40v3j")
+&"flame": SubResource("Resource_1itxy")
 })
 default_animation = &"flame"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_k6n7g")
+shape = SubResource("RectangleShape2D_40v3j")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-shape = SubResource("RectangleShape2D_tu18i")
+shape = SubResource("RectangleShape2D_k6n7g")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("6_4goak")]

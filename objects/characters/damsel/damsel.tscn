@@ -112,7 +112,7 @@
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="110_bfaap"]
 [ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="111_f5goe"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_uy3l1"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_f5goe"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -155,27 +155,6 @@ animations = [{
 "texture": ExtResource("8_32g6d")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_qw063")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_807oi")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_xwaek")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_sklac")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_ekxf0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_4qeci")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_t0x1q")
-}, {
-"duration": 1.0,
 "texture": ExtResource("16_8k2go")
 }, {
 "duration": 1.0,
@@ -198,6 +177,27 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("23_4h4sy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_qw063")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_807oi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_xwaek")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_sklac")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ekxf0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_4qeci")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_t0x1q")
 }],
 "loop": true,
 "name": &"damsel_exit2",
@@ -382,24 +382,6 @@ animations = [{
 "texture": ExtResource("62_as46i")
 }, {
 "duration": 1.0,
-"texture": ExtResource("63_t3n3o")
-}, {
-"duration": 1.0,
-"texture": ExtResource("64_gkfns")
-}, {
-"duration": 1.0,
-"texture": ExtResource("65_kdxfx")
-}, {
-"duration": 1.0,
-"texture": ExtResource("66_w2qw1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("67_85iov")
-}, {
-"duration": 1.0,
-"texture": ExtResource("68_hfhi0")
-}, {
-"duration": 1.0,
 "texture": ExtResource("69_gslte")
 }, {
 "duration": 1.0,
@@ -422,6 +404,24 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("76_vh4ir")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_t3n3o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_gkfns")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_kdxfx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_w2qw1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_85iov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_hfhi0")
 }],
 "loop": true,
 "name": &"p_exit",
@@ -549,125 +549,125 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_yqnk0"]
+[sub_resource type="Resource" id="Resource_uy3l1"]
 script = ExtResource("110_bfaap")
 origin = Vector2(8, 8)
 containing_box = Rect2(2, 0, 12, 16)
+
+[sub_resource type="Resource" id="Resource_yqnk0"]
+script = ExtResource("110_bfaap")
+origin = Vector2(8, 8)
+containing_box = Rect2(1, 0, 14, 16)
 
 [sub_resource type="Resource" id="Resource_qo3j2"]
 script = ExtResource("110_bfaap")
 origin = Vector2(8, 8)
-containing_box = Rect2(1, 0, 14, 16)
+containing_box = Rect2(0, 0, 14, 16)
 
 [sub_resource type="Resource" id="Resource_aorab"]
 script = ExtResource("110_bfaap")
 origin = Vector2(8, 8)
-containing_box = Rect2(0, 0, 14, 16)
+containing_box = Rect2(1, 7, 15, 9)
 
 [sub_resource type="Resource" id="Resource_32g6d"]
 script = ExtResource("110_bfaap")
 origin = Vector2(8, 8)
-containing_box = Rect2(1, 7, 15, 9)
+containing_box = Rect2(0, 6, 16, 10)
 
 [sub_resource type="Resource" id="Resource_qw063"]
 script = ExtResource("110_bfaap")
 origin = Vector2(8, 8)
-containing_box = Rect2(0, 6, 16, 10)
+containing_box = Rect2(2, 0, 12, 16)
 
 [sub_resource type="Resource" id="Resource_807oi"]
 script = ExtResource("110_bfaap")
 origin = Vector2(8, 8)
-containing_box = Rect2(2, 0, 12, 16)
+containing_box = Rect2(0, 0, 16, 16)
 
 [sub_resource type="Resource" id="Resource_xwaek"]
 script = ExtResource("110_bfaap")
 origin = Vector2(8, 8)
-containing_box = Rect2(0, 0, 16, 16)
+containing_box = Rect2(1, 0, 15, 16)
 
 [sub_resource type="Resource" id="Resource_sklac"]
 script = ExtResource("110_bfaap")
 origin = Vector2(8, 8)
-containing_box = Rect2(1, 0, 15, 16)
+containing_box = Rect2(1, 0, 14, 16)
 
 [sub_resource type="Resource" id="Resource_ekxf0"]
 script = ExtResource("110_bfaap")
 origin = Vector2(8, 8)
-containing_box = Rect2(1, 0, 14, 16)
+containing_box = Rect2(2, 0, 14, 16)
 
 [sub_resource type="Resource" id="Resource_4qeci"]
 script = ExtResource("110_bfaap")
 origin = Vector2(8, 8)
-containing_box = Rect2(2, 0, 14, 16)
+containing_box = Rect2(1, 0, 15, 16)
 
 [sub_resource type="Resource" id="Resource_t0x1q"]
 script = ExtResource("110_bfaap")
 origin = Vector2(8, 8)
-containing_box = Rect2(1, 0, 15, 16)
+containing_box = Rect2(0, 3, 15, 13)
 
 [sub_resource type="Resource" id="Resource_8k2go"]
 script = ExtResource("110_bfaap")
 origin = Vector2(8, 8)
-containing_box = Rect2(0, 3, 15, 13)
+containing_box = Rect2(0, 6, 16, 10)
 
 [sub_resource type="Resource" id="Resource_e07lw"]
 script = ExtResource("110_bfaap")
 origin = Vector2(8, 8)
-containing_box = Rect2(0, 6, 16, 10)
+containing_box = Rect2(1, 0, 13, 16)
 
 [sub_resource type="Resource" id="Resource_x6jpj"]
 script = ExtResource("110_bfaap")
 origin = Vector2(8, 8)
-containing_box = Rect2(1, 0, 13, 16)
+containing_box = Rect2(1, 0, 14, 16)
 
 [sub_resource type="Resource" id="Resource_ijmid"]
 script = ExtResource("110_bfaap")
 origin = Vector2(8, 8)
-containing_box = Rect2(1, 0, 14, 16)
+containing_box = Rect2(0, 0, 16, 16)
 
 [sub_resource type="Resource" id="Resource_n8qg3"]
 script = ExtResource("110_bfaap")
 origin = Vector2(8, 8)
-containing_box = Rect2(0, 0, 16, 16)
+containing_box = Rect2(1, 1, 15, 15)
 
 [sub_resource type="Resource" id="Resource_avvqj"]
 script = ExtResource("110_bfaap")
 origin = Vector2(8, 8)
-containing_box = Rect2(1, 1, 15, 15)
+containing_box = Rect2(0, 5, 16, 10)
 
 [sub_resource type="Resource" id="Resource_r4qjm"]
 script = ExtResource("110_bfaap")
 origin = Vector2(8, 8)
-containing_box = Rect2(0, 5, 16, 10)
+containing_box = Rect2(2, 0, 13, 15)
 
 [sub_resource type="Resource" id="Resource_4h4sy"]
 script = ExtResource("110_bfaap")
 origin = Vector2(8, 8)
-containing_box = Rect2(2, 0, 13, 15)
+containing_box = Rect2(1, 0, 13, 16)
 
 [sub_resource type="Resource" id="Resource_lfw8y"]
 script = ExtResource("110_bfaap")
 origin = Vector2(8, 8)
-containing_box = Rect2(1, 0, 13, 16)
+containing_box = Rect2(2, 1, 13, 14)
 
 [sub_resource type="Resource" id="Resource_hpmgo"]
 script = ExtResource("110_bfaap")
 origin = Vector2(8, 8)
-containing_box = Rect2(2, 1, 13, 14)
+containing_box = Rect2(0, 0, 15, 16)
 
 [sub_resource type="Resource" id="Resource_i4m2e"]
 script = ExtResource("110_bfaap")
 origin = Vector2(8, 8)
 containing_box = Rect2(0, 0, 15, 16)
 
-[sub_resource type="Resource" id="Resource_p1l6r"]
-script = ExtResource("110_bfaap")
-origin = Vector2(8, 8)
-containing_box = Rect2(0, 0, 15, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jcynx"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p1l6r"]
 size = Vector2(12, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5tmlc"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jcynx"]
 size = Vector2(24, 32)
 
 [node name="Damsel" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -677,47 +677,47 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "damsel"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_wiyl7")]
-sprite_frames = SubResource("SpriteFrames_uy3l1")
+sprite_frames = SubResource("SpriteFrames_f5goe")
 autoplay = "damsel_left"
 centered = false
 offset = Vector2(-8, -8)
 script = ExtResource("109_8f8xr")
 sprite_info = Dictionary[StringName, ExtResource("110_bfaap")]({
-&"damsel_bounce_l": SubResource("Resource_avvqj"),
-&"damsel_die_l": SubResource("Resource_qw063"),
-&"damsel_die_ll": SubResource("Resource_4h4sy"),
-&"damsel_die_lr": SubResource("Resource_lfw8y"),
-&"damsel_exit2": SubResource("Resource_aorab"),
-&"damsel_fall_l": SubResource("Resource_r4qjm"),
-&"damsel_hold_l": SubResource("Resource_hpmgo"),
-&"damsel_kiss_l": SubResource("Resource_p1l6r"),
-&"damsel_left": SubResource("Resource_yqnk0"),
-&"damsel_run_l": SubResource("Resource_4qeci"),
-&"damsel_stun_l": SubResource("Resource_n8qg3"),
-&"damsel_yell_l": SubResource("Resource_sklac"),
-&"die_l": SubResource("Resource_32g6d"),
-&"die_l_bounce": SubResource("Resource_8k2go"),
-&"die_l_fall": SubResource("Resource_e07lw"),
-&"die_ll": SubResource("Resource_x6jpj"),
-&"die_lr": SubResource("Resource_ijmid"),
-&"p_exit": SubResource("Resource_qo3j2"),
-&"p_kiss_l": SubResource("Resource_i4m2e"),
-&"run_left": SubResource("Resource_ekxf0"),
-&"stand_left": SubResource("Resource_807oi"),
-&"stun_l": SubResource("Resource_t0x1q"),
-&"yell_left": SubResource("Resource_xwaek")
+&"damsel_bounce_l": SubResource("Resource_n8qg3"),
+&"damsel_die_l": SubResource("Resource_32g6d"),
+&"damsel_die_ll": SubResource("Resource_r4qjm"),
+&"damsel_die_lr": SubResource("Resource_4h4sy"),
+&"damsel_exit2": SubResource("Resource_qo3j2"),
+&"damsel_fall_l": SubResource("Resource_avvqj"),
+&"damsel_hold_l": SubResource("Resource_lfw8y"),
+&"damsel_kiss_l": SubResource("Resource_i4m2e"),
+&"damsel_left": SubResource("Resource_uy3l1"),
+&"damsel_run_l": SubResource("Resource_ekxf0"),
+&"damsel_stun_l": SubResource("Resource_ijmid"),
+&"damsel_yell_l": SubResource("Resource_xwaek"),
+&"die_l": SubResource("Resource_aorab"),
+&"die_l_bounce": SubResource("Resource_t0x1q"),
+&"die_l_fall": SubResource("Resource_8k2go"),
+&"die_ll": SubResource("Resource_e07lw"),
+&"die_lr": SubResource("Resource_x6jpj"),
+&"p_exit": SubResource("Resource_yqnk0"),
+&"p_kiss_l": SubResource("Resource_hpmgo"),
+&"run_left": SubResource("Resource_sklac"),
+&"stand_left": SubResource("Resource_qw063"),
+&"stun_l": SubResource("Resource_4qeci"),
+&"yell_left": SubResource("Resource_807oi")
 })
 default_animation = &"damsel_left"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_jcynx")
+shape = SubResource("RectangleShape2D_p1l6r")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-shape = SubResource("RectangleShape2D_5tmlc")
+shape = SubResource("RectangleShape2D_jcynx")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("111_f5goe")]

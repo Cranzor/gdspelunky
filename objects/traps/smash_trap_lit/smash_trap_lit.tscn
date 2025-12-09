@@ -57,7 +57,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_dgl8i"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_1p1fl"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -81,14 +81,14 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_o33dm"]
+[sub_resource type="Resource" id="Resource_dgl8i"]
 script = ExtResource("16_q5s0g")
 containing_box = Rect2(0, 0, 16, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w2bmf"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o33dm"]
 size = Vector2(16, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8b4ey"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w2bmf"]
 size = Vector2(32, 32)
 
 [node name="SmashTrapLit" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -108,18 +108,18 @@ script = ExtResource("8_k6a4b")
 offset_value = Vector2(8, 8)
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("9_ytjlb")]
-sprite_frames = SubResource("SpriteFrames_dgl8i")
+sprite_frames = SubResource("SpriteFrames_1p1fl")
 autoplay = "smash_trap_lit"
 centered = false
 script = ExtResource("15_nh38g")
 sprite_info = Dictionary[StringName, ExtResource("16_q5s0g")]({
-&"smash_trap_lit": SubResource("Resource_o33dm")
+&"smash_trap_lit": SubResource("Resource_dgl8i")
 })
 default_animation = &"smash_trap_lit"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_w2bmf")
+shape = SubResource("RectangleShape2D_o33dm")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -127,7 +127,7 @@ collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_8b4ey")
+shape = SubResource("RectangleShape2D_w2bmf")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("17_1p1fl")]

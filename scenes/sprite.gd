@@ -82,6 +82,7 @@ func get_sprite_png_paths(sprite_folder: String) -> Array[String]:
 	var file_search = load("res://tools/file_search.gd")
 	var file_search_instance = file_search.new()
 	var files: Array[String] = file_search_instance.get_files(sprite_folder, "png")
+	files.sort_custom(func(a, b): return a.naturalnocasecmp_to(b) < 0)
 	return files
 
 

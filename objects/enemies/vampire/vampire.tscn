@@ -36,7 +36,7 @@
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="34_umq1t"]
 [ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="35_rvugb"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_turvg"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_rvugb"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -190,33 +190,37 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_7ibey"]
+[sub_resource type="Resource" id="Resource_turvg"]
 script = ExtResource("34_umq1t")
 containing_box = Rect2(2, 0, 14, 16)
 
-[sub_resource type="Resource" id="Resource_40hsj"]
+[sub_resource type="Resource" id="Resource_7ibey"]
 script = ExtResource("34_umq1t")
 containing_box = Rect2(0, 0, 16, 16)
 
-[sub_resource type="Resource" id="Resource_go5xl"]
+[sub_resource type="Resource" id="Resource_40hsj"]
 script = ExtResource("34_umq1t")
 containing_box = Rect2(0, 0, 16, 15)
 
-[sub_resource type="Resource" id="Resource_xj0dl"]
+[sub_resource type="Resource" id="Resource_go5xl"]
 script = ExtResource("34_umq1t")
 containing_box = Rect2(0, 2, 16, 13)
 
-[sub_resource type="Resource" id="Resource_3jxyw"]
+[sub_resource type="Resource" id="Resource_xj0dl"]
 script = ExtResource("34_umq1t")
 containing_box = Rect2(1, 0, 15, 16)
 
-[sub_resource type="Resource" id="Resource_hv28c"]
+[sub_resource type="Resource" id="Resource_3jxyw"]
 script = ExtResource("34_umq1t")
 containing_box = Rect2(0, 0, 15, 16)
 
-[sub_resource type="Resource" id="Resource_ejtn7"]
+[sub_resource type="Resource" id="Resource_hv28c"]
 script = ExtResource("34_umq1t")
 containing_box = Rect2(1, 0, 14, 15)
+
+[sub_resource type="Resource" id="Resource_ejtn7"]
+script = ExtResource("34_umq1t")
+containing_box = Rect2(0, 0, 16, 16)
 
 [sub_resource type="Resource" id="Resource_4bca7"]
 script = ExtResource("34_umq1t")
@@ -232,16 +236,12 @@ containing_box = Rect2(0, 0, 16, 16)
 
 [sub_resource type="Resource" id="Resource_7vldd"]
 script = ExtResource("34_umq1t")
-containing_box = Rect2(0, 0, 16, 16)
-
-[sub_resource type="Resource" id="Resource_gmmp8"]
-script = ExtResource("34_umq1t")
 containing_box = Rect2(0, 3, 16, 13)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dgghq"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gmmp8"]
 size = Vector2(14, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_o53c5"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dgghq"]
 size = Vector2(28, 32)
 
 [node name="Vampire" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -251,29 +251,29 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "vampire"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_ssex6")]
-sprite_frames = SubResource("SpriteFrames_turvg")
+sprite_frames = SubResource("SpriteFrames_rvugb")
 autoplay = "vampire_left"
 centered = false
 script = ExtResource("33_wgqec")
 sprite_info = Dictionary[StringName, ExtResource("34_umq1t")]({
-&"vampire_bat_hang": SubResource("Resource_ejtn7"),
-&"vampire_bat_left": SubResource("Resource_4bca7"),
-&"vampire_bounce_l": SubResource("Resource_go5xl"),
-&"vampire_d_held_l": SubResource("Resource_gmmp8"),
-&"vampire_die_ll": SubResource("Resource_3jxyw"),
-&"vampire_die_lr": SubResource("Resource_hv28c"),
-&"vampire_fall_l": SubResource("Resource_xj0dl"),
-&"vampire_held_l": SubResource("Resource_7vldd"),
-&"vampire_jump_l": SubResource("Resource_2r1ve"),
-&"vampire_left": SubResource("Resource_7ibey"),
-&"vampire_run_l": SubResource("Resource_8tlbv"),
-&"vampire_stun_l": SubResource("Resource_40hsj")
+&"vampire_bat_hang": SubResource("Resource_hv28c"),
+&"vampire_bat_left": SubResource("Resource_ejtn7"),
+&"vampire_bounce_l": SubResource("Resource_40hsj"),
+&"vampire_d_held_l": SubResource("Resource_7vldd"),
+&"vampire_die_ll": SubResource("Resource_xj0dl"),
+&"vampire_die_lr": SubResource("Resource_3jxyw"),
+&"vampire_fall_l": SubResource("Resource_go5xl"),
+&"vampire_held_l": SubResource("Resource_8tlbv"),
+&"vampire_jump_l": SubResource("Resource_4bca7"),
+&"vampire_left": SubResource("Resource_turvg"),
+&"vampire_run_l": SubResource("Resource_2r1ve"),
+&"vampire_stun_l": SubResource("Resource_7ibey")
 })
 default_animation = &"vampire_left"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(9, 8)
-shape = SubResource("RectangleShape2D_dgghq")
+shape = SubResource("RectangleShape2D_gmmp8")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -281,7 +281,7 @@ collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 position = Vector2(9, 8)
-shape = SubResource("RectangleShape2D_o53c5")
+shape = SubResource("RectangleShape2D_dgghq")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("35_rvugb")]

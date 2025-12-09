@@ -60,7 +60,7 @@
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="58_86vaj"]
 [ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="59_vvmfb"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_3nr8f"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_vvmfb"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -185,15 +185,6 @@ animations = [{
 "texture": ExtResource("32_fjp52")
 }, {
 "duration": 1.0,
-"texture": ExtResource("33_kamnl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("34_ccpy3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("35_ytwr7")
-}, {
-"duration": 1.0,
 "texture": ExtResource("36_e4wth")
 }, {
 "duration": 1.0,
@@ -216,6 +207,15 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("43_mmo7e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_kamnl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_ccpy3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_ytwr7")
 }],
 "loop": true,
 "name": &"yeti_king_yell_l",
@@ -227,15 +227,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("45_qm4qc")
-}, {
-"duration": 1.0,
-"texture": ExtResource("46_5dowm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("47_1h8t4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("48_ha05e")
 }, {
 "duration": 1.0,
 "texture": ExtResource("49_3fsgg")
@@ -260,48 +251,57 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("56_byr0g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_5dowm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_1h8t4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_ha05e")
 }],
 "loop": true,
 "name": &"yeti_king_yell_r",
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_6hhef"]
+[sub_resource type="Resource" id="Resource_3nr8f"]
 script = ExtResource("58_86vaj")
 containing_box = Rect2(1, 0, 31, 32)
+
+[sub_resource type="Resource" id="Resource_6hhef"]
+script = ExtResource("58_86vaj")
+containing_box = Rect2(0, 0, 32, 32)
 
 [sub_resource type="Resource" id="Resource_0dcuq"]
 script = ExtResource("58_86vaj")
-containing_box = Rect2(0, 0, 32, 32)
+containing_box = Rect2(1, 0, 31, 32)
 
 [sub_resource type="Resource" id="Resource_hkrp0"]
 script = ExtResource("58_86vaj")
-containing_box = Rect2(1, 0, 31, 32)
+containing_box = Rect2(0, 0, 32, 32)
 
 [sub_resource type="Resource" id="Resource_v1md2"]
 script = ExtResource("58_86vaj")
-containing_box = Rect2(0, 0, 32, 32)
+containing_box = Rect2(0, 0, 31, 32)
 
 [sub_resource type="Resource" id="Resource_nv0ls"]
 script = ExtResource("58_86vaj")
-containing_box = Rect2(0, 0, 31, 32)
+containing_box = Rect2(1, 0, 31, 32)
 
 [sub_resource type="Resource" id="Resource_jgv0e"]
 script = ExtResource("58_86vaj")
-containing_box = Rect2(1, 0, 31, 32)
+containing_box = Rect2(0, 0, 31, 32)
 
 [sub_resource type="Resource" id="Resource_m6dfe"]
 script = ExtResource("58_86vaj")
 containing_box = Rect2(0, 0, 31, 32)
 
-[sub_resource type="Resource" id="Resource_d0p34"]
-script = ExtResource("58_86vaj")
-containing_box = Rect2(0, 0, 31, 32)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_533k6"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d0p34"]
 size = Vector2(31, 32)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_e6cd5"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_533k6"]
 size = Vector2(62, 64)
 
 [node name="YetiKing" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -311,25 +311,25 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "yeti_king"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_8nc2g")]
-sprite_frames = SubResource("SpriteFrames_3nr8f")
+sprite_frames = SubResource("SpriteFrames_vvmfb")
 autoplay = "yeti_king_left"
 centered = false
 script = ExtResource("57_oedyb")
 sprite_info = Dictionary[StringName, ExtResource("58_86vaj")]({
-&"yeti_king_left": SubResource("Resource_6hhef"),
-&"yeti_king_right": SubResource("Resource_d0p34"),
-&"yeti_king_turn_l": SubResource("Resource_v1md2"),
-&"yeti_king_turn_r": SubResource("Resource_0dcuq"),
-&"yeti_king_walk_l": SubResource("Resource_jgv0e"),
-&"yeti_king_walk_r": SubResource("Resource_m6dfe"),
-&"yeti_king_yell_l": SubResource("Resource_hkrp0"),
-&"yeti_king_yell_r": SubResource("Resource_nv0ls")
+&"yeti_king_left": SubResource("Resource_3nr8f"),
+&"yeti_king_right": SubResource("Resource_m6dfe"),
+&"yeti_king_turn_l": SubResource("Resource_hkrp0"),
+&"yeti_king_turn_r": SubResource("Resource_6hhef"),
+&"yeti_king_walk_l": SubResource("Resource_nv0ls"),
+&"yeti_king_walk_r": SubResource("Resource_jgv0e"),
+&"yeti_king_yell_l": SubResource("Resource_0dcuq"),
+&"yeti_king_yell_r": SubResource("Resource_v1md2")
 })
 default_animation = &"yeti_king_left"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(16.5, 16)
-shape = SubResource("RectangleShape2D_533k6")
+shape = SubResource("RectangleShape2D_d0p34")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -337,7 +337,7 @@ collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 position = Vector2(16.5, 16)
-shape = SubResource("RectangleShape2D_e6cd5")
+shape = SubResource("RectangleShape2D_533k6")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("59_vvmfb")]

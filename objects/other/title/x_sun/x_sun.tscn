@@ -40,7 +40,7 @@ size = Vector2(16, 16)
 size = Vector2(32, 32)
 
 [node name="XSun" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
-z_index = -4095
+z_index = -4093
 script = ExtResource("1_644r1")
 animated_sprite_node = NodePath("Sprite")
 object_name = "x_sun"

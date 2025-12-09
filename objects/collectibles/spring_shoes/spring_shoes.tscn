@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_dnfvl"]
 [ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="6_1un7n"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_cgl0f"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_1un7n"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -19,7 +19,7 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Image" id="Image_dnfvl"]
+[sub_resource type="Image" id="Image_cgl0f"]
 data = {
 "data": PackedByteArray("EgoIABIKCP8SCgj/EgoI/xIKCP8SCgj/EgoI/xIKCP8SCgj/EgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCgj/jlkl/45ZJf/Ieiz/5MBy/+TAcv/Ieiz/EgoI/xIKCAASCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoI/2MvHf9jLx3/jlkl/45ZJf+OWSX/jlkl/xIKCP8SCggAEgoIABIKCAASCggAEgoIABIKCAASCggAEgoIABIKCP8SCgj/EgoI/2MvHf+OWSX/jlkl/45ZJf9jLx3/EgoI/xIKCP8SCgj/EgoIABIKCAASCggAEgoIABIKCAASCgj/Yy8d/2MvHf+OWSX/jlkl/45ZJf+OWSX/yHos/45ZJf/Ieiz/Yy8d/xIKCP8SCggAEgoIABIKCAASCggAEgoI/2MvHf9jLx3/jlkl/45ZJf+OWSX/jlkl/+TAcv+OWSX/5MBy/45ZJf9jLx3/EgoI/xIKCAASCggAEgoIABIKCP9jLx3/Yy8d/45ZJf+OWSX/jlkl/45ZJf9jLx3/jlkl/2MvHf+OWSX/jlkl/2MvHf8SCgj/EgoIABIKCAASCgj/Yy8d/2MvHf+OWSX/jlkl/45ZJf+OWSX/jlkl/45ZJf+OWSX/jlkl/45ZJf9jLx3/EgoI/xIKCAASCggAEgoI/xIKCP+3h1z/t4dc/7eHXP/kwHL/5MBy/+TAcv/kwHL/t4dc/7eHXP+3h1z/t4dc/xIKCP8SCggAEgoIABIKCAASCgj/QEBA/4CAgP9AQED/EgoI/+TAcgDkwHIAEgoI/0BAQP+AgID/QEBA/xIKCP8SCggAEgoIABIKCAASCggAEgoI/xIKCP9AQED/EgoI/xIKCP8SCggAEgoIABIKCP8SCgj/QEBA/xIKCP8SCgj/EgoIABIKCAASCggAEgoIABIKCP9AQED/wMDA/0BAQP8SCgj/EgoIABIKCAASCgj/QEBA/8DAwP9AQED/EgoI/xIKCAASCggA"),
 "format": "RGBA8",
@@ -28,17 +28,17 @@ data = {
 "width": 16
 }
 
-[sub_resource type="Resource" id="Resource_klc5e"]
+[sub_resource type="Resource" id="Resource_dnfvl"]
 script = ExtResource("5_dnfvl")
 origin = Vector2(8, 6)
 containing_box = Rect2(1, 0, 14, 12)
 precise = true
-images = Array[Image]([SubResource("Image_dnfvl")])
+images = Array[Image]([SubResource("Image_cgl0f")])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8jj3w"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_klc5e"]
 size = Vector2(14, 12)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_81dyh"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8jj3w"]
 size = Vector2(28, 24)
 
 [node name="SpringShoes" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -48,25 +48,25 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "spring_shoes"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_qquwo")]
-sprite_frames = SubResource("SpriteFrames_cgl0f")
+sprite_frames = SubResource("SpriteFrames_1un7n")
 autoplay = "spring_shoes"
 centered = false
 offset = Vector2(-8, -6)
 script = ExtResource("4_cgl0f")
 sprite_info = Dictionary[StringName, ExtResource("5_dnfvl")]({
-&"spring_shoes": SubResource("Resource_klc5e")
+&"spring_shoes": SubResource("Resource_dnfvl")
 })
 default_animation = &"spring_shoes"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_8jj3w")
+shape = SubResource("RectangleShape2D_klc5e")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-shape = SubResource("RectangleShape2D_81dyh")
+shape = SubResource("RectangleShape2D_8jj3w")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("6_1un7n")]

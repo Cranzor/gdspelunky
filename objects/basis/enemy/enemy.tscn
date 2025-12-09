@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="3_hwl68"]
 [ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="4_hwl68"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_tgtyn"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_hwl68"]
 resource_local_to_scene = true
 animations = [{
 "frames": [],
@@ -14,32 +14,33 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_moabh"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tgtyn"]
 size = Vector2(0, 0)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6q4fw"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_moabh"]
 size = Vector2(0, 0)
 
 [node name="Enemy" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_8vw03")
 animated_sprite_node = NodePath("Sprite")
 object_name = "enemy"
+persistent = true
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_ysd20")]
 visible = false
-sprite_frames = SubResource("SpriteFrames_tgtyn")
+sprite_frames = SubResource("SpriteFrames_hwl68")
 centered = false
 script = ExtResource("3_hwl68")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_moabh")
+shape = SubResource("RectangleShape2D_tgtyn")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-shape = SubResource("RectangleShape2D_6q4fw")
+shape = SubResource("RectangleShape2D_moabh")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("4_hwl68")]

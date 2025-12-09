@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="6_sujyd"]
 [ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="7_e2xmx"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_mj7sb"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_e2xmx"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -23,6 +23,15 @@ animations = [{
 "speed": 30.0
 }]
 
+[sub_resource type="Image" id="Image_mj7sb"]
+data = {
+"data": PackedByteArray("/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AEBmGABAZhgAQGYYAEBmGABAZhgA//VoAI3GPwCNxj8AjcY/AI3GPwCNxj8AjcY/AI3GPwCNxj8A//VoAP/1aABAZhgAQGYYAEBmGABAZhgAQGYYAP/1aACNxj8AjcY/AI3GPwCNxj8AjcY/AI3GPwCNxj8AjcY/AP/1aAD/9WgAQGYYAEBmGABAZhgAQGYYAEBmGAD/9WgAjcY/AI3GPwCNxj8AjcY/AI3GPwCNxj8AjcY/AI3GPwD/9WgA//VoAEBmGABAZhgAQGYYAEBmGABAZhgA//VoAI3GPwCNxj8AjcY/AI3GPwCNxj8AjcY/AI3GPwCNxj8A//VoAP/1aABAZhgAQGYY/0BmGP9AZhj/QGYY///1aP+Nxj//jcY//43GP/+Nxj//jcY//43GP/+Nxj//jcY////1aP//9WgAADgYAAA4GP8AOBj/ADgY/wA4GP+Nxj//QGYY/0BmGP9AZhj/QGYY/0BmGP9AZhj/QGYY/0BmGP+Nxj//jcY/AAAAAAAAAAD/AAAA/wAAAP8AAAD/QGYY/wA4GP8AOBj/ADgY/wA4GP8AOBj/ADgY/wA4GP8AOBj/QGYY/0BmGAAAOBgAADgY/wA4GP8AOBj/ADgY/43GP/9AZhj/QGYY/0BmGP9AZhj/QGYY/0BmGP9AZhj/QGYY/43GP/+Nxj8AADgYAAA4GP8AOBj/ADgY/wA4GP+Nxj//QGYY/0BmGP////////////////9AZhj/QGYY/0BmGP+Nxj//jcY/AAA4GAAAOBj/ADgY/wA4GP8AOBj/jcY//0BmGP9AZhj//////0BmGP9AZhj//////0BmGP9AZhj/jcY//43GPwAAOBgAADgY/wA4GP8AOBj/ADgY/43GP/9AZhj/QGYY/////////////////0BmGP9AZhj/QGYY/43GP/+Nxj8AADgYAAA4GP8AOBj/ADgY/wA4GP+Nxj//QGYY/0BmGP//////QGYY/0BmGP//////QGYY/0BmGP+Nxj//jcY/AAA4GAAAOBj/ADgY/wA4GP8AOBj/jcY//0BmGP9AZhj/////////////////QGYY/0BmGP9AZhj/jcY//43GPwAAOBgAADgY/wA4GP8AOBj/ADgY/43GP/9AZhj/QGYY/0BmGP9AZhj/QGYY/0BmGP9AZhj/QGYY/43GP/+Nxj8AADgYAAA4GP8AOBj/ADgY/wA4GP+Nxj//QGYY/0BmGP9AZhj/QGYY/0BmGP9AZhj/QGYY/0BmGP+Nxj//jcY/AA=="),
+"format": "RGBA8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
 [sub_resource type="Image" id="Image_y5rsq"]
 data = {
 "data": PackedByteArray("/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AEBmGABAZhgAQGYYAEBmGABAZhgA//VoAI3GPwCNxj8AjcY/AI3GPwCNxj8AjcY/AI3GPwCNxj8A//VoAP/1aABAZhgAQGYYAEBmGABAZhgAQGYYAP/1aACNxj8AjcY/AI3GPwCNxj8AjcY/AI3GPwCNxj8AjcY/AP/1aAD/9WgAQGYYAEBmGABAZhgAQGYYAEBmGAD/9WgAjcY/AI3GPwCNxj8AjcY/AI3GPwCNxj8AjcY/AI3GPwD/9WgA//VoAEBmGABAZhgAQGYYAEBmGABAZhgA//VoAI3GPwCNxj8AjcY/AI3GPwCNxj8AjcY/AI3GPwCNxj8A//VoAP/1aABAZhgAQGYY/0BmGP9AZhj/QGYY///1aP+Nxj//jcY//43GP/+Nxj//jcY//43GP/+Nxj//jcY////1aP//9WgAADgYAAA4GP8AOBj/ADgY/wA4GP+Nxj//QGYY/0BmGP9AZhj/QGYY/0BmGP9AZhj/QGYY/0BmGP+Nxj//jcY/AAAAAAAAAAD/AAAA/wAAAP8AAAD/QGYY/wA4GP8AOBj/ADgY/wA4GP8AOBj/ADgY/wA4GP8AOBj/QGYY/0BmGAAAOBgAADgY/wA4GP8AOBj/ADgY/43GP/9AZhj/QGYY/0BmGP9AZhj/QGYY/0BmGP9AZhj/QGYY/43GP/+Nxj8AADgYAAA4GP8AOBj/ADgY/wA4GP+Nxj//QGYY/0BmGP////////////////9AZhj/QGYY/0BmGP+Nxj//jcY/AAA4GAAAOBj/ADgY/wA4GP8AOBj/jcY//0BmGP9AZhj//////0BmGP9AZhj//////0BmGP9AZhj/jcY//43GPwAAOBgAADgY/wA4GP8AOBj/ADgY/43GP/9AZhj/QGYY/////////////////0BmGP9AZhj/QGYY/43GP/+Nxj8AADgYAAA4GP8AOBj/ADgY/wA4GP+Nxj//QGYY/0BmGP//////QGYY/0BmGP//////QGYY/0BmGP+Nxj//jcY/AAA4GAAAOBj/ADgY/wA4GP8AOBj/jcY//0BmGP9AZhj/////////////////QGYY/0BmGP9AZhj/jcY//43GPwAAOBgAADgY/wA4GP8AOBj/ADgY/43GP/9AZhj/QGYY/0BmGP9AZhj/QGYY/0BmGP9AZhj/QGYY/43GP/+Nxj8AADgYAAA4GP8AOBj/ADgY/wA4GP+Nxj//QGYY/0BmGP9AZhj/QGYY/0BmGP9AZhj/QGYY/0BmGP+Nxj//jcY/AA=="),
@@ -32,26 +41,17 @@ data = {
 "width": 16
 }
 
-[sub_resource type="Image" id="Image_sujyd"]
-data = {
-"data": PackedByteArray("/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AEBmGABAZhgAQGYYAEBmGABAZhgA//VoAI3GPwCNxj8AjcY/AI3GPwCNxj8AjcY/AI3GPwCNxj8A//VoAP/1aABAZhgAQGYYAEBmGABAZhgAQGYYAP/1aACNxj8AjcY/AI3GPwCNxj8AjcY/AI3GPwCNxj8AjcY/AP/1aAD/9WgAQGYYAEBmGABAZhgAQGYYAEBmGAD/9WgAjcY/AI3GPwCNxj8AjcY/AI3GPwCNxj8AjcY/AI3GPwD/9WgA//VoAEBmGABAZhgAQGYYAEBmGABAZhgA//VoAI3GPwCNxj8AjcY/AI3GPwCNxj8AjcY/AI3GPwCNxj8A//VoAP/1aABAZhgAQGYY/0BmGP9AZhj/QGYY///1aP+Nxj//jcY//43GP/+Nxj//jcY//43GP/+Nxj//jcY////1aP//9WgAADgYAAA4GP8AOBj/ADgY/wA4GP+Nxj//QGYY/0BmGP9AZhj/QGYY/0BmGP9AZhj/QGYY/0BmGP+Nxj//jcY/AAAAAAAAAAD/AAAA/wAAAP8AAAD/QGYY/wA4GP8AOBj/ADgY/wA4GP8AOBj/ADgY/wA4GP8AOBj/QGYY/0BmGAAAOBgAADgY/wA4GP8AOBj/ADgY/43GP/9AZhj/QGYY/0BmGP9AZhj/QGYY/0BmGP9AZhj/QGYY/43GP/+Nxj8AADgYAAA4GP8AOBj/ADgY/wA4GP+Nxj//QGYY/0BmGP////////////////9AZhj/QGYY/0BmGP+Nxj//jcY/AAA4GAAAOBj/ADgY/wA4GP8AOBj/jcY//0BmGP9AZhj//////0BmGP9AZhj//////0BmGP9AZhj/jcY//43GPwAAOBgAADgY/wA4GP8AOBj/ADgY/43GP/9AZhj/QGYY/////////////////0BmGP9AZhj/QGYY/43GP/+Nxj8AADgYAAA4GP8AOBj/ADgY/wA4GP+Nxj//QGYY/0BmGP//////QGYY/0BmGP//////QGYY/0BmGP+Nxj//jcY/AAA4GAAAOBj/ADgY/wA4GP8AOBj/jcY//0BmGP9AZhj/////////////////QGYY/0BmGP9AZhj/jcY//43GPwAAOBgAADgY/wA4GP8AOBj/ADgY/43GP/9AZhj/QGYY/0BmGP9AZhj/QGYY/0BmGP9AZhj/QGYY/43GP/+Nxj8AADgYAAA4GP8AOBj/ADgY/wA4GP+Nxj//QGYY/0BmGP9AZhj/QGYY/0BmGP9AZhj/QGYY/0BmGP+Nxj//jcY/AA=="),
-"format": "RGBA8",
-"height": 16,
-"mipmaps": false,
-"width": 16
-}
-
-[sub_resource type="Resource" id="Resource_dnapc"]
+[sub_resource type="Resource" id="Resource_sujyd"]
 script = ExtResource("6_sujyd")
 origin = Vector2(8, 8)
 containing_box = Rect2(1, 5, 14, 11)
 precise = true
-images = Array[Image]([SubResource("Image_y5rsq"), SubResource("Image_sujyd")])
+images = Array[Image]([SubResource("Image_mj7sb"), SubResource("Image_y5rsq")])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h6oam"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dnapc"]
 size = Vector2(14, 11)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gua8w"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h6oam"]
 size = Vector2(28, 22)
 
 [node name="BombBox" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -61,19 +61,19 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "bomb_box"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_wbaac")]
-sprite_frames = SubResource("SpriteFrames_mj7sb")
+sprite_frames = SubResource("SpriteFrames_e2xmx")
 autoplay = "bomb_box"
 centered = false
 offset = Vector2(-8, -8)
 script = ExtResource("5_y5rsq")
 sprite_info = Dictionary[StringName, ExtResource("6_sujyd")]({
-&"bomb_box": SubResource("Resource_dnapc")
+&"bomb_box": SubResource("Resource_sujyd")
 })
 default_animation = &"bomb_box"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2.5)
-shape = SubResource("RectangleShape2D_h6oam")
+shape = SubResource("RectangleShape2D_dnapc")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -81,7 +81,7 @@ collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 position = Vector2(0, 2.5)
-shape = SubResource("RectangleShape2D_gua8w")
+shape = SubResource("RectangleShape2D_h6oam")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("7_e2xmx")]

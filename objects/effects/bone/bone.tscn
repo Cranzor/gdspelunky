@@ -22,7 +22,7 @@
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="20_024tu"]
 [ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="21_jh0hd"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ivhsd"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_jh0hd"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -84,7 +84,7 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Image" id="Image_344qw"]
+[sub_resource type="Image" id="Image_ivhsd"]
 data = {
 "data": PackedByteArray("QEBAAEBAQABAQEAAQEBAAEBAQP8gICD/ICAgACAgIABAQEAAQEBAAEBAQABAQED///////////8gICD/ICAgAEBAQABAQEAAQEBAAEBAQP//////wMDA/yAgIP8gICAAQEBAAEBAQABAQED//////8DAwP8gICD/ICAgACAgIABAQEAAQEBAAEBAQP/AwMD/ICAg/yAgIAAgICAAICAgAEBAQABAQED/wMDA/yAgIP8gICAAICAgACAgIAAgICAAICAgACAgIP8gICD/ICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgAA=="),
 "format": "RGBA8",
@@ -93,7 +93,7 @@ data = {
 "width": 8
 }
 
-[sub_resource type="Image" id="Image_77ldw"]
+[sub_resource type="Image" id="Image_344qw"]
 data = {
 "data": PackedByteArray("QEBAAEBAQABAQEAAQEBA/yAgIP8gICAAICAgACAgIABAQEAAQEBAAEBAQP///////////yAgIP8gICAAICAgAEBAQABAQEAAQEBA///////AwMD/ICAg/yAgIAAgICAAQEBAAEBAQABAQED//////8DAwP8gICD/ICAgACAgIABAQEAAQEBAAEBAQP/AwMD/ICAg/yAgIAAgICAAICAgAEBAQABAQEAAQEBA/8DAwP8gICD/ICAgACAgIAAgICAAICAgACAgIAAgICD/ICAg/yAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgAA=="),
 "format": "RGBA8",
@@ -102,7 +102,7 @@ data = {
 "width": 8
 }
 
-[sub_resource type="Image" id="Image_3uxn3"]
+[sub_resource type="Image" id="Image_77ldw"]
 data = {
 "data": PackedByteArray("ICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAg/yAgIP8gICAAICAgACAgIAAgICAAICAgACAgIP//////wMDA/yAgIP8gICAAICAgACAgIAAgICAAQEBA////////////wMDA/yAgIP8gICAAICAgACAgIABAQEAAQEBA/0BAQP//////wMDA/yAgIP8gICAAICAgAEBAQABAQEAAQEBAAEBAQP9AQED/wMDA/yAgIP8gICAAQEBAAEBAQABAQEAAQEBAAEBAQABAQED/ICAg/yAgIABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQAAgICAAICAgAA=="),
 "format": "RGBA8",
@@ -111,7 +111,7 @@ data = {
 "width": 8
 }
 
-[sub_resource type="Image" id="Image_mla8n"]
+[sub_resource type="Image" id="Image_3uxn3"]
 data = {
 "data": PackedByteArray("ICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICD/ICAg/yAgIP8gICAAICAgACAgIAAgICAAICAg///////AwMD/wMDA/yAgIP8gICD/ICAgACAgIABAQED/////////////////wMDA/8DAwP8gICD/ICAgAEBAQABAQED/QEBA/0BAQP9AQED/QEBA/yAgIP8gICAAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAICAgACAgIABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQAAgICAAICAgAA=="),
 "format": "RGBA8",
@@ -120,7 +120,7 @@ data = {
 "width": 8
 }
 
-[sub_resource type="Image" id="Image_7yhrs"]
+[sub_resource type="Image" id="Image_mla8n"]
 data = {
 "data": PackedByteArray("ICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIP8gICD/ICAgACAgIAAgICAAICAgACAgIAAgICD/wMDA/0BAQP9AQEAAICAgACAgIAAgICAAICAg/8DAwP9AQED/QEBAAEBAQAAgICAAICAgACAgIP/AwMD//////0BAQP9AQEAAQEBAACAgIAAgICD/wMDA//////9AQED/QEBAAEBAQABAQEAAICAgACAgIP///////////0BAQP9AQEAAQEBAAEBAQAAgICAAICAgACAgIP9AQED/QEBAAEBAQABAQEAAQEBAAA=="),
 "format": "RGBA8",
@@ -129,7 +129,7 @@ data = {
 "width": 8
 }
 
-[sub_resource type="Image" id="Image_spnef"]
+[sub_resource type="Image" id="Image_7yhrs"]
 data = {
 "data": PackedByteArray("ICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAg/yAgIP8gICAAICAgACAgIAAgICAAICAgACAgIP/AwMD/QEBA/0BAQABAQEAAICAgACAgIAAgICAAICAg/8DAwP9AQED/QEBAAEBAQAAgICAAICAgACAgIP/AwMD//////0BAQP9AQEAAQEBAACAgIAAgICAAICAg/8DAwP//////QEBA/0BAQABAQEAAICAgACAgIAAgICD///////////9AQED/QEBAAEBAQAAgICAAICAgACAgIAAgICD/QEBA/0BAQABAQEAAQEBAAA=="),
 "format": "RGBA8",
@@ -138,7 +138,7 @@ data = {
 "width": 8
 }
 
-[sub_resource type="Image" id="Image_yqu7f"]
+[sub_resource type="Image" id="Image_spnef"]
 data = {
 "data": PackedByteArray("ICAgACAgIABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQAAgICAAICAg/0BAQP9AQEAAQEBAAEBAQABAQEAAQEBAACAgIAAgICD/wMDA/0BAQP9AQED/QEBAAEBAQABAQEAAICAgACAgIAAgICD/wMDA//////9AQED/QEBA/0BAQAAgICAAICAgACAgIAAgICD/wMDA////////////QEBA/yAgIAAgICAAICAgACAgIAAgICD/wMDA//////8gICD/ICAgACAgIAAgICAAICAgACAgIAAgICD/ICAg/yAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgAA=="),
 "format": "RGBA8",
@@ -147,7 +147,7 @@ data = {
 "width": 8
 }
 
-[sub_resource type="Image" id="Image_1r4s6"]
+[sub_resource type="Image" id="Image_yqu7f"]
 data = {
 "data": PackedByteArray("ICAgACAgIABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQAAgICAAICAgAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAACAgIAAgICD/QEBA/0BAQP9AQED/QEBA/0BAQP9AQEAAICAgACAgIP/AwMD/wMDA/////////////////0BAQP8gICAAICAgACAgIP8gICD/wMDA/8DAwP//////ICAg/yAgIAAgICAAICAgACAgIAAgICD/ICAg/yAgIP8gICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgAA=="),
 "format": "RGBA8",
@@ -156,14 +156,14 @@ data = {
 "width": 8
 }
 
-[sub_resource type="Resource" id="Resource_2qpdi"]
+[sub_resource type="Resource" id="Resource_1r4s6"]
 script = ExtResource("20_024tu")
 origin = Vector2(4, 4)
 containing_box = Rect2(0, 0, 8, 8)
 precise = true
-images = Array[Image]([SubResource("Image_344qw"), SubResource("Image_77ldw"), SubResource("Image_3uxn3"), SubResource("Image_mla8n"), SubResource("Image_7yhrs"), SubResource("Image_spnef"), SubResource("Image_yqu7f"), SubResource("Image_1r4s6")])
+images = Array[Image]([SubResource("Image_ivhsd"), SubResource("Image_344qw"), SubResource("Image_77ldw"), SubResource("Image_3uxn3"), SubResource("Image_mla8n"), SubResource("Image_7yhrs"), SubResource("Image_spnef"), SubResource("Image_yqu7f")])
 
-[sub_resource type="Image" id="Image_qcvkc"]
+[sub_resource type="Image" id="Image_2qpdi"]
 data = {
 "data": PackedByteArray("QEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQP9AQED/QEBAAEBAQABAQEAAQEBAAEBAQABAQED/gICA/0BAQP9AQED/QEBAAEBAQAAgICAAICAgACAgIP9AQED/ICAg/yAgIP8gICAAICAgACAgIAAgICAAICAgACAgIP8gICD/ICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgAA=="),
 "format": "RGBA8",
@@ -172,7 +172,7 @@ data = {
 "width": 8
 }
 
-[sub_resource type="Image" id="Image_23fky"]
+[sub_resource type="Image" id="Image_qcvkc"]
 data = {
 "data": PackedByteArray("QEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQABAQED/QEBA/0BAQABAQEAAQEBAAEBAQABAQED/gICA/4CAgP+AgID/QEBA/0BAQABAQEAAICAgACAgIP9AQED/gICA/0BAQP9AQED/QEBA/0BAQAAgICAAICAg/yAgIP9AQED/QEBA/yAgIP8gICD/ICAgACAgIAAgICAAQEBA/4CAgP8gICD/ICAg/yAgIAAgICAAICAgACAgIAAgICD/ICAg/yAgIP8gICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgAA=="),
 "format": "RGBA8",
@@ -181,7 +181,7 @@ data = {
 "width": 8
 }
 
-[sub_resource type="Image" id="Image_83cv5"]
+[sub_resource type="Image" id="Image_23fky"]
 data = {
 "data": PackedByteArray("QEBAAEBAQABAQED/QEBA/0BAQP9AQEAAQEBAACAgIABAQEAAQEBA/0BAQP+AgID/QEBA/0BAQP9AQEAAICAgAEBAQP9AQED/gICA/4CAgP+AgID/QEBA/0BAQP8gICD/ICAg/0BAQP9AQED/QEBA/yAgIP8gICD/ICAg/yAgIP8gICD/ICAg/0BAQP9AQED/gICA/0BAQP8gICD/ICAgACAgIAAgICD/ICAg/yAgIP8gICD/ICAg/yAgIP8gICAAICAgACAgIP8gICD/ICAg/yAgIP8gICD/ICAgACAgIAAgICAAICAgACAgIP9AQED/QEBA/yAgIAAgICAAICAgAA=="),
 "format": "RGBA8",
@@ -190,7 +190,7 @@ data = {
 "width": 8
 }
 
-[sub_resource type="Image" id="Image_h0142"]
+[sub_resource type="Image" id="Image_83cv5"]
 data = {
 "data": PackedByteArray("QEBAAEBAQABAQEAAQEBAAEBAQP9AQED/QEBA/0BAQABAQEAAQEBA/0BAQP9AQED/ICAg/0BAQP8gICD/ICAgAEBAQP9AQED/QEBA/yAgIP8gICAAICAg/yAgIP8gICAAICAg/yAgIP8gICD/ICAgAEBAQAAgICAAICAgACAgIAAgICAAICAgACAgIABAQEAAQEBA/0BAQP9AQEAAICAgAEBAQABAQED/QEBA/0BAQAAgICD/ICAg/yAgIAAgICD/ICAgACAgIP9AQED/QEBA/yAgIAAgICAAICAgACAgIAAgICAAICAgACAgIP8gICD/ICAgACAgIP8gICAAICAgAA=="),
 "format": "RGBA8",
@@ -199,7 +199,7 @@ data = {
 "width": 8
 }
 
-[sub_resource type="Image" id="Image_8cld7"]
+[sub_resource type="Image" id="Image_h0142"]
 data = {
 "data": PackedByteArray("QEBAAEBAQP9AQED/QEBAAEBAQABAQEAAICAgACAgIABAQED/QEBA/yAgIP8gICAAQEBAAEBAQP8gICD/ICAgACAgIP8gICD/ICAgACAgIABAQEAAQEBAACAgIAAgICAAICAgACAgIAAgICAAQEBAAEBAQP8gICD/ICAgACAgIABAQEAAQEBAAEBAQABAQED/ICAg/yAgIAAgICAAICAgAEBAQABAQED/QEBAAEBAQAAgICAAICAgAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBA/0BAQABAQEAAQEBAAEBAQABAQED/QEBAACAgIAAgICD/ICAgAA=="),
 "format": "RGBA8",
@@ -208,7 +208,7 @@ data = {
 "width": 8
 }
 
-[sub_resource type="Image" id="Image_3slb2"]
+[sub_resource type="Image" id="Image_8cld7"]
 data = {
 "data": PackedByteArray("QEBAAEBAQABAQEAAQEBAAEBAQABAQED/QEBAAEBAQABAQEAAQEBA/0BAQP9AQEAAICAgACAgIP8gICAAICAgACAgIAAgICD/QEBAAEBAQABAQED/ICAgACAgIAAgICAAICAgACAgIAAgICAAQEBAAEBAQABAQEAAICAgACAgIAAgICAAICAgAEBAQABAQED/QEBAAEBAQABAQEAAICAgACAgIAAgICAAICAgACAgIP8gICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgAA=="),
 "format": "RGBA8",
@@ -217,7 +217,7 @@ data = {
 "width": 8
 }
 
-[sub_resource type="Image" id="Image_024tu"]
+[sub_resource type="Image" id="Image_3slb2"]
 data = {
 "data": PackedByteArray("QEBAAEBAQABAQEAAQEBAAEBAQP9AQEAAQEBAAEBAQABAQEAAQEBAAEBAQP9AQEAAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQP9AQEAAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAA=="),
 "format": "RGBA8",
@@ -226,7 +226,7 @@ data = {
 "width": 8
 }
 
-[sub_resource type="Image" id="Image_pgw8r"]
+[sub_resource type="Image" id="Image_024tu"]
 data = {
 "data": PackedByteArray("QIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAA=="),
 "format": "RGBA8",
@@ -235,17 +235,17 @@ data = {
 "width": 8
 }
 
-[sub_resource type="Resource" id="Resource_jxice"]
+[sub_resource type="Resource" id="Resource_pgw8r"]
 script = ExtResource("20_024tu")
 origin = Vector2(4, 4)
 containing_box = Rect2(0, 0, 8, 8)
 precise = true
-images = Array[Image]([SubResource("Image_qcvkc"), SubResource("Image_23fky"), SubResource("Image_83cv5"), SubResource("Image_h0142"), SubResource("Image_8cld7"), SubResource("Image_3slb2"), SubResource("Image_024tu"), SubResource("Image_pgw8r")])
+images = Array[Image]([SubResource("Image_2qpdi"), SubResource("Image_qcvkc"), SubResource("Image_23fky"), SubResource("Image_83cv5"), SubResource("Image_h0142"), SubResource("Image_8cld7"), SubResource("Image_3slb2"), SubResource("Image_024tu")])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_crwjd"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jxice"]
 size = Vector2(8, 8)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gdmpd"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_crwjd"]
 size = Vector2(16, 16)
 
 [node name="Bone" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -255,26 +255,26 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "bone"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_d6w1w")]
-sprite_frames = SubResource("SpriteFrames_ivhsd")
+sprite_frames = SubResource("SpriteFrames_jh0hd")
 autoplay = "bone"
 centered = false
 offset = Vector2(-4, -4)
 script = ExtResource("19_3slb2")
 sprite_info = Dictionary[StringName, ExtResource("20_024tu")]({
-&"bone": SubResource("Resource_2qpdi"),
-&"smoke_puff": SubResource("Resource_jxice")
+&"bone": SubResource("Resource_1r4s6"),
+&"smoke_puff": SubResource("Resource_pgw8r")
 })
 default_animation = &"bone"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_crwjd")
+shape = SubResource("RectangleShape2D_jxice")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-shape = SubResource("RectangleShape2D_gdmpd")
+shape = SubResource("RectangleShape2D_crwjd")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("21_jh0hd")]

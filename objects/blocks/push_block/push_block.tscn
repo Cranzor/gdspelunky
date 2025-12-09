@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="6_7g2po"]
 [ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="7_ot6fm"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_wsvhp"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_ot6fm"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -28,18 +28,18 @@ animations = [{
 "speed": 30.0
 }]
 
+[sub_resource type="Resource" id="Resource_wsvhp"]
+script = ExtResource("6_7g2po")
+containing_box = Rect2(0, 0, 16, 16)
+
 [sub_resource type="Resource" id="Resource_tyywr"]
 script = ExtResource("6_7g2po")
 containing_box = Rect2(0, 0, 16, 16)
 
-[sub_resource type="Resource" id="Resource_7g2po"]
-script = ExtResource("6_7g2po")
-containing_box = Rect2(0, 0, 16, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_svn8m"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7g2po"]
 size = Vector2(16, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7kwxj"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_svn8m"]
 size = Vector2(32, 32)
 
 [node name="PushBlock" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -49,19 +49,19 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "push_block"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_s461y")]
-sprite_frames = SubResource("SpriteFrames_wsvhp")
+sprite_frames = SubResource("SpriteFrames_ot6fm")
 autoplay = "block"
 centered = false
 script = ExtResource("5_tyywr")
 sprite_info = Dictionary[StringName, ExtResource("6_7g2po")]({
-&"block": SubResource("Resource_tyywr"),
-&"gold_block": SubResource("Resource_7g2po")
+&"block": SubResource("Resource_wsvhp"),
+&"gold_block": SubResource("Resource_tyywr")
 })
 default_animation = &"block"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_svn8m")
+shape = SubResource("RectangleShape2D_7g2po")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -69,7 +69,7 @@ collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_7kwxj")
+shape = SubResource("RectangleShape2D_svn8m")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("7_ot6fm")]

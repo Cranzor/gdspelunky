@@ -1,11 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://bddqqwb5jfu5j"]
+[gd_scene load_steps=10 format=3 uid="uid://bddqqwb5jfu5j"]
 
 [ext_resource type="Script" uid="uid://lirvn2c8rwk8" path="res://objects/blocks/water_swim/water_swim.gd" id="1_i2rlo"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_xwlhw"]
 [ext_resource type="Texture2D" uid="uid://c8dc2qks0s0qx" path="res://sprites/blocks/water/water/water_0.png" id="3_l1f3k"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_xwlhw"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_51khy"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_xwlhw"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_l1f3k"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -17,14 +18,14 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_l1f3k"]
+[sub_resource type="Resource" id="Resource_kin6u"]
 script = ExtResource("5_51khy")
 containing_box = Rect2(0, 0, 16, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kin6u"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_51khy"]
 size = Vector2(16, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_51khy"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_co7gy"]
 size = Vector2(32, 32)
 
 [node name="WaterSwim" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -33,17 +34,19 @@ script = ExtResource("1_i2rlo")
 animated_sprite_node = NodePath("Sprite")
 object_name = "water_swim"
 
-[node name="Sprite" parent="." instance=ExtResource("2_xwlhw")]
-sprite_frames = SubResource("SpriteFrames_xwlhw")
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_xwlhw")]
+sprite_frames = SubResource("SpriteFrames_l1f3k")
 autoplay = "water"
+centered = false
+script = ExtResource("4_xwlhw")
 sprite_info = Dictionary[StringName, ExtResource("5_51khy")]({
-&"water": SubResource("Resource_l1f3k")
+&"water": SubResource("Resource_kin6u")
 })
 default_animation = &"water"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_kin6u")
+shape = SubResource("RectangleShape2D_51khy")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -51,5 +54,5 @@ collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_51khy")
+shape = SubResource("RectangleShape2D_co7gy")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)

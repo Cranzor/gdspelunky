@@ -13,7 +13,7 @@
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="11_gkdy1"]
 [ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="12_uy2cu"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_jsjug"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_uy2cu"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -48,7 +48,7 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Image" id="Image_16lbl"]
+[sub_resource type="Image" id="Image_jsjug"]
 data = {
 "data": PackedByteArray("QIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAQIAAAECAAABAgAAAQIAAACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgAECAAABAgAAAQIAAACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIABAQEAAQEBAAEBAQABAQEAAQEBAACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAQEBAAEBAQABAQEAAQEBAAEBAQAAgICAAICAgACAgIAAgICAAICAg/yAgIP8gICD/ICAg/yAgIP8gICAAICAgAEBAQABAQEAAQEBAAEBAQABAQEAAICAgACAgIAAgICAAICAg/8DAwP///////9i1/8DAwP+AgID/ICAg/yAgIABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQAAgICAAICAg/8DAwP////////////////+AgID/gICA/yAgIP8gICAAQEBAAEBAQABAQEAAQEBAAEBAQP9AQEAAICAgACAgIP//////gICA/yAgIP//////wMDA/yAgIP8AAAD/ICAg/0BAQABAQEAAQEBAAEBAQP//////QEBA/0BAQAAAAAD/wMDA//////8AAAD////////Ytf/AwMD/AAAA//////9AQEAAQEBAAEBAQP8AAAD//////wAAAP8gICD/AAAAAAAAAP/////////////Ytf8AAAD/AAAA//////+AgID/QEBAAEBAQP//////AAAA/4CAgP//////AAAA/yAgIP8AAAD////////Ytf8AAAD/ICAg//////+AgID/ICAg/w=="),
 "format": "RGBA8",
@@ -57,20 +57,20 @@ data = {
 "width": 16
 }
 
-[sub_resource type="Resource" id="Resource_sw01l"]
+[sub_resource type="Resource" id="Resource_16lbl"]
 script = ExtResource("11_gkdy1")
 containing_box = Rect2(1, 9, 15, 7)
 precise = true
-images = Array[Image]([SubResource("Image_16lbl")])
+images = Array[Image]([SubResource("Image_jsjug")])
 
-[sub_resource type="Resource" id="Resource_54imp"]
+[sub_resource type="Resource" id="Resource_sw01l"]
 script = ExtResource("11_gkdy1")
 containing_box = Rect2(1, 0, 15, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3na0g"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_54imp"]
 size = Vector2(15, 7)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_liwnr"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3na0g"]
 size = Vector2(30, 14)
 
 [node name="FakeBones" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -80,19 +80,19 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "fake_bones"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_nn2tj")]
-sprite_frames = SubResource("SpriteFrames_jsjug")
+sprite_frames = SubResource("SpriteFrames_uy2cu")
 autoplay = "fake_bones_left"
 centered = false
 script = ExtResource("10_stt81")
 sprite_info = Dictionary[StringName, ExtResource("11_gkdy1")]({
-&"fake_bones_left": SubResource("Resource_sw01l"),
-&"skeleton_create_l": SubResource("Resource_54imp")
+&"fake_bones_left": SubResource("Resource_16lbl"),
+&"skeleton_create_l": SubResource("Resource_sw01l")
 })
 default_animation = &"fake_bones_left"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8.5, 12.5)
-shape = SubResource("RectangleShape2D_3na0g")
+shape = SubResource("RectangleShape2D_54imp")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -100,7 +100,7 @@ collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 position = Vector2(8.5, 12.5)
-shape = SubResource("RectangleShape2D_liwnr")
+shape = SubResource("RectangleShape2D_3na0g")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("12_uy2cu")]

@@ -34,7 +34,7 @@
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="32_0kmk5"]
 [ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="33_y34fl"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_cc2l1"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_y34fl"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -74,6 +74,30 @@ animations = [{
 "texture": ExtResource("12_qbepp")
 }, {
 "duration": 1.0,
+"texture": ExtResource("23_35cil")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_313os")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_pea6k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_u5tb0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_uil8j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_ufix1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_vaxep")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_x2fgt")
+}, {
+"duration": 1.0,
 "texture": ExtResource("13_ybbk5")
 }, {
 "duration": 1.0,
@@ -102,48 +126,24 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("22_ivvxy")
-}, {
-"duration": 1.0,
-"texture": ExtResource("23_35cil")
-}, {
-"duration": 1.0,
-"texture": ExtResource("24_313os")
-}, {
-"duration": 1.0,
-"texture": ExtResource("25_pea6k")
-}, {
-"duration": 1.0,
-"texture": ExtResource("26_u5tb0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("27_uil8j")
-}, {
-"duration": 1.0,
-"texture": ExtResource("28_ufix1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("29_vaxep")
-}, {
-"duration": 1.0,
-"texture": ExtResource("30_x2fgt")
 }],
 "loop": true,
 "name": &"ufo_blast",
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_3b8td"]
+[sub_resource type="Resource" id="Resource_cc2l1"]
 script = ExtResource("32_0kmk5")
 containing_box = Rect2(0, 1, 16, 13)
 
-[sub_resource type="Resource" id="Resource_dlmfg"]
+[sub_resource type="Resource" id="Resource_3b8td"]
 script = ExtResource("32_0kmk5")
 containing_box = Rect2(0, 0, 16, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_laygk"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dlmfg"]
 size = Vector2(16, 13)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ih6b0"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_laygk"]
 size = Vector2(32, 26)
 
 [node name="Ufo" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -153,19 +153,19 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "ufo"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_qkno5")]
-sprite_frames = SubResource("SpriteFrames_cc2l1")
+sprite_frames = SubResource("SpriteFrames_y34fl")
 autoplay = "ufo"
 centered = false
 script = ExtResource("31_dqdmn")
 sprite_info = Dictionary[StringName, ExtResource("32_0kmk5")]({
-&"ufo": SubResource("Resource_3b8td"),
-&"ufo_blast": SubResource("Resource_dlmfg")
+&"ufo": SubResource("Resource_cc2l1"),
+&"ufo_blast": SubResource("Resource_3b8td")
 })
 default_animation = &"ufo"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, 7.5)
-shape = SubResource("RectangleShape2D_laygk")
+shape = SubResource("RectangleShape2D_dlmfg")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -173,7 +173,7 @@ collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 position = Vector2(8, 7.5)
-shape = SubResource("RectangleShape2D_ih6b0")
+shape = SubResource("RectangleShape2D_laygk")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("33_y34fl")]

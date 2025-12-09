@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://coruvqw80pybl" path="res://backgrounds/bg_cave_top4.png" id="6_4cmxn"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="7_eilao"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_cvbvy"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_eilao"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -21,14 +21,14 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_n2eht"]
+[sub_resource type="Resource" id="Resource_cvbvy"]
 script = ExtResource("5_eilao")
 containing_box = Rect2(0, 0, 16, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mu7qn"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n2eht"]
 size = Vector2(16, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0skhf"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mu7qn"]
 size = Vector2(32, 32)
 
 [node name="TempleFake" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -49,18 +49,18 @@ region_rect = Rect2(0, 0, 16, 16)
 script = ExtResource("4_thpa5")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_n4c1e")]
-sprite_frames = SubResource("SpriteFrames_cvbvy")
+sprite_frames = SubResource("SpriteFrames_eilao")
 autoplay = "temple"
 centered = false
 script = ExtResource("7_eilao")
 sprite_info = Dictionary[StringName, ExtResource("5_eilao")]({
-&"temple": SubResource("Resource_n2eht")
+&"temple": SubResource("Resource_cvbvy")
 })
 default_animation = &"temple"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_mu7qn")
+shape = SubResource("RectangleShape2D_n2eht")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -68,5 +68,5 @@ collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_0skhf")
+shape = SubResource("RectangleShape2D_mu7qn")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)

@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_qn2fk"]
 [ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="6_54fp2"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_65o12"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_54fp2"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -19,7 +19,7 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Image" id="Image_qn2fk"]
+[sub_resource type="Image" id="Image_65o12"]
 data = {
 "data": PackedByteArray("AIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAADkwHIA5MByAOTAcgDkwHIA5MByAOTAcgDkwHIA5MByAOTAcgDkwHIAt4dcAHtUQwB7VEMAe1RDAHtUQwB7VEMA5MByAOTAcgDkwHIA5MByAOTAcgDkwHIA5MByAOTAcgDkwHIA5MByALeHXAB7VEMAe1RDAHtUQwB7VEMAe1RDAOTAcgDkwHIA5MByAOTAcgDkwHIA5MByAOTAcgDkwHIA5MByAOTAcgC3h1wAe1RDAHtUQwB7VEMAe1RDAHtUQwDkwHIA5MByAOTAcgDkwHIA5MByAOTAcgDkwHIA5MByAOTAcgDkwHIAt4dcAHtUQwB7VEMAe1RDAHtUQwB7VEMA5MByAOTAcgDkwHIA5MBy/+TAcv/kwHL/5MBy/+TAcv/kwHL/5MBy/7eHXP97VEP/e1RD/3tUQ/97VEP/e1RDALeHXAC3h1wAt4dcALeHXP8sFhP/e1RD/ywWE/97VEP/LBYT/3tUQ/+3h1z/e1RD/ywWE/8sFhP/e1RD/3tUQwC3h1wAt4dcALeHXAC3h1z/e1RD/3tUQ/97VEP/e1RD/3tUQ/97VEP/t4dc/3tUQ/8sFhP/LBYT/3tUQ/97VEMAt4dcALeHXAC3h1wAt4dc/3tUQ/+3h1z/e1RD/7eHXP97VEP/t4dc/7eHXP97VEP/LBYT/ywWE/97VEP/e1RDALeHXAC3h1wAt4dcALeHXP97VEP/t4dc/3tUQ/+3h1z/e1RD/7eHXP+3h1z/e1RD/ywWE/8sFhP/e1RD/3tUQwC3h1wAt4dcALeHXAC3h1z/e1RD/7eHXP97VEP/t4dc/3tUQ/+3h1z/t4dc/3tUQ/8sFhP/LBYT/3tUQ/97VEMAt4dcALeHXAC3h1wAt4dc/3tUQ/+3h1z/e1RD/7eHXP97VEP/t4dc/7eHXP97VEP/LBYT/ywWE/97VEP/e1RDALeHXAC3h1wAt4dcALeHXP97VEP/t4dc/3tUQ/+3h1z/e1RD/7eHXP+3h1z/e1RD/ywWE/8sFhP/e1RD/3tUQwC3h1wAt4dcALeHXAC3h1z/e1RD/7eHXP97VEP/t4dc/3tUQ/+3h1z/t4dc/3tUQ/8sFhP/LBYT/3tUQ/97VEMA5MByAOTAcgDkwHIA5MBy/+TAcv/kwHL/5MBy/+TAcv/kwHL/5MBy/7eHXP97VEP/e1RD/3tUQ/97VEP/e1RDAA=="),
 "format": "RGBA8",
@@ -28,17 +28,17 @@ data = {
 "width": 16
 }
 
-[sub_resource type="Resource" id="Resource_nw0am"]
+[sub_resource type="Resource" id="Resource_qn2fk"]
 script = ExtResource("5_qn2fk")
 origin = Vector2(8, 8)
 containing_box = Rect2(3, 6, 12, 10)
 precise = true
-images = Array[Image]([SubResource("Image_qn2fk")])
+images = Array[Image]([SubResource("Image_65o12")])
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5spyo"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nw0am"]
 size = Vector2(12, 10)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_q4gr6"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5spyo"]
 size = Vector2(24, 20)
 
 [node name="Crate" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -48,19 +48,19 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "crate"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_sjsup")]
-sprite_frames = SubResource("SpriteFrames_65o12")
+sprite_frames = SubResource("SpriteFrames_54fp2")
 autoplay = "crate"
 centered = false
 offset = Vector2(-8, -8)
 script = ExtResource("4_65o12")
 sprite_info = Dictionary[StringName, ExtResource("5_qn2fk")]({
-&"crate": SubResource("Resource_nw0am")
+&"crate": SubResource("Resource_qn2fk")
 })
 default_animation = &"crate"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 3)
-shape = SubResource("RectangleShape2D_5spyo")
+shape = SubResource("RectangleShape2D_nw0am")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -68,7 +68,7 @@ collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 position = Vector2(1, 3)
-shape = SubResource("RectangleShape2D_q4gr6")
+shape = SubResource("RectangleShape2D_5spyo")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("6_54fp2")]
