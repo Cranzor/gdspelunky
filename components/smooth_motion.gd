@@ -9,6 +9,7 @@ var diff: Vector2 = Vector2.ZERO
 var sprite: AnimatedSprite2D
 var waiting_for_reset: bool = false
 var fixed_delta: float = 0.0333333333
+var tween: Tween = create_tween()
 static var paused: bool = false
 
 
@@ -23,6 +24,7 @@ func _ready() -> void:
 
 
 func update_sprite_during_tick() -> void: #--- called in gm_loop once per tick
+	tween.kill()
 	if GameSettings.smooth_motion:
 		if parent.get_node("Sprite").scale.x == -1:
 			scale.x = -1
@@ -44,8 +46,8 @@ func update_sprite_during_tick() -> void: #--- called in gm_loop once per tick
 
 
 func start_sprite_movement_tween() -> void:
-	var tween: Tween = create_tween()
-	tween.tween_property(self, "position", current_pos, fixed_delta)
+	tween = create_tween()
+	tween.tween_property(self, "position", current_pos + abs(current_pos - sprite.global_position), fixed_delta)
 
 
 func set_sprite():
