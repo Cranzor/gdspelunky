@@ -7,6 +7,7 @@ func _ready():
 
 #--- Object functions
 @onready var jetpack_draw: DrawSprite = $JetpackDraw
+@onready var pickup_item: DrawSprite = $PickupItem
 var GETUP
 var JUMPING
 
@@ -77,24 +78,27 @@ func draw():
 	if (sprite_index != "p_exit" and sprite_index != "damsel_exit" and sprite_index != "tunnel_exit"):
 
 		DrawSprite.draw_sprite_ext(sprite_index, -1, position.x, position.y, image_xscale, image_yscale, image_angle, image_blend, image_alpha, animated_sprite_node)
-		var hold_item
-		if (global.pickup_item == "rock"): hold_item = gml.draw_sprite("rock",-1,position.x+4,position.y+2,self)
-		elif (global.pickup_item == "jar"): hold_item = gml.draw_sprite("jar",-1,position.x+4,position.y+2,self)
-		elif (global.pickup_item == "skull"): hold_item = gml.draw_sprite("skull",-1,position.x+4,position.y+2,self)
-		elif (global.pickup_item == "fish bone"): hold_item = gml.draw_sprite("fish_bone",-1,position.x+4,position.y+2,self)
-		elif (global.pickup_item == "arrow"): hold_item = gml.draw_sprite("arrow_right",-1,position.x+4,position.y+2,self)
-		elif (global.pickup_item == "rock"): hold_item = gml.draw_sprite("rock",-1,position.x+4,position.y+2,self)
-		elif (global.pickup_item == "machete"): hold_item = gml.draw_sprite("machete_right",-1,position.x+4,position.y+2,self)
-		elif (global.pickup_item == "mattock"): hold_item = gml.draw_sprite("mattock_right",-1,position.x+4,position.y+2,self)
-		elif (global.pickup_item == "mattock head"): hold_item = gml.draw_sprite("mattock_head",-1,position.x+4,position.y+2,self)
-		elif (global.pickup_item == "pistol"): hold_item = gml.draw_sprite("pistol_right",-1,position.x+4,position.y+2,self)
-		elif (global.pickup_item == "web cannon"): hold_item = gml.draw_sprite("web_cannon_r",-1,position.x+4,position.y+2,self)
-		elif (global.pickup_item == "teleporter"): hold_item = gml.draw_sprite("teleporter",-1,position.x+4,position.y+2,self)
-		elif (global.pickup_item == "shotgun"): hold_item = gml.draw_sprite("shotgun_right",-1,position.x+4,position.y+2,self)
-		elif (global.pickup_item == "bow"): hold_item = gml.draw_sprite("bow_right",-1,position.x+4,position.y+2,self)
-		elif (global.pickup_item == "flare"): hold_item = gml.draw_sprite("flare",-1,position.x+4,position.y+2,self)
-		elif (global.pickup_item == "sceptre"): hold_item = gml.draw_sprite("sceptre_right",-1,position.x+4,position.y+2,self)
-		elif (global.pickup_item == "key"): hold_item = gml.draw_sprite("key_right",-1,position.x+4,position.y+2,self)
+		#--- commenting out item drawing code as this is handled by the PickupItem component
+		#var hold_item
+		#if (global.pickup_item == "rock"): hold_item = gml.draw_sprite("rock",-1,position.x+4,position.y+2,self)
+		#elif (global.pickup_item == "jar"): hold_item = gml.draw_sprite("jar",-1,position.x+4,position.y+2,self)
+		#elif (global.pickup_item == "skull"): hold_item = gml.draw_sprite("skull",-1,position.x+4,position.y+2,self)
+		#elif (global.pickup_item == "fish bone"): hold_item = gml.draw_sprite("fish_bone",-1,position.x+4,position.y+2,self)
+		#elif (global.pickup_item == "arrow"): hold_item = gml.draw_sprite("arrow_right",-1,position.x+4,position.y+2,self)
+		#elif (global.pickup_item == "rock"): hold_item = gml.draw_sprite("rock",-1,position.x+4,position.y+2,self)
+		#elif (global.pickup_item == "machete"): hold_item = gml.draw_sprite("machete_right",-1,position.x+4,position.y+2,self)
+		#elif (global.pickup_item == "mattock"): hold_item = gml.draw_sprite("mattock_right",-1,position.x+4,position.y+2,self)
+		#elif (global.pickup_item == "mattock head"): hold_item = gml.draw_sprite("mattock_head",-1,position.x+4,position.y+2,self)
+		#elif (global.pickup_item == "pistol"): hold_item = gml.draw_sprite("pistol_right",-1,position.x+4,position.y+2,self)
+		#elif (global.pickup_item == "web cannon"): hold_item = gml.draw_sprite("web_cannon_r",-1,position.x+4,position.y+2,self)
+		#elif (global.pickup_item == "teleporter"): hold_item = gml.draw_sprite("teleporter",-1,position.x+4,position.y+2,self)
+		#elif (global.pickup_item == "shotgun"): hold_item = gml.draw_sprite("shotgun_right",-1,position.x+4,position.y+2,self)
+		#elif (global.pickup_item == "bow"): hold_item = gml.draw_sprite("bow_right",-1,position.x+4,position.y+2,self)
+		#elif (global.pickup_item == "flare"): hold_item = gml.draw_sprite("flare",-1,position.x+4,position.y+2,self)
+		#elif (global.pickup_item == "sceptre"): hold_item = gml.draw_sprite("sceptre_right",-1,position.x+4,position.y+2,self)
+		#elif (global.pickup_item == "key"): hold_item = gml.draw_sprite("key_right",-1,position.x+4,position.y+2,self)
+		
+	else: pickup_item.hide() #--- adding this to hide pickup_item upon exit animation playing
 
 
 func step():
