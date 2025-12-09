@@ -17,4 +17,4 @@ func create():
 
 func draw():
 	image_xscale = -1
-	gml.draw_sprite_ext(sprite_index, -1, position.x, position.y, image_xscale, image_yscale, image_angle, image_blend, image_alpha, self)
+	DrawSprite.draw_sprite_ext(sprite_index, -1, position.x, position.y, image_xscale, image_yscale, image_angle, image_blend, image_alpha, animated_sprite_node)

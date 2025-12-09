@@ -116,7 +116,7 @@ func create():
 
 
 func draw():
-	gml.draw_sprite_ext(sprite_index, image_index, position.x, position.y, 1, image_yscale, image_angle, image_blend, image_alpha, self)
+	DrawSprite.draw_sprite_ext(sprite_index, image_index, position.x, position.y, 1, image_yscale, image_angle, image_blend, image_alpha, animated_sprite_node)
 
 
 func step():

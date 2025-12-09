@@ -98,13 +98,13 @@ func draw():
 
 	if ((sprite_index == "p_exit" or sprite_index == "damsel_exit" or sprite_index == "tunnel_exit") and global.has_jetpack):
 
-		gml.draw_sprite_ext(sprite_index, -1, position.x, position.y, image_xscale, image_yscale, image_angle, image_blend, image_alpha, self)
+		DrawSprite.draw_sprite_ext(sprite_index, -1, position.x, position.y, image_xscale, image_yscale, image_angle, image_blend, image_alpha, animated_sprite_node)
 		#gml.draw_sprite("jetpack_back",-1,position.x,position.y, self) #--- commenting out draw_sprite to use DrawSprite class
 		jetpack_draw.draw_sprite(Vector2(0, 0), "jetpack_back")
 
 	elif (sprite_index == "p_exit" or sprite_index == "damsel_exit" or sprite_index == "tunnel_exit"):
 
-		gml.draw_sprite_ext(sprite_index, -1, position.x, position.y, image_xscale, image_yscale, image_angle, image_blend, image_alpha, self)
+		DrawSprite.draw_sprite_ext(sprite_index, -1, position.x, position.y, image_xscale, image_yscale, image_angle, image_blend, image_alpha, animated_sprite_node)
 
 	elif (global.has_jetpack):
 
@@ -114,7 +114,7 @@ func draw():
 
 	if (sprite_index != "p_exit" and sprite_index != "damsel_exit" and sprite_index != "tunnel_exit"):
 
-		gml.draw_sprite_ext(sprite_index, -1, position.x, position.y, image_xscale, image_yscale, image_angle, image_blend, image_alpha, self)
+		DrawSprite.draw_sprite_ext(sprite_index, -1, position.x, position.y, image_xscale, image_yscale, image_angle, image_blend, image_alpha, animated_sprite_node)
 		var hold_item
 		if (global.pickup_item == "rock"): hold_item = gml.draw_sprite("rock",-1,position.x+4,position.y+2, self)
 		elif (global.pickup_item == "jar"): hold_item = gml.draw_sprite("jar",-1,position.x+4,position.y+2, self)

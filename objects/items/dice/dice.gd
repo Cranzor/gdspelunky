@@ -26,7 +26,7 @@ func create():
 
 
 func draw():
-	gml.draw_sprite_ext(sprite_index, -1, position.x, position.y, image_xscale, image_yscale, image_angle, image_blend, image_alpha, self)
+	DrawSprite.draw_sprite_ext(sprite_index, -1, position.x, position.y, image_xscale, image_yscale, image_angle, image_blend, image_alpha, animated_sprite_node)
 
 	var player1 = gml.get_instance("player1") #---[FLAG] may have to change this for multiplayer
 	if (!rolled and player1.bet > 0):
