@@ -284,7 +284,7 @@ func instance_place(x,y,obj: String, comparison_object: GMObject) -> GMObject: #
 	var position_with_offset = Vector2(x + offset.x, y + offset.y)
 	var size_with_scale: Vector2 = Vector2(position_with_offset.x + comparison_object_collision_shape_size.x, position_with_offset.y + comparison_object_collision_shape_size.y)
 
-	return collision_rectangle(position_with_offset.x, position_with_offset.y, size_with_scale.x, size_with_scale.y, obj, 0, true, comparison_object)
+	return collision_rectangle(position_with_offset.x, position_with_offset.y, size_with_scale.x - 1, size_with_scale.y - 1, obj, 0, true, comparison_object) #--- have to subtract 1 from size as collision_rectangle is expecting points to be passed in
 
 func instance_position(x, y, obj: String) -> GMObject: #---[FLAG] this needs checked
 	var intersecting = collision_point(x, y, obj, 0, 0)
@@ -306,12 +306,7 @@ func instance_destroy(obj: GMObject) -> void: #'Destroys current instance' ---  
 		obj.queue_free()
 
 func collision_rectangle(x1:float,y1:float,x2:float,y2:float,obj,_prec,notme: bool, calling_object: GMObject = null) -> GMObject: #"This function tests whether there is a collision between the (filled) rectangle with the indicated opposite corners and entities of object obj. For example, you can use this to test whether an area is free of obstacles."
-	if x1 - x2 == 0:
-		x2 += 1
-	elif y1 - y2 == 0:
-		y2 += 1
-	
-	return custom_collision.group_collision_query(Rect2(x1, y1, abs(x2 - x1), abs(y2 - y1)), obj, calling_object, notme)
+	return custom_collision.group_collision_query(Rect2(x1, y1, abs(x2 - x1) + 1, abs(y2 - y1) + 1), obj, calling_object, notme)
 	
 func check_notme(notme, collided_object, calling_object) -> bool:
 	if notme:
@@ -367,12 +362,7 @@ func instance_number(obj: String) -> int:
 	return number_of_instances
 
 func collision_line(x1:int,y1:int,x2:int,y2:int,obj,_prec,notme,calling_object: GMObject = null) -> GMObject:
-	if x1 - x2 == 0:
-		x2 += 1
-	elif y1 - y2 == 0:
-		y2 += 1
-	
-	return custom_collision.group_collision_query(Rect2(x1, y1, abs(x2 - x1), abs(y2 - y1)), obj, calling_object, notme)
+	return custom_collision.group_collision_query(Rect2(x1, y1, abs(x2 - x1) + 1, abs(y2 - y1) + 1), obj, calling_object, notme)
 
 func instance_activate_object(obj: String) -> void:
 	pass
