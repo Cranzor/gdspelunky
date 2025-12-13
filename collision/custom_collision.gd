@@ -41,23 +41,34 @@ func get_object_rect(object: GMObject) -> Rect2:
 		var origin = sprites.sprite_database[default_animation]["origin"]
 		var size = sprites.sprite_database[default_animation]["mask"]["bounding_box"][1]
 		var pos: Vector2 = object.position - origin #--- was using collision_shape's global position, but can't rely on this for things that spawn in instantly (like explosion)
-		
 		var returned_rect: Rect2 = Rect2(pos, size)
-		if object.object_name == "arrow_trap_test": #--- making an exception for arrow_trap_test due to how its image_xscale value affects its collision size
-			var alt_pos = object.position
-			var alt_size = Vector2(16 * object.image_xscale, 16)
-			returned_rect = Rect2(alt_pos, alt_size)
-		elif object.object_name == "lake":
-			var alt_size = object.size
-			returned_rect = Rect2(object.position, alt_size)
-		elif object.object_name == "arrow":
-			var alt_pos = object.position + Vector2(0, 3)
-			var alt_size = Vector2(8, 5)
-			returned_rect = Rect2(alt_pos, alt_size)
-			
+		returned_rect = get_object_rect_exception(object, returned_rect)
 		rect = returned_rect
 		return returned_rect
 	return Rect2(0, 0, 0, 0)
+
+
+func get_object_rect_exception(object: GMObject, object_rect: Rect2) -> Rect2:
+	var object_name = object.object_name
+	var exceptions: PackedStringArray = ["arrow_trap_test", "lake", "arrow", "spears_left"]
+	if object_name not in exceptions: return object_rect
+	else:
+		if object_name == "arrow_trap_test": #--- making an exception for arrow_trap_test due to how its image_xscale value affects its collision size
+			var alt_pos = object.position
+			var alt_size = Vector2(16 * object.image_xscale, 16)
+			object_rect = Rect2(alt_pos, alt_size)
+		elif object_name == "lake":
+			var alt_size = object.size
+			object_rect = Rect2(object.position, alt_size)
+		elif object_name == "arrow": #--- quick fix until collision system is updated
+			var alt_pos = object.position + Vector2(0, 3)
+			var alt_size = Vector2(8, 5)
+			object_rect = Rect2(alt_pos, alt_size)
+		elif object_name == "spears_left": #--- quick fix until collision system is updated
+			var alt_pos = object.position + Vector2(7, 0)
+			var alt_size = Vector2(9, 15)
+			object_rect = Rect2(alt_pos, alt_size)
+		return object_rect
 
 
 func find_objects_in_grid_cells(cells: PackedVector2Array) -> Array[GMObject]:
