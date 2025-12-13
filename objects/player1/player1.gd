@@ -298,6 +298,7 @@ func step() -> void: # one of seven scripts which uses 'other' outside of collis
 
 	end_step()
 
+
 func step_function_1() -> void:
 	prevent_player_death()
 	cap_hud_values()
@@ -4297,6 +4298,10 @@ func character_draw_event() -> void:
 	#This event should be placed in the draw event of the platform character.
 	#*/
 	#draws the sprite
+	
+	if (state == HANGING): #--- putting this piece of code from character_sprite() here fixes drawing issue with this sprite
+		sprite_index = 'hang_left'
+	
 	var draw = true
 	if (facing == RIGHT): image_xscale = -1
 	else: image_xscale = 1
@@ -4388,6 +4393,7 @@ func animation_end() -> void:
 
 		position.y = position.y + 16
 		gml.move_snap(1, 8, self)
+		reset_interpolation_this_frame = true
 		x_vel = 0
 		y_vel = 0
 		x_acc = 0
