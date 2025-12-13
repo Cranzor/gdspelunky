@@ -6,6 +6,9 @@ func _ready():
 
 
 #--- Object functions
+var item: String
+var enemy: int = 0
+enum enemy_type {SPIDER = 1, SNAKE = 2}
 
 
 func collision_with_bullet():
@@ -39,6 +42,7 @@ func collision_with_whip():
 func create():
 	# action_inherited
 	super()
+	set_item() #--- adding this here
 
 	# main_code
 	type = "jar"
@@ -65,19 +69,26 @@ func destroy():
 			if (col_top): piece.y_vel = gml.rand(0,3)
 			else: piece.y_vel = -gml.rand(0,3)
 	
-	
-		if (gml.rand(1,3) == 1): gml.instance_create(position.x, position.y, Objects.gold_chunk, self)
-		elif (gml.rand(1,6) == 1): gml.instance_create(position.x, position.y, Objects.gold_nugget, self)
-		elif (gml.rand(1,12) == 1): gml.instance_create(position.x, position.y, Objects.emerald_big, self)
-		elif (gml.rand(1,12) == 1): gml.instance_create(position.x, position.y, Objects.sapphire_big, self)
-		elif (gml.rand(1,12) == 1): gml.instance_create(position.x, position.y, Objects.ruby_big, self)
-		elif (gml.rand(1,6) == 1): gml.instance_create(position.x-8, position.y-8, Objects.spider, self)
-		elif (gml.rand(1,12) == 1):
-	
-			if (col_left): gml.instance_create(position.x, position.y-8, Objects.snake, self)
-			elif (col_right): gml.instance_create(position.x-16, position.y-8, Objects.snake, self)
-			else: gml.instance_create(position.x-8, position.y-8, Objects.snake, self)
-	
+		#--- commenting the below lines out because jar has been adjusted to generate its item when created
+		#if (gml.rand(1,3) == 1): gml.instance_create(position.x, position.y, Objects.gold_chunk, self)
+		#elif (gml.rand(1,6) == 1): gml.instance_create(position.x, position.y, Objects.gold_nugget, self)
+		#elif (gml.rand(1,12) == 1): gml.instance_create(position.x, position.y, Objects.emerald_big, self)
+		#elif (gml.rand(1,12) == 1): gml.instance_create(position.x, position.y, Objects.sapphire_big, self)
+		#elif (gml.rand(1,12) == 1): gml.instance_create(position.x, position.y, Objects.ruby_big, self)
+		#elif (gml.rand(1,6) == 1): gml.instance_create(position.x-8, position.y-8, Objects.spider, self)
+		#elif (gml.rand(1,12) == 1):
+	#
+			#if (col_left): gml.instance_create(position.x, position.y-8, Objects.snake, self)
+			#elif (col_right): gml.instance_create(position.x-16, position.y-8, Objects.snake, self)
+			#else: gml.instance_create(position.x-8, position.y-8, Objects.snake, self)
+			
+		if item: gml.instance_create(position.x, position.y, item, self)
+		elif enemy:
+			if enemy == enemy_type.SPIDER: gml.instance_create(position.x-8, position.y-8, Objects.spider, self)
+			elif enemy == enemy_type.SNAKE:
+				if (col_left): gml.instance_create(position.x, position.y-8, Objects.snake, self)
+				elif (col_right): gml.instance_create(position.x-16, position.y-8, Objects.snake, self)
+				else: gml.instance_create(position.x-8, position.y-8, Objects.snake, self)
 	
 		if (held):
 			var player1 = gml.get_instance("player1") #---[FLAG] may need to change this for multiplayer
@@ -267,3 +278,14 @@ func step():
 			player1.pickup_item_type = ""
 	
 		gml.instance_destroy(self)
+
+
+#--- adding this to generate item upon creation. this allows for consistent items when using seeds
+func set_item() -> void:
+	if (gml.rand(1,3) == 1): item = Objects.gold_chunk
+	elif (gml.rand(1,6) == 1): item = Objects.gold_nugget
+	elif (gml.rand(1,12) == 1): item = Objects.emerald_big
+	elif (gml.rand(1,12) == 1): item = Objects.sapphire_big
+	elif (gml.rand(1,12) == 1): item = Objects.ruby_big
+	elif (gml.rand(1,6) == 1): enemy = enemy_type.SPIDER
+	elif (gml.rand(1,12) == 1): enemy = enemy_type.SNAKE
