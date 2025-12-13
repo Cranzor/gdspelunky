@@ -50,6 +50,11 @@ func get_object_rect(object: GMObject) -> Rect2:
 		elif object.object_name == "lake":
 			var alt_size = object.size
 			returned_rect = Rect2(object.position, alt_size)
+		elif object.object_name == "arrow":
+			var alt_pos = object.position + Vector2(0, 3)
+			var alt_size = Vector2(8, 5)
+			returned_rect = Rect2(alt_pos, alt_size)
+			
 		rect = returned_rect
 		return returned_rect
 	return Rect2(0, 0, 0, 0)
