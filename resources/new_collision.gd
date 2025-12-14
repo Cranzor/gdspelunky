@@ -44,13 +44,14 @@ func check_inner_box_for_collision_with_group(passed_object: GMObject, group: St
 	var potential_objs: Array[GMObject]
 	var bb_objects: Array = passed_object.objects_in_bb.duplicate()
 
-	for comparison_obj: GMObject in bb_objects:
-		var groups: Array = comparison_obj.get_groups()
-		if groups.has(group):
-			var self_collision: Rect2 = get_object_collision_shape_rect(passed_object)
-			var other_collision: Rect2 = get_object_collision_shape_rect(comparison_obj)
-			if self_collision.intersects(other_collision):
-				potential_objs.append(comparison_obj)
+	for comparison_obj in bb_objects:
+		if comparison_obj:
+			var groups: Array = comparison_obj.get_groups()
+			if groups.has(group):
+				var self_collision: Rect2 = get_object_collision_shape_rect(passed_object)
+				var other_collision: Rect2 = get_object_collision_shape_rect(comparison_obj)
+				if self_collision.intersects(other_collision):
+					potential_objs.append(comparison_obj)
 	if !potential_objs.is_empty():
 		return potential_objs
 	return []

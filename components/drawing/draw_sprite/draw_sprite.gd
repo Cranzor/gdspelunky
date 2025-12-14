@@ -35,7 +35,8 @@ static func draw_sprite_ext(passed_sprite: String, subimg: int, x: int, y: int, 
 	#--- set object to reset interpolation if distance moved is larger than 10 pixels
 	if abs(before_updated_global_position.x-animated_sprite.global_position.x) > 10 or abs(before_updated_global_position.y-animated_sprite.global_position.y) > 10:
 		#--- adding one exception for rope_end as it looks jittery. could make a larger system change if there are more objects with the same issue
-		if passed_sprite!= "rope_end": animated_sprite.get_parent().reset_interpolation_this_frame = true
+		var exceptions: PackedStringArray = ["rope_end", "arrow_left", "arrow_right"]
+		if passed_sprite not in exceptions: animated_sprite.get_parent().reset_interpolation_this_frame = true
 
 
 func get_sprite_offset(sprite_name: String) -> Vector2:

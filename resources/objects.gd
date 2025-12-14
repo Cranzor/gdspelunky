@@ -5555,7 +5555,7 @@ const object_database = {
 		"parent" : null,
 		"mask" : null,
 		"groups" : ['bat_target'],
-		"static" : true,
+		"static" : false,
 		"events" : ['collision_with_arrow', 'collision_with_character', 'create', 'step'],
 		"folder_path" : "res://objects/other/title/bat_target/bat_target.tscn",
 		},
