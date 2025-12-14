@@ -163,24 +163,26 @@ func instance_create(x,y,obj,calling_object: GMObject = null,run_create = true) 
 		instance.groups_in_bb = calling_object.groups_in_bb.duplicate()
 		instance.first_time_entered = true
 	var objects_holder = get_tree().get_first_node_in_group("objects_holder")
-	if objects_holder: objects_holder.add_child(instance)
+	if objects_holder:
+		objects_holder.add_child(instance)
 	
-	#get_tree().call_group("gm_object", "force_update_transform")
-	if run_create:
-		instance.run_create_function(instance)
-		#instance.run_step_event(instance)
-	
-	instance.custom_collision.update_object_collision(instance, true)
+		#get_tree().call_group("gm_object", "force_update_transform")
+		if run_create:
+			instance.run_create_function(instance)
+			#instance.run_step_event(instance)
+		
+		instance.custom_collision.update_object_collision(instance, true)
 
-	instance.reset_interpolation_this_frame = true
-	instance.reset_interpolation()
-	
-	#for objects bigger than 16x16, get height and width of sprite texture and then add that as the size
-	
-	#getting each location of each object spawned in. note that this only applies to stationary objects
-	#set_up_object_collision(instance)
-	
-	return instance
+		instance.reset_interpolation_this_frame = true
+		instance.reset_interpolation()
+		
+		#for objects bigger than 16x16, get height and width of sprite texture and then add that as the size
+		
+		#getting each location of each object spawned in. note that this only applies to stationary objects
+		#set_up_object_collision(instance)
+		
+		return instance
+	return GMObject.new()
 	
 func collision_point(x: float,y: float,obj: String,_prec,notme,calling_object: GMObject = null) -> GMObject: #"This function tests whether at point (x,y) there is a collision with entities of object obj."
 	return custom_collision.group_collision_query(Rect2(x, y, 1, 1), obj, calling_object, false)
