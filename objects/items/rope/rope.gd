@@ -20,7 +20,7 @@ func step():
 	
 	if (gml.collision_point(position.x+12, position.y, "lava", 0, 0) and burn_timer == 0):
 
-		gml.instance_create(position.x+8, position.y, "rope_burn", self)
+		gml.instance_create(position.x+8, position.y, Objects.rope_burn, self)
 
 
 	if (burn_timer > 1): burn_timer -= 1
