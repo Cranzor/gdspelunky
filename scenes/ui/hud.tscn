@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=3 uid="uid://dfkrem72v8ms8"]
+[gd_scene load_steps=82 format=3 uid="uid://dfkrem72v8ms8"]
 
 [ext_resource type="Texture2D" uid="uid://xajjg6rysmmk" path="res://sprites/hud/heart/heart_0.png" id="1_kp442"]
 [ext_resource type="Script" uid="uid://clfaomwucanks" path="res://scenes/ui/hud.gd" id="1_o1o2r"]
@@ -74,6 +74,7 @@
 [ext_resource type="PackedScene" uid="uid://bctkguili8lu6" path="res://components/drawing/draw_rectangle/draw_rectangle.tscn" id="72_4hsw7"]
 [ext_resource type="Script" uid="uid://c2a645i3pc7il" path="res://scenes/ui/title_fade_in.gd" id="72_tj8l3"]
 [ext_resource type="PackedScene" uid="uid://dc1rbppknrh43" path="res://scenes/ui/new_menu/new_pause_menu.tscn" id="74_jhjt4"]
+[ext_resource type="Script" uid="uid://bg86313g120sw" path="res://scenes/ui/game_over_screen.gd" id="74_ktl73"]
 [ext_resource type="PackedScene" uid="uid://b8sip2nv63phc" path="res://scenes/ui/fps_counter.tscn" id="75_vpao8"]
 [ext_resource type="Theme" uid="uid://slghfexedlyr" path="res://scenes/small_font.tres" id="76_078bl"]
 
@@ -560,6 +561,12 @@ text_centered = true
 
 [node name="DrawRectangle" parent="TitleFadeIn" instance=ExtResource("72_4hsw7")]
 color = Color(0, 0, 0, 1)
+
+[node name="GameOverScreen" type="Node2D" parent="."]
+script = ExtResource("74_ktl73")
+
+[node name="DrawText" parent="GameOverScreen" instance=ExtResource("70_ep55p")]
+text_centered = true
 
 [node name="NewPauseMenu" parent="." instance=ExtResource("74_jhjt4")]
 visible = false

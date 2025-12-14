@@ -163,7 +163,7 @@ func instance_create(x,y,obj,calling_object: GMObject = null,run_create = true) 
 		instance.groups_in_bb = calling_object.groups_in_bb.duplicate()
 		instance.first_time_entered = true
 	var objects_holder = get_tree().get_first_node_in_group("objects_holder")
-	objects_holder.add_child(instance)
+	if objects_holder: objects_holder.add_child(instance)
 	
 	#get_tree().call_group("gm_object", "force_update_transform")
 	if run_create:

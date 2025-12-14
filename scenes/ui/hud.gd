@@ -13,6 +13,7 @@ extends CanvasLayer
 @onready var new_pause_menu: Control = $NewPauseMenu
 @onready var pause_handling: PauseHandling = load("res://scenes/ui/pause_handling.gd").new()
 @onready var fps_counter: Label = $FpsCounter
+@onready var game_over_screen: Node2D = $GameOverScreen
 
 #--- change this to update in gm_loop
 func _physics_process(delta: float) -> void:
@@ -45,6 +46,7 @@ func _physics_process(delta: float) -> void:
 	draw_compass_arrow()
 	draw_hud_text()
 	draw_global_message_text()
+	game_over_screen.draw_game_over_screen()
 
 
 func _ready() -> void:
