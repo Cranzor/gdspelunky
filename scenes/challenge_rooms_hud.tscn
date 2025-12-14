@@ -42,3 +42,6 @@ texture = ExtResource("5_4cyai")
 centered = false
 
 [node name="DrawText" parent="." instance=ExtResource("7_eiigu")]
+
+[node name="StartMessage" parent="." instance=ExtResource("7_eiigu")]
+text_centered = true

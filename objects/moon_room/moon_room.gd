@@ -6,8 +6,9 @@ func _ready():
 
 
 #--- Object functions
-var baskets
+var baskets: int
 @onready var draw_text = $BonusRoomsHUD/DrawText
+@onready var start_message = $BonusRoomsHUD/StartMessage
 
 
 func alarm_0():
@@ -144,4 +145,4 @@ func draw():
 		var str_len = gml.string_length("ARCHERY CHALLENGE BEGINS IN 3...")*8
 		var n = 320 - str_len
 		n = ceil(n / 2)
-		draw_text.draw_text(n, 216, "ARCHERY CHALLENGE BEGINS IN " + str(3-draw_status) + "...", "archery_challenge_message")
+		start_message.draw_text(n, 216, "ARCHERY CHALLENGE BEGINS IN " + str(3-draw_status) + "...", "archery_challenge_message")

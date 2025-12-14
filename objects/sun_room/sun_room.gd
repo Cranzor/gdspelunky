@@ -8,6 +8,7 @@ func _ready():
 #--- Object functions
 var points
 @onready var draw_text = $BonusRoomsHUD/DrawText
+@onready var start_message = $BonusRoomsHUD/StartMessage
 
 
 func alarm_0():
@@ -114,17 +115,17 @@ func draw():
 	gml.draw_set_font(global.my_font)
 	gml.draw_set_color(gml.c_white)
 	gml.draw_sprite("heart", -1, gml.view("xview")+8, gml.view("yview")+8, self)
-	draw_text.draw_text(gml.view("xview")+24, gml.view("yview")+8, str(life), "life")
+	draw_text.draw_text(gml.view("xview")+24, gml.view("yview")+8, str(int(life)), "life")
 	gml.draw_sprite("damsel_icon", -1, gml.view("xview")+64, gml.view("yview")+8, self)
 	draw_text.draw_text(gml.view("xview")+64+16, gml.view("yview")+8, str(points), "points")
 	if (draw_status < 3):
 
 		gml.draw_set_font(global.my_font_small)
-		gml.draw_set_color("c_yellow")
+		gml.draw_set_color(gml.c_yellow)
 		var str_len = gml.string_length("DAMSEL CHALLENGE BEGINS IN 3...")*8
 		var n = 320 - str_len
 		n = ceil(n / 2)
-		draw_text.draw_text(n, 216, "DAMSEL CHALLENGE BEGINS IN " + str(3-draw_status) + "...", "damsel_challenge_message")
+		start_message.draw_text(n, 216, "DAMSEL CHALLENGE BEGINS IN " + str(3-draw_status) + "...", "damsel_challenge_message")
 
 
 func step():
