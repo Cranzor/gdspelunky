@@ -5,7 +5,7 @@ static var default_setting_values: Dictionary = {
 	#--- graphics
 	"window_scale" : 5,
 	"high_detail" : true,
-	"vsync" : false,
+	"vsync" : true,
 	"fullscreen" : true,
 	"frame_rate" : 0,
 	"show_fps" : false,
