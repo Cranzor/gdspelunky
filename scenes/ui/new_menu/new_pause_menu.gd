@@ -28,8 +28,7 @@ var room: StringName
 func _ready() -> void:
 	SignalBus.connect("menu_screen_change_requested", _handle_menu_screen_change)
 	room = gml.room_get_name()
-	if room == "title" or room == "highscores":
-		end_adventure.hide()
+	end_adventure.hide()
 	exit_game.connect("pressed", _exit_game_pressed)
 
 
@@ -75,6 +74,7 @@ func _handle_menu_screen_change(requesting_screen, next_screen, set_prev_screen:
 
 
 func update_game_status_text() -> void:
+	if InLevel.is_level(): end_adventure.show() #--- only shows "end adventure" option when in a level
 	var status_lines: Array[Label] = [money, kills, saves, level, depth, time]
 	
 	var player1 = gml.get_instance("player1")
