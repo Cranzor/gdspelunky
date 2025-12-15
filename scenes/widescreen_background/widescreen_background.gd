@@ -25,6 +25,7 @@ var default_region_size = Vector2(320, 240)
 func _ready() -> void:
 	var room_name: String = gml.room_get_name()
 	set_up_background(room_name)
+	set_sky_background(room_name)
 
 
 func set_up_background(room_name: StringName) -> void:
@@ -43,6 +44,27 @@ func set_up_background(room_name: StringName) -> void:
 		composite_texture = generate_texture(level_textures[1])
 		background2.texture = composite_texture
 		set_size(2, room_name, true)
+
+
+func set_sky_background(room_name: StringName):
+	var sky_rooms: PackedStringArray = ["end2", "end3", "credits2"]
+	if room_name in sky_rooms: $Background1.texture = load("res://scenes/widescreen_background/sky-widescreen-background.png")
+	if room_name == "end2":
+		$Background1.position.y += 40
+		var color_rect = ColorRect.new()
+		color_rect.color = Color(0.239, 0.518, 0.82, 1.0)
+		color_rect.position = $Background1.offset
+		color_rect.size = $Background1.region_rect.size
+		color_rect.size.y = 40
+		color_rect.z_index = $Background1.z_index
+		add_child(color_rect)
+	if room_name == "credits1":
+		var color_rect = ColorRect.new()
+		color_rect.color = Color(0.0, 0.0, 0.251, 1.0)
+		color_rect.position = $Background1.offset
+		color_rect.size = $Background1.region_rect.size
+		color_rect.z_index = $Background1.z_index
+		add_child(color_rect)
 
 
 func generate_texture(textures_to_use: Array[Texture2D]):

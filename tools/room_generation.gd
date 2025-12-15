@@ -93,6 +93,7 @@ func set_up_background() -> void:
 		texture = load(image_path)
 		background_node.texture = texture
 		background_node.size = level_boundaries
+	else: background_node.hide()
 
 
 func set_up_tiles() -> void:

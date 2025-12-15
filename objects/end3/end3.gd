@@ -130,7 +130,8 @@ func draw():
 
 		gml.draw_set_color(gml.c_black)
 		gml.draw_set_alpha(fade_level)
-		draw_rectangle.draw_rectangle(0, 0, 320, 240, false)
+		#draw_rectangle.draw_rectangle(0, 0, 320, 240, false)
+		draw_rectangle.draw_rectangle(-640, 0, 640, 240, false) #--- TODO: this is a quick fix to make sure the screen is covered in widescreen. should implement a better solution
 		gml.draw_set_alpha(1)
 
 
