@@ -733,7 +733,7 @@ func step():
 		
 				if (InLevel.is_room("stars")):
 			
-					var stars_room = gml.get_instance("star_rooms")
+					var stars_room = gml.get_instance("stars_room")
 					if (stars_room.kills < 99): stars_room.kills += 1
 			
 				else:

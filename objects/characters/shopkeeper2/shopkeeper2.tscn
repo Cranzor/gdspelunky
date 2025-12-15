@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://btgrk00uxc5wa" path="res://objects/characters/shopkeeper2/shopkeeper2.gd" id="1_t3s5w"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_nqjhq"]
+[ext_resource type="PackedScene" uid="uid://bmcojkm0edrdr" path="res://scenes/shotgun_draw.tscn" id="2_pcv3y"]
 [ext_resource type="Texture2D" uid="uid://dm61um76ttk6l" path="res://sprites/enemies/shopkeeper/shop_left/shop_left_0.png" id="3_pcv3y"]
 [ext_resource type="Texture2D" uid="uid://dyrnewh47fhyb" path="res://sprites/enemies/shopkeeper/shop_left/shop_left_shopkeeper.png" id="4_mcdsi"]
-[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="5_pfybu"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="6_yy0lu"]
 [ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="7_pcv3y"]
 
@@ -39,11 +39,11 @@ script = ExtResource("1_t3s5w")
 animated_sprite_node = NodePath("Sprite")
 object_name = "shopkeeper2"
 
-[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_nqjhq")]
+[node name="ShotgunDraw" parent="." instance=ExtResource("2_pcv3y")]
+
+[node name="Sprite" parent="." instance=ExtResource("2_nqjhq")]
 sprite_frames = SubResource("SpriteFrames_pcv3y")
 autoplay = "shop_left"
-centered = false
-script = ExtResource("5_pfybu")
 sprite_info = Dictionary[StringName, ExtResource("6_yy0lu")]({
 &"shop_left": SubResource("Resource_mcdsi")
 })
@@ -62,4 +62,4 @@ position = Vector2(8, 8.5)
 shape = SubResource("RectangleShape2D_yy0lu")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
-[node name="SmoothMotion" type="Node" parent="." instance=ExtResource("7_pcv3y")]
+[node name="SmoothMotion" parent="." instance=ExtResource("7_pcv3y")]

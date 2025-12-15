@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmcojkm0edrdr"]
+
+[ext_resource type="Texture2D" uid="uid://b71ml0xtb78ct" path="res://sprites/items/weapons/shotgun_left/shotgun_left_0.png" id="1_8nrs1"]
+[ext_resource type="Texture2D" uid="uid://c0adx0lcg4d0c" path="res://sprites/items/weapons/shotgun_right/shotgun_right_0.png" id="2_odwcs"]
+[ext_resource type="Script" uid="uid://d1v64vt58kawp" path="res://components/drawing/draw_sprite/draw_sprite.gd" id="3_jpbkb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ihds6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8nrs1")
+}],
+"loop": true,
+"name": &"shotgun_left",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_odwcs")
+}],
+"loop": true,
+"name": &"shotgun_right",
+"speed": 30.0
+}]
+
+[node name="ShotgunDraw" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_ihds6")
+animation = &"shotgun_left"
+script = ExtResource("3_jpbkb")
+hide_at_start_of_frame = true
+metadata/_custom_type_script = "uid://d1v64vt58kawp"
