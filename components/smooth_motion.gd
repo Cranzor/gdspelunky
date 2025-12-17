@@ -11,6 +11,7 @@ var waiting_for_reset: bool = false
 var fixed_delta: float = 0.0333333333
 var tween: Tween
 static var paused: bool = false
+@export var alt_remote_path: NodePath
 
 
 func _ready() -> void:
@@ -26,7 +27,7 @@ func _ready() -> void:
 func update_sprite_during_tick() -> void: #--- called in gm_loop once per tick
 	if tween: tween.kill()
 	if GameSettings.smooth_motion:
-		if parent.get_node("Sprite").scale.x == -1:
+		if sprite.scale.x == -1:
 			scale.x = -1
 		else:
 			if parent.object_name != "arrow_trap_test":
@@ -52,6 +53,7 @@ func start_sprite_movement_tween() -> void:
 
 func set_sprite():
 	remote_path = "../../Sprite"
+	if alt_remote_path: remote_path = alt_remote_path
 	sprite = get_node(remote_path)
 
 
