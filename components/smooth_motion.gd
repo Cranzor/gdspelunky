@@ -47,7 +47,7 @@ func update_sprite_during_tick() -> void: #--- called in gm_loop once per tick
 
 func start_sprite_movement_tween() -> void:
 	tween = create_tween()
-	tween.tween_property(self, "position", current_pos + abs(current_pos - sprite.global_position), fixed_delta)
+	tween.tween_property(self, "position", current_pos, fixed_delta)
 
 
 func set_sprite():

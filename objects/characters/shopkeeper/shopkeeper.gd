@@ -230,8 +230,8 @@ func draw():
 	shotgun_draw.hide() #--- hiding here so that it doesn't display while shopkeeper is stunned
 	if (has_gun and status != IDLE and status != FOLLOW):
 
-		if (facing == LEFT): shotgun_draw.draw_sprite_ext("shotgun_left", 0, position.x+6, position.y+10, 1, 1, 0, gml.c_white, 1, shotgun_draw) #---TODO: update these
-		else: shotgun_draw.draw_sprite_ext("shotgun_right", 0, position.x+10, position.y+10, 1, 1, 0, gml.c_white, 1, shotgun_draw)
+		if (facing == LEFT): shotgun_draw.draw_sprite_ext("shotgun_left", 0, position.x+6-16, position.y+10+4, 1, 1, 0, gml.c_white, 1, shotgun_draw) #---TODO: added numbers to make this display correctly. check original code for actual values
+		else: shotgun_draw.draw_sprite_ext("shotgun_right", 0, position.x+10-32, position.y+10+4, 1, 1, 0, gml.c_white, 1, shotgun_draw)
 
 
 func step():

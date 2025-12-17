@@ -39,15 +39,16 @@ script = ExtResource("1_t3s5w")
 animated_sprite_node = NodePath("Sprite")
 object_name = "shopkeeper2"
 
-[node name="ShotgunDraw" parent="." instance=ExtResource("2_pcv3y")]
-
 [node name="Sprite" parent="." instance=ExtResource("2_nqjhq")]
 sprite_frames = SubResource("SpriteFrames_pcv3y")
+animation = &"shotgun_left"
 autoplay = "shop_left"
 sprite_info = Dictionary[StringName, ExtResource("6_yy0lu")]({
 &"shop_left": SubResource("Resource_mcdsi")
 })
 default_animation = &"shop_left"
+
+[node name="ShotgunDraw" parent="." instance=ExtResource("2_pcv3y")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, 8.5)
