@@ -4298,10 +4298,6 @@ func character_draw_event() -> void:
 	#This event should be placed in the draw event of the platform character.
 	#*/
 	#draws the sprite
-	
-	if (state == HANGING): #--- putting this piece of code from character_sprite() here fixes drawing issue with this sprite
-		sprite_index = 'hang_left'
-	
 	var draw = true
 	if (facing == RIGHT): image_xscale = -1
 	else: image_xscale = 1
@@ -4420,12 +4416,15 @@ func animation_end() -> void:
 			facing = RIGHT
 			position.x = position.x- 6
 			position.x += 1
+			sprite_index = "hang_left" #--- adding this here fixes visual issue
+			
 		
 		else:
 		
 			state = HANGING
 			facing = LEFT
 			position.x = position.x + 6
+			sprite_index = "hang_left" #--- adding this here fixes visual issue
 		
 
 	elif (sprite_index == "p_exit" or sprite_index == "damsel_exit" or sprite_index == "tunnel_exit"):
