@@ -63,7 +63,7 @@ func draw():
 
 		DrawSprite.draw_sprite_ext(sprite_index, -1, position.x, position.y, image_xscale, image_yscale, image_angle, image_blend, image_alpha, animated_sprite_node)
 		#gml.draw_sprite("jetpack_back",-1,position.x,position.y, self) #--- commenting out draw_sprite to use DrawSprite class
-		jetpack_draw.draw_sprite(Vector2(0, 0), "jetpack_back")
+		jetpack_draw.draw_sprite(Vector2(0, 0), "jetpack_back", 0, 1)
 
 	elif (sprite_index == "p_exit" or sprite_index == "damsel_exit" or sprite_index == "tunnel_exit"):
 
