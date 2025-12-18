@@ -656,5 +656,132 @@ func scr_check_collisions(node):
 		if (abs(node.x_vel) < 0.1): node.x_vel = 0
 		elif (abs(node.x_vel) != 0): node.x_vel *= 0.3
 
-func scr_get_favor_msg():
-	pass
+func scr_get_favor_msg(calling_object: GMObject):
+	# DY: 
+	# DY:  scr_get_favor_msg()
+	# DY: 
+	# DY:  Display appropriate message (and give gift) after player sacrifices to Kali.
+	# DY: 
+
+	#/**********************************************************************************
+		#Copyright (c) 2008, 2009 Derek Yu and Mossmouth, LLC
+		#
+		#This file is part of Spelunky.
+#
+		#You can redistribute and/or modify Spelunky, including its source code, under
+		#the terms of the Spelunky User License.
+#
+		#Spelunky is distributed in the hope that it will be entertaining and useful,
+		#but WITHOUT WARRANTY.  Please see the Spelunky User License for more details.
+#
+		#The Spelunky User License should be available in "Game Information", which
+		#can be found in the Resource Explorer, or as an external file called COPYING.
+		#If not, please obtain a new copy of Spelunky from <http://spelunkyworld.com/>
+		#
+	#***********************************************************************************/
+	var obj
+	if (global.favor <= -8): global.message2 = "SHE SEEMS VERY ANGRY WITH YOU!"
+	elif (global.favor < 0): global.message2 = "SHE SEEMS ANGRY WITH YOU."
+	elif (global.favor == 0): global.message2 = "SHE HAS FORGIVEN YOU!"
+	elif (global.favor >= 32):
+
+		if (global.kali_gift >= 3 and global.favor >= 32 + (global.kali_gift-2)*16):
+		
+			global.message2 = "YOU FEEL INVIGORATED!"
+			global.kali_gift += 1
+			global.plife += gml.rand(4,8)
+		
+		elif (global.kali_gift >= 3):
+		
+			global.message2 = "SHE SEEMS ECSTATIC WITH YOU!"
+		
+		elif (global.bombs < 80):
+		
+			global.message2 = "YOUR SATCHEL FEELS VERY FULL NOW!"
+			global.kali_gift = 3
+			global.bombs = 99
+		
+		else:
+		
+			global.message2 = "YOU FEEL INVIGORATED!"
+			global.kali_gift += 1
+			global.plife += gml.rand(4,8)
+		
+
+	elif (global.favor >= 16):
+
+		if (global.kali_gift >= 2):
+		
+			global.message2 = "SHE SEEMS VERY HAPPY WITH YOU!"
+		
+		else:
+		
+			global.message2 = "SHE BESTOWS A GIFT UPON YOU!"
+			global.kali_gift = 2
+			var sac_altar_right = gml.get_instance("sac_altar_right")
+			obj = gml.instance_create(sac_altar_right.position.x, calling_object.position.y-8, Objects.kapala)
+			obj.cost = 0
+			obj.for_sale = false
+		
+
+	elif (global.favor >= 8):
+
+		if (global.kali_gift >= 1):
+		
+			global.message2 = "SHE SEEMS HAPPY WITH YOU."
+		
+		else:
+		
+			global.message2 = "SHE BESTOWS A GIFT UPON YOU!"
+			global.kali_gift = 1
+			if (gml.instance_exists("sac_altar_right")):
+				var sac_altar_right = gml.get_instance("sac_altar_right")
+				obj = gml.instance_create(sac_altar_right.position.x, calling_object.position.y-8, Objects.poof)
+				obj.x_vel = -1
+				obj.y_vel = 0
+				obj = gml.instance_create(sac_altar_right.position.x, calling_object.position.y-8, Objects.poof)
+				obj.x_vel = 1
+				obj.y_vel = 0
+				var n = gml.rand(1,8)
+				var m = n
+				while (true):
+				
+					if (n == 1 and not global.has_cape and not global.has_jetpack):
+						obj = gml.instance_create(sac_altar_right.position.x, calling_object.position.y-8, Objects.cape_pickup)
+						break 
+					elif (n == 2 and not global.has_gloves):
+						obj = gml.instance_create(sac_altar_right.position.x, calling_object.position.y-8, Objects.gloves)
+						break 
+					elif (n == 3 and not global.has_spectacles):
+						obj = gml.instance_create(sac_altar_right.position.x, calling_object.position.y-8, Objects.spectacles)
+						break 
+					elif (n == 4 and not global.has_mitt):
+						obj = gml.instance_create(sac_altar_right.position.x, calling_object.position.y-8, Objects.mitt)
+						break 
+					elif (n == 5 and not global.has_spring_shoes):
+						obj = gml.instance_create(sac_altar_right.position.x, calling_object.position.y-8, Objects.spring_shoes)
+						break 
+					elif (n == 6 and not global.has_spike_shoes):
+						obj = gml.instance_create(sac_altar_right.position.x, calling_object.position.y-8, Objects.spike_shoes)
+						break 
+					elif (n == 7 and not global.has_sticky_bombs):
+						obj = gml.instance_create(sac_altar_right.position.x, calling_object.position.y-8, Objects.paste)
+						break 
+					elif (n == 8 and not global.has_compass):
+						obj = gml.instance_create(sac_altar_right.position.x, calling_object.position.y-8, Objects.compass)
+						break 
+					n += 1
+					if (n > 8): n = 1
+					if (n == m):
+					
+						if (not global.has_jetpack): obj = gml.instance_create(sac_altar_right.position.x, calling_object.position.y-8, Objects.jetpack)
+						else: obj = gml.instance_create(sac_altar_right.position.x, calling_object.position.y-8, Objects.bomb_box)
+						break
+					
+				
+				obj.cost = 0
+				obj.for_sale = false
+			
+		
+
+	elif (global.favor > 0): global.message2 = "SHE SEEMS PLEASED WITH YOU."

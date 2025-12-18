@@ -492,7 +492,7 @@ func step(): # one of seven scripts which uses 'other' outside of collision_with
 						if (status == 98): global.favor += favor*1.5
 						else: global.favor += favor
 				
-					MiscScripts.scr_get_favor_msg()
+					MiscScripts.scr_get_favor_msg(self)
 					global.message_timer = 200
 					global.shake = 10
 					gml.instance_destroy(self)

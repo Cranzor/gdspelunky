@@ -347,7 +347,7 @@ func step():
 							if (status == 98): global.favor += favor
 							else: global.favor += favor/2
 					
-						MiscScripts.scr_get_favor_msg()
+						MiscScripts.scr_get_favor_msg(self)
 						global.message_timer = 200
 						global.shake = 10
 						gml.instance_destroy(self)
