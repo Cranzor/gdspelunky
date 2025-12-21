@@ -2918,7 +2918,7 @@ func scr_room_gen_yeti(x, y):
 		#
 		#This file is part of Spelunky.
 #
-		#You can redistribute and/or %ify Spelunky, including its source code, under
+		#You can redistribute and/or modify Spelunky, including its source code, under
 		#the terms of the Spelunky User License.
 #
 		#Spelunky is distributed in the hope that it will be entertaining and useful,
@@ -2926,7 +2926,7 @@ func scr_room_gen_yeti(x, y):
 #
 		#The Spelunky User License should be available in "Game Information", which
 		#can be found in the Resource Explorer, or as an external file called COPYING.
-		#If not, please obtain a new copy of Spelunky from <http:# DY: spelunkyworld.com/>
+		#If not, please obtain a new copy of Spelunky from <http://spelunkyworld.com/>
 		#
 	#***********************************************************************************/
 
@@ -4130,7 +4130,7 @@ func scr_room_gen4(x, y):
 		#
 		#This file is part of Spelunky.
 #
-		#You can redistribute and/or %ify Spelunky, including its source code, under
+		#You can redistribute and/or modify Spelunky, including its source code, under
 		#the terms of the Spelunky User License.
 #
 		#Spelunky is distributed in the hope that it will be entertaining and useful,
@@ -4138,7 +4138,7 @@ func scr_room_gen4(x, y):
 #
 		#The Spelunky User License should be available in "Game Information", which
 		#can be found in the Resource Explorer, or as an external file called COPYING.
-		#If not, please obtain a new copy of Spelunky from <http:# DY: spelunkyworld.com/>
+		#If not, please obtain a new copy of Spelunky from <http://spelunkyworld.com/>
 		#
 	#***********************************************************************************/
 

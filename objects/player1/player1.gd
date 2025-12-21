@@ -3916,7 +3916,7 @@ func character_sprite() -> void:
 		#
 		#This file is part of Spelunky.
 #
-		#You can redistribute and/or %ify Spelunky, including its source code, under
+		#You can redistribute and/or modify Spelunky, including its source code, under
 		#the terms of the Spelunky User License.
 #
 		#Spelunky is distributed in the hope that it will be entertaining and useful,
