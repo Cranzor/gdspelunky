@@ -128,6 +128,7 @@ func group_collision_query(checking_rect: Rect2, group: StringName, calling_obje
 	return null
 
 
+#--- not sure what this was for but it's not used anywhere
 func check_rect_sides_for_collision_with_group(object_rect: Rect2, collision_checks: Dictionary[int, PackedStringArray], candidate_objects: Array[GMObject], grow_size: int):
 	var collision_results: Dictionary
 	var left_side: Rect2 = Rect2(object_rect.position.x - grow_size, object_rect.position.y, 1, object_rect.size.y)

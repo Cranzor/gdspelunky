@@ -26,6 +26,9 @@ With this being the initial release of the project, note that there are some mis
 - Further optimization to prevent drops in performance
 - General bug and inaccuracy fixes
 
+## Documentation
+See the [Project Overview](/docs/overview.md) document to learn about the project structure.
+
 ## Download
 Visit the [itch.io page](https://cranzor.itch.io/gdspelunky) to download the latest version.
 
