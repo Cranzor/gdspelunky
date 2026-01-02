@@ -50,7 +50,7 @@ func get_object_rect(object: GMObject) -> Rect2:
 
 func get_object_rect_exception(object: GMObject, object_rect: Rect2) -> Rect2:
 	var object_name = object.object_name
-	var exceptions: PackedStringArray = ["arrow_trap_test", "lake", "arrow", "spears_left"]
+	var exceptions: PackedStringArray = ["arrow_trap_test", "lake", "arrow", "spears_left", "spikes"]
 	if object_name not in exceptions: return object_rect
 	else:
 		if object_name == "arrow_trap_test": #--- making an exception for arrow_trap_test due to how its image_xscale value affects its collision size
@@ -67,6 +67,10 @@ func get_object_rect_exception(object: GMObject, object_rect: Rect2) -> Rect2:
 		elif object_name == "spears_left": #--- quick fix until collision system is updated
 			var alt_pos = object.position + Vector2(7, 0)
 			var alt_size = Vector2(9, 15)
+			object_rect = Rect2(alt_pos, alt_size)
+		elif object_name == "spikes": #--- quick fix until collision system is updated
+			var alt_pos = object.position + Vector2(0, 3)
+			var alt_size = Vector2(16, 13)
 			object_rect = Rect2(alt_pos, alt_size)
 		return object_rect
 
