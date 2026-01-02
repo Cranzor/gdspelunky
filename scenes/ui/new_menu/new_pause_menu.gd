@@ -11,6 +11,7 @@ extends Control
 @onready var gameplay: VBoxContainer = $Gameplay
 @onready var controller_config: VBoxContainer = $ControllerConfig
 @onready var keyboard_config: VBoxContainer = $KeyboardConfig
+@onready var game_modes: VBoxContainer = $GameModes
 @onready var viewport: Viewport = get_viewport()
 @onready var arrow_left: TextureRect = %ArrowLeft
 @onready var arrow_right: TextureRect = %ArrowRight
@@ -60,6 +61,7 @@ func set_initial_pause_visibility() -> void:
 	gameplay.hide()
 	controller_config.hide()
 	keyboard_config.hide()
+	game_modes.hide()
 
 
 func _handle_menu_screen_change(requesting_screen, next_screen, set_prev_screen: bool = true) -> void:
