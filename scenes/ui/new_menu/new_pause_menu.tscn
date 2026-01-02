@@ -58,7 +58,6 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0.90000004)
 
 [node name="PauseScreen" type="VBoxContainer" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -143,6 +142,15 @@ theme = null
 text = "END ADVENTURE"
 signal_to_emit = &"end_adventure"
 
+[node name="GameModes" parent="PauseScreen/MarginContainer2/VBoxContainer" instance=ExtResource("5_04n3j")]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme = null
+text = "GAME MODES"
+next_menu_to_show = NodePath("../../../../GameModes")
+menu_to_hide = NodePath("../../..")
+
 [node name="Options" parent="PauseScreen/MarginContainer2/VBoxContainer" instance=ExtResource("5_04n3j")]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -221,6 +229,7 @@ next_menu_to_show = NodePath("../../Gameplay")
 menu_to_hide = NodePath("..")
 
 [node name="Graphics" type="VBoxContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -905,6 +914,29 @@ setting_to_update = &"auto_run"
 description = NodePath("../../Settings/AutoRun")
 options = PackedStringArray("OFF", "ON")
 values = [false, true]
+
+[node name="GameModes" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -28.0
+offset_right = 128.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_76hnl")
+script = ExtResource("6_urnj6")
+
+[node name="Label" type="Label" parent="GameModes"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_dnbp1")
+text = "GAME MODES"
 
 [node name="Hand" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
