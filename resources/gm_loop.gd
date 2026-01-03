@@ -32,6 +32,7 @@ func gm_loop(): #---[FLAG] consider running every event in the same order as ste
 													  #---not doing so can cause issues like global.message passed into draw_text being outdated (since it's updated in run_collision_with)
 		get_tree().call_group("draw_object", "run_draw_event") #--- putting draw event after updating camera position fixes text jitter issues
 		get_tree().call_group("smooth_motion", "update_sprite_during_tick")
+		get_tree().call_group("gm_object", "reset_animation_history") #--- see sprite_index in gm_object
 		get_tree().call_group("gm_object", "reset_interpolation") #--- runs only if object.reset_interpolation_this_frame is set to true
 		#update_collision()
 

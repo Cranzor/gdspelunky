@@ -129,11 +129,19 @@ var other #--- this keyword appears to mistakenly be used in step events and not
 	get:
 		return z_index
 		
+#--- if sprite_index starts at A, then is set to B, then set again to A in the same frame, progress will restart back to frame 0
+#--- by keeping track of the progress, we can set it back to what it should be if the same sprite_index is set again
+#--- this variable gets cleared each tick in gm_loop
+var animation_to_frame_per_tick: Dictionary
 var sprite_index: String:
 	set(new_sprite):
-		#if new_sprite == "hang_left":
-			#print("oh")
-		set_animation(new_sprite, animated_sprite_node)
+		var frame: int = animated_sprite_node.get_frame()
+		var progress: float = animated_sprite_node.get_frame_progress()
+		var frame_and_progress: Array = [frame, progress]
+		animation_to_frame_per_tick[sprite_index_name] = frame_and_progress
+		
+		if new_sprite in animation_to_frame_per_tick: set_animation(new_sprite, animated_sprite_node, animation_to_frame_per_tick[new_sprite])
+		else: set_animation(new_sprite, animated_sprite_node)
 		set_sprite_offset(new_sprite)
 		sprite_index_name = new_sprite
 		
@@ -255,11 +263,12 @@ var sprites_to_draw_ext: Array
 func get_animated_sprite_2d() -> AnimatedSprite2D:
 	return animated_sprite_node
 
-func set_animation(new_sprite, sprite_node) -> void:
+func set_animation(new_sprite, sprite_node, frame_and_progress: Array = []) -> void:
 	var animated_sprite = sprite_node
 	#assert(animated_sprite.sprite_frames.has_animation(new_sprite))
 	if animated_sprite.sprite_frames.has_animation(new_sprite):
 		animated_sprite.play(new_sprite)
+		if frame_and_progress: animated_sprite_node.set_frame_and_progress(frame_and_progress[0], frame_and_progress[1])
 	else:
 		animated_sprite.sprite_frames = sprite_animation_setup(new_sprite, animated_sprite.sprite_frames)
 		assert(animated_sprite.sprite_frames.has_animation(new_sprite))
@@ -283,7 +292,10 @@ func get_animation_speed_scale() -> float:
 	var animated_sprite: AnimatedSprite2D = get_animated_sprite_2d()
 	var current_speed_scale = animated_sprite.speed_scale
 	return current_speed_scale
-	
+
+func reset_animation_history() -> void:
+	animation_to_frame_per_tick.clear()
+
 func set_image_index(new_index) -> void:
 	var animated_sprite = get_animated_sprite_2d()
 	animated_sprite.set_frame(new_index)
