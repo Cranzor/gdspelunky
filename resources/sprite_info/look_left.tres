@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_oiemj"]
 
-[sub_resource type="BitMap" id="BitMap_42o5v"]
+[sub_resource type="BitMap" id="BitMap_oiemj"]
 data = {
 "data": PackedByteArray(192, 7, 240, 15, 248, 15, 252, 31, 248, 63, 240, 63, 240, 63, 240, 63, 224, 15, 248, 31, 252, 31, 252, 31, 248, 31, 240, 15, 240, 7, 112, 7),
 "size": Vector2i(16, 16)
@@ -13,4 +13,4 @@ script = ExtResource("1_oiemj")
 name = &"look_left"
 origin = Vector2(8, 8)
 containing_box = Rect2(2, 0, 12, 16)
-bitmaps = Array[BitMap]([SubResource("BitMap_42o5v")])
+bitmaps = Array[BitMap]([SubResource("BitMap_oiemj")])

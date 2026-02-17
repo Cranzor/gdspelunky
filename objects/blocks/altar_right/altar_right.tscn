@@ -5,8 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://tla4l7nk2gc3" path="res://sprites/blocks/altars/altar_right/altar_right_0.png" id="3_x632a"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_f4a0l"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_74n34"]
+[ext_resource type="Resource" uid="uid://dy4scstfqxbde" path="res://resources/sprite_info/altar_right.tres" id="6_x632a"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_se5gt"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_x632a"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -17,10 +18,6 @@ animations = [{
 "name": &"altar_right",
 "speed": 30.0
 }]
-
-[sub_resource type="Resource" id="Resource_x632a"]
-script = ExtResource("5_74n34")
-containing_box = Rect2(0, 0, 16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f4a0l"]
 size = Vector2(16, 16)
@@ -35,12 +32,12 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "altar_right"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_se5gt")]
-sprite_frames = SubResource("SpriteFrames_se5gt")
+sprite_frames = SubResource("SpriteFrames_x632a")
 autoplay = "altar_right"
 centered = false
 script = ExtResource("4_f4a0l")
 sprite_info = Dictionary[StringName, ExtResource("5_74n34")]({
-&"altar_right": SubResource("Resource_x632a")
+&"altar_right": ExtResource("6_x632a")
 })
 default_animation = &"altar_right"
 

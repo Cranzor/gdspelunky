@@ -5,8 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://det1xui80wtup" path="res://sprites/traps/spear_trap2/spear_trap2_0.png" id="3_xk1bd"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_qjnm4"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_ylgv1"]
+[ext_resource type="Resource" uid="uid://boxjxpo7bkw6r" path="res://resources/sprite_info/spear_trap2.tres" id="6_xk1bd"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_n5dbs"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_xk1bd"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -17,10 +18,6 @@ animations = [{
 "name": &"spear_trap2",
 "speed": 30.0
 }]
-
-[sub_resource type="Resource" id="Resource_xk1bd"]
-script = ExtResource("5_ylgv1")
-containing_box = Rect2(0, 0, 16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qjnm4"]
 size = Vector2(16, 16)
@@ -35,12 +32,12 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "spear_trap_tile_bot"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_n5dbs")]
-sprite_frames = SubResource("SpriteFrames_n5dbs")
+sprite_frames = SubResource("SpriteFrames_xk1bd")
 autoplay = "spear_trap2"
 centered = false
 script = ExtResource("4_qjnm4")
 sprite_info = Dictionary[StringName, ExtResource("5_ylgv1")]({
-&"spear_trap2": SubResource("Resource_xk1bd")
+&"spear_trap2": ExtResource("6_xk1bd")
 })
 default_animation = &"spear_trap2"
 

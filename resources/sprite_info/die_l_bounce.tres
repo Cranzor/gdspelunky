@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_xhlqj"]
 
-[sub_resource type="BitMap" id="BitMap_ueiqa"]
+[sub_resource type="BitMap" id="BitMap_xhlqj"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 252, 0, 254, 1, 254, 1, 255, 3, 254, 7, 254, 15, 254, 31, 254, 63, 254, 127, 254, 127, 223, 127, 207, 63, 134, 25),
 "size": Vector2i(16, 16)
@@ -13,4 +13,4 @@ script = ExtResource("1_xhlqj")
 name = &"die_l_bounce"
 origin = Vector2(8, 8)
 containing_box = Rect2(0, 3, 15, 13)
-bitmaps = Array[BitMap]([SubResource("BitMap_ueiqa")])
+bitmaps = Array[BitMap]([SubResource("BitMap_xhlqj")])

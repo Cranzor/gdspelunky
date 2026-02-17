@@ -5,8 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://cta6oii7hlcm2" path="res://sprites/other/slider/slider_0.png" id="3_tctru"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_1ixrd"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_5hqn2"]
+[ext_resource type="Resource" uid="uid://clcepyklwsjjj" path="res://resources/sprite_info/slider.tres" id="6_tctru"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_s5m51"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_tctru"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -17,10 +18,6 @@ animations = [{
 "name": &"slider",
 "speed": 30.0
 }]
-
-[sub_resource type="Resource" id="Resource_tctru"]
-script = ExtResource("5_5hqn2")
-containing_box = Rect2(2, 0, 4, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ixrd"]
 size = Vector2(4, 8)
@@ -34,12 +31,12 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "slider2"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_s5m51")]
-sprite_frames = SubResource("SpriteFrames_s5m51")
+sprite_frames = SubResource("SpriteFrames_tctru")
 autoplay = "slider"
 centered = false
 script = ExtResource("4_1ixrd")
 sprite_info = Dictionary[StringName, ExtResource("5_5hqn2")]({
-&"slider": SubResource("Resource_tctru")
+&"slider": ExtResource("6_tctru")
 })
 default_animation = &"slider"
 

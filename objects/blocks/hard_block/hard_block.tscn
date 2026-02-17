@@ -5,8 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://nkw6afdklf8m" path="res://sprites/blocks/mines/brick/brick_0.png" id="3_6gpgb"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_p4xdq"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_m8axx"]
+[ext_resource type="Resource" uid="uid://b8vw6eqfsf5mk" path="res://resources/sprite_info/brick.tres" id="6_6gpgb"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_2hfbf"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_6gpgb"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -17,10 +18,6 @@ animations = [{
 "name": &"brick",
 "speed": 30.0
 }]
-
-[sub_resource type="Resource" id="Resource_6gpgb"]
-script = ExtResource("5_m8axx")
-containing_box = Rect2(0, 0, 16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p4xdq"]
 size = Vector2(16, 16)
@@ -35,12 +32,12 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "hard_block"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_2hfbf")]
-sprite_frames = SubResource("SpriteFrames_2hfbf")
+sprite_frames = SubResource("SpriteFrames_6gpgb")
 autoplay = "brick"
 centered = false
 script = ExtResource("4_p4xdq")
 sprite_info = Dictionary[StringName, ExtResource("5_m8axx")]({
-&"brick": SubResource("Resource_6gpgb")
+&"brick": ExtResource("6_6gpgb")
 })
 default_animation = &"brick"
 

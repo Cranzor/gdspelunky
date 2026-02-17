@@ -5,8 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://b6b48usdwtqnx" path="res://sprites/level editor/diamond_tile/diamond_tile_0.png" id="3_vg0b4"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_amofg"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_13jrs"]
+[ext_resource type="Resource" uid="uid://5e8ss5w3oifi" path="res://resources/sprite_info/diamond_tile.tres" id="6_vg0b4"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_6ty5e"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_vg0b4"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -17,10 +18,6 @@ animations = [{
 "name": &"diamond_tile",
 "speed": 30.0
 }]
-
-[sub_resource type="Resource" id="Resource_vg0b4"]
-script = ExtResource("5_13jrs")
-containing_box = Rect2(4, 8, 8, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_amofg"]
 size = Vector2(8, 8)
@@ -35,12 +32,12 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "diamond_tile"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_6ty5e")]
-sprite_frames = SubResource("SpriteFrames_6ty5e")
+sprite_frames = SubResource("SpriteFrames_vg0b4")
 autoplay = "diamond_tile"
 centered = false
 script = ExtResource("4_amofg")
 sprite_info = Dictionary[StringName, ExtResource("5_13jrs")]({
-&"diamond_tile": SubResource("Resource_vg0b4")
+&"diamond_tile": ExtResource("6_vg0b4")
 })
 default_animation = &"diamond_tile"
 

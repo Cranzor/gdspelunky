@@ -1,12 +1,13 @@
-[gd_scene load_steps=11 format=4 uid="uid://ctonkbm667vhu"]
+[gd_scene load_steps=10 format=3 uid="uid://ctonkbm667vhu"]
 
 [ext_resource type="Script" uid="uid://bhh83yta5j1gd" path="res://objects/init/key_config_button/key_config_button.gd" id="1_0agxr"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_vqqv8"]
 [ext_resource type="Texture2D" uid="uid://cixib60g451al" path="res://sprites/other/key_config_button/key_config_button_0.png" id="3_8c1ex"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_lcr3w"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_ow7id"]
+[ext_resource type="Resource" uid="uid://crg3ft2k7bql" path="res://resources/sprite_info/key_config_button.tres" id="6_8c1ex"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_vqqv8"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_8c1ex"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -18,25 +19,10 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Image" id="Image_8c1ex"]
-data = {
-"data": PackedByteArray("gICA/8DAwP/AwMD/wMDA/8DAwP/AwMD/wMDA/8DAwP/AwMD/wMDA/8DAwP/AwMD/wMDA/8DAwP/AwMD/wMDA/8DAwP/AwMD/wMDA/8DAwP/AwMD/wMDA/8DAwP/AwMD/wMDA/8DAwP/AwMD/wMDA/8DAwP/AwMD/wMDA/8DAwP/AwMD/wMDA/8DAwP/AwMD/wMDA/8DAwP/AwMD/wMDA/8DAwP/AwMD/wMDA/8DAwP/AwMD/wMDA/8DAwP/AwMD/wMDA/8DAwP/AwMD/wMDA/8DAwP/AwMD/wMDA/4CAgP9AQED/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/QEBA/0BAQP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP9AQED/QEBA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/0BAQP9AQED/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/QEBA/0BAQP+AgID/gICA/4CAgP+AgID///////////+AgID///////////+AgID//////////////////////4CAgP///////////4CAgP+AgID///////////+AgID//////////////////////4CAgP//////////////////////gICA////////////gICA/4CAgP//////gICA//////////////////////+AgID///////////+AgID//////////////////////4CAgP+AgID/gICA/4CAgP9AQED/QEBA/4CAgP+AgID/gICA/4CAgP///////////////////////////4CAgP///////////0BAQP9AQED/gICA////////////gICA/4CAgP///////////4CAgP//////////////////////gICA//////////////////////+AgID/////////////////gICA//////+AgID//////////////////////4CAgP///////////4CAgP//////////////////////gICA/4CAgP+AgID/gICA/0BAQP9AQED/gICA/4CAgP+AgID/gICA//////////////////////9AQED/gICA//////////////////////+AgID/////////////////////////////////gICA////////////QEBA/0BAQP+AgID///////////9AQED//////4CAgP///////////////////////////4CAgP///////////0BAQP9AQED/gICA////////////gICA////////////QEBA/0BAQP+AgID/gICA/4CAgP+AgID/QEBA/0BAQP+AgID/gICA/4CAgP+AgID//////////////////////4CAgP+AgID///////////9AQED/QEBA/4CAgP////////////////////////////////+AgID///////////+AgID/gICA/4CAgP///////////4CAgP//////gICA////////////////////////////gICA//////////////////////+AgID///////////+AgID///////////+AgID//////4CAgP+AgID/gICA/4CAgP9AQED/QEBA/4CAgP+AgID/gICA/4CAgP///////////////////////////4CAgP//////////////////////gICA/0BAQP9AQED///////////9AQED/QEBA/4CAgP//////////////////////gICA//////////////////////+AgID///////////9AQED///////////+AgID///////////9AQED/QEBA/4CAgP///////////4CAgP//////////////////////gICA/4CAgP+AgID/gICA/0BAQP9AQED/gICA/4CAgP+AgID/gICA////////////QEBA////////////gICA//////////////////////+AgID/gICA/4CAgP///////////4CAgP+AgID/gICA//////////////////////+AgID//////////////////////4CAgP///////////4CAgP///////////4CAgP///////////4CAgP+AgID/gICA////////////gICA//////////////////////+AgID/gICA/4CAgP+AgID/QEBA/0BAQP+AgID/gICA/4CAgP+AgID/QEBA/0BAQP+AgID/QEBA/0BAQP+AgID/QEBA/0BAQP9AQED/QEBA/4CAgP+AgID/gICA/0BAQP9AQED/gICA/4CAgP+AgID/QEBA/0BAQP9AQED/QEBA/4CAgP9AQED/QEBA/0BAQP9AQED/gICA/0BAQP9AQED/gICA/0BAQP9AQED/gICA/0BAQP9AQED/gICA/4CAgP+AgID/QEBA/0BAQP+AgID/QEBA/0BAQP9AQED/QEBA/4CAgP+AgID/gICA/4CAgP9AQED/QEBA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/0BAQP9AQED/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/QEBA/0BAQP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP+AgID/gICA/4CAgP8gICD/ICAg/yAgIP8gICD/ICAg/yAgIP8gICD/ICAg/yAgIP8gICD/ICAg/yAgIP8gICD/ICAg/yAgIP8gICD/ICAg/yAgIP8gICD/ICAg/yAgIP8gICD/ICAg/yAgIP8gICD/ICAg/yAgIP8gICD/ICAg/yAgIP8gICD/ICAg/yAgIP8gICD/ICAg/yAgIP8gICD/ICAg/yAgIP8gICD/ICAg/yAgIP8gICD/ICAg/yAgIP8gICD/ICAg/yAgIP8gICD/ICAg/yAgIP8gICD/ICAg/yAgIP8gICD/ICAg/yAgIP8="),
-"format": "RGBA8",
-"height": 16,
-"mipmaps": false,
-"width": 56
-}
-
-[sub_resource type="Resource" id="Resource_lcr3w"]
-script = ExtResource("5_ow7id")
-containing_box = Rect2(0, 0, 56, 16)
-precise = true
-images = Array[Image]([SubResource("Image_8c1ex")])
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ow7id"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lcr3w"]
 size = Vector2(56, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mi8ll"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ow7id"]
 size = Vector2(112, 32)
 
 [node name="KeyConfigButton" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -45,18 +31,18 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "key_config_button"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_vqqv8")]
-sprite_frames = SubResource("SpriteFrames_vqqv8")
+sprite_frames = SubResource("SpriteFrames_8c1ex")
 autoplay = "key_config_button"
 centered = false
 script = ExtResource("4_lcr3w")
 sprite_info = Dictionary[StringName, ExtResource("5_ow7id")]({
-&"key_config_button": SubResource("Resource_lcr3w")
+&"key_config_button": ExtResource("6_8c1ex")
 })
 default_animation = &"key_config_button"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(28, 8)
-shape = SubResource("RectangleShape2D_ow7id")
+shape = SubResource("RectangleShape2D_lcr3w")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -64,5 +50,5 @@ collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 position = Vector2(28, 8)
-shape = SubResource("RectangleShape2D_mi8ll")
+shape = SubResource("RectangleShape2D_ow7id")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)

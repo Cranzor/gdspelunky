@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://xxorhipnnhqy" path="res://sprites/blocks/lush/tiki_torch/tiki_torch_4.png" id="14_jbmc2"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="15_1qypb"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="16_a066c"]
+[ext_resource type="Resource" uid="uid://blq38nvfpdxci" path="res://resources/sprite_info/tiki_torch.tres" id="17_6q2ty"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ttmrw"]
 shader = ExtResource("3_yliqr")
@@ -56,7 +57,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_r3uus"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_6q2ty"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -79,10 +80,6 @@ animations = [{
 "name": &"tiki_torch",
 "speed": 30.0
 }]
-
-[sub_resource type="Resource" id="Resource_6q2ty"]
-script = ExtResource("16_a066c")
-containing_box = Rect2(5, 0, 6, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gejnv"]
 size = Vector2(6, 32)
@@ -107,12 +104,12 @@ script = ExtResource("8_e7i2i")
 offset_value = Vector2(8, 8)
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("9_r3uus")]
-sprite_frames = SubResource("SpriteFrames_r3uus")
+sprite_frames = SubResource("SpriteFrames_6q2ty")
 autoplay = "tiki_torch"
 centered = false
 script = ExtResource("15_1qypb")
 sprite_info = Dictionary[StringName, ExtResource("16_a066c")]({
-&"tiki_torch": SubResource("Resource_6q2ty")
+&"tiki_torch": ExtResource("17_6q2ty")
 })
 default_animation = &"tiki_torch"
 

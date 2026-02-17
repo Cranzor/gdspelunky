@@ -10,8 +10,14 @@
 [ext_resource type="Texture2D" uid="uid://blws0m43i4ncg" path="res://sprites/blocks/dark/thin_ice6/thin_ice6_0.png" id="8_rbmo0"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="9_y5wnc"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="10_rt5w0"]
+[ext_resource type="Resource" uid="uid://ci1eavt7v7axn" path="res://resources/sprite_info/thin_ice1.tres" id="11_rbmo0"]
+[ext_resource type="Resource" uid="uid://davircmtondc7" path="res://resources/sprite_info/thin_ice2.tres" id="12_y5wnc"]
+[ext_resource type="Resource" uid="uid://buhj8aro5oxy2" path="res://resources/sprite_info/thin_ice3.tres" id="13_rt5w0"]
+[ext_resource type="Resource" uid="uid://cqlsiwa1vxtl7" path="res://resources/sprite_info/thin_ice4.tres" id="14_5ly5w"]
+[ext_resource type="Resource" uid="uid://wyoggcsrohiu" path="res://resources/sprite_info/thin_ice5.tres" id="15_shgvq"]
+[ext_resource type="Resource" uid="uid://d1b8vbgcaq0da" path="res://resources/sprite_info/thin_ice6.tres" id="16_jhsil"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_8w5wk"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_rbmo0"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -63,30 +69,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_e5ewy"]
-script = ExtResource("10_rt5w0")
-containing_box = Rect2(0, 0, 16, 9)
-
-[sub_resource type="Resource" id="Resource_g04d6"]
-script = ExtResource("10_rt5w0")
-containing_box = Rect2(0, 0, 16, 9)
-
-[sub_resource type="Resource" id="Resource_a4ujl"]
-script = ExtResource("10_rt5w0")
-containing_box = Rect2(0, 0, 16, 9)
-
-[sub_resource type="Resource" id="Resource_86pbe"]
-script = ExtResource("10_rt5w0")
-containing_box = Rect2(0, 0, 16, 7)
-
-[sub_resource type="Resource" id="Resource_y61g8"]
-script = ExtResource("10_rt5w0")
-containing_box = Rect2(0, 0, 16, 6)
-
-[sub_resource type="Resource" id="Resource_rbmo0"]
-script = ExtResource("10_rt5w0")
-containing_box = Rect2(0, 0, 16, 5)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y5wnc"]
 size = Vector2(16, 9)
 
@@ -100,17 +82,17 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "thin_ice"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_8w5wk")]
-sprite_frames = SubResource("SpriteFrames_8w5wk")
+sprite_frames = SubResource("SpriteFrames_rbmo0")
 autoplay = "thin_ice1"
 centered = false
 script = ExtResource("9_y5wnc")
 sprite_info = Dictionary[StringName, ExtResource("10_rt5w0")]({
-&"thin_ice1": SubResource("Resource_e5ewy"),
-&"thin_ice2": SubResource("Resource_g04d6"),
-&"thin_ice3": SubResource("Resource_a4ujl"),
-&"thin_ice4": SubResource("Resource_86pbe"),
-&"thin_ice5": SubResource("Resource_y61g8"),
-&"thin_ice6": SubResource("Resource_rbmo0")
+&"thin_ice1": ExtResource("11_rbmo0"),
+&"thin_ice2": ExtResource("12_y5wnc"),
+&"thin_ice3": ExtResource("13_rt5w0"),
+&"thin_ice4": ExtResource("14_5ly5w"),
+&"thin_ice5": ExtResource("15_shgvq"),
+&"thin_ice6": ExtResource("16_jhsil")
 })
 default_animation = &"thin_ice1"
 

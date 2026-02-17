@@ -1,14 +1,38 @@
-[gd_scene load_steps=12 format=3 uid="uid://bcajqtq8pigx5"]
+[gd_scene load_steps=17 format=3 uid="uid://bcajqtq8pigx5"]
 
 [ext_resource type="Script" uid="uid://btgrk00uxc5wa" path="res://objects/characters/shopkeeper2/shopkeeper2.gd" id="1_t3s5w"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_nqjhq"]
 [ext_resource type="PackedScene" uid="uid://bmcojkm0edrdr" path="res://scenes/shotgun_draw.tscn" id="2_pcv3y"]
+[ext_resource type="Texture2D" uid="uid://b71ml0xtb78ct" path="res://sprites/items/weapons/shotgun_left/shotgun_left_0.png" id="3_4wgse"]
 [ext_resource type="Texture2D" uid="uid://dm61um76ttk6l" path="res://sprites/enemies/shopkeeper/shop_left/shop_left_0.png" id="3_pcv3y"]
 [ext_resource type="Texture2D" uid="uid://dyrnewh47fhyb" path="res://sprites/enemies/shopkeeper/shop_left/shop_left_shopkeeper.png" id="4_mcdsi"]
+[ext_resource type="Texture2D" uid="uid://c0adx0lcg4d0c" path="res://sprites/items/weapons/shotgun_right/shotgun_right_0.png" id="4_nqjhq"]
+[ext_resource type="Script" uid="uid://d1v64vt58kawp" path="res://components/drawing/draw_sprite/draw_sprite.gd" id="5_pcv3y"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="6_yy0lu"]
 [ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="7_pcv3y"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="9_fohs0"]
+[ext_resource type="Resource" uid="uid://8k8huf6yaa1u" path="res://resources/sprite_info/shop_left.tres" id="11_a6g6w"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_pcv3y"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_ihds6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_4wgse")
+}],
+"loop": true,
+"name": &"shotgun_left",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_nqjhq")
+}],
+"loop": true,
+"name": &"shotgun_right",
+"speed": 30.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fohs0"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -23,14 +47,10 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_mcdsi"]
-script = ExtResource("6_yy0lu")
-containing_box = Rect2(2, 1, 12, 15)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pfybu"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a6g6w"]
 size = Vector2(12, 15)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yy0lu"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0v3sq"]
 size = Vector2(24, 30)
 
 [node name="Shopkeeper2" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -39,20 +59,26 @@ script = ExtResource("1_t3s5w")
 animated_sprite_node = NodePath("Sprite")
 object_name = "shopkeeper2"
 
-[node name="Sprite" parent="." instance=ExtResource("2_nqjhq")]
-sprite_frames = SubResource("SpriteFrames_pcv3y")
+[node name="ShotgunDraw" type="AnimatedSprite2D" parent="." instance=ExtResource("2_pcv3y")]
+sprite_frames = SubResource("SpriteFrames_ihds6")
 animation = &"shotgun_left"
+script = ExtResource("5_pcv3y")
+hide_at_start_of_frame = true
+metadata/_custom_type_script = "uid://d1v64vt58kawp"
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_nqjhq")]
+sprite_frames = SubResource("SpriteFrames_fohs0")
 autoplay = "shop_left"
+centered = false
+script = ExtResource("9_fohs0")
 sprite_info = Dictionary[StringName, ExtResource("6_yy0lu")]({
-&"shop_left": SubResource("Resource_mcdsi")
+&"shop_left": ExtResource("11_a6g6w")
 })
 default_animation = &"shop_left"
 
-[node name="ShotgunDraw" parent="." instance=ExtResource("2_pcv3y")]
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, 8.5)
-shape = SubResource("RectangleShape2D_pfybu")
+shape = SubResource("RectangleShape2D_a6g6w")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -60,7 +86,7 @@ collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 position = Vector2(8, 8.5)
-shape = SubResource("RectangleShape2D_yy0lu")
+shape = SubResource("RectangleShape2D_0v3sq")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
-[node name="SmoothMotion" parent="." instance=ExtResource("7_pcv3y")]
+[node name="SmoothMotion" type="Node" parent="." instance=ExtResource("7_pcv3y")]

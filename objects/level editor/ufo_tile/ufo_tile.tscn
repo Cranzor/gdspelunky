@@ -12,8 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://c5fxjnkg867fc" path="res://sprites/enemies/ufo/ufo_7.png" id="10_i67ml"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="11_qxb5l"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="12_erc83"]
+[ext_resource type="Resource" uid="uid://byxaoqaq33xdp" path="res://resources/sprite_info/ufo.tres" id="13_s6lmb"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_20snp"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_s6lmb"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -46,10 +47,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_s6lmb"]
-script = ExtResource("12_erc83")
-containing_box = Rect2(0, 1, 16, 13)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_efk40"]
 size = Vector2(16, 13)
 
@@ -63,12 +60,12 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "ufo_tile"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_20snp")]
-sprite_frames = SubResource("SpriteFrames_20snp")
+sprite_frames = SubResource("SpriteFrames_s6lmb")
 autoplay = "ufo"
 centered = false
 script = ExtResource("11_qxb5l")
 sprite_info = Dictionary[StringName, ExtResource("12_erc83")]({
-&"ufo": SubResource("Resource_s6lmb")
+&"ufo": ExtResource("13_s6lmb")
 })
 default_animation = &"ufo"
 

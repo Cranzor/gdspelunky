@@ -5,8 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://ck4fnwaa8f8wc" path="res://sprites/traps/thwomp_trap/thwomp_trap_0.png" id="3_7r4nm"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_jqbx2"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_16r1b"]
+[ext_resource type="Resource" uid="uid://xyxvmgdmdba2" path="res://resources/sprite_info/thwomp_trap.tres" id="6_7r4nm"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_y0741"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_7r4nm"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -17,10 +18,6 @@ animations = [{
 "name": &"thwomp_trap",
 "speed": 30.0
 }]
-
-[sub_resource type="Resource" id="Resource_7r4nm"]
-script = ExtResource("5_16r1b")
-containing_box = Rect2(0, 1, 16, 15)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jqbx2"]
 size = Vector2(16, 15)
@@ -35,12 +32,12 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "thwomp_trap"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_y0741")]
-sprite_frames = SubResource("SpriteFrames_y0741")
+sprite_frames = SubResource("SpriteFrames_7r4nm")
 autoplay = "thwomp_trap"
 centered = false
 script = ExtResource("4_jqbx2")
 sprite_info = Dictionary[StringName, ExtResource("5_16r1b")]({
-&"thwomp_trap": SubResource("Resource_7r4nm")
+&"thwomp_trap": ExtResource("6_7r4nm")
 })
 default_animation = &"thwomp_trap"
 

@@ -5,8 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://lbxt434u1w3h" path="res://sprites/level editor/crystal_skull_tile/crystal_skull_tile_0.png" id="3_v5ag1"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_31spy"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_aikr0"]
+[ext_resource type="Resource" uid="uid://bpjjla8t0o0qo" path="res://resources/sprite_info/crystal_skull_tile.tres" id="6_v5ag1"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_2m17n"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_v5ag1"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -17,10 +18,6 @@ animations = [{
 "name": &"crystal_skull_tile",
 "speed": 30.0
 }]
-
-[sub_resource type="Resource" id="Resource_v5ag1"]
-script = ExtResource("5_aikr0")
-containing_box = Rect2(2, 1, 12, 15)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_31spy"]
 size = Vector2(12, 15)
@@ -35,12 +32,12 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "crystal_skull_tile"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_2m17n")]
-sprite_frames = SubResource("SpriteFrames_2m17n")
+sprite_frames = SubResource("SpriteFrames_v5ag1")
 autoplay = "crystal_skull_tile"
 centered = false
 script = ExtResource("4_31spy")
 sprite_info = Dictionary[StringName, ExtResource("5_aikr0")]({
-&"crystal_skull_tile": SubResource("Resource_v5ag1")
+&"crystal_skull_tile": ExtResource("6_v5ag1")
 })
 default_animation = &"crystal_skull_tile"
 

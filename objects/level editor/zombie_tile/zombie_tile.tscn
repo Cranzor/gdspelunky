@@ -8,8 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://bgx46q74vnh1c" path="res://sprites/enemies/zombie_left/zombie_left_3.png" id="6_1q2jd"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="7_ctinr"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="8_nuys7"]
+[ext_resource type="Resource" uid="uid://cmkuehuj8ycja" path="res://resources/sprite_info/zombie_left.tres" id="9_iiewe"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_isgnq"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_iiewe"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -30,10 +31,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_iiewe"]
-script = ExtResource("8_nuys7")
-containing_box = Rect2(0, 0, 16, 16)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fc0c0"]
 size = Vector2(16, 16)
 
@@ -47,12 +44,12 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "zombie_tile"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_isgnq")]
-sprite_frames = SubResource("SpriteFrames_isgnq")
+sprite_frames = SubResource("SpriteFrames_iiewe")
 autoplay = "zombie_left"
 centered = false
 script = ExtResource("7_ctinr")
 sprite_info = Dictionary[StringName, ExtResource("8_nuys7")]({
-&"zombie_left": SubResource("Resource_iiewe")
+&"zombie_left": ExtResource("9_iiewe")
 })
 default_animation = &"zombie_left"
 

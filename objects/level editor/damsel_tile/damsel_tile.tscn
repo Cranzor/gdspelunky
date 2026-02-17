@@ -5,8 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://qppdxyc0kqpx" path="res://sprites/character/damsel/damsel_left_ico/damsel_left_ico_0.png" id="3_bfo4u"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_huiv0"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_ud4ps"]
+[ext_resource type="Resource" uid="uid://cchwi570xjcx0" path="res://resources/sprite_info/damsel_left_ico.tres" id="6_bfo4u"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_f0oec"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_bfo4u"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -17,10 +18,6 @@ animations = [{
 "name": &"damsel_left_ico",
 "speed": 30.0
 }]
-
-[sub_resource type="Resource" id="Resource_bfo4u"]
-script = ExtResource("5_ud4ps")
-containing_box = Rect2(2, 0, 12, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_huiv0"]
 size = Vector2(12, 16)
@@ -35,12 +32,12 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "damsel_tile"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_f0oec")]
-sprite_frames = SubResource("SpriteFrames_f0oec")
+sprite_frames = SubResource("SpriteFrames_bfo4u")
 autoplay = "damsel_left_ico"
 centered = false
 script = ExtResource("4_huiv0")
 sprite_info = Dictionary[StringName, ExtResource("5_ud4ps")]({
-&"damsel_left_ico": SubResource("Resource_bfo4u")
+&"damsel_left_ico": ExtResource("6_bfo4u")
 })
 default_animation = &"damsel_left_ico"
 

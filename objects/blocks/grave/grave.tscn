@@ -10,8 +10,14 @@
 [ext_resource type="Texture2D" uid="uid://it5qh7dy7r47" path="res://sprites/blocks/graves/grave6/grave6_0.png" id="8_l8tiq"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="9_nwiri"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="10_clgfu"]
+[ext_resource type="Resource" uid="uid://bmfjd34vuerjq" path="res://resources/sprite_info/grave.tres" id="11_l8tiq"]
+[ext_resource type="Resource" uid="uid://b47rfkp1vnlef" path="res://resources/sprite_info/grave2.tres" id="12_nwiri"]
+[ext_resource type="Resource" uid="uid://bw6qn5jopvqkt" path="res://resources/sprite_info/grave3.tres" id="13_clgfu"]
+[ext_resource type="Resource" uid="uid://6qt7xacpqai3" path="res://resources/sprite_info/grave4.tres" id="14_cmy0c"]
+[ext_resource type="Resource" uid="uid://cvayg3gysdqv4" path="res://resources/sprite_info/grave5.tres" id="15_go1c0"]
+[ext_resource type="Resource" uid="uid://ur67n7rsuty4" path="res://resources/sprite_info/grave6.tres" id="16_f32ud"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_4ujxx"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_l8tiq"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -63,30 +69,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_ckj6n"]
-script = ExtResource("10_clgfu")
-containing_box = Rect2(0, 0, 16, 16)
-
-[sub_resource type="Resource" id="Resource_dnvqy"]
-script = ExtResource("10_clgfu")
-containing_box = Rect2(0, 0, 16, 16)
-
-[sub_resource type="Resource" id="Resource_ec3fj"]
-script = ExtResource("10_clgfu")
-containing_box = Rect2(0, 0, 16, 16)
-
-[sub_resource type="Resource" id="Resource_nox41"]
-script = ExtResource("10_clgfu")
-containing_box = Rect2(0, 0, 16, 16)
-
-[sub_resource type="Resource" id="Resource_advlf"]
-script = ExtResource("10_clgfu")
-containing_box = Rect2(0, 0, 16, 16)
-
-[sub_resource type="Resource" id="Resource_l8tiq"]
-script = ExtResource("10_clgfu")
-containing_box = Rect2(0, 0, 16, 16)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nwiri"]
 size = Vector2(16, 16)
 
@@ -100,17 +82,17 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "grave"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_4ujxx")]
-sprite_frames = SubResource("SpriteFrames_4ujxx")
+sprite_frames = SubResource("SpriteFrames_l8tiq")
 autoplay = "grave"
 centered = false
 script = ExtResource("9_nwiri")
 sprite_info = Dictionary[StringName, ExtResource("10_clgfu")]({
-&"grave": SubResource("Resource_ckj6n"),
-&"grave2": SubResource("Resource_dnvqy"),
-&"grave3": SubResource("Resource_ec3fj"),
-&"grave4": SubResource("Resource_nox41"),
-&"grave5": SubResource("Resource_advlf"),
-&"grave6": SubResource("Resource_l8tiq")
+&"grave": ExtResource("11_l8tiq"),
+&"grave2": ExtResource("12_nwiri"),
+&"grave3": ExtResource("13_clgfu"),
+&"grave4": ExtResource("14_cmy0c"),
+&"grave5": ExtResource("15_go1c0"),
+&"grave6": ExtResource("16_f32ud")
 })
 default_animation = &"grave"
 

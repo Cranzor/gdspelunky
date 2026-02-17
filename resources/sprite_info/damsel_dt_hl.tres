@@ -2,55 +2,55 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_kooyf"]
 
-[sub_resource type="BitMap" id="BitMap_qw4q0"]
+[sub_resource type="BitMap" id="BitMap_kooyf"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD8AQAA/gMAAP8HAAD/DwAA/w8AAP8fAAD/fwAA//8AAP//AAD+fwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="),
 "size": Vector2i(32, 32)
 }
 
-[sub_resource type="BitMap" id="BitMap_l56uj"]
+[sub_resource type="BitMap" id="BitMap_qw4q0"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAP4AAAD/AQCA/wMAgP8HAID/BwAA/wMAAP8DAID/BwCA/wcAAP8PAAD+HwAA/x8AAPsfAAAYPwAAABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="),
 "size": Vector2i(32, 32)
 }
 
-[sub_resource type="BitMap" id="BitMap_uk60p"]
+[sub_resource type="BitMap" id="BitMap_l56uj"]
 data = {
 "data": PackedByteArray("AABgAAAA8AAAAPgAAAD8BwCA/w8AwP8HAOD/AwDg/wEA4P8BAMD/AADA/wMA4P8HAOD/BwDAPwAAAA8AAAAHAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="),
 "size": Vector2i(32, 32)
 }
 
-[sub_resource type="BitMap" id="BitMap_ukr51"]
+[sub_resource type="BitMap" id="BitMap_uk60p"]
 data = {
 "data": PackedByteArray("AAAMAAAAHgAAAD4AAAD+BwCA/w8AwP8HAOD/AwDg/wcA4P8HAMD/AwDA/wEA4P8BAOD/AADAfwAAAA8AAAAHAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="),
 "size": Vector2i(32, 32)
 }
 
-[sub_resource type="BitMap" id="BitMap_nkx3n"]
+[sub_resource type="BitMap" id="BitMap_ukr51"]
 data = {
 "data": PackedByteArray("ADAAAAB4AAAA+AAAAP8BAID/DwAA/x8AAP4/AAD8PwAA/D8AAPgfAAD+HwAA/z8AAP8/AADgHwAAgAcAAAAHAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="),
 "size": Vector2i(32, 32)
 }
 
-[sub_resource type="BitMap" id="BitMap_vj8r8"]
+[sub_resource type="BitMap" id="BitMap_nkx3n"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAH8AAOj/AAD8/wEA/P8BAPz/AQD8/wEA/P8DAPj/AwDw/wEA4P8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="),
 "size": Vector2i(32, 32)
 }
 
-[sub_resource type="BitMap" id="BitMap_opf55"]
+[sub_resource type="BitMap" id="BitMap_vj8r8"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAgD8AAMB/AADg/wAA8P8AAPD/AADgfwAA4H8AAPD/AADw/wAA4H8AAPB/AADwPwAA4D8AAPAfAAD4DwAAeAcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="),
 "size": Vector2i(32, 32)
 }
 
-[sub_resource type="BitMap" id="BitMap_eixvj"]
+[sub_resource type="BitMap" id="BitMap_opf55"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AADAfwAA4P8AAPD/AADw/wAA4H8AAOB/AADw/wAA8P8AAOB/AADwfwAA8D8AAOA/AADwHwAA+A8AAHgHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="),
 "size": Vector2i(32, 32)
 }
 
-[sub_resource type="BitMap" id="BitMap_lfkbk"]
+[sub_resource type="BitMap" id="BitMap_eixvj"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAHwAA4D8AAPB/AAD4fwAA+P8AAPD/AADwfwAA+B8AAPgfAADwHwAA8B8AAPgfAADwPwAAwH8AAMAxAADAAAAAAAAAAAAAAAAAAAA="),
 "size": Vector2i(32, 32)
@@ -61,4 +61,4 @@ script = ExtResource("1_kooyf")
 name = &"damsel_dt_hl"
 origin = Vector2(24, 8)
 containing_box = Rect2(7, 0, 25, 29)
-bitmaps = Array[BitMap]([SubResource("BitMap_qw4q0"), SubResource("BitMap_l56uj"), SubResource("BitMap_uk60p"), SubResource("BitMap_ukr51"), SubResource("BitMap_nkx3n"), SubResource("BitMap_vj8r8"), SubResource("BitMap_opf55"), SubResource("BitMap_eixvj"), SubResource("BitMap_lfkbk")])
+bitmaps = Array[BitMap]([SubResource("BitMap_kooyf"), SubResource("BitMap_qw4q0"), SubResource("BitMap_l56uj"), SubResource("BitMap_uk60p"), SubResource("BitMap_ukr51"), SubResource("BitMap_nkx3n"), SubResource("BitMap_vj8r8"), SubResource("BitMap_opf55"), SubResource("BitMap_eixvj")])

@@ -5,8 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://cc80ffrvkibcp" path="res://sprites/enemies/yeti/yeti_left/yeti_left_0.png" id="3_ahvop"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_ic1ts"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_fmcsd"]
+[ext_resource type="Resource" uid="uid://bvo42qg2yqkhq" path="res://resources/sprite_info/yeti_left.tres" id="6_ahvop"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_jtfb8"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_ahvop"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -17,10 +18,6 @@ animations = [{
 "name": &"yeti_left",
 "speed": 30.0
 }]
-
-[sub_resource type="Resource" id="Resource_ahvop"]
-script = ExtResource("5_fmcsd")
-containing_box = Rect2(0, 0, 16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ic1ts"]
 size = Vector2(16, 16)
@@ -35,12 +32,12 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "yeti_tile"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_jtfb8")]
-sprite_frames = SubResource("SpriteFrames_jtfb8")
+sprite_frames = SubResource("SpriteFrames_ahvop")
 autoplay = "yeti_left"
 centered = false
 script = ExtResource("4_ic1ts")
 sprite_info = Dictionary[StringName, ExtResource("5_fmcsd")]({
-&"yeti_left": SubResource("Resource_ahvop")
+&"yeti_left": ExtResource("6_ahvop")
 })
 default_animation = &"yeti_left"
 

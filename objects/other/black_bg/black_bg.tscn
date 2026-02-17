@@ -1,12 +1,13 @@
-[gd_scene load_steps=11 format=4 uid="uid://66j4v0mx4bva"]
+[gd_scene load_steps=10 format=3 uid="uid://66j4v0mx4bva"]
 
 [ext_resource type="Script" uid="uid://doa0emehjv7cm" path="res://objects/other/black_bg/black_bg.gd" id="1_ydwv1"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_kk0oj"]
 [ext_resource type="Texture2D" uid="uid://y1dtpo6clnh3" path="res://sprites/black/black_0.png" id="3_22mhy"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_e1nmb"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_3iu2n"]
+[ext_resource type="Resource" uid="uid://bw54eetrxswcm" path="res://resources/sprite_info/black.tres" id="6_22mhy"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_kk0oj"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_22mhy"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -17,21 +18,6 @@ animations = [{
 "name": &"black",
 "speed": 30.0
 }]
-
-[sub_resource type="Image" id="Image_nqrt8"]
-data = {
-"data": PackedByteArray("AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/w=="),
-"format": "RGBA8",
-"height": 16,
-"mipmaps": false,
-"width": 16
-}
-
-[sub_resource type="Resource" id="Resource_22mhy"]
-script = ExtResource("5_3iu2n")
-containing_box = Rect2(0, 0, 16, 16)
-precise = true
-images = Array[Image]([SubResource("Image_nqrt8")])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e1nmb"]
 size = Vector2(16, 16)
@@ -46,12 +32,12 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "black_bg"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_kk0oj")]
-sprite_frames = SubResource("SpriteFrames_kk0oj")
+sprite_frames = SubResource("SpriteFrames_22mhy")
 autoplay = "black"
 centered = false
 script = ExtResource("4_e1nmb")
 sprite_info = Dictionary[StringName, ExtResource("5_3iu2n")]({
-&"black": SubResource("Resource_22mhy")
+&"black": ExtResource("6_22mhy")
 })
 default_animation = &"black"
 

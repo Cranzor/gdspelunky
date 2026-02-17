@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_v87o1"]
 
-[sub_resource type="BitMap" id="BitMap_jn2vp"]
+[sub_resource type="BitMap" id="BitMap_v87o1"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 240, 1, 248, 3, 252, 3, 254, 7, 254, 15, 252, 31, 254, 63, 254, 127, 254, 255),
 "size": Vector2i(16, 16)
@@ -13,4 +13,4 @@ script = ExtResource("1_v87o1")
 name = &"duck_left"
 origin = Vector2(8, 8)
 containing_box = Rect2(1, 7, 15, 9)
-bitmaps = Array[BitMap]([SubResource("BitMap_jn2vp")])
+bitmaps = Array[BitMap]([SubResource("BitMap_v87o1")])

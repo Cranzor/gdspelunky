@@ -2,99 +2,99 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_r1iwo"]
 
-[sub_resource type="BitMap" id="BitMap_csrwr"]
+[sub_resource type="BitMap" id="BitMap_r1iwo"]
 data = {
 "data": PackedByteArray(224, 7, 252, 63, 254, 127, 254, 127, 252, 63, 248, 31, 240, 15, 240, 15, 248, 31, 252, 63, 254, 127, 254, 127, 252, 63, 240, 15, 240, 15, 240, 15),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_6nnr5"]
+[sub_resource type="BitMap" id="BitMap_csrwr"]
 data = {
 "data": PackedByteArray(0, 0, 224, 7, 252, 63, 254, 127, 254, 127, 252, 63, 248, 31, 240, 15, 248, 15, 252, 31, 254, 63, 254, 63, 252, 31, 240, 15, 240, 15, 0, 15),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_jjnjh"]
-data = {
-"data": PackedByteArray(0, 0, 0, 0, 224, 7, 252, 63, 254, 127, 254, 127, 252, 63, 248, 31, 240, 15, 240, 15, 248, 31, 252, 63, 254, 127, 254, 127, 252, 63, 240, 15),
-"size": Vector2i(16, 16)
-}
-
-[sub_resource type="BitMap" id="BitMap_bd174"]
-data = {
-"data": PackedByteArray(0, 0, 0, 0, 0, 0, 224, 7, 252, 63, 254, 127, 254, 127, 252, 63, 248, 31, 240, 15, 240, 31, 248, 63, 252, 127, 252, 127, 248, 63, 240, 15),
-"size": Vector2i(16, 16)
-}
-
-[sub_resource type="BitMap" id="BitMap_pqjqv"]
-data = {
-"data": PackedByteArray(0, 0, 0, 0, 0, 0, 224, 7, 252, 63, 254, 127, 254, 127, 252, 63, 248, 31, 240, 15, 240, 15, 248, 31, 252, 63, 254, 127, 254, 127, 252, 63),
-"size": Vector2i(16, 16)
-}
-
-[sub_resource type="BitMap" id="BitMap_pxirc"]
-data = {
-"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 224, 7, 252, 63, 254, 127, 254, 127, 252, 63, 248, 31, 240, 15, 248, 15, 252, 31, 254, 63, 254, 63, 252, 31),
-"size": Vector2i(16, 16)
-}
-
-[sub_resource type="BitMap" id="BitMap_idk2l"]
-data = {
-"data": PackedByteArray(0, 0, 0, 0, 0, 0, 224, 7, 252, 63, 254, 127, 254, 127, 252, 63, 248, 31, 240, 15, 240, 15, 248, 31, 252, 63, 254, 127, 254, 127, 252, 63),
-"size": Vector2i(16, 16)
-}
-
-[sub_resource type="BitMap" id="BitMap_ewvj2"]
-data = {
-"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 224, 7, 252, 63, 254, 127, 254, 127, 252, 63, 248, 31, 240, 15, 240, 31, 248, 63, 252, 127, 252, 127, 248, 63),
-"size": Vector2i(16, 16)
-}
-
-[sub_resource type="BitMap" id="BitMap_2ewcs"]
+[sub_resource type="BitMap" id="BitMap_6nnr5"]
 data = {
 "data": PackedByteArray(224, 7, 252, 63, 254, 127, 254, 127, 252, 63, 248, 31, 240, 15, 240, 15, 248, 31, 252, 63, 254, 127, 254, 127, 252, 63, 240, 15, 240, 15, 240, 15),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_0njf4"]
+[sub_resource type="BitMap" id="BitMap_jjnjh"]
 data = {
 "data": PackedByteArray(0, 0, 224, 7, 252, 63, 254, 127, 254, 127, 252, 63, 248, 31, 240, 15, 240, 31, 248, 63, 252, 127, 252, 127, 248, 63, 240, 15, 240, 15, 240, 0),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_0s8jj"]
+[sub_resource type="BitMap" id="BitMap_bd174"]
 data = {
 "data": PackedByteArray(0, 0, 224, 7, 252, 63, 254, 127, 254, 127, 252, 63, 248, 31, 240, 15, 240, 15, 248, 31, 252, 63, 254, 127, 254, 127, 252, 63, 240, 15, 240, 15),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_2nnra"]
+[sub_resource type="BitMap" id="BitMap_pqjqv"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 224, 7, 252, 63, 254, 127, 254, 127, 252, 63, 248, 31, 240, 15, 248, 15, 252, 31, 254, 63, 254, 63, 252, 31, 240, 15, 240, 15),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_h5kxd"]
+[sub_resource type="BitMap" id="BitMap_pxirc"]
 data = {
 "data": PackedByteArray(0, 0, 224, 7, 252, 63, 254, 127, 254, 127, 252, 63, 248, 31, 240, 15, 240, 15, 248, 31, 252, 63, 254, 127, 254, 127, 252, 63, 240, 15, 240, 15),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_0u5yj"]
+[sub_resource type="BitMap" id="BitMap_idk2l"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 224, 7, 252, 63, 254, 127, 254, 127, 252, 63, 248, 31, 240, 15, 240, 31, 248, 63, 252, 127, 252, 127, 248, 63, 240, 15, 240, 15),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_27k0p"]
+[sub_resource type="BitMap" id="BitMap_ewvj2"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 224, 7, 252, 63, 254, 127, 254, 127, 252, 63, 248, 31, 240, 15, 240, 15, 248, 31, 252, 63, 254, 127, 254, 127, 252, 63, 240, 15),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_pxw8d"]
+[sub_resource type="BitMap" id="BitMap_2ewcs"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 224, 7, 252, 63, 254, 127, 254, 127, 252, 63, 248, 31, 240, 15, 248, 15, 252, 31, 254, 63, 254, 63, 252, 31, 240, 15),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_0njf4"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 224, 7, 252, 63, 254, 127, 254, 127, 252, 63, 248, 31, 240, 15, 240, 15, 248, 31, 252, 63, 254, 127, 254, 127, 252, 63, 240, 15),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_0s8jj"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 224, 7, 252, 63, 254, 127, 254, 127, 252, 63, 248, 31, 240, 15, 240, 31, 248, 63, 252, 127, 252, 127, 248, 63, 240, 15),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_2nnra"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 224, 7, 252, 63, 254, 127, 254, 127, 252, 63, 248, 31, 240, 15, 240, 15, 248, 31, 252, 63, 254, 127, 254, 127, 252, 63),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_h5kxd"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 224, 7, 252, 63, 254, 127, 254, 127, 252, 63, 248, 31, 240, 15, 248, 15, 252, 31, 254, 63, 254, 63, 252, 31),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_0u5yj"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 224, 7, 252, 63, 254, 127, 254, 127, 252, 63, 248, 31, 240, 15, 240, 15, 248, 31, 252, 63, 254, 127, 254, 127, 252, 63),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_27k0p"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 224, 7, 252, 63, 254, 127, 254, 127, 252, 63, 248, 31, 240, 15, 240, 31, 248, 63, 252, 127, 252, 127, 248, 63),
 "size": Vector2i(16, 16)
 }
 
@@ -103,4 +103,4 @@ script = ExtResource("1_r1iwo")
 name = &"p_exit"
 origin = Vector2(8, 8)
 containing_box = Rect2(1, 0, 14, 16)
-bitmaps = Array[BitMap]([SubResource("BitMap_csrwr"), SubResource("BitMap_6nnr5"), SubResource("BitMap_jjnjh"), SubResource("BitMap_bd174"), SubResource("BitMap_pqjqv"), SubResource("BitMap_pxirc"), SubResource("BitMap_idk2l"), SubResource("BitMap_ewvj2"), SubResource("BitMap_2ewcs"), SubResource("BitMap_0njf4"), SubResource("BitMap_0s8jj"), SubResource("BitMap_2nnra"), SubResource("BitMap_h5kxd"), SubResource("BitMap_0u5yj"), SubResource("BitMap_27k0p"), SubResource("BitMap_pxw8d")])
+bitmaps = Array[BitMap]([SubResource("BitMap_r1iwo"), SubResource("BitMap_csrwr"), SubResource("BitMap_6nnr5"), SubResource("BitMap_jjnjh"), SubResource("BitMap_bd174"), SubResource("BitMap_pqjqv"), SubResource("BitMap_pxirc"), SubResource("BitMap_idk2l"), SubResource("BitMap_ewvj2"), SubResource("BitMap_2ewcs"), SubResource("BitMap_0njf4"), SubResource("BitMap_0s8jj"), SubResource("BitMap_2nnra"), SubResource("BitMap_h5kxd"), SubResource("BitMap_0u5yj"), SubResource("BitMap_27k0p")])

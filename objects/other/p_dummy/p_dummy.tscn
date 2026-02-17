@@ -130,7 +130,18 @@
 [ext_resource type="Texture2D" uid="uid://cg0gcyr2h1lvl" path="res://sprites/character/tunnel man/tunnel_run_l/tunnel_run_l_5.png" id="128_iw4fr"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="129_gq22a"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="130_33t2b"]
+[ext_resource type="Resource" uid="uid://13vjk5emitjy" path="res://resources/sprite_info/run_left.tres" id="131_5kq5q"]
 [ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="131_qdum8"]
+[ext_resource type="Resource" uid="uid://m3sjn1r8j7cu" path="res://resources/sprite_info/damsel_run_l.tres" id="132_on4fp"]
+[ext_resource type="Resource" uid="uid://cdvlk7bc3hc10" path="res://resources/sprite_info/tunnel_run_l.tres" id="133_jatfe"]
+[ext_resource type="Resource" uid="uid://c6v7wpjamc22c" path="res://resources/sprite_info/damsel_left.tres" id="134_4qi37"]
+[ext_resource type="Resource" uid="uid://c3focqu4rgjuo" path="res://resources/sprite_info/tunnel_left.tres" id="135_mfwfy"]
+[ext_resource type="Resource" uid="uid://6ug0fs2erk02" path="res://resources/sprite_info/stand_left.tres" id="136_qx5aq"]
+[ext_resource type="Resource" uid="uid://dornhy8clyhkv" path="res://resources/sprite_info/p_kiss_l.tres" id="137_3i87j"]
+[ext_resource type="Resource" uid="uid://ftx2how3u7ex" path="res://resources/sprite_info/damsel_kiss_l.tres" id="138_bomb6"]
+[ext_resource type="Resource" uid="uid://dcbrf3yh75c7c" path="res://resources/sprite_info/damsel_exit.tres" id="139_edikg"]
+[ext_resource type="Resource" uid="uid://db8a7rdqoby65" path="res://resources/sprite_info/tunnel_exit.tres" id="140_qye1x"]
+[ext_resource type="Resource" uid="uid://1rlejcmw5pgw" path="res://resources/sprite_info/p_exit.tres" id="141_kc7qw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8p1w3"]
 animations = [{
@@ -339,7 +350,7 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_gq22a"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_5kq5q"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -659,61 +670,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_qdum8"]
-script = ExtResource("130_33t2b")
-origin = Vector2(8, 8)
-containing_box = Rect2(1, 0, 14, 16)
-
-[sub_resource type="Resource" id="Resource_qh16p"]
-script = ExtResource("130_33t2b")
-origin = Vector2(8, 8)
-containing_box = Rect2(2, 0, 14, 16)
-
-[sub_resource type="Resource" id="Resource_xfwsg"]
-script = ExtResource("130_33t2b")
-origin = Vector2(8, 8)
-containing_box = Rect2(1, 0, 14, 16)
-
-[sub_resource type="Resource" id="Resource_q1c68"]
-script = ExtResource("130_33t2b")
-origin = Vector2(8, 8)
-containing_box = Rect2(2, 0, 12, 16)
-
-[sub_resource type="Resource" id="Resource_gkkre"]
-script = ExtResource("130_33t2b")
-origin = Vector2(8, 8)
-containing_box = Rect2(2, 0, 12, 16)
-
-[sub_resource type="Resource" id="Resource_cno8o"]
-script = ExtResource("130_33t2b")
-origin = Vector2(8, 8)
-containing_box = Rect2(2, 0, 12, 16)
-
-[sub_resource type="Resource" id="Resource_jcwqj"]
-script = ExtResource("130_33t2b")
-origin = Vector2(8, 8)
-containing_box = Rect2(0, 0, 15, 16)
-
-[sub_resource type="Resource" id="Resource_3rylc"]
-script = ExtResource("130_33t2b")
-origin = Vector2(8, 8)
-containing_box = Rect2(0, 0, 15, 16)
-
-[sub_resource type="Resource" id="Resource_bqkfv"]
-script = ExtResource("130_33t2b")
-origin = Vector2(8, 8)
-containing_box = Rect2(2, 0, 12, 16)
-
-[sub_resource type="Resource" id="Resource_48ugy"]
-script = ExtResource("130_33t2b")
-origin = Vector2(8, 8)
-containing_box = Rect2(1, 0, 14, 16)
-
-[sub_resource type="Resource" id="Resource_5kq5q"]
-script = ExtResource("130_33t2b")
-origin = Vector2(8, 8)
-containing_box = Rect2(1, 0, 14, 16)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_on4fp"]
 size = Vector2(14, 16)
 
@@ -745,23 +701,23 @@ type = 1
 hide_at_start_of_frame = true
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("41_xil01")]
-sprite_frames = SubResource("SpriteFrames_gq22a")
+sprite_frames = SubResource("SpriteFrames_5kq5q")
 autoplay = "run_left"
 centered = false
 offset = Vector2(-8, -8)
 script = ExtResource("129_gq22a")
 sprite_info = Dictionary[StringName, ExtResource("130_33t2b")]({
-&"damsel_exit": SubResource("Resource_bqkfv"),
-&"damsel_kiss_l": SubResource("Resource_3rylc"),
-&"damsel_left": SubResource("Resource_q1c68"),
-&"damsel_run_l": SubResource("Resource_qh16p"),
-&"p_exit": SubResource("Resource_5kq5q"),
-&"p_kiss_l": SubResource("Resource_jcwqj"),
-&"run_left": SubResource("Resource_qdum8"),
-&"stand_left": SubResource("Resource_cno8o"),
-&"tunnel_exit": SubResource("Resource_48ugy"),
-&"tunnel_left": SubResource("Resource_gkkre"),
-&"tunnel_run_l": SubResource("Resource_xfwsg")
+&"damsel_exit": ExtResource("139_edikg"),
+&"damsel_kiss_l": ExtResource("138_bomb6"),
+&"damsel_left": ExtResource("134_4qi37"),
+&"damsel_run_l": ExtResource("132_on4fp"),
+&"p_exit": ExtResource("141_kc7qw"),
+&"p_kiss_l": ExtResource("137_3i87j"),
+&"run_left": ExtResource("131_5kq5q"),
+&"stand_left": ExtResource("136_qx5aq"),
+&"tunnel_exit": ExtResource("140_qye1x"),
+&"tunnel_left": ExtResource("135_mfwfy"),
+&"tunnel_run_l": ExtResource("133_jatfe")
 })
 default_animation = &"run_left"
 

@@ -5,8 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://c6gxd60p24gr7" path="res://sprites/level editor/jetpack_tile/jetpack_tile_0.png" id="3_ujxa6"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_lkqb5"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_x8jle"]
+[ext_resource type="Resource" uid="uid://b5rtjtk8yq4dd" path="res://resources/sprite_info/jetpack_tile.tres" id="6_ujxa6"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_pw3jq"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_ujxa6"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -17,10 +18,6 @@ animations = [{
 "name": &"jetpack_tile",
 "speed": 30.0
 }]
-
-[sub_resource type="Resource" id="Resource_ujxa6"]
-script = ExtResource("5_x8jle")
-containing_box = Rect2(2, 3, 12, 13)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lkqb5"]
 size = Vector2(12, 13)
@@ -35,12 +32,12 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "jetpack_tile"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_pw3jq")]
-sprite_frames = SubResource("SpriteFrames_pw3jq")
+sprite_frames = SubResource("SpriteFrames_ujxa6")
 autoplay = "jetpack_tile"
 centered = false
 script = ExtResource("4_lkqb5")
 sprite_info = Dictionary[StringName, ExtResource("5_x8jle")]({
-&"jetpack_tile": SubResource("Resource_ujxa6")
+&"jetpack_tile": ExtResource("6_ujxa6")
 })
 default_animation = &"jetpack_tile"
 

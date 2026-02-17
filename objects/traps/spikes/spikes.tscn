@@ -6,8 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://cb2y2bn7ochwq" path="res://sprites/traps/spikes_blood/spikes_blood_0.png" id="4_xv1xe"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="5_xxmtd"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="6_hy60h"]
+[ext_resource type="Resource" uid="uid://c51x2h7qxt2y2" path="res://resources/sprite_info/spikes.tres" id="7_xv1xe"]
+[ext_resource type="Resource" uid="uid://dgtydoqdodwfs" path="res://resources/sprite_info/spikes_blood.tres" id="8_xxmtd"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_v6ity"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_xv1xe"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -27,14 +29,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_07kok"]
-script = ExtResource("6_hy60h")
-containing_box = Rect2(0, 3, 16, 13)
-
-[sub_resource type="Resource" id="Resource_xv1xe"]
-script = ExtResource("6_hy60h")
-containing_box = Rect2(0, 4, 16, 12)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xxmtd"]
 size = Vector2(16, 13)
 
@@ -48,13 +42,13 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "spikes"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_v6ity")]
-sprite_frames = SubResource("SpriteFrames_v6ity")
+sprite_frames = SubResource("SpriteFrames_xv1xe")
 autoplay = "spikes"
 centered = false
 script = ExtResource("5_xxmtd")
 sprite_info = Dictionary[StringName, ExtResource("6_hy60h")]({
-&"spikes": SubResource("Resource_07kok"),
-&"spikes_blood": SubResource("Resource_xv1xe")
+&"spikes": ExtResource("7_xv1xe"),
+&"spikes_blood": ExtResource("8_xxmtd")
 })
 default_animation = &"spikes"
 

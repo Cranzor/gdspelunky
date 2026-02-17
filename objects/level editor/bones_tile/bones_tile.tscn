@@ -1,12 +1,13 @@
-[gd_scene load_steps=11 format=4 uid="uid://bknoeu4k1fo7p"]
+[gd_scene load_steps=10 format=3 uid="uid://bknoeu4k1fo7p"]
 
 [ext_resource type="Script" uid="uid://b42rrksvrfftp" path="res://objects/level editor/bones_tile/bones_tile.gd" id="1_q6g4g"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_n7nqv"]
 [ext_resource type="Texture2D" uid="uid://c05ujnwtwoi0q" path="res://sprites/items/other/fake_bones_left/fake_bones_left_0.png" id="3_siwtb"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_k10sj"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_jthmj"]
+[ext_resource type="Resource" uid="uid://dd8iif8e5lwy8" path="res://resources/sprite_info/fake_bones_left.tres" id="6_siwtb"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_n7nqv"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_siwtb"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -17,21 +18,6 @@ animations = [{
 "name": &"fake_bones_left",
 "speed": 30.0
 }]
-
-[sub_resource type="Image" id="Image_jsjug"]
-data = {
-"data": PackedByteArray("QIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAAECAAABAgAAAQIAAACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAQIAAAECAAABAgAAAQIAAACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgAECAAABAgAAAQIAAACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIABAQEAAQEBAAEBAQABAQEAAQEBAACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAICAgACAgIAAgICAAQEBAAEBAQABAQEAAQEBAAEBAQAAgICAAICAgACAgIAAgICAAICAg/yAgIP8gICD/ICAg/yAgIP8gICAAICAgAEBAQABAQEAAQEBAAEBAQABAQEAAICAgACAgIAAgICAAICAg/8DAwP///////9i1/8DAwP+AgID/ICAg/yAgIABAQEAAQEBAAEBAQABAQEAAQEBAAEBAQAAgICAAICAg/8DAwP////////////////+AgID/gICA/yAgIP8gICAAQEBAAEBAQABAQEAAQEBAAEBAQP9AQEAAICAgACAgIP//////gICA/yAgIP//////wMDA/yAgIP8AAAD/ICAg/0BAQABAQEAAQEBAAEBAQP//////QEBA/0BAQAAAAAD/wMDA//////8AAAD////////Ytf/AwMD/AAAA//////9AQEAAQEBAAEBAQP8AAAD//////wAAAP8gICD/AAAAAAAAAP/////////////Ytf8AAAD/AAAA//////+AgID/QEBAAEBAQP//////AAAA/4CAgP//////AAAA/yAgIP8AAAD////////Ytf8AAAD/ICAg//////+AgID/ICAg/w=="),
-"format": "RGBA8",
-"height": 16,
-"mipmaps": false,
-"width": 16
-}
-
-[sub_resource type="Resource" id="Resource_siwtb"]
-script = ExtResource("5_jthmj")
-containing_box = Rect2(1, 9, 15, 7)
-precise = true
-images = Array[Image]([SubResource("Image_jsjug")])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k10sj"]
 size = Vector2(15, 7)
@@ -46,12 +32,12 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "bones_tile"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_n7nqv")]
-sprite_frames = SubResource("SpriteFrames_n7nqv")
+sprite_frames = SubResource("SpriteFrames_siwtb")
 autoplay = "fake_bones_left"
 centered = false
 script = ExtResource("4_k10sj")
 sprite_info = Dictionary[StringName, ExtResource("5_jthmj")]({
-&"fake_bones_left": SubResource("Resource_siwtb")
+&"fake_bones_left": ExtResource("6_siwtb")
 })
 default_animation = &"fake_bones_left"
 

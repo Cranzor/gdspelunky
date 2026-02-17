@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_cgpqv"]
 
-[sub_resource type="BitMap" id="BitMap_8ognn"]
+[sub_resource type="BitMap" id="BitMap_cgpqv"]
 data = {
 "data": PackedByteArray(224, 15, 240, 31, 248, 63, 248, 127, 248, 127, 240, 63, 240, 63, 248, 127, 248, 127, 240, 63, 240, 31, 224, 15, 240, 15, 248, 7, 252, 3, 0, 0),
 "size": Vector2i(16, 16)
@@ -13,4 +13,4 @@ script = ExtResource("1_cgpqv")
 name = &"damsel_die_ll"
 origin = Vector2(8, 8)
 containing_box = Rect2(2, 0, 13, 15)
-bitmaps = Array[BitMap]([SubResource("BitMap_8ognn")])
+bitmaps = Array[BitMap]([SubResource("BitMap_cgpqv")])

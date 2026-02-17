@@ -5,8 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://cg2i2a3lnfttd" path="res://sprites/blocks/dark/moai/moai_0.png" id="3_yoanv"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_npgyu"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_j5401"]
+[ext_resource type="Resource" uid="uid://dfooq4s1wsli7" path="res://resources/sprite_info/moai.tres" id="6_yoanv"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_p6bdr"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_yoanv"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -17,10 +18,6 @@ animations = [{
 "name": &"moai",
 "speed": 30.0
 }]
-
-[sub_resource type="Resource" id="Resource_yoanv"]
-script = ExtResource("5_j5401")
-containing_box = Rect2(0, 0, 16, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_npgyu"]
 size = Vector2(16, 64)
@@ -35,12 +32,12 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "moai"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_p6bdr")]
-sprite_frames = SubResource("SpriteFrames_p6bdr")
+sprite_frames = SubResource("SpriteFrames_yoanv")
 autoplay = "moai"
 centered = false
 script = ExtResource("4_npgyu")
 sprite_info = Dictionary[StringName, ExtResource("5_j5401")]({
-&"moai": SubResource("Resource_yoanv")
+&"moai": ExtResource("6_yoanv")
 })
 default_animation = &"moai"
 

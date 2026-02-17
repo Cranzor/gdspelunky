@@ -8,8 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://oy6m7b600a1u" path="res://components/cave_top.tscn" id="5_umrj6"]
 [ext_resource type="Texture2D" uid="uid://coruvqw80pybl" path="res://backgrounds/bg_cave_top4.png" id="6_4cmxn"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="7_eilao"]
+[ext_resource type="Resource" uid="uid://ck5fr3s6ip7ld" path="res://resources/sprite_info/temple.tres" id="9_cvbvy"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_eilao"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_cvbvy"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -20,10 +21,6 @@ animations = [{
 "name": &"temple",
 "speed": 30.0
 }]
-
-[sub_resource type="Resource" id="Resource_cvbvy"]
-script = ExtResource("5_eilao")
-containing_box = Rect2(0, 0, 16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n2eht"]
 size = Vector2(16, 16)
@@ -49,12 +46,12 @@ region_rect = Rect2(0, 0, 16, 16)
 script = ExtResource("4_thpa5")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_n4c1e")]
-sprite_frames = SubResource("SpriteFrames_eilao")
+sprite_frames = SubResource("SpriteFrames_cvbvy")
 autoplay = "temple"
 centered = false
 script = ExtResource("7_eilao")
 sprite_info = Dictionary[StringName, ExtResource("5_eilao")]({
-&"temple": SubResource("Resource_cvbvy")
+&"temple": ExtResource("9_cvbvy")
 })
 default_animation = &"temple"
 

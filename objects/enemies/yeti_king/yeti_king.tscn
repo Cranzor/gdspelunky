@@ -58,9 +58,17 @@
 [ext_resource type="Texture2D" uid="uid://bl7dhb6f55vpb" path="res://sprites/enemies/yeti_king/yeti_king_yell_r/yeti_king_yell_r_9.png" id="56_byr0g"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="57_oedyb"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="58_86vaj"]
+[ext_resource type="Resource" uid="uid://morkmt1dcgob" path="res://resources/sprite_info/yeti_king_left.tres" id="59_m6dfe"]
 [ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="59_vvmfb"]
+[ext_resource type="Resource" uid="uid://s6oy318uiy0i" path="res://resources/sprite_info/yeti_king_turn_r.tres" id="60_d0p34"]
+[ext_resource type="Resource" uid="uid://b0ibnorw5oway" path="res://resources/sprite_info/yeti_king_yell_l.tres" id="61_533k6"]
+[ext_resource type="Resource" uid="uid://bs15j6nxo3h3j" path="res://resources/sprite_info/yeti_king_turn_l.tres" id="62_e6cd5"]
+[ext_resource type="Resource" uid="uid://dm8ep25q8rcby" path="res://resources/sprite_info/yeti_king_yell_r.tres" id="63_4r5ax"]
+[ext_resource type="Resource" uid="uid://dnmvvsrrxsi1n" path="res://resources/sprite_info/yeti_king_walk_l.tres" id="64_yj2sg"]
+[ext_resource type="Resource" uid="uid://bd36336lmr3hw" path="res://resources/sprite_info/yeti_king_walk_r.tres" id="65_nlsmx"]
+[ext_resource type="Resource" uid="uid://d3erpy3pnlc26" path="res://resources/sprite_info/yeti_king_right.tres" id="66_uj7ya"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_vvmfb"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_m6dfe"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -266,38 +274,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_3nr8f"]
-script = ExtResource("58_86vaj")
-containing_box = Rect2(1, 0, 31, 32)
-
-[sub_resource type="Resource" id="Resource_6hhef"]
-script = ExtResource("58_86vaj")
-containing_box = Rect2(0, 0, 32, 32)
-
-[sub_resource type="Resource" id="Resource_0dcuq"]
-script = ExtResource("58_86vaj")
-containing_box = Rect2(1, 0, 31, 32)
-
-[sub_resource type="Resource" id="Resource_hkrp0"]
-script = ExtResource("58_86vaj")
-containing_box = Rect2(0, 0, 32, 32)
-
-[sub_resource type="Resource" id="Resource_v1md2"]
-script = ExtResource("58_86vaj")
-containing_box = Rect2(0, 0, 31, 32)
-
-[sub_resource type="Resource" id="Resource_nv0ls"]
-script = ExtResource("58_86vaj")
-containing_box = Rect2(1, 0, 31, 32)
-
-[sub_resource type="Resource" id="Resource_jgv0e"]
-script = ExtResource("58_86vaj")
-containing_box = Rect2(0, 0, 31, 32)
-
-[sub_resource type="Resource" id="Resource_m6dfe"]
-script = ExtResource("58_86vaj")
-containing_box = Rect2(0, 0, 31, 32)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d0p34"]
 size = Vector2(31, 32)
 
@@ -311,19 +287,19 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "yeti_king"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_8nc2g")]
-sprite_frames = SubResource("SpriteFrames_vvmfb")
+sprite_frames = SubResource("SpriteFrames_m6dfe")
 autoplay = "yeti_king_left"
 centered = false
 script = ExtResource("57_oedyb")
 sprite_info = Dictionary[StringName, ExtResource("58_86vaj")]({
-&"yeti_king_left": SubResource("Resource_3nr8f"),
-&"yeti_king_right": SubResource("Resource_m6dfe"),
-&"yeti_king_turn_l": SubResource("Resource_hkrp0"),
-&"yeti_king_turn_r": SubResource("Resource_6hhef"),
-&"yeti_king_walk_l": SubResource("Resource_nv0ls"),
-&"yeti_king_walk_r": SubResource("Resource_jgv0e"),
-&"yeti_king_yell_l": SubResource("Resource_0dcuq"),
-&"yeti_king_yell_r": SubResource("Resource_v1md2")
+&"yeti_king_left": ExtResource("59_m6dfe"),
+&"yeti_king_right": ExtResource("66_uj7ya"),
+&"yeti_king_turn_l": ExtResource("62_e6cd5"),
+&"yeti_king_turn_r": ExtResource("60_d0p34"),
+&"yeti_king_walk_l": ExtResource("64_yj2sg"),
+&"yeti_king_walk_r": ExtResource("65_nlsmx"),
+&"yeti_king_yell_l": ExtResource("61_533k6"),
+&"yeti_king_yell_r": ExtResource("63_4r5ax")
 })
 default_animation = &"yeti_king_left"
 

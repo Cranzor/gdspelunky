@@ -8,9 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://3qqm132wfpex" path="res://sprites/enemies/frog_left/frog_left_2.png" id="6_fw6yy"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="7_5s5vy"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="8_kcc3b"]
+[ext_resource type="Resource" uid="uid://8fusdra5hugc" path="res://resources/sprite_info/frog_left.tres" id="9_f34ug"]
 [ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="9_snck4"]
+[ext_resource type="Resource" uid="uid://bbwtr2ympsqns" path="res://resources/sprite_info/frog_jump_l.tres" id="10_fw6yy"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_snck4"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_f34ug"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -36,14 +38,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_sjbmc"]
-script = ExtResource("8_kcc3b")
-containing_box = Rect2(2, 4, 13, 12)
-
-[sub_resource type="Resource" id="Resource_f34ug"]
-script = ExtResource("8_kcc3b")
-containing_box = Rect2(1, 2, 14, 12)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fw6yy"]
 size = Vector2(13, 12)
 
@@ -57,13 +51,13 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "frog"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_mbwvc")]
-sprite_frames = SubResource("SpriteFrames_snck4")
+sprite_frames = SubResource("SpriteFrames_f34ug")
 autoplay = "frog_left"
 centered = false
 script = ExtResource("7_5s5vy")
 sprite_info = Dictionary[StringName, ExtResource("8_kcc3b")]({
-&"frog_jump_l": SubResource("Resource_f34ug"),
-&"frog_left": SubResource("Resource_sjbmc")
+&"frog_jump_l": ExtResource("10_fw6yy"),
+&"frog_left": ExtResource("9_f34ug")
 })
 default_animation = &"frog_left"
 

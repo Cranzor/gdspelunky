@@ -2,31 +2,31 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_nydqk"]
 
-[sub_resource type="BitMap" id="BitMap_tlw0x"]
+[sub_resource type="BitMap" id="BitMap_nydqk"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 252, 1, 254, 3, 255, 7, 255, 15, 255, 15, 255, 31, 255, 127, 255, 255, 255, 255, 254, 127),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_dy4fo"]
+[sub_resource type="BitMap" id="BitMap_tlw0x"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 32, 0, 0, 0, 0, 0, 0, 0, 252, 1, 254, 3, 255, 7, 255, 15, 255, 15, 255, 31, 255, 127, 255, 255, 255, 255, 254, 127),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_jdaof"]
+[sub_resource type="BitMap" id="BitMap_dy4fo"]
 data = {
 "data": PackedByteArray(0, 0, 32, 0, 112, 0, 80, 0, 0, 0, 0, 0, 252, 1, 254, 3, 255, 7, 255, 15, 255, 15, 255, 31, 255, 127, 255, 255, 255, 255, 254, 127),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_oerpd"]
+[sub_resource type="BitMap" id="BitMap_jdaof"]
 data = {
 "data": PackedByteArray(16, 0, 124, 0, 56, 0, 40, 0, 0, 0, 0, 0, 252, 1, 254, 3, 255, 7, 255, 15, 255, 15, 255, 31, 255, 127, 255, 255, 255, 255, 254, 127),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_bxauj"]
+[sub_resource type="BitMap" id="BitMap_oerpd"]
 data = {
 "data": PackedByteArray(0, 0, 8, 0, 8, 0, 8, 0, 0, 0, 0, 0, 252, 1, 254, 3, 255, 7, 255, 15, 255, 15, 255, 31, 255, 127, 255, 255, 255, 255, 254, 127),
 "size": Vector2i(16, 16)
@@ -37,4 +37,4 @@ script = ExtResource("1_nydqk")
 name = &"damsel_stun_l"
 origin = Vector2(8, 8)
 containing_box = Rect2(0, 0, 16, 16)
-bitmaps = Array[BitMap]([SubResource("BitMap_tlw0x"), SubResource("BitMap_dy4fo"), SubResource("BitMap_jdaof"), SubResource("BitMap_oerpd"), SubResource("BitMap_bxauj")])
+bitmaps = Array[BitMap]([SubResource("BitMap_nydqk"), SubResource("BitMap_tlw0x"), SubResource("BitMap_dy4fo"), SubResource("BitMap_jdaof"), SubResource("BitMap_oerpd")])

@@ -5,8 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://dqt5lwth7bvod" path="res://sprites/traps/arrow_trap_right/arrow_trap_right_0.png" id="3_yqiol"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_hfxhj"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_82cg3"]
+[ext_resource type="Resource" uid="uid://lduoq8dxv4cw" path="res://resources/sprite_info/arrow_trap_right.tres" id="6_yqiol"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_raykj"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_yqiol"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -17,10 +18,6 @@ animations = [{
 "name": &"arrow_trap_right",
 "speed": 30.0
 }]
-
-[sub_resource type="Resource" id="Resource_yqiol"]
-script = ExtResource("5_82cg3")
-containing_box = Rect2(0, 0, 16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hfxhj"]
 size = Vector2(16, 16)
@@ -35,12 +32,12 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "arrow_repeater_r"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_raykj")]
-sprite_frames = SubResource("SpriteFrames_raykj")
+sprite_frames = SubResource("SpriteFrames_yqiol")
 autoplay = "arrow_trap_right"
 centered = false
 script = ExtResource("4_hfxhj")
 sprite_info = Dictionary[StringName, ExtResource("5_82cg3")]({
-&"arrow_trap_right": SubResource("Resource_yqiol")
+&"arrow_trap_right": ExtResource("6_yqiol")
 })
 default_animation = &"arrow_trap_right"
 

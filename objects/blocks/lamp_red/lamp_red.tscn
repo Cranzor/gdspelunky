@@ -8,8 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://bjcxjqu08yi2c" path="res://sprites/blocks/shop/lamp_red/lamp_red_lamp_red.png" id="6_g8sih"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="7_h8fkc"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="8_xddf3"]
+[ext_resource type="Resource" uid="uid://uvxf0a4jgv32" path="res://resources/sprite_info/lamp_red.tres" id="9_1htjt"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_k3rit"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_1htjt"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -30,10 +31,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_1htjt"]
-script = ExtResource("8_xddf3")
-containing_box = Rect2(1, 0, 14, 16)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1wdy2"]
 size = Vector2(14, 16)
 
@@ -47,12 +44,12 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "lamp_red"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_k3rit")]
-sprite_frames = SubResource("SpriteFrames_k3rit")
+sprite_frames = SubResource("SpriteFrames_1htjt")
 autoplay = "lamp_red"
 centered = false
 script = ExtResource("7_h8fkc")
 sprite_info = Dictionary[StringName, ExtResource("8_xddf3")]({
-&"lamp_red": SubResource("Resource_1htjt")
+&"lamp_red": ExtResource("9_1htjt")
 })
 default_animation = &"lamp_red"
 

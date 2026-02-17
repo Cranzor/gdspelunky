@@ -16,6 +16,7 @@ func _run() -> void:
 			sprite_info.origin = sprite_data.sprite_database[sprite_name]["origin"]
 			
 			var files = file_search.get_files(dir, "png")
+			files.sort_custom(func(a, b): return a.naturalnocasecmp_to(b) < 0)
 			sprite_info.containing_box = find_sprite_containing_box(files)
 			var shape = sprite_data.sprite_database[sprite_name]["mask"]["shape"]
 			if shape == "PRECISE": sprite_info.precise = true

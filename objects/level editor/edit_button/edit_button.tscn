@@ -1,12 +1,13 @@
-[gd_scene load_steps=11 format=4 uid="uid://cnqucw6irno58"]
+[gd_scene load_steps=10 format=3 uid="uid://cnqucw6irno58"]
 
 [ext_resource type="Script" uid="uid://d3ym7sycg18yh" path="res://objects/level editor/edit_button/edit_button.gd" id="1_ohxvb"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_60bfj"]
 [ext_resource type="Texture2D" uid="uid://bn1b3727k1enn" path="res://sprites/other/edit_button/edit_button_0.png" id="3_gqu0r"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_dnm5m"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_8leik"]
+[ext_resource type="Resource" uid="uid://cipt8dynoeahe" path="res://resources/sprite_info/edit_button.tres" id="6_gqu0r"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_60bfj"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_gqu0r"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -18,25 +19,10 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Image" id="Image_gqu0r"]
-data = {
-"data": PackedByteArray("8Gwe/+ajSP/mo0j/5qNI/+ajSP/mo0j/5qNI/+ajSP/mo0j/5qNI/+ajSP/mo0j/5qNI/+ajSP/mo0j/8Gwe/45ZJf/wbB7/8Gwe//BsHv/wbB7/8Gwe//BsHv/wbB7/8Gwe//BsHv/wbB7/8Gwe//BsHv/wbB7/8Gwe/45ZJf+OWSX/8Gwe////////////8Gwe////////////8Gwe//BsHv//////8Gwe//////////////////BsHv+OWSX/jlkl//BsHv//////Yy8d//BsHv//////Yy8d///////wbB7///////BsHv9jLx3//////2MvHf/wbB7/jlkl/45ZJf/wbB7////////////wbB7///////BsHv//////8Gwe///////wbB7/8Gwe///////wbB7/8Gwe/45ZJf+OWSX/8Gwe//////9jLx3/8Gwe///////wbB7///////BsHv//////8Gwe//BsHv//////8Gwe//BsHv+OWSX/jlkl//BsHv////////////BsHv///////////2MvHf/wbB7///////BsHv/wbB7///////BsHv/wbB7/jlkl/45ZJf/wbB7/Yy8d/2MvHf/wbB7/Yy8d/2MvHf/wbB7/8Gwe/2MvHf/wbB7/8Gwe/2MvHf/wbB7/8Gwe/45ZJf+OWSX/8Gwe///////wbB7////////////wbB7/8Gwe////////////8Gwe//////////////////BsHv+OWSX/jlkl//BsHv//////8Gwe//////9jLx3///////BsHv//////Yy8d//BsHv//////Yy8d///////wbB7/jlkl/45ZJf/wbB7///////BsHv//////8Gwe///////wbB7////////////wbB7///////BsHv//////8Gwe/45ZJf+OWSX/8Gwe///////wbB7///////BsHv//////8Gwe//////9jLx3/8Gwe///////wbB7///////BsHv+OWSX/jlkl//BsHv//////8Gwe///////wbB7///////BsHv//////8Gwe//BsHv/////////////////wbB7/jlkl/45ZJf/wbB7/Yy8d//BsHv9jLx3/8Gwe/2MvHf/wbB7/Yy8d//BsHv/wbB7/Yy8d/2MvHf9jLx3/8Gwe/45ZJf+OWSX/8Gwe//BsHv/wbB7/8Gwe//BsHv/wbB7/8Gwe//BsHv/wbB7/8Gwe//BsHv/wbB7/8Gwe//BsHv+OWSX/Yy8d/2MvHf9jLx3/Yy8d/2MvHf9jLx3/Yy8d/2MvHf9jLx3/Yy8d/2MvHf9jLx3/Yy8d/2MvHf9jLx3/Yy8d/w=="),
-"format": "RGBA8",
-"height": 16,
-"mipmaps": false,
-"width": 16
-}
-
-[sub_resource type="Resource" id="Resource_dnm5m"]
-script = ExtResource("5_8leik")
-containing_box = Rect2(0, 0, 16, 16)
-precise = true
-images = Array[Image]([SubResource("Image_gqu0r")])
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8leik"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dnm5m"]
 size = Vector2(16, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_n5m43"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8leik"]
 size = Vector2(32, 32)
 
 [node name="EditButton" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -45,18 +31,18 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "edit_button"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_60bfj")]
-sprite_frames = SubResource("SpriteFrames_60bfj")
+sprite_frames = SubResource("SpriteFrames_gqu0r")
 autoplay = "edit_button"
 centered = false
 script = ExtResource("4_dnm5m")
 sprite_info = Dictionary[StringName, ExtResource("5_8leik")]({
-&"edit_button": SubResource("Resource_dnm5m")
+&"edit_button": ExtResource("6_gqu0r")
 })
 default_animation = &"edit_button"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_8leik")
+shape = SubResource("RectangleShape2D_dnm5m")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -64,5 +50,5 @@ collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_n5m43")
+shape = SubResource("RectangleShape2D_8leik")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)

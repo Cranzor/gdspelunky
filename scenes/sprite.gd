@@ -56,7 +56,7 @@ func generate_sprites():
 	else:
 		default_animation = object_sprite_value
 		set_autoplay(default_animation) #--- object's default sprite plays
-	offset = -sprite_info[default_animation].origin
+		offset = -sprite_info[default_animation].origin
 
 
 func get_all_sprites() -> Array:
@@ -97,16 +97,6 @@ func add_new_animation(animation_name: StringName, sprite_pngs: PackedStringArra
 
 
 func add_sprite_info(sprite_name: StringName, sprite_pngs: PackedStringArray):
-	#var new_sprite_info: SpriteInfo = SpriteInfo.new()
-	#var sprites = load("res://resources/sprites.gd").new()
-	#var shape: String = sprites.sprite_database[sprite_name]["mask"]["shape"]
-	#var origin: Vector2 = sprites.sprite_database[sprite_name]["origin"]
-	#if shape == "PRECISE":
-		#new_sprite_info.precise = true
-		#new_sprite_info.images = generate_sprite_images(sprite_pngs)
-	#new_sprite_info.origin = origin
-	#new_sprite_info.containing_box = find_sprite_containing_box(sprite_pngs)
-	#sprite_info[sprite_name] = new_sprite_info
 	var new_sprite_info: SpriteInfo = load("res://resources/sprite_info/%s.tres" % sprite_name)
 	sprite_info[sprite_name] = new_sprite_info
 

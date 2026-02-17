@@ -1,12 +1,13 @@
-[gd_scene load_steps=11 format=4 uid="uid://bg7800bj5q26k"]
+[gd_scene load_steps=10 format=3 uid="uid://bg7800bj5q26k"]
 
 [ext_resource type="Script" uid="uid://bb1ua7x0qqnty" path="res://objects/other/title/x_moon/x_moon.gd" id="1_f2wcw"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_hoax6"]
 [ext_resource type="Texture2D" uid="uid://dx1p2ru22timq" path="res://sprites/blocks/background/exit/exit_0.png" id="3_a7lhj"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_p7dce"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_2p8kf"]
+[ext_resource type="Resource" uid="uid://coco54n7k46ml" path="res://resources/sprite_info/exit.tres" id="6_a7lhj"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_hoax6"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_a7lhj"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -17,21 +18,6 @@ animations = [{
 "name": &"exit",
 "speed": 30.0
 }]
-
-[sub_resource type="Image" id="Image_1d0pq"]
-data = {
-"data": PackedByteArray("AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/zRGW/8VHij/FR4o/xUeKP8VHij/FR4o/xUeKP8VHij/FR4o/xUeKP8VHij/FR4o/xUeKP8HDBD/BwwQ/zRGW/8VHij/NEZb/0dhfv9HYX7/R2F+/0dhfv9HYX7/R2F+/0dhfv9HYX7/R2F+/0dhfv9HYX7/R2F+/zRGW/8HDBD/FR4o/zRGW/8VHij/BwwQ/wcMEP8HDBD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/BwwQ/xUeKP8VHij/BwwQ/xUeKP80Rlv/BwwQ/wcMEP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8HDBD/FR4o/wcMEP8VHij/NEZb/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/xUeKP8HDBD/FR4o/zRGW/8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8VHij/BwwQ/xUeKP80Rlv/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8HDBD/FR4o/wcMEP8VHij/NEZb/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/xUeKP8HDBD/FR4o/zRGW/8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8VHij/BwwQ/xUeKP80Rlv/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8VHij/FR4o/wcMEP8VHij/NEZb/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8VHij/BwwQ/xUeKP8HDBD/FR4o/zRGW/8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/BwwQ/wcMEP8VHij/BwwQ/xUeKP80Rlv/AAAA/wcMEP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wcMEP8HDBD/FR4o/wcMEP8VHij/NEZb/wAAAP8HDBD/BwwQ/wAAAP8AAAD/AAAA/wAAAP8HDBD/BwwQ/wAAAP8HDBD/BwwQ/xUeKP8HDBD/FR4o/zRGW/8AAAD/BwwQ/wcMEP8AAAD/AAAA/wAAAP8HDBD/BwwQ/wcMEP8AAAD/BwwQ/wcMEP8VHij/BwwQ/w=="),
-"format": "RGBA8",
-"height": 16,
-"mipmaps": false,
-"width": 16
-}
-
-[sub_resource type="Resource" id="Resource_a7lhj"]
-script = ExtResource("5_2p8kf")
-containing_box = Rect2(0, 0, 16, 16)
-precise = true
-images = Array[Image]([SubResource("Image_1d0pq")])
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p7dce"]
 size = Vector2(16, 16)
@@ -46,12 +32,12 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "x_moon"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_hoax6")]
-sprite_frames = SubResource("SpriteFrames_hoax6")
+sprite_frames = SubResource("SpriteFrames_a7lhj")
 autoplay = "exit"
 centered = false
 script = ExtResource("4_p7dce")
 sprite_info = Dictionary[StringName, ExtResource("5_2p8kf")]({
-&"exit": SubResource("Resource_a7lhj")
+&"exit": ExtResource("6_a7lhj")
 })
 default_animation = &"exit"
 

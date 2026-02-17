@@ -12,8 +12,11 @@
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="10_s1qpf"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="11_qxqpp"]
 [ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="12_e1y2w"]
+[ext_resource type="Resource" uid="uid://vjfy3w2g8wum" path="res://resources/sprite_info/bat_hang.tres" id="12_o5fl2"]
+[ext_resource type="Resource" uid="uid://v6h6km8il7f3" path="res://resources/sprite_info/bat_left.tres" id="13_mtek4"]
+[ext_resource type="Resource" uid="uid://er2r5t3sl00f" path="res://resources/sprite_info/bat_right.tres" id="14_vncre"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_e1y2w"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_o5fl2"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -53,18 +56,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_5dw2s"]
-script = ExtResource("11_qxqpp")
-containing_box = Rect2(3, 0, 11, 12)
-
-[sub_resource type="Resource" id="Resource_byrlv"]
-script = ExtResource("11_qxqpp")
-containing_box = Rect2(0, 3, 16, 11)
-
-[sub_resource type="Resource" id="Resource_o5fl2"]
-script = ExtResource("11_qxqpp")
-containing_box = Rect2(0, 3, 16, 11)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mtek4"]
 size = Vector2(11, 12)
 
@@ -78,14 +69,14 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "bat"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_qgjsc")]
-sprite_frames = SubResource("SpriteFrames_e1y2w")
+sprite_frames = SubResource("SpriteFrames_o5fl2")
 autoplay = "bat_hang"
 centered = false
 script = ExtResource("10_s1qpf")
 sprite_info = Dictionary[StringName, ExtResource("11_qxqpp")]({
-&"bat_hang": SubResource("Resource_5dw2s"),
-&"bat_left": SubResource("Resource_byrlv"),
-&"bat_right": SubResource("Resource_o5fl2")
+&"bat_hang": ExtResource("12_o5fl2"),
+&"bat_left": ExtResource("13_mtek4"),
+&"bat_right": ExtResource("14_vncre")
 })
 default_animation = &"bat_hang"
 

@@ -5,9 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://c5nqjmo2jaj7" path="res://sprites/enemies/ufo_crash/ufo_crash_0.png" id="3_t368q"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_2hne6"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_c85yr"]
+[ext_resource type="Resource" uid="uid://dq0rjpoe8l3lc" path="res://resources/sprite_info/ufo_crash.tres" id="6_2hne6"]
 [ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="6_t368q"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_t368q"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_2hne6"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -18,10 +19,6 @@ animations = [{
 "name": &"ufo_crash",
 "speed": 30.0
 }]
-
-[sub_resource type="Resource" id="Resource_2hne6"]
-script = ExtResource("5_c85yr")
-containing_box = Rect2(0, 4, 15, 10)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c85yr"]
 size = Vector2(15, 10)
@@ -35,12 +32,12 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "ufo_crash"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_gjttu")]
-sprite_frames = SubResource("SpriteFrames_t368q")
+sprite_frames = SubResource("SpriteFrames_2hne6")
 autoplay = "ufo_crash"
 centered = false
 script = ExtResource("4_2hne6")
 sprite_info = Dictionary[StringName, ExtResource("5_c85yr")]({
-&"ufo_crash": SubResource("Resource_2hne6")
+&"ufo_crash": ExtResource("6_2hne6")
 })
 default_animation = &"ufo_crash"
 

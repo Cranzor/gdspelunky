@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://b874pb5artidw"]
+[gd_scene load_steps=12 format=3 uid="uid://b874pb5artidw"]
 
 [ext_resource type="Script" uid="uid://dlq4cqus6omyb" path="res://objects/other/intro/desert_scroll2/desert_scroll2.gd" id="1_ngq40"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_ex80v"]
@@ -6,8 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://cco2y6avwwh8i" path="res://sprites/other/intro/desert_night2/desert_night2_0.png" id="4_hl7sg"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="5_keaid"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="6_gi7u5"]
+[ext_resource type="Resource" uid="uid://o2nwm463d1e1" path="res://resources/sprite_info/desert2.tres" id="7_hl7sg"]
+[ext_resource type="Resource" uid="uid://yi2278y8xtgh" path="res://resources/sprite_info/desert_night2.tres" id="8_keaid"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ex80v"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_hl7sg"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -27,36 +29,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Image" id="Image_2125l"]
-data = {
-"data": PackedByteArray("+9Vi//vVYv/71WL/q5tB//vVYv/71WL/q5tB//vVYv/71WL/q5tB//vVYv/71WL/+9Vi//vVYv+rm0H/+9Vi//vVYv+rm0H/+9Vi//vVYv/71WL/+9Vi//vVYv/71WL/+9Vi//vVYv/71WL/q5tB//vVYv/71WL/+9Vi//vVYv/71WL/+9Vi//vVYv/71WL/q5tB//vVYv/71WL/+9Vi/6ubQf/71WL/+9Vi//vVYv/71WL/q5tB//vVYv+rm0H/+9Vi/6ubQf/71WL/+9Vi//vVYv/71WL/q5tB//vVYv/71WL/+9Vi/6ubQf/71WL/+9Vi//vVYv/71WL/+9Vi//vVYv/71WL/+9Vi//vVYv/71WL/+9Vi//vVYv/71WL/+9Vi//vVYv/71WL/+9Vi/6ubQf/71WL/+9Vi//vVYv/71WL/+9Vi//vVYv+rm0H/+9Vi//vVYv/71WL/+9Vi/6ubQf/71WL/+9Vi//vVYv/71WL/+9Vi/6ubQf/71WL/+9Vi//vVYv/71WL/+9Vi//vVYv/71WL/q5tB//vVYv/71WL/+9Vi//vVYv+rm0H/+9Vi//vVYv/71WL/+9Vi/6ubQf/71WL/+9Vi//vVYv/71WL/+9Vi//vVYv/71WL/+9Vi//vVYv/71WL/+9Vi//vVYv/71WL/+9Vi//vVYv/71WL/+9Vi//vVYv/71WL/q5tB//vVYv/71WL/+9Vi//vVYv+rm0H/+9Vi//vVYv/71WL/+9Vi//vVYv/71WL/+9Vi//vVYv/71WL/+9Vi//vVYv/71WL/+9Vi//vVYv/71WL/+9Vi//vVYv/71WL/q5tB//vVYv/71WL/+9Vi//vVYv/71WL/+9Vi//vVYv/71WL/+9Vi/6ubQf/71WL/+9Vi//vVYv/71WL/+9Vi//vVYv/71WL/+9Vi//vVYv/71WL/+9Vi/6ubQf/71WL/+9Vi//vVYv/71WL/+9Vi//vVYv+rm0H/+9Vi//vVYv/71WL/+9Vi//vVYv/71WL/+9Vi//vVYv/71WL/+9Vi//vVYv/71WL/+9Vi//vVYv/71WL/+9Vi//vVYv/71WL/+9Vi//vVYv/71WL/+9Vi//vVYv/71WL/+9Vi//vVYv/71WL/+9Vi//vVYv/71WL/+9Vi//vVYv/71WL/+9Vi/6ubQf/71WL/+9Vi//vVYv+rm0H/+9Vi//vVYv/71WL/+9Vi//vVYv/71WL/+9Vi//vVYv/71WL/+9Vi//vVYv/71WL/+9Vi//vVYv/71WL/+9Vi//vVYv/71WL/+9Vi//vVYv/71WL/q5tB//vVYv/71WL/+9Vi//vVYv/71WL/+9Vi//vVYv/71WL/+9Vi/w=="),
-"format": "RGBA8",
-"height": 16,
-"mipmaps": false,
-"width": 16
-}
-
-[sub_resource type="Resource" id="Resource_qwmj2"]
-script = ExtResource("6_gi7u5")
-containing_box = Rect2(0, 0, 16, 16)
-precise = true
-images = Array[Image]([SubResource("Image_2125l")])
-
-[sub_resource type="Image" id="Image_l1icg"]
-data = {
-"data": PackedByteArray("CVCE/wlQhP8JUIT/AABA/wlQhP8JUIT/AABA/wlQhP8JUIT/AABA/wlQhP8JUIT/CVCE/wlQhP8AAED/CVCE/wlQhP8AAED/CVCE/wlQhP8JUIT/CVCE/wlQhP8JUIT/CVCE/wlQhP8JUIT/AABA/wlQhP8JUIT/CVCE/wlQhP8JUIT/CVCE/wlQhP8JUIT/AABA/wlQhP8JUIT/CVCE/wAAQP8JUIT/CVCE/wlQhP8JUIT/AABA/wlQhP8AAED/CVCE/wAAQP8JUIT/CVCE/wlQhP8JUIT/AABA/wlQhP8JUIT/CVCE/wAAQP8JUIT/CVCE/wlQhP8JUIT/CVCE/wlQhP8JUIT/CVCE/wlQhP8JUIT/CVCE/wlQhP8JUIT/CVCE/wlQhP8JUIT/CVCE/wAAQP8JUIT/CVCE/wlQhP8JUIT/CVCE/wlQhP8AAED/CVCE/wlQhP8JUIT/CVCE/wAAQP8JUIT/CVCE/wlQhP8JUIT/CVCE/wAAQP8JUIT/CVCE/wlQhP8JUIT/CVCE/wlQhP8JUIT/AABA/wlQhP8JUIT/CVCE/wlQhP8AAED/CVCE/wlQhP8JUIT/CVCE/wAAQP8JUIT/CVCE/wlQhP8JUIT/CVCE/wlQhP8JUIT/CVCE/wlQhP8JUIT/CVCE/wlQhP8JUIT/CVCE/wlQhP8JUIT/CVCE/wlQhP8JUIT/AABA/wlQhP8JUIT/CVCE/wlQhP8AAED/CVCE/wlQhP8JUIT/CVCE/wlQhP8JUIT/CVCE/wlQhP8JUIT/CVCE/wlQhP8JUIT/CVCE/wlQhP8JUIT/CVCE/wlQhP8JUIT/AABA/wlQhP8JUIT/CVCE/wlQhP8JUIT/CVCE/wlQhP8JUIT/CVCE/wAAQP8JUIT/CVCE/wlQhP8JUIT/CVCE/wlQhP8JUIT/CVCE/wlQhP8JUIT/CVCE/wAAQP8JUIT/CVCE/wlQhP8JUIT/CVCE/wlQhP8AAED/CVCE/wlQhP8JUIT/CVCE/wlQhP8JUIT/CVCE/wlQhP8JUIT/CVCE/wlQhP8JUIT/CVCE/wlQhP8JUIT/CVCE/wlQhP8JUIT/CVCE/wlQhP8JUIT/CVCE/wlQhP8JUIT/CVCE/wlQhP8JUIT/CVCE/wlQhP8JUIT/CVCE/wlQhP8JUIT/CVCE/wAAQP8JUIT/CVCE/wlQhP8AAED/CVCE/wlQhP8JUIT/CVCE/wlQhP8JUIT/CVCE/wlQhP8JUIT/CVCE/wlQhP8JUIT/CVCE/wlQhP8JUIT/CVCE/wlQhP8JUIT/CVCE/wlQhP8JUIT/AABA/wlQhP8JUIT/CVCE/wlQhP8JUIT/CVCE/wlQhP8JUIT/CVCE/w=="),
-"format": "RGBA8",
-"height": 16,
-"mipmaps": false,
-"width": 16
-}
-
-[sub_resource type="Resource" id="Resource_hl7sg"]
-script = ExtResource("6_gi7u5")
-containing_box = Rect2(0, 0, 16, 16)
-precise = true
-images = Array[Image]([SubResource("Image_l1icg")])
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_keaid"]
 size = Vector2(16, 16)
 
@@ -70,13 +42,13 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "desert_scroll2"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_ex80v")]
-sprite_frames = SubResource("SpriteFrames_ex80v")
+sprite_frames = SubResource("SpriteFrames_hl7sg")
 autoplay = "desert2"
 centered = false
 script = ExtResource("5_keaid")
 sprite_info = Dictionary[StringName, ExtResource("6_gi7u5")]({
-&"desert2": SubResource("Resource_qwmj2"),
-&"desert_night2": SubResource("Resource_hl7sg")
+&"desert2": ExtResource("7_hl7sg"),
+&"desert_night2": ExtResource("8_keaid")
 })
 default_animation = &"desert2"
 

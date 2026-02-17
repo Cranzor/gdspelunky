@@ -6,8 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://6m3j473yiuor" path="res://sprites/other/box_checked/box_checked_0.png" id="4_ywl0p"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="5_8327e"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="6_dbelr"]
+[ext_resource type="Resource" uid="uid://dxgyrpg65n56v" path="res://resources/sprite_info/box_checked.tres" id="7_ywl0p"]
+[ext_resource type="Resource" uid="uid://rkbeqw0rusig" path="res://resources/sprite_info/box.tres" id="8_8327e"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_0abbm"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_ywl0p"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -27,14 +29,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_rwaas"]
-script = ExtResource("6_dbelr")
-containing_box = Rect2(0, 0, 8, 8)
-
-[sub_resource type="Resource" id="Resource_ywl0p"]
-script = ExtResource("6_dbelr")
-containing_box = Rect2(0, 0, 8, 8)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8327e"]
 size = Vector2(8, 8)
 
@@ -47,13 +41,13 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "check_box4"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_0abbm")]
-sprite_frames = SubResource("SpriteFrames_0abbm")
+sprite_frames = SubResource("SpriteFrames_ywl0p")
 autoplay = "box_checked"
 centered = false
 script = ExtResource("5_8327e")
 sprite_info = Dictionary[StringName, ExtResource("6_dbelr")]({
-&"box": SubResource("Resource_ywl0p"),
-&"box_checked": SubResource("Resource_rwaas")
+&"box": ExtResource("8_8327e"),
+&"box_checked": ExtResource("7_ywl0p")
 })
 default_animation = &"box_checked"
 

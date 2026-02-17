@@ -11,8 +11,10 @@
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="9_dkbhf"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="10_w856o"]
 [ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="11_gamdg"]
+[ext_resource type="Resource" uid="uid://bpe6dlhn4y45q" path="res://resources/sprite_info/piranha_left.tres" id="11_iuv8f"]
+[ext_resource type="Resource" uid="uid://cyeiwm06atfau" path="res://resources/sprite_info/piranha_right.tres" id="12_4o7oi"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_gamdg"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_iuv8f"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -44,14 +46,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_y6db5"]
-script = ExtResource("10_w856o")
-containing_box = Rect2(0, 0, 8, 8)
-
-[sub_resource type="Resource" id="Resource_iuv8f"]
-script = ExtResource("10_w856o")
-containing_box = Rect2(0, 0, 8, 8)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4o7oi"]
 size = Vector2(8, 8)
 
@@ -65,13 +59,13 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "piranha"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_kevv7")]
-sprite_frames = SubResource("SpriteFrames_gamdg")
+sprite_frames = SubResource("SpriteFrames_iuv8f")
 autoplay = "piranha_left"
 centered = false
 script = ExtResource("9_dkbhf")
 sprite_info = Dictionary[StringName, ExtResource("10_w856o")]({
-&"piranha_left": SubResource("Resource_y6db5"),
-&"piranha_right": SubResource("Resource_iuv8f")
+&"piranha_left": ExtResource("11_iuv8f"),
+&"piranha_right": ExtResource("12_4o7oi")
 })
 default_animation = &"piranha_left"
 

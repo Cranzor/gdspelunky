@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://0ll8e3dclykc"]
+[gd_scene load_steps=22 format=3 uid="uid://0ll8e3dclykc"]
 
 [ext_resource type="Script" uid="uid://cerojbnqk5a13" path="res://objects/other/title/bat_target/bat_target.gd" id="1_vv8sc"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_2rgel"]
@@ -15,8 +15,11 @@
 [ext_resource type="Texture2D" uid="uid://c5fxjnkg867fc" path="res://sprites/enemies/ufo/ufo_7.png" id="13_je4rg"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="14_wnw30"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="15_4wean"]
+[ext_resource type="Resource" uid="uid://v6h6km8il7f3" path="res://resources/sprite_info/bat_left.tres" id="16_1gc33"]
+[ext_resource type="Resource" uid="uid://byxaoqaq33xdp" path="res://resources/sprite_info/ufo.tres" id="17_gaii8"]
+[ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="18_5321r"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_2rgel"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_1gc33"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -63,18 +66,10 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_ppk6u"]
-script = ExtResource("15_4wean")
-containing_box = Rect2(0, 3, 16, 11)
-
-[sub_resource type="Resource" id="Resource_awvtx"]
-script = ExtResource("15_4wean")
-containing_box = Rect2(0, 1, 16, 13)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1gc33"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gaii8"]
 size = Vector2(16, 11)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gaii8"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5321r"]
 size = Vector2(32, 22)
 
 [node name="BatTarget" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -83,19 +78,19 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "bat_target"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_2rgel")]
-sprite_frames = SubResource("SpriteFrames_2rgel")
+sprite_frames = SubResource("SpriteFrames_1gc33")
 autoplay = "bat_left"
 centered = false
 script = ExtResource("14_wnw30")
 sprite_info = Dictionary[StringName, ExtResource("15_4wean")]({
-&"bat_left": SubResource("Resource_ppk6u"),
-&"ufo": SubResource("Resource_awvtx")
+&"bat_left": ExtResource("16_1gc33"),
+&"ufo": ExtResource("17_gaii8")
 })
 default_animation = &"bat_left"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, 8.5)
-shape = SubResource("RectangleShape2D_1gc33")
+shape = SubResource("RectangleShape2D_gaii8")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -103,5 +98,7 @@ collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 position = Vector2(8, 8.5)
-shape = SubResource("RectangleShape2D_gaii8")
+shape = SubResource("RectangleShape2D_5321r")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)
+
+[node name="SmoothMotion" type="Node" parent="." instance=ExtResource("18_5321r")]

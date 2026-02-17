@@ -6,8 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://dttjtb2xj5avq" path="res://sprites/blocks/lush/tree_branch_right/tree_branch_right_0.png" id="4_tr5hd"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="5_rmsd8"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="6_gler6"]
+[ext_resource type="Resource" uid="uid://b6gmwftfbs7bj" path="res://resources/sprite_info/tree_branch_right.tres" id="7_tr5hd"]
+[ext_resource type="Resource" uid="uid://dcnluqbcoa2y4" path="res://resources/sprite_info/tree_branch_dead_r.tres" id="8_rmsd8"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_6xilp"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_tr5hd"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -27,14 +29,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_emx67"]
-script = ExtResource("6_gler6")
-containing_box = Rect2(0, 0, 16, 11)
-
-[sub_resource type="Resource" id="Resource_tr5hd"]
-script = ExtResource("6_gler6")
-containing_box = Rect2(0, 0, 16, 10)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rmsd8"]
 size = Vector2(16, 11)
 
@@ -48,13 +42,13 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "tree_branch"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_6xilp")]
-sprite_frames = SubResource("SpriteFrames_6xilp")
+sprite_frames = SubResource("SpriteFrames_tr5hd")
 autoplay = "tree_branch_right"
 centered = false
 script = ExtResource("5_rmsd8")
 sprite_info = Dictionary[StringName, ExtResource("6_gler6")]({
-&"tree_branch_dead_r": SubResource("Resource_tr5hd"),
-&"tree_branch_right": SubResource("Resource_emx67")
+&"tree_branch_dead_r": ExtResource("8_rmsd8"),
+&"tree_branch_right": ExtResource("7_tr5hd")
 })
 default_animation = &"tree_branch_right"
 

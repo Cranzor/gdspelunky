@@ -5,8 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://dj6uxphwy4qin" path="res://sprites/other/title/tutorial_sign/tutorial_sign_0.png" id="3_6ruwe"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_gkmat"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_dlmaa"]
+[ext_resource type="Resource" uid="uid://b12aijowtlsb2" path="res://resources/sprite_info/tutorial_sign.tres" id="6_6ruwe"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_bt07d"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_6ruwe"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -17,10 +18,6 @@ animations = [{
 "name": &"tutorial_sign",
 "speed": 30.0
 }]
-
-[sub_resource type="Resource" id="Resource_6ruwe"]
-script = ExtResource("5_dlmaa")
-containing_box = Rect2(0, 0, 32, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gkmat"]
 size = Vector2(32, 16)
@@ -35,12 +32,12 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "tutorial_sign"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_bt07d")]
-sprite_frames = SubResource("SpriteFrames_bt07d")
+sprite_frames = SubResource("SpriteFrames_6ruwe")
 autoplay = "tutorial_sign"
 centered = false
 script = ExtResource("4_gkmat")
 sprite_info = Dictionary[StringName, ExtResource("5_dlmaa")]({
-&"tutorial_sign": SubResource("Resource_6ruwe")
+&"tutorial_sign": ExtResource("6_6ruwe")
 })
 default_animation = &"tutorial_sign"
 

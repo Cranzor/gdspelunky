@@ -66,8 +66,10 @@
 [ext_resource type="Texture2D" uid="uid://twkt46lu10n0" path="res://sprites/traps/spears_right/spears_right_9.png" id="64_3yphh"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="65_mpmqj"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="66_udsyy"]
+[ext_resource type="Resource" uid="uid://do8wi13im1a4a" path="res://resources/sprite_info/spears_left.tres" id="67_msyeb"]
+[ext_resource type="Resource" uid="uid://du18jpo1ohqbj" path="res://resources/sprite_info/spears_right.tres" id="68_foh4b"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_bbvw1"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_msyeb"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -267,14 +269,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_ccti6"]
-script = ExtResource("66_udsyy")
-containing_box = Rect2(0, 0, 16, 15)
-
-[sub_resource type="Resource" id="Resource_msyeb"]
-script = ExtResource("66_udsyy")
-containing_box = Rect2(0, 0, 9, 15)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_foh4b"]
 size = Vector2(16, 15)
 
@@ -288,13 +282,13 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "spears_left"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_bbvw1")]
-sprite_frames = SubResource("SpriteFrames_bbvw1")
+sprite_frames = SubResource("SpriteFrames_msyeb")
 autoplay = "spears_left"
 centered = false
 script = ExtResource("65_mpmqj")
 sprite_info = Dictionary[StringName, ExtResource("66_udsyy")]({
-&"spears_left": SubResource("Resource_ccti6"),
-&"spears_right": SubResource("Resource_msyeb")
+&"spears_left": ExtResource("67_msyeb"),
+&"spears_right": ExtResource("68_foh4b")
 })
 default_animation = &"spears_left"
 

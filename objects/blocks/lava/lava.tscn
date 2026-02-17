@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dkwc10xfss8q0" path="res://sprites/blocks/water/lava/lava_0.png" id="10_7465u"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="11_v8yfy"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="12_er72v"]
+[ext_resource type="Resource" uid="uid://c14w1pvmg76xv" path="res://resources/sprite_info/lava.tres" id="13_7465u"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ttmrw"]
 shader = ExtResource("3_7p28n")
@@ -52,7 +53,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_vdch0"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_7465u"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -63,10 +64,6 @@ animations = [{
 "name": &"lava",
 "speed": 30.0
 }]
-
-[sub_resource type="Resource" id="Resource_7465u"]
-script = ExtResource("12_er72v")
-containing_box = Rect2(0, 0, 16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v8yfy"]
 size = Vector2(16, 16)
@@ -91,12 +88,12 @@ script = ExtResource("8_7465u")
 offset_value = Vector2(8, 8)
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("9_vdch0")]
-sprite_frames = SubResource("SpriteFrames_vdch0")
+sprite_frames = SubResource("SpriteFrames_7465u")
 autoplay = "lava"
 centered = false
 script = ExtResource("11_v8yfy")
 sprite_info = Dictionary[StringName, ExtResource("12_er72v")]({
-&"lava": SubResource("Resource_7465u")
+&"lava": ExtResource("13_7465u")
 })
 default_animation = &"lava"
 

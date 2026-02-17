@@ -23,9 +23,12 @@
 [ext_resource type="Texture2D" uid="uid://b00w6nbl4fc6" path="res://sprites/character/main dude/run_left/run_left_5.png" id="21_atfr2"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="22_jsygh"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="23_b12ak"]
+[ext_resource type="Resource" uid="uid://13vjk5emitjy" path="res://resources/sprite_info/run_left.tres" id="24_cllj8"]
 [ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="24_lnccc"]
+[ext_resource type="Resource" uid="uid://ghctplkklxu5" path="res://resources/sprite_info/fall_left.tres" id="25_uajjl"]
+[ext_resource type="Resource" uid="uid://d0dc24kwojin" path="res://resources/sprite_info/climb_up3.tres" id="26_n5oa3"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_lnccc"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_cllj8"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -101,21 +104,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_6he5m"]
-script = ExtResource("23_b12ak")
-origin = Vector2(8, 8)
-containing_box = Rect2(1, 0, 14, 16)
-
-[sub_resource type="Resource" id="Resource_ohoyk"]
-script = ExtResource("23_b12ak")
-origin = Vector2(8, 8)
-containing_box = Rect2(1, 0, 14, 16)
-
-[sub_resource type="Resource" id="Resource_cllj8"]
-script = ExtResource("23_b12ak")
-origin = Vector2(8, 16)
-containing_box = Rect2(0, 6, 16, 18)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uajjl"]
 size = Vector2(14, 16)
 
@@ -129,15 +117,15 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "p_dummy4"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_w6bmm")]
-sprite_frames = SubResource("SpriteFrames_lnccc")
+sprite_frames = SubResource("SpriteFrames_cllj8")
 autoplay = "run_left"
 centered = false
 offset = Vector2(-8, -8)
 script = ExtResource("22_jsygh")
 sprite_info = Dictionary[StringName, ExtResource("23_b12ak")]({
-&"climb_up3": SubResource("Resource_cllj8"),
-&"fall_left": SubResource("Resource_ohoyk"),
-&"run_left": SubResource("Resource_6he5m")
+&"climb_up3": ExtResource("26_n5oa3"),
+&"fall_left": ExtResource("25_uajjl"),
+&"run_left": ExtResource("24_cllj8")
 })
 default_animation = &"run_left"
 

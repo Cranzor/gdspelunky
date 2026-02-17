@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=4 uid="uid://ckoud5055nwru"]
+[gd_scene load_steps=10 format=3 uid="uid://ckoud5055nwru"]
 
 [ext_resource type="Script" uid="uid://dwl35a4a40wpb" path="res://objects/traps/arrow_trap_test/arrow_trap_test.gd" id="1_d7eok"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_f810v"]
 [ext_resource type="Texture2D" uid="uid://ct1pikkmy4100" path="res://sprites/red/red_0.png" id="3_bs1k8"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_f810v"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_7sx2q"]
+[ext_resource type="Resource" uid="uid://dclf5u32thibj" path="res://resources/sprite_info/red.tres" id="6_bs1k8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_bs1k8"]
 resource_local_to_scene = true
@@ -18,25 +19,10 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Image" id="Image_tuky5"]
-data = {
-"data": PackedByteArray("/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAA=="),
-"format": "RGBA8",
-"height": 16,
-"mipmaps": false,
-"width": 16
-}
-
-[sub_resource type="Resource" id="Resource_7sx2q"]
-script = ExtResource("5_7sx2q")
-containing_box = Rect2(0, 1, 16, 14)
-precise = true
-images = Array[Image]([SubResource("Image_tuky5")])
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4x51d"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tuky5"]
 size = Vector2(16, 14)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_deetv"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7sx2q"]
 size = Vector2(32, 28)
 
 [node name="ArrowTrapTest" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -51,13 +37,13 @@ autoplay = "red"
 centered = false
 script = ExtResource("4_f810v")
 sprite_info = Dictionary[StringName, ExtResource("5_7sx2q")]({
-&"red": SubResource("Resource_7sx2q")
+&"red": ExtResource("6_bs1k8")
 })
 default_animation = &"red"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_4x51d")
+shape = SubResource("RectangleShape2D_tuky5")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -65,5 +51,5 @@ collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_deetv")
+shape = SubResource("RectangleShape2D_7sx2q")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)

@@ -2,31 +2,31 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_kwk58"]
 
-[sub_resource type="BitMap" id="BitMap_hv0cl"]
+[sub_resource type="BitMap" id="BitMap_kwk58"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 252, 3, 254, 7, 254, 15, 254, 15, 254, 15, 254, 31, 254, 63, 254, 127, 254, 255),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_26bcq"]
+[sub_resource type="BitMap" id="BitMap_hv0cl"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 252, 3, 254, 7, 254, 15, 254, 15, 254, 15, 254, 31, 254, 63, 254, 127, 254, 255),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_s0a4c"]
+[sub_resource type="BitMap" id="BitMap_26bcq"]
 data = {
 "data": PackedByteArray(0, 0, 32, 0, 112, 0, 80, 0, 0, 0, 0, 0, 0, 0, 252, 3, 254, 7, 254, 15, 254, 15, 254, 15, 254, 31, 254, 63, 254, 127, 254, 255),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_cfgnj"]
+[sub_resource type="BitMap" id="BitMap_s0a4c"]
 data = {
 "data": PackedByteArray(16, 0, 124, 0, 56, 0, 40, 0, 0, 0, 0, 0, 0, 0, 252, 3, 254, 7, 254, 15, 254, 15, 254, 15, 254, 31, 254, 63, 254, 127, 254, 255),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_0mtgd"]
+[sub_resource type="BitMap" id="BitMap_cfgnj"]
 data = {
 "data": PackedByteArray(0, 0, 8, 0, 8, 0, 8, 0, 0, 0, 0, 0, 0, 0, 252, 3, 254, 7, 254, 15, 254, 15, 254, 15, 254, 31, 254, 63, 254, 127, 254, 255),
 "size": Vector2i(16, 16)
@@ -37,4 +37,4 @@ script = ExtResource("1_kwk58")
 name = &"tunnel_stun_l"
 origin = Vector2(8, 8)
 containing_box = Rect2(1, 0, 15, 16)
-bitmaps = Array[BitMap]([SubResource("BitMap_hv0cl"), SubResource("BitMap_26bcq"), SubResource("BitMap_s0a4c"), SubResource("BitMap_cfgnj"), SubResource("BitMap_0mtgd")])
+bitmaps = Array[BitMap]([SubResource("BitMap_kwk58"), SubResource("BitMap_hv0cl"), SubResource("BitMap_26bcq"), SubResource("BitMap_s0a4c"), SubResource("BitMap_cfgnj")])

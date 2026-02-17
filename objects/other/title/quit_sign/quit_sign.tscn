@@ -5,8 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://bsuhh6ybpxxko" path="res://sprites/other/title/quit_sign/quit_sign_0.png" id="3_2i6m8"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_66by3"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_bbueh"]
+[ext_resource type="Resource" uid="uid://74uwcii25hqo" path="res://resources/sprite_info/quit_sign.tres" id="6_2i6m8"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_enhfy"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_2i6m8"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -17,10 +18,6 @@ animations = [{
 "name": &"quit_sign",
 "speed": 30.0
 }]
-
-[sub_resource type="Resource" id="Resource_2i6m8"]
-script = ExtResource("5_bbueh")
-containing_box = Rect2(0, 0, 32, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_66by3"]
 size = Vector2(32, 16)
@@ -35,12 +32,12 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "quit_sign"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_enhfy")]
-sprite_frames = SubResource("SpriteFrames_enhfy")
+sprite_frames = SubResource("SpriteFrames_2i6m8")
 autoplay = "quit_sign"
 centered = false
 script = ExtResource("4_66by3")
 sprite_info = Dictionary[StringName, ExtResource("5_bbueh")]({
-&"quit_sign": SubResource("Resource_2i6m8")
+&"quit_sign": ExtResource("6_2i6m8")
 })
 default_animation = &"quit_sign"
 

@@ -5,8 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://crtlt38nu7gux" path="res://sprites/enemies/caveman/frozen_caveman/frozen_caveman_0.png" id="3_wygai"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_yb30b"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_qj7et"]
+[ext_resource type="Resource" uid="uid://cj2iuv5jhpni0" path="res://resources/sprite_info/frozen_caveman.tres" id="6_wygai"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_pol27"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_wygai"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -17,10 +18,6 @@ animations = [{
 "name": &"frozen_caveman",
 "speed": 30.0
 }]
-
-[sub_resource type="Resource" id="Resource_wygai"]
-script = ExtResource("5_qj7et")
-containing_box = Rect2(2, 0, 13, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yb30b"]
 size = Vector2(13, 16)
@@ -35,12 +32,12 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "frozen_caveman"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_pol27")]
-sprite_frames = SubResource("SpriteFrames_pol27")
+sprite_frames = SubResource("SpriteFrames_wygai")
 autoplay = "frozen_caveman"
 centered = false
 script = ExtResource("4_yb30b")
 sprite_info = Dictionary[StringName, ExtResource("5_qj7et")]({
-&"frozen_caveman": SubResource("Resource_wygai")
+&"frozen_caveman": ExtResource("6_wygai")
 })
 default_animation = &"frozen_caveman"
 

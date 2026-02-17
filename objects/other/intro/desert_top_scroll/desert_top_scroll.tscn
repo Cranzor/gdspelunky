@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://chnpq8u6ovud7"]
+[gd_scene load_steps=12 format=3 uid="uid://chnpq8u6ovud7"]
 
 [ext_resource type="Script" uid="uid://cf85korwmuoc2" path="res://objects/other/intro/desert_top_scroll/desert_top_scroll.gd" id="1_1wfve"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_4yh4q"]
@@ -6,8 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://cy5rk2bsfh0mk" path="res://sprites/other/intro/desert_top_night/desert_top_night_0.png" id="4_8so4j"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="5_vr406"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="6_1hl21"]
+[ext_resource type="Resource" uid="uid://byrwa08jyuaxu" path="res://resources/sprite_info/desert_top.tres" id="7_8so4j"]
+[ext_resource type="Resource" uid="uid://kqc1ouwmbx47" path="res://resources/sprite_info/desert_top_night.tres" id="8_vr406"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_4yh4q"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_8so4j"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -27,36 +29,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Image" id="Image_oq41h"]
-data = {
-"data": PackedByteArray("AIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAA+9ViAPvVYgD71WIA+9ViAPvVYgD71WIA+9ViAPvVYgD71WIA+9ViAPvVYgAAgAAAAIAAAACAAAAAgAAAAIAAAPvVYgD71WIA+9ViAPvVYgD71WIA+9ViAPvVYgD71WIA+9ViAPvVYgD71WIA+9ViAPvVYgD71WIA+9ViAACAAAD71WIA+9ViAPvVYgD71WIA+9ViAPvVYgD71WIA+9ViAPvVYgD71WIA+9ViAPvVYgD71WIA+9ViAPvVYgD71WIA+9ViAPvVYgD71WIA+9ViAPvVYgD71WIA+9ViAPvVYgD71WIA+9ViAPvVYgD71WIA+9ViAPvVYgD71WIA+9ViAPvVYgD71WIA+9ViAPvVYgD71WL/+9Vi//vVYv/71WIA+9ViAPvVYgD71WIA+9ViAPvVYgD71WIA+9ViAPvVYgD71WIA+9ViAPvVYv/71WL/+9Vi//vVYv/71WL/+9Vi//vVYv/71WL/+9Vi//vVYgD71WIA+9ViAPvVYgD71WIA+9Vi//vVYv/71WL/+9Vi//vVYv/71WL/+9Vi//vVYv/71WL/+9Vi//vVYv/71WL/+9Vi//vVYv/71WL/+9Vi//vVYgD71WIA+9ViAPvVYgD71WIA+9ViAPvVYgD71WIA+9ViAPvVYgD71WIA+9ViAPvVYgD71WIA+9ViAPvVYgA="),
-"format": "RGBA8",
-"height": 17,
-"mipmaps": false,
-"width": 16
-}
-
-[sub_resource type="Resource" id="Resource_q4xkb"]
-script = ExtResource("6_1hl21")
-containing_box = Rect2(0, 13, 16, 3)
-precise = true
-images = Array[Image]([SubResource("Image_oq41h")])
-
-[sub_resource type="Image" id="Image_7mo73"]
-data = {
-"data": PackedByteArray("AIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAAAIAAAACAAAAAgAAACVCEAAlQhAAJUIQACVCEAAlQhAAJUIQACVCEAAlQhAAJUIQACVCEAAlQhAAAgAAAAIAAAACAAAAAgAAAAIAAAAlQhAAJUIQACVCEAAlQhAAJUIQACVCEAAlQhAAJUIQACVCEAAlQhAAJUIQACVCEAAlQhAAJUIQACVCEAACAAAAJUIQACVCEAAlQhAAJUIQACVCEAAlQhAAJUIQACVCEAAlQhAAJUIQACVCEAAlQhAAJUIQACVCEAAlQhAAJUIQACVCEAAlQhAAJUIQACVCEAAlQhAAJUIQACVCEAAlQhAAJUIQACVCEAAlQhAAJUIQACVCEAAlQhAAJUIQACVCEAAlQhAAJUIQACVCEAAlQhAAJUIT/CVCE/wlQhP8JUIQACVCEAAlQhAAJUIQACVCEAAlQhAAJUIQACVCEAAlQhAAJUIQACVCEAAlQhP8JUIT/CVCE/wlQhP8JUIT/CVCE/wlQhP8JUIT/CVCE/wlQhAAJUIQACVCEAAlQhAAJUIQACVCE/wlQhP8JUIT/CVCE/wlQhP8JUIT/CVCE/wlQhP8JUIT/CVCE/wlQhP8JUIT/CVCE/wlQhP8JUIT/CVCE/wlQhAAJUIQACVCEAAlQhAAJUIQACVCEAAlQhAAJUIQACVCEAAlQhAAJUIQACVCEAAlQhAAJUIQACVCEAAlQhAA="),
-"format": "RGBA8",
-"height": 17,
-"mipmaps": false,
-"width": 16
-}
-
-[sub_resource type="Resource" id="Resource_8so4j"]
-script = ExtResource("6_1hl21")
-containing_box = Rect2(0, 13, 16, 3)
-precise = true
-images = Array[Image]([SubResource("Image_7mo73")])
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vr406"]
 size = Vector2(16, 3)
 
@@ -70,13 +42,13 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "desert_top_scroll"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_4yh4q")]
-sprite_frames = SubResource("SpriteFrames_4yh4q")
+sprite_frames = SubResource("SpriteFrames_8so4j")
 autoplay = "desert_top"
 centered = false
 script = ExtResource("5_vr406")
 sprite_info = Dictionary[StringName, ExtResource("6_1hl21")]({
-&"desert_top": SubResource("Resource_q4xkb"),
-&"desert_top_night": SubResource("Resource_8so4j")
+&"desert_top": ExtResource("7_8so4j"),
+&"desert_top_night": ExtResource("8_vr406")
 })
 default_animation = &"desert_top"
 

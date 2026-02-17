@@ -20,8 +20,11 @@
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="18_f2lo5"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="19_wyy80"]
 [ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="20_t7o15"]
+[ext_resource type="Resource" uid="uid://ciwg6va0v0dr5" path="res://resources/sprite_info/spider_flip.tres" id="20_xwaws"]
+[ext_resource type="Resource" uid="uid://b0umig22f42o2" path="res://resources/sprite_info/spider.tres" id="21_px1x0"]
+[ext_resource type="Resource" uid="uid://bq4oafxfynemc" path="res://resources/sprite_info/spider_drowning.tres" id="22_stjaa"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_t7o15"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_xwaws"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -85,18 +88,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_kt0o1"]
-script = ExtResource("19_wyy80")
-containing_box = Rect2(0, 0, 16, 16)
-
-[sub_resource type="Resource" id="Resource_q6lur"]
-script = ExtResource("19_wyy80")
-containing_box = Rect2(0, 5, 16, 11)
-
-[sub_resource type="Resource" id="Resource_xwaws"]
-script = ExtResource("19_wyy80")
-containing_box = Rect2(0, 0, 16, 10)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_px1x0"]
 size = Vector2(16, 16)
 
@@ -110,14 +101,14 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "spider"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_qxxtb")]
-sprite_frames = SubResource("SpriteFrames_t7o15")
+sprite_frames = SubResource("SpriteFrames_xwaws")
 autoplay = "spider_flip"
 centered = false
 script = ExtResource("18_f2lo5")
 sprite_info = Dictionary[StringName, ExtResource("19_wyy80")]({
-&"spider": SubResource("Resource_q6lur"),
-&"spider_drowning": SubResource("Resource_xwaws"),
-&"spider_flip": SubResource("Resource_kt0o1")
+&"spider": ExtResource("21_px1x0"),
+&"spider_drowning": ExtResource("22_stjaa"),
+&"spider_flip": ExtResource("20_xwaws")
 })
 default_animation = &"spider_flip"
 

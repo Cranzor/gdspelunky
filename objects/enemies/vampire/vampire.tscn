@@ -34,9 +34,21 @@
 [ext_resource type="Texture2D" uid="uid://6m4pcwvgw1y7" path="res://sprites/enemies/vampire/vampire_stun_l/vampire_stun_l_5.png" id="32_1u3hj"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="33_wgqec"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="34_umq1t"]
+[ext_resource type="Resource" uid="uid://5lcyv2123nk0" path="res://resources/sprite_info/vampire_left.tres" id="35_7vldd"]
 [ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="35_rvugb"]
+[ext_resource type="Resource" uid="uid://dodtno61d4isc" path="res://resources/sprite_info/vampire_stun_l.tres" id="36_gmmp8"]
+[ext_resource type="Resource" uid="uid://xnnbjmpcq1hg" path="res://resources/sprite_info/vampire_bounce_l.tres" id="37_dgghq"]
+[ext_resource type="Resource" uid="uid://6fvr3rcffeg0" path="res://resources/sprite_info/vampire_fall_l.tres" id="38_o53c5"]
+[ext_resource type="Resource" uid="uid://b2ytt15k82kvx" path="res://resources/sprite_info/vampire_die_ll.tres" id="39_1ypii"]
+[ext_resource type="Resource" uid="uid://bd73vyxwgcr4p" path="res://resources/sprite_info/vampire_die_lr.tres" id="40_5y83r"]
+[ext_resource type="Resource" uid="uid://de7b53v28vu7k" path="res://resources/sprite_info/vampire_bat_hang.tres" id="41_682mf"]
+[ext_resource type="Resource" uid="uid://b178wcpa85p3a" path="res://resources/sprite_info/vampire_bat_left.tres" id="42_346d5"]
+[ext_resource type="Resource" uid="uid://cmi6a6x8jduvj" path="res://resources/sprite_info/vampire_jump_l.tres" id="43_ga0xs"]
+[ext_resource type="Resource" uid="uid://daque7mvyklth" path="res://resources/sprite_info/vampire_run_l.tres" id="44_j53g8"]
+[ext_resource type="Resource" uid="uid://0tjojje7gbe7" path="res://resources/sprite_info/vampire_held_l.tres" id="45_nu1b4"]
+[ext_resource type="Resource" uid="uid://cngvai4asv2jt" path="res://resources/sprite_info/vampire_d_held_l.tres" id="46_j4bwo"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_rvugb"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_7vldd"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -190,54 +202,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_turvg"]
-script = ExtResource("34_umq1t")
-containing_box = Rect2(2, 0, 14, 16)
-
-[sub_resource type="Resource" id="Resource_7ibey"]
-script = ExtResource("34_umq1t")
-containing_box = Rect2(0, 0, 16, 16)
-
-[sub_resource type="Resource" id="Resource_40hsj"]
-script = ExtResource("34_umq1t")
-containing_box = Rect2(0, 0, 16, 15)
-
-[sub_resource type="Resource" id="Resource_go5xl"]
-script = ExtResource("34_umq1t")
-containing_box = Rect2(0, 2, 16, 13)
-
-[sub_resource type="Resource" id="Resource_xj0dl"]
-script = ExtResource("34_umq1t")
-containing_box = Rect2(1, 0, 15, 16)
-
-[sub_resource type="Resource" id="Resource_3jxyw"]
-script = ExtResource("34_umq1t")
-containing_box = Rect2(0, 0, 15, 16)
-
-[sub_resource type="Resource" id="Resource_hv28c"]
-script = ExtResource("34_umq1t")
-containing_box = Rect2(1, 0, 14, 15)
-
-[sub_resource type="Resource" id="Resource_ejtn7"]
-script = ExtResource("34_umq1t")
-containing_box = Rect2(0, 0, 16, 16)
-
-[sub_resource type="Resource" id="Resource_4bca7"]
-script = ExtResource("34_umq1t")
-containing_box = Rect2(0, 0, 16, 16)
-
-[sub_resource type="Resource" id="Resource_2r1ve"]
-script = ExtResource("34_umq1t")
-containing_box = Rect2(0, 0, 16, 16)
-
-[sub_resource type="Resource" id="Resource_8tlbv"]
-script = ExtResource("34_umq1t")
-containing_box = Rect2(0, 0, 16, 16)
-
-[sub_resource type="Resource" id="Resource_7vldd"]
-script = ExtResource("34_umq1t")
-containing_box = Rect2(0, 3, 16, 13)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gmmp8"]
 size = Vector2(14, 16)
 
@@ -251,23 +215,23 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "vampire"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_ssex6")]
-sprite_frames = SubResource("SpriteFrames_rvugb")
+sprite_frames = SubResource("SpriteFrames_7vldd")
 autoplay = "vampire_left"
 centered = false
 script = ExtResource("33_wgqec")
 sprite_info = Dictionary[StringName, ExtResource("34_umq1t")]({
-&"vampire_bat_hang": SubResource("Resource_hv28c"),
-&"vampire_bat_left": SubResource("Resource_ejtn7"),
-&"vampire_bounce_l": SubResource("Resource_40hsj"),
-&"vampire_d_held_l": SubResource("Resource_7vldd"),
-&"vampire_die_ll": SubResource("Resource_xj0dl"),
-&"vampire_die_lr": SubResource("Resource_3jxyw"),
-&"vampire_fall_l": SubResource("Resource_go5xl"),
-&"vampire_held_l": SubResource("Resource_8tlbv"),
-&"vampire_jump_l": SubResource("Resource_4bca7"),
-&"vampire_left": SubResource("Resource_turvg"),
-&"vampire_run_l": SubResource("Resource_2r1ve"),
-&"vampire_stun_l": SubResource("Resource_7ibey")
+&"vampire_bat_hang": ExtResource("41_682mf"),
+&"vampire_bat_left": ExtResource("42_346d5"),
+&"vampire_bounce_l": ExtResource("37_dgghq"),
+&"vampire_d_held_l": ExtResource("46_j4bwo"),
+&"vampire_die_ll": ExtResource("39_1ypii"),
+&"vampire_die_lr": ExtResource("40_5y83r"),
+&"vampire_fall_l": ExtResource("38_o53c5"),
+&"vampire_held_l": ExtResource("45_nu1b4"),
+&"vampire_jump_l": ExtResource("43_ga0xs"),
+&"vampire_left": ExtResource("35_7vldd"),
+&"vampire_run_l": ExtResource("44_j53g8"),
+&"vampire_stun_l": ExtResource("36_gmmp8")
 })
 default_animation = &"vampire_left"
 

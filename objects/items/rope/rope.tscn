@@ -5,8 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://cao1v2bm2nigg" path="res://sprites/items/weapons/rope/rope_0.png" id="3_khjkt"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_crjmy"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_udi2u"]
+[ext_resource type="Resource" uid="uid://dej0m30a4rr5b" path="res://resources/sprite_info/rope.tres" id="6_khjkt"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_iyd1g"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_khjkt"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -17,11 +18,6 @@ animations = [{
 "name": &"rope",
 "speed": 30.0
 }]
-
-[sub_resource type="Resource" id="Resource_khjkt"]
-script = ExtResource("5_udi2u")
-origin = Vector2(4, 4)
-containing_box = Rect2(10, 0, 4, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_crjmy"]
 size = Vector2(4, 8)
@@ -36,13 +32,13 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "rope"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_iyd1g")]
-sprite_frames = SubResource("SpriteFrames_iyd1g")
+sprite_frames = SubResource("SpriteFrames_khjkt")
 autoplay = "rope"
 centered = false
 offset = Vector2(-4, -4)
 script = ExtResource("4_crjmy")
 sprite_info = Dictionary[StringName, ExtResource("5_udi2u")]({
-&"rope": SubResource("Resource_khjkt")
+&"rope": ExtResource("6_khjkt")
 })
 default_animation = &"rope"
 

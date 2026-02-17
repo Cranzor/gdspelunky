@@ -12,8 +12,11 @@
 [ext_resource type="Texture2D" uid="uid://bsa5emmcj0s27" path="res://sprites/traps/ceiling_trap_s/ceiling_trap_s_5.png" id="10_hyne1"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="11_ohadh"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="12_lugvr"]
+[ext_resource type="Resource" uid="uid://dedy8ccspcpqa" path="res://resources/sprite_info/block.tres" id="13_vks6y"]
+[ext_resource type="Resource" uid="uid://cxqa22k0s7ca1" path="res://resources/sprite_info/ceiling_trap.tres" id="14_4dklu"]
+[ext_resource type="Resource" uid="uid://i8mfloi4fe6s" path="res://resources/sprite_info/ceiling_trap_s.tres" id="15_0uera"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_llhhr"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_vks6y"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -56,18 +59,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_6yevu"]
-script = ExtResource("12_lugvr")
-containing_box = Rect2(0, 0, 16, 16)
-
-[sub_resource type="Resource" id="Resource_badvn"]
-script = ExtResource("12_lugvr")
-containing_box = Rect2(0, 0, 16, 16)
-
-[sub_resource type="Resource" id="Resource_vks6y"]
-script = ExtResource("12_lugvr")
-containing_box = Rect2(0, 0, 16, 16)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4dklu"]
 size = Vector2(16, 16)
 
@@ -81,14 +72,14 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "ceiling_trap"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_llhhr")]
-sprite_frames = SubResource("SpriteFrames_llhhr")
+sprite_frames = SubResource("SpriteFrames_vks6y")
 autoplay = "block"
 centered = false
 script = ExtResource("11_ohadh")
 sprite_info = Dictionary[StringName, ExtResource("12_lugvr")]({
-&"block": SubResource("Resource_6yevu"),
-&"ceiling_trap": SubResource("Resource_badvn"),
-&"ceiling_trap_s": SubResource("Resource_vks6y")
+&"block": ExtResource("13_vks6y"),
+&"ceiling_trap": ExtResource("14_4dklu"),
+&"ceiling_trap_s": ExtResource("15_0uera")
 })
 default_animation = &"block"
 

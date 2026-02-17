@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://itsn3c4oa0cy" path="res://sprites/blocks/shop/lamp/lamp_lamp.png" id="13_kcrtj"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="14_0oxij"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="15_rp17n"]
+[ext_resource type="Resource" uid="uid://bjuu2mh2p02xt" path="res://resources/sprite_info/lamp.tres" id="16_mcww5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ttmrw"]
 shader = ExtResource("3_d8y74")
@@ -55,7 +56,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_p1u42"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_mcww5"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -75,10 +76,6 @@ animations = [{
 "name": &"lamp",
 "speed": 30.0
 }]
-
-[sub_resource type="Resource" id="Resource_mcww5"]
-script = ExtResource("15_rp17n")
-containing_box = Rect2(1, 0, 14, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6p150"]
 size = Vector2(14, 16)
@@ -104,12 +101,12 @@ radius = 96
 offset_value = Vector2(8, 8)
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("9_p1u42")]
-sprite_frames = SubResource("SpriteFrames_p1u42")
+sprite_frames = SubResource("SpriteFrames_mcww5")
 autoplay = "lamp"
 centered = false
 script = ExtResource("14_0oxij")
 sprite_info = Dictionary[StringName, ExtResource("15_rp17n")]({
-&"lamp": SubResource("Resource_mcww5")
+&"lamp": ExtResource("16_mcww5")
 })
 default_animation = &"lamp"
 

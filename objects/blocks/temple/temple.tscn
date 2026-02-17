@@ -11,8 +11,12 @@
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="8_vd55r"]
 [ext_resource type="Texture2D" uid="uid://coruvqw80pybl" path="res://backgrounds/bg_cave_top4.png" id="9_ud8vx"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="10_afvoe"]
+[ext_resource type="Resource" uid="uid://ck5fr3s6ip7ld" path="res://resources/sprite_info/temple.tres" id="12_nrotk"]
+[ext_resource type="Resource" uid="uid://boc8r336wfby5" path="res://resources/sprite_info/g_temple.tres" id="13_j1vuf"]
+[ext_resource type="Resource" uid="uid://du3abakdn52op" path="res://resources/sprite_info/temple_gold.tres" id="14_kpmus"]
+[ext_resource type="Resource" uid="uid://ciffk7pgeduno" path="res://resources/sprite_info/temple_gold_big.tres" id="15_dtgqj"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_afvoe"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_nrotk"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -48,22 +52,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_55ocd"]
-script = ExtResource("8_vd55r")
-containing_box = Rect2(0, 0, 16, 16)
-
-[sub_resource type="Resource" id="Resource_2h8cj"]
-script = ExtResource("8_vd55r")
-containing_box = Rect2(0, 0, 16, 16)
-
-[sub_resource type="Resource" id="Resource_vd55r"]
-script = ExtResource("8_vd55r")
-containing_box = Rect2(0, 0, 16, 16)
-
-[sub_resource type="Resource" id="Resource_nrotk"]
-script = ExtResource("8_vd55r")
-containing_box = Rect2(0, 0, 16, 16)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j1vuf"]
 size = Vector2(16, 16)
 
@@ -88,15 +76,15 @@ region_rect = Rect2(0, 0, 16, 16)
 script = ExtResource("4_pmtie")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_52s7j")]
-sprite_frames = SubResource("SpriteFrames_afvoe")
+sprite_frames = SubResource("SpriteFrames_nrotk")
 autoplay = "temple"
 centered = false
 script = ExtResource("10_afvoe")
 sprite_info = Dictionary[StringName, ExtResource("8_vd55r")]({
-&"g_temple": SubResource("Resource_2h8cj"),
-&"temple": SubResource("Resource_55ocd"),
-&"temple_gold": SubResource("Resource_vd55r"),
-&"temple_gold_big": SubResource("Resource_nrotk")
+&"g_temple": ExtResource("13_j1vuf"),
+&"temple": ExtResource("12_nrotk"),
+&"temple_gold": ExtResource("14_kpmus"),
+&"temple_gold_big": ExtResource("15_dtgqj")
 })
 default_animation = &"temple"
 

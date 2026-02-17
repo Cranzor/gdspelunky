@@ -6,8 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://urlqxkvheetu" path="res://sprites/blocks/temple/button_pushed/button_pushed_0.png" id="4_gimvo"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="5_kpvhh"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="6_bka1u"]
+[ext_resource type="Resource" uid="uid://cmcno2wtwpr7j" path="res://resources/sprite_info/button.tres" id="7_gimvo"]
+[ext_resource type="Resource" uid="uid://bqg532lp106bp" path="res://resources/sprite_info/button_pushed.tres" id="8_kpvhh"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_tv4fk"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_gimvo"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -27,14 +29,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_c2u2n"]
-script = ExtResource("6_bka1u")
-containing_box = Rect2(2, 11, 12, 5)
-
-[sub_resource type="Resource" id="Resource_gimvo"]
-script = ExtResource("6_bka1u")
-containing_box = Rect2(2, 13, 12, 3)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kpvhh"]
 size = Vector2(12, 5)
 
@@ -48,13 +42,13 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "button_highscore"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_tv4fk")]
-sprite_frames = SubResource("SpriteFrames_tv4fk")
+sprite_frames = SubResource("SpriteFrames_gimvo")
 autoplay = "button"
 centered = false
 script = ExtResource("5_kpvhh")
 sprite_info = Dictionary[StringName, ExtResource("6_bka1u")]({
-&"button": SubResource("Resource_c2u2n"),
-&"button_pushed": SubResource("Resource_gimvo")
+&"button": ExtResource("7_gimvo"),
+&"button_pushed": ExtResource("8_kpvhh")
 })
 default_animation = &"button"
 

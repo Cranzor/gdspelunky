@@ -16,8 +16,12 @@
 [ext_resource type="Texture2D" uid="uid://b22xk52rcqhad" path="res://sprites/character/tunnel_man_right/tunnel_man_right_0.png" id="14_5ltvu"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="15_k106m"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="16_ftfhc"]
+[ext_resource type="Resource" uid="uid://cojqchy4wu18g" path="res://resources/sprite_info/tunnel_man_left.tres" id="17_jjivm"]
+[ext_resource type="Resource" uid="uid://bfa0f2qetam0" path="res://resources/sprite_info/tunnel_man_right.tres" id="18_hvyxf"]
+[ext_resource type="Resource" uid="uid://m3sjn1r8j7cu" path="res://resources/sprite_info/damsel_run_l.tres" id="19_r3nje"]
+[ext_resource type="Resource" uid="uid://13vjk5emitjy" path="res://resources/sprite_info/run_left.tres" id="20_8aqqk"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_w7ik8"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_jjivm"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -77,26 +81,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_8s536"]
-script = ExtResource("16_ftfhc")
-origin = Vector2(8, 8)
-containing_box = Rect2(2, 0, 12, 16)
-
-[sub_resource type="Resource" id="Resource_qtvno"]
-script = ExtResource("16_ftfhc")
-origin = Vector2(8, 8)
-containing_box = Rect2(2, 0, 12, 16)
-
-[sub_resource type="Resource" id="Resource_wcsmg"]
-script = ExtResource("16_ftfhc")
-origin = Vector2(8, 8)
-containing_box = Rect2(2, 0, 14, 16)
-
-[sub_resource type="Resource" id="Resource_jjivm"]
-script = ExtResource("16_ftfhc")
-origin = Vector2(8, 8)
-containing_box = Rect2(1, 0, 14, 16)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hvyxf"]
 size = Vector2(12, 16)
 
@@ -110,16 +94,16 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "tunnel_man"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_w7ik8")]
-sprite_frames = SubResource("SpriteFrames_w7ik8")
+sprite_frames = SubResource("SpriteFrames_jjivm")
 autoplay = "tunnel_man_left"
 centered = false
 offset = Vector2(-8, -8)
 script = ExtResource("15_k106m")
 sprite_info = Dictionary[StringName, ExtResource("16_ftfhc")]({
-&"damsel_run_l": SubResource("Resource_wcsmg"),
-&"run_left": SubResource("Resource_jjivm"),
-&"tunnel_man_left": SubResource("Resource_8s536"),
-&"tunnel_man_right": SubResource("Resource_qtvno")
+&"damsel_run_l": ExtResource("19_r3nje"),
+&"run_left": ExtResource("20_8aqqk"),
+&"tunnel_man_left": ExtResource("17_jjivm"),
+&"tunnel_man_right": ExtResource("18_hvyxf")
 })
 default_animation = &"tunnel_man_left"
 

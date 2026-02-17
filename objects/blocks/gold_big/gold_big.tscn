@@ -5,8 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://cqvudglco8l1k" path="res://sprites/blocks/gold/gold_big/gold_big_0.png" id="3_pbv68"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_ywkhc"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_2m4ua"]
+[ext_resource type="Resource" uid="uid://o7wiriav0njw" path="res://resources/sprite_info/gold_big.tres" id="6_pbv68"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_dhnfe"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_pbv68"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -17,10 +18,6 @@ animations = [{
 "name": &"gold_big",
 "speed": 30.0
 }]
-
-[sub_resource type="Resource" id="Resource_pbv68"]
-script = ExtResource("5_2m4ua")
-containing_box = Rect2(1, 1, 15, 15)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ywkhc"]
 size = Vector2(15, 15)
@@ -35,12 +32,12 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "gold_big"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_dhnfe")]
-sprite_frames = SubResource("SpriteFrames_dhnfe")
+sprite_frames = SubResource("SpriteFrames_pbv68")
 autoplay = "gold_big"
 centered = false
 script = ExtResource("4_ywkhc")
 sprite_info = Dictionary[StringName, ExtResource("5_2m4ua")]({
-&"gold_big": SubResource("Resource_pbv68")
+&"gold_big": ExtResource("6_pbv68")
 })
 default_animation = &"gold_big"
 

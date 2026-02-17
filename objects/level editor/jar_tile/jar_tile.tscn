@@ -5,8 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://nxbkhqg868fy" path="res://sprites/level editor/jar_tile/jar_tile_0.png" id="3_67qgu"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_2jckv"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_ufdel"]
+[ext_resource type="Resource" uid="uid://mq1q8mx1qhm3" path="res://resources/sprite_info/jar_tile.tres" id="6_67qgu"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_lhfr0"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_67qgu"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -17,10 +18,6 @@ animations = [{
 "name": &"jar_tile",
 "speed": 30.0
 }]
-
-[sub_resource type="Resource" id="Resource_67qgu"]
-script = ExtResource("5_ufdel")
-containing_box = Rect2(3, 7, 10, 9)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2jckv"]
 size = Vector2(10, 9)
@@ -35,12 +32,12 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "jar_tile"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_lhfr0")]
-sprite_frames = SubResource("SpriteFrames_lhfr0")
+sprite_frames = SubResource("SpriteFrames_67qgu")
 autoplay = "jar_tile"
 centered = false
 script = ExtResource("4_2jckv")
 sprite_info = Dictionary[StringName, ExtResource("5_ufdel")]({
-&"jar_tile": SubResource("Resource_67qgu")
+&"jar_tile": ExtResource("6_67qgu")
 })
 default_animation = &"jar_tile"
 

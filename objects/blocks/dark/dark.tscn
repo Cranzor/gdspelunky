@@ -10,8 +10,11 @@
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="7_gkc13"]
 [ext_resource type="Texture2D" uid="uid://bk8jqt0tc453q" path="res://backgrounds/bg_cave_top3.png" id="8_2eoot"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="9_xq7hr"]
+[ext_resource type="Resource" uid="uid://c3x7yirynjiid" path="res://resources/sprite_info/dark.tres" id="11_143gf"]
+[ext_resource type="Resource" uid="uid://dhqa084uo5kkc" path="res://resources/sprite_info/dark_gold.tres" id="12_nnaun"]
+[ext_resource type="Resource" uid="uid://dou6snfej4egh" path="res://resources/sprite_info/dark_gold_big.tres" id="13_o48i2"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_xq7hr"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_143gf"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -39,18 +42,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_drgdd"]
-script = ExtResource("7_gkc13")
-containing_box = Rect2(0, 0, 16, 16)
-
-[sub_resource type="Resource" id="Resource_gkc13"]
-script = ExtResource("7_gkc13")
-containing_box = Rect2(0, 0, 16, 16)
-
-[sub_resource type="Resource" id="Resource_143gf"]
-script = ExtResource("7_gkc13")
-containing_box = Rect2(0, 0, 16, 16)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nnaun"]
 size = Vector2(16, 16)
 
@@ -75,14 +66,14 @@ region_rect = Rect2(0, 0, 16, 16)
 script = ExtResource("4_f2wvv")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_uj35o")]
-sprite_frames = SubResource("SpriteFrames_xq7hr")
+sprite_frames = SubResource("SpriteFrames_143gf")
 autoplay = "dark"
 centered = false
 script = ExtResource("9_xq7hr")
 sprite_info = Dictionary[StringName, ExtResource("7_gkc13")]({
-&"dark": SubResource("Resource_drgdd"),
-&"dark_gold": SubResource("Resource_gkc13"),
-&"dark_gold_big": SubResource("Resource_143gf")
+&"dark": ExtResource("11_143gf"),
+&"dark_gold": ExtResource("12_nnaun"),
+&"dark_gold_big": ExtResource("13_o48i2")
 })
 default_animation = &"dark"
 

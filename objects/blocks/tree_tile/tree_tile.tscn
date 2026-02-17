@@ -5,8 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://oleaaudnksil" path="res://sprites/blocks/lush/tree_trunk/tree_trunk_0.png" id="3_86ni1"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_bbsmj"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_ivt6h"]
+[ext_resource type="Resource" uid="uid://c4g2rq0o2ch66" path="res://resources/sprite_info/tree_trunk.tres" id="6_86ni1"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_c2g64"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_86ni1"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -17,10 +18,6 @@ animations = [{
 "name": &"tree_trunk",
 "speed": 30.0
 }]
-
-[sub_resource type="Resource" id="Resource_86ni1"]
-script = ExtResource("5_ivt6h")
-containing_box = Rect2(0, 0, 16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bbsmj"]
 size = Vector2(16, 16)
@@ -35,12 +32,12 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "tree_tile"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_c2g64")]
-sprite_frames = SubResource("SpriteFrames_c2g64")
+sprite_frames = SubResource("SpriteFrames_86ni1")
 autoplay = "tree_trunk"
 centered = false
 script = ExtResource("4_bbsmj")
 sprite_info = Dictionary[StringName, ExtResource("5_ivt6h")]({
-&"tree_trunk": SubResource("Resource_86ni1")
+&"tree_trunk": ExtResource("6_86ni1")
 })
 default_animation = &"tree_trunk"
 

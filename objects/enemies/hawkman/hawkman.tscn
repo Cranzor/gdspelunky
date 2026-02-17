@@ -33,8 +33,19 @@
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="31_pxriw"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="32_uilyx"]
 [ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="33_20c6o"]
+[ext_resource type="Resource" uid="uid://cbwn6qjnjvg2e" path="res://resources/sprite_info/hawk_left.tres" id="33_ljwv6"]
+[ext_resource type="Resource" uid="uid://cumoyvxhssnds" path="res://resources/sprite_info/hawk_throw_l.tres" id="34_n7iy1"]
+[ext_resource type="Resource" uid="uid://bhoa3bi1csl77" path="res://resources/sprite_info/hawk_stun_l.tres" id="35_rxn48"]
+[ext_resource type="Resource" uid="uid://muyk8sg7uwrg" path="res://resources/sprite_info/hawk_bounce_l.tres" id="36_0nutn"]
+[ext_resource type="Resource" uid="uid://beyd76se5vawl" path="res://resources/sprite_info/hawk_fall_l.tres" id="37_fuoq5"]
+[ext_resource type="Resource" uid="uid://cn1w7hx1r77kb" path="res://resources/sprite_info/hawk_die_ll.tres" id="38_onvk8"]
+[ext_resource type="Resource" uid="uid://7w0ech6aabsn" path="res://resources/sprite_info/hawk_die_lr.tres" id="39_8g7rp"]
+[ext_resource type="Resource" uid="uid://oicljvm71y47" path="res://resources/sprite_info/hawk_dead_l.tres" id="40_5kctt"]
+[ext_resource type="Resource" uid="uid://nijyevbr6a4v" path="res://resources/sprite_info/hawk_run_left.tres" id="41_thr8h"]
+[ext_resource type="Resource" uid="uid://byrwe0v41cwou" path="res://resources/sprite_info/hawk_held_l.tres" id="42_0mcu5"]
+[ext_resource type="Resource" uid="uid://cer7xmrpm1mq3" path="res://resources/sprite_info/hawk_d_held_l.tres" id="43_j4lui"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_20c6o"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_ljwv6"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -177,54 +188,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_uqdh6"]
-script = ExtResource("32_uilyx")
-containing_box = Rect2(0, 0, 16, 16)
-
-[sub_resource type="Resource" id="Resource_y38lv"]
-script = ExtResource("32_uilyx")
-containing_box = Rect2(4, 0, 20, 16)
-
-[sub_resource type="Resource" id="Resource_63rqq"]
-script = ExtResource("32_uilyx")
-origin = Vector2(4, 0)
-containing_box = Rect2(2, 0, 20, 16)
-
-[sub_resource type="Resource" id="Resource_812me"]
-script = ExtResource("32_uilyx")
-containing_box = Rect2(0, 2, 16, 14)
-
-[sub_resource type="Resource" id="Resource_l4gmw"]
-script = ExtResource("32_uilyx")
-containing_box = Rect2(0, 2, 16, 12)
-
-[sub_resource type="Resource" id="Resource_8bubr"]
-script = ExtResource("32_uilyx")
-containing_box = Rect2(0, 0, 16, 16)
-
-[sub_resource type="Resource" id="Resource_ep44u"]
-script = ExtResource("32_uilyx")
-containing_box = Rect2(0, 0, 16, 16)
-
-[sub_resource type="Resource" id="Resource_id2ui"]
-script = ExtResource("32_uilyx")
-origin = Vector2(4, 0)
-containing_box = Rect2(2, 7, 20, 9)
-
-[sub_resource type="Resource" id="Resource_kquaw"]
-script = ExtResource("32_uilyx")
-containing_box = Rect2(0, 0, 16, 16)
-
-[sub_resource type="Resource" id="Resource_j8rv1"]
-script = ExtResource("32_uilyx")
-origin = Vector2(4, 0)
-containing_box = Rect2(4, 0, 16, 16)
-
-[sub_resource type="Resource" id="Resource_ljwv6"]
-script = ExtResource("32_uilyx")
-origin = Vector2(4, 0)
-containing_box = Rect2(4, 3, 16, 13)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n7iy1"]
 size = Vector2(16, 16)
 
@@ -238,22 +201,22 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "hawkman"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_tos52")]
-sprite_frames = SubResource("SpriteFrames_20c6o")
+sprite_frames = SubResource("SpriteFrames_ljwv6")
 autoplay = "hawk_left"
 centered = false
 script = ExtResource("31_pxriw")
 sprite_info = Dictionary[StringName, ExtResource("32_uilyx")]({
-&"hawk_bounce_l": SubResource("Resource_812me"),
-&"hawk_d_held_l": SubResource("Resource_ljwv6"),
-&"hawk_dead_l": SubResource("Resource_id2ui"),
-&"hawk_die_ll": SubResource("Resource_8bubr"),
-&"hawk_die_lr": SubResource("Resource_ep44u"),
-&"hawk_fall_l": SubResource("Resource_l4gmw"),
-&"hawk_held_l": SubResource("Resource_j8rv1"),
-&"hawk_left": SubResource("Resource_uqdh6"),
-&"hawk_run_left": SubResource("Resource_kquaw"),
-&"hawk_stun_l": SubResource("Resource_63rqq"),
-&"hawk_throw_l": SubResource("Resource_y38lv")
+&"hawk_bounce_l": ExtResource("36_0nutn"),
+&"hawk_d_held_l": ExtResource("43_j4lui"),
+&"hawk_dead_l": ExtResource("40_5kctt"),
+&"hawk_die_ll": ExtResource("38_onvk8"),
+&"hawk_die_lr": ExtResource("39_8g7rp"),
+&"hawk_fall_l": ExtResource("37_fuoq5"),
+&"hawk_held_l": ExtResource("42_0mcu5"),
+&"hawk_left": ExtResource("33_ljwv6"),
+&"hawk_run_left": ExtResource("41_thr8h"),
+&"hawk_stun_l": ExtResource("35_rxn48"),
+&"hawk_throw_l": ExtResource("34_n7iy1")
 })
 default_animation = &"hawk_left"
 

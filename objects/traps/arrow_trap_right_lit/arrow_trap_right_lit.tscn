@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://bjgg66sfjtg7r" path="res://sprites/traps/arrow_trap_right_lit/arrow_trap_right_lit_4.png" id="14_py8yq"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="15_q1376"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="16_tda0k"]
+[ext_resource type="Resource" uid="uid://ps14scnivsik" path="res://resources/sprite_info/arrow_trap_right_lit.tres" id="17_45mqe"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ttmrw"]
 shader = ExtResource("3_5tnks")
@@ -56,7 +57,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_s3psf"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_45mqe"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -79,10 +80,6 @@ animations = [{
 "name": &"arrow_trap_right_lit",
 "speed": 30.0
 }]
-
-[sub_resource type="Resource" id="Resource_45mqe"]
-script = ExtResource("16_tda0k")
-containing_box = Rect2(0, 0, 16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cbsj0"]
 size = Vector2(16, 16)
@@ -107,12 +104,12 @@ script = ExtResource("8_b73fq")
 offset_value = Vector2(8, 8)
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("9_s3psf")]
-sprite_frames = SubResource("SpriteFrames_s3psf")
+sprite_frames = SubResource("SpriteFrames_45mqe")
 autoplay = "arrow_trap_right_lit"
 centered = false
 script = ExtResource("15_q1376")
 sprite_info = Dictionary[StringName, ExtResource("16_tda0k")]({
-&"arrow_trap_right_lit": SubResource("Resource_45mqe")
+&"arrow_trap_right_lit": ExtResource("17_45mqe")
 })
 default_animation = &"arrow_trap_right_lit"
 

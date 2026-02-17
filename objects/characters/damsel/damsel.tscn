@@ -111,8 +111,31 @@
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="109_8f8xr"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="110_bfaap"]
 [ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="111_f5goe"]
+[ext_resource type="Resource" uid="uid://c6v7wpjamc22c" path="res://resources/sprite_info/damsel_left.tres" id="111_i4m2e"]
+[ext_resource type="Resource" uid="uid://1rlejcmw5pgw" path="res://resources/sprite_info/p_exit.tres" id="112_p1l6r"]
+[ext_resource type="Resource" uid="uid://bmeo2dhwybu6e" path="res://resources/sprite_info/damsel_exit2.tres" id="113_jcynx"]
+[ext_resource type="Resource" uid="uid://csuni7m2mbbsn" path="res://resources/sprite_info/die_l.tres" id="114_5tmlc"]
+[ext_resource type="Resource" uid="uid://f8gbnavjwbk" path="res://resources/sprite_info/damsel_die_l.tres" id="115_1y1o7"]
+[ext_resource type="Resource" uid="uid://6ug0fs2erk02" path="res://resources/sprite_info/stand_left.tres" id="116_7318i"]
+[ext_resource type="Resource" uid="uid://cf5333nluetlr" path="res://resources/sprite_info/yell_left.tres" id="117_vptdo"]
+[ext_resource type="Resource" uid="uid://dtk3ses7yuyl2" path="res://resources/sprite_info/damsel_yell_l.tres" id="118_8uywd"]
+[ext_resource type="Resource" uid="uid://13vjk5emitjy" path="res://resources/sprite_info/run_left.tres" id="119_ldq3n"]
+[ext_resource type="Resource" uid="uid://m3sjn1r8j7cu" path="res://resources/sprite_info/damsel_run_l.tres" id="120_l3en3"]
+[ext_resource type="Resource" uid="uid://dopveawj0vpl1" path="res://resources/sprite_info/stun_l.tres" id="121_b8nc6"]
+[ext_resource type="Resource" uid="uid://t1oy2fk1b42k" path="res://resources/sprite_info/die_l_bounce.tres" id="122_gbunl"]
+[ext_resource type="Resource" uid="uid://e3tfrp3jpr4c" path="res://resources/sprite_info/die_l_fall.tres" id="123_1xqbw"]
+[ext_resource type="Resource" uid="uid://w4sor1bby6i6" path="res://resources/sprite_info/die_ll.tres" id="124_uw21o"]
+[ext_resource type="Resource" uid="uid://cqcm7iigxqwc4" path="res://resources/sprite_info/die_lr.tres" id="125_e03xu"]
+[ext_resource type="Resource" uid="uid://b0jl38so56sl2" path="res://resources/sprite_info/damsel_stun_l.tres" id="126_yuifu"]
+[ext_resource type="Resource" uid="uid://dakyrbm1bcxmb" path="res://resources/sprite_info/damsel_bounce_l.tres" id="127_vwlke"]
+[ext_resource type="Resource" uid="uid://bi7d0o00giwbx" path="res://resources/sprite_info/damsel_fall_l.tres" id="128_hdfjm"]
+[ext_resource type="Resource" uid="uid://dohy00fboim53" path="res://resources/sprite_info/damsel_die_ll.tres" id="129_jvkd7"]
+[ext_resource type="Resource" uid="uid://4ru3njcumfxy" path="res://resources/sprite_info/damsel_die_lr.tres" id="130_n2fu3"]
+[ext_resource type="Resource" uid="uid://ct87pel41hl66" path="res://resources/sprite_info/damsel_hold_l.tres" id="131_sp116"]
+[ext_resource type="Resource" uid="uid://dornhy8clyhkv" path="res://resources/sprite_info/p_kiss_l.tres" id="132_tb6je"]
+[ext_resource type="Resource" uid="uid://ftx2how3u7ex" path="res://resources/sprite_info/damsel_kiss_l.tres" id="133_ft84i"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_f5goe"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_i4m2e"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -549,121 +572,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_uy3l1"]
-script = ExtResource("110_bfaap")
-origin = Vector2(8, 8)
-containing_box = Rect2(2, 0, 12, 16)
-
-[sub_resource type="Resource" id="Resource_yqnk0"]
-script = ExtResource("110_bfaap")
-origin = Vector2(8, 8)
-containing_box = Rect2(1, 0, 14, 16)
-
-[sub_resource type="Resource" id="Resource_qo3j2"]
-script = ExtResource("110_bfaap")
-origin = Vector2(8, 8)
-containing_box = Rect2(0, 0, 14, 16)
-
-[sub_resource type="Resource" id="Resource_aorab"]
-script = ExtResource("110_bfaap")
-origin = Vector2(8, 8)
-containing_box = Rect2(1, 7, 15, 9)
-
-[sub_resource type="Resource" id="Resource_32g6d"]
-script = ExtResource("110_bfaap")
-origin = Vector2(8, 8)
-containing_box = Rect2(0, 6, 16, 10)
-
-[sub_resource type="Resource" id="Resource_qw063"]
-script = ExtResource("110_bfaap")
-origin = Vector2(8, 8)
-containing_box = Rect2(2, 0, 12, 16)
-
-[sub_resource type="Resource" id="Resource_807oi"]
-script = ExtResource("110_bfaap")
-origin = Vector2(8, 8)
-containing_box = Rect2(0, 0, 16, 16)
-
-[sub_resource type="Resource" id="Resource_xwaek"]
-script = ExtResource("110_bfaap")
-origin = Vector2(8, 8)
-containing_box = Rect2(1, 0, 15, 16)
-
-[sub_resource type="Resource" id="Resource_sklac"]
-script = ExtResource("110_bfaap")
-origin = Vector2(8, 8)
-containing_box = Rect2(1, 0, 14, 16)
-
-[sub_resource type="Resource" id="Resource_ekxf0"]
-script = ExtResource("110_bfaap")
-origin = Vector2(8, 8)
-containing_box = Rect2(2, 0, 14, 16)
-
-[sub_resource type="Resource" id="Resource_4qeci"]
-script = ExtResource("110_bfaap")
-origin = Vector2(8, 8)
-containing_box = Rect2(1, 0, 15, 16)
-
-[sub_resource type="Resource" id="Resource_t0x1q"]
-script = ExtResource("110_bfaap")
-origin = Vector2(8, 8)
-containing_box = Rect2(0, 3, 15, 13)
-
-[sub_resource type="Resource" id="Resource_8k2go"]
-script = ExtResource("110_bfaap")
-origin = Vector2(8, 8)
-containing_box = Rect2(0, 6, 16, 10)
-
-[sub_resource type="Resource" id="Resource_e07lw"]
-script = ExtResource("110_bfaap")
-origin = Vector2(8, 8)
-containing_box = Rect2(1, 0, 13, 16)
-
-[sub_resource type="Resource" id="Resource_x6jpj"]
-script = ExtResource("110_bfaap")
-origin = Vector2(8, 8)
-containing_box = Rect2(1, 0, 14, 16)
-
-[sub_resource type="Resource" id="Resource_ijmid"]
-script = ExtResource("110_bfaap")
-origin = Vector2(8, 8)
-containing_box = Rect2(0, 0, 16, 16)
-
-[sub_resource type="Resource" id="Resource_n8qg3"]
-script = ExtResource("110_bfaap")
-origin = Vector2(8, 8)
-containing_box = Rect2(1, 1, 15, 15)
-
-[sub_resource type="Resource" id="Resource_avvqj"]
-script = ExtResource("110_bfaap")
-origin = Vector2(8, 8)
-containing_box = Rect2(0, 5, 16, 10)
-
-[sub_resource type="Resource" id="Resource_r4qjm"]
-script = ExtResource("110_bfaap")
-origin = Vector2(8, 8)
-containing_box = Rect2(2, 0, 13, 15)
-
-[sub_resource type="Resource" id="Resource_4h4sy"]
-script = ExtResource("110_bfaap")
-origin = Vector2(8, 8)
-containing_box = Rect2(1, 0, 13, 16)
-
-[sub_resource type="Resource" id="Resource_lfw8y"]
-script = ExtResource("110_bfaap")
-origin = Vector2(8, 8)
-containing_box = Rect2(2, 1, 13, 14)
-
-[sub_resource type="Resource" id="Resource_hpmgo"]
-script = ExtResource("110_bfaap")
-origin = Vector2(8, 8)
-containing_box = Rect2(0, 0, 15, 16)
-
-[sub_resource type="Resource" id="Resource_i4m2e"]
-script = ExtResource("110_bfaap")
-origin = Vector2(8, 8)
-containing_box = Rect2(0, 0, 15, 16)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p1l6r"]
 size = Vector2(12, 16)
 
@@ -677,35 +585,35 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "damsel"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_wiyl7")]
-sprite_frames = SubResource("SpriteFrames_f5goe")
+sprite_frames = SubResource("SpriteFrames_i4m2e")
 autoplay = "damsel_left"
 centered = false
 offset = Vector2(-8, -8)
 script = ExtResource("109_8f8xr")
 sprite_info = Dictionary[StringName, ExtResource("110_bfaap")]({
-&"damsel_bounce_l": SubResource("Resource_n8qg3"),
-&"damsel_die_l": SubResource("Resource_32g6d"),
-&"damsel_die_ll": SubResource("Resource_r4qjm"),
-&"damsel_die_lr": SubResource("Resource_4h4sy"),
-&"damsel_exit2": SubResource("Resource_qo3j2"),
-&"damsel_fall_l": SubResource("Resource_avvqj"),
-&"damsel_hold_l": SubResource("Resource_lfw8y"),
-&"damsel_kiss_l": SubResource("Resource_i4m2e"),
-&"damsel_left": SubResource("Resource_uy3l1"),
-&"damsel_run_l": SubResource("Resource_ekxf0"),
-&"damsel_stun_l": SubResource("Resource_ijmid"),
-&"damsel_yell_l": SubResource("Resource_xwaek"),
-&"die_l": SubResource("Resource_aorab"),
-&"die_l_bounce": SubResource("Resource_t0x1q"),
-&"die_l_fall": SubResource("Resource_8k2go"),
-&"die_ll": SubResource("Resource_e07lw"),
-&"die_lr": SubResource("Resource_x6jpj"),
-&"p_exit": SubResource("Resource_yqnk0"),
-&"p_kiss_l": SubResource("Resource_hpmgo"),
-&"run_left": SubResource("Resource_sklac"),
-&"stand_left": SubResource("Resource_qw063"),
-&"stun_l": SubResource("Resource_4qeci"),
-&"yell_left": SubResource("Resource_807oi")
+&"damsel_bounce_l": ExtResource("127_vwlke"),
+&"damsel_die_l": ExtResource("115_1y1o7"),
+&"damsel_die_ll": ExtResource("129_jvkd7"),
+&"damsel_die_lr": ExtResource("130_n2fu3"),
+&"damsel_exit2": ExtResource("113_jcynx"),
+&"damsel_fall_l": ExtResource("128_hdfjm"),
+&"damsel_hold_l": ExtResource("131_sp116"),
+&"damsel_kiss_l": ExtResource("133_ft84i"),
+&"damsel_left": ExtResource("111_i4m2e"),
+&"damsel_run_l": ExtResource("120_l3en3"),
+&"damsel_stun_l": ExtResource("126_yuifu"),
+&"damsel_yell_l": ExtResource("118_8uywd"),
+&"die_l": ExtResource("114_5tmlc"),
+&"die_l_bounce": ExtResource("122_gbunl"),
+&"die_l_fall": ExtResource("123_1xqbw"),
+&"die_ll": ExtResource("124_uw21o"),
+&"die_lr": ExtResource("125_e03xu"),
+&"p_exit": ExtResource("112_p1l6r"),
+&"p_kiss_l": ExtResource("132_tb6je"),
+&"run_left": ExtResource("119_ldq3n"),
+&"stand_left": ExtResource("116_7318i"),
+&"stun_l": ExtResource("121_b8nc6"),
+&"yell_left": ExtResource("117_vptdo")
 })
 default_animation = &"damsel_left"
 

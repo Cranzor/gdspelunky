@@ -5,8 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://dbw8d0r1cnhe1" path="res://sprites/enemies/giant_spider/giant_spider_hang/giant_spider_hang_0.png" id="3_2tmrj"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_idf6s"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_6oi2c"]
+[ext_resource type="Resource" uid="uid://bb1doxkdqax0q" path="res://resources/sprite_info/giant_spider_hang.tres" id="6_2tmrj"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_fwown"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_2tmrj"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -17,10 +18,6 @@ animations = [{
 "name": &"giant_spider_hang",
 "speed": 30.0
 }]
-
-[sub_resource type="Resource" id="Resource_2tmrj"]
-script = ExtResource("5_6oi2c")
-containing_box = Rect2(1, 0, 30, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_idf6s"]
 size = Vector2(30, 16)
@@ -35,12 +32,12 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "giant_spider_hang"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_fwown")]
-sprite_frames = SubResource("SpriteFrames_fwown")
+sprite_frames = SubResource("SpriteFrames_2tmrj")
 autoplay = "giant_spider_hang"
 centered = false
 script = ExtResource("4_idf6s")
 sprite_info = Dictionary[StringName, ExtResource("5_6oi2c")]({
-&"giant_spider_hang": SubResource("Resource_2tmrj")
+&"giant_spider_hang": ExtResource("6_2tmrj")
 })
 default_animation = &"giant_spider_hang"
 

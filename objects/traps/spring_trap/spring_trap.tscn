@@ -14,8 +14,10 @@
 [ext_resource type="Texture2D" uid="uid://brbl2l6fushg8" path="res://sprites/traps/spring_trap_sprung/spring_trap_sprung_8.png" id="12_e8alv"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="13_iq4ja"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="14_atu3k"]
+[ext_resource type="Resource" uid="uid://daedgysk78aqr" path="res://resources/sprite_info/spring_trap.tres" id="15_w4weo"]
+[ext_resource type="Resource" uid="uid://dt1sojbeytc2j" path="res://resources/sprite_info/spring_trap_sprung.tres" id="16_fd3q5"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_t23m8"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_w4weo"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -59,14 +61,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_pjvj0"]
-script = ExtResource("14_atu3k")
-containing_box = Rect2(0, 12, 16, 4)
-
-[sub_resource type="Resource" id="Resource_w4weo"]
-script = ExtResource("14_atu3k")
-containing_box = Rect2(0, 0, 16, 16)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fd3q5"]
 size = Vector2(16, 4)
 
@@ -80,13 +74,13 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "spring_trap"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_t23m8")]
-sprite_frames = SubResource("SpriteFrames_t23m8")
+sprite_frames = SubResource("SpriteFrames_w4weo")
 autoplay = "spring_trap"
 centered = false
 script = ExtResource("13_iq4ja")
 sprite_info = Dictionary[StringName, ExtResource("14_atu3k")]({
-&"spring_trap": SubResource("Resource_pjvj0"),
-&"spring_trap_sprung": SubResource("Resource_w4weo")
+&"spring_trap": ExtResource("15_w4weo"),
+&"spring_trap_sprung": ExtResource("16_fd3q5")
 })
 default_animation = &"spring_trap"
 

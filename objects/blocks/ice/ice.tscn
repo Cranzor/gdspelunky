@@ -5,8 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://b4alhvfohyhvn" path="res://sprites/blocks/dark/ice/ice_0.png" id="3_o3wg3"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_t5ku7"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_0p7tq"]
+[ext_resource type="Resource" uid="uid://dhqhajdbxdop5" path="res://resources/sprite_info/ice.tres" id="6_o3wg3"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_n2w8u"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_o3wg3"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -17,10 +18,6 @@ animations = [{
 "name": &"ice",
 "speed": 30.0
 }]
-
-[sub_resource type="Resource" id="Resource_o3wg3"]
-script = ExtResource("5_0p7tq")
-containing_box = Rect2(0, 0, 16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t5ku7"]
 size = Vector2(16, 16)
@@ -35,12 +32,12 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "ice"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_n2w8u")]
-sprite_frames = SubResource("SpriteFrames_n2w8u")
+sprite_frames = SubResource("SpriteFrames_o3wg3")
 autoplay = "ice"
 centered = false
 script = ExtResource("4_t5ku7")
 sprite_info = Dictionary[StringName, ExtResource("5_0p7tq")]({
-&"ice": SubResource("Resource_o3wg3")
+&"ice": ExtResource("6_o3wg3")
 })
 default_animation = &"ice"
 

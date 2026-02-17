@@ -10,8 +10,10 @@
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="8_7ci8v"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="9_2oyon"]
 [ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="10_08hh8"]
+[ext_resource type="Resource" uid="uid://cmkuehuj8ycja" path="res://resources/sprite_info/zombie_left.tres" id="10_hho48"]
+[ext_resource type="Resource" uid="uid://bmugb8uqeftha" path="res://resources/sprite_info/zombie_jump_l.tres" id="11_1moyw"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_08hh8"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_hho48"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -40,14 +42,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_8kbla"]
-script = ExtResource("9_2oyon")
-containing_box = Rect2(0, 0, 16, 16)
-
-[sub_resource type="Resource" id="Resource_hho48"]
-script = ExtResource("9_2oyon")
-containing_box = Rect2(0, 0, 15, 16)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1moyw"]
 size = Vector2(16, 16)
 
@@ -61,13 +55,13 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "zombie"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_hy5wn")]
-sprite_frames = SubResource("SpriteFrames_08hh8")
+sprite_frames = SubResource("SpriteFrames_hho48")
 autoplay = "zombie_left"
 centered = false
 script = ExtResource("8_7ci8v")
 sprite_info = Dictionary[StringName, ExtResource("9_2oyon")]({
-&"zombie_jump_l": SubResource("Resource_hho48"),
-&"zombie_left": SubResource("Resource_8kbla")
+&"zombie_jump_l": ExtResource("11_1moyw"),
+&"zombie_left": ExtResource("10_hho48")
 })
 default_animation = &"zombie_left"
 

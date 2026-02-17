@@ -2,21 +2,27 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_uiewl"]
 
-[sub_resource type="BitMap" id="BitMap_jh4lf"]
+[sub_resource type="BitMap" id="BitMap_uiewl"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/AMAAP4HAAD+DwAA/g8AAP4PAAD+HwAA/j8AAP5/AAD+/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="),
 "size": Vector2i(32, 32)
 }
 
-[sub_resource type="BitMap" id="BitMap_xdrfj"]
+[sub_resource type="BitMap" id="BitMap_jh4lf"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAA/gEAAP8DAAD/BwAA/wcAAP8HAAD/DwAA/x8AAP4/AAD+fwAA/n8AAN9/AADPPwAAhhkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="),
 "size": Vector2i(32, 32)
 }
 
-[sub_resource type="BitMap" id="BitMap_r6m03"]
+[sub_resource type="BitMap" id="BitMap_xdrfj"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAM4BAADfAwCA/wcAwP8HAOD/BwDg/wEA4P8BAOD/AQDA/wMAgP8HAAD/BwAAfgMAAA8AAAAPAAAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_r6m03"]
+data = {
+"data": PackedByteArray("AAAAAABgAAAA8AAAAPjDAAD4/wEA/v8DAP//AwD//wEA//8AAP7/AADwfwAA4B8AAMAPAACADwAAAA8AAAAPAAAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="),
 "size": Vector2i(32, 32)
 }
 
@@ -28,35 +34,29 @@ data = {
 
 [sub_resource type="BitMap" id="BitMap_oy1m8"]
 data = {
-"data": PackedByteArray("AAAAAABgAAAA8AAAAPjDAAD4/wEA/v8DAP//AwD//wEA//8AAP7/AADwfwAA4B8AAMAPAACADwAAAA8AAAAPAAAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="),
+"data": PackedByteArray("AAAAAAAAAAAAgAMAAMD7AQDg/wMA4P8HAOD/BwCA/wcAgP8HAID/AwDA/wMA4P8BAOD/AADAfAAAAPAAAADwAAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="),
 "size": Vector2i(32, 32)
 }
 
 [sub_resource type="BitMap" id="BitMap_b1yfr"]
 data = {
-"data": PackedByteArray("AAAAAAAAAAAAgAMAAMD7AQDg/wMA4P8HAOD/BwCA/wcAgP8HAID/AwDA/wMA4P8BAOD/AADAfAAAAPAAAADwAAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="),
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAgH8AAPD/AAD8/wAA/v8AAP//AAD//wAA/v8AAPh/AADwfwAAwB8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="),
 "size": Vector2i(32, 32)
 }
 
 [sub_resource type="BitMap" id="BitMap_7kdec"]
 data = {
-"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAgH8AAPD/AAD8/wAA/v8AAP//AAD//wAA/v8AAPh/AADwfwAAwB8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="),
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAwD8AAOB/AADwfwAA8H8AAPB/AADwfwAA8H8AAPA/AAD4PwAA+B8AAPAfAADgDwAA+A8AAPgHAADwAwAA4AMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="),
 "size": Vector2i(32, 32)
 }
 
 [sub_resource type="BitMap" id="BitMap_qwost"]
 data = {
-"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAwD8AAOB/AADwfwAA8H8AAPB/AADwfwAA8H8AAPA/AAD4PwAA+B8AAPAfAADgDwAA+A8AAPgHAADwAwAA4AMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="),
-"size": Vector2i(32, 32)
-}
-
-[sub_resource type="BitMap" id="BitMap_j1b82"]
-data = {
 "data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMA/AADgfwAA8H8AAPB/AADwfwAA8H8AAPB/AADwPwAA+D8AAPgfAADwHwAA4A8AAPgPAAD4BwAA8AMAAOADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="),
 "size": Vector2i(32, 32)
 }
 
-[sub_resource type="BitMap" id="BitMap_edxmg"]
+[sub_resource type="BitMap" id="BitMap_j1b82"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADgHwAA8D8AAPg/AAD4fwAA+P8AAPj/AAD4fwAA8B8AAOAfAAD4HwAA/N8AAPz/AQD4/wEA4PcAAOBhAADgAQAAAAAAAAAAAAAAAAA="),
 "size": Vector2i(32, 32)
@@ -67,4 +67,4 @@ script = ExtResource("1_uiewl")
 name = &"tunnel_dt_hl"
 origin = Vector2(24, 8)
 containing_box = Rect2(8, 1, 24, 28)
-bitmaps = Array[BitMap]([SubResource("BitMap_jh4lf"), SubResource("BitMap_xdrfj"), SubResource("BitMap_r6m03"), SubResource("BitMap_smbug"), SubResource("BitMap_oy1m8"), SubResource("BitMap_b1yfr"), SubResource("BitMap_7kdec"), SubResource("BitMap_qwost"), SubResource("BitMap_j1b82"), SubResource("BitMap_edxmg")])
+bitmaps = Array[BitMap]([SubResource("BitMap_uiewl"), SubResource("BitMap_jh4lf"), SubResource("BitMap_xdrfj"), SubResource("BitMap_r6m03"), SubResource("BitMap_smbug"), SubResource("BitMap_oy1m8"), SubResource("BitMap_b1yfr"), SubResource("BitMap_7kdec"), SubResource("BitMap_qwost"), SubResource("BitMap_j1b82")])

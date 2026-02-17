@@ -8,8 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://cr8trvhcewtnv" path="res://sprites/enemies/alien/alien_3.png" id="6_4gjv2"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="7_dgy6a"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="8_56gu4"]
+[ext_resource type="Resource" uid="uid://bg60m4sa7r7k0" path="res://resources/sprite_info/alien.tres" id="9_uq00b"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_hca4l"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_uq00b"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -30,10 +31,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_uq00b"]
-script = ExtResource("8_56gu4")
-containing_box = Rect2(1, 5, 14, 11)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6mrx8"]
 size = Vector2(14, 11)
 
@@ -47,12 +44,12 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "alien_tile"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_hca4l")]
-sprite_frames = SubResource("SpriteFrames_hca4l")
+sprite_frames = SubResource("SpriteFrames_uq00b")
 autoplay = "alien"
 centered = false
 script = ExtResource("7_dgy6a")
 sprite_info = Dictionary[StringName, ExtResource("8_56gu4")]({
-&"alien": SubResource("Resource_uq00b")
+&"alien": ExtResource("9_uq00b")
 })
 default_animation = &"alien"
 

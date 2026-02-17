@@ -8,8 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://doyq8w57r67q" path="res://sprites/enemies/man_trap/man_trap_left/man_trap_left_3.png" id="6_fei65"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="7_2ud18"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="8_buot2"]
+[ext_resource type="Resource" uid="uid://br38jvceexttv" path="res://resources/sprite_info/man_trap_left.tres" id="9_flw2f"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_gosxu"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_flw2f"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -30,10 +31,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_flw2f"]
-script = ExtResource("8_buot2")
-containing_box = Rect2(0, 0, 16, 16)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g5iti"]
 size = Vector2(16, 16)
 
@@ -47,12 +44,12 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "man_trap_tile"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_gosxu")]
-sprite_frames = SubResource("SpriteFrames_gosxu")
+sprite_frames = SubResource("SpriteFrames_flw2f")
 autoplay = "man_trap_left"
 centered = false
 script = ExtResource("7_2ud18")
 sprite_info = Dictionary[StringName, ExtResource("8_buot2")]({
-&"man_trap_left": SubResource("Resource_flw2f")
+&"man_trap_left": ExtResource("9_flw2f")
 })
 default_animation = &"man_trap_left"
 

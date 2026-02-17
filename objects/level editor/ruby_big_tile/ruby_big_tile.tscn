@@ -6,8 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://c4qml2rtwdm4" path="res://sprites/level editor/ruby_big_tile/ruby_big_tile_ruby_big_tile.png" id="4_rye84"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="5_2qs3w"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="6_512l5"]
+[ext_resource type="Resource" uid="uid://bc45lcxwgqdau" path="res://resources/sprite_info/ruby_big_tile.tres" id="7_jh1cx"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_g1wcm"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_jh1cx"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -22,10 +23,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_jh1cx"]
-script = ExtResource("6_512l5")
-containing_box = Rect2(4, 8, 8, 8)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rye84"]
 size = Vector2(8, 8)
 
@@ -39,12 +36,12 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "ruby_big_tile"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_g1wcm")]
-sprite_frames = SubResource("SpriteFrames_g1wcm")
+sprite_frames = SubResource("SpriteFrames_jh1cx")
 autoplay = "ruby_big_tile"
 centered = false
 script = ExtResource("5_2qs3w")
 sprite_info = Dictionary[StringName, ExtResource("6_512l5")]({
-&"ruby_big_tile": SubResource("Resource_jh1cx")
+&"ruby_big_tile": ExtResource("7_jh1cx")
 })
 default_animation = &"ruby_big_tile"
 

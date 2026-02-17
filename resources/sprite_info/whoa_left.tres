@@ -2,43 +2,43 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_itjpm"]
 
-[sub_resource type="BitMap" id="BitMap_uqrtx"]
+[sub_resource type="BitMap" id="BitMap_itjpm"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAwA8A4B8A4B8A+D8A+H8A4H8A4B8A4H8A4P8DwP8HgP8HgP8DAP8DAPwDAPAAAHgAADAA"),
 "size": Vector2i(24, 24)
 }
 
-[sub_resource type="BitMap" id="BitMap_6eex6"]
+[sub_resource type="BitMap" id="BitMap_uqrtx"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAgB8AwD8AwD8A8H8A8P8AwP8AwP8DwP8HwP8HgP8HAP8HAP8HAP4HAPgHAHgDADwAABgA"),
 "size": Vector2i(24, 24)
 }
 
-[sub_resource type="BitMap" id="BitMap_mb4sg"]
+[sub_resource type="BitMap" id="BitMap_6eex6"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAH4AAP8AAP8DwP8HwP8PAP8PAP8fAP8fAP8PAP4DAPwDAPwHAPgPAPAPAPAPAPgHAHgA"),
 "size": Vector2i(24, 24)
 }
 
-[sub_resource type="BitMap" id="BitMap_rnvfs"]
+[sub_resource type="BitMap" id="BitMap_mb4sg"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAPgBAPwDAPwDAP8HAP8PAPwPAPwHAPwDAP4DAP4DAP4DAP4DAPwDAPADAPADAPABAPgAAHgA"),
 "size": Vector2i(24, 24)
 }
 
-[sub_resource type="BitMap" id="BitMap_1kyyn"]
+[sub_resource type="BitMap" id="BitMap_rnvfs"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAD8AgH8AgH8A4P8A4P8BgP8BgH8AwH8A4P8A4P8A8P8A8P8A4P8BAP4DAPwDAPwDAP4BAB4A"),
 "size": Vector2i(24, 24)
 }
 
-[sub_resource type="BitMap" id="BitMap_xd0in"]
+[sub_resource type="BitMap" id="BitMap_1kyyn"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAgB8AwD8AwD8A8H8A8P8AwP8AwD8AwH8AwP8AgP8BAP8DAP8HAP4HAPgHAHADAHgAADAA"),
 "size": Vector2i(24, 24)
 }
 
-[sub_resource type="BitMap" id="BitMap_28i4r"]
+[sub_resource type="BitMap" id="BitMap_xd0in"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAgB8AwD8AwD8A8H8A8P8AwP8AwP8DwP8HwP8HgP8HAP8HAP8HAP4HAPgHAHADAHgAADAA"),
 "size": Vector2i(24, 24)
@@ -49,4 +49,4 @@ script = ExtResource("1_itjpm")
 name = &"whoa_left"
 origin = Vector2(12, 16)
 containing_box = Rect2(3, 6, 18, 18)
-bitmaps = Array[BitMap]([SubResource("BitMap_uqrtx"), SubResource("BitMap_6eex6"), SubResource("BitMap_mb4sg"), SubResource("BitMap_rnvfs"), SubResource("BitMap_1kyyn"), SubResource("BitMap_xd0in"), SubResource("BitMap_28i4r")])
+bitmaps = Array[BitMap]([SubResource("BitMap_itjpm"), SubResource("BitMap_uqrtx"), SubResource("BitMap_6eex6"), SubResource("BitMap_mb4sg"), SubResource("BitMap_rnvfs"), SubResource("BitMap_1kyyn"), SubResource("BitMap_xd0in")])

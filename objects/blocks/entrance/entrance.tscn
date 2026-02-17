@@ -1,12 +1,13 @@
-[gd_scene load_steps=11 format=4 uid="uid://blvqjgc8dse6m"]
+[gd_scene load_steps=10 format=3 uid="uid://blvqjgc8dse6m"]
 
 [ext_resource type="Script" uid="uid://w0e4uckjcrxa" path="res://objects/blocks/entrance/entrance.gd" id="1_qx01b"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_x4ecl"]
 [ext_resource type="Texture2D" uid="uid://b5v65hg1oudxs" path="res://sprites/blocks/background/entrance/entrance_0.png" id="3_6ssdv"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_k4033"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_mvq21"]
+[ext_resource type="Resource" uid="uid://cewwhhwistfhs" path="res://resources/sprite_info/entrance.tres" id="6_6ssdv"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_x4ecl"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_6ssdv"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -18,25 +19,10 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Image" id="Image_6ssdv"]
-data = {
-"data": PackedByteArray("AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/zRGW/8VHij/FR4o/xUeKP8VHij/FR4o/xUeKP8VHij/FR4o/xUeKP8VHij/FR4o/xUeKP8HDBD/BwwQ/zRGW/8VHij/NEZb/0dhfv9HYX7/R2F+/0dhfv9HYX7/R2F+/0dhfv9HYX7/R2F+/0dhfv9HYX7/R2F+/zRGW/8HDBD/FR4o/zRGW/8VHij/BwwQ/wcMEP8HDBD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/BwwQ/xUeKP8VHij/BwwQ/xUeKP80Rlv/BwwQ/wcMEP8HDBD/BwwQ/wcMEP8HDBD/BwwQ/wcMEP8HDBD/BwwQ/wcMEP8HDBD/FR4o/wcMEP8VHij/NEZb/wAAAP8VHij/FR4o/xUeKP8VHij/FR4o/xUeKP8VHij/FR4o/xUeKP8VHij/BwwQ/xUeKP8HDBD/FR4o/zRGW/8AAAD/FR4o/xUeKP8VHij/BwwQ/xUeKP8VHij/FR4o/xUeKP8VHij/FR4o/wcMEP8VHij/BwwQ/xUeKP80Rlv/AAAA/xUeKP8VHij/FR4o/zRGW/8VHij/FR4o/xUeKP8VHij/BwwQ/wcMEP8HDBD/FR4o/wcMEP8VHij/NEZb/wAAAP8VHij/FR4o/xUeKP8VHij/FR4o/xUeKP8VHij/FR4o/zRGW/80Rlv/BwwQ/xUeKP8HDBD/FR4o/zRGW/8AAAD/FR4o/xUeKP8VHij/FR4o/xUeKP8VHij/FR4o/xUeKP8VHij/FR4o/wcMEP8VHij/BwwQ/xUeKP80Rlv/AAAA/wcMEP8HDBD/FR4o/xUeKP8VHij/FR4o/xUeKP8VHij/FR4o/xUeKP8HDBD/FR4o/wcMEP8VHij/NEZb/wAAAP80Rlv/NEZb/xUeKP8VHij/FR4o/xUeKP8VHij/FR4o/xUeKP8VHij/BwwQ/xUeKP8HDBD/FR4o/zRGW/8AAAD/FR4o/xUeKP8VHij/FR4o/xUeKP8VHij/BwwQ/xUeKP8VHij/FR4o/wcMEP8VHij/BwwQ/xUeKP80Rlv/AAAA/xUeKP8VHij/FR4o/xUeKP8VHij/BwwQ/zRGW/8VHij/FR4o/xUeKP8HDBD/FR4o/wcMEP8VHij/NEZb/wAAAP8VHij/BwwQ/xUeKP8VHij/FR4o/zRGW/8VHij/FR4o/xUeKP8VHij/BwwQ/xUeKP8HDBD/FR4o/zRGW/8AAAD/FR4o/zRGW/8VHij/FR4o/xUeKP8VHij/FR4o/xUeKP8VHij/FR4o/wcMEP8VHij/BwwQ/w=="),
-"format": "RGBA8",
-"height": 16,
-"mipmaps": false,
-"width": 16
-}
-
-[sub_resource type="Resource" id="Resource_k4033"]
-script = ExtResource("5_mvq21")
-containing_box = Rect2(0, 0, 16, 16)
-precise = true
-images = Array[Image]([SubResource("Image_6ssdv")])
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mvq21"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k4033"]
 size = Vector2(16, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_knfqp"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mvq21"]
 size = Vector2(32, 32)
 
 [node name="Entrance" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -46,18 +32,18 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "entrance"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_x4ecl")]
-sprite_frames = SubResource("SpriteFrames_x4ecl")
+sprite_frames = SubResource("SpriteFrames_6ssdv")
 autoplay = "entrance"
 centered = false
 script = ExtResource("4_k4033")
 sprite_info = Dictionary[StringName, ExtResource("5_mvq21")]({
-&"entrance": SubResource("Resource_k4033")
+&"entrance": ExtResource("6_6ssdv")
 })
 default_animation = &"entrance"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_mvq21")
+shape = SubResource("RectangleShape2D_k4033")
 
 [node name="BoundingBoxArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -65,5 +51,5 @@ collision_mask = 2
 
 [node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
 position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_knfqp")
+shape = SubResource("RectangleShape2D_mvq21")
 debug_color = Color(0.69, 0.296, 0.987, 0.1)

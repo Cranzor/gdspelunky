@@ -10,8 +10,11 @@
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="7_13d7s"]
 [ext_resource type="Texture2D" uid="uid://b3krne6bxxl8w" path="res://backgrounds/bg_cave_top2.png" id="8_vxk5l"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="9_tjptl"]
+[ext_resource type="Resource" uid="uid://bew8667kng2yu" path="res://resources/sprite_info/lush.tres" id="11_jf15e"]
+[ext_resource type="Resource" uid="uid://vsnjbjqh48nr" path="res://resources/sprite_info/lush_gold.tres" id="12_n1o00"]
+[ext_resource type="Resource" uid="uid://d0sm6khn2j0hh" path="res://resources/sprite_info/lush_gold_big.tres" id="13_qna4y"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_tjptl"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_jf15e"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -39,18 +42,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_5kle4"]
-script = ExtResource("7_13d7s")
-containing_box = Rect2(0, 0, 16, 16)
-
-[sub_resource type="Resource" id="Resource_13d7s"]
-script = ExtResource("7_13d7s")
-containing_box = Rect2(0, 0, 16, 16)
-
-[sub_resource type="Resource" id="Resource_jf15e"]
-script = ExtResource("7_13d7s")
-containing_box = Rect2(0, 0, 16, 16)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n1o00"]
 size = Vector2(16, 16)
 
@@ -75,14 +66,14 @@ region_rect = Rect2(0, 0, 16, 16)
 script = ExtResource("4_dsgki")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_nftbi")]
-sprite_frames = SubResource("SpriteFrames_tjptl")
+sprite_frames = SubResource("SpriteFrames_jf15e")
 autoplay = "lush"
 centered = false
 script = ExtResource("9_tjptl")
 sprite_info = Dictionary[StringName, ExtResource("7_13d7s")]({
-&"lush": SubResource("Resource_5kle4"),
-&"lush_gold": SubResource("Resource_13d7s"),
-&"lush_gold_big": SubResource("Resource_jf15e")
+&"lush": ExtResource("11_jf15e"),
+&"lush_gold": ExtResource("12_n1o00"),
+&"lush_gold_big": ExtResource("13_qna4y")
 })
 default_animation = &"lush"
 

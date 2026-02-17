@@ -5,8 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://qjgn73wu2oo1" path="res://sprites/enemies/sight/sight_0.png" id="3_fekmt"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_1bw4n"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_ep71f"]
+[ext_resource type="Resource" uid="uid://t1kbaamhx5mv" path="res://resources/sprite_info/sight.tres" id="6_fekmt"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_l1hja"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_fekmt"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -17,10 +18,6 @@ animations = [{
 "name": &"sight",
 "speed": 30.0
 }]
-
-[sub_resource type="Resource" id="Resource_fekmt"]
-script = ExtResource("5_ep71f")
-containing_box = Rect2(0, 0, 16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1bw4n"]
 size = Vector2(16, 16)
@@ -35,12 +32,12 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "enemy_sight"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_l1hja")]
-sprite_frames = SubResource("SpriteFrames_l1hja")
+sprite_frames = SubResource("SpriteFrames_fekmt")
 autoplay = "sight"
 centered = false
 script = ExtResource("4_1bw4n")
 sprite_info = Dictionary[StringName, ExtResource("5_ep71f")]({
-&"sight": SubResource("Resource_fekmt")
+&"sight": ExtResource("6_fekmt")
 })
 default_animation = &"sight"
 
