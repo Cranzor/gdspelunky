@@ -12245,7 +12245,7 @@ const sprite_database = {
 		"transparent" : false,
 		"folder_path" : "res://sprites/other/title/tutorial_sign"
 	},
-	"_0" : {
+	"s_0" : {
 		"origin" : Vector2(0, 0),
 		"mask" : {
 			"separate" : true,
@@ -12259,7 +12259,7 @@ const sprite_database = {
 		"transparent" : false,
 		"folder_path" : "res://sprites/supersound/_0"
 	},
-	"_1" : {
+	"s_1" : {
 		"origin" : Vector2(0, 0),
 		"mask" : {
 			"separate" : true,

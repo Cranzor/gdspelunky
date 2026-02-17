@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b4dba71dug0lb"
-path="res://.godot/imported/prite1112_0.png-d6fca9c773c4e2711c3102e416afcd3f.ctex"
+path="res://.godot/imported/sprite1112_0.png-765e83f086bffd54bf4164891e3cca56.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/other/end/prite1112/prite1112_0.png"
-dest_files=["res://.godot/imported/prite1112_0.png-d6fca9c773c4e2711c3102e416afcd3f.ctex"]
+source_file="res://sprites/other/end/sprite1112/sprite1112_0.png"
+dest_files=["res://.godot/imported/sprite1112_0.png-765e83f086bffd54bf4164891e3cca56.ctex"]
 
 [params]
 
