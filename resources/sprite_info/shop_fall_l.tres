@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://dl2h0elfgiq14"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_p2xrf"]
+
+[sub_resource type="BitMap" id="BitMap_ojg7m"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 8, 0, 28, 62, 62, 127, 255, 255, 255, 255, 255, 255, 111, 255, 254, 255, 252, 255, 248, 255, 0, 127, 0, 48, 0, 0, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_p2xrf")
+name = &"shop_fall_l"
+containing_box = Rect2(0, 2, 16, 12)
+bitmaps = Array[BitMap]([SubResource("BitMap_ojg7m")])

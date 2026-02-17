@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=4 format=3 uid="uid://kgvl77ycdl11"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_xr7bc"]
+
+[sub_resource type="BitMap" id="BitMap_b04uw"]
+data = {
+"data": PackedByteArray(8, 16, 28, 56, 252, 63, 252, 63, 248, 63, 248, 63, 248, 63, 248, 63, 248, 31, 240, 31, 240, 31, 240, 15, 240, 15, 248, 7, 248, 3, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_ey3y1"]
+data = {
+"data": PackedByteArray(32, 64, 112, 224, 240, 255, 240, 255, 240, 127, 240, 127, 240, 127, 240, 63, 240, 63, 240, 31, 240, 15, 240, 15, 240, 7, 248, 3, 248, 1, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_xr7bc")
+name = &"cape_ul"
+origin = Vector2(8, 16)
+containing_box = Rect2(2, 0, 14, 15)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_b04uw"), SubResource("BitMap_ey3y1")])

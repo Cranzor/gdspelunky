@@ -1,0 +1,57 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=10 format=4 uid="uid://dpj7eg2gw1oco"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_noyer"]
+
+[sub_resource type="BitMap" id="BitMap_wtuui"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPw/AAD//wDA//8D8P//D/j//x/8//8//v//f/7//3/+//9//v//f/z//z/4+98f+APAH/ADwA8="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_i2m18"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/D8AgP//Afj//x/8//8//v//f/7//3/+//9//v//f/7//3/+//9//PPPP/zhhz/4w8Mf+APAH/ADwA8="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_gsxef"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/D8A+P//H/z//z/+//9//v//f/7//3/+//9//v//f/7//3/8//8//P//P/zxjz/448cf+MPDH/ADwA8="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_4kaxh"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD4HwAA/n8AAP//AID//wGA//8B+P//H/z//z/+//9//v//f/7//3/+//9//v//f/7//3/8//8//P//P/z5nz/4888f+OPHH/DDww8="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_8x4u1"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAIAAPgfAAD+fwAA//8AgP//AYD//wH4//8f/P//P/7//3/+//9//v//f/7//3/+//9//v//f/z//z/8//8//PvfP/jzzx/448cf+MPDH/ADwA8="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_kavw7"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAIAAOAHAAD4HwAA/D8AAP5/AAD+fwAA//8AAP//AAD//wDw//8P+P//H/z//z/8//8//P//P/z//z/8//8//P//P/j//x/4//8f+P//H/D37w/w5+cP8MfjD+AH4Ac="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_gvbel"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD4HwAA/n8AAP//AID//wGA//8B+P//H/z//z/+//9//v//f/7//3/+//9//v//f/7//3/8//8//P//P/z5nz/4888f+OPHH/DDww8="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_wckrj"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/D8A+P//H/z//z/+//9//v//f/7//3/+//9//v//f/7//3/8//8//P//P/zxjz/448cf+MPDH/ADwA8="),
+"size": Vector2i(32, 32)
+}
+
+[resource]
+script = ExtResource("1_noyer")
+name = &"giant_spider_squirt"
+containing_box = Rect2(1, 8, 30, 24)
+bitmaps = Array[BitMap]([SubResource("BitMap_wtuui"), SubResource("BitMap_i2m18"), SubResource("BitMap_gsxef"), SubResource("BitMap_4kaxh"), SubResource("BitMap_8x4u1"), SubResource("BitMap_kavw7"), SubResource("BitMap_gvbel"), SubResource("BitMap_wckrj")])

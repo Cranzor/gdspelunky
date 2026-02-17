@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://bgyu02jmg2ljk"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_dauqu"]
+
+[sub_resource type="BitMap" id="BitMap_5hppu"]
+data = {
+"data": PackedByteArray(254, 127, 254, 127, 254, 127, 254, 127, 254, 127, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 254, 127, 220, 59, 192, 3, 240, 15, 248, 31, 248, 31),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_dauqu")
+name = &"gold_trophy"
+containing_box = Rect2(0, 0, 16, 16)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_5hppu")])

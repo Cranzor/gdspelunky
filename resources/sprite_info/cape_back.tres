@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://7boqhoeeyvls"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_0nn0l"]
+
+[sub_resource type="BitMap" id="BitMap_bs6du"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 96, 6, 240, 15, 240, 15, 248, 31, 248, 31, 248, 31, 252, 63, 252, 63, 252, 63, 252, 63, 252, 63, 60, 60, 12, 48),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_0nn0l")
+name = &"cape_back"
+origin = Vector2(8, 8)
+containing_box = Rect2(2, 3, 12, 13)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_bs6du")])

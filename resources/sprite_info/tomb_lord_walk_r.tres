@@ -1,0 +1,46 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=8 format=4 uid="uid://b6jb63rpasyxm"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_fd7di"]
+
+[sub_resource type="BitMap" id="BitMap_7woeb"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAHwAAAD+DQAA/w8AAP8HAID/BwDg/wcA+P8HAPz/BwD+/wMA//8DAP//A4D//wOA//8BgP/fAcD/HwDA/38AwP//AcD//wPA//8HwP/xB8D/gweA/wcDgP8PAAD/DwAA/x8AAP8fAICfHwCAHx8AgA8fAIAPPwA="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_omdhi"]
+data = {
+"data": PackedByteArray("AAAAAAAAfAAAAP4NAAD/DwAA/wcAAP8HAAD/BwCA/wcA4P8HAPj/AwD8/wMA/v8DAP//A4D//wOA//8BgP/fAcD/PwDA/38AwP//AcD//wPA//EHwP/BB4D/gQeA/wMDAP8DAAD+AwAA/gMAAPwDAAD8AQAA/AAAAPgAAAD4AQA="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_o53ky"]
+data = {
+"data": PackedByteArray("AAA+AAAA/wYAgP8HAID/AwCA/wMAgP8DAID/AwDg/wMA+P8DAPz/AwD+/wEA//8BAP//AYD//wOA//8BgP//AcD//wHA//8DwP//B8D/8QfA/4EHwP8DA4D/BwCA/wcAAP8HAAD/DwAA/w8AAD8PAAA/PgCAHxwAgA8IAIAfAAA="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_ymve8"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAHwAAAD+DQAA/w8AAP8HAAD/BwAA/wcAgP8HAPD/BwD8/wMA/v8DAP//AwD//wGA//8BgP8fAID/HwDA/38AwP//AcD//wPA//8HwP/xB8D/gQeA/wMDgP8HAAD/BwAA/w8AAP8PAIDfDwCAnw8AgI8PAICPHwA="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_qnk6n"]
+data = {
+"data": PackedByteArray("AAAAAAAAfAAAAP4NAAD/DwAA/wcAAP8HAAD/BwCA/wcA8P8HAPj/AwD8/wMA/v8DAP//AwD//wGA/98BgP8fAID/PwDA/38AwP//AcD//wPA//EHwP/BB4D/gQeA/wMDAP8DAAD+AwAA/AMAAP4DAAD+AQAA/gAAAPwAAAD8AQA="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_oxjkt"]
+data = {
+"data": PackedByteArray("AAB8AAAA/g0AAP8PAAD/BwAA/wcAAP8HAID/BwDg/wcA+P8DAPz/AwD+/wMA//8DAP//AYD/3wGA/x8AgP9/AMD//wHA//8DwP//B8D/8QfA/4EHwP8DA4D/BwCA/w8AgP8PAAD/DwAA/z8AAD8/AAA/PgCAHxwAgA8AAIAfAAA="),
+"size": Vector2i(32, 32)
+}
+
+[resource]
+script = ExtResource("1_fd7di")
+name = &"tomb_lord_walk_r"
+containing_box = Rect2(6, 0, 22, 32)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_7woeb"), SubResource("BitMap_omdhi"), SubResource("BitMap_o53ky"), SubResource("BitMap_ymve8"), SubResource("BitMap_qnk6n"), SubResource("BitMap_oxjkt")])

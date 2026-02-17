@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://cn8xcdasy0ml5"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_5vkuj"]
+
+[sub_resource type="BitMap" id="BitMap_imj4o"]
+data = {
+"data": PackedByteArray(0, 0, 192, 3, 224, 7, 240, 15, 112, 14, 112, 14, 238, 119, 254, 127, 254, 127, 254, 127, 206, 115, 192, 3, 224, 7, 224, 7, 240, 15, 240, 15),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_5vkuj")
+name = &"ankh"
+origin = Vector2(8, 8)
+containing_box = Rect2(1, 1, 14, 15)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_imj4o")])

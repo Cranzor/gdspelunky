@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://bvo42qg2yqkhq"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_miy7d"]
+
+[sub_resource type="BitMap" id="BitMap_iscwn"]
+data = {
+"data": PackedByteArray(224, 3, 240, 7, 248, 15, 248, 15, 252, 63, 254, 127, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 254, 127, 252, 15, 252, 15),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_miy7d")
+name = &"yeti_left"
+containing_box = Rect2(0, 0, 16, 16)
+bitmaps = Array[BitMap]([SubResource("BitMap_iscwn")])

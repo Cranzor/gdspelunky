@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=5 format=3 uid="uid://8fusdra5hugc"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_loiun"]
+
+[sub_resource type="BitMap" id="BitMap_0d5cg"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 96, 6, 240, 15, 240, 31, 248, 31, 248, 63, 240, 63, 240, 63, 248, 63, 248, 127, 248, 127, 252, 127, 252, 127),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_h6tyq"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 96, 6, 240, 15, 240, 31, 248, 31, 248, 63, 240, 63, 240, 63, 248, 63, 248, 127, 248, 127, 252, 127, 252, 127),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_xtibt"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 96, 6, 240, 15, 240, 31, 248, 31, 248, 63, 248, 63, 248, 63, 252, 63, 252, 127, 252, 127, 252, 127, 252, 127),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_loiun")
+name = &"frog_left"
+containing_box = Rect2(2, 4, 13, 12)
+bitmaps = Array[BitMap]([SubResource("BitMap_0d5cg"), SubResource("BitMap_h6tyq"), SubResource("BitMap_xtibt")])

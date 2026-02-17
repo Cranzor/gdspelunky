@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://bpjjla8t0o0qo"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_4l4ix"]
+
+[sub_resource type="BitMap" id="BitMap_6ukp4"]
+data = {
+"data": PackedByteArray(0, 0, 224, 7, 240, 15, 248, 31, 248, 31, 248, 31, 252, 63, 252, 63, 252, 63, 252, 63, 248, 31, 248, 31, 248, 31, 248, 31, 248, 31, 240, 15),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_4l4ix")
+name = &"crystal_skull_tile"
+containing_box = Rect2(2, 1, 12, 15)
+bitmaps = Array[BitMap]([SubResource("BitMap_6ukp4")])

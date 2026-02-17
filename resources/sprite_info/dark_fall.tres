@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://cnw6aw02nd8rg"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_hv3h6"]
+
+[sub_resource type="BitMap" id="BitMap_j6m62"]
+data = {
+"data": PackedByteArray(254, 127, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 254, 127, 252, 30, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_hv3h6")
+name = &"dark_fall"
+containing_box = Rect2(0, 0, 16, 9)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_j6m62")])

@@ -1,0 +1,87 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=15 format=4 uid="uid://b0ibnorw5oway"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_f887l"]
+
+[sub_resource type="BitMap" id="BitMap_k7cjg"]
+data = {
+"data": PackedByteArray("APwfAAD+PwAA/38AgP//AID//wHA//8H4P//D/D//x/4//8/+P//P/z//3/8//9//P////7////+/////v////7////+/////v////7////+/////v////7////+/////v////z////8//9/+P//P8D//wfA//8HwP//B8D//wc="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_hfi54"]
+data = {
+"data": PackedByteArray("APB/AAD8/wAA/v8BAP//A4D//wfA//8H4P//D/D//x/4//8/+P//P/z//3/8//9//P////7////+/////v////7////+/////v////7////+/////v////7////+/////v////z////8//9/+P//P8D//wfA//8HwP//B8D//wc="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_qv5ea"]
+data = {
+"data": PackedByteArray("gP8DAMD/BwDg/w8A8P8fAPD/PwD4//8A+P//Afj//wP4//8H+P//D/z//x/8//8f/P//P/7//z/+//9//v//f/7//3/+/////v////7////+/////v////7////+/////v////z////8//9/+P//P8D//wfA//8HwP//B8D//wc="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_rj4ox"]
+data = {
+"data": PackedByteArray("gP8DAMD/BwDg/w8A8P8fAPD/PwD4//8A+P//Afj//wP4//8H+P//D/z//x/8//8f/P//P/7//z/+//9//v//f/7//3/+/////v////7////+/////v////7////+/////v////z////8//9/+P//P8D//wfA//8HwP//B8D//wc="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_pgms8"]
+data = {
+"data": PackedByteArray("gP8DAMD/BwDg/w8A8P8fAPD/PwD4//8A+P//Afj//wP4//8H+P//D/z//x/8//8f/P//P/7//z/+//9//v//f/7//3/+/////v////7////+/////v////7////+/////v////z////8//9/+P//P8D//wfA//8HwP//B8D//wc="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_8wwrf"]
+data = {
+"data": PackedByteArray("APh/AAD8/wAA/v8BAP//A4D//wfA//8H4P//D/D//x/4//8/+P//P/z//3/8//9//P////7////+/////v////7////+/////v////7////+/////v////7////+/////v////z////8//9/+P//P8D//wfA//8HwP//B8D//wc="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_ljb72"]
+data = {
+"data": PackedByteArray("APh/AAD8/wAA/v8BAP//A4D//wfA//8H4P//D/D//x/4//8/+P//P/z//3/8//9//P////7////+/////v////7////+/////v////7////+/////v////7////+/////v////z////8//9/+P//P8D//wfA//8HwP//B8D//wc="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_2lg0o"]
+data = {
+"data": PackedByteArray("APh/AAD8/wAA/v8BAP//A4D//wfA//8H4P//D/D//x/4//8/+P//P/z//3/8//9//P////7////+/////v////7////+/////v////7////+/////v////7////+/////v////z////8//9/+P//P8D//wfA//8HwP//B8D//wc="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_3lupt"]
+data = {
+"data": PackedByteArray("gP8DAMD/BwDg/w8A8P8fAPD/PwD4//8A+P//Afj//wP4//8H+P//D/z//x/8//8f/P//P/7//z/+//9//v//f/7//3/+/////v////7////+/////v////7////+/////v////z////8//9/+P//P8D//wfA//8HwP//B8D//wc="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_13odm"]
+data = {
+"data": PackedByteArray("gP8DAMD/BwDg/w8A8P8fAPD/PwD4//8A+P//Afj//wP4//8H+P//D/z//x/8//8f/P//P/7//z/+//9//v//f/7//3/+/////v////7////+/////v////7////+/////v////z////8//9/+P//P8D//wfA//8HwP//B8D//wc="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_e11ac"]
+data = {
+"data": PackedByteArray("gP8DAMD/BwDg/w8A8P8fAPD/PwD4//8A+P//Afj//wP4//8H+P//D/z//x/8//8f/P//P/7//z/+//9//v//f/7//3/+/////v////7////+/////v////7////+/////v////z////8//9/+P//P8D//wfA//8HwP//B8D//wc="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_0bi2d"]
+data = {
+"data": PackedByteArray("gP8DAMD/BwDg/w8A8P8fAPD/PwD4//8A+P//Afj//wP4//8H+P//D/z//x/8//8f/P//P/7//z/+//9//v//f/7//3/+/////v////7////+/////v////7////+/////v////z////8//9/+P//P8D//wfA//8HwP//B8D//wc="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_juqll"]
+data = {
+"data": PackedByteArray("gP8DAMD/BwDg/w8A8P8fAPD/PwD4//8A+P//Afj//wP4//8H+P//D/z//x/8//8f/P//P/7//z/+//9//v//f/7//3/+/////v////7////+/////v////7////+/////v////z////8//9/+P//P8D//wfA//8HwP//B8D//wc="),
+"size": Vector2i(32, 32)
+}
+
+[resource]
+script = ExtResource("1_f887l")
+name = &"yeti_king_yell_l"
+containing_box = Rect2(1, 0, 31, 32)
+bitmaps = Array[BitMap]([SubResource("BitMap_k7cjg"), SubResource("BitMap_hfi54"), SubResource("BitMap_qv5ea"), SubResource("BitMap_rj4ox"), SubResource("BitMap_pgms8"), SubResource("BitMap_8wwrf"), SubResource("BitMap_ljb72"), SubResource("BitMap_2lg0o"), SubResource("BitMap_3lupt"), SubResource("BitMap_13odm"), SubResource("BitMap_e11ac"), SubResource("BitMap_0bi2d"), SubResource("BitMap_juqll")])

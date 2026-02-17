@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=4 format=3 uid="uid://ygopra1rhks"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_3hjwt"]
+
+[sub_resource type="BitMap" id="BitMap_qmbd5"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 0, 62, 0, 127, 12, 255, 15, 255, 15, 62, 12, 28, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_rr41v"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 0, 62, 0, 127, 12, 255, 15, 255, 15, 62, 12, 28, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_3hjwt")
+name = &"bomb_arrow_left"
+origin = Vector2(8, 8)
+containing_box = Rect2(0, 5, 12, 7)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_qmbd5"), SubResource("BitMap_rr41v")])

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://cthmsdf0oaxo7"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_rbdqu"]
+
+[sub_resource type="BitMap" id="BitMap_6fiec"]
+data = {
+"data": PackedByteArray(255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 246, 246, 96, 96),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_rbdqu")
+name = &"leaves"
+containing_box = Rect2(0, 0, 16, 16)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_6fiec")])

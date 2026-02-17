@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://dk8br5x1kaf72"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_ja0hr"]
+
+[sub_resource type="BitMap" id="BitMap_b0wuo"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 252, 3, 254, 7, 255, 31, 255, 127, 255, 255, 255, 255, 254, 255),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_ja0hr")
+name = &"vampire_dead_l"
+containing_box = Rect2(0, 9, 16, 7)
+bitmaps = Array[BitMap]([SubResource("BitMap_b0wuo")])

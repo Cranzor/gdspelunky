@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://ddr0a3k2b718k"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_06bbh"]
+
+[sub_resource type="BitMap" id="BitMap_myp3d"]
+data = {
+"data": PackedByteArray(63, 0, 63, 0, 63, 0, 63, 0, 255, 125, 255, 127, 255, 127, 255, 127, 255, 127, 255, 63, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 254, 30),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_06bbh")
+name = &"lvl"
+containing_box = Rect2(0, 0, 16, 16)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_myp3d")])

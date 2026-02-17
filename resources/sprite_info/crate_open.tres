@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://bc0a8m1w8xpqu"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_iogu2"]
+
+[sub_resource type="BitMap" id="BitMap_nxtsl"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 248, 127, 248, 127, 248, 127, 248, 127, 248, 127, 248, 127, 252, 127, 254, 127, 255, 127, 254, 127),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_iogu2")
+name = &"crate_open"
+origin = Vector2(8, 8)
+containing_box = Rect2(0, 6, 15, 10)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_nxtsl")])

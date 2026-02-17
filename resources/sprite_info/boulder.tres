@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=4 uid="uid://dwub33g63xdje"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_i7mdh"]
+
+[sub_resource type="BitMap" id="BitMap_7tdb5"]
+data = {
+"data": PackedByteArray("APgfAAD+fwCA//8B4P//B/D//w/4//8f/P//P/z//z/+//9//v//f//////////////////////////////////////////////////////////////////////+//9//v//f/z//z/8//8/+P//H/D//w/g//8HgP//AQD+PwA="),
+"size": Vector2i(32, 32)
+}
+
+[resource]
+script = ExtResource("1_i7mdh")
+name = &"boulder"
+origin = Vector2(16, 16)
+containing_box = Rect2(0, 0, 32, 32)
+bitmaps = Array[BitMap]([SubResource("BitMap_7tdb5")])

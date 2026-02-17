@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://dwdq3s82we8h0"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_ut3il"]
+
+[sub_resource type="BitMap" id="BitMap_2d5dd"]
+data = {
+"data": PackedByteArray(255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255),
+"size": Vector2i(32, 16)
+}
+
+[resource]
+script = ExtResource("1_ut3il")
+name = &"load_button_pressed"
+containing_box = Rect2(0, 0, 32, 16)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_2d5dd")])

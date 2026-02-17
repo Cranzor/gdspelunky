@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=7 format=3 uid="uid://d3h6wnf4g6y8q"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_fho7x"]
+
+[sub_resource type="BitMap" id="BitMap_57esl"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 192, 3, 224, 7, 224, 15, 240, 15, 240, 15, 224, 7, 192, 7, 128, 3, 0, 0, 0, 0, 0, 0, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_kagmv"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 192, 1, 224, 7, 224, 7, 224, 7, 192, 3, 192, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_d2267"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 192, 3, 224, 3, 224, 3, 192, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_7kguf"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 1, 192, 3, 192, 3, 128, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_7os4n"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 1, 128, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_fho7x")
+name = &"magma_trail"
+origin = Vector2(8, 8)
+containing_box = Rect2(4, 4, 8, 8)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_57esl"), SubResource("BitMap_kagmv"), SubResource("BitMap_d2267"), SubResource("BitMap_7kguf"), SubResource("BitMap_7os4n")])

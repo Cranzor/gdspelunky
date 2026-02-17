@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://0nesfkeyued4"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_cxqfa"]
+
+[sub_resource type="BitMap" id="BitMap_rqj4o"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 255, 254, 255, 252, 127, 248, 3, 0, 0, 0, 0, 0, 0),
+"size": Vector2i(16, 12)
+}
+
+[resource]
+script = ExtResource("1_cxqfa")
+name = &"machete_left"
+origin = Vector2(8, 6)
+containing_box = Rect2(0, 4, 16, 5)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_rqj4o")])

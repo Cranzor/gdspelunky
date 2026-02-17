@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://bcgvsipguca6m"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_re3st"]
+
+[sub_resource type="BitMap" id="BitMap_qdvmf"]
+data = {
+"data": PackedByteArray(0, 128, 0, 192, 0, 224, 0, 224, 0, 192, 0, 128, 0, 128, 0, 128, 0, 192, 0, 192, 0, 192, 0, 128, 0, 192, 0, 192, 0, 192, 0, 128),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_re3st")
+name = &"cave_left"
+containing_box = Rect2(13, 0, 3, 16)
+bitmaps = Array[BitMap]([SubResource("BitMap_qdvmf")])

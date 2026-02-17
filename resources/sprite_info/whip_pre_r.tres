@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://c7frrqbdeog70"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_nshry"]
+
+[sub_resource type="BitMap" id="BitMap_6c151"]
+data = {
+"data": PackedByteArray(0, 14, 0, 31, 128, 63, 192, 113, 192, 231, 128, 239, 0, 223, 0, 184, 0, 58, 0, 31, 0, 15, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_nshry")
+name = &"whip_pre_r"
+origin = Vector2(8, 8)
+containing_box = Rect2(6, 0, 10, 12)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_6c151")])

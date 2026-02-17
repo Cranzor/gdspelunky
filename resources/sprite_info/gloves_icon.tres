@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://cix618ylvj6as"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_5k223"]
+
+[sub_resource type="BitMap" id="BitMap_fyfv3"]
+data = {
+"data": PackedByteArray(240, 0, 252, 1, 254, 3, 255, 15, 255, 31, 255, 63, 255, 127, 254, 127, 252, 127, 254, 127, 254, 127, 254, 127, 204, 63, 192, 31, 192, 15, 128, 3),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_5k223")
+name = &"gloves_icon"
+containing_box = Rect2(0, 0, 15, 16)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_fyfv3")])

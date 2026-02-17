@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=6 format=3 uid="uid://br38jvceexttv"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_whdou"]
+
+[sub_resource type="BitMap" id="BitMap_vc1ic"]
+data = {
+"data": PackedByteArray(0, 31, 192, 63, 240, 63, 254, 127, 255, 127, 255, 127, 255, 63, 254, 48, 0, 56, 206, 31, 223, 255, 254, 255, 252, 127, 248, 63, 255, 127, 254, 207),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_4mm08"]
+data = {
+"data": PackedByteArray(0, 62, 128, 127, 252, 127, 254, 255, 254, 255, 254, 255, 252, 127, 0, 112, 128, 56, 156, 255, 254, 127, 254, 63, 255, 31, 199, 31, 225, 63, 224, 111),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_fnxub"]
+data = {
+"data": PackedByteArray(128, 15, 192, 31, 240, 31, 255, 63, 255, 63, 255, 63, 255, 63, 127, 48, 0, 56, 128, 31, 0, 255, 184, 127, 252, 63, 248, 31, 252, 127, 254, 255),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_trij5"]
+data = {
+"data": PackedByteArray(0, 0, 128, 15, 192, 31, 240, 31, 255, 63, 255, 63, 255, 63, 255, 63, 254, 190, 254, 223, 60, 255, 252, 127, 248, 63, 254, 63, 255, 127, 254, 207),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_whdou")
+name = &"man_trap_left"
+containing_box = Rect2(0, 0, 16, 16)
+bitmaps = Array[BitMap]([SubResource("BitMap_vc1ic"), SubResource("BitMap_4mm08"), SubResource("BitMap_fnxub"), SubResource("BitMap_trij5")])

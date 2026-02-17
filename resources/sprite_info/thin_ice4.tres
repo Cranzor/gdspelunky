@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://cqlsiwa1vxtl7"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_7guwv"]
+
+[sub_resource type="BitMap" id="BitMap_joka5"]
+data = {
+"data": PackedByteArray(255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 1, 128, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_7guwv")
+name = &"thin_ice4"
+containing_box = Rect2(0, 0, 16, 7)
+bitmaps = Array[BitMap]([SubResource("BitMap_joka5")])

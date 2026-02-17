@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=6 format=3 uid="uid://doge258mv0n1i"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_cj3v4"]
+
+[sub_resource type="BitMap" id="BitMap_kkdw6"]
+data = {
+"data": PackedByteArray(0, 0, 64, 16, 225, 152, 243, 223, 247, 255, 255, 255, 255, 255, 254, 255, 254, 127, 252, 127, 248, 63, 240, 31, 224, 15, 96, 6, 48, 3, 32, 2),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_g2yym"]
+data = {
+"data": PackedByteArray(0, 0, 64, 16, 224, 24, 240, 31, 241, 191, 247, 255, 255, 255, 254, 255, 254, 127, 252, 127, 248, 63, 240, 31, 224, 15, 96, 6, 48, 3, 32, 2),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_gtksj"]
+data = {
+"data": PackedByteArray(64, 16, 224, 24, 224, 31, 240, 31, 240, 63, 240, 63, 248, 63, 252, 127, 254, 255, 255, 255, 255, 255, 207, 255, 199, 134, 67, 130, 66, 2, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_1gkih"]
+data = {
+"data": PackedByteArray(64, 16, 224, 24, 224, 31, 240, 31, 240, 63, 240, 63, 240, 63, 248, 63, 252, 127, 254, 127, 255, 255, 207, 255, 239, 230, 63, 227, 14, 96, 28, 48),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_cj3v4")
+name = &"vampire_bat_right"
+containing_box = Rect2(0, 0, 16, 16)
+bitmaps = Array[BitMap]([SubResource("BitMap_kkdw6"), SubResource("BitMap_g2yym"), SubResource("BitMap_gtksj"), SubResource("BitMap_1gkih")])

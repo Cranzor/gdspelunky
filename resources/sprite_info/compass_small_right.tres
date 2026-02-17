@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://42iiwm8phdth"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_684sp"]
+
+[sub_resource type="BitMap" id="BitMap_d0ej6"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 0, 60, 0, 124, 0, 252, 0, 252, 0, 124, 0, 60, 0, 12, 0, 0, 0, 0, 0, 0, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_684sp")
+name = &"compass_small_right"
+containing_box = Rect2(10, 4, 6, 8)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_d0ej6")])

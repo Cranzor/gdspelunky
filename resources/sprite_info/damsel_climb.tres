@@ -1,0 +1,46 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=8 format=3 uid="uid://bpf5oj6fhvxmx"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_nuame"]
+
+[sub_resource type="BitMap" id="BitMap_460th"]
+data = {
+"data": PackedByteArray(224, 7, 240, 15, 248, 31, 252, 63, 252, 63, 254, 31, 255, 31, 255, 63, 254, 127, 248, 127, 240, 63, 240, 15, 224, 7, 224, 3, 224, 1, 192, 0),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_2d4j6"]
+data = {
+"data": PackedByteArray(0, 0, 224, 7, 240, 15, 248, 31, 252, 63, 252, 63, 254, 31, 255, 31, 255, 127, 254, 127, 248, 127, 240, 63, 224, 31, 224, 15, 192, 3, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_0fid4"]
+data = {
+"data": PackedByteArray(224, 7, 240, 15, 248, 31, 252, 63, 252, 63, 248, 127, 248, 127, 254, 255, 255, 255, 255, 255, 254, 255, 240, 127, 224, 7, 192, 7, 128, 7, 0, 3),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_m7xkr"]
+data = {
+"data": PackedByteArray(224, 7, 240, 15, 248, 31, 252, 63, 252, 63, 248, 127, 248, 255, 252, 255, 254, 127, 254, 31, 252, 15, 240, 15, 224, 7, 192, 7, 128, 7, 0, 3),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_jw66j"]
+data = {
+"data": PackedByteArray(0, 0, 224, 7, 240, 15, 248, 31, 252, 63, 252, 63, 248, 127, 248, 255, 254, 255, 254, 127, 254, 31, 252, 15, 248, 7, 240, 7, 192, 3, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_pum84"]
+data = {
+"data": PackedByteArray(224, 7, 240, 15, 248, 31, 252, 63, 252, 63, 254, 31, 254, 31, 255, 127, 255, 255, 255, 255, 255, 127, 254, 15, 224, 7, 224, 3, 224, 1, 192, 0),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_nuame")
+name = &"damsel_climb"
+origin = Vector2(8, 8)
+containing_box = Rect2(0, 0, 16, 16)
+bitmaps = Array[BitMap]([SubResource("BitMap_460th"), SubResource("BitMap_2d4j6"), SubResource("BitMap_0fid4"), SubResource("BitMap_m7xkr"), SubResource("BitMap_jw66j"), SubResource("BitMap_pum84")])

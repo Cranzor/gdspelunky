@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://baodaom8mclqe"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_qpjj8"]
+
+[sub_resource type="BitMap" id="BitMap_u1vyk"]
+data = {
+"data": PackedByteArray(0, 2, 0, 6, 0, 14, 0, 28, 0, 60, 0, 248, 0, 240, 0, 192, 0, 128, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_qpjj8")
+name = &"machete_pre_r"
+origin = Vector2(8, 8)
+containing_box = Rect2(9, 0, 7, 9)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_u1vyk")])

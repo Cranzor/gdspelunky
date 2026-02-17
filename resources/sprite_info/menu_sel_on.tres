@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=4 uid="uid://l7a6g2t3bsq4"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_bau0h"]
+
+[sub_resource type="BitMap" id="BitMap_q6gye"]
+data = {
+"data": PackedByteArray("/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////w=="),
+"size": Vector2i(208, 8)
+}
+
+[resource]
+script = ExtResource("1_bau0h")
+name = &"menu_sel_on"
+containing_box = Rect2(0, 0, 208, 8)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_q6gye")])

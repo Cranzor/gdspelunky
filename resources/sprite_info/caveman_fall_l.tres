@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://dnwshmu73i5r2"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_t0waw"]
+
+[sub_resource type="BitMap" id="BitMap_0ofkm"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 6, 0, 63, 128, 255, 252, 255, 254, 255, 255, 255, 255, 127, 255, 127, 255, 63, 255, 31, 254, 3, 126, 0, 0, 0, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_t0waw")
+name = &"caveman_fall_l"
+containing_box = Rect2(0, 2, 16, 12)
+bitmaps = Array[BitMap]([SubResource("BitMap_0ofkm")])

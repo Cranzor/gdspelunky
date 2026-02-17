@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=4 uid="uid://h3txa0li80m8"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_rtw2v"]
+
+[sub_resource type="BitMap" id="BitMap_7ghsr"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOAHAAD4HwAA/D8AAP5/AAD+fwCA//8BwP//A+D//wfw//8P8P//D/j//x/4//8f+PfvH/gH4B/4B+Af+AfgH/AH4A/wB+AP4AfgB8AGYAM="),
+"size": Vector2i(32, 32)
+}
+
+[resource]
+script = ExtResource("1_rtw2v")
+name = &"giant_spider_jump"
+containing_box = Rect2(3, 12, 26, 20)
+bitmaps = Array[BitMap]([SubResource("BitMap_7ghsr")])

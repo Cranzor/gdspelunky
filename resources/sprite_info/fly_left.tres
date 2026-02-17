@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=6 format=3 uid="uid://dwkmdkua4sh2q"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_vdai2"]
+
+[sub_resource type="BitMap" id="BitMap_3k4xf"]
+data = {
+"data": PackedByteArray(66, 36, 120, 255, 255, 127, 86, 36),
+"size": Vector2i(8, 8)
+}
+
+[sub_resource type="BitMap" id="BitMap_8q064"]
+data = {
+"data": PackedByteArray(16, 24, 120, 255, 255, 127, 86, 36),
+"size": Vector2i(8, 8)
+}
+
+[sub_resource type="BitMap" id="BitMap_ks2nd"]
+data = {
+"data": PackedByteArray(0, 0, 251, 255, 255, 127, 86, 36),
+"size": Vector2i(8, 8)
+}
+
+[sub_resource type="BitMap" id="BitMap_h32nb"]
+data = {
+"data": PackedByteArray(0, 32, 122, 255, 255, 127, 86, 36),
+"size": Vector2i(8, 8)
+}
+
+[resource]
+script = ExtResource("1_vdai2")
+name = &"fly_left"
+origin = Vector2(4, 4)
+containing_box = Rect2(0, 0, 8, 8)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_3k4xf"), SubResource("BitMap_8q064"), SubResource("BitMap_ks2nd"), SubResource("BitMap_h32nb")])

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://5lxy6mdfptso"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_f6huv"]
+
+[sub_resource type="BitMap" id="BitMap_6l13e"]
+data = {
+"data": PackedByteArray(24, 60, 126, 255, 255, 127, 62, 56),
+"size": Vector2i(8, 8)
+}
+
+[resource]
+script = ExtResource("1_f6huv")
+name = &"rope_top"
+origin = Vector2(4, 4)
+containing_box = Rect2(0, 0, 8, 8)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_6l13e")])

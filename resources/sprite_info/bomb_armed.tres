@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=4 format=3 uid="uid://d0dyfxlldl7hy"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_pej3x"]
+
+[sub_resource type="BitMap" id="BitMap_xrx1a"]
+data = {
+"data": PackedByteArray(0, 56, 124, 254, 254, 254, 124, 56),
+"size": Vector2i(8, 8)
+}
+
+[sub_resource type="BitMap" id="BitMap_6kdxd"]
+data = {
+"data": PackedByteArray(0, 56, 124, 254, 254, 254, 124, 56),
+"size": Vector2i(8, 8)
+}
+
+[resource]
+script = ExtResource("1_pej3x")
+name = &"bomb_armed"
+origin = Vector2(4, 4)
+containing_box = Rect2(1, 1, 7, 7)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_xrx1a"), SubResource("BitMap_6kdxd")])

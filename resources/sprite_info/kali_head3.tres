@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=4 uid="uid://g2tlru3yyrnr"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_4uu44"]
+
+[sub_resource type="BitMap" id="BitMap_i6n4m"]
+data = {
+"data": PackedByteArray("/v//P////3////9/////f/7//z/+/////v//////////////////f////3////9/////f////3////9/////f////3////9/////f////3///////////////////////v////7////+//9//v//f/7////8/////P////j///8="),
+"size": Vector2i(32, 32)
+}
+
+[resource]
+script = ExtResource("1_4uu44")
+name = &"kali_head3"
+origin = Vector2(16, 16)
+containing_box = Rect2(0, 0, 32, 32)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_i6n4m")])

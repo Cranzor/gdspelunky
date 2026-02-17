@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://bs611qc24hca1"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_cwr02"]
+
+[sub_resource type="BitMap" id="BitMap_j5rmx"]
+data = {
+"data": PackedByteArray(0, 0, 240, 23, 248, 63, 252, 63, 252, 63, 254, 127, 255, 127, 255, 127, 255, 127, 255, 127, 254, 63, 252, 63, 248, 31, 240, 15, 192, 3, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_cwr02")
+name = &"sticky_bomb_icon"
+containing_box = Rect2(0, 1, 15, 14)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_j5rmx")])

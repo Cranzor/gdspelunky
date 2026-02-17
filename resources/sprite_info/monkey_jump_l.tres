@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://epe4wc81ckxr"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_ucsx7"]
+
+[sub_resource type="BitMap" id="BitMap_xqvo7"]
+data = {
+"data": PackedByteArray(0, 0, 224, 3, 240, 7, 240, 7, 240, 7, 240, 15, 248, 7, 248, 7, 240, 15, 240, 15, 248, 47, 216, 111, 224, 127, 96, 63, 0, 30, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_ucsx7")
+name = &"monkey_jump_l"
+containing_box = Rect2(3, 1, 12, 14)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_xqvo7")])

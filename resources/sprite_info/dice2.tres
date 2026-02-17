@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://d0riquohm554m"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_bwtmo"]
+
+[sub_resource type="BitMap" id="BitMap_ldajd"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 248, 127, 248, 127, 248, 127, 248, 127, 248, 127, 248, 127, 248, 127, 248, 127, 248, 127, 248, 127),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_bwtmo")
+name = &"dice2"
+origin = Vector2(8, 8)
+containing_box = Rect2(3, 6, 12, 10)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_ldajd")])

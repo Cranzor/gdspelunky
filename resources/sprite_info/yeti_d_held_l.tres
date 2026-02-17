@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://cgkafql2j0478"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_dwa0n"]
+
+[sub_resource type="BitMap" id="BitMap_fybvh"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 192, 7, 0, 224, 63, 0, 240, 255, 0, 240, 255, 1, 240, 255, 3, 240, 255, 3, 240, 255, 7, 240, 255, 7, 240, 255, 15, 240, 255, 15, 240, 255, 15, 224, 253, 7, 192, 24, 0),
+"size": Vector2i(24, 16)
+}
+
+[resource]
+script = ExtResource("1_dwa0n")
+name = &"yeti_d_held_l"
+origin = Vector2(4, 0)
+containing_box = Rect2(4, 3, 16, 13)
+bitmaps = Array[BitMap]([SubResource("BitMap_fybvh")])

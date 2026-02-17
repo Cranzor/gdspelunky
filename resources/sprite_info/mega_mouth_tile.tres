@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=4 uid="uid://b5xurnecla3c2"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_h5ubi"]
+
+[sub_resource type="BitMap" id="BitMap_u3hcd"]
+data = {
+"data": PackedByteArray("/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////w=="),
+"size": Vector2i(64, 32)
+}
+
+[resource]
+script = ExtResource("1_h5ubi")
+name = &"mega_mouth_tile"
+containing_box = Rect2(0, 0, 64, 32)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_u3hcd")])

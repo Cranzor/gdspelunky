@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://b2hnbak4n1at5"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_qough"]
+
+[sub_resource type="BitMap" id="BitMap_rni3b"]
+data = {
+"data": PackedByteArray(224, 7, 240, 15, 240, 15, 252, 31, 254, 63, 254, 63, 252, 15, 240, 15, 240, 15, 240, 63, 246, 127, 255, 127, 255, 63, 222, 15, 12, 15, 0, 15),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_qough")
+name = &"hang_left"
+origin = Vector2(8, 8)
+containing_box = Rect2(0, 0, 15, 16)
+bitmaps = Array[BitMap]([SubResource("BitMap_rni3b")])

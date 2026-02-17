@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://caguhwfglywvr"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_o3v25"]
+
+[sub_resource type="BitMap" id="BitMap_jg7di"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 252, 63, 254, 127, 254, 127, 254, 127, 254, 127, 254, 127, 254, 127, 254, 127, 254, 127, 254, 127),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_o3v25")
+name = &"locked_chest"
+origin = Vector2(8, 8)
+containing_box = Rect2(1, 6, 14, 10)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_jg7di")])

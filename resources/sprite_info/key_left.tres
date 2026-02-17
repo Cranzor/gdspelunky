@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://dnm06ygty5vdw"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_cqqee"]
+
+[sub_resource type="BitMap" id="BitMap_uay2e"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 14, 0, 31, 248, 63, 252, 63, 252, 63, 252, 63, 124, 31, 40, 14),
+"size": Vector2i(16, 12)
+}
+
+[resource]
+script = ExtResource("1_cqqee")
+name = &"key_left"
+origin = Vector2(8, 6)
+containing_box = Rect2(2, 4, 12, 8)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_uay2e")])

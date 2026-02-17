@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://davnen73si2hl"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_apkgp"]
+
+[sub_resource type="BitMap" id="BitMap_i5t3i"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 248, 127, 248, 127, 248, 127, 248, 127, 248, 127, 248, 127, 248, 127, 248, 127, 248, 127, 248, 127),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_apkgp")
+name = &"crate_tile"
+containing_box = Rect2(3, 6, 12, 10)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_i5t3i")])

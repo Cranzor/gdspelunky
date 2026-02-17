@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://bnhg4lomuqecp"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_anxhl"]
+
+[sub_resource type="BitMap" id="BitMap_u6shv"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 152, 3, 252, 111, 252, 127, 254, 127, 254, 127, 254, 127, 252, 127, 248, 127, 248, 63, 240, 63, 224, 63, 192, 48, 0, 0, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_anxhl")
+name = &"fire_frog_jump_l"
+containing_box = Rect2(1, 2, 14, 12)
+bitmaps = Array[BitMap]([SubResource("BitMap_u6shv")])

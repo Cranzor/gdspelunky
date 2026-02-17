@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://dmcfai72f0r0n"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_spghg"]
+
+[sub_resource type="BitMap" id="BitMap_18vqo"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 192, 3, 224, 7, 224, 7, 224, 7, 224, 7, 192, 3, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_spghg")
+name = &"chain"
+origin = Vector2(8, 8)
+containing_box = Rect2(5, 9, 6, 6)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_18vqo")])

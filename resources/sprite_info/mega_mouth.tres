@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=4 uid="uid://cm8617t3cea3x"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_m0i42"]
+
+[sub_resource type="BitMap" id="BitMap_08xdq"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAD+HwAAAAAAwP8/AAAAAAD4/z8AAAAAwP//PwAAAAD+//8/AAAAgP///38AAADA/////wEAAOD/////BwAA4P////8PAAPw/////x+AA/D/////P8AD+P////9/4AP4///////4Afz///////8B/P///////wH8////////Afz///////8B/P///////wH8////////Afj///////8B4P///////QGA/////3/wAej/////H8AD/P////8PgAP8/////wcAA/z/////AQAA/P////0BAAD4//8H+AAAAPA/+AcAAAAAAADgAwAAAAAAAAAAAAAAAA=="),
+"size": Vector2i(64, 32)
+}
+
+[resource]
+script = ExtResource("1_m0i42")
+name = &"mega_mouth"
+origin = Vector2(8, 8)
+containing_box = Rect2(2, 1, 56, 30)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_08xdq")])

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://ld1d2hg1yvow"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_dntpm"]
+
+[sub_resource type="BitMap" id="BitMap_ibu7f"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 16, 142, 56, 220, 124, 252, 254, 254),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_dntpm")
+name = &"bones_left"
+containing_box = Rect2(1, 11, 15, 5)
+bitmaps = Array[BitMap]([SubResource("BitMap_ibu7f")])

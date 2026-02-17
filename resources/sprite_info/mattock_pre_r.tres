@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://crfw3776f4m3n"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_m4vww"]
+
+[sub_resource type="BitMap" id="BitMap_14wv6"]
+data = {
+"data": PackedByteArray(0, 14, 0, 7, 128, 7, 128, 7, 192, 31, 224, 255, 224, 255, 192, 255, 192, 227, 192, 3, 128, 7, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_m4vww")
+name = &"mattock_pre_r"
+origin = Vector2(8, 8)
+containing_box = Rect2(5, 0, 11, 12)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_14wv6")])

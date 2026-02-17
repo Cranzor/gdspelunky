@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://capv3o6r5ond5"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_3k7ep"]
+
+[sub_resource type="BitMap" id="BitMap_pw3jd"]
+data = {
+"data": PackedByteArray(224, 3, 240, 7, 248, 15, 248, 15, 248, 15, 248, 31, 248, 31, 248, 23, 252, 15, 254, 127, 254, 127, 248, 63, 248, 15, 240, 15, 224, 31, 0, 28),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_3k7ep")
+name = &"shop_die_lr"
+containing_box = Rect2(1, 0, 14, 16)
+bitmaps = Array[BitMap]([SubResource("BitMap_pw3jd")])

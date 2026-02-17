@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=5 format=4 uid="uid://dkhp5c75lcwy7"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_82pbe"]
+
+[sub_resource type="BitMap" id="BitMap_s8ioh"]
+data = {
+"data": PackedByteArray("8Af4C9gD0APQA+AD4APAA8AD4APgAeAB4AHwAfgBeAF4AXgBcAJwAnAC4ALgAuAD4APgA8ADwAfAB8AHwAPAA+ADkAOIA8gDyAfQB+AH4APgA+AD4APwA/AD8AXwBeAF"),
+"size": Vector2i(16, 48)
+}
+
+[sub_resource type="BitMap" id="BitMap_nye4n"]
+data = {
+"data": PackedByteArray("8AfgB+QX6AXgBcAFwAPAA8AD4AegB5AHiA8IDwgHkAegA+ADwAPAA8AF4AXgBOAI4AjgCPAE8ALgA+AB4AHAAcABwAPAA+AD4APAA0ADQAPAA8ADwAHAAcAD4ALgAuAF"),
+"size": Vector2i(16, 48)
+}
+
+[sub_resource type="BitMap" id="BitMap_8qifw"]
+data = {
+"data": PackedByteArray("8APgB+AH4AHkAeAB4ADgAOAA8ADwAXABeAF4AnAC8ALgAeAB4AHgAaABkAMQA5ADkAfgB+AH4AHgA8ADwAOAAcABwAHgAeAB4AFwAXACeAI4AnwCfALgAuAC4ALAAcAB"),
+"size": Vector2i(16, 48)
+}
+
+[resource]
+script = ExtResource("1_82pbe")
+name = &"barrier"
+containing_box = Rect2(2, 0, 11, 48)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_s8ioh"), SubResource("BitMap_nye4n"), SubResource("BitMap_8qifw")])

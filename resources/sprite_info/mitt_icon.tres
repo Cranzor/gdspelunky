@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://dvrhm5cdrlvyd"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_ibnr8"]
+
+[sub_resource type="BitMap" id="BitMap_3em1t"]
+data = {
+"data": PackedByteArray(224, 31, 248, 63, 252, 127, 252, 127, 254, 255, 254, 255, 254, 255, 254, 255, 254, 255, 255, 255, 255, 255, 255, 255, 255, 255, 254, 255, 252, 255, 240, 127),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_ibnr8")
+name = &"mitt_icon"
+containing_box = Rect2(0, 0, 16, 16)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_3em1t")])

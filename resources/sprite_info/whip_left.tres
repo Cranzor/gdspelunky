@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://cyp036i7wl5qv"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_4i2ow"]
+
+[sub_resource type="BitMap" id="BitMap_5adhf"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 0, 120, 240, 248, 255, 240, 255, 128, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_4i2ow")
+name = &"whip_left"
+origin = Vector2(8, 8)
+containing_box = Rect2(3, 6, 13, 5)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_5adhf")])

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://o7wiriav0njw"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_pihe7"]
+
+[sub_resource type="BitMap" id="BitMap_kn7t4"]
+data = {
+"data": PackedByteArray(0, 0, 128, 49, 204, 59, 254, 63, 254, 63, 254, 31, 252, 31, 254, 31, 254, 63, 252, 63, 240, 127, 224, 255, 204, 247, 220, 247, 152, 103, 0, 3),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_pihe7")
+name = &"gold_big"
+containing_box = Rect2(1, 1, 15, 15)
+bitmaps = Array[BitMap]([SubResource("BitMap_kn7t4")])

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://1d60g3xawdr1"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_k52b4"]
+
+[sub_resource type="BitMap" id="BitMap_ckv04"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 224, 0, 240, 1, 248, 3, 253, 191, 255, 255, 0, 0),
+"size": Vector2i(16, 17)
+}
+
+[resource]
+script = ExtResource("1_k52b4")
+name = &"dark_top2"
+containing_box = Rect2(0, 11, 16, 5)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_ckv04")])

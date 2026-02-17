@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=4 uid="uid://crg3ft2k7bql"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_sm0rg"]
+
+[sub_resource type="BitMap" id="BitMap_4cf6m"]
+data = {
+"data": PackedByteArray("/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////w=="),
+"size": Vector2i(56, 16)
+}
+
+[resource]
+script = ExtResource("1_sm0rg")
+name = &"key_config_button"
+containing_box = Rect2(0, 0, 56, 16)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_4cf6m")])

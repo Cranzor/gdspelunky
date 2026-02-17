@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://4ru3njcumfxy"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_evjwa"]
+
+[sub_resource type="BitMap" id="BitMap_hg1wt"]
+data = {
+"data": PackedByteArray(248, 3, 252, 7, 254, 15, 254, 31, 254, 31, 252, 15, 252, 15, 254, 31, 254, 31, 252, 15, 252, 31, 248, 31, 248, 15, 240, 31, 224, 63, 192, 61),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_evjwa")
+name = &"damsel_die_lr"
+origin = Vector2(8, 8)
+containing_box = Rect2(1, 0, 13, 16)
+bitmaps = Array[BitMap]([SubResource("BitMap_hg1wt")])

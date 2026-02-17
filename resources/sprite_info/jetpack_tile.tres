@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://b5rtjtk8yq4dd"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_xod3m"]
+
+[sub_resource type="BitMap" id="BitMap_jy1h4"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 96, 6, 240, 15, 248, 31, 252, 63, 252, 63, 252, 63, 252, 63, 252, 63, 252, 63, 252, 63, 252, 63, 252, 63, 252, 63),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_xod3m")
+name = &"jetpack_tile"
+containing_box = Rect2(2, 3, 12, 13)
+bitmaps = Array[BitMap]([SubResource("BitMap_jy1h4")])

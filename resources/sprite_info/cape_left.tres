@@ -1,0 +1,41 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=7 format=3 uid="uid://y8butf5rn1uv"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_64g6h"]
+
+[sub_resource type="BitMap" id="BitMap_1146x"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 96, 254, 127, 254, 127, 252, 127, 240, 63, 128, 31, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_r0vjs"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 96, 252, 127, 254, 127, 254, 127, 252, 63, 128, 31, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_03xip"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 96, 128, 127, 252, 127, 254, 127, 254, 63, 252, 31, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_cs5lq"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 31, 192, 63, 252, 127, 254, 127, 254, 127, 60, 32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_4ds8m"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 30, 0, 254, 99, 252, 127, 248, 127, 240, 127, 128, 63, 0, 28, 0, 0, 0, 0, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_64g6h")
+name = &"cape_left"
+origin = Vector2(8, 8)
+containing_box = Rect2(1, 3, 14, 10)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_1146x"), SubResource("BitMap_r0vjs"), SubResource("BitMap_03xip"), SubResource("BitMap_cs5lq"), SubResource("BitMap_4ds8m")])

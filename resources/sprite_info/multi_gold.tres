@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://bleotek28ntv"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_uvrml"]
+
+[sub_resource type="BitMap" id="BitMap_5v7e7"]
+data = {
+"data": PackedByteArray(0, 0, 126, 126, 126, 126, 126, 126, 126, 126, 126, 126, 60, 60, 126, 126, 0, 0, 126, 126, 126, 126, 126, 126, 126, 126, 126, 126, 60, 60, 126, 126),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_uvrml")
+name = &"multi_gold"
+containing_box = Rect2(1, 1, 14, 15)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_5v7e7")])

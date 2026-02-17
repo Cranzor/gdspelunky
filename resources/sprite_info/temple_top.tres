@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://bkbt7b3iwyelx"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_1qm25"]
+
+[sub_resource type="BitMap" id="BitMap_pc6ve"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 0, 30, 24, 62, 0, 0),
+"size": Vector2i(16, 17)
+}
+
+[resource]
+script = ExtResource("1_1qm25")
+name = &"temple_top"
+containing_box = Rect2(3, 13, 11, 3)
+bitmaps = Array[BitMap]([SubResource("BitMap_pc6ve")])

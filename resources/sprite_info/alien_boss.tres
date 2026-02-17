@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=6 format=4 uid="uid://cobahiyfq5u0y"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_msydu"]
+
+[sub_resource type="BitMap" id="BitMap_d40qb"]
+data = {
+"data": PackedByteArray("AAAAAACAPwAA8P8DAPz/DwD//x+A//8/wP//f+D//3/w////8P////j////4/////P////z////+/////v////7////+/////v////7////8/////P//f/j//3/4//8/8P//P+D//3/g////8P////j////8/////v////7///8="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_scabe"]
+data = {
+"data": PackedByteArray("AAAAAADgfwAA+P8HAP7/H4D//z/A//9/4P//f/D////w////+P////j////8/////P////7////+/////v////7////+/////v////7////8/////P//f/j//3/4//8/8P//P+D//3/4/////P////7////+/////v////z///8="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_64vij"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAgD8AAPD/AwD8/w8A//8fgP//P8D//3/g//9/8P////D////4////+P////z////8/////v////7////+/////v////7////+/////P//f/j//3/4//8/8P//P+D//3/w////+P////z////8/////P////j///8="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_uw2lv"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAIA/AADw/wMA/P8PAP//H4D//z/A//9/4P//f/D////w////+P////j////8/////P////7////+/////v////7////+/////P////z//3/4//8/8P//P+D//3/g////8P////j////8/////v////7///8="),
+"size": Vector2i(32, 32)
+}
+
+[resource]
+script = ExtResource("1_msydu")
+name = &"alien_boss"
+containing_box = Rect2(1, 1, 31, 31)
+bitmaps = Array[BitMap]([SubResource("BitMap_d40qb"), SubResource("BitMap_scabe"), SubResource("BitMap_64vij"), SubResource("BitMap_uw2lv")])

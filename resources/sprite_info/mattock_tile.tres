@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://cxyk752yu5h6v"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_iohyh"]
+
+[sub_resource type="BitMap" id="BitMap_ow3m5"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 14, 0, 30, 0, 60, 0, 60, 252, 63, 254, 127, 254, 127, 252, 63, 0, 60, 0, 60, 0, 30, 0, 14),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_iohyh")
+name = &"mattock_tile"
+containing_box = Rect2(1, 4, 14, 12)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_ow3m5")])

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://oicljvm71y47"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_k3gqt"]
+
+[sub_resource type="BitMap" id="BitMap_tjxix"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 120, 0, 192, 255, 0, 224, 255, 1, 240, 255, 3, 240, 255, 7, 240, 255, 15, 248, 255, 31, 252, 255, 63, 252, 255, 63),
+"size": Vector2i(24, 16)
+}
+
+[resource]
+script = ExtResource("1_k3gqt")
+name = &"hawk_dead_l"
+origin = Vector2(4, 0)
+containing_box = Rect2(2, 7, 20, 9)
+bitmaps = Array[BitMap]([SubResource("BitMap_tjxix")])

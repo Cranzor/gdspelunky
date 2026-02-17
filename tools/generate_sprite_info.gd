@@ -29,7 +29,7 @@ func _run() -> void:
 				bitmaps.append(bitmap)
 			sprite_info.bitmaps = bitmaps
 			sprite_info.name = sprite_name
-			print(sprite_info.bitmaps[0].get_bit(0, 0))
+			ResourceSaver.save(sprite_info, "res://resources/sprite_info/%s.tres" % sprite_name)
 		
 	print("finished")
 

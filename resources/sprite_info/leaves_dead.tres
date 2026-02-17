@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://brk7y125if6td"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_ijjv6"]
+
+[sub_resource type="BitMap" id="BitMap_8jvjc"]
+data = {
+"data": PackedByteArray(255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 63, 31, 191, 15, 255, 15, 251, 13, 146, 5),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_ijjv6")
+name = &"leaves_dead"
+containing_box = Rect2(0, 0, 16, 16)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_8jvjc")])

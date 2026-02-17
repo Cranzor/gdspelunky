@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://7w0ech6aabsn"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_tj5y5"]
+
+[sub_resource type="BitMap" id="BitMap_8e115"]
+data = {
+"data": PackedByteArray(224, 15, 240, 63, 248, 63, 248, 127, 248, 63, 240, 127, 240, 63, 248, 127, 252, 255, 254, 255, 255, 255, 255, 127, 254, 63, 252, 63, 254, 31, 248, 7),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_tj5y5")
+name = &"hawk_die_lr"
+containing_box = Rect2(0, 0, 16, 16)
+bitmaps = Array[BitMap]([SubResource("BitMap_8e115")])

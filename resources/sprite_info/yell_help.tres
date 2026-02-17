@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://dtsj6u2giiko2"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_ist6x"]
+
+[sub_resource type="BitMap" id="BitMap_8pa37"]
+data = {
+"data": PackedByteArray(252, 63, 254, 127, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 254, 127, 252, 63, 128, 3, 128, 3, 0, 1),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_ist6x")
+name = &"yell_help"
+origin = Vector2(8, 8)
+containing_box = Rect2(0, 0, 16, 16)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_8pa37")])

@@ -1,0 +1,71 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=12 format=4 uid="uid://c2hvwokpv88jb"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_iug34"]
+
+[sub_resource type="BitMap" id="BitMap_14jrg"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwBwAAAAD8HwAAAAD/fwAAAID//wAAAMD//wEAAOD//wMAAPD//wcAAPD//wcAAPD//wcAAPj//w8AAPj//w8AAPj//w8AAPj//w8AAPj//w8AAPj//w8AAPD//wcAAPD//wcAAPD//wcAAOD//wMAAMD//wEAAID//wAAAAD/fwAAAAD8HwAAAADwBwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"),
+"size": Vector2i(48, 48)
+}
+
+[sub_resource type="BitMap" id="BitMap_4p6hy"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADgBwAAAAD+fwAAAID//wEAAMD//wMAAPD//w8AAPj//x8AAPz//z8AAP7//38AAP7//38AAP////8AgP////8BgP////8BwP////8DwP////8DwP////8DwP////8D4P////8H4P////8H4P////8H4P////8H4P////8H4P////8HwP////8DwP////8DwP////8DwP////8DgP////8BgP////8BAP////8AAP7//38AAP7//38AAPz//z8AAPj//x8AAPD//w8AAMD//wMAAID//wEAAAD+fwAAAADgBwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"),
+"size": Vector2i(48, 48)
+}
+
+[sub_resource type="BitMap" id="BitMap_tc6dm"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAQAAAAAQAQAAAAAQAQAAAAAQQwAAAACQQwAAAACwQwEAAAC4QwEAACT4QxAAAGT45xwAAPD45w8AQPD95w8AwPD//w8BgPH//48BgPP//88BAPf///8MAP////8PIP////8HYP////8HQP////8DAP7///8DAP7///8BAP7///8BAP7///8BAP7///8AAP7///8AAP////8DgP////8HgP////8HgP////8HgP////8HAP////8DAPz///8AAPD//z8AAPD//z8AAPD//x8AAOD//x8AAOD//w8AAMD//wcAAID//wMAAAD+/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"),
+"size": Vector2i(48, 48)
+}
+
+[sub_resource type="BitMap" id="BitMap_c0klv"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAHDgPwAAAPj4/wAAABz8/2MAAMT//2cAAPD//w8AAPz//z8AAP7///8AAP////8BAP////8BgP////8DgP////8HwP////8P4P////8P+P////8f/P////8//v////9///////////////////////////////////////////////////////////////////////9//v////9//P////8/+P////8f+P////8f8P////8P8P////8H4P////8D4P////8DwP////8DgP////8DAP////8B4Pz///8A4PH//38A4MH//z8DwID//58DAAD+/w4BAAD8PwAAAADgDwAAAAAAAAAAAAAAAAAA"),
+"size": Vector2i(48, 48)
+}
+
+[sub_resource type="BitMap" id="BitMap_gv466"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADgMwAAAAD4/wAAAAD+/wEAAAD//wMAAID//wcAAMD//w8AANj//w8AAPz//z8AAPz//z8AAPz//38AAPz//38AAPz///8AAP////8AgP////8AgP///38AgP////8AAP////8BAPj///8BAPz///8BAPz///8BAPj//38AAPD//x8AAMD//x8AAMD//w8AAID//wMAAAD+/wAAAAD8fwAAAAD4PwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"),
+"size": Vector2i(48, 48)
+}
+
+[sub_resource type="BitMap" id="BitMap_whaaf"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD4PwAAAAD+fwAAAID//wEAAMD//wMAAOD//wcAAOD//w8AAPj//x8AAPz//z8AAP7///8AAP////8BgP////8DwP////8DwP////8DwP////8H4P////8H4P////8H4P////8H4P////8H4P////8H4P////8D4P////8DwP////8BwP////8DwP////8DwP////8DwP////8BgP////8AAPz//38AAP7//38CAP7//z8AAP7//x8AAP7//88AAPz//8cAAID//wMAAGD//wEAAPD+/wAAAPD4bwAAAGDwBwAAAADgAwAAAADAAQAAAAAAAAAAAAAAAAAAAAAAAAAA"),
+"size": Vector2i(48, 48)
+}
+
+[sub_resource type="BitMap" id="BitMap_kyvox"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAADwPwAAAAD+/wAAAID//wMAAMD//wcAAOD//w8AAOD//x8AwPD//x8AwPD//38AAPj///8BAP7///8DAP////8DgP////8HmP////8H/P////8H/P////8H/P////8P/P////8P/P////8P/P////8P+P////8P8P////8P8P////8P8P////8P4P////8H4P////8HwP////8DwP////8DgP////8BAP////8AAPz///8AAP7//x8CAP7//w8AAP7//w8AAP7//8YAAJz/f8YAAAD+HwMAAGD4DwEAAODgDwAAAMDABwAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"),
+"size": Vector2i(48, 48)
+}
+
+[sub_resource type="BitMap" id="BitMap_woaip"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD454MBAAD+/88BwPD//98BwPj//58BAPj//x8AAPv///8DwP////8H4P////8P+P////8f/P////8f/P////8f/P////8f/P////8f/P////8P+P////8f8P////8f8P////8f8P////8f8P////8P4P////8H4P////8HwP////8DwP///+8DgP///+8BAP///+cAAPz///cAAP7//wMAAP7//w0CAP7/fwwAAPz/DwQAAID/BwAAAED4AwAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"),
+"size": Vector2i(48, 48)
+}
+
+[sub_resource type="BitMap" id="BitMap_ye61j"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAcRAAAAAAOBgAAAAAO4AMAAAD0zw8AAID5/x8AAMD//x8AAOT//z8AAOD//z8AAPD//38AAPD//38AAPj///8AAPz///8AAP7///8AAP////8AAP////8AAP////8AAP7///8AAP7//38AAP7//38AAPz//38AAPD//38AAPD//z8AAOD//x8AAOD//x8AAMD//wcAAID//wMAAAD//wEAAAD+fwAAAAD8PwAAAAD4HwAAAAAATgAAAACQAAAAAACAAQAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"),
+"size": Vector2i(48, 48)
+}
+
+[sub_resource type="BitMap" id="BitMap_x6oad"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAADAAAAAAADAAQAAAADwIQAAAAD4MQAAAAD8MwAAAAD9SwAAAAD+XwAAAAD+HwAAAAD+/wMAAAD83w8AAID//x8AAID//x8AAMD//z8AAOD//z8AAMD//z8AAMD//x8AAMD//x8AAOD//x8AAPD//x8AAPD//w8AAPD//w8AAPD//wcAAPD//wMAAPD//wEAAOD//wEAAID//wAAAAD8/wAAAAD4fwAAAADwDwAAAADgDwAAAACABwAAAAAAAwAAAAAAAwAAAABAAgAAAABACAAAAABAAQAAAAAAAQAAAAAAAAAAAAAAAgAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"),
+"size": Vector2i(48, 48)
+}
+
+[resource]
+script = ExtResource("1_iug34")
+name = &"explosion"
+origin = Vector2(24, 24)
+containing_box = Rect2(0, 2, 48, 44)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_14jrg"), SubResource("BitMap_4p6hy"), SubResource("BitMap_tc6dm"), SubResource("BitMap_c0klv"), SubResource("BitMap_gv466"), SubResource("BitMap_whaaf"), SubResource("BitMap_kyvox"), SubResource("BitMap_woaip"), SubResource("BitMap_ye61j"), SubResource("BitMap_x6oad")])

@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=6 format=3 uid="uid://bxgb6x2qk4re4"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_ghsqk"]
+
+[sub_resource type="BitMap" id="BitMap_xinyh"]
+data = {
+"data": PackedByteArray(0, 0, 0, 240, 128, 31, 252, 195, 63, 252, 193, 15, 248, 0, 7, 0, 0, 0),
+"size": Vector2i(12, 12)
+}
+
+[sub_resource type="BitMap" id="BitMap_bfb18"]
+data = {
+"data": PackedByteArray(0, 0, 0, 240, 128, 31, 252, 195, 63, 252, 131, 63, 224, 1, 12, 0, 0, 0),
+"size": Vector2i(12, 12)
+}
+
+[sub_resource type="BitMap" id="BitMap_6bkyk"]
+data = {
+"data": PackedByteArray(0, 0, 0, 224, 0, 31, 240, 131, 63, 252, 195, 63, 248, 1, 15, 0, 0, 0),
+"size": Vector2i(12, 12)
+}
+
+[sub_resource type="BitMap" id="BitMap_j7ct4"]
+data = {
+"data": PackedByteArray(0, 0, 0, 48, 128, 7, 252, 193, 63, 252, 195, 63, 248, 1, 15, 0, 0, 0),
+"size": Vector2i(12, 12)
+}
+
+[resource]
+script = ExtResource("1_ghsqk")
+name = &"olmec_debris"
+origin = Vector2(6, 6)
+containing_box = Rect2(2, 2, 8, 8)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_xinyh"), SubResource("BitMap_bfb18"), SubResource("BitMap_6bkyk"), SubResource("BitMap_j7ct4")])

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=4 uid="uid://bxi2i5f1atx4x"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_4f2ve"]
+
+[sub_resource type="BitMap" id="BitMap_1a3ef"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACDPwCA//8HgP//H4D//z/w//9/+P//f/D//3/4//9//P////7///8="),
+"size": Vector2i(32, 32)
+}
+
+[resource]
+script = ExtResource("1_4f2ve")
+name = &"alien_boss_dead"
+containing_box = Rect2(1, 22, 31, 10)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_1a3ef")])

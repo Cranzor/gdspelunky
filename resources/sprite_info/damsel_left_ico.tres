@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://cchwi570xjcx0"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_7wjyd"]
+
+[sub_resource type="BitMap" id="BitMap_njxye"]
+data = {
+"data": PackedByteArray(240, 7, 248, 15, 252, 31, 252, 63, 252, 63, 248, 31, 248, 31, 252, 63, 252, 63, 248, 31, 248, 15, 248, 15, 240, 7, 224, 7, 224, 6, 64, 6),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_7wjyd")
+name = &"damsel_left_ico"
+containing_box = Rect2(2, 0, 12, 16)
+bitmaps = Array[BitMap]([SubResource("BitMap_njxye")])

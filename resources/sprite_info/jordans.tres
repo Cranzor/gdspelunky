@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://c5futovnas17l"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_3rk64"]
+
+[sub_resource type="BitMap" id="BitMap_dn8as"]
+data = {
+"data": PackedByteArray(0, 0, 254, 1, 254, 1, 254, 1, 254, 1, 254, 1, 254, 7, 254, 63, 254, 127, 254, 255, 254, 255, 254, 255),
+"size": Vector2i(16, 12)
+}
+
+[resource]
+script = ExtResource("1_3rk64")
+name = &"jordans"
+origin = Vector2(8, 6)
+containing_box = Rect2(1, 1, 15, 11)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_dn8as")])

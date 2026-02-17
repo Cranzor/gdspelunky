@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://twrsvcahksxd"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_qydbb"]
+
+[sub_resource type="BitMap" id="BitMap_y25qa"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 192, 127, 240, 127, 248, 127, 252, 127, 252, 63, 252, 31, 24, 0),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_qydbb")
+name = &"shotgun_tile"
+containing_box = Rect2(2, 9, 13, 7)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_y25qa")])

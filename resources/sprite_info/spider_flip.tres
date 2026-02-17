@@ -1,0 +1,63 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=11 format=3 uid="uid://ciwg6va0v0dr5"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_ye47j"]
+
+[sub_resource type="BitMap" id="BitMap_cx8j3"]
+data = {
+"data": PackedByteArray(14, 112, 95, 250, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 254, 127, 236, 55, 192, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_fvb0b"]
+data = {
+"data": PackedByteArray(14, 112, 95, 250, 255, 255, 255, 255, 255, 255, 255, 255, 254, 127, 236, 55, 192, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_ykqii"]
+data = {
+"data": PackedByteArray(0, 0, 48, 12, 60, 60, 254, 127, 255, 255, 255, 255, 255, 255, 254, 127, 252, 63, 240, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_jxqn6"]
+data = {
+"data": PackedByteArray(0, 0, 48, 12, 60, 60, 254, 127, 255, 255, 255, 255, 255, 255, 254, 127, 252, 63, 240, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_h2tit"]
+data = {
+"data": PackedByteArray(0, 0, 12, 48, 28, 56, 59, 220, 255, 255, 254, 127, 254, 127, 255, 255, 255, 255, 254, 127, 254, 127, 127, 254, 7, 224, 0, 0, 0, 0, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_au65u"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 7, 224, 127, 254, 254, 127, 254, 127, 255, 255, 255, 255, 254, 127, 254, 127, 255, 255, 59, 220, 28, 56, 12, 48, 0, 0, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_hjcfx"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 240, 15, 252, 63, 254, 127, 255, 255, 255, 255, 255, 255, 254, 127, 60, 60, 48, 12, 0, 0, 0, 0, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_bkxs7"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 240, 15, 252, 63, 254, 127, 255, 255, 255, 255, 255, 255, 254, 127, 60, 60, 48, 12, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_t00yw"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 192, 3, 236, 55, 254, 127, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 95, 250, 14, 112),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_ye47j")
+name = &"spider_flip"
+containing_box = Rect2(0, 0, 16, 16)
+bitmaps = Array[BitMap]([SubResource("BitMap_cx8j3"), SubResource("BitMap_fvb0b"), SubResource("BitMap_ykqii"), SubResource("BitMap_jxqn6"), SubResource("BitMap_h2tit"), SubResource("BitMap_au65u"), SubResource("BitMap_hjcfx"), SubResource("BitMap_bkxs7"), SubResource("BitMap_t00yw")])

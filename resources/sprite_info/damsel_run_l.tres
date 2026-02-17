@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=6 format=3 uid="uid://m3sjn1r8j7cu"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_g3xxq"]
+
+[sub_resource type="BitMap" id="BitMap_bqguk"]
+data = {
+"data": PackedByteArray(240, 7, 248, 15, 252, 95, 252, 63, 248, 31, 248, 31, 252, 63, 252, 63, 252, 63, 252, 31, 240, 15, 240, 7, 224, 7, 224, 7, 192, 3, 0, 3),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_rguqe"]
+data = {
+"data": PackedByteArray(240, 7, 248, 143, 252, 31, 252, 63, 248, 95, 248, 31, 252, 63, 252, 63, 252, 63, 252, 31, 240, 15, 240, 7, 224, 7, 240, 7, 240, 15, 0, 12),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_8oycm"]
+data = {
+"data": PackedByteArray(240, 7, 248, 15, 252, 31, 252, 63, 248, 223, 248, 31, 252, 63, 252, 63, 252, 63, 252, 31, 240, 15, 240, 7, 224, 15, 224, 31, 224, 15, 224, 0),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_42s6x"]
+data = {
+"data": PackedByteArray(0, 0, 240, 7, 248, 15, 252, 31, 252, 63, 248, 159, 248, 31, 252, 63, 252, 63, 252, 31, 240, 15, 240, 15, 224, 15, 224, 7, 192, 3, 128, 3),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_g3xxq")
+name = &"damsel_run_l"
+origin = Vector2(8, 8)
+containing_box = Rect2(2, 0, 14, 16)
+bitmaps = Array[BitMap]([SubResource("BitMap_bqguk"), SubResource("BitMap_rguqe"), SubResource("BitMap_8oycm"), SubResource("BitMap_42s6x")])

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://c80takc0d6dt6"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_tl2sx"]
+
+[sub_resource type="BitMap" id="BitMap_0i3ui"]
+data = {
+"data": PackedByteArray(0, 0, 112, 14, 248, 31, 252, 63, 254, 127, 254, 127, 254, 127, 254, 127, 252, 63, 248, 31, 240, 15, 224, 7, 192, 3, 128, 1, 0, 0, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_tl2sx")
+name = &"heart"
+containing_box = Rect2(1, 1, 14, 13)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_0i3ui")])

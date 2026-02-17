@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://dk346i6ljqing"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_d8mj5"]
+
+[sub_resource type="BitMap" id="BitMap_jmy7n"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 240, 1, 248, 3, 248, 3, 248, 3, 248, 7, 252, 3, 252, 7, 248, 15, 224, 47, 224, 111, 160, 127, 160, 62),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_d8mj5")
+name = &"monkey_left"
+containing_box = Rect2(2, 4, 13, 12)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_jmy7n")])

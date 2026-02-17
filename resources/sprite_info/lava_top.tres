@@ -1,0 +1,51 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=9 format=3 uid="uid://cp0qvykpx0dou"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_k5o6k"]
+
+[sub_resource type="BitMap" id="BitMap_eyu8b"]
+data = {
+"data": PackedByteArray(0, 0, 14, 24, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0),
+"size": Vector2i(16, 17)
+}
+
+[sub_resource type="BitMap" id="BitMap_m5lqb"]
+data = {
+"data": PackedByteArray(8, 0, 31, 120, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0),
+"size": Vector2i(16, 17)
+}
+
+[sub_resource type="BitMap" id="BitMap_8l0qa"]
+data = {
+"data": PackedByteArray(0, 0, 31, 64, 255, 225, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0),
+"size": Vector2i(16, 17)
+}
+
+[sub_resource type="BitMap" id="BitMap_pno41"]
+data = {
+"data": PackedByteArray(0, 0, 15, 0, 255, 129, 255, 199, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0),
+"size": Vector2i(16, 17)
+}
+
+[sub_resource type="BitMap" id="BitMap_jkcjc"]
+data = {
+"data": PackedByteArray(0, 0, 15, 0, 255, 131, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0),
+"size": Vector2i(16, 17)
+}
+
+[sub_resource type="BitMap" id="BitMap_6qbrj"]
+data = {
+"data": PackedByteArray(48, 0, 255, 224, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0),
+"size": Vector2i(16, 17)
+}
+
+[sub_resource type="BitMap" id="BitMap_yr0cy"]
+data = {
+"data": PackedByteArray(0, 0, 0, 7, 207, 239, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0),
+"size": Vector2i(16, 17)
+}
+
+[resource]
+script = ExtResource("1_k5o6k")
+name = &"lava_top"
+containing_box = Rect2(0, 0, 16, 16)
+bitmaps = Array[BitMap]([SubResource("BitMap_eyu8b"), SubResource("BitMap_m5lqb"), SubResource("BitMap_8l0qa"), SubResource("BitMap_pno41"), SubResource("BitMap_jkcjc"), SubResource("BitMap_6qbrj"), SubResource("BitMap_yr0cy")])

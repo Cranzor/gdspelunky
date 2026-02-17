@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=6 format=3 uid="uid://bwtq3ok1agt3q"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_5pphc"]
+
+[sub_resource type="BitMap" id="BitMap_5nedb"]
+data = {
+"data": PackedByteArray(66, 36, 30, 255, 255, 254, 106, 36),
+"size": Vector2i(8, 8)
+}
+
+[sub_resource type="BitMap" id="BitMap_pbvit"]
+data = {
+"data": PackedByteArray(8, 24, 30, 255, 255, 254, 106, 36),
+"size": Vector2i(8, 8)
+}
+
+[sub_resource type="BitMap" id="BitMap_q2p1w"]
+data = {
+"data": PackedByteArray(0, 0, 223, 255, 255, 254, 106, 36),
+"size": Vector2i(8, 8)
+}
+
+[sub_resource type="BitMap" id="BitMap_xyhyi"]
+data = {
+"data": PackedByteArray(0, 4, 94, 255, 255, 254, 106, 36),
+"size": Vector2i(8, 8)
+}
+
+[resource]
+script = ExtResource("1_5pphc")
+name = &"fly_right"
+origin = Vector2(4, 4)
+containing_box = Rect2(0, 0, 8, 8)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_5nedb"), SubResource("BitMap_pbvit"), SubResource("BitMap_q2p1w"), SubResource("BitMap_xyhyi")])

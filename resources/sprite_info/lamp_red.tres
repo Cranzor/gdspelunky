@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=6 format=3 uid="uid://uvxf0a4jgv32"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_3xyff"]
+
+[sub_resource type="BitMap" id="BitMap_lrvl5"]
+data = {
+"data": PackedByteArray(224, 7, 240, 15, 240, 15, 252, 63, 252, 63, 252, 63, 252, 63, 252, 63, 248, 31, 248, 31, 248, 31, 252, 63, 252, 63, 252, 63, 248, 31, 224, 7),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_wigxl"]
+data = {
+"data": PackedByteArray(224, 7, 240, 15, 252, 63, 254, 127, 254, 127, 254, 127, 252, 63, 252, 63, 248, 31, 248, 31, 248, 31, 252, 63, 254, 127, 254, 127, 252, 63, 240, 15),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_dmdow"]
+data = {
+"data": PackedByteArray(224, 7, 240, 15, 240, 15, 252, 63, 252, 63, 252, 63, 248, 31, 248, 31, 248, 31, 248, 31, 248, 31, 252, 63, 252, 63, 248, 31, 224, 7, 224, 7),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_u4fsf"]
+data = {
+"data": PackedByteArray(224, 7, 240, 15, 240, 15, 252, 63, 252, 63, 252, 63, 252, 63, 252, 63, 248, 31, 248, 31, 248, 31, 252, 63, 252, 63, 252, 63, 248, 31, 224, 7),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_3xyff")
+name = &"lamp_red"
+containing_box = Rect2(1, 0, 14, 16)
+bitmaps = Array[BitMap]([SubResource("BitMap_lrvl5"), SubResource("BitMap_wigxl"), SubResource("BitMap_dmdow"), SubResource("BitMap_u4fsf")])

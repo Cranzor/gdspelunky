@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=4 uid="uid://dgw7u7hbjifxs"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_lte0j"]
+
+[sub_resource type="BitMap" id="BitMap_yro6f"]
+data = {
+"data": PackedByteArray("/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////w=="),
+"size": Vector2i(128, 16)
+}
+
+[resource]
+script = ExtResource("1_lte0j")
+name = &"title"
+containing_box = Rect2(0, 0, 128, 16)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_yro6f")])

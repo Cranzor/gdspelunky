@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=4 uid="uid://c53tfuq0r4w45"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_eq4r2"]
+
+[sub_resource type="BitMap" id="BitMap_1t5hk"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAA+H8AAAAA/P8DAAAA/P8fAAAA/P//AAAA/P//AADA/P//AADA+f//AACQ+///wAC4////wAF9////wAP/////wIf/////gJ//////gP//////gP//////gP//////gP//////gP//////gP//////gP//////gL//////gA/+////wAP4////wAHw////wADg////AACA////AACAv///AAAAH+D/AAAAAOAfAAAAAMAHAAAAAAAA"),
+"size": Vector2i(48, 32)
+}
+
+[resource]
+script = ExtResource("1_eq4r2")
+name = &"jaws_body2_r"
+containing_box = Rect2(6, 1, 42, 30)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_1t5hk")])

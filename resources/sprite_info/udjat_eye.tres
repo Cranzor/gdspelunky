@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://e2awn3do2cey"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_8fevn"]
+
+[sub_resource type="BitMap" id="BitMap_mkfff"]
+data = {
+"data": PackedByteArray(0, 0, 240, 1, 254, 127, 255, 255, 255, 255, 255, 255, 255, 255, 255, 127, 255, 63, 254, 31, 252, 7, 120, 0),
+"size": Vector2i(16, 12)
+}
+
+[resource]
+script = ExtResource("1_8fevn")
+name = &"udjat_eye"
+origin = Vector2(8, 6)
+containing_box = Rect2(0, 1, 16, 11)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_mkfff")])

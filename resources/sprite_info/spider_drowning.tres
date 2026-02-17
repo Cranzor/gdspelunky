@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=4 format=3 uid="uid://bq4oafxfynemc"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_wd8aj"]
+
+[sub_resource type="BitMap" id="BitMap_afqqr"]
+data = {
+"data": PackedByteArray(14, 112, 95, 250, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 254, 127, 236, 55, 192, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_30tq5"]
+data = {
+"data": PackedByteArray(28, 56, 94, 122, 254, 127, 254, 127, 254, 127, 254, 127, 254, 127, 252, 63, 248, 31, 192, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_wd8aj")
+name = &"spider_drowning"
+containing_box = Rect2(0, 0, 16, 10)
+bitmaps = Array[BitMap]([SubResource("BitMap_afqqr"), SubResource("BitMap_30tq5")])

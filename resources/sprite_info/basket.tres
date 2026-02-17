@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://bncbw127fsbfb"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_r72lu"]
+
+[sub_resource type="BitMap" id="BitMap_nx0md"]
+data = {
+"data": PackedByteArray(254, 127, 255, 255, 255, 255, 255, 255, 254, 127, 170, 106, 86, 85, 170, 106, 86, 85, 172, 42, 84, 53, 172, 42, 84, 53, 172, 42, 84, 53, 168, 26),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_r72lu")
+name = &"basket"
+containing_box = Rect2(0, 0, 16, 16)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_nx0md")])

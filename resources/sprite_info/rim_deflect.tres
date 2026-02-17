@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://cefr14dx58o5n"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_j1oju"]
+
+[sub_resource type="BitMap" id="BitMap_8kt1i"]
+data = {
+"data": PackedByteArray(2, 64, 3, 192, 3, 192, 3, 192, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_j1oju")
+name = &"rim_deflect"
+containing_box = Rect2(0, 0, 16, 4)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_8kt1i")])

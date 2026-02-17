@@ -1,0 +1,45 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=8 format=3 uid="uid://de83eunay1j2j"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_ncgaf"]
+
+[sub_resource type="BitMap" id="BitMap_gpvvr"]
+data = {
+"data": PackedByteArray(96, 0, 240, 1, 240, 1, 240, 3, 240, 11, 240, 15, 240, 15, 248, 31, 248, 31, 252, 63, 252, 63, 252, 63, 248, 31, 224, 31, 224, 31, 224, 15),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_qvye8"]
+data = {
+"data": PackedByteArray(96, 0, 240, 1, 240, 1, 240, 3, 240, 11, 240, 15, 240, 15, 248, 15, 252, 31, 252, 31, 252, 31, 248, 7, 240, 7, 224, 3, 192, 1, 192, 1),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_15dal"]
+data = {
+"data": PackedByteArray(96, 1, 240, 1, 240, 9, 240, 3, 240, 19, 240, 31, 248, 15, 250, 15, 254, 31, 254, 31, 252, 31, 252, 47, 252, 31, 124, 31, 56, 62, 0, 126),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_en3aj"]
+data = {
+"data": PackedByteArray(224, 0, 240, 4, 240, 0, 240, 1, 242, 1, 242, 3, 248, 23, 250, 31, 252, 15, 252, 15, 252, 31, 252, 31, 248, 63, 252, 47, 60, 15, 62, 31),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_ydqup"]
+data = {
+"data": PackedByteArray(0, 0, 48, 0, 248, 0, 249, 0, 248, 1, 248, 3, 248, 39, 252, 15, 252, 31, 252, 63, 252, 63, 252, 63, 248, 31, 120, 31, 120, 30, 124, 62),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_n05ec"]
+data = {
+"data": PackedByteArray(96, 0, 240, 1, 242, 1, 240, 3, 240, 7, 240, 79, 248, 31, 248, 31, 248, 63, 248, 63, 248, 63, 240, 15, 240, 15, 240, 15, 240, 31, 248, 62),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_ncgaf")
+name = &"magma_man_walk_l"
+containing_box = Rect2(0, 0, 15, 16)
+bitmaps = Array[BitMap]([SubResource("BitMap_gpvvr"), SubResource("BitMap_qvye8"), SubResource("BitMap_15dal"), SubResource("BitMap_en3aj"), SubResource("BitMap_ydqup"), SubResource("BitMap_n05ec")])

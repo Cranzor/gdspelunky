@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://dd8iif8e5lwy8"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_0ecyi"]
+
+[sub_resource type="BitMap" id="BitMap_ljojl"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 62, 0, 127, 128, 127, 144, 255, 184, 255, 124, 255, 254, 255),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_0ecyi")
+name = &"fake_bones_left"
+containing_box = Rect2(1, 9, 15, 7)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_ljojl")])

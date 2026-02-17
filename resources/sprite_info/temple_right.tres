@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://0ox02aq4v0j4"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_8nt81"]
+
+[sub_resource type="BitMap" id="BitMap_wnw2u"]
+data = {
+"data": PackedByteArray(1, 0, 1, 0, 1, 0, 3, 0, 3, 0, 3, 0, 1, 0, 1, 0, 1, 0, 3, 0, 3, 0, 3, 0, 3, 0, 1, 0, 1, 0, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_8nt81")
+name = &"temple_right"
+containing_box = Rect2(0, 0, 2, 15)
+bitmaps = Array[BitMap]([SubResource("BitMap_wnw2u")])

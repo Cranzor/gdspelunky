@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://byrwa08jyuaxu"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_63t3w"]
+
+[sub_resource type="BitMap" id="BitMap_rulqo"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 112, 0, 252, 7, 255, 255, 0, 0),
+"size": Vector2i(16, 17)
+}
+
+[resource]
+script = ExtResource("1_63t3w")
+name = &"desert_top"
+containing_box = Rect2(0, 13, 16, 3)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_rulqo")])

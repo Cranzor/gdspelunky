@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=4 uid="uid://dvplj6fg8bl8y"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_p0lu7"]
+
+[sub_resource type="BitMap" id="BitMap_7yke5"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAH8AAAD/AQCADwAAgP8DAAD/HwB4//8A/P//A/7/Bwb+/wEAn/8HAI//HwDH/z8A4/9/APH//wD5/f8B+fz7A/z4gwN8+AMCPPgHADz4BwAc8AcAHPAPABjwDwAY4A4AEOAeABDAHAAAwBwAAIA8AACAPAAAADwAAAB4AAAAeAAAAHgAAAD4AAAA+AAAAPgAAAD4AAAA8AAAAPAAAADwAQAA8AEAAPABAADwAwAA4AMAAOADAADgAwAA4AMAAOADAADgAwAA4AcAAMAHAADABwAAwAcAAMAHAADABwAAwAcAAMAPAACADwAAgA8AAIAPAACADwAAgA8AAIAPAACADwAAgB8AAIAfAACAHwAAgB8AAIAfAAAAHwAAAB8AAAA/AAAAPwAAAD8AAAA/AAAAPwAAAD8AAAA/AAAAPwAAAD8AAAA/AAAAPwAAAH8AAAB/AAAAfwAAAH8AAAB/AAAAfwAAgH8AAIB/AACAfwAAgH8AAIB/AACAfwAAgH8AAIB/AACAfwAAgH8AAIB/AACAfwAAgH8AAIB/AACAfwAAgH8AAID/AACA/wAAgP8AAID/AACA/wAAgP8AAID/AACA/wAAgP8AAID/AACA/wAAgP8AAID/AACA/wAAgP8AAID/AADA/wAAwP8AAMD/AADA/wAAwH8="),
+"size": Vector2i(32, 128)
+}
+
+[resource]
+script = ExtResource("1_p0lu7")
+name = &"palm_tree_dark"
+containing_box = Rect2(0, 3, 32, 125)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_7yke5")])

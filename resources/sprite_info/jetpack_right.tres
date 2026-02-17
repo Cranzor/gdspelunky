@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://cipkhvay8ouc8"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_3g67m"]
+
+[sub_resource type="BitMap" id="BitMap_oc35r"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 96, 6, 240, 15, 248, 31, 252, 63, 252, 63, 252, 63, 252, 63, 252, 63, 252, 63, 252, 63, 252, 63, 252, 63, 252, 63),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_3g67m")
+name = &"jetpack_right"
+origin = Vector2(8, 8)
+containing_box = Rect2(2, 3, 12, 13)
+bitmaps = Array[BitMap]([SubResource("BitMap_oc35r")])

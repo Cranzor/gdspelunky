@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://ckb6x408gad6n"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_81l25"]
+
+[sub_resource type="BitMap" id="BitMap_woq41"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 124, 0, 254, 0, 255, 3, 255, 15, 255, 31, 255, 63, 255, 63, 255, 127, 255, 127, 255, 255, 255, 255, 255, 255, 222, 127, 140, 1),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_81l25")
+name = &"yeti_bounce_l"
+containing_box = Rect2(0, 2, 16, 14)
+bitmaps = Array[BitMap]([SubResource("BitMap_woq41")])

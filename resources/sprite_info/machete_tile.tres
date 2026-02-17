@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://db0rdj86n3f37"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_ttk7a"]
+
+[sub_resource type="BitMap" id="BitMap_r2wpj"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 254, 255, 255, 255, 255, 127, 254, 63, 192, 31, 0, 0, 0, 0, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_ttk7a")
+name = &"machete_tile"
+containing_box = Rect2(0, 8, 16, 5)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_r2wpj")])

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://dbbw0u7bn101i"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_q23b3"]
+
+[sub_resource type="BitMap" id="BitMap_ssgin"]
+data = {
+"data": PackedByteArray(254, 255, 252, 115, 216, 1, 192, 1, 128, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_q23b3")
+name = &"ice_bottom2"
+containing_box = Rect2(1, 0, 15, 5)
+bitmaps = Array[BitMap]([SubResource("BitMap_ssgin")])

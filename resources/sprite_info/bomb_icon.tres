@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://d3wolascvg2yl"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_5qq7c"]
+
+[sub_resource type="BitMap" id="BitMap_mctij"]
+data = {
+"data": PackedByteArray(0, 0, 192, 19, 240, 63, 248, 63, 252, 63, 252, 63, 254, 127, 254, 127, 254, 127, 254, 127, 252, 63, 252, 63, 248, 31, 240, 15, 192, 3, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_5qq7c")
+name = &"bomb_icon"
+containing_box = Rect2(1, 1, 14, 14)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_mctij")])

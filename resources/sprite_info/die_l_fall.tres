@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://e3tfrp3jpr4c"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_wfg1i"]
+
+[sub_resource type="BitMap" id="BitMap_m25ae"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 252, 0, 254, 13, 254, 63, 255, 127, 254, 255, 254, 255, 254, 127, 254, 31, 252, 15, 248, 3),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_wfg1i")
+name = &"die_l_fall"
+origin = Vector2(8, 8)
+containing_box = Rect2(0, 6, 16, 10)
+bitmaps = Array[BitMap]([SubResource("BitMap_m25ae")])

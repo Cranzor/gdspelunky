@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://npj8ehv8udov"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_hu0dd"]
+
+[sub_resource type="BitMap" id="BitMap_1yiky"]
+data = {
+"data": PackedByteArray(0, 0, 192, 3, 240, 15, 248, 31, 252, 63, 252, 63, 254, 127, 254, 127, 254, 127, 254, 127, 252, 63, 252, 63, 248, 31, 240, 15, 192, 3, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_hu0dd")
+name = &"timer_icon"
+containing_box = Rect2(1, 1, 14, 14)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_1yiky")])

@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=5 format=3 uid="uid://brmcwmvs6phjb"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_4j15t"]
+
+[sub_resource type="BitMap" id="BitMap_ifmmn"]
+data = {
+"data": PackedByteArray(0, 0, 192, 7, 224, 15, 224, 15, 224, 15, 224, 31, 240, 15, 240, 15, 240, 15, 224, 31, 224, 95, 224, 159, 224, 143, 224, 255, 0, 127, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_18ycd"]
+data = {
+"data": PackedByteArray(0, 0, 128, 15, 192, 31, 192, 31, 192, 31, 192, 63, 224, 31, 224, 15, 224, 15, 192, 15, 192, 15, 224, 47, 224, 103, 224, 127, 224, 62, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_8idqf"]
+data = {
+"data": PackedByteArray(0, 0, 0, 31, 128, 63, 128, 63, 128, 63, 128, 127, 192, 63, 192, 63, 192, 31, 224, 31, 224, 31, 192, 31, 192, 15, 0, 79, 0, 126, 0, 56),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_4j15t")
+name = &"monkey_climb_l"
+containing_box = Rect2(4, 1, 12, 15)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_ifmmn"), SubResource("BitMap_18ycd"), SubResource("BitMap_8idqf")])

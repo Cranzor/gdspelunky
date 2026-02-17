@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=9 format=4 uid="uid://bk0birvhsfsyw"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_aejbm"]
+
+[sub_resource type="BitMap" id="BitMap_2rocq"]
+data = {
+"data": PackedByteArray("gA8AwB8A4AcA8A8A8B8A6D0A6H0AuP8BGP8DGP8HGP8PsP8f4P8ewE8/Izc///c//3c//m8//g8f/h8f/L+P/P//mP9/APwf"),
+"size": Vector2i(24, 24)
+}
+
+[sub_resource type="BitMap" id="BitMap_42c8p"]
+data = {
+"data": PackedByteArray("AB8AgD8AwD8AwB8AwB8AoDcAoHcA4P4BYPwDYPwPYPwfwP4/gP8/QD9/7N987N9//N99+L99+D98+H888P9e8P9/YP4/APwP"),
+"size": Vector2i(24, 24)
+}
+
+[sub_resource type="BitMap" id="BitMap_k2m7g"]
+data = {
+"data": PackedByteArray("AD4AAH8AAH8AgP8AgP8AgN4AgN4BgPsDgPEHgPEPgPEPQPsfwP4fwH0+sL85sL8/8L874H874H844P84wP89wP8/gPwfAPgP"),
+"size": Vector2i(24, 24)
+}
+
+[sub_resource type="BitMap" id="BitMap_mn7u1"]
+data = {
+"data": PackedByteArray("AD4AAH8AAH8AgP8AgP8AgL4AgL4AwPcB4OMD8OMH+OMP+PcP/P8fnP8c5v8z/v8/9v83tv82hv8wxv8x7P87+P8f8P8P4P8H"),
+"size": Vector2i(24, 24)
+}
+
+[sub_resource type="BitMap" id="BitMap_4rxds"]
+data = {
+"data": PackedByteArray("AHwAAP4AAP4AAP8BAP8BAHsBgHsBwN8B4I8B8I8B8I8B+N8C+H8DfL4DnP0N/P0N3P0P3P4HHP4HHP8HvP8D/P8D+D8B8B8A"),
+"size": Vector2i(24, 24)
+}
+
+[sub_resource type="BitMap" id="BitMap_4yvqw"]
+data = {
+"data": PackedByteArray("APgAAPwBAPwDAPgDAPgDAOwFAO4FgH8HwD8G8D8G+D8G/H8D/P8B/vwCPvs3/vs3vvs/vv0fPvwfPP4fev8P/v8P/H8G8D8A"),
+"size": Vector2i(24, 24)
+}
+
+[sub_resource type="BitMap" id="BitMap_6cqbb"]
+data = {
+"data": PackedByteArray("APABAPgDAOAHAPAPAPgPALwXAL4XgP8dwP8Y4P8Y8P8Y+P8NeP8H/PID/OzE/O///O7//PZ/+PB/+Ph/8f0///8//v8Z+D8A"),
+"size": Vector2i(24, 24)
+}
+
+[resource]
+script = ExtResource("1_aejbm")
+name = &"ghost_turn_right"
+containing_box = Rect2(0, 0, 24, 24)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_2rocq"), SubResource("BitMap_42c8p"), SubResource("BitMap_k2m7g"), SubResource("BitMap_mn7u1"), SubResource("BitMap_4rxds"), SubResource("BitMap_4yvqw"), SubResource("BitMap_6cqbb")])

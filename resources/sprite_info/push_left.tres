@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=9 format=3 uid="uid://dj58xbkto5je5"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_hx1op"]
+
+[sub_resource type="BitMap" id="BitMap_1oowi"]
+data = {
+"data": PackedByteArray(252, 1, 252, 3, 252, 3, 252, 7, 252, 15, 252, 15, 252, 3, 252, 3, 252, 3, 252, 7, 252, 7, 252, 7, 248, 7, 240, 7, 224, 3, 192, 1),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_nkwcl"]
+data = {
+"data": PackedByteArray(252, 1, 252, 3, 252, 3, 252, 7, 252, 15, 252, 15, 252, 3, 252, 3, 252, 3, 252, 7, 252, 7, 252, 7, 248, 7, 240, 7, 240, 7, 128, 7),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_7pif8"]
+data = {
+"data": PackedByteArray(252, 1, 252, 3, 252, 3, 252, 7, 252, 15, 252, 15, 252, 3, 252, 3, 252, 3, 252, 7, 252, 7, 252, 7, 240, 31, 240, 63, 248, 63, 240, 30),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_jjiqo"]
+data = {
+"data": PackedByteArray(252, 1, 252, 3, 252, 3, 252, 23, 252, 15, 252, 15, 252, 3, 252, 3, 252, 3, 252, 7, 252, 7, 252, 7, 240, 31, 240, 63, 248, 63, 240, 30),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_vh4qp"]
+data = {
+"data": PackedByteArray(252, 1, 252, 3, 252, 67, 252, 135, 252, 15, 252, 15, 252, 19, 252, 3, 252, 3, 252, 7, 252, 7, 252, 7, 240, 31, 224, 63, 192, 63, 192, 31),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_hr5kd"]
+data = {
+"data": PackedByteArray(252, 1, 252, 3, 252, 3, 252, 7, 252, 143, 252, 15, 252, 35, 252, 3, 252, 3, 252, 7, 252, 7, 252, 7, 240, 31, 224, 63, 192, 63, 192, 31),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_q863c"]
+data = {
+"data": PackedByteArray(252, 1, 252, 3, 252, 3, 252, 7, 252, 15, 252, 15, 252, 3, 252, 3, 252, 67, 252, 7, 252, 7, 252, 7, 248, 15, 224, 31, 192, 31, 128, 1),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_hx1op")
+name = &"push_left"
+origin = Vector2(8, 8)
+containing_box = Rect2(2, 0, 14, 16)
+bitmaps = Array[BitMap]([SubResource("BitMap_1oowi"), SubResource("BitMap_nkwcl"), SubResource("BitMap_7pif8"), SubResource("BitMap_jjiqo"), SubResource("BitMap_vh4qp"), SubResource("BitMap_hr5kd"), SubResource("BitMap_q863c")])

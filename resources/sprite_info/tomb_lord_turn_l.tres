@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=9 format=4 uid="uid://dlqpp4vhhb5ip"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_e0a3l"]
+
+[sub_resource type="BitMap" id="BitMap_rjkry"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAHwAAAD+DQAA/w8AAP8HAID/BwDg/wcA+P8HAPz/BwD+/wMA//8DAP//A4D//wOA//8BgP/fAcD/HwDA/38AwP//AcD//wPA//8HwP/xB8D/gweA/wcDgP8PAAD/DwAA/x8AAP8fAICfHwCAHx8AgA8fAIAPPwA="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_wvsut"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAD4AAAD/AACA/wEAgP8DAID/AwDA/wEA4P8BAPD/AQD4/wEA/P8BAP7/AQD+/wEA/v8AAP//AAD//wEA//8BAP//AwD//wMA//8HAP+fBwD+nwcA/g8DAPwHAAD8BwAA/AcAAPgDAAD4AwAA+AMAAPgDAAD4BwA="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_trf7m"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAgB8AAMA/AADgfwAA4P8AAOD/AADwfwAA+H8AAPx/AAD8fwAA/n8AAP5/AAD/fwAA/38AAP//AID//wCA//8AgP//AID//wAA//8BAP//AQD/7wEA/88AAP8PAAD+DwAA/g8AAP4HAAD+BwAA/AcAAPwDAAD8AwA="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_8ybuh"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAA4AcAAPAPAAD4HwAA+B8AAPgfAAD4HwAA+B8AAPwfAAD+PwAA/38AAP9/AID//wCA//8AgP//AMD//wDA//8AwP//AMD//wHA//8DwP//A4D/3wMA/p8BAP4fAAD8HwAA/B8AAPwPAAD8DwAA+A8AAPgHAAD4BwA="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_fjtla"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAA/AAAAP4BAAD/AwCA/wMAgP8DAAD/BwAA/w8AAP8fAAD/HwAA/z8AAP8/AAD/fwAA/38AgP9/AID//wCA//8AgP//AID//wDA/38AwP9/AMD7fwCA+X8AAPh/AAD4PwAA+D8AAPA/AADwPwAA8B8AAOAfAADgHwA="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_xni7x"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAA+AAAAP4BAAD/AwCA/wMAgP8DAAD/BwAA/w8AAP8fAAD/PwAA/38AAP//AAD//wAA/v8AAP7/AQD//wEA//8BgP//AYD//wHA//8BwPP/AcDz/wCA4f8AAMB/AADAfwAAwH8AAIA/AACAPwAAgD8AAIA/AADAPwA="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_oy611"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAPgAAsH8AAPD/AADg/wAA4P8BAOD/BwDg/x8A4P8/AMD/fwDA//8AwP//AMD//wGA//8BgPv/AQD4/wMA/v8DgP//A8D//wPg//8D4I//A+DB/wPA4P8BAPD/AQDw/wAA+P8AAPj/AAD4+QEA+PgBAPjwAQD88AE="),
+"size": Vector2i(32, 32)
+}
+
+[resource]
+script = ExtResource("1_e0a3l")
+name = &"tomb_lord_turn_l"
+containing_box = Rect2(4, 2, 24, 30)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_rjkry"), SubResource("BitMap_wvsut"), SubResource("BitMap_trf7m"), SubResource("BitMap_8ybuh"), SubResource("BitMap_fjtla"), SubResource("BitMap_xni7x"), SubResource("BitMap_oy611")])

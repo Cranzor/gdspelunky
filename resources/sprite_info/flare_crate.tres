@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=5 format=3 uid="uid://bqttwkym84r87"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_j8sdn"]
+
+[sub_resource type="BitMap" id="BitMap_ae80u"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 128, 1, 224, 7, 224, 7, 248, 15, 254, 31, 254, 63, 254, 127, 254, 127, 254, 127, 254, 127, 254, 127, 254, 127, 254, 127, 254, 127),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_vrips"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 224, 1, 240, 3, 248, 15, 248, 31, 252, 63, 254, 127, 254, 127, 254, 127, 254, 127, 254, 127, 254, 127, 254, 127, 254, 127, 254, 127),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_ncjnt"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 248, 1, 252, 15, 254, 31, 254, 63, 254, 127, 254, 127, 254, 127, 254, 127, 254, 127, 254, 127, 254, 127, 254, 127),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_j8sdn")
+name = &"flare_crate"
+origin = Vector2(8, 8)
+containing_box = Rect2(1, 2, 14, 14)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_ae80u"), SubResource("BitMap_vrips"), SubResource("BitMap_ncjnt")])

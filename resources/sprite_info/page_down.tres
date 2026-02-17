@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://cdcs51thw4c5c"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_11pea"]
+
+[sub_resource type="BitMap" id="BitMap_nig20"]
+data = {
+"data": PackedByteArray(0, 254, 254, 124, 124, 56, 56, 16),
+"size": Vector2i(8, 8)
+}
+
+[resource]
+script = ExtResource("1_11pea")
+name = &"page_down"
+containing_box = Rect2(1, 1, 7, 7)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_nig20")])

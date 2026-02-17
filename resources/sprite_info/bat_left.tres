@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=5 format=3 uid="uid://v6h6km8il7f3"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_srdrb"]
+
+[sub_resource type="BitMap" id="BitMap_esfm7"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 1, 128, 1, 224, 27, 251, 255, 127, 254, 127, 254, 63, 252, 31, 248, 15, 32, 6, 32, 2, 0, 0, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_hismg"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 24, 3, 248, 7, 252, 15, 252, 31, 254, 63, 254, 127, 39, 246, 32, 2, 0, 0, 0, 0, 0, 0, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_uyew7"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 24, 3, 248, 7, 252, 15, 252, 31, 252, 31, 252, 31, 44, 30, 44, 26, 12, 16, 4, 16, 0, 0, 0, 0, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_srdrb")
+name = &"bat_left"
+containing_box = Rect2(0, 3, 16, 11)
+bitmaps = Array[BitMap]([SubResource("BitMap_esfm7"), SubResource("BitMap_hismg"), SubResource("BitMap_uyew7")])

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://bb1doxkdqax0q"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_py06m"]
+
+[sub_resource type="BitMap" id="BitMap_8rays"]
+data = {
+"data": PackedByteArray(240, 3, 192, 15, 248, 195, 195, 31, 248, 227, 199, 31, 252, 241, 143, 63, 252, 255, 255, 63, 252, 255, 255, 63, 254, 255, 255, 127, 254, 255, 255, 127, 254, 255, 255, 127, 254, 255, 255, 127, 254, 255, 255, 127, 254, 255, 255, 127, 252, 255, 255, 63, 248, 255, 255, 31, 0, 252, 127, 0, 0, 240, 31, 0),
+"size": Vector2i(32, 16)
+}
+
+[resource]
+script = ExtResource("1_py06m")
+name = &"giant_spider_hang"
+containing_box = Rect2(1, 0, 30, 16)
+bitmaps = Array[BitMap]([SubResource("BitMap_8rays")])

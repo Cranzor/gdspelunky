@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://nrbrkbms5c7a"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_ye0mb"]
+
+[sub_resource type="BitMap" id="BitMap_8l4ea"]
+data = {
+"data": PackedByteArray(0, 0, 248, 15, 248, 15, 240, 15, 248, 15, 120, 0, 56, 0, 0, 0),
+"size": Vector2i(16, 8)
+}
+
+[resource]
+script = ExtResource("1_ye0mb")
+name = &"pistol_right"
+origin = Vector2(8, 4)
+containing_box = Rect2(3, 1, 9, 6)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_8l4ea")])

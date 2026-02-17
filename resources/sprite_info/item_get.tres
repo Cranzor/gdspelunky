@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=4 format=3 uid="uid://31w4j3yqweg6"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_dyqhs"]
+
+[sub_resource type="BitMap" id="BitMap_d48rx"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 248, 255, 99, 248, 255, 119, 248, 255, 127, 250, 255, 127, 255, 255, 127, 255, 255, 127, 255, 255, 127, 250, 255, 127, 248, 255, 127, 248, 255, 127, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"size": Vector2i(24, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_gu66s"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 248, 255, 99, 248, 255, 119, 248, 255, 127, 250, 255, 127, 255, 255, 127, 255, 255, 127, 255, 255, 127, 250, 255, 127, 248, 255, 127, 248, 255, 127, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"size": Vector2i(24, 16)
+}
+
+[resource]
+script = ExtResource("1_dyqhs")
+name = &"item_get"
+origin = Vector2(4, 0)
+containing_box = Rect2(0, 3, 23, 10)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_d48rx"), SubResource("BitMap_gu66s")])

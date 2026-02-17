@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=8 format=3 uid="uid://b4voxxh0o4nwj"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_0wxhi"]
+
+[sub_resource type="BitMap" id="BitMap_58s5y"]
+data = {
+"data": PackedByteArray(0, 0, 0, 24, 24, 0, 0, 0),
+"size": Vector2i(8, 8)
+}
+
+[sub_resource type="BitMap" id="BitMap_5u4ju"]
+data = {
+"data": PackedByteArray(0, 0, 24, 60, 60, 24, 0, 0),
+"size": Vector2i(8, 8)
+}
+
+[sub_resource type="BitMap" id="BitMap_y455g"]
+data = {
+"data": PackedByteArray(0, 60, 126, 126, 126, 124, 56, 0),
+"size": Vector2i(8, 8)
+}
+
+[sub_resource type="BitMap" id="BitMap_iw8ha"]
+data = {
+"data": PackedByteArray(48, 120, 120, 54, 207, 207, 6, 0),
+"size": Vector2i(8, 8)
+}
+
+[sub_resource type="BitMap" id="BitMap_nn7j0"]
+data = {
+"data": PackedByteArray(16, 56, 16, 0, 0, 139, 67, 0),
+"size": Vector2i(8, 8)
+}
+
+[sub_resource type="BitMap" id="BitMap_jlht0"]
+data = {
+"data": PackedByteArray(16, 0, 0, 0, 0, 129, 0, 0),
+"size": Vector2i(8, 8)
+}
+
+[resource]
+script = ExtResource("1_0wxhi")
+name = &"poof"
+origin = Vector2(4, 4)
+containing_box = Rect2(0, 0, 8, 7)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_58s5y"), SubResource("BitMap_5u4ju"), SubResource("BitMap_y455g"), SubResource("BitMap_iw8ha"), SubResource("BitMap_nn7j0"), SubResource("BitMap_jlht0")])

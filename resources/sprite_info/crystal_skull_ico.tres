@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://2dtbxdu4f240"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_inq3g"]
+
+[sub_resource type="BitMap" id="BitMap_8mggo"]
+data = {
+"data": PackedByteArray(0, 0, 224, 7, 240, 15, 248, 31, 248, 31, 248, 31, 252, 63, 252, 63, 252, 63, 252, 63, 248, 31, 248, 31, 248, 31, 248, 31, 248, 31, 240, 15),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_inq3g")
+name = &"crystal_skull_ico"
+origin = Vector2(8, 12)
+containing_box = Rect2(2, 1, 12, 15)
+bitmaps = Array[BitMap]([SubResource("BitMap_8mggo")])

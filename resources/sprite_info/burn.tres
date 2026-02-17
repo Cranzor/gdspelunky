@@ -1,0 +1,65 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=11 format=3 uid="uid://bd3kibys1ra7p"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_pmm2k"]
+
+[sub_resource type="BitMap" id="BitMap_xepfi"]
+data = {
+"data": PackedByteArray(0, 0, 8, 28, 62, 127, 127, 62, 127, 127, 127, 126, 60, 24, 0, 0),
+"size": Vector2i(8, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_4k8t5"]
+data = {
+"data": PackedByteArray(0, 32, 44, 60, 52, 120, 124, 126, 126, 126, 108, 46, 14, 6, 4, 0),
+"size": Vector2i(8, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_bk6kl"]
+data = {
+"data": PackedByteArray(0, 8, 0, 36, 52, 56, 62, 126, 126, 126, 62, 12, 4, 16, 0, 0),
+"size": Vector2i(8, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_ex2qo"]
+data = {
+"data": PackedByteArray(0, 16, 16, 4, 30, 62, 255, 255, 127, 126, 62, 28, 0, 8, 0, 0),
+"size": Vector2i(8, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_sifi1"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 112, 126, 111, 7, 48, 182, 14, 44, 0, 0, 0, 0),
+"size": Vector2i(8, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_xlgo8"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 6, 103, 3, 48, 24, 2, 64, 72, 0, 0, 0, 0),
+"size": Vector2i(8, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_kx4eu"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 32, 38, 18, 0, 8, 8, 0, 0, 0, 0, 0, 0),
+"size": Vector2i(8, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_k0vyc"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 16, 4, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"size": Vector2i(8, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_xjnn2"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"size": Vector2i(8, 16)
+}
+
+[resource]
+script = ExtResource("1_pmm2k")
+name = &"burn"
+origin = Vector2(4, 4)
+containing_box = Rect2(0, 0, 8, 15)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_xepfi"), SubResource("BitMap_4k8t5"), SubResource("BitMap_bk6kl"), SubResource("BitMap_ex2qo"), SubResource("BitMap_sifi1"), SubResource("BitMap_xlgo8"), SubResource("BitMap_kx4eu"), SubResource("BitMap_k0vyc"), SubResource("BitMap_xjnn2")])

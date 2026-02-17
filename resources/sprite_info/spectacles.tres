@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://3b5lqhioafwu"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_ojmh4"]
+
+[sub_resource type="BitMap" id="BitMap_nbgy5"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 28, 48, 62, 120, 255, 255, 255, 223, 255, 31, 255, 31, 255, 15, 158, 7),
+"size": Vector2i(16, 12)
+}
+
+[resource]
+script = ExtResource("1_ojmh4")
+name = &"spectacles"
+origin = Vector2(8, 6)
+containing_box = Rect2(0, 4, 16, 8)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_nbgy5")])

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://cqcm7iigxqwc4"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_vh7r6"]
+
+[sub_resource type="BitMap" id="BitMap_txfuk"]
+data = {
+"data": PackedByteArray(192, 7, 224, 15, 240, 31, 240, 127, 240, 127, 252, 31, 252, 31, 240, 15, 252, 7, 254, 15, 254, 15, 252, 15, 252, 15, 248, 7, 240, 3, 192, 1),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_vh7r6")
+name = &"die_lr"
+origin = Vector2(8, 8)
+containing_box = Rect2(1, 0, 14, 16)
+bitmaps = Array[BitMap]([SubResource("BitMap_txfuk")])

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://dxetkxyhbd0jj"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_5mi2e"]
+
+[sub_resource type="BitMap" id="BitMap_aqm66"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 248, 15, 248, 15, 240, 15, 248, 15, 120, 0, 56, 0, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_5mi2e")
+name = &"pistol_tile"
+containing_box = Rect2(3, 9, 9, 6)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_aqm66")])

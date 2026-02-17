@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://lfjim83hkj3g"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_btmr8"]
+
+[sub_resource type="BitMap" id="BitMap_5duoo"]
+data = {
+"data": PackedByteArray(0, 0, 70, 98, 95, 250, 124, 30, 240, 15, 254, 103, 255, 255, 248, 31, 252, 63, 254, 127, 252, 63, 254, 127, 254, 127, 254, 127, 252, 63, 248, 31),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_btmr8")
+name = &"shrub_dark"
+containing_box = Rect2(0, 1, 16, 15)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_5duoo")])

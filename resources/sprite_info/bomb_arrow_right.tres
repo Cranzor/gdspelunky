@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=4 format=3 uid="uid://b8yhdj1wujg75"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_8f0i8"]
+
+[sub_resource type="BitMap" id="BitMap_saco8"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 56, 0, 124, 48, 254, 240, 255, 240, 255, 48, 124, 0, 56, 0, 0, 0, 0, 0, 0, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_plvlq"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 56, 0, 124, 48, 254, 240, 255, 240, 255, 48, 124, 0, 56, 0, 0, 0, 0, 0, 0, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_8f0i8")
+name = &"bomb_arrow_right"
+origin = Vector2(8, 8)
+containing_box = Rect2(4, 5, 12, 7)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_saco8"), SubResource("BitMap_plvlq")])

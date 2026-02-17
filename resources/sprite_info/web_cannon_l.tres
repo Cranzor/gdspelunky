@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://c5hjhvruigjs8"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_61tfb"]
+
+[sub_resource type="BitMap" id="BitMap_mowl5"]
+data = {
+"data": PackedByteArray(230, 11, 255, 31, 255, 31, 255, 15, 255, 31, 230, 31, 0, 28, 0, 0),
+"size": Vector2i(16, 8)
+}
+
+[resource]
+script = ExtResource("1_61tfb")
+name = &"web_cannon_l"
+origin = Vector2(8, 4)
+containing_box = Rect2(0, 0, 13, 7)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_mowl5")])

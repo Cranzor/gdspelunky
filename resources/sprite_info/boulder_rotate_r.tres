@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=6 format=4 uid="uid://b68vu2ecl652r"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_v6lwu"]
+
+[sub_resource type="BitMap" id="BitMap_8xybs"]
+data = {
+"data": PackedByteArray("APgfAAD+fwCA//8B4P//B/D//w/4//8f/P//P/z//z/+//9//v//f//////////////////////////////////////////////////////////////////////+//9//v//f/z//z/8//8/+P//H/D//w/g//8HgP//AQD+PwA="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_r72ve"]
+data = {
+"data": PackedByteArray("AP4/AID//wDg//8D8P//B/j//w/8//8f/P//H/7//z/+//8/////f////3//////////////////////////////////////////////////////////f/7//3/+//8//v//P/z//x/8//8f+P//D/D//wfg//8DgP//AAD+PwA="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_k7ewu"]
+data = {
+"data": PackedByteArray("APx/AID//wHg//8H8P//D/j//x/8//8//P//P/7//3/+//9///////////////////////////////////////////////////////////////////////7//3/+//9//P//P/z//z/4//8f8P//D+D//weA//8BAP5/AAD4HwA="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_yjxa5"]
+data = {
+"data": PackedByteArray("APx/AAD//wHA//8H4P//D/D//x/4//8/+P//P/z//3/8//9//v//f/7//////////////////////////////////////////////////////////v////7////8//9//P//f/j//z/4//8/8P//H+D//w/A//8HAP//AQD8fwA="),
+"size": Vector2i(32, 32)
+}
+
+[resource]
+script = ExtResource("1_v6lwu")
+name = &"boulder_rotate_r"
+origin = Vector2(16, 16)
+containing_box = Rect2(0, 0, 32, 32)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_8xybs"), SubResource("BitMap_r72ve"), SubResource("BitMap_k7ewu"), SubResource("BitMap_yjxa5")])

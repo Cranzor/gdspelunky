@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://dyofw3sf100ye"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_b2qa8"]
+
+[sub_resource type="BitMap" id="BitMap_13mme"]
+data = {
+"data": PackedByteArray(255, 255, 204, 155, 128, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_b2qa8")
+name = &"dark_bottom"
+containing_box = Rect2(0, 0, 16, 3)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_13mme")])

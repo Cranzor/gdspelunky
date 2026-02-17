@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://bmugb8uqeftha"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_4dqxj"]
+
+[sub_resource type="BitMap" id="BitMap_ujej7"]
+data = {
+"data": PackedByteArray(248, 15, 248, 15, 248, 15, 248, 15, 248, 31, 252, 31, 252, 63, 252, 111, 254, 79, 255, 31, 255, 31, 254, 63, 252, 127, 224, 127, 192, 63, 128, 31),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_4dqxj")
+name = &"zombie_jump_l"
+containing_box = Rect2(0, 0, 15, 16)
+bitmaps = Array[BitMap]([SubResource("BitMap_ujej7")])

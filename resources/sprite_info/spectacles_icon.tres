@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://vhy0yq25hwp5"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_yl05b"]
+
+[sub_resource type="BitMap" id="BitMap_dd6nd"]
+data = {
+"data": PackedByteArray(0, 0, 96, 0, 240, 0, 248, 0, 156, 96, 14, 240, 15, 248, 63, 156, 255, 15, 255, 15, 255, 15, 238, 15, 192, 7, 128, 3, 0, 0, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_yl05b")
+name = &"spectacles_icon"
+containing_box = Rect2(0, 1, 16, 13)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_dd6nd")])

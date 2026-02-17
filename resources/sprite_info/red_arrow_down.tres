@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://d0mjv0hshp1pv"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_2y3au"]
+
+[sub_resource type="BitMap" id="BitMap_qamku"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 231, 34, 239, 34, 231, 34, 175, 34, 239, 238, 233, 238, 249, 239, 240, 15, 240, 15, 240, 15, 224, 7, 192, 3, 128, 1),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_2y3au")
+name = &"red_arrow_down"
+origin = Vector2(8, 8)
+containing_box = Rect2(0, 3, 16, 13)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_qamku")])

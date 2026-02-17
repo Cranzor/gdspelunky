@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://bx2v7y8uudbfn"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_ov8oi"]
+
+[sub_resource type="BitMap" id="BitMap_iamo2"]
+data = {
+"data": PackedByteArray(224, 1, 224, 3, 224, 7, 224, 15, 224, 7, 192, 3, 240, 7, 248, 7, 248, 7, 192, 7, 192, 3, 192, 7, 224, 15, 252, 31, 254, 63, 252, 31),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_ov8oi")
+name = &"vine"
+containing_box = Rect2(1, 0, 13, 16)
+bitmaps = Array[BitMap]([SubResource("BitMap_iamo2")])

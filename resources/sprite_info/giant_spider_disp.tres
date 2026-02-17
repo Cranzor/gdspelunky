@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=4 uid="uid://dq61j75vawhq0"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_i5yfi"]
+
+[sub_resource type="BitMap" id="BitMap_e3lti"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/D8AgP//Afj//x/8//8//v//f/7//3/+//9//v//f/7//3/+//9//PPPP/zhhz/4w8Mf+APAH/ADwA8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="),
+"size": Vector2i(32, 32)
+}
+
+[resource]
+script = ExtResource("1_i5yfi")
+name = &"giant_spider_disp"
+origin = Vector2(8, 8)
+containing_box = Rect2(1, 8, 30, 15)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_e3lti")])

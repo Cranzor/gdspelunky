@@ -1,0 +1,95 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=16 format=4 uid="uid://bj64lneotcaf4"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_o26wg"]
+
+[sub_resource type="BitMap" id="BitMap_6l4ka"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHwAAwD8AAPA/AAD+fwAA/38AAP9/AAD/PwAA/jAAAAA4AADOHwAA3/8AAP7/AAD8fwAA+D8AAP9/AAD+zwA="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_kpdvn"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPABAAD8AwAA/wMA4P8HAPD/DwDw/x8A8P8/AOCPHwAA3/8AAP7/AAD8fwAA+D8AAP9/AAD+zwA="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_2c1ds"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAzgAAAP4DAAD+HwAA/j8AAP5/AAD8/wAA8P8BAOD/AQCA/wEAAP4BAAD8AADOfwAA3/8AAP7/AAD8fwAA+D8AAP9/AAD+zwA="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_t8a85"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD8HwAA/j8AAP5/AAD8/wAA8P8BAOD/AQCA/wEAAP4BAAD8AADOfwAA3/8AAP7/AAD8fwAA+D8AAP9/AAD+zwA="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_0c3d5"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHwAAwD8AAPA/AAD4fwAA8H8AAMB/AAAAfwAAAH4AAAB+AADOPwAA3/8AAP7/AAD8fwAA+D8AAP9/AAD+zwA="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_hdnpp"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB8AAMA/AADwPwAA+H8AAPB/AADAfwAAAH8AAAB+AADOPwAA3/8AAP7/AAD8fwAA+D8AAP9/AAD+zwA="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_4kttf"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOADAADwBwAA+A8AAPgPAAD4DwAA/A8AAPwPAAD8DwAA+B8AAP8/AAD/PwAA/v8BAPj/DwD4/x8A/P8/APz/fwDw//8A8P//AOCPfwAA+D8AAP9/AAD+zwA="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_tmcox"]
+data = {
+"data": PackedByteArray("AAAAAAAAAADgAwAA8AcAAPgPAAD4DwAA+A8AAPwPAAD8DwAA/A8AAPgfAAD/PwAA/z8AAP4PAAD4DwAA+AcAAPwDPgAcgH8AAPx/AAD+/wAA/v8AAP7/AAD8fwAAAHAAAIA4AACc/wAA/n8AAP4/AAD/HwAAxx8AAOE/AADgbwA="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_mvnr3"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAgA8AAMAfAADgPwAA/j8AAP8/AID/PwCA/z8AwP8/AMD/PwDA/z8AwP88AIDxPAAAYBgAAPgBAAD8DwAA/H8AAPz/AAD4/wAA4v8BAMf/AQCH/wEADnAAAI45AAD8/wAA+H8AAPA/AADgHwAAwB8AAOA/AADgbwA="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_3c8mu"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAIAAAADA4QMA4PMHAPD/DwDw/w8A8P8PAPD/DwDg/w8AwP8PAID/DwAA+A8AAPgfAAD4fwAA/P8AAPj/AADg/wEAwP8BAID/AQAA/gAAAHAAAJw5AAD+/wAA/38AAPM/AADgHwAAwB8AAOA/AADgbwA="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_xwcci"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAcAAAA/h8AAP4/AAD+fwAA/n8AAP5/AAD8fwAA+P8AAPj/AAD8/wEA+P8BAID/AQAA/gAAAHAAAJw5AAD+/wAA/38AAPM/AADgHwAAwB8AAOA/AADgbwA="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_xgfo8"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4AEAAPADAAD8BwAA/g8AAP4fAAD+fwAA/v8AAPD/AADg/wEAgP8BAAD/AQAA/gEAAPAAAIB4AACc/wAA/n8AAP4/AAD/HwAAxx8AAOE/AADgbwA="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_op0pg"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA+AEAAPwDAAD+BwAA/g8AAPwfAAD4fwAA+P8AAPD/AADg/wEAgP8BAAD/AQAA/gEAAPAAAIB4AACc/wAA/n8AAP4/AAD/HwAAxx8AAOE/AADgbwA="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_ha36s"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAQAA4AEAAPADAAD4BwAA/A8AAP4fAAD+fwAA/v8AAPz/AAD4/wEAgP8BAAD/AQAA/gEAAPAAAIB4AACc/wAA/n8AAP4/AAD/HwAAxx8AAOE/AADgbwA="),
+"size": Vector2i(32, 32)
+}
+
+[resource]
+script = ExtResource("1_o26wg")
+name = &"man_trap_eat_shopkeeper_l"
+origin = Vector2(8, 16)
+containing_box = Rect2(0, 2, 25, 30)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_6l4ka"), SubResource("BitMap_kpdvn"), SubResource("BitMap_2c1ds"), SubResource("BitMap_t8a85"), SubResource("BitMap_0c3d5"), SubResource("BitMap_hdnpp"), SubResource("BitMap_4kttf"), SubResource("BitMap_tmcox"), SubResource("BitMap_mvnr3"), SubResource("BitMap_3c8mu"), SubResource("BitMap_xwcci"), SubResource("BitMap_xgfo8"), SubResource("BitMap_op0pg"), SubResource("BitMap_ha36s")])

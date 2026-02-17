@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://bqkn7g81lan4"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_bar3a"]
+
+[sub_resource type="BitMap" id="BitMap_cdmhd"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 48, 62, 120, 255, 255, 255, 223, 255, 31, 255, 31, 255, 15, 158, 7),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_bar3a")
+name = &"spectacles_tile"
+containing_box = Rect2(0, 8, 16, 8)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_cdmhd")])

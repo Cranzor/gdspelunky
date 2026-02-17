@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=4 uid="uid://pt73y31t10ht"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_5a6c1"]
+
+[sub_resource type="BitMap" id="BitMap_dr3dw"]
+data = {
+"data": PackedByteArray("AAAAAACAPwAA8P8DAPz/DwD//x+A//8/wP//f+D//3/w////8P////j////4/////P////z////+/////v////7////+/////v////7////8/////P//f/j//3/4//8/8P//P+D//3/g////8P////j////8/////v////7///8="),
+"size": Vector2i(32, 32)
+}
+
+[resource]
+script = ExtResource("1_5a6c1")
+name = &"alien_boss_tile"
+containing_box = Rect2(1, 1, 31, 31)
+bitmaps = Array[BitMap]([SubResource("BitMap_dr3dw")])

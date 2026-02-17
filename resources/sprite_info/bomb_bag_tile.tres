@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://cvi4b043h6txm"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_r3rx6"]
+
+[sub_resource type="BitMap" id="BitMap_iuwnt"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 192, 3, 224, 7, 224, 7, 192, 3, 224, 7, 240, 15, 248, 31, 252, 63, 252, 63, 252, 63, 252, 63, 248, 31),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_r3rx6")
+name = &"bomb_bag_tile"
+containing_box = Rect2(2, 4, 12, 12)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_iuwnt")])

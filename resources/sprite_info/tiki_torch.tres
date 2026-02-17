@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=7 format=3 uid="uid://blq38nvfpdxci"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_oexrh"]
+
+[sub_resource type="BitMap" id="BitMap_rkdbs"]
+data = {
+"data": PackedByteArray(160, 0, 128, 1, 128, 1, 192, 1, 192, 1, 128, 1, 224, 7, 224, 7, 224, 7, 224, 7, 224, 7, 224, 7, 224, 7, 224, 7, 224, 7, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3),
+"size": Vector2i(16, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_epn15"]
+data = {
+"data": PackedByteArray(0, 0, 128, 0, 128, 1, 192, 3, 192, 3, 192, 1, 224, 7, 224, 7, 224, 7, 224, 7, 224, 7, 224, 7, 224, 7, 224, 7, 224, 7, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3),
+"size": Vector2i(16, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_hwkxl"]
+data = {
+"data": PackedByteArray(128, 0, 0, 0, 128, 0, 128, 1, 192, 3, 224, 7, 224, 7, 224, 7, 224, 7, 224, 7, 224, 7, 224, 7, 224, 7, 224, 7, 224, 7, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3),
+"size": Vector2i(16, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_220hy"]
+data = {
+"data": PackedByteArray(0, 0, 128, 0, 192, 0, 224, 1, 224, 1, 192, 1, 224, 7, 224, 7, 224, 7, 224, 7, 224, 7, 224, 7, 224, 7, 224, 7, 224, 7, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3),
+"size": Vector2i(16, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_dsi2x"]
+data = {
+"data": PackedByteArray(0, 1, 0, 3, 160, 3, 128, 1, 128, 1, 128, 3, 224, 7, 224, 7, 224, 7, 224, 7, 224, 7, 224, 7, 224, 7, 224, 7, 224, 7, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3),
+"size": Vector2i(16, 32)
+}
+
+[resource]
+script = ExtResource("1_oexrh")
+name = &"tiki_torch"
+containing_box = Rect2(5, 0, 6, 32)
+bitmaps = Array[BitMap]([SubResource("BitMap_rkdbs"), SubResource("BitMap_epn15"), SubResource("BitMap_hwkxl"), SubResource("BitMap_220hy"), SubResource("BitMap_dsi2x")])

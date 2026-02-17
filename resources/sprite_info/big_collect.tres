@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://d3kgv71pcc1og"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_ia6xi"]
+
+[sub_resource type="BitMap" id="BitMap_lv557"]
+data = {
+"data": PackedByteArray(0, 3, 0, 3, 192, 15, 224, 15, 240, 15, 240, 15, 240, 3, 240, 7, 224, 15, 192, 15, 240, 15, 240, 15, 240, 7, 240, 3, 192, 0, 192, 0),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_ia6xi")
+name = &"big_collect"
+origin = Vector2(8, 8)
+containing_box = Rect2(4, 0, 8, 16)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_lv557")])

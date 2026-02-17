@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://nuttm1qfsmww"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_if2ip"]
+
+[sub_resource type="BitMap" id="BitMap_co4vo"]
+data = {
+"data": PackedByteArray(128, 1, 192, 3, 192, 7, 224, 7, 224, 7, 240, 15, 248, 31, 248, 31, 252, 63, 252, 63, 252, 63, 252, 63, 248, 31, 248, 31, 248, 31, 24, 24),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_if2ip")
+name = &"crown"
+origin = Vector2(8, 8)
+containing_box = Rect2(2, 0, 12, 16)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_co4vo")])

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=4 uid="uid://cedabu7p53dr0"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_v2cnu"]
+
+[sub_resource type="BitMap" id="BitMap_gk7nk"]
+data = {
+"data": PackedByteArray("APwfAAD+PwAA/38AgP//AID//wHA//8H4P//D/D//x/4//8/+P//P/z//3/8//9//P////7////+/////v////7////+/////v////7////+/////v////7////+/////v////z////8//9/+P//P8D//wfA//8HwP//B8D//wc="),
+"size": Vector2i(32, 32)
+}
+
+[resource]
+script = ExtResource("1_v2cnu")
+name = &"yeti_king_disp"
+origin = Vector2(8, 8)
+containing_box = Rect2(1, 0, 31, 32)
+bitmaps = Array[BitMap]([SubResource("BitMap_gk7nk")])

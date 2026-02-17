@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://cxmb5tusx63hr"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_wm4mw"]
+
+[sub_resource type="BitMap" id="BitMap_ubd56"]
+data = {
+"data": PackedByteArray(0, 0, 40, 107, 190, 107, 40, 0),
+"size": Vector2i(8, 8)
+}
+
+[resource]
+script = ExtResource("1_wm4mw")
+name = &"fish_bone"
+origin = Vector2(4, 4)
+containing_box = Rect2(0, 2, 8, 5)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_ubd56")])

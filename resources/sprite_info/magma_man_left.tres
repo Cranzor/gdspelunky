@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=6 format=3 uid="uid://durx53w1a1kbt"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_1kwmx"]
+
+[sub_resource type="BitMap" id="BitMap_prg6t"]
+data = {
+"data": PackedByteArray(96, 0, 240, 1, 240, 1, 240, 3, 240, 11, 240, 15, 240, 15, 248, 31, 248, 31, 252, 63, 252, 63, 252, 63, 248, 31, 224, 31, 224, 31, 224, 15),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_dfwd1"]
+data = {
+"data": PackedByteArray(96, 1, 240, 1, 240, 9, 240, 3, 240, 3, 240, 39, 248, 63, 250, 31, 254, 31, 254, 63, 252, 63, 252, 63, 248, 47, 232, 15, 232, 31, 224, 63),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_4ve2l"]
+data = {
+"data": PackedByteArray(192, 1, 224, 9, 224, 1, 224, 3, 226, 3, 242, 7, 248, 47, 250, 63, 252, 31, 252, 31, 252, 63, 252, 63, 248, 63, 224, 47, 224, 15, 248, 31),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_pksqt"]
+data = {
+"data": PackedByteArray(96, 0, 240, 1, 240, 1, 242, 3, 240, 3, 240, 7, 240, 79, 248, 31, 248, 31, 252, 63, 252, 63, 252, 63, 248, 31, 224, 31, 224, 31, 236, 15),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_1kwmx")
+name = &"magma_man_left"
+containing_box = Rect2(1, 0, 14, 16)
+bitmaps = Array[BitMap]([SubResource("BitMap_prg6t"), SubResource("BitMap_dfwd1"), SubResource("BitMap_4ve2l"), SubResource("BitMap_pksqt")])

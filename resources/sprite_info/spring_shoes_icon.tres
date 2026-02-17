@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://b8lvlp1smmoku"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_2yi4v"]
+
+[sub_resource type="BitMap" id="BitMap_0mwne"]
+data = {
+"data": PackedByteArray(248, 3, 252, 7, 254, 15, 254, 15, 254, 15, 254, 15, 254, 15, 254, 31, 254, 63, 254, 63, 254, 127, 254, 127, 254, 127, 252, 127, 248, 63, 240, 31),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_2yi4v")
+name = &"spring_shoes_icon"
+containing_box = Rect2(1, 0, 14, 16)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_0mwne")])

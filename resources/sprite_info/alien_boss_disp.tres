@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=4 uid="uid://dcvxc8ba2dqb"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_kt23k"]
+
+[sub_resource type="BitMap" id="BitMap_m48ef"]
+data = {
+"data": PackedByteArray("AAAAAACAPwAA8P8DAPz/DwD//x+A//8/wP//f+D//3/w////8P////j////4/////P////z////+/////v////7////+/////v////7////8/////P//f/j//3/4//8/8P//P+D//3/g////8P////j////8/////v////7///8="),
+"size": Vector2i(32, 32)
+}
+
+[resource]
+script = ExtResource("1_kt23k")
+name = &"alien_boss_disp"
+origin = Vector2(8, 8)
+containing_box = Rect2(1, 1, 31, 31)
+bitmaps = Array[BitMap]([SubResource("BitMap_m48ef")])

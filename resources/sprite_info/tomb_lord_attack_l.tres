@@ -1,0 +1,94 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=16 format=4 uid="uid://drj7ug8k80avh"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_f0ekg"]
+
+[sub_resource type="BitMap" id="BitMap_pfukj"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAPgAAsH8AAPD/AADg/wAA4P8BAOD/BwDg/x8A4P8/AMD/fwDA//8AwP//AMD//wGA//8BgPv/AQD4/wMA/v8DgP//A8D//wPg//8D4I//A+DB/wPA4P8BAPD/AQDw/wAA+P8AAPj/AAD4+QEA+PgBAPjwAQD88AE="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_bvxkw"]
+data = {
+"data": PackedByteArray("APgAAMD+AQDA/wMAgP8DAID/AwCA/wMAgP8PAID/HwAA/z8AAP9/AAD//wAA//8BAP7/AQDu/wMA+P8DAP7/AwD//weA//8HgP//B4AH/gcAA/8HAID/AwDA/wMA4P8BAPD/AQDw/wAA+P8AAPj/AAD4+QEA+PgBAPjwAQD88AE="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_g7crm"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAwAcAAPYPAAD+HwAA/D8AAPz/AAD8/wMA/P8HAPz/DwD8/x8A+P8fAOD/PwDA/z8AwP8/AID/fwCA/38AgP9/AID/fwCA/38AgP9/AMD/fwDA/38AgP9/AAD+/wAA/P8AAPz/AAD4+QEA+PgBAPjwAQD88AE="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_ya7bd"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAwAcAAPYPAAD+HwAA/D8AAPz/AAD8/wMA/P8HAPz/DwD8/x8A+P8fAOD/PwDA/z8AwP8/AID/fwCA/38AgP9/AID/fwCA/38AwP9/AMD/fwCA/38AAP5/AAD+/wAA/P8AAPz/AAD4+QEA+PgBAPjwAQD88AE="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_xpsnj"]
+data = {
+"data": PackedByteArray("AAAAAAAAAACADwAA7B8AAPw/AAD4PwAA+H8AAPj/AQD4/wcA+P8PAPj/HwDw/z8AwP8/AID/fwCA/38AAP9/AAD//wAA//8AAP//AID//wCA//8AgP//AMD/fwDA938AwPN/AMDz/wCA8f8AAPj/AAD4+QEA+PgBAPjwAQD88AE="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_7re8r"]
+data = {
+"data": PackedByteArray("AMAHAAD2DwAA/h8AAPwfAAD8HwAA/B8AAP4/AAD+fwAA/P8AAPz/AQD+/wMA/v8HAPz/BwD4/w8A/P8PAP7/DwD//w8A//8PAA/8DwAG/gcAAP8HAID/BwDA/wMA4P8BAPD/AQDw/wAA+P8AAPj/AAD4+QEA+PgBAPjwAQD88AE="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_fqn2q"]
+data = {
+"data": PackedByteArray("AMAHAAD2DwAA/h8AAPwfAAD8HwAA/B8AAP4/AAD+fwAA/P8AAPz/AQD+/wMA/v8HAPz/BwD4/w8A/P8PAP7/DwD//w8A//8PAA/8DwAG/gcAAP8HAID/BwDA/wMA4P8BAPD/AQDw/wAA+P8AAPj/AAD4+QEA+PgBAPjwAQD88AE="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_y7qce"]
+data = {
+"data": PackedByteArray("AMAHAAD2DwAA/h8AAPwfAAD8HwAA/B8AAP4/AAD+fwAA/P8AAPz/AQD+/wMA/v8HAPz/BwD4/w8A/P8PAP7/DwD//w8A//8PAA/8DwAG/gcAAP8HAID/BwDA/wMA4P8BAPD/AQDw/wAA+P8AAPj/AAD4+QEA+PgBAPjwAQD88AE="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_f7f5a"]
+data = {
+"data": PackedByteArray("AMAHAAD2DwAA/h8AAPwfAAD8HwAA/B8AAP4/AAD+fwAA/P8AAPz/AQD+/wMA/v8HAPz/BwD4/w8A/P8PAP7/DwD//w8A//8PAA/8DwAG/gcAAP8HAID/BwDA/wMA4P8BAPD/AQDw/wAA+P8AAPj/AAD4+QEA+PgBAPjwAQD88AE="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_0sbbl"]
+data = {
+"data": PackedByteArray("AAAAAAAAAACADwAA7B8AAPw/AAD4PwAA+H8AAPj/AQD4/wcA+P8PAPD/HwDw/z8A8P8/AMD/fwDA/38A4P9/AOD//wDA//8AAP//AMD//wDg//8A8Mf/APDBfwDw4H8AYPB/AADw/wAA+P8AAPj/AAD4+QEA+PgBAPjwAQD88AE="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_o3hrw"]
+data = {
+"data": PackedByteArray("AAAAAAAAAACADwAA7B8AAPw/AAD4PwAA+H8AAPj/AQD4/wcA+P8PAPj/HwDw/z8AwP8/AID/fwCA/38AAP9/AAD//wAA//8AAP//AID//wCA//8AgP//AMD/fwDA938AwPN/AMDz/wCA8f8AAPj/AAD4+QEA+PgBAPjwAQD88AE="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_ie6n5"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAwAcAAPYPAAD+HwAA/D8AAPz/AAD8/wMA/P8HAPz/DwD8/x8A+P8fAOD/PwDA/z8AwP8/AID/fwCA/38AgP9/AID/fwCA/38AgP9/AMD/fwDA/38AgP9/AAD+/wAA/P8AAPz/AAD4+QEA+PgBAPjwAQD88AE="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_a5lvf"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAwAcAAPYPAAD+HwAA/D8AAPz/AAD8/wMA/P8HAPz/DwD8/x8A+P8fAOD/PwDA/z8AwP8/AID/fwCA/38AgP9/AID/fwCA/38AgP9/AMD/fwDA/38AgP9/AAD+/wAA/P8AAPz/AAD4+QEA+PgBAPjwAQD88AE="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_q6gqv"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAwAcAAPYPAAD+HwAA/D8AAPz/AAD8/wMA/P8HAPz/DwD8/x8A+P8fAOD/PwDA/z8AwP8/AID/fwCA/38AgP9/AID/fwCA/38AwP9/AMD/fwCA/38AAP5/AAD+/wAA/P8AAPz/AAD4+QEA+PgBAPjwAQD88AE="),
+"size": Vector2i(32, 32)
+}
+
+[resource]
+script = ExtResource("1_f0ekg")
+name = &"tomb_lord_attack_l"
+containing_box = Rect2(1, 0, 27, 32)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_pfukj"), SubResource("BitMap_bvxkw"), SubResource("BitMap_g7crm"), SubResource("BitMap_ya7bd"), SubResource("BitMap_xpsnj"), SubResource("BitMap_7re8r"), SubResource("BitMap_fqn2q"), SubResource("BitMap_y7qce"), SubResource("BitMap_f7f5a"), SubResource("BitMap_0sbbl"), SubResource("BitMap_o3hrw"), SubResource("BitMap_ie6n5"), SubResource("BitMap_a5lvf"), SubResource("BitMap_q6gqv")])

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://cnsu720qhmjd8"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_ec4y0"]
+
+[sub_resource type="BitMap" id="BitMap_3xeaq"]
+data = {
+"data": PackedByteArray(252, 255, 255, 255, 255, 255, 255, 31, 252, 255, 255, 255, 255, 255, 255, 31, 252, 255, 255, 255, 255, 255, 255, 31, 252, 255, 255, 255, 255, 255, 255, 31, 252, 255, 255, 255, 255, 255, 255, 31, 252, 255, 255, 255, 255, 255, 255, 31, 252, 255, 255, 255, 255, 255, 255, 31, 252, 255, 255, 255, 255, 255, 255, 31),
+"size": Vector2i(64, 8)
+}
+
+[resource]
+script = ExtResource("1_ec4y0")
+name = &"olmec_slam"
+containing_box = Rect2(2, 0, 59, 8)
+bitmaps = Array[BitMap]([SubResource("BitMap_3xeaq")])

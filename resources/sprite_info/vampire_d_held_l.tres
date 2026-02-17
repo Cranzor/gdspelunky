@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://cngvai4asv2jt"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_g1yw4"]
+
+[sub_resource type="BitMap" id="BitMap_dgl1c"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 252, 1, 254, 3, 255, 7, 255, 7, 255, 31, 255, 127, 255, 127, 255, 255, 254, 255, 254, 255, 239, 255, 239, 127, 230, 31),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_g1yw4")
+name = &"vampire_d_held_l"
+containing_box = Rect2(0, 3, 16, 13)
+bitmaps = Array[BitMap]([SubResource("BitMap_dgl1c")])

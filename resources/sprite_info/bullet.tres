@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://btjchc8p1mdbp"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_0w115"]
+
+[sub_resource type="BitMap" id="BitMap_s4lv1"]
+data = {
+"data": PackedByteArray(0, 0, 24, 60, 60, 24, 0, 0),
+"size": Vector2i(8, 8)
+}
+
+[resource]
+script = ExtResource("1_0w115")
+name = &"bullet"
+origin = Vector2(4, 0)
+containing_box = Rect2(2, 2, 4, 4)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_s4lv1")])

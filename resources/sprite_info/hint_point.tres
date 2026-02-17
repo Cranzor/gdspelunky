@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=7 format=3 uid="uid://dj5jaaidw5qlg"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_cvnfo"]
+
+[sub_resource type="BitMap" id="BitMap_y7stn"]
+data = {
+"data": PackedByteArray(240, 31, 240, 31, 248, 31, 252, 63, 254, 63, 254, 63, 254, 63, 254, 63, 252, 63, 248, 31, 240, 15, 240, 0, 240, 0, 96, 0, 0, 0, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_0o53g"]
+data = {
+"data": PackedByteArray(240, 31, 240, 31, 248, 31, 252, 63, 254, 63, 254, 63, 254, 63, 254, 63, 252, 63, 248, 31, 240, 15, 240, 0, 240, 0, 96, 0, 0, 0, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_0luk0"]
+data = {
+"data": PackedByteArray(0, 0, 240, 31, 240, 31, 248, 31, 252, 63, 254, 63, 254, 63, 254, 63, 254, 63, 252, 63, 248, 31, 240, 15, 240, 0, 240, 0, 96, 0, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_ftfys"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 240, 31, 240, 31, 248, 31, 252, 63, 254, 63, 254, 63, 254, 63, 254, 63, 252, 63, 248, 31, 240, 15, 240, 0, 240, 0, 96, 0),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_n1ch3"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 240, 31, 240, 31, 248, 31, 252, 63, 254, 63, 254, 63, 254, 63, 254, 63, 252, 63, 248, 31, 240, 15, 240, 0, 240, 0, 96, 0),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_cvnfo")
+name = &"hint_point"
+containing_box = Rect2(1, 0, 13, 16)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_y7stn"), SubResource("BitMap_0o53g"), SubResource("BitMap_0luk0"), SubResource("BitMap_ftfys"), SubResource("BitMap_n1ch3")])

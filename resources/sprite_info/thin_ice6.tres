@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://d1b8vbgcaq0da"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_tcrr5"]
+
+[sub_resource type="BitMap" id="BitMap_pbv5m"]
+data = {
+"data": PackedByteArray(255, 255, 255, 255, 255, 255, 15, 240, 1, 128, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_tcrr5")
+name = &"thin_ice6"
+containing_box = Rect2(0, 0, 16, 5)
+bitmaps = Array[BitMap]([SubResource("BitMap_pbv5m")])

@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=9 format=4 uid="uid://bkqi2kk56n1y3"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_f155k"]
+
+[sub_resource type="BitMap" id="BitMap_ydpqs"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAA4B8A8D8A8H8A8H8A8H8A8H8A8H8A4D8A4P8DwP8HgP8HgP8DAP8DAPwDAPAAAHgAADAA"),
+"size": Vector2i(24, 24)
+}
+
+[sub_resource type="BitMap" id="BitMap_fwbil"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAwD8A4H8A4P8A4P8A4P8A4P8A4P8DwP8HwP8HgP8HAP8HAP8HAP4HAPgHAHgDADwAABgA"),
+"size": Vector2i(24, 24)
+}
+
+[sub_resource type="BitMap" id="BitMap_vxia6"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8AgP8BgP8DgP8HgP8PgP8PgP8fAP8fAP8PAP4DAPwDAPwHAPgPAPAPAPAPAPgHAHgA"),
+"size": Vector2i(24, 24)
+}
+
+[sub_resource type="BitMap" id="BitMap_krvvk"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAPwDAP4HAP4PAP4PAP4PAP4PAP4PAP4HAP4DAP4HAP4HAP4HAPwDAPgDAPADAPABAPgAAHgA"),
+"size": Vector2i(24, 24)
+}
+
+[sub_resource type="BitMap" id="BitMap_h302k"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAgH8AwP8AwP8BwP8BwP8BwP8BwP8B4P8A4H8A4P8A8P8A8P8A4P8BAP4DAPwDAPwDAP4BAB4A"),
+"size": Vector2i(24, 24)
+}
+
+[sub_resource type="BitMap" id="BitMap_msjsr"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAwD8A4H8A4P8A4P8A4P8A4P8A4P8AwH8AwH8AgP8BAP8DAP8HAP4HAPgHAHADAHgAADAA"),
+"size": Vector2i(24, 24)
+}
+
+[sub_resource type="BitMap" id="BitMap_h6f8t"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAwD8A4H8A4P8A4P8A4P8A4P8A4P8DwP8HwP8HgP8HAP8HAP8HAP4HAPgHAHADAHgAADAA"),
+"size": Vector2i(24, 24)
+}
+
+[resource]
+script = ExtResource("1_f155k")
+name = &"tunnel_whoa_l"
+origin = Vector2(12, 16)
+containing_box = Rect2(4, 6, 17, 18)
+bitmaps = Array[BitMap]([SubResource("BitMap_ydpqs"), SubResource("BitMap_fwbil"), SubResource("BitMap_vxia6"), SubResource("BitMap_krvvk"), SubResource("BitMap_h302k"), SubResource("BitMap_msjsr"), SubResource("BitMap_h6f8t")])

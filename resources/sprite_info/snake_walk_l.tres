@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=6 format=3 uid="uid://ctjc5tmlsrkss"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_ey6wf"]
+
+[sub_resource type="BitMap" id="BitMap_bv8ys"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 124, 0, 254, 0, 255, 1, 255, 1, 254, 1, 252, 1, 252, 1, 254, 3, 254, 207, 254, 255, 252, 127, 120, 62),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_w38xe"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 248, 0, 252, 1, 254, 3, 254, 3, 252, 3, 248, 3, 248, 3, 252, 7, 252, 15, 252, 127, 248, 127, 240, 62),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_l5qau"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 224, 3, 240, 7, 248, 15, 248, 15, 240, 15, 240, 7, 248, 3, 252, 7, 252, 15, 252, 15, 248, 63, 240, 63, 224, 30),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_8gaf3"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 240, 1, 248, 3, 252, 7, 252, 7, 248, 7, 248, 3, 248, 3, 252, 7, 252, 15, 252, 15, 248, 63, 240, 63, 224, 30),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_ey6wf")
+name = &"snake_walk_l"
+containing_box = Rect2(0, 3, 16, 13)
+bitmaps = Array[BitMap]([SubResource("BitMap_bv8ys"), SubResource("BitMap_w38xe"), SubResource("BitMap_l5qau"), SubResource("BitMap_8gaf3")])

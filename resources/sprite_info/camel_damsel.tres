@@ -1,0 +1,46 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=8 format=4 uid="uid://csesj177ow0p8"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_kivcg"]
+
+[sub_resource type="BitMap" id="BitMap_qopmi"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAADwBwAAAAD4DwAAAAD8HwAAAAD8PwAAAAD8PwAAAAD4HwAAAAD4HwAAAAD8PwAAAAD8PwAAAAD8fwAAAAD8/wEAAAD8/wMA4AP+/w8A/B/+/x8A/h/4/z8A/w/4/z8A/w/4/38A/w/4/38A/g/4//8ArA/4//8BoB/4//8DoB/+//8HIP////8PIP////8fIP////8/IP7///8/IPz///9/QPj///9/QPD///9/gAD9//9/AIH4////AH74////AADw9/9/AADwB+d/AADwB8A/AADgB8A9AADgD4A9AADgD4A9AADAD4A9AADAD4A9AADAHoA9AADAHoA9AADAHoA9AADgH8A/AADgH+A/"),
+"size": Vector2i(48, 48)
+}
+
+[sub_resource type="BitMap" id="BitMap_ayeu0"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwBwAAAAD4DwAAAAD8HwAAAAD8PwAAAAD8PwAAAAD4HwAAAAD4HwAAAAD8PwAAAAD8PwAAAAD8fwAAAAD8/wEAAAD8/wMA4AP+/w8A+B/+/x8A/h/4/z8A/w/4/z8A/w/4/38A/w/4/38A/w/4//8Avg/4//8BrB/4//8DoB/8//8HID/+//8PIP////8fIP////8/IP7///8/IPz///9/QPj///9/QPD///9/gMD9//9/AIH4////AH7w////AADw//9/AADwD/d/AAD4D8A/AAB4D8A9AAAYD8A9AAAcHuB4AAAMHmB4AAAMPHB4AAAcPDx4AAAcPBx4AAAcPgx8AAAAPgB+"),
+"size": Vector2i(48, 48)
+}
+
+[sub_resource type="BitMap" id="BitMap_lh5k5"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwBwAAAAD4DwAAAAD8HwAAAAD8PwAAAAD8PwAAAAD4HwAAAAD4HwAAAAD8PwAAAAD8PwAAAAD8fwAAAAD8/wEAAAD8/wMAAAD+/w8A4AP+/x8A8B/4/z8A/B/4/z8A/g/4/38A/w/4/38A/w/4//8A/w/4//8Bvg/4//8DrB/+//8HIP////8PIP////8fIP////8/IP7///8/IPz///9/QPj///9/QPD///9/gAD9//9/AIH4////AH74////AAD49/9/AAD4D/d/AAA8H+B/AAAcHuB8AAAOHvB4AAAGPHB4AAAHPHjwAAADeDjwAAADeBzwAIADeBzwAIADfA74AIABfA78"),
+"size": Vector2i(48, 48)
+}
+
+[sub_resource type="BitMap" id="BitMap_f5eua"]
+data = {
+"data": PackedByteArray("AAAAAAAAAADwBwAAAAD4DwAAAAD8HwAAAAD8PwAAAAD8PwAAAAD4HwAAAAD4HwAAAAD8PwAAAAD8PwAAAAD8HwAAAAD8PwAAAAD8fwAAAAD+/wEAAAD+/wMA4APw/w8A8B/4/x8A/B/4/z8A/g/4/z8A/w/4/38A/w/4/38A/w/4//8Avg/4//8BrB/4//8DoB/+//8HIP////8PIP////8fIP////8/IP7///8/IPz///9/QPj///9/QPD///9/gAD9//9/AIH4////AH74////AAD49/9/AAD4B/d/AAC4B+AfAAC4B+AfAAC4B+AfAAC4B+AeAAAYD+A8AAAYD+A8AAAYD2B8AAAcH3D4AAAcHnDwAAAODHDgAAAPAHgA"),
+"size": Vector2i(48, 48)
+}
+
+[sub_resource type="BitMap" id="BitMap_0v8qj"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAADwBwAAAAD4DwAAAAD8HwAAAAD8PwAAAAD8PwAAAAD4HwAAAAD4HwAAAAD8PwAAAAD8PwAAAAD8PwAAAAD8fwAAAAD8/wEAAAD+/wMA4AP+/w8A/B/4/x8A/h/4/z8A/w/4/z8A/w/4/38A/w/4/38A/g/4//8ArA/4//8BoB/4//8DoB/+//8HIP////8PIP////8fIP////8/IP7///8/IPz///9/QPj///9/QPD///9/gAD9//9/AIH4////AH74////AADw9/9/AADwB+cPAADwA8APAADwA8AHAAD4A+AHAAD4A+ADAAD8A+ADAAC8A+ADAAC8AeADAAD8AeAHAAD8AeAHAAD4A8AHAADwA4AH"),
+"size": Vector2i(48, 48)
+}
+
+[sub_resource type="BitMap" id="BitMap_r64qv"]
+data = {
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAADwBwAAAAD4DwAAAAD8HwAAAAD8PwAAAAD8PwAAAAD4HwAAAAD4HwAAAAD8PwAAAAD8PwAAAAD8fwAAAAD8/wEAAAD8/wMA4AP+/w8A/B/+/x8A/h/4/z8A/w/4/z8A/w/4/38A/w/4/38A/g/4//8ArA/4//8BoB/4//8DoB/+//8HIP////8PIP////8fIP////8/IP7///8/IPz///9/QPj///9/QPD///9/gAD9//9/AIH4////AH74////AADw9/9/AADwB+cfAADwA+AfAAD4A+AfAAD4A/AfAAD8A/AdAAD8A/AZAAC8A/AYAAC+A/AYAACeA/AcAACeA/gcAACPB/gcAICPB3we"),
+"size": Vector2i(48, 48)
+}
+
+[resource]
+script = ExtResource("1_kivcg")
+name = &"camel_damsel"
+containing_box = Rect2(0, 1, 48, 47)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_qopmi"), SubResource("BitMap_ayeu0"), SubResource("BitMap_lh5k5"), SubResource("BitMap_f5eua"), SubResource("BitMap_0v8qj"), SubResource("BitMap_r64qv")])

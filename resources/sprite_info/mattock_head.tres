@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://b8b15typkeq72"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_0dvvc"]
+
+[sub_resource type="BitMap" id="BitMap_ld7c8"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 128, 1, 240, 15, 248, 31, 252, 63, 252, 63, 204, 51),
+"size": Vector2i(16, 8)
+}
+
+[resource]
+script = ExtResource("1_0dvvc")
+name = &"mattock_head"
+origin = Vector2(8, 4)
+containing_box = Rect2(2, 2, 12, 6)
+precise = true
+bitmaps = Array[BitMap]([SubResource("BitMap_ld7c8")])

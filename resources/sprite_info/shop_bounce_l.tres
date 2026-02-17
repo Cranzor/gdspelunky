@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="SpriteInfo" load_steps=3 format=3 uid="uid://d4axo5odhkwqw"]
+
+[ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_hpfp0"]
+
+[sub_resource type="BitMap" id="BitMap_1mn0s"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 124, 0, 254, 0, 255, 1, 255, 31, 255, 63, 255, 127, 255, 127, 255, 255, 255, 255, 254, 255, 207, 255, 207, 99, 134, 1, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[resource]
+script = ExtResource("1_hpfp0")
+name = &"shop_bounce_l"
+containing_box = Rect2(0, 2, 16, 13)
+bitmaps = Array[BitMap]([SubResource("BitMap_1mn0s")])
