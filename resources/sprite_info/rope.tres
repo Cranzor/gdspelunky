@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_aidgk"]
 
-[sub_resource type="BitMap" id="BitMap_2cjoe"]
+[sub_resource type="BitMap" id="BitMap_aidgk"]
 data = {
 "data": PackedByteArray(0, 60, 0, 60, 0, 60, 0, 60, 0, 60, 0, 60, 0, 60, 0, 60),
 "size": Vector2i(16, 8)
@@ -11,6 +11,7 @@ data = {
 [resource]
 script = ExtResource("1_aidgk")
 name = &"rope"
+size = Vector2(16, 8)
 origin = Vector2(4, 4)
 containing_box = Rect2(10, 0, 4, 8)
-bitmaps = Array[BitMap]([SubResource("BitMap_2cjoe")])
+bitmaps = Array[BitMap]([SubResource("BitMap_aidgk")])

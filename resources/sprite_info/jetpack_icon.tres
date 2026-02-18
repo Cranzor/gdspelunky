@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_rgrpe"]
 
-[sub_resource type="BitMap" id="BitMap_i4mlg"]
+[sub_resource type="BitMap" id="BitMap_rgrpe"]
 data = {
 "data": PackedByteArray(112, 0, 248, 1, 252, 3, 254, 7, 255, 15, 255, 31, 255, 63, 254, 127, 254, 255, 254, 255, 252, 255, 248, 255, 240, 127, 224, 63, 192, 31, 128, 15),
 "size": Vector2i(16, 16)
@@ -11,6 +11,7 @@ data = {
 [resource]
 script = ExtResource("1_rgrpe")
 name = &"jetpack_icon"
+size = Vector2(16, 16)
 containing_box = Rect2(0, 0, 16, 16)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_i4mlg")])
+bitmaps = Array[BitMap]([SubResource("BitMap_rgrpe")])

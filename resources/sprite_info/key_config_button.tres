@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_sm0rg"]
 
-[sub_resource type="BitMap" id="BitMap_4cf6m"]
+[sub_resource type="BitMap" id="BitMap_sm0rg"]
 data = {
 "data": PackedByteArray("/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////w=="),
 "size": Vector2i(56, 16)
@@ -11,6 +11,7 @@ data = {
 [resource]
 script = ExtResource("1_sm0rg")
 name = &"key_config_button"
+size = Vector2(56, 16)
 containing_box = Rect2(0, 0, 56, 16)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_4cf6m")])
+bitmaps = Array[BitMap]([SubResource("BitMap_sm0rg")])

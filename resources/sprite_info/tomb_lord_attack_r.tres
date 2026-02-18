@@ -2,15 +2,21 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_edg31"]
 
-[sub_resource type="BitMap" id="BitMap_3cich"]
+[sub_resource type="BitMap" id="BitMap_edg31"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAHwAAAD+DQAA/w8AAP8HAID/BwDg/wcA+P8HAPz/BwD+/wMA//8DAP//A4D//wOA//8BgP/fAcD/HwDA/38AwP//AcD//wPA//8HwP/xB8D/gweA/wcDgP8PAAD/DwAA/x8AAP8fAICfHwCAHx8AgA8fAIAPPwA="),
 "size": Vector2i(32, 32)
 }
 
-[sub_resource type="BitMap" id="BitMap_drh8k"]
+[sub_resource type="BitMap" id="BitMap_3cich"]
 data = {
 "data": PackedByteArray("AAAfAACAfwMAwP8DAMD/AQDA/wEAwP8BAPD/AQD4/wEA/P8AAP7/AAD//wCA//8AgP9/AMD/dwDA/x8AwP9/AOD//wDg//8B4P//AeB/4AHg/8AAwP8BAMD/AwCA/wcAgP8PAAD/DwAA/x8AAP8fAICfHwCAHx8AgA8fAIAPPwA="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_drh8k"]
+data = {
+"data": PackedByteArray("AOADAADwbwAA+H8AAPg/AAD4PwAA+D8AAPx/AAD+fwAA/z8AgP8/AMD/fwDg/38A4P8/APD/HwDw/z8A8P9/APD//wDw//8A8D/wAOB/YADg/wAA4P8BAMD/AwCA/wcAgP8PAAD/DwAA/x8AAP8fAICfHwCAHx8AgA8fAIAPPwA="),
 "size": Vector2i(32, 32)
 }
 
@@ -28,19 +34,19 @@ data = {
 
 [sub_resource type="BitMap" id="BitMap_dsrck"]
 data = {
-"data": PackedByteArray("AOADAADwbwAA+H8AAPg/AAD4PwAA+D8AAPx/AAD+fwAA/z8AgP8/AMD/fwDg/38A4P8/APD/HwDw/z8A8P9/APD//wDw//8A8D/wAOB/YADg/wAA4P8BAMD/AwCA/wcAgP8PAAD/DwAA/x8AAP8fAICfHwCAHx8AgA8fAIAPPwA="),
+"data": PackedByteArray("AAAAAAAAAAAAAPABAAD4NwAA/D8AAPwfAAD+HwCA/x8A4P8fAPD/HwD4/w8A/P8PAPz/DwD+/wMA/v8DAP7/BwD//wcA//8DAP//AAD//wMA//8HAP/jDwD+gw8A/gcPAP4PBgD/DwAA/x8AAP8fAICfHwCAHx8AgA8fAIAPPwA="),
 "size": Vector2i(32, 32)
 }
 
 [sub_resource type="BitMap" id="BitMap_34hyx"]
 data = {
-"data": PackedByteArray("AAAAAAAAAAAAAPABAAD4NwAA/D8AAPwfAAD+HwCA/x8A4P8fAPD/HwD4/w8A/P8PAPz/DwD+/wMA/v8DAP7/BwD//wcA//8DAP//AAD//wMA//8HAP/jDwD+gw8A/gcPAP4PBgD/DwAA/x8AAP8fAICfHwCAHx8AgA8fAIAPPwA="),
+"data": PackedByteArray("AAAAAAAAAAAAAPABAAD4NwAA/D8AAPwfAAD+HwCA/x8A4P8fAPD/HwD4/x8A/P8PAPz/AwD+/wEA/v8BAP7/AAD//wAA//8AAP//AAD//wEA//8BAP//AQD+/wMA/u8DAP7PAwD/zwMA/48BAP8fAICfHwCAHx8AgA8fAIAPPwA="),
 "size": Vector2i(32, 32)
 }
 
 [sub_resource type="BitMap" id="BitMap_vju6j"]
 data = {
-"data": PackedByteArray("AAAAAAAAAAAAAPABAAD4NwAA/D8AAPwfAAD+HwCA/x8A4P8fAPD/HwD4/x8A/P8PAPz/AwD+/wEA/v8BAP7/AAD//wAA//8AAP//AAD//wEA//8BAP//AQD+/wMA/u8DAP7PAwD/zwMA/48BAP8fAICfHwCAHx8AgA8fAIAPPwA="),
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAADgAwAA8G8AAPh/AAD8PwAA/z8AwP8/AOD/PwDw/z8A+P8/APj/HwD8/wcA/P8DAPz/AwD+/wEA/v8BAP7/AQD+/wEA/v8BAP7/AQD+/wMA/v8DAP7/AQD/fwAA/z8AAP8/AICfHwCAHx8AgA8fAIAPPwA="),
 "size": Vector2i(32, 32)
 }
 
@@ -52,35 +58,29 @@ data = {
 
 [sub_resource type="BitMap" id="BitMap_s31a4"]
 data = {
-"data": PackedByteArray("AAAAAAAAAAAAAAAAAADgAwAA8G8AAPh/AAD8PwAA/z8AwP8/AOD/PwDw/z8A+P8/APj/HwD8/wcA/P8DAPz/AwD+/wEA/v8BAP7/AQD+/wEA/v8BAP7/AQD+/wMA/v8DAP7/AQD/fwAA/z8AAP8/AICfHwCAHx8AgA8fAIAPPwA="),
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAADgAwAA8G8AAPh/AAD8PwAA/z8AwP8/AOD/PwDw/z8A+P8/APj/HwD8/wcA/P8DAPz/AwD+/wEA/v8BAP7/AQD+/wEA/v8BAP7/AwD+/wMA/v8BAP5/AAD/fwAA/z8AAP8/AICfHwCAHx8AgA8fAIAPPwA="),
 "size": Vector2i(32, 32)
 }
 
 [sub_resource type="BitMap" id="BitMap_sfmnc"]
 data = {
-"data": PackedByteArray("AAAAAAAAAAAAAAAAAADgAwAA8G8AAPh/AAD8PwAA/z8AwP8/AOD/PwDw/z8A+P8/APj/HwD8/wcA/P8DAPz/AwD+/wEA/v8BAP7/AQD+/wEA/v8BAP7/AwD+/wMA/v8BAP5/AAD/fwAA/z8AAP8/AICfHwCAHx8AgA8fAIAPPwA="),
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAADgAwAA8G8AAPh/AAD8PwAA/z8AwP8/AOD/PwDw/z8A+P8/APj/HwD8/wcA/P8DAPz/AwD+/wEA/v8BAP7/AQD+/wEA/v8BAP7/AQD+/wMA/v8DAP7/AQD/fwAA/z8AAP8/AICfHwCAHx8AgA8fAIAPPwA="),
 "size": Vector2i(32, 32)
 }
 
 [sub_resource type="BitMap" id="BitMap_51ccx"]
 data = {
-"data": PackedByteArray("AAAAAAAAAAAAAAAAAADgAwAA8G8AAPh/AAD8PwAA/z8AwP8/AOD/PwDw/z8A+P8/APj/HwD8/wcA/P8DAPz/AwD+/wEA/v8BAP7/AQD+/wEA/v8BAP7/AQD+/wMA/v8DAP7/AQD/fwAA/z8AAP8/AICfHwCAHx8AgA8fAIAPPwA="),
+"data": PackedByteArray("AAAAAAAAAAAAAAAAAADgAwAA8G8AAPh/AAD8PwAA/z8AwP8/AOD/PwDw/z8A+P8/APj/HwD8/wcA/P8DAPz/AwD+/wEA/v8BAP7/AQD+/wEA/v8BAP7/AwD+/wMA/v8BAP5/AAD/fwAA/z8AAP8/AICfHwCAHx8AgA8fAIAPPwA="),
 "size": Vector2i(32, 32)
 }
 
 [sub_resource type="BitMap" id="BitMap_rbjs4"]
 data = {
-"data": PackedByteArray("AAAAAAAAAAAAAAAAAADgAwAA8G8AAPh/AAD8PwAA/z8AwP8/AOD/PwDw/z8A+P8/APj/HwD8/wcA/P8DAPz/AwD+/wEA/v8BAP7/AQD+/wEA/v8BAP7/AwD+/wMA/v8BAP5/AAD/fwAA/z8AAP8/AICfHwCAHx8AgA8fAIAPPwA="),
-"size": Vector2i(32, 32)
-}
-
-[sub_resource type="BitMap" id="BitMap_tlsbl"]
-data = {
 "data": PackedByteArray("AAAAAAAAAAAAAPABAAD4NwAA/D8AAPwfAAD+HwCA/x8A4P8fAPD/HwD4/x8A/P8PAPz/AwD+/wEA/v8BAP7/AAD//wAA//8AAP//AAD//wEA//8BAP//AQD+/wMA/u8DAP7PAwD/zwMA/48BAP8fAICfHwCAHx8AgA8fAIAPPwA="),
 "size": Vector2i(32, 32)
 }
 
-[sub_resource type="BitMap" id="BitMap_bjgil"]
+[sub_resource type="BitMap" id="BitMap_tlsbl"]
 data = {
 "data": PackedByteArray("AOADAADwbwAA+H8AAPg/AAD4PwAA+D8AAPx/AAD+fwAA/z8AgP8/AMD/fwDg/38A4P8/APD/HwDw/z8A8P9/APD//wDw//8A8D/wAOB/YADg/wAA4P8BAMD/AwCA/wcAgP8PAAD/DwAA/x8AAP8fAICfHwCAHx8AgA8fAIAPPwA="),
 "size": Vector2i(32, 32)
@@ -89,6 +89,7 @@ data = {
 [resource]
 script = ExtResource("1_edg31")
 name = &"tomb_lord_attack_r"
+size = Vector2(32, 32)
 containing_box = Rect2(4, 0, 27, 32)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_3cich"), SubResource("BitMap_drh8k"), SubResource("BitMap_4s1gc"), SubResource("BitMap_t5bru"), SubResource("BitMap_dsrck"), SubResource("BitMap_34hyx"), SubResource("BitMap_vju6j"), SubResource("BitMap_yrnuf"), SubResource("BitMap_s31a4"), SubResource("BitMap_sfmnc"), SubResource("BitMap_51ccx"), SubResource("BitMap_rbjs4"), SubResource("BitMap_tlsbl"), SubResource("BitMap_bjgil")])
+bitmaps = Array[BitMap]([SubResource("BitMap_edg31"), SubResource("BitMap_3cich"), SubResource("BitMap_drh8k"), SubResource("BitMap_4s1gc"), SubResource("BitMap_t5bru"), SubResource("BitMap_dsrck"), SubResource("BitMap_34hyx"), SubResource("BitMap_vju6j"), SubResource("BitMap_yrnuf"), SubResource("BitMap_s31a4"), SubResource("BitMap_sfmnc"), SubResource("BitMap_51ccx"), SubResource("BitMap_rbjs4"), SubResource("BitMap_tlsbl")])

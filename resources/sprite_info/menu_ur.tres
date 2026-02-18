@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_2sjnj"]
 
-[sub_resource type="BitMap" id="BitMap_xkjfy"]
+[sub_resource type="BitMap" id="BitMap_2sjnj"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 0, 0),
 "size": Vector2i(16, 17)
@@ -11,6 +11,7 @@ data = {
 [resource]
 script = ExtResource("1_2sjnj")
 name = &"menu_ur"
+size = Vector2(16, 17)
 containing_box = Rect2(0, 5, 16, 11)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_xkjfy")])
+bitmaps = Array[BitMap]([SubResource("BitMap_2sjnj")])

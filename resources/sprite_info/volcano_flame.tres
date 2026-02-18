@@ -2,31 +2,31 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_w80xq"]
 
-[sub_resource type="BitMap" id="BitMap_83vek"]
+[sub_resource type="BitMap" id="BitMap_w80xq"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 1, 192, 3, 192, 3, 128, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_371sw"]
+[sub_resource type="BitMap" id="BitMap_83vek"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 1, 192, 3, 224, 3, 224, 3, 192, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_kg60e"]
+[sub_resource type="BitMap" id="BitMap_371sw"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 192, 3, 224, 3, 224, 3, 224, 3, 192, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_vnsso"]
+[sub_resource type="BitMap" id="BitMap_kg60e"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 0, 192, 1, 192, 3, 192, 1, 128, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_jr7w1"]
+[sub_resource type="BitMap" id="BitMap_vnsso"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 192, 1, 224, 3, 224, 3, 192, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 "size": Vector2i(16, 16)
@@ -35,6 +35,7 @@ data = {
 [resource]
 script = ExtResource("1_w80xq")
 name = &"volcano_flame"
+size = Vector2(16, 16)
 containing_box = Rect2(5, 5, 5, 6)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_83vek"), SubResource("BitMap_371sw"), SubResource("BitMap_kg60e"), SubResource("BitMap_vnsso"), SubResource("BitMap_jr7w1")])
+bitmaps = Array[BitMap]([SubResource("BitMap_w80xq"), SubResource("BitMap_83vek"), SubResource("BitMap_371sw"), SubResource("BitMap_kg60e"), SubResource("BitMap_vnsso")])

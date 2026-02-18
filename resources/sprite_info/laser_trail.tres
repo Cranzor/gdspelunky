@@ -2,31 +2,31 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_aj21w"]
 
-[sub_resource type="BitMap" id="BitMap_deneh"]
+[sub_resource type="BitMap" id="BitMap_aj21w"]
 data = {
 "data": PackedByteArray(60, 126, 255, 255, 255, 255, 126, 60),
 "size": Vector2i(8, 8)
 }
 
-[sub_resource type="BitMap" id="BitMap_btrug"]
+[sub_resource type="BitMap" id="BitMap_deneh"]
 data = {
 "data": PackedByteArray(0, 60, 126, 126, 126, 126, 60, 0),
 "size": Vector2i(8, 8)
 }
 
-[sub_resource type="BitMap" id="BitMap_13cri"]
+[sub_resource type="BitMap" id="BitMap_btrug"]
 data = {
 "data": PackedByteArray(0, 0, 24, 60, 60, 24, 0, 0),
 "size": Vector2i(8, 8)
 }
 
-[sub_resource type="BitMap" id="BitMap_ciuk1"]
+[sub_resource type="BitMap" id="BitMap_13cri"]
 data = {
 "data": PackedByteArray(0, 0, 0, 24, 60, 24, 0, 0),
 "size": Vector2i(8, 8)
 }
 
-[sub_resource type="BitMap" id="BitMap_xb712"]
+[sub_resource type="BitMap" id="BitMap_ciuk1"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 24, 0, 0, 0),
 "size": Vector2i(8, 8)
@@ -35,7 +35,8 @@ data = {
 [resource]
 script = ExtResource("1_aj21w")
 name = &"laser_trail"
+size = Vector2(8, 8)
 origin = Vector2(4, 4)
 containing_box = Rect2(0, 0, 8, 8)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_deneh"), SubResource("BitMap_btrug"), SubResource("BitMap_13cri"), SubResource("BitMap_ciuk1"), SubResource("BitMap_xb712")])
+bitmaps = Array[BitMap]([SubResource("BitMap_aj21w"), SubResource("BitMap_deneh"), SubResource("BitMap_btrug"), SubResource("BitMap_13cri"), SubResource("BitMap_ciuk1")])

@@ -24,6 +24,7 @@ func _run() -> void:
 			var bitmaps: Array[BitMap]
 			for file in files:
 				var loaded_png: Texture2D = load(file)
+				sprite_info.size = loaded_png.get_size()
 				var image: Image = loaded_png.get_image()
 				var bitmap := BitMap.new()
 				bitmap.create_from_image_alpha(image)

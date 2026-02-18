@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_wl8d0"]
 
-[sub_resource type="BitMap" id="BitMap_augmr"]
+[sub_resource type="BitMap" id="BitMap_wl8d0"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 192, 0, 88, 5, 40, 10, 78, 59, 175, 122, 31, 124, 255, 127, 255, 127, 254, 63, 240, 7, 0, 0, 0, 0),
 "size": Vector2i(16, 16)
@@ -11,5 +11,6 @@ data = {
 [resource]
 script = ExtResource("1_wl8d0")
 name = &"ufo_crash"
+size = Vector2(16, 16)
 containing_box = Rect2(0, 4, 15, 10)
-bitmaps = Array[BitMap]([SubResource("BitMap_augmr")])
+bitmaps = Array[BitMap]([SubResource("BitMap_wl8d0")])

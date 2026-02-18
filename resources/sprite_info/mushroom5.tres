@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_5l6gh"]
 
-[sub_resource type="BitMap" id="BitMap_hefwd"]
+[sub_resource type="BitMap" id="BitMap_5l6gh"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 224, 7, 240, 15, 248, 31, 248, 31, 248, 31, 248, 31, 240, 15, 192, 3, 192, 3, 192, 3, 224, 7, 224, 7, 192, 3),
 "size": Vector2i(16, 16)
@@ -11,6 +11,7 @@ data = {
 [resource]
 script = ExtResource("1_5l6gh")
 name = &"mushroom5"
+size = Vector2(16, 16)
 containing_box = Rect2(3, 3, 10, 13)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_hefwd")])
+bitmaps = Array[BitMap]([SubResource("BitMap_5l6gh")])

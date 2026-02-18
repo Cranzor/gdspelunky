@@ -47,6 +47,7 @@ data = {
 [resource]
 script = ExtResource("1_hx1op")
 name = &"push_left"
+size = Vector2(16, 16)
 origin = Vector2(8, 8)
 containing_box = Rect2(2, 0, 14, 16)
 bitmaps = Array[BitMap]([SubResource("BitMap_hx1op"), SubResource("BitMap_1oowi"), SubResource("BitMap_nkwcl"), SubResource("BitMap_7pif8"), SubResource("BitMap_jjiqo"), SubResource("BitMap_vh4qp"), SubResource("BitMap_hr5kd")])

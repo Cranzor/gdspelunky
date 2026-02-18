@@ -2,19 +2,19 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_7yjja"]
 
-[sub_resource type="BitMap" id="BitMap_jmafs"]
+[sub_resource type="BitMap" id="BitMap_7yjja"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAADgfwAA4P8DAOD/DwDg/w8AAIAfAAAAHAAAADAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="),
 "size": Vector2i(32, 32)
 }
 
-[sub_resource type="BitMap" id="BitMap_ntt24"]
+[sub_resource type="BitMap" id="BitMap_jmafs"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAwP8HAPz/AAD/HwDA/wMA4H8AAMAfAACABwAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="),
 "size": Vector2i(32, 32)
 }
 
-[sub_resource type="BitMap" id="BitMap_x6lnq"]
+[sub_resource type="BitMap" id="BitMap_ntt24"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAEAAIAAAABAAAAAIAAAADAAAAAQAAAAGAAAABgAAAAMAAAADAAAAAwAAAAGAAAABgAAAAYAAAACAAAAAgAAAAIAAAACAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAA="),
 "size": Vector2i(32, 32)
@@ -23,7 +23,8 @@ data = {
 [resource]
 script = ExtResource("1_7yjja")
 name = &"slash_left"
+size = Vector2(32, 32)
 origin = Vector2(4, 24)
 containing_box = Rect2(1, 4, 29, 24)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_jmafs"), SubResource("BitMap_ntt24"), SubResource("BitMap_x6lnq")])
+bitmaps = Array[BitMap]([SubResource("BitMap_7yjja"), SubResource("BitMap_jmafs"), SubResource("BitMap_ntt24")])

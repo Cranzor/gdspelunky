@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_7rgof"]
 
-[sub_resource type="BitMap" id="BitMap_06wci"]
+[sub_resource type="BitMap" id="BitMap_7rgof"]
 data = {
 "data": PackedByteArray(224, 7, 240, 15, 240, 15, 240, 15, 248, 31, 252, 63, 254, 127, 254, 127, 254, 127, 254, 127, 254, 127, 248, 31, 248, 31, 248, 31, 248, 31, 248, 31),
 "size": Vector2i(16, 16)
@@ -11,7 +11,8 @@ data = {
 [resource]
 script = ExtResource("1_7rgof")
 name = &"ninja_suit"
+size = Vector2(16, 16)
 origin = Vector2(8, 8)
 containing_box = Rect2(1, 0, 14, 16)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_06wci")])
+bitmaps = Array[BitMap]([SubResource("BitMap_7rgof")])

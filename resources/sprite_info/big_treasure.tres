@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_f1avk"]
 
-[sub_resource type="BitMap" id="BitMap_83acn"]
+[sub_resource type="BitMap" id="BitMap_f1avk"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAA/D8AAP//AID//wHA//8D4P//A+D//wfg//8H4P//B+D//wfw//8P8P//D/j//x/4//8f+P//H/j//x/4//8f+P//H/D//w/w//8P4P//B+D//wfg//8H4P//B+D//wfA//8DwP//A8D//wPA//8DwP//A4D//wE="),
 "size": Vector2i(32, 32)
@@ -11,6 +11,7 @@ data = {
 [resource]
 script = ExtResource("1_f1avk")
 name = &"big_treasure"
+size = Vector2(32, 32)
 containing_box = Rect2(3, 2, 26, 30)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_83acn")])
+bitmaps = Array[BitMap]([SubResource("BitMap_f1avk")])

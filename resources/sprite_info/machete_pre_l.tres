@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_te0ym"]
 
-[sub_resource type="BitMap" id="BitMap_gitd2"]
+[sub_resource type="BitMap" id="BitMap_te0ym"]
 data = {
 "data": PackedByteArray(64, 0, 96, 0, 112, 0, 56, 0, 60, 0, 31, 0, 15, 0, 3, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 "size": Vector2i(16, 16)
@@ -11,7 +11,8 @@ data = {
 [resource]
 script = ExtResource("1_te0ym")
 name = &"machete_pre_l"
+size = Vector2(16, 16)
 origin = Vector2(8, 8)
 containing_box = Rect2(0, 0, 7, 9)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_gitd2")])
+bitmaps = Array[BitMap]([SubResource("BitMap_te0ym")])

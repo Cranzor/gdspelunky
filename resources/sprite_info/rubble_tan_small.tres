@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_8lvq1"]
 
-[sub_resource type="BitMap" id="BitMap_3r4lw"]
+[sub_resource type="BitMap" id="BitMap_8lvq1"]
 data = {
 "data": PackedByteArray(246, 111),
 "size": Vector2i(4, 4)
@@ -11,7 +11,8 @@ data = {
 [resource]
 script = ExtResource("1_8lvq1")
 name = &"rubble_tan_small"
+size = Vector2(4, 4)
 origin = Vector2(4, 4)
 containing_box = Rect2(0, 0, 4, 4)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_3r4lw")])
+bitmaps = Array[BitMap]([SubResource("BitMap_8lvq1")])

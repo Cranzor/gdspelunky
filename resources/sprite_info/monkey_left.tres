@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_d8mj5"]
 
-[sub_resource type="BitMap" id="BitMap_jmy7n"]
+[sub_resource type="BitMap" id="BitMap_d8mj5"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 240, 1, 248, 3, 248, 3, 248, 3, 248, 7, 252, 3, 252, 7, 248, 15, 224, 47, 224, 111, 160, 127, 160, 62),
 "size": Vector2i(16, 16)
@@ -11,6 +11,7 @@ data = {
 [resource]
 script = ExtResource("1_d8mj5")
 name = &"monkey_left"
+size = Vector2(16, 16)
 containing_box = Rect2(2, 4, 13, 12)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_jmy7n")])
+bitmaps = Array[BitMap]([SubResource("BitMap_d8mj5")])

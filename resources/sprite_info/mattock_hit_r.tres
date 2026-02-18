@@ -2,19 +2,19 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_ih2kj"]
 
-[sub_resource type="BitMap" id="BitMap_dgou1"]
+[sub_resource type="BitMap" id="BitMap_ih2kj"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 224, 0, 224, 1, 192, 3, 192, 3, 255, 3, 255, 7, 255, 7, 255, 3, 192, 3, 192, 3, 224, 1, 224, 0, 0, 0, 0, 0),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_170ws"]
+[sub_resource type="BitMap" id="BitMap_dgou1"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 224, 0, 192, 1, 192, 3, 199, 3, 255, 3, 255, 7, 255, 7, 248, 3, 224, 1, 224, 1, 240, 0, 112, 0, 0, 0),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_1rc8m"]
+[sub_resource type="BitMap" id="BitMap_170ws"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 224, 0, 192, 1, 192, 3, 199, 3, 255, 3, 255, 7, 255, 7, 248, 3, 224, 1, 224, 1, 240, 0, 112, 0),
 "size": Vector2i(16, 16)
@@ -23,7 +23,8 @@ data = {
 [resource]
 script = ExtResource("1_ih2kj")
 name = &"mattock_hit_r"
+size = Vector2(16, 16)
 origin = Vector2(8, 8)
 containing_box = Rect2(0, 2, 11, 14)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_dgou1"), SubResource("BitMap_170ws"), SubResource("BitMap_1rc8m")])
+bitmaps = Array[BitMap]([SubResource("BitMap_ih2kj"), SubResource("BitMap_dgou1"), SubResource("BitMap_170ws")])

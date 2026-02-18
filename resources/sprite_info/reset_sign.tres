@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_pnvxk"]
 
-[sub_resource type="BitMap" id="BitMap_8e25y"]
+[sub_resource type="BitMap" id="BitMap_pnvxk"]
 data = {
 "data": PackedByteArray("////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////"),
 "size": Vector2i(48, 16)
@@ -11,5 +11,6 @@ data = {
 [resource]
 script = ExtResource("1_pnvxk")
 name = &"reset_sign"
+size = Vector2(48, 16)
 containing_box = Rect2(0, 0, 48, 16)
-bitmaps = Array[BitMap]([SubResource("BitMap_8e25y")])
+bitmaps = Array[BitMap]([SubResource("BitMap_pnvxk")])

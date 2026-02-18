@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_1nk44"]
 
-[sub_resource type="BitMap" id="BitMap_oyw2f"]
+[sub_resource type="BitMap" id="BitMap_1nk44"]
 data = {
 "data": PackedByteArray("////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////"),
 "size": Vector2i(144, 8)
@@ -11,5 +11,6 @@ data = {
 [resource]
 script = ExtResource("1_1nk44")
 name = &"slider_bg"
+size = Vector2(144, 8)
 containing_box = Rect2(0, 0, 144, 8)
-bitmaps = Array[BitMap]([SubResource("BitMap_oyw2f")])
+bitmaps = Array[BitMap]([SubResource("BitMap_1nk44")])

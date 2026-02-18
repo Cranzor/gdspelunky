@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_ordev"]
 
-[sub_resource type="BitMap" id="BitMap_fiay8"]
+[sub_resource type="BitMap" id="BitMap_ordev"]
 data = {
 "data": PackedByteArray(255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255),
 "size": Vector2i(32, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_3sfgw"]
+[sub_resource type="BitMap" id="BitMap_fiay8"]
 data = {
 "data": PackedByteArray(255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255),
 "size": Vector2i(32, 16)
@@ -17,5 +17,6 @@ data = {
 [resource]
 script = ExtResource("1_ordev")
 name = &"sac_altar"
+size = Vector2(32, 16)
 containing_box = Rect2(0, 0, 32, 16)
-bitmaps = Array[BitMap]([SubResource("BitMap_fiay8"), SubResource("BitMap_3sfgw")])
+bitmaps = Array[BitMap]([SubResource("BitMap_ordev"), SubResource("BitMap_fiay8")])

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_0dval"]
 
-[sub_resource type="BitMap" id="BitMap_kg2ab"]
+[sub_resource type="BitMap" id="BitMap_0dval"]
 data = {
 "data": PackedByteArray(254, 127, 254, 127, 254, 127, 254, 127, 254, 127, 254, 127, 254, 127, 254, 127, 254, 127, 254, 127, 254, 127, 254, 127, 254, 127, 254, 127, 254, 127, 254, 127, 254, 127, 254, 127, 254, 127, 254, 127, 254, 127, 254, 127, 254, 127, 254, 127, 254, 127, 254, 127, 254, 127, 254, 127, 254, 127, 254, 127, 254, 127, 254, 127),
 "size": Vector2i(16, 32)
@@ -11,5 +11,6 @@ data = {
 [resource]
 script = ExtResource("1_0dval")
 name = &"door"
+size = Vector2(16, 32)
 containing_box = Rect2(1, 0, 14, 32)
-bitmaps = Array[BitMap]([SubResource("BitMap_kg2ab")])
+bitmaps = Array[BitMap]([SubResource("BitMap_0dval")])

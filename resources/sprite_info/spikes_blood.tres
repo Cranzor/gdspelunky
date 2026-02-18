@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_nme47"]
 
-[sub_resource type="BitMap" id="BitMap_bg36o"]
+[sub_resource type="BitMap" id="BitMap_nme47"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 8, 128, 8, 128, 12, 144, 12, 213, 76, 245, 79, 255, 111, 255, 127, 255, 255, 255, 255, 254, 255),
 "size": Vector2i(16, 16)
@@ -11,5 +11,6 @@ data = {
 [resource]
 script = ExtResource("1_nme47")
 name = &"spikes_blood"
+size = Vector2(16, 16)
 containing_box = Rect2(0, 4, 16, 12)
-bitmaps = Array[BitMap]([SubResource("BitMap_bg36o")])
+bitmaps = Array[BitMap]([SubResource("BitMap_nme47")])

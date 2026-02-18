@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_c4lbo"]
 
-[sub_resource type="BitMap" id="BitMap_rtjrd"]
+[sub_resource type="BitMap" id="BitMap_c4lbo"]
 data = {
 "data": PackedByteArray(8, 16, 28, 56, 252, 63, 252, 63, 252, 31, 252, 31, 252, 31, 252, 31, 248, 31, 248, 15, 248, 15, 240, 15, 240, 15, 224, 31, 192, 31, 0, 0),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_6xrgu"]
+[sub_resource type="BitMap" id="BitMap_rtjrd"]
 data = {
 "data": PackedByteArray(2, 4, 7, 14, 255, 15, 255, 15, 254, 15, 254, 15, 254, 15, 252, 15, 252, 15, 248, 15, 240, 15, 240, 15, 224, 15, 192, 31, 128, 31, 0, 0),
 "size": Vector2i(16, 16)
@@ -17,7 +17,8 @@ data = {
 [resource]
 script = ExtResource("1_c4lbo")
 name = &"cape_ur"
+size = Vector2(16, 16)
 origin = Vector2(8, 16)
 containing_box = Rect2(0, 0, 14, 15)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_rtjrd"), SubResource("BitMap_6xrgu")])
+bitmaps = Array[BitMap]([SubResource("BitMap_c4lbo"), SubResource("BitMap_rtjrd")])

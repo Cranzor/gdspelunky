@@ -35,6 +35,7 @@ data = {
 [resource]
 script = ExtResource("1_wifpl")
 name = &"stun_l"
+size = Vector2(16, 16)
 origin = Vector2(8, 8)
 containing_box = Rect2(1, 0, 15, 16)
 bitmaps = Array[BitMap]([SubResource("BitMap_wifpl"), SubResource("BitMap_23gkf"), SubResource("BitMap_jxb8r"), SubResource("BitMap_t51sc"), SubResource("BitMap_r121w")])

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_qydbb"]
 
-[sub_resource type="BitMap" id="BitMap_y25qa"]
+[sub_resource type="BitMap" id="BitMap_qydbb"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 192, 127, 240, 127, 248, 127, 252, 127, 252, 63, 252, 31, 24, 0),
 "size": Vector2i(16, 16)
@@ -11,6 +11,7 @@ data = {
 [resource]
 script = ExtResource("1_qydbb")
 name = &"shotgun_tile"
+size = Vector2(16, 16)
 containing_box = Rect2(2, 9, 13, 7)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_y25qa")])
+bitmaps = Array[BitMap]([SubResource("BitMap_qydbb")])

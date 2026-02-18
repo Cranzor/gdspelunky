@@ -11,6 +11,7 @@ data = {
 [resource]
 script = ExtResource("1_qough")
 name = &"hang_left"
+size = Vector2(16, 16)
 origin = Vector2(8, 8)
 containing_box = Rect2(0, 0, 15, 16)
 bitmaps = Array[BitMap]([SubResource("BitMap_qough")])

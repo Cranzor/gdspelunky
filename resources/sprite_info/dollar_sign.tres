@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_u37qs"]
 
-[sub_resource type="BitMap" id="BitMap_ggnrv"]
+[sub_resource type="BitMap" id="BitMap_u37qs"]
 data = {
 "data": PackedByteArray(0, 0, 224, 15, 240, 127, 248, 127, 252, 127, 252, 127, 252, 127, 252, 63, 252, 127, 248, 127, 252, 127, 252, 127, 252, 127, 252, 63, 252, 31, 224, 15),
 "size": Vector2i(16, 16)
@@ -11,6 +11,7 @@ data = {
 [resource]
 script = ExtResource("1_u37qs")
 name = &"dollar_sign"
+size = Vector2(16, 16)
 containing_box = Rect2(2, 1, 13, 15)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_ggnrv")])
+bitmaps = Array[BitMap]([SubResource("BitMap_u37qs")])

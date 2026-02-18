@@ -2,6 +2,12 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_0yr53"]
 
+[sub_resource type="BitMap" id="BitMap_0yr53"]
+data = {
+"data": PackedByteArray(255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255),
+"size": Vector2i(16, 16)
+}
+
 [sub_resource type="BitMap" id="BitMap_wt1gf"]
 data = {
 "data": PackedByteArray(255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255),
@@ -20,14 +26,9 @@ data = {
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_addhj"]
-data = {
-"data": PackedByteArray(255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255),
-"size": Vector2i(16, 16)
-}
-
 [resource]
 script = ExtResource("1_0yr53")
 name = &"spear_trap_lit"
+size = Vector2(16, 16)
 containing_box = Rect2(0, 0, 16, 16)
-bitmaps = Array[BitMap]([SubResource("BitMap_wt1gf"), SubResource("BitMap_q1pxy"), SubResource("BitMap_21tml"), SubResource("BitMap_addhj")])
+bitmaps = Array[BitMap]([SubResource("BitMap_0yr53"), SubResource("BitMap_wt1gf"), SubResource("BitMap_q1pxy"), SubResource("BitMap_21tml")])

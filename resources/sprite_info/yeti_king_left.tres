@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_x726m"]
 
-[sub_resource type="BitMap" id="BitMap_tacuv"]
+[sub_resource type="BitMap" id="BitMap_x726m"]
 data = {
 "data": PackedByteArray("APwfAAD+PwAA/38AgP//AID//wHA//8H4P//D/D//x/4//8/+P//P/z//3/8//9//P////7////+/////v////7////+/////v////7////+/////v////7////+/////v////z////8//9/+P//P8D//wfA//8HwP//B8D//wc="),
 "size": Vector2i(32, 32)
@@ -11,5 +11,6 @@ data = {
 [resource]
 script = ExtResource("1_x726m")
 name = &"yeti_king_left"
+size = Vector2(32, 32)
 containing_box = Rect2(1, 0, 31, 32)
-bitmaps = Array[BitMap]([SubResource("BitMap_tacuv")])
+bitmaps = Array[BitMap]([SubResource("BitMap_x726m")])

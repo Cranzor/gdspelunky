@@ -2,43 +2,43 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_l4dw6"]
 
-[sub_resource type="BitMap" id="BitMap_7ethm"]
+[sub_resource type="BitMap" id="BitMap_l4dw6"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 192, 3, 224, 7, 240, 7, 240, 15, 248, 15, 252, 31, 252, 63, 252, 63, 252, 63, 252, 63, 248, 31, 240, 15, 224, 7, 0, 0),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_vb557"]
+[sub_resource type="BitMap" id="BitMap_7ethm"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 128, 1, 192, 3, 224, 7, 240, 7, 240, 15, 250, 15, 254, 31, 254, 63, 255, 127, 255, 255, 254, 255, 252, 63),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_t6prl"]
+[sub_resource type="BitMap" id="BitMap_vb557"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 132, 65, 198, 67, 238, 103, 254, 119, 255, 127, 255, 255, 255, 255, 254, 127),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_jitpx"]
+[sub_resource type="BitMap" id="BitMap_t6prl"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 96, 0, 48, 4, 24, 12, 28, 28, 28, 92, 30, 120, 158, 121, 254, 123, 255, 127, 255, 255, 255, 255, 254, 127),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_afly4"]
+[sub_resource type="BitMap" id="BitMap_jitpx"]
 data = {
 "data": PackedByteArray(0, 0, 224, 0, 240, 1, 240, 1, 240, 3, 224, 3, 224, 7, 240, 15, 240, 47, 248, 63, 248, 63, 248, 63, 252, 63, 252, 127, 252, 127, 248, 63),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_qwiyj"]
+[sub_resource type="BitMap" id="BitMap_afly4"]
 data = {
 "data": PackedByteArray(96, 0, 240, 0, 240, 1, 240, 1, 240, 3, 224, 3, 224, 7, 224, 15, 224, 15, 240, 15, 240, 15, 240, 31, 240, 31, 224, 31, 224, 31, 224, 15),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_751dr"]
+[sub_resource type="BitMap" id="BitMap_qwiyj"]
 data = {
 "data": PackedByteArray(96, 0, 240, 1, 240, 1, 240, 3, 240, 11, 240, 15, 240, 15, 248, 31, 248, 31, 252, 63, 252, 63, 252, 63, 248, 31, 224, 31, 224, 31, 224, 15),
 "size": Vector2i(16, 16)
@@ -47,7 +47,8 @@ data = {
 [resource]
 script = ExtResource("1_l4dw6")
 name = &"magma_man_create"
+size = Vector2(16, 16)
 origin = Vector2(8, 8)
 containing_box = Rect2(0, 0, 16, 16)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_7ethm"), SubResource("BitMap_vb557"), SubResource("BitMap_t6prl"), SubResource("BitMap_jitpx"), SubResource("BitMap_afly4"), SubResource("BitMap_qwiyj"), SubResource("BitMap_751dr")])
+bitmaps = Array[BitMap]([SubResource("BitMap_l4dw6"), SubResource("BitMap_7ethm"), SubResource("BitMap_vb557"), SubResource("BitMap_t6prl"), SubResource("BitMap_jitpx"), SubResource("BitMap_afly4"), SubResource("BitMap_qwiyj")])

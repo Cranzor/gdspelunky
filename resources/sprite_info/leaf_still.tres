@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_w57hx"]
 
-[sub_resource type="BitMap" id="BitMap_he5bq"]
+[sub_resource type="BitMap" id="BitMap_w57hx"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 224, 0, 240, 3, 224, 7, 192, 3),
 "size": Vector2i(16, 8)
@@ -11,7 +11,8 @@ data = {
 [resource]
 script = ExtResource("1_w57hx")
 name = &"leaf_still"
+size = Vector2(16, 8)
 origin = Vector2(4, 4)
 containing_box = Rect2(4, 4, 7, 4)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_he5bq")])
+bitmaps = Array[BitMap]([SubResource("BitMap_w57hx")])

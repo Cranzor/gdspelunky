@@ -65,6 +65,7 @@ data = {
 [resource]
 script = ExtResource("1_uiewl")
 name = &"tunnel_dt_hl"
+size = Vector2(32, 32)
 origin = Vector2(24, 8)
 containing_box = Rect2(8, 1, 24, 28)
 bitmaps = Array[BitMap]([SubResource("BitMap_uiewl"), SubResource("BitMap_jh4lf"), SubResource("BitMap_xdrfj"), SubResource("BitMap_r6m03"), SubResource("BitMap_smbug"), SubResource("BitMap_oy1m8"), SubResource("BitMap_b1yfr"), SubResource("BitMap_7kdec"), SubResource("BitMap_qwost"), SubResource("BitMap_j1b82")])

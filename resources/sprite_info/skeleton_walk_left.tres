@@ -2,31 +2,31 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_tt2ep"]
 
-[sub_resource type="BitMap" id="BitMap_di3rh"]
+[sub_resource type="BitMap" id="BitMap_tt2ep"]
 data = {
 "data": PackedByteArray(128, 7, 192, 15, 224, 31, 224, 31, 224, 31, 224, 31, 224, 15, 128, 15, 252, 31, 252, 31, 248, 15, 224, 31, 224, 31, 192, 15, 192, 15, 192, 15),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_4jbj4"]
+[sub_resource type="BitMap" id="BitMap_di3rh"]
 data = {
 "data": PackedByteArray(224, 3, 240, 7, 248, 7, 248, 7, 248, 7, 240, 3, 240, 7, 252, 15, 252, 31, 248, 31, 224, 15, 224, 31, 240, 31, 112, 14, 48, 28, 0, 28),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_p2myj"]
+[sub_resource type="BitMap" id="BitMap_4jbj4"]
 data = {
 "data": PackedByteArray(240, 1, 248, 3, 252, 3, 252, 3, 252, 3, 248, 1, 248, 3, 254, 7, 254, 15, 252, 15, 240, 7, 240, 15, 248, 15, 56, 14, 24, 28, 0, 28),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_g3qg4"]
+[sub_resource type="BitMap" id="BitMap_p2myj"]
 data = {
 "data": PackedByteArray(0, 0, 240, 1, 248, 3, 252, 3, 252, 3, 252, 3, 248, 3, 248, 7, 254, 15, 254, 15, 252, 7, 224, 7, 224, 15, 240, 15, 120, 28, 56, 28),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_7n4ub"]
+[sub_resource type="BitMap" id="BitMap_g3qg4"]
 data = {
 "data": PackedByteArray(192, 3, 224, 7, 240, 15, 240, 15, 240, 15, 240, 7, 240, 7, 128, 15, 252, 31, 252, 31, 248, 15, 224, 31, 192, 31, 128, 15, 128, 7, 128, 3),
 "size": Vector2i(16, 16)
@@ -35,5 +35,6 @@ data = {
 [resource]
 script = ExtResource("1_tt2ep")
 name = &"skeleton_walk_left"
+size = Vector2(16, 16)
 containing_box = Rect2(1, 0, 12, 16)
-bitmaps = Array[BitMap]([SubResource("BitMap_di3rh"), SubResource("BitMap_4jbj4"), SubResource("BitMap_p2myj"), SubResource("BitMap_g3qg4"), SubResource("BitMap_7n4ub")])
+bitmaps = Array[BitMap]([SubResource("BitMap_tt2ep"), SubResource("BitMap_di3rh"), SubResource("BitMap_4jbj4"), SubResource("BitMap_p2myj"), SubResource("BitMap_g3qg4")])

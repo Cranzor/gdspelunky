@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_aujiv"]
 
-[sub_resource type="BitMap" id="BitMap_jqxk0"]
+[sub_resource type="BitMap" id="BitMap_aujiv"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 252, 1, 254, 7, 255, 15, 255, 31, 255, 63, 254, 127, 254, 255, 252, 255, 254, 255, 255, 255, 255, 111, 190, 15, 24, 6, 8, 2),
 "size": Vector2i(16, 16)
@@ -11,5 +11,6 @@ data = {
 [resource]
 script = ExtResource("1_aujiv")
 name = &"hawk_bounce_l"
+size = Vector2(16, 16)
 containing_box = Rect2(0, 2, 16, 14)
-bitmaps = Array[BitMap]([SubResource("BitMap_jqxk0")])
+bitmaps = Array[BitMap]([SubResource("BitMap_aujiv")])

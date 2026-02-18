@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_dygf7"]
 
-[sub_resource type="BitMap" id="BitMap_oirme"]
+[sub_resource type="BitMap" id="BitMap_dygf7"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 152, 3, 252, 111, 252, 127, 254, 127, 254, 127, 254, 127, 252, 127, 248, 127, 248, 63, 240, 63, 224, 63, 192, 48, 0, 0, 0, 0),
 "size": Vector2i(16, 16)
@@ -11,5 +11,6 @@ data = {
 [resource]
 script = ExtResource("1_dygf7")
 name = &"frog_jump_l"
+size = Vector2(16, 16)
 containing_box = Rect2(1, 2, 14, 12)
-bitmaps = Array[BitMap]([SubResource("BitMap_oirme")])
+bitmaps = Array[BitMap]([SubResource("BitMap_dygf7")])

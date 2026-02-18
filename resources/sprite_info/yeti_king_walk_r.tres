@@ -2,49 +2,49 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_rhcpr"]
 
-[sub_resource type="BitMap" id="BitMap_wd0h7"]
+[sub_resource type="BitMap" id="BitMap_rhcpr"]
 data = {
 "data": PackedByteArray("APg/AAD8fwAA/v8AAP//AYD//wHg//8D8P//B/j//w/8//8f/P//H/7//z/+//8/////P////3////9/////f////3////9/////f////3////9/////f////3////9/////P/7//z/8//8fwP//AID//wAA/38AAPh/AAD4fwA="),
 "size": Vector2i(32, 32)
 }
 
-[sub_resource type="BitMap" id="BitMap_8tyau"]
+[sub_resource type="BitMap" id="BitMap_wd0h7"]
 data = {
 "data": PackedByteArray("APg/AAD8fwAA/v8AAP//AYD//wHg//8D8P//B/j//w/8//8f/P//H/7//z/+//8/////P////3////9/////f////3////9/////f////3////9/////f////3////8//v//P/z//x+A//8BgP//AID//wCA/wcAgP8HAID/BwA="),
 "size": Vector2i(32, 32)
 }
 
-[sub_resource type="BitMap" id="BitMap_magaw"]
+[sub_resource type="BitMap" id="BitMap_8tyau"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAA+D8AAPx/AAD+/wAA//8BgP//AeD//wPw//8H+P//D/z//x/8//8f/v//P/7//z////8/////f////3////9/////f////3////9/////f////3////9/////f////z/+//8//P//H4D//weA//8HgP//B4D//wc="),
 "size": Vector2i(32, 32)
 }
 
-[sub_resource type="BitMap" id="BitMap_vc3qk"]
+[sub_resource type="BitMap" id="BitMap_magaw"]
 data = {
 "data": PackedByteArray("AAAAAAD4PwAA/H8AAP7/AAD//wGA//8B4P//A/D//wf4//8P/P//H/z//x/+//8//v//P////z////9/////f////3////9/////f////3////9/////f////3////9/////f////z/+//8//P//H+D//wPg//8D4P//A+D//wM="),
 "size": Vector2i(32, 32)
 }
 
-[sub_resource type="BitMap" id="BitMap_j5urq"]
+[sub_resource type="BitMap" id="BitMap_vc3qk"]
 data = {
 "data": PackedByteArray("APg/AAD8fwAA/v8AAP//AYD//wHg//8D8P//B/j//w/8//8f/P//H/7//z/+//8/////P////3////9/////f////3////9/////f////3////9/////f////3////9/////f/7//z/8//8f8P//D/B//h/wf/4f8P8AAPD/AAA="),
 "size": Vector2i(32, 32)
 }
 
-[sub_resource type="BitMap" id="BitMap_j2isr"]
+[sub_resource type="BitMap" id="BitMap_j5urq"]
 data = {
 "data": PackedByteArray("APg/AAD8fwAA/v8AAP//AYD//wHg//8D8P//B/j//w/8//8f/P//H/7//z/+//8/////P////3////9/////f////3////9/////f////3////9/////f////3////9//v//P/z//z/4//0/+P/8H/h/AAD4PwAA+H8AAPh/AAA="),
 "size": Vector2i(32, 32)
 }
 
-[sub_resource type="BitMap" id="BitMap_ghlm6"]
+[sub_resource type="BitMap" id="BitMap_j2isr"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAA+D8AAPx/AAD+/wAA//8BgP//AeD//wPw//8H+P//D/z//x/8//8f/v//P/7//z////8/////f////3////9/////f////3////9/////f////3////9/////f////z/+//8f/P//H/h//h/4P/wf+H/8P/h//D8="),
 "size": Vector2i(32, 32)
 }
 
-[sub_resource type="BitMap" id="BitMap_1sj5w"]
+[sub_resource type="BitMap" id="BitMap_ghlm6"]
 data = {
 "data": PackedByteArray("AAAAAAD4PwAA/H8AAP7/AAD//wGA//8B4P//A/D//wf4//8P/P//H/z//x/+//8//v//P////z////9/////f////3////9/////f////3////9/////f////3////9/////f////z/+//8//P//H+D//wPg//8D4P//A+D//wM="),
 "size": Vector2i(32, 32)
@@ -53,5 +53,6 @@ data = {
 [resource]
 script = ExtResource("1_rhcpr")
 name = &"yeti_king_walk_r"
+size = Vector2(32, 32)
 containing_box = Rect2(0, 0, 31, 32)
-bitmaps = Array[BitMap]([SubResource("BitMap_wd0h7"), SubResource("BitMap_8tyau"), SubResource("BitMap_magaw"), SubResource("BitMap_vc3qk"), SubResource("BitMap_j5urq"), SubResource("BitMap_j2isr"), SubResource("BitMap_ghlm6"), SubResource("BitMap_1sj5w")])
+bitmaps = Array[BitMap]([SubResource("BitMap_rhcpr"), SubResource("BitMap_wd0h7"), SubResource("BitMap_8tyau"), SubResource("BitMap_magaw"), SubResource("BitMap_vc3qk"), SubResource("BitMap_j5urq"), SubResource("BitMap_j2isr"), SubResource("BitMap_ghlm6")])

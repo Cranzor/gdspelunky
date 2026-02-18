@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_jky5c"]
 
-[sub_resource type="BitMap" id="BitMap_4r42q"]
+[sub_resource type="BitMap" id="BitMap_jky5c"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 224, 7, 240, 15, 240, 15, 240, 15, 248, 31, 248, 31, 248, 31, 248, 31, 240, 15),
 "size": Vector2i(16, 16)
@@ -11,5 +11,6 @@ data = {
 [resource]
 script = ExtResource("1_jky5c")
 name = &"jar_tile"
+size = Vector2(16, 16)
 containing_box = Rect2(3, 7, 10, 9)
-bitmaps = Array[BitMap]([SubResource("BitMap_4r42q")])
+bitmaps = Array[BitMap]([SubResource("BitMap_jky5c")])

@@ -2,19 +2,19 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_epkac"]
 
-[sub_resource type="BitMap" id="BitMap_jotx0"]
+[sub_resource type="BitMap" id="BitMap_epkac"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 32, 2, 240, 7, 252, 31, 252, 31, 252, 31, 252, 31, 254, 63, 252, 31, 252, 31, 252, 31, 248, 15, 0, 0, 0, 0, 0, 0),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_yoffw"]
+[sub_resource type="BitMap" id="BitMap_jotx0"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 96, 3, 240, 7, 252, 31, 252, 31, 252, 31, 252, 31, 254, 63, 252, 31, 252, 31, 252, 31, 248, 15, 0, 0, 0, 0, 0, 0),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_wndev"]
+[sub_resource type="BitMap" id="BitMap_yoffw"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 64, 1, 240, 7, 252, 31, 252, 31, 252, 31, 252, 31, 254, 63, 252, 31, 252, 31, 252, 31, 248, 15, 0, 0, 0, 0, 0, 0),
 "size": Vector2i(16, 16)
@@ -23,6 +23,7 @@ data = {
 [resource]
 script = ExtResource("1_epkac")
 name = &"scarab_disp"
+size = Vector2(16, 16)
 origin = Vector2(8, 8)
 containing_box = Rect2(1, 2, 13, 11)
-bitmaps = Array[BitMap]([SubResource("BitMap_jotx0"), SubResource("BitMap_yoffw"), SubResource("BitMap_wndev")])
+bitmaps = Array[BitMap]([SubResource("BitMap_epkac"), SubResource("BitMap_jotx0"), SubResource("BitMap_yoffw")])

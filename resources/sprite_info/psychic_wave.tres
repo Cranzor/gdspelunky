@@ -2,33 +2,39 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_xwmjd"]
 
-[sub_resource type="BitMap" id="BitMap_k4yki"]
+[sub_resource type="BitMap" id="BitMap_xwmjd"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 1, 128, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_nwxdb"]
+[sub_resource type="BitMap" id="BitMap_k4yki"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 1, 192, 3, 192, 3, 128, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_bqgyg"]
+[sub_resource type="BitMap" id="BitMap_nwxdb"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 1, 192, 3, 96, 6, 96, 6, 192, 3, 128, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_w12px"]
+[sub_resource type="BitMap" id="BitMap_bqgyg"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 192, 3, 224, 7, 240, 15, 120, 30, 56, 28, 56, 28, 120, 30, 240, 15, 224, 7, 192, 3, 0, 0, 0, 0, 0, 0),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_cs6xp"]
+[sub_resource type="BitMap" id="BitMap_w12px"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 192, 3, 224, 7, 48, 12, 24, 24, 24, 24, 24, 24, 24, 24, 48, 12, 224, 7, 192, 3, 0, 0, 0, 0, 0, 0),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_cs6xp"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 192, 3, 240, 15, 56, 28, 24, 24, 12, 48, 12, 48, 12, 48, 12, 48, 24, 24, 56, 28, 240, 15, 192, 3, 0, 0, 0, 0),
 "size": Vector2i(16, 16)
 }
 
@@ -88,17 +94,11 @@ data = {
 
 [sub_resource type="BitMap" id="BitMap_2t48j"]
 data = {
-"data": PackedByteArray(0, 0, 0, 0, 192, 3, 240, 15, 56, 28, 24, 24, 12, 48, 12, 48, 12, 48, 12, 48, 24, 24, 56, 28, 240, 15, 192, 3, 0, 0, 0, 0),
-"size": Vector2i(16, 16)
-}
-
-[sub_resource type="BitMap" id="BitMap_lrrpc"]
-data = {
 "data": PackedByteArray(0, 0, 0, 0, 192, 3, 48, 12, 8, 16, 8, 16, 4, 32, 4, 32, 4, 32, 4, 32, 8, 16, 8, 16, 48, 12, 192, 3, 0, 0, 0, 0),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_cr63m"]
+[sub_resource type="BitMap" id="BitMap_lrrpc"]
 data = {
 "data": PackedByteArray(0, 0, 192, 3, 48, 12, 0, 0, 4, 32, 4, 32, 2, 64, 2, 64, 2, 64, 2, 64, 4, 32, 4, 32, 0, 0, 48, 12, 192, 3, 0, 0),
 "size": Vector2i(16, 16)
@@ -107,7 +107,8 @@ data = {
 [resource]
 script = ExtResource("1_xwmjd")
 name = &"psychic_wave"
+size = Vector2(16, 16)
 origin = Vector2(8, 8)
 containing_box = Rect2(1, 1, 14, 14)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_k4yki"), SubResource("BitMap_nwxdb"), SubResource("BitMap_bqgyg"), SubResource("BitMap_w12px"), SubResource("BitMap_cs6xp"), SubResource("BitMap_uxyi1"), SubResource("BitMap_2himt"), SubResource("BitMap_ujnxu"), SubResource("BitMap_a33uw"), SubResource("BitMap_b4jpi"), SubResource("BitMap_oqwem"), SubResource("BitMap_bdcu0"), SubResource("BitMap_4qbre"), SubResource("BitMap_ywf06"), SubResource("BitMap_2t48j"), SubResource("BitMap_lrrpc"), SubResource("BitMap_cr63m")])
+bitmaps = Array[BitMap]([SubResource("BitMap_xwmjd"), SubResource("BitMap_k4yki"), SubResource("BitMap_nwxdb"), SubResource("BitMap_bqgyg"), SubResource("BitMap_w12px"), SubResource("BitMap_cs6xp"), SubResource("BitMap_uxyi1"), SubResource("BitMap_2himt"), SubResource("BitMap_ujnxu"), SubResource("BitMap_a33uw"), SubResource("BitMap_b4jpi"), SubResource("BitMap_oqwem"), SubResource("BitMap_bdcu0"), SubResource("BitMap_4qbre"), SubResource("BitMap_ywf06"), SubResource("BitMap_2t48j"), SubResource("BitMap_lrrpc")])

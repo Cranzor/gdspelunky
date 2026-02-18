@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_rchht"]
 
-[sub_resource type="BitMap" id="BitMap_qegoh"]
+[sub_resource type="BitMap" id="BitMap_rchht"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 120, 236, 125, 248, 254, 127, 248, 255, 63, 250, 255, 63, 255, 255, 127, 255, 255, 61, 255, 255, 61, 250, 255, 61, 248, 255, 125, 248, 237, 125, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 "size": Vector2i(24, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_5cexk"]
+[sub_resource type="BitMap" id="BitMap_qegoh"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 120, 236, 125, 248, 254, 127, 248, 255, 63, 250, 255, 63, 255, 255, 127, 255, 255, 61, 255, 255, 61, 250, 255, 61, 248, 255, 125, 248, 237, 125, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 "size": Vector2i(24, 16)
@@ -17,7 +17,8 @@ data = {
 [resource]
 script = ExtResource("1_rchht")
 name = &"rope_get"
+size = Vector2(24, 16)
 origin = Vector2(4, 0)
 containing_box = Rect2(0, 3, 23, 10)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_qegoh"), SubResource("BitMap_5cexk")])
+bitmaps = Array[BitMap]([SubResource("BitMap_rchht"), SubResource("BitMap_qegoh")])

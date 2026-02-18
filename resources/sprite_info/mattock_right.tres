@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_aepsi"]
 
-[sub_resource type="BitMap" id="BitMap_rdk06"]
+[sub_resource type="BitMap" id="BitMap_aepsi"]
 data = {
 "data": PackedByteArray(0, 14, 0, 30, 0, 60, 0, 60, 252, 63, 254, 127, 254, 127, 252, 63, 0, 60, 0, 60, 0, 30, 0, 14),
 "size": Vector2i(16, 12)
@@ -11,7 +11,8 @@ data = {
 [resource]
 script = ExtResource("1_aepsi")
 name = &"mattock_right"
+size = Vector2(16, 12)
 origin = Vector2(8, 6)
 containing_box = Rect2(1, 0, 14, 12)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_rdk06")])
+bitmaps = Array[BitMap]([SubResource("BitMap_aepsi")])

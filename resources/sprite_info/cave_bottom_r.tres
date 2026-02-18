@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_8nuti"]
 
-[sub_resource type="BitMap" id="BitMap_ld48v"]
+[sub_resource type="BitMap" id="BitMap_8nuti"]
 data = {
 "data": PackedByteArray(255, 255, 217, 255, 128, 253, 0, 240, 0, 96, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 "size": Vector2i(16, 16)
@@ -11,5 +11,6 @@ data = {
 [resource]
 script = ExtResource("1_8nuti")
 name = &"cave_bottom_r"
+size = Vector2(16, 16)
 containing_box = Rect2(0, 0, 16, 5)
-bitmaps = Array[BitMap]([SubResource("BitMap_ld48v")])
+bitmaps = Array[BitMap]([SubResource("BitMap_8nuti")])

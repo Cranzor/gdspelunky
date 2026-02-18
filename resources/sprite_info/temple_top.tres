@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_1qm25"]
 
-[sub_resource type="BitMap" id="BitMap_pc6ve"]
+[sub_resource type="BitMap" id="BitMap_1qm25"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 28, 0, 30, 24, 62, 0, 0),
 "size": Vector2i(16, 17)
@@ -11,5 +11,6 @@ data = {
 [resource]
 script = ExtResource("1_1qm25")
 name = &"temple_top"
+size = Vector2(16, 17)
 containing_box = Rect2(3, 13, 11, 3)
-bitmaps = Array[BitMap]([SubResource("BitMap_pc6ve")])
+bitmaps = Array[BitMap]([SubResource("BitMap_1qm25")])

@@ -2,9 +2,15 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_4lbpy"]
 
-[sub_resource type="BitMap" id="BitMap_kh4we"]
+[sub_resource type="BitMap" id="BitMap_4lbpy"]
 data = {
 "data": PackedByteArray(0, 6, 23, 213, 126, 214, 23, 0),
+"size": Vector2i(8, 8)
+}
+
+[sub_resource type="BitMap" id="BitMap_kh4we"]
+data = {
+"data": PackedByteArray(0, 0, 22, 215, 125, 215, 16, 0),
 "size": Vector2i(8, 8)
 }
 
@@ -14,14 +20,9 @@ data = {
 "size": Vector2i(8, 8)
 }
 
-[sub_resource type="BitMap" id="BitMap_xwoql"]
-data = {
-"data": PackedByteArray(0, 0, 22, 215, 125, 215, 16, 0),
-"size": Vector2i(8, 8)
-}
-
 [resource]
 script = ExtResource("1_4lbpy")
 name = &"dead_fish_left"
+size = Vector2(8, 8)
 containing_box = Rect2(0, 1, 8, 6)
-bitmaps = Array[BitMap]([SubResource("BitMap_kh4we"), SubResource("BitMap_dyjmp"), SubResource("BitMap_xwoql")])
+bitmaps = Array[BitMap]([SubResource("BitMap_4lbpy"), SubResource("BitMap_kh4we"), SubResource("BitMap_dyjmp")])

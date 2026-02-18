@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_41wfu"]
 
-[sub_resource type="BitMap" id="BitMap_mhl85"]
+[sub_resource type="BitMap" id="BitMap_41wfu"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 248, 3, 248, 7, 240, 15, 240, 15, 240, 31, 240, 31, 248, 31, 248, 63, 248, 63, 248, 63, 248, 63, 248, 63, 16, 16),
 "size": Vector2i(16, 16)
@@ -11,7 +11,8 @@ data = {
 [resource]
 script = ExtResource("1_41wfu")
 name = &"cape_dl"
+size = Vector2(16, 16)
 origin = Vector2(8, 6)
 containing_box = Rect2(3, 3, 11, 13)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_mhl85")])
+bitmaps = Array[BitMap]([SubResource("BitMap_41wfu")])

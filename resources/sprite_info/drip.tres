@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_xegh8"]
 
-[sub_resource type="BitMap" id="BitMap_f42dl"]
+[sub_resource type="BitMap" id="BitMap_xegh8"]
 data = {
 "data": PackedByteArray(15),
 "size": Vector2i(2, 2)
@@ -11,6 +11,7 @@ data = {
 [resource]
 script = ExtResource("1_xegh8")
 name = &"drip"
+size = Vector2(2, 2)
 origin = Vector2(1, 1)
 containing_box = Rect2(0, 0, 2, 2)
-bitmaps = Array[BitMap]([SubResource("BitMap_f42dl")])
+bitmaps = Array[BitMap]([SubResource("BitMap_xegh8")])

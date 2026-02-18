@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_vxxdn"]
 
-[sub_resource type="BitMap" id="BitMap_uwo67"]
+[sub_resource type="BitMap" id="BitMap_vxxdn"]
 data = {
 "data": PackedByteArray("gP/f/38AwP////8H8P////8/+P////9//P////9//v////9//v////9//v////9//v////9//v////9//v////9//v////9//v////9//P////8/+P////8f4P//4/8PAP8AAP8AAH4AAH4AAH4AAH4AAH4AAH4AAH4AAH4AAH4AAH4AAH4AAH4AAH4AAH4AAH4AAH4AAH4AAH4AAH4AAH4AAH4AAH4AAH4AAH4AAH4AAH4AAP8AAP8AAP8AgP8B"),
 "size": Vector2i(48, 32)
@@ -11,6 +11,7 @@ data = {
 [resource]
 script = ExtResource("1_vxxdn")
 name = &"scores_sign"
+size = Vector2(48, 32)
 containing_box = Rect2(1, 0, 46, 32)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_uwo67")])
+bitmaps = Array[BitMap]([SubResource("BitMap_vxxdn")])

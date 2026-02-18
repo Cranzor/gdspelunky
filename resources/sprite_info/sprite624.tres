@@ -2,9 +2,15 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_0l6jf"]
 
-[sub_resource type="BitMap" id="BitMap_8dv0x"]
+[sub_resource type="BitMap" id="BitMap_0l6jf"]
 data = {
 "data": PackedByteArray(0, 0, 224, 12, 240, 31, 248, 31, 248, 63, 252, 63, 252, 63, 252, 31, 252, 31, 252, 31, 252, 31, 252, 63, 254, 63, 254, 63, 254, 127, 254, 127),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_8dv0x"]
+data = {
+"data": PackedByteArray(0, 0, 224, 12, 240, 31, 248, 31, 248, 63, 252, 63, 252, 63, 252, 31, 252, 63, 252, 63, 252, 63, 252, 63, 254, 63, 254, 63, 254, 127, 254, 127),
 "size": Vector2i(16, 16)
 }
 
@@ -14,14 +20,9 @@ data = {
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_kebqt"]
-data = {
-"data": PackedByteArray(0, 0, 224, 12, 240, 31, 248, 31, 248, 63, 252, 63, 252, 63, 252, 31, 252, 63, 252, 63, 252, 63, 252, 63, 254, 63, 254, 63, 254, 127, 254, 127),
-"size": Vector2i(16, 16)
-}
-
 [resource]
 script = ExtResource("1_0l6jf")
 name = &"sprite624"
+size = Vector2(16, 16)
 containing_box = Rect2(1, 1, 14, 15)
-bitmaps = Array[BitMap]([SubResource("BitMap_8dv0x"), SubResource("BitMap_l26r1"), SubResource("BitMap_kebqt")])
+bitmaps = Array[BitMap]([SubResource("BitMap_0l6jf"), SubResource("BitMap_8dv0x"), SubResource("BitMap_l26r1")])

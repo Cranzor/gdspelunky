@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_qii0q"]
 
-[sub_resource type="BitMap" id="BitMap_c06yd"]
+[sub_resource type="BitMap" id="BitMap_qii0q"]
 data = {
 "data": PackedByteArray(192, 3, 224, 7, 240, 15, 144, 9, 32, 5, 64, 3, 192, 3, 224, 7, 240, 15, 240, 15, 240, 15, 240, 15, 240, 15, 248, 31, 248, 31, 240, 15, 96, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 "size": Vector2i(16, 24)
@@ -11,6 +11,7 @@ data = {
 [resource]
 script = ExtResource("1_qii0q")
 name = &"alien_parachute"
+size = Vector2(16, 24)
 origin = Vector2(8, 12)
 containing_box = Rect2(3, 0, 10, 17)
-bitmaps = Array[BitMap]([SubResource("BitMap_c06yd")])
+bitmaps = Array[BitMap]([SubResource("BitMap_qii0q")])

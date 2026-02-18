@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_jnfhv"]
 
-[sub_resource type="BitMap" id="BitMap_gtukb"]
+[sub_resource type="BitMap" id="BitMap_jnfhv"]
 data = {
 "data": PackedByteArray(255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255),
 "size": Vector2i(32, 16)
@@ -11,6 +11,7 @@ data = {
 [resource]
 script = ExtResource("1_jnfhv")
 name = &"test_button_pressed"
+size = Vector2(32, 16)
 containing_box = Rect2(0, 0, 32, 16)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_gtukb")])
+bitmaps = Array[BitMap]([SubResource("BitMap_jnfhv")])

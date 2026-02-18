@@ -65,6 +65,7 @@ data = {
 [resource]
 script = ExtResource("1_sisr0")
 name = &"p_kiss_l"
+size = Vector2(16, 16)
 origin = Vector2(8, 8)
 containing_box = Rect2(0, 0, 15, 16)
 bitmaps = Array[BitMap]([SubResource("BitMap_sisr0"), SubResource("BitMap_y2hmq"), SubResource("BitMap_86fw0"), SubResource("BitMap_tlfdc"), SubResource("BitMap_sajwn"), SubResource("BitMap_6u86d"), SubResource("BitMap_ohkpp"), SubResource("BitMap_iq3et"), SubResource("BitMap_o7jwb"), SubResource("BitMap_4ot10")])

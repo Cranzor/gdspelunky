@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_810w5"]
 
-[sub_resource type="BitMap" id="BitMap_lqdby"]
+[sub_resource type="BitMap" id="BitMap_810w5"]
 data = {
 "data": PackedByteArray(0, 0, 224, 3, 240, 15, 240, 31, 240, 63, 252, 63, 254, 127, 254, 127, 254, 127, 254, 127, 252, 127, 252, 127, 248, 63, 240, 63, 224, 63, 192, 31),
 "size": Vector2i(16, 16)
@@ -11,6 +11,7 @@ data = {
 [resource]
 script = ExtResource("1_810w5")
 name = &"mitt_tile"
+size = Vector2(16, 16)
 containing_box = Rect2(1, 1, 14, 15)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_lqdby")])
+bitmaps = Array[BitMap]([SubResource("BitMap_810w5")])

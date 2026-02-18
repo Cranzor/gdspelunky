@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_0e7gi"]
 
-[sub_resource type="BitMap" id="BitMap_80ox8"]
+[sub_resource type="BitMap" id="BitMap_0e7gi"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 192, 1, 224, 3, 224, 3, 192, 1, 192, 1, 224, 3, 240, 7, 240, 7, 240, 7, 240, 7, 240, 7, 240, 7, 240, 7, 240, 7),
 "size": Vector2i(16, 16)
@@ -11,6 +11,7 @@ data = {
 [resource]
 script = ExtResource("1_0e7gi")
 name = &"teleporter_tile"
+size = Vector2(16, 16)
 containing_box = Rect2(4, 2, 7, 14)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_80ox8")])
+bitmaps = Array[BitMap]([SubResource("BitMap_0e7gi")])

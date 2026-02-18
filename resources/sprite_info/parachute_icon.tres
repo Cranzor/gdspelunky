@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_vi3b6"]
 
-[sub_resource type="BitMap" id="BitMap_8po83"]
+[sub_resource type="BitMap" id="BitMap_vi3b6"]
 data = {
 "data": PackedByteArray(224, 1, 248, 7, 252, 15, 254, 31, 255, 63, 255, 127, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 254, 255, 252, 127, 248, 63, 240, 31),
 "size": Vector2i(16, 16)
@@ -11,6 +11,7 @@ data = {
 [resource]
 script = ExtResource("1_vi3b6")
 name = &"parachute_icon"
+size = Vector2(16, 16)
 containing_box = Rect2(0, 0, 16, 16)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_8po83")])
+bitmaps = Array[BitMap]([SubResource("BitMap_vi3b6")])

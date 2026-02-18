@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_myky7"]
 
-[sub_resource type="BitMap" id="BitMap_jl8o8"]
+[sub_resource type="BitMap" id="BitMap_myky7"]
 data = {
 "data": PackedByteArray("/v//P////3////9/////f/7//z/+/////v//////////////////f////3////9/////f////3////9/////f////3////9/////f////3///////////////////////v////7////+//9//v//f/7////8/////P////j///8="),
 "size": Vector2i(32, 32)
@@ -11,7 +11,8 @@ data = {
 [resource]
 script = ExtResource("1_myky7")
 name = &"kali_head1"
+size = Vector2(32, 32)
 origin = Vector2(16, 16)
 containing_box = Rect2(0, 0, 32, 32)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_jl8o8")])
+bitmaps = Array[BitMap]([SubResource("BitMap_myky7")])

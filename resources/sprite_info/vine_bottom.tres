@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_2n1jw"]
 
-[sub_resource type="BitMap" id="BitMap_dgkc4"]
+[sub_resource type="BitMap" id="BitMap_2n1jw"]
 data = {
 "data": PackedByteArray(240, 1, 240, 3, 240, 7, 224, 15, 224, 7, 192, 7, 240, 15, 248, 15, 248, 15, 192, 15, 192, 7, 192, 3, 192, 1, 192, 0, 192, 0, 64, 0),
 "size": Vector2i(16, 16)
@@ -11,5 +11,6 @@ data = {
 [resource]
 script = ExtResource("1_2n1jw")
 name = &"vine_bottom"
+size = Vector2(16, 16)
 containing_box = Rect2(3, 0, 9, 16)
-bitmaps = Array[BitMap]([SubResource("BitMap_dgkc4")])
+bitmaps = Array[BitMap]([SubResource("BitMap_2n1jw")])

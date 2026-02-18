@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_uxkqf"]
 
-[sub_resource type="BitMap" id="BitMap_d0cp7"]
+[sub_resource type="BitMap" id="BitMap_uxkqf"]
 data = {
 "data": PackedByteArray("AAAAAAAAAP4fAAAAwP8/AAAA+P8/AAAA//8/AAAA//8/AAAA//8/AwAA//+fAwAA///fCQAA////HQAD////voAD/////8AD/////+ED//////kB//////8B//////8B//////8B//////8B//////8B//////8B//////8B//////0B////f/AB////H8AD////D4AD////BwAD////AQAA///9AQAA/wf4AAAA+AcAAAAA4AMAAAAAAAAAAAAA"),
 "size": Vector2i(48, 32)
@@ -11,6 +11,7 @@ data = {
 [resource]
 script = ExtResource("1_uxkqf")
 name = &"jaws_body2_l"
+size = Vector2(48, 32)
 containing_box = Rect2(0, 1, 42, 30)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_d0cp7")])
+bitmaps = Array[BitMap]([SubResource("BitMap_uxkqf")])

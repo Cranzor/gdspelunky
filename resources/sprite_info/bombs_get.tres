@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_4t451"]
 
-[sub_resource type="BitMap" id="BitMap_u18jy"]
+[sub_resource type="BitMap" id="BitMap_4t451"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 120, 236, 62, 248, 254, 127, 248, 255, 255, 250, 255, 255, 255, 255, 127, 255, 255, 255, 255, 255, 255, 250, 255, 255, 248, 254, 127, 120, 236, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 "size": Vector2i(24, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_d7cpk"]
+[sub_resource type="BitMap" id="BitMap_u18jy"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 120, 236, 62, 248, 254, 127, 248, 255, 255, 250, 255, 255, 255, 255, 127, 255, 255, 255, 255, 255, 255, 250, 255, 255, 248, 254, 127, 120, 236, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 "size": Vector2i(24, 16)
@@ -17,7 +17,8 @@ data = {
 [resource]
 script = ExtResource("1_4t451")
 name = &"bombs_get"
+size = Vector2(24, 16)
 origin = Vector2(4, 0)
 containing_box = Rect2(0, 3, 24, 10)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_u18jy"), SubResource("BitMap_d7cpk")])
+bitmaps = Array[BitMap]([SubResource("BitMap_4t451"), SubResource("BitMap_u18jy")])

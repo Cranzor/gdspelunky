@@ -2,25 +2,25 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_n4txo"]
 
-[sub_resource type="BitMap" id="BitMap_ds385"]
+[sub_resource type="BitMap" id="BitMap_n4txo"]
 data = {
 "data": PackedByteArray(0, 0, 0, 56, 192, 7, 252, 192, 31, 248, 1, 15, 240, 0, 6, 0, 0, 0),
 "size": Vector2i(12, 12)
 }
 
-[sub_resource type="BitMap" id="BitMap_l4dcv"]
+[sub_resource type="BitMap" id="BitMap_ds385"]
 data = {
 "data": PackedByteArray(0, 0, 0, 192, 1, 62, 248, 195, 63, 252, 129, 15, 96, 0, 0, 0, 0, 0),
 "size": Vector2i(12, 12)
 }
 
-[sub_resource type="BitMap" id="BitMap_7lsag"]
+[sub_resource type="BitMap" id="BitMap_l4dcv"]
 data = {
 "data": PackedByteArray(0, 0, 0, 96, 0, 15, 240, 128, 31, 248, 3, 63, 224, 3, 28, 0, 0, 0),
 "size": Vector2i(12, 12)
 }
 
-[sub_resource type="BitMap" id="BitMap_6e6b3"]
+[sub_resource type="BitMap" id="BitMap_7lsag"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 6, 240, 129, 63, 252, 195, 31, 124, 128, 3, 0, 0, 0),
 "size": Vector2i(12, 12)
@@ -29,7 +29,8 @@ data = {
 [resource]
 script = ExtResource("1_n4txo")
 name = &"olmec_debris2"
+size = Vector2(12, 12)
 origin = Vector2(6, 6)
 containing_box = Rect2(2, 2, 8, 8)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_ds385"), SubResource("BitMap_l4dcv"), SubResource("BitMap_7lsag"), SubResource("BitMap_6e6b3")])
+bitmaps = Array[BitMap]([SubResource("BitMap_n4txo"), SubResource("BitMap_ds385"), SubResource("BitMap_l4dcv"), SubResource("BitMap_7lsag")])

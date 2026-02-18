@@ -71,6 +71,7 @@ data = {
 [resource]
 script = ExtResource("1_ikijg")
 name = &"tunnel_attack_l"
+size = Vector2(16, 16)
 origin = Vector2(8, 8)
 containing_box = Rect2(0, 0, 16, 16)
 precise = true

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_ltw6x"]
 
-[sub_resource type="BitMap" id="BitMap_i8pkr"]
+[sub_resource type="BitMap" id="BitMap_ltw6x"]
 data = {
 "data": PackedByteArray(0, 0, 224, 7, 240, 15, 248, 31, 248, 31, 248, 31, 252, 63, 252, 63, 252, 63, 252, 63, 248, 31, 248, 31, 248, 31, 248, 31, 248, 31, 240, 15),
 "size": Vector2i(16, 16)
@@ -11,6 +11,7 @@ data = {
 [resource]
 script = ExtResource("1_ltw6x")
 name = &"gold_idol"
+size = Vector2(16, 16)
 origin = Vector2(8, 12)
 containing_box = Rect2(2, 1, 12, 15)
-bitmaps = Array[BitMap]([SubResource("BitMap_i8pkr")])
+bitmaps = Array[BitMap]([SubResource("BitMap_ltw6x")])

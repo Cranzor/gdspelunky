@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_o13fk"]
 
-[sub_resource type="BitMap" id="BitMap_drj1l"]
+[sub_resource type="BitMap" id="BitMap_o13fk"]
 data = {
 "data": PackedByteArray("AAAAAIAHwAPgB+AH+PPwD/j/8x/8//cf/P//P/z//z/8//8//P//P/j//xvj//8H9///z/f//+/3////9v////D//9/w///f8P//H/j//x/8//8f/v//D/7//z/+//9//v//f7z/P3/Y/78/8P/PP/z3ww+8A4ADGAAAAAAAAAA="),
 "size": Vector2i(32, 32)
@@ -11,6 +11,7 @@ data = {
 [resource]
 script = ExtResource("1_o13fk")
 name = &"cave_bg2"
+size = Vector2(32, 32)
 containing_box = Rect2(0, 1, 32, 30)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_drj1l")])
+bitmaps = Array[BitMap]([SubResource("BitMap_o13fk")])

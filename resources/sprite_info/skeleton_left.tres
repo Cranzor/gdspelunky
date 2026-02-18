@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_qrnrc"]
 
-[sub_resource type="BitMap" id="BitMap_a4grn"]
+[sub_resource type="BitMap" id="BitMap_qrnrc"]
 data = {
 "data": PackedByteArray(224, 3, 240, 7, 248, 7, 248, 7, 248, 7, 240, 3, 240, 7, 240, 15, 252, 31, 252, 31, 248, 15, 224, 31, 224, 31, 192, 15, 192, 15, 192, 15),
 "size": Vector2i(16, 16)
@@ -11,5 +11,6 @@ data = {
 [resource]
 script = ExtResource("1_qrnrc")
 name = &"skeleton_left"
+size = Vector2(16, 16)
 containing_box = Rect2(2, 0, 11, 16)
-bitmaps = Array[BitMap]([SubResource("BitMap_a4grn")])
+bitmaps = Array[BitMap]([SubResource("BitMap_qrnrc")])

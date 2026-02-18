@@ -2,15 +2,21 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_vyv2b"]
 
-[sub_resource type="BitMap" id="BitMap_qm2qt"]
+[sub_resource type="BitMap" id="BitMap_vyv2b"]
 data = {
 "data": PackedByteArray("APg/AAD8fwAA/v8AAP//AYD//wHg//8D8P//B/j//w/8//8f/P//H/7//z/+//8/////P////3////9/////f////3////9/////f////3////9/////f////3////9/////f////z/+//8//P//H+D//wPg//8D4P//A+D//wM="),
 "size": Vector2i(32, 32)
 }
 
-[sub_resource type="BitMap" id="BitMap_c34yv"]
+[sub_resource type="BitMap" id="BitMap_qm2qt"]
 data = {
 "data": PackedByteArray("AP4PAAD/PwCA/38AwP//AOD//wHg//8D8P//B/j//w/8//8f/P//H/7//z/+//8/////P////3////9/////f////3////9/////f////3////9/////f////3////9/////f////z/+//8//P//H+D//wPg//8D4P//A+D//wM="),
+"size": Vector2i(32, 32)
+}
+
+[sub_resource type="BitMap" id="BitMap_c34yv"]
+data = {
+"data": PackedByteArray("AP4fAAD/PwCA/38AwP//AOD//wHg//8D8P//B/j//w/8//8f/P//H/7//z/+//8/////P////3////9/////f////3////9/////f////3////9/////f////3////9/////f////z/+//8//P//H+D//wPg//8D4P//A+D//wM="),
 "size": Vector2i(32, 32)
 }
 
@@ -28,7 +34,7 @@ data = {
 
 [sub_resource type="BitMap" id="BitMap_8o5bn"]
 data = {
-"data": PackedByteArray("AP4fAAD/PwCA/38AwP//AOD//wHg//8D8P//B/j//w/8//8f/P//H/7//z/+//8/////P////3////9/////f////3////9/////f////3////9/////f////3////9/////f////z/+//8//P//H+D//wPg//8D4P//A+D//wM="),
+"data": PackedByteArray("AMD/AQDg/wMA8P8HAPj/DwD8/w8A//8fgP//H8D//x/g//8f8P//H/j//z/4//8//P//P/z//3/+//9//v//f/7//3////9/////f////3////9/////f////3////9/////f////z/+//8//P//H+D//wPg//8D4P//A+D//wM="),
 "size": Vector2i(32, 32)
 }
 
@@ -74,14 +80,9 @@ data = {
 "size": Vector2i(32, 32)
 }
 
-[sub_resource type="BitMap" id="BitMap_mo218"]
-data = {
-"data": PackedByteArray("AMD/AQDg/wMA8P8HAPj/DwD8/w8A//8fgP//H8D//x/g//8f8P//H/j//z/4//8//P//P/z//3/+//9//v//f/7//3////9/////f////3////9/////f////3////9/////f////z/+//8//P//H+D//wPg//8D4P//A+D//wM="),
-"size": Vector2i(32, 32)
-}
-
 [resource]
 script = ExtResource("1_vyv2b")
 name = &"yeti_king_yell_r"
+size = Vector2(32, 32)
 containing_box = Rect2(0, 0, 31, 32)
-bitmaps = Array[BitMap]([SubResource("BitMap_qm2qt"), SubResource("BitMap_c34yv"), SubResource("BitMap_w7lrj"), SubResource("BitMap_l7fv6"), SubResource("BitMap_8o5bn"), SubResource("BitMap_gjtg1"), SubResource("BitMap_jf8b1"), SubResource("BitMap_50iib"), SubResource("BitMap_kvler"), SubResource("BitMap_okwo5"), SubResource("BitMap_6bo7w"), SubResource("BitMap_482oh"), SubResource("BitMap_mo218")])
+bitmaps = Array[BitMap]([SubResource("BitMap_vyv2b"), SubResource("BitMap_qm2qt"), SubResource("BitMap_c34yv"), SubResource("BitMap_w7lrj"), SubResource("BitMap_l7fv6"), SubResource("BitMap_8o5bn"), SubResource("BitMap_gjtg1"), SubResource("BitMap_jf8b1"), SubResource("BitMap_50iib"), SubResource("BitMap_kvler"), SubResource("BitMap_okwo5"), SubResource("BitMap_6bo7w"), SubResource("BitMap_482oh")])

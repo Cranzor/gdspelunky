@@ -2,27 +2,33 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_ulb0g"]
 
-[sub_resource type="BitMap" id="BitMap_r5q7q"]
+[sub_resource type="BitMap" id="BitMap_ulb0g"]
 data = {
 "data": PackedByteArray(255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 254, 255),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_47ns2"]
+[sub_resource type="BitMap" id="BitMap_r5q7q"]
 data = {
 "data": PackedByteArray(255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 238, 238),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_p4k7k"]
+[sub_resource type="BitMap" id="BitMap_47ns2"]
 data = {
 "data": PackedByteArray(255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 230, 103, 68, 68),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_3wf58"]
+[sub_resource type="BitMap" id="BitMap_p4k7k"]
 data = {
 "data": PackedByteArray(255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 230, 103, 102, 102, 68, 68),
+"size": Vector2i(16, 16)
+}
+
+[sub_resource type="BitMap" id="BitMap_3wf58"]
+data = {
+"data": PackedByteArray(255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 110, 230),
 "size": Vector2i(16, 16)
 }
 
@@ -32,14 +38,9 @@ data = {
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_bhkjj"]
-data = {
-"data": PackedByteArray(255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 110, 230),
-"size": Vector2i(16, 16)
-}
-
 [resource]
 script = ExtResource("1_ulb0g")
 name = &"ceiling_trap_s"
+size = Vector2(16, 16)
 containing_box = Rect2(0, 0, 16, 16)
-bitmaps = Array[BitMap]([SubResource("BitMap_r5q7q"), SubResource("BitMap_47ns2"), SubResource("BitMap_p4k7k"), SubResource("BitMap_3wf58"), SubResource("BitMap_4j1ya"), SubResource("BitMap_bhkjj")])
+bitmaps = Array[BitMap]([SubResource("BitMap_ulb0g"), SubResource("BitMap_r5q7q"), SubResource("BitMap_47ns2"), SubResource("BitMap_p4k7k"), SubResource("BitMap_3wf58"), SubResource("BitMap_4j1ya")])

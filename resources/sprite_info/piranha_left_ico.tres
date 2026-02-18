@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_fylrl"]
 
-[sub_resource type="BitMap" id="BitMap_qciif"]
+[sub_resource type="BitMap" id="BitMap_fylrl"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 128, 0, 224, 11, 240, 15, 240, 15, 240, 15, 240, 15, 240, 9, 224, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 "size": Vector2i(16, 16)
@@ -11,5 +11,6 @@ data = {
 [resource]
 script = ExtResource("1_fylrl")
 name = &"piranha_left_ico"
+size = Vector2(16, 16)
 containing_box = Rect2(4, 4, 8, 8)
-bitmaps = Array[BitMap]([SubResource("BitMap_qciif")])
+bitmaps = Array[BitMap]([SubResource("BitMap_fylrl")])

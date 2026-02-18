@@ -2,25 +2,25 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_he073"]
 
-[sub_resource type="BitMap" id="BitMap_q1cbl"]
+[sub_resource type="BitMap" id="BitMap_he073"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 192, 3, 236, 55, 254, 127, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 95, 250, 14, 112),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_o6m22"]
+[sub_resource type="BitMap" id="BitMap_q1cbl"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 192, 3, 236, 55, 254, 127, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 127, 254, 63, 252, 62, 124),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_r15td"]
+[sub_resource type="BitMap" id="BitMap_o6m22"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 192, 3, 248, 31, 252, 63, 254, 127, 254, 127, 254, 127, 254, 127, 254, 127, 126, 126, 62, 124, 28, 56),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_xr548"]
+[sub_resource type="BitMap" id="BitMap_r15td"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 192, 3, 236, 55, 254, 127, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 127, 254, 63, 252, 62, 124),
 "size": Vector2i(16, 16)
@@ -29,5 +29,6 @@ data = {
 [resource]
 script = ExtResource("1_he073")
 name = &"spider"
+size = Vector2(16, 16)
 containing_box = Rect2(0, 5, 16, 11)
-bitmaps = Array[BitMap]([SubResource("BitMap_q1cbl"), SubResource("BitMap_o6m22"), SubResource("BitMap_r15td"), SubResource("BitMap_xr548")])
+bitmaps = Array[BitMap]([SubResource("BitMap_he073"), SubResource("BitMap_q1cbl"), SubResource("BitMap_o6m22"), SubResource("BitMap_r15td")])

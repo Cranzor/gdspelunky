@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_mmcja"]
 
-[sub_resource type="BitMap" id="BitMap_1knay"]
+[sub_resource type="BitMap" id="BitMap_mmcja"]
 data = {
 "data": PackedByteArray(0, 0, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 110, 230),
 "size": Vector2i(16, 16)
@@ -11,5 +11,6 @@ data = {
 [resource]
 script = ExtResource("1_mmcja")
 name = &"thwomp_trap"
+size = Vector2(16, 16)
 containing_box = Rect2(0, 1, 16, 15)
-bitmaps = Array[BitMap]([SubResource("BitMap_1knay")])
+bitmaps = Array[BitMap]([SubResource("BitMap_mmcja")])

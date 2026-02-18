@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_h5ubi"]
 
-[sub_resource type="BitMap" id="BitMap_u3hcd"]
+[sub_resource type="BitMap" id="BitMap_h5ubi"]
 data = {
 "data": PackedByteArray("/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////w=="),
 "size": Vector2i(64, 32)
@@ -11,6 +11,7 @@ data = {
 [resource]
 script = ExtResource("1_h5ubi")
 name = &"mega_mouth_tile"
+size = Vector2(64, 32)
 containing_box = Rect2(0, 0, 64, 32)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_u3hcd")])
+bitmaps = Array[BitMap]([SubResource("BitMap_h5ubi")])

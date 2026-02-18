@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_dntpm"]
 
-[sub_resource type="BitMap" id="BitMap_ibu7f"]
+[sub_resource type="BitMap" id="BitMap_dntpm"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 16, 142, 56, 220, 124, 252, 254, 254),
 "size": Vector2i(16, 16)
@@ -11,5 +11,6 @@ data = {
 [resource]
 script = ExtResource("1_dntpm")
 name = &"bones_left"
+size = Vector2(16, 16)
 containing_box = Rect2(1, 11, 15, 5)
-bitmaps = Array[BitMap]([SubResource("BitMap_ibu7f")])
+bitmaps = Array[BitMap]([SubResource("BitMap_dntpm")])

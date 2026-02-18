@@ -2,19 +2,19 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_mhxp8"]
 
-[sub_resource type="BitMap" id="BitMap_6hkkg"]
+[sub_resource type="BitMap" id="BitMap_mhxp8"]
 data = {
 "data": PackedByteArray(224, 7, 240, 15, 240, 15, 252, 63, 252, 63, 252, 63, 252, 63, 252, 63, 248, 31, 248, 31, 248, 31, 252, 63, 252, 63, 252, 63, 248, 31, 224, 7),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_prncn"]
+[sub_resource type="BitMap" id="BitMap_6hkkg"]
 data = {
 "data": PackedByteArray(224, 7, 240, 15, 252, 63, 254, 127, 254, 127, 254, 127, 252, 63, 252, 63, 248, 31, 248, 31, 248, 31, 252, 63, 254, 127, 254, 127, 252, 63, 240, 15),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_wle3k"]
+[sub_resource type="BitMap" id="BitMap_prncn"]
 data = {
 "data": PackedByteArray(224, 7, 240, 15, 240, 15, 252, 63, 252, 63, 252, 63, 248, 31, 248, 31, 248, 31, 248, 31, 248, 31, 252, 63, 252, 63, 248, 31, 224, 7, 224, 7),
 "size": Vector2i(16, 16)
@@ -23,6 +23,7 @@ data = {
 [resource]
 script = ExtResource("1_mhxp8")
 name = &"lamp_red_item"
+size = Vector2(16, 16)
 origin = Vector2(8, 12)
 containing_box = Rect2(1, 0, 14, 16)
-bitmaps = Array[BitMap]([SubResource("BitMap_6hkkg"), SubResource("BitMap_prncn"), SubResource("BitMap_wle3k")])
+bitmaps = Array[BitMap]([SubResource("BitMap_mhxp8"), SubResource("BitMap_6hkkg"), SubResource("BitMap_prncn")])

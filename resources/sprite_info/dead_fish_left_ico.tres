@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_jby1i"]
 
-[sub_resource type="BitMap" id="BitMap_bdfh0"]
+[sub_resource type="BitMap" id="BitMap_jby1i"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 96, 0, 112, 1, 80, 13, 224, 7, 96, 13, 112, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 "size": Vector2i(16, 16)
@@ -11,5 +11,6 @@ data = {
 [resource]
 script = ExtResource("1_jby1i")
 name = &"dead_fish_left_ico"
+size = Vector2(16, 16)
 containing_box = Rect2(4, 5, 8, 6)
-bitmaps = Array[BitMap]([SubResource("BitMap_bdfh0")])
+bitmaps = Array[BitMap]([SubResource("BitMap_jby1i")])

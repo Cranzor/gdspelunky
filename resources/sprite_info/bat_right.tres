@@ -2,19 +2,19 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_ywasu"]
 
-[sub_resource type="BitMap" id="BitMap_1fiet"]
+[sub_resource type="BitMap" id="BitMap_ywasu"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 1, 128, 7, 128, 223, 216, 254, 255, 254, 127, 252, 127, 248, 63, 240, 31, 96, 4, 64, 4, 0, 0, 0, 0),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_ujdif"]
+[sub_resource type="BitMap" id="BitMap_1fiet"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 192, 24, 224, 31, 240, 63, 248, 63, 252, 127, 254, 127, 111, 228, 64, 4, 0, 0, 0, 0, 0, 0, 0, 0),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_ejrro"]
+[sub_resource type="BitMap" id="BitMap_ujdif"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 192, 24, 224, 31, 240, 63, 248, 63, 248, 63, 248, 63, 120, 52, 88, 52, 8, 48, 8, 32, 0, 0, 0, 0, 0, 0),
 "size": Vector2i(16, 16)
@@ -23,5 +23,6 @@ data = {
 [resource]
 script = ExtResource("1_ywasu")
 name = &"bat_right"
+size = Vector2(16, 16)
 containing_box = Rect2(0, 3, 16, 11)
-bitmaps = Array[BitMap]([SubResource("BitMap_1fiet"), SubResource("BitMap_ujdif"), SubResource("BitMap_ejrro")])
+bitmaps = Array[BitMap]([SubResource("BitMap_ywasu"), SubResource("BitMap_1fiet"), SubResource("BitMap_ujdif")])

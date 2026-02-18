@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_uk5wc"]
 
-[sub_resource type="BitMap" id="BitMap_vkxsk"]
+[sub_resource type="BitMap" id="BitMap_uk5wc"]
 data = {
 "data": PackedByteArray(192, 7, 224, 7, 240, 63, 240, 63, 112, 62, 112, 62, 240, 63, 240, 63, 254, 15, 254, 7, 254, 15, 252, 15, 252, 15, 224, 15, 224, 15, 224, 3),
 "size": Vector2i(16, 16)
@@ -11,6 +11,7 @@ data = {
 [resource]
 script = ExtResource("1_uk5wc")
 name = &"ankh_icon"
+size = Vector2(16, 16)
 containing_box = Rect2(1, 0, 13, 16)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_vkxsk")])
+bitmaps = Array[BitMap]([SubResource("BitMap_uk5wc")])

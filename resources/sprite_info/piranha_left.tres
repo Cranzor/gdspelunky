@@ -2,9 +2,15 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_j2601"]
 
-[sub_resource type="BitMap" id="BitMap_jw04d"]
+[sub_resource type="BitMap" id="BitMap_j2601"]
 data = {
 "data": PackedByteArray(8, 190, 255, 255, 255, 255, 159, 14),
+"size": Vector2i(8, 8)
+}
+
+[sub_resource type="BitMap" id="BitMap_jw04d"]
+data = {
+"data": PackedByteArray(8, 188, 254, 255, 255, 255, 158, 8),
 "size": Vector2i(8, 8)
 }
 
@@ -14,14 +20,9 @@ data = {
 "size": Vector2i(8, 8)
 }
 
-[sub_resource type="BitMap" id="BitMap_s4oje"]
-data = {
-"data": PackedByteArray(8, 188, 254, 255, 255, 255, 158, 8),
-"size": Vector2i(8, 8)
-}
-
 [resource]
 script = ExtResource("1_j2601")
 name = &"piranha_left"
+size = Vector2(8, 8)
 containing_box = Rect2(0, 0, 8, 8)
-bitmaps = Array[BitMap]([SubResource("BitMap_jw04d"), SubResource("BitMap_fpbs6"), SubResource("BitMap_s4oje")])
+bitmaps = Array[BitMap]([SubResource("BitMap_j2601"), SubResource("BitMap_jw04d"), SubResource("BitMap_fpbs6")])

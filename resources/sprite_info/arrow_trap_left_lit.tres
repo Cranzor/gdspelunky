@@ -2,6 +2,12 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_roknu"]
 
+[sub_resource type="BitMap" id="BitMap_roknu"]
+data = {
+"data": PackedByteArray(255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255),
+"size": Vector2i(16, 16)
+}
+
 [sub_resource type="BitMap" id="BitMap_wlm7w"]
 data = {
 "data": PackedByteArray(255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255),
@@ -26,14 +32,9 @@ data = {
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_wa1wf"]
-data = {
-"data": PackedByteArray(255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255),
-"size": Vector2i(16, 16)
-}
-
 [resource]
 script = ExtResource("1_roknu")
 name = &"arrow_trap_left_lit"
+size = Vector2(16, 16)
 containing_box = Rect2(0, 0, 16, 16)
-bitmaps = Array[BitMap]([SubResource("BitMap_wlm7w"), SubResource("BitMap_v8igm"), SubResource("BitMap_b8bdr"), SubResource("BitMap_wm5ko"), SubResource("BitMap_wa1wf")])
+bitmaps = Array[BitMap]([SubResource("BitMap_roknu"), SubResource("BitMap_wlm7w"), SubResource("BitMap_v8igm"), SubResource("BitMap_b8bdr"), SubResource("BitMap_wm5ko")])

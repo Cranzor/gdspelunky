@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_lnsne"]
 
-[sub_resource type="BitMap" id="BitMap_4muej"]
+[sub_resource type="BitMap" id="BitMap_lnsne"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 192, 3, 224, 7, 240, 15, 240, 15, 248, 31, 248, 31, 248, 31, 240, 15, 224, 7, 192, 3, 128, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 "size": Vector2i(16, 24)
@@ -11,6 +11,7 @@ data = {
 [resource]
 script = ExtResource("1_lnsne")
 name = &"alien_eject"
+size = Vector2(16, 24)
 origin = Vector2(8, 12)
 containing_box = Rect2(3, 8, 10, 11)
-bitmaps = Array[BitMap]([SubResource("BitMap_4muej")])
+bitmaps = Array[BitMap]([SubResource("BitMap_lnsne")])

@@ -2,6 +2,12 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_av8js"]
 
+[sub_resource type="BitMap" id="BitMap_av8js"]
+data = {
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 127, 0, 255, 1, 255, 3, 255, 7, 255, 7, 255, 15, 255, 15, 255, 31, 255, 31, 255, 63, 255, 63, 255, 63, 255, 63, 255, 63, 255, 63, 255, 31, 255, 7, 255, 1, 255, 23, 255, 63, 255, 63, 255, 63, 255, 63, 255, 31, 252, 15, 0, 0, 0, 0),
+"size": Vector2i(16, 32)
+}
+
 [sub_resource type="BitMap" id="BitMap_exgqq"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 127, 0, 255, 1, 255, 3, 255, 7, 255, 7, 255, 15, 255, 15, 255, 31, 255, 31, 255, 63, 255, 63, 255, 63, 255, 63, 255, 63, 255, 63, 255, 31, 255, 7, 255, 1, 255, 23, 255, 63, 255, 63, 255, 63, 255, 63, 255, 31, 252, 15, 0, 0, 0, 0),
@@ -28,29 +34,23 @@ data = {
 
 [sub_resource type="BitMap" id="BitMap_ru74m"]
 data = {
-"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 127, 0, 255, 1, 255, 3, 255, 7, 255, 7, 255, 15, 255, 15, 255, 31, 255, 31, 255, 63, 255, 63, 255, 63, 255, 63, 255, 63, 255, 63, 255, 31, 255, 7, 255, 1, 255, 23, 255, 63, 255, 63, 255, 63, 255, 63, 255, 31, 252, 15, 0, 0, 0, 0),
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 15, 0, 63, 0, 255, 0, 255, 1, 255, 3, 255, 7, 255, 7, 255, 15, 255, 15, 255, 31, 255, 31, 255, 63, 255, 63, 255, 63, 255, 63, 255, 63, 255, 63, 255, 31, 255, 63, 255, 63, 255, 63, 255, 63, 255, 31, 255, 15, 255, 7, 252, 1, 0, 0, 0, 0),
 "size": Vector2i(16, 32)
 }
 
 [sub_resource type="BitMap" id="BitMap_m3lcj"]
 data = {
-"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 15, 0, 63, 0, 255, 0, 255, 1, 255, 3, 255, 7, 255, 7, 255, 15, 255, 15, 255, 31, 255, 31, 255, 63, 255, 63, 255, 63, 255, 63, 255, 63, 255, 63, 255, 31, 255, 63, 255, 63, 255, 63, 255, 63, 255, 31, 255, 15, 255, 7, 252, 1, 0, 0, 0, 0),
+"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 15, 0, 63, 0, 127, 0, 255, 0, 255, 1, 255, 3, 255, 7, 255, 7, 255, 15, 255, 15, 255, 31, 255, 31, 255, 63, 255, 63, 255, 63, 255, 63, 255, 63, 255, 63, 255, 63, 255, 63, 255, 63, 255, 31, 255, 15, 255, 7, 255, 1, 0, 0, 0, 0, 0, 0),
 "size": Vector2i(16, 32)
 }
 
 [sub_resource type="BitMap" id="BitMap_jhy4u"]
 data = {
-"data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 15, 0, 63, 0, 127, 0, 255, 0, 255, 1, 255, 3, 255, 7, 255, 7, 255, 15, 255, 15, 255, 31, 255, 31, 255, 63, 255, 63, 255, 63, 255, 63, 255, 63, 255, 63, 255, 63, 255, 63, 255, 63, 255, 31, 255, 15, 255, 7, 255, 1, 0, 0, 0, 0, 0, 0),
-"size": Vector2i(16, 32)
-}
-
-[sub_resource type="BitMap" id="BitMap_v6qi5"]
-data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 127, 0, 255, 1, 255, 3, 255, 7, 255, 7, 255, 15, 255, 15, 255, 31, 255, 31, 255, 63, 255, 63, 255, 63, 255, 63, 255, 63, 255, 63, 255, 31, 255, 7, 255, 1, 255, 23, 255, 63, 255, 63, 255, 63, 255, 63, 255, 31, 252, 15, 0, 0, 0, 0),
 "size": Vector2i(16, 32)
 }
 
-[sub_resource type="BitMap" id="BitMap_82tkg"]
+[sub_resource type="BitMap" id="BitMap_v6qi5"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 15, 0, 63, 0, 255, 0, 255, 1, 255, 3, 255, 7, 255, 7, 255, 15, 255, 15, 255, 31, 255, 31, 255, 63, 255, 63, 255, 63, 255, 63, 255, 63, 255, 63, 255, 31, 255, 63, 255, 63, 255, 63, 255, 63, 255, 31, 255, 15, 255, 7, 252, 1, 0, 0, 0, 0),
 "size": Vector2i(16, 32)
@@ -59,6 +59,7 @@ data = {
 [resource]
 script = ExtResource("1_av8js")
 name = &"jaws_right"
+size = Vector2(16, 32)
 containing_box = Rect2(0, 4, 14, 26)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_exgqq"), SubResource("BitMap_mu78m"), SubResource("BitMap_s72u5"), SubResource("BitMap_wis5d"), SubResource("BitMap_ru74m"), SubResource("BitMap_m3lcj"), SubResource("BitMap_jhy4u"), SubResource("BitMap_v6qi5"), SubResource("BitMap_82tkg")])
+bitmaps = Array[BitMap]([SubResource("BitMap_av8js"), SubResource("BitMap_exgqq"), SubResource("BitMap_mu78m"), SubResource("BitMap_s72u5"), SubResource("BitMap_wis5d"), SubResource("BitMap_ru74m"), SubResource("BitMap_m3lcj"), SubResource("BitMap_jhy4u"), SubResource("BitMap_v6qi5")])

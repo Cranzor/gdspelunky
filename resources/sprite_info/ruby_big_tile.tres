@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_qtdy4"]
 
-[sub_resource type="BitMap" id="BitMap_7eqcq"]
+[sub_resource type="BitMap" id="BitMap_qtdy4"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 1, 192, 3, 224, 7, 240, 15, 240, 15, 224, 7, 192, 3, 128, 1),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_qpwxd"]
+[sub_resource type="BitMap" id="BitMap_7eqcq"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 1, 192, 3, 224, 7, 240, 15, 240, 15, 224, 7, 192, 3, 128, 1),
 "size": Vector2i(16, 16)
@@ -17,5 +17,6 @@ data = {
 [resource]
 script = ExtResource("1_qtdy4")
 name = &"ruby_big_tile"
+size = Vector2(16, 16)
 containing_box = Rect2(4, 8, 8, 8)
-bitmaps = Array[BitMap]([SubResource("BitMap_7eqcq"), SubResource("BitMap_qpwxd")])
+bitmaps = Array[BitMap]([SubResource("BitMap_qtdy4"), SubResource("BitMap_7eqcq")])

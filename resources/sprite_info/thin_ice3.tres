@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_cjsqh"]
 
-[sub_resource type="BitMap" id="BitMap_312bs"]
+[sub_resource type="BitMap" id="BitMap_cjsqh"]
 data = {
 "data": PackedByteArray(255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 3, 192, 1, 128, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 "size": Vector2i(16, 16)
@@ -11,5 +11,6 @@ data = {
 [resource]
 script = ExtResource("1_cjsqh")
 name = &"thin_ice3"
+size = Vector2(16, 16)
 containing_box = Rect2(0, 0, 16, 9)
-bitmaps = Array[BitMap]([SubResource("BitMap_312bs")])
+bitmaps = Array[BitMap]([SubResource("BitMap_cjsqh")])

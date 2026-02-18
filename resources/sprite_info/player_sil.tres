@@ -2,49 +2,49 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_cchn7"]
 
-[sub_resource type="BitMap" id="BitMap_otk6t"]
+[sub_resource type="BitMap" id="BitMap_cchn7"]
 data = {
 "data": PackedByteArray(60, 255, 60, 60, 126, 60, 60, 66),
 "size": Vector2i(8, 8)
 }
 
-[sub_resource type="BitMap" id="BitMap_xj68q"]
+[sub_resource type="BitMap" id="BitMap_otk6t"]
 data = {
 "data": PackedByteArray(22, 95, 63, 126, 127, 252, 58, 16),
 "size": Vector2i(8, 8)
 }
 
-[sub_resource type="BitMap" id="BitMap_00h7k"]
+[sub_resource type="BitMap" id="BitMap_xj68q"]
 data = {
 "data": PackedByteArray(2, 146, 127, 127, 127, 127, 146, 2),
 "size": Vector2i(8, 8)
 }
 
-[sub_resource type="BitMap" id="BitMap_ysk1l"]
+[sub_resource type="BitMap" id="BitMap_00h7k"]
 data = {
 "data": PackedByteArray(32, 58, 124, 255, 126, 63, 95, 22),
 "size": Vector2i(8, 8)
 }
 
-[sub_resource type="BitMap" id="BitMap_d5nod"]
+[sub_resource type="BitMap" id="BitMap_ysk1l"]
 data = {
 "data": PackedByteArray(66, 60, 60, 126, 60, 60, 255, 60),
 "size": Vector2i(8, 8)
 }
 
-[sub_resource type="BitMap" id="BitMap_y5biu"]
+[sub_resource type="BitMap" id="BitMap_d5nod"]
 data = {
 "data": PackedByteArray(8, 92, 63, 254, 126, 252, 250, 104),
 "size": Vector2i(8, 8)
 }
 
-[sub_resource type="BitMap" id="BitMap_vhfe1"]
+[sub_resource type="BitMap" id="BitMap_y5biu"]
 data = {
 "data": PackedByteArray(64, 73, 254, 254, 254, 254, 73, 64),
 "size": Vector2i(8, 8)
 }
 
-[sub_resource type="BitMap" id="BitMap_r5nrk"]
+[sub_resource type="BitMap" id="BitMap_vhfe1"]
 data = {
 "data": PackedByteArray(104, 250, 252, 126, 255, 62, 92, 4),
 "size": Vector2i(8, 8)
@@ -53,6 +53,7 @@ data = {
 [resource]
 script = ExtResource("1_cchn7")
 name = &"player_sil"
+size = Vector2(8, 8)
 containing_box = Rect2(0, 0, 8, 8)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_otk6t"), SubResource("BitMap_xj68q"), SubResource("BitMap_00h7k"), SubResource("BitMap_ysk1l"), SubResource("BitMap_d5nod"), SubResource("BitMap_y5biu"), SubResource("BitMap_vhfe1"), SubResource("BitMap_r5nrk")])
+bitmaps = Array[BitMap]([SubResource("BitMap_cchn7"), SubResource("BitMap_otk6t"), SubResource("BitMap_xj68q"), SubResource("BitMap_00h7k"), SubResource("BitMap_ysk1l"), SubResource("BitMap_d5nod"), SubResource("BitMap_y5biu"), SubResource("BitMap_vhfe1")])

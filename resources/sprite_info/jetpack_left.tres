@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_quj4s"]
 
-[sub_resource type="BitMap" id="BitMap_mcfpe"]
+[sub_resource type="BitMap" id="BitMap_quj4s"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 96, 6, 240, 15, 248, 31, 252, 63, 252, 63, 252, 63, 252, 63, 252, 63, 252, 63, 252, 63, 252, 63, 252, 63, 252, 63),
 "size": Vector2i(16, 16)
@@ -11,6 +11,7 @@ data = {
 [resource]
 script = ExtResource("1_quj4s")
 name = &"jetpack_left"
+size = Vector2(16, 16)
 origin = Vector2(8, 8)
 containing_box = Rect2(2, 3, 12, 13)
-bitmaps = Array[BitMap]([SubResource("BitMap_mcfpe")])
+bitmaps = Array[BitMap]([SubResource("BitMap_quj4s")])

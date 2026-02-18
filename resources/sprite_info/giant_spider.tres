@@ -2,25 +2,25 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_0kjqe"]
 
-[sub_resource type="BitMap" id="BitMap_rrrmt"]
+[sub_resource type="BitMap" id="BitMap_0kjqe"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPw/AAD//wDA//8D8P//D/j//x/8//8//v//f/7//3/+//9//v//f/z//z/4+98f+APAH/ADwA8="),
 "size": Vector2i(32, 32)
 }
 
-[sub_resource type="BitMap" id="BitMap_5jagm"]
+[sub_resource type="BitMap" id="BitMap_rrrmt"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/D8AgP//Afj//x/8//8//v//f/7//3/+//9//v//f/7//3/+//9//PPPP/zhhz/4w8Mf+APAH/ADwA8="),
 "size": Vector2i(32, 32)
 }
 
-[sub_resource type="BitMap" id="BitMap_6w72e"]
+[sub_resource type="BitMap" id="BitMap_5jagm"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/D8A+P//H/z//z/+//9//v//f/7//3/+//9//v//f/7//3/8//8//P//P/zxjz/448cf+MPDH/ADwA8="),
 "size": Vector2i(32, 32)
 }
 
-[sub_resource type="BitMap" id="BitMap_4bu2s"]
+[sub_resource type="BitMap" id="BitMap_6w72e"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/D8AgP//Afj//x/8//8//v//f/7//3/+//9//v//f/7//3/+//9//PPPP/zhhz/4w8Mf+APAH/ADwA8="),
 "size": Vector2i(32, 32)
@@ -29,5 +29,6 @@ data = {
 [resource]
 script = ExtResource("1_0kjqe")
 name = &"giant_spider"
+size = Vector2(32, 32)
 containing_box = Rect2(1, 17, 30, 15)
-bitmaps = Array[BitMap]([SubResource("BitMap_rrrmt"), SubResource("BitMap_5jagm"), SubResource("BitMap_6w72e"), SubResource("BitMap_4bu2s")])
+bitmaps = Array[BitMap]([SubResource("BitMap_0kjqe"), SubResource("BitMap_rrrmt"), SubResource("BitMap_5jagm"), SubResource("BitMap_6w72e")])

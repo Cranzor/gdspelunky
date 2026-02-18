@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_u5qsu"]
 
-[sub_resource type="BitMap" id="BitMap_w83sw"]
+[sub_resource type="BitMap" id="BitMap_u5qsu"]
 data = {
 "data": PackedByteArray(208, 103, 248, 255, 248, 255, 240, 255, 248, 255, 248, 103, 56, 0, 0, 0),
 "size": Vector2i(16, 8)
@@ -11,7 +11,8 @@ data = {
 [resource]
 script = ExtResource("1_u5qsu")
 name = &"web_cannon_r"
+size = Vector2(16, 8)
 origin = Vector2(8, 4)
 containing_box = Rect2(3, 0, 13, 7)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_w83sw")])
+bitmaps = Array[BitMap]([SubResource("BitMap_u5qsu")])

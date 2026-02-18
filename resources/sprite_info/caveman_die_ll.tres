@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_tayqq"]
 
-[sub_resource type="BitMap" id="BitMap_7hj1v"]
+[sub_resource type="BitMap" id="BitMap_tayqq"]
 data = {
 "data": PackedByteArray(248, 0, 252, 1, 252, 3, 252, 3, 254, 7, 254, 7, 254, 63, 254, 127, 254, 127, 254, 63, 254, 31, 254, 7, 252, 15, 248, 31, 240, 30, 224, 12),
 "size": Vector2i(16, 16)
@@ -11,5 +11,6 @@ data = {
 [resource]
 script = ExtResource("1_tayqq")
 name = &"caveman_die_ll"
+size = Vector2(16, 16)
 containing_box = Rect2(1, 0, 14, 16)
-bitmaps = Array[BitMap]([SubResource("BitMap_7hj1v")])
+bitmaps = Array[BitMap]([SubResource("BitMap_tayqq")])

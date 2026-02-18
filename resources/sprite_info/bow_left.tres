@@ -2,25 +2,25 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_c4gpd"]
 
-[sub_resource type="BitMap" id="BitMap_m02xm"]
+[sub_resource type="BitMap" id="BitMap_c4gpd"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 96, 0, 240, 0, 248, 0, 56, 1, 112, 2, 112, 2, 112, 2, 56, 1, 248, 0, 240, 0, 96, 0, 0, 0, 0, 0, 0, 0),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_phaxv"]
+[sub_resource type="BitMap" id="BitMap_m02xm"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 96, 0, 240, 0, 248, 0, 56, 1, 112, 2, 112, 4, 112, 2, 56, 1, 248, 0, 240, 0, 96, 0, 0, 0, 0, 0, 0, 0),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_n4myi"]
+[sub_resource type="BitMap" id="BitMap_phaxv"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 192, 0, 224, 1, 240, 1, 56, 6, 112, 8, 112, 16, 112, 8, 56, 6, 240, 1, 224, 1, 192, 0, 0, 0, 0, 0, 0, 0),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_8e8n4"]
+[sub_resource type="BitMap" id="BitMap_n4myi"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 128, 1, 192, 3, 224, 3, 112, 12, 112, 48, 112, 64, 112, 48, 112, 12, 224, 3, 192, 3, 128, 1, 0, 0, 0, 0, 0, 0),
 "size": Vector2i(16, 16)
@@ -29,7 +29,8 @@ data = {
 [resource]
 script = ExtResource("1_c4gpd")
 name = &"bow_left"
+size = Vector2(16, 16)
 origin = Vector2(8, 8)
 containing_box = Rect2(3, 2, 12, 11)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_m02xm"), SubResource("BitMap_phaxv"), SubResource("BitMap_n4myi"), SubResource("BitMap_8e8n4")])
+bitmaps = Array[BitMap]([SubResource("BitMap_c4gpd"), SubResource("BitMap_m02xm"), SubResource("BitMap_phaxv"), SubResource("BitMap_n4myi")])

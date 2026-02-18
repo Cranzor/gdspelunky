@@ -2,37 +2,37 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_aolta"]
 
-[sub_resource type="BitMap" id="BitMap_mdvpi"]
+[sub_resource type="BitMap" id="BitMap_aolta"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAADAPwAAAAAAAPh/AAAAAAAA/38AAAAAwP//fwAAAADw//9/AAAAAPj///8AAAAA/P///wEAAAD8////AwAAAP7///8HwAAA/v///w/gAAD/////H/AAAP////8/+ACA/////398AID//////38AgP//////fwCA//////9/AID//////38AAP//////fwAA//////9/AAD//////38AgP//////fgCA/////z94AID/////D/AAgP////8H4ACA/////wPAAID/////AwAAAP////sDAAAA/v//8AEAAAAA+P8AAAAAAADAfwAAAAAAAAAAAAAAAA=="),
 "size": Vector2i(64, 32)
 }
 
-[sub_resource type="BitMap" id="BitMap_p3hhf"]
+[sub_resource type="BitMap" id="BitMap_mdvpi"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAAAA+AEAAAAAAAD/AwAAAAAA4P8DAAAAAOD//wMAAAAA+P//AwAAAAD8//8HAAAAAP7//w8AAAAA/v//HwAAAAD///8fDAAAAP///z8OAACA////Pw8AAID/////DwAAwP////8HAADA/////wcAAMD/////BwAAwP////8HAADA/////wcAAID/////BwAAgP////8HAACA/////wcAAMD/////BwAAwP///78HAADA////Hw8AAMD///8PDgAAwP///w8MAADA////DwAAAID//88PAAAAAP//jwcAAAAA4OEPAAAAAADAgQcAAAAAAAAAAAAAAA=="),
 "size": Vector2i(64, 32)
 }
 
-[sub_resource type="BitMap" id="BitMap_4scqo"]
+[sub_resource type="BitMap" id="BitMap_p3hhf"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAAAA+AEAAAAAAAD/AwAAAAAAwP8DAAAAAADw/wMAAAAAAPj/AQAAAAAA/P8DAAAAAAD8/wcAAAAAAP7/BwAAAAAA/v/PAAAAAAD//+8AAAAAAP///wAAAACA////AAAAAID//38AAAAAgP//fwAAAACA//9/AAAAAID//38AAAAAgP//fwAAAACA//9/AAAAAID//38AAAAAgP//fwAAAACA////AAAAAID///8AAAAAgP//zwAAAACA//8DAAAAAID//wcAAAAAAP//DwAAAAAA/uMPAAAAAADggQcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="),
 "size": Vector2i(64, 32)
 }
 
-[sub_resource type="BitMap" id="BitMap_3kp1e"]
+[sub_resource type="BitMap" id="BitMap_4scqo"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAIAfAAAAAAAAwP8AAAAAAADA/wMAAAAAAMD/DwAAAAAAgP8fAAAAAADA/z8AAAAAAOD/PwAAAAAA4P9/AAAAAADz/38AAAAAAPf//wAAAAAA////AAAAAAD///8BAAAAAP7//wEAAAAA/v//AQAAAAD+//8BAAAAAP7//wEAAAAA/v//AQAAAAD+//8BAAAAAP7//wEAAAAA/v//AQAAAAD///8BAAAAAP///wEAAAAA8///AQAAAADA//8BAAAAAOD//wEAAAAA8P//AAAAAADwx38AAAAAAOCBBwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=="),
 "size": Vector2i(64, 32)
 }
 
-[sub_resource type="BitMap" id="BitMap_6h3xx"]
+[sub_resource type="BitMap" id="BitMap_3kp1e"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAIAfAAAAAAAAwP8AAAAAAADA/wcAAAAAAMD//wcAAAAAwP//HwAAAADg//8/AAAAAPD//38AAAAA+P//fwAAADD4////AAAAcPz///8AAADw/P///wEAAPD/////AQAA4P////8DAADg/////wMAAOD/////AwAA4P////8DAADg/////wMAAOD/////AQAA4P////8BAADg/////wEAAOD/////AwAA4P3///8DAADw+P///wMAAHDw////AwAAMPD///8DAAAA8P///wMAAADw8///AQAAAODx//8AAAAAAPCHBwAAAAAA4IEDAAAAAAAAAAAAAA=="),
 "size": Vector2i(64, 32)
 }
 
-[sub_resource type="BitMap" id="BitMap_dixfn"]
+[sub_resource type="BitMap" id="BitMap_6h3xx"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAAD8AwAAAAAAAP4fAAAAAAAA/v8AAAAAAAD+//8DAAAAAP7//w8AAAAA////HwAAAID///8/AAAAwP///z8AAAPg////fwAAB/D///9/AAAP+P////8AAB/8/////wAAPv7/////AQD+//////8BAP7//////wEA/v//////AQD+//////8BAP7//////wAA/v//////AAD+//////8AAH7//////wEAHvz/////AQAP8P////8BAAfg/////wEAA8D/////AQAAwP////8BAADA3////wAAAIAP//9/AAAAAAD/HwAAAAAAAP4DAAAAAAAAAAAAAA=="),
 "size": Vector2i(64, 32)
@@ -41,6 +41,7 @@ data = {
 [resource]
 script = ExtResource("1_aolta")
 name = &"jaws_turn_r"
+size = Vector2(64, 32)
 containing_box = Rect2(7, 1, 50, 30)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_mdvpi"), SubResource("BitMap_p3hhf"), SubResource("BitMap_4scqo"), SubResource("BitMap_3kp1e"), SubResource("BitMap_6h3xx"), SubResource("BitMap_dixfn")])
+bitmaps = Array[BitMap]([SubResource("BitMap_aolta"), SubResource("BitMap_mdvpi"), SubResource("BitMap_p3hhf"), SubResource("BitMap_4scqo"), SubResource("BitMap_3kp1e"), SubResource("BitMap_6h3xx")])

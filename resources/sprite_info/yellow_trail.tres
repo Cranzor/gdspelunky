@@ -2,73 +2,73 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_vxb00"]
 
-[sub_resource type="BitMap" id="BitMap_sm3x2"]
+[sub_resource type="BitMap" id="BitMap_vxb00"]
 data = {
 "data": PackedByteArray(0, 0, 192, 3, 240, 15, 248, 31, 252, 63, 252, 63, 254, 127, 254, 127, 254, 127, 254, 127, 252, 63, 252, 63, 248, 31, 240, 15, 192, 3, 0, 0),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_bdpls"]
+[sub_resource type="BitMap" id="BitMap_sm3x2"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 224, 7, 240, 15, 248, 31, 252, 63, 252, 63, 252, 63, 252, 63, 252, 63, 252, 63, 248, 31, 240, 15, 224, 7, 0, 0, 0, 0),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_ny6sx"]
+[sub_resource type="BitMap" id="BitMap_bdpls"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 224, 7, 240, 15, 248, 31, 248, 31, 248, 31, 248, 31, 248, 31, 248, 31, 240, 15, 224, 7, 0, 0, 0, 0, 0, 0),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_40u4o"]
+[sub_resource type="BitMap" id="BitMap_ny6sx"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 224, 7, 240, 15, 240, 15, 240, 15, 240, 15, 240, 15, 240, 15, 224, 7, 0, 0, 0, 0, 0, 0, 0, 0),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_tagom"]
+[sub_resource type="BitMap" id="BitMap_40u4o"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 128, 1, 192, 3, 224, 7, 240, 15, 240, 15, 224, 7, 192, 3, 128, 1, 0, 0, 0, 0, 0, 0, 0, 0),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_gfba2"]
+[sub_resource type="BitMap" id="BitMap_tagom"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 128, 1, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 192, 3, 128, 1, 0, 0, 0, 0, 0, 0, 0, 0),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_kyek5"]
+[sub_resource type="BitMap" id="BitMap_gfba2"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 16, 0, 112, 0, 224, 0, 192, 1, 128, 3, 0, 7, 0, 14, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_dl2cg"]
+[sub_resource type="BitMap" id="BitMap_kyek5"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 240, 15, 240, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_13lrx"]
+[sub_resource type="BitMap" id="BitMap_dl2cg"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 128, 3, 192, 1, 192, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_ai4x7"]
+[sub_resource type="BitMap" id="BitMap_13lrx"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 1, 128, 1, 128, 1, 128, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_u8dol"]
+[sub_resource type="BitMap" id="BitMap_ai4x7"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 192, 0, 128, 1, 0, 3, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_ia6ym"]
+[sub_resource type="BitMap" id="BitMap_u8dol"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 "size": Vector2i(16, 16)
@@ -77,7 +77,8 @@ data = {
 [resource]
 script = ExtResource("1_vxb00")
 name = &"yellow_trail"
+size = Vector2(16, 16)
 origin = Vector2(8, 8)
 containing_box = Rect2(1, 1, 14, 14)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_sm3x2"), SubResource("BitMap_bdpls"), SubResource("BitMap_ny6sx"), SubResource("BitMap_40u4o"), SubResource("BitMap_tagom"), SubResource("BitMap_gfba2"), SubResource("BitMap_kyek5"), SubResource("BitMap_dl2cg"), SubResource("BitMap_13lrx"), SubResource("BitMap_ai4x7"), SubResource("BitMap_u8dol"), SubResource("BitMap_ia6ym")])
+bitmaps = Array[BitMap]([SubResource("BitMap_vxb00"), SubResource("BitMap_sm3x2"), SubResource("BitMap_bdpls"), SubResource("BitMap_ny6sx"), SubResource("BitMap_40u4o"), SubResource("BitMap_tagom"), SubResource("BitMap_gfba2"), SubResource("BitMap_kyek5"), SubResource("BitMap_dl2cg"), SubResource("BitMap_13lrx"), SubResource("BitMap_ai4x7"), SubResource("BitMap_u8dol")])

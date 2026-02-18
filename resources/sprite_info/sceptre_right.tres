@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_qmnur"]
 
-[sub_resource type="BitMap" id="BitMap_qolt3"]
+[sub_resource type="BitMap" id="BitMap_qmnur"]
 data = {
 "data": PackedByteArray(0, 0, 0, 64, 0, 224, 2, 240, 255, 255, 255, 255, 254, 255, 0, 124, 0, 60, 0, 30, 0, 14, 0, 0),
 "size": Vector2i(16, 12)
@@ -11,7 +11,8 @@ data = {
 [resource]
 script = ExtResource("1_qmnur")
 name = &"sceptre_right"
+size = Vector2(16, 12)
 origin = Vector2(8, 6)
 containing_box = Rect2(0, 1, 16, 10)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_qolt3")])
+bitmaps = Array[BitMap]([SubResource("BitMap_qmnur")])

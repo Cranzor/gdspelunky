@@ -2,31 +2,31 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_h4cyh"]
 
-[sub_resource type="BitMap" id="BitMap_xa1eh"]
+[sub_resource type="BitMap" id="BitMap_h4cyh"]
 data = {
 "data": PackedByteArray("APwfAAD+PwAA/38AgP//AID//wHA//8H4P//D/D//x/4//8/+P//P/z//3/8//9//P////7////+/////v////7////+/////v////7////+/////v////7////+/////v////z////8//9/+P//P8D//wfA//8HwP//B8D//wc="),
 "size": Vector2i(32, 32)
 }
 
-[sub_resource type="BitMap" id="BitMap_tex00"]
+[sub_resource type="BitMap" id="BitMap_xa1eh"]
 data = {
 "data": PackedByteArray("APwPAAD+HwAA/z8AgP9/AID//wDA//8B4P//B/D//w/4//8f+P//H/z//z/8//8//P//f/7//3/+//9//v//f/7//3/+//9//v//f/7//3/+//9//v//f/7//3/+//9//v//f/z//3/8//8/+P//H8D//wfA//8H4P//B+D//wc="),
 "size": Vector2i(32, 32)
 }
 
-[sub_resource type="BitMap" id="BitMap_xwyiv"]
+[sub_resource type="BitMap" id="BitMap_tex00"]
 data = {
 "data": PackedByteArray("APAPAAD8PwAA/n8AAP//AID//wHA//8D4P//B/D//w/4//8f+P//H/z//z/8//8//P//f/7//3/+//9//v//f/7//3/+//9//v//f/7//3/+//9//v//f/7//3/+//9//v//f/z//3/8//8/+P//H8D//wfA//8H4P//D+D//w8="),
 "size": Vector2i(32, 32)
 }
 
-[sub_resource type="BitMap" id="BitMap_xo58n"]
+[sub_resource type="BitMap" id="BitMap_xwyiv"]
 data = {
 "data": PackedByteArray("APA/AAD4fwAA/P8AAP7/AQD//wGA//8D4P//B/D//w/4//8f+P//H/z//z/8//8//v//P/7//3/+//9//v//f/7//3/+//9//v//f/7//3/+//9//v//f/7//3/+//9//v//f/7//z/8//8/+P//H+D//wPg//8D4P//B+D//wc="),
 "size": Vector2i(32, 32)
 }
 
-[sub_resource type="BitMap" id="BitMap_6xxxe"]
+[sub_resource type="BitMap" id="BitMap_xo58n"]
 data = {
 "data": PackedByteArray("APg/AAD8fwAA/v8AAP//AYD//wHg//8D8P//B/j//w/8//8f/P//H/7//z/+//8/////P////3////9/////f////3////9/////f////3////9/////f////3////9/////f////z/+//8//P//H+D//wPg//8D4P//A+D//wM="),
 "size": Vector2i(32, 32)
@@ -35,5 +35,6 @@ data = {
 [resource]
 script = ExtResource("1_h4cyh")
 name = &"yeti_king_turn_r"
+size = Vector2(32, 32)
 containing_box = Rect2(0, 0, 32, 32)
-bitmaps = Array[BitMap]([SubResource("BitMap_xa1eh"), SubResource("BitMap_tex00"), SubResource("BitMap_xwyiv"), SubResource("BitMap_xo58n"), SubResource("BitMap_6xxxe")])
+bitmaps = Array[BitMap]([SubResource("BitMap_h4cyh"), SubResource("BitMap_xa1eh"), SubResource("BitMap_tex00"), SubResource("BitMap_xwyiv"), SubResource("BitMap_xo58n")])

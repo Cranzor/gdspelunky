@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_lx4cu"]
 
-[sub_resource type="BitMap" id="BitMap_w4hl8"]
+[sub_resource type="BitMap" id="BitMap_lx4cu"]
 data = {
 "data": PackedByteArray(0, 30, 0, 31, 128, 31, 192, 31, 128, 15, 128, 15, 192, 15, 192, 3, 224, 1, 224, 1, 248, 0, 252, 0, 254, 0, 254, 0, 252, 0, 112, 0),
 "size": Vector2i(16, 16)
@@ -11,6 +11,7 @@ data = {
 [resource]
 script = ExtResource("1_lx4cu")
 name = &"arrow_icon"
+size = Vector2(16, 16)
 containing_box = Rect2(1, 0, 12, 16)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_w4hl8")])
+bitmaps = Array[BitMap]([SubResource("BitMap_lx4cu")])

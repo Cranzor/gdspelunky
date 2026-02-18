@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_2hd7d"]
 
-[sub_resource type="BitMap" id="BitMap_n50bk"]
+[sub_resource type="BitMap" id="BitMap_2hd7d"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 254, 1, 254, 1, 254, 1, 254, 15, 254, 31, 254, 63, 254, 127, 254, 127, 254, 127, 252, 127, 252, 127, 168, 42),
 "size": Vector2i(16, 16)
@@ -11,6 +11,7 @@ data = {
 [resource]
 script = ExtResource("1_2hd7d")
 name = &"spike_shoes_tile"
+size = Vector2(16, 16)
 containing_box = Rect2(1, 4, 14, 12)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_n50bk")])
+bitmaps = Array[BitMap]([SubResource("BitMap_2hd7d")])

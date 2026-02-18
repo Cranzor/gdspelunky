@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_2k4k7"]
 
-[sub_resource type="BitMap" id="BitMap_c5c55"]
+[sub_resource type="BitMap" id="BitMap_2k4k7"]
 data = {
 "data": PackedByteArray(12, 0, 30, 0, 254, 24, 254, 63, 252, 127, 248, 127, 248, 63, 248, 127, 248, 127, 248, 127, 248, 127, 248, 127, 240, 127, 240, 127, 240, 127, 224, 49),
 "size": Vector2i(16, 16)
@@ -11,6 +11,7 @@ data = {
 [resource]
 script = ExtResource("1_2k4k7")
 name = &"crown_icon"
+size = Vector2(16, 16)
 containing_box = Rect2(1, 0, 14, 16)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_c5c55")])
+bitmaps = Array[BitMap]([SubResource("BitMap_2k4k7")])

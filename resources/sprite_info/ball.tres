@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_6g4lr"]
 
-[sub_resource type="BitMap" id="BitMap_vvbmg"]
+[sub_resource type="BitMap" id="BitMap_6g4lr"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 192, 3, 224, 7, 240, 15, 248, 31, 248, 31, 248, 31, 248, 31, 240, 15, 224, 7, 192, 3),
 "size": Vector2i(16, 16)
@@ -11,7 +11,8 @@ data = {
 [resource]
 script = ExtResource("1_6g4lr")
 name = &"ball"
+size = Vector2(16, 16)
 origin = Vector2(8, 10)
 containing_box = Rect2(3, 6, 10, 10)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_vvbmg")])
+bitmaps = Array[BitMap]([SubResource("BitMap_6g4lr")])

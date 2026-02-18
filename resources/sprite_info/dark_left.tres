@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_y5n83"]
 
-[sub_resource type="BitMap" id="BitMap_amppr"]
+[sub_resource type="BitMap" id="BitMap_y5n83"]
 data = {
 "data": PackedByteArray(0, 128, 0, 128, 0, 192, 0, 224, 0, 224, 0, 192, 0, 128, 0, 128, 0, 128, 0, 192, 0, 192, 0, 192, 0, 128, 0, 192, 0, 192, 0, 192),
 "size": Vector2i(16, 16)
@@ -11,6 +11,7 @@ data = {
 [resource]
 script = ExtResource("1_y5n83")
 name = &"dark_left"
+size = Vector2(16, 16)
 containing_box = Rect2(13, 0, 3, 16)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_amppr")])
+bitmaps = Array[BitMap]([SubResource("BitMap_y5n83")])

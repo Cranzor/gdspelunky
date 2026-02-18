@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_6r61i"]
 
-[sub_resource type="BitMap" id="BitMap_cmikm"]
+[sub_resource type="BitMap" id="BitMap_6r61i"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAP7//3v//97//3/6//97///e//9f+v//e///3v//X/z///f8P+///z/8///vAYD3//8//P//3///+///P/z//z/+f/z//z/8////AYD///8//P//////////P/z//////////z/6//////////9f+v//////////X/r//////////1/2//////////9v9v//////////b/b//////////2/2//////////9v7v/Pn///+fP/d+7/z59//vnz/3fu/8+ff/758/933vfPn3/++fPve97nz59//vnz53ve58+ff/758+d7vufPn3/++fPnfb7nz59//vnz531+58+ff/758+d+fufPn3/++fPnfn7nz59//vnz535+5++ff/759+d+fgfgn3/++Qfgfh4A8B8AAPgPAHjGD/gPAADwH/Bj8p/9B/w/4L/5T/q/AQD+fwCA/V/4nwMA//8AwPkf/J/5H///+J/5P/yfHTD//wy4+T/8n+dv///25/k//J/7X///+t/5P/y//d////u//T/4v/vv9+/33/0f+r/n8/PPz+f9X/q/H/z73z/4/V/yv///+9////1P9r////vf///9b+a////73////WfOv/////////1zzr/////////9c+a//////////Wfyv///+9////1P+D////2////8H/w//v/+f/9//D/8f/z//n//P/4//H/5//5//5/+P/x/8//+f//P/j/8f+//8Y//9/4//H///+/3///+P/x///8f+P///j/8f/////////4/+D/+/////3/8H/Kf/v////9/+U/Gz/7/////f/NjjuD+/////38HcR74/v////9/H3g++v7/////f198jvv9/////7/fceb7/f////+/32fi+/3/////v99H6vv9/////7/fV+j3+//////f7xfs9/v/////3+837Pf3/////+/vN+z39//////v7zfc7+//////9/c72u/v//////f3W9rf////////+1va3/////////tbur/////////9XbZ//////////m22////AYD///9tbv///v//f///du7+/+////f/f3fe/e//////9797vvv//wGA///ffX7n////////537+nv///////3l//n3///////++f/7z/v////9/z3/+z/7/AYD/f/N//j/+7///93/8f/7//v////9//3/+f/7/AAD/f/5//n/+//5//3/+f/5//v/+f/9//n/+P/x/AAD+P/x/"),
 "size": Vector2i(80, 96)
@@ -11,5 +11,6 @@ data = {
 [resource]
 script = ExtResource("1_6r61i")
 name = &"lady_xoc"
+size = Vector2(80, 96)
 containing_box = Rect2(1, 1, 78, 95)
-bitmaps = Array[BitMap]([SubResource("BitMap_cmikm")])
+bitmaps = Array[BitMap]([SubResource("BitMap_6r61i")])

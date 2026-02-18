@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_48j5w"]
 
-[sub_resource type="BitMap" id="BitMap_hifmh"]
+[sub_resource type="BitMap" id="BitMap_48j5w"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 208, 103, 248, 255, 248, 255, 240, 255, 248, 255, 248, 103, 56, 0, 0, 0),
 "size": Vector2i(16, 16)
@@ -11,6 +11,7 @@ data = {
 [resource]
 script = ExtResource("1_48j5w")
 name = &"web_cannon_tile"
+size = Vector2(16, 16)
 containing_box = Rect2(3, 8, 13, 7)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_hifmh")])
+bitmaps = Array[BitMap]([SubResource("BitMap_48j5w")])

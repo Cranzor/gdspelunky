@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_g6sia"]
 
-[sub_resource type="BitMap" id="BitMap_enwy0"]
+[sub_resource type="BitMap" id="BitMap_g6sia"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 240, 15, 240, 15, 240, 15, 240, 15, 240, 15, 255, 255, 255, 255, 255, 255, 255, 255, 254, 255),
 "size": Vector2i(16, 16)
@@ -11,5 +11,6 @@ data = {
 [resource]
 script = ExtResource("1_g6sia")
 name = &"gold_bars_tile"
+size = Vector2(16, 16)
 containing_box = Rect2(0, 6, 16, 10)
-bitmaps = Array[BitMap]([SubResource("BitMap_enwy0")])
+bitmaps = Array[BitMap]([SubResource("BitMap_g6sia")])

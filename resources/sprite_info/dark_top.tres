@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_6wmbg"]
 
-[sub_resource type="BitMap" id="BitMap_difud"]
+[sub_resource type="BitMap" id="BitMap_6wmbg"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 3, 193, 183, 255, 255, 0, 0),
 "size": Vector2i(16, 17)
@@ -11,6 +11,7 @@ data = {
 [resource]
 script = ExtResource("1_6wmbg")
 name = &"dark_top"
+size = Vector2(16, 17)
 containing_box = Rect2(0, 13, 16, 3)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_difud")])
+bitmaps = Array[BitMap]([SubResource("BitMap_6wmbg")])

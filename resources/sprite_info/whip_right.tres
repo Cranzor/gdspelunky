@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_eg3o2"]
 
-[sub_resource type="BitMap" id="BitMap_mf6s4"]
+[sub_resource type="BitMap" id="BitMap_eg3o2"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 15, 30, 255, 31, 255, 15, 240, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 "size": Vector2i(16, 16)
@@ -11,7 +11,8 @@ data = {
 [resource]
 script = ExtResource("1_eg3o2")
 name = &"whip_right"
+size = Vector2(16, 16)
 origin = Vector2(8, 8)
 containing_box = Rect2(0, 6, 13, 5)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_mf6s4")])
+bitmaps = Array[BitMap]([SubResource("BitMap_eg3o2")])

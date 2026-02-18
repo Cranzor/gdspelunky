@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_bof6n"]
 
-[sub_resource type="BitMap" id="BitMap_ah4lm"]
+[sub_resource type="BitMap" id="BitMap_bof6n"]
 data = {
 "data": PackedByteArray(24, 126, 126, 255, 255, 126, 126, 24),
 "size": Vector2i(8, 8)
 }
 
-[sub_resource type="BitMap" id="BitMap_o1qqv"]
+[sub_resource type="BitMap" id="BitMap_ah4lm"]
 data = {
 "data": PackedByteArray(0, 24, 60, 126, 126, 60, 24, 0),
 "size": Vector2i(8, 8)
@@ -17,7 +17,8 @@ data = {
 [resource]
 script = ExtResource("1_bof6n")
 name = &"flare"
+size = Vector2(8, 8)
 origin = Vector2(4, 4)
 containing_box = Rect2(0, 0, 8, 8)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_ah4lm"), SubResource("BitMap_o1qqv")])
+bitmaps = Array[BitMap]([SubResource("BitMap_bof6n"), SubResource("BitMap_ah4lm")])

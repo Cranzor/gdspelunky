@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_1bd5h"]
 
-[sub_resource type="BitMap" id="BitMap_8ua2f"]
+[sub_resource type="BitMap" id="BitMap_1bd5h"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAAAAAH8AAID/AQCAHwAAgP8DAID/HwB4//8A/P//A/7/Bwf+/wEAn/8HAI//HwDH/z8A5/9/APP//wD7//8B+f37A/z5wwf8+AMGfPgHADz4BwA88AcAPPAPABjwDwAY4A4AEOAeABDAHAAAwDwAAIA8AACAPAAAADwAAAB4AAAA+AAAAPgAAAD4AAAA+AAAAPgAAAD4AQAA8AEAAPABAADwAQAA8AMAAPADAADwAwAA4AMAAOAHAADgBwAA4AcAAOAHAADgBwAA4AcAAMAHAADABwAAwA8AAMAPAADADwAAwA8AAMAPAADADwAAwA8AAMAPAADADwAAgB8AAIAfAACAHwAAgB8AAIAfAACAHwAAgB8AAIAfAACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACAPwAAgD8AAIA/AACAfwAAgH8AAIB/AACAfwAAgH8AAIB/AACAfwAAgH8AAMB/AADAfwAAwH8AAMB/AADA/wAAwP8AAMD/AADA/wAAwP8AAMD/AADA/wAAwP8AAMD/AADA/wAAwP8AAMD/AADA/wAAwP8AAMD/AADA/wAAwP8AAMD/AADA/wAAwP8AAMD/AADA/wAAwP8AAMD/AADA/wAAwP8AAMD/AADg/wAA4P8AAOD/AADg/wAA4P8="),
 "size": Vector2i(32, 128)
@@ -11,6 +11,7 @@ data = {
 [resource]
 script = ExtResource("1_1bd5h")
 name = &"palm_tree"
+size = Vector2(32, 128)
 containing_box = Rect2(0, 3, 32, 125)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_8ua2f")])
+bitmaps = Array[BitMap]([SubResource("BitMap_1bd5h")])

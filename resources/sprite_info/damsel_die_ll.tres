@@ -11,6 +11,7 @@ data = {
 [resource]
 script = ExtResource("1_cgpqv")
 name = &"damsel_die_ll"
+size = Vector2(16, 16)
 origin = Vector2(8, 8)
 containing_box = Rect2(2, 0, 13, 15)
 bitmaps = Array[BitMap]([SubResource("BitMap_cgpqv")])

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_tnwow"]
 
-[sub_resource type="BitMap" id="BitMap_ru15k"]
+[sub_resource type="BitMap" id="BitMap_tnwow"]
 data = {
 "data": PackedByteArray(0, 30, 0, 63, 128, 127, 192, 127, 224, 127, 240, 127, 248, 127, 252, 127, 254, 127, 255, 127, 255, 63, 255, 63, 255, 31, 254, 31, 248, 15, 224, 3),
 "size": Vector2i(16, 16)
@@ -11,6 +11,7 @@ data = {
 [resource]
 script = ExtResource("1_tnwow")
 name = &"udjat_eye_icon"
+size = Vector2(16, 16)
 containing_box = Rect2(0, 0, 15, 16)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_ru15k")])
+bitmaps = Array[BitMap]([SubResource("BitMap_tnwow")])

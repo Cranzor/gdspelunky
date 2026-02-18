@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_k0bjm"]
 
-[sub_resource type="BitMap" id="BitMap_8g181"]
+[sub_resource type="BitMap" id="BitMap_k0bjm"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 224, 15, 248, 63, 252, 127, 252, 127, 252, 127, 252, 127, 252, 127, 252, 127, 252, 127, 252, 127, 252, 127, 248, 63, 240, 31, 240, 31),
 "size": Vector2i(16, 16)
@@ -11,7 +11,8 @@ data = {
 [resource]
 script = ExtResource("1_k0bjm")
 name = &"kapala"
+size = Vector2(16, 16)
 origin = Vector2(8, 8)
 containing_box = Rect2(2, 2, 13, 14)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_8g181")])
+bitmaps = Array[BitMap]([SubResource("BitMap_k0bjm")])

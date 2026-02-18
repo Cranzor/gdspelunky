@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_tl2sx"]
 
-[sub_resource type="BitMap" id="BitMap_0i3ui"]
+[sub_resource type="BitMap" id="BitMap_tl2sx"]
 data = {
 "data": PackedByteArray(0, 0, 112, 14, 248, 31, 252, 63, 254, 127, 254, 127, 254, 127, 254, 127, 252, 63, 248, 31, 240, 15, 224, 7, 192, 3, 128, 1, 0, 0, 0, 0),
 "size": Vector2i(16, 16)
@@ -11,6 +11,7 @@ data = {
 [resource]
 script = ExtResource("1_tl2sx")
 name = &"heart"
+size = Vector2(16, 16)
 containing_box = Rect2(1, 1, 14, 13)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_0i3ui")])
+bitmaps = Array[BitMap]([SubResource("BitMap_tl2sx")])

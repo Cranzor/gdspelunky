@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_etdmq"]
 
-[sub_resource type="BitMap" id="BitMap_2pvum"]
+[sub_resource type="BitMap" id="BitMap_etdmq"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 252, 0, 254, 7, 255, 31, 255, 127, 255, 255, 255, 255, 254, 127),
 "size": Vector2i(16, 16)
@@ -11,5 +11,6 @@ data = {
 [resource]
 script = ExtResource("1_etdmq")
 name = &"shop_die_l"
+size = Vector2(16, 16)
 containing_box = Rect2(0, 9, 16, 7)
-bitmaps = Array[BitMap]([SubResource("BitMap_2pvum")])
+bitmaps = Array[BitMap]([SubResource("BitMap_etdmq")])

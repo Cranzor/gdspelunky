@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_v75sr"]
 
-[sub_resource type="BitMap" id="BitMap_dds6v"]
+[sub_resource type="BitMap" id="BitMap_v75sr"]
 data = {
 "data": PackedByteArray(255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255, 255),
 "size": Vector2i(32, 16)
@@ -11,5 +11,6 @@ data = {
 [resource]
 script = ExtResource("1_v75sr")
 name = &"tutorial_sign"
+size = Vector2(32, 16)
 containing_box = Rect2(0, 0, 32, 16)
-bitmaps = Array[BitMap]([SubResource("BitMap_dds6v")])
+bitmaps = Array[BitMap]([SubResource("BitMap_v75sr")])

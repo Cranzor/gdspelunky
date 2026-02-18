@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_tlsj3"]
 
-[sub_resource type="BitMap" id="BitMap_sa5rb"]
+[sub_resource type="BitMap" id="BitMap_tlsj3"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 48, 6, 120, 15, 252, 31, 252, 31, 252, 31, 252, 31, 248, 15, 240, 7, 224, 3, 192, 1, 128, 0, 0, 0, 0, 0),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_xv6uy"]
+[sub_resource type="BitMap" id="BitMap_sa5rb"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 96, 3, 240, 7, 248, 15, 248, 15, 248, 15, 240, 7, 224, 3, 192, 1, 128, 0, 0, 0, 0, 0, 0, 0),
 "size": Vector2i(16, 16)
@@ -17,7 +17,8 @@ data = {
 [resource]
 script = ExtResource("1_tlsj3")
 name = &"smooch_heart"
+size = Vector2(16, 16)
 origin = Vector2(8, 8)
 containing_box = Rect2(2, 3, 11, 11)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_sa5rb"), SubResource("BitMap_xv6uy")])
+bitmaps = Array[BitMap]([SubResource("BitMap_tlsj3"), SubResource("BitMap_sa5rb")])

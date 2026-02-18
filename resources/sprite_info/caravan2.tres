@@ -2,25 +2,25 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_g2wdu"]
 
-[sub_resource type="BitMap" id="BitMap_wxp2p"]
+[sub_resource type="BitMap" id="BitMap_g2wdu"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4A8AAPAfAAD4PwAA+H8AAPh/AADwPwAA8D8AAPh/AAD4fwAA+D8AAPgPAAD8PwAA//8AgP//AcD//wPg//8D4P//B+D//wfg//8H4P//B/D//w/w//8P+P//H/j//x/4//8f+P//H/j//x/4//8f8P//D/D//w/g//8H4P//B+D//wfg//8H4P//B+D//w/g//8f4P//H/D//z/w//8/8P//P/B/8H/4f/h/+H/4f/h/+H/8P/w//B/8H/4f/h88Pjw+CDwIPA=="),
 "size": Vector2i(32, 64)
 }
 
-[sub_resource type="BitMap" id="BitMap_yn58k"]
+[sub_resource type="BitMap" id="BitMap_wxp2p"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOAPAADwHwAA+D8AAPh/AAD4fwAA8D8AAPA/AAD4fwAA+H8AAPg/AAD4DwAA/D8AAP//AID//wHA//8D4P//A+D//wfg//8H4P//B+D//wfw//8P8P//D/j//x/4//8f+P//H/j//x/4//8f+P//H/D//w/w//8P4P//B+D//wfg//8H4P//B+D//wfg//8D8P//B/D//w/w//8P+P//H/j//x/8P/w//n/+f/5//n/+f/5//n/+f/w//D8+Hz4fPh4+Hg=="),
 "size": Vector2i(32, 64)
 }
 
-[sub_resource type="BitMap" id="BitMap_ieawb"]
+[sub_resource type="BitMap" id="BitMap_yn58k"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADgDwAA8B8AAPg/AAD4fwAA+H8AAPA/AADwPwAA+H8AAPh/AADwPwAA8B8AAOAPAADwDwAA+AcAAPwDAAAAAAAA/D8AAP//AID//wHA//8D4P//A+D//wfg//8H4P//B+D//wfw//8P8P//D/j//x/4//8f+P//H/j//x/4//8f+P//H/D//w/w//8P4P//B+D//wfg//8H4P//B+D//wfA//8D4P//A/D//wfw//8P8P//D/j//x/4H/gf+B/4H/w//D/+f/5//n/+f/5//n/+f/5//D/8P/AH8AfgA+AD4AHgAQ=="),
 "size": Vector2i(32, 64)
 }
 
-[sub_resource type="BitMap" id="BitMap_1c0be"]
+[sub_resource type="BitMap" id="BitMap_ieawb"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAA4A8AAPAfAAD4PwAA+H8AAPh/AADwPwAA8D8AAPh/AAD4fwAA8D8AAPAfAADgDwAA8A8AAPgHAAD8AwAAAAAAAPw/AAD//wCA//8BwP//A+D//wPg//8H4P//B+D//wfg//8H8P//D/D//w/4//8f+P//H/j//x/4//8f+P//H/j//x/w//8P8P//D+D//wfg//8H4P//B+D//wfg//8HwP//A8D//wPA//8D4P//A/D//wfw//8P8A/wD/gf+B/4H/gf+B/4H/w//D/+f/5//v/+/////////////m/+b/gH+Af4D/gPAA8ADw=="),
 "size": Vector2i(32, 64)
@@ -29,6 +29,7 @@ data = {
 [resource]
 script = ExtResource("1_g2wdu")
 name = &"caravan2"
+size = Vector2(32, 64)
 containing_box = Rect2(0, 5, 32, 59)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_wxp2p"), SubResource("BitMap_yn58k"), SubResource("BitMap_ieawb"), SubResource("BitMap_1c0be")])
+bitmaps = Array[BitMap]([SubResource("BitMap_g2wdu"), SubResource("BitMap_wxp2p"), SubResource("BitMap_yn58k"), SubResource("BitMap_ieawb")])

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_jwslq"]
 
-[sub_resource type="BitMap" id="BitMap_mn106"]
+[sub_resource type="BitMap" id="BitMap_jwslq"]
 data = {
 "data": PackedByteArray(0, 0, 248, 31, 248, 31, 248, 31, 248, 31, 248, 31, 248, 31, 240, 15, 240, 15, 224, 7, 192, 3, 192, 3, 192, 3, 224, 7, 240, 15, 240, 15),
 "size": Vector2i(16, 16)
@@ -11,6 +11,7 @@ data = {
 [resource]
 script = ExtResource("1_jwslq")
 name = &"silver_trophy"
+size = Vector2(16, 16)
 containing_box = Rect2(3, 1, 10, 15)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_mn106")])
+bitmaps = Array[BitMap]([SubResource("BitMap_jwslq")])

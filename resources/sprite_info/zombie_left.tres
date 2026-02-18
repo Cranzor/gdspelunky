@@ -2,25 +2,25 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_8mpu2"]
 
-[sub_resource type="BitMap" id="BitMap_6jsa6"]
+[sub_resource type="BitMap" id="BitMap_8mpu2"]
 data = {
 "data": PackedByteArray(240, 31, 240, 31, 240, 31, 240, 31, 240, 63, 248, 63, 248, 127, 248, 223, 254, 159, 255, 63, 255, 63, 254, 63, 224, 31, 224, 31, 192, 15, 192, 15),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_bejrm"]
+[sub_resource type="BitMap" id="BitMap_6jsa6"]
 data = {
 "data": PackedByteArray(0, 0, 240, 31, 240, 31, 240, 31, 240, 31, 240, 63, 248, 63, 248, 127, 248, 223, 254, 159, 255, 63, 255, 63, 254, 63, 248, 31, 224, 15, 192, 15),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_ttxgw"]
+[sub_resource type="BitMap" id="BitMap_bejrm"]
 data = {
 "data": PackedByteArray(0, 0, 240, 31, 240, 31, 240, 31, 248, 31, 240, 63, 248, 255, 248, 255, 248, 31, 252, 63, 254, 63, 254, 63, 252, 63, 240, 31, 224, 15, 192, 15),
 "size": Vector2i(16, 16)
 }
 
-[sub_resource type="BitMap" id="BitMap_xwq70"]
+[sub_resource type="BitMap" id="BitMap_ttxgw"]
 data = {
 "data": PackedByteArray(0, 0, 240, 31, 240, 31, 240, 31, 240, 31, 240, 63, 248, 63, 248, 127, 248, 95, 254, 95, 255, 127, 255, 63, 254, 63, 248, 31, 224, 15, 192, 15),
 "size": Vector2i(16, 16)
@@ -29,5 +29,6 @@ data = {
 [resource]
 script = ExtResource("1_8mpu2")
 name = &"zombie_left"
+size = Vector2(16, 16)
 containing_box = Rect2(0, 0, 16, 16)
-bitmaps = Array[BitMap]([SubResource("BitMap_6jsa6"), SubResource("BitMap_bejrm"), SubResource("BitMap_ttxgw"), SubResource("BitMap_xwq70")])
+bitmaps = Array[BitMap]([SubResource("BitMap_8mpu2"), SubResource("BitMap_6jsa6"), SubResource("BitMap_bejrm"), SubResource("BitMap_ttxgw")])

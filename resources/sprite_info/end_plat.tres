@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_keh17"]
 
-[sub_resource type="BitMap" id="BitMap_bil00"]
+[sub_resource type="BitMap" id="BitMap_keh17"]
 data = {
 "data": PackedByteArray("/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////w=="),
 "size": Vector2i(80, 16)
@@ -11,5 +11,6 @@ data = {
 [resource]
 script = ExtResource("1_keh17")
 name = &"end_plat"
+size = Vector2(80, 16)
 containing_box = Rect2(0, 0, 80, 16)
-bitmaps = Array[BitMap]([SubResource("BitMap_bil00")])
+bitmaps = Array[BitMap]([SubResource("BitMap_keh17")])

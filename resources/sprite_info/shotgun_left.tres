@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_gu8ge"]
 
-[sub_resource type="BitMap" id="BitMap_032ft"]
+[sub_resource type="BitMap" id="BitMap_gu8ge"]
 data = {
 "data": PackedByteArray(0, 0, 254, 3, 254, 15, 254, 31, 254, 63, 252, 63, 248, 63, 0, 24),
 "size": Vector2i(16, 8)
@@ -11,7 +11,8 @@ data = {
 [resource]
 script = ExtResource("1_gu8ge")
 name = &"shotgun_left"
+size = Vector2(16, 8)
 origin = Vector2(8, 4)
 containing_box = Rect2(1, 1, 13, 7)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_032ft")])
+bitmaps = Array[BitMap]([SubResource("BitMap_gu8ge")])

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_h2fou"]
 
-[sub_resource type="BitMap" id="BitMap_dnaf4"]
+[sub_resource type="BitMap" id="BitMap_h2fou"]
 data = {
 "data": PackedByteArray(0, 128, 0, 192, 0, 224, 0, 224, 0, 192, 0, 128, 0, 128, 0, 128, 0, 192, 0, 192, 0, 192, 0, 128, 0, 192, 0, 192, 0, 192, 0, 0),
 "size": Vector2i(16, 16)
@@ -11,5 +11,6 @@ data = {
 [resource]
 script = ExtResource("1_h2fou")
 name = &"lush_left"
+size = Vector2(16, 16)
 containing_box = Rect2(13, 0, 3, 15)
-bitmaps = Array[BitMap]([SubResource("BitMap_dnaf4")])
+bitmaps = Array[BitMap]([SubResource("BitMap_h2fou")])

@@ -101,6 +101,7 @@ data = {
 [resource]
 script = ExtResource("1_6t4hm")
 name = &"damsel_exit"
+size = Vector2(16, 16)
 origin = Vector2(8, 8)
 containing_box = Rect2(2, 0, 12, 16)
 bitmaps = Array[BitMap]([SubResource("BitMap_6t4hm"), SubResource("BitMap_rahsi"), SubResource("BitMap_01k80"), SubResource("BitMap_bmyw1"), SubResource("BitMap_son20"), SubResource("BitMap_8i3hk"), SubResource("BitMap_vrjdg"), SubResource("BitMap_ca7bm"), SubResource("BitMap_5t5vj"), SubResource("BitMap_1gd7b"), SubResource("BitMap_y8bsc"), SubResource("BitMap_d65wi"), SubResource("BitMap_vecrx"), SubResource("BitMap_u04dq"), SubResource("BitMap_xivgr"), SubResource("BitMap_8cy2b")])

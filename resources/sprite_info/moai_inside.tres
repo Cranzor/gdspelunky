@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_aej0b"]
 
-[sub_resource type="BitMap" id="BitMap_wp2ye"]
+[sub_resource type="BitMap" id="BitMap_aej0b"]
 data = {
 "data": PackedByteArray("////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////"),
 "size": Vector2i(16, 48)
@@ -11,5 +11,6 @@ data = {
 [resource]
 script = ExtResource("1_aej0b")
 name = &"moai_inside"
+size = Vector2(16, 48)
 containing_box = Rect2(0, 0, 16, 48)
-bitmaps = Array[BitMap]([SubResource("BitMap_wp2ye")])
+bitmaps = Array[BitMap]([SubResource("BitMap_aej0b")])

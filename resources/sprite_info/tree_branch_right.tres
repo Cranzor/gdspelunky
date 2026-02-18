@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_0w57n"]
 
-[sub_resource type="BitMap" id="BitMap_v52uc"]
+[sub_resource type="BitMap" id="BitMap_0w57n"]
 data = {
 "data": PackedByteArray(255, 127, 255, 255, 255, 255, 255, 255, 191, 255, 255, 255, 255, 255, 252, 253, 248, 111, 224, 1, 192, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 "size": Vector2i(16, 16)
@@ -11,5 +11,6 @@ data = {
 [resource]
 script = ExtResource("1_0w57n")
 name = &"tree_branch_right"
+size = Vector2(16, 16)
 containing_box = Rect2(0, 0, 16, 11)
-bitmaps = Array[BitMap]([SubResource("BitMap_v52uc")])
+bitmaps = Array[BitMap]([SubResource("BitMap_0w57n")])

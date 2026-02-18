@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_lt3pu"]
 
-[sub_resource type="BitMap" id="BitMap_3sw3f"]
+[sub_resource type="BitMap" id="BitMap_lt3pu"]
 data = {
 "data": PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4P////8D+P////8P/P////8f/P////8//v////8//v////9//v////9//v////9//v////9//v////9//v////9//v////9//v////9//v////9//v////9//v////9//v////9//v////9//v////9//v////9//v////9//v////9//v////9//v////9//v////9//v////9//v////9//v////9//v////9//v////9//v////9/"),
 "size": Vector2i(48, 48)
@@ -11,6 +11,7 @@ data = {
 [resource]
 script = ExtResource("1_lt3pu")
 name = &"big_chest"
+size = Vector2(48, 48)
 containing_box = Rect2(1, 17, 46, 31)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_3sw3f")])
+bitmaps = Array[BitMap]([SubResource("BitMap_lt3pu")])

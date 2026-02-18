@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_awvke"]
 
-[sub_resource type="BitMap" id="BitMap_42fqm"]
+[sub_resource type="BitMap" id="BitMap_awvke"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 254, 1, 255, 15, 255, 63, 255, 127, 255, 255, 255, 255, 255, 127, 254, 31, 254, 15, 248, 3),
 "size": Vector2i(16, 16)
@@ -11,6 +11,7 @@ data = {
 [resource]
 script = ExtResource("1_awvke")
 name = &"tunnel_l_fall"
+size = Vector2(16, 16)
 origin = Vector2(8, 8)
 containing_box = Rect2(0, 6, 16, 10)
-bitmaps = Array[BitMap]([SubResource("BitMap_42fqm")])
+bitmaps = Array[BitMap]([SubResource("BitMap_awvke")])

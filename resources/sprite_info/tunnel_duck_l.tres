@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_ukdko"]
 
-[sub_resource type="BitMap" id="BitMap_7jhjg"]
+[sub_resource type="BitMap" id="BitMap_ukdko"]
 data = {
 "data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 252, 3, 254, 7, 254, 15, 254, 15, 254, 15, 254, 31, 254, 63, 254, 127, 254, 255),
 "size": Vector2i(16, 16)
@@ -11,7 +11,8 @@ data = {
 [resource]
 script = ExtResource("1_ukdko")
 name = &"tunnel_duck_l"
+size = Vector2(16, 16)
 origin = Vector2(9, 8)
 containing_box = Rect2(1, 7, 15, 9)
 precise = true
-bitmaps = Array[BitMap]([SubResource("BitMap_7jhjg")])
+bitmaps = Array[BitMap]([SubResource("BitMap_ukdko")])

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="1_jg20v"]
 
-[sub_resource type="BitMap" id="BitMap_of1gq"]
+[sub_resource type="BitMap" id="BitMap_jg20v"]
 data = {
 "data": PackedByteArray(240, 15, 248, 31, 248, 63, 252, 63, 254, 63, 254, 63, 252, 63, 240, 31, 240, 15, 240, 63, 246, 127, 255, 127, 255, 63, 222, 15, 12, 15, 0, 15),
 "size": Vector2i(16, 16)
@@ -11,6 +11,7 @@ data = {
 [resource]
 script = ExtResource("1_jg20v")
 name = &"tunnel_hang_l"
+size = Vector2(16, 16)
 origin = Vector2(8, 8)
 containing_box = Rect2(0, 0, 15, 16)
-bitmaps = Array[BitMap]([SubResource("BitMap_of1gq")])
+bitmaps = Array[BitMap]([SubResource("BitMap_jg20v")])
