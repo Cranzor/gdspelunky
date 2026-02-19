@@ -11,12 +11,8 @@
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="8_akvyr"]
 [ext_resource type="Texture2D" uid="uid://dklgx6kbf2enj" path="res://backgrounds/bg_cave_top.png" id="9_0ea63"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="10_lefri"]
-[ext_resource type="Resource" uid="uid://b8vw6eqfsf5mk" path="res://resources/sprite_info/brick.tres" id="12_51eyp"]
-[ext_resource type="Resource" uid="uid://i73ytthq5rhe" path="res://resources/sprite_info/brick2.tres" id="13_wbkd0"]
-[ext_resource type="Resource" uid="uid://ck0vh2s4erfgl" path="res://resources/sprite_info/brick_gold.tres" id="14_20ig7"]
-[ext_resource type="Resource" uid="uid://lpnmq313aqur" path="res://resources/sprite_info/brick_gold_big.tres" id="15_7ryrx"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_51eyp"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_lefri"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -52,6 +48,22 @@ animations = [{
 "speed": 30.0
 }]
 
+[sub_resource type="Resource" id="Resource_fa2bf"]
+script = ExtResource("8_akvyr")
+containing_box = Rect2(0, 0, 16, 16)
+
+[sub_resource type="Resource" id="Resource_v6ywl"]
+script = ExtResource("8_akvyr")
+containing_box = Rect2(0, 0, 16, 16)
+
+[sub_resource type="Resource" id="Resource_akvyr"]
+script = ExtResource("8_akvyr")
+containing_box = Rect2(0, 0, 16, 16)
+
+[sub_resource type="Resource" id="Resource_51eyp"]
+script = ExtResource("8_akvyr")
+containing_box = Rect2(0, 0, 16, 16)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wbkd0"]
 size = Vector2(16, 16)
 
@@ -76,15 +88,15 @@ region_rect = Rect2(0, 0, 16, 16)
 script = ExtResource("4_5w16i")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_cghdr")]
-sprite_frames = SubResource("SpriteFrames_51eyp")
+sprite_frames = SubResource("SpriteFrames_lefri")
 autoplay = "brick"
 centered = false
 script = ExtResource("10_lefri")
 sprite_info = Dictionary[StringName, ExtResource("8_akvyr")]({
-&"brick": ExtResource("12_51eyp"),
-&"brick2": ExtResource("13_wbkd0"),
-&"brick_gold": ExtResource("14_20ig7"),
-&"brick_gold_big": ExtResource("15_7ryrx")
+&"brick": SubResource("Resource_fa2bf"),
+&"brick2": SubResource("Resource_v6ywl"),
+&"brick_gold": SubResource("Resource_akvyr"),
+&"brick_gold_big": SubResource("Resource_51eyp")
 })
 default_animation = &"brick"
 

@@ -702,35 +702,30 @@ func run_collision_with() -> void:
 							var rect1 = Rect2((position - origin), image1_size)
 							var collider_origin = sprites.sprite_database[collider.sprite_index_name]["origin"]
 							var rect2 = Rect2((collider.position - collider_origin), image2_size)
-								
-							var intersection = rect1.intersection(rect2)
-							if intersection:
-								#--- converting to RGBA8 in case one of both is not in this format. cannot blit if format is not correct
-								image1.convert(Image.FORMAT_RGBA8)
-								image2.convert(Image.FORMAT_RGBA8)
-								
-								#--- creating a new image the size of the overlap that holds the portion of the checking object that is in the collision
-								var new_image = Image.create_empty(intersection.size.x, intersection.size.y, false, Image.FORMAT_RGBA8)
-								var adjusted_position: Vector2 = abs(((position - origin) - intersection.position))
-								new_image.blit_rect(image1, Rect2i(Vector2(adjusted_position.x, adjusted_position.y), Vector2(intersection.size.x, intersection.size.y)), Vector2(0, 0))
-								
-								#--- creating another image the size of the overlap that holds the portion of the checked object that is in the collision
-								var new_image2 = Image.create_empty(intersection.size.x, intersection.size.y, false, Image.FORMAT_RGBA8)
-								new_image2.blit_rect(image2, Rect2i(Vector2(0, 0), Vector2(intersection.size.x, intersection.size.y)), Vector2(0, 0))
-								
-								#--- creating bitmaps of both new images
-								var bitmap1: BitMap = BitMap.new()
-								bitmap1.create_from_image_alpha(new_image)
-								var bitmap2: BitMap = BitMap.new()
-								bitmap2.create_from_image_alpha(new_image2)
-								
-								#--- if either new image is empty, we know there is not any overlap between pixels (just with bounding boxes)
-								#--- otherwise, if both contain at least one bit, then there was an overlap, so we call the collision_with function
-								if bitmap1.get_true_bit_count() > 0 and bitmap2.get_true_bit_count() > 0:
-									if collider != self and !collider.is_queued_for_deletion():
-										other = collider
-										var callable = collision_with[object]
-										callable.call()
+							
+							#--- getting intersection rect of the two objects and looping over each pixel to see if there's a match
+							var intersection: Rect2 = rect1.intersection(rect2)
+							
+							var rect1_pos: Vector2 = intersection.position - rect1.position
+							var rect2_pos: Vector2 = intersection.position - rect2.position
+							
+							var bitmap1_test: BitMap = animated_sprite_node.sprite_info[animated_sprite_node.animation].bitmaps[animated_sprite_node.frame]
+							var bitmap2_test: BitMap = collider.animated_sprite_node.sprite_info[collider.animated_sprite_node.animation].bitmaps[collider.animated_sprite_node.frame]
+							
+							for y in intersection.size.y:
+								for x in intersection.size.x:
+									var pixel1 := Vector2i(x + rect1_pos.x, y + rect1_pos.y)
+									var pixel2 := Vector2i(x + rect2_pos.x, y + rect2_pos.y)
+									var drawn1: bool = bitmap1_test.get_bitv(pixel1)
+									var drawn2: bool = bitmap2_test.get_bitv(pixel2)
+
+									if drawn1 and drawn2:
+										if collider != self and !collider.is_queued_for_deletion():
+											other = collider
+											var callable = collision_with[object]
+											callable.call()
+										break
+								break
 
 						#--- can simply call the collision_with function if both objects have rectangle masks
 						else:
