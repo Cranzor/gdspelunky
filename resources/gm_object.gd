@@ -689,43 +689,29 @@ func run_collision_with() -> void:
 						var checker_precise = sprites.sprite_database[sprite_index_name]["mask"]["shape"]
 						var collider_precise = sprites.sprite_database[collider.sprite_index_name]["mask"]["shape"]
 						if (checker_precise == "PRECISE" or collider_precise == "PRECISE") and object_name != "arrow_trap_test": #--- if either object has a precise mask, run pixel perfect check
-							#--- arrow_trap_test is an exception because it is the only object in the game in which image_xscale affects its collision
-							#--- it is a simple rectangle already, so we don't need to check it with precise collision, so we skip it (and it wouldn't work anyway without further changes)
-							var checker_frame = animated_sprite_node.frame
-							var collider_frame = collider.animated_sprite_node.frame
-							#--- creating images of current sprite frame for both objects
-							var image1 = animated_sprite_node.sprite_frames.get_frame_texture(sprite_index_name, checker_frame).get_image()
-							var image2 = collider.animated_sprite_node.sprite_frames.get_frame_texture(collider.sprite_index_name, collider_frame).get_image()
-							var image1_size: Vector2 = image1.get_size()
-							var image2_size: Vector2 = image2.get_size()
-							#--- performing a Rect2 overlap test to get overlap info
-							var rect1 = Rect2((position - origin), image1_size)
-							var collider_origin = sprites.sprite_database[collider.sprite_index_name]["origin"]
-							var rect2 = Rect2((collider.position - collider_origin), image2_size)
-							
-							#--- getting intersection rect of the two objects and looping over each pixel to see if there's a match
-							var intersection: Rect2 = rect1.intersection(rect2)
-							
-							var rect1_pos: Vector2 = intersection.position - rect1.position
-							var rect2_pos: Vector2 = intersection.position - rect2.position
-							
-							var bitmap1_test: BitMap = animated_sprite_node.sprite_info[animated_sprite_node.animation].bitmaps[animated_sprite_node.frame]
-							var bitmap2_test: BitMap = collider.animated_sprite_node.sprite_info[collider.animated_sprite_node.animation].bitmaps[collider.animated_sprite_node.frame]
-							
-							for y in intersection.size.y:
-								for x in intersection.size.x:
-									var pixel1 := Vector2i(x + rect1_pos.x, y + rect1_pos.y)
-									var pixel2 := Vector2i(x + rect2_pos.x, y + rect2_pos.y)
-									var drawn1: bool = bitmap1_test.get_bitv(pixel1)
-									var drawn2: bool = bitmap2_test.get_bitv(pixel2)
+							var checker_rect: Rect2 = animated_sprite_node.sprite_info[animated_sprite_node.animation].containing_box
+							var collider_rect: Rect2 = collider.animated_sprite_node.sprite_info[collider.animated_sprite_node.animation].containing_box
+							var adjusted_sprite1_rect_pos: Vector2 = checker_rect.position + position - animated_sprite_node.sprite_info[animated_sprite_node.animation].origin
+							var adjusted_sprite2_rect_pos: Vector2 = collider_rect.position + collider.position - collider.animated_sprite_node.sprite_info[collider.animated_sprite_node.animation].origin
+							var new_rect1: Rect2 = Rect2(adjusted_sprite1_rect_pos, Vector2(checker_rect.size))
+							var new_rect2: Rect2 = Rect2(adjusted_sprite2_rect_pos, Vector2(collider_rect.size))
+							var intersection =  new_rect1.intersection(new_rect2)
+							if intersection:
+								var bitmap1: BitMap = animated_sprite_node.sprite_info[animated_sprite_node.animation].bitmaps[animated_sprite_node.frame]
+								var bitmap2: BitMap = collider.animated_sprite_node.sprite_info[collider.animated_sprite_node.animation].bitmaps[collider.animated_sprite_node.frame]
+								
+								var rows: int = intersection.size.y
+								var columns: int = intersection.size.x
+								
+								var sprite1_offset: Vector2 = intersection.position - adjusted_sprite1_rect_pos + checker_rect.position
+								var sprite2_offset: Vector2 = intersection.position - adjusted_sprite2_rect_pos + collider_rect.position
+								
+								if check_pixel_collision(bitmap1, bitmap2, sprite1_offset, sprite2_offset, rows, columns):
+									if collider != self and !collider.is_queued_for_deletion():
+										other = collider
+										var callable = collision_with[object]
+										callable.call()
 
-									if drawn1 and drawn2:
-										if collider != self and !collider.is_queued_for_deletion():
-											other = collider
-											var callable = collision_with[object]
-											callable.call()
-										break
-								break
 
 						#--- can simply call the collision_with function if both objects have rectangle masks
 						else:
@@ -735,6 +721,14 @@ func run_collision_with() -> void:
 								callable.call()	
 
 	other = self #--- see "other" declaration for why this is done
+
+
+func check_pixel_collision(bitmap1: BitMap, bitmap2: BitMap, bitmap1_offset: Vector2, bitmap2_offset: Vector2, rows: int, columns: int):
+	for y in rows:
+		for x in columns:
+			if bitmap1.get_bitv(bitmap1_offset + Vector2(x, y)) and bitmap2.get_bitv(bitmap2_offset + Vector2(x, y)):
+				return true
+	return false
 
 
 func run_animation_end() -> void:
