@@ -8,6 +8,7 @@ var debug_highlighting = preload("res://collision/debug/broad_phase_highlighting
 var debug_highlighting_on: bool = false
 var sprites = Sprites.new()
 var rect: Rect2
+var gm_collision = GMCollision.new()
 
 
 func get_hash(position: Vector2) -> Vector2:
@@ -16,7 +17,7 @@ func get_hash(position: Vector2) -> Vector2:
 
 func get_object_grid_cells(object: GMObject) -> PackedVector2Array:
 	var rect: Rect2 = get_object_rect(object) #---TODO: just get a simple rectangle for this step. can check the more accurate rect later
-	return get_grid_cells_from_rect(rect)
+	return gm_collision.get_grid_cells_from_rect(rect)
 
 
 var rect_to_grid_cells: Dictionary[Rect2, PackedVector2Array]
@@ -100,8 +101,8 @@ func update_object_collision(object: GMObject, first_time: bool = false) -> void
 		return
 	var cells: PackedVector2Array = get_object_grid_cells(object)
 	if cells != prior_occupied_cells:
-		if !first_time: remove_object_from_cells(object, prior_occupied_cells)
-		set_object_to_cells(object, cells)
+		if !first_time: cell_to_objects = gm_collision.remove_object_from_cells(object, prior_occupied_cells, cell_to_objects)
+		cell_to_objects = gm_collision.set_object_to_cells(object, cells, cell_to_objects)
 		prior_occupied_cells = cells
 
 
@@ -119,7 +120,7 @@ func remove_object_from_cells(object: GMObject, cells: PackedVector2Array) -> vo
 
 func group_collision_query(checking_rect: Rect2, group: StringName, calling_object: GMObject = null, notme: bool = false):
 	var grid_cells: PackedVector2Array = get_grid_cells_from_rect(checking_rect)
-	var candidate_objects: Array[GMObject] = find_objects_in_grid_cells(grid_cells)
+	var candidate_objects: Array = gm_collision.find_objects_in_grid_cells(grid_cells, cell_to_objects)
 	var matched_objects: Array[GMObject]
 	for object in candidate_objects:
 		if object.get_groups().has(group): #TODO: adding groups at the start may be faster. but have to account for moving_solid objects that pass in unique_id
