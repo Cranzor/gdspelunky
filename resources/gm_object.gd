@@ -687,8 +687,7 @@ func run_collision_with() -> void:
 								var sprite1_offset: Vector2 = intersection.position - adjusted_sprite1_rect_pos + checker_rect.position
 								var sprite2_offset: Vector2 = intersection.position - adjusted_sprite2_rect_pos + collider_rect.position
 								
-								#if check_pixel_collision(bitmap1, bitmap2, sprite1_offset, sprite2_offset, rows, columns):
-								if custom_collision.gm_collision.check_pixel_collision(bitmap1, bitmap2, sprite1_offset, sprite2_offset, rows, columns):
+								if check_pixel_collision(bitmap1, bitmap2, sprite1_offset, sprite2_offset, rows, columns):
 									if collider != self and !collider.is_queued_for_deletion():
 										other = collider
 										var callable = collision_with[object]
