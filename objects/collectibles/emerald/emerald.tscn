@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c4d7q1dnted32"]
+[gd_scene load_steps=9 format=3 uid="uid://c4d7q1dnted32"]
 
 [ext_resource type="Script" uid="uid://b2t0y5boyclft" path="res://objects/collectibles/emerald/emerald.gd" id="1_7xs2n"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_8ar6k"]
@@ -20,12 +20,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7vcss"]
-size = Vector2(4, 4)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cs25c"]
-size = Vector2(8, 8)
-
 [node name="Emerald" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -101
 script = ExtResource("1_7xs2n")
@@ -42,16 +36,5 @@ sprite_info = Dictionary[StringName, ExtResource("5_7vcss")]({
 &"emerald": ExtResource("6_rufdu")
 })
 default_animation = &"emerald"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_7vcss")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-shape = SubResource("RectangleShape2D_cs25c")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("6_pe81u")]

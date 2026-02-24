@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cxwg2i7jycug2"]
+[gd_scene load_steps=11 format=3 uid="uid://cxwg2i7jycug2"]
 
 [ext_resource type="Script" uid="uid://ctnsmitjewdb2" path="res://objects/items/machete/machete.gd" id="1_tbgvk"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_84qai"]
@@ -30,12 +30,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0pfj"]
-size = Vector2(16, 5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_plocg"]
-size = Vector2(32, 10)
-
 [node name="Machete" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -101
 script = ExtResource("1_tbgvk")
@@ -53,18 +47,5 @@ sprite_info = Dictionary[StringName, ExtResource("6_k0pfj")]({
 &"machete_right": ExtResource("7_s2r4q")
 })
 default_animation = &"machete_right"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.5)
-shape = SubResource("RectangleShape2D_k0pfj")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(0, 0.5)
-shape = SubResource("RectangleShape2D_plocg")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("7_hmhj0")]

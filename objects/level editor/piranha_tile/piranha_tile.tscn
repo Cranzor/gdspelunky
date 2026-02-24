@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://rfgf17s832gb"]
+[gd_scene load_steps=8 format=3 uid="uid://rfgf17s832gb"]
 
 [ext_resource type="Script" uid="uid://bkkcn1flw38fs" path="res://objects/level editor/piranha_tile/piranha_tile.gd" id="1_88nvj"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_hp1u4"]
@@ -19,12 +19,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_j0rq4"]
-size = Vector2(16, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yocim"]
-size = Vector2(32, 32)
-
 [node name="PiranhaTile" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -100
 script = ExtResource("1_88nvj")
@@ -40,16 +34,3 @@ sprite_info = Dictionary[StringName, ExtResource("5_yocim")]({
 &"piranha_tile": ExtResource("6_ysjvi")
 })
 default_animation = &"piranha_tile"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_j0rq4")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_yocim")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)

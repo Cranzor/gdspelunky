@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://drok2fm7t42p8"]
+[gd_scene load_steps=20 format=3 uid="uid://drok2fm7t42p8"]
 
 [ext_resource type="Script" uid="uid://1tu7gl45fyf1" path="res://objects/collectibles/flare_crate/flare_crate.gd" id="1_4hue3"]
 [ext_resource type="PackedScene" uid="uid://w6jxjbgfs6na" path="res://components/drawing/draw_circle/dark_level_circle.tscn" id="2_45iu8"]
@@ -74,12 +74,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cgxx0"]
-size = Vector2(14, 14)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hxg3i"]
-size = Vector2(28, 28)
-
 [node name="FlareCrate" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -900
 script = ExtResource("1_4hue3")
@@ -106,18 +100,5 @@ sprite_info = Dictionary[StringName, ExtResource("14_gu3ff")]({
 &"flare_crate": ExtResource("15_0wtfd")
 })
 default_animation = &"flare_crate"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_cgxx0")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_hxg3i")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("15_h8a7k")]

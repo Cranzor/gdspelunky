@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dlkjt654qbhar"]
+[gd_scene load_steps=16 format=3 uid="uid://dlkjt654qbhar"]
 
 [ext_resource type="Script" uid="uid://cpbpfeo1iipes" path="res://objects/enemies/caveman_worship/caveman_worship.gd" id="1_8gyx7"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_xad6h"]
@@ -51,12 +51,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lpat4"]
-size = Vector2(16, 15)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jgqxx"]
-size = Vector2(32, 30)
-
 [node name="CavemanWorship" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -60
 script = ExtResource("1_8gyx7")
@@ -72,16 +66,3 @@ sprite_info = Dictionary[StringName, ExtResource("13_7gj4m")]({
 &"caveman_worship_r": ExtResource("14_stum1")
 })
 default_animation = &"caveman_worship_r"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 8.5)
-shape = SubResource("RectangleShape2D_lpat4")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(8, 8.5)
-shape = SubResource("RectangleShape2D_jgqxx")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)

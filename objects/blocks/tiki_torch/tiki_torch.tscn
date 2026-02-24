@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://djou1sv5fwnck"]
+[gd_scene load_steps=21 format=3 uid="uid://djou1sv5fwnck"]
 
 [ext_resource type="Script" uid="uid://b08x7nmjqq6dk" path="res://objects/blocks/tiki_torch/tiki_torch.gd" id="1_rea5u"]
 [ext_resource type="PackedScene" uid="uid://w6jxjbgfs6na" path="res://components/drawing/draw_circle/dark_level_circle.tscn" id="2_vuxxs"]
@@ -81,12 +81,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gejnv"]
-size = Vector2(6, 32)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mmggj"]
-size = Vector2(12, 64)
-
 [node name="TikiTorch" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -4093
 script = ExtResource("1_rea5u")
@@ -112,16 +106,3 @@ sprite_info = Dictionary[StringName, ExtResource("16_a066c")]({
 &"tiki_torch": ExtResource("17_6q2ty")
 })
 default_animation = &"tiki_torch"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 16)
-shape = SubResource("RectangleShape2D_gejnv")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(8, 16)
-shape = SubResource("RectangleShape2D_mmggj")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)

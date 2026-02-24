@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://yrv4vb3tbgls"]
+[gd_scene load_steps=17 format=3 uid="uid://yrv4vb3tbgls"]
 
 [ext_resource type="Script" uid="uid://chyko7e4rsxfj" path="res://objects/enemies/bat/bat.gd" id="1_0whhn"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_qgjsc"]
@@ -56,12 +56,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mtek4"]
-size = Vector2(11, 12)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vncre"]
-size = Vector2(22, 24)
-
 [node name="Bat" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -40
 script = ExtResource("1_0whhn")
@@ -79,18 +73,5 @@ sprite_info = Dictionary[StringName, ExtResource("11_qxqpp")]({
 &"bat_right": ExtResource("14_vncre")
 })
 default_animation = &"bat_hang"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8.5, 6)
-shape = SubResource("RectangleShape2D_mtek4")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(8.5, 6)
-shape = SubResource("RectangleShape2D_vncre")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("12_e1y2w")]

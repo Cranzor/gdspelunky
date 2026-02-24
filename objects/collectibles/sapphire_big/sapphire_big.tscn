@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ces2p206w2pl4"]
+[gd_scene load_steps=9 format=3 uid="uid://ces2p206w2pl4"]
 
 [ext_resource type="Script" uid="uid://5dhapcuyynk4" path="res://objects/collectibles/sapphire_big/sapphire_big.gd" id="1_kla2s"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_gnt06"]
@@ -20,12 +20,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qupkb"]
-size = Vector2(8, 8)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sv4uu"]
-size = Vector2(16, 16)
-
 [node name="SapphireBig" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -101
 script = ExtResource("1_kla2s")
@@ -42,16 +36,5 @@ sprite_info = Dictionary[StringName, ExtResource("5_qupkb")]({
 &"sapphire_big": ExtResource("6_sxvs3")
 })
 default_animation = &"sapphire_big"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_qupkb")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-shape = SubResource("RectangleShape2D_sv4uu")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("6_n0nha")]

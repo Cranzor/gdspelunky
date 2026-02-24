@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c08alw42udsbo"]
+[gd_scene load_steps=8 format=3 uid="uid://c08alw42udsbo"]
 
 [ext_resource type="Script" uid="uid://bk8luttp11nth" path="res://objects/level editor/bomb_bag_tile/bomb_bag_tile.gd" id="1_vq10g"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_nuyme"]
@@ -19,12 +19,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ul7dw"]
-size = Vector2(12, 12)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mxisc"]
-size = Vector2(24, 24)
-
 [node name="BombBagTile" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -100
 script = ExtResource("1_vq10g")
@@ -40,16 +34,3 @@ sprite_info = Dictionary[StringName, ExtResource("5_mxisc")]({
 &"bomb_bag_tile": ExtResource("6_xnytd")
 })
 default_animation = &"bomb_bag_tile"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 10)
-shape = SubResource("RectangleShape2D_ul7dw")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(8, 10)
-shape = SubResource("RectangleShape2D_mxisc")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)

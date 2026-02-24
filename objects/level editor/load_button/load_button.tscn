@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dpki0wfufn3i2"]
+[gd_scene load_steps=8 format=3 uid="uid://dpki0wfufn3i2"]
 
 [ext_resource type="Script" uid="uid://8x5rot15anx5" path="res://objects/level editor/load_button/load_button.gd" id="1_wxm3e"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_v0pbx"]
@@ -19,12 +19,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jx5a0"]
-size = Vector2(32, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_l33i1"]
-size = Vector2(64, 32)
-
 [node name="LoadButton" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -1
 script = ExtResource("1_wxm3e")
@@ -40,16 +34,3 @@ sprite_info = Dictionary[StringName, ExtResource("5_l33i1")]({
 &"load_button": ExtResource("6_ecm7s")
 })
 default_animation = &"load_button"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(16, 8)
-shape = SubResource("RectangleShape2D_jx5a0")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(16, 8)
-shape = SubResource("RectangleShape2D_l33i1")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)

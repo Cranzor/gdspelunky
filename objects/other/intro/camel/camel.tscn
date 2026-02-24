@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dwsl2t1lc7iv1"]
+[gd_scene load_steps=28 format=3 uid="uid://dwsl2t1lc7iv1"]
 
 [ext_resource type="Script" uid="uid://djr60q8yrx5kv" path="res://objects/other/intro/camel/camel.gd" id="1_5fp7s"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_laox6"]
@@ -100,12 +100,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d53uc"]
-size = Vector2(48, 47)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_byciq"]
-size = Vector2(96, 94)
-
 [node name="Camel" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -200
 script = ExtResource("1_5fp7s")
@@ -123,18 +117,5 @@ sprite_info = Dictionary[StringName, ExtResource("22_8e0v2")]({
 &"camel_tunnel": ExtResource("25_byciq")
 })
 default_animation = &"camel"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(24, 24.5)
-shape = SubResource("RectangleShape2D_d53uc")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(24, 24.5)
-shape = SubResource("RectangleShape2D_byciq")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("23_h8pss")]

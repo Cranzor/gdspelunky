@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://caxj5maf6bdwq"]
+[gd_scene load_steps=13 format=3 uid="uid://caxj5maf6bdwq"]
 
 [ext_resource type="Script" uid="uid://mrnwjc8myy7f" path="res://objects/enemies/magma_trail/magma_trail.gd" id="1_ufdsd"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_uypyv"]
@@ -36,12 +36,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_x65wq"]
-size = Vector2(8, 8)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tx33v"]
-size = Vector2(16, 16)
-
 [node name="MagmaTrail" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -2
 script = ExtResource("1_ufdsd")
@@ -58,16 +52,5 @@ sprite_info = Dictionary[StringName, ExtResource("9_wtni3")]({
 &"flame_trail": ExtResource("10_jck2l")
 })
 default_animation = &"flame_trail"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_x65wq")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-shape = SubResource("RectangleShape2D_tx33v")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("10_ojvt1")]

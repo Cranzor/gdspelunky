@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://d180tni177eha"]
+[gd_scene load_steps=22 format=3 uid="uid://d180tni177eha"]
 
 [ext_resource type="Script" uid="uid://dffd6uxbwo8ne" path="res://objects/other/intro/caravan/caravan.gd" id="1_lx8if"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_kbrnv"]
@@ -76,12 +76,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_homp1"]
-size = Vector2(32, 43)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ggnx"]
-size = Vector2(64, 86)
-
 [node name="Caravan" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -200
 script = ExtResource("1_lx8if")
@@ -99,18 +93,5 @@ sprite_info = Dictionary[StringName, ExtResource("16_m3muc")]({
 &"caravan3": ExtResource("18_homp1")
 })
 default_animation = &"caravan1"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(16, 42.5)
-shape = SubResource("RectangleShape2D_homp1")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(16, 42.5)
-shape = SubResource("RectangleShape2D_1ggnx")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("17_1l6sv")]

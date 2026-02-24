@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://q5536filbkf1"]
+[gd_scene load_steps=16 format=3 uid="uid://q5536filbkf1"]
 
 [ext_resource type="Script" uid="uid://d1ycc6gor3mlh" path="res://objects/curs_obj/curs_obj.gd" id="1_r4280"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_14a31"]
@@ -57,12 +57,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_s4po6"]
-size = Vector2(16, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tb7gn"]
-size = Vector2(32, 32)
-
 [node name="CursObj" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 visible = false
 script = ExtResource("1_r4280")
@@ -81,16 +75,3 @@ sprite_info = Dictionary[StringName, ExtResource("10_o6uu8")]({
 &"spikes": ExtResource("13_tb7gn")
 })
 default_animation = &"entrance"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_s4po6")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_tb7gn")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)

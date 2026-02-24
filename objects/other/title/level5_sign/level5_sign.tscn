@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c40w2xu4ycwym"]
+[gd_scene load_steps=8 format=3 uid="uid://c40w2xu4ycwym"]
 
 [ext_resource type="Script" uid="uid://dfyfoyliutyci" path="res://objects/other/title/level5_sign/level5_sign.gd" id="1_1cld2"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_nifyo"]
@@ -19,12 +19,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jd13f"]
-size = Vector2(46, 32)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_l4khc"]
-size = Vector2(92, 64)
-
 [node name="Level5Sign" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -999
 script = ExtResource("1_1cld2")
@@ -40,16 +34,3 @@ sprite_info = Dictionary[StringName, ExtResource("5_l4khc")]({
 &"level5_sign": ExtResource("6_qn6u5")
 })
 default_animation = &"level5_sign"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(24, 16)
-shape = SubResource("RectangleShape2D_jd13f")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(24, 16)
-shape = SubResource("RectangleShape2D_l4khc")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)

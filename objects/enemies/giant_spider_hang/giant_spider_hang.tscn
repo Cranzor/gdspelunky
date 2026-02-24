@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dr2nr766xluvh"]
+[gd_scene load_steps=8 format=3 uid="uid://dr2nr766xluvh"]
 
 [ext_resource type="Script" uid="uid://qy7525qncf8i" path="res://objects/enemies/giant_spider_hang/giant_spider_hang.gd" id="1_vspwv"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_fwown"]
@@ -19,12 +19,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_idf6s"]
-size = Vector2(30, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6oi2c"]
-size = Vector2(60, 32)
-
 [node name="GiantSpiderHang" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -40
 script = ExtResource("1_vspwv")
@@ -40,16 +34,3 @@ sprite_info = Dictionary[StringName, ExtResource("5_6oi2c")]({
 &"giant_spider_hang": ExtResource("6_2tmrj")
 })
 default_animation = &"giant_spider_hang"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(16, 8)
-shape = SubResource("RectangleShape2D_idf6s")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(16, 8)
-shape = SubResource("RectangleShape2D_6oi2c")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)

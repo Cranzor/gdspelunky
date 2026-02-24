@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://bdofugqa7nqg2"]
+[gd_scene load_steps=38 format=3 uid="uid://bdofugqa7nqg2"]
 
 [ext_resource type="Script" uid="uid://d4lxwissf8cwr" path="res://objects/enemies/caveman/caveman.gd" id="1_6b31n"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_npye2"]
@@ -154,12 +154,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jsi8b"]
-size = Vector2(14, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_s2wyo"]
-size = Vector2(28, 32)
-
 [node name="Caveman" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -60
 script = ExtResource("1_6b31n")
@@ -184,18 +178,5 @@ sprite_info = Dictionary[StringName, ExtResource("25_pee01")]({
 &"caveman_stun_l": ExtResource("27_jsi8b")
 })
 default_animation = &"caveman_left"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_jsi8b")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_s2wyo")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("26_si8um")]

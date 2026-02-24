@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://d00dsfb1jl1n5"]
+[gd_scene load_steps=18 format=3 uid="uid://d00dsfb1jl1n5"]
 
 [ext_resource type="Script" uid="uid://cpu52upb33it" path="res://objects/traps/spring_trap/spring_trap.gd" id="1_5gf5u"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_t23m8"]
@@ -61,12 +61,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fd3q5"]
-size = Vector2(16, 4)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dy5fm"]
-size = Vector2(32, 8)
-
 [node name="SpringTrap" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -100
 script = ExtResource("1_5gf5u")
@@ -83,16 +77,3 @@ sprite_info = Dictionary[StringName, ExtResource("14_atu3k")]({
 &"spring_trap_sprung": ExtResource("16_fd3q5")
 })
 default_animation = &"spring_trap"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 14)
-shape = SubResource("RectangleShape2D_fd3q5")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(8, 14)
-shape = SubResource("RectangleShape2D_dy5fm")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)

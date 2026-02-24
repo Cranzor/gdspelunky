@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cil1x4wti8ivy"]
+[gd_scene load_steps=8 format=3 uid="uid://cil1x4wti8ivy"]
 
 [ext_resource type="Script" uid="uid://ul20n0lf3o42" path="res://objects/level editor/crate_tile/crate_tile.gd" id="1_2ijx3"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_6ucjr"]
@@ -19,12 +19,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8tg2a"]
-size = Vector2(12, 10)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xqgss"]
-size = Vector2(24, 20)
-
 [node name="CrateTile" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -100
 script = ExtResource("1_2ijx3")
@@ -40,16 +34,3 @@ sprite_info = Dictionary[StringName, ExtResource("5_xqgss")]({
 &"crate_tile": ExtResource("6_vk6ue")
 })
 default_animation = &"crate_tile"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(9, 11)
-shape = SubResource("RectangleShape2D_8tg2a")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(9, 11)
-shape = SubResource("RectangleShape2D_xqgss")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)

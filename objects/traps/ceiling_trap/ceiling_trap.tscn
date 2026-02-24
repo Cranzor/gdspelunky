@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://5ccrugoe6x7c"]
+[gd_scene load_steps=17 format=3 uid="uid://5ccrugoe6x7c"]
 
 [ext_resource type="Script" uid="uid://y4jekr8b57th" path="res://objects/traps/ceiling_trap/ceiling_trap.gd" id="1_8k1ja"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_llhhr"]
@@ -59,12 +59,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4dklu"]
-size = Vector2(16, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0uera"]
-size = Vector2(32, 32)
-
 [node name="CeilingTrap" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -60
 script = ExtResource("1_8k1ja")
@@ -82,16 +76,3 @@ sprite_info = Dictionary[StringName, ExtResource("12_lugvr")]({
 &"ceiling_trap_s": ExtResource("15_0uera")
 })
 default_animation = &"block"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_4dklu")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_0uera")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)

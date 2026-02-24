@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://fkuug1e4o4gh"]
+[gd_scene load_steps=8 format=3 uid="uid://fkuug1e4o4gh"]
 
 [ext_resource type="Script" uid="uid://c30rk72nf4mkf" path="res://objects/traps/giant_tiki_head/giant_tiki_head.gd" id="1_apwpu"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_kksdw"]
@@ -19,12 +19,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hijv3"]
-size = Vector2(32, 32)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lptua"]
-size = Vector2(64, 64)
-
 [node name="GiantTikiHead" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -997
 script = ExtResource("1_apwpu")
@@ -41,14 +35,3 @@ sprite_info = Dictionary[StringName, ExtResource("5_lptua")]({
 &"giant_tiki_head": ExtResource("6_fcgcg")
 })
 default_animation = &"giant_tiki_head"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_hijv3")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-shape = SubResource("RectangleShape2D_lptua")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)

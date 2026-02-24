@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bom8panq8vdhg"]
+[gd_scene load_steps=13 format=3 uid="uid://bom8panq8vdhg"]
 
 [ext_resource type="Script" uid="uid://cykb38a3a8lj8" path="res://objects/effects/volcano_flame/volcano_flame.gd" id="1_2mblv"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_0jjvy"]
@@ -36,12 +36,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mtvkb"]
-size = Vector2(5, 6)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u5x8v"]
-size = Vector2(10, 12)
-
 [node name="VolcanoFlame" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -1
 script = ExtResource("1_2mblv")
@@ -57,18 +51,5 @@ sprite_info = Dictionary[StringName, ExtResource("9_ut3yh")]({
 &"volcano_flame": ExtResource("10_lcfuh")
 })
 default_animation = &"volcano_flame"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(7.5, 8)
-shape = SubResource("RectangleShape2D_mtvkb")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(7.5, 8)
-shape = SubResource("RectangleShape2D_u5x8v")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("10_vmw2r")]

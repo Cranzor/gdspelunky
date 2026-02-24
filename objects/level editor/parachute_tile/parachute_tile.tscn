@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://6juwqld6dlpx"]
+[gd_scene load_steps=8 format=3 uid="uid://6juwqld6dlpx"]
 
 [ext_resource type="Script" uid="uid://dki0ftw4cso5g" path="res://objects/level editor/parachute_tile/parachute_tile.gd" id="1_tifyd"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_m27ic"]
@@ -19,12 +19,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5whbh"]
-size = Vector2(13, 12)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jfoko"]
-size = Vector2(26, 24)
-
 [node name="ParachuteTile" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -100
 script = ExtResource("1_tifyd")
@@ -40,16 +34,3 @@ sprite_info = Dictionary[StringName, ExtResource("5_jfoko")]({
 &"parachute_tile": ExtResource("6_hfii4")
 })
 default_animation = &"parachute_tile"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8.5, 10)
-shape = SubResource("RectangleShape2D_5whbh")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(8.5, 10)
-shape = SubResource("RectangleShape2D_jfoko")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://q56gv78d73dc"]
+[gd_scene load_steps=6 format=3 uid="uid://q56gv78d73dc"]
 
 [ext_resource type="Script" uid="uid://rqb7dvwsiipy" path="res://objects/music/music.gd" id="1_0gvbg"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_rdork"]
@@ -14,12 +14,6 @@ animations = [{
 "name": &"default",
 "speed": 30.0
 }]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gm83b"]
-size = Vector2(0, 0)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_n55ql"]
-size = Vector2(0, 0)
 
 [node name="Music" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 visible = false
@@ -44,14 +38,3 @@ visible = false
 sprite_frames = SubResource("SpriteFrames_rdork")
 centered = false
 script = ExtResource("3_rdork")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_gm83b")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-shape = SubResource("RectangleShape2D_n55ql")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)

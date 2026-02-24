@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d1vbnjy2fiex3"]
+[gd_scene load_steps=9 format=3 uid="uid://d1vbnjy2fiex3"]
 
 [ext_resource type="Script" uid="uid://btos5srjtjgs7" path="res://objects/other/intro/moon/moon.gd" id="1_oisnb"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_nxbpr"]
@@ -20,12 +20,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_equmb"]
-size = Vector2(96, 92)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lcp0s"]
-size = Vector2(192, 184)
-
 [node name="Moon" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -4093
 script = ExtResource("1_oisnb")
@@ -41,18 +35,5 @@ sprite_info = Dictionary[StringName, ExtResource("5_equmb")]({
 &"moon": ExtResource("6_qd2un")
 })
 default_animation = &"moon"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(48, 48)
-shape = SubResource("RectangleShape2D_equmb")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(48, 48)
-shape = SubResource("RectangleShape2D_lcp0s")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("6_it4yg")]

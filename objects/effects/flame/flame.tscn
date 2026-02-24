@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://hhtqlrw8fm7n"]
+[gd_scene load_steps=9 format=3 uid="uid://hhtqlrw8fm7n"]
 
 [ext_resource type="Script" uid="uid://qb7jkoctmhc7" path="res://objects/effects/flame/flame.gd" id="1_eaay6"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_jbrhh"]
@@ -20,12 +20,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1itxy"]
-size = Vector2(6, 6)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_40v3j"]
-size = Vector2(12, 12)
-
 [node name="Flame" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -1
 script = ExtResource("1_eaay6")
@@ -42,16 +36,5 @@ sprite_info = Dictionary[StringName, ExtResource("5_1itxy")]({
 &"flame": ExtResource("6_omgk7")
 })
 default_animation = &"flame"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_1itxy")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-shape = SubResource("RectangleShape2D_40v3j")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("6_4goak")]

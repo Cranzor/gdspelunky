@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://hbo7rg5pcwrr"]
+[gd_scene load_steps=15 format=3 uid="uid://hbo7rg5pcwrr"]
 
 [ext_resource type="Script" uid="uid://dkmmy2f5wmcj5" path="res://objects/items/parachute/parachute.gd" id="1_icwxw"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_3rcre"]
@@ -46,12 +46,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_esaec"]
-size = Vector2(14, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ncpti"]
-size = Vector2(28, 32)
-
 [node name="Parachute" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -900
 script = ExtResource("1_icwxw")
@@ -68,18 +62,5 @@ sprite_info = Dictionary[StringName, ExtResource("10_vgnnr")]({
 &"parachute": ExtResource("12_esaec")
 })
 default_animation = &"para_open"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_esaec")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_ncpti")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("11_irmf0")]

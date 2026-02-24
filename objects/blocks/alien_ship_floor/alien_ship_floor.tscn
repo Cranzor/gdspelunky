@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c0myck7lmx4y0"]
+[gd_scene load_steps=8 format=3 uid="uid://c0myck7lmx4y0"]
 
 [ext_resource type="Script" uid="uid://c8iape5ts3vay" path="res://objects/blocks/alien_ship_floor/alien_ship_floor.gd" id="1_u686l"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_oc5xg"]
@@ -19,12 +19,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fcjwr"]
-size = Vector2(16, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_18qen"]
-size = Vector2(32, 32)
-
 [node name="AlienShipFloor" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -100
 script = ExtResource("1_u686l")
@@ -40,16 +34,3 @@ sprite_info = Dictionary[StringName, ExtResource("5_18qen")]({
 &"alien_floor": ExtResource("6_fgjbl")
 })
 default_animation = &"alien_floor"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_fcjwr")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_18qen")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)

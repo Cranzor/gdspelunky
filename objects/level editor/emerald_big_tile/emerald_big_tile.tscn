@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dlnhipostnhfl"]
+[gd_scene load_steps=8 format=3 uid="uid://dlnhipostnhfl"]
 
 [ext_resource type="Script" uid="uid://cncawsow1ov0b" path="res://objects/level editor/emerald_big_tile/emerald_big_tile.gd" id="1_nvea8"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_dtbg4"]
@@ -19,12 +19,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mk1mn"]
-size = Vector2(8, 8)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_krr6i"]
-size = Vector2(16, 16)
-
 [node name="EmeraldBigTile" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -100
 script = ExtResource("1_nvea8")
@@ -40,16 +34,3 @@ sprite_info = Dictionary[StringName, ExtResource("5_krr6i")]({
 &"emerald_big_tile": ExtResource("6_u3w6s")
 })
 default_animation = &"emerald_big_tile"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 12)
-shape = SubResource("RectangleShape2D_mk1mn")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(8, 12)
-shape = SubResource("RectangleShape2D_krr6i")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)

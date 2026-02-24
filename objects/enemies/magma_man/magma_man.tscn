@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://3rcjef6p2ce"]
+[gd_scene load_steps=36 format=3 uid="uid://3rcjef6p2ce"]
 
 [ext_resource type="Script" uid="uid://cw4gf6t4dy3ra" path="res://objects/enemies/magma_man/magma_man.gd" id="1_e744k"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_4aobn"]
@@ -134,12 +134,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mvs5f"]
-size = Vector2(14, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ewrm"]
-size = Vector2(28, 32)
-
 [node name="MagmaMan" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -60
 script = ExtResource("1_e744k")
@@ -158,18 +152,5 @@ sprite_info = Dictionary[StringName, ExtResource("29_4nxnx")]({
 &"magma_man_walk_l": ExtResource("33_fv4qv")
 })
 default_animation = &"magma_man_left"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_mvs5f")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_8ewrm")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("30_pkuht")]

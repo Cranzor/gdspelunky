@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ckoud5055nwru"]
+[gd_scene load_steps=8 format=3 uid="uid://ckoud5055nwru"]
 
 [ext_resource type="Script" uid="uid://dwl35a4a40wpb" path="res://objects/traps/arrow_trap_test/arrow_trap_test.gd" id="1_d7eok"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_f810v"]
@@ -19,12 +19,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tuky5"]
-size = Vector2(16, 14)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7sx2q"]
-size = Vector2(32, 28)
-
 [node name="ArrowTrapTest" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 visible = false
 script = ExtResource("1_d7eok")
@@ -40,16 +34,3 @@ sprite_info = Dictionary[StringName, ExtResource("5_7sx2q")]({
 &"red": ExtResource("6_bs1k8")
 })
 default_animation = &"red"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_tuky5")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_7sx2q")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)

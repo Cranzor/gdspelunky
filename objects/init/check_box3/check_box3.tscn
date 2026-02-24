@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bax5ol046ux2w"]
+[gd_scene load_steps=10 format=3 uid="uid://bax5ol046ux2w"]
 
 [ext_resource type="Script" uid="uid://bbvlnswdtp25f" path="res://objects/init/check_box3/check_box3.gd" id="1_w0sld"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_w8lwl"]
@@ -29,12 +29,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5fgej"]
-size = Vector2(8, 8)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_r81gb"]
-size = Vector2(16, 16)
-
 [node name="CheckBox3" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_w0sld")
 animated_sprite_node = NodePath("Sprite")
@@ -50,16 +44,3 @@ sprite_info = Dictionary[StringName, ExtResource("6_r81gb")]({
 &"box_checked": ExtResource("7_ysanf")
 })
 default_animation = &"box_checked"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(4, 4)
-shape = SubResource("RectangleShape2D_5fgej")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(4, 4)
-shape = SubResource("RectangleShape2D_r81gb")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)

@@ -158,10 +158,10 @@ func instance_create(x,y,obj,calling_object: GMObject = null,run_create = true) 
 		obj = load(obj)
 	var instance: GMObject = obj.instantiate()
 	instance.position = Vector2(x, y)
-	if calling_object: #--- for collision purposes, getting collision data of the calling object so that newly instantiated objects check for collisions the same frame they are created
-		instance.objects_in_bb = calling_object.objects_in_bb.duplicate()
-		instance.groups_in_bb = calling_object.groups_in_bb.duplicate()
-		instance.first_time_entered = true
+	#if calling_object: #--- for collision purposes, getting collision data of the calling object so that newly instantiated objects check for collisions the same frame they are created
+		#instance.objects_in_bb = calling_object.objects_in_bb.duplicate()
+		#instance.groups_in_bb = calling_object.groups_in_bb.duplicate()
+		#instance.first_time_entered = true
 	var objects_holder = get_tree().get_first_node_in_group("objects_holder")
 	if objects_holder:
 		objects_holder.add_child(instance)
@@ -279,14 +279,26 @@ func point_direction(x1, y1, x2, y2) -> float: #---[FLAG] may need to adjust ang
 	return -angle
 		
 func instance_place(x,y,obj: String, comparison_object: GMObject) -> GMObject: #' Returns the id of the instance of type obj met when the current instance is placed at position (x,y). obj can be an object or the keyword all. If it does not exist, the special object noone is returned.'
-	var sprite: AnimatedSprite2D = comparison_object.get_node("Sprite")
-	var offset = sprite.offset
-	var collision_shape: CollisionShape2D = comparison_object.get_node("CollisionShape2D")
-	var comparison_object_collision_shape_size = collision_shape.shape.get_rect().size
-	var position_with_offset = Vector2(x + offset.x, y + offset.y)
-	var size_with_scale: Vector2 = Vector2(position_with_offset.x + comparison_object_collision_shape_size.x, position_with_offset.y + comparison_object_collision_shape_size.y)
+	#var sprite: AnimatedSprite2D = comparison_object.get_node("Sprite")
+	#var offset = sprite.offset
+	#var collision_shape: CollisionShape2D = comparison_object.get_node("CollisionShape2D")
+	#var comparison_object_collision_shape_size = collision_shape.shape.get_rect().size
+	#var position_with_offset = Vector2(x + offset.x, y + offset.y)
+	#var size_with_scale: Vector2 = Vector2(position_with_offset.x + comparison_object_collision_shape_size.x, position_with_offset.y + comparison_object_collision_shape_size.y)
 
-	return collision_rectangle(position_with_offset.x, position_with_offset.y, size_with_scale.x - 1, size_with_scale.y - 1, obj, 0, true, comparison_object) #--- have to subtract 1 from size as collision_rectangle is expecting points to be passed in
+	#return collision_rectangle(position_with_offset.x, position_with_offset.y, size_with_scale.x - 1, size_with_scale.y - 1, obj, 0, true, comparison_object) #--- have to subtract 1 from size as collision_rectangle is expecting points to be passed in
+	#
+	#var rect: Rect2 = custom_collision.get_object_rect(comparison_object, true)
+	#var size_with_offset: Vector2 = Vector2(rect.position.x + rect.size.x, rect.position.y + rect.size.y)
+	#return collision_rectangle(rect.position.x + x, rect.position.y + y, size_with_offset.x - 1, size_with_offset.y - 1, obj, 0, true, comparison_object) #--- have to subtract 1 from size as collision_rectangle is expecting points to be passed in
+
+	var current_anim: StringName = comparison_object.animated_sprite_node.animation
+	var sprite_info: SpriteInfo = comparison_object.animated_sprite_node.sprite_info[current_anim]
+	var containing_box: Rect2 = sprite_info.containing_box
+	var origin: Vector2 = sprite_info.origin
+	var pos: Vector2 = containing_box.position - origin + Vector2(x, y)
+	var size: Vector2 = pos + containing_box.size
+	return collision_rectangle(pos.x, pos.y, size.x - 1, size.y - 1, obj, 0, true, comparison_object) #--- have to subtract 1 from size as collision_rectangle is expecting points to be passed in
 
 func instance_position(x, y, obj: String) -> GMObject: #---[FLAG] this needs checked
 	var intersecting = collision_point(x, y, obj, 0, 0)

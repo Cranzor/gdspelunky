@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bpib0or50oftd"]
+[gd_scene load_steps=10 format=3 uid="uid://bpib0or50oftd"]
 
 [ext_resource type="Script" uid="uid://ckwsseq6a53if" path="res://objects/other/intro/desert_top/desert_top.gd" id="1_kvkr4"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_nhpiy"]
@@ -29,12 +29,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7mo73"]
-size = Vector2(16, 3)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bwf10"]
-size = Vector2(32, 6)
-
 [node name="DesertTop" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -10
 script = ExtResource("1_kvkr4")
@@ -51,16 +45,3 @@ sprite_info = Dictionary[StringName, ExtResource("6_bwf10")]({
 &"desert_top_night": ExtResource("8_7mo73")
 })
 default_animation = &"desert_top"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 14.5)
-shape = SubResource("RectangleShape2D_7mo73")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(8, 14.5)
-shape = SubResource("RectangleShape2D_bwf10")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)

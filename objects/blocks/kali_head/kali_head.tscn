@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://x8al3ajpuwv2"]
+[gd_scene load_steps=12 format=3 uid="uid://x8al3ajpuwv2"]
 
 [ext_resource type="Script" uid="uid://b7jq2jcyl3qnn" path="res://objects/blocks/kali_head/kali_head.gd" id="1_ev6d1"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_2qog8"]
@@ -39,12 +39,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_y3e8s"]
-size = Vector2(32, 32)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_e7e4f"]
-size = Vector2(64, 64)
-
 [node name="KaliHead" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -997
 script = ExtResource("1_ev6d1")
@@ -63,14 +57,3 @@ sprite_info = Dictionary[StringName, ExtResource("7_e7e4f")]({
 &"kali_head3": ExtResource("10_e7e4f")
 })
 default_animation = &"kali_head1"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_y3e8s")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-shape = SubResource("RectangleShape2D_e7e4f")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)

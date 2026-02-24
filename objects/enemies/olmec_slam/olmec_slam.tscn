@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bqyx8qx0jjdvu"]
+[gd_scene load_steps=9 format=3 uid="uid://bqyx8qx0jjdvu"]
 
 [ext_resource type="Script" uid="uid://dtvhnrcjlouph" path="res://objects/enemies/olmec_slam/olmec_slam.gd" id="1_vrh16"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_fyqqw"]
@@ -20,12 +20,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_agq56"]
-size = Vector2(59, 8)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_14wu6"]
-size = Vector2(118, 16)
-
 [node name="OlmecSlam" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 visible = false
 script = ExtResource("1_vrh16")
@@ -41,18 +35,5 @@ sprite_info = Dictionary[StringName, ExtResource("5_agq56")]({
 &"olmec_slam": ExtResource("6_fmsvm")
 })
 default_animation = &"olmec_slam"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(31.5, 4)
-shape = SubResource("RectangleShape2D_agq56")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(31.5, 4)
-shape = SubResource("RectangleShape2D_14wu6")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("6_1h70g")]

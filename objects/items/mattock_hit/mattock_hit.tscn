@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cdiie1okf1u35"]
+[gd_scene load_steps=15 format=3 uid="uid://cdiie1okf1u35"]
 
 [ext_resource type="Script" uid="uid://crmf8nifg6ikv" path="res://objects/items/mattock_hit/mattock_hit.gd" id="1_iqe4r"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_1ssv0"]
@@ -46,12 +46,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_83yk5"]
-size = Vector2(11, 14)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_14crb"]
-size = Vector2(22, 28)
-
 [node name="MattockHit" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -1
 script = ExtResource("1_iqe4r")
@@ -69,18 +63,5 @@ sprite_info = Dictionary[StringName, ExtResource("10_g5dms")]({
 &"mattock_hit_r": ExtResource("11_tuw6q")
 })
 default_animation = &"mattock_hit_r"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2.5, 1)
-shape = SubResource("RectangleShape2D_83yk5")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(-2.5, 1)
-shape = SubResource("RectangleShape2D_14crb")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("11_8ei7s")]

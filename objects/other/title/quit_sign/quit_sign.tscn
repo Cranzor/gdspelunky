@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dsy8sqawph7ei"]
+[gd_scene load_steps=8 format=3 uid="uid://dsy8sqawph7ei"]
 
 [ext_resource type="Script" uid="uid://b4oat4ye8tcmp" path="res://objects/other/title/quit_sign/quit_sign.gd" id="1_q2v8v"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_enhfy"]
@@ -19,12 +19,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_66by3"]
-size = Vector2(32, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bbueh"]
-size = Vector2(64, 32)
-
 [node name="QuitSign" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -999
 script = ExtResource("1_q2v8v")
@@ -40,16 +34,3 @@ sprite_info = Dictionary[StringName, ExtResource("5_bbueh")]({
 &"quit_sign": ExtResource("6_2i6m8")
 })
 default_animation = &"quit_sign"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(16, 8)
-shape = SubResource("RectangleShape2D_66by3")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(16, 8)
-shape = SubResource("RectangleShape2D_bbueh")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)

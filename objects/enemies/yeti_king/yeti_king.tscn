@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://bpfeeu2i3ceey"]
+[gd_scene load_steps=69 format=3 uid="uid://bpfeeu2i3ceey"]
 
 [ext_resource type="Script" uid="uid://bpolye2ni3x2u" path="res://objects/enemies/yeti_king/yeti_king.gd" id="1_vsosg"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_8nc2g"]
@@ -274,12 +274,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d0p34"]
-size = Vector2(31, 32)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_533k6"]
-size = Vector2(62, 64)
-
 [node name="YetiKing" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -60
 script = ExtResource("1_vsosg")
@@ -302,18 +296,5 @@ sprite_info = Dictionary[StringName, ExtResource("58_86vaj")]({
 &"yeti_king_yell_r": ExtResource("63_4r5ax")
 })
 default_animation = &"yeti_king_left"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(16.5, 16)
-shape = SubResource("RectangleShape2D_d0p34")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(16.5, 16)
-shape = SubResource("RectangleShape2D_533k6")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("59_vvmfb")]

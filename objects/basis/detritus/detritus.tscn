@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bu3vj8g7r5g0a"]
+[gd_scene load_steps=6 format=3 uid="uid://bu3vj8g7r5g0a"]
 
 [ext_resource type="Script" uid="uid://cb1ohuhcpkkhv" path="res://objects/basis/detritus/detritus.gd" id="1_eyl2a"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_i17r1"]
@@ -14,12 +14,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4wjoc"]
-size = Vector2(0, 0)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_l2kiv"]
-size = Vector2(0, 0)
-
 [node name="Detritus" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_eyl2a")
 animated_sprite_node = NodePath("Sprite")
@@ -30,16 +24,5 @@ visible = false
 sprite_frames = SubResource("SpriteFrames_to3cu")
 centered = false
 script = ExtResource("3_to3cu")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_4wjoc")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-shape = SubResource("RectangleShape2D_l2kiv")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("4_to3cu")]

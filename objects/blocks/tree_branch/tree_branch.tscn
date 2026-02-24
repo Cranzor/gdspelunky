@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b5o1dxuta5ai8"]
+[gd_scene load_steps=10 format=3 uid="uid://b5o1dxuta5ai8"]
 
 [ext_resource type="Script" uid="uid://dwlktcptq3aty" path="res://objects/blocks/tree_branch/tree_branch.gd" id="1_35skc"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_6xilp"]
@@ -29,12 +29,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rmsd8"]
-size = Vector2(16, 11)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gler6"]
-size = Vector2(32, 22)
-
 [node name="TreeBranch" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -2
 script = ExtResource("1_35skc")
@@ -51,16 +45,3 @@ sprite_info = Dictionary[StringName, ExtResource("6_gler6")]({
 &"tree_branch_right": ExtResource("7_tr5hd")
 })
 default_animation = &"tree_branch_right"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 5.5)
-shape = SubResource("RectangleShape2D_rmsd8")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(8, 5.5)
-shape = SubResource("RectangleShape2D_gler6")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)

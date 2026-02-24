@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://d2us8588ocu6a"]
+[gd_scene load_steps=10 format=3 uid="uid://d2us8588ocu6a"]
 
 [ext_resource type="Script" uid="uid://0fndhq6ax5ja" path="res://objects/level editor/frog_tile/frog_tile.gd" id="1_nhnmy"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_rl2es"]
@@ -27,12 +27,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_crvh6"]
-size = Vector2(13, 12)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fhyqk"]
-size = Vector2(26, 24)
-
 [node name="FrogTile" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -100
 script = ExtResource("1_nhnmy")
@@ -48,16 +42,3 @@ sprite_info = Dictionary[StringName, ExtResource("7_gmbpt")]({
 &"frog_left": ExtResource("8_txgax")
 })
 default_animation = &"frog_left"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8.5, 10)
-shape = SubResource("RectangleShape2D_crvh6")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(8.5, 10)
-shape = SubResource("RectangleShape2D_fhyqk")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)

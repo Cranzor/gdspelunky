@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ct7cog44eb7hl"]
+[gd_scene load_steps=8 format=3 uid="uid://ct7cog44eb7hl"]
 
 [ext_resource type="Script" uid="uid://bgptlv618hjm4" path="res://objects/level editor/spider_tile/spider_tile.gd" id="1_a0e2h"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_kjn6b"]
@@ -19,12 +19,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8mh7f"]
-size = Vector2(16, 10)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gsjpr"]
-size = Vector2(32, 20)
-
 [node name="SpiderTile" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -100
 script = ExtResource("1_a0e2h")
@@ -40,16 +34,3 @@ sprite_info = Dictionary[StringName, ExtResource("5_gsjpr")]({
 &"spider_hang": ExtResource("6_g2qku")
 })
 default_animation = &"spider_hang"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 5)
-shape = SubResource("RectangleShape2D_8mh7f")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(8, 5)
-shape = SubResource("RectangleShape2D_gsjpr")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)

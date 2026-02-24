@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://4tssj1r8j68f"]
+[gd_scene load_steps=8 format=3 uid="uid://4tssj1r8j68f"]
 
 [ext_resource type="Script" uid="uid://byupoglrru2ud" path="res://objects/blocks/gold_door/gold_door.gd" id="1_3j837"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_65s78"]
@@ -19,12 +19,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ennct"]
-size = Vector2(16, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dx6mh"]
-size = Vector2(32, 32)
-
 [node name="GoldDoor" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -4093
 script = ExtResource("1_3j837")
@@ -40,16 +34,3 @@ sprite_info = Dictionary[StringName, ExtResource("5_dx6mh")]({
 &"gold_door": ExtResource("6_ecfsn")
 })
 default_animation = &"gold_door"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_ennct")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_dx6mh")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)

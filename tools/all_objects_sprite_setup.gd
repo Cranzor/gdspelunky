@@ -27,7 +27,7 @@ func object_setup(scene_file_path: String):
 	var sprite = preload("res://scenes/sprite.tscn").instantiate()
 	var loaded_object = ResourceLoader.load(scene_file_path, "", 0).instantiate()
 	generate_all_sprites(loaded_object, sprite)
-	generate_containing_box(loaded_object)
+	#generate_containing_box(loaded_object)
 	#--groups_setup(loaded_object)
 	z_index_setup(loaded_object)
 	#alarms_setup(loaded_object)

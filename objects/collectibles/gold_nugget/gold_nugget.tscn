@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d2uq1y13rkcye"]
+[gd_scene load_steps=9 format=3 uid="uid://d2uq1y13rkcye"]
 
 [ext_resource type="Script" uid="uid://ca7kveiap6m5u" path="res://objects/collectibles/gold_nugget/gold_nugget.gd" id="1_p5jlx"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_xry0s"]
@@ -20,12 +20,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5jhi0"]
-size = Vector2(8, 8)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bd41b"]
-size = Vector2(16, 16)
-
 [node name="GoldNugget" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -100
 script = ExtResource("1_p5jlx")
@@ -42,16 +36,5 @@ sprite_info = Dictionary[StringName, ExtResource("5_5jhi0")]({
 &"gold_nugget": ExtResource("6_fu3x4")
 })
 default_animation = &"gold_nugget"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_5jhi0")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-shape = SubResource("RectangleShape2D_bd41b")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("6_t43fs")]

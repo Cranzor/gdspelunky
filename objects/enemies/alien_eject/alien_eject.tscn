@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dtu6aomvo2ynb"]
+[gd_scene load_steps=18 format=3 uid="uid://dtu6aomvo2ynb"]
 
 [ext_resource type="Script" uid="uid://dcodr0sfavwq3" path="res://objects/enemies/alien_eject/alien_eject.gd" id="1_lrjgx"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_23pwu"]
@@ -60,12 +60,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hak4r"]
-size = Vector2(10, 11)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tup68"]
-size = Vector2(20, 22)
-
 [node name="AlienEject" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -60
 script = ExtResource("1_lrjgx")
@@ -84,18 +78,5 @@ sprite_info = Dictionary[StringName, ExtResource("12_gdygc")]({
 &"alien_parachute": ExtResource("14_hak4r")
 })
 default_animation = &"alien_eject"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1.5)
-shape = SubResource("RectangleShape2D_hak4r")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(0, 1.5)
-shape = SubResource("RectangleShape2D_tup68")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("13_sbvdh")]

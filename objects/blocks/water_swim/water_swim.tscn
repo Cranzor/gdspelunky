@@ -1,13 +1,26 @@
-[gd_scene load_steps=10 format=3 uid="uid://bddqqwb5jfu5j"]
+[gd_scene load_steps=21 format=3 uid="uid://bddqqwb5jfu5j"]
 
 [ext_resource type="Script" uid="uid://lirvn2c8rwk8" path="res://objects/blocks/water_swim/water_swim.gd" id="1_i2rlo"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_xwlhw"]
 [ext_resource type="Texture2D" uid="uid://c8dc2qks0s0qx" path="res://sprites/blocks/water/water/water_0.png" id="3_l1f3k"]
-[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_xwlhw"]
+[ext_resource type="Texture2D" uid="uid://rkx8wdg1ryg3" path="res://sprites/blocks/water/water_bottom_tall2/water_bottom_tall2_0.png" id="4_51khy"]
+[ext_resource type="Texture2D" uid="uid://g714fn3n4ppc" path="res://sprites/blocks/water/water_bottom/water_bottom_0.png" id="4_n5d40"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_51khy"]
+[ext_resource type="Texture2D" uid="uid://fpxuocglplgn" path="res://sprites/blocks/water/water_bottom2/water_bottom2_0.png" id="5_i1gol"]
+[ext_resource type="Texture2D" uid="uid://dkufcykamyrmo" path="res://sprites/blocks/water/water_top/water_top_0.png" id="5_p5u1l"]
+[ext_resource type="Texture2D" uid="uid://uy0sler5ij4q" path="res://sprites/blocks/water/water_bottom_tall1/water_bottom_tall1_0.png" id="6_7i5np"]
 [ext_resource type="Resource" uid="uid://5g15nvyrj6pr" path="res://resources/sprite_info/water.tres" id="6_l1f3k"]
+[ext_resource type="Texture2D" uid="uid://dq3ombqglw8vj" path="res://sprites/blocks/water/water_bottom4/water_bottom4_0.png" id="6_oygtn"]
+[ext_resource type="Texture2D" uid="uid://4ck2mi8blobx" path="res://sprites/blocks/water/water_bottom3/water_bottom3_0.png" id="6_sl71x"]
+[ext_resource type="Resource" uid="uid://ccf4sgcugdxbv" path="res://resources/sprite_info/water_bottom_tall2.tres" id="8_co7gy"]
+[ext_resource type="Resource" uid="uid://b4ue3gwdtprgs" path="res://resources/sprite_info/water_top.tres" id="10_eg2wa"]
+[ext_resource type="Resource" uid="uid://dost7i3mrdmh" path="res://resources/sprite_info/water_bottom_tall1.tres" id="14_oygtn"]
+[ext_resource type="Resource" uid="uid://gbdvcueiqswi" path="res://resources/sprite_info/water_bottom2.tres" id="15_sl71x"]
+[ext_resource type="Resource" uid="uid://cj4b8htvl60sg" path="res://resources/sprite_info/water_bottom.tres" id="16_prin3"]
+[ext_resource type="Resource" uid="uid://t1aq7pt1tx0p" path="res://resources/sprite_info/water_bottom4.tres" id="18_sl71x"]
+[ext_resource type="Resource" uid="uid://c5yksichxo31h" path="res://resources/sprite_info/water_bottom3.tres" id="20_prin3"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_l1f3k"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_46ut1"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -17,13 +30,63 @@ animations = [{
 "loop": true,
 "name": &"water",
 "speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_n5d40")
+}],
+"loop": true,
+"name": &"water_bottom",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_i1gol")
+}],
+"loop": true,
+"name": &"water_bottom2",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_sl71x")
+}],
+"loop": true,
+"name": &"water_bottom3",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_oygtn")
+}],
+"loop": true,
+"name": &"water_bottom4",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_7i5np")
+}],
+"loop": true,
+"name": &"water_bottom_tall1",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_51khy")
+}],
+"loop": true,
+"name": &"water_bottom_tall2",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_p5u1l")
+}],
+"loop": true,
+"name": &"water_top",
+"speed": 30.0
 }]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kin6u"]
-size = Vector2(16, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_51khy"]
-size = Vector2(32, 32)
 
 [node name="WaterSwim" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -4093
@@ -31,25 +94,17 @@ script = ExtResource("1_i2rlo")
 animated_sprite_node = NodePath("Sprite")
 object_name = "water_swim"
 
-[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_xwlhw")]
-sprite_frames = SubResource("SpriteFrames_l1f3k")
+[node name="Sprite" parent="." instance=ExtResource("2_xwlhw")]
+sprite_frames = SubResource("SpriteFrames_46ut1")
 autoplay = "water"
-centered = false
-script = ExtResource("4_xwlhw")
 sprite_info = Dictionary[StringName, ExtResource("5_51khy")]({
-&"water": ExtResource("6_l1f3k")
+&"water": ExtResource("6_l1f3k"),
+&"water_bottom": ExtResource("16_prin3"),
+&"water_bottom2": ExtResource("15_sl71x"),
+&"water_bottom3": ExtResource("20_prin3"),
+&"water_bottom4": ExtResource("18_sl71x"),
+&"water_bottom_tall1": ExtResource("14_oygtn"),
+&"water_bottom_tall2": ExtResource("8_co7gy"),
+&"water_top": ExtResource("10_eg2wa")
 })
 default_animation = &"water"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_kin6u")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_51khy")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)

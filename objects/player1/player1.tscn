@@ -1,4 +1,4 @@
-[gd_scene load_steps=331 format=3 uid="uid://du8lsjk87vay6"]
+[gd_scene load_steps=332 format=3 uid="uid://du8lsjk87vay6"]
 
 [ext_resource type="Script" uid="uid://cpssqhjyjmpbq" path="res://objects/player1/player1.gd" id="1_3btm2"]
 [ext_resource type="PackedScene" uid="uid://cdxt2i7ri1v5b" path="res://scenes/jetpack_draw.tscn" id="2_u664n"]
@@ -14,11 +14,13 @@
 [ext_resource type="Texture2D" uid="uid://do3rwsnj0nnau" path="res://sprites/items/weapons/bomb_arrow_right/bomb_arrow_right_1.png" id="8_1ccgs"]
 [ext_resource type="Script" uid="uid://d1v64vt58kawp" path="res://components/drawing/draw_sprite/draw_sprite.gd" id="9_0imcj"]
 [ext_resource type="PackedScene" uid="uid://w6jxjbgfs6na" path="res://components/drawing/draw_circle/dark_level_circle.tscn" id="10_h2jsy"]
+[ext_resource type="Script" uid="uid://cht4oclnookax" path="res://components/drawing/draw_circle/dark_level_circle.gd" id="13_ao1wj"]
 [ext_resource type="Texture2D" uid="uid://c1ka78isguv06" path="res://components/drawing/draw_circle/circle_r16.png" id="15_x37qn"]
 [ext_resource type="Texture2D" uid="uid://bkxksvh8l3or2" path="res://components/drawing/draw_circle/circle_r32.png" id="16_fwhoy"]
 [ext_resource type="Texture2D" uid="uid://cnpx2owt8tmkt" path="res://components/drawing/draw_circle/circle_r64.png" id="17_v84pi"]
 [ext_resource type="Texture2D" uid="uid://4xv4ky4kkda2" path="res://components/drawing/draw_circle/circle_r96.png" id="18_si4xw"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="20_sh18g"]
+[ext_resource type="Script" uid="uid://hc07d28luu1w" path="res://components/smooth_motion.gd" id="21_2rwj6"]
 [ext_resource type="Texture2D" uid="uid://br22neeglo7iw" path="res://sprites/character/main dude/attack_left/attack_left_0.png" id="21_fb7hm"]
 [ext_resource type="Texture2D" uid="uid://cf2fgp78nap7y" path="res://sprites/character/main dude/attack_left/attack_left_1.png" id="22_ulfp1"]
 [ext_resource type="Texture2D" uid="uid://qxa3d0ygmlyr" path="res://sprites/character/main dude/attack_left/attack_left_10.png" id="23_q1ydx"]
@@ -275,6 +277,7 @@
 [ext_resource type="Texture2D" uid="uid://dsimdrmjis3ck" path="res://sprites/character/main dude/yell_left/yell_left_7.png" id="274_ln1yw"]
 [ext_resource type="Texture2D" uid="uid://4hiodid2yclp" path="res://sprites/character/main dude/yell_left/yell_left_8.png" id="275_jsi0m"]
 [ext_resource type="Texture2D" uid="uid://c57ph424kfgw8" path="res://sprites/character/main dude/yell_left/yell_left_9.png" id="276_mqcp0"]
+[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="277_h5kh7"]
 [ext_resource type="Resource" uid="uid://6ug0fs2erk02" path="res://resources/sprite_info/stand_left.tres" id="279_5spxe"]
 [ext_resource type="Resource" uid="uid://d33k1yi58xxbq" path="res://resources/sprite_info/damsel_attack_l.tres" id="280_hjycq"]
 [ext_resource type="Resource" uid="uid://bhuepda8cnieg" path="res://resources/sprite_info/tunnel_attack_l.tres" id="281_fkg0q"]
@@ -434,7 +437,7 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_h5kh7"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_5spxe"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -1440,12 +1443,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5spxe"]
-size = Vector2(12, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hjycq"]
-size = Vector2(24, 32)
-
 [node name="Player1" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -50
 script = ExtResource("1_3btm2")
@@ -1462,13 +1459,23 @@ offset_right = 8.0
 offset_bottom = 8.0
 color = Color(0.768627, 0.141176, 0.811765, 0.741176)
 
-[node name="JetpackDraw" parent="." instance=ExtResource("2_u664n")]
+[node name="JetpackDraw" type="AnimatedSprite2D" parent="." groups=["draw_sprite"] instance=ExtResource("2_u664n")]
+visible = false
+z_index = -1
 sprite_frames = SubResource("SpriteFrames_8p1w3")
+animation = &"jetpack_back"
+centered = false
+script = ExtResource("9_0imcj")
+hide_at_start_of_frame = true
 
-[node name="DarkLevelCircle" parent="." instance=ExtResource("10_h2jsy")]
+[node name="DarkLevelCircle" type="AnimatedSprite2D" parent="." instance=ExtResource("10_h2jsy")]
+visible = false
+z_index = 10
+z_as_relative = false
 material = SubResource("ShaderMaterial_ttmrw")
 sprite_frames = SubResource("SpriteFrames_n62uf")
 animation = &"96"
+script = ExtResource("13_ao1wj")
 radius = 96
 
 [node name="ArrowDraw" type="AnimatedSprite2D" parent="." groups=["draw_sprite"]]
@@ -1481,14 +1488,16 @@ hide_at_start_of_frame = true
 
 [node name="SmoothMotion2" parent="." instance=ExtResource("174_j1p73")]
 
-[node name="RemoteTransform2D" parent="SmoothMotion2" index="0"]
+[node name="RemoteTransform2D" parent="SmoothMotion2" index="0" groups=["smooth_motion"]]
+script = ExtResource("21_2rwj6")
 alt_remote_path = NodePath("../../JetpackDraw")
 
-[node name="Sprite" parent="." instance=ExtResource("20_sh18g")]
-sprite_frames = SubResource("SpriteFrames_h5kh7")
-animation = &"attack_left"
+[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("20_sh18g")]
+sprite_frames = SubResource("SpriteFrames_5spxe")
 autoplay = "stand_left"
+centered = false
 offset = Vector2(-8, -8)
+script = ExtResource("277_h5kh7")
 sprite_info = Dictionary[StringName, ExtResource("175_l0xp4")]({
 &"attack_left": ExtResource("290_exahn"),
 &"bomb_armed": ExtResource("286_tn6uw"),
@@ -1541,17 +1550,6 @@ sprite_info = Dictionary[StringName, ExtResource("175_l0xp4")]({
 })
 default_animation = &"stand_left"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_5spxe")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-shape = SubResource("RectangleShape2D_hjycq")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)
-
-[node name="SmoothMotion" parent="." instance=ExtResource("174_j1p73")]
+[node name="SmoothMotion" type="Node" parent="." instance=ExtResource("174_j1p73")]
 
 [editable path="SmoothMotion2"]

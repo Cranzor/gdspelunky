@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cdumcxqcbtpac"]
+[gd_scene load_steps=8 format=3 uid="uid://cdumcxqcbtpac"]
 
 [ext_resource type="Script" uid="uid://dwgsysmtjkj0x" path="res://objects/level editor/snake_tile/snake_tile.gd" id="1_q8tr4"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_7q40e"]
@@ -19,12 +19,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3wgqv"]
-size = Vector2(14, 12)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xaa5k"]
-size = Vector2(28, 24)
-
 [node name="SnakeTile" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -100
 script = ExtResource("1_q8tr4")
@@ -40,16 +34,3 @@ sprite_info = Dictionary[StringName, ExtResource("5_xaa5k")]({
 &"snake_left": ExtResource("6_fgg4q")
 })
 default_animation = &"snake_left"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 10)
-shape = SubResource("RectangleShape2D_3wgqv")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(8, 10)
-shape = SubResource("RectangleShape2D_xaa5k")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)

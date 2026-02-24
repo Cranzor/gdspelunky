@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c71v4d12q8fg3"]
+[gd_scene load_steps=9 format=3 uid="uid://c71v4d12q8fg3"]
 
 [ext_resource type="Script" uid="uid://dgrvgbnmkqj7q" path="res://objects/items/chain/chain.gd" id="1_bw8dt"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_m4awg"]
@@ -20,12 +20,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_o3feb"]
-size = Vector2(6, 6)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2x5q8"]
-size = Vector2(12, 12)
-
 [node name="Chain" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -1
 script = ExtResource("1_bw8dt")
@@ -42,18 +36,5 @@ sprite_info = Dictionary[StringName, ExtResource("5_o3feb")]({
 &"chain": ExtResource("6_804p7")
 })
 default_animation = &"chain"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 4)
-shape = SubResource("RectangleShape2D_o3feb")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(0, 4)
-shape = SubResource("RectangleShape2D_2x5q8")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("6_o377u")]

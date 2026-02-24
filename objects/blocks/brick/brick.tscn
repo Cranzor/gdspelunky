@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://boxc36fot75d7"]
+[gd_scene load_steps=23 format=3 uid="uid://boxc36fot75d7"]
 
 [ext_resource type="Script" uid="uid://dyjkegg58jbjp" path="res://objects/blocks/brick/brick.gd" id="1_k0bbd"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_cghdr"]
@@ -22,7 +22,7 @@
 [ext_resource type="Resource" uid="uid://vx5di2wjl1a6" path="res://resources/sprite_info/brick_down.tres" id="21_q7ayc"]
 [ext_resource type="Resource" uid="uid://cve0ysxt6bcpo" path="res://resources/sprite_info/lush_down.tres" id="23_31hvc"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_kyekp"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_p1min"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -90,12 +90,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_78t6d"]
-size = Vector2(16, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nix33"]
-size = Vector2(32, 32)
-
 [node name="Brick" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -100
 script = ExtResource("1_k0bbd")
@@ -106,7 +100,7 @@ object_name = "brick"
 texture = ExtResource("9_0ea63")
 
 [node name="Sprite" parent="." instance=ExtResource("2_cghdr")]
-sprite_frames = SubResource("SpriteFrames_kyekp")
+sprite_frames = SubResource("SpriteFrames_p1min")
 animation = &"brick"
 autoplay = "brick"
 sprite_info = Dictionary[StringName, ExtResource("8_akvyr")]({
@@ -120,16 +114,3 @@ sprite_info = Dictionary[StringName, ExtResource("8_akvyr")]({
 &"lush_down": ExtResource("23_31hvc")
 })
 default_animation = &"brick"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_78t6d")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_nix33")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)

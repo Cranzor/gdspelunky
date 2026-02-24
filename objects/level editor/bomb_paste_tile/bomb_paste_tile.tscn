@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://de64oaoswxwwf"]
+[gd_scene load_steps=8 format=3 uid="uid://de64oaoswxwwf"]
 
 [ext_resource type="Script" uid="uid://mbuoyqo8yrov" path="res://objects/level editor/bomb_paste_tile/bomb_paste_tile.gd" id="1_8l470"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_6olii"]
@@ -19,12 +19,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_t0rrs"]
-size = Vector2(12, 12)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_m8ctn"]
-size = Vector2(24, 24)
-
 [node name="BombPasteTile" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -100
 script = ExtResource("1_8l470")
@@ -40,16 +34,3 @@ sprite_info = Dictionary[StringName, ExtResource("5_m8ctn")]({
 &"bomb_paste_tile": ExtResource("6_jg1uf")
 })
 default_animation = &"bomb_paste_tile"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 10)
-shape = SubResource("RectangleShape2D_t0rrs")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(8, 10)
-shape = SubResource("RectangleShape2D_m8ctn")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://s10htuh6hwl7"]
+[gd_scene load_steps=10 format=3 uid="uid://s10htuh6hwl7"]
 
 [ext_resource type="Script" uid="uid://by3vi67wrvvn0" path="res://objects/items/lamp_red_item/lamp_red_item.gd" id="1_5pmnl"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_l3x7m"]
@@ -27,12 +27,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_o62qr"]
-size = Vector2(14, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_c5us5"]
-size = Vector2(28, 32)
-
 [node name="LampRedItem" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -100
 script = ExtResource("1_5pmnl")
@@ -49,16 +43,3 @@ sprite_info = Dictionary[StringName, ExtResource("7_v2doo")]({
 &"lamp_red_item": ExtResource("8_rahhc")
 })
 default_animation = &"lamp_red_item"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -4)
-shape = SubResource("RectangleShape2D_o62qr")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(0, -4)
-shape = SubResource("RectangleShape2D_c5us5")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)

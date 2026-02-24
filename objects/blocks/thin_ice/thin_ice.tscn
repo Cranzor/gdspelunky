@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://c5b4waufn8dyu"]
+[gd_scene load_steps=18 format=3 uid="uid://c5b4waufn8dyu"]
 
 [ext_resource type="Script" uid="uid://bqvfbe186vyvy" path="res://objects/blocks/thin_ice/thin_ice.gd" id="1_ml0g8"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_8w5wk"]
@@ -69,12 +69,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_y5wnc"]
-size = Vector2(16, 9)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rt5w0"]
-size = Vector2(32, 18)
-
 [node name="ThinIce" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -110
 script = ExtResource("1_ml0g8")
@@ -95,16 +89,3 @@ sprite_info = Dictionary[StringName, ExtResource("10_rt5w0")]({
 &"thin_ice6": ExtResource("16_jhsil")
 })
 default_animation = &"thin_ice1"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 4.5)
-shape = SubResource("RectangleShape2D_y5wnc")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(8, 4.5)
-shape = SubResource("RectangleShape2D_rt5w0")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)

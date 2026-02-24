@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dhdtsgvpsyeuw"]
+[gd_scene load_steps=20 format=3 uid="uid://dhdtsgvpsyeuw"]
 
 [ext_resource type="Script" uid="uid://dl4tj2gv3jxc6" path="res://objects/enemies/scarab/scarab.gd" id="1_tx2hp"]
 [ext_resource type="PackedScene" uid="uid://w6jxjbgfs6na" path="res://components/drawing/draw_circle/dark_level_circle.tscn" id="2_8h5vu"]
@@ -74,12 +74,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6u8m4"]
-size = Vector2(13, 11)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6yk53"]
-size = Vector2(26, 22)
-
 [node name="Scarab" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -40
 script = ExtResource("1_tx2hp")
@@ -106,18 +100,5 @@ sprite_info = Dictionary[StringName, ExtResource("14_trmij")]({
 &"scarab": ExtResource("15_u24ia")
 })
 default_animation = &"scarab"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(7.5, 7.5)
-shape = SubResource("RectangleShape2D_6u8m4")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(7.5, 7.5)
-shape = SubResource("RectangleShape2D_6yk53")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("15_fsnvs")]

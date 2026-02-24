@@ -1,4 +1,4 @@
-[gd_scene load_steps=138 format=3 uid="uid://ufmc1vcwjmp3"]
+[gd_scene load_steps=136 format=3 uid="uid://ufmc1vcwjmp3"]
 
 [ext_resource type="Script" uid="uid://bfsa1pg3xg68m" path="res://objects/characters/damsel/damsel.gd" id="1_fww1k"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_wiyl7"]
@@ -572,12 +572,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p1l6r"]
-size = Vector2(12, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jcynx"]
-size = Vector2(24, 32)
-
 [node name="Damsel" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -100
 script = ExtResource("1_fww1k")
@@ -616,16 +610,5 @@ sprite_info = Dictionary[StringName, ExtResource("110_bfaap")]({
 &"yell_left": ExtResource("117_vptdo")
 })
 default_animation = &"damsel_left"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_p1l6r")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-shape = SubResource("RectangleShape2D_jcynx")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("111_f5goe")]

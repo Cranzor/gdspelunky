@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dw8wmuyk5p6i1"]
+[gd_scene load_steps=8 format=3 uid="uid://dw8wmuyk5p6i1"]
 
 [ext_resource type="Script" uid="uid://klch8oqg7qdb" path="res://objects/level editor/alien_boss_tile/alien_boss_tile.gd" id="1_ido6c"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_wig5h"]
@@ -19,12 +19,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4a7y3"]
-size = Vector2(31, 31)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_njyiv"]
-size = Vector2(62, 62)
-
 [node name="AlienBossTile" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -200
 script = ExtResource("1_ido6c")
@@ -40,16 +34,3 @@ sprite_info = Dictionary[StringName, ExtResource("5_njyiv")]({
 &"alien_boss_tile": ExtResource("6_b6xdd")
 })
 default_animation = &"alien_boss_tile"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(16.5, 16.5)
-shape = SubResource("RectangleShape2D_4a7y3")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(16.5, 16.5)
-shape = SubResource("RectangleShape2D_njyiv")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)

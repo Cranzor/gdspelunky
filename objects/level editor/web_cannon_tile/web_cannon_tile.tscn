@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://csvacajjnt5hw"]
+[gd_scene load_steps=8 format=3 uid="uid://csvacajjnt5hw"]
 
 [ext_resource type="Script" uid="uid://d0x5naw3y4vol" path="res://objects/level editor/web_cannon_tile/web_cannon_tile.gd" id="1_pr7x5"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_7i6xt"]
@@ -19,12 +19,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_a0tkl"]
-size = Vector2(13, 7)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ee13r"]
-size = Vector2(26, 14)
-
 [node name="WebCannonTile" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -100
 script = ExtResource("1_pr7x5")
@@ -40,16 +34,3 @@ sprite_info = Dictionary[StringName, ExtResource("5_ee13r")]({
 &"web_cannon_tile": ExtResource("6_04ryr")
 })
 default_animation = &"web_cannon_tile"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(9.5, 11.5)
-shape = SubResource("RectangleShape2D_a0tkl")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(9.5, 11.5)
-shape = SubResource("RectangleShape2D_ee13r")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)

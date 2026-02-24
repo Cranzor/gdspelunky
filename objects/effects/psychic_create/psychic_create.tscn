@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b1ep2bdbwqrwo"]
+[gd_scene load_steps=14 format=3 uid="uid://b1ep2bdbwqrwo"]
 
 [ext_resource type="Script" uid="uid://r8e56qqx5msr" path="res://objects/effects/psychic_create/psychic_create.gd" id="1_t6u1t"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_lrqbq"]
@@ -40,12 +40,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_if2kx"]
-size = Vector2(6, 6)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sswef"]
-size = Vector2(12, 12)
-
 [node name="PsychicCreate" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -1
 script = ExtResource("1_t6u1t")
@@ -62,16 +56,5 @@ sprite_info = Dictionary[StringName, ExtResource("10_fy8fe")]({
 &"psychic_create": ExtResource("11_hq5x1")
 })
 default_animation = &"psychic_create"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_if2kx")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-shape = SubResource("RectangleShape2D_sswef")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("11_go6qm")]

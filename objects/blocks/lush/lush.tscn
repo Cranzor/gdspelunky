@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://d0cddnabifriw"]
+[gd_scene load_steps=15 format=3 uid="uid://d0cddnabifriw"]
 
 [ext_resource type="Script" uid="uid://chn4k5g56yfaq" path="res://objects/blocks/lush/lush.gd" id="1_0xr0n"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_nftbi"]
@@ -42,12 +42,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_n1o00"]
-size = Vector2(16, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qna4y"]
-size = Vector2(32, 32)
-
 [node name="Lush" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -100
 script = ExtResource("1_0xr0n")
@@ -76,16 +70,3 @@ sprite_info = Dictionary[StringName, ExtResource("7_13d7s")]({
 &"lush_gold_big": ExtResource("13_qna4y")
 })
 default_animation = &"lush"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_n1o00")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_qna4y")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)

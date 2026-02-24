@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://dx73w7fhadmlt"]
+[gd_scene load_steps=46 format=3 uid="uid://dx73w7fhadmlt"]
 
 [ext_resource type="Script" uid="uid://b3uicfmaw0p2b" path="res://objects/enemies/hawkman/hawkman.gd" id="1_385p7"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_tos52"]
@@ -188,12 +188,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_n7iy1"]
-size = Vector2(16, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rxn48"]
-size = Vector2(32, 32)
-
 [node name="Hawkman" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -60
 script = ExtResource("1_385p7")
@@ -219,18 +213,5 @@ sprite_info = Dictionary[StringName, ExtResource("32_uilyx")]({
 &"hawk_throw_l": ExtResource("34_n7iy1")
 })
 default_animation = &"hawk_left"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_n7iy1")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_rxn48")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("33_20c6o")]

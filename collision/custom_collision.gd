@@ -36,8 +36,11 @@ func get_grid_cells_from_rect(rect: Rect2) -> PackedVector2Array:
 	return grid_cells
 
 
-func get_object_rect(object: GMObject) -> Rect2:
-	var default_animation: StringName = object.animated_sprite_node.default_animation #--- for accurate updated sprite, change to object.sprite_index_name
+func get_object_rect(object: GMObject, get_base_rect: bool = false) -> Rect2:
+	#var default_animation: StringName = object.animated_sprite_node.default_animation #--- for accurate updated sprite, change to object.sprite_index_name
+	var default_animation: StringName = object.animated_sprite_node.animation
+	if default_animation == "":
+		default_animation = object.animated_sprite_node.default_animation
 	if sprites.sprite_database.has(default_animation):
 		var origin = sprites.sprite_database[default_animation]["origin"]
 		var size = sprites.sprite_database[default_animation]["mask"]["bounding_box"][1]
@@ -45,6 +48,7 @@ func get_object_rect(object: GMObject) -> Rect2:
 		var returned_rect: Rect2 = Rect2(pos, size)
 		returned_rect = get_object_rect_exception(object, returned_rect)
 		rect = returned_rect
+		if get_base_rect: returned_rect.position = -origin
 		return returned_rect
 	return Rect2(0, 0, 0, 0)
 
@@ -118,7 +122,7 @@ func remove_object_from_cells(object: GMObject, cells: PackedVector2Array) -> vo
 		cell_to_objects[cell].erase(object.name)
 
 
-func group_collision_query(checking_rect: Rect2, group: StringName, calling_object: GMObject = null, notme: bool = false):
+func group_collision_query(checking_rect: Rect2, group: StringName, calling_object: GMObject = null, notme: bool = false, all_candidates: bool = false):
 	var grid_cells: PackedVector2Array = get_grid_cells_from_rect(checking_rect)
 	var candidate_objects: Array = gm_collision.find_objects_in_grid_cells(grid_cells, cell_to_objects)
 	var matched_objects: Array[GMObject]
@@ -128,6 +132,7 @@ func group_collision_query(checking_rect: Rect2, group: StringName, calling_obje
 			if colliding:
 				if !check_notme(calling_object, object, notme):
 					matched_objects.append(object)
+	if all_candidates: return matched_objects
 	if matched_objects:
 		return matched_objects[0]
 	return null

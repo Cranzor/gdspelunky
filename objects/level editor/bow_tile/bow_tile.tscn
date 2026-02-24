@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://iykvwgp7rpey"]
+[gd_scene load_steps=8 format=3 uid="uid://iykvwgp7rpey"]
 
 [ext_resource type="Script" uid="uid://bk4s063u3855s" path="res://objects/level editor/bow_tile/bow_tile.gd" id="1_6jwld"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_g8kv4"]
@@ -19,12 +19,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_67npi"]
-size = Vector2(7, 11)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_c5di8"]
-size = Vector2(14, 22)
-
 [node name="BowTile" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -100
 script = ExtResource("1_6jwld")
@@ -40,16 +34,3 @@ sprite_info = Dictionary[StringName, ExtResource("5_c5di8")]({
 &"bow_tile": ExtResource("6_unvva")
 })
 default_animation = &"bow_tile"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(9.5, 10.5)
-shape = SubResource("RectangleShape2D_67npi")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(9.5, 10.5)
-shape = SubResource("RectangleShape2D_c5di8")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)

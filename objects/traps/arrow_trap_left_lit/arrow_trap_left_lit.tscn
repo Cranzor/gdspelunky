@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://do3qj17jfn1rb"]
+[gd_scene load_steps=21 format=3 uid="uid://do3qj17jfn1rb"]
 
 [ext_resource type="Script" uid="uid://sm4at6twbgp3" path="res://objects/traps/arrow_trap_left_lit/arrow_trap_left_lit.gd" id="1_5eauu"]
 [ext_resource type="PackedScene" uid="uid://w6jxjbgfs6na" path="res://components/drawing/draw_circle/dark_level_circle.tscn" id="2_av7sh"]
@@ -81,12 +81,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dagb5"]
-size = Vector2(16, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vrwrt"]
-size = Vector2(32, 32)
-
 [node name="ArrowTrapLeftLit" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -110
 script = ExtResource("1_5eauu")
@@ -112,16 +106,3 @@ sprite_info = Dictionary[StringName, ExtResource("16_bforu")]({
 &"arrow_trap_left_lit": ExtResource("17_qym5c")
 })
 default_animation = &"arrow_trap_left_lit"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_dagb5")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_vrwrt")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)

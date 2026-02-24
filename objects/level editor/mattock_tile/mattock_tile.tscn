@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://we1i6vy4c88v"]
+[gd_scene load_steps=8 format=3 uid="uid://we1i6vy4c88v"]
 
 [ext_resource type="Script" uid="uid://5tpynyl1cit7" path="res://objects/level editor/mattock_tile/mattock_tile.gd" id="1_rskmq"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_eefum"]
@@ -19,12 +19,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cfasu"]
-size = Vector2(14, 12)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_q6r0o"]
-size = Vector2(28, 24)
-
 [node name="MattockTile" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -100
 script = ExtResource("1_rskmq")
@@ -40,16 +34,3 @@ sprite_info = Dictionary[StringName, ExtResource("5_q6r0o")]({
 &"mattock_tile": ExtResource("6_p22oe")
 })
 default_animation = &"mattock_tile"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 10)
-shape = SubResource("RectangleShape2D_cfasu")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(8, 10)
-shape = SubResource("RectangleShape2D_q6r0o")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)

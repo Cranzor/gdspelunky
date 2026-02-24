@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cu4y8008n16l1"]
+[gd_scene load_steps=9 format=3 uid="uid://cu4y8008n16l1"]
 
 [ext_resource type="Script" uid="uid://dqr608wv378y" path="res://objects/traps/smash_trap/smash_trap.gd" id="1_xilu7"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_w0us4"]
@@ -20,12 +20,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_iu3vb"]
-size = Vector2(16, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_flse8"]
-size = Vector2(32, 32)
-
 [node name="SmashTrap" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -60
 script = ExtResource("1_xilu7")
@@ -41,18 +35,5 @@ sprite_info = Dictionary[StringName, ExtResource("5_iu3vb")]({
 &"smash_trap": ExtResource("6_q6eam")
 })
 default_animation = &"smash_trap"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_iu3vb")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_flse8")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("6_qfcl7")]

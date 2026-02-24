@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b0e2spw8cbuik"]
+[gd_scene load_steps=8 format=3 uid="uid://b0e2spw8cbuik"]
 
 [ext_resource type="Script" uid="uid://dyukt5o7vklng" path="res://objects/items/rope_top/rope_top.gd" id="1_tlk1d"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_aik8l"]
@@ -19,12 +19,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rm0w5"]
-size = Vector2(8, 8)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_m3wnp"]
-size = Vector2(16, 16)
-
 [node name="RopeTop" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -200
 script = ExtResource("1_tlk1d")
@@ -41,14 +35,3 @@ sprite_info = Dictionary[StringName, ExtResource("5_m3wnp")]({
 &"rope_top": ExtResource("6_heli8")
 })
 default_animation = &"rope_top"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_rm0w5")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-shape = SubResource("RectangleShape2D_m3wnp")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)

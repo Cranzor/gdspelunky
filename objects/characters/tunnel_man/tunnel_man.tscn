@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://c7c3ih447fd73"]
+[gd_scene load_steps=22 format=3 uid="uid://c7c3ih447fd73"]
 
 [ext_resource type="Script" uid="uid://dhp3wa5yuhegf" path="res://objects/characters/tunnel_man/tunnel_man.gd" id="1_ae3nh"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_w7ik8"]
@@ -81,12 +81,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hvyxf"]
-size = Vector2(12, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_r3nje"]
-size = Vector2(24, 32)
-
 [node name="TunnelMan" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -100
 script = ExtResource("1_ae3nh")
@@ -106,14 +100,3 @@ sprite_info = Dictionary[StringName, ExtResource("16_ftfhc")]({
 &"tunnel_man_right": ExtResource("18_hvyxf")
 })
 default_animation = &"tunnel_man_left"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_hvyxf")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-shape = SubResource("RectangleShape2D_r3nje")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)

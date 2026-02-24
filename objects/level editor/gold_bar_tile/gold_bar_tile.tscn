@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b7xbxw201k0ul"]
+[gd_scene load_steps=8 format=3 uid="uid://b7xbxw201k0ul"]
 
 [ext_resource type="Script" uid="uid://nwlg2s6pejp5" path="res://objects/level editor/gold_bar_tile/gold_bar_tile.gd" id="1_x0j8m"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_riy7h"]
@@ -19,12 +19,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_j83y0"]
-size = Vector2(8, 5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_06tcf"]
-size = Vector2(16, 10)
-
 [node name="GoldBarTile" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -100
 script = ExtResource("1_x0j8m")
@@ -40,16 +34,3 @@ sprite_info = Dictionary[StringName, ExtResource("5_06tcf")]({
 &"gold_bar_tile": ExtResource("6_wncyh")
 })
 default_animation = &"gold_bar_tile"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 13.5)
-shape = SubResource("RectangleShape2D_j83y0")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(8, 13.5)
-shape = SubResource("RectangleShape2D_06tcf")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c1wwsxwhu32wn"]
+[gd_scene load_steps=11 format=3 uid="uid://c1wwsxwhu32wn"]
 
 [ext_resource type="Script" uid="uid://dengrluyvkec" path="res://objects/items/pistol/pistol.gd" id="1_mu4oc"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_d3qw5"]
@@ -30,12 +30,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nklyk"]
-size = Vector2(9, 6)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_av8ls"]
-size = Vector2(18, 12)
-
 [node name="Pistol" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -101
 script = ExtResource("1_mu4oc")
@@ -53,18 +47,5 @@ sprite_info = Dictionary[StringName, ExtResource("6_nklyk")]({
 &"pistol_right": ExtResource("7_1p65f")
 })
 default_animation = &"pistol_right"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 0)
-shape = SubResource("RectangleShape2D_nklyk")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(-0.5, 0)
-shape = SubResource("RectangleShape2D_av8ls")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("7_elqo0")]

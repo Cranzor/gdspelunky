@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://b4o8epkp0ba1h"]
+[gd_scene load_steps=77 format=3 uid="uid://b4o8epkp0ba1h"]
 
 [ext_resource type="Script" uid="uid://bxwfpf3nluv0s" path="res://objects/enemies/tomb_lord/tomb_lord.gd" id="1_l6j2s"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_44uay"]
@@ -306,12 +306,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vmdcl"]
-size = Vector2(23, 30)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wj2n0"]
-size = Vector2(46, 60)
-
 [node name="TombLord" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -60
 script = ExtResource("1_l6j2s")
@@ -334,18 +328,5 @@ sprite_info = Dictionary[StringName, ExtResource("66_amvv1")]({
 &"tomb_lord_walk_r": ExtResource("73_n13pi")
 })
 default_animation = &"tomb_lord_left"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(14.5, 17)
-shape = SubResource("RectangleShape2D_vmdcl")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(14.5, 17)
-shape = SubResource("RectangleShape2D_wj2n0")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("67_1eu7m")]

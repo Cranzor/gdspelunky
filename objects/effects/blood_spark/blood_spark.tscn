@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://xiivvt6qmij0"]
+[gd_scene load_steps=17 format=3 uid="uid://xiivvt6qmij0"]
 
 [ext_resource type="Script" uid="uid://bs321r77dh8au" path="res://objects/effects/blood_spark/blood_spark.gd" id="1_vk2fn"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_wnme7"]
@@ -52,12 +52,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5a7mk"]
-size = Vector2(8, 8)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_axj8e"]
-size = Vector2(16, 16)
-
 [node name="BloodSpark" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -1
 script = ExtResource("1_vk2fn")
@@ -74,16 +68,5 @@ sprite_info = Dictionary[StringName, ExtResource("13_a7p7u")]({
 &"blood_spark": ExtResource("14_3rxw2")
 })
 default_animation = &"blood_spark"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_5a7mk")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-shape = SubResource("RectangleShape2D_axj8e")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("14_vqbaa")]

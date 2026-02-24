@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bgwd61prrntr8"]
+[gd_scene load_steps=17 format=3 uid="uid://bgwd61prrntr8"]
 
 [ext_resource type="Script" uid="uid://cyookmqguj2eu" path="res://objects/effects/shotgun_blast_left/shotgun_blast_left.gd" id="1_kr8rg"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_2d7p7"]
@@ -55,12 +55,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_25ipu"]
-size = Vector2(15, 12)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_58f0i"]
-size = Vector2(30, 24)
-
 [node name="ShotgunBlastLeft" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_kr8rg")
 animated_sprite_node = NodePath("Sprite")
@@ -76,16 +70,3 @@ sprite_info = Dictionary[StringName, ExtResource("14_ps5iu")]({
 &"shotgun_blast_left": ExtResource("15_8w3vg")
 })
 default_animation = &"shotgun_blast_left"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 0)
-shape = SubResource("RectangleShape2D_25ipu")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(-0.5, 0)
-shape = SubResource("RectangleShape2D_58f0i")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)

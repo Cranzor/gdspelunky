@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cnry8hpc6lbdr"]
+[gd_scene load_steps=8 format=3 uid="uid://cnry8hpc6lbdr"]
 
 [ext_resource type="Script" uid="uid://cqtln5jysou1l" path="res://objects/blocks/sac_altar_left/sac_altar_left.gd" id="1_27skj"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_6oa5r"]
@@ -19,12 +19,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5400l"]
-size = Vector2(16, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jjp0r"]
-size = Vector2(32, 32)
-
 [node name="SacAltarLeft" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -110
 script = ExtResource("1_27skj")
@@ -40,16 +34,3 @@ sprite_info = Dictionary[StringName, ExtResource("5_jjp0r")]({
 &"sac_altar_left": ExtResource("6_wl3cm")
 })
 default_animation = &"sac_altar_left"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_5400l")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_jjp0r")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)

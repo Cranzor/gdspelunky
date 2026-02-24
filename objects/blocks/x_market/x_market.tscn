@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://betxdf0mgp0tt"]
+[gd_scene load_steps=8 format=3 uid="uid://betxdf0mgp0tt"]
 
 [ext_resource type="Script" uid="uid://d04xlfr5hh3oi" path="res://objects/blocks/x_market/x_market.gd" id="1_btcn3"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_xm5c8"]
@@ -19,12 +19,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sl3nn"]
-size = Vector2(16, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tsrkq"]
-size = Vector2(32, 32)
-
 [node name="XMarket" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -4093
 script = ExtResource("1_btcn3")
@@ -40,16 +34,3 @@ sprite_info = Dictionary[StringName, ExtResource("5_tsrkq")]({
 &"exit": ExtResource("6_qokk4")
 })
 default_animation = &"exit"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_sl3nn")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_tsrkq")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bk5eaesk1m2eo"]
+[gd_scene load_steps=8 format=3 uid="uid://bk5eaesk1m2eo"]
 
 [ext_resource type="Script" uid="uid://c42plm4dflaab" path="res://objects/traps/door/door.gd" id="1_qhcla"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_3dff4"]
@@ -19,12 +19,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2eqxy"]
-size = Vector2(14, 32)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_egsaq"]
-size = Vector2(28, 64)
-
 [node name="Door" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -4093
 script = ExtResource("1_qhcla")
@@ -40,16 +34,3 @@ sprite_info = Dictionary[StringName, ExtResource("5_egsaq")]({
 &"door": ExtResource("6_i4a18")
 })
 default_animation = &"door"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 16)
-shape = SubResource("RectangleShape2D_2eqxy")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(8, 16)
-shape = SubResource("RectangleShape2D_egsaq")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)

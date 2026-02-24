@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ck4q01a2vtjiq"]
+[gd_scene load_steps=8 format=3 uid="uid://ck4q01a2vtjiq"]
 
 [ext_resource type="Script" uid="uid://cwr8j16sode25" path="res://objects/blocks/moai/moai.gd" id="1_gd0x0"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_p6bdr"]
@@ -19,12 +19,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_npgyu"]
-size = Vector2(16, 64)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_j5401"]
-size = Vector2(32, 128)
-
 [node name="Moai" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -100
 script = ExtResource("1_gd0x0")
@@ -40,16 +34,3 @@ sprite_info = Dictionary[StringName, ExtResource("5_j5401")]({
 &"moai": ExtResource("6_yoanv")
 })
 default_animation = &"moai"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 32)
-shape = SubResource("RectangleShape2D_npgyu")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(8, 32)
-shape = SubResource("RectangleShape2D_j5401")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)

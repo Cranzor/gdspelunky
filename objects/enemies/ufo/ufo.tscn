@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://j4g74q5lh3d3"]
+[gd_scene load_steps=37 format=3 uid="uid://j4g74q5lh3d3"]
 
 [ext_resource type="Script" uid="uid://dl0vmljn44qke" path="res://objects/enemies/ufo/ufo.gd" id="1_qa7jp"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_qkno5"]
@@ -32,9 +32,11 @@
 [ext_resource type="Texture2D" uid="uid://h5fqgdt5vvol" path="res://sprites/enemies/ufo_blast/ufo_blast_9.png" id="30_x2fgt"]
 [ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="31_dqdmn"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="32_0kmk5"]
+[ext_resource type="Resource" uid="uid://byxaoqaq33xdp" path="res://resources/sprite_info/ufo.tres" id="33_3b8td"]
 [ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="33_y34fl"]
+[ext_resource type="Resource" uid="uid://vfcwtr8einms" path="res://resources/sprite_info/ufo_blast.tres" id="34_dlmfg"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_y34fl"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_laygk"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -132,20 +134,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="Resource" id="Resource_cc2l1"]
-script = ExtResource("32_0kmk5")
-containing_box = Rect2(0, 1, 16, 13)
-
-[sub_resource type="Resource" id="Resource_3b8td"]
-script = ExtResource("32_0kmk5")
-containing_box = Rect2(0, 0, 16, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dlmfg"]
-size = Vector2(16, 13)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_laygk"]
-size = Vector2(32, 26)
-
 [node name="Ufo" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -40
 script = ExtResource("1_qa7jp")
@@ -153,27 +141,14 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "ufo"
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_qkno5")]
-sprite_frames = SubResource("SpriteFrames_y34fl")
+sprite_frames = SubResource("SpriteFrames_laygk")
 autoplay = "ufo"
 centered = false
 script = ExtResource("31_dqdmn")
 sprite_info = Dictionary[StringName, ExtResource("32_0kmk5")]({
-&"ufo": SubResource("Resource_cc2l1"),
-&"ufo_blast": SubResource("Resource_3b8td")
+&"ufo": ExtResource("33_3b8td"),
+&"ufo_blast": ExtResource("34_dlmfg")
 })
 default_animation = &"ufo"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 7.5)
-shape = SubResource("RectangleShape2D_dlmfg")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(8, 7.5)
-shape = SubResource("RectangleShape2D_laygk")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("33_y34fl")]

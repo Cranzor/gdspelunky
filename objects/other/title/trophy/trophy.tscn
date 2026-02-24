@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bhffcxa878l6g"]
+[gd_scene load_steps=12 format=3 uid="uid://bhffcxa878l6g"]
 
 [ext_resource type="Script" uid="uid://b2m31iadvmkvh" path="res://objects/other/title/trophy/trophy.gd" id="1_rrvl7"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_xjswj"]
@@ -39,12 +39,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jsgam"]
-size = Vector2(8, 12)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yfadp"]
-size = Vector2(16, 24)
-
 [node name="Trophy" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -900
 script = ExtResource("1_rrvl7")
@@ -62,16 +56,3 @@ sprite_info = Dictionary[StringName, ExtResource("7_yfadp")]({
 &"silver_trophy": ExtResource("10_yfadp")
 })
 default_animation = &"bronze_trophy"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 10)
-shape = SubResource("RectangleShape2D_jsgam")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(8, 10)
-shape = SubResource("RectangleShape2D_yfadp")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)

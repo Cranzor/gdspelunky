@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://btd2fjfptj4ru"]
+[gd_scene load_steps=49 format=3 uid="uid://btd2fjfptj4ru"]
 
 [ext_resource type="Script" uid="uid://pavwt4jdawua" path="res://objects/enemies/jaws/jaws.gd" id="1_0y0vv"]
 [ext_resource type="Texture2D" uid="uid://b1iqqc0brqxc5" path="res://sprites/enemies/jaws/jaws_body1_l/jaws_body1_l_0.png" id="2_ce3y6"]
@@ -212,12 +212,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ctvrp"]
-size = Vector2(14, 26)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ikgac"]
-size = Vector2(28, 52)
-
 [node name="Jaws" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -40
 script = ExtResource("1_0y0vv")
@@ -242,18 +236,5 @@ sprite_info = Dictionary[StringName, ExtResource("41_spyk8")]({
 &"jaws_turn_r": ExtResource("45_giucv")
 })
 default_animation = &"jaws_left"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(9, 17)
-shape = SubResource("RectangleShape2D_ctvrp")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(9, 17)
-shape = SubResource("RectangleShape2D_ikgac")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("42_tavfu")]

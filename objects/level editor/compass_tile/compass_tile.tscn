@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bg5bb1pi5nw05"]
+[gd_scene load_steps=8 format=3 uid="uid://bg5bb1pi5nw05"]
 
 [ext_resource type="Script" uid="uid://biku5t7hmdy6i" path="res://objects/level editor/compass_tile/compass_tile.gd" id="1_f8ca5"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_v6fxq"]
@@ -19,12 +19,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7jvxs"]
-size = Vector2(12, 12)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_s63cm"]
-size = Vector2(24, 24)
-
 [node name="CompassTile" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -100
 script = ExtResource("1_f8ca5")
@@ -40,16 +34,3 @@ sprite_info = Dictionary[StringName, ExtResource("5_s63cm")]({
 &"compass_tile": ExtResource("6_p0l7g")
 })
 default_animation = &"compass_tile"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 10)
-shape = SubResource("RectangleShape2D_7jvxs")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(8, 10)
-shape = SubResource("RectangleShape2D_s63cm")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)

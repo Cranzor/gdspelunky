@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://7ogapnsfdho0"]
+[gd_scene load_steps=8 format=3 uid="uid://7ogapnsfdho0"]
 
 [ext_resource type="Script" uid="uid://dfsl22ngmjnno" path="res://objects/blocks/ice_bottom/ice_bottom.gd" id="1_1eryv"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_3llfs"]
@@ -19,12 +19,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_764yr"]
-size = Vector2(15, 5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_o3rda"]
-size = Vector2(30, 10)
-
 [node name="IceBottom" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -110
 script = ExtResource("1_1eryv")
@@ -40,16 +34,3 @@ sprite_info = Dictionary[StringName, ExtResource("5_o3rda")]({
 &"ice_bottom2": ExtResource("6_oqwyd")
 })
 default_animation = &"ice_bottom2"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8.5, 2.5)
-shape = SubResource("RectangleShape2D_764yr")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(8.5, 2.5)
-shape = SubResource("RectangleShape2D_o3rda")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)

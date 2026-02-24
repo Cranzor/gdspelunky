@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://dd2mvsvwhym2e"]
+[gd_scene load_steps=38 format=3 uid="uid://dd2mvsvwhym2e"]
 
 [ext_resource type="Script" uid="uid://d3vjl7nu8yd1l" path="res://objects/enemies/giant_spider/giant_spider.gd" id="1_k3lwk"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_j427r"]
@@ -144,12 +144,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rwmx0"]
-size = Vector2(30, 32)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_snkpr"]
-size = Vector2(60, 64)
-
 [node name="GiantSpider" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -40
 script = ExtResource("1_k3lwk")
@@ -169,18 +163,5 @@ sprite_info = Dictionary[StringName, ExtResource("30_lmm11")]({
 &"giant_spider_squirt": ExtResource("35_3hokd")
 })
 default_animation = &"giant_spider_flip"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(16, 16)
-shape = SubResource("RectangleShape2D_rwmx0")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(16, 16)
-shape = SubResource("RectangleShape2D_snkpr")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("31_6neq7")]

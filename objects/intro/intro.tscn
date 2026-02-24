@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cmapfp1bw4euu"]
+[gd_scene load_steps=10 format=3 uid="uid://cmapfp1bw4euu"]
 
 [ext_resource type="Script" uid="uid://cl4ma2coogdgn" path="res://objects/intro/intro.gd" id="1_hinbn"]
 [ext_resource type="PackedScene" uid="uid://8nvpnq1dktdh" path="res://components/drawing/draw_text/draw_text.tscn" id="2_hinbn"]
@@ -17,12 +17,6 @@ animations = [{
 "name": &"default",
 "speed": 30.0
 }]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_v37qy"]
-size = Vector2(0, 0)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u3cbd"]
-size = Vector2(0, 0)
 
 [node name="Intro" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 script = ExtResource("1_hinbn")
@@ -43,14 +37,3 @@ visible = false
 sprite_frames = SubResource("SpriteFrames_k74bh")
 centered = false
 script = ExtResource("8_k74bh")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_v37qy")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-shape = SubResource("RectangleShape2D_u3cbd")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)

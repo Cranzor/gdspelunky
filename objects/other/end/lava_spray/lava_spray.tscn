@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://136pdxpg2yts"]
+[gd_scene load_steps=11 format=3 uid="uid://136pdxpg2yts"]
 
 [ext_resource type="Script" uid="uid://c4l55nhu424kp" path="res://objects/other/end/lava_spray/lava_spray.gd" id="1_5xg5q"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_4yqjm"]
@@ -28,12 +28,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_35wnh"]
-size = Vector2(80, 256)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hd52n"]
-size = Vector2(160, 512)
-
 [node name="LavaSpray" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -999
 script = ExtResource("1_5xg5q")
@@ -49,18 +43,5 @@ sprite_info = Dictionary[StringName, ExtResource("7_7tt3h")]({
 &"lava_spray": ExtResource("8_b3cae")
 })
 default_animation = &"lava_spray"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(40, 128)
-shape = SubResource("RectangleShape2D_35wnh")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(40, 128)
-shape = SubResource("RectangleShape2D_hd52n")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("8_a1eqp")]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://5h8a26sc1tan"]
+[gd_scene load_steps=30 format=3 uid="uid://5h8a26sc1tan"]
 
 [ext_resource type="Script" uid="uid://dsha0aqqf1evg" path="res://objects/effects/explosion/explosion.gd" id="1_mib06"]
 [ext_resource type="PackedScene" uid="uid://w6jxjbgfs6na" path="res://components/drawing/draw_circle/dark_level_circle.tscn" id="2_tucbt"]
@@ -116,12 +116,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_14nbh"]
-size = Vector2(48, 44)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w6e0j"]
-size = Vector2(96, 88)
-
 [node name="Explosion" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -1
 script = ExtResource("1_mib06")
@@ -149,16 +143,5 @@ sprite_info = Dictionary[StringName, ExtResource("23_wug7d")]({
 &"explosion": ExtResource("24_q6syu")
 })
 default_animation = &"explosion"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_14nbh")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-shape = SubResource("RectangleShape2D_w6e0j")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("24_qv5er")]

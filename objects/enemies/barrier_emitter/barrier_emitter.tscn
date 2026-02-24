@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bswknh01l04ji"]
+[gd_scene load_steps=18 format=3 uid="uid://bswknh01l04ji"]
 
 [ext_resource type="Script" uid="uid://dnnbn5cujv8g0" path="res://objects/enemies/barrier_emitter/barrier_emitter.gd" id="1_0dgyw"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_hfauo"]
@@ -59,12 +59,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qnfka"]
-size = Vector2(16, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0tabe"]
-size = Vector2(32, 32)
-
 [node name="BarrierEmitter" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -100
 script = ExtResource("1_0dgyw")
@@ -80,16 +74,3 @@ sprite_info = Dictionary[StringName, ExtResource("15_2fupx")]({
 &"barrier_emitter": ExtResource("16_1k62y")
 })
 default_animation = &"barrier_emitter"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_qnfka")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_0tabe")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)

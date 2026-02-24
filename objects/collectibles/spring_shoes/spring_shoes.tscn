@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bwjdnhmc4qtqp"]
+[gd_scene load_steps=9 format=3 uid="uid://bwjdnhmc4qtqp"]
 
 [ext_resource type="Script" uid="uid://67q5mdoax6vk" path="res://objects/collectibles/spring_shoes/spring_shoes.gd" id="1_72u4m"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_qquwo"]
@@ -20,12 +20,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dnfvl"]
-size = Vector2(14, 12)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_klc5e"]
-size = Vector2(28, 24)
-
 [node name="SpringShoes" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -100
 script = ExtResource("1_72u4m")
@@ -42,16 +36,5 @@ sprite_info = Dictionary[StringName, ExtResource("5_dnfvl")]({
 &"spring_shoes": ExtResource("6_cgl0f")
 })
 default_animation = &"spring_shoes"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_dnfvl")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-shape = SubResource("RectangleShape2D_klc5e")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("6_1un7n")]

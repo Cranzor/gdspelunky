@@ -6,7 +6,7 @@ class_name GMObject
 
 var object_database: ObjectDatabase = ObjectDatabase.new()
 var sprites: Sprites = Sprites.new()
-var new_collision: NewCollision = NewCollision.new()
+#var new_collision: NewCollision = NewCollision.new()
 var custom_collision = preload("res://collision/custom_collision.gd").new()
 
 var grid_position
@@ -175,26 +175,6 @@ var subimg: int:
 var image_xscale: float:
 	set(value):
 		animated_sprite_node.scale.x = value
-		
-		if object_name == "arrow_trap_test": #--- this is the only object in the game with a collision size that gets stretched by image_xscale
-			var collision_shape = $CollisionShape2D
-			var current_position = collision_shape.position
-			var current_size = collision_shape.shape.size
-			var new_size = Vector2(current_size.x * value, current_size.y)
-			var new_position = Vector2(collision_shape.position.x * value, collision_shape.position.y)
-			collision_shape.shape.set_size(new_size)
-			collision_shape.position = new_position
-			
-			var bounding_box = $BoundingBoxArea
-			var bb_shape = bounding_box.get_child(0)
-			var bb_pos = bounding_box.position
-			var bb_size = bb_shape.shape.size
-			var bb_new_size = new_size
-			bb_new_size = new_size * 2
-			var bb_new_pos =  new_position
-			bb_shape.shape.set_size(bb_new_size)
-			bb_shape.position = bb_new_pos
-			
 	get:
 		return animated_sprite_node.scale.x #--- [FLAG] may need to be adjusted
 		
@@ -396,10 +376,10 @@ func handle_smooth_motion_values() -> void:
 
 #--------
 func object_setup() -> void:
-	if has_node("BoundingBoxArea"):
-		var bounding_box_area = $BoundingBoxArea
-		bounding_box_area.area_entered.connect(_bounding_box_entered)
-		bounding_box_area.area_exited.connect(_bounding_box_exited)
+	#if has_node("BoundingBoxArea"):
+		#var bounding_box_area = $BoundingBoxArea
+		#bounding_box_area.area_entered.connect(_bounding_box_entered)
+		#bounding_box_area.area_exited.connect(_bounding_box_exited)
 	sprite_index_name = $Sprite.default_animation
 
 	disable_mode = CollisionObject2D.DISABLE_MODE_KEEP_ACTIVE
@@ -682,8 +662,9 @@ func run_collision_with() -> void:
 			origin = sprites.sprite_database[sprite_index_name]["origin"]
 
 		for object in collision_with: #--- looping through every collision found in the overlap query
-			if object in groups_in_bb:
-				var colliders: Array = new_collision.check_inner_box_for_collision_with_group(self, object)
+			#if object in groups_in_bb:
+				var colliders: Array[GMObject] = custom_collision.group_collision_query(custom_collision.get_object_rect(self), object, null, false, true)
+				#var colliders: Array = new_collision.check_inner_box_for_collision_with_group(self, object)
 				if !colliders.is_empty():
 					for collider in colliders:
 						var checker_precise = sprites.sprite_database[sprite_index_name]["mask"]["shape"]
@@ -826,26 +807,26 @@ func reset_interpolation(room_start: bool = false) -> void:
 			remote_transform.reset_position()
 			reset_interpolation_this_frame = false
 
-var objects_in_bb: Array[GMObject]
-var groups_in_bb: Array[StringName]
-var first_time_entered: bool = false
-
-func _bounding_box_entered(area: Area2D):
-	if first_time_entered: #--- clearing arrays out the first time because instantiated objects take these values from their parents the first frame
-		objects_in_bb.clear()
-		groups_in_bb.clear()
-		first_time_entered = false
-	var parent: GMObject = area.get_parent()
-	var groups: Array = parent.get_groups()
-	groups.pop_front()
-	if parent not in objects_in_bb: #--- preventing duplicates causes issues for some reason (olmec_slam not working, for example)
-		objects_in_bb.append(parent)
-	else:
-		assert(false, "Duplicate found in bounding box objects array")
-	for group in groups:
-		if group not in groups_in_bb:
-			groups_in_bb.append(group)
-
-
-func _bounding_box_exited(area: Area2D):
-	objects_in_bb.erase(area.get_parent()) #TODO: erase groups from array when object leaves
+#var objects_in_bb: Array[GMObject]
+#var groups_in_bb: Array[StringName]
+#var first_time_entered: bool = false
+#
+#func _bounding_box_entered(area: Area2D):
+	#if first_time_entered: #--- clearing arrays out the first time because instantiated objects take these values from their parents the first frame
+		#objects_in_bb.clear()
+		#groups_in_bb.clear()
+		#first_time_entered = false
+	#var parent: GMObject = area.get_parent()
+	#var groups: Array = parent.get_groups()
+	#groups.pop_front()
+	#if parent not in objects_in_bb: #--- preventing duplicates causes issues for some reason (olmec_slam not working, for example)
+		#objects_in_bb.append(parent)
+	#else:
+		#assert(false, "Duplicate found in bounding box objects array")
+	#for group in groups:
+		#if group not in groups_in_bb:
+			#groups_in_bb.append(group)
+#
+#
+#func _bounding_box_exited(area: Area2D):
+	#objects_in_bb.erase(area.get_parent()) #TODO: erase groups from array when object leaves

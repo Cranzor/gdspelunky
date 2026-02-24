@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b6h38jsptnmwq"]
+[gd_scene load_steps=11 format=3 uid="uid://b6h38jsptnmwq"]
 
 [ext_resource type="Script" uid="uid://tqf8x5r7605l" path="res://objects/items/fire_frog_bomb/fire_frog_bomb.gd" id="1_1r8uf"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_qe5am"]
@@ -28,12 +28,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_smnfe"]
-size = Vector2(16, 12)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ongxc"]
-size = Vector2(32, 24)
-
 [node name="FireFrogBomb" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -99
 script = ExtResource("1_1r8uf")
@@ -50,18 +44,5 @@ sprite_info = Dictionary[StringName, ExtResource("7_rg21n")]({
 &"fire_frog_armed_l": ExtResource("8_jtmwn")
 })
 default_animation = &"fire_frog_armed_l"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2)
-shape = SubResource("RectangleShape2D_smnfe")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(0, 2)
-shape = SubResource("RectangleShape2D_ongxc")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("8_hqatx")]

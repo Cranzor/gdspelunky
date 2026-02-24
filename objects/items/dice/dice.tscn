@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bokig7o4aob6m"]
+[gd_scene load_steps=30 format=3 uid="uid://bokig7o4aob6m"]
 
 [ext_resource type="Script" uid="uid://e4ravyojr0l2" path="res://objects/items/dice/dice.gd" id="1_1fjrw"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_bvc7l"]
@@ -114,12 +114,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bdofi"]
-size = Vector2(12, 10)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bkmev"]
-size = Vector2(24, 20)
-
 [node name="Dice" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -100
 script = ExtResource("1_1fjrw")
@@ -152,18 +146,5 @@ sprite_info = Dictionary[StringName, ExtResource("16_w71a3")]({
 &"dice_roll": ExtResource("21_bdofi")
 })
 default_animation = &"dice1"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 3)
-shape = SubResource("RectangleShape2D_bdofi")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(1, 3)
-shape = SubResource("RectangleShape2D_bkmev")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("20_rle6h")]

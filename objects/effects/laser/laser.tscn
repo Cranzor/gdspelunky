@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dg7leddsy5css"]
+[gd_scene load_steps=9 format=3 uid="uid://dg7leddsy5css"]
 
 [ext_resource type="Script" uid="uid://b38sqasoim81q" path="res://objects/effects/laser/laser.gd" id="1_ygjyg"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_1kpll"]
@@ -20,12 +20,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wmxvn"]
-size = Vector2(8, 8)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p15li"]
-size = Vector2(16, 16)
-
 [node name="Laser" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -1
 script = ExtResource("1_ygjyg")
@@ -42,16 +36,5 @@ sprite_info = Dictionary[StringName, ExtResource("5_wmxvn")]({
 &"laser": ExtResource("6_xscni")
 })
 default_animation = &"laser"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_wmxvn")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-shape = SubResource("RectangleShape2D_p15li")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("6_7n4vb")]

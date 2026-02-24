@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d0bx6i5jnn8yk"]
+[gd_scene load_steps=9 format=3 uid="uid://d0bx6i5jnn8yk"]
 
 [ext_resource type="Script" uid="uid://cmtbtv6aukvx0" path="res://objects/effects/rubble_dark/rubble_dark.gd" id="1_kaaxq"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_buryp"]
@@ -20,12 +20,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_c20gr"]
-size = Vector2(6, 6)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_11wrp"]
-size = Vector2(12, 12)
-
 [node name="RubbleDark" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -1
 script = ExtResource("1_kaaxq")
@@ -42,16 +36,5 @@ sprite_info = Dictionary[StringName, ExtResource("5_c20gr")]({
 &"rubble_dark": ExtResource("6_gkuuh")
 })
 default_animation = &"rubble_dark"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_c20gr")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-shape = SubResource("RectangleShape2D_11wrp")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("6_dbnpm")]

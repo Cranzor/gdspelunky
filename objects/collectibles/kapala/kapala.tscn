@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dnm6cj6yte7yb"]
+[gd_scene load_steps=9 format=3 uid="uid://dnm6cj6yte7yb"]
 
 [ext_resource type="Script" uid="uid://cshmoruiireay" path="res://objects/collectibles/kapala/kapala.gd" id="1_jckqd"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_71262"]
@@ -20,12 +20,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3vpwl"]
-size = Vector2(13, 14)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0isvr"]
-size = Vector2(26, 28)
-
 [node name="Kapala" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -100
 script = ExtResource("1_jckqd")
@@ -42,18 +36,5 @@ sprite_info = Dictionary[StringName, ExtResource("5_3vpwl")]({
 &"kapala": ExtResource("6_h8ctu")
 })
 default_animation = &"kapala"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 1)
-shape = SubResource("RectangleShape2D_3vpwl")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(0.5, 1)
-shape = SubResource("RectangleShape2D_0isvr")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("6_j5vs7")]

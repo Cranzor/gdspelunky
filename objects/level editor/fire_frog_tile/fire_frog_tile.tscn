@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b5i5wa0fgjk5v"]
+[gd_scene load_steps=13 format=3 uid="uid://b5i5wa0fgjk5v"]
 
 [ext_resource type="Script" uid="uid://erta14l8bc7q" path="res://objects/level editor/fire_frog_tile/fire_frog_tile.gd" id="1_clw0p"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_8enfv"]
@@ -39,12 +39,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qng61"]
-size = Vector2(14, 13)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ioymi"]
-size = Vector2(28, 26)
-
 [node name="FireFrogTile" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -100
 script = ExtResource("1_clw0p")
@@ -60,16 +54,3 @@ sprite_info = Dictionary[StringName, ExtResource("10_biugj")]({
 &"fire_frog_left": ExtResource("11_1wcyg")
 })
 default_animation = &"fire_frog_left"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 9.5)
-shape = SubResource("RectangleShape2D_qng61")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(8, 9.5)
-shape = SubResource("RectangleShape2D_ioymi")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)

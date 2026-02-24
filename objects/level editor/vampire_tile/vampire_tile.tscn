@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cxag275s4b0do"]
+[gd_scene load_steps=8 format=3 uid="uid://cxag275s4b0do"]
 
 [ext_resource type="Script" uid="uid://c1pyyn46i3m4v" path="res://objects/level editor/vampire_tile/vampire_tile.gd" id="1_vplv4"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_ysn6g"]
@@ -19,12 +19,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ac0l"]
-size = Vector2(14, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_23yl4"]
-size = Vector2(28, 32)
-
 [node name="VampireTile" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -100
 script = ExtResource("1_vplv4")
@@ -40,16 +34,3 @@ sprite_info = Dictionary[StringName, ExtResource("5_23yl4")]({
 &"vampire_left": ExtResource("6_r1i2e")
 })
 default_animation = &"vampire_left"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(9, 8)
-shape = SubResource("RectangleShape2D_7ac0l")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(9, 8)
-shape = SubResource("RectangleShape2D_23yl4")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)

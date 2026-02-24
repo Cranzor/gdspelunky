@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dm5f6d6xmg2rn"]
+[gd_scene load_steps=8 format=3 uid="uid://dm5f6d6xmg2rn"]
 
 [ext_resource type="Script" uid="uid://tl825y4hpb2v" path="res://objects/level editor/mega_mouth_tile/mega_mouth_tile.gd" id="1_jnsgq"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_edtbi"]
@@ -19,12 +19,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lg0ns"]
-size = Vector2(64, 32)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8lkvn"]
-size = Vector2(128, 64)
-
 [node name="MegaMouthTile" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -200
 script = ExtResource("1_jnsgq")
@@ -40,16 +34,3 @@ sprite_info = Dictionary[StringName, ExtResource("5_8lkvn")]({
 &"mega_mouth_tile": ExtResource("6_tnitw")
 })
 default_animation = &"mega_mouth_tile"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(32, 16)
-shape = SubResource("RectangleShape2D_lg0ns")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(32, 16)
-shape = SubResource("RectangleShape2D_8lkvn")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)

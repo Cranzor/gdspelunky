@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://cenfl0atfq5oa"]
+[gd_scene load_steps=46 format=3 uid="uid://cenfl0atfq5oa"]
 
 [ext_resource type="Script" uid="uid://d1ypy8wt5l2sl" path="res://objects/enemies/yeti/yeti.gd" id="1_qptr0"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_wotf3"]
@@ -188,12 +188,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vohso"]
-size = Vector2(16, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bxerv"]
-size = Vector2(32, 32)
-
 [node name="Yeti" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -60
 script = ExtResource("1_qptr0")
@@ -219,18 +213,5 @@ sprite_info = Dictionary[StringName, ExtResource("32_cxur3")]({
 &"yeti_throw_l": ExtResource("34_vohso")
 })
 default_animation = &"yeti_left"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_vohso")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_bxerv")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("33_jd5hp")]

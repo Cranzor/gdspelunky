@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cnkgt4k8y3ija"]
+[gd_scene load_steps=10 format=3 uid="uid://cnkgt4k8y3ija"]
 
 [ext_resource type="Script" uid="uid://ct7dslryjbc00" path="res://objects/other/intro/palm_tree_scroll/palm_tree_scroll.gd" id="1_6c8d3"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_0u00f"]
@@ -29,12 +29,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_puhtg"]
-size = Vector2(32, 125)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_frpdq"]
-size = Vector2(64, 250)
-
 [node name="PalmTreeScroll" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -999
 script = ExtResource("1_6c8d3")
@@ -51,16 +45,3 @@ sprite_info = Dictionary[StringName, ExtResource("6_frpdq")]({
 &"palm_tree_dark": ExtResource("8_puhtg")
 })
 default_animation = &"palm_tree"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(16, 65.5)
-shape = SubResource("RectangleShape2D_puhtg")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(16, 65.5)
-shape = SubResource("RectangleShape2D_frpdq")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://b1s2v534v78yo"]
+[gd_scene load_steps=16 format=3 uid="uid://b1s2v534v78yo"]
 
 [ext_resource type="Script" uid="uid://b3lxjnllduuyh" path="res://objects/blocks/leaves/leaves.gd" id="1_nn7nm"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_bpmi6"]
@@ -59,12 +59,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kmyuw"]
-size = Vector2(16, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vqae7"]
-size = Vector2(32, 32)
-
 [node name="Leaves" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -1
 script = ExtResource("1_nn7nm")
@@ -84,16 +78,3 @@ sprite_info = Dictionary[StringName, ExtResource("9_vqae7")]({
 &"leaves_top": ExtResource("14_bhdtu")
 })
 default_animation = &"leaves"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_kmyuw")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_vqae7")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)

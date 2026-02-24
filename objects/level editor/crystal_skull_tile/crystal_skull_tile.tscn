@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ufgk4gjepwjf"]
+[gd_scene load_steps=8 format=3 uid="uid://ufgk4gjepwjf"]
 
 [ext_resource type="Script" uid="uid://iy11rmrupnd" path="res://objects/level editor/crystal_skull_tile/crystal_skull_tile.gd" id="1_domhy"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_2m17n"]
@@ -19,12 +19,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_31spy"]
-size = Vector2(12, 15)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_aikr0"]
-size = Vector2(24, 30)
-
 [node name="CrystalSkullTile" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -100
 script = ExtResource("1_domhy")
@@ -40,16 +34,3 @@ sprite_info = Dictionary[StringName, ExtResource("5_aikr0")]({
 &"crystal_skull_tile": ExtResource("6_v5ag1")
 })
 default_animation = &"crystal_skull_tile"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 8.5)
-shape = SubResource("RectangleShape2D_31spy")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(8, 8.5)
-shape = SubResource("RectangleShape2D_aikr0")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)

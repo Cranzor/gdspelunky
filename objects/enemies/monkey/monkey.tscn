@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dus2ahbo5oq5k"]
+[gd_scene load_steps=24 format=3 uid="uid://dus2ahbo5oq5k"]
 
 [ext_resource type="Script" uid="uid://bqljtokbc6j0w" path="res://objects/enemies/monkey/monkey.gd" id="1_jvkts"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_g27x7"]
@@ -88,12 +88,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fseyp"]
-size = Vector2(13, 12)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6knwo"]
-size = Vector2(26, 24)
-
 [node name="Monkey" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -40
 script = ExtResource("1_jvkts")
@@ -113,18 +107,5 @@ sprite_info = Dictionary[StringName, ExtResource("16_1xiu5")]({
 &"monkey_walk_l": ExtResource("21_ersx2")
 })
 default_animation = &"monkey_left"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8.5, 10)
-shape = SubResource("RectangleShape2D_fseyp")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(8.5, 10)
-shape = SubResource("RectangleShape2D_6knwo")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("17_gfhro")]

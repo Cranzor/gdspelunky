@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dm47runmxb0n2"]
+[gd_scene load_steps=14 format=3 uid="uid://dm47runmxb0n2"]
 
 [ext_resource type="Script" uid="uid://367g5kpbxeye" path="res://objects/enemies/zombie/zombie.gd" id="1_wdql7"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_hy5wn"]
@@ -42,12 +42,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1moyw"]
-size = Vector2(16, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uux43"]
-size = Vector2(32, 32)
-
 [node name="Zombie" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -40
 script = ExtResource("1_wdql7")
@@ -64,18 +58,5 @@ sprite_info = Dictionary[StringName, ExtResource("9_2oyon")]({
 &"zombie_left": ExtResource("10_hho48")
 })
 default_animation = &"zombie_left"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_1moyw")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_uux43")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("10_08hh8")]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c5to1bs6rldy7"]
+[gd_scene load_steps=10 format=3 uid="uid://c5to1bs6rldy7"]
 
 [ext_resource type="Script" uid="uid://blcqjh8ii3r2b" path="res://objects/effects/heart/heart.gd" id="1_hpkug"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_41lqa"]
@@ -24,12 +24,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ysmyx"]
-size = Vector2(11, 11)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7hrvn"]
-size = Vector2(22, 22)
-
 [node name="Heart" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -1
 script = ExtResource("1_hpkug")
@@ -46,18 +40,5 @@ sprite_info = Dictionary[StringName, ExtResource("6_7hrvn")]({
 &"smooch_heart": ExtResource("7_wnab1")
 })
 default_animation = &"smooch_heart"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 0.5)
-shape = SubResource("RectangleShape2D_ysmyx")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(-0.5, 0.5)
-shape = SubResource("RectangleShape2D_7hrvn")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("7_tu52x")]

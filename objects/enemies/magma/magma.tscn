@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bevtr0rcamqr"]
+[gd_scene load_steps=20 format=3 uid="uid://bevtr0rcamqr"]
 
 [ext_resource type="Script" uid="uid://nlik0igkcry5" path="res://objects/enemies/magma/magma.gd" id="1_wnoy3"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_wptfg"]
@@ -66,12 +66,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lqmaq"]
-size = Vector2(11, 11)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8yi15"]
-size = Vector2(22, 22)
-
 [node name="Magma" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -1
 script = ExtResource("1_wnoy3")
@@ -89,18 +83,5 @@ sprite_info = Dictionary[StringName, ExtResource("15_ik5vb")]({
 &"magma_man_create": ExtResource("17_lqmaq")
 })
 default_animation = &"magma"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 0.5)
-shape = SubResource("RectangleShape2D_lqmaq")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(-0.5, 0.5)
-shape = SubResource("RectangleShape2D_8yi15")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("16_fqruj")]

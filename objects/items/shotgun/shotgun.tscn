@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://d1enj0yr10kwc"]
+[gd_scene load_steps=11 format=3 uid="uid://d1enj0yr10kwc"]
 
 [ext_resource type="Script" uid="uid://djgm3s08b3pqn" path="res://objects/items/shotgun/shotgun.gd" id="1_hnl71"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_ag5g7"]
@@ -30,12 +30,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cm45o"]
-size = Vector2(13, 7)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xof2i"]
-size = Vector2(26, 14)
-
 [node name="Shotgun" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -101
 script = ExtResource("1_hnl71")
@@ -53,18 +47,5 @@ sprite_info = Dictionary[StringName, ExtResource("6_cm45o")]({
 &"shotgun_right": ExtResource("7_8bifn")
 })
 default_animation = &"shotgun_right"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 0.5)
-shape = SubResource("RectangleShape2D_cm45o")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(0.5, 0.5)
-shape = SubResource("RectangleShape2D_xof2i")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("7_8qfgc")]

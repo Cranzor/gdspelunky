@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cxugn2c2pj84"]
+[gd_scene load_steps=9 format=3 uid="uid://cxugn2c2pj84"]
 
 [ext_resource type="Script" uid="uid://bjb0g6u2ke88b" path="res://objects/characters/yell_help/yell_help.gd" id="1_qspr3"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_ewixo"]
@@ -20,12 +20,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ialtu"]
-size = Vector2(16, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_36tpf"]
-size = Vector2(32, 32)
-
 [node name="YellHelp" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -1
 script = ExtResource("1_qspr3")
@@ -42,16 +36,5 @@ sprite_info = Dictionary[StringName, ExtResource("5_ialtu")]({
 &"yell_help": ExtResource("6_bkjac")
 })
 default_animation = &"yell_help"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_ialtu")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-shape = SubResource("RectangleShape2D_36tpf")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("6_hjs7n")]

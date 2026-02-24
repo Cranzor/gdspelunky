@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bo22o7is8kwsg"]
+[gd_scene load_steps=9 format=3 uid="uid://bo22o7is8kwsg"]
 
 [ext_resource type="Script" uid="uid://xak11lt5fss1" path="res://objects/collectibles/para_pickup/para_pickup.gd" id="1_2jacw"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_jfvv6"]
@@ -20,12 +20,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nmeim"]
-size = Vector2(13, 12)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_no30p"]
-size = Vector2(26, 24)
-
 [node name="ParaPickup" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -100
 script = ExtResource("1_2jacw")
@@ -42,18 +36,5 @@ sprite_info = Dictionary[StringName, ExtResource("5_nmeim")]({
 &"para_pickup": ExtResource("6_44n4c")
 })
 default_animation = &"para_pickup"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 0)
-shape = SubResource("RectangleShape2D_nmeim")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(0.5, 0)
-shape = SubResource("RectangleShape2D_no30p")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("6_3awtp")]

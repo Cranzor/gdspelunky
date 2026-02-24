@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://n3fxa1qo50g0"]
+[gd_scene load_steps=56 format=3 uid="uid://n3fxa1qo50g0"]
 
 [ext_resource type="Script" uid="uid://br0p4i4jvstyw" path="res://objects/characters/shopkeeper/shopkeeper.gd" id="1_dkm78"]
 [ext_resource type="PackedScene" uid="uid://bmcojkm0edrdr" path="res://scenes/shotgun_draw.tscn" id="2_dcocs"]
@@ -231,12 +231,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_11e14"]
-size = Vector2(12, 15)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pbih4"]
-size = Vector2(24, 30)
-
 [node name="Shopkeeper" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -60
 script = ExtResource("1_dkm78")
@@ -269,18 +263,5 @@ sprite_info = Dictionary[StringName, ExtResource("37_ps4hm")]({
 &"shop_throw_l": ExtResource("43_pbih4")
 })
 default_animation = &"shop_left"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 8.5)
-shape = SubResource("RectangleShape2D_11e14")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(8, 8.5)
-shape = SubResource("RectangleShape2D_pbih4")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("38_dcocs")]

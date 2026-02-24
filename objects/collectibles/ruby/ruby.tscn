@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bnlnjanngiv56"]
+[gd_scene load_steps=9 format=3 uid="uid://bnlnjanngiv56"]
 
 [ext_resource type="Script" uid="uid://duprwry378lww" path="res://objects/collectibles/ruby/ruby.gd" id="1_h4ny1"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_c8f08"]
@@ -20,12 +20,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rveki"]
-size = Vector2(4, 4)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_q0j17"]
-size = Vector2(8, 8)
-
 [node name="Ruby" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -101
 script = ExtResource("1_h4ny1")
@@ -42,16 +36,5 @@ sprite_info = Dictionary[StringName, ExtResource("5_rveki")]({
 &"ruby": ExtResource("6_fcbm4")
 })
 default_animation = &"ruby"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_rveki")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-shape = SubResource("RectangleShape2D_q0j17")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("6_oevne")]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bvbm5gxldt5up"]
+[gd_scene load_steps=6 format=3 uid="uid://bvbm5gxldt5up"]
 
 [ext_resource type="Script" uid="uid://bgc1imgf0s6kn" path="res://objects/basis/treasure/treasure.gd" id="1_ehe8t"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_oclru"]
@@ -14,12 +14,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mg7ej"]
-size = Vector2(0, 0)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_t35we"]
-size = Vector2(0, 0)
-
 [node name="Treasure" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 z_index = -101
 script = ExtResource("1_ehe8t")
@@ -31,16 +25,5 @@ visible = false
 sprite_frames = SubResource("SpriteFrames_4j3jt")
 centered = false
 script = ExtResource("3_4j3jt")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_mg7ej")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-shape = SubResource("RectangleShape2D_t35we")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)
 
 [node name="SmoothMotion" type="Node" parent="." instance=ExtResource("4_4j3jt")]

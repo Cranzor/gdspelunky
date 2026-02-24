@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dejj3agipt7kp"]
+[gd_scene load_steps=8 format=3 uid="uid://dejj3agipt7kp"]
 
 [ext_resource type="Script" uid="uid://cj381sps6pjer" path="res://objects/enemies/enemy_sight/enemy_sight.gd" id="1_4muj8"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_l1hja"]
@@ -19,12 +19,6 @@ animations = [{
 "speed": 30.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bw4n"]
-size = Vector2(16, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ep71f"]
-size = Vector2(32, 32)
-
 [node name="EnemySight" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
 visible = false
 script = ExtResource("1_4muj8")
@@ -40,16 +34,3 @@ sprite_info = Dictionary[StringName, ExtResource("5_ep71f")]({
 &"sight": ExtResource("6_fekmt")
 })
 default_animation = &"sight"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_1bw4n")
-
-[node name="BoundingBoxArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="BoundingBoxCollision" type="CollisionShape2D" parent="BoundingBoxArea"]
-position = Vector2(8, 8)
-shape = SubResource("RectangleShape2D_ep71f")
-debug_color = Color(0.69, 0.296, 0.987, 0.1)
