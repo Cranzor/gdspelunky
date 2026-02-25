@@ -42,6 +42,6 @@ data = {
 script = ExtResource("1_4qlvs")
 name = &"jaws_turn_l"
 size = Vector2(64, 32)
-containing_box = Rect2(7, 1, 50, 30)
+containing_boxes = Array[Rect2i]([Rect2i(8, 1, 49, 30), Rect2i(12, 1, 38, 30), Rect2i(16, 1, 25, 28), Rect2i(23, 1, 25, 28), Rect2i(14, 1, 38, 30), Rect2i(7, 1, 49, 30)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_4qlvs"), SubResource("BitMap_a4fgl"), SubResource("BitMap_aic6l"), SubResource("BitMap_avwc2"), SubResource("BitMap_ewucy"), SubResource("BitMap_of8ps")])

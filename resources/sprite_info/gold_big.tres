@@ -12,5 +12,5 @@ data = {
 script = ExtResource("1_pihe7")
 name = &"gold_big"
 size = Vector2(16, 16)
-containing_box = Rect2(1, 1, 15, 15)
+containing_boxes = Array[Rect2i]([Rect2i(1, 1, 15, 15)])
 bitmaps = Array[BitMap]([SubResource("BitMap_pihe7")])

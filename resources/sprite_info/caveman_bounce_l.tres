@@ -12,5 +12,5 @@ data = {
 script = ExtResource("1_veoly")
 name = &"caveman_bounce_l"
 size = Vector2(16, 16)
-containing_box = Rect2(0, 2, 16, 12)
+containing_boxes = Array[Rect2i]([Rect2i(0, 2, 16, 12)])
 bitmaps = Array[BitMap]([SubResource("BitMap_veoly")])

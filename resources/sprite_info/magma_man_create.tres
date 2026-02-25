@@ -49,6 +49,6 @@ script = ExtResource("1_l4dw6")
 name = &"magma_man_create"
 size = Vector2(16, 16)
 origin = Vector2(8, 8)
-containing_box = Rect2(0, 0, 16, 16)
+containing_boxes = Array[Rect2i]([Rect2i(2, 2, 12, 13), Rect2i(0, 4, 16, 12), Rect2i(0, 7, 16, 9), Rect2i(0, 4, 16, 12), Rect2i(2, 1, 13, 15), Rect2i(4, 0, 9, 16), Rect2i(2, 0, 12, 16)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_l4dw6"), SubResource("BitMap_7ethm"), SubResource("BitMap_vb557"), SubResource("BitMap_t6prl"), SubResource("BitMap_jitpx"), SubResource("BitMap_afly4"), SubResource("BitMap_qwiyj")])

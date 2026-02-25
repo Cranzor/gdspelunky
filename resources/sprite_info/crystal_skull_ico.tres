@@ -13,5 +13,5 @@ script = ExtResource("1_inq3g")
 name = &"crystal_skull_ico"
 size = Vector2(16, 16)
 origin = Vector2(8, 12)
-containing_box = Rect2(2, 1, 12, 15)
+containing_boxes = Array[Rect2i]([Rect2i(2, 1, 12, 15)])
 bitmaps = Array[BitMap]([SubResource("BitMap_inq3g")])

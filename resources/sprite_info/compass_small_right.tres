@@ -12,6 +12,6 @@ data = {
 script = ExtResource("1_684sp")
 name = &"compass_small_right"
 size = Vector2(16, 16)
-containing_box = Rect2(10, 4, 6, 8)
+containing_boxes = Array[Rect2i]([Rect2i(10, 4, 6, 8)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_684sp")])

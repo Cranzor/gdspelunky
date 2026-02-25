@@ -13,6 +13,6 @@ script = ExtResource("1_hb6bn")
 name = &"para_pickup"
 size = Vector2(16, 12)
 origin = Vector2(8, 6)
-containing_box = Rect2(2, 0, 13, 12)
+containing_boxes = Array[Rect2i]([Rect2i(2, 0, 13, 12)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_hb6bn")])

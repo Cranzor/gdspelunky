@@ -12,6 +12,6 @@ data = {
 script = ExtResource("1_1kuft")
 name = &"para_used"
 size = Vector2(16, 16)
-containing_box = Rect2(0, 10, 16, 6)
+containing_boxes = Array[Rect2i]([Rect2i(0, 10, 16, 6)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_1kuft")])

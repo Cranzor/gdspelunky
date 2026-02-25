@@ -42,5 +42,5 @@ data = {
 script = ExtResource("1_h1fq2")
 name = &"vampire_stun_l"
 size = Vector2(16, 16)
-containing_box = Rect2(0, 0, 16, 16)
+containing_boxes = Array[Rect2i]([Rect2i(0, 9, 16, 7), Rect2i(0, 9, 16, 7), Rect2i(0, 2, 16, 14), Rect2i(0, 1, 16, 15), Rect2i(0, 0, 16, 16), Rect2i(0, 1, 16, 15)])
 bitmaps = Array[BitMap]([SubResource("BitMap_h1fq2"), SubResource("BitMap_domoj"), SubResource("BitMap_x5ag7"), SubResource("BitMap_ohumo"), SubResource("BitMap_ey01e"), SubResource("BitMap_hfxey")])

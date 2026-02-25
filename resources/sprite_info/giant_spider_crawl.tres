@@ -30,5 +30,5 @@ data = {
 script = ExtResource("1_xh78u")
 name = &"giant_spider_crawl"
 size = Vector2(32, 32)
-containing_box = Rect2(0, 16, 32, 16)
+containing_boxes = Array[Rect2i]([Rect2i(1, 17, 30, 15), Rect2i(1, 18, 31, 14), Rect2i(2, 16, 29, 16), Rect2i(0, 16, 30, 16)])
 bitmaps = Array[BitMap]([SubResource("BitMap_xh78u"), SubResource("BitMap_wgo15"), SubResource("BitMap_fir40"), SubResource("BitMap_0jdf0")])

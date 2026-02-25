@@ -13,6 +13,6 @@ script = ExtResource("1_0k27h")
 name = &"mitt"
 size = Vector2(16, 16)
 origin = Vector2(8, 8)
-containing_box = Rect2(1, 2, 14, 14)
+containing_boxes = Array[Rect2i]([Rect2i(1, 2, 14, 14)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_0k27h")])

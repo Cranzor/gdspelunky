@@ -666,12 +666,12 @@ func run_collision_with() -> void:
 				var colliders: Array[GMObject] = custom_collision.group_collision_query(custom_collision.get_object_rect(self), object, null, false, true)
 				#var colliders: Array = new_collision.check_inner_box_for_collision_with_group(self, object)
 				if !colliders.is_empty():
-					for collider in colliders:
+					for collider: GMObject in colliders:
 						var checker_precise = sprites.sprite_database[sprite_index_name]["mask"]["shape"]
 						var collider_precise = sprites.sprite_database[collider.sprite_index_name]["mask"]["shape"]
 						if (checker_precise == "PRECISE" or collider_precise == "PRECISE") and object_name != "arrow_trap_test": #--- if either object has a precise mask, run pixel perfect check
-							var checker_rect: Rect2 = animated_sprite_node.sprite_info[animated_sprite_node.animation].containing_box
-							var collider_rect: Rect2 = collider.animated_sprite_node.sprite_info[collider.animated_sprite_node.animation].containing_box
+							var checker_rect: Rect2 = animated_sprite_node.sprite_info[animated_sprite_node.animation].containing_boxes[animated_sprite_node.frame]
+							var collider_rect: Rect2 = collider.animated_sprite_node.sprite_info[collider.animated_sprite_node.animation].containing_boxes[collider.animated_sprite_node.frame]
 							var adjusted_sprite1_rect_pos: Vector2 = checker_rect.position + position - animated_sprite_node.sprite_info[animated_sprite_node.animation].origin
 							var adjusted_sprite2_rect_pos: Vector2 = collider_rect.position + collider.position - collider.animated_sprite_node.sprite_info[collider.animated_sprite_node.animation].origin
 							var new_rect1: Rect2 = Rect2(adjusted_sprite1_rect_pos, Vector2(checker_rect.size))

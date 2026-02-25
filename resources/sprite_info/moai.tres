@@ -12,5 +12,5 @@ data = {
 script = ExtResource("1_1y13v")
 name = &"moai"
 size = Vector2(16, 64)
-containing_box = Rect2(0, 0, 16, 64)
+containing_boxes = Array[Rect2i]([Rect2i(0, 0, 16, 64)])
 bitmaps = Array[BitMap]([SubResource("BitMap_1y13v")])

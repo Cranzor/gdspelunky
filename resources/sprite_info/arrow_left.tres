@@ -13,6 +13,6 @@ script = ExtResource("1_dxffn")
 name = &"arrow_left"
 size = Vector2(8, 8)
 origin = Vector2(4, 4)
-containing_box = Rect2(0, 3, 8, 5)
+containing_boxes = Array[Rect2i]([Rect2i(0, 3, 8, 5)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_dxffn")])

@@ -12,6 +12,6 @@ data = {
 script = ExtResource("1_48j5w")
 name = &"web_cannon_tile"
 size = Vector2(16, 16)
-containing_box = Rect2(3, 8, 13, 7)
+containing_boxes = Array[Rect2i]([Rect2i(3, 8, 13, 7)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_48j5w")])

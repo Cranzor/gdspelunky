@@ -103,6 +103,6 @@ script = ExtResource("1_vgq0l")
 name = &"teleporter"
 size = Vector2(16, 16)
 origin = Vector2(8, 12)
-containing_box = Rect2(2, 1, 11, 15)
+containing_boxes = Array[Rect2i]([Rect2i(4, 2, 7, 14), Rect2i(4, 2, 7, 14), Rect2i(4, 2, 7, 14), Rect2i(4, 2, 7, 14), Rect2i(4, 2, 7, 14), Rect2i(4, 2, 7, 14), Rect2i(4, 2, 7, 14), Rect2i(4, 2, 7, 14), Rect2i(4, 2, 7, 14), Rect2i(4, 2, 7, 14), Rect2i(4, 2, 7, 14), Rect2i(4, 2, 7, 14), Rect2i(4, 2, 7, 14), Rect2i(4, 1, 7, 15), Rect2i(3, 1, 9, 15), Rect2i(2, 2, 11, 14)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_vgq0l"), SubResource("BitMap_q4kb4"), SubResource("BitMap_fkwp7"), SubResource("BitMap_cgxy1"), SubResource("BitMap_wit72"), SubResource("BitMap_manrl"), SubResource("BitMap_gadrq"), SubResource("BitMap_4yrph"), SubResource("BitMap_pbpls"), SubResource("BitMap_ruk3t"), SubResource("BitMap_nj00s"), SubResource("BitMap_pm4nv"), SubResource("BitMap_8wae0"), SubResource("BitMap_obgbs"), SubResource("BitMap_joikl"), SubResource("BitMap_npppt")])

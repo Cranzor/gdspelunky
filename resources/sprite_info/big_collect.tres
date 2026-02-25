@@ -13,6 +13,6 @@ script = ExtResource("1_ia6xi")
 name = &"big_collect"
 size = Vector2(16, 16)
 origin = Vector2(8, 8)
-containing_box = Rect2(4, 0, 8, 16)
+containing_boxes = Array[Rect2i]([Rect2i(4, 0, 8, 16)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_ia6xi")])

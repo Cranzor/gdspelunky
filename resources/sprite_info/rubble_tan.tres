@@ -13,6 +13,6 @@ script = ExtResource("1_gjay8")
 name = &"rubble_tan"
 size = Vector2(8, 8)
 origin = Vector2(4, 4)
-containing_box = Rect2(1, 1, 6, 6)
+containing_boxes = Array[Rect2i]([Rect2i(1, 1, 6, 6)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_gjay8")])

@@ -13,6 +13,6 @@ script = ExtResource("1_41wfu")
 name = &"cape_dl"
 size = Vector2(16, 16)
 origin = Vector2(8, 6)
-containing_box = Rect2(3, 3, 11, 13)
+containing_boxes = Array[Rect2i]([Rect2i(3, 3, 11, 13)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_41wfu")])

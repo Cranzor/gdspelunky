@@ -49,5 +49,5 @@ script = ExtResource("1_itjpm")
 name = &"whoa_left"
 size = Vector2(24, 24)
 origin = Vector2(12, 16)
-containing_box = Rect2(3, 6, 18, 18)
+containing_boxes = Array[Rect2i]([Rect2i(3, 7, 16, 17), Rect2i(4, 7, 15, 17), Rect2i(6, 7, 15, 17), Rect2i(8, 6, 12, 18), Rect2i(4, 6, 14, 18), Rect2i(4, 7, 15, 17), Rect2i(4, 7, 15, 17)])
 bitmaps = Array[BitMap]([SubResource("BitMap_itjpm"), SubResource("BitMap_uqrtx"), SubResource("BitMap_6eex6"), SubResource("BitMap_mb4sg"), SubResource("BitMap_rnvfs"), SubResource("BitMap_1kyyn"), SubResource("BitMap_xd0in")])

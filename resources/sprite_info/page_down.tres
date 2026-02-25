@@ -12,6 +12,6 @@ data = {
 script = ExtResource("1_11pea")
 name = &"page_down"
 size = Vector2(8, 8)
-containing_box = Rect2(1, 1, 7, 7)
+containing_boxes = Array[Rect2i]([Rect2i(1, 1, 7, 7)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_11pea")])

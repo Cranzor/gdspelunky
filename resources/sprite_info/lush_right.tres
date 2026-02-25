@@ -12,5 +12,5 @@ data = {
 script = ExtResource("1_guq47")
 name = &"lush_right"
 size = Vector2(16, 16)
-containing_box = Rect2(0, 0, 3, 15)
+containing_boxes = Array[Rect2i]([Rect2i(0, 0, 3, 15)])
 bitmaps = Array[BitMap]([SubResource("BitMap_guq47")])

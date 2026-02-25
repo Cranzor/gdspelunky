@@ -13,6 +13,6 @@ script = ExtResource("1_w3weg")
 name = &"chest_open"
 size = Vector2(16, 16)
 origin = Vector2(8, 8)
-containing_box = Rect2(1, 7, 13, 9)
+containing_boxes = Array[Rect2i]([Rect2i(1, 7, 13, 9)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_w3weg")])

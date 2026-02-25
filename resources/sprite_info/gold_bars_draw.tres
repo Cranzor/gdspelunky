@@ -13,5 +13,5 @@ script = ExtResource("1_k2ku7")
 name = &"gold_bars_draw"
 size = Vector2(16, 16)
 origin = Vector2(8, 8)
-containing_box = Rect2(0, 2, 16, 11)
+containing_boxes = Array[Rect2i]([Rect2i(0, 2, 16, 11)])
 bitmaps = Array[BitMap]([SubResource("BitMap_k2ku7")])

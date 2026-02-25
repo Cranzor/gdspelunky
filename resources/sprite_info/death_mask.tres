@@ -13,6 +13,6 @@ script = ExtResource("1_5mcpt")
 name = &"death_mask"
 size = Vector2(16, 16)
 origin = Vector2(8, 8)
-containing_box = Rect2(2, 0, 12, 16)
+containing_boxes = Array[Rect2i]([Rect2i(2, 0, 12, 16)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_5mcpt")])

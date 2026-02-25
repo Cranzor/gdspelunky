@@ -84,5 +84,5 @@ data = {
 script = ExtResource("1_vyv2b")
 name = &"yeti_king_yell_r"
 size = Vector2(32, 32)
-containing_box = Rect2(0, 0, 31, 32)
+containing_boxes = Array[Rect2i]([Rect2i(0, 0, 31, 32), Rect2i(0, 0, 31, 32), Rect2i(0, 0, 31, 32), Rect2i(0, 0, 31, 32), Rect2i(0, 0, 31, 32), Rect2i(0, 0, 31, 32), Rect2i(0, 0, 31, 32), Rect2i(0, 0, 31, 32), Rect2i(0, 0, 31, 32), Rect2i(0, 0, 31, 32), Rect2i(0, 0, 31, 32), Rect2i(0, 0, 31, 32), Rect2i(0, 0, 31, 32)])
 bitmaps = Array[BitMap]([SubResource("BitMap_vyv2b"), SubResource("BitMap_qm2qt"), SubResource("BitMap_c34yv"), SubResource("BitMap_w7lrj"), SubResource("BitMap_l7fv6"), SubResource("BitMap_8o5bn"), SubResource("BitMap_gjtg1"), SubResource("BitMap_jf8b1"), SubResource("BitMap_50iib"), SubResource("BitMap_kvler"), SubResource("BitMap_okwo5"), SubResource("BitMap_6bo7w"), SubResource("BitMap_482oh")])

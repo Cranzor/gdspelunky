@@ -60,6 +60,6 @@ data = {
 script = ExtResource("1_6t0w1")
 name = &"alien_boss_die"
 size = Vector2(32, 32)
-containing_box = Rect2(1, 1, 31, 31)
+containing_boxes = Array[Rect2i]([Rect2i(1, 1, 31, 31), Rect2i(1, 1, 31, 31), Rect2i(1, 2, 31, 30), Rect2i(1, 3, 31, 29), Rect2i(1, 7, 31, 25), Rect2i(1, 11, 31, 21), Rect2i(1, 15, 31, 17), Rect2i(1, 20, 31, 12), Rect2i(1, 22, 31, 10)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_6t0w1"), SubResource("BitMap_hec47"), SubResource("BitMap_dpc3m"), SubResource("BitMap_qs312"), SubResource("BitMap_5w5jy"), SubResource("BitMap_gf4gq"), SubResource("BitMap_mt5fl"), SubResource("BitMap_qksfo"), SubResource("BitMap_53h4k")])

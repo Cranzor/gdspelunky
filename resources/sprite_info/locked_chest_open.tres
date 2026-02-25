@@ -13,6 +13,6 @@ script = ExtResource("1_fwf5c")
 name = &"locked_chest_open"
 size = Vector2(16, 16)
 origin = Vector2(8, 8)
-containing_box = Rect2(1, 5, 15, 11)
+containing_boxes = Array[Rect2i]([Rect2i(1, 5, 15, 11)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_fwf5c")])

@@ -17,7 +17,7 @@ func _run() -> void:
 			
 			var files = file_search.get_files(dir, "png")
 			files.sort_custom(func(a, b): return a.naturalnocasecmp_to(b) < 0)
-			sprite_info.containing_box = find_sprite_containing_box(files)
+			sprite_info.containing_boxes = find_sprite_containing_boxes(files)
 			var shape = sprite_data.sprite_database[sprite_name]["mask"]["shape"]
 			if shape == "PRECISE": sprite_info.precise = true
 			
@@ -35,7 +35,19 @@ func _run() -> void:
 		
 	print("finished")
 
+func find_sprite_containing_boxes(sprite_pngs: PackedStringArray) -> Array[Rect2i]:
+	var png_number: int = sprite_pngs.size()
+	var containing_boxes: Array[Rect2i]
+	
+	for png in sprite_pngs:
+		var loaded_png: Texture2D = load(png)
+		var image: Image = loaded_png.get_image()
+		var used_rect = image.get_used_rect()
+		containing_boxes.append(used_rect)
 
+	return containing_boxes
+
+#--- this is actually not needed because every sprite uses separate masks for each frame. leaving here for reference
 func find_sprite_containing_box(sprite_pngs: PackedStringArray) -> Rect2: #--- from sprite.gd
 	var png_number: int = sprite_pngs.size()
 	var x1_values: Array[int]

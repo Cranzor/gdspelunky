@@ -91,5 +91,5 @@ script = ExtResource("1_7kbw8")
 name = &"man_trap_eat_caveman_l"
 size = Vector2(32, 32)
 origin = Vector2(8, 16)
-containing_box = Rect2(0, 2, 25, 30)
+containing_boxes = Array[Rect2i]([Rect2i(8, 16, 16, 16), Rect2i(4, 18, 20, 14), Rect2i(0, 10, 24, 22), Rect2i(0, 2, 24, 30), Rect2i(5, 2, 20, 30), Rect2i(4, 4, 21, 28), Rect2i(8, 9, 17, 23), Rect2i(8, 10, 17, 22), Rect2i(8, 11, 17, 21), Rect2i(8, 13, 17, 19), Rect2i(8, 12, 17, 20), Rect2i(8, 16, 17, 16), Rect2i(8, 16, 16, 16), Rect2i(8, 17, 16, 15)])
 bitmaps = Array[BitMap]([SubResource("BitMap_7kbw8"), SubResource("BitMap_3vquw"), SubResource("BitMap_yuwda"), SubResource("BitMap_dqw2w"), SubResource("BitMap_sf7ax"), SubResource("BitMap_8bldk"), SubResource("BitMap_1sovy"), SubResource("BitMap_vugbc"), SubResource("BitMap_ao30s"), SubResource("BitMap_lvkkl"), SubResource("BitMap_iju4c"), SubResource("BitMap_d6gmv"), SubResource("BitMap_5u0sq"), SubResource("BitMap_usp6t")])

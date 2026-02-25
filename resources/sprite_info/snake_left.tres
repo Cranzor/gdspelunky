@@ -12,5 +12,5 @@ data = {
 script = ExtResource("1_25b02")
 name = &"snake_left"
 size = Vector2(16, 16)
-containing_box = Rect2(1, 4, 14, 12)
+containing_boxes = Array[Rect2i]([Rect2i(1, 4, 14, 12)])
 bitmaps = Array[BitMap]([SubResource("BitMap_25b02")])

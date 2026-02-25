@@ -79,5 +79,5 @@ script = ExtResource("1_tihp0")
 name = &"tunnel_climb2"
 size = Vector2(16, 24)
 origin = Vector2(8, 16)
-containing_box = Rect2(0, 5, 16, 19)
+containing_boxes = Array[Rect2i]([Rect2i(1, 7, 14, 15), Rect2i(1, 7, 14, 16), Rect2i(1, 9, 15, 15), Rect2i(2, 8, 13, 16), Rect2i(2, 5, 12, 19), Rect2i(1, 6, 14, 17), Rect2i(1, 7, 14, 15), Rect2i(1, 7, 14, 16), Rect2i(0, 9, 15, 15), Rect2i(1, 8, 13, 16), Rect2i(2, 5, 12, 19), Rect2i(1, 6, 14, 17)])
 bitmaps = Array[BitMap]([SubResource("BitMap_tihp0"), SubResource("BitMap_u506m"), SubResource("BitMap_f50gl"), SubResource("BitMap_tq1sy"), SubResource("BitMap_q0ywn"), SubResource("BitMap_sdbvp"), SubResource("BitMap_x8dax"), SubResource("BitMap_uk52v"), SubResource("BitMap_ryd0x"), SubResource("BitMap_rk36y"), SubResource("BitMap_baflv"), SubResource("BitMap_2frrl")])

@@ -19,6 +19,6 @@ script = ExtResource("1_xr7bc")
 name = &"cape_ul"
 size = Vector2(16, 16)
 origin = Vector2(8, 16)
-containing_box = Rect2(2, 0, 14, 15)
+containing_boxes = Array[Rect2i]([Rect2i(2, 0, 12, 15), Rect2i(3, 0, 13, 15)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_xr7bc"), SubResource("BitMap_b04uw")])

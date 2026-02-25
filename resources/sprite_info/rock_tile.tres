@@ -12,6 +12,6 @@ data = {
 script = ExtResource("1_0e2rk")
 name = &"rock_tile"
 size = Vector2(16, 16)
-containing_box = Rect2(5, 9, 7, 7)
+containing_boxes = Array[Rect2i]([Rect2i(5, 9, 7, 7)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_0e2rk")])

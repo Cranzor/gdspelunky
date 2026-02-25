@@ -37,5 +37,5 @@ script = ExtResource("1_oipit")
 name = &"hawk_stun_l"
 size = Vector2(24, 16)
 origin = Vector2(4, 0)
-containing_box = Rect2(2, 0, 20, 16)
+containing_boxes = Array[Rect2i]([Rect2i(2, 7, 20, 9), Rect2i(2, 2, 20, 14), Rect2i(2, 1, 20, 15), Rect2i(2, 0, 20, 16), Rect2i(2, 1, 20, 15)])
 bitmaps = Array[BitMap]([SubResource("BitMap_oipit"), SubResource("BitMap_n2wo6"), SubResource("BitMap_374re"), SubResource("BitMap_2kv5j"), SubResource("BitMap_wxy8m")])

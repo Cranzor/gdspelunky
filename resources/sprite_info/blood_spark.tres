@@ -61,6 +61,6 @@ script = ExtResource("1_365uh")
 name = &"blood_spark"
 size = Vector2(8, 8)
 origin = Vector2(4, 4)
-containing_box = Rect2(0, 0, 8, 8)
+containing_boxes = Array[Rect2i]([Rect2i(2, 2, 4, 4), Rect2i(1, 1, 6, 6), Rect2i(0, 2, 8, 5), Rect2i(2, 1, 4, 6), Rect2i(2, 0, 4, 8), Rect2i(3, 1, 3, 6), Rect2i(3, 1, 3, 4), Rect2i(3, 1, 3, 3), Rect2i(3, 0, 3, 3)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_365uh"), SubResource("BitMap_vg2bo"), SubResource("BitMap_4764u"), SubResource("BitMap_i53b8"), SubResource("BitMap_0irgj"), SubResource("BitMap_0keru"), SubResource("BitMap_xfxef"), SubResource("BitMap_retrs"), SubResource("BitMap_3v3nt")])

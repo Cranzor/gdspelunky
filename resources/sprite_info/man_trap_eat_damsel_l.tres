@@ -91,5 +91,5 @@ script = ExtResource("1_ltksv")
 name = &"man_trap_eat_damsel_l"
 size = Vector2(32, 32)
 origin = Vector2(8, 16)
-containing_box = Rect2(0, 0, 25, 32)
+containing_boxes = Array[Rect2i]([Rect2i(8, 16, 16, 16), Rect2i(4, 18, 20, 14), Rect2i(0, 11, 24, 21), Rect2i(4, 1, 20, 31), Rect2i(5, 0, 20, 32), Rect2i(5, 6, 20, 26), Rect2i(8, 10, 17, 22), Rect2i(8, 11, 17, 21), Rect2i(8, 12, 17, 20), Rect2i(8, 13, 17, 19), Rect2i(8, 13, 17, 19), Rect2i(8, 16, 17, 16), Rect2i(8, 16, 16, 16), Rect2i(8, 17, 16, 15)])
 bitmaps = Array[BitMap]([SubResource("BitMap_ltksv"), SubResource("BitMap_dyd8s"), SubResource("BitMap_d83ts"), SubResource("BitMap_b1trk"), SubResource("BitMap_s1roj"), SubResource("BitMap_khh6t"), SubResource("BitMap_t4a0t"), SubResource("BitMap_7r4aj"), SubResource("BitMap_445f3"), SubResource("BitMap_sbeyx"), SubResource("BitMap_omqbf"), SubResource("BitMap_bpsvo"), SubResource("BitMap_wgmhw"), SubResource("BitMap_8pcm2")])

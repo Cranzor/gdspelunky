@@ -12,6 +12,6 @@ data = {
 script = ExtResource("1_lte0j")
 name = &"title"
 size = Vector2(128, 16)
-containing_box = Rect2(0, 0, 128, 16)
+containing_boxes = Array[Rect2i]([Rect2i(0, 0, 128, 16)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_lte0j")])

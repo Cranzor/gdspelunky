@@ -12,6 +12,6 @@ data = {
 script = ExtResource("1_gvjfi")
 name = &"jaws_body1_r"
 size = Vector2(48, 32)
-containing_box = Rect2(6, 1, 42, 30)
+containing_boxes = Array[Rect2i]([Rect2i(6, 1, 42, 30)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_gvjfi")])

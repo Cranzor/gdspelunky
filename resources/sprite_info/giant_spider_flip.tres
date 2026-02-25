@@ -60,5 +60,5 @@ data = {
 script = ExtResource("1_ju180")
 name = &"giant_spider_flip"
 size = Vector2(32, 32)
-containing_box = Rect2(1, 0, 30, 32)
+containing_boxes = Array[Rect2i]([Rect2i(1, 0, 30, 15), Rect2i(1, 0, 30, 14), Rect2i(1, 3, 30, 14), Rect2i(1, 3, 30, 17), Rect2i(1, 4, 30, 19), Rect2i(1, 9, 30, 19), Rect2i(1, 12, 30, 17), Rect2i(1, 15, 30, 14), Rect2i(1, 17, 30, 15)])
 bitmaps = Array[BitMap]([SubResource("BitMap_ju180"), SubResource("BitMap_siyxm"), SubResource("BitMap_aoenk"), SubResource("BitMap_hsbul"), SubResource("BitMap_2m3ka"), SubResource("BitMap_2uhui"), SubResource("BitMap_0736c"), SubResource("BitMap_sstkh"), SubResource("BitMap_k4dyd")])

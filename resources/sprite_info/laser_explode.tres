@@ -55,6 +55,6 @@ script = ExtResource("1_6bt1d")
 name = &"laser_explode"
 size = Vector2(32, 32)
 origin = Vector2(16, 16)
-containing_box = Rect2(5, 4, 22, 19)
+containing_boxes = Array[Rect2i]([Rect2i(10, 10, 11, 11), Rect2i(10, 8, 11, 12), Rect2i(8, 4, 14, 16), Rect2i(7, 4, 17, 19), Rect2i(7, 8, 16, 14), Rect2i(5, 14, 21, 8), Rect2i(6, 16, 21, 4), Rect2i(11, 19, 15, 1)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_6bt1d"), SubResource("BitMap_bxc3b"), SubResource("BitMap_6o0if"), SubResource("BitMap_eoq3c"), SubResource("BitMap_7i4x2"), SubResource("BitMap_hbo1l"), SubResource("BitMap_8onds"), SubResource("BitMap_yfra5")])

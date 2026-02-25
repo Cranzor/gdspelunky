@@ -42,6 +42,6 @@ data = {
 script = ExtResource("1_akedw")
 name = &"camel"
 size = Vector2(48, 48)
-containing_box = Rect2(0, 1, 48, 47)
+containing_boxes = Array[Rect2i]([Rect2i(0, 3, 48, 45), Rect2i(0, 4, 48, 44), Rect2i(0, 4, 48, 44), Rect2i(0, 2, 48, 46), Rect2i(0, 1, 48, 47), Rect2i(0, 4, 48, 44)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_akedw"), SubResource("BitMap_t855s"), SubResource("BitMap_0fuvg"), SubResource("BitMap_tm4ev"), SubResource("BitMap_caffl"), SubResource("BitMap_biv22")])

@@ -12,5 +12,5 @@ data = {
 script = ExtResource("1_u6yq2")
 name = &"ceiling_trap"
 size = Vector2(16, 16)
-containing_box = Rect2(0, 0, 16, 16)
+containing_boxes = Array[Rect2i]([Rect2i(0, 0, 16, 16)])
 bitmaps = Array[BitMap]([SubResource("BitMap_u6yq2")])

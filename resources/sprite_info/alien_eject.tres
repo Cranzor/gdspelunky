@@ -13,5 +13,5 @@ script = ExtResource("1_lnsne")
 name = &"alien_eject"
 size = Vector2(16, 24)
 origin = Vector2(8, 12)
-containing_box = Rect2(3, 8, 10, 11)
+containing_boxes = Array[Rect2i]([Rect2i(3, 8, 10, 11)])
 bitmaps = Array[BitMap]([SubResource("BitMap_lnsne")])

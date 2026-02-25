@@ -12,6 +12,6 @@ data = {
 script = ExtResource("1_v8byr")
 name = &"end_wall"
 size = Vector2(160, 144)
-containing_box = Rect2(0, 0, 160, 144)
+containing_boxes = Array[Rect2i]([Rect2i(0, 0, 160, 144)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_v8byr")])

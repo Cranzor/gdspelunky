@@ -25,6 +25,6 @@ script = ExtResource("1_orbi0")
 name = &"blood"
 size = Vector2(8, 8)
 origin = Vector2(4, 4)
-containing_box = Rect2(1, 1, 6, 5)
+containing_boxes = Array[Rect2i]([Rect2i(1, 1, 5, 5), Rect2i(1, 1, 5, 5), Rect2i(2, 2, 5, 4)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_orbi0"), SubResource("BitMap_0apvi"), SubResource("BitMap_ge6w2")])

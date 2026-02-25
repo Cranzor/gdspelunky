@@ -49,5 +49,5 @@ script = ExtResource("1_f155k")
 name = &"tunnel_whoa_l"
 size = Vector2(24, 24)
 origin = Vector2(12, 16)
-containing_box = Rect2(4, 6, 17, 18)
+containing_boxes = Array[Rect2i]([Rect2i(4, 7, 15, 17), Rect2i(5, 7, 14, 17), Rect2i(7, 7, 14, 17), Rect2i(9, 6, 11, 18), Rect2i(4, 6, 14, 18), Rect2i(5, 7, 14, 17), Rect2i(5, 7, 14, 17)])
 bitmaps = Array[BitMap]([SubResource("BitMap_f155k"), SubResource("BitMap_ydpqs"), SubResource("BitMap_fwbil"), SubResource("BitMap_vxia6"), SubResource("BitMap_krvvk"), SubResource("BitMap_h302k"), SubResource("BitMap_msjsr")])

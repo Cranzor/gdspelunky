@@ -73,6 +73,6 @@ script = ExtResource("1_1ch41")
 name = &"man_trap_temp"
 size = Vector2(32, 32)
 origin = Vector2(8, 16)
-containing_box = Rect2(4, 11, 21, 21)
+containing_boxes = Array[Rect2i]([Rect2i(8, 16, 16, 16), Rect2i(4, 18, 20, 14), Rect2i(4, 21, 20, 11), Rect2i(8, 16, 16, 16), Rect2i(8, 15, 17, 17), Rect2i(8, 11, 17, 21), Rect2i(8, 11, 17, 21), Rect2i(8, 13, 17, 19), Rect2i(8, 16, 17, 16), Rect2i(8, 16, 16, 16), Rect2i(8, 17, 16, 15)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_1ch41"), SubResource("BitMap_j6k2y"), SubResource("BitMap_7a0w3"), SubResource("BitMap_swofx"), SubResource("BitMap_nfrpa"), SubResource("BitMap_ys20g"), SubResource("BitMap_6ivx1"), SubResource("BitMap_4hmdf"), SubResource("BitMap_plasw"), SubResource("BitMap_kyb3l"), SubResource("BitMap_j3xuv")])

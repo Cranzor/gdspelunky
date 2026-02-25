@@ -30,5 +30,5 @@ data = {
 script = ExtResource("1_8mpu2")
 name = &"zombie_left"
 size = Vector2(16, 16)
-containing_box = Rect2(0, 0, 16, 16)
+containing_boxes = Array[Rect2i]([Rect2i(0, 0, 16, 16), Rect2i(0, 1, 16, 15), Rect2i(1, 1, 15, 15), Rect2i(0, 1, 15, 15)])
 bitmaps = Array[BitMap]([SubResource("BitMap_8mpu2"), SubResource("BitMap_6jsa6"), SubResource("BitMap_bejrm"), SubResource("BitMap_ttxgw")])

@@ -13,6 +13,6 @@ script = ExtResource("1_4i2ow")
 name = &"whip_left"
 size = Vector2(16, 16)
 origin = Vector2(8, 8)
-containing_box = Rect2(3, 6, 13, 5)
+containing_boxes = Array[Rect2i]([Rect2i(3, 6, 13, 5)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_4i2ow")])

@@ -66,5 +66,5 @@ data = {
 script = ExtResource("1_8fjmf")
 name = &"s_0"
 size = Vector2(221, 28)
-containing_box = Rect2(1, 1, 219, 26)
+containing_boxes = Array[Rect2i]([Rect2i(1, 1, 219, 26), Rect2i(1, 1, 219, 26), Rect2i(1, 1, 219, 26), Rect2i(1, 1, 219, 26), Rect2i(1, 1, 219, 26), Rect2i(1, 1, 219, 26), Rect2i(1, 1, 219, 26), Rect2i(1, 1, 219, 26), Rect2i(1, 1, 219, 26), Rect2i(1, 1, 219, 26)])
 bitmaps = Array[BitMap]([SubResource("BitMap_8fjmf"), SubResource("BitMap_1xx4v"), SubResource("BitMap_0ncal"), SubResource("BitMap_vdd07"), SubResource("BitMap_dclgx"), SubResource("BitMap_0hd4e"), SubResource("BitMap_wpxki"), SubResource("BitMap_mw7v3"), SubResource("BitMap_nhrbw"), SubResource("BitMap_i1bcr")])

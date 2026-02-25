@@ -67,5 +67,5 @@ script = ExtResource("1_nl1jh")
 name = &"tunnel_crawl_l"
 size = Vector2(20, 16)
 origin = Vector2(9, 8)
-containing_box = Rect2(0, 6, 18, 10)
+containing_boxes = Array[Rect2i]([Rect2i(3, 7, 15, 9), Rect2i(1, 6, 17, 10), Rect2i(0, 6, 18, 10), Rect2i(0, 7, 18, 9), Rect2i(2, 7, 16, 9), Rect2i(3, 7, 15, 9), Rect2i(3, 6, 15, 10), Rect2i(3, 6, 15, 10), Rect2i(3, 7, 14, 9), Rect2i(3, 7, 15, 9)])
 bitmaps = Array[BitMap]([SubResource("BitMap_nl1jh"), SubResource("BitMap_o4gtv"), SubResource("BitMap_iu5o7"), SubResource("BitMap_jgqbr"), SubResource("BitMap_ugjxp"), SubResource("BitMap_tsukw"), SubResource("BitMap_bb7eb"), SubResource("BitMap_6cmua"), SubResource("BitMap_t6fqa"), SubResource("BitMap_1nhor")])

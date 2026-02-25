@@ -31,6 +31,6 @@ script = ExtResource("1_ghsqk")
 name = &"olmec_debris"
 size = Vector2(12, 12)
 origin = Vector2(6, 6)
-containing_box = Rect2(2, 2, 8, 8)
+containing_boxes = Array[Rect2i]([Rect2i(2, 2, 8, 8), Rect2i(2, 2, 8, 8), Rect2i(2, 2, 8, 8), Rect2i(2, 2, 8, 8)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_ghsqk"), SubResource("BitMap_xinyh"), SubResource("BitMap_bfb18"), SubResource("BitMap_6bkyk")])

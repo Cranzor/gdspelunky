@@ -12,5 +12,5 @@ data = {
 script = ExtResource("1_jby1i")
 name = &"dead_fish_left_ico"
 size = Vector2(16, 16)
-containing_box = Rect2(4, 5, 8, 6)
+containing_boxes = Array[Rect2i]([Rect2i(4, 5, 8, 6)])
 bitmaps = Array[BitMap]([SubResource("BitMap_jby1i")])

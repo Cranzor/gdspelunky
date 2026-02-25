@@ -258,10 +258,10 @@ func step():
 			
 				if (type == "bomb"):
 				
-					gml.instance_create(position.x, position.y, "explosion", self)
+					gml.instance_create(position.x, position.y, Objects.explosion, self)
 					for repetition in range(3):
 					
-						gml.instance_create(position.x, position.y, "flame", self)
+						gml.instance_create(position.x, position.y, Objects.flame, self)
 					
 
 					Audio.play_sound(global.snd_explosion)

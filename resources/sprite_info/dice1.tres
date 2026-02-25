@@ -13,6 +13,6 @@ script = ExtResource("1_1aan0")
 name = &"dice1"
 size = Vector2(16, 16)
 origin = Vector2(8, 8)
-containing_box = Rect2(3, 6, 12, 10)
+containing_boxes = Array[Rect2i]([Rect2i(3, 6, 12, 10)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_1aan0")])

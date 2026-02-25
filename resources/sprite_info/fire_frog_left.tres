@@ -42,5 +42,5 @@ data = {
 script = ExtResource("1_0wrwm")
 name = &"fire_frog_left"
 size = Vector2(16, 16)
-containing_box = Rect2(1, 3, 14, 13)
+containing_boxes = Array[Rect2i]([Rect2i(1, 4, 14, 12), Rect2i(2, 4, 13, 12), Rect2i(2, 4, 13, 12), Rect2i(2, 4, 13, 12), Rect2i(2, 3, 13, 13), Rect2i(2, 4, 13, 12)])
 bitmaps = Array[BitMap]([SubResource("BitMap_0wrwm"), SubResource("BitMap_pgh8v"), SubResource("BitMap_gluaq"), SubResource("BitMap_6x51m"), SubResource("BitMap_1bnac"), SubResource("BitMap_q3kvb")])

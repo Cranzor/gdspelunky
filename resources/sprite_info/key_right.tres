@@ -13,6 +13,6 @@ script = ExtResource("1_xbri7")
 name = &"key_right"
 size = Vector2(16, 12)
 origin = Vector2(8, 8)
-containing_box = Rect2(2, 4, 12, 8)
+containing_boxes = Array[Rect2i]([Rect2i(2, 4, 12, 8)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_xbri7")])

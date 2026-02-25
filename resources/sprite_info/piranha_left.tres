@@ -24,5 +24,5 @@ data = {
 script = ExtResource("1_j2601")
 name = &"piranha_left"
 size = Vector2(8, 8)
-containing_box = Rect2(0, 0, 8, 8)
+containing_boxes = Array[Rect2i]([Rect2i(0, 0, 8, 8), Rect2i(0, 0, 8, 8), Rect2i(0, 0, 8, 8)])
 bitmaps = Array[BitMap]([SubResource("BitMap_j2601"), SubResource("BitMap_jw04d"), SubResource("BitMap_fpbs6")])

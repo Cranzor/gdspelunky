@@ -90,6 +90,6 @@ data = {
 script = ExtResource("1_edg31")
 name = &"tomb_lord_attack_r"
 size = Vector2(32, 32)
-containing_box = Rect2(4, 0, 27, 32)
+containing_boxes = Array[Rect2i]([Rect2i(6, 2, 22, 30), Rect2i(5, 0, 21, 32), Rect2i(4, 0, 20, 32), Rect2i(4, 0, 20, 32), Rect2i(4, 0, 20, 32), Rect2i(7, 2, 23, 30), Rect2i(7, 2, 23, 30), Rect2i(7, 3, 24, 29), Rect2i(7, 3, 24, 29), Rect2i(7, 3, 24, 29), Rect2i(7, 3, 24, 29), Rect2i(7, 3, 24, 29), Rect2i(7, 2, 23, 30), Rect2i(4, 0, 20, 32)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_edg31"), SubResource("BitMap_3cich"), SubResource("BitMap_drh8k"), SubResource("BitMap_4s1gc"), SubResource("BitMap_t5bru"), SubResource("BitMap_dsrck"), SubResource("BitMap_34hyx"), SubResource("BitMap_vju6j"), SubResource("BitMap_yrnuf"), SubResource("BitMap_s31a4"), SubResource("BitMap_sfmnc"), SubResource("BitMap_51ccx"), SubResource("BitMap_rbjs4"), SubResource("BitMap_tlsbl")])

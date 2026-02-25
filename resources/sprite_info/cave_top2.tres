@@ -12,5 +12,5 @@ data = {
 script = ExtResource("1_pdxpi")
 name = &"cave_top2"
 size = Vector2(16, 17)
-containing_box = Rect2(0, 11, 16, 5)
+containing_boxes = Array[Rect2i]([Rect2i(0, 11, 16, 5)])
 bitmaps = Array[BitMap]([SubResource("BitMap_pdxpi")])

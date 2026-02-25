@@ -13,6 +13,6 @@ script = ExtResource("1_0dvvc")
 name = &"mattock_head"
 size = Vector2(16, 8)
 origin = Vector2(8, 4)
-containing_box = Rect2(2, 2, 12, 6)
+containing_boxes = Array[Rect2i]([Rect2i(2, 2, 12, 6)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_0dvvc")])

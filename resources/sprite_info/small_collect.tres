@@ -127,6 +127,6 @@ script = ExtResource("1_7tokh")
 name = &"small_collect"
 size = Vector2(8, 10)
 origin = Vector2(4, 4)
-containing_box = Rect2(1, 0, 6, 10)
+containing_boxes = Array[Rect2i]([Rect2i(1, 2, 6, 8), Rect2i(1, 2, 6, 8), Rect2i(1, 2, 6, 8), Rect2i(1, 2, 6, 8), Rect2i(1, 2, 6, 8), Rect2i(1, 2, 6, 8), Rect2i(2, 1, 4, 8), Rect2i(2, 1, 4, 8), Rect2i(2, 0, 4, 8), Rect2i(2, 0, 4, 8), Rect2i(2, 1, 4, 8), Rect2i(2, 1, 4, 8), Rect2i(1, 2, 6, 8), Rect2i(1, 2, 6, 8), Rect2i(2, 1, 4, 8), Rect2i(2, 1, 4, 8), Rect2i(2, 0, 4, 8), Rect2i(2, 0, 4, 8), Rect2i(2, 1, 4, 8), Rect2i(2, 1, 4, 8)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_7tokh"), SubResource("BitMap_cedvt"), SubResource("BitMap_6qf6r"), SubResource("BitMap_3c0hj"), SubResource("BitMap_00utu"), SubResource("BitMap_l42gp"), SubResource("BitMap_hykd3"), SubResource("BitMap_2wnc2"), SubResource("BitMap_vxfjd"), SubResource("BitMap_nigsf"), SubResource("BitMap_2qure"), SubResource("BitMap_861te"), SubResource("BitMap_2cgps"), SubResource("BitMap_o0ptv"), SubResource("BitMap_eovge"), SubResource("BitMap_ltffv"), SubResource("BitMap_isia6"), SubResource("BitMap_42cef"), SubResource("BitMap_7pl8x"), SubResource("BitMap_6jrmn")])

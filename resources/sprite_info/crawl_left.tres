@@ -67,5 +67,5 @@ script = ExtResource("1_yvcio")
 name = &"crawl_left"
 size = Vector2(20, 16)
 origin = Vector2(9, 8)
-containing_box = Rect2(0, 6, 18, 10)
+containing_boxes = Array[Rect2i]([Rect2i(3, 7, 15, 9), Rect2i(2, 6, 16, 10), Rect2i(0, 6, 18, 10), Rect2i(0, 7, 17, 9), Rect2i(2, 7, 16, 9), Rect2i(3, 7, 15, 9), Rect2i(3, 6, 15, 10), Rect2i(3, 6, 15, 10), Rect2i(3, 7, 14, 9), Rect2i(3, 7, 14, 9)])
 bitmaps = Array[BitMap]([SubResource("BitMap_yvcio"), SubResource("BitMap_wfbdx"), SubResource("BitMap_x67id"), SubResource("BitMap_1krxk"), SubResource("BitMap_85fbf"), SubResource("BitMap_20412"), SubResource("BitMap_q6k1w"), SubResource("BitMap_onbuo"), SubResource("BitMap_fbuvd"), SubResource("BitMap_3qgpk")])

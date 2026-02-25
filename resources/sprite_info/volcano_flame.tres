@@ -36,6 +36,6 @@ data = {
 script = ExtResource("1_w80xq")
 name = &"volcano_flame"
 size = Vector2(16, 16)
-containing_box = Rect2(5, 5, 5, 6)
+containing_boxes = Array[Rect2i]([Rect2i(6, 6, 4, 4), Rect2i(5, 5, 5, 5), Rect2i(5, 6, 5, 5), Rect2i(6, 6, 4, 5), Rect2i(5, 6, 5, 4)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_w80xq"), SubResource("BitMap_83vek"), SubResource("BitMap_371sw"), SubResource("BitMap_kg60e"), SubResource("BitMap_vnsso")])

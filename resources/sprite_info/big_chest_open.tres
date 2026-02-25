@@ -12,6 +12,6 @@ data = {
 script = ExtResource("1_k3xi7")
 name = &"big_chest_open"
 size = Vector2(64, 48)
-containing_box = Rect2(1, 11, 62, 37)
+containing_boxes = Array[Rect2i]([Rect2i(1, 11, 62, 37)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_k3xi7")])

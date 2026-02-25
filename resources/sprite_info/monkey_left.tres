@@ -12,6 +12,6 @@ data = {
 script = ExtResource("1_d8mj5")
 name = &"monkey_left"
 size = Vector2(16, 16)
-containing_box = Rect2(2, 4, 13, 12)
+containing_boxes = Array[Rect2i]([Rect2i(2, 4, 13, 12)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_d8mj5")])

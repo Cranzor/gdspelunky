@@ -30,5 +30,5 @@ data = {
 script = ExtResource("1_3xyff")
 name = &"lamp_red"
 size = Vector2(16, 16)
-containing_box = Rect2(1, 0, 14, 16)
+containing_boxes = Array[Rect2i]([Rect2i(2, 0, 12, 16), Rect2i(1, 0, 14, 16), Rect2i(2, 0, 12, 16), Rect2i(2, 0, 12, 16)])
 bitmaps = Array[BitMap]([SubResource("BitMap_3xyff"), SubResource("BitMap_lrvl5"), SubResource("BitMap_wigxl"), SubResource("BitMap_dmdow")])

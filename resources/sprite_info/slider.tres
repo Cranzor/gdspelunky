@@ -12,5 +12,5 @@ data = {
 script = ExtResource("1_kuvrv")
 name = &"slider"
 size = Vector2(8, 8)
-containing_box = Rect2(2, 0, 4, 8)
+containing_boxes = Array[Rect2i]([Rect2i(2, 0, 4, 8)])
 bitmaps = Array[BitMap]([SubResource("BitMap_kuvrv")])

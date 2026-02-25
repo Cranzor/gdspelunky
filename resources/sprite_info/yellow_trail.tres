@@ -79,6 +79,6 @@ script = ExtResource("1_vxb00")
 name = &"yellow_trail"
 size = Vector2(16, 16)
 origin = Vector2(8, 8)
-containing_box = Rect2(1, 1, 14, 14)
+containing_boxes = Array[Rect2i]([Rect2i(1, 1, 14, 14), Rect2i(2, 2, 12, 12), Rect2i(3, 3, 10, 10), Rect2i(4, 4, 8, 8), Rect2i(4, 4, 8, 8), Rect2i(6, 4, 4, 8), Rect2i(4, 4, 8, 8), Rect2i(4, 7, 8, 2), Rect2i(6, 6, 4, 4), Rect2i(7, 6, 2, 4), Rect2i(6, 6, 4, 4), Rect2i(7, 7, 2, 1)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_vxb00"), SubResource("BitMap_sm3x2"), SubResource("BitMap_bdpls"), SubResource("BitMap_ny6sx"), SubResource("BitMap_40u4o"), SubResource("BitMap_tagom"), SubResource("BitMap_gfba2"), SubResource("BitMap_kyek5"), SubResource("BitMap_dl2cg"), SubResource("BitMap_13lrx"), SubResource("BitMap_ai4x7"), SubResource("BitMap_u8dol")])

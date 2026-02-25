@@ -42,6 +42,6 @@ data = {
 script = ExtResource("1_sscci")
 name = &"tomb_lord_walk_l"
 size = Vector2(32, 32)
-containing_box = Rect2(4, 0, 22, 32)
+containing_boxes = Array[Rect2i]([Rect2i(4, 2, 22, 30), Rect2i(4, 1, 22, 31), Rect2i(5, 0, 21, 32), Rect2i(4, 2, 22, 30), Rect2i(4, 1, 22, 31), Rect2i(4, 0, 22, 32)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_sscci"), SubResource("BitMap_srq7m"), SubResource("BitMap_6liik"), SubResource("BitMap_q6f4g"), SubResource("BitMap_ofqin"), SubResource("BitMap_a03yg")])

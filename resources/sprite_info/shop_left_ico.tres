@@ -12,5 +12,5 @@ data = {
 script = ExtResource("1_papfv")
 name = &"shop_left_ico"
 size = Vector2(16, 16)
-containing_box = Rect2(2, 1, 12, 15)
+containing_boxes = Array[Rect2i]([Rect2i(2, 1, 12, 15)])
 bitmaps = Array[BitMap]([SubResource("BitMap_papfv")])

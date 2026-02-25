@@ -12,6 +12,6 @@ data = {
 script = ExtResource("1_qrwn6")
 name = &"level13_sign"
 size = Vector2(48, 32)
-containing_box = Rect2(1, 0, 46, 32)
+containing_boxes = Array[Rect2i]([Rect2i(1, 0, 46, 32)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_qrwn6")])

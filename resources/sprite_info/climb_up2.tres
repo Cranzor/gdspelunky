@@ -79,5 +79,5 @@ script = ExtResource("1_5nvjc")
 name = &"climb_up2"
 size = Vector2(16, 24)
 origin = Vector2(8, 16)
-containing_box = Rect2(0, 6, 16, 18)
+containing_boxes = Array[Rect2i]([Rect2i(1, 8, 14, 14), Rect2i(1, 8, 14, 15), Rect2i(1, 9, 15, 14), Rect2i(1, 8, 14, 16), Rect2i(1, 6, 14, 18), Rect2i(1, 7, 14, 16), Rect2i(1, 8, 14, 14), Rect2i(1, 8, 14, 15), Rect2i(0, 9, 15, 14), Rect2i(1, 8, 14, 16), Rect2i(1, 6, 14, 18), Rect2i(1, 7, 14, 16)])
 bitmaps = Array[BitMap]([SubResource("BitMap_5nvjc"), SubResource("BitMap_26gew"), SubResource("BitMap_lku7t"), SubResource("BitMap_w1iya"), SubResource("BitMap_dlvlo"), SubResource("BitMap_xyn6l"), SubResource("BitMap_wje4b"), SubResource("BitMap_lisde"), SubResource("BitMap_kouct"), SubResource("BitMap_pcais"), SubResource("BitMap_hpets"), SubResource("BitMap_wosjk")])

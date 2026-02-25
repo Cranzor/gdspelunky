@@ -13,5 +13,5 @@ script = ExtResource("1_2wbd3")
 name = &"yeti_dead_l"
 size = Vector2(24, 16)
 origin = Vector2(4, 0)
-containing_box = Rect2(2, 7, 20, 9)
+containing_boxes = Array[Rect2i]([Rect2i(2, 7, 20, 9)])
 bitmaps = Array[BitMap]([SubResource("BitMap_2wbd3")])

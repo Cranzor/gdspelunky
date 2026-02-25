@@ -72,6 +72,6 @@ data = {
 script = ExtResource("1_jl368")
 name = &"barrier_emitter"
 size = Vector2(16, 16)
-containing_box = Rect2(0, 0, 16, 16)
+containing_boxes = Array[Rect2i]([Rect2i(0, 0, 16, 16), Rect2i(0, 0, 16, 16), Rect2i(0, 0, 16, 16), Rect2i(0, 0, 16, 16), Rect2i(0, 0, 16, 16), Rect2i(0, 0, 16, 16), Rect2i(0, 0, 16, 16), Rect2i(0, 0, 16, 16), Rect2i(0, 0, 16, 16), Rect2i(0, 0, 16, 16), Rect2i(0, 0, 16, 16)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_jl368"), SubResource("BitMap_gde3w"), SubResource("BitMap_d1b4e"), SubResource("BitMap_n73e7"), SubResource("BitMap_i4xjw"), SubResource("BitMap_mmw2n"), SubResource("BitMap_tjs58"), SubResource("BitMap_cl564"), SubResource("BitMap_j31af"), SubResource("BitMap_sey2t"), SubResource("BitMap_c0eta")])

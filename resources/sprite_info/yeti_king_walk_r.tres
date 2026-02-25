@@ -54,5 +54,5 @@ data = {
 script = ExtResource("1_rhcpr")
 name = &"yeti_king_walk_r"
 size = Vector2(32, 32)
-containing_box = Rect2(0, 0, 31, 32)
+containing_boxes = Array[Rect2i]([Rect2i(0, 0, 31, 32), Rect2i(0, 0, 31, 32), Rect2i(0, 2, 31, 30), Rect2i(0, 1, 31, 31), Rect2i(0, 0, 31, 32), Rect2i(0, 0, 31, 32), Rect2i(0, 2, 31, 30), Rect2i(0, 1, 31, 31)])
 bitmaps = Array[BitMap]([SubResource("BitMap_rhcpr"), SubResource("BitMap_wd0h7"), SubResource("BitMap_8tyau"), SubResource("BitMap_magaw"), SubResource("BitMap_vc3qk"), SubResource("BitMap_j5urq"), SubResource("BitMap_j2isr"), SubResource("BitMap_ghlm6")])

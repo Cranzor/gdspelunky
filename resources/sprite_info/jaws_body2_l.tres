@@ -12,6 +12,6 @@ data = {
 script = ExtResource("1_uxkqf")
 name = &"jaws_body2_l"
 size = Vector2(48, 32)
-containing_box = Rect2(0, 1, 42, 30)
+containing_boxes = Array[Rect2i]([Rect2i(0, 1, 42, 30)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_uxkqf")])

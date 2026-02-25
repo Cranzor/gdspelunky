@@ -19,6 +19,6 @@ script = ExtResource("1_rchht")
 name = &"rope_get"
 size = Vector2(24, 16)
 origin = Vector2(4, 0)
-containing_box = Rect2(0, 3, 23, 10)
+containing_boxes = Array[Rect2i]([Rect2i(0, 3, 23, 10), Rect2i(0, 3, 23, 10)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_rchht"), SubResource("BitMap_qegoh")])

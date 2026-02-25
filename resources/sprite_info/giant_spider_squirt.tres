@@ -54,5 +54,5 @@ data = {
 script = ExtResource("1_noyer")
 name = &"giant_spider_squirt"
 size = Vector2(32, 32)
-containing_box = Rect2(1, 8, 30, 24)
+containing_boxes = Array[Rect2i]([Rect2i(1, 18, 30, 14), Rect2i(1, 17, 30, 15), Rect2i(1, 17, 30, 15), Rect2i(1, 13, 30, 19), Rect2i(1, 11, 30, 21), Rect2i(2, 8, 28, 24), Rect2i(1, 13, 30, 19), Rect2i(1, 17, 30, 15)])
 bitmaps = Array[BitMap]([SubResource("BitMap_noyer"), SubResource("BitMap_wtuui"), SubResource("BitMap_i2m18"), SubResource("BitMap_gsxef"), SubResource("BitMap_4kaxh"), SubResource("BitMap_8x4u1"), SubResource("BitMap_kavw7"), SubResource("BitMap_gvbel")])

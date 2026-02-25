@@ -36,5 +36,5 @@ data = {
 script = ExtResource("1_8f27y")
 name = &"alien_boss_hurt"
 size = Vector2(32, 32)
-containing_box = Rect2(1, 1, 31, 31)
+containing_boxes = Array[Rect2i]([Rect2i(1, 1, 31, 31), Rect2i(1, 1, 31, 31), Rect2i(2, 2, 30, 30), Rect2i(1, 3, 31, 29), Rect2i(1, 3, 31, 29)])
 bitmaps = Array[BitMap]([SubResource("BitMap_8f27y"), SubResource("BitMap_6dfrb"), SubResource("BitMap_68ry5"), SubResource("BitMap_g7miq"), SubResource("BitMap_1plu1")])

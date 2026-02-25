@@ -12,6 +12,6 @@ data = {
 script = ExtResource("1_gf61n")
 name = &"olmec_start2"
 size = Vector2(64, 64)
-containing_box = Rect2(0, 0, 64, 64)
+containing_boxes = Array[Rect2i]([Rect2i(0, 0, 64, 64)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_gf61n")])

@@ -48,6 +48,6 @@ data = {
 script = ExtResource("1_41pjj")
 name = &"cave_man_worship_l"
 size = Vector2(16, 16)
-containing_box = Rect2(0, 1, 16, 15)
+containing_boxes = Array[Rect2i]([Rect2i(4, 1, 12, 15), Rect2i(2, 1, 14, 15), Rect2i(1, 2, 15, 14), Rect2i(0, 7, 16, 9), Rect2i(0, 7, 16, 9), Rect2i(1, 2, 15, 14), Rect2i(2, 1, 14, 15)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_41pjj"), SubResource("BitMap_86h5l"), SubResource("BitMap_l3a1b"), SubResource("BitMap_pjpy2"), SubResource("BitMap_mbusj"), SubResource("BitMap_5do74"), SubResource("BitMap_htuyq")])

@@ -19,6 +19,6 @@ script = ExtResource("1_66xoc")
 name = &"yellow_ball"
 size = Vector2(16, 16)
 origin = Vector2(8, 8)
-containing_box = Rect2(1, 1, 14, 14)
+containing_boxes = Array[Rect2i]([Rect2i(2, 2, 12, 12), Rect2i(1, 1, 14, 14)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_66xoc"), SubResource("BitMap_fy1be")])

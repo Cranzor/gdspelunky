@@ -55,6 +55,6 @@ script = ExtResource("1_6pebt")
 name = &"smoke_puff"
 size = Vector2(8, 8)
 origin = Vector2(4, 4)
-containing_box = Rect2(0, 0, 8, 8)
+containing_boxes = Array[Rect2i]([Rect2i(2, 2, 4, 4), Rect2i(1, 1, 6, 6), Rect2i(0, 0, 8, 8), Rect2i(0, 0, 8, 8), Rect2i(0, 0, 7, 8), Rect2i(1, 0, 5, 6), Rect2i(2, 0, 3, 3), Rect2i(0, 0, 0, 0)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_6pebt"), SubResource("BitMap_4yhdc"), SubResource("BitMap_lql3g"), SubResource("BitMap_ykcan"), SubResource("BitMap_mdedl"), SubResource("BitMap_bks0x"), SubResource("BitMap_002qf"), SubResource("BitMap_0bupl")])

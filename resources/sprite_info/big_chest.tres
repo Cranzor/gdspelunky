@@ -12,6 +12,6 @@ data = {
 script = ExtResource("1_lt3pu")
 name = &"big_chest"
 size = Vector2(48, 48)
-containing_box = Rect2(1, 17, 46, 31)
+containing_boxes = Array[Rect2i]([Rect2i(1, 17, 46, 31)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_lt3pu")])

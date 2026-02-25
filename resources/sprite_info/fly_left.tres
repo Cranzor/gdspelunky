@@ -31,6 +31,6 @@ script = ExtResource("1_vdai2")
 name = &"fly_left"
 size = Vector2(8, 8)
 origin = Vector2(4, 4)
-containing_box = Rect2(0, 0, 8, 8)
+containing_boxes = Array[Rect2i]([Rect2i(0, 0, 8, 8), Rect2i(0, 0, 8, 8), Rect2i(0, 2, 8, 6), Rect2i(0, 1, 8, 7)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_vdai2"), SubResource("BitMap_3k4xf"), SubResource("BitMap_8q064"), SubResource("BitMap_ks2nd")])

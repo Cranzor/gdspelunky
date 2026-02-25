@@ -12,5 +12,5 @@ data = {
 script = ExtResource("1_qknb3")
 name = &"thin_ice5"
 size = Vector2(16, 16)
-containing_box = Rect2(0, 0, 16, 6)
+containing_boxes = Array[Rect2i]([Rect2i(0, 0, 16, 6)])
 bitmaps = Array[BitMap]([SubResource("BitMap_qknb3")])

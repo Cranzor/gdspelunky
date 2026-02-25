@@ -91,6 +91,6 @@ script = ExtResource("1_ujgx1")
 name = &"man_trap_eat_tunnel_l"
 size = Vector2(32, 32)
 origin = Vector2(8, 16)
-containing_box = Rect2(0, 2, 25, 30)
+containing_boxes = Array[Rect2i]([Rect2i(8, 16, 16, 16), Rect2i(4, 18, 20, 14), Rect2i(0, 11, 24, 21), Rect2i(1, 4, 23, 28), Rect2i(7, 2, 18, 30), Rect2i(4, 6, 21, 26), Rect2i(8, 10, 17, 22), Rect2i(8, 11, 17, 21), Rect2i(8, 11, 17, 21), Rect2i(8, 10, 17, 22), Rect2i(8, 14, 17, 18), Rect2i(8, 16, 17, 16), Rect2i(8, 16, 16, 16), Rect2i(8, 17, 16, 15)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_ujgx1"), SubResource("BitMap_1dums"), SubResource("BitMap_54eq4"), SubResource("BitMap_jtx8c"), SubResource("BitMap_8evh7"), SubResource("BitMap_vi3jl"), SubResource("BitMap_kuf8d"), SubResource("BitMap_7cb75"), SubResource("BitMap_xwwai"), SubResource("BitMap_nibtk"), SubResource("BitMap_4lwls"), SubResource("BitMap_gyp0a"), SubResource("BitMap_rs52h"), SubResource("BitMap_7ynx4")])

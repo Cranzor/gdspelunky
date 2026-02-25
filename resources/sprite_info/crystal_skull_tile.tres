@@ -12,5 +12,5 @@ data = {
 script = ExtResource("1_4l4ix")
 name = &"crystal_skull_tile"
 size = Vector2(16, 16)
-containing_box = Rect2(2, 1, 12, 15)
+containing_boxes = Array[Rect2i]([Rect2i(2, 1, 12, 15)])
 bitmaps = Array[BitMap]([SubResource("BitMap_4l4ix")])

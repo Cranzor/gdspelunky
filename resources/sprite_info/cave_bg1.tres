@@ -12,6 +12,6 @@ data = {
 script = ExtResource("1_ak8hs")
 name = &"cave_bg1"
 size = Vector2(32, 32)
-containing_box = Rect2(0, 0, 32, 31)
+containing_boxes = Array[Rect2i]([Rect2i(0, 0, 32, 31)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_ak8hs")])

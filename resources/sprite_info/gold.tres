@@ -12,5 +12,5 @@ data = {
 script = ExtResource("1_x6u86")
 name = &"gold"
 size = Vector2(16, 16)
-containing_box = Rect2(1, 1, 13, 14)
+containing_boxes = Array[Rect2i]([Rect2i(1, 1, 13, 14)])
 bitmaps = Array[BitMap]([SubResource("BitMap_x6u86")])

@@ -19,6 +19,6 @@ script = ExtResource("1_8f0i8")
 name = &"bomb_arrow_right"
 size = Vector2(16, 16)
 origin = Vector2(8, 8)
-containing_box = Rect2(4, 5, 12, 7)
+containing_boxes = Array[Rect2i]([Rect2i(4, 5, 12, 7), Rect2i(4, 5, 12, 7)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_8f0i8"), SubResource("BitMap_saco8")])

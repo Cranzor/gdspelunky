@@ -12,5 +12,5 @@ data = {
 script = ExtResource("1_ec4y0")
 name = &"olmec_slam"
 size = Vector2(64, 8)
-containing_box = Rect2(2, 0, 59, 8)
+containing_boxes = Array[Rect2i]([Rect2i(2, 0, 59, 8)])
 bitmaps = Array[BitMap]([SubResource("BitMap_ec4y0")])

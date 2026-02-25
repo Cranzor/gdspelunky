@@ -12,5 +12,5 @@ data = {
 script = ExtResource("1_88itm")
 name = &"thin_ice2"
 size = Vector2(16, 16)
-containing_box = Rect2(0, 0, 16, 9)
+containing_boxes = Array[Rect2i]([Rect2i(0, 0, 16, 9)])
 bitmaps = Array[BitMap]([SubResource("BitMap_88itm")])

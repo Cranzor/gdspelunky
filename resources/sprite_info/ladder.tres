@@ -12,5 +12,5 @@ data = {
 script = ExtResource("1_hkhwc")
 name = &"ladder"
 size = Vector2(16, 16)
-containing_box = Rect2(1, 0, 14, 16)
+containing_boxes = Array[Rect2i]([Rect2i(1, 0, 14, 16)])
 bitmaps = Array[BitMap]([SubResource("BitMap_hkhwc")])

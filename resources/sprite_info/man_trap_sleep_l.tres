@@ -102,5 +102,5 @@ data = {
 script = ExtResource("1_bgbwo")
 name = &"man_trap_sleep_l"
 size = Vector2(16, 16)
-containing_box = Rect2(0, 0, 16, 16)
+containing_boxes = Array[Rect2i]([Rect2i(0, 0, 16, 16), Rect2i(0, 0, 16, 16), Rect2i(0, 0, 16, 16), Rect2i(0, 1, 16, 15), Rect2i(0, 0, 16, 16), Rect2i(0, 1, 16, 15), Rect2i(0, 0, 16, 16), Rect2i(0, 1, 16, 15), Rect2i(0, 0, 16, 16), Rect2i(0, 1, 16, 15), Rect2i(0, 0, 16, 16), Rect2i(0, 0, 16, 16), Rect2i(0, 2, 16, 14), Rect2i(0, 5, 16, 11), Rect2i(0, 7, 16, 9), Rect2i(0, 7, 16, 9)])
 bitmaps = Array[BitMap]([SubResource("BitMap_bgbwo"), SubResource("BitMap_qm15k"), SubResource("BitMap_mljiy"), SubResource("BitMap_2yefi"), SubResource("BitMap_rmyaq"), SubResource("BitMap_2ljnq"), SubResource("BitMap_lo63w"), SubResource("BitMap_llcf2"), SubResource("BitMap_ivewr"), SubResource("BitMap_mnysg"), SubResource("BitMap_gqy51"), SubResource("BitMap_bv7vo"), SubResource("BitMap_hdp4n"), SubResource("BitMap_epb2e"), SubResource("BitMap_g6i1b"), SubResource("BitMap_006ej")])

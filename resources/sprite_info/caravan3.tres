@@ -30,6 +30,6 @@ data = {
 script = ExtResource("1_ukjdm")
 name = &"caravan3"
 size = Vector2(32, 64)
-containing_box = Rect2(0, 5, 32, 59)
+containing_boxes = Array[Rect2i]([Rect2i(1, 14, 30, 50), Rect2i(1, 15, 30, 49), Rect2i(1, 7, 30, 57), Rect2i(0, 5, 32, 59)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_ukjdm"), SubResource("BitMap_wcei6"), SubResource("BitMap_vheda"), SubResource("BitMap_pl2pr")])

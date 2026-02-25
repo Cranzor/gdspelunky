@@ -60,6 +60,6 @@ data = {
 script = ExtResource("1_oomkn")
 name = &"caveman_worship_r"
 size = Vector2(16, 16)
-containing_box = Rect2(0, 1, 16, 15)
+containing_boxes = Array[Rect2i]([Rect2i(0, 1, 12, 15), Rect2i(0, 1, 14, 15), Rect2i(0, 2, 15, 14), Rect2i(0, 3, 16, 13), Rect2i(0, 7, 16, 9), Rect2i(0, 7, 16, 9), Rect2i(0, 3, 16, 13), Rect2i(0, 2, 15, 14), Rect2i(0, 1, 14, 15)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_oomkn"), SubResource("BitMap_rxbg1"), SubResource("BitMap_k3u06"), SubResource("BitMap_5b4cj"), SubResource("BitMap_cb5v8"), SubResource("BitMap_6c6hx"), SubResource("BitMap_1px3h"), SubResource("BitMap_4oam0"), SubResource("BitMap_e6i81")])

@@ -12,6 +12,6 @@ data = {
 script = ExtResource("1_x4cdg")
 name = &"intro_bg"
 size = Vector2(480, 112)
-containing_box = Rect2(0, 3, 480, 109)
+containing_boxes = Array[Rect2i]([Rect2i(0, 3, 480, 109)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_x4cdg")])

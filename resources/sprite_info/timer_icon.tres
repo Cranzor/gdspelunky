@@ -12,6 +12,6 @@ data = {
 script = ExtResource("1_hu0dd")
 name = &"timer_icon"
 size = Vector2(16, 16)
-containing_box = Rect2(1, 1, 14, 14)
+containing_boxes = Array[Rect2i]([Rect2i(1, 1, 14, 14)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_hu0dd")])

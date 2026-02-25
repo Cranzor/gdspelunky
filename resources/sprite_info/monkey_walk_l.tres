@@ -42,6 +42,6 @@ data = {
 script = ExtResource("1_dexf1")
 name = &"monkey_walk_l"
 size = Vector2(16, 16)
-containing_box = Rect2(2, 2, 13, 14)
+containing_boxes = Array[Rect2i]([Rect2i(2, 4, 13, 12), Rect2i(3, 2, 12, 14), Rect2i(2, 2, 13, 13), Rect2i(2, 3, 12, 13), Rect2i(2, 3, 12, 13), Rect2i(2, 4, 12, 12)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_dexf1"), SubResource("BitMap_w1re1"), SubResource("BitMap_v4kri"), SubResource("BitMap_f54au"), SubResource("BitMap_bmqjd"), SubResource("BitMap_em64p")])

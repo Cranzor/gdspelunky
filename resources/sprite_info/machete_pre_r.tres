@@ -13,6 +13,6 @@ script = ExtResource("1_qpjj8")
 name = &"machete_pre_r"
 size = Vector2(16, 16)
 origin = Vector2(8, 8)
-containing_box = Rect2(9, 0, 7, 9)
+containing_boxes = Array[Rect2i]([Rect2i(9, 0, 7, 9)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_qpjj8")])

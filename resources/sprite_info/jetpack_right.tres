@@ -13,5 +13,5 @@ script = ExtResource("1_3g67m")
 name = &"jetpack_right"
 size = Vector2(16, 16)
 origin = Vector2(8, 8)
-containing_box = Rect2(2, 3, 12, 13)
+containing_boxes = Array[Rect2i]([Rect2i(2, 3, 12, 13)])
 bitmaps = Array[BitMap]([SubResource("BitMap_3g67m")])

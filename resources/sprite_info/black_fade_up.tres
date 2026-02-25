@@ -12,6 +12,6 @@ data = {
 script = ExtResource("1_yvos8")
 name = &"black_fade_up"
 size = Vector2(16, 17)
-containing_box = Rect2(0, 8, 16, 8)
+containing_boxes = Array[Rect2i]([Rect2i(0, 8, 16, 8)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_yvos8")])

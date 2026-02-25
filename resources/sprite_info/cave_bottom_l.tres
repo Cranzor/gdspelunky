@@ -12,5 +12,5 @@ data = {
 script = ExtResource("1_ji8a8")
 name = &"cave_bottom_l"
 size = Vector2(16, 16)
-containing_box = Rect2(0, 0, 16, 5)
+containing_boxes = Array[Rect2i]([Rect2i(0, 0, 16, 5)])
 bitmaps = Array[BitMap]([SubResource("BitMap_ji8a8")])

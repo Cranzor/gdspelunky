@@ -30,5 +30,5 @@ data = {
 script = ExtResource("1_whdou")
 name = &"man_trap_left"
 size = Vector2(16, 16)
-containing_box = Rect2(0, 0, 16, 16)
+containing_boxes = Array[Rect2i]([Rect2i(0, 0, 16, 16), Rect2i(0, 0, 16, 16), Rect2i(0, 0, 16, 16), Rect2i(0, 1, 16, 15)])
 bitmaps = Array[BitMap]([SubResource("BitMap_whdou"), SubResource("BitMap_vc1ic"), SubResource("BitMap_4mm08"), SubResource("BitMap_fnxub")])

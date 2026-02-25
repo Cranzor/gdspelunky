@@ -12,5 +12,5 @@ data = {
 script = ExtResource("1_dntpm")
 name = &"bones_left"
 size = Vector2(16, 16)
-containing_box = Rect2(1, 11, 15, 5)
+containing_boxes = Array[Rect2i]([Rect2i(1, 11, 15, 5)])
 bitmaps = Array[BitMap]([SubResource("BitMap_dntpm")])

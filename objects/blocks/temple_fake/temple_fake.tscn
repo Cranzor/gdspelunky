@@ -3,14 +3,14 @@
 [ext_resource type="Script" uid="uid://dlaawtal00ws1" path="res://objects/blocks/temple_fake/temple_fake.gd" id="1_p65r6"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_n4c1e"]
 [ext_resource type="Texture2D" uid="uid://drvw1otuoyei2" path="res://sprites/blocks/temple/temple/temple_0.png" id="3_umrj6"]
-[ext_resource type="Script" uid="uid://bjy8ydal68lbj" path="res://components/cave_top.gd" id="4_thpa5"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_eilao"]
 [ext_resource type="PackedScene" uid="uid://oy6m7b600a1u" path="res://components/cave_top.tscn" id="5_umrj6"]
 [ext_resource type="Texture2D" uid="uid://coruvqw80pybl" path="res://backgrounds/bg_cave_top4.png" id="6_4cmxn"]
-[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="7_eilao"]
+[ext_resource type="Texture2D" uid="uid://duk8o1ivl0jv" path="res://sprites/blocks/temple/temple_down/temple_down_0.png" id="7_mu7qn"]
 [ext_resource type="Resource" uid="uid://ck5fr3s6ip7ld" path="res://resources/sprite_info/temple.tres" id="9_cvbvy"]
+[ext_resource type="Resource" uid="uid://ctkcnfn087l88" path="res://resources/sprite_info/temple_down.tres" id="11_0skhf"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_cvbvy"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_4qtpq"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -20,6 +20,14 @@ animations = [{
 "loop": true,
 "name": &"temple",
 "speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_mu7qn")
+}],
+"loop": true,
+"name": &"temple_down",
+"speed": 30.0
 }]
 
 [node name="TempleFake" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -28,23 +36,14 @@ script = ExtResource("1_p65r6")
 animated_sprite_node = NodePath("Sprite")
 object_name = "temple_fake"
 
-[node name="CaveTop" type="Sprite2D" parent="." instance=ExtResource("5_umrj6")]
-visible = false
-z_index = -3
-z_as_relative = false
-position = Vector2(0, -16)
+[node name="CaveTop" parent="." instance=ExtResource("5_umrj6")]
 texture = ExtResource("6_4cmxn")
-centered = false
-region_enabled = true
-region_rect = Rect2(0, 0, 16, 16)
-script = ExtResource("4_thpa5")
 
-[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_n4c1e")]
-sprite_frames = SubResource("SpriteFrames_cvbvy")
+[node name="Sprite" parent="." instance=ExtResource("2_n4c1e")]
+sprite_frames = SubResource("SpriteFrames_4qtpq")
 autoplay = "temple"
-centered = false
-script = ExtResource("7_eilao")
 sprite_info = Dictionary[StringName, ExtResource("5_eilao")]({
-&"temple": ExtResource("9_cvbvy")
+&"temple": ExtResource("9_cvbvy"),
+&"temple_down": ExtResource("11_0skhf")
 })
 default_animation = &"temple"

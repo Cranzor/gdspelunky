@@ -49,5 +49,5 @@ script = ExtResource("1_yo4o4")
 name = &"yeti_throw_l"
 size = Vector2(24, 16)
 origin = Vector2(4, 0)
-containing_box = Rect2(4, 0, 20, 16)
+containing_boxes = Array[Rect2i]([Rect2i(4, 0, 18, 16), Rect2i(5, 0, 19, 16), Rect2i(4, 0, 20, 16), Rect2i(4, 0, 16, 16), Rect2i(4, 0, 14, 16), Rect2i(4, 0, 14, 16), Rect2i(4, 0, 14, 16)])
 bitmaps = Array[BitMap]([SubResource("BitMap_yo4o4"), SubResource("BitMap_uvd4b"), SubResource("BitMap_1d8kx"), SubResource("BitMap_qewfd"), SubResource("BitMap_hih4u"), SubResource("BitMap_xwyr8"), SubResource("BitMap_3msfk")])

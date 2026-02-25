@@ -19,6 +19,6 @@ script = ExtResource("1_tlsj3")
 name = &"smooch_heart"
 size = Vector2(16, 16)
 origin = Vector2(8, 8)
-containing_box = Rect2(2, 3, 11, 11)
+containing_boxes = Array[Rect2i]([Rect2i(2, 3, 11, 11), Rect2i(3, 4, 9, 9)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_tlsj3"), SubResource("BitMap_sa5rb")])

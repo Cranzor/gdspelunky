@@ -293,8 +293,9 @@ func instance_place(x,y,obj: String, comparison_object: GMObject) -> GMObject: #
 	#return collision_rectangle(rect.position.x + x, rect.position.y + y, size_with_offset.x - 1, size_with_offset.y - 1, obj, 0, true, comparison_object) #--- have to subtract 1 from size as collision_rectangle is expecting points to be passed in
 
 	var current_anim: StringName = comparison_object.animated_sprite_node.animation
+	var current_frame: int = comparison_object.animated_sprite_node.frame
 	var sprite_info: SpriteInfo = comparison_object.animated_sprite_node.sprite_info[current_anim]
-	var containing_box: Rect2 = sprite_info.containing_box
+	var containing_box: Rect2 = sprite_info.containing_boxes[current_frame]
 	var origin: Vector2 = sprite_info.origin
 	var pos: Vector2 = containing_box.position - origin + Vector2(x, y)
 	var size: Vector2 = pos + containing_box.size

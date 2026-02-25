@@ -13,5 +13,5 @@ script = ExtResource("1_luumu")
 name = &"emerald"
 size = Vector2(4, 4)
 origin = Vector2(2, 2)
-containing_box = Rect2(0, 0, 4, 4)
+containing_boxes = Array[Rect2i]([Rect2i(0, 0, 4, 4)])
 bitmaps = Array[BitMap]([SubResource("BitMap_luumu")])

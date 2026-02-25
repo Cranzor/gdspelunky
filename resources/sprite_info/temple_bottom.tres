@@ -12,5 +12,5 @@ data = {
 script = ExtResource("1_iniew")
 name = &"temple_bottom"
 size = Vector2(16, 16)
-containing_box = Rect2(0, 0, 16, 3)
+containing_boxes = Array[Rect2i]([Rect2i(0, 0, 16, 3)])
 bitmaps = Array[BitMap]([SubResource("BitMap_iniew")])

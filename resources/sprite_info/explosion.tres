@@ -67,6 +67,6 @@ script = ExtResource("1_iug34")
 name = &"explosion"
 size = Vector2(48, 48)
 origin = Vector2(24, 24)
-containing_box = Rect2(0, 2, 48, 44)
+containing_boxes = Array[Rect2i]([Rect2i(11, 12, 25, 24), Rect2i(5, 5, 38, 38), Rect2i(5, 3, 39, 41), Rect2i(0, 3, 48, 43), Rect2i(7, 9, 34, 28), Rect2i(5, 5, 38, 40), Rect2i(2, 3, 42, 40), Rect2i(2, 8, 43, 33), Rect2i(8, 5, 32, 35), Rect2i(12, 2, 26, 40)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_iug34"), SubResource("BitMap_14jrg"), SubResource("BitMap_4p6hy"), SubResource("BitMap_tc6dm"), SubResource("BitMap_c0klv"), SubResource("BitMap_gv466"), SubResource("BitMap_whaaf"), SubResource("BitMap_kyvox"), SubResource("BitMap_woaip"), SubResource("BitMap_ye61j")])

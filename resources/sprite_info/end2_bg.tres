@@ -12,6 +12,6 @@ data = {
 script = ExtResource("1_5qmqg")
 name = &"end2_bg"
 size = Vector2(320, 240)
-containing_box = Rect2(0, 0, 320, 240)
+containing_boxes = Array[Rect2i]([Rect2i(0, 0, 320, 240)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_5qmqg")])

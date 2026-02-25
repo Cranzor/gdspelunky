@@ -37,5 +37,5 @@ script = ExtResource("1_u53so")
 name = &"damsel_whoa_l"
 size = Vector2(16, 16)
 origin = Vector2(8, 8)
-containing_box = Rect2(1, 0, 14, 16)
+containing_boxes = Array[Rect2i]([Rect2i(3, 0, 12, 16), Rect2i(2, 0, 12, 16), Rect2i(1, 0, 14, 16), Rect2i(2, 2, 12, 14), Rect2i(2, 1, 12, 15)])
 bitmaps = Array[BitMap]([SubResource("BitMap_u53so"), SubResource("BitMap_nkhgg"), SubResource("BitMap_drqud"), SubResource("BitMap_aetm3"), SubResource("BitMap_qpn1x")])

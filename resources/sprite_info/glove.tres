@@ -13,6 +13,6 @@ script = ExtResource("1_byhoc")
 name = &"glove"
 size = Vector2(16, 16)
 origin = Vector2(8, 8)
-containing_box = Rect2(0, 1, 16, 15)
+containing_boxes = Array[Rect2i]([Rect2i(0, 1, 16, 15)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_byhoc")])

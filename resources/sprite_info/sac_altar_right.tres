@@ -18,5 +18,5 @@ data = {
 script = ExtResource("1_vorg7")
 name = &"sac_altar_right"
 size = Vector2(16, 16)
-containing_box = Rect2(0, 0, 16, 16)
+containing_boxes = Array[Rect2i]([Rect2i(0, 0, 16, 16), Rect2i(0, 0, 16, 16)])
 bitmaps = Array[BitMap]([SubResource("BitMap_vorg7"), SubResource("BitMap_7en3v")])

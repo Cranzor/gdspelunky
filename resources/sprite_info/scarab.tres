@@ -24,5 +24,5 @@ data = {
 script = ExtResource("1_4asve")
 name = &"scarab"
 size = Vector2(16, 16)
-containing_box = Rect2(1, 2, 13, 11)
+containing_boxes = Array[Rect2i]([Rect2i(1, 2, 13, 11), Rect2i(1, 2, 13, 11), Rect2i(1, 2, 13, 11)])
 bitmaps = Array[BitMap]([SubResource("BitMap_4asve"), SubResource("BitMap_wppxd"), SubResource("BitMap_yb2jl")])

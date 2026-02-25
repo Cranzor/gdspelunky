@@ -42,5 +42,5 @@ data = {
 script = ExtResource("1_62xf0")
 name = &"shop_run_left"
 size = Vector2(16, 16)
-containing_box = Rect2(0, 0, 16, 16)
+containing_boxes = Array[Rect2i]([Rect2i(0, 1, 16, 15), Rect2i(1, 2, 13, 14), Rect2i(1, 3, 13, 13), Rect2i(4, 0, 10, 16), Rect2i(1, 2, 13, 14), Rect2i(2, 1, 12, 15)])
 bitmaps = Array[BitMap]([SubResource("BitMap_62xf0"), SubResource("BitMap_hoyly"), SubResource("BitMap_01v41"), SubResource("BitMap_qnfm3"), SubResource("BitMap_x6ouu"), SubResource("BitMap_h26yk")])

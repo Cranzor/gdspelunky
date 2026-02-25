@@ -12,6 +12,6 @@ data = {
 script = ExtResource("1_e1ro4")
 name = &"compass_tile"
 size = Vector2(16, 16)
-containing_box = Rect2(2, 4, 12, 12)
+containing_boxes = Array[Rect2i]([Rect2i(2, 4, 12, 12)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_e1ro4")])

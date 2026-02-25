@@ -19,6 +19,6 @@ script = ExtResource("1_pej3x")
 name = &"bomb_armed"
 size = Vector2(8, 8)
 origin = Vector2(4, 4)
-containing_box = Rect2(1, 1, 7, 7)
+containing_boxes = Array[Rect2i]([Rect2i(1, 1, 7, 7), Rect2i(1, 1, 7, 7)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_pej3x"), SubResource("BitMap_xrx1a")])

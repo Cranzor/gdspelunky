@@ -41,10 +41,13 @@ func get_object_rect(object: GMObject, get_base_rect: bool = false) -> Rect2:
 	if default_animation == "":
 		default_animation = object.animated_sprite_node.default_animation
 	if sprites.sprite_database.has(default_animation):
-		var origin = sprites.sprite_database[default_animation]["origin"]
-		var size = sprites.sprite_database[default_animation]["mask"]["bounding_box"][1]
+		#var origin = sprites.sprite_database[default_animation]["origin"]
+		#var size = sprites.sprite_database[default_animation]["mask"]["bounding_box"][1]
+		var origin = object.animated_sprite_node.sprite_info[default_animation].origin
 		var pos: Vector2 = object.position - origin #--- was using collision_shape's global position, but can't rely on this for things that spawn in instantly (like explosion)
-		var returned_rect: Rect2 = Rect2(pos, size)
+		#var returned_rect: Rect2 = Rect2(pos, size)
+		var returned_rect: Rect2 = object.animated_sprite_node.sprite_info[default_animation].containing_boxes[object.animated_sprite_node.frame]
+		returned_rect.position += pos
 		returned_rect = get_object_rect_exception(object, returned_rect)
 		rect = returned_rect
 		if get_base_rect: returned_rect.position = -origin

@@ -43,6 +43,6 @@ script = ExtResource("1_ad42t")
 name = &"psychic_create"
 size = Vector2(16, 16)
 origin = Vector2(8, 8)
-containing_box = Rect2(5, 5, 6, 6)
+containing_boxes = Array[Rect2i]([Rect2i(5, 5, 6, 6), Rect2i(5, 5, 6, 6), Rect2i(6, 6, 4, 4), Rect2i(7, 7, 2, 2), Rect2i(7, 7, 2, 2), Rect2i(7, 7, 2, 2)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_ad42t"), SubResource("BitMap_mpggf"), SubResource("BitMap_ntfxa"), SubResource("BitMap_ra2eu"), SubResource("BitMap_1ya27"), SubResource("BitMap_ntwjh")])

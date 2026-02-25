@@ -84,5 +84,5 @@ data = {
 script = ExtResource("1_3mygg")
 name = &"magma_man_die"
 size = Vector2(16, 16)
-containing_box = Rect2(0, 0, 16, 16)
+containing_boxes = Array[Rect2i]([Rect2i(2, 0, 12, 16), Rect2i(4, 0, 9, 16), Rect2i(2, 1, 13, 15), Rect2i(0, 7, 16, 9), Rect2i(0, 4, 16, 12), Rect2i(0, 4, 16, 12), Rect2i(1, 8, 15, 8), Rect2i(1, 9, 15, 7), Rect2i(1, 9, 15, 7), Rect2i(4, 7, 8, 9), Rect2i(4, 14, 7, 2), Rect2i(4, 13, 7, 3), Rect2i(4, 12, 7, 4)])
 bitmaps = Array[BitMap]([SubResource("BitMap_3mygg"), SubResource("BitMap_feg13"), SubResource("BitMap_11e1r"), SubResource("BitMap_0hvf1"), SubResource("BitMap_6ussp"), SubResource("BitMap_en2x1"), SubResource("BitMap_k48ll"), SubResource("BitMap_rv8o0"), SubResource("BitMap_16ij5"), SubResource("BitMap_tmqvn"), SubResource("BitMap_0uu83"), SubResource("BitMap_eu4cx"), SubResource("BitMap_jt8j7")])

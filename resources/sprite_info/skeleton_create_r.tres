@@ -42,5 +42,5 @@ data = {
 script = ExtResource("1_5k5lg")
 name = &"skeleton_create_r"
 size = Vector2(16, 16)
-containing_box = Rect2(0, 0, 16, 16)
+containing_boxes = Array[Rect2i]([Rect2i(1, 9, 15, 7), Rect2i(0, 6, 15, 10), Rect2i(1, 3, 13, 12), Rect2i(1, 2, 13, 14), Rect2i(3, 1, 11, 15), Rect2i(3, 0, 11, 16)])
 bitmaps = Array[BitMap]([SubResource("BitMap_5k5lg"), SubResource("BitMap_d0evr"), SubResource("BitMap_r446p"), SubResource("BitMap_4kb2b"), SubResource("BitMap_fyr8k"), SubResource("BitMap_6gwat")])

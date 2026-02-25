@@ -43,6 +43,6 @@ script = ExtResource("1_0wxhi")
 name = &"poof"
 size = Vector2(8, 8)
 origin = Vector2(4, 4)
-containing_box = Rect2(0, 0, 8, 7)
+containing_boxes = Array[Rect2i]([Rect2i(3, 3, 2, 2), Rect2i(2, 2, 4, 4), Rect2i(1, 1, 6, 6), Rect2i(0, 0, 8, 7), Rect2i(0, 0, 8, 7), Rect2i(0, 0, 8, 6)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_0wxhi"), SubResource("BitMap_58s5y"), SubResource("BitMap_5u4ju"), SubResource("BitMap_y455g"), SubResource("BitMap_iw8ha"), SubResource("BitMap_nn7j0")])

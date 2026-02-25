@@ -157,6 +157,6 @@ script = ExtResource("1_258fm")
 name = &"psychic_wave_p"
 size = Vector2(16, 16)
 origin = Vector2(8, 8)
-containing_box = Rect2(1, 1, 14, 14)
+containing_boxes = Array[Rect2i]([Rect2i(7, 7, 2, 2), Rect2i(6, 6, 4, 4), Rect2i(5, 5, 6, 6), Rect2i(3, 3, 10, 10), Rect2i(3, 3, 10, 10), Rect2i(2, 2, 12, 12), Rect2i(2, 2, 12, 12), Rect2i(2, 2, 12, 12), Rect2i(2, 2, 12, 12), Rect2i(2, 2, 12, 12), Rect2i(2, 2, 12, 12), Rect2i(2, 2, 12, 12), Rect2i(2, 2, 12, 12), Rect2i(2, 2, 12, 12), Rect2i(2, 2, 12, 12), Rect2i(2, 2, 12, 12), Rect2i(2, 2, 12, 12), Rect2i(2, 2, 12, 12), Rect2i(2, 2, 12, 12), Rect2i(2, 2, 12, 12), Rect2i(2, 2, 12, 12), Rect2i(2, 2, 12, 12), Rect2i(2, 2, 12, 12), Rect2i(2, 2, 12, 12), Rect2i(1, 1, 14, 14)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_258fm"), SubResource("BitMap_4wpor"), SubResource("BitMap_x74g2"), SubResource("BitMap_3prci"), SubResource("BitMap_5iu2a"), SubResource("BitMap_xr7io"), SubResource("BitMap_oc3i8"), SubResource("BitMap_btdly"), SubResource("BitMap_ki1xs"), SubResource("BitMap_iqjy0"), SubResource("BitMap_wdqsf"), SubResource("BitMap_0adfp"), SubResource("BitMap_disga"), SubResource("BitMap_2niex"), SubResource("BitMap_kv6f4"), SubResource("BitMap_snpbk"), SubResource("BitMap_8fiyw"), SubResource("BitMap_4a5d4"), SubResource("BitMap_0l85s"), SubResource("BitMap_q8yuk"), SubResource("BitMap_pi0w4"), SubResource("BitMap_n7tt2"), SubResource("BitMap_2i0ic"), SubResource("BitMap_m1son"), SubResource("BitMap_8unx5")])

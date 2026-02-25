@@ -43,5 +43,5 @@ script = ExtResource("1_5hwis")
 name = &"alien_deploy"
 size = Vector2(16, 24)
 origin = Vector2(8, 12)
-containing_box = Rect2(3, 0, 10, 19)
+containing_boxes = Array[Rect2i]([Rect2i(3, 6, 10, 13), Rect2i(3, 2, 10, 16), Rect2i(3, 0, 10, 17), Rect2i(3, 0, 10, 18), Rect2i(3, 0, 10, 19), Rect2i(3, 0, 10, 17)])
 bitmaps = Array[BitMap]([SubResource("BitMap_5hwis"), SubResource("BitMap_suc8i"), SubResource("BitMap_ur8m7"), SubResource("BitMap_u0ypk"), SubResource("BitMap_qtfiq"), SubResource("BitMap_fy1xs")])

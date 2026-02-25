@@ -109,5 +109,5 @@ script = ExtResource("1_6bu8m")
 name = &"damsel_exit2"
 size = Vector2(16, 16)
 origin = Vector2(8, 8)
-containing_box = Rect2(0, 0, 14, 16)
+containing_boxes = Array[Rect2i]([Rect2i(0, 0, 0, 0), Rect2i(2, 0, 12, 16), Rect2i(2, 1, 12, 15), Rect2i(2, 0, 12, 16), Rect2i(2, 1, 12, 15), Rect2i(2, 1, 12, 15), Rect2i(2, 2, 12, 14), Rect2i(2, 1, 12, 15), Rect2i(2, 2, 12, 14), Rect2i(2, 2, 12, 14), Rect2i(2, 3, 12, 13), Rect2i(2, 2, 12, 14), Rect2i(2, 3, 12, 13), Rect2i(2, 3, 12, 13), Rect2i(2, 4, 12, 12), Rect2i(2, 3, 12, 13), Rect2i(2, 4, 12, 12)])
 bitmaps = Array[BitMap]([SubResource("BitMap_6bu8m"), SubResource("BitMap_3xhrs"), SubResource("BitMap_4m725"), SubResource("BitMap_um4nh"), SubResource("BitMap_bljg3"), SubResource("BitMap_rlt2v"), SubResource("BitMap_dsplu"), SubResource("BitMap_yuxv6"), SubResource("BitMap_n6cuv"), SubResource("BitMap_c0ycm"), SubResource("BitMap_dbp5a"), SubResource("BitMap_4cnqp"), SubResource("BitMap_dk7k6"), SubResource("BitMap_5gciu"), SubResource("BitMap_b5hwe"), SubResource("BitMap_yw5ss"), SubResource("BitMap_44n0t")])

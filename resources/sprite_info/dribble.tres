@@ -25,6 +25,6 @@ script = ExtResource("1_utxh8")
 name = &"dribble"
 size = Vector2(8, 10)
 origin = Vector2(4, 4)
-containing_box = Rect2(0, 0, 8, 10)
+containing_boxes = Array[Rect2i]([Rect2i(0, 0, 8, 8), Rect2i(0, 2, 8, 8), Rect2i(0, 3, 8, 7)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_utxh8"), SubResource("BitMap_opd48"), SubResource("BitMap_6c7h0")])

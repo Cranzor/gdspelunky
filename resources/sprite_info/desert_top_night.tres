@@ -12,6 +12,6 @@ data = {
 script = ExtResource("1_wv4ys")
 name = &"desert_top_night"
 size = Vector2(16, 17)
-containing_box = Rect2(0, 13, 16, 3)
+containing_boxes = Array[Rect2i]([Rect2i(0, 13, 16, 3)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_wv4ys")])

@@ -24,6 +24,6 @@ data = {
 script = ExtResource("1_arc07")
 name = &"lava_spray"
 size = Vector2(80, 256)
-containing_box = Rect2(0, 0, 80, 256)
+containing_boxes = Array[Rect2i]([Rect2i(0, 0, 80, 256), Rect2i(0, 0, 80, 254), Rect2i(0, 0, 80, 251)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_arc07"), SubResource("BitMap_vgiwf"), SubResource("BitMap_eows4")])

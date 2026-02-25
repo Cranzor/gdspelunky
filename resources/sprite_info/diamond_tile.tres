@@ -12,5 +12,5 @@ data = {
 script = ExtResource("1_kein4")
 name = &"diamond_tile"
 size = Vector2(16, 16)
-containing_box = Rect2(4, 8, 8, 8)
+containing_boxes = Array[Rect2i]([Rect2i(4, 8, 8, 8)])
 bitmaps = Array[BitMap]([SubResource("BitMap_kein4")])

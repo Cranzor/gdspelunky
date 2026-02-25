@@ -13,6 +13,6 @@ script = ExtResource("1_e8hlp")
 name = &"gth_hole"
 size = Vector2(32, 32)
 origin = Vector2(16, 16)
-containing_box = Rect2(0, 0, 32, 32)
+containing_boxes = Array[Rect2i]([Rect2i(0, 0, 32, 32)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_e8hlp")])

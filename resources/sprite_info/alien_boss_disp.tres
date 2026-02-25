@@ -13,5 +13,5 @@ script = ExtResource("1_kt23k")
 name = &"alien_boss_disp"
 size = Vector2(32, 32)
 origin = Vector2(8, 8)
-containing_box = Rect2(1, 1, 31, 31)
+containing_boxes = Array[Rect2i]([Rect2i(1, 1, 31, 31)])
 bitmaps = Array[BitMap]([SubResource("BitMap_kt23k")])

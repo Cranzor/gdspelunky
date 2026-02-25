@@ -61,5 +61,5 @@ script = ExtResource("1_kooyf")
 name = &"damsel_dt_hl"
 size = Vector2(32, 32)
 origin = Vector2(24, 8)
-containing_box = Rect2(7, 0, 25, 29)
+containing_boxes = Array[Rect2i]([Rect2i(16, 6, 16, 10), Rect2i(15, 2, 15, 15), Rect2i(13, 0, 15, 17), Rect2i(13, 0, 15, 17), Rect2i(7, 0, 15, 17), Rect2i(10, 5, 16, 10), Rect2i(11, 5, 13, 16), Rect2i(11, 9, 13, 16), Rect2i(11, 13, 13, 16)])
 bitmaps = Array[BitMap]([SubResource("BitMap_kooyf"), SubResource("BitMap_qw4q0"), SubResource("BitMap_l56uj"), SubResource("BitMap_uk60p"), SubResource("BitMap_ukr51"), SubResource("BitMap_nkx3n"), SubResource("BitMap_vj8r8"), SubResource("BitMap_opf55"), SubResource("BitMap_eixvj")])

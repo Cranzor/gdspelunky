@@ -73,5 +73,5 @@ script = ExtResource("1_4mkit")
 name = &"attack_left"
 size = Vector2(16, 16)
 origin = Vector2(8, 8)
-containing_box = Rect2(0, 0, 16, 16)
+containing_boxes = Array[Rect2i]([Rect2i(2, 0, 12, 16), Rect2i(1, 0, 14, 16), Rect2i(2, 0, 13, 16), Rect2i(2, 0, 14, 16), Rect2i(2, 0, 13, 16), Rect2i(0, 0, 14, 16), Rect2i(0, 0, 14, 16), Rect2i(0, 0, 14, 16), Rect2i(0, 0, 14, 16), Rect2i(0, 0, 14, 16), Rect2i(0, 0, 14, 16)])
 bitmaps = Array[BitMap]([SubResource("BitMap_4mkit"), SubResource("BitMap_csmpb"), SubResource("BitMap_7piw6"), SubResource("BitMap_nbd0y"), SubResource("BitMap_qvrau"), SubResource("BitMap_7ofl0"), SubResource("BitMap_7cm4u"), SubResource("BitMap_vppcb"), SubResource("BitMap_ftkyp"), SubResource("BitMap_8pc2v"), SubResource("BitMap_ql2r4")])

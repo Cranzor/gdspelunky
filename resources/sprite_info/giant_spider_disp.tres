@@ -13,6 +13,6 @@ script = ExtResource("1_i5yfi")
 name = &"giant_spider_disp"
 size = Vector2(32, 32)
 origin = Vector2(8, 8)
-containing_box = Rect2(1, 8, 30, 15)
+containing_boxes = Array[Rect2i]([Rect2i(1, 8, 30, 15)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_i5yfi")])

@@ -60,6 +60,6 @@ data = {
 script = ExtResource("1_av8js")
 name = &"jaws_right"
 size = Vector2(16, 32)
-containing_box = Rect2(0, 4, 14, 26)
+containing_boxes = Array[Rect2i]([Rect2i(0, 4, 14, 26), Rect2i(0, 4, 14, 26), Rect2i(0, 4, 14, 26), Rect2i(0, 4, 14, 26), Rect2i(0, 4, 14, 26), Rect2i(0, 4, 14, 26), Rect2i(0, 4, 14, 25), Rect2i(0, 4, 14, 26), Rect2i(0, 4, 14, 26)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_av8js"), SubResource("BitMap_exgqq"), SubResource("BitMap_mu78m"), SubResource("BitMap_s72u5"), SubResource("BitMap_wis5d"), SubResource("BitMap_ru74m"), SubResource("BitMap_m3lcj"), SubResource("BitMap_jhy4u"), SubResource("BitMap_v6qi5")])

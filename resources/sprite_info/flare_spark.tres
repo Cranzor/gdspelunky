@@ -37,6 +37,6 @@ script = ExtResource("1_pcefl")
 name = &"flare_spark"
 size = Vector2(4, 4)
 origin = Vector2(2, 2)
-containing_box = Rect2(0, 0, 4, 4)
+containing_boxes = Array[Rect2i]([Rect2i(0, 0, 4, 4), Rect2i(0, 0, 4, 4), Rect2i(1, 1, 2, 2), Rect2i(1, 1, 2, 1), Rect2i(0, 0, 4, 1)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_pcefl"), SubResource("BitMap_fg6xh"), SubResource("BitMap_vcntq"), SubResource("BitMap_7s8e8"), SubResource("BitMap_1urs8")])

@@ -24,5 +24,5 @@ data = {
 script = ExtResource("1_srdrb")
 name = &"bat_left"
 size = Vector2(16, 16)
-containing_box = Rect2(0, 3, 16, 11)
+containing_boxes = Array[Rect2i]([Rect2i(0, 4, 16, 10), Rect2i(0, 4, 16, 8), Rect2i(2, 3, 11, 10)])
 bitmaps = Array[BitMap]([SubResource("BitMap_srdrb"), SubResource("BitMap_esfm7"), SubResource("BitMap_hismg")])

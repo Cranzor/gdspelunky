@@ -12,6 +12,6 @@ data = {
 script = ExtResource("1_sjbeu")
 name = &"moon"
 size = Vector2(96, 96)
-containing_box = Rect2(0, 2, 96, 92)
+containing_boxes = Array[Rect2i]([Rect2i(0, 2, 96, 92)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_sjbeu")])

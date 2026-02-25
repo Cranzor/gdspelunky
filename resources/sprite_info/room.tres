@@ -12,6 +12,6 @@ data = {
 script = ExtResource("1_hkjey")
 name = &"room"
 size = Vector2(160, 128)
-containing_box = Rect2(2, 2, 156, 124)
+containing_boxes = Array[Rect2i]([Rect2i(2, 2, 156, 124)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_hkjey")])

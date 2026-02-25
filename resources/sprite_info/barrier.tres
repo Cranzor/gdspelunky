@@ -24,6 +24,6 @@ data = {
 script = ExtResource("1_82pbe")
 name = &"barrier"
 size = Vector2(16, 48)
-containing_box = Rect2(2, 0, 11, 48)
+containing_boxes = Array[Rect2i]([Rect2i(3, 0, 9, 48), Rect2i(2, 0, 11, 48), Rect2i(2, 0, 9, 48)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_82pbe"), SubResource("BitMap_s8ioh"), SubResource("BitMap_nye4n")])

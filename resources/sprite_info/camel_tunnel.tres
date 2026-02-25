@@ -42,6 +42,6 @@ data = {
 script = ExtResource("1_0hphs")
 name = &"camel_tunnel"
 size = Vector2(48, 48)
-containing_box = Rect2(0, 1, 48, 47)
+containing_boxes = Array[Rect2i]([Rect2i(0, 3, 48, 45), Rect2i(0, 4, 48, 44), Rect2i(0, 4, 48, 44), Rect2i(0, 2, 48, 46), Rect2i(0, 1, 48, 47), Rect2i(0, 4, 48, 44)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_0hphs"), SubResource("BitMap_f7gwo"), SubResource("BitMap_r45yb"), SubResource("BitMap_lao5k"), SubResource("BitMap_7aegc"), SubResource("BitMap_kkicj")])

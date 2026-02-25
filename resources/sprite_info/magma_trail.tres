@@ -37,6 +37,6 @@ script = ExtResource("1_fho7x")
 name = &"magma_trail"
 size = Vector2(16, 16)
 origin = Vector2(8, 8)
-containing_box = Rect2(4, 4, 8, 8)
+containing_boxes = Array[Rect2i]([Rect2i(4, 4, 8, 8), Rect2i(5, 5, 6, 6), Rect2i(5, 6, 5, 4), Rect2i(6, 6, 4, 4), Rect2i(7, 7, 2, 2)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_fho7x"), SubResource("BitMap_57esl"), SubResource("BitMap_kagmv"), SubResource("BitMap_d2267"), SubResource("BitMap_7kguf")])

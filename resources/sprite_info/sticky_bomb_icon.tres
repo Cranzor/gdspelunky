@@ -12,6 +12,6 @@ data = {
 script = ExtResource("1_cwr02")
 name = &"sticky_bomb_icon"
 size = Vector2(16, 16)
-containing_box = Rect2(0, 1, 15, 14)
+containing_boxes = Array[Rect2i]([Rect2i(0, 1, 15, 14)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_cwr02")])

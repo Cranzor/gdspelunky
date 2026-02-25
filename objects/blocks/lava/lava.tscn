@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dypwc6kmhkfrp"]
+[gd_scene load_steps=23 format=3 uid="uid://dypwc6kmhkfrp"]
 
 [ext_resource type="Script" uid="uid://d03npey1mibey" path="res://objects/blocks/lava/lava.gd" id="1_6csex"]
 [ext_resource type="PackedScene" uid="uid://w6jxjbgfs6na" path="res://components/drawing/draw_circle/dark_level_circle.tscn" id="2_wnahu"]
@@ -7,12 +7,18 @@
 [ext_resource type="Texture2D" uid="uid://bkxksvh8l3or2" path="res://components/drawing/draw_circle/circle_r32.png" id="5_jyauw"]
 [ext_resource type="Texture2D" uid="uid://cnpx2owt8tmkt" path="res://components/drawing/draw_circle/circle_r64.png" id="6_2sa0t"]
 [ext_resource type="Texture2D" uid="uid://4xv4ky4kkda2" path="res://components/drawing/draw_circle/circle_r96.png" id="7_vdch0"]
-[ext_resource type="Script" uid="uid://cht4oclnookax" path="res://components/drawing/draw_circle/dark_level_circle.gd" id="8_7465u"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="9_vdch0"]
 [ext_resource type="Texture2D" uid="uid://dkwc10xfss8q0" path="res://sprites/blocks/water/lava/lava_0.png" id="10_7465u"]
-[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="11_v8yfy"]
+[ext_resource type="Texture2D" uid="uid://cpdjdmi5dljab" path="res://sprites/blocks/water/lava_top/lava_top_0.png" id="11_8npkp"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="12_er72v"]
+[ext_resource type="Texture2D" uid="uid://drmrsphc5t32w" path="res://sprites/blocks/water/lava_top/lava_top_1.png" id="12_nr8uu"]
 [ext_resource type="Resource" uid="uid://c14w1pvmg76xv" path="res://resources/sprite_info/lava.tres" id="13_7465u"]
+[ext_resource type="Texture2D" uid="uid://co54pxl4g16a0" path="res://sprites/blocks/water/lava_top/lava_top_2.png" id="13_aw6xh"]
+[ext_resource type="Texture2D" uid="uid://do3fq2601elba" path="res://sprites/blocks/water/lava_top/lava_top_3.png" id="14_teead"]
+[ext_resource type="Texture2D" uid="uid://qnof7ek17qhf" path="res://sprites/blocks/water/lava_top/lava_top_4.png" id="15_4vwuw"]
+[ext_resource type="Texture2D" uid="uid://byjfrh6s57dyx" path="res://sprites/blocks/water/lava_top/lava_top_5.png" id="16_wc13l"]
+[ext_resource type="Texture2D" uid="uid://ccpry1yvnu5tp" path="res://sprites/blocks/water/lava_top/lava_top_6.png" id="17_16ccc"]
+[ext_resource type="Resource" uid="uid://cp0qvykpx0dou" path="res://resources/sprite_info/lava_top.tres" id="21_1x04o"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ttmrw"]
 shader = ExtResource("3_7p28n")
@@ -53,7 +59,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_7465u"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_y4qyi"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -63,6 +69,32 @@ animations = [{
 "loop": true,
 "name": &"lava",
 "speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_8npkp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_nr8uu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_aw6xh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_teead")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_4vwuw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_wc13l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_16ccc")
+}],
+"loop": true,
+"name": &"lava_top",
+"speed": 30.0
 }]
 
 [node name="Lava" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -71,22 +103,16 @@ script = ExtResource("1_6csex")
 animated_sprite_node = NodePath("Sprite")
 object_name = "lava"
 
-[node name="DarkLevelCircle" type="AnimatedSprite2D" parent="." instance=ExtResource("2_wnahu")]
-visible = false
-z_index = 10
-z_as_relative = false
+[node name="DarkLevelCircle" parent="." instance=ExtResource("2_wnahu")]
 material = SubResource("ShaderMaterial_ttmrw")
 sprite_frames = SubResource("SpriteFrames_n62uf")
-animation = &"16"
-script = ExtResource("8_7465u")
 offset_value = Vector2(8, 8)
 
-[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("9_vdch0")]
-sprite_frames = SubResource("SpriteFrames_7465u")
+[node name="Sprite" parent="." instance=ExtResource("9_vdch0")]
+sprite_frames = SubResource("SpriteFrames_y4qyi")
 autoplay = "lava"
-centered = false
-script = ExtResource("11_v8yfy")
 sprite_info = Dictionary[StringName, ExtResource("12_er72v")]({
-&"lava": ExtResource("13_7465u")
+&"lava": ExtResource("13_7465u"),
+&"lava_top": ExtResource("21_1x04o")
 })
 default_animation = &"lava"

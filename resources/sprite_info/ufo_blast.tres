@@ -126,5 +126,5 @@ data = {
 script = ExtResource("1_jdou7")
 name = &"ufo_blast"
 size = Vector2(16, 16)
-containing_box = Rect2(0, 0, 16, 16)
+containing_boxes = Array[Rect2i]([Rect2i(0, 2, 16, 12), Rect2i(0, 2, 16, 12), Rect2i(0, 2, 16, 12), Rect2i(0, 2, 16, 12), Rect2i(0, 2, 16, 12), Rect2i(0, 2, 16, 12), Rect2i(0, 2, 16, 12), Rect2i(0, 2, 16, 12), Rect2i(0, 2, 16, 12), Rect2i(0, 2, 16, 12), Rect2i(0, 2, 16, 12), Rect2i(0, 2, 16, 12), Rect2i(0, 2, 16, 12), Rect2i(0, 2, 16, 13), Rect2i(0, 0, 16, 16), Rect2i(0, 0, 16, 16), Rect2i(0, 0, 16, 16), Rect2i(0, 1, 16, 15), Rect2i(0, 2, 16, 12), Rect2i(0, 2, 16, 12)])
 bitmaps = Array[BitMap]([SubResource("BitMap_jdou7"), SubResource("BitMap_pyndu"), SubResource("BitMap_1mwly"), SubResource("BitMap_k1mb1"), SubResource("BitMap_mhx36"), SubResource("BitMap_so6wh"), SubResource("BitMap_7s6v1"), SubResource("BitMap_70uof"), SubResource("BitMap_f01yl"), SubResource("BitMap_ne8g2"), SubResource("BitMap_x1j3u"), SubResource("BitMap_1hrrg"), SubResource("BitMap_1m56s"), SubResource("BitMap_4oa5f"), SubResource("BitMap_2454r"), SubResource("BitMap_bo7od"), SubResource("BitMap_xt3hs"), SubResource("BitMap_awhej"), SubResource("BitMap_gmj3e"), SubResource("BitMap_ha1mb")])

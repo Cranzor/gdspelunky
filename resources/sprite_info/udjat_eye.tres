@@ -13,6 +13,6 @@ script = ExtResource("1_8fevn")
 name = &"udjat_eye"
 size = Vector2(16, 12)
 origin = Vector2(8, 6)
-containing_box = Rect2(0, 1, 16, 11)
+containing_boxes = Array[Rect2i]([Rect2i(0, 1, 16, 11)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_8fevn")])

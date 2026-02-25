@@ -13,6 +13,6 @@ script = ExtResource("1_eg3o2")
 name = &"whip_right"
 size = Vector2(16, 16)
 origin = Vector2(8, 8)
-containing_box = Rect2(0, 6, 13, 5)
+containing_boxes = Array[Rect2i]([Rect2i(0, 6, 13, 5)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_eg3o2")])

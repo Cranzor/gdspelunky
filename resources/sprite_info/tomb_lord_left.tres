@@ -30,6 +30,6 @@ data = {
 script = ExtResource("1_q6chj")
 name = &"tomb_lord_left"
 size = Vector2(32, 32)
-containing_box = Rect2(3, 2, 23, 30)
+containing_boxes = Array[Rect2i]([Rect2i(4, 2, 22, 30), Rect2i(4, 3, 22, 29), Rect2i(3, 4, 22, 28), Rect2i(4, 3, 22, 29)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_q6chj"), SubResource("BitMap_fi0hx"), SubResource("BitMap_1bn8x"), SubResource("BitMap_r43sl")])

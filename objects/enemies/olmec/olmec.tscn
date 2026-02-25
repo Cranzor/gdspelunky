@@ -1,20 +1,29 @@
-[gd_scene load_steps=13 format=3 uid="uid://coqxja7e6iscn"]
+[gd_scene load_steps=14 format=3 uid="uid://coqxja7e6iscn"]
 
 [ext_resource type="Script" uid="uid://bblou72igp5cn" path="res://objects/enemies/olmec/olmec.gd" id="1_8icyr"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_wkte4"]
 [ext_resource type="Texture2D" uid="uid://dkh1uvqv36e6" path="res://sprites/enemies/olmec/olmec_start1/olmec_start1_0.png" id="3_biby1"]
+[ext_resource type="Texture2D" uid="uid://b07c6rt82p60h" path="res://sprites/enemies/olmec/olmec/olmec_0.png" id="3_dbjfy"]
 [ext_resource type="Texture2D" uid="uid://bhq71428o3gbf" path="res://sprites/enemies/olmec/olmec_start2/olmec_start2_0.png" id="4_7dqsx"]
 [ext_resource type="Texture2D" uid="uid://m11pkhx16qwq" path="res://sprites/enemies/olmec/olmec_start3/olmec_start3_0.png" id="5_m23d7"]
-[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="6_biby1"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="7_8a4oi"]
 [ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="8_biby1"]
 [ext_resource type="Resource" uid="uid://c2oubqiuptbbo" path="res://resources/sprite_info/olmec_start1.tres" id="8_bmtoy"]
 [ext_resource type="Resource" uid="uid://bugmo8448ska0" path="res://resources/sprite_info/olmec_start2.tres" id="9_8a4oi"]
 [ext_resource type="Resource" uid="uid://bqoo0pte0w2i4" path="res://resources/sprite_info/olmec_start3.tres" id="10_dbjfy"]
+[ext_resource type="Resource" uid="uid://dsyvla8uxh8eo" path="res://resources/sprite_info/olmec.tres" id="12_iouty"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_bmtoy"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_iu7lb"]
 resource_local_to_scene = true
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_dbjfy")
+}],
+"loop": true,
+"name": &"olmec",
+"speed": 30.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("3_biby1")
@@ -46,16 +55,15 @@ script = ExtResource("1_8icyr")
 animated_sprite_node = NodePath("Sprite")
 object_name = "olmec"
 
-[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_wkte4")]
-sprite_frames = SubResource("SpriteFrames_bmtoy")
+[node name="Sprite" parent="." instance=ExtResource("2_wkte4")]
+sprite_frames = SubResource("SpriteFrames_iu7lb")
 autoplay = "olmec_start1"
-centered = false
-script = ExtResource("6_biby1")
 sprite_info = Dictionary[StringName, ExtResource("7_8a4oi")]({
+&"olmec": ExtResource("12_iouty"),
 &"olmec_start1": ExtResource("8_bmtoy"),
 &"olmec_start2": ExtResource("9_8a4oi"),
 &"olmec_start3": ExtResource("10_dbjfy")
 })
 default_animation = &"olmec_start1"
 
-[node name="SmoothMotion" type="Node" parent="." instance=ExtResource("8_biby1")]
+[node name="SmoothMotion" parent="." instance=ExtResource("8_biby1")]

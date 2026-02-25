@@ -114,5 +114,5 @@ data = {
 script = ExtResource("1_he5xy")
 name = &"wal_damsel"
 size = Vector2(48, 48)
-containing_box = Rect2(0, 0, 48, 48)
+containing_boxes = Array[Rect2i]([Rect2i(5, 0, 43, 48), Rect2i(5, 0, 43, 48), Rect2i(5, 0, 43, 48), Rect2i(5, 0, 43, 48), Rect2i(5, 0, 43, 48), Rect2i(5, 0, 43, 48), Rect2i(1, 0, 47, 48), Rect2i(4, 0, 44, 48), Rect2i(6, 0, 42, 48), Rect2i(6, 0, 42, 48), Rect2i(6, 0, 42, 48), Rect2i(0, 0, 48, 48), Rect2i(0, 0, 48, 48), Rect2i(0, 0, 48, 48), Rect2i(0, 0, 48, 48), Rect2i(0, 0, 48, 48), Rect2i(1, 0, 47, 48), Rect2i(3, 0, 45, 48)])
 bitmaps = Array[BitMap]([SubResource("BitMap_he5xy"), SubResource("BitMap_oalqq"), SubResource("BitMap_g6ree"), SubResource("BitMap_ku5dl"), SubResource("BitMap_xgfya"), SubResource("BitMap_oiqot"), SubResource("BitMap_csj00"), SubResource("BitMap_gwvdg"), SubResource("BitMap_78cgh"), SubResource("BitMap_oieiy"), SubResource("BitMap_3sdgo"), SubResource("BitMap_nfdpq"), SubResource("BitMap_jf4hg"), SubResource("BitMap_2abav"), SubResource("BitMap_cdrsh"), SubResource("BitMap_kgw0x"), SubResource("BitMap_h4csu"), SubResource("BitMap_4xg88")])

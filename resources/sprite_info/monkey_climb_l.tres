@@ -24,6 +24,6 @@ data = {
 script = ExtResource("1_4j15t")
 name = &"monkey_climb_l"
 size = Vector2(16, 16)
-containing_box = Rect2(4, 1, 12, 15)
+containing_boxes = Array[Rect2i]([Rect2i(4, 1, 12, 14), Rect2i(5, 1, 10, 14), Rect2i(5, 1, 10, 15)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_4j15t"), SubResource("BitMap_ifmmn"), SubResource("BitMap_18ycd")])

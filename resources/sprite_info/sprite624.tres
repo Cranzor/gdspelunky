@@ -24,5 +24,5 @@ data = {
 script = ExtResource("1_0l6jf")
 name = &"sprite624"
 size = Vector2(16, 16)
-containing_box = Rect2(1, 1, 14, 15)
+containing_boxes = Array[Rect2i]([Rect2i(1, 1, 14, 15), Rect2i(1, 1, 14, 15), Rect2i(1, 1, 14, 15)])
 bitmaps = Array[BitMap]([SubResource("BitMap_0l6jf"), SubResource("BitMap_8dv0x"), SubResource("BitMap_l26r1")])

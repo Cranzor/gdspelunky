@@ -13,6 +13,6 @@ script = ExtResource("1_ukdko")
 name = &"tunnel_duck_l"
 size = Vector2(16, 16)
 origin = Vector2(9, 8)
-containing_box = Rect2(1, 7, 15, 9)
+containing_boxes = Array[Rect2i]([Rect2i(1, 7, 15, 9)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_ukdko")])

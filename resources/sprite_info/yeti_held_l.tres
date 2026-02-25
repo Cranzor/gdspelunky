@@ -37,5 +37,5 @@ script = ExtResource("1_31ub4")
 name = &"yeti_held_l"
 size = Vector2(24, 16)
 origin = Vector2(4, 0)
-containing_box = Rect2(4, 0, 16, 16)
+containing_boxes = Array[Rect2i]([Rect2i(4, 3, 16, 13), Rect2i(4, 2, 16, 14), Rect2i(4, 1, 16, 15), Rect2i(4, 0, 16, 16), Rect2i(4, 1, 16, 15)])
 bitmaps = Array[BitMap]([SubResource("BitMap_31ub4"), SubResource("BitMap_utilt"), SubResource("BitMap_disk1"), SubResource("BitMap_4aitu"), SubResource("BitMap_ismcc")])

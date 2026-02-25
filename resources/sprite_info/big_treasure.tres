@@ -12,6 +12,6 @@ data = {
 script = ExtResource("1_f1avk")
 name = &"big_treasure"
 size = Vector2(32, 32)
-containing_box = Rect2(3, 2, 26, 30)
+containing_boxes = Array[Rect2i]([Rect2i(3, 2, 26, 30)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_f1avk")])

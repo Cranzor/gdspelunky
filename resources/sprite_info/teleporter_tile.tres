@@ -12,6 +12,6 @@ data = {
 script = ExtResource("1_0e7gi")
 name = &"teleporter_tile"
 size = Vector2(16, 16)
-containing_box = Rect2(4, 2, 7, 14)
+containing_boxes = Array[Rect2i]([Rect2i(4, 2, 7, 14)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_0e7gi")])

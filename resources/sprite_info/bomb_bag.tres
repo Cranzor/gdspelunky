@@ -13,6 +13,6 @@ script = ExtResource("1_re0no")
 name = &"bomb_bag"
 size = Vector2(16, 12)
 origin = Vector2(8, 6)
-containing_box = Rect2(2, 0, 12, 12)
+containing_boxes = Array[Rect2i]([Rect2i(2, 0, 12, 12)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_re0no")])

@@ -25,6 +25,6 @@ script = ExtResource("1_nt3gp")
 name = &"slash_right"
 size = Vector2(32, 32)
 origin = Vector2(28, 24)
-containing_box = Rect2(2, 4, 29, 24)
+containing_boxes = Array[Rect2i]([Rect2i(2, 4, 17, 8), Rect2i(5, 5, 22, 8), Rect2i(22, 8, 9, 20)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_nt3gp"), SubResource("BitMap_ibcqr"), SubResource("BitMap_56mp6")])

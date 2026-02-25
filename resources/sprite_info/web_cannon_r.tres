@@ -13,6 +13,6 @@ script = ExtResource("1_u5qsu")
 name = &"web_cannon_r"
 size = Vector2(16, 8)
 origin = Vector2(8, 4)
-containing_box = Rect2(3, 0, 13, 7)
+containing_boxes = Array[Rect2i]([Rect2i(3, 0, 13, 7)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_u5qsu")])

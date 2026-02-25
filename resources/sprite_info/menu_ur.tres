@@ -12,6 +12,6 @@ data = {
 script = ExtResource("1_2sjnj")
 name = &"menu_ur"
 size = Vector2(16, 17)
-containing_box = Rect2(0, 5, 16, 11)
+containing_boxes = Array[Rect2i]([Rect2i(0, 5, 16, 11)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_2sjnj")])

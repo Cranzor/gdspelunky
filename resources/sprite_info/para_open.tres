@@ -36,6 +36,6 @@ data = {
 script = ExtResource("1_ae6ey")
 name = &"para_open"
 size = Vector2(16, 16)
-containing_box = Rect2(1, 0, 14, 16)
+containing_boxes = Array[Rect2i]([Rect2i(6, 11, 3, 5), Rect2i(5, 10, 5, 5), Rect2i(3, 5, 9, 11), Rect2i(2, 0, 12, 16), Rect2i(1, 0, 14, 16)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_ae6ey"), SubResource("BitMap_qjhin"), SubResource("BitMap_wrbb8"), SubResource("BitMap_ds1om"), SubResource("BitMap_2016w")])

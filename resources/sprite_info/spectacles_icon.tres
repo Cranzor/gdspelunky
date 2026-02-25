@@ -12,6 +12,6 @@ data = {
 script = ExtResource("1_yl05b")
 name = &"spectacles_icon"
 size = Vector2(16, 16)
-containing_box = Rect2(0, 1, 16, 13)
+containing_boxes = Array[Rect2i]([Rect2i(0, 1, 16, 13)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_yl05b")])

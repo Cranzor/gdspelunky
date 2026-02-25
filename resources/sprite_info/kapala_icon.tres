@@ -36,6 +36,6 @@ data = {
 script = ExtResource("1_0qqow")
 name = &"kapala_icon"
 size = Vector2(16, 16)
-containing_box = Rect2(0, 0, 16, 16)
+containing_boxes = Array[Rect2i]([Rect2i(0, 0, 16, 16), Rect2i(0, 0, 16, 16), Rect2i(0, 0, 16, 16), Rect2i(0, 0, 16, 16), Rect2i(0, 0, 16, 16)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_0qqow"), SubResource("BitMap_d37bm"), SubResource("BitMap_d20r3"), SubResource("BitMap_8b8pw"), SubResource("BitMap_jnu4d")])

@@ -31,6 +31,6 @@ script = ExtResource("1_ef87x")
 name = &"bow_right"
 size = Vector2(16, 16)
 origin = Vector2(8, 8)
-containing_box = Rect2(1, 2, 12, 11)
+containing_boxes = Array[Rect2i]([Rect2i(6, 2, 7, 11), Rect2i(5, 2, 8, 11), Rect2i(3, 2, 10, 11), Rect2i(1, 2, 11, 11)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_ef87x"), SubResource("BitMap_mlqxq"), SubResource("BitMap_01hco"), SubResource("BitMap_1lhoc")])

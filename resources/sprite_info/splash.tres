@@ -43,5 +43,5 @@ script = ExtResource("1_by1pj")
 name = &"splash"
 size = Vector2(16, 16)
 origin = Vector2(8, 8)
-containing_box = Rect2(1, 2, 14, 14)
+containing_boxes = Array[Rect2i]([Rect2i(6, 5, 3, 6), Rect2i(4, 5, 7, 5), Rect2i(2, 2, 12, 11), Rect2i(1, 2, 14, 12), Rect2i(1, 3, 14, 13), Rect2i(1, 5, 14, 9)])
 bitmaps = Array[BitMap]([SubResource("BitMap_by1pj"), SubResource("BitMap_tuqxq"), SubResource("BitMap_ymnhm"), SubResource("BitMap_eyhfh"), SubResource("BitMap_fpiw7"), SubResource("BitMap_s8lb3")])

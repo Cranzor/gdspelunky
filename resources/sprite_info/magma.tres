@@ -31,6 +31,6 @@ script = ExtResource("1_xcf0q")
 name = &"magma"
 size = Vector2(16, 16)
 origin = Vector2(8, 8)
-containing_box = Rect2(2, 3, 11, 11)
+containing_boxes = Array[Rect2i]([Rect2i(2, 3, 11, 11), Rect2i(2, 3, 11, 10), Rect2i(2, 4, 11, 10), Rect2i(2, 3, 11, 10)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_xcf0q"), SubResource("BitMap_ixryg"), SubResource("BitMap_15krf"), SubResource("BitMap_2ln77")])

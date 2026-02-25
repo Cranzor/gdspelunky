@@ -13,6 +13,6 @@ script = ExtResource("1_m4vww")
 name = &"mattock_pre_r"
 size = Vector2(16, 16)
 origin = Vector2(8, 8)
-containing_box = Rect2(5, 0, 11, 12)
+containing_boxes = Array[Rect2i]([Rect2i(5, 0, 11, 12)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_m4vww")])

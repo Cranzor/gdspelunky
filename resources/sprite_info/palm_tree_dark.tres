@@ -12,6 +12,6 @@ data = {
 script = ExtResource("1_p0lu7")
 name = &"palm_tree_dark"
 size = Vector2(32, 128)
-containing_box = Rect2(0, 3, 32, 125)
+containing_boxes = Array[Rect2i]([Rect2i(0, 3, 32, 125)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_p0lu7")])

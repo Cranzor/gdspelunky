@@ -37,6 +37,6 @@ script = ExtResource("1_b3cv2")
 name = &"web_create"
 size = Vector2(16, 16)
 origin = Vector2(8, 8)
-containing_box = Rect2(0, 0, 16, 16)
+containing_boxes = Array[Rect2i]([Rect2i(3, 3, 9, 9), Rect2i(1, 2, 13, 12), Rect2i(1, 1, 15, 15), Rect2i(0, 0, 16, 16), Rect2i(0, 0, 16, 16)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_b3cv2"), SubResource("BitMap_54l0g"), SubResource("BitMap_w8cx8"), SubResource("BitMap_51im4"), SubResource("BitMap_wjpsm")])

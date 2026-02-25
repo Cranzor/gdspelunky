@@ -25,6 +25,6 @@ script = ExtResource("1_hs1ef")
 name = &"mattock_hit_l"
 size = Vector2(16, 16)
 origin = Vector2(8, 8)
-containing_box = Rect2(5, 2, 11, 14)
+containing_boxes = Array[Rect2i]([Rect2i(5, 2, 11, 12), Rect2i(5, 3, 11, 12), Rect2i(5, 4, 11, 12)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_hs1ef"), SubResource("BitMap_tnt0n"), SubResource("BitMap_pkvy3")])

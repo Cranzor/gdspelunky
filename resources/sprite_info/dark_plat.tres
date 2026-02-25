@@ -12,5 +12,5 @@ data = {
 script = ExtResource("1_fjq53")
 name = &"dark_plat"
 size = Vector2(16, 16)
-containing_box = Rect2(0, 0, 16, 8)
+containing_boxes = Array[Rect2i]([Rect2i(0, 0, 16, 8)])
 bitmaps = Array[BitMap]([SubResource("BitMap_fjq53")])

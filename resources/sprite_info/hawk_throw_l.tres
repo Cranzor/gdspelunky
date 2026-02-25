@@ -48,5 +48,5 @@ data = {
 script = ExtResource("1_w8w3w")
 name = &"hawk_throw_l"
 size = Vector2(24, 16)
-containing_box = Rect2(4, 0, 20, 16)
+containing_boxes = Array[Rect2i]([Rect2i(4, 0, 19, 16), Rect2i(5, 0, 19, 16), Rect2i(5, 0, 19, 16), Rect2i(4, 0, 17, 16), Rect2i(4, 0, 14, 16), Rect2i(4, 0, 14, 16), Rect2i(4, 0, 14, 16)])
 bitmaps = Array[BitMap]([SubResource("BitMap_w8w3w"), SubResource("BitMap_tdwn0"), SubResource("BitMap_o4pfc"), SubResource("BitMap_52pm4"), SubResource("BitMap_7nr6k"), SubResource("BitMap_n1kvk"), SubResource("BitMap_gs264")])

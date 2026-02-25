@@ -12,6 +12,6 @@ data = {
 script = ExtResource("1_0riod")
 name = &"new"
 size = Vector2(16, 8)
-containing_box = Rect2(0, 0, 16, 7)
+containing_boxes = Array[Rect2i]([Rect2i(0, 0, 16, 7)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_0riod")])

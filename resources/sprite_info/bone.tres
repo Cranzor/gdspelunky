@@ -55,6 +55,6 @@ script = ExtResource("1_cicfo")
 name = &"bone"
 size = Vector2(8, 8)
 origin = Vector2(4, 4)
-containing_box = Rect2(0, 0, 8, 8)
+containing_boxes = Array[Rect2i]([Rect2i(1, 0, 6, 7), Rect2i(2, 0, 4, 7), Rect2i(0, 1, 7, 6), Rect2i(0, 2, 7, 4), Rect2i(1, 1, 6, 7), Rect2i(2, 1, 4, 7), Rect2i(1, 1, 7, 6), Rect2i(1, 2, 7, 4)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_cicfo"), SubResource("BitMap_7mk8a"), SubResource("BitMap_q3fgp"), SubResource("BitMap_cp7kl"), SubResource("BitMap_7rwjm"), SubResource("BitMap_7gtq7"), SubResource("BitMap_66ibu"), SubResource("BitMap_iu68l")])

@@ -12,5 +12,5 @@ data = {
 script = ExtResource("1_yb4mg")
 name = &"button_pushed"
 size = Vector2(16, 16)
-containing_box = Rect2(2, 13, 12, 3)
+containing_boxes = Array[Rect2i]([Rect2i(2, 13, 12, 3)])
 bitmaps = Array[BitMap]([SubResource("BitMap_yb4mg")])

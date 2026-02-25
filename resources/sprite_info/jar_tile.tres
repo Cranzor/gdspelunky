@@ -12,5 +12,5 @@ data = {
 script = ExtResource("1_jky5c")
 name = &"jar_tile"
 size = Vector2(16, 16)
-containing_box = Rect2(3, 7, 10, 9)
+containing_boxes = Array[Rect2i]([Rect2i(3, 7, 10, 9)])
 bitmaps = Array[BitMap]([SubResource("BitMap_jky5c")])

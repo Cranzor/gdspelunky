@@ -18,5 +18,5 @@ data = {
 script = ExtResource("1_qtdy4")
 name = &"ruby_big_tile"
 size = Vector2(16, 16)
-containing_box = Rect2(4, 8, 8, 8)
+containing_boxes = Array[Rect2i]([Rect2i(4, 8, 8, 8), Rect2i(4, 8, 8, 8)])
 bitmaps = Array[BitMap]([SubResource("BitMap_qtdy4"), SubResource("BitMap_7eqcq")])

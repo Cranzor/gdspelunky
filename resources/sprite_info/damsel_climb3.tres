@@ -79,5 +79,5 @@ script = ExtResource("1_1crlv")
 name = &"damsel_climb3"
 size = Vector2(16, 24)
 origin = Vector2(8, 16)
-containing_box = Rect2(0, 5, 16, 19)
+containing_boxes = Array[Rect2i]([Rect2i(2, 7, 12, 15), Rect2i(2, 7, 14, 14), Rect2i(2, 7, 14, 14), Rect2i(2, 6, 12, 16), Rect2i(2, 7, 12, 17), Rect2i(2, 5, 12, 18), Rect2i(2, 7, 12, 15), Rect2i(0, 7, 14, 14), Rect2i(0, 7, 14, 14), Rect2i(2, 6, 12, 16), Rect2i(2, 7, 12, 17), Rect2i(2, 5, 12, 18)])
 bitmaps = Array[BitMap]([SubResource("BitMap_1crlv"), SubResource("BitMap_b04cn"), SubResource("BitMap_23hnr"), SubResource("BitMap_ymxew"), SubResource("BitMap_tocmm"), SubResource("BitMap_kc8ei"), SubResource("BitMap_qlg6k"), SubResource("BitMap_uoii7"), SubResource("BitMap_gihh2"), SubResource("BitMap_377tw"), SubResource("BitMap_nfeoi"), SubResource("BitMap_kopbt")])

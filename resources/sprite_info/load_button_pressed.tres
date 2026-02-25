@@ -12,6 +12,6 @@ data = {
 script = ExtResource("1_ut3il")
 name = &"load_button_pressed"
 size = Vector2(32, 16)
-containing_box = Rect2(0, 0, 32, 16)
+containing_boxes = Array[Rect2i]([Rect2i(0, 0, 32, 16)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_ut3il")])

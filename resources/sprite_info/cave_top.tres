@@ -12,5 +12,5 @@ data = {
 script = ExtResource("1_fwrye")
 name = &"cave_top"
 size = Vector2(16, 17)
-containing_box = Rect2(0, 13, 16, 3)
+containing_boxes = Array[Rect2i]([Rect2i(0, 13, 16, 3)])
 bitmaps = Array[BitMap]([SubResource("BitMap_fwrye")])

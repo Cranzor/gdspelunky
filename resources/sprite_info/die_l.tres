@@ -13,5 +13,5 @@ script = ExtResource("1_4fso4")
 name = &"die_l"
 size = Vector2(16, 16)
 origin = Vector2(8, 8)
-containing_box = Rect2(1, 7, 15, 9)
+containing_boxes = Array[Rect2i]([Rect2i(1, 7, 15, 9)])
 bitmaps = Array[BitMap]([SubResource("BitMap_4fso4")])

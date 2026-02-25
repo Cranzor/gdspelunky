@@ -13,5 +13,5 @@ script = ExtResource("1_p3nqa")
 name = &"gold_egg"
 size = Vector2(8, 8)
 origin = Vector2(4, 4)
-containing_box = Rect2(0, 0, 8, 8)
+containing_boxes = Array[Rect2i]([Rect2i(0, 0, 8, 8)])
 bitmaps = Array[BitMap]([SubResource("BitMap_p3nqa")])

@@ -12,6 +12,6 @@ data = {
 script = ExtResource("1_0f86x")
 name = &"mushroom7"
 size = Vector2(16, 16)
-containing_box = Rect2(3, 1, 10, 15)
+containing_boxes = Array[Rect2i]([Rect2i(3, 1, 10, 15)])
 precise = true
 bitmaps = Array[BitMap]([SubResource("BitMap_0f86x")])

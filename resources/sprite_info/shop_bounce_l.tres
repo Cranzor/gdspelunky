@@ -12,5 +12,5 @@ data = {
 script = ExtResource("1_hpfp0")
 name = &"shop_bounce_l"
 size = Vector2(16, 16)
-containing_box = Rect2(0, 2, 16, 13)
+containing_boxes = Array[Rect2i]([Rect2i(0, 2, 16, 13)])
 bitmaps = Array[BitMap]([SubResource("BitMap_hpfp0")])
