@@ -1,28 +1,73 @@
-[gd_scene load_steps=21 format=3 uid="uid://bxhjy7fggnujw"]
+[gd_scene load_steps=31 format=3 uid="uid://bxhjy7fggnujw"]
 
 [ext_resource type="Script" uid="uid://c1xuh60fyqtso" path="res://objects/characters/damsel_kiss/damsel_kiss.gd" id="1_fo51r"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_6g3cy"]
 [ext_resource type="Texture2D" uid="uid://c3ilq048qfec6" path="res://sprites/character/damsel/damsel_left/damsel_left_0.png" id="3_g5f83"]
+[ext_resource type="Texture2D" uid="uid://dwe4o78y7dn7o" path="res://sprites/character/damsel/damsel_kiss_l/damsel_kiss_l_0.png" id="3_kuxs2"]
 [ext_resource type="Texture2D" uid="uid://bhii6xljgrwry" path="res://sprites/character/main dude/p_kiss_l/p_kiss_l_0.png" id="4_00myo"]
+[ext_resource type="Texture2D" uid="uid://ydhpy458fddq" path="res://sprites/character/damsel/damsel_kiss_l/damsel_kiss_l_1.png" id="4_1meya"]
 [ext_resource type="Texture2D" uid="uid://c2j751xklns60" path="res://sprites/character/main dude/p_kiss_l/p_kiss_l_1.png" id="5_3idii"]
+[ext_resource type="Texture2D" uid="uid://bpp7usxc1aefi" path="res://sprites/character/damsel/damsel_kiss_l/damsel_kiss_l_2.png" id="5_id17d"]
 [ext_resource type="Texture2D" uid="uid://b7wlw6lv16lnf" path="res://sprites/character/main dude/p_kiss_l/p_kiss_l_2.png" id="6_g8asl"]
+[ext_resource type="Texture2D" uid="uid://2msajyq5xey" path="res://sprites/character/damsel/damsel_kiss_l/damsel_kiss_l_3.png" id="6_pnmq2"]
 [ext_resource type="Texture2D" uid="uid://ci5nbmi1fjg0e" path="res://sprites/character/main dude/p_kiss_l/p_kiss_l_3.png" id="7_n4cmi"]
+[ext_resource type="Texture2D" uid="uid://dxpowww2c2v35" path="res://sprites/character/damsel/damsel_kiss_l/damsel_kiss_l_4.png" id="7_phjjv"]
 [ext_resource type="Texture2D" uid="uid://bo3dilhbaq8jq" path="res://sprites/character/main dude/p_kiss_l/p_kiss_l_4.png" id="8_6t54n"]
+[ext_resource type="Texture2D" uid="uid://ckd3wtcf52dsw" path="res://sprites/character/damsel/damsel_kiss_l/damsel_kiss_l_5.png" id="8_d8o0n"]
+[ext_resource type="Texture2D" uid="uid://plrnmbr6dyyo" path="res://sprites/character/damsel/damsel_kiss_l/damsel_kiss_l_6.png" id="9_dr46b"]
 [ext_resource type="Texture2D" uid="uid://c4djysqi5mm4a" path="res://sprites/character/main dude/p_kiss_l/p_kiss_l_5.png" id="9_u33eg"]
+[ext_resource type="Texture2D" uid="uid://dl3bxx80i88y6" path="res://sprites/character/damsel/damsel_kiss_l/damsel_kiss_l_7.png" id="10_mk0km"]
 [ext_resource type="Texture2D" uid="uid://c038xijmsstyg" path="res://sprites/character/main dude/p_kiss_l/p_kiss_l_6.png" id="10_tp8rn"]
+[ext_resource type="Texture2D" uid="uid://bfwkplh13ig25" path="res://sprites/character/damsel/damsel_kiss_l/damsel_kiss_l_8.png" id="11_37h4l"]
 [ext_resource type="Texture2D" uid="uid://7a0uejv2lmn0" path="res://sprites/character/main dude/p_kiss_l/p_kiss_l_7.png" id="11_qpl4v"]
 [ext_resource type="Texture2D" uid="uid://dqoqhe8apt1lf" path="res://sprites/character/main dude/p_kiss_l/p_kiss_l_8.png" id="12_0ya8p"]
+[ext_resource type="Texture2D" uid="uid://cbrkxrdejjsc1" path="res://sprites/character/damsel/damsel_kiss_l/damsel_kiss_l_9.png" id="12_fnmtu"]
 [ext_resource type="Texture2D" uid="uid://2v4yx6v3drq5" path="res://sprites/character/main dude/p_kiss_l/p_kiss_l_9.png" id="13_rqb4w"]
 [ext_resource type="Texture2D" uid="uid://dbfljnxxluub6" path="res://sprites/character/main dude/stand_left/stand_left_0.png" id="14_ukggd"]
-[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="15_70w3m"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="16_kuxs2"]
 [ext_resource type="Resource" uid="uid://c6v7wpjamc22c" path="res://resources/sprite_info/damsel_left.tres" id="17_3idii"]
 [ext_resource type="Resource" uid="uid://6ug0fs2erk02" path="res://resources/sprite_info/stand_left.tres" id="18_g8asl"]
 [ext_resource type="Resource" uid="uid://dornhy8clyhkv" path="res://resources/sprite_info/p_kiss_l.tres" id="19_n4cmi"]
+[ext_resource type="Resource" uid="uid://ftx2how3u7ex" path="res://resources/sprite_info/damsel_kiss_l.tres" id="30_cyafu"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_3idii"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_bw45k"]
 resource_local_to_scene = true
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_kuxs2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1meya")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_id17d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_pnmq2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_phjjv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_d8o0n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_dr46b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_mk0km")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_37h4l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_fnmtu")
+}],
+"loop": true,
+"name": &"damsel_kiss_l",
+"speed": 30.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("3_g5f83")
@@ -81,13 +126,12 @@ script = ExtResource("1_fo51r")
 animated_sprite_node = NodePath("Sprite")
 object_name = "damsel_kiss"
 
-[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_6g3cy")]
-sprite_frames = SubResource("SpriteFrames_3idii")
+[node name="Sprite" parent="." instance=ExtResource("2_6g3cy")]
+sprite_frames = SubResource("SpriteFrames_bw45k")
 autoplay = "damsel_left"
-centered = false
 offset = Vector2(-8, -8)
-script = ExtResource("15_70w3m")
 sprite_info = Dictionary[StringName, ExtResource("16_kuxs2")]({
+&"damsel_kiss_l": ExtResource("30_cyafu"),
 &"damsel_left": ExtResource("17_3idii"),
 &"p_kiss_l": ExtResource("19_n4cmi"),
 &"stand_left": ExtResource("18_g8asl")

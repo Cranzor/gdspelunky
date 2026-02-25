@@ -11,6 +11,7 @@ func _ready() -> void:
 	var custom_collision = preload("res://collision/custom_collision.gd").new()
 	custom_collision.cell_to_objects.clear() #--- clearing out collision before generating new room
 	Music.reset_on_room_changed()
+	gml.objects_holder = $ObjectsHolder
 	room_generation.generate_room(room_name)
 
 

@@ -6,6 +6,8 @@ var sprite_database = Sprites.new()
 var object_database = ObjectDatabase.new()
 var custom_collision = preload("res://collision/custom_collision.gd").new()
 
+var objects_holder: Node
+
 const TEXT = preload("res://scenes/text.tscn")
 const SPRITE = preload("res://scenes/sprite.tscn")
 const COLLISION_RAY = preload("res://scenes/collision/collision_ray.tscn")
@@ -162,7 +164,7 @@ func instance_create(x,y,obj,calling_object: GMObject = null,run_create = true) 
 		#instance.objects_in_bb = calling_object.objects_in_bb.duplicate()
 		#instance.groups_in_bb = calling_object.groups_in_bb.duplicate()
 		#instance.first_time_entered = true
-	var objects_holder = get_tree().get_first_node_in_group("objects_holder")
+
 	if objects_holder:
 		objects_holder.add_child(instance)
 	
