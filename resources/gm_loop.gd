@@ -52,7 +52,7 @@ func all_objects_step_event():
 	if step_objects_count != updated_step_objects_count:
 		var diff: int = updated_step_objects_count - step_objects_count
 		for i: int in diff:
-			var object: GMObject = updated_step_objects[updated_step_objects_count - diff]
+			var object: GMObject = updated_step_objects[updated_step_objects_count - diff + i]
 			object.step()
 			object.custom_collision.update_object_collision(object)
 
