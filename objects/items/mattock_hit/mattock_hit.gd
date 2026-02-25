@@ -63,7 +63,8 @@ func animation_end():
 			var all_mattocks = gml.get_all_instances("mattock")
 			for mattock_instance in all_mattocks:
 		
-				if (not mattock_instance.visible): gml.instance_destroy(mattock_instance)
+				#if (not mattock_instance.visible): #--- this causes the mattock not to be deleted
+				gml.instance_destroy(mattock_instance)
 		
 	
 		else:
