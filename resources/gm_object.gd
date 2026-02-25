@@ -670,16 +670,18 @@ func run_collision_with() -> void:
 						var checker_precise = sprites.sprite_database[sprite_index_name]["mask"]["shape"]
 						var collider_precise = sprites.sprite_database[collider.sprite_index_name]["mask"]["shape"]
 						if (checker_precise == "PRECISE" or collider_precise == "PRECISE") and object_name != "arrow_trap_test": #--- if either object has a precise mask, run pixel perfect check
-							var checker_rect: Rect2 = animated_sprite_node.sprite_info[animated_sprite_node.animation].containing_boxes[animated_sprite_node.frame]
-							var collider_rect: Rect2 = collider.animated_sprite_node.sprite_info[collider.animated_sprite_node.animation].containing_boxes[collider.animated_sprite_node.frame]
-							var adjusted_sprite1_rect_pos: Vector2 = checker_rect.position + position - animated_sprite_node.sprite_info[animated_sprite_node.animation].origin
-							var adjusted_sprite2_rect_pos: Vector2 = collider_rect.position + collider.position - collider.animated_sprite_node.sprite_info[collider.animated_sprite_node.animation].origin
+							var checker_sprite_info: SpriteInfo = get_sprite_info_resource(animated_sprite_node.animation)
+							var collider_sprite_info: SpriteInfo = collider.get_sprite_info_resource(collider.animated_sprite_node.animation)
+							var checker_rect: Rect2 = checker_sprite_info.containing_boxes[animated_sprite_node.frame]
+							var collider_rect: Rect2 = collider_sprite_info.containing_boxes[collider.animated_sprite_node.frame]
+							var adjusted_sprite1_rect_pos: Vector2 = checker_rect.position + position - checker_sprite_info.origin
+							var adjusted_sprite2_rect_pos: Vector2 = collider_rect.position + collider.position - collider_sprite_info.origin
 							var new_rect1: Rect2 = Rect2(adjusted_sprite1_rect_pos, Vector2(checker_rect.size))
 							var new_rect2: Rect2 = Rect2(adjusted_sprite2_rect_pos, Vector2(collider_rect.size))
 							var intersection =  new_rect1.intersection(new_rect2)
 							if intersection:
-								var bitmap1: BitMap = animated_sprite_node.sprite_info[animated_sprite_node.animation].bitmaps[animated_sprite_node.frame]
-								var bitmap2: BitMap = collider.animated_sprite_node.sprite_info[collider.animated_sprite_node.animation].bitmaps[collider.animated_sprite_node.frame]
+								var bitmap1: BitMap = checker_sprite_info.bitmaps[animated_sprite_node.frame]
+								var bitmap2: BitMap = collider_sprite_info.bitmaps[collider.animated_sprite_node.frame]
 								
 								var rows: int = intersection.size.y
 								var columns: int = intersection.size.x
@@ -710,6 +712,14 @@ func check_pixel_collision(bitmap1: BitMap, bitmap2: BitMap, bitmap1_offset: Vec
 			if bitmap1.get_bitv(bitmap1_offset + Vector2(x, y)) and bitmap2.get_bitv(bitmap2_offset + Vector2(x, y)):
 				return true
 	return false
+
+
+func get_sprite_info_resource(sprite_name: StringName) -> SpriteInfo:
+	if sprite_name in animated_sprite_node.sprite_info: return animated_sprite_node.sprite_info[sprite_name]
+	else:
+		animated_sprite_node.sprite_info[sprite_name] = load("res://resources/sprite_info/%s.tres" % sprite_name)
+		push_warning("%s does not have '%s' as a sprite. Add it through the editor." % [object_name, sprite_name])
+		return animated_sprite_node.sprite_info[sprite_name]
 
 
 func run_animation_end() -> void:

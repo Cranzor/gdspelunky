@@ -1,23 +1,42 @@
-[gd_scene load_steps=10 format=3 uid="uid://b5o1dxuta5ai8"]
+[gd_scene load_steps=13 format=3 uid="uid://b5o1dxuta5ai8"]
 
 [ext_resource type="Script" uid="uid://dwlktcptq3aty" path="res://objects/blocks/tree_branch/tree_branch.gd" id="1_35skc"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_6xilp"]
+[ext_resource type="Texture2D" uid="uid://djyajdf6thu8h" path="res://sprites/blocks/lush/tree_branch_dead_l/tree_branch_dead_l_0.png" id="3_b0a8f"]
 [ext_resource type="Texture2D" uid="uid://cq1cmt03pxxxv" path="res://sprites/blocks/lush/tree_branch_dead_r/tree_branch_dead_r_0.png" id="3_emx67"]
+[ext_resource type="Texture2D" uid="uid://dl2nd8wgt6dci" path="res://sprites/blocks/lush/tree_branch_left/tree_branch_left_0.png" id="4_gler6"]
 [ext_resource type="Texture2D" uid="uid://dttjtb2xj5avq" path="res://sprites/blocks/lush/tree_branch_right/tree_branch_right_0.png" id="4_tr5hd"]
-[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="5_rmsd8"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="6_gler6"]
 [ext_resource type="Resource" uid="uid://b6gmwftfbs7bj" path="res://resources/sprite_info/tree_branch_right.tres" id="7_tr5hd"]
 [ext_resource type="Resource" uid="uid://dcnluqbcoa2y4" path="res://resources/sprite_info/tree_branch_dead_r.tres" id="8_rmsd8"]
+[ext_resource type="Resource" uid="uid://bh5yvtmickfst" path="res://resources/sprite_info/tree_branch_left.tres" id="10_e86hg"]
+[ext_resource type="Resource" uid="uid://c28auwd6padq1" path="res://resources/sprite_info/tree_branch_dead_l.tres" id="12_4m6c2"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_tr5hd"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_3mgp6"]
 resource_local_to_scene = true
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_b0a8f")
+}],
+"loop": true,
+"name": &"tree_branch_dead_l",
+"speed": 30.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("3_emx67")
 }],
 "loop": true,
 "name": &"tree_branch_dead_r",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_gler6")
+}],
+"loop": true,
+"name": &"tree_branch_left",
 "speed": 30.0
 }, {
 "frames": [{
@@ -35,13 +54,13 @@ script = ExtResource("1_35skc")
 animated_sprite_node = NodePath("Sprite")
 object_name = "tree_branch"
 
-[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_6xilp")]
-sprite_frames = SubResource("SpriteFrames_tr5hd")
+[node name="Sprite" parent="." instance=ExtResource("2_6xilp")]
+sprite_frames = SubResource("SpriteFrames_3mgp6")
 autoplay = "tree_branch_right"
-centered = false
-script = ExtResource("5_rmsd8")
 sprite_info = Dictionary[StringName, ExtResource("6_gler6")]({
+&"tree_branch_dead_l": ExtResource("12_4m6c2"),
 &"tree_branch_dead_r": ExtResource("8_rmsd8"),
+&"tree_branch_left": ExtResource("10_e86hg"),
 &"tree_branch_right": ExtResource("7_tr5hd")
 })
 default_animation = &"tree_branch_right"

@@ -1,14 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://cxlit38wrji2u"]
+[gd_scene load_steps=11 format=3 uid="uid://cxlit38wrji2u"]
 
 [ext_resource type="Script" uid="uid://cpuyhw4bjob5q" path="res://objects/blocks/tree/tree.gd" id="1_k85ut"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_oxe1k"]
 [ext_resource type="Texture2D" uid="uid://dd0ide11dehy2" path="res://sprites/blocks/lush/tree_top/tree_top_0.png" id="3_ojpkl"]
 [ext_resource type="Texture2D" uid="uid://oleaaudnksil" path="res://sprites/blocks/lush/tree_trunk/tree_trunk_0.png" id="3_uw1tj"]
+[ext_resource type="Texture2D" uid="uid://cowh3qxpcy2ob" path="res://sprites/blocks/lush/tree_top_dead/tree_top_dead_0.png" id="4_7qrpt"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_ojpkl"]
 [ext_resource type="Resource" uid="uid://c4g2rq0o2ch66" path="res://resources/sprite_info/tree_trunk.tres" id="6_uw1tj"]
 [ext_resource type="Resource" uid="uid://dod6n58j5uf3g" path="res://resources/sprite_info/tree_top.tres" id="8_ros72"]
+[ext_resource type="Resource" uid="uid://cr3csed655jod" path="res://resources/sprite_info/tree_top_dead.tres" id="10_ltybv"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_7qrpt"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_wfs7p"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -17,6 +19,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"tree_top",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_7qrpt")
+}],
+"loop": true,
+"name": &"tree_top_dead",
 "speed": 30.0
 }, {
 "frames": [{
@@ -35,10 +45,11 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "tree"
 
 [node name="Sprite" parent="." instance=ExtResource("2_oxe1k")]
-sprite_frames = SubResource("SpriteFrames_7qrpt")
+sprite_frames = SubResource("SpriteFrames_wfs7p")
 autoplay = "tree_trunk"
 sprite_info = Dictionary[StringName, ExtResource("5_ojpkl")]({
 &"tree_top": ExtResource("8_ros72"),
+&"tree_top_dead": ExtResource("10_ltybv"),
 &"tree_trunk": ExtResource("6_uw1tj")
 })
 default_animation = &"tree_trunk"
