@@ -1,20 +1,24 @@
-[gd_scene load_steps=15 format=3 uid="uid://fiv5q4nn2w03"]
+[gd_scene load_steps=19 format=3 uid="uid://fiv5q4nn2w03"]
 
 [ext_resource type="Script" uid="uid://bf5rjxmardth0" path="res://objects/blocks/dark/dark.gd" id="1_8sbew"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_uj35o"]
 [ext_resource type="Texture2D" uid="uid://dk7qncq1dyosr" path="res://sprites/blocks/dark/dark/dark_0.png" id="3_145kk"]
 [ext_resource type="Texture2D" uid="uid://cgqa3s5t7j11x" path="res://sprites/blocks/dark/dark_gold/dark_gold_0.png" id="4_2eoot"]
-[ext_resource type="Script" uid="uid://bjy8ydal68lbj" path="res://components/cave_top.gd" id="4_f2wvv"]
 [ext_resource type="Texture2D" uid="uid://jcsunmkelqha" path="res://sprites/blocks/dark/dark_gold_big/dark_gold_big_0.png" id="5_xq7hr"]
 [ext_resource type="PackedScene" uid="uid://oy6m7b600a1u" path="res://components/cave_top.tscn" id="7_145kk"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="7_gkc13"]
+[ext_resource type="Texture2D" uid="uid://copppoebdl0k5" path="res://sprites/blocks/dark/dark_down/dark_down_0.png" id="7_x3sao"]
 [ext_resource type="Texture2D" uid="uid://bk8jqt0tc453q" path="res://backgrounds/bg_cave_top3.png" id="8_2eoot"]
-[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="9_xq7hr"]
+[ext_resource type="Texture2D" uid="uid://by1ppsx0twsku" path="res://sprites/blocks/dark/dark_up/dark_up_0.png" id="10_g3o5c"]
 [ext_resource type="Resource" uid="uid://c3x7yirynjiid" path="res://resources/sprite_info/dark.tres" id="11_143gf"]
+[ext_resource type="Texture2D" uid="uid://dn4noutvfgm34" path="res://sprites/blocks/dark/dark_up2/dark_up2_0.png" id="11_dn7nh"]
 [ext_resource type="Resource" uid="uid://dhqa084uo5kkc" path="res://resources/sprite_info/dark_gold.tres" id="12_nnaun"]
 [ext_resource type="Resource" uid="uid://dou6snfej4egh" path="res://resources/sprite_info/dark_gold_big.tres" id="13_o48i2"]
+[ext_resource type="Resource" uid="uid://ct08nlh8fmywp" path="res://resources/sprite_info/dark_up.tres" id="17_mopge"]
+[ext_resource type="Resource" uid="uid://bhl771gopv0tv" path="res://resources/sprite_info/dark_down.tres" id="18_w52gw"]
+[ext_resource type="Resource" uid="uid://67dlnilo6vdj" path="res://resources/sprite_info/dark_up2.tres" id="19_s6yvx"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_143gf"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_kvbts"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -23,6 +27,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"dark",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_x3sao")
+}],
+"loop": true,
+"name": &"dark_down",
 "speed": 30.0
 }, {
 "frames": [{
@@ -40,6 +52,22 @@ animations = [{
 "loop": true,
 "name": &"dark_gold_big",
 "speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_g3o5c")
+}],
+"loop": true,
+"name": &"dark_up",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_dn7nh")
+}],
+"loop": true,
+"name": &"dark_up2",
+"speed": 30.0
 }]
 
 [node name="Dark" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -48,25 +76,18 @@ script = ExtResource("1_8sbew")
 animated_sprite_node = NodePath("Sprite")
 object_name = "dark"
 
-[node name="CaveTop" type="Sprite2D" parent="." instance=ExtResource("7_145kk")]
-visible = false
-z_index = -3
-z_as_relative = false
-position = Vector2(0, -16)
+[node name="CaveTop" parent="." instance=ExtResource("7_145kk")]
 texture = ExtResource("8_2eoot")
-centered = false
-region_enabled = true
-region_rect = Rect2(0, 0, 16, 16)
-script = ExtResource("4_f2wvv")
 
-[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_uj35o")]
-sprite_frames = SubResource("SpriteFrames_143gf")
+[node name="Sprite" parent="." instance=ExtResource("2_uj35o")]
+sprite_frames = SubResource("SpriteFrames_kvbts")
 autoplay = "dark"
-centered = false
-script = ExtResource("9_xq7hr")
 sprite_info = Dictionary[StringName, ExtResource("7_gkc13")]({
 &"dark": ExtResource("11_143gf"),
+&"dark_down": ExtResource("18_w52gw"),
 &"dark_gold": ExtResource("12_nnaun"),
-&"dark_gold_big": ExtResource("13_o48i2")
+&"dark_gold_big": ExtResource("13_o48i2"),
+&"dark_up": ExtResource("17_mopge"),
+&"dark_up2": ExtResource("19_s6yvx")
 })
 default_animation = &"dark"

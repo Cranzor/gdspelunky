@@ -1,13 +1,22 @@
-[gd_scene load_steps=8 format=3 uid="uid://c4hvu73salrjk"]
+[gd_scene load_steps=17 format=3 uid="uid://c4hvu73salrjk"]
 
 [ext_resource type="Script" uid="uid://cm26unmifwgby" path="res://objects/blocks/ice/ice.gd" id="1_lehao"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_n2w8u"]
 [ext_resource type="Texture2D" uid="uid://b4alhvfohyhvn" path="res://sprites/blocks/dark/ice/ice_0.png" id="3_o3wg3"]
-[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="4_t5ku7"]
+[ext_resource type="Texture2D" uid="uid://c2uehy67omp2q" path="res://sprites/blocks/dark/ice_block/ice_block_0.png" id="4_dtcqm"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_0p7tq"]
+[ext_resource type="Texture2D" uid="uid://d0rachyrvwuat" path="res://sprites/blocks/dark/ice_dl/ice_dl_0.png" id="5_bdp4i"]
+[ext_resource type="Texture2D" uid="uid://du2mx3atcq46e" path="res://sprites/blocks/dark/ice_dr/ice_dr_0.png" id="6_7lenk"]
 [ext_resource type="Resource" uid="uid://dhqhajdbxdop5" path="res://resources/sprite_info/ice.tres" id="6_o3wg3"]
+[ext_resource type="Texture2D" uid="uid://clbko0b0nvl0g" path="res://sprites/blocks/dark/ice_up/ice_up_0.png" id="7_pjd5w"]
+[ext_resource type="Texture2D" uid="uid://cjkk6gjfyhxgj" path="res://sprites/blocks/dark/ice_up2/ice_up2_0.png" id="8_gmga2"]
+[ext_resource type="Resource" uid="uid://bp3imrt5df7bb" path="res://resources/sprite_info/ice_up.tres" id="12_3kp7j"]
+[ext_resource type="Resource" uid="uid://d0rffhbil5fm6" path="res://resources/sprite_info/ice_up2.tres" id="13_0usvg"]
+[ext_resource type="Resource" uid="uid://bqyp6d5d0ujkh" path="res://resources/sprite_info/ice_dl.tres" id="14_jvdjb"]
+[ext_resource type="Resource" uid="uid://bfg1iveseqjlg" path="res://resources/sprite_info/ice_dr.tres" id="15_m8huk"]
+[ext_resource type="Resource" uid="uid://dhj01b27k82hh" path="res://resources/sprite_info/ice_block.tres" id="16_u8n7x"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_o3wg3"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_gv658"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -17,6 +26,46 @@ animations = [{
 "loop": true,
 "name": &"ice",
 "speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_dtcqm")
+}],
+"loop": true,
+"name": &"ice_block",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_bdp4i")
+}],
+"loop": true,
+"name": &"ice_dl",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_7lenk")
+}],
+"loop": true,
+"name": &"ice_dr",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_pjd5w")
+}],
+"loop": true,
+"name": &"ice_up",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_gmga2")
+}],
+"loop": true,
+"name": &"ice_up2",
+"speed": 30.0
 }]
 
 [node name="Ice" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -25,12 +74,16 @@ script = ExtResource("1_lehao")
 animated_sprite_node = NodePath("Sprite")
 object_name = "ice"
 
-[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_n2w8u")]
-sprite_frames = SubResource("SpriteFrames_o3wg3")
+[node name="Sprite" parent="." instance=ExtResource("2_n2w8u")]
+sprite_frames = SubResource("SpriteFrames_gv658")
+animation = &"ice"
 autoplay = "ice"
-centered = false
-script = ExtResource("4_t5ku7")
 sprite_info = Dictionary[StringName, ExtResource("5_0p7tq")]({
-&"ice": ExtResource("6_o3wg3")
+&"ice": ExtResource("6_o3wg3"),
+&"ice_block": ExtResource("16_u8n7x"),
+&"ice_dl": ExtResource("14_jvdjb"),
+&"ice_dr": ExtResource("15_m8huk"),
+&"ice_up": ExtResource("12_3kp7j"),
+&"ice_up2": ExtResource("13_0usvg")
 })
 default_animation = &"ice"
