@@ -1,22 +1,48 @@
-[gd_scene load_steps=17 format=3 uid="uid://dj3wjlx750iwt"]
+[gd_scene load_steps=43 format=3 uid="uid://dj3wjlx750iwt"]
 
 [ext_resource type="Script" uid="uid://dbdf1avse5dsa" path="res://objects/blocks/temple/temple.gd" id="1_thpwd"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_52s7j"]
 [ext_resource type="Texture2D" uid="uid://didiv23igdfhr" path="res://sprites/blocks/temple/g_temple/g_temple_0.png" id="3_dq4lt"]
-[ext_resource type="Script" uid="uid://bjy8ydal68lbj" path="res://components/cave_top.gd" id="4_pmtie"]
 [ext_resource type="Texture2D" uid="uid://drvw1otuoyei2" path="res://sprites/blocks/temple/temple/temple_0.png" id="4_ud8vx"]
 [ext_resource type="Texture2D" uid="uid://0e7q6qvc11x3" path="res://sprites/blocks/temple/temple_gold/temple_gold_0.png" id="5_afvoe"]
 [ext_resource type="Texture2D" uid="uid://bv3r375crevtu" path="res://sprites/blocks/temple/temple_gold_big/temple_gold_big_0.png" id="6_55ocd"]
+[ext_resource type="Texture2D" uid="uid://dacehno4salcf" path="res://sprites/blocks/temple/g_temple_up2/g_temple_up2_0.png" id="7_2wswx"]
+[ext_resource type="Texture2D" uid="uid://nx3epl2qsamc" path="res://sprites/blocks/temple/g_temple_up3/g_temple_up3_0.png" id="8_727pf"]
 [ext_resource type="PackedScene" uid="uid://oy6m7b600a1u" path="res://components/cave_top.tscn" id="8_dq4lt"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="8_vd55r"]
+[ext_resource type="Texture2D" uid="uid://c701061fq7o6d" path="res://sprites/blocks/temple/g_temple_up4/g_temple_up4_0.png" id="9_nfg3b"]
 [ext_resource type="Texture2D" uid="uid://coruvqw80pybl" path="res://backgrounds/bg_cave_top4.png" id="9_ud8vx"]
-[ext_resource type="Script" uid="uid://c1neobjpni3hf" path="res://scenes/sprite.gd" id="10_afvoe"]
+[ext_resource type="Texture2D" uid="uid://bkw1kch38saev" path="res://sprites/blocks/temple/g_temple_up5/g_temple_up5_0.png" id="10_a7t1o"]
+[ext_resource type="Texture2D" uid="uid://svynbvgqi4w3" path="res://sprites/blocks/temple/temple_up2/temple_up2_0.png" id="10_hyo5j"]
+[ext_resource type="Texture2D" uid="uid://cruss42resixl" path="res://sprites/blocks/temple/g_temple_up6/g_temple_up6_0.png" id="11_2mlq0"]
+[ext_resource type="Texture2D" uid="uid://xynjyukamrh3" path="res://sprites/blocks/temple/temple_up3/temple_up3_0.png" id="11_jqno3"]
+[ext_resource type="Texture2D" uid="uid://dfadngq1cl31e" path="res://sprites/blocks/temple/temple_up4/temple_up4_0.png" id="12_8hj1y"]
 [ext_resource type="Resource" uid="uid://ck5fr3s6ip7ld" path="res://resources/sprite_info/temple.tres" id="12_nrotk"]
+[ext_resource type="Texture2D" uid="uid://7kjniayyb3h1" path="res://sprites/blocks/temple/g_temple_up7/g_temple_up7_0.png" id="12_qwmbs"]
+[ext_resource type="Texture2D" uid="uid://ca5ft3xccjs4l" path="res://sprites/blocks/temple/temple_up5/temple_up5_0.png" id="13_2bami"]
 [ext_resource type="Resource" uid="uid://boc8r336wfby5" path="res://resources/sprite_info/g_temple.tres" id="13_j1vuf"]
+[ext_resource type="Texture2D" uid="uid://bj121ula1edju" path="res://sprites/blocks/temple/g_temple_up8/g_temple_up8_0.png" id="13_kgx08"]
+[ext_resource type="Texture2D" uid="uid://cqpp7mfsfylpr" path="res://sprites/blocks/temple/temple_up6/temple_up6_0.png" id="14_dn1y6"]
 [ext_resource type="Resource" uid="uid://du3abakdn52op" path="res://resources/sprite_info/temple_gold.tres" id="14_kpmus"]
 [ext_resource type="Resource" uid="uid://ciffk7pgeduno" path="res://resources/sprite_info/temple_gold_big.tres" id="15_dtgqj"]
+[ext_resource type="Texture2D" uid="uid://dcekffdciohtf" path="res://sprites/blocks/temple/temple_up7/temple_up7_0.png" id="15_ky8h5"]
+[ext_resource type="Texture2D" uid="uid://q4enmg5l3l4o" path="res://sprites/blocks/temple/temple_up8/temple_up8_0.png" id="16_ca3rv"]
+[ext_resource type="Resource" uid="uid://dipdu6wiryfoj" path="res://resources/sprite_info/temple_up2.tres" id="23_v6gwa"]
+[ext_resource type="Resource" uid="uid://coi4ip46io6dr" path="res://resources/sprite_info/temple_up3.tres" id="24_5k6sf"]
+[ext_resource type="Resource" uid="uid://tlfgw47r1q4p" path="res://resources/sprite_info/temple_up4.tres" id="25_q27t2"]
+[ext_resource type="Resource" uid="uid://c7ty2mykneayx" path="res://resources/sprite_info/temple_up5.tres" id="26_xckla"]
+[ext_resource type="Resource" uid="uid://bp05ye44xmgae" path="res://resources/sprite_info/temple_up6.tres" id="27_box2x"]
+[ext_resource type="Resource" uid="uid://bwxl06v4frx6m" path="res://resources/sprite_info/temple_up7.tres" id="28_vvhgr"]
+[ext_resource type="Resource" uid="uid://bgqt8kjkf74of" path="res://resources/sprite_info/temple_up8.tres" id="29_ee06e"]
+[ext_resource type="Resource" uid="uid://diw5js1jp6n7s" path="res://resources/sprite_info/g_temple_up2.tres" id="37_4p4nf"]
+[ext_resource type="Resource" uid="uid://b6j41fc5tkp2q" path="res://resources/sprite_info/g_temple_up3.tres" id="38_lvh83"]
+[ext_resource type="Resource" uid="uid://c3q603jfj1vrl" path="res://resources/sprite_info/g_temple_up4.tres" id="39_vynvy"]
+[ext_resource type="Resource" uid="uid://lu52b4e4mb2o" path="res://resources/sprite_info/g_temple_up5.tres" id="40_y2ly7"]
+[ext_resource type="Resource" uid="uid://dxp1v0ew6yhgp" path="res://resources/sprite_info/g_temple_up6.tres" id="41_j3xjt"]
+[ext_resource type="Resource" uid="uid://bva80jjpn4a2c" path="res://resources/sprite_info/g_temple_up7.tres" id="42_ypghc"]
+[ext_resource type="Resource" uid="uid://dtgou6r070lt2" path="res://resources/sprite_info/g_temple_up8.tres" id="43_0kvyu"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_nrotk"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_sxs20"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -25,6 +51,62 @@ animations = [{
 }],
 "loop": true,
 "name": &"g_temple",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_2wswx")
+}],
+"loop": true,
+"name": &"g_temple_up2",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_727pf")
+}],
+"loop": true,
+"name": &"g_temple_up3",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_nfg3b")
+}],
+"loop": true,
+"name": &"g_temple_up4",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_a7t1o")
+}],
+"loop": true,
+"name": &"g_temple_up5",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_2mlq0")
+}],
+"loop": true,
+"name": &"g_temple_up6",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_qwmbs")
+}],
+"loop": true,
+"name": &"g_temple_up7",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_kgx08")
+}],
+"loop": true,
+"name": &"g_temple_up8",
 "speed": 30.0
 }, {
 "frames": [{
@@ -50,6 +132,62 @@ animations = [{
 "loop": true,
 "name": &"temple_gold_big",
 "speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_hyo5j")
+}],
+"loop": true,
+"name": &"temple_up2",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_jqno3")
+}],
+"loop": true,
+"name": &"temple_up3",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_8hj1y")
+}],
+"loop": true,
+"name": &"temple_up4",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_2bami")
+}],
+"loop": true,
+"name": &"temple_up5",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_dn1y6")
+}],
+"loop": true,
+"name": &"temple_up6",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_ky8h5")
+}],
+"loop": true,
+"name": &"temple_up7",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_ca3rv")
+}],
+"loop": true,
+"name": &"temple_up8",
+"speed": 30.0
 }]
 
 [node name="Temple" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -58,26 +196,30 @@ script = ExtResource("1_thpwd")
 animated_sprite_node = NodePath("Sprite")
 object_name = "temple"
 
-[node name="CaveTop" type="Sprite2D" parent="." instance=ExtResource("8_dq4lt")]
-visible = false
-z_index = -3
-z_as_relative = false
-position = Vector2(0, -16)
+[node name="CaveTop" parent="." instance=ExtResource("8_dq4lt")]
 texture = ExtResource("9_ud8vx")
-centered = false
-region_enabled = true
-region_rect = Rect2(0, 0, 16, 16)
-script = ExtResource("4_pmtie")
 
-[node name="Sprite" type="AnimatedSprite2D" parent="." groups=["animated_sprite"] instance=ExtResource("2_52s7j")]
-sprite_frames = SubResource("SpriteFrames_nrotk")
+[node name="Sprite" parent="." instance=ExtResource("2_52s7j")]
+sprite_frames = SubResource("SpriteFrames_sxs20")
 autoplay = "temple"
-centered = false
-script = ExtResource("10_afvoe")
 sprite_info = Dictionary[StringName, ExtResource("8_vd55r")]({
 &"g_temple": ExtResource("13_j1vuf"),
+&"g_temple_up2": ExtResource("37_4p4nf"),
+&"g_temple_up3": ExtResource("38_lvh83"),
+&"g_temple_up4": ExtResource("39_vynvy"),
+&"g_temple_up5": ExtResource("40_y2ly7"),
+&"g_temple_up6": ExtResource("41_j3xjt"),
+&"g_temple_up7": ExtResource("42_ypghc"),
+&"g_temple_up8": ExtResource("43_0kvyu"),
 &"temple": ExtResource("12_nrotk"),
 &"temple_gold": ExtResource("14_kpmus"),
-&"temple_gold_big": ExtResource("15_dtgqj")
+&"temple_gold_big": ExtResource("15_dtgqj"),
+&"temple_up2": ExtResource("23_v6gwa"),
+&"temple_up3": ExtResource("24_5k6sf"),
+&"temple_up4": ExtResource("25_q27t2"),
+&"temple_up5": ExtResource("26_xckla"),
+&"temple_up6": ExtResource("27_box2x"),
+&"temple_up7": ExtResource("28_vvhgr"),
+&"temple_up8": ExtResource("29_ee06e")
 })
 default_animation = &"temple"

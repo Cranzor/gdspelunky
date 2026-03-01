@@ -1,15 +1,17 @@
-[gd_scene load_steps=10 format=3 uid="uid://b22od4hdfla4b"]
+[gd_scene load_steps=12 format=3 uid="uid://b22od4hdfla4b"]
 
 [ext_resource type="Script" uid="uid://mb172hbgbijs" path="res://objects/effects/rubble_small/rubble_small.gd" id="1_10yu8"]
 [ext_resource type="PackedScene" uid="uid://dicegcuj450ms" path="res://scenes/sprite.tscn" id="2_mfdu6"]
 [ext_resource type="Texture2D" uid="uid://b574w74t4mv7l" path="res://sprites/effects/rubble_small/rubble_small_0.png" id="3_6730b"]
 [ext_resource type="Texture2D" uid="uid://bpldjd6soq1bk" path="res://sprites/effects/rubble_lush_small/rubble_lush_small_0.png" id="3_ngmei"]
+[ext_resource type="Texture2D" uid="uid://da6iae0nt0xin" path="res://sprites/effects/rubble_tan_small/rubble_tan_small_0.png" id="5_3sher"]
 [ext_resource type="Script" uid="uid://2k27oh8opgdx" path="res://resources/sprite_info.gd" id="5_ksk1o"]
 [ext_resource type="PackedScene" uid="uid://dd4xpe5r423ry" path="res://components/smooth_motion.tscn" id="6_6730b"]
 [ext_resource type="Resource" uid="uid://dknb4hwf2ebf2" path="res://resources/sprite_info/rubble_small.tres" id="6_jgj1e"]
 [ext_resource type="Resource" uid="uid://bpw28h21lo3pt" path="res://resources/sprite_info/rubble_lush_small.tres" id="8_e4a5d"]
+[ext_resource type="Resource" uid="uid://uwfobngjkuvy" path="res://resources/sprite_info/rubble_tan_small.tres" id="10_bj2n1"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_3sher"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_o3iwq"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -27,6 +29,14 @@ animations = [{
 "loop": true,
 "name": &"rubble_small",
 "speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_3sher")
+}],
+"loop": true,
+"name": &"rubble_tan_small",
+"speed": 30.0
 }]
 
 [node name="RubbleSmall" type="StaticBody2D" node_paths=PackedStringArray("animated_sprite_node")]
@@ -36,12 +46,13 @@ animated_sprite_node = NodePath("Sprite")
 object_name = "rubble_small"
 
 [node name="Sprite" parent="." instance=ExtResource("2_mfdu6")]
-sprite_frames = SubResource("SpriteFrames_3sher")
+sprite_frames = SubResource("SpriteFrames_o3iwq")
 autoplay = "rubble_small"
 offset = Vector2(-4, -4)
 sprite_info = Dictionary[StringName, ExtResource("5_ksk1o")]({
 &"rubble_lush_small": ExtResource("8_e4a5d"),
-&"rubble_small": ExtResource("6_jgj1e")
+&"rubble_small": ExtResource("6_jgj1e"),
+&"rubble_tan_small": ExtResource("10_bj2n1")
 })
 default_animation = &"rubble_small"
 
