@@ -216,14 +216,7 @@ var sprite_yoffset: int #---[FLAG] have to account for this
 #---
 var direction #--- only caveman, hawkman, yeti, and fire_bow script use this
 var speed: int #--- only caveman, hawkman, and yeti use this
-var owner_object: #--- only caveman, hawkman, and yeti use this
-	set(value):
-		owner_object = value
-		if value != null:
-			handle_enemy_sight(value) #--- as only sighted enemies use this, we can work with this assumption to handle enemy_sight behavior
-		
-	get:
-		return owner_object
+var owner_object: GMObject #--- only caveman, hawkman, and yeti use this
 #---
 var x_vel: float:
 	set(value):
@@ -795,13 +788,6 @@ func debug_glow(on_or_off: bool) -> void:
 	#else:
 		#debug_glow.hide()
 	pass
-
-func handle_enemy_sight(parent_object: GMObject) -> void:
-	name = "EnemySight"
-	var existing_node = parent_object.get_node("EnemySight")
-	if existing_node != null:
-		existing_node.queue_free()
-	parent_object.add_child(self)
 
 #--- call this whenever teleporting an object to an arbitary location
 #--- room_start is set true when player1 calls this function in init_level()
