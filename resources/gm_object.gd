@@ -1,5 +1,5 @@
 @icon("res://sprites/blocks/shop/sign_rare/sign_rare_0.png")
-extends StaticBody2D
+extends Node2D
 class_name GMObject
 
 #---TODO: add simple "object setup" and "clear object setup" functions with buttons to make this easier in the editor
@@ -382,7 +382,6 @@ func object_setup() -> void:
 		#bounding_box_area.area_exited.connect(_bounding_box_exited)
 	sprite_index_name = $Sprite.default_animation
 
-	disable_mode = CollisionObject2D.DISABLE_MODE_KEEP_ACTIVE
 	var object_database = object_database.object_database
 	var object_entry = object_database[object_name]
 	parent = object_entry["parent"]
